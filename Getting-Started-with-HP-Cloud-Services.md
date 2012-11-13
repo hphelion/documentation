@@ -1,0 +1,36 @@
+---
+layout: default
+title: "Getting Started with HP Cloud Services"
+permalink: /
+
+---
+# Getting Started with HP Cloud Services
+
+<iframe src="https://player.vimeo.com/video/38064508?title=0&amp;byline=0&amp;portrait=0" width="580" height="420" frameborder="0"> </iframe> 
+
+HP Cloud Services consists of:
+
+* [HP Cloud Compute](/compute) - An OpenStack Compute implementation hosted by HP
+* [HP Cloud Object Storage](/object-storage) - An OpenStack Object Storage implementation hosted by HP
+* [HP Cloud CDN](/cdn) - A Content Delivery Network hosted by HP
+* [HP Cloud Block Storage](/block-storage) - Add additional volumes to HP Cloud Compute instances
+* [HP Cloud Identity Service](/identity) - An OpenStack Identity Services implementation hosted by HP
+* [HP Cloud Relational Database for MySQL](/dbaas) - An OpenStack DBaaS implementation hosted by HP
+
+For detailed REST API information, dig into those links above.  In order to interact with the services, you'll need [your API Keys](https://console.hpcloud.com/account/api_keys).
+
+For direct interactivity with HP Cloud Services, you can use the following officially supported tools:
+
+* [Management Console](https://console.hpcloud.com) - The GUI experience on this website
+* [Command Line Interfaces](/cli/) - Command line tool for easy scripting
+
+For best results, we recommend that use one of the following supported HTML5 browsers when accessing the management console:
+
+* Chrome
+* FireFox12
+* Internet Explorer 9
+* Safari 5.03
+
+For creating your own applications, take a look at our [Bindings section](/bindings).
+
+For helping you to find your way around, we've provided a site map of the [documentation available on the site](/sitemap), as well as a [site overview](/site-overview).  For information on specific releases, you can check out the [release notes](/release-notes). And if you have a question, feel free to [post something over on our forums](https://connect.hpcloud.com). We'd love to help.
