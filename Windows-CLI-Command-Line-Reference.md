@@ -255,16 +255,17 @@ Allows you to add meta-data elements to an existing resource. Storage objects ca
 ### Syntax###
  set-metadata  [*SourcePath* | -sp *SourcePath* | -s *server-ID* | -cdn "*cdn-container-name*"] -md ["*name*" {"*name2*" . . .}]
 
-<dl>
 **sp**
 :  Path to the remote storage object. You can express paths as fully qualified (absolute) or relative to the current location in the store. 
+
 **s**
 : Server ID.
+
 **cdn**
 : CDN container name.
+
 **md**
 : Pipe-delimited set of key value pairs seperated by commas.
-</dl>
 
 ###Examples###
 EXAMPLE 1
@@ -308,18 +309,20 @@ Creates a new security group rule and assigns it to an existing security group.
 ### Syntax###
 add-rule [ -fp "*FromPort*" -tp "*ToPort*" | -ipr "*low*/*high*" ] -ipp "*Protocol*" -gid "*GroupID*"
 
-<dl>
 **fp**
 : From Port: designates the low end of the port range to which this rule applies.
+
 **tp**
 : To Port: designates the high end of the port range to which this rule applies.
+
 **ipr**
 : `/`-separated range of IP addresses to which the rule applies (highest/lowest).
+
 **ipp**
 : The protocol affected by this rule. Valid values include tcp, udp, and icmp.
+
 **gid**
 : The security group ID used to apply this rule. If your current location is within one of these groups the ID is implied and therefore optional.
-</dl>
 
 ###Examples###
 EXAMPLE
@@ -456,7 +459,7 @@ EXAMPLE
 
 Creates a new security group with the name "TestGroup" and the description "SomeDescription".
 
-##New-Image##{#New-Image}
+##New-Image## {#New-Image}
 Creates a new server image based on an existing server.
 
 ###Syntax
@@ -473,31 +476,49 @@ Creates a new server instance `testserver` based on the existing server instance
 Creates a new server.
 
 ### Syntax###
-new-server -n "*name*" -i "*image-ref-ID*" -f "*flavor-ref-ID*" {-md ["*name*" {"*name2*" . . .}] {-s "*server-ID*"}} -sg "*security-group*" -k "*key-name*"
+new-server -n "*name*" -i "*image-ref-ID*" -f "*flavor-ref-ID*"  
+  {-md ["*name*" {"*name2*" . . .}] {-s "*server-ID*"}}  
+  -sg "*security-group*" -k "*key-name*"
 
-<dl>
 **n**
 : Server name.
+
 **i**
 : The image identifier (ImageRefId) used to define this server.
+
 **f**
 : The flavor identifier (FlavorRefId) used to define the server.
-**md**
+
+**md** (optional)
 : Pipe-delimited set of metadata name value pairs seperated by commas.
-**s**
+
+**s** (optional)
 : The identifier (ServerId) used to associate the metadata for the server. If your currently viewing a servers details, this parameter may be ommited as it's supplied for you.
+
 **sg**
 : Set of SecurityGroup names that are to be applied to the newly created server separated by commas.
+
 **k**
 : Keypair for this server.
-</dl>
 
 ###Examples###
-EXAMPLE
+EXAMPLE 1
 
     new-server -n "TestServer" -i "2111" -f "100" -md "Namevalue1 | value1" , "NameValue2 | value2", "NameValue3 | value3" -sg "securitygroupname","securitygroupname2" -k "KeyName"
 
-Creates a new server with the name "TestServer", along with some metadata.
+Creates a new server with the name `TestServer`, along with some metadata.
+
+EXAMPLE 2
+
+    PS HPCS:\Flavors> New-Server -n TestServer -s "default" 
+    cmdlet New-Server at command pipeline position 1 
+    Supply values for the following parameters: 
+    (Type !? for Help.) 
+    ImageRef: 102 
+    FlavorRef: 100 
+    KeyName: mySecurityGroup
+ 
+Creates a new server with the name 'TestServer'. In this example, the user is prompted for the `Image`, `Flavor`, and `KeyName` values rather than entering them on the command line directly.
 
 ##Ping-Server## {#Ping-Server}
 Sends echo request packets to the named server.
@@ -542,7 +563,7 @@ EXAMPLE
 
 Performs a soft reboot of server 4516.
 
-##Refresh-Cache##{#Refresh-Cache}
+##Refresh-Cache## {#Refresh-Cache}
 Refreshes current shell cache.
 
 ###Syntax
@@ -600,10 +621,8 @@ Deletes an existing server.
 ### Syntax###
 remove-server [ "*server-ID*" | -all ]  "*server-ID*"
 
-<dl>
 **-all**
 : Deletes all servers
-</dl>
 
 ###Examples###
 EXAMPLE
@@ -732,7 +751,7 @@ EXAMPLE 5
 
 This examples copies the folder `folder1` from container `sourceContainerName` to container `targerContainerName`.
 
-##Copy-Item##{#Copy-Item}
+##Copy-Item## {#Copy-Item}
 Copies an item from one location to another.
 
 ###Syntax
@@ -753,10 +772,8 @@ Removes an object from storage.
 ###Syntax###
 del -t "*object*"
 
-<dl>
 **-t**
 : Path to the storage object to be removed
-</dl>
 
 ###Examples###
 EXAMPLE 1
@@ -771,14 +788,14 @@ Lists the fully qualified URI of the resource that you supply.  The optional par
 ### Syntax###
  get-uri *filename* {-dv *days-valid*} {-sv *seconds-valid*}
 
-<dl>
 *filename*
 : Source path to the storage object
+
 **dv**
 : Number of days the URI is valid
+
 **sv**
 : Number of seconds the URI is valid
-</dl>
 
 ###Examples###
 EXAMPLE 1
@@ -884,10 +901,8 @@ After confirmation, deletes a container entirely. If any files exist within the 
 ### Syntax###
  remove-container  *Name* { -cdn }
 
-<dl>
 **cdn**
 :  Removes any associated CDN entry when the container is removed.
-</dl>
 
 ###Examples###
 EXAMPLE
@@ -896,7 +911,7 @@ EXAMPLE
 
 Deletes the container named marketing and all of its contents.
 
-##Remove-Item##{#Remove-Item}
+##Remove-Item## {#Remove-Item}
 Removes an object from your object storage container.
 
 ###Syntax
@@ -909,7 +924,7 @@ EXAMPLE
 
 Removes the object `'my-object` from the container.
 
-##Remove-Metadata##{#Remove-Metadata}
+##Remove-Metadata## {#Remove-Metadata}
 Removes the metadata from an object in storage.
 
 ###Syntax
