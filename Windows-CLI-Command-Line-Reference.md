@@ -1,3 +1,4 @@
+<!-- Removed all html tags -->
 ---
 layout: default
 title: "Windows CLI: Command Line Reference"
@@ -399,7 +400,7 @@ If you do not enter the keypair name, `Get-Password` prompts you for it.  In ord
 * The server must appear in the server list 
 * The listing of the EventLog for the server (`PS HPCS:\Servers\server_id\EventLog\`), must display the encrypted key
 
-**Note:** This cmdlet is currently available for Windows instances only. This password does not get updated if you change your password using the `reset-password` command, It always show the original generated password as long as the eventlog is available.
+**Note:** This cmdlet is currently available for Windows instances only. This password is not updated if you re-sync the administrator password with the `reset-password` command; it displays the original generated password as long as the eventlog is available.
 
 ###Examples###
 EXAMPLE
@@ -612,7 +613,7 @@ EXAMPLE
 Deletes server 4516.
 
 ##Reset-Password## {#reset-password}
-Re-syncs your Windows Administrator password for the given server, after manual modification, in order to use the `connect-server` cmlet.
+Re-syncs your Windows administrator password for the given server, after manual modification, in order to use the `connect-server` cmdlet.
 
 ### Syntax###
 reset-password -id "*serverID*" -p "*password*"
@@ -622,7 +623,7 @@ EXAMPLE
 
     reset-password -id "3245" -p "testpassword08"
 
-Resets the password for the server with the ID of "3245" to "testpassword08".
+Re-syncs the Windows session administrator password with that of the server with the ID of "3245" to "testpassword08".
 
 ##Set-ZoneColor## {#Set-ZoneColor}
 Sets the availability zone; all subsequently-issued commands are applied to the assigned availability zone.
