@@ -23,11 +23,11 @@ To install the Ruby Fog bindings on any of the currently-supported platforms, yo
 
         bash
 
-2. (<i>for CentOS only</i>) Disable SSL verification temporarily for the purposes of the RVM install:
+<!--2. (<i>for CentOS only</i>) Disable SSL verification temporarily for the purposes of the RVM install:
 
-        echo insecure >> ~/.curlrc
+        echo insecure >> ~/.curlrc-->
 
-3. Install RVM
+2. Install RVM
 
         curl -L get.rvm.io | bash -s stable
 
