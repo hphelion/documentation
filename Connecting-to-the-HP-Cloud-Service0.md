@@ -4,12 +4,12 @@ title: "Connecting to the HP Cloud Service"
 permalink: /bindings/fog/connect/
 
 ---
-# Connecting to the HP Cloud Service
-
 This page gives you details on how to connect to the HP Cloud service and contains the following sections:
 
 * [Initial Connection](#InitialConnection)
 * [Supplying Your Credentials](#SupplyingyourCredentials)
+* [Using the Owner Account to Grant Access](#UsingtheOwnerAccounttoGrantAccess)
+* [Setting Up the Connection for the User Account](#SettingUptheConnectionfortheUserAccount)
 * [Availability Zones](#AvailabilityZones)
 * [Optional Parameters](#OptionalParameters)
 
@@ -37,7 +37,43 @@ To connect to the HP Cloud Service, follow these steps:
 
 Where `Service-Name` can be [Compute](/bindings/fog/compute), [Storage](/bindings/fog/object-storage), [CDN](/bindings/fog/cdn), or [BlockStorage](/bindings/fog/block-storage).  You can find the values by clicking the [`API Keys`](https://console.hpcloud.com/account/api_keys) button in the [Console Dashboard](https://console.hpcloud.com/dashboard).
 
-<img src="media/api%20keys-2.jpg" width="580" height="471" alt="" />
+[[{"type":"media","view_mode":"media_large","fid":"141","attributes":{}}]]
+
+##Using the Owner Account to Grant Access## {#UsingtheOwnerAccounttoGrantAccess}
+
+You can use the owner account to grant access.  To set up the connections for the owner account:
+
+    conn = Fog::Storage.new( 
+           :provider => 'HP', 
+           :hp_auth_uri => "https://csnode.rndd.aw1.hpcloud.net:35357/v2.0/tokens", 
+           :hp_account_id => "11111111", :hp_secret_key => "xxxxxx", 
+           :hp_tenant_id => "12121212", 
+           :hp_avl_zone => "region-a.geo-1", 
+           :connection_options => {:ssl_verify_peer => false})
+
+To grant access:
+
+    mydir = conn.directories.get('rgtest2')  # Note: grant uses username. in my case it is email as my username is email address
+    mydir.grant("rw", ["rupakg+fog2@gmail.com"])
+    mydir.save                               # share the url for access to container
+    mydir.public_url
+     => "https://objects.rndd.aw1.hpcloud.net:443/v1/91545177658759/rgtest2"
+     
+    myfile = mydir.files.get("sample.txt")   # share the url for access to object
+    myfile.public_url
+     => "https://objects.rndd.aw1.hpcloud.net:443/v1/91545177658759/rgtest2/sample.txt"
+
+##Setting Up the Connection for the User Account## {#SettingUptheConnectionfortheUserAccount}
+
+To set up the connection for the user account:
+
+    conn2 = Fog::Storage.new( 
+            :provider => 'HP', 
+            :hp_auth_uri => "https://csnode.rndd.aw1.hpcloud.net:35357/v2.0/tokens", 
+            :hp_account_id => "22222222", :hp_secret_key => "xxxxxx", 
+            :hp_tenant_id => "21212121", 
+            :hp_avl_zone => "region-a.geo-1", 
+            :connection_options => {:ssl_verify_peer => false})
 
 ##Availability Zones## {#AvailabilityZones}
 
