@@ -6,7 +6,7 @@ permalink: /cli/nova/
 ---
 # HP Extended Python Novaclient
 
-An extension to the OpenStack Python Novaclient that enables interaction with HP Cloud Compute and Block Storage.  [Download the Debian package](https://docs.hpcloud.com/file/python-novaclient-debian.deb) and, if you are using either the Fedora or CenOS packages, [their dependency](https://docs.hpcloud.com/file/nova-stuff.tar).  
+An extension to the OpenStack Python Novaclient that enables interaction with HP Cloud Compute and Block Storage.  [Download the Debian package](https://docs.hpcloud.com/file/python-novaclient_2.6.8.deb) and, if you are using either the Fedora or CenOS packages, [their dependency](https://docs.hpcloud.com/file/nova-stuff.tar).  
 
  Need some more guidance?  Check out:
 
