@@ -4,8 +4,6 @@ title: "Unix CLI Object Storage Examples"
 permalink: /cli/unix/object-storage/
 
 ---
-# Unix CLI Object Storage Examples
-
 <iframe src="http://player.vimeo.com/video/32534203?title=0&amp;byline=0&amp;portrait=0" width="580" height="420" frameborder="0"> </iframe>
 
 This page gives you a few examples of how to perform various object storage tasks using the HP Cloud service.  This page discusses the following tasks:
@@ -108,6 +106,22 @@ To use wildcards when copying files to a container using regular expressions:
     # => yoda.htm:   100% |ooooooooooooooooooooooooooooooooooooo| Time: 00:00:00
     # => Copied yoda.htm => :demorama
 
+To use the -m option to override the mime type:
+
+    $ hpcloud copy analytics :demorama -m application/json
+    # => analytics:  100% |ooooooooooooooooooooooooooooooooooooo| Time: 00:00:00
+    # => Copied analytics => :demorama
+
+To copy a shared (with cross tenant ACL) object to the local file system:
+
+    $ hpcloud copy https://r.../demorama/raveonettes downtown
+    # => Copied https://r.../demorama/raveonettes => downtown
+
+To copy a file to a shared (with cross tenant ACL) object:
+
+    $ hpcloud copy warsaw https://r.../demorama/raveonettes
+    # => Copied warsaw => https://r.../demorama/raveonettes
+
 ##List Command## {#ListCommand}
 
 To list the contents of a container:
@@ -115,12 +129,23 @@ To list the contents of a container:
     $ hpcloud list :demorama
     # => simple.txt
 
+To list the files in a shared (with cross tenant ACL) container:
+
+    $ hpcloud list https://r.../demorama/
+    # => https://r.../demorama/raveonettes
+    # => https://r.../demorama/analytics
+
 ##Get Command## {#GetCommand}
 
 To get an object to the local file system:
 
     $ hpcloud get :demorama2/simpler.txt
     # => Copied :demorama2/simpler.txt => simpler.txt
+
+To get a shared (with cross tenant ACL) object to the local file system:
+
+    $ hpcloud get https://r.../demorama/raveonettes
+    # => Copied https://r.../demorama/raveonettes => .
 
 ##Move Command## {#MoveCommand}
 
@@ -139,25 +164,39 @@ To move objects between container:
 
 ##ACL Commands## {#AclCommands}
 
-To get ACLs for an existing container:
-
-    $ hpcloud acl :demorama
-    # => private
-
 To get ACLs for an existing object:
 
-    $ hpcloud acl :demorama/simple.txt
-    # => private
+    $ hpcloud acl :demorama
+    +--------+-------------------+------------------+-------------------------+
+    | public | readers           | writers          | public_url              |
+    +--------+-------------------+------------------+-------------------------+
+    | no     | luke@starwars.com | han@starwars.com | https://hp...8/demorama |
+    +--------+-------------------+------------------+-------------------------+
 
-To set an ACL for an existing container:
+To set a public ACL for an existing container:
 
-    $ hpcloud acl:set :demorama public-read
-    # => ACL for :demorama updated to public-read.
+    $ hpcloud acl:grant :demorama r
+    ACL for :demorama updated to public-read.
 
-To set an ACL for an existing object:
+To set a cross-tenant ACL for an existing container:
 
-    $ hpcloud acl:set :demorama/simple.txt public-read
-    # => ACL for :demorama/simple.txt updated to public-read.
+    $ hpcloud acl:grant :demorama r luke@starwars.com
+    ACL for :demorama updated to r for luke@starwars.com.
+
+To set a read and write cross-tenant ACL for an existing container:
+
+    $ hpcloud acl:grant :demorama rw han@starwars.com
+    ACL for :demorama updated to rw for han@starwars.com.
+
+To revoke a public ACL from a container:
+
+    $ hpcloud acl:revoke :demorama r
+    Revoked public-read from :demorama
+
+To revoke a cross-tenant ACL from a container:
+
+    $ hpcloud acl:revoke :demorama r luke@starwars.com
+    Revoked r for luke@starwars.com from :demorama
 
 ##Location Command## {#LocationCommand}
 
