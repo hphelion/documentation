@@ -11,6 +11,7 @@ These are the release notes for the HP Cloud services UNIX CLI.  The current rel
 * [Release 1.1.0 Features](#v1_1_0)
 * [Release 1.0.1 Features](#v1_0_1)
 * [Release 0.0.15 Features](#v0_0_15)
+
 ##Release 1.3.0 Features## {#v1_3_0}
 
 This release was made available on 11/20/2012 and contains the following new features:
@@ -108,4 +109,3 @@ This release contains the following new features:
 ###Known Issues###
 
 * None for this release.
-
