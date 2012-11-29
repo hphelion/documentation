@@ -4,16 +4,13 @@ title: "Release Notes for the HP Cloud Services UNIX CLI"
 permalink: /cli/unix/release-notes/
 
 ---
-# Release Notes for the HP Cloud Services UNIX CLI
-
-These are the release notes for the HP Cloud services UNIX CLI.  The current release number for the [UNIX CLI software](/cli/unix) is version , released on 11/16/12.
+These are the release notes for the HP Cloud services UNIX CLI.  The current release number for the [UNIX CLI software](/cli/unix) is version , released on 11/29/12.
 
 * [Release 1.3.0 Features](#v1_3_0)
 * [Release 1.2.0 Features](#v1_2_0)
 * [Release 1.1.0 Features](#v1_1_0)
 * [Release 1.0.1 Features](#v1_0_1)
 * [Release 0.0.15 Features](#v0_0_15)
-
 ##Release 1.3.0 Features## {#v1_3_0}
 
 This release was made available on 11/20/2012 and contains the following new features:
@@ -60,6 +57,8 @@ This release was made available on 10/22/2012 and contains the following new fea
 
 ##Release 1.1.0 Features## {#v1_1_0}
 
+This release contains the following new features:
+
 * The following additions and modifications to the `config:list` command to support multiple account files:
   - `account:list` command that lists accounts and shows account settings
   - `account:update` command to modify accounts settings
@@ -73,12 +72,15 @@ This release was made available on 10/22/2012 and contains the following new fea
 * Fixed mime type detection error, which could cause a non-text file (for example a `.js` file) to be incorrectly identified as text file, has been fixed
 * Copy/move operation now functional in Ruby v1.8.7
 
+
 ###Known Issues###
 
 * None for this release.
 
 
 ##Release 1.0.1 Features## {#v1_0_1}
+
+This release contains the following new features:
 
 * Support for listing, adding, attaching, detaching and removing block volumes
 * Progress bar added for file copy local to remote and remote to local
@@ -95,6 +97,8 @@ This release was made available on 10/22/2012 and contains the following new fea
 
 ##Release 0.0.15 Features## {#v0_0_15}
 
+This release contains the following new features:
+
 * Optional switch added to all commands to specify availability zone
 * New command config added to list the existing configuration settings
 * Support for availability zone 3 (AZ3) and future availability zones for all services added
@@ -104,3 +108,4 @@ This release was made available on 10/22/2012 and contains the following new fea
 ###Known Issues###
 
 * None for this release.
+
