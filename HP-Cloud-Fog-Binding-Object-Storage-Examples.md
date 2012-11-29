@@ -7,6 +7,8 @@ permalink: /bindings/fog/object-storage/
 The HP Cloud services provides object storage support via both the model abstraction and the request abstraction.  Executing commands in both layers are detailed
 in this page. 
 
+<!--ACLs in separate section-->
+
 The examples on this page can be executed from within a Ruby console (IRB):
 
         irb
@@ -82,7 +84,38 @@ For information on connecting to the service, please see the [Connecting to the 
         # creates a TempUrl to access sample.txt and access expires in 240 secs
         file.temp_signed_url(240, "GET")
 
-10. Use the shared URLs to get the contents of a shared container:
+10. Delete a file/object from an existing directory/container
+
+        dir = conn.directories.get("fog-rocks")
+        file = dir.files.get("sample.txt")
+        file.destroy
+        # chaining a series of calls to delete a file
+        conn.directories.get("fog-rocks").files.get("another-sample.txt").destroy
+
+11. Delete an existing directory/container
+
+        # Note: directory needs to be empty before it can be deleted!
+        conn.directories.get("fog-rocks").destroy
+
+**Note**: You cannot use the create, update, or delete operations on a shared container.
+
+###Using Object ACLs### {#UsingObjectACLsModelLayer}
+
+Object ACLs allow you to share containers and objects with other registered HP Cloud Services users.  The owner of a container or object can grant read, write, read/write access to other users.  The shared containers and objects can then be accessed based on the permissions granted by the owner.
+
+To grant access to an object or container:
+
+    mydir = conn.directories.get('rgtest2')  # Note: grant uses username. in my case it is email as my username is email address
+    mydir.grant("rw", ["rupakg+fog2@gmail.com"])
+    mydir.save                               # share the url for access to container
+    mydir.public_url
+     => "https://objects.rndd.aw1.hpcloud.net:443/v1/91545177658759/rgtest2"
+     
+    myfile = mydir.files.get("sample.txt")   # share the url for access to object
+    myfile.public_url
+     => "https://objects.rndd.aw1.hpcloud.net:443/v1/91545177658759/rgtest2/sample.txt"
+     
+1. Use the shared URLs to get the contents of a shared container:
 
         sd = conn2.shared_directories.get(mydir.public_url)
          =>   Fog::Storage::HP::SharedDirectory
@@ -121,7 +154,7 @@ For information on connecting to the service, please see the [Connecting to the 
     
   **Note**: If the grantee does not have access, the system generates an exception of type `Fog::HP::Errors::Forbidden`.
         
-11. Use the shared URLs to get the metadata for a container:
+2. Use the shared URLs to get the metadata for a container:
 
         sd = conn2.shared_directories.head(mydir.public_url)
           =>   Fog::Storage::HP::SharedDirectory
@@ -131,24 +164,24 @@ For information on connecting to the service, please see the [Connecting to the 
     
   **Note**: If the grantee does not have access, the system generates an exception of type `Fog::HP::Errors::Forbidden`.
 
-12. Use the shared URLs to get the contents of a shared object:
+3. Use the shared URLs to get the contents of a shared object:
 
         sd = conn2.shared_directories.get(mydir.public_url)
         sf = sd.files.get('sample.txt')
         
-13. Use the shared URLs to get the metadata for a shared object
+4. Use the shared URLs to get the metadata for a shared object
 
         sd = conn2.shared_directories.get(mydir.public_url)
         sf = sd.files.head('sample.txt')
         
-14. Use the shared URLs to put a new object or file into a shared container:
+5. Use the shared URLs to put a new object or file into a shared container:
 
         sd = conn2.shared_directories.get(mydir.public_url)
         sf = sd.files.create(:key => 'tiny2.txt', :body => "This is another text file.")
         
   **Note**: If the grantee does not have access, the system generates an exception of type `Fog::HP::Errors::Forbidden`.
         
-15. Use the shared URLs to update an existing object or file in a shared container:
+6. Use the shared URLs to update an existing object or file in a shared container:
 
         sd = conn2.shared_directories.get(mydir.public_url)
         sf = sd.files.new(:key => 'sample.txt')
@@ -157,25 +190,10 @@ For information on connecting to the service, please see the [Connecting to the 
         
   **Note**: If the grantee does not have access, the system generates an exception of type `Fog::HP::Errors::Forbidden`.
         
-16. Use the shared URLs to delete an existing object or file from a shared container:
+7. Use the shared URLs to delete an existing object or file from a shared container:
 
         sd = conn2.shared_directories.get(mydir.public_url)
         sd.destroy
-
-17. Delete a file/object from an existing directory/container
-
-        dir = conn.directories.get("fog-rocks")
-        file = dir.files.get("sample.txt")
-        file.destroy
-        # chaining a series of calls to delete a file
-        conn.directories.get("fog-rocks").files.get("another-sample.txt").destroy
-
-18. Delete an existing directory/container
-
-        # Note: directory needs to be empty before it can be deleted!
-        conn.directories.get("fog-rocks").destroy
-
-**Note**: You cannot use the create, update, or delete operations on a shared container.
 
 ##Using the Request Abstraction## {#UsingtheRequestAbstraction}
 
@@ -263,7 +281,21 @@ For information on connecting to the service, please see the [Connecting to the 
         # creates a TempUrl to access sample.txt and access expires in 240 secs
         conn.get_object_temp_url("fog-rocks", "sample.txt", 240, "GET")
         
-11. Use the shared URLs to get the contents of a shared container: 
+11. Delete a file from an existing container
+
+        conn.delete_object("fog-rocks", "sample.txt")
+        conn.delete_object("fog-rocks", "another-sample.txt")
+
+12. Delete an existing container
+
+        # Note: a container needs to be empty before it can be deleted!
+        conn.delete_container("fog-rocks")
+        
+###Using Object ACLs### {#UsingObjectACLsRequestLayer}
+
+To use object ACLs in the request abstraction layer, you need to have already been granted permission to access the objects or containers.  (See the section on [Using Object ACLs](#UsingObjectACLsModelLayer) in the Model Layer section above for information on granting access.)
+
+1. Use the shared URLs to get the contents of a shared container: 
 
         conn2.get_shared_container(mydir.public_url)
          => #<Excon::Response:0x007fb03410d718 @body=[{"name"=>"sample.txt",                         
@@ -281,7 +313,7 @@ For information on connecting to the service, please see the [Connecting to the 
 
   **Note**: If the grantee does not have access, the system generates an exception of type `Fog::HP::Errors::Forbidden`.
 
-12. Use the shared URLs to get the metadate of a shared container:
+2. Use the shared URLs to get the metadate of a shared container:
 
         conn2.head_shared_container(mydir.public_url)
          => #<Excon::Response:0x007fb0339e6070 @body="", 
@@ -295,7 +327,7 @@ For information on connecting to the service, please see the [Connecting to the 
 
   **Note**: If the grantee does not have access, the system generates an exception of type `Fog::HP::Errors::Forbidden`.
   
-13. Use the shared URLs to get the contents of a shared object:
+3. Use the shared URLs to get the contents of a shared object:
 
         conn2.get_shared_object(myfile.public_url)
          => #<Excon::Response:0x007fb033b029e0 @body="This is a sample text.\n",
@@ -308,7 +340,7 @@ For information on connecting to the service, please see the [Connecting to the 
            "Date"=>"Wed, 17 Oct 2012 17:28:45 GMT"}, 
            status200
         
-14. Use the shared URLs to get the metadata for a shared object
+4. Use the shared URLs to get the metadata for a shared object
 
         conn2.head_shared_object(myfile.public_url)
          => #<Excon::Response:0x007fb0338c7e00 @body="", 
@@ -321,7 +353,7 @@ For information on connecting to the service, please see the [Connecting to the 
            "Date"=>"Wed, 17 Oct 2012 17:39:23 GMT"}, 
            status200
         
-15. Use the shared URLs to put a new object or file into a shared container:
+5. Use the shared URLs to put a new object or file into a shared container:
 
         conn2.put_shared_object(mydir.public_url, 'tiny.txt', File.read('tiny.txt'))
          => #<Excon::Response:0x007fd51d979380 @body="201 Created\n\n\n\n   ",
@@ -334,7 +366,7 @@ For information on connecting to the service, please see the [Connecting to the 
         
   **Note**: If the grantee does not have access, the system generates an exception of type `Fog::HP::Errors::Forbidden`.
         
-16. Use the shared URLs to update an existing object or file in a shared container:
+6. Use the shared URLs to update an existing object or file in a shared container:
 
         conn2.put_shared_object(mydir.public_url, 'sample.txt', "This text needed some update.")
          => #<Excon::Response:0x007fd51ba2a588 @body="201 Created\n\n\n\n   ",
@@ -348,7 +380,7 @@ For information on connecting to the service, please see the [Connecting to the 
         
   **Note**: If the grantee does not have access, the system generates an exception of type `Fog::HP::Errors::Forbidden`.
         
-17. Use the shared URLs to delete an existing object or file from a shared container:
+7. Use the shared URLs to delete an existing object or file from a shared container:
 
         conn2.delete_shared_object(myfile.public_url)
          => #<Excon::Response:0x007ffe1452e5d0 @body="", 
@@ -357,13 +389,3 @@ For information on connecting to the service, please see the [Connecting to the 
            "X-Trans-Id"=>"txb452f6f2761447e6ba54eec3373164a5", 
            "Date"=>"Wed, 31 Oct 2012 15:02:44 GMT"}, 
            status204
-
-18. Delete a file from an existing container
-
-        conn.delete_object("fog-rocks", "sample.txt")
-        conn.delete_object("fog-rocks", "another-sample.txt")
-
-19. Delete an existing container
-
-        # Note: a container needs to be empty before it can be deleted!
-        conn.delete_container("fog-rocks")
