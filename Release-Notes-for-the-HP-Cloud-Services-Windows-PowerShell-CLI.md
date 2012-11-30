@@ -6,26 +6,29 @@ permalink: /cli/windows/release-notes/
 ---
 # Release Notes for the HP Cloud Services Windows PowerShell CLI
 
-These are the release notes for the HP Cloud services Windows PowerShell CLI.  The current release number for the [Windows PowerShell CLI software](/cli/windows) is version 1.3.2.3, released on 12/3/2012.  These release notes contain the following information:
+# Release Notes for the HP Cloud Services Windows PowerShell CLI
 
-* [Release 1.3.2.3 Features](#v1323)
+These are the release notes for the HP Cloud services Windows PowerShell CLI.  The current release number for the [Windows PowerShell CLI software](/cli/windows) is version 1.3.2.4, released on 12/3/2012.  These release notes contain the following information:
+
+* [Release 1.3.2.2 Features](#v1322)
 * [Release 1.3.1.9 Features](#v1319)
 * [Release 1.3.0.6 Features](#v1306)
 * [Release 1.3.0.1 Features](#v1301)
 * [Release 1.2.0.6 Features](#v1206)
 * [Release 1.2.0.1 Features](#v1201)
 
-##Release 1.3.2.3 Features## {#v1323}
+##Release 1.3.2.2 Features## {#v1322}
 
 This release was made available on 12/3/2012 and contains the following new features:
 
-* The server keyname is now displayed when you list the available servers
-* The requirement to supply a Keyname argument when using the `Connect-Server` command to connect to a non-Windows-based image has been removed
-* You are now prompted for the `putty.exe` path when you use the `Connect-Server` command to connect to a non-Windows-based image if the path hasn't been preconfigured
+* The `Connect-Server` cmdlet now works with non-Windows instances in conjunction with *putty.exe*.
+* New argument for `Get-Zones` cmdlet. Adding `–v` will return more details about each zone including containers in that zone and available services. Example: `get-zones -v`.
+* The `Set-Zone` cmdlet shows more details about the newly selected zone including containers in that zone and the available services.
 
 ##Known Issues##
 
 * **Resolved**: You can now add a new security group rule to an existing security group.
+* **Resolved**: The server keyname is now displayed when you list the available servers.
 
 ##Release 1.3.1.9 Features## {#v1319}
 
