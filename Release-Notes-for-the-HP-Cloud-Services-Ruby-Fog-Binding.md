@@ -18,7 +18,7 @@ These are the release notes for the HP Cloud services Ruby Fog bindings.  The cu
 This release was made available on 12/3/2012 and contains the following new features:
 
 * Support for using access control lists (ACLs) to share objects and containers
-* Updates to the `create_server` and `create_volume` commands to support bootable volumes
+* Updates to the `create_server` and `create_volume` commands to support bootable volumes and persistent instances
 
 ##Known Issues##
 
