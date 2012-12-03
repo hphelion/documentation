@@ -22,7 +22,7 @@ This release was made available on 11/20/2012 and contains the following new fea
 * Commands `cdn:containers:add` and `cdn:containers:remove` now accept multiple arguments
 * CLI help text significantly updated
 * Default account can be set to any configured account
-* Commands `acl:grant` and `acl:revoke` added to provide Support for cross tenant ACLs
+* Commands `acl:grant` and `acl:revoke` added to provide Support for cross-tenant access control lists (ACLs)
 * Command `volumes:add` added to provide support for bootable volume creation
 * Command `servers:add` added to provide support for creating a server from a bootable volume
 
