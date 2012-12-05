@@ -2,6 +2,7 @@
 layout: default
 title: "HP Cloud Identity Service API"
 permalink: /identity/api/
+product: identity
 
 ---
 # HP Cloud Identity Service API

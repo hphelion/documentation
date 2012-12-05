@@ -2,6 +2,7 @@
 layout: default
 title: "Windows Command Line Interface"
 permalink: /cli/windows/
+product: win-cli
 
 ---
 # Windows Command Line Interface

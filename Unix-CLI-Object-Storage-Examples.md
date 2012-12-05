@@ -2,6 +2,7 @@
 layout: default
 title: "Unix CLI Object Storage Examples"
 permalink: /cli/unix/object-storage/
+product: unix-cli
 
 ---
 # Unix CLI Object Storage Examples

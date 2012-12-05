@@ -2,6 +2,7 @@
 layout: default
 title: "Windows CLI Compute Examples"
 permalink: /cli/windows/compute/
+product: win-cli
 
 ---
 # Windows CLI Compute Examples

@@ -2,6 +2,7 @@
 layout: default
 title: "Windows CLI: Folder Copy Operations"
 permalink: /cli/win/folder-operations/
+product: win-cli
 
 ---
 # Windows CLI: Folder Copy Operations

@@ -2,6 +2,7 @@
 layout: default
 title: "HP Cloud Services Ruby Fog Binding Installation"
 permalink: /bindings/fog/install/
+product: fog
 
 ---
 # HP Cloud Services Ruby Fog Binding Installation

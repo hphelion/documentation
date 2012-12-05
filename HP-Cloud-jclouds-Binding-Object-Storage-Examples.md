@@ -2,6 +2,7 @@
 layout: default
 title: "HP Cloud jclouds Binding Object Storage Examples"
 permalink: /bindings/jclouds/object-storage/
+product: jclouds
 
 ---
 # HP Cloud jclouds Binding Object Storage Examples

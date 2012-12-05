@@ -2,6 +2,7 @@
 layout: default
 title: "Windows CLI Block Storage Examples"
 permalink: /cli/windows/block-storage/
+product: win-cli
 
 ---
 # Windows CLI Block Storage Examples

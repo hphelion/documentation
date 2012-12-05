@@ -2,6 +2,7 @@
 layout: default
 title: "HP Cloud Services UNIX CLI Volume Management"
 permalink: /block-storage/volume/
+product: block-storage
 
 ---
 # HP Cloud Services UNIX CLI Volume Management

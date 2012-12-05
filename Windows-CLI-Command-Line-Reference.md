@@ -1,10 +1,11 @@
-<!-- Removed all html tags -->
 ---
 layout: default
 title: "Windows CLI: Command Line Reference"
 permalink: /cli/windows/reference/
+product: win-cli
 
 ---
+<!-- Removed all html tags -->
 # Windows CLI: Command Line Reference
 
 Below you can find a full reference of supported Windows PowerShell command-line interface (CLI) commands.  The commands are broken up into separate sections by functional area:

@@ -2,6 +2,7 @@
 layout: default
 title: "Connecting to the HP Cloud Service"
 permalink: /bindings/fog/connect/
+product: fog
 
 ---
 # Connecting to the HP Cloud Service

@@ -2,6 +2,7 @@
 layout: default
 title: "UNIX CLI Compute Examples"
 permalink: /cli/unix/compute/
+product: unix-cli
 
 ---
 # UNIX CLI Compute Examples

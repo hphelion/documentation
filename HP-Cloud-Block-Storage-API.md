@@ -2,6 +2,7 @@
 layout: default
 title: "HP Cloud Block Storage API"
 permalink: /block-storage/api/
+product: block-storage
 
 ---
 # HP Cloud Block Storage API

@@ -2,6 +2,7 @@
 layout: default
 title: "HP Cloud Compute API"
 permalink: /compute/api/
+product: compute
 
 ---
 # HP Cloud Compute API

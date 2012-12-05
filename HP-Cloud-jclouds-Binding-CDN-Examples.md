@@ -2,6 +2,7 @@
 layout: default
 title: "HP Cloud jclouds Binding CDN Examples"
 permalink: /bindings/jclouds/cdn/
+product: jclouds
 
 ---
 # HP Cloud jclouds Binding CDN Examples

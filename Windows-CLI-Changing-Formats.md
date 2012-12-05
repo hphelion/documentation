@@ -2,6 +2,7 @@
 layout: default
 title: "Windows CLI: Changing Formats"
 permalink: /cli/win/response-formats/
+product: win-cli
 
 ---
 # Windows CLI: Changing Formats

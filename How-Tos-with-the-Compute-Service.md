@@ -2,6 +2,7 @@
 layout: default
 title: "How To's with the Compute Service"
 permalink: /compute/using/
+product: compute
 
 ---
 # How To's with the Compute Service

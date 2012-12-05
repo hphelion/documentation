@@ -2,6 +2,7 @@
 layout: default
 title: "HP Cloud jcloud Bindings Compute Examples"
 permalink: /bindings/jclouds/compute/
+product: jclouds
 
 ---
 # HP Cloud jcloud Bindings Compute Examples

@@ -2,6 +2,7 @@
 layout: default
 title: "Windows CLI: Deleting and Moving Files"
 permalink: /cli/win/deleting-and-moving-files/
+product: win-cli
 
 ---
 # Windows CLI: Deleting and Moving Files

@@ -2,6 +2,7 @@
 layout: default
 title: "Release Notes for the HP Cloud Services Ruby Fog Binding"
 permalink: /bindings/fog/release-notes/
+product: fog
 
 ---
 # Release Notes for the HP Cloud Services Ruby Fog Binding

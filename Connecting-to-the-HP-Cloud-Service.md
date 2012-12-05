@@ -3,6 +3,7 @@ layout: default
 title: "Connecting to the HP Cloud Service"
 permalink: /bindings/jclouds/connecting/
 published: false
+product: jclouds
 
 ---
 # Connecting to the HP Cloud Service

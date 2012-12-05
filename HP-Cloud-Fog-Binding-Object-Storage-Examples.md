@@ -2,6 +2,7 @@
 layout: default
 title: "HP Cloud Fog Binding Object Storage Examples"
 permalink: /bindings/fog/object-storage/
+product: fog
 
 ---
 The HP Cloud services provides object storage support via both the model abstraction and the request abstraction.  Executing commands in both layers are detailed

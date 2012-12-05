@@ -2,6 +2,7 @@
 layout: default
 title: "HP Cloud Compute Overview"
 permalink: /compute/
+product: compute
 
 ---
 # HP Cloud Compute Overview

@@ -2,6 +2,7 @@
 layout: default
 title: "HP Cloud jclouds Java/Clojure Bindings"
 permalink: /bindings/jclouds/
+product: jclouds
 
 ---
 # HP Cloud jclouds Java/Clojure Bindings

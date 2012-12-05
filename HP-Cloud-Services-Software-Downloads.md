@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Cloud Services Software Downloads"
-permalink: //downloads/
+permalink: /downloads/
 published: false
 
 ---

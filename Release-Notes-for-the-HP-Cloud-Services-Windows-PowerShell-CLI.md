@@ -2,6 +2,7 @@
 layout: default
 title: "Release Notes for the HP Cloud Services Windows PowerShell CLI"
 permalink: /cli/windows/release-notes/
+product: win-cli
 
 ---
 # Release Notes for the HP Cloud Services Windows PowerShell CLI

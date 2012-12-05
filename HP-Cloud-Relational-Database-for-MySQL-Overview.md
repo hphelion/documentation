@@ -2,6 +2,7 @@
 layout: default
 title: "HP Cloud Relational Database for MySQL Overview"
 permalink: /dbaas/
+product: dbaas
 
 ---
 # HP Cloud Relational Database for MySQL Overview

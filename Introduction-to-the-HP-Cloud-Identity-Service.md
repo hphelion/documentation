@@ -2,6 +2,7 @@
 layout: default
 title: "Introduction to the HP Cloud Identity Service"
 permalink: /node/38
+product: identity
 
 ---
 # Introduction to the HP Cloud Identity Service
