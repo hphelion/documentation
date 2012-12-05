@@ -1,8 +1,9 @@
 ---
 layout: default
 title: "HP Cloud Services Windows PowerShell Tutorials"
-permalink: //cli/windows/tutorials/
+permalink: /cli/windows/tutorials/
 published: false
+product: win-cli
 
 ---
 # HP Cloud Services Windows PowerShell Tutorials

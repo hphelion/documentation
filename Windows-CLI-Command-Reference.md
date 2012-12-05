@@ -2,6 +2,7 @@
 layout: default
 title: "Windows CLI: Command Reference"
 permalink: /cli/win/command-reference/
+product: win-cli
 
 ---
 # Windows CLI: Command Reference

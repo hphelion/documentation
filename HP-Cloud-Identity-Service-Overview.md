@@ -2,6 +2,7 @@
 layout: default
 title: "HP Cloud Identity Service Overview"
 permalink: /identity/
+product: identity
 
 ---
 # HP Cloud Identity Service Overview

@@ -3,6 +3,7 @@ layout: default
 title: "UNIX CLI: Getting Help"
 permalink: /cli/unix/help/
 published: false
+product: unix-cli
 
 ---
 # UNIX CLI: Getting Help

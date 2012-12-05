@@ -2,27 +2,46 @@
 layout: default
 title: "Release Notes for the HP Cloud Services UNIX CLI"
 permalink: /cli/unix/release-notes/
+product: unix-cli
 
 ---
-# Release Notes for the HP Cloud Services UNIX CLI
+These are the release notes for the HP Cloud services UNIX CLI.  The current release number for the [UNIX CLI software](/cli/unix) is version , released on 11/29/12.
 
-These are the release notes for the HP Cloud services UNIX CLI.  The current release number for the [UNIX CLI software](/cli/unix) is version 1.2.0, released on 10/22/2012.  These release notes contain the following information:
+* [Release 1.3.0 Features](#v1_3_0)
+* [Release 1.2.0 Features](#v1_2_0)
+* [Release 1.1.0 Features](#v1_1_0)
+* [Release 1.0.1 Features](#v1_0_1)
+* [Release 0.0.15 Features](#v0_0_15)
 
-* [Release 1.2.0 Information](#1.2.0)
-* [Release 1.1.0 Information](#1.1.0)
-* [Release 1.0.1 Information](#1.0.1)
-* [Release 0.0.15 Information](#0.0.15)
+##Release 1.3.0 Features## {#v1_3_0}
 
-##Release 1.2.0 Information## {#1.2.0}
+This release was made available on 11/20/2012 and contains the following new features:
 
-Released on 10/22/2012.
+* Command `servers:rebuild` added
+* Option `-m` added to the `copy` command to allow you to override the mime type
+* Option `-s` added to the `cdn:containers:location` command to print the SSL and non-SSL URLs for CDN objects
+* Commands `cdn:containers:add` and `cdn:containers:remove` now accept multiple arguments
+* CLI help text significantly updated
+* Default account can be set to any configured account
+* Commands `acl:grant` and `acl:revoke` added to provide Support for cross-tenant access control lists (ACLs)
+* Command `volumes:add` added to provide support for bootable volume creation
+* Command `servers:add` added to provide support for creating a server from a bootable volume
 
-###New Features###
+**Note**: This release of the UNIX CLI requires the [Ruby Fog v0.0.18](https://docs.hpcloud.com/bindings/fog/install) binding.
 
-* Requires [Fog v0.0.17](/bindings/fog/install)
+###Known Issues###
+
+* The syntax of the `servers:add` command has changed; you must pass in an image or volume with the `-i` or `-v` option, respectively
+* Command `acl` displays data as a table
+
+
+##Release 1.2.0 Features## {#v1_2_0}
+
+This release was made available on 10/22/2012 and contains the following new features:
+
 * Support for adding Windows servers from existing windows images 
 * Support for creating and removing server image snapshots
-* Support for creating a [Temporary URL](/cli/unix/object-storage#TmpurlCommand) for a file or object for sharing purposes
+* Support for creating a [Temporary URL](https://docs.hpcloud.com/cli/unix/object-storage#TmpurlCommand) for a file or object for sharing purposes
 * Generated reports and CLI arguments have been standardized for the following:
   - addresses
   - flavors
@@ -30,18 +49,17 @@ Released on 10/22/2012.
   - security groups
   - servers
   - object store commands
+  
+**Note**: This release of the UNIX CLI requires the [Ruby Fog v0.0.17](https://docs.hpcloud.com/bindings/fog/install) binding.
 
 ###Known Issues###
 
-None in this release.
+* None for this release.
 
-###Resolved Issues in Version 1.2.0###
 
-None in this release.
+##Release 1.1.0 Features## {#v1_1_0}
 
-##Release 1.1.0 Information## {#1.1.0}
-
-###New Features###
+This release contains the following new features:
 
 * The following additions and modifications to the `config:list` command to support multiple account files:
   - `account:list` command that lists accounts and shows account settings
@@ -53,48 +71,42 @@ None in this release.
 * `config:set` command now accepts name value pairs
 * `config:list` command added to allow you to display the current configuration
 * `cdn:containers` command modified so that the `-l` option generates the long listing of containers
+* Fixed mime type detection error, which could cause a non-text file (for example a `.js` file) to be incorrectly identified as text file, has been fixed
+* Copy/move operation now functional in Ruby v1.8.7
+
 
 ###Known Issues###
 
-None in this release.
+* None for this release.
 
-###Resolved Issues in Version 1.1.0###
 
-* Mime type detection error, which could cause a non-text file (for example a `.js` file) to be incorrectly identified as text file, has been fixed
-* Copy/move operation now functional in Ruby v1.8.7
+##Release 1.0.1 Features## {#v1_0_1}
 
-##Release 1.0.1 Information## {#1.0.1}
-
-###New Features###
+This release contains the following new features:
 
 * Support for listing, adding, attaching, detaching and removing block volumes
 * Progress bar added for file copy local to remote and remote to local
 * Support for adding, updating, and deleting metadata for images and servers
 * Support for recursive copy of directories from local to remote, from remote to local, and from remote to remote
 * Support for specifying multiple files on a copy command line using wildcards
+* Some performance improvements with storage container access
+* Removed deprecation message for ruby-progressbar by using version 0.0.10. If running hpcloud v1.0.0, need to manually uninstall ruby-progressbar gem before installing hpcloud v1.0.1 - *gem uninstall ruby-progressbar*
 
 ###Known Issues###
 
 * Copy/move operation not functional in Ruby v1.8.7
 
-###Resolved Issues in Version 1.0.1###
 
-* Some performance improvements with storage container access
-* Removed deprecation message for ruby-progressbar by using version 0.0.10. If running hpcloud v1.0.0, need to manually uninstall ruby-progressbar gem before installing hpcloud v1.0.1 - *gem uninstall ruby-progressbar*
+##Release 0.0.15 Features## {#v0_0_15}
 
-##Release 0.0.15 Information## {#0.0.15}
-
-###New Features###
+This release contains the following new features:
 
 * Optional switch added to all commands to specify availability zone
 * New command config added to list the existing configuration settings
 * Support for availability zone 3 (AZ3) and future availability zones for all services added
 * Option to add a security group rule by using a source group added
+* When either storage or compute is deactivated, you can now connect to the account using the `hpcloud account:setup` command.
 
 ###Known Issues###
 
-None in this release.
-
-###Resolved Issues in Version 0.0.15###
-
-* When either storage or compute is deactivated, you can not connect to the account using the `hpcloud account:setup` command.
+* None for this release.

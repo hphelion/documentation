@@ -2,6 +2,7 @@
 layout: default
 title: "HP Cloud Compute EC2 Compatibility Method List"
 permalink: /ec2-compatibility-method-list/
+product: compute
 
 ---
 # HP Cloud Compute EC2 Compatibility Method List

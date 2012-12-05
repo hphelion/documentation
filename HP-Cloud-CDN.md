@@ -2,6 +2,7 @@
 layout: default
 title: "HP Cloud CDN"
 permalink: /cdn/
+product: cdn
 
 ---
 # HP Cloud CDN

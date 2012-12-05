@@ -2,6 +2,7 @@
 layout: default
 title: "HP Cloud Services UNIX CLI Installation"
 permalink: /cli/unix/install/
+product: unix-cli
 
 ---
 # HP Cloud Services UNIX CLI Installation

@@ -2,6 +2,7 @@
 layout: default
 title: "Windows CLI : Getting Help"
 permalink: /cli/windows/help/
+product: win-cli
 
 ---
 # Windows CLI : Getting Help

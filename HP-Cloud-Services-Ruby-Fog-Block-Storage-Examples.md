@@ -2,10 +2,9 @@
 layout: default
 title: "HP Cloud Services Ruby Fog Block Storage Examples"
 permalink: /bindings/fog/block-storage/
+product: fog
 
 ---
-# HP Cloud Services Ruby Fog Block Storage Examples
-
 HP Cloud services block storage provides support for volumes and snapshots. A volume can store boot images, user data or both. They provide customers with persistent and flexible permanent storage. You can think of it as list of USB devices, that can be plugged in anywhere at will. Volumes can be attached to server instances and mounted. 
 
 Snapshots are saved volume images at specific moments in time. You can take a snapshot of a volume and then use that snapshot to create a new volume.
@@ -44,7 +43,7 @@ This section discusses the volume operations you can perform using the model abs
         volumes = conn.volumes
         volumes.size   # returns no. of volumes
         # display volumes in a tabular format
-        conn.volumes.table([:id, :name, :state, :created_at])
+        volumes.table([:id, :name, :state, :created_at])
 
 2. Obtain the details of a particular volume
 
@@ -53,7 +52,22 @@ This section discusses the volume operations you can perform using the model abs
         volume.created_at                   # returns the date the volume was created
         volume.status                        # returns the state of the volume e.g. available, in-use
 
-3. Create a new volume
+3. List all available bootable volumes for an account
+
+        bootable_volumes = conn.volumes.all(:only_bootable => true)
+        bootable_volumes.size   # returns no. of bootable volumes
+        # display bootable volumes in a tabular format
+        bootable_volumes.table([:id, :name, :state, :created_at])
+
+4. Obtain the details of a particular bootable volume
+
+        bootable_volumes = conn.volumes.all(:only_bootable => true)
+        volume = bootable_volumes.get(volume_id)
+        volume.name                         # returns name of the bootable volume
+        volume.created_at                  # returns the date the bootable volume was created
+        volume.status                        # returns the state of the bootable volume e.g. available, in-use
+
+5. Create a new volume
 
         new_volume = conn.volumes.create(
                :name => "TestVolume",
@@ -63,7 +77,7 @@ This section discusses the volume operations you can perform using the model abs
         new_volume.name     # => "TestVolume"
         new_volume.status    # returns the status of the volume e.g. creating, available
  
-4. Create a new volume from an existing snapshot
+6. Create a new volume from an existing snapshot
 
         new_volume = conn.volumes.create(
                :name => "TestVolume",
@@ -75,23 +89,33 @@ This section discusses the volume operations you can perform using the model abs
         new_volume.name     # => "TestVolume"
         new_volume.status    # returns the status of the volume e.g. creating, available
 
-Note: The size of the volume created from a snapshot will be same as the snapshot. The :size parameter has no effect in this case.
+**Note**: The size of the volume you create from a snapshot is the same as that of the snapshot. The `:size` parameter has no effect in this case.
 
-5. Attach an existing volume to an existing server
+7. Create a new bootable volume from an suitable single-part image
+
+        new_volume = conn.volumes.create(
+               :name => "BootVolume",
+               :description => "My Boot Volume",
+               :imageRef => image_id,
+               :size => 10)
+        new_volume.id       # returns the id of the volume
+**Note**: A bootable volume can be used to create a persistant server instance.
+
+8. Attach an existing volume to an existing server
 
         volume = conn.volumes.get(volume_id)
         volume.attach(server_id, device)
         # => true
 
-Note: The device parameter is the mount point on the server instance that the volume will be attached to, e.g. "/dev/sdf"
+**Note**: The device parameter is the mount point on the server instance to which the volume is attached (for example, `/dev/sdf`).
 
-6. Detach an existing volume
+9. Detach an existing volume
 
         volume = conn.volumes.get(volume_id)
         volume.detach
         # => true
 
-7. Delete an existing volume
+10. Delete an existing volume
 
         volume = conn.volumes.get(volume_id)
         volume.destroy
@@ -158,7 +182,22 @@ This section discusses the volume operations you can perform using the request a
         volume['size']                               # returns the size of the volume
         volume['status']                            # returns the status of the volume e.g. available, in-use
 
-3. Create a new volume
+3. List all available bootable volumes for an account
+
+        response = conn.list_bootable_volumes
+        response.body['volumes']                    # returns an array of bootable volume hashes
+        response.headers                            # returns the headers
+        response.body['volumes'][0]['displayName']         # returns the name of the bootable volume
+
+4. Obtain the details of a particular bootable volume
+
+        response = conn.get_bootable_volume_details(volume_id)
+        volume = response.body['volume']
+        volume['displayName']                  # returns the name of the bootable volume
+        volume['size']                               # returns the size of the bootable volume
+        volume['status']                            # returns the status of the bootable volume e.g. available, in-use
+
+5. Create a new volume
 
         response = conn.create_volume("demo-vol", "demo-vol-desc", 1)
         volume = response.body['volume']
@@ -167,7 +206,7 @@ This section discusses the volume operations you can perform using the request a
         volume['size']                             # => 1
         volume['status']                          # returns the status of the volume e.g. creating, available
 
-4. Create a new volume from an existing snapshot
+6. Create a new volume from an existing snapshot
 
         response = conn.create_volume("demo-vol", "demo-vol-desc", 1, {'snapshot_id' => 1})
         volume = response.body['volume']
@@ -176,17 +215,30 @@ This section discusses the volume operations you can perform using the request a
         volume['size']                             # => 1
         volume['snapshot_id']                 # => 1
         volume['status']                          # returns the status of the volume e.g. creating, available
-Note: The size of the volume created from a snapshot will be same as the snapshot. The third parameter i.e. the size, has no effect in this case.
 
-5. Attach an existing volume to an existing server
+**Note**: The size of the volume you create from a snapshot is the same as that of the snapshot. The third parameter (the size) has no effect in this case.
+
+7. Create a new bootable volume from an suitable single-part image
+
+        new_volume = conn.create_volume("TesBootVol", 
+                                                        "My Test Boot Volume", 
+                                                        10, 
+                                                        {"imageRef" => "image_id"}
+                                                     )
+        new_volume.id       # returns the id of the volume
+
+**Note**: You can use a bootable volume to create a persistant server instance.
+
+8. Attach an existing volume to an existing server
 
         response = conn.compute.attach_volume(server_id, volume_id, device)
         volume_attachment = response.body['volumeAttachment']
         volume_attachment['id']       # returns the id of the volume
         volume_attachment['volumeId']  # returns the id of the volume
-Note: The device parameter is the mount point on the server instance that the volume will be attached to, e.g. "/dev/sdf"
 
-6. List volumes attached to a server
+**Note**: The device parameter is the mount point on the server instance to which the volume is attached (for example, `/dev/sdf`)
+
+9. List volumes attached to a server
 
         response = conn.compute.list_server_volumes(server_id)
         volume_attachments = response.body['volumeAttachments']
@@ -194,11 +246,11 @@ Note: The device parameter is the mount point on the server instance that the vo
         volume_attachment[0]['volumeId']  # returns the id of the volume
         volume_attachment[0]['device']  # returns the device of the volume
 
-7. Detach an existing volume
+10. Detach an existing volume
 
         conn.detach_volume(server_id, volume_id)
 
-8. Delete an existing volume
+11. Delete an existing volume
 
         conn.delete_volume(volume_id)
 

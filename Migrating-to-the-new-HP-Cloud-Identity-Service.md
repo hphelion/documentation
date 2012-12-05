@@ -2,6 +2,7 @@
 layout: default
 title: "Migrating to the new HP Cloud Identity Service"
 permalink: /node/39
+product: identity
 
 ---
 # Migrating to the new HP Cloud Identity Service

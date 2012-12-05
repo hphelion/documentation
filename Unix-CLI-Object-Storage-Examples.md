@@ -2,8 +2,11 @@
 layout: default
 title: "Unix CLI Object Storage Examples"
 permalink: /cli/unix/object-storage/
+product: unix-cli
 
 ---
+# Unix CLI Object Storage Examples
+
 <iframe src="http://player.vimeo.com/video/32534203?title=0&amp;byline=0&amp;portrait=0" width="580" height="420" frameborder="0"> </iframe>
 
 This page gives you a few examples of how to perform various object storage tasks using the HP Cloud service.  This page discusses the following tasks:

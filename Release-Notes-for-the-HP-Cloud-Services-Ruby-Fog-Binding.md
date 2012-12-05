@@ -2,34 +2,45 @@
 layout: default
 title: "Release Notes for the HP Cloud Services Ruby Fog Binding"
 permalink: /bindings/fog/release-notes/
+product: fog
 
 ---
 # Release Notes for the HP Cloud Services Ruby Fog Binding
 
 These are the release notes for the HP Cloud services Ruby Fog bindings.  The current release number for the [HP Cloud Services Ruby Fog software bindings](/bindings) is version 0.0.17, released on Oct. 19th, 2012.  These release notes contain the following information:
 
-* [Release 0.0.17 Information](#0.0.17)
-* [Release 0.0.16 Information](#0.0.16)
-* [Release 0.0.15 Information](#0.0.15)
+* [Release 0.0.18 Information](#v0018)
+* [Release 0.0.17 Information](#v0017)
+* [Release 0.0.16 Information](#v0016)
+* [Release 0.0.15 Information](#v0015)
 
-##Release 0.0.17 Information## {#0.0.17}
+##Release 0.0.18 Information## {#v0018}
 
-###New Features in This Release###
+This release was made available on 12/3/2012 and contains the following new features:
+
+* Support for using access control lists (ACLs) to share objects and containers
+* Updates to the `create_server` and `create_volume` commands to support bootable volumes and persistent instances
+
+##Known Issues##
+
+None in this release.
+
+
+##Release 0.0.17 Information## {#v0017}
+
+This release was made available on 10/19/2012 and contains the following new features:
 
 * Support for creating a temporary URL for a file or object for sharing purposes
-* Support for creating a new Windows server instance from an existing keypair
+* Support for creating a new Windows server instance from an existing key pair
 
-###Known Issues###
-
-None in this release.
-
-###Resolved Issues in Version 0.0.16###
+##Known Issues##
 
 None in this release.
 
-##Release 0.0.16 Information## {#0.0.16}
 
-###New Features in This Release###
+##Release 0.0.16 Information## {#v0016}
+
+This release contains the following new features:
 
 * Support for `user_agent` string in the header added.  You can use a client application to set a User-Agent via the provider, so that the calling client can be identified.
 * Block storage support added.  See [the block storage examples](/bindings/fog/block-storage) page for details.
@@ -43,13 +54,10 @@ None in this release.
 
 None in this release.
 
-###Resolved Issues in Version 0.0.16###
 
-None in this release.
+##Release 0.0.15 Information## {#v0015}
 
-##Release 0.0.15 Information## {#0.0.15}
-
-###New Features in This Release###
+This release contains the following new features:
 
 * <i>Availability Zones</i>: You are required to set an availability zone to establish a connection; there is no default availability zone.
 * <i>MetaData</i>: The following features related to metadata have been added:
@@ -65,9 +73,5 @@ None in this release.
 * Quality of mocks modified to match implementation.
 
 ###Known Issues###
-
-None in this release.
-
-###Resolved Issues in Version 0.0.15###
 
 None in this release.

@@ -2,6 +2,7 @@
 layout: default
 title: "Windows CLI Object Storage Examples"
 permalink: /cli/windows/containers-and-folders/
+product: win-cli
 
 ---
 # Windows CLI Object Storage Examples

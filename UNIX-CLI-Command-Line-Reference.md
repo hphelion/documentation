@@ -2,17 +2,16 @@
 layout: default
 title: "UNIX CLI: Command Line Reference"
 permalink: /cli/unix/reference/
+product: unix-cli
 
 ---
-# UNIX CLI: Command Line Reference
-
 Below you can find a full reference of supported UNIX command-line interface (CLI) commands. The commands are alphabetized.  You can also use the <font face="Courier">hpcloud help [<em>command</em>]</font> tool (where <em>command</em> is the name of the command on which you want help, for example <font face="Courier">account:setup</font>) to display usage, description, and option information from the command line.
 
-<h2 id="account">account</h2>
+##account## {#account}
 List your accounts and account settings.
 
 ###Syntax
-<font face="Courier">hpcloud account [<i>account_name</i>]</font>
+`hpcloud account [account_name]`
 
 ###Description
 List your accounts and your account settings.
@@ -31,13 +30,13 @@ List your accounts and account settings for domain `useast`:
     hpcloud account:list useast
 
 ###Aliases
-<font face='courier'>account:list</font>
+`account:list`
 
-<h2 id="account:copy">account:copy</h2>
+##account:copy## {#account:copy}
 Copy account data to the specified account.
 
 ###Syntax
-<font face="Courier">hpcloud account:copy &lt;<i>from_account</i>&gt; &lt;<i>to_account</i>&gt;</font>
+`hpcloud account:copy <from_account> <to_account>`
 
 ###Description
 The copy command overwrites the destination account with the source account information.
@@ -48,11 +47,11 @@ Copy account `useast` to account `backup`:
     hpcloud account:copy useast backup
 
 
-<h2 id="account:edit">account:edit</h2>
+##account:edit## {#account:edit}
 Edit your account credentials.
 
 ###Syntax
-<font face="Courier">hpcloud account:edit [<i>account_name</i>]</font>
+`hpcloud account:edit [account_name]`
 
 ###Options
 <dl>
@@ -64,9 +63,9 @@ Set up or modify your account credentials. If you do not specify an account name
 
 You  need your Access Key Id, Secret Key and Tenant Id from the HP Cloud web site to set up your account. Optionally, you can specify your own endpoint to access, but in most cases we recommend you use the default.
 
-Availability zones typically have the format <font face='courier'>az-1.region-a.geo-1</font> or <font face='courier'>region-a.geo-1</font>, depending on the service.  See your account API keys page to see your list of activated availability zones: https://console.hpcloud.com/account/api_keys
+Availability zones typically have the format `az-1.region-a.geo-1` or `region-a.geo-1`, depending on the service.  See your account API keys page to see your list of activated availability zones: https://console.hpcloud.com/account/api_keys
 
-<font face='courier'>account:edit</font> prompts you for the following values:
+`account:edit` prompts you for the following values:
 
 * Access Key Id
 * Secret Key
@@ -79,16 +78,16 @@ Availability zones typically have the format <font face='courier'>az-1.region-a.
 You can re-run this command at any time to modify your settings.
 
 ###Examples
-Edit the <font face='courier'>default</font> account settings:
+Edit the 'default' account settings:
 
     hpcloud account:edit
 
 
-<h2 id="account:remove">account:remove</h2>
+##account:remove## {#account:remove}
 Remove accounts.
 
 ###Syntax
-<font face="Courier">hpcloud account:remove account_name [<i>account_name ...</i>]</font>
+`hpcloud account:remove account_name [account_name ...]`
 
 ###Description
 Remove accounts.  You may specify one or more account to remove on the command line.
@@ -99,13 +98,13 @@ Remove the `useast` and `uswest` accounts:
     hpcloud account:remove useast uswest
 
 ###Aliases
-<font face='courier'>account:rm, account:delete, account:del</font>
+`account:rm, account:delete, account:del`
 
-<h2 id="account:setup">account:setup</h2>
+##account:setup## {#account:setup}
 Set up or modify your credentials.
 
 ###Syntax
-<font face="Courier">hpcloud account:setup [<i>account_name</i>]</font>
+`hpcloud account:setup [account_name]`
 
 ###Options
 <dl>
@@ -119,7 +118,7 @@ You need your Access Key Id, Secret Key and Tenant Id from the HP Cloud web site
 
 Availability zones typically have the format az-1.region-a.geo-1 or region-a.geo-1 depending on the service.  See your account API keys page to see your list of activated availability zones: https://console.hpcloud.com/account/api_keys
 
-<font face='courier'>account:edit</font> prompts you for the following values:
+`account:edit` prompts you for the following values:
 
 * Access Key Id
 * Secret Key
@@ -136,11 +135,11 @@ Set up the default account:
     account:setup
 
 
-<h2 id="account:update">account:update</h2>
+##account:update## {#account:update}
 Modify your account credentials, zones, or options.
 
 ###Syntax
-<font face="Courier">hpcloud account:update &lt;<i>account_name</i>&gt; &lt;<i>name_value_pair</i>&gt; ...</font>
+`hpcloud account:update <account_name> <name_value_pair> ...`
 
 ###Description
 Add or update your account credentials, zones, or options.  You may specify one or more name value pairs to update on a single command line.  Valid settings include:
@@ -171,16 +170,16 @@ Set the account credential authorization URI to `https://127.0.0.1` and the bloc
     hpcloud account:update pro auth_uri='https://127.0.0.1/' block_availability_zone='region-a'
 
 ###Aliases
-<font face='courier'>account:add</font>
+`account:add`
 
-<h2 id="account:use">account:use</h2>
-Overwrite the default account with specified account.
+##account:use## {#account:use}
+Set the named account to the default account.
 
 ###Syntax
-<font face="Courier">hpcloud account:use &lt;<i>account_to_use</i>&gt;</font>
+`hpcloud account:use <account_to_use>`
 
 ###Description
-Use the specified account as your default account.  This command overwrites the default account.
+Use the specified account as your default account.  Any command executed without the `-a` account_name option uses this account.
 
 ###Examples
 Set the default account to `useast`:
@@ -188,11 +187,11 @@ Set the default account to `useast`:
     hpcloud account:use useast
 
 
-<h2 id="acl">acl</h2>
+##acl## {#acl}
 View the ACL for an object or container.
 
 ###Syntax
-<font face="Courier">hpcloud acl &lt;<i>object/container</i>&gt;</font>
+`hpcloud acl <object/container>`
 
 ###Options
 <dl>
@@ -204,24 +203,24 @@ View the ACL for an object or container.
 View the access control list (ACL) for a container or object. Optionally, you can specify an availability zone.
 
 ###Examples
-Display the ACL for the object <font face='courier'>my_file.txt</font>:
+Display the ACL for the object 'my_file.txt':
 
     hpcloud acl :my_container/my_file.txt
 
-Display the ACL for the container <font face='courier'>my_container</font>:
+Display the ACL for the container 'my_container':
 
     hpcloud acl :my_container
 
-Display the ACL for the container <font face='courier'>my_container</font> for availability zone `region-a.geo-1`:
+Display the ACL for the container 'my_container' for availability zone `region-a.geo-1`:
 
     hpcloud acl :my_container -z region-a.geo-1
 
 
-<h2 id="acl:set">acl:set</h2>
-Set a given resource to a canned ACL.
+##acl:grant## {#acl:grant}
+Grant the specified permissions.
 
 ###Syntax
-<font face="Courier">hpcloud acl:set &lt;<i>resource</i>&gt; &lt;<i>acl</i>&gt;</font>
+`hpcloud acl:grant <container> <permissions> [user ...]`
 
 ###Options
 <dl>
@@ -230,27 +229,54 @@ Set a given resource to a canned ACL.
 </dl>
 
 ###Description
-Set the Access Control List (ACL) values for the specified containers. The supported ACL settings are private or public-read. Optionally, you can select a specific availability zone.
+Set the access control list (ACL) values for the specified container. The supported permissions are `r` (read), `w` (write), or `rw` (read and write). You may specify one or more user fo the given permission.  If you do not specify a user, the permissions are set to public.  Public write permissions are not allowed.
 
 ###Examples
-Set the <font face='courier'>my_container</font> ACL value to public-read.
+Allow anyone to read 'my_container'
 
-    hpcloud acl:set :my_container public-read
+    hpcloud acl:grant :my_container r
 
-Set the <font face='courier'>my_container</font> ACL value to private.
+Allow Bob and Sally to read and write 'my_container'
 
-    hpcloud acl:set :my_container private
+    hpcloud acl:grant :my_container rw bob@example.com sally@example.com
 
-Set <font face='courier'>my_container</font> ACL to public-read for an availability zone.
+Give Billy read permissions to 'my_container'
 
-    hpcloud acl:set :my_container public-read -z region-a.geo-1
+    hpcloud acl:grant :my_container r billy@example.com
+
+###Aliases
+`acl:set`
+
+##acl:revoke## {#acl:revoke}
+Revoke the specified permissions.
+
+###Syntax
+`hpcloud acl:revoke <container> <permissions> [user ...]`
+
+###Options
+<dl>
+<dt><b>-z, [--availability-zone=AVAILABILITY_ZONE]</b></dt><dd>Set the availability zone.</dd>  
+<dt><b>-a, [--account-name=ACCOUNT_NAME]</b></dt><dd>Select account.</dd>  
+</dl>
+
+###Description
+Revoke the access control list (ACL) values from the specified container. The supported permissions are `r` (read), `w` (write), or `rw` (read and write). You may specify one or more user fo the given permission.  If you do not specify a user, the permissions are set to public.  Public write permissions are not allowed.
+
+###Examples
+Revoke public read from 'my_container'
+
+    hpcloud acl:revoke :my_container public-read
+
+Revoke read and write from bob@example.com from 'my_container'
+
+    hpcloud acl:revoke :my_container rw bob@example.com
 
 
-<h2 id="addresses">addresses</h2>
+##addresses## {#addresses}
 Display list of available addresses.
 
 ###Syntax
-<font face="Courier">hpcloud addresses [<i>ip_or_id ...</i>]</font>
+`hpcloud addresses [ip_or_id ...]`
 
 ###Options
 <dl>
@@ -275,13 +301,13 @@ List addresses for availability zone `az-2.region-a.geo-1`:
     hpcloud addresses -z az-2.region-a.geo-1
 
 ###Aliases
-<font face='courier'>addresses:list</font>
+`addresses:list`
 
-<h2 id="addresses:add">addresses:add</h2>
+##addresses:add## {#addresses:add}
 Add or allocate a new public IP address.
 
 ###Syntax
-<font face="Courier">hpcloud addresses:add</font>
+`hpcloud addresses:add`
 
 ###Options
 <dl>
@@ -302,13 +328,13 @@ Add a new public IP address in availability zone `az-2.region-a.geo-1`:
     hpcloud addresses:add -z az-2.region-a.geo-1
 
 ###Aliases
-<font face='courier'>addresses:allocate</font>
+`addresses:allocate`
 
-<h2 id="addresses:associate">addresses:associate</h2>
+##addresses:associate## {#addresses:associate}
 Associate a public IP address to a server instance.
 
 ###Syntax
-<font face="Courier">hpcloud addresses:associate &lt;<i>ip_or_id</i>&gt; &lt;<i>server_name_or_id</i>&gt;</font>
+`hpcloud addresses:associate <ip_or_id> <server_name_or_id>`
 
 ###Options
 <dl>
@@ -329,11 +355,11 @@ Associate the address `111.111.111.111` to server `myserver` in availability zon
     hpcloud addresses:associate 111.111.111.111 myserver -z az-2.region-a.geo-1
 
 
-<h2 id="addresses:disassociate">addresses:disassociate</h2>
+##addresses:disassociate## {#addresses:disassociate}
 Disassociate any server instance associated to the public IP address.
 
 ###Syntax
-<font face="Courier">hpcloud addresses:disassociate ip_or_id [<i>ip_or_id ...</i>]</font>
+`hpcloud addresses:disassociate ip_or_id [ip_or_id ...]`
 
 ###Options
 <dl>
@@ -349,7 +375,7 @@ Disassociate IP addresses `111.111.111.111` and `127.0.0.1` from the default ser
 
     hpcloud addresses:disassociate 111.111.111.111 127.0.0.1
 
-Disassociate the address with the ID  <font face='courier'>9709</font>:
+Disassociate the address with the ID  '9709':
 
     hpcloud addresses:disassociate 9709
 
@@ -358,11 +384,11 @@ Disassociate the address `111.111.111.111` for availability zone `az-2.region-a.
     hpcloud addresses:disassociate 111.111.111.111 -z az-2.region-a.geo-1
 
 
-<h2 id="addresses:remove">addresses:remove</h2>
+##addresses:remove## {#addresses:remove}
 Remove or release a public IP address.
 
 ###Syntax
-<font face="Courier">hpcloud addresses:remove ip_or_id [<i>ip_or_id ...</i>]</font>
+`hpcloud addresses:remove ip_or_id [ip_or_id ...]`
 
 ###Options
 <dl>
@@ -374,26 +400,26 @@ Remove or release a public IP address.
 Remove or release a previously allocated public IP address. Any server instances that were associated to this address are disassociated. You may specify one ore more address IPs or IDs on the command line.  Optionally, you can specify an availability zone.
 
 ###Examples
-Remove IP address <font face='courier'>111.111.111.111</font>:
+Remove IP address '111.111.111.111':
 
     hpcloud addresses:remove 111.111.111.111
 
-Remove addresses with the IDs <font face='courier'>1078</font> and <font face='courier'>3709</font>:
+Remove addresses with the IDs '1078' and '3709':
 
     hpcloud addresses:remove 1078 3709
 
-Remove IP address <font face='courier'>111.111.111.111</font> for availability zone `az-2.region-a.geo-1`:
+Remove IP address '111.111.111.111' for availability zone `az-2.region-a.geo-1`:
 
     hpcloud addresses:remove 111.111.111.111 -z az-2.region-a.geo-1
 
 ###Aliases
-<font face='courier'>addresses:rm, addresses:delete, addresses:release, addresses:del</font>
+`addresses:rm, addresses:delete, addresses:release, addresses:del`
 
-<h2 id="cdn:containers">cdn:containers</h2>
+##cdn:containers## {#cdn:containers}
 List available containers on the CDN.
 
 ###Syntax
-<font face="Courier">hpcloud cdn:containers</font>
+`hpcloud cdn:containers`
 
 ###Options
 <dl>
@@ -419,13 +445,13 @@ List only the CDN-enabled containers for availability zone `region-a.geo-1`:
     hpcloud cdn:containers -z region-a.geo-1
 
 ###Aliases
-<font face='courier'>cdn:containers:list</font>
+`cdn:containers:list`
 
-<h2 id="cdn:containers:add">cdn:containers:add</h2>
+##cdn:containers:add## {#cdn:containers:add}
 Add containers to the CDN.
 
 ###Syntax
-<font face="Courier">hpcloud cdn:containers:add name [<i>name ...</i>]</font>
+`hpcloud cdn:containers:add name [name ...]`
 
 ###Options
 <dl>
@@ -434,7 +460,7 @@ Add containers to the CDN.
 </dl>
 
 ###Description
-Add existing containers from your storage account to the CDN. Container names can be specified with or without the preceding colon: <font face='courier'>my_container</font> or <font face='courier'>:my_container</font>. Optionally, you can specify an availability zone.
+Add existing containers from your storage account to the CDN. Container names can be specified with or without the preceding colon: `my_container` or `:my_container`. Optionally, you can specify an availability zone.
 
 ###Examples
 Add the containers`tainer1` and `tainer2` to the CDN:
@@ -446,11 +472,11 @@ Add the container `my_cdn_container` to the CDN in the  availability zone `regio
     hpcloud cdn:containers:add :my_cdn_container -z region-a.geo-1
 
 
-<h2 id="cdn:containers:get">cdn:containers:get</h2>
+##cdn:containers:get## {#cdn:containers:get}
 Get the value of an attribute of a CDN container.
 
 ###Syntax
-<font face="Courier">hpcloud cdn:containers:get &lt;<i>name</i>&gt; &lt;<i>attribute</i>&gt;</font>
+`hpcloud cdn:containers:get <name> <attribute>`
 
 ###Options
 <dl>
@@ -460,19 +486,19 @@ Get the value of an attribute of a CDN container.
 
 ###Description
 Get the value of an attribute for an existing CDN container. The allowed attributes whose value can be retrieved are:
-* <font face='courier'>X-Ttl</font>
-* <font face='courier'>X-Cdn-Uri</font>
-* <font face='courier'>X-Cdn-Enabled</font>
-* <font face='courier'>X-Log-Retention</font>.
+* `X-Ttl`
+* `X-Cdn-Uri`
+* `X-Cdn-Enabled`
+* `X-Log-Retention`.
 
 Optionally, you can specify an availability zone.
 
 ###Examples
-Get the value of the attribute <font face='courier'>X-Ttl</font>:
+Get the value of the attribute 'X-Ttl':
 
     hpcloud cdn:containers:get :my_cdn_container "X-Ttl"
 
-Get the value of the attribute <font face='courier'>X-Cdn-Uri</font>:
+Get the value of the attribute 'X-Cdn-Uri':
 
     hpcloud cdn:containers:get :my_cdn_container "X-Cdn-Uri"
 
@@ -481,15 +507,15 @@ Get the value of the attribute `X-Ttl` for availability zone `regioni-a.geo`:
     hpcloud cdn:containers:get :my_cdn_container "X-Ttl" -z region-a.geo-1
 
 
-<h2 id="cdn:containers:location">cdn:containers:location</h2>
+##cdn:containers:location## {#cdn:containers:location}
 Get the location of a container on the CDN.
 
 ###Syntax
-<font face="Courier">hpcloud cdn:containers:location &lt;<i>name</i>&gt;</font>
+`hpcloud cdn:containers:location <name>`
 
 ###Options
 <dl>
-<dt><b>-s, [--ssl]</b></dt><dd>Print the ssl version of the url.</dd>  
+<dt><b>-s, [--ssl]</b></dt><dd>Print the SSL version of the URL.</dd>  
 <dt><b>-z, [--availability-zone=AVAILABILITY_ZONE]</b></dt><dd>Set the availability zone.</dd>  
 <dt><b>-a, [--account-name=ACCOUNT_NAME]</b></dt><dd>Select account.</dd>  
 </dl>
@@ -498,7 +524,7 @@ Get the location of a container on the CDN.
 Get the location of an existing container on the CDN. Optionally, you can specify an availability zone.
 
 ###Examples
-Get the location of the container <font face='courier'>my_cdn_container</font>:
+Get the location of the container 'my_cdn_container':
 
     hpcloud cdn:containers:location :my_cdn_container
 
@@ -507,13 +533,13 @@ Get the location of the container `my_cdn_container` for availability zone `regi
     hpcloud cdn:containers:location :my_cdn_container -z region-a.geo-1
 
 ###Aliases
-<font face='courier'>cdn:containers:loc</font>
+`cdn:containers:loc`
 
-<h2 id="cdn:containers:remove">cdn:containers:remove</h2>
+##cdn:containers:remove## {#cdn:containers:remove}
 Remove containers from the CDN.
 
 ###Syntax
-<font face="Courier">hpcloud cdn:containers:remove name [<i>name ...</i>]</font>
+`hpcloud cdn:containers:remove name [name ...]`
 
 ###Options
 <dl>
@@ -534,13 +560,13 @@ Delete the container `my_cdn_container for the availability zone `region-a.geo-1
     hpcloud cdn:containers:remove :my_cdn_container -z region-a.geo-1
 
 ###Aliases
-<font face='courier'>cdn:containers:rm, cdn:containers:delete, cdn:containers:del</font>
+`cdn:containers:rm, cdn:containers:delete, cdn:containers:del`
 
-<h2 id="cdn:containers:set">cdn:containers:set</h2>
+##cdn:containers:set## {#cdn:containers:set}
 Set attributes on a CDN container.
 
 ###Syntax
-<font face="Courier">hpcloud cdn:containers:set &lt;<i>name</i>&gt; &lt;<i>attribute</i>&gt; &lt;<i>value</i>&gt;</font>
+`hpcloud cdn:containers:set <name> <attribute> <value>`
 
 ###Options
 <dl>
@@ -551,19 +577,19 @@ Set attributes on a CDN container.
 ###Description
 Set attributes for an existing CDN container by specifying their values. The allowed attributes that can be set are:
 
-* <font face='courier'>X-Ttl</font>
-* <font face='courier'>X-Cdn-Uri</font>
-* <font face='courier'>X-Cdn-Enabled</font>
-* <font face='courier'>X-Log-Retention</font>.
+* `X-Ttl`
+* `X-Cdn-Uri`
+* `X-Cdn-Enabled`
+* `X-Log-Retention`.
 
 Optionally, you can specify an availability zone.
 
 ###Examples
-Set the attribute <font face='courier'>X-Ttl</font> to 900:
+Set the attribute 'X-Ttl' to 900:
 
     hpcloud cdn:containers:set :my_cdn_container "X-Ttl" 900
 
-Set the attribute <font face='courier'>X-Cdn-Uri</font> to http://my.home.com/cdn :
+Set the attribute 'X-Cdn-Uri' to http://my.home.com/cdn :
 
     hpcloud cdn:containers:set :my_cdn_container "X-Cdn-Uri" "http://my.home.com/cdn"
 
@@ -572,11 +598,11 @@ Set the attribute `X-Ttl` to 900 for availability zoneregion-a.geo-1`:
     hpcloud cdn:containers:set :my_cdn_container "X-Ttl" 900 -z region-a.geo-1
 
 
-<h2 id="config">config</h2>
+##config## {#config}
 List the current configuration settings.
 
 ###Syntax
-<font face="Courier">hpcloud config</font>
+`hpcloud config`
 
 ###Description
 List the current configuration settings.
@@ -587,13 +613,13 @@ List the current configuration settings:
     hpcloud config
 
 ###Aliases
-<font face='courier'>config:list</font>
+`config:list`
 
-<h2 id="config:set">config:set</h2>
+##config:set## {#config:set}
 Set values in the configuration file.
 
 ###Syntax
-<font face="Courier">hpcloud config:set key=value [<i>key=value ...</i>]</font>
+`hpcloud config:set key=value [key=value ...]`
 
 ###Description
 Set values in the configuration file.  You may specify multiple name value pairs separated by spaces on a single command line.  Valid settings include:
@@ -612,13 +638,13 @@ Set the write timeout to 60 seconds and the read timeout to 60 seconds:
     hpcloud config:set write_timeout=60 read_time=60
 
 ###Aliases
-<font face='courier'>config:add, config:update</font>
+`config:add, config:update`
 
-<h2 id="containers:add">containers:add</h2>
+##containers:add## {#containers:add}
 Add a container.
 
 ###Syntax
-<font face="Courier">hpcloud containers:add name [<i>name ...</i>]</font>
+`hpcloud containers:add name [name ...]`
 
 ###Options
 <dl>
@@ -628,14 +654,14 @@ Add a container.
 </dl>
 
 ###Description
-Add a new container to your storage account. You may creeate multiple containers by specifying more than one container name on the command line.  You can specify the ontainer name  with or without the preceding colon: <font face='courier'>my_container</font> or <font face='courier'>:my_container</font>. Optionally, you can specify an availability zone.
+Add a new container to your storage account. You may creeate multiple containers by specifying more than one container name on the command line.  You can specify the ontainer name  with or without the preceding colon: `my_container` or `:my_container`. Optionally, you can specify an availability zone.
 
 ###Examples
-Create a new container called <font face='courier'>my_container</font>:
+Create a new container called 'my_container':
 
     hpcloud containers:add :my_container
 
-Create two new containers called <font face='courier'>con</font> and <font face='courier'>tainer</font>:
+Create two new containers called 'con' and 'tainer':
 
     hpcloud containers:add :con :tainer
 
@@ -644,11 +670,11 @@ Create the container `my_container` for the availability zone `region-a.geo-1`:
     hpcloud containers:add :my_container -z region-a.geo-1
 
 
-<h2 id="containers:remove">containers:remove</h2>
+##containers:remove## {#containers:remove}
 Remove a containers.
 
 ###Syntax
-<font face="Courier">hpcloud containers:remove name [<i>name ...</i>]</font>
+`hpcloud containers:remove name [name ...]`
 
 ###Options
 <dl>
@@ -658,12 +684,16 @@ Remove a containers.
 </dl>
 
 ###Description
-Remove a container. By default this command removes a container if it empty. The `--force` flag deletes non-empty containers.  Be careful with this flag or you could have a really bad day.  Optionally, you can specify an availability zone.
+Remove one or more containers. By default this command removes a container if it is empty, but you may use the `--force` flag to delete non-empty containers.  Be careful with this flag or you could have a really bad day.
 
 ###Examples
-Delete <font face='courier'>my_container</font> (if empty):
+Delete 'my_container' (if empty):
 
     hpcloud containers:remove :my_container
+
+Delete 'tainer1' and 'tainer2' (if empty):
+
+    hpcloud containers:remove :tainer1 :tainer2
 
 Delete `my container` (regardless of contents):
 
@@ -674,17 +704,17 @@ Delete the container `my_container` for availability zone 'region-a.geo-1`:
     hpcloud containers:remove :my_container -z region-a.geo-1
 
 ###Aliases
-<font face='courier'>containers:rm, containers:delete, containers:del</font>
+`containers:rm, containers:delete, containers:del`
 
-<h2 id="copy">copy</h2>
+##copy## {#copy}
 Copy files from one resource to another.
 
 ###Syntax
-<font face="Courier">hpcloud copy &lt;<i>source</i>&gt; [<i>source ...</i>] &lt;<i>destination</i>&gt;</font>
+`hpcloud copy <source> [source ...] <destination>`
 
 ###Options
 <dl>
-<dt><b>-m, [--mime=MIME]</b></dt><dd>Set the mime-type of the remote object.</dd>  
+<dt><b>-m, [--mime=MIME]</b></dt><dd>Set the MIME type of the remote object.</dd>  
 <dt><b>-z, [--availability-zone=AVAILABILITY_ZONE]</b></dt><dd>Set the availability zone.</dd>  
 <dt><b>-a, [--account-name=ACCOUNT_NAME]</b></dt><dd>Select account.</dd>  
 </dl>
@@ -693,7 +723,7 @@ Copy files from one resource to another.
 Copy a file between your file system and a container, inside a container, or between containers. You may copy multiple files to a directory or container on one command line.  Optionally, you can specify an availability zone.  Note that a leading colon `:` is required when you specify a container; for example `:my_container`.
 
 ###Examples
-Copy the file `my_file.txt` to container <font face='courier'>my_container</font>:
+Copy the file `my_file.txt` to container 'my_container':
 
     hpcloud copy my_file.txt :my_container
 
@@ -721,19 +751,19 @@ Copy text files `one.txt` and `two.txt` to  container `numbers`:
 
     hpcloud copy one.txt two.txt :numbers
 
-Copy the file `my_file.txt` to container <font face='courier'>my_container</font> for availability zone `region-a.geo-1`:
+Copy the file `my_file.txt` to container 'my_container' for availability zone `region-a.geo-1`:
 
     hpcloud copy my_file.txt :my_container -z region-a.geo-1
 
 ###Aliases
-<font face='courier'>cp</font>
-<font face='courier'></font>
+`cp`
+``
 
-<h2 id="flavors">flavors</h2>
+##flavors## {#flavors}
 List available flavors.
 
 ###Syntax
-<font face="Courier">hpcloud flavors [<i>name_or_id ...</i>]</font>
+`hpcloud flavors [name_or_id ...]`
 
 ###Options
 <dl>
@@ -758,13 +788,13 @@ List the flavors for  availability zone `az-2.region-a.geo-1`:
     hpcloud flavors -z az-2.region-a.geo-1
 
 ###Aliases
-<font face='courier'>flavors:list</font>
+`flavors:list`
 
-<h2 id="get">get</h2>
+##get## {#get}
 Fetch objects to your local directory.
 
 ###Syntax
-<font face="Courier">hpcloud get object [<i>object ...</i>]</font>
+`hpcloud get object [object ...]`
 
 ###Options
 <dl>
@@ -785,18 +815,18 @@ Copy `file.txt` to your current directory for availability zone `region-a.geo-1`
     hpcloud get :my_container/file.txt -z region-a.geo-1
 
 ###Aliases
-<font face='courier'>fetch</font>
+`fetch`
 
-<h2 id="help">help</h2>
+##help## {#help}
 Describe available tasks or one specific task
 
 ###Syntax
-<font face="Courier">hpcloud help [<i>TASK</i>]</font><font face="Courier">Describe available tasks or one specific task</font>
-<h2 id="images">images</h2>
+`hpcloud help [TASK]``Describe available tasks or one specific task`
+##images## {#images}
 List the available images in your compute account.
 
 ###Syntax
-<font face="Courier">hpcloud images [<i>name_or_id ...</i>]</font>
+`hpcloud images [name_or_id ...]`
 
 ###Options
 <dl>
@@ -812,7 +842,7 @@ List the images:
 
     hpcloud images
 
-List image <font face='courier'>1239</font>:
+List image '1239':
 
     hpcloud images 1239
 
@@ -821,13 +851,13 @@ List images for availability zone `az-2.region-a.geo-1`:
     hpcloud images -z az-2.region-a.geo-1
 
 ###Aliases
-<font face='courier'>images:list</font>
+`images:list`
 
-<h2 id="images:add">images:add</h2>
+##images:add## {#images:add}
 Add an image from an existing server.
 
 ###Syntax
-<font face="Courier">hpcloud images:add &lt;<i>name</i>&gt; &lt;<i>server_name</i>&gt;</font>
+`hpcloud images:add <name> <server_name>`
 
 ###Options
 <dl>
@@ -840,11 +870,11 @@ Add an image from an existing server.
 Add a new image from an existing server to your compute account. Optionally, you may specify metadata or an availability zone.
 
 ###Examples
-Create the new image <font face='courier'>my_image</font> from the existing server named <font face='courier'>my_server</font>:
+Create the new image 'my_image' from the existing server named 'my_server':
 
     hpcloud images:add my_image my_server
 
-Create the new image <font face='courier'>my_image</font> from the existing server <font face='courier'>my_server</font> with metadata:
+Create the new image 'my_image' from the existing server 'my_server' with metadata:
 
     hpcloud images:add my_image my_server -m this=that
 
@@ -853,11 +883,11 @@ Create the new image `my_image` from the existing server `my_server` in  availab
     hpcloud images:add my_image my_server -z az-2.region-a.geo-1
 
 
-<h2 id="images:metadata">images:metadata</h2>
+##images:metadata## {#images:metadata}
 List the metadata for an image.
 
 ###Syntax
-<font face="Courier">hpcloud images:metadata &lt;<i>image_name_or_id</i>&gt;</font>
+`hpcloud images:metadata <image_name_or_id>`
 
 ###Options
 <dl>
@@ -869,26 +899,26 @@ List the metadata for an image.
 List the metadata for an image in your compute account. You may specify either the name or ID of the image.  Optionally, you may specify an availability zone.
 
 ###Examples
-List the metadata for image <font face='courier'>Skynet</font>:
+List the metadata for image 'Skynet':
 
     hpcloud images:metadata Skynet
 
-List the metadata for image <font face='courier'>1151</font>:
+List the metadata for image '1151':
 
     hpcloud images:metadata '1151'
 
-List the metadata for image `565394 for availability zone `az-2.region-a.geo-1`:
+List the metadata for image `565394` for availability zone `az-2.region-a.geo-1`:
 
     hpcloud images:metadata -z az-2.region-a.geo-1 565394
 
 ###Aliases
-<font face='courier'>images:metadata:list</font>
+`images:metadata:list`
 
-<h2 id="images:metadata:add">images:metadata:add</h2>
+##images:metadata:add## {#images:metadata:add}
 Add metadata to an image.
 
 ###Syntax
-<font face="Courier">hpcloud images:metadata:add &lt;<i>name</i>&gt; &lt;<i>metadata</i>&gt;</font>
+`hpcloud images:metadata:add <name> <metadata>`
 
 ###Options
 <dl>
@@ -905,13 +935,13 @@ Add the specified metadata to the image (if the metadata exists, it is updated):
     hpcloud images:metadata:add my_image 'r2=d2,c3=po'
 
 ###Aliases
-<font face='courier'>images:metadata:update</font>
+`images:metadata:update`
 
-<h2 id="images:metadata:remove">images:metadata:remove</h2>
+##images:metadata:remove## {#images:metadata:remove}
 Remove metadata from an image.
 
 ###Syntax
-<font face="Courier">hpcloud images:metadata:remove &lt;<i>image_name_or_id</i>&gt; [<i>metadata_key ...</i>]</font>
+`hpcloud images:metadata:remove <image_name_or_id> [metadata_key ...]`
 
 ###Options
 <dl>
@@ -928,13 +958,13 @@ Remove the specified metadata from the image:
     hpcloud images:metadata:remove my_image r2 c3
 
 ###Aliases
-<font face='courier'>images:metadata:rm</font>
+`images:metadata:rm`
 
-<h2 id="images:remove">images:remove</h2>
-Remove images (by name or ID).
+##images:remove## {#images:remove}
+Remove images by name or identifier.
 
 ###Syntax
-<font face="Courier">hpcloud images:remove name_or_id [<i>name_or_id ...</i>]</font>
+`hpcloud images:remove name_or_id [name_or_id ...]`
 
 ###Options
 <dl>
@@ -946,11 +976,11 @@ Remove images (by name or ID).
 Remove existing images by specifying thier names or IDs. Optionally, you may specify an availability zone.
 
 ###Examples
-Delete image <font face='courier'>my-image</font>:
+Delete image 'my-image':
 
     hpcloud images:remove my-image
 
-Delete images <font face='courier'>1172</font> and <font face='courier'>1078</font>:
+Delete images '1172' and '1078':
 
     hpcloud images:remove 1172 1078
 
@@ -959,18 +989,18 @@ Delete image `my-image` for availability zone `az-2.region-a.geo-1:
     hpcloud images:remove my-image -z az-2.region-a.geo-1
 
 ###Aliases
-<font face='courier'>images:rm, images:delete, images:del</font>
+`images:rm, images:delete, images:del`
 
-<h2 id="info">info</h2>
+##info## {#info}
 Display info about the HP Cloud UNIX CLI.
 
 ###Syntax
-<font face="Courier">hpcloud info</font><font face="Courier">Display info about the HP Cloud UNIX CLI.</font>
-<h2 id="keypairs">keypairs</h2>
+`hpcloud info``Display info about the HP Cloud UNIX CLI.`
+##keypairs## {#keypairs}
 List the available keypairs.
 
 ###Syntax
-<font face="Courier">hpcloud keypairs [<i>name ...</i>]</font>
+`hpcloud keypairs [name ...]`
 
 ###Options
 <dl>
@@ -986,7 +1016,7 @@ List the key pairs:
 
     hpcloud keypairs
 
-List the key pair <font face='courier'>brat</font>:
+List the key pair 'brat':
 
     hpcloud keypairs brat
 
@@ -995,13 +1025,13 @@ List the key pairs for availability zone `az-2.region-a.geo-1`:
     hpcloud keypairs -z az-2.region-a.geo-1
 
 ###Aliases
-<font face='courier'>keypairs:list</font>
+`keypairs:list`
 
-<h2 id="keypairs:add">keypairs:add</h2>
+##keypairs:add## {#keypairs:add}
 add a key pair
 
 ###Syntax
-<font face="Courier">hpcloud keypairs:add &lt;<i>key_name</i>&gt;</font>
+`hpcloud keypairs:add <key_name>`
 
 ###Options
 <dl>
@@ -1016,19 +1046,19 @@ add a key pair
 Add a key pair by specifying the name. Optionally you can specify a fingerprint and private key data. You can use the `-o` option to save the key to a file. Optionally, you can specify an availability zone.
 
 ###Examples
-Create the key <font face='courier'>mykey</font>:
+Create the key 'mykey':
 
     hpcloud keypairs:add mykey
 
-Create the key <font face='courier'>mykey</font> using the supplied fingerprint:
+Create the key 'mykey' using the supplied fingerprint:
 
     hpcloud keypairs:add mykey -f <fingerprint>
 
-Create the key <font face='courier'>mykey</font> using the supplied private key data:
+Create the key 'mykey' using the supplied private key data:
 
     hpcloud keypairs:add mykey -p 'private key data'
 
-Create the key <font face='courier'>mykey</font> using the supplied fingerprint and private key data:
+Create the key 'mykey' using the supplied fingerprint and private key data:
 
     hpcloud keypairs:add mykey -f <fingerprint> -p 'private key data'
 
@@ -1041,11 +1071,11 @@ Create the key `mykey` for availability zone `az-2.region-a.geo-1`:
     hpcloud keypairs:add mykey -z az-2.region-a.geo-1
 
 
-<h2 id="keypairs:import">keypairs:import</h2>
+##keypairs:import## {#keypairs:import}
 Import a key pair.
 
 ###Syntax
-<font face="Courier">hpcloud keypairs:import &lt;<i>key_name</i>&gt; &lt;<i>public_key_data</i>&gt;</font>
+`hpcloud keypairs:import <key_name> <public_key_data>`
 
 ###Options
 <dl>
@@ -1070,11 +1100,11 @@ Import a key from public key data for availability zone `az-2.region-a.geo-1`:
     hpcloud keypairs:import mykey 'public_key_data' -z az-2.region-a.geo-1
 
 
-<h2 id="keypairs:public_key">keypairs:public_key</h2>
+##keypairs:public_key## {#keypairs:public_key}
 Display the public keys of a key pair.
 
 ###Syntax
-<font face="Courier">hpcloud keypairs:public_key &lt;<i>name</i>&gt;</font>
+`hpcloud keypairs:public_key <name>`
 
 ###Options
 <dl>
@@ -1095,11 +1125,11 @@ Remove the public key `keyno` for availability zone `az-2.region-a.geo-1`:
     hpcloud keypairs:public_key keyno -z az-2.region-a.geo-1
 
 
-<h2 id="keypairs:remove">keypairs:remove</h2>
+##keypairs:remove## {#keypairs:remove}
 Remove a key pair (by name).
 
 ###Syntax
-<font face="Courier">hpcloud keypairs:remove name [<i>name ...</i>]</font>
+`hpcloud keypairs:remove name [name ...]`
 
 ###Options
 <dl>
@@ -1111,11 +1141,11 @@ Remove a key pair (by name).
 Remove an existing key pair by name. You may specify more than one key pair to remove on a single command line.  Optionally, you can specify an availability zone.
 
 ###Examples
-Remove the key pair <font face='courier'>mykey</font>:
+Remove the key pair 'mykey':
 
     hpcloud keypairs:remove mykey
 
-Remove the key pairs <font face='courier'>mykey</font> and <font face='courier'>myotherkey</font>:
+Remove the key pairs 'mykey' and 'myotherkey':
 
     hpcloud keypairs:remove mykey myotherkey
 
@@ -1124,13 +1154,13 @@ Remove the key pair `mykey` for availability zone `az-2.region-a.geo-1:
     hpcloud keypairs:remove mykey -z az-2.region-a.geo-1
 
 ###Aliases
-<font face='courier'>keypairs:rm, keypairs:delete, keypairs:del</font>
+`keypairs:rm, keypairs:delete, keypairs:del`
 
-<h2 id="list">list</h2>
+##list## {#list}
 List containers or container contents.
 
 ###Syntax
-<font face="Courier">hpcloud list [<i>container ...</i>]</font>
+`hpcloud list [container ...]`
 
 ###Options
 <dl>
@@ -1159,13 +1189,13 @@ List all the objects in container `my_container` for availability zone `region-a
     hpcloud list :my_container -z region-a.geo-1
 
 ###Aliases
-<font face='courier'>ls</font>
+`ls`
 
-<h2 id="location">location</h2>
+##location## {#location}
 Display the URIs for the specified resources.
 
 ###Syntax
-<font face="Courier">hpcloud location &lt;<i>object/container</i>&gt; ...</font>
+`hpcloud location <object/container> ...`
 
 ###Options
 <dl>
@@ -1194,13 +1224,13 @@ Display the URI for the file `file.txt` that resides in container `my_container`
     hpcloud location :my_container/file.txt -z region-a.geo-1
 
 ###Aliases
-<font face='courier'>loc</font>
+`loc`
 
-<h2 id="move">move</h2>
+##move## {#move}
 Move objects inside or between containers.
 
 ###Syntax
-<font face="Courier">hpcloud move &lt;<i>source ...</i>&gt; &lt;<i>destination</i>&gt;</font>
+`hpcloud move <source ...> <destination>`
 
 ###Options
 <dl>
@@ -1229,13 +1259,13 @@ Move file `file.txt` to new name and location `old/backup.txt` in container `my_
     hpcloud move :my_container/file.txt :my_container/old/backup.txt -z region-a.geo-1
 
 ###Aliases
-<font face='courier'>mv</font>
+`mv`
 
-<h2 id="remove">remove</h2>
+##remove## {#remove}
 Remove objects or containers.
 
 ###Syntax
-<font face="Courier">hpcloud remove object_or_container [<i>object_or_container ...</i>]</font>
+`hpcloud remove object_or_container [object_or_container ...]`
 
 ###Options
 <dl>
@@ -1248,26 +1278,26 @@ Remove objects or containers.
 Remove objects or containers. Optionally, you can specify an availability zone.
 
 ###Examples
-Delete objects <font face='courier'>my.txt</font> and <font face='courier'>other.txt</font> from container `tainer`:
+Delete objects 'my.txt' and 'other.txt' from container `tainer`:
 
     hpcloud remove :tainer/my.txt :tainer/other.txt
 
-Delete container <font face='courier'>my_container</font>:
+Delete container 'my_container':
 
     hpcloud remove :my_container
 
-Delete container 'my_container` in availability zone `region-a.geo-1`:
+Delete container 'my_container' in availability zone `region-a.geo-1`:
 
     hpcloud remove :my_container -z region-a.geo-1
 
 ###Aliases
-<font face='courier'>rm, delete, destroy, del</font>
+`rm, delete, destroy, del`
 
-<h2 id="securitygroups">securitygroups</h2>
+##securitygroups## {#securitygroups}
 List the available security groups.
 
 ###Syntax
-<font face="Courier">hpcloud securitygroups [<i>name_or_id ...</i>]</font>
+`hpcloud securitygroups [name_or_id ...]`
 
 ###Options
 <dl>
@@ -1292,13 +1322,13 @@ List the security groups for availability zone `az-2.region-a.geo-1`:
     hpcloud securitygroups -z az-2.region-a.geo-1
 
 ###Aliases
-<font face='courier'>securitygroups:list</font>
+`securitygroups:list`
 
-<h2 id="securitygroups:add">securitygroups:add</h2>
+##securitygroups:add## {#securitygroups:add}
 Add a security group.
 
 ###Syntax
-<font face="Courier">hpcloud securitygroups:add &lt;<i>name</i>&gt; &lt;<i>description</i>&gt;</font>
+`hpcloud securitygroups:add <name> <description>`
 
 ###Options
 <dl>
@@ -1319,11 +1349,11 @@ Add new security group `mysecgroup` with description `seg group desc` for availa
     hpcloud securitygroups:add mysecgroup "seg group desc" -z az-2.region-a.geo-1
 
 
-<h2 id="securitygroups:remove">securitygroups:remove</h2>
+##securitygroups:remove## {#securitygroups:remove}
 Remove a security group or groups.
 
 ###Syntax
-<font face="Courier">hpcloud securitygroups:remove name_or_id [<i>name_or_id ...</i>]</font>
+`hpcloud securitygroups:remove name_or_id [name_or_id ...]`
 
 ###Options
 <dl>
@@ -1348,13 +1378,13 @@ Remove the security group `mysecgroup` for availability zone `az-2.region-a.geo-
     hpcloud securitygroups:remove mysecgroup -z az-2.region-a.geo-1
 
 ###Aliases
-<font face='courier'>securitygroups:rm, securitygroups:delete, securitygroups:del</font>
+`securitygroups:rm, securitygroups:delete, securitygroups:del`
 
-<h2 id="securitygroups:rules">securitygroups:rules</h2>
+##securitygroups:rules## {#securitygroups:rules}
 Display the list of rules for a security group.
 
 ###Syntax
-<font face="Courier">hpcloud securitygroups:rules &lt;<i>sec_group_name</i>&gt;</font>
+`hpcloud securitygroups:rules <sec_group_name>`
 
 ###Options
 <dl>
@@ -1375,13 +1405,13 @@ List the rules for security group `mysecgroup` for availability zone `az-2.regio
     hpcloud securitygroups:rules mysecgroup -z az-2.region-a.geo-1
 
 ###Aliases
-<font face='courier'>securitygroups:rules:list</font>
+`securitygroups:rules:list`
 
-<h2 id="securitygroups:rules:add">securitygroups:rules:add</h2>
+##securitygroups:rules:add## {#securitygroups:rules:add}
 Add a rule to the security group.
 
 ###Syntax
-<font face="Courier">hpcloud securitygroups:rules:add &lt;<i>sec_group_name</i>&gt; &lt;<i>ip_protocol</i>&gt;</font>
+`hpcloud securitygroups:rules:add <sec_group_name> <ip_protocol>`
 
 ###Options
 <dl>
@@ -1393,7 +1423,7 @@ Add a rule to the security group.
 </dl>
 
 ###Description
-Add a rule to the security group. If <i>ip_protocol</i> is specified as <font face='courier'>icmp</font>, then <i>port_range</i> is set to -1..-1.  If <i>ip_address</i> is not specified, then the address defaults to <font face='courier'>0.0.0.0/0</font>. To allow communications within a given security group, you must specify a source group while creating a rule. Optionally, you can specify an availability zone.
+Add a rule to the security group. If <ip_protocol> is specified as `icmp`, then <port_range> is set to -1..-1.  If <ip_address> is not specified, then the address defaults to `0.0.0.0/0`. To allow communications within a given security group, you must specify a source group while creating a rule. Optionally, you can specify an availability zone.
 
 ###Examples
 Set the default port range to -1..-1
@@ -1417,13 +1447,13 @@ Set the availability zone to `az-2.region-a.geo-1`:
     hpcloud securitygroups:rules:add mysggroup icmp -z az-2.region-a.geo-1
 
 ###Aliases
-<font face='courier'>securitygroups:rules:authorize</font>
+`securitygroups:rules:authorize`
 
-<h2 id="securitygroups:rules:remove">securitygroups:rules:remove</h2>
+##securitygroups:rules:remove## {#securitygroups:rules:remove}
 Remove a rule from the security group.
 
 ###Syntax
-<font face="Courier">hpcloud securitygroups:rules:remove &lt;<i>sec_group_name</i>&gt; &lt;<i>rule_id</i>&gt;</font>
+`hpcloud securitygroups:rules:remove <sec_group_name> <rule_id>`
 
 ###Options
 <dl>
@@ -1444,13 +1474,13 @@ Remove the rule `mysecgroup` from security group `111` for availability zone `az
     hpcloud securitygroups:rules:remove mysecgroup 111 -z az-2.region-a.geo-1
 
 ###Aliases
-<font face='courier'>securitygroups:rules:rm, securitygroups:rules:revoke, securitygroups:rules:delete, securitygroups:rules:del</font>
+`securitygroups:rules:rm, securitygroups:rules:revoke, securitygroups:rules:delete, securitygroups:rules:del`
 
-<h2 id="servers">servers</h2>
+##servers## {#servers}
 List the available servers.
 
 ###Syntax
-<font face="Courier">hpcloud servers [<i>name_or_id ...</i>]</font>
+`hpcloud servers [name_or_id ...]`
 
 ###Options
 <dl>
@@ -1475,17 +1505,19 @@ List the servers for availability zone `az-2.region-a.geo-1`:
     hpcloud servers -z az-2.region-a.geo-1
 
 ###Aliases
-<font face='courier'>servers:list</font>
+`servers:list`
 
-<h2 id="servers:add">servers:add</h2>
+##servers:add## {#servers:add}
 Add a server.
 
 ###Syntax
-<font face="Courier">hpcloud servers:add &lt;<i>name</i>&gt; &lt;<i>image</i>&gt; &lt;<i>flavor</i>&gt; -k, --key-name=KEY_NAME</font>
+`hpcloud servers:add <name> <flavor> -k, --key-name=KEY_NAME`
 
 ###Options
 <dl>
 <dt><b>-k, --key-name=KEY_NAME</b></dt><dd>Specify a key name to be used.</dd>  
+<dt><b>-i, [--image=IMAGE]</b></dt><dd>Image to use to create the server.</dd>  
+<dt><b>-v, [--volume=VOLUME]</b></dt><dd>Volume to use to create the server.</dd>  
 <dt><b>-s, [--security-group=SECURITY_GROUP]</b></dt><dd>Specify a security group to be used.</dd>  
 <dt><b>-p, [--private-key-file=PRIVATE_KEY_FILE]</b></dt><dd>Name of the pem file with your private key.</dd>  
 <dt><b>-m, [--metadata=METADATA]</b></dt><dd>Set the meta data.</dd>  
@@ -1494,35 +1526,35 @@ Add a server.
 </dl>
 
 ###Description
-Add a new server to your compute account. You must specify an name for the server, an image to use to create the server, a flavor, and a keypair.  If you are creating a windows image, the flavor must be at least a large image and you must specify a security group that has the RDP port open.  Optionally, you can specify a security group, key name, metadata and availability zone.
+Add a new server to your compute account. You must specify an name for the server, a flavor, an image or volume to use and a keypair.  If you are creating a windows server, the flavor must be at least a large and you must specify a security group that has the RDP port open.  Optionally, you can specify a security group, key name, metadata and availability zone.
 
 ###Examples
-Create a new server named <font face='courier'>my_server</font> using an image, flavor and a key:
+Create a new small server named 'my_server' with image 7 and key1:
 
-    hpcloud servers:add my_server 7 small -k key1
+    hpcloud servers:add my_server small -i 7 -k key1
 
 Create a windows server with the specified key, security group, and private key to decrypt the password:
 
-    hpcloud servers:add winserv 100006567 large -k winpair -s allowsRDP -p ./winpair.pem
+    hpcloud servers:add winserv large -i 100006567 -k winpair -s allowsRDP -p ./winpair.pem
 
-Create a new server named <font face='courier'>my_server</font> using an image, flavor, key and security group:
+Create a new largte server named 'my_server' using a volume natty, key1 and the sg1 security group:
 
-    hpcloud servers:add my_server 7 large -k key1 -s sg1
+    hpcloud servers:add my_server large -v natty -k key1 -s sg1
 
-Create a new server named <font face='courier'>my_server</font> using an image, flavor, key and metadata this=that:
+Create a new small server named 'my_server' using the specified image, flavor, key and metadata this=that:
 
-    hpcloud servers:add my_server 7 small -k key1 -m this=that
+    hpcloud servers:add my_server small -i 20634 -k key1 -m this=that
 
-Create a new server named <font face='courier'>my_server</font> using a key for  availability zone `az-2.region-a.geo-1`:
+Create a new server named 'my_server' using a key for  availability zone `az-2.region-a.geo-1`:
 
-    hpcloud servers:add my_server 7 xlarge -k key1 -z az-2.region-a.geo-1
+    hpcloud servers:add my_server xlarge -i 7 -k key1 -z az-2.region-a.geo-1
 
 
-<h2 id="servers:metadata">servers:metadata</h2>
+##servers:metadata## {#servers:metadata}
 List the metadata for a server.
 
 ###Syntax
-<font face="Courier">hpcloud servers:metadata &lt;<i>name_or_id</i>&gt;</font>
+`hpcloud servers:metadata <name_or_id>`
 
 ###Options
 <dl>
@@ -1543,13 +1575,13 @@ List server metadata for availability zone `az-2region-a.geo-1`:
     hpcloud servers:metadata -z az-2.region-a.geo-1 565394
 
 ###Aliases
-<font face='courier'>servers:metadata:list</font>
+`servers:metadata:list`
 
-<h2 id="servers:metadata:add">servers:metadata:add</h2>
+##servers:metadata:add## {#servers:metadata:add}
 Add metadata to a server.
 
 ###Syntax
-<font face="Courier">hpcloud servers:metadata:add &lt;<i>name_or_id</i>&gt; &lt;<i>metadata</i>&gt;</font>
+`hpcloud servers:metadata:add <name_or_id> <metadata>`
 
 ###Options
 <dl>
@@ -1566,13 +1598,13 @@ Add the specified metadata to the server (if the metadata exists, it is updated)
     hpcloud servers:metadata:add my_server 'r2=d2,c3=po'
 
 ###Aliases
-<font face='courier'>servers:metadata:update</font>
+`servers:metadata:update`
 
-<h2 id="servers:metadata:remove">servers:metadata:remove</h2>
+##servers:metadata:remove## {#servers:metadata:remove}
 Remove metadata from a server.
 
 ###Syntax
-<font face="Courier">hpcloud servers:metadata:remove &lt;<i>name</i>&gt; &lt;<i>metadata_key</i>&gt; ...</font>
+`hpcloud servers:metadata:remove <name> <metadata_key> ...`
 
 ###Options
 <dl>
@@ -1589,13 +1621,13 @@ Remove the the r2 and c3 metadata from the server:
     hpcloud servers:metadata:remove :my_server r2 c3
 
 ###Aliases
-<font face='courier'>servers:metadata:rm</font>
+`servers:metadata:rm`
 
-<h2 id="servers:password">servers:password</h2>
+##servers:password## {#servers:password}
 Change the password for a server.
 
 ###Syntax
-<font face="Courier">hpcloud servers:password &lt;<i>server_name</i>&gt; &lt;<i>password</i>&gt;</font>
+`hpcloud servers:password <server_name> <password>`
 
 ###Options
 <dl>
@@ -1607,7 +1639,7 @@ Change the password for a server.
 Change the password for an existing server. The password must adhere to the existing security complexity naming rules. Optionally, you can specify an availability zone.
 
 ###Examples
-Change the password for server <font face='courier'>my-server</font>:
+Change the password for server 'my-server':
 
     hpcloud servers:password my-server my-password
 
@@ -1616,13 +1648,13 @@ Change the password for server 'my-server` for availability zone `az-2.region-a.
     hpcloud servers:password my-server my-password -z az-2.region-a.geo-1
 
 ###Aliases
-<font face='courier'>servers:passwd</font>
+`servers:passwd`
 
-<h2 id="servers:reboot">servers:reboot</h2>
+##servers:reboot## {#servers:reboot}
 Reboot a server or servers (specified by server name or ID).
 
 ###Syntax
-<font face="Courier">hpcloud servers:reboot name_or_id [<i>name_or_id ...</i>]</font>
+`hpcloud servers:reboot name_or_id [name_or_id ...]`
 
 ###Options
 <dl>
@@ -1635,7 +1667,7 @@ Reboot a server or servers (specified by server name or ID).
 Reboot an existing server specified name or ID. Rebooting a server can take some time so it might be necessary to check the status of the server by issuing the command `hpcloud servers`. The default is a soft reboot, but you can specify the `-h` option for a hard reboot. Optionally, you can specify an availability zone.
 
 ###Examples
-Reboot server <font face='courier'>Hal9000</font>:
+Reboot server 'Hal9000':
 
     hpcloud servers:reboot Hal9000
 
@@ -1648,11 +1680,11 @@ Reboot the server `DeepThought` for availability zone `az-2.region-a.geo-1`:
     hpcloud servers:reboot DeepThought -z az-2.region-a.geo-1
 
 
-<h2 id="servers:rebuild">servers:rebuild</h2>
+##servers:rebuild## {#servers:rebuild}
 Rebuild a server (specified by server name or ID).
 
 ###Syntax
-<font face="Courier">hpcloud servers:rebuild name_or_id [<i>image_name_or_id</i>]</font>
+`hpcloud servers:rebuild name_or_id [image_name_or_id]`
 
 ###Options
 <dl>
@@ -1661,10 +1693,10 @@ Rebuild a server (specified by server name or ID).
 </dl>
 
 ###Description
-Rebuild an existing server specified name or ID. Optionally, the server may be rebuilt with a new image.  Rebuilding a server may take some time so it might be necessary to check the status of the server by issuing the command <font face='courier'>hpcloud servers</font>. Optionally, you can specify an availability zone.
+Rebuild an existing server specified by name or ID. Optionally, you may rebuild the server with a new image.  Rebuilding a server may take some time so it might be necessary to check the status of the server by issuing the command `hpcloud servers`. Optionally, you can specify an availability zone.
 
 ###Examples
-Rebuild server <font face='courier'>Hal9000</font>:
+Rebuild server 'Hal9000':
 
     hpcloud servers:rebuild Hal9000
 
@@ -1677,11 +1709,11 @@ Rebuild server `DeepThought` for availability zone `az-2.region-a.geo-1`:
     hpcloud servers:rebuild DeepThought -z az-2.region-a.geo-1
 
 
-<h2 id="servers:remove">servers:remove</h2>
+##servers:remove## {#servers:remove}
 Remove a server or servers (specified by name or ID).
 
 ###Syntax
-<font face="Courier">hpcloud servers:remove name_or_id [<i>name_or_id ...</i>]</font>
+`hpcloud servers:remove name_or_id [name_or_id ...]`
 
 ###Options
 <dl>
@@ -1693,11 +1725,11 @@ Remove a server or servers (specified by name or ID).
 Remove existing servers by specifying their name or ID. Optionally, you can specify an availability zone.
 
 ###Examples
-Delete <font face='courier'>my-server</font>:
+Delete 'my-server':
 
     hpcloud servers:remove my-server
 
-Delete the servers <font face='courier'>DeepThought</font> and <font face='courier'>Blaine</font>:
+Delete the servers 'DeepThought' and 'Blaine':
 
     hpcloud servers:remove DeepThought Blaine
 
@@ -1710,13 +1742,13 @@ Delete server `my-server` for availability zone `az-2.region-a.geo-1`:
     hpcloud servers:remove my-server -z az-2.region-a.geo-1
 
 ###Aliases
-<font face='courier'>servers:rm, servers:delete, servers:del</font>
+`servers:rm, servers:delete, servers:del`
 
-<h2 id="snapshots">snapshots</h2>
+##snapshots## {#snapshots}
 List block devices available.
 
 ###Syntax
-<font face="Courier">hpcloud snapshots [<i>name_or_id ...</i>]</font>
+`hpcloud snapshots [name_or_id ...]`
 
 ###Options
 <dl>
@@ -1741,13 +1773,13 @@ List the detail information about snapshot `testsnap`:
     hpcloud snapshots testsnap
 
 ###Aliases
-<font face='courier'>snapshots:list</font>
+`snapshots:list`
 
-<h2 id="snapshots:add">snapshots:add</h2>
+##snapshots:add## {#snapshots:add}
 Create a snapshot.
 
 ###Syntax
-<font face="Courier">hpcloud snapshots:add &lt;<i>name</i>&gt; &lt;<i>volume</i>&gt;</font>
+`hpcloud snapshots:add <name> <volume>`
 
 ###Options
 <dl>
@@ -1761,20 +1793,20 @@ Create a snapshot.
 Create a snapshot with the given name from a volume.  Optionally, you can specify a description.
 
 ###Examples
-Create the new snapshot <font face='courier'>my_snapshot</font> from the specified volume:
+Create the new snapshot 'my_snapshot' from the specified volume:
 
     hpcloud snapshots:add my_snapshot vol10
 
-Creates the new snapshot <font face='courier'>my_snapshot</font> from the specified volume with the description `test vol`:
+Creates the new snapshot 'my_snapshot' from the specified volume with the description `test vol`:
 
     hpcloud snapshots:add my_snapshot vol10 -d 'test vol'
 
 
-<h2 id="snapshots:remove">snapshots:remove</h2>
+##snapshots:remove## {#snapshots:remove}
 Remove a snapshot or snapshots (specified by name or ID).
 
 ###Syntax
-<font face="Courier">hpcloud snapshots:remove &lt;<i>name_or_id</i>&gt; [<i>name_or_id ...</i>]</font>
+`hpcloud snapshots:remove <name_or_id> [name_or_id ...]`
 
 ###Options
 <dl>
@@ -1799,13 +1831,13 @@ Delete snapshot `snappy` for availability zone `az-2.region-a.geo-1`:
     hpcloud snapshots:remove snappy -z az-2.region-a.geo-1
 
 ###Aliases
-<font face='courier'>snapshots:rm, snapshots:delete, snapshots:del</font>
+`snapshots:rm, snapshots:delete, snapshots:del`
 
-<h2 id="tempurl">tempurl</h2>
+##tempurl## {#tempurl}
 Create temporary URLs for the given objects.
 
 ###Syntax
-<font face="Courier">hpcloud tempurl &lt;<i>object</i>&gt; ...</font>
+`hpcloud tempurl <object> ...`
 
 ###Options
 <dl>
@@ -1831,16 +1863,17 @@ Create a temporary URL for the file `file.txt` with a period of 7 days for avail
     hpcloud tempurl :my_container/file.txt -z region-a.geo-1
 
 ###Aliases
-<font face='courier'>tmpurl</font>
+`tmpurl`
 
-<h2 id="volumes">volumes</h2>
+##volumes## {#volumes}
 List the available block devices.
 
 ###Syntax
-<font face="Courier">hpcloud volumes [<i>name_or_id ...</i>]</font>
+`hpcloud volumes [name_or_id ...]`
 
 ###Options
 <dl>
+<dt><b>-b, [--bootable]</b></dt><dd>List the bootable volumes.</dd>  
 <dt><b>-z, [--availability-zone=AVAILABILITY_ZONE]</b></dt><dd>Set the availability zone.</dd>  
 <dt><b>-a, [--account-name=ACCOUNT_NAME]</b></dt><dd>Select account.</dd>  
 </dl>
@@ -1862,49 +1895,54 @@ List the details for volume `testvol`:
     hpcloud volumes testvol
 
 ###Aliases
-<font face='courier'>volumes:list</font>
+`volumes:list`
 
-<h2 id="volumes:add">volumes:add</h2>
+##volumes:add## {#volumes:add}
 Add a volume.
 
 ###Syntax
-<font face="Courier">hpcloud volumes:add &lt;<i>name</i>&gt; [<i>size</i>]</font>
+`hpcloud volumes:add <name> [size]`
 
 ###Options
 <dl>
 <dt><b>-d, [--description=DESCRIPTION]</b></dt><dd>Description of the volume.</dd>  
-<dt><b>-m, [--metadata=METADATA]</b></dt><dd>Set the meta data.</dd>  
-<dt><b>-s, [--snapshot=SNAPSHOT]</b></dt><dd>Create volume the specified snapshot.</dd>  
+<dt><b>-m, [--metadata=METADATA]</b></dt><dd>Set the metadata.</dd>  
+<dt><b>-s, [--snapshot=SNAPSHOT]</b></dt><dd>Create a volume from the specified snapshot.</dd>  
+<dt><b>-i, [--image=IMAGE]</b></dt><dd>Create a volume from the specified image.</dd>  
 <dt><b>-z, [--availability-zone=AVAILABILITY_ZONE]</b></dt><dd>Set the availability zone.</dd>  
 <dt><b>-a, [--account-name=ACCOUNT_NAME]</b></dt><dd>Select account.</dd>  
 </dl>
 
 ###Description
-Add a new volume to your compute account with the specified name and size.  Optionally, you can specify a description, metadata or availability zone.  If you do not specify a size, it is taken from the snapshot (if specified) or default to 1 gigabyte.
+Add a new volume to your compute account with the specified name and size.  Optionally, you can specify a description, metadata or availability zone.  If you do not specify a size, it is taken from the specified snapshot or image.  If no image or snapshot is specified, the size defaults to 1 gigabyte.
 
 ###Examples
-Create a new volume named <font face='courier'>my_volume</font> of size 10:
+Create a new volume named 'my_volume' of size 10:
 
     hpcloud volumes:add my_volume 10
 
-Create a new volume named <font face='courier'>my_volume</font> of size 10 with a description:
+Create a new volume named 'my_volume' of size 10 with a description:
 
     hpcloud volumes:add my_volume 10 -d 'test vol'
 
-Create a new volume named <font face='courier'>my_volume</font> based on the snapshot <font face='courier'>snappy</font>:
+Create a new volume named 'my_volume' based on the snapshot 'snappy':
 
     hpcloud volumes:add my_volume -s 'snappy'
+
+Create a new bootable volume named 'my_volume' based on the image '20103':
+
+    hpcloud volumes:add my_volume -i 20103
 
 Creates volume `my_volume` in availability zone `az-2.region-a.geo-1`:
 
     hpcloud volumes:add my_volume 1 -z az-2.region-a.geo-1
 
 
-<h2 id="volumes:attach">volumes:attach</h2>
+##volumes:attach## {#volumes:attach}
 Attach a volume to a server (specified by device name).
 
 ###Syntax
-<font face="Courier">hpcloud volumes:attach &lt;<i>volume</i>&gt; &lt;<i>server</i>&gt; &lt;<i>device</i>&gt;</font>
+`hpcloud volumes:attach <volume> <server> <device>`
 
 ###Options
 <dl>
@@ -1925,11 +1963,11 @@ Attach volume `my-volume` to server `myServer` on device `/dev/sdf` for availabi
     hpcloud volumes:attach my-volume myServer /dev/sdg -z az-2.region-a.geo-1
 
 
-<h2 id="volumes:detach">volumes:detach</h2>
+##volumes:detach## {#volumes:detach}
 Detach a volume or volumes.
 
 ###Syntax
-<font face="Courier">hpcloud volumes:detach name_or_id [<i>name_or_id ...</i>]</font>
+`hpcloud volumes:detach name_or_id [name_or_id ...]`
 
 ###Options
 <dl>
@@ -1941,7 +1979,7 @@ Detach a volume or volumes.
 Detach volumes from all servers.  You may specify the volume by name or ID.  You can detach one more more volumes in a command line.
 
 ###Examples
-Detach the volume <font face='courier'>myVolume</font>:
+Detach the volume 'myVolume':
 
     hpcloud volumes:detach myVolume
 
@@ -1949,16 +1987,16 @@ Detach the volume with ID 1159:
 
     hpcloud volumes:detach 1159
 
-Detach the volume <font face='courier'>myVolume</font> for availability zone `az-2.region-a.geo-1`:
+Detach the volume 'myVolume' for availability zone `az-2.region-a.geo-1`:
 
     hpcloud volumes:detach myVolume -z az-2.region-a.geo-1
 
 
-<h2 id="volumes:remove">volumes:remove</h2>
+##volumes:remove## {#volumes:remove}
 Remove a volume or volumes (specified by name or ID).
 
 ###Syntax
-<font face="Courier">hpcloud volumes:remove name_or_id [<i>name_or_id ...</i>]</font>
+`hpcloud volumes:remove name_or_id [name_or_id ...]`
 
 ###Options
 <dl>
@@ -1970,7 +2008,7 @@ Remove a volume or volumes (specified by name or ID).
 Remove volumes by specifying their names or ID. You may specify more than one volume name or ID on a command line.  Optionally, you can specify an availability zone.
 
 ###Examples
-Delete the volumes <font face='courier'>tome</font> and <font face='courier'>treatise</font>:
+Delete the volumes 'tome' and 'treatise':
 
     hpcloud volumes:remove tome treatise
 
@@ -1983,13 +2021,13 @@ Delete the volume `my-volume` for availability zone `az-2.region-a.geo-1`:
     hpcloud volumes:remove my-volume -z az-2.region-a.geo-1
 
 ###Aliases
-<font face='courier'>volumes:rm, volumes:delete, volumes:del</font>
+`volumes:rm, volumes:delete, volumes:del`
 
-<h2 id="volumes:server">volumes:server</h2>
+##volumes:server## {#volumes:server}
 List the volumes on server.
 
 ###Syntax
-<font face="Courier">hpcloud volumes:server [<i>server</i>]</font>
+`hpcloud volumes:server [server]`
 
 ###Options
 <dl>
@@ -2012,3 +2050,5 @@ List the volumes on server `myServer`:
 List the volumes on server `myServer` for availability zone `az-2.region-a.geo-1`:
 
     hpcloud volumes:server myServer -z az-2.region-a.geo-1
+
+

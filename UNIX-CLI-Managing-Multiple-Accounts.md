@@ -2,11 +2,12 @@
 layout: default
 title: "UNIX CLI: Managing Multiple Accounts"
 permalink: /cli/unix/account-management/
+product: unix-cli
 
 ---
 # UNIX CLI: Managing Multiple Accounts
 
-The UNIX CLI allows you to have multiple accounts within the application. You can manage the credentials of each account separately. When you install and enter credentials, the *default* account is created. If you perform an operation without specifying another account with *-a* tag, the *default* account is used. 
+The UNIX CLI allows you to have multiple accounts within the application. You can manage the credentials of each account separately. When you install and enter credentials, the *default* account is created. If you perform an operation without specifying another account with *-a* tag, the default account is used. 
 
 The following lists the commands related to how to manage multiple accounts within the UNIX CLI.
 
@@ -20,7 +21,7 @@ The following lists the commands related to how to manage multiple accounts with
 To view all your current accounts, use the [`account:list`](/cli/unix/reference#account) command:
 
      $ hpcloud account:list
-     default
+     default <= default
      account_1
      my_account_3
 
@@ -51,10 +52,10 @@ To create a new account, use a currently created account (*default* if you have 
      Account 'default' copied to 'account_2'
 
 ## Assigning an Account as Default ## {#AssigningDefault}
-When you use a CLI command without specifying a specific account with the *-a* option, the *default* account is used. You can set another account as the default with the [`account:use <account_name>`](/cli/unix/reference#account:use) command:
+When you execute a CLI command without designating a specific account with the *-a* option, the default account is used. You can redefine the default account by using the [`account:use <account_name>`](/cli/unix/reference#account:use) command:
 
      $ hpcloud account:use account_2
-     Account 'account_2' copied to 'default'
+     Account 'account_2' is now the default
 
 ## Remove an Account ## {#RemoveAccount}
 

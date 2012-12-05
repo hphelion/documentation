@@ -2,6 +2,7 @@
 layout: default
 title: "UNIX CLI CDN Examples"
 permalink: /cli/unix/cdn/
+product: unix-cli
 
 ---
 # UNIX CLI CDN Examples

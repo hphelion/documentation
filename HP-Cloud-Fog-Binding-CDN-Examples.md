@@ -2,6 +2,7 @@
 layout: default
 title: "HP Cloud Fog Binding CDN Examples"
 permalink: /bindings/fog/cdn/
+product: fog
 
 ---
 # HP Cloud Fog Binding CDN Examples

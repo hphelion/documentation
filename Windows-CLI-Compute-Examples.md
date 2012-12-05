@@ -2,6 +2,7 @@
 layout: default
 title: "Windows CLI Compute Examples"
 permalink: /cli/windows/compute/
+product: win-cli
 
 ---
 # Windows CLI Compute Examples
@@ -174,8 +175,7 @@ To create a new server:
 
 Where the new server has name `TestSever`, image identifier `2111`, flavor identifier`100`, security group name `Security_group1`, name-value pair `Namevalue1 | value1`, and keypair `KeyName`.  
 
-<!--DOUG: rewrite-->
-**Note for Windows Images**: When the Windows CLI detects you are creating a Windows server, it looks for the keypair *.pem* file in a specific location. The default location for the .pem file is `C:\Users\*username*\Documents\HP\`. When the new-server operation has completed, the output is the Administrator password to be used with an RDP client. Please make note of it. For assistance on connecting to a Windows Instance, see [How to Access a Windows Instance via the Remote Desktop](/compute/using#WindowsRDP) or use the [quick connect feature](#QuickConnect).
+**Note for Windows Images**: When the Windows CLI detects a new Windows server, it looks for the keypair *.pem* file in a specific location. The default location for the .pem file is `C:\Users\*username*\Documents\HP\`. When the `new-server` operation completes, the output is the Administrator password to be used with an RDP client. Please make note of it. For details on connecting to a Windows nstance, see [How to Access a Windows Instance via the Remote Desktop](/compute/using#WindowsRDP) or use the [quick connect feature](#QuickConnect).
 
 For a full description of the options available with the **New-Server** command, please see the [New-Server](/cli/windows/reference#New-Server) section of the [Windows CLI Reference](/cli/windows/reference) page. 
 
@@ -216,7 +216,6 @@ To create an image from an existing server:
 
 Where `-s` designates the server ID, and `-n` designates the image name. Use the `ls` command in the Images directory to view your created images.
 
-<1--DOUG rework-->
 Creating an image of an active server produces a state 'snapshot' of the server and makes it available as an `Image`. After creation you can use that image to create a new server. You can find the new image id by viewing the `Images` directory.
 
 **Note for Windows Images**: For instances created from snapshots of Windows images, the Administrator password matches the Administrator password of the server the snapshot was taken from, even if you changed it from the original password.
@@ -225,12 +224,11 @@ Creating an image of an active server produces a state 'snapshot' of the server 
 
 To perform a quick-connect to an existing server instance: 
 
-<1--DOUG rework-->
-**Note**: This currently works with Windows Instances only. In order for the `connect-server` command to work, your keypair *.pem* file needs to be in the appropriate location. The default location is `C:\Users\*username*\Documents\HP\`.
+**Note**: This feature is currently supported only for Windows instances. To use the `connect-server` command, your keypair *.pem* file needs to be in the appropriate location. The default location is `C:\Users\*username*\Documents\HP\`.
 
     PS HPCS:\\>  Connect-Server 2111
 
-This connects you to the server with the ID `2111`.  You can also connect to a server by [navigating](blah) to a server directory and entering the `Connect-Server` command with no arguments:
+This connects you to the server with the ID `2111`.  You can also connect to a server by navigating to a server directory and entering the `Connect-Server` command with no arguments:
 
     PS HPCS:\\>  cd Servers
     PS HPCS:\Servers> cd 2111
@@ -261,11 +259,11 @@ To use the `Get-Password` command, all of the following must be true:
 
 ###Reset-Password### {#ResetPassword}
 
-For Windows Instances only, if you change your Windows password manually via [RDP](http://msdn.microsoft.com/en-us/library/windows/desktop/aa383015(v=vs.85).aspx), you need to manually sync the password with the Windows CLI with the [`Reset-Password` cmdlet](cli/windows/reference#reset-password) for the `connect-server` command to work. If you use the `get-password` cmdlet to fetch your original de-crypted Administrator password, and it's available, it will overwrite the password sync.
+For Windows Instances only, if you change your Windows password manually via [RDP](http://msdn.microsoft.com/en-us/library/windows/desktop/aa383015(v=vs.85).aspx), you need to manually sync the new password with the Windows CLI using the [`Reset-Password` cmdlet](cli/windows/reference#reset-password) for the `connect-server` command to work. If you use the `get-password` cmdlet to fetch your original de-crypted Administrator password, and it's available, it overwrites the password sync.
 
     PS HPCS:\> reset-password -id 1234 -p "Thisisalongpassword!"
 
-This resets the password for server `1234` to  `Thisisalongpassword!`.
+This re-syncs the Windows CLI password with that of the server `1234` to `Thisisalongpassword!`.
  
 ##Floating IP Management## {#IPManagement}
 

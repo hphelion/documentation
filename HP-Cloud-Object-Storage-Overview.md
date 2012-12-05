@@ -2,6 +2,7 @@
 layout: default
 title: "HP Cloud Object Storage Overview"
 permalink: /object-storage/
+product: object-storage
 
 ---
 # HP Cloud Object Storage Overview

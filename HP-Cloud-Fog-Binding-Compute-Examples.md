@@ -2,10 +2,9 @@
 layout: default
 title: "HP Cloud Fog Binding Compute Examples"
 permalink: /bindings/fog/compute/
+product: fog
 
 ---
-# HP Cloud Fog Binding Compute Examples
-
 The HP Cloud services provides compute support using two abstractions - [a model layer](#ModelLayer) and [a request layer](#RequestLayer). Both layers are detailed below.  The code samples on this page can be executed from within a Ruby console (IRB):
 
         irb
@@ -82,21 +81,35 @@ For information on connecting to the service, please see the [Connecting to the 
         win_server.windows_password
         # => "Im6ZJ8auyMRnkJ24KKWQvTgWDug1s ... y0uY1BcHLJ5OrkEPHhQoQntIKOoQ=\n"
 
-**Note**: You must retrieve the Windows password immediately after you create the Windows instance. Also, make sure you have a security rule defined to open RDP port 3389 so that you can connect to the Windows server.
+        **Note**: You must retrieve the Windows password immediately after you create the Windows instance. Also, make sure you have a security rule defined to open RDP port 3389 so that you can connect to the Windows server.
 
-5. Reboot a server
+5. Create a new Linux-based server with a bootable volume:
+
+        conn.servers.create( :flavor_id => flavor_id,
+                              :image_id => image_id,  # ignored
+                              :name => "MyBootableServer",
+                              :block_device_mapping =>
+                                   { 'volume_size' => '',   # ignored
+                                     'volume_id' => "bootable_volume_id",
+                                     'delete_on_termination' => '0',
+                                     'device_name' => 'vda'
+                                   }
+                            )
+**Note**: The *image_id* is ignored as the call uses the bootable volume to create the server instance. Also, note that in the *block_device_mapping*, the *volume_size* is ignored as it is automatically picked up from the bootable volume that is specified. The *delete_on_termination* parameter can be set to "1" if you want the bootable volume to be killed after the server instance is killed, otherwise to preserve the bootable volume, set it to "0" as shown above.
+
+6. Reboot a server
 
         server = conn.servers.get(server_id)
         server.reboot          # soft reboot by default
 
         server.reboot("HARD")  # hard reboot also possible
 
-6. Change password for a server
+7. Change password for a server
 
         server = conn.servers.get(server_id)
         server.change_password("new_password")
 
-7. Delete an existing server
+8. Delete an existing server
 
         server = conn.servers.get(server_id)
         server.destroy
@@ -371,7 +384,7 @@ For information on connecting to the service, please see the [Connecting to the 
         server['addresses']                         # returns the public and private addresses
         server['status']                            # returns the state of the server e.g. ACTIVE
 
-4. Create a new server
+4. Create a new server:
 
         response = conn.create_server("My Shiny Server", flavor_id, image_id)
         server = response.body['server']
@@ -391,34 +404,51 @@ For information on connecting to the service, please see the [Connecting to the 
 
 **Note**: You must retrieve the Windows password immediately after you create the Windows instance. Also, make sure you have a security rule defined to open RDP port 3389 so that you can connect to the Windows server.
 
-6. Update the name for a server
+6. Create a new Linux-based server with a bootable volume:
+
+        conn.create_server( "MyBootableServer", 
+                               flavor_id, 
+                               image_id,             # ignored
+                               {
+                                  "block_device_mapping" =>
+                                  { "volume_size"=>"",         # ignored
+                                    "volume_id"=>"65904",
+                                    "delete_on_termination"=>"0",
+                                    "device_name"=>"vda"
+                                  }
+                              }                                    
+                          )
+
+**Note**: The *image_id* is ignored, as the call uses the bootable volume to create the server instance. Also, note that in *block_device_mapping*, *volume_size* is ignored as it is automatically retrieved from the specified bootable volume. You can set the *delete_on_termination* parameter to `1` if you want the bootable volume to be deleted after the server instance is killed; otherwise to preserve the bootable volume, set it to `0` as shown above.
+
+7. Update the name for a server
 
         conn.update_server(server_id, {'name' => "My Cool Server"})
         response = conn.get_server_details(server_id)
         response.body['server']['name']             # => "My Cool Server"
 
-7. Change the password for a server
+8. Change the password for a server
 
         conn.change_password_server(server_id, "new_password")
 
-8. List both public and private addresses of a particular server
+9. List both public and private addresses of a particular server
 
         response = conn.list_server_addresses(server_id)
 
-9. List all the private addresses of a particular server
+10. List all the private addresses of a particular server
 
         response = conn.list_server_private_addresses(server_id, "private")    # where "private" is the network name
 
-10. List all the public addresses of a particular server
+11. List all the public addresses of a particular server
 
         response = conn.list_server_public_addresses(server_id, "private")     # where "private" is the network name
 
-11. Reboot a server
+12. Reboot a server
 
         response = conn.reboot_server(server_id, 'HARD')  # Hard reboot a server
         response = conn.reboot_server(server_id, 'SOFT')  # Soft reboot a server
 
-12. Delete an existing server
+13. Delete an existing server
 
         conn.delete_server(server_id)
 

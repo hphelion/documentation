@@ -2,6 +2,7 @@
 layout: default
 title: "HP Cloud Object Storage  API"
 permalink: /object-storage/api/
+product: object-storage
 
 ---
 # HP Cloud Object Storage  API

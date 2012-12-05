@@ -2,6 +2,7 @@
 layout: default
 title: "Windows CLI: Installation"
 permalink: /cli/windows/installation/
+product: win-cli
 
 ---
 # Windows CLI: Installation

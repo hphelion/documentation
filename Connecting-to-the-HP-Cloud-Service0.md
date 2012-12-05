@@ -2,6 +2,7 @@
 layout: default
 title: "Connecting to the HP Cloud Service"
 permalink: /bindings/fog/connect/
+product: fog
 
 ---
 This page gives you details on how to connect to the HP Cloud service and contains the following sections:

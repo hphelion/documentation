@@ -2,6 +2,7 @@
 layout: default
 title: "Unix Command Line Interface"
 permalink: /cli/unix/
+product: unix-cli
 
 ---
 # Unix Command Line Interface

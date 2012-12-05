@@ -2,6 +2,7 @@
 layout: default
 title: "Unix CLI: Account Configuration"
 permalink: /cli/unix/configuration/
+product: unix-cli
 
 ---
 # Unix CLI: Account Configuration

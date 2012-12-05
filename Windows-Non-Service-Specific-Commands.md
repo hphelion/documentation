@@ -2,6 +2,7 @@
 layout: default
 title: "Windows Non-Service Specific Commands"
 permalink: /cli/windows/commands/
+product: win-cli
 
 ---
 # Windows Non-Service Specific Commands

@@ -2,6 +2,7 @@
 layout: default
 title: "Windows CLI: Container and Folder Management"
 permalink: /cli/win/container-and-folder-management/
+product: win-cli
 
 ---
 # Windows CLI: Container and Folder Management
