@@ -17,8 +17,8 @@ To install the UNIX CLI software, follow these steps:
 
 2. Download and install the HPCloud Unix CLI gem using curl:
 
-        curl -sL https://docs.hpcloud.com/file/hpcloud-1.2.0.gem >hpcloud-1.2.0.gem
-        gem install hpcloud-1.2.0.gem
+        curl -sL https://docs.hpcloud.com/file/hpcloud-1.3.0.gem >hpcloud-1.3.0.gem
+        gem install hpcloud-1.3.0.gem
 
    You should see output similar to the following:
 
@@ -62,7 +62,7 @@ To install the UNIX CLI software, follow these steps:
 
 You can find the values you need for your setup by clicking the [`API Keys`](https://console.hpcloud.com/account/api_keys) button in the [Console Dashboard](https://console.hpcloud.com/dashboard).  
 
-<img src="media/api%20keys-2.jpg" width="580" height="471" alt="" />
+[[{"type":"media","view_mode":"media_large","fid":"141","attributes":{}}]]
 
 Please be sure to confirm the default values for `Auth Uri`, `Compute zone`, `Storage zone`, `CDN zone`, and `Block zone`.
 
