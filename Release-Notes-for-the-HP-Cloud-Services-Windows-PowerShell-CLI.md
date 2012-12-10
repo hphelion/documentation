@@ -7,33 +7,19 @@ product: win-cli
 ---
 # Release Notes for the HP Cloud Services Windows PowerShell CLI
 
-# Release Notes for the HP Cloud Services Windows PowerShell CLI
+These are the release notes for the HP Cloud services Windows PowerShell CLI.  The current release number for the [Windows PowerShell CLI software](/cli/windows) is version 1.3.1.9, released on 10/29/2012.  These release notes contain the following information:
 
-These are the release notes for the HP Cloud services Windows PowerShell CLI.  The current release number for the [Windows PowerShell CLI software](/cli/windows) is version 1.3.2.4, released on 12/3/2012.  These release notes contain the following information:
+* [Release 1.3.1.9 Information](#1.3.1.9)
+* [Release 1.3.0.6 Information](#1.3.0.6)
+* [Release 1.3.0.1 Information](#1.3.0.1)
+* [Release 1.2.0.6 Information](#1.2.0.6)
+* [Release 1.2.0.1 Information](#1.2.0.1)
 
-* [Release 1.3.2.2 Features](#v1322)
-* [Release 1.3.1.9 Features](#v1319)
-* [Release 1.3.0.6 Features](#v1306)
-* [Release 1.3.0.1 Features](#v1301)
-* [Release 1.2.0.6 Features](#v1206)
-* [Release 1.2.0.1 Features](#v1201)
+##Release 1.3.1.9 Information## {#1.3.1.9}
 
-##Release 1.3.2.2 Features## {#v1322}
+This release was made available on 10/29/2012.
 
-This release was made available on 12/3/2012 and contains the following new features:
-
-* The `Connect-Server` cmdlet now works with non-Windows instances in conjunction with *putty.exe*.
-* New argument for `Get-Zones` cmdlet. Adding `–v` will return more details about each zone including containers in that zone and available services. Example: `get-zones -v`.
-* The `Set-Zone` cmdlet shows more details about the newly selected zone including containers in that zone and the available services.
-
-##Known Issues##
-
-* **Resolved**: You can now add a new security group rule to an existing security group.
-* **Resolved**: The server keyname is now displayed when you list the available servers.
-
-##Release 1.3.1.9 Features## {#v1319}
-
-This release was made available on 10/29/2012 and contains the following new features:
+###New Features###
 
 * Support for temporary URLs via new attributes for the cmdlet `[get-uri](/cli/windows/reference#ObjectStorage)`.
 * Support for wild cards for Object-Storage with the commands, `[ls, del, copy](/cli/windows/reference#ObjectStorage)`.
@@ -46,12 +32,13 @@ This release was made available on 10/29/2012 and contains the following new fea
 
 ###Known Issues###
 
-* **Issue**: You cannot add a new security group rule to an existing security group.  
-    *WorkAround*: Use the [console](https://console.hpcloud.com) to make this change.
+* Known bug that prevents adding a new security group rule to an existing security group. As a workaround, use the [console](https://console.hpcloud.com) to make this change.
 
-##Release 1.3.0.6 Features## {#v1306}
+##Release 1.3.0.6 Information## {#1.3.0.6}
 
-This release was made available on 9/6/2012 and contains the following new features:
+This release was made available on 9/6/2012.
+
+###New Features###
 
 * Support for changing the color assigned to an availability zone.
 
@@ -59,18 +46,29 @@ This release was made available on 9/6/2012 and contains the following new featu
 
 None this release.
 
-##Release 1.3.0.1 Features## {#v1301}
+###Resolved Issues in Version 1.3.0.6###
 
-This release was made available on 8/28/2012 and contains the following new features:
+None this release.
+
+##Release 1.3.0.1 Information## {#1.3.0.1}
+
+This release was made available on 8/28/2012.
+
+###New Features###
 
 * Support for listing, adding, attaching, detaching and removing block volumes
 * Support for creating and removing block storage snapshots
 
 ###Known Issues###
 
-* **Resolved**: You can now access the keypair information from the command-line interface (CLI).
+None this release.
 
-##Release 1.2.0.6 Features## {#v1206}
+###Resolved Issues in Version 1.3.0.1###
+
+**Issue**: You can now access the keypair information from the command-line interface (CLI). 
+
+
+##Release 1.2.0.6 Information## {#1.2.0.6}
 
 ###New Features###
 
@@ -80,7 +78,11 @@ This release was made available on 8/28/2012 and contains the following new feat
 
 None this release.
 
-##Release 1.2.0.1 Information## {#v1201}
+###Resolved Issues in Version 1.2.0.6###
+
+None this release.
+
+##Release 1.2.0.1 Information## {#1.2.0.1}
 
 ###New Features###
 
@@ -89,5 +91,9 @@ None this release.
 
 ###Known Issues###
 
-* **Issue**: You cannot access the keypair information from the command-line interface (CLI).  
-    *WorkAround*: Access the keypair information through the management console.
+**Issue**: You cannot access the keypair information from the command-line interface (CLI). 
+*WorkAround*: Access the keypair information through the management console.
+
+###Resolved Issues in Version 1.2.0.1###
+
+None this release.
