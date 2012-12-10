@@ -219,7 +219,7 @@ Create temporary URLS for the given objects. Creating a temporary URL is a great
 Create a temporary URL for an existing object:
 
 ###Syntax
-`hpcloud tempurl &lt;<i>object</i>&gt; ...`
+`hpcloud tempurl <object> ...`
 
 ###Options
 -p, [--time-period=TIME_PERIOD]              # time period to keep the url alive  
