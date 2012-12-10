@@ -26,7 +26,7 @@ To add a new volume:
     $ hpcloud volumes:add kweller 1
     Created volume 'kweller' with id '997'.
 
-To create a bootable volume from image 20103:
+To create a bootable volume from (bootable image or raw image) image:
 
     $ hpcloud volumes:add bootable 10 -i 20103
     Created volume 'bootable' with id '67946'.
