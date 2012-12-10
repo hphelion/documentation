@@ -93,9 +93,9 @@ To add a new server (specifying a flavor, an image, a keyname and a security gro
         $ hpcloud servers:add myserver 100 -i 227 -k mykey -s mysecgroup
         Created server 'myserver' with id '222'.
 
-To add a new server (specifying a flavor, an image, a keyname and a security group):
+To add a new persistent server (specifying a flavor, a bootable volume, a keyname and a security group):
 
-        $ hpcloud servers:add bat large -i 5575 -v bootable -k brat
+        $ hpcloud servers:add bat large -v bootable -k brat
         Created server 'bat' with id '535545'.
 
 To change the password of an existing server:
@@ -121,7 +121,7 @@ To add or update the metadata of an existing server (the metadata should be a co
         $ hpcloud servers:metadata:add myserver 'pv=nRT,e=mc2'
         Server 'myserver' set metadata 'pv=nRT,e=mc2'.
 
-To update metadata to an existing serve (the metadata should be a comma separated list of key value pairs):
+To update metadata to an existing server (the metadata should be a comma separated list of key value pairs):
 
         $ hpcloud servers:metadata:update myserver 'pv=presentValue,e=eulers'
         Server 'myserver' set metadata 'pv=presentValue,e=eulers'.
