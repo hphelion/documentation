@@ -100,7 +100,7 @@ Use the `Zone Id` value rather than the zone name to set the color.
 
 After you change the zone color, when you navigate to the zone you see something similar to that shown below:
 
-<img src="media/wincli%20color%20change.png" width="580" height="299" alt="" />
+[[{"type":"media","view_mode":"media_large","fid":"135","attributes":{}}]]
 
 ##Key Mangement## {#KeyManagement}
 
@@ -175,7 +175,8 @@ To create a new server:
 
 Where the new server has name `TestSever`, image identifier `2111`, flavor identifier`100`, security group name `Security_group1`, name-value pair `Namevalue1 | value1`, and keypair `KeyName`.  
 
-**Note for Windows Images**: When the Windows CLI detects a new Windows server, it looks for the keypair *.pem* file in a specific location. The default location for the .pem file is `C:\Users\*username*\Documents\HP\`. When the `new-server` operation completes, the output is the Administrator password to be used with an RDP client. Please make note of it. For details on connecting to a Windows nstance, see [How to Access a Windows Instance via the Remote Desktop](/compute/using#WindowsRDP) or use the [quick connect feature](#QuickConnect).
+<!--DOUG: rewrite-->
+**Note for Windows Images**: When the Windows CLI detects you are creating a Windows server, it looks for the keypair *.pem* file in a specific location. The default location for the .pem file is `C:\Users\*username*\Documents\HP\`. When the new-server operation has completed, the output is the Administrator password to be used with an RDP client. Please make note of it. For assistance on connecting to a Windows Instance, see [How to Access a Windows Instance via the Remote Desktop](/compute/using#WindowsRDP) or use the [quick connect feature](#QuickConnect).
 
 For a full description of the options available with the **New-Server** command, please see the [New-Server](/cli/windows/reference#New-Server) section of the [Windows CLI Reference](/cli/windows/reference) page. 
 
@@ -216,23 +217,40 @@ To create an image from an existing server:
 
 Where `-s` designates the server ID, and `-n` designates the image name. Use the `ls` command in the Images directory to view your created images.
 
+<1--DOUG rework-->
 Creating an image of an active server produces a state 'snapshot' of the server and makes it available as an `Image`. After creation you can use that image to create a new server. You can find the new image id by viewing the `Images` directory.
 
 **Note for Windows Images**: For instances created from snapshots of Windows images, the Administrator password matches the Administrator password of the server the snapshot was taken from, even if you changed it from the original password.
 
-### Quick-Connect to a Windows Instance ### {#QuickConnect}
+### Quick-Connect to a Windows Instance ### {#QuickConnectWin}
 
 To perform a quick-connect to an existing server instance: 
 
-**Note**: This feature is currently supported only for Windows instances. To use the `connect-server` command, your keypair *.pem* file needs to be in the appropriate location. The default location is `C:\Users\*username*\Documents\HP\`.
+<1--DOUG rework-->
+**Note**: This currently works with Windows Instances only. In order for the `connect-server` command to work, your keypair *.pem* file needs to be in the appropriate location. The default location is `C:\Users\*username*\Documents\HP\`.
 
     PS HPCS:\\>  Connect-Server 2111
 
-This connects you to the server with the ID `2111`.  You can also connect to a server by navigating to a server directory and entering the `Connect-Server` command with no arguments:
+This connects you to the server with the ID `2111`.  You can also connect to a server by [navigating](blah) to a server directory and entering the `Connect-Server` command with no arguments:
 
     PS HPCS:\\>  cd Servers
     PS HPCS:\Servers> cd 2111
     PS HPCS:\Servers\2111> Connect-Server
+
+### Quick-Connect to a Non-Windows Instance ### {#QuickConnectNonWin}
+
+To connect to a non-Windows instance, such as Linux, follow these steps:
+
+1. Download the latest version of [putty.exe](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) and [puttygen.exe](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) for Windows.
+2. Make note of the location of your *putty.exe* and *puttygen.exe* files downloaded in step 1.
+3. Open *puttygen.exe* and load the .pem key file used to create the non-windows instance. This file is located at `C:\Users\*user_name*\Documents\HP\`.
+4. Convert the .pem file to the .ppk format by selecting the *Save Private Key* action.
+5. Save the .ppk file into the same directory as your orginal .pem file and give it the same name.
+6. Launch the SSH session with the `Connect-Server` cmdlet. Example: `connect-server 12345` where 12345 is your instance ID.
+
+**Note:** If this is the first time to use `connect-server` with a non-windows instance, the system will prompt for the location of your *putty.exe* file. Please provide the fully qualified UNC path. For example: `C:\Users\*user_name*\Downloads\putty.exe`. This location is stored in your config file located at `C:\Users\*user_name*\Documents\HP\CLI.config`.
+
+**Note:** If you use the same keypair name for another instance, you do not need to convert the key from .pem to .ppk again.
 
 ##Password Management## {#PasswordManagement}
 
@@ -259,11 +277,11 @@ To use the `Get-Password` command, all of the following must be true:
 
 ###Reset-Password### {#ResetPassword}
 
-For Windows Instances only, if you change your Windows password manually via [RDP](http://msdn.microsoft.com/en-us/library/windows/desktop/aa383015(v=vs.85).aspx), you need to manually sync the new password with the Windows CLI using the [`Reset-Password` cmdlet](cli/windows/reference#reset-password) for the `connect-server` command to work. If you use the `get-password` cmdlet to fetch your original de-crypted Administrator password, and it's available, it overwrites the password sync.
+For Windows Instances only, if you change your Windows password manually via [RDP](http://msdn.microsoft.com/en-us/library/windows/desktop/aa383015(v=vs.85).aspx), you need to manually sync the password with the Windows CLI with the [`Reset-Password` cmdlet](cli/windows/reference#reset-password) for the `connect-server` command to work. If you use the `get-password` cmdlet to fetch your original de-crypted Administrator password, and it's available, it will overwrite the password sync.
 
     PS HPCS:\> reset-password -id 1234 -p "Thisisalongpassword!"
 
-This re-syncs the Windows CLI password with that of the server `1234` to `Thisisalongpassword!`.
+This resets the password for server `1234` to  `Thisisalongpassword!`.
  
 ##Floating IP Management## {#IPManagement}
 
