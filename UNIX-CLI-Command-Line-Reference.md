@@ -2050,5 +2050,3 @@ List the volumes on server `myServer`:
 List the volumes on server `myServer` for availability zone `az-2.region-a.geo-1`:
 
     hpcloud volumes:server myServer -z az-2.region-a.geo-1
-
-
