@@ -2,10 +2,9 @@
 layout: default
 title: "Release Notes for the HP Cloud Services UNIX CLI"
 permalink: /cli/unix/release-notes/
-product: unix-cli
 
 ---
-These are the release notes for the HP Cloud services UNIX CLI.  The current release number for the [UNIX CLI software](/cli/unix) is version 1.3.0, released on 12/6/12.
+These are the release notes for the HP Cloud services UNIX CLI.  The current release number for the [UNIX CLI software](/cli/unix) is version , released on 12/11/12.
 
 * [Release 1.3.0 Features](#v1_3_0)
 * [Release 1.2.0 Features](#v1_2_0)
@@ -15,7 +14,7 @@ These are the release notes for the HP Cloud services UNIX CLI.  The current rel
 
 ##Release 1.3.0 Features## {#v1_3_0}
 
-This release was made available on 12/6/2012 and contains the following new features:
+This release was made available on 11/20/2012 and contains the following new features:
 
 * Command `servers:rebuild` added
 * Option `-m` added to the `copy` command to allow you to override the mime type
@@ -23,17 +22,17 @@ This release was made available on 12/6/2012 and contains the following new feat
 * Commands `cdn:containers:add` and `cdn:containers:remove` now accept multiple arguments
 * CLI help text significantly updated
 * Default account can be set to any configured account
-* Commands `acl:grant` and `acl:revoke` added to provide support for cross-tenant access control lists (ACLs)
+* Commands `acl:grant` and `acl:revoke` added to provide Support for cross-tenant access control lists (ACLs)
 * Command `volumes:add` added to provide support for bootable volume creation
 * Command `servers:add` added to provide support for creating a server from a bootable volume
-* Command `acl` now displays data as a table
-* Command `servers:add` has changed; you must pass in an image or volume with the `-i` or `-v` option, respectively
 
 **Note**: This release of the UNIX CLI requires the [Ruby Fog v0.0.18](https://docs.hpcloud.com/bindings/fog/install) binding.
 
 ###Known Issues###
 
-* None for this release.
+* The syntax of the `servers:add` command has changed; you must pass in an image or volume with the `-i` or `-v` option, respectively
+* Command `acl` displays data as a table
+
 
 ##Release 1.2.0 Features## {#v1_2_0}
 
