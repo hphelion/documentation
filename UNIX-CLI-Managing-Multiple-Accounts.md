@@ -1,65 +1,63 @@
 ---
 layout: default
-title: "UNIX CLI: Managing Multiple Accounts"
+title: "UNIX CLI: Advanced Account Management"
 permalink: /cli/unix/account-management/
 product: unix-cli
 
 ---
-# UNIX CLI: Managing Multiple Accounts
+# UNIX CLI: Advanced Account Management
 
-The UNIX CLI allows you to have multiple accounts within the application. You can manage the credentials of each account separately. When you install and enter credentials, the *default* account is created. If you perform an operation without specifying another account with *-a* tag, the default account is used. 
+You may use the `account:edit` command in a non interactive mode if you specify one or more `name_value_pairs` of the settings you wish to modify.  There are options available through the command line that are not available through the interactive prompts.
 
-The following lists the commands related to how to manage multiple accounts within the UNIX CLI.
+* [Updating Account Availability Zones](#ChangingAvailabilityZones)
+* [Updating Account Credentials](#ModifyingAccountCredentials)
+* [Updating Account Options](#ModifyingAccountOptions)
 
-* [List Accounts](#ListAccounts)
-* [Display Credentials for an Account](#DisplayCredsforAccount)
-* [Create a New Account](#CreateNewAccount)
-* [Assigning an Account as Default](#AssigningDefault)
-* [Remove an Account](#RemoveAccount)
+## Updating Account Availability Zones ## {#ChangingAvailabilityZones}
 
-## List Accounts ## {#ListAccounts}
-To view all your current accounts, use the [`account:list`](/cli/unix/reference#account) command:
+You can use the `account:edit` command to change the availability zones for a particular service.  The `account:edit` requires two arguments: `account_name` and one or more `name_value_pairs`.
 
-     $ hpcloud account:list
-     default <= default
-     account_1
-     my_account_3
+To change the availability zone of the object storage and CDN to region b:
 
-## Display Credentials for an Account ## {#DisplayCredsforAccount}
-To view a specific account's credentials, use the [`account <account_name>`](/cli/unix/reference#account) command.
+    $ hpcloud account:edit hp storage_availability_zone=region-b.geo-1 cdn_availability_zone=region-b.geo-1
 
-     $ hpcloud account account_1
-     credentials:
-       account_id: '229721xxxxxxx'
-       secret_key: EueAi5RxxxxxxxxxUXAotdYDluP
-       auth_uri: https://region-a.geo-1.identity.hpcloudsvc.com:35357/v2.0/
-       tenant_id: '6642xxxxxxxx05'
-     zones:
-       compute_availability_zone: az-1.region-a.geo-1
-       storage_availability_zone: region-b.geo-1
-       cdn_availability_zone: region-a.geo-1
-       block_availability_zone: az-1.region-a.geo-1
-     options: {}
+To change the availability zone of the compute service from its current setting to AZ2 for the account `account2`:
 
-To see the credentials of the account currently set as *default*, specify **default** as the account name in the command:
+    $ hpcloud account:edit account2 compute_availability_zone=az-2.region-a.geo-1
 
-     $ hpcloud account default
+To display the active availability zones for your services, you can [find them in the system console](https://console.hpcloud.com/account/api_keys) by selecting `API Keys` on the dashboard or account page. 
 
-### Create a New Account ### {#CreateNewAccount}
-To create a new account, use a currently created account (*default* if you have no other accounts set up) and copy its credentials to create a new account by supply the new account name, `account:copy <source_account_name>  <new_account_name>`:
+## Updating Account Credentials ## {#ModifyingAccountCredentials}
 
-     $ hpcloud account:copy default account_2 
-     Account 'default' copied to 'account_2'
+You can use the `account:edit` command to change any of the following account credentials:
 
-## Assigning an Account as Default ## {#AssigningDefault}
-When you execute a CLI command without designating a specific account with the *-a* option, the default account is used. You can redefine the default account by using the [`account:use <account_name>`](/cli/unix/reference#account:use) command:
+* `account_id` 
+* `secret_key`
+* `auth_uri`
+* `tenant_id`
 
-     $ hpcloud account:use account_2
-     Account 'account_2' is now the default
+The `account:edit` requires two arguments: `account_name` and the `name_value_pair.
 
-## Remove an Account ## {#RemoveAccount}
+To change the access key for the `hp` account:
 
-To remove an existing account, use the [`account:remove <account_name>`](/cli/unix/reference#account:remove) command:
+    $ hpcloud account:edit hp tenant_id=xxxxxxxxxxxxx     
 
-     $ hpcloud account:remove account_2
-     Removed account 'account_2'
+## Updating Account Options ## {#ModifyingAccountOptions}
+
+You can use the `account:edit` command to change any of the following account options:
+
+* `connect_timeout *seconds*`
+* `read_timeout *seconds*`
+* `write_timeout *seconds*`
+* `ssl_verify_peer *true/false*`
+* `ssl_ca_path *file_path*` 
+* `ssl_ca_file *file_name*` 
+* `preferred_flavor *flavor id* `
+* `preferred_image *image id*`
+
+The `account:edit` requires two arguments: `account_name` and the `name_value_pair.
+
+To change the connection timeout value for the `hp` account:
+
+    $ hpcloud account:edit hp connect_timeout=40
+
