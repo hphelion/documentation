@@ -100,7 +100,7 @@ Use the `Zone Id` value rather than the zone name to set the color.
 
 After you change the zone color, when you navigate to the zone you see something similar to that shown below:
 
-[[{"type":"media","view_mode":"media_large","fid":"135","attributes":{}}]]
+<img src="media/wincli%20color%20change.png" width="580" height="299" alt="" />
 
 ##Key Mangement## {#KeyManagement}
 
