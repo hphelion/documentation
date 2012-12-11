@@ -20,7 +20,7 @@ Leveraging [OpenStack Compute](http://openstack.org/projects/compute/), HP Cloud
 A variety of Flavors and Images are provided by HP Cloud Compute that can be used to create a wide mix of Servers.  The best way to learn more is to start using it yourself over at the [Manage Console](https://console.hpcloud.com).  If you have any questions, try our [Forums](https://community.hpcloud.com) where you can learn from our own internal experts as well as other users in the HP Cloud Services community.
 
 ## API
-Do you need low level, raw REST API access to HP Cloud Compute?  Take a look at our [Compute API page](/compute/api) for both OpenStack and EC2 compatibility details.
+Do you need low level, raw REST API access to HP Cloud Compute?  Take a look at our [Compute API page](/api/compute) for both OpenStack and EC2 compatibility details.
 
 ## Bindings
 If you are looking for an easier to use, language-specific way of using HP Cloud Compute, check out our [Bindings section](/bindings).

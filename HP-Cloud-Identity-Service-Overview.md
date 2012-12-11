@@ -37,7 +37,7 @@ Based on [Keystone, the OpenStack Identity Service](http://keystone.openstack.or
 To help you get started with the service, we've got some introductory getting started material at our [Introduction to the HP Cloud Identity Service page](https://community.hpcloud.com/article/identity-service-introduction), and we've also provided you with a use case for [Migrating to the HP Cloud Identity Service](https://community.hpcloud.com/article/identity-service-change-guide).  And of course, if you want to jump right and start using the service yourself, you should go to the [Manage Console](https://console.hpcloud.com).  If you have any questions, try our [Forums](https://community.hpcloud.com) where you can learn from our own internal experts as well as other users in the HP Cloud Services community.
 
 ## API
-Do you need low level, raw REST API access to HP Identity Services?  Take a look at our [Identity Service API page](/identity/api) for both OpenStack and EC2 compatibility details.
+Do you need low level, raw REST API access to HP Identity Services?  Take a look at our [Identity Service API page](/api/identity) for both OpenStack and EC2 compatibility details.
 
 ## Bindings
 If you are looking for an easier to use, language-specific way of using HP Identity Services, check out our [Bindings section](/bindings).
