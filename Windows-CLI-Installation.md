@@ -26,29 +26,21 @@ This page also describes how to [upgrade to a new version](#Upgrading) of the Wi
 
 Launching the Windows installer package will load the following wizard.
 
-<!--[[{"type":"media","view_mode":"media_large","fid":"97","attributes":{}}]]-->
-
-[[{"type":"media","view_mode":"media_large","fid":"125","attributes":{}}]]
+<img src="media/WizardP1.jpg" width="519" height="424" alt="" />
 
 Click the `Next` button; the next window allows you to select your installation folder:
 
-<!--[[{"type":"media","view_mode":"media_large","fid":"29","attributes":{}}]]-->
-
-[[{"type":"media","view_mode":"media_large","fid":"127","attributes":{}}]]
+<img src="media/wincli%20install02_0.png" width="580" height="475" alt="" />
 
 Unless you need to have the installation files reside in a different folder, we recommend you just stay with the defaults and click `Next`, which takes you to the installation confirmation window:
 
-<!--[[{"type":"media","view_mode":"media_large","fid":"30","attributes":{}}]]-->
-
-<!--[[{"type":"media","view_mode":"media_large","fid":"57","attributes":{}}]]-->
-
-[[{"type":"media","view_mode":"media_large","fid":"129","attributes":{}}]]
+<img src="media/wincli%20install03_0.png" width="580" height="475" alt="" />
 
 The installation now proceeds on your system.
 
-[[{"type":"media","view_mode":"media_large","fid":"131","attributes":{}}]]
+<img src="media/wincli%20install04.png" width="580" height="475" alt="" />
 
-[[{"type":"media","view_mode":"media_large","fid":"133","attributes":{}}]]
+<img src="media/wincli%20install05.png" width="580" height="475" alt="" />
 
 **NOTE**: Always use the powershell.exe appropriate for your OS. For 64bit systems, use the file located under \SysWOW64\, for 32bit systems, under \System32\ .
 
@@ -56,7 +48,7 @@ The installation now proceeds on your system.
 
 The first time that you run the shell you must supply the access key, secret key, and tenant ID that was assigned to you during the registration process; you can [find these in the system console](https://console.hpcloud.com/account/api_keys) by selecting `API Keys` on the dashboard or account page.  
 
-[[{"type":"media","view_mode":"media_large","fid":"141","attributes":{}}]]
+<img src="media/api%20keys-2.jpg" width="580" height="471" alt="" />
 
 The shell detects that this is your first time logging in and prompts you for these items. When verified they get reused the next time you open the shell.
 
@@ -74,7 +66,7 @@ The shell detects that this is your first time logging in and prompts you for th
     
     Please enter your Access Key :
 
-<!--[[{"type":"media","view_mode":"media_large","fid":"99","attributes":{}}]]-->
+<!--<img src="media/PromptCred.jpg" width="580" height="228" alt="" />-->
 
 ##Setting the Required Execution Policy## {#SettingtheRequiredExecutionPolicy}
 
@@ -89,7 +81,7 @@ Now that you have installed the required files, make sure that your Powershell e
     [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): y
     PS C:\Projects\Outgoing\HP> 
 
-<!--[[{"type":"media","view_mode":"media_large","fid":"55","attributes":{}}]]-->
+<!--<img src="media/SetExecutionPolicy.png" width="580" height="179" alt="" />-->
 
 Close the Powershell window and reopen as administrator for the policy changes to take affect.
 
