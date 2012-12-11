@@ -7,7 +7,6 @@ product: win-cli
 ---
 # Windows CLI: Installation
 
-
 To get the Object Storage Powershell environment running properly you must complete the following tasks:
 
 <!--+  Run the Installer package-->
@@ -22,26 +21,18 @@ This page also describes how to [upgrade to a new version](#Upgrading) of the Wi
 ##Installation Prerequisites## {#Installation}
 
 **Note** : This product requires the full (not client profile) 4.0 or higher version of the Microsoft .NET Framework to install properly which can be downloaded [here](http://www.microsoft.com/net/).
-
+ 
 ##Running the Installer Package## {#RunningtheInstallerPackage}
 
 Launching the Windows installer package will load the following wizard.
 
-<!--<img src="media/WizardP1.jpg" width="519" height="424" alt="" />-->
-
-<img src="media/wincli%20install01_0.png" width="580" height="475" alt="" />
+<img src="media/WizardP1.jpg" width="519" height="424" alt="" />
 
 Click the `Next` button; the next window allows you to select your installation folder:
-
-<!--<img src="media/SelectInstallFolder.jpg" width="503" height="410" alt="" />-->
 
 <img src="media/wincli%20install02_0.png" width="580" height="475" alt="" />
 
 Unless you need to have the installation files reside in a different folder, we recommend you just stay with the defaults and click `Next`, which takes you to the installation confirmation window:
-
-<!--<img src="media/Confirmation.jpg" width="503" height="410" alt="" />-->
-
-<!--<img src="media/WizardFinish.png" width="511" height="417" alt="" />-->
 
 <img src="media/wincli%20install03_0.png" width="580" height="475" alt="" />
 

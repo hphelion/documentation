@@ -9,8 +9,8 @@ This page gives you details on how to connect to the HP Cloud service and contai
 
 * [Initial Connection](#InitialConnection)
 * [Supplying Your Credentials](#SupplyingyourCredentials)
-* [Using the Owner Account to Grant Access](#UsingtheOwnerAccounttoGrantAccess)
-* [Setting Up the Connection for the User Account](#SettingUptheConnectionfortheUserAccount)
+<!--* [Using the Owner Account to Grant Access](#UsingtheOwnerAccounttoGrantAccess)
+* [Setting Up the Connection for the User Account](#SettingUptheConnectionfortheUserAccount)-->
 * [Availability Zones](#AvailabilityZones)
 * [Optional Parameters](#OptionalParameters)
 
@@ -40,7 +40,7 @@ Where `Service-Name` can be [Compute](/bindings/fog/compute), [Storage](/binding
 
 [[{"type":"media","view_mode":"media_large","fid":"141","attributes":{}}]]
 
-##Using the Owner Account to Grant Access## {#UsingtheOwnerAccounttoGrantAccess}
+<!--##Using the Owner Account to Grant Access## {#UsingtheOwnerAccounttoGrantAccess}
 
 You can use the owner account to grant access.  To set up the connections for the owner account:
 
@@ -74,7 +74,7 @@ To set up the connection for the user account:
             :hp_account_id => "22222222", :hp_secret_key => "xxxxxx", 
             :hp_tenant_id => "21212121", 
             :hp_avl_zone => "region-a.geo-1", 
-            :connection_options => {:ssl_verify_peer => false})
+            :connection_options => {:ssl_verify_peer => false})-->
 
 ##Availability Zones## {#AvailabilityZones}
 

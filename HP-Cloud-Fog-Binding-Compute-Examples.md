@@ -80,22 +80,20 @@ For information on connecting to the service, please see the [Connecting to the 
         # Retrieve the encrypted password
         win_server.windows_password
         # => "Im6ZJ8auyMRnkJ24KKWQvTgWDug1s ... y0uY1BcHLJ5OrkEPHhQoQntIKOoQ=\n"
+**Note**: You must retrieve the Windows password immediately after you create the Windows instance. Also, make sure you have a security rule defined to open RDP port 3389 so that you can connect to the Windows server.
 
-        **Note**: You must retrieve the Windows password immediately after you create the Windows instance. Also, make sure you have a security rule defined to open RDP port 3389 so that you can connect to the Windows server.
+5. Create a new Linux-based persistent server with a bootable volume:
 
-5. Create a new Linux-based server with a bootable volume:
-
-        conn.servers.create( :flavor_id => flavor_id,
-                              :image_id => image_id,  # ignored
-                              :name => "MyBootableServer",
+        conn.servers.create( :flavor_id => 103,
+                              :name => "MyPersistentServer",
                               :block_device_mapping =>
-                                   { 'volume_size' => '',   # ignored
-                                     'volume_id' => "bootable_volume_id",
+                                   [{ 'volume_size' => '',   # ignored
+                                     'volume_id' => "111111",
                                      'delete_on_termination' => '0',
                                      'device_name' => 'vda'
-                                   }
+                                   }]
                             )
-**Note**: The *image_id* is ignored as the call uses the bootable volume to create the server instance. Also, note that in the *block_device_mapping*, the *volume_size* is ignored as it is automatically picked up from the bootable volume that is specified. The *delete_on_termination* parameter can be set to "1" if you want the bootable volume to be killed after the server instance is killed, otherwise to preserve the bootable volume, set it to "0" as shown above.
+**Note**: In *block_device_mapping*, *volume_size* is ignored as it is automatically retrieved from the specified bootable volume. You can set the *delete_on_termination* parameter to `1` if you want the bootable volume to be deleted after the server instance is killed; otherwise to preserve the bootable volume, set it to `0` as shown above.
 
 6. Reboot a server
 
@@ -401,25 +399,23 @@ For information on connecting to the service, please see the [Connecting to the 
         # Retrieve the encrypted password 
         conn.get_windows_password(server_id)
         # => "Im6ZJ8auyMRnkJ24KKWQvTgWDug1s ... y0uY1BcHLJ5OrkEPHhQoQntIKOoQ=\n"
-
 **Note**: You must retrieve the Windows password immediately after you create the Windows instance. Also, make sure you have a security rule defined to open RDP port 3389 so that you can connect to the Windows server.
 
-6. Create a new Linux-based server with a bootable volume:
+6. Create a new Linux-based persistent server with a bootable volume:
 
-        conn.create_server( "MyBootableServer", 
-                               flavor_id, 
-                               image_id,             # ignored
-                               {
-                                  "block_device_mapping" =>
-                                  { "volume_size"=>"",         # ignored
+        conn.create_persistent_server( "MyBootableServer", 
+                               103, 
+                                [{ "volume_size"=>"",         # ignored
                                     "volume_id"=>"65904",
                                     "delete_on_termination"=>"0",
                                     "device_name"=>"vda"
-                                  }
-                              }                                    
+                                }] ,
+                                {
+                                 'security_groups' => ["mysecgroup"],
+                                 'key_name' => "mykey"
+                                }
                           )
-
-**Note**: The *image_id* is ignored, as the call uses the bootable volume to create the server instance. Also, note that in *block_device_mapping*, *volume_size* is ignored as it is automatically retrieved from the specified bootable volume. You can set the *delete_on_termination* parameter to `1` if you want the bootable volume to be deleted after the server instance is killed; otherwise to preserve the bootable volume, set it to `0` as shown above.
+**Note**: In *block_device_mapping*, *volume_size* is ignored as it is automatically retrieved from the specified bootable volume. You can set the *delete_on_termination* parameter to `1` if you want the bootable volume to be deleted after the server instance is killed; otherwise to preserve the bootable volume, set it to `0` as shown above.
 
 7. Update the name for a server
 

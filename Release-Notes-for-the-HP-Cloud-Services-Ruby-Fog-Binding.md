@@ -7,7 +7,7 @@ product: fog
 ---
 # Release Notes for the HP Cloud Services Ruby Fog Binding
 
-These are the release notes for the HP Cloud services Ruby Fog bindings.  The current release number for the [HP Cloud Services Ruby Fog software bindings](/bindings) is version 0.0.17, released on Oct. 19th, 2012.  These release notes contain the following information:
+These are the release notes for the HP Cloud services Ruby Fog bindings.  The current release number for the [HP Cloud Services Ruby Fog software bindings](/bindings) is version 0.0.18, released on Dec. 5th, 2012.  These release notes contain the following information:
 
 * [Release 0.0.18 Information](#v0018)
 * [Release 0.0.17 Information](#v0017)
@@ -19,7 +19,7 @@ These are the release notes for the HP Cloud services Ruby Fog bindings.  The cu
 This release was made available on 12/3/2012 and contains the following new features:
 
 * Support for using access control lists (ACLs) to share objects and containers
-* Updates to the `create_server` and `create_volume` commands to support bootable volumes and persistent instances
+* Support for bootable volumes and persistent instances
 
 ##Known Issues##
 
@@ -31,7 +31,7 @@ None in this release.
 This release was made available on 10/19/2012 and contains the following new features:
 
 * Support for creating a temporary URL for a file or object for sharing purposes
-* Support for creating a new Windows server instance from an existing key pair
+* Support for creating a new Windows server instance
 
 ##Known Issues##
 
