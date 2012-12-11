@@ -75,6 +75,8 @@ To remove an existing snapshot image:
 
 ##Server Commands## {#ServerCommands}
 
+Newer versions of the CLI track private keys and the keys associated with servers so you can access those servers without manually specifying the key files.  The `keypairs:private` commands can be used to manage these private keys.
+
 To list servers:
 
         $ hpcloud servers
@@ -83,10 +85,15 @@ To list one or more servers (you can specify the servers by name or ID):
 
         $ hpcloud servers mongo 1083654
 
-To add a new server (specifying an image and a flavor):
+To add a new server specifying an image and a flavor:
 
         $ hpcloud servers:add myserver 100 -i 227
         Created server 'myserver' with id '111'.
+
+If you specify `preferred_flavor` and `preferred_image` specified in your account file, you do not need to specify them:
+
+        $ hpcloud servers:add sameold
+        Created server 'sameold' with id '112'.
 
 To add a new server (specifying a flavor, an image, a keyname and a security group):
 
@@ -97,6 +104,26 @@ To add a new server (specifying a flavor, an image, a keyname and a security gro
 
         $ hpcloud servers:add bat large -i 5575 -v bootable -k brat
         Created server 'bat' with id '535545'.
+
+Dump the console of a server:
+
+        $ hpcloud servers:console cli_test_srv1
+        Console output for cli_test_srv1:
+         * Starting regular background program processing daemon                 [ OK ]
+         * Starting deferred execution scheduler                                 [ OK ]
+        ...
+
+Attempt to extract the password of a windows server:
+
+        $ hpcloud servers:console winserv4 -d
+
+Secure shell into a server:
+
+        $ hpcloud servers:ssh cli_test_srv1
+        Connecting to 'cli_test_srv1'...
+        Welcome to Ubuntu 12.04 LTS (GNU/Linux 3.2.0-23-virtual x86_64)
+        ...
+        ubuntu@cli-test-srv1:~$
 
 To change the password of an existing server:
 
@@ -136,7 +163,6 @@ To list the metadata for an existing server:
           | e   | mc2   |
           +-----+-------+
 
-
 To remove metadata from an existing snapshot server:
 
         $ hpcloud servers:metadata:remove myserver pv
@@ -163,7 +189,7 @@ In the following example, `winserv` is the name of the server, `large` is the fl
          Make sure the security group has port 3389 open
          You may wish to change the password when you log in
 
-An example of how to connect via a Windows RDP client is located [here](/compute/using#WindowsRDP).
+An example of how to connect via a Windows RDP client is located [here](/compute/using#WindowsRDP).  The `servers:console` command can be used to extract the password if it is still available on the console.
 
 ##Key Pair Commands## {#KeypairCommands}
 
@@ -185,12 +211,34 @@ To add a new key pair:
 To add a new key pair and save it to a file:
 
         $ hpcloud keypairs:add mykeypair2 --output
-        Created key pair 'mykeypair2' and saved it in a file at './mykeypair2.pem'.
+        Created key pair 'mykeypair2' and saved it in a file at '/home/terry/.hpcloud/keypairs/mykeypair2.pem'.
 
 To add a new key pair by importing public key data:
 
         $ hpcloud keypairs:import mykeypair3 <public key data>
         Imported key pair 'mykeypair3'.
+
+List the private keys the CLI knows about:
+
+        $ hpcloud keypairs:private
+        cli_test_key1
+        cli_test_key3
+        cli_test_key4
+
+Add a private key to the keys that the CLI knows about:
+
+        $ hpcloud keypairs:private:add newkey ./private.pem
+        Added private key '/home/terry/.hpcloud/keypairs/newkey.pem'.
+
+Print the location of a private key associated with a server:
+
+        $ hpcloud keypairs:private:location winserv4
+        /home/terry/.hpcloud/keypairs/1664306.pem
+
+Remove a private key:
+
+        $ hpcloud keypairs:private:remove newkey 
+        Removed private key '/home/terry/.hpcloud/keypairs/newkey.pem'.
 
 To remove an existing key pair:
 
