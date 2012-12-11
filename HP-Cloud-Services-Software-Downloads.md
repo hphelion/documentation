@@ -11,7 +11,7 @@ HP Cloud Services has a few software downloads, each of which is on its appropri
 
 ##Command-line Interface (CLI) Packages##
 * **UNIX CLI**
- - [Installation package](https://docs.hpcloud.com/file/hpcloud-1.2.0.gem)
+ - [Installation package](https://docs.hpcloud.com/file/hpcloud-1.3.0.gem)
  - [Overview page](/cli/unix)
  - [Release Notes](/cli/unix/release-notes)
 * **Windows PowerShell CLI**
