@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: page
 title: "HP Cloud Services APIs"
 permalink: /api/
 
