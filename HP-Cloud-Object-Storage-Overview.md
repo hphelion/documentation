@@ -17,7 +17,7 @@ Leveraging [OpenStack Storage](http://openstack.org/projects/storage/), HP Cloud
 The best way to learn more is to start using it yourself over at the [Manage Console](https://console.hpcloud.com).  If you have any questions, try our [Forums](https://community.hpcloud.com) where you can learn from our own internal experts as well as other users in the HP Cloud Services community.
 
 ## API
-Do you need low level, raw REST API access to HP Cloud Object Storage?  Trot on over to the [Object Storage API page](/object-storage/api) for details.
+Do you need low level, raw REST API access to HP Cloud Object Storage?  Trot on over to the [Object Storage API page](/api/object-storage) for details.
 
 ## Bindings
 Got a favorite programming language?  Don't like to deal with the guts of a REST API?  Take a look at our [Bindings section](/bindings) to see what your options are for writing code against HP Cloud Object Storage.
