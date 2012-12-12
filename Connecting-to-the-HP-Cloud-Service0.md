@@ -38,7 +38,8 @@ To connect to the HP Cloud Service, follow these steps:
 
 Where `Service-Name` can be [Compute](/bindings/fog/compute), [Storage](/bindings/fog/object-storage), [CDN](/bindings/fog/cdn), or [BlockStorage](/bindings/fog/block-storage).  You can find the values by clicking the [`API Keys`](https://console.hpcloud.com/account/api_keys) button in the [Console Dashboard](https://console.hpcloud.com/dashboard).
 
-[[{"type":"media","view_mode":"media_large","fid":"141","attributes":{}}]]
+<!--[[{"type":"media","view_mode":"media_large","fid":"141","attributes":{}}]]
+insert screen shot here-->
 
 <!--##Using the Owner Account to Grant Access## {#UsingtheOwnerAccounttoGrantAccess}
 
