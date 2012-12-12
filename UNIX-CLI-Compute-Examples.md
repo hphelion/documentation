@@ -23,130 +23,156 @@ You can also find some good how-tos for the compute service on the [Using the Co
 
 Remember that you can get detailed help for any command or task with the following command:
 
-        $ hpcloud help <TASK>
+    $ hpcloud help <TASK>
 
 ##Flavor Commands## {#FlavorCommands}
 
 To list available flavors:
 
-        $ hpcloud flavors
+    $ hpcloud flavors
 
 ##Image Commands## {#ImageCommands}
 
 To list available images:
 
-        $ hpcloud images
+    $ hpcloud images
 
 To add a new snapshot image based on a server:
 
-        $ hpcloud images:add myimage myserver
-        Created image 'myimage' with id '111'.
+    $ hpcloud images:add myimage myserver
+    Created image 'myimage' with id '111'.
 
 To add metadata to an existing snapshot image (the metadata must be in a comma-separated list of key value pairs):
 
-        $ hpcloud images:metadata:add myimage 'pv=nRT,e=mc2'
-        Image 'myimage' set metadata 'pv=nRT,e=mc2'.
+    $ hpcloud images:metadata:add myimage 'pv=nRT,e=mc2'
+    Image 'myimage' set metadata 'pv=nRT,e=mc2'.
 
 To update metadata to an existing image (the metadata must be in a comma-separated list of key value pairs):
 
-        $ hpcloud images:metadata:update myimage 'pv=presentValue,e=eulers'
-        Image 'myimage' set metadata 'pv=presentValue,e=eulers'.
+    $ hpcloud images:metadata:update myimage 'pv=presentValue,e=eulers'
+    Image 'myimage' set metadata 'pv=presentValue,e=eulers'.
 
 To list the metadata for an existing image:
 
-       $ hpcloud images:metadata myimage
-          +-----+-------+
-          | key | value |
-          +-----+-------+
-          | pv  | nRT   |
-          | e   | mc2   |
-          +-----+-------+
+    $ hpcloud images:metadata myimage
+       +-----+-------+
+       | key | value |
+       +-----+-------+
+       | pv  | nRT   |
+       | e   | mc2   |
+       +-----+-------+
 
 
 To remove metadata from an existing snapshot image:
 
-        $ hpcloud images:metadata:remove myimage pv
-        Removed metadata 'pv' from image 'myimage'.
+    $ hpcloud images:metadata:remove myimage pv
+    Removed metadata 'pv' from image 'myimage'.
 
 To remove an existing snapshot image:
 
-        $ hpcloud images:remove myimage
-        Removed image 'myimage'.
+    $ hpcloud images:remove myimage
+    Removed image 'myimage'.
 
 ##Server Commands## {#ServerCommands}
 
+Newer versions of the CLI track private keys and the keys associated with servers so you can access those servers without manually specifying the key files.  The `keypairs:private` commands can be used to manage these private keys.
+
 To list servers:
 
-        $ hpcloud servers
+    $ hpcloud servers
 
 To list one or more servers (you can specify the servers by name or ID):
 
-        $ hpcloud servers mongo 1083654
+    $ hpcloud servers mongo 1083654
 
-To add a new server (specifying an image and a flavor):
+To add a new server specifying an image and a flavor:
 
-        $ hpcloud servers:add myserver 100 -i 227
-        Created server 'myserver' with id '111'.
+    $ hpcloud servers:add myserver 100 -i 227
+    Created server 'myserver' with id '111'.
+
+If you specify `preferred_flavor` and `preferred_image` specified in your account file, you do not need to specify them:
+
+    $ hpcloud servers:add sameold
+    Created server 'sameold' with id '112'.
 
 To add a new server (specifying a flavor, an image, a keyname and a security group):
 
-        $ hpcloud servers:add myserver 100 -i 227 -k mykey -s mysecgroup
-        Created server 'myserver' with id '222'.
+    $ hpcloud servers:add myserver 100 -i 227 -k mykey -s mysecgroup
+    Created server 'myserver' with id '222'.
 
 To add a new persistent server (specifying a flavor, a bootable volume, a keyname and a security group):
 
-        $ hpcloud servers:add bat large -v bootable -k brat
-        Created server 'bat' with id '535545'.
+    $ hpcloud servers:add bat large -i 5575 -v bootable -k brat
+    Created server 'bat' with id '535545'.
+
+Dump the console of a server:
+
+    $ hpcloud servers:console cli_test_srv1
+    Console output for cli_test_srv1:
+    * Starting regular background program processing daemon                 [ OK ]
+    * Starting deferred execution scheduler                                 [ OK ]
+    ...
+
+Attempt to extract the password of a windows server:
+
+    $ hpcloud servers:console winserv4 -d
+
+Secure shell into a server:
+
+    $ hpcloud servers:ssh cli_test_srv1
+    Connecting to 'cli_test_srv1'...
+    Welcome to Ubuntu 12.04 LTS (GNU/Linux 3.2.0-23-virtual x86_64)
+    ...
+    ubuntu@cli-test-srv1:~$
 
 To change the password of an existing server:
 
-        $ hpcloud servers:password myserver new_password
-        Password changed for server 'myserver'.
+    $ hpcloud servers:password myserver new_password
+    Password changed for server 'myserver'.
 
 To perform a soft or hard reboot of an existing server:
 
-        $ hpcloud servers:reboot myserver
-        Soft rebooting server 'myserver'.
+    $ hpcloud servers:reboot myserver
+    Soft rebooting server 'myserver'.
 
-        $ hpcloud servers:reboot myserver --hard
-        Hard rebooting server 'myserver'.
+    $ hpcloud servers:reboot myserver --hard
+    Hard rebooting server 'myserver'.
 
 To rebuild an existing server:
 
-        $ hpcloud servers:rebuild myserver
-        Server 'myserver' being rebuilt.
+    $ hpcloud servers:rebuild myserver
+    Server 'myserver' being rebuilt.
 
 To add or update the metadata of an existing server (the metadata should be a comma-separated list of key value pairs):
 
-        $ hpcloud servers:metadata:add myserver 'pv=nRT,e=mc2'
-        Server 'myserver' set metadata 'pv=nRT,e=mc2'.
+    $ hpcloud servers:metadata:add myserver 'pv=nRT,e=mc2'
+    Server 'myserver' set metadata 'pv=nRT,e=mc2'.
 
 To update metadata to an existing server (the metadata should be a comma separated list of key value pairs):
 
-        $ hpcloud servers:metadata:update myserver 'pv=presentValue,e=eulers'
-        Server 'myserver' set metadata 'pv=presentValue,e=eulers'.
+    $ hpcloud servers:metadata:update myserver 'pv=presentValue,e=eulers'
+    Server 'myserver' set metadata 'pv=presentValue,e=eulers'.
 
 To list the metadata for an existing server:
 
-       $ hpcloud servers:metadata myserver
-          +-----+-------+
-          | key | value |
-          +-----+-------+
-          | pv  | nRT   |
-          | e   | mc2   |
-          +-----+-------+
-
+    $ hpcloud servers:metadata myserver
+       +-----+-------+
+       | key | value |
+       +-----+-------+
+       | pv  | nRT   |
+       | e   | mc2   |
+       +-----+-------+
 
 To remove metadata from an existing snapshot server:
 
-        $ hpcloud servers:metadata:remove myserver pv
-        Removed metadata 'pv' from server 'myserver'.
+    $ hpcloud servers:metadata:remove myserver pv
+    Removed metadata 'pv' from server 'myserver'.
 
 To remove an existing server or servers (you can specify one or more servers by name or ID):
 
-        $ hpcloud servers:remove myserver 1089624
-        Removed server 'myserver'.
-        Removed server '1089624'.
+    $ hpcloud servers:remove myserver 1089624
+    Removed server 'myserver'.
+    Removed server '1089624'.
 
 ###Creating a Windows Instance### {#WindowsServer}
 
@@ -156,110 +182,132 @@ There are some different parameters that must be specified to create a new windo
 
 In the following example, `winserv` is the name of the server, `large` is the flavor name, `1000065672` is the Windows image identifier, `winpair` is the key pair name, `allowsRDP` is the security group with port 3389 open, and ` ./winpair.pem` is the .pem file location (in the current folder).
 
-        $ hpcloud servers:add winserv large -i 1000065672 -k winpair -s allowsRDP -p ./winpair.pem
-         Created server 'winserver' with id '222'.
-         Retrieving password, this may take several minutes...
-         Windows password: Hj67dgski)
-         Make sure the security group has port 3389 open
-         You may wish to change the password when you log in
+    $ hpcloud servers:add winserv large -i 1000065672 -k winpair -s allowsRDP -p ./winpair.pem
+    Created server 'winserver' with id '222'.
+    Retrieving password, this may take several minutes...
+    Windows password: Hj67dgski)
+    Make sure the security group has port 3389 open
+    You may wish to change the password when you log in
 
-An example of how to connect via a Windows RDP client is located [here](/compute/using#WindowsRDP).
+An example of how to connect via a Windows RDP client is located [here](/compute/using#WindowsRDP).  The `servers:console` command can be used to extract the password if it is still available on the console.
 
 ##Key Pair Commands## {#KeypairCommands}
 
 To list key pairs:
 
-        $ hpcloud keypairs
+    $ hpcloud keypairs
 
 To add a new key pair:
 
-        $ hpcloud keypairs:add mykeypair
-        
-        -----BEGIN RSA PRIVATE KEY-----
-        MIICXgIBAAKBgQC18ljyebY0GGKxLY6DHcKv1xXw3MCFaRhtXse7zgGjBejMjOz/
-        ...
-        /Fb5Ikzrhop4HukT/RoXeAlLegLtsLEhSJFw4W4HB/83/qsXB0/IXyG46T0FAkEA
-        -----END RSA PRIVATE KEY-----
-        Created key pair 'mykeypair'.
+    $ hpcloud keypairs:add mykeypair
+    
+    -----BEGIN RSA PRIVATE KEY-----
+    MIICXgIBAAKBgQC18ljyebY0GGKxLY6DHcKv1xXw3MCFaRhtXse7zgGjBejMjOz/
+    ...
+    /Fb5Ikzrhop4HukT/RoXeAlLegLtsLEhSJFw4W4HB/83/qsXB0/IXyG46T0FAkEA
+    -----END RSA PRIVATE KEY-----
+    Created key pair 'mykeypair'.
 
 To add a new key pair and save it to a file:
 
-        $ hpcloud keypairs:add mykeypair2 --output
-        Created key pair 'mykeypair2' and saved it in a file at './mykeypair2.pem'.
+    $ hpcloud keypairs:add mykeypair2 --output
+    Created key pair 'mykeypair2' and saved it in a file at '/home/terry/.hpcloud/keypairs/mykeypair2.pem'.
 
 To add a new key pair by importing public key data:
 
-        $ hpcloud keypairs:import mykeypair3 <public key data>
-        Imported key pair 'mykeypair3'.
+    $ hpcloud keypairs:import mykeypair3 <public key data>
+    Imported key pair 'mykeypair3'.
+
+List the private keys the CLI knows about:
+
+    $ hpcloud keypairs:private
+    cli_test_key1
+    cli_test_key3
+    cli_test_key4
+
+Add a private key to the keys that the CLI knows about:
+
+    $ hpcloud keypairs:private:add newkey ./private.pem
+    Added private key '/home/terry/.hpcloud/keypairs/newkey.pem'.
+
+Print the location of a private key associated with a server:
+
+    $ hpcloud keypairs:private:location winserv4
+    /home/terry/.hpcloud/keypairs/1664306.pem
+
+Remove a private key:
+
+    $ hpcloud keypairs:private:remove newkey 
+    Removed private key '/home/terry/.hpcloud/keypairs/newkey.pem'.
 
 To remove an existing key pair:
 
-        $ hpcloud keypairs:remove mykeypair
-        Removed key pair 'mykeypair'.
+    $ hpcloud keypairs:remove mykeypair
+    Removed key pair 'mykeypair'.
 
 ##Security Group Commands## {#SecurityGroupCommands}
 
 To list security groups:
 
-        $ hpcloud securitygroups
+    $ hpcloud securitygroups
 
 To add a new security group:
 
-        $ hpcloud securitygroups:add mysecgroup "my sec group desciption"
-        Created security group 'mysecgroup'.
+    $ hpcloud securitygroups:add mysecgroup "my sec group desciption"
+    Created security group 'mysecgroup'.
 
 To remove an existing security group:
 
-        $ hpcloud securitygroups:remove mysecgroup
-        Removed security group 'mysecgroup'.
+    $ hpcloud securitygroups:remove mysecgroup
+    Removed security group 'mysecgroup'.
 
 ##Security Group Rule Commands## {#SecurityGroupRuleCommands}
 
 To list rules for an existing security group:
 
-        $ hpcloud securitygroups:rules mysecgroup
+    $ hpcloud securitygroups:rules mysecgroup
 
 To add a new rule to an existing security group:
 
-        $ hpcloud securitygroups:rules:add mysecgroup icmp
-        Created rule '1111' for security group 'mysecgroup'.
+    $ hpcloud securitygroups:rules:add mysecgroup icmp
+    Created rule '1111' for security group 'mysecgroup'.
 
-        $ hpcloud securitygroups:rules:add mysecgroup tcp -p 22..22
-        Created rule '1112' for security group 'mysecgroup'.
+    $ hpcloud securitygroups:rules:add mysecgroup tcp -p 22..22
+    Created rule '1112' for security group 'mysecgroup'.
 
-        $ hpcloud securitygroups:rules:add mysecgroup tcp -p 80..80 -c "111.111.111.111/1"
-        Created rule '1113' for security group 'mysecgroup'.
+    $ hpcloud securitygroups:rules:add mysecgroup tcp -p 80..80 -c "111.111.111.111/1"
+    Created rule '1113' for security group 'mysecgroup'.
 
-        $ hpcloud securitygroups:rules:add mysecgroup tcp -p 3389..3389 # Allow RDP
-        Created rule '1113' for security group 'mysecgroup'.
+    $ hpcloud securitygroups:rules:add mysecgroup tcp -p 3389..3389 # Allow RDP
+    Created rule '1113' for security group 'mysecgroup'.
 
 To remove an existing rule from a security group:
 
-        $ hpcloud securitygroups:rules:remove mysecgroup 1111
-        Removed rule '1111' for security group 'mysecgroup'.
+    $ hpcloud securitygroups:rules:remove mysecgroup 1111
+    Removed rule '1111' for security group 'mysecgroup'.
 
 ##Addresses or Floating IP Commands## {#AddressesorFloatingIPCommands}
 
 To list addresses:
 
-        $ hpcloud addresses
+    $ hpcloud addresses
 
 To add or allocate a new address:
 
-        $ hpcloud addresses:add
-        Created a public IP address '11.11.11.11'.
+    $ hpcloud addresses:add
+    Created a public IP address '11.11.11.11'.
 
 To associate an existing address to an existing server:
 
-        $ hpcloud addresses:associate "11.11.11.11" myserver
-        Associated address '11.11.11.11' to server 'myserver'.
+    $ hpcloud addresses:associate "11.11.11.11" myserver
+    Associated address '11.11.11.11' to server 'myserver'.
 
 To disassociate an existing address to an existing server:
 
-        $ hpcloud addresses:disassociate "11.11.11.11" 
-        Disassociated address '11.11.11.11' from any server instance.
+    $ hpcloud addresses:disassociate "11.11.11.11" 
+    Disassociated address '11.11.11.11' from any server instance.
 
 To remove or release an existing address:
 
-        $ hpcloud addresses:remove "11.11.11.11"
-        Removed address '11.11.11.11'.
+    $ hpcloud addresses:remove "11.11.11.11"
+    Removed address '11.11.11.11'.
