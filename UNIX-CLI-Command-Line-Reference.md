@@ -1189,13 +1189,13 @@ Print the location of the private key for 'myserver'
 
 
 ##keypairs:private:remove## {#keypairs:private:remove}
-Make a private key available for the CLI
+Remove a private key file
 
 ###Syntax
 `hpcloud keypairs:private:remove <key_name> [key_name...]`
 
 ###Description
-This command copies the private key file to ~/.hpcloud/keypairs directory so the CLI can use it for various commands to access servers.  This command does *not* upload the private key anywhere and it will *only* be available for the CLI on the current server.
+This command removes private key files from the ~/.hpcloud/keypairs directory which is the store used by the CLI. If you plan to continue to use this private key, make sure you have it stored somewhere else.  There is no way to recover a private key that has been deleted unless you have another copy of that key.  Keys are stored in the ~/.hpcloud/keypairs directory by key name and server id, so there may be multiple copies of a single key in the private key store.
 
 ###Examples
 Remove 'mykey' and 'spare' from the private key storage
@@ -1663,7 +1663,7 @@ Get the console output of a server or extract the windows password.
 
 ###Options
 <dl>
-<dt><b>-p, [--private-key-file=PRIVATE_KEY_FILE]</b></dt><dd>Name of the pem file with your private key.</dd>  
+<dt><b>-p, [--private-key-file=PRIVATE_KEY_FILE]</b></dt><dd>Private key pem file used to decrypt windows password.</dd>  
 <dt><b>-d, [--dump-password]</b></dt><dd>Dump the windows password if the private key is known by the CLI.</dd>  
 <dt><b>-z, [--availability-zone=AVAILABILITY_ZONE]</b></dt><dd>Set the availability zone.</dd>  
 <dt><b>-a, [--account-name=ACCOUNT_NAME]</b></dt><dd>Select account.</dd>  
@@ -1903,11 +1903,11 @@ Secure shell into the server.
 ###Examples
 Secure shell into the bugs server
 
-    hpcloud servers:console bugs -p bunny.pem
+    hpcloud servers:ssh bugs -p bunny.pem
 
 Secure shell into daffy which has a know keypair
 
-    hpcloud servers:console daffy
+    hpcloud servers:ssh daffy
 
 
 ##snapshots## {#snapshots}
