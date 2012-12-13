@@ -8,7 +8,7 @@ product: unix-cli
 Below you can find a full reference of supported UNIX command-line interface (CLI) commands. The commands are alphabetized.  You can also use the <font face="Courier">hpcloud help [<em>command</em>]</font> tool (where <em>command</em> is the name of the command on which you want help, for example <font face="Courier">account:setup</font>) to display usage, description, and option information from the command line.
 
 ##account## {#account}
-List your accounts and account settings.
+Lis...
 
 ###Syntax
 `hpcloud account [account_name]`
@@ -33,7 +33,7 @@ List your accounts and account settings for domain `useast`:
 `account:list`
 
 ##account:copy## {#account:copy}
-Copy account data to the specified account.
+Cop...
 
 ###Syntax
 `hpcloud account:copy <from_account> <to_account>`
@@ -48,7 +48,7 @@ Copy account `useast` to account `backup`:
 
 
 ##account:edit## {#account:edit}
-Create or edit your account credentials.
+Cre...
 
 ###Syntax
 `hpcloud account:edit <account_name> [name_value_pair ...]`
@@ -114,7 +114,7 @@ Set the account credential authorization URI to `https://127.0.0.1` and the bloc
 `account:add, account:setup, account:update`
 
 ##account:remove## {#account:remove}
-Remove accounts.
+Rem...
 
 ###Syntax
 `hpcloud account:remove account_name [account_name ...]`
@@ -131,7 +131,7 @@ Remove the `useast` and `uswest` accounts:
 `account:rm, account:delete, account:del`
 
 ##account:setup## {#account:setup}
-Create or edit your account credentials.
+Cre...
 
 ###Syntax
 `hpcloud account:edit <account_name> [name_value_pair ...]`
@@ -197,7 +197,7 @@ Set the account credential authorization URI to `https://127.0.0.1` and the bloc
 `account:add, account:setup, account:update`
 
 ##account:use## {#account:use}
-Set the named account to the default account.
+Set...
 
 ###Syntax
 `hpcloud account:use <account_to_use>`
@@ -212,7 +212,7 @@ Set the default account to `useast`:
 
 
 ##account:verify## {#account:verify}
-Verify the credentials of the specified account.
+Ver...
 
 ###Syntax
 `hpcloud account:verify <account_to_verify>`
@@ -227,7 +227,7 @@ Verify the `useast` account credentials:
 
 
 ##acl## {#acl}
-View the ACL for an object or container.
+Vie...
 
 ###Syntax
 `hpcloud acl <object/container>`
@@ -256,7 +256,7 @@ Display the ACL for the container 'my_container' for availability zone `region-a
 
 
 ##acl:grant## {#acl:grant}
-Grant the specified permissions.
+Gra...
 
 ###Syntax
 `hpcloud acl:grant <container> <permissions> [user ...]`
@@ -287,7 +287,7 @@ Give Billy read permissions to 'my_container'
 `acl:set`
 
 ##acl:revoke## {#acl:revoke}
-Revoke the specified permissions.
+Rev...
 
 ###Syntax
 `hpcloud acl:revoke <container> <permissions> [user ...]`
@@ -312,7 +312,7 @@ Revoke read and write from bob@example.com from 'my_container'
 
 
 ##addresses## {#addresses}
-Display list of available addresses.
+Dis...
 
 ###Syntax
 `hpcloud addresses [ip_or_id ...]`
@@ -343,7 +343,7 @@ List addresses for availability zone `az-2.region-a.geo-1`:
 `addresses:list`
 
 ##addresses:add## {#addresses:add}
-Add or allocate a new public IP address.
+Add...
 
 ###Syntax
 `hpcloud addresses:add`
@@ -370,7 +370,7 @@ Add a new public IP address in availability zone `az-2.region-a.geo-1`:
 `addresses:allocate`
 
 ##addresses:associate## {#addresses:associate}
-Associate a public IP address to a server instance.
+Ass...
 
 ###Syntax
 `hpcloud addresses:associate <ip_or_id> <server_name_or_id>`
@@ -395,7 +395,7 @@ Associate the address `111.111.111.111` to server `myserver` in availability zon
 
 
 ##addresses:disassociate## {#addresses:disassociate}
-Disassociate any server instance associated to the public IP address.
+Dis...
 
 ###Syntax
 `hpcloud addresses:disassociate ip_or_id [ip_or_id ...]`
@@ -424,7 +424,7 @@ Disassociate the address `111.111.111.111` for availability zone `az-2.region-a.
 
 
 ##addresses:remove## {#addresses:remove}
-Remove or release a public IP address.
+Rem...
 
 ###Syntax
 `hpcloud addresses:remove ip_or_id [ip_or_id ...]`
@@ -455,7 +455,7 @@ Remove IP address '111.111.111.111' for availability zone `az-2.region-a.geo-1`:
 `addresses:rm, addresses:delete, addresses:release, addresses:del`
 
 ##cdn:containers## {#cdn:containers}
-List available containers on the CDN.
+Lis...
 
 ###Syntax
 `hpcloud cdn:containers`
@@ -487,7 +487,7 @@ List only the CDN-enabled containers for availability zone `region-a.geo-1`:
 `cdn:containers:list`
 
 ##cdn:containers:add## {#cdn:containers:add}
-Add containers to the CDN.
+Add...
 
 ###Syntax
 `hpcloud cdn:containers:add name [name ...]`
@@ -512,7 +512,7 @@ Add the container `my_cdn_container` to the CDN in the  availability zone `regio
 
 
 ##cdn:containers:get## {#cdn:containers:get}
-Get the value of an attribute of a CDN container.
+Get...
 
 ###Syntax
 `hpcloud cdn:containers:get <name> <attribute>`
@@ -547,7 +547,7 @@ Get the value of the attribute `X-Ttl` for availability zone `regioni-a.geo`:
 
 
 ##cdn:containers:location## {#cdn:containers:location}
-Get the location of a container on the CDN.
+Get...
 
 ###Syntax
 `hpcloud cdn:containers:location <name>`
@@ -575,7 +575,7 @@ Get the location of the container `my_cdn_container` for availability zone `regi
 `cdn:containers:loc`
 
 ##cdn:containers:remove## {#cdn:containers:remove}
-Remove containers from the CDN.
+Rem...
 
 ###Syntax
 `hpcloud cdn:containers:remove name [name ...]`
@@ -602,7 +602,7 @@ Delete the container `my_cdn_container for the availability zone `region-a.geo-1
 `cdn:containers:rm, cdn:containers:delete, cdn:containers:del`
 
 ##cdn:containers:set## {#cdn:containers:set}
-Set attributes on a CDN container.
+Set...
 
 ###Syntax
 `hpcloud cdn:containers:set <name> <attribute> <value>`
@@ -638,7 +638,7 @@ Set the attribute `X-Ttl` to 900 for availability zoneregion-a.geo-1`:
 
 
 ##config## {#config}
-List the current configuration settings.
+Lis...
 
 ###Syntax
 `hpcloud config`
@@ -655,7 +655,7 @@ List the current configuration settings:
 `config:list`
 
 ##config:set## {#config:set}
-Set values in the configuration file.
+Set...
 
 ###Syntax
 `hpcloud config:set key=value [key=value ...]`
@@ -680,7 +680,7 @@ Set the write timeout to 60 seconds and the read timeout to 60 seconds:
 `config:add, config:update`
 
 ##containers:add## {#containers:add}
-Add a container.
+Add...
 
 ###Syntax
 `hpcloud containers:add name [name ...]`
@@ -710,7 +710,7 @@ Create the container `my_container` for the availability zone `region-a.geo-1`:
 
 
 ##containers:remove## {#containers:remove}
-Remove a containers.
+Rem...
 
 ###Syntax
 `hpcloud containers:remove name [name ...]`
@@ -746,7 +746,7 @@ Delete the container `my_container` for availability zone 'region-a.geo-1`:
 `containers:rm, containers:delete, containers:del`
 
 ##copy## {#copy}
-Copy files from one resource to another.
+Cop...
 
 ###Syntax
 `hpcloud copy <source> [source ...] <destination>`
@@ -799,7 +799,7 @@ Copy the file `my_file.txt` to container 'my_container' for availability zone `r
 ``
 
 ##flavors## {#flavors}
-List available flavors.
+Lis...
 
 ###Syntax
 `hpcloud flavors [name_or_id ...]`
@@ -830,7 +830,7 @@ List the flavors for  availability zone `az-2.region-a.geo-1`:
 `flavors:list`
 
 ##get## {#get}
-Fetch objects to your local directory.
+Fet...
 
 ###Syntax
 `hpcloud get object [object ...]`
@@ -857,12 +857,12 @@ Copy `file.txt` to your current directory for availability zone `region-a.geo-1`
 `fetch`
 
 ##help## {#help}
-Describe available tasks or one specific task
+Des...
 
 ###Syntax
 `hpcloud help [TASK]``Describe available tasks or one specific task`
 ##images## {#images}
-List the available images in your compute account.
+Lis...
 
 ###Syntax
 `hpcloud images [name_or_id ...]`
@@ -893,7 +893,7 @@ List images for availability zone `az-2.region-a.geo-1`:
 `images:list`
 
 ##images:add## {#images:add}
-Add an image from an existing server.
+Add...
 
 ###Syntax
 `hpcloud images:add <name> <server_name>`
@@ -923,7 +923,7 @@ Create the new image `my_image` from the existing server `my_server` in  availab
 
 
 ##images:metadata## {#images:metadata}
-List the metadata for an image.
+Lis...
 
 ###Syntax
 `hpcloud images:metadata <image_name_or_id>`
@@ -954,7 +954,7 @@ List the metadata for image `565394` for availability zone `az-2.region-a.geo-1`
 `images:metadata:list`
 
 ##images:metadata:add## {#images:metadata:add}
-Add metadata to an image.
+Add...
 
 ###Syntax
 `hpcloud images:metadata:add <name> <metadata>`
@@ -977,7 +977,7 @@ Add the specified metadata to the image (if the metadata exists, it is updated):
 `images:metadata:update`
 
 ##images:metadata:remove## {#images:metadata:remove}
-Remove metadata from an image.
+Rem...
 
 ###Syntax
 `hpcloud images:metadata:remove <image_name_or_id> [metadata_key ...]`
@@ -1000,7 +1000,7 @@ Remove the specified metadata from the image:
 `images:metadata:rm`
 
 ##images:remove## {#images:remove}
-Remove images by name or identifier.
+Rem...
 
 ###Syntax
 `hpcloud images:remove name_or_id [name_or_id ...]`
@@ -1031,12 +1031,12 @@ Delete image `my-image` for availability zone `az-2.region-a.geo-1:
 `images:rm, images:delete, images:del`
 
 ##info## {#info}
-Display info about the HP Cloud UNIX CLI.
+Dis...
 
 ###Syntax
 `hpcloud info``Display info about the HP Cloud UNIX CLI.`
 ##keypairs## {#keypairs}
-List the available keypairs.
+Lis...
 
 ###Syntax
 `hpcloud keypairs [name ...]`
@@ -1067,7 +1067,7 @@ List the key pairs for availability zone `az-2.region-a.geo-1`:
 `keypairs:list`
 
 ##keypairs:add## {#keypairs:add}
-add a key pair
+add...
 
 ###Syntax
 `hpcloud keypairs:add <key_name>`
@@ -1111,7 +1111,7 @@ Create the key `mykey` for availability zone `az-2.region-a.geo-1`:
 
 
 ##keypairs:import## {#keypairs:import}
-Import a key pair.
+Imp...
 
 ###Syntax
 `hpcloud keypairs:import <key_name> <public_key_data>`
@@ -1140,7 +1140,7 @@ Import a key from public key data for availability zone `az-2.region-a.geo-1`:
 
 
 ##keypairs:private## {#keypairs:private}
-List private keypairs in local directory
+Lis...
 
 ###Syntax
 `hpcloud keypairs:private`
@@ -1159,7 +1159,7 @@ Create the key 'mykey':
 
 
 ##keypairs:private:add## {#keypairs:private:add}
-Make a private key available for the CLI
+Mak...
 
 ###Syntax
 `hpcloud keypairs:private:add <key_name> <file_name>`
@@ -1174,7 +1174,7 @@ Make the 'mykey' private key available for the CLI
 
 
 ##keypairs:private:location## {#keypairs:private:location}
-Find the private key for the given server
+Fin...
 
 ###Syntax
 `hpcloud keypairs:private:location <server_name_or_id>`
@@ -1189,13 +1189,13 @@ Print the location of the private key for 'myserver'
 
 
 ##keypairs:private:remove## {#keypairs:private:remove}
-Make a private key available for the CLI
+Rem...
 
 ###Syntax
 `hpcloud keypairs:private:remove <key_name> [key_name...]`
 
 ###Description
-This command copies the private key file to ~/.hpcloud/keypairs directory so the CLI can use it for various commands to access servers.  This command does *not* upload the private key anywhere and it will *only* be available for the CLI on the current server.
+This command removes private key files from the ~/.hpcloud/keypairs directory which is the store used by the CLI. If you plan to continue to use this private key, make sure you have it stored somewhere else.  There is no way to recover a private key that has been deleted unless you have another copy of that key.  Keys are stored in the ~/.hpcloud/keypairs directory by key name and server id, so there may be multiple copies of a single key in the private key store.
 
 ###Examples
 Remove 'mykey' and 'spare' from the private key storage
@@ -1206,7 +1206,7 @@ Remove 'mykey' and 'spare' from the private key storage
 `keypairs:private:rm, keypairs:private:del`
 
 ##keypairs:public_key## {#keypairs:public_key}
-Display the public keys of a key pair.
+Dis...
 
 ###Syntax
 `hpcloud keypairs:public_key <name>`
@@ -1231,7 +1231,7 @@ Remove the public key `keyno` for availability zone `az-2.region-a.geo-1`:
 
 
 ##keypairs:remove## {#keypairs:remove}
-Remove a key pair (by name).
+Rem...
 
 ###Syntax
 `hpcloud keypairs:remove name [name ...]`
@@ -1262,7 +1262,7 @@ Remove the key pair `mykey` for availability zone `az-2.region-a.geo-1:
 `keypairs:rm, keypairs:delete, keypairs:del`
 
 ##list## {#list}
-List containers or container contents.
+Lis...
 
 ###Syntax
 `hpcloud list [container ...]`
@@ -1297,7 +1297,7 @@ List all the objects in container `my_container` for availability zone `region-a
 `ls`
 
 ##location## {#location}
-Display the URIs for the specified resources.
+Dis...
 
 ###Syntax
 `hpcloud location <object/container> ...`
@@ -1332,7 +1332,7 @@ Display the URI for the file `file.txt` that resides in container `my_container`
 `loc`
 
 ##move## {#move}
-Move objects inside or between containers.
+Mov...
 
 ###Syntax
 `hpcloud move <source ...> <destination>`
@@ -1367,7 +1367,7 @@ Move file `file.txt` to new name and location `old/backup.txt` in container `my_
 `mv`
 
 ##remove## {#remove}
-Remove objects or containers.
+Rem...
 
 ###Syntax
 `hpcloud remove object_or_container [object_or_container ...]`
@@ -1399,7 +1399,7 @@ Delete container 'my_container' in availability zone `region-a.geo-1`:
 `rm, delete, destroy, del`
 
 ##securitygroups## {#securitygroups}
-List the available security groups.
+Lis...
 
 ###Syntax
 `hpcloud securitygroups [name_or_id ...]`
@@ -1430,7 +1430,7 @@ List the security groups for availability zone `az-2.region-a.geo-1`:
 `securitygroups:list`
 
 ##securitygroups:add## {#securitygroups:add}
-Add a security group.
+Add...
 
 ###Syntax
 `hpcloud securitygroups:add <name> <description>`
@@ -1455,7 +1455,7 @@ Add new security group `mysecgroup` with description `seg group desc` for availa
 
 
 ##securitygroups:remove## {#securitygroups:remove}
-Remove a security group or groups.
+Rem...
 
 ###Syntax
 `hpcloud securitygroups:remove name_or_id [name_or_id ...]`
@@ -1486,7 +1486,7 @@ Remove the security group `mysecgroup` for availability zone `az-2.region-a.geo-
 `securitygroups:rm, securitygroups:delete, securitygroups:del`
 
 ##securitygroups:rules## {#securitygroups:rules}
-Display the list of rules for a security group.
+Dis...
 
 ###Syntax
 `hpcloud securitygroups:rules <sec_group_name>`
@@ -1513,7 +1513,7 @@ List the rules for security group `mysecgroup` for availability zone `az-2.regio
 `securitygroups:rules:list`
 
 ##securitygroups:rules:add## {#securitygroups:rules:add}
-Add a rule to the security group.
+Add...
 
 ###Syntax
 `hpcloud securitygroups:rules:add <sec_group_name> <ip_protocol>`
@@ -1555,7 +1555,7 @@ Set the availability zone to `az-2.region-a.geo-1`:
 `securitygroups:rules:authorize`
 
 ##securitygroups:rules:remove## {#securitygroups:rules:remove}
-Remove a rule from the security group.
+Rem...
 
 ###Syntax
 `hpcloud securitygroups:rules:remove <sec_group_name> <rule_id>`
@@ -1582,7 +1582,7 @@ Remove the rule `mysecgroup` from security group `111` for availability zone `az
 `securitygroups:rules:rm, securitygroups:rules:revoke, securitygroups:rules:delete, securitygroups:rules:del`
 
 ##servers## {#servers}
-List the available servers.
+Lis...
 
 ###Syntax
 `hpcloud servers [name_or_id ...]`
@@ -1613,7 +1613,7 @@ List the servers for availability zone `az-2.region-a.geo-1`:
 `servers:list`
 
 ##servers:add## {#servers:add}
-Add a server.
+Add...
 
 ###Syntax
 `hpcloud servers:add <name> <flavor> -k, --key-name=KEY_NAME`
@@ -1656,14 +1656,14 @@ Create a new server named 'my_server' using a key for  availability zone `az-2.r
 
 
 ##servers:console## {#servers:console}
-Get the console output of a server or extract the windows password.
+Get...
 
 ###Syntax
 `hpcloud servers:console <server_name_or_id> [lines]`
 
 ###Options
 <dl>
-<dt><b>-p, [--private-key-file=PRIVATE_KEY_FILE]</b></dt><dd>Name of the pem file with your private key.</dd>  
+<dt><b>-p, [--private-key-file=PRIVATE_KEY_FILE]</b></dt><dd>Private key pem file used to decrypt windows password.</dd>  
 <dt><b>-d, [--dump-password]</b></dt><dd>Dump the windows password if the private key is known by the CLI.</dd>  
 <dt><b>-z, [--availability-zone=AVAILABILITY_ZONE]</b></dt><dd>Set the availability zone.</dd>  
 <dt><b>-a, [--account-name=ACCOUNT_NAME]</b></dt><dd>Select account.</dd>  
@@ -1687,7 +1687,7 @@ Print the password of winserver if the private key is known to the CLI
 
 
 ##servers:metadata## {#servers:metadata}
-List the metadata for a server.
+Lis...
 
 ###Syntax
 `hpcloud servers:metadata <name_or_id>`
@@ -1714,7 +1714,7 @@ List server metadata for availability zone `az-2region-a.geo-1`:
 `servers:metadata:list`
 
 ##servers:metadata:add## {#servers:metadata:add}
-Add metadata to a server.
+Add...
 
 ###Syntax
 `hpcloud servers:metadata:add <name_or_id> <metadata>`
@@ -1737,7 +1737,7 @@ Add the specified metadata to the server (if the metadata exists, it is updated)
 `servers:metadata:update`
 
 ##servers:metadata:remove## {#servers:metadata:remove}
-Remove metadata from a server.
+Rem...
 
 ###Syntax
 `hpcloud servers:metadata:remove <name> <metadata_key> ...`
@@ -1760,7 +1760,7 @@ Remove the the r2 and c3 metadata from the server:
 `servers:metadata:rm`
 
 ##servers:password## {#servers:password}
-Change the password for a server.
+Cha...
 
 ###Syntax
 `hpcloud servers:password <server_name> <password>`
@@ -1787,7 +1787,7 @@ Change the password for server 'my-server` for availability zone `az-2.region-a.
 `servers:passwd`
 
 ##servers:reboot## {#servers:reboot}
-Reboot a server or servers (specified by server name or ID).
+Reb...
 
 ###Syntax
 `hpcloud servers:reboot name_or_id [name_or_id ...]`
@@ -1817,7 +1817,7 @@ Reboot the server `DeepThought` for availability zone `az-2.region-a.geo-1`:
 
 
 ##servers:rebuild## {#servers:rebuild}
-Rebuild a server (specified by server name or ID).
+Reb...
 
 ###Syntax
 `hpcloud servers:rebuild name_or_id [image_name_or_id]`
@@ -1846,7 +1846,7 @@ Rebuild server `DeepThought` for availability zone `az-2.region-a.geo-1`:
 
 
 ##servers:remove## {#servers:remove}
-Remove a server or servers (specified by name or ID).
+Rem...
 
 ###Syntax
 `hpcloud servers:remove name_or_id [name_or_id ...]`
@@ -1881,7 +1881,7 @@ Delete server `my-server` for availability zone `az-2.region-a.geo-1`:
 `servers:rm, servers:delete, servers:del`
 
 ##servers:ssh## {#servers:ssh}
-Secure shell into the server.
+Sec...
 
 ###Syntax
 `hpcloud servers:ssh <server_name_or_id>`
@@ -1903,15 +1903,15 @@ Secure shell into the server.
 ###Examples
 Secure shell into the bugs server
 
-    hpcloud servers:console bugs -p bunny.pem
+    hpcloud servers:ssh bugs -p bunny.pem
 
 Secure shell into daffy which has a know keypair
 
-    hpcloud servers:console daffy
+    hpcloud servers:ssh daffy
 
 
 ##snapshots## {#snapshots}
-List block devices available.
+Lis...
 
 ###Syntax
 `hpcloud snapshots [name_or_id ...]`
@@ -1942,7 +1942,7 @@ List the detail information about snapshot `testsnap`:
 `snapshots:list`
 
 ##snapshots:add## {#snapshots:add}
-Create a snapshot.
+Cre...
 
 ###Syntax
 `hpcloud snapshots:add <name> <volume>`
@@ -1969,7 +1969,7 @@ Creates the new snapshot 'my_snapshot' from the specified volume with the descri
 
 
 ##snapshots:remove## {#snapshots:remove}
-Remove a snapshot or snapshots (specified by name or ID).
+Rem...
 
 ###Syntax
 `hpcloud snapshots:remove <name_or_id> [name_or_id ...]`
@@ -2000,7 +2000,7 @@ Delete snapshot `snappy` for availability zone `az-2.region-a.geo-1`:
 `snapshots:rm, snapshots:delete, snapshots:del`
 
 ##tempurl## {#tempurl}
-Create temporary URLs for the given objects.
+Cre...
 
 ###Syntax
 `hpcloud tempurl <object> ...`
@@ -2032,7 +2032,7 @@ Create a temporary URL for the file `file.txt` with a period of 7 days for avail
 `tmpurl`
 
 ##volumes## {#volumes}
-List the available block devices.
+Lis...
 
 ###Syntax
 `hpcloud volumes [name_or_id ...]`
@@ -2064,7 +2064,7 @@ List the details for volume `testvol`:
 `volumes:list`
 
 ##volumes:add## {#volumes:add}
-Add a volume.
+Add...
 
 ###Syntax
 `hpcloud volumes:add <name> [size]`
@@ -2105,7 +2105,7 @@ Creates volume `my_volume` in availability zone `az-2.region-a.geo-1`:
 
 
 ##volumes:attach## {#volumes:attach}
-Attach a volume to a server specified by device name or number.
+Att...
 
 ###Syntax
 `hpcloud volumes:attach <volume> <server> <device_or_number>`
@@ -2134,7 +2134,7 @@ Attach volume `my-volume` to server `myServer` on device `/dev/sdf` for availabi
 
 
 ##volumes:detach## {#volumes:detach}
-Detach a volume or volumes.
+Det...
 
 ###Syntax
 `hpcloud volumes:detach name_or_id [name_or_id ...]`
@@ -2163,7 +2163,7 @@ Detach the volume 'myVolume' for availability zone `az-2.region-a.geo-1`:
 
 
 ##volumes:remove## {#volumes:remove}
-Remove a volume or volumes (specified by name or ID).
+Rem...
 
 ###Syntax
 `hpcloud volumes:remove name_or_id [name_or_id ...]`
@@ -2194,7 +2194,7 @@ Delete the volume `my-volume` for availability zone `az-2.region-a.geo-1`:
 `volumes:rm, volumes:delete, volumes:del`
 
 ##volumes:server## {#volumes:server}
-List the volumes on server.
+Lis...
 
 ###Syntax
 `hpcloud volumes:server [server]`
