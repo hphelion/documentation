@@ -2,7 +2,6 @@
 layout: default
 title: "HP Cloud Services Software Downloads"
 permalink: /downloads/
-published: false
 
 ---
 # HP Cloud Services Software Downloads
