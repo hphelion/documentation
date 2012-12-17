@@ -24,7 +24,7 @@ Here's what we have for you:
 * [Overview page](/cli/unix)
 * [Release Notes](/cli/unix/release-notes)
 
-###Windows CLI### {WinCLIInstall}
+###Windows CLI### {#WinCLIInstall}
 * [Installation package](https://docs.hpcloud.com/file/WinCLI-1.3.1.9.zip)
 * [Overview page](/cli/windows)
 * [Release Notes](/cli/windows/release-notes)
