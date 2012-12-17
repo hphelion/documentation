@@ -40,7 +40,7 @@ To list available volumes:
       | id  | name    | size | type | created             | status    | description | servers |
       +-----+---------+------+------+---------------------+-----------+-------------+---------+
       | 997 | kweller | 1    |      | 2012-08-01 17:16:31 | available |             |         |
-    # =    +-----+---------+------+------+---------------------+-----------+-------------+---------+
+      +-----+---------+------+------+---------------------+-----------+-------------+---------+
 
 ##Attaching New Volumes## {#AttachingNewVolumes}
 
@@ -48,6 +48,11 @@ To attach the new volume to server `srv1` as `/dev/sdi` (device names must begin
 
     $ hpcloud volumes:attach kweller srv1 /dev/sdi
     Attached volume 'kweller' to 'srv1' on '/dev/sdi'.
+
+You may also use a drive number to mount the volume instead of a device name:
+
+    $ hpcloud volumes:attach kweller srv1 5
+    Attached volume 'kweller' to 'srv1' on '/dev/sdf'.
 
 To see the attached volumes with devices:
 

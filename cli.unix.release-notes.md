@@ -5,13 +5,32 @@ permalink: /cli/unix/release-notes/
 product: unix-cli
 
 ---
-These are the release notes for the HP Cloud services UNIX CLI.  The current release number for the [UNIX CLI software](/cli/unix) is version 1.3.0, released on 12/6/12.
+These are the release notes for the HP Cloud services UNIX CLI.  The current release number for the [UNIX CLI software](/cli/unix) is version 1.4.0, released on 12/13/12.
 
+* [Release 1.4.0 Features](#v1_4_0)
 * [Release 1.3.0 Features](#v1_3_0)
 * [Release 1.2.0 Features](#v1_2_0)
 * [Release 1.1.0 Features](#v1_1_0)
 * [Release 1.0.1 Features](#v1_0_1)
 * [Release 0.0.15 Features](#v0_0_15)
+
+##Release 1.4.0 Features## {#v1_4_0}
+
+This release was made available on 12/11/2013 and contains the following new features:
+
+* Command `servers:console` added to dump the console of a server
+* Command `servers:ssh` added to secure shell into a server
+* Command `keypairs:private` added to list the private keys known to the CLI
+* Command `keypairs:private` added to list the private keys known to the CLI
+* Command `keypairs:private:add` added to add a private keypair to the CLI
+* Command `keypairs:private:location` added to print the physical location of a private key file
+* Command `keypairs:private:remove` added to remove a private key
+* Command `account:verify` added to verify an account file
+* Command `account:edit` and `account:update` commands combined
+
+###Known Issues###
+
+* When the -o option is used to `keypairs:add` the private key is now stored in `~/.hpcloud/keypairs` directory instead of the current directory.
 
 ##Release 1.3.0 Features## {#v1_3_0}
 
@@ -26,14 +45,14 @@ This release was made available on 12/6/2012 and contains the following new feat
 * Commands `acl:grant` and `acl:revoke` added to provide support for cross-tenant access control lists (ACLs)
 * Command `volumes:add` added to provide support for bootable volume creation
 * Command `servers:add` added to provide support for creating a server from a bootable volume
-* Command `acl` now displays data as a table
-* Command `servers:add` has changed; you must pass in an image or volume with the `-i` or `-v` option, respectively
 
 **Note**: This release of the UNIX CLI requires the [Ruby Fog v0.0.18](https://docs.hpcloud.com/bindings/fog/install) binding.
 
 ###Known Issues###
 
-* None for this release.
+* The syntax of the `servers:add` command has changed; you must pass in an image or volume with the `-i` or `-v` option, respectively
+* Command `acl` displays data as a table
+
 
 ##Release 1.2.0 Features## {#v1_2_0}
 

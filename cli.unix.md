@@ -11,7 +11,7 @@ The Unix Command Line Interface is a tool which allows Unix or Mac users to mana
 
 * [Installation](/cli/unix/install)
 * [Account Configuration](/cli/unix/configuration)
-* [Managing Multiple Accounts](/cli/unix/account-management)
+* [Advanced Account Management](/cli/unix/account-management)
 * [Compute Examples](/cli/unix/compute)
 * [Object Storage Examples](/cli/unix/object-storage)
 * [CDN Examples](/cli/unix/cdn)

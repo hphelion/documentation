@@ -48,10 +48,10 @@ Copy account `useast` to account `backup`:
 
 
 ##account:edit## {#account:edit}
-Edit your account credentials.
+Create or edit your account credentials.
 
 ###Syntax
-`hpcloud account:edit [account_name]`
+`hpcloud account:edit <account_name> [name_value_pair ...]`
 
 ###Options
 <dl>
@@ -59,66 +59,15 @@ Edit your account credentials.
 </dl>
 
 ###Description
-Set up or modify your account credentials. If you do not specify an account name on the command line, the default account is updated.
+Create or edit your account credentials. If you do not specify an account name on the command line, the default account is updated.  If you do not specify name value pairs, you will be asked interactively to input account values.
 
 You  need your Access Key Id, Secret Key and Tenant Id from the HP Cloud web site to set up your account. Optionally, you can specify your own endpoint to access, but in most cases we recommend you use the default.
 
 Availability zones typically have the format `az-1.region-a.geo-1` or `region-a.geo-1`, depending on the service.  See your account API keys page to see your list of activated availability zones: https://console.hpcloud.com/account/api_keys
 
-`account:edit` prompts you for the following values:
-
-* Access Key Id
-* Secret Key
-* Auth Uri
-* Tenant Id
-* Compute zone
-* Storage zone
-* Block zone
-
 You can re-run this command at any time to modify your settings.
 
-###Examples
-Edit the 'default' account settings:
-
-    hpcloud account:edit
-
-
-##account:remove## {#account:remove}
-Remove accounts.
-
-###Syntax
-`hpcloud account:remove account_name [account_name ...]`
-
-###Description
-Remove accounts.  You may specify one or more account to remove on the command line.
-
-###Examples
-Remove the `useast` and `uswest` accounts:
-
-    hpcloud account:remove useast uswest
-
-###Aliases
-`account:rm, account:delete, account:del`
-
-##account:setup## {#account:setup}
-Set up or modify your credentials.
-
-###Syntax
-`hpcloud account:setup [account_name]`
-
-###Options
-<dl>
-<dt><b>-n, [--no-validate]</b></dt><dd>Don't verify account settings during setup</dd>  
-</dl>
-
-###Description
-Set up or modify your account credentials. This is generally the first step in the process of using the HP Cloud Services command-line interface.  If you do not specify an account name on the command line, the `default` account is updated.
-
-You need your Access Key Id, Secret Key and Tenant Id from the HP Cloud web site to set up your account. Optionally, you can specify your own endpoint to access, but in most cases we recommend you  use the default.
-
-Availability zones typically have the format az-1.region-a.geo-1 or region-a.geo-1 depending on the service.  See your account API keys page to see your list of activated availability zones: https://console.hpcloud.com/account/api_keys
-
-`account:edit` prompts you for the following values:
+The interactive mode prompts you for the following values:
 
 * Access Key Id
 * Secret Key
@@ -126,23 +75,9 @@ Availability zones typically have the format az-1.region-a.geo-1 or region-a.geo
 * Tenant Id
 * Compute zone
 * Storage zone
-* CDN zone
 * Block zone
 
-###Examples
-Set up the default account:
-
-    account:setup
-
-
-##account:update## {#account:update}
-Modify your account credentials, zones, or options.
-
-###Syntax
-`hpcloud account:update <account_name> <name_value_pair> ...`
-
-###Description
-Add or update your account credentials, zones, or options.  You may specify one or more name value pairs to update on a single command line.  Valid settings include:
+The command line mode allows you to set the following values:
 
 * account_id
 * secret_key
@@ -162,15 +97,104 @@ Add or update your account credentials, zones, or options.  You may specify one 
 * preferred_win_image
 * preferred_image
 
-Availability zones typically have the format `az-1.region-a.geo-1` or `region-a.geo-1` depending on the service.  See your account API keys page to see your list of activated availability zones: https://console.hpcloud.com/account/api_keys
-
 ###Examples
-Set the account credential authorization URI to `https://127.0.0.1` and the block availability zone to `region-a`:
+Create or edit the default account interactively:
 
-    hpcloud account:update pro auth_uri='https://127.0.0.1/' block_availability_zone='region-a'
+    hpcloud account:setup
+
+Edit the default account settings interactively:
+
+    hpcloud account:edit
+
+Set the account credential authorization URI to `https://127.0.0.1` and the block availability zone to `az-2.region-a.geo-1`:
+
+    hpcloud account:edit pro auth_uri='https://127.0.0.1/' block_availability_zone='az-2.region-a.geo-1'
 
 ###Aliases
-`account:add`
+`account:add, account:setup, account:update`
+
+##account:remove## {#account:remove}
+Remove accounts.
+
+###Syntax
+`hpcloud account:remove account_name [account_name ...]`
+
+###Description
+Remove accounts.  You may specify one or more account to remove on the command line.
+
+###Examples
+Remove the `useast` and `uswest` accounts:
+
+    hpcloud account:remove useast uswest
+
+###Aliases
+`account:rm, account:delete, account:del`
+
+##account:setup## {#account:setup}
+Create or edit your account credentials.
+
+###Syntax
+`hpcloud account:edit <account_name> [name_value_pair ...]`
+
+###Options
+<dl>
+<dt><b>-n, [--no-validate]</b></dt><dd>Don't verify account settings during edit</dd>  
+</dl>
+
+###Description
+Create or edit your account credentials. If you do not specify an account name on the command line, the default account is updated.  If you do not specify name value pairs, you will be asked interactively to input account values.
+
+You  need your Access Key Id, Secret Key and Tenant Id from the HP Cloud web site to set up your account. Optionally, you can specify your own endpoint to access, but in most cases we recommend you use the default.
+
+Availability zones typically have the format `az-1.region-a.geo-1` or `region-a.geo-1`, depending on the service.  See your account API keys page to see your list of activated availability zones: https://console.hpcloud.com/account/api_keys
+
+You can re-run this command at any time to modify your settings.
+
+The interactive mode prompts you for the following values:
+
+* Access Key Id
+* Secret Key
+* Auth Uri
+* Tenant Id
+* Compute zone
+* Storage zone
+* Block zone
+
+The command line mode allows you to set the following values:
+
+* account_id
+* secret_key
+* auth_uri
+* tenant_id
+* compute_availability_zone
+* storage_availability_zone
+* cdn_availability_zone
+* block_availability_zone
+* connect_timeout
+* read_timeout
+* write_timeout
+* ssl_verify_peer
+* ssl_ca_path
+* ssl_ca_file
+* preferred_flavor
+* preferred_win_image
+* preferred_image
+
+###Examples
+Create or edit the default account interactively:
+
+    hpcloud account:setup
+
+Edit the default account settings interactively:
+
+    hpcloud account:edit
+
+Set the account credential authorization URI to `https://127.0.0.1` and the block availability zone to `az-2.region-a.geo-1`:
+
+    hpcloud account:edit pro auth_uri='https://127.0.0.1/' block_availability_zone='az-2.region-a.geo-1'
+
+###Aliases
+`account:add, account:setup, account:update`
 
 ##account:use## {#account:use}
 Set the named account to the default account.
@@ -185,6 +209,21 @@ Use the specified account as your default account.  Any command executed without
 Set the default account to `useast`:
 
     hpcloud account:use useast
+
+
+##account:verify## {#account:verify}
+Verify the credentials of the specified account.
+
+###Syntax
+`hpcloud account:verify <account_to_verify>`
+
+###Description
+Verify the credentials of an account.
+
+###Examples
+Verify the `useast` account credentials:
+
+    hpcloud account:verify useast
 
 
 ##acl## {#acl}
@@ -229,7 +268,7 @@ Grant the specified permissions.
 </dl>
 
 ###Description
-Set the access control list (ACL) values for the specified container. The supported permissions are `r` (read), `w` (write), or `rw` (read and write). You may specify one or more user fo the given permission.  If you do not specify a user, the permissions are set to public.  Public write permissions are not allowed.
+Set the access control list (ACL) values for the specified container. The supported permissions are `r` (read), `w` (write), or `rw` (read and write). You may specify one or more user for the given permission.  If you do not specify a user, the permissions are set to public.  Public write permissions are not allowed.
 
 ###Examples
 Allow anyone to read 'my_container'
@@ -1037,7 +1076,7 @@ add a key pair
 <dl>
 <dt><b>-f, [--fingerprint=FINGERPRINT]</b></dt><dd>Specify a fingerprint to be used.</dd>  
 <dt><b>-p, [--private-key=PRIVATE_KEY]</b></dt><dd>Specify private key data to be used.</dd>  
-<dt><b>-o, [--output]</b></dt><dd>Save the key pair to a file in the current folder.</dd>  
+<dt><b>-o, [--output]</b></dt><dd>Save key pair in the ~/.hpcloud/keypairs folder.</dd>  
 <dt><b>-z, [--availability-zone=AVAILABILITY_ZONE]</b></dt><dd>Set the availability zone.</dd>  
 <dt><b>-a, [--account-name=ACCOUNT_NAME]</b></dt><dd>Select account.</dd>  
 </dl>
@@ -1099,6 +1138,72 @@ Import a key from public key data for availability zone `az-2.region-a.geo-1`:
 
     hpcloud keypairs:import mykey 'public_key_data' -z az-2.region-a.geo-1
 
+
+##keypairs:private## {#keypairs:private}
+List private keypairs in local directory
+
+###Syntax
+`hpcloud keypairs:private`
+
+###Description
+List the private keys stored on this machine.  These private keys will *not* be available on other machines unless you copy them there.
+
+###Examples
+Create the key 'mykey':
+
+    hpcloud keypairs:private
+
+Create the key 'mykey':
+
+    hpcloud keypairs:private mykey
+
+
+##keypairs:private:add## {#keypairs:private:add}
+Make a private key available for the CLI
+
+###Syntax
+`hpcloud keypairs:private:add <key_name> <file_name>`
+
+###Description
+This command copies the private key file to ~/.hpcloud/keypairs directory so the CLI can use it for various commands to access servers.  This command does *not* upload the private key anywhere and it will *only* be available for the CLI on the current server.
+
+###Examples
+Make the 'mykey' private key available for the CLI
+
+    hpcloud keypairs:private:add mykey ./mykey.pem
+
+
+##keypairs:private:location## {#keypairs:private:location}
+Find the private key for the given server
+
+###Syntax
+`hpcloud keypairs:private:location <server_name_or_id>`
+
+###Description
+Find the location of the private key for a given server.
+
+###Examples
+Print the location of the private key for 'myserver'
+
+    hpcloud keypairs:private:location myserver
+
+
+##keypairs:private:remove## {#keypairs:private:remove}
+Remove a private key file
+
+###Syntax
+`hpcloud keypairs:private:remove <key_name> [key_name...]`
+
+###Description
+This command removes private key files from the ~/.hpcloud/keypairs directory which is the store used by the CLI. If you plan to continue to use this private key, make sure you have it stored somewhere else.  There is no way to recover a private key that has been deleted unless you have another copy of that key.  Keys are stored in the ~/.hpcloud/keypairs directory by key name and server id, so there may be multiple copies of a single key in the private key store.
+
+###Examples
+Remove 'mykey' and 'spare' from the private key storage
+
+    hpcloud keypairs:private:remove mykey spare
+
+###Aliases
+`keypairs:private:rm, keypairs:private:del`
 
 ##keypairs:public_key## {#keypairs:public_key}
 Display the public keys of a key pair.
@@ -1172,7 +1277,7 @@ List containers or container contents.
 List containers or the contents of the specified containers. Optionally, an availability zone can be passed.
 
 ###Examples
-List the two objects `1.txt` and 2.txt` in the container `tainer`:
+List the two objects `1.txt` and `2.txt` in the container `tainer`:
 
     hpcloud list :tainer/1.txt :tainer/2.txt
 
@@ -1537,7 +1642,7 @@ Create a windows server with the specified key, security group, and private key 
 
     hpcloud servers:add winserv large -i 100006567 -k winpair -s allowsRDP -p ./winpair.pem
 
-Create a new largte server named 'my_server' using a volume natty, key1 and the sg1 security group:
+Create a new large server named 'my_server' using a volume natty, key1 and the sg1 security group:
 
     hpcloud servers:add my_server large -v natty -k key1 -s sg1
 
@@ -1548,6 +1653,37 @@ Create a new small server named 'my_server' using the specified image, flavor, k
 Create a new server named 'my_server' using a key for  availability zone `az-2.region-a.geo-1`:
 
     hpcloud servers:add my_server xlarge -i 7 -k key1 -z az-2.region-a.geo-1
+
+
+##servers:console## {#servers:console}
+Get the console output of a server or extract the windows password.
+
+###Syntax
+`hpcloud servers:console <server_name_or_id> [lines]`
+
+###Options
+<dl>
+<dt><b>-p, [--private-key-file=PRIVATE_KEY_FILE]</b></dt><dd>Private key pem file used to decrypt windows password.</dd>  
+<dt><b>-d, [--dump-password]</b></dt><dd>Dump the windows password if the private key is known by the CLI.</dd>  
+<dt><b>-z, [--availability-zone=AVAILABILITY_ZONE]</b></dt><dd>Set the availability zone.</dd>  
+<dt><b>-a, [--account-name=ACCOUNT_NAME]</b></dt><dd>Select account.</dd>  
+</dl>
+
+###Description
+Dump out the console output of a server.  If the -p or -d option is given, the decrypted password will be printed as long as it is still available on the console.
+
+###Examples
+Get 100 lines of console ouput
+
+    hpcloud servers:console my-server 100
+
+Print the password of winserver
+
+    hpcloud servers:console winserver -p win.pem
+
+Print the password of winserver if the private key is known to the CLI
+
+    hpcloud servers:console winserver -d
 
 
 ##servers:metadata## {#servers:metadata}
@@ -1744,6 +1880,36 @@ Delete server `my-server` for availability zone `az-2.region-a.geo-1`:
 ###Aliases
 `servers:rm, servers:delete, servers:del`
 
+##servers:ssh## {#servers:ssh}
+Secure shell into the server.
+
+###Syntax
+`hpcloud servers:ssh <server_name_or_id>`
+
+###Options
+<dl>
+<dt><b>-p, [--private-key-file=PRIVATE_KEY_FILE]</b></dt><dd>Name of the pem file with your private key.</dd>  
+<dt><b>-k, [--keypair=KEYPAIR]</b></dt><dd>Name of keypair to use.</dd>  
+<dt><b>-l, [--login=LOGIN]</b></dt><dd>Login id to use.</dd>  
+<dt><b>-c, [--command=COMMAND]</b></dt><dd>Command to use to connect.</dd>  
+# Default: ssh  
+<dt><b>-z, [--availability-zone=AVAILABILITY_ZONE]</b></dt><dd>Set the availability zone.</dd>  
+<dt><b>-a, [--account-name=ACCOUNT_NAME]</b></dt><dd>Select account.</dd>  
+</dl>
+
+###Description
+Secure shell into the server.
+
+###Examples
+Secure shell into the bugs server
+
+    hpcloud servers:ssh bugs -p bunny.pem
+
+Secure shell into daffy which has a know keypair
+
+    hpcloud servers:ssh daffy
+
+
 ##snapshots## {#snapshots}
 List block devices available.
 
@@ -1939,10 +2105,10 @@ Creates volume `my_volume` in availability zone `az-2.region-a.geo-1`:
 
 
 ##volumes:attach## {#volumes:attach}
-Attach a volume to a server (specified by device name).
+Attach a volume to a server specified by device name or number.
 
 ###Syntax
-`hpcloud volumes:attach <volume> <server> <device>`
+`hpcloud volumes:attach <volume> <server> <device_or_number>`
 
 ###Options
 <dl>
@@ -1951,12 +2117,16 @@ Attach a volume to a server (specified by device name).
 </dl>
 
 ###Description
-Attach a volume to a server on the specified device name.
+Attach a volume to a server on the specified device name.  You may specify a device name in the format /dev/sdX where X is b, c, d, ... or a mount point 1, 2, 3,...  The mount point 1 would map to /dev/sdb on a Linux platform.
 
 ###Examples
 Attach volume `myVolume` to server `myServer` on device `/dev/sdf`:
 
     hpcloud volumes:attach myVolume myServer /dev/sdf
+
+Attach volume `myVolume` to server `myServer` on device `/dev/sdb`:
+
+    hpcloud volumes:attach myVolume myServer 1
 
 Attach volume `my-volume` to server `myServer` on device `/dev/sdf` for availability zone `az-2.region-a.geo-1`:
 
@@ -2050,3 +2220,5 @@ List the volumes on server `myServer`:
 List the volumes on server `myServer` for availability zone `az-2.region-a.geo-1`:
 
     hpcloud volumes:server myServer -z az-2.region-a.geo-1
+
+
