@@ -10,8 +10,8 @@ HP Cloud Services has a few software downloads, each of which is on its appropri
 
 Here's what we have for you:
 
-* [UNIX CLI](#UNIXCLInstall)
-* [Window CLI](#WinCLIInstall)
+* [UNIX CLI](#UNIXCLIInstall)
+* [Windows CLI](#WinCLIInstall)
 * [Ruby Fog Bindings](#RubyFogBindingsInstall)
 * [Jave/Cloture jclouds Bindings](#jcloudsBindingsInstall)
 * [PHP Bindings](#PHPBindingsInstall)
@@ -20,7 +20,7 @@ Here's what we have for you:
 ##Command-line Interface (CLI) Packages##
 
 ###UNIX CLI### {#UNIXCLIInstall}
-* [Installation package](https://docs.hpcloud.com/file/hpcloud-1.4.0.gem)
+* [Installation package](https://docs.hpcloud.com/file/hpcloud-1.3.0.gem)
 * [Overview page](/cli/unix)
 * [Release Notes](/cli/unix/release-notes)
 
