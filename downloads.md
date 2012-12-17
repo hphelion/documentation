@@ -44,7 +44,7 @@ Here's what we have for you:
 ###PHP Bindings### {#PHPBindingsInstall} 
 * [Installation page](http://hpcloud.github.com/HPCloud-PHP/) (This is the GitHub repository page for the installation package)
 
-###.NET Bindings### {#NETBindingsInstall} 
+###.NET Bindings### {#NetBindingsInstall} 
 * [Installation page](http://hpcloud.codeplex.com/releases/view/95187) (This is the Codeplex repository page for the installation package)
 
 If you need any more information about these downloads, or our software in general, we urge you to visit our [site map](/sitemap) to locate the information you're looking for.  In addition, you can try our [knowledge base](https://community.hpcloud.com/knowledge-base), or our [forums](https://community.hpcloud.com/forum).
