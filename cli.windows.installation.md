@@ -18,13 +18,17 @@ To get the Object Storage Powershell environment running properly you must compl
 
 This page also describes how to [upgrade to a new version](#Upgrading) of the Windows CLI software.
 
+[Please download the latest version of the Windows PowerShell CLI software here](https://docs.hpcloud.com/file/WinCLI-1.3.1.9.zip)!
+
 ##Installation Prerequisites## {#Installation}
 
 **Note** : This product requires the full (not client profile) 4.0 or higher version of the Microsoft .NET Framework to install properly which can be downloaded [here](http://www.microsoft.com/net/).
  
 ##Running the Installer Package## {#RunningtheInstallerPackage}
 
-Launching the Windows installer package will load the following wizard.
+[Download the latest Windows Powershell Installer package](https://docs.hpcloud.com/file/WinCLI-1.3.1.9.zip).  (See the [Release Notes](/cli/windows/release-notes) for details on the current release.)
+
+Launching the Windows installer package loads the following wizard.
 
 <img src="media/WizardP1.jpg" width="519" height="424" alt="" />
 
@@ -87,7 +91,7 @@ Close the Powershell window and reopen as administrator for the policy changes t
 
 ##Loading the Shell and Module Registration## {#LoadingtheShellandModuleRegistration}
 
-If you have installed the software through the installer package, registration will happen automatically through a supplied Powershell Profile. If the profile was not used, you must move to 
+If you have installed the software through the installer package, registration happens automatically through a supplied Powershell Profile. If the profile was not used, you must move to 
 the install folder specified while in the setup wizard. From there you can register the module with Import-Module .\Climanifest.psd1. Note that this only last for the duration of the Powershell session and it's recommended to add this command to your Profile for best results.
 
 ##Upgrading to a New Version## {#Upgrading}

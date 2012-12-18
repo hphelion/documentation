@@ -14,6 +14,9 @@ Before you can begin working with the Ruby Fog bindings, you have to install the
 * [CentOS Installation](#CentOS)
 * [Uninstalling](#Uninstalling)
 
+[Please download the most recent Ruby Fog package here](https://docs.hpcloud.com/file/hpfog-0.0.18.gem)!
+
+
 <!--##Installation Prerequisites## {#Installation}
 
 To install the Ruby Fog bindings on any of the currently-supported platforms, you must first install RVM.  In addition, we recommend that you run all the installation commands documented below from the bash command-line shell.  Follow these steps:

@@ -16,6 +16,9 @@ These are the release notes for the HP Cloud services Windows PowerShell CLI.  T
 * [Release 1.2.0.6 Features](#v1206)
 * [Release 1.2.0.1 Features](#v1201)
 
+[Please download the latest version of the Windows PowerShell CLI software here](https://docs.hpcloud.com/file/WinCLI-1.3.1.9.zip)!
+
+
 <!--##Release 1.3.2.2 Features## {#v1322}
 
 This release was made available on 12/3/2012 and contains the following new features:
