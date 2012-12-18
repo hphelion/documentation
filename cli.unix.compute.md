@@ -105,7 +105,7 @@ To add a new persistent server (specifying a flavor, a bootable volume, a keynam
     $ hpcloud servers:add bat large -i 5575 -v bootable -k brat
     Created server 'bat' with id '535545'.
 
-Dump the console of a server:
+Display the console of a server:
 
     $ hpcloud servers:console cli_test_srv1
     Console output for cli_test_srv1:
@@ -113,11 +113,11 @@ Dump the console of a server:
     * Starting deferred execution scheduler                                 [ OK ]
     ...
 
-Attempt to extract the password of a windows server:
+Display the password of a windows server:
 
     $ hpcloud servers:console winserv4 -d
 
-Secure shell into a server:
+Use the secure shell to log in to a server:
 
     $ hpcloud servers:ssh cli_test_srv1
     Connecting to 'cli_test_srv1'...
@@ -189,7 +189,7 @@ In the following example, `winserv` is the name of the server, `large` is the fl
     Make sure the security group has port 3389 open
     You may wish to change the password when you log in
 
-An example of how to connect via a Windows RDP client is located [here](/compute/using#WindowsRDP).  The `servers:console` command can be used to extract the password if it is still available on the console.
+An example of how to connect via a Windows RDP client is located [here](/compute/using#WindowsRDP).  You can use the `servers:console` command to extract the password if it is still available on the console.
 
 ##Key Pair Commands## {#KeypairCommands}
 
@@ -218,19 +218,19 @@ To add a new key pair by importing public key data:
     $ hpcloud keypairs:import mykeypair3 <public key data>
     Imported key pair 'mykeypair3'.
 
-List the private keys the CLI knows about:
+List the private keys for which the CLI has information:
 
     $ hpcloud keypairs:private
     cli_test_key1
     cli_test_key3
     cli_test_key4
 
-Add a private key to the keys that the CLI knows about:
+Add a private key to the keys for which the CLI has information:
 
     $ hpcloud keypairs:private:add newkey ./private.pem
     Added private key '/home/terry/.hpcloud/keypairs/newkey.pem'.
 
-Print the location of a private key associated with a server:
+Display the location of a private key associated with a server:
 
     $ hpcloud keypairs:private:location winserv4
     /home/terry/.hpcloud/keypairs/1664306.pem
@@ -240,7 +240,7 @@ Remove a private key:
     $ hpcloud keypairs:private:remove newkey 
     Removed private key '/home/terry/.hpcloud/keypairs/newkey.pem'.
 
-To remove an existing key pair:
+Remove an existing key pair:
 
     $ hpcloud keypairs:remove mykeypair
     Removed key pair 'mykeypair'.
