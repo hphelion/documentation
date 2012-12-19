@@ -59,7 +59,7 @@ Create or edit your account credentials.
 </dl>
 
 ###Description
-Create or edit your account credentials. If you do not specify an account name on the command line, the default account is updated.  If you do not specify name value pairs, you will be asked interactively to input account values.
+Create or edit your account credentials. If you do not specify an account name on the command line, the default account is updated.  If you do not specify name value pairs, you are prompted to input the account values.
 
 You  need your Access Key Id, Secret Key and Tenant Id from the HP Cloud web site to set up your account. Optionally, you can specify your own endpoint to access, but in most cases we recommend you use the default.
 
@@ -142,7 +142,7 @@ Create or edit your account credentials.
 </dl>
 
 ###Description
-Create or edit your account credentials. If you do not specify an account name on the command line, the default account is updated.  If you do not specify name value pairs, you will be asked interactively to input account values.
+Create or edit your account credentials. If you do not specify an account name on the command line, the default account is updated.  If you do not specify name value pairs, you are prompted to input the account values.
 
 You  need your Access Key Id, Secret Key and Tenant Id from the HP Cloud web site to set up your account. Optionally, you can specify your own endpoint to access, but in most cases we recommend you use the default.
 
@@ -1146,7 +1146,7 @@ List private keypairs in local directory
 `hpcloud keypairs:private`
 
 ###Description
-List the private keys stored on this machine.  These private keys will *not* be available on other machines unless you copy them there.
+List the private keys stored on this machine.  These private keys are *not* available on other systems unless you copy them to that system.
 
 ###Examples
 Create the key 'mykey':
@@ -1631,7 +1631,7 @@ Add a server.
 </dl>
 
 ###Description
-Add a new server to your compute account. You must specify an name for the server, a flavor, an image or volume to use and a keypair.  If you are creating a windows server, the flavor must be at least a large and you must specify a security group that has the RDP port open.  Optionally, you can specify a security group, key name, metadata and availability zone.
+Add a new server to your compute account. You must specify:  Server name, a flavor, an image or volume to use, and a key pair.  If you are creating a windows server, the flavor must be at least a large and you must specify a security group that has the RDP port open.  Optionally, you can specify a security group, key name, metadata and availability zone.
 
 ###Examples
 Create a new small server named 'my_server' with image 7 and key1:
@@ -1642,7 +1642,7 @@ Create a windows server with the specified key, security group, and private key 
 
     hpcloud servers:add winserv large -i 100006567 -k winpair -s allowsRDP -p ./winpair.pem
 
-Create a new large server named 'my_server' using a volume natty, key1 and the sg1 security group:
+Create a new large server named 'my_server' using volume `natty`, key `key1`, and the `sg1` security group:
 
     hpcloud servers:add my_server large -v natty -k key1 -s sg1
 
@@ -1650,7 +1650,7 @@ Create a new small server named 'my_server' using the specified image, flavor, k
 
     hpcloud servers:add my_server small -i 20634 -k key1 -m this=that
 
-Create a new server named 'my_server' using a key for  availability zone `az-2.region-a.geo-1`:
+Create a new server named 'my_server' using the key `key1` for availability zone `az-2.region-a.geo-1`:
 
     hpcloud servers:add my_server xlarge -i 7 -k key1 -z az-2.region-a.geo-1
 
@@ -1670,20 +1670,16 @@ Get the console output of a server or extract the windows password.
 </dl>
 
 ###Description
-Dump out the console output of a server.  If the -p or -d option is given, the decrypted password will be printed as long as it is still available on the console.
+Display the console output of a server.  When the `-p` option is used with the private key file for the server, if the decrypted password is still available on the console, it is displayed.
 
 ###Examples
-Get 100 lines of console ouput
+Display 100 lines of console ouput:
 
     hpcloud servers:console my-server 100
 
-Print the password of winserver
+Display the password of the winserver:
 
     hpcloud servers:console winserver -p win.pem
-
-Print the password of winserver if the private key is known to the CLI
-
-    hpcloud servers:console winserver -d
 
 
 ##servers:metadata## {#servers:metadata}
@@ -1898,16 +1894,16 @@ Secure shell into the server.
 </dl>
 
 ###Description
-Secure shell into the server.
+Log in using the secure shell to the designated server.
 
 ###Examples
-Secure shell into the bugs server
+Use the secure shell to log in to the bugs server:
 
-    hpcloud servers:ssh bugs -p bunny.pem
+    hpcloud servers:console bugs -p bunny.pem
 
-Secure shell into daffy which has a know keypair
+Use the secure shell to log in to server `daffy`, which has a know keypair
 
-    hpcloud servers:ssh daffy
+    hpcloud servers:console daffy
 
 
 ##snapshots## {#snapshots}
