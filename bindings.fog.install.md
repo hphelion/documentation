@@ -22,7 +22,7 @@ Before you can begin working with the Ruby Fog bindings, you have to install the
 
 To install the HP Cloud Ruby Fog bindings on any of the currently-supported platforms, you need to have RVM installed on your system:
 
-    curl -L get.rvm.io | bash -s stable`)
+    curl -L get.rvm.io | bash -s stable
 
 <strong>Note</strong>: On a Mac, you can also install RVM using [Jewelry Box](https://unfiniti.com/software/mac/jewelrybox), a RVM graphical user interface (GUI) for Mac OSX.
 
