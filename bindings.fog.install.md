@@ -144,7 +144,7 @@ Ensure RVM is loaded into a shell session as a function. For example, if you are
 \[\[ -s "$HOME/.rvm/scripts/rvm" \]\] && . "$HOME/.rvm/scripts/rvm" # This loads RVM into a shell session.
 </code>
 -->
-<h2 id="Uninstalling">Uninstalling</h2>
+##Uninstalling## {#Uninstalling}
 
 Its recommended that you uninstall a previous version prior to upgrading. To uninstall:
 
