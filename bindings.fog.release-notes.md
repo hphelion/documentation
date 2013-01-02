@@ -72,7 +72,7 @@ This release contains the following new features:
 * Parameter `hp_avl_zone` is now a required parameter for all HP services.
 * Support for console output in the [Compute](compute) service added.
 * Helper method for the [CDN](cdn) public SSL URL added.
-* Tests added for [Storage](object-storage), [Compute](compute) and [CDN](cdn) services.
+* Tests added for [Storage](/bindings/fog/object-storage), [Compute](/bindings/fog/compute) and [CDN](/bindings/fog/cdn) services.
 * Quality of mocks modified to match implementation.
 
 ###Known Issues###
