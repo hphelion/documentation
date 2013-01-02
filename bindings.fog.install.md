@@ -61,9 +61,9 @@ To install the Ruby Fog bindings on the Ubuntu operating system, follow these st
 
         sudo apt-get install rubygems
 
-2. Download and install the HP Ruby Fog bindings gem package:
+4. Download and install the HP Ruby Fog bindings gem package:
 
-        curl -sL https://docs.hpcloud.com/file/hpfog-0.0.18.gem >hpfog-version.gem
+        curl -sL https://docs.hpcloud.com/file/hpfog-0.0.18.gem >hpfog-0.0.18.gem
         gem install hpfog-0.0.18.gem
 
 <stonrg>Note</strong>: Substitute the version number of the most current installation package (for example, `0.0.18`), which we have helpfully listed at the top of this page.
@@ -131,7 +131,7 @@ To install the Ruby Fog bindings on CentOS, follow these steps:
 
 2. Download and install the HP Fog gem:
 
-        curl -sL https://docs.hpcloud.com/file/hpfog-0.0.18.gem >hpfog-version.gem
+        curl -sL https://docs.hpcloud.com/file/hpfog-0.0.18.gem >hpfog-0.0.18.gem
         gem install hpfog-0.0.18.gem
 
 <stonrg>Note</strong>: Substitute the version number of the most current installation package (for example, `0.0.18`), which we have helpfully listed at the top of this page.
