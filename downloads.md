@@ -13,7 +13,7 @@ Here's what we have for you:
 * [UNIX CLI](#UNIXCLIInstall)
 * [Windows CLI](#WinCLIInstall)
 * [Ruby Fog Bindings](#RubyFogBindingsInstall)
-* [Jave/Cloture jclouds Bindings](#jcloudsBindingsInstall)
+* [Jave/Clojure jclouds Bindings](#jcloudsBindingsInstall)
 * [PHP Bindings](#PHPBindingsInstall)
 * [.NET Bindings](#NetBindingsInstall)
 
