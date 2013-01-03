@@ -5,6 +5,8 @@ permalink: /bindings/fog/object-storage/
 product: fog
 
 ---
+#Ruby Fog Bindings Object Storage Examples
+
 The HP Cloud services provides object storage support via both the model abstraction and the request abstraction.  Executing commands in both layers are detailed
 in this page. 
 

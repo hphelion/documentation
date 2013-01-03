@@ -14,6 +14,9 @@ These are the release notes for the HP Cloud services Ruby Fog bindings.  The cu
 * [Release 0.0.16 Information](#v0016)
 * [Release 0.0.15 Information](#v0015)
 
+[You can download the latest version of the Ruby Fog bindings software here](https://docs.hpcloud.com/file/hpfog-0.0.18.gem)!
+
+
 ##Release 0.0.18 Information## {#v0018}
 
 This release was made available on 12/3/2012 and contains the following new features:
@@ -67,9 +70,9 @@ This release contains the following new features:
 * New `security_groups` attribute added to the server model.
 * Support for future availability zones for all HP services added.
 * Parameter `hp_avl_zone` is now a required parameter for all HP services.
-* Support for console output in the [Compute](compute) service added.
-* Helper method for the [CDN](cdn) public SSL URL added.
-* Tests added for [Storage](object-storage), [Compute](compute) and [CDN](cdn) services.
+* Support for console output in the [Compute](/bindings/fog/compute) service added.
+* Helper method for the [CDN](/bindings/fog/cdn) public SSL URL added.
+* Tests added for [Storage](/bindings/fog/object-storage), [Compute](/bindings/fog/compute) and [CDN](/bindings/fog/cdn) services.
 * Quality of mocks modified to match implementation.
 
 ###Known Issues###

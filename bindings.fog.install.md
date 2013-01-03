@@ -9,27 +9,26 @@ product: fog
 
 Before you can begin working with the Ruby Fog bindings, you have to install them (of course!).  <!--We recommend installing with the [RVM package](https://rvm.io//).-->  This page provides you with the installation information for the following operating systems:
 
+* [Installation Prerequisites](#Installation)
 * [Ubuntu Installation](#Ubuntu)
 * [Mac OSX Installation](#MacOS)
 * [CentOS Installation](#CentOS)
 * [Uninstalling](#Uninstalling)
 
-<!--##Installation Prerequisites## {#Installation}
+[Please download the most recent Ruby Fog package (Version 0.0.18)](https://docs.hpcloud.com/file/hpfog-0.0.18.gem)!
 
-To install the Ruby Fog bindings on any of the currently-supported platforms, you must first install RVM.  In addition, we recommend that you run all the installation commands documented below from the bash command-line shell.  Follow these steps:
 
-1. Enter a command-line shell (for example, <font face="Courier">bash</font>):
+##Installation Prerequisites## {#Installation}
 
-        bash
+To install the HP Cloud Ruby Fog bindings on any of the currently-supported platforms, you need to have RVM installed on your system:
 
-2. Install RVM
-
-        curl -L get.rvm.io | bash -s stable
-
-This command installs the most recent stable version of RVM.  You are now ready to perform your installation on [Ubuntu](#Ubuntu), [MacOS](#MacOS), or [CentOS](#CentOS).
+    curl -L get.rvm.io | bash -s stable
 
 <strong>Note</strong>: On a Mac, you can also install RVM using [Jewelry Box](https://unfiniti.com/software/mac/jewelrybox), a RVM graphical user interface (GUI) for Mac OSX.
--->
+
+You are now ready to perform your installation on [Ubuntu](#Ubuntu), [MacOS](#MacOS), or [CentOS](#CentOS).
+
+
 ##Ubuntu Installation## {#Ubuntu}
 
 To install the Ruby Fog bindings on the Ubuntu operating system, follow these steps:
@@ -54,12 +53,20 @@ To install the Ruby Fog bindings on the Ubuntu operating system, follow these st
 
         sudo apt-get install ruby1.8
 
-2. Download and install the HP Fog gem package:
+2. Install Ruby-dev:
 
-        curl -sL https://docs.hpcloud.com/file/hpfog-version.gem >hpfog-version.gem
-        gem install hpfog-version.gem
+        sudo apt-get install ruby-dev
 
-Where `version` is the current version of Ruby Fog; for example, `0.0.18`.
+3. Install RubyGems:
+
+        sudo apt-get install rubygems
+
+4. Download and install the HP Ruby Fog bindings gem package:
+
+        curl -sL https://docs.hpcloud.com/file/hpfog-0.0.18.gem >hpfog-0.0.18.gem
+        gem install hpfog-0.0.18.gem
+
+<stonrg>Note</strong>: Substitute the version number of the most current installation package (for example, `0.0.18`), which we have helpfully listed at the top of this page.
 
 ##MacOS X Installation## {#MacOS}
 
@@ -89,12 +96,14 @@ To install the Ruby Fog bindings on MacOS X, follow these steps:
 
         rvm use 1.9.2 --default
 
-4. Download and install HP Fog gem:
+4. Download and install the HP Ruby Fog bindings gem:
 
         curl -sL https://docs.hpcloud.com/file/hpfog-0.0.18.gem >hpfog-0.0.18.gem
         gem install hpfog-0.0.18.gem
 
-For further detail, see [Installation Notes](#InstallationNotes).
+For further details, see [Installation Notes](#InstallationNotes).
+
+<stonrg>Note</strong>: Substitute the version number of the most current installation package (for example, `0.0.18`), which we have helpfully listed at the top of this page.
 
 ##CentOS Installation ## {#CentOS}
 
@@ -122,10 +131,10 @@ To install the Ruby Fog bindings on CentOS, follow these steps:
 
 2. Download and install the HP Fog gem:
 
-        curl -sL https://docs.hpcloud.com/file/hpfog-version.gem >hpfog-version.gem
-        gem install hpfog-version.gem
+        curl -sL https://docs.hpcloud.com/file/hpfog-0.0.18.gem >hpfog-0.0.18.gem
+        gem install hpfog-0.0.18.gem
 
-Where `version` is the current version of Ruby Fog; for example, `0.0.18`.
+<stonrg>Note</strong>: Substitute the version number of the most current installation package (for example, `0.0.18`), which we have helpfully listed at the top of this page.
 
 <!--##Installation Notes## {#Installation}
 
@@ -135,7 +144,7 @@ Ensure RVM is loaded into a shell session as a function. For example, if you are
 \[\[ -s "$HOME/.rvm/scripts/rvm" \]\] && . "$HOME/.rvm/scripts/rvm" # This loads RVM into a shell session.
 </code>
 -->
-<h2 id="Uninstalling">Uninstalling</h2>
+##Uninstalling## {#Uninstalling}
 
 Its recommended that you uninstall a previous version prior to upgrading. To uninstall:
 

@@ -9,6 +9,8 @@ product: unix-cli
 
 Before you can begin working with the UNIX CLI, you have to install the package (of course!).  The instructions below work for Ubuntu, MacOS X, and CentOS installations.  Take a look at the [HP Cloud Unix CLI - Release Notes](/cli/unix/release-notes) for the latest features.
 
+[You can download the latest version of the UNIX CLI software here](https://docs.hpcloud.com/file/hpcloud-1.4.0.gem)!
+
 <!-- list of prerequisites? -->
 
 To install the UNIX CLI software, follow these steps:

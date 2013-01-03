@@ -5,6 +5,8 @@ permalink: /bindings/fog/connect/
 product: fog
 
 ---
+#Ruby Fog Bindings: Connecting to the HP Cloud Service
+
 This page gives you details on how to connect to the HP Cloud service and contains the following sections:
 
 * [Initial Connection](#InitialConnection)
