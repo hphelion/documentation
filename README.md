@@ -8,4 +8,6 @@ For more information on git flow see the article "[A successful Git branching mo
 
 ## Jenkins
 
+The Jenkins job to pus the documentation can be found here:
+
 http://keg.dev.uswest.hpcloud.net:8082/view/docs
