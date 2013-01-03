@@ -5,3 +5,7 @@ This repository contains the documentation on using HP Cloud product and service
 The documentation project uses [git flow](https://github.com/nvie/gitflow). Development of documentation should happen on the develop branch while the release version should be on the master branch. Large changes to content or content being prepared to publish in the future should be in feature branches.
 
 For more information on git flow see the article "[A successful Git branching model](http://nvie.com/posts/a-successful-git-branching-model/)".
+
+## Jenkins
+
+http://keg.dev.uswest.hpcloud.net:8082/view/docs
