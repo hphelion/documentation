@@ -40,7 +40,7 @@ To list available images:
 To add a new snapshot image based on a server:
 
     $ hpcloud images:add myimage myserver
-    Created image 'myimage' with id '111'.
+    Created image 'myimage' with id '121'.
 
 To add metadata to an existing snapshot image (the metadata must be in a comma-separated list of key value pairs):
 
