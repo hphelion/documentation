@@ -5,7 +5,7 @@ permalink: /bindings/fog/cdn/
 product: fog
 
 ---
-# HP Cloud Fog Binding CDN Examples
+# Ruby Fog Bindings CDN Examples
 
 The HP Cloud services provides CDN support via the request layer abstraction.  In the request abstraction, you can CDN-enable a container, get a list of the CDN-enabled containers, list the metadata for a CDN-enabled container, update the metadata for a CDN-enabled container, and CDN-disable a container.
 
