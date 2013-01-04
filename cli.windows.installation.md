@@ -18,11 +18,11 @@ To get the Object Storage Powershell environment running properly you must compl
 
 This page also describes how to [upgrade to a new version](#Upgrading) of the Windows CLI software.
 
-[Please download the latest version of the Windows PowerShell CLI software here](https://docs.hpcloud.com/file/WinCLI-1.3.1.9.zip)!
+[Please download the latest version of the Windows PowerShell CLI software here (Version 1.3.1.9)](https://docs.hpcloud.com/file/WinCLI-1.3.1.9.zip)!
 
 ##Installation Prerequisites## {#Installation}
 
-**Note** : This product requires the full (not client profile) 4.0 or higher version of the Microsoft .NET Framework to install properly which can be downloaded [here](http://www.microsoft.com/net/).
+This product requires the full (not client profile) 4.0 or higher version of the Microsoft .NET Framework to install properly which can be downloaded [at the Microsoft web site](http://www.microsoft.com/net/).
  
 ##Running the Installer Package## {#RunningtheInstallerPackage}
 
