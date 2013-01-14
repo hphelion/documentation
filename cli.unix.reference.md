@@ -56,7 +56,7 @@ Create or edit your account credentials.
 ###Options
 <dl>
 <dt><b>-n, [--no-validate]</b></dt><dd>Don't verify account settings during edit</dd>  
-<dt><b>-p, [--provider=PROVIDER]</b></dt><dd>Cloud provider for migration AWS, Rackspace, or Google</dd>  
+<dt><b>-p, [--provider=PROVIDER]</b></dt><dd>Cloud provider for migration aws, rackspace, or google</dd>  
 </dl>
 
 ###Description
