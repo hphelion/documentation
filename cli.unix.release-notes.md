@@ -19,11 +19,11 @@ These are the release notes for the HP Cloud services UNIX CLI.  The current rel
 
 The 1.5.0 release is available for download from https://docs.hpcloud.com/file/hpcloud-1.5.0.gem.  This release was made available on 1/18/2013 and contains the following new features:
 
-* A new `complete` command attempts to install a bash completion file so you can tab complete hpcloud commands
-* Added the `--debug` option to most commands to produce verbose trace
-* Added the `--source-account` option to the `copy` command so that files may be copied from one account to another.
-* New `migrate` command for object store migration from different providers.
-* The account:setup command has a new `--provider` option to supply providers other than HP for migration.
+* Command `complete` to install a bash completion file to allow you to tab complete hpcloud commands
+* Option `--debug` added to most commands to produce verbose trace
+* Option `--source-account` added to the `copy` command to allow files to be copied from one account to another.
+* Command `migrate` added to allow object store migration from different providers.
+* Option `--provider` added to the `account:setup` command to allow you to supply providers other than HP for migration.
 
 ###Known Issues###
 

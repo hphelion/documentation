@@ -56,7 +56,7 @@ Create or edit your account credentials.
 ###Options
 <dl>
 <dt><b>-n, [--no-validate]</b></dt><dd>Don't verify account settings during edit</dd>  
-<dt><b>-p, [--provider=PROVIDER]</b></dt><dd>Cloud provider for migration aws, rackspace, or google</dd>  
+<dt><b>-p, [--provider=PROVIDER]</b></dt><dd>Cloud provider for migration: AWS, Rackspace, or Google</dd>  
 </dl>
 
 ###Description
@@ -111,7 +111,7 @@ Set the account credential authorization URI to `https://127.0.0.1` and the bloc
 
     hpcloud account:edit pro auth_uri='https://127.0.0.1/' block_availability_zone='az-2.region-a.geo-1'
 
-Create a rackspace account for migration
+Create a Rackspace account for migration
 
     hpcloud account:setup rackspace -p rackspace
 
@@ -144,7 +144,7 @@ Create or edit your account credentials.
 ###Options
 <dl>
 <dt><b>-n, [--no-validate]</b></dt><dd>Don't verify account settings during edit</dd>  
-<dt><b>-p, [--provider=PROVIDER]</b></dt><dd>Cloud provider for migration aws, rackspace, or google</dd>  
+<dt><b>-p, [--provider=PROVIDER]</b></dt><dd>Cloud provider for migration: AWS, Rackspace, or Google</dd>  
 </dl>
 
 ###Description
@@ -199,7 +199,7 @@ Set the account credential authorization URI to `https://127.0.0.1` and the bloc
 
     hpcloud account:edit pro auth_uri='https://127.0.0.1/' block_availability_zone='az-2.region-a.geo-1'
 
-Create a rackspace account for migration
+Create a Rackspace account for migration
 
     hpcloud account:setup rackspace -p rackspace
 
@@ -667,16 +667,16 @@ Set the attribute `X-Ttl` to 900 for availability zoneregion-a.geo-1`:
 
 
 ##complete## {#complete}
-Attempt to install bash completion file.
+Installs the bash completion file.
 
 ###Syntax
 `hpcloud complete`
 
 ###Description
-Running this will attempt to install the hpcloud bash completion file.  If you run this as root, it will install it in a system wide directory if there is one available.  Otherwise, it will install it in the ~/.bash_completion.d/ directory.  It is up to the user to make sure the bash completion script is run.  The ~/.bash_completion.d/ directory is normally not run by default.
+Installs the HP Cloud bash completion file.  If you run this command as the root user, the file is installed in a system-wide directory (if one is available).  Otherwise, the file is installed  in the `~/.bash_completion.d/` directory.  The `~/.bash_completion.d/` directory is not run by default; you must run the completion script explicitly.
 
 ###Examples
-Attempt to install hpcloud bash completion
+Installs the HP Cloud bash completion file.
 
     hpcloud complete
 
@@ -1413,14 +1413,14 @@ Migrate files from a provider described by the source account.
 </dl>
 
 ###Description
-This command works similarly to the copy command except the first argument is the source account.  The source objects may be containers or objects or regular expressions.
+Migrates files from the deisgnated provider to the HP Cloud destination. This command works similarly to `copy` except the first argument is the source account (for example, `AWS`).  The source objects may be containers, objects, or regular expressions.
 
 ###Examples
-Migrate ojbects from the AWS :aws_tainer container to the :hp_tainer container
+Migrate ojbects from the AWS `:aws_tainer` container to the `:hp_tainer` container:
 
     hpcloud migrate aws :aws_tainer :hp_tainer
 
-Migrate ojbects from the two containers in the rackspace account to the :hp_tainer container
+Migrate ojbects from the two containers in the Rackspace account to the `:hp_tainer` container:
 
     hpcloud migrate rackspace :rackspace1 :rackspace2 :hp_tainer
 
