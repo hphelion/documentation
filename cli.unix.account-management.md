@@ -7,14 +7,13 @@ product: unix-cli
 ---
 
 * [Account Providers for Migration](#Providers)
-* [Command Line Updating Account Availability Zones](#ChangingAvailabilityZones)
-* [Command Line Updating Account Availability Zones](#ChangingAvailabilityZones)
-* [Command Line Updating Account Credentials](#ModifyingAccountCredentials)
-* [Command Line Updating Account Options](#ModifyingAccountOptions)
+* [Updating Account Availability Zones](#ChangingAvailabilityZones)
+* [Updating Account Credentials](#ModifyingAccountCredentials)
+* [Updating Account Options](#ModifyingAccountOptions)
 
 ## Account Providers for Migration ## {#Providers}
 
-You may use the `-p` provider option to the account:setup command to create accounts for cloud providers other than HP.  These accounts are only supported for the purposes of migration.  For example, to create an account to migrate files from Google object store:
+You may use the `-p` provider option to the account:setup command to create accounts for cloud providers other than HP.  These accounts are only supported for the purposes of migration.  For example, to create an account to migrate files from Google object storage container:
 
     $ hpcloud account:setup goog -p google
 
