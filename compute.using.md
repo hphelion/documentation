@@ -62,7 +62,7 @@ In the *Computer* field, enter the public IP for your instance:
 
 <img src="media/rdp_computername.png" width="421" height="259" alt="" />
 
-In the *Credentials* dialog, select **Use another account**.  In the *User name* field, enter **Administrator**.  In the *Password* field, enter the password provided by HPCS. This password is displayed to you after you create a Windows instance in our [CLIs](https://docs.hpcloud.com/cli) or [console](https://console.hpcloud.com). Simply cut and paste the provided password into this field.
+In the *Credentials* dialog, select **Use another account**.  In the *User name* field, enter **Administrator**.  In the *Password* field, enter the password provided by HPCS. This password is displayed to you after you create a Windows instance in our [CLIs](/cli) or [console](https://console.hpcloud.com). Simply cut and paste the provided password into this field.
 
 <img src="media/rdp_creds.png" width="439" height="394" alt="" />
 

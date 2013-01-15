@@ -15,7 +15,7 @@ Before you can begin working with the Ruby Fog bindings, you have to install the
 * [CentOS Installation](#CentOS)
 * [Uninstalling](#Uninstalling)
 
-[Please download the most recent Ruby Fog package (Version 0.0.18)](/hpfog-0.0.18.gem)!
+[Please download the most recent Ruby Fog package (Version 0.0.18)](/file/hpfog-0.0.18.gem)!
 
 
 ##Installation Prerequisites## {#Installation}
