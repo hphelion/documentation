@@ -61,7 +61,11 @@ To install the Ruby Fog bindings on the Ubuntu operating system, follow these st
 
         sudo apt-get install rubygems
 
-4. Download and install the HP Ruby Fog bindings gem package:
+4. Install dependent libraries:
+
+        sudo apt-get install libxml2 libxml2-dev libxslt1-dev libxslt1.1 sgml-base xml-core
+
+5. Download and install the HP Ruby Fog bindings gem package:
 
         curl -sL https://docs.hpcloud.com/file/hpfog-0.0.18.gem >hpfog-0.0.18.gem
         gem install hpfog-0.0.18.gem
