@@ -5,7 +5,7 @@ permalink: /cli/unix/release-notes/
 product: unix-cli
 
 ---
-These are the release notes for the HP Cloud services UNIX CLI.  The current release number for the [UNIX CLI software](/cli/unix) is version 1.5.0, released on 01/14/13.
+These are the release notes for the HP Cloud services UNIX CLI.  The current release number for the [UNIX CLI software](/cli/unix) is version 1.5.0, released on 01/15/13.
 
 * [Release 1.5.0 Features](#v1_5_0)
 * [Release 1.4.0 Features](#v1_4_0)
@@ -19,8 +19,8 @@ These are the release notes for the HP Cloud services UNIX CLI.  The current rel
 
 The 1.5.0 release is available for download from https://docs.hpcloud.com/file/hpcloud-1.5.0.gem.  This release was made available on 1/18/2013 and contains the following new features:
 
-* Command `complete` added to allow you to install a bash completion file to enable tab-completion for hpcloud commands.
-* Option `--debug` added to most commands to produce a verbose trace report.
+* Command `complete` to install a bash completion file to allow you to tab complete hpcloud commands
+* Option `--debug` added to most commands to produce verbose trace
 * Option `--source-account` added to the `copy` command to allow files to be copied from one account to another.
 * Command `migrate` added to allow object store migration from different providers.
 * Option `--provider` added to the `account:setup` command to allow you to supply providers other than HP for migration.
