@@ -19,7 +19,7 @@ These release notes contains information on the following topics; click on the l
 
 <h2 id="RubyFogBindings">Ruby Fog Bindings</h2>
 
-The current release number for the [HP Cloud Services Ruby Fog software bindings](/bindings) is version 0.0.15, released on 6/8/2012.  ([Download the current software for Ruby Fog](https://docs.hpcloud.com/bindings/fog/install))
+The current release number for the [HP Cloud Services Ruby Fog software bindings](/bindings) is version 0.0.15, released on 6/8/2012.  ([Download the current software for Ruby Fog](/bindings/fog/install))
 
 ###New Features in Version 0.0.15
 
@@ -46,7 +46,7 @@ None in this release.
 
 
 <h2 id="UNIXCLI">UNIX Command-Line Interface (CLI)</h2>
-The current release number for the [UNIX CLI software](/cli/unix) is version 0.0.15, released on 6/8/2012.  ([Download the current software](https://docs.hpcloud.com/cli/unix/install))
+The current release number for the [UNIX CLI software](/cli/unix) is version 0.0.15, released on 6/8/2012.  ([Download the current software](/cli/unix/install))
 
 ###New Features in Version 0.0.15
 
@@ -64,7 +64,7 @@ None in this release.
 * When either storage or compute is deactivated, you can not connect to the account using the <font face="Courier">hpcloud account:setup</font> command.
 
 <h2 id="WindowsPowerShellCLI">Windows PowerShell (CLI)</h2>
-The current release number for the [Windows PowerShell CLI software](/cli/windows) is version 1.2.0.1, released on 5/16/2012.  ([Download the current software](https://docs.hpcloud.com/cli/windows/installation))
+The current release number for the [Windows PowerShell CLI software](/cli/windows) is version 1.2.0.1, released on 5/16/2012.  ([Download the current software](/cli/windows/installation))
 
 ###New Features in Version 1.2.0.6
 This release of the Windows PowerShell CLI includes the following new functionality:

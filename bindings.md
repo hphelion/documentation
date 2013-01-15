@@ -31,4 +31,4 @@ OK, so technically this isn't a binding but it's some open source that we use ou
 
 
 ###.NET
-For our friends on the Microsoft platform, [we have a .NET open source binding over at CodePlex](http://hpcloud.codeplex.com/) that supports Object Storage, CDN, and Compute.  As you might guess, our own [Windows CLI](https://docs.hpcloud.com/cli/windows) is built on this codebase.
+For our friends on the Microsoft platform, [we have a .NET open source binding over at CodePlex](http://hpcloud.codeplex.com/) that supports Object Storage, CDN, and Compute.  As you might guess, our own [Windows CLI](/cli/windows) is built on this codebase.
