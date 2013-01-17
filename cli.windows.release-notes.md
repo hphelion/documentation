@@ -10,13 +10,14 @@ product: win-cli
 These are the release notes for the HP Cloud services Windows PowerShell CLI.  The current release number for the [Windows PowerShell CLI software](/cli/windows) is version 1.3.2.2, released on 12/3/2012.  These release notes contain the following information:
 
 <!--* [Release 1.3.2.2 Features](#v1322)-->
+
 * [Release 1.3.1.9 Features](#v1319)
 * [Release 1.3.0.6 Features](#v1306)
 * [Release 1.3.0.1 Features](#v1301)
 * [Release 1.2.0.6 Features](#v1206)
 * [Release 1.2.0.1 Features](#v1201)
 
-[Please download the latest version of the Windows PowerShell CLI software here](https://docs.hpcloud.com/file/WinCLI-1.3.1.9.zip)!
+[Please download the latest version of the Windows PowerShell CLI software (Version 1.3.1.9)](/file/WinCLI-1.3.1.9.zip)!
 
 
 <!--##Release 1.3.2.2 Features## {#v1322}

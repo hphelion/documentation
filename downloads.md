@@ -20,19 +20,19 @@ Here's what we have for you:
 ##Command-line Interface (CLI) Packages##
 
 ###UNIX CLI### {#UNIXCLIInstall}
-* [Installation package, Version 1.4.0](https://docs.hpcloud.com/file/hpcloud-1.4.0.gem)
+* [Installation package, Version 1.5.0](/file/hpcloud-1.5.0.gem)
 * [Overview page](/cli/unix)
 * [Release Notes](/cli/unix/release-notes)
 
 ###Windows CLI### {#WinCLIInstall}
-* [Installation package, Version 1.3.1.9](https://docs.hpcloud.com/file/WinCLI-1.3.1.9.zip)
+* [Installation package, Version 1.3.1.9](/file/WinCLI-1.3.1.9.zip)
 * [Overview page](/cli/windows)
 * [Release Notes](/cli/windows/release-notes)
 
 ##Language Bindings##
 
 ###Ruby Fog Bindings### {#RubyFogBindingsInstall}
-* [Installation package, Version 0.0.18](https://docs.hpcloud.com/file/hpfog-0.0.18.gem)
+* [Installation package, Version 0.0.18](/file/hpfog-0.0.18.gem)
 * [Overview page](/bindings/fog) 
 * [Release Notes](/bindings/fog/release-notes)
 

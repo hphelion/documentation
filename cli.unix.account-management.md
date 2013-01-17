@@ -5,13 +5,20 @@ permalink: /cli/unix/account-management/
 product: unix-cli
 
 ---
-# UNIX CLI: Advanced Account Management
+#UNIX CLI: Advanced Account Management
 
-You may use the `account:edit` command in a non interactive mode if you specify one or more `name_value_pairs` of the settings you wish to modify.  There are options available through the command line that are not available through the interactive prompts.
+This page discusses the following topics:
 
+* [Account Providers for Migration](#Providers)
 * [Updating Account Availability Zones](#ChangingAvailabilityZones)
 * [Updating Account Credentials](#ModifyingAccountCredentials)
 * [Updating Account Options](#ModifyingAccountOptions)
+
+## Account Providers for Migration ## {#Providers}
+
+You may use the `-p` provider option to the account:setup command to create accounts for cloud providers other than HP.  These accounts are only supported for the purposes of migration.  For example, to create an account to migrate files from Google object storage container:
+
+    $ hpcloud account:setup goog -p google
 
 ## Updating Account Availability Zones ## {#ChangingAvailabilityZones}
 
