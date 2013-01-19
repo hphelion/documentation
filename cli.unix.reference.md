@@ -1989,7 +1989,7 @@ Delete server `my-server` for availability zone `az-2.region-a.geo-1`:
 `servers:rm, servers:delete, servers:del`
 
 ##servers:ssh## {#servers:ssh}
-Secure shell into the server.
+Secure shell into a server.
 
 ###Syntax
 `hpcloud servers:ssh <server_name_or_id>`
@@ -2007,16 +2007,16 @@ Secure shell into the server.
 </dl>
 
 ###Description
-Log in using the secure shell to the designated server.
+Log in using the secure shell to the specified server.
 
 ###Examples
 Use the secure shell to log in to the bugs server:
 
-    hpcloud servers:console bugs -p bunny.pem
+    hpcloud servers:ssh bugs -p bunny.pem
 
-Use the secure shell to log in to server `daffy`, which has a know keypair
+Use the secure shell to log in to server `daffy`, which has a known keypair
 
-    hpcloud servers:console daffy
+    hpcloud servers:ssh daffy
 
 
 ##snapshots## {#snapshots}
