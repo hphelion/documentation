@@ -838,6 +838,19 @@ EXAMPLE 2
 
 Lists the contents of the "bar" folder located two levels from the current directory (root).
 
+##Map-Drive## {#Map-Drive}
+Maps a container owned by a different user to your list of available drives.
+
+###Syntax###
+ map-drive <drive_URL>
+ 
+###Examples###
+EXAMPLE 1
+
+    map-drive https://objects.werr.net:443/v1/9153476658759/rgtest2
+
+Maps the `rgtest2` container to your list of available drives.
+
 ##Md## {#Md}
 Allows you organize your resources within Object Storage in a hierarchical fashion through the use of folders.
 
@@ -911,6 +924,19 @@ EXAMPLE
     PS yourcontainer:\> remove-container marketing
 
 Deletes the container named marketing and all of its contents.
+
+##Remove-Drive## {#Remove-Drive}
+Removes an existing mapped drive.
+
+###Syntax###
+ remove-drive <drive_URL>
+
+###Examples###
+EXAMPLE 1
+
+    remove-drive rgtest
+    
+Removes the container `rgtest` from your list of available drives.
 
 ##Remove-Item## {#Remove-Item}
 Removes an object from your object storage container.
