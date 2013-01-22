@@ -32,6 +32,7 @@ In addition to the video tutorial, which shows you how the basics of our object 
 * [Changing Configuration Files](#ChangingConfigurationFiles)
 * [Viewing Your Service Catalog](#ViewingYourServiceCatalog)
 * [Finding an Object's Location](#FindinganObjectsLocation)
+* [Mapping and Removing Drives](#MappingandRemovingDrives)
 * [Getting Version Information](#GettingVersionInformation)
 * [Using Another User's Credentials](#UsingAnotherUsersCredentials)
 * [Viewing the Release Notes](#ViewingtheReleaseNotes)
