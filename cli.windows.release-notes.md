@@ -9,29 +9,33 @@ product: win-cli
 
 These are the release notes for the HP Cloud services Windows PowerShell CLI.  The current release number for the [Windows PowerShell CLI software](/cli/windows) is version 1.3.2.2, released on 12/3/2012.  These release notes contain the following information:
 
-<!--* [Release 1.3.2.2 Features](#v1322)-->
-
+* [Release 1.3.2.7 Features](#v1327)
 * [Release 1.3.1.9 Features](#v1319)
 * [Release 1.3.0.6 Features](#v1306)
 * [Release 1.3.0.1 Features](#v1301)
 * [Release 1.2.0.6 Features](#v1206)
 * [Release 1.2.0.1 Features](#v1201)
 
-[Please download the latest version of the Windows PowerShell CLI software (Version 1.3.1.9)](/file/WinCLI-1.3.1.9.zip)!
+[Please download the latest version of the Windows PowerShell CLI software (Version 1.3.2.7)](/file/WinCLI-1.3.2.7.zip)!
 
+##Release 1.3.2.7 Features## {#v1327}
 
-<!--##Release 1.3.2.2 Features## {#v1322}
+This release was made available on 1/24/2013 and contains the following new features:
 
-This release was made available on 12/3/2012 and contains the following new features:
-
+* Added cmdlets `[Map-Drive](/cli/windows/reference#Map-Drive)` and `[Remove-Drive](/cli/windows/reference#Remove-Drive)`  to add and remove drives owned by other users to your list of available drives.
+* Support for file uploads for files greater than 1 gigbyte in size has been added.
 * The `Connect-Server` cmdlet now works with non-Windows instances in conjunction with *putty.exe*.
 * New argument for `Get-Zones` cmdlet. Adding `–v` will return more details about each zone including containers in that zone and available services. Example: `get-zones -v`.
 * The `Set-Zone` cmdlet shows more details about the newly selected zone including containers in that zone and the available services.
 
 ##Known Issues##
 
+* **Resolved**: `copy` command now displays the correct file copy details.
+* **Resolved**: After setting the zone color, the key pair content now displays with the correct color when creating a new key pair with the `New-KeyPair` command.
+* **Resolved**: You are now informed when drive permissions are revoked or changed during exception handling. 
 * **Resolved**: You can now add a new security group rule to an existing security group.
-* **Resolved**: The server keyname is now displayed when you list the available servers.-->
+* **Resolved**: The server keyname is now displayed when you list the available servers.
+
 
 ##Release 1.3.1.9 Features## {#v1319}
 
@@ -42,7 +46,7 @@ This release was made available on 10/29/2012 and contains the following new fea
 * Support for [Windows images](/cli/windows/compute#CreateanImageofaServer)
 * Added cmdlet `[connect-server](/cli/windows/reference#Compute)` to quick-connect to Windows Instances
 * Added cmdlet `[get-limits](/cli/windows/reference#Compute)` to show Compute quota information
-* Added cmdlet `[ping-server](/cli/windows/reference#Compute)`.
+* Added cmdlet `[ping-server](/cli/windows/reference#Compute)` to ping a server.
 * Added cmdlet `[get-password](/cli/windows/reference#Compute)` for recovering of Administrator password for Windows Instances
 * Support for syncing Windows Administrator password for cmdlet `[reset-password](/cli/windows/reference#Compute)`
 
