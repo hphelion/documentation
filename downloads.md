@@ -31,7 +31,7 @@ Here's what we have for you:
 
 ###Python NovaClient### {#PythonNovaClient}
 * [Installation package, Version 2.6.8](/file/python-novaclient_2.6.8.tar.gz)
-* [Overview page(/cli/nova)
+* [Overview page](/cli/nova)
 
 ##Language Bindings##
 
