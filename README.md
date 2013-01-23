@@ -12,4 +12,4 @@ The Jenkins job to pus the documentation can be found here:
 
 http://keg.dev.uswest.hpcloud.net:8082/view/docs
 
-There are two jobs to merge from the documentation repo and two to deploy.  There are other jobs to merge the other repos.
+There are two jobs to merge from the documentation repo and two to deploy.
