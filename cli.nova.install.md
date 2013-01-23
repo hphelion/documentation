@@ -260,23 +260,23 @@ To install the public Python software on your Windows system, follow these steps
     
 2. Run the Windows Installer:
 
-    <img src="media/python setup 01.jpg" width="519" height="424" alt="" />
+    <img src="media/python setup 01.png" width="519" height="424" alt="" />
     
 3. In the `Start` menu, open your Control Panel, Select `System` and then click the `Advanced system settings` link:
 
-    <img src="media/python setup 03.jpg" width="519" height="424" alt="" />
+    <img src="media/python setup 03.png" width="519" height="424" alt="" />
 
 4. In the `Advanced` dialog, select the `Advanced` tab and click `Environment Variables…`:
 
-    <img src="media/python setup 04.jpg" width="519" height="424" alt="" />
+    <img src="media/python setup 04.png" width="519" height="424" alt="" />
     
 5. In the `Environment Variables` dialog, select the Path environment variable and click `Edit…`:
 
-    <img src="media/python setup 05.jpg" width="519" height="424" alt="" />
+    <img src="media/python setup 05.png" width="519" height="424" alt="" />
 
 6. In the `Edit System Variable` dialog, append to the Path the installation directory for Python (for example, `;c:\Python27\`):
 
-    <img src="media/python setup 06.jpg" width="519" height="424" alt="" />
+    <img src="media/python setup 06.png" width="519" height="424" alt="" />
 
 7. In the `Edit System Variable` dialog click `OK`.
 
@@ -316,19 +316,19 @@ To install the Python Setup tools, follow these steps:
 
 5. In the `Start` menu, open your Control Panel, Select `System` and then click the `Advanced system settings` link:
 
-    <img src="media/python setup 03.jpg" width="519" height="424" alt="" />
+    <img src="media/python setup 03.png" width="519" height="424" alt="" />
 
 6. In the `Advanced` dialog, select the `Advanced` tab and click `Environment Variables…`:
 
-    <img src="media/python setup 04.jpg" width="519" height="424" alt="" />
+    <img src="media/python setup 04.png" width="519" height="424" alt="" />
     
 7. In the `Environment Variables` dialog, select the Path environment variable and click `Edit…`:
 
-    <img src="media/python setup 05.jpg" width="519" height="424" alt="" />
+    <img src="media/python setup 05.png" width="519" height="424" alt="" />
 
 8. In the `Edit System Variable` dialog, append to the Path the directory in which the `easy_install.exe` is located (for example, `;c:\Python27\Scripts`):
 
-    <img src="media/python setup 06.jpg" width="519" height="424" alt="" />
+    <img src="media/python setup 06.png" width="519" height="424" alt="" />
 
 9. In the `Edit System Variable` dialog click `OK`.
 
@@ -362,15 +362,15 @@ To configure variables for the Python NovaClient, follow these steps:
 
 1. In the `Start` menu, open your Control Panel, Select `System` and then click the `Advanced system settings` link:
 
-    <img src="media/python setup 03.jpg" width="519" height="424" alt="" />
+    <img src="media/python setup 03.png" width="519" height="424" alt="" />
 
 2. In the `Advanced` dialog, select the `Advanced` tab and click `Environment Variables…`:
 
-    <img src="media/python setup 04.jpg" width="519" height="424" alt="" />
+    <img src="media/python setup 04.png" width="519" height="424" alt="" />
     
 3. In the `Environment Variables…` dialog in the `System variables` section, click `New`:
 
-    <img src="media/python setup 07.jpg" width="519" height="424" alt="" />
+    <img src="media/python setup 07.png" width="519" height="424" alt="" />
 
 4. Add the following new environment variables and values:
 
