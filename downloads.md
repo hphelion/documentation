@@ -29,6 +29,10 @@ Here's what we have for you:
 * [Overview page](/cli/windows)
 * [Release Notes](/cli/windows/release-notes)
 
+###Python NovaClient### {#PythonNovaClient}
+* [Installation package, Version 2.6.8](/file/python-novaclient_2.6.8.tar.gz)
+* [Overview page(/cli/nova)
+
 ##Language Bindings##
 
 ###Ruby Fog Bindings### {#RubyFogBindingsInstall}
