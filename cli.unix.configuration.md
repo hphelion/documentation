@@ -43,51 +43,51 @@ When you use the `account:edit` command and you specify the `account_name` and `
 ## List Accounts ## {#ListAccounts}
 To view all your current accounts, use the [`account:list`](/cli/unix/reference#account) command:
 
-     $ hpcloud account:list
-     hp <= default
-     account_1
-     my_account_3
+    $ hpcloud account:list
+    hp <= default
+    account_1
+    my_account_3
 
 ## Display Credentials for an Account ## {#DisplayCredsforAccount}
 To view a specific account&#039;s credentials, use the [`account <account_name>`](/cli/unix/reference#account) command.
 
-     $ hpcloud account account_1
-     credentials:
-       account_id: '229721xxxxxxx'
-       secret_key: EueAi5RxxxxxxxxxUXAotdYDluP
-       auth_uri: https://region-a.geo-1.identity.hpcloudsvc.com:35357/v2.0/
-       tenant_id: '6642xxxxxxxx05'
-     zones:
-       compute_availability_zone: az-1.region-a.geo-1
-       storage_availability_zone: region-b.geo-1
-       cdn_availability_zone: region-a.geo-1
-       block_availability_zone: az-1.region-a.geo-1
-     options: {}
+    $ hpcloud account account_1
+    credentials:
+      account_id: '229721xxxxxxx'
+      secret_key: EueAi5RxxxxxxxxxUXAotdYDluP
+      auth_uri: https://region-a.geo-1.identity.hpcloudsvc.com:35357/v2.0/
+      tenant_id: '6642xxxxxxxx05'
+    zones:
+      compute_availability_zone: az-1.region-a.geo-1
+      storage_availability_zone: region-b.geo-1
+      cdn_availability_zone: region-a.geo-1
+      block_availability_zone: az-1.region-a.geo-1
+    options: {}
 
 ### Copy an Account ### {#CopyAccount}
 To copy an existing account to a new account use the `account:copy <source_account_name> <new_account_name>` command.  This command will also overlay an existing account:
 
-     $ hpcloud account:copy hp account_2 
-     Account 'hp' copied to 'account_2'
+    $ hpcloud account:copy hp account_2 
+    Account 'hp' copied to 'account_2'
 
 ## Assigning an Account as Default ## {#AssigningDefault}
 When you execute a CLI command without designating a specific account with the *-a* option, the default account is used. You can redefine the default account by using the [`account:use <account_name>`](/cli/unix/reference#account:use) command:
 
-     $ hpcloud account:use account_2
-     Account 'account_2' is now the default
+    $ hpcloud account:use account_2
+    Account 'account_2' is now the default
 
 ## Verify an Account ## {#VerifyAccount}
 To verify an existing account, use the [`account:verify <account_name>`](/cli/unix/reference#account:verify) command:
 
-     $ hpcloud account:use account_2
-     Verifying 'account_2' account...
-     Connected to 'account_2' successfully
+    $ hpcloud account:use account_2
+    Verifying 'account_2' account...
+    Connected to 'account_2' successfully
 
 ## Remove an Account ## {#RemoveAccount}
 To remove an existing account, use the [`account:remove <account_name>`](/cli/unix/reference#account:remove) command:
 
-     $ hpcloud account:remove account_2
-     Removed account 'account_2'
+    $ hpcloud account:remove account_2
+    Removed account 'account_2'
 
 ## Specifying an Account for a Single Operation ## {#DefiningAccountsPerCommand}
 Account name can be specified for a single command line operation and does not affect your account’s base credentials. To run a command on an account other than the default account use the `-a` option.
@@ -104,7 +104,7 @@ Availability Zone can be specified for a single command line operation and does 
 To view servers using the `az-2.region-a.geo-1` availability zone:
 
     $ hpcloud servers -z az-2.region-a.geo-1
-    
+   
 Most commands allow you to use the `-z` option; see the [UNIX CLI Reference page](/cli/unix/reference) to determine if a particular command supports the option.
 
 ## Full List of Current Availability Zones ## {#ListofAZs}

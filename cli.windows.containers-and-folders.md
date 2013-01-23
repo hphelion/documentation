@@ -32,6 +32,7 @@ In addition to the video tutorial, which shows you how the basics of our object 
 * [Changing Configuration Files](#ChangingConfigurationFiles)
 * [Viewing Your Service Catalog](#ViewingYourServiceCatalog)
 * [Finding an Object's Location](#FindinganObjectsLocation)
+* [Mapping and Removing Drives](#MappingandRemovingDrives)
 * [Getting Version Information](#GettingVersionInformation)
 * [Using Another User's Credentials](#UsingAnotherUsersCredentials)
 * [Viewing the Release Notes](#ViewingtheReleaseNotes)
@@ -961,6 +962,19 @@ The contents of the Object store are URI addressable given that you have the pro
 <!--<img src="media/get-location_0.png" width="580" height="376" alt="" />-->
 
 Note : When you issue this command the URI is also pasted to the Windows clipboard for your convenience. If you want to disable this behavior simply set the CLI.config option entitled PasteGetURIResultsToClipboard to false.
+
+##Mapping and Removing Drives## {#MappingandRemovingDrives}
+
+There are times when you want to add or remove a drive from your list of available drives when it owned by another user.  To perform these actions, you can use the [Map-Drive](/cli/windows/reference#Map-Drive) and [Remove-Drive](/cli/windows/reference#Remove-Drive) cmdlets.
+
+To map a Container that someone else owns to your list of available drives:
+
+    map-drive https://objects.werr.net:443/v1/9153476658759/rgtest2
+    
+This maps the container `rgtest2` to your list of available drives.  To unmap the container:
+
+    remove-drive rgtest2
+
 
 ##Getting Version Information## {#GettingVersionInformation}
 

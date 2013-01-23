@@ -23,6 +23,6 @@ Do you need low level, raw REST API access to HP Cloud CDN?  Head on over to the
 ## Bindings
 Got a favorite programming language?  Ready to create your own CDN-based applications?  Take a look at our [Bindings section](/bindings) for details.
 
-Early access to HP Cloud CDN features two different language bindings.  If you are a Java person, take a look at our [jclouds binding](https://docs.hpcloud.com/bindings/jclouds) and follow the instructions in the README.txt to get started.
+Early access to HP Cloud CDN features two different language bindings.  If you are a Java person, take a look at our [jclouds binding](/bindings/jclouds) and follow the instructions in the README.txt to get started.
 
-If Ruby is more your thing, we have a new version of the HP Cloud fog library (not for general distribution quite yet) that enables access to CDN.  [Download version 0.0.17 here](https://docs.hpcloud.com/file/hpfog-0.0.17.gem) and follow the same instructions found on the [HP Cloud Fog Binding page](/bindings/fog) to install it.  Detailed examples can be found on the [HP Cloud Fog Binding CDN Examples](/bindings/fog/cdn) page.
+If Ruby is more your thing, we have a version of [Ruby Fog](/bindings/fog/install) that enables access to CDN.  Detailed examples can be found on the [HP Cloud Fog Binding CDN Examples](/bindings/fog/cdn) page.
