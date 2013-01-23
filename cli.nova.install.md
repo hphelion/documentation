@@ -17,7 +17,7 @@ This page provides you with the installation information for the following opera
 * [Fedora Installation](#Fedora)
 * [Windows Installation](#Windows)
 
-[You can download the latest version of the Python Novaclient CLI software here (Debian package, Version 2.6.8)](https://docs.hpcloud.com/file/python-novaclient_2.6.8.deb)!
+[You can download the latest version of the Python Novaclient CLI software here (Version 2.6.8)](/file/python-novaclient_2.6.8.tar.gz)!
 
 
 ##Installation Prerequisites## {#Installation}
