@@ -248,7 +248,7 @@ For information on connecting to the service, please see the [Connecting to the 
         keypairs = conn.key_pairs
         keypairs.size         # returns no. of keypairs
         # display keypairs in a tabular format
-        conn.key_pairs.table([:id, :name, :public_key])
+        conn.key_pairs.table([:name, :public_key])
 
 2. Obtain the details of a particular keypair
 
