@@ -7,14 +7,29 @@ product: fog
 ---
 # Release Notes for the HP Cloud Services Ruby Fog Binding
 
-These are the release notes for the HP Cloud services Ruby Fog bindings.  The current release number for the [HP Cloud Services Ruby Fog software bindings](/bindings) is version 0.0.18, released on Dec. 5th, 2012.  These release notes contain the following information:
+These are the release notes for the HP Cloud services Ruby Fog bindings.  The current release number for the [HP Cloud Services Ruby Fog software bindings](/bindings) is version 0.0.19, released on Jan. 25th, 2013.  These release notes contain the following information:
 
+* [Release 0.0.19 Information](#v0019)
 * [Release 0.0.18 Information](#v0018)
 * [Release 0.0.17 Information](#v0017)
 * [Release 0.0.16 Information](#v0016)
 * [Release 0.0.15 Information](#v0015)
 
-[You can download the latest version of the Ruby Fog bindings software here](https://docs.hpcloud.com/file/hpfog-0.0.18.gem)!
+[You can download the latest version of the Ruby Fog bindings software here](https://docs.hpcloud.com/file/hpfog-0.0.19.gem)!
+
+##Release 0.0.19 Information## {#v0019}
+
+This release was made available on 01/25/2013 and contains the following new features:
+
+* Updated Block Storage namespace to be `Fog::HP::BlockStorage` instead of `Fog::BlockStorage::HP`
+* Deprecated `:hp_account_id` to use `:hp_access_key` instead, in the connection call
+* Fixed temporary URL to use a signer that is backward compatible to 1.8.7
+* Fixed issue in Storage provider with service catalog having an invalid CDN endpoint
+* Updated to include the upstream changes from `fog v1.9.0`
+
+##Known Issues##
+
+None in this release.
 
 
 ##Release 0.0.18 Information## {#v0018}
@@ -53,7 +68,7 @@ This release contains the following new features:
 * Method for gathering information about storage containers using the headers (rather than retrieving container contents) added. 
 * Software updated to include `excon` version 0.14.3 to take advantage of instrumentation.  You can pass in a Instrumentor to provide instrumentation information about each call made via the hpfog library.  
 
-###Known Issues### 
+##Known Issues##
 
 None in this release.
 
@@ -75,6 +90,6 @@ This release contains the following new features:
 * Tests added for [Storage](/bindings/fog/object-storage), [Compute](/bindings/fog/compute) and [CDN](/bindings/fog/cdn) services.
 * Quality of mocks modified to match implementation.
 
-###Known Issues###
+##Known Issues##
 
 None in this release.
