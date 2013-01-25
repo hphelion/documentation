@@ -113,30 +113,15 @@ For further details, see [Installation Notes](#InstallationNotes).
 
 To install the Ruby Fog bindings on CentOS, follow these steps:
 
-<!--1. Install packages required by RVM:
-
-        sudo yum install -y gcc-c++ patch readline readline-devel zlib zlib-devel libyaml-devel libffi-devel openssl-devel make bzip2 autoconf automake libtool bison
-        sudo yum install -y gcc ruby-devel libxml2 libxml2-devel libxslt libxslt-devel
-
-2. Install Ruby:
-
-        #  If you intall rvm as root, you may have to source the /etc/profile.d/rvm.sh file instead of ~/.rvm/scripts/rvm.
-        source ~/.rvm/scripts/rvm
-        rvm user all
-        rvm install 1.9.2
-
-3. Use the Ruby version and make it the default:
-
-        rvm use 1.9.2 --default-->
-
 1. Install Ruby:
 
-        sudo apt-get install ruby1.8
+        sudo yum install ruby
+        sudo gem install rdoc
 
 2. Download and install the HP Fog gem:
 
         curl -sL https://docs.hpcloud.com/file/hpfog-0.0.18.gem >hpfog-0.0.18.gem
-        gem install hpfog-0.0.18.gem
+        sudo gem install hpfog-0.0.18.gem
 
 <stonrg>Note</strong>: Substitute the version number of the most current installation package (for example, `0.0.18`), which we have helpfully listed at the top of this page.
 
