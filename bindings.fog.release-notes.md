@@ -21,13 +21,13 @@ These are the release notes for the HP Cloud services Ruby Fog bindings.  The cu
 
 This release was made available on 01/25/2013 and contains the following new features:
 
-* Updated Block Storage namespace to be `Fog::HP::BlockStorage` instead of `Fog::BlockStorage::HP`
-* Deprecated `:hp_account_id` to use `:hp_access_key` instead, in the connection call
-* Fixed temporary URL to use a signer that is backward compatible to 1.8.7
-* Fixed issue in Storage provider with service catalog having an invalid CDN endpoint
+* Block Storage namespace updated to `Fog::HP::BlockStorage` instead of `Fog::BlockStorage::HP`
+* Variable `:hp_account_id` deprecated in favor of `:hp_access_key` in the service connection call
+* Issue with a temporary URL to use a signer that is backward compatible to 1.8.7 fixed
+* Issue in the storage provider with a service catalog having an invalid CDN endpoint fixed
 * Updated to include the upstream changes from `fog v1.9.0`
 
-##Known Issues##
+###Known Issues###
 
 None in this release.
 
@@ -39,7 +39,7 @@ This release was made available on 12/3/2012 and contains the following new feat
 * Support for using access control lists (ACLs) to share objects and containers
 * Support for bootable volumes and persistent instances
 
-##Known Issues##
+###Known Issues###
 
 None in this release.
 
@@ -51,7 +51,7 @@ This release was made available on 10/19/2012 and contains the following new fea
 * Support for creating a temporary URL for a file or object for sharing purposes
 * Support for creating a new Windows server instance
 
-##Known Issues##
+###Known Issues###
 
 None in this release.
 
@@ -68,7 +68,7 @@ This release contains the following new features:
 * Method for gathering information about storage containers using the headers (rather than retrieving container contents) added. 
 * Software updated to include `excon` version 0.14.3 to take advantage of instrumentation.  You can pass in a Instrumentor to provide instrumentation information about each call made via the hpfog library.  
 
-##Known Issues##
+###Known Issues###
 
 None in this release.
 
@@ -90,6 +90,6 @@ This release contains the following new features:
 * Tests added for [Storage](/bindings/fog/object-storage), [Compute](/bindings/fog/compute) and [CDN](/bindings/fog/cdn) services.
 * Quality of mocks modified to match implementation.
 
-##Known Issues##
+###Known Issues###
 
 None in this release.
