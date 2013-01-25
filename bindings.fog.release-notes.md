@@ -15,7 +15,7 @@ These are the release notes for the HP Cloud services Ruby Fog bindings.  The cu
 * [Release 0.0.16 Information](#v0016)
 * [Release 0.0.15 Information](#v0015)
 
-[You can download the latest version of the Ruby Fog bindings software here](https://docs.hpcloud.com/file/hpfog-0.0.19.gem)!
+[You can download the latest version of the Ruby Fog bindings software here](/file/hpfog-0.0.19.gem)!
 
 ##Release 0.0.19 Information## {#v0019}
 
