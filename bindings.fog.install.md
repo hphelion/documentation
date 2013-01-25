@@ -115,7 +115,10 @@ To install the Ruby Fog bindings on CentOS, follow these steps:
 
 1. Install Ruby:
 
-        sudo yum install ruby
+        sudo yum install -y ruby
+        sudo yum install -y gcc make libxml2 libxml2-devel libxslt libxslt-devel
+        sudo yum install -y ruby-devel
+        sudo yum install -y rubygems
         sudo gem install rdoc
 
 2. Download and install the HP Fog gem:
