@@ -40,10 +40,11 @@ To connect to the HP Cloud Service, follow these steps:
                <other optional parameters>
                )
 
-Where `SERVICE-NAME` can be [Compute](/bindings/fog/compute), [Storage](/bindings/fog/object-storage), or [CDN](/bindings/fog/cdn). However, the connection for the [BlockStorage](/bindings/fog/block-storage) service is a little different.
+Where `SERVICE-NAME` can be [Compute](/bindings/fog/compute), [Storage](/bindings/fog/object-storage), or [CDN](/bindings/fog/cdn). Please surf on over to the [Block Storage page](/bindings/fog/block-storage) for the details on how to connect to that service.
 
-**NOTE**: The :hp_access_key parameter needs to be used instead of the :hp_account_id parameter has been deprecated now.
-You can find the values by clicking the [`API Keys`](https://console.hpcloud.com/account/api_keys) button in the [Console Dashboard](https://console.hpcloud.com/dashboard).
+**Note**: You must use the `:hp_access_key` parameter rather than the now-deprecated  `:hp_account_id` parameter you might have used in previous Ruby Fog versions.
+
+You can find the values the access key, secret key, and other values by clicking the [`API Keys`](https://console.hpcloud.com/account/api_keys) button in the [Console Dashboard](https://console.hpcloud.com/dashboard).
 
 
 <!--[[{"type":"media","view_mode":"media_large","fid":"141","attributes":{}}]]
@@ -113,8 +114,7 @@ The current usable availability zones for the block storage service:
 
 ##Optional Parameters## {#OptionalParameters}
 
-This section describes the optional parameters that you can use when connecting to any of the HP Cloud services.
-Note, that the examples below show the Compute service, but these optional parameters work with all of the HP Cloud services.
+This section describes the optional parameters that you can use when connecting to any of the HP Cloud services.  The examples below show the Compute service, but these optional parameters work with all of the HP Cloud services.
 
 The `user_agent` parameter allows you to specify a string to pass as a `user_agent` header for the connection.  You can use this to track the caller of the operations.  You can set the `user_agent` parameter as follows:
 
