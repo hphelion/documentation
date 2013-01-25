@@ -20,7 +20,7 @@ To install the UNIX CLI software, follow these steps:
 2. Download and install the HPCloud Unix CLI gem using curl:
 
         curl -sL https://docs.hpcloud.com/file/hpcloud-1.5.0.gem >hpcloud-1.5.0.gem
-        gem install hpcloud-1.5.0.gem
+        sudo gem install hpcloud-1.5.0.gem
 
    You should see output similar to the following:
 
