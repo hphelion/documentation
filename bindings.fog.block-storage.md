@@ -25,7 +25,29 @@ This page discusses the following tasks:
 
 ##Connecting to the Service## {#ConnectingtotheService}
 
-For information on connecting to the service, please see the [Connecting to the HP Cloud Service](/bindings/fog/connect) page.
+To connect to the HP Cloud BlockStorage Service, follow these steps:
+
+1. Enter IRB
+
+        irb
+
+2. Require the Fog library
+
+        require 'fog'
+
+3. Establish a connection to the HP Cloud BlockStorage service
+
+        conn = Fog::HP::BlockStorage.new(
+               :hp_access_key  => "<your_ACCESS_KEY>",
+               :hp_secret_key => "<your_SECRET_KEY>",
+               :hp_auth_uri   => "<IDENTITY_ENDPOINT_URL>",
+               :hp_tenant_id => "<your_TENANT_ID>",
+               :hp_avl_zone => "<your_AVAILABILITY_ZONE>",
+               <other optional parameters>
+               )
+
+**NOTE**: The :hp_access_key parameter needs to be used instead of the :hp_account_id parameter has been deprecated now.
+You can find the values by clicking the [`API Keys`](https://console.hpcloud.com/account/api_keys) button in the [Console Dashboard](https://console.hpcloud.com/dashboard).
 
 ##Using the Model Abstraction## {#ModelLayer}
 
