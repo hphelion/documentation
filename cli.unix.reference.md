@@ -5,8 +5,6 @@ permalink: /cli/unix/reference/
 product: unix-cli
 
 ---
-#UNIX CLI Command Line Reference
-
 Below you can find a full reference of supported UNIX command-line interface (CLI) commands. The commands are alphabetized.  You can also use the <font face="Courier">hpcloud help [<em>command</em>]</font> tool (where <em>command</em> is the name of the command on which you want help, for example <font face="Courier">account:setup</font>) to display usage, description, and option information from the command line.
 
 ##account## {#account}
@@ -1728,7 +1726,7 @@ Add a server.
 <dt><b>-k, --key-name=KEY_NAME</b></dt><dd>Specify a key name to be used.</dd>  
 <dt><b>-i, [--image=IMAGE]</b></dt><dd>Image to use to create the server.</dd>  
 <dt><b>-v, [--volume=VOLUME]</b></dt><dd>Volume to use to create the server.</dd>  
-<dt><b>-s, [--security-group=SECURITY_GROUP]</b></dt><dd>Specify a security group to be used.</dd>  
+<dt><b>-s, [--security-group=SECURITY_GROUP]</b></dt><dd>Specify a security group or comma seperated list of security groups to be used.</dd>  
 <dt><b>-p, [--private-key-file=PRIVATE_KEY_FILE]</b></dt><dd>Name of the pem file with your private key.</dd>  
 <dt><b>-m, [--metadata=METADATA]</b></dt><dd>Set the meta data.</dd>  
 <dt><b>-z, [--availability-zone=AVAILABILITY_ZONE]</b></dt><dd>Set the availability zone.</dd>  
@@ -2012,13 +2010,17 @@ Secure shell into a server.
 Log in using the secure shell to the specified server.
 
 ###Examples
-Use the secure shell to log in to the bugs server:
+Use the secure shell to log into the bugs server:
 
     hpcloud servers:ssh bugs -p bunny.pem
 
-Use the secure shell to log in to server `daffy`, which has a known keypair
+Use the secure shell to log into server `daffy`, which has a known keypair
 
     hpcloud servers:ssh daffy
+
+Use the secure shell to log into server with given public ip, which has a known keypair known to the CLI
+
+    hpcloud servers:ssh 15.185.104.210
 
 
 ##snapshots## {#snapshots}
