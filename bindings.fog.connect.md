@@ -32,13 +32,20 @@ To connect to the HP Cloud Service, follow these steps:
 
         conn = Fog::<SERVICE-NAME>.new(
                :provider      => "HP",
-               :hp_account_id  => "<your_ACCESS_KEY>",
+               :hp_access_key  => "<your_ACCESS_KEY>",
                :hp_secret_key => "<your_SECRET_KEY>",
                :hp_auth_uri   => "<IDENTITY_ENDPOINT_URL>",
                :hp_tenant_id => "<your_TENANT_ID>",
-               :hp_avl_zone => "<your_AVAILABILITY_ZONE>")
+               :hp_avl_zone => "<your_AVAILABILITY_ZONE>",
+               <other optional parameters>
+               )
 
-Where `Service-Name` can be [Compute](/bindings/fog/compute), [Storage](/bindings/fog/object-storage), [CDN](/bindings/fog/cdn), or [BlockStorage](/bindings/fog/block-storage).  You can find the values by clicking the [`API Keys`](https://console.hpcloud.com/account/api_keys) button in the [Console Dashboard](https://console.hpcloud.com/dashboard).
+Where `SERVICE-NAME` can be [Compute](/bindings/fog/compute), [Storage](/bindings/fog/object-storage), or [CDN](/bindings/fog/cdn). Please surf on over to the [Block Storage page](/bindings/fog/block-storage) for the details on how to connect to that service.
+
+**Note**: You must use the `:hp_access_key` parameter rather than the now-deprecated  `:hp_account_id` parameter you might have used in previous Ruby Fog versions.
+
+You can find the values the access key, secret key, and other values by clicking the [`API Keys`](https://console.hpcloud.com/account/api_keys) button in the [Console Dashboard](https://console.hpcloud.com/dashboard).
+
 
 <!--[[{"type":"media","view_mode":"media_large","fid":"141","attributes":{}}]]
 insert screen shot here-->
@@ -107,11 +114,13 @@ The current usable availability zones for the block storage service:
 
 ##Optional Parameters## {#OptionalParameters}
 
-This section describes the optional parameters that you can use when connecting to the HP Cloud service.
+This section describes the optional parameters that you can use when connecting to any of the HP Cloud services.  The examples below show the Compute service, but these optional parameters work with all of the HP Cloud services.
 
 The `user_agent` parameter allows you to specify a string to pass as a `user_agent` header for the connection.  You can use this to track the caller of the operations.  You can set the `user_agent` parameter as follows:
 
         conn = Fog::Compute.new(
+               ...
+               ...
                :user_agent => "MyApp/x.x.x")
 
 This inserts a `user_agent` string such as `hpfog/x.x.x (MyApp/x.x.x)` into the header.
@@ -123,6 +132,8 @@ In addition to the `user_agent` parameter, there are several additional paramete
 Use this parameter for debugging purposes.  When you use the basic parameter `Excon::StandardInstrumentor`, all events are output to `stderr`.  You can also designate your own instrumentor.  You can set the instrumentation parameter as follows:
 
         conn = Fog::Compute.new(
+               ...
+               ...
                :connection_options => {:instrumentor => Excon::StandardInstrumentor})
 
 ###Timeouts### {#Timeouts}
@@ -130,6 +141,8 @@ Use this parameter for debugging purposes.  When you use the basic parameter `Ex
 Use this parameter to set different timeout values.  You can set the timeouts parameter as follows:
 
         conn = Fog::Compute.new(
+               ...
+               ...
                :connection_options => {
                       :connect_timeout => <time_in_secs>, 
                       :read_timeout => <time_in_secs>, 
@@ -140,6 +153,8 @@ Use this parameter to set different timeout values.  You can set the timeouts pa
 Use this parameter to specify a proxy URL for both  HTTP and HTTPS connections.  You can set the proxy parameter as follows:
 
         conn = Fog::Compute.new(
+               ...
+               ...
                :connection_options => {:proxy => 'http://myproxyurl:4444'})
                
 ###HTTPS/SSL### {#HTTPS}
@@ -147,17 +162,23 @@ Use this parameter to specify a proxy URL for both  HTTP and HTTPS connections. 
 By default, peer certificates are verified when you use secure socket layer (SSL) for HTTPS.  Sometimes this does not work due to configurations in different operating systems, causing connection errors. To help avoid this, you can set  HTTPS/SSL parameters.  To set the path to the certificates:
 
         conn = Fog::Compute.new(
-               :connection_options => {:ssl_ca_path => "/path/to/certs"})              
+               ...
+               ...
+               :connection_options => {:ssl_ca_path => "/path/to/certs"})
              
 To set the path to a certificate file:
 
         conn = Fog::Compute.new(
-               :connection_options => {:ssl_ca_file => "/path/to/certificate_file"})              
+               ...
+               ...
+               :connection_options => {:ssl_ca_file => "/path/to/certificate_file"})
 
 To set turn off peer verification:
 
         conn = Fog::Compute.new(
-               :connection_options => {:ssl_verify_peer => false})              
+               ...
+               ...
+               :connection_options => {:ssl_verify_peer => false})
 
 **Note**: This makes your connection less secure.
 

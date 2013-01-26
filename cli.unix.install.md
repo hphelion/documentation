@@ -20,25 +20,7 @@ To install the UNIX CLI software, follow these steps:
 2. Download and install the HPCloud Unix CLI gem using curl:
 
         curl -sL https://docs.hpcloud.com/file/hpcloud-1.5.0.gem >hpcloud-1.5.0.gem
-        gem install hpcloud-1.5.0.gem
-
-   You should see output similar to the following:
-
-        bash-3.2$ gem install hpcloud.gem
-        Fetching: thor-0.14.6.gem (100%)
-        Fetching: builder-3.0.0.gem (100%)
-        Fetching: excon-0.13.4.gem (100%)
-        Fetching: formatador-0.2.3.gem (100%)
-        Fetching: multi_json-1.0.4.gem (100%)
-        Fetching: mime-types-1.19.gem (100%)
-        Fetching: net-ssh-2.5.2.gem (100%)
-        Fetching: net-scp-1.0.4.gem (100%)
-        Fetching: nokogiri-1.5.5.gem (100%)
-        Building native extensions.  This could take a while...
-        Fetching: ruby-hmac-0.4.0.gem (100%)
-        Successfully installed thor-0.14.6
-        Successfully installed builder-3.0.0
-        . . .
+        sudo gem install hpcloud-1.5.0.gem
 
 3. Verify the installation:
 

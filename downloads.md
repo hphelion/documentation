@@ -25,14 +25,18 @@ Here's what we have for you:
 * [Release Notes](/cli/unix/release-notes)
 
 ###Windows CLI### {#WinCLIInstall}
-* [Installation package, Version 1.3.1.9](/file/WinCLI-1.3.1.9.zip)
+* [Installation package, Version 1.3.2.7](/file/WinCLI-1.3.2.7.zip)
 * [Overview page](/cli/windows)
 * [Release Notes](/cli/windows/release-notes)
+
+###Python NovaClient### {#PythonNovaClient}
+* [Installation package, Version 2.6.8](/file/python-novaclient_2.6.8.tar.gz)
+* [Overview page](/cli/nova)
 
 ##Language Bindings##
 
 ###Ruby Fog Bindings### {#RubyFogBindingsInstall}
-* [Installation package, Version 0.0.18](/file/hpfog-0.0.18.gem)
+* [Installation package, Version 0.0.19](/file/hpfog-0.0.19.gem)
 * [Overview page](/bindings/fog) 
 * [Release Notes](/bindings/fog/release-notes)
 
