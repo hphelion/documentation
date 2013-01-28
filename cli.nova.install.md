@@ -26,7 +26,7 @@ To install the Python Novaclient CLI on Fedora or CentOS, you must first downloa
 
 **Note**: We recommend installing the NovaClient on your local system so you always have it available, rather than installing it on an instance which you may want to terminate later.
 
-##Ubuntu and Debian Squeeze Installation## {#Ubuntu}
+##Ubuntu Installation## {#Ubuntu}
 
 The installation procedure in this section is valid for Ubuntu versions 11.04, 11.10, 12.04, and 12.10.  To install the Python NovaClient software on your Ubuntu system, follow these steps:
 
