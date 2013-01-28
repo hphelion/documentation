@@ -2014,11 +2014,11 @@ Use the secure shell to log into the bugs server:
 
     hpcloud servers:ssh bugs -p bunny.pem
 
-Use the secure shell to log into server `daffy`, which has a known keypair
+Use the secure shell to log into server `daffy`, which has a known key pair
 
     hpcloud servers:ssh daffy
 
-Use the secure shell to log into server with given public ip, which has a known keypair known to the CLI
+Use the secure shell to log into server with given public IP, which has a known key pair known to the CLI
 
     hpcloud servers:ssh 15.185.104.210
 
