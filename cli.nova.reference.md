@@ -2,7 +2,7 @@
 layout: default
 title: "Python Novaclient CLI: Command Line Reference"
 permalink: /cli/nova/reference/
-product: cli-nova
+product: nova-cli
 
 ---
 #Python Novaclient CLI: Command Line Reference
