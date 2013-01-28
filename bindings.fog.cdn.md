@@ -51,7 +51,7 @@ To list the metadata (or header information) for a CDN-enabled container:
 
 To update or modify the metadata for a CDN-enabled container, use the command
 
-> conn.post_container("fog-rocks", {<em>option</em>})
+> conn.post_container("fog-rocks", {**option**})
 
 Where _option_ can be any of the following:
 
