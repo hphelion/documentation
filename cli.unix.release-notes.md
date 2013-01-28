@@ -22,9 +22,13 @@ These are the release notes for the HP Cloud services UNIX CLI.  The current rel
 
 The 1.6.0 release is available for download from https://docs.hpcloud.com/file/hpcloud-1.6.0.gem.  This release was made available on 1/30/2013 and contains the following new features:
 
-* Compatibility for 0.0.19 hpfog gem
-* `servers:ssh` now supports using an IP address as well as server name or id
-* Other minor bug fixes
+* Compatibility with the 0.0.19 Ruby Fog release
+* Command `servers:ssh` supports using an IP address in addition to the server name or ID
+* Several minor bug fixes
+
+###Known Issues###
+
+* None for this release.
 
 ##Release 1.5.0 Features## {#v1_5_0}
 
@@ -38,7 +42,7 @@ The 1.5.0 release is available for download from https://docs.hpcloud.com/file/h
 
 ###Known Issues###
 
-* None at this time
+* None for this release.
 
 ##Release 1.4.0 Features## {#v1_4_0}
 
