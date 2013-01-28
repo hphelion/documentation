@@ -362,7 +362,7 @@ To configure variables for the Python NovaClient, follow these steps:
 
 1. In the `Start` menu, open your Control Panel, Select `System` and then click the `Advanced system settings` link:
 
-    <img src="media/python setup 03.png" alt="" />
+    <img src="media/python setup 03.png" width="519" alt="" />
 
 2. In the `Advanced` dialog, select the `Advanced` tab and click `Environment Variables…`:
 
