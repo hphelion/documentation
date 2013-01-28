@@ -8,8 +8,8 @@ For more information on git flow see the article "[A successful Git branching mo
 
 ## Jenkins
 
-The Jenkins job to pus the documentation can be found here:
+The Jenkins job to push the documentation can be found here:
 
 http://keg.dev.uswest.hpcloud.net:8082/view/docs
 
-There are two jobs to merge from the documentation repo and two to deploy.
+There are two jobs to merge from the documentation repo and two to deploy.  An attempt has been made to keep the smarts of the Jenkins jobs in the repo so we can track changes, etc.  The scripts to merge is in this repository and is named merge.sh.
