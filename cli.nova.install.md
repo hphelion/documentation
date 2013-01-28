@@ -2,7 +2,7 @@
 layout: default
 title: "HP Cloud Services Python Novaclient CLI Installation"
 permalink: /cli/nova/install/
-product: cli-nova
+product: nova-cli
 
 ---
 # HP Cloud Services Python Novaclient CLI Installation
