@@ -24,7 +24,7 @@ To install the HP Cloud Ruby Fog bindings on any of the currently-supported plat
 
     curl -L get.rvm.io | bash -s stable
 
-<strong>Note</strong>: On a Mac, you can also install RVM using [Jewelry Box](https://unfiniti.com/software/mac/jewelrybox), a RVM graphical user interface (GUI) for Mac OSX.
+**Note**: On a Mac, you can also install RVM using [Jewelry Box](https://unfiniti.com/software/mac/jewelrybox), a RVM graphical user interface (GUI) for Mac OSX.
 
 You are now ready to perform your installation on [Ubuntu](#Ubuntu), [MacOS](#MacOS), or [CentOS](#CentOS).
 
@@ -74,13 +74,13 @@ To install the Ruby Fog bindings on the Ubuntu operating system, follow these st
         curl -sL https://docs.hpcloud.com/file/hpfog-0.0.19.gem >hpfog-0.0.19.gem
         sudo gem install hpfog-0.0.19.gem
 
-<stonrg>Note</strong>: Substitute the version number of the most current installation package (for example, `0.0.19`), which we have helpfully listed at the top of this page.
+**Note**: Substitute the version number of the most current installation package (for example, `0.0.19`), which we have helpfully listed at the top of this page.
 
 ##MacOS X Installation## {#MacOS}
 
 Some Ruby packages require C/C++ compiler support.  On the MacOS, if you haven't already installed XCode, we recommend that you install it to provide the needed C/C++ compiler for your system.  The later versions of Xcode do not work smoothly with Ruby yet, so we recommend you install Xcode Version 4.1.  Since this is not the most current version of Xcode, you need to go to the [Apple Developer](https://developer.apple.com/downloads/index.action) site and search for "Xcode".  In the results list, select "Xcode 4.1" and install it on your system before beginning the HP Cloud Ruby Fog Binding installation below.  (If you already have Xcode installed, you do not need to downgrade to version 4.1.)
 
-<strong>Note</strong>:  You need to be signed up as an "Apple Developer" to access the download.  Sign-up is free. 
+**Note**:  You need to be signed up as an "Apple Developer" to access the download.  Sign-up is free. 
 
 <!--In addition, to make your installation process easier we recommend that you install [Homebrew](http://wiki.github.com/mxcl/homebrew/installation).  Follow the instructions on the Homebrew page to install the package.-->
 
@@ -91,7 +91,7 @@ To install the Ruby Fog bindings on MacOS X, follow these steps:
         source ~/.rvm/scripts/rvm
         rvm requirements # install required packages
 
-    <strong>Note</strong>:  You may see a series of advisory messages in your terminal window after executing the <font face="Courier">rvm requirements</font> command; follow the instructions that are desired and/or applicable to your personal environment.  We recommend that you follow the process for For Ruby 1.9.2.  If you decide to install 1.9.3, you must install <font face="Courier">libksba</font>:
+    **Note**:  You may see a series of advisory messages in your terminal window after executing the <font face="Courier">rvm requirements</font> command; follow the instructions that are desired and/or applicable to your personal environment.  We recommend that you follow the process for For Ruby 1.9.2.  If you decide to install 1.9.3, you must install <font face="Courier">libksba</font>:
 
         brew install libksba
 
@@ -111,7 +111,7 @@ To install the Ruby Fog bindings on MacOS X, follow these steps:
 
 For further details, see [Installation Notes](#InstallationNotes).
 
-<stonrg>Note</strong>: Substitute the version number of the most current installation package (for example, `0.0.19`), which we have helpfully listed at the top of this page.
+**Note**: Substitute the version number of the most current installation package (for example, `0.0.19`), which we have helpfully listed at the top of this page.
 
 ##CentOS Installation ## {#CentOS}
 
@@ -130,7 +130,7 @@ To install the Ruby Fog bindings on CentOS, follow these steps:
         curl -sL https://docs.hpcloud.com/file/hpfog-0.0.19.gem >hpfog-0.0.19.gem
         sudo gem install hpfog-0.0.19.gem
 
-<stonrg>Note</strong>: Substitute the version number of the most current installation package (for example, `0.0.19`), which we have helpfully listed at the top of this page.
+**Note**: Substitute the version number of the most current installation package (for example, `0.0.19`), which we have helpfully listed at the top of this page.
 
 <!--##Installation Notes## {#Installation}
 
