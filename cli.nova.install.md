@@ -272,11 +272,11 @@ To install the public Python software on your Windows system, follow these steps
     
 5. In the `Environment Variables` dialog, select the Path environment variable and click `Edit…`:
 
-    <img src="media/python setup 05.png" width="519" height="424" alt="" />
+    <img src="media/python setup 05.png" alt="" />
 
 6. In the `Edit System Variable` dialog, append to the Path the installation directory for Python (for example, `;c:\Python27\`):
 
-    <img src="media/python setup 06.png" width="519" height="424" alt="" />
+    <img src="media/python setup 06.png" alt="" />
 
 7. In the `Edit System Variable` dialog click `OK`.
 
