@@ -12,7 +12,7 @@ Before you can begin working with the Novaclient CLI software, you have to insta
 This page provides you with the installation information for the following operating systems:
 
 * [Installation Prerequisites](#Installation)
-* [Ubuntu and Debian Squeeze Installation](#Ubuntu)
+* [Ubuntu Installation](#Ubuntu)
 * [CentOS Installation](#CentOS)
 * [Fedora Installation](#Fedora)
 * [Windows Installation](#Windows)
