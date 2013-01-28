@@ -65,10 +65,14 @@ To install the Ruby Fog bindings on the Ubuntu operating system, follow these st
 
         sudo apt-get install libxml2 libxml2-dev libxslt1-dev libxslt1.1 sgml-base xml-core
 
-5. Download and install the HP Ruby Fog bindings gem package:
+5. Install RDoc Ruby source documenation generator package:
+
+        sudo apt-get install rdoc
+
+6. Download and install the HP Ruby Fog bindings gem package:
 
         curl -sL https://docs.hpcloud.com/file/hpfog-0.0.19.gem >hpfog-0.0.19.gem
-        gem install hpfog-0.0.19.gem
+        sudo gem install hpfog-0.0.19.gem
 
 <stonrg>Note</strong>: Substitute the version number of the most current installation package (for example, `0.0.19`), which we have helpfully listed at the top of this page.
 
