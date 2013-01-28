@@ -17,13 +17,13 @@ master)
   prep
   git checkout master
   git merge remotes/origin/master
-  echo git subtree pull -P content/documentation git@git.hpcloud.net:DevExDocs/documentation.git master
-  echo git push origin master
+  git subtree pull -P content/documentation git@git.hpcloud.net:DevExDocs/documentation.git master
+  git push origin master
   ;;
 develop)
   prep
-  echo git subtree pull -P content/documentation git@git.hpcloud.net:DevExDocs/documentation.git develop
-  echo git push origin develop
+  git subtree pull -P content/documentation git@git.hpcloud.net:DevExDocs/documentation.git develop
+  git push origin develop
   ;;
 *)
   echo "Usage: ${0} master|develop"
