@@ -16,6 +16,8 @@ These are the release notes for the HP Cloud services UNIX CLI.  The current rel
 * [Release 1.0.1 Features](#v1_0_1)
 * [Release 0.0.15 Features](#v0_0_15)
 
+#HP Cloud Services UNIX CLI Release Notes
+
 ##Release 1.6.0 Features## {#v1_6_0}
 
 The 1.6.0 release is available for download from https://docs.hpcloud.com/file/hpcloud-1.6.0.gem.  This release was made available on 1/30/2013 and contains the following new features:
