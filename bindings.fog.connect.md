@@ -26,8 +26,8 @@ To connect to the HP Cloud Service, follow these steps:
 
 2. Require the Fog library and Rubygems:
 
-        require 'fog'
         require 'rubygems'
+        require 'fog'
 
 3. Establish a connection to the desired HP Cloud service
 
