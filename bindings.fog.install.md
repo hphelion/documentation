@@ -49,7 +49,7 @@ To install the Ruby Fog bindings on the Ubuntu operating system, follow these st
 
 4. Install the RDoc Ruby source documenation generator package:
 
-        apt-get install rdoc
+        gem install rdoc
 
 5. Download and install the HP Cloud Ruby Fog bindings gem package:
 
