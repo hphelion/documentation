@@ -31,50 +31,32 @@ You are now ready to perform your installation on [Ubuntu](#Ubuntu), [MacOS](#Ma
 
 ##Ubuntu Installation## {#Ubuntu}
 
-To install the Ruby Fog bindings on the Ubuntu operating system, follow these steps:
+If you plan on using the Ruby Fog binding on Ubuntu, we recommend you use Ubuntu versions 12.04 or 12.10.  The Ruby Fog bindings may work on other versions, but are not supported. 
 
-<!--1. Install the packages required by RVM:
+To install the Ruby Fog bindings on the Ubuntu operating system, follow these steps while logged in as the root user:
 
-        sudo apt-get update
-        sudo apt-get install -y build-essential openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev ncurses-dev automake libtool bison subversion
+1. Install Ruby and Ruby-dev:
 
-2. Install Ruby:
+        apt-get install ruby1.8 ruby-dev
 
-        #  If you intall rvm as root, you may have to source the /etc/profile.d/rvm.sh file instead of ~/.rvm/scripts/rvm.
-        source ~/.rvm/scripts/rvm
-        rvm user all
-        rvm install 1.9.2
+2. Install RubyGems:
 
-3. Use the Ruby version and make it the default:
+        apt-get install rubygems
 
-        rvm use 1.9.2 --default-->
+3. Install the dependent libraries:
 
-1. Install Ruby:
+        apt-get install libxml2 libxml2-dev libxslt1-dev libxslt1.1 sgml-base xml-core
 
-        sudo apt-get install ruby1.8
+4. Install the RDoc Ruby source documenation generator package:
 
-2. Install Ruby-dev:
+        apt-get install rdoc
 
-        sudo apt-get install ruby-dev
-
-3. Install RubyGems:
-
-        sudo apt-get install rubygems
-
-4. Install dependent libraries:
-
-        sudo apt-get install libxml2 libxml2-dev libxslt1-dev libxslt1.1 sgml-base xml-core
-
-5. Install RDoc Ruby source documenation generator package:
-
-        sudo apt-get install rdoc
-
-6. Download and install the HP Ruby Fog bindings gem package:
+5. Download and install the HP Cloud Ruby Fog bindings gem package:
 
         curl -sL https://docs.hpcloud.com/file/hpfog-0.0.19.gem >hpfog-0.0.19.gem
-        sudo gem install hpfog-0.0.19.gem
+        gem install hpfog-0.0.19.gem
 
-**Note**: Substitute the version number of the most current installation package (for example, `0.0.19`), which we have helpfully listed at the top of this page.
+**Note**: Substitute the version number of the most current installation package (for example, `0.0.19`), which we have helpfully listed at the top of this page, in to the `curl` and `gem install` commands above.
 
 ##MacOS X Installation## {#MacOS}
 
@@ -104,33 +86,43 @@ To install the Ruby Fog bindings on MacOS X, follow these steps:
 
         rvm use 1.9.2 --default
 
-4. Download and install the HP Ruby Fog bindings gem:
+4. Download and install the HP Cloud Ruby Fog bindings gem:
 
         curl -sL https://docs.hpcloud.com/file/hpfog-0.0.19.gem >hpfog-0.0.19.gem
         gem install hpfog-0.0.19.gem
 
 For further details, see [Installation Notes](#InstallationNotes).
 
-**Note**: Substitute the version number of the most current installation package (for example, `0.0.19`), which we have helpfully listed at the top of this page.
+**Note**: Substitute the version number of the most current installation package (for example, `0.0.19`), which we have helpfully listed at the top of this page, in to the `curl` and `gem install` commands above.
 
 ##CentOS Installation ## {#CentOS}
 
-To install the Ruby Fog bindings on CentOS, follow these steps:
+If you plan on using the Ruby Fog binding on CentOS, we recommend you use CentOS versions 6.2 or 6.3.  The Ruby Fog bindings may work on other versions, but are not supported. 
 
-1. Install Ruby:
+To install the Ruby Fog bindings on CentOS, follow these steps while logged in as the root user:
 
-        sudo yum install -y ruby
-        sudo yum install -y gcc make libxml2 libxml2-devel libxslt libxslt-devel
-        sudo yum install -y ruby-devel
-        sudo yum install -y rubygems
-        sudo gem install rdoc
+1. Install Ruby and Ruby Dev:
 
-2. Download and install the HP Fog gem:
+        yum install -y ruby ruby-devel
+    
+2. Install Rubygems:
+
+        yum install -y rubygems
+
+3. Install the dependent libraries:
+
+        yum install -y gcc make libxml2 libxml2-devel libxslt libxslt-devel
+
+4. Install RDoc Ruby source documentation generator package:
+
+        gem install rdoc
+
+5. Download and install the HP Ruby Fog gem package:
 
         curl -sL https://docs.hpcloud.com/file/hpfog-0.0.19.gem >hpfog-0.0.19.gem
-        sudo gem install hpfog-0.0.19.gem
+        gem install hpfog-0.0.19.gem
 
-**Note**: Substitute the version number of the most current installation package (for example, `0.0.19`), which we have helpfully listed at the top of this page.
+**Note**: Substitute the version number of the most current installation package (for example, `0.0.19`), which we have helpfully listed at the top of this page, in to the `curl` and `gem install` commands above.
 
 <!--##Installation Notes## {#Installation}
 
@@ -142,6 +134,6 @@ Ensure RVM is loaded into a shell session as a function. For example, if you are
 -->
 ##Uninstalling## {#Uninstalling}
 
-Its recommended that you uninstall a previous version prior to upgrading. To uninstall:
+Its recommended that you uninstall a previous version prior to upgrading. To uninstall, execute the followin command while logged in as the root user:
 
         gem uninstall hpfog
