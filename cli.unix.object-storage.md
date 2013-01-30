@@ -250,3 +250,5 @@ Once the account is set up, use the `migrate` command and specify the source acc
     $ hpcloud migrate aws :lucas :disney
     chewy.htm:  100% |ooooooooooooooooooooooooooooooooooooo| Time: 00:00:00
     Copied chewy.htm => :disney
+
+Another article on [Object Store Migration](/cli/unix/articles/migration).

@@ -148,6 +148,8 @@ To add a new persistent server (specifying a flavor, a bootable volume, a keynam
     $ hpcloud servers:add bat large -i 5575 -v bootable -k brat
     Created server 'bat' with id '535545'.
 
+There is also an article about creating and [Accessing Servers with Managed Key Pairs](/cli/unix/articles/managedkeypairs).
+
 Display the console of a server:
 
     $ hpcloud servers:console cli_test_srv1
@@ -255,6 +257,8 @@ To add a new key pair and save it to a file:
 
     $ hpcloud keypairs:add mykeypair2 --output
     Created key pair 'mykeypair2' and saved it in a file at '/home/terry/.hpcloud/keypairs/mykeypair2.pem'.
+
+There is also an article about creating and [Accessing Servers with Managed Key Pairs](/cli/unix/articles/managedkeypairs).
 
 To add a new key pair by importing public key data:
 
