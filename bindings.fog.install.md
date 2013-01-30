@@ -102,15 +102,11 @@ To install the Ruby Fog bindings on MacOS X, follow these steps while logged in 
         rvm user all
         rvm install ruby-1.9.2 --with-gcc=clang
         
-9. Install the Rubygems package:
-
-        irb -r rubygems 
-        
-10. Use the Ruby version and make it the default:
+9. Use the Ruby version and make it the default:
 
         rvm use 1.9.2 --default
 
-11. Download and install the HP Cloud Ruby Fog bindings gem:
+10. Download and install the HP Cloud Ruby Fog bindings gem:
 
         curl -sL https://docs.hpcloud.com/file/hpfog-0.0.19.gem >hpfog-0.0.19.gem
         gem install hpfog-0.0.19.gem
