@@ -17,6 +17,8 @@ There are a number of HP Cloud Services APIs available for your programming plea
 
 <!--If you are a more visual learner, perhaps you would prefer our videos on these topics:
 
+Get rid of this comment!
+
 * [Identity Service](api/videos#Identity)
 * [Object Storage](/api/videos#Object-Storage)
 * [Compute](/api/videos#Compute)
