@@ -22,23 +22,23 @@ This page discusses how to set up an accounts and using the HP Cloud Unix Comman
 
 Remember that you can get detailed help for any command/task with the following command:
 
-    $ hpcloud help <TASK>
+   $ hpcloud help <TASK>
 
 ## Account Setup ## {#AccountSetup}
 The first thing you should do is set up an account.   To configure a new account, use the `account:setup` command.  The `account:setup` command prompts you for the values needed to create or modify an account:
 
-    $ hpcloud account:setup
+   $ hpcloud account:setup
 
 During a new configuration, you must supply the access key, secret key, and tenant ID that were assigned to you during the registration process; you can [find these in the system console](https://console.hpcloud.com/account/api_keys) by selecting `API Keys` on the dashboard or account page.  You can also define the availability zone during the initial setup.
 
 ## Edit Account ## {#EditAccount}
 Executing the `account:edit` command with no arguments prompts the user in the same manner as the `account:setup` command, but for editing purposes. Current values are shown by default. Hit return to accept the current settings at each prompt.
 
-    $ hpcloud account:edit
+   $ hpcloud account:edit
 
 When you use the `account:edit` command and you specify the `account_name` and `name_value_pairs`, the command will run without prompts.  For example, you wanted to change the storage availability zone for the `hp` account:
 
-    $ hpcloud account:edit hp storage_availability_zone=region-b.geo-1
+   $ hpcloud account:edit hp storage_availability_zone=region-b.geo-1
 
 ## List Accounts ## {#ListAccounts}
 To view all your current accounts, use the [`account:list`](/cli/unix/reference#account) command:
@@ -94,7 +94,7 @@ Account name can be specified for a single command line operation and does not a
 
 To show the servers on `account2` rather than the default:
 
-    $ hpcloud servers -a account2
+   $ hpcloud servers -a account2
 
 Most commands allow you to use the `-a` option; see the [UNIX CLI Reference page](/cli/unix/reference) to determine if a particular command supports the option.
 
@@ -103,7 +103,7 @@ Availability Zone can be specified for a single command line operation and does 
 
 To view servers using the `az-2.region-a.geo-1` availability zone:
 
-    $ hpcloud servers -z az-2.region-a.geo-1
+   $ hpcloud servers -z az-2.region-a.geo-1
    
 Most commands allow you to use the `-z` option; see the [UNIX CLI Reference page](/cli/unix/reference) to determine if a particular command supports the option.
 
