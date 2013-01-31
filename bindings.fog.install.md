@@ -9,7 +9,6 @@ product: fog
 
 Before you can begin working with the Ruby Fog bindings, you have to install them (of course!).  <!--We recommend installing with the [RVM package](https://rvm.io//).-->  This page provides you with the installation information for the following operating systems:
 
-* [Installation Prerequisites](#Installation)
 * [Ubuntu Installation](#Ubuntu)
 * [Mac OSX Installation](#MacOS)
 * [CentOS Installation](#CentOS)
