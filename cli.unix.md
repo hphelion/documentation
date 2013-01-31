@@ -28,4 +28,4 @@ Some articles about ways you can use the Unix CLI:
 * [Verbose Debugging Output](/cli/unix/articles/debugging)
 * [Accessing Servers with Managed Key Pairs](/cli/unix/articles/managedkeypairs)
 * [Object Store Migration](/cli/unix/articles/migration)
-* [Automation and Report Customization](/cli/unix/articles/reports)
+<!-- * [Automation and Report Customization](/cli/unix/articles/reports) -->
