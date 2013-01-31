@@ -102,7 +102,7 @@ You may use regular expressions to copy from a container, but the regular expres
     yoda.htm:   100% |ooooooooooooooooooooooooooooooooooooo| Time: 00:00:00
     Copied yoda.htm => /tmp
 
-To use wildcards when copying files to a container using regular expressions:
+When copying local files to a container, use bash regular expressions rules:
 
     $ hpcloud copy *.htm :demorama
     ewok.htm:  100% |ooooooooooooooooooooooooooooooooooooo| Time: 00:00:00
@@ -250,3 +250,5 @@ Once the account is set up, use the `migrate` command and specify the source acc
     $ hpcloud migrate aws :lucas :disney
     chewy.htm:  100% |ooooooooooooooooooooooooooooooooooooo| Time: 00:00:00
     Copied chewy.htm => :disney
+
+Another article on [Object Store Migration](/cli/unix/articles/migration).

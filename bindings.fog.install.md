@@ -9,136 +9,139 @@ product: fog
 
 Before you can begin working with the Ruby Fog bindings, you have to install them (of course!).  <!--We recommend installing with the [RVM package](https://rvm.io//).-->  This page provides you with the installation information for the following operating systems:
 
-* [Installation Prerequisites](#Installation)
 * [Ubuntu Installation](#Ubuntu)
 * [Mac OSX Installation](#MacOS)
 * [CentOS Installation](#CentOS)
 * [Uninstalling](#Uninstalling)
 
-[Please download the most recent Ruby Fog package (Version 0.0.18)](/file/hpfog-0.0.18.gem)!
+[Please download the most recent Ruby Fog package (Version 0.0.19)](/file/hpfog-0.0.19.gem)!
 
 
-##Installation Prerequisites## {#Installation}
+<!--##Installation Prerequisites## {#Installation}
 
 To install the HP Cloud Ruby Fog bindings on any of the currently-supported platforms, you need to have RVM installed on your system:
 
     curl -L get.rvm.io | bash -s stable
 
-<strong>Note</strong>: On a Mac, you can also install RVM using [Jewelry Box](https://unfiniti.com/software/mac/jewelrybox), a RVM graphical user interface (GUI) for Mac OSX.
+**Note**: On a Mac, you can also install RVM using [Jewelry Box](https://unfiniti.com/software/mac/jewelrybox), a RVM graphical user interface (GUI) for Mac OSX.
 
-You are now ready to perform your installation on [Ubuntu](#Ubuntu), [MacOS](#MacOS), or [CentOS](#CentOS).
+You are now ready to perform your installation on [Ubuntu](#Ubuntu), [MacOS](#MacOS), or [CentOS](#CentOS).-->
 
 
 ##Ubuntu Installation## {#Ubuntu}
 
-To install the Ruby Fog bindings on the Ubuntu operating system, follow these steps:
+If you plan on using the Ruby Fog binding on Ubuntu, we recommend you use Ubuntu versions 12.04 or 12.10.  The Ruby Fog bindings may work on other versions, but are not supported. 
 
-<!--1. Install the packages required by RVM:
+To install the Ruby Fog bindings on the Ubuntu operating system, follow these steps while logged in as the root user:
 
-        sudo apt-get update
-        sudo apt-get install -y build-essential openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev ncurses-dev automake libtool bison subversion
+1. Install Ruby and Ruby-dev:
 
-2. Install Ruby:
+        apt-get install ruby1.8 ruby-dev
 
-        #  If you intall rvm as root, you may have to source the /etc/profile.d/rvm.sh file instead of ~/.rvm/scripts/rvm.
-        source ~/.rvm/scripts/rvm
-        rvm user all
-        rvm install 1.9.2
+2. Install RubyGems:
 
-3. Use the Ruby version and make it the default:
+        apt-get install rubygems
 
-        rvm use 1.9.2 --default-->
+3. Install the dependent libraries:
 
-1. Install Ruby:
+        apt-get install libxml2 libxml2-dev libxslt1-dev libxslt1.1 sgml-base xml-core
 
-        sudo apt-get install ruby1.8
+4. Install the RDoc Ruby source documenation generator package:
 
-2. Install Ruby-dev:
+        gem install rdoc
 
-        sudo apt-get install ruby-dev
+5. Download and install the HP Cloud Ruby Fog bindings gem package:
 
-3. Install RubyGems:
+        curl -sL https://docs.hpcloud.com/file/hpfog-0.0.19.gem >hpfog-0.0.19.gem
+        gem install hpfog-0.0.19.gem
 
-        sudo apt-get install rubygems
-
-4. Install dependent libraries:
-
-        sudo apt-get install libxml2 libxml2-dev libxslt1-dev libxslt1.1 sgml-base xml-core
-
-5. Download and install the HP Ruby Fog bindings gem package:
-
-        curl -sL https://docs.hpcloud.com/file/hpfog-0.0.18.gem >hpfog-0.0.18.gem
-        gem install hpfog-0.0.18.gem
-
-<stonrg>Note</strong>: Substitute the version number of the most current installation package (for example, `0.0.18`), which we have helpfully listed at the top of this page.
+**Note**: Substitute the version number of the most current installation package (for example, `0.0.19`), which we have helpfully listed at the top of this page, in to the `curl` and `gem install` commands above.
 
 ##MacOS X Installation## {#MacOS}
 
-Some Ruby packages require C/C++ compiler support.  On the MacOS, if you haven't already installed XCode, we recommend that you install it to provide the needed C/C++ compiler for your system.  The later versions of Xcode do not work smoothly with Ruby yet, so we recommend you install Xcode Version 4.1.  Since this is not the most current version of Xcode, you need to go to the [Apple Developer](https://developer.apple.com/downloads/index.action) site and search for "Xcode".  In the results list, select "Xcode 4.1" and install it on your system before beginning the HP Cloud Ruby Fog Binding installation below.  (If you already have Xcode installed, you do not need to downgrade to version 4.1.)
+Some Ruby packages require C/C++ compiler support.  On the MacOS, if you haven't already installed XCode, we recommend that you install it to provide the needed C/C++ compiler for your system.  
 
-<strong>Note</strong>:  You need to be signed up as an "Apple Developer" to access the download.  Sign-up is free. 
+To install the Ruby Fog bindings on MacOS X, follow these steps while logged in as the root user:
 
-<!--In addition, to make your installation process easier we recommend that you install [Homebrew](http://wiki.github.com/mxcl/homebrew/installation).  Follow the instructions on the Homebrew page to install the package.-->
+1. Download and install Xcode.  You can [download the most recent version of XCode through the Mac App Store](https://itunes.apple.com/us/app/xcode/id497799835?ls=1&mt=12).  If you want to install an earlier version of Xcode, go to the [Apple Developer](https://developer.apple.com/downloads/index.action) site and search for "Xcode".  In the results list, select the version of Xcode that you want and install it.  (Note that you need to be signed up as an "Apple Developer" to access the download.  Sign-up is free.)
 
-To install the Ruby Fog bindings on MacOS X, follow these steps:
+2. To make your installation process easier we recommend that you install [Homebrew](http://wiki.github.com/mxcl/homebrew/installation).  Follow the instructions on the Homebrew page to install the package.  After you have downloaded Homebrew, the CLI command to install it is:
 
-1. Install packages required by RVM; the following command lists the required packages:
+        homebrew install - ruby -e "$(curl -fsSkL raw.github.com/mxcl/homebrew/go)"
+
+3. Add the Homebrew path to your $PATH environment variable.  You can either do this via the CLI command line:
+
+        export PATH=:/usr/local/sbin:$PATH
+        
+    (The default Homebrew installation location is the `/usr/local/sbin` directory.)  Or you can add the Homebrew path (`/usr/local/sbin`) to your $PATH environment variable in your local `.profile` file.
+    
+4. Install RVM on your system:
+
+        curl -L get.rvm.io | bash -s stable
+
+    **Note**: You can also install RVM using [Jewelry Box](https://unfiniti.com/software/mac/jewelrybox), a RVM graphical user interface (GUI) for Mac OSX.
+
+5. Install the packages required by RVM; the following command lists the required packages:
     
         source ~/.rvm/scripts/rvm
         rvm requirements # install required packages
+        
+6. Install the required packages listed in Step 5:
 
-    <strong>Note</strong>:  You may see a series of advisory messages in your terminal window after executing the <font face="Courier">rvm requirements</font> command; follow the instructions that are desired and/or applicable to your personal environment.  We recommend that you follow the process for For Ruby 1.9.2.  If you decide to install 1.9.3, you must install <font face="Courier">libksba</font>:
+        brew install <packages>
+        
+    Where `<packages>` are the packages that you need to install.
+    
+7. Install the `libksba` library:
 
         brew install libksba
 
-2. Install Ruby:
+8. Install Ruby:
 
         rvm user all
-        rvm install 1.9.2
-
-3. Use the Ruby version and make it the default:
+        rvm install ruby-1.9.2 --with-gcc=clang
+        
+9. Use the Ruby version and make it the default:
 
         rvm use 1.9.2 --default
 
-4. Download and install the HP Ruby Fog bindings gem:
+10. Download and install the HP Cloud Ruby Fog bindings gem:
 
-        curl -sL https://docs.hpcloud.com/file/hpfog-0.0.18.gem >hpfog-0.0.18.gem
-        gem install hpfog-0.0.18.gem
+        curl -sL https://docs.hpcloud.com/file/hpfog-0.0.19.gem >hpfog-0.0.19.gem
+        gem install hpfog-0.0.19.gem
 
-For further details, see [Installation Notes](#InstallationNotes).
+For further details, see [Installation Notes](#InstallationNotes).  See the [Connecting to the Cloud Service](/bindings/fog/connect) page for details on how to connect.
 
-<stonrg>Note</strong>: Substitute the version number of the most current installation package (for example, `0.0.18`), which we have helpfully listed at the top of this page.
+**Note**: Substitute the version number of the most current installation package (for example, `0.0.19`), which we have helpfully listed at the top of this page, in to the `curl` and `gem install` commands above.
 
 ##CentOS Installation ## {#CentOS}
 
-To install the Ruby Fog bindings on CentOS, follow these steps:
+If you plan on using the Ruby Fog binding on CentOS, we recommend you use CentOS versions 6.2 or 6.3.  The Ruby Fog bindings may work on other versions, but are not supported. 
 
-<!--1. Install packages required by RVM:
+To install the Ruby Fog bindings on CentOS, follow these steps while logged in as the root user:
 
-        sudo yum install -y gcc-c++ patch readline readline-devel zlib zlib-devel libyaml-devel libffi-devel openssl-devel make bzip2 autoconf automake libtool bison
-        sudo yum install -y gcc ruby-devel libxml2 libxml2-devel libxslt libxslt-devel
+1. Install Ruby and Ruby Dev:
 
-2. Install Ruby:
+        yum install -y ruby ruby-devel
+    
+2. Install Rubygems:
 
-        #  If you intall rvm as root, you may have to source the /etc/profile.d/rvm.sh file instead of ~/.rvm/scripts/rvm.
-        source ~/.rvm/scripts/rvm
-        rvm user all
-        rvm install 1.9.2
+        yum install -y rubygems
 
-3. Use the Ruby version and make it the default:
+3. Install the dependent libraries:
 
-        rvm use 1.9.2 --default-->
+        yum install -y gcc make libxml2 libxml2-devel libxslt libxslt-devel
 
-1. Install Ruby:
+4. Install RDoc Ruby source documentation generator package:
 
-        sudo apt-get install ruby1.8
+        gem install rdoc
 
-2. Download and install the HP Fog gem:
+5. Download and install the HP Ruby Fog gem package:
 
-        curl -sL https://docs.hpcloud.com/file/hpfog-0.0.18.gem >hpfog-0.0.18.gem
-        gem install hpfog-0.0.18.gem
+        curl -sL https://docs.hpcloud.com/file/hpfog-0.0.19.gem >hpfog-0.0.19.gem
+        gem install hpfog-0.0.19.gem
 
-<stonrg>Note</strong>: Substitute the version number of the most current installation package (for example, `0.0.18`), which we have helpfully listed at the top of this page.
+**Note**: Substitute the version number of the most current installation package (for example, `0.0.19`), which we have helpfully listed at the top of this page, in to the `curl` and `gem install` commands above.
 
 <!--##Installation Notes## {#Installation}
 
@@ -150,6 +153,6 @@ Ensure RVM is loaded into a shell session as a function. For example, if you are
 -->
 ##Uninstalling## {#Uninstalling}
 
-Its recommended that you uninstall a previous version prior to upgrading. To uninstall:
+Its recommended that you uninstall a previous version prior to upgrading. To uninstall, execute the followin command while logged in as the root user:
 
         gem uninstall hpfog
