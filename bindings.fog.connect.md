@@ -28,6 +28,10 @@ To connect to the HP Cloud Service, follow these steps:
 
         require 'rubygems'
         require 'fog'
+        
+    **Note**: If the `require 'rubygems'` command returns a value of `false`, enter IRB with the following command:
+    
+        irb -r 'rubygems'
 
 3. Establish a connection to the desired HP Cloud service
 
