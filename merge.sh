@@ -9,14 +9,14 @@ function prep() {
   cd docs.hpcloud.com
   git checkout develop
   set -x
-  git pull remotes/origin/develop
+  git pull origin develop
 }
 
 case "${1}" in
 master)
   prep
   git checkout master
-  git pull remotes/origin/master
+  git pull origin master
   git subtree pull -P content/documentation git@git.hpcloud.net:DevExDocs/documentation.git master
   git push origin master
   ;;
