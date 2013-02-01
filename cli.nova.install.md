@@ -14,7 +14,7 @@ This page provides you with the installation information for the following opera
 * [Installation Prerequisites](#Installation)
 * [Ubuntu Installation](#Ubuntu)
 * [CentOS Installation](#CentOS)
-* [Fedora Installation](#Fedora)
+<!--* [Fedora Installation](#Fedora)-->
 * [Windows Installation](#Windows)
 
 [You can download the latest version of the Python Novaclient CLI software here (Version 2.6.8)](/file/python-novaclient_2.6.8.tar.gz)!
@@ -157,7 +157,7 @@ You can now access your `nova` commands.  For a full list of commands, surf on o
 
 For information on how to install on versions of Ubuntu prior to Release 6.2, please check ou the [Linux Installation knowledge base article](https://community.hpcloud.com/article/python-novaclient-linux-installation).
 
-##Fedora Installation## {#Fedora}
+<!--##Fedora Installation## {#Fedora}
 
 Fedora has both Python 2.6.6 and Python-Setuptools 0.1.10 installed by default.  To install the Python NovaClient software on your Fedora system, follow these steps while logged in as the root user:
 
@@ -234,7 +234,7 @@ Where the `USERNAME`, `PASSWORD`, and `TENANT_NAME` values are the ones you use 
 
         source .bashrc
         
-You can now access your `nova` commands.  For a full list of commands, surf on over to our [CLI Reference page](/cli/nova/reference).
+You can now access your `nova` commands.  For a full list of commands, surf on over to our [CLI Reference page](/cli/nova/reference).-->
 
 
 ##Windows Installation## {#Windows}
