@@ -5,8 +5,10 @@ permalink: /cli/unix/release-notes/
 product: unix-cli
 
 ---
-These are the release notes for the HP Cloud services UNIX CLI.  The current release number for the [UNIX CLI software](/cli/unix) is version 1.4.0, released on 12/19/12.
+These are the release notes for the HP Cloud services UNIX CLI.  The current release number for the [UNIX CLI software](/cli/unix) is version 1.6.0, released on 01/29/13.
 
+* [Release 1.6.0 Features](#v1_6_0)
+* [Release 1.5.0 Features](#v1_5_0)
 * [Release 1.4.0 Features](#v1_4_0)
 * [Release 1.3.0 Features](#v1_3_0)
 * [Release 1.2.0 Features](#v1_2_0)
@@ -14,11 +16,37 @@ These are the release notes for the HP Cloud services UNIX CLI.  The current rel
 * [Release 1.0.1 Features](#v1_0_1)
 * [Release 0.0.15 Features](#v0_0_15)
 
-[Please download the latest version of the UNIX CLI software here](https://docs.hpcloud.com/file/hpcloud-1.4.0.gem)!
+#HP Cloud Services UNIX CLI Release Notes
+
+##Release 1.6.0 Features## {#v1_6_0}
+
+The 1.6.0 release is available for download from https://docs.hpcloud.com/file/hpcloud-1.6.0.gem.  This release was made available on 1/30/2013 and contains the following new features:
+
+* Compatibility with the 0.0.19 Ruby Fog release
+* Command `servers:ssh` supports using an IP address in addition to the server name or ID
+* Several minor bug fixes
+
+###Known Issues###
+
+* None for this release.
+
+##Release 1.5.0 Features## {#v1_5_0}
+
+The 1.5.0 release is available for download from https://docs.hpcloud.com/file/hpcloud-1.5.0.gem.  This release was made available on 1/18/2013 and contains the following new features:
+
+* Command `complete` to install a bash completion file to allow you to tab complete hpcloud commands
+* Option `--debug` added to most commands to produce verbose trace
+* Option `--source-account` added to the `copy` command to allow files to be copied from one account to another.
+* Command `migrate` added to allow object store migration from different providers.
+* Option `--provider` added to the `account:setup` command to allow you to supply providers other than HP for migration.
+
+###Known Issues###
+
+* None for this release.
 
 ##Release 1.4.0 Features## {#v1_4_0}
 
-This release was made available on 12/11/2013 and contains the following new features:
+The 1.4.0 release is available for download from https://docs.hpcloud.com/file/hpcloud-1.4.0.gem.  This release was made available on 12/11/2012 and contains the following new features:
 
 * Command `servers:console` added to display the console of a server
 * Command `servers:ssh` added to allow you to log in via secure shell to a server

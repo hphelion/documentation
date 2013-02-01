@@ -22,6 +22,7 @@ The questions we address in the UNIX CLI section of this FAQ are:
 
 * [How do I install or upgrade HP Cloud Unix CLI?](#HowdoIinstallHPCloudUnixCLI)
 * [How do I get help with HP Cloud Unix CLI?](#HowdoIgethelpwithHPCloudUnixCLI)
+* [How do I diagnose a problem with the CLI?](#HowdoIDebugHPCloudUnixCLI)
 * [How do I install HP Cloud Unix CLI without RVM?](#HowdoIinstallHPCloudUnixCLIwithoutRVM)
 * [How do I uninstall HP Cloud Unix CLI?](#HowdoIuninstallHPCloudUnixCLI)
 * [What if these FAQs didn't answer my questions?](#WhereelsecanIgoformoreinformationUnixCLI)
@@ -44,6 +45,11 @@ Where `command` is the command for which you want help.  If you want to check wh
 
     hpcloud info
 
+### How do I diagnose problems with the HP Cloud Unix CLI?### {#HowdoIDebugHPCloudUnixCLI}
+ 
+There is an article that covers how to run the HP Cloud Unix CLI with [verbose debugging output](/cli/unix/articles/debugging).
+ 
+ 
 ### How do I install HP Cloud Unix CLI without RVM?### {#HowdoIinstallHPCloudUnixCLIwithoutRVM}
 
 If you choose not to use RVM, you must install the [gem](/glossary#gem) as a super user.

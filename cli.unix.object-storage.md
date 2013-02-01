@@ -20,6 +20,7 @@ This page gives you a few examples of how to perform various object storage task
 * [Location Command](#LocationCommand)
 * [Temporary URL Command](#TmpurlCommand)
 * [Remove Commands](#RemoveCommands)
+* [Migration Commands](#Migration)
 
 Remember that you can get detailed help for any command or task with the following command:
 
@@ -101,7 +102,7 @@ You may use regular expressions to copy from a container, but the regular expres
     yoda.htm:   100% |ooooooooooooooooooooooooooooooooooooo| Time: 00:00:00
     Copied yoda.htm => /tmp
 
-To use wildcards when copying files to a container using regular expressions:
+When copying local files to a container, use bash regular expressions rules:
 
     $ hpcloud copy *.htm :demorama
     ewok.htm:  100% |ooooooooooooooooooooooooooooooooooooo| Time: 00:00:00
@@ -238,3 +239,16 @@ To force the removal of a container even there are files in it:
 
     $ hpcloud containers:remove :demorama --force
     Removed container 'demorama'.
+
+
+##Migration Commands## {#Migration}
+
+You can use the `migrate` command to migrate files from one account to another.  The source account may be another HP Cloud Services account or an account from another provider such as AWS, Google, or Rackspace.  If the provider is not HP for the other account, use the `-p` option of the [`account:setup`](/cli/unix/reference#account:setup) command to create the account.
+
+Once the account is set up, use the `migrate` command and specify the source account, source container (or object), and destination in the default account.  `migrate` works similarly to the [`copy`](/cli/unix/reference#copy) command in that it supports recursive copy and regular expressions:
+
+    $ hpcloud migrate aws :lucas :disney
+    chewy.htm:  100% |ooooooooooooooooooooooooooooooooooooo| Time: 00:00:00
+    Copied chewy.htm => :disney
+
+Another article on [Object Store Migration](/cli/unix/articles/migration).

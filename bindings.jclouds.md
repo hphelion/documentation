@@ -57,7 +57,7 @@ The jclouds library is well documented on the community web site, but for specif
 * [Object Storage Examples](/bindings/jclouds/object-storage)
 * [Compute Examples](/bindings/jclouds/compute)
 * [CDN Examples](/bindings/jclouds/cdn)
-* [Block Storage Examples](/bindings/jclouds/block-storage)
+<!--* [Block Storage Examples](/bindings/jclouds/block-storage)-->
 
 ##Having trouble? ## {#HavingTrouble}
 See the [release notes](http://www.jclouds.org/documentation/releasenotes/) for further information, or you can [get help over at the Forums](https://community.hpcloud.com).
