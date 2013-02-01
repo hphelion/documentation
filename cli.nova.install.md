@@ -28,33 +28,33 @@ To install the Python Novaclient CLI on Fedora or CentOS, you must first downloa
 
 ##Ubuntu Installation## {#Ubuntu}
 
-The installation procedure in this section is valid for Ubuntu versions 11.04, 11.10, 12.04, and 12.10.  To install the Python NovaClient software on your Ubuntu system, follow these steps:
+The installation procedure in this section is valid for Ubuntu versions 11.04, 11.10, 12.04, and 12.10.  To install the Python NovaClient software on your Ubuntu system, follow these steps while logged in as the root user:
 
 1. Install any available updates:
 
-        sudo apt-get update
+        apt-get update
         
 2. Install the Python `prettytable`, `argparse`, and `httplib2` packages:
 
-        sudo apt-get install python-prettytable python-argparse python-httplib2
+        apt-get install python-prettytable python-argparse python-httplib2
     
 3. Download the Python NovaClient installation pcakage from our web site:
 
-        sudo wget https://docs.hpcloud.com/file/python-novaclient_2.6.8.deb --no-check-certificate
+        wget https://docs.hpcloud.com/file/python-novaclient_2.6.8.deb --no-check-certificate
         
     **Note**: If you are installing the software on Ubuntu 12.10, you must all peform the following steps to install the correct version of the `prettytable` package before continuing to Step 4:
     
-    * sudo wget http://launchpadlibrarian.net/88803305/python-prettytable_0.5-1ubuntu2_all.deb
-    * sudo apt-get remove python-prettytable
-    * sudo dpkg -i python-prettytable_0.5-1ubuntu2_all.deb
+    * wget http://launchpadlibrarian.net/88803305/python-prettytable_0.5-1ubuntu2_all.deb
+    * apt-get remove python-prettytable
+    * dpkg -i python-prettytable_0.5-1ubuntu2_all.deb
 
 4. Install the Debian Python Novaclient package:
 
-        sudo dpkg -i python-novaclient_2.6.8.deb
+        dpkg -i python-novaclient_2.6.8.deb
         
 5. Using the editor of your choice, open your `.bashrc` file for editing:
 
-        sudo vi .bashrc
+        vi .bashrc
         
     (You can use `nano` or `emacs` or whatever editing tool you prefer.)
     
@@ -130,7 +130,7 @@ CentOS has both Python 2.6.6 and Python-Setuptools 0.1.10 installed by default. 
         
 12. Using the editor of your choice, open your `.bashrc` file for editing:
 
-        sudo vi .bashrc
+        vi .bashrc
         
     (You can use `nano` or `emacs` or whatever editing tool you prefer.)
     
@@ -159,7 +159,7 @@ For information on how to install on versions of Ubuntu prior to Release 6.2, pl
 
 ##Fedora Installation## {#Fedora}
 
-Fedora has both Python 2.6.6 and Python-Setuptools 0.1.10 installed by default.  To install the Python NovaClient software on your Fedora system, follow these steps while logged in as root:
+Fedora has both Python 2.6.6 and Python-Setuptools 0.1.10 installed by default.  To install the Python NovaClient software on your Fedora system, follow these steps while logged in as the root user:
 
 1. Install any available updates:
 
@@ -211,7 +211,7 @@ Fedora has both Python 2.6.6 and Python-Setuptools 0.1.10 installed by default. 
         
 12. Using the editor of your choice, open your `.bashrc` file for editing:
 
-        sudo vi .bashrc
+        vi .bashrc
         
     (You can use `nano` or `emacs` or whatever editing tool you prefer.)
     
