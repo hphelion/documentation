@@ -5,7 +5,7 @@ permalink: /block-storage/volume/
 product: block-storage
 
 ---
-# HP Cloud Services UNIX CLI Volume Management
+# HP Cloud Services UNIX CLI Volume Management#
 
 Once you have created a new storage volume, you can manipulate it just as you would any memory storage object.  This page discusses the following tasks:
 
