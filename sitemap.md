@@ -20,7 +20,7 @@ Having a bit of trouble navigating our site, and so you're looking for a single 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[CDN API](/cdn/api)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[HP Cloud Block Storage](/block-storage)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Block Storage API](/block-storage/api)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Volume Management](/cli/unix/volume)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Volume Management](/block-storage/volume)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Identity Service Overview](/identity)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Identity Service API](identity/api)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[HP Cloud Services Bindings](/bindings)<br>
