@@ -161,7 +161,7 @@ List the details about backup `37`:
 ##boot## {#boot}
 Boot a new server
 ###Syntax
-`nova boot [--flavor <flavor>] [--image <image>] [--meta <key=value>] [--file <dst-path=src-path>] [--key_name <key_name>] [--user_data <user-data>] [--security_groups <security_groups>] [--block_device_mapping <dev_name=mapping>] [--nic <net-id=net-uuid,v4-fixed-ip=ip-addr>] <backup>`
+`nova boot [--flavor <flavor>] [--image <image>] [--meta <key=value>] [--file <dst-path=src-path>] [--key_name <key_name>] [--user_data <user-data>] [--security_groups <security_groups>] [--block_device_mapping <dev_name=mapping>] [--nic <net-id=net-uuid,v4-fixed-ip=ip-addr>] [--config-drive <value>] <backup>`
 
 **backup**
 :  Name for the new server.
@@ -192,6 +192,9 @@ Boot a new server
 
 **nic**
 :  Create a NIC on the server. Specify option multiple times to create multiple NICs. net-id: attach NIC to network with this UUID (optional) v4-fixed-ip: IPv4 fixed address for NIC (optional).
+
+**config-drive**
+:  Enable the configuration drive.
 
 ###Example
 Create an XSmall Ubuntu 12.04 instance with key pair `az1` and Security Group `default` bound to it with a display name of `test`:
