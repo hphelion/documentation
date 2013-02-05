@@ -14,7 +14,7 @@ This page provides you with the installation information for the following opera
 * [Installation Prerequisites](#Installation)
 * [Ubuntu Installation](#Ubuntu)
 * [CentOS Installation](#CentOS)
-* [Fedora Installation](#Fedora)
+<!--* [Fedora Installation](#Fedora)-->
 * [Windows Installation](#Windows)
 
 [You can download the latest version of the Python Novaclient CLI software here (Version 2.6.8)](/file/python-novaclient_2.6.8.tar.gz)!
@@ -28,41 +28,37 @@ To install the Python Novaclient CLI CentOS, you must first download and install
 
 ##Ubuntu Installation## {#Ubuntu}
 
-The installation procedure in this section is valid for Ubuntu versions 11.04, 11.10, 12.04, and 12.10.  To install the Python NovaClient software on your Ubuntu system, follow these steps:
+The installation procedure in this section is valid for Ubuntu versions 11.04, 11.10, 12.04, and 12.10.  To install the Python NovaClient software on your Ubuntu system, follow these steps while logged in as the root user:
 
 1. Install any available updates:
 
-        sudo apt-get update
+        apt-get update
         
 2. Install the Python `prettytable`, `argparse`, and `httplib2` packages:
 
-        sudo apt-get install python-prettytable python-argparse python-httplib2
+        apt-get install python-prettytable python-argparse python-httplib2
     
 3. Download the Python NovaClient installation pcakage from our web site:
 
-        sudo wget https://docs.hpcloud.com/file/python-novaclient_2.6.8.deb --no-check-certificate
+        wget https://docs.hpcloud.com/file/python-novaclient_2.6.8.deb --no-check-certificate
         
     **Note**: If you are installing the software on Ubuntu 12.10, you must all peform the following steps to install the correct version of the `prettytable` package before continuing to Step 4:
     
-    * sudo wget http://launchpadlibrarian.net/88803305/python-prettytable_0.5-1ubuntu2_all.deb
-    * sudo apt-get remove python-prettytable
-    * sudo dpkg -i python-prettytable_0.5-1ubuntu2_all.deb
+    * wget http://launchpadlibrarian.net/88803305/python-prettytable_0.5-1ubuntu2_all.deb
+    * apt-get remove python-prettytable
+    * dpkg -i python-prettytable_0.5-1ubuntu2_all.deb
+
+4. Install the Debian Python Novaclient package:
+
+        dpkg -i python-novaclient_2.6.8.deb
         
-4. Complete the Python installation:
+5. Using the editor of your choice, open your `.bashrc` file for editing:
 
-        sudo apt-get -f install
-
-5. Install the Debian Python Novaclient package:
-
-        sudo dpkg -i python-novaclient_2.6.8.deb
-        
-6. Using the editor of your choice, open your `.bashrc` file for editing:
-
-        sudo vi .bashrc
+        vi .bashrc
         
     (You can use `nano` or `emacs` or whatever editing tool you prefer.)
     
-7. Add the following variables to the end of your `.bashrc` file:
+6. Add the following variables to the end of your `.bashrc` file:
 
         export NOVA_USERNAME=USERNAME
         export NOVA_PASSWORD=PASSWORD
@@ -71,9 +67,9 @@ The installation procedure in this section is valid for Ubuntu versions 11.04, 1
         export NOVA_VERSION=1.1
         export NOVA_REGION_NAME=az-1.region-a.geo-1
         
-Where the `USERNAME`, `PASSWORD`, and `TENANT_NAME` values are those you use to access the HP Cloud Management Console.  (You can find the values for these variable on your [API Keys](https://console.hpcloud.com/account/api_keys) page in the services console.)
+    Where the `USERNAME`, `PASSWORD`, and `TENANT_NAME` values are those you use to access the HP Cloud Management Console.  (You can find the values for these variable on your [API Keys](https://console.hpcloud.com/account/api_keys) page in the services console.)
 
-**Note**: The `NOVA_REGION_NAME` variable in this example is set to communicate with instances in the AZ1 availablilty zone.  To use other availability zones, insert AZ2 or AZ3 as the variable instead: `az-2.region-a.geo-1` or `az-3.region-a.geo-1`.
+    **Note**: The `NOVA_REGION_NAME` variable in this example is set to communicate with instances in the AZ1 availablilty zone.  To use other availability zones, insert AZ2 or AZ3 as the variable instead: `az-2.region-a.geo-1` or `az-3.region-a.geo-1`.
 
 7. Save and exit your `.bashrc` file.
 
@@ -98,7 +94,7 @@ CentOS has both Python 2.6.6 and Python-Setuptools 0.1.10 installed by default. 
         
 3. Unpack the TAR file:
 
-        tar -zxvf python-novaclient_2.6.8-1hp14.tar.gz
+        tar -zxvf python-novaclient_2.6.8-1hp15.tar.gz
         
 4. Change directory to the build directory:
 
@@ -134,7 +130,7 @@ CentOS has both Python 2.6.6 and Python-Setuptools 0.1.10 installed by default. 
         
 12. Using the editor of your choice, open your `.bashrc` file for editing:
 
-        sudo vi .bashrc
+        vi .bashrc
         
     (You can use `nano` or `emacs` or whatever editing tool you prefer.)
     
@@ -161,9 +157,9 @@ You can now access your `nova` commands.  For a full list of commands, surf on o
 
 For information on how to install on versions of Ubuntu prior to Release 6.2, please check ou the [Linux Installation knowledge base article](https://community.hpcloud.com/article/python-novaclient-linux-installation).
 
-##Fedora Installation## {#Fedora}
+<!--##Fedora Installation## {#Fedora}
 
-Fedora has both Python 2.6.6 and Python-Setuptools 0.1.10 installed by default.  To install the Python NovaClient software on your Fedora system, follow these steps while logged in as root:
+Fedora has both Python 2.6.6 and Python-Setuptools 0.1.10 installed by default.  To install the Python NovaClient software on your Fedora system, follow these steps while logged in as the root user:
 
 1. Install any available updates:
 
@@ -175,7 +171,7 @@ Fedora has both Python 2.6.6 and Python-Setuptools 0.1.10 installed by default. 
         
 3. Unpack the TAR file:
 
-        tar -zxvf python-novaclient_2.6.8-1hp14.tar.gz
+        tar -zxvf python-novaclient_2.6.8-1hp15.tar.gz
         
 4. Change directory to the build directory:
 
@@ -215,7 +211,7 @@ Fedora has both Python 2.6.6 and Python-Setuptools 0.1.10 installed by default. 
         
 12. Using the editor of your choice, open your `.bashrc` file for editing:
 
-        sudo vi .bashrc
+        vi .bashrc
         
     (You can use `nano` or `emacs` or whatever editing tool you prefer.)
     
@@ -238,7 +234,7 @@ Where the `USERNAME`, `PASSWORD`, and `TENANT_NAME` values are the ones you use 
 
         source .bashrc
         
-You can now access your `nova` commands.  For a full list of commands, surf on over to our [CLI Reference page](/cli/nova/reference).
+You can now access your `nova` commands.  For a full list of commands, surf on over to our [CLI Reference page](/cli/nova/reference).-->
 
 
 ##Windows Installation## {#Windows}

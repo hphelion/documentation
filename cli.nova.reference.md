@@ -50,25 +50,34 @@ Add the security group `default' to instance ID 694541:
 ##backup-create## {#backup-create}
 Creates a backup of a Volume.
 ###Syntax
-`nova backup-create {--container <container>} {--display_name <display_name} {--display_description <display_description>} <volume_id>`
+`nova backup-create [--container <container>] [--display_name <display_name>] [--display_description <display_description>] <volume_id>`
+
+**container**
+: Name of the container (default is `hpvolumebackups`).
+
+**display_name**
+: Name of the backup (default is none).
+
+**display_description**
+: Description of the backup (default is none).
 
 **volume_id**
 : ID of the volume to back up.
 
 ###Example
-Creates a backup of volume 68453 to container `backup`.  
+Creates a backup of volume 68453 to a container named `my-backup-container` in your HP Cloud Object Storage account:
 
-    nova backup-create --container backup 68453
+    nova backup-create --container my-backup-container 68453
 
-This command creates the directory `volume_68453` in your "backup" container.  You can view this with the [Management Console](https://console.hpcloud.com).  Each subsequent backup of volume ID 68453 is stored in that directory.  If you create a backup of a new volume then a new directory is created for it.
-
+This example creates a backup of volume `68453` to a directory in the container `my-backup-container`. If you do not specify a container name, the default container name `hpvolumebackups` is used. The directory name consists of the volume ID, a timestamp, the availability zone and the backup ID.
 
 ##backup-delete## {#backup-delete}
 Remove a backup.
 ###Syntax
 `nova backup-delete <backup_id>`
 
-**backup_id**: ID of the volume to delete.
+**backup_id**
+: ID of the volume to delete.
 
 ###Example
 Delete backup ID `3` from your account:
@@ -103,18 +112,20 @@ Display all the created backups:
 ##backup-restore## {#backup-restore}
 Restore a backup
 ###Syntax
-`nova backup-restore {--volume_id <volume_id>} <backup_id>`
+`nova backup-restore [--volume_id <volume_id>] <backup_id>`
 
 **backup_id**
 :  ID of the backup  to restore.
 
-**--volume_id**
+**volume_id**
 :  ID of the restore target volume (optional) 
 
 ###Example
 Restore backup ID `37` to volume ID `68495`:
 
     nova backup-restore --volume_id 68495 37
+
+**Note**:  If you specify a `volume_id`, the contents of the referenced volume are over-written with the restored backup.
 
 
 ##backup-show## {#backup-show}
@@ -149,37 +160,40 @@ List the details about backup `37`:
 ##boot## {#boot}
 Boot a new server
 ###Syntax
-`nova boot {--flavor <flavor>} {--image <image>} {--meta <key=value>} {--file <dst-path=src-path>} {--key_name <key_name>} {--user_data <user-data>} {--security_groups <security_groups>} {--block_device_mapping <dev_name=mapping>} {--nic <net-id=net-uuid,v4-fixed-ip=ip-addr>} <backup>`
+`nova boot [--flavor <flavor>] [--image <image>] [--meta <key=value>] [--file <dst-path=src-path>] [--key_name <key_name>] [--user_data <user-data>] [--security_groups <security_groups>] [--block_device_mapping <dev_name=mapping>] [--nic <net-id=net-uuid,v4-fixed-ip=ip-addr>] [--config-drive <value>] <backup>`
 
 **backup**
 :  Name for the new server.
 
-**--flavor <flavor>**
+**flavor**
 :  Flavor ID (see `nova flavor-list`).
 
-**--image <image>**
-:  mage ID (see 'nova image-list').
+**image**
+:  Image ID (see 'nova image-list').
 
-**--meta <key=value>**
+**meta**
 : Record arbitrary key/value metadata. May be give multiple times.
 
-**--file <dst-path=src-path>**
+**file**
 :  Store arbitrary files from <src-path> locally to <dst-path> on the new server. You may store up to 5 files.
 
-**--key_name <key_name>**
+**key_name**
 :  Key name of keypair that should be created earlier with the command keypair-add.
                         
-**--user_data <user-data>**
+**user_data**
 :  User data file to pass to be exposed by the metadata server.
 
-**--security_groups <security_groups>**
+**security_groups**
 :  Comma-separated list of security group names.
                         
-**--block_device_mapping <dev_name=mapping>**
+**block_device_mapping**
 :  Block device mapping in the format <dev_name=<id>:<type>:<size(GB)>:<delete_on_terminate>.
 
-**--nic <net-id=net-uuid,v4-fixed-ip=ip-addr>**
+**nic**
 :  Create a NIC on the server. Specify option multiple times to create multiple NICs. net-id: attach NIC to network with this UUID (optional) v4-fixed-ip: IPv4 fixed address for NIC (optional).
+
+**config-drive**
+:  Enable the configuration drive.
 
 ###Example
 Create an XSmall Ubuntu 12.04 instance with key pair `az1` and Security Group `default` bound to it with a display name of `test`:
@@ -291,12 +305,12 @@ List the floating IPs for the current tenant:
 ##get-console-output## {#get-console-output}
 Retrieves server log.
 ###Syntax
-`nova get-console-output {--lines <lines>} <server>`
+`nova get-console-output [--lines <lines>] <server>`
 
 **server**
 :  Name or ID of the server.
 
-**--lines <lines>**
+**lines**
 :  Number of lines to be displayed.
 
 ###Example
@@ -373,7 +387,7 @@ Display a list of the available bootable images:
 ##image-meta## {#image-meta}
 Set or Delete metadata on an image.
 ###Syntax
-`nova image-meta  <image> [<action> <key=value> {<key=value> …}]`
+`nova image-meta  <image> [<action> <key=value> [<key=value> …]]`
 
 **image**
 :  Name or ID of image.
@@ -492,36 +506,36 @@ Display the key pairs:
 ##list## {#list}
 List active servers.
 ###Syntax
-`nova list {--reservation_id <reservation_id>} {--recurse_zones [<0|1>]} {--ip <ip_regexp>} {--ip6 <ip6_regexp>} {--name <name_regexp>} {--instance_name <name_regexp>} {--status <status>} {--flavor <flavor>} {--image <image>} {--host <hostname>}`
+`nova list [--reservation_id <reservation_id>] [--recurse_zones <0|1>] [--ip <ip_regexp>] [--ip6 <ip6_regexp>] [--name <name_regexp>] [--instance_name <name_regexp>] [--status <status>] [--flavor <flavor>] [--image <image>] [--host <hostname>]`
 
-**--reservation_id <reservation_id>**
+**reservation_id**
 :  Only return instances that match reservation_id.
 
-**--recurse_zones [<0|1>]**
+**recurse_zones**
 :  Recurse through all zones if set.
 
-**--ip <ip_regexp>**
+**ip**
 :  Search with regular expression match by IP address.
 
-**--ip6 <ip6_regexp>**
+**ip6**
 :  Search with regular expression match by IPv6 address.
 
-**--name <name_regexp>**
+**name**
 :  Search with regular expression match by name.
 
-**--instance_name <name_regexp>**
+**instance_name**
 :  Search with regular expression match by instance name.
 
-**--status <status>**
+**status**
 :  Search by server status. 
 
-**--flavor <flavor>**
+**flavor**
 :  Search by flavor ID.
 
-**--image <image>**
+**image**
 :  Search by image ID.
 
-**--host <hostname>**
+**host**
 :  Search instances by hostname to which they are assigned
 
 ###Example
@@ -538,7 +552,7 @@ List the active servers:
 ##meta## {#meta}
 Set or Delete metadata on a server.
 ###Syntax
-`nova meta  <server> [<action> <key=value> {<key=value> …}]`
+`nova meta  <server> [<action> <key=value> [<key=value> …]]`
 
 **server**
 :  Name or ID of server.
@@ -558,9 +572,9 @@ Set metadata for server `703829` for test purposes:
 ##reboot## {#reboot}
 Reboot a server.
 ###Syntax
-`nova reboot {--hard} <server>`
+`nova reboot [--hard] <server>`
 
-**--hard**
+**hard**
 :  Perform a hard reboot of the server.
 
 ###Example
@@ -572,9 +586,9 @@ Perform a hard reboot on the server 703829:
 ##rebuild## {#rebuild}
 Shutdown, re-image, and re-boot a server.
 ###Syntax
-`nova rebuild {--rebuild_password <rebuild_password>} <server> <image>`
+`nova rebuild [--rebuild_password <rebuild_password>] <server> <image>`
 
-**--rebuild_password <rebuild_password>**
+**rebuild_password**
 :  Password for the rebuild instance.
 
 **server**
@@ -677,21 +691,21 @@ Change the root password for a server.
 ##secgroup-add-group-rule## {#secgroup-add-group-rule}
 Add a source group rule to a security group.
 ###Syntax
-`nova secgroup-add-group-rule  {--ip_proto <ip_proto>} {--from_port <from_port>} {--to_port <to_port>} <secgroup> <source_group>`
+`nova secgroup-add-group-rule  [--ip_proto <ip_proto>] [--from_port <from_port>] [--to_port <to_port>] <secgroup> <source_group>`
 
-**<secgroup>**
+**secgroup**
 :  ID of the security group.
 
-**<source_group>**
+**source_group**
 :  ID of source group.
 
-**--ip_proto <ip_proto>**
+**ip_proto**
 :  IP protocol type (ICMP, TCP, or UDP).
 
-**--from_port <from_port>**
+**from_port**
 :  Port at start of range.
 
-**--to_port <to_port>**
+**to_port**
 :  Port at the end of range.
 
 ###Examples
@@ -723,19 +737,19 @@ Add a rule to a security group.
 ###Syntax
 `nova secgroup-add-rule <secgroup> <ip_proto> <from_port> <to_port> <cidr>`
 
-**<secgroup>**
+**secgroup**
 :  ID of the security group.
 
-**<ip_proto>**
+**ip_proto**
 :  IP protocol type (ICMP, TCP, or UDP).
 
-**<from_port>**
+**from_port**
 :  Port at start of range.
 
-**<to_port>**
+**to_port**
 :  Port at the end of range.
 
-**<cidr>**
+**cidr**
 :  Classless inter-domain routing (CIDR) for the address range.
 
 ###Examples
@@ -761,7 +775,7 @@ Create a security group.
 :  Description of the security group.
 
 ###Examples
-Create a security group `pgroup	`:
+Create a security group `pgroup    `:
 
     $ nova secgroup-create pgroup testing
     +--------+-------------+
@@ -788,21 +802,21 @@ Delete the security group `pgroup`:
 ##secgroup-delete-group-rule## {#secgroup-delete-group-rule}
 Delete a source group rule from a security group.
 ###Syntax
-`nova secgroup-delete-group-rule{--ip_proto <ip_proto>} {--from_port <from_port>} {--to_port <to_port>} <secgroup> <source_group>`
+`nova secgroup-delete-group-rule[--ip_proto <ip_proto>] [--from_port <from_port>] [--to_port <to_port>] <secgroup> <source_group>`
 
-**<secgroup>**
+**secgroup**
 :  ID of the security group.
 
-**<source_group>**
+**source_group**
 :  ID of source group.
 
-**--ip_proto <ip_proto>**
+**ip_proto**
 :  IP protocol type (ICMP, TCP, or UDP).
 
-**--from_port <from_port>**
+**from_port**
 :  Port at start of range.
 
-**--to_port <to_port>**
+**to_port**
 :  Port at the end of range.
 
 ###Examples
@@ -816,19 +830,19 @@ Delete a rule from a security group.
 ###Syntax
 `nova secgroup-delete-rule <secgroup> <ip_proto> <from_port> <to_port> <cidr>`
 
-**<secgroup>**
+**secgroup**
 :  ID of the security group.
 
-**<ip_proto>**
+**ip_proto**
 :  IP protocol type (ICMP, TCP, or UDP).
 
-**<from_port>**
+**from_port**
 :  Port at start of range.
 
-**<to_port>**
+**to_port**
 :  Port at the end of range.
 
-**<cidr>**
+**cidr**
 :  Classless inter-domain routing (CIDR) for the address range.
 
 ###Examples
@@ -934,21 +948,21 @@ Attach volume `68453` to server `703663`:
 ##volume-create## {#volume-create}
 Add a new volume.
 ###Syntax
-`nova volume-create {--snapshot_id <snapshot_id>} {--image_id <image_id>} {--display_name <display_name>} {--display_description <display_description>} <size>`
+`nova volume-create [--snapshot_id <snapshot_id>] [--image_id <image_id>] [--display_name <display_name>] [--display_description <display_description>] <size>`
 
 **size**
 :  Size of volume in gigabytes (GB).
 
-**--snapshot_id <snapshot_id>**
+**snapshot_id**
 :  Snapshot ID from which to create the volume. (Default=`None`)
 
-**--image_id <image_id>**
+**image_id**
 :  Image ID from which to create the volume. (Default=`None`)
 
-**--display_name <display_name>**
+**display_name**
 :  Volume name. (Default=None)
 
-**--display_description <display_description>**
+**display_description**
 :  Volume description. (Default=None)
 
 ###Examples
@@ -1035,18 +1049,18 @@ Display the details for volume `76677`:
 ##volume-snapshot-create## {#volume-snapshot-create}
 Add a new snapshot.
 ###Syntax
-`nova volume-snapshot-create {--force <True|False>} {--display_name <display_name>} {--display_description <display_description>} <volume_id>`
+`nova volume-snapshot-create [--force <True|False>] [--display_name <display_name>] [--display_description <display_description>] <volume_id>`
                                    
 **volume_id**
 :  ID of the volume to snapshot
 
-**--force <True|False>**
+**force**
 :  Indicate whether to take a snapshot of a volume even if its attached to an instance. (Default=`False`)
 
-**--display_name <display_name>**
+**display_name**
 :  Snapshot name. (Default=`None`)
 
-**--display_description <display_description>**
+**display_description**
 :  Snapshot description. (Default=None)
                                    
 ###Examples
