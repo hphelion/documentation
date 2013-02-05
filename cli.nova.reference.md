@@ -5,7 +5,7 @@ permalink: /cli/nova/reference/
 product: nova-cli
 
 ---
-#Python Novaclient CLI: Command Line Reference#
+#Python Novaclient CLI: Command Line Reference# 
 
 Below you can find a full reference of supported Python Novaclient command-line interface (CLI) commands. The commands are alphabetized.  You can also use the <font face="Courier">nova help [<em>command</em>]</font> tool (where <em>command</em> is the name of the command on which you want help, for example:
 
