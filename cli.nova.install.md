@@ -22,7 +22,7 @@ This page provides you with the installation information for the following opera
 
 ##Installation Prerequisites## {#Installation}
 
-To install the Python Novaclient CLI on Fedora or CentOS, you must first download and install [the dependency software (in TAR format)](https://docs.hpcloud.com/file/nova-stuff.tar)--follow the instructions in the `setup.py` file included with the package.  (We also assume that you have Python already installed!)
+To install the Python Novaclient CLI CentOS, you must first download and install [the dependency software (in TAR format)](https://docs.hpcloud.com/file/nova-stuff.tar)--follow the instructions in the `setup.py` file included with the package.  (We also assume that you have Python already installed!)
 
 **Note**: We recommend installing the NovaClient on your local system so you always have it available, rather than installing it on an instance which you may want to terminate later.
 
