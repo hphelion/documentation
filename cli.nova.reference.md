@@ -65,12 +65,11 @@ Creates a backup of a Volume.
 : ID of the volume to back up.
 
 ###Example
-Creates a backup of volume 68453 to a container named `backup` in your HP Cloud Object Storage account:
+Creates a backup of volume 68453 to a container named `my-backup-container` in your HP Cloud Object Storage account:
 
     nova backup-create --container my-backup-container 68453
 
-This example creates a backup of volume 68453 to a directory named volume_<volume id>/<YYYYMMDDHHMMSS> in the container name `my-backup-container`. If you do not specify a container name, the default container name `hpvolumebackups` is used.  Each subsequent backup of volume ID 68453 is stored in that directory.  If you create a backup of a new volume then a new directory is created for it.
-
+This example creates a backup of volume `68453` to a directory in the container `my-backup-container`. If you do not specify a container name, the default container name `hpvolumebackups` is used. The directory name consists of the volume ID, a timestamp, the availability zone and the backup ID.
 
 ##backup-delete## {#backup-delete}
 Remove a backup.
@@ -126,7 +125,7 @@ Restore backup ID `37` to volume ID `68495`:
 
     nova backup-restore --volume_id 68495 37
 
-**Note**:  If you specify a `volume_id`, the contents of the referenced volume are overtwritten with the restored backup.
+**Note**:  If you specify a `volume_id`, the contents of the referenced volume are over-written with the restored backup.
 
 
 ##backup-show## {#backup-show}
