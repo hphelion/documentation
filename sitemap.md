@@ -73,6 +73,4 @@ Having a bit of trouble navigating our site, and so you're looking for a single 
 &nbsp;&nbsp;&nbsp;&nbsp;[Glossary of Terms](/glossary)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Software Downloads](/downloads)<br>
 
-
-
-__Note__: If you find that there are pages that aren't listed here, or unresolved links, please be sure to tell us!
+**Note**: If you find that there are pages that aren't listed here, or unresolved links, please be sure to tell us!
