@@ -5,7 +5,7 @@ permalink: /cli/nova/install/
 product: nova-cli
 
 ---
-# HP Cloud Services Python Novaclient CLI Installation
+# HP Cloud Services Python Novaclient CLI Installation#
 
 Before you can begin working with the Novaclient CLI software, you have to install the package (of course!).  The instructions below work for Ubuntu, MacOS X, and CentOS installations.  Take a look at the [HP Cloud Python Novaclient CLI - Release Notes](/cli/nova/release-notes) for the latest features.
 
