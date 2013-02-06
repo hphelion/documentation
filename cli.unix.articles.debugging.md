@@ -6,8 +6,11 @@ product: unix-cli
 categories: cli linux
 tags: cli linux
 ---
-The Unix CLI recently added an option to almost every command to dump verbose logging.  The logging includes a trace of the HTTP requests made with both requests and responses and it includes a stack trace if there was an exception thrown.  This may help debug problems if the standard error messages are not enough.  First, a command without debug logging:
+#UNIX CLI: Verbose Debugging Output#
+also
+The Unix CLI contains an option to almost every command to display verbose debugging information.  The debugging log includes a trace of the HTTP requests made with both requests and responses and also includes a stack trace if an exception is thrown.  The verbose mode assists you in debugging problems if the standard error messages are not enough. 
 
+Here is the `list` command without verbose debugging enabled:
 
     $ hpcloud list 
     cross
@@ -15,7 +18,7 @@ The Unix CLI recently added an option to almost every command to dump verbose lo
     someoneelses
     $
 
-The same command with debugging:
+Now the `list` command with verbose debugging enabled:
 
     $ hpcloud list --debug
     excon.request  {:connect_timeout=>30, :headers=>{"User-Agent"=>"hpfog/0.0.18 (HPCloud-UnixCLI/1.5.0)",...}
@@ -26,4 +29,6 @@ The same command with debugging:
     notmycontainer
     someoneelses
 
-In this example, you can see it authorizes and then gets a list of containers.
+In this example, you can see it authorizes and then provides a list of containers.
+
+For additional information, take a look at the [CLI Reference page](/cli/unix/reference).
