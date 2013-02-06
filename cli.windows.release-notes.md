@@ -17,7 +17,7 @@ These are the release notes for the HP Cloud services Windows PowerShell CLI.  T
 * [Release 1.2.0.6 Features](#v1206)
 * [Release 1.2.0.1 Features](#v1201)
 
-[Please download the latest version of the Windows PowerShell CLI software (Version 1.3.2.2)](/file/WinCLI-1.3.2.2.zip)!
+[Please download the latest version of the Windows PowerShell CLI software (Version 1.3.2.2)](/file/WinCLI-1.3.2.2.zip)!  (**Note**: The 1.3.2.2 release contains bug fixes only, and so no release notes are included for that release.)
 
 <!--##Release 1.3.2.7 Features## {#v1327}
 
