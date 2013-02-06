@@ -6,7 +6,9 @@ product: unix-cli
 categories: cli linux
 tags: cli linux
 ---
-The Unix CLI recently added an option to almost every command to dump verbose logging.  The logging includes a trace of the HTTP requests made with both requests and responses and it includes a stack trace if there was an exception thrown.  This may help debug problems if the standard error messages are not enough.  First, a command without debug logging:
+#UNIX CLI: Verbose Debugging Output#
+also
+The Unix CLI contains an option to almost every command to display verbose debugging information.  The debugging log includes a trace of the HTTP requests made with both requests and responses and it includes a stack trace if there was an exception thrown.  This may help debug problems if the standard error messages are not enough.  First, a command without debug logging:
 
 
     $ hpcloud list 
