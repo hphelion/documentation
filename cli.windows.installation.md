@@ -26,7 +26,7 @@ This product requires the full (not client profile) 4.0 or higher version of the
  
 ##Running the Installer Package## {#RunningtheInstallerPackage}
 
-[Download the latest Windows Powershell Installer package](/file/WinCLI-1.3.1.9.zip).  (See the [Release Notes](/cli/windows/release-notes) for details on the current release.)
+[Download the latest Windows Powershell Installer package](/file/WinCLI-1.3.2.2.zip).  (See the [Release Notes](/cli/windows/release-notes) for details on the current release.)
 
 Launching the Windows installer package loads the following wizard.
 
