@@ -21,7 +21,7 @@ As you get used to using the compute service, you start finding that there are a
 Outgrown your instance? If you find yourself needing more space or horsepower, you can resize your instance in the [console](https://console.hpcloud.com/) by following these steps:
 
 1.  Browse to the [compute dashboard](https://console.hpcloud.com/compute) and select your from the appropriate [AZ](glossary#AvailabilityZone) and region. 
-  <img src="http://./sites/default/files/resizing%2001.png" width="500" height="363" alt="" />
+  <img src="/files/resizing 01.png" width="500" height="363" alt="" />
 2.  Select **Images** to take a snapshot of your server instance. Enter a name for your image, a brief description, select the instance you want to duplicate, and click `Create`. Your newly-created image appears in the `Manage Custom Images` list.
   <img src="/files/resizing 02.png" width="500" height="165" alt="" />
 3.  On the `Servers` screen, create a server using your snapshot. You can increase the size of the instance by selecting a new `Flavor`, while keeping the same base-image as before.
