@@ -6,6 +6,8 @@ product: unix-cli
 categories: cli linux compute servers keypairs
 tags: cli linux compute servers keypairs
 ---
+#Accessing Servers with Managed Keypairs#
+
 Accessing Linux instances with the Unix CLI is easier than ever with managed key pairs.  When you add a new key with the `-o` option, it will be saved in your home directory under `~/.hpcloud/keypairs/`.  When a server is created with that key pair, the CLI will save that information.  For example:
 
 #Create your key pair using the `-o` flag:
