@@ -7,7 +7,7 @@ product: object-storage
 ---
 # HP Cloud Object Storage  API
 
-<1--The HP Cloud Object Storage API is documented in your choice of formats: 
+<!--The HP Cloud Object Storage API is documented in your choice of formats: 
 
 * [HP Cloud Object Storage Developer Guide API 1.1, Browser View](https://api-docs.hpcloud.com/hpcloud-object-storage/1.0/content/ch_object-storage-dev-overview.html)
 * [HP Cloud Object Storage Developer Guide API 1.1, PDF View](http://api-docs.hpcloud.com/hpcloud-object-storage/1.0/hpcloud-object-storage-1.0.pdf)-->
