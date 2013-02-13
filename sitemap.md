@@ -12,6 +12,7 @@ Having a bit of trouble navigating our site, and so you're looking for a single 
 &nbsp;&nbsp;&nbsp;&nbsp;[Documentation Site Overview](/site-overview)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[HP Cloud Services FAQ](/faq)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Compute Services Overview](/compute)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[HP Cloud Services Activity Stream](/activity-stream)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Compute Services API](/compute/api)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Using the Compute Service](/compute/using)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Object Storage Overview](/object-storage)<br>
