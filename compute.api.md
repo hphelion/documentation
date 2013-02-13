@@ -5,15 +5,16 @@ permalink: /compute/api/
 product: compute
 
 ---
-# HP Cloud Compute API
+# HP Cloud Compute API#
 
-The HP Cloud Compute API is documented in your choice of formats:
+Surf on over to our [Compute API Reference](/api/compute) for lots of details on the HP compute service.  For a detailed overview of how to interact with the Compute REST API using cURL:
+
+<iframe src="http://player.vimeo.com/video/37391923?title=0&amp;byline=0&amp;portrait=0" width="640" height="464" frameborder="0"> </iframe>
+
+<!--The HP Cloud Compute API is documented in your choice of formats:
 
 * [HP Cloud Compute Developer Guide API 1.1, Browser View](https://api-docs.hpcloud.com/hpcloud-compute/1.0/content/ch_compute-supplement-dev-overview.html )
-* [HP Cloud Compute Developer Guide API 1.1, PDF View](https://api-docs.hpcloud.com/hpcloud-compute/1.0/hpcloud-compute-1.0.pdf)
-
-For a detailed overview of how to interact with the Compute REST API using cURL:
-<iframe src="http://player.vimeo.com/video/37391923?title=0&amp;byline=0&amp;portrait=0" width="640" height="464" frameborder="0"> </iframe>
+* [HP Cloud Compute Developer Guide API 1.1, PDF View](https://api-docs.hpcloud.com/hpcloud-compute/1.0/hpcloud-compute-1.0.pdf)-->
 
 **Note**: For security purposes, when you create a server, it is automatically assigned a floating, non-removable IP address.
 
