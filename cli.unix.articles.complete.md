@@ -54,7 +54,7 @@ The same works for options:
 
 When you enter enough of the command or option for it to be unique, it completes.  For example, for the `security<TAB>` example shown above, `hpcloud servers:c<TAB>` is enough to use tab completion to get the command `hpcloud servers:console`.
 
-##Troubleshooting## {#Using}
+##Troubleshooting## {#Troubleshooting}
 
 If you run the `hpcloud complete` command as the root user, the bash completion file is installed in the system-wide completion directory.  If you run the command as a regular user, it is installed in a user-specific completion directory.  Many operating systems today come with bash completion activated, but you may need to run it manually.  You may want to add something like this to your `.bashrc` file in your home directory:
 
