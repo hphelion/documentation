@@ -6,7 +6,7 @@ product: unix-cli
 categories: cli linux bash
 tags: cli linux bash
 ---
-#UNIX CLI: Bash Shell Command Completion
+#UNIX CLI: Using Bash Shell Command Completion#
 
 The Unix CLI supports bash shell command completion.  This page covers the following topics:
 
