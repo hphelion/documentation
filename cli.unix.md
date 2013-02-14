@@ -25,8 +25,7 @@ For some release-by-release information, take a look at [the UNIX CLI release no
 
 Some articles about ways you can use the Unix CLI:
 
-* [Bash Command Completion](/cli/unix/articles/complete)
-* [Verbose Debugging Output](/cli/unix/articles/debugging)
+* [Using Bash Command Completion](/cli/unix/articles/complete)
+* [Generating Verbose Debugging Output](/cli/unix/articles/debugging)
 * [Accessing Servers with Managed Key Pairs](/cli/unix/articles/managedkeypairs)
-* [Object Store Migration](/cli/unix/articles/migration)
-<!-- * [Automation and Report Customization](/cli/unix/articles/reports) -->
+* [Performing Object Store Migration](/cli/unix/articles/migration)
