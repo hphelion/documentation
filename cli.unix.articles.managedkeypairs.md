@@ -8,14 +8,14 @@ tags: cli linux compute servers keypairs
 ---
 #UNIX CLI: Accessing Servers with Managed Keypairs#
 
-Accessing Linux instances with the Unix CLI is easier than ever with managed key pairs.  When you add a new key with the `-o` option, it is saved in your home directory under `~/.hpcloud/keypairs/`.  When you create a server with that key pair, the CLI saves that information.  For example:
+Accessing Linux instances with the Unix CLI is easier than ever with managed key pairs.  When you add a new key with the `-o` option, it is saved in your home directory under `~/.hpcloud/keypairs/`.  When you create a server with that key pair, the CLI saves that information.  See the following examples for some details:
 
 * [Creating a key pair using the -o flag](#CreatingaNewKeyPair)
 * [Creating a server using that new key pair](#CreatingaServer)
 
 ##Creating a Key Pair Using the -o Flag## {#CreatingaNewKeyPair}
 
-To create a key pair using the `-o` flag with the [`keypairs:add`](/cli/unix/reference#keypairs:add):
+To create a key pair using the `-o` flag with the [`keypairs:add`](/cli/unix/reference#keypairs:add) command:
 
     hpcloud keypairs:add -o KEYPAIR_NAME
 
