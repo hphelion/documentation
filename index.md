@@ -24,6 +24,8 @@ For direct interactivity with HP Cloud Services, you can use the following offic
 * [Management Console](https://console.hpcloud.com) - The GUI experience on this website
 * [Command Line Interfaces](/cli/) - Command line tool for easy scripting
 
+You might also benefit from taking a look at our introductory page on the [Activity Stream](/activity-stream).
+
 For best results, we recommend that use one of the following supported HTML5 browsers when accessing the management console:
 
 * Chrome

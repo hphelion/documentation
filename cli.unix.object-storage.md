@@ -139,6 +139,19 @@ To list the files in a shared (with cross tenant ACL) container:
     https://r.../demorama/raveonettes
     https://r.../demorama/analytics
 
+A long listing of containers will give you the bytes and object count in that container:
+
+    $ hpcloud list -l
+      +-------------------+-------+------+
+      | sname             | count | size |
+      +-------------------+-------+------+
+      | big               | 10    | 2456 |
+      | copy              | 5031  | 0    |
+      | cross             | 5     | 66   |
+      +-------------------+-------+------+
+
+A long listing on a container will give you the object names, size, type, MD5 sum, and modification date.
+
 ##Get Command## {#GetCommand}
 
 To get an object to the local file system:

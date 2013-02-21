@@ -21,13 +21,13 @@ As you get used to using the compute service, you start finding that there are a
 Outgrown your instance? If you find yourself needing more space or horsepower, you can resize your instance in the [console](https://console.hpcloud.com/) by following these steps:
 
 1.  Browse to the [compute dashboard](https://console.hpcloud.com/compute) and select your from the appropriate [AZ](glossary#AvailabilityZone) and region. 
-  <img src="http://./sites/default/files/resizing%2001.png" width="500" height="363" alt="" />
+  <img src="media/resizing 01.png" width="500" height="363" alt="" />
 2.  Select **Images** to take a snapshot of your server instance. Enter a name for your image, a brief description, select the instance you want to duplicate, and click `Create`. Your newly-created image appears in the `Manage Custom Images` list.
-  <img src="http://./sites/default/files/resizing%2002.png" width="500" height="165" alt="" />
+  <img src="media/resizing 02.png" width="500" height="165" alt="" />
 3.  On the `Servers` screen, create a server using your snapshot. You can increase the size of the instance by selecting a new `Flavor`, while keeping the same base-image as before.
-  <img src="http://./sites/default/files/resizing%2003.png" width="500" height="347" alt="" />
+  <img src="media/resizing 03.png" width="500" height="347" alt="" />
 4.  On the `Floating IPs` screen, reassign the Floating IP back to your newly-created instance.
-  <img src="http://./sites/default/files/resizing%2004.png" width="500" height="259" alt="" />
+  <img src="media/resizing 04.png" width="500" height="259" alt="" />
 
 **Note**:  We recommend using Floating IPs to ensure consistent IP assignment; click `Floating IPs` in your compute dashboard. 
 

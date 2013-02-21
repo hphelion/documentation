@@ -5,7 +5,7 @@ permalink: /block-storage/volume/
 product: block-storage
 
 ---
-# HP Cloud Services UNIX CLI Volume Management
+# HP Cloud Services UNIX CLI Volume Management#
 
 Once you have created a new storage volume, you can manipulate it just as you would any memory storage object.  This page discusses the following tasks:
 
@@ -17,7 +17,7 @@ Once you have created a new storage volume, you can manipulate it just as you wo
 
 Partitioning and mounting a volume with the `fdisk` command is very similar across different operating systems.  For example, the differences between partitioning using `fdisk` in Ubuntu vs. performing the same task in CentOS are very slight.  This page uses the process for Ubuntu (versions 10.10, 11.04, and 11.10); for the process on other operating systems, please see the [Mounting Additional Space](https://community.hpcloud.com/article/mounting-additional-space) page in our [Knowledge Base](https://community.hpcloud.com/knowledge-base), which contains specifics for [Ubuntu 10.10, 11.04, 11.10](https://community.hpcloud.com/article/mounting-additional-space#Ubuntu), [CentOS 5.6](https://community.hpcloud.com/article/mounting-additional-space#CentOS5.6), and [CentOS 6.2](https://community.hpcloud.com/article/mounting-additional-space#CentOS6.2).
 
-##Partitioning a Volume## {#PartitioningaVolume)
+##Partitioning a Volume## {#PartitioningaVolume}
 
 By default, only the initial ~10GB root partition is created and your additional storage space is left unpartitioned and is customizable by you.  To create a partition, first see how much space you have available:
 
@@ -80,7 +80,7 @@ To partition a volume, follow these steps:
 
 To create additional partitions, run through the same steps above, but use different beginning and ending cylinder values for your virtual volume.
 
-##Mounting a Volume## {#MountingaVolume)
+##Mounting a Volume## {#MountingaVolume}
 
 To mount a partition, follow these steps:
 
@@ -111,7 +111,7 @@ To mount a partition, follow these steps:
 
 **Note**: When you mount a volume, the name of the volume is changed.
 
-##Volume Management Example (Ruby Fog)## {#VolumeManagementExample)
+##Volume Management Example (Ruby Fog)## {#VolumeManagementExample}
 
 Once you have created a new block storage volume, you can manipulate it just as you would any memory storage object. 
 

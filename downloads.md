@@ -4,7 +4,7 @@ title: "HP Cloud Services Software Downloads"
 permalink: /downloads/
 
 ---
-# HP Cloud Services Software Downloads
+# HP Cloud Services Software Downloads# 
 
 HP Cloud Services has a few software downloads, each of which is on its appropriate page--the Ruby Fog Bindings download is on the Ruby Fog Bindings page, for example.  But to give you quick and easy access, we have also consolidated our list of downloads here on this page.  Find what you're looking for and download away!
 
@@ -25,7 +25,7 @@ Here's what we have for you:
 * [Release Notes](/cli/unix/release-notes)
 
 ###Windows CLI### {#WinCLIInstall}
-* [Installation package, Version 1.3.2.7](/file/WinCLI-1.3.2.7.zip)
+* [Installation package, Version 1.3.2.2](/file/WinCLI-1.3.2.2.zip)
 * [Overview page](/cli/windows)
 * [Release Notes](/cli/windows/release-notes)
 
