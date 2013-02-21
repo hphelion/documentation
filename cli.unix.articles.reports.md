@@ -6,6 +6,8 @@ product: unix-cli
 categories: cli linux object store compute reports
 tags: cli linux object store compute reports
 ---
+#UNIX CLI: Using Automation and Peforming Report Customization#
+
 It is now easier than ever to use the Unix CLI for automation with custom reports.  Nearly all CLI reports now support the `-c` and `-d` options which give you the capability to create your own reports and also to pipe these reports to other commands or import data into programs such as Excel.
 
 The `-c` option allows you to specify the columns in report and the order in which they appear.  For example, if you wanted a report that only contained the server public IP address, name, and id of your servers
