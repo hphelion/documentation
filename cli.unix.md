@@ -29,3 +29,5 @@ Some articles about ways you can use the Unix CLI:
 * [Generating Verbose Debugging Output](/cli/unix/articles/debugging)
 * [Accessing Servers with Managed Key Pairs](/cli/unix/articles/managedkeypairs)
 * [Performing Object Store Migration](/cli/unix/articles/migration)
+* [Custom Reports](/cli/unix/articles/reports)
+* [Large File Upload](/cli/unix/articles/largefile)
