@@ -12,7 +12,7 @@ Before you can begin working with the Ruby Fog bindings, you have to install the
 * [Ubuntu Installation](#Ubuntu)
 * [Mac OSX Installation](#MacOS)
 * [CentOS Installation](#CentOS)
-* [Uninstalling](#Uninstalling)
+* [Uninstalling](#Uninstalling) 
 
 [Please **download** the most recent Ruby Fog package (Version 0.0.19)](/file/hpfog-0.0.19.gem)!
 
