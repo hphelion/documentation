@@ -50,3 +50,8 @@ Older versions of the CLI used a fairly low value for read and write time outs, 
 ##Manifest## {#Manifest}
 
 The manifest file is a virtual representation of all of the segments, so it can be used as a regular object.  If copying the manifest file to a regular object fails, you can use the manifest file instead.  If you are using the manifest file, do not remove the segments.
+
+If your file uploaded succeeded, but the manifest copy did not work, you can attempt to just copy the manifest file.
+
+    hpcloud copy :databases/three_gig.db.manifest :databases/three_gig.db
+
