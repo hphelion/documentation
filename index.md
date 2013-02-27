@@ -19,9 +19,12 @@ HP Cloud consists of the following publicly-available services:
 
 The following services are now in private beta; follow the links to sign up and begin trying them out!
 
-* [HP Cloud Relational Database (RDB) for MySQL](/dbaas) - An OpenStack DBaaS implementation hosted by HP.  **Note**: This service requires activation while in private beta; please [request access on our sign-up page](http://go.hpcloud.com/mysql-private-beta-signup).  Service use is free of charge during the private beta period.
-* [HP Cloud Load Balancer as a Service (LBaaS)](/lbaas) -  A managed service enabling automatic traffic routing to multiple back end servers hosted by HP.  **Note**: This service requires activation while in private beta; please [request access on our sign-up page](http://go.hpcloud.com/LoadBalancer-private-beta-signup).  Service use is free of charge during the private beta period.
-* [HP Cloud Domain Name Service (DNS)](/dns) - A managed domain name service featuring anycast routing hosted by HP. **Note**: This service requires activation while in private beta; please [request access on our sign-up page](http://go.hpcloud.com/DNS-private-beta-signup).  Service use is free of charge during the private beta period.
+* [HP Cloud Relational Database (RDB) for MySQL](/dbaas) - An OpenStack DBaaS implementation hosted by HP.<br>
+  **Note**: This service requires activation while in private beta; please [request access on our sign-up page](http://go.hpcloud.com/mysql-private-beta-signup).  Service use is free of charge during the private beta period.
+* [HP Cloud Load Balancer as a Service (LBaaS)](/lbaas) -  A managed service enabling automatic traffic routing to multiple back end servers hosted by HP.
+  **Note**: This service requires activation while in private beta; please [request access on our sign-up page](http://go.hpcloud.com/LoadBalancer-private-beta-signup).  Service use is free of charge during the private beta period.
+* [HP Cloud Domain Name Service (DNS)](/dns) - A managed domain name service featuring anycast routing hosted by HP.<br>
+  **Note**: This service requires activation while in private beta; please [request access on our sign-up page](http://go.hpcloud.com/DNS-private-beta-signup).  Service use is free of charge during the private beta period.
 
 For detailed REST API information, dig into those links above.  In order to interact with the services, you'll need [your API Keys](https://console.hpcloud.com/account/api_keys).
 
