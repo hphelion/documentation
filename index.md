@@ -10,12 +10,14 @@ permalink: /
 
 HP Cloud Services consists of:
 
-* [HP Cloud Compute](/compute) - An OpenStack Compute implementation hosted by HP
-* [HP Cloud Object Storage](/object-storage) - An OpenStack Object Storage implementation hosted by HP
-* [HP Cloud CDN](/cdn) - A Content Delivery Network hosted by HP
-* [HP Cloud Block Storage](/block-storage) - Add additional volumes to HP Cloud Compute instances
 * [HP Cloud Identity Service](/identity) - An OpenStack Identity Services implementation hosted by HP
+* [HP Cloud Object Storage](/object-storage) - An OpenStack Object Storage implementation hosted by HP
+* [HP Cloud Compute](/compute) - An OpenStack Compute implementation hosted by HP
+* [HP Cloud Block Storage](/block-storage) - Add additional volumes to HP Cloud Compute instances
+* [HP Cloud Content Delivery Network (CDN)](/cdn) - A content delivery network hosted by HP
 * [HP Cloud Relational Database for MySQL](/dbaas) - An OpenStack DBaaS implementation hosted by HP
+* [HP Cloud Load Balancer as a Service](/lbaas) -  A load balancer service hosted by HP
+* [HP Cloud Domain Name Service (DNS)](/dns) - A domain name service hosted by HP
 
 For detailed REST API information, dig into those links above.  In order to interact with the services, you'll need [your API Keys](https://console.hpcloud.com/account/api_keys).
 
