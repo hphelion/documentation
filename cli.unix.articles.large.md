@@ -22,7 +22,7 @@ There are three configuration settings that may need tuning if you are uploading
 
 * read_timeout : The timeout in seconds to complete a read (default 240 seconds)
 * write_timeout : The timeout in seconds to complete a write (default 240 seconds)
-* storage_segment_size : The size in bytes of each segement uploaded (default one gigabyte)
+* storage_segment_size : The size in bytes of each segment uploaded (default one gigabyte)
 
 Older versions of the CLI used a fairly low value for read and write time outs, so you may want to set that if you configuration files have been around a while.  If you are on an unreliable connection, you may wish to set the segment size smaller so you can have a better chance of getting a segment uploaded.  The segment size works only for uploads.  A segment size larger than five gigabytes will fail.
 
