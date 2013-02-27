@@ -8,7 +8,8 @@ permalink: /
 
 <iframe src="https://player.vimeo.com/video/38064508?title=0&amp;byline=0&amp;portrait=0" width="580" height="420" frameborder="0"> </iframe> 
 
-HP Cloud Services consists of:
+<br>
+HP Cloud Services consists of the following publicly-available services:
 
 * [HP Cloud Identity Service](/identity) - An OpenStack Identity Services implementation hosted by HP
 * [HP Cloud Object Storage](/object-storage) - An OpenStack Object Storage implementation hosted by HP
