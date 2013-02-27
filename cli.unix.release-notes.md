@@ -5,8 +5,9 @@ permalink: /cli/unix/release-notes/
 product: unix-cli
 
 ---
-These are the release notes for the HP Cloud services UNIX CLI.  The current release number for the [UNIX CLI software](/cli/unix) is version 1.6.0, released on 01/29/13.
+These are the release notes for the HP Cloud services UNIX CLI.  The current release number for the [UNIX CLI software](/cli/unix) is version 1.7.0, released on 02/27/13.
 
+* [Release 1.7.0 Features](#v1_7_0)
 * [Release 1.6.0 Features](#v1_6_0)
 * [Release 1.5.0 Features](#v1_5_0)
 * [Release 1.4.0 Features](#v1_4_0)
@@ -17,6 +18,20 @@ These are the release notes for the HP Cloud services UNIX CLI.  The current rel
 * [Release 0.0.15 Features](#v0_0_15)
 
 #HP Cloud Services UNIX CLI Release Notes
+
+##Release 1.7.0 Features## {#v1_7_0}
+
+The 1.7.0 release is available for download from https://docs.hpcloud.com/file/hpcloud-1.7.0.gem.  This release was made available on 3/1/2013 and contains the following new features:
+
+* Support for large file uploads greater than 5 gigabytes
+* Added retry option for large file uploads
+* A -c option was added to most reports so the user can specify the columns they want to see.
+* A -d option was added to most reports so the user can specify the column delimiter for reports.
+* Long listing option for containers and the contents of containers
+
+###Known Issues###
+
+* There may be issues copying the manifest file during large file uploads.
 
 ##Release 1.6.0 Features## {#v1_6_0}
 
