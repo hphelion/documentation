@@ -14,8 +14,8 @@ There are a number of HP Cloud Services APIs available for your programming plea
 * [Block Storage](/api/block-storage/): API for the HP Cloud Block Storage; enabling additional volumes to Compute instances.
 * [CDN](/api/CDN): API for the HP Cloud Content Delivery Network (CDN) service; content inside HP Cloud Object Storage can easily be cached on servers in metropolitan areas all over the world to speed client access to them by removing much of the network latency
 * [Relational Database (RDB)](http://api-docs.hpcloud.com/hpcloud-rdb-mysql/1.0/content/ch_rdb-mysql-dev-api.html): API for the HP Cloud RDB; simplifies the creation and management of MySQL database instances. **Note**: This service is currently in private beta, so please [sign up](http://go.hpcloud.com/mysql-private-beta-signup) to get access (sign-up is free).
-* [Load Balancer (LBaaS)](/api/lbaas/): API for the HP Cloud Load Balancer service; facilitates creation and management of load balancers. **Note**: This service is currently in private beta, so please [sign up](http://go.hpcloud.com/mysql-private-beta-signup) to get access (sign-up is free).
-* [DNS](/api/dns/): API for HP Cloud DNS service; enables display and management of DNS records. **Note**: This service is currently in private beta, so please [sign up](http://go.hpcloud.com/mysql-private-beta-signup) to get access (sign-up is free).
+* [Load Balancer (LBaaS)](/api/lbaas/): API for the HP Cloud Load Balancer service; facilitates creation and management of load balancers. **Note**: This service is currently in private beta, so please [sign up](http://go.hpcloud.com/LoadBalancer-private-beta-signup) to get access (sign-up is free).
+* [DNS](/api/dns/): API for HP Cloud DNS service; enables display and management of DNS records. **Note**: This service is currently in private beta, so please [sign up](http://go.hpcloud.com/DNS-private-beta-signup) to get access (sign-up is free).
 
 <!--If you are a more visual learner, perhaps you would prefer our videos on these topics:
 
