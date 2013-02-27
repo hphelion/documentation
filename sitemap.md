@@ -12,7 +12,7 @@ Having a bit of trouble navigating our site, and so you're looking for a single 
 &nbsp;&nbsp;&nbsp;&nbsp;[Documentation Site Overview](/site-overview)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[HP Cloud FAQ](/faq)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[HP Cloud Activity Stream](/activity-stream)<br>
-HP Cloud Available Services<br> <!--Need to add a page for this ``>
+HP Cloud Available Services<br> <!--Need to add a page for this -->
 &nbsp;&nbsp;&nbsp;&nbsp;[Compute Services Overview](/compute)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Compute Services API](/compute/api)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Using the Compute Service](/compute/using)<br>
@@ -23,13 +23,13 @@ HP Cloud Available Services<br> <!--Need to add a page for this ``>
 &nbsp;&nbsp;&nbsp;&nbsp;[HP Cloud Block Storage Overview](/block-storage)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Block Storage API](/block-storage/api)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Content Delivery Network (CDN) Overview](/cdn)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[CDN API](/cdn/api)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[CDN API](/api/cdn)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Relational Database (RDB) Overview](/rdb)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[RDB API](/rdb/api)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Load Balancer as a Service (LBaaS) Overview](/lbaas)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[LBaaS API](/lbaas/api)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[LBaaS API](/api/lbaas)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Domain Name Service (DNS) Overview](/dns)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[DNS API](/dns/api)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[DNS API](/api/dns)<br>
 [HP Cloud Bindings](/bindings)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Ruby Fog Overview](/bindings/fog)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Installation](/bindings/fog/install)<br>
