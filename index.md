@@ -15,9 +15,12 @@ HP Cloud Services consists of:
 * [HP Cloud Compute](/compute) - An OpenStack Compute implementation hosted by HP
 * [HP Cloud Block Storage](/block-storage) - Add additional volumes to HP Cloud Compute instances
 * [HP Cloud Content Delivery Network (CDN)](/cdn) - A content delivery network hosted by HP
-* [HP Cloud Relational Database for MySQL](/dbaas) - An OpenStack DBaaS implementation hosted by HP
-* [HP Cloud Load Balancer as a Service](/lbaas) -  A load balancer service hosted by HP
-* [HP Cloud Domain Name Service (DNS)](/dns) - A domain name service hosted by HP
+
+The following services are now in private beta; follow the links to sign up and begin trying them out!
+
+* [HP Cloud Relational Database (RDB) for MySQL](/dbaas) - An OpenStack DBaaS implementation hosted by HP.  **Note**: This service is currently in private beta, so please [sign up](http://go.hpcloud.com/mysql-private-beta-signup) to get access (sign-up is free).
+* [HP Cloud Load Balancer as a Service (LBaaS)](/lbaas) -  A managed service enabling automatic traffic routing to multiple back end servers hosted by HP.  **Note**: This service is currently in private beta, so please [sign up](http://go.hpcloud.com/LoadBalancer-private-beta-signup) to get access (sign-up is free).
+* [HP Cloud Domain Name Service (DNS)](/dns) - A managed domain name service featuring anycast routing hosted by HP. **Note**: This service is currently in private beta, so please [sign up](http://go.hpcloud.com/DNS-private-beta-signup) to get access (sign-up is free).
 
 For detailed REST API information, dig into those links above.  In order to interact with the services, you'll need [your API Keys](https://console.hpcloud.com/account/api_keys).
 
