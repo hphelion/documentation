@@ -22,9 +22,12 @@ There are three configuration settings that may need tuning if you are uploading
 * read_timeout : The timeout in seconds to complete a read (default 240 seconds)
 * write_timeout : The timeout in seconds to complete a write (default 240 seconds)
 * storage_segment_size : The size in bytes of each segment uploaded (default one gigabyte)
+* storage_chunk_size : The size in bytes of chunks to write when uploading (default one megabyte)
 * storage_max_size : The maximum size of a file before it needs a manifest (default five gigabytes)
 
 Older versions of the CLI used a fairly low value for read and write time outs, so you may want to set that if you configuration files have been around a while.  If you are on an unreliable connection, you may wish to set the segment size smaller so you can have a better chance of getting a segment uploaded.  The segment size works only for uploads.  A segment size larger than five gigabytes will fail.
+
+If storage_chunk_size is set too large, you may receive a "Broken Pipe" error message because the large chunk fails to write.  In performance tests that we have run, there has not been much difference with different values of chunk size.
 
 ##Restarting an Upload## {#Restarting}
 
