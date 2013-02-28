@@ -13,6 +13,7 @@ To get the Object Storage Powershell environment running properly you must compl
 
 *  [Run the installer package](#RunningtheInstallerPackage)
 *  [Supply your credentials](#SupplyingyourCredentials)
+*  [Navigating to the Command Line](#NavigatingtotheCommandLine)
 *  [Set the required execution policy](#SettingtheRequiredExecutionPolicy)
 *  [Load the shell and register the module](#LoadingtheShellandModuleRegistration)
 
@@ -71,6 +72,12 @@ The shell detects that this is your first time logging in and prompts you for th
     Please enter your Access Key :
 
 <!--<img src="media/PromptCred.jpg" width="580" height="228" alt="" />-->
+
+##Navigating to the Command Line## {#NavigatingtotheCommandLine}
+
+To issue Windows PowerShell CLI commands, you need to first navigate to a container or the HP Cloud Services (HPCS) provider, which you can do by issuing the following command:
+
+    cd HPCS:
 
 ##Setting the Required Execution Policy## {#SettingtheRequiredExecutionPolicy}
 
