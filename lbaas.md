@@ -9,7 +9,7 @@ product: lbaas
 
 The HP Cloud Load Balancing as a Service (LBaaS) provides you with a managed service that lets you enable automatic traffic routing to multiple back-end servers hosted by HP.  
 
-Interested an early preview? [Sign up](http://go.hpcloud.com/LoadBalancer-private-beta-signup) for the HP Cloud LBaaS Private Beta now. Please note that you must have an existing account with HP Cloud Services before requesting access (sign up for an account [here](https://console.hpcloud.com/login)).
+The HP Cloud LBaas service is currently in private beta.  Please [request access on our sign-up page](http://go.hpcloud.com/LoadBalancer-private-beta-signup)  Service use is free of charge during the private beta period.
 
 ## API
 Do you need low level, raw REST API access to HP Cloud LBaaS?  Take a look at the [LBaaS API page](/api/lbaas/).
