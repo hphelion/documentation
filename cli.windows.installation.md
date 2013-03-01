@@ -11,9 +11,9 @@ To get the HP Cloud Environment CLI Software for Windows PowerShell installed an
 
 *  [Installation Prerequisites](#InstallationPrerequisites)
 *  [Run the installer package](#RuntheInstallerPackage)
-*  [Choose the Appropriate Windows PowerShell Executable](#ChooseExecutable)
+*  [Choose the appropriate Windows PowerShell executable](#ChooseExecutable)
 *  [Supply your credentials](#SupplyyourCredentials)
-*  [Navigate to the Command Line](#NavigatetotheCommandLine)
+*  [Navigate to the command line](#NavigatetotheCommandLine)
 *  [Load the shell and register the module](#LoadtheShellandModuleRegistration)
 
 This page also describes how to [upgrade to a new version](#Upgrading) of the Windows CLI software.
