@@ -18,9 +18,9 @@ You can also avail one of the following APIs now in private beta; follow the lin
 
 * [Relational Database (RDB)](http://api-docs.hpcloud.com/hpcloud-rdb-mysql/1.0/content/ch_rdb-mysql-dev-api.html): API for the HP Cloud RDB; simplifies the creation and management of MySQL database instances.<br>
   **Note**: This service requires activation while in private beta; please [request access on our sign-up page](http://go.hpcloud.com/mysql-private-beta-signup).  Service use is free of charge during the private beta period.
-* [Load Balancer (LBaaS)](/api/lbaas/): API for the HP Cloud Load Balancer service; facilitates creation and management of load balancers.<br>
+* [Load Balancer as a Service (LBaaS)](/api/lbaas/): API for the HP Cloud Load Balancer service; facilitates creation and management of load balancers.<br>
   **Note**: This service requires activation while in private beta; please [request access on our sign-up page](http://go.hpcloud.com/LoadBalancer-private-beta-signup).  Service use is free of charge during the private beta period.
-* [DNS](/api/dns/): API for HP Cloud DNS service; enables display and management of DNS records.<br>
+* [DNS](/api/dns/): API for HP Cloud domain name service (DNS); enables display and management of DNS records.<br>
   **Note**: This service requires activation while in private beta; please [request access on our sign-up page](http://go.hpcloud.com/DNS-private-beta-signup).  Service use is free of charge during the private beta period.
 * [Monitoring as a Service (MaaS)](/api/monitoring/): API for HP Cloud Monitoring service; facilitates monitoring of the health and other metrics for the resources in HP Cloud.<br>
   **Note**: This service requires activation while in private beta; please [request access on our sign-up page](http://go.hpcloud.com/Monitoring-private-beta-signup). Service use is free of charge during the private beta period.
