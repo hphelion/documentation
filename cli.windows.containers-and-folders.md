@@ -100,7 +100,7 @@ One caveat when creating new Storage Containers is that you must be attached to 
 
     CD HPSO-Init: 
 
-At this point you can issue the New-Container command and a subsequent issuance of Get-PSDrive will list what you just created (The default drive will not show up the next time you load the shell as it exists only temporarily to bootstrap the Storage Container creation process). Now it's time to take the file system for a spin but before we do that, let's go over a few basic concepts.
+At this point you can issue the `[New-Container](/cli/windows/reference#New-Container)` command and a subsequent issuance of Get-PSDrive lists what you just created (The default drive will not show up the next time you load the shell as it exists only temporarily to bootstrap the Storage Container creation process). Now it's time to take the file system for a spin but before we do that, let's go over a few basic concepts.
 
 ##Storage Paths## {#StoragePaths}
    
@@ -969,7 +969,7 @@ There are times when you want to add or remove a drive from your list of availab
 
 To add a Container that someone else owns to your list of available drives:
 
-    new-container https://objects.werr.net:443/v1/9153476658759/rgtest2
+    new-container -url https://objects.werr.net:443/v1/9153476658759/rgtest2
     
 This adds the container `rgtest2` to your list of available drives.  To remove the container from your list:
 
