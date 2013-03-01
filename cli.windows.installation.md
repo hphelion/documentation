@@ -54,7 +54,11 @@ The installation now proceeds on your system.
 
 ##Set the Required Execution Policy## {#SettingtheRequiredExecutionPolicy}
 
-Now that you have installed the required files, make sure that your Powershell environment is capable of executing 3rd party modules. Open a PowerShell window as the administrator and issue the command `set-executionpolicy -ExecutionPolicy Unrestricted`:
+Now that you have installed the required files, make sure that your Powershell environment is capable of executing 3rd party modules. 
+
+**Note**: If you are performing a re-installation of the software package, you can skip this step.  This step is applicable only for a fresh installation.
+
+Open a PowerShell window as the administrator and issue the command `set-executionpolicy -ExecutionPolicy Unrestricted`:
 
     PS C:\Projects\Outgoing\HP> set-executionpolicy -ExecutionPolicy Unrestricted
     
