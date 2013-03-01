@@ -31,7 +31,7 @@ Launching the Windows installer package loads the following wizard.
 
 <img src="media/WizardP1.jpg" width="519" height="424" alt="" />
 
-Click the `Next` button.  Select the `I Agree` radio button in the License Agreement dialog and click the `Next` button.  
+Click the `Next` button.  In the License Agreement dialog, select the `I Agree` radio button and click `Next`.  
 
 <img src="media/LicenseDialog.png" width="519" height="424" alt="" />
 
