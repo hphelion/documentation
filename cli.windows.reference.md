@@ -19,7 +19,7 @@ Below you can find a full reference of supported HP Cloud environment CLI softwa
 **Note**: The HP Cloud environment CLI software for Windows PowerShell cmdlets are not case specific; in other words, `Get-Catalog` and `get-catalog` function identically. When referencing an argument, like a container name, that has a space, use quotes to access that resource. For example:
      
      PS: HPCS:\> cd "my container:"
-     PS: HPCS:\> new-container "my new container"
+     PS: HPCS:\> new-container -name "my new container"
 
 <!--DOUG: Modify the fonts in the syntax sections--perhaps create a Jira case for them?-->
 <!--DOUG: Create a CDN examples page?-->
@@ -900,12 +900,12 @@ Copies the `testb1` and `testb2` S3 buckets to the HP object storage 
 Creates a new storage container.
 
 ### Syntax###
- new-container  *Name*
+ new-container -name  *Name*
 
 ###Examples###
 EXAMPLE
 
-    PS yourcontainer:\> New-container marketing
+    PS yourcontainer:\> New-container -name marketing
 
 Creates a new container named marketing.
 
