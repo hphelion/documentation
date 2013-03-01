@@ -22,6 +22,8 @@ You can also avail one of the following APIs now in private beta; follow the lin
   **Note**: This service requires activation while in private beta; please [request access on our sign-up page](http://go.hpcloud.com/LoadBalancer-private-beta-signup).  Service use is free of charge during the private beta period.
 * [DNS](/api/dns/): API for HP Cloud DNS service; enables display and management of DNS records.<br>
   **Note**: This service requires activation while in private beta; please [request access on our sign-up page](http://go.hpcloud.com/DNS-private-beta-signup).  Service use is free of charge during the private beta period.
+* [Monitoring as a Service (MaaS)](/api/maas/): API for HP Cloud Monitoring service; facilitates monitoring of the health and other metrics for the resources in HP Cloud.
+  **Note**: This service requires activation while in private beta; please [request access on our sign-up page](http://go.hpcloud.com/Monitoring-private-beta-signup). Service use is free of charge during the private beta period.
 
 <!--If you are a more visual learner, perhaps you would prefer our videos on these topics:
 
