@@ -19,7 +19,7 @@ To get the Object Storage Powershell environment running properly you must compl
 
 This page also describes how to [upgrade to a new version](#Upgrading) of the Windows CLI software.
 
-[Please download the latest version of the Windows PowerShell CLI software here (Version 1.3.2.2)](/file/WinCLI-1.3.2.2.zip)!
+[Please download the latest version of the HP Cloud environment CLI software package for Windows PowerShell here (Version 1.3.2.2)](/file/WinCLI-1.3.2.2.zip)!
 
 ##Installation Prerequisites## {#Installation}
 
@@ -27,7 +27,7 @@ This product requires the full (not client profile) 4.0 or higher version of the
  
 ##Running the Installer Package## {#RunningtheInstallerPackage}
 
-[Download the latest Windows Powershell Installer package](/file/WinCLI-1.3.2.2.zip).  (See the [Release Notes](/cli/windows/release-notes) for details on the current release.)
+[Download the latest HP Cloud environment CLI software package for Windows PowerShell](/file/WinCLI-1.3.2.2.zip).  (See the [Release Notes](/cli/windows/release-notes) for details on the current release.)
 
 Launching the Windows installer package loads the following wizard.
 
@@ -75,7 +75,7 @@ The shell detects that this is your first time logging in and prompts you for th
 
 ##Navigate to the Command Line## {#NavigatetotheCommandLine}
 
-To issue Windows PowerShell CLI commands, you need to first navigate to a container or the HP Cloud Services (HPCS) provider, which you can do by issuing the following command:
+To issue HP Cloud environment CLI Windows PowerShell commands (also sometimes called *cmdlets*), you need to first navigate to a container or the HP Cloud Services (HPCS) provider, which you can do by issuing the following command:
 
     cd HPCS:
 
@@ -103,6 +103,6 @@ the install folder specified while in the setup wizard. From there you can regis
 
 ##Upgrading to a New Version## {#Upgrading}
 
-When you upgrade to a new version of the Windows PowerShell CLI, you must first de-install the previous version of the software.  You can do this using the Windows `Add/Remove Programs` or `Programs and Features` utility (depending on the version of Windows you're using).  Search through the listing of programs for "HPCS-Powershell" and remove it.  
+When you upgrade to a new version of the HP Cloud environment CLI software for Windows PowerShell, you must first de-install the previous version of the software.  You can do this using the Windows `Add/Remove Programs` or `Programs and Features` utility (depending on the version of Windows you're using).  Search through the listing of programs for "HPCS-Powershell" and remove it.  
 
 Once you have unistalled the previous revision, simply follow the instructions above to install the latest version, and you're be good to go!
