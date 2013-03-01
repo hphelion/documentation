@@ -12,7 +12,7 @@ One of the key features of the HP Cloud environment CLI software for Windows Pow
 **Note:** When referencing an argument, like a container name, that has a space, use quotes to access that resource. For example:
      
      PS: HPCS:\> cd "my container:"
-     PS: HPCS:\> new-container "my new container"
+     PS: HPCS:\> new-container -name "my new container"
 
 **Note**: The HP Cloud environment CLI software for Windows PowerShell supports the [standard Windows wildcard](http://msdn.microsoft.com/en-us/library/windows/desktop/aa717088(v=vs.85).aspx) characters asterix (`*`), question mark (`?`), and range brackets (`[]`) for the `ls, copy` and `delete` object storage commands.
 
