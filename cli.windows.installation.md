@@ -31,9 +31,11 @@ Launching the Windows installer package loads the following wizard.
 
 <img src="media/WizardP1.jpg" width="519" height="424" alt="" />
 
-Click the `Next` button and select the `I Agree` radio button in the License Agreement dialog.  The next window allows you to select your installation folder:
+Click the `Next` button.  Select the `I Agree` radio button in the License Agreement dialog and click the `Next` button.  
 
-<!-- Need to rewrite above sentence and add <img src="media/LicenseDialog.png" width="519" height="424" alt="" /> when git problems fixed -->
+<img src="media/LicenseDialog.png" width="519" height="424" alt="" />
+
+The next window allows you to select your installation folder:
 
 <img src="media/wincli%20install02_0.png" width="580" height="475" alt="" />
 
