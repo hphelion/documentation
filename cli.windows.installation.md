@@ -9,19 +9,46 @@ product: win-cli
 
 To get the HP Cloud Environment CLI Software for Windows PowerShell installed and running properly you must complete the following tasks:
 
+*  [Installation Prerequisites](#InstallationPrerequisites)
 *  [Run the installer package](#RuntheInstallerPackage)
+*  [Choose the Appropriate Windows PowerShell Executable](#ChooseExecutable)
 *  [Supply your credentials](#SupplyyourCredentials)
 *  [Navigate to the Command Line](#NavigatetotheCommandLine)
-*  [Set the required execution policy](#SettheRequiredExecutionPolicy)
 *  [Load the shell and register the module](#LoadtheShellandModuleRegistration)
 
 This page also describes how to [upgrade to a new version](#Upgrading) of the Windows CLI software.
 
 [Please download the latest version of the HP Cloud environment CLI software package for Windows PowerShell here (Version 1.3.2.2)](/file/WinCLI-1.3.2.2.zip)!
 
-##Installation Prerequisites## {#Installation}
+##Installation Prerequisites## {#InstallationPrerequisites}
+
+The following are prerequisites for installing and running the HP Cloud Environment CLI Software for Windows PowerShell.
+
+###Install the Microsoft .NET Framework
 
 This product requires the full (not client profile) 4.0 or higher version of the Microsoft .NET Framework to install properly which can be downloaded [at the Microsoft web site](http://www.microsoft.com/net/).
+
+###Set the Required Execution Policy### {#SettingtheRequiredExecutionPolicy}
+
+To use the HP Cloud Environment CLI Software for Windows PowerShell, you must make sure that your Powershell environment is capable of executing 3rd party modules. 
+
+**Note**: If you are performing a re-installation of the software package, you can skip this step.  This step is applicable only for a fresh installation.
+
+Open a PowerShell window as the administrator and issue the command `set-executionpolicy -ExecutionPolicy Unrestricted`:
+
+    PS C:\Projects\Outgoing\HP> set-executionpolicy -ExecutionPolicy Unrestricted
+    
+    Execution policy change
+    The execution policy helps protect you from scripts that you do not trust. Changing the execution policy
+    might expose you to the security risks described in the about_Execution_Policies help topic. Do you want to
+    change the execution policy?
+    [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): y
+    PS C:\Projects\Outgoing\HP> 
+
+<!--<img src="media/LicenseDialo.png" width="580" height="179" alt="" />-->
+
+Close the Powershell window and reopen as administrator for the policy changes to take effect.
+
  
 ##Run the Installer Package## {#RunningtheInstallerPackage}
 
@@ -49,29 +76,10 @@ The installation now proceeds on your system.
 
 <img src="media/wincli%20install05.png" width="580" height="475" alt="" />
 
-**NOTE**: Always use the powershell.exe appropriate for your OS. For 64bit systems, use the file located under \SysWOW64\, for 32bit systems, under \System32\ .
 
+##Choose the Appropriate Windows PowerShell Executable## {#ChooseExecutable}
 
-##Set the Required Execution Policy## {#SettingtheRequiredExecutionPolicy}
-
-Now that you have installed the required files, make sure that your Powershell environment is capable of executing 3rd party modules. 
-
-**Note**: If you are performing a re-installation of the software package, you can skip this step.  This step is applicable only for a fresh installation.
-
-Open a PowerShell window as the administrator and issue the command `set-executionpolicy -ExecutionPolicy Unrestricted`:
-
-    PS C:\Projects\Outgoing\HP> set-executionpolicy -ExecutionPolicy Unrestricted
-    
-    Execution policy change
-    The execution policy helps protect you from scripts that you do not trust. Changing the execution policy
-    might expose you to the security risks described in the about_Execution_Policies help topic. Do you want to
-    change the execution policy?
-    [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): y
-    PS C:\Projects\Outgoing\HP> 
-
-<!--<img src="media/LicenseDialo.png" width="580" height="179" alt="" />-->
-
-Close the Powershell window and reopen as administrator for the policy changes to take effect.
+Always use the `powershell.exe` appropriate for your OS. From the Windows command line, for 64-bit systems, use `\SysWOW64\powershell.exe`; for 32-bit systems, use `\System32\powershell.exe`.  From the Windows `Start` menu, make sure you select the appropriate PowerShell program.
 
 
 ##Supply your Credentials## {#SupplyyourCredentials}
@@ -80,7 +88,7 @@ The first time that you run the shell you must supply the access key, secret key
 
 <img src="media/api%20keys-2.jpg" width="580" height="471" alt="" />
 
-The shell detects that this is your first time logging in and prompts you for these items. When verified they get reused the next time you open the shell.
+The shell detects that this is your first time logging in and prompts you for these items. 
 
     ===============================================================
     Welcome to the HP Cloud Services Powershell Environment.
@@ -95,8 +103,13 @@ The shell detects that this is your first time logging in and prompts you for th
     ------------------------------------------------------------------------------------------------------
     
     Please enter your Access Key :
+    
+You only need to enter these credentials the first time you run the shell.  After the system verifies your credentials, they are stored and re-used the next time you open the shell.
+
+**Note**: If you see errors at this point, double-check that you are using the [correct powershell executable](#ChooseExecutable), as mentioned earlier. For additional errors that you may encounter, take a look at our Knowledge Base article on [Common Errors Using Windows Powershell CLI](https://community.hpcloud.com/article/common-errors-using-windows-powershell-cli).
 
 <!--<img src="media/PromptCred.jpg" width="580" height="228" alt="" />-->
+
 
 ##Navigate to the Command Line## {#NavigatetotheCommandLine}
 
