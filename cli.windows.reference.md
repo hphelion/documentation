@@ -1,14 +1,14 @@
 ---
 layout: default
-title: "Windows CLI: Command Line Reference"
+title: "HP Cloud Environment CLI Software for Windows PowerShell Command Line Reference"
 permalink: /cli/windows/reference/
 product: win-cli
 
 ---
 <!-- Removed all html tags -->
-# Windows CLI: Command Line Reference
+# HP Cloud Environment CLI Software for Windows PowerShell Command Line Reference
 
-Below you can find a full reference of supported Windows PowerShell command-line interface (CLI) commands.  The commands are broken up into separate sections by functional area:
+Below you can find a full reference of supported HP Cloud environment CLI software for Windows PowerShell commands (sometimes called "cmdlets").  The commands are broken up into separate sections by functional area:
 
 * [Non-service-specific](#Nonservicespecific)
 * [Compute](#Compute)
@@ -16,7 +16,7 @@ Below you can find a full reference of supported Windows PowerShell command-line
 * [CDN](#CDN)
 * [Block Storage](#BlockStorage)
 
-**Note**: Windows CLI cmdlets are not case specific; in other words, `Get-Catalog` and `get-catalog` function identically. When referencing an argument, like a container name, that has a space, use quotes to access that resource. For example:
+**Note**: The HP Cloud environment CLI software for Windows PowerShell cmdlets are not case specific; in other words, `Get-Catalog` and `get-catalog` function identically. When referencing an argument, like a container name, that has a space, use quotes to access that resource. For example:
      
      PS: HPCS:\> cd "my container:"
      PS: HPCS:\> new-container "my new container"
@@ -416,7 +416,7 @@ Displays the password for the server instance `123456`.
 ##Ls## {#ls}
 Lists the currently-available servers, flavors, images, networking, and security group and their associated information.  The information listed is dependent on the directory in which you execute the command.  For example, if you are in the directory "\Servers", the server information is listed.
 
-**Note**: The Windows PowerShell CLI supports the [standard Windows wildcard](http://msdn.microsoft.com/en-us/library/windows/desktop/aa717088(v=vs.85).aspx) characters asterix (`*`), question mark (`?`), and range brackets (`[]`).
+**Note**: The HP Cloud environment CLI software for Windows PowerShell supports the [standard Windows wildcard](http://msdn.microsoft.com/en-us/library/windows/desktop/aa717088(v=vs.85).aspx) characters asterix (`*`), question mark (`?`), and range brackets (`[]`).
 
 ### Syntax###
 ls 
