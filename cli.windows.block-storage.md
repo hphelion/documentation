@@ -1,13 +1,13 @@
 ---
 layout: default
-title: "Windows CLI Block Storage Examples"
+title: "HP Cloud Environment CLI Software for Windows PowerShell Block Storage Examples"
 permalink: /cli/windows/block-storage/
 product: win-cli
 
 ---
-# Windows CLI Block Storage Examples
+# HP Cloud Environment CLI Software for Windows PowerShell Block Storage Examples
 
-This page provides you some examples of how to use the various commands (sometimes called "cmdlets") for Windows CLI implementation of Compute.
+This page provides you some examples of how to use the various commands (sometimes called "cmdlets") for HP Cloud environment CLI software for Windows PowerShell implementation of Compute.
 
 * [Navigation](#Navigation)
 * [Volume Management](#VolumeManagement)
@@ -15,7 +15,7 @@ This page provides you some examples of how to use the various commands (sometim
 
 ##Navigation## {#Navigation}
 
-To execute commands in Windows PowerShell, first open a Windows PowerShell window; under the Start menu, it is typically under `All Programs > Accessories > Windows PowerShell`.  Select the shell appropriate to your system, either the 64-bit or 32-bit version.  Enter the HP Cloud Services CLI by entering:
+To execute HP cloud commands in Windows PowerShell, first open a Windows PowerShell window; under the Start menu, it is typically under `All Programs > Accessories > Windows PowerShell`.  Select the shell appropriate to your system, either the 64-bit or 32-bit version.  Enter the HP Cloud Services CLI by entering:
 
     PS C:> cd HPCS:
 

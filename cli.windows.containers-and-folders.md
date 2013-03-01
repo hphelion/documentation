@@ -1,20 +1,20 @@
 ---
 layout: default
-title: "Windows CLI Object Storage Examples"
+title: "HP Cloud Environment CLI Software for Windows PowerShell Object Storage Examples"
 permalink: /cli/windows/containers-and-folders/
 product: win-cli
 
 ---
-# Windows CLI Object Storage Examples
+# HP Cloud Environment CLI Software for Windows PowerShell Object Storage Examples
 
-One of the key features of the HP Cloud Services Object Storage is that it provides a way to store and retrieve objects in a highly redundant cluster of publicly accessible physical machines hosted in HP data centers.  This page provides examples for how to use Object Storage via the Windows PowerShell CLI.  (See the [HP Cloud Object Storage Overview](/object-storage) for overview information on Object Storage.)
+One of the key features of the HP Cloud environment CLI software for Windows PowerShell Object Storage is that it provides a way to store and retrieve objects in a highly redundant cluster of publicly accessible physical machines hosted in HP data centers.  This page provides examples for how to use Object Storage via the Windows PowerShell CLI.  (See the [HP Cloud Object Storage Overview](/object-storage) for overview information on Object Storage.)
 
 **Note:** When referencing an argument, like a container name, that has a space, use quotes to access that resource. For example:
      
      PS: HPCS:\> cd "my container:"
      PS: HPCS:\> new-container "my new container"
 
-**Note**: The Windows PowerShell CLI supports the [standard Windows wildcard](http://msdn.microsoft.com/en-us/library/windows/desktop/aa717088(v=vs.85).aspx) characters asterix (`*`), question mark (`?`), and range brackets (`[]`) for the `ls, copy` and `delete` object storage commands.
+**Note**: The HP Cloud environment CLI software for Windows PowerShell supports the [standard Windows wildcard](http://msdn.microsoft.com/en-us/library/windows/desktop/aa717088(v=vs.85).aspx) characters asterix (`*`), question mark (`?`), and range brackets (`[]`) for the `ls, copy` and `delete` object storage commands.
 
 ##Interacting with the Storage Service## {#InteractingwiththeStorageService}
 
@@ -32,7 +32,7 @@ In addition to the video tutorial, which shows you how the basics of our object 
 * [Changing Configuration Files](#ChangingConfigurationFiles)
 * [Viewing Your Service Catalog](#ViewingYourServiceCatalog)
 * [Finding an Object's Location](#FindinganObjectsLocation)
-* [Mapping and Removing Drives](#MappingandRemovingDrives)
+* [Adding and Removing Drives](#AddingandRemovingDrives)
 * [Getting Version Information](#GettingVersionInformation)
 * [Using Another User's Credentials](#UsingAnotherUsersCredentials)
 * [Viewing the Release Notes](#ViewingtheReleaseNotes)
@@ -40,7 +40,7 @@ In addition to the video tutorial, which shows you how the basics of our object 
 
 ##Creating Storage Containers## {#CreatingStorageContainers}
 
-Storage Containers act as a fundamental unit of storage in HP Object Storage. These items are very similar to disk volumes that one would traditionally use to maintain a set of hierarchically organized folders. PowerShell offers a natural way to represent these Storage Containers through the use of Providers. Instances of these Powershell Providers are called Drives and each Storage Container that you create will be represented as one. To illustrate this concept let's first create a Storage Container with the New-Container command. When Powershell first opens, use the `cd HPCS:` command to use the HPCS providers
+Storage Containers act as a fundamental unit of storage in HP Object Storage. These items are very similar to disk volumes that one would traditionally use to maintain a set of hierarchically organized folders. PowerShell offers a natural way to represent these Storage Containers through the use of Providers. Instances of these Powershell providers are called drives and each storage container that you create is represented as one. To illustrate this concept let's first create a Storage Container with the `New-Container` command. When Powershell first opens, use the `cd HPCS:` command to use the HPCS providers
 
     ------------------------------------------------------------------------------------------------------
     Welcome to the HP-Cloud Object Storage Powershell Environment.
@@ -963,17 +963,17 @@ The contents of the Object store are URI addressable given that you have the pro
 
 Note : When you issue this command the URI is also pasted to the Windows clipboard for your convenience. If you want to disable this behavior simply set the CLI.config option entitled PasteGetURIResultsToClipboard to false.
 
-##Mapping and Removing Drives## {#MappingandRemovingDrives}
+##Adding and Removing Drives## {#AddingandRemovingDrives}
 
-There are times when you want to add or remove a drive from your list of available drives when it owned by another user.  To perform these actions, you can use the [Map-Drive](/cli/windows/reference#Map-Drive) and [Remove-Drive](/cli/windows/reference#Remove-Drive) cmdlets.
+There are times when you want to add or remove a drive from your list of available drives when it owned by another user.  To perform these actions, you can use the [new-container](/cli/windows/reference#New-Container) and [remove-container](/cli/windows/reference#Remove-Container) cmdlets.
 
-To map a Container that someone else owns to your list of available drives:
+To add a Container that someone else owns to your list of available drives:
 
-    map-drive https://objects.werr.net:443/v1/9153476658759/rgtest2
+    new-container https://objects.werr.net:443/v1/9153476658759/rgtest2
     
-This maps the container `rgtest2` to your list of available drives.  To unmap the container:
+This adds the container `rgtest2` to your list of available drives.  To remove the container from your list:
 
-    remove-drive rgtest2
+    remove-container rgtest2
 
 
 ##Getting Version Information## {#GettingVersionInformation}
@@ -1008,7 +1008,7 @@ Where you choose your desired values for `**Access-Key`**, `**Secret-Key`**, and
 
 ##Viewing the Release Notes## {#ViewingtheReleaseNotes}
 
-The Get-Notes command gives you the ability to view release notes for the current version (no arguments), a specific version (-v), or all past versions of the product (-all).
+The `Get-Notes` command gives you the ability to view release notes for the current version (no arguments), a specific version (-v), or all past versions of the product (-all).
 
     ------------------------------------------------------------------------------------------------------
     Welcome to the HP-Cloud Object Storage Powershell Environment.
