@@ -7,8 +7,8 @@ categories: cli linux
 tags: cli linux
 ---
 #UNIX CLI: Generating Verbose Debugging Output#
-also
-The Unix CLI contains an option to almost every command to display verbose debugging information.  The debugging log includes a trace of the HTTP requests made with both requests and responses and also includes a stack trace if an exception is thrown.  The verbose mode assists you in debugging problems if the standard error messages are not enough. 
+
+Almost every command in the UNIX command-line interface (CLI) contains an option that allows you to display verbose debugging information.  The debugging log includes a trace of the HTTP requests made with both requests and responses as well as a stack trace if an exception is generated.  The verbose mode assists you in debugging problems if the standard error messages are not enough. 
 
 Here is the `list` command without verbose debugging enabled:
 
