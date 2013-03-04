@@ -14,7 +14,7 @@ There are a number of HP Cloud APIs available for your programming pleasure:
 * [Block Storage](/api/block-storage/): API for the HP Cloud Block Storage; enabling additional volumes to Compute instances.
 * [CDN](/api/CDN/): API for the HP Cloud Content Delivery Network (CDN) service; content inside HP Cloud Object Storage can easily be cached on servers in metropolitan areas all over the world to speed client access to them by removing much of the network latency
 
-You can also avail one of the following APIs now in private beta; follow the links to sign up and begin trying them out!
+You can also avail yourself of one of the following APIs now in private beta; follow the links to sign up and begin trying them out!
 
 * [Relational Database (RDB)](http://api-docs.hpcloud.com/hpcloud-rdb-mysql/1.0/content/ch_rdb-mysql-dev-api.html): API for the HP Cloud RDB; simplifies the creation and management of MySQL database instances.<br>
   **Note**: This service requires activation while in private beta; please [request access on our sign-up page](http://go.hpcloud.com/mysql-private-beta-signup).  Service use is free of charge during the private beta period.
