@@ -21,7 +21,7 @@ The following services are now in private beta; follow the links to sign up and 
 
 * [Relational Database (RDB) for MySQL](/dbaas/) - An OpenStack DBaaS implementation hosted by HP.<br>
   **Note**: This service requires activation while in private beta; please [request access on our sign-up page](http://go.hpcloud.com/mysql-private-beta-signup).  Service use is free of charge during the private beta period.
-* [Load Balancer as a Service (LBaaS)](/lbaas/) -  A managed service enabling automatic traffic routing to multiple back end servers hosted by HP.
+* [Load Balancer as a Service (LBaaS)](/lbaas/) -  A managed service enabling automatic traffic routing to multiple back end servers hosted by HP.<br>
   **Note**: This service requires activation while in private beta; please [request access on our sign-up page](http://go.hpcloud.com/LoadBalancer-private-beta-signup).  Service use is free of charge during the private beta period.
 * [Domain Name Service (DNS)](/dns/) - A managed domain name service featuring anycast routing hosted by HP.<br>
   **Note**: This service requires activation while in private beta; please [request access on our sign-up page](http://go.hpcloud.com/DNS-private-beta-signup).  Service use is free of charge during the private beta period.
