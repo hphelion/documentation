@@ -7,7 +7,7 @@ product: object-storage
 ---
 # HP Cloud Object Storage Overview
 
-<iframe src="https://player.vimeo.com/video/32118778?title=0&amp;byline=0&amp;portrait=0" width="580" height="420" frameborder="0"> </iframe>
+<!-- <iframe src="https://player.vimeo.com/video/32118778?title=0&amp;byline=0&amp;portrait=0" width="580" height="420" frameborder="0"> </iframe> -->
 
 Leveraging [OpenStack Storage](http://openstack.org/projects/storage/), HP Cloud Object Storage provides a way to store and retrieve objects in a highly redundant cluster of publicly accessible physical machines hosted in HP data centers.  Key terms include:
 
