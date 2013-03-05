@@ -6,25 +6,27 @@ permalink: /
 ---
 # Getting Started with HP Cloud Services
 
-<iframe src="https://player.vimeo.com/video/38064508?title=0&amp;byline=0&amp;portrait=0" width="580" height="420" frameborder="0"> </iframe> 
+<!-- <iframe src="https://player.vimeo.com/video/38064508?title=0&amp;byline=0&amp;portrait=0" width="580" height="420" frameborder="0"> </iframe> -->
 
 <br>
 HP Cloud consists of the following publicly-available services:
 
-* [HP Cloud Identity Service](/identity) - An OpenStack Identity Services implementation hosted by HP
-* [HP Cloud Object Storage](/object-storage) - An OpenStack Object Storage implementation hosted by HP
-* [HP Cloud Compute](/compute) - An OpenStack Compute implementation hosted by HP
-* [HP Cloud Block Storage](/block-storage) - Add additional volumes to HP Cloud Compute instances
-* [HP Cloud Content Delivery Network (CDN)](/cdn) - A content delivery network hosted by HP
+* [Identity Service](/identity/) - An OpenStack Identity Services implementation hosted by HP
+* [Object Storage](/object-storage/) - An OpenStack Object Storage implementation hosted by HP
+* [Compute](/compute/) - An OpenStack Compute implementation hosted by HP
+* [Block Storage](/block-storage/) - Add additional volumes to HP Cloud Compute instances
+* [Content Delivery Network (CDN)](/cdn/) - A content delivery network hosted by HP
 
 The following services are now in private beta; follow the links to sign up and begin trying them out!
 
-* [HP Cloud Relational Database (RDB) for MySQL](/dbaas) - An OpenStack DBaaS implementation hosted by HP.<br>
+* [Relational Database (RDB) for MySQL](/dbaas/) - An OpenStack DBaaS implementation hosted by HP.<br>
   **Note**: This service requires activation while in private beta; please [request access on our sign-up page](http://go.hpcloud.com/mysql-private-beta-signup).  Service use is free of charge during the private beta period.
-* [HP Cloud Load Balancer as a Service (LBaaS)](/lbaas) -  A managed service enabling automatic traffic routing to multiple back end servers hosted by HP.
+* [Load Balancer as a Service (LBaaS)](/lbaas/) -  A managed service enabling automatic traffic routing to multiple back end servers hosted by HP.<br>
   **Note**: This service requires activation while in private beta; please [request access on our sign-up page](http://go.hpcloud.com/LoadBalancer-private-beta-signup).  Service use is free of charge during the private beta period.
-* [HP Cloud Domain Name Service (DNS)](/dns) - A managed domain name service featuring anycast routing hosted by HP.<br>
+* [Domain Name Service (DNS)](/dns/) - A managed domain name service featuring anycast routing hosted by HP.<br>
   **Note**: This service requires activation while in private beta; please [request access on our sign-up page](http://go.hpcloud.com/DNS-private-beta-signup).  Service use is free of charge during the private beta period.
+* [Monitoring as a Service (MaaS)](/maas/): A managed monitoring service facilitating the monitoring of health and other metrics for the resources in HP Cloud.<br>
+  **Note**: This service requires activation while in private beta; please [request access on our sign-up page](http://go.hpcloud.com/Monitoring-private-beta-signup). Service use is free of charge during the private beta period.
 
 For detailed REST API information, dig into those links above.  In order to interact with the services, you'll need [your API Keys](https://console.hpcloud.com/account/api_keys).
 

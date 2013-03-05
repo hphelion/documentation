@@ -1,29 +1,29 @@
 ---
 layout: default
-title: "Release Notes for the HP Cloud Services Windows PowerShell CLI"
+title: "Release Notes for the HP Cloud Environment CLI Software for Windows PowerShell"
 permalink: /cli/windows/release-notes/
 product: win-cli
 
 ---
-# Release Notes for the HP Cloud Services Windows PowerShell CLI
+# Release Notes for the HP Cloud Environment CLI Software for Windows PowerShell
 
-These are the release notes for the HP Cloud services Windows PowerShell CLI.  The current release number for the [Windows PowerShell CLI software](/cli/windows) is version 1.3.2.2, released on 12/3/2012.  These release notes contain the following information:
+These are the release notes for the HP Cloud environment CLI software for Windows PowerShell.  The current release number for the [HP Cloud environment CLI software for Windows PowerShell](/cli/windows) is version 1.3.3.7, released on 3/4/2013.  These release notes contain the following information:
 
-<!--* [Release 1.3.2.7 Features](#v1327)-->
-
+* [Release 1.3.3.7 Features](#v1337)
 * [Release 1.3.1.9 Features](#v1319)
 * [Release 1.3.0.6 Features](#v1306)
 * [Release 1.3.0.1 Features](#v1301)
 * [Release 1.2.0.6 Features](#v1206)
 * [Release 1.2.0.1 Features](#v1201)
 
-[Please download the latest version of the Windows PowerShell CLI software (Version 1.3.2.2)](/file/WinCLI-1.3.2.2.zip)!  (**Note**: The 1.3.2.2 release contains bug fixes only, and so no release notes are included for that release.)
+[Please download the latest version of the HP Cloud environment CLI software for Windows PowerShell (Version 1.3.3.7)](/file/WinCLI-1.3.3.7.zip)! 
 
-<!--##Release 1.3.2.7 Features## {#v1327}
+##Release 1.3.3.7 Features## {#v1337}
 
-This release was made available on 1/24/2013 and contains the following new features:
+This release was made available on 3/1/2013 and contains the following new features:
 
-* Added cmdlets `[Map-Drive](/cli/windows/reference#Map-Drive)` and `[Remove-Drive](/cli/windows/reference#Remove-Drive)`  to add and remove drives owned by other users to your list of available drives.
+* Support for automatic update checking when opening the shell.
+* Added cmdlets `[New-Container](/cli/windows/reference#New-Container)` and `[Remove-Container](/cli/windows/reference#Remove-Container)` to add and remove containers owned by other users to your list of available containers.
 * Support for file uploads for files greater than 1 gigbyte in size has been added.
 * The `Connect-Server` cmdlet now works with non-Windows instances in conjunction with *putty.exe*.
 * New argument for `Get-Zones` cmdlet. Adding `–v` will return more details about each zone including containers in that zone and available services. Example: `get-zones -v`.
