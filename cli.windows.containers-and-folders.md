@@ -53,7 +53,7 @@ Storage Containers act as a fundamental unit of storage in HP Object Storage. Th
     Ready. . .
     
     PS C:\Program Files (x86)\HP\HPCS-Powershell> cd HPCS:
-    PS HPCS:\> new-container demo
+    PS HPCS:\> new-container -name demo
     
     Storage Container demo created successfully.
 
