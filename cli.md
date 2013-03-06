@@ -4,7 +4,7 @@ title: "HP Cloud Services CLI"
 permalink: /cli/
 
 ---
-# HP Cloud Services CLI
+# HP Cloud CLI
 
 Scriptable access to HP Cloud Services is available to the system administrator in a couple different ways:
 
