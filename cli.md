@@ -6,9 +6,11 @@ permalink: /cli/
 ---
 # HP Cloud CLI
 
-Scriptable access to HP Cloud Services is available to the system administrator in a couple different ways:
+HP Cloud environment command-line interface (CLI) software for Windows PowerShell
 
-* [Unix CLI access](/cli/unix) - Provides command line interactivity for Unix and Mac users
-* [Windows Powershell CLI access](/cli/windows) - Control HP Cloud Services from a Windows Powershell environment
-* [Python Novaclient CLI access](/cli/nova) - An HP extended version of the OpenStack Python Novaclient
+We provide you with the following software packages that provide you with command-line interface access for the following environments:
+
+* [Unix CLI](/cli/unix) - Provides command line interactivity for Unix and Mac users
+* [Windows Powershell CLI](/cli/windows) - Control HP Cloud services from a Windows Powershell environment
+* [Python Novaclient CLI](/cli/nova) - An HP extended version of the OpenStack Python Novaclient
 <!-- * [Euca2ools](http://open.eucalyptus.com/wiki/Euca2oolsGuide) - Is a popular open source CLI that can be configured to work with HP Cloud Services -->
