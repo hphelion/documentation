@@ -6,8 +6,6 @@ permalink: /cli/
 ---
 # HP Cloud CLI
 
-HP Cloud environment command-line interface (CLI) software for Windows PowerShell
-
 We provide you with the following software packages that provide you with command-line interface access for the following environments:
 
 * [Unix CLI](/cli/unix) - Provides command line interactivity for Unix and Mac users
