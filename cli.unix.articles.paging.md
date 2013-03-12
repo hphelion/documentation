@@ -8,7 +8,7 @@ tags: report paging
 ---
 #UNIX CLI: Paging#
 
-There are two configuration settings that can be used to change the way the Unix CLI pages reports report_page_length and storage_page_length.  The report_page_length is the number of records that will be printed in each page of a report.  It defaults to 60 records per page.  The value can be changed with the config:set command, for example:
+There are two configuration settings you can use to change the way the Unix command-line interface (CLI) pages reports report_page_length and storage_page_length.  The report_page_length is the number of records that will be printed in each page of a report.  It defaults to 60 records per page.  The value can be changed with the config:set command, for example:
 
     hpcloud config:set report_page_length=120
 
