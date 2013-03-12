@@ -39,7 +39,7 @@ To list available containers:
     demorama
     demorama2
 
-A long listing of containers will give you the bytes and object count in that container:
+To list available containers with their byte and object count values:
 
     $ hpcloud list -l
       +-------------------+-------+------+
@@ -144,7 +144,7 @@ To list the files in a shared (with cross tenant ACL) container:
     https://r.../demorama/raveonettes
     https://r.../demorama/analytics
 
-A long listing on a container will give you the object names, size, type, MD5 sum, and modification date.
+To list the object names, size, type, MD5 sum, and modification date for a container:
 
     $ hpcloud list -l :clone_container 
       +---------------------------------------------------------+------+------------+----------------------------------+----------------------------+
