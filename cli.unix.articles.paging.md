@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "Unix Command Line Interface: Paging"
+title: "Unix Command Line Interface: Modifying Report Paging"
 permalink: /cli/unix/articles/paging
 product: unix-cli
 categories: cli linux unix
 tags: report paging
 ---
-#UNIX CLI: Paging#
+#UNIX CLI: Modifying Report Paging#
 
 You can use the two command-line interface (CLI) configuration settings `report_page_length` and `storage_page_length` to change the way your reports are generated:
 
