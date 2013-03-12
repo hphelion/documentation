@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "Unix Command Line Interface: Large File Uploads"
+title: "Unix Command Line Interface: Performing Large File Uploads"
 permalink: /cli/unix/articles/large
 product: unix-cli
 categories: cli linux unix
 tags: large file upload download
 ---
-#UNIX CLI: Large File Uploads#
+#UNIX CLI: Performing Large File Uploads#
 
 The Unix command-line interface (CLI) is the perfect way to upload large files.  This article contains some tuning and recovery tips about uploading large files.
 
