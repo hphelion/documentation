@@ -1348,6 +1348,7 @@ List containers or container contents.
 ###Options
 <dl>
 <dt><b>-l, [--long]</b></dt><dd>Long listing.</dd>  
+[<dt><b>--sync]</b></dt><dd>List synchronizations.</dd>  
 <dt><b>-c, [--columns=COLUMNS]</b></dt><dd>Comma separated list of columns in report.</dd>  
 <dt><b>-d, [--separator=SEPARATOR]</b></dt><dd>Use the specified value as the report separator.</dd>  
 <dt><b>-z, [--availability-zone=AVAILABILITY_ZONE]</b></dt><dd>Set the availability zone.</dd>  
