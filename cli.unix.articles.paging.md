@@ -13,7 +13,7 @@ You can use the two command-line interface (CLI) configuration settings `report_
 * `report_page_length` sets the number of records that are printed for each page of a report (default is 60 records per page)
 * `storage_page-length`sets the number of records for each read (default is 10,000 records)
 
-You can change the values with the `[config:set0(/cli/unix/reference#config:set)` command.  To change the number of records per page to 120:
+You can change the values with the `[config:set0(/cli/unix/reference#config:set)]` command.  To change the number of records per page to 120:
 
     hpcloud config:set report_page_length=120
 
