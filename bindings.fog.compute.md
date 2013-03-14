@@ -100,19 +100,60 @@ For information on connecting to the service, please see the [Connecting to the 
         )
 **Note**: In *block_device_mapping*, *volume_size* is ignored as it is automatically retrieved from the specified bootable volume. You can set the *delete_on_termination* parameter to `1` if you want the bootable volume to be deleted after the server instance is killed; otherwise to preserve the bootable volume, set it to `0` as shown above.
 
-6. Reboot a server
+6. Create a new Linux-based server with advanced personalisation options
+
+        new_server = conn.servers.create(
+              :name => "My Personalised Server",
+              :flavor_id => 1,
+              :image_id => 2,
+              :key_name => "hpdefault",
+              :security_groups => ["aaa"],
+              :config_drive => true,
+              :user_data_encoded => ["This is some encoded user data"].pack('m'),
+              :personality => [{
+                'contents'  => File.open("/path/to/sample.txt",
+                'path'      => "/path/to/sample.txt"
+              }]
+        )
+        new_server.id       # returns the id of the server
+        new_server.name     # => "My Personalised Server"
+
+        # Note: that un-encoded user data can also be provided by setting the user_data property
+        # although, encoding the data on the client is faster and efficient
+        new_server = conn.servers.new(
+              :name => "My Personalised Server",
+              ...
+              ...
+        )
+        new_server.user_data = "This is some un-encoded user data"
+        new_server.save
+
+**Note**: Here are the explanations for the personalisation options used above:
+
+* *config_drive* - A configuration drive is a disk that contains a FAT filesystem with configuration data
+that is accessible to the server. The configuration drive is created if the `config_drive` parameter is set
+to `true` at the time of server creation.
+* *user_data_encoded* or *user_data* - This option allows providing additional metadata at the time of server creation
+by supplying a Base64 encoded string in the `user_data_encoded` parameter or by providing an unencoded
+string via the `user_data` attribute. Note that encoding the data on the client is faster and efficient.
+* *personality* - This option allows injection of file(s) into the server instance after it is created.
+The file `contents` are Base64 encoded and then injected into the location specified by `path`.
+
+**Note that the above personalisation options are not supported on Windows server instances.**
+
+7. Reboot a server
 
         server = conn.servers.get(server_id)
         server.reboot          # soft reboot by default
 
         server.reboot("HARD")  # hard reboot also possible
 
-7. Change password for a server
+8. Change password for a server
 
         server = conn.servers.get(server_id)
         server.change_password("new_password")
 
-8. Delete an existing server
+9. Delete an existing server
 
         server = conn.servers.get(server_id)
         server.destroy
@@ -388,15 +429,23 @@ For information on connecting to the service, please see the [Connecting to the 
         server['addresses']                         # returns the public and private addresses
         server['status']                            # returns the state of the server e.g. ACTIVE
 
-4. Create a new server:
+4. Create a new server
 
-        response = conn.create_server("My Shiny Server", flavor_id, image_id)
+        response = conn.create_server(
+            "My Shiny Server",
+            flavor_id,
+            image_id,
+            {
+              'security_groups' => ["SecGroup1, SecGroup2"],
+              'key_name' => "MyKeyPair1"
+            }
+        )
         server = response.body['server']
         server['id']                                # returns the id of the new server
         server['name']                              # => "My Shiny Server"
         server['status']                            # returns the state of the server e.g. BUILD
 
-5. Create a new Windows server and retrieve the encrypted password:
+5. Create a new Windows server and retrieve the encrypted password
 
         # Make sure to use a Windows image
         response = conn.create_server("My Windows Server", flavor_id, image_id)
@@ -407,7 +456,7 @@ For information on connecting to the service, please see the [Connecting to the 
         # => "Im6ZJ8auyMRnkJ24KKWQvTgWDug1s ... y0uY1BcHLJ5OrkEPHhQoQntIKOoQ=\n"
 **Note**: You must retrieve the Windows password immediately after you create the Windows instance. Also, make sure you have a security rule defined to open RDP port 3389 so that you can connect to the Windows server.
 
-6. Create a new Linux-based persistent server with a bootable volume:
+6. Create a new Linux-based persistent server with a bootable volume
 
         conn.create_persistent_server(
               "MyBootableServer",
@@ -424,34 +473,66 @@ For information on connecting to the service, please see the [Connecting to the 
         )
 **Note**: In *block_device_mapping*, *volume_size* is ignored as it is automatically retrieved from the specified bootable volume. You can set the *delete_on_termination* parameter to `1` if you want the bootable volume to be deleted after the server instance is killed; otherwise to preserve the bootable volume, set it to `0` as shown above.
 
-7. Update the name for a server
+7. Create a new Linux-based server with advanced personalisation options
+
+        response = conn.create_server(
+            "My Shiny Server",
+            flavor_id,
+            image_id,
+            {
+              'security_groups' => ["SecGroup1, SecGroup2"],
+              'key_name' => "MyKeyPair1",
+              'config_drive' => true,
+              'user_data_encoded' => ["This is some encoded user data"].pack('m'),
+              'personality' => [{
+                                 'contents'  => File.open("/path/to/sample.txt",
+                                 'path'      => "/path/to/sample.txt"
+                               }]
+            }
+        )
+        server = response.body['server']
+        server['id']                                # returns the id of the new server
+
+**Note**: Here are the explanations for the personalisation options used above:
+
+* *config_drive* - A configuration drive is a disk that contains a FAT filesystem with configuration data
+that is accessible to the server. The configuration drive is created if the `config_drive` parameter is set
+to `true` at the time of server creation.
+* *user_data_encoded* - This option allows providing additional metadata at the time of server creation
+by supplying a Base64 encoded string in the `user_data_encoded` parameter.
+* *personality* - This option allows injection of file(s) into the server instance after it is created.
+The file `contents` are Base64 encoded and then injected into the location specified by `path`.
+
+**Note that the above personalisation options are not supported on Windows server instances.**
+
+8. Update the name for a server
 
         conn.update_server(server_id, {'name' => "My Cool Server"})
         response = conn.get_server_details(server_id)
         response.body['server']['name']             # => "My Cool Server"
 
-8. Change the password for a server
+9. Change the password for a server
 
         conn.change_password_server(server_id, "new_password")
 
-9. List both public and private addresses of a particular server
+10. List both public and private addresses of a particular server
 
         response = conn.list_server_addresses(server_id)
 
-10. List all the private addresses of a particular server
+11. List all the private addresses of a particular server
 
         response = conn.list_server_private_addresses(server_id, "private")    # where "private" is the network name
 
-11. List all the public addresses of a particular server
+12. List all the public addresses of a particular server
 
         response = conn.list_server_public_addresses(server_id, "private")     # where "private" is the network name
 
-12. Reboot a server
+13. Reboot a server
 
         response = conn.reboot_server(server_id, 'HARD')  # Hard reboot a server
         response = conn.reboot_server(server_id, 'SOFT')  # Soft reboot a server
 
-13. Delete an existing server
+14. Delete an existing server
 
         conn.delete_server(server_id)
 
