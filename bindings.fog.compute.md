@@ -59,11 +59,12 @@ For information on connecting to the service, please see the [Connecting to the 
 3. Create a new server
 
         new_server = conn.servers.create(
-               :name => "My Shiny Server",
-               :flavor_id => 1,
-               :image_id => 2,
-               :key_name => "hpdefault",
-               :security_groups => ["aaa"])
+              :name => "My Shiny Server",
+              :flavor_id => 1,
+              :image_id => 2,
+              :key_name => "hpdefault",
+              :security_groups => ["aaa"]
+        )
         new_server.id       # returns the id of the server
         new_server.name     # => "My Shiny Server"
         new_server.state    # returns the state of the server e.g. BUILD
@@ -73,11 +74,12 @@ For information on connecting to the service, please see the [Connecting to the 
 4. Create a new Windows server instance and retrieve the encrypted password:
 
         win_server = conn.servers.create(
-               :name => "My Windows Server",
-               :flavor_id => 1,
-               :image_id => 3,    # Make sure it is a Windows image
-               :key_name => "hpdefault",
-               :security_groups => ["aaa"])
+              :name => "My Windows Server",
+              :flavor_id => 1,
+              :image_id => 3,    # Make sure it is a Windows image
+              :key_name => "hpdefault",
+              :security_groups => ["aaa"]
+        )
         win_server.id       # returns the id of the server
         # Retrieve the encrypted password
         win_server.windows_password
@@ -86,15 +88,16 @@ For information on connecting to the service, please see the [Connecting to the 
 
 5. Create a new Linux-based persistent server with a bootable volume:
 
-        conn.servers.create( :flavor_id => 103,
-                              :name => "MyPersistentServer",
-                              :block_device_mapping =>
-                                   [{ 'volume_size' => '',   # ignored
-                                     'volume_id' => "111111",
-                                     'delete_on_termination' => '0',
-                                     'device_name' => 'vda'
-                                   }]
-                            )
+        conn.servers.create(
+              :flavor_id => 103,
+              :name => "MyPersistentServer",
+              :block_device_mapping =>
+                [{ 'volume_size' => '',   # ignored
+                 'volume_id' => "111111",
+                 'delete_on_termination' => '0',
+                 'device_name' => 'vda'
+                }]
+        )
 **Note**: In *block_device_mapping*, *volume_size* is ignored as it is automatically retrieved from the specified bootable volume. You can set the *delete_on_termination* parameter to `1` if you want the bootable volume to be deleted after the server instance is killed; otherwise to preserve the bootable volume, set it to `0` as shown above.
 
 6. Reboot a server
@@ -119,10 +122,11 @@ For information on connecting to the service, please see the [Connecting to the 
 1. Create a server with some metadata
 
         myserver = conn.servers.create(
-                :flavor_id => 1, 
-                :image_id => 2, 
-                :name => "myserver", 
-                :metadata => {'Meta1' => 'MetaValue1', 'Meta2' => 'MetaValue2'} )
+              :flavor_id => 1,
+              :image_id => 2,
+              :name => "myserver",
+              :metadata => {'Meta1' => 'MetaValue1', 'Meta2' => 'MetaValue2'}
+        )
 
 2. Get the metadata item
 
@@ -397,7 +401,7 @@ For information on connecting to the service, please see the [Connecting to the 
         # Make sure to use a Windows image
         response = conn.create_server("My Windows Server", flavor_id, image_id)
         win_server = response.body['server']
-        server_id = win_server['id']          # returns the id of the new server
+        server_id = win_server['id']                # returns the id of the new server
         # Retrieve the encrypted password 
         conn.get_windows_password(server_id)
         # => "Im6ZJ8auyMRnkJ24KKWQvTgWDug1s ... y0uY1BcHLJ5OrkEPHhQoQntIKOoQ=\n"
@@ -405,18 +409,19 @@ For information on connecting to the service, please see the [Connecting to the 
 
 6. Create a new Linux-based persistent server with a bootable volume:
 
-        conn.create_persistent_server( "MyBootableServer", 
-                               103, 
-                                [{ "volume_size"=>"",         # ignored
-                                    "volume_id"=>"65904",
-                                    "delete_on_termination"=>"0",
-                                    "device_name"=>"vda"
-                                }] ,
-                                {
-                                 'security_groups' => ["mysecgroup"],
-                                 'key_name' => "mykey"
-                                }
-                          )
+        conn.create_persistent_server(
+              "MyBootableServer",
+              103,
+              [{ "volume_size"=>"",                 # ignored
+                  "volume_id"=>"65904",
+                  "delete_on_termination"=>"0",
+                  "device_name"=>"vda"
+              }] ,
+              {
+               'security_groups' => ["mysecgroup"],
+               'key_name' => "mykey"
+              }
+        )
 **Note**: In *block_device_mapping*, *volume_size* is ignored as it is automatically retrieved from the specified bootable volume. You can set the *delete_on_termination* parameter to `1` if you want the bootable volume to be deleted after the server instance is killed; otherwise to preserve the bootable volume, set it to `0` as shown above.
 
 7. Update the name for a server
@@ -454,7 +459,12 @@ For information on connecting to the service, please see the [Connecting to the 
 
 1. Create a server and pass it some metadata at creation
 
-        response = conn.create_server("myserver", 1, 2, {'metadata' => {'Meta1' => 'MetaValue1', 'Meta2' => 'MetaValue2'} })
+        response = conn.create_server(
+                        "myserver", 1, 2,
+                        {'metadata' =>
+                          {'Meta1' => 'MetaValue1', 'Meta2' => 'MetaValue2'}
+                        }
+                   )
         response.body['server']['metadata']        
         # => {"Meta1"=>"MetaValue1", "Meta2"=>"MetaValue2"}
 
