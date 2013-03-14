@@ -44,15 +44,15 @@ To list available volumes:
 
 ##Attaching New Volumes## {#AttachingNewVolumes}
 
-To attach the new volume to server `srv1` as `/dev/sdi` (device names must begin with /dev/sd):
+To attach the new volume to server `srv1` as `/dev/vdi` (device names must begin with /dev/vd):
 
-    $ hpcloud volumes:attach kweller srv1 /dev/sdi
-    Attached volume 'kweller' to 'srv1' on '/dev/sdi'.
+    $ hpcloud volumes:attach kweller srv1 /dev/vdi
+    Attached volume 'kweller' to 'srv1' on '/dev/vdi'.
 
 You may also use a drive number to mount the volume instead of a device name:
 
     $ hpcloud volumes:attach kweller srv1 5
-    Attached volume 'kweller' to 'srv1' on '/dev/sdf'.
+    Attached volume 'kweller' to 'srv1' on '/dev/vde'.
 
 To see the attached volumes with devices:
 
@@ -60,10 +60,10 @@ To see the attached volumes with devices:
       +-----+---------+--------+----------+
       | id  | name    | server | device   |
       +-----+---------+--------+----------+
-      | 877 | svl1    | srv1   | /dev/sdf |
-      | 881 | svl3    | srv1   | /dev/sdh |
-      | 997 | kweller | srv1   | /dev/sdi |
-      | 879 | svl2    | srv2   | /dev/sdg |
+      | 877 | svl1    | srv1   | /dev/vde |
+      | 881 | svl3    | srv1   | /dev/vdh |
+      | 997 | kweller | srv1   | /dev/vdi |
+      | 879 | svl2    | srv2   | /dev/vdg |
       +-----+---------+--------+----------+
 
 See the [knowledge base](https://community.hpcloud.com/knowledge-base) article [Mounting Additional Space](https://community.hpcloud.com/article/mounting-additional-space) to learn how to leverage your attached storage.

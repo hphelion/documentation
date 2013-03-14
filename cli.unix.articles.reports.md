@@ -8,27 +8,28 @@ tags: cli linux object store compute reports
 ---
 #UNIX CLI: Using Automation and Peforming Report Customization#
 
-It is now easier than ever to use the Unix CLI for automation with custom reports.  Nearly all CLI reports now support the `-c` and `-d` options which give you the capability to create your own reports and also to pipe these reports to other commands or import data into programs such as Excel.
+You can use the Unix command-line interface (CLI) for automating custom report generation.  Nearly all CLI reports support the `-c` (columns) and `-d` (debug) options which allow you to create your own reports and to pipe (`|`) these reports to other commands or import the report data into programs such as Excel.
 
-The `-c` option allows you to specify the columns in report and the order in which they appear.  For example, if you wanted a report that only contained the server public IP address, name, and id of your servers
+The `-c` option allows you to specify the columns in report and the order in which they appear.  For example, if you want a report that only contained the public IP address, name, and ID of your servers:
 
     $ hpcloud servers -c public_ip,name,id
 
 
-If you wanted only the names of your volumes:
+If you want only the names of your volumes:
 
     $ hpcloud volumes -c name
 
-The `-d` option allows you to specify the delimiter of the report.  If you use t the option, the report will contain no headers so you can pipe the report to another command.  If you do not give the option and argument, it defaults to a comma.  You could use the output of the command to import the data into a program such as Excel:
+The `-d` option allows you to specify the delimiter of the report.  If you use the `t` option the report contains no headers, which allows you to pipe the report to another command.  (The default delimiter is a comma [`,`].)  You can use the output of the command to import the data into an external program (such as Excel):
 
     $ hpcloud volumes -d
     
+You can then import the information this report's data by copying it from the display and pasting it into a different program, redirecting it to a file and accessing that file from another program, or however you wish.
 
 You can change the delimeter of the report by passing it as an argument to the `-d` option:
 
     $ hpcloud servers -c name,public_ip -d ' '
 
-You could pipe the output of this command to another command:
+You can pipe the output of this command to another command:
 
     $ hpcloud servers -c name,public_ip -d ' ' | while read NAME IP
     do

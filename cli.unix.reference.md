@@ -7,6 +7,10 @@ product: unix-cli
 ---
 Below you can find a full reference of supported UNIX command-line interface (CLI) commands. The commands are alphabetized.  You can also use the <font face="Courier">hpcloud help [<em>command</em>]</font> tool (where <em>command</em> is the name of the command on which you want help, for example <font face="Courier">account:setup</font>) to display usage, description, and option information from the command line.
 
+Many of the commands support a `--debug` option to print verbose trace.  This trace may help you diagnose problems if the CLI is having difficulty communicating with the servers.
+
+The <font face="Courier">hpcloud complete</font> command will attempt to install a bash completion file into your environment.  This will help if you like to use tab completion of commands.
+
 ##account## {#account}
 List your accounts and account settings.
 
@@ -249,6 +253,8 @@ View the ACL for an object or container.
 
 ###Options
 <dl>
+<dt><b>-c, [--columns=COLUMNS]</b></dt><dd>Comma separated list of columns in report.</dd>  
+<dt><b>-d, [--separator=SEPARATOR]</b></dt><dd>Use the specified value as the report separator.</dd>  
 <dt><b>-z, [--availability-zone=AVAILABILITY_ZONE]</b></dt><dd>Set the availability zone.</dd>  
 <dt><b>-x, [--debug=DEBUG]</b></dt><dd>Debug logging 1,2,3,...</dd>  
 <dt><b>-a, [--account-name=ACCOUNT_NAME]</b></dt><dd>Select account.</dd>  
@@ -337,6 +343,8 @@ Display list of available addresses.
 
 ###Options
 <dl>
+<dt><b>-c, [--columns=COLUMNS]</b></dt><dd>Comma separated list of columns in report.</dd>  
+<dt><b>-d, [--separator=SEPARATOR]</b></dt><dd>Use the specified value as the report separator.</dd>  
 <dt><b>-z, [--availability-zone=AVAILABILITY_ZONE]</b></dt><dd>Set the availability zone.</dd>  
 <dt><b>-x, [--debug=DEBUG]</b></dt><dd>Debug logging 1,2,3,...</dd>  
 <dt><b>-a, [--account-name=ACCOUNT_NAME]</b></dt><dd>Select account.</dd>  
@@ -801,6 +809,7 @@ Copy files from one resource to another.
 <dl>
 <dt><b>-m, [--mime=MIME]</b></dt><dd>Set the MIME type of the remote object.</dd>  
 <dt><b>-s, [--source-account=SOURCE_ACCOUNT]</b></dt><dd>Source account name.</dd>  
+<dt><b>-r, [--restart]</b></dt><dd>Restart a previous large file upload.</dd>  
 <dt><b>-z, [--availability-zone=AVAILABILITY_ZONE]</b></dt><dd>Set the availability zone.</dd>  
 <dt><b>-x, [--debug=DEBUG]</b></dt><dd>Debug logging 1,2,3,...</dd>  
 <dt><b>-a, [--account-name=ACCOUNT_NAME]</b></dt><dd>Select account.</dd>  
@@ -854,6 +863,8 @@ List available flavors.
 
 ###Options
 <dl>
+<dt><b>-c, [--columns=COLUMNS]</b></dt><dd>Comma separated list of columns in report.</dd>  
+<dt><b>-d, [--separator=SEPARATOR]</b></dt><dd>Use the specified value as the report separator.</dd>  
 <dt><b>-z, [--availability-zone=AVAILABILITY_ZONE]</b></dt><dd>Set the availability zone.</dd>  
 <dt><b>-x, [--debug=DEBUG]</b></dt><dd>Debug logging 1,2,3,...</dd>  
 <dt><b>-a, [--account-name=ACCOUNT_NAME]</b></dt><dd>Select account.</dd>  
@@ -919,6 +930,8 @@ List the available images in your compute account.
 
 ###Options
 <dl>
+<dt><b>-c, [--columns=COLUMNS]</b></dt><dd>Comma separated list of columns in report.</dd>  
+<dt><b>-d, [--separator=SEPARATOR]</b></dt><dd>Use the specified value as the report separator.</dd>  
 <dt><b>-z, [--availability-zone=AVAILABILITY_ZONE]</b></dt><dd>Set the availability zone.</dd>  
 <dt><b>-x, [--debug=DEBUG]</b></dt><dd>Debug logging 1,2,3,...</dd>  
 <dt><b>-a, [--account-name=ACCOUNT_NAME]</b></dt><dd>Select account.</dd>  
@@ -982,6 +995,8 @@ List the metadata for an image.
 
 ###Options
 <dl>
+<dt><b>-c, [--columns=COLUMNS]</b></dt><dd>Comma separated list of columns in report.</dd>  
+<dt><b>-d, [--separator=SEPARATOR]</b></dt><dd>Use the specified value as the report separator.</dd>  
 <dt><b>-z, [--availability-zone=AVAILABILITY_ZONE]</b></dt><dd>Set the availability zone.</dd>  
 <dt><b>-x, [--debug=DEBUG]</b></dt><dd>Debug logging 1,2,3,...</dd>  
 <dt><b>-a, [--account-name=ACCOUNT_NAME]</b></dt><dd>Select account.</dd>  
@@ -1099,6 +1114,8 @@ List the available keypairs.
 
 ###Options
 <dl>
+<dt><b>-c, [--columns=COLUMNS]</b></dt><dd>Comma separated list of columns in report.</dd>  
+<dt><b>-d, [--separator=SEPARATOR]</b></dt><dd>Use the specified value as the report separator.</dd>  
 <dt><b>-z, [--availability-zone=AVAILABILITY_ZONE]</b></dt><dd>Set the availability zone.</dd>  
 <dt><b>-x, [--debug=DEBUG]</b></dt><dd>Debug logging 1,2,3,...</dd>  
 <dt><b>-a, [--account-name=ACCOUNT_NAME]</b></dt><dd>Select account.</dd>  
@@ -1330,6 +1347,10 @@ List containers or container contents.
 
 ###Options
 <dl>
+<dt><b>-l, [--long]</b></dt><dd>Long listing.</dd>  
+[<dt><b>--sync]</b></dt><dd>List synchronizations.</dd>  
+<dt><b>-c, [--columns=COLUMNS]</b></dt><dd>Comma separated list of columns in report.</dd>  
+<dt><b>-d, [--separator=SEPARATOR]</b></dt><dd>Use the specified value as the report separator.</dd>  
 <dt><b>-z, [--availability-zone=AVAILABILITY_ZONE]</b></dt><dd>Set the availability zone.</dd>  
 <dt><b>-x, [--debug=DEBUG]</b></dt><dd>Debug logging 1,2,3,...</dd>  
 <dt><b>-a, [--account-name=ACCOUNT_NAME]</b></dt><dd>Select account.</dd>  
@@ -1502,6 +1523,8 @@ List the available security groups.
 
 ###Options
 <dl>
+<dt><b>-c, [--columns=COLUMNS]</b></dt><dd>Comma separated list of columns in report.</dd>  
+<dt><b>-d, [--separator=SEPARATOR]</b></dt><dd>Use the specified value as the report separator.</dd>  
 <dt><b>-z, [--availability-zone=AVAILABILITY_ZONE]</b></dt><dd>Set the availability zone.</dd>  
 <dt><b>-x, [--debug=DEBUG]</b></dt><dd>Debug logging 1,2,3,...</dd>  
 <dt><b>-a, [--account-name=ACCOUNT_NAME]</b></dt><dd>Select account.</dd>  
@@ -1592,6 +1615,8 @@ Display the list of rules for a security group.
 
 ###Options
 <dl>
+<dt><b>-c, [--columns=COLUMNS]</b></dt><dd>Comma separated list of columns in report.</dd>  
+<dt><b>-d, [--separator=SEPARATOR]</b></dt><dd>Use the specified value as the report separator.</dd>  
 <dt><b>-z, [--availability-zone=AVAILABILITY_ZONE]</b></dt><dd>Set the availability zone.</dd>  
 <dt><b>-x, [--debug=DEBUG]</b></dt><dd>Debug logging 1,2,3,...</dd>  
 <dt><b>-a, [--account-name=ACCOUNT_NAME]</b></dt><dd>Select account.</dd>  
@@ -1691,6 +1716,8 @@ List the available servers.
 
 ###Options
 <dl>
+<dt><b>-c, [--columns=COLUMNS]</b></dt><dd>Comma separated list of columns in report.</dd>  
+<dt><b>-d, [--separator=SEPARATOR]</b></dt><dd>Use the specified value as the report separator.</dd>  
 <dt><b>-z, [--availability-zone=AVAILABILITY_ZONE]</b></dt><dd>Set the availability zone.</dd>  
 <dt><b>-x, [--debug=DEBUG]</b></dt><dd>Debug logging 1,2,3,...</dd>  
 <dt><b>-a, [--account-name=ACCOUNT_NAME]</b></dt><dd>Select account.</dd>  
@@ -1795,6 +1822,8 @@ List the metadata for a server.
 
 ###Options
 <dl>
+<dt><b>-c, [--columns=COLUMNS]</b></dt><dd>Comma separated list of columns in report.</dd>  
+<dt><b>-d, [--separator=SEPARATOR]</b></dt><dd>Use the specified value as the report separator.</dd>  
 <dt><b>-z, [--availability-zone=AVAILABILITY_ZONE]</b></dt><dd>Set the availability zone.</dd>  
 <dt><b>-x, [--debug=DEBUG]</b></dt><dd>Debug logging 1,2,3,...</dd>  
 <dt><b>-a, [--account-name=ACCOUNT_NAME]</b></dt><dd>Select account.</dd>  
@@ -2031,6 +2060,8 @@ List block devices available.
 
 ###Options
 <dl>
+<dt><b>-c, [--columns=COLUMNS]</b></dt><dd>Comma separated list of columns in report.</dd>  
+<dt><b>-d, [--separator=SEPARATOR]</b></dt><dd>Use the specified value as the report separator.</dd>  
 <dt><b>-z, [--availability-zone=AVAILABILITY_ZONE]</b></dt><dd>Set the availability zone.</dd>  
 <dt><b>-x, [--debug=DEBUG]</b></dt><dd>Debug logging 1,2,3,...</dd>  
 <dt><b>-a, [--account-name=ACCOUNT_NAME]</b></dt><dd>Select account.</dd>  
@@ -2156,7 +2187,9 @@ List the available block devices.
 
 ###Options
 <dl>
-<dt><b>-b, [--bootable]</b></dt><dd>List the bootable volumes.</dd>  
+<dt><b>-b, [--bootable]</b></dt><dd>List only the bootable volumes.</dd>  
+<dt><b>-c, [--columns=COLUMNS]</b></dt><dd>Comma separated list of columns in report.</dd>  
+<dt><b>-d, [--separator=SEPARATOR]</b></dt><dd>Use the specified value as the report separator.</dd>  
 <dt><b>-z, [--availability-zone=AVAILABILITY_ZONE]</b></dt><dd>Set the availability zone.</dd>  
 <dt><b>-x, [--debug=DEBUG]</b></dt><dd>Debug logging 1,2,3,...</dd>  
 <dt><b>-a, [--account-name=ACCOUNT_NAME]</b></dt><dd>Select account.</dd>  
@@ -2237,20 +2270,20 @@ Attach a volume to a server specified by device name or number.
 </dl>
 
 ###Description
-Attach a volume to a server on the specified device name.  You may specify a device name in the format /dev/sdX where X is b, c, d, ... or a mount point 1, 2, 3,...  The mount point 1 would map to /dev/sdb on a Linux platform.
+Attach a volume to a server on the specified device name.  You may specify a device name in the format /dev/vdX where X is c, d, e, ... or a attacment point 3, 4, 5,...  The attacment point 1 would map to /dev/vda on a Linux platform, but /dev/vda and /dev/vdb are already in use by the server, so you need to start with 3 or /dev/vdc.  If you attempt to attach a volume to an attachment point that is in use, it will fail silently.  The call is asynchronous and the failure cannot be detected by the CLI.  If you attempt to mount to attachment point 4 and attachment point 3 is not in use, your volume will be attached to attachment point 3 or /dev/vdc on Linux.  This cannot be detected by the CLI.
 
 ###Examples
-Attach volume `myVolume` to server `myServer` on device `/dev/sdf`:
+Attach volume `myVolume` to server `myServer` on device `/dev/vdc`:
 
-    hpcloud volumes:attach myVolume myServer /dev/sdf
+    hpcloud volumes:attach myVolume myServer /dev/vdc
 
-Attach volume `myVolume` to server `myServer` on device `/dev/sdb`:
+Attach volume `myVolume` to server `myServer` on device `/dev/vdb`:
 
-    hpcloud volumes:attach myVolume myServer 1
+    hpcloud volumes:attach myVolume myServer 4
 
-Attach volume `my-volume` to server `myServer` on device `/dev/sdf` for availability zone `az-2.region-a.geo-1`:
+Attach volume `my-volume` to server `myServer` on device `/dev/vdg` for availability zone `az-2.region-a.geo-1`:
 
-    hpcloud volumes:attach my-volume myServer /dev/sdg -z az-2.region-a.geo-1
+    hpcloud volumes:attach my-volume myServer /dev/vdg -z az-2.region-a.geo-1
 
 
 ##volumes:detach## {#volumes:detach}
@@ -2323,6 +2356,8 @@ List the volumes on server.
 
 ###Options
 <dl>
+<dt><b>-c, [--columns=COLUMNS]</b></dt><dd>Comma separated list of columns in report.</dd>  
+<dt><b>-d, [--separator=SEPARATOR]</b></dt><dd>Use the specified value as the report separator.</dd>  
 <dt><b>-z, [--availability-zone=AVAILABILITY_ZONE]</b></dt><dd>Set the availability zone.</dd>  
 <dt><b>-x, [--debug=DEBUG]</b></dt><dd>Debug logging 1,2,3,...</dd>  
 <dt><b>-a, [--account-name=ACCOUNT_NAME]</b></dt><dd>Select account.</dd>  

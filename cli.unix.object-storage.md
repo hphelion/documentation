@@ -39,11 +39,16 @@ To list available containers:
     demorama
     demorama2
 
-or
+To list available containers with their byte and object count values:
 
-    $ hpcloud containers
-    demorama
-    demorama2
+    $ hpcloud list -l
+      +-------------------+-------+------+
+      | sname             | count | size |
+      +-------------------+-------+------+
+      | big               | 10    | 2456 |
+      | copy              | 5031  | 0    |
+      | cross             | 5     | 66   |
+      +-------------------+-------+------+
 
 ##Copy Commands## {#CopyCommands}
 
@@ -139,18 +144,19 @@ To list the files in a shared (with cross tenant ACL) container:
     https://r.../demorama/raveonettes
     https://r.../demorama/analytics
 
-A long listing of containers will give you the bytes and object count in that container:
+To list the object names, size, type, MD5 sum, and modification date for a container:
 
-    $ hpcloud list -l
-      +-------------------+-------+------+
-      | sname             | count | size |
-      +-------------------+-------+------+
-      | big               | 10    | 2456 |
-      | copy              | 5031  | 0    |
-      | cross             | 5     | 66   |
-      +-------------------+-------+------+
-
-A long listing on a container will give you the object names, size, type, MD5 sum, and modification date.
+    $ hpcloud list -l :clone_container 
+      +---------------------------------------------------------+------+------------+----------------------------------+----------------------------+
+      | sname                                                   | size | type       | etag                             | modified                   |
+      +---------------------------------------------------------+------+------------+----------------------------------+----------------------------+
+      | nested/Matryoshka/Putin/Medvedev.txt                    | 16   | text/plain | 7cb77c03d207f10b0fdb8b7e09592a21 | 2013-01-23T14:04:57.570290 |
+      | nested/Matryoshka/Putin/Vladimir.txt                    | 15   | text/plain | 64049c2a21421cba3f99a9008ac4abad | 2013-01-23T14:04:59.314870 |
+      | nested/Matryoshka/Putin/Yeltsin/Boris.txt               | 16   | text/plain | 7dfeb9b922726430294039983afcded5 | 2013-01-23T14:05:01.056420 |
+      | nested/Matryoshka/Putin/Yeltsin/Gorbachev/Andropov.txt  | 15   | text/plain | 062d1572570f7ad2776fb942e8c97aff | 2013-01-23T14:05:02.810180 |
+      | nested/Matryoshka/Putin/Yeltsin/Gorbachev/Chernenko.txt | 16   | text/plain | e16e3409a074c46c2846569a2c23042a | 2013-01-23T14:05:04.597210 |
+      | nested/Matryoshka/Putin/Yeltsin/Gorbachev/Mikhail.txt   | 15   | text/plain | 189c47c8979573f7f511538dbd255d57 | 2013-01-23T14:05:06.643640 |
+      +---------------------------------------------------------+------+------------+----------------------------------+----------------------------+
 
 ##Get Command## {#GetCommand}
 

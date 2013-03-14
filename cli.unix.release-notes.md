@@ -5,8 +5,9 @@ permalink: /cli/unix/release-notes/
 product: unix-cli
 
 ---
-These are the release notes for the HP Cloud services UNIX CLI.  The current release number for the [UNIX CLI software](/cli/unix) is version 1.6.0, released on 01/29/13.
+These are the release notes for the HP Cloud services UNIX CLI.  The current release number for the [UNIX CLI software](/cli/unix) is version 1.7.0, released on 03/14/13.
 
+* [Release 1.7.0 Features](#v1_7_0)
 * [Release 1.6.0 Features](#v1_6_0)
 * [Release 1.5.0 Features](#v1_5_0)
 * [Release 1.4.0 Features](#v1_4_0)
@@ -18,13 +19,27 @@ These are the release notes for the HP Cloud services UNIX CLI.  The current rel
 
 #HP Cloud Services UNIX CLI Release Notes
 
+##Release 1.7.0 Features## {#v1_7_0}
+
+The 1.7.0 release is available for download from https://docs.hpcloud.com/file/hpcloud-1.7.0.gem.  This release was made available on 3/1/2013 and contains the following new features:
+
+* Support for large file uploads greater than 5 gigabytes added
+* Option `-r` (retry) for large file uploads added
+* Option `-c` option added to most reports so you can specify the columns they want to see
+* Option `-d` option added to most reports so you can specify the column delimiter for reports
+* Option `-l` added to provide a long listing for containers and their contents
+
+###Known Issues###
+
+* None for this release.
+
 ##Release 1.6.0 Features## {#v1_6_0}
 
 The 1.6.0 release is available for download from https://docs.hpcloud.com/file/hpcloud-1.6.0.gem.  This release was made available on 1/30/2013 and contains the following new features:
 
-* Compatibility with the 0.0.19 Ruby Fog release
-* Command `servers:ssh` supports using an IP address in addition to the server name or ID
-* Several minor bug fixes
+* Compatibility with the 0.0.19 Ruby Fog release included
+* Command `servers:ssh` supports using an IP address in addition to the server name or ID added
+* Several minor bug fixes included
 
 ###Known Issues###
 
@@ -34,7 +49,7 @@ The 1.6.0 release is available for download from https://docs.hpcloud.com/file/h
 
 The 1.5.0 release is available for download from https://docs.hpcloud.com/file/hpcloud-1.5.0.gem.  This release was made available on 1/18/2013 and contains the following new features:
 
-* Command `complete` to install a bash completion file to allow you to tab complete hpcloud commands
+* Command `complete` added to install a bash completion file to allow you to tab complete hpcloud commands
 * Option `--debug` added to most commands to produce verbose trace
 * Option `--source-account` added to the `copy` command to allow files to be copied from one account to another.
 * Command `migrate` added to allow object store migration from different providers.
