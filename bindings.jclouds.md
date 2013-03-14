@@ -13,6 +13,8 @@ HP has developed an HP Cloud Compute jclouds provider for the [jclouds](http://w
 The HP Cloud Compute jclouds provider extends the functionality of the jclouds OpenStack Nova API provider and provides metadata specific to HP Cloud Services. 
 <!--Please refer to the jclouds documentation on how to access the [BlobStore API](http://www.jclouds.org/documentation/userguide/blobstore-guide) abstraction, as well as gaining access to the provider's API specific context.-->
 
+[**Download** the jClouds bindings package](http://www.jclouds.org/documentation/userguide/installation-guide).
+
 ##Installation ## {#Installation}
 
 For installation, please [surf on over to the jclouds.org](http://www.jclouds.org/documentation/userguide/installation-guide) page and follow the instructions.

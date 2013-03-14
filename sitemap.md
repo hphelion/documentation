@@ -30,6 +30,8 @@ HP Cloud Available Services<br> <!--Need to add a page for this -->
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[LBaaS API](/api/lbaas)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Domain Name Service (DNS) Overview](/dns)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[DNS API](/api/dns)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Monitoring as a Service (MaaS) Overview](/maas)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[MaaS API](/api/monitoring)<br>
 [HP Cloud Bindings](/bindings)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Ruby Fog Overview](/bindings/fog)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Installation](/bindings/fog/install)<br>
