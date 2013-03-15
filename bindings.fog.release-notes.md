@@ -26,7 +26,7 @@ This release was made available on 03/15/2013 and contains the following new fea
 * Support for `user_data` when creating servers using the compute service added
 * Support for one and two way container synchronization in object storage service added
 
-This version of the HP Cloud Ruby Fog bindings has been feature-merged with Fog version 1.10.0.
+This version of the HP Cloud Ruby Fog bindings has been feature-merged with [Fog version 1.10.0](http://github.com/fog/fog).
 
 ###Known Issues###
 
