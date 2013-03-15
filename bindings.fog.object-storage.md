@@ -141,7 +141,7 @@ To grant access to an object or a container:
         sd = conn.shared_directories.get(mydir.public_url)
         sf = sd.files.get('sample.txt')
         
-4. Use the shared URLs to get the metadata for a shared object
+4. Use the shared URLs to get the metadata for a shared object:
 
         sd = conn.shared_directories.get(mydir.public_url)
         sf = sd.files.head('sample.txt')
@@ -167,12 +167,11 @@ To grant access to an object or a container:
         sd = conn.shared_directories.get(mydir.public_url)
         sd.destroy
 
-###Sychronize containers across regions### {#SychronizeContainersModelLayer}
+###Synchronize containers across regions### {#SynchronizeContainersModelLayer}
 
-Container sync creates a one-way association between containers to sync objects. The syncing operation is performed by a background process on the container server.
-A one-time setup is required to set the metadata on the containers for syncing.
+Synchronizing containers creates a one-way association from containers to the sync objects. The sync operation is performed by a background process on the container server. You must perform a one-time setup to set the metadata on the containers for syncing.
 
-1. One-Way sync of containers (from source to target only)
+1. One-Way sync of containers (from source to target only):
 
         # create source and target containers
         conn.directories.create(:key => 'imp_stuff')
@@ -187,7 +186,7 @@ A one-time setup is required to set the metadata on the containers for syncing.
         dir.sync(target_dir, "boogieman")       # => true
         dir.save                                # => true
 
-2. Two-Way sync of containers (from source to target and visa-versa)
+2. Two-Way sync of containers (from source to target and back):
 
         # Now, lets do a two way sync between dir and target containers
         target_dir = conn.directories.get('sync_archive')
@@ -197,7 +196,7 @@ A one-time setup is required to set the metadata on the containers for syncing.
         target_dir.sync(dir, "boogieman")       # => true
         target_dir.save                         # => true
 
-3. One/Two-way sync of containers across regions
+3. One and two-way sync of containers across regions:
 
         # assuming source container exists in region-a
         dir_a = conn.directories.get('imp_stuff')          # Note: conn points to region-a
@@ -215,7 +214,7 @@ A one-time setup is required to set the metadata on the containers for syncing.
 
 ##Using the Request Abstraction## {#UsingtheRequestAbstraction}
 
-1. List all container for the given account
+1. List all container for the given account:
 
         response = conn.get_containers
         response.body               # returns an array of container hash objects
@@ -223,13 +222,13 @@ A one-time setup is required to set the metadata on the containers for syncing.
         response.body[0]["count"]   # returns the number of objects in the container
         response.body[0]["bytes"]   # returns the total bytes for the objects in the container
 
-2. Create a new container
+2. Create a new container:
 
         container = conn.put_container("fog-rocks")   # creates the container
         container.headers                             # returns a hash of headers
         container.headers["Content-Length"]           # returns the content-length
 
-3. View a container
+3. View a container:
 
         container = conn.get_container("fog-rocks")
         container.body                                # returns an array of objects hash
@@ -241,7 +240,7 @@ A one-time setup is required to set the metadata on the containers for syncing.
         container.headers["X-Container-Bytes-Used"]   # returns the total bytes for the objects in the container
         container.status                              # HTTP status code for the operation
 
-4. View the container's headers and metadata without getting the content
+4. View the container's headers and metadata without getting the content:
 
         container = conn.head_container("fog-rocks")
         container.body                             # returns an empty body
@@ -250,13 +249,13 @@ A one-time setup is required to set the metadata on the containers for syncing.
         container.headers["Content-Type"]          # returns the content-type
         container.status                           # HTTP status code for the operation
 
-5. Create a new file into an existing container
+5. Create a new file into an existing container:
 
         file = conn.put_object("fog-rocks", "sample.txt", File.open('/path/to/file/sample.txt'))
         file.headers                            # returns a hash of headers
         file.headers["Content-Length"]          # returns the content-length
 
-6. View a file from an existing container
+6. View a file from an existing container:
 
         file = conn.get_object("fog-rocks", "sample.txt")
         file.body                               # returns the contents of the file
@@ -265,7 +264,7 @@ A one-time setup is required to set the metadata on the containers for syncing.
         file.headers["Content-Type"]            # returns the content-type
         file.status                             # HTTP status code for the operation
 
-7. View the file's headers and metadata without getting the content
+7. View the file's headers and metadata without getting the content:
 
         file = conn.head_object("fog-rocks", "sample.txt")
         file.body                               # returns the empty body
@@ -274,7 +273,7 @@ A one-time setup is required to set the metadata on the containers for syncing.
         file.headers["Content-Type"]            # returns the content-type
         file.status                             # HTTP status code for the operation
 
-8. Copy a file within the same container
+8. Copy a file within the same container:
 
         # copy an object
         conn.put_object("fog-rocks", "another-sample.txt", nil, {'X-Copy-From' => "/fog-rocks/sample.txt" })
@@ -283,7 +282,7 @@ A one-time setup is required to set the metadata on the containers for syncing.
         other_file.headers                            # returns a hash of headers
         other_file.headers["Content-Length"]          # returns the content-length
 
-9. Copy a file from one container to another container
+9. Copy a file from one container to another container:
 
         # create a new container
         conn.put_container("fog-rocks-2")             # creates the other new container
@@ -294,17 +293,17 @@ A one-time setup is required to set the metadata on the containers for syncing.
         other_file.headers                            # returns a hash of headers
         other_file.headers["Content-Length"]          # returns the content-length
 
-10. Generate a temporary URL for a file or object for sharing purposes
+10. Generate a temporary URL for a file or object for sharing purposes:
 
         # creates a TempUrl to access sample.txt and access expires in 240 secs
         conn.get_object_temp_url("fog-rocks", "sample.txt", 240, "GET")
         
-11. Delete a file from an existing container
+11. Delete a file from an existing container:
 
         conn.delete_object("fog-rocks", "sample.txt")
         conn.delete_object("fog-rocks", "another-sample.txt")
 
-12. Delete an existing container
+12. Delete an existing container:
 
         # Note: a container needs to be empty before it can be deleted!
         conn.delete_container("fog-rocks")
@@ -349,12 +348,11 @@ To use object ACLs in the request abstraction layer, you need to have already be
 
         conn.delete_shared_object(myfile.public_url)
 
-###Sychronize containers across regions### {#SychronizeContainersRequestLayer}
+###Synchronize containers across regions### {#SynchronizeContainersRequestLayer}
 
-Container sync creates a one-way association between containers to sync objects. The syncing operation is performed by a background process on the container server.
-A one-time setup is required to set the metadata on the containers for syncing.
+Synchronizing containers creates a one-way association from containers to the sync objects. The sync operation is performed by a background process on the container server. You must perform a one-time setup to set the metadata on the containers for syncing.
 
-1. One-Way sync of containers (from source to target only)
+1. One-Way sync of containers (from source to target only):
 
         # create source and target containers
         conn.put_container('imp_stuff')
@@ -373,7 +371,7 @@ A one-time setup is required to set the metadata on the containers for syncing.
                             {'X-Container-Sync-Key' => 'boogieman'}
                           )
 
-2. Two-Way sync of containers (from source to target and visa-versa)
+2. Two-Way sync of containers (from source to target and visa-versa):
 
         # Now, lets do a two way sync between dir and target containers
         # to sync we need to put some metadata on the source and target containers
@@ -386,7 +384,7 @@ A one-time setup is required to set the metadata on the containers for syncing.
                              'X-Container-Sync-Key' => 'boogieman'}
                           )
 
-3. One/Two-way sync of containers across regions
+3. One and two-way sync of containers across regions:
 
         # assuming source container exists in region-a
         conn.get_container('imp_stuff')                         # Note: conn points to region-a
