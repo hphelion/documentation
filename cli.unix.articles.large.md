@@ -17,7 +17,7 @@ If you upload files larger than 5 gigabytes (GB) with the Unix CLI, they are div
 
 ##Tuning## {#Tuning}
 
-There are several configuration settings you may need to tune by setting them with the `[config:set](/cli/unix/reference#config:set/)` command when you upload or download large files:
+There are several configuration settings you may need to tune by setting them with the `[config:set](/cli/unix/reference#config:set)` command when you upload or download large files:
 
 * `read_timeout` : The timeout in seconds to complete a read (default 240 seconds)
 * `write_timeout` : The timeout in seconds to complete a write (default 240 seconds)
