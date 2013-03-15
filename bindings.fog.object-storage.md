@@ -127,7 +127,7 @@ To grant access to an object or a container:
         => "https://objects.xxxx.hpcloud.net:443/v1/1111111/rgtest2"
         
         sd.files
-    
+        
   **Note**: If the grantee does not have access, the system generates an exception of type `Fog::HP::Errors::Forbidden`.
         
 2. Use the shared URLs to get the metadata for a container:
