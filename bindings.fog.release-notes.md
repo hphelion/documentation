@@ -22,17 +22,11 @@ These are the release notes for the HP Cloud services Ruby Fog bindings.  The cu
 
 This release was made available on 03/15/2013 and contains the following new features:
 
-[hp] Add Accept header with application/json for all HP requests.
-[hp|compute] Fix mock for create server.
+* Support for `Accept` header for all requests with *application/json* added
+* Support for `user_data` when creating servers using the compute service added
+* Support for one and two way container synchronization in object storage service added
 
-
-* Item
-* Item 
-* Block Storage namespace updated to `Fog::HP::BlockStorage` instead of `Fog::BlockStorage::HP`
-* Variable `:hp_account_id` deprecated in favor of `:hp_access_key` in the service connection call
-* Issue with a temporary URL to use a signer that is backward compatible to 1.8.7 fixed
-* Issue in the storage provider with a service catalog having an invalid CDN endpoint fixed
-* Updated to include the upstream changes from `fog v1.9.0`
+This version of the HP Cloud Ruby Fog bindings has been feature-merged with Fog version 1.10.0.
 
 ###Known Issues###
 
