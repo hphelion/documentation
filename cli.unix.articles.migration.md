@@ -6,7 +6,7 @@ product: unix-cli
 categories: cli linux object store migration
 tags: cli linux object store migration aws rackspace google
 ---
-#UNIX CLI: Performing UNIX Object Storage Migration#
+#UNIX CLI: Performing UNIX object storage migration#
 
 You can use the Unix CLI to migrate object store data from other cloud storage providers to your HP Cloud Services (HPCS) object storage containers.  You can copy objects individually, or perform a recursive copy of multiple files.
 
@@ -15,7 +15,7 @@ You can perform object migration from the AWS, Google, and Rackspace services.  
 * [Getting started migrating your data](#GettingStarted)
 * [Performing a migration](#Performing)
 
-##Getting Started Migrating Your Data## {#GettingStarted}
+##Getting started migrating your data## {#GettingStarted}
 
 First you need to [download and install the latest Unix CLI client](/cli/unix/install) and set up your HPCS account as the default.  Next, create a UNIX CLI account with the credentials of the source from which you wish to migrate objects.  Use the `-p` option of the [`account:setup`](/cli/unix/reference#account:setup) to specify an alternate provider.  If you use the `-p` option with AWS, Google or Rackspace, you are prompted to enter the provider-appropriate credentials, and the `account:setup` command attempts to verify the account.  
 
@@ -38,7 +38,7 @@ You can use simple commands such as `list` with this account:
     tuna
     $
 
-##Performing a Migration## {#Performing}
+##Performing a migration## {#Performing}
 
 Once you have set up an account, you can use the [`migrate`] (/cli/unix/reference#migrate) command to recursively copy data from the source account into your HPCS account.  
 
