@@ -9,9 +9,7 @@ product: unix-cli
 
 Before you can begin working with the UNIX CLI, you have to install the package (of course!).  The instructions below work for Ubuntu, MacOS X, and CentOS installations.  Take a look at the [HP Cloud Unix CLI - Release Notes](/cli/unix/release-notes) for the latest features.
 
-[You can download the latest version of the UNIX CLI software here (Version 1.6.0)](/file/hpcloud-1.6.0.gem)!
-
-<!-- list of prerequisites? -->
+[You can download the latest version of the UNIX CLI software here (Version 1.7.0)](/file/hpcloud.gem)!
 
 To install the UNIX CLI software, follow these steps:
 
@@ -19,8 +17,8 @@ To install the UNIX CLI software, follow these steps:
 
 2. Download and install the HPCloud Unix CLI gem using curl:
 
-        curl -sL https://docs.hpcloud.com/file/hpcloud-1.6.0.gem >hpcloud-1.6.0.gem
-        sudo gem install hpcloud-1.6.0.gem
+        curl -sL https://docs.hpcloud.com/file/hpcloud.gem >hpcloud.gem
+        sudo gem install hpcloud.gem
 
 3. Verify the installation:
 

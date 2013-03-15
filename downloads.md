@@ -20,7 +20,7 @@ Here's what we have for you:
 ##Command-line Interface (CLI) Packages##
 
 ###UNIX CLI### {#UNIXCLIInstall}
-* [Installation package, Version 1.6.0](/file/hpcloud-1.6.0.gem)
+* [Installation package, Version 1.7.0](/file/hpcloud.gem)
 * [Overview page](/cli/unix)
 * [Release Notes](/cli/unix/release-notes)
 
