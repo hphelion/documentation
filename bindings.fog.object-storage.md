@@ -180,6 +180,7 @@ Synchronizing containers creates a one-way association from containers to the sy
         conn.directories.create(:key => 'imp_stuff')
         conn.directories.create(:key => 'sync_archive')
         dir = conn.directories.get('imp_stuff')
+        target_dir = conn.directories.get('sync_archive')
 
         # create some objects in the source container
         dir.files.create(:key => 'imp_1.txt', :body => "This is a small file but it is very important.")
@@ -192,8 +193,8 @@ Synchronizing containers creates a one-way association from containers to the sy
 2. Two-Way sync of containers (from source to target and back):
 
         # Now, lets do a two way sync between dir and target containers
-        target_dir = conn.directories.get('sync_archive')
         dir = conn.directories.get('imp_stuff')
+        target_dir = conn.directories.get('sync_archive')
 
         # sync the target -> source
         target_dir.sync(dir, "boogieman")       # => true
