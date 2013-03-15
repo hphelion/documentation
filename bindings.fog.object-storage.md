@@ -102,9 +102,11 @@ For information on connecting to the service, please see the [Connecting to the 
 
 **Note**: You cannot use the create, update, or delete operations on a shared container.
 
-###Using Object ACLs### {#UsingObjectACLsModelLayer}
+###About using object ACLs### {#UsingObjectACLsModelLayer}
 
 Object ACLs allow you to share containers and objects with other registered HP Cloud Services users.  The owner of a container or object can grant read, write, read/write access to other users.  The shared containers and objects can then be accessed based on the permissions granted by the owner.
+
+###Using the object ACLs to grant access### 
 
 To grant access to an object or a container:
 
@@ -117,7 +119,8 @@ To grant access to an object or a container:
     myfile = mydir.files.get("sample.txt")   # share the url for access to object
     myfile.public_url
      => "https://objects.xxxx.hpcloud.net:443/v1/1111111/rgtest2/sample.txt"
-     
+
+###Using the object ACLs to access shared objects###
 
 1. Use the shared URLs to get the contents of a shared container:
 
