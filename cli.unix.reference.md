@@ -799,6 +799,36 @@ Delete the container `my_container` for availability zone 'region-a.geo-1`:
 ###Aliases
 `containers:rm, containers:delete, containers:del`
 
+##containers:sync## {#containers:sync}
+Allow container synchronization.
+
+###Syntax
+`hpcloud containers:sync name key [location]`
+
+###Options
+<dl>
+<dt><b>-z, [--availability-zone=AVAILABILITY_ZONE]</b></dt><dd>Set the availability zone.</dd>  
+<dt><b>-x, [--debug=DEBUG]</b></dt><dd>Debug logging 1,2,3,...</dd>  
+<dt><b>-a, [--account-name=ACCOUNT_NAME]</b></dt><dd>Select account.</dd>  
+</dl>
+
+###Description
+Allow container synchronization using the specified key.  If you are creating a destination for synchronization, only the key should be specified.  If you are creating a source for synchronization, specify a key and location.  The same key must be used in the source and destination.  It is possible have containers as both a source and destination.  List your synchronization information with the "hpcloud list --sync" command.
+
+###Examples
+Set up the container :atainer to be a destination for synchronization
+
+    hpcloud containers:sync :atainer keyo
+
+Synchronize :btainer to remote container :atainer
+
+    hpcloud containers:sync :btainer keyo https://region-a.geo-1.objects.hpcloudsvc.com:443/v1/96XXXXXX/atainer
+
+Create a two way synchronization betwee :atainer and :btainer
+
+    hpcloud containers:sync :atainer keyo https://region-b.geo-1.objects.hpcloudsvc.com:443/v1/96XXXXXX/btainer
+
+
 ##copy## {#copy}
 Copy files from one resource to another.
 
@@ -1756,6 +1786,7 @@ Add a server.
 <dt><b>-s, [--security-group=SECURITY_GROUP]</b></dt><dd>Specify a security group or comma seperated list of security groups to be used.</dd>  
 <dt><b>-p, [--private-key-file=PRIVATE_KEY_FILE]</b></dt><dd>Name of the pem file with your private key.</dd>  
 <dt><b>-m, [--metadata=METADATA]</b></dt><dd>Set the meta data.</dd>  
+<dt><b>-u, [--userdata=USERDATA]</b></dt><dd>File which contains user data.</dd>  
 <dt><b>-z, [--availability-zone=AVAILABILITY_ZONE]</b></dt><dd>Set the availability zone.</dd>  
 <dt><b>-x, [--debug=DEBUG]</b></dt><dd>Debug logging 1,2,3,...</dd>  
 <dt><b>-a, [--account-name=ACCOUNT_NAME]</b></dt><dd>Select account.</dd>  
