@@ -36,7 +36,7 @@ Here's what we have for you:
 ##Language Bindings##
 
 ###Ruby Fog Bindings### {#RubyFogBindingsInstall}
-* [Installation package, Version 0.0.19](/file/hpfog-0.0.19.gem)
+* [Installation package, Version 0.0.20](/file/hpfog-0.0.20.gem)
 * [Overview page](/bindings/fog) 
 * [Release Notes](/bindings/fog/release-notes)
 

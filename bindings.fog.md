@@ -24,6 +24,6 @@ The HP Cloud Ruby library currently supports HP Cloud Compute, HP Cloud Object S
 * [Release Notes](/bindings/fog/release-notes)
 * [FAQ](/faq#RubyFogBindings)
 
-For some release-by-release information, take a look at [our release notes](/release-notes)!
+For our release-by-release information, take a look at [our release notes](/release-notes)!  And if you want to look at the main Fog reference documents, surf on over to the [Documentation for fog/fog (master) Alphabetic Index](http://rubydoc.info/github/fog/fog/frames/index); the ReadMe file might be a good place for you to start.
 
-**[Download](/file/hpfog-0.0.19.gem)** the Ruby Fog package.
+[**Download** the Ruby Fog package](/file/hpfog-0.0.20.gem).
