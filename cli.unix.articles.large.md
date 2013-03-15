@@ -6,14 +6,14 @@ product: unix-cli
 categories: cli linux unix
 tags: large file upload download
 ---
-#UNIX CLI: Performing Large File Uploads#
+#UNIX CLI: Performing large file uploads#
 
 The Unix command-line interface (CLI) is the perfect way to upload large files.  This article contains some tuning and recovery tips about uploading large files.
 
 If you upload files larger than 5 gigabytes (GB) with the Unix CLI, they are divided into 1 GB segments and a manifest file is created to reassemble the segments.  You can use the manifests file as you would any object and do not remove the segments.
 
 * [Tuning](#Tuning)
-* [Restarting an Upload](#Restarting)
+* [Restarting an upload](#Restarting)
 
 ##Tuning## {#Tuning}
 
@@ -35,7 +35,7 @@ In general, upload and download performance doesn't vary depending on the value 
 
 **Note**: If `storage_chunk_size` is set too large, you may receive a "Broken Pipe" error message because the large chunk fails to write.  In performance tests that we have run, there has not been much difference with different values of chunk size.
 
-##Restarting an Upload## {#Restarting}
+##Restarting an upload## {#Restarting}
 
 If a large file fails to upload, you may retry it.  First you must clean up any partial segments.  List the segments:
 
