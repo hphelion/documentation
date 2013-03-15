@@ -27,11 +27,11 @@ For some release-by-release information, take a look at [the UNIX CLI release no
 
 Some articles about ways you can use the Unix CLI:
 
-* [Using Bash Command Completion](/cli/unix/articles/complete)
-* [Generating Verbose Debugging Output](/cli/unix/articles/debugging)
-* [Accessing Servers with Managed Key Pairs](/cli/unix/articles/managedkeypairs)
-* [Performing Object Store Migration](/cli/unix/articles/migration)
-* [Custom Reports](/cli/unix/articles/reports)
-* [Large File Upload](/cli/unix/articles/large)
-* [Creating Servers with User Data](/cli/unix/articles/userdata)
-* [Report Paging](/cli/unix/articles/paging)
+* [Using bash command completion](/cli/unix/articles/complete)
+* [Generating verbose debugging output](/cli/unix/articles/debugging)
+* [Accessing servers with managed key pairs](/cli/unix/articles/managedkeypairs)
+* [Performing object store migration](/cli/unix/articles/migration)
+* [Generating custom reports](/cli/unix/articles/reports)
+* [Performing arge file uploads](/cli/unix/articles/large)
+* [Creating servers with user data](/cli/unix/articles/userdata)
+* [Modifying report paging](/cli/unix/articles/paging)
