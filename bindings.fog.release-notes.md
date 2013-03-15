@@ -7,15 +7,37 @@ product: fog
 ---
 # Release Notes for the HP Cloud Services Ruby Fog Binding
 
-These are the release notes for the HP Cloud services Ruby Fog bindings.  The current release number for the [HP Cloud Services Ruby Fog software bindings](/bindings) is version 0.0.19, released on Jan. 25th, 2013.  These release notes contain the following information:
+These are the release notes for the HP Cloud services Ruby Fog bindings.  The current release number for the [HP Cloud Services Ruby Fog software bindings](/bindings) is version 0.0.20, released on Mar. 15th, 2013.  These release notes contain the following information:
 
+* [Release 0.0.20 Information](#v0020)
 * [Release 0.0.19 Information](#v0019)
 * [Release 0.0.18 Information](#v0018)
 * [Release 0.0.17 Information](#v0017)
 * [Release 0.0.16 Information](#v0016)
 * [Release 0.0.15 Information](#v0015)
 
-[You can download the latest version of the Ruby Fog bindings software here](/file/hpfog-0.0.19.gem)!
+[You can download the latest version of the Ruby Fog bindings software here](/file/hpfog-0.0.20.gem)!
+
+##Release 0.0.20 Information## {#v0020}
+
+This release was made available on 03/15/2013 and contains the following new features:
+
+[hp] Add Accept header with application/json for all HP requests.
+[hp|compute] Fix mock for create server.
+
+
+* Item
+* Item 
+* Block Storage namespace updated to `Fog::HP::BlockStorage` instead of `Fog::BlockStorage::HP`
+* Variable `:hp_account_id` deprecated in favor of `:hp_access_key` in the service connection call
+* Issue with a temporary URL to use a signer that is backward compatible to 1.8.7 fixed
+* Issue in the storage provider with a service catalog having an invalid CDN endpoint fixed
+* Updated to include the upstream changes from `fog v1.9.0`
+
+###Known Issues###
+
+None in this release.
+
 
 ##Release 0.0.19 Information## {#v0019}
 

@@ -39,14 +39,14 @@ For information on connecting to the service, please see the [Connecting to the 
 
 ##Server Operations (Model Layer)## {#ModelServerOperations}
 
-1. List all available servers for an account
+1. List all available servers for an account:
 
         servers = conn.servers
         servers.size   # returns no. of servers
         # display servers in a tabular format
         conn.servers.table([:id, :name, :state, :created_at])
 
-2. Obtain the details of a particular server
+2. Obtain the details of a particular server:
 
         server = conn.servers.get(server_id)
         server.name                         # returns name of the server
@@ -56,14 +56,15 @@ For information on connecting to the service, please see the [Connecting to the 
         server.created_at                   # returns the date the server was created
         server.state                        # returns the state of the server e.g. ACTIVE, BUILD
 
-3. Create a new server
+3. Create a new server:
 
         new_server = conn.servers.create(
-               :name => "My Shiny Server",
-               :flavor_id => 1,
-               :image_id => 2,
-               :key_name => "hpdefault",
-               :security_groups => ["aaa"])
+              :name => "My Shiny Server",
+              :flavor_id => 1,
+              :image_id => 2,
+              :key_name => "hpdefault",
+              :security_groups => ["aaa"]
+        )
         new_server.id       # returns the id of the server
         new_server.name     # => "My Shiny Server"
         new_server.state    # returns the state of the server e.g. BUILD
@@ -73,11 +74,12 @@ For information on connecting to the service, please see the [Connecting to the 
 4. Create a new Windows server instance and retrieve the encrypted password:
 
         win_server = conn.servers.create(
-               :name => "My Windows Server",
-               :flavor_id => 1,
-               :image_id => 3,    # Make sure it is a Windows image
-               :key_name => "hpdefault",
-               :security_groups => ["aaa"])
+              :name => "My Windows Server",
+              :flavor_id => 1,
+              :image_id => 3,    # Make sure it is a Windows image
+              :key_name => "hpdefault",
+              :security_groups => ["aaa"]
+        )
         win_server.id       # returns the id of the server
         # Retrieve the encrypted password
         win_server.windows_password
@@ -86,88 +88,131 @@ For information on connecting to the service, please see the [Connecting to the 
 
 5. Create a new Linux-based persistent server with a bootable volume:
 
-        conn.servers.create( :flavor_id => 103,
-                              :name => "MyPersistentServer",
-                              :block_device_mapping =>
-                                   [{ 'volume_size' => '',   # ignored
-                                     'volume_id' => "111111",
-                                     'delete_on_termination' => '0',
-                                     'device_name' => 'vda'
-                                   }]
-                            )
-**Note**: In *block_device_mapping*, *volume_size* is ignored as it is automatically retrieved from the specified bootable volume. You can set the *delete_on_termination* parameter to `1` if you want the bootable volume to be deleted after the server instance is killed; otherwise to preserve the bootable volume, set it to `0` as shown above.
+        conn.servers.create(
+              :flavor_id => 103,
+              :name => "MyPersistentServer",
+              :block_device_mapping =>
+                [{ 'volume_size' => '',   # ignored
+                 'volume_id' => "111111",
+                 'delete_on_termination' => '0',
+                 'device_name' => 'vda'
+                }]
+        )
+    **Note**: In *block_device_mapping*, *volume_size* is ignored; it is automatically retrieved from the specified bootable volume. To delete the bootable volume after the server instance is killed you can set  *delete_on_termination* to `1`.  To preserve the bootable volume, set it to `0` as shown above.
 
-6. Reboot a server
+6. Create a new Linux-based server with advanced personalization options:
+
+        new_server = conn.servers.create(
+              :name => "My Personalised Server",
+              :flavor_id => 1,
+              :image_id => 2,
+              :key_name => "hpdefault",
+              :security_groups => ["aaa"],
+              :config_drive => true,
+              :user_data_encoded => ["This is some encoded user data"].pack('m'),
+              :personality => [{
+                'contents'  => File.open("/path/to/sample.txt",
+                'path'      => "/path/to/sample.txt"
+              }]
+        )
+        new_server.id       # returns the id of the server
+        new_server.name     # => "My Personalised Server"
+
+        # Note: that un-encoded user data can also be provided by setting the user_data property
+        # although, encoding the data on the client is faster and efficient
+        new_server = conn.servers.new(
+              :name => "My Personalised Server",
+              ...
+              ...
+        )
+        new_server.user_data = "This is some un-encoded user data"
+        new_server.save
+    
+    The personalization options are:
+    
+    *config_drive*
+    : Disk accessible to the server that contains a FAT filesystem. If `config_drive` parameter is set to `true` at the time of server creation, the configuration drive is created.
+    
+    *user_data_encoded* or *user_data*
+    : Allows additional metadata to be inserted during server creation by supplying a Base64-encoded string in the `user_data_encoded` parameter, or by providing an unencoded string with the `user_data` attribute. Note that encoding the data on the client is faster and more efficient.
+    
+    *personality*
+    : Allows files to be injected into the server instance after its creation. The file `contents` are Base64 encoded and injected into the location specified by `path`.
+    
+    **Note**: The above personalization options are not supported on Windows server instances.
+
+7. Reboot a server:
 
         server = conn.servers.get(server_id)
         server.reboot          # soft reboot by default
 
         server.reboot("HARD")  # hard reboot also possible
 
-7. Change password for a server
+8. Change password for a server:
 
         server = conn.servers.get(server_id)
         server.change_password("new_password")
 
-8. Delete an existing server
+9. Delete an existing server:
 
         server = conn.servers.get(server_id)
         server.destroy
 
 ##Server Metadata Operations (Model Layer)## {#ModelServerMetadataOperations}
 
-1. Create a server with some metadata
+1. Create a server with some metadata:
 
         myserver = conn.servers.create(
-                :flavor_id => 1, 
-                :image_id => 2, 
-                :name => "myserver", 
-                :metadata => {'Meta1' => 'MetaValue1', 'Meta2' => 'MetaValue2'} )
+              :flavor_id => 1,
+              :image_id => 2,
+              :name => "myserver",
+              :metadata => {'Meta1' => 'MetaValue1', 'Meta2' => 'MetaValue2'}
+        )
 
-2. Get the metadata item
+2. Get the metadata item:
 
         myserver.metadata.get("Meta1")
 
-3. Update the metadata
+3. Update the metadata:
 
         myserver.metadata.update({"Meta2" => "MetaValue2"})
 
-4. Set the metadata
+4. Set the metadata:
 
         myserver.metadata.set({"Meta3" => "MetaValue3"})
 
-5. Set the metadata explicitly
+5. Set the metadata explicitly:
 
         m = myserver.metadata.new
         m.key = "Meta4"
         m.value = "Value4"
         m.save
 
-6. Update the metadata
+6. Update the metadata:
 
         m = myserver.metadata.get("Meta3")
         m.value = "UpdValue3"
         m.save
 
-7. List metadata
+7. List metadata:
 
         myserver.metadata.all
 
-8. Delete metadata
+8. Delete metadata:
 
         m = myserver.metadata.get("Meta3")
         m.destroy
 
 ##Flavor Operations (Model Layer)## {#ModelFlavorOperations}
 
-1. List all available flavors
+1. List all available flavors:
 
         flavors = conn.flavors
         flavors.size   # returns no. of flavors
         # display flavors in a tabular format
         conn.flavors.table([:id, :name, :ram, :disk])
 
-2. Obtain the details of a particular flavor
+2. Obtain the details of a particular flavor:
 
         flavor = conn.flavors.get(flavor_id)   # get the flavor
         flavor.name    # returns the name of the flavor eg: m1.tiny, m1.small etc.
@@ -177,80 +222,80 @@ For information on connecting to the service, please see the [Connecting to the 
 
 ##Image Operations (Model Layer)## {#ModelImageOperations}
 
-1. List all available images
+1. List all available images:
 
         images = conn.images
         images.size   # returns no. of images
         # display images in a tabular format
         conn.images.table([:id, :name, :status, :created_at])
 
-2. Obtain the details of a particular image
+2. Obtain the details of a particular image:
 
         image = conn.images.get(image_id)    # get the image
         image.name          # returns name of the image
         image.created_at    # returns the date the image was created
         image.status        # returns the state of the image e.g. ACTIVE
 
-3. Create a new snapshot image based on an existing server
+3. Create a new snapshot image based on an existing server:
 
         myserver.create_image("My Image")
 
-4. Delete an existing snapshot image
+4. Delete an existing snapshot image:
 
         image = conn.images.get(image_id)
         image.destroy
 
 ##Image Metadata Operations (Model Layer)## {#ModelImageMetadataOperations}
 
-1. Create an image snapshot with some metadata
+1. Create an image snapshot with some metadata:
 
         myserver.create_image("My Image", {"ImgMeta1" => "ImgMeta1Value"})
 
-2. Get the metadata item
+2. Get the metadata item:
 
         myimage = conn.images.get(image_id)
         myimage.metadata.get("ImgMeta1")
 
-3. Update the metadata
+3. Update the metadata:
 
         myimage.metadata.update({"ImgMeta2" => "ImgMetaValue2"})
 
-4. Set the metadata
+4. Set the metadata:
 
         myimage.metadata.set({"ImgMeta3" => "ImgMetaValue3"})
 
-5. Set the metadata explicitly
+5. Set the metadata explicitly:
 
         m = myimage.metadata.new
         m.key = "ImgMeta4"
         m.value = "ImgMetaValue4"
         m.save
 
-6. Update the metadata
+6. Update the metadata:
 
         m = myimage.metadata.get("ImgMeta3")
         m.value = "ImgUpdValue3"
         m.save
 
-7. List metadata
+7. List metadata:
 
         myimage.metadata.all
 
-8. Delete metadata
+8. Delete metadata:
 
         m = myimage.metadata.get("ImgMeta3")
         m.destroy
 
 ##Keypair Operations (Model Layer)## {#ModelKeypairOperations}
 
-1. List all available keypairs
+1. List all available keypairs:
 
         keypairs = conn.key_pairs
         keypairs.size         # returns no. of keypairs
         # display keypairs in a tabular format
         conn.key_pairs.table([:name, :public_key])
 
-2. Obtain the details of a particular keypair
+2. Obtain the details of a particular keypair:
 
         keypair = conn.key_pairs.get(key_name)    # get the keypair
         keypair.name          # returns name of the keypair
@@ -258,14 +303,14 @@ For information on connecting to the service, please see the [Connecting to the 
         # NOTE: Due to security considerations, the private key is not available on subsequent gets
         keypair.private_key   # => nil
 
-3. Create a new keypair
+3. Create a new keypair:
 
         keypair = conn.key_pairs.create(:name => "mykey")
         keypair.name          # returns name of the keypair
         keypair.public_key    # returns the public key of the keypair
         keypair.private_key   # returns the private key of the keypair
 
-4. Export a keypair to a file
+4. Export a keypair to a file:
 
         keypair = conn.key_pairs.create(:name => "mykey2")
         keypair.write         # => "Key file built: /Users/xxxxx/.ssh/hp_default_mykey2.pem"
@@ -273,37 +318,37 @@ For information on connecting to the service, please see the [Connecting to the 
         # Alternatively, you can pass in a path to export the key
         keypair.write("/Users/xxxxx/Downloads/hp_mykey2.pem")
 
-5. Import a public key to create a new keypair
+5. Import a public key to create a new keypair:
 
         keypair = conn.key_pairs.create(:name => "mykey", :public_key => "public key material")
         keypair.name          # returns name of the keypair
 
-6. Delete an existing keypair
+6. Delete an existing keypair:
 
         keypair = conn.key_pairs.get(key_name)
         keypair.destroy
 
 ##Security Groups Operations (Model Layer)## {#ModelSecurityGroupsOperations}
 
-1. List all available security groups
+1. List all available security groups:
 
         sgroups = conn.security_groups
         sgroup.size           # returns no. of security groups
         # display security groups in a tabular format
         conn.security_groups.table([:id, :name, :description])
 
-2. Obtain the details of a particular security group
+2. Obtain the details of a particular security group:
 
         sgroup = conn.security_groups.get(sgroup_id)    # get the security group
         sgroup.name           # returns name of the security group
         sgroup.description    # returns description of the security group
 
-3. Create a new security group
+3. Create a new security group:
 
         sgroup = conn.security_groups.create(:name => "mysgroup", :description => "my new sec group")
         sgroup.name           # returns name of the security group
 
-4. Create a rule for an existing security group
+4. Create a rule for an existing security group:
 
         sgroup = conn.security_groups.get(sgroup_id)    # get the security group
         sgroup.create_rule(80..80)                      # allow port 80. defaults to protocol tcp at 0.0.0.0/0
@@ -312,69 +357,69 @@ For information on connecting to the service, please see the [Connecting to the 
         sgroup = conn.security_groups.get(sgroup_id)    # get the security group
         sgroup.rules
 
-5. Delete a rule from an existing security group
+5. Delete a rule from an existing security group:
 
         sgroup = conn.security_groups.get(sgroup_id)    # get the security group
         sgroup.delete_rule(sgroup_rule_id)
 
-6. Delete an existing security group
+6. Delete an existing security group:
 
         sgroup = conn.security_groups.get(sgroup_id)    # get the security group
         sgroup.destroy
 
 ##Address Operations (Model Layer)## {#ModelAddressOperations}
 
-1. List all available floating ip addresses
+1. List all available floating ip addresses:
 
         addresses = conn.addresses
         addresses.size                              # returns no. of addresses
         # display addresses in a tabular format
         conn.addresses.table([:id, :ip, :fixed_ip, :instance_id])
 
-2. Obtain the details of a particular address
+2. Obtain the details of a particular address:
 
         address = conn.addresses.get(address_id)    # get the address
         address.ip                                  # returns the ip address
 
-3. Create or allocating a new address
+3. Create or allocating a new address:
 
         address = conn.addresses.create             # allocates an ip address from the pool
         address.ip                                  # returns the ip address
 
-4. Associate a server to an existing address
+4. Associate a server to an existing address:
 
         address = conn.addresses.get(address_id)    # get the address
         server = conn.servers.get(server_id)        # get the server
         address.server = server                     # associate the server
         address.instance_id                         # returns the id of the server
 
-5. Disassociate a server from an existing address
+5. Disassociate a server from an existing address:
 
         address = conn.addresses.get(address_id)    # get the address
         address.server = nil                        # disassociate the server
         address.instance_id                         # => nil
 
-6. Delete (release) an existing address
+6. Delete (release) an existing address:
 
         address = conn.addresses.get(address_id)    # get the address
         address.destroy                             # releases the ip address to the pool
 
 ##Server Operations (Request Layer)## {#RequestServerOperations}
 
-1. List all available servers for an account
+1. List all available servers for an account:
 
         response = conn.list_servers
         response.body['servers']                    # returns an array of server hashes
         response.headers                            # returns the headers
         response.body['servers'][0]['name']         # returns the name of the server
 
-2. List all available servers with additional details
+2. List all available servers with additional details:
 
         response = conn.list_servers_detail
         response.body['servers']                    # returns an array of server hashes
         response.body['servers'][0]['name']         # returns the name of the server
 
-3. Obtain the details of a particular server
+3. Obtain the details of a particular server:
 
         response = conn.get_server_details(server_id)
         server = response.body['server']
@@ -386,7 +431,15 @@ For information on connecting to the service, please see the [Connecting to the 
 
 4. Create a new server:
 
-        response = conn.create_server("My Shiny Server", flavor_id, image_id)
+        response = conn.create_server(
+            "My Shiny Server",
+            flavor_id,
+            image_id,
+            {
+              'security_groups' => ["SecGroup1, SecGroup2"],
+              'key_name' => "MyKeyPair1"
+            }
+        )
         server = response.body['server']
         server['id']                                # returns the id of the new server
         server['name']                              # => "My Shiny Server"
@@ -397,116 +450,155 @@ For information on connecting to the service, please see the [Connecting to the 
         # Make sure to use a Windows image
         response = conn.create_server("My Windows Server", flavor_id, image_id)
         win_server = response.body['server']
-        server_id = win_server['id']          # returns the id of the new server
+        server_id = win_server['id']                # returns the id of the new server
         # Retrieve the encrypted password 
         conn.get_windows_password(server_id)
         # => "Im6ZJ8auyMRnkJ24KKWQvTgWDug1s ... y0uY1BcHLJ5OrkEPHhQoQntIKOoQ=\n"
-**Note**: You must retrieve the Windows password immediately after you create the Windows instance. Also, make sure you have a security rule defined to open RDP port 3389 so that you can connect to the Windows server.
+    **Note**: You must retrieve the Windows password immediately after you create the Windows instance. Also, make sure you have a security rule defined to open RDP port 3389 so that you can connect to the Windows server.
 
-6. Create a new Linux-based persistent server with a bootable volume:
+6. Create a new Linux-based persistent server with a bootable volume
 
-        conn.create_persistent_server( "MyBootableServer", 
-                               103, 
-                                [{ "volume_size"=>"",         # ignored
-                                    "volume_id"=>"65904",
-                                    "delete_on_termination"=>"0",
-                                    "device_name"=>"vda"
-                                }] ,
-                                {
-                                 'security_groups' => ["mysecgroup"],
-                                 'key_name' => "mykey"
-                                }
-                          )
-**Note**: In *block_device_mapping*, *volume_size* is ignored as it is automatically retrieved from the specified bootable volume. You can set the *delete_on_termination* parameter to `1` if you want the bootable volume to be deleted after the server instance is killed; otherwise to preserve the bootable volume, set it to `0` as shown above.
+        conn.create_persistent_server(
+              "MyBootableServer",
+              103,
+              [{ "volume_size"=>"",                 # ignored
+                  "volume_id"=>"65904",
+                  "delete_on_termination"=>"0",
+                  "device_name"=>"vda"
+              }] ,
+              {
+               'security_groups' => ["mysecgroup"],
+               'key_name' => "mykey"
+              }
+        )
+    **Note**: In *block_device_mapping*, *volume_size* is ignored; it is automatically retrieved from the specified bootable volume. To delete the bootable volume after the server instance is killed you can set  *delete_on_termination* to `1`.  To preserve the bootable volume, set it to `0` as shown above.
 
-7. Update the name for a server
+7. Create a new Linux-based server with advanced personalisation options:
+
+        response = conn.create_server(
+            "My Shiny Server",
+            flavor_id,
+            image_id,
+            {
+              'security_groups' => ["SecGroup1, SecGroup2"],
+              'key_name' => "MyKeyPair1",
+              'config_drive' => true,
+              'user_data_encoded' => ["This is some encoded user data"].pack('m'),
+              'personality' => [{
+                                 'contents'  => File.open("/path/to/sample.txt",
+                                 'path'      => "/path/to/sample.txt"
+                               }]
+            }
+        )
+        server = response.body['server']
+        server['id']                                # returns the id of the new server
+    
+    The personalization options are:
+    
+    *config_drive*
+    : Disk accessible to the server that contains a FAT filesystem. If `config_drive` parameter is set to `true` at the time of server creation, the configuration drive is created.
+    
+    *user_data_encoded*
+    : Allows additional metadata to be inserted during server creation by supplying a Base64-encoded string in the `user_data_encoded` parameter.
+    
+    *personality*
+    : Allows files to be injected into the server instance after its creation. The file `contents` are Base64 encoded and injected into the location specified by `path`.
+    
+    **Note**: The above personalization options are not supported on Windows server instances.
+
+8. Update the name for a server:
 
         conn.update_server(server_id, {'name' => "My Cool Server"})
         response = conn.get_server_details(server_id)
         response.body['server']['name']             # => "My Cool Server"
 
-8. Change the password for a server
+9. Change the password for a server:
 
         conn.change_password_server(server_id, "new_password")
 
-9. List both public and private addresses of a particular server
+10. List both public and private addresses of a particular server:
 
         response = conn.list_server_addresses(server_id)
 
-10. List all the private addresses of a particular server
+11. List all the private addresses of a particular server:
 
         response = conn.list_server_private_addresses(server_id, "private")    # where "private" is the network name
 
-11. List all the public addresses of a particular server
+12. List all the public addresses of a particular server:
 
         response = conn.list_server_public_addresses(server_id, "private")     # where "private" is the network name
 
-12. Reboot a server
+13. Reboot a server:
 
         response = conn.reboot_server(server_id, 'HARD')  # Hard reboot a server
         response = conn.reboot_server(server_id, 'SOFT')  # Soft reboot a server
 
-13. Delete an existing server
+14. Delete an existing server:
 
         conn.delete_server(server_id)
 
 ##Server Metadata Operations (Request Layer)## {#RequestServerMetadataOperations}
 
-1. Create a server and pass it some metadata at creation
+1. Create a server and pass it some metadata at creation:
 
-        response = conn.create_server("myserver", 1, 2, {'metadata' => {'Meta1' => 'MetaValue1', 'Meta2' => 'MetaValue2'} })
+        response = conn.create_server(
+                        "myserver", 1, 2,
+                        {'metadata' =>
+                          {'Meta1' => 'MetaValue1', 'Meta2' => 'MetaValue2'}
+                        }
+                   )
         response.body['server']['metadata']        
         # => {"Meta1"=>"MetaValue1", "Meta2"=>"MetaValue2"}
 
-2. List the existing metadata  
+2. List the existing metadata:
 
         response = conn.list_metadata("servers", server_id)
         response.body['metadata']       
         # => {"Meta1"=>"MetaValue1", "Meta2"=>"MetaValue2"}
 
-3. Set new values to the existing metadata  
+3. Set new values to the existing metadata:
 
         response = conn.set_metadata("servers", server_id, {"MetaNew1" => "MetaNewValue1"})
         response.body['metadata']      
         # => {"MetaNew1"=>"MetaNewValue1"}
 
-4. Update the existing metadata  
+4. Update the existing metadata:
 
         response = conn.update_metadata("servers", server_id, {"Meta2" => "MetaValue2"})
         response.body['metadata']      
         # => {"Meta2"=>"MetaValue2"}
 
-5. Get a metadata item
+5. Get a metadata item:
 
         response = conn.get_meta("servers", server_id, "Meta1")
         response.body['meta']       
         # => {"Meta1"=>"MetaValue1"}
 
-6. Set a new metadata item or update an existing metadata item
+6. Set a new metadata item or update an existing metadata item:
 
         response = conn.update_meta("servers", server_id, "Meta1", "MetaUpdated1")
         response.body['meta']       
         # => {"Meta1"=>"MetaUpdated1"}
 
-7. Delete a metadata item
+7. Delete a metadata item:
 
         conn.delete_meta("servers", server_id, "Meta1")
 
 ##Flavor Operations (Request Layer)## {#RequestFlavorOperations}
 
-1. List all available flavors
+1. List all available flavors:
 
         response = conn.list_flavors
         response.body['flavors']                    # returns an array of flavor hashes
         response.headers                            # returns the headers for the flavors
         response.body['flavors'][0]['name']         # returns the name of the flavor
 
-2. List all available flavors with additional details
+2. List all available flavors with additional details:
 
         response = conn.list_flavors_detail
         response.body['flavors']                    # returns an array of flavor hashes
 
-3. Obtain the details of a particular flavor
+3. Obtain the details of a particular flavor:
 
         response = conn.get_flavor_details(flavor_id)
         flavor = response.body['flavor']
@@ -516,20 +608,20 @@ For information on connecting to the service, please see the [Connecting to the 
 
 ##Image Operations (Request Layer)## {#RequestImageOperations}
 
-1. List all available images
+1. List all available images:
 
         response = conn.list_images
         response.body['images']                     # returns an array of image hashes
         response.headers                            # returns the headers for the images
         response.body['images'][0]['name']          # returns the name of the image
 
-2. List all available images with additional details
+2. List all available images with additional details:
 
         response = conn.list_images_detail
         response.body['images']                     # returns an array of image hashes
         response.body['images'][0]['name']          # returns the name of the image
 
-3. Obtain the details of a particular image
+3. Obtain the details of a particular image:
 
         response = conn.get_image_details(image_id)
         image = response.body['image']
@@ -538,64 +630,64 @@ For information on connecting to the service, please see the [Connecting to the 
         image['created']                            # returns the creation date of the image
         image['updated']                            # returns the update date of the image
 
-3. Create a new snapshot image based on an existing server
+3. Create a new snapshot image based on an existing server:
 
         conn.create_image(server_id, "My Image")    # creates an snapshot image from the server referenced by "server_id"
 
-4. Delete an existing snapshot image
+4. Delete an existing snapshot image:
 
         conn.delete_image(image_id)
 
 ##Image Metadata Operations (Request Layer)## {#RequestImageMetadataOperations}
 
-1. Create an image and pass it some metadata at creation
+1. Create an image and pass it some metadata at creation:
 
         conn.create_image(server_id, "myimage", {'Meta1' => 'MetaValue1', 'Meta2' => 'MetaValue2'})
 
-2. List the existing metadata  
+2. List the existing metadata:
 
         response = conn.list_metadata("images", image_id)
         response.body['metadata']   
         #  => {"Meta1"=>"MetaValue1", "Meta2"=>"MetaValue2"}
 
-3. Set new values to the existing metadata  
+3. Set new values to the existing metadata:
 
         response = conn.set_metadata("images", image_id, {"MetaNew1" => "MetaNewValue1"})
         response.body['metadata']   
         # => {"MetaNew1"=>"MetaNewValue1"}
 
-4. Update the existing metadata  
+4. Update the existing metadata:
 
         response = conn.update_metadata("images", image_id, {"Meta2" => "MetaValue2"})
         response.body['metadata']   
         # => {"Meta2"=>"MetaValue2"}
 
-5. Get a metadata item
+5. Get a metadata item:
 
         response = conn.get_meta("images", image_id, "Meta1")
         response.body['meta']       
         # => {"Meta1"=>"MetaValue1"}
 
-6. Update a metadata item
+6. Update a metadata item:
 
         response = conn.update_meta("images", image_id, "Meta1", "MetaUpdated1")
         response.body['meta']       
         # => {"Meta1"=>"MetaUpdated1"}
 
-7. Delete a metadata item
+7. Delete a metadata item:
 
         conn.delete_meta("images", image_id, "Meta1")
 
 ##Keypair Operations (Request Layer)## {#RequestKeypairOperations}
 
-1. List all available keypairs
+1. List all available keypairs:
 
         response = conn.list_key_pairs
         response.body['keypairs']                   # returns an array of keypair hashes
         response.headers                            # returns the headers
         response.body['keypairs'][0]['keypair']['name']        # returns the name of the keypair
 
-2. Create a new keypair
+2. Create a new keypair:
 
         response = conn.create_key_pair("mykey")
         keypair = response.body['keypair']
@@ -603,38 +695,38 @@ For information on connecting to the service, please see the [Connecting to the 
         keypair['public_key']                       # returns the public key of the keypair
         keypair['private_key']                      # returns the private key of the keypair
 
-3. Import a public key to create a new keypair
+3. Import a public key to create a new keypair:
 
         response = conn.create_key_pair("mykey", "public key material")
         keypair = response.body['keypair']
         keypair['name']                             # returns the name of the keypair
 
-4. Delete an existing keypair
+4. Delete an existing keypair:
 
         conn.delete_key_pair(key_name)
 
 ##Security Groups Operations (Request Layer)## {#RequestSecurityGroupsOperations}
 
-1. List all available security groups
+1. List all available security groups:
 
         response = conn.list_security_groups
         response.body['security_groups']            # returns an array of security groups hashes
         response.headers                            # returns the headers
         response.body['security_groups'][0]['name'] # returns the name of the security group
 
-2. Obtain the details of a particular security group
+2. Obtain the details of a particular security group:
 
         response = conn.get_security_group(sgroup_id) # get the security group
         sgroup = response.body['security_group']
         sgroup['name']                                # returns the name of the security group
 
-3. Create a new security group
+3. Create a new security group:
 
         response = conn.create_security_group("mysgroup", "my new sec group")
         sgroup = response.body['security_group']
         sgroup['name']                                # => "mysgroup"
 
-4. Create a rule for an existing security group
+4. Create a rule for an existing security group:
 
         response = create_security_group_rule(sgroup_id, "tcp", "80", "80", "0.0.0.0/0")  # allow port 80, tcp at 0.0.0.0/0
         sg_rule = response.body['security_group_rule']
@@ -645,41 +737,41 @@ For information on connecting to the service, please see the [Connecting to the 
         sg_rule['ip_protocol']                        # => tcp
         sg_rule['ip_range']['cidr']                   # => 0.0.0.0/0
 
-5. Delete an existing security group rule
+5. Delete an existing security group rule:
 
         conn.delete_security_group_rule(sg_rule_id)
 
-6. Delete an existing security group
+6. Delete an existing security group:
 
         conn.delete_security_group(sgroup_id)
 
 ##Address Operations (Request Layer)## {#RequestAddressOperations}
 
-1. List all available floating ip addresses
+1. List all available floating ip addresses:
 
         response = conn.list_addresses
         response.body['addresses']                  # returns an array of address hashes
         response.headers                            # returns the headers
         response.body['addresses'][0]['id']         # returns the id of the address
 
-2. Obtain the details of a particular address
+2. Obtain the details of a particular address:
 
         response = conn.get_address(address_id)     # get the address
         response.body['address']['ip']              # returns the ip address
 
-3. Create (allocate) a new address
+3. Create (allocate) a new address:
 
         response = conn.allocate_address            # allocates an ip address from the pool
         response.body['address']['ip']              # returns the ip address
 
-4. Associate a server to an existing address
+4. Associate a server to an existing address:
 
         conn.associate_address(server_id, ip_address)
 
-5. Disassociate a server from an existing address
+5. Disassociate a server from an existing address:
 
         conn.disassociate_address(server_id, ip_address)
 
-6. Delete (release) an existing address
+6. Delete (release) an existing address:
 
         conn.release_address(address_id)            # releases the ip address to the pool
