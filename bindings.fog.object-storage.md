@@ -106,10 +106,10 @@ For information on connecting to the service, please see the [Connecting to the 
 
 Object ACLs allow you to share containers and objects with other registered HP Cloud Services users.  The owner of a container or object can grant read, write, read/write access to other users.  The shared containers and objects can then be accessed based on the permissions granted by the owner.
 
-To grant access to an object or container:
+To grant access to an object or a container:
 
-    mydir = conn.directories.get('rgtest2')  # Note: grant uses username. in my case it is email as my username is email address
-    mydir.grant("rw", ["rupakg+fog2@gmail.com"])
+    mydir = conn.directories.get('rgtest2')  # grant uses username
+    mydir.grant("rw", ["someuser"])
     mydir.save                               # share the url for access to container
     mydir.public_url
      => "https://objects.xxxx.hpcloud.net:443/v1/1111111/rgtest2"
@@ -167,6 +167,52 @@ To grant access to an object or container:
         sd = conn.shared_directories.get(mydir.public_url)
         sd.destroy
 
+###Sychronize containers across regions### {#SychronizeContainersModelLayer}
+
+Container sync creates a one-way association between containers to sync objects. The syncing operation is performed by a background process on the container server.
+A one-time setup is required to set the metadata on the containers for syncing.
+
+1. One-Way sync of containers (from source to target only)
+
+        # create source and target containers
+        conn.directories.create(:key => 'imp_stuff')
+        conn.directories.create(:key => 'sync_archive')
+        dir = conn.directories.get('imp_stuff')
+
+        # create some objects in the source container
+        dir.files.create(:key => 'imp_1.txt', :body => "This is a small file but it is very important.")
+        dir.files.create(:key => 'imp_2.txt', :body => "This is another small file but it is very important as well.")
+
+        # sync the source -> target
+        dir.sync(target_dir, "boogieman")       # => true
+        dir.save                                # => true
+
+2. Two-Way sync of containers (from source to target and visa-versa)
+
+        # Now, lets do a two way sync between dir and target containers
+        target_dir = conn.directories.get('sync_archive')
+        dir = conn.directories.get('imp_stuff')
+
+        # sync the target -> source
+        target_dir.sync(dir, "boogieman")       # => true
+        target_dir.save                         # => true
+
+3. One/Two-way sync of containers across regions
+
+        # assuming source container exists in region-a
+        dir_a = conn.directories.get('imp_stuff')          # Note: conn points to region-a
+        # assuming target container exists in region-a
+        target_dir_b = conn2.directories.get('arch_imp_stuff')  # Note: conn2 points to region-b
+
+        # sync the source -> target
+        dir.sync(target_dir_b, "boogieman")       # => true
+        dir.save                                  # => true
+
+        # sync the target -> source
+        target_dir_b.sync(dir_b, "boogieman")       # => true
+        target_dir_b.save                                  # => true
+
+
 ##Using the Request Abstraction## {#UsingtheRequestAbstraction}
 
 1. List all container for the given account
@@ -206,7 +252,7 @@ To grant access to an object or container:
 
 5. Create a new file into an existing container
 
-        file = conn.put_object("fog-rocks","sample.txt",File.open('/path/to/file/sample.txt'))
+        file = conn.put_object("fog-rocks", "sample.txt", File.open('/path/to/file/sample.txt'))
         file.headers                            # returns a hash of headers
         file.headers["Content-Length"]          # returns the content-length
 
@@ -302,3 +348,58 @@ To use object ACLs in the request abstraction layer, you need to have already be
 7. Use the shared URLs to delete an existing object or file from a shared container:
 
         conn.delete_shared_object(myfile.public_url)
+
+###Sychronize containers across regions### {#SychronizeContainersRequestLayer}
+
+Container sync creates a one-way association between containers to sync objects. The syncing operation is performed by a background process on the container server.
+A one-time setup is required to set the metadata on the containers for syncing.
+
+1. One-Way sync of containers (from source to target only)
+
+        # create source and target containers
+        conn.put_container('imp_stuff')
+        conn.put_container('sync_archive')
+
+        # create some objects in the source container
+        conn.put_object('imp_stuff', 'imp_1.txt', "This is a small file but it is very important.")
+        conn.put_object('imp_stuff', 'imp_2.txt', File.open('/path/to/file/imp_2.txt'))
+
+        # to sync we need to put some metadata on the source and target containers
+        conn.put_container('imp_stuff',
+                            {'X-Container-Sync-To'  => "/url/to/the/target/sync_archive",
+                             'X-Container-Sync-Key' => 'boogieman'}
+                          )
+        conn.put_container('sync_archive',
+                            {'X-Container-Sync-Key' => 'boogieman'}
+                          )
+
+2. Two-Way sync of containers (from source to target and visa-versa)
+
+        # Now, lets do a two way sync between dir and target containers
+        # to sync we need to put some metadata on the source and target containers
+        conn.put_container('imp_stuff',
+                            {'X-Container-Sync-To'  => "/url/to/the/target/sync_archive",
+                             'X-Container-Sync-Key' => 'boogieman'}
+                          )
+        conn.put_container('sync_archive',
+                            {'X-Container-Sync-To'  => "/url/to/the/source/imp_stuff",
+                             'X-Container-Sync-Key' => 'boogieman'}
+                          )
+
+3. One/Two-way sync of containers across regions
+
+        # assuming source container exists in region-a
+        conn.get_container('imp_stuff')                         # Note: conn points to region-a
+        # create a new container in region-b
+        conn2.put_container('arch_imp_stuff')                   # Note: conn2 points to region-b
+
+        # to sync we need to put some metadata on the source and target containers
+        conn.put_container('imp_stuff',
+                            {'X-Container-Sync-To'  => "/region-b/url/to/the/target/arch_imp_stuff",
+                             'X-Container-Sync-Key' => 'boogieman'}
+                          )
+        conn2.put_container('arch_imp_stuff',
+                              {'X-Container-Sync-To'  => "/region-a/url/to/the/source/imp_stuff",
+                               'X-Container-Sync-Key' => 'boogieman'}
+                           )
+
