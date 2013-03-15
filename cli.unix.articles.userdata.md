@@ -6,12 +6,12 @@ product: unix-cli
 categories: cli linux compute servers configure user data
 tags: cli linux compute user data
 ---
-#UNIX CLI: Creating Servers with Custom User Data#
+#UNIX CLI: Creating servers with custom user data#
 
 
-The Unix command-line interface (CLI) can be used to create custom preconfigured servers with the [`servers:add`](/cli/unix/reference#servers:add) user data option.  The argument to the `--userdata` option is a file name that contains the configuration.  The format of the configuration data is described in the [CloudInit](https://help.ubuntu.com/community/CloudInit) site.
+You can use the Unix command-line interface (CLI) to create custom pre-configured servers with the [`servers:add`](/cli/unix/reference#servers:add) user data option.  The argument to the `--userdata` option is a file name that contains the configuration.  The format of the configuration data is described in the [CloudInit](https://help.ubuntu.com/community/CloudInit) site.
 
-The simplest example of this would be to pass in a shell script to run when the server is booted.  The shell script must start with the file format "magic number" hash bang and the shell to run, for example `#!/bin/sh`.  If you wanted to create a server that had a custom /etc/motd and the Unix CLI installed on it, you might use a shell script like this:
+The simplest example of this is to pass in a shell script to run when the server is booted.  The shell script must start with the file format "magic number" hash bang and the shell to run, for example `#!/bin/sh`.  To create a server with a custom "message of the day" (defined in the `/etc/motd` file) and Unix CLI installed, an example script is:
 
     #!/bin/sh
     echo '**** Starting Create Unix CLI Server ****'
@@ -38,7 +38,7 @@ Use the `-u` option to pass in the file name for the user data:
     Created server 'userver' with id '973965'.
 
 
-When you login, You will see the custom motd (message of the day).  You may use the [`servers:ssh`](/cli/unix/reference#servers:ssh) command to login:
+When you login, the custom message of the day (motd) is displayed.  You may use the [`servers:ssh`](/cli/unix/reference#servers:ssh) command to login:
 
     $ hpcloud servers:ssh userver
     Connecting to 'userver'...
@@ -56,7 +56,7 @@ When you login, You will see the custom motd (message of the day).  You may use 
     ...
     ubuntu@userver:~$
 
-The script may take a while to run, but once it is complete:
+The script may take some time to run, but once it is complete you see:
 
     ubuntu@userver:~$ hpcloud info
     ******************************************************************
@@ -67,7 +67,7 @@ The script may take a while to run, but once it is complete:
      Copyright (c) 2011 Hewlett-Packard Development Company, L.P.
     ******************************************************************
 
-If there is any problem with the user data, the output may appear in the console.  Use the [`servers:console`](/cli/unix/reference#servers:console) command to dump the contents of the console:
+If there is any problem with the user data, information about the improper data is displayed in the system console.  Use the [`servers:console`](/cli/unix/reference#servers:console) command to display the contents:
 
     $ hpcloud servers:console userver 1000 >out
     
