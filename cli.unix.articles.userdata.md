@@ -9,7 +9,7 @@ tags: cli linux compute user data
 #UNIX CLI: Creating Servers with Custom User Data#
 
 
-The Unix command-line interface (CLI) can be used to create custom preconfigured servers with the [`servers:add`](/cli/unix/reference#servers:add) user data option.  The argument to the `--userdata` option is a file name that contains the configuration.  The format of the configuration data is described in the [CloudINit](https://help.ubuntu.com/community/CloudInit) site.
+The Unix command-line interface (CLI) can be used to create custom preconfigured servers with the [`servers:add`](/cli/unix/reference#servers:add) user data option.  The argument to the `--userdata` option is a file name that contains the configuration.  The format of the configuration data is described in the [CloudInit](https://help.ubuntu.com/community/CloudInit) site.
 
 The simplest example of this would be to pass in a shell script to run when the server is booted.  The shell script must start with the file format "magic number" hash bang and the shell to run, for example `#!/bin/sh`.  If you wanted to create a server that had a custom /etc/motd and the Unix CLI installed on it, you might use a shell script like this:
 
