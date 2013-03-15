@@ -25,7 +25,7 @@ Here's what we have for you:
 * [Release Notes](/cli/unix/release-notes)
 
 ###Windows CLI### {#WinCLIInstall}
-* [Installation package, Version 1.3.2.2](/file/WinCLI-1.3.2.2.zip)
+* [Installation package, Version 1.3.3.7](/file/WinCLI-1.3.3.7.zip)
 * [Overview page](/cli/windows)
 * [Release Notes](/cli/windows/release-notes)
 

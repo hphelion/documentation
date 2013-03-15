@@ -23,6 +23,8 @@ The Unix Command Line Interface is a tool which allows Unix or Mac users to mana
 
 For some release-by-release information, take a look at [the UNIX CLI release notes](/cli/unix/release-notes)!
 
+[**Download** the HP Cloud environment command-line interface (CLI) software for UNIX CLI](/file/hpcloud-1.7.0.gem).
+
 Some articles about ways you can use the Unix CLI:
 
 * [Using Bash Command Completion](/cli/unix/articles/complete)
