@@ -7,11 +7,13 @@ product: apaas
 ---
 # HP Cloud Application Platform as a Service (aPaaS) Overview
 
-The HP Cloud Application PaaS (aPaaS) is an application platform for development, deployment, and management of cloud applications using any language on any stack. The HP Cloud Application PaaS enables enterprises to develop, deploy, and scale applications in the cloud while ensuring security. 
+The HP Cloud application platform as a service (aPaaS) is an application platform for development, deployment, and management of cloud applications using any language on any stack. HP Cloud aPaaS allows you to develop, deploy, and scale applications in the cloud while ensuring security. 
 
 The HP Cloud aPaaS service is currently in private beta.  Please [request access on our sign-up page](http://go.hpcloud.com/PaaS-private-beta-signup).  Service use is free of charge during the private beta period.
 
 HP Cloud aPaaS uses the Stackato application framework for creating a multi-language, secure and private Platform-as-a-Service (PaaS).
+
+To get going with the aPaaS service, surf to the appropriate web page below!
 
 * [HP Cloud aPaas Documentation](https://apaas-docs.hpcloud.com)
 
