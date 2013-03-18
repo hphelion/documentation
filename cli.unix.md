@@ -23,9 +23,15 @@ The Unix Command Line Interface is a tool which allows Unix or Mac users to mana
 
 For some release-by-release information, take a look at [the UNIX CLI release notes](/cli/unix/release-notes)!
 
+[**Download** the HP Cloud environment command-line interface (CLI) software for UNIX CLI](/file/hpcloud.gem).
+
 Some articles about ways you can use the Unix CLI:
 
-* [Using Bash Command Completion](/cli/unix/articles/complete)
-* [Generating Verbose Debugging Output](/cli/unix/articles/debugging)
-* [Accessing Servers with Managed Key Pairs](/cli/unix/articles/managedkeypairs)
-* [Performing Object Store Migration](/cli/unix/articles/migration)
+* [Using bash command completion](/cli/unix/articles/complete)
+* [Generating verbose debugging output](/cli/unix/articles/debugging)
+* [Accessing servers with managed key pairs](/cli/unix/articles/managedkeypairs)
+* [Performing object store migration](/cli/unix/articles/migration)
+* [Generating custom reports](/cli/unix/articles/reports)
+* [Performing large file uploads](/cli/unix/articles/large)
+* [Creating servers with user data](/cli/unix/articles/userdata)
+* [Modifying report paging](/cli/unix/articles/paging)

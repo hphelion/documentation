@@ -14,7 +14,7 @@ Before you can begin working with the Ruby Fog bindings, you have to install the
 * [CentOS Installation](#CentOS)
 * [Uninstalling](#Uninstalling) 
 
-[Please **download** the most recent Ruby Fog package (Version 0.0.19)](/file/hpfog-0.0.19.gem)!
+[Please **download** the most recent Ruby Fog package (Version 0.0.20)](/file/hpfog-0.0.20.gem)!
 
 
 <!--##Installation Prerequisites## {#Installation}
@@ -52,10 +52,10 @@ To install the Ruby Fog bindings on the Ubuntu operating system, follow these st
 
 5. Download and install the HP Cloud Ruby Fog bindings gem package:
 
-        curl -sL https://docs.hpcloud.com/file/hpfog-0.0.19.gem >hpfog-0.0.19.gem
-        gem install hpfog-0.0.19.gem
+        curl -sL https://docs.hpcloud.com/file/hpfog-0.0.20.gem >hpfog-0.0.20.gem
+        gem install hpfog-0.0.20.gem
 
-**Note**: Substitute the version number of the most current installation package (for example, `0.0.19`), which we have helpfully listed at the top of this page, in to the `curl` and `gem install` commands above.
+**Note**: Substitute the version number of the most current installation package (for example, `0.0.20`), which we have helpfully listed at the top of this page, in to the `curl` and `gem install` commands above.
 
 ##MacOS X Installation## {#MacOS}
 
@@ -107,12 +107,12 @@ To install the Ruby Fog bindings on MacOS X, follow these steps while logged in 
 
 10. Download and install the HP Cloud Ruby Fog bindings gem:
 
-        curl -sL https://docs.hpcloud.com/file/hpfog-0.0.19.gem >hpfog-0.0.19.gem
-        gem install hpfog-0.0.19.gem
+        curl -sL https://docs.hpcloud.com/file/hpfog-0.0.20.gem >hpfog-0.0.20.gem
+        gem install hpfog-0.0.20.gem
 
 For further details, see [Installation Notes](#InstallationNotes).  See the [Connecting to the Cloud Service](/bindings/fog/connect) page for details on how to connect.
 
-**Note**: Substitute the version number of the most current installation package (for example, `0.0.19`), which we have helpfully listed at the top of this page, in to the `curl` and `gem install` commands above.
+**Note**: Substitute the version number of the most current installation package (for example, `0.0.20`), which we have helpfully listed at the top of this page, in to the `curl` and `gem install` commands above.
 
 ##CentOS Installation ## {#CentOS}
 
@@ -138,10 +138,10 @@ To install the Ruby Fog bindings on CentOS, follow these steps while logged in a
 
 5. Download and install the HP Ruby Fog gem package:
 
-        curl -sL https://docs.hpcloud.com/file/hpfog-0.0.19.gem >hpfog-0.0.19.gem
-        gem install hpfog-0.0.19.gem
+        curl -sL https://docs.hpcloud.com/file/hpfog-0.0.20.gem >hpfog-0.0.20.gem
+        gem install hpfog-0.0.20.gem
 
-**Note**: Substitute the version number of the most current installation package (for example, `0.0.19`), which we have helpfully listed at the top of this page, in to the `curl` and `gem install` commands above.
+**Note**: Substitute the version number of the most current installation package (for example, `0.0.20`), which we have helpfully listed at the top of this page, in to the `curl` and `gem install` commands above.
 
 <!--##Installation Notes## {#Installation}
 
