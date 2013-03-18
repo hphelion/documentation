@@ -11,9 +11,7 @@ The HP Cloud application platform as a service (aPaaS) is an application platfor
 
 The HP Cloud aPaaS service is currently in private beta.  Please [request access on our sign-up page](http://go.hpcloud.com/PaaS-private-beta-signup).  Service use is free of charge during the private beta period.
 
-**Note**: HP Cloud aPaaS uses the [Stackato application framework](http://docs.stackato.com) for creating a multi-language, secure and private Platform-as-a-Service (PaaS).
-
-You can [surf on over to the HP Cloud Application PaaS Management Console](https://api.shared.apaas.hpcloudsvc.com/) and get started using the service right away, or for more information about aPaaS, go to the appropriate web page below!
+If you're already a member of our private beta program, you can [go right over to the HP Cloud Application PaaS Management Console](https://api.shared.apaas.hpcloudsvc.com/) and get started using the service right away, or for more information about aPaaS, go to the appropriate web page below!
 
 * [HP Cloud aPaas Documentation](https://apaas-docs.hpcloud.com)
 
@@ -24,3 +22,5 @@ You can [surf on over to the HP Cloud Application PaaS Management Console](https
     * [Language Specific Deployment](https://apaas-docs.hpcloud.com/index.html#language-specific-deployment)
     * [Best Practices](https://apaas-docs.hpcloud.com/index.html#best-practices)
     * [Reference](https://apaas-docs.hpcloud.com/index.html#reference)
+
+**Note**: HP Cloud aPaaS uses the [Stackato application framework](http://docs.stackato.com) for creating a multi-language, secure and private Platform-as-a-Service (PaaS).
