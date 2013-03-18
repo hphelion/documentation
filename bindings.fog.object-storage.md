@@ -214,6 +214,7 @@ Synchronizing containers creates a one-way association from containers to the sy
         # sync the target -> source
         sync the target -> source
         target_dir_b.sync(dir_a, "boogieman") # => true
+        target_dir_b.save #=> true
 
 
 ##Using the Request Abstraction## {#UsingtheRequestAbstraction}
