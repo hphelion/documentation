@@ -32,6 +32,6 @@ Some articles about ways you can use the Unix CLI:
 * [Accessing servers with managed key pairs](/cli/unix/articles/managedkeypairs)
 * [Performing object store migration](/cli/unix/articles/migration)
 * [Generating custom reports](/cli/unix/articles/reports)
-* [Performing arge file uploads](/cli/unix/articles/large)
+* [Performing large file uploads](/cli/unix/articles/large)
 * [Creating servers with user data](/cli/unix/articles/userdata)
 * [Modifying report paging](/cli/unix/articles/paging)
