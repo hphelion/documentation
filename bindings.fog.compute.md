@@ -111,7 +111,7 @@ For information on connecting to the service, please see the [Connecting to the 
               :config_drive => true,
               :user_data_encoded => ["This is some encoded user data"].pack('m'),
               :personality => [{
-                'contents'  => File.open("/path/to/sample.txt"),
+                'contents'  => File.read("/path/to/sample.txt"),
                 'path'      => "/path/to/sample.txt"
               }]
         )
@@ -485,7 +485,7 @@ For information on connecting to the service, please see the [Connecting to the 
               'config_drive' => true,
               'user_data_encoded' => ["This is some encoded user data"].pack('m'),
               'personality' => [{
-                                 'contents'  => File.open("/path/to/sample.txt"),
+                                 'contents'  => File.read("/path/to/sample.txt"),
                                  'path'      => "/path/to/sample.txt"
                                }]
             }
