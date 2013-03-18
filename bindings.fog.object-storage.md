@@ -210,8 +210,8 @@ Synchronizing containers creates a one-way association from containers to the sy
         # sync the source -> target
         dir_a.sync(target_dir_b, "boogieman") # => true
         dir_a.save # => true
+        
         # sync the target -> source
-        sync the target -> source
         target_dir_b.sync(dir_a, "boogieman") # => true
         target_dir_b.save #=> true
 
