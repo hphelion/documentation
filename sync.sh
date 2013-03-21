@@ -41,8 +41,8 @@ echo "<h1>Docs QA Server</h1>" >>${INDEX}
 #
 # Assign ports to anyone in need
 #
-USER=terry
-HOST=127.0.0.1
+USER=ubuntu
+HOST=15.185.109.123
 DEST=/var/www/
 DOCS=/var/www/docs
 for DIR
