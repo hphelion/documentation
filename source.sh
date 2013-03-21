@@ -1,7 +1,5 @@
 #!/bin/bash -e
 export TERM=xterm-256color
-source "$HOME/.rvm/scripts/rvm"
-rvm use ruby-1.9.2@docs
 
 SERVERS_DIR=$(pwd)/servers
 rm -f ${SERVERS_DIR}/*/active
@@ -25,6 +23,7 @@ do
     cd "${DIR}"
     git checkout develop
     git pull origin develop
+    mkdir -p content
     cd content
     rm -rf documentation
     echo "###### ${DIR} documenation repo ######"
@@ -41,6 +40,8 @@ do
     git checkout "${BRANCH}" >/dev/null 2>/dev/null
     git pull origin "${BRANCH}" >/dev/null
   fi
+  cd "${DIR}"
+  make build
   touch "${DIR}/active"
 done
 exit 0
