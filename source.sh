@@ -1,5 +1,7 @@
 #!/bin/bash -e
 export TERM=xterm-256color
+source "$HOME/.rvm/scripts/rvm"
+rvm use ruby-1.9.2@docs
 
 SERVERS_DIR=$(pwd)/servers
 rm -f ${SERVERS_DIR}/*/active

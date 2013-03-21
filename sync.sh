@@ -2,9 +2,6 @@
 #
 # This script selects a ports and updates the web sites
 #
-export TERM=xterm-256color
-source "$HOME/.rvm/scripts/rvm"
-rvm use ruby-1.9.2@docs
 SERVERS_DIR=$(pwd)/servers
 mkdir -p ${SERVERS_DIR} || true
 cd "${SERVERS_DIR}"
