@@ -55,3 +55,5 @@ Now that you've finished installing the software package, it's time to [perform 
 Its recommended that you uninstall a previous version prior to upgrading. To uninstall:
 
         gem uninstall hpcloud
+
+
