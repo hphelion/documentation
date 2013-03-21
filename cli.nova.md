@@ -15,6 +15,8 @@ For more information, surf on over to the appropriate page:
 * [Installation](/cli/nova/install)
 * [Python Novaclient CLI Reference](/cli/nova/reference)
 
-Need some more details?  Check out:
+[**Download** the Python Novaclient package](/file/python-novaclient_2.6.8.tar.gz).
 
-<iframe src="https://player.vimeo.com/video/44132952?title=0&amp;byline=0&amp;portrait=0" width="580" height="420" frameborder="0"> </iframe>
+<!-- Need some more details?  Check out:
+
+<iframe src="https://player.vimeo.com/video/44132952?title=0&amp;byline=0&amp;portrait=0" width="580" height="420" frameborder="0"> </iframe> -->

@@ -6,16 +6,16 @@ product: unix-cli
 categories: cli linux bash
 tags: cli linux bash
 ---
-#UNIX CLI: Using Bash Shell Command Completion#
+#UNIX CLI: Using bash shell command completion#
 
 The Unix CLI supports bash shell command completion.  This page covers the following topics:
 
-* [Enabling Bash Command Completion](#Enabling)
-* [Using Bash Command Completion](#Using)
+* [Enabling bash cmmand completion](#Enabling)
+* [Using bash command completion](#Using)
 * [Troubleshooting](#Troubleshooting)
 * [Uninstalling](#Uninstalling)
 
-##Enabling Bash Command Completion## {#Enabling}
+##Enabling bash command completion## {#Enabling}
 
 Bash shell command completion allows you to use the tab key to complete commands and options.  Execute the `hpcloud complete` command to enable this functionality:
 
@@ -28,7 +28,7 @@ Bash shell command completion allows you to use the tab key to complete commands
 
 If command completion using the tab key does not work immediately, you must either create a new terminal session, or log out and log back in again.
 
-##Using Bash Completion## {#Using}
+##Using bash completion## {#Using}
 
 To use bash command completion, just hit the tab key when you have a command partially entered:
 

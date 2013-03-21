@@ -22,3 +22,4 @@ For a full list of all the commands available, start with the [command line refe
 + [Getting Help](/cli/windows/help)
 + [Release Notes](/cli/windows/release-notes)
 
+[**Download** the HP Cloud environment command-line interface (CLI) software for Windows PowerShell](/file/WinCLI-1.3.3.7.zip).
