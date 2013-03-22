@@ -53,6 +53,7 @@ serve() {
 
 if [ -n "${1}" ]
 then
+  echo "##### ${1} #####"
   serve "${1}"
   exit 0
 fi
