@@ -48,7 +48,7 @@ serve() {
   cd "${DIR}"
   sed -i -e "s/Sign Up Now/${BRANCH}/" _layouts/default.html
   sed -i -e "s/Sign Up Now/${BRANCH}/" _layouts/page.html
-  make build
+  ./jenkins/build.sh
   git checkout _layouts/default.html
   git checkout _layouts/page.html
   touch "${DIR}/active"
