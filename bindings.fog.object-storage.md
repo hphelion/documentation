@@ -208,12 +208,12 @@ Synchronizing containers creates a one-way association from containers to the sy
         target_dir_b = conn2.directories.get('arch_imp_stuff')  # Note: conn2 points to region-b
 
         # sync the source -> target
-        dir.sync(target_dir_b, "boogieman")       # => true
-        dir.save                                  # => true
-
+        dir_a.sync(target_dir_b, "boogieman") # => true
+        dir_a.save # => true
+        
         # sync the target -> source
-        target_dir_b.sync(dir_b, "boogieman")       # => true
-        target_dir_b.save                                  # => true
+        target_dir_b.sync(dir_a, "boogieman") # => true
+        target_dir_b.save #=> true
 
 
 ##Using the Request Abstraction## {#UsingtheRequestAbstraction}
