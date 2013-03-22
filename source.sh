@@ -4,14 +4,14 @@ source "$HOME/.rvm/scripts/rvm"
 rvm use ruby-1.9.2@docs
 
 SERVERS_DIR=$(pwd)/servers
-rm -f ${SERVERS_DIR}/*/active
 mkdir -p ${SERVERS_DIR} 2>/dev/null || true
-git branch -r | while read BRANCH ROL
-do
+serve() {
+  BRANCH=$1
   BRANCH=$(echo ${BRANCH} | sed -s 's,origin/,,')
   if [ "${BRANCH}" == "HEAD" -o "${BRANCH}" == "master" -o "${BRANCH}" == "develop" ]
   then
-    continue
+    echo "No update for ${BRANCH}"
+    return
   fi
 
   cd ${SERVERS_DIR}
@@ -45,5 +45,17 @@ do
   cd "${DIR}"
   make build
   touch "${DIR}/active"
+}
+
+if [ -n "${1}" ]
+then
+  serve "${1}"
+  exit 0
+fi
+
+rm -f ${SERVERS_DIR}/*/active
+git branch -r | while read BRANCH ROL
+do
+  serve "${BRANCH}"
 done
 exit 0
