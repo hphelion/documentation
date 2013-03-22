@@ -11,7 +11,7 @@ mkdir -p ${SERVERS_DIR} 2>/dev/null || true
 serve() {
   BRANCH=$1
   BRANCH=$(echo ${BRANCH} | sed -s 's,origin/,,')
-  if [ "${BRANCH}" == "HEAD" -o "${BRANCH}" == "master" ]
+  if [ "${BRANCH}" == "master" ]
   then
     echo "No update for ${BRANCH}"
     return
