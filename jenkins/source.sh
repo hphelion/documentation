@@ -1,4 +1,7 @@
 #!/bin/bash -e
+#
+# This script prepares the source for a branch or branches
+#
 export TERM=xterm-256color
 source "$HOME/.rvm/scripts/rvm"
 rvm use ruby-1.9.2@docs
@@ -8,7 +11,7 @@ mkdir -p ${SERVERS_DIR} 2>/dev/null || true
 serve() {
   BRANCH=$1
   BRANCH=$(echo ${BRANCH} | sed -s 's,origin/,,')
-  if [ "${BRANCH}" == "HEAD" -o "${BRANCH}" == "master" -o "${BRANCH}" == "develop" ]
+  if [ "${BRANCH}" == "HEAD" -o "${BRANCH}" == "master" ]
   then
     echo "No update for ${BRANCH}"
     return
