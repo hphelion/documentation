@@ -17,7 +17,7 @@ echo "##### ${BRANCH} #####"
 BRANCH=$(echo ${BRANCH} | sed -s 's,origin/,,')
 if [ "${BRANCH}" == "HEAD" ]
 then
-  BRANCH="develop"
+  BRANCH="master"
 fi
 if [ "${BRANCH}" == "master" ]
 then
