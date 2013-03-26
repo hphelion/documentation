@@ -12,6 +12,7 @@ Here's what we have for you:
 
 * [UNIX CLI](#UNIXCLIInstall)
 * [Windows CLI](#WinCLIInstall)
+* [Python NovaClient](#PythonNovaClient)
 * [Ruby Fog Bindings](#RubyFogBindingsInstall)
 * [Jave/Clojure jclouds Bindings](#jcloudsBindingsInstall)
 * [PHP Bindings](#PHPBindingsInstall)
