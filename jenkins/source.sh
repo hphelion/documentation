@@ -17,7 +17,7 @@ echo "##### ${BRANCH} #####"
 BRANCH=$(echo ${BRANCH} | sed -s 's,origin/,,')
 if [ "${BRANCH}" == "HEAD" ]
 then
-  BRANCH="develop"
+  BRANCH="master"
 fi
 if [ "${BRANCH}" == "master" ]
 then
@@ -37,8 +37,8 @@ then
   git clone git@git.hpcloud.net:DevExDocs/docs.hpcloud.com.git
   mv docs.hpcloud.com "${DIR}"
   cd "${DIR}"
-  git checkout develop
-  git pull origin develop
+  git checkout master
+  git pull origin master
   mkdir -p content
   cd content
   rm -rf documentation
@@ -49,8 +49,8 @@ then
   git pull origin "${BRANCH}"
 else
   cd "${DIR}"
-  git checkout develop >/dev/null 2>/dev/null
-  git pull origin develop >/dev/null
+  git checkout master >/dev/null 2>/dev/null
+  git pull origin master >/dev/null
   cd content/documentation
   echo "###### ${DIR} documenation repo ######"
   git checkout "${BRANCH}" >/dev/null 2>/dev/null
