@@ -41,7 +41,7 @@ HP Cloud Available Services<br> <!--Need to add a page for this -->
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[CDN Examples](/bindings/fog/cdn)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Block Storage Examples](/bindings/fog/block-storage)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Using the Ruby Fog bindings](/bindings/fog/articles/)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Using authentication caching](/bindings/fog/articles/authcache/)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Using authentication caching](/bindings/fog/articles/authcache)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Release Notes](/bindings/fog/release-notes)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Java/Clojure jclouds Overview and Installation](/bindings/jclouds)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Connecting to the Service](/bindings/jclouds/connecting)<br>
