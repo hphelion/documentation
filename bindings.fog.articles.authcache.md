@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "HP Ruby Fog Binding: Authentication Caching"
+title: "HP Ruby Fog Binding: Using authentication caching"
 permalink: /bindings/fog/articles/authcache
 product: fog
 categories: fog
 tags: fog authentication caching
 ---
-#HP Ruby Fog Binding: Authentication Caching#
+#HP Ruby Fog binding: Using authentication caching#
 
 Your application can run up to 40% faster if you cache the authentication information.  The authentication token is typically valid for a day or more and if you save it in a safe place, you can reuse it.  If you pass the authentication information to Fog, it does not have to reauthenticate.
 
