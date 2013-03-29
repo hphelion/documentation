@@ -13,16 +13,16 @@ Your application can run up to 40% faster if you cache the authentication inform
 For example if you save your credentials:
 
     @storage = Fog::Storage.new(options)
-    @storage_credentials = @storage.credentials
+    @credentials = @storage.credentials
 
 The next time you go to create a storage connection, pass in the credentials:
 
-    options[:credentials] = @storage_credentials
+    options[:credentials] = @credentials
     @storage = Fog::Storage.new(options)
-    @storage_credentials = @storage.credentials
+    @credentials = @storage.credentials
 
 It is best to always update your cached credentials.  If they expire, they are automatically  updated.  When you create the new connection with the credentials, you should still pass in your normal authentication information in the options.
 
 The contents of the credentials should be treated like a set of data.  The contents of this object is likely to change in the future.
 
-This feature is also available for block storage, CDN, and compute connections.
+The same credentials may be used to create connections for block storage, CDN, compute connections, and other services.
