@@ -30,7 +30,7 @@ The following services are now in private beta; follow the links to sign up and 
 * [Application Platform as a Service (aPaaS)](/apaas/) - An application platform for development, deployment, and management of cloud applications hosted by HP.<br>
   **Note**: This service requires activation while in private beta; please [request access on our sign-up page](http://go.hpcloud.com/PaaS-private-beta-signup).  Service use is free of charge during the private beta period.
 
-For detailed REST API information, dig into those links above.  In order to interact with the services, you'll need [your API Keys](https://console.hpcloud.com/account/api_keys).
+For detailed REST API information, dig into those links above.  In order to interact with the services, you'll need [your API Keys](https://account.hpcloud.com/account/api_keys).
 
 For direct interactivity with HP Cloud Services, you can use the following officially supported tools:
 
