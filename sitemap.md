@@ -13,7 +13,7 @@ Having a bit of trouble navigating our site, and so you're looking for a single 
 &nbsp;&nbsp;&nbsp;&nbsp;[HP Cloud FAQ](/faq)<br>
 HP Cloud Available Services<br> <!--Need to add a page for this -->
 &nbsp;&nbsp;&nbsp;&nbsp;[Compute Services Overview](/compute)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Compute Services API](/api/compute/)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Compute Services API](~/api/compute/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Using the Compute Service](/compute/using/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Identity Service Overview](/identity/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Identity Service API](api/identity/)<br>
