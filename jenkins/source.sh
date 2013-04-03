@@ -59,7 +59,7 @@ else
   if [ ! -d content/apihome ]
   then
     cd content
-    git clone git@git.hpcloud.net:DevExDocs/aphihome
+    git clone git://git.hpcloud.net/DevExDocs/apihome.git
     cd apihome
     git checkout develop
     git pull origin develop
