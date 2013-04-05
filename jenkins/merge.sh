@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!/bin/bash
 #
 # This script merges master to all the branches
 #
