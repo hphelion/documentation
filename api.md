@@ -24,6 +24,8 @@ You can also avail yourself of one of the following APIs now in private beta; fo
   **Note**: This service requires activation while in private beta; please [request access on our sign-up page](http://go.hpcloud.com/DNS-private-beta-signup).  Service use is free of charge during the private beta period.
 * [Monitoring as a Service (MaaS)](/api/monitoring/): API for the HP Cloud monitoring service; facilitates monitoring of the health and other metrics for the resources in HP Cloud.<br>
   **Note**: This service requires activation while in private beta; please [request access on our sign-up page](http://go.hpcloud.com/Monitoring-private-beta-signup). Service use is free of charge during the private beta period.
+* [Messaging as a Service (MSGaaS)](/api/msgaas/): API for the HP Cloud monitoring service; facilitates monitoring of the health and other metrics for the resources in HP Cloud.<br>
+  **Note**: This service requires activation while in private beta; please [request access on our sign-up page](http://go.hpcloud.com/Messaging-private-beta-signup). Service use is free of charge during the private beta period.
 
 <!--If you are a more visual learner, perhaps you would prefer our videos on these topics:
 
