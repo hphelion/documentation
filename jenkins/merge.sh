@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!/bin/bash
 #
 # This script merges master to all the branches
 #
@@ -9,6 +9,7 @@ do
   echo "##### ${BRANCH} #####"
   BRANCH=$(echo ${BRANCH} | sed -s 's,origin/,,')
   git checkout -b "${BRANCH}" || git checkout -f "${BRANCH}"
+  git reset HEAD || true
   git pull origin "${BRANCH}"
   git merge origin "${BRANCH}" || true
   git push origin "${BRANCH}" || true

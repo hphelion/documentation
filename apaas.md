@@ -15,8 +15,9 @@ If you're already a member of our private beta program, you can [go right over t
 
 * [HP Cloud aPaas Documentation](https://apaas-docs.hpcloud.com)
 
-    * [Quick Start](https://apaas-docs.hpcloud.com/index.html#quick-start)
-    * [HP Cloud aPaaS Client](https://apaas-docs.hpcloud.com/index.html#hpcloud-apaas-client)
+    * [Quick Start](https://apaas-docs.hpcloud.com/quick-start/index.html)
+    * [A brief tutorial on aPaaS](https://apaas-docs.hpcloud.com/tutorial.html)
+    * [HP Cloud aPaaS Client](https://apaas-docs.hpcloud.com/client/index.html)
     * [Management Console](https://apaas-docs.hpcloud.com/console/index.html)
     * [Deploy Applications](https://apaas-docs.hpcloud.com/index.html#deploy-applications)
     * [Language Specific Deployment](https://apaas-docs.hpcloud.com/index.html#language-specific-deployment)
