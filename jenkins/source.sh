@@ -55,6 +55,19 @@ else
   echo "###### ${DIR} documenation repo ######"
   git checkout "${BRANCH}" >/dev/null 2>/dev/null
   git pull origin "${BRANCH}" >/dev/null
+  cd "${DIR}"
+  if [ ! -d content/apihome ]
+  then
+    cd content
+    git clone git://git.hpcloud.net/DevExDocs/apihome.git
+    cd apihome
+    git checkout develop
+    git pull origin develop
+  else
+    cd content/apihome
+    git checkout develop
+    git pull origin develop
+  fi
 fi
 cd "${DIR}"
 sed -i -e "s,Sign Up Now,${BRANCH}," _layouts/default.html
