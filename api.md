@@ -8,7 +8,7 @@ permalink: /api/
 
 There are a number of HP Cloud APIs available for your programming pleasure: 
 
-* [Identity service](/api/identity/): API for the HP Cloud identity service; one-stop authentication for all HP Cloud Service offerings.
+* [Identity service](/api/identity/): API for the HP Cloud identity service; one-stop authentication for all HP Cloud service offerings.
 * [Object storage](/api/object-storage/): API for HP Cloud object storage; a way to store and retrieve objects in a highly redundant cluster of publicly accessible physical machines hosted in HP data centers. 
 * [Compute](/api/compute/): API for the HP Cloud compute service; a way to instantiate virtual servers on publicly accessible physical machines hosted in HP data centers
 * [Block storage](/api/block-storage/): API for HP Cloud block storage; enabling additional volumes to Compute instances.
