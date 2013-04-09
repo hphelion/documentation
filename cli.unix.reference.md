@@ -1521,6 +1521,8 @@ Remove objects or containers.
 ###Options
 <dl>
 <dt><b>-f, [--force]</b></dt><dd>Do not confirm removal, remove non-empty containers.</dd>  
+[<dt><b>--at=AT]</b></dt><dd>Delete the object at the specified Unix epoch time.</dd>  
+[<dt><b>--after=AFTER]</b></dt><dd>Delete the object after the specified number of seconds.</dd>  
 <dt><b>-z, [--availability-zone=AVAILABILITY_ZONE]</b></dt><dd>Set the availability zone.</dd>  
 <dt><b>-x, [--debug=DEBUG]</b></dt><dd>Debug logging 1,2,3,...</dd>  
 <dt><b>-a, [--account-name=ACCOUNT_NAME]</b></dt><dd>Select account.</dd>  
@@ -2186,6 +2188,7 @@ Create temporary URLs for the given objects.
 ###Options
 <dl>
 <dt><b>-p, [--time-period=TIME_PERIOD]</b></dt><dd>time period to keep the url alive</dd>  
+<dt><b>-u, [--update]</b></dt><dd>Update an existing tempurl</dd>  
 <dt><b>-z, [--availability-zone=AVAILABILITY_ZONE]</b></dt><dd>Set the availability zone.</dd>  
 <dt><b>-x, [--debug=DEBUG]</b></dt><dd>Debug logging 1,2,3,...</dd>  
 <dt><b>-a, [--account-name=ACCOUNT_NAME]</b></dt><dd>Select account.</dd>  
