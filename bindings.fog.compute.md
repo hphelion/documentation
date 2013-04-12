@@ -141,19 +141,29 @@ For information on connecting to the service, please see the [Connecting to the 
     
     **Note**: The above personalization options are not supported on Windows server instances.
 
-7. Reboot a server:
+7. Get console output:
+
+   server = conn.servers.get(server_id)
+   server.console_output(5)           # 5 lines of console output will be returned
+
+8. Get VNC console:
+
+   server = conn.servers.get(server_id)
+   server.vnc_console_url('novnc')    # Url to access the VNC console of a server from a browser
+
+9. Reboot a server:
 
         server = conn.servers.get(server_id)
         server.reboot          # soft reboot by default
 
         server.reboot("HARD")  # hard reboot also possible
 
-8. Change password for a server:
+10. Change password for a server:
 
         server = conn.servers.get(server_id)
         server.change_password("new_password")
 
-9. Delete an existing server:
+11. Delete an existing server:
 
         server = conn.servers.get(server_id)
         server.destroy
@@ -528,12 +538,22 @@ For information on connecting to the service, please see the [Connecting to the 
 
         response = conn.list_server_public_addresses(server_id, "private")     # where "private" is the network name
 
-13. Reboot a server:
+13. Get console output:
+
+   response = conn.get_console_output(server_id, 5)
+   # => 5 lines of console output will be returned
+
+14. Get VNC console:
+
+   response = conn.get_vnc_console(server_id, 'novnc')
+   # => Url to access the VNC console of a server from a browser
+
+15. Reboot a server:
 
         response = conn.reboot_server(server_id, 'HARD')  # Hard reboot a server
         response = conn.reboot_server(server_id, 'SOFT')  # Soft reboot a server
 
-14. Delete an existing server:
+16. Delete an existing server:
 
         conn.delete_server(server_id)
 
