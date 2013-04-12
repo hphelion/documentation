@@ -11,7 +11,7 @@ Having a bit of trouble navigating our site, and so you're looking for a single 
 [Getting Started with HP Cloud](/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Documentation Site Overview](/site-overview)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[HP Cloud FAQ](/faq)<br>
-HP Cloud Available Services<br> <!--Need to add a page for this -->
+[HP Cloud Available Services](/services/)<br> 
 &nbsp;&nbsp;&nbsp;&nbsp;[Compute Services Overview](/compute)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Compute Services API](~/api/compute/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Using the Compute Service](/compute/using/)<br>
