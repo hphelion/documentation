@@ -31,7 +31,7 @@ Here's what we have for you:
 * [Release Notes](/cli/windows/release-notes)
 
 ###Python NovaClient### {#PythonNovaClient}
-* [Installation package, Version 2.6.8](/file/python-novaclient_2.6.8.tar.gz)
+* [Installation package, Version 2.6.8-17](/file/python-novaclient_2.6.8-17.tar.gz)
 * [Overview page](/cli/nova)
 
 ##Language Bindings##

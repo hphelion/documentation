@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "HP Cloud Application PaaS Overview"
+title: "HP Cloud application PaaS overview"
 permalink: /apaas/
 product: apaas
 
 ---
-# HP Cloud Application Platform as a Service (aPaaS) Overview
+# HP Cloud application platform as a service (aPaaS) overview
 
 The HP Cloud application platform as a service (aPaaS) is an application platform for development, deployment, and management of cloud applications using any language on any stack. HP Cloud aPaaS allows you to develop, deploy, and scale applications in the cloud while ensuring security. 
 
