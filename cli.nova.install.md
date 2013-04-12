@@ -17,12 +17,12 @@ This page provides you with the installation information for the following opera
 <!--* [Fedora Installation](#Fedora)-->
 * [Windows Installation](#Windows)
 
-[You can download the latest version of the Python Novaclient CLI software here (Version 2.6.8)](/file/python-novaclient_2.6.8.tar.gz)!
+[You can download the latest version of the Python Novaclient CLI software here (Version 2.6.8-17)](/file/python-novaclient_2.6.8-17.tar.gz)!
 
 
 ##Installation Prerequisites## {#Installation}
 
-To install the Python Novaclient CLI CentOS, you must first download and install [the dependency software (in TAR format)](https://docs.hpcloud.com/file/nova-stuff.tar)--follow the instructions in the `setup.py` file included with the package.  (We also assume that you have Python already installed!)
+To install the Python Novaclient CLI on CentOS, you must first download and install [the dependency software (in TAR format)](https://docs.hpcloud.com/file/nova-stuff.tar)--follow the instructions in the `setup.py` file included with the package.  (We also assume that you have Python already installed!)
 
 **Note**: We recommend installing the NovaClient on your local system so you always have it available, rather than installing it on an instance which you may want to terminate later.
 
@@ -38,9 +38,9 @@ The installation procedure in this section is valid for Ubuntu versions 11.04, 1
 
         apt-get install python-prettytable python-argparse python-httplib2
     
-3. Download the Python NovaClient installation pcakage from our web site:
+3. Download the Python NovaClient installation package from our web site:
 
-        wget https://docs.hpcloud.com/file/python-novaclient_2.6.8.deb --no-check-certificate
+        wget https://docs.hpcloud.com/file/python-novaclient_2.6.8-17.deb --no-check-certificate
         
     **Note**: If you are installing the software on Ubuntu 12.10, you must all peform the following steps to install the correct version of the `prettytable` package before continuing to Step 4:
     
@@ -50,7 +50,7 @@ The installation procedure in this section is valid for Ubuntu versions 11.04, 1
 
 4. Install the Debian Python Novaclient package:
 
-        dpkg -i python-novaclient_2.6.8.deb
+        dpkg -i python-novaclient_2.6.8-17.deb
         
 5. Using the editor of your choice, open your `.bashrc` file for editing:
 
@@ -88,13 +88,13 @@ CentOS has both Python 2.6.6 and Python-Setuptools 0.1.10 installed by default. 
 
         yum -y update
         
-2. Download the Python NovaClient installation pcakage from our web site:
+2. Download the Python NovaClient installation package from our web site:
 
-        wget https://docs.hpcloud.com/file/python-novaclient_2.6.8.tar.gz --no-check-certificate
+        wget https://docs.hpcloud.com/file/python-novaclient_2.6.8-17.tar.gz --no-check-certificate
         
 3. Unpack the TAR file:
 
-        tar -zxvf python-novaclient_2.6.8-1hp15.tar.gz
+        tar -zxvf python-novaclient_2.6.8-1hp17.tar.gz
         
 4. Change directory to the build directory:
 
@@ -165,13 +165,13 @@ Fedora has both Python 2.6.6 and Python-Setuptools 0.1.10 installed by default. 
 
         yum -y update
         
-2. Download the Python NovaClient installation pcakage from our web site:
+2. Download the Python NovaClient installation package from our web site:
 
-        wget https://docs.hpcloud.com/file/python-novaclient_2.6.8.tar.gz --no-check-certificate 
+        wget https://docs.hpcloud.com/file/python-novaclient_2.6.8-17.tar.gz --no-check-certificate 
         
 3. Unpack the TAR file:
 
-        tar -zxvf python-novaclient_2.6.8-1hp15.tar.gz
+        tar -zxvf python-novaclient_2.6.8-1hp17.tar.gz
         
 4. Change directory to the build directory:
 
@@ -334,13 +334,13 @@ To install the Python Setup tools, follow these steps:
 
 To install the HP Cloud Service Python-Novaclient on your system, follow these steps:
 
-1. Download [the Python NovaClient v2.6.8 package](/file/Python-novaclient2.6.8.zip) from our web site.
+1. Download [the Python NovaClient v2.6.8-17 package](/file/Python-novaclient2.6.8-17.zip) from our web site.
    
-2. Extract (using the ZIP or TAR command of your choice) the 2.6.8 package.
+2. Extract (using the ZIP or TAR command of your choice) the 2.6.8-17 package.
 
 3. In the `Start` menu, select `All Programs`, `Accessories`, then `Command Prompt` to open a CLI command window.
 
-4. In the `Command Prompt` window, move to the directory that contains the 2.6.8 `setup.py` script and execute the following command:
+4. In the `Command Prompt` window, move to the directory that contains the 2.6.8-17 `setup.py` script and execute the following command:
 
         python setup.py install
     
