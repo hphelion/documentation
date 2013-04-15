@@ -21,8 +21,8 @@ The next time you go to create a storage connection, pass in the credentials:
     @storage = Fog::Storage.new(options)
     @credentials = @storage.credentials
 
-It is best to always update your cached credentials.  If they expire, they are automatically  updated.  When you create the new connection with the credentials, you should still pass in your normal authentication information in the options.
+It is best to always update your cached credentials.  If they expire, they are automatically updated.  When you create the new connection with the credentials, you should still pass in your normal authentication information in the options.
 
-The contents of the credentials should be treated like a set of data.  The contents of this object is likely to change in the future.
+The contents of the credentials should be treated like a set of data.  The contents of this object are likely to change in the future.
 
 The same credentials may be used to create connections for block storage, CDN, compute connections, and other services.
