@@ -13,4 +13,4 @@ The HP Cloud MSGaaS service is currently in private beta.  Please [request acces
 
 ## API
 
-Do you need low level, raw REST API access to HP Cloud NSGaaS?  Take a look at the [MSGaaS API page](/api/msgaas/).
+Do you need low level, raw REST API access to HP Cloud MSGaaS?  Take a look at the [MSGaaS API page](/api/msgaas/).
