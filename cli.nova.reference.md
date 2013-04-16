@@ -340,9 +340,9 @@ Get a virtual network computing (VNC) console for a server.
 : Type of VNC console (currently supports type novnc).
 
 ###Example
-Get a VNC console of type  xvpvnc for the server with the ID 122:
+Get a VNC console of type `novnc` for the server with the ID 122:
 
-    nova get-vnc-console 122 xvpvnc
+    nova get-vnc-console 122 novnc
 
 
 ##image-create## {#image-create}
