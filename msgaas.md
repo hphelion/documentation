@@ -9,7 +9,7 @@ product: msgaas
 
 The HP Cloud messaging as a service (MSGaaS) provides you with a standards-based, inter-application asynchronous message queuing system with guaranteed first in, first out (FIFO) message delivery.
 
-The HP Cloud MSGaaS service is currently in private beta.  Please [request access on our sign-up page](http://go.hpcloud.com/Messaging-private-beta-signup).  Service use is free of charge during the private beta period. 
+The HP Cloud MSGaaS service is currently in private beta.  Please [request access on our sign-up page](https://account.hpcloud.com/cases/betarequest/msgaas).  Service use is free of charge during the private beta period. 
 
 ## API
 
