@@ -13,16 +13,16 @@ Having a bit of trouble navigating our site, and so you're looking for a single 
 &nbsp;&nbsp;&nbsp;&nbsp;[HP Cloud FAQ](/faq)<br>
 [HP Cloud Available Services](/services/)<br> 
 &nbsp;&nbsp;&nbsp;&nbsp;[Compute Services Overview](/compute)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Compute Services API](/api/compute)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Using the Compute Service](/compute/using)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Identity Service Overview](/identity)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Identity Service API](api/identity)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Object Storage Overview](/object-storage)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Object Storage API](/api/object-storage)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;[HP Cloud Block Storage Overview](/block-storage)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Block Storage API](/api/block-storage)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Content Delivery Network (CDN) Overview](/cdn)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[CDN API](/cdn/api)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Compute Services API](~/api/compute/)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Using the Compute Service](/compute/using/)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Identity Service Overview](/identity/)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Identity Service API](api/identity/)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Object Storage Overview](/object-storage/)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Object Storage API](/api/object-storage/)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[HP Cloud Block Storage Overview](/block-storage/)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Block Storage API](/api/block-storage/)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Content Delivery Network (CDN) Overview](/cdn/)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[CDN API](/cdn/api/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Relational Database (RDB) Overview](/rdb)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[RDB API](http://api-docs.hpcloud.com/hpcloud-rdb-mysql/1.0/content/ch_rdb-mysql-dev-api.html)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Load Balancer as a Service (LBaaS) Overview](/lbaas)<br>
@@ -42,6 +42,8 @@ Having a bit of trouble navigating our site, and so you're looking for a single 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Object Storage Examples](/bindings/fog/object-storage)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[CDN Examples](/bindings/fog/cdn)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Block Storage Examples](/bindings/fog/block-storage)<br>
+<!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Using the Ruby Fog bindings](/bindings/fog/articles/)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Using authentication caching](/bindings/fog/articles/authcache)<br> -->
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Release Notes](/bindings/fog/release-notes)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Java/Clojure jclouds Overview and Installation](/bindings/jclouds)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Connecting to the Service](/bindings/jclouds/connecting)<br>
