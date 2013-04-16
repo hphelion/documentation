@@ -28,6 +28,6 @@ For our release-by-release information, take a look at [our release notes](/bind
 
 [**Download** the Ruby Fog package](/file/hpfog-0.0.20.gem).
 
-To help you out a bit, here are some articles on how to use the HP cloud Ruby Fog binding:
+<!-- To help you out a bit, here are some articles on how to use the HP cloud Ruby Fog binding:
 
-* [Using authentication caching](/bindings/fog/articles/authcache/)
+* [Using authentication caching](/bindings/fog/articles/authcache/) -->
