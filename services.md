@@ -14,12 +14,12 @@ There are a number of HP Cloud services available for you:
 * [Block storage](/block-storage/): Allows you to enable additional volumes to Compute instances.
 * [CDN](/api/CDN/): Content inside HP Cloud Object Storage can easily be cached on servers in metropolitan areas all over the world to speed client access to them by removing much of the network latency.
 * [Relational database (RDB)](/rdb/): Provides you with a simplified method for creation and management of MySQL database instances.<br>
-  **Note**: This service is currently in private beta and requires activation before use; please [request access on our sign-up page](http://go.hpcloud.com/mysql-private-beta-signup).  Service use is free of charge during the private beta period.
+  **Note**: This service is currently in private beta and requires activation before use; please [request access on our sign-up page](https://account.hpcloud.com/cases/betarequest/dbaas).  Service use is free of charge during the private beta period.
 * [Load balancer as a service (LBaaS)](/lbaas/): Allows you to enable automatic traffic routing to multiple back-end servers hosted by HP.<br>
-  **Note**: This service is currently in private beta and requires activation before use; please [request access on our sign-up page](http://go.hpcloud.com/LoadBalancer-private-beta-signup).  Service use is free of charge during the private beta period.
+  **Note**: This service is currently in private beta and requires activation before use; please [request access on our sign-up page](https://account.hpcloud.com/cases/betarequest/lbaas).  Service use is free of charge during the private beta period.
 * [DNS](/dns/): A managed domain name service that features anycast routing hosted by HP.<br>
-  **Note**: This service is currently in private beta and requires activation before use; please [request access on our sign-up page](http://go.hpcloud.com/DNS-private-beta-signup).  Service use is free of charge during the private beta period.
-* [Monitoring as a service (MaaS)](/monitoring/): Allows you to monitor  the health and other metrics of your resources in HP Cloud.<br>
-  **Note**: This service is currently in private beta and requires activation before use; please [request access on our sign-up page](http://go.hpcloud.com/Monitoring-private-beta-signup). Service use is free of charge during the private beta period.
-
-
+  **Note**: This service is currently in private beta and requires activation before use; please [request access on our sign-up page](https://account.hpcloud.com/cases/betarequest/dns).  Service use is free of charge during the private beta period.
+* [Monitoring as a service (MaaS)](/maas/): Allows you to monitor  the health and other metrics of your resources in HP Cloud.<br>
+  **Note**: This service is currently in private beta and requires activation before use; please [request access on our sign-up page](https://account.hpcloud.com/cases/betarequest/maas). Service use is free of charge during the private beta period.
+* [Messaging as a Service (MSGaaS)](/api/msgaas/): API for the HP Cloud messaging service; provides you with a standards-based, inter-application asynchronous message queuing system with guaranteed first in, first out (FIFO) message delivery in the HP Cloud.<br>
+  **Note**: This service requires activation while in private beta; please [request access on our sign-up page](https://account.hpcloud.com/cases/betarequest/msgaas). Service use is free of charge during the private beta period.
