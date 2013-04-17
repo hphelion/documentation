@@ -14,7 +14,7 @@ Here's what we have for you:
 * [Windows CLI](#WinCLIInstall)
 * [Python NovaClient](#PythonNovaClient)
 * [Ruby Fog Bindings](#RubyFogBindingsInstall)
-* [Jave/Clojure jclouds Bindings](#jcloudsBindingsInstall)
+* [Java/Clojure jclouds Bindings](#jcloudsBindingsInstall)
 * [PHP Bindings](#PHPBindingsInstall)
 * [.NET Bindings](#NetBindingsInstall)
 
