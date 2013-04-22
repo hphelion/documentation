@@ -7,7 +7,7 @@ product: win-cli
 ---
 # Release Notes for the HP Cloud Environment CLI Software for Windows PowerShell
 
-These are the release notes for the HP Cloud environment CLI software for Windows PowerShell.  The current release number for the [HP Cloud environment CLI software for Windows PowerShell](/cli/windows) is version 1.3.3.7, released on 3/4/2013.  These release notes contain the following information:
+These are the release notes for the HP Cloud environment CLI software for Windows PowerShell.  The current release number for the [HP Cloud environment CLI software for Windows PowerShell](/cli/windows) is version 1.3.3.9, released on 4/22/2013.  These release notes contain the following information:
 
 * [Release 1.3.3.9 Features](#v1339)
 * [Release 1.3.1.9 Features](#v1319)
@@ -20,7 +20,7 @@ These are the release notes for the HP Cloud environment CLI software for Window
 
 ##Release 1.3.3.9 Features## {#v1339}
 
-This release was made available on 3/1/2013 and contains the following new features:
+This release was made available on 4/22/2013 and contains the following new features:
 
 * Support for automatic update checking when opening the shell.
 * Added cmdlets `[New-Container](/cli/windows/reference#New-Container)` and `[Remove-Container](/cli/windows/reference#Remove-Container)` to add and remove containers owned by other users to your list of available containers.
