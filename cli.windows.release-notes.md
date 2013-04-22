@@ -16,7 +16,7 @@ These are the release notes for the HP Cloud environment CLI software for Window
 * [Release 1.2.0.6 Features](#v1206)
 * [Release 1.2.0.1 Features](#v1201)
 
-<[Please download the latest version of the HP Cloud environment CLI software for Windows PowerShell (Version 1.3.3.9)](/file/WinCLI-1.3.3.9.zip)!
+[Please download the latest version of the HP Cloud environment CLI software for Windows PowerShell (Version 1.3.3.9)](/file/WinCLI-1.3.3.9.zip)!
 
 ##Release 1.3.3.9 Features## {#v1339}
 
