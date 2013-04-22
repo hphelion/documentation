@@ -18,7 +18,7 @@ To get the HP Cloud Environment CLI Software for Windows PowerShell installed an
 
 This page also describes how to [upgrade to a new version](#Upgrading) of the Windows CLI software.
 
-[Please download the latest version of the HP Cloud environment CLI software package for Windows PowerShell here (Version 1.3.3.8)](/file/WinCLI-1.3.3.8.zip)! 
+[Please download the latest version of the HP Cloud environment CLI software package for Windows PowerShell here (Version 1.3.3.9)](/file/WinCLI-1.3.3.9.zip)! 
 
 ##Installation Prerequisites## {#InstallationPrerequisites}
 
