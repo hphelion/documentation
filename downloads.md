@@ -17,6 +17,7 @@ Here's what we have for you:
 * [Java/Clojure jclouds Bindings](#jcloudsBindingsInstall)
 * [PHP Bindings](#PHPBindingsInstall)
 * [.NET Bindings](#NetBindingsInstall)
+* [Javascript Bindings](#JavascriptBindingsInstall)
 
 ##Command-line Interface (CLI) Packages##
 
@@ -51,5 +52,9 @@ Here's what we have for you:
 
 ###.NET Bindings### {#NetBindingsInstall} 
 * [Installation page](http://hpcloud.codeplex.com/releases/view/95187) (This is the Codeplex repository page for the installation package)
+
+###Javascript Bindings for node.js### {#JavascriptBindingsInstall}
+* [Installation page](https://github.com/hpcloud/hpcloud-js) (This is the GitHub repository page for the installation package)
+* [Overview page](http://hpcloud.github.io/hpcloud-js/)
 
 If you need any more information about these downloads, or our software in general, we urge you to visit our [site map](/sitemap) to locate the information you're looking for.  In addition, you can try our [knowledge base](https://community.hpcloud.com/knowledge-base), or our [forums](https://community.hpcloud.com/forum).
