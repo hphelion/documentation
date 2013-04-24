@@ -24,11 +24,14 @@ Similar to our stance on Ruby, we like the Java/Clojure supported [jclouds multi
 We created this set of bindings and have them available as open source.  While not actively supported, we use these ourselves for various use cases and anyone in the public is free to expand upon them.
 
 ###PHP
-The [HPCloud-PHP Bindings](http://hpcloud.github.com/HPCloud-PHP/) on our GitHub account supports Object Storage and CDN.  We use this on our own Drupal-based sites, like the one you're reading right now.
+The [HPCloud-PHP bindings](http://hpcloud.github.com/HPCloud-PHP/) on our GitHub account supports Object Storage and CDN.  We use this on our own Drupal-based sites, like the one you're reading right now.
 
 ###Drupal Module
-OK, so technically this isn't a binding but it's some open source that we use ourselves that we're making available to the public.  Take a look at our [HPCloud Drupal Module](http://drupal.org/project/hpcloud), which lets you use Object Storage and CDN to offload files (typically images) from your Drupal site to our services.
-
+OK, so technically this isn't a binding but it's some open source that we use ourselves that we're making available to the public.  Take a look at our [HPCloud drupal module](http://drupal.org/project/hpcloud), which lets you use Object Storage and CDN to offload files (typically images) from your Drupal site to our services.
 
 ###.NET
 For our friends on the Microsoft platform, [we have a .NET open source binding over at CodePlex](http://hpcloud.codeplex.com/) that supports Object Storage, CDN, and Compute.  As you might guess, our own [Windows CLI](/cli/windows) is built on this codebase.
+
+###Javascript (node.js)
+The [HP Cloud Javascript bindings](http://hpcloud.github.io/hpcloud-js/) support our identity services and object storage functionality. We use this in our own applications.
+
