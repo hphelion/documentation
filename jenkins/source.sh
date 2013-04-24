@@ -40,35 +40,23 @@ then
   git checkout master
   git pull origin master
   mkdir -p content
-  cd content
-  rm -rf documentation
-  echo "###### ${DIR} documenation repo ######"
-  git clone git@git.hpcloud.net:DevExDocs/documentation.git
-  cd documentation
-  git checkout "${BRANCH}"
-  git pull origin "${BRANCH}"
 else
   cd "${DIR}"
-  git checkout master >/dev/null 2>/dev/null
+  git checkout -f master >/dev/null 2>/dev/null
   git pull origin master >/dev/null
-  cd content/documentation
-  echo "###### ${DIR} documenation repo ######"
-  git checkout "${BRANCH}" >/dev/null 2>/dev/null
-  git pull origin "${BRANCH}" >/dev/null
-  cd "${DIR}"
-  if [ ! -d content/apihome ]
-  then
-    cd content
-    git clone git://git.hpcloud.net/DevExDocs/apihome.git
-    cd apihome
-    git checkout develop
-    git pull origin develop
-  else
-    cd content/apihome
-    git checkout develop
-    git pull origin develop
-  fi
 fi
+cd content
+rm -rf documentation
+rm -rf apihome
+git clone git@git.hpcloud.net:DevExDocs/documentation.git
+git clone git://git.hpcloud.net/DevExDocs/apihome.git
+cd documentation
+git checkout "${BRANCH}"
+git pull origin "${BRANCH}"
+cd "${DIR}"
+cd apihome
+git checkout develop
+git pull origin develop
 cd "${DIR}"
 sed -i -e "s,Sign Up Now,${BRANCH}," _layouts/default.html
 sed -i -e "s,Sign Up Now,${BRANCH}," _layouts/page.html
