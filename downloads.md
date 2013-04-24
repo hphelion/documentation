@@ -55,5 +55,6 @@ Here's what we have for you:
 
 ###Javascript Bindings for node.js### {#JavascriptBindingsInstall}
 * [Installation page](https://github.com/hpcloud/hpcloud-js) (This is the GitHub repository page for the installation package)
+* [Overview page](http://hpcloud.github.io/hpcloud-js/)
 
 If you need any more information about these downloads, or our software in general, we urge you to visit our [site map](/sitemap) to locate the information you're looking for.  In addition, you can try our [knowledge base](https://community.hpcloud.com/knowledge-base), or our [forums](https://community.hpcloud.com/forum).
