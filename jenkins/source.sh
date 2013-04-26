@@ -8,16 +8,16 @@ rvm use ruby-1.9.2@docs
 
 git branch -r | while read BRANCH
 do
-  echo "##### ${BRANCH} #####"
   BRANCH=$(echo ${BRANCH} | sed -s 's,origin/,,')
   if [ "${BRANCH}" == "HEAD" ]
   then
     BRANCH="master"
   fi
+  echo "##### ${BRANCH} #####"
   if [ "${BRANCH}" == "master" ]
   then
     echo "No update for ${BRANCH}"
-    exit 0
+    continue
   fi
   
   SERVERS_DIR=$(pwd)/servers
@@ -40,14 +40,14 @@ do
     git checkout -f master >/dev/null 2>/dev/null
     git pull origin master >/dev/null
   fi
-  cd content
+  cd "${DIR}/content"
   rm -rf documentation
-  rm -rf apihome
   git clone git@git.hpcloud.net:DevExDocs/documentation.git
   cd documentation
   git checkout "${BRANCH}"
   git pull origin "${BRANCH}"
-  cd "${DIR}"
+  cd "${DIR}/content"
+  rm -rf apihome
   git clone git://git.hpcloud.net/DevExDocs/apihome.git
   cd apihome
   git checkout develop
