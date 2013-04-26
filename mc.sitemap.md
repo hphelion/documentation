@@ -23,7 +23,7 @@ Having a bit of trouble navigating our site, and so you're looking for a single 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Rebooting a server](blah)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Rebuilding a server](blah)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Terminating a server](blah)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Images screen](blah)<br> <!-- include basic description of all fields and buttons here -->
+&nbsp;&nbsp;&nbsp;&nbsp;[Images screen](blah) <!-- include basic description of all fields and buttons here --> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating and deleting an image](blah) <br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Volumes screen](blah)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating and deleting a volume](blah)<br>
