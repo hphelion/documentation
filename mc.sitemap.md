@@ -48,7 +48,7 @@ Having a bit of trouble navigating our site, and so you're looking for a single 
 &nbsp;&nbsp;&nbsp;&nbsp;[Key pairs screen](blah)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Adding and deleting a key pair](blah) <br>
 
-[Object storage services overview](/mc/object-storage/)(blah)<br>
+[Object storage services overview](/mc/object-storage/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Containers screen](blah) <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating and deleting a public container](blah) <!-- note you can create w/ or w/out CDN enabled --> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating and deleting a private container](blah) <!-- note you can create w/ or w/out CDN enabled --> <br>
