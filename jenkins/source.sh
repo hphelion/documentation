@@ -8,7 +8,7 @@ rvm use ruby-1.9.2@docs
 
 SERVERS_DIR=$(pwd)/servers
 mkdir -p ${SERVERS_DIR} 2>/dev/null || true
-git branch -r | while read BRAN
+git branch -r | grep -v HEAD | while read BRAN
 do
   BRANCH=$(echo ${BRAN} | sed -s 's,origin/,,')
   if [ "${BRANCH}" == "HEAD" ]
