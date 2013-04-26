@@ -47,6 +47,13 @@ Having a bit of trouble navigating our site, and so you're looking for a single 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Attaching and detatching an IP address to a port](blah)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Key pairs screen](blah)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Adding and deleting a key pair](blah) <br>
+[Using the management console](blah) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Use case/tutorial 1](blah) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Use case/tutorial 2](blah) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Use case/tutorial 3](blah) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Use case/tutorial 4](blah) <br>
+[Management console reference](blah) <!-- reference for every button, field, etc. for later inclusion as bubble help or some such  --> <br>
+[Management console FAQ](blah) <br>
 
 [Object storage services overview](/mc/object-storage/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Containers screen](blah) <br>
