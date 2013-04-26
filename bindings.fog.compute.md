@@ -144,7 +144,7 @@ For information on connecting to the service, please see the [Connecting to the 
 7. Get console output:
 
    server = conn.servers.get(server_id)
-   server.console_output(5)           # 5 lines of console output will be returned
+   server.console_output(5)           # 5 lines of console output are returned
 
 8. Get VNC console:
 
@@ -540,13 +540,13 @@ For information on connecting to the service, please see the [Connecting to the 
 
 13. Get console output:
 
-   response = conn.get_console_output(server_id, 5)
-   # => 5 lines of console output will be returned
+        response = conn.get_console_output(server_id, 5)
+        # => 5 lines of console output are returned
 
 14. Get VNC console:
 
-   response = conn.get_vnc_console(server_id, 'novnc')
-   # => Url to access the VNC console of a server from a browser
+        response = conn.get_vnc_console(server_id, 'novnc')
+        # => Url to access the VNC console of a server from a browser
 
 15. Reboot a server:
 
