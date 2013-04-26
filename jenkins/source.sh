@@ -6,6 +6,8 @@ export TERM=xterm-256color
 source "$HOME/.rvm/scripts/rvm"
 rvm use ruby-1.9.2@docs
 
+SERVERS_DIR=$(pwd)/servers
+mkdir -p ${SERVERS_DIR} 2>/dev/null || true
 git branch -r | while read BRAN
 do
   BRANCH=$(echo ${BRAN} | sed -s 's,origin/,,')
@@ -19,9 +21,6 @@ do
     echo "No update for ${BRANCH}"
     continue
   fi
-  
-  SERVERS_DIR=$(pwd)/servers
-  mkdir -p ${SERVERS_DIR} 2>/dev/null || true
   
   cd ${SERVERS_DIR}
   DIR=${SERVERS_DIR}/$(echo ${BRANCH} | sed -e 's,/,_,g')
