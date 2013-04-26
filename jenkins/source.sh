@@ -6,9 +6,9 @@ export TERM=xterm-256color
 source "$HOME/.rvm/scripts/rvm"
 rvm use ruby-1.9.2@docs
 
-git branch -r | while read BRANCH
+git branch -r | while read BRAN
 do
-  BRANCH=$(echo ${BRANCH} | sed -s 's,origin/,,')
+  BRANCH=$(echo ${BRAN} | sed -s 's,origin/,,')
   if [ "${BRANCH}" == "HEAD" ]
   then
     BRANCH="master"
