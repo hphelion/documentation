@@ -29,10 +29,10 @@ Having a bit of trouble navigating our site, and so you're looking for a single 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating and deleting a volume](blah)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Cloning a new volume from an existing snapshot](blah)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating a bootable volume from an existing image](blah)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Network screen](blah)<br> <!-- info here on toggles, fields, and basic network overview -->
+&nbsp;&nbsp;&nbsp;&nbsp;[Network screen](blah) <!-- info here on toggles, fields, and basic network overview --> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating and deleting a network](blah) <!-- creating launches a new screen; perhaps separate creating and put deleting in the overview? --> <br> 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Crearing and deleting a subnet](blah) <!-- creating launches a new screen; perhaps separate creating and put deleting in the overview? --> <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Viewing  network details](blah) <br>V
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Viewing  network details](blah) <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Viewing subnet details](blah) <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Understanding network system messages](blah) <!-- success & error messages w/ descriptions of what they mean --> <br> 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Viewing router details](blah) <!-- not sure about this one--maybe it's own menu item, and Laura hasn't updated wireframes? --> <br>
@@ -52,7 +52,7 @@ Having a bit of trouble navigating our site, and so you're looking for a single 
 &nbsp;&nbsp;&nbsp;&nbsp;[Containers screen](blah) <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating and deleting a public container](blah) <!-- note you can create w/ or w/out CDN enabled --> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating and deleting a private container](blah) <!-- note you can create w/ or w/out CDN enabled --> <br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Container details screen](blah) <br> <!-- info about selecting containers here -->
+&nbsp;&nbsp;&nbsp;&nbsp;[Container details screen](blah) <!-- info about selecting containers here --> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Enabling and disabling CDN functionality](blah) <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Changing container state between public and private](blah) <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Browsing container objects](blah) <br>
