@@ -79,7 +79,7 @@ When you execute a CLI command without designating a specific account with the *
 ## Verify an Account ## {#VerifyAccount}
 To verify an existing account, use the [`account:verify <account_name>`](/cli/unix/reference#account:verify) command:
 
-    $ hpcloud account:use account_2
+    $ hpcloud account:verify account_2
     Verifying 'account_2' account...
     Connected to 'account_2' successfully
 
