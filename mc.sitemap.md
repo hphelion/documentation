@@ -9,9 +9,10 @@ permalink: /mc/sitemap/
 Having a bit of trouble navigating our site, and so you're looking for a single list of what we cover?  You've come to the right place!
 
 [Getting started with the management console](/mc/)<br>
-[Main dashboard overview](/mc/main/)<br>
+[Main dashboard overview](/mc/main/) <!-- include info about various panes, eg Activity Stream --> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Main dashboard--compute services](/mc/dashboard-compute/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Main dashboard--object storage services](/mc/dashboard-object-storage/)<br>
+<!-- other services? -->
 [Compute services overview](/mc/compute/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Server screen](blah) <!-- include basic description of all fields and buttons, as well as items in the Inventory section --> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating a new server from an image](blah)<br>
@@ -36,7 +37,6 @@ Having a bit of trouble navigating our site, and so you're looking for a single 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Viewing subnet details](blah) <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Understanding network system messages](blah) <!-- success & error messages w/ descriptions of what they mean --> <br> 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Viewing router details](blah) <!-- not sure about this one--maybe it's own menu item, and Laura hasn't updated wireframes? --> <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Adding and deleting an interface](blah) <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Adding and deleting an instance to a router](blah) <br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Security groups screen](blah) <!-- basic screen functions here such as selecting a project, listing security groups, etc.? --> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Adding and removing a security group](blah)<br>
@@ -44,16 +44,14 @@ Having a bit of trouble navigating our site, and so you're looking for a single 
 &nbsp;&nbsp;&nbsp;&nbsp;[Floating IPs screen](blah) <!-- basic screen functions here such as selecting a project --> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Connecting to a server](blah)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Allocating and deallocating an IP address](blah)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Attaching and detatching an IP address to a port](blah)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Attaching and detatching an IP address to your server](blah)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Key pairs screen](blah)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Adding and deleting a key pair](blah) <br>
-[Using the management console](blah) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Use case/tutorial 1](blah) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Use case/tutorial 2](blah) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Use case/tutorial 3](blah) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Use case/tutorial 4](blah) <br>
-[Management console reference](blah) <!-- reference for every button, field, etc. for later inclusion as bubble help or some such  --> <br>
-[Management console FAQ](blah) <br>
+[Using the management console: Some compute service use cases](blah) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Creating a new server](blah) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Creating a bootable volume](blah) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Managing a custom image](blah) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Creating and managing a network](blah) <br>
 
 [Object storage services overview](/mc/object-storage/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Containers screen](blah) <br>
@@ -70,6 +68,23 @@ Having a bit of trouble navigating our site, and so you're looking for a single 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Downloading objects](blah) <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating new directories](blah) <!-- perhaps include this in the main page above? --> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Filtering the objects list](blah) <br>
+[Using the management console: Some object storage use cases](blah) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Object storage use case 1](blah) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Object storage use case 2](blah) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Object storage use case 3](blah) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Object storage use case 4](blah) <br>
+
+[Other services](blah) <!-- Presumably these sections will grow and get their own sections as compute and object storage have above as the MC changes to support them more thoroughly --> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Identity service](blah) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Relational Database for MySQL](blah) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Load balancer as a service (LBaaS)](blah) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Domain name service (DNS)](blah) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Monitoring as a service (MaaS)](blah) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Application platform as a service (aPaaS)](blah) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Messaging as a service (MSGaaS)](blah) <br>
+
+[Management console reference](blah) <!-- reference for every button, field, etc. for later inclusion as bubble help or some such  --> <br>
+[Management console FAQ](blah) <br>
 
 
 **Note**: If you find that there are pages that aren't listed here, or unresolved links, please be sure to tell us!
