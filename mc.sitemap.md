@@ -10,26 +10,26 @@ product: mc
 Having a bit of trouble navigating our site, and so you're looking for a single list of what we cover?  You've come to the right place!
 
 [Getting started with the management console](/mc/)<br> <!-- basic descriptions of the different services avai. through the console with links to the existing landing pages created for the CLI docs? -->
-[Main dashboard overview](/mc/main/) <!-- include info about various panes, eg Activity Stream; list of subordinate screens for all the different services ie compute, object storage, monitoring, etc. --> <br>
+[Main dashboard overview](/mc/dashboard/) <!-- include info about various panes, eg Activity Stream; list of subordinate screens for all the different services ie compute, object storage, monitoring, etc. --> <br>
 
 [Compute services interface main dashboard](/mc/compute/)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Server screen](blah) <!-- include basic description of all fields and buttons, as well as items in the Inventory section --> <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating a new server from an image](blah)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating a new server from a bootable voluem (using block storage)](blah)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Applying a filter](blah) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Displaying server details](blah)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Viewing the console log](blah)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Connecting to a server](blah)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Rebooting a server](blah)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Rebuilding a server](blah)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Terminating a server](blah)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Images screen](blah) <!-- include basic description of all fields and buttons here --> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Server screen](mc/compute/server/) <!-- include basic description of all fields and buttons, as well as items in the Inventory section --> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating a new server from an image](mc/compute/server/)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating a new server from a bootable voluem (using block storage)](mc/compute/server/)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Applying a filter](mc/compute/server/) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Displaying server details](mc/compute/server/)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Viewing the console log](mc/compute/server/)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Connecting to a server](mc/compute/server/)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Rebooting a server](mc/compute/server/)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Rebuilding a server](mc/compute/server/)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Terminating a server](mc/compute/server/)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Images screen](mc/compute/images/) <!-- include basic description of all fields and buttons here --> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating and deleting an image](blah) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Volumes screen](blah)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Volumes screen](mc/compute/volumes/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating and deleting a volume](blah)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Cloning a new volume from an existing snapshot](blah)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating a bootable volume from an existing image](blah)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Network screen](blah) <!-- info here on toggles, fields, and basic network overview --> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Network screen](mc/compute/network/) <!-- info here on toggles, fields, and basic network overview --> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating and deleting a network](blah) <!-- creating launches a new screen; perhaps separate creating and put deleting in the overview? --> <br> 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Crearing and deleting a subnet](blah) <!-- creating launches a new screen; perhaps separate creating and put deleting in the overview? --> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Viewing  network details](blah) <br>
@@ -37,16 +37,16 @@ Having a bit of trouble navigating our site, and so you're looking for a single 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Understanding network system messages](blah) <!-- success & error messages w/ descriptions of what they mean --> <br> 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Viewing router details](blah) <!-- not sure about this one--maybe it's own menu item, and Laura hasn't updated wireframes? --> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Adding and deleting an instance to a router](blah) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Security groups screen](blah) <!-- basic screen functions here such as selecting a project, listing security groups, etc.? --> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Security groups screen](mc/compute/security-groups/) <!-- basic screen functions here such as selecting a project, listing security groups, etc.? --> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Adding and removing a security group](blah)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating and deleting a security group rule](blah)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Floating IPs screen](blah) <!-- basic screen functions here such as selecting a project --> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Floating IPs screen](mc/compute/floating-ips/) <!-- basic screen functions here such as selecting a project --> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Connecting to a server](blah)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Allocating and deallocating an IP address](blah)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Attaching and detatching an IP address to your server](blah)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Key pairs screen](blah)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Key pairs screen](mc/compute/key-pairs/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Adding and deleting a key pair](blah) <br>
-[Using the management console: Some compute service use cases](blah) <br>
+[Using the management console: Some compute service use cases](mc/compute/use-cases/) <br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Creating a new server](blah) <br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Creating a bootable volume](blah) <br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Managing a custom image](blah) <br>
