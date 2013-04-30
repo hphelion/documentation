@@ -2,6 +2,7 @@
 layout: default
 title: "HP Cloud management console documentation site map"
 permalink: /mc/sitemap/
+product: mc
 
 ---
 # HP Cloud management console documentation site map#
@@ -93,17 +94,16 @@ Having a bit of trouble navigating our site, and so you're looking for a single 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[DNS Use Case 2](blah) <br>
 
 [Monitoring as a service (MaaS) main dashboard](blah) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;Details TBD
+&nbsp;&nbsp;&nbsp;&nbsp;Details TBD<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Using the management console: Some monitoring use cases](blah) <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Monitoring Use Case 1](blah) <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Monitoring Use Case 2](blah) <br>
 
 [Load balancer as a service (LBaaS) main dashboard](blah) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;Details TBD
+&nbsp;&nbsp;&nbsp;&nbsp;Details TBD<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Using the management console: Some load balancing use cases](blah) <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Load balancing Use Case 1](blah) <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Load balancing Use Case 2](blah) <br>
-
 
 [Other services](blah) <!-- Presumably these sections will grow and get their own sections as compute and object storage have above as the MC changes to support them more thoroughly --> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Identity service](blah) <br>
@@ -112,6 +112,5 @@ Having a bit of trouble navigating our site, and so you're looking for a single 
 
 [Management console reference](blah) <!-- reference for every button, field, etc. for later inclusion as bubble help or some such  --> <br>
 [Management console FAQ](blah) <br>
-
 
 **Note**: If you find that there are pages that aren't listed here, or unresolved links, please be sure to tell us!
