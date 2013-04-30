@@ -8,11 +8,9 @@ permalink: /mc/sitemap/
 
 Having a bit of trouble navigating our site, and so you're looking for a single list of what we cover?  You've come to the right place!
 
-[Getting started with the management console](/mc/)<br>
-[Main dashboard overview](/mc/main/) <!-- include info about various panes, eg Activity Stream --> <br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Main dashboard--compute services](/mc/dashboard-compute/)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Main dashboard--object storage services](/mc/dashboard-object-storage/)<br>
-<!-- other services? -->
+[Getting started with the management console](/mc/)<br> <!-- basic descriptions of the different services avai. through the console with links to the existing landing pages created for the CLI docs? -->
+[Main dashboard overview](/mc/main/) <!-- include info about various panes, eg Activity Stream; list of subordinate screens for all the different services ie compute, object storage, monitoring, etc. --> <br>
+
 [Compute services interface main dashboard](/mc/compute/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Server screen](blah) <!-- include basic description of all fields and buttons, as well as items in the Inventory section --> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating a new server from an image](blah)<br>
@@ -80,6 +78,7 @@ Having a bit of trouble navigating our site, and so you're looking for a single 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Managing user accounts](blah) <br> <!-- creating, deleting, changing names and permissions, changing passwords -->
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Managing databases](blah) <br> <!-- creating, deleting, renaming -->
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Managing security group rules](blah) <br> <!-- creating, deleting, renaming -->
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Managing snapshots](blah) <br> <!-- creating, deleting, renaming -->
 &nbsp;&nbsp;&nbsp;&nbsp;[Using the management console: Some RDB use cases](blah) <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[RDB Use Case 1](blah) <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[RDB Use Case 2](blah) <br>
@@ -105,6 +104,7 @@ Having a bit of trouble navigating our site, and so you're looking for a single 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Load balancing Use Case 1](blah) <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Load balancing Use Case 2](blah) <br>
 
+
 [Other services](blah) <!-- Presumably these sections will grow and get their own sections as compute and object storage have above as the MC changes to support them more thoroughly --> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Identity service](blah) <br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Application platform as a service (aPaaS)](blah) <br>
@@ -112,5 +112,6 @@ Having a bit of trouble navigating our site, and so you're looking for a single 
 
 [Management console reference](blah) <!-- reference for every button, field, etc. for later inclusion as bubble help or some such  --> <br>
 [Management console FAQ](blah) <br>
+
 
 **Note**: If you find that there are pages that aren't listed here, or unresolved links, please be sure to tell us!
