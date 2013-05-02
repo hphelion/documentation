@@ -2,7 +2,7 @@
 layout: page
 title: "Management console main dashboard"
 permalink: /mc/dashboard/
-product: mc
+product: mc-compute
 
 ---
 # Management console main dashboard
