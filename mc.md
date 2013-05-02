@@ -21,7 +21,7 @@ The main dashboard for the management console displays all your active available
 
 Each service is in its own pane on the dashboard; compute services in the compute pane, object storage in the object storage pane, and so on. 
 
-**Note**:  If you haven't activated a service, it is not displayed on the main default dashboad.
+**Note**:  If you haven't activated a service, it is not displayed.
 
 ##Navigating the services## {#NavigatingtheService}
 
