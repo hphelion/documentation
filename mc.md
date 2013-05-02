@@ -37,8 +37,9 @@ You can navigate to any of the other services in a similar way.  To access the m
 
 ##For further information## {#FurtherInformation}
 
-Need more information on the management console?  Take a look at the following pages:
+Need more information on the management console or HP Cloud services in general?  Take a look at the following pages:
 
+* [Management console main dashboard](/mc/dashboard/) is the best place to start for the management console itself
 * [Getting started with HP Cloud services](https://docs.hpcloud.com), our top-level technical documentation page
 * [Technical documentation site map](/sitemap/) for a full list of all of our technical documentation pages
 * [Management console site map](/mc/sitemap/), a map of all the pages specific to our management console
