@@ -9,7 +9,7 @@ product: mc
 
 HP Cloud consists of a bunch of useful services--compute, object storage, block storage, and [many others](blah)--and the entrance to those services is through the management console.  This page provides you with an overview of the console, along with pointers to other good information to get you going.
 
-* [Management console overvie](#Overview)
+* [Management console overview](#Overview)
 * [Navigating the services](#NavigatingtheService)
 * [For further information](#FurtherInformation)
 
