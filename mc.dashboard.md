@@ -20,7 +20,7 @@ To access the main MC dashboard, from the `Dashboard` menu in the main menu bar 
 
 <img src="media/main-dash-all-services.png" width="580" alt="" />
 
-The main MC dashboard displays all your active services.  In this example, the user has the compute service active for US West, an active object storage account, and his activity stream is displayed.  See the sections below for a bit more discussion!
+The main MC dashboard displays all your active services.  In this example, the user has compute service active for region `US West`, an active object storage account, and his activity stream is displayed.  See the sections below for a bit more discussion!
 
 
 ##Compute pane## {#compute}
