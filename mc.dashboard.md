@@ -25,7 +25,7 @@ The main MC dashboard displays all your active services.  In this example, the u
 
 ##Compute pane## {#compute}
 
-The compute pane of the main MC dashboard displays your active availability zones (AZs), divided by region.  This user, for example, has two AZs in region `US West`.
+The compute pane of the main MC dashboard displays your active availability zones (AZs), divided by region.  This user, for example, has two AZs in region `US West`. 
 
 <img src="media/main-dash.png" width="580" alt="" />
 
