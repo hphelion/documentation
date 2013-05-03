@@ -25,17 +25,17 @@ To list available DNS domains:
       | 8b455585 | cliadd3.com.  | 3600 | 1367264795 | clitestadd@example.com | 2013-04-29T19:37:09.000000 |
       +----------+---------------+------+------------+------------------------+----------------------------+
 
-Add a DNS domain:
+To add a DNS domain:
 
     $ hpcloud dns:add cliadd4.com. clitestadd@example.com
     Created dns 'cliadd4.com.' with id '2f663a95'.
 
-Add a DNS record to a domain:
+To add a DNS record to a domain:
 
     $ hpcloud dns:records:add cliadd4.com. www.cliadd4.com. A 100.1.1.1
     Created dns record 'www.cliadd4.com.' with id '80852df3'.
 
-List DNS records:
+To list DNS records:
 
     $ hpcloud dns:records cliadd4.com.
       +----------+------------------+------+-----------+----------------------------+
@@ -44,12 +44,12 @@ List DNS records:
       | 80852df3 | www.cliadd4.com. | A    | 100.1.1.1 | 2013-05-03T14:54:29.000000 |
       +----------+------------------+------+-----------+----------------------------+
 
-Remove a DNS record:
+To remove a DNS record:
 
     $ hpcloud dns:records:remove cliadd4.com. www.cliadd4.com.
     Removed DNS record 'www.cliadd4.com.'.
 
-Remove a DNS domain:
+To remove a DNS domain:
 
     $ hpcloud dns:remove cliadd4.com.
     Removed dns 'cliadd4.com.'.
