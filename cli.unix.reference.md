@@ -1129,7 +1129,7 @@ List servers for dns domain `test.com.`:
 Add a dns.
 
 ###Syntax
-`hpcloud dns:update <name> <email>`
+`hpcloud dns:update <name>`
 
 ###Options
 <dl>
@@ -1141,7 +1141,7 @@ Add a dns.
 </dl>
 
 ###Description
-Update a DNS domain with the specified name and email address.  Optionally, you can specify a TTL (time to live) to adjust DNS caching of your entry.  The default TTL is 3600 (one hour).
+Update a DNS domain with the specified name.  Optionally, you can specify an email or a TTL (time to live) to adjust DNS caching of your entry.  The default TTL is 3600 (one hour).
 
 ###Examples
 Create a new dns domain named 'mydomain.com.' with email 'email@example.com':
