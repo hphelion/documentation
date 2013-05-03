@@ -17,6 +17,7 @@ The Unix Command Line Interface is a tool which allows Unix or Mac users to mana
 * [CDN Examples](/cli/unix/cdn)
 * [Block Storage Examples](/cli/unix/block-storage)
 * [Volume Management](/block-storage/volume)
+* [DNS Management](/cli/unix/dns)
 * [CLI Reference](/cli/unix/reference)
 * [Release Notes](/cli/unix/release-notes)
 * [FAQ](/faq#UnixCLI)
