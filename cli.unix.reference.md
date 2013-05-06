@@ -1126,7 +1126,7 @@ List servers for the DNS domain `test.com.`:
 
 
 ##dns:update## {#dns:update}
-Add a DNS domain.
+Update a DNS domain.
 
 ###Syntax
 `hpcloud dns:update <name>`
