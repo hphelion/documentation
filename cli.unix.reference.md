@@ -944,7 +944,7 @@ List dns domain `test.com.`:
 `dns:list`
 
 ##dns:add## {#dns:add}
-Add a dns.
+Add a DNS domain.
 
 ###Syntax
 `hpcloud dns:add <name> <email>`
@@ -959,14 +959,14 @@ Add a dns.
 </dl>
 
 ###Description
-Add a DNS domain with the specified name and email address.  Optionally, you can specify a TTL (time to live) to adjust DNS caching of your entry.  The default TTL is 3600 (one hour).
+Add a DNS domain with the specified name and email address.  Optionally, you can specify a TTL (time to live) to adjust DNS caching of your entry.  The default time to live (TTL) is 3600 (one hour).
 
 ###Examples
-Create a new dns domain named 'mydomain.com.' with email 'email@example.com':
+Create a new DNS domain `mydomain.com` with email address `email@example.com`:
 
     hpcloud dns:add mydomain.com. email@example.com
 
-Create a new dns domain named 'mydomain.com.' with email 'email@example.com' and time to live 7200:
+Create a new DNS domain `mydomain.com` with email address `email@example.com` and time to live 7200:
 
     hpcloud dns:add mydomain.com. email@xample.com -t 7200
 
@@ -987,14 +987,14 @@ List the records associated with the DNS domain.
 </dl>
 
 ###Description
-Lists records associated with the DNS domain specified by name or id.
+Lists records associated with the DNS domain specified by name or ID.
 
 ###Examples
-List records for dns domain with id `421e8cbf`:
+List records for DNS domain with ID `421e8cbf`:
 
     hpcloud dns:records 421e8cbf
 
-List records for dns domain `test.com.`:
+List records for DNS domain `test.com`:
 
     hpcloud dns:records test.com.
 
@@ -1016,7 +1016,7 @@ Add a DNS record.
 Add a DNS record to the specified domain with the given name, type and data.
 
 ###Examples
-Create a DNS record for the 'mydomain.com.' domain an 'A' record for 'www.mydomain.com' pointing to 10.0.0.1:
+Create a DNS record for domain `mydomain.com` and `A` record for `www.mydomain.com` pointing to address 10.0.0.1:
 
     hpcloud dns:records:add mydomain.com. www.mydomain.com A 10.0.0.1
 
@@ -1035,10 +1035,10 @@ Remove a DNS record.
 </dl>
 
 ###Description
-Remove a DNS record to the specified domain.  Records may be specified by name or id.
+Remove a DNS record to the specified domain.  Records may be specified by name or ID.
 
 ###Examples
-Remove 'www.mydomain.com' record from the domain 'mydomain.com.'
+Remove record `www.mydomain.com` from the domain `mydomain.com`.
 
     hpcloud dns:records:remove mydomain.com. www.mydomain.com
 
@@ -1060,13 +1060,13 @@ Add a DNS record.
 Add a DNS record to the specified domain with the given name, type and data.
 
 ###Examples
-Create a DNS record for the 'mydomain.com.' domain an 'A' record for 'www.mydomain.com' pointing to 10.0.0.1:
+Create a DNS record for domain `mydomain.com` and record `A` for `www.mydomain.com` pointing to address 10.0.0.1:
 
     hpcloud dns:records:update mydomain.com. www.mydomain.com A 10.0.0.1
 
 
 ##dns:remove## {#dns:remove}
-Remove dns domains (specified by name or ID).
+Remove DNS domains (specified by name or ID).
 
 ###Syntax
 `hpcloud dns:remove name_or_id [name_or_id ...]`
@@ -1079,18 +1079,18 @@ Remove dns domains (specified by name or ID).
 </dl>
 
 ###Description
-Remove dns domains by specifying their names or ID. You may specify more than one dns name or ID on a command line.  Optionally, you can specify an availability zone.
+Remove DNS domains by specifying their names or ID. You may specify more than one DNS name or ID on a command line.  Optionally, you can specify an availability zone.
 
 ###Examples
-Delete the dns 'tome' and 'treatise':
+Delete the DNS domains `tome` and `treatise`:
 
     hpcloud dns:remove tome treatise
 
-Delete the dns with ID 998:
+Delete the DNS domain with ID 998:
 
     hpcloud dns:remove 998
 
-Delete the dns `my-dns` for availability zone `az-2.region-a.geo-1`:
+Delete the DNS domain `my-dns` for availability zone `az-2.region-a.geo-1`:
 
     hpcloud dns:remove my-dns -z az-2.region-a.geo-1
 
@@ -1113,20 +1113,20 @@ List the servers associated with the DNS domain.
 </dl>
 
 ###Description
-Lists servers associated with the DNS domain specified by name or id.
+Lists servers associated with the DNS domain specified by name or ID.
 
 ###Examples
-List servers for dns domain with id `421e8cbf`:
+List servers for the DNS domain with ID `421e8cbf`:
 
     hpcloud dns:servers 421e8cbf
 
-List servers for dns domain `test.com.`:
+List servers for the DNS domain `test.com.`:
 
     hpcloud dns:servers test.com.
 
 
 ##dns:update## {#dns:update}
-Add a dns.
+Add a DNS domain.
 
 ###Syntax
 `hpcloud dns:update <name>`
@@ -1141,14 +1141,14 @@ Add a dns.
 </dl>
 
 ###Description
-Update a DNS domain with the specified name.  Optionally, you can specify an email or a TTL (time to live) to adjust DNS caching of your entry.  The default TTL is 3600 (one hour).
+Update a DNS domain with the specified name.  Optionally, you can specify an email or a time to live (TTL) to adjust DNS caching for your entry.  The default TTL is 3600 (one hour).
 
 ###Examples
-Create a new dns domain named 'mydomain.com.' with email 'email@example.com':
+Create a new DNS domain `mydomain.com` with email address `email@example.com`:
 
     hpcloud dns:update mydomain.com. email@example.com
 
-Create a new dns domain named 'mydomain.com.' with email 'email@example.com' and time to live 7200:
+Create a new DNS domain `mydomain.com` with email address `email@example.com` and TTL 7200:
 
     hpcloud dns:update mydomain.com. email@xample.com -t 7200
 
