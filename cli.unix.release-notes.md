@@ -7,8 +7,9 @@ product: unix-cli
 ---
 #HP Cloud Services UNIX CLI Release Notes
 
-These are the release notes for the HP Cloud services UNIX CLI.  The current release number for the [UNIX CLI software](/cli/unix) is version 1.8.0, released on 04/09/13.
+These are the release notes for the HP Cloud services UNIX CLI.  The current release number for the [UNIX CLI software](/cli/unix) is version 1.9.0, released on 05/03/13.
 
+* [Release 1.9.0 Features](#v1_9_0)
 * [Release 1.8.0 Features](#v1_8_0)
 * [Release 1.7.0 Features](#v1_7_0)
 * [Release 1.6.0 Features](#v1_6_0)
@@ -16,11 +17,18 @@ These are the release notes for the HP Cloud services UNIX CLI.  The current rel
 * [Release 1.4.0 Features](#v1_4_0)
 * [Release 1.3.0 Features](#v1_3_0)
 
+##Release 1.9.0 Features## {#v1_9_0}
+
+The 1.9.0 release is available for download from https://docs.hpcloud.com/file/hpcloud-1.9.0.gem.  This release was made available on 5/15/2013 and contains the following new features:
+
+* Support for DNSaaS
+* Various minor fixes
+
 ##Release 1.8.0 Features## {#v1_8_0}
 
-The 1.8.0 release is available for download from https://docs.hpcloud.com/file/hpcloud-1.8.0.gem.  This release was made available on 4/8/2013 and contains the following new features:
+The 1.8.0 release is available for download from https://docs.hpcloud.com/file/hpcloud-1.8.0.gem.  This release was made available on 4/15/2013 and contains the following new features:
 
-* Support for the after and at options for remove
+* Support for the `after` and `at` options for the `remove` command added
 
 ##Release 1.7.0 Features## {#v1_7_0}
 
