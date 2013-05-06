@@ -1044,7 +1044,7 @@ Remove record `www.mydomain.com` from the domain `mydomain.com`.
 
 
 ##dns:records:update## {#dns:records:update}
-Add a DNS record.
+Update a DNS record.
 
 ###Syntax
 `hpcloud dns:records:update <domain> <name> <type> <data>`
@@ -1057,7 +1057,7 @@ Add a DNS record.
 </dl>
 
 ###Description
-Add a DNS record to the specified domain with the given name, type and data.
+Update a DNS record to the specified domain with the given name, type and data.
 
 ###Examples
 Create a DNS record for domain `mydomain.com` and record `A` for `www.mydomain.com` pointing to address 10.0.0.1:
@@ -1126,7 +1126,7 @@ List servers for the DNS domain `test.com.`:
 
 
 ##dns:update## {#dns:update}
-Add a DNS domain.
+Update a DNS domain.
 
 ###Syntax
 `hpcloud dns:update <name>`
