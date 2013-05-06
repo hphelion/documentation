@@ -19,7 +19,7 @@ These are the release notes for the HP Cloud services UNIX CLI.  The current rel
 
 ##Release 1.9.0 Features## {#v1_9_0}
 
-The 1.9.0 release is available for download from [https://docs.hpcloud.com/file/hpcloud-1.9.0.gem](https://docs.hpcloud.com/file/hpcloud-1.9.0.gem).  This release was made available on 5/15/2013 and contains the following new features:
+The 1.9.0 release is available for download from [https://docs.hpcloud.com/file/hpcloud-1.9.0.gem](/file/hpcloud-1.9.0.gem).  This release was made available on 5/15/2013 and contains the following new features:
 
 * Support for domain name service (DNS)
 
@@ -30,7 +30,7 @@ The 1.9.0 release is available for download from [https://docs.hpcloud.com/file/
 
 ##Release 1.8.0 Features## {#v1_8_0}
 
-The 1.8.0 release is available for download from [https://docs.hpcloud.com/file/hpcloud-1.8.0.gem](https://docs.hpcloud.com/file/hpcloud-1.8.0.gem).  This release was made available on 4/15/2013 and contains the following new features:
+The 1.8.0 release is available for download from [https://docs.hpcloud.com/file/hpcloud-1.8.0.gem](/file/hpcloud-1.8.0.gem).  This release was made available on 4/15/2013 and contains the following new features:
 
 * Support for the `after` and `at` options for the `remove` command added
 
