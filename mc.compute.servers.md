@@ -20,7 +20,7 @@ ILLUSTRATION TBD
 
 From this screen you can:
 
-* [`Create a new server from an Image`]()
+* [`Create a new server from an Image`]() 
 * [`Create a new server from a Bootable Volume, using Block Storage`]()
 * [Apply a filter to list of running servers]()
 * [Display details for a particular server]()
