@@ -9,12 +9,11 @@ product: mc
 
 Having a bit of trouble navigating our site, and so you're looking for a single list of what we cover?  You've come to the right place!
 
-[Getting started with the management console](/mc/)<br> <!-- basic descriptions of the different services avai. through the console with links to the existing landing pages created for the CLI docs? -->
-[Main dashboard overview](/mc/dashboard/) <!-- include info about various panes, eg Activity Stream; list of subordinate screens for all the different services ie compute, object storage, monitoring, etc. --> <br>
+[Getting started with the management console](/mc/)<br> 
+[Main dashboard overview](/mc/dashboard/)  <br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Activity stream information](/activity-stream/) <br>
-
 [Compute services interface main dashboard](/mc/compute/)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Server screen](/mc/compute/servers/) <!-- include basic description of all fields and buttons, as well as items in the Inventory section --> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Servers screen](/mc/compute/servers/)  <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating a new server from an image](/mc/compute/server/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating a new server from a bootable volume (using block storage)](mc/compute/server/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Applying a filter](/mc/compute/server/) <br>
@@ -24,7 +23,7 @@ Having a bit of trouble navigating our site, and so you're looking for a single 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Rebooting a server](/mc/compute/server/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Rebuilding a server](/mc/compute/server/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Terminating a server](/mc/compute/server/)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Images screen](/mc/compute/images/) <!-- include basic description of all fields and buttons here --> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Images screen](/mc/compute/images/) 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating and deleting an image](blah) <br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Volumes screen](/mc/compute/volumes/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating and deleting a volume](blah)<br>
