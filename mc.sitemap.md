@@ -12,6 +12,7 @@ Having a bit of trouble navigating our site, and so you're looking for a single 
 [Getting started with the management console](/mc/)<br> 
 [Main dashboard overview](/mc/dashboard/)  <br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Activity stream information](/activity-stream/) <br>
+
 [Compute services interface main dashboard](/mc/compute/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Servers screen](/mc/compute/servers/)  <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating a new server from an image](/mc/compute/server/)<br>
@@ -23,13 +24,13 @@ Having a bit of trouble navigating our site, and so you're looking for a single 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Rebooting a server](/mc/compute/server/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Rebuilding a server](/mc/compute/server/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Terminating a server](/mc/compute/server/)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Images screen](/mc/compute/images/) 
+&nbsp;&nbsp;&nbsp;&nbsp;[Images screen](/mc/compute/images/) <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating and deleting an image](blah) <br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Volumes screen](/mc/compute/volumes/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating and deleting a volume](blah)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Cloning a new volume from an existing snapshot](blah)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating a bootable volume from an existing image](blah)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Network screen](/mc/compute/network/) <!-- info here on toggles, fields, and basic network overview --> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Network screen](/mc/compute/network/)  <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating and deleting a network](blah) <!-- creating launches a new screen; perhaps separate creating and put deleting in the overview? --> <br> 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Crearing and deleting a subnet](blah) <!-- creating launches a new screen; perhaps separate creating and put deleting in the overview? --> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Viewing  network details](blah) <br>
