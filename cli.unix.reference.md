@@ -43,10 +43,8 @@ Print the service catalog of the specified account.
 `hpcloud account:catalog <account_to_catalog> [service]`
 
 ###Options
-<dl>
 **--debug=DEBUG**
-: Debug logging 1,2,3,...  
-</dl>
+: Debug logging 1,2,3,...
 
 ###Description
 Print the service catalog of the specified account.  Optionally, you may specify a particular service to print such as "Compute".
@@ -83,13 +81,11 @@ Create or edit your account credentials.
 `hpcloud account:edit <account_name> [name_value_pair ...]`
 
 ###Options
-<dl>
 **-n, --no-validate**
 : Don't verify account settings during edit
 
 **-p, --provider=PROVIDER**
-: Cloud provider for migration: AWS, Rackspace, or Google  
-</dl>
+: Cloud provider for migration: AWS, Rackspace, or Google
 
 ###Description
 Create or edit your account credentials. If you do not specify an account name on the command line, the default account is updated.  If you do not specify name value pairs, you are prompted to input the account values.
