@@ -44,7 +44,8 @@ Print the service catalog of the specified account.
 
 ###Options
 <dl>
-<dt><b>--debug=DEBUG</b></dt><dd>Debug logging 1,2,3,...</dd>  
+*--debug=DEBUG*
+: Debug logging 1,2,3,...  
 </dl>
 
 ###Description
@@ -83,8 +84,10 @@ Create or edit your account credentials.
 
 ###Options
 <dl>
-<dt><b>-n, --no-validate</b></dt><dd>Don't verify account settings during edit</dd>  
-<dt><b>-p, --provider=PROVIDER</b></dt><dd>Cloud provider for migration: AWS, Rackspace, or Google</dd>  
+*-n, --no-validate*
+: Don't verify account settings during edit  
+*-p, --provider=PROVIDER*
+: Cloud provider for migration: AWS, Rackspace, or Google  
 </dl>
 
 ###Description
@@ -171,8 +174,10 @@ Create or edit your account credentials.
 
 ###Options
 <dl>
-<dt><b>-n, --no-validate</b></dt><dd>Don't verify account settings during edit</dd>  
-<dt><b>-p, --provider=PROVIDER</b></dt><dd>Cloud provider for migration: AWS, Rackspace, or Google</dd>  
+*-n, --no-validate*
+: Don't verify account settings during edit  
+*-p, --provider=PROVIDER*
+: Cloud provider for migration: AWS, Rackspace, or Google  
 </dl>
 
 ###Description
@@ -257,7 +262,8 @@ Verify the credentials of the specified account.
 
 ###Options
 <dl>
-<dt><b>--debug=DEBUG</b></dt><dd>Debug logging 1,2,3,...</dd>  
+*--debug=DEBUG*
+: Debug logging 1,2,3,...  
 </dl>
 
 ###Description
@@ -277,11 +283,16 @@ View the ACL for an object or container.
 
 ###Options
 <dl>
-<dt><b>-c, --columns=COLUMNS</b></dt><dd>Comma separated list of columns in report.</dd>  
-<dt><b>-d, --separator=SEPARATOR</b></dt><dd>Use the specified value as the report separator.</dd>  
-<dt><b>-z, --availability-zone=AVAILABILITY_ZONE</b></dt><dd>Set the availability zone.</dd>  
-<dt><b>-x, --debug=DEBUG</b></dt><dd>Debug logging 1,2,3,...</dd>  
-<dt><b>-a, --account-name=ACCOUNT_NAME</b></dt><dd>Select account.</dd>  
+*-c, --columns=COLUMNS*
+: Comma separated list of columns in report.  
+*-d, --separator=SEPARATOR*
+: Use the specified value as the report separator.  
+*-z, --availability-zone=AVAILABILITY_ZONE*
+: Set the availability zone.  
+*-x, --debug=DEBUG*
+: Debug logging 1,2,3,...  
+*-a, --account-name=ACCOUNT_NAME*
+: Select account.  
 </dl>
 
 ###Description
@@ -309,9 +320,12 @@ Grant the specified permissions.
 
 ###Options
 <dl>
-<dt><b>-z, --availability-zone=AVAILABILITY_ZONE</b></dt><dd>Set the availability zone.</dd>  
-<dt><b>-x, --debug=DEBUG</b></dt><dd>Debug logging 1,2,3,...</dd>  
-<dt><b>-a, --account-name=ACCOUNT_NAME</b></dt><dd>Select account.</dd>  
+*-z, --availability-zone=AVAILABILITY_ZONE*
+: Set the availability zone.  
+*-x, --debug=DEBUG*
+: Debug logging 1,2,3,...  
+*-a, --account-name=ACCOUNT_NAME*
+: Select account.  
 </dl>
 
 ###Description
@@ -341,9 +355,12 @@ Revoke the specified permissions.
 
 ###Options
 <dl>
-<dt><b>-z, --availability-zone=AVAILABILITY_ZONE</b></dt><dd>Set the availability zone.</dd>  
-<dt><b>-x, --debug=DEBUG</b></dt><dd>Debug logging 1,2,3,...</dd>  
-<dt><b>-a, --account-name=ACCOUNT_NAME</b></dt><dd>Select account.</dd>  
+*-z, --availability-zone=AVAILABILITY_ZONE*
+: Set the availability zone.  
+*-x, --debug=DEBUG*
+: Debug logging 1,2,3,...  
+*-a, --account-name=ACCOUNT_NAME*
+: Select account.  
 </dl>
 
 ###Description
@@ -367,11 +384,16 @@ Display list of available addresses.
 
 ###Options
 <dl>
-<dt><b>-c, --columns=COLUMNS</b></dt><dd>Comma separated list of columns in report.</dd>  
-<dt><b>-d, --separator=SEPARATOR</b></dt><dd>Use the specified value as the report separator.</dd>  
-<dt><b>-z, --availability-zone=AVAILABILITY_ZONE</b></dt><dd>Set the availability zone.</dd>  
-<dt><b>-x, --debug=DEBUG</b></dt><dd>Debug logging 1,2,3,...</dd>  
-<dt><b>-a, --account-name=ACCOUNT_NAME</b></dt><dd>Select account.</dd>  
+*-c, --columns=COLUMNS*
+: Comma separated list of columns in report.  
+*-d, --separator=SEPARATOR*
+: Use the specified value as the report separator.  
+*-z, --availability-zone=AVAILABILITY_ZONE*
+: Set the availability zone.  
+*-x, --debug=DEBUG*
+: Debug logging 1,2,3,...  
+*-a, --account-name=ACCOUNT_NAME*
+: Select account.  
 </dl>
 
 ###Description
@@ -401,9 +423,12 @@ Add or allocate a new public IP address.
 
 ###Options
 <dl>
-<dt><b>-z, --availability-zone=AVAILABILITY_ZONE</b></dt><dd>Set the availability zone.</dd>  
-<dt><b>-x, --debug=DEBUG</b></dt><dd>Debug logging 1,2,3,...</dd>  
-<dt><b>-a, --account-name=ACCOUNT_NAME</b></dt><dd>Select account.</dd>  
+*-z, --availability-zone=AVAILABILITY_ZONE*
+: Set the availability zone.  
+*-x, --debug=DEBUG*
+: Debug logging 1,2,3,...  
+*-a, --account-name=ACCOUNT_NAME*
+: Select account.  
 </dl>
 
 ###Description
@@ -429,9 +454,12 @@ Associate a public IP address to a server instance.
 
 ###Options
 <dl>
-<dt><b>-z, --availability-zone=AVAILABILITY_ZONE</b></dt><dd>Set the availability zone.</dd>  
-<dt><b>-x, --debug=DEBUG</b></dt><dd>Debug logging 1,2,3,...</dd>  
-<dt><b>-a, --account-name=ACCOUNT_NAME</b></dt><dd>Select account.</dd>  
+*-z, --availability-zone=AVAILABILITY_ZONE*
+: Set the availability zone.  
+*-x, --debug=DEBUG*
+: Debug logging 1,2,3,...  
+*-a, --account-name=ACCOUNT_NAME*
+: Select account.  
 </dl>
 
 ###Description
@@ -455,9 +483,12 @@ Disassociate any server instance associated to the public IP address.
 
 ###Options
 <dl>
-<dt><b>-z, --availability-zone=AVAILABILITY_ZONE</b></dt><dd>Set the availability zone.</dd>  
-<dt><b>-x, --debug=DEBUG</b></dt><dd>Debug logging 1,2,3,...</dd>  
-<dt><b>-a, --account-name=ACCOUNT_NAME</b></dt><dd>Select account.</dd>  
+*-z, --availability-zone=AVAILABILITY_ZONE*
+: Set the availability zone.  
+*-x, --debug=DEBUG*
+: Debug logging 1,2,3,...  
+*-a, --account-name=ACCOUNT_NAME*
+: Select account.  
 </dl>
 
 ###Description
@@ -485,9 +516,12 @@ Remove or release a public IP address.
 
 ###Options
 <dl>
-<dt><b>-z, --availability-zone=AVAILABILITY_ZONE</b></dt><dd>Set the availability zone.</dd>  
-<dt><b>-x, --debug=DEBUG</b></dt><dd>Debug logging 1,2,3,...</dd>  
-<dt><b>-a, --account-name=ACCOUNT_NAME</b></dt><dd>Select account.</dd>  
+*-z, --availability-zone=AVAILABILITY_ZONE*
+: Set the availability zone.  
+*-x, --debug=DEBUG*
+: Debug logging 1,2,3,...  
+*-a, --account-name=ACCOUNT_NAME*
+: Select account.  
 </dl>
 
 ###Description
@@ -517,10 +551,14 @@ List available containers on the CDN.
 
 ###Options
 <dl>
-<dt><b>-l, --all</b></dt><dd>List all the CDN containers, either enabled or disabled.</dd>  
-<dt><b>-z, --availability-zone=AVAILABILITY_ZONE</b></dt><dd>Set the availability zone.</dd>  
-<dt><b>-x, --debug=DEBUG</b></dt><dd>Debug logging 1,2,3,...</dd>  
-<dt><b>-a, --account-name=ACCOUNT_NAME</b></dt><dd>Select account.</dd>  
+*-l, --all*
+: List all the CDN containers, either enabled or disabled.  
+*-z, --availability-zone=AVAILABILITY_ZONE*
+: Set the availability zone.  
+*-x, --debug=DEBUG*
+: Debug logging 1,2,3,...  
+*-a, --account-name=ACCOUNT_NAME*
+: Select account.  
 </dl>
 
 ###Description
@@ -550,9 +588,12 @@ Add containers to the CDN.
 
 ###Options
 <dl>
-<dt><b>-z, --availability-zone=AVAILABILITY_ZONE</b></dt><dd>Set the availability zone.</dd>  
-<dt><b>-x, --debug=DEBUG</b></dt><dd>Debug logging 1,2,3,...</dd>  
-<dt><b>-a, --account-name=ACCOUNT_NAME</b></dt><dd>Select account.</dd>  
+*-z, --availability-zone=AVAILABILITY_ZONE*
+: Set the availability zone.  
+*-x, --debug=DEBUG*
+: Debug logging 1,2,3,...  
+*-a, --account-name=ACCOUNT_NAME*
+: Select account.  
 </dl>
 
 ###Description
@@ -576,9 +617,12 @@ Get the value of an attribute of a CDN container.
 
 ###Options
 <dl>
-<dt><b>-z, --availability-zone=AVAILABILITY_ZONE</b></dt><dd>Set the availability zone.</dd>  
-<dt><b>-x, --debug=DEBUG</b></dt><dd>Debug logging 1,2,3,...</dd>  
-<dt><b>-a, --account-name=ACCOUNT_NAME</b></dt><dd>Select account.</dd>  
+*-z, --availability-zone=AVAILABILITY_ZONE*
+: Set the availability zone.  
+*-x, --debug=DEBUG*
+: Debug logging 1,2,3,...  
+*-a, --account-name=ACCOUNT_NAME*
+: Select account.  
 </dl>
 
 ###Description
@@ -612,10 +656,14 @@ Get the location of a container on the CDN.
 
 ###Options
 <dl>
-<dt><b>-s, --ssl</b></dt><dd>Print the SSL version of the URL.</dd>  
-<dt><b>-z, --availability-zone=AVAILABILITY_ZONE</b></dt><dd>Set the availability zone.</dd>  
-<dt><b>-x, --debug=DEBUG</b></dt><dd>Debug logging 1,2,3,...</dd>  
-<dt><b>-a, --account-name=ACCOUNT_NAME</b></dt><dd>Select account.</dd>  
+*-s, --ssl*
+: Print the SSL version of the URL.  
+*-z, --availability-zone=AVAILABILITY_ZONE*
+: Set the availability zone.  
+*-x, --debug=DEBUG*
+: Debug logging 1,2,3,...  
+*-a, --account-name=ACCOUNT_NAME*
+: Select account.  
 </dl>
 
 ###Description
@@ -641,9 +689,12 @@ Remove containers from the CDN.
 
 ###Options
 <dl>
-<dt><b>-z, --availability-zone=AVAILABILITY_ZONE</b></dt><dd>Set the availability zone.</dd>  
-<dt><b>-x, --debug=DEBUG</b></dt><dd>Debug logging 1,2,3,...</dd>  
-<dt><b>-a, --account-name=ACCOUNT_NAME</b></dt><dd>Select account.</dd>  
+*-z, --availability-zone=AVAILABILITY_ZONE*
+: Set the availability zone.  
+*-x, --debug=DEBUG*
+: Debug logging 1,2,3,...  
+*-a, --account-name=ACCOUNT_NAME*
+: Select account.  
 </dl>
 
 ###Description
@@ -669,9 +720,12 @@ Set attributes on a CDN container.
 
 ###Options
 <dl>
-<dt><b>-z, --availability-zone=AVAILABILITY_ZONE</b></dt><dd>Set the availability zone.</dd>  
-<dt><b>-x, --debug=DEBUG</b></dt><dd>Debug logging 1,2,3,...</dd>  
-<dt><b>-a, --account-name=ACCOUNT_NAME</b></dt><dd>Select account.</dd>  
+*-z, --availability-zone=AVAILABILITY_ZONE*
+: Set the availability zone.  
+*-x, --debug=DEBUG*
+: Debug logging 1,2,3,...  
+*-a, --account-name=ACCOUNT_NAME*
+: Select account.  
 </dl>
 
 ###Description
@@ -763,10 +817,14 @@ Add a container.
 
 ###Options
 <dl>
-<dt><b>-f, --force</b></dt><dd>Don't prompt if container name is not a valid virtual host.</dd>  
-<dt><b>-z, --availability-zone=AVAILABILITY_ZONE</b></dt><dd>Set the availability zone.</dd>  
-<dt><b>-x, --debug=DEBUG</b></dt><dd>Debug logging 1,2,3,...</dd>  
-<dt><b>-a, --account-name=ACCOUNT_NAME</b></dt><dd>Select account.</dd>  
+*-f, --force*
+: Don't prompt if container name is not a valid virtual host.  
+*-z, --availability-zone=AVAILABILITY_ZONE*
+: Set the availability zone.  
+*-x, --debug=DEBUG*
+: Debug logging 1,2,3,...  
+*-a, --account-name=ACCOUNT_NAME*
+: Select account.  
 </dl>
 
 ###Description
@@ -794,10 +852,14 @@ Remove a containers.
 
 ###Options
 <dl>
-<dt><b>-f, --force</b></dt><dd>Force removal of non-empty containers.</dd>  
-<dt><b>-z, --availability-zone=AVAILABILITY_ZONE</b></dt><dd>Set the availability zone.</dd>  
-<dt><b>-x, --debug=DEBUG</b></dt><dd>Debug logging 1,2,3,...</dd>  
-<dt><b>-a, --account-name=ACCOUNT_NAME</b></dt><dd>Select account.</dd>  
+*-f, --force*
+: Force removal of non-empty containers.  
+*-z, --availability-zone=AVAILABILITY_ZONE*
+: Set the availability zone.  
+*-x, --debug=DEBUG*
+: Debug logging 1,2,3,...  
+*-a, --account-name=ACCOUNT_NAME*
+: Select account.  
 </dl>
 
 ###Description
@@ -831,9 +893,12 @@ Allow container synchronization.
 
 ###Options
 <dl>
-<dt><b>-z, --availability-zone=AVAILABILITY_ZONE</b></dt><dd>Set the availability zone.</dd>  
-<dt><b>-x, --debug=DEBUG</b></dt><dd>Debug logging 1,2,3,...</dd>  
-<dt><b>-a, --account-name=ACCOUNT_NAME</b></dt><dd>Select account.</dd>  
+*-z, --availability-zone=AVAILABILITY_ZONE*
+: Set the availability zone.  
+*-x, --debug=DEBUG*
+: Debug logging 1,2,3,...  
+*-a, --account-name=ACCOUNT_NAME*
+: Select account.  
 </dl>
 
 ###Description
@@ -861,12 +926,18 @@ Copy files from one resource to another.
 
 ###Options
 <dl>
-<dt><b>-m, --mime=MIME</b></dt><dd>Set the MIME type of the remote object.</dd>  
-<dt><b>-s, --source-account=SOURCE_ACCOUNT</b></dt><dd>Source account name.</dd>  
-<dt><b>-r, --restart</b></dt><dd>Restart a previous large file upload.</dd>  
-<dt><b>-z, --availability-zone=AVAILABILITY_ZONE</b></dt><dd>Set the availability zone.</dd>  
-<dt><b>-x, --debug=DEBUG</b></dt><dd>Debug logging 1,2,3,...</dd>  
-<dt><b>-a, --account-name=ACCOUNT_NAME</b></dt><dd>Select account.</dd>  
+*-m, --mime=MIME*
+: Set the MIME type of the remote object.  
+*-s, --source-account=SOURCE_ACCOUNT*
+: Source account name.  
+*-r, --restart*
+: Restart a previous large file upload.  
+*-z, --availability-zone=AVAILABILITY_ZONE*
+: Set the availability zone.  
+*-x, --debug=DEBUG*
+: Debug logging 1,2,3,...  
+*-a, --account-name=ACCOUNT_NAME*
+: Select account.  
 </dl>
 
 ###Description
@@ -917,11 +988,16 @@ List the DNS domains.
 
 ###Options
 <dl>
-<dt><b>-c, --columns=COLUMNS</b></dt><dd>Comma separated list of columns in report.</dd>  
-<dt><b>-d, --separator=SEPARATOR</b></dt><dd>Use the specified value as the report separator.</dd>  
-<dt><b>-z, --availability-zone=AVAILABILITY_ZONE</b></dt><dd>Set the availability zone.</dd>  
-<dt><b>-x, --debug=DEBUG</b></dt><dd>Debug logging 1,2,3,...</dd>  
-<dt><b>-a, --account-name=ACCOUNT_NAME</b></dt><dd>Select account.</dd>  
+*-c, --columns=COLUMNS*
+: Comma separated list of columns in report.  
+*-d, --separator=SEPARATOR*
+: Use the specified value as the report separator.  
+*-z, --availability-zone=AVAILABILITY_ZONE*
+: Set the availability zone.  
+*-x, --debug=DEBUG*
+: Debug logging 1,2,3,...  
+*-a, --account-name=ACCOUNT_NAME*
+: Select account.  
 </dl>
 
 ###Description
@@ -951,11 +1027,15 @@ Add a DNS domain.
 
 ###Options
 <dl>
-<dt><b>-t, --ttl=TTL</b></dt><dd>Time to live.</dd>  
+*-t, --ttl=TTL*
+: Time to live.  
 # Default: 3600  
-<dt><b>-z, --availability-zone=AVAILABILITY_ZONE</b></dt><dd>Set the availability zone.</dd>  
-<dt><b>-x, --debug=DEBUG</b></dt><dd>Debug logging 1,2,3,...</dd>  
-<dt><b>-a, --account-name=ACCOUNT_NAME</b></dt><dd>Select account.</dd>  
+*-z, --availability-zone=AVAILABILITY_ZONE*
+: Set the availability zone.  
+*-x, --debug=DEBUG*
+: Debug logging 1,2,3,...  
+*-a, --account-name=ACCOUNT_NAME*
+: Select account.  
 </dl>
 
 ###Description
@@ -979,11 +1059,16 @@ List the records associated with the DNS domain.
 
 ###Options
 <dl>
-<dt><b>-c, --columns=COLUMNS</b></dt><dd>Comma separated list of columns in report.</dd>  
-<dt><b>-d, --separator=SEPARATOR</b></dt><dd>Use the specified value as the report separator.</dd>  
-<dt><b>-z, --availability-zone=AVAILABILITY_ZONE</b></dt><dd>Set the availability zone.</dd>  
-<dt><b>-x, --debug=DEBUG</b></dt><dd>Debug logging 1,2,3,...</dd>  
-<dt><b>-a, --account-name=ACCOUNT_NAME</b></dt><dd>Select account.</dd>  
+*-c, --columns=COLUMNS*
+: Comma separated list of columns in report.  
+*-d, --separator=SEPARATOR*
+: Use the specified value as the report separator.  
+*-z, --availability-zone=AVAILABILITY_ZONE*
+: Set the availability zone.  
+*-x, --debug=DEBUG*
+: Debug logging 1,2,3,...  
+*-a, --account-name=ACCOUNT_NAME*
+: Select account.  
 </dl>
 
 ###Description
@@ -1007,9 +1092,12 @@ Add a DNS record.
 
 ###Options
 <dl>
-<dt><b>-z, --availability-zone=AVAILABILITY_ZONE</b></dt><dd>Set the availability zone.</dd>  
-<dt><b>-x, --debug=DEBUG</b></dt><dd>Debug logging 1,2,3,...</dd>  
-<dt><b>-a, --account-name=ACCOUNT_NAME</b></dt><dd>Select account.</dd>  
+*-z, --availability-zone=AVAILABILITY_ZONE*
+: Set the availability zone.  
+*-x, --debug=DEBUG*
+: Debug logging 1,2,3,...  
+*-a, --account-name=ACCOUNT_NAME*
+: Select account.  
 </dl>
 
 ###Description
@@ -1029,9 +1117,12 @@ Remove a DNS record.
 
 ###Options
 <dl>
-<dt><b>-z, --availability-zone=AVAILABILITY_ZONE</b></dt><dd>Set the availability zone.</dd>  
-<dt><b>-x, --debug=DEBUG</b></dt><dd>Debug logging 1,2,3,...</dd>  
-<dt><b>-a, --account-name=ACCOUNT_NAME</b></dt><dd>Select account.</dd>  
+*-z, --availability-zone=AVAILABILITY_ZONE*
+: Set the availability zone.  
+*-x, --debug=DEBUG*
+: Debug logging 1,2,3,...  
+*-a, --account-name=ACCOUNT_NAME*
+: Select account.  
 </dl>
 
 ###Description
@@ -1051,9 +1142,12 @@ Update a DNS record.
 
 ###Options
 <dl>
-<dt><b>-z, --availability-zone=AVAILABILITY_ZONE</b></dt><dd>Set the availability zone.</dd>  
-<dt><b>-x, --debug=DEBUG</b></dt><dd>Debug logging 1,2,3,...</dd>  
-<dt><b>-a, --account-name=ACCOUNT_NAME</b></dt><dd>Select account.</dd>  
+*-z, --availability-zone=AVAILABILITY_ZONE*
+: Set the availability zone.  
+*-x, --debug=DEBUG*
+: Debug logging 1,2,3,...  
+*-a, --account-name=ACCOUNT_NAME*
+: Select account.  
 </dl>
 
 ###Description
@@ -1073,9 +1167,12 @@ Remove DNS domains (specified by name or ID).
 
 ###Options
 <dl>
-<dt><b>-z, --availability-zone=AVAILABILITY_ZONE</b></dt><dd>Set the availability zone.</dd>  
-<dt><b>-x, --debug=DEBUG</b></dt><dd>Debug logging 1,2,3,...</dd>  
-<dt><b>-a, --account-name=ACCOUNT_NAME</b></dt><dd>Select account.</dd>  
+*-z, --availability-zone=AVAILABILITY_ZONE*
+: Set the availability zone.  
+*-x, --debug=DEBUG*
+: Debug logging 1,2,3,...  
+*-a, --account-name=ACCOUNT_NAME*
+: Select account.  
 </dl>
 
 ###Description
@@ -1105,11 +1202,16 @@ List the servers associated with the DNS domain.
 
 ###Options
 <dl>
-<dt><b>-c, --columns=COLUMNS</b></dt><dd>Comma separated list of columns in report.</dd>  
-<dt><b>-d, --separator=SEPARATOR</b></dt><dd>Use the specified value as the report separator.</dd>  
-<dt><b>-z, --availability-zone=AVAILABILITY_ZONE</b></dt><dd>Set the availability zone.</dd>  
-<dt><b>-x, --debug=DEBUG</b></dt><dd>Debug logging 1,2,3,...</dd>  
-<dt><b>-a, --account-name=ACCOUNT_NAME</b></dt><dd>Select account.</dd>  
+*-c, --columns=COLUMNS*
+: Comma separated list of columns in report.  
+*-d, --separator=SEPARATOR*
+: Use the specified value as the report separator.  
+*-z, --availability-zone=AVAILABILITY_ZONE*
+: Set the availability zone.  
+*-x, --debug=DEBUG*
+: Debug logging 1,2,3,...  
+*-a, --account-name=ACCOUNT_NAME*
+: Select account.  
 </dl>
 
 ###Description
@@ -1133,11 +1235,16 @@ Update a DNS domain.
 
 ###Options
 <dl>
-<dt><b>-e, --email=EMAIL</b></dt><dd>Email address.</dd>  
-<dt><b>-t, --ttl=TTL</b></dt><dd>Time to live.</dd>  
-<dt><b>-z, --availability-zone=AVAILABILITY_ZONE</b></dt><dd>Set the availability zone.</dd>  
-<dt><b>-x, --debug=DEBUG</b></dt><dd>Debug logging 1,2,3,...</dd>  
-<dt><b>-a, --account-name=ACCOUNT_NAME</b></dt><dd>Select account.</dd>  
+*-e, --email=EMAIL*
+: Email address.  
+*-t, --ttl=TTL*
+: Time to live.  
+*-z, --availability-zone=AVAILABILITY_ZONE*
+: Set the availability zone.  
+*-x, --debug=DEBUG*
+: Debug logging 1,2,3,...  
+*-a, --account-name=ACCOUNT_NAME*
+: Select account.  
 </dl>
 
 ###Description
@@ -1161,11 +1268,16 @@ List available flavors.
 
 ###Options
 <dl>
-<dt><b>-c, --columns=COLUMNS</b></dt><dd>Comma separated list of columns in report.</dd>  
-<dt><b>-d, --separator=SEPARATOR</b></dt><dd>Use the specified value as the report separator.</dd>  
-<dt><b>-z, --availability-zone=AVAILABILITY_ZONE</b></dt><dd>Set the availability zone.</dd>  
-<dt><b>-x, --debug=DEBUG</b></dt><dd>Debug logging 1,2,3,...</dd>  
-<dt><b>-a, --account-name=ACCOUNT_NAME</b></dt><dd>Select account.</dd>  
+*-c, --columns=COLUMNS*
+: Comma separated list of columns in report.  
+*-d, --separator=SEPARATOR*
+: Use the specified value as the report separator.  
+*-z, --availability-zone=AVAILABILITY_ZONE*
+: Set the availability zone.  
+*-x, --debug=DEBUG*
+: Debug logging 1,2,3,...  
+*-a, --account-name=ACCOUNT_NAME*
+: Select account.  
 </dl>
 
 ###Description
@@ -1195,9 +1307,12 @@ Fetch objects to your local directory.
 
 ###Options
 <dl>
-<dt><b>-z, --availability-zone=AVAILABILITY_ZONE</b></dt><dd>Set the availability zone.</dd>  
-<dt><b>-x, --debug=DEBUG</b></dt><dd>Debug logging 1,2,3,...</dd>  
-<dt><b>-a, --account-name=ACCOUNT_NAME</b></dt><dd>Select account.</dd>  
+*-z, --availability-zone=AVAILABILITY_ZONE*
+: Set the availability zone.  
+*-x, --debug=DEBUG*
+: Debug logging 1,2,3,...  
+*-a, --account-name=ACCOUNT_NAME*
+: Select account.  
 </dl>
 
 ###Description
@@ -1228,11 +1343,16 @@ List the available images in your compute account.
 
 ###Options
 <dl>
-<dt><b>-c, --columns=COLUMNS</b></dt><dd>Comma separated list of columns in report.</dd>  
-<dt><b>-d, --separator=SEPARATOR</b></dt><dd>Use the specified value as the report separator.</dd>  
-<dt><b>-z, --availability-zone=AVAILABILITY_ZONE</b></dt><dd>Set the availability zone.</dd>  
-<dt><b>-x, --debug=DEBUG</b></dt><dd>Debug logging 1,2,3,...</dd>  
-<dt><b>-a, --account-name=ACCOUNT_NAME</b></dt><dd>Select account.</dd>  
+*-c, --columns=COLUMNS*
+: Comma separated list of columns in report.  
+*-d, --separator=SEPARATOR*
+: Use the specified value as the report separator.  
+*-z, --availability-zone=AVAILABILITY_ZONE*
+: Set the availability zone.  
+*-x, --debug=DEBUG*
+: Debug logging 1,2,3,...  
+*-a, --account-name=ACCOUNT_NAME*
+: Select account.  
 </dl>
 
 ###Description
@@ -1262,10 +1382,14 @@ Add an image from an existing server.
 
 ###Options
 <dl>
-<dt><b>-z, --availability-zone=AVAILABILITY_ZONE</b></dt><dd>Set the availability zone.</dd>  
-<dt><b>-x, --debug=DEBUG</b></dt><dd>Debug logging 1,2,3,...</dd>  
-<dt><b>-a, --account-name=ACCOUNT_NAME</b></dt><dd>Select account.</dd>  
-<dt><b>-m, --metadata=METADATA</b></dt><dd>Set the meta data.</dd>  
+*-z, --availability-zone=AVAILABILITY_ZONE*
+: Set the availability zone.  
+*-x, --debug=DEBUG*
+: Debug logging 1,2,3,...  
+*-a, --account-name=ACCOUNT_NAME*
+: Select account.  
+*-m, --metadata=METADATA*
+: Set the meta data.  
 </dl>
 
 ###Description
@@ -1293,11 +1417,16 @@ List the metadata for an image.
 
 ###Options
 <dl>
-<dt><b>-c, --columns=COLUMNS</b></dt><dd>Comma separated list of columns in report.</dd>  
-<dt><b>-d, --separator=SEPARATOR</b></dt><dd>Use the specified value as the report separator.</dd>  
-<dt><b>-z, --availability-zone=AVAILABILITY_ZONE</b></dt><dd>Set the availability zone.</dd>  
-<dt><b>-x, --debug=DEBUG</b></dt><dd>Debug logging 1,2,3,...</dd>  
-<dt><b>-a, --account-name=ACCOUNT_NAME</b></dt><dd>Select account.</dd>  
+*-c, --columns=COLUMNS*
+: Comma separated list of columns in report.  
+*-d, --separator=SEPARATOR*
+: Use the specified value as the report separator.  
+*-z, --availability-zone=AVAILABILITY_ZONE*
+: Set the availability zone.  
+*-x, --debug=DEBUG*
+: Debug logging 1,2,3,...  
+*-a, --account-name=ACCOUNT_NAME*
+: Select account.  
 </dl>
 
 ###Description
@@ -1327,9 +1456,12 @@ Add metadata to an image.
 
 ###Options
 <dl>
-<dt><b>-z, --availability-zone=AVAILABILITY_ZONE</b></dt><dd>Set the availability zone.</dd>  
-<dt><b>-x, --debug=DEBUG</b></dt><dd>Debug logging 1,2,3,...</dd>  
-<dt><b>-a, --account-name=ACCOUNT_NAME</b></dt><dd>Select account.</dd>  
+*-z, --availability-zone=AVAILABILITY_ZONE*
+: Set the availability zone.  
+*-x, --debug=DEBUG*
+: Debug logging 1,2,3,...  
+*-a, --account-name=ACCOUNT_NAME*
+: Select account.  
 </dl>
 
 ###Description
@@ -1351,9 +1483,12 @@ Remove metadata from an image.
 
 ###Options
 <dl>
-<dt><b>-z, --availability-zone=AVAILABILITY_ZONE</b></dt><dd>Set the availability zone.</dd>  
-<dt><b>-x, --debug=DEBUG</b></dt><dd>Debug logging 1,2,3,...</dd>  
-<dt><b>-a, --account-name=ACCOUNT_NAME</b></dt><dd>Select account.</dd>  
+*-z, --availability-zone=AVAILABILITY_ZONE*
+: Set the availability zone.  
+*-x, --debug=DEBUG*
+: Debug logging 1,2,3,...  
+*-a, --account-name=ACCOUNT_NAME*
+: Select account.  
 </dl>
 
 ###Description
@@ -1375,9 +1510,12 @@ Remove images by name or identifier.
 
 ###Options
 <dl>
-<dt><b>-z, --availability-zone=AVAILABILITY_ZONE</b></dt><dd>Set the availability zone.</dd>  
-<dt><b>-x, --debug=DEBUG</b></dt><dd>Debug logging 1,2,3,...</dd>  
-<dt><b>-a, --account-name=ACCOUNT_NAME</b></dt><dd>Select account.</dd>  
+*-z, --availability-zone=AVAILABILITY_ZONE*
+: Set the availability zone.  
+*-x, --debug=DEBUG*
+: Debug logging 1,2,3,...  
+*-a, --account-name=ACCOUNT_NAME*
+: Select account.  
 </dl>
 
 ###Description
@@ -1412,11 +1550,16 @@ List the available keypairs.
 
 ###Options
 <dl>
-<dt><b>-c, --columns=COLUMNS</b></dt><dd>Comma separated list of columns in report.</dd>  
-<dt><b>-d, --separator=SEPARATOR</b></dt><dd>Use the specified value as the report separator.</dd>  
-<dt><b>-z, --availability-zone=AVAILABILITY_ZONE</b></dt><dd>Set the availability zone.</dd>  
-<dt><b>-x, --debug=DEBUG</b></dt><dd>Debug logging 1,2,3,...</dd>  
-<dt><b>-a, --account-name=ACCOUNT_NAME</b></dt><dd>Select account.</dd>  
+*-c, --columns=COLUMNS*
+: Comma separated list of columns in report.  
+*-d, --separator=SEPARATOR*
+: Use the specified value as the report separator.  
+*-z, --availability-zone=AVAILABILITY_ZONE*
+: Set the availability zone.  
+*-x, --debug=DEBUG*
+: Debug logging 1,2,3,...  
+*-a, --account-name=ACCOUNT_NAME*
+: Select account.  
 </dl>
 
 ###Description
@@ -1446,12 +1589,18 @@ add a key pair
 
 ###Options
 <dl>
-<dt><b>-f, --fingerprint=FINGERPRINT</b></dt><dd>Specify a fingerprint to be used.</dd>  
-<dt><b>-p, --private-key=PRIVATE_KEY</b></dt><dd>Specify private key data to be used.</dd>  
-<dt><b>-o, --output</b></dt><dd>Save key pair in the ~/.hpcloud/keypairs folder.</dd>  
-<dt><b>-z, --availability-zone=AVAILABILITY_ZONE</b></dt><dd>Set the availability zone.</dd>  
-<dt><b>-x, --debug=DEBUG</b></dt><dd>Debug logging 1,2,3,...</dd>  
-<dt><b>-a, --account-name=ACCOUNT_NAME</b></dt><dd>Select account.</dd>  
+*-f, --fingerprint=FINGERPRINT*
+: Specify a fingerprint to be used.  
+*-p, --private-key=PRIVATE_KEY*
+: Specify private key data to be used.  
+*-o, --output*
+: Save key pair in the ~/.hpcloud/keypairs folder.  
+*-z, --availability-zone=AVAILABILITY_ZONE*
+: Set the availability zone.  
+*-x, --debug=DEBUG*
+: Debug logging 1,2,3,...  
+*-a, --account-name=ACCOUNT_NAME*
+: Select account.  
 </dl>
 
 ###Description
@@ -1491,9 +1640,12 @@ Import a key pair.
 
 ###Options
 <dl>
-<dt><b>-z, --availability-zone=AVAILABILITY_ZONE</b></dt><dd>Set the availability zone.</dd>  
-<dt><b>-x, --debug=DEBUG</b></dt><dd>Debug logging 1,2,3,...</dd>  
-<dt><b>-a, --account-name=ACCOUNT_NAME</b></dt><dd>Select account.</dd>  
+*-z, --availability-zone=AVAILABILITY_ZONE*
+: Set the availability zone.  
+*-x, --debug=DEBUG*
+: Debug logging 1,2,3,...  
+*-a, --account-name=ACCOUNT_NAME*
+: Select account.  
 </dl>
 
 ###Description
@@ -1587,9 +1739,12 @@ Display the public keys of a key pair.
 
 ###Options
 <dl>
-<dt><b>-z, --availability-zone=AVAILABILITY_ZONE</b></dt><dd>Set the availability zone.</dd>  
-<dt><b>-x, --debug=DEBUG</b></dt><dd>Debug logging 1,2,3,...</dd>  
-<dt><b>-a, --account-name=ACCOUNT_NAME</b></dt><dd>Select account.</dd>  
+*-z, --availability-zone=AVAILABILITY_ZONE*
+: Set the availability zone.  
+*-x, --debug=DEBUG*
+: Debug logging 1,2,3,...  
+*-a, --account-name=ACCOUNT_NAME*
+: Select account.  
 </dl>
 
 ###Description
@@ -1613,9 +1768,12 @@ Remove a key pair (by name).
 
 ###Options
 <dl>
-<dt><b>-z, --availability-zone=AVAILABILITY_ZONE</b></dt><dd>Set the availability zone.</dd>  
-<dt><b>-x, --debug=DEBUG</b></dt><dd>Debug logging 1,2,3,...</dd>  
-<dt><b>-a, --account-name=ACCOUNT_NAME</b></dt><dd>Select account.</dd>  
+*-z, --availability-zone=AVAILABILITY_ZONE*
+: Set the availability zone.  
+*-x, --debug=DEBUG*
+: Debug logging 1,2,3,...  
+*-a, --account-name=ACCOUNT_NAME*
+: Select account.  
 </dl>
 
 ###Description
@@ -1645,13 +1803,20 @@ List containers or container contents.
 
 ###Options
 <dl>
-<dt><b>-l, --long</b></dt><dd>Long listing.</dd>  
-<dt><b>--sync</b></dt><dd>List synchronizations.</dd>  
-<dt><b>-c, --columns=COLUMNS</b></dt><dd>Comma separated list of columns in report.</dd>  
-<dt><b>-d, --separator=SEPARATOR</b></dt><dd>Use the specified value as the report separator.</dd>  
-<dt><b>-z, --availability-zone=AVAILABILITY_ZONE</b></dt><dd>Set the availability zone.</dd>  
-<dt><b>-x, --debug=DEBUG</b></dt><dd>Debug logging 1,2,3,...</dd>  
-<dt><b>-a, --account-name=ACCOUNT_NAME</b></dt><dd>Select account.</dd>  
+*-l, --long*
+: Long listing.  
+*--sync*
+: List synchronizations.  
+*-c, --columns=COLUMNS*
+: Comma separated list of columns in report.  
+*-d, --separator=SEPARATOR*
+: Use the specified value as the report separator.  
+*-z, --availability-zone=AVAILABILITY_ZONE*
+: Set the availability zone.  
+*-x, --debug=DEBUG*
+: Debug logging 1,2,3,...  
+*-a, --account-name=ACCOUNT_NAME*
+: Select account.  
 </dl>
 
 ###Description
@@ -1689,9 +1854,12 @@ Display the URIs for the specified resources.
 
 ###Options
 <dl>
-<dt><b>-z, --availability-zone=AVAILABILITY_ZONE</b></dt><dd>Set the availability zone.</dd>  
-<dt><b>-x, --debug=DEBUG</b></dt><dd>Debug logging 1,2,3,...</dd>  
-<dt><b>-a, --account-name=ACCOUNT_NAME</b></dt><dd>Select account.</dd>  
+*-z, --availability-zone=AVAILABILITY_ZONE*
+: Set the availability zone.  
+*-x, --debug=DEBUG*
+: Debug logging 1,2,3,...  
+*-a, --account-name=ACCOUNT_NAME*
+: Select account.  
 </dl>
 
 ###Description
@@ -1725,10 +1893,14 @@ Migrate files from a provider described by the source account.
 
 ###Options
 <dl>
-<dt><b>-m, --mime=MIME</b></dt><dd>Set the MIME type of the remote object.</dd>  
-<dt><b>-z, --availability-zone=AVAILABILITY_ZONE</b></dt><dd>Set the availability zone.</dd>  
-<dt><b>-x, --debug=DEBUG</b></dt><dd>Debug logging 1,2,3,...</dd>  
-<dt><b>-a, --account-name=ACCOUNT_NAME</b></dt><dd>Select account.</dd>  
+*-m, --mime=MIME*
+: Set the MIME type of the remote object.  
+*-z, --availability-zone=AVAILABILITY_ZONE*
+: Set the availability zone.  
+*-x, --debug=DEBUG*
+: Debug logging 1,2,3,...  
+*-a, --account-name=ACCOUNT_NAME*
+: Select account.  
 </dl>
 
 ###Description
@@ -1752,9 +1924,12 @@ Move objects inside or between containers.
 
 ###Options
 <dl>
-<dt><b>-z, --availability-zone=AVAILABILITY_ZONE</b></dt><dd>Set the availability zone.</dd>  
-<dt><b>-x, --debug=DEBUG</b></dt><dd>Debug logging 1,2,3,...</dd>  
-<dt><b>-a, --account-name=ACCOUNT_NAME</b></dt><dd>Select account.</dd>  
+*-z, --availability-zone=AVAILABILITY_ZONE*
+: Set the availability zone.  
+*-x, --debug=DEBUG*
+: Debug logging 1,2,3,...  
+*-a, --account-name=ACCOUNT_NAME*
+: Select account.  
 </dl>
 
 ###Description
@@ -1788,12 +1963,18 @@ Remove objects or containers.
 
 ###Options
 <dl>
-<dt><b>-f, --force</b></dt><dd>Do not confirm removal; remove non-empty containers.</dd>  
-<dt><b>--at=AT</b></dt><dd>Delete the object at the specified UNIX epoch time.</dd>  
-<dt><b>--after=AFTER</b></dt><dd>Delete the object after the specified number of seconds.</dd>  
-<dt><b>-z, --availability-zone=AVAILABILITY_ZONE</b></dt><dd>Set the availability zone.</dd>  
-<dt><b>-x, --debug=DEBUG</b></dt><dd>Debug logging 1,2,3,...</dd>  
-<dt><b>-a, --account-name=ACCOUNT_NAME</b></dt><dd>Select account.</dd>  
+*-f, --force*
+: Do not confirm removal; remove non-empty containers.  
+*--at=AT*
+: Delete the object at the specified UNIX epoch time.  
+*--after=AFTER*
+: Delete the object after the specified number of seconds.  
+*-z, --availability-zone=AVAILABILITY_ZONE*
+: Set the availability zone.  
+*-x, --debug=DEBUG*
+: Debug logging 1,2,3,...  
+*-a, --account-name=ACCOUNT_NAME*
+: Select account.  
 </dl>
 
 ###Description
@@ -1831,11 +2012,16 @@ List the available security groups.
 
 ###Options
 <dl>
-<dt><b>-c, --columns=COLUMNS</b></dt><dd>Comma separated list of columns in report.</dd>  
-<dt><b>-d, --separator=SEPARATOR</b></dt><dd>Use the specified value as the report separator.</dd>  
-<dt><b>-z, --availability-zone=AVAILABILITY_ZONE</b></dt><dd>Set the availability zone.</dd>  
-<dt><b>-x, --debug=DEBUG</b></dt><dd>Debug logging 1,2,3,...</dd>  
-<dt><b>-a, --account-name=ACCOUNT_NAME</b></dt><dd>Select account.</dd>  
+*-c, --columns=COLUMNS*
+: Comma separated list of columns in report.  
+*-d, --separator=SEPARATOR*
+: Use the specified value as the report separator.  
+*-z, --availability-zone=AVAILABILITY_ZONE*
+: Set the availability zone.  
+*-x, --debug=DEBUG*
+: Debug logging 1,2,3,...  
+*-a, --account-name=ACCOUNT_NAME*
+: Select account.  
 </dl>
 
 ###Description
@@ -1865,9 +2051,12 @@ Add a security group.
 
 ###Options
 <dl>
-<dt><b>-z, --availability-zone=AVAILABILITY_ZONE</b></dt><dd>Set the availability zone.</dd>  
-<dt><b>-x, --debug=DEBUG</b></dt><dd>Debug logging 1,2,3,...</dd>  
-<dt><b>-a, --account-name=ACCOUNT_NAME</b></dt><dd>Select account.</dd>  
+*-z, --availability-zone=AVAILABILITY_ZONE*
+: Set the availability zone.  
+*-x, --debug=DEBUG*
+: Debug logging 1,2,3,...  
+*-a, --account-name=ACCOUNT_NAME*
+: Select account.  
 </dl>
 
 ###Description
@@ -1891,9 +2080,12 @@ Remove a security group or groups.
 
 ###Options
 <dl>
-<dt><b>-z, --availability-zone=AVAILABILITY_ZONE</b></dt><dd>Set the availability zone.</dd>  
-<dt><b>-x, --debug=DEBUG</b></dt><dd>Debug logging 1,2,3,...</dd>  
-<dt><b>-a, --account-name=ACCOUNT_NAME</b></dt><dd>Select account.</dd>  
+*-z, --availability-zone=AVAILABILITY_ZONE*
+: Set the availability zone.  
+*-x, --debug=DEBUG*
+: Debug logging 1,2,3,...  
+*-a, --account-name=ACCOUNT_NAME*
+: Select account.  
 </dl>
 
 ###Description
@@ -1923,11 +2115,16 @@ Display the list of rules for a security group.
 
 ###Options
 <dl>
-<dt><b>-c, --columns=COLUMNS</b></dt><dd>Comma separated list of columns in report.</dd>  
-<dt><b>-d, --separator=SEPARATOR</b></dt><dd>Use the specified value as the report separator.</dd>  
-<dt><b>-z, --availability-zone=AVAILABILITY_ZONE</b></dt><dd>Set the availability zone.</dd>  
-<dt><b>-x, --debug=DEBUG</b></dt><dd>Debug logging 1,2,3,...</dd>  
-<dt><b>-a, --account-name=ACCOUNT_NAME</b></dt><dd>Select account.</dd>  
+*-c, --columns=COLUMNS*
+: Comma separated list of columns in report.  
+*-d, --separator=SEPARATOR*
+: Use the specified value as the report separator.  
+*-z, --availability-zone=AVAILABILITY_ZONE*
+: Set the availability zone.  
+*-x, --debug=DEBUG*
+: Debug logging 1,2,3,...  
+*-a, --account-name=ACCOUNT_NAME*
+: Select account.  
 </dl>
 
 ###Description
@@ -1953,12 +2150,18 @@ Add a rule to the security group.
 
 ###Options
 <dl>
-<dt><b>-p, --port-range=PORT_RANGE</b></dt><dd>Specify a port range like 22..22</dd>  
-<dt><b>-c, --cidr=CIDR</b></dt><dd>Specify a cidr ip range like 0.0.0.0/0</dd>  
-<dt><b>-g, --source-group=SOURCE_GROUP</b></dt><dd>Specify a source group.</dd>  
-<dt><b>-z, --availability-zone=AVAILABILITY_ZONE</b></dt><dd>Set the availability zone.</dd>  
-<dt><b>-x, --debug=DEBUG</b></dt><dd>Debug logging 1,2,3,...</dd>  
-<dt><b>-a, --account-name=ACCOUNT_NAME</b></dt><dd>Select account.</dd>  
+*-p, --port-range=PORT_RANGE*
+: Specify a port range like 22..22  
+*-c, --cidr=CIDR*
+: Specify a cidr ip range like 0.0.0.0/0  
+*-g, --source-group=SOURCE_GROUP*
+: Specify a source group.  
+*-z, --availability-zone=AVAILABILITY_ZONE*
+: Set the availability zone.  
+*-x, --debug=DEBUG*
+: Debug logging 1,2,3,...  
+*-a, --account-name=ACCOUNT_NAME*
+: Select account.  
 </dl>
 
 ###Description
@@ -1996,9 +2199,12 @@ Remove a rule from the security group.
 
 ###Options
 <dl>
-<dt><b>-z, --availability-zone=AVAILABILITY_ZONE</b></dt><dd>Set the availability zone.</dd>  
-<dt><b>-x, --debug=DEBUG</b></dt><dd>Debug logging 1,2,3,...</dd>  
-<dt><b>-a, --account-name=ACCOUNT_NAME</b></dt><dd>Select account.</dd>  
+*-z, --availability-zone=AVAILABILITY_ZONE*
+: Set the availability zone.  
+*-x, --debug=DEBUG*
+: Debug logging 1,2,3,...  
+*-a, --account-name=ACCOUNT_NAME*
+: Select account.  
 </dl>
 
 ###Description
@@ -2024,11 +2230,16 @@ List the available servers.
 
 ###Options
 <dl>
-<dt><b>-c, --columns=COLUMNS</b></dt><dd>Comma separated list of columns in report.</dd>  
-<dt><b>-d, --separator=SEPARATOR</b></dt><dd>Use the specified value as the report separator.</dd>  
-<dt><b>-z, --availability-zone=AVAILABILITY_ZONE</b></dt><dd>Set the availability zone.</dd>  
-<dt><b>-x, --debug=DEBUG</b></dt><dd>Debug logging 1,2,3,...</dd>  
-<dt><b>-a, --account-name=ACCOUNT_NAME</b></dt><dd>Select account.</dd>  
+*-c, --columns=COLUMNS*
+: Comma separated list of columns in report.  
+*-d, --separator=SEPARATOR*
+: Use the specified value as the report separator.  
+*-z, --availability-zone=AVAILABILITY_ZONE*
+: Set the availability zone.  
+*-x, --debug=DEBUG*
+: Debug logging 1,2,3,...  
+*-a, --account-name=ACCOUNT_NAME*
+: Select account.  
 </dl>
 
 ###Description
@@ -2058,16 +2269,26 @@ Add a server.
 
 ###Options
 <dl>
-<dt><b>-k, --key-name=KEY_NAME</b></dt><dd>Specify a key name to be used.</dd>  
-<dt><b>-i, --image=IMAGE</b></dt><dd>Image to use to create the server.</dd>  
-<dt><b>-v, --volume=VOLUME</b></dt><dd>Volume to use to create the server.</dd>  
-<dt><b>-s, --security-group=SECURITY_GROUP</b></dt><dd>Specify a security group or comma seperated list of security groups to be used.</dd>  
-<dt><b>-p, --private-key-file=PRIVATE_KEY_FILE</b></dt><dd>Name of the pem file with your private key.</dd>  
-<dt><b>-m, --metadata=METADATA</b></dt><dd>Set the meta data.</dd>  
-<dt><b>-u, --userdata=USERDATA</b></dt><dd>File which contains user data.</dd>  
-<dt><b>-z, --availability-zone=AVAILABILITY_ZONE</b></dt><dd>Set the availability zone.</dd>  
-<dt><b>-x, --debug=DEBUG</b></dt><dd>Debug logging 1,2,3,...</dd>  
-<dt><b>-a, --account-name=ACCOUNT_NAME</b></dt><dd>Select account.</dd>  
+*-k, --key-name=KEY_NAME*
+: Specify a key name to be used.  
+*-i, --image=IMAGE*
+: Image to use to create the server.  
+*-v, --volume=VOLUME*
+: Volume to use to create the server.  
+*-s, --security-group=SECURITY_GROUP*
+: Specify a security group or comma seperated list of security groups to be used.  
+*-p, --private-key-file=PRIVATE_KEY_FILE*
+: Name of the pem file with your private key.  
+*-m, --metadata=METADATA*
+: Set the meta data.  
+*-u, --userdata=USERDATA*
+: File which contains user data.  
+*-z, --availability-zone=AVAILABILITY_ZONE*
+: Set the availability zone.  
+*-x, --debug=DEBUG*
+: Debug logging 1,2,3,...  
+*-a, --account-name=ACCOUNT_NAME*
+: Select account.  
 </dl>
 
 ###Description
@@ -2103,11 +2324,16 @@ Get the console output of a server or extract the windows password.
 
 ###Options
 <dl>
-<dt><b>-p, --private-key-file=PRIVATE_KEY_FILE</b></dt><dd>Private key pem file used to decrypt windows password.</dd>  
-<dt><b>-d, --dump-password</b></dt><dd>Dump the windows password if the private key is known by the CLI.</dd>  
-<dt><b>-z, --availability-zone=AVAILABILITY_ZONE</b></dt><dd>Set the availability zone.</dd>  
-<dt><b>-x, --debug=DEBUG</b></dt><dd>Debug logging 1,2,3,...</dd>  
-<dt><b>-a, --account-name=ACCOUNT_NAME</b></dt><dd>Select account.</dd>  
+*-p, --private-key-file=PRIVATE_KEY_FILE*
+: Private key pem file used to decrypt windows password.  
+*-d, --dump-password*
+: Dump the windows password if the private key is known by the CLI.  
+*-z, --availability-zone=AVAILABILITY_ZONE*
+: Set the availability zone.  
+*-x, --debug=DEBUG*
+: Debug logging 1,2,3,...  
+*-a, --account-name=ACCOUNT_NAME*
+: Select account.  
 </dl>
 
 ###Description
@@ -2131,11 +2357,16 @@ List the metadata for a server.
 
 ###Options
 <dl>
-<dt><b>-c, --columns=COLUMNS</b></dt><dd>Comma separated list of columns in report.</dd>  
-<dt><b>-d, --separator=SEPARATOR</b></dt><dd>Use the specified value as the report separator.</dd>  
-<dt><b>-z, --availability-zone=AVAILABILITY_ZONE</b></dt><dd>Set the availability zone.</dd>  
-<dt><b>-x, --debug=DEBUG</b></dt><dd>Debug logging 1,2,3,...</dd>  
-<dt><b>-a, --account-name=ACCOUNT_NAME</b></dt><dd>Select account.</dd>  
+*-c, --columns=COLUMNS*
+: Comma separated list of columns in report.  
+*-d, --separator=SEPARATOR*
+: Use the specified value as the report separator.  
+*-z, --availability-zone=AVAILABILITY_ZONE*
+: Set the availability zone.  
+*-x, --debug=DEBUG*
+: Debug logging 1,2,3,...  
+*-a, --account-name=ACCOUNT_NAME*
+: Select account.  
 </dl>
 
 ###Description
@@ -2161,9 +2392,12 @@ Add metadata to a server.
 
 ###Options
 <dl>
-<dt><b>-z, --availability-zone=AVAILABILITY_ZONE</b></dt><dd>Set the availability zone.</dd>  
-<dt><b>-x, --debug=DEBUG</b></dt><dd>Debug logging 1,2,3,...</dd>  
-<dt><b>-a, --account-name=ACCOUNT_NAME</b></dt><dd>Select account.</dd>  
+*-z, --availability-zone=AVAILABILITY_ZONE*
+: Set the availability zone.  
+*-x, --debug=DEBUG*
+: Debug logging 1,2,3,...  
+*-a, --account-name=ACCOUNT_NAME*
+: Select account.  
 </dl>
 
 ###Description
@@ -2185,9 +2419,12 @@ Remove metadata from a server.
 
 ###Options
 <dl>
-<dt><b>-z, --availability-zone=AVAILABILITY_ZONE</b></dt><dd>Set the availability zone.</dd>  
-<dt><b>-x, --debug=DEBUG</b></dt><dd>Debug logging 1,2,3,...</dd>  
-<dt><b>-a, --account-name=ACCOUNT_NAME</b></dt><dd>Select account.</dd>  
+*-z, --availability-zone=AVAILABILITY_ZONE*
+: Set the availability zone.  
+*-x, --debug=DEBUG*
+: Debug logging 1,2,3,...  
+*-a, --account-name=ACCOUNT_NAME*
+: Select account.  
 </dl>
 
 ###Description
@@ -2209,9 +2446,12 @@ Change the password for a server.
 
 ###Options
 <dl>
-<dt><b>-z, --availability-zone=AVAILABILITY_ZONE</b></dt><dd>Set the availability zone.</dd>  
-<dt><b>-x, --debug=DEBUG</b></dt><dd>Debug logging 1,2,3,...</dd>  
-<dt><b>-a, --account-name=ACCOUNT_NAME</b></dt><dd>Select account.</dd>  
+*-z, --availability-zone=AVAILABILITY_ZONE*
+: Set the availability zone.  
+*-x, --debug=DEBUG*
+: Debug logging 1,2,3,...  
+*-a, --account-name=ACCOUNT_NAME*
+: Select account.  
 </dl>
 
 ###Description
@@ -2237,10 +2477,14 @@ Reboot a server or servers (specified by server name or ID).
 
 ###Options
 <dl>
-<dt><b>-h, --hard</b></dt><dd>Hard reboot a server.</dd>  
-<dt><b>-z, --availability-zone=AVAILABILITY_ZONE</b></dt><dd>Set the availability zone.</dd>  
-<dt><b>-x, --debug=DEBUG</b></dt><dd>Debug logging 1,2,3,...</dd>  
-<dt><b>-a, --account-name=ACCOUNT_NAME</b></dt><dd>Select account.</dd>  
+*-h, --hard*
+: Hard reboot a server.  
+*-z, --availability-zone=AVAILABILITY_ZONE*
+: Set the availability zone.  
+*-x, --debug=DEBUG*
+: Debug logging 1,2,3,...  
+*-a, --account-name=ACCOUNT_NAME*
+: Select account.  
 </dl>
 
 ###Description
@@ -2268,9 +2512,12 @@ Rebuild a server (specified by server name or ID).
 
 ###Options
 <dl>
-<dt><b>-z, --availability-zone=AVAILABILITY_ZONE</b></dt><dd>Set the availability zone.</dd>  
-<dt><b>-x, --debug=DEBUG</b></dt><dd>Debug logging 1,2,3,...</dd>  
-<dt><b>-a, --account-name=ACCOUNT_NAME</b></dt><dd>Select account.</dd>  
+*-z, --availability-zone=AVAILABILITY_ZONE*
+: Set the availability zone.  
+*-x, --debug=DEBUG*
+: Debug logging 1,2,3,...  
+*-a, --account-name=ACCOUNT_NAME*
+: Select account.  
 </dl>
 
 ###Description
@@ -2298,9 +2545,12 @@ Remove a server or servers (specified by name or ID).
 
 ###Options
 <dl>
-<dt><b>-z, --availability-zone=AVAILABILITY_ZONE</b></dt><dd>Set the availability zone.</dd>  
-<dt><b>-x, --debug=DEBUG</b></dt><dd>Debug logging 1,2,3,...</dd>  
-<dt><b>-a, --account-name=ACCOUNT_NAME</b></dt><dd>Select account.</dd>  
+*-z, --availability-zone=AVAILABILITY_ZONE*
+: Set the availability zone.  
+*-x, --debug=DEBUG*
+: Debug logging 1,2,3,...  
+*-a, --account-name=ACCOUNT_NAME*
+: Select account.  
 </dl>
 
 ###Description
@@ -2334,14 +2584,21 @@ Secure shell into a server.
 
 ###Options
 <dl>
-<dt><b>-p, --private-key-file=PRIVATE_KEY_FILE</b></dt><dd>Name of the pem file with your private key.</dd>  
-<dt><b>-k, --keypair=KEYPAIR</b></dt><dd>Name of keypair to use.</dd>  
-<dt><b>-l, --login=LOGIN</b></dt><dd>Login id to use.</dd>  
-<dt><b>-c, --command=COMMAND</b></dt><dd>Command to use to connect.</dd>  
+*-p, --private-key-file=PRIVATE_KEY_FILE*
+: Name of the pem file with your private key.  
+*-k, --keypair=KEYPAIR*
+: Name of keypair to use.  
+*-l, --login=LOGIN*
+: Login id to use.  
+*-c, --command=COMMAND*
+: Command to use to connect.  
 # Default: ssh  
-<dt><b>-z, --availability-zone=AVAILABILITY_ZONE</b></dt><dd>Set the availability zone.</dd>  
-<dt><b>-x, --debug=DEBUG</b></dt><dd>Debug logging 1,2,3,...</dd>  
-<dt><b>-a, --account-name=ACCOUNT_NAME</b></dt><dd>Select account.</dd>  
+*-z, --availability-zone=AVAILABILITY_ZONE*
+: Set the availability zone.  
+*-x, --debug=DEBUG*
+: Debug logging 1,2,3,...  
+*-a, --account-name=ACCOUNT_NAME*
+: Select account.  
 </dl>
 
 ###Description
@@ -2369,11 +2626,16 @@ List block devices available.
 
 ###Options
 <dl>
-<dt><b>-c, --columns=COLUMNS</b></dt><dd>Comma separated list of columns in report.</dd>  
-<dt><b>-d, --separator=SEPARATOR</b></dt><dd>Use the specified value as the report separator.</dd>  
-<dt><b>-z, --availability-zone=AVAILABILITY_ZONE</b></dt><dd>Set the availability zone.</dd>  
-<dt><b>-x, --debug=DEBUG</b></dt><dd>Debug logging 1,2,3,...</dd>  
-<dt><b>-a, --account-name=ACCOUNT_NAME</b></dt><dd>Select account.</dd>  
+*-c, --columns=COLUMNS*
+: Comma separated list of columns in report.  
+*-d, --separator=SEPARATOR*
+: Use the specified value as the report separator.  
+*-z, --availability-zone=AVAILABILITY_ZONE*
+: Set the availability zone.  
+*-x, --debug=DEBUG*
+: Debug logging 1,2,3,...  
+*-a, --account-name=ACCOUNT_NAME*
+: Select account.  
 </dl>
 
 ###Description
@@ -2403,11 +2665,16 @@ Create a snapshot.
 
 ###Options
 <dl>
-<dt><b>-d, --description=DESCRIPTION</b></dt><dd>Description of the snapshot.</dd>  
-<dt><b>-m, --metadata=METADATA</b></dt><dd>Set the meta data.</dd>  
-<dt><b>-z, --availability-zone=AVAILABILITY_ZONE</b></dt><dd>Set the availability zone.</dd>  
-<dt><b>-x, --debug=DEBUG</b></dt><dd>Debug logging 1,2,3,...</dd>  
-<dt><b>-a, --account-name=ACCOUNT_NAME</b></dt><dd>Select account.</dd>  
+*-d, --description=DESCRIPTION*
+: Description of the snapshot.  
+*-m, --metadata=METADATA*
+: Set the meta data.  
+*-z, --availability-zone=AVAILABILITY_ZONE*
+: Set the availability zone.  
+*-x, --debug=DEBUG*
+: Debug logging 1,2,3,...  
+*-a, --account-name=ACCOUNT_NAME*
+: Select account.  
 </dl>
 
 ###Description
@@ -2431,9 +2698,12 @@ Remove a snapshot or snapshots (specified by name or ID).
 
 ###Options
 <dl>
-<dt><b>-z, --availability-zone=AVAILABILITY_ZONE</b></dt><dd>Set the availability zone.</dd>  
-<dt><b>-x, --debug=DEBUG</b></dt><dd>Debug logging 1,2,3,...</dd>  
-<dt><b>-a, --account-name=ACCOUNT_NAME</b></dt><dd>Select account.</dd>  
+*-z, --availability-zone=AVAILABILITY_ZONE*
+: Set the availability zone.  
+*-x, --debug=DEBUG*
+: Debug logging 1,2,3,...  
+*-a, --account-name=ACCOUNT_NAME*
+: Select account.  
 </dl>
 
 ###Description
@@ -2463,11 +2733,16 @@ Create temporary URLs for the given objects.
 
 ###Options
 <dl>
-<dt><b>-p, --time-period=TIME_PERIOD</b></dt><dd>time period to keep the url alive</dd>  
-<dt><b>-u, --update</b></dt><dd>Update an existing tempurl</dd>  
-<dt><b>-z, --availability-zone=AVAILABILITY_ZONE</b></dt><dd>Set the availability zone.</dd>  
-<dt><b>-x, --debug=DEBUG</b></dt><dd>Debug logging 1,2,3,...</dd>  
-<dt><b>-a, --account-name=ACCOUNT_NAME</b></dt><dd>Select account.</dd>  
+*-p, --time-period=TIME_PERIOD*
+: time period to keep the url alive  
+*-u, --update*
+: Update an existing tempurl  
+*-z, --availability-zone=AVAILABILITY_ZONE*
+: Set the availability zone.  
+*-x, --debug=DEBUG*
+: Debug logging 1,2,3,...  
+*-a, --account-name=ACCOUNT_NAME*
+: Select account.  
 </dl>
 
 ###Description
@@ -2497,12 +2772,18 @@ List the available block devices.
 
 ###Options
 <dl>
-<dt><b>-b, --bootable</b></dt><dd>List only the bootable volumes.</dd>  
-<dt><b>-c, --columns=COLUMNS</b></dt><dd>Comma separated list of columns in report.</dd>  
-<dt><b>-d, --separator=SEPARATOR</b></dt><dd>Use the specified value as the report separator.</dd>  
-<dt><b>-z, --availability-zone=AVAILABILITY_ZONE</b></dt><dd>Set the availability zone.</dd>  
-<dt><b>-x, --debug=DEBUG</b></dt><dd>Debug logging 1,2,3,...</dd>  
-<dt><b>-a, --account-name=ACCOUNT_NAME</b></dt><dd>Select account.</dd>  
+*-b, --bootable*
+: List only the bootable volumes.  
+*-c, --columns=COLUMNS*
+: Comma separated list of columns in report.  
+*-d, --separator=SEPARATOR*
+: Use the specified value as the report separator.  
+*-z, --availability-zone=AVAILABILITY_ZONE*
+: Set the availability zone.  
+*-x, --debug=DEBUG*
+: Debug logging 1,2,3,...  
+*-a, --account-name=ACCOUNT_NAME*
+: Select account.  
 </dl>
 
 ###Description
@@ -2532,13 +2813,20 @@ Add a volume.
 
 ###Options
 <dl>
-<dt><b>-d, --description=DESCRIPTION</b></dt><dd>Description of the volume.</dd>  
-<dt><b>-m, --metadata=METADATA</b></dt><dd>Set the metadata.</dd>  
-<dt><b>-s, --snapshot=SNAPSHOT</b></dt><dd>Create a volume from the specified snapshot.</dd>  
-<dt><b>-i, --image=IMAGE</b></dt><dd>Create a volume from the specified image.</dd>  
-<dt><b>-z, --availability-zone=AVAILABILITY_ZONE</b></dt><dd>Set the availability zone.</dd>  
-<dt><b>-x, --debug=DEBUG</b></dt><dd>Debug logging 1,2,3,...</dd>  
-<dt><b>-a, --account-name=ACCOUNT_NAME</b></dt><dd>Select account.</dd>  
+*-d, --description=DESCRIPTION*
+: Description of the volume.  
+*-m, --metadata=METADATA*
+: Set the metadata.  
+*-s, --snapshot=SNAPSHOT*
+: Create a volume from the specified snapshot.  
+*-i, --image=IMAGE*
+: Create a volume from the specified image.  
+*-z, --availability-zone=AVAILABILITY_ZONE*
+: Set the availability zone.  
+*-x, --debug=DEBUG*
+: Debug logging 1,2,3,...  
+*-a, --account-name=ACCOUNT_NAME*
+: Select account.  
 </dl>
 
 ###Description
@@ -2574,9 +2862,12 @@ Attach a volume to a server specified by device name or number.
 
 ###Options
 <dl>
-<dt><b>-z, --availability-zone=AVAILABILITY_ZONE</b></dt><dd>Set the availability zone.</dd>  
-<dt><b>-x, --debug=DEBUG</b></dt><dd>Debug logging 1,2,3,...</dd>  
-<dt><b>-a, --account-name=ACCOUNT_NAME</b></dt><dd>Select account.</dd>  
+*-z, --availability-zone=AVAILABILITY_ZONE*
+: Set the availability zone.  
+*-x, --debug=DEBUG*
+: Debug logging 1,2,3,...  
+*-a, --account-name=ACCOUNT_NAME*
+: Select account.  
 </dl>
 
 ###Description
@@ -2604,9 +2895,12 @@ Detach a volume or volumes.
 
 ###Options
 <dl>
-<dt><b>-z, --availability-zone=AVAILABILITY_ZONE</b></dt><dd>Set the availability zone.</dd>  
-<dt><b>-x, --debug=DEBUG</b></dt><dd>Debug logging 1,2,3,...</dd>  
-<dt><b>-a, --account-name=ACCOUNT_NAME</b></dt><dd>Select account.</dd>  
+*-z, --availability-zone=AVAILABILITY_ZONE*
+: Set the availability zone.  
+*-x, --debug=DEBUG*
+: Debug logging 1,2,3,...  
+*-a, --account-name=ACCOUNT_NAME*
+: Select account.  
 </dl>
 
 ###Description
@@ -2634,9 +2928,12 @@ Remove a volume or volumes (specified by name or ID).
 
 ###Options
 <dl>
-<dt><b>-z, --availability-zone=AVAILABILITY_ZONE</b></dt><dd>Set the availability zone.</dd>  
-<dt><b>-x, --debug=DEBUG</b></dt><dd>Debug logging 1,2,3,...</dd>  
-<dt><b>-a, --account-name=ACCOUNT_NAME</b></dt><dd>Select account.</dd>  
+*-z, --availability-zone=AVAILABILITY_ZONE*
+: Set the availability zone.  
+*-x, --debug=DEBUG*
+: Debug logging 1,2,3,...  
+*-a, --account-name=ACCOUNT_NAME*
+: Select account.  
 </dl>
 
 ###Description
@@ -2666,11 +2963,16 @@ List the volumes on server.
 
 ###Options
 <dl>
-<dt><b>-c, --columns=COLUMNS</b></dt><dd>Comma separated list of columns in report.</dd>  
-<dt><b>-d, --separator=SEPARATOR</b></dt><dd>Use the specified value as the report separator.</dd>  
-<dt><b>-z, --availability-zone=AVAILABILITY_ZONE</b></dt><dd>Set the availability zone.</dd>  
-<dt><b>-x, --debug=DEBUG</b></dt><dd>Debug logging 1,2,3,...</dd>  
-<dt><b>-a, --account-name=ACCOUNT_NAME</b></dt><dd>Select account.</dd>  
+*-c, --columns=COLUMNS*
+: Comma separated list of columns in report.  
+*-d, --separator=SEPARATOR*
+: Use the specified value as the report separator.  
+*-z, --availability-zone=AVAILABILITY_ZONE*
+: Set the availability zone.  
+*-x, --debug=DEBUG*
+: Debug logging 1,2,3,...  
+*-a, --account-name=ACCOUNT_NAME*
+: Select account.  
 </dl>
 
 ###Description
