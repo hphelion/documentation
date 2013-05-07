@@ -20,17 +20,17 @@ ILLUSTRATION TBD
 
 From this screen you can:
 
-* [`Create a new server from an Image`](blah)
-* [`Create a new server from a Bootable Volume, using Block Storage`](blah)
-* [Apply a filter to list of running servers](blah)
-* [Display details for a particular server](blah)
-* [Connect to a server](blah)
-* [Reboot a server](blah)
-* [Rebuild a server](blah)
-* [Terminate a server](blah)
+* [`Create a new server from an Image`]()
+* [`Create a new server from a Bootable Volume, using Block Storage`]()
+* [Apply a filter to list of running servers]()
+* [Display details for a particular server]()
+* [Connect to a server]()
+* [Reboot a server]()
+* [Rebuild a server]()
+* [Terminate a server]()
 
 
 ##For further information## {#ForFurtherInformation}
 
 * For basic information about our HP Cloud compute services, take a look at the [HP Cloud compute overview](/compute/) page
-* Use the MC [site map](/mc/sitemap) for a full list of all available MC documentation pages
+* Use the MC [site map](/mc/sitemap) for a full list of all available MC documentation pages.
