@@ -44,7 +44,7 @@ Print the service catalog of the specified account.
 
 ###Options
 <dl>
-*--debug=DEBUG*
+**--debug=DEBUG**
 : Debug logging 1,2,3,...  
 </dl>
 
@@ -84,9 +84,10 @@ Create or edit your account credentials.
 
 ###Options
 <dl>
-*-n, --no-validate*
-: Don't verify account settings during edit  
-*-p, --provider=PROVIDER*
+**-n, --no-validate**
+: Don't verify account settings during edit
+
+**-p, --provider=PROVIDER**
 : Cloud provider for migration: AWS, Rackspace, or Google  
 </dl>
 
