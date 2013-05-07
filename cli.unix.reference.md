@@ -46,6 +46,8 @@ Print the service catalog of the specified account.
 **--debug=DEBUG**
 : Debug logging 1,2,3,...
 
+
+
 ###Description
 Print the service catalog of the specified account.  Optionally, you may specify a particular service to print such as "Compute".
 
@@ -86,6 +88,8 @@ Create or edit your account credentials.
 
 **-p, --provider=PROVIDER**
 : Cloud provider for migration: AWS, Rackspace, or Google
+
+
 
 ###Description
 Create or edit your account credentials. If you do not specify an account name on the command line, the default account is updated.  If you do not specify name value pairs, you are prompted to input the account values.
@@ -170,12 +174,13 @@ Create or edit your account credentials.
 `hpcloud account:edit <account_name> [name_value_pair ...]`
 
 ###Options
-<dl>
-*-n, --no-validate*
-: Don't verify account settings during edit  
-*-p, --provider=PROVIDER*
-: Cloud provider for migration: AWS, Rackspace, or Google  
-</dl>
+**-n, --no-validate**
+: Don't verify account settings during edit
+
+**-p, --provider=PROVIDER**
+: Cloud provider for migration: AWS, Rackspace, or Google
+
+
 
 ###Description
 Create or edit your account credentials. If you do not specify an account name on the command line, the default account is updated.  If you do not specify name value pairs, you are prompted to input the account values.
@@ -258,10 +263,10 @@ Verify the credentials of the specified account.
 `hpcloud account:verify <account_to_verify>`
 
 ###Options
-<dl>
-*--debug=DEBUG*
-: Debug logging 1,2,3,...  
-</dl>
+**--debug=DEBUG**
+: Debug logging 1,2,3,...
+
+
 
 ###Description
 Verify the credentials of an account.
@@ -279,18 +284,22 @@ View the ACL for an object or container.
 `hpcloud acl <object/container>`
 
 ###Options
-<dl>
-*-c, --columns=COLUMNS*
-: Comma separated list of columns in report.  
-*-d, --separator=SEPARATOR*
-: Use the specified value as the report separator.  
-*-z, --availability-zone=AVAILABILITY_ZONE*
-: Set the availability zone.  
-*-x, --debug=DEBUG*
-: Debug logging 1,2,3,...  
-*-a, --account-name=ACCOUNT_NAME*
-: Select account.  
-</dl>
+**-c, --columns=COLUMNS**
+: Comma separated list of columns in report.
+
+**-d, --separator=SEPARATOR**
+: Use the specified value as the report separator.
+
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
 
 ###Description
 View the access control list (ACL) for a container or object. Optionally, you can specify an availability zone.
@@ -316,14 +325,16 @@ Grant the specified permissions.
 `hpcloud acl:grant <container> <permissions> [user ...]`
 
 ###Options
-<dl>
-*-z, --availability-zone=AVAILABILITY_ZONE*
-: Set the availability zone.  
-*-x, --debug=DEBUG*
-: Debug logging 1,2,3,...  
-*-a, --account-name=ACCOUNT_NAME*
-: Select account.  
-</dl>
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
 
 ###Description
 Set the access control list (ACL) values for the specified container. The supported permissions are `r` (read), `w` (write), or `rw` (read and write). You may specify one or more user for the given permission.  If you do not specify a user, the permissions are set to public.  Public write permissions are not allowed.
@@ -351,14 +362,16 @@ Revoke the specified permissions.
 `hpcloud acl:revoke <container> <permissions> [user ...]`
 
 ###Options
-<dl>
-*-z, --availability-zone=AVAILABILITY_ZONE*
-: Set the availability zone.  
-*-x, --debug=DEBUG*
-: Debug logging 1,2,3,...  
-*-a, --account-name=ACCOUNT_NAME*
-: Select account.  
-</dl>
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
 
 ###Description
 Revoke the access control list (ACL) values from the specified container. The supported permissions are `r` (read), `w` (write), or `rw` (read and write). You may specify one or more user fo the given permission.  If you do not specify a user, the permissions are set to public.  Public write permissions are not allowed.
@@ -380,18 +393,22 @@ Display list of available addresses.
 `hpcloud addresses [ip_or_id ...]`
 
 ###Options
-<dl>
-*-c, --columns=COLUMNS*
-: Comma separated list of columns in report.  
-*-d, --separator=SEPARATOR*
-: Use the specified value as the report separator.  
-*-z, --availability-zone=AVAILABILITY_ZONE*
-: Set the availability zone.  
-*-x, --debug=DEBUG*
-: Debug logging 1,2,3,...  
-*-a, --account-name=ACCOUNT_NAME*
-: Select account.  
-</dl>
+**-c, --columns=COLUMNS**
+: Comma separated list of columns in report.
+
+**-d, --separator=SEPARATOR**
+: Use the specified value as the report separator.
+
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
 
 ###Description
 List the available addresses for your account. You may filter the addresses listed by specifying one or more IPs or IDs on the command line.  Optionally, you can specify an availability zone.
@@ -419,14 +436,16 @@ Add or allocate a new public IP address.
 `hpcloud addresses:add`
 
 ###Options
-<dl>
-*-z, --availability-zone=AVAILABILITY_ZONE*
-: Set the availability zone.  
-*-x, --debug=DEBUG*
-: Debug logging 1,2,3,...  
-*-a, --account-name=ACCOUNT_NAME*
-: Select account.  
-</dl>
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
 
 ###Description
 Add or allocate a new public IP address from the pool of available IP addresses.  Optionally, you can set an availability zone.
@@ -450,14 +469,16 @@ Associate a public IP address to a server instance.
 `hpcloud addresses:associate <ip_or_id> <server_name_or_id>`
 
 ###Options
-<dl>
-*-z, --availability-zone=AVAILABILITY_ZONE*
-: Set the availability zone.  
-*-x, --debug=DEBUG*
-: Debug logging 1,2,3,...  
-*-a, --account-name=ACCOUNT_NAME*
-: Select account.  
-</dl>
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
 
 ###Description
 Associate an existing and unassigned public IP address, to the specified server instance.  Optionally, you can specify an availability.
@@ -479,14 +500,16 @@ Disassociate any server instance associated to the public IP address.
 `hpcloud addresses:disassociate ip_or_id [ip_or_id ...]`
 
 ###Options
-<dl>
-*-z, --availability-zone=AVAILABILITY_ZONE*
-: Set the availability zone.  
-*-x, --debug=DEBUG*
-: Debug logging 1,2,3,...  
-*-a, --account-name=ACCOUNT_NAME*
-: Select account.  
-</dl>
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
 
 ###Description
 Disassociate any server instance associated to the public IP address. The public IP address is not removed or released to the pool. Optionally, you can specify an availability zone.
@@ -512,14 +535,16 @@ Remove or release a public IP address.
 `hpcloud addresses:remove ip_or_id [ip_or_id ...]`
 
 ###Options
-<dl>
-*-z, --availability-zone=AVAILABILITY_ZONE*
-: Set the availability zone.  
-*-x, --debug=DEBUG*
-: Debug logging 1,2,3,...  
-*-a, --account-name=ACCOUNT_NAME*
-: Select account.  
-</dl>
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
 
 ###Description
 Remove or release a previously allocated public IP address. Any server instances that were associated to this address are disassociated. You may specify one ore more address IPs or IDs on the command line.  Optionally, you can specify an availability zone.
@@ -547,16 +572,19 @@ List available containers on the CDN.
 `hpcloud cdn:containers`
 
 ###Options
-<dl>
-*-l, --all*
-: List all the CDN containers, either enabled or disabled.  
-*-z, --availability-zone=AVAILABILITY_ZONE*
-: Set the availability zone.  
-*-x, --debug=DEBUG*
-: Debug logging 1,2,3,...  
-*-a, --account-name=ACCOUNT_NAME*
-: Select account.  
-</dl>
+**-l, --all**
+: List all the CDN containers, either enabled or disabled.
+
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
 
 ###Description
 List the available containers on the content delivery network (CDN). Optionally, you can specify an availability zone.
@@ -584,14 +612,16 @@ Add containers to the CDN.
 `hpcloud cdn:containers:add name [name ...]`
 
 ###Options
-<dl>
-*-z, --availability-zone=AVAILABILITY_ZONE*
-: Set the availability zone.  
-*-x, --debug=DEBUG*
-: Debug logging 1,2,3,...  
-*-a, --account-name=ACCOUNT_NAME*
-: Select account.  
-</dl>
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
 
 ###Description
 Add existing containers from your storage account to the CDN. Container names can be specified with or without the preceding colon: `my_container` or `:my_container`. Optionally, you can specify an availability zone.
@@ -613,14 +643,16 @@ Get the value of an attribute of a CDN container.
 `hpcloud cdn:containers:get <name> <attribute>`
 
 ###Options
-<dl>
-*-z, --availability-zone=AVAILABILITY_ZONE*
-: Set the availability zone.  
-*-x, --debug=DEBUG*
-: Debug logging 1,2,3,...  
-*-a, --account-name=ACCOUNT_NAME*
-: Select account.  
-</dl>
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
 
 ###Description
 Get the value of an attribute for an existing CDN container. The allowed attributes whose value can be retrieved are:
@@ -652,16 +684,19 @@ Get the location of a container on the CDN.
 `hpcloud cdn:containers:location <name>`
 
 ###Options
-<dl>
-*-s, --ssl*
-: Print the SSL version of the URL.  
-*-z, --availability-zone=AVAILABILITY_ZONE*
-: Set the availability zone.  
-*-x, --debug=DEBUG*
-: Debug logging 1,2,3,...  
-*-a, --account-name=ACCOUNT_NAME*
-: Select account.  
-</dl>
+**-s, --ssl**
+: Print the SSL version of the URL.
+
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
 
 ###Description
 Get the location of an existing container on the CDN. Optionally, you can specify an availability zone.
@@ -685,14 +720,16 @@ Remove containers from the CDN.
 `hpcloud cdn:containers:remove name [name ...]`
 
 ###Options
-<dl>
-*-z, --availability-zone=AVAILABILITY_ZONE*
-: Set the availability zone.  
-*-x, --debug=DEBUG*
-: Debug logging 1,2,3,...  
-*-a, --account-name=ACCOUNT_NAME*
-: Select account.  
-</dl>
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
 
 ###Description
 Remove containers from the CDN. Optionally, you can specify an availability zone.
@@ -716,14 +753,16 @@ Set attributes on a CDN container.
 `hpcloud cdn:containers:set <name> <attribute> <value>`
 
 ###Options
-<dl>
-*-z, --availability-zone=AVAILABILITY_ZONE*
-: Set the availability zone.  
-*-x, --debug=DEBUG*
-: Debug logging 1,2,3,...  
-*-a, --account-name=ACCOUNT_NAME*
-: Select account.  
-</dl>
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
 
 ###Description
 Set attributes for an existing CDN container by specifying their values. The allowed attributes that can be set are:
@@ -813,16 +852,19 @@ Add a container.
 `hpcloud containers:add name [name ...]`
 
 ###Options
-<dl>
-*-f, --force*
-: Don't prompt if container name is not a valid virtual host.  
-*-z, --availability-zone=AVAILABILITY_ZONE*
-: Set the availability zone.  
-*-x, --debug=DEBUG*
-: Debug logging 1,2,3,...  
-*-a, --account-name=ACCOUNT_NAME*
-: Select account.  
-</dl>
+**-f, --force**
+: Don't prompt if container name is not a valid virtual host.
+
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
 
 ###Description
 Add a new container to your storage account. You may creeate multiple containers by specifying more than one container name on the command line.  You can specify the ontainer name  with or without the preceding colon: `my_container` or `:my_container`. Optionally, you can specify an availability zone.
@@ -848,16 +890,19 @@ Remove a containers.
 `hpcloud containers:remove name [name ...]`
 
 ###Options
-<dl>
-*-f, --force*
-: Force removal of non-empty containers.  
-*-z, --availability-zone=AVAILABILITY_ZONE*
-: Set the availability zone.  
-*-x, --debug=DEBUG*
-: Debug logging 1,2,3,...  
-*-a, --account-name=ACCOUNT_NAME*
-: Select account.  
-</dl>
+**-f, --force**
+: Force removal of non-empty containers.
+
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
 
 ###Description
 Remove one or more containers. By default this command removes a container if it is empty, but you may use the `--force` flag to delete non-empty containers.  Be careful with this flag or you could have a really bad day.
@@ -889,14 +934,16 @@ Allow container synchronization.
 `hpcloud containers:sync name key [location]`
 
 ###Options
-<dl>
-*-z, --availability-zone=AVAILABILITY_ZONE*
-: Set the availability zone.  
-*-x, --debug=DEBUG*
-: Debug logging 1,2,3,...  
-*-a, --account-name=ACCOUNT_NAME*
-: Select account.  
-</dl>
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
 
 ###Description
 Allow container synchronization using the specified key.  If you are creating a destination for synchronization, only the key should be specified.  If you are creating a source for synchronization, specify a key and location.  The same key must be used in the source and destination.  It is possible have containers as both a source and destination.  List your synchronization information with the "hpcloud list --sync" command.
@@ -922,20 +969,25 @@ Copy files from one resource to another.
 `hpcloud copy <source> [source ...] <destination>`
 
 ###Options
-<dl>
-*-m, --mime=MIME*
-: Set the MIME type of the remote object.  
-*-s, --source-account=SOURCE_ACCOUNT*
-: Source account name.  
-*-r, --restart*
-: Restart a previous large file upload.  
-*-z, --availability-zone=AVAILABILITY_ZONE*
-: Set the availability zone.  
-*-x, --debug=DEBUG*
-: Debug logging 1,2,3,...  
-*-a, --account-name=ACCOUNT_NAME*
-: Select account.  
-</dl>
+**-m, --mime=MIME**
+: Set the MIME type of the remote object.
+
+**-s, --source-account=SOURCE_ACCOUNT**
+: Source account name.
+
+**-r, --restart**
+: Restart a previous large file upload.
+
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
 
 ###Description
 Copy a file between your file system and a container, inside a container, or between containers. You may copy multiple files to a directory or container on one command line.  Optionally, you can specify an availability zone.  Note that a leading colon `:` is required when you specify a container; for example `:my_container`.
@@ -984,18 +1036,22 @@ List the DNS domains.
 `hpcloud dns [name_or_id ...]`
 
 ###Options
-<dl>
-*-c, --columns=COLUMNS*
-: Comma separated list of columns in report.  
-*-d, --separator=SEPARATOR*
-: Use the specified value as the report separator.  
-*-z, --availability-zone=AVAILABILITY_ZONE*
-: Set the availability zone.  
-*-x, --debug=DEBUG*
-: Debug logging 1,2,3,...  
-*-a, --account-name=ACCOUNT_NAME*
-: Select account.  
-</dl>
+**-c, --columns=COLUMNS**
+: Comma separated list of columns in report.
+
+**-d, --separator=SEPARATOR**
+: Use the specified value as the report separator.
+
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
 
 ###Description
 Lists all the DNS domains that are associated with the account. The list begins with identifier and contains name, TTL, serial number, email and time created.  Optionally, you can filter the list by specifying name or ID.
@@ -1023,17 +1079,21 @@ Add a DNS domain.
 `hpcloud dns:add <name> <email>`
 
 ###Options
-<dl>
-*-t, --ttl=TTL*
-: Time to live.  
-# Default: 3600  
-*-z, --availability-zone=AVAILABILITY_ZONE*
-: Set the availability zone.  
-*-x, --debug=DEBUG*
-: Debug logging 1,2,3,...  
-*-a, --account-name=ACCOUNT_NAME*
-: Select account.  
-</dl>
+**-t, --ttl=TTL**
+: Time to live.
+
+# Default: 3600
+
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
 
 ###Description
 Add a DNS domain with the specified name and email address.  Optionally, you can specify a TTL (time to live) to adjust DNS caching of your entry.  The default time to live (TTL) is 3600 (one hour).
@@ -1055,18 +1115,22 @@ List the records associated with the DNS domain.
 `hpcloud dns:records <name_or_id>`
 
 ###Options
-<dl>
-*-c, --columns=COLUMNS*
-: Comma separated list of columns in report.  
-*-d, --separator=SEPARATOR*
-: Use the specified value as the report separator.  
-*-z, --availability-zone=AVAILABILITY_ZONE*
-: Set the availability zone.  
-*-x, --debug=DEBUG*
-: Debug logging 1,2,3,...  
-*-a, --account-name=ACCOUNT_NAME*
-: Select account.  
-</dl>
+**-c, --columns=COLUMNS**
+: Comma separated list of columns in report.
+
+**-d, --separator=SEPARATOR**
+: Use the specified value as the report separator.
+
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
 
 ###Description
 Lists records associated with the DNS domain specified by name or ID.
@@ -1088,14 +1152,16 @@ Add a DNS record.
 `hpcloud dns:records:add <domain> <name> <type> <data>`
 
 ###Options
-<dl>
-*-z, --availability-zone=AVAILABILITY_ZONE*
-: Set the availability zone.  
-*-x, --debug=DEBUG*
-: Debug logging 1,2,3,...  
-*-a, --account-name=ACCOUNT_NAME*
-: Select account.  
-</dl>
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
 
 ###Description
 Add a DNS record to the specified domain with the given name, type and data.
@@ -1113,14 +1179,16 @@ Remove a DNS record.
 `hpcloud dns:records:remove <domain> <name ...>`
 
 ###Options
-<dl>
-*-z, --availability-zone=AVAILABILITY_ZONE*
-: Set the availability zone.  
-*-x, --debug=DEBUG*
-: Debug logging 1,2,3,...  
-*-a, --account-name=ACCOUNT_NAME*
-: Select account.  
-</dl>
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
 
 ###Description
 Remove a DNS record to the specified domain.  Records may be specified by name or ID.
@@ -1138,14 +1206,16 @@ Update a DNS record.
 `hpcloud dns:records:update <domain> <name> <type> <data>`
 
 ###Options
-<dl>
-*-z, --availability-zone=AVAILABILITY_ZONE*
-: Set the availability zone.  
-*-x, --debug=DEBUG*
-: Debug logging 1,2,3,...  
-*-a, --account-name=ACCOUNT_NAME*
-: Select account.  
-</dl>
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
 
 ###Description
 Update a DNS record to the specified domain with the given name, type and data.
@@ -1163,14 +1233,16 @@ Remove DNS domains (specified by name or ID).
 `hpcloud dns:remove name_or_id [name_or_id ...]`
 
 ###Options
-<dl>
-*-z, --availability-zone=AVAILABILITY_ZONE*
-: Set the availability zone.  
-*-x, --debug=DEBUG*
-: Debug logging 1,2,3,...  
-*-a, --account-name=ACCOUNT_NAME*
-: Select account.  
-</dl>
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
 
 ###Description
 Remove DNS domains by specifying their names or ID. You may specify more than one DNS name or ID on a command line.  Optionally, you can specify an availability zone.
@@ -1198,18 +1270,22 @@ List the servers associated with the DNS domain.
 `hpcloud dns:servers <name_or_id>`
 
 ###Options
-<dl>
-*-c, --columns=COLUMNS*
-: Comma separated list of columns in report.  
-*-d, --separator=SEPARATOR*
-: Use the specified value as the report separator.  
-*-z, --availability-zone=AVAILABILITY_ZONE*
-: Set the availability zone.  
-*-x, --debug=DEBUG*
-: Debug logging 1,2,3,...  
-*-a, --account-name=ACCOUNT_NAME*
-: Select account.  
-</dl>
+**-c, --columns=COLUMNS**
+: Comma separated list of columns in report.
+
+**-d, --separator=SEPARATOR**
+: Use the specified value as the report separator.
+
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
 
 ###Description
 Lists servers associated with the DNS domain specified by name or ID.
@@ -1231,18 +1307,22 @@ Update a DNS domain.
 `hpcloud dns:update <name>`
 
 ###Options
-<dl>
-*-e, --email=EMAIL*
-: Email address.  
-*-t, --ttl=TTL*
-: Time to live.  
-*-z, --availability-zone=AVAILABILITY_ZONE*
-: Set the availability zone.  
-*-x, --debug=DEBUG*
-: Debug logging 1,2,3,...  
-*-a, --account-name=ACCOUNT_NAME*
-: Select account.  
-</dl>
+**-e, --email=EMAIL**
+: Email address.
+
+**-t, --ttl=TTL**
+: Time to live.
+
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
 
 ###Description
 Update a DNS domain with the specified name.  Optionally, you can specify an email or a time to live (TTL) to adjust DNS caching for your entry.  The default TTL is 3600 (one hour).
@@ -1264,18 +1344,22 @@ List available flavors.
 `hpcloud flavors [name_or_id ...]`
 
 ###Options
-<dl>
-*-c, --columns=COLUMNS*
-: Comma separated list of columns in report.  
-*-d, --separator=SEPARATOR*
-: Use the specified value as the report separator.  
-*-z, --availability-zone=AVAILABILITY_ZONE*
-: Set the availability zone.  
-*-x, --debug=DEBUG*
-: Debug logging 1,2,3,...  
-*-a, --account-name=ACCOUNT_NAME*
-: Select account.  
-</dl>
+**-c, --columns=COLUMNS**
+: Comma separated list of columns in report.
+
+**-d, --separator=SEPARATOR**
+: Use the specified value as the report separator.
+
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
 
 ###Description
 List the flavors in your compute account. You may filter the output by specifying the names or IDs of the flavors you wish to see.  Optionally, you can specify an availability zone.
@@ -1303,14 +1387,16 @@ Fetch objects to your local directory.
 `hpcloud get object [object ...]`
 
 ###Options
-<dl>
-*-z, --availability-zone=AVAILABILITY_ZONE*
-: Set the availability zone.  
-*-x, --debug=DEBUG*
-: Debug logging 1,2,3,...  
-*-a, --account-name=ACCOUNT_NAME*
-: Select account.  
-</dl>
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
 
 ###Description
 Copy remote objects from a container to your current directory. Optionally, you can specify an availability zone.
@@ -1339,18 +1425,22 @@ List the available images in your compute account.
 `hpcloud images [name_or_id ...]`
 
 ###Options
-<dl>
-*-c, --columns=COLUMNS*
-: Comma separated list of columns in report.  
-*-d, --separator=SEPARATOR*
-: Use the specified value as the report separator.  
-*-z, --availability-zone=AVAILABILITY_ZONE*
-: Set the availability zone.  
-*-x, --debug=DEBUG*
-: Debug logging 1,2,3,...  
-*-a, --account-name=ACCOUNT_NAME*
-: Select account.  
-</dl>
+**-c, --columns=COLUMNS**
+: Comma separated list of columns in report.
+
+**-d, --separator=SEPARATOR**
+: Use the specified value as the report separator.
+
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
 
 ###Description
 List the images in your compute account. You may filter the images displayed by specifying one ore more image names or IDs on the command line.  Optionally, you can specify an availability zone.
@@ -1378,16 +1468,19 @@ Add an image from an existing server.
 `hpcloud images:add <name> <server_name>`
 
 ###Options
-<dl>
-*-z, --availability-zone=AVAILABILITY_ZONE*
-: Set the availability zone.  
-*-x, --debug=DEBUG*
-: Debug logging 1,2,3,...  
-*-a, --account-name=ACCOUNT_NAME*
-: Select account.  
-*-m, --metadata=METADATA*
-: Set the meta data.  
-</dl>
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+**-m, --metadata=METADATA**
+: Set the meta data.
+
+
 
 ###Description
 Add a new image from an existing server to your compute account. Optionally, you may specify metadata or an availability zone.
@@ -1413,18 +1506,22 @@ List the metadata for an image.
 `hpcloud images:metadata <image_name_or_id>`
 
 ###Options
-<dl>
-*-c, --columns=COLUMNS*
-: Comma separated list of columns in report.  
-*-d, --separator=SEPARATOR*
-: Use the specified value as the report separator.  
-*-z, --availability-zone=AVAILABILITY_ZONE*
-: Set the availability zone.  
-*-x, --debug=DEBUG*
-: Debug logging 1,2,3,...  
-*-a, --account-name=ACCOUNT_NAME*
-: Select account.  
-</dl>
+**-c, --columns=COLUMNS**
+: Comma separated list of columns in report.
+
+**-d, --separator=SEPARATOR**
+: Use the specified value as the report separator.
+
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
 
 ###Description
 List the metadata for an image in your compute account. You may specify either the name or ID of the image.  Optionally, you may specify an availability zone.
@@ -1452,14 +1549,16 @@ Add metadata to an image.
 `hpcloud images:metadata:add <name> <metadata>`
 
 ###Options
-<dl>
-*-z, --availability-zone=AVAILABILITY_ZONE*
-: Set the availability zone.  
-*-x, --debug=DEBUG*
-: Debug logging 1,2,3,...  
-*-a, --account-name=ACCOUNT_NAME*
-: Select account.  
-</dl>
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
 
 ###Description
 Add metadata to a image in your compute account.  You may specify the mage name or ID.  If metadata already exists, it is updated.  You must specify the Mmetadata as a comma separated list of name value pairs.  Optionally, you may specify an availability zone.
@@ -1479,14 +1578,16 @@ Remove metadata from an image.
 `hpcloud images:metadata:remove <image_name_or_id> [metadata_key ...]`
 
 ###Options
-<dl>
-*-z, --availability-zone=AVAILABILITY_ZONE*
-: Set the availability zone.  
-*-x, --debug=DEBUG*
-: Debug logging 1,2,3,...  
-*-a, --account-name=ACCOUNT_NAME*
-: Select account.  
-</dl>
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
 
 ###Description
 Remove metadata from an image in your compute account.  You may specify an image name or ID.  Optionally, you may specify an availability zone.
@@ -1506,14 +1607,16 @@ Remove images by name or identifier.
 `hpcloud images:remove name_or_id [name_or_id ...]`
 
 ###Options
-<dl>
-*-z, --availability-zone=AVAILABILITY_ZONE*
-: Set the availability zone.  
-*-x, --debug=DEBUG*
-: Debug logging 1,2,3,...  
-*-a, --account-name=ACCOUNT_NAME*
-: Select account.  
-</dl>
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
 
 ###Description
 Remove existing images by specifying thier names or IDs. Optionally, you may specify an availability zone.
@@ -1546,18 +1649,22 @@ List the available keypairs.
 `hpcloud keypairs [name ...]`
 
 ###Options
-<dl>
-*-c, --columns=COLUMNS*
-: Comma separated list of columns in report.  
-*-d, --separator=SEPARATOR*
-: Use the specified value as the report separator.  
-*-z, --availability-zone=AVAILABILITY_ZONE*
-: Set the availability zone.  
-*-x, --debug=DEBUG*
-: Debug logging 1,2,3,...  
-*-a, --account-name=ACCOUNT_NAME*
-: Select account.  
-</dl>
+**-c, --columns=COLUMNS**
+: Comma separated list of columns in report.
+
+**-d, --separator=SEPARATOR**
+: Use the specified value as the report separator.
+
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
 
 ###Description
 List the key pairs in your compute account. You may filter the output of keys displayed by specifying the key pairs you want displayed on the command line.  Optionally, you can specify an availability zone.
@@ -1585,20 +1692,25 @@ add a key pair
 `hpcloud keypairs:add <key_name>`
 
 ###Options
-<dl>
-*-f, --fingerprint=FINGERPRINT*
-: Specify a fingerprint to be used.  
-*-p, --private-key=PRIVATE_KEY*
-: Specify private key data to be used.  
-*-o, --output*
-: Save key pair in the ~/.hpcloud/keypairs folder.  
-*-z, --availability-zone=AVAILABILITY_ZONE*
-: Set the availability zone.  
-*-x, --debug=DEBUG*
-: Debug logging 1,2,3,...  
-*-a, --account-name=ACCOUNT_NAME*
-: Select account.  
-</dl>
+**-f, --fingerprint=FINGERPRINT**
+: Specify a fingerprint to be used.
+
+**-p, --private-key=PRIVATE_KEY**
+: Specify private key data to be used.
+
+**-o, --output**
+: Save key pair in the ~/.hpcloud/keypairs folder.
+
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
 
 ###Description
 Add a key pair by specifying the name. Optionally you can specify a fingerprint and private key data. You can use the `-o` option to save the key to a file. Optionally, you can specify an availability zone.
@@ -1636,14 +1748,16 @@ Import a key pair.
 `hpcloud keypairs:import <key_name> <public_key_data>`
 
 ###Options
-<dl>
-*-z, --availability-zone=AVAILABILITY_ZONE*
-: Set the availability zone.  
-*-x, --debug=DEBUG*
-: Debug logging 1,2,3,...  
-*-a, --account-name=ACCOUNT_NAME*
-: Select account.  
-</dl>
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
 
 ###Description
 Import a key pair by specifying the public key data. Alternately, you may specify the name of the import file on the command line.  Optionally, you can specify an availability zone.
@@ -1735,14 +1849,16 @@ Display the public keys of a key pair.
 `hpcloud keypairs:public_key <name>`
 
 ###Options
-<dl>
-*-z, --availability-zone=AVAILABILITY_ZONE*
-: Set the availability zone.  
-*-x, --debug=DEBUG*
-: Debug logging 1,2,3,...  
-*-a, --account-name=ACCOUNT_NAME*
-: Select account.  
-</dl>
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
 
 ###Description
 Display the public key of the specified keypair.  Optionally, you can specify an availability zone.
@@ -1764,14 +1880,16 @@ Remove a key pair (by name).
 `hpcloud keypairs:remove name [name ...]`
 
 ###Options
-<dl>
-*-z, --availability-zone=AVAILABILITY_ZONE*
-: Set the availability zone.  
-*-x, --debug=DEBUG*
-: Debug logging 1,2,3,...  
-*-a, --account-name=ACCOUNT_NAME*
-: Select account.  
-</dl>
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
 
 ###Description
 Remove an existing key pair by name. You may specify more than one key pair to remove on a single command line.  Optionally, you can specify an availability zone.
@@ -1799,22 +1917,28 @@ List containers or container contents.
 `hpcloud list [container ...]`
 
 ###Options
-<dl>
-*-l, --long*
-: Long listing.  
-*--sync*
-: List synchronizations.  
-*-c, --columns=COLUMNS*
-: Comma separated list of columns in report.  
-*-d, --separator=SEPARATOR*
-: Use the specified value as the report separator.  
-*-z, --availability-zone=AVAILABILITY_ZONE*
-: Set the availability zone.  
-*-x, --debug=DEBUG*
-: Debug logging 1,2,3,...  
-*-a, --account-name=ACCOUNT_NAME*
-: Select account.  
-</dl>
+**-l, --long**
+: Long listing.
+
+**--sync**
+: List synchronizations.
+
+**-c, --columns=COLUMNS**
+: Comma separated list of columns in report.
+
+**-d, --separator=SEPARATOR**
+: Use the specified value as the report separator.
+
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
 
 ###Description
 List containers or the contents of the specified containers. Optionally, an availability zone can be passed.
@@ -1850,14 +1974,16 @@ Display the URIs for the specified resources.
 `hpcloud location <object/container> ...`
 
 ###Options
-<dl>
-*-z, --availability-zone=AVAILABILITY_ZONE*
-: Set the availability zone.  
-*-x, --debug=DEBUG*
-: Debug logging 1,2,3,...  
-*-a, --account-name=ACCOUNT_NAME*
-: Select account.  
-</dl>
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
 
 ###Description
 Display the URI of the specified object or container. Optionally, you can specify an availability zone.
@@ -1889,16 +2015,19 @@ Migrate files from a provider described by the source account.
 `hpcloud migrate <source_account> <source> [source ...] <destination>`
 
 ###Options
-<dl>
-*-m, --mime=MIME*
-: Set the MIME type of the remote object.  
-*-z, --availability-zone=AVAILABILITY_ZONE*
-: Set the availability zone.  
-*-x, --debug=DEBUG*
-: Debug logging 1,2,3,...  
-*-a, --account-name=ACCOUNT_NAME*
-: Select account.  
-</dl>
+**-m, --mime=MIME**
+: Set the MIME type of the remote object.
+
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
 
 ###Description
 Migrates files from the deisgnated provider to the HP Cloud destination. This command works similarly to `copy` except the first argument is the source account (for example, `AWS`).  The source objects may be containers, objects, or regular expressions.
@@ -1920,14 +2049,16 @@ Move objects inside or between containers.
 `hpcloud move <source ...> <destination>`
 
 ###Options
-<dl>
-*-z, --availability-zone=AVAILABILITY_ZONE*
-: Set the availability zone.  
-*-x, --debug=DEBUG*
-: Debug logging 1,2,3,...  
-*-a, --account-name=ACCOUNT_NAME*
-: Select account.  
-</dl>
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
 
 ###Description
 Move objects to a new location inside a container or between containers. The source file is removed after a successful transfer. If you specify more than one source, the destination must be a container, or a directory ending in `/`.  Optionally, you can specify an availability zone.  For copying files to and from your local filesystem see `copy`.
@@ -1959,20 +2090,25 @@ Remove objects or containers.
 `hpcloud remove object_or_container [object_or_container ...]`
 
 ###Options
-<dl>
-*-f, --force*
-: Do not confirm removal; remove non-empty containers.  
-*--at=AT*
-: Delete the object at the specified UNIX epoch time.  
-*--after=AFTER*
-: Delete the object after the specified number of seconds.  
-*-z, --availability-zone=AVAILABILITY_ZONE*
-: Set the availability zone.  
-*-x, --debug=DEBUG*
-: Debug logging 1,2,3,...  
-*-a, --account-name=ACCOUNT_NAME*
-: Select account.  
-</dl>
+**-f, --force**
+: Do not confirm removal; remove non-empty containers.
+
+**--at=AT**
+: Delete the object at the specified UNIX epoch time.
+
+**--after=AFTER**
+: Delete the object after the specified number of seconds.
+
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
 
 ###Description
 Remove objects or containers. Optionally, you can specify an availability zone.
@@ -2008,18 +2144,22 @@ List the available security groups.
 `hpcloud securitygroups [name_or_id ...]`
 
 ###Options
-<dl>
-*-c, --columns=COLUMNS*
-: Comma separated list of columns in report.  
-*-d, --separator=SEPARATOR*
-: Use the specified value as the report separator.  
-*-z, --availability-zone=AVAILABILITY_ZONE*
-: Set the availability zone.  
-*-x, --debug=DEBUG*
-: Debug logging 1,2,3,...  
-*-a, --account-name=ACCOUNT_NAME*
-: Select account.  
-</dl>
+**-c, --columns=COLUMNS**
+: Comma separated list of columns in report.
+
+**-d, --separator=SEPARATOR**
+: Use the specified value as the report separator.
+
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
 
 ###Description
 List the security groups in your compute account. You may filter the display by specifying names or IDs of security groups on the command line.  Optionally, you can specify an availability zone.
@@ -2047,14 +2187,16 @@ Add a security group.
 `hpcloud securitygroups:add <name> <description>`
 
 ###Options
-<dl>
-*-z, --availability-zone=AVAILABILITY_ZONE*
-: Set the availability zone.  
-*-x, --debug=DEBUG*
-: Debug logging 1,2,3,...  
-*-a, --account-name=ACCOUNT_NAME*
-: Select account.  
-</dl>
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
 
 ###Description
 Add a new security group by specifying a name and a description. Optionally, you can specify an availability zone.
@@ -2076,14 +2218,16 @@ Remove a security group or groups.
 `hpcloud securitygroups:remove name_or_id [name_or_id ...]`
 
 ###Options
-<dl>
-*-z, --availability-zone=AVAILABILITY_ZONE*
-: Set the availability zone.  
-*-x, --debug=DEBUG*
-: Debug logging 1,2,3,...  
-*-a, --account-name=ACCOUNT_NAME*
-: Select account.  
-</dl>
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
 
 ###Description
 Remove existing security groups by name or ID. Optionally, you can specify an availability zone.
@@ -2111,18 +2255,22 @@ Display the list of rules for a security group.
 `hpcloud securitygroups:rules <sec_group_name>`
 
 ###Options
-<dl>
-*-c, --columns=COLUMNS*
-: Comma separated list of columns in report.  
-*-d, --separator=SEPARATOR*
-: Use the specified value as the report separator.  
-*-z, --availability-zone=AVAILABILITY_ZONE*
-: Set the availability zone.  
-*-x, --debug=DEBUG*
-: Debug logging 1,2,3,...  
-*-a, --account-name=ACCOUNT_NAME*
-: Select account.  
-</dl>
+**-c, --columns=COLUMNS**
+: Comma separated list of columns in report.
+
+**-d, --separator=SEPARATOR**
+: Use the specified value as the report separator.
+
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
 
 ###Description
 List the rules for a security group for your compute account. Optionally, you can specify an availability zone.
@@ -2146,20 +2294,25 @@ Add a rule to the security group.
 `hpcloud securitygroups:rules:add <sec_group_name> <ip_protocol>`
 
 ###Options
-<dl>
-*-p, --port-range=PORT_RANGE*
-: Specify a port range like 22..22  
-*-c, --cidr=CIDR*
-: Specify a cidr ip range like 0.0.0.0/0  
-*-g, --source-group=SOURCE_GROUP*
-: Specify a source group.  
-*-z, --availability-zone=AVAILABILITY_ZONE*
-: Set the availability zone.  
-*-x, --debug=DEBUG*
-: Debug logging 1,2,3,...  
-*-a, --account-name=ACCOUNT_NAME*
-: Select account.  
-</dl>
+**-p, --port-range=PORT_RANGE**
+: Specify a port range like 22..22
+
+**-c, --cidr=CIDR**
+: Specify a cidr ip range like 0.0.0.0/0
+
+**-g, --source-group=SOURCE_GROUP**
+: Specify a source group.
+
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
 
 ###Description
 Add a rule to the security group. If <ip_protocol> is specified as `icmp`, then <port_range> is set to -1..-1.  If <ip_address> is not specified, then the address defaults to `0.0.0.0/0`. To allow communications within a given security group, you must specify a source group while creating a rule. Optionally, you can specify an availability zone.
@@ -2195,14 +2348,16 @@ Remove a rule from the security group.
 `hpcloud securitygroups:rules:remove <sec_group_name> <rule_id>`
 
 ###Options
-<dl>
-*-z, --availability-zone=AVAILABILITY_ZONE*
-: Set the availability zone.  
-*-x, --debug=DEBUG*
-: Debug logging 1,2,3,...  
-*-a, --account-name=ACCOUNT_NAME*
-: Select account.  
-</dl>
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
 
 ###Description
 Remove a rule from the security group, specifyied its ID. Optionally, you can specify an availability zone.
@@ -2226,18 +2381,22 @@ List the available servers.
 `hpcloud servers [name_or_id ...]`
 
 ###Options
-<dl>
-*-c, --columns=COLUMNS*
-: Comma separated list of columns in report.  
-*-d, --separator=SEPARATOR*
-: Use the specified value as the report separator.  
-*-z, --availability-zone=AVAILABILITY_ZONE*
-: Set the availability zone.  
-*-x, --debug=DEBUG*
-: Debug logging 1,2,3,...  
-*-a, --account-name=ACCOUNT_NAME*
-: Select account.  
-</dl>
+**-c, --columns=COLUMNS**
+: Comma separated list of columns in report.
+
+**-d, --separator=SEPARATOR**
+: Use the specified value as the report separator.
+
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
 
 ###Description
 List the servers in your compute account. You may filter the list by server name or ID.  Optionally, you can specify an availability zone.
@@ -2265,28 +2424,37 @@ Add a server.
 `hpcloud servers:add <name> <flavor> -k, --key-name=KEY_NAME`
 
 ###Options
-<dl>
-*-k, --key-name=KEY_NAME*
-: Specify a key name to be used.  
-*-i, --image=IMAGE*
-: Image to use to create the server.  
-*-v, --volume=VOLUME*
-: Volume to use to create the server.  
-*-s, --security-group=SECURITY_GROUP*
-: Specify a security group or comma seperated list of security groups to be used.  
-*-p, --private-key-file=PRIVATE_KEY_FILE*
-: Name of the pem file with your private key.  
-*-m, --metadata=METADATA*
-: Set the meta data.  
-*-u, --userdata=USERDATA*
-: File which contains user data.  
-*-z, --availability-zone=AVAILABILITY_ZONE*
-: Set the availability zone.  
-*-x, --debug=DEBUG*
-: Debug logging 1,2,3,...  
-*-a, --account-name=ACCOUNT_NAME*
-: Select account.  
-</dl>
+**-k, --key-name=KEY_NAME**
+: Specify a key name to be used.
+
+**-i, --image=IMAGE**
+: Image to use to create the server.
+
+**-v, --volume=VOLUME**
+: Volume to use to create the server.
+
+**-s, --security-group=SECURITY_GROUP**
+: Specify a security group or comma seperated list of security groups to be used.
+
+**-p, --private-key-file=PRIVATE_KEY_FILE**
+: Name of the pem file with your private key.
+
+**-m, --metadata=METADATA**
+: Set the meta data.
+
+**-u, --userdata=USERDATA**
+: File which contains user data.
+
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
 
 ###Description
 Add a new server to your compute account. You must specify:  Server name, a flavor, an image or volume to use, and a key pair.  If you are creating a windows server, the flavor must be at least a large and you must specify a security group that has the RDP port open.  Optionally, you can specify a security group, key name, metadata and availability zone.
@@ -2320,18 +2488,22 @@ Get the console output of a server or extract the windows password.
 `hpcloud servers:console <server_name_or_id> [lines]`
 
 ###Options
-<dl>
-*-p, --private-key-file=PRIVATE_KEY_FILE*
-: Private key pem file used to decrypt windows password.  
-*-d, --dump-password*
-: Dump the windows password if the private key is known by the CLI.  
-*-z, --availability-zone=AVAILABILITY_ZONE*
-: Set the availability zone.  
-*-x, --debug=DEBUG*
-: Debug logging 1,2,3,...  
-*-a, --account-name=ACCOUNT_NAME*
-: Select account.  
-</dl>
+**-p, --private-key-file=PRIVATE_KEY_FILE**
+: Private key pem file used to decrypt windows password.
+
+**-d, --dump-password**
+: Dump the windows password if the private key is known by the CLI.
+
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
 
 ###Description
 Display the console output of a server.  When the `-p` option is used with the private key file for the server, if the decrypted password is still available on the console, it is displayed.
@@ -2353,18 +2525,22 @@ List the metadata for a server.
 `hpcloud servers:metadata <name_or_id>`
 
 ###Options
-<dl>
-*-c, --columns=COLUMNS*
-: Comma separated list of columns in report.  
-*-d, --separator=SEPARATOR*
-: Use the specified value as the report separator.  
-*-z, --availability-zone=AVAILABILITY_ZONE*
-: Set the availability zone.  
-*-x, --debug=DEBUG*
-: Debug logging 1,2,3,...  
-*-a, --account-name=ACCOUNT_NAME*
-: Select account.  
-</dl>
+**-c, --columns=COLUMNS**
+: Comma separated list of columns in report.
+
+**-d, --separator=SEPARATOR**
+: Use the specified value as the report separator.
+
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
 
 ###Description
 List the metadata for a server in your compute account. You can specify either the name or the ID of the server.  Optionally, you can specify an availability zone.
@@ -2388,14 +2564,16 @@ Add metadata to a server.
 `hpcloud servers:metadata:add <name_or_id> <metadata>`
 
 ###Options
-<dl>
-*-z, --availability-zone=AVAILABILITY_ZONE*
-: Set the availability zone.  
-*-x, --debug=DEBUG*
-: Debug logging 1,2,3,...  
-*-a, --account-name=ACCOUNT_NAME*
-: Select account.  
-</dl>
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
 
 ###Description
 Add metadata to a server in your compute account.  You can specify the erver name or ID.  Optionally, you can an availability zone. The metadata should be a comma separated list of name value pairs.
@@ -2415,14 +2593,16 @@ Remove metadata from a server.
 `hpcloud servers:metadata:remove <name> <metadata_key> ...`
 
 ###Options
-<dl>
-*-z, --availability-zone=AVAILABILITY_ZONE*
-: Set the availability zone.  
-*-x, --debug=DEBUG*
-: Debug logging 1,2,3,...  
-*-a, --account-name=ACCOUNT_NAME*
-: Select account.  
-</dl>
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
 
 ###Description
 Remove metadata from a server in your compute account.  You can speciry the erver name or ID.  You can specify one or more metadata keys on the command line.  Optionally, you can specify an availability zone.
@@ -2442,14 +2622,16 @@ Change the password for a server.
 `hpcloud servers:password <server_name> <password>`
 
 ###Options
-<dl>
-*-z, --availability-zone=AVAILABILITY_ZONE*
-: Set the availability zone.  
-*-x, --debug=DEBUG*
-: Debug logging 1,2,3,...  
-*-a, --account-name=ACCOUNT_NAME*
-: Select account.  
-</dl>
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
 
 ###Description
 Change the password for an existing server. The password must adhere to the existing security complexity naming rules. Optionally, you can specify an availability zone.
@@ -2473,16 +2655,19 @@ Reboot a server or servers (specified by server name or ID).
 `hpcloud servers:reboot name_or_id [name_or_id ...]`
 
 ###Options
-<dl>
-*-h, --hard*
-: Hard reboot a server.  
-*-z, --availability-zone=AVAILABILITY_ZONE*
-: Set the availability zone.  
-*-x, --debug=DEBUG*
-: Debug logging 1,2,3,...  
-*-a, --account-name=ACCOUNT_NAME*
-: Select account.  
-</dl>
+**-h, --hard**
+: Hard reboot a server.
+
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
 
 ###Description
 Reboot an existing server specified name or ID. Rebooting a server can take some time so it might be necessary to check the status of the server by issuing the command `hpcloud servers`. The default is a soft reboot, but you can specify the `-h` option for a hard reboot. Optionally, you can specify an availability zone.
@@ -2508,14 +2693,16 @@ Rebuild a server (specified by server name or ID).
 `hpcloud servers:rebuild name_or_id [image_name_or_id]`
 
 ###Options
-<dl>
-*-z, --availability-zone=AVAILABILITY_ZONE*
-: Set the availability zone.  
-*-x, --debug=DEBUG*
-: Debug logging 1,2,3,...  
-*-a, --account-name=ACCOUNT_NAME*
-: Select account.  
-</dl>
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
 
 ###Description
 Rebuild an existing server specified by name or ID. Optionally, you may rebuild the server with a new image.  Rebuilding a server may take some time so it might be necessary to check the status of the server by issuing the command `hpcloud servers`. Optionally, you can specify an availability zone.
@@ -2541,14 +2728,16 @@ Remove a server or servers (specified by name or ID).
 `hpcloud servers:remove name_or_id [name_or_id ...]`
 
 ###Options
-<dl>
-*-z, --availability-zone=AVAILABILITY_ZONE*
-: Set the availability zone.  
-*-x, --debug=DEBUG*
-: Debug logging 1,2,3,...  
-*-a, --account-name=ACCOUNT_NAME*
-: Select account.  
-</dl>
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
 
 ###Description
 Remove existing servers by specifying their name or ID. Optionally, you can specify an availability zone.
@@ -2580,23 +2769,30 @@ Secure shell into a server.
 `hpcloud servers:ssh <server_name_or_id>`
 
 ###Options
-<dl>
-*-p, --private-key-file=PRIVATE_KEY_FILE*
-: Name of the pem file with your private key.  
-*-k, --keypair=KEYPAIR*
-: Name of keypair to use.  
-*-l, --login=LOGIN*
-: Login id to use.  
-*-c, --command=COMMAND*
-: Command to use to connect.  
-# Default: ssh  
-*-z, --availability-zone=AVAILABILITY_ZONE*
-: Set the availability zone.  
-*-x, --debug=DEBUG*
-: Debug logging 1,2,3,...  
-*-a, --account-name=ACCOUNT_NAME*
-: Select account.  
-</dl>
+**-p, --private-key-file=PRIVATE_KEY_FILE**
+: Name of the pem file with your private key.
+
+**-k, --keypair=KEYPAIR**
+: Name of keypair to use.
+
+**-l, --login=LOGIN**
+: Login id to use.
+
+**-c, --command=COMMAND**
+: Command to use to connect.
+
+# Default: ssh
+
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
 
 ###Description
 Log in using the secure shell to the specified server.
@@ -2622,18 +2818,22 @@ List block devices available.
 `hpcloud snapshots [name_or_id ...]`
 
 ###Options
-<dl>
-*-c, --columns=COLUMNS*
-: Comma separated list of columns in report.  
-*-d, --separator=SEPARATOR*
-: Use the specified value as the report separator.  
-*-z, --availability-zone=AVAILABILITY_ZONE*
-: Set the availability zone.  
-*-x, --debug=DEBUG*
-: Debug logging 1,2,3,...  
-*-a, --account-name=ACCOUNT_NAME*
-: Select account.  
-</dl>
+**-c, --columns=COLUMNS**
+: Comma separated list of columns in report.
+
+**-d, --separator=SEPARATOR**
+: Use the specified value as the report separator.
+
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
 
 ###Description
 Lists all block snapshots associated with the account on the server. The list starts with identifier and contains name, size, type, create date, status, description and servers to which it is attached.  Optionally, you can filter the list by name or ID.
@@ -2661,18 +2861,22 @@ Create a snapshot.
 `hpcloud snapshots:add <name> <volume>`
 
 ###Options
-<dl>
-*-d, --description=DESCRIPTION*
-: Description of the snapshot.  
-*-m, --metadata=METADATA*
-: Set the meta data.  
-*-z, --availability-zone=AVAILABILITY_ZONE*
-: Set the availability zone.  
-*-x, --debug=DEBUG*
-: Debug logging 1,2,3,...  
-*-a, --account-name=ACCOUNT_NAME*
-: Select account.  
-</dl>
+**-d, --description=DESCRIPTION**
+: Description of the snapshot.
+
+**-m, --metadata=METADATA**
+: Set the meta data.
+
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
 
 ###Description
 Create a snapshot with the given name from a volume.  Optionally, you can specify a description.
@@ -2694,14 +2898,16 @@ Remove a snapshot or snapshots (specified by name or ID).
 `hpcloud snapshots:remove <name_or_id> [name_or_id ...]`
 
 ###Options
-<dl>
-*-z, --availability-zone=AVAILABILITY_ZONE*
-: Set the availability zone.  
-*-x, --debug=DEBUG*
-: Debug logging 1,2,3,...  
-*-a, --account-name=ACCOUNT_NAME*
-: Select account.  
-</dl>
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
 
 ###Description
 Remove snapshots by specifying their names or ID. Optionally, you can specify an availability zone.
@@ -2729,18 +2935,22 @@ Create temporary URLs for the given objects.
 `hpcloud tempurl <object> ...`
 
 ###Options
-<dl>
-*-p, --time-period=TIME_PERIOD*
-: time period to keep the url alive  
-*-u, --update*
-: Update an existing tempurl  
-*-z, --availability-zone=AVAILABILITY_ZONE*
-: Set the availability zone.  
-*-x, --debug=DEBUG*
-: Debug logging 1,2,3,...  
-*-a, --account-name=ACCOUNT_NAME*
-: Select account.  
-</dl>
+**-p, --time-period=TIME_PERIOD**
+: time period to keep the url alive
+
+**-u, --update**
+: Update an existing tempurl
+
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
 
 ###Description
 Create temporary URLS for the given objects. Creating a temporary URL allows you to share an object for a specified period of time making it available to everyone.  Only users with access to the URL can access the file.  You can specify the time period in seconds (s), hours (h), or days (d).  If you do not specify a time period, the default is two days.  Optionally, you can specify an availability zone.
@@ -2768,20 +2978,25 @@ List the available block devices.
 `hpcloud volumes [name_or_id ...]`
 
 ###Options
-<dl>
-*-b, --bootable*
-: List only the bootable volumes.  
-*-c, --columns=COLUMNS*
-: Comma separated list of columns in report.  
-*-d, --separator=SEPARATOR*
-: Use the specified value as the report separator.  
-*-z, --availability-zone=AVAILABILITY_ZONE*
-: Set the availability zone.  
-*-x, --debug=DEBUG*
-: Debug logging 1,2,3,...  
-*-a, --account-name=ACCOUNT_NAME*
-: Select account.  
-</dl>
+**-b, --bootable**
+: List only the bootable volumes.
+
+**-c, --columns=COLUMNS**
+: Comma separated list of columns in report.
+
+**-d, --separator=SEPARATOR**
+: Use the specified value as the report separator.
+
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
 
 ###Description
 Lists all the block volumes that are associated with the account on the server. The list begins with identifier and contains name, size, type, create date, status, description and servers on which it is attached.  Optionally, you can filter the list by specifying name or ID.
@@ -2809,22 +3024,28 @@ Add a volume.
 `hpcloud volumes:add <name> [size]`
 
 ###Options
-<dl>
-*-d, --description=DESCRIPTION*
-: Description of the volume.  
-*-m, --metadata=METADATA*
-: Set the metadata.  
-*-s, --snapshot=SNAPSHOT*
-: Create a volume from the specified snapshot.  
-*-i, --image=IMAGE*
-: Create a volume from the specified image.  
-*-z, --availability-zone=AVAILABILITY_ZONE*
-: Set the availability zone.  
-*-x, --debug=DEBUG*
-: Debug logging 1,2,3,...  
-*-a, --account-name=ACCOUNT_NAME*
-: Select account.  
-</dl>
+**-d, --description=DESCRIPTION**
+: Description of the volume.
+
+**-m, --metadata=METADATA**
+: Set the metadata.
+
+**-s, --snapshot=SNAPSHOT**
+: Create a volume from the specified snapshot.
+
+**-i, --image=IMAGE**
+: Create a volume from the specified image.
+
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
 
 ###Description
 Add a new volume to your compute account with the specified name and size.  Optionally, you can specify a description, metadata or availability zone.  If you do not specify a size, it is taken from the specified snapshot or image.  If no image or snapshot is specified, the size defaults to 1 gigabyte.
@@ -2858,14 +3079,16 @@ Attach a volume to a server specified by device name or number.
 `hpcloud volumes:attach <volume> <server> <device_or_number>`
 
 ###Options
-<dl>
-*-z, --availability-zone=AVAILABILITY_ZONE*
-: Set the availability zone.  
-*-x, --debug=DEBUG*
-: Debug logging 1,2,3,...  
-*-a, --account-name=ACCOUNT_NAME*
-: Select account.  
-</dl>
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
 
 ###Description
 Attach a volume to a server on the specified device name.  You may specify a device name in the format /dev/vdX where X is c, d, e, ... or a attacment point 3, 4, 5,...  The attacment point 1 would map to /dev/vda on a Linux platform, but /dev/vda and /dev/vdb are already in use by the server, so you need to start with 3 or /dev/vdc.  If you attempt to attach a volume to an attachment point that is in use, it will fail silently.  The call is asynchronous and the failure cannot be detected by the CLI.  If you attempt to mount to attachment point 4 and attachment point 3 is not in use, your volume will be attached to attachment point 3 or /dev/vdc on Linux.  This cannot be detected by the CLI.
@@ -2891,14 +3114,16 @@ Detach a volume or volumes.
 `hpcloud volumes:detach name_or_id [name_or_id ...]`
 
 ###Options
-<dl>
-*-z, --availability-zone=AVAILABILITY_ZONE*
-: Set the availability zone.  
-*-x, --debug=DEBUG*
-: Debug logging 1,2,3,...  
-*-a, --account-name=ACCOUNT_NAME*
-: Select account.  
-</dl>
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
 
 ###Description
 Detach volumes from all servers.  You may specify the volume by name or ID.  You can detach one more more volumes in a command line.
@@ -2924,14 +3149,16 @@ Remove a volume or volumes (specified by name or ID).
 `hpcloud volumes:remove name_or_id [name_or_id ...]`
 
 ###Options
-<dl>
-*-z, --availability-zone=AVAILABILITY_ZONE*
-: Set the availability zone.  
-*-x, --debug=DEBUG*
-: Debug logging 1,2,3,...  
-*-a, --account-name=ACCOUNT_NAME*
-: Select account.  
-</dl>
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
 
 ###Description
 Remove volumes by specifying their names or ID. You may specify more than one volume name or ID on a command line.  Optionally, you can specify an availability zone.
@@ -2959,18 +3186,22 @@ List the volumes on server.
 `hpcloud volumes:server [server]`
 
 ###Options
-<dl>
-*-c, --columns=COLUMNS*
-: Comma separated list of columns in report.  
-*-d, --separator=SEPARATOR*
-: Use the specified value as the report separator.  
-*-z, --availability-zone=AVAILABILITY_ZONE*
-: Set the availability zone.  
-*-x, --debug=DEBUG*
-: Debug logging 1,2,3,...  
-*-a, --account-name=ACCOUNT_NAME*
-: Select account.  
-</dl>
+**-c, --columns=COLUMNS**
+: Comma separated list of columns in report.
+
+**-d, --separator=SEPARATOR**
+: Use the specified value as the report separator.
+
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
 
 ###Description
 List the volumes attached to servers with the device they are using.  Optionally, you may filter by specifying the server name or ID on the command line.
