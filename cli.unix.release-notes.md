@@ -22,6 +22,7 @@ These are the release notes for the HP Cloud services UNIX CLI.  The current rel
 The 1.9.0 release is available for download from [https://docs.hpcloud.com/file/hpcloud-1.9.0.gem](/file/hpcloud-1.9.0.gem).  This release was made available on 5/15/2013 and contains the following new features:
 
 * Support for domain name service (DNS)
+* New account:catalog command dumps the service catalog for the given account
 
 ###Known Issues###
 
