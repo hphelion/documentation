@@ -30,7 +30,7 @@ Having a bit of trouble navigating our site, and so you're looking for a single 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating and deleting a volume](blah)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Cloning a new volume from an existing snapshot](blah)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating a bootable volume from an existing image](blah)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Network screen](/mc/compute/network/)  <br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Network screen](/mc/compute/networks/)  <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating and deleting a network](blah) <!-- creating launches a new screen; perhaps separate creating and put deleting in the overview? --> <br> 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Crearing and deleting a subnet](blah) <!-- creating launches a new screen; perhaps separate creating and put deleting in the overview? --> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Viewing  network details](blah) <br>
