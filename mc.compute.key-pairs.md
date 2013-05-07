@@ -9,10 +9,10 @@ product: mc-compute
 
 The management console (MC) compute dashboard volumes screen allows you to view and maniuplate compute key pairs.  This page covers the following topics:
 
-* [Volumes screen overview](#Overview)
+* [Key pairs screen overview](#Overview)
 * [For further information](#ForFurtherInformation)
 
-##Volumes screen overview## {#Overview}
+##Key pairs screen overview## {#Overview}
 
 The images screen displays your compute instance key pairs information for the availability zone (AZ) you have selected.
 
