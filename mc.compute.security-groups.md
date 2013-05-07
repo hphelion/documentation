@@ -9,7 +9,7 @@ product: mc-compute
 
 The management console (MC) compute dashboard security groups screen allows you to view and maniuplate compute security groups.  This page covers the following topics:
 
-* [Volumes screen overview](#Overview)
+* [Security groups screen overview](#Overview)
 * [For further information](#ForFurtherInformation)
 
 ##Security groups screen overview## {#Overview}
