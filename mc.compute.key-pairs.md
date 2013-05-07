@@ -20,7 +20,7 @@ ILLUSTRATION TBD
 
 From this screen you can:
 
-* []()
+* [Adding and deleting a key pair]()
 
 ##For further information## {#ForFurtherInformation}
 
