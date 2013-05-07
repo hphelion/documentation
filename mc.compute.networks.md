@@ -19,7 +19,7 @@ The management console (MC) compute dashboard network screen allows you to view 
 
 The images screen displays your compute instance networks information for the availability zone (AZ) you have selected.
 
-ILLUSTRATION TBD
+<img src="media/compute-networks00.png" width="580" alt="" />
 
 From this screen you can:
 
