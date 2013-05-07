@@ -7,7 +7,7 @@ product: mc-compute
 ---
 # Management console compute dashboard
 
-Intro paragraph.
+This page provides you with an overview of the management console (MC) compute dashboard, which displays your compute information and acts as your main interface to your compute functions.  This page covers the following topics:
 
 * [Compute dashboard overview](#Overview)
 * [Navigating to other compute screens](#Navigating)
@@ -15,23 +15,31 @@ Intro paragraph.
 
 ##Compute dashboard overview## {#Overview}
 
-MC compute main dashboard:
+The MC compute main dashboard displays your active availability zones, divided by region:
 
-<img src="media/compute-main.png" width="580" alt="" />
+<img src="media/compute-dash00.png" width="580" alt="" />
 
-Compute functions available through the dashboard:
+In this example, the user has two AZs in the `US West` region.
 
 ##Navigating to other compute screens## {#Navigating}
 
-Section 2 information.
+To manage the compute activities for a particular AZ in a particular region, just click the `Manage` button next to the one you're interested in.
 
-Server screen
-Images screen
-Volumes screen
-Network screen
-Security groups screen
-Floating IPs screen
-Key pairs screen
+<img src="media/compute-dash01.png" width="580" alt="" />
+
+Clicking the `Manage` button takes you to the [Servers screen for compute](/mc/compute/servers/).  
+
+<img src="media/compute00.png" width="580" alt="" />
+
+The full list screens available for your compute management pleasure:
+
+* [Servers](/mc/computer/servers/)
+* [Images](/mc/computer/images/)
+* [Volumes](/mc/computer/volumes/)
+* [Networks](/mc/computer/networks/)
+* [Security groups](/mc/computer/security-groups/)
+* [Floating IPs](/mc/computer/floating-ips/)
+* [Key pairs](/mc/computer/key-pairs/)
 
 ##For further information## {#ForFurtherInformation}
 
