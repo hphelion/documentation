@@ -9,10 +9,10 @@ product: mc-compute
 
 The management console (MC) compute dashboard volumes screen allows you to view and maniuplate compute floating IPs.  This page covers the following topics:
 
-* [Volumes screen overview](#Overview)
+* [Floating IPs screen overview](#Overview)
 * [For further information](#ForFurtherInformation)
 
-##Volumes screen overview## {#Overview}
+##Floating IPs screen overview## {#Overview}
 
 The images screen displays your compute instance floating IP information for the availability zone (AZ) you have selected.
 
