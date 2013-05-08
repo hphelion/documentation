@@ -31,12 +31,12 @@ Having a bit of trouble navigating our site, and so you're looking for a single 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Cloning a new volume from an existing snapshot]()<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating a bootable volume from an existing image]()<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Network screen](/mc/compute/network/)  <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating and deleting a network](blah) <!-- creating launches a new screen; perhaps separate creating and put deleting in the overview? --> <br> 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Crearing and deleting a subnet](blah) <!-- creating launches a new screen; perhaps separate creating and put deleting in the overview? --> <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Adding and deleting an instance to a router]() <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Viewing  network details](blah) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Viewing subnet details](blah) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Viewing router details]() <!-- not sure about this one--maybe its own menu item, and Laura hasn't updated wireframes? --> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating and deleting a network](/mc/compute/network/create-network/) <!-- creating launches a new screen; perhaps separate creating and put deleting in the overview? --> <br> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Crearing and deleting a subnet](/mc/compute/network/create-subnet/) <!-- creating launches a new screen; perhaps separate creating and put deleting in the overview? --> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Adding and deleting an instance to a router](/mc/compute/network/create-instance/) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Viewing network details](/mc/compute/network/view-network/) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Viewing subnet details](/mc/compute/network/view-subnet/) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Viewing router details](/mc/compute/network/view-router/) <!-- not sure about this one--maybe its own menu item, and Laura hasn't updated wireframes? --> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Understanding network system messages]() <!-- success & error messages w/ descriptions of what they mean --> <br> 
 &nbsp;&nbsp;&nbsp;&nbsp;[Security groups screen](/mc/compute/security-groups/) <!-- basic screen functions here such as selecting a project, listing security groups, etc.? --> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Adding and removing a security group]()<br>
@@ -58,60 +58,60 @@ Having a bit of trouble navigating our site, and so you're looking for a single 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating and deleting a public container]() <!-- note you can create w/ or w/out CDN enabled --> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating and deleting a private container]() <!-- note you can create w/ or w/out CDN enabled --> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Container details screen]() <!-- info about selecting containers here --> <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Enabling and disabling CDN functionality](blah) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Changing container state between public and private](blah) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Browsing container objects](blah) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Object storage details screen](blah) <!-- info about viewing object details --> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Enabling and disabling CDN functionality]() <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Changing container state between public and private]() <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Browsing container objects]() <br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Object storage details screen]() <!-- info about viewing objct details --> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Navigating the storage repository](blah) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Uploading objects](blah) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Deleting objects](blah) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Downloading objects](blah) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating new directories](blah) <!-- perhaps include this in the main page above? --> <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Filtering the objects list](blah) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Using the management console: Some object storage use cases](blah) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Object storage use case 1](blah) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Object storage use case 2](blah) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Uploading objects]() <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Deleting objects]() <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Downloading objects]() <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating new directories]() <!-- perhaps include this in the main page above? --> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Filtering the objects list]() <br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Using the management console: Some object storage use cases]() <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Object storage use case 1]() <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Object storage use case 2]() <br>
 
-[Relational Database for MySQL main dashboard](blah) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Creating and deleting instances](blah) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Starting and stopping instances](blah) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Managing instances](blah) <br> <!-- flavors; volume size; number of dbs; enable, disable, and reset root password -->
-&nbsp;&nbsp;&nbsp;&nbsp;[Instance details screen](blah) <br> <!-- searching; other basic descriptive info about this screen -->
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Managing user accounts](blah) <br> <!-- creating, deleting, changing names and permissions, changing passwords -->
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Managing databases](blah) <br> <!-- creating, deleting, renaming -->
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Managing security group rules](blah) <br> <!-- creating, deleting, renaming -->
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Managing snapshots](blah) <br> <!-- creating, deleting, renaming -->
-&nbsp;&nbsp;&nbsp;&nbsp;[Using the management console: Some RDB use cases](blah) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[RDB Use Case 1](blah) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[RDB Use Case 2](blah) <br>
+[Relational Database for MySQL main dashboard]() <br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Creating and deleting instances]() <br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Starting and stopping instances]() <br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Managing instances]() <br> <!-- flavors; volume size; number of dbs; enable, disable, and reset root password -->
+&nbsp;&nbsp;&nbsp;&nbsp;[Instance details screen]() <br> <!-- searching; other basic descriptive info about this screen -->
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Managing user accounts]() <br> <!-- creating, deleting, changing names and permissions, changing passwords -->
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Managing databases]() <br> <!-- creating, deleting, renaming -->
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Managing security group rules]() <br> <!-- creating, deleting, renaming -->
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Managing snapshots]() <br> <!-- creating, deleting, renaming -->
+&nbsp;&nbsp;&nbsp;&nbsp;[Using the management console: Some RDB use cases]() <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[RDB Use Case 1]() <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[RDB Use Case 2]() <br>
 
-[Domain name service (DNS) main dashboard](blah) <br> <!-- searching domains -->
-&nbsp;&nbsp;&nbsp;&nbsp;[Adding and deleting domains](blah) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Domain details screen](blah) <br> <!-- selecting record types; viewing details; returning to the domain list screen -->
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating and deleting records](blah) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Managing records](blah) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Using the management console: Some DNS use cases](blah) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[DNS Use Case 1](blah) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[DNS Use Case 2](blah) <br>
+[Domain name service (DNS) main dashboard]() <br> <!-- searching domains -->
+&nbsp;&nbsp;&nbsp;&nbsp;[Adding and deleting domains]() <br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Domain details screen]() <br> <!-- selecting record types; viewing details; returning to the domain list screen -->
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating and deleting records]() <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Managing records]() <br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Using the management console: Some DNS use cases]() <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[DNS Use Case 1]() <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[DNS Use Case 2]() <br>
 
-[Monitoring as a service (MaaS) main dashboard](blah) <br>
+[Monitoring as a service (MaaS) main dashboard]() <br>
 &nbsp;&nbsp;&nbsp;&nbsp;Details TBD<br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Using the management console: Some monitoring use cases](blah) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Monitoring Use Case 1](blah) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Monitoring Use Case 2](blah) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Using the management console: Some monitoring use cases]() <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Monitoring Use Case 1]() <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Monitoring Use Case 2]() <br>
 
-[Load balancer as a service (LBaaS) main dashboard](blah) <br>
+[Load balancer as a service (LBaaS) main dashboard]() <br>
 &nbsp;&nbsp;&nbsp;&nbsp;Details TBD<br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Using the management console: Some load balancing use cases](blah) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Load balancing Use Case 1](blah) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Load balancing Use Case 2](blah) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Using the management console: Some load balancing use cases]() <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Load balancing Use Case 1]() <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Load balancing Use Case 2]() <br>
 
 [Other services](blah) <!-- Presumably these sections will grow and get their own sections as compute and object storage have above as the MC changes to support them more thoroughly --> <br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Identity service](blah) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Application platform as a service (aPaaS)](blah) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Messaging as a service (MSGaaS)](blah) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Identity service]() <br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Application platform as a service (aPaaS)]() <br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Messaging as a service (MSGaaS)]() <br>
 
-[Management console reference](blah) <!-- reference for every button, field, etc. for later inclusion as bubble help or some such  --> <br>
-[Management console FAQ](blah) <br>
+[Management console reference]() <!-- reference for every button, field, etc. for later inclusion as bubble help or some such  --> <br>
+[Management console FAQ]() <br>
 
 **Note**: If you find that there are pages that aren't listed here, or unresolved links, please be sure to tell us!
