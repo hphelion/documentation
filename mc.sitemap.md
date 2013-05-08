@@ -25,39 +25,39 @@ Having a bit of trouble navigating our site, and so you're looking for a single 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Rebuilding a server](/mc/compute/server/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Terminating a server](/mc/compute/server/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Images screen](/mc/compute/images/) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating and deleting an image](blah) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating and deleting an image]() <br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Volumes screen](/mc/compute/volumes/)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating and deleting a volume](blah)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Cloning a new volume from an existing snapshot](blah)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating a bootable volume from an existing image](blah)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Network screen](/mc/compute/networks/)  <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating and deleting a volume]()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Cloning a new volume from an existing snapshot]()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating a bootable volume from an existing image]()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Network screen](/mc/compute/network/)  <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating and deleting a network](blah) <!-- creating launches a new screen; perhaps separate creating and put deleting in the overview? --> <br> 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Crearing and deleting a subnet](blah) <!-- creating launches a new screen; perhaps separate creating and put deleting in the overview? --> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Adding and deleting an instance to a router]() <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Viewing  network details](blah) <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Viewing subnet details](blah) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Understanding network system messages](blah) <!-- success & error messages w/ descriptions of what they mean --> <br> 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Viewing router details](blah) <!-- not sure about this one--maybe it's own menu item, and Laura hasn't updated wireframes? --> <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Adding and deleting an instance to a router](blah) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Viewing router details]() <!-- not sure about this one--maybe its own menu item, and Laura hasn't updated wireframes? --> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Understanding network system messages]() <!-- success & error messages w/ descriptions of what they mean --> <br> 
 &nbsp;&nbsp;&nbsp;&nbsp;[Security groups screen](/mc/compute/security-groups/) <!-- basic screen functions here such as selecting a project, listing security groups, etc.? --> <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Adding and removing a security group](blah)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating and deleting a security group rule](blah)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Adding and removing a security group]()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating and deleting a security group rule]()<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Floating IPs screen](/mc/compute/floating-ips/) <!-- basic screen functions here such as selecting a project --> <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Connecting to a server](blah)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Allocating and deallocating an IP address](blah)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Attaching and detatching an IP address to your server](blah)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Connecting to a server]()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Allocating and deallocating an IP address]()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Attaching and detatching an IP address to your server]()<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Key pairs screen](/mc/compute/key-pairs/)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Adding and deleting a key pair](blah) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Adding and deleting a key pair]() <br>
 [Using the management console: Some compute service use cases](/mc/compute/use-cases/) <br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Creating a new server](blah) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Creating a bootable volume](blah) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Managing a custom image](blah) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Creating and managing a network](blah) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Creating a bootable volume]() <br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Managing a custom image]() <br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Creating and managing a network]() <br>
 
 [Object storage services main dashboard](/mc/object-storage/)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Containers screen](blah) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating and deleting a public container](blah) <!-- note you can create w/ or w/out CDN enabled --> <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating and deleting a private container](blah) <!-- note you can create w/ or w/out CDN enabled --> <br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Container details screen](blah) <!-- info about selecting containers here --> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Containers screen]() <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating and deleting a public container]() <!-- note you can create w/ or w/out CDN enabled --> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating and deleting a private container]() <!-- note you can create w/ or w/out CDN enabled --> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Container details screen]() <!-- info about selecting containers here --> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Enabling and disabling CDN functionality](blah) <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Changing container state between public and private](blah) <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Browsing container objects](blah) <br>
