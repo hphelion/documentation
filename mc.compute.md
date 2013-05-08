@@ -47,3 +47,4 @@ The full list screens available for your compute management pleasure:
 * For specific functionality--for example, adding [volumes](/mc/compute/volumes)--use the navigation bar at the top of this page; that takes you to whatever section of the MC compute documentation you might be needing
 * Use the MC [site map](/mc/sitemap) for a full list of all available MC documentation pages
 * For basic information about our HP Cloud compute services, take a look at the [HP Cloud compute overview](/compute/) page
+* If you'd rather use the HP Cloud CLI features, go choose your topic of interest from our [HP CLoud CLI](/cli) pages
