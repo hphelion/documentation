@@ -17,7 +17,11 @@ This page covers how to create and delete a network using the networks screen of
 
 ##Before you begin## {#Overview}
 
-Pre-reqs and overview of the screen item needed (screen shot of the networks screen with the appropriate item circled or something?).
+Before you can begin manipulating networks, you must:
+
+* [Sign up for an HP Cloud compute account](https://account.hpcloud.com/signup)
+* [Activate compute service on your account]()
+* 
 
 <img src="media/IMAGE.png" width="580" alt="" />
 
