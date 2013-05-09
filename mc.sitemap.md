@@ -32,6 +32,7 @@ Having a bit of trouble navigating our site, and so you're looking for a single 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating a bootable volume from an existing image]()<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Network screen](/mc/compute/networks/)  <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating and deleting a network](/mc/compute/networks/create-network/) <!-- creating launches a new screen; perhaps separate creating and put deleting in the overview? --> <br> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Enabling and disabling a network](/mc/compute/networks/enable-network/) <br> 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Crearing and deleting a subnet](/mc/compute/networks/create-subnet/) <!-- creating launches a new screen; perhaps separate creating and put deleting in the overview? --> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Adding and deleting an instance to a router](/mc/compute/networks/create-router/) <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Viewing network details](/mc/compute/networks/view-network/) <br>
