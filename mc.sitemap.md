@@ -125,10 +125,10 @@ Having a bit of trouble navigating our site, and so you're looking for a single 
 &nbsp;&nbsp;&nbsp;&nbsp;[Activity stream screen](/mc/account/services/) <br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Notifications and privacy screen](/mc/account/services/) <br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Account information screen](/mc/account/services/) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Using the account and services management dashboard: Some Use cases](/mc/account/using/)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Activating an account](/mc/account/using/activating)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Managing account users](/mc/account/using/managing-users/)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Managing projects](/mc/account/using/managing-projects/)
+&nbsp;&nbsp;&nbsp;&nbsp;[Using the account and services management dashboard: Some Use cases](/mc/account/using/) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Activating an account](/mc/account/using/activating) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Managing account users](/mc/account/using/managing-users/) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Managing projects](/mc/account/using/managing-projects/) <br>
 
 [Management console reference]() <!-- reference for every button, field, etc. for later inclusion as bubble help or some such  --> <br>
 [Management console FAQ]() <br>
