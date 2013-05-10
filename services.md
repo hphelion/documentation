@@ -13,7 +13,7 @@ There are a number of HP Cloud services available for you:
 * [Compute](/api/compute/): A method for you to instantiate virtual servers on publicly accessible physical machines hosted in HP data centers.
 * [Block storage](/block-storage/): Allows you to enable additional volumes to Compute instances.
 * [CDN](/api/CDN/): Content inside HP Cloud Object Storage can easily be cached on servers in metropolitan areas all over the world to speed client access to them by removing much of the network latency.
-* [Relational database (RDB)](/rdb/): Provides you with a simplified method for creation and management of MySQL database instances.<br>
+* [Relational database (RDB)](/dbaas/): Provides you with a simplified method for creation and management of MySQL database instances.<br>
   **Note**: This service is currently in private beta and requires activation before use; please [request access on our sign-up page](https://account.hpcloud.com/cases/betarequest/dbaas).  Service use is free of charge during the private beta period.
 * [Load balancer as a service (LBaaS)](/lbaas/): Allows you to enable automatic traffic routing to multiple back-end servers hosted by HP.<br>
   **Note**: This service is currently in private beta and requires activation before use; please [request access on our sign-up page](https://account.hpcloud.com/cases/betarequest/lbaas).  Service use is free of charge during the private beta period.
