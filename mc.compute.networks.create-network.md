@@ -17,25 +17,36 @@ This page covers how to create and delete a network using the networks screen of
 
 ##Before you begin## {#Overview}
 
-Before you can begin manipulating networks, you must:
+Before you can begin creating or deleting a network, you must:
 
 * [Sign up for an HP Cloud compute account](https://account.hpcloud.com/signup)
-* [Activate compute service on your account]()
-* 
-
-<img src="media/IMAGE.png" width="580" alt="" />
-
-List of things you need to be sure you have done before you begin this task, e.g. setting up a compute instance
+* [Activate compute service on your account](/mc/account/using/activating/)
 
 
 ##Creating a network## {#Creating}
 
-How to create a network with the MC.
+To create a network, click the `+ Create Network` button in the [networks screen](/mc/compute/networks/):
+
+ILLUSTRATION TBD
+
+This launches the network creation screen.
+
+<img src="media/create-network.png" width="580" alt="" />
+
+In the network creation screen, in the `Network Info` pane, enter a name for your network in the `Name` text-entry field anc click the `Create` button.  Your new network is created and assigned an IP address.  This new network appears in the list on the main networks screen.  (To return to the main networks screen, just click the `Networks` item in the menu bar.)
 
 
 ##Deleting a network## {#Deleting}
 
-How to delete a network with the MC.
+To delete an existing network, in the `Manage` column of the `Networks` list, select the `Options` button in the row of the network you want to delete, and choose the `Delete` option.
+
+<img src="media/delete-network.png" width="580" alt="" />
+
+A verfication window appears asking if you want to delete this network:
+
+<img src="media/delete-verify.png" width="580" alt="" />
+
+Select the button `Yes, delete this network`.  Your network is deleted and no longer appears in the list on the [networks screen](/mc/compute/networks/).
 
 
 ##For further information## {#ForFurtherInformation}
