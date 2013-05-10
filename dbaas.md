@@ -12,4 +12,4 @@ HP Cloud Relational Database for MySQL simplifies the creation and management of
 Interested an early preview? [Sign up](https://account.hpcloud.com/cases/betarequest/dbaas/) for the HP Cloud Relational Database for MySQL Private Beta now. Please note that you must have an existing account with HP Cloud Services before requesting access (sign up for an account [on our signup page](https://account.hpcloud.com/signup)).
 
 ## API ##
-Do you need low level, raw REST API access to HP Cloud Relational Database for MySQL? Take a look at our [Relational Database API page](http://api-docs.hpcloud.com/hpcloud-rdb-mysql/1.0/content/ch_rdb-mysql-dev-overview.html) for OpenStack details.
+Do you need low level, raw REST API access to HP Cloud Relational Database for MySQL? Take a look at our [Relational Database API page](/api/dbaas/) for details.
