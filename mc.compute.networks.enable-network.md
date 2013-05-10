@@ -17,25 +17,28 @@ This page covers how to create and delete a network using the networks screen of
 
 ##Before you begin## {#Overview}
 
-Before you can begin manipulating networks, you must:
+Before you can enable or disable networks, you must:
 
 * [Sign up for an HP Cloud compute account](https://account.hpcloud.com/signup)
-* [Activate compute service on your account]()
-* 
-
-<img src="media/IMAGE.png" width="580" alt="" />
-
-List of things you need to be sure you have done before you begin this task, e.g. setting up a compute instance
+* [Activate compute service on your account](/mc/account/using/activating/)
+* [Create a network](/mc/compute/networks/create-network/)
 
 
 ##Enabling a network## {#Enabling}
 
-How to create a network with the MC.
+By default, when you [create a network](/mc/compute/networks/create-network/), that network is created in an enabled admin state.  
 
+<img src="media/compute-networks03.jpg" width="580" alt="" />
+
+If you have at some point [disabled](#Disabling) a network and want to enable it, in the `Manage` column of the `Networks` list, select the `Options` button and choose the `Enable` option.
+
+ILLUSTRATION TBD
 
 ##Disabling a network## {#Disabling}
 
-How to delete a network with the MC.
+By default, when you [create a network](/mc/compute/networks/create-network/), that network is created in an enabled admin state.  If you want to disable your network, in the `Manage` column of the `Networks` list, select the `Options` button and choose the `Disable` option.
+
+<img src="media/compute-networks04.png" width="580" alt="" />
 
 
 ##For further information## {#ForFurtherInformation}
