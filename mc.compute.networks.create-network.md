@@ -33,7 +33,9 @@ This launches the network creation screen.
 
 <img src="media/create-network.png" width="580" alt="" />
 
-In the network creation screen, in the `Network Info` pane, enter a name for your network in the `Name` text-entry field anc click the `Create` button.  Your new network is created and assigned an IP address.  This new network appears in the list on the main networks screen.  (To return to the main networks screen, just click the `Networks` item in the menu bar.)
+In the network creation screen, in the `Network Info` pane, enter a name for your network in the `Name` text-entry field and click the `Create` button.  Your new network namespace is created.  This new network appears in the list on the main networks screen.  (To return to the main networks screen, just click the `Networks` item in the menu bar.)
+
+Next we suggest [creating a subnet](/mc/compute/networks/create-subnet/) or two for your network.
 
 
 ##Deleting a network## {#Deleting}
@@ -48,9 +50,22 @@ A verfication window appears asking if you want to delete this network:
 
 Select the button `Yes, delete this network`.  Your network is deleted and no longer appears in the list on the [networks screen](/mc/compute/networks/).
 
+You can also delete a network from its [network details](/mc/compute/networks/view-network/) screen.  In the networks screen, in the `Networks` list, click the name of the network that you want to delete.  This launches the network details screen:
+
+<img src="media/compute-networks09.png" width="580" alt="" />
+
+To delete the network, click the `Delete Network` button.  As in the other method, a verification window appears asking if you want to delete this network.
+
+<img src="media/delete-verify.png" width="580" alt="" />
+
+Select the button `Yes, delete this network`.  Your network is deleted and no longer appears in the list on the [networks screen](/mc/compute/networks/).
+
+**Note**: You must [delete all the subnets](/mc/compute/networks/create-subnet) of your network before you can delete the network itself.
+
 
 ##For further information## {#ForFurtherInformation}
 
 * For basic information about our HP Cloud compute services, take a look at the [HP Cloud compute overview](/compute/) page
 * Use the MC [site map](/mc/sitemap) for a full list of all available MC documentation pages
 * For information about the Open Stack networking ("Quantum") features, surf on over to  [their Quantum wiki](https://wiki.openstack.org/wiki/Quantum)
+
