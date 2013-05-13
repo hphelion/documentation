@@ -10,8 +10,11 @@ product: mc-compute
 This page covers how to create and delete a subnet using the networks screen of the management console (MC).  This page covers the following topics:
 
 * [Before you begin](#Overview)
-* [Creating a network](#Creating)
-* [Deleting a network](#Deleting)
+* [Creating a subnet](#Creating)
+* [Advanced subnet options](#Advanced)
+* [Editing a subnet](#Editing)
+* [Enabling and disabling DHCP](#DHCP)
+* [Deleting a subnet](#Deleting)
 * [For further information](#ForFurtherInformation)
 
 
@@ -47,6 +50,53 @@ You can also create a subnet from the [network details](/mc/compute/networks/vie
 <img src="media/compute-networks10.png" width="580" alt="" />
 
 In the network details screen, just click the `Create Subnet` button.  This launches the subnet creation screen as outlined above; follow the same process from there.
+
+**Note**: When you're creating a subnet, you can also include other subnet details like  allocation pools or DNS Nameservers.  For details, see the section on [advanced subnet options](#Advanced) below.
+
+
+##Advanced subnet options## {#Advanced}
+
+You can use the Advanced Options pane of the create subnet screen to add other options to your subnet.  This pane is contracted by default; just click the `Advanced Options` button:
+
+<img src="media/advanced-subnet-options.png" width="580" alt="" />
+
+You can set the following options via the Advanced Options pane of the create subnet screen:
+
+* [Allocation Pools](#AllocationPools)
+* [DNS Nameservers](#DNSNameservers)
+* [Host Routes](#HostRoutes)
+
+###Allocation Pools### {#AllocationPools}
+
+To create an allocation pool in the Advanced Options pane, enter the `Start IP` and `End IP` values you want for your subnet in the text entry fields.  If you want to create more than one allocation pool, click the `+Add more` button and additional text entry fields are added.
+
+<img src="media/allocation-pools.png" width="580" alt="" />
+
+###DNS Nameservers### {#DNSNameservers}
+
+To create a DNS Nameserver in the Advance Options pane, enter the `IP Address` you want for your subnet in the text entry field.  If you want to create more than one DNS nameserver, click the `+Add more` button and additional text entry fields are added.
+
+<img src="media/dns-nameservers.png" width="580" alt="" />
+
+###Host Routes### {#HostRoutes}
+
+To create host routes in the Advanced Options pane, enter the `Destination CIDR` and `Next Hop` you want for your subnet in the text entry fields.  If you want to create more than one DNS nameserver, click the `+Add more` button and additional text entry fields are added.
+
+<img src="media/host-routes.png" width="580" alt="" />
+
+
+##Editing a subnet## {#Editing}
+
+
+
+
+##Enabling and disabling DHCP## {#DHCP} 
+
+Dynamic host configuration protocol (DHCP) is enabled on your subnet by default.  If you want to disable DHCP
+
+image
+
+If you have at some point disabled DHCP and want to re-enable, blah blah
 
 
 ##Deleting a subnet## {#Deleting}
