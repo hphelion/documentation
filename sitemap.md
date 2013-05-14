@@ -24,7 +24,7 @@ Having a bit of trouble navigating our site, and so you're looking for a single 
 &nbsp;&nbsp;&nbsp;&nbsp;[Content Delivery Network (CDN) Overview](/cdn/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[CDN API](/cdn/api/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Relational Database (RDB) Overview](/rdb)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[RDB API](http://api-docs.hpcloud.com/hpcloud-rdb-mysql/1.0/content/ch_rdb-mysql-dev-api.html)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[RDB API](/api/dbaas/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Load Balancer as a Service (LBaaS) Overview](/lbaas)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[LBaaS API](/api/lbaas)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Domain Name Service (DNS) Overview](/dns)<br>
