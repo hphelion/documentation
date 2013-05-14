@@ -87,16 +87,32 @@ To create host routes in the Advanced Options pane, enter the `Destination CIDR`
 
 ##Editing a subnet## {#Editing}
 
+To modify details of your subnet (such as the name, gateway IP axdress, host routes, and so on), you can use the edit subnet details screen.  From the main networks screen, click the name of the subnet you want to modify in the `Subnets` column of the `Networks` list:
 
+<img src="media/choose-subnet.png" width="580" alt="" />
+
+This launches the subnet details screen.  In the subnet details screen, click the `Edit Subnet` button:
+
+<img src="media/subnet-details.png" width="580" alt="" />
+
+In the edit subnet screen, edit the detail you want to edit and then click the `Update Subnet` button to save your changes.
+
+<img src="media/edit-subnet-details.png" width="580" alt="" />
 
 
 ##Enabling and disabling DHCP## {#DHCP} 
 
-Dynamic host configuration protocol (DHCP) is enabled on your subnet by default.  If you want to disable DHCP
+Dynamic host configuration protocol (DHCP) is enabled on your subnet by default.  To disable DHCP for your subnet, in the main networks screen, click the name of the subnet you want to modify in the `Subnets` column of the `Networks` list:
 
-image
+<img src="media/choose-subnet.png" width="580" alt="" />
 
-If you have at some point disabled DHCP and want to re-enable, blah blah
+This launches the subnet details screen.  In the subnet details screen, click the `Disable DHCP` button.  DHCP is now disabled on your subnet
+
+If you have at some point disabled DHCP and want to re-enable, click the name of the subnet you want to modify in the `Subnets` column of the `Networks` list:
+
+<img src="media/choose-subnet.png" width="580" alt="" />
+
+This launches the subnet details screen.  In the subnet details screen, click the `Enable DHCP` button.  DHCP is now enabled on your subnet
 
 
 ##Deleting a subnet## {#Deleting}
