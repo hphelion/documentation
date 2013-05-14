@@ -35,7 +35,7 @@ This launches the network creation screen.
 
 In the network creation screen, in the `Network Info` pane, enter a name for your network in the `Name` text-entry field and click the `Create` button.  Your new network namespace is created.  This new network appears in the list on the main networks screen.  (To return to the main networks screen, just click the `Networks` item in the menu bar.)
 
-Next we suggest [creating a subnet](/mc/compute/networks/create-subnet/) or two for your network.
+Next we suggest [creating a subnet](/mc/compute/networks/manage-subnet/) or two for your network.
 
 
 ##Deleting a network## {#Deleting}
@@ -60,7 +60,7 @@ To delete the network, click the `Delete Network` button.  As in the other metho
 
 Select the button `Yes, delete this network`.  Your network is deleted and no longer appears in the list on the [networks screen](/mc/compute/networks/).
 
-**Note**: You must [delete all the subnets](/mc/compute/networks/create-subnet) of your network before you can delete the network itself.
+**Note**: You must [delete all the subnets](/mc/compute/networks/manage-subnet) of your network before you can delete the network itself.
 
 
 ##For further information## {#ForFurtherInformation}
