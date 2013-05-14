@@ -7,10 +7,7 @@ product: block-storage
 ---
 # HP Cloud Block Storage API
 
-<!--Because Block Storage is so closely associated with Compute, the HP Cloud Block Storage API is documented inside the HP Cloud Compute API documentation, which is available in a variety of formats:
-
-* Direct link to Chapter 4: [HP Cloud Compute Developer Guide API 1.1, Browser View](http://api-docs.hpcloud.com/hpcloud-compute/1.0/content/ch_dev-api-block-storage.html)
-* Look inside Chapter 4 in this PDF: [HP Cloud Compute Developer Guide API 1.1, PDF View](http://api-docs.hpcloud.com/hpcloud-compute/1.0/hpcloud-compute-1.0.pdf)-->
+<!--Because Block Storage is so closely associated with Compute, the HP Cloud Block Storage API is documented inside the HP Cloud Compute API documentation-->
 
 Surf on over to our [Block Storage API Reference](/api/block-storage) for lots of details on the HP Cloud Services block storage service. For a detailed overview of how to interact with the Block Storage REST API using cURL:
 
