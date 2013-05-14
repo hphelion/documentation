@@ -28,7 +28,7 @@ Clicking the `+ Create Network` button launches the [network creation screen](/m
 
 <img src="media/compute-networks01.png" width="580" alt="" />
 
-* [Create a subnet](/mc/compute/networks/create-subnet/) for that network
+* [Create a subnet](/mc/compute/networks/manage-subnet/) for that network
 * [Disable](/mc/compute/networks/enable-network) the network
 * [Delete](/mc/compute/networks/create-network#Deleting/) the network
 * [Displaying](/mc/compute/networks/view-network/) details for the network
@@ -39,7 +39,7 @@ Clicking the `+ Create Network` button launches the [network creation screen](/m
 From the networks screen you can perform any of the following functions:
 
 * [Creating and deleting a network](/mc/compute/networks/create-network/)
-* [Creating and deleting a subnet](/mc/compute/networks/create-subnet/)
+* [Managing a subnet](/mc/compute/networks/manage-subnet/)
 * [Adding and deleting an instance to a router](/mc/compute/networks/create-router/)
 * [Viewing network details](/mc/compute/networks/view-network/)
 * [Viewing subnet details](/mc/compute/networks/view-subnet/)
