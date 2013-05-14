@@ -24,7 +24,7 @@ For example, if you want to have two WordPress blogs with separate databases (sc
 
 When you create a new relational database instance, what you are actually creating is a database server that lives on a managed compute instance. HP Cloud takes care of operating that instance and keeping the database process comfortably running, and you get access to the MySQL server.
 
-You can create a new database server using the HTTP REST API directly (check out the [API documentation](http://api-docs.hpcloud.com/)) or you can use one of the existing libraries or tools. For example, the [HPCloud-PHP library](http://hpcloud.github.com/HPCloud-PHP/) has support for working with DBaaS. As the HP Cloud Relational Database enters public beta, you will also be able to create database servers through the [Management Console](https://console.hpcloud.com).
+You can create a new database server using the HTTP REST API directly (check out the [API documentation](/api/)) or you can use one of the existing libraries or tools. For example, the [HPCloud-PHP library](http://hpcloud.github.com/HPCloud-PHP/) has support for working with DBaaS. As the HP Cloud Relational Database enters public beta, you will also be able to create database servers through the [Management Console](https://console.hpcloud.com).
 
 When you create a new database server, you can supply certain parameters, like what size of a server you want (extra-small through extra-large, just like Compute). Once you request that the database be created, the server will respond with some information about the instance, including an IP address, a username and a password. *Make sure you get the password. The only time this is accessible is at database creation time.*
 
