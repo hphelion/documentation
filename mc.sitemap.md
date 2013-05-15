@@ -34,7 +34,7 @@ Having a bit of trouble navigating our site, and so you're looking for a single 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating and deleting a network](/mc/compute/networks/create-network/) <!-- creating launches a new screen; perhaps separate creating and put deleting in the overview? --> <br> 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Enabling and disabling a network](/mc/compute/networks/enable-network/) <br> 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Managing a subnet](/mc/compute/networks/manage-subnet/) <!-- creating launches a new screen; perhaps separate creating and put deleting in the overview? --> <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Adding and deleting an instance to a router](/mc/compute/networks/create-router/) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Managing routers](/mc/compute/networks/manage-routers/) <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Viewing network details](/mc/compute/networks/view-network/) <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Viewing subnet details](/mc/compute/networks/view-subnet/) <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Viewing router details](/mc/compute/networks/view-router/) <!-- not sure about this one--maybe its own menu item, and Laura hasn't updated wireframes? --> <br>
@@ -113,19 +113,19 @@ Having a bit of trouble navigating our site, and so you're looking for a single 
 &nbsp;&nbsp;&nbsp;&nbsp;[Messaging as a service (MSGaaS)]() <br>
 
 [Account and services dashboard](/mc/account/) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Services screen](/mc/account/overview/) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Account overview screen](/mc/account/services/) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Update Account information screen](/mc/account/services/) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Update password screen](/mc/account/services/) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Update email address screen](/mc/account/services/) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;[API keys screen](/mc/account/services/) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Manage account users screen](/mc/account/services/) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Manage projects screen](/mc/account/services/) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Billing history screen](/mc/account/services/) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Edit billing information screen](/mc/account/services/) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Activity stream screen](/mc/account/services/) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Notifications and privacy screen](/mc/account/services/) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Account information screen](/mc/account/services/) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Managing your services](/mc/account/services/) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Viewing account overview information](/mc/account/overview/) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Updating account information](/mc/account/update-account/) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Updating account password](/mc/account/password/) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Updating account email address](/mc/account/email/) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Managing API keys](/mc/account/api-keys/) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Managing account users](/mc/account/users/) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Managing projects](/mc/account/projects/) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Viewing your billing history](/mc/account/billing-history/) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Editing billing information](/mc/account/billing-info/) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Viewing the activity screen](/mc/account/activity/) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Viewing notifications and privacy information](/mc/account/notification/) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Viewing account information](/mc/account/info/) <br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Using the account and services management dashboard: Some Use cases](/mc/account/using/) <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Activating an account](/mc/account/using/activating) <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Managing account users](/mc/account/using/managing-users/) <br>
