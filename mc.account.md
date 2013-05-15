@@ -38,21 +38,21 @@ In addition, you can also surf to the `Manage Services`, `My Account`, `Manage A
 
 <img src="media/account03.png" width="580" alt="" />
 
-The full list of screens available for performing account and services management:
+From the account and services dashboard, you can perform any of the following tasks:
 
-* [Services screen](/mc/account/overview/) <br>
-* [Account overview screen](/mc/account/services/) <br>
-* [Update Account information screen](/mc/account/services/) <br>
-* [Update password screen](/mc/account/services/) <br>
-* [Update email address screen](/mc/account/services/) <br>
-* [API keys screen](/mc/account/services/) <br>
-* [Manage account users screen](/mc/account/services/) <br>
-* [Manage projects screen](/mc/account/services/) <br>
-* [Billing history screen](/mc/account/services/) <br>
-* [Edit billing information screen](/mc/account/services/) <br>
-* [Activity stream screen](/mc/account/services/) <br>
-* [Notifications and privacy screen](/mc/account/services/) <br>
-* [Account information screen](/mc/account/services/) <br>
+* [Managing your services](/mc/account/services/) <br>
+* [Viewing account overview information](/mc/account/overview/) <br>
+* [Updating account information](/mc/account/update-account/) <br>
+* [Updating account password](/mc/account/password/) <br>
+* [Updating account email address](/mc/account/email/) <br>
+* [Managing API keys](/mc/account/api-keys/) <br>
+* [Managing account users](/mc/account/users/) <br>
+* [Managing projects](/mc/account/projects/) <br>
+* [Viewing your billing history](/mc/account/billing-history/) <br>
+* [Editing billing information](/mc/account/billing-info/) <br>
+* [Viewing the activity screen](/mc/account/activity/) <br>
+* [Viewing notifications and privacy information](/mc/account/notification/) <br>
+* [Viewing account information](/mc/account/info/) <br>
 
 ##For further information## {#ForFurtherInformation}
 
