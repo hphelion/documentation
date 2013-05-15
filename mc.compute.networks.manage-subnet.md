@@ -24,7 +24,7 @@ Before you can create or delete a subnet of an existing network, you must:
 
 * [Sign up for an HP Cloud compute account](https://account.hpcloud.com/signup)
 * [Activate compute service on your account](/mc/account/using/activating/)
-* [Create a network](/mc/compute/networks/create-network/)
+* [Create a network](/mc/compute/networks/create-network#Creating/)
 
 
 ##Creating a subnet## {#Creating}
