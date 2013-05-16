@@ -12,7 +12,10 @@ This page covers how to create and delete a router using the networks screen of 
 * [Before you begin](#Overview)
 * [Enabling a router](#Enabling)
 * [Disabling a router](#Disabling)
-* 
+* [Attaching an interface to a router](#Attaching)
+* [Detaching an interface from a router](#Detaching)
+* [Attaching a router to an external network](#AttachExternal)
+* [Detaching a router from an external network](#DetachExternal)
 * [For further information](#ForFurtherInformation)
 
 
@@ -27,14 +30,6 @@ Before you perform any network management on your routers, you must:
 
 <!--When cloudadmin tool deployed, add a link to it here?-->
 <!--Include a link to the CLI process for creating a router here as well?-->
-
-From laura: each project is provisioned with one router automatically we don't allow creation or deletion of routers from the MC at this point only management
-To create a router, you'll need to go make one in Cloud Admin or via CLI
-From the deck: At the time of project creation, each project is provisioned with one network, one subnet, and one router, which will have routes to ext-net and project's default subnet
-
-Create new projects from the projects screen:  https://account.hpcloud.com/projects
-my doc for the manage projects screen: /mc/account/projects/
-creating a project: /mc/account/projects#Creating
 
 
 ##Enabling a router## {#Enabling}
@@ -53,11 +48,11 @@ When you [create a router](/mc/account/projects/), the routing instance is enabl
 
 ##Attaching an interface to a router## {#Attaching}
 
-To attach an interface to a router, you must first open the (router details](/mc/compute/networks/view-router) screen.  You can, in the `Manage` column, select the `Options` button for the router you wish to view the details of and click the `Router Details` item:
+To attach an interface to a router, you must first open the [router details](/mc/compute/networks/view-router) screen.  In the `Manage` column, select the `Options` button for the router you wish to view the details of and click the `Router Details` item:
 
 <img src="media/launch-router-details.png" width="580" alt="" />
 
-You can also launch the router details screen by, in the `Router Name` column,  clicking on the name of the router you wish to view the details of.
+You can also launch the router details screen by, in the `Router Name` column,  clicking the name of the router you wish to view the details of.
 
 In the router details screen, in the `Attach Interface` rolling menu, select the interface you wish to attach, then click the `Attach` button.
 
@@ -66,13 +61,50 @@ In the router details screen, in the `Attach Interface` rolling menu, select the
 Your newly-attached interface is displayed in the `Attached Interfaces` list.
 
 
-##Detatching an interface from a router## {#Detatching}
+##Detaching an interface from a router## {#Detatching}
 
-info
+To detach an interface from a router, you must first open the [router details](/mc/compute/networks/view-router) screen.  In the `Manage` column, select the `Options` button for the router you wish to view the details of and click the `Router Details` item:
+
+<img src="media/launch-router-details.png" width="580" alt="" />
+
+You can also launch the router details screen by, in the `Router Name` column,  clicking the name of the router you wish to view the details of.
+
+In the router details screen, in the list of attached interfaces, in the `Manage` column, select `Delete Interface`.
+
+<img src="media/delete-interface.png" width="580" alt="" />
+
+A dialog appears to ensure you want to delete that interface:
+
+<img src="media/delete-interface-dialog.png" width="580" alt="" />
+
+Select `Yes, delete this interface`.  This removes the subnet from the router; the subnet still exists in the network itself, but is not attached to the router. 
+
+
+##Attaching a router to an external network## {#AttachExternal}
+
+To attach a router to an external network, you must first open the [router details](/mc/compute/networks/view-router) screen.  In the `Manage` column, select the `Options` button for the router you wish to view the details of and click the `Router Details` item:
+
+<img src="media/launch-router-details.png" width="580" alt="" />
+
+You can also launch the router details screen by, in the `Router Name` column, clicking the name of the router you wish to view the details of.
+
+In the router details screen, click the `Attach External Network` button to attach that router to the external network.
+
+
+##Detaching a router from an external network## {#DetachExternal}
+
+To detach a router from an external network, you must first open the [router details](/mc/compute/networks/view-router) screen.  In the `Manage` column, select the `Options` button for the router you wish to view the details of and click the `Router Details` item:
+
+<img src="media/launch-router-details.png" width="580" alt="" />
+
+You can also launch the router details screen by, in the `Router Name` column,  clicking on the name of the router you wish to view the details of.
+
+In the router details screen, click the `Detach External Network` button to detach that router from the external network.
 
 
 ##For further information## {#ForFurtherInformation}
 
+* For information about the router details screen, take a look at the [Viewing router details](/mc/compute/networks/view-router/) page
 * For basic information about our HP Cloud compute services, take a look at the [HP Cloud compute overview](/compute/) page
 * Use the MC [site map](/mc/sitemap) for a full list of all available MC documentation pages
 * For information about the Open Stack networking ("Quantum") features, surf on over to  [their Quantum wiki](https://wiki.openstack.org/wiki/Quantum)
