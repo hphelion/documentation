@@ -16,16 +16,34 @@ This page covers how to view network details using the networks screen of the ma
 
 ##Before you begin## {#Overview}
 
-Pre-reqs and overview of the screen item needed (screen shot of the networks screen with the appropriate item circled or something?).
+Before you can create or delete a subnet of an existing network, you must:
 
-<img src="media/IMAGE.png" width="580" alt="" />
+* [Sign up for an HP Cloud compute account](https://account.hpcloud.com/signup)
+* [Activate compute service on your account](/mc/account/using/activating/)
+* [Create a network](/mc/compute/networks/create-network#Creating/)
 
-List of things you need to be sure you have done before you begin this task, e.g. setting up a compute instance
+
+##Accessing the network details screen## {#Accessing}
+
+How to access the screen.
 
 
-##Topic## {#Topic}
+##Sorting lists## {#Sorting}
 
-How to create a network with the MC.
+info
+
+
+##Network details screen available features## {#Features}
+
+The network details screen provides you access to the following functions:
+
+* [Creating a subnet](/mc/compute/networks/manage-subnet#Creating/)
+* [Deleting a subnet](/mc/compute/networks/manage-subnet#Deleting/)
+* [Accessing the subnet details screen](/mc/compute/networks/view-subnet/)
+* [Disabling a network](/mc/compute/networks/enable-network#Disabling/)
+* [Enabling a network](/mc/compute/networks/enable-network#Enabling/)
+* [Deleting a network](/mc/compute/networks/create-network#Deleting/)
+* [Enabling and disabling DHCP on a subnet](/mc/compute/networks/manage-subnet#DHCP)
 
 
 ##For further information## {#ForFurtherInformation}
