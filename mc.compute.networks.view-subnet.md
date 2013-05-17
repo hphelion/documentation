@@ -17,7 +17,7 @@ This page covers how to view subnet details using the networks screen of the man
 
 ##Before you begin## {#Overview}
 
-Before you can create or delete a subnet of an existing network, you must:
+Before you can view the details of a subnet of an existing network, you must:
 
 * [Sign up for an HP Cloud compute account](https://account.hpcloud.com/signup)
 * [Activate compute service on your account](/mc/account/using/activating/)
