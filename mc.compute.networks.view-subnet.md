@@ -10,22 +10,44 @@ product: mc-compute
 This page covers how to view subnet details using the networks screen of the management console (MC).  This page covers the following topics:
 
 * [Before you begin](#Overview)
-* [Topic](#Topic)
+* [Accessing the subnet details screen](#Accessing)
+* [Contents of the subnet details screen](#Organization)
 * [For further information](#ForFurtherInformation)
 
 
 ##Before you begin## {#Overview}
 
-Pre-reqs and overview of the screen item needed (screen shot of the networks screen with the appropriate item circled or something?).
+Before you can create or delete a subnet of an existing network, you must:
 
-<img src="media/IMAGE.png" width="580" alt="" />
+* [Sign up for an HP Cloud compute account](https://account.hpcloud.com/signup)
+* [Activate compute service on your account](/mc/account/using/activating/)
+* [Create a network](/mc/compute/networks/create-network#Creating/)
+* [Create a subnet](/mc/compute/networks/manage-subnet#Creating/)
 
-List of things you need to be sure you have done before you begin this task, e.g. setting up a compute instance
 
+##Accessing the subnet details screen## {#Accessing}
 
-##Topic## {#Topic}
+The easiest way to access the subnet details screen is from the from the [network screen](/mc/compute/networks).  In the `Networks` list, in the `Subnets` column, click the subnet for which you want to access the details.
 
-How to create a network with the MC.
+<img src="media/subnet-details-launch0.png" width="580" alt="" />
+ 
+You can also launch the subnet details screen from the network details screen.  In the network details screen, in the `Manage` column, you can click the `Options` button and select the `Subnet Details` option.
+
+<img src="media/subnet-details-launch1.png" width="580" alt="" />
+
+You can also launch the subnet details screen from the network details screen by, in the `Subnets` pane clicking the subnet name for which you want details.
+
+##Contents of the subnet details screen## {#Organization}
+
+The subnet details screen lists all the information for the subnet:  Name, network address, gateway IP address, DHCP status (enabled or disabled), the allocation pool information (if any allocation pools exist), DNS servers, and host routes.
+
+<img src="media/subnet-details.png" width="580" alt="" />
+
+The subnet details screen provides you access to the following functions:
+
+* [Editing the subnet information](/mc/compute/networks/manage-subnet#Editing)
+* [Enabling and disabling DHCP](/mc/compute/networks/manage-subnet#DHCP)
+* [Deleting the subnet](/mc/compute/networks/manage-subnet#Deleting)
 
 
 ##For further information## {#ForFurtherInformation}
