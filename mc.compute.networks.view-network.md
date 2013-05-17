@@ -10,7 +10,8 @@ product: mc-compute
 This page covers how to view network details using the networks screen of the management console (MC).  This page covers the following topics:
 
 * [Before you begin](#Overview)
-* [Topic](#Topic)
+* [Accessing the network details screen](#Accessing)
+* [Organization of the network details screen](#Organization)
 * [For further information](#ForFurtherInformation)
 
 
@@ -25,12 +26,35 @@ Before you can create or delete a subnet of an existing network, you must:
 
 ##Accessing the network details screen## {#Accessing}
 
-How to access the screen.
+You can access the network details screen from the [network screen](/mc/compute/networks) by in the `Manage` column of the `Networks` list, select the `Options` button in the row of the network you want to delete, and choose the `Network Details` option.
+
+<img src="media/network-details-launch.png" width="580" alt="" />
+
+You can also launch the network details screen from the network screen by, in the `Networks` list, clicking the name of the network for which you want to examine the details.
+
+
+##Organization of the network details screen## {Organization}
+
+The network details screen is divided into several panes: information pane, subnets pane, and ports pane:
+
+ILLUSTRATION TBD
+
+The information pane provides basic information about the selected network, such as the name, ID, and status.  It also contains buttons to allow you to enable and disable the network, create a subnet, and delete the network.
+
+<img src="media/network-details-info.png" width="580" alt="" />
+
+The subnets pane lists the subnets for the network, including their CIDR, Gateway IP, and DHCP information.  The list is sorted by `Name` by default.
+
+<img src="media/network-details-subnets.png" width="580" alt="" />
+
+The ports pane lists the ports for the network, including any attached devices, IPs, MAC address, admin state, and status.  The list is sorted by `Name` by default.
+
+<img src="media/network-details-ports.png" width="580" alt="" />
 
 
 ##Sorting lists## {#Sorting}
 
-info
+You can sort the lists of subnets (in the subnet pane) or ports (in the ports pane) in the network details screen based on a particular identifier by just clicking the column heading.  For example, if you want to sort the subnets list by gateway IP address, just click the `Gateway IP` column header.
 
 
 ##Network details screen available features## {#Features}
