@@ -44,7 +44,8 @@ From the networks screen you can perform any of the following functions:
 * [Viewing network details](/mc/compute/networks/view-network/)
 * [Viewing subnet details](/mc/compute/networks/view-subnet/)
 * [Viewing router details](/mc/compute/networks/view-router/)
-* [Understanding network system messages](/mc/compute/networks/sys-messages/)
+
+<!-- * [Understanding network system messages](/mc/compute/networks/sys-messages/)-->
 
 
 ##For further information## {#ForFurtherInformation}
