@@ -38,7 +38,7 @@ Having a bit of trouble navigating our site, and so you're looking for a single 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Viewing network details](/mc/compute/networks/view-network/) <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Viewing subnet details](/mc/compute/networks/view-subnet/) <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Viewing router details](/mc/compute/networks/view-router/) <!-- not sure about this one--maybe its own menu item, and Laura hasn't updated wireframes? --> <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Understanding network system messages](/mc/compute/networks/sys-messages/) <!-- success & error messages w/ descriptions of what they mean --> <br> 
+<!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Understanding network system messages](/mc/compute/networks/sys-messages/) <br> -->
 &nbsp;&nbsp;&nbsp;&nbsp;[Security groups screen](/mc/compute/security-groups/) <!-- basic screen functions here such as selecting a project, listing security groups, etc.? --> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Adding and removing a security group]()<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating and deleting a security group rule]()<br>
