@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Management console: Creating and deleting a network"
+title: "Management console: Viewing router details"
 permalink: /mc/compute/networks/view-router/
 product: mc-compute
 
@@ -10,22 +10,44 @@ product: mc-compute
 This page covers how to view router details using the networks screen of the management console (MC).  This page covers the following topics:
 
 * [Before you begin](#Overview)
-* [Topic](#Topic)
+* [Accessing the router details screen](#Accessing)
+* [Organization of the router details screen](#Organization)
+* [Sorting lists](#Sorting)
+* [Router details screen available features](#Features)
 * [For further information](#ForFurtherInformation)
 
 
 ##Before you begin## {#Overview}
 
-Pre-reqs and overview of the screen item needed (screen shot of the networks screen with the appropriate item circled or something?).
+Before you can view the details of an existing network, you must:
 
-<img src="media/IMAGE.png" width="580" alt="" />
+* [Sign up for an HP Cloud compute account](https://account.hpcloud.com/signup)
+* [Activate compute service on your account](/mc/account/using/activating/)
+* [Create a network](/mc/compute/networks/create-network#Creating/)
+* Create a router by [creating a project](/mc/account/projects#Creating) in the [account and services](/mc/account/) dashboard
 
-List of things you need to be sure you have done before you begin this task, e.g. setting up a compute instance
+##Accessing the router details screen## {#Accessing}
+
+You can access the router details screen from the [network screen](/mc/compute/networks) by, in the `Manage` column of the `Routers` list, select the `Options` button in the row of the router you want to delete, and choose the `Router Details` option.
+
+<img src="media/router-details-launch.png" width="580" alt="" />
+
+You can also launch the router details screen from the network screen by, in the `Routers` list, clicking the name of the router for which you want to examine the details.
 
 
-##Topic## {#Topic}
+##Organization of the router details screen## {#Organization}
 
-How to create a network with the MC.
+info
+
+
+##Sorting lists## {#Sorting}
+
+info
+
+
+##Router details screen available features## {#Features}
+
+info
 
 
 ##For further information## {#ForFurtherInformation}
