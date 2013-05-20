@@ -39,7 +39,7 @@ For information on connecting to the service, please see the [Connecting to the 
 
 ##Server Operations (Model Layer)## {#ModelServerOperations}
 
-1. List all available servers for an account:
+1. List all available servers for an account: 
 
         servers = conn.servers
         servers.size   # returns no. of servers
