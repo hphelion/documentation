@@ -76,19 +76,19 @@ Having a bit of trouble navigating our site, and so you're looking for a single 
 <!--[Relational Database for MySQL main dashboard]() <br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Creating and deleting instances]() <br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Starting and stopping instances]() <br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Managing instances]() <br> <!-- flavors; volume size; number of dbs; enable, disable, and reset root password -->
-&nbsp;&nbsp;&nbsp;&nbsp;[Instance details screen]() <br> <!-- searching; other basic descriptive info about this screen -->
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Managing user accounts]() <br> <!-- creating, deleting, changing names and permissions, changing passwords -->
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Managing databases]() <br> <!-- creating, deleting, renaming -->
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Managing security group rules]() <br> <!-- creating, deleting, renaming -->
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Managing snapshots]() <br> <!-- creating, deleting, renaming -->
+&nbsp;&nbsp;&nbsp;&nbsp;[Managing instances]() Comment: flavors; volume size; number of dbs; enable, disable, and reset root password <br> 
+&nbsp;&nbsp;&nbsp;&nbsp;[Instance details screen]() Comment: searching; other basic descriptive info about this screen <br> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Managing user accounts]() Comment: creating, deleting, changing names and permissions, changing passwords <br>  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Managing databases]() Comment: creating, deleting, renaming <br> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Managing security group rules]() Comment: creating, deleting, renaming <br> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Managing snapshots]() Comment: creating, deleting, renaming <br> 
 &nbsp;&nbsp;&nbsp;&nbsp;[Using the management console: Some RDB use cases]() <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[RDB Use Case 1]() <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[RDB Use Case 2]() <br> -->
 
-<!-- [Domain name service (DNS) main dashboard]() <br> <!-- searching domains -->
-&nbsp;&nbsp;&nbsp;&nbsp;[Adding and deleting domains]() <br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Domain details screen]() <br> <!-- selecting record types; viewing details; returning to the domain list screen -->
+[Domain name service (DNS) main dashboard]() <br> 
+<!-- &nbsp;&nbsp;&nbsp;&nbsp;[Adding and deleting domains]() <br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Domain details screen]() Comment: creating, deleting, changing names and permissions, changing passwordsselecting record types; viewing details; returning to the domain list screen <br> 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating and deleting records]() <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Managing records]() <br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Using the management console: Some DNS use cases]() <br>
@@ -107,7 +107,7 @@ Having a bit of trouble navigating our site, and so you're looking for a single 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Load balancing Use Case 1]() <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Load balancing Use Case 2]() <br> -->
 
-<!-- [Other services]() <!-- Presumably these sections will grow and get their own sections as compute and object storage have above as the MC changes to support them more thoroughly --> <br>
+<!-- [Other services]() Comment: Presumably these sections will grow and get their own sections as compute and object storage have above as the MC changes to support them more thoroughly <br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Identity service]() <br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Application platform as a service (aPaaS)]() <br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Messaging as a service (MSGaaS)]() <br> -->
@@ -131,7 +131,7 @@ Having a bit of trouble navigating our site, and so you're looking for a single 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Managing account users](/mc/account/using/managing-users/) <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Managing projects](/mc/account/using/managing-projects/) <br> -->
 
-<!-- [Management console reference]() <!-- reference for every button, field, etc. for later inclusion as bubble help or some such  --> <br>
+<!-- [Management console reference]() Comment: reference for every button, field, etc. for later inclusion as bubble help or some such <br>
 [Management console FAQ]() <br> -->
 
 **Note**: If you find that there are pages that aren't listed here, or unresolved links, please be sure to tell us!
