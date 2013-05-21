@@ -33,17 +33,17 @@ Clicking the `Manage` button takes you to the [Servers screen for compute](/mc/c
 
 The full list screens available for your compute management pleasure:
 
-* [Servers](/mc/computer/servers/)
-* [Images](/mc/computer/images/)
-* [Volumes](/mc/computer/volumes/)
-* [Networks](/mc/computer/networks/)
-* [Security groups](/mc/computer/security-groups/)
-* [Floating IPs](/mc/computer/floating-ips/)
-* [Key pairs](/mc/computer/key-pairs/)
+* [Servers](/mc/compute/servers/)
+* [Images](/mc/compute/images/)
+* [Volumes](/mc/compute/volumes/)
+* [Networks](/mc/compute/networks/)
+* [Security groups](/mc/compute/security-groups/)
+* [Floating IPs](/mc/compute/floating-ips/)
+* [Key pairs](/mc/compute/key-pairs/) 
 
 ##For further information## {#ForFurtherInformation}
 
-* A good place to help you get going is with our [compute services use cases](/mc/compute/use-cases/)
+* A good place to help you get going is with our [compute services use cases](/mc/compute/using/)
 * For specific functionality--for example, adding [volumes](/mc/compute/volumes)--use the navigation bar at the top of this page; that takes you to whatever section of the MC compute documentation you might be needing
 * Use the MC [site map](/mc/sitemap) for a full list of all available MC documentation pages
 * For basic information about our HP Cloud compute services, take a look at the [HP Cloud compute overview](/compute/) page
