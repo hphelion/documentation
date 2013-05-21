@@ -24,7 +24,7 @@ This page covers how to create and delete a router using the networks screen of 
 Before you perform any network management on your routers, you must:
 
 * [Sign up for an HP Cloud compute account](https://account.hpcloud.com/signup)
-* [Activate compute service on your account](/mc/account/using/activating/)
+* Activate compute service on your account
 * [Create a network](/mc/compute/networks/create-network/)
 * Create a router by [creating a project](/mc/account/projects#Creating) in the [account and services](/mc/account/) dashboard
 
