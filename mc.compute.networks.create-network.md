@@ -20,7 +20,7 @@ This page covers how to create and delete a network using the networks screen of
 Before you can begin creating or deleting a network, you must:
 
 * [Sign up for an HP Cloud compute account](https://account.hpcloud.com/signup)
-* [Activate compute service on your account](/mc/account/using/activating/)
+* Activate compute service on your account
 
 
 ##Creating a network## {#Creating}
@@ -35,7 +35,7 @@ This launches the network creation screen.
 
 In the network creation screen, in the `Network Info` pane, enter a name for your network in the `Name` text-entry field and click the `Create` button.  Your new network namespace is created.  This new network appears in the list on the main networks screen.  (To return to the main networks screen, just click the `Networks` item in the menu bar.)
 
-Next we suggest [creating a subnet](/mc/compute/networks/manage-subnet/) or two for your network.
+**Next** we suggest [creating a subnet](/mc/compute/networks/manage-subnet/) or two for your network.
 
 
 ##Deleting a network## {#Deleting}
@@ -60,12 +60,12 @@ To delete the network, click the `Delete Network` button.  As in the other metho
 
 Select the button `Yes, delete this network`.  Your network is deleted and no longer appears in the list on the [networks screen](/mc/compute/networks/).
 
-**Note**: You must [delete all the subnets](/mc/compute/networks/manage-subnet) of your network before you can delete the network itself.
+**Note**: You must [delete all the subnets](/mc/compute/networks/manage-subnet#Deleting/) of your network before you can delete the network itself.
 
 
 ##For further information## {#ForFurtherInformation}
 
-* For information about the network details screen, take a look at the [Viewing network details](/mc/compute/network/view-network/) page
+* For information about the network details screen, take a look at the [Viewing network details](/mc/compute/networks/view-network/) page
 * For basic information about our HP Cloud compute services, take a look at the [HP Cloud compute overview](/compute/) page
 * Use the MC [site map](/mc/sitemap) for a full list of all available MC documentation pages
 * For information about the Open Stack networking ("Quantum") features, surf on over to  [their Quantum wiki](https://wiki.openstack.org/wiki/Quantum)
