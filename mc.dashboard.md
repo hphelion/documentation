@@ -18,7 +18,7 @@ This page provides you with an overview of the main management console (MC) dash
 
 To access the main MC dashboard, from the `Dashboard` menu in the main menu bar select `All Services':
 
-<img src="media/main-dash-menu.jpg" width="580" alt="" />
+<img src="media/main-dash-all-services.png" width="580" alt="" />
 
 The main MC dashboard displays all your active services.  In this example, the user has the compute service active for US West, an active object storage account, and his activity stream is displayed.  See the sections below for a bit more discussion!
 
