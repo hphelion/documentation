@@ -343,7 +343,7 @@ For information on connecting to the service, please see the [Connecting to the 
 1. List all available security groups:
 
         sgroups = conn.security_groups
-        sgroup.size           # returns no. of security groups
+        sgroups.size           # returns no. of security groups
         # display security groups in a tabular format
         conn.security_groups.table([:id, :name, :description])
 
