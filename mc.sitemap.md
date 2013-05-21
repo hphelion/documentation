@@ -86,8 +86,8 @@ Having a bit of trouble navigating our site, and so you're looking for a single 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[RDB Use Case 1]() <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[RDB Use Case 2]() <br> -->
 
-[Domain name service (DNS) main dashboard]() <br> 
-<!-- &nbsp;&nbsp;&nbsp;&nbsp;[Adding and deleting domains]() <br>
+<!-- [Domain name service (DNS) main dashboard]() <br> 
+&nbsp;&nbsp;&nbsp;&nbsp;[Adding and deleting domains]() <br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Domain details screen]() Comment: creating, deleting, changing names and permissions, changing passwordsselecting record types; viewing details; returning to the domain list screen <br> 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating and deleting records]() <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Managing records]() <br>
