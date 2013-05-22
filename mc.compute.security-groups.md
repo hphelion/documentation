@@ -1,11 +1,11 @@
 ---
 layout: page
-title: "Compute dashboard security groups screen"
+title: "Management console: Security groups screen"
 permalink: /mc/compute/security-groups/
 product: mc-compute
 
 ---
-# Compute dashboard security groups screen
+# Management console: Security groups screen
 
 The management console (MC) compute dashboard security groups screen allows you to view and maniuplate compute security groups.  This page covers the following topics:
 
