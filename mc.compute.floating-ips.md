@@ -1,11 +1,11 @@
 ---
 layout: page
-title: "Compute dashboard floating IPs screen"
+title: "Management console: Floating IPs screen"
 permalink: /mc/compute/floating-ips/
 product: mc-compute
 
 ---
-# Compute dashboard floating IPs screen
+# Management console: Floating IPs screen
 
 The management console (MC) compute dashboard volumes screen allows you to view and maniuplate compute floating IPs.  This page covers the following topics:
 
