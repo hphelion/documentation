@@ -22,6 +22,8 @@ Before you can begin creating or deleting a network, you must:
 * [Sign up for an HP Cloud compute account](https://account.hpcloud.com/signup)
 * Activate compute service on your account
 
+**Note**: By default, when you [create a project](/mc/account/projects#Creating) (in the [account and services](/mc/account/) dashboard), your project is provisioned with a network (username-network), a subnet (username-subnet), and a router (username-router) that is automatically connected to the internet, allowing you to perform tasks such as spinning up servers without accessing the MC networks capability.  The networks screens allow you to control the networks behaviors beyond this default.
+
 
 ##Creating a network## {#Creating}
 
@@ -35,7 +37,7 @@ This launches the network creation screen.
 
 In the network creation screen, in the `Network Info` pane, enter a name for your network in the `Name` text-entry field and click the `Create` button.  Your new network namespace is created.  This new network appears in the list on the main networks screen.  (To return to the main networks screen, just click the `Networks` item in the menu bar.)
 
-**Next** we suggest [creating a subnet](/mc/compute/networks/manage-subnet/) or two for your network.
+**Next** we suggest you look at the page on [creating a subnet](/mc/compute/networks/manage-subnet/) for your network.  
 
 
 ##Deleting a network## {#Deleting}
