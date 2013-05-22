@@ -1,19 +1,8 @@
----
-layout: default
-title: "HP Cloud management console documentation site map"
-permalink: /mc/sitemap/
-product: mc
-
----
-# HP Cloud management console documentation site map#
-
-Having a bit of trouble navigating our site, and so you're looking for a single list of what we cover?  You've come to the right place!
-
 [Getting started with the management console](/mc/)<br> 
 [Main dashboard overview](/mc/dashboard/)  <br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Activity stream information](/activity-stream/) <br>
 
-[Compute services interface main dashboard](/mc/compute/)<br>
+[Compute services dashboard](/mc/compute/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Servers screen](/mc/compute/servers/)  <br>
 <!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating a new server from an image](/mc/compute/server/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating a new server from a bootable volume (using block storage)](mc/compute/server/)<br>
@@ -54,7 +43,7 @@ Having a bit of trouble navigating our site, and so you're looking for a single 
 &nbsp;&nbsp;&nbsp;&nbsp;[Managing a custom image]() <br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Creating and managing a network]() <br>
 
-<!-- [Object storage services main dashboard](/mc/object-storage/)<br>
+<!-- [Object storage dashboard](/mc/object-storage/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Containers screen]() <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating and deleting a public container]() <br> 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating and deleting a private container]() < <br>
