@@ -20,8 +20,8 @@ ILLUSTRATION TBD
 
 From this screen you can:
 
-* [Adding and deleting a security group]()
-* [Adding and deleting a security group rule]()
+* Adding and deleting a security group
+* Adding and deleting a security group rule
 
 ##For further information## {#ForFurtherInformation}
 
