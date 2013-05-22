@@ -20,9 +20,9 @@ ILLUSTRATION TBD
 
 From this screen you can:
 
-* [Creating and deleting a volume]()
-* [Cloning a new volume from an existing snapshot]()
-* [Creating a bootable volume from an existing image]()
+* Creating and deleting a volume
+* Cloning a new volume from an existing snapshot
+* Creating a bootable volume from an existing image
 
 
 ##For further information## {#ForFurtherInformation}
