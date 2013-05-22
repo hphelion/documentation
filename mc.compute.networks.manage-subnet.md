@@ -66,6 +66,9 @@ You can set the following options via the Advanced Options pane of the create su
 * [DNS Nameservers](#DNSNameservers)
 * [Host Routes](#HostRoutes)
 
+**Note**:  CIDR and allocation pools are immutable.
+
+
 ###Allocation Pools### {#AllocationPools}
 
 To create an allocation pool in the Advanced Options pane, enter the `Start IP` and `End IP` values you want for your subnet in the text entry fields.  If you want to create more than one allocation pool, click the `+Add more` button and additional text entry fields are added.
@@ -80,7 +83,7 @@ To create a DNS Nameserver in the Advance Options pane, enter the `IP Address` y
 
 ###Host Routes### {#HostRoutes}
 
-To create host routes in the Advanced Options pane, enter the `Destination CIDR` and `Next Hop` you want for your subnet in the text entry fields.  If you want to create more than one DNS nameserver, click the `+Add more` button and additional text entry fields are added.
+To create host routes in the Advanced Options pane, enter the `Destination CIDR` and `Next Hop` you want for your subnet in the text entry fields.  If you want to create more than one host route, click the `+Add more` button and additional text entry fields are added.
 
 <img src="media/host-routes.png" width="580" alt="" />
 
