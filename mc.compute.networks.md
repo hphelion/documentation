@@ -40,7 +40,7 @@ From the networks screen you can perform any of the following functions:
 
 * [Creating and deleting a network](/mc/compute/networks/create-network/)
 * [Managing a subnet](/mc/compute/networks/manage-subnet/)
-* [Adding and deleting an instance to a router](/mc/compute/networks/manage-router/)
+* [Adding and deleting an instance to a router](/mc/compute/networks/manage-routers/)
 * [Viewing network details](/mc/compute/networks/view-network/)
 * [Viewing subnet details](/mc/compute/networks/view-subnet/)
 * [Viewing router details](/mc/compute/networks/view-router/)
