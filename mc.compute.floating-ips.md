@@ -20,9 +20,9 @@ ILLUSTRATION TBD
 
 From this screen you can:
 
-* [Connecting to a server]()
-* [Allocating and deallocating IP addresses]()
-* [Attaching and detatching an IP address to your server]()
+* Connecting to a server
+* Allocating and deallocating IP addresses
+* Attaching and detatching an IP address to your server
 
 ##For further information## {#ForFurtherInformation}
 
