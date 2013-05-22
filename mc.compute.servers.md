@@ -1,11 +1,11 @@
 ---
 layout: page
-title: "Compute dashboard server screen"
+title: "Management console: Servers screen"
 permalink: /mc/compute/servers/
 product: mc-compute
 
 ---
-# Compute dashboard server screen
+# Management console: Servers screen
 
 The management console (MC) compute dashboard server screen is the default screen you see when you click the `Manage` button in the [compute dashboard](/mc/compute/).  The MC server screen allows you to create new servers, display your server inventory, view the console log, and perform other server-related compute functions.  This page covers the following topics on the MC compute server screen:
 
