@@ -1,24 +1,26 @@
 ---
 layout: page
-title: "Compute dashboard network screen"
+title: "Management console: Networks screen"
 permalink: /mc/compute/networks/
 product: mc-compute
 
 ---
-# Compute dashboard networks screen
+# Management console: Networks screen
 
-The management console (MC) compute dashboard networks screen allows you to view and manipulate compute instance networks.  This page covers the following topics:
+The management console (MC) compute dashboard networks screen allows you to view and manipulate networks.  This page covers the following topics:
 
 * [Networks screen overview](#Overview)
 * [Networks screen functions](#Functions)
 * [For further information](#ForFurtherInformation)
+
+
 
 **Note**: This is the OpenStack "Quantum" functionality; for more information, you might look at [their Quantum wiki](https://wiki.openstack.org/wiki/Quantum).
 
 
 ##Networks screen overview## {#Overview}
 
-The images screen displays your compute instance networks information for the availability zone (AZ) you have selected.
+The images screen displays your networks information for your selection.
 
 <img src="media/compute-networks00.png" width="580" alt="" />
 
@@ -40,7 +42,7 @@ From the networks screen you can perform any of the following functions:
 
 * [Creating and deleting a network](/mc/compute/networks/create-network/)
 * [Managing a subnet](/mc/compute/networks/manage-subnet/)
-* [Adding and deleting an instance to a router](/mc/compute/networks/manage-routers/)
+* [Adding and deleting an interface to a router](/mc/compute/networks/manage-routers/)
 * [Viewing network details](/mc/compute/networks/view-network/)
 * [Viewing subnet details](/mc/compute/networks/view-subnet/)
 * [Viewing router details](/mc/compute/networks/view-router/)
