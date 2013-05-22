@@ -10,7 +10,7 @@ Having a bit of trouble navigating our site, and so you're looking for a single 
 
 [Getting Started with HP Cloud](/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Documentation Site Overview](/site-overview)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Management Console documentation overview](/mc/)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Management Console overview](/mc/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Management Console site map](/mc/sitemap/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[HP Cloud FAQ](/faq)<br>
 [HP Cloud Available Services](/services/)<br> 
