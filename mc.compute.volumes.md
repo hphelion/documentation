@@ -1,11 +1,11 @@
 ---
 layout: page
-title: "Compute dashboard volumes screen"
+title: "Management console: Volumes screen"
 permalink: /mc/compute/volumes/
 product: mc-compute
 
 ---
-# Compute dashboard volumes screen
+# Management console: Volumes screen
 
 The management console (MC) compute dashboard volumes screen allows you to view and maniuplate compute volumes.  This page covers the following topics:
 
