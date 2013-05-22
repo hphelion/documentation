@@ -22,7 +22,7 @@ This page covers how to view router details using the networks screen of the man
 Before you can view the details of an existing network, you must:
 
 * [Sign up for an HP Cloud compute account](https://account.hpcloud.com/signup)
-* [Activate compute service on your account](/mc/account/using/activating/)
+* Activate compute service on your account
 * [Create a network](/mc/compute/networks/create-network#Creating/)
 * Create a router by [creating a project](/mc/account/projects#Creating) in the [account and services](/mc/account/) dashboard
 
