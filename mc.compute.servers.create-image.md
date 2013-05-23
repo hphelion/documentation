@@ -18,10 +18,11 @@ This page describes how to create a new server from an image using the [networks
 Before you can begin whatever, you must:
 
 * [Sign up for an HP Cloud compute account](https://account.hpcloud.com/signup)
-* [Activate compute service on your account](/mc/account/using/activating/)
+* Activate compute service on your account
+* Create a server image  <!--need to link this eventually to the [images](/mc/compute/images/create/) page--when I create it, anyway. :) -->
 
 
-##section
+##Creating a new server from an image## {#Creating}
 
 info
 
