@@ -7,7 +7,7 @@ product: mc
 ---
 # Management console overview
 
-HP Cloud consists of a bunch of useful services--compute, object storage, block storage, and [many others](blah)--and the entrance to those services is through the management console (MC).  This page provides you with an overview of the console, along with pointers to other good information to get you going.
+HP Cloud consists of a bunch of useful services--compute, object storage, block storage, and [many others](/services/)--and the entrance to those services is through the management console (MC).  This page provides you with an overview of the console, along with pointers to other good information to get you going.
 
 * [Management console overview](#Overview)
 * [Navigating the services](#NavigatingtheService) 
@@ -17,7 +17,7 @@ HP Cloud consists of a bunch of useful services--compute, object storage, block 
 
 ##Management console overview## {#Overview}
 
-The main dashboard for the MC displays all your active available services by default.  If you have activated the compute and object storage services, for example, your dashboard may look something like this:
+The main dashboard for the MC displays all your active available services by default.  If you have activated the [compute](/compute/) and [object storage](/object-storage/) services, for example, your dashboard may look something like this:
 
 <img src="media/main-dash.png" width="580" alt="" />
 
