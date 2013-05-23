@@ -7,7 +7,7 @@ product: mc-compute
 ---
 # Management console: Floating IPs screen
 
-The management console (MC) compute dashboard volumes screen allows you to view and maniuplate compute floating IPs.  This page covers the following topics:
+The management console (MC) compute dashboard volumes screen allows you to view and manipulate compute floating IPs.  This page covers the following topics:
 
 * [Floating IPs screen overview](#Overview)
 * [For further information](#ForFurtherInformation)
@@ -18,11 +18,11 @@ The images screen displays your compute instance floating IP information for the
 
 ILLUSTRATION TBD
 
-From this screen you can:
+From this screen you can perform the following tasks:
 
-* Connecting to a server
-* Allocating and deallocating IP addresses
-* Attaching and detatching an IP address to your server
+* Connect to a server
+* Allocate and deallocate IP addresses
+* Attach and detach an IP address to your server
 
 ##For further information## {#ForFurtherInformation}
 
