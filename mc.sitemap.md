@@ -15,9 +15,9 @@ Having a bit of trouble navigating our site, and so you're looking for a single 
 
 [Compute services dashboard](/mc/compute/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Servers screen](/mc/compute/servers/)  <br>
-<!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating a new server from an image](/mc/compute/server/)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating a new server from an image](/mc/compute/server/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating a new server from a bootable volume (using block storage)](mc/compute/server/)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Applying a filter](/mc/compute/server/) <br>
+<!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Applying a filter](/mc/compute/server/) <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Displaying server details](/mc/compute/server/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Viewing the console log](/mc/compute/server/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Connecting to a server](/mc/compute/server/)<br>
