@@ -25,7 +25,7 @@ Having a bit of trouble navigating our site, and so you're looking for a single 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Rebuilding a server](/mc/compute/server/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Terminating a server](/mc/compute/server/)<br>-->
 &nbsp;&nbsp;&nbsp;&nbsp;[Images screen](/mc/compute/images/) <br>
-<!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating and deleting an image]() <br>-->
+<!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating and deleting an image](/mc/compute/images/create/) <br>-->
 &nbsp;&nbsp;&nbsp;&nbsp;[Volumes screen](/mc/compute/volumes/)<br>
 <!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating and deleting a volume]()<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Cloning a new volume from an existing snapshot]()<br>
