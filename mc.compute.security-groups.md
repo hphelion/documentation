@@ -7,7 +7,7 @@ product: mc-compute
 ---
 # Management console: Security groups screen
 
-The management console (MC) compute dashboard security groups screen allows you to view and maniuplate compute security groups.  This page covers the following topics:
+The management console (MC) compute dashboard security groups screen allows you to view and manipulate compute security groups.  This page covers the following topics:
 
 * [Security groups screen overview](#Overview)
 * [For further information](#ForFurtherInformation)
@@ -20,8 +20,8 @@ ILLUSTRATION TBD
 
 From this screen you can:
 
-* Adding and deleting a security group
-* Adding and deleting a security group rule
+* Add and delete a security group
+* Add and delete a security group rule
 
 ##For further information## {#ForFurtherInformation}
 
