@@ -7,7 +7,7 @@ product: mc-compute
 ---
 # Management console: Creating and deleting a network
 
-This page covers how to create and delete a network using the networks screen of the management console (MC).  This page covers the following topics:
+This page covers how to create and delete a network using the [networks screen](/mc/compute/networks/) of the [management console](/mc/) (MC).  This page covers the following topics:
 
 * [Before you begin](#Overview)
 * [Creating a network](#Creating)
@@ -46,7 +46,7 @@ To delete an existing network, in the `Manage` column of the `Networks` list, se
 
 <img src="media/delete-network.png" width="580" alt="" />
 
-A verfication window appears asking if you want to delete this network:
+A verification window appears asking if you want to delete this network:
 
 <img src="media/delete-verify.png" width="580" alt="" />
 
