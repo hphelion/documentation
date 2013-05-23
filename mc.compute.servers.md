@@ -20,8 +20,8 @@ ILLUSTRATION TBD
 
 From this screen you can:
 
-* Create a new server from an Image
-* Create a new server from a Bootable Volume, using Block Storage
+* [Create a new server from an Image](/mc/compute/servers/create-image/)
+* [Create a new server from a Bootable Volume, using Block Storage](/mc/compute/servers/create-bootable/)
 * Apply a filter to list of running servers
 * Display details for a particular server
 * Connect to a server
