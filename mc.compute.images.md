@@ -20,7 +20,7 @@ ILLUSTRATION TBD
 
 From this screen you can:
 
-* Create or delete an image
+* [Create or delete an image](/mc/compute/images/create/)
 
 
 ##For further information## {#ForFurtherInformation}
