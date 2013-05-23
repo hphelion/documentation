@@ -7,7 +7,7 @@ product: mc-compute
 ---
 # Management Console: Key pairs screen
 
-The management console (MC) compute dashboard volumes screen allows you to view and maniuplate compute key pairs.  This page covers the following topics:
+The management console (MC) compute dashboard volumes screen allows you to view and manipulate compute key pairs.  This page covers the following topics:
 
 * [Key pairs screen overview](#Overview)
 * [For further information](#ForFurtherInformation)
@@ -20,7 +20,7 @@ ILLUSTRATION TBD
 
 From this screen you can:
 
-* Adding and deleting a key pair
+* Add and delete a key pair
 
 ##For further information## {#ForFurtherInformation}
 
