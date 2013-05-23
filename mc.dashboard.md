@@ -35,7 +35,7 @@ If you want to go straight to the compute dashboard without first going through 
 
 **Note**:  You can also navigate to a particular activity zone via the main menu bar.
 
-You can display manage your activity by clicking the `Manage` buton next to the AZ you are interested in; this launches the Compute dashboard for that specific AZ.  For example, if you want to go to the AZ 1 for the `US West` region, just click that button to see that screen:
+You can manage your activity by clicking the `Manage` button next to the AZ you are interested in; this launches the Compute dashboard for that specific AZ.  For example, if you want to go to the AZ 1 for the `US West` region, just click that button to see that screen:
 
 <img src="media/compute01.png" width="580" alt="" />
 
