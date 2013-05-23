@@ -7,7 +7,7 @@ product: mc-compute
 ---
 # Management console: Creating a new server from an image
 
-The management console (MC) compute dashboard server screen is the default screen you see when you click the `Manage` button in the [compute dashboard](/mc/compute/).  The MC server screen allows you to create new servers, display your server inventory, view the console log, and perform other server-related compute functions.  This page covers the following topics on the MC compute server screen:
+This page describes how to create a new server from an image using the [networks screen](/mc/compute/networks/) of the [management console](/mc/) (MC).  This page covers the following topics:
 
 * [Before you begin](#Overview)
 * [section
