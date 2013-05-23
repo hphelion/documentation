@@ -7,7 +7,7 @@ product: mc-compute
 ---
 # Management console: Volumes screen
 
-The management console (MC) compute dashboard volumes screen allows you to view and maniuplate compute volumes.  This page covers the following topics:
+The management console (MC) compute dashboard volumes screen allows you to view and manipulate compute volumes.  This page covers the following topics:
 
 * [Volumes screen overview](#Overview)
 * [For further information](#ForFurtherInformation)
@@ -20,9 +20,9 @@ ILLUSTRATION TBD
 
 From this screen you can:
 
-* Creating and deleting a volume
-* Cloning a new volume from an existing snapshot
-* Creating a bootable volume from an existing image
+* Create and delete a volume
+* Clone a new volume from an existing snapshot
+* Create a bootable volume from an existing image
 
 
 ##For further information## {#ForFurtherInformation}
