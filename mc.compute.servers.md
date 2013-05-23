@@ -33,4 +33,4 @@ From this screen you can:
 ##For further information## {#ForFurtherInformation}
 
 * For basic information about our HP Cloud compute services, take a look at the [HP Cloud compute overview](/compute/) page
-* Use the MC [site map](/mc/sitemap) for a full list of all available MC documentation pages.
+* Use the MC [site map](/mc/sitemap) for a full list of all available MC documentation pages
