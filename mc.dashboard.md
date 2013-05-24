@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: "Management console main dashboard"
 permalink: /mc/dashboard/
 product: mc
