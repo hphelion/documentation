@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: "Management console: Floating IPs screen"
 permalink: /mc/compute/floating-ips/
 product: mc-compute
