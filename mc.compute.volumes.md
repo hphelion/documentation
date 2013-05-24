@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: "Management console: Volumes screen"
 permalink: /mc/compute/volumes/
 product: mc-compute
