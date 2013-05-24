@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: "Management console: Viewing subnet details"
 permalink: /mc/compute/networks/view-subnet/
 product: mc-compute
