@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: "Management console: Understanding network screen system messages"
 permalink: /mc/compute/networks/sys-messages/
 product: mc-compute
