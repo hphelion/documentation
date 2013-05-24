@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: "Management console: Creating and deleting images"
 permalink: /mc/compute/images/create/
 product: mc-compute
