@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: "Management console: Servers screen"
 permalink: /mc/compute/servers/
 product: mc-compute
