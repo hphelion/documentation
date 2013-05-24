@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: "Management console compute dashboard"
 permalink: /mc/compute/
 product: mc-compute
