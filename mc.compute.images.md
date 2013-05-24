@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: "Management console: Images screen"
 permalink: /mc/compute/images/
 product: mc-compute
