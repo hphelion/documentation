@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: "Management console: Managing projects"
 permalink: /mc/account/projects/
 product: mc-account
