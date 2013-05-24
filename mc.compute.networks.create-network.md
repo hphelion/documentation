@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: "Management console: Creating and deleting a network"
 permalink: /mc/compute/networks/create-network/
 product: mc-compute
