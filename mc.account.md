@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: "Management console account and services dashboard"
 permalink: /mc/account/
 product: mc-account
