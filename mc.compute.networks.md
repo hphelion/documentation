@@ -13,14 +13,12 @@ The management console (MC) compute dashboard networks screen allows you to view
 * [Networks screen functions](#Functions)
 * [For further information](#ForFurtherInformation)
 
-
-
 **Note**: This is the OpenStack "Quantum" functionality; for more information, you might look at [their Quantum wiki](https://wiki.openstack.org/wiki/Quantum).
 
 
 ##Networks screen overview## {#Overview}
 
-The images screen displays your networks information for your selection.
+The networks screen displays the networks information for your project.
 
 <img src="media/compute-networks00.png" width="580" alt="" />
 
