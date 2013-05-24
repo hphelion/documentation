@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: "Management Console: Key pairs screen"
 permalink: /mc/compute/key-pairs/
 product: mc-compute
