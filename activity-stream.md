@@ -6,11 +6,9 @@ permalink: /activity-stream/
 ---
 # HPCS Activity Stream
 
-Your Cloud experience can have a lot of moving parts!  Keeping track of various data about the resources you're consuming, their performance, availability and a whole host of other attributes has to be a priority. This is especially true if you work in a group or a large enterprise - you need to track who has access or took what actions. With your knowledge or not, there is a vast amount of data constantly being generated from your Cloud resources. 
+Your Cloud experience can have a lot of moving parts!  Keeping track of various data about the resources you're consuming, their performance, availability and a whole host of other attributes has to be a priority. This is especially true if you work in a group or a large enterprise - you need to track who has access or took what actions. There is a vast amount of data constantly being generated from your Cloud resources. 
 
-We believe that helping HP Cloud users consume and organize aggregated cloud events is crucial to enable the management of cloud resources.  Today, many software applications have adopted the **Activity Stream**.  The vast amount of data produced by many modern applications such as Twitter and Facebook have helped drive the utilization of this pattern to efficiently display information in a manner that is relevant and contextual to end users.
-
-We believe that helping HP Cloud users consume aggregated event data is critical for our user community to enable them better and more efficient management of cloud resources.  We also believe in providing this capability in a *Unified*, *Consistent*, *Simple*, *Personal* and *Transparent* way.
+We believe that helping HP Cloud users consume and organize aggregated cloud events is crucial to enable the management of cloud resources.  Today, many software applications have adopted the **Activity Stream**.  The vast amount of data produced by many modern applications such as Twitter and Facebook have helped drive the utilization of this pattern to efficiently display information in a manner that is relevant and contextual to end users.  We believe in providing this capability in a *Unified*, *Consistent*, *Simple*, *Personal* and *Transparent* way.
 
 <img src="media/Screen%20Shot%202012-11-09%20at%201.48.12%20PM_0.png" width="580" height="146" alt="" />
 
