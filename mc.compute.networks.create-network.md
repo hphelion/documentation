@@ -29,11 +29,11 @@ Before you can begin creating or deleting a network, you must:
 
 To create a network, click the `+ Create Network` button in the [networks screen](/mc/compute/networks/):
 
-<img src="media/create-network-launch.png" width="580" alt="" />
+<img src="media/create-network-launch.jpg" width="580" alt="" />
 
 This launches the network creation screen.
 
-<img src="media/create-network.png" width="580" alt="" />
+<img src="media/create-network.jpg" width="580" alt="" />
 
 In the network creation screen, in the `Network Info` pane, enter a name for your network in the `Name` text-entry field and click the `Create` button.  Your new network namespace is created.  This new network appears in the list on the main networks screen.  (To return to the main networks screen, just click the `Networks` item in the menu bar.)
 
@@ -44,21 +44,21 @@ In the network creation screen, in the `Network Info` pane, enter a name for you
 
 To delete an existing network, in the `Manage` column of the `Networks` list, select the `Options` button in the row of the network you want to delete, and choose the `Delete` option.
 
-<img src="media/delete-network.png" width="580" alt="" />
+<img src="media/delete-network.jpg" width="580" alt="" />
 
 A verification window appears asking if you want to delete this network:
 
-<img src="media/delete-verify.png" width="580" alt="" />
+<img src="media/delete-verify.jpg" width="580" alt="" />
 
 Select the button `Yes, delete this network`.  Your network is deleted and no longer appears in the list on the [networks screen](/mc/compute/networks/).
 
 You can also delete a network from its [network details](/mc/compute/networks/view-network/) screen.  In the networks screen, in the `Networks` list, click the name of the network that you want to delete.  This launches the network details screen:
 
-<img src="media/compute-networks10.png" width="580" alt="" />
+<img src="media/compute-networks10.jpg" width="580" alt="" />
 
 To delete the network, click the `Delete Network` button.  As in the other method, a verification window appears asking if you want to delete this network.
 
-<img src="media/delete-verify.png" width="580" alt="" />
+<img src="media/delete-verify.jpg" width="580" alt="" />
 
 Select the button `Yes, delete this network`.  Your network is deleted and no longer appears in the list on the [networks screen](/mc/compute/networks/).
 

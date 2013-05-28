@@ -1,4 +1,4 @@
----
+jpg---
 layout: default
 title: "Management console: Understanding network screen system messages"
 permalink: /mc/compute/networks/sys-messages/
@@ -20,7 +20,7 @@ This page provides details for the various system messages you might see while u
 
 Pre-reqs and overview of the screen item needed (screen shot of the networks screen with the appropriate item circled or something?).
 
-<img src="media/IMAGE.png" width="580" alt="" />
+<img src="media/IMAGE.jpg" width="580" alt="" />
 
 List of things you need to be sure you have done before you begin this task, e.g. setting up a compute instance
 

@@ -17,7 +17,7 @@ This page provides you with an overview of the management console (MC) compute d
 
 The MC compute main dashboard displays your active availability zones, divided by region:
 
-<img src="media/compute-dash00.png" width="580" alt="" />
+<img src="media/compute-dash00.jpg" width="580" alt="" />
 
 In this example, the user has two AZs in the `US West` region.
 
@@ -25,11 +25,11 @@ In this example, the user has two AZs in the `US West` region.
 
 To manage the compute activities for a particular AZ in a particular region, just click the `Manage` button next to the one you're interested in.
 
-<img src="media/compute-dash01.png" width="580" alt="" />
+<img src="media/compute-dash01.jpg" width="580" alt="" />
 
 Clicking the `Manage` button takes you to the [Servers screen for compute](/mc/compute/servers/).  
 
-<img src="media/compute00.png" width="580" alt="" />
+<img src="media/compute00.jpg" width="580" alt="" />
 
 The full list screens available for your compute management pleasure:
 

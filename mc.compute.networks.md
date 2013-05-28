@@ -20,13 +20,13 @@ The management console (MC) compute dashboard networks screen allows you to view
 
 The networks screen displays the networks information for your project.
 
-<img src="media/compute-networks00.png" width="580" alt="" />
+<img src="media/compute-networks00.jpg" width="580" alt="" />
 
 The name, ID, subnets, admin state, and status of the networks are displayed.  You can sort your list of networks based on a particular identifier by just clicking the column heading.  For example, if you want to sort the list by ID, just click the `ID` column header.  
 
 Clicking the `+ Create Network` button launches the [network creation screen](/mc/compute/networks/create-network) screen.  Clicking the `Options` button in the `Manage` column allows you to perform a number of functions on that network:
 
-<img src="media/compute-networks01.png" width="580" alt="" />
+<img src="media/compute-networks01.jpg" width="580" alt="" />
 
 * [Create a subnet](/mc/compute/networks/manage-subnet#Creating/) for that network
 * [Disable](/mc/compute/networks/enable-network#Disabling/) the network

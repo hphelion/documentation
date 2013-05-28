@@ -17,13 +17,13 @@ This page provides you with an overview of the management console (MC) account a
 
 The account and services dashboard provides you with quick access for managing your account and services details.  If you launch the dashboard by, in the `Account` menu, selecting `Manage Services`, the services screen is displayed:
 
-<img src="media/account01.png" width="580" alt="" />
+<img src="media/account01.jpg" width="580" alt="" />
 
 The screen has a pane for each available region, and displays which services you have for each region, their availability zone (AZ), status (`active` or `not active`), and provides a activation/management button to allow you to either activate the service, or enter the [MC compute dashboard](/mc/compute/).  If a particular service or AZ is not available to you, there is no button in the `Action` column of the pane.
 
 If you launch the dashboard by, in the `Account` menu, selecting `My Account`, the account overview screen is displayed:
 
-<img src="media/account02.png" width="580" alt="" />
+<img src="media/account02.jpg" width="580" alt="" />
 
 This screen is a listing of your personal account information.  You can use this screen to edit your name or email address.
 
@@ -32,11 +32,11 @@ This screen is a listing of your personal account information.  You can use this
 
 For all the functions available from the MC account and services dashboard, you can navigate to the appropriate screen by selecting an item from the right-hand navigation bar:
 
-<img src="media/account01.png" width="580" alt="" />
+<img src="media/account01.jpg" width="580" alt="" />
 
 In addition, you can also surf to the `Manage Services`, `My Account`, `Manage Account Users`, and `Manage Projects` screens by selecting the function you need from the main `Account` drop-down menu:
 
-<img src="media/account03.png" width="580" alt="" />
+<img src="media/account03.jpg" width="580" alt="" />
 
 From the account and services dashboard, you can perform any of the following tasks:
 
