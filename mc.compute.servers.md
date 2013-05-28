@@ -18,26 +18,26 @@ The management console (MC) compute dashboard server screen is the default scree
 
 The servers screen displays the servers information for your project.
 
-<img src="media/servers-main.jpg" width="580" alt="" />
+<img src="media/servers-main.png" width="580" alt="" />
 
-The name, availability zone (AZ), status, flavor, image, and key pair for your servers are displayed.  You can sort your list of networks based on a particular identifier by just clicking the column heading.  For example, if you want to sort the list by ID, just click the `ID` column header.
+<!-- The name, availability zone (AZ), status, flavor, image, and key pair for your servers are displayed.  You can sort your list of networks based on a particular identifier by just clicking the column heading.  For example, if you want to sort the list by ID, just click the `ID` column header.
 
-Clicking the `+ Create Server` button launches the [new server screen](/mc/compute/servers/create-new/).  Clicking the `Options` button in the `Manage` column allows you to perform a number of functions on that network:
+Click the `+ Create Server` button to launch the [new server screen](/mc/compute/servers/create-new/):
 
-image
+<img src="media/servers-new.jpg" width="580" alt="" />
 
-list of things the option button does
+list of things the option button does -->
 
 
 ##Servers screen functions## {#Functions}
 
 The servers screen displays the active servers you have available for AZ you selected, and provides you with server actions you can perform for that AZ: 
 
-<img src="media/servers-main.jpg" width="580" alt="" />
+<img src="media/servers-main.png" width="580" alt="" />
 
 From this screen you can:
 
-* [Create a new server](/mc/compute/servers/new/)
+* Create a new server
 * Apply a filter to list of running servers
 * Display details for a particular server
 * Connect to a server
