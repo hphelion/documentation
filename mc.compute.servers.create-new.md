@@ -50,11 +50,11 @@ When you create an image, you can do so using one of several different existing 
 
 To create a server, click the `+ Create Server` button in the [servers screen](/mc/compute/servers/):
 
-<img src="media/servers-main.png" width="580" alt="" />
+<img src="media/servers-main.jpg" width="580" alt="" />
 
 This launches the new server screen.
 
-<img src="media/servers-new.png" width="580" alt="" />
+<img src="media/servers-new.jpg" width="580" alt="" />
 
 In the new servers screen, select the values for the various fields:
 

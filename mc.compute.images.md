@@ -16,11 +16,11 @@ The management console (MC) compute dashboard images screen allows you to view a
 
 The images screen displays your compute instance image information for the availability zone (AZ) you have selected.
 
-ILLUSTRATION TBD
+<img src="media/images-main.png" width="580" alt="" />
 
 From this screen you can:
 
-* [Create or delete an image](/mc/compute/images/create/)
+* Create or delete an image
 
 
 ##For further information## {#ForFurtherInformation}

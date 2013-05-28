@@ -15,8 +15,8 @@ Having a bit of trouble navigating our site, and so you're looking for a single 
 
 [Compute services dashboard](/mc/compute/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Servers screen](/mc/compute/servers/)  <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating a new server](/mc/compute/server/create-new/)<br>
-<!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Applying a filter](/mc/compute/server/) <br>
+<!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating a new server](/mc/compute/servers/create-new/)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Applying a filter](/mc/compute/server/) <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Displaying server details](/mc/compute/server/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Viewing the console log](/mc/compute/server/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Connecting to a server](/mc/compute/server/)<br>
@@ -46,12 +46,12 @@ Having a bit of trouble navigating our site, and so you're looking for a single 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Allocating and deallocating an IP address]()<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Attaching and detatching an IP address to your server]()<br>-->
 &nbsp;&nbsp;&nbsp;&nbsp;[Key pairs screen](/mc/compute/key-pairs/)<br>
-<!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Adding and deleting a key pair]() <br>-->
-[Using the management console: Some compute service use cases](/mc/compute/using/) <br>
+<!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Adding and deleting a key pair]() <br> -->
+<!-- [Using the management console: Some compute service use cases](/mc/compute/using/) <br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Creating a new server]() <br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Creating a bootable volume]() <br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Managing a custom image]() <br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Creating and managing a network]() <br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Creating and managing a network]() <br> -->
 
 <!-- [Object storage dashboard](/mc/object-storage/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Containers screen]() <br>
