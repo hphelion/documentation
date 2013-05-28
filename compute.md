@@ -27,3 +27,12 @@ If you are looking for an easier to use, language-specific way of using HP Cloud
 
 ## CLI
 Want scriptable access you can put in a cron job or something similar?  Go on over to our [CLI documentation](/cli).
+
+## For further information
+
+Check out the following pages for more information on using HP Cloud compute services:
+
+* [Ruby Fog bindings compute examples](/bindings/fog/compute/)
+* [CLI UNIX compute examples](/cli/unix/compute/)
+* [Windows PowerShell CLI compute examples](/cli/windows/compute/)
+* [Mnagement console compute dashboard information](/mc/compute/)
