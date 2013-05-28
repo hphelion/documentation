@@ -35,9 +35,9 @@ If you want to go straight to the compute dashboard without first going through 
 
 **Note**:  You can also navigate to a particular activity zone via the main menu bar.
 
-You can manage your activity by clicking the `Manage` button next to the AZ you are interested in; this launches the Compute dashboard for that specific AZ.  For example, if you want to go to the AZ 1 for the `US West` region, just click that button to see that screen:
+You can manage your activity by clicking the `Manage` button next to the AZ you are interested in; this launches the Compute dashboard for that specific AZ.  For example, if you want to go to the AZ 1 for the `US West` region, just click that button to see the screen:
 
-<img src="media/compute01.jpg" width="580" alt="" />
+<img src="media/compute01.png" width="580" alt="" />
 
 For additional information about the compute functions available through the MC, surf on over to the [MC compute page](/mc/compute).  For an overview of HP Cloud's compute features, please see the [HP Cloud compute overview](/compute) page.
 
@@ -66,7 +66,7 @@ The activity stream pane helps you track of various data about the resources you
 
 This pane displays platform alerts, including appropriate date and time information:
 
-<img src="media/Screen%20Shot%202012-11-09%20at%201.48.12%20PM_0.jpg" width="580" height="146" alt="" />
+<img src="media/Screen%20Shot%202012-11-09%20at%201.48.12%20PM_0.png" width="580" height="146" alt="" />
 
 For more information, please see the [activity stream](/activity-stream/) page.
 
