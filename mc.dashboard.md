@@ -18,7 +18,7 @@ This page provides you with an overview of the main management console (MC) dash
 
 To access the main MC dashboard, from the `Dashboard` menu in the main menu bar select `All Services':
 
-<img src="media/main-dash-all-services.png" width="580" alt="" />
+<img src="media/main-dash-all-services.jpg" width="580" alt="" />
 
 The main MC dashboard displays all your active services.  In this example, the user has the compute service active for US West, an active object storage account, and his activity stream is displayed.  See the sections below for a bit more discussion!
 
@@ -31,11 +31,11 @@ The compute pane of the main MC dashboard displays your active availability zone
 
 If you want to go straight to the compute dashboard without first going through the main MC dashboard, just select the `Compute` option from the `Dashboard` item in the main menu bar.
 
-<img src="media/main-dash-compute-menu-detail.png" width="580" alt="" />
+<img src="media/main-dash-compute-menu-detail.jpg" width="580" alt="" />
 
 **Note**:  You can also navigate to a particular activity zone via the main menu bar.
 
-You can manage your activity by clicking the `Manage` button next to the AZ you are interested in; this launches the Compute dashboard for that specific AZ.  For example, if you want to go to the AZ 1 for the `US West` region, just click that button to see that screen:
+You can manage your activity by clicking the `Manage` button next to the AZ you are interested in; this launches the Compute dashboard for that specific AZ.  For example, if you want to go to the AZ 1 for the `US West` region, just click that button to see the screen:
 
 <img src="media/compute01.png" width="580" alt="" />
 
@@ -46,11 +46,11 @@ For additional information about the compute functions available through the MC,
 
 The object storage pane of the main MC dashboard appears directly below the [compute pane](#compute), divided by region.
 
-<img src="media/main-dash.png" width="580" alt="" />
+<img src="media/main-dash.jpg" width="580" alt="" />
 
 To access your object storage containers, just click the `Browse Containers` button.  This launches the object storage details screen and displays your containers and any related information:
 
-<img src="media/object-storage01.png" width="580" alt="" />
+<img src="media/object-storage01.jpg" width="580" alt="" />
 
 This user has two containers in the `US West` region: `Nova-stuff` (which contains one object) and `fog-rocks` (which is empty).  The information block for each container gives you the `Object Count`, `Size`, `Sharing` information, and indicates whether or not CDN is enabled.  You can also use the object storage details screen to create new public or private containers.
 
@@ -62,7 +62,7 @@ For an overview of HP Cloud's object storage features, please see the [HP Cloud 
 
 The activity stream pane helps you track of various data about the resources you're consuming, their performance, availability, and other activity.  
 
-<img src="media/activity-stream-detail.png" width="580" alt="" />
+<img src="media/activity-stream-detail.jpg" width="580" alt="" />
 
 This pane displays platform alerts, including appropriate date and time information:
 

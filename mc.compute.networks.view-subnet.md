@@ -29,11 +29,11 @@ Before you can view the details of a subnet of an existing network, you must:
 
 The easiest way to access the subnet details screen is from the from the [network screen](/mc/compute/networks).  In the `Networks` list, in the `Subnets` column, click the subnet for which you want to access the details.
 
-<img src="media/subnet-details-launch0.png" width="580" alt="" />
+<img src="media/subnet-details-launch0.jpg" width="580" alt="" />
  
 You can also launch the subnet details screen from the network details screen.  In the network details screen, in the `Manage` column, you can click the `Options` button and select the `Subnet Details` option.
 
-<img src="media/subnet-details-launch1.png" width="580" alt="" />
+<img src="media/subnet-details-launch1.jpg" width="580" alt="" />
 
 You can also launch the subnet details screen from the network details screen by, in the `Subnets` pane clicking the subnet name for which you want details.
 
@@ -41,7 +41,7 @@ You can also launch the subnet details screen from the network details screen by
 
 The subnet details screen lists all the information for the subnet:  Name, network address, gateway IP address, DHCP status (enabled or disabled), the allocation pool information (if any allocation pools exist), DNS servers, and host routes.
 
-<img src="media/subnet-details.png" width="580" alt="" />
+<img src="media/subnet-details.jpg" width="580" alt="" />
 
 The subnet details screen provides you access to the following functions:
 
