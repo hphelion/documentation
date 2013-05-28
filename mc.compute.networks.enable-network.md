@@ -38,7 +38,7 @@ If you have at some point [disabled](#Disabling) a network and want to enable it
 
 By default, when you [create a network](/mc/compute/networks/create-network#Creating/), that network is created in an enabled admin state.  If you want to disable your network, in the `Manage` column of the `Networks` list, select the `Options` button and choose the `Disable` option.
 
-<img src="media/compute-networks04.png" width="580" alt="" />
+<img src="media/compute-networks04.jpg" width="580" alt="" />
 
 
 ##For further information## {#ForFurtherInformation}

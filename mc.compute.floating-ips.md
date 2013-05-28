@@ -16,7 +16,7 @@ The management console (MC) compute dashboard volumes screen allows you to view 
 
 The images screen displays your compute instance floating IP information for the availability zone (AZ) you have selected.
 
-ILLUSTRATION TBD
+<img src="media/floating-ips-main.png" width="580" alt="" />
 
 From this screen you can perform the following tasks:
 

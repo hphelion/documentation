@@ -36,27 +36,27 @@ Before you perform any network management on your routers, you must:
 
 When you [create a router](/mc/account/projects/), the routing instance is enabled by default.  If you have [disabled](#Disabling) the router, to enable it, in the `Manage` column, select the `Options` button for the router you wish to disable and click the `Disable` item:
 
-<img src="media/disable-router.png" width="580" alt="" />
+<img src="media/disable-router.jpg" width="580" alt="" />
  
 
 ##Disabling a router## {#Disabling}
 
 When you [create a router](/mc/account/projects/), the routing instance is enabled by default.  To disable the router, in the `Manage` column, select the `Options` button for the router you wish to disable and click the `Disable` item:
 
-<img src="media/enable-router.png" width="580" alt="" />
+<img src="media/enable-router.jpg" width="580" alt="" />
 
 
 ##Attaching an interface to a router## {#Attaching}
 
 To attach an interface to a router, you must first open the [router details](/mc/compute/networks/view-router) screen.  In the `Manage` column, select the `Options` button for the router you wish to view the details of and click the `Router Details` item:
 
-<img src="media/launch-router-details.png" width="580" alt="" />
+<img src="media/launch-router-details.jpg" width="580" alt="" />
 
 You can also launch the router details screen by, in the `Router Name` column,  clicking the name of the router you wish to view the details of.
 
 In the router details screen, in the `Attach Interface` rolling menu, select the interface you wish to attach, then click the `Attach` button.
 
-<img src="media/attach-interface.png" width="580" alt="" />
+<img src="media/attach-interface.jpg" width="580" alt="" />
 
 Your newly-attached interface is displayed in the `Attached Interfaces` list.
 
@@ -65,17 +65,17 @@ Your newly-attached interface is displayed in the `Attached Interfaces` list.
 
 To detach an interface from a router, you must first open the [router details](/mc/compute/networks/view-router) screen.  In the `Manage` column, select the `Options` button for the router you wish to view the details of and click the `Router Details` item:
 
-<img src="media/launch-router-details.png" width="580" alt="" />
+<img src="media/launch-router-details.jpg" width="580" alt="" />
 
 You can also launch the router details screen by, in the `Router Name` column,  clicking the name of the router you wish to view the details of.
 
 In the router details screen, in the list of attached interfaces, in the `Manage` column, select `Delete Interface`.
 
-<img src="media/delete-interface.png" width="580" alt="" />
+<img src="media/delete-interface.jpg" width="580" alt="" />
 
 A dialog appears to ensure you want to delete that interface:
 
-<img src="media/delete-interface-dialog.png" width="580" alt="" />
+<img src="media/delete-interface-dialog.jpg" width="580" alt="" />
 
 Select `Yes, delete this interface`.  This removes the subnet from the router; the subnet still exists in the network itself, but is not attached to the router. 
 
@@ -84,7 +84,7 @@ Select `Yes, delete this interface`.  This removes the subnet from the router; t
 
 To attach a router to an external network, you must first open the [router details](/mc/compute/networks/view-router) screen.  In the `Manage` column, select the `Options` button for the router you wish to view the details of and click the `Router Details` item:
 
-<img src="media/launch-router-details.png" width="580" alt="" />
+<img src="media/launch-router-details.jpg" width="580" alt="" />
 
 You can also launch the router details screen by, in the `Router Name` column, clicking the name of the router you wish to view the details of.
 
@@ -95,7 +95,7 @@ In the router details screen, click the `Attach External Network` button to atta
 
 To detach a router from an external network, you must first open the [router details](/mc/compute/networks/view-router) screen.  In the `Manage` column, select the `Options` button for the router you wish to view the details of and click the `Router Details` item:
 
-<img src="media/launch-router-details.png" width="580" alt="" />
+<img src="media/launch-router-details.jpg" width="580" alt="" />
 
 You can also launch the router details screen by, in the `Router Name` column,  clicking on the name of the router you wish to view the details of.
 

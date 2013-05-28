@@ -30,15 +30,15 @@ Before you perform any project management, you must:
 
 To create a project in the MC, you can access the project screen by, in the `Account` menu, select `Manage Projects`:
 
-<img src="media/manage-projects-launch.png" width="580" alt="" />
+<img src="media/manage-projects-launch.jpg" width="580" alt="" />
 
 This launches the projects screen of the [account and services dashboard](/mc/account/).  In the projects screen, click the `+ New Project` button to open the new projects pane:
 
-<img src="media/create-projects.png" width="580" alt="" />
+<img src="media/create-projects.jpg" width="580" alt="" />
 
 In the new projects pane, enter a `Project name` and `Description`, then click the `Create Project` button.  Your project is created and now appears in the projects screen:
 
-<img src="media/created-project.png" width="580" alt="" />
+<img src="media/created-project.jpg" width="580" alt="" />
 
 **Note**:  When you create a project, by default it contains one network, one subnet, and one router (which has routes to ext-net and the project's default subnet).
 

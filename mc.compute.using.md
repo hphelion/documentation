@@ -17,7 +17,7 @@ This overview page for the use cases covers the following topics:
 
 ##What you need to get started## {#UseCaseStart}
 
-What the customers need to get started--signup info, etc. including links to appropriate pages.
+What you need to get started--signup info, etc. including links to appropriate pages.
 
 
 ##List and descriptions of available use cases## {#UseCaseList}

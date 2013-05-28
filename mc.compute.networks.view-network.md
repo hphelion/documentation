@@ -31,7 +31,7 @@ Before you can view the details of an existing network, you must:
 
 You can access the network details screen from the [network screen](/mc/compute/networks) by, in the `Manage` column of the `Networks` list, select the `Options` button in the row of the network you want to delete, and choose the `Network Details` option.
 
-<img src="media/network-details-launch.png" width="580" alt="" />
+<img src="media/network-details-launch.jpg" width="580" alt="" />
 
 You can also launch the network details screen from the network screen by, in the `Networks` list, clicking the name of the network for which you want to examine the details.
 
@@ -44,15 +44,15 @@ The network details screen is divided into several panes: information pane, subn
 
 The information pane provides basic information about the selected network, such as the name, ID, and status.  It also contains buttons to allow you to enable and disable the network, create a subnet, and delete the network.
 
-<img src="media/network-details-info.png" width="580" alt="" />
+<img src="media/network-details-info.jpg" width="580" alt="" />
 
 The subnets pane lists the subnets for the network, including their CIDR, Gateway IP, and DHCP information.  The list is sorted by `Name` by default.
 
-<img src="media/network-details-subnets.png" width="580" alt="" />
+<img src="media/network-details-subnets.jpg" width="580" alt="" />
 
 The ports pane lists the ports for the network, including any attached devices, IPs, MAC address, admin state, and status.  The list is sorted by `Name` by default.
 
-<img src="media/network-details-ports.png" width="580" alt="" />
+<img src="media/network-details-ports.jpg" width="580" alt="" />
 
 
 ##Sorting lists## {#Sorting}

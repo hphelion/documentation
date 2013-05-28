@@ -44,7 +44,7 @@ To delete an existing image, click the `Images` menu bar item.
 
 This launches the images screen.  In the images screen, INFO
 
-<img src="media/delete-network.png" width="580" alt="" />
+<img src="media/delete-network.jpg" width="580" alt="" />
 
 Your image is deleted.
 
