@@ -11,30 +11,29 @@ This page provides you with an overview of the main management console (MC) dash
 
 * [Overview of the dashboard](#Overview)
 * [Compute pane](#compute)
-* [Object storage pane](#object-storage)
 * [Activity stream pane](#activitystream)
 
-**Note**:  The compute functionality available through the MC discussed in these pages is only for the US East region; this funtionality is not available for the US West region. 
+**Note**:  The compute functionality available through the MC discussed in these pages is only for the US East region; this functionality is not available for the US West region. 
 
 
 ##Overview of the dashboard## {#Overview}
 
-To access the main MC dashboard, from the `Dashboard` menu in the main menu bar select `All Services':
+To access the main MC dashboard, from the `Dashboard` menu in the main menu bar select `Dashboard`:
 
-<img src="media/main-dash-all-services.jpg" width="580" alt="" />
+<img src="media/main-dash-all-services.png" width="580" alt="" />
 
-The main MC dashboard displays all your active services.  In this example, the user has the compute service active for US West, an active object storage account, and his activity stream is displayed.  See the sections below for a bit more discussion!
+The main MC dashboard displays all your active services.  In this example, the user has the compute service active for several availability zones in the US West region and one for the US East region.  His activity stream is also displayed.  See the sections below for a bit more discussion!
 
 
 ##Compute pane## {#compute}
 
-The compute pane of the main MC dashboard displays your active availability zones (AZs), divided by region.  This user, for example, has two AZs in region `US West`.
+The compute pane of the main MC dashboard displays your active availability zones (AZs), divided by region.  This user, for example, has three compute instances in region `US West` and one in US East.
 
 <img src="media/main-dash.png" width="580" alt="" />
 
-If you want to go straight to the compute dashboard without first going through the main MC dashboard, just select the `Compute` option from the `Dashboard` item in the main menu bar.
+If you want to go straight to the compute dashboard without first going through the main MC dashboard, just select the appropriate `Compute` option from the `Services` item in the main menu bar.
 
-<img src="media/main-dash-compute-menu-detail.jpg" width="580" alt="" />
+<img src="media/main-dash-compute-us-east.png" alt="" />
 
 **Note**:  You can also navigate to a particular activity zone via the main menu bar.
 
@@ -45,7 +44,7 @@ You can manage your activity by clicking the `Manage` button next to the AZ you 
 For additional information about the compute functions available through the MC, surf on over to the [MC compute page](/mc/compute).  For an overview of HP Cloud's compute features, please see the [HP Cloud compute overview](/compute) page.
 
 
-##Object storage pane## {#object-storage}
+<!-- ##Object storage pane## {#object-storage}
 
 The object storage pane of the main MC dashboard appears directly below the [compute pane](#compute), divided by region.
 
@@ -57,9 +56,9 @@ To access your object storage containers, just click the `Browse Containers` but
 
 This user has two containers in the `US West` region: `Nova-stuff` (which contains one object) and `fog-rocks` (which is empty).  The information block for each container gives you the `Object Count`, `Size`, `Sharing` information, and indicates whether or not CDN is enabled.  You can also use the object storage details screen to create new public or private containers.
 
-<!--For additional information about the compute functions available through the MC, surf on over to the [MC object storage page](/mc/object-storage).  -->
+For additional information about the compute functions available through the MC, surf on over to the [MC object storage page](/mc/object-storage). 
 
-For an overview of HP Cloud's object storage features, please see the [HP Cloud object storage overview](/object-storage/) page.
+For an overview of HP Cloud's object storage features, please see the [HP Cloud object storage overview](/object-storage/) page. -->
 
 ##Activity stream pane## {#activitystream}
 
