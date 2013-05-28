@@ -14,6 +14,8 @@ HP Cloud consists of a bunch of useful services--compute, object storage, block 
 * [Account management](#AccountManagement)
 * [For further information](#FurtherInformation)
 
+**Note**:  The compute functionality available through the MC discussed in these pages is only for the US East region; this funtionality is not available for the US West region. 
+
 
 ##Management console overview## {#Overview}
 

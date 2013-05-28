@@ -14,6 +14,9 @@ This page provides you with an overview of the main management console (MC) dash
 * [Object storage pane](#object-storage)
 * [Activity stream pane](#activitystream)
 
+**Note**:  The compute functionality available through the MC discussed in these pages is only for the US East region; this funtionality is not available for the US West region. 
+
+
 ##Overview of the dashboard## {#Overview}
 
 To access the main MC dashboard, from the `Dashboard` menu in the main menu bar select `All Services':
