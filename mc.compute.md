@@ -17,7 +17,7 @@ This page provides you with an overview of the management console (MC) compute d
 
 The MC compute main dashboard displays your active availability zones, divided by region:
 
-<img src="media/compute-dash00.jpg" width="580" alt="" />
+<img src="media/main-dash-all-services.png" width="580" alt="" />
 
 In this example, the user has two AZs in the `US West` region.
 
