@@ -39,7 +39,7 @@ You can also launch the router details screen from the network screen by, in the
 
 The router details screen is divided into the information pane and the interfaces pane.
 
-<img src="media/router-panes.jpg" width="580" alt="" />
+<img src="media/router-panes-info.jpg" width="580" alt="" />
 
 The information pane provides basic information about the selected router, such as name, ID, admin state (enabled or disabled), status (active or inactive), and whether or not the router is attached to an external network.  It also contains buttons to allow you to [enable or disable](/mc/compute/networks/manage-routers#Enabling/) the router,  [attach or detach](/mc/compute/networks/manage-routers#AttachExternal) the router to external networks, and [add an interface](/mc/compute/networks/manage-routers#Attaching) to a router.
 
@@ -48,6 +48,7 @@ The information pane provides basic information about the selected router, such 
 The interfaces pane lists the interfaces associated with the router, including their gateway IP address, type, admin state (enabled or disabled), and status.
 
 <img src="media/router-interfaces.jpg" width="580" alt="" />
+
 
 
 ##Sorting the interfaces list## {#Sorting}

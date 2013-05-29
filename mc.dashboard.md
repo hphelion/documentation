@@ -39,7 +39,7 @@ If you want to go straight to the compute dashboard without first going through 
 
 You can manage your activity by clicking the button of the compute instance you are interested in; this launches the Compute dashboard for that instance.  For example, if you want to access the `US East` compute instance, just click that button to see the screen:
 
-<img src="media/servers-main.png" width="580" alt="" />
+<img src="media/servers-main.jpg" width="580" alt="" />
 
 For additional information about the compute functions available through the MC, surf on over to the [MC compute page](/mc/compute).  For an overview of HP Cloud's compute features, please see the [HP Cloud compute overview](/compute) page.
 
@@ -64,7 +64,7 @@ For an overview of HP Cloud's object storage features, please see the [HP Cloud 
 
 The activity stream pane helps you track of various data about the resources you're consuming, their performance, availability, and other activity.  
 
-<img src="media/activity-stream-detail.jpg" width="580" alt="" />
+<img src="media/activity-stream-detail.png" width="580" alt="" />
 
 This pane displays platform alerts, including appropriate date and time information:
 
