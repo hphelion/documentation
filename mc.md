@@ -34,7 +34,7 @@ You can navigate to your preferred service in one of two easy ways.  First, you 
 
 <img src="media/main-dash-compute-menu-detail.png"  alt="" />
 
-You can also navigate by clicking the appropriate button in the service pane.  For example, if you want to navigate to the compute dashboard for US West for availability zone 1, in the compute pane click the `US East` button:
+You can also navigate by clicking the appropriate button in the service pane.  For example, if you want to navigate to the compute dashboard for the US East region compute instance, in the compute pane click the `US East` button:
 
 <img src="media/main-dash-compute-us-east.png" alt="" />
 
