@@ -16,7 +16,7 @@ The management console (MC) compute dashboard security groups screen allows you 
 
 The images screen displays your compute instance security groups information for the availability zone (AZ) you have selected.
 
-<img src="media/security-groups-main.png" width="580" alt="" />
+<img src="media/security-groups-main.jpg" width="580" alt="" />
 
 From this screen you can:
 

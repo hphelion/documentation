@@ -40,7 +40,7 @@ You can also launch the network details screen from the network screen by, in th
 
 The network details screen is divided into several panes: information pane, subnets pane, and ports pane:
 
-<img src="media/network-panes.jpg" width="580" alt="" />
+<img src="media/network-panes-info.jpg" width="580" alt="" />
 
 The information pane provides basic information about the selected network, such as the name, ID, and status.  It also contains buttons to allow you to enable and disable the network, create a subnet, and delete the network.
 
@@ -64,7 +64,7 @@ You can sort the lists of subnets (in the subnet pane) or ports (in the ports pa
 
 You can edit the name of a network in the network details screen.  In the information pane, click the `Name` of the network.
 
-<img src="media/network-name-change.jpg" width="580" alt="" />
+<img src="media/network-name-change02.jpg" width="580" alt="" />
 
 In the pop-up displayed, enter the new name and press the `Enter` key on your keyboard to rename the network.
 
