@@ -16,7 +16,7 @@ The management console (MC) compute dashboard images screen allows you to view a
 
 The images screen displays your compute instance image information for the availability zone (AZ) you have selected.
 
-<img src="media/images-main.png" width="580" alt="" />
+<img src="media/images-main.jpg" width="580" alt="" />
 
 From this screen you can:
 

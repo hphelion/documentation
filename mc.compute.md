@@ -15,21 +15,21 @@ This page provides you with an overview of the management console (MC) compute d
 
 ##Compute dashboard overview## {#Overview}
 
-The MC compute main dashboard displays your active availability zones, divided by region:
+The MC compute main dashboard displays your active compute instances, divided by region:
 
-<img src="media/compute-dash00.jpg" width="580" alt="" />
+<img src="media/main-dash-all-services.png" width="580" alt="" />
 
-In this example, the user has two AZs in the `US West` region.
+In this example, the user has three instances in the `US West` region and one in `US East`.
 
 ##Navigating to other compute screens## {#Navigating}
 
-To manage the compute activities for a particular AZ in a particular region, just click the `Manage` button next to the one you're interested in.
+You can navigate to your preferred service in one of two easy ways.  First, you can simply choose your service (and availability zone) from the top-level menu bar.  For example, if you want to go to the compute dashboard, in the `Services` menu select the `Compute` service you want:
 
-<img src="media/compute-dash01.jpg" width="580" alt="" />
+<img src="media/main-dash-compute-menu-detail.png"  alt="" />
 
-Clicking the `Manage` button takes you to the [Servers screen for compute](/mc/compute/servers/).  
+You can also navigate by clicking the appropriate button in the service pane.  For example, if you want to navigate to the compute dashboard for the US East region, in the compute pane click the `US East` button:
 
-<img src="media/compute00.jpg" width="580" alt="" />
+<img src="media/main-dash-compute-us-east.png" alt="" />
 
 The full list screens available for your compute management pleasure:
 
