@@ -40,19 +40,19 @@ In addition, you can also surf to the `Manage Services`, `My Account`, `Manage A
 
 From the account and services dashboard, you can perform any of the following tasks:
 
-* [Managing your services](/mc/account/services/) <br>
-* [Viewing account overview information](/mc/account/overview/) <br>
-* [Updating account information](/mc/account/update-account/) <br>
-* [Updating account password](/mc/account/password/) <br>
-* [Updating account email address](/mc/account/email/) <br>
-* [Managing API keys](/mc/account/api-keys/) <br>
-* [Managing account users](/mc/account/users/) <br>
-* [Managing projects](/mc/account/projects/) <br>
-* [Viewing your billing history](/mc/account/billing-history/) <br>
-* [Editing billing information](/mc/account/billing-info/) <br>
-* [Viewing the activity screen](/mc/account/activity/) <br>
-* [Viewing notifications and privacy information](/mc/account/notification/) <br>
-* [Viewing account information](/mc/account/info/) <br>
+* Managing your services
+* Viewing account overview information
+* Updating account information
+* Updating account password
+* Updating account email address
+* Managing API keys
+* Managing account users
+* Managing projects
+* Viewing your billing history
+* Editing billing information
+* Viewing the activity screen
+* Viewing notifications and privacy information
+* Viewing account information
 
 ##For further information## {#ForFurtherInformation}
 
