@@ -1,18 +1,22 @@
 ---
 layout: default
-title: "Management console: Creating a new server"
-permalink: /mc/compute/servers/create-new/
+title: "Management console: Managing servers"
+permalink: /mc/compute/servers/manage/
 product: mc-compute
 
 ---
-# Management console: Creating a new server
+# Management console: Managing servers
 
-This page describes how to create a new server from a bootable volume using the [networks screen](/mc/compute/networks/) of the [management console](/mc/) (MC).  This page covers the following topics:
+This page describes how to manage servers using the [networks screen](/mc/compute/networks/) of the [management console](/mc/) (MC).  This page covers the following topics:
 
 * [Before you begin](#Overview)
 * [About the image types](#ImageTypes)
 * [Creating a server](#Creating)
+* [Connecting to a server](#Connecting)
+* [Rebooting a server](#Rebooting)
+* [Rebuilding a server](#Rebuilding)
 * [Terminating a server](#Deleting)
+* [Viewing server details](#Viewing)
 * [For further information](#ForFurtherInformation)
 
 ##Before you begin## {#Overview}
@@ -77,15 +81,79 @@ When you have filled out all the fields appropriately, click the `Create` button
 <!-- Do we want to link stuff here to the glossary terms? -->
 
 
+##Connecting to a server## {#Connecting)
+
+To connect to an existing server, in the [servers screen](/mc/compute/servers/), in the `Manage` column of the servers list, select the `Options` button in the row of the server to which you want to connect, and choose the `Connect to Server` option:
+
+<img src="media/server-connecting.png" width="580" alt="" />
+
+You are asked to confirm this connection:
+
+<img src="media/server-connect-verify.png" width="580" alt="" />
+
+Click the `Okay` button to confirm, and your server is connected.
+
+
+##Rebooting a server## {#Rebooting)
+
+To reboot a server, in the [servers screen](/mc/compute/servers/), in the `Manage` column of the servers list, select the `Options` button in the row of the server to which you want to connect, and choose the `Reboot Server` option:
+
+<img src="media/server-rebooting.png" width="580" alt="" />
+
+You are asked to confirm the reboot:
+
+<img src="media/server-reboot-confirm.png" width="580" alt="" />
+
+Click the `Yes, reboot this server` button to confirm the reboot.  While your server is rebooting, you can see the status `Reboot` displayed.  
+
+<img src="media/server-reboot-process.png" width="580" alt="" />
+
+When the reboot is complete, the status changes to `Active`.
+
+You can also reboot a server by selecting the `Reboot` button in the [server details](#Viewing) screen:
+
+<img src="media/server-details.png" width="580" alt="" />
+
+
+##Rebuilding a server## {#Rebuilding)
+
+To rebuild a server, in the [servers screen](/mc/compute/servers/), in the `Manage` column of the servers list, select the `Options` button in the row of the server to which you want to connect, and choose the `Rebuild Server` option:
+
+<img src="media/server-rebuilding.png" width="580" alt="" />
+
+You are asked to confirm the rebuild:
+
+<img src="media/server-rebuild-confirm.png" width="580" alt="" />
+
+Click the `Yes, rebuild this server` button to confirm the reboot.  While your server is rebooting, you can see the status `Rebuild` displayed.  
+
+<img src="media/server-rebuild-process.png" width="580" alt="" />
+
+When the rebuild is complete, the status changes to `Active`.
+
+You can also rebuild a server by selecting the `Rebuild` button in the [server details](#Viewing) screen:
+
+<img src="media/server-details.png" width="580" alt="" />
+
+
 ##Terminating a server## {#Terminating}
 
 To terminate a server, in the [servers screen](/mc/compute/servers/), in the `Manage` column of the servers list, select the `Options` button in the row of the server you want to terminate, and choose the `Terminate` option:
 
+<img src="media/server-terminating.png" width="580" alt="" />
 
-
-You can also terminate a server by selecting the `Terminate` button in the [server details](/mc/compute/server/view-server/) screen:
+You can also terminate a server by selecting the `Terminate` button in the [server details](#Viewing) screen:
 
 <img src="media/server-details.png" width="580" alt="" />
+
+
+##Viewing server details## {#Viewing}
+
+To launch the server details screen, in the `Manage` column of the servers list, select the `Options` button in the row of the server you want to terminate, and choose the `View Details` option: 
+
+<img src="media/server-details.png" width="580" alt="" />
+
+For more information on the content of this screen, please take a look at the [Viewing server details](/mc/compute/servers/view-server/) page.
 
 
 ##For further information## {#ForFurtherInformation}
