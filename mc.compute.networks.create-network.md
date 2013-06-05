@@ -70,5 +70,6 @@ Select the button `Yes, delete this network`.  Your network is deleted and no lo
 * For information about the network details screen, take a look at the [Viewing network details](/mc/compute/networks/view-network/) page
 * For basic information about our HP Cloud compute services, take a look at the [HP Cloud compute overview](/compute/) page
 * Use the MC [site map](/mc/sitemap) for a full list of all available MC documentation pages
-* For information about the Open Stack networking ("Quantum") features, surf on over to  [their Quantum wiki](https://wiki.openstack.org/wiki/Quantum)
+* For information about the Open Stack networking features, surf on over to [their networking wiki](https://wiki.openstack.org/wiki/Quantum)
+
 
