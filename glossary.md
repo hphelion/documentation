@@ -45,8 +45,11 @@ For a quick search of the [Knowledge Base](https://community.hpcloud.com/knowled
 ###[Bindings](https://community.hpcloud.com/search/knowledge/bindings) ### {#Bindings}
 :    Short for "language binding"--a library which provides an interface to functionality from a different programming language library.
 
-###[BlockStorage](https://community.hpcloud.com/search/knowledge/block+storage) ### {#BlockStorage}
+###[Block Storage](https://community.hpcloud.com/search/knowledge/block+storage) ### {#BlockStorage}
 :    Information stored in raw form, with no consideration as to the type of information.
+
+###[Bootable Image](https://community.hpcloud.com/search/knowledge/bootable+image) {#BootableImage}
+:    *See* [Volume (bootable)](#VolumeBootable)
 
 ###[Bucket](https://community.hpcloud.com/search/knowledge/bucket) ### {#Bucket}
 :    A collection of cloud objects with a unique, user-assigned key.
@@ -126,7 +129,19 @@ For a quick search of the [Knowledge Base](https://community.hpcloud.com/knowled
 :    Allocation and dynamic distribution of identity information across security domains.
 
 ###[Image](https://community.hpcloud.com/search/knowledge/image) ### {#Image}
-:    An installable release package of a program, application, or software system.  As in, "We need to install the new image of Ruby Fog."
+:    1) An installable release package of a program, application, or software system.  As in, "We need to install the new image of Ruby Fog."  2) A copy of a virtual server including the operating system information, system state, and application configurations.
+
+###[Image (bootable)](https://community.hpcloud.com/search/knowledge/image+bootable) ### {#ImageBootable)
+:    *See* [Volume (bootable)](#VolumeBootable).
+
+###[Image (partner)](https://community.hpcloud.com/search/knowledge/image+partner) ### {#ImagePartner)
+:    definition
+
+###[Image (private)](https://community.hpcloud.com/search/knowledge/image+private) ### {#ImagePrivate)
+:    definition
+
+###[Image (public)](https://community.hpcloud.com/search/knowledge/image+public) ### {#ImagePublic)
+:    definition
 
 ###[Instance](https://community.hpcloud.com/search/knowledge/instance) ### {#Instance}
 :    A virtual machine or server in the cloud environment.
@@ -173,14 +188,23 @@ For a quick search of the [Knowledge Base](https://community.hpcloud.com/knowled
 
 ## P ##
 
+###[Partner Image](https://community.hpcloud.com/search/knowledge/private+image) {#PartnerImage}
+:    *See* [Image (partner)](#ImagePartner)
+
 ###[PHP](https://community.hpcloud.com/search/knowledge/PHP) ### {#PHP}
 :    Hypertext pre-processor--a general-purpose server-side scripting language used to create dynamic (as opposed to static, i.e. that adjust to the device and software with which they are displayed) web pages.
 
 ###[PowerShell](https://community.hpcloud.com/search/knowledge/PowerShell) ### {#PowerShell}
 :    A Microsoft Windows command-line shell task automation framework which includes an interactive prompt and a scripting environment that can be used independently or in combination.  PowerShell is built on top of the .NET Framework common language runtime (CLR) and the .NET Framework, and accepts and returns .NET Framework objects.
 
+###[Private Image](https://community.hpcloud.com/search/knowledge/private+image) {#PrivateImage}
+:    *See* [Image (private)](#ImagePrivate)
+
 ###[Provisioning](https://community.hpcloud.com/search/knowledge/Provisioning) ### {#Provisioning}
 :    Allocating, auditing, and monitoring cloud resources for those who accesses and utilizes them. 
+
+###[Public Image](https://community.hpcloud.com/search/knowledge/public+image) {#PublicImage}
+:    *See* [Image (public)](#ImagePublic)
 
 ## Q ##
 
@@ -244,6 +268,12 @@ For a quick search of the [Knowledge Base](https://community.hpcloud.com/knowled
 :    A digital representation of a person, system, or service who uses HP Cloud Services. The Identity Service will validate that incoming request are being made by the user who claims to be making the call. Users have a login and may be assigned tokens to access resources. Users can scope their authentication to a tenant which then limits where and how their tokens can be used to interact with services. Users are associated with tenants based on roles assigned to them with that tenant.
 
 ## V ##
+
+###[Volume](blah) ### {#Volume}
+:    Definition
+
+###[Volume (bootable)](https://community.hpcloud.com/search/knowledge/volume+bootable) ### {#VolumeBootable)
+:    A previously-saved (by a user) bootable server [volume](#Volume) (also sometimes called an [image](#Image)).
 
 ## W ##
 
