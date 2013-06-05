@@ -37,7 +37,7 @@ The servers screen displays the active servers you have available for AZ you sel
 
 From this screen you can:
 
-* Create a new server
+* [Create a new server](/mc/compute/servers/create-new/)
 * Apply a filter to list of running servers
 * Display details for a particular server
 * Connect to a server
