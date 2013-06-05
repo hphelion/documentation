@@ -66,7 +66,7 @@ The management console (MC) compute dashboard networks screen allows you to view
 * [Networks screen functions](#Functions)
 * [For further information](#ForFurtherInformation)
 
-**Note**: This is the OpenStack "Quantum" functionality; for more information, you might look at [their Quantum wiki](https://wiki.openstack.org/wiki/Quantum).
+**Note**: HP Cloud networks features are based on the OpenStack networking functionality; for more information, you might look at [their wiki](https://wiki.openstack.org/wiki/Quantum).
 
 
 ##Networks screen overview## {#Overview}

@@ -31,16 +31,16 @@ Before you can begin creating or deleting a server, you must:
 When you create an image, you can do so using one of several different existing image types.  When you [create a server](#Creating) your sever, you must select among one of these image types:
 
 **Public**
-:  Definition
+:  Publicly-available images, such as Debian Squeeze
 
 **Partner**
-:  Definition
+:  Images available through partners
 
 **Private**
-:  Definition
+:  Private image that are available only to a limited set of users
 
 **Bootable Volume**
-:  Definition
+:  Saved bootable volume that you previously created
 
 <!-- add image type defs. to glossary -->
 <!-- creating a bootable volume will be in the compute.volume/block storage pages, so may need to create *those*, too; oy -->
@@ -66,6 +66,8 @@ In the new servers screen, select the values for the various fields:
 * From the `Key name` pull-down menu, select the key name you want for your server
 * In the `Security Groups` text field, enter the security groups of which you want your server to be a part
 * In the `Tags` text field, enter any tags you want to associate to your server
+
+<img src="media/server-new-filled.png" width="580" alt="" />
 
 When you have filled out all the fields appropriately, click the `Create` button.  Your new server is created.
 
