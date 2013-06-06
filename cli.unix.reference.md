@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "UNIX CLI: Command Line Reference"
-permalink: /cli/unix/reference/
+permalink: /cli/unix/2/reference/
 product: unix-cli
 
 ---
@@ -94,7 +94,7 @@ Create or edit your account credentials.
 ###Description
 Create or edit your account credentials. If you do not specify an account name on the command line, the default account is updated.  If you do not specify name value pairs, you are prompted to input the account values.
 
-You  need your Access Key Id, Secret Key and Tenant Id from the HP Cloud web site to set up your account. Optionally, you can specify your own endpoint to access, but in most cases we recommend you use the default.
+You  need your Access Key Id, Secret Key and Project (aka Tenant) Id from the HP Cloud web site to set up your account. Optionally, you can specify your own endpoint to authorize your identity, but in most cases we recommend you use the default.
 
 Availability zones typically have the format `az-1.region-a.geo-1` or `region-a.geo-1`, depending on the service.  See your account API keys page to see your list of activated availability zones: https://console.hpcloud.com/account/api_keys
 
@@ -104,8 +104,8 @@ The interactive mode prompts you for the following values:
 
 * Access Key Id
 * Secret Key
-* Auth Uri
-* Tenant Id
+* Identify (Auth) Uri
+* Project (aka Tenant) Id
 * Compute zone
 * Storage zone
 * Block zone
@@ -119,6 +119,10 @@ The command line mode allows you to set the following values:
 * compute_availability_zone
 * storage_availability_zone
 * cdn_availability_zone
+* dns_availability_zone
+* lb_availability_zone
+* db_availability_zone
+* network_availability_zone
 * block_availability_zone
 * connect_timeout
 * read_timeout
@@ -185,7 +189,7 @@ Create or edit your account credentials.
 ###Description
 Create or edit your account credentials. If you do not specify an account name on the command line, the default account is updated.  If you do not specify name value pairs, you are prompted to input the account values.
 
-You  need your Access Key Id, Secret Key and Tenant Id from the HP Cloud web site to set up your account. Optionally, you can specify your own endpoint to access, but in most cases we recommend you use the default.
+You  need your Access Key Id, Secret Key and Project (aka Tenant) Id from the HP Cloud web site to set up your account. Optionally, you can specify your own endpoint to authorize your identity, but in most cases we recommend you use the default.
 
 Availability zones typically have the format `az-1.region-a.geo-1` or `region-a.geo-1`, depending on the service.  See your account API keys page to see your list of activated availability zones: https://console.hpcloud.com/account/api_keys
 
@@ -195,8 +199,8 @@ The interactive mode prompts you for the following values:
 
 * Access Key Id
 * Secret Key
-* Auth Uri
-* Tenant Id
+* Identify (Auth) Uri
+* Project (aka Tenant) Id
 * Compute zone
 * Storage zone
 * Block zone
@@ -210,6 +214,10 @@ The command line mode allows you to set the following values:
 * compute_availability_zone
 * storage_availability_zone
 * cdn_availability_zone
+* dns_availability_zone
+* lb_availability_zone
+* db_availability_zone
+* network_availability_zone
 * block_availability_zone
 * connect_timeout
 * read_timeout
@@ -430,12 +438,24 @@ List addresses for availability zone `az-2.region-a.geo-1`:
 `addresses:list`
 
 ##addresses:add## {#addresses:add}
-Add or allocate a new public IP address.
+Allocate a new public IP address.
 
 ###Syntax
 `hpcloud addresses:add`
 
 ###Options
+**-n, --network=NETWORK**
+: Name or id of the network associated with this IP.
+
+**-p, --port=PORT**
+: Name or id of the port associated with this IP.
+
+**--fixed-ip=FIXED_IP**
+: Fixed IP address to associate with this IP.
+
+**--floating-ip=FLOATING_IP**
+: Floating IP to assign.
+
 **-z, --availability-zone=AVAILABILITY_ZONE**
 : Set the availability zone.
 
@@ -448,25 +468,25 @@ Add or allocate a new public IP address.
 
 
 ###Description
-Add or allocate a new public IP address from the pool of available IP addresses.  Optionally, you can set an availability zone.
+Add or allocate a new public IP address from the pool of available IP addresses.  If a network is not specified, the first external network found will be used.
 
 ###Examples
-Add a new public IP address:
+Add a new public IP address to external network:
 
     hpcloud addresses:add
 
-Add a new public IP address in availability zone `az-2.region-a.geo-1`:
+Add a new IP address to `netty` in availability zone `az-2.region-a.geo-1`:
 
-    hpcloud addresses:add -z az-2.region-a.geo-1
+    hpcloud addresses:add -n netty -z az-2.region-a.geo-1
 
 ###Aliases
 `addresses:allocate`
 
 ##addresses:associate## {#addresses:associate}
-Associate a public IP address to a server instance.
+Associate a public IP address to a port.
 
 ###Syntax
-`hpcloud addresses:associate <ip_or_id> <server_name_or_id>`
+`hpcloud addresses:associate <ip_or_id> <port_name_or_id>`
 
 ###Options
 **-z, --availability-zone=AVAILABILITY_ZONE**
@@ -481,20 +501,20 @@ Associate a public IP address to a server instance.
 
 
 ###Description
-Associate an existing and unassigned public IP address, to the specified server instance.  Optionally, you can specify an availability.
+Associate an existing and unassigned public IP address, to the specified port.  Optionally, you can specify an availability.
 
 ###Examples
-Associate the address `111.111.111.111` to server `myserver`:
+Associate the address `111.111.111.111` to port `myport`:
 
-    hpcloud addresses:associate 111.111.111.111 myserver
+    hpcloud addresses:associate 111.111.111.111 myport
 
-Associate the address `111.111.111.111` to server `myserver` in availability zone `az-2.region-a.geo-1`:
+Associate the address `111.111.111.111` to port `myport` in availability zone `az-2.region-a.geo-1`:
 
-    hpcloud addresses:associate 111.111.111.111 myserver -z az-2.region-a.geo-1
+    hpcloud addresses:associate 111.111.111.111 myport -z az-2.region-a.geo-1
 
 
 ##addresses:disassociate## {#addresses:disassociate}
-Disassociate any server instance associated to the public IP address.
+Disassociate any port associated to the public IP address.
 
 ###Syntax
 `hpcloud addresses:disassociate ip_or_id [ip_or_id ...]`
@@ -512,10 +532,10 @@ Disassociate any server instance associated to the public IP address.
 
 
 ###Description
-Disassociate any server instance associated to the public IP address. The public IP address is not removed or released to the pool. Optionally, you can specify an availability zone.
+Disassociate any port associated to the public IP address. The public IP address is not removed or released to the pool. Optionally, you can specify an availability zone.
 
 ###Examples
-Disassociate IP addresses `111.111.111.111` and `127.0.0.1` from the default server:
+Disassociate IP addresses `111.111.111.111` and `127.0.0.1` from their ports:
 
     hpcloud addresses:disassociate 111.111.111.111 127.0.0.1
 
@@ -1221,7 +1241,7 @@ Update a DNS record.
 Update a DNS record to the specified domain with the given name, type and data.
 
 ###Examples
-Create a DNS record for domain `mydomain.com` and record `A` for `www.mydomain.com` pointing to address 10.0.0.1:
+Update a DNS domain `mydomain.com` record `A` for `www.mydomain.com` pointing to address 10.0.0.1:
 
     hpcloud dns:records:update mydomain.com. www.mydomain.com A 10.0.0.1
 
@@ -1328,11 +1348,11 @@ Update a DNS domain.
 Update a DNS domain with the specified name.  Optionally, you can specify an email or a time to live (TTL) to adjust DNS caching for your entry.  The default TTL is 3600 (one hour).
 
 ###Examples
-Create a new DNS domain `mydomain.com` with email address `email@example.com`:
+Update DNS domain `mydomain.com` with email address `email@example.com`:
 
     hpcloud dns:update mydomain.com. email@example.com
 
-Create a new DNS domain `mydomain.com` with email address `email@example.com` and TTL 7200:
+Update DNS domain `mydomain.com` with email address `email@example.com` and TTL 7200:
 
     hpcloud dns:update mydomain.com. email@xample.com -t 7200
 
@@ -1701,6 +1721,8 @@ add a key pair
 **-o, --output**
 : Save key pair in the ~/.hpcloud/keypairs folder.
 
+# Default: true
+
 **-z, --availability-zone=AVAILABILITY_ZONE**
 : Set the availability zone.
 
@@ -1910,6 +1932,433 @@ Remove the key pair `mykey` for availability zone `az-2.region-a.geo-1:
 ###Aliases
 `keypairs:rm, keypairs:delete, keypairs:del`
 
+##lb## {#lb}
+List the available load balancers.
+
+###Syntax
+`hpcloud lb [name_or_id ...]`
+
+###Options
+**-c, --columns=COLUMNS**
+: Comma separated list of columns in report.
+
+**-d, --separator=SEPARATOR**
+: Use the specified value as the report separator.
+
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
+
+###Description
+Lists all the load balancers that are associated with the account. The list begins with identifier and contains name, size, type, create date, status, description and servers on which it is attached.  Optionally, you can filter the list by specifying name or ID.
+
+###Examples
+List all load balancers:
+
+    hpcloud lb
+
+List the details for load balancers `1`:
+
+    hpcloud lb 1
+
+List the details for load balancers `testvol`:
+
+    hpcloud lb testvol
+
+###Aliases
+`lb:list`
+
+##lb:add## {#lb:add}
+Add a load balancer.
+
+###Syntax
+`hpcloud lb:add <name> <algorithm> <protocol> <port> -n, --nodes=NODES`
+
+###Options
+**-n, --nodes=NODES**
+: Nodes to associate with the load balancer. Semicolon separated list of colon separated IP and port pairs
+
+**-v, --ips=IPS**
+: Semicolon separated list of of virtual IPs Ids to associate with the load balancer.
+
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
+
+###Description
+Add a load balancer with the specified name, algorithm, protocol and port.  You must specify a node and may specify a virtual IP id to create a load balancer.
+
+###Examples
+Create a new load balancer 'loady'
+
+    hpcloud lb:add loady ROUND_ROBIN HTTP 80 -n '10.1.1.1:80;10.1.1.2:81' -v '123;39393'
+
+
+##lb:algorithms## {#lb:algorithms}
+List the available load balancer algorithms.
+
+###Syntax
+`hpcloud lb:algorithms`
+
+###Options
+**-c, --columns=COLUMNS**
+: Comma separated list of columns in report.
+
+**-d, --separator=SEPARATOR**
+: Use the specified value as the report separator.
+
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
+
+###Description
+Lists all the available load balancers algorithms.
+
+###Examples
+List all algorithms:
+
+    hpcloud lb:algorithms
+
+
+##lb:limits## {#lb:limits}
+List the available load balancer limits.
+
+###Syntax
+`hpcloud lb:limits`
+
+###Options
+**-c, --columns=COLUMNS**
+: Comma separated list of columns in report.
+
+**-d, --separator=SEPARATOR**
+: Use the specified value as the report separator.
+
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
+
+###Description
+Lists all the available load balancers limits.
+
+###Examples
+List all limits:
+
+    hpcloud lb:limits
+
+
+##lb:nodes## {#lb:nodes}
+List the nodes associated with the specified load balancer.
+
+###Syntax
+`hpcloud lb:nodes name_or_id`
+
+###Options
+**-c, --columns=COLUMNS**
+: Comma separated list of columns in report.
+
+**-d, --separator=SEPARATOR**
+: Use the specified value as the report separator.
+
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
+
+###Description
+Lists all the nodes associated with the specified load balancer. The list begins with identifier and address, port, condition and status.
+
+###Examples
+List all nodes for load balancer 'balancer':
+
+    hpcloud lb:nodes balancer
+
+###Aliases
+`lb:nodes:list`
+
+##lb:nodes:add## {#lb:nodes:add}
+Add a node to the load balancer.
+
+###Syntax
+`hpcloud lb:nodes:add <load_balancer_name_or_id> <address> <port>`
+
+###Options
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
+
+###Description
+Add a node to the load balancer with the specified adddress and port.
+
+###Examples
+Create a new node for load balancer 'loady'
+
+    hpcloud lb:nodes:add loady 10.1.1.1 80
+
+
+##lb:nodes:remove## {#lb:nodes:remove}
+Remove the specified load balancer node.
+
+###Syntax
+`hpcloud lb:nodes:remove name_or_id address port`
+
+###Options
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
+
+###Description
+Remove load balancer node by specifying the name or id of the load balancer, the address and the port.
+
+###Examples
+Delete the load balancers `thing1` and `thing2`:
+
+    hpcloud lb:remove thing1 10.2.2.2 80
+
+###Aliases
+`lb:nodes:rm, lb:nodes:delete, lb:nodes:del`
+
+##lb:nodes:update## {#lb:nodes:update}
+Update a node in a load balancer.
+
+###Syntax
+`hpcloud lb:nodes:update <lb_name_or_id> <name_or_id> <condition>`
+
+###Options
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
+
+###Description
+Update a node in a load balancer with the specified condition.  The id of the node may be used or `address:port`.
+
+###Examples
+Update node '10.1.1.1:80' to 'DISABLED'
+
+    hpcloud lb:nodes:update loady 10.1.1.1:80 DISABLED
+
+Update node '1027580' to 'ENABLED'
+
+    hpcloud lb:nodes:update 220303 1027580 ENABLED
+
+
+##lb:protocols## {#lb:protocols}
+List the available load balancer protocols.
+
+###Syntax
+`hpcloud lb:protocols`
+
+###Options
+**-c, --columns=COLUMNS**
+: Comma separated list of columns in report.
+
+**-d, --separator=SEPARATOR**
+: Use the specified value as the report separator.
+
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
+
+###Description
+Lists all the available load balancers protocols.
+
+###Examples
+List all protocols:
+
+    hpcloud lb:protocols
+
+
+##lb:remove## {#lb:remove}
+Remove DNS domains (specified by name or ID).
+
+###Syntax
+`hpcloud lb:remove name_or_id [name_or_id ...]`
+
+###Options
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
+
+###Description
+Remove load balancers by specifying their names or ID. You may specify more than one load balacner name or ID on a command line.
+
+###Examples
+Delete the load balancers `thing1` and `thing2`:
+
+    hpcloud lb:remove thing1 thing2
+
+Delete the load balancer with ID 998:
+
+    hpcloud lb:remove 998
+
+###Aliases
+`lb:rm, lb:delete, lb:del`
+
+##lb:update## {#lb:update}
+Update a node in a load balancer.
+
+###Syntax
+`hpcloud lb:update <lb_name_or_id> <name_or_id> <algorithm>`
+
+###Options
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
+
+###Description
+Update a load balancer with the specified algorithm.  The name or id of the load balancer may be used to identify it.
+
+###Examples
+Update node 'loady' to 'ROUND_ROBIN'
+
+    hpcloud lb:update loady ROUND_ROBIN
+
+Update node '220303' to 'LEAST_CONNECTIONS'
+
+    hpcloud lb:update 220303 LEAST_CONNECTIONS
+
+
+##lb:versions## {#lb:versions}
+List the available load balancer versions.
+
+###Syntax
+`hpcloud lb:versions`
+
+###Options
+**-c, --columns=COLUMNS**
+: Comma separated list of columns in report.
+
+**-d, --separator=SEPARATOR**
+: Use the specified value as the report separator.
+
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
+
+###Description
+Lists all the available load balancers versions.
+
+###Examples
+List all versions:
+
+    hpcloud lb:versions
+
+
+##lb:virtualips## {#lb:virtualips}
+List the virtual IPs for the specified load balancer.
+
+###Syntax
+`hpcloud lb:virtualips name_or_id`
+
+###Options
+**-c, --columns=COLUMNS**
+: Comma separated list of columns in report.
+
+**-d, --separator=SEPARATOR**
+: Use the specified value as the report separator.
+
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
+
+###Description
+Lists the virtual IPs for the specified load balancer.
+
+###Examples
+List the virtual IPs for 'loader':
+
+    hpcloud lb:virtualips loader
+
+
 ##list## {#list}
 List containers or container contents.
 
@@ -2083,6 +2532,330 @@ Move file `file.txt` to new name and location `old/backup.txt` in container `my_
 ###Aliases
 `mv`
 
+##networks## {#networks}
+List the available networks.
+
+###Syntax
+`hpcloud networks [name_or_id ...]`
+
+###Options
+**-c, --columns=COLUMNS**
+: Comma separated list of columns in report.
+
+**-d, --separator=SEPARATOR**
+: Use the specified value as the report separator.
+
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
+
+###Description
+Lists all the networks that are associated with the account. The list begins with identifier and contains name, status, shared, admin state, and subnets.  Optionally, you can filter the list by specifying name or ID.
+
+###Examples
+List all networks:
+
+    hpcloud networks
+
+List the details for networks with id `1`:
+
+    hpcloud networks 1
+
+List the details for networks named `testo`:
+
+    hpcloud networks testo
+
+###Aliases
+`networks:list`
+
+##networks:add## {#networks:add}
+Add a network.
+
+###Syntax
+`hpcloud networks:add <name>`
+
+###Options
+**-u, --adminstateup**
+: Administrative state up.
+
+# Default: true
+
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
+
+###Description
+Add a new network in your account with the specified name.  Optionally, you can specify administrative state.
+
+###Examples
+Create a new network named 'netty':
+
+    hpcloud networks:add netty
+
+Create a new network named 'netty' admin state down:
+
+    hpcloud networks:add netty --no-adminstateup
+
+
+##networks:remove## {#networks:remove}
+Remove a network (specified by name or ID).
+
+###Syntax
+`hpcloud networks:remove name_or_id [name_or_id ...]`
+
+###Options
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
+
+###Description
+Remove network by specifying their names or ID. You may specify more than one network name or ID on a command line.
+
+###Examples
+Delete the network 'arpa' and 'darpa':
+
+    hpcloud networks:remove arpa darpa
+
+Delete the network with ID 998:
+
+    hpcloud networks:remove 998
+
+Delete the network `netty` for availability zone `region-a.geo-1`:
+
+    hpcloud networks:remove netty -z region-a.geo-1
+
+###Aliases
+`networks:rm, networks:delete, networks:del`
+
+##networks:update## {#networks:update}
+Update a network.
+
+###Syntax
+`hpcloud networks:update <name>`
+
+###Options
+**-u, --adminstateup**
+: Administrative state up.
+
+# Default: true
+
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
+
+###Description
+Update network in your account with the specified name.  The administrative state may be updated.
+
+###Examples
+Updated 'netty' to up:
+
+    hpcloud networks:update netty -u
+
+Update 'netty' admin state down:
+
+    hpcloud networks:update netty --no-adminstateup
+
+
+##ports## {#ports}
+List the available ports.
+
+###Syntax
+`hpcloud ports [name_or_id ...]`
+
+###Options
+**-c, --columns=COLUMNS**
+: Comma separated list of columns in report.
+
+**-d, --separator=SEPARATOR**
+: Use the specified value as the report separator.
+
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
+
+###Description
+Lists all the ports that are associated with the account. The list begins with identifier and contains name, network identifier, fixed IPs, MAC address, status, admin state, device identifier, and device owner.  Optionally, you can filter the list by specifying name or ID.
+
+###Examples
+List all ports:
+
+    hpcloud ports
+
+List the details for ports with id `1`:
+
+    hpcloud ports 1
+
+List the details for ports named `testo`:
+
+    hpcloud ports testo
+
+###Aliases
+`ports:list`
+
+##ports:add## {#ports:add}
+Add a port.
+
+###Syntax
+`hpcloud ports:add <name> <network_id_or_name>`
+
+###Options
+**-f, --fixedips=FIXEDIPS**
+: Fixed IPs.
+
+**-m, --macaddress=MACADDRESS**
+: MAC address.
+
+**-u, --adminstate**
+: Administrative state.
+
+# Default: true
+
+**-d, --deviceid=DEVICEID**
+: Device ID.
+
+**-o, --deviceowner=DEVICEOWNER**
+: Device owner.
+
+**-g, --securitygroups=SECURITYGROUPS**
+: Security groups.
+
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
+
+###Description
+Add a new port to your network with the specified name.  Optionally, you can specify fixed IPs, MAC address, administrative state, device identifier, device owner, and security groups.
+
+###Examples
+Create a new port named 'porto':
+
+    hpcloud ports:add porto netty
+
+Create a new port named 'porto' associated with 'devvy' and 'ohnur' administratively up:
+
+    hpcloud ports:add porto netty -d devvy -o ohnur -u
+
+
+##ports:remove## {#ports:remove}
+Remove a port (specified by name or ID).
+
+###Syntax
+`hpcloud ports:remove name_or_id [name_or_id ...]`
+
+###Options
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
+
+###Description
+Remove port by specifying their names or ID. You may specify more than one port name or ID on a command line.
+
+###Examples
+Delete the port 'blue' and 'red':
+
+    hpcloud ports:remove blue red
+
+Delete the port with ID 998:
+
+    hpcloud ports:remove 998
+
+Delete the port `netty` for availability zone `region-a.geo-1`:
+
+    hpcloud ports:remove netty -z region-a.geo-1
+
+###Aliases
+`ports:rm, ports:delete, ports:del`
+
+##ports:update## {#ports:update}
+Update a port.
+
+###Syntax
+`hpcloud ports:update <name>`
+
+###Options
+**-f, --fixedips=FIXEDIPS**
+: Fixed IPs.
+
+**-u, --adminstate**
+: Administrative state.
+
+# Default: true
+
+**-d, --deviceid=DEVICEID**
+: Device ID.
+
+**-o, --deviceowner=DEVICEOWNER**
+: Device owner.
+
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
+
+###Description
+Update fixed IPs, administrative state, device identifier, or device owner on a port in your network.
+
+###Examples
+Update 'porto' administrative status and device owner:
+
+    hpcloud ports:update porto -u -d trump
+
+
 ##remove## {#remove}
 Remove objects or containers.
 
@@ -2136,6 +2909,222 @@ Delete container 'my_container' in availability zone `region-a.geo-1`:
 
 ###Aliases
 `rm, delete, destroy, del`
+
+##routers## {#routers}
+List the available routers.
+
+###Syntax
+`hpcloud routers [name_or_id ...]`
+
+###Options
+**-c, --columns=COLUMNS**
+: Comma separated list of columns in report.
+
+**-d, --separator=SEPARATOR**
+: Use the specified value as the report separator.
+
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
+
+###Description
+Lists all the routers that are associated with the account. The list begins with identifier and contains name, status, administrative state, and gateways.  Optionally, you can filter the list by specifying name or ID.
+
+###Examples
+List all routers:
+
+    hpcloud routers
+
+List the details for routers with id `1`:
+
+    hpcloud routers 1
+
+List the details for routers named `testo`:
+
+    hpcloud routers testo
+
+###Aliases
+`routers:list`
+
+##routers:add## {#routers:add}
+Add a router.
+
+###Syntax
+`hpcloud routers:add <name>`
+
+###Options
+**-g, --gateway=GATEWAY**
+: Network to use as external router.
+
+**-u, --adminstateup**
+: Administrative state.
+
+# Default: true
+
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
+
+###Description
+Add a new router to your network with the specified name.  If a gateway is not specified, the first network that has router_external set to true is used (typically `Ext-Net`.  If you do not want to a external network, send the gateway option with an empty string.
+
+###Examples
+Create a new router named 'routerone'
+
+    hpcloud routers:add routerone
+
+Create a new router named 'routertwo' with the specified network as a gateway:
+
+    hpcloud routers:add routertwo -g Ext-Net
+
+
+##routers:interface:add## {#routers:interface:add}
+Add an interface to a router.
+
+###Syntax
+`hpcloud routers:interface:add <router> <subnet_or_port>`
+
+###Options
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
+
+###Description
+Add an interface to your router with the specified subnet or port.
+
+###Examples
+Add an interface to the subnet 'subnetty':
+
+    hpcloud routers:interface:add trout subnetty
+
+Add an interface to the port 'porto':
+
+    hpcloud routers:interface:add trout proto
+
+
+##routers:interface:remove## {#routers:interface:remove}
+Remove router interface.
+
+###Syntax
+`hpcloud routers:interface:remove <router_name_or_id> <subnet_or_port>`
+
+###Options
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
+
+###Description
+Remove router port or subnet router interface from router.
+
+###Examples
+Delete port 'puerto' from 'trout'
+
+    hpcloud routers:interface:remove trout puerto
+
+Delete subnet 'netty' from 'trout'
+
+    hpcloud routers:interface:remove trout netty
+
+###Aliases
+`routers:interface:rm, routers:interface:delete, routers:interface:del`
+
+##routers:remove## {#routers:remove}
+Remove a router (specified by name or ID).
+
+###Syntax
+`hpcloud routers:remove name_or_id [name_or_id ...]`
+
+###Options
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
+
+###Description
+Remove router by specifying their names or ID. You may specify more than one router name or ID on a command line.
+
+###Examples
+Delete the router 'blue' and 'red':
+
+    hpcloud routers:remove blue red
+
+Delete the router with ID 998:
+
+    hpcloud routers:remove 998
+
+Delete the router `netty` for availability zone `region-a.geo-1`:
+
+    hpcloud routers:remove netty -z region-a.geo-1
+
+###Aliases
+`routers:rm, routers:delete, routers:del`
+
+##routers:update## {#routers:update}
+Update the specified router.
+
+###Syntax
+`hpcloud routers:update <name>`
+
+###Options
+**-g, --gateway=GATEWAY**
+: Network to use as external router.
+
+**-u, --adminstateup**
+: Administrative state.
+
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
+
+###Description
+Update an existing router with new administrative state or gateway infomration.  If you do not want an external network, use the gateway option with an empty string.
+
+###Examples
+Update router 'trout' administrative state:
+
+    hpcloud routers:update trout -u
+
 
 ##securitygroups## {#securitygroups}
 List the available security groups.
@@ -2303,6 +3292,16 @@ Add a rule to the security group.
 **-g, --source-group=SOURCE_GROUP**
 : Specify a source group.
 
+**--direction=DIRECTION**
+: Direction egress or ingress.
+
+# Default: egress
+
+**--ethertype=ETHERTYPE**
+: Ether type must be IPv6 or IPv4.
+
+# Default: IPv4
+
 **-z, --availability-zone=AVAILABILITY_ZONE**
 : Set the availability zone.
 
@@ -2315,7 +3314,7 @@ Add a rule to the security group.
 
 
 ###Description
-Add a rule to the security group. If <ip_protocol> is specified as `icmp`, then <port_range> is set to -1..-1.  If <ip_address> is not specified, then the address defaults to `0.0.0.0/0`. To allow communications within a given security group, you must specify a source group while creating a rule. Optionally, you can specify an availability zone.
+Add a rule to the security group. If <ip_protocol> is specified as `icmp`, then port range may be omitted.  If <cidr> is not specified, then the address defaults to `0.0.0.0/0`. To allow communications within a given security group, you must specify a source group while creating a rule. Optionally, you can specify an availability zone.
 
 ###Examples
 Set the default port range to -1..-1
@@ -2342,10 +3341,10 @@ Set the availability zone to `az-2.region-a.geo-1`:
 `securitygroups:rules:authorize`
 
 ##securitygroups:rules:remove## {#securitygroups:rules:remove}
-Remove a rule from the security group.
+Remove security group rules.
 
 ###Syntax
-`hpcloud securitygroups:rules:remove <sec_group_name> <rule_id>`
+`hpcloud securitygroups:rules:remove rule_id [rule_id...]`
 
 ###Options
 **-z, --availability-zone=AVAILABILITY_ZONE**
@@ -2360,16 +3359,16 @@ Remove a rule from the security group.
 
 
 ###Description
-Remove a rule from the security group, specifyied its ID. Optionally, you can specify an availability zone.
+Remove the specified security group rules.  More than one rule may be specified on the command line.
 
 ###Examples
-Remove the rule `mysecgroup` from security group `111`:
+Remove the rule `111`:
 
-    hpcloud securitygroups:rules:remove mysecgroup 111
+    hpcloud securitygroups:rules:remove 111
 
-Remove the rule `mysecgroup` from security group `111` for availability zone `az-2.region-a.geo-1`:
+Remove the rule `111` and `222`:
 
-    hpcloud securitygroups:rules:remove mysecgroup 111 -z az-2.region-a.geo-1
+    hpcloud securitygroups:rules:remove 111 222
 
 ###Aliases
 `securitygroups:rules:rm, securitygroups:rules:revoke, securitygroups:rules:delete, securitygroups:rules:del`
@@ -2441,6 +3440,9 @@ Add a server.
 
 **-m, --metadata=METADATA**
 : Set the meta data.
+
+**-n, --network=NETWORK**
+: Network to use for the server.
 
 **-u, --userdata=USERDATA**
 : File which contains user data.
@@ -2927,6 +3929,180 @@ Delete snapshot `snappy` for availability zone `az-2.region-a.geo-1`:
 
 ###Aliases
 `snapshots:rm, snapshots:delete, snapshots:del`
+
+##subnets## {#subnets}
+List the available subnets.
+
+###Syntax
+`hpcloud subnets [name_or_id ...]`
+
+###Options
+**-c, --columns=COLUMNS**
+: Comma separated list of columns in report.
+
+**-d, --separator=SEPARATOR**
+: Use the specified value as the report separator.
+
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
+
+###Description
+Lists all the subnets that are associated with the account. The list begins with identifier and contains name, status, shared, admin state, and subnets.  Optionally, you can filter the list by specifying name or ID.
+
+###Examples
+List all subnets:
+
+    hpcloud subnets
+
+List the details for subnets with id `1`:
+
+    hpcloud subnets 1
+
+List the details for subnets named `testo`:
+
+    hpcloud subnets testo
+
+###Aliases
+`subnets:list`
+
+##subnets:add## {#subnets:add}
+Add a subnet.
+
+###Syntax
+`hpcloud subnets:add <name> <network_id_or_name> <cidr>`
+
+###Options
+**-i, --ipversion=IPVERSION**
+: IP version.
+
+**-g, --gateway=GATEWAY**
+: Gateway IP address.
+
+**-d, --dhcp**
+: Enable DHCP.
+
+# Default: true
+
+**-n, --dnsnameservers=DNSNAMESERVERS**
+: Comma separated list of DNS name servers.
+
+**-h, --hostroutes=HOSTROUTES**
+: Semicolon separated list of host routes pairs.
+
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
+
+###Description
+Add a new subnet to your network with the specified name and CIDR.  Optionally, you can specify IP version, gateway, DHCP, DNS name servers, or host routes.  The add command will do its best to guess the IP version from the CIDR, but you may override it.  The DNS name servers should be a command seperated list e.g.: 10.1.1.1,10.2.2.2.  The host routes should be a semicolon separated list of destination and nexthop pairs e.g.: 127.0.0.1/32,10.1.1.1;100.1.1.1/32,10.2.2.2
+
+###Examples
+Create a new subnet named 'subwoofer':
+
+    hpcloud subnets:add subwoofer netty 127.0.0.0/24
+
+Create a new subnet named 'subwoofer' with gateway and DHCP:
+
+    hpcloud subnets:add subwoofer netty 127.0.0.0/24 -g 127.0.0.1 -d
+
+
+##subnets:remove## {#subnets:remove}
+Remove a subnet (specified by name or ID).
+
+###Syntax
+`hpcloud subnets:remove name_or_id [name_or_id ...]`
+
+###Options
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
+
+###Description
+Remove subnet by specifying their names or ID. You may specify more than one subnet name or ID on a command line.
+
+###Examples
+Delete the subnet 'blue' and 'red':
+
+    hpcloud subnets:remove blue red
+
+Delete the subnet with ID 998:
+
+    hpcloud subnets:remove 998
+
+Delete the subnet `netty` for availability zone `region-a.geo-1`:
+
+    hpcloud subnets:remove netty -z region-a.geo-1
+
+###Aliases
+`subnets:rm, subnets:delete, subnets:del`
+
+##subnets:update## {#subnets:update}
+Update a subnet.
+
+###Syntax
+`hpcloud subnets:update <name>`
+
+###Options
+**-i, --ipversion=IPVERSION**
+: IP version.
+
+**-g, --gateway=GATEWAY**
+: Gateway IP address.
+
+**-d, --dhcp**
+: Enable DHCP.
+
+**-n, --dnsnameservers=DNSNAMESERVERS**
+: Comma separated list of DNS name servers.
+
+**-h, --hostroutes=HOSTROUTES**
+: Semicolon separated list of host routes pairs.
+
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
+
+###Description
+Update a subnet IP version, gateway, DHCP, DNS name servers, or host routes.  The update command will do its best to guess the IP version from the CIDR, but you may override it.  The DNS name servers should be a command seperated list e.g.: 10.1.1.1,10.2.2.2.  The host routes should be a semicolon separated list of destination and nexthop pairs e.g.: 127.0.0.1/32,10.1.1.1;100.1.1.1/32,10.2.2.2
+
+###Examples
+Update 'subwoofer' gateway:
+
+    hpcloud subnets:update subwoofer -g 10.0.0.1
+
+Update 'subwoofer' with new DNS and DHCP:
+
+    hpcloud subnets:update subwoofer -n 100.1.1.1 -d
+
 
 ##tempurl## {#tempurl}
 Create temporary URLs for the given objects.

@@ -7,8 +7,9 @@ product: unix-cli
 ---
 #HP Cloud Services UNIX CLI Release Notes
 
-These are the release notes for the HP Cloud services UNIX CLI.  The current release number for the [UNIX CLI software](/cli/unix) is version 1.9.0, released on 05/07/13.
+These are the release notes for the HP Cloud services UNIX CLI.  The current release number for the [UNIX CLI software](/cli/unix) is version 2.0.0, released on 06/06/13.
 
+* [Release 2.0.0 Features](#v2_0_0)
 * [Release 1.9.0 Features](#v1_9_0)
 * [Release 1.8.0 Features](#v1_8_0)
 * [Release 1.7.0 Features](#v1_7_0)
@@ -17,17 +18,32 @@ These are the release notes for the HP Cloud services UNIX CLI.  The current rel
 * [Release 1.4.0 Features](#v1_4_0)
 * [Release 1.3.0 Features](#v1_3_0)
 
+##Release 2.0.0 Features## {#v2_0_0}
+
+The 2.0.0 release is available for download from [https://docs.hpcloud.com/file/hpcloud-2.0.0.gem](/file/hpcloud-2.0.0.gem).  This release was made available on 6/15/2013 and contains the following new features:
+
+* Support for next generation networking cloud
+  - Added the `networks` commands
+  - Added the `routers` commands
+  - Added the `ports` commands
+  - Added the `subnets` commands
+* Support for load balancer as a service (LBaaS) with the `lb` commands
+
+###Known Issues###
+
+* None for this release.
+
 ##Release 1.9.0 Features## {#v1_9_0}
 
 The 1.9.0 release is available for download from [https://docs.hpcloud.com/file/hpcloud-1.9.0.gem](/file/hpcloud-1.9.0.gem).  This release was made available on 5/15/2013 and contains the following new features:
 
 * Support for domain name service (DNS)
 * New account:catalog command dumps the service catalog for the given account
+* Default availability zone is now the alphabetically first zone in the service catalog.
 
 ###Known Issues###
 
-* None for this release.
-
+* Support for availability zones in the config.yml file is deprecated.  Support for that future will be removed in the future.  There are no long hard coded default zones in the configuration.
 
 ##Release 1.8.0 Features## {#v1_8_0}
 
@@ -110,7 +126,7 @@ This release was made available on 12/6/2012 and contains the following new feat
 * Commands `cdn:containers:add` and `cdn:containers:remove` now accept multiple arguments
 * CLI help text significantly updated
 * Default account can be set to any configured account
-* Commands `acl:grant` and `acl:revoke` added to provide support for cross-tenant access control lists (ACLs)
+* Commands `acl:grant` and `acl:revoke` added to provide support for cross-project access control lists (ACLs)
 * Command `volumes:add` added to provide support for bootable volume creation
 * Command `servers:add` added to provide support for creating a server from a bootable volume
 
