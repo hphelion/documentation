@@ -81,7 +81,7 @@ When you have filled out all the fields appropriately, click the `Create` button
 <!-- Do we want to link stuff here to the glossary terms? -->
 
 
-##Connecting to a server## {#Connecting)
+##Connecting to a server## {#Connecting}
 
 To connect to an existing server, in the [servers screen](/mc/compute/servers/), in the `Manage` column of the servers list, select the `Options` button in the row of the server to which you want to connect, and choose the `Connect to Server` option:
 
@@ -94,7 +94,7 @@ You are asked to confirm this connection:
 Click the `Okay` button to confirm, and your server is connected.
 
 
-##Rebooting a server## {#Rebooting)
+##Rebooting a server## {#Rebooting}
 
 To reboot a server, in the [servers screen](/mc/compute/servers/), in the `Manage` column of the servers list, select the `Options` button in the row of the server to which you want to connect, and choose the `Reboot Server` option:
 
@@ -115,7 +115,7 @@ You can also reboot a server by selecting the `Reboot` button in the [server det
 <img src="media/server-details.png" width="580" alt="" />
 
 
-##Rebuilding a server## {#Rebuilding)
+##Rebuilding a server## {#Rebuilding}
 
 To rebuild a server, in the [servers screen](/mc/compute/servers/), in the `Manage` column of the servers list, select the `Options` button in the row of the server to which you want to connect, and choose the `Rebuild Server` option:
 
