@@ -15,7 +15,7 @@ Having a bit of trouble navigating our site, and so you're looking for a single 
 
 [Compute services dashboard](/mc/compute/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Servers screen](/mc/compute/servers/)  <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Managing servers](/mc/compute/servers/manage-server/)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Managing servers](/mc/compute/servers/manage/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Viewing server details](/mc/compute/server/view-details)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Images screen](/mc/compute/images/) <br>
 <!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating and deleting an image](/mc/compute/images/create/) <br>-->
