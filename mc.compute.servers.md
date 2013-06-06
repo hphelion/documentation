@@ -17,7 +17,7 @@ The management console (MC) compute dashboard server screen is the default scree
 
 The servers screen displays the servers information for your project.
 
-<img src="media/servers-main.jpg" width="580" alt="" />
+<img src="media/servers-main.png" width="580" alt="" />
 
 The name, availability zone (AZ), status, image, and key pair for your servers are displayed.  You can sort your list of networks based on a particular identifier by just clicking the column heading.  For example, if you want to sort the list by ID, just click the `ID` column header.
 
