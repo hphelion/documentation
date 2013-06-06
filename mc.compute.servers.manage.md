@@ -15,7 +15,7 @@ This page describes how to manage servers using the [networks screen](/mc/comput
 * [Connecting to a server](#Connecting)
 * [Rebooting a server](#Rebooting)
 * [Rebuilding a server](#Rebuilding)
-* [Terminating a server](#Deleting)
+* [Terminating a server](#Terminating)
 * [Viewing server details](#Viewing)
 * [Viewing the console log](#ViewConsole)
 * [For further information](#ForFurtherInformation)
