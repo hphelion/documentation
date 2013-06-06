@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "UNIX CLI DNS Examples"
-permalink: /cli/unix/dns/
+permalink: /cli/unix/2/dns/
 product: unix-cli
 
 ---

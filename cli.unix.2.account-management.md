@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "UNIX CLI: Advanced Account Management"
-permalink: /cli/unix/account-management/
+permalink: /cli/unix/2/account-management/
 product: unix-cli
 
 ---

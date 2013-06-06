@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Unix Command Line Interface"
-permalink: /cli/unix/
+permalink: /cli/unix/2/
 product: unix-cli
 
 ---
@@ -10,15 +10,15 @@ product: unix-cli
 The Unix Command Line Interface is a tool which allows Unix or Mac users to manage their HP Cloud Services from the command line or automated through scripts.  There is no need to understand the underlying REST API or XML document format to use the Unix CLI.
 
 * [Installation](/cli/unix/install)
-* [Account Configuration](/cli/unix/configuration)
-* [Advanced Account Management](/cli/unix/account-management)
-* [Compute Examples](/cli/unix/compute)
-* [Object Storage Examples](/cli/unix/object-storage)
-* [CDN Examples](/cli/unix/cdn)
-* [Block Storage Examples](/cli/unix/block-storage)
+* [Account Configuration](/cli/unix/2/configuration)
+* [Advanced Account Management](/cli/unix/2/account-management)
+* [Compute Examples](/cli/unix/2/compute)
+* [Object Storage Examples](/cli/unix/2/object-storage)
+* [CDN Examples](/cli/unix/2/cdn)
+* [Block Storage Examples](/cli/unix/2/block-storage)
 * [Volume Management](/block-storage/volume)
-* [DNS Examples](/cli/unix/dns)
-* [CLI Reference](/cli/unix/reference)
+* [DNS Examples](/cli/unix/2/dns)
+* [CLI Reference](/cli/unix/2/reference)
 * [Release Notes](/cli/unix/release-notes)
 * [FAQ](/faq#UnixCLI)
 

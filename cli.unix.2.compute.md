@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "UNIX CLI Compute Examples"
-permalink: /cli/unix/compute/
+permalink: /cli/unix/2/compute/
 product: unix-cli
 
 ---
@@ -221,7 +221,7 @@ To remove an existing server or servers (you can specify one or more servers by 
 
 ###Creating a Windows Instance### {#WindowsServer}
 
-There are some different parameters that must be specified to create a new windows server.  You need to specify the file that contains your private part of your key pair in PEM format and a security group with port 3389 open (for RDP). See [security group rules](/cli/unix/compute#SecurityGroupRuleCommands) on how to open a port on a security group.  Windows servers are a little slower to start up than other servers, so normally it will be a few minutes, but it may be up to fifteen minutes.
+There are some different parameters that must be specified to create a new windows server.  You need to specify the file that contains your private part of your key pair in PEM format and a security group with port 3389 open (for RDP). See [security group rules](/cli/unix/2/compute#SecurityGroupRuleCommands) on how to open a port on a security group.  Windows servers are a little slower to start up than other servers, so normally it will be a few minutes, but it may be up to fifteen minutes.
 
 **Note**: The output for this command is the Windows Administrator password. In order to connect to the instance via the public IP and RDP, use Administrator as the `username` and the presented password for the `password`.
 

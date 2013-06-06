@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Unix CLI Block Storage Examples"
-permalink: /cli/unix/block-storage/
+permalink: /cli/unix/2/block-storage/
 product: unix-cli
 
 ---
@@ -82,4 +82,4 @@ To remove the kweller volume:
     $ hpcloud volumes:remove kweller
     Removed volume 'kweller'.
 
-For complete information on all the UNIX CLI block storage commands (and all the other UNIX CLI HP Cloud service commands), please take a look at the [HP Cloud UNIX CLI Reference](/cli/unix/reference).
+For complete information on all the UNIX CLI block storage commands (and all the other UNIX CLI HP Cloud service commands), please take a look at the [HP Cloud UNIX CLI Reference](/cli/unix/2/reference).

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "UNIX CLI CDN Examples"
-permalink: /cli/unix/cdn/
+permalink: /cli/unix/2/cdn/
 product: unix-cli
 
 ---
