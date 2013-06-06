@@ -17,6 +17,7 @@ This page describes how to manage servers using the [networks screen](/mc/comput
 * [Rebuilding a server](#Rebuilding)
 * [Terminating a server](#Deleting)
 * [Viewing server details](#Viewing)
+* [Viewing the console log](#ViewConsole)
 * [For further information](#ForFurtherInformation)
 
 ##Before you begin## {#Overview}
@@ -153,7 +154,19 @@ To launch the server details screen, in the `Manage` column of the servers list,
 
 <img src="media/server-details.png" width="580" alt="" />
 
-For more information on the content of this screen, please take a look at the [Viewing server details](/mc/compute/servers/view-server/) page.
+For more information on the content of this screen, please take a look at the [Viewing server details](/mc/compute/servers/view-details/) page.
+
+##Viewing the console log## {#ViewConsole}
+
+To view the console log, you must first enter the [server details](/mc/compute/servers/view-details/) page.  To launch the server details screen, in the `Manage` column of the servers list, select the `Options` button in the row of the server you want to terminate, and choose the `View Details` option:
+
+<img src="media/server-details.png" width="580" alt="" />
+
+To view the console log, in the server details screen, click the `View Console Log` button.  This launches the console log screen:
+
+<img src="media/console-log.png" width="580" alt="" />
+
+By default, this screen is displayed in its own tab in your browser.
 
 
 ##For further information## {#ForFurtherInformation}
