@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "UNIX CLI Compute Examples"
-permalink: /cli/unix/compute/
+permalink: /cli/unix/2/compute/
 product: unix-cli
 
 ---
@@ -13,11 +13,8 @@ This page gives you a few examples of how to perform various compute tasks using
 
 * [Flavor Commands](#FlavorCommands)
 * [Image Commands](#ImageCommands)
-* [Server Commands](#ServerCommands)
 * [Key Pair Commands](#KeypairCommands)
-* [Security Group Commands](#SecurityGroupCommands)
-* [Security Group Rule Commands](#SecurityGroupRuleCommands)
-* [Addresses or Floating IP Commands](#AddressesorFloatingIPCommands)
+* [Server Commands](#ServerCommands)
 
 You can also find some good how-tos for the compute service on the [Using the Compute Service](compute/using) page.
 
@@ -50,7 +47,7 @@ To list one or more flavors (you can specify the flavors by name or ID):
       | 103 | large | 8192 | 240  |
       +-----+-------+------+------+
     
-##Image Commands## {#ImageCommands} 
+##Image Commands## {#ImageCommands}
 
 To list available images:
 
@@ -115,6 +112,62 @@ To remove an existing snapshot image:
 
     $ hpcloud images:remove myimage
     Removed image 'myimage'.
+
+##Key Pair Commands## {#KeypairCommands}
+
+To list key pairs:
+
+    $ hpcloud keypairs
+
+To add a new key pair:
+
+    $ hpcloud keypairs:add mykeypair
+    
+    -----BEGIN RSA PRIVATE KEY-----
+    MIICXgIBAAKBgQC18ljyebY0GGKxLY6DHcKv1xXw3MCFaRhtXse7zgGjBejMjOz/
+    ...
+    /Fb5Ikzrhop4HukT/RoXeAlLegLtsLEhSJFw4W4HB/83/qsXB0/IXyG46T0FAkEA
+    -----END RSA PRIVATE KEY-----
+    Created key pair 'mykeypair'.
+
+To add a new key pair and save it to a file:
+
+    $ hpcloud keypairs:add mykeypair2 --output
+    Created key pair 'mykeypair2' and saved it in a file at '/home/terry/.hpcloud/keypairs/mykeypair2.pem'.
+
+There is also an article about creating and [Accessing Servers with Managed Key Pairs](/cli/unix/articles/managedkeypairs).
+
+To add a new key pair by importing public key data:
+
+    $ hpcloud keypairs:import mykeypair3 <public key data>
+    Imported key pair 'mykeypair3'.
+
+List the private keys for which the CLI has information:
+
+    $ hpcloud keypairs:private
+    cli_test_key1
+    cli_test_key3
+    cli_test_key4
+
+Add a private key to the keys for which the CLI has information:
+
+    $ hpcloud keypairs:private:add newkey ./private.pem
+    Added private key '/home/terry/.hpcloud/keypairs/newkey.pem'.
+
+Display the location of a private key associated with a server:
+
+    $ hpcloud keypairs:private:location winserv4
+    /home/terry/.hpcloud/keypairs/1664306.pem
+
+Remove a private key:
+
+    $ hpcloud keypairs:private:remove newkey 
+    Removed private key '/home/terry/.hpcloud/keypairs/newkey.pem'.
+
+Remove an existing key pair:
+
+    $ hpcloud keypairs:remove mykeypair
+    Removed key pair 'mykeypair'.
 
 ##Server Commands## {#ServerCommands}
 
@@ -221,7 +274,7 @@ To remove an existing server or servers (you can specify one or more servers by 
 
 ###Creating a Windows Instance### {#WindowsServer}
 
-There are some different parameters that must be specified to create a new windows server.  You need to specify the file that contains your private part of your key pair in PEM format and a security group with port 3389 open (for RDP). See [security group rules](/cli/unix/compute#SecurityGroupRuleCommands) on how to open a port on a security group.  Windows servers are a little slower to start up than other servers, so normally it will be a few minutes, but it may be up to fifteen minutes.
+There are some different parameters that must be specified to create a new windows server.  You need to specify the file that contains your private part of your key pair in PEM format and a security group with port 3389 open (for RDP). See [security group rules](/cli/unix/2/compute#SecurityGroupRuleCommands) on how to open a port on a security group.  Windows servers are a little slower to start up than other servers, so normally it will be a few minutes, but it may be up to fifteen minutes.
 
 **Note**: The output for this command is the Windows Administrator password. In order to connect to the instance via the public IP and RDP, use Administrator as the `username` and the presented password for the `password`.
 
@@ -235,126 +288,3 @@ In the following example, `winserv` is the name of the server, `large` is the fl
     You may wish to change the password when you log in
 
 An example of how to connect via a Windows RDP client is located [here](/compute/using#WindowsRDP).  You can use the `servers:console` command to extract the password if it is still available on the console.
-
-##Key Pair Commands## {#KeypairCommands}
-
-To list key pairs:
-
-    $ hpcloud keypairs
-
-To add a new key pair:
-
-    $ hpcloud keypairs:add mykeypair
-    
-    -----BEGIN RSA PRIVATE KEY-----
-    MIICXgIBAAKBgQC18ljyebY0GGKxLY6DHcKv1xXw3MCFaRhtXse7zgGjBejMjOz/
-    ...
-    /Fb5Ikzrhop4HukT/RoXeAlLegLtsLEhSJFw4W4HB/83/qsXB0/IXyG46T0FAkEA
-    -----END RSA PRIVATE KEY-----
-    Created key pair 'mykeypair'.
-
-To add a new key pair and save it to a file:
-
-    $ hpcloud keypairs:add mykeypair2 --output
-    Created key pair 'mykeypair2' and saved it in a file at '/home/terry/.hpcloud/keypairs/mykeypair2.pem'.
-
-There is also an article about creating and [Accessing Servers with Managed Key Pairs](/cli/unix/articles/managedkeypairs).
-
-To add a new key pair by importing public key data:
-
-    $ hpcloud keypairs:import mykeypair3 <public key data>
-    Imported key pair 'mykeypair3'.
-
-List the private keys for which the CLI has information:
-
-    $ hpcloud keypairs:private
-    cli_test_key1
-    cli_test_key3
-    cli_test_key4
-
-Add a private key to the keys for which the CLI has information:
-
-    $ hpcloud keypairs:private:add newkey ./private.pem
-    Added private key '/home/terry/.hpcloud/keypairs/newkey.pem'.
-
-Display the location of a private key associated with a server:
-
-    $ hpcloud keypairs:private:location winserv4
-    /home/terry/.hpcloud/keypairs/1664306.pem
-
-Remove a private key:
-
-    $ hpcloud keypairs:private:remove newkey 
-    Removed private key '/home/terry/.hpcloud/keypairs/newkey.pem'.
-
-Remove an existing key pair:
-
-    $ hpcloud keypairs:remove mykeypair
-    Removed key pair 'mykeypair'.
-
-##Security Group Commands## {#SecurityGroupCommands}
-
-To list security groups:
-
-    $ hpcloud securitygroups
-
-To add a new security group:
-
-    $ hpcloud securitygroups:add mysecgroup "my sec group desciption"
-    Created security group 'mysecgroup'.
-
-To remove an existing security group:
-
-    $ hpcloud securitygroups:remove mysecgroup
-    Removed security group 'mysecgroup'.
-
-##Security Group Rule Commands## {#SecurityGroupRuleCommands}
-
-To list rules for an existing security group:
-
-    $ hpcloud securitygroups:rules mysecgroup
-
-To add a new rule to an existing security group:
-
-    $ hpcloud securitygroups:rules:add mysecgroup icmp
-    Created rule '1111' for security group 'mysecgroup'.
-
-    $ hpcloud securitygroups:rules:add mysecgroup tcp -p 22..22
-    Created rule '1112' for security group 'mysecgroup'.
-
-    $ hpcloud securitygroups:rules:add mysecgroup tcp -p 80..80 -c "111.111.111.111/1"
-    Created rule '1113' for security group 'mysecgroup'.
-
-    $ hpcloud securitygroups:rules:add mysecgroup tcp -p 3389..3389 # Allow RDP
-    Created rule '1113' for security group 'mysecgroup'.
-
-To remove an existing rule from a security group:
-
-    $ hpcloud securitygroups:rules:remove mysecgroup 1111
-    Removed rule '1111' for security group 'mysecgroup'.
-
-##Addresses or Floating IP Commands## {#AddressesorFloatingIPCommands}
-
-To list addresses:
-
-    $ hpcloud addresses
-
-To add or allocate a new address:
-
-    $ hpcloud addresses:add
-    Created a public IP address '11.11.11.11'.
-
-To associate an existing address to an existing server:
-
-    $ hpcloud addresses:associate "11.11.11.11" myserver
-    Associated address '11.11.11.11' to server 'myserver'.
-
-To disassociate an existing address to an existing server:
-
-    $ hpcloud addresses:disassociate "11.11.11.11" 
-    Disassociated address '11.11.11.11' from any server instance.
-
-To remove or release an existing address:
-
-    $ hpcloud addresses:remove "11.11.11.11"
-    Removed address '11.11.11.11'.
