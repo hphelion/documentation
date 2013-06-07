@@ -5,7 +5,7 @@ permalink: /cli/unix/lbaas/
 product: unix-cli
 
 ---
-# UNIX CLI Load Balancer Examples
+# UNIX CLI Load Balancer as a Service (LBaaS) Examples
 
 This page gives you a few examples of how to perform various load balancer tasks using the HP Cloud service CLI.
 
