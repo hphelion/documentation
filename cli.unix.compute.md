@@ -40,6 +40,20 @@ To list available flavors:
       | 102 | medium  | 4096  | 120  |
       | 104 | xlarge  | 16384 | 480  |
       +-----+---------+-------+------+
+
+
+
+    $ hpcloud flavors
+      +-----+---------+-------+------+
+      | id  | name    | ram   | disk |
+      +-----+---------+-------+------+
+      | 100 | xsmall  | 1024  | 30   |
+      | 101 | small   | 2048  | 60   |
+      | 105 | 2xlarge | 32768 | 960  |
+      | 103 | large   | 8192  | 240  |
+      | 102 | medium  | 4096  | 120  |
+      | 104 | xlarge  | 16384 | 480  |
+      +-----+---------+-------+------+
     
 To list one or more flavors (you can specify the flavors by name or ID):
 
