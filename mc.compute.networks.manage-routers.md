@@ -107,4 +107,4 @@ In the router details screen, click the `Detach External Network` button to deta
 * For information about the router details screen, take a look at the [Viewing router details](/mc/compute/networks/view-router/) page
 * For basic information about our HP Cloud compute services, take a look at the [HP Cloud compute overview](/compute/) page
 * Use the MC [site map](/mc/sitemap) for a full list of all available MC documentation pages
-* For information about the Open Stack networking ("Quantum") features, surf on over to  [their Quantum wiki](https://wiki.openstack.org/wiki/Quantum)
+* For information about the Open Stack networking features, surf on over to [their networking wiki](https://wiki.openstack.org/wiki/Quantum)
