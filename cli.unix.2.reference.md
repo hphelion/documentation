@@ -1957,7 +1957,7 @@ List the available load balancers.
 
 
 ###Description
-Lists all the load balancers that are associated with the account. The list begins with identifier and contains name, size, type, create date, status, description and servers on which it is attached.  Optionally, you can filter the list by specifying name or ID.
+Lists all the load balancers that are associated with the account. The list begins with identifier and contains name, algorithm, protocol, port and status.  Optionally, you can filter the list by specifying names or IDs.
 
 ###Examples
 List all load balancers:
@@ -2113,7 +2113,7 @@ List all nodes for load balancer 'balancer':
 Add a node to the load balancer.
 
 ###Syntax
-`hpcloud lb:nodes:add <load_balancer_name_or_id> <address> <port>`
+`hpcloud lb:nodes:add <lb_name_or_id> <address> <port>`
 
 ###Options
 **-z, --availability-zone=AVAILABILITY_ZONE**
@@ -2137,10 +2137,10 @@ Create a new node for load balancer 'loady'
 
 
 ##lb:nodes:remove## {#lb:nodes:remove}
-Remove the specified load balancer node.
+Remove the specified load balancer nodes.
 
 ###Syntax
-`hpcloud lb:nodes:remove name_or_id address port`
+`hpcloud lb:nodes:remove lb_name_or_id node_id [node_id ...]`
 
 ###Options
 **-z, --availability-zone=AVAILABILITY_ZONE**
@@ -2155,12 +2155,12 @@ Remove the specified load balancer node.
 
 
 ###Description
-Remove load balancer node by specifying the name or id of the load balancer, the address and the port.
+Remove load balancer node by specifying the name or id of the load balancer and the id of the nodes.
 
 ###Examples
-Delete the load balancers `thing1` and `thing2`:
+Delete the load balancers ndoe `1044952` from `scale`:
 
-    hpcloud lb:remove thing1 10.2.2.2 80
+    hpcloud lb:nodes:remove scale 1044952
 
 ###Aliases
 `lb:nodes:rm, lb:nodes:delete, lb:nodes:del`
@@ -2169,7 +2169,7 @@ Delete the load balancers `thing1` and `thing2`:
 Update a node in a load balancer.
 
 ###Syntax
-`hpcloud lb:nodes:update <lb_name_or_id> <name_or_id> <condition>`
+`hpcloud lb:nodes:update <lb_name_or_id> <node_id> <condition>`
 
 ###Options
 **-z, --availability-zone=AVAILABILITY_ZONE**
@@ -2230,7 +2230,7 @@ List all protocols:
 
 
 ##lb:remove## {#lb:remove}
-Remove DNS domains (specified by name or ID).
+Remove load balancer (specified by name or ID).
 
 ###Syntax
 `hpcloud lb:remove name_or_id [name_or_id ...]`
@@ -4154,9 +4154,6 @@ List the available block devices.
 `hpcloud volumes [name_or_id ...]`
 
 ###Options
-**-b, --bootable**
-: List only the bootable volumes.
-
 **-c, --columns=COLUMNS**
 : Comma separated list of columns in report.
 
