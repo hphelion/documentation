@@ -50,7 +50,7 @@ To list one or more flavors (you can specify the flavors by name or ID):
       | 103 | large | 8192 | 240  |
       +-----+-------+------+------+
     
-##Image Commands## {#ImageCommands}
+##Image Commands## {#ImageCommands} 
 
 To list available images:
 
