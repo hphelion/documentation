@@ -7,7 +7,7 @@ product: mc-compute
 ---
 # Management console: Managing servers
 
-This page describes how to manage servers using the [networks screen](/mc/compute/networks/) of the [management console](/mc/) (MC).  This page covers the following topics:
+This page describes how to manage servers using the [servers screen](/mc/compute/networks/) of the [management console](/mc/) (MC).  This page covers the following topics:
 
 * [Before you begin](#Overview)
 * [About the image types](#ImageTypes)
@@ -98,7 +98,7 @@ Click the `Okay` button to dismiss the screen.
 
 ##Rebooting a server## {#Rebooting}
 
-To reboot a server, in the [servers screen](/mc/compute/servers/), in the `Manage` column of the servers list, select the `Options` button in the row of the server to which you want to connect, and choose the `Reboot Server` option:
+To reboot a server, in the [servers screen](/mc/compute/servers/), in the `Manage` column of the servers list, select the `Options` button in the row of the server to which you want to reboot, and choose the `Reboot Server` option:
 
 <img src="media/server-rebooting.png" width="580" alt="" />
 
@@ -147,6 +147,8 @@ To terminate a server, in the [servers screen](/mc/compute/servers/), in the `Ma
 You can also terminate a server by selecting the `Terminate` button in the [server details](#Viewing) screen:
 
 <img src="media/server-details.png" width="580" alt="" />
+
+**Note**: This permanently removes the server.
 
 
 ##Viewing server details## {#Viewing}
