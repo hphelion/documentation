@@ -27,23 +27,23 @@ The sections below explain each piece of our service.
 Based on the OpenStack Nova project, the HP Cloud Compute service provides on-demand computing giving you the ability to provision and manage large clusters of instances (virtual machines). With the new version you have more flexibility to select the type of instance that meets the needs of your application without having to pay for additional resources.
 
 
-Instance sizes available:{#sizes}
+###Instance sizes available### {#sizes}
 
-| API Name | RAM (GB) | # of Cores | Total HP CCUs |
-| --------------- | --- | --- | --- |
-| standard.xsmall | 1 | 1 | 1 |
-| standard.small | 2 | 2 | 2 |
-| standard.medium | 4 | 2 | 4 |
-| standard.large | 8 | 4 | 8 |
-| standard.xlarge | 15 | 4 | 15 |
-| standard.2xlarge | 30 | 8 | 30 |
-| standard.3xlarge* | 60 | 8 | 60 |
-| standard.4xlarge* | 90 | 12 | 90 |
-| standard.5xlarge* | 120 | 16 | 120 |
-|  **High Memory** |
-| highmem.large* | 16 | 4 | 8 |
-| highmem.xlarge* | 30 | 4 | 15 |
-| highmem.2xlarge* | 60 | 8 | 30 |
+| API Name          | RAM (GB) | # of Cores | Total HP CCUs |
+| ----------------- | -------- | ---------- | ------------- |
+| standard.xsmall   | 1        | 1          | 1             |
+| standard.small    | 2        | 2          | 2             |
+| standard.medium   | 4        | 2          | 4             |
+| standard.large    | 8        | 4          | 8             |
+| standard.xlarge   | 15       | 4          | 15            |
+| standard.2xlarge  | 30       | 8          | 30            |
+| standard.3xlarge* | 60       | 8          | 60            |
+| standard.4xlarge* | 90       | 12         | 90            |
+| standard.5xlarge* | 120      | 16         | 120           |
+|  **High Memory**  |
+| highmem.large*    | 16       | 4          | 8             |
+| highmem.xlarge*   | 30       | 4          | 15            |
+| highmem.2xlarge*  | 60       | 8          | 30            |
 *New sizes/configurations
 
 ## Availability Zones ## {#AZ}
