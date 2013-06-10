@@ -40,10 +40,11 @@ Based on the OpenStack Nova project, the HP Cloud Compute service provides on-de
 | standard.3xlarge* | 60       | 8          | 60            |
 | standard.4xlarge* | 90       | 12         | 90            |
 | standard.5xlarge* | 120      | 16         | 120           |
-|  **High Memory**  |
+|  **High Memory**  |          |            |               |
 | highmem.large*    | 16       | 4          | 8             |
 | highmem.xlarge*   | 30       | 4          | 15            |
 | highmem.2xlarge*  | 60       | 8          | 30            |
+
 *New sizes/configurations
 
 ## Availability Zones ## {#AZ}
