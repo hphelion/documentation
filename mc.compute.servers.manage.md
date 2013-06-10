@@ -12,7 +12,7 @@ This page describes how to manage servers using the [networks screen](/mc/comput
 * [Before you begin](#Overview)
 * [About the image types](#ImageTypes)
 * [Creating a server](#Creating)
-* [Connecting to a server](#Connecting)
+* [Displaying server connection information](#Connecting)
 * [Rebooting a server](#Rebooting)
 * [Rebuilding a server](#Rebuilding)
 * [Terminating a server](#Terminating)
@@ -37,7 +37,7 @@ Before you can begin creating or deleting a server, you must:
 When you create an image, you can do so using one of several different existing image types.  When you [create a server](#Creating) your sever, you must select among one of these image types:
 
 **Public**
-:  Publicly-available images, such as Debian Squeeze
+:  User-uploaded images or custom images (for example, made from a snapshot of current images)
 
 **Partner**
 :  Images available through partners
@@ -66,11 +66,12 @@ In the new servers screen, select the values for the various fields:
 
 * In the `Name` text field enter a name for your server
 * From the `AZ` pull-down menu select an availability zone (AZ)
+* From the `Networks` pull-down menu select the network for your server (This pull-down only appears if you have more than one network available for your project)
 * From the list of image types, click the button for the type you wish create your server from:  `Public Images`, `Partner Images`, `Private Images`, or `Bootable Volume`
 * In the image pull-down menu (below the list of image types), select the image from which you want to create a server
 * From the `Flavor` pull-down menu, select the flavor you want for your server
 * From the `Key name` pull-down menu, select the key name you want for your server
-* In the `Security Groups` text field, enter the security groups of which you want your server to be a part
+* In the `Security Groups` text field, enter the security groups you want to apply to the port on which the server is booted
 * In the `Tags` text field, enter any tags you want to associate to your server
 
 <img src="media/server-new-filled.png" width="580" alt="" />
@@ -82,17 +83,17 @@ When you have filled out all the fields appropriately, click the `Create` button
 <!-- Do we want to link stuff here to the glossary terms? -->
 
 
-##Connecting to a server## {#Connecting}
+##Displaying server connection information## {#Connecting}
 
-To connect to an existing server, in the [servers screen](/mc/compute/servers/), in the `Manage` column of the servers list, select the `Options` button in the row of the server to which you want to connect, and choose the `Connect to Server` option:
+To display information about how to connect to an instance, in the [servers screen](/mc/compute/servers/), in the `Manage` column of the servers list, select the `Options` button in the row of the server to which you want to connect, and choose the `Connect to Server` option:
 
 <img src="media/server-connecting.png" width="580" alt="" />
 
-You are asked to confirm this connection:
+The information displayed depends on whether you are connecting via Windows or UNIX.  For UNIX, the set of SSH instructions is displayed; for Windows, the RDC instructions are displayed.  This example shows the results for UNIX:
 
 <img src="media/server-connect-verify.png" width="580" alt="" />
 
-Click the `Okay` button to confirm, and your server is connected.
+Click the `Okay` button to dismiss the screen.
 
 
 ##Rebooting a server## {#Rebooting}
