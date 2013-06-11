@@ -7,13 +7,13 @@ permalink: /version-overview/
 # HP Cloud version 13.5 overview
 HP Cloud Services bases our services on the open source cloud management project OpenStack. Our new version of HP Cloud Compute runs the latest version of OpenStack (currently the Grizzly release) that expands functionality and enhances the current capabilities of the existing services.  One of the most significant changes is the addition of our new networking capabilities based on the OpenStack Networking project with an SDN plugin from HP Networking. This new networking service provides enhanced network functionality and the ability to fine-tune and define your own virtual network.
 
-In addition, you now have larger and more powerful instance types (sizes) to choose from—four times the size of the largest instances offered by most public clouds. And, our large, xlarge, and 2xlarge sizes are also offered in high memory versions. (See the [chart below](#sizes) for all available instance types.)
+In addition, you now have larger and more powerful instance types (sizes) to choose from--four times the size of the largest instances offered by most public clouds. And, our large, xlarge, and 2xlarge sizes are also offered in high memory versions. (See the [chart below](#sizes) for all available instance types.)
 
 The new service is initially being offered in the US East region only. Select the US East region option from the Compute section in the management console to start working with HP Cloud Compute version 13.5.
 
 Since HP Cloud Compute version 13.5 is based on the latest code from the OpenStack community there are now separate Networking and Block Storage services with API endpoints independent from the HP Cloud Compute API.  In addition, the Image Management API is now exposed to users.  While you can continue to execute basic networking, block storage and image management commands through the HP Cloud Compute API, these newly exposed interfaces provide you even more control and allow you access to new advanced features. 
 
-Finally, the new versions of these services will now be closely tracking upstream OpenStack. This means that HP Cloud Services will be releasing regular updates based on the latest tested and approved code submitted to OpenStack trunk, you’ll always be working with the latest OpenStack code.
+Finally, the new versions of these services will now be closely tracking upstream OpenStack. This means that HP Cloud Services will be releasing regular updates based on the latest tested and approved code submitted to OpenStack trunk, you'll always be working with the latest OpenStack code.
 
 The sections below explain each piece of our service.
 
@@ -27,7 +27,7 @@ The sections below explain each piece of our service.
 Based on the OpenStack Nova project, the HP Cloud Compute service provides on-demand computing giving you the ability to provision and manage large clusters of instances (virtual machines). With the new version you have more flexibility to select the type of instance that meets the needs of your application without having to pay for additional resources.
 
 
-###Instance sizes available### {#sizes}
+###Instance types available### {#sizes}
 
 | API Name          | RAM (GB) | # of Cores | Total HP CCUs |
 | ----------------- | -------- | ---------- | ------------- |
@@ -67,11 +67,11 @@ If you start from the Management Console you can select the availability zone th
     | az2      | available     |
     | az3      | available     |
     +----------+---------------+
-Using the API, you can also specify the availability zone when you create an instance or volume using `–availability_zone az#`
+Using the API, you can also specify the availability zone when you create an instance or volume using `-availability_zone az#`
 
 For example: `$ nova boot ... --availability-zone az1 ...`
 
-If you don’t specify an availability zone the compute or storage service automatically assigns one. So, if you do require redundancy for your virtual machines or volumes make sure to specify different availability zones for each.
+If you don't specify an availability zone the compute or storage service automatically assigns one. So, if you do require redundancy for your virtual machines or volumes make sure to specify different availability zones for each.
 
 **Important:** Volumes can only be attached to servers created in the same availability zone.
 
