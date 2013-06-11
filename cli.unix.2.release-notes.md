@@ -7,8 +7,9 @@ product: unix-cli
 ---
 #HP Cloud Services UNIX CLI Release Notes
 
-These are the release notes for the HP Cloud services UNIX CLI.  The current release number for the [UNIX CLI software](/cli/unix) is version 1.9.0, released on 05/15/13.
+These are the release notes for the HP Cloud services UNIX CLI.  The current release number for the [UNIX CLI software](/cli/unix) is version 2.0.0, released on 06/10/13.
 
+* [Release 2.0.0 Features](#v2_0_0)
 * [Release 1.9.0 Features](#v1_9_0)
 * [Release 1.8.0 Features](#v1_8_0)
 * [Release 1.7.0 Features](#v1_7_0)
@@ -16,6 +17,21 @@ These are the release notes for the HP Cloud services UNIX CLI.  The current rel
 * [Release 1.5.0 Features](#v1_5_0)
 * [Release 1.4.0 Features](#v1_4_0)
 * [Release 1.3.0 Features](#v1_3_0)
+
+##Release 2.0.0 Features## {#v2_0_0}
+
+The 2.0.0 release is available for download from [https://docs.hpcloud.com/file/hpcloud-2.0.0.gem](/file/hpcloud-2.0.0.gem).  This release was made available on 6/15/2013 and contains the following new features:
+
+* Support for next generation networking cloud
+  - Added the `networks` commands
+  - Added the `routers` commands
+  - Added the `ports` commands
+  - Added the `subnets` commands
+* Support for load balancer as a service (LBaaS) with the `lb` commands
+
+###Known Issues###
+
+* The --bootable option has been removed from the volumes list command
 
 ##Release 1.9.0 Features## {#v1_9_0}
 
