@@ -119,7 +119,7 @@ You can also reboot a server by selecting the `Reboot` button in the [server det
 
 ##Rebuilding a server## {#Rebuilding}
 
-To rebuild a server, in the [servers screen](/mc/compute/servers/), in the `Manage` column of the servers list, select the `Options` button in the row of the server to which you want to connect, and choose the `Rebuild Server` option:
+To rebuild a server (rather than terminating and creating an entirely new server), in the [servers screen](/mc/compute/servers/), in the `Manage` column of the servers list, select the `Options` button in the row of the server to which you want to connect, and choose the `Rebuild Server` option:
 
 <img src="media/server-rebuilding.png" width="580" alt="" />
 
