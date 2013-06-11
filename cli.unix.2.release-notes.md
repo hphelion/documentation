@@ -1,13 +1,13 @@
 ---
 layout: default
 title: "Release Notes for the HP Cloud Services UNIX CLI"
-permalink: /cli/unix/release-notes/
+permalink: /cli/unix/2/release-notes/
 product: unix-cli
 
 ---
 #HP Cloud Services UNIX CLI Release Notes
 
-These are the release notes for the HP Cloud services UNIX CLI.  The current release number for the [UNIX CLI software](/cli/unix) is version 2.0.0, released on 06/10/13.
+These are the release notes for the HP Cloud services UNIX CLI.  The current release number for the [UNIX CLI software](/cli/unix) is version 2.0.0, released on 06/11/13.
 
 * [Release 2.0.0 Features](#v2_0_0)
 * [Release 1.9.0 Features](#v1_9_0)
