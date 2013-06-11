@@ -26,9 +26,8 @@ Clicking the `+ New Image` button opens the [new image pane](/mc/compute/images/
 
 From the images screen you can:
 
-* Create an image
-* Delete an image
-* 
+* [Create an image](/mc/compute/images/manage#Creating)
+* [Delete an image](/mc/compute/images/manage#Deleting)
 
 
 ##For further information## {#ForFurtherInformation}

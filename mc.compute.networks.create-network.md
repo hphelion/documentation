@@ -27,7 +27,7 @@ Before you can begin creating or deleting a network, you must:
 
 ##Creating a network## {#Creating}
 
-To create a network, click the `+ Create Network` button in the [networks screen](/mc/compute/networks/):
+To create a network, in the [networks screen](/mc/compute/networks/) click the `+ Create Network` button:
 
 <img src="media/create-network-launch.jpg" width="580" alt="" />
 
@@ -71,5 +71,4 @@ Select the button `Yes, delete this network`.  Your network is deleted and no lo
 * For basic information about our HP Cloud compute services, take a look at the [HP Cloud compute overview](/compute/) page
 * Use the MC [site map](/mc/sitemap) for a full list of all available MC documentation pages
 * For information about the Open Stack networking features, surf on over to [their networking wiki](https://wiki.openstack.org/wiki/Quantum)
-
 
