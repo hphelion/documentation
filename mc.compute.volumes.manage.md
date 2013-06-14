@@ -43,7 +43,7 @@ In the volumes creation pane, select the values for the following fields:
 * In the `Description` text field enter a description for your volume (this is optional)
 * From the `AZ` pull-down menu select an availability zone (AZ)
 * From the `Size` pull-down menu select the size for your volume
-* If you want to create a bootable volume, click the `Make bootable from image` checkbox to open the images pane of the volume screen; see the section below for more information on how to [create a bootable volume](#CreatingBootable)
+* If you want to create a bootable volume, click the `Make bootable from image` checkbox to open the images pane of the volume screen; see the section below for more information on how to [create a bootable volume](#CreateBootable)
 
 Click the `Create` button to create the volume with your entered parameters.  The volumes creation pane closes, and your new volume appears in the volumes list:
 
@@ -69,7 +69,7 @@ In the volumes creation pane, select the values for the following fields:
 * From the `AZ` pull-down menu select an availability zone (AZ)
 * From the `Size` pull-down menu select the size for your volume
 * Click the `Make bootable from image` checkbox to open the images pane of the volume screen
-* Select an image type--`Public`, `Partner`, or `Private` (see the [image types](/mc/compute/servers/manage#ImageTypes/) section on the [server management](/mc/compute/servers/manage/) for more information)
+* Select an image type--`Public`, `Partner`, or `Private` (see the [image types](/mc/compute/servers/manage#ImageTypes/) section on the [server management](/mc/compute/servers/manage/) page for more information)
 * From the image pull-down menu select the specific image (in this example, `Ubuntu Precise 12.04`)
 
 <img src="media/volume-create-bootable.png" width="580" alt="" />
@@ -81,7 +81,7 @@ When you have filled out all the fields appropriately, click the `Create` button
 
 ##Attaching and detaching volumes## {#Attaching}
 
-You can use the MC to [attach](/mc/compute/volumes/view-details#Attaching) and [detach](/mc/compute/volumes/view-details#Detaching) to a server.  For details, see the [volume details](/mc/compute/volumes/view-details/) page.
+You can use the MC to [attach](/mc/compute/volumes/view-details#Attaching/) and [detach](/mc/compute/volumes/view-details#Detaching/) to a server.  For details, see the [volume details](/mc/compute/volumes/view-details/) page.
 
 You can also detach a volume from a server from the main volumes screen.  To detach a volume, in the [volumes screen](/mc/compute/volumes/), in the row for the volume you want to detach, in the `Manage` column click the `Options` button and select `Detach`.
 
@@ -96,7 +96,7 @@ Click `Yes, detach this volume`; your volume is detached.
 
 ##Managing snapshots## {#Snapshot}
 
-You can [create](/mc/compute/volumes/view-details/), [clone](/mc/compute/volumes/view-details/), [delete](/mc/compute/volumes/view-details/), and [display the details](/mc/compute/volumes/view-details/) of snapshots from the [volume details](/mc/compute/volumes/view-details/) screen.  See the [viewing volume details](#Viewing) section below for information on how to access the volume details screen.
+You can [create](/mc/compute/volumes/view-details#Snapshot/), [clone](/mc/compute/volumes/view-details#Cloning/), [delete](/mc/compute/volumes/view-details#DeletingSnapshot/), and [display the details](/mc/compute/volumes/view-details#ViewingSnapshot/) of snapshots from the [volume details](/mc/compute/volumes/view-details/) screen.  See the [viewing volume details](#Viewing) section below for information on how to access the volume details screen.
 
 
 ##Deleting a volume## {#Deleting}
@@ -129,8 +129,8 @@ This launches the custom volumes details screen:
 The custom volume details screen displays the name, ID, status (active or inactive), description, size, container format (e.g. `BARE`), disk format, creation date, and source server for your volume.  You can can perform a number of functions from this screen, such as:
 
 * [Deleting the volume](#Deleting)
-* [Creating a snapshot](/mc/compute/volumes/view-details#CreatingSnapshot)
-* [Editing the volume name and description](/mc/compute/volumes/view-details#Editing).  
+* [Creating a snapshot](/mc/compute/volumes/view-details#Snapshot/)
+* [Editing the volume name and description](/mc/compute/volumes/view-details#Editing/).  
 
 See the [Viewing volume details](/mc/compute/volumes/view-details) page for more information.
 
@@ -138,6 +138,6 @@ See the [Viewing volume details](/mc/compute/volumes/view-details) page for more
 ##For further information## {#ForFurtherInformation}
 
 * For basic information about our HP Cloud compute services, take a look at the [HP Cloud compute overview](/compute/) page
-* Use the MC [site map](/mc/sitemap) for a full list of all available MC documentation pages
+* Use the MC [site map](/mc/sitemap/) for a full list of all available MC documentation pages
 * For information about the Open Stack networking features, surf on over to [their wiki](https://wiki.openstack.org/wiki/Quantum)
 

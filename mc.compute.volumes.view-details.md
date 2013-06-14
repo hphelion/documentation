@@ -46,11 +46,11 @@ The volume details screen contains the following information on the selected vol
 * Status (Available, Unavailable, etc.)
 * Description
 * Size
-* [Availability zone (AZ)](/glossary#AvailabilityZone)
+* [Availability zone (AZ)](/glossary#AvailabilityZone/)
 * Creation time (date and time the volume was created)
 * Server to which the volume is attached (if any)
 
-You can use the volume details screen to [create a snapshot of](/mc/compute/volumes/manage#CreatingSnapshot) or [delete](/mc/compute/volumes/manage#Deleting) the volume.  You can also [change the volume name or description](#Changing) from this screen.
+You can use the volume details screen to [create a snapshot of](/mc/compute/volumes/manage#Snapshot/) or [delete](/mc/compute/volumes/manage#Deleting) the volume.  You can also [change the volume name or description](#Editing) from this screen.
 
 
 ##Editing the volume name and description## {#Editing}
