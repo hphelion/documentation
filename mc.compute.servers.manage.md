@@ -60,13 +60,13 @@ To create a server, click the `+ Create Server` button in the [servers screen](/
 
 This launches the new server screen.
 
-<img src="media/servers-new.jpg" width="580" alt="" />
+<img src="media/servers-new.png" width="580" alt="" />
 
 In the new servers screen, select the values for the various fields:
 
 * In the `Name` text field enter a name for your server
 * From the `AZ` pull-down menu select an availability zone (AZ)
-* From the `Networks` pull-down menu select the network for your server (This pull-down only appears if you have more than one network available for your project)
+* From the `Networks` pull-down menu select the network port for your server (If you have only  one network available for your project this pull-down displays `New port on` and then your network name)
 * From the list of image types, click the button for the type you wish create your server from:  `Public Images`, `Partner Images`, `Private Images`, or `Bootable Volume`
 * In the image pull-down menu (below the list of image types), select the image from which you want to create a server
 * From the `Flavor` pull-down menu, select the flavor you want for your server
