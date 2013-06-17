@@ -11,7 +11,6 @@ This page covers how to create and delete a subnet using the networks screen of 
 
 * [Before you begin](#Overview)
 * [Creating a subnet](#Creating)
-* [Advanced subnet options](#Advanced)
 * [Editing a subnet](#Editing)
 * [Enabling and disabling DHCP](#DHCP)
 * [Deleting a subnet](#Deleting)
@@ -61,9 +60,9 @@ You can also create a subnet from the [network details](/mc/compute/networks/vie
 In the network details screen, just click the `Create Subnet` button.  This launches the subnet creation screen as outlined above; follow the same process from there.
 
 
-##Advanced subnet options## {#Advanced}
+<!--##Advanced subnet options## {#Advanced}
 
-You can use the Advanced Options pane of the create subnet screen to add other options to your subnet.  This pane is contracted by default; just click the `Advanced Options` button:
+You can use the [subnet creation screen](#Creating) to add other options to your subnet.  This pane is contracted by default; just click the `Advanced Options` button:
 
 <img src="media/advanced-subnet-options.jpg" width="580" alt="" />
 
@@ -78,21 +77,21 @@ You can set the following options via the Advanced Options pane of the create su
 
 ###Allocation Pools### {#AllocationPools}
 
-To create an allocation pool in the Advanced Options pane, enter the `Start IP` and `End IP` values you want for your subnet in the text entry fields.  If you want to create more than one allocation pool, click the `+Add more` button and additional text entry fields are added.
+To create an allocation pool in the [subnet creation screen](#Creating), enter the `Start IP` and `End IP` values you want for your subnet in the text entry fields.  If you want to create more than one allocation pool, click the `+Add more` button and additional text entry fields are added.
 
 <img src="media/allocation-pools.jpg" width="580" alt="" />
 
 ###DNS Nameservers### {#DNSNameservers}
 
-To create a DNS Nameserver in the Advance Options pane, enter the `IP Address` you want for your subnet in the text entry field.  If you want to create more than one DNS nameserver, click the `+Add more` button and additional text entry fields are added.
+To create a DNS Nameserver in the [subnet creation screen](#Creating), enter the `IP Address` you want for your subnet in the text entry field.  If you want to create more than one DNS nameserver, click the `+Add more` button and additional text entry fields are added.
 
 <img src="media/dns-nameservers.jpg" width="580" alt="" />
 
 ###Host Routes### {#HostRoutes}
 
-To create host routes in the Advanced Options pane, enter the `Destination CIDR` and `Next Hop` you want for your subnet in the text entry fields.  If you want to create more than one host route, click the `+Add more` button and additional text entry fields are added.
+To create host routes in the [subnet creation screen](#Creating), enter the `Destination CIDR` and `Next Hop` you want for your subnet in the text entry fields.  If you want to create more than one host route, click the `+Add more` button and additional text entry fields are added.
 
-<img src="media/host-routes.jpg" width="580" alt="" />
+<img src="media/host-routes.jpg" width="580" alt="" /> -->
 
 
 ##Editing a subnet## {#Editing}
