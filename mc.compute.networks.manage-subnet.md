@@ -39,9 +39,18 @@ To create a subnet, in the `Manage` column, select the `Options` button for the 
 
 This launches the subnet creation screen.  
 
-<img src="media/create-subnet.jpg" width="580" alt="" />
+<img src="media/create-subnet.png" width="580" alt="" />
 
-In the subnet creation screen, in the `Subnet Info` pane, enter a name for your subnet in the `Name` text-entry field, the network address for the subnet in the `Network Address` field, (optionally) a Gateway IP address in the `Gateway IP` field (if you want to assign a specific Gateway IP rather than use the default), and click the `Create Subnet` button.  You are returned to the networks screen and your new subnet is displayed in the `Subnets` column:
+In the subnet creation screen, select your desired values for the following fields:
+
+* A name for your subnet in the `Name` text-entry field
+* The network address for the subnet in the `Network Address` field
+* A Gateway IP address in the `Gateway IP` field (this is optional; if you want to assign a specific Gateway IP rather than use the default)
+* `DNS Nameservers` addresses (if desired)
+* `Allocation Pools` starting and ending IP addresses (if desired)
+* `Host Routes` destination and next hop addresses (if desired)
+
+Click the `Create Subnet` button.  You are returned to the networks screen and your new subnet is displayed in the `Subnets` column:
 
 <img src="media/compute-networks06.jpg" width="580" alt="" />
 
@@ -50,8 +59,6 @@ You can also create a subnet from the [network details](/mc/compute/networks/vie
 <img src="media/compute-networks10.jpg" width="580" alt="" />
 
 In the network details screen, just click the `Create Subnet` button.  This launches the subnet creation screen as outlined above; follow the same process from there.
-
-**Note**: When you're creating a subnet, you can also include other subnet details like  allocation pools or DNS Nameservers.  For details, see the section on [advanced subnet options](#Advanced) below.
 
 
 ##Advanced subnet options## {#Advanced}
