@@ -34,7 +34,7 @@ Before you can begin creating or deleting a server, you must:
 
 ##About the image types## {#ImageTypes}
 
-When you create an image, you can do so using one of several different existing image types.  When you [create a server](#Creating) your sever, you must select among one of these image types:
+When you create an image, you can do so using one of several different existing image types.  When you [create a server](#Creating), you must select among one of these image types:
 
 **Public**
 :  User-uploaded images or custom images (for example, made from a snapshot of current images)
