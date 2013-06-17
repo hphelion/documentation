@@ -33,7 +33,7 @@ To create a network, in the [networks screen](/mc/compute/networks/) click the `
 
 This launches the network creation screen.
 
-<img src="media/create-network.jpg" width="580" alt="" />
+<img src="media/create-network.png" width="580" alt="" />
 
 In the network creation screen, in the `Network Info` pane, enter a name for your network in the `Name` text-entry field and click the `Create` button.  Your new network namespace is created.  This new network appears in the list on the main networks screen.  (To return to the main networks screen, just click the `Networks` item in the menu bar.)
 
