@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "HP Cloud jcloud Bindings Compute Examples"
+title: "HP Cloud jclouds Bindings Compute Examples"
 permalink: /bindings/jclouds/compute/
 product: jclouds
 
 ---
-# HP Cloud jcloud Bindings Compute Examples
+# HP Cloud jclouds Bindings Compute Examples
 
 This page provides you with examples of how to use the jclouds bindings to perform compute tasks.  The library provides you with two different APIs that you can use: the Provider-Specific API, and the Compute Service Portable API, which allows you the freedom to use portable abstractions or cloud-specific features.
 
@@ -17,14 +17,18 @@ This page provides you with examples of how to use the jclouds bindings to perfo
 
 ### Connecting to the service
 
-Instantiate the context with the HP Cloud-compute provider:
+Instantiate the context with the HP Cloud Compute provider:
 
-        ComputeServiceContext ctx = new ComputeServiceContextFactory().createContext("hpcloud-compute", user, apiKey) ;
+        ComputeServiceContext ctx = ContextBuilder.newBuilder("hpcloud-compute")
+            .credentials(user, apiKey)
+            .modules(modules)
+            .buildView(ComputeServiceContext.class);
 
 Using the provider-specific API:
 
-        RestContext<NovaClient, NovaAsyncClient> context = ctx.getProviderSpecificContext();
-                NovaClient client = context.getApi();
+        ComputeService cs = ctx.getComputeService();  
+        RestContext<NovaClient, NovaAsyncClient> context = ctx.getProviderSpecificContext();  
+        NovaClient client = context.getApi();
 
 When you have completed your jclouds compute operations, you need to finish by closing the context:
 
@@ -49,7 +53,7 @@ Obtaining the details of a particular server:
 Creating a new server:
 
         Server exampleServer = 
-                serverClient.createServer("<exampleServer>", “<image_id>", "<flavor_ID>");
+                serverClient.createServer("<exampleServer>", <image_id>", "<flavor_ID>");
 
 Rebooting a server:
 
