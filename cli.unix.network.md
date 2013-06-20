@@ -9,10 +9,10 @@ product: unix-cli
 
 This page gives you a few examples of how to perform various network tasks using the HP Cloud service.  This page discusses the following tasks:
 
-* [Network Commands (Next Generation)](#NetworkCommands)
-* [Subnet Commands (Next Generation)](#SubnetCommands)
-* [Ports Commands (Next Generation)](#PortsCommands)
-* [Router Commands (Next Generation)](#RouterCommands)
+* [Network Commands (version 13.5 and later)](#NetworkCommands)
+* [Subnet Commands (version 13.5 and later)](#SubnetCommands)
+* [Ports Commands (version 13.5 and later)](#PortsCommands)
+* [Router Commands (version 13.5 and later)](#RouterCommands)
 * [Security Group Commands](#SecurityGroupCommands)
 * [Security Group Rule Commands](#SecurityGroupRuleCommands)
 * [Addresses or Floating IP Commands](#AddressesorFloatingIPCommands)
@@ -21,16 +21,17 @@ Remember that you can get detailed help for any command or task with the followi
 
     $ hpcloud help <TASK>
 
-##Network Commands (Next Generation)## {#NetworkCommands}
 
-The ability to list, add, update and delete networks is a next generation feature.  It may not be available everywhere.
+##Network Commands (version 13.5 and later)## {#NetworkCommands}
 
-Add a new network:
+The ability to list, add, update and delete networks is a version 13.5 and later feature and may not be available in all regions.
+
+To add a new network:
 
     $ hpcloud networks:add netty -u 
     Created network 'netty' with id '3136e453'.
 
-List networks:
+To list networks:
 
     $ hpcloud networks
       +----------+---------+--------+--------+-------------+-------------------+
@@ -41,21 +42,22 @@ List networks:
       | d1a803d8 | net2    | ACTIVE |        | up          | 552f58c5,c1fe3db3 |
       +----------+---------+--------+--------+-------------+-------------------+
 
-Remove a network:
+To remove a network:
 
     $ hpcloud networks:remove netty 
     Removed network 'netty'.
 
-##Subnet Commands (Next Generation)## {#SubnetCommands}
 
-The ability to list, add, update and delete subnets is a next generation feature.  It may not be available everywhere.
+##Subnet Commands (version 13.5 and later)## {#SubnetCommands}
 
-Add a subnet:
+The ability to list, add, update and delete subnets is a version 13.5 and later feature and may not be available in all regions.
+
+To add a subnet:
 
     $ hpcloud subnets:add subby netty 100.1.1.1/32 -d
     Created subnet 'subby' with id '28adaad7'.
 
-Listing subnets:
+To list subnets:
 
     $ hpcloud subnets
       +----------+-----------+------------+--------------+-------------+--------+-----------+------+
@@ -65,26 +67,27 @@ Listing subnets:
       | 28adaad7 | subby     | d1a803d8   | 127.2.0.0/24 |             |        | 127.0.0.1 | true |
       +----------+-----------+------------+--------------+-------------+--------+-----------+------+
 
-Update a subnet:
+To uppdate a subnet:
 
     $ hpcloud subnets:update subby -g 100.1.1.1
     Updated subnet 'subby'.
 
-Remove a subnet:
+To remove a subnet:
 
     $ hpcloud subnets:remove subby
     Removed subnet 'subby'.
 
-##Ports Commands (Next Generation)## {#PortsCommands}
 
-The ability to list, add, update and delete ports is a next generation feature.  It may not be available everywhere.
+##Ports Commands (version 13.5 and later)## {#PortsCommands}
 
-Add a port:
+The ability to list, add, update and delete ports is a version 13.5 and later feature and may not be available in all regions.
+
+To add a port:
 
     $ hpcloud ports:add puerto netty
     Created port 'puerto' with id 'bae8761f'.
 
-Listing ports:
+To list the ports:
 
     $ hpcloud ports
       +----------+--------+------------+--------------------+-------------------+--------+-------------+--------------+--------------+
@@ -93,21 +96,22 @@ Listing ports:
       | bae8761f | puerto | 3136e453   | 552f58c5,127.1.0.1 | fa:16:3e:ba:64:5e | ACTIVE | up          | dhcpb3abdef0 | network:dhcp |
       +----------+--------+------------+--------------------+-------------------+--------+-------------+--------------+--------------+
 
-Remove a port:
+To remove a port:
 
     $ hpcloud ports:remove puerto
     Removed port 'puerto'.
 
-##Router Commands (Next Generation)## {#RouterCommands}
 
-The ability to list, add, update and delete routers is a next generation feature.  It may not be available everywhere.
+##Router Commands (version 13.5 and later)## {#RouterCommands}
 
-Add a router to a network:
+The ability to list, add, update and delete routers is a version 13.5 and later feature and may not be available in all regions.
+
+To add a router to a network:
 
     $ hpcloud routers:add routee -g netty
     Created router 'routee' with id 'edfb8af0'.
 
-Listing routers:
+To list the routers:
 
     $ hpcloud routers
       +----------+--------+-------------+--------+----------+
@@ -116,20 +120,21 @@ Listing routers:
       | edfb8af0 | routee | up          | ACTIVE | ca07e0fd |
       +----------+--------+-------------+--------+----------+
 
-Add an router interface:
+To add a router interface:
 
     $ hpcloud routers:interface:add routee puerto
     Created router interface 'routee' to 'puerto'.
 
-Remove an router interface:
+To remove a router interface:
 
     $ hpcloud routers:interface:remove routee puerto
     Removed port interface 'routee' from 'puerto'.
 
-Remove a router:
+To remove a router:
 
     $ hpcloud routers:remove routee
     Removed router 'routee'.
+
 
 ##Security Group Commands## {#SecurityGroupCommands}
 
@@ -143,7 +148,6 @@ To list security groups:
       | d4241424 | noo     | new         |
       +----------+---------+-------------+
 
-
 To add a new security group:
 
     $ hpcloud securitygroups:add groupo "my sec group desciption"
@@ -153,6 +157,7 @@ To remove an existing security group:
 
     $ hpcloud securitygroups:remove groupo
     Removed security group 'groupo'.
+
 
 ##Security Group Rule Commands## {#SecurityGroupRuleCommands}
 
@@ -165,7 +170,6 @@ To list rules for an existing security group:
       | 2e6c0a89 |          | IPv6 | icmp     | egress    |      |    |
       | eaa02bf0 | 8998f1b2 | IPv6 | tcp      | egress    | 80   | 80 |
       +----------+----------+------+----------+-----------+------+----+
-
 
 To add a new rule to an existing security group:
 
@@ -185,6 +189,7 @@ To remove an existing rule from a security group:
 
     $ hpcloud securitygroups:rules:remove groupo 1111
     Removed rule '1111' for security group 'groupo'.
+
 
 ##Addresses or Floating IP Commands## {#AddressesorFloatingIPCommands}
 
