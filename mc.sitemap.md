@@ -18,11 +18,10 @@ Having a bit of trouble navigating our site, and so you're looking for a single 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Managing servers](/mc/compute/servers/manage/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Viewing server details](/mc/compute/servers/view-details)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Images screen](/mc/compute/images/) <br>
-<!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating and deleting an image](/mc/compute/images/create/) <br>-->
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Managing images](/mc/compute/images/manage/) <br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Volumes screen](/mc/compute/volumes/)<br>
-<!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating and deleting a volume]()<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Cloning a new volume from an existing snapshot]()<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating a bootable volume from an existing image]()<br>-->
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Managing volumes](/mc/compute/volumes/manage/)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Viewing volume details](/mc/compute/volumes/view-details/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Network screen](/mc/compute/networks/)  <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating and deleting a network](/mc/compute/networks/create-network/) <br> 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Enabling and disabling a network](/mc/compute/networks/enable-network/) <br> 

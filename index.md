@@ -44,9 +44,9 @@ You might also benefit from taking a look at our introductory page on the [Activ
 For best results, we recommend that use one of the following supported HTML5 browsers when accessing the management console:
 
 * Chrome
-* FireFox12
-* Internet Explorer 9
-* Safari 5.03
+* FireFox 
+* Internet Explorer (9 or later)
+* Safari 
 
 For creating your own applications, take a look at our [Bindings section](/bindings).
 

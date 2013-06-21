@@ -18,9 +18,17 @@ The images screen displays your compute instance image information for the avail
 
 <img src="media/images-main.jpg" width="580" alt="" />
 
-From this screen you can:
+The name, status, size, and source server for your images are displayed.  You can sort your list of images based on a particular identifier by just clicking the column heading.  For example, if you want to sort by status, just click the `Status` column header.
 
-* Create or delete an image
+Clicking the `+ New Image` button opens the [new image pane](/mc/compute/images/manage#Creating) in the images screen:
+
+<img src="media/images-create-pane.png" width="580" alt="" />
+
+From the images screen you can:
+
+* [Create an image](/mc/compute/images/manage#Creating)
+* [Delete an image](/mc/compute/images/manage#Deleting)
+* [View image details](/mc/compute/images/manage#Viewing)
 
 
 ##For further information## {#ForFurtherInformation}

@@ -26,7 +26,6 @@ Before you perform any network management on your routers, you must:
 * [Sign up for an HP Cloud compute account](https://account.hpcloud.com/signup)
 * Activate compute service on your account
 * [Create a network](/mc/compute/networks/create-network/)
-* Create a router by [creating a project](/mc/account/projects#Creating) in the [account and services](/mc/account/) dashboard
 
 <!--When cloudadmin tool deployed, add a link to it here?-->
 <!--Include a link to the CLI process for creating a router here as well?-->
@@ -34,14 +33,14 @@ Before you perform any network management on your routers, you must:
 
 ##Enabling a router## {#Enabling}
 
-When you [create a router](/mc/account/projects/), the routing instance is enabled by default.  If you have [disabled](#Disabling) the router, to enable it, in the `Manage` column, select the `Options` button for the router you wish to disable and click the `Disable` item:
+When you enable the compute service, a router is enabled by default.  If you have [disabled](#Disabling) the router, to enable it, in the `Manage` column, select the `Options` button for the router you wish to disable and click the `Disable` item:
 
 <img src="media/disable-router.jpg" width="580" alt="" />
  
 
 ##Disabling a router## {#Disabling}
 
-When you [create a router](/mc/account/projects/), the routing instance is enabled by default.  To disable the router, in the `Manage` column, select the `Options` button for the router you wish to disable and click the `Disable` item:
+When you enable the compute service, a router is enabled by default.  To disable the router, in the `Manage` column, select the `Options` button for the router you wish to disable and click the `Disable` item:
 
 <img src="media/enable-router.jpg" width="580" alt="" />
 

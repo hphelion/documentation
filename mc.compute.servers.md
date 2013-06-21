@@ -19,9 +19,9 @@ The servers screen displays the servers information for your project.
 
 <img src="media/servers-main.png" width="580" alt="" />
 
-The name, availability zone (AZ), status, image, and key pair for your servers are displayed.  You can sort your list of networks based on a particular identifier by just clicking the column heading.  For example, if you want to sort the list by ID, just click the `ID` column header.
+The name, availability zone (AZ), status, image, and key pair for your servers are displayed.  You can sort your list of networks based on a particular identifier by just clicking the column heading.  For example, if you want to sort the list by name, just click the `Name` column header.
 
-Clicking the `+ Create Server` button to launch the [new server screen](/mc/compute/servers/create-new/) screen.  Clicking the `Options` button in the `Manage` column allows you to perform a number of functions on that server: 
+Clicking the `+ Create Server` button to launch the [new server screen](/mc/compute/servers/manage#Creating/).  Clicking the `Options` button in the `Manage` column allows you to perform a number of functions on that server: 
 
 <img src="media/servers-options-list.png" width="580" alt="" />
 
@@ -29,7 +29,7 @@ Clicking the `+ Create Server` button to launch the [new server screen](/mc/comp
 * [Reboot](/mc/compute/servers/manage#Rebooting)
 * [Rebuild](/mc/compute/servers/manage#Rebuilding)
 * [Terminate](/mc/compute/servers/manage#Terminating)
-* [Display](/mc/compute/servers/manage#Viewing) server details 
+* [View server details](/mc/compute/servers/manage#Viewing) 
 
 
 ##For further information## {#ForFurtherInformation}

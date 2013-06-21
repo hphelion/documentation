@@ -7,12 +7,12 @@ product: mc-compute
 ---
 # Management console: Managing servers
 
-This page describes how to manage servers using the [networks screen](/mc/compute/networks/) of the [management console](/mc/) (MC).  This page covers the following topics:
+This page describes how to manage servers using the [servers screen](/mc/compute/networks/) of the [management console](/mc/) (MC).  This page covers the following topics:
 
 * [Before you begin](#Overview)
 * [About the image types](#ImageTypes)
 * [Creating a server](#Creating)
-* [Connecting to a server](#Connecting)
+* [Displaying server connection information](#Connecting)
 * [Rebooting a server](#Rebooting)
 * [Rebuilding a server](#Rebuilding)
 * [Terminating a server](#Terminating)
@@ -34,10 +34,10 @@ Before you can begin creating or deleting a server, you must:
 
 ##About the image types## {#ImageTypes}
 
-When you create an image, you can do so using one of several different existing image types.  When you [create a server](#Creating) your sever, you must select among one of these image types:
+When you create an image, you can do so using one of several different existing image types.  When you [create a server](#Creating), you must select among one of these image types:
 
 **Public**
-:  Publicly-available images, such as Debian Squeeze
+:  User-uploaded images or custom images (for example, made from a snapshot of current images)
 
 **Partner**
 :  Images available through partners
@@ -60,17 +60,18 @@ To create a server, click the `+ Create Server` button in the [servers screen](/
 
 This launches the new server screen.
 
-<img src="media/servers-new.jpg" width="580" alt="" />
+<img src="media/servers-new.png" width="580" alt="" />
 
 In the new servers screen, select the values for the various fields:
 
 * In the `Name` text field enter a name for your server
 * From the `AZ` pull-down menu select an availability zone (AZ)
+* From the `Networks` pull-down menu select the network port for your server (If you have only  one network available for your project this pull-down displays `New port on` and then your network name)
 * From the list of image types, click the button for the type you wish create your server from:  `Public Images`, `Partner Images`, `Private Images`, or `Bootable Volume`
 * In the image pull-down menu (below the list of image types), select the image from which you want to create a server
 * From the `Flavor` pull-down menu, select the flavor you want for your server
 * From the `Key name` pull-down menu, select the key name you want for your server
-* In the `Security Groups` text field, enter the security groups of which you want your server to be a part
+* In the `Security Groups` text field, enter the security groups you want to apply to the port on which the server is booted
 * In the `Tags` text field, enter any tags you want to associate to your server
 
 <img src="media/server-new-filled.png" width="580" alt="" />
@@ -82,22 +83,22 @@ When you have filled out all the fields appropriately, click the `Create` button
 <!-- Do we want to link stuff here to the glossary terms? -->
 
 
-##Connecting to a server## {#Connecting}
+##Displaying server connection information## {#Connecting}
 
-To connect to an existing server, in the [servers screen](/mc/compute/servers/), in the `Manage` column of the servers list, select the `Options` button in the row of the server to which you want to connect, and choose the `Connect to Server` option:
+To display information about how to connect to an instance, in the [servers screen](/mc/compute/servers/), in the `Manage` column of the servers list, select the `Options` button in the row of the server to which you want to connect, and choose the `Connect to Server` option:
 
 <img src="media/server-connecting.png" width="580" alt="" />
 
-You are asked to confirm this connection:
+The information displayed depends on whether you are connecting via Windows or UNIX.  For UNIX, the set of SSH instructions is displayed; for Windows, the RDC instructions are displayed.  This example shows the results for UNIX:
 
 <img src="media/server-connect-verify.png" width="580" alt="" />
 
-Click the `Okay` button to confirm, and your server is connected.
+Click the `Okay` button to dismiss the screen.
 
 
 ##Rebooting a server## {#Rebooting}
 
-To reboot a server, in the [servers screen](/mc/compute/servers/), in the `Manage` column of the servers list, select the `Options` button in the row of the server to which you want to connect, and choose the `Reboot Server` option:
+To reboot a server, in the [servers screen](/mc/compute/servers/), in the `Manage` column of the servers list, select the `Options` button in the row of the server to which you want to reboot, and choose the `Reboot Server` option:
 
 <img src="media/server-rebooting.png" width="580" alt="" />
 
@@ -118,7 +119,7 @@ You can also reboot a server by selecting the `Reboot` button in the [server det
 
 ##Rebuilding a server## {#Rebuilding}
 
-To rebuild a server, in the [servers screen](/mc/compute/servers/), in the `Manage` column of the servers list, select the `Options` button in the row of the server to which you want to connect, and choose the `Rebuild Server` option:
+To rebuild a server (rather than terminating and creating an entirely new server), in the [servers screen](/mc/compute/servers/), in the `Manage` column of the servers list, select the `Options` button in the row of the server to which you want to connect, and choose the `Rebuild Server` option:
 
 <img src="media/server-rebuilding.png" width="580" alt="" />
 
@@ -146,6 +147,8 @@ To terminate a server, in the [servers screen](/mc/compute/servers/), in the `Ma
 You can also terminate a server by selecting the `Terminate` button in the [server details](#Viewing) screen:
 
 <img src="media/server-details.png" width="580" alt="" />
+
+**Note**: This permanently removes the server.
 
 
 ##Viewing server details## {#Viewing}
