@@ -7,10 +7,10 @@ product: unix-cli
 ---
 #HP Cloud Services UNIX CLI Release Notes
 
-These are the release notes for the HP Cloud services UNIX CLI.  The current release number for the [UNIX CLI software](/cli/unix) is version 2.0.0, released on 06/13/13.
+These are the release notes for the HP Cloud services UNIX CLI.  The current release number for the [UNIX CLI software](/cli/unix) is version 2.0.0, released on 06/24/13.
 
 * [Release 2.0.0 Features](#v2_0_0)
-* [Release 1.9.1 Features](#v1_9_1)
+* [Release 1.9.0 Features](#v1_9_0)
 * [Release 1.8.0 Features](#v1_8_0)
 * [Release 1.7.0 Features](#v1_7_0)
 * [Release 1.6.0 Features](#v1_6_0)
@@ -22,28 +22,29 @@ These are the release notes for the HP Cloud services UNIX CLI.  The current rel
 
 The 2.0.0 release is available for download from [https://docs.hpcloud.com/file/hpcloud-2.0.0.gem](/file/hpcloud-2.0.0.gem).  This release was made available on 6/15/2013 and contains the following new features:
 
-* Support for next generation networking cloud
-  - Added the `networks` commands
-  - Added the `routers` commands
-  - Added the `ports` commands
-  - Added the `subnets` commands
+* Support for next generation networking cloud added, including the following features:
+  - `networks` commands
+  - `routers` commands
+  - `ports` commands
+  - `subnets` commands
 * Support for load balancer as a service (LBaaS) with the `lb` commands
 
 ###Known Issues###
 
-* The --bootable option has been removed from the volumes list command
+* The `--bootable option` has been removed from the `volumes` (list) command
+* The v3 identity servers are not supported by this release
 
-##Release 1.9.1 Features## {#v1_9_1}
+##Release 1.9.0 Features## {#v1_9_0}
 
-The 1.9.1 release is available for download from [https://docs.hpcloud.com/file/hpcloud-1.9.1.gem](/file/hpcloud-1.9.1.gem).  This release was made available on 5/15/2013 and contains the following new features:
+The 1.9.0 release is available for download from [https://docs.hpcloud.com/file/hpcloud-1.9.0.gem](/file/hpcloud-1.9.0.gem).  This release was made available on 5/15/2013 and contains the following new features:
 
 * Support for domain name service (DNS)
-* New account:catalog command dumps the service catalog for the given account
-* Default availability zone is now the alphabetically first zone in the service catalog.
+* New `account:catalog` command dumps the service catalog for the given account
+* Default availability zone is now the alphabetically-first zone in the service catalog.
 
 ###Known Issues###
 
-* Support for availability zones in the config.yml file is deprecated.  Support for that future will be removed in the future.  There are no long hard coded default zones in the configuration.
+* Support for availability zones in the `config.yml` file is deprecated.  Support for that future will be removed in the future.  There are no longer any hard-coded default zones in the configuration.
 
 ##Release 1.8.0 Features## {#v1_8_0}
 
