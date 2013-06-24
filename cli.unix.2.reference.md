@@ -147,7 +147,7 @@ Set the account credential authorization URI to `https://127.0.0.1` and the bloc
 
     hpcloud account:edit pro auth_uri='https://127.0.0.1/' block_availability_zone='az-2.region-a.geo-1'
 
-Create a Rackspace account for migration
+Create a Rackspace account for migration:
 
     hpcloud account:setup rackspace -p rackspace
 
@@ -242,7 +242,7 @@ Set the account credential authorization URI to `https://127.0.0.1` and the bloc
 
     hpcloud account:edit pro auth_uri='https://127.0.0.1/' block_availability_zone='az-2.region-a.geo-1'
 
-Create a Rackspace account for migration
+Create a Rackspace account for migration:
 
     hpcloud account:setup rackspace -p rackspace
 
@@ -348,15 +348,15 @@ Grant the specified permissions.
 Set the access control list (ACL) values for the specified container. The supported permissions are `r` (read), `w` (write), or `rw` (read and write). You may specify one or more user for the given permission.  If you do not specify a user, the permissions are set to public.  Public write permissions are not allowed.
 
 ###Examples
-Allow anyone to read 'my_container'
+Allow anyone to read 'my_container':
 
     hpcloud acl:grant :my_container r
 
-Allow Bob and Sally to read and write 'my_container'
+Allow Bob and Sally to read and write 'my_container':
 
     hpcloud acl:grant :my_container rw bob@example.com sally@example.com
 
-Give Billy read permissions to 'my_container'
+Give Billy read permissions to 'my_container':
 
     hpcloud acl:grant :my_container r billy@example.com
 
@@ -385,11 +385,11 @@ Revoke the specified permissions.
 Revoke the access control list (ACL) values from the specified container. The supported permissions are `r` (read), `w` (write), or `rw` (read and write). You may specify one or more user fo the given permission.  If you do not specify a user, the permissions are set to public.  Public write permissions are not allowed.
 
 ###Examples
-Revoke public read from 'my_container'
+Revoke public read from 'my_container':
 
     hpcloud acl:revoke :my_container public-read
 
-Revoke read and write from bob@example.com from 'my_container'
+Revoke read and write from bob@example.com from 'my_container':
 
     hpcloud acl:revoke :my_container rw bob@example.com
 
@@ -660,7 +660,7 @@ Add the container `my_cdn_container` to the CDN in the  availability zone `regio
 Get the value of an attribute of a CDN container.
 
 ###Syntax
-`hpcloud cdn:containers:get <name> <attribute>`
+`hpcloud cdn:containers:get <name> [attribute..]`
 
 ###Options
 **-z, --availability-zone=AVAILABILITY_ZONE**
@@ -684,6 +684,10 @@ Get the value of an attribute for an existing CDN container. The allowed attribu
 Optionally, you can specify an availability zone.
 
 ###Examples
+List all the values:
+
+    hpcloud cdn:containers:get :my_cdn_container
+
 Get the value of the attribute 'X-Ttl':
 
     hpcloud cdn:containers:get :my_cdn_container "X-Ttl"
@@ -799,7 +803,7 @@ Set the attribute 'X-Ttl' to 900:
 
     hpcloud cdn:containers:set :my_cdn_container "X-Ttl" 900
 
-Set the attribute 'X-Cdn-Uri' to http://my.home.com/cdn :
+Set the attribute 'X-Cdn-Uri' to http://my.home.com/cdn:
 
     hpcloud cdn:containers:set :my_cdn_container "X-Cdn-Uri" "http://my.home.com/cdn"
 
@@ -818,7 +822,7 @@ Installs the bash completion file.
 Installs the HP Cloud bash completion file.  If you run this command as the root user, the file is installed in a system-wide directory (if one is available).  Otherwise, the file is installed  in the `~/.bash_completion.d/` directory.  The `~/.bash_completion.d/` directory is not run by default; you must run the completion script explicitly.
 
 ###Examples
-Installs the HP Cloud bash completion file.
+Installs the HP Cloud bash completion file.:
 
     hpcloud complete
 
@@ -903,6 +907,47 @@ Create the container `my_container` for the availability zone `region-a.geo-1`:
     hpcloud containers:add :my_container -z region-a.geo-1
 
 
+##containers:get## {#containers:get}
+Get the value of an attribute of a container.
+
+###Syntax
+`hpcloud containers:get <name> [attribute...]`
+
+###Options
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
+
+###Description
+Get the value of an attribute for an existing container. The allowed attributes whose value can be retrieved are:
+* `X-Ttl`
+* `X-Cdn-Uri`
+* `X-Cdn-Enabled`
+* `X-Log-Retention`.
+
+Optionally, you can specify an availability zone.
+
+###Examples
+List all the attributes:
+
+    hpcloud containers:get :my_container
+
+Get the value of the attribute 'X-Cdn-Uri':
+
+    hpcloud containers:get :my_container "X-Cdn-Uri"
+
+Get the value of the attribute `X-Ttl` for availability zone `regioni-a.geo`:
+
+    hpcloud containers:get :my_container "X-Ttl" -z region-a.geo-1
+
+
 ##containers:remove## {#containers:remove}
 Remove a containers.
 
@@ -947,6 +992,39 @@ Delete the container `my_container` for availability zone 'region-a.geo-1`:
 ###Aliases
 `containers:rm, containers:delete, containers:del`
 
+##containers:set## {#containers:set}
+Set attributes on a container.
+
+###Syntax
+`hpcloud containers:set <name> <attribute> <value>`
+
+###Options
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
+
+###Description
+Set attributes for an existing container by specifying their values. The allowed attributes that can be set are:
+
+* `X-Container-Read`
+* `X-Container-Meta-Web-Index`
+* `X-Container-Meta-Web-Error`
+* `X-Container-Meta-Web-Listings`
+* `X-Container-Meta-Web-Listings-CSS`
+
+###Examples
+Set the attribute 'X-Container-Meta-Web-Index' to index.htm:
+
+    hpcloud containers:set :my_container "X-Container-Meta-Web-Index" index.htm
+
+
 ##containers:sync## {#containers:sync}
 Allow container synchronization.
 
@@ -969,15 +1047,15 @@ Allow container synchronization.
 Allow container synchronization using the specified key.  If you are creating a destination for synchronization, only the key should be specified.  If you are creating a source for synchronization, specify a key and location.  The same key must be used in the source and destination.  It is possible have containers as both a source and destination.  List your synchronization information with the "hpcloud list --sync" command.
 
 ###Examples
-Set up the container :atainer to be a destination for synchronization
+Set up the container :atainer to be a destination for synchronization:
 
     hpcloud containers:sync :atainer keyo
 
-Synchronize :btainer to remote container :atainer
+Synchronize :btainer to remote container :atainer:
 
     hpcloud containers:sync :btainer keyo https://region-a.geo-1.objects.hpcloudsvc.com:443/v1/96XXXXXX/atainer
 
-Create a two way synchronization betwee :atainer and :btainer
+Create a two way synchronization betwee :atainer and :btainer:
 
     hpcloud containers:sync :atainer keyo https://region-b.geo-1.objects.hpcloudsvc.com:443/v1/96XXXXXX/btainer
 
@@ -1214,7 +1292,7 @@ Remove a DNS record.
 Remove a DNS record to the specified domain.  Records may be specified by name or ID.
 
 ###Examples
-Remove record `www.mydomain.com` from the domain `mydomain.com`.
+Remove record `www.mydomain.com` from the domain `mydomain.com`.:
 
     hpcloud dns:records:remove mydomain.com. www.mydomain.com
 
@@ -1827,7 +1905,7 @@ Make a private key available for the CLI
 This command copies the private key file to ~/.hpcloud/keypairs directory so the CLI can use it for various commands to access servers.  This command does *not* upload the private key anywhere and it will *only* be available for the CLI on the current server.
 
 ###Examples
-Make the 'mykey' private key available for the CLI
+Make the 'mykey' private key available for the CLI:
 
     hpcloud keypairs:private:add mykey ./mykey.pem
 
@@ -1842,7 +1920,7 @@ Find the private key for the given server
 Find the location of the private key for a given server.
 
 ###Examples
-Print the location of the private key for 'myserver'
+Print the location of the private key for 'myserver':
 
     hpcloud keypairs:private:location myserver
 
@@ -1857,7 +1935,7 @@ Remove a private key file
 This command removes private key files from the ~/.hpcloud/keypairs directory which is the store used by the CLI. If you plan to continue to use this private key, make sure you have it stored somewhere else.  There is no way to recover a private key that has been deleted unless you have another copy of that key.  Keys are stored in the ~/.hpcloud/keypairs directory by key name and server id, so there may be multiple copies of a single key in the private key store.
 
 ###Examples
-Remove 'mykey' and 'spare' from the private key storage
+Remove 'mykey' and 'spare' from the private key storage:
 
     hpcloud keypairs:private:remove mykey spare
 
@@ -2003,7 +2081,7 @@ Add a load balancer.
 Add a load balancer with the specified name, algorithm, protocol and port.  You must specify a node and may specify a virtual IP id to create a load balancer.
 
 ###Examples
-Create a new load balancer 'loady'
+Create a new load balancer 'loady':
 
     hpcloud lb:add loady ROUND_ROBIN HTTP 80 -n '10.1.1.1:80;10.1.1.2:81' -v '123;39393'
 
@@ -2131,7 +2209,7 @@ Add a node to the load balancer.
 Add a node to the load balancer with the specified adddress and port.
 
 ###Examples
-Create a new node for load balancer 'loady'
+Create a new node for load balancer 'loady':
 
     hpcloud lb:nodes:add loady 10.1.1.1 80
 
@@ -2187,11 +2265,11 @@ Update a node in a load balancer.
 Update a node in a load balancer with the specified condition.  The id of the node may be used or `address:port`.
 
 ###Examples
-Update node '10.1.1.1:80' to 'DISABLED'
+Update node '10.1.1.1:80' to 'DISABLED':
 
     hpcloud lb:nodes:update loady 10.1.1.1:80 DISABLED
 
-Update node '1027580' to 'ENABLED'
+Update node '1027580' to 'ENABLED':
 
     hpcloud lb:nodes:update 220303 1027580 ENABLED
 
@@ -2284,11 +2362,11 @@ Update a node in a load balancer.
 Update a load balancer with the specified algorithm.  The name or id of the load balancer may be used to identify it.
 
 ###Examples
-Update node 'loady' to 'ROUND_ROBIN'
+Update node 'loady' to 'ROUND_ROBIN':
 
     hpcloud lb:update loady ROUND_ROBIN
 
-Update node '220303' to 'LEAST_CONNECTIONS'
+Update node '220303' to 'LEAST_CONNECTIONS':
 
     hpcloud lb:update 220303 LEAST_CONNECTIONS
 
@@ -2983,7 +3061,7 @@ Add a router.
 Add a new router to your network with the specified name.  If a gateway is not specified, the first network that has router_external set to true is used (typically `Ext-Net`.  If you do not want to a external network, send the gateway option with an empty string.
 
 ###Examples
-Create a new router named 'routerone'
+Create a new router named 'routerone':
 
     hpcloud routers:add routerone
 
@@ -3045,11 +3123,11 @@ Remove router interface.
 Remove router port or subnet router interface from router.
 
 ###Examples
-Delete port 'puerto' from 'trout'
+Delete port 'puerto' from 'trout':
 
     hpcloud routers:interface:remove trout puerto
 
-Delete subnet 'netty' from 'trout'
+Delete subnet 'netty' from 'trout':
 
     hpcloud routers:interface:remove trout netty
 
@@ -3317,7 +3395,7 @@ Add a rule to the security group.
 Add a rule to the security group. If <ip_protocol> is specified as `icmp`, then port range may be omitted.  If <cidr> is not specified, then the address defaults to `0.0.0.0/0`. To allow communications within a given security group, you must specify a source group while creating a rule. Optionally, you can specify an availability zone.
 
 ###Examples
-Set the default port range to -1..-1
+Set the default port range to -1..-1:
 
     hpcloud securitygroups:rules:add mysggroup icmp
 
@@ -3478,10 +3556,6 @@ Create a new small server named 'my_server' using the specified image, flavor, k
 
     hpcloud servers:add my_server small -i 20634 -k key1 -m this=that
 
-Create a new server named 'my_server' using the key `key1` for availability zone `az-2.region-a.geo-1`:
-
-    hpcloud servers:add my_server xlarge -i 7 -k key1 -z az-2.region-a.geo-1
-
 
 ##servers:console## {#servers:console}
 Get the console output of a server or extract the windows password.
@@ -3551,10 +3625,6 @@ List the metadata for a server in your compute account. You can specify either t
 List server metadata:
 
     hpcloud servers:metadata Skynet
-
-List server metadata for availability zone `az-2region-a.geo-1`:
-
-    hpcloud servers:metadata -z az-2.region-a.geo-1 565394
 
 ###Aliases
 `servers:metadata:list`
@@ -3643,10 +3713,6 @@ Change the password for server 'my-server':
 
     hpcloud servers:password my-server my-password
 
-Change the password for server 'my-server` for availability zone `az-2.region-a.geo-1`:
-
-    hpcloud servers:password my-server my-password -z az-2.region-a.geo-1
-
 ###Aliases
 `servers:passwd`
 
@@ -3679,13 +3745,9 @@ Reboot server 'Hal9000':
 
     hpcloud servers:reboot Hal9000
 
-Reboot the servers with the IDs 1003 and 222
+Reboot the servers with the IDs 1003 and 222:
 
     hpcloud servers:reboot 1003 222
-
-Reboot the server `DeepThought` for availability zone `az-2.region-a.geo-1`:
-
-    hpcloud servers:reboot DeepThought -z az-2.region-a.geo-1
 
 
 ##servers:rebuild## {#servers:rebuild}
@@ -3718,10 +3780,6 @@ Rebuild server 1003 with image 222:
 
     hpcloud servers:rebuild 1003 222
 
-Rebuild server `DeepThought` for availability zone `az-2.region-a.geo-1`:
-
-    hpcloud servers:rebuild DeepThought -z az-2.region-a.geo-1
-
 
 ##servers:remove## {#servers:remove}
 Remove a server or servers (specified by name or ID).
@@ -3753,13 +3811,9 @@ Delete the servers 'DeepThought' and 'Blaine':
 
     hpcloud servers:remove DeepThought Blaine
 
-Delete the server with the ID 369765
+Delete the server with the ID 369765:
 
     hpcloud servers:remove 369765
-
-Delete server `my-server` for availability zone `az-2.region-a.geo-1`:
-
-    hpcloud servers:remove my-server -z az-2.region-a.geo-1
 
 ###Aliases
 `servers:rm, servers:delete, servers:del`
@@ -3804,11 +3858,11 @@ Use the secure shell to log into the bugs server:
 
     hpcloud servers:ssh bugs -p bunny.pem
 
-Use the secure shell to log into server `daffy`, which has a known key pair
+Use the secure shell to log into server `daffy`, which has a known key pair:
 
     hpcloud servers:ssh daffy
 
-Use the secure shell to log into server with given public IP, which has a known key pair known to the CLI
+Use the secure shell to log into server with given public IP, which has a known key pair known to the CLI:
 
     hpcloud servers:ssh 15.185.104.210
 
