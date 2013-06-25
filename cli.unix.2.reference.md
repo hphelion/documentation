@@ -475,9 +475,9 @@ Add a new public IP address to external network:
 
     hpcloud addresses:add
 
-Add a new IP address to `netty` in availability zone `az-2.region-a.geo-1`:
+Add a new IP address to `netty`:
 
-    hpcloud addresses:add -n netty -z az-2.region-a.geo-1
+    hpcloud addresses:add -n netty
 
 ###Aliases
 `addresses:allocate`
@@ -508,10 +508,6 @@ Associate the address `111.111.111.111` to port `myport`:
 
     hpcloud addresses:associate 111.111.111.111 myport
 
-Associate the address `111.111.111.111` to port `myport` in availability zone `az-2.region-a.geo-1`:
-
-    hpcloud addresses:associate 111.111.111.111 myport -z az-2.region-a.geo-1
-
 
 ##addresses:disassociate## {#addresses:disassociate}
 Disassociate any port associated to the public IP address.
@@ -541,11 +537,7 @@ Disassociate IP addresses `111.111.111.111` and `127.0.0.1` from their ports:
 
 Disassociate the address with the ID  '9709':
 
-    hpcloud addresses:disassociate 9709
-
-Disassociate the address `111.111.111.111` for availability zone `az-2.region-a.geo-1`:
-
-    hpcloud addresses:disassociate 111.111.111.111 -z az-2.region-a.geo-1
+    hpcloud addresses:disassociate f01b27f3
 
 
 ##addresses:remove## {#addresses:remove}
@@ -574,13 +566,9 @@ Remove IP address '111.111.111.111':
 
     hpcloud addresses:remove 111.111.111.111
 
-Remove addresses with the IDs '1078' and '3709':
+Remove addresses with the IDs 'a5bd6680' and 'c80dfe05':
 
-    hpcloud addresses:remove 1078 3709
-
-Remove IP address '111.111.111.111' for availability zone `az-2.region-a.geo-1`:
-
-    hpcloud addresses:remove 111.111.111.111 -z az-2.region-a.geo-1
+    hpcloud addresses:remove a5bd6680 c80dfe05
 
 ###Aliases
 `addresses:rm, addresses:delete, addresses:release, addresses:del`
@@ -1592,10 +1580,6 @@ Create the new image 'my_image' from the existing server 'my_server' with metada
 
     hpcloud images:add my_image my_server -m this=that
 
-Create the new image `my_image` from the existing server `my_server` in  availability zone `az-2.region-a.geo-1`:
-
-    hpcloud images:add my_image my_server -z az-2.region-a.geo-1
-
 
 ##images:metadata## {#images:metadata}
 List the metadata for an image.
@@ -1629,13 +1613,9 @@ List the metadata for image 'Skynet':
 
     hpcloud images:metadata Skynet
 
-List the metadata for image '1151':
+List the metadata for image '7ba2a4b6':
 
-    hpcloud images:metadata '1151'
-
-List the metadata for image `565394` for availability zone `az-2.region-a.geo-1`:
-
-    hpcloud images:metadata -z az-2.region-a.geo-1 565394
+    hpcloud images:metadata '7ba2a4b6'
 
 ###Aliases
 `images:metadata:list`
@@ -1724,13 +1704,9 @@ Delete image 'my-image':
 
     hpcloud images:remove my-image
 
-Delete images '1172' and '1078':
+Delete images '53e78869' and '8dbf51b8':
 
-    hpcloud images:remove 1172 1078
-
-Delete image `my-image` for availability zone `az-2.region-a.geo-1:
-
-    hpcloud images:remove my-image -z az-2.region-a.geo-1
+    hpcloud images:remove 53e78869 8dbf51b8
 
 ###Aliases
 `images:rm, images:delete, images:del`
@@ -2717,11 +2693,7 @@ Delete the network 'arpa' and 'darpa':
 
 Delete the network with ID 998:
 
-    hpcloud networks:remove 998
-
-Delete the network `netty` for availability zone `region-a.geo-1`:
-
-    hpcloud networks:remove netty -z region-a.geo-1
+    hpcloud networks:remove 0b78d0cd
 
 ###Aliases
 `networks:rm, networks:delete, networks:del`
@@ -2882,13 +2854,9 @@ Delete the port 'blue' and 'red':
 
     hpcloud ports:remove blue red
 
-Delete the port with ID 998:
+Delete the port with ID 6d45794b:
 
-    hpcloud ports:remove 998
-
-Delete the port `netty` for availability zone `region-a.geo-1`:
-
-    hpcloud ports:remove netty -z region-a.geo-1
+    hpcloud ports:remove 6d45794b
 
 ###Aliases
 `ports:rm, ports:delete, ports:del`
@@ -3160,13 +3128,9 @@ Delete the router 'blue' and 'red':
 
     hpcloud routers:remove blue red
 
-Delete the router with ID 998:
+Delete the router with ID 39e36520:
 
-    hpcloud routers:remove 998
-
-Delete the router `netty` for availability zone `region-a.geo-1`:
-
-    hpcloud routers:remove netty -z region-a.geo-1
+    hpcloud routers:remove 39e36520
 
 ###Aliases
 `routers:rm, routers:delete, routers:del`
@@ -3273,10 +3237,6 @@ Add new security group `mysecgroup` with description `seg group desc`:
 
     hpcloud securitygroups:add mysecgroup "seg group desc"
 
-Add new security group `mysecgroup` with description `seg group desc` for availability zone `az-2.region-a.geo-1`:
-
-    hpcloud securitygroups:add mysecgroup "seg group desc" -z az-2.region-a.geo-1
-
 
 ##securitygroups:remove## {#securitygroups:remove}
 Remove a security group or groups.
@@ -3304,13 +3264,9 @@ Remove the security groups `group1` and `group2`:
 
     hpcloud securitygroups:remove group1 group2
 
-Remove the security group with the ID `30725`:
+Remove the security group with the ID `41fb5504`:
 
-    hpcloud securitygroups:remove 30725
-
-Remove the security group `mysecgroup` for availability zone `az-2.region-a.geo-1`:
-
-    hpcloud securitygroups:remove mysecgroup -z az-2.region-a.geo-1
+    hpcloud securitygroups:remove 41fb5504
 
 ###Aliases
 `securitygroups:rm, securitygroups:delete, securitygroups:del`
@@ -3346,10 +3302,6 @@ List the rules for a security group for your compute account. Optionally, you ca
 List the rules for security group `mysecgroup`:
 
     hpcloud securitygroups:rules mysecgroup
-
-List the rules for security group `mysecgroup` for availability zone `az-2.region-a.geo-1`:
-
-    hpcloud securitygroups:rules mysecgroup -z az-2.region-a.geo-1
 
 ###Aliases
 `securitygroups:rules:list`
@@ -3411,10 +3363,6 @@ Set the source group to `mysourcegroup`:
 
     hpcloud securitygroups:rules:add mysggroup tcp -p 80..80 -g "mysourcegroup"
 
-Set the availability zone to `az-2.region-a.geo-1`:
-
-    hpcloud securitygroups:rules:add mysggroup icmp -z az-2.region-a.geo-1
-
 ###Aliases
 `securitygroups:rules:authorize`
 
@@ -3440,13 +3388,13 @@ Remove security group rules.
 Remove the specified security group rules.  More than one rule may be specified on the command line.
 
 ###Examples
-Remove the rule `111`:
+Remove the rule `6686fc56`:
 
-    hpcloud securitygroups:rules:remove 111
+    hpcloud securitygroups:rules:remove 6686fc56
 
-Remove the rule `111` and `222`:
+Remove the rule `6686fc56` and `2ffc3a4c`:
 
-    hpcloud securitygroups:rules:remove 111 222
+    hpcloud securitygroups:rules:remove 6686fc56 2ffc3a4c
 
 ###Aliases
 `securitygroups:rules:rm, securitygroups:rules:revoke, securitygroups:rules:delete, securitygroups:rules:del`
@@ -4101,13 +4049,9 @@ Delete the subnet 'blue' and 'red':
 
     hpcloud subnets:remove blue red
 
-Delete the subnet with ID 998:
+Delete the subnet with ID ffc0edba:
 
-    hpcloud subnets:remove 998
-
-Delete the subnet `netty` for availability zone `region-a.geo-1`:
-
-    hpcloud subnets:remove netty -z region-a.geo-1
+    hpcloud subnets:remove ffc0edba
 
 ###Aliases
 `subnets:rm, subnets:delete, subnets:del`
@@ -4294,10 +4238,6 @@ Create a new bootable volume named 'my_volume' based on the image '20103':
 
     hpcloud volumes:add my_volume -i 20103
 
-Creates volume `my_volume` in availability zone `az-2.region-a.geo-1`:
-
-    hpcloud volumes:add my_volume 1 -z az-2.region-a.geo-1
-
 
 ##volumes:attach## {#volumes:attach}
 Attach a volume to a server specified by device name or number.
@@ -4329,10 +4269,6 @@ Attach volume `myVolume` to server `myServer` on device `/dev/vdb`:
 
     hpcloud volumes:attach myVolume myServer 4
 
-Attach volume `my-volume` to server `myServer` on device `/dev/vdg` for availability zone `az-2.region-a.geo-1`:
-
-    hpcloud volumes:attach my-volume myServer /dev/vdg -z az-2.region-a.geo-1
-
 
 ##volumes:detach## {#volumes:detach}
 Detach a volume or volumes.
@@ -4362,11 +4298,7 @@ Detach the volume 'myVolume':
 
 Detach the volume with ID 1159:
 
-    hpcloud volumes:detach 1159
-
-Detach the volume 'myVolume' for availability zone `az-2.region-a.geo-1`:
-
-    hpcloud volumes:detach myVolume -z az-2.region-a.geo-1
+    hpcloud volumes:detach 3407653b
 
 
 ##volumes:remove## {#volumes:remove}
@@ -4395,13 +4327,9 @@ Delete the volumes 'tome' and 'treatise':
 
     hpcloud volumes:remove tome treatise
 
-Delete the volume with ID 998:
+Delete the volume with ID 038d0e77:
 
-    hpcloud volumes:remove 998
-
-Delete the volume `my-volume` for availability zone `az-2.region-a.geo-1`:
-
-    hpcloud volumes:remove my-volume -z az-2.region-a.geo-1
+    hpcloud volumes:remove 038d0e77
 
 ###Aliases
 `volumes:rm, volumes:delete, volumes:del`
@@ -4441,9 +4369,5 @@ List all the attached volumes:
 List the volumes on server `myServer`:
 
     hpcloud volumes:server myServer
-
-List the volumes on server `myServer` for availability zone `az-2.region-a.geo-1`:
-
-    hpcloud volumes:server myServer -z az-2.region-a.geo-1
 
 
