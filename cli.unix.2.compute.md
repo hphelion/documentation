@@ -7,10 +7,6 @@ product: unix-cli
 ---
 # UNIX CLI Compute Examples
 
-<!--<iframe src="http://player.vimeo.com/video/37689112?title=0&amp;byline=0&amp;portrait=0" width="580" height="420" frameborder="0"> </iframe>
-
-Probably don't want that video on this page! -->
-
 This page gives you a few examples of how to perform various compute tasks using the HP Cloud service from the UNIX command line interface (CLI).  This page provides examples for the following command types:
 
 * [Flavor Commands](#FlavorCommands)
@@ -185,22 +181,22 @@ To list one or more servers (you can specify the servers by name or ID):
 To add a new server specifying an image and a flavor:
 
     $ hpcloud servers:add myserver 100 -i 227
-    Created server 'myserver' with id '111'.
+    Created server 'myserver' with id 'a376d55d'.
 
 If you  `preferred_flavor` and `preferred_image` are defined in your account file, you do not need to specify them on the command line:
 
     $ hpcloud servers:add sameold
-    Created server 'sameold' with id '112'.
+    Created server 'sameold' with id 'b0245877'.
 
 To add a new server (specifying a flavor, an image, a keyname and a security group):
 
     $ hpcloud servers:add myserver 100 -i 227 -k mykey -s mysecgroup
-    Created server 'myserver' with id '222'.
+    Created server 'myserver' with id '9d678495'.
 
 To add a new persistent server (specifying a flavor, a bootable volume, a keyname and a security group):
 
     $ hpcloud servers:add bat large -i 5575 -v bootable -k brat
-    Created server 'bat' with id '535545'.
+    Created server 'bat' with id '2f574231'.
 
 There is also an article about creating and [Accessing Servers with Managed Key Pairs](/cli/unix/articles/managedkeypairs).
 
@@ -269,9 +265,9 @@ To remove metadata from an existing snapshot server:
 
 To remove an existing server or servers (you can specify one or more servers by name or ID):
 
-    $ hpcloud servers:remove myserver 1089624
+    $ hpcloud servers:remove myserver c7e35261
     Removed server 'myserver'.
-    Removed server '1089624'.
+    Removed server 'c7e35261'.
 
 
 ###Creating a Windows Instance### {#WindowsServer}
@@ -286,7 +282,7 @@ Windows servers are a little slower to start up than other servers; while normal
 In the following example, `winserv` is the name of the server, `large` is the flavor name, `1000065672` is the Windows image identifier, `winpair` is the key pair name, `allowsRDP` is the security group with port 3389 open, and ` ./winpair.pem` is the .pem file location (in the current folder).
 
     $ hpcloud servers:add winserv large -i 1000065672 -k winpair -s allowsRDP -p ./winpair.pem
-    Created server 'winserver' with id '222'.
+    Created server 'winserver' with id '1db7ec91'.
     Retrieving password, this may take several minutes...
     Windows password: Hj67dgski)
     Make sure the security group has port 3389 open
