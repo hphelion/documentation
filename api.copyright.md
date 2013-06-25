@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: page
 title: "Copyright for HP Cloud Service APIs"
 permalink: /api/copyright/
 
