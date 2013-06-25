@@ -24,23 +24,23 @@ Remember that you can get detailed help for any command/task with the following 
 To add a new volume:
 
     $ hpcloud volumes:add kweller 1
-    Created volume 'kweller' with id '997'.
+    Created volume 'kweller' with id '038d0e77'.
 
 To create a bootable volume from (bootable image or raw image) image:
 
-    $ hpcloud volumes:add bootable 10 -i 20103
-    Created volume 'bootable' with id '67946'.
+    $ hpcloud volumes:add bootable 10 -i d6a89a5d
+    Created volume 'bootable' with id '3407653b'.
 
 ##Listing Available Volumes## {#ListingAvailableVolumes}
 
 To list available volumes:
 
     $ hpcloud volumes
-      +-----+---------+------+------+---------------------+-----------+-------------+---------+
-      | id  | name    | size | type | created             | status    | description | servers |
-      +-----+---------+------+------+---------------------+-----------+-------------+---------+
-      | 997 | kweller | 1    |      | 2012-08-01 17:16:31 | available |             |         |
-      +-----+---------+------+------+---------------------+-----------+-------------+---------+
+      +----------+---------+------+------+---------------------+-----------+-------------+---------+
+      | id       | name    | size | type | created             | status    | description | servers |
+      +----------+---------+------+------+---------------------+-----------+-------------+---------+
+      | 038d0e77 | kweller | 1    |      | 2012-08-01 17:16:31 | available |             |         |
+      +----------+---------+------+------+---------------------+-----------+-------------+---------+
 
 ##Attaching New Volumes## {#AttachingNewVolumes}
 
@@ -57,14 +57,14 @@ You may also use a drive number to mount the volume instead of a device name:
 To list the attached volumes with devices:
 
     $ hpcloud volumes:server
-      +-----+---------+--------+----------+
-      | id  | name    | server | device   |
-      +-----+---------+--------+----------+
-      | 877 | svl1    | srv1   | /dev/vde |
-      | 881 | svl3    | srv1   | /dev/vdh |
-      | 997 | kweller | srv1   | /dev/vdi |
-      | 879 | svl2    | srv2   | /dev/vdg |
-      +-----+---------+--------+----------+
+      +----------+---------+--------+----------+
+      | id       | name    | server | device   |
+      +----------+---------+--------+----------+
+      | a5ecfc52 | svl1    | srv1   | /dev/vde |
+      | 9991ef64 | svl3    | srv1   | /dev/vdh |
+      | 038d0e77 | kweller | srv1   | /dev/vdi |
+      | 160591f3 | svl2    | srv2   | /dev/vdg |
+      +----------+---------+--------+----------+
 
 See the [knowledge base](https://community.hpcloud.com/knowledge-base) article [Mounting Additional Space](https://community.hpcloud.com/article/mounting-additional-space) to learn how to leverage your attached storage.
 
