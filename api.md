@@ -43,3 +43,7 @@ Get rid of this comment!
 -->
 
 Share and enjoy!
+
+## Copyright
+
+View the [copyright](/api/copyright/) messages.
