@@ -15,3 +15,7 @@ There are a number of HP Cloud APIs available for your programming pleasure:
 * [Image](/api/v13/image/): API for HP Cloud Image; enabling managing of virtual machine images.
 * [Block Storage](/api/v13/block-storage/): API for HP Cloud block storage; enabling additional volumes to Compute instances.
 * [Networking](/api/v13/networking/): API for HP Cloud Networking; enabling virtual network, subnet, router and port abstractions to describe network resources.
+
+## Copyright
+
+View the [copyright](/api/v13/copyright/) messages.
