@@ -9,7 +9,7 @@ permalink: /api/copyright/
 
 ## Identity  ## {#identity}
 
-Copyright ©2010-2013 OpenStack Foundation.   All rights reserved.
+Copyright © 2010-2013 OpenStack Foundation.   All rights reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at:
 
@@ -24,7 +24,8 @@ Unless required by applicable law or agreed to in writing, software distributed 
 Modifications Copyright ©2013 Hewlett-Packard Development Company, L.P.
 
 Copyright © 2010-2013 OpenStack Foundation.   All rights reserved.
-This reference is for software developers who develop applications by using the OpenStack™ Object Storage Application Programming Interface (API) v1.
+
+This reference is for software developers who develop applications by using the OpenStack&trade; Object Storage Application Programming Interface (API) v1.
 
 **OpenStack Object Storage API v1 Reference**
 
