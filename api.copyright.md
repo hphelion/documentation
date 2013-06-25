@@ -1,15 +1,15 @@
 ---
 layout: default
-title: "Copyright messages for HP Cloud Service APIs"
+title: "Copyright for HP Cloud Service APIs"
 permalink: /api/copyright/
 
 ---
 
-# Copyright messages for HP Cloud Services APIs
+# Copyright for HP Cloud Services APIs
 
 ## Identity  ## {#identity}
 
-Copyright © 2010-2013 OpenStack Foundation.   All rights reserved.
+Copyright ©2010-2013 OpenStack Foundation.   All rights reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at:
 
