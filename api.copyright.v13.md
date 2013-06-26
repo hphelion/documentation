@@ -20,7 +20,7 @@ Unless required by applicable law or agreed to in writing, software distributed 
 
 ## Object Storage ## {#object-storage}
 
-Modifications Copyright ©2013 Hewlett-Packard Development Company, L.P.
+Modifications Copyright &copy; 2013 Hewlett-Packard Development Company, L.P.
 
 Copyright © 2010-2013 OpenStack Foundation.   All rights reserved.
 
