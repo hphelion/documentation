@@ -22,7 +22,7 @@ Unless required by applicable law or agreed to in writing, software distributed 
 
 Modifications Copyright &copy; 2013 Hewlett-Packard Development Company, L.P.
 
-Copyright © 2010-2013 OpenStack Foundation.   All rights reserved.
+Copyright &copy; 2010-2013 OpenStack Foundation.   All rights reserved.
 
 This reference is for software developers who develop applications by using the OpenStack&trade; Object Storage Application Programming Interface (API) v1.
 
@@ -37,15 +37,15 @@ Unless required by applicable law or agreed to in writing, software distributed 
 
 ## CDN ## {#cdn}
 
-Copyright ©2013 Hewlett-Packard Development Company, L.P.
+Copyright &copy; 2013 Hewlett-Packard Development Company, L.P.
 
 ----
 
 ## Compute ## {#compute}
 
-Modifications Copyright © 2013 Hewlett-Packard Development Company, L.P.
+Modifications Copyright &copy; 2013 Hewlett-Packard Development Company, L.P.
 
-Copyright © 2009-2013 OpenStack Foundation.  All rights reserved.
+Copyright &copy; 2009-2013 OpenStack Foundation.  All rights reserved.
 
 **OpenStack Compute API v2 and Extensions Reference**
 
@@ -58,7 +58,7 @@ Unless required by applicable law or agreed to in writing, software distributed 
 
 ## Image (Glance) ## {#image}
 
-Copyright © 2010-2011 OpenStack Foundation. All Rights Reserved.
+Copyright &copy; 2010-2011 OpenStack Foundation. All Rights Reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at:
 [http://www.apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0)
@@ -69,9 +69,9 @@ Unless required by applicable law or agreed to in writing, software distributed 
 
 ## Block Storage (Cinder) ## {#block-storage}
 
-Copyright © 2013 Hewlett-Packard Development Company, L.P.
+Copyright &copy; 2013 Hewlett-Packard Development Company, L.P.
 
-Copyright © 2013 OpenStack Foundation
+Copyright &copy; 2013 OpenStack Foundation
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at:
 [http://www.apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0)
@@ -82,7 +82,7 @@ Unless required by applicable law or agreed to in writing, software distributed 
 
 ## Networking (Quantum) ## {#block-storage}
 
-Copyright © 2011, 2012, 2013 OpenStack Foundation
+Copyright &copy; 2011, 2012, 2013 OpenStack Foundation
 
 **OpenStack Networking API v2.0 Reference**
 
