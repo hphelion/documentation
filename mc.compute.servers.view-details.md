@@ -7,7 +7,7 @@ product: mc-compute
 ---
 # Management console: Viewing server details
 
-This page describes how to manage servers using the [networks screen](/mc/compute/networks/) of the [management console](/mc/) (MC).  This page covers the following topics:
+This page describes the server details screen of the [management console](/mc/) (MC).  This page covers the following topics:
 
 * [Before you begin](#Overview)
 * [Viewing server details](#Viewing)
@@ -27,7 +27,7 @@ Before you can begin creating or deleting a server, you must:
 
 ##Viewing server details## {#Viewing}
 
-To launch the server details screen, in the `Manage` column of the servers list, select the `Options` button in the row of the server you want to terminate, and choose the `View Details` option: 
+To launch the server details screen, in the `Manage` column of the servers list, select the `Options` button in the row of the server for whose details you want to display, and choose the `View Details` option: 
 
 <img src="media/server-viewing.png" width="580" alt="" />
 
