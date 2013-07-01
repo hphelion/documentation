@@ -7,9 +7,7 @@ product: dns
 ---
 # HP Cloud Domain Name Service (DNS) Overview
 
-The HP Cloud Domain Name service (DNS) provides you with a managed domain name service that features anycast routing hosted by HP.  
-
-The HP Cloud DNS service is currently in private beta.  Please [request access on our sign-up page](https://account.hpcloud.com/cases/betarequest/dns).  Service use is free of charge during the private beta period.
+The HP Cloud Domain Name service (DNS) provides you with a managed domain name service that features anycast routing hosted by HP Public Cloud.  
 
 ## API
 Do you need low level, raw REST API access to HP Cloud DNS?  Take a look at the [DNS API page](/api/dns/).
