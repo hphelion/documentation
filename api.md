@@ -13,6 +13,7 @@ There are a number of HP Cloud APIs available for your programming pleasure:
 * [Compute](/api/compute/): API for the HP Cloud compute service; a way to instantiate virtual servers on publicly accessible physical machines hosted in HP data centers
 * [Block storage](/api/block-storage/): API for HP Cloud block storage; enabling additional volumes to Compute instances.
 * [CDN](/api/CDN/): API for the HP Cloud content delivery network (CDN) service; content inside HP Cloud Object Storage can easily be cached on servers in metropolitan areas all over the world to speed client access to them by removing much of the network latency.
+* [DNS](/api/dns/): API for the HP Cloud domain name service (DNS); enables display and management of DNS records.
 
 You can also avail yourself of one of the following APIs now in private beta; follow the links to sign up and begin trying them out!
 
@@ -20,8 +21,6 @@ You can also avail yourself of one of the following APIs now in private beta; fo
   **Note**: This service requires activation while in private beta; please [request access on our sign-up page](https://account.hpcloud.com/cases/betarequest/dbaas).  Service use is free of charge during the private beta period.
 * [Load balancer as a service (LBaaS)](/api/lbaas/): API for the HP Cloud load balancer service; facilitates creation and management of load balancers.<br>
   **Note**: This service requires activation while in private beta; please [request access on our sign-up page](https://account.hpcloud.com/cases/betarequest/lbaas).  Service use is free of charge during the private beta period.
-* [DNS](/api/dns/): API for the HP Cloud domain name service (DNS); enables display and management of DNS records.<br>
-  **Note**: This service requires activation while in private beta; please [request access on our sign-up page](https://account.hpcloud.com/cases/betarequest/dns).  Service use is free of charge during the private beta period.
 * [Monitoring as a service (MaaS)](/api/monitoring/): API for the HP Cloud monitoring service; facilitates monitoring of the health and other metrics for the resources in HP Cloud.<br>
   **Note**: This service requires activation while in private beta; please [request access on our sign-up page](https://account.hpcloud.com/cases/betarequest/maas). Service use is free of charge during the private beta period.
 * [Application Platform as a Service (aPaaS)](/apaas/) - An application platform for development, deployment, and management of cloud applications hosted by HP.<br>
