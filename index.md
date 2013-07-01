@@ -16,6 +16,7 @@ HP Cloud consists of the following publicly-available services:
 * [Compute](/compute/) - An OpenStack Compute implementation hosted by HP
 * [Block Storage](/block-storage/) - Add additional volumes to HP Cloud Compute instances
 * [Content Delivery Network (CDN)](/cdn/) - A content delivery network hosted by HP
+* [Domain Name Service (DNS)](/dns/) - A managed domain name service featuring anycast routing hosted by HP
 
 The following services are now in private beta; follow the links to sign up and begin trying them out!
 
@@ -23,8 +24,6 @@ The following services are now in private beta; follow the links to sign up and 
   **Note**: This service requires activation while in private beta; please [request access on our sign-up page](https://account.hpcloud.com/cases/betarequest/dbaas).  Service use is free of charge during the private beta period.
 * [Load Balancer as a Service (LBaaS)](/lbaas/) -  A managed service enabling automatic traffic routing to multiple back end servers hosted by HP.<br>
   **Note**: This service requires activation while in private beta; please [request access on our sign-up page](https://account.hpcloud.com/cases/betarequest/lbaas).  Service use is free of charge during the private beta period.
-* [Domain Name Service (DNS)](/dns/) - A managed domain name service featuring anycast routing hosted by HP.<br>
-  **Note**: This service requires activation while in private beta; please [request access on our sign-up page](https://account.hpcloud.com/cases/betarequest/dns).  Service use is free of charge during the private beta period.
 * [Monitoring as a Service (MaaS)](/maas/): A managed monitoring service facilitating the monitoring of health and other metrics for the resources in HP Cloud.<br>
   **Note**: This service requires activation while in private beta; please [request access on our sign-up page](https://account.hpcloud.com/cases/betarequest/maas). Service use is free of charge during the private beta period.
 * [Application Platform as a Service (aPaaS)](/apaas/) - An application platform for development, deployment, and management of cloud applications hosted by HP.<br>
