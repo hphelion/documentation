@@ -13,7 +13,7 @@ There are a number of HP Cloud APIs available for your programming pleasure:
 * [Compute](/api/compute/): API for the HP Cloud compute service; a way to instantiate virtual servers on publicly accessible physical machines hosted in HP data centers
 * [Block storage](/api/block-storage/): API for HP Cloud block storage; enabling additional volumes to Compute instances.
 * [CDN](/api/CDN/): API for the HP Cloud content delivery network (CDN) service; content inside HP Cloud Object Storage can easily be cached on servers in metropolitan areas all over the world to speed client access to them by removing much of the network latency.
-* * [DNS](/api/dns/): API for the HP Cloud domain name service (DNS); enables display and management of DNS records.
+* [DNS](/api/dns/): API for the HP Cloud domain name service (DNS); enables display and management of DNS records.
 
 You can also avail yourself of one of the following APIs now in private beta; follow the links to sign up and begin trying them out!
 
