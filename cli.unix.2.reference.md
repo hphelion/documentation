@@ -3488,13 +3488,13 @@ Add a server.
 Add a new server to your compute account. You must specify:  Server name, a flavor, an image or volume to use, and a key pair.  If you are creating a windows server, the flavor must be at least a large and you must specify a security group that has the RDP port open.  Optionally, you can specify a security group, key name, metadata and availability zone.
 
 ###Examples
-Create a new small server named 'my_server' with image 7 and key1:
+Create a new small server named 'my_server' with image 90ea5676 and key1:
 
-    hpcloud servers:add my_server small -i 7 -k key1
+    hpcloud servers:add my_server small -i 90ea5676 -k key1
 
 Create a windows server with the specified key, security group, and private key to decrypt the password:
 
-    hpcloud servers:add winserv large -i 100006567 -k winpair -s allowsRDP -p ./winpair.pem
+    hpcloud servers:add winserv large -i c80dfe05 -k winpair -s allowsRDP -p ./winpair.pem
 
 Create a new large server named 'my_server' using volume `natty`, key `key1`, and the `sg1` security group:
 
@@ -3502,7 +3502,7 @@ Create a new large server named 'my_server' using volume `natty`, key `key1`, an
 
 Create a new small server named 'my_server' using the specified image, flavor, key and metadata this=that:
 
-    hpcloud servers:add my_server small -i 20634 -k key1 -m this=that
+    hpcloud servers:add my_server small -i 53e78869 -k key1 -m this=that
 
 
 ##servers:console## {#servers:console}
@@ -3693,9 +3693,9 @@ Reboot server 'Hal9000':
 
     hpcloud servers:reboot Hal9000
 
-Reboot the servers with the IDs 1003 and 222:
+Reboot the servers with the IDs 53e78869 and c80dfe05:
 
-    hpcloud servers:reboot 1003 222
+    hpcloud servers:reboot 53e78869 c80dfe05
 
 
 ##servers:rebuild## {#servers:rebuild}
@@ -3724,9 +3724,9 @@ Rebuild server 'Hal9000':
 
     hpcloud servers:rebuild Hal9000
 
-Rebuild server 1003 with image 222:
+Rebuild server 53e78869 with image c80dfe05:
 
-    hpcloud servers:rebuild 1003 222
+    hpcloud servers:rebuild 53e78869 c80dfe05
 
 
 ##servers:remove## {#servers:remove}
@@ -3759,9 +3759,9 @@ Delete the servers 'DeepThought' and 'Blaine':
 
     hpcloud servers:remove DeepThought Blaine
 
-Delete the server with the ID 369765:
+Delete the server with the ID 53e78869:
 
-    hpcloud servers:remove 369765
+    hpcloud servers:remove 53e78869
 
 ###Aliases
 `servers:rm, servers:delete, servers:del`
@@ -3921,9 +3921,9 @@ Delete the snapshots `snappy1` and `snappy2`:
 
     hpcloud snapshots:remove snappy1 snappy2
 
-Delete snapshot with the ID 998:
+Delete snapshot with the ID 53e78869:
 
-    hpcloud snapshots:remove 998
+    hpcloud snapshots:remove 53e78869
 
 Delete snapshot `snappy` for availability zone `az-2.region-a.geo-1`:
 
@@ -4234,9 +4234,9 @@ Create a new volume named 'my_volume' based on the snapshot 'snappy':
 
     hpcloud volumes:add my_volume -s 'snappy'
 
-Create a new bootable volume named 'my_volume' based on the image '20103':
+Create a new bootable volume named 'my_volume' based on the image '53e78869':
 
-    hpcloud volumes:add my_volume -i 20103
+    hpcloud volumes:add my_volume -i 53e78869
 
 
 ##volumes:attach## {#volumes:attach}
