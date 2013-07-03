@@ -44,7 +44,7 @@ To install the UNIX CLI software, follow these steps:
 
 You can find the values you need for your setup by clicking the [`API Keys`](https://console.hpcloud.com/account/api_keys) button in the [Console Dashboard](https://console.hpcloud.com/dashboard).  
 
-<img src="media/api%20keys-2.jpg" width="580" height="471" alt="" />
+<img src="media/api keys-2.jpg" width="580" height="471" alt="" />
 
 Please be sure to confirm the default values for `Auth Uri`, `Compute zone`, `Storage zone`, `CDN zone`, and `Block zone`.
 
