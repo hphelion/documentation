@@ -9,7 +9,7 @@ product: identity
 
 <!--This is a comment. Comments are not displayed in the browser-->
 
-<img src="media/identity%20service%20overview_0.png" width="580" height="436" alt="" />
+<img src="media/identity service overview_0.png" width="580" height="436" alt="" />
 
 Based on [Keystone, the OpenStack Identity Service](http://keystone.openstack.org/), the HP Cloud Identity Service provides one-stop authentication for all HP Cloud Service offerings.  Key terms include:
 
