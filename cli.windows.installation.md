@@ -64,17 +64,17 @@ Click the `Next` button.  In the License Agreement dialog, select the `I Agree` 
 
 The next window allows you to select your installation folder:
 
-<img src="media/wincli%20install02_0.png" width="580" height="475" alt="" />
+<img src="media/wincli install02_0.png" width="580" height="475" alt="" />
 
 Unless you need to have the installation files reside in a different folder, we recommend you just stay with the defaults and click `Next`, which takes you to the installation confirmation window:
 
-<img src="media/wincli%20install03_0.png" width="580" height="475" alt="" />
+<img src="media/wincli install03_0.png" width="580" height="475" alt="" />
 
 The installation now proceeds on your system.
 
-<img src="media/wincli%20install04.png" width="580" height="475" alt="" />
+<img src="media/wincli install04.png" width="580" height="475" alt="" />
 
-<img src="media/wincli%20install05.png" width="580" height="475" alt="" />
+<img src="media/wincli install05.png" width="580" height="475" alt="" />
 
 
 ##Choose the Appropriate Windows PowerShell Executable## {#ChooseExecutable}
@@ -86,7 +86,7 @@ Always use the `powershell.exe` appropriate for your OS. From the Windows comman
 
 The first time that you run the shell you must supply the access key, secret key, and tenant ID that was assigned to you during the registration process; you can [find these in the system console](https://console.hpcloud.com/account/api_keys) by selecting `API Keys` on the dashboard or account page.  
 
-<img src="media/api%20keys-2.jpg" width="580" height="471" alt="" />
+<img src="media/api keys-2.jpg" width="580" height="471" alt="" />
 
 The shell detects that this is your first time logging in and prompts you for these items. 
 
