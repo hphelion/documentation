@@ -4207,6 +4207,9 @@ Add a volume.
 **-i, --image=IMAGE**
 : Create a volume from the specified image.
 
+**--zone=ZONE**
+: Create a volume in the specified zone.
+
 **-z, --availability-zone=AVAILABILITY_ZONE**
 : Set the availability zone.
 
@@ -4222,13 +4225,9 @@ Add a volume.
 Add a new volume to your compute account with the specified name and size.  Optionally, you can specify a description, metadata or availability zone.  If you do not specify a size, it is taken from the specified snapshot or image.  If no image or snapshot is specified, the size defaults to 1 gigabyte.
 
 ###Examples
-Create a new volume named 'my_volume' of size 10:
+Create a new volume named 'my_volume' of size 10 in zone az3:
 
-    hpcloud volumes:add my_volume 10
-
-Create a new volume named 'my_volume' of size 10 with a description:
-
-    hpcloud volumes:add my_volume 10 -d 'test vol'
+    hpcloud volumes:add my_volume 10 --zone az3
 
 Create a new volume named 'my_volume' based on the snapshot 'snappy':
 
