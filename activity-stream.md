@@ -10,7 +10,7 @@ Your Cloud experience can have a lot of moving parts!  Keeping track of various 
 
 We believe that helping HP Cloud users consume and organize aggregated cloud events is crucial to enable the management of cloud resources.  Today, many software applications have adopted the **Activity Stream**.  The vast amount of data produced by many modern applications such as Twitter and Facebook have helped drive the utilization of this pattern to efficiently display information in a manner that is relevant and contextual to end users.  We believe in providing this capability in a *Unified*, *Consistent*, *Simple*, *Personal* and *Transparent* way.
 
-<img src="media/Screen%20Shot%202012-11-09%20at%201.48.12%20PM_0.png" width="580" height="146" alt="" />
+<img src="media/Screen Shot 2012-11-09 at 1.48.12 PM_0.png" width="580" height="146" alt="" />
 
 This initial version of the **Activity Stream** should be considered a prototype, and will display Platform Alerts that our team will generate by hand. However, over time, we plan to add more and more automated event types to the **Activity Stream**. Some features for the future:
 
