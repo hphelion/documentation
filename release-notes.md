@@ -10,21 +10,21 @@ You know the problem:  you see the phrase "release notes" and you immediately th
 
 This page contains the following information on our software package:
 
-* [New features in version 13.5](#v13.5limitations)
-* [Known issues in version 13.5](#v13.5issues)
-* [Resolved issues in version 13.5](#v13.5resolved)
+* [New features in version 13.5](#v135limitations)
+* [Known issues in version 13.5](#v135issues)
+* [Resolved issues in version 13.5](#v135resolved)
 * [Release notes for individual products and services](#otherReleaseNotes)
 * [For further information](#seealso)
 
 
-##New Features in Version 13.5## {#v13.5features}
+##New Features in Version 13.5## {#v135features}
 
 The following are new features in version 13.5 of the HP Public Cloud software:
 
 * items
 
 
-##Known issues and limitations in version 13.5 (beta)## {#v13.5issues}
+##Known issues and limitations in version 13.5 (beta)## {#v135issues}
 
 The following are known issues and limitation for version 13.5 of the HP Public Cloud software:
 
@@ -36,7 +36,7 @@ The following are known issues and limitation for version 13.5 of the HP Public 
     *Workaround*: Reboot the instance.
 
 
-###Resolved Issues in Version 13.5## {v13.5resolved}
+###Resolved Issues in Version 13.5## {v135resolved}
 
 The following are resolved issues in version 13.5 of the HP Public Cloud software:
 
