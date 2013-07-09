@@ -3,7 +3,7 @@
 # This script merges master to all the branches
 #
 rm -f ${SERVERS_DIR}/*/active
-git branch -r | grep -v origin/HEAD | grep -v origin/develop |
+git branch -r | grep -v origin/HEAD | grep -v origin/develop | grep -v origin/master |
 while read BRANCH ROL
 do
   echo "##### ${BRANCH} #####"
