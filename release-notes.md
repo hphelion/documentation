@@ -10,7 +10,7 @@ You know the problem:  you see the phrase "release notes" and you immediately th
 
 This page contains the following information on our software package:
 
-* [New features in version 13.5](#v135limitations)
+* [New features in version 13.5](#v135features)
 * [Known issues in version 13.5](#v135issues)
 * [Resolved issues in version 13.5](#v135resolved)
 * [Release notes for individual products and services](#otherReleaseNotes)
