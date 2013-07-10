@@ -36,7 +36,7 @@ The following are known issues and limitation for version 13.5 of the HP Public 
     *Workaround*: Reboot the instance.
 
 
-###Resolved Issues in Version 13.5## {v135resolved}
+###Resolved Issues in Version 13.5## {#v135resolved}
 
 The following are resolved issues in version 13.5 of the HP Public Cloud software:
 
