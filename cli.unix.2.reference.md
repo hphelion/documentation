@@ -49,7 +49,7 @@ Print the service catalog of the specified account.
 
 
 ###Description
-Print the service catalog of the specified account.  Optionally, you may specify a particular service to print such as "Compute".
+Print the service catalog of the specified account.  Optionally, you may specify a particular service to print such as `Compute`.
 
 ###Examples
 Print the service catalog of `useast`:
