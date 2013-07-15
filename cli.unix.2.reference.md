@@ -3473,6 +3473,9 @@ Add a server.
 **-u, --userdata=USERDATA**
 : File which contains user data.
 
+**--personality=PERSONALITY**
+: Directory containing personality for server.
+
 **-z, --availability-zone=AVAILABILITY_ZONE**
 : Set the availability zone.
 
