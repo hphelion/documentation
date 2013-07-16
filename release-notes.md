@@ -22,13 +22,13 @@ This page contains the following information on our software package:
 
 The following are new features in version 13.5 of the HP Public Cloud software:
 
-* *Larger compute instances for big data and high-performance computing is now supported*.  Access to new larger instance types allows you to run big data, analytics and high performance computing (HPC) workloads in the public cloud.  You can access instances with up to 120 GB of RAM and up to 16 virtual cores. The new instance types allow you to choose the virtual machine size that best fits your application’s needs.
+* *Larger compute instances for big data and high-performance computing is now supported*.  Access to new larger instance types allows you to run big data, analytics and high performance computing (HPC) workloads in the public cloud.  You can access instances with up to 120 GB of RAM and up to 16 virtual cores. The new instance types allow you to choose the virtual machine size that best fits your application's needs.
 * *New virtual private cloud (VPC) networking capabilities*.  The new VPC functionality provides you with advanced security in the public cloud by allowing you to create your own isolated virtual network within the HP Cloud compute service. Using a Software Defined Networking (SDN) stack, this service allows you to select whether or not your public cloud network instances are also accessible from the internet. This network isolation offers an additional layer of security to cloud deployments. You can also connect your public cloud network to your on-premise network, treating private and public infrastructures as a single connected system.
-* *Faster and simpler custom image upload*.  Increases productivity by offering simplified set up and deployment of new instances. You can now create your own images outside of the HP Cloud and upload them to the HP Cloud Image Management Service to use as a starting point for creating new instances. HP Cloud services also provide a wide variety of preconfigured images, allowing you to create images from your running instances to produce new instances.
-* *Faster data upload to the cloud*.  A new bulk import service reduces the time to market for applications requiring existing data by allowing you to quickly and easily load your data into HP Cloud block storage or HP Cloud object storage. The new service bypasses the process of transferring large amounts of information over the Internet and allows you to provide hard drives directly to HP’s data centers where your data can be rapidly transferred.
+* *Faster and simpler custom image upload*.  Increases productivity by offering simplified set up and deployment of new instances. You can now create your own images outside of the HP Cloud and upload them to the HP Cloud image management service to use as a starting point for creating new instances. HP Cloud services also provide a wide variety of preconfigured images, allowing you to create images from your running instances to produce new instances.
+* *Faster data upload to the cloud*.  A new bulk import service reduces the time to market for applications requiring existing data by allowing you to quickly and easily load your data into HP Cloud block storage or HP Cloud object storage. The new service bypasses the process of transferring large amounts of information over the Internet and allows you to provide hard drives directly to HP's data centers where your data can be rapidly transferred.
 
 
-##Known issues in version 13.5 (beta)## {#v135issues}
+##Known issues in version 13.5## {#v135issues}
 
 The following are known issues and limitation for version 13.5 of the HP Public Cloud software:
 
@@ -40,6 +40,8 @@ The following are known issues and limitation for version 13.5 of the HP Public 
     *Workaround*: Shut down the volume and start a new instance to take your snapshot.
 * Instances are not currently able to access a DNS server as their default.<br>
     *Workaround*: To resolve an external address, provide the IP address of an appropriate DNS server when you create or update a subnet.  You can use any external DNS server; HP also provides the server at IP address `206.164.176.34` in AE1 for your use.  **Note**: If you are using the [command-line interface (CLI) tools](/cli/), you must set this address manually.  If you are using the [management console](/mc/), this is set by default.
+* 
+* Jclouds is supported for Keystone version 2 API and earlier only.
 * In rare cases, after successfully launching an instance `SSH` may not function. <br>
     *Workaround*: Reboot the instance.
 
