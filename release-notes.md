@@ -29,7 +29,7 @@ The following are new features in version 13.5 of the HP Public Cloud software:
 
 The following are known issues and limitation for version 13.5 of the HP Public Cloud software:
 
-* **Limitation**: When simultaneously launching instances, you are limited to 49 instances or less.  We recommend that you stagger your launch of multiple instances for best performance.
+* **Limitation**: When simultaneously launching instances, you are limited to 49 instances or less.  We recommend that you stagger your launch of multiple instances for best performance.  The default quota limit is 40 instances.
 * **Limitation**: When passing through a router to move off your local network, your throughput speed is limited to approximately 150 megabits per second.
 * **Limitation**: Snapshot support is not yet available for `standard.4xlarge` and `standard.5xlarge` instances.
 * **Limitation**: Do not delete egress rules from your security group; this removes the ability of your VM to access any external nodes (including fetching metadata required by your SSH key), causing newly-booted VMs to be unusable.
