@@ -40,7 +40,6 @@ The following are known issues and limitation for version 13.5 of the HP Public 
     *Workaround*: Shut down the volume and start a new instance to take your snapshot.
 * Instances are not currently able to access a DNS server as their default.<br>
     *Workaround*: To resolve an external address, provide the IP address of an appropriate DNS server when you create or update a subnet.  You can use any external DNS server; HP also provides the server at IP address `206.164.176.34` in AE1 for your use.  **Note**: If you are using the [command-line interface (CLI) tools](/cli/), you must set this address manually.  If you are using the [management console](/mc/), this is set by default.
-* 
 * Jclouds is supported for Keystone version 2 API and earlier only.
 * In rare cases, after successfully launching an instance `SSH` may not function. <br>
     *Workaround*: Reboot the instance.
