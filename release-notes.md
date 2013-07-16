@@ -32,7 +32,7 @@ The following are new features in version 13.5 of the HP Public Cloud software:
 
 The following are known issues and limitation for version 13.5 of the HP Public Cloud software:
 
-* When simultaneously launching instances, you are limited to 49 instances or less.  We recommend that you stagger your launch of multiple instances for best performance.  The default quota limit is 40 instances.
+* If attempting to simultaneously launch a larger number of instances, some instances may go into an error state. Currently, we recommend you stagger your launch of multiple instances to batches of 30-40 at a time for best performance.
 * When passing through a router to move off your local network, your throughput speed is limited to approximately 150 megabits per second.
 * Snapshot support is not yet available for `standard.4xlarge` and `standard.5xlarge` instances.
 * Do not delete egress rules from your security group; this removes the ability of your VM to access any external nodes (including fetching metadata required by your SSH key), causing newly-booted VMs to be unusable.
@@ -40,7 +40,6 @@ The following are known issues and limitation for version 13.5 of the HP Public 
     *Workaround*: Shut down the volume and start a new instance to take your snapshot.
 * Instances are not currently able to access a DNS server as their default.<br>
     *Workaround*: To resolve an external address, provide the IP address of an appropriate DNS server when you create or update a subnet.  You can use any external DNS server; HP also provides the server at IP address `206.164.176.34` in AE1 for your use.  **Note**: If you are using the [command-line interface (CLI) tools](/cli/), you must set this address manually.  If you are using the [management console](/mc/), this is set by default.
-* 
 * Jclouds is supported for Keystone version 2 API and earlier only.
 * In rare cases, after successfully launching an instance `SSH` may not function. <br>
     *Workaround*: Reboot the instance.
