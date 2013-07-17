@@ -3545,6 +3545,33 @@ Display the password of the winserver:
     hpcloud servers:console winserver -p win.pem
 
 
+##servers:limits## {#servers:limits}
+List compute limits.
+
+###Syntax
+`hpcloud servers:limits`
+
+###Options
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
+
+###Description
+Lists all the compute limits for this project.
+
+###Examples
+List all limits:
+
+    hpcloud servers:limits
+
+
 ##servers:metadata## {#servers:metadata}
 List the metadata for a server.
 

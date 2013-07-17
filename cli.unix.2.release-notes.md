@@ -28,6 +28,9 @@ The 2.0.0 release is available for download from [https://docs.hpcloud.com/file/
   - `ports` commands
   - `subnets` commands
 * Support for load balancer as a service (LBaaS) with the `lb` commands
+* Personality support for servers:add
+* The containers:sync command now takes a container or location for destination
+* The servers:limits command was added to print comput limits
 
 ###Known Issues###
 
