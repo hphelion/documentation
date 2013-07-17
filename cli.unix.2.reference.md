@@ -1041,7 +1041,7 @@ Set up the container :atainer to be a destination for synchronization:
 
 Synchronize :btainer to remote container :atainer:
 
-    hpcloud containers:sync :btainer keyo https://region-a.geo-1.objects.hpcloudsvc.com:443/v1/96XXXXXX/atainer
+    hpcloud containers:sync :btainer keyo atainer
 
 Create a two way synchronization betwee :atainer and :btainer:
 
