@@ -3694,6 +3694,33 @@ Change the password for server 'my-server':
 ###Aliases
 `servers:passwd`
 
+##servers:ratelimits## {#servers:ratelimits}
+List compute rate limits.
+
+###Syntax
+`hpcloud servers:ratelimits`
+
+###Options
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
+
+###Description
+Lists all the compute rate limits for this project.
+
+###Examples
+List all rate limits:
+
+    hpcloud servers:ratelimits
+
+
 ##servers:reboot## {#servers:reboot}
 Reboot a server or servers (specified by server name or ID).
 
