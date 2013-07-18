@@ -2734,6 +2734,78 @@ Update 'netty' admin state down:
     hpcloud networks:update netty --no-adminstateup
 
 
+##objects:metadata:get## {#objects:metadata:get}
+Get the value of an attribute of a container.
+
+###Syntax
+`hpcloud objects:metadata:get <name> [attribute...]`
+
+###Options
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
+
+###Description
+Get the value of an attribute for an existing container. The allowed attributes whose value can be retrieved are:
+* `X-Ttl`
+* `X-Cdn-Uri`
+* `X-Cdn-Enabled`
+* `X-Log-Retention`.
+
+Optionally, you can specify an availability zone.
+
+###Examples
+List all the attributes:
+
+    hpcloud objects:metadata:get :my_container
+
+Get the value of the attribute 'X-Cdn-Uri':
+
+    hpcloud objects:metadata:get :my_container "X-Cdn-Uri"
+
+Get the value of the attribute `X-Ttl` for availability zone `regioni-a.geo`:
+
+    hpcloud objects:metadata:get :my_container "X-Ttl" -z region-a.geo-1
+
+
+##objects:metadata:set## {#objects:metadata:set}
+Set attributes on a object.
+
+###Syntax
+`hpcloud objects:metadata:set <name> <attribute> <value>`
+
+###Options
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
+
+###Description
+Set attributes for an existing object by specifying their values.
+
+###Examples
+Set the attribute 'X-Object-Meta-Key' to metavalue:
+
+    hpcloud objects:metadata:set :my_container/objay.txt X-Object-Meta-Key metavalue
+
+Set the attribute 'Content-Type' to text/plain:
+
+    hpcloud objects:metadata:set :my_container/objay.txt Content-Type text/plain
+
+
 ##ports## {#ports}
 List the available ports.
 

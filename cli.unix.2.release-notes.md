@@ -31,6 +31,8 @@ The 2.0.0 release is available for download from [https://docs.hpcloud.com/file/
 * Personality support for servers:add
 * The containers:sync command now takes a container or location for destination
 * The servers:limits command was added to print comput limits
+* The servers:ratelimits command was added to print comput limits
+* Object metadata can now be shown and set with objects:metadata:get and objects:metadata:set
 
 ###Known Issues###
 
