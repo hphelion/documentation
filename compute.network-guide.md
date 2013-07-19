@@ -20,23 +20,17 @@ This guide covers:
 
 Using the OpenStack Networking API, HP Public Cloud Networking defines network connectivity and addressing for HP Public Cloud Compute devices as well as devices for other HP Public Cloud services. It expands networking capabilities, allowing you to perform many tasks, including:
 
-•	Defining and configuring virtual networks
- 
-•	Specifying IP subnets for those networks
-
-•	Defining security group parameters
-
-•	Allocating and managing public floating IP addresses
+* Defining and configuring virtual networks
+* Specifying IP subnets for those networks
+* Defining security group parameters
+* Allocating and managing public floating IP addresses
 
 #####A default configuration comes with HP Public Cloud Compute Service activation and includes:
 
-•	A network 
-
-•	A subnet
- 
-•	A router connecting the subnets to the Internet
-
-•	A security group with basic server options
+* A network 
+* A subnet
+* A router connecting the subnets to the Internet
+* A security group with basic server options
 
 __Use as is or customize__ 
 
