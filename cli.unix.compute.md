@@ -21,12 +21,6 @@ This page gives you a few examples of how to perform various compute tasks using
 
 You can also find some good how-tos for the compute service on the [Using the Compute Service](compute/using) page.
 
-Some advanced compute features are documented in these articles:
-
-* [User Data aka Cloud Init](/cli/unix/articles/userdata)
-* [Creating Servers with Personality](/cli/unix/articles/personality)
-* [Accessing Servers with Managed Keypairs](/cli/unix/articles/managedkeypairs)
-
 Remember that you can get detailed help for any command or task with the following command:
 
     $ hpcloud help <TASK>
