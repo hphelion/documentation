@@ -895,47 +895,6 @@ Create the container `my_container` for the availability zone `region-a.geo-1`:
     hpcloud containers:add :my_container -z region-a.geo-1
 
 
-##containers:get## {#containers:get}
-Get the value of an attribute of a container.
-
-###Syntax
-`hpcloud containers:get <name> [attribute...]`
-
-###Options
-**-z, --availability-zone=AVAILABILITY_ZONE**
-: Set the availability zone.
-
-**-x, --debug=DEBUG**
-: Debug logging 1,2,3,...
-
-**-a, --account-name=ACCOUNT_NAME**
-: Select account.
-
-
-
-###Description
-Get the value of an attribute for an existing container. The allowed attributes whose value can be retrieved are:
-* `X-Ttl`
-* `X-Cdn-Uri`
-* `X-Cdn-Enabled`
-* `X-Log-Retention`.
-
-Optionally, you can specify an availability zone.
-
-###Examples
-List all the attributes:
-
-    hpcloud containers:get :my_container
-
-Get the value of the attribute 'X-Cdn-Uri':
-
-    hpcloud containers:get :my_container "X-Cdn-Uri"
-
-Get the value of the attribute `X-Ttl` for availability zone `regioni-a.geo`:
-
-    hpcloud containers:get :my_container "X-Ttl" -z region-a.geo-1
-
-
 ##containers:remove## {#containers:remove}
 Remove a containers.
 
@@ -980,39 +939,6 @@ Delete the container `my_container` for availability zone 'region-a.geo-1`:
 ###Aliases
 `containers:rm, containers:delete, containers:del`
 
-##containers:set## {#containers:set}
-Set attributes on a container.
-
-###Syntax
-`hpcloud containers:set <name> <attribute> <value>`
-
-###Options
-**-z, --availability-zone=AVAILABILITY_ZONE**
-: Set the availability zone.
-
-**-x, --debug=DEBUG**
-: Debug logging 1,2,3,...
-
-**-a, --account-name=ACCOUNT_NAME**
-: Select account.
-
-
-
-###Description
-Set attributes for an existing container by specifying their values. The allowed attributes that can be set are:
-
-* `X-Container-Read`
-* `X-Container-Meta-Web-Index`
-* `X-Container-Meta-Web-Error`
-* `X-Container-Meta-Web-Listings`
-* `X-Container-Meta-Web-Listings-CSS`
-
-###Examples
-Set the attribute 'X-Container-Meta-Web-Index' to index.htm:
-
-    hpcloud containers:set :my_container "X-Container-Meta-Web-Index" index.htm
-
-
 ##containers:sync## {#containers:sync}
 Allow container synchronization.
 
@@ -1041,7 +967,7 @@ Set up the container :atainer to be a destination for synchronization:
 
 Synchronize :btainer to remote container :atainer:
 
-    hpcloud containers:sync :btainer keyo https://region-a.geo-1.objects.hpcloudsvc.com:443/v1/96XXXXXX/atainer
+    hpcloud containers:sync :btainer keyo atainer
 
 Create a two way synchronization betwee :atainer and :btainer:
 
@@ -2511,6 +2437,100 @@ Display the URI for the file `file.txt` that resides in container `my_container`
 ###Aliases
 `loc`
 
+##metadata## {#metadata}
+Get the metadata value of a container or object.
+
+###Syntax
+`hpcloud metadata <name> [attribute...]`
+
+###Options
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
+
+###Description
+Get the various metadata values for an object or container.
+
+###Examples
+List all the attributes:
+
+    hpcloud metadata :my_container
+
+Get the value of the attribute 'X-Cdn-Uri':
+
+    hpcloud metadata :my_container X-Cdn-Uri
+
+List all the attributes for the object:
+
+    hpcloud metadata :my_container/dir/file.txt
+
+
+##metadata:set## {#metadata:set}
+Set attributes on a object.
+
+###Syntax
+`hpcloud metadata:set <name> <attribute> <value>`
+
+###Options
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
+
+###Description
+Set metadata values for containers and objects.  Container metadata keys generally begin with `X-Container-Meta-` and some other special metadata values you can set for containers include:
+
+* Authorization
+* X-Auth-Token
+* X-Container-Read
+* X-Container-Write
+* X-Container-Sync-To
+* X-Container-Sync-Key
+* X-Container-Meta-Web-Index
+* X-Container-Meta-Web-Error
+* X-Container-Meta-Web-Listings
+* X-Container-Meta-Web-Listings-CSS
+* X-Versions-Location
+
+
+Object metadata keys generally begin with `X-Object-Meta-` and some other special metadata values you can set for objects include:
+
+* Content-Type
+* Content-Disposition
+* X-Delete-At
+* X-Delete-After
+* X-Object-Manifest
+
+
+Check http://docs.hpcloud.com/api/object-storage/ for up to date changes on the valid keys and values.  Unfortunately, the server may positively acknowledge the setting of invalid keys.  It may be best to query for the value after setting it to verify the set worked.
+
+###Examples
+Set the attribute 'X-Container-Meta-Web-Index' to index.htm:
+
+    hpcloud metadata :my_container "X-Container-Meta-Web-Index" index.htm
+
+Set the attribute 'X-Object-Meta-Key' to metavalue:
+
+    hpcloud metadata:set :my_container/objay.txt X-Object-Meta-Key metavalue
+
+Set the attribute 'Content-Type' to text/plain:
+
+    hpcloud metadata:set :my_container/objay.txt Content-Type text/plain
+
+
 ##migrate## {#migrate}
 Migrate files from a provider described by the source account.
 
@@ -3473,6 +3493,9 @@ Add a server.
 **-u, --userdata=USERDATA**
 : File which contains user data.
 
+**--personality=PERSONALITY**
+: Directory containing personality for server.
+
 **-z, --availability-zone=AVAILABILITY_ZONE**
 : Set the availability zone.
 
@@ -3503,6 +3526,10 @@ Create a new large server named 'my_server' using volume `natty`, key `key1`, an
 Create a new small server named 'my_server' using the specified image, flavor, key and metadata this=that:
 
     hpcloud servers:add my_server small -i 53e78869 -k key1 -m this=that
+
+Create 'my_server' with the personality specified in the directory 'rootdir':
+
+    hpcloud servers:add my_server large -i 53e78869 -k key1 --personality rootdir
 
 
 ##servers:console## {#servers:console}
@@ -3540,6 +3567,33 @@ Display 100 lines of console ouput:
 Display the password of the winserver:
 
     hpcloud servers:console winserver -p win.pem
+
+
+##servers:limits## {#servers:limits}
+List compute limits.
+
+###Syntax
+`hpcloud servers:limits`
+
+###Options
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
+
+###Description
+Lists all the compute limits for this project.
+
+###Examples
+List all limits:
+
+    hpcloud servers:limits
 
 
 ##servers:metadata## {#servers:metadata}
@@ -3663,6 +3717,33 @@ Change the password for server 'my-server':
 
 ###Aliases
 `servers:passwd`
+
+##servers:ratelimits## {#servers:ratelimits}
+List compute rate limits.
+
+###Syntax
+`hpcloud servers:ratelimits`
+
+###Options
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
+
+###Description
+Lists all the compute rate limits for this project.
+
+###Examples
+List all rate limits:
+
+    hpcloud servers:ratelimits
+
 
 ##servers:reboot## {#servers:reboot}
 Reboot a server or servers (specified by server name or ID).
