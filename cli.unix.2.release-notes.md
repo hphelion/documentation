@@ -7,7 +7,7 @@ product: unix-cli
 ---
 #HP Cloud Services UNIX CLI Release Notes
 
-These are the release notes for the HP Cloud services UNIX CLI.  The current release number for the [UNIX CLI software](/cli/unix) is version 2.0.0, released on 07/11/13.
+These are the release notes for the HP Cloud services UNIX CLI.  The current release number for the [UNIX CLI software](/cli/unix) is version 2.0.0, released on 07/22/13.
 
 * [Release 2.0.0 Features](#v2_0_0)
 * [Release 1.9.0 Features](#v1_9_0)
@@ -28,6 +28,11 @@ The 2.0.0 release is available for download from [https://docs.hpcloud.com/file/
   - `ports` commands
   - `subnets` commands
 * Support for load balancer as a service (LBaaS) with the `lb` commands
+* Personality support for `servers:add`
+* The `containers:sync` command now takes a container or location for destination
+* The `servers:limits` command was added to print comput limits
+* The `servers:ratelimits` command was added to print comput limits
+* Object metadata can now be shown and set with `metadata` and `metadata:set`
 
 ###Known Issues###
 
