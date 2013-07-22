@@ -3527,6 +3527,10 @@ Create a new small server named 'my_server' using the specified image, flavor, k
 
     hpcloud servers:add my_server small -i 53e78869 -k key1 -m this=that
 
+Create 'my_server' with the personality specified in the directory 'rootdir':
+
+    hpcloud servers:add my_server large -i 53e78869 -k key1 --personality rootdir
+
 
 ##servers:console## {#servers:console}
 Get the console output of a server or extract the windows password.
