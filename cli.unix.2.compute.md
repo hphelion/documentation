@@ -14,6 +14,12 @@ This page gives you a few examples of how to perform various compute tasks using
 * [Key Pair Commands](#KeypairCommands)
 * [Server Commands](#ServerCommands)
 
+Some advanced compute features are documented in these articles:
+
+* [User Data aka Cloud Init](/cli/unix/articles/userdata)
+* [Creating Servers with Personality](/cli/unix/articles/personality)
+* [Accessing Servers with Managed Keypairs](/cli/unix/articles/managedkeypairs)
+
 You can also find some good how-tos for the compute service on the [Using the compute service](/compute/using/) page.  And remember that you can get detailed help for any command or task with the following command:
 
     $ hpcloud help <TASK>
