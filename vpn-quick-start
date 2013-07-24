@@ -9,16 +9,16 @@ permalink: /vpn-quickstart/
 
 With HP Cloud Networking you can set up an IPSec, or site-to-site, VPN connecting your external network directly to your HP cloud virtual network. This guide provides the basic instructions to set this up.
 
-## Overview ## {#top}
+##Overview## {#top}
 
 HP Cloud Networking, based on OpenStack Networking, gives you a broad new spectrum of functionality to define and configure virtual networks.
 
 A default network configuration comes with HP Cloud Compute Service activation. Your network is ready to deploy HP Cloud Compute virtual machines (instances) without further configuration required. The default configuration includes:
 
-• A network   
-• A subnet   
-• A router connecting the subnet to the Internet   
-• A security group with basic server options   
+* A network   
+* A subnet   
+* A router connecting the subnet to the Internet   
+* A security group with basic server options   
 
 The purpose of this guide it to provide instructions to create an IPSec VPN (also known as site-to-site VPN) from your external network directly into your HP Cloud virtual network.
 
@@ -32,24 +32,25 @@ Ensure before starting that you have adequate permissions to accomplish each of 
 
 **Note:** VPN instances are a potential single point of failure.  
 
-- [Audience](#audience)
-- [Key terms](#terms)
-- [Quick start](#quickstart)
-- [Tips and best practices](#tips)
-- [Troubleshooting](#troubleshooting)
-- [References](#refs)
+* [Audience](#audience)
+* [Key terms](#terms)
+* [Quick start](#quickstart)
+* [Tips and best practices](#tips)
+* [Troubleshooting](#troubleshooting)
+* [References](#refs)
 
 
-### Audience ### {#audience}
+###Audience### {#audience}
+
 This guide is designed for the following people:   
 
--  Networking Engineers    
+* Networking Engineers    
 * Networking Administrators
 * Cloud Administrators
 
 To use this solution effectively, you should be familiar with the below concepts and information:   
 
-- Local network configuration in HP Public Cloud     
+* Local network configuration in HP Public Cloud     
 * HP Cloud Compute and Networking services 
 * OpenStack Nova and Neutron CLI and API   
 * Virtual Private Networks (VPN)    
@@ -75,7 +76,7 @@ This guide provides the information you will need to get started in setting up a
 
 **NOTE:**  This tutorial assumes a "left" case with the "right" case being the hardware.  
 
-For the purpose of this tutorial, strongSwan is used.  There are multiple ways to configure strongSwan and the instructions in this guide may not work for every environment.  Please refer to the strongSwan user documentation for advanced configuration information that may not be included in this guide.
+For the purpose of this tutorial, we use strongSwan.  There are multiple ways to configure strongSwan and the instructions in this guide may not work for every environment.  Please refer to the strongSwan user documentation for advanced configuration information that may not be included in this guide.
 
 All instructions are provided using command line interactions. 
 
@@ -205,10 +206,10 @@ To boot a compute instance you will need to know which flavor of image you would
 
 Boot two instances--one to use as the VPN gateway (vm-gateway) and the other (vm-test) to test with.
 
-- --image:  the name or ID of the image to launch.  View available images by running **nova image-list**
+* --image:  the name or ID of the image to launch.  View available images by running **nova image-list**
  
-- --key_name:  the name of the key to inject into the instance at launch
-- --flavor:  the name or ID of the size of the instance to create.  View the list of available flavors by running `nova flavor-list`.
+* --key_name:  the name of the key to inject into the instance at launch
+* --flavor:  the name or ID of the size of the instance to create.  View the list of available flavors by running `nova flavor-list`.
 
 Example: 
   
