@@ -1,10 +1,10 @@
 ---
 layout: default
-title: "HP Cloud Networking: VPN setup quick start guide"
+title: "HP Cloud Networking--VPN setup quick start guide"
 permalink: /vpn-quickstart/
 
 ---
-# HP Cloud Networking: VPN setup quick start guide
+# HP Cloud Networking--VPN setup quick start guide
 With HP Cloud Networking you can set up an IPSec, or site-to-site, VPN connecting your external network directly to your HP cloud virtual network. This guide provides the basic instructions to set this up.
 
 ## Overview ## {#top}
