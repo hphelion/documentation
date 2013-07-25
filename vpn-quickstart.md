@@ -7,7 +7,18 @@ permalink: /vpn-quickstart/
 # HP Cloud Networking:  VPN setup quick start guide 
 
 
-With HP Cloud Networking you can set up an IPSec, or site-to-site, VPN connecting your external network directly to your HP cloud virtual network. This guide provides the basic instructions for setting this up with your network.
+With HP Cloud Networking you can set up an IPSec, or site-to-site, VPN connecting your external network directly to your HP cloud virtual network. This guide provides the basic instructions for setting this up with your network using strongSwan. For more complex configuration, please refer to the strongSwan documentation.
+
+This guide covers the following:
+
+- [Overview](#top)
+- [Audience](#audience)
+- [Key terms](#terms)
+- [Quick start](#quickstart)
+- [Tips and best practices](#tips)
+- [Troubleshooting](#troubleshooting)
+- [For further information](#refs)
+
 
 ## Overview ## {#top}
 
@@ -31,13 +42,6 @@ For VPN site-to-site connectivity, you will need to modify either the provided d
 Ensure before starting that you have adequate permissions to accomplish each of the below steps.  
 
 **Note:** VPN instances are a potential single point of failure.  
-
-- [Audience](#audience)
-- [Key terms](#terms)
-- [Quick start](#quickstart)
-- [Tips and best practices](#tips)
-- [Troubleshooting](#troubleshooting)
-- [References](#refs)
 
 
 ### Audience ### {#audience}
@@ -78,7 +82,7 @@ image coming
 
 **NOTE:**  This guide assumes a "left" case with the "right" case being the hardware.  
 
-For the purpose of this tutorial, strongSwan is used.  There are multiple ways to configure strongSwan and the instructions in this guide may not work for every environment.  Please refer to the strongSwan user documentation for advanced configuration information that may not be included in this guide.
+For the purpose of this guide, strongSwan is used.  There are multiple ways to configure strongSwan and the instructions in this guide may not work for every environment.  Please refer to the strongSwan user documentation for advanced configuration information.
 
 All instructions are provided using command line interactions. 
 
@@ -90,11 +94,11 @@ The following steps walk you through the process:
 [Create ports and disable anti-spoofing](#port)   
 [Create compute instances](#instances)
 [Associate floating IPs](#floatip)  
-[Install strongSwan](#installss)  
+[Install strongSwan](#installss)
 [Enable IP forwarding](#ipfrwrd)
 [Set up *ipsec.conf* on the gateway](#ipsec)
 [Set up Shared Secret](#secret)
-[Set up routes on non-gateway instance](#routes) 
+[Set up routes on non-gateway instance](#routes)
 [Establish connections](#connect)
 
 In this tutorial we will use the below parameters:
@@ -120,8 +124,8 @@ If you have not previously created an account and activated the Compute Service 
 
 Create the router **vpn_router** and set its gateway to be the external network.
 
-  neutron router-create vpn_router
-  neutron router-gateway-set vpn_router $EXT_NET
+	neutron router-create vpn_router
+	neutron router-gateway-set vpn_router $EXT_NET
 
 #### Create a network and subnet
 
@@ -243,9 +247,7 @@ After a short period of time the instance changes from BUILD to ACTIVE.  You can
 
 #### Create the floating IPs
 
-Next, you need to create the floating IPs associated with the external network (Ext_Net).  Each created floating IP has an ID that we will refer to as `$FLOATING_ID1` and 
-
-`$FLOATING_ID2`.
+Next, you need to create the floating IPs associated with the external network (Ext_Net).  Each created floating IP has an ID that we will refer to as `$FLOATING_ID1` and `$FLOATING_ID2`.
 
 	neutron floatingip-create $EXT_NET
 	neutron floatingip-create $EXT_NET
@@ -260,7 +262,7 @@ To show the floating IP:
 	neutron floatingip-show $FLOATING_ID1
 	neutron floatingip-show $FLOATING_ID2
 
-**Note:** You can also assign a floating IPs via the Nova API and subsequently call the command `nova list` to display the instances and their status.
+**Note:** You can also assign floating IPs via the Nova API and subsequently call the command `nova list` to display the instances and their status.
 
 ### Install strongSwan on the gateway instance ### {#installss}
 
@@ -293,7 +295,7 @@ Example:
 
 ### Set up ipsec.conf on the gateway instance ### {#ipsec}
 
-strongSwan always considers itself as “LEFT” and the other side of the network (the remote server) with the hardware router as the “RIGHT”.  When configuring the VPC VPN instance consider it the “LEFT” node and the remote server as the “RIGHT” node.
+strongSwan always considers itself as "LEFT" and the other side of the network (the remote server) with the hardware router as the "RIGHT".  When configuring the VPC VPN instance consider it the "LEFT" node and the remote server as the "RIGHT" node.
 
 Below is an example strongSwan *ipsec.conf* file.  Note that the information that is added to this file for detailing the left and right cases must be entered as created into both this file and the ipsec.secrets file.
 
@@ -343,9 +345,9 @@ Below is an example strongSwan *ipsec.conf* file.  Note that the information tha
 	      auto=add
    
  
-### Setup ipsec.secrets file on the gateway instance ### {#secret}
+### Set up ipsec.secrets file on the gateway instance ### {#secret}
 
-In this guide, we will set up a simple site-to-site VPN.  For more complex configuration please refer to the strongSwan documentation.
+Modify the *ipsec.secrets* file for the basic site-to-site VPN setup.
 
 strongSwan's *ipsec.secrets* file contains an unlimited number of the following types of secrets:
 
@@ -431,7 +433,7 @@ These topics can help you address problems that might occur when you are setting
 
 back to the [top](#top)
 
-## References ## {#refs}
+## For further information ## {#refs}
 
 - [http://wiki.strongswan.org/projects/strongswan/wiki/FAQ](http://wiki.strongswan.org/projects/strongswan/wiki/FAQ)
 - [http://wiki.strongswan.org/projects/strongswan/wiki/UserDocumentation](http://wiki.strongswan.org/projects/strongswan/wiki/UserDocumentation "strongSwan User Documentation")
