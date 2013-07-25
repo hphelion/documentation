@@ -1181,7 +1181,7 @@ Add a DNS record to the specified domain with the given name, type and data.
 ###Examples
 Create a DNS record for domain `mydomain.com` and `A` record for `www.mydomain.com` pointing to address 10.0.0.1:
 
-    hpcloud dns:records:add mydomain.com. www.mydomain.com A 10.0.0.1
+    hpcloud dns:records:add mydomain.com. www.mydomain.com. A 10.0.0.1
 
 
 ##dns:records:remove## {#dns:records:remove}
@@ -1208,7 +1208,7 @@ Remove a DNS record to the specified domain.  Records may be specified by name o
 ###Examples
 Remove record `www.mydomain.com` from the domain `mydomain.com`.:
 
-    hpcloud dns:records:remove mydomain.com. www.mydomain.com
+    hpcloud dns:records:remove mydomain.com. www.mydomain.com.
 
 
 ##dns:records:update## {#dns:records:update}
@@ -1235,7 +1235,7 @@ Update a DNS record to the specified domain with the given name, type and data.
 ###Examples
 Update a DNS domain `mydomain.com` record `A` for `www.mydomain.com` pointing to address 10.0.0.1:
 
-    hpcloud dns:records:update mydomain.com. www.mydomain.com A 10.0.0.1
+    hpcloud dns:records:update mydomain.com. www.mydomain.com. A 10.0.0.1
 
 
 ##dns:remove## {#dns:remove}
@@ -1260,17 +1260,13 @@ Remove DNS domains (specified by name or ID).
 Remove DNS domains by specifying their names or ID. You may specify more than one DNS name or ID on a command line.  Optionally, you can specify an availability zone.
 
 ###Examples
-Delete the DNS domains `tome` and `treatise`:
+Delete the DNS domains `mydomain.com.` and `yourdomain.com.`:
 
-    hpcloud dns:remove tome treatise
+    hpcloud dns:remove mydomain.com. yourdomain.com.
 
-Delete the DNS domain with ID 998:
+Delete the DNS domain with ID f3f3a427:
 
-    hpcloud dns:remove 998
-
-Delete the DNS domain `my-dns` for availability zone `az-2.region-a.geo-1`:
-
-    hpcloud dns:remove my-dns -z az-2.region-a.geo-1
+    hpcloud dns:remove f3f3a427
 
 ###Aliases
 `dns:rm, dns:delete, dns:del`
@@ -1342,11 +1338,11 @@ Update a DNS domain with the specified name.  Optionally, you can specify an ema
 ###Examples
 Update DNS domain `mydomain.com` with email address `email@example.com`:
 
-    hpcloud dns:update mydomain.com. email@example.com
+    hpcloud dns:update mydomain.com. -e email@example.com
 
 Update DNS domain `mydomain.com` with email address `email@example.com` and TTL 7200:
 
-    hpcloud dns:update mydomain.com. email@xample.com -t 7200
+    hpcloud dns:update mydomain.com. -e email@xample.com -t 7200
 
 
 ##flavors## {#flavors}
