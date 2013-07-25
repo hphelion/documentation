@@ -7,36 +7,26 @@ permalink: /vpn-quickstart/
 # HP Cloud Networking:  VPN setup quick start guide 
 
 
-With HP Cloud Networking you can set up an IPSec, or site-to-site, VPN connecting your external network directly to your HP cloud virtual network. This guide provides the 
+With HP Cloud Networking you can set up an IPSec, or site-to-site, VPN connecting your external network directly to your HP cloud virtual network. This guide provides the basic instructions for setting this up with your network.
 
-basic instructions to set this up.
-
-## Overview ## 
+## Overview ## {#top}
 
 HP Cloud Networking, based on OpenStack Networking, gives you a broad new spectrum of functionality to define and configure virtual networks.
 
-A default network configuration comes with HP Cloud Compute Service activation. Your network is ready to deploy HP Cloud Compute virtual machines (instances) without 
-
-further configuration required. The default configuration includes:
+A default network configuration comes with HP Cloud Compute Service activation. Your network is ready to deploy HP Cloud Compute virtual machines (instances) without further configuration required. The default configuration includes:
 
 - A network   
 - A subnet   
 - A router connecting the subnet to the Internet   
 - A security group with basic server options   
 
-The purpose of this guide it to provide instructions to create an IPSec VPN (also known as site-to-site VPN) from your external network directly into your HP Cloud virtual 
-
-network.
+The purpose of this guide it to provide instructions to create an IPSec VPN (also known as site-to-site VPN) from your external network directly into your HP Cloud virtual network.
 
 **Note:** This guide uses strongSwan for the IPSec functionality.
 
-A site-to-site VPN allows multiple fixed locations to establish secure connections with each other over a public network such as the Internet. Site-to-site VPN extends a 
+A site-to-site VPN allows multiple fixed locations to establish secure connections with each other over a public network such as the Internet. Site-to-site VPN extends a defined network, making computer resources from one network available to other networks.
 
-defined network, making computer resources from one network available to other networks.
-
-For VPN site-to-site connectivity, you will need to modify either the provided default network configuration or create your own network, subnet, router and ports using the 
-
-OpenStack Networking API.  The customization can be done on either the command line or through the HP Cloud Services Management Console.  
+For VPN site-to-site connectivity, you will need to modify either the provided default network configuration or create your own network, subnet, router and ports using the OpenStack Networking API.  The customization can be done on either the command line or through the HP Cloud Services Management Console.  
 
 Ensure before starting that you have adequate permissions to accomplish each of the below steps.  
 
@@ -70,36 +60,29 @@ To use this solution effectively, you should be familiar with the below concepts
 
 **IKE** - Internet Key Exchange
 
-**IPSec** - Internet Protocol Security (IPSec) is a technology protocol suite for securing Internet Protocol (IP) communications by authenticating and/or encrypting each IP 
-
-packet of a communication session. IPSec also includes protocols for establishing mutual authentication between agents at the beginning of the session and negotiation of 
+**IPSec** - Internet Protocol Security (IPSec) is a technology protocol suite for securing Internet Protocol (IP) communications by authenticating and/or encrypting each IP packet of a communication session. IPSec also includes protocols for establishing mutual authentication between agents at the beginning of the session and negotiation of 
 
 cryptographic keys to be used during the session.
 
 **NAT-T** - Network Address Translation - Traversal
 
-**strongSwan** - strongSwan is an open source IPSec implementation for Linux 2.6 and 3.x kernels. The focus of the project is on strong authentication mechanisms using 
+**strongSwan** - strongSwan is an open source IPSec implementation for Linux 2.6 and 3.x kernels. The focus of the project is on strong authentication mechanisms using X.509 public key certificates and optional secure storage of private keys on smartcards through a standardized PKCS#11 interface.
 
-X.509 public key certificates and optional secure storage of private keys on smartcards through a standardized PKCS#11 interface.
+back to the [top](#top)
 
+## Quick start guide ## {#quickstart}
 
-## Quick Start Guide ## {#quickstart}
-
-This guide provides the information you will need to get started in setting up a VPN that connects your local network to your Virtual Private Cloud (VPC) located in the HP 
-
-Cloud.  In this tutorial, you create two instances--one as an example to use and the other as a gateway.
+This guide provides the information you will need to get started in setting up a VPN that connects your local network to your Virtual Private Cloud (VPC) located in the HP Cloud.  In this tutorial, you create two instances--one as an example to use and the other as a gateway.
 
 image coming
 
-**NOTE:**  This tutorial assumes a "left" case with the "right" case being the hardware.  
+**NOTE:**  This guide assumes a "left" case with the "right" case being the hardware.  
 
-For the purpose of this tutorial, strongSwan is used.  There are multiple ways to configure strongSwan and the instructions in this guide may not work for every 
-
-environment.  Please refer to the strongSwan user documentation for advanced configuration information that may not be included in this guide.
+For the purpose of this tutorial, strongSwan is used.  There are multiple ways to configure strongSwan and the instructions in this guide may not work for every environment.  Please refer to the strongSwan user documentation for advanced configuration information that may not be included in this guide.
 
 All instructions are provided using command line interactions. 
 
-The basic steps are as follows:
+The following steps walk you through the process:
 
 [Sign up for HP Cloud Services and activate the compute service](#compute)  
 [Set up VPC and Internet gateway](#gtwy)  
@@ -129,9 +112,7 @@ For more details on the Nova and Neutron commands please see the HP Cloud Networ
 
 ### Sign up for HP Cloud and activate a compute instance ### {#compute}
 
-If you have not previously created an account and activated the Compute Service please start at [http://hpcloud.com](http://hpcloud.com) to start the process.  Once you 
-
-activate a compute instance, you can start creating your VPC VPN.
+If you have not previously created an account and activated the Compute Service please start at [http://hpcloud.com](http://hpcloud.com) to start the process.  Once you activate a compute instance, you can start creating your VPC VPN.
 
 ### Setup VPC and Internet gateway ### {#gtwy}
 
@@ -289,9 +270,7 @@ strongSwan is a complete IPSec implementation for the Linux 2.6 and 3.x kernels.
 2. `prompt> sudo apt-get install -y strongswan`
 3. Install all dependencies including the kernel modules
 
-You can find additional information on installing strongSwan on the strongSwan wiki:  [http://wiki.strongswan.org/projects/strongswan/wiki/InstallationDocumentation]
-
-(http://wiki.strongswan.org/projects/strongswan/wiki/InstallationDocumentation "strongSwan wiki")
+You can find additional information on installing strongSwan on the strongSwan wiki:  [http://wiki.strongswan.org/projects/strongswan/wiki/InstallationDocumentation](http://wiki.strongswan.org/projects/strongswan/wiki/InstallationDocumentation "strongSwan wiki")
 
 ### Enable IP forwarding on the gateway instance ### {#ipfrwrd}
 
@@ -312,15 +291,11 @@ Example:
 	prompt> sysctl net.ipv4.ip_forward   
 	prompt> net.ipv4.ip_forward = 1   
 
-### Setup ipsec.conf on the gateway instance ### {#ipsec}
+### Set up ipsec.conf on the gateway instance ### {#ipsec}
 
-strongSwan always considers itself as “LEFT” and the other side of the network (the remote server) with the hardware router as the “RIGHT”.  When configuring the VPC VPN 
+strongSwan always considers itself as “LEFT” and the other side of the network (the remote server) with the hardware router as the “RIGHT”.  When configuring the VPC VPN instance consider it the “LEFT” node and the remote server as the “RIGHT” node.
 
-instance consider it the “LEFT” node and the remote server as the “RIGHT” node.
-
-Below is an example strongSwan *ipsec.conf* file.  Note that the information that is added to this file for detailing the left and right cases must be entered as created 
-
-into both this file and the ipsec.secrets file.
+Below is an example strongSwan *ipsec.conf* file.  Note that the information that is added to this file for detailing the left and right cases must be entered as created into both this file and the ipsec.secrets file.
 
 **Note:** the location of the *ipsec.conf* file is */etc/ipsec.conf*
 
@@ -370,7 +345,7 @@ into both this file and the ipsec.secrets file.
  
 ### Setup ipsec.secrets file on the gateway instance ### {#secret}
 
-In this guide, we will set up a simple case.  For more complex configuration please refer to the strongSwan documentation.
+In this guide, we will set up a simple site-to-site VPN.  For more complex configuration please refer to the strongSwan documentation.
 
 strongSwan's *ipsec.secrets* file contains an unlimited number of the following types of secrets:
 
@@ -398,7 +373,7 @@ Based upon the authentication type and shared secret for the VPN instance custom
 	#include /var/lib/strongswan/ipsec.secrets.inc
 	10.2.79.21 209.65.244.238 192.168.1.50 : PSK "abcd" 
 
-### Setup routes on non-gateway instance ### {#routes}
+### Set up routes on non-gateway instance ### {#routes}
 
 On the non-VPN instance (vm-test) add the new route for the remote subnet.
 
@@ -423,3 +398,44 @@ Start the connection (conn) that is defined in *ipsec.conf*:
 
 Validate that the IPSec processes are available by running the  command **ps -welf | grep ipsec**
 
+back to the [top](#top)
+
+## Tips and best practices ## {#tips}
+
+This portion of the document contains a collection of tips and best practices to help you to quickly setup your VPN configuration.
+
+* If you need to allow multiple subnets through the VPN, you need to create another connection in the strongSwan *ipsec.conf* file.  
+* Connect additiongal VPCs by adding additional IPSec configuration and secret files in */etc/ipsec.d*
+
+back to the [top](#top)
+
+## Troubleshooting ## {#troubleshooting}
+
+These topics can help you address problems that might occur when you are setting up and configuring your VPN solution.	
+
+
+1.  Confirm that strongSwan is running (IPSec process).  Verify that the IPSec processes are executing in the VPN instance.  If the below processes are not running restart the processes by following the steps found in the **Establish connections** section.
+    
+	* 	Run the command **ps -welf | grep ipsec**`	
+	* 	Verify that the below three processes are running:
+		* 	IPSec starter process (/usr/lib/ipsec/starter)
+		* 	IPsec Pluto process (/usr/lib/ipsec/pluto --nofork --uniqueids)
+		* 	IPsec Charon process (usr/lib/ipsec/charen --use-syslog
+
+
+2. Check for errors in the */etc/auth.log* file.
+
+3. If able to connect the gateway VMs, but not go any further, validate that port-security is set to False (See [Create ports adn disable anti-spoofing](#port)).
+
+4.  If unable to ping the VMs behind the VPN ensure that you have set up the necessary routes on the non-gateway VM (See [Set up routes on non-gateway instance](#routes)).
+
+back to the [top](#top)
+
+## References ## {#refs}
+
+- [http://wiki.strongswan.org/projects/strongswan/wiki/FAQ](http://wiki.strongswan.org/projects/strongswan/wiki/FAQ)
+- [http://wiki.strongswan.org/projects/strongswan/wiki/UserDocumentation](http://wiki.strongswan.org/projects/strongswan/wiki/UserDocumentation "strongSwan User Documentation")
+- [http://wiki.strongswan.org/projects/strongswan/wiki/ConnSection](http://wiki.strongswan.org/projects/strongswan/wiki/ConnSection)
+- [http://www.strongswan.org/uml/testresults/ikev2/net2net-psk/](http://www.strongswan.org/uml/testresults/ikev2/net2net-psk/)
+
+back to the [top](#top)
