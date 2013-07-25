@@ -1,11 +1,11 @@
 ---
 layout: default
 title: "HP Cloud Networking:  VPN Setup Quick Start Guide"
-permalink: /compute/vpn-quickstart/
+permalink: /vpn-quickstart/
 product: compute
 
 ---
-# HP Cloud Networking:  VPN Setup Quick Start Guide 
+# HP Cloud Networking:  VPN setup quick start guide 
 
 
 With HP Cloud Networking you can set up an IPSec, or site-to-site, VPN connecting your external network directly to your HP cloud virtual network. This guide provides the basic instructions to set this up.
@@ -16,10 +16,10 @@ HP Cloud Networking, based on OpenStack Networking, gives you a broad new spectr
 
 A default network configuration comes with HP Cloud Compute Service activation. Your network is ready to deploy HP Cloud Compute virtual machines (instances) without further configuration required. The default configuration includes:
 
-• A network   
-• A subnet   
-• A router connecting the subnet to the Internet   
-• A security group with basic server options   
+- A network   
+- A subnet   
+- A router connecting the subnet to the Internet   
+- A security group with basic server options   
 
 The purpose of this guide it to provide instructions to create an IPSec VPN (also known as site-to-site VPN) from your external network directly into your HP Cloud virtual network.
 
@@ -44,17 +44,17 @@ Ensure before starting that you have adequate permissions to accomplish each of 
 ### Audience ### {#audience}
 This guide is designed for the following people:   
 
-* Networking Engineers    
-* Networking Administrators
+- Networking Engineers    
+- Networking Administrators
 * Cloud Administrators
 
 To use this solution effectively, you should be familiar with the below concepts and information:   
 
-* Local network configuration in HP Public Cloud     
-* HP Cloud Compute and Networking services 
-* OpenStack Nova and Neutron CLI and API   
-* Virtual Private Networks (VPN)    
-* strongSwan or other IPSec based software solutions   
+- Local network configuration in HP Public Cloud     
+- HP Cloud Compute and Networking services 
+- OpenStack Nova and Neutron CLI and API   
+- Virtual Private Networks (VPN)    
+- strongSwan or other IPSec based software solutions   
     
 
 ### Key Terms ### {#terms}
