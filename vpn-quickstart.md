@@ -418,7 +418,7 @@ These topics can help you address problems that might occur when you are setting
 
 1.  Confirm that strongSwan is running (IPSec process).  Verify that the IPSec processes are executing in the VPN instance.  If the below processes are not running restart the processes by following the steps found in the **Establish connections** section.
     
-	* 	Run the command **ps -welf | grep ipsec**`	
+	* 	Run the command **ps -welf | grep ipsec**	
 	* 	Verify that the below three processes are running:
 		* 	IPSec starter process (/usr/lib/ipsec/starter)
 		* 	IPsec Pluto process (/usr/lib/ipsec/pluto --nofork --uniqueids)
@@ -427,7 +427,7 @@ These topics can help you address problems that might occur when you are setting
 
 2. Check for errors in the */etc/auth.log* file.
 
-3. If able to connect the gateway VMs, but not go any further, validate that port-security is set to False (See [Create ports adn disable anti-spoofing](#port)).
+3. If able to connect the gateway VMs, but not go any further, validate that port-security is set to False (See [Create ports and disable anti-spoofing](#port)).
 
 4.  If unable to ping the VMs behind the VPN ensure that you have set up the necessary routes on the non-gateway VM (See [Set up routes on non-gateway instance](#routes)).
 
