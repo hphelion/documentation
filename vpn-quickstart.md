@@ -88,17 +88,17 @@ All instructions are provided using command line interactions.
 
 The following steps walk you through the process:
 
-[Activate the compute service in HP Public Cloud](#compute)  
-[Set up VPC and Internet gateway](#gtwy)
-[Create ports and disable anti-spoofing](#port)   
-[Create compute instances](#instances)
-[Associate floating IPs](#floatip)  
-[Install strongSwan](#installss)
-[Enable IP forwarding](#ipfrwrd)
-[Set up *ipsec.conf* on the gateway](#ipsec)
-[Set up Shared Secret](#secret)
-[Set up routes on non-gateway instance](#routes)
-[Establish connections](#connect)
+- [Activate the compute service in HP Public Cloud](#compute)  
+- [Set up VPC and Internet gateway](#gtwy)
+- [Create ports and disable anti-spoofing](#port)   
+- [Create compute instances](#instances)
+- [Associate floating IPs](#floatip)  
+- [Install strongSwan](#installss)
+- [Enable IP forwarding](#ipfrwrd)
+- [Set up *ipsec.conf* on the gateway](#ipsec)
+- [Set up Shared Secret](#secret)
+- [Set up routes on non-gateway instance](#routes)
+- [Establish connections](#connect)
 
 In this tutorial we will use the below parameters:
 
@@ -132,7 +132,7 @@ Create the router **vpn_router** and set its gateway to be the external network.
 
 In the example we use **vpn_network** for the name of the network.
 
-    neutron net-create vpn_network   
+    neutron net-create vpn_network
     neutron subnet-create $NETWORK_ID $CIDR 
 
 #### Attach the router to the subnet  
@@ -268,7 +268,7 @@ Once you complete the above steps, verify that IP forwarding is enabled by runni
 
 Example:  
     
-    prompt> sysctl net.ipv4.ip_forward   
+    prompt> sysctl net.ipv4.ip_forward
     net.ipv4.ip_forward = 1   
 
 ### Set up ipsec.conf on the gateway instance ### {#ipsec}
