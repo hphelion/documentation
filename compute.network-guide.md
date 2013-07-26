@@ -113,7 +113,7 @@ HP Public Cloud Networking regional capabilities include:
 
 * The connection of virtual servers in different Availability Zones to the same virtual network
 
-##Customizing your Configuration## {#Customizingyourconfiguration} (optional)
+##Customizing your Configuration## {#CustomizingyourConfiguration} (optional)
 Modify the default network and create additional networks to exact specifications through the OpenStack Networking API. Customize the configuration either on the command line or through the HP Public Cloud Services MC to: 
  
 * Define and configure your own private virtual networks
