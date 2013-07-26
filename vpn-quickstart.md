@@ -92,8 +92,8 @@ All instructions are provided using command line interactions.
 The following steps walk you through the process:
 
 - [Activate the compute service in HP Public Cloud](#compute)  
-- [Set up VPC and Internet gateway](#gtwy)
-- [Create ports and disable anti-spoofing](#port)   
+- [Set up the private network](#gtwy)
+- [Create ports](#port)   
 - [Create compute instances](#instances)
 - [Associate floating IPs](#floatip)  
 - [Install strongSwan](#installss)
@@ -112,7 +112,7 @@ $SUBNET_ID = the id of the created subnet
 $TENANT_ID = the id of the tenant   
 $PORT_ID1 = id of port 1 (vm-gateway)     
 $PORT_ID2 = id of port 2 (vm-test)    
-$VM_GATEWAY = address of the VPN VM gateway (e.g., 10.10.10.5)   
+$VM_GATEWAY = address of the VPN VM gateway (e.g., 10.2.0.21)   
 
 For more details on the Nova and Neutron commands please see the HP Cloud Networking and Compute API specifications.
 
@@ -144,9 +144,9 @@ In the example we use **vpn_network** for the name of the network.
     neutron router-interface-add vpn_router $SUBNET_ID  
 
 
-### Create ports and disable anti-spoofing ### {#port}
+### Create ports ### {#port}
 
-Create two ports and disable the port security on both the VPN gateway port.  
+Create two ports and disable the port security on the VPN gateway port.  
 
 **NOTE:** disabling port security will disable the use of all security groups on the port.
 	
@@ -204,11 +204,11 @@ Example:
 
 Example:  Create the gateway instance 
 
-    nova boot --image small --flavor=100 --keyname=ipsec_vpn_gateway --security-groups=ipsec_vpn_gateway --nic port-id=$PORT_ID1 vm-gateway
+    nova boot --image small --flavor=100 --keyname=ipsec_vpn_gateway --nic port-id=$PORT_ID1 vm-gateway
 
 Example:  Create the test instance   
 
-    nova boot --image small --flavor=100 --keyname=ipsec_vpn_gateway --security-groups=ipsec_vpn_gateway --nic port-id=$PORT_ID2 vm-test
+    nova boot --image small --flavor=100 --keyname=ipsec_vpn_gateway --nic port-id=$PORT_ID2 vm-test
 
 #### Validate status of instances
 
@@ -249,7 +249,7 @@ To show the floating IP:
 
 strongSwan is a complete IPsec implementation for the Linux 2.6 and 3.x kernels.  The  Ubuntu distribution includes the strongSwan package. 
 
-1. Log in to your gatemway instance
+1. Log in to your gateway instance
 2. `prompt> sudo apt-get install -y strongswan`
 3. Install all dependencies including the kernel modules
 
@@ -360,13 +360,13 @@ Based upon the authentication type and shared secret for the VPN instance custom
 
 On the non-VPN instance (vm-test) add the new route for the remote subnet.
 
-Example: `route add -net <remote-subnet> gw <gateway>
+Example: `route add -net <remote-subnet> gw <gateway>`
 
     route add -net 192.168.2.0/24 gw 10.2.0.21
 
-Verify that the new route was added by running the command **route print** and finding the entry that was added in the table.
+Verify that the new route was added by running the command **route-n** and finding the entry that was added in the table.
 
-**Note:** You could also set up `hostroutes` on the subnet.
+**Note:** You could also set up `host_routes` on the subnet.
 
 ### Establish connections ### {#connect}
 
@@ -388,7 +388,7 @@ back to the [top](#top)
 This portion of the document contains a collection of tips and best practices to help you to quickly setup your VPN configuration.
 
 * If you need to allow multiple subnets through the VPN, you need to create another connection in the strongSwan *ipsec.conf* file.  
-* Connect additiongal VPCs by adding additional IPSec configuration and secret files in */etc/ipsec.d*
+* Connect additional VPCs by adding additional IPSec configuration and secret files in */etc/ipsec.d*
 
 back to the [top](#top)
 
@@ -408,7 +408,7 @@ These topics can help you address problems that might occur when you are setting
 
 2. Check for errors in the */etc/auth.log* file.
 
-3. If able to connect the gateway VMs, but not go any further, validate that port-security is set to False (See [Create ports and disable anti-spoofing](#port)).
+3. If able to connect the gateway VMs, but not go any further, validate that `port_security_enabled` is set to False (See [Create ports](#port)).
 
 4.  If unable to ping the VMs behind the VPN ensure that you have set up the necessary routes on the non-gateway VM (See [Set up routes on non-gateway instance](#routes)).
 
