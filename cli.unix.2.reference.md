@@ -2634,9 +2634,9 @@ List all networks:
 
     hpcloud networks
 
-List the details for networks with id `1`:
+List the details for networks with id `12857174`:
 
-    hpcloud networks 1
+    hpcloud networks 12857174
 
 List the details for networks named `testo`:
 
