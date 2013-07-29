@@ -83,6 +83,9 @@ Create or edit your account credentials.
 `hpcloud account:edit <account_name> [name_value_pair ...]`
 
 ###Options
+**--userpass**
+: Use username/password authentication instead of authentication keys
+
 **-n, --no-validate**
 : Don't verify account settings during edit
 
@@ -178,6 +181,9 @@ Create or edit your account credentials.
 `hpcloud account:edit <account_name> [name_value_pair ...]`
 
 ###Options
+**--userpass**
+: Use username/password authentication instead of authentication keys
+
 **-n, --no-validate**
 : Don't verify account settings during edit
 
