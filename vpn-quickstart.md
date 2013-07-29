@@ -81,7 +81,7 @@ back to the [top](#top)
 
 This guide provides the information you will need to get started in setting up a VPN that connects your local network to your Virtual Private Cloud (VPC) located in the HP Public Cloud.  In this tutorial, you create two instances--one as an example to use and the other as a gateway.
 
-<img src="media/HPCS-VPC-VPN-SingleSite-Connection-Layer3-new-novendor" width="600" alt="Basic VPN setup" />
+<img src="media/HPCS-VPC-VPN-SingleSite-Connection-Layer3-new-novendor.jpg" width="600" alt="Basic VPN setup" />
 
 **NOTE:**  This guide assumes a "left" case with the "right" case being the hardware.  
 
