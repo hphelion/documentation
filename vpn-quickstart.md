@@ -44,7 +44,7 @@ For VPN site-to-site connectivity, you will need to modify either the provided d
 
 Ensure before starting that you have adequate permissions to accomplish each of the below steps.  
 
-**Note:** VPN instances are a potential single point of failure.  
+**Note:** VPN instances are a potential single point of failure. We will soon be posting a guide to set up a high availablity VPN, so please stay tuned. 
 
 
 ### Audience ### {#audience}
@@ -54,26 +54,24 @@ This guide is designed for the following people:
 - Networking Administrators
 * Cloud Administrators
 
-To use this solution effectively, you should be familiar with the below concepts and information:   
+To use this solution effectively, you should be familiar with these concepts and information:   
 
 - Local network configuration in HP Public Cloud     
 - HP Cloud Compute and Networking services 
 - OpenStack Nova and Neutron CLI and API   
 - Virtual Private Networks (VPN)    
-- strongSwan or other IPsec based software solutions   
+- strongSwan or other IPsec-based software solutions   
     
 
 ### Key Terms ### {#terms}
 
 **IKE** - Internet Key Exchange
 
-**IPSec** - Internet Protocol Security (IPsec) is a technology protocol suite for securing Internet Protocol (IP) communications by authenticating and/or encrypting each IP packet of a communication session. IPsec also includes protocols for establishing mutual authentication between agents at the beginning of the session and negotiation of 
-
-cryptographic keys to be used during the session.
+**IPSec** - Internet Protocol Security (IPsec) is a technology protocol suite for securing Internet Protocol (IP) communications by authenticating and/or encrypting each IP packet of a communication session. IPsec also includes protocols for establishing mutual authentication between agents at the beginning of the session and negotiation of cryptographic keys to be used during the session.
 
 **NAT-T** - Network Address Translation - Traversal
 
-**strongSwan** - strongSwan is an open source IPSec implementation for Linux 2.6 and 3.x kernels. The focus of the project is on strong authentication mechanisms using X.509 public key certificates and optional secure storage of private keys on smartcards through a standardized PKCS#11 interface.
+**strongSwan** - strongSwan is an open source IPsec implementation for Linux 2.6 and 3.x kernels. The focus of the project is on strong authentication mechanisms using X.509 public key certificates and optional secure storage of private keys on smartcards through a standardized PKCS#11 interface.
 
 back to the [top](#top)
 
@@ -85,7 +83,7 @@ This guide provides the information you will need to get started in setting up a
 
 **NOTE:**  This guide assumes a "left" case with the "right" case being the hardware.  
 
-For the purpose of this guide, strongSwan is used.  There are multiple ways to configure strongSwan and the instructions in this guide may not work for every environment.  Please refer to the strongSwan user documentation for advanced configuration information.
+We use strongSwan for this guide.  There are multiple ways to configure strongSwan and the instructions in this guide may not work for every environment.  Please refer to the [strongSwan user documentation](http://wiki.strongswan.org/projects/strongswan/wiki/UserDocumentation "strongSwan User Documentation") for advanced configuration information.
 
 All instructions are provided using command line interactions. 
 
@@ -114,7 +112,7 @@ $PORT_ID1 = id of port 1 (vm-gateway)
 $PORT_ID2 = id of port 2 (vm-test)    
 $VM_GATEWAY = address of the VPN VM gateway (e.g., 10.2.0.21)   
 
-For more details on the Nova and Neutron commands please see the HP Cloud Networking and Compute API specifications.
+For more details on the Nova and Neutron commands please see the [HP Cloud Networking](https://docs.hpcloud.com/api/v13/networking/) and [Compute](https://docs.hpcloud.com/api/v13/compute/) API specifications.
 
 ### Activate the compute service in HP Public Cloud ### {#compute}
 
@@ -127,8 +125,8 @@ If you have not previously created an account and activated the compute service 
 
 Create the router **vpn_router** and set its gateway to be the external network.
 
-    neutron router-create vpn_router
-    neutron router-gateway-set vpn_router $EXT_NET
+	neutron router-create vpn_router
+	neutron router-gateway-set vpn_router $EXT_NET
 
 #### Create a network and subnet
 **Note**: Skip this step if you are using the network and subnet provided with your service activation.
