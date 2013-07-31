@@ -278,7 +278,7 @@ Example:
 
 strongSwan always considers itself as "LEFT" and the other side of the network (the remote server) with the hardware router as the "RIGHT".  When configuring the gateway instance consider it the "LEFT" node and the remote server as the "RIGHT" node.
 
-Below is an example strongSwan *ipsec.conf* file.  Note that the information that is added to this file for detailing the left and right cases must be entered as created into both this file and the ipsec.secrets file.
+Below is an example strongSwan *ipsec.conf* file.  Note that the information that is added to this file for detailing the left and right cases must be entered as created into both this file and the *ipsec.secrets* file.
 
 For more details on setting up the *ipsec.conf* file, see the [strongSwan ipsec.conf](http://wiki.strongswan.org/projects/strongswan/wiki/IpsecConf) wiki page.
 
@@ -373,7 +373,7 @@ Verify that the new route was added by running the command **route-n** and findi
 
 ### Establish connections ### {#connect}
 
-Force IPSec to read the updated *ipsec.conf* and *ipsec.secrets* files and to establish a connection:
+Force IPsec to read the updated *ipsec.conf* and *ipsec.secrets* files and to establish a connection:
 
     ipsec restart
 
@@ -382,7 +382,7 @@ Start the connection (conn) that is defined in *ipsec.conf*:
     ipsec up vpn-test
 
 
-Validate that the IPSec processes are available by running the  command **ps -welf | grep ipsec**
+Validate that the IPsec processes are available by running the  command **ps -welf | grep ipsec**
 
 back to the [top](#top)
 
@@ -391,7 +391,7 @@ back to the [top](#top)
 This portion of the document contains a collection of tips and best practices to help you to quickly setup your VPN configuration.
 
 * If you need to allow multiple subnets through the VPN, you need to create another connection in the strongSwan *ipsec.conf* file.  
-* Connect additional VPCs by adding additional IPSec configuration and secret files in */etc/ipsec.d*
+* Connect additional VPCs by adding additional IPsec configuration and secret files in */etc/ipsec.d*
 
 back to the [top](#top)
 
