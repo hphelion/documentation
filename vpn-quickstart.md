@@ -56,7 +56,7 @@ This guide is designed for the following people:
 
 To use this solution effectively, you should be familiar with these concepts and information:   
 
-- Local network configuration in HP Public Cloud     
+- Local network configuration in HP Cloud     
 - HP Cloud Compute and Networking services 
 - OpenStack Nova and Neutron CLI and API   
 - Virtual Private Networks (VPN)    
@@ -67,7 +67,7 @@ To use this solution effectively, you should be familiar with these concepts and
 
 **IKE** - Internet Key Exchange
 
-**IPSec** - Internet Protocol Security (IPsec) is a technology protocol suite for securing Internet Protocol (IP) communications by authenticating and/or encrypting each IP packet of a communication session. IPsec also includes protocols for establishing mutual authentication between agents at the beginning of the session and negotiation of cryptographic keys to be used during the session.
+**IPsec** - Internet Protocol Security (IPsec) is a technology protocol suite for securing Internet Protocol (IP) communications by authenticating and/or encrypting each IP packet of a communication session. IPsec also includes protocols for establishing mutual authentication between agents at the beginning of the session and negotiation of cryptographic keys to be used during the session.
 
 **NAT-T** - Network Address Translation - Traversal
 
@@ -77,7 +77,7 @@ back to the [top](#top)
 
 ## Quick start guide ## {#quickstart}
 
-This guide provides the information you will need to get started in setting up a VPN that connects your local network to your Virtual Private Cloud (VPC) located in the HP Public Cloud.  In this tutorial, you create two instances--one as an example to use and the other as a gateway.
+This guide provides the information you will need to get started in setting up a VPN that connects your local network to your Virtual Private Cloud (VPC) located in the HP Cloud.  In this tutorial, you create two instances--one as an example to use and the other as a gateway.
 
 <img src="media/HPCS-VPC-VPN-SingleSite-Connection-Layer3-new-novendor.jpg" width="600" alt="Basic VPN setup" />
 
@@ -89,7 +89,7 @@ All instructions are provided using command line interactions.
 
 The following steps walk you through the process:
 
-- [Activate the compute service in HP Public Cloud](#compute)  
+- [Activate the compute service in HP Cloud](#compute)  
 - [Set up the private network](#gtwy)
 - [Create ports](#port)   
 - [Create compute instances](#instances)
@@ -103,8 +103,8 @@ The following steps walk you through the process:
 
 In this tutorial we will use the below parameters:
 
-$EXT_NET = Ext_Net   
-$CIDR = 10.2.0.0./24 (example range)   
+$EXT_NET = Ext-Net   
+$CIDR = 10.2.0.0/24 (example range)   
 $NETWORK_ID = the id of the created network   
 $SUBNET_ID = the id of the created subnet   
 $TENANT_ID = the id of the tenant   
@@ -114,9 +114,9 @@ $VM_GATEWAY = address of the VPN VM gateway (e.g., 10.2.0.21)
 
 For more details on the Nova and Neutron commands please see the [HP Cloud Networking](https://docs.hpcloud.com/api/v13/networking/) and [Compute](https://docs.hpcloud.com/api/v13/compute/) API specifications.
 
-### Activate the compute service in HP Public Cloud ### {#compute}
+### Activate the compute service in HP Cloud ### {#compute}
 
-If you have not previously created an account and activated the compute service please sign up at [http://hpcloud.com](http://hpcloud.com).  Once you activate the compute service, you can start creating your VPC VPN.
+If you have not previously created an account and activated the compute service please sign up at [http://hpcloud.com](http://hpcloud.com).  Once you activate the compute service, you need to install the [compute](https://docs.hpcloud.com/api/v13/compute/) and [networking](https://docs.hpcloud.com/api/v13/networking/) clients or the [CLI](http://docs.hpcloud.com/cli/unix/network).
 
 ### Set up the private network ### {#gtwy}
 
@@ -183,7 +183,9 @@ The above command creates a new keypair called **ipsec_vpn_gateway**.  View all 
 
 #### Select your image flavor
 
-To boot a compute instance you will need to know which flavor of image you would like to use.  Use the below command to list the available images:
+To boot a compute instance you will need to know which [flavor of image](https://docs.hpcloud.com/api/v13/compute/) you would like to use.  For the purpose of this guide, we use a small image. You need to assess the amount of bandwidth you need and select the appropriate flavor.
+
+Use the below command to list the available images:
 
     nova image-list
 
@@ -251,7 +253,7 @@ strongSwan is a complete IPsec implementation for the Linux 2.6 and 3.x kernels.
 2. `prompt> sudo apt-get install -y strongswan`
 3. Install all dependencies including the kernel modules
 
-You can find additional information on installing strongSwan on the strongSwan wiki:  [http://wiki.strongswan.org/projects/strongswan/wiki/InstallationDocumentation](http://wiki.strongswan.org/projects/strongswan/wiki/InstallationDocumentation "strongSwan wiki")
+You can find additional information on installing strongSwan on the strongSwan wiki:  [strongSwan Installation Documentation](http://wiki.strongswan.org/projects/strongswan/wiki/InstallationDocumentation "strongSwan wiki")
 
 ### Enable IP forwarding on the gateway instance ### {#ipfrwrd}
 
@@ -277,6 +279,8 @@ Example:
 strongSwan always considers itself as "LEFT" and the other side of the network (the remote server) with the hardware router as the "RIGHT".  When configuring the gateway instance consider it the "LEFT" node and the remote server as the "RIGHT" node.
 
 Below is an example strongSwan *ipsec.conf* file.  Note that the information that is added to this file for detailing the left and right cases must be entered as created into both this file and the ipsec.secrets file.
+
+For more details on setting up the *ipsec.conf* file, see the [strongSwan ipsec.conf](http://wiki.strongswan.org/projects/strongswan/wiki/IpsecConf) wiki page.
 
 **Note:** the location of the *ipsec.conf* file is */etc/ipsec.conf*
 
@@ -338,6 +342,7 @@ strongSwan's *ipsec.secrets* file contains an unlimited number of the following 
 - PIN defines a smartcard PIN
 
 
+For more details on modifying the *ipsec.secrets* file, see the [strongSwan ipsec.secrets](http://wiki.strongswan.org/projects/strongswan/wiki/IpsecSecrets) wiki page.
 **Note:** the location of the *ipsec.secrets* file is */etc/ipsec.secrets*
 
 Based upon the authentication type and shared secret for the VPN instance customize the *ipsec.secrets* file with information from the above steps.
@@ -395,16 +400,16 @@ back to the [top](#top)
 These topics can help you address problems that might occur when you are setting up and configuring your VPN solution.	
 
 
-1.  Confirm that strongSwan is running (IPSec process).  Verify that the IPSec processes are executing in the VPN instance.  If the below processes are not running restart the processes by following the steps found in the **Establish connections** section.
+1.  Confirm that strongSwan is running (IPsec process).  Verify that the IPsec processes are executing in the VPN instance.  If the below processes are not running restart the processes by following the steps found in the **Establish connections** section.
     
 	* 	Run the command **ps -welf | grep ipsec**	
 	* 	Verify that the below three processes are running:
-		* 	IPSec starter process (/usr/lib/ipsec/starter)
+		* 	IPsec starter process (/usr/lib/ipsec/starter)
 		* 	IPsec Pluto process (/usr/lib/ipsec/pluto --nofork --uniqueids)
-		* 	IPsec Charon process (usr/lib/ipsec/charen --use-syslog
+		* 	IPsec Charon process (usr/lib/ipsec/charon --use-syslog
 
 
-2. Check for errors in the */etc/auth.log* file.
+2. If the */etc/auth.log* file exists, check for errors.
 
 3. If able to connect the gateway VMs, but not go any further, validate that `port_security_enabled` is set to False (See [Create ports](#port)).
 
@@ -417,9 +422,11 @@ back to the [top](#top)
 - [UNIX CLI Network Examples](http://docs.hpcloud.com/cli/unix/network)
 - [HP Cloud Networking API Specifications](https://docs.hpcloud.com/api/v13/networking/)
 - [HP Cloud Compute Service API Reference](https://docs.hpcloud.com/api/v13/compute/)
-- [http://wiki.strongswan.org/projects/strongswan/wiki/FAQ](http://wiki.strongswan.org/projects/strongswan/wiki/FAQ)
-- [http://wiki.strongswan.org/projects/strongswan/wiki/UserDocumentation](http://wiki.strongswan.org/projects/strongswan/wiki/UserDocumentation "strongSwan User Documentation")
-- [http://wiki.strongswan.org/projects/strongswan/wiki/ConnSection](http://wiki.strongswan.org/projects/strongswan/wiki/ConnSection)
-- [http://www.strongswan.org/uml/testresults/ikev2/net2net-psk/](http://www.strongswan.org/uml/testresults/ikev2/net2net-psk/)
+- [strongSwan wiki FAQ](http://wiki.strongswan.org/projects/strongswan/wiki/FAQ)
+- [strongSwan User Documentation](http://wiki.strongswan.org/projects/strongswan/wiki/UserDocumentation "strongSwan User Documentation")
+- [strongSwan ipsec.conf reference](http://wiki.strongswan.org/projects/strongswan/wiki/IpsecConf)
+- [strongSwan ipsec.secrets reference](http://wiki.strongswan.org/projects/strongswan/wiki/IpsecSecrets)
+- [strongSwan ipsec.conf: conn <name> reference](http://wiki.strongswan.org/projects/strongswan/wiki/ConnSection)
+- [strongSwan net2net-psk/ reference](http://www.strongswan.org/uml/testresults/ikev2/net2net-psk/)
 
 back to the [top](#top)
