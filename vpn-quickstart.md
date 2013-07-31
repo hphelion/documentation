@@ -34,7 +34,7 @@ A default network configuration comes with HP Cloud Compute Service activation. 
 - A router connecting the subnet to the Internet   
 - A security group with basic server options   
 
-The purpose of this guide it to provide instructions to create an IPSec VPN (also known as site-to-site VPN) from your external network directly into your HP Cloud virtual network.
+The purpose of this guide it to provide instructions to create an IPsec VPN (also known as site-to-site VPN) from your external network directly into your HP Cloud virtual network.
 
 **Note:** This guide uses strongSwan for the IPsec functionality.
 
@@ -414,6 +414,9 @@ back to the [top](#top)
 
 ## For further information ## {#refs}
 
+- [UNIX CLI Network Examples](http://docs.hpcloud.com/cli/unix/network)
+- [HP Cloud Networking API Specifications](https://docs.hpcloud.com/api/v13/networking/)
+- [HP Cloud Compute Service API Reference](https://docs.hpcloud.com/api/v13/compute/)
 - [http://wiki.strongswan.org/projects/strongswan/wiki/FAQ](http://wiki.strongswan.org/projects/strongswan/wiki/FAQ)
 - [http://wiki.strongswan.org/projects/strongswan/wiki/UserDocumentation](http://wiki.strongswan.org/projects/strongswan/wiki/UserDocumentation "strongSwan User Documentation")
 - [http://wiki.strongswan.org/projects/strongswan/wiki/ConnSection](http://wiki.strongswan.org/projects/strongswan/wiki/ConnSection)
