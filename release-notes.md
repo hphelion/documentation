@@ -37,9 +37,7 @@ The following are known issues and limitation for version 13.5 of the HP Public 
 * Snapshot support is not yet available for `standard.4xlarge` and `standard.5xlarge` instances.
 * Do not delete egress rules from your security group; this removes the ability of your VM to access any external nodes (including fetching metadata required by your SSH key), causing newly-booted VMs to be unusable.
 * Snapshot support for a virtual machine (VM) booted from a block volume is not yet available.<br>
-    *Workaround*: Shut down the volume and start a new instance to take your snapshot.
-* Instances are not currently able to access a DNS server as their default.<br>
-    *Workaround*: To resolve an external address, provide the IP address of an appropriate DNS server when you create or update a subnet.  You can use any external DNS server; HP also provides the server at IP address `206.164.176.34` in AE1 for your use.  **Note**: If you are using the [command-line interface (CLI) tools](/cli/), you must set this address manually.  If you are using the [management console](/mc/), this is set by default.
+    *Workaround*: Shut down the virtual machine (VM), then delete the VM and wait until the volume is marked as "available". Take a snapshot of the volume using, for instance, the python cinder binding. Once the snapshot is complete, re-create the VM from the volume, and re-attach the original floating IP if necessary. **Note**: The port/fixed-IP associated to the new VM may be different from the original one.
 * Jclouds is supported for Keystone version 2 API and earlier only.
 * In rare cases, after successfully launching an instance `SSH` may not function. <br>
     *Workaround*: Reboot the instance.
