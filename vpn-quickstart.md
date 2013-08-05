@@ -10,7 +10,7 @@ tags: networking neutron vpn
 # HP Cloud Networking:  VPN setup quick start guide 
 
 
-With HP Cloud Networking you can set up an IPsec, or site-to-site, VPN connecting your external network directly to your HP cloud virtual network. This guide provides the basic instructions for setting this up with your network using strongSwan. For more complex configuration, please refer to the strongSwan documentation.
+With HP Cloud Networking you can set up an IPsec, or site-to-site, VPN connecting your external network directly to your HP cloud virtual network. This guide provides the basic instructions for setting this up with your network using strongSwan. For more complex configuration, please refer to the [strongSwan documentation](http://wiki.strongswan.org/projects/strongswan/wiki/UserDocumentation).
 
 This guide covers the following:
 
@@ -34,7 +34,7 @@ A default network configuration comes with HP Cloud Compute Service activation. 
 - A router connecting the subnet to the Internet   
 - A security group with basic server options   
 
-The purpose of this guide it to provide instructions to create an IPsec VPN (also known as site-to-site VPN) from your external network directly into your HP Cloud virtual network.
+The guide provides instructions for creating an IPsec VPN (also known as a site-to-site VPN) from your external network directly into your HP Cloud virtual network.
 
 **Note:** This guide uses strongSwan for the IPsec functionality.
 
@@ -42,19 +42,19 @@ A site-to-site VPN allows multiple fixed locations to establish secure connectio
 
 For VPN site-to-site connectivity, you will need to modify either the provided default network configuration or create your own network, subnet, router and ports using the OpenStack Networking API.  The customization can be done on either the command line or through the HP Cloud Services Management Console.  
 
-Ensure before starting that you have adequate permissions to accomplish each of the below steps.  
+Before starting, ensure that you have adequate permissions to accomplish each of the following steps.  
 
-**Note:** VPN instances are a potential single point of failure. We will soon be posting a guide to set up a high availablity VPN, so please stay tuned. 
+**Note:** VPN instances are a potential single point of failure. We will soon be posting a high availability VPN setup guide, so please stay tuned. 
 
 
 ### Audience ### {#audience}
-This guide is designed for the following people:   
+This guide is designed for those in the following or similar roles:   
 
 - Networking Engineers    
 - Networking Administrators
 * Cloud Administrators
 
-To use this solution effectively, you should be familiar with these concepts and information:   
+To use this solution effectively, you should be familiar with   
 
 - Local network configuration in HP Cloud     
 - HP Cloud Compute and Networking services 
@@ -77,7 +77,7 @@ back to the [top](#top)
 
 ## Quick start guide ## {#quickstart}
 
-This guide provides the information you will need to get started in setting up a VPN that connects your local network to your Virtual Private Cloud (VPC) located in the HP Cloud.  In this tutorial, you create two instances--one as an example to use and the other as a gateway.
+This guide provides the information you will need to get started in setting up a VPN that connects your local network to your Virtual Private Cloud (VPC) located in the HP Cloud.  In this guide, you create two instances--one as an example to use and the other as a gateway.
 
 <img src="media/HPCS-VPC-VPN-SingleSite-Connection-Layer3-new-novendor.jpg" width="600" alt="Basic VPN setup" />
 
@@ -85,7 +85,7 @@ This guide provides the information you will need to get started in setting up a
 
 We use strongSwan for this guide.  There are multiple ways to configure strongSwan and the instructions in this guide may not work for every environment.  Please refer to the [strongSwan user documentation](http://wiki.strongswan.org/projects/strongswan/wiki/UserDocumentation "strongSwan User Documentation") for advanced configuration information.
 
-All instructions are provided using command line interactions. 
+All commands in this guide use command line interfaces. 
 
 The following steps walk you through the process:
 
@@ -101,7 +101,7 @@ The following steps walk you through the process:
 - [Set up routes on non-gateway instance](#routes)
 - [Establish connections](#connect)
 
-In this tutorial we will use the below parameters:
+In this guide we use these parameters:
 
 $EXT_NET = Ext-Net   
 $CIDR = 10.2.0.0/24 (example range)   
@@ -116,7 +116,7 @@ For more details on the Nova and Neutron commands please see the [HP Cloud Netwo
 
 ### Activate the compute service in HP Cloud ### {#compute}
 
-If you have not previously created an account and activated the compute service please sign up at [http://hpcloud.com](http://hpcloud.com).  Once you activate the compute service, you need to install the [compute](https://docs.hpcloud.com/api/v13/compute/) and [networking](https://docs.hpcloud.com/api/v13/networking/) clients or the [CLI](http://docs.hpcloud.com/cli/unix/network).
+If you have not previously created an account and activated the compute service please sign up at [http://hpcloud.com](http://hpcloud.com).  Once you activate the compute service, you need to install the [compute](https://docs.hpcloud.com/api/v13/compute/) and [networking](https://docs.hpcloud.com/api/v13/networking/) clients or the [CLI](http://docs.hpcloud.com/cli/unix/network). Make sure you activate a compute instance in HP Cloud version 13.5 to access the networking and VPN capabilities.
 
 ### Set up the private network ### {#gtwy}
 
@@ -181,13 +181,9 @@ The above command creates a new keypair called **ipsec_vpn_gateway**.  View all 
     +--------------------+-------------------------------------------------+
 
 
-#### Select your image flavor
+#### Select your compute image
 
-To boot a compute instance you will need to know which [flavor of image](https://docs.hpcloud.com/api/v13/compute/) you would like to use.  For the purpose of this guide, we use a small image. You need to assess the amount of bandwidth you need and select the appropriate flavor.
-
-Use the below command to list the available images:
-
-    nova image-list
+To boot a compute instance you will need to know which [operating system and size of image](https://docs.hpcloud.com/api/v13/compute/) you would like to use.  For the purpose of this guide, we use a small image. Select the type of image you want and then assess the amount of bandwidth you need and select the appropriately sized flavor.
 
 #### Boot the gateway instance and test instance
 
