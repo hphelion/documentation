@@ -33,7 +33,7 @@ The following are new features in version 13.5 of the HP Public Cloud software:
 The following are known issues and limitation for version 13.5 of the HP Public Cloud software:
 
 * If attempting to simultaneously launch a larger number of instances, some instances may go into an error state. Currently, we recommend you stagger your launch of multiple instances to batches of 30-40 at a time for best performance.
-* When passing through a router to move off your local network, your throughput speed is limited to approximately 150 megabits per second.
+* When passing through a router to move off your local network, your throughput speed is limited to approximately 1500 megabits per second.
 * Snapshot support is not yet available for `standard.4xlarge` and `standard.5xlarge` instances.
 * Do not delete egress rules from your security group; this removes the ability of your VM to access any external nodes (including fetching metadata required by your SSH key), causing newly-booted VMs to be unusable.
 * Snapshot support for a virtual machine (VM) booted from a block volume is not yet available.<br>
