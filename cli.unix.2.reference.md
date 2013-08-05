@@ -255,6 +255,42 @@ Create a Rackspace account for migration:
 ###Aliases
 `account:add, account:setup, account:update`
 
+##account:tenants## {#account:tenants}
+List the tenants.
+
+###Syntax
+`hpcloud account:tenants`
+
+###Options
+**-c, --columns=COLUMNS**
+: Comma separated list of columns in report.
+
+**-d, --separator=SEPARATOR**
+: Use the specified value as the report separator.
+
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
+
+###Description
+Lists all the tenants associated with this account.
+
+###Examples
+List all the tenants associated with the account:
+
+    hpcloud account:tenants
+
+
 ##account:use## {#account:use}
 Set the named account to the default account.
 
@@ -310,6 +346,9 @@ View the ACL for an object or container.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -344,6 +383,9 @@ Grant the specified permissions.
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -382,6 +424,9 @@ Revoke the specified permissions.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -418,6 +463,9 @@ Display list of available addresses.
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -468,6 +516,9 @@ Allocate a new public IP address.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -501,6 +552,9 @@ Associate a public IP address to a port.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -527,6 +581,9 @@ Disassociate any port associated to the public IP address.
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -558,6 +615,9 @@ Remove or release a public IP address.
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -594,6 +654,9 @@ List available containers on the CDN.
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -632,6 +695,9 @@ Add containers to the CDN.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -662,6 +728,9 @@ Get the value of an attribute of a CDN container.
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -711,6 +780,9 @@ Get the location of a container on the CDN.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -744,6 +816,9 @@ Remove containers from the CDN.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -776,6 +851,9 @@ Set attributes on a CDN container.
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -879,6 +957,9 @@ Add a container.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -916,6 +997,9 @@ Remove a containers.
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -957,6 +1041,9 @@ Allow container synchronization.
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -1001,6 +1088,9 @@ Copy files from one resource to another.
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -1066,6 +1156,9 @@ List the DNS domains.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -1108,6 +1201,9 @@ Add a DNS domain.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -1145,6 +1241,9 @@ List the records associated with the DNS domain.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -1176,6 +1275,9 @@ Add a DNS record.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -1202,6 +1304,9 @@ Remove a DNS record.
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -1230,6 +1335,9 @@ Update a DNS record.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -1256,6 +1364,9 @@ Remove DNS domains (specified by name or ID).
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -1296,6 +1407,9 @@ List the servers associated with the DNS domain.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -1332,6 +1446,9 @@ Update a DNS domain.
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -1370,6 +1487,9 @@ List available flavors.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -1406,6 +1526,9 @@ Fetch objects to your local directory.
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -1451,6 +1574,9 @@ List the available images in your compute account.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -1487,6 +1613,9 @@ Add an image from an existing server.
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -1528,6 +1657,9 @@ List the metadata for an image.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -1561,6 +1693,9 @@ Add metadata to an image.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -1590,6 +1725,9 @@ Remove metadata from an image.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -1618,6 +1756,9 @@ Remove images by name or identifier.
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -1662,6 +1803,9 @@ List the available keypairs.
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -1711,6 +1855,9 @@ add a key pair
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -1757,6 +1904,9 @@ Import a key pair.
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -1859,6 +2009,9 @@ Display the public keys of a key pair.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -1889,6 +2042,9 @@ Remove a key pair (by name).
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -1933,6 +2089,9 @@ List the available load balancers.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -1976,6 +2135,9 @@ Add a load balancer.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -2008,6 +2170,9 @@ List the available load balancer algorithms.
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -2042,6 +2207,9 @@ List the available load balancer limits.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -2075,6 +2243,9 @@ List the nodes associated with the specified load balancer.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -2104,6 +2275,9 @@ Add a node to the load balancer.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -2130,6 +2304,9 @@ Remove the specified load balancer nodes.
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -2159,6 +2336,9 @@ Update a node in a load balancer.
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -2197,6 +2377,9 @@ List the available load balancer protocols.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -2223,6 +2406,9 @@ Remove load balancer (specified by name or ID).
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -2256,6 +2442,9 @@ Update a node in a load balancer.
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -2294,6 +2483,9 @@ List the available load balancer versions.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -2326,6 +2518,9 @@ List the virtual IPs for the specified load balancer.
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -2365,6 +2560,9 @@ List containers or container contents.
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -2411,6 +2609,9 @@ Display the URIs for the specified resources.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -2452,6 +2653,9 @@ Get the metadata value of a container or object.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -2486,6 +2690,9 @@ Set attributes on a object.
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -2549,6 +2756,9 @@ Migrate files from a provider described by the source account.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -2579,6 +2789,9 @@ Move objects inside or between containers.
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -2627,6 +2840,9 @@ List the available networks.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -2669,6 +2885,9 @@ Add a network.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -2699,6 +2918,9 @@ Remove a network (specified by name or ID).
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -2738,6 +2960,9 @@ Update a network.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -2774,6 +2999,9 @@ List the available ports.
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -2832,6 +3060,9 @@ Add a port.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -2862,6 +3093,9 @@ Remove a port (specified by name or ID).
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -2910,6 +3144,9 @@ Update a port.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -2945,6 +3182,9 @@ Remove objects or containers.
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -2997,6 +3237,9 @@ List the available routers.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -3042,6 +3285,9 @@ Add a router.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -3073,6 +3319,9 @@ Add an interface to a router.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -3103,6 +3352,9 @@ Remove router interface.
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -3136,6 +3388,9 @@ Remove a router (specified by name or ID).
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -3176,6 +3431,9 @@ Update the specified router.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -3208,6 +3466,9 @@ List the available security groups.
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -3246,6 +3507,9 @@ Add a security group.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -3272,6 +3536,9 @@ Remove a security group or groups.
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -3311,6 +3578,9 @@ Display the list of rules for a security group.
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -3360,6 +3630,9 @@ Add a rule to the security group.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -3401,6 +3674,9 @@ Remove security group rules.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -3440,8 +3716,14 @@ List the available servers.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
+
+**--all-regions=ALL_REGIONS**
+: List servers for all regions.
 
 
 
@@ -3504,6 +3786,9 @@ Add a server.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -3553,6 +3838,9 @@ Get the console output of a server or extract the windows password.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -3583,6 +3871,9 @@ List compute limits.
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -3617,6 +3908,9 @@ List the metadata for a server.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -3645,6 +3939,9 @@ Add metadata to a server.
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -3675,6 +3972,9 @@ Remove metadata from a server.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -3703,6 +4003,9 @@ Change the password for a server.
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -3733,6 +4036,9 @@ List compute rate limits.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -3762,6 +4068,9 @@ Reboot a server or servers (specified by server name or ID).
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -3794,6 +4103,9 @@ Rebuild a server (specified by server name or ID).
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -3825,6 +4137,9 @@ Remove a server or servers (specified by name or ID).
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -3848,6 +4163,66 @@ Delete the server with the ID 53e78869:
 
 ###Aliases
 `servers:rm, servers:delete, servers:del`
+
+##servers:securitygroups:add## {#servers:securitygroups:add}
+Add a security group to a server.
+
+###Syntax
+`hpcloud servers:securitygroups:add <server> <security_group>`
+
+###Options
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
+
+###Description
+Add a security group to a server.
+
+###Examples
+Add the 'sg1' security group to 'my_server':
+
+    hpcloud servers:securitygroups:add my_server sg1
+
+
+##servers:securitygroups:remove## {#servers:securitygroups:remove}
+Remove a security group from a server.
+
+###Syntax
+`hpcloud servers:securitygroups:remove <server> <security_groups>`
+
+###Options
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
+
+###Description
+Remove a security group from a server.
+
+###Examples
+Remove security group 'sg2' from 'my_server':
+
+    hpcloud servers:securitygroups:remove my_server sg2
+
 
 ##servers:ssh## {#servers:ssh}
 Secure shell into a server.
@@ -3875,6 +4250,9 @@ Secure shell into a server.
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -3916,6 +4294,9 @@ List block devices available.
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -3960,6 +4341,9 @@ Create a snapshot.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -3990,6 +4374,9 @@ Remove a snapshot or snapshots (specified by name or ID).
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -4033,6 +4420,9 @@ List the available subnets.
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -4088,6 +4478,9 @@ Add a subnet.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -4118,6 +4511,9 @@ Remove a subnet (specified by name or ID).
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -4167,6 +4563,9 @@ Update a subnet.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -4203,6 +4602,9 @@ Create temporary URLs for the given objects.
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -4246,6 +4648,9 @@ List the available block devices.
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -4299,6 +4704,9 @@ Add a volume.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -4334,6 +4742,9 @@ Attach a volume to a server specified by device name or number.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -4365,6 +4776,9 @@ Detach a volume or volumes.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -4395,6 +4809,9 @@ Remove a volume or volumes (specified by name or ID).
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -4434,6 +4851,9 @@ List the volumes on server.
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
