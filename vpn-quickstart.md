@@ -343,7 +343,8 @@ strongSwan's *ipsec.secrets* file contains an unlimited number of the following 
 
 
 For more details on modifying the *ipsec.secrets* file, see the [strongSwan ipsec.secrets](http://wiki.strongswan.org/projects/strongswan/wiki/IpsecSecrets) wiki page.
-**Note:** the location of the *ipsec.secrets* file is */etc/ipsec.secrets*
+
+**Note**: The location of the *ipsec.secrets* file is */etc/ipsec.secrets*.
 
 Based upon the authentication type and shared secret for the VPN instance customize the *ipsec.secrets* file with information from the above steps.
 
