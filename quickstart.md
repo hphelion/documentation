@@ -12,7 +12,7 @@ This page contains information to help you get started with the following servic
 
 * [Compute](#Compute)
 * The [Networking](#Networking) portion of our compute services
-* [Block Storage](BlockStorage)
+* [Block Storage](#BlockStorage)
 # [For further information](#FurtherInfo)
 
 ## Compute ## {#Compute}
