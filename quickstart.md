@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Cloud Services Quickstart Guide"
-permalink: /quickstart
+permalink: /quickstart/
 
 ---
 # HP Cloud Services Quickstart Guide
