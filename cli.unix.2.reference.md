@@ -119,14 +119,14 @@ The command line mode allows you to set the following values:
 * secret_key
 * auth_uri
 * tenant_id
-* compute_availability_zone
-* storage_availability_zone
-* cdn_availability_zone
-* dns_availability_zone
-* lb_availability_zone
-* db_availability_zone
-* network_availability_zone
-* block_availability_zone
+* compute
+* object storage
+* cdn
+* dns
+* lbaas
+* db
+* network
+* block storage
 * connect_timeout
 * read_timeout
 * write_timeout
@@ -217,14 +217,14 @@ The command line mode allows you to set the following values:
 * secret_key
 * auth_uri
 * tenant_id
-* compute_availability_zone
-* storage_availability_zone
-* cdn_availability_zone
-* dns_availability_zone
-* lb_availability_zone
-* db_availability_zone
-* network_availability_zone
-* block_availability_zone
+* compute
+* object storage
+* cdn
+* dns
+* lbaas
+* db
+* network
+* block storage
 * connect_timeout
 * read_timeout
 * write_timeout
