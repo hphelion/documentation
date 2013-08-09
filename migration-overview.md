@@ -71,7 +71,7 @@ You need to submit a ticket to our support team requesting your new image be mad
 
 1. In the management console, select `Support Cases` from the `Support` menu and then click `Create New Case`.
 
-        <img src="media/migration-01" width="580" alt="" />
+    <img src="media/migration-02" width="580" alt="" />
 
 2. Support contacts you when the image is transferred to the new environment.
 
