@@ -10,15 +10,21 @@ You know the problem:  you see the phrase "release notes" and you immediately th
 
 This page contains the following information on our software package:
 
+* [Release information for version 13.5](#v135Info)
+* blah
+* [For further information](#SeeAlso)
+
+##Information for version 13.5## {#v135Info}
+
+para.  This section includes the following information:
+
 * [New features in version 13.5](#v135features)
 * [Known issues in version 13.5](#v135issues)
-* [For further information](#seealso)
 
-<!--* [Resolved issues in version 13.5](#v135resolved)
-* [Release notes for individual products and services](#otherReleaseNotes)-->
+<!--* [Resolved issues in version 13.5](#v135resolved)-->
 
 
-##New Features in Version 13.5## {#v135features}
+###New Features in Version 13.5### {#v135features}
 
 The following are new features in version 13.5 of the HP Public Cloud software:
 
@@ -28,7 +34,7 @@ The following are new features in version 13.5 of the HP Public Cloud software:
 * *Faster data upload to the cloud*.  A new bulk import service reduces the time to market for applications requiring existing data by allowing you to quickly and easily load your data into HP Cloud block storage or HP Cloud object storage. The new service bypasses the process of transferring large amounts of information over the Internet and allows you to provide hard drives directly to HP's data centers where your data can be rapidly transferred.
 
 
-##Known issues in version 13.5## {#v135issues}
+###Known issues in version 13.5### {#v135issues}
 
 The following are known issues and limitation for version 13.5 of the HP Public Cloud software:
 
@@ -42,7 +48,6 @@ The following are known issues and limitation for version 13.5 of the HP Public 
 * In rare cases, after successfully launching an instance `SSH` may not function. <br>
     *Workaround*: Reboot the instance.
 
-
 <!--##Resolved Issues in Version 13.5## {#v135resolved}
 
 The following are resolved issues in version 13.5 of the HP Public Cloud software:
@@ -50,19 +55,17 @@ The following are resolved issues in version 13.5 of the HP Public Cloud softwar
 * items
 -->
 
-<!--##Release notes for individual products and services## {#otherReleaseNotes}
+##For further information## {#SeeAlso}
+
+* See the [HP Cloud version 13.5 overview](/version-overview/) for an overview of the 13.5 release set
+* See the [HP Cloud Service APIs (v13.5)](/api/v13/) for an overview of the 13.5 API specifications
+* See the [migration overview page](/migration-overview/) for information on migrating from version 12.12 to 13.5
+* See the [main HP Cloud web site](https://www.hpcloud.com/#) for a discussion of our various products and services
+* See the [Management console overview](/mc/) for details on the web-based management console interface
+* Go to our [support page](https://www.hpcloud.com/support) if you are seeking support information
 
 While these release notes contain information information for the software package as a whole, we also provide you with release notes for individual products and services:
 
 * [Ruby Fog Bindings](/binding/fog/release-notes/)
 * [UNIX command-line interface (CLI)](/cli/unix/release-notes/)
 * [Windows PowerShell CLI](/cli/windows/release-notes/)
--->
-
-##For further information## {#seealso}
-
-* For an overview of the 13.5 release set, take a look at the [HP Cloud version 13.5 overview](/version-overview/)
-* For an overview of the 13.5 API specifications, see [HP Cloud Service APIs (v13.5)](/api/v13/)
-* For a discussion of our various products and services, see [the main HP Cloud web site](https://www.hpcloud.com/#)
-* For details on the management console, see the [Management console overview](/mc/)
-* For HP Cloud support, go to our [support page](https://www.hpcloud.com/support)
