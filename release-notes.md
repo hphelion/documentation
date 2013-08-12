@@ -57,9 +57,11 @@ The following are resolved issues in version 13.5 of the HP Public Cloud softwar
 
 ##For further information## {#SeeAlso}
 
-* See the [HP Cloud version 13.5 overview](/version-overview/) for an overview of the 13.5 release set
-* See the [HP Cloud Service APIs (v13.5)](/api/v13/) for an overview of the 13.5 API specifications
-* See the [migration overview page](/migration-overview/) for information on migrating from version 12.12 to 13.5
+* See [HP Cloud version 13.5 overview](/version-overview/) for an overview of the 13.5 release set
+* See [HP Cloud Service APIs (v13.5)](/api/v13/) for an overview of the 13.5 API specifications
+* See [migration overview page](/migration-overview/) for information on migrating from version 12.12 to 13.5
+* See [Getting Started with Compute 13.5](https://community.hpcloud.com/article/getting-started-compute-135) for information on how to get started with the compute service in version 13.5
+* Speaking of which, the overall [Getting Started Guide](https://community.hpcloud.com/article/getting-started-guide/) is a great resource for getting yourself up and running with the various HP Cloud services in general
 * See the [main HP Cloud web site](https://www.hpcloud.com/#) for a discussion of our various products and services
 * See the [Management console overview](/mc/) for details on the web-based management console interface
 * Go to our [support page](https://www.hpcloud.com/support) if you are seeking support information
