@@ -11,12 +11,13 @@ You know the problem:  you see the phrase "release notes" and you immediately th
 This page contains the following information on our software package:
 
 * [Release information for version 13.5](#v135Info)
-* blah
 * [For further information](#SeeAlso)
+
+<!--Moving forward, there will be more bulleted items for each release-->
 
 ##Information for version 13.5## {#v135Info}
 
-para.  This section includes the following information:
+This section includes the following information for version 13.5 of the HP Cloud services software:
 
 * [New features in version 13.5](#v135features)
 * [Known issues in version 13.5](#v135issues)
