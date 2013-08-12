@@ -10,18 +10,18 @@ If you are using a previous version of the HP Cloud software, there are a few ta
 
 * [Before you begin](#BeforeYouBegin)
 * [Generating new security groups and migrating your key pairs](#GeneratingandMigrating)
-* [Updating your instance](#Updating)
+* [Deploying an instance snapshot in version 13.5](#Updating)
 * [For further information](#MoreInfo)
 
 
 ## Before you begin ## {#BeforeYouBegin}
 
-Before you upgrade your system and migrate to version 13.5, we recommend:
+Before you migrate to version 13.5, we recommend:
 
 * Purge any data you no longer need
 * Remove any unnecessary log files
 
-For each instance image, you need to determine if you want to move the instance to version 13.5, or if you prefer to just create a new instance.
+For each instance image, you need to determine if you want to move a snapshot of the root partition of that instance to version 13.5, or if you prefer to just create a new instance.
 
 
 ## Generating new security groups and migrating your key pairs ## {#GeneratingandMigrating}
@@ -41,9 +41,11 @@ The process for migrating key pairs varies according to your platform.  Check ou
 * [Linux Users](https://community.hpcloud.com/article/migrating-or-transferring-your-key-pairs#keylinux)
 
 
-## Updating your instance ## {#Updating}
+## Deploying an instance snapshot in version 13.5 ## {#Updating}
 
-The process for migrating your instance includes taking a snapshot of your current instance, saving and moving the data residing in block storage to the new environment, and reattaching to your new instance. 
+The process for deploying a snapshot of your instance to version 13.5 includes taking a snapshot of your current instance, and saving and moving the data residing in block storage to the new environment. 
+
+**Note**: This process is  specific to ephemeral instances (those not created by a bootable volume).
 
 ### Taking a snapshot of your current instance ### {#Snapshot}
 
@@ -65,6 +67,8 @@ You have many ways to create a snapshot, so use a method you are familiar with. 
 
 For other methods, read [Creating a Snapshot of an Instance](https://community.hpcloud.com/article/creating-snapshot-instance) in our knowledge base, or refer to the applicable [CLI](/cli/) or [management console](/mc/) instructions.
 
+**Note**: The snapshot only includes the root partition.
+
 ### Notifying support of your readiness ### {#Notifying}
 
 You need to submit a ticket to our support team requesting your new image be made available in Compute 13.5:
@@ -75,7 +79,7 @@ You need to submit a ticket to our support team requesting your new image be mad
 
 2. Support contacts you when the image is transferred to the new environment.
 
-Log in to your account, select your AZ, and use your new image to relaunch your instance.  You are now fully upgraded.
+Log in to your account, select your AZ, and use your new image to relaunch your instance.  
 
 
 ## For further information ## {#MoreInfo}
