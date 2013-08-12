@@ -34,6 +34,7 @@ The 2.0.0 release is available for download from [https://docs.hpcloud.com/file/
 * The `servers:ratelimits` command was added to print comput limits
 * Object metadata can now be shown and set with `metadata` and `metadata:set`
 * Added --userpass option to account:setup and account:edit to allow authentication via user name and password rather than authentication keys.
+* Regions/zones are now based on what is in the service catalog in `account:setup`
 
 ###Known Issues###
 

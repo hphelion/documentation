@@ -46,7 +46,7 @@ You can find the values you need for your setup by clicking the [`API Keys`](htt
 
 <img src="media/api_keys-2.jpg" width="580" height="471" alt="" />
 
-Please be sure to confirm the default values for `Auth Uri`, `Compute zone`, `Storage zone`, `CDN zone`, and `Block zone`.
+Please be sure to confirm the default values for `Auth Uri` and your various zones and regions where services are activated.
 
 Now that you've finished installing the software package, it's time to [perform a few configuration steps](/cli/unix/configuration)!
 
