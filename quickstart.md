@@ -29,7 +29,7 @@ Info
 For more information on HP Cloud networking, take a look at our [networking guide](/compute/network-guide/), our [management console networking information](/mc/compute/networks/), or the networking sections in our [various CLI pages](/cli).
 
 
-## Block Storage ## {#Block Storage}
+## Block Storage ## {#BlockStorage}
 
 Info
 
