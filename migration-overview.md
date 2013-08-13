@@ -4,7 +4,39 @@ title: "HP Cloud Services: Overview of Migrating from Version 12.12 to 13.5"
 permalink: /migration-overview/
 
 ---
-# HP Cloud Services 12.12 to 13.5 migration overview
+# HP Cloud Services 12.12 to 13.5 self-migration overview
+
+<!--deploying us east to west
+
+* tell everyone they can move, rebuild, or take an image snapshot and ask support for help
+* top 70 customers consume 60% of the cloud units
+* assistive migration vs. rebuilding
+* overview guide vs. details self-migration guide
+* if you dont want to move your data over 
+* if you don't want to rebuild your image
+* tom mixes kb stuff with docs.hpcloud.com content
+* assisted migration is west to west only
+
+New document structure (refer to photo of whiteboard outline--in photo "w" refers to "already written")
+
+"Overview of 13.5 migration process -- include links from each section to appropriate "details" section "in case you run into trouble and need to call support" or some such
+- Ephermeral instances 
+- Personal instances
+  - block volumes
+conceptual/overview/background info on:
+- keypairs
+- security groups
+- floating IPs
+
+Migration Process details (or something)
+- image snapshots
+- copy your 12.12 instance
+  - take snapshot
+  - make new volume
+  - move volume
+- move volume to 13.5
+
+-->
 
 If you are using a previous version of the HP Cloud software, there are a few tasks you need to perform to migrate to version 13.5.  This page discusses the following migration topics:
 
@@ -12,7 +44,6 @@ If you are using a previous version of the HP Cloud software, there are a few ta
 * [Generating new security groups and migrating your key pairs](#GeneratingandMigrating)
 * [Deploying an instance snapshot in version 13.5](#Updating)
 * [For further information](#MoreInfo)
-
 
 ## Before you begin ## {#BeforeYouBegin}
 
