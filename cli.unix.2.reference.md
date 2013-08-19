@@ -1049,7 +1049,7 @@ Allow container synchronization.
 
 
 ###Description
-Allow container synchronization using the specified key.  If you are creating a destination for synchronization, only the key should be specified.  If you are creating a source for synchronization, specify a key and location.  The same key must be used in the source and destination.  It is possible have containers as both a source and destination.  List your synchronization information with the "hpcloud list --sync" command.
+Allow container synchronization using the specified key.  If you are creating a destination for synchronization, only the key should be specified.  If you are creating a source for synchronization, specify a key and location.  The same key must be used in the source and destination.  It is possible to have containers as both a source and destination.  List your synchronization information with the "hpcloud list --sync" command.
 
 ###Examples
 Set up the container :atainer to be a destination for synchronization:
@@ -1060,7 +1060,7 @@ Synchronize :btainer to remote container :atainer:
 
     hpcloud containers:sync :btainer keyo atainer
 
-Create a two way synchronization betwee :atainer and :btainer:
+Create a two way synchronization between :atainer and :btainer:
 
     hpcloud containers:sync :atainer keyo https://region-b.geo-1.objects.hpcloudsvc.com:443/v1/96XXXXXX/btainer
 
