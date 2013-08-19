@@ -3292,7 +3292,7 @@ Add a router.
 
 
 ###Description
-Add a new router to your network with the specified name.  If a gateway is not specified, the first network that has router_external set to true is used (typically `Ext-Net`.  If you do not want to a external network, send the gateway option with an empty string.
+Add a new router to your network with the specified name.  If a gateway is not specified, the first network that has router_external set to true is used (typically `Ext-Net`.
 
 ###Examples
 Create a new router named 'routerone':
