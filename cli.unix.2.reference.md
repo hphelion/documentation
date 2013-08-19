@@ -1588,9 +1588,9 @@ List the images:
 
     hpcloud images
 
-List image '1239':
+List image '701be39b':
 
-    hpcloud images 1239
+    hpcloud images 701be39b
 
 List images for availability zone `az-2.region-a.geo-1`:
 
@@ -1631,9 +1631,9 @@ Create the new image 'my_image' from the existing server named 'my_server':
 
     hpcloud images:add my_image my_server
 
-Create the new image 'my_image' from the existing server 'my_server' with metadata:
+Create the new image 'my_image' from the existing server '701be39b' with metadata:
 
-    hpcloud images:add my_image my_server -m this=that
+    hpcloud images:add my_image 701be39b -m this=that
 
 
 ##images:metadata## {#images:metadata}
@@ -2974,9 +2974,9 @@ Updated 'netty' to up:
 
     hpcloud networks:update netty -u
 
-Update 'netty' admin state down:
+Update network '701be39b' admin state down:
 
-    hpcloud networks:update netty --no-adminstateup
+    hpcloud networks:update 701be39b --no-adminstateup
 
 
 ##ports## {#ports}
@@ -3014,9 +3014,9 @@ List all ports:
 
     hpcloud ports
 
-List the details for ports with id `1`:
+List the details for ports with id `701be39b`:
 
-    hpcloud ports 1
+    hpcloud ports 701be39b
 
 List the details for ports named `testo`:
 
@@ -3076,7 +3076,7 @@ Create a new port named 'porto':
 
 Create a new port named 'porto' associated with 'devvy' and 'ohnur' administratively up:
 
-    hpcloud ports:add porto netty -d devvy -o ohnur -u
+    hpcloud ports:add porto 701be39b -d devvy -o ohnur -u
 
 
 ##ports:remove## {#ports:remove}
@@ -3157,6 +3157,10 @@ Update fixed IPs, administrative state, device identifier, or device owner on a 
 Update 'porto' administrative status and device owner:
 
     hpcloud ports:update porto -u -d trump
+
+Update 'c14411d7' administrative status and device owner:
+
+    hpcloud ports:update c14411d7 -u -d trump
 
 
 ##remove## {#remove}
@@ -3251,9 +3255,9 @@ List all routers:
 
     hpcloud routers
 
-List the details for routers with id `1`:
+List the details for routers with id `c14411d7`:
 
-    hpcloud routers 1
+    hpcloud routers c14411d7
 
 List the details for routers named `testo`:
 
@@ -3445,6 +3449,10 @@ Update router 'trout' administrative state:
 
     hpcloud routers:update trout -u
 
+Update router 'c14411d7' administrative state:
+
+    hpcloud routers:update c14411d7 -u
+
 
 ##securitygroups## {#securitygroups}
 List the available security groups.
@@ -3593,6 +3601,10 @@ List the rules for security group `mysecgroup`:
 
     hpcloud securitygroups:rules mysecgroup
 
+List the rules for security group `c14411d7`:
+
+    hpcloud securitygroups:rules c14411d7
+
 ###Aliases
 `securitygroups:rules:list`
 
@@ -3736,6 +3748,10 @@ List the servers:
 List server `hal`:
 
     hpcloud servers hal
+
+List server `c14411d7`:
+
+    hpcloud servers c14411d7
 
 List the servers for availability zone `az-2.region-a.geo-1`:
 
@@ -3922,6 +3938,10 @@ List server metadata:
 
     hpcloud servers:metadata Skynet
 
+List server metadata:
+
+    hpcloud servers:metadata c14411d7
+
 ###Aliases
 `servers:metadata:list`
 
@@ -3953,6 +3973,10 @@ Add metadata to a server in your compute account.  You can specify the erver nam
 Add the specified metadata to the server (if the metadata exists, it is updated):
 
     hpcloud servers:metadata:add my_server 'r2=d2,c3=po'
+
+Add the specified metadata to the server (if the metadata exists, it is updated):
+
+    hpcloud servers:metadata:add c14411d7 'chew=bacca,han=solo'
 
 ###Aliases
 `servers:metadata:update`
@@ -3986,6 +4010,10 @@ Remove the the r2 and c3 metadata from the server:
 
     hpcloud servers:metadata:remove :my_server r2 c3
 
+Remove the the r2 and c3 metadata from the server:
+
+    hpcloud servers:metadata:remove b8e90a48 r2 c3
+
 ###Aliases
 `servers:metadata:rm`
 
@@ -4017,6 +4045,10 @@ Change the password for an existing server. The password must adhere to the exis
 Change the password for server 'my-server':
 
     hpcloud servers:password my-server my-password
+
+Change the password for server 'b8e90a48':
+
+    hpcloud servers:password b8e90a48 'pA$3word'
 
 ###Aliases
 `servers:passwd`
@@ -4309,9 +4341,9 @@ List all snapshots:
 
     hpcloud snapshots
 
-List the detail information for snapshot `1`:
+List the detail information for snapshot `b8e90a48`:
 
-    hpcloud snapshots 1
+    hpcloud snapshots b8e90a48
 
 List the detail information about snapshot `testsnap`:
 
@@ -4435,9 +4467,9 @@ List all subnets:
 
     hpcloud subnets
 
-List the details for subnets with id `1`:
+List the details for subnets with id `b8e90a48`:
 
-    hpcloud subnets 1
+    hpcloud subnets b8e90a48
 
 List the details for subnets named `testo`:
 
@@ -4663,9 +4695,9 @@ List all volumes:
 
     hpcloud volumes
 
-List the details for volume `1`:
+List the details for volume `b8e90a48`:
 
-    hpcloud volumes 1
+    hpcloud volumes b8e90a48
 
 List the details for volume `testvol`:
 
@@ -4756,9 +4788,9 @@ Attach volume `myVolume` to server `myServer` on device `/dev/vdc`:
 
     hpcloud volumes:attach myVolume myServer /dev/vdc
 
-Attach volume `myVolume` to server `myServer` on device `/dev/vdb`:
+Attach volume `f9520651` to server `b8e90a48` on device `/dev/vdb`:
 
-    hpcloud volumes:attach myVolume myServer 4
+    hpcloud volumes:attach f9520651 b8e90a48 4
 
 
 ##volumes:detach## {#volumes:detach}
@@ -4869,5 +4901,9 @@ List all the attached volumes:
 List the volumes on server `myServer`:
 
     hpcloud volumes:server myServer
+
+List the volumes on server `f9520651`:
+
+    hpcloud volumes:server f9520651
 
 
