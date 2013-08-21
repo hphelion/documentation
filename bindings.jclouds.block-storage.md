@@ -2,7 +2,7 @@
 layout: default
 title: "HP Cloud jclouds Binding Block Storage Examples"
 permalink: /bindings/jclouds/block-storage/
-published: false
+published: true
 product: jclouds
 
 ---
