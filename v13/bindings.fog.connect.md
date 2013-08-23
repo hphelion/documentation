@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Connecting to the HP Cloud Service"
-permalink: /bindings/fog/connect/
+permalink: /v13/bindings/fog/connect/
 product: fog
 
 ---
