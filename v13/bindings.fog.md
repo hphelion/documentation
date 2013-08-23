@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Cloud Services Extensions to Ruby Fog Binding"
-permalink: /bindings/fog/
+permalink: /v13/bindings/fog/
 product: fog
 
 ---
@@ -16,12 +16,13 @@ This library is an extension of [Fog](http://github.com/fog/fog), a Ruby open-so
 The HP Cloud Ruby library currently supports HP Cloud Compute, HP Cloud Object Storage, HP Cloud CDN, and HP Cloud Block Storage. Support for other services will be added as they become available.
 
 * [Installation Instructions](/bindings/fog/install)
-* [Connecting to the Service](/bindings/fog/connect)
-* [Compute Examples](/bindings/fog/compute)
+* [Connecting to the Service](/v13/bindings/fog/connect)
+* [Compute Examples](/v13/bindings/fog/compute)
 * [Object Storage Examples](/bindings/fog/object-storage)
 * [CDN Examples](/bindings/fog/cdn)
-* [Block Storage Examples](/bindings/fog/block-storage)
-* [Release Notes](/bindings/fog/release-notes)
+* [Block Storage Examples](/v13/bindings/fog/block-storage)
+* [Networking Examples](/v13/bindings/fog/networking)
+* [Release Notes](/v13/bindings/fog/release-notes)
 * [FAQ](/faq#RubyFogBindings)
 
 For our release-by-release information, take a look at [our release notes](/bindings/fog/release-notes)!  And if you want to look at the main Fog reference documents, surf on over to the [Documentation for fog/fog (master) Alphabetic Index](http://rubydoc.info/github/fog/fog/frames/index); the ReadMe file might be a good place for you to start.
