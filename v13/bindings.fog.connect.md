@@ -11,8 +11,6 @@ This page gives you details on how to connect to the HP Cloud service and contai
 
 * [Initial Connection](#InitialConnection)
 * [Supplying Your Credentials](#SupplyingyourCredentials)
-<!--* [Using the Owner Account to Grant Access](#UsingtheOwnerAccounttoGrantAccess)
-* [Setting Up the Connection for the User Account](#SettingUptheConnectionfortheUserAccount)-->
 * [Availability Zones](#AvailabilityZones)
 * [Optional Parameters](#OptionalParameters)
 
