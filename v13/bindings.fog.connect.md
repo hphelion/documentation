@@ -36,7 +36,8 @@ To connect to the HP Cloud Service, follow these steps:
 3. Establish a connection to the desired HP Cloud service
 
         conn = Fog::<SERVICE-NAME>.new(
-               :provider      => "HP",
+               :provider      => "HP", 
+               :version => :v2,
                :hp_access_key  => "<your_ACCESS_KEY>",
                :hp_secret_key => "<your_SECRET_KEY>",
                :hp_auth_uri   => "<IDENTITY_ENDPOINT_URL>",
@@ -52,54 +53,14 @@ Where `SERVICE-NAME` can be [Compute](/bindings/fog/compute), [Storage](/binding
 You can find the values the access key, secret key, and other values by clicking the [`API Keys`](https://console.hpcloud.com/account/api_keys) button in the [Console Dashboard](https://console.hpcloud.com/dashboard).
 
 
-<!--[[{"type":"media","view_mode":"media_large","fid":"141","attributes":{}}]]
-insert screen shot here-->
-
-<!--##Using the Owner Account to Grant Access## {#UsingtheOwnerAccounttoGrantAccess}
-
-You can use the owner account to grant access.  To set up the connections for the owner account:
-
-    conn = Fog::Storage.new( 
-           :provider => 'HP', 
-           :hp_auth_uri => "https://csnode.rndd.aw1.hpcloud.net:35357/v2.0/tokens", 
-           :hp_account_id => "11111111", :hp_secret_key => "xxxxxx", 
-           :hp_tenant_id => "12121212", 
-           :hp_avl_zone => "region-a.geo-1", 
-           :connection_options => {:ssl_verify_peer => false})
-
-To grant access:
-
-    mydir = conn.directories.get('rgtest2')  # Note: grant uses username. in my case it is email as my username is email address
-    mydir.grant("rw", ["rupakg+fog2@gmail.com"])
-    mydir.save                               # share the url for access to container
-    mydir.public_url
-     => "https://objects.rndd.aw1.hpcloud.net:443/v1/91545177658759/rgtest2"
-     
-    myfile = mydir.files.get("sample.txt")   # share the url for access to object
-    myfile.public_url
-     => "https://objects.rndd.aw1.hpcloud.net:443/v1/91545177658759/rgtest2/sample.txt"
-
-##Setting Up the Connection for the User Account## {#SettingUptheConnectionfortheUserAccount}
-
-To set up the connection for the user account:
-
-    conn2 = Fog::Storage.new( 
-            :provider => 'HP', 
-            :hp_auth_uri => "https://csnode.rndd.aw1.hpcloud.net:35357/v2.0/tokens", 
-            :hp_account_id => "22222222", :hp_secret_key => "xxxxxx", 
-            :hp_tenant_id => "21212121", 
-            :hp_avl_zone => "region-a.geo-1", 
-            :connection_options => {:ssl_verify_peer => false})-->
-
 ##Availability Zones## {#AvailabilityZones}
 
 You cannot specify an availability zone if you have not activated it.  To activate an availability zone, go to the [Management Console dashboard](https://console.hpcloud.com/) and click the `**Activate`** button.  You are required to set an availability zone to establish a connection; there is no default availability zone value.
 
 The current usable availability zones for the compute service:
 
-* `az-1.region-a.geo-1`
-* `az-2.region-a.geo-1`
-* `az-3.region-a.geo-1`
+* `region-a.geo-1`
+* `region-b.geo-1`
 
 The current usable availability zones for the storage service:
 
@@ -113,9 +74,8 @@ The current usable availability zones for the CDN:
 
 The current usable availability zones for the block storage service:
 
-* `az-1.region-a.geo-1`
-* `az-2.region-a.geo-1`
-* `az-3.region-a.geo-1`
+* `region-a.geo-1`
+* `region-b.geo-1`
 
 ##Optional Parameters## {#OptionalParameters}
 
