@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Cloud Fog Binding Compute Examples"
-permalink: /bindings/fog/compute/
+permalink: /v13/bindings/fog/compute/
 product: fog
 
 ---
