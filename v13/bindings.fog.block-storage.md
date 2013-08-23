@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Cloud Services Ruby Fog Block Storage Examples"
-permalink: /bindings/fog/block-storage/
+permalink: /v13/bindings/fog/block-storage/
 product: fog
 
 ---
