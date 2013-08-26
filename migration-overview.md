@@ -6,44 +6,18 @@ permalink: /migration-overview/
 ---
 # HP Cloud Services 12.12 to 13.5 self-migration overview
 
-<!--deploying us east to west
-
-* tell everyone they can move, rebuild, or take an image snapshot and ask support for help
-* top 70 customers consume 60% of the cloud units
-* assistive migration vs. rebuilding
-* overview guide vs. details self-migration guide
-* if you dont want to move your data over 
-* if you don't want to rebuild your image
-* tom mixes kb stuff with docs.hpcloud.com content
-* assisted migration is west to west only
-
-New document structure (refer to photo of whiteboard outline--in photo "w" refers to "already written")
-
-"Overview of 13.5 migration process -- include links from each section to appropriate "details" section "in case you run into trouble and need to call support" or some such
-- Ephermeral instances 
-- Personal instances
-  - block volumes
-conceptual/overview/background info on:
-- keypairs
-- security groups
-- floating IPs
-
-Migration Process details (or something)
-- image snapshots
-- copy your 12.12 instance
-  - take snapshot
-  - make new volume
-  - move volume
-- move volume to 13.5
-
--->
-
-If you are using a previous version of the HP Cloud software, there are a few tasks you need to perform to migrate to version 13.5.  This page discusses the following migration topics:
+This page guides you through the steps needed to perform a migration from version 12.12 to 13.5 of the HP Cloud software services.  This overview covers the following topics and tasks:
 
 * [Before you begin](#BeforeYouBegin)
-* [Generating new security groups and migrating your key pairs](#GeneratingandMigrating)
-* [Deploying an instance snapshot in version 13.5](#Updating)
+* [Migrating ephemeral instances](#Ephermeral)
+* [Migrating persistent instances](#Persistent)
+* [Key pair migration](#KeyPairs)
+* [Security group migration](#SecurityGroups)
+* [Additional migration information](#Additional)
 * [For further information](#MoreInfo)
+
+**Note**:  Use this overview in conjunction with the information on the [migration details](/migration-details/) page if you are planning on performing a customer support-assisted migration.  
+
 
 ## Before you begin ## {#BeforeYouBegin}
 
@@ -55,7 +29,34 @@ Before you migrate to version 13.5, we recommend:
 For each instance image, you need to determine if you want to move a snapshot of the root partition of that instance to version 13.5, or if you prefer to just create a new instance.
 
 
-## Generating new security groups and migrating your key pairs ## {#GeneratingandMigrating}
+##Migrating ephemeral instances## {#Ephemeral}
+
+TBD
+
+For information on persistent instance migration while performing a support services assisted migration, please see the [snapshots](/migration-details/) section of the [migration details](/migration-details/) page. 
+
+
+##Migrating persistent instances## {#Persistent}
+
+TBD
+
+###Block volume migration## {#BlockVolumes}
+
+TBD
+
+For information on persistent instance migration, snapshots, copying, and moving block volumes, please see the appropriate section of the [migration details](/migration-details/) page.  
+
+
+##Key pair migration## {#KeyPairs}
+
+The process for migrating key pairs varies according to your platform.  Check out our Knowledge Base article [Managing or Transferring Your Key Pairs](https://community.hpcloud.com/article/migrating-or-transferring-your-key-pairs) to see what way works best for you:
+
+* [via the API](https://community.hpcloud.com/article/migrating-or-transferring-your-key-pairs#keyapi)
+* [Windows Users](https://community.hpcloud.com/article/migrating-or-transferring-your-key-pairs#keywin)
+* [Linux Users](https://community.hpcloud.com/article/migrating-or-transferring-your-key-pairs#keylinux)
+
+
+##Security group migration## {#SecurityGroups}
 
 To create a new security group, follow these steps:
 
@@ -65,52 +66,10 @@ To create a new security group, follow these steps:
 
 For more details and options, read our Knowledge Base article [Managing Your Security Groups](https://community.hpcloud.com/article/managing-your-security-groups-135).
 
-The process for migrating key pairs varies according to your platform.  Check out our Knowledge Base article [Managing or Transferring Your Key Pairs](https://community.hpcloud.com/article/migrating-or-transferring-your-key-pairs) to see what way works best for you:
 
-* [via the API](https://community.hpcloud.com/article/migrating-or-transferring-your-key-pairs#keyapi)
-* [Windows Users](https://community.hpcloud.com/article/migrating-or-transferring-your-key-pairs#keywin)
-* [Linux Users](https://community.hpcloud.com/article/migrating-or-transferring-your-key-pairs#keylinux)
+##Additional migration information## {#Additional}
 
-
-## Deploying an instance snapshot in version 13.5 ## {#Updating}
-
-The process for deploying a snapshot of your instance to version 13.5 includes taking a snapshot of your current instance, and saving and moving the data residing in block storage to the new environment. 
-
-**Note**: This process is  specific to ephemeral instances (those not created by a bootable volume).
-
-### Taking a snapshot of your current instance ### {#Snapshot}
-
-You have many ways to create a snapshot, so use a method you are familiar with. Here are the basic directions for creating a snapshot using the [management console](/mc/).
-
-**Note**: If you have a Windows instance, be sure to shut down the instance before taking your snapshot. You can do this using the shutdown feature from the `Start` button:
-
-1. Go to the Availability Zone where your server exists.
-
-2. Click `Images` in the menu bar.
-
-3. In the `From server` box, select the image that you want to snapshot.
-
-4. Fill in an `Image Name` and a `Description`.
-
-5. Click `Create`. Your new image appears under `Inventory`.
-
-<img src="media/migration-01" width="580" alt="" />
-
-For other methods, read [Creating a Snapshot of an Instance](https://community.hpcloud.com/article/creating-snapshot-instance) in our knowledge base, or refer to the applicable [CLI](/cli/) or [management console](/mc/) instructions.
-
-**Note**: The snapshot only includes the root partition.
-
-### Notifying support of your readiness ### {#Notifying}
-
-You need to submit a ticket to our support team requesting your new image be made available in Compute 13.5:
-
-1. In the management console, select `Support Cases` from the `Support` menu and then click `Create New Case`.
-
-    <img src="media/migration-02" width="580" alt="" />
-
-2. Support contacts you when the image is transferred to the new environment.
-
-Log in to your account, select your AZ, and use your new image to relaunch your instance.  
+TBD
 
 
 ## For further information ## {#MoreInfo}
@@ -121,3 +80,4 @@ For more information on migrating your services, as well as general information 
 * The [version overview](/version-overview/) provides a look at the different software versions available
 * The [technical support knowledge base](https://community.hpcloud.com)
 * [UNIX command-line interface migration information](/cli/unix/articles/migration/)
+* If you need to perform an assisted migration, with the aid of our Support organization, please read through the [Migration Details](/migration-details/) page, and contact our Support Center at 1-855-61CLOUD (1-855-612-5683) in the U.S. or +1-678-745-9010 internationally.
