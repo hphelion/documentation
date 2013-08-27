@@ -41,19 +41,19 @@ HP Cloud Networking expands networking capabilities, allowing you to perform man
 
 ##Terms and Provisions## {#TermsandProvisions} 
 
-__Floating IP Addresses__ – On-demand, public IP addresses on a network. With HP Cloud, you can allocate several floating IP addresses and assign them to virtual servers. 
+__Floating IP Addresses__: On-demand, public IP addresses on a network. With HP Cloud, you can allocate several floating IP addresses and assign them to virtual servers. 
 
-__Network__ – Allows you to define network connectivity and addressing in the Cloud, providing “networking as a service” between interface devices managed by other HP Cloud Services, such as compute. 
+__Network__: Allows you to define network connectivity and addressing in the Cloud, providing “networking as a service” between interface devices managed by other HP Cloud Services, such as compute. 
 
-__Port__ – A connection point for attaching a single device, such as a virtual server's NIC, to a virtual network.  The port describes the associated network configuration, such as the MAC and IP addresses to be used by the attached device.
+__Port__: A connection point for attaching a single device, such as a virtual server's NIC, to a virtual network.  The port describes the associated network configuration, such as the MAC and IP addresses to be used by the attached device.
 
-__Router__ – A device that forwards data packets along networks. 
+__Router__: A device that forwards data packets along networks. 
 
-__Security Groups and Security Group Rules__ – Security groups and security group rules allow you to specify the type of traffic and direction (ingress/egress) that is allowed to pass through a port. A security group is a container for security group rules.
+__Security Groups and Security Group Rules__: Security groups and security group rules allow you to specify the type of traffic and direction (ingress/egress) that is allowed to pass through a port. A security group is a container for security group rules.
 
 When a port is created in HP Cloud Networking it is associated with a security group. If a security group is not specified the port is associated with a default security group. The default group drops all ingress traffic and allows all egress traffic. You can add rules to this group to modify behavior. 
 
-__Subnet__ – Contains IP address blocks that assign IP addresses to virtual servers. In addition, a subnet can have a gateway, a list of DNS name servers, and host routes. Information provided by DHCP is pushed to servers with interfaces associated with the subnet.
+__Subnet__: Contains IP address blocks that assign IP addresses to virtual servers. In addition, a subnet can have a gateway, a list of DNS name servers, and host routes. Information provided by DHCP is pushed to servers with interfaces associated with the subnet.
 
 
 ###HP Cloud Networking Quota Default:###
