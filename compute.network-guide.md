@@ -202,7 +202,4 @@ If you configure security groups via Networking, compute may not display the ful
 
 1. Use **either** the compute **or** networking service to configure security groups, but do not use them together.   Using the OpenStack Networking API provides additional functionality in the form of egress rules, which the compute API cannot display. 
 
-**Note: Security Groups are a feature of  HP Cloud Networking and are fully supported by the Networking API. A limited set of Security Group features are also accessible via the compute API for convenience and backwards compatibility. To directly access the API's broader functionality, HP highly recommends working only through the OpenStack Networking API and does not recommend mixing compute and OpenStack Networking API calls for security group configuration.**
-
-
-If using the Networking API, notify all users likely to display security group configuration.
+**Note: Security Groups are a feature of  HP Cloud Networking and are fully supported by the Networking API. A limited set of Security Group features are also accessible via the compute API for convenience and backwards compatibility. To directly access the API's broader functionality, HP highly recommends working only through the OpenStack Networking API and does not recommend mixing compute and OpenStack Networking API calls for security group configuration. If using the Networking API, notify all users likely to display security group configuration.**
