@@ -27,7 +27,7 @@ The following services are now in private beta; follow the links to sign up and 
 * [Monitoring as a Service (MaaS)](/maas/): A managed monitoring service facilitating the monitoring of health and other metrics for the resources in HP Cloud.<br>
   **Note**: This service requires activation while in private beta; please [request access on our sign-up page](https://account.hpcloud.com/cases/betarequest/maas). Service use is free of charge during the private beta period.
 * [Application Platform as a Service (aPaaS)](/apaas/) - An application platform for development, deployment, and management of cloud applications hosted by HP.<br>
-  **Note**: This service requires activation while in private beta; please [request access on our sign-up page](http://go.hpcloud.com/PaaS-private-beta-signup).  Service use is free of charge during the private beta period.
+  **Note**: This service requires activation while in private beta; please [request access on our sign-up page](https://apaas.hpcloud.com/shared/free-private-beta/signup).  Service use is free of charge during the private beta period.
 * [Messaging as a Service (MSGaaS)](/msgaas/): API for the HP Cloud messaging service; provides you with a standards-based, inter-application asynchronous message queuing system with guaranteed first in, first out (FIFO) message delivery in the HP Cloud.<br>
   **Note**: This service requires activation while in private beta; please [request access on our sign-up page](https://account.hpcloud.com/cases/betarequest/msgaas). Service use is free of charge during the private beta period.
 
