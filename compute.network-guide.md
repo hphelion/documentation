@@ -7,9 +7,9 @@ categories: neutron
 tags: networking neutron
 
 ---
-# HP Cloud Networking Guide Overview
+# HP Cloud Networking Guide
 
-HP Cloud networking is a virtual networking service that provides network connectivity and addressing for HP Cloud compute devices. It is based on OpenStack Networking open source software. 
+HP Cloud Networking is a virtual networking service that provides network connectivity and addressing for HP Cloud compute devices. It is based on OpenStack Networking open source software. 
 
 This guide covers:
 
@@ -28,7 +28,7 @@ This guide covers:
 
 __Use as is or customize__ 
 
-You can use the default network to deploy HP Cloud compute service virtual servers, or modify the network configuration through the OpenStack Networking API.  Use the command line or the HP Cloud Services management console’s (MC) easy-to-use interface to customize.
+You can use the default network to deploy HP Cloud compute service virtual servers, or modify the network configuration through the OpenStack Networking API.  Use the command line or the HP Cloud management console’s (MC) easy-to-use interface to customize.
  
 HP Cloud Networking expands networking capabilities, allowing you to perform many tasks, including:
 
@@ -64,7 +64,7 @@ __Subnet__ – Contains IP address blocks that assign IP addresses to virtual se
 * 45 Floating IP addresses
 * 1 Router
 * 10 Security Groups
-* 20 Security Group Rules
+* 50 Security Group Rules
 
 
 ##Functionality and Features## {#FunctionalityandFeatures} 
