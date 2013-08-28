@@ -28,7 +28,7 @@ This guide covers:
 
 __Use as is or customize__ 
 
-You can use the default network to deploy HP Cloud compute virtual servers, or modify the network configuration through the OpenStack Networking API.  Use the command line or the HP Cloud management console’s (MC) easy-to-use interface to customize.
+You can use the default network to deploy HP Cloud compute virtual servers, or modify the network configuration through the OpenStack Networking API.  Use the command line or the HP Cloud management console's (MC) easy-to-use interface to customize.
  
 HP Cloud Networking expands networking capabilities, allowing you to perform many tasks, including:
 
@@ -43,7 +43,7 @@ HP Cloud Networking expands networking capabilities, allowing you to perform man
 
 __Floating IP Addresses__: On-demand, public IP addresses on a network. With HP Cloud, you can allocate several floating IP addresses and assign them to virtual servers. 
 
-__Network__: Allows you to define network connectivity and addressing in the Cloud, providing “networking as a service” between interface devices managed by other HP Cloud Services, such as compute. 
+__Network__: Allows you to define network connectivity and addressing in the Cloud, providing "networking as a service" between interface devices managed by other HP Cloud Services, such as compute. 
 
 __Port__: A connection point for attaching a single device, such as a virtual server's NIC, to a virtual network.  The port describes the associated network configuration, such as the MAC and IP addresses to be used by the attached device.
 
