@@ -12,7 +12,7 @@ This page guides you through the steps needed to perform a migration from versio
 * [Migrating ephemeral instances](#Ephermeral)
 * [Migrating persistent instances](#Persistent)
 * [Key pair migration](#KeyPairs)
-* [Security group migration](#SecurityGroups)
+* [Security group creation](#SecurityGroups)
 * [Additional migration information](#Additional)
 * [For further information](#MoreInfo)
 
@@ -33,12 +33,13 @@ For each instance image, you need to determine if you want to move a snapshot of
 
 TBD
 
-For information on persistent instance migration while performing a support services assisted migration, please see the [snapshots](/migration-details/) section of the [migration details](/migration-details/) page. 
-
 
 ##Migrating persistent instances## {#Persistent}
 
 TBD
+
+For information on persistent instance migration while performing a support services assisted migration, please see the [snapshots](/migration-details/) section of the [migration details](/migration-details/) page. 
+
 
 ###Block volume migration## {#BlockVolumes}
 
@@ -56,7 +57,7 @@ The process for migrating key pairs varies according to your platform.  Check ou
 * [Linux Users](https://community.hpcloud.com/article/migrating-or-transferring-your-key-pairs#keylinux)
 
 
-##Security group migration## {#SecurityGroups}
+##Security group creation## {#SecurityGroups}
 
 To create a new security group, follow these steps:
 
@@ -80,4 +81,8 @@ For more information on migrating your services, as well as general information 
 * The [version overview](/version-overview/) provides a look at the different software versions available
 * The [technical support knowledge base](https://community.hpcloud.com)
 * [UNIX command-line interface migration information](/cli/unix/articles/migration/)
-* If you need to perform an assisted migration, with the aid of our Support organization, please read through the [Migration Details](/migration-details/) page, and contact our Support Center at 1-855-61CLOUD (1-855-612-5683) in the U.S. or +1-678-745-9010 internationally.
+* If you need to perform an assisted migration with the aid of our Support organization, please read through the [Migration Details](/migration-details/) page, and [contact our Support team](https://www.hpcloud.com/contact_us):
+    - [live chat from hpcloud.com](https://account.hpcloud.com/cases#support_chat)
+    - [open a support case](https://account.hpcloud.com/cases)
+    - [email support@hpcloud.com](mailto:support@hpcloud.com)
+    - call at 1-855-61CLOUD (1-855-612-5683) in the U.S. or +1-678-745-9010 internationally.
