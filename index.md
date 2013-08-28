@@ -18,17 +18,17 @@ HP Cloud consists of the following publicly-available services:
 * [Content Delivery Network (CDN)](/cdn/) - A content delivery network hosted by HP
 * [Domain Name Service (DNS)](/dns/) - A managed domain name service featuring anycast routing hosted by HP
 
-The following services are now in private beta; follow the links to sign up and begin trying them out!
+The following HP Cloud services are now in private beta; follow the links to sign up and begin trying them out!
 
-* [Relational Database (RDB) for MySQL](/dbaas/) - An OpenStack DBaaS implementation hosted by HP.<br>
+* [Relational Database](/dbaas/) - An OpenStack DBaaS implementation hosted by HP.<br>
   **Note**: This service requires activation while in private beta; please [request access on our sign-up page](https://account.hpcloud.com/cases/betarequest/dbaas).  Service use is free of charge during the private beta period.
-* [Load Balancer as a Service (LBaaS)](/lbaas/) -  A managed service enabling automatic traffic routing to multiple back end servers hosted by HP.<br>
+* [Load Balancer](/lbaas/) -  A managed service enabling automatic traffic routing to multiple back end servers hosted by HP.<br>
   **Note**: This service requires activation while in private beta; please [request access on our sign-up page](https://account.hpcloud.com/cases/betarequest/lbaas).  Service use is free of charge during the private beta period.
-* [Monitoring as a Service (MaaS)](/maas/): A managed monitoring service facilitating the monitoring of health and other metrics for the resources in HP Cloud.<br>
+* [Monitoring](/maas/): A managed monitoring service facilitating the monitoring of health and other metrics for the resources in HP Cloud.<br>
   **Note**: This service requires activation while in private beta; please [request access on our sign-up page](https://account.hpcloud.com/cases/betarequest/maas). Service use is free of charge during the private beta period.
 * [Application Platform as a Service (aPaaS)](/apaas/) - An application platform for development, deployment, and management of cloud applications hosted by HP.<br>
-  **Note**: This service requires activation while in private beta; please [request access on our sign-up page](http://go.hpcloud.com/PaaS-private-beta-signup).  Service use is free of charge during the private beta period.
-* [Messaging as a Service (MSGaaS)](/msgaas/): API for the HP Cloud messaging service; provides you with a standards-based, inter-application asynchronous message queuing system with guaranteed first in, first out (FIFO) message delivery in the HP Cloud.<br>
+  **Note**: This service requires activation while in private beta; please [request access on our sign-up page](https://apaas.hpcloud.com/shared/free-private-beta/signup).  Service use is free of charge during the private beta period.
+* [Messaging](/msgaas/): API for the HP Cloud messaging service; provides you with a standards-based, inter-application asynchronous message queuing system with guaranteed first in, first out (FIFO) message delivery in the HP Cloud.<br>
   **Note**: This service requires activation while in private beta; please [request access on our sign-up page](https://account.hpcloud.com/cases/betarequest/msgaas). Service use is free of charge during the private beta period.
 
 For detailed REST API information, dig into those links above.  In order to interact with the services, you'll need [your API Keys](https://account.hpcloud.com/account/api_keys).
