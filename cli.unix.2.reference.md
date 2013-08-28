@@ -1294,7 +1294,7 @@ Create a DNS record for domain `mydomain.com` and `A` record for `www.mydomain.c
 Remove a DNS record.
 
 ###Syntax
-`hpcloud dns:records:remove <domain> <name ...>`
+`hpcloud dns:records:remove <domain> <id ...>`
 
 ###Options
 **-z, --availability-zone=AVAILABILITY_ZONE**
@@ -1312,7 +1312,7 @@ Remove a DNS record.
 
 
 ###Description
-Remove a DNS record to the specified domain.  Records may be specified by name or ID.
+Remove a DNS record to the specified domain.  Records may be specified by identifier.
 
 ###Examples
 Remove record `www.mydomain.com` from the domain `mydomain.com`.:
@@ -1324,7 +1324,7 @@ Remove record `www.mydomain.com` from the domain `mydomain.com`.:
 Update a DNS record.
 
 ###Syntax
-`hpcloud dns:records:update <domain> <name> <type> <data>`
+`hpcloud dns:records:update <domain> <id> <type> <data>`
 
 ###Options
 **-z, --availability-zone=AVAILABILITY_ZONE**
@@ -1342,7 +1342,7 @@ Update a DNS record.
 
 
 ###Description
-Update a DNS record to the specified domain with the given name, type and data.
+Update a DNS record to the specified domain with the given id, type and data.
 
 ###Examples
 Update a DNS domain `mydomain.com` record `A` for `www.mydomain.com` pointing to address 10.0.0.1:
