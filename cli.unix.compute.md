@@ -19,7 +19,7 @@ This page gives you a few examples of how to perform various compute tasks using
 * [Security Group Rule Commands](#SecurityGroupRuleCommands)
 * [Addresses or Floating IP Commands](#AddressesorFloatingIPCommands)
 
-You can also find some good how-tos for the compute service on the [Using the Compute Service](compute/using) page.
+You can also find some good how-tos for the compute service on the [Using the Compute Service](/compute/using/) page.
 
 Remember that you can get detailed help for any command or task with the following command:
 
