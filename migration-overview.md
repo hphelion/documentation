@@ -4,16 +4,15 @@ title: "HP Cloud Services: Overview of Migrating from Version 12.12 to 13.5"
 permalink: /migration-overview/
 
 ---
-# HP Cloud Services 12.12 to 13.5 self-migration overview
+# HP Cloud Services 12.12 to 13.5 transition overview
 
-This page guides you through the steps needed to perform a migration from version 12.12 to 13.5 of the HP Cloud software services.  This overview covers the following topics and tasks:
+This page provides you with information to help you transition from version 12.12 to 13.5 of the HP Cloud software services.  This overview covers the following topics and tasks:
 
 * [Before you begin](#BeforeYouBegin)
-* [Migrating ephemeral instances](#Ephermeral)
-* [Migrating persistent instances](#Persistent)
-* [Key pair migration](#KeyPairs)
+* [Transitioning data for ephemeral instances](#Ephermeral)
+* [Transitioning data for persistent instances](#Persistent)
+* [Key pairs](#KeyPairs)
 * [Security group creation](#SecurityGroups)
-* [Additional migration information](#Additional)
 * [For further information](#MoreInfo)
 
 **Note**:  Use this overview in conjunction with the information on the [migration details](/migration-details/) page if you are planning on performing a customer support-assisted migration.  
@@ -29,28 +28,37 @@ Before you migrate to version 13.5, we recommend:
 For each instance image, you need to determine if you want to move a snapshot of the root partition of that instance to version 13.5, or if you prefer to just create a new instance.
 
 
-##Migrating ephemeral instances## {#Ephemeral}
+##Transitioning data for ephemeral instances## {#Ephemeral}
 
-TBD
+To transition the data for an ephemeral instance:
+
+1. Create a 13.5 instance using either the command-line interface (CLI) for [UNIX](/cli/unix/compute/) or [the Windows PowerShell](/cli/windows/compute/), or the [management console](/mc/compute/) interface
+2. Copy the data from your version 12.12 instance to your new 13.5 instance, using the tool transfer program of your choice (for example, SCP or FTP)
 
 
-##Migrating persistent instances## {#Persistent}
+##Transitioning data persistent instances## {#Persistent}
 
-TBD
+To transition the data for a persistent instance:
+
+1. Create a 13.5 instance using either the command-line interface (CLI) for [UNIX](/cli/unix/compute/) or [the Windows PowerShell](/cli/windows/compute/), or the [management console](/mc/compute/) interface
+2. Copy the data from your version 12.12 instance to your new 13.5 instance, using the tool transfer program of your choice (for example, SCP or FTP)
 
 For information on persistent instance migration while performing a support services assisted migration, please see the [snapshots](/migration-details/) section of the [migration details](/migration-details/) page. 
 
 
-###Block volume migration## {#BlockVolumes}
+###Block volumes## {#BlockVolumes}
 
-TBD
+To transition the data for block volumes:
+
+1. Create a 13.5 block volume using either the command-line interface (CLI) for [UNIX](/cli/unix/block-storage/) or [the Windows PowerShell](/cli/windows/block-storage/), or the [management console](/mc/) interface
+2. Copy the data from your version 12.12 instance to your new 13.5 instance, using the tool transfer program of your choice (for example, SCP or FTP)
 
 For information on persistent instance migration, snapshots, copying, and moving block volumes, please see the appropriate section of the [migration details](/migration-details/) page.  
 
 
-##Key pair migration## {#KeyPairs}
+##Key pairs## {#KeyPairs}
 
-The process for migrating key pairs varies according to your platform.  Check out our Knowledge Base article [Managing or Transferring Your Key Pairs](https://community.hpcloud.com/article/migrating-or-transferring-your-key-pairs) to see what way works best for you:
+The process for transitioning key pairs varies according to your platform.  Check out our Knowledge Base article [Managing or Transferring Your Key Pairs](https://community.hpcloud.com/article/migrating-or-transferring-your-key-pairs) to see what way works best for you:
 
 * [via the API](https://community.hpcloud.com/article/migrating-or-transferring-your-key-pairs#keyapi)
 * [Windows Users](https://community.hpcloud.com/article/migrating-or-transferring-your-key-pairs#keywin)
@@ -62,15 +70,9 @@ The process for migrating key pairs varies according to your platform.  Check ou
 To create a new security group, follow these steps:
 
 1. Log in to your account and select the availability zone (AZ) in US West for your new instance.
-
 2. From the menu bar, choose `Security Groups`, then click `Create new security group`, and add rules as needed.
 
 For more details and options, read our Knowledge Base article [Managing Your Security Groups](https://community.hpcloud.com/article/managing-your-security-groups-135).
-
-
-##Additional migration information## {#Additional}
-
-TBD
 
 
 ## For further information ## {#MoreInfo}
@@ -79,6 +81,7 @@ For more information on migrating your services, as well as general information 
 
 * Our [release notes for version 13.5](/release-notes/) of the HP Cloud software
 * The [version overview](/version-overview/) provides a look at the different software versions available
+* The [version 13.5 API specs](/api/13/)
 * The [technical support knowledge base](https://community.hpcloud.com)
 * [UNIX command-line interface migration information](/cli/unix/articles/migration/)
 * If you need to perform an assisted migration with the aid of our Support organization, please read through the [Migration Details](/migration-details/) page, and [contact our Support team](https://www.hpcloud.com/contact_us):
