@@ -7,7 +7,7 @@ categories: neutron
 tags: networking neutron
 
 ---
-# HP Cloud Networking Guide
+# HP Cloud Networking Overview
 
 HP Cloud Networking is a virtual networking service that provides network connectivity and addressing for HP Cloud compute devices. It is based on OpenStack Networking open source software. 
 
@@ -19,7 +19,7 @@ This guide covers:
 * [Known Issues and Workarounds](#KnownIssuesandWorkarounds)
 
 
-#####A default configuration comes with HP Cloud compute service activation and includes:
+#####A default configuration comes with HP Cloud compute activation and includes:
 
 * A network 
 * A subnet
@@ -28,7 +28,7 @@ This guide covers:
 
 __Use as is or customize__ 
 
-You can use the default network to deploy HP Cloud compute service virtual servers, or modify the network configuration through the OpenStack Networking API.  Use the command line or the HP Cloud management console’s (MC) easy-to-use interface to customize.
+You can use the default network to deploy HP Cloud compute virtual servers, or modify the network configuration through the OpenStack Networking API.  Use the command line or the HP Cloud management console’s (MC) easy-to-use interface to customize.
  
 HP Cloud Networking expands networking capabilities, allowing you to perform many tasks, including:
 
@@ -49,9 +49,9 @@ __Port__: A connection point for attaching a single device, such as a virtual se
 
 __Router__: A device that forwards data packets along networks. 
 
-__Security Groups and Security Group Rules__: Security groups and security group rules allow you to specify the type of traffic and direction (ingress/egress) that is allowed to pass through a port. A security group is a container for security group rules.
+__Security Groups and Security Group Rules__: Security groups and security group rules allow you to specify the type of traffic and direction (inbound/outbound) that is allowed to pass through a port. A security group is a container for security group rules.
 
-When a port is created in HP Cloud Networking it is associated with a security group. If a security group is not specified the port is associated with a default security group. The default group drops all ingress traffic and allows all egress traffic. You can add rules to this group to modify behavior. 
+When a port is created in HP Cloud Networking it is associated with a security group. If a security group is not specified the port is associated with a default security group. Security group default rules allow inbound traffic from the same subnet and all outbound traffic. You can add rules to this group to modify behavior. 
 
 __Subnet__: Contains IP address blocks that assign IP addresses to virtual servers. In addition, a subnet can have a gateway, a list of DNS name servers, and host routes. Information provided by DHCP is pushed to servers with interfaces associated with the subnet.
 
@@ -88,7 +88,7 @@ __HP Cloud Networking Features__
   
 * A virtual server to which you assign a floating IP address has access to and from the Internet.
 
-__NOTE: The virtual server can send outbound traffic to the Internet. A virtual server can also receive incoming information in response to  previously initiated outbound communications without a floating IP.To receive other inbound traffic, you must assign a floating IP address to the server.__
+NOTE: The virtual server can send outbound traffic to the Internet. A virtual server can also receive incoming information in response to  previously initiated outbound communications without a floating IP.To receive other inbound traffic, you must assign a floating IP address to the server.
 
 * You can configure your virtual server as a Virtual Private Network (VPN) gateway to your networks.
 
@@ -97,9 +97,9 @@ __NOTE: The virtual server can send outbound traffic to the Internet. A virtual 
 	- All inbound traffic from the same subnet 
 	- All outbound traffic
 	- Inbound ssh (TCP Port 22) from any source
-	- Inbound ICMP (i.e., ping) from any source 
+	- Inbound ping (ICMP) from any source 
 
-**NOTE: HP Cloud Networking supports adding a rule to all protocols. If you accidentally delete the "default all egress traffic rule," you can add the rule back using the MC.**
+NOTE: HP Cloud Networking supports adding a rule to all protocols. If you accidentally delete the "default all egress traffic rule," you can add the rule back using the MC.
 
 __Regions and Availability Zones__
 
@@ -115,7 +115,7 @@ HP Cloud Networking regional capabilities include:
 
 ##Customizing your Configuration## {#CustomizingyourConfiguration}
 
-Optionally modify the default network and create additional networks to exact specifications through the OpenStack Networking API. Customize the configuration either on the command line or through the HP Cloud Services MC to: 
+Optionally, modify the default network and create additional networks to exact specifications through the OpenStack Networking API. Customize the configuration either on the command line or through the HP Cloud Services MC to: 
  
 * Define and configure your own private virtual networks
 
@@ -142,7 +142,7 @@ __Use the command line to__:
 
 Setup networking parameters from the command line on Unix, MacOS, or Windows.
  
-The Unix Command Line Interface is a tool which allows Unix or Mac users to manage their HP Cloud Services from the command line or through automated scripts. You do not need to understand the underlying REST API or XML document format to use the Unix CLI. 
+The Unix Command Line Interface is a tool which allows Unix or Mac users to manage HP Cloud from the command line or through automated scripts. You do not need to understand the underlying REST API or XML document format to use the Unix CLI. 
 
 [Click here](https://docs.hpcloud.com/cli/) for more information on using the command line, including:
 
@@ -174,7 +174,7 @@ If you allow compute to create the ports instead of going through Networking, co
  
 **Workarounds**
 
-**!!! Important: HP does not recommend mixing compute and OpenStack Networking API calls for network configuration. Using the OpenStack Networking API behind HP Cloud Networking demands a high level of expertise.**
+**!!! Important: HP does not recommend mixing compute and OpenStack Networking API calls for network configuration.**
 
 
 1. Compute can perform all floating IP operations. If those are the only operations you are going to perform, the   simplest workaround is to perform all floating IP manipulation through compute so it always reports the correct network configuration information for servers.
@@ -200,6 +200,6 @@ If you configure security groups via Networking, compute may not display the ful
 
 **Workaround**
 
-1. Use **either** the compute **or** networking service to configure security groups, but do not use them together.   Using the OpenStack Networking API provides additional functionality in the form of egress rules, which the compute API cannot display. 
+1. Use **either** the compute **or** networking service to configure security groups, but do not use both.   Using the OpenStack Networking API provides additional functionality in the form of outbound rules, which the compute API cannot display. 
 
-**Note: Security Groups are a feature of  HP Cloud Networking and are fully supported by the Networking API. A limited set of Security Group features are also accessible via the compute API for convenience and backwards compatibility. To directly access the API's broader functionality, HP highly recommends working only through the OpenStack Networking API and does not recommend mixing compute and OpenStack Networking API calls for security group configuration. If using the Networking API, notify all users likely to display security group configuration.**
+Note: Security Groups are a feature of  HP Cloud Networking and are fully supported by the Networking API. A limited set of Security Group features are also accessible via the compute API for convenience and backwards compatibility. To directly access the API's broader functionality, HP recommends working only through the OpenStack Networking API and does not recommend mixing compute and OpenStack Networking API calls for security group configuration.
