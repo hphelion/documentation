@@ -235,7 +235,7 @@ To get a location for an existing object:
 
 ##Temporary URL Command## {#TmpurlCommand}
 
-Create temporary URLS for the given objects. Creating a temporary URL is a great way to share an object for a specified period of time without opening up permissions to everyone. Only users with access to the URL are able to access the file. You can specify the time period in seconds (s), hours (h), or days (d). If you do not specify a time period, the default is two days. Optionally, you can pass an availability zone to the command.  
+Create temporary URLS for the given objects. Creating a temporary URL is a great way to share an object for a specified period of time without opening up permissions to everyone. Only users with access to the URL are able to access the file. You can specify the time period in seconds (s), hours (h), or days (d). If you do not specify a time period, the default is two days.
 
 Create a temporary URL for an existing object:
 
