@@ -18,7 +18,6 @@ This page discusses how to set up an accounts and using the HP Cloud Unix Comman
 * [Remove an Account](#RemoveAccount)
 * [Specifying an Account for a Single Operation](#DefiningAccountsPerCommand)
 * [Specifying an Availability Zone for a Single Operation](#DefiningAZsPerCommand)
-* [Full List of Current Availability Zones](#ListofAZs)
 
 Remember that you can get detailed help for any command/task with the following command:
 
@@ -38,7 +37,7 @@ Executing the `account:edit` command with no arguments prompts the user in the s
 
 When you use the `account:edit` command and you specify the `account_name` and `name_value_pairs`, the command will run without prompts.  For example, you wanted to change the storage availability zone for the `hp` account:
 
-   $ hpcloud account:edit hp storage_availability_zone=region-b.geo-1
+   $ hpcloud account:edit hp 'object storage=region-b.geo-1'
 
 ## List Accounts ## {#ListAccounts}
 To view all your current accounts, use the [`account:list`](/cli/unix/2/reference#account) command:
@@ -57,11 +56,11 @@ To view a specific account&#039;s credentials, use the [`account <account_name>`
       secret_key: EueAi5RxxxxxxxxxUXAotdYDluP
       auth_uri: https://region-a.geo-1.identity.hpcloudsvc.com:35357/v2.0/
       tenant_id: '6642xxxxxxxx05'
-    zones:
-      compute_availability_zone: az-1.region-a.geo-1
-      storage_availability_zone: region-b.geo-1
-      cdn_availability_zone: region-a.geo-1
-      block_availability_zone: az-1.region-a.geo-1
+    :regions: 
+      :"object storage": region-c.geo-1
+      :cdn: region-a.geo-1
+      :compute: az-1.region-a.geo-1
+      :"block storage": az-1.region-a.geo-1
     options: {}
 
 ### Copy an Account ### {#CopyAccount}
@@ -99,28 +98,10 @@ To show the servers on `account2` rather than the default:
 Most commands allow you to use the `-a` option; see the [UNIX CLI Reference page](/cli/unix/2/reference) to determine if a particular command supports the option.
 
 ## Specifying an Availability Zone for a Single Operation ## {#DefiningAZsPerCommand}
-Availability Zone can be specified for a single command line operation and does not affect your account’s base credentials. You can use this switch to quickly perform an operation in another availability zone not specified in your profile. To run a command on a different availability zone, use the `-z` option.  You can see [the full list of current availability zones](#ListofAZs) down at the bottom of this page.
+Availability Zone can be specified for a single command line operation and does not affect your account’s base credentials. You can use this switch to quickly perform an operation in another availability zone not specified in your profile. To run a command on a different availability zone, use the `-z` option.  You can see the regions you are activated in with the `hpcloud account:catalog` command.
 
-To view servers using the `az-2.region-a.geo-1` availability zone:
+To view servers using the `region-b.geo-1` availability zone:
 
-   $ hpcloud servers -z az-2.region-a.geo-1
+   $ hpcloud servers -z region-b.geo-1
    
 Most commands allow you to use the `-z` option; see the [UNIX CLI Reference page](/cli/unix/2/reference) to determine if a particular command supports the option.
-
-## Full List of Current Availability Zones ## {#ListofAZs}
-The current usable availability zones for the compute service (`compute_availability_zone`):
-
-* `az-1.region-a.geo-1`
-* `az-2.region-a.geo-1`
-* `az-3.region-a.geo-1`
-
-The current usable availability zones for the object storage service (`storage_availability_zone`):
-
-* `region-a.geo-1`
-* `region-b.geo-1`
-
-The current usable availability zones for the block storage service (`block_availability_zone`):
-
-* `az-1.region-a.geo-1`
-* `az-2.region-a.geo-1`
-* `az-3.region-a.geo-1`
