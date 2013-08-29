@@ -37,7 +37,7 @@ To connect to the HP Cloud Block Storage Service, follow these steps:
 
 3. Establish a connection to the HP Cloud BlockStorage service
 
-        conn = Fog::HP::BlockStorage.new(
+        conn = Fog::HP::BlockStorageV2.new(
                :hp_access_key  => "<your_ACCESS_KEY>",
                :hp_secret_key => "<your_SECRET_KEY>",
                :hp_auth_uri   => "<IDENTITY_ENDPOINT_URL>",
@@ -93,26 +93,26 @@ This section discusses the volume operations you can perform using the model abs
 
 5. Create a new volume
 
-        new_volume = conn.volumes.create(
-               :name => "TestVolume",
+        new_volume = conn.create_volume(
+               :display_name => "TestVolume",
                :description => "My Test Volume",
                :size => 1)
         new_volume.id       # returns the id of the volume
         new_volume.name     # => "TestVolume"
         new_volume.status    # returns the status of the volume e.g. creating, available
  
-6. Create a new volume from an existing snapshot
+6. Create a new volume from an existing image
 
-        new_volume = conn.volumes.create(
-               :name => "TestVolume",
-               :description => "My Test Volume",
-               :snapshot_id => 1,
+        new_volume = conn.create_volume(
+               :display_name => "TestVolume",
+               :display_description => "My Test Volume",
+               :imageRef => 1,
                :size => 1)
         new_volume.id       # returns the id of the volume
         new_volume.snapshot_id       # returns the snapshot_id of the volume
         new_volume.name     # => "TestVolume"
         new_volume.status    # returns the status of the volume e.g. creating, available
-**Note**: The size of the volume you create from a snapshot is the same as that of the snapshot. The `:size` parameter has no effect in this case.
+**Note**: The size of the volume you create from an image is the same as that of the image. The `:size` parameter has no effect in this case.
 
 7. Create a new bootable volume from an suitable single-part image
 
@@ -139,7 +139,7 @@ This section discusses the volume operations you can perform using the model abs
 
 10. Delete an existing volume
 
-        volume = conn.volumes.get(volume_id)
+        volume = conn.delete_volume(volume_id)
         volume.destroy
         # => true
 
@@ -149,21 +149,21 @@ This section discusses the snapshot operations you can perform using the model a
 
 1. List all available snapshots for an account
 
-        snapshots = conn.snapshots
+        snapshots = conn.list_snapshots
         snapshots.size   # returns no. of snapshots
         # display snapshots in a tabular format
         conn.snapshots.table([:id, :name, :state, :created_at])
 
 2. Obtain the details of a particular snapshot
 
-        snapshot = conn.snapshots.get(snapshot_id)
+        snapshot = conn.list_snapshots_detail(snapshot_id)
         snapshot.name                       # returns name of the volume
         snapshot.created_at                   # returns the date the volume was created
         snapshot.status                        # returns the state of the volume e.g. available
 
 3. Create a new snapshot
 
-        new_snapshot = conn.snapshots.create(
+        new_snapshot = conn.create_snapshot(
                :name => "TestVolume",
                :description => "My Test Volume",
                :volume_id => 1)
@@ -174,10 +174,8 @@ This section discusses the snapshot operations you can perform using the model a
 
 4. Delete an existing snapshot
 
-        snapshot = conn.snapshots.get(snapshot_id)
-        snapshot.destroy
-        # => true
-
+        snapshot = conn.delete_snapshot(snapshot_id)
+        
 ##Using the Request Abstraction## {#RequestLayer}
 
 This section discusses the various operations you can perform using the request abstraction:
@@ -228,7 +226,7 @@ This section discusses the volume operations you can perform using the request a
         volume['size']                             # => 1
         volume['status']                          # returns the status of the volume e.g. creating, available
 
-6. Create a new volume from an existing snapshot
+6. Create a new volume from an existing image
 
         response = conn.create_volume("demo-vol", "demo-vol-desc", 1, {'snapshot_id' => 1})
         volume = response.body['volume']
