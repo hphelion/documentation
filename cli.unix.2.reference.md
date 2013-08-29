@@ -83,6 +83,9 @@ Create or edit your account credentials.
 `hpcloud account:edit <account_name> [name_value_pair ...]`
 
 ###Options
+**--userpass**
+: Use username/password authentication instead of authentication keys
+
 **-n, --no-validate**
 : Don't verify account settings during edit
 
@@ -96,7 +99,7 @@ Create or edit your account credentials. If you do not specify an account name o
 
 You  need your Access Key Id, Secret Key and Project (aka Tenant) Id from the HP Cloud web site to set up your account. Optionally, you can specify your own endpoint to authorize your identity, but in most cases we recommend you use the default.
 
-Availability zones typically have the format `az-1.region-a.geo-1` or `region-a.geo-1`, depending on the service.  See your account API keys page to see your list of activated availability zones: https://console.hpcloud.com/account/api_keys
+Availability zones typically have the format `az-1.region-a.geo-1` or `region-a.geo-1`, depending on the service.  See your account API keys page to see your list of activated availability zones: https://console.hpcloud.com/account/api_keys or use the `account:catalog` command to print out your service catalog.
 
 You can re-run this command at any time to modify your settings.
 
@@ -104,11 +107,9 @@ The interactive mode prompts you for the following values:
 
 * Access Key Id
 * Secret Key
-* Identify (Auth) Uri
 * Project (aka Tenant) Id
-* Compute zone
-* Storage zone
-* Block zone
+* Identify (Auth) Uri
+* Various zones and regions you have activated
 
 The command line mode allows you to set the following values:
 
@@ -116,14 +117,15 @@ The command line mode allows you to set the following values:
 * secret_key
 * auth_uri
 * tenant_id
-* compute_availability_zone
-* storage_availability_zone
-* cdn_availability_zone
-* dns_availability_zone
-* lb_availability_zone
-* db_availability_zone
-* network_availability_zone
-* block_availability_zone
+* userpass
+* compute
+* object storage
+* cdn
+* dns
+* lbaas
+* db
+* network
+* block storage
 * connect_timeout
 * read_timeout
 * write_timeout
@@ -178,6 +180,9 @@ Create or edit your account credentials.
 `hpcloud account:edit <account_name> [name_value_pair ...]`
 
 ###Options
+**--userpass**
+: Use username/password authentication instead of authentication keys
+
 **-n, --no-validate**
 : Don't verify account settings during edit
 
@@ -191,7 +196,7 @@ Create or edit your account credentials. If you do not specify an account name o
 
 You  need your Access Key Id, Secret Key and Project (aka Tenant) Id from the HP Cloud web site to set up your account. Optionally, you can specify your own endpoint to authorize your identity, but in most cases we recommend you use the default.
 
-Availability zones typically have the format `az-1.region-a.geo-1` or `region-a.geo-1`, depending on the service.  See your account API keys page to see your list of activated availability zones: https://console.hpcloud.com/account/api_keys
+Availability zones typically have the format `az-1.region-a.geo-1` or `region-a.geo-1`, depending on the service.  See your account API keys page to see your list of activated availability zones: https://console.hpcloud.com/account/api_keys or use the `account:catalog` command to print out your service catalog.
 
 You can re-run this command at any time to modify your settings.
 
@@ -199,11 +204,9 @@ The interactive mode prompts you for the following values:
 
 * Access Key Id
 * Secret Key
-* Identify (Auth) Uri
 * Project (aka Tenant) Id
-* Compute zone
-* Storage zone
-* Block zone
+* Identify (Auth) Uri
+* Various zones and regions you have activated
 
 The command line mode allows you to set the following values:
 
@@ -211,14 +214,15 @@ The command line mode allows you to set the following values:
 * secret_key
 * auth_uri
 * tenant_id
-* compute_availability_zone
-* storage_availability_zone
-* cdn_availability_zone
-* dns_availability_zone
-* lb_availability_zone
-* db_availability_zone
-* network_availability_zone
-* block_availability_zone
+* userpass
+* compute
+* object storage
+* cdn
+* dns
+* lbaas
+* db
+* network
+* block storage
 * connect_timeout
 * read_timeout
 * write_timeout
@@ -248,6 +252,42 @@ Create a Rackspace account for migration:
 
 ###Aliases
 `account:add, account:setup, account:update`
+
+##account:tenants## {#account:tenants}
+List the tenants.
+
+###Syntax
+`hpcloud account:tenants`
+
+###Options
+**-c, --columns=COLUMNS**
+: Comma separated list of columns in report.
+
+**-d, --separator=SEPARATOR**
+: Use the specified value as the report separator.
+
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
+
+###Description
+Lists all the tenants associated with this account.
+
+###Examples
+List all the tenants associated with the account:
+
+    hpcloud account:tenants
+
 
 ##account:use## {#account:use}
 Set the named account to the default account.
@@ -304,6 +344,9 @@ View the ACL for an object or container.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -338,6 +381,9 @@ Grant the specified permissions.
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -376,6 +422,9 @@ Revoke the specified permissions.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -412,6 +461,9 @@ Display list of available addresses.
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -462,6 +514,9 @@ Allocate a new public IP address.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -495,6 +550,9 @@ Associate a public IP address to a port.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -521,6 +579,9 @@ Disassociate any port associated to the public IP address.
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -552,6 +613,9 @@ Remove or release a public IP address.
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -588,6 +652,9 @@ List available containers on the CDN.
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -626,6 +693,9 @@ Add containers to the CDN.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -656,6 +726,9 @@ Get the value of an attribute of a CDN container.
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -705,6 +778,9 @@ Get the location of a container on the CDN.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -738,6 +814,9 @@ Remove containers from the CDN.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -770,6 +849,9 @@ Set attributes on a CDN container.
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -873,6 +955,9 @@ Add a container.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -910,6 +995,9 @@ Remove a containers.
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -952,13 +1040,16 @@ Allow container synchronization.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
 
 
 ###Description
-Allow container synchronization using the specified key.  If you are creating a destination for synchronization, only the key should be specified.  If you are creating a source for synchronization, specify a key and location.  The same key must be used in the source and destination.  It is possible have containers as both a source and destination.  List your synchronization information with the "hpcloud list --sync" command.
+Allow container synchronization using the specified key.  If you are creating a destination for synchronization, only the key should be specified.  If you are creating a source for synchronization, specify a key and location.  The same key must be used in the source and destination.  It is possible to have containers as both a source and destination.  List your synchronization information with the "hpcloud list --sync" command.
 
 ###Examples
 Set up the container :atainer to be a destination for synchronization:
@@ -969,7 +1060,7 @@ Synchronize :btainer to remote container :atainer:
 
     hpcloud containers:sync :btainer keyo atainer
 
-Create a two way synchronization betwee :atainer and :btainer:
+Create a two way synchronization between :atainer and :btainer:
 
     hpcloud containers:sync :atainer keyo https://region-b.geo-1.objects.hpcloudsvc.com:443/v1/96XXXXXX/btainer
 
@@ -995,6 +1086,9 @@ Copy files from one resource to another.
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -1060,6 +1154,9 @@ List the DNS domains.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -1102,6 +1199,9 @@ Add a DNS domain.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -1139,6 +1239,9 @@ List the records associated with the DNS domain.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -1170,6 +1273,9 @@ Add a DNS record.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -1181,14 +1287,14 @@ Add a DNS record to the specified domain with the given name, type and data.
 ###Examples
 Create a DNS record for domain `mydomain.com` and `A` record for `www.mydomain.com` pointing to address 10.0.0.1:
 
-    hpcloud dns:records:add mydomain.com. www.mydomain.com A 10.0.0.1
+    hpcloud dns:records:add mydomain.com. www.mydomain.com. A 10.0.0.1
 
 
 ##dns:records:remove## {#dns:records:remove}
 Remove a DNS record.
 
 ###Syntax
-`hpcloud dns:records:remove <domain> <name ...>`
+`hpcloud dns:records:remove <domain> <id ...>`
 
 ###Options
 **-z, --availability-zone=AVAILABILITY_ZONE**
@@ -1197,25 +1303,28 @@ Remove a DNS record.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
 
 
 ###Description
-Remove a DNS record to the specified domain.  Records may be specified by name or ID.
+Remove a DNS record to the specified domain.  Records may be specified by identifier.
 
 ###Examples
 Remove record `www.mydomain.com` from the domain `mydomain.com`.:
 
-    hpcloud dns:records:remove mydomain.com. www.mydomain.com
+    hpcloud dns:records:remove mydomain.com. www.mydomain.com.
 
 
 ##dns:records:update## {#dns:records:update}
 Update a DNS record.
 
 ###Syntax
-`hpcloud dns:records:update <domain> <name> <type> <data>`
+`hpcloud dns:records:update <domain> <id> <type> <data>`
 
 ###Options
 **-z, --availability-zone=AVAILABILITY_ZONE**
@@ -1224,18 +1333,21 @@ Update a DNS record.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
 
 
 ###Description
-Update a DNS record to the specified domain with the given name, type and data.
+Update a DNS record to the specified domain with the given id, type and data.
 
 ###Examples
 Update a DNS domain `mydomain.com` record `A` for `www.mydomain.com` pointing to address 10.0.0.1:
 
-    hpcloud dns:records:update mydomain.com. www.mydomain.com A 10.0.0.1
+    hpcloud dns:records:update mydomain.com. www.mydomain.com. A 10.0.0.1
 
 
 ##dns:remove## {#dns:remove}
@@ -1251,6 +1363,9 @@ Remove DNS domains (specified by name or ID).
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -1260,17 +1375,13 @@ Remove DNS domains (specified by name or ID).
 Remove DNS domains by specifying their names or ID. You may specify more than one DNS name or ID on a command line.  Optionally, you can specify an availability zone.
 
 ###Examples
-Delete the DNS domains `tome` and `treatise`:
+Delete the DNS domains `mydomain.com.` and `yourdomain.com.`:
 
-    hpcloud dns:remove tome treatise
+    hpcloud dns:remove mydomain.com. yourdomain.com.
 
-Delete the DNS domain with ID 998:
+Delete the DNS domain with ID f3f3a427:
 
-    hpcloud dns:remove 998
-
-Delete the DNS domain `my-dns` for availability zone `az-2.region-a.geo-1`:
-
-    hpcloud dns:remove my-dns -z az-2.region-a.geo-1
+    hpcloud dns:remove f3f3a427
 
 ###Aliases
 `dns:rm, dns:delete, dns:del`
@@ -1293,6 +1404,9 @@ List the servers associated with the DNS domain.
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -1331,6 +1445,9 @@ Update a DNS domain.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -1342,11 +1459,11 @@ Update a DNS domain with the specified name.  Optionally, you can specify an ema
 ###Examples
 Update DNS domain `mydomain.com` with email address `email@example.com`:
 
-    hpcloud dns:update mydomain.com. email@example.com
+    hpcloud dns:update mydomain.com. -e email@example.com
 
 Update DNS domain `mydomain.com` with email address `email@example.com` and TTL 7200:
 
-    hpcloud dns:update mydomain.com. email@xample.com -t 7200
+    hpcloud dns:update mydomain.com. -e email@xample.com -t 7200
 
 
 ##flavors## {#flavors}
@@ -1367,6 +1484,9 @@ List available flavors.
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -1404,6 +1524,9 @@ Fetch objects to your local directory.
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -1449,6 +1572,9 @@ List the available images in your compute account.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -1462,9 +1588,9 @@ List the images:
 
     hpcloud images
 
-List image '1239':
+List image '701be39b':
 
-    hpcloud images 1239
+    hpcloud images 701be39b
 
 List images for availability zone `az-2.region-a.geo-1`:
 
@@ -1486,6 +1612,9 @@ Add an image from an existing server.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -1502,9 +1631,9 @@ Create the new image 'my_image' from the existing server named 'my_server':
 
     hpcloud images:add my_image my_server
 
-Create the new image 'my_image' from the existing server 'my_server' with metadata:
+Create the new image 'my_image' from the existing server '701be39b' with metadata:
 
-    hpcloud images:add my_image my_server -m this=that
+    hpcloud images:add my_image 701be39b -m this=that
 
 
 ##images:metadata## {#images:metadata}
@@ -1525,6 +1654,9 @@ List the metadata for an image.
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -1559,6 +1691,9 @@ Add metadata to an image.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -1588,6 +1723,9 @@ Remove metadata from an image.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -1616,6 +1754,9 @@ Remove images by name or identifier.
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -1660,6 +1801,9 @@ List the available keypairs.
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -1709,6 +1853,9 @@ add a key pair
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -1755,6 +1902,9 @@ Import a key pair.
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -1857,6 +2007,9 @@ Display the public keys of a key pair.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -1887,6 +2040,9 @@ Remove a key pair (by name).
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -1931,6 +2087,9 @@ List the available load balancers.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -1974,6 +2133,9 @@ Add a load balancer.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -2006,6 +2168,9 @@ List the available load balancer algorithms.
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -2040,6 +2205,9 @@ List the available load balancer limits.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -2073,6 +2241,9 @@ List the nodes associated with the specified load balancer.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -2102,6 +2273,9 @@ Add a node to the load balancer.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -2128,6 +2302,9 @@ Remove the specified load balancer nodes.
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -2157,6 +2334,9 @@ Update a node in a load balancer.
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -2195,6 +2375,9 @@ List the available load balancer protocols.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -2221,6 +2404,9 @@ Remove load balancer (specified by name or ID).
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -2254,6 +2440,9 @@ Update a node in a load balancer.
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -2292,6 +2481,9 @@ List the available load balancer versions.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -2324,6 +2516,9 @@ List the virtual IPs for the specified load balancer.
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -2363,6 +2558,9 @@ List containers or container contents.
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -2409,6 +2607,9 @@ Display the URIs for the specified resources.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -2450,6 +2651,9 @@ Get the metadata value of a container or object.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -2484,6 +2688,9 @@ Set attributes on a object.
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -2547,6 +2754,9 @@ Migrate files from a provider described by the source account.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -2577,6 +2787,9 @@ Move objects inside or between containers.
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -2625,6 +2838,9 @@ List the available networks.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -2638,9 +2854,9 @@ List all networks:
 
     hpcloud networks
 
-List the details for networks with id `1`:
+List the details for networks with id `12857174`:
 
-    hpcloud networks 1
+    hpcloud networks 12857174
 
 List the details for networks named `testo`:
 
@@ -2666,6 +2882,9 @@ Add a network.
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -2697,6 +2916,9 @@ Remove a network (specified by name or ID).
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -2736,6 +2958,9 @@ Update a network.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -2749,9 +2974,9 @@ Updated 'netty' to up:
 
     hpcloud networks:update netty -u
 
-Update 'netty' admin state down:
+Update network '701be39b' admin state down:
 
-    hpcloud networks:update netty --no-adminstateup
+    hpcloud networks:update 701be39b --no-adminstateup
 
 
 ##ports## {#ports}
@@ -2773,6 +2998,9 @@ List the available ports.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -2786,9 +3014,9 @@ List all ports:
 
     hpcloud ports
 
-List the details for ports with id `1`:
+List the details for ports with id `701be39b`:
 
-    hpcloud ports 1
+    hpcloud ports 701be39b
 
 List the details for ports named `testo`:
 
@@ -2830,6 +3058,9 @@ Add a port.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -2845,7 +3076,7 @@ Create a new port named 'porto':
 
 Create a new port named 'porto' associated with 'devvy' and 'ohnur' administratively up:
 
-    hpcloud ports:add porto netty -d devvy -o ohnur -u
+    hpcloud ports:add porto 701be39b -d devvy -o ohnur -u
 
 
 ##ports:remove## {#ports:remove}
@@ -2860,6 +3091,9 @@ Remove a port (specified by name or ID).
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -2908,6 +3142,9 @@ Update a port.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -2920,6 +3157,10 @@ Update fixed IPs, administrative state, device identifier, or device owner on a 
 Update 'porto' administrative status and device owner:
 
     hpcloud ports:update porto -u -d trump
+
+Update 'c14411d7' administrative status and device owner:
+
+    hpcloud ports:update c14411d7 -u -d trump
 
 
 ##remove## {#remove}
@@ -2943,6 +3184,9 @@ Remove objects or containers.
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -2995,6 +3239,9 @@ List the available routers.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -3008,9 +3255,9 @@ List all routers:
 
     hpcloud routers
 
-List the details for routers with id `1`:
+List the details for routers with id `c14411d7`:
 
-    hpcloud routers 1
+    hpcloud routers c14411d7
 
 List the details for routers named `testo`:
 
@@ -3040,13 +3287,16 @@ Add a router.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
 
 
 ###Description
-Add a new router to your network with the specified name.  If a gateway is not specified, the first network that has router_external set to true is used (typically `Ext-Net`.  If you do not want to a external network, send the gateway option with an empty string.
+Add a new router to your network with the specified name.  If a gateway is not specified, the first network that has router_external set to true is used (typically `Ext-Net`.
 
 ###Examples
 Create a new router named 'routerone':
@@ -3070,6 +3320,9 @@ Add an interface to a router.
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -3101,6 +3354,9 @@ Remove router interface.
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -3134,6 +3390,9 @@ Remove a router (specified by name or ID).
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -3174,6 +3433,9 @@ Update the specified router.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -3186,6 +3448,10 @@ Update an existing router with new administrative state or gateway infomration. 
 Update router 'trout' administrative state:
 
     hpcloud routers:update trout -u
+
+Update router 'c14411d7' administrative state:
+
+    hpcloud routers:update c14411d7 -u
 
 
 ##securitygroups## {#securitygroups}
@@ -3206,6 +3472,9 @@ List the available security groups.
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -3244,6 +3513,9 @@ Add a security group.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -3270,6 +3542,9 @@ Remove a security group or groups.
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -3310,6 +3585,9 @@ Display the list of rules for a security group.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -3322,6 +3600,10 @@ List the rules for a security group for your compute account. Optionally, you ca
 List the rules for security group `mysecgroup`:
 
     hpcloud securitygroups:rules mysecgroup
+
+List the rules for security group `c14411d7`:
+
+    hpcloud securitygroups:rules c14411d7
 
 ###Aliases
 `securitygroups:rules:list`
@@ -3357,6 +3639,9 @@ Add a rule to the security group.
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -3399,6 +3684,9 @@ Remove security group rules.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -3438,8 +3726,14 @@ List the available servers.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
+
+**--all-regions=ALL_REGIONS**
+: List servers for all regions.
 
 
 
@@ -3454,6 +3748,10 @@ List the servers:
 List server `hal`:
 
     hpcloud servers hal
+
+List server `c14411d7`:
+
+    hpcloud servers c14411d7
 
 List the servers for availability zone `az-2.region-a.geo-1`:
 
@@ -3501,6 +3799,9 @@ Add a server.
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -3551,6 +3852,9 @@ Get the console output of a server or extract the windows password.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -3581,6 +3885,9 @@ List compute limits.
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -3615,6 +3922,9 @@ List the metadata for a server.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -3627,6 +3937,10 @@ List the metadata for a server in your compute account. You can specify either t
 List server metadata:
 
     hpcloud servers:metadata Skynet
+
+List server metadata:
+
+    hpcloud servers:metadata c14411d7
 
 ###Aliases
 `servers:metadata:list`
@@ -3644,6 +3958,9 @@ Add metadata to a server.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -3656,6 +3973,10 @@ Add metadata to a server in your compute account.  You can specify the erver nam
 Add the specified metadata to the server (if the metadata exists, it is updated):
 
     hpcloud servers:metadata:add my_server 'r2=d2,c3=po'
+
+Add the specified metadata to the server (if the metadata exists, it is updated):
+
+    hpcloud servers:metadata:add c14411d7 'chew=bacca,han=solo'
 
 ###Aliases
 `servers:metadata:update`
@@ -3673,6 +3994,9 @@ Remove metadata from a server.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -3685,6 +4009,10 @@ Remove metadata from a server in your compute account.  You can speciry the erve
 Remove the the r2 and c3 metadata from the server:
 
     hpcloud servers:metadata:remove :my_server r2 c3
+
+Remove the the r2 and c3 metadata from the server:
+
+    hpcloud servers:metadata:remove b8e90a48 r2 c3
 
 ###Aliases
 `servers:metadata:rm`
@@ -3702,6 +4030,9 @@ Change the password for a server.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -3714,6 +4045,10 @@ Change the password for an existing server. The password must adhere to the exis
 Change the password for server 'my-server':
 
     hpcloud servers:password my-server my-password
+
+Change the password for server 'b8e90a48':
+
+    hpcloud servers:password b8e90a48 'pA$3word'
 
 ###Aliases
 `servers:passwd`
@@ -3730,6 +4065,9 @@ List compute rate limits.
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -3760,6 +4098,9 @@ Reboot a server or servers (specified by server name or ID).
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -3792,6 +4133,9 @@ Rebuild a server (specified by server name or ID).
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -3823,6 +4167,9 @@ Remove a server or servers (specified by name or ID).
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -3846,6 +4193,66 @@ Delete the server with the ID 53e78869:
 
 ###Aliases
 `servers:rm, servers:delete, servers:del`
+
+##servers:securitygroups:add## {#servers:securitygroups:add}
+Add a security group to a server.
+
+###Syntax
+`hpcloud servers:securitygroups:add <server> <security_group>`
+
+###Options
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
+
+###Description
+Add a security group to a server.
+
+###Examples
+Add the 'sg1' security group to 'my_server':
+
+    hpcloud servers:securitygroups:add my_server sg1
+
+
+##servers:securitygroups:remove## {#servers:securitygroups:remove}
+Remove a security group from a server.
+
+###Syntax
+`hpcloud servers:securitygroups:remove <server> <security_groups>`
+
+###Options
+**-z, --availability-zone=AVAILABILITY_ZONE**
+: Set the availability zone.
+
+**-x, --debug=DEBUG**
+: Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
+
+**-a, --account-name=ACCOUNT_NAME**
+: Select account.
+
+
+
+###Description
+Remove a security group from a server.
+
+###Examples
+Remove security group 'sg2' from 'my_server':
+
+    hpcloud servers:securitygroups:remove my_server sg2
+
 
 ##servers:ssh## {#servers:ssh}
 Secure shell into a server.
@@ -3873,6 +4280,9 @@ Secure shell into a server.
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -3915,6 +4325,9 @@ List block devices available.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -3928,9 +4341,9 @@ List all snapshots:
 
     hpcloud snapshots
 
-List the detail information for snapshot `1`:
+List the detail information for snapshot `b8e90a48`:
 
-    hpcloud snapshots 1
+    hpcloud snapshots b8e90a48
 
 List the detail information about snapshot `testsnap`:
 
@@ -3957,6 +4370,9 @@ Create a snapshot.
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -3988,6 +4404,9 @@ Remove a snapshot or snapshots (specified by name or ID).
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -4032,6 +4451,9 @@ List the available subnets.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -4045,9 +4467,9 @@ List all subnets:
 
     hpcloud subnets
 
-List the details for subnets with id `1`:
+List the details for subnets with id `b8e90a48`:
 
-    hpcloud subnets 1
+    hpcloud subnets b8e90a48
 
 List the details for subnets named `testo`:
 
@@ -4086,6 +4508,9 @@ Add a subnet.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -4116,6 +4541,9 @@ Remove a subnet (specified by name or ID).
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -4165,6 +4593,9 @@ Update a subnet.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -4201,6 +4632,9 @@ Create temporary URLs for the given objects.
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -4245,6 +4679,9 @@ List the available block devices.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -4258,9 +4695,9 @@ List all volumes:
 
     hpcloud volumes
 
-List the details for volume `1`:
+List the details for volume `b8e90a48`:
 
-    hpcloud volumes 1
+    hpcloud volumes b8e90a48
 
 List the details for volume `testvol`:
 
@@ -4297,6 +4734,9 @@ Add a volume.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -4332,6 +4772,9 @@ Attach a volume to a server specified by device name or number.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -4345,9 +4788,9 @@ Attach volume `myVolume` to server `myServer` on device `/dev/vdc`:
 
     hpcloud volumes:attach myVolume myServer /dev/vdc
 
-Attach volume `myVolume` to server `myServer` on device `/dev/vdb`:
+Attach volume `f9520651` to server `b8e90a48` on device `/dev/vdb`:
 
-    hpcloud volumes:attach myVolume myServer 4
+    hpcloud volumes:attach f9520651 b8e90a48 4
 
 
 ##volumes:detach## {#volumes:detach}
@@ -4362,6 +4805,9 @@ Detach a volume or volumes.
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -4393,6 +4839,9 @@ Remove a volume or volumes (specified by name or ID).
 
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
+
+**--tenantid=TENANTID**
+: Tenant id for account.
 
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
@@ -4433,6 +4882,9 @@ List the volumes on server.
 **-x, --debug=DEBUG**
 : Debug logging 1,2,3,...
 
+**--tenantid=TENANTID**
+: Tenant id for account.
+
 **-a, --account-name=ACCOUNT_NAME**
 : Select account.
 
@@ -4449,5 +4901,9 @@ List all the attached volumes:
 List the volumes on server `myServer`:
 
     hpcloud volumes:server myServer
+
+List the volumes on server `f9520651`:
+
+    hpcloud volumes:server f9520651
 
 
