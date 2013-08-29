@@ -12,7 +12,7 @@ This page provides you with information to help you transition from version 12.1
 * [Transitioning data for ephemeral instances](#Ephermeral)
 * [Transitioning data for persistent instances](#Persistent)
 * [Key pairs](#KeyPairs)
-* [Security group creation](#SecurityGroups)
+* [Managing security groups](#SecurityGroups)
 * [For further information](#MoreInfo)
 
 **Note**:  Use this overview in conjunction with the information on the [transition details](/migration-details/) page if you are planning on performing a customer support-assisted transition.  
@@ -36,11 +36,11 @@ To transition the data for an ephemeral instance:
 2. Copy the data from your version 12.12 instance to your new 13.5 instance, using the tool transfer program of your choice (for example, SCP or FTP)
 
 
-##Transitioning data persistent instances## {#Persistent}
+##Transitioning data for persistent instances## {#Persistent}
 
 To transition the data for a persistent instance:
 
-1. Create a 13.5 instance using either the command-line interface (CLI) for [UNIX](/cli/unix/compute/) or [the Windows PowerShell](/cli/windows/compute/), or the [management console](/mc/compute/) interface
+1. Create a bootable block volume and persistent image in your version 13.5 environment; see the [knowledge base article on block volume creation](TBD) for more details
 2. Copy the data from your version 12.12 instance to your new 13.5 instance, using the tool transfer program of your choice (for example, SCP or FTP)
 
 For information on persistent instances while performing a support services assisted transition, please see the [snapshots](/migration-details/) section of the [transition details](/migration-details/) page. 
@@ -51,9 +51,10 @@ For information on persistent instances while performing a support services assi
 To transition the data for block volumes:
 
 1. Create a 13.5 block volume using either the command-line interface (CLI) for [UNIX](/cli/unix/block-storage/) or [the Windows PowerShell](/cli/windows/block-storage/), or the [management console](/mc/) interface
-2. Copy the data from your version 12.12 instance to your new 13.5 instance, using the tool transfer program of your choice (for example, SCP or FTP)
+2. Create an ephemeral instance and attach it to an ephemeral instance in your version 13.5 environment; see see the [knowledge base article](TBD) for more details
+3. Copy the data from your version 12.12 instance attached volume to your new version 13.5 instance, using the tool transfer program of your choice (for example, SCP or FTP)
 
-For information on persistent instances, snapshots, copying, and moving block volumes, please see the appropriate section of the [transition details](/migration-details/) page.  
+For information on persistent instances, snapshots, and moving block volumes, please see the appropriate section of the [transition details](/migration-details/) page.  
 
 
 ##Key pairs## {#KeyPairs}
@@ -65,14 +66,9 @@ The process for transitioning key pairs varies according to your platform.  Chec
 * [Linux Users](https://community.hpcloud.com/article/migrating-or-transferring-your-key-pairs#keylinux)
 
 
-##Security group creation## {#SecurityGroups}
+##Managing security group creation## {#SecurityGroups}
 
-To create a new security group, follow these steps:
-
-1. Log in to your account and select the availability zone (AZ) in US West for your new instance.
-2. From the menu bar, choose `Security Groups`, then click `Create new security group`, and add rules as needed.
-
-For more details and options, read our Knowledge Base article [Managing Your Security Groups](https://community.hpcloud.com/article/managing-your-security-groups-135).
+Managing security groups has changed significantly between versions 12.12 (and earlier) and version 13.5 of the HP Cloud software.  For information on security groups in version 13.5, please see the knowledge base article [Managing Your Security Groups](https://community.hpcloud.com/article/managing-your-security-groups-135) for details.
 
 
 ## For further information ## {#MoreInfo}
