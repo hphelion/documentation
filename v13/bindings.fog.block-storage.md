@@ -65,19 +65,24 @@ This section discusses the volume operations you can perform using the model abs
 
 1. List all available volumes for an account
 
-        volumes = conn.volumes
+        volumes = conn.list_volumes
         volumes.size   # returns no. of volumes
         # display volumes in a tabular format
         volumes.table([:id, :name, :status, :created_at])
 
-2. Obtain the details of a particular volume
+2. Obtain the details of a particular volume by volume ID
 
-        volume = conn.volumes.get(volume_id)
+        volume = conn.list_volumes_detail(volume_id)
         volume.name                         # returns name of the volume
         volume.created_at                   # returns the date the volume was created
-        volume.status                        # returns the state of the volume e.g. available, in-use
+        volume.status                       # returns the state of the volume e.g. available, in-use
 
-3. List all available bootable volumes for an account
+3. List volume details using a filter
+
+        conn.list_volumes_detail(
+        	:display_name => "volume name")
+
+4. List all available bootable volumes for an account
 
         bootable_volumes = conn.bootable_volumes
         bootable_volumes.size   # returns no. of bootable volumes
@@ -87,9 +92,9 @@ This section discusses the volume operations you can perform using the model abs
 4. Obtain the details of a particular bootable volume
 
         volume = conn.bootable_volumes.get(volume_id)
-        volume.name                         # returns name of the bootable volume
+        volume.name                        # returns name of the bootable volume
         volume.created_at                  # returns the date the bootable volume was created
-        volume.status                        # returns the state of the bootable volume e.g. available, in-use
+        volume.status                      # returns the state of the bootable volume e.g., available, in-use
 
 5. Create a new volume
 
@@ -100,7 +105,8 @@ This section discusses the volume operations you can perform using the model abs
         new_volume.id       # returns the id of the volume
         new_volume.name     # => "TestVolume"
         new_volume.status    # returns the status of the volume e.g. creating, available
- 
+
+
 6. Create a new volume from an existing image
 
         new_volume = conn.create_volume(
@@ -136,6 +142,11 @@ This section discusses the volume operations you can perform using the model abs
         volume = conn.volumes.get(volume_id)
         volume.detach
         # => true
+
+6. Update an existing volume
+
+        volume = conn.update_volume(volume_id)
+               :display_name => "TestVolume",
 
 10. Delete an existing volume
 
