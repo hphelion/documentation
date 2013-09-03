@@ -41,12 +41,21 @@ For information on connecting to the service, please see the [Connecting to the 
 
 1. List all available servers for an account: 
 
-        servers = conn.servers
+        servers = conn.list_servers
         servers.size   # returns no. of servers
         # display servers in a tabular format
         conn.servers.table([:id, :name, :state, :created_at])
 
-2. Obtain the details of a particular server:
+2.  List servers using a filter: 
+
+        servers = conn.list_servers(:name => 'My Shiny Server')
+
+3. List server details:
+
+        servers = conn.list_servers_detail
+
+
+4. Obtain the details of a particular server:
 
         server = conn.servers.get(server_id)
         server.name                         # returns name of the server
@@ -58,12 +67,12 @@ For information on connecting to the service, please see the [Connecting to the 
 
 3. Create a new server:
 
-        new_server = conn.servers.create(
+        new_server = conn.create_server(
               :name => "My Shiny Server",
-              :flavor_id => 1,
-              :image_id => 2,
-              :key_name => "hpdefault",
-              :security_groups => ["aaa"]
+              101,
+              flavor_id => 1,
+              {
+              'availability_zone' => 'az2'}
         )
         new_server.id       # returns the id of the server
         new_server.name     # => "My Shiny Server"
