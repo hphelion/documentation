@@ -423,13 +423,17 @@ For information on connecting to the service, please see the [Connecting to the 
         response.headers                            # returns the headers
         response.body['servers'][0]['name']         # returns the name of the server
 
-2. List all available servers with additional details:
+2. List all available servers using a filter:
+
+        response = conn.list_servers_detail(:name => 'My Shiny Server')
+        
+3. List all available servers with additional details:
 
         response = conn.list_servers_detail
         response.body['servers']                    # returns an array of server hashes
         response.body['servers'][0]['name']         # returns the name of the server
 
-3. Obtain the details of a particular server:
+4. Obtain the details of a particular server:
 
         response = conn.get_server_details(server_id)
         server = response.body['server']
@@ -439,12 +443,15 @@ For information on connecting to the service, please see the [Connecting to the 
         server['addresses']                         # returns the public and private addresses
         server['status']                            # returns the state of the server e.g. ACTIVE
 
-4. Create a new server:
+5. Create a new server:
 
         response = conn.create_server(
             "My Shiny Server",
             flavor_id,
             image_id,
+            {
+              'availability_zone' => "az2"
+            }
             {
               'security_groups' => ["SecGroup1, SecGroup2"],
               'key_name' => "MyKeyPair1"
@@ -455,7 +462,35 @@ For information on connecting to the service, please see the [Connecting to the 
         server['name']                              # => "My Shiny Server"
         server['status']                            # returns the state of the server e.g. BUILD
 
-5. Create a new Windows server and retrieve the encrypted password:
+6. Create a server by passing in a keypair and security group:
+
+        response = conn.create_server(
+            "My Shiny Server",
+            101,
+            image_id,
+            {
+              'key_name' => "MyKeyPair1",
+              'security_groups' => ["SecGroup1, SecGroup2"],
+            }
+        )
+        server = response.body['server']
+        server['id']                                # returns the id of the new server
+        server['name']                              # => "My Shiny Server"
+        server['status']                            # returns the state of the server e.g. BUILD
+
+7. Create a server by passing in a network:
+
+        response = conn.create_server(
+            "My Shiny Server",
+            101,
+            image_id,
+            {
+              'networks' => ["My Network"]
+            }
+        )
+
+ 
+8. Create a new Windows server and retrieve the encrypted password:
 
         # Make sure to use a Windows image
         response = conn.create_server("My Windows Server", flavor_id, image_id)
@@ -466,7 +501,7 @@ For information on connecting to the service, please see the [Connecting to the 
         # => "Im6ZJ8auyMRnkJ24KKWQvTgWDug1s ... y0uY1BcHLJ5OrkEPHhQoQntIKOoQ=\n"
     **Note**: You must retrieve the Windows password immediately after you create the Windows instance. Also, make sure you have a security rule defined to open RDP port 3389 so that you can connect to the Windows server.
 
-6. Create a new Linux-based persistent server with a bootable volume
+9. Create a new Linux-based persistent server with a bootable volume
 
         conn.create_persistent_server(
               "MyBootableServer",
@@ -483,7 +518,7 @@ For information on connecting to the service, please see the [Connecting to the 
         )
     **Note**: In *block_device_mapping*, *volume_size* is ignored; it is automatically retrieved from the specified bootable volume. To delete the bootable volume after the server instance is killed you can set  *delete_on_termination* to `1`.  To preserve the bootable volume, set it to `0` as shown above.
 
-7. Create a new Linux-based server with advanced personalisation options:
+10. Create a new Linux-based server with advanced personalisation options:
 
         response = conn.create_server(
             "My Shiny Server",
@@ -516,7 +551,7 @@ For information on connecting to the service, please see the [Connecting to the 
     
     **Note**: The above personalization options are not supported on Windows server instances.
 
-8. Update the name for a server:
+11. Update the name for a server:
 
         conn.update_server(server_id, {'name' => "My Cool Server"})
         response = conn.get_server_details(server_id)
@@ -526,7 +561,19 @@ For information on connecting to the service, please see the [Connecting to the 
 
         conn.change_password_server(server_id, "new_password")
 
-10. List both public and private addresses of a particular server:
+10. Reboot a server (SOFT):
+
+        conn.reboot_server(server_id, "SOFT")
+
+11. Reboot a server (HARD):
+
+        conn.rebuild_server(server_id, "HARD")
+
+12. Rebuild a server:
+
+        conn.reboot_server(server_id, "MyRebuiltServer")
+
+13. List both public and private addresses of a particular server:
 
         response = conn.list_server_addresses(server_id)
 
@@ -540,18 +587,14 @@ For information on connecting to the service, please see the [Connecting to the 
 
 13. Get console output:
 
-        response = conn.get_console_output(server_id, 5)
-        # => 5 lines of console output are returned
+        response = conn.get_console_output(server_id, 10)
+        # => 10 lines of console output are returned
 
 14. Get VNC console:
 
         response = conn.get_vnc_console(server_id, 'novnc')
         # => Url to access the VNC console of a server from a browser
 
-15. Reboot a server:
-
-        response = conn.reboot_server(server_id, 'HARD')  # Hard reboot a server
-        response = conn.reboot_server(server_id, 'SOFT')  # Soft reboot a server
 
 16. Delete an existing server:
 
@@ -715,7 +758,12 @@ For information on connecting to the service, please see the [Connecting to the 
         keypair['public_key']                       # returns the public key of the keypair
         keypair['private_key']                      # returns the private key of the keypair
 
-3. Import a public key to create a new keypair:
+3. Obtain a keypair:
+
+        response = conn.get_key_pair("mykey")
+
+
+4. Import a public key to create a new keypair:
 
         response = conn.create_key_pair("mykey", "public key material")
         keypair = response.body['keypair']
@@ -761,7 +809,17 @@ For information on connecting to the service, please see the [Connecting to the 
 
         conn.delete_security_group_rule(sg_rule_id)
 
-6. Delete an existing security group:
+6. Add a security group to a server:
+
+        conn.add_security_group(sgroup_id, 'mysecuritygroup')
+
+
+7. Remove a security group from a server:
+
+        conn.remove_security_group(sgroup_id, 'mysecuritygroup')
+
+
+8. Delete an existing security group:
 
         conn.delete_security_group(sgroup_id)
 
@@ -769,12 +827,16 @@ For information on connecting to the service, please see the [Connecting to the 
 
 1. List all available floating ip addresses:
 
-        response = conn.list_addresses
+        response = conn.list_server_addresses
         response.body['addresses']                  # returns an array of address hashes
         response.headers                            # returns the headers
         response.body['addresses'][0]['id']         # returns the id of the address
 
-2. Obtain the details of a particular address:
+2. List addresses by network for a server:
+
+        response = conn.list_server_addresses_by_network(address_id)     # get the address
+
+3. Obtain the details of a particular address:
 
         response = conn.get_address(address_id)     # get the address
         response.body['address']['ip']              # returns the ip address
