@@ -15,7 +15,7 @@ This page provides you with information to help you transition from version 12.1
 * [Managing security groups](#SecurityGroups)
 * [For further information](#MoreInfo)
 
-**Note**:  Use this overview in conjunction with the information on the [transition details](/migration-details/) page if you are planning on performing a customer support-assisted transition.  
+**Note**:  Use this overview in conjunction with the information on the [assisted transition](/migration-details/) page if you are planning on performing a customer support-assisted transition.  
 
 
 ## Before you begin ## {#BeforeYouBegin}
@@ -43,7 +43,7 @@ To transition the data for a persistent instance:
 1. Create a bootable block volume and persistent image in your version 13.5 environment; see the [knowledge base article on block volume creation](TBD) for more details
 2. Copy the data from your version 12.12 instance to your new 13.5 instance, using the tool transfer program of your choice (for example, SCP or FTP)
 
-For information on persistent instances while performing a support services assisted transition, please see the [snapshots](/migration-details/) section of the [transition details](/migration-details/) page. 
+For information on persistent instances while performing a support services assisted transition, please see the [snapshots](/migration-details/) section of the [assisted transition](/migration-details/) page. 
 
 
 ###Block volumes## {#BlockVolumes}
@@ -54,7 +54,7 @@ To transition the data for block volumes:
 2. Create an ephemeral instance and attach it to an ephemeral instance in your version 13.5 environment; see see the [knowledge base article](TBD) for more details
 3. Copy the data from your version 12.12 instance attached volume to your new version 13.5 instance, using the tool transfer program of your choice (for example, SCP or FTP)
 
-For information on persistent instances, snapshots, and moving block volumes, please see the appropriate section of the [transition details](/migration-details/) page.  
+For information on persistent instances, snapshots, and moving block volumes, please see the appropriate section of the [assisted transition](/migration-details/) page.  
 
 
 ##Key pairs## {#KeyPairs}
