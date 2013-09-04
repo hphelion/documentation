@@ -16,6 +16,7 @@ This page discusses the following topics:
 * [Connecting to the Service](#ConnectingtotheService)<br>
 **Model Layer Examples**
 * [Server Operations](#ModelServerOperations)
+* [Volume Operations](#ModelVolumeOperations)
 * [Server Metadata Operations](#ModelServerMetadataOperations)
 * [Flavor Operations](#ModelFlavorOperations)
 * [Image Operations](#ModelImageOperations)
@@ -209,11 +210,39 @@ For information on connecting to the service, please see the [Connecting to the 
         server = conn.servers.get(server_id).destroy
 
 
+##Volume Operations (Model Layer)## {#ModelVolumeOperations}
+
+1. Attach a volume to a server:
+
+        server = conn.servers.get("server_id")
+        server = s.volume_attachments.create(
+                :server_id => s.id,
+                :volume_id => "volume id",
+                :device => "/dev/sdf"
+        )
+        s.reload        #reload the server
+        s.volume_attachments.all        #list the attachments
+
+2. Get attached volume details for a server:
+
+        server = conn.servers.get("server_id")
+        att = s.volume_attachements.get("volume_id")
+        
+3. List attached volumes for a server:
+
+        server = conn.servers.get("server_id")
+        server = s.volume_attachments.all
+
+4. Detach a volume from a server:
+
+        server = conn.servers.get("server_id")
+        att.destroy     # also aliased to att.detach
+
 ##Server Metadata Operations (Model Layer)## {#ModelServerMetadataOperations}
 
 1. Create a server with some metadata:
 
-        myserver = conn.servers.create(
+        server = conn.servers.create(
               :flavor_id => 1,
               :image_id => 2,
               :name => "myserver",
@@ -222,15 +251,15 @@ For information on connecting to the service, please see the [Connecting to the 
 
 2. Get the metadata item:
 
-        myserver.metadata.get("Meta1")
+        server.metadata.get("Meta1")
 
 3. Update the metadata:
 
-        myserver.metadata.update({"Meta2" => "MetaValue2"})
+        s.metadata.update({"Meta2" => "MetaValue2"})
 
 4. Set the metadata:
 
-        myserver.metadata.set({"Meta3" => "MetaValue3"})
+        s.metadata.set({"Meta3" => "MetaValue3"})
 
 5. Set the metadata explicitly:
 
@@ -241,29 +270,32 @@ For information on connecting to the service, please see the [Connecting to the 
 
 6. Update the metadata:
 
-        m = myserver.metadata.get("Meta3")
-        m.value = "UpdValue3"
+        m = s.metadata.get("Meta1")
+        m.value = "MetaUpdValue1"
         m.save
 
 7. List metadata:
 
-        myserver.metadata.all
+        s.metadata.all
 
 8. Delete metadata:
 
-        m = myserver.metadata.get("Meta3")
-        m.destroy
+        m = s.metadata.get("Meta3").destroy
 
 ##Flavor Operations (Model Layer)## {#ModelFlavorOperations}
 
 1. List all available flavors:
 
-        flavors = conn.flavors
+        flavors = conn.flavors.all
         flavors.size   # returns no. of flavors
         # display flavors in a tabular format
         conn.flavors.table([:id, :name, :ram, :disk])
 
-2. Obtain the details of a particular flavor:
+2. List flavors using a filter:
+
+        flavors = conn.flavors.all(:limit => 2)
+
+3. Obtain the details of a particular flavor:
 
         flavor = conn.flavors.get(flavor_id)   # get the flavor
         flavor.name    # returns the name of the flavor eg: m1.tiny, m1.small etc.
@@ -289,12 +321,13 @@ For information on connecting to the service, please see the [Connecting to the 
 
 3. Create a new snapshot image based on an existing server:
 
-        myserver.create_image("My Image")
+        # first, get a server
+        server = conn.servers.get("server_id")
+        s.create_image("My Image")
 
 4. Delete an existing snapshot image:
 
-        image = conn.images.get(image_id)
-        image.destroy
+        image = conn.images.get(image_id).destroy
 
 ##Image Metadata Operations (Model Layer)## {#ModelImageMetadataOperations}
 
@@ -304,22 +337,21 @@ For information on connecting to the service, please see the [Connecting to the 
 
 2. Get the metadata item:
 
-        myimage = conn.images.get(image_id)
-        myimage.metadata.get("ImgMeta1")
+        image = conn.images.get(image_id)
+        image.metadata.set({"Meta3" => "MetaValue3"})
 
 3. Update the metadata:
 
-        myimage.metadata.update({"ImgMeta2" => "ImgMetaValue2"})
+        image.metadata.update({"Meta2" => "MetaValue2"})
 
 4. Set the metadata:
 
-        myimage.metadata.set({"ImgMeta3" => "ImgMetaValue3"})
+        image.metadata.set({"Meta3" => "MetaValue3"})
 
 5. Set the metadata explicitly:
 
-        m = myimage.metadata.new
-        m.key = "ImgMeta4"
-        m.value = "ImgMetaValue4"
+        m = image.metadata.set("Meta1")
+        m.value = "MetaUpValue1"
         m.save
 
 6. Update the metadata:
@@ -334,8 +366,7 @@ For information on connecting to the service, please see the [Connecting to the 
 
 8. Delete metadata:
 
-        m = myimage.metadata.get("ImgMeta3")
-        m.destroy
+        m = image.metadata.get("ImgMeta3").destroy
 
 ##Keypair Operations (Model Layer)## {#ModelKeypairOperations}
 
@@ -360,7 +391,8 @@ For information on connecting to the service, please see the [Connecting to the 
         keypair.name          # returns name of the keypair
         keypair.public_key    # returns the public key of the keypair
         keypair.private_key   # returns the private key of the keypair
-
+    **Note**: Keypairs with a dot (.) are not allowed.
+    
 4. Export a keypair to a file:
 
         keypair = conn.key_pairs.create(:name => "mykey2")
@@ -399,7 +431,15 @@ For information on connecting to the service, please see the [Connecting to the 
         sgroup = conn.security_groups.create(:name => "mysgroup", :description => "my new sec group")
         sgroup.name           # returns name of the security group
 
-4. Create a rule for an existing security group:
+4. Add a security group to a server:
+
+        s.add_security_group('SecGroup')
+
+5. Remove a security group from a server:
+
+        s.remove_security_group('SecGroup')
+
+6. Create a rule for an existing security group:
 
         sgroup = conn.security_groups.get(sgroup_id)    # get the security group
         sgroup.create_rule(80..80)                      # allow port 80. defaults to protocol tcp at 0.0.0.0/0
@@ -420,7 +460,7 @@ For information on connecting to the service, please see the [Connecting to the 
 
 ##Address Operations (Model Layer)## {#ModelAddressOperations}
 
-1. List all available floating ip addresses:
+1. List all public and private ip addresses:
 
         addresses = conn.addresses
         addresses.size                              # returns no. of addresses
