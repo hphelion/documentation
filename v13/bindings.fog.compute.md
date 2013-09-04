@@ -41,14 +41,14 @@ For information on connecting to the service, please see the [Connecting to the 
 
 1. List all available servers for an account: 
 
-        servers = conn.list_servers
+        servers = conn.servers
         servers.size   # returns no. of servers
         # display servers in a tabular format
         conn.servers.table([:id, :name, :state, :created_at])
 
 2.  List servers using a filter: 
 
-        servers = conn.list_servers(:name => 'My Shiny Server')
+        servers = conn.servers.all(:name => 'My Shiny Server')
 
 3. List server details:
 
@@ -67,12 +67,10 @@ For information on connecting to the service, please see the [Connecting to the 
 
 3. Create a new server:
 
-        new_server = conn.create_server(
+        new_server = conn.servers.create(
               :name => "My Shiny Server",
-              101,
-              flavor_id => 1,
-              {
-              'availability_zone' => 'az2'}
+              :flavor_id => 101,
+              :image_id => "server_id"
         )
         new_server.id       # returns the id of the server
         new_server.name     # => "My Shiny Server"
@@ -80,7 +78,41 @@ For information on connecting to the service, please see the [Connecting to the 
         new_server.private_ip_address   # returns the private ip address
         new_server.public_ip_address   # returns the public ip address, if any assigned
 
-4. Create a new Windows server instance and retrieve the encrypted password:
+4. Create a server by passing in a keypair and security group:
+
+        new_server = conn.servers.create(
+                :name=> "My Shiny Server",
+              :flavor_id => 101,
+              :image_id => "image_id",
+              :key_name => "my_keypair",
+              :security_groups => ["My Security Group"]
+        )
+
+5. Create a server by passing in a network_id:
+
+        new_server = conn.servers.create(
+                :name=> "My Shiny Server",
+                :flavor_id => 101,
+                :image_id => "image_id",
+                :key_name => "my_keypair",
+                :security_groups => ["My Security Group"],
+                :networks => ["nework_id"]
+        )
+
+6. Create a persistent server by passing in a bootable volume:
+
+        new_server = conn.servers.create(
+                :name=> "My Sticky Server",
+                :flavor_id => 104,
+                :block_device_mapping => [{ 'volume_size' => '', 
+                'volume_id' => "111111", 
+                'delete_on_termination' => '0', 
+                'device_name' => 'vda'
+                }]
+        )
+    **Note**: In *block_device_mapping*, *volume_size* is ignored; it is automatically retrieved from the specified bootable volume. To delete the bootable volume after the server instance is killed you can set  *delete_on_termination* to `1`.  To preserve the bootable volume, set it to `0` as shown above.
+
+7.Create a new Windows server instance and retrieve the encrypted password:
 
         win_server = conn.servers.create(
               :name => "My Windows Server",
@@ -95,21 +127,7 @@ For information on connecting to the service, please see the [Connecting to the 
         # => "Im6ZJ8auyMRnkJ24KKWQvTgWDug1s ... y0uY1BcHLJ5OrkEPHhQoQntIKOoQ=\n"
 **Note**: You must retrieve the Windows password immediately after you create the Windows instance. Also, make sure you have a security rule defined to open RDP port 3389 so that you can connect to the Windows server.
 
-5. Create a new Linux-based persistent server with a bootable volume:
-
-        conn.servers.create(
-              :flavor_id => 103,
-              :name => "MyPersistentServer",
-              :block_device_mapping =>
-                [{ 'volume_size' => '',   # ignored
-                 'volume_id' => "111111",
-                 'delete_on_termination' => '0',
-                 'device_name' => 'vda'
-                }]
-        )
-    **Note**: In *block_device_mapping*, *volume_size* is ignored; it is automatically retrieved from the specified bootable volume. To delete the bootable volume after the server instance is killed you can set  *delete_on_termination* to `1`.  To preserve the bootable volume, set it to `0` as shown above.
-
-6. Create a new Linux-based server with advanced personalization options:
+8. Create a new Linux-based server with advanced personalization options:
 
         new_server = conn.servers.create(
               :name => "My Personalised Server",
@@ -150,32 +168,46 @@ For information on connecting to the service, please see the [Connecting to the 
     
     **Note**: The above personalization options are not supported on Windows server instances.
 
-7. Get console output:
+9. Get s server:
 
         server = conn.servers.get(server_id)
-        server.console_output(5)           # 5 lines of console output are returned
+        
+10. Get console output:
 
-8. Get VNC console:
+        server = conn.servers.get(server_id)
+        server.console_output(10)           # returns 10 lines of console output
+        
+11. Get VNC console:
 
         server = conn.servers.get(server_id)
         server.vnc_console_url('novnc')    # URL to access the VNC console of a server from a browser
 
-9. Reboot a server:
+12. Update a server:
+
+        server = conn.servers.get("server_id")
+        server.update_name("My Shiny Server Updated")
+
+13. Reboot a server:
 
         server = conn.servers.get(server_id)
         server.reboot          # soft reboot by default
 
         server.reboot("HARD")  # hard reboot also possible
 
-10. Change password for a server:
+14. Rebuild a server:
+
+        server = conn.servers.get("server_id")
+        server.rebuild('?', 'My Shiny Server Rebuild')
+
+15. Change password for a server:
 
         server = conn.servers.get(server_id)
         server.change_password("new_password")
 
-11. Delete an existing server:
+11. Delete a server:
 
-        server = conn.servers.get(server_id)
-        server.destroy
+        server = conn.servers.get(server_id).destroy
+
 
 ##Server Metadata Operations (Model Layer)## {#ModelServerMetadataOperations}
 
