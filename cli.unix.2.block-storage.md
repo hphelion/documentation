@@ -7,7 +7,7 @@ product: unix-cli
 ---
 # Unix CLI Block Storage Examples
 
-This page gives you a few examples of how to perform various block storage tasks using the HP Cloud service.  This page discusses the following tasks:
+This page discusses the tasks below and shows some examples of how to perform block storage tasks using the HP Cloud service:
 
 * [Adding Volumes](#AddingVolumes)
 * [Listing Available Volumes](#ListingAvailableVolumes)
@@ -15,7 +15,7 @@ This page gives you a few examples of how to perform various block storage tasks
 * [Detaching Volumes](#DetachingVolumes)
 * [Removing Volumes](#RemovingVolumes)
 
-Remember that you can get detailed help for any command/task with the following command:
+Get detailed help for any command/task with the following command:
 
     $ hpcloud help <TASK>
 
@@ -33,7 +33,7 @@ To create a bootable volume from (bootable image or raw image) image:
 
 ##Listing Available Volumes## {#ListingAvailableVolumes}
 
-To list available volumes:
+To list available volumes, run:
 
     $ hpcloud volumes
       +----------+---------+------+------+---------------------+-----------+-------------+---------+
@@ -44,17 +44,19 @@ To list available volumes:
 
 ##Attaching New Volumes## {#AttachingNewVolumes}
 
-To attach the new volume `kweller` to server `srv1` as `/dev/vdi` (device names must begin with `/dev/vd`):
+*Note: Device names must begin with `/dev/vd`*
+
+To attach the new volume `kweller` to server `srv1` as `/dev/vdi`, run:
 
     $ hpcloud volumes:attach kweller srv1 /dev/vdi
     Attached volume 'kweller' to 'srv1' on '/dev/vdi'.
 
-You may also use a drive number to mount the volume instead of a device name:
+You can also use a drive number to mount the volume instead of a device name, using the following:
 
     $ hpcloud volumes:attach kweller srv1 5
     Attached volume 'kweller' to 'srv1' on '/dev/vde'.
 
-To list the attached volumes with devices:
+To list the attached volumes with devices, run:
 
     $ hpcloud volumes:server
       +----------+---------+--------+----------+
@@ -70,16 +72,16 @@ See the [knowledge base](https://community.hpcloud.com/knowledge-base) article [
 
 ##Detaching Volumes## {#DetachingVolumes}
 
-To detach volume `kweller`:
+To detach volume `kweller`, run:
 
     $ hpcloud volumes:detach kweller
     Detached volume 'kweller' from 'srv1'.
 
 ##Removing Volumes## {#RemovingVolumes}
 
-To remove volume `kweller`:
+To remove volume `kweller`, run:
 
     $ hpcloud volumes:remove kweller
     Removed volume 'kweller'.
 
-For complete information on all the UNIX CLI block storage commands (and all the other UNIX CLI HP Cloud service commands), please take a look at the [HP Cloud UNIX CLI Reference](/cli/unix/2/reference) page.
+For complete information on all the UNIX CLI block storage commands (and all the other UNIX CLI HP Cloud service commands), please see [HP Cloud UNIX CLI Reference](/cli/unix/2/reference) page.
