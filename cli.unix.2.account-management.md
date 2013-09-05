@@ -30,31 +30,31 @@ This page discusses the following topics:
 
 ## Account Providers for Migration ## {#Providers}
 
-You may use the `-p` provider option to the `account:setup` command to create accounts for cloud providers other than HP.  These accounts are only supported for the purposes of migration.  For example, to create an account to migrate files from Google object storage container:
+Use the `-p` provider option to the `account:setup` command to create accounts for cloud providers other than HP.  These accounts are only supported for the purposes of migration; e.g., to create an account to migrate files from Google object storage container, run:
 
     $ hpcloud account:setup goog -p google
 
 ## Updating Account Availability Zones ## {#ChangingAvailabilityZones}
 
-You can use the `account:edit` command to change the availability zones/regions for a particular service.  The `account:edit` command requires two arguments: `account_name` and one or more `name_value_pairs`.
+Use the `account:edit` command to change the availability zones/regions for a particular service.  The `account:edit` command requires two arguments: `account_name` and one or more `name_value_pairs`.
 
-To change the default zone of the object storage and CDN to `region-b`:
+To change the default zone of the object storage and CDN to `region-b`, run:
 
     $ hpcloud account:edit hp 'object storage=region-b.geo-1' 'cdn=region-b.geo-1'
 
-To change the availability zone of the compute service from its current setting to AZ2 for account `account2`:
+To change the availability zone of the compute service from its current setting to AZ2 for account `account2`, run:
 
     $ hpcloud account:edit account2 'compute=az-2.region-a.geo-1'
 
-To display the active availability zones for your services, you can use the `account:catalog` command:
+To display the active availability zones for your services, use the `account:catalog` command as follows:
 
     $ hpcloud account:catalog account2
 
-Or you may [find them in the system console](https://console.hpcloud.com/account/api_keys) by selecting `API Keys` on [compute dashboard](/mc/compute/) or account page. 
+Or select `API Keys` on [compute dashboard](/mc/compute/) or account page to [find them in the system console](https://console.hpcloud.com/account/api_keys). 
 
 ## Updating Account Credentials ## {#ModifyingAccountCredentials}
 
-You can use the `account:edit` command to change any of the following account credentials:
+Use the `account:edit` command to change any of the following account credentials:
 
 * `account_id` - account id (access key) or user name
 * `secret_key` - secret key or password
@@ -64,13 +64,13 @@ You can use the `account:edit` command to change any of the following account cr
 
 The `account:edit` requires two arguments: `account_name` and the `name_value_pair.
 
-To change the project id for account `hp`:
+To change the project id for account `hp`, run:
 
     $ hpcloud account:edit hp project_id=xxxxxxxxxxxxx     
 
 ## Updating Account Options ## {#ModifyingAccountOptions}
 
-You can use the `account:edit` command to change any of the following account options:
+Use the `account:edit` command to change any of the following account options:
 
 * `connect_timeout *seconds*`
 * `read_timeout *seconds*`
@@ -83,7 +83,7 @@ You can use the `account:edit` command to change any of the following account op
 
 The `account:edit` requires two arguments: `account_name` and `name_value_pair`.
 
-To change the connection timeout value for account `hp`:
+To change the connection timeout value for account `hp`, run:
 
     $ hpcloud account:edit hp connect_timeout=40
 
@@ -91,19 +91,19 @@ To change the connection timeout value for account `hp`:
 
 ## Account Providers for Migration ## {#Providers}
 
-You may use the `-p` provider option to the account:setup command to create accounts for cloud providers other than HP.  These accounts are only supported for the purposes of migration.  For example, to create an account to migrate files from Google object storage container:
+Use the `-p` provider option to the `account:setup` command to create accounts for cloud providers other than HP.  These accounts are  supported solely for migration; e.g., to create an account to migrate files from Google object storage container, run:
 
     $ hpcloud account:setup goog -p google
 
 ## Updating Account Availability Zones ## {#ChangingAvailabilityZones}
 
-You can use the `account:edit` command to change the availability zones for a particular service.  The `account:edit` requires two arguments: `account_name` and one or more `name_value_pairs`.
+Use the `account:edit` command to change the availability zones for a particular service.  The `account:edit` requires two arguments: `account_name` and one or more `name_value_pairs`.
 
-To change the availability zone of the object storage and CDN to region b:
+To change the availability zone of the object storage and CDN to region b, run:
 
     $ hpcloud account:edit hp 'object storage=region-b.geo-1' 'cdn=region-b.geo-1'
 
-To change the availability zone of the compute service from its current setting to AZ2 for the account `account2`:
+To change the availability zone of the compute service from its current setting to AZ2 for the account `account2`, run:
 
     $ hpcloud account:edit account2 'compute=az-2.region-a.geo-1'
 
@@ -111,7 +111,7 @@ To display the active availability zones for your services, you can [find them i
 
 ## Updating Account Credentials ## {#ModifyingAccountCredentials}
 
-You can use the `account:edit` command to change any of the following account credentials:
+Use the `account:edit` command to change any of the following account credentials:
 
 * `account_id` 
 * `secret_key`
@@ -126,7 +126,7 @@ To change the access key for the `hp` account:
 
 ## Updating Account Options ## {#ModifyingAccountOptions}
 
-You can use the `account:edit` command to change any of the following account options:
+Use the `account:edit` command to change any of the following account options:
 
 * `connect_timeout *seconds*`
 * `read_timeout *seconds*`
@@ -139,7 +139,7 @@ You can use the `account:edit` command to change any of the following account op
 
 The `account:edit` requires two arguments: `account_name` and the `name_value_pair.
 
-To change the connection timeout value for the `hp` account:
+To change the connection timeout value for the `hp` account, run:
 
     $ hpcloud account:edit hp connect_timeout=40
 
