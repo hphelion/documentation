@@ -13,20 +13,7 @@ This page discusses the following topics:
 * [Updating Account Availability Zones](#ChangingAvailabilityZones)
 * [Updating Account Credentials](#ModifyingAccountCredentials)
 * [Updating Account Options](#ModifyingAccountOptions)---
-layout: default
-title: "UNIX CLI: Advanced Account Management"
-permalink: /cli/unix/2/account-management/
-product: unix-cli
 
----
-#UNIX CLI: Advanced Account Management
-
-This page discusses the following topics:
-
-* [Account Providers for Migration](#Providers)
-* [Updating Account Availability Zones](#ChangingAvailabilityZones)
-* [Updating Account Credentials](#ModifyingAccountCredentials)
-* [Updating Account Options](#ModifyingAccountOptions)
 
 ## Account Providers for Migration ## {#Providers}
 
