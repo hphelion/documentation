@@ -15,6 +15,8 @@ There are a number of HP Cloud APIs available for your programming pleasure:
 * [Image](/api/v13/image/): API for HP Cloud Image; enabling managing of virtual machine images.
 * [Block Storage](/api/v13/block-storage/): API for HP Cloud block storage; enabling additional volumes to Compute instances.
 * [Networking](/api/v13/networking/): API for HP Cloud Networking; enabling virtual network, subnet, router and port abstractions to describe network resources.
+* [Relational Database](/api/v13/dbaas/): API for the HP Cloud Relational Database service; simplifies the creation and management of MySQL database instances.
+  **Note**: Access to the v13.6 Relational Database private beta should be available October 1, 2013. The option to request access will be made available on the Services page at that time.
 
 ## Copyright
 
