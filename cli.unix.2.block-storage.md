@@ -7,7 +7,7 @@ product: unix-cli
 ---
 # Unix CLI Block Storage Examples
 
-This page discusses the tasks below and shows some examples of how to perform block storage tasks using  HP Cloud:
+This page discusses the tasks below and shows some examples of how to perform block storage tasks using HP Cloud:
 
 * [Adding Volumes](#AddingVolumes)
 * [Listing Available Volumes](#ListingAvailableVolumes)
@@ -21,12 +21,12 @@ Get detailed help for any command/task with the following command:
 
 ##Adding Volumes## {#AddingVolumes}
 
-To add a new volume:
+To add a new volume, run:
 
     $ hpcloud volumes:add kweller 1
     Created volume 'kweller' with id '038d0e77'.
 
-To create a bootable volume from (bootable image or raw image) image:
+To create a bootable volume from (bootable image or raw image) image, run:
 
     $ hpcloud volumes:add bootable 10 -i d6a89a5d
     Created volume 'bootable' with id '3407653b'.
@@ -51,7 +51,7 @@ To attach the new volume `kweller` to server `srv1` as `/dev/vdi`, run:
     $ hpcloud volumes:attach kweller srv1 /dev/vdi
     Attached volume 'kweller' to 'srv1' on '/dev/vdi'.
 
-You can also use a drive number to mount the volume instead of a device name, using the following:
+You can also use a drive number to mount the volume instead of a device name by running the following:
 
     $ hpcloud volumes:attach kweller srv1 5
     Attached volume 'kweller' to 'srv1' on '/dev/vde'.
