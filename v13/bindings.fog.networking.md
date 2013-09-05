@@ -253,66 +253,205 @@ For information on connecting to the service, please see the [Connecting to the 
 ##Network Operations (Request Layer)## {#RequestNetworks}
 
 1. List networks:
+
+        conn.list_networks
+
 2. List networks using a filter:
+
+        conn.list_networks({"router:external" => true})
+
 3. Obtain a network by ID:
+
+        conn.get_network("network_id")
+
 4. Create a network:
+
+        conn.create_network({:name => "Network 1"})
+
 5. Update a network:
+
+        conn.update_network("network_id", {:name => "Network 1"})
+
 6. Delete a network:
+
+        conn.delete_network("network_id")
 
 ##Subnet Operations (Request Layer)## {#RequestSubnets}
 
 1. List subnets:
+
+        conn.list_subnets
+
 2. List subnets using a filter:
+
+        conn.list_subnets({"name"=>"My Subnet"})
+
 3. Create a subnet:
+
+        conn.create_subnet("network_id", "11.0.3.0/24", 4, {:name => "My Subnet"})
+
 4. Obtain a subnet by ID:
+
+        conn.get_subnet("subnet_id")
+
 5. Update a subnet:
+
+        conn.update_subnet("subnet_id")
+
 6. Assign a DNS server to a subnet:
+
+        conn.update_subnet("dns_server", {:dns_nameservers => ["15.185.9.24"]})
+
 7. Delete a subnet:
+
+        conn.delete_subnet("subnet_id")
 
 ##Port Operations (Request Layer)## {#RequestPorts}
 
 1. List ports:
+
+        conn.list_ports
+
 2. List ports using a filter:
+
+        conn.list_ports({"device_id" => "device_id"})
+
 3. Obtain a port by ID:
+
+        conn.get_port("port_id")
+
 4. Create a port:
+
+        conn.create_port("network_id", {:name => "fogport"})
+
 5. Update a port:
+
+        conn.update_port("port_id", {:name => "Fog Port Upd"})
+
 6. Delete a port:
+
+        conn.delete_port("port_id")
 
 ##Router Operations (Request Layer)## {#RequestRouters}
 
 1. List routers:
+
+        conn.list_routers
+
 2. List routers using a filter:
+
+        conn.list_routers({"name"=>"My Router"})
+
 3. Obtain a router:
+
+        conn.get_router("router_id")
+
 4. Create a router:
+
+        conn.create_router({:name => 'My Router'})
+
 5. Update a router:
+
+        conn.update_router("router_id" {:name => 'My Router Updates'})
+
 6. Delete a router:
+
+        conn.delete_router("router_id")
+
 7. Add a router interface using a subnet:
+
+        conn.add_router_interface("port_id", "subnet_id")
+
 8. Remove a router interface using a subnet:
+
+        conn.remove_router_interface("port_id", "subnet_id") # Adds a new port port with no name using the port_id
+
 9. Add a router interface using a port:
+
+        conn.add_router_interface("network_id", nil, "port_id")
+
+**Note:** Updates the device_id and device_owner for this port.
+
 10. Remove a router interace using a port:
 
+        conn.remove_router_interface("network_id", nil, "port_id") #guesses as to the ids
+        
 ##Security Group Operations (Request Layer)## {#RequestSecurityGroups}
 
 1. List security groups:
+
+        conn.list_security_groups
+
 2. List security groups using a filter:
+
+        conn.list_security_groups({:name => "My Security Group"})
+
 3. Create a security group:
+
+        conn.create_security_group(
+        :name => "My Security Group",
+        :description => "What my security group does."
+        )
+
 4. Obtain a security group by ID:
+
+        conn.get_security_group("sgroup_id")
+
 5. Delete a security group:
 
+        conn.delete_security_group("sgroup_id")
 
 ##Security Group Rules Operations (Request Layer)## {#RequestSecurityGroupRules}
 
 1. List security group rules:
+
+        conn.list_security_group_rules
+
 2. List security group rules using a filter:
+
+        conn.list_security_group_rules({:direction => 'egress'})
+
 3. Create a security group rule:
+
+        conn.create_security_group_rule("sgroup_id", 'ingress')
+        conn.create_security_group_rule("sgroup_id", 'egress')
+
+        **Note:** The default rules for 'ingress' and 'egress' are already created, so you cannot create them again.
+        
+        conn.create_security_group_rule("sgroup_id", 'ingress',{
+                :remote_ip_prefix => ""0.0.0.0/0",
+                :protocol => "tcp",
+                :port_range_min => 22,
+                :port_range_max => 22
+                })
+
+
 4. Obtain a security group rule by ID:
+
+        conn.get_security_group_rule("sgroup_id")
+
 5. Delete a security group rule:
 
+        conn.delete_security_group_rule("sgroup_id)
 
 ##Floating IPs Operations (Request Layer)## {#RequestFloatingIPs}
 
 1. List floating IPs:
+
+        conn.list_floating_ips
+
 2. List floating IPs using a filter:
+
+        conn.list_floating_ips("fixed_ip_address" => "11.0.3.5")
+
 3. Create a floating IP:
-4. Obtain a floating IP by ID:
+
+        conn.create_floating_ip("network_id")
+
+. Obtain a floating IP by ID:
+
+        conn.get_floating_ip("network_id")
+
 5. Delete a floating IP:
+
+        conn.delete_floating_IP(network_id)
