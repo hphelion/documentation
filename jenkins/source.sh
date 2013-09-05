@@ -47,7 +47,7 @@ do
   git pull origin "${BRANCH}"
   cd "${DIR}/content"
   rm -rf apihome
-  git clone git@git.hploud.net:DevExDocs/apihome.git
+  git clone git@git.hpcloud.net:DevExDocs/apihome.git
   cd apihome
   git checkout develop
   git pull origin develop
