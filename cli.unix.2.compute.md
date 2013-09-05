@@ -285,7 +285,7 @@ To remove an existing server or servers (you can specify one or more servers by 
 To create a Windows compute instance, you need to specify:
 
 * The file that contains the private segment of your key pair in PEM format
-* A security group with port 3389 open (for RDP); see [security group rules](/cli/unix/2/compute#SecurityGroupRuleCommands) forinformation on opening a port on a security group.  
+* A security group with port 3389 open (for RDP); see [security group rules](/cli/unix/2/compute#SecurityGroupRuleCommands) for information on opening a port on a security group.  
 
 Windows servers are a little slower to start up than other servers, taking from only a few minutes up to fifteen minutes.
 
@@ -300,4 +300,4 @@ In the following example, `winserv` is the name of the server, `large` is the fl
     
 **Note**: The output for this command is the Windows Administrator password. To connect to the instance via the public IP and RDP, use  `username` Administrator and the presented password for `password`.
 
-See [on the How To page](/compute/using#WindowsRDP) for an example of how to connect via a Windows RDP client.  You can use the `servers:console` command to extract the password if it is still available on the console.
+See [the How To page](/compute/using#WindowsRDP) for an example of how to connect via a Windows RDP client.  You can use the `servers:console` command to extract the password if it is still available on the console.
