@@ -7,27 +7,31 @@ product: unix-cli
 ---
 # UNIX CLI Compute Examples
 
-This page gives you a few examples of how to perform various compute tasks using the HP Cloud service from the UNIX command line interface (CLI).  This page provides examples for the following command types:
+This page addresses perfoming compute tasks using HP Cloud with examples for the following command types:
 
 * [Flavor Commands](#FlavorCommands)
 * [Image Commands](#ImageCommands)
 * [Key Pair Commands](#KeypairCommands)
 * [Server Commands](#ServerCommands)
 
-Some advanced compute features are documented in these articles:
+Get detailed help for any command or task by running:
+
+    $ hpcloud help <TASK>
+
+See the following for compute service how-tos [Using the compute service](/compute/using/) page.  
+
+
+See the following articles for advanced compute features:
 
 * [User Data aka Cloud Init](/cli/unix/articles/userdata)
 * [Creating Servers with Personality](/cli/unix/articles/personality)
 * [Accessing Servers with Managed Keypairs](/cli/unix/articles/managedkeypairs)
 
-You can also find some good how-tos for the compute service on the [Using the compute service](/compute/using/) page.  And remember that you can get detailed help for any command or task with the following command:
-
-    $ hpcloud help <TASK>
 
 
 ##Flavor Commands## {#FlavorCommands}
 
-To list available flavors:
+To list available flavors, run:
 
     $ hpcloud flavors
       +-----+---------+-------+------+
@@ -41,7 +45,7 @@ To list available flavors:
       | 104 | xlarge  | 16384 | 480  |
       +-----+---------+-------+------+
     
-To list one or more flavors (you can specify the flavors by name or ID):
+To list one or more flavors (you can specify the flavors by name or ID), run:
 
     $ hpcloud flavors large
       +-----+-------+------+------+
@@ -52,7 +56,7 @@ To list one or more flavors (you can specify the flavors by name or ID):
     
 ##Image Commands## {#ImageCommands}
 
-To list available images:
+To list available images, run:
 
     $ hpcloud images
       +-------+------------------------------------------------------------------------+----------------------+--------+
@@ -71,7 +75,7 @@ To list available images:
       | 9953  | EnterpriseDB PPAS 9.1.2 - Partner Image                                | 2012-05-11T01:01:05Z | ACTIVE |
       +-------+------------------------------------------------------------------------+----------------------+--------+
 
-To list one or more images (you can specify the images by name or ID):
+To list one or more images (you can specify the images by name or ID), run:
 
     $ hpcloud images 9995
       +------+-----------------------------------------+----------------------+--------+
@@ -80,22 +84,22 @@ To list one or more images (you can specify the images by name or ID):
       | 9995 | EnterpriseDB PSQL 9.1.3 - Partner Image | 2012-05-11T04:26:51Z | ACTIVE |
       +------+-----------------------------------------+----------------------+--------+
     
-To add a new snapshot image based on a server:
+To add a new snapshot image based on a server, run:
 
     $ hpcloud images:add myimage myserver
     Created image 'myimage' with id '121'.
 
-To add metadata to an existing snapshot image (the metadata must be in a comma-separated list of key value pairs):
+To add metadata to an existing snapshot image (the metadata must be in a comma-separated list of key value pairs), run:
 
     $ hpcloud images:metadata:add myimage 'pv=nRT,e=mc2'
     Image 'myimage' set metadata 'pv=nRT,e=mc2'.
 
-To update metadata to an existing image (the metadata must be in a comma-separated list of key value pairs):
+To update metadata to an existing image (the metadata must be in a comma-separated list of key value pairs), run:
 
     $ hpcloud images:metadata:update myimage 'pv=presentValue,e=eulers'
     Image 'myimage' set metadata 'pv=presentValue,e=eulers'.
 
-To list the metadata for an existing image:
+To list the metadata for an existing image, run:
 
     $ hpcloud images:metadata myimage
        +-----+-------+
@@ -105,12 +109,12 @@ To list the metadata for an existing image:
        | e   | mc2   |
        +-----+-------+
 
-To remove metadata from an existing snapshot image:
+To remove metadata from an existing snapshot image, run:
 
     $ hpcloud images:metadata:remove myimage pv
     Removed metadata 'pv' from image 'myimage'.
 
-To remove an existing snapshot image:
+To remove an existing snapshot image, run:
 
     $ hpcloud images:remove myimage
     Removed image 'myimage'.
@@ -118,11 +122,11 @@ To remove an existing snapshot image:
 
 ##Key Pair Commands## {#KeypairCommands}
 
-To list key pairs:
+To list key pairs, run:
 
     $ hpcloud keypairs
 
-To add a new key pair:
+To add a new key pair, run:
 
     $ hpcloud keypairs:add mykeypair
     
@@ -133,80 +137,80 @@ To add a new key pair:
     -----END RSA PRIVATE KEY-----
     Created key pair 'mykeypair'.
 
-To add a new key pair and save it to a file:
+To add a new key pair and save it to a file, run:
 
     $ hpcloud keypairs:add mykeypair2 --output
     Created key pair 'mykeypair2' and saved it in a file at '/home/terry/.hpcloud/keypairs/mykeypair2.pem'.
 
-For additional information, you can take a look at the [Accessing Servers with Managed Key Pairs](/cli/unix/articles/managedkeypairs/) page.
+For additional information, see [Accessing Servers with Managed Key Pairs](/cli/unix/articles/managedkeypairs/).
 
-To add a new key pair by importing public key data:
+To add a new key pair by importing public key data, run:
 
     $ hpcloud keypairs:import mykeypair3 <public key data>
     Imported key pair 'mykeypair3'.
 
-To list the private keys for which the CLI has information:
+To list the private keys for which the CLI has information, run:
 
     $ hpcloud keypairs:private
     cli_test_key1
     cli_test_key3
     cli_test_key4
 
-To add a private key to the keys for which the CLI has information:
+To add a private key to the keys for which the CLI has information, run:
 
     $ hpcloud keypairs:private:add newkey ./private.pem
     Added private key '/home/terry/.hpcloud/keypairs/newkey.pem'.
 
-To display the location of a private key associated with a server:
+To display the location of a private key associated with a server, run:
 
     $ hpcloud keypairs:private:location winserv4
     /home/terry/.hpcloud/keypairs/1664306.pem
 
-To remove a private key:
+To remove a private key, run:
 
     $ hpcloud keypairs:private:remove newkey 
     Removed private key '/home/terry/.hpcloud/keypairs/newkey.pem'.
 
-To remove an existing key pair:
+To remove an existing key pair, run:
 
     $ hpcloud keypairs:remove mykeypair
     Removed key pair 'mykeypair'.
 
 ##Server Commands## {#ServerCommands}
 
-Newer versions of the CLI track private keys and the keys associated with servers so you can access those servers without manually specifying the key files.  You can use the `[keypairs:private](/cli/unix/2/reference#keypairs/)` commands to manage these private keys.
+Newer versions of the CLI track private keys and the keys associated with servers so you can access those servers without manually specifying the key files.  Use the `[keypairs:private](/cli/unix/2/reference#keypairs/)` commands to manage these private keys.
 
-To list servers:
+To list servers, run:
 
     $ hpcloud servers
 
-To list one or more servers (you can specify the servers by name or ID):
+To list one or more servers (you can specify the servers by name or ID), run:
 
     $ hpcloud servers mongo 1083654
 
-To add a new server specifying an image and a flavor:
+To add a new server specifying an image and a flavor, run:
 
     $ hpcloud servers:add myserver 100 -i 227
     Created server 'myserver' with id 'a376d55d'.
 
-If you  `preferred_flavor` and `preferred_image` are defined in your account file, you do not need to specify them on the command line:
+If `preferred_flavor` and `preferred_image` are defined in your account file, you do not need to specify them on the command line. Run the command as follows:
 
     $ hpcloud servers:add sameold
     Created server 'sameold' with id 'b0245877'.
 
-To add a new server (specifying a flavor, an image, a keyname and a security group):
+To add a new server (specifying a flavor, an image, a keyname and a security group), run:
 
     $ hpcloud servers:add myserver 100 -i 227 -k mykey -s mysecgroup
     Created server 'myserver' with id '9d678495'.
 
-To add a new persistent server (specifying a flavor, a bootable volume, a keyname and a security group):
+To add a new persistent server (specifying a flavor, a bootable volume, a keyname and a security group), run:
 
     $ hpcloud servers:add bat large -i 5575 -v bootable -k brat
     Created server 'bat' with id '2f574231'.
 
-There is also an article about creating and [Accessing Servers with Managed Key Pairs](/cli/unix/articles/managedkeypairs).
+Information at the following link provides information about creating and [Accessing Servers with Managed Key Pairs](/cli/unix/articles/managedkeypairs).
 
-To display the console of a server:
+To display the console of a server, run:
 
     $ hpcloud servers:console cli_test_srv1
     Console output for cli_test_srv1:
@@ -214,11 +218,11 @@ To display the console of a server:
     * Starting deferred execution scheduler                                 [ OK ]
     ...
 
-To display the password of a windows server:
+To display the password of a windows server, run:
 
     $ hpcloud servers:console winserv4 -d
 
-To log in to a server using the secure shell:
+To log in to a server using the secure shell, run:
 
     $ hpcloud servers:ssh cli_test_srv1
     Connecting to 'cli_test_srv1'...
@@ -226,12 +230,12 @@ To log in to a server using the secure shell:
     ...
     ubuntu@cli-test-srv1:~$
 
-To change the password of an existing server:
+To change the password of an existing server, run:
 
     $ hpcloud servers:password myserver new_password
     Password changed for server 'myserver'.
 
-To perform a soft or hard reboot of an existing server:
+To perform a soft or hard reboot of an existing server, run:
 
     $ hpcloud servers:reboot myserver
     Soft rebooting server 'myserver'.
@@ -239,22 +243,22 @@ To perform a soft or hard reboot of an existing server:
     $ hpcloud servers:reboot myserver --hard
     Hard rebooting server 'myserver'.
 
-To rebuild an existing server:
+To rebuild an existing server, run:
 
     $ hpcloud servers:rebuild myserver
     Server 'myserver' being rebuilt.
 
-To add or update the metadata of an existing server (the metadata should be a comma-separated list of key value pairs):
+To add or update the metadata of an existing server (the metadata must be a comma-separated list of key value pairs), run:
 
     $ hpcloud servers:metadata:add myserver 'pv=nRT,e=mc2'
     Server 'myserver' set metadata 'pv=nRT,e=mc2'.
 
-To update the metadata to an existing server (the metadata should be a comma separated list of key value pairs):
+To update the metadata to an existing server (the metadata must be a comma-separated list of key value pairs), run:
 
     $ hpcloud servers:metadata:update myserver 'pv=presentValue,e=eulers'
     Server 'myserver' set metadata 'pv=presentValue,e=eulers'.
 
-To list the metadata for an existing server:
+To list the metadata for an existing server, run:
 
     $ hpcloud servers:metadata myserver
        +-----+-------+
@@ -264,12 +268,12 @@ To list the metadata for an existing server:
        | e   | mc2   |
        +-----+-------+
 
-To remove metadata from an existing snapshot server:
+To remove metadata from an existing snapshot server, run:
 
     $ hpcloud servers:metadata:remove myserver pv
     Removed metadata 'pv' from server 'myserver'.
 
-To remove an existing server or servers (you can specify one or more servers by name or ID):
+To remove an existing server or servers (you can specify one or more servers by name or ID), run:
 
     $ hpcloud servers:remove myserver c7e35261
     Removed server 'myserver'.
@@ -281,11 +285,11 @@ To remove an existing server or servers (you can specify one or more servers by 
 To create a Windows compute instance, you need to specify:
 
 * The file that contains the private segment of your key pair in PEM format
-* A security group with port 3389 open (for RDP); see the [security group rules](/cli/unix/2/compute#SecurityGroupRuleCommands) information on how to open a port on a security group.  
+* A security group with port 3389 open (for RDP); see [security group rules](/cli/unix/2/compute#SecurityGroupRuleCommands) forinformation on opening a port on a security group.  
 
-Windows servers are a little slower to start up than other servers; while normally taking only a few minutes,  a start-up time of up to fifteen minutes is possible.
+Windows servers are a little slower to start up than other servers, taking from only a few minutes up to fifteen minutes.
 
-In the following example, `winserv` is the name of the server, `large` is the flavor name, `1000065672` is the Windows image identifier, `winpair` is the key pair name, `allowsRDP` is the security group with port 3389 open, and ` ./winpair.pem` is the .pem file location (in the current folder).
+In the following example, `winserv` is the name of the server, `large` is the flavor name, `1000065672` is the Windows image identifier, `winpair` is the key pair name, `allowsRDP` is the security group with port 3389 open, and ` ./winpair.pem` is the .pem file location (in the current folder). Run:
 
     $ hpcloud servers:add winserv large -i 1000065672 -k winpair -s allowsRDP -p ./winpair.pem
     Created server 'winserver' with id '1db7ec91'.
@@ -294,6 +298,6 @@ In the following example, `winserv` is the name of the server, `large` is the fl
     Make sure the security group has port 3389 open
     You may wish to change the password when you log in
     
-**Note**: The output for this command is the Windows Administrator password. In order to connect to the instance via the public IP and RDP, use  `username` Administrator and the presented password for `password`.
+**Note**: The output for this command is the Windows Administrator password. To connect to the instance via the public IP and RDP, use  `username` Administrator and the presented password for `password`.
 
-An example of how to connect via a Windows RDP client is located [on the How To page](/compute/using#WindowsRDP).  You can use the `servers:console` command to extract the password if it is still available on the console.
+See [on the How To page](/compute/using#WindowsRDP) for an example of how to connect via a Windows RDP client.  You can use the `servers:console` command to extract the password if it is still available on the console.
