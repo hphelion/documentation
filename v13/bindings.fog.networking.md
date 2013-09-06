@@ -91,7 +91,7 @@ For information on connecting to the service, please see the [Connecting to the 
 
         conn.subnets.get("subnet_id").destroy
 
-##Port Operationss (Model Layer)## {#ModelPorts}
+##Port Operations (Model Layer)## {#ModelPorts}
 
 1. List ports:
 
@@ -139,18 +139,18 @@ For information on connecting to the service, please see the [Connecting to the 
 
 5. Add a router interface using a subnet:
 
-        network = router.add_interface("network_id", nil)
+        router.add_interface("subnet_id", nil)
         conn.ports        # If you look at the ports, note that a new port is auto. created, the device_id is assigned to the router id, and the device_owner is updated
 
 6. Remove a router interface using a subnet:
 
-       network = router.remove_interface("id", nil)
+       router.remove_interface("subnet_id", nil)
        # Removing the interface also deletes the auto-created port
 
 7. Add a router interface using a port:
 
         # Create a new port
-        network = conn.ports.create(
+        conn.ports.create(
                 :name => "Port Model 1",
                 :network_id => "network_id"
         )
@@ -163,53 +163,53 @@ For information on connecting to the service, please see the [Connecting to the 
 
 8. Remove a router interface using a port:
 
-        network = router.remove_interface(nil, "router_id")
+        router.remove_interface(nil, "port_id")
         # after removing the interface, the associated port is deleted
 
 9. Delete a router:
 
-        network = router.destroy
+        router.destroy
 
 ##Security Group Operations (Model Layer)## {#ModelSecurityGroups}
 
 1. List security groups:
 
-        network = conn.security_groups
+        conn.security_groups
 
 2. List security groups using a filter:
 
-        network = conn.security_groups.all({:name => "My Security Group"})
+        conn.security_groups.all({:name => "My Security Group"})
 
 3. Create a security group:
 
-        network = conn.security_groups.create(
+        conn.security_groups.create(
                 :name => 'MySecurityGroup',
                 :description => 'my security group description'
         )        
-**Note:** That 2 security group rules are created by default for every new security group that is created; one 'ingress' and one 'egress' rule.
+**Note:** Two security group rules are created by default for every new security group that is created: one 'ingress' and one 'egress' rule.
 
 4. Obtain a security group by ID:
 
-        network = conn.security_groups.get("security_group")
+        conn.security_groups.get("SecurityGroup_id")
 
 5. Delete a security group:
 
-        network = conn.security_groups.get("security_group").destroy
+        conn.security_groups.get("SecurityGroup_id").destroy
 
 ##Security Group Rules Operations (Model Layer)## {#ModelSecurityGroupRules}
 
 1. List security group rules:
 
-        network = conn.security_group_rules
+        conn.security_group_rules
 
 2. List security group rules using a filter:
 
-        network = conn.security_group_rules.all({:direction => "ingress"})
+        conn.security_group_rules.all({:direction => "ingress"})
 
 3. Create a security group rule:
 
-        network = conn.security_group_rules.create(
-            :security_group_id => "secgrpid",
+        conn.security_group_rules.create(
+            :security_group_id => "SecurityGroup_id",
             :direction => 'ingress',
             :protocol => 'tcp',
             :port_range_min => 22,
@@ -219,17 +219,17 @@ For information on connecting to the service, please see the [Connecting to the 
 
 4. Obtain a security group by ID:
 
-        network = conn.security_group_rules.get("server_id")
+        conn.security_group_rules.get("server_id")
 
 5. Delete a security group rule:
 
-        network = conn.security_group_rules.get("SecurityGroupRule").destroy
+        conn.security_group_rules.get("SecurityGroupRule_id").destroy
 
 ##Floating IPs Operations (Model Layer)## {#ModelFloatingIPs}
 
 1. List floating IPs:
 
-        network = conn.floating_ips
+        conn.floating_ips
 
 2. List floating IPs using a filter:
 
@@ -237,17 +237,17 @@ For information on connecting to the service, please see the [Connecting to the 
 
 3. Create a floating IP:
 
-        network = conn.floating_ips.create(
-        	:floating_network_id => "server_id"
+        conn.floating_ips.create(
+        	:floating_network_id => "network_id"
         )
 
 4. Obtain a floating IP by ID:
 
-        network = conn.floating_ips.get("server_id")
+        conn.floating_ips.get("FloatingIp_id")
 
 5. Delete a floating IP:
 
-        network = conn.floating_ips.get("server_id").destroy
+        network = conn.floating_ips.get("FloatingIp_id").destroy
 
 
 ##Network Operations (Request Layer)## {#RequestNetworks}
