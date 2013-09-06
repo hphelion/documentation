@@ -74,7 +74,7 @@ There's a lot of information out there to help you get going with your services.
 <!--add a link to the release notes at GA-->
 
 * Check out the [Getting Started Guide](https://community.hpcloud.com/article/getting-started-guide/) in our [Knowledge Base](https://community.hpcloud.com/) to help you get started navigating the web interface, activating your services, and getting up and running with the various available services
-* If you're a developer, you'll want to look at the [OpenStack software development kid (SDK) information](https://wiki.openstack.org/wiki/SDKs).
+* If you're a developer, you'll want to look at the [OpenStack software development kit (SDK) information](https://wiki.openstack.org/wiki/SDKs).
 * Take a look at the a site map of the [documentation available on the site](/sitemap) for a full list of the technical content pages available on the site
 * If flat lists aren't your thing, there's also a [site overview](/site-overview) that includes pointers to key pages that you might find helpful
 
