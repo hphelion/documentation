@@ -5,11 +5,11 @@ permalink: /cli/unix/2/reference/
 product: unix-cli
 
 ---
-Below you can find a full reference of supported UNIX command-line interface (CLI) commands. The commands are alphabetized.  You can also use the <font face="Courier">hpcloud help [<em>command</em>]</font> tool (where <em>command</em> is the name of the command on which you want help, for example <font face="Courier">account:setup</font>) to display usage, description, and option information from the command line.
+Below is a full, alphabetized reference of supported UNIX command-line interface (CLI) commands.  You can also use the <font face="Courier">hpcloud help [<em>command</em>]</font> tool (where <em>command</em> is the name of the command on which you want help, for example <font face="Courier">account:setup</font>) to display usage, description, and option information from the command line.
 
-Many of the commands support a `--debug` option to print verbose trace.  This trace may help you diagnose problems if the CLI is having difficulty communicating with the servers.
+Many of the commands support a `--debug` option to print verbose trace, which can diagnose problems if the CLI is having difficulty communicating with the servers.
 
-The <font face="Courier">hpcloud complete</font> command will attempt to install a bash completion file into your environment.  This will help if you like to use tab completion of commands.
+The <font face="Courier">hpcloud complete</font> command attempts to install a bash completion file into your environment to facilitate tab completion of commands.
 
 ##account## {#account}
 List your accounts and account settings.
@@ -49,7 +49,7 @@ Print the service catalog of the specified account.
 
 
 ###Description
-Print the service catalog of the specified account.  Optionally, you may specify a particular service to print such as `Compute`.
+Print the service catalog of the specified account.  Optionally, specify a particular service to print such as `Compute`.
 
 ###Examples
 Print the service catalog of `useast`:
@@ -68,7 +68,7 @@ Copy account data to the specified account.
 `hpcloud account:copy <from_account> <to_account>`
 
 ###Description
-The copy command overwrites the destination account with the source account information.
+The `copy` command overwrites the destination account with the source account information.
 
 ###Examples
 Copy account `useast` to account `backup`:
@@ -95,11 +95,11 @@ Create or edit your account credentials.
 
 
 ###Description
+*Note: You  need your Access Key Id, Secret Key and Project (aka Tenant) Id from the HP Cloud web site to set up your account. Optionally, you can specify your own endpoint to authorize your identity, but in most cases we recommend you use the default.*
+
 Create or edit your account credentials. If you do not specify an account name on the command line, the default account is updated.  If you do not specify name value pairs, you are prompted to input the account values.
 
-You  need your Access Key Id, Secret Key and Project (aka Tenant) Id from the HP Cloud web site to set up your account. Optionally, you can specify your own endpoint to authorize your identity, but in most cases we recommend you use the default.
-
-Availability zones typically have the format `az-1.region-a.geo-1` or `region-a.geo-1`, depending on the service.  See your account API keys page to see your list of activated availability zones: https://console.hpcloud.com/account/api_keys or use the `account:catalog` command to print out your service catalog.
+Availability zones typically have the format `az-1.region-a.geo-1` or `region-a.geo-1`, depending on the service.  See your account API keys page to see your list of activated availability zones: https://console.hpcloud.com/account/api_keys, or use the `account:catalog` command to print out your service catalog.
 
 You can re-run this command at any time to modify your settings.
 
@@ -192,13 +192,10 @@ Create or edit your account credentials.
 
 
 ###Description
-Create or edit your account credentials. If you do not specify an account name on the command line, the default account is updated.  If you do not specify name value pairs, you are prompted to input the account values.
+*Note: You  need your Access Key Id, Secret Key and Project (aka Tenant) Id from the HP Cloud web site to set up your account. Optionally, specify your own endpoint to authorize your identity, but in most cases HP recommends using the default.Create or edit your account credentials. If you do not specify an account name on the command line, the default account is updated.  If you do not specify name value pairs, you are prompted to input the account values.*
 
-You  need your Access Key Id, Secret Key and Project (aka Tenant) Id from the HP Cloud web site to set up your account. Optionally, you can specify your own endpoint to authorize your identity, but in most cases we recommend you use the default.
 
-Availability zones typically have the format `az-1.region-a.geo-1` or `region-a.geo-1`, depending on the service.  See your account API keys page to see your list of activated availability zones: https://console.hpcloud.com/account/api_keys or use the `account:catalog` command to print out your service catalog.
-
-You can re-run this command at any time to modify your settings.
+Availability zones typically have the format `az-1.region-a.geo-1` or `region-a.geo-1`, depending on the service.  See your account API keys page to see your list of activated availability zones: https://console.hpcloud.com/account/api_keys, or use the `account:catalog` command to print out your service catalog. You can re-run this command at any time to modify your settings.
 
 The interactive mode prompts you for the following values:
 
@@ -261,7 +258,7 @@ List the tenants.
 
 ###Options
 **-c, --columns=COLUMNS**
-: Comma separated list of columns in report.
+: Comma-separated list of columns in report.
 
 **-d, --separator=SEPARATOR**
 : Use the specified value as the report separator.
@@ -353,7 +350,7 @@ View the ACL for an object or container.
 
 
 ###Description
-View the access control list (ACL) for a container or object. Optionally, you can specify an availability zone.
+View the access control list (ACL) for a container or object. Optionally, specify an availability zone.
 
 ###Examples
 Display the ACL for the object 'my_file.txt':
@@ -391,7 +388,7 @@ Grant the specified permissions.
 
 
 ###Description
-Set the access control list (ACL) values for the specified container. The supported permissions are `r` (read), `w` (write), or `rw` (read and write). You may specify one or more user for the given permission.  If you do not specify a user, the permissions are set to public.  Public write permissions are not allowed.
+Set the access control list (ACL) values for the specified container. The supported permissions are `r` (read), `w` (write), or `rw` (read and write). You may specify one or more users for the given permission.  If you do not specify a user, the permissions are set to public.  Public write permissions are not allowed.
 
 ###Examples
 Allow anyone to read 'my_container':
@@ -451,7 +448,7 @@ Display list of available addresses.
 
 ###Options
 **-c, --columns=COLUMNS**
-: Comma separated list of columns in report.
+: Comma-separated list of columns in report.
 
 **-d, --separator=SEPARATOR**
 : Use the specified value as the report separator.
@@ -523,7 +520,7 @@ Allocate a new public IP address.
 
 
 ###Description
-Add or allocate a new public IP address from the pool of available IP addresses.  If a network is not specified, the first external network found will be used.
+Add or allocate a new public IP address from the pool of available IP addresses.  If a network is not specified, the first external network found is used.
 
 ###Examples
 Add a new public IP address to external network:
@@ -589,7 +586,7 @@ Disassociate any port associated to the public IP address.
 
 
 ###Description
-Disassociate any port associated to the public IP address. The public IP address is not removed or released to the pool. Optionally, you can specify an availability zone.
+Disassociate any port associated to the public IP address. The public IP address is not removed or released to the pool. Optionally, specify an availability zone.
 
 ###Examples
 Disassociate IP addresses `111.111.111.111` and `127.0.0.1` from their ports:
@@ -623,7 +620,7 @@ Remove or release a public IP address.
 
 
 ###Description
-Remove or release a previously allocated public IP address. Any server instances that were associated to this address are disassociated. You may specify one ore more address IPs or IDs on the command line.  Optionally, you can specify an availability zone.
+Remove or release a previously allocated public IP address. Any server instances that were associated to this address are disassociated. You may specify one ore more address IPs or IDs on the command line.  Optionally, specify an availability zone.
 
 ###Examples
 Remove IP address '111.111.111.111':
@@ -669,7 +666,7 @@ List only the CDN-enabled containers:
 
     hpcloud cdn:containers
 
-List all the container on the CDN:
+List all the containers on the CDN:
 
     hpcloud cdn:containers -l
 
@@ -702,20 +699,20 @@ Add containers to the CDN.
 
 
 ###Description
-Add existing containers from your storage account to the CDN. Container names can be specified with or without the preceding colon: `my_container` or `:my_container`. Optionally, you can specify an availability zone.
+Add existing containers from your storage account to the CDN. Container names can be specified with or without the preceding colon: `my_container` or `:my_container`. Optionally, specify an availability zone.
 
 ###Examples
 Add the containers`tainer1` and `tainer2` to the CDN:
 
     hpcloud cdn:containers:add :tainer1 :tainer2
 
-Add the container `my_cdn_container` to the CDN in the  availability zone `region-a.geo`:
+Add the container `my_cdn_container` to the CDN in the availability zone `region-a.geo`:
 
     hpcloud cdn:containers:add :my_cdn_container -z region-a.geo-1
 
 
 ##cdn:containers:get## {#cdn:containers:get}
-Get the value of an attribute of a CDN container.
+Get the value of a CDN container attribute.
 
 ###Syntax
 `hpcloud cdn:containers:get <name> [attribute..]`
@@ -736,13 +733,13 @@ Get the value of an attribute of a CDN container.
 
 
 ###Description
-Get the value of an attribute for an existing CDN container. The allowed attributes whose value can be retrieved are:
+Get the value of an existing CDN container attribute. The allowed attributes whose value can be retrieved are:
 * `X-Ttl`
 * `X-Cdn-Uri`
 * `X-Cdn-Enabled`
 * `X-Log-Retention`.
 
-Optionally, you can specify an availability zone.
+Optionally, specify an availability zone.
 
 ###Examples
 List all the values:
@@ -787,7 +784,7 @@ Get the location of a container on the CDN.
 
 
 ###Description
-Get the location of an existing container on the CDN. Optionally, you can specify an availability zone.
+Get the location of an existing container on the CDN. Optionally, specify an availability zone.
 
 ###Examples
 Get the location of the container 'my_cdn_container':
@@ -823,7 +820,7 @@ Remove containers from the CDN.
 
 
 ###Description
-Remove containers from the CDN. Optionally, you can specify an availability zone.
+Remove containers from the CDN. Optionally, specify an availability zone.
 
 ###Examples
 Delete the containers `:tainer1` and `:tainer2` from the CDN:
@@ -859,14 +856,14 @@ Set attributes on a CDN container.
 
 
 ###Description
-Set attributes for an existing CDN container by specifying their values. The allowed attributes that can be set are:
+Set attributes for an existing CDN container by specifying their values. The attributes you can set are:
 
 * `X-Ttl`
 * `X-Cdn-Uri`
 * `X-Cdn-Enabled`
 * `X-Log-Retention`.
 
-Optionally, you can specify an availability zone.
+Optionally, specify an availability zone.
 
 ###Examples
 Set the attribute 'X-Ttl' to 900:
@@ -889,7 +886,7 @@ Installs the bash completion file.
 `hpcloud complete`
 
 ###Description
-Installs the HP Cloud bash completion file.  If you run this command as the root user, the file is installed in a system-wide directory (if one is available).  Otherwise, the file is installed  in the `~/.bash_completion.d/` directory.  The `~/.bash_completion.d/` directory is not run by default; you must run the completion script explicitly.
+Installs the HP Cloud bash completion file.  If you run this command as the root user, the file is installed in a system-wide directory, if available.  If not, the file is installed  in the `~/.bash_completion.d/` directory.  You must run the completion script explicitly to run the `~/.bash_completion.d/` directory.
 
 ###Examples
 Installs the HP Cloud bash completion file.:
@@ -964,7 +961,7 @@ Add a container.
 
 
 ###Description
-Add a new container to your storage account. You may creeate multiple containers by specifying more than one container name on the command line.  You can specify the ontainer name  with or without the preceding colon: `my_container` or `:my_container`. Optionally, you can specify an availability zone.
+Add a new container to your storage account. Create multiple containers by specifying more than one container name on the command line, if desired.  You can specify the ontainer name  with or without the preceding colon: `my_container` or `:my_container`. Optionally, specify an availability zone.
 
 ###Examples
 Create a new container called 'my_container':
@@ -1005,7 +1002,7 @@ Remove a containers.
 
 
 ###Description
-Remove one or more containers. By default this command removes a container if it is empty, but you may use the `--force` flag to delete non-empty containers.  Be careful with this flag or you could have a really bad day.
+Remove one or more containers. By default this command removes a container if it is empty, but you may use the `--force` flag to delete non-empty containers.  **!Important: Be careful with this flag or you could have a really bad day.**
 
 ###Examples
 Delete 'my_container' (if empty):
@@ -1049,7 +1046,7 @@ Allow container synchronization.
 
 
 ###Description
-Allow container synchronization using the specified key.  If you are creating a destination for synchronization, only the key should be specified.  If you are creating a source for synchronization, specify a key and location.  The same key must be used in the source and destination.  It is possible to have containers as both a source and destination.  List your synchronization information with the "hpcloud list --sync" command.
+Allow container synchronization using the specified key.  If you are creating a destination for synchronization, only the key should be specified.  If you are creating a source for synchronization, specify a key and location.  The same key must be used in the source and destination.  You can have containers as both a source and destination.  List your synchronization information with the "hpcloud list --sync" command.
 
 ###Examples
 Set up the container :atainer to be a destination for synchronization:
@@ -1096,7 +1093,8 @@ Copy files from one resource to another.
 
 
 ###Description
-Copy a file between your file system and a container, inside a container, or between containers. You may copy multiple files to a directory or container on one command line.  Optionally, you can specify an availability zone.  Note that a leading colon `:` is required when you specify a container; for example `:my_container`.
+Copy a file between your file system and a container, inside a container, or between containers. Copy multiple files to a directory or container on one command line, if desired.  Optionally, specify an availability zone.  
+*Note a leading colon `:` is required when you specify a container; for example `:my_container`.*
 
 ###Examples
 Copy the file `my_file.txt` to container 'my_container':
@@ -1143,7 +1141,7 @@ List the DNS domains.
 
 ###Options
 **-c, --columns=COLUMNS**
-: Comma separated list of columns in report.
+: Comma-separated list of columns in report.
 
 **-d, --separator=SEPARATOR**
 : Use the specified value as the report separator.
@@ -1163,7 +1161,7 @@ List the DNS domains.
 
 
 ###Description
-Lists all the DNS domains that are associated with the account. The list begins with identifier and contains name, TTL, serial number, email and time created.  Optionally, you can filter the list by specifying name or ID.
+Lists all the DNS domains that are associated with the account. The list begins with identifier and contains name, TTL, serial number, email and time created.  Optionally, filter the list by specifying name or ID.
 
 ###Examples
 List all dns domains:
@@ -1208,7 +1206,7 @@ Add a DNS domain.
 
 
 ###Description
-Add a DNS domain with the specified name and email address.  Optionally, you can specify a TTL (time to live) to adjust DNS caching of your entry.  The default time to live (TTL) is 3600 (one hour).
+Add a DNS domain with the specified name and email address.  Optionally, specify a TTL (time to live) to adjust DNS caching of your entry.  The default time to live (TTL) is 3600 (one hour).
 
 ###Examples
 Create a new DNS domain `mydomain.com` with email address `email@example.com`:
@@ -1228,7 +1226,7 @@ List the records associated with the DNS domain.
 
 ###Options
 **-c, --columns=COLUMNS**
-: Comma separated list of columns in report.
+: Comma-separated list of columns in report.
 
 **-d, --separator=SEPARATOR**
 : Use the specified value as the report separator.
@@ -1312,7 +1310,7 @@ Remove a DNS record.
 
 
 ###Description
-Remove a DNS record to the specified domain.  Records may be specified by identifier.
+Remove a DNS record to the specified domain.  You can specify records by identifier.
 
 ###Examples
 Remove record `www.mydomain.com` from the domain `mydomain.com`.:
@@ -1372,7 +1370,7 @@ Remove DNS domains (specified by name or ID).
 
 
 ###Description
-Remove DNS domains by specifying their names or ID. You may specify more than one DNS name or ID on a command line.  Optionally, you can specify an availability zone.
+Remove DNS domains by specifying their names or IDs. You may specify more than one DNS name or ID on a command line.  Optionally, specify an availability zone.
 
 ###Examples
 Delete the DNS domains `mydomain.com.` and `yourdomain.com.`:
@@ -1394,7 +1392,7 @@ List the servers associated with the DNS domain.
 
 ###Options
 **-c, --columns=COLUMNS**
-: Comma separated list of columns in report.
+: Comma-separated list of columns in report.
 
 **-d, --separator=SEPARATOR**
 : Use the specified value as the report separator.
@@ -1454,7 +1452,7 @@ Update a DNS domain.
 
 
 ###Description
-Update a DNS domain with the specified name.  Optionally, you can specify an email or a time to live (TTL) to adjust DNS caching for your entry.  The default TTL is 3600 (one hour).
+Update a DNS domain with the specified name.  Optionally, specify an email or a time to live (TTL) to adjust DNS caching for your entry.  The default TTL is 3600 (one hour).
 
 ###Examples
 Update DNS domain `mydomain.com` with email address `email@example.com`:
@@ -1474,7 +1472,7 @@ List available flavors.
 
 ###Options
 **-c, --columns=COLUMNS**
-: Comma separated list of columns in report.
+: Comma-separated list of columns in report.
 
 **-d, --separator=SEPARATOR**
 : Use the specified value as the report separator.
@@ -1494,7 +1492,7 @@ List available flavors.
 
 
 ###Description
-List the flavors in your compute account. You may filter the output by specifying the names or IDs of the flavors you wish to see.  Optionally, you can specify an availability zone.
+List the flavors in your compute account. Specify the names or IDs of the flavors you wish to see to filter output, or specify an availability zone.
 
 ###Examples
 List the flavors:
@@ -1561,7 +1559,7 @@ List the available images in your compute account.
 
 ###Options
 **-c, --columns=COLUMNS**
-: Comma separated list of columns in report.
+: Comma-separated list of columns in report.
 
 **-d, --separator=SEPARATOR**
 : Use the specified value as the report separator.
@@ -1581,7 +1579,7 @@ List the available images in your compute account.
 
 
 ###Description
-List the images in your compute account. You may filter the images displayed by specifying one ore more image names or IDs on the command line.  Optionally, you can specify an availability zone.
+List the images in your compute account. Specify one ore more image names or IDs on the command line to filter the images displayed, or specify an availability zone.
 
 ###Examples
 List the images:
@@ -1624,7 +1622,7 @@ Add an image from an existing server.
 
 
 ###Description
-Add a new image from an existing server to your compute account. Optionally, you may specify metadata or an availability zone.
+Add a new image from an existing server to your compute account. Optionally, specify metadata or an availability zone.
 
 ###Examples
 Create the new image 'my_image' from the existing server named 'my_server':
@@ -1644,7 +1642,7 @@ List the metadata for an image.
 
 ###Options
 **-c, --columns=COLUMNS**
-: Comma separated list of columns in report.
+: Comma-separated list of columns in report.
 
 **-d, --separator=SEPARATOR**
 : Use the specified value as the report separator.
@@ -1664,7 +1662,7 @@ List the metadata for an image.
 
 
 ###Description
-List the metadata for an image in your compute account. You may specify either the name or ID of the image.  Optionally, you may specify an availability zone.
+List the metadata for an image in your compute account. Specify either the name or ID of the image, or specify an availability zone.
 
 ###Examples
 List the metadata for image 'Skynet':
@@ -1700,7 +1698,7 @@ Add metadata to an image.
 
 
 ###Description
-Add metadata to a image in your compute account.  You may specify the mage name or ID.  If metadata already exists, it is updated.  You must specify the Mmetadata as a comma separated list of name value pairs.  Optionally, you may specify an availability zone.
+Add metadata to an image in your compute account.  You may specify the image name or ID.  If metadata already exists, it is updated.  You must specify the metadata as a comma-separated list of name value pairs or specify an availability zone.
 
 ###Examples
 Add the specified metadata to the image (if the metadata exists, it is updated):
@@ -1732,7 +1730,7 @@ Remove metadata from an image.
 
 
 ###Description
-Remove metadata from an image in your compute account.  You may specify an image name or ID.  Optionally, you may specify an availability zone.
+Remove metadata from an image in your compute account.  Specify an image name or ID, or specify an availability zone.
 
 ###Examples
 Remove the specified metadata from the image:
@@ -1764,7 +1762,7 @@ Remove images by name or identifier.
 
 
 ###Description
-Remove existing images by specifying thier names or IDs. Optionally, you may specify an availability zone.
+To remove existing images specify their names or IDs, or specify an availability zone.
 
 ###Examples
 Delete image 'my-image':
@@ -1791,7 +1789,7 @@ List the available keypairs.
 
 ###Options
 **-c, --columns=COLUMNS**
-: Comma separated list of columns in report.
+: Comma-separated list of columns in report.
 
 **-d, --separator=SEPARATOR**
 : Use the specified value as the report separator.
@@ -1811,7 +1809,7 @@ List the available keypairs.
 
 
 ###Description
-List the key pairs in your compute account. You may filter the output of keys displayed by specifying the key pairs you want displayed on the command line.  Optionally, you can specify an availability zone.
+List the key pairs in your compute account. Specify the key pairs to  display on the command line to filter the output of keys, or specify an availability zone.
 
 ###Examples
 List the key pairs:
@@ -1862,7 +1860,7 @@ add a key pair
 
 
 ###Description
-Add a key pair by specifying the name. Optionally you can specify a fingerprint and private key data. You can use the `-o` option to save the key to a file. Optionally, you can specify an availability zone.
+To add a key pair specify the name or specify a fingerprint and private key data. Use the `-o` option to save the key to a file, or specify an availability zone.
 
 ###Examples
 Create the key 'mykey':
@@ -1912,7 +1910,7 @@ Import a key pair.
 
 
 ###Description
-Import a key pair by specifying the public key data. Alternately, you may specify the name of the import file on the command line.  Optionally, you can specify an availability zone.
+To import a key pair specify the public key data. Alternately, specify the name of the import file on the command line or specify an availability zone.
 
 ###Examples
 Import a key from file `~/.ssh/id_rs.pub`:
