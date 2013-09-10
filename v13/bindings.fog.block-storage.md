@@ -58,69 +58,41 @@ This section discusses the various operations you can perform using the model ab
 
 * [Volume Operations](#ModelVolumeOperations)
 * [Snapshot Operations](#ModelSnapshotOperations)
+* [Volume Backup Operations] (#ModelVolBackupOperations)
 
 ###Volume Operations (Model Layer)### {#ModelVolumeOperations}
 
 This section discusses the volume operations you can perform using the model abstraction.
 
-1. List all available volumes for an account
+1. List all available volumes for an account:
 
-        volumes = conn.list_volumes
+        conn.volumes
         volumes.size   # returns no. of volumes
         # display volumes in a tabular format
         volumes.table([:id, :name, :status, :created_at])
 
-2. Obtain the details of a particular volume by volume ID
+2. Obtain the details of a volume by the volume ID:
 
-        volume = conn.list_volumes_detail(volume_id)
+        conn.volumes.get("volume_id")
         volume.name                         # returns name of the volume
         volume.created_at                   # returns the date the volume was created
         volume.status                       # returns the state of the volume e.g. available, in-use
 
-3. List volume details using a filter
+3. List volume details using a filter:
 
-        conn.list_volumes_detail(
-        	:display_name => "volume name")
+        conn.volumes.all(:status => 'error')
 
-4. List all available bootable volumes for an account
+4. Create a volume
 
-        bootable_volumes = conn.bootable_volumes
-        bootable_volumes.size   # returns no. of bootable volumes
-        # display bootable volumes in a tabular format
-        bootable_volumes.table([:id, :name, :state, :created_at])
-
-4. Obtain the details of a particular bootable volume
-
-        volume = conn.bootable_volumes.get(volume_id)
-        volume.name                        # returns name of the bootable volume
-        volume.created_at                  # returns the date the bootable volume was created
-        volume.status                      # returns the state of the bootable volume e.g., available, in-use
-
-5. Create a new volume
-
-        new_volume = conn.create_volume(
-               :display_name => "TestVolume",
+        new_volume = conn.volumes.create(
+               :name => "TestVolume",
                :description => "My Test Volume",
                :size => 1)
         new_volume.id       # returns the id of the volume
         new_volume.name     # => "TestVolume"
-        new_volume.status    # returns the status of the volume e.g. creating, available
+        new_volume.status    # returns the status of the volume e.g., creating, available
 
-
-6. Create a new volume from an existing image
-
-        new_volume = conn.create_volume(
-               :display_name => "TestVolume",
-               :display_description => "My Test Volume",
-               :imageRef => 1,
-               :size => 1)
-        new_volume.id       # returns the id of the volume
-        new_volume.snapshot_id       # returns the snapshot_id of the volume
-        new_volume.name     # => "TestVolume"
-        new_volume.status    # returns the status of the volume e.g. creating, available
-**Note**: The size of the volume you create from an image is the same as that of the image. The `:size` parameter has no effect in this case.
-
-7. Create a new bootable volume from an suitable single-part image
+5. Create a new bootable volume from an suitable single-part image
 
         new_volume = conn.bootable_volumes.create(
                :name => "BootVolume",
@@ -130,25 +102,43 @@ This section discusses the volume operations you can perform using the model abs
         new_volume.id       # returns the id of the volume
 **Note**: You can use a bootable volume to create a persistent server instance.
 
-8. Attach an existing volume to an existing server
+6. Create a volume from a volume snapshot:
 
-        volume = conn.volumes.get(volume_id)
-        volume.attach(server_id, device)
+        new_volume = conn.volumes.create(
+                :name => 'SnapVolume', 
+                :source_volid => "source_volid")
+**Note**: The size of the volume you create from an image is the same as that of the image. The `:size` parameter has no effect in this case.
+
+7. Attach a volume to a server:
+
+        s.volume_attachments.create(
+                :server_id => s.id, 
+                :volume_id => "volume_id", 
+                :device => "/dev/sdf")
         # => true
 **Note**: The device parameter is the mount point on the server instance to which the volume is attached (for example, `/dev/sdf`).
 
-9. Detach an existing volume
+8. List the attached volumes for a server:
 
-        volume = conn.volumes.get(volume_id)
-        volume.detach
+        s = conn.servers.get("server_id")
+        s.volume_attachments.all
+
+9. Detach a volume from a server:
+
+        s = conn.servers.get("server_id")
+        att.destroy
         # => true
 
-6. Update an existing volume
+10. Update a volume:
 
-        volume = conn.update_volume(volume_id)
-               :display_name => "TestVolume",
+        volume = conn.volumes.get("volume_id")
+        vol.description = "from a source vol. in a diff. availability zone"
+        => "from a source vol. in a diff. availability zone"
+        vol.save
+        => true
+        vol.reload
 
-10. Delete an existing volume
+11. Delete a volume:
 
         volume = conn.delete_volume(volume_id)
         volume.destroy
@@ -158,41 +148,122 @@ This section discusses the volume operations you can perform using the model abs
 
 This section discusses the snapshot operations you can perform using the model abstraction.
 
-1. List all available snapshots for an account
+1. List all available snapshots for an account:
 
-        snapshots = conn.list_snapshots
+        conn.snapshots
         snapshots.size   # returns no. of snapshots
         # display snapshots in a tabular format
         conn.snapshots.table([:id, :name, :state, :created_at])
 
-2. Obtain the details of a particular snapshot
+2. List snapshots using a filter:
 
-        snapshot = conn.list_snapshots_detail(snapshot_id)
-        snapshot.name                       # returns name of the volume
-        snapshot.created_at                   # returns the date the volume was created
-        snapshot.status                        # returns the state of the volume e.g. available
+        conn.snapshots.all(:limit => 2)
 
-3. Create a new snapshot
+3. Obtain the details of a snapshot using the name:
 
-        new_snapshot = conn.create_snapshot(
+        snapshot = conn.snapshots.all(:display_name => 'My Snapshot')
+        name            # returns name of the snapshot
+        description     # returns the description of the snapshot           
+        created_at      # returns the date the snapshot was created
+        status          # returns the state of the snapshot e.g., available
+
+4. Obtain the details of a snapshot by the ID:
+
+        conn.snapshots.get("Snapshot_id")
+        name            # returns name of the volume
+        description     # returns the description of the snapshot           
+        status          # returns the state of the snapshot e.g., available
+        created_at      # returns the date the snapshot was created
+        volume_id       # returns the volume ID
+
+5. Create a snapshot:
+
+        conn.snapshots.create(
+               :volume_id => "volume_id",
                :name => "TestVolume",
                :description => "My Test Volume",
-               :volume_id => 1)
-        new_snapshot.id       # returns the id of the volume
-        new_snapshot.name     # => "TestVolume"
-        new_snapshot.volume_id     # => 1
-        new_snapshot.status    # returns the status of the volume e.g. creating, available
 
-4. Delete an existing snapshot
+        snapshot.id     # returns the id of the volume
+        name            # => "TestVolume"
+        description     # returns the description of the snapshot
+        status          # returns the status of the volume e.g., creating, available
+        created_at      # returns the date the snapshot was created
+        volume_id       # => 1
 
-        snapshot = conn.delete_snapshot(snapshot_id)
+6. Update a snapshot
+
+        snapshot = conn.snapshots.get("snapshot_id")
+        snap.name = "Snapshot 1"
+        snap.save
+        => true
+        snap.reload
+
+7. Delete an existing snapshot
+
+        conn.snapshots.get("snapshot_id").destroy
+        => true
+
+###Volume Backup Operations (Model Layer)### {#ModelVolBackupOperations}
+
+This section discusses the volume backup operations you can perform using the model abstraction.
+
+1. List available volume backups for an account:
+
+        conn.volume_backups
+
+2. List details of volume backups:
+
+        conn.volume_backups.all(:details => true)
         
+        name    # returns the name of the volume backup
+        status  # provides the status of the volume backup e.g., available
+        created_at      # provides the date the backup was created
+        availability_zone       # returns the availability zone where a backup is hosted
+        volume_id       # returns the id of the volume
+        container       # returns the container holding the backup
+
+3. Obtain the details of a volume backup by ID:
+
+        conn.volume_backups.get("VolumeBackup_id")
+        
+        name    # returns the name of the volume backup
+        status  # provides the status of the volume backup e.g., available
+        created_at      # provides the date the backup was created
+        volume_id       # returns the id of the volume
+        container       # returns the container holding the backup
+
+4. Create a volume backup:
+
+        conn.volume_backups.create(
+                :name => "My Volume Backup",
+                :volume_id => "volume_id")
+
+5. Restore from a volume backup into a new volume:
+
+        # restore into a new volume
+        backup = conn.volume_backups.get("VolumeBackup_id")
+        backup.restore
+        => true
+
+6. Restore from a volume backup into an existing volume:
+
+        # restore into an existing volume
+        backup = conn.volume_backups.get("VolumeBackup_id")
+        backup.restore("volume_id")
+        => true
+
+7. Delete a volume backup:
+
+        backup = conn.volume_backups.get("VolumeBackup_id")
+        backup.destroy
+
 ##Using the Request Abstraction## {#RequestLayer}
 
 This section discusses the various operations you can perform using the request abstraction:
 
 * [Volume Operations (Request Layer)](#RequestVolumeOperations)
 * [Snapshot Operations (Request Layer)](#RequestSnapshotOperations)
+* [Volume Backup Operations (Request Layer)](#RequestVolBackupOperations)
 
 ###Volume Operations (Request Layer)### {#RequestVolumeOperations}
 
@@ -200,47 +271,46 @@ This section discusses the volume operations you can perform using the request a
 
 1. List all available volumes for an account
 
-        response = conn.list_volumes
-        response.body['volumes']                    # returns an array of volume hashes
-        response.headers                            # returns the headers
-        response.body['volumes'][0]['displayName']         # returns the name of the volume
+        conn.list_volumes
+        body['volumes']                    # returns an array of volume hashes
+        headers                            # returns the headers
+        body['volumes'][0]['displayName']  # returns the name of the volume
 
-2. Obtain the details of a particular volume
+2. List available volumes using a filter:
 
-        response = conn.get_volume_details(volume_id)
+        conn.list_volumes_detail(:display_name => "Test Volume")
+
+3. Obtain the details of a volume by ID:
+
+        conn.get_volume_details("volume_id")
         volume = response.body['volume']
         volume['displayName']                  # returns the name of the volume
         volume['size']                               # returns the size of the volume
         volume['status']                            # returns the status of the volume e.g. available, in-use
 
-3. List all available bootable volumes for an account
 
-        response = conn.list_bootable_volumes
-        response.body['volumes']                    # returns an array of bootable volume hashes
-        response.headers                            # returns the headers
-        response.body['volumes'][0]['displayName']         # returns the name of the bootable volume
+4. Create a volume:
 
-4. Obtain the details of a particular bootable volume
-
-        response = conn.get_bootable_volume_details(volume_id)
-        volume = response.body['volume']
-        volume['displayName']                  # returns the name of the bootable volume
-        volume['size']                               # returns the size of the bootable volume
-        volume['status']                            # returns the status of the bootable volume e.g. available, in-use
-
-5. Create a new volume
-
-        response = conn.create_volume("demo-vol", "demo-vol-desc", 1)
-        volume = response.body['volume']
-        volume['id']                                # returns the id of the new volume
-        volume['displayName']                # => "demo-vol"
-        volume['size']                             # => 1
+        conn.create_volume('display_name' => 'Test Volume', 'size' => 10)
+        volume['id']                    # returns the id of the new volume
+        volume['displayName']           # => "demo-vol"
+        volume['size'] # => 10
         volume['status']                          # returns the status of the volume e.g. creating, available
 
-6. Create a new volume from an existing image
+5. Create a new volume from an existing image:
 
-        response = conn.create_volume("demo-vol", "demo-vol-desc", 1, {'snapshot_id' => 1})
-        volume = response.body['volume']
+        conn.create_volume('display_name' => 'Test Volume 1', 
+        'display_description' => 'Test Volume from image', 
+        'size' => 10, 
+        'imageRef' => 'image_id')
+
+6. Create a new volume from an existing snapshot:
+
+        conn.create_volume(
+                'display_name' => 'Test Volume 2', 
+                'display_description' => 'New Volume from Snapshot', 
+                'snapshot_id' => 'snapshot_id'
+                )
         volume['id']                                # returns the id of the new volume
         volume['displayName']                # => "demo-vol"
         volume['size']                             # => 1
@@ -248,7 +318,15 @@ This section discusses the volume operations you can perform using the request a
         volume['status']                          # returns the status of the volume e.g. creating, available
 **Note**: The size of the volume you create from a snapshot is the same as that of the snapshot. The third parameter (the size) has no effect in this case.
 
-7. Create a new bootable volume from an suitable single-part image
+7. Create a new volume from an existing volume:
+
+        conn.create_volume(
+                'display_name' => 'Test Volume 3', 
+                'display_description' => 'Test volume from another image', 
+                'source_volid' => 'source_volid')
+
+
+8. Create a new bootable volume from an suitable single-part image:
 
         new_volume = conn.create_volume("TestBootVol", 
                                                         "My Test Boot Volume", 
@@ -258,27 +336,32 @@ This section discusses the volume operations you can perform using the request a
         new_volume.id       # returns the id of the volume
 **Note**: You can use a bootable volume to create a persistent server instance.
 
-8. Attach an existing volume to an existing server
+8. Attach an existing volume to an existing server:
 
-        response = conn.compute.attach_volume(server_id, volume_id, device)
+        conn.attach_volume(server_id, volume_id, device)
         volume_attachment = response.body['volumeAttachment']
         volume_attachment['id']       # returns the id of the volume
         volume_attachment['volumeId']  # returns the id of the volume
 **Note**: The device parameter is the mount point on the server instance to which the volume is attached (for example, `/dev/sdf`)
 
-9. List volumes attached to a server
+9. List volumes attached to a server:
 
-        response = conn.compute.list_server_volumes(server_id)
+        conn.list_server_volumes("server_id")
         volume_attachments = response.body['volumeAttachments']
         volume_attachment[0]['id']       # returns the id of the volume
         volume_attachment[0]['volumeId']  # returns the id of the volume
         volume_attachment[0]['device']  # returns the device of the volume
 
-10. Detach an existing volume
+10. Detach an existing volume from a server:
 
-        conn.detach_volume(server_id, volume_id)
+        conn.detach_volume("server_id", "volume_id")
 
-11. Delete an existing volume
+11. Update a volume:
+
+        conn.update_volume("volume_id", 
+        {'display_name' => 'Test Volume Update'})
+
+12. Delete an existing volume:
 
         conn.delete_volume(volume_id)
 
@@ -286,34 +369,88 @@ This section discusses the volume operations you can perform using the request a
 
 This section discusses the snapshot operations you can perform using the request abstraction.
 
-1. List all available snapshots for an account
+1. List all available snapshots for an account:
 
-        response = conn.list_snapshots
-        response.body['snapshots']                    # returns an array of snapshot hashes
-        response.headers                            # returns the headers
-        response.body['snapshots'][0]['displayName']         # returns the name of the snapshot
-        response.body['snapshots'][0]['size']                       # returns the size of the snapshot
-        response.body['snapshots'][0]['volumeId']               # returns the volume id of the snapshot
+        conn.list_snapshots
+        body['snapshots']                    # returns an array of snapshot hashes
+        headers                            # returns the headers
+        body['snapshots'][0]['displayName']         # returns the name of the snapshot
+        body['snapshots'][0]['size']                       # returns the size of the snapshot
+        body['snapshots'][0]['volumeId']               # returns the volume id of the snapshot
 
-2. Obtain the details of a particular snapshot
+2. List the details of all snapshots:
 
-        response = conn.get_snapshot_details(snapshot_id)
+        conn.list_snapshots_detail
+
+3. List the details of a snapshot using a filter:
+
+        conn.list_snapshots_detail(:limit => 2)
+
+4. Obtain the details of a snapshot by ID:
+
+        response = conn.get_snapshot_details("snapshot_id")
         snapshot = response.body['snapshot']
         snapshot['displayName']                  # returns the name of the snapshot
         snapshot['size']                               # returns the size of the snapshot
         snapshot['volumeId']                        # returns the volume id of the snapshot
         snapshot['status']                            # returns the status of the snapshot e.g. available, in-use
 
-3. Create a new snapshot
+5. Create a new snapshot:
 
-        response = conn.create_snapshot("demo-snap", "demo-snap-desc", 1)
-        snapshot = response.body['snapshot']
+        
+        conn.create_snapshot("volume_id",
+        'display_name' => 'Test Snapshot', 
+        'display_description' => 'Test Snapshot from Vol Test')
         snapshot['id']                                # returns the id of the new volume
         snapshot['displayName']                # => "demo-vol"
         snapshot['size']                             # => 1
         snapshot['volumeId']                        # returns the volume id of the snapshot
         snapshot['status']                          # returns the status of the snapshot e.g. creating, available
 
-4. Delete an existing snapshot
+6. Create a new snapshot using the force parameter:
+
+        conn.create_snapshot("volume_id", 
+        'display_name' => 'Test Snapshot 1', 
+        'display_description' => 'Test Snapshot 1 from bootable Vol Test 2 in AZ2', 
+        'force' => true )
+
+7. Update a snapshot:
+
+        conn.update_snapshot("snapshot_id", 'display_name' => "Test Snapshot 1")
+
+8. Delete a snapshot:
 
         conn.delete_snapshot(snapshot_id)
+
+###Volume Backup Operations (Request Layer)### {#RequestVolBackupOperations}
+
+This section discusses the volume backup operations you can perform using the request abstraction.
+
+1. List all available volume backups for an account:
+
+        conn.list_volume_backups
+
+2. List details of all available volume backups:
+
+        conn.list_volume_backups_detail
+
+3. Obtain the details of a volume backup by ID:
+
+        conn.get_volume_backup_details("volume_backup_id")
+
+4. Create a volume backup:
+
+        conn.create_volume_backup("volume_id")
+
+5. Restore into a new volume using a volume backup:
+
+        conn.restore_volume_backup("volume_backup_id")
+        # creates a new volume that is a clone of the volume the backup was created from
+
+6. Restore into an existing volume using a volume backup:
+
+        conn.restore_volume_backup("volume_backup_id", "volume_id")
+
+7. Delete a volume backup:
+
+        conn.delete_volume_backup("volume_backup_id")
