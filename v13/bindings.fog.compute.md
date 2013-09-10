@@ -22,7 +22,6 @@ This page discusses the following topics:
 * [Image Operations](#ModelImageOperations)
 * [Image Metadata Operations](#ModelImageMetadataOperations)
 * [Keypair Operations](#ModelKeypairOperations)
-* [Security Groups Operations](#ModelSecurityGroupsOperations)
 * [Address Operations](#ModelAddressOperations)<br>
 **Request Layer Examples**
 * [Server Operations](#RequestServerOperations)
@@ -31,7 +30,6 @@ This page discusses the following topics:
 * [Image Operations](#RequestImageOperations)
 * [Image Metadata Operations](#RequestImageMetadataOperations)
 * [Keypair Operations](#RequestKeypairOperations)
-* [Security Groups Operations](#RequestSecurityGroupsOperations)
 * [Address Operations](#RequestAddressOperations)
 
 ##Connecting to the Service## {#ConnectingtotheService}
@@ -784,56 +782,6 @@ For information on connecting to the service, please see the [Connecting to the 
 4. Delete an existing keypair:
 
         conn.delete_key_pair(key_name)
-
-##Security Groups Operations (Request Layer)## {#RequestSecurityGroupsOperations}
-
-1. List all available security groups:
-
-        response = conn.list_security_groups
-        response.body['security_groups']            # returns an array of security groups hashes
-        response.headers                            # returns the headers
-        response.body['security_groups'][0]['name'] # returns the name of the security group
-
-2. Obtain the details of a particular security group:
-
-        response = conn.get_security_group(sgroup_id) # get the security group
-        sgroup = response.body['security_group']
-        sgroup['name']                                # returns the name of the security group
-
-3. Create a new security group:
-
-        response = conn.create_security_group("mysgroup", "my new sec group")
-        sgroup = response.body['security_group']
-        sgroup['name']                                # => "mysgroup"
-
-4. Create a rule for an existing security group:
-
-        response = create_security_group_rule(sgroup_id, "tcp", "80", "80", "0.0.0.0/0")  # allow port 80, tcp at 0.0.0.0/0
-        sg_rule = response.body['security_group_rule']
-        sg_rule['id']                                 # returns the id of the security group rule
-        sg_rule['parent_group_id']                    # returns the id of the security group to which the rule belongs to
-        sg_rule['from_port']                          # => 80
-        sg_rule['to_port']                            # => 80
-        sg_rule['ip_protocol']                        # => tcp
-        sg_rule['ip_range']['cidr']                   # => 0.0.0.0/0
-
-5. Delete an existing security group rule:
-
-        conn.delete_security_group_rule(sg_rule_id)
-
-6. Add a security group to a server:
-
-        conn.add_security_group(sgroup_id, 'mysecuritygroup')
-
-
-7. Remove a security group from a server:
-
-        conn.remove_security_group(sgroup_id, 'mysecuritygroup')
-
-
-8. Delete an existing security group:
-
-        conn.delete_security_group(sgroup_id)
 
 ##Address Operations (Request Layer)## {#RequestAddressOperations}
 
