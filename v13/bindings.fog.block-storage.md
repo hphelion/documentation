@@ -20,8 +20,10 @@ This page discusses the following tasks:
 * [Connecting to the Service](#ConnectingtotheService)
 * [Volume Operations (Model Layer)](#ModelVolumeOperations)
 * [Snapshot Operations (Model Layer)](#ModelSnapshotOperations)
+* [Volume Backup Operations (Model Layer)](#ModelVolBackupOperations)
 * [Volume Operations (Request Layer)](#RequestVolumeOperations)
 * [Snapshot Operations (Request Layer)](#RequestSnapshotOperations)
+* [Volume Operations (Request Layer)](#RequestVolBackupOperations)
 
 ##Connecting to the Service## {#ConnectingtotheService}
 
