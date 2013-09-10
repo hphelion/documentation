@@ -19,12 +19,14 @@ This page discusses the following tasks:
 
 * [Connecting to the Service](#ConnectingtotheService)
 
-**Model Layer Examples**<br>
+**Model Layer Examples**
+
 * [Volume Operations (Model Layer)](#ModelVolumeOperations)
 * [Snapshot Operations (Model Layer)](#ModelSnapshotOperations)
 * [Volume Backup Operations (Model Layer)](#ModelVolBackupOperations)
 
-**Request Layer Examples**<br>
+**Request Layer Examples**
+
 * [Volume Operations (Request Layer)](#RequestVolumeOperations)
 * [Snapshot Operations (Request Layer)](#RequestSnapshotOperations)
 * [Volume Operations (Request Layer)](#RequestVolBackupOperations)
@@ -64,7 +66,7 @@ This section discusses the various operations you can perform using the model ab
 
 * [Volume Operations](#ModelVolumeOperations)
 * [Snapshot Operations](#ModelSnapshotOperations)
-* [Volume Backup Operations] (#ModelVolBackupOperations)
+* [Volume Backup Operations](#ModelVolBackupOperations)
 
 ###Volume Operations (Model Layer)### {#ModelVolumeOperations}
 
@@ -80,9 +82,9 @@ This section discusses the volume operations you can perform using the model abs
 2. Obtain the details of a volume by the volume ID:
 
         conn.volumes.get("volume_id")
-        volume.name                         # returns name of the volume
-        volume.created_at                   # returns the date the volume was created
-        volume.status                       # returns the state of the volume e.g. available, in-use
+        volume.name             # returns name of the volume
+        volume.created_at       # returns the date the volume was created
+        volume.status           # returns the state of the volume e.g. available, in-use
 
 3. List volume details using a filter:
 
@@ -96,7 +98,7 @@ This section discusses the volume operations you can perform using the model abs
                :size => 1)
         new_volume.id       # returns the id of the volume
         new_volume.name     # => "TestVolume"
-        new_volume.status    # returns the status of the volume e.g., creating, available
+        new_volume.status   # returns the status of the volume e.g., creating, available
 
 5. Create a new bootable volume from an suitable single-part image
 
