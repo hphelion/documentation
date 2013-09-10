@@ -51,14 +51,10 @@ For information on connecting to the service, please see the [Connecting to the 
 
         servers = conn.servers.all(:name => 'My Shiny Server')
 
-3. List server details:
 
-        servers = conn.list_servers_detail
+3. Obtain the details of a particular server:
 
-
-4. Obtain the details of a particular server:
-
-        server = conn.servers.get(server_id)
+        server = conn.servers.get("server_id")
         server.name                         # returns name of the server
         server.flavor_id                    # returns id of the flavor used to create the server
         server.image_id                     # returns id of the image used to create the server
@@ -66,7 +62,7 @@ For information on connecting to the service, please see the [Connecting to the 
         server.created_at                   # returns the date the server was created
         server.state                        # returns the state of the server e.g. ACTIVE, BUILD
 
-3. Create a new server:
+4. Create a new server:
 
         new_server = conn.servers.create(
               :name => "My Shiny Server",
@@ -79,7 +75,7 @@ For information on connecting to the service, please see the [Connecting to the 
         new_server.private_ip_address   # returns the private ip address
         new_server.public_ip_address   # returns the public ip address, if any assigned
 
-4. Create a server by passing in a keypair and security group:
+5. Create a server by passing in a keypair and security group:
 
         new_server = conn.servers.create(
                 :name=> "My Shiny Server",
@@ -89,7 +85,7 @@ For information on connecting to the service, please see the [Connecting to the 
               :security_groups => ["My Security Group"]
         )
 
-5. Create a server by passing in a network_id:
+6. Create a server by passing in a network_id:
 
         new_server = conn.servers.create(
                 :name=> "My Shiny Server",
@@ -100,7 +96,7 @@ For information on connecting to the service, please see the [Connecting to the 
                 :networks => ["nework_id"]
         )
 
-6. Create a persistent server by passing in a bootable volume:
+7. Create a Linux-based persistent server by passing in a bootable volume:
 
         new_server = conn.servers.create(
                 :name=> "My Sticky Server",
@@ -112,22 +108,6 @@ For information on connecting to the service, please see the [Connecting to the 
                 }]
         )
     **Note**: In *block_device_mapping*, *volume_size* is ignored; it is automatically retrieved from the specified bootable volume. To delete the bootable volume after the server instance is killed you can set  *delete_on_termination* to `1`.  To preserve the bootable volume, set it to `0` as shown above.
-
-7.Create a new Windows server instance and retrieve the encrypted password:
-
-        win_server = conn.servers.create(
-              :name => "My Windows Server",
-              :flavor_id => 1,
-              :image_id => 3,    # Make sure it is a Windows image
-              :key_name => "hpdefault",
-              :security_groups => ["aaa"]
-        )
-        win_server.id       # returns the id of the server
-        # Retrieve the encrypted password
-        win_server.windows_password
-        # => "Im6ZJ8auyMRnkJ24KKWQvTgWDug1s ... y0uY1BcHLJ5OrkEPHhQoQntIKOoQ=\n"
-**Note**: You must retrieve the Windows password immediately after you create the Windows instance. Also, make sure you have a security rule defined to open RDP port 3389 so that you can connect to the Windows server.
-
 8. Create a new Linux-based server with advanced personalization options:
 
         new_server = conn.servers.create(
@@ -168,11 +148,23 @@ For information on connecting to the service, please see the [Connecting to the 
     : Allows files to be injected into the server instance after its creation. The file `contents` are Base64 encoded and injected into the location specified by `path`.
     
     **Note**: The above personalization options are not supported on Windows server instances.
-
-9. Get s server:
-
-        server = conn.servers.get(server_id)
         
+
+9. Create a new Windows server instance and retrieve the encrypted password:
+
+        win_server = conn.servers.create(
+              :name => "My Windows Server",
+              :flavor_id => 1,
+              :image_id => 3,    # Make sure it is a Windows image
+              :key_name => "hpdefault",
+              :security_groups => ["aaa"]
+        )
+        win_server.id       # returns the id of the server
+        # Retrieve the encrypted password
+        win_server.windows_password
+        # => "Im6ZJ8auyMRnkJ24KKWQvTgWDug1s ... y0uY1BcHLJ5OrkEPHhQoQntIKOoQ=\n"
+**Note**: You must retrieve the Windows password immediately after you create the Windows instance. Also, make sure you have a security rule defined to open RDP port 3389 so that you can connect to the Windows server.
+
 10. Get console output:
 
         server = conn.servers.get(server_id)
@@ -198,14 +190,9 @@ For information on connecting to the service, please see the [Connecting to the 
 14. Rebuild a server:
 
         server = conn.servers.get("server_id")
-        server.rebuild('?', 'My Shiny Server Rebuild')
+        server.rebuild('server_id', 'My Shiny Server Rebuild')
 
-15. Change password for a server:
-
-        server = conn.servers.get(server_id)
-        server.change_password("new_password")
-
-11. Delete a server:
+15. Delete a server:
 
         server = conn.servers.get(server_id).destroy
 
@@ -223,7 +210,7 @@ For information on connecting to the service, please see the [Connecting to the 
         s.reload        #reload the server
         s.volume_attachments.all        #list the attachments
 
-2. Get attached volume details for a server:
+2. Obtain details for an volume attached to a server:
 
         server = conn.servers.get("server_id")
         att = s.volume_attachements.get("volume_id")
@@ -411,78 +398,28 @@ For information on connecting to the service, please see the [Connecting to the 
         keypair = conn.key_pairs.get(key_name)
         keypair.destroy
 
-##Security Groups Operations (Model Layer)## {#ModelSecurityGroupsOperations}
-
-1. List all available security groups:
-
-        sgroups = conn.security_groups
-        sgroups.size           # returns no. of security groups
-        # display security groups in a tabular format
-        conn.security_groups.table([:id, :name, :description])
-
-2. Obtain the details of a particular security group:
-
-        sgroup = conn.security_groups.get(sgroup_id)    # get the security group
-        sgroup.name           # returns name of the security group
-        sgroup.description    # returns description of the security group
-
-3. Create a new security group:
-
-        sgroup = conn.security_groups.create(:name => "mysgroup", :description => "my new sec group")
-        sgroup.name           # returns name of the security group
-
-4. Add a security group to a server:
-
-        s.add_security_group('SecGroup')
-
-5. Remove a security group from a server:
-
-        s.remove_security_group('SecGroup')
-
-6. Create a rule for an existing security group:
-
-        sgroup = conn.security_groups.get(sgroup_id)    # get the security group
-        sgroup.create_rule(80..80)                      # allow port 80. defaults to protocol tcp at 0.0.0.0/0
-        sgroup.create_rule(-1..-1, "icmp", "0.0.0.0/0") # allow icmp
-        # show all rules
-        sgroup = conn.security_groups.get(sgroup_id)    # get the security group
-        sgroup.rules
-
-5. Delete a rule from an existing security group:
-
-        sgroup = conn.security_groups.get(sgroup_id)    # get the security group
-        sgroup.delete_rule(sgroup_rule_id)
-
-6. Delete an existing security group:
-
-        sgroup = conn.security_groups.get(sgroup_id)    # get the security group
-        sgroup.destroy
-
 ##Address Operations (Model Layer)## {#ModelAddressOperations}
 
-1. List all public and private ip addresses:
+1. List all public and private ip addresses for a server:
 
-        addresses = conn.addresses
-        addresses.size                              # returns no. of addresses
-        # display addresses in a tabular format
-        conn.addresses.table([:id, :ip, :fixed_ip, :instance_id])
+        conn.addresses
 
 2. Obtain the details of a particular address:
 
-        address = conn.addresses.get(address_id)    # get the address
+        address = conn.addresses.get("address_id")  # get the address
         address.ip                                  # returns the ip address
 
-3. Create or allocating a new address:
+3. Create or allocate a new address:
 
         address = conn.addresses.create             # allocates an ip address from the pool
         address.ip                                  # returns the ip address
 
 4. Associate a server to an existing address:
 
-        address = conn.addresses.get(address_id)    # get the address
-        server = conn.servers.get(server_id)        # get the server
+        server = conn.servers.get("server_id")        # get the server
+        address = conn.addresses.get("address_id")    # get the address
         address.server = server                     # associate the server
-        address.instance_id                         # returns the id of the server
+        address.reload
 
 5. Disassociate a server from an existing address:
 
@@ -492,8 +429,15 @@ For information on connecting to the service, please see the [Connecting to the 
 
 6. Delete (release) an existing address:
 
-        address = conn.addresses.get(address_id)    # get the address
-        address.destroy                             # releases the ip address to the pool
+        server = conn.servers.get("server_id")      # get the server
+        address = conn.addresses.get("address_id")  # get the address
+        address.server = nil       # disassociate the server
+        address.reload
+
+7. Release an address back into the IP pool:
+
+        conn.addresses.get("address_id").destroy
+        => true
 
 ##Server Operations (Request Layer)## {#RequestServerOperations}
 
@@ -638,44 +582,31 @@ For information on connecting to the service, please see the [Connecting to the 
         response = conn.get_server_details(server_id)
         response.body['server']['name']             # => "My Cool Server"
 
-9. Change the password for a server:
-
-        conn.change_password_server(server_id, "new_password")
-
-10. Reboot a server (SOFT):
+12. Reboot a server (SOFT):
 
         conn.reboot_server(server_id, "SOFT")
 
-11. Reboot a server (HARD):
+13. Reboot a server (HARD):
 
         conn.rebuild_server(server_id, "HARD")
 
-12. Rebuild a server:
+14. Rebuild a server:
 
         conn.reboot_server(server_id, "MyRebuiltServer")
 
-13. List both public and private addresses of a particular server:
+15. List both public and private addresses of a particular server:
 
         response = conn.list_server_addresses(server_id)
 
-11. List all the private addresses of a particular server:
+13. Display console output:
 
-        response = conn.list_server_private_addresses(server_id, "private")    # where "private" is the network name
-
-12. List all the public addresses of a particular server:
-
-        response = conn.list_server_public_addresses(server_id, "private")     # where "private" is the network name
-
-13. Get console output:
-
-        response = conn.get_console_output(server_id, 10)
+        response = conn.get_console_output("server_id", 10)
         # => 10 lines of console output are returned
 
-14. Get VNC console:
+14. Get the VNC console for a server:
 
-        response = conn.get_vnc_console(server_id, 'novnc')
+        response = conn.get_vnc_console("server_id")
         # => Url to access the VNC console of a server from a browser
-
 
 16. Delete an existing server:
 
