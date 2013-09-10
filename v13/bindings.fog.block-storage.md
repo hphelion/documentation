@@ -18,9 +18,13 @@ The block storage provider has two abstractions - [a model layer](#ModelLayer) a
 This page discusses the following tasks:
 
 * [Connecting to the Service](#ConnectingtotheService)
+
+**Model Layer Examples**
 * [Volume Operations (Model Layer)](#ModelVolumeOperations)
 * [Snapshot Operations (Model Layer)](#ModelSnapshotOperations)
 * [Volume Backup Operations (Model Layer)](#ModelVolBackupOperations)
+
+**Request Layer Examples**
 * [Volume Operations (Request Layer)](#RequestVolumeOperations)
 * [Snapshot Operations (Request Layer)](#RequestSnapshotOperations)
 * [Volume Operations (Request Layer)](#RequestVolBackupOperations)
