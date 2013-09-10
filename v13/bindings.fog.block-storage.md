@@ -19,12 +19,12 @@ This page discusses the following tasks:
 
 * [Connecting to the Service](#ConnectingtotheService)
 
-**Model Layer Examples**
+**Model Layer Examples**<br>
 * [Volume Operations (Model Layer)](#ModelVolumeOperations)
 * [Snapshot Operations (Model Layer)](#ModelSnapshotOperations)
 * [Volume Backup Operations (Model Layer)](#ModelVolBackupOperations)
 
-**Request Layer Examples**
+**Request Layer Examples**<br>
 * [Volume Operations (Request Layer)](#RequestVolumeOperations)
 * [Snapshot Operations (Request Layer)](#RequestSnapshotOperations)
 * [Volume Operations (Request Layer)](#RequestVolBackupOperations)
