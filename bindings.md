@@ -12,7 +12,7 @@ One of the advantages of being active with OpenStack is that there is a healthy 
 HP Cloud offers [an extension to Ruby Fog](/bindings/fog) for interacting with HP Cloud Services based on the open source Ruby Fog bindings.
 
 
-## Additional vailable open source bindings
+## Additional available open source bindings
 We created this set of bindings and have them available as open source.  While not actively supported, we use these ourselves for various use cases and anyone in the public is free to expand upon them.
 
 ###Java/Clojure
