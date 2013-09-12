@@ -100,6 +100,7 @@ The following steps walk you through the process:
 - [Set up Shared Secret](#secret)
 - [Set up routes on non-gateway instance](#routes)
 - [Establish connections](#connect)
+- [Stop VPN connection](#stopconnect)
 
 In this guide we use these parameters:
 
@@ -353,20 +354,19 @@ Based upon the authentication type and shared secret for the VPN instance custom
     # with "ipsec showhostkey".
 	
     # this file is managed with debconf and will contain the automatically created private key
-    #include /var/lib/strongswan/ipsec.secrets.inc
+    # include /var/lib/strongswan/ipsec.secrets.inc 
     10.2.0.21 192.168.1.50 192.168.1.50 : PSK "abcd" 
 
 ### Set up routes on non-gateway instance ### {#routes}
 
 On the non-VPN instance (vm-test) add the new route for the remote subnet.
 
-Example: `route add -net <remote-subnet> gw <gateway>`
+Example: `route add -net <remote-subnet> gw <host gateway>`
 
     route add -net 192.168.2.0/24 gw 10.2.0.21
 
 Verify that the new route was added by running the command **route-n** and finding the entry that was added in the table.
 
-**Note:** You could also set up `host_routes` on the subnet.
 
 ### Establish connections ### {#connect}
 
@@ -380,6 +380,16 @@ Start the connection (conn) that is defined in *ipsec.conf*:
 
 
 Validate that the IPsec processes are available by running the  command **ps -welf | grep ipsec**
+
+### Stop the VPN connection ### {#stopconnect}
+
+Force IPsec to read the updated *ipsec.conf* and 
+
+Stop the connection (conn) that is defined in *ipsec.conf*:
+
+    ipsec down vpn-test
+
+**Note:** The above step is required for a safe restart. 
 
 back to the [top](#top)
 
