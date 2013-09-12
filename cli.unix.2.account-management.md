@@ -12,12 +12,12 @@ This page discusses the following topics:
 * [Account Providers for Migration](#Providers)
 * [Updating Account Availability Zones](#ChangingAvailabilityZones)
 * [Updating Account Credentials](#ModifyingAccountCredentials)
-* [Updating Account Options](#ModifyingAccountOptions)---
+* [Updating Account Options](#ModifyingAccountOptions)
 
 
 ## Account Providers for Migration ## {#Providers}
 
-Use the `-p` provider option to the `account:setup` command to create accounts for cloud providers other than HP.  These accounts are only supported for the purposes of migration; e.g., to create an account to migrate files from Google object storage container, run:
+Use the `-p` provider option to the `account:setup` command to create accounts for cloud providers other than HP.  These accounts are only supported for the purposes of migration; e.g., to create an account to migrate files from a Google object storage container, run:
 
     $ hpcloud account:setup goog -p google
 
@@ -29,7 +29,7 @@ To change the default zone of the object storage and CDN to `region-b`, run:
 
     $ hpcloud account:edit hp 'object storage=region-b.geo-1' 'cdn=region-b.geo-1'
 
-To change the availability zone of the compute service from its current setting to AZ2 for account `account2`, run:
+To change the availability zone of the compute service from its current setting to availability zone 2 for account `account2`, run:
 
     $ hpcloud account:edit account2 'compute=az-2.region-a.geo-1'
 
