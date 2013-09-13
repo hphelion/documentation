@@ -94,7 +94,7 @@ To change the availability zone of the compute service from its current setting 
 
     $ hpcloud account:edit account2 'compute=az-2.region-a.geo-1'
 
-To display the active availability zones for your services, you can [find them in the system console](https://console.hpcloud.com/account/api_keys) by selecting `API Keys` on the dashboard or account page. 
+To display the active availability zones for your services, you can [find them in the system console](https://account.hpcloud.com/account/api_keys) by selecting `API Keys` on the dashboard or account page. 
 
 ## Updating Account Credentials ## {#ModifyingAccountCredentials}
 
