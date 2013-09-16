@@ -7,7 +7,7 @@ product: unix-cli
 ---
 # Unix CLI Block Storage Examples
 
-This page discusses the tasks below and shows some examples of how to perform block storage tasks using HP Cloud:
+This page discusses the tasks below and shows some examples of how to perform them using HP Cloud:
 
 * [Adding Volumes](#AddingVolumes)
 * [Listing Available Volumes](#ListingAvailableVolumes)
