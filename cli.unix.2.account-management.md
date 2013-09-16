@@ -49,7 +49,7 @@ Use the `account:edit` command to change any of the following account credential
 * `auth_uri` - authorization URI
 * `userpass` - true for user name/password false or not set for access key secret key
 
-The `account:edit` requires two arguments: `account_name` and the `name_value_pair.
+The `account:edit` requires two arguments: `account_name` and the `name_value_pair`.
 
 To change the project id for account `hp`, run:
 
@@ -105,7 +105,7 @@ Use the `account:edit` command to change any of the following account credential
 * `auth_uri`
 * `tenant_id`
 
-The `account:edit` requires two arguments: `account_name` and the `name_value_pair.
+The `account:edit` requires two arguments: `account_name` and the `name_value_pair`.
 
 To change the access key for the `hp` account:
 
@@ -124,7 +124,7 @@ Use the `account:edit` command to change any of the following account options:
 * `preferred_flavor *flavor id* `
 * `preferred_image *image id*`
 
-The `account:edit` requires two arguments: `account_name` and the `name_value_pair.
+The `account:edit` requires two arguments: `account_name` and the `name_value_pair`.
 
 To change the connection timeout value for the `hp` account, run:
 
