@@ -25,7 +25,7 @@ Get detailed help for any command/task by running:
 
 ## Account Setup ## {#AccountSetup}
 
-**Note: During a new configuration, you must supply the access key, secret key, and tenant ID assigned during the registration process; you can [find these in the system console](https://console.hpcloud.com/account/api_keys) by selecting `API Keys` on the dashboard or account page.  You can also define the availability zone during the initial setup.**
+**Note: During a new configuration, you must supply the access key, secret key, and tenant ID assigned during the registration process; you can [find these in the system console](https://account.hpcloud.com/account/api_keys) by selecting `API Keys` on the dashboard or account page.  You can also define the availability zone during the initial setup.**
 
 To begin account setup, run:
 
@@ -96,7 +96,7 @@ To remove an existing account, use the [`account:remove <account_name>`](/cli/un
     Removed account 'account_2'
 
 ## Specifying an Account for a Single Operation ## {#DefiningAccountsPerCommand}
-You can specify an account name for a single command line operation and it does not affect your account’s base credentials. To run a command on an account other than the default account use the `-a` option.
+You can specify an account name for a single command line operation and it does not affect your account's base credentials. To run a command on an account other than the default account use the `-a` option.
 
 To show the servers on `account2` rather than the default, run:
 
