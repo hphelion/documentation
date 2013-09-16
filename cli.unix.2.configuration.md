@@ -7,7 +7,7 @@ product: unix-cli
 ---
 # Unix CLI: Account Configuration
 
-This page discusses how to set up an accounts and using the HP Cloud Unix Command Line Interface.
+This page discusses account setup on HP Cloud using the UNIX Command Line Interface (CLI) for the following tasks:
 
 * [Account Setup](#AccountSetup)
 * [Account Edit](#EditAccount)
@@ -19,36 +19,43 @@ This page discusses how to set up an accounts and using the HP Cloud Unix Comman
 * [Specifying an Account for a Single Operation](#DefiningAccountsPerCommand)
 * [Specifying an Availability Zone for a Single Operation](#DefiningAZsPerCommand)
 
-Remember that you can get detailed help for any command/task with the following command:
+Get detailed help for any command/task by running: 
 
-   $ hpcloud help <TASK>
+   `hpcloud help` <TASK>
 
 ## Account Setup ## {#AccountSetup}
-The first thing you should do is set up an account.   To configure a new account, use the `account:setup` command.  The `account:setup` command prompts you for the values needed to create or modify an account:
 
-   $ hpcloud account:setup
+**Note: During a new configuration, you must supply the access key, secret key, and tenant ID assigned during the registration process; you can [find these in the system console](https://console.hpcloud.com/account/api_keys) by selecting `API Keys` on the dashboard or account page.  You can also define the availability zone during the initial setup.**
 
-During a new configuration, you must supply the access key, secret key, and tenant ID that were assigned to you during the registration process; you can [find these in the system console](https://console.hpcloud.com/account/api_keys) by selecting `API Keys` on the dashboard or account page.  You can also define the availability zone during the initial setup.
+To begin account setup, run:
+
+    `account:setup` 
+    
+and supply values at the prompts to create or modify an account.
+
+
 
 ## Edit Account ## {#EditAccount}
-Executing the `account:edit` command with no arguments prompts the user in the same manner as the `account:setup` command, but for editing purposes. Current values are shown by default. Hit return to accept the current settings at each prompt.
+To edit the account, run 
+      `account:edit` 
 
-   $ hpcloud account:edit
+Running this command with no arguments prompts you for information like the `account:setup` command above did, but for editing purposes. Current values are shown by default. Hit return if you want to accept the current settings at each prompt.
 
-When you use the `account:edit` command and you specify the `account_name` and `name_value_pairs`, the command will run without prompts.  For example, you wanted to change the storage availability zone for the `hp` account:
+However, if, for example, you want to change the storage availability zone for the `hp` account, specify the `account_name` and `name_value_pairs`, as arguments to the `account:edit` command as follows: 
 
-   $ hpcloud account:edit hp 'object storage=region-b.geo-1'
+   `account:edit hp 'object storage=region-b.geo-1`
 
 ## List Accounts ## {#ListAccounts}
-To view all your current accounts, use the [`account:list`](/cli/unix/2/reference#account) command:
+To view all your current accounts, run 
 
-    $ hpcloud account:list
+    [`account:list`](/cli/unix/2/reference#account):
     hp <= default
     account_1
     my_account_3
 
 ## Display Credentials for an Account ## {#DisplayCredsforAccount}
-To view a specific account&#039;s credentials, use the [`account <account_name>`](/cli/unix/2/reference#account) command.
+To view a specific account&#039;s credentials, for example, run
+the [`account <account_name>`](/cli/unix/2/reference#account) command.
 
     $ hpcloud account account_1
     credentials:
@@ -89,16 +96,16 @@ To remove an existing account, use the [`account:remove <account_name>`](/cli/un
     Removed account 'account_2'
 
 ## Specifying an Account for a Single Operation ## {#DefiningAccountsPerCommand}
-Account name can be specified for a single command line operation and does not affect your account’s base credentials. To run a command on an account other than the default account use the `-a` option.
+You can specify an account name for a single command line operation and it does not affect your account’s base credentials. To run a command on an account other than the default account use the `-a` option.
 
-To show the servers on `account2` rather than the default:
+To show the servers on `account2` rather than the default, run:
 
    $ hpcloud servers -a account2
 
 Most commands allow you to use the `-a` option; see the [UNIX CLI Reference page](/cli/unix/2/reference) to determine if a particular command supports the option.
 
 ## Specifying an Availability Zone for a Single Operation ## {#DefiningAZsPerCommand}
-Availability Zone can be specified for a single command line operation and does not affect your account’s base credentials. You can use this switch to quickly perform an operation in another availability zone not specified in your profile. To run a command on a different availability zone, use the `-z` option.  You can see the regions you are activated in with the `hpcloud account:catalog` command.
+You can specify an availability zone for a single command line operation without affecting your account’s base credentials and quickly perform an operation in another availability zone not specified in your profile. To run a command on a different availability zone, use the `-z` option.  You can see the regions you are activated in with the `hpcloud account:catalog` command.
 
 To view servers using the `region-b.geo-1` availability zone:
 
