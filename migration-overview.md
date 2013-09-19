@@ -102,8 +102,10 @@ For more information on transitioning to version 13.5, as well as general inform
 * The [version 13.5 API specs](/api/13/)
 * The [technical support knowledge base](https://community.hpcloud.com)
 * [UNIX command-line interface migration information](/cli/unix/articles/migration/)
-* If you need to perform an assisted transition with the aid of our Support organization, please read through the [transition details](/migration-details/) page, and [contact our Support team](https://www.hpcloud.com/contact_us):
+
+<!--* If you need to perform an assisted transition with the aid of our Support organization, please read through the [transition details](/migration-details/) page, and [contact our Support team](https://www.hpcloud.com/contact_us):
     - [live chat from hpcloud.com](https://account.hpcloud.com/cases#support_chat)
     - [open a support case](https://account.hpcloud.com/cases)
     - [email support@hpcloud.com](mailto:support@hpcloud.com)
     - call at 1-855-61CLOUD (1-855-612-5683) in the U.S. or +1-678-745-9010 internationally.
+-->
