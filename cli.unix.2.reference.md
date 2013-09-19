@@ -330,7 +330,7 @@ View the ACL for an object or container.
 
 ###Options
 **-c, --columns=COLUMNS**
-: Comma separated list of columns in report.
+: Comma-separated list of columns in report.
 
 **-d, --separator=SEPARATOR**
 : Use the specified value as the report separator.
@@ -620,7 +620,7 @@ Remove or release a public IP address.
 
 
 ###Description
-Remove or release a previously allocated public IP address. Any server instances that were associated to this address are disassociated. You may specify one ore more address IPs or IDs on the command line.  Optionally, specify an availability zone.
+Remove or release a previously allocated public IP address. Any server instances that were associated to this address are disassociated. You may specify one or more address IPs or IDs on the command line.  Optionally, specify an availability zone.
 
 ###Examples
 Remove IP address '111.111.111.111':
@@ -961,7 +961,7 @@ Add a container.
 
 
 ###Description
-Add a new container to your storage account. Create multiple containers by specifying more than one container name on the command line, if desired.  You can specify the ontainer name  with or without the preceding colon: `my_container` or `:my_container`. Optionally, specify an availability zone.
+Add a new container to your storage account. Create multiple containers by specifying more than one container name on the command line, if desired.  You can specify the container name with or without the preceding colon: `my_container` or `:my_container`. Optionally, specify an availability zone.
 
 ###Examples
 Create a new container called 'my_container':
@@ -978,7 +978,7 @@ Create the container `my_container` for the availability zone `region-a.geo-1`:
 
 
 ##containers:remove## {#containers:remove}
-Remove a containers.
+Remove containers.
 
 ###Syntax
 `hpcloud containers:remove name [name ...]`
@@ -1046,7 +1046,7 @@ Allow container synchronization.
 
 
 ###Description
-Allow container synchronization using the specified key.  If you are creating a destination for synchronization, only the key should be specified.  If you are creating a source for synchronization, specify a key and location.  The same key must be used in the source and destination.  You can have containers as both a source and destination.  List your synchronization information with the "hpcloud list --sync" command.
+Allow container synchronization using the specified key.  If you are creating a destination for synchronization, only the key should be specified.  If you are creating a source for synchronization, specify a key and location.  The same key must be used in the source and destination.  You can have containers as both a source and destination.  List your synchronization information with the `hpcloud list --sync` command.
 
 ###Examples
 Set up the container :atainer to be a destination for synchronization:
@@ -1982,7 +1982,7 @@ Remove a private key file
 `hpcloud keypairs:private:remove <key_name> [key_name...]`
 
 ###Description
-This command removes private key files from the ~/.hpcloud/keypairs directory,, which is the store used by the CLI. If continue to use this private key, store it somewhere else.  You cannot recover a private key that has been deleted unless you have another copy of that key.  Keys are stored in the ~/.hpcloud/keypairs directory by key name and server id, so there may be multiple copies of a single key in the private key store.
+This command removes private key files from the ~/.hpcloud/keypairs directory, which is the store used by the CLI. If you continue to use this private key, store it somewhere else.  You cannot recover a private key that has been deleted unless you have another copy of that key.  Keys are stored in the ~/.hpcloud/keypairs directory by key name and server id, so there may be multiple copies of a single key in the private key store.
 
 ###Examples
 Remove 'mykey' and 'spare' from the private key storage:
@@ -2313,7 +2313,7 @@ Remove the specified load balancer nodes.
 Remove load balancer node by specifying the name or id of the load balancer and the id of the nodes.
 
 ###Examples
-Delete the load balancers ndoe `1044952` from `scale`:
+Delete the load balancer's node `1044952` from `scale`:
 
     hpcloud lb:nodes:remove scale 1044952
 
@@ -2412,7 +2412,7 @@ Remove load balancer (specified by name or ID).
 
 
 ###Description
-Specify load balancers' names or IDs to remove load balancers. You may specify more than one load balacner name or ID on a command line.
+Specify load balancers' names or IDs to remove load balancers. You may specify more than one load balancer name or ID on a command line.
 
 ###Examples
 Delete the load balancers `thing1` and `thing2`:
@@ -2675,7 +2675,7 @@ List all the attributes for the object:
 
 
 ##metadata:set## {#metadata:set}
-Set attributes on a object.
+Set attributes on an                    object.
 
 ###Syntax
 `hpcloud metadata:set <name> <attribute> <value>`
@@ -2701,7 +2701,7 @@ Set metadata values for containers and objects.  Container metadata keys general
 * Authorization
 * X-Auth-Token
 * X-Container-Read
-* X-Container-Write
+* X-Container-Write                
 * X-Container-Sync-To
 * X-Container-Sync-Key
 * X-Container-Meta-Web-Index
@@ -4516,7 +4516,7 @@ Add a subnet.
 
 
 ###Description
-Add a new subnet to your network with the specified name and CIDR.  Optionally, specify IP version, gateway, DHCP, DNS name servers or host routes.  The 'add' command tries to guess the IP version from the CIDR, but you may  override it. The DNS name servers should be a command-seperated list e.g.: 10.1.1.1,10.2.2.2.  The host routes should be a semicolon-separated list of destination and nexthop pairs e.g.: 127.0.0.1/32,10.1.1.1;100.1.1.1/32,10.2.2.2
+Add a new subnet to your network with the specified name and CIDR.  Optionally, specify IP version, gateway, DHCP, DNS name servers or host routes.  The `add` command tries to guess the IP version from the CIDR, but you may override it. The DNS name servers should be a command-separated list e.g.: 10.1.1.1,10.2.2.2.  The host routes should be a semicolon-separated list of destination and nexthop pairs e.g.: 127.0.0.1/32,10.1.1.1;100.1.1.1/32,10.2.2.2
 
 ###Examples
 Create a new subnet named 'subwoofer':
@@ -4601,7 +4601,7 @@ Update a subnet.
 
 
 ###Description
-Update a subnet IP version, gateway, DHCP, DNS name servers and host routes.  The 'update' command tries to guess the IP version from the CIDR, but you may override it.  The DNS name servers should be a command-seperated list e.g.: 10.1.1.1,10.2.2.2.  The host routes should be a semicolon separated list of destination and nexthop pairs e.g.: 127.0.0.1/32,10.1.1.1;100.1.1.1/32,10.2.2.2
+Update a subnet IP version, gateway, DHCP, DNS name servers and host routes.  The `update` command tries to guess the IP version from the CIDR, but you may override it.  The DNS name servers should be a command-separated list e.g.: 10.1.1.1,10.2.2.2.  The host routes should be a semicolon separated list of destination and nexthop pairs e.g.: 127.0.0.1/32,10.1.1.1;100.1.1.1/32,10.2.2.2
 
 ###Examples
 Update 'subwoofer' gateway:
@@ -4780,7 +4780,7 @@ Attach a volume to a server specified by device name or number.
 
 
 ###Description
-Attach a volume to a server on the specified device name.  You may specify a device name in the format /dev/vdX where X is c, d, e, ... or an attachment point 3, 4, 5,...  The attacment point 1 would map to /dev/vda on a Linux platform, but /dev/vda and /dev/vdb are already in use by the server, so you need to start with 3 or /dev/vdc.  If you attempt to attach a volume to an attachment point that is in use, it will fail silently.  The call is asynchronous and the failure cannot be detected by the CLI.  If you attempt to mount to attachment point 4 and attachment point 3 is not in use, your volume will be attached to attachment point 3 or /dev/vdc on Linux.  This cannot be detected by the CLI.
+Attach a volume to a server on the specified device name.  You may specify a device name in the format /dev/vdX where X is c, d, e, ... or an attachment point 3, 4, 5,...  The attachment point 1 would map to /dev/vda on a Linux platform, but /dev/vda and /dev/vdb are already in use by the server, so you need to start with 3 or /dev/vdc.  If you attempt to attach a volume to an attachment point that is in use, it will fail silently.  The call is asynchronous and the failure is not detected by the CLI.  If you attempt to mount to attachment point 4 and attachment point 3 is not in use, your volume will be attached to attachment point 3 or /dev/vdc on Linux.  This is not detected by the CLI.
 
 ###Examples
 Attach volume `myVolume` to server `myServer` on device `/dev/vdc`:
