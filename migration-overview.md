@@ -35,15 +35,30 @@ To transition the data for an ephemeral instance:
 1. Create a 13.5 instance using either the command-line interface (CLI) for [UNIX](/cli/unix/compute/) or [the Windows PowerShell](/cli/windows/compute/), or the [management console](/mc/compute/) interface
 2. Copy the data from your version 12.12 instance to your new 13.5 instance, using the tool transfer program of your choice (for example, SCP or FTP)
 
+For information on moving data:
+
+* Using WinSCP, see our Knowledge Base article [Using WinSCP to transfer files to your Instance](https://community.hpcloud.com/article/using-winscp-transfer-files-your-instance)
+* Using rsync on Mac OSX or Linux, see our Knowledge Base article [Uploading files to a Linux instance from Linux or Mac OSX using rsync](https://community.hpcloud.com/article/uploading-files-linux-instance-linux-or-mac-osx-using-rsync)
+* On Linux systems, see our Knowledge Base articles on [Installing and Configuring FTP Server: vsftpd](https://community.hpcloud.com/article/installing-and-configuring-ftp-server-vsftpd) and [Compressing Files](https://community.hpcloud.com/article/compressing-files)
+* On Windows systems, see [Using FileZilla to Setup a FTP Server on Your Windows Instance](https://community.hpcloud.com/article/using-filezilla-setup-ftp-server-your-windows-instance) and [Install and Setup FileZilla](https://community.hpcloud.com/article/install-and-setup-filezilla)
+
+
 
 ##Transitioning data for persistent instances## {#Persistent}
 
 To transition the data for a persistent instance:
 
-1. Create a bootable block volume and persistent image in your version 13.5 environment; see the [knowledge base article on block volume creation](TBD) for more details
+1. Create a bootable block volume and persistent image in your version 13.5 environment; see the [knowledge base article on block volume creation](https://community.hpcloud.com/article/creating-your-first-instance-135) for more details
 2. Copy the data from your version 12.12 instance to your new 13.5 instance, using the tool transfer program of your choice (for example, SCP or FTP)
 
-For information on persistent instances while performing a support services assisted transition, please see the [snapshots](/migration-details/) section of the [assisted transition](/migration-details/) page. 
+For information on moving data:
+
+* Using WinSCP, see our Knowledge Base article [Using WinSCP to transfer files to your Instance](https://community.hpcloud.com/article/using-winscp-transfer-files-your-instance)
+* Using rsync on Mac OSX or Linux, see our Knowledge Base article [Uploading files to a Linux instance from Linux or Mac OSX using rsync](https://community.hpcloud.com/article/uploading-files-linux-instance-linux-or-mac-osx-using-rsync)
+* On Linux systems, see our Knowledge Base articles on [Installing and Configuring FTP Server: vsftpd](https://community.hpcloud.com/article/installing-and-configuring-ftp-server-vsftpd) and [Compressing Files](https://community.hpcloud.com/article/compressing-files)
+* On Windows systems, see [Using FileZilla to Setup a FTP Server on Your Windows Instance](https://community.hpcloud.com/article/using-filezilla-setup-ftp-server-your-windows-instance) and [Install and Setup FileZilla](https://community.hpcloud.com/article/install-and-setup-filezilla)
+
+<!--For information on persistent instances while performing a support services assisted transition, please see the [snapshots](/migration-details/) section of the [assisted transition](/migration-details/) page. -->
 
 
 ###Block volumes## {#BlockVolumes}
@@ -51,10 +66,17 @@ For information on persistent instances while performing a support services assi
 To transition the data for block volumes:
 
 1. Create a 13.5 block volume using either the command-line interface (CLI) for [UNIX](/cli/unix/block-storage/) or [the Windows PowerShell](/cli/windows/block-storage/), or the [management console](/mc/) interface
-2. Create an ephemeral instance and attach it to an ephemeral instance in your version 13.5 environment; see see the [knowledge base article](TBD) for more details
+2. Create a block volume and attach it to an ephemeral instance in your version 13.5 environment; see the [knowledge base article](https://community.hpcloud.com/article/managing-your-block-storage-135) for more details
 3. Copy the data from your version 12.12 instance attached volume to your new version 13.5 instance, using the tool transfer program of your choice (for example, SCP or FTP)
 
-For information on persistent instances, snapshots, and moving block volumes, please see the appropriate section of the [assisted transition](/migration-details/) page.  
+For information on moving data:
+
+* Using WinSCP, see our Knowledge Base article [Using WinSCP to transfer files to your Instance](https://community.hpcloud.com/article/using-winscp-transfer-files-your-instance)
+* Using rsync on Mac OSX or Linux, see our Knowledge Base article [Uploading files to a Linux instance from Linux or Mac OSX using rsync](https://community.hpcloud.com/article/uploading-files-linux-instance-linux-or-mac-osx-using-rsync)
+* On Linux systems, see our Knowledge Base articles on [Installing and Configuring FTP Server: vsftpd](https://community.hpcloud.com/article/installing-and-configuring-ftp-server-vsftpd) and [Compressing Files](https://community.hpcloud.com/article/compressing-files)
+* On Windows systems, see [Using FileZilla to Setup a FTP Server on Your Windows Instance](https://community.hpcloud.com/article/using-filezilla-setup-ftp-server-your-windows-instance) and [Install and Setup FileZilla](https://community.hpcloud.com/article/install-and-setup-filezilla)
+
+<!--For information on persistent instances, snapshots, and moving block volumes, please see the appropriate section of the [assisted transition](/migration-details/) page.  -->
 
 
 ##Key pairs## {#KeyPairs}
