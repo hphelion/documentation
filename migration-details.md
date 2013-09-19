@@ -31,13 +31,30 @@ For each instance image, you need to determine if you want to move a snapshot of
 
 ## Taking an image snapshot ## {#Snapshot}
 
-The first step in preparing your data for migration to version 13.5 is to use the [Images screen](/mc/compute/images/) of the [Management Console](/mc/) to take a snapshot of your image.  
+The first step in preparing your data for migration to version 13.5 is to use the [Images screen](/mc/compute/images/) of the [Management Console](/mc/) (MC) to take a snapshot of your image.  
 
-Using an image snapshot can make migration easier, but doesn't work in all instances.  Work with your support contact to determine if this method is the right one for you, as opposed to using rsync, SCP, or the other methods mentioned in the [self-migration](/migration-overview) page.
+Using an image snapshot can make migration easier, but doesn't work in all instances.  Work with your support engineer to determine if this method is best for you, rather performing [self-migration](/migration-overview) using tools such as rsync, SCP, and other similar tools.
 
 To create a snapshot:
 
-1. TBD
+In the [images screen](/mc/compute/images/) click the `+ New Image` menu bar item:
+
+<img src="media/images-new.png" width="580" alt="" />
+
+This opens the image creation pane in the images screen:
+
+<img src="media/images-create-pane.png" width="580" alt="" />
+
+In the images creation pane, enter a name for your image in the `Image Name` text input field, and (optionally) a description of your image in the `Description` field.  In the `From server` pulldown, select the server from which you would like to create your image.  
+
+Click the `Create` button to create the image with your entered parameters.  The images creation pane closes, and your new image appears in the images list:
+
+<img src="media/image-created.png" width="580" alt="" />
+
+The image appears in the list immediately with the status of `Queued`; while your image is being created, the `Status` changes to `Saving` and finally `Active`.  The new image is a snapshot of the server's image.
+
+See the [Managing images](/mc/compute/images/manage/) page for details on using the MC for creating, deleting, and viewing image details.
+
 
 
 ## Preparing a volume for migration ## {PrepVolume}
