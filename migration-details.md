@@ -31,12 +31,20 @@ For each instance image, you need to determine if you want to move a snapshot of
 
 ## Taking an image snapshot ## {#Snapshot}
 
-To help you transition your existing data to version 13.5, the [Images screen](/mc/compute/images/) of the [Management Console](/mc/) offers the ability to take a snapshot of an existing image.  Using an image snapshot can make migration easier, but doesn't work in all instances.  Work with your support contact to determine if this method is the right one for you, as opposed to using rsync, SCP, or the other methods mentioned in the [self-migration](/migration-overview) page.
+The first step in preparing your data for migration to version 13.5 is to use the [Images screen](/mc/compute/images/) of the [Management Console](/mc/) to take a snapshot of your image.  
 
-To create a snapshot, 
+Using an image snapshot can make migration easier, but doesn't work in all instances.  Work with your support contact to determine if this method is the right one for you, as opposed to using rsync, SCP, or the other methods mentioned in the [self-migration](/migration-overview) page.
+
+To create a snapshot:
+
+1. TBD
 
 
 ## Preparing a volume for migration ## {PrepVolume}
+
+The next step in transitioning your data to version 13.5 is to prepare your volume (and associated data) for migration.  When you migrate a block volume, it must be available; that is, not attached to an instance or running as an instance.  You also need to be aware that when you migrate a volume, all snapshots and volumes created from those snapshots are migrated as well.
+
+To prepare your volume for migration:
 
 1. detach from an instance
 2. migrate all assets associated with the volumes (snapshots, the original volume if created from a snapshot, and the volume being requested)
