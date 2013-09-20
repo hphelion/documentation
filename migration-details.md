@@ -56,7 +56,7 @@ The image appears in the list immediately with the status of `Queued`; while you
 See the [Managing images](/mc/compute/images/manage/) page for details on using the MC for creating, deleting, and viewing image details.
 
 
-## Preparing a volume for migration ## {PrepVolume}
+## Preparing a volume for migration ## {#PrepVolume}
 
 The next step in transitioning your data to version 13.5 is to prepare your volume (and associated data) for migration.  When you migrate a block volume, it must be available; that is, not attached to an instance or running as an instance.  You also need to be aware that when you migrate a volume, all snapshots and volumes created from those snapshots are migrated as well.
 
