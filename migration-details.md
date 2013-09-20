@@ -26,7 +26,7 @@ Before you transition to version 13.5, we recommend:
 
 For each instance image, you need to determine if you want to move a snapshot of the root partition of that instance to version 13.5, or if you prefer to just create a new instance.
 
-**Note to Damian**: Any other stuff for this section?
+**Damian**: Any other stuff for this section?
 
 
 ## Taking an image snapshot ## {#Snapshot}
@@ -56,21 +56,27 @@ The image appears in the list immediately with the status of `Queued`; while you
 See the [Managing images](/mc/compute/images/manage/) page for details on using the MC for creating, deleting, and viewing image details.
 
 
-
 ## Preparing a volume for migration ## {PrepVolume}
 
 The next step in transitioning your data to version 13.5 is to prepare your volume (and associated data) for migration.  When you migrate a block volume, it must be available; that is, not attached to an instance or running as an instance.  You also need to be aware that when you migrate a volume, all snapshots and volumes created from those snapshots are migrated as well.
 
-To prepare your volume for migration:
+First, detach the volume.  To detach a volume, in the [volumes screen](/mc/compute/volumes/), in the row for the volume you want to detach, in the `Manage` column click the `Options` button and select `Detach`.
 
-1. detach from an instance
-2. migrate all assets associated with the volumes (snapshots, the original volume if created from a snapshot, and the volume being requested)
+<img src="media/volume-detach-select.png" width="580" alt="" />
+
+You are asked to verify the request:
+
+<img src="media/volume-detach-confirm.png" width="580" alt="" />
+
+Click `Yes, detach this volume`; your volume is detached.
+
+Next, you must migrate all assets associate associated with the volumes (such as volume snapshots, the original volume if created from a snapshot, and the volume being requested).  You should [contact support](#ContactingSupport) for help with this step.
+
+**Damian**:  Is this the right thing to tell them at this stage?  I have no notes on how to migrate a volume instance; I didn't cover that in the MC docs.
 
 **Note**: If you are using ephemeral storage to migrate a persistent instance, your data is lost when you terminate the instance.
 
-<!--Note from Damian:  This should basically explain how to detach from an instance and that all assets associated with the volumes will be migrated (Snapshot, original volume if created from a snapshot, and the volume being requested.) -->
-
-<!--Second note from Damian:  For a Block Volume to be migrated it will need to be in an “Available” state. This means it can’t be attached to an instance or running as an instance.  The customer should be made aware that when a Volume is migrated all snapshots and Volumes created from those snapshots will be migrated. They should be warned that if it is a persistent instance and they are using ephemeral storage that data will be lost when terminating an instance. -->
+See the [Managing volumes](/mc/compute/volumes/manage/) page for details on using the MC for creating and deleting a volume and bootable volumes, attaching and detaching volumes, managing volume snapshots, and viewing volume details.
 
 
 ## Contacting support ## {#ContactingSupport}
