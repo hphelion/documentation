@@ -71,16 +71,16 @@ For information on connecting to the service, please see the [Connecting to the 
         new_server.name     # => "My Shiny Server"
         new_server.state    # returns the state of the server e.g. BUILD
         new_server.private_ip_address   # returns the private ip address
-        new_server.public_ip_address   # returns the public ip address, if any assigned
+        new_server.public_ip_address    # returns the public ip address, if any assigned
 
 5. Create a server by passing in a keypair and security group:
 
         new_server = conn.servers.create(
                 :name=> "My Shiny Server",
-              :flavor_id => 101,
-              :image_id => "image_id",
-              :key_name => "my_keypair",
-              :security_groups => ["My Security Group"]
+                :flavor_id => 101,
+                :image_id => "image_id",
+                :key_name => "my_keypair",
+                :security_groups => ["My Security Group"]
         )
 
 6. Create a server by passing in a network_id:
@@ -106,10 +106,11 @@ For information on connecting to the service, please see the [Connecting to the 
                 }]
         )
     **Note**: In *block_device_mapping*, *volume_size* is ignored; it is automatically retrieved from the specified bootable volume. To delete the bootable volume after the server instance is killed you can set  *delete_on_termination* to `1`.  To preserve the bootable volume, set it to `0` as shown above.
+
 8. Create a new Linux-based server with advanced personalization options:
 
         new_server = conn.servers.create(
-              :name => "My Personalised Server",
+              :name => "My Personalized Server",
               :flavor_id => 1,
               :image_id => 2,
               :key_name => "hpdefault",
@@ -127,7 +128,7 @@ For information on connecting to the service, please see the [Connecting to the 
         # Note: that un-encoded user data can also be provided by setting the user_data property
         # although, encoding the data on the client is faster and efficient
         new_server = conn.servers.new(
-              :name => "My Personalised Server",
+              :name => "My Personalized Server",
               ...
               ...
         )
@@ -153,11 +154,11 @@ For information on connecting to the service, please see the [Connecting to the 
         win_server = conn.servers.create(
               :name => "My Windows Server",
               :flavor_id => 1,
-              :image_id => 3,    # Make sure it is a Windows image
+              :image_id => 3,   # Make sure it is a Windows image
               :key_name => "hpdefault",
               :security_groups => ["aaa"]
         )
-        win_server.id       # returns the id of the server
+        win_server.id           # returns the id of the server
         # Retrieve the encrypted password
         win_server.windows_password
         # => "Im6ZJ8auyMRnkJ24KKWQvTgWDug1s ... y0uY1BcHLJ5OrkEPHhQoQntIKOoQ=\n"
@@ -165,13 +166,13 @@ For information on connecting to the service, please see the [Connecting to the 
 
 10. Get console output:
 
-        server = conn.servers.get(server_id)
+        server = conn.servers.get("server_id")
         server.console_output(10)           # returns 10 lines of console output
         
 11. Get VNC console:
 
-        server = conn.servers.get(server_id)
-        server.vnc_console_url('novnc')    # URL to access the VNC console of a server from a browser
+        server = conn.servers.get("server_id")
+        server.vnc_console_url('novnc')     # URL to access the VNC console of a server from a browser
 
 12. Update a server:
 
@@ -180,7 +181,7 @@ For information on connecting to the service, please see the [Connecting to the 
 
 13. Reboot a server:
 
-        server = conn.servers.get(server_id)
+        server = conn.servers.get("server_id")
         server.reboot          # soft reboot by default
 
         server.reboot("HARD")  # hard reboot also possible
@@ -192,7 +193,7 @@ For information on connecting to the service, please see the [Connecting to the 
 
 15. Delete a server:
 
-        server = conn.servers.get(server_id).destroy
+        server = conn.servers.get("server_id").destroy
 
 
 ##Volume Operations (Model Layer)## {#ModelVolumeOperations}
@@ -559,7 +560,7 @@ For information on connecting to the service, please see the [Connecting to the 
             }
         )
         server = response.body['server']
-        server['id']                                # returns the id of the new server
+        server['id']                    # returns the id of the new server
     
     The personalization options are:
     
@@ -577,7 +578,7 @@ For information on connecting to the service, please see the [Connecting to the 
 11. Update the name for a server:
 
         conn.update_server(server_id, {'name' => "My Cool Server"})
-        response = conn.get_server_details(server_id)
+        response = conn.get_server_details("server_id")
         response.body['server']['name']             # => "My Cool Server"
 
 12. Reboot a server (SOFT):
@@ -594,7 +595,7 @@ For information on connecting to the service, please see the [Connecting to the 
 
 15. List both public and private addresses of a particular server:
 
-        response = conn.list_server_addresses(server_id)
+        response = conn.list_server_addresses("server_id")
 
 13. Display console output:
 
@@ -608,7 +609,7 @@ For information on connecting to the service, please see the [Connecting to the 
 
 16. Delete an existing server:
 
-        conn.delete_server(server_id)
+        conn.delete_server("server_id")
 
 ##Server Metadata Operations (Request Layer)## {#RequestServerMetadataOperations}
 
@@ -709,7 +710,7 @@ For information on connecting to the service, please see the [Connecting to the 
 
 4. Delete an existing snapshot image:
 
-        conn.delete_image(image_id)
+        conn.delete_image("image_id")
 
 ##Image Metadata Operations (Request Layer)## {#RequestImageMetadataOperations}
 
@@ -794,7 +795,7 @@ For information on connecting to the service, please see the [Connecting to the 
 
 2. List addresses by network for a server:
 
-        response = conn.list_server_addresses_by_network(address_id)     # get the address
+        response = conn.list_server_addresses_by_network("address_id")     # get the address
 
 3. Obtain the details of a particular address:
 
@@ -808,12 +809,12 @@ For information on connecting to the service, please see the [Connecting to the 
 
 4. Associate a server to an existing address:
 
-        conn.associate_address(server_id, ip_address)
+        conn.associate_address("server_id", "ip_address")
 
 5. Disassociate a server from an existing address:
 
-        conn.disassociate_address(server_id, ip_address)
+        conn.disassociate_address("server_id", "ip_address")
 
 6. Delete (release) an existing address:
 
-        conn.release_address(address_id)            # releases the ip address to the pool
+        conn.release_address("address_id")            # releases the ip address to the pool
