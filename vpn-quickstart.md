@@ -94,6 +94,7 @@ The following steps walk you through the process:
 - [Create ports](#port)   
 - [Create compute instances](#instances)
 - [Associate floating IPs](#floatip)  
+- [Enable uncomplicated firewall](#enableufw)
 - [Install strongSwan](#installss)
 - [Enable IP forwarding](#ipfrwrd)
 - [Set up *ipsec.conf* on the gateway](#ipsec)
@@ -241,6 +242,21 @@ To show the floating IP:
     neutron floatingip-show $FLOATING_ID2
 
 **Note:** You can also assign floating IPs via the Nova API and subsequently call the command `nova list` to display the instances and their status.
+
+### Enable uncomplicated firewall ### {#enableufw}
+
+We recommend that you use the [uncomplicated firewall (UFW](https://help.ubuntu.com/community/UFW) capability included in Ubuntu.
+
+To enable the UFW:
+
+	sudo ufw allow 22/tcp
+	sudo ufw allow 500/udp
+	sudo ufw allow 1293/tcp
+	sudo ufw allow 4500/udp
+	sudo ufw enable
+	
+	# After the last command, a prompt appears stating that this command "may disrupt existing ssh connections. Proceed with operation (y|n)?"
+	# Answer "y" and ENTER to complete the procedure.
 
 ### Install strongSwan on the gateway instance ### {#installss}
 
