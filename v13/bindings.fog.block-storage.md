@@ -148,7 +148,7 @@ This section discusses the volume operations you can perform using the model abs
 
 11. Delete a volume:
 
-        volume = conn.delete_volume(volume_id)
+        volume = conn.delete_volume("volume_id")
         volume.destroy
         # => true
 
@@ -292,9 +292,9 @@ This section discusses the volume operations you can perform using the request a
 
         conn.get_volume_details("volume_id")
         volume = response.body['volume']
-        volume['displayName']                  # returns the name of the volume
-        volume['size']                               # returns the size of the volume
-        volume['status']                            # returns the status of the volume e.g. available, in-use
+        volume['displayName']        # returns the name of the volume
+        volume['size']               # returns the size of the volume
+        volume['status']             # returns the status of the volume e.g. available, in-use
 
 
 4. Create a volume:
@@ -303,7 +303,7 @@ This section discusses the volume operations you can perform using the request a
         volume['id']                    # returns the id of the new volume
         volume['displayName']           # => "demo-vol"
         volume['size'] # => 10
-        volume['status']                          # returns the status of the volume e.g. creating, available
+        volume['status']                # returns the status of the volume e.g. creating, available
 
 5. Create a new volume from an existing image:
 
@@ -319,11 +319,11 @@ This section discusses the volume operations you can perform using the request a
                 'display_description' => 'New Volume from Snapshot', 
                 'snapshot_id' => 'snapshot_id'
                 )
-        volume['id']                                # returns the id of the new volume
+        volume['id']                         # returns the id of the new volume
         volume['displayName']                # => "demo-vol"
-        volume['size']                             # => 1
-        volume['snapshot_id']                 # => 1
-        volume['status']                          # returns the status of the volume e.g. creating, available
+        volume['size']                       # => 1
+        volume['snapshot_id']                # => 1
+        volume['status']                     # returns the status of the volume e.g. creating, available
 **Note**: The size of the volume you create from a snapshot is the same as that of the snapshot. The third parameter (the size) has no effect in this case.
 
 7. Create a new volume from an existing volume:
@@ -357,8 +357,8 @@ This section discusses the volume operations you can perform using the request a
         conn.list_server_volumes("server_id")
         volume_attachments = response.body['volumeAttachments']
         volume_attachment[0]['id']       # returns the id of the volume
-        volume_attachment[0]['volumeId']  # returns the id of the volume
-        volume_attachment[0]['device']  # returns the device of the volume
+        volume_attachment[0]['volumeId'] # returns the id of the volume
+        volume_attachment[0]['device']   # returns the device of the volume
 
 10. Detach an existing volume from a server:
 
@@ -371,7 +371,7 @@ This section discusses the volume operations you can perform using the request a
 
 12. Delete an existing volume:
 
-        conn.delete_volume(volume_id)
+        conn.delete_volume("volume_id")
 
 ###Snapshot Operations### {#RequestSnapshotOperations}
 
@@ -399,9 +399,9 @@ This section discusses the snapshot operations you can perform using the request
         response = conn.get_snapshot_details("snapshot_id")
         snapshot = response.body['snapshot']
         snapshot['displayName']                  # returns the name of the snapshot
-        snapshot['size']                               # returns the size of the snapshot
-        snapshot['volumeId']                        # returns the volume id of the snapshot
-        snapshot['status']                            # returns the status of the snapshot e.g. available, in-use
+        snapshot['size']                         # returns the size of the snapshot
+        snapshot['volumeId']                     # returns the volume id of the snapshot
+        snapshot['status']                       # returns the status of the snapshot e.g. available, in-use
 
 5. Create a new snapshot:
 
@@ -409,11 +409,11 @@ This section discusses the snapshot operations you can perform using the request
         conn.create_snapshot("volume_id",
         'display_name' => 'Test Snapshot', 
         'display_description' => 'Test Snapshot from Vol Test')
-        snapshot['id']                                # returns the id of the new volume
-        snapshot['displayName']                # => "demo-vol"
-        snapshot['size']                             # => 1
-        snapshot['volumeId']                        # returns the volume id of the snapshot
-        snapshot['status']                          # returns the status of the snapshot e.g. creating, available
+        snapshot['id']                          # returns the id of the new volume
+        snapshot['displayName']                 # => "demo-vol"
+        snapshot['size']                        # => 1
+        snapshot['volumeId']                    # returns the volume id of the snapshot
+        snapshot['status']                      # returns the status of the snapshot e.g. creating, available
 
 6. Create a new snapshot using the force parameter:
 
@@ -428,7 +428,7 @@ This section discusses the snapshot operations you can perform using the request
 
 8. Delete a snapshot:
 
-        conn.delete_snapshot(snapshot_id)
+        conn.delete_snapshot("snapshot_id")
 
 ###Volume Backup Operations (Request Layer)### {#RequestVolBackupOperations}
 
