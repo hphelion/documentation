@@ -14,10 +14,13 @@ This page provides you with the installation information for the following opera
 * [Installation Prerequisites](#Installation)
 * [Ubuntu Installation](#Ubuntu)
 * [CentOS Installation](#CentOS)
-<!--* [Fedora Installation](#Fedora)-->
 * [Windows Installation](#Windows)
 
+<!--* [Fedora Installation](#Fedora)-->
+
 [You can download the latest version of the Python Novaclient CLI software here (Version 2.6.8-17)](/file/python-novaclient_2.6.8-17.tar.gz)!
+
+**Note**: These instructions are valid for version 12.12 of the software *only*.  For instructions on installing on version 13.5 of the software, please see the [Cloud 13.5 CLI Installation Instructions](https://community.hpcloud.com/article/cloud-135-cli-installation-instructions) page.
 
 
 ##Installation Prerequisites## {#Installation}
