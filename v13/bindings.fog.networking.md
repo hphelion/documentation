@@ -315,7 +315,7 @@ For information on connecting to the service, please see the [Connecting to the 
 
 2. List ports using a filter:
 
-        conn.list_ports({"device_id" => "device_id"})
+        conn.list_ports({"router_id" => "router_id"})
 
 3. Obtain a port by ID:
 
@@ -323,11 +323,11 @@ For information on connecting to the service, please see the [Connecting to the 
 
 4. Create a port:
 
-        conn.create_port("network_id", {:name => "port"})
+        conn.create_port("network_id", {:name => "myport"})
 
 5. Update a port:
 
-        conn.update_port("port_id", {:name => "Port Upd"})
+        conn.update_port("port_id", {:name => "My Port Upd"})
 
 6. Delete a port:
 
