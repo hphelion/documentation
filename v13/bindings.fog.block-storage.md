@@ -380,11 +380,11 @@ This section discusses the snapshot operations you can perform using the request
 1. List all available snapshots for an account:
 
         conn.list_snapshots
-        body['snapshots']                    # returns an array of snapshot hashes
-        headers                            # returns the headers
-        body['snapshots'][0]['displayName']         # returns the name of the snapshot
-        body['snapshots'][0]['size']                       # returns the size of the snapshot
-        body['snapshots'][0]['volumeId']               # returns the volume id of the snapshot
+        body['snapshots']                       # returns an array of snapshot hashes
+        headers                                 # returns the headers
+        body['snapshots'][0]['displayName']     # returns the name of the snapshot
+        body['snapshots'][0]['size']            # returns the size of the snapshot
+        body['snapshots'][0]['volumeId']        # returns the volume id of the snapshot
 
 2. List the details of all snapshots:
 
