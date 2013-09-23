@@ -101,18 +101,19 @@ For information on connecting to the service, please see the [Connecting to the 
 
         conn.ports.all({:mac_address => "mac_address"})
 
-3. Create a port:
+
+3. Obtain a port by ID:
+
+        conn.ports.get("port_id")
+
+4. Create a port:
 
         conn.ports.create(
                 :name => "Port Model 1",
                 :network_id => "network_id"
                 )
 
-4. Obtain a port by ID:
-
-        conn.ports.get("port_id")
-
-5. Deletw a port:
+5. Delete a port:
 
         conn.ports.get("port_id").destroy
 
@@ -144,8 +145,8 @@ For information on connecting to the service, please see the [Connecting to the 
 
 6. Remove a router interface using a subnet:
 
-       router.remove_interface("subnet_id", nil)
-       # Removing the interface also deletes the auto-created port
+        router.remove_interface("subnet_id", nil)
+        # Removing the interface also deletes the auto-created port
 
 7. Add a router interface using a port:
 
@@ -180,17 +181,17 @@ For information on connecting to the service, please see the [Connecting to the 
 
         conn.security_groups.all({:name => "My Security Group"})
 
-3. Create a security group:
+3. Obtain a security group by ID:
+
+        conn.security_groups.get("SecurityGroup_id")
+
+4. Create a security group:
 
         conn.security_groups.create(
                 :name => 'MySecurityGroup',
                 :description => 'my security group description'
         )        
 **Note:** Two security group rules are created by default for every new security group that is created: one 'ingress' and one 'egress' rule.
-
-4. Obtain a security group by ID:
-
-        conn.security_groups.get("SecurityGroup_id")
 
 5. Delete a security group:
 
@@ -206,7 +207,11 @@ For information on connecting to the service, please see the [Connecting to the 
 
         conn.security_group_rules.all({:direction => "ingress"})
 
-3. Create a security group rule:
+3. Obtain a security group by ID:
+
+        conn.security_group_rules.get("SecurityGroupRule_id")
+
+4. Create a security group rule:
 
         conn.security_group_rules.create(
             :security_group_id => "SecurityGroup_id",
@@ -216,10 +221,6 @@ For information on connecting to the service, please see the [Connecting to the 
             :port_range_max => 22,
             :remote_ip_prefix => '0.0.0.0/0'
         )
-
-4. Obtain a security group by ID:
-
-        conn.security_group_rules.get("server_id")
 
 5. Delete a security group rule:
 
@@ -235,15 +236,15 @@ For information on connecting to the service, please see the [Connecting to the 
 
         network = conn.floating_ips.all("fixed_ip_address" => "ip address")
 
-3. Create a floating IP:
+3. Obtain a floating IP by ID:
+
+        conn.floating_ips.get("FloatingIp_id")
+
+4. Create a floating IP:
 
         conn.floating_ips.create(
         	:floating_network_id => "network_id"
         )
-
-4. Obtain a floating IP by ID:
-
-        conn.floating_ips.get("FloatingIp_id")
 
 5. Delete a floating IP:
 
@@ -296,7 +297,7 @@ For information on connecting to the service, please see the [Connecting to the 
 
 5. Update a subnet:
 
-        conn.update_subnet("subnet_id")
+        conn.update_subnet("subnet_id", {:name => My Subnet Upd"})
 
 6. Assign a DNS server to a subnet:
 
@@ -322,11 +323,11 @@ For information on connecting to the service, please see the [Connecting to the 
 
 4. Create a port:
 
-        conn.create_port("network_id", {:name => "fogport"})
+        conn.create_port("network_id", {:name => "port"})
 
 5. Update a port:
 
-        conn.update_port("port_id", {:name => "Fog Port Upd"})
+        conn.update_port("port_id", {:name => "Port Upd"})
 
 6. Delete a port:
 
@@ -344,7 +345,7 @@ For information on connecting to the service, please see the [Connecting to the 
 
 3. Obtain a router:
 
-        conn.get_router("device_id")
+        conn.get_router("router_id")
 
 4. Create a router:
 
@@ -352,29 +353,32 @@ For information on connecting to the service, please see the [Connecting to the 
 
 5. Update a router:
 
-        conn.update_router("device_id" {:name => 'My Router Updates'})
+        conn.update_router("router_id" {:name => 'My Router Updates'})
 
-6. Delete a router:
+5. Delete a floating IP:
 
-        conn.delete_router("device_id")
+        conn.delete_floating_IP(FloatingIp_id)
+6. Add a router interface using a subnet:
 
-7. Add a router interface using a subnet:
+        conn.add_router_interface("router_id", "subnet_id")
 
-        conn.add_router_interface("device_id", "port_id")
+7. Remove a router interface using a subnet:
 
-8. Remove a router interface using a subnet:
+        conn.remove_router_interface("router_id", "subnet_id") # Removes a port with no name using the subnet_id
 
-        conn.remove_router_interface("device_id", "port_id") # Adds a new port port with no name using the port_id
+8. Add a router interface using a port:
 
-9. Add a router interface using a port:
+        conn.add_router_interface("router_id", nil, "port_id")
 
-        conn.add_router_interface("device_id", nil, "port_id")
+**Note:** Updates the router_id and device_owner for this port.
 
-**Note:** Updates the device_id and device_owner for this port.
+9. Remove a router interace using a port:
 
-10. Remove a router interace using a port:
+        conn.remove_router_interface("router_id", nil, "port_id") #guesses as to the ids
 
-        conn.remove_router_interface("device_id", nil, "port_id") #guesses as to the ids
+10. Delete a router:
+
+        conn.delete_router("router_id")
         
 ##Security Group Operations (Request Layer)## {#RequestSecurityGroups}
 
@@ -386,16 +390,16 @@ For information on connecting to the service, please see the [Connecting to the 
 
         conn.list_security_groups({:name => "My Security Group"})
 
-3. Create a security group:
+3. Obtain a security group by ID:
+
+        conn.get_security_group("security_group_id")
+
+4. Create a security group:
 
         conn.create_security_group(
         :name => "My Security Group",
         :description => "What my security group does."
         )
-
-4. Obtain a security group by ID:
-
-        conn.get_security_group("security_group_id")
 
 5. Delete a security group:
 
@@ -411,31 +415,18 @@ For information on connecting to the service, please see the [Connecting to the 
 
         conn.list_security_group_rules({:direction => 'egress'})
 
-3. Create a security group rule:
+3. Obtain a security group rule by ID:
 
-        conn.create_security_group_rule("security_group_id", 'ingress')
-        conn.create_security_group_rule("security_group_id", 'egress')
+        conn.get_security_group_rule("rule_id")
 
-        **Note:** The default rules for 'ingress' and 'egress' are already created, so you cannot create them again.
-        
+4. Create a security group rule:
+
         conn.create_security_group_rule("security_group_id", 'ingress',{
                 :remote_ip_prefix => ""0.0.0.0/0",
                 :protocol => "tcp",
                 :port_range_min => 22,
                 :port_range_max => 22
                 })
-        
-        **Note:** You cannot pass in **-ve** values for port ranges anymore. See below how to create **icmp** rule.
-        
-        conn.create_security_group_rule("security_group_id", 'ingress',{
-                :remote_ip_prefix => ""0.0.0.0/0",
-                :protocol => "icmp",
-                })
-
-
-4. Obtain a security group rule by ID:
-
-        conn.get_security_group_rule("rule_id")
 
 5. Delete a security group rule:
 
@@ -451,14 +442,14 @@ For information on connecting to the service, please see the [Connecting to the 
 
         conn.list_floating_ips("fixed_ip_address" => "11.0.3.5")
 
-3. Create a floating IP:
-
-        conn.create_floating_ip("network_id")
-
-. Obtain a floating IP by ID:
+3. Obtain a floating IP by ID:
 
         conn.get_floating_ip("FloatingIp_id")
 
+4. Create a floating IP:
+
+        conn.create_floating_ip("FloatingIp_id")
+
 5. Delete a floating IP:
 
-        conn.delete_floating_IP(FloatingIp_id)
+        conn.delete_floating_IP("FloatingIp_id")
