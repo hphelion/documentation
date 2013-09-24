@@ -5,9 +5,9 @@ permalink: /cli/unix/2/release-notes/
 product: unix-cli
 
 ---
-#HP Cloud Services UNIX CLI Release Notes
+#HP Cloud UNIX CLI Release Notes
 
-These are the release notes for the HP Cloud services UNIX CLI.  The current release number for the [UNIX CLI software](/cli/unix) is version 2.0.0, released on 08/28/13.
+The current release number for the [UNIX CLI software](/cli/unix) is version 2.0.0, released on 08/28/13.
 
 * [Release 2.0.0 Features](#v2_0_0)
 * [Release 1.9.0 Features](#v1_9_0)
@@ -20,24 +20,25 @@ These are the release notes for the HP Cloud services UNIX CLI.  The current rel
 
 ##Release 2.0.0 Features## {#v2_0_0}
 
-The 2.0.0 release is available for download from [https://docs.hpcloud.com/file/hpcloud-2.0.0.gem](/file/hpcloud-2.0.0.gem).  This release was made available on 6/15/2013 and contains the following new features:
+The 2.0.0 release is available for download from [https://docs.hpcloud.com/file/hpcloud-2.0.0.gem](/file/hpcloud-2.0.0.gem) and contains the following new features:
 
-* Support for next generation networking cloud added, including the following features:
+* Support for additional networking functionality, including the following commands:
   - `networks` commands
   - `routers` commands
   - `ports` commands
   - `subnets` commands
 * Support for load balancer as a service (LBaaS) with the `lb` commands
 * Personality support for `servers:add`
-* The `containers:sync` command now takes a container or location for destination
-* The `servers:limits` command was added to print comput limits
-* The `servers:ratelimits` command was added to print comput limits
-* Object metadata can now be shown and set with `metadata` and `metadata:set`
-* Added --userpass option to account:setup and account:edit to allow authentication via user name and password rather than authentication keys.
+* Extended command functionality:
+  - The `containers:sync` command now takes a container or location for destination
+  - The `servers:limits` command is now available to print compute limits
+  - The `servers:ratelimits` command in now available to print compute limits
+  - `metadata` and `metadata:set` can now show and set object metadata 
+  - The `--userpass option` is now available to `account:setup` and `account:edit`, allowing authentication via user name and password rather than authentication keys
 
 ###Known Issues###
 
-* The `--bootable option` has been removed from the `volumes` (list) command
+* The `volumes` (list) command no longer contains the `--bootable option` 
 * The v3 identity servers are not supported by this release
 
 ##Release 1.9.0 Features## {#v1_9_0}
