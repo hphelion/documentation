@@ -135,10 +135,20 @@ To add a router interface:
     $ hpcloud routers:interface:add routee puerto
     Created router interface 'routee' to 'puerto'.
 
+Or,
+
+    $ hpcloud routers:interface:remove routee subby
+    Created router interface 'routee' to 'subby'.
+
 To remove a router interface:
 
     $ hpcloud routers:interface:remove routee puerto
     Removed port interface 'routee' from 'puerto'.
+
+Or,
+
+    $ hpcloud routers:interface:remove routee subby
+    Removed port interface 'routee' from 'subby'.
 
 To update a router:
 
