@@ -94,7 +94,7 @@ The following steps walk you through the process:
 - [Create ports](#port)   
 - [Create compute instances](#instances)
 - [Associate floating IPs](#floatip)  
-- [Enable uncomplicated firewall](#enableufw)
+- [Enable UFW](#enableufw)
 - [Install strongSwan](#installss)
 - [Enable IP forwarding](#ipfrwrd)
 - [Set up *ipsec.conf* on the gateway](#ipsec)
@@ -243,9 +243,9 @@ To show the floating IP:
 
 **Note:** You can also assign floating IPs via the Nova API and subsequently call the command `nova list` to display the instances and their status.
 
-### Enable uncomplicated firewall ### {#enableufw}
+### Enable UFW ### {#enableufw}
 
-We recommend that you use the [uncomplicated firewall (UFW](https://help.ubuntu.com/community/UFW) capability included in Ubuntu.
+We recommend that you use the [UFW (uncomplicated firewall)](https://help.ubuntu.com/community/UFW) capability included in Ubuntu.
 
 To enable the UFW:
 
@@ -257,6 +257,17 @@ To enable the UFW:
 	
 	# After the last command, a prompt appears stating that this command "may disrupt existing ssh connections. Proceed with operation (y|n)?"
 	# Answer "y" and ENTER to complete the procedure.
+
+## Advanced security option
+
+If you know the IP address that you will be connecting from, and you want to exclude all others from being able to connect, use the following instructions.
+
+	sudo ufw allow 22/tcp
+	sudo ufw allow from 16.17.18.19 to any port 500 proto udp
+	sudo ufw allow from 16.17.18.19 to any port 1293 proto tcp
+	sudo ufw allow from 16.17.18.19 to any port 4500 proto udp
+	# If you need to add more than one IP address, repeat the above three lines for every connection.
+	sudo ufw enable
 
 ### Install strongSwan on the gateway instance ### {#installss}
 
