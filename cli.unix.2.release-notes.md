@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Release Notes for the HP Cloud Services UNIX CLI"
+title: "Release Notes for the HP Cloud UNIX CLI"
 permalink: /cli/unix/2/release-notes/
 product: unix-cli
 
