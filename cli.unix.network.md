@@ -42,6 +42,11 @@ To list networks:
       | d1a803d8 | net2    | ACTIVE |        | up          | 552f58c5,c1fe3db3 |
       +----------+---------+--------+--------+-------------+-------------------+
 
+To update a network:
+
+    $ hpcloud networks:update netty -u 
+    Updated network 'netty'.
+
 To remove a network:
 
     $ hpcloud networks:remove netty 
@@ -96,6 +101,11 @@ To list the ports:
       | bae8761f | puerto | 3136e453   | 552f58c5,127.1.0.1 | fa:16:3e:ba:64:5e | ACTIVE | up          | dhcpb3abdef0 | network:dhcp |
       +----------+--------+------------+--------------------+-------------------+--------+-------------+--------------+--------------+
 
+To update a port:
+
+    $ hpcloud ports:update puerto -u
+    Updated port 'puerto' with id 'bae816af'
+
 To remove a port:
 
     $ hpcloud ports:remove puerto
@@ -125,10 +135,25 @@ To add a router interface:
     $ hpcloud routers:interface:add routee puerto
     Created router interface 'routee' to 'puerto'.
 
+Or,
+
+    $ hpcloud routers:interface:remove routee subby
+    Created router interface 'routee' to 'subby'.
+
 To remove a router interface:
 
     $ hpcloud routers:interface:remove routee puerto
     Removed port interface 'routee' from 'puerto'.
+
+Or,
+
+    $ hpcloud routers:interface:remove routee subby
+    Removed port interface 'routee' from 'subby'.
+
+To update a router:
+
+    $ hpcloud routers:update routee -u
+    Updated router 'routee'.
 
 To remove a router:
 
