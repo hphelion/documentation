@@ -258,7 +258,7 @@ To enable the UFW:
 	# After the last command, a prompt appears stating that this command "may disrupt existing ssh connections. Proceed with operation (y|n)?"
 	# Answer "y" and ENTER to complete the procedure.
 
-## Advanced security option
+#### Advanced security option
 
 If you know the IP address that you will be connecting from, and you want to exclude all others from being able to connect, use the following instructions.
 
