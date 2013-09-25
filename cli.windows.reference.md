@@ -352,9 +352,9 @@ assign-ip "*address*" *server-ID*
 ###Examples###
 EXAMPLE
 
-    assign-ip "192.168.110.45" 2344
+    assign-ip "192.168.110.45" -s 4ee64397-1253-473c-a81d-bc23dceeef31
 
-Assigns the IP address 192.168.45 to the server with the ID 2344.
+Assigns the IP address 192.168.45 to the server with the ID -s 4ee64397-1253-473c-a81d-bc23dceeef31.
 
 ##Connect-Server## {#Connect-Server}
 Performs a quick connection to the designated server instance. 
@@ -434,6 +434,20 @@ EXAMPLE 2
 
 Lists the currently-available flavors and their associated details.
 
+##New-FloatingIP## {#New-FloatingIP}
+Creates a new FloatingIP.
+
+### Syntax###
+new-floatingip
+
+###Examples###
+EXAMPLE
+
+    new-FloatingIP -pid 12857174-99cf-40e9-999e-fb0fa2e84898 -nid bd1c30f7-71f1-455e-b91e-8d03da7f5224 
+
+Creates a new Floating IP address for Network 12857174-99cf-40e9-999e-fb0fa2e84898 and Port bd1c30f7-71f1-455e-b91e-8d03da7f5224 
+
+
 ##New-Keypair## {#New-Keypair}
 Creates a new keypair. The keypair is stored by default in `C:\Users\*username*\Documents\HP\`.
 
@@ -446,6 +460,30 @@ EXAMPLE
     new-keypair "TestKey"
 
 Creates a new keypair with the name "TestKey.pem".
+
+
+##New-Network## {#New-Network}
+Creates a new Network.
+
+### Syntax###
+new-network
+
+###Examples###
+EXAMPLE
+
+    # new-network "testNet1" -asu creates a new network testNet1 with AdminStateUp set to "true".
+
+
+
+##New-Port## {#New-Port}
+##New-Router## {#New-Router}
+##New-RouterInterface## {#New-RouterInterface}
+
+
+
+
+
+
 
 ##New-SecurityGroup## {#New-SecurityGroup}
 Creates a new security group.
@@ -520,6 +558,16 @@ EXAMPLE 2
     KeyName: mySecurityGroup
  
 Creates a new server with the name 'TestServer'. In this example, the user is prompted for the `Image`, `Flavor`, and `KeyName` values rather than entering them on the command line directly.
+
+
+
+
+
+##New-Subnet## {#New-Subnet}
+
+
+
+
 
 ##Ping-Server## {#Ping-Server}
 Sends echo request packets to the named server.
