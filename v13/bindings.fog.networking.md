@@ -355,9 +355,6 @@ For information on connecting to the service, please see the [Connecting to the 
 
         conn.update_router("router_id" {:name => 'My Router Updates'})
 
-5. Delete a floating IP:
-
-        conn.delete_floating_IP(FloatingIp_id)
 6. Add a router interface using a subnet:
 
         conn.add_router_interface("router_id", "subnet_id")
