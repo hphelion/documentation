@@ -493,7 +493,7 @@ EXAMPLE
 
     # new-port "testPort1" -nid bd1c30f7-71f1-455e-b91e-8d03da7f5224 -asu -did "sdf\etc" 
 
-Creates a new Port called testNet1 on Network bd1c30f7-71f1-455e-b91e-8d03da7f5224 with its AdminStateUp set to true and a Device = sdf/etc. 
+Creates a new Port called testNet1 on Network bd1c30f7-71f1-455e-b91e-8d03da7f5224 with its AdminStateUp set to true and a Device = sdf\etc. 
 
 
 ##New-Router## {#New-Router}
@@ -720,7 +720,7 @@ Removes the Router with the id of 12857174-99cf-40e9-999e-fb0fa2e84898
 
 
 ##Remove-RouterInterface## {#Remove-RouterInteface}
-Removes an existing relationshhip between a Subnet and Router.
+Removes an existing relationship between a Subnet and Router.
 
 ### Syntax###
 remove-routerinterface
@@ -759,7 +759,7 @@ EXAMPLE
 Removes the security group with the ID of 3244.
 
 ##Remove-Server## {#Remove-Server}
-Deletes an existing server.
+Deletes an existing Server.
 
 ### Syntax###
 remove-server [ "*server-ID*" | -all ]  "*server-ID*"
@@ -834,7 +834,7 @@ Removes the supplied IP address from server 4ee64397-1253-473c-a81d-bc23dceeef31
 
 
 ##Update-FloatingIP ## {#Update-FloatingIP }
-Updates an existing FloatingIP.
+Updates an existing Floating IP.
 
 ###Syntax###
 update-floatingip
