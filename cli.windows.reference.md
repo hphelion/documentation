@@ -371,17 +371,6 @@ EXAMPLE
 
 Performs a connection to the server with the ID `123456`.
 
-##Deallocate-IP## {#Deallocate-IP}
-Deallocates (releases) a previously allocated IP address.
-
-### Syntax###
-deallocate-ip *AddressId*
-
-###Examples###
-EXAMPLE
-
-    deallocate-ip 23466
-Deallocates the previously allocated IP address with an Id of 23466
 ##Get-Limits## {#Get-Limits}
 Shows your quota amounts for Compute assets
 
@@ -815,7 +804,7 @@ EXAMPLE
 Sets the color identifier for zone 1 to cyan.  The color names must be capitalized (as in the example).
 
 ##Unassign-IP## {#Unassign-IP}
-Assigns an IP address to an existing Server.
+Unassigns an IP address for an existing Server.
 
 ###Syntax###
 unassign-ip "*address*" *server-ID*
