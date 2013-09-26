@@ -443,7 +443,7 @@ Creates a new server image based on an existing server.
 ###Syntax
 new-image "_existing-server-name_" "_new-server-name_"
 
-###Examples
+###Examples###
 EXAMPLE
 
     new-image myserver testserver
@@ -468,10 +468,11 @@ Creates a new keypair with the name "TestKey.pem".
 ##New-Network## {#New-Network}
 Creates a new Network.
 
-### Syntax###
+###Syntax###
 new-network
 
 ###Examples###
+
 EXAMPLE
 
     # new-network "testNet1" -asu 
@@ -482,12 +483,14 @@ Creates a new Network testNet1 with AdminStateUp set to "true".
 ##New-Port## {#New-Port}
 Creates a new Port.
 
-### Syntax###
+###Syntax###
 new-port
 
 
 ###Examples###
+
 EXAMPLE
+
     # new-port "testPort1" -nid bd1c30f7-71f1-455e-b91e-8d03da7f5224 -asu -did "sdf\etc" 
 
 Creates a new Port called testNet1 on Network bd1c30f7-71f1-455e-b91e-8d03da7f5224 with its AdminStateUp set to true and a Device = sdf/etc. 
@@ -496,11 +499,13 @@ Creates a new Port called testNet1 on Network bd1c30f7-71f1-455e-b91e-8d03da7f52
 ##New-Router## {#New-Router}
 Creates a new Router.
 
-### Syntax###
+###Syntax###
 new-router
 
 ###Examples###
+
 EXAMPLE
+
     # new-router "testRouter1" -asu -egw bd1c30f7-71f1-455e-b91e-8d03da7f5224 
 
 Creates a new Router called testRouter1 on External Network bd1c30f7-71f1-455e-b91e-8d03da7f5224 with its AdminStateUp set to true.
@@ -589,7 +594,9 @@ Creates a new Subnet.
 new-subnet
 
 ###Examples###
+
 EXAMPLE
+
     # new-subnet -n testSubnet -nid bd1c30f7-71f1-455e-b91e-8d03da7f5224 -ipv 4 -c "10.0.6.0/24" -a "10.0.6.20", "10.0.6.22" , "10.0.6.26", "10.0.6.29" 
 
 Creates a new Subnet called testSubnet. 
