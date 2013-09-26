@@ -245,11 +245,13 @@ To show the floating IP:
 
 ### Enable UFW ### {#enableufw}
 
-We recommend that you use the [UFW (uncomplicated firewall)](https://help.ubuntu.com/community/UFW) capability included in Ubuntu.
+HP strongly recommends that you use the [UFW (uncomplicated firewall)](https://help.ubuntu.com/community/UFW) capability included in Ubuntu. Currently you need to disable port security to create a VPN; enabling UFW closes the potential security hole.
 
-To enable the UFW:
+**Note:** The firewall will be implemented without restarting the tunnel.
 
-	sudo ufw allow 22/tcp
+To enable the UFW, connect to the the gateway instance and run these commands:
+
+	prompt> sudo ufw allow 22/tcp
 	sudo ufw allow 500/udp
 	sudo ufw allow 1293/tcp
 	sudo ufw allow 4500/udp
@@ -260,9 +262,9 @@ To enable the UFW:
 
 #### Advanced security option
 
-If you know the IP address that you will be connecting from, and you want to exclude all others from being able to connect, use the following instructions.
+If you know the floating IP address of the gateway that you will be connecting from, and you want to exclude all others from being able to connect, use the following instructions:
 
-	sudo ufw allow 22/tcp
+	prompt> sudo ufw allow 22/tcp
 	sudo ufw allow from 16.17.18.19 to any port 500 proto udp
 	sudo ufw allow from 16.17.18.19 to any port 1293 proto tcp
 	sudo ufw allow from 16.17.18.19 to any port 4500 proto udp
@@ -315,7 +317,7 @@ For more details on setting up the *ipsec.conf* file, see the [strongSwan ipsec.
 	config setup
 		plutodebug=all
 		plutostderrlog=/home/ubuntu/plutolog.txt
-		#crlcheckinterval=600
+		# crlcheckinterval=600
 		# strictcrlpolicy=yes
 		# cachecrls=yes
 		nat_traversal=yes
