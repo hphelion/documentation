@@ -247,8 +247,6 @@ To show the floating IP:
 
 HP strongly recommends that you use the [UFW (uncomplicated firewall)](https://help.ubuntu.com/community/UFW) capability included in Ubuntu. Currently you need to disable port security to create a VPN; enabling UFW closes the potential security hole.
 
-**Note:** The firewall will be implemented without restarting the tunnel.
-
 To enable the UFW, connect to the the gateway instance and run these commands:
 
 	prompt> sudo ufw allow 22/tcp
@@ -262,7 +260,7 @@ To enable the UFW, connect to the the gateway instance and run these commands:
 
 #### Advanced security option
 
-If you know the floating IP address of the gateway that you will be connecting from, and you want to exclude all others from being able to connect, use the following instructions:
+If you know the public IP address of the gateway that you will be connecting from, and you want to exclude all others from being able to connect, use the following instructions:
 
 	prompt> sudo ufw allow 22/tcp
 	sudo ufw allow from 16.17.18.19 to any port 500 proto udp
