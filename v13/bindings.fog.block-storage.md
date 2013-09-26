@@ -119,7 +119,7 @@ This section discusses the volume operations you can perform using the model abs
 
 7. Attach a volume to a server:
 
-        volume = s.volume_attachments.create(
+        server = conn.servers.get("server_id")s.volume_attachments.create(
                 :server_id => s.id, 
                 :volume_id => "volume_id", 
                 :device => "/dev/sdf")
@@ -148,7 +148,7 @@ This section discusses the volume operations you can perform using the model abs
 
 11. Delete a volume:
 
-        volume = conn.delete_volume("volume_id")
+        volume = conn.volumes.get("volume_id")
         volume.destroy
         # => true
 
