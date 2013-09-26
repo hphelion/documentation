@@ -424,7 +424,7 @@ EXAMPLE 2
 Lists the currently-available flavors and their associated details.
 
 ##New-FloatingIP## {#New-FloatingIP}
-Creates a new FloatingIP.
+Creates a new Floating IP.
 
 ### Syntax###
 new-floatingip
@@ -519,6 +519,7 @@ Creates a new RouterInterfrace.
 new-routerinterface
 
 ###Examples###
+
     # new-routerinterface -rid bd1c30f7-71f1-455e-b91e-8d03da7f5224 -pid c9e32588-5b69-4100-a1a6-fa49094ec0a8 -sid 7yuu9886-5b69-4100-a1a6-fa49094ec0a8
 
 Creates a new relationship between Router (bd1c30f7-71f1-455e-b91e-8d03da7f5224), Port (c9e32588-5b69-4100-a1a6-fa49094ec0a8) and Subnet (7yuu9886-5b69-4100-a1a6-fa49094ec0a8)
@@ -680,7 +681,9 @@ Removes an existing Network.
 remove-network 
 
 ###Examples###
+
 EXAMPLE
+
     # remove-network -id 12857174-99cf-40e9-999e-fb0fa2e84898  
 
 Deletes the Network with the id of 12857174-99cf-40e9-999e-fb0fa2e84898 
@@ -693,7 +696,9 @@ Removes an existing port.
 remove-port
 
 ###Examples###
+
 EXAMPLE
+
     # remove-port -id 12857174-99cf-40e9-999e-fb0fa2e84898 
 
 Deletes the Port with the id of 12857174-99cf-40e9-999e-fb0fa2e84898 
@@ -706,20 +711,24 @@ Removes an existing router.
 remove-router
 
 ###Examples###
+
 EXAMPLE
+
     # remove-router 12857174-99cf-40e9-999e-fb0fa2e84898 
 
 Removes the Router with the id of 12857174-99cf-40e9-999e-fb0fa2e84898 
 
 
 ##Remove-RouterInterface## {#Remove-RouterInteface}
-Removes an existing relation between a Subnet and Router.
+Removes an existing relationshhip between a Subnet and Router.
 
 ### Syntax###
 remove-routerinterface
 
 ###Examples###
+
 EXAMPLE
+
     # remove-routerinterface -id 12857174-99cf-40e9-999e-fb0fa2e84898 -sid Removes the association between Router 12857174-99cf-40e9-999e-fb0fa2e84898 and Subnet bd1c30f7-71f1-455e-b91e-8d03da7f5224 
 
 
@@ -818,8 +827,8 @@ unassign-ip "*address*" *server-ID*
 
 ###Examples###
 EXAMPLE
-    
-    #Unassign-IP "192.168.110.45" -s 4ee64397-1253-473c-a81d-bc23dceeef31
+
+    # unassign-IP "192.168.110.45" -s 4ee64397-1253-473c-a81d-bc23dceeef31
      
 Removes the supplied IP address from server 4ee64397-1253-473c-a81d-bc23dceeef31 
 
@@ -832,7 +841,7 @@ update-floatingip
 
 ###Examples###
 EXAMPLE
- EXAMPLE 1 
+
     # update-FLoatingIP -id 12857174-99cf-40e9-999e-fb0fa2e84898 -pid c9e32588-5b69-4100-a1a6-fa49094ec0a8 
 
 Updates the Floating IP (12857174-99cf-40e9-999e-fb0fa2e84898) to the new Port (c9e32588-5b69-4100-a1a6-fa49094ec0a8) 
@@ -860,6 +869,7 @@ update-port
 
 ###Examples###
 EXAMPLE
+
     # update-Port -id 12857174-99cf-40e9-999e-fb0fa2e84898 -did "sdf\test" 
 
 Changes the Port(12857174-99cf-40e9-999e-fb0fa2e84898) device to "sdf\test".
