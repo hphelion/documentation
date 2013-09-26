@@ -514,7 +514,7 @@ Creates a new RouterInterfrace.
 new-routerinterface
 
 ###Examples###
-# new-routerinterface -rid bd1c30f7-71f1-455e-b91e-8d03da7f5224 -pid c9e32588-5b69-4100-a1a6-fa49094ec0a8 -sid 7yuu9886-5b69-4100-a1a6-fa49094ec0a8
+    # new-routerinterface -rid bd1c30f7-71f1-455e-b91e-8d03da7f5224 -pid c9e32588-5b69-4100-a1a6-fa49094ec0a8 -sid 7yuu9886-5b69-4100-a1a6-fa49094ec0a8
 
 Creates a new relationship between Router (bd1c30f7-71f1-455e-b91e-8d03da7f5224), Port (c9e32588-5b69-4100-a1a6-fa49094ec0a8) and Subnet (7yuu9886-5b69-4100-a1a6-fa49094ec0a8)
 
