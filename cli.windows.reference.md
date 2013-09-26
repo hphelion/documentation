@@ -333,7 +333,7 @@ EXAMPLE
 Creates a new security group rule affecting the TCP protocol from port 80 to 84, and assigns it to SecurityGroup 2133.
 
 ##Allocate-IP## {#Allocate}
-Requests a new Floating IP and adds to your IP pool
+Requests a new Floating IP and adds to your IP pool.
 
 ### Syntax###
 allocate-ip
@@ -357,7 +357,7 @@ EXAMPLE
 Assigns the IP address 192.168.45 to the server with the ID -s 4ee64397-1253-473c-a81d-bc23dceeef31.
 
 ##Connect-Server## {#Connect-Server}
-Performs a quick connection to the designated server instance. 
+Creates quick connection to the designated server instance. 
 
 **Note:** Currently available for Windows instances only.
 
@@ -448,6 +448,20 @@ EXAMPLE
 Creates a new Floating IP address for Network 12857174-99cf-40e9-999e-fb0fa2e84898 and Port bd1c30f7-71f1-455e-b91e-8d03da7f5224 
 
 
+##New-Image## {#New-Image}
+Creates a new server image based on an existing server.
+
+###Syntax
+new-image "_existing-server-name_" "_new-server-name_"
+
+###Examples
+EXAMPLE
+
+    new-image myserver testserver
+
+Creates a new server instance `testserver` based on the existing server instance `testserver`.
+
+
 ##New-Keypair## {#New-Keypair}
 Creates a new keypair. The keypair is stored by default in `C:\Users\*username*\Documents\HP\`.
 
@@ -471,18 +485,49 @@ new-network
 ###Examples###
 EXAMPLE
 
-    # new-network "testNet1" -asu creates a new network testNet1 with AdminStateUp set to "true".
+    # new-network "testNet1" -asu 
 
+Creates a new Network testNet1 with AdminStateUp set to "true".
 
 
 ##New-Port## {#New-Port}
+Creates a new Port.
+
+### Syntax###
+new-port
+
+
+###Examples###
+EXAMPLE
+    # new-port "testPort1" -nid bd1c30f7-71f1-455e-b91e-8d03da7f5224 -asu -did "sdf\etc" 
+
+Creates a new Port called testNet1 on Network bd1c30f7-71f1-455e-b91e-8d03da7f5224 with its AdminStateUp set to true and a Device = sdf/etc. 
+
+
 ##New-Router## {#New-Router}
+Creates a new Router.
+
+### Syntax###
+new-router
+
+###Examples###
+EXAMPLE
+    # new-router "testRouter1" -asu -egw bd1c30f7-71f1-455e-b91e-8d03da7f5224 
+
+Creates a new Router called testRouter1 on External Network bd1c30f7-71f1-455e-b91e-8d03da7f5224 with its AdminStateUp set to true.
+
+
+
 ##New-RouterInterface## {#New-RouterInterface}
+Creates a new RouterInterfrace.
 
+### Syntax###
+new-routerinterface
 
+###Examples###
+# new-routerinterface -rid bd1c30f7-71f1-455e-b91e-8d03da7f5224 -pid c9e32588-5b69-4100-a1a6-fa49094ec0a8 -sid 7yuu9886-5b69-4100-a1a6-fa49094ec0a8
 
-
-
+Creates a new relationship between Router (bd1c30f7-71f1-455e-b91e-8d03da7f5224), Port (c9e32588-5b69-4100-a1a6-fa49094ec0a8) and Subnet (7yuu9886-5b69-4100-a1a6-fa49094ec0a8) 
 
 
 ##New-SecurityGroup## {#New-SecurityGroup}
@@ -498,18 +543,6 @@ EXAMPLE
 
 Creates a new security group with the name "TestGroup" and the description "SomeDescription".
 
-##New-Image## {#New-Image}
-Creates a new server image based on an existing server.
-
-###Syntax
-new-image "_existing-server-name_" "_new-server-name_"
-
-###Examples
-EXAMPLE
-
-    new-image myserver testserver
-
-Creates a new server instance `testserver` based on the existing server instance `testserver`.
 
 ##New-Server## {#New-Server}
 Creates a new server.
@@ -560,12 +593,17 @@ EXAMPLE 2
 Creates a new server with the name 'TestServer'. In this example, the user is prompted for the `Image`, `Flavor`, and `KeyName` values rather than entering them on the command line directly.
 
 
-
-
-
 ##New-Subnet## {#New-Subnet}
+Creates a new Subnet.
 
+### Syntax###
+new-subnet
 
+###Examples###
+EXAMPLE
+    # new-subnet -n testSubnet -nid bd1c30f7-71f1-455e-b91e-8d03da7f5224 -ipv 4 -c "10.0.6.0/24" -a "10.0.6.20", "10.0.6.22" , "10.0.6.26", "10.0.6.29" 
+
+Creates a new Subnet called testSubnet. 
 
 
 
@@ -626,7 +664,7 @@ EXAMPLE
 Refreshes the cache for your current shell.
 
 ##Remove-Keypair## {#Remove-Keypair}
-Deletes a previously created keypair.
+Removes a previously created keypair.
 
 ### Syntax###
 remove-keypair *Name*
@@ -638,8 +676,59 @@ EXAMPLE
 
 Removes the keypair with the name `TestKey`.
 
+
+##Remove-Network## {#Remove-Network}
+Removes an existing Network.
+
+### Syntax###
+remove-network 
+
+###Examples###
+EXAMPLE
+    # remove-network -id 12857174-99cf-40e9-999e-fb0fa2e84898  
+
+Deletes the Network with the id of 12857174-99cf-40e9-999e-fb0fa2e84898 
+
+
+##Remove-Port## {#Remove-Port}
+Removes an existing port.
+
+### Syntax###
+remove-port
+
+###Examples###
+EXAMPLE
+    # remove-port -id 12857174-99cf-40e9-999e-fb0fa2e84898 
+
+Deletes the Port with the id of 12857174-99cf-40e9-999e-fb0fa2e84898 
+
+
+##Remove-Router## {#Remove-Router}
+Removes an existing router.
+
+### Syntax###
+remove-router
+
+###Examples###
+EXAMPLE
+    # remove-router 12857174-99cf-40e9-999e-fb0fa2e84898 
+
+Removes the Router with the id of 12857174-99cf-40e9-999e-fb0fa2e84898 
+
+
+##Remove-RouterInterface## {#Remove-RouterInteface}
+Removes an existing relation between a Subnet and Router.
+
+### Syntax###
+remove-routerinterface
+
+###Examples###
+EXAMPLE
+    # remove-routerinterface -id 12857174-99cf-40e9-999e-fb0fa2e84898 -sid Removes the association between Router 12857174-99cf-40e9-999e-fb0fa2e84898 and Subnet bd1c30f7-71f1-455e-b91e-8d03da7f5224 
+
+
 ##Remove-Rule## {#Remove-Rule}
-Deletes an existing security group rule.
+Removes an existing security group rule.
 
 ### Syntax###
 remove-rule "*rule-ID*"
@@ -680,6 +769,21 @@ EXAMPLE
 
 Deletes server 4516.
 
+
+##Remove-Subnet## {#Remove-Subnet}
+Removes an existing subnet.
+
+### Syntax###
+remove-subnet
+
+###Examples###
+EXAMPLE
+
+    # remove-Subnet 12857174-99cf-40e9-999e-fb0fa2e84898 </dev:code>-
+Removes the Subnet with the id of 12857174-99cf-40e9-999e-fb0fa2e84898 
+
+
+
 ##Reset-Password## {#reset-password}
 Re-syncs your Windows administrator password for the given server, after manual modification, in order to use the `connect-server` cmdlet.
 
@@ -711,16 +815,72 @@ EXAMPLE
 Sets the color identifier for zone 1 to cyan.  The color names must be capitalized (as in the example).
 
 ##Unassign-IP## {#Unassign-IP}
+Assigns an IP address to an existing Server.
 
 ###Syntax###
 unassign-ip "*address*" *server-ID*
 
 ###Examples###
 EXAMPLE
+    
+    #Unassign-IP "192.168.110.45" -s 4ee64397-1253-473c-a81d-bc23dceeef31
+     
+Removes the supplied IP address from server 4ee64397-1253-473c-a81d-bc23dceeef31 
 
-    unassign-ip "192.168.110.45" 2344
 
-Unassigns the IP address 192.168.110.45 from the server with the ID 2344.
+##Update-FloatingIP ## {#Update-FloatingIP }
+Updates an existing FloatingIP.
+
+###Syntax###
+update-floatingip
+
+###Examples###
+EXAMPLE
+ EXAMPLE 1 
+    # update-FLoatingIP -id 12857174-99cf-40e9-999e-fb0fa2e84898 -pid c9e32588-5b69-4100-a1a6-fa49094ec0a8 
+
+Updates the Floating IP (12857174-99cf-40e9-999e-fb0fa2e84898) to the new Port (c9e32588-5b69-4100-a1a6-fa49094ec0a8) 
+
+
+##Update-Network## {#Update-Network}
+Updates an existing Network.
+
+### Syntax###
+update-network
+
+###Examples###
+EXAMPLE
+
+    # update-Network -id 12857174-99cf-40e9-999e-fb0fa2e84898 -n "NewNameTest" 
+
+Changes the Network(12857174-99cf-40e9-999e-fb0fa2e84898) name to NewNameTest. 
+
+
+##Update-Port## {#Update-Network}
+Updates an existing port.
+
+### Syntax###
+update-port
+
+###Examples###
+EXAMPLE
+    # update-Port -id 12857174-99cf-40e9-999e-fb0fa2e84898 -did "sdf\test" 
+
+Changes the Port(12857174-99cf-40e9-999e-fb0fa2e84898) device to "sdf\test".
+
+##Update-Router## {#Update-Router}
+Updates an existing Router.
+
+### Syntax###
+update-router
+
+###Examples###
+EXAMPLE
+
+    # update-Router -id 12857174-99cf-40e9-999e-fb0fa2e84898 -nid c9e32588-5b69-4100-a1a6-fa49094ec0a8 
+
+Reassigns Router 12857174-99cf-40e9-999e-fb0fa2e84898 to Network c9e32588-5b69-4100-a1a6-fa49094ec0a8.
+
 
 ##Update-Server## {#Update-Server}
 Allows you to change the server name property.
@@ -734,6 +894,20 @@ EXAMPLE
     update-server -id "2133" -n "NewName"
 
 Changes the name of server 2133 to "NewName".
+
+
+##Update-Subnet## {#Update-Subnet}
+Updates an existing subnet.
+
+### Syntax###
+update-subnet
+
+###Examples###
+EXAMPLE
+
+<!-- Example section -->
+    # update-Subnet -id 12857174-99cf-40e9-999e-fb0fa2e84898 -egw 129.15.124.12 -n "NewSubnetName" 
+Reassigns the Subnet(12857174-99cf-40e9-999e-fb0fa2e84898) to the designated External Network with the new name of "NewSubnetName".
 
 #Object Storage CLI Commands# {#ObjectStorage}
 
