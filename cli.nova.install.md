@@ -337,7 +337,7 @@ To install the Python Setup tools, follow these steps:
 
 To install the HP Cloud Service Python-Novaclient on your system, follow these steps:
 
-1. Download [the Python NovaClient v2.6.8-17 package](/file/Python-novaclient2.6.8-17.zip) from our web site.
+1. Download [the Python NovaClient v2.6.8-17 package](/file/python-novaclient_2.6.8-1hp17.zip) from our web site.
    
 2. Extract (using the ZIP or TAR command of your choice) the 2.6.8-17 package.
 
