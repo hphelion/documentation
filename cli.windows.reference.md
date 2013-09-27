@@ -432,11 +432,9 @@ new-floatingip -pid *portID* -nid *NetworkID*
 
 ###Options###
 
-**pid**
-: Floating IP port identifier value.
+**pid** : Floating IP port identifier value.
 
-**nid**
-: Floating IP network identifier value.
+**nid** : Floating IP network identifier value.
 
 ###Examples###
 EXAMPLE
