@@ -15,7 +15,7 @@ This page provides you with information to help you transition from version 12.1
 * [Managing security groups](#SecurityGroups)
 * [For further information](#MoreInfo)
 
-**Note**:  Use this overview in conjunction with the information on the [assisted transition](/migration-details/) page if you are planning on performing a customer support-assisted transition.  
+<!--**Note**:  Use this overview in conjunction with the information on the [assisted transition](/migration-details/) page if you are planning on performing a customer support-assisted transition. -->  
 
 
 ## Before you begin ## {#BeforeYouBegin}
@@ -24,8 +24,6 @@ Before you transition to version 13.5, we recommend:
 
 * Purge any data you no longer need
 * Remove any unnecessary log files
-
-For each instance image, you need to determine if you want to move a snapshot of the root partition of that instance to version 13.5, or if you prefer to just create a new instance.
 
 
 ##Transitioning data for ephemeral instances## {#Ephemeral}
@@ -48,7 +46,7 @@ For information on moving data:
 
 To transition the data for a persistent instance:
 
-1. Create a bootable block volume and persistent image in your version 13.5 environment; see the [knowledge base article on block volume creation](https://community.hpcloud.com/article/creating-your-first-instance-135) for more details
+1. Create a bootable block volume and persistent instance in your version 13.5 environment; see the [knowledge base article on block volume creation](https://community.hpcloud.com/article/creating-your-first-instance-135) for more details
 2. Copy the data from your version 12.12 instance to your new 13.5 instance, using the tool transfer program of your choice (for example, SCP or FTP)
 
 For information on moving data:
@@ -66,7 +64,7 @@ For information on moving data:
 To transition the data for block volumes:
 
 1. Create a 13.5 block volume using either the command-line interface (CLI) for [UNIX](/cli/unix/block-storage/) or [the Windows PowerShell](/cli/windows/block-storage/), or the [management console](/mc/) interface
-2. Create a block volume and attach it to an ephemeral instance in your version 13.5 environment; see the [knowledge base article](https://community.hpcloud.com/article/managing-your-block-storage-135) for more details
+2. Attach the volume from Step 1 to an ephemeral instance in your version 13.5 environment; see the [knowledge base article](https://community.hpcloud.com/article/managing-your-block-storage-135) for more details
 3. Copy the data from your version 12.12 instance attached volume to your new version 13.5 instance, using the tool transfer program of your choice (for example, SCP or FTP)
 
 For information on moving data:
