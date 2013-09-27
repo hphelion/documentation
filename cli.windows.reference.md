@@ -427,7 +427,15 @@ Lists the currently-available flavors and their associated details.
 Creates a new Floating IP.
 
 ### Syntax###
-new-floatingip
+new-floatingip 
+new-floatingip -pid *portID* -nid *NetworkID*
+
+###Options###
+
+**pid**
+: Floating IP port identifier value.
+**nid**
+: Floating IP network identifier value.
 
 ###Examples###
 EXAMPLE
