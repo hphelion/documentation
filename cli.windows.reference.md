@@ -432,9 +432,11 @@ new-floatingip -pid *portID* -nid *NetworkID*
 
 ###Options###
 
-**pid** : Floating IP port identifier value.
+**pid** 
+: Floating IP port identifier value.
 
-**nid** : Floating IP network identifier value.
+**nid** 
+: Floating IP network identifier value.
 
 ###Examples###
 EXAMPLE
@@ -477,6 +479,16 @@ Creates a new Network.
 
 ###Syntax###
 new-network
+new-network -n *Name* - asu *AdminStateUp*
+
+###Options###
+**n**
+
+: Name of new Network.
+
+**asu**
+
+: AdminStateUp. Determines if AdminStateUp flag is true or false.
 
 ###Examples###
 
@@ -492,6 +504,23 @@ Creates a new Port.
 
 ###Syntax###
 new-port
+new-port -n *Name* - asu *AdminStateUp* -nid *NetworkID* -did *PortsDeviceID*
+
+###Options###
+**n**
+
+: Port name.
+
+**asu**
+
+: Determines if AdminStateUp flag is true or false.
+
+**nid**
+
+: Identifies Port Network.
+
+**did** 
+: Identifies Port Device.
 
 
 ###Examples###
@@ -508,6 +537,20 @@ Creates a new Router.
 
 ###Syntax###
 new-router
+new-router -n *Name* -asu *AdminStatep* - egw *ExternalGatewayNeworkID*
+
+###Options###
+**n**
+
+: Router name.
+
+**asu**
+
+: Determines if AdminStateUp flag is true or false.
+
+**egw**
+
+: Identifies External Gateway Network.
 
 ###Examples###
 
@@ -520,10 +563,24 @@ Creates a new Router called testRouter1 on External Network bd1c30f7-71f1-455e-b
 
 
 ##New-RouterInterface## {#New-RouterInterface}
-Creates a new RouterInterfrace.
+Creates a new RouterInterface.
 
 ### Syntax###
 new-routerinterface
+new-routerinterface -rid *RouterID* -sid *SubnetID* -pid *portID*
+
+###Options###
+**rid**
+
+: Identifies Router.
+
+**sid**
+
+: Identifies Subnet.
+
+**pid**
+
+: Identifies Port.
 
 ###Examples###
 
@@ -600,6 +657,25 @@ Creates a new Subnet.
 
 ### Syntax###
 new-subnet
+new-subnet -nid *NetworkID* -ipv *IPVersion* -c *CIDRValue* -a *AllocationPools*
+
+###Options###
+**nid**
+
+: Subnet name.
+
+**ipv**
+
+: Sets the IP Version
+
+**c**
+
+: CIDR value.
+
+**a**
+
+: Lists Allocation Pools, separating them by commas.
+
 
 ###Examples###
 
@@ -685,7 +761,11 @@ Removes the keypair with the name `TestKey`.
 Removes an existing Network.
 
 ### Syntax###
-remove-network 
+remove-network *Name*
+
+###Options###
+**id**
+: Identifies Floating IP address 
 
 ###Examples###
 
@@ -700,7 +780,11 @@ Deletes the Network with the id of 12857174-99cf-40e9-999e-fb0fa2e84898
 Removes an existing port.
 
 ### Syntax###
-remove-port
+remove-port *Name*
+
+###Options###
+**id**
+: Port identifier.
 
 ###Examples###
 
@@ -715,7 +799,11 @@ Deletes the Port with the id of 12857174-99cf-40e9-999e-fb0fa2e84898
 Removes an existing router.
 
 ### Syntax###
-remove-router
+remove-router *Name*
+
+###Options###
+**id**
+: Router identifier.
 
 ###Examples###
 
@@ -730,7 +818,11 @@ Removes the Router with the id of 12857174-99cf-40e9-999e-fb0fa2e84898
 Removes an existing relationship between a Subnet and Router.
 
 ### Syntax###
-remove-routerinterface
+remove-routerinterface *Name*
+
+###Options###
+**id**
+: Router identifier.
 
 ###Examples###
 
@@ -786,7 +878,11 @@ Deletes server 4516.
 Removes an existing subnet.
 
 ### Syntax###
-remove-subnet
+remove-subnet id *Name*
+
+###Options###
+**id**
+: Identifies the subnet.
 
 ###Examples###
 EXAMPLE
@@ -830,7 +926,17 @@ Sets the color identifier for zone 1 to cyan.  The color names must be capitaliz
 Unassigns an IP address for an existing Server.
 
 ###Syntax###
-unassign-ip "*address*" *server-ID*
+unassign-ip 
+unassign-ip *address* -sid  *server-ID*
+
+###Options###
+**ip**
+
+: The IP address to disassociate.
+
+**sid**
+
+: The Server ID that is disassociated from the IP address.
 
 ###Examples###
 EXAMPLE
@@ -845,6 +951,16 @@ Updates an existing Floating IP.
 
 ###Syntax###
 update-floatingip
+update-floatingip -id *ID* -pid *portID* 
+
+###Options###
+**id**
+
+: Identifies Floating IP.
+
+**pid**
+
+: Identifies Port.
 
 ###Examples###
 EXAMPLE
@@ -857,8 +973,19 @@ Updates the Floating IP (12857174-99cf-40e9-999e-fb0fa2e84898) to the new Port (
 ##Update-Network## {#Update-Network}
 Updates an existing Network.
 
-### Syntax###
+###Syntax###
 update-network
+update-network -id *networkIP Identity* -n *Name*
+
+
+###Options###
+**id**
+
+: Identifies Network IP.
+
+**n** 
+
+: Network Name.
 
 ###Examples###
 EXAMPLE
@@ -873,6 +1000,17 @@ Updates an existing port.
 
 ### Syntax###
 update-port
+update-port -id -did
+
+###Options###
+
+**id**
+
+:  Port IP ID.
+
+**did**
+
+: Device ID.
 
 ###Examples###
 EXAMPLE
@@ -884,8 +1022,18 @@ Changes the Port(12857174-99cf-40e9-999e-fb0fa2e84898) device to "sdf\test".
 ##Update-Router## {#Update-Router}
 Updates an existing Router.
 
-### Syntax###
+###Syntax###
 update-router
+update-router- id *RouterIdentifier* -nid *NetworkID*
+
+###Options###
+**id**
+
+: Identifies the Router
+
+**nid**
+
+: Identifies the Network.
 
 ###Examples###
 EXAMPLE
@@ -910,10 +1058,23 @@ Changes the name of server 2133 to "NewName".
 
 
 ##Update-Subnet## {#Update-Subnet}
-Updates an existing subnet.
+Updates an existing Subnet.
 
 ### Syntax###
 update-subnet
+update-subnet -id *SubnetIdentifier* -egw *ExternalGatewayNetworkIPAddress* - n *Name*
+
+###Options###
+**id** 
+: Identifies the Subnet.
+
+**egw**
+
+: External Gateway Network ID.
+
+**n**
+
+: New Subnet name.
 
 ###Examples###
 EXAMPLE
