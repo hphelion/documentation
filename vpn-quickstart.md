@@ -83,7 +83,7 @@ This guide provides the information you will need to get started in setting up a
 
 **NOTE:**  This guide assumes a "left" case with the "right" case being the hardware.  
 
-This guide assumes that you are using Ubuntu as the operationg system, but the concepts covered work in the OS of your choice. We also use strongSwan for this guide.  There are multiple ways to configure strongSwan and the instructions in this guide may not work for every environment.  Please refer to the [strongSwan user documentation](http://wiki.strongswan.org/projects/strongswan/wiki/UserDocumentation "strongSwan User Documentation") for advanced configuration information.
+This guide assumes that you are using Ubuntu as the operating system, but the concepts covered work in the OS of your choice. We also use strongSwan for this guide.  There are multiple ways to configure strongSwan and the instructions in this guide may not work for every environment.  Please refer to the [strongSwan user documentation](http://wiki.strongswan.org/projects/strongswan/wiki/UserDocumentation "strongSwan User Documentation") for advanced configuration information.
 
 All commands in this guide use command line interfaces. 
 
