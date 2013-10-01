@@ -6,13 +6,14 @@ permalink: /migration-details/
 ---
 # HP Cloud Services version 12.12 to 13.5 assisted transition
 
-This page provides with the key details you need to perform an assisted migration--using the HP Cloud support team--from version 12.12 to 13.5 of the HP Cloud software services.  If you plan on performing the migration yourself without support services, surf over to the [migration overview](/migration-overview) page for details.
+This page provides with the key details you need to perform an assisted transition--using the HP Cloud support team--from version 12.12 to 13.5 of the HP Cloud software services.  If you plan on performing the migration yourself without support services, surf over to the [transition overview](/migration-overview) page for details.
 
 This page covers the following topics and tasks:
 
 * [Before you begin](#BeforeYouBegin)
 * [Taking an image snapshot](#Snapshot)
 * [Preparing a volume for migration](#PrepVolume)
+* [Terminating a persistent instance created from a block volume](#TerminatingPersistent)
 * [Contacting support](#ContactingSupport)
 * [For further information](#MoreInfo)
 
@@ -23,19 +24,29 @@ Before you transition to version 13.5, we recommend:
 
 * Purge any data you no longer need
 * Remove any unnecessary log files
+* Review this document, and [contact support](#ContactingSupport) with any questions you have prior to following any steps outlined here.
 
-For each instance image, you need to determine if you want to move a snapshot of the root partition of that instance to version 13.5, or if you prefer to just create a new instance.
+###Key transition information###
 
-**Damian**: Any other stuff for this section?
+Before attempted an assisted transition from version 12.12 to 13.5 of the HP Cloud software, be sure to keep the following critical pieces of information in mind:
+
+* Review the [For further information](#MoreInfo) section at the bottom of this page to better understand the differences between the version 12.12 and 13.5 Compute environments
+* IP addresses change between the two environments; if you have any DNS entries that point to your current configuration, you must plan to change them after your transition
+* Instances are offline and volumes unavailable during the transition process outlined on this page
+* For each instance image, you need to determine if you want to move a snapshot of the root partition of that instance to version 13.5, or if you prefer to just create a new instance.
 
 
-## Taking an image snapshot ## {#Snapshot}
+## Taking a snapshot of an ephemeral instance ## {#Snapshot}
 
-The first step in preparing your data for migration to version 13.5 is to use the [Images screen](/mc/compute/images/) of the [Management Console](/mc/) (MC) to take a snapshot of your image.  
+The first step in preparing your data for migration to version 13.5 is to use the [Images screen](/mc/compute/images/) of the [Management Console](/mc/) (MC) to take a snapshot of your instance.  
 
-Using an image snapshot can make migration easier, but doesn't work in all instances.  Work with your support engineer to determine if this method is best for you, rather performing [self-migration](/migration-overview) using tools such as rsync, SCP, and other similar tools.
+Using an image snapshot can make migration easier, but but may not be suitable for all transitions.  An instance snapshot includes only the root partition; ephemeral or additional disk space is not stored in a snapshot.  If you use ephemeral storage, you must [manually transition this data](/migration-overview#Ephemeral/).  
+
+If you have questions on which process is best for your situation, contact your support engineer to determine what method is best for you rather than performing [self-migration](/migration-overview) using tools such as rsync, SCP, and other similar tools.
 
 To create a snapshot:
+
+**DOUG: New screen shots and process required here**
 
 In the [images screen](/mc/compute/images/) click the `+ New Image` menu bar item:
 
@@ -58,25 +69,44 @@ See the [Managing images](/mc/compute/images/manage/) page for details on using 
 
 ## Preparing a volume for migration ## {#PrepVolume}
 
-The next step in transitioning your data to version 13.5 is to prepare your volume (and associated data) for migration.  When you migrate a block volume, it must be available; that is, not attached to an instance or running as an instance.  You also need to be aware that when you migrate a volume, all snapshots and volumes created from those snapshots are migrated as well.
+The next step in transitioning your data to version 13.5 is to prepare your volume (and associated data) for migration.  When you migrate a block volume, it must be available; that is, not attached to an instance or running as an instance.  You also need to be aware that when you migrate a volume, it must be available, and all snapshots and volumes created from those snapshots are migrated as well.
 
-First, detach the volume.  To detach a volume, in the [volumes screen](/mc/compute/volumes/), in the row for the volume you want to detach, in the `Manage` column click the `Options` button and select `Detach`.
+###Detaching a block volume### {#DetachingBlock}
 
-<img src="media/volume-detach-select.png" width="580" alt="" />
+To detach a volume, in the [volumes screen](/mc/compute/volumes/), in the `Inventory` pane, click the action button (`*`) of the volume whose instance you wish to detach and select `Volume Details`:
+
+<img src="media/volume-details-launch-1212.png" width="580" alt="" />
+
+This launches the `Volume Details` screen.  In the volume details screen, 
+
+<img src="media/volume-details-detach-1212.png" width="580" alt="" />
 
 You are asked to verify the request:
 
-<img src="media/volume-detach-confirm.png" width="580" alt="" />
+<img src="media/volume-detach-verify-1212.png" width="580" alt="" />
 
 Click `Yes, detach this volume`; your volume is detached.
 
-Next, you must migrate all assets associate associated with the volumes (such as volume snapshots, the original volume if created from a snapshot, and the volume being requested).  You should [contact support](#ContactingSupport) for help with this step.
-
-**Damian**:  Is this the right thing to tell them at this stage?  I have no notes on how to migrate a volume instance; I didn't cover that in the MC docs.
+Support must migrate all assets associate associated with the volumes (such as volume snapshots, the original volume if created from a snapshot, and the volume being requested). [Contact support](#ContactingSupport) for help when you reach this step.
 
 **Note**: If you are using ephemeral storage to migrate a persistent instance, your data is lost when you terminate the instance.
 
 See the [Managing volumes](/mc/compute/volumes/manage/) page for details on using the MC for creating and deleting a volume and bootable volumes, attaching and detaching volumes, managing volume snapshots, and viewing volume details.
+
+
+##Terminating a persistent instance created from a block volume ## {#TerminatingPersistent}
+
+You can't detach a volume that is running an instance; you must first terminate the instance to make the volume available.  To terminate an instance:
+
+In the `Inventory` pane of the [Servers](/mc/blah) screen of the [management console](/mc), click the action button (`*`) of the server whose instance you wish to terminate and select `Terminate`:
+
+<img src="media/terminate-instance-1212.png" width="580" alt="" />
+
+You instance is terminated.  You can also terminate the instance from the [server details](/mc/compute/servers/view-details/) screen of the MC.  To access the server details screen, just click on the server name (in the above example, `DougTestServert`) in the `Inventory` pane of the servers screen in the MC:
+
+<img src="media/terminate-server-serv-screen-1212.png" width="580" alt="" />
+
+**Note**: When you terminate a persistent instance that was created from a bootable volume, any ephemeral storage that is being used is lost and the public IP is released for use. 
 
 
 ## Contacting support ## {#ContactingSupport}
