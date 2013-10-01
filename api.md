@@ -13,13 +13,12 @@ There are a number of HP Cloud APIs available for your programming pleasure:
 * [Object Storage](/api/object-storage/): API for HP Cloud Object Storage service; a way to store and retrieve objects in a highly redundant cluster of publicly accessible physical machines hosted in HP data centers.
 * [Compute](/api/compute/): API for the HP Cloud Compute service; a way to instantiate virtual servers on publicly accessible physical machines hosted in HP data centers.
 * [Block Storage](/api/block-storage/): API for HP Cloud Block Storage service; enabling additional volumes to Compute instances.
+* [Relational Database](/api/dbaas/): API for the HP Cloud Relational Database service; simplifies the creation and management of MySQL database instances.
 * [CDN](/api/CDN/): API for the HP Cloud Content Delivery Network (CDN) service; content inside HP Cloud Object Storage can easily be cached on servers in metropolitan areas all over the world to speed client access to them by removing much of the network latency.
 * [DNS](/api/dns/): API for the HP Cloud Domain Name Service (DNS); enables display and management of DNS records.
 
 You can also avail yourself of one of the following APIs now in private beta; follow the links to sign up and begin trying them out!
 
-* [Relational Database (RDB)](/api/dbaas/): API for the HP Cloud RDB service; simplifies the creation and management of MySQL database instances.<br>
-  **Note**: This service requires activation while in private beta; please [request access on our sign-up page](https://account.hpcloud.com/cases/betarequest/dbaas).  Service use is free of charge during the private beta period.
 * [Load Balancer as a Service (LBaaS)](/api/lbaas/): API for the HP Cloud Load Balancer service; facilitates creation and management of load balancers.<br>
   **Note**: This service requires activation while in private beta; please [request access on our sign-up page](https://account.hpcloud.com/cases/betarequest/lbaas).  Service use is free of charge during the private beta period.
 * [Monitoring as a Service (MaaS)](/api/monitoring/): API for the HP Cloud Monitoring service; facilitates monitoring of the health and other metrics for the resources in HP Cloud.<br>
