@@ -46,25 +46,19 @@ If you have questions on which process is best for your situation, contact your 
 
 To create a snapshot:
 
-**DOUG: New screen shots and process required here**
+In the [images screen](/mc/compute/images/), enter an `Image Name` and `Description` for your snapshot image, select the server from which you wish to create your snapshot in the `From server` drop-down menu, and click the `Create` button:
 
-In the [images screen](/mc/compute/images/) click the `+ New Image` menu bar item:
-
-<img src="media/images-new.png" width="580" alt="" />
-
-This opens the image creation pane in the images screen:
-
-<img src="media/images-create-pane.png" width="580" alt="" />
-
-In the images creation pane, enter a name for your image in the `Image Name` text input field, and (optionally) a description of your image in the `Description` field.  In the `From server` pulldown, select the server from which you would like to create your image.  
-
-Click the `Create` button to create the image with your entered parameters.  The images creation pane closes, and your new image appears in the images list:
-
-<img src="media/image-created.png" width="580" alt="" />
+<img src="media/images-create-1212.png" width="580" alt="" />
 
 The image appears in the list immediately with the status of `Queued`; while your image is being created, the `Status` changes to `Saving` and finally `Active`.  The new image is a snapshot of the server's image.
 
-See the [Managing images](/mc/compute/images/manage/) page for details on using the MC for creating, deleting, and viewing image details.
+To display the details for the image, you can either click the image name, or click the action button (`*`) and select `Image Details`:
+
+<img src="media/images-details-launch-1212.png" width="580" alt="" />
+
+This launches the `Image Details` screen for your image, which contains the `ID`, `Description`, `Status`, `Source Server`, and creation time for your image:
+
+<img src="media/images-details-screen-1212.png" width="580" alt="" />
 
 
 ## Preparing a volume for migration ## {#PrepVolume}
@@ -98,7 +92,7 @@ See the [Managing volumes](/mc/compute/volumes/manage/) page for details on usin
 
 You can't detach a volume that is running an instance; you must first terminate the instance to make the volume available.  To terminate an instance:
 
-In the `Inventory` pane of the [Servers](/mc/blah) screen of the [management console](/mc), click the action button (`*`) of the server whose instance you wish to terminate and select `Terminate`:
+In the `Inventory` pane of the `Servers` screen of the [management console](/mc), click the action button (`*`) of the server whose instance you wish to terminate and select `Terminate`:
 
 <img src="media/terminate-instance-1212.png" width="580" alt="" />
 
