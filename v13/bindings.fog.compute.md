@@ -401,7 +401,7 @@ For information on connecting to the service, please see the [Connecting to the 
 
 1. List all public and private ip addresses for a server:
 
-        conn.addresses
+        address = conn.addresses
 
 2. Obtain the details of a particular address:
 
@@ -435,7 +435,7 @@ For information on connecting to the service, please see the [Connecting to the 
 
 7. Release an address back into the IP pool:
 
-        conn.addresses.get("address_id").destroy
+        address = conn.addresses.get("address_id").destroy
         => true
 
 ##Server Operations (Request Layer)## {#RequestServerOperations}
@@ -577,21 +577,21 @@ For information on connecting to the service, please see the [Connecting to the 
 
 11. Update the name for a server:
 
-        conn.update_server(server_id, {'name' => "My Cool Server"})
+        address = conn.update_server(server_id, {'name' => "My Cool Server"})
         response = conn.get_server_details("server_id")
         response.body['server']['name']             # => "My Cool Server"
 
 12. Reboot a server (SOFT):
 
-        conn.reboot_server(server_id, "SOFT")
+        address = conn.reboot_server(server_id, "SOFT")
 
 13. Reboot a server (HARD):
 
-        conn.rebuild_server(server_id, "HARD")
+        address = conn.rebuild_server(server_id, "HARD")
 
 14. Rebuild a server:
 
-        conn.reboot_server(server_id, "MyRebuiltServer")
+        address = conn.reboot_server(server_id, "MyRebuiltServer")
 
 15. List both public and private addresses of a particular server:
 
