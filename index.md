@@ -20,7 +20,7 @@ HP Cloud consists of the following publicly-available services:
 
 The following HP Cloud services are now in private beta; follow the links to sign up and begin trying them out!
 
-* [Relational Database](/dbaas/) - An OpenStack DBaaS implementation hosted by HP.<br>
+* [Relational Database](/dbaas/) - An OpenStack Trove implementation that provides a managed database service hosted by HP.<br>
   **Note**: This service requires activation while in private beta; please [request access on our sign-up page](https://account.hpcloud.com/cases/betarequest/dbaas).  Service use is free of charge during the private beta period.
 * [Load Balancer](/lbaas/) -  A managed service enabling automatic traffic routing to multiple back end servers hosted by HP.<br>
   **Note**: This service requires activation while in private beta; please [request access on our sign-up page](https://account.hpcloud.com/cases/betarequest/lbaas).  Service use is free of charge during the private beta period.
