@@ -480,6 +480,7 @@ Creates a new Network.
 
 ###Syntax###
 new-network
+
 new-network -n *Name* - asu *AdminStateUp*
 
 ###Options###
@@ -505,6 +506,7 @@ Creates a new Port.
 
 ###Syntax###
 new-port
+
 new-port -n *Name* - asu *AdminStateUp* -nid *NetworkID* -did *PortsDeviceID*
 
 ###Options###
@@ -538,6 +540,7 @@ Creates a new Router.
 
 ###Syntax###
 new-router
+
 new-router -n *Name* -asu *AdminStatep* - egw *ExternalGatewayNeworkID*
 
 ###Options###
@@ -568,6 +571,7 @@ Creates a new RouterInterface.
 
 ### Syntax###
 new-routerinterface
+
 new-routerinterface -rid *RouterID* -sid *SubnetID* -pid *portID*
 
 ###Options###
@@ -658,6 +662,7 @@ Creates a new Subnet.
 
 ### Syntax###
 new-subnet
+
 new-subnet -nid *NetworkID* -ipv *IPVersion* -c *CIDRValue* -a *AllocationPools*
 
 ###Options###
@@ -749,12 +754,13 @@ Removes an existing Floating IP address.
 
 ### Syntax###
 remove-floatingip 
+
 remove-floatingip -id -all
 
 ###Options###
 **id**
 
-: Identifies the Floating IP address
+: Identifies the Floating IP address to remove.
 
 **all**
 
@@ -786,6 +792,8 @@ Removes the keypair with the name `TestKey`.
 Removes an existing Network.
 
 ### Syntax###
+remove-network
+
 remove-network -id -all
 
 ###Options###
@@ -810,6 +818,8 @@ Deletes the Network with the id of 12857174-99cf-40e9-999e-fb0fa2e84898
 Removes an existing port.
 
 ### Syntax###
+remove-port
+
 remove-port -id -all
 
 ###Options###
@@ -835,6 +845,7 @@ Removes an existing router.
 
 ### Syntax###
 remove-router 
+
 remove-router -id -all
 
 ###Options###
@@ -859,7 +870,8 @@ Removes the Router with the id of 12857174-99cf-40e9-999e-fb0fa2e84898
 Removes an existing relationship between a Router and a Subnet.
 
 ### Syntax###
-remove-routerinterface 
+remove-routerinterface
+ 
 remove-routerinterface -id -all
 
 ###Options###
@@ -925,6 +937,8 @@ Deletes server 4516.
 Removes an existing subnet.
 
 ### Syntax###
+remove-subnet 
+
 remove-subnet -id -all
 
 ###Options###
@@ -1027,6 +1041,7 @@ Updates an existing Network.
 
 ###Syntax###
 update-network
+
 update-network -id *networkIP Identity* -n *Name*
 
 
@@ -1052,6 +1067,7 @@ Updates an existing port.
 
 ### Syntax###
 update-port
+
 update-port -id -did
 
 ###Options###
@@ -1076,6 +1092,7 @@ Updates an existing Router.
 
 ###Syntax###
 update-router
+
 update-router- id *RouterIdentifier* -nid *NetworkID*
 
 ###Options###
@@ -1114,6 +1131,7 @@ Updates an existing Subnet.
 
 ### Syntax###
 update-subnet
+
 update-subnet -id *SubnetIdentifier* -egw *ExternalGatewayNetworkIPAddress* - n *Name*
 
 ###Options###
