@@ -428,6 +428,7 @@ Creates a new Floating IP.
 
 ### Syntax###
 new-floatingip 
+ 
 new-floatingip -pid *portID* -nid *NetworkID*
 
 ###Options###
@@ -743,6 +744,30 @@ EXAMPLE
 
 Refreshes the cache for your current shell.
 
+##Remove-FloatingIP## {#Remove-FloatingIP}
+Removes an existing Floating IP address.
+
+### Syntax###
+remove-floatingip 
+remove-floatingip -id -all
+
+###Options###
+**id**
+
+: Identifies the Floating IP address
+
+**all**
+
+: Removes all Floating IP addresses.
+
+###Examples###
+EXAMPLE
+
+    # remove-floatingIP 4ee64397-1253-473c-a81d-bc23dceeef31 
+
+Deletes the Floating IP with id of 4ee64397-1253-473c-a81d-bc23dceeef31.
+
+
 ##Remove-Keypair## {#Remove-Keypair}
 Removes a previously created keypair.
 
@@ -761,11 +786,16 @@ Removes the keypair with the name `TestKey`.
 Removes an existing Network.
 
 ### Syntax###
-remove-network *Name*
+remove-network -id -all
 
 ###Options###
 **id**
-: Identifies Floating IP address 
+
+: Identifies Floating IP address to remove.
+
+**all**
+: Removes all Floating IP addresses.
+
 
 ###Examples###
 
@@ -780,11 +810,16 @@ Deletes the Network with the id of 12857174-99cf-40e9-999e-fb0fa2e84898
 Removes an existing port.
 
 ### Syntax###
-remove-port *Name*
+remove-port -id -all
 
 ###Options###
 **id**
-: Port identifier.
+
+: Identifies port to remove.
+
+**all** 
+
+: Removes all ports.
 
 ###Examples###
 
@@ -799,11 +834,17 @@ Deletes the Port with the id of 12857174-99cf-40e9-999e-fb0fa2e84898
 Removes an existing router.
 
 ### Syntax###
-remove-router *Name*
+remove-router 
+remove-router -id -all
 
 ###Options###
 **id**
-: Router identifier.
+
+: Identifies router to remove.
+
+**all**
+
+: Removes all routers.
 
 ###Examples###
 
@@ -815,14 +856,20 @@ Removes the Router with the id of 12857174-99cf-40e9-999e-fb0fa2e84898
 
 
 ##Remove-RouterInterface## {#Remove-RouterInteface}
-Removes an existing relationship between a Subnet and Router.
+Removes an existing relationship between a Router and a Subnet.
 
 ### Syntax###
-remove-routerinterface *Name*
+remove-routerinterface 
+remove-routerinterface -id -all
 
 ###Options###
 **id**
-: Router identifier.
+
+: Identifies Router/Subnet relationship to remove.
+
+**all**
+
+: Removes all Router/Subnet relationships.
 
 ###Examples###
 
@@ -878,11 +925,16 @@ Deletes server 4516.
 Removes an existing subnet.
 
 ### Syntax###
-remove-subnet id *Name*
+remove-subnet -id -all
 
 ###Options###
 **id**
-: Identifies the subnet.
+
+: Identifies the Subnet to remove.
+
+**all**
+
+: Removes all Subnets.
 
 ###Examples###
 EXAMPLE
@@ -1066,6 +1118,7 @@ update-subnet -id *SubnetIdentifier* -egw *ExternalGatewayNetworkIPAddress* - n 
 
 ###Options###
 **id** 
+
 : Identifies the Subnet.
 
 **egw**
@@ -1333,6 +1386,27 @@ EXAMPLE 1
     remove-drive rgtest
     
 Removes the container `rgtest` from your list of available drives. -->
+
+##Remove-FloatingIP## {#Remove-FloatingIP}
+Removes an existing Floating IP address.
+
+### Syntax###
+remove-floatingip 
+remove-floatingip -id -all
+
+###Options###
+**id**
+: Identifies the Floating IP address
+
+**all**
+: Removes all Floating IP addresses.
+
+###Examples###
+EXAMPLE
+
+    # remove-floatingIP 4ee64397-1253-473c-a81d-bc23dceeef31 
+
+Deletes the Floating IP with id of 4ee64397-1253-473c-a81d-bc23dceeef31.
 
 ##Remove-Item## {#Remove-Item}
 Removes an object from your object storage container.
