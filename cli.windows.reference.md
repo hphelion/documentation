@@ -1017,6 +1017,7 @@ Updates an existing Floating IP.
 
 ###Syntax###
 update-floatingip
+
 update-floatingip -id *ID* -pid *portID* 
 
 ###Options###
