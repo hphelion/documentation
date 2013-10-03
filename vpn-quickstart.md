@@ -247,7 +247,7 @@ To show the floating IP:
 
 HP strongly recommends that you use the [UFW (uncomplicated firewall)](https://help.ubuntu.com/community/UFW) capability included in Ubuntu. Currently you need to disable port security to create a VPN; enabling UFW closes the potential security hole.
 
-To enable the UFW, connect to the the gateway instance and run these commands:
+To enable the UFW, connect to the gateway instance and run these commands:
 
 	prompt> sudo ufw allow 22/tcp
 	sudo ufw allow 500/udp
