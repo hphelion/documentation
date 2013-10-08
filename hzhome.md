@@ -1,8 +1,8 @@
 ---
 layout: default
-title: "Management console compute dashboard"
-permalink: /mc/compute/
-product: mc-compute
+title: "Horizon Home"
+permalink: /hz/home/
+product: Horizon
 
 ---
 # Management console compute dashboard
