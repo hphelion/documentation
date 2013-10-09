@@ -18,6 +18,11 @@ There are a number of HP Cloud APIs available for your programming pleasure:
 * [Relational Database](/api/v13/dbaas/): API for the HP Cloud Relational Database service; simplifies the creation and management of MySQL database instances.
   **Note**: Access to the v13.6 Relational Database private beta should be available October 1, 2013. The option to request access will be made available on the Services page at that time.
 
+You can also avail yourself of one of the following APIs now in private beta; follow the links to sign up and begin trying them out!
+
+* [Monitoring as a Service (MaaS)](/api/v13/monitoring/): API for the HP Cloud Monitoring service; facilitates monitoring of the health and other metrics for the resources in HP Cloud.<br>
+  **Note**: This service requires activation while in private beta; please [request access on our sign-up page](https://account.hpcloud.com/cases/betarequest/maas). Service use is free of charge during the private beta period.
+
 ## Copyright
 
 View the [copyright](/api/v13/copyright/) messages.
