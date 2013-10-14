@@ -7,7 +7,7 @@ categories: neutron
 tags: networking neutron vpn
 
 ---
-# HP Cloud Networking:  VPN Multi-site Configuration Guide
+# HP Cloud Networking:  VPN multi-site configuration guide {#top}
 
 Once you have set up your initial VPN connection, you can extend your network to your different private sites. This guide provides you the basic steps to configure a VPN Virtual Machine (instance) and establish a secure connection between private sites to your HP Cloud VPN.
 
@@ -15,7 +15,17 @@ For this procedure, we assume that you have an active HP Cloud account with a VP
 
 While you can set up your compute instance and VPN using any Linux OS, for the purpose of this guide, we use an Ubuntu instance and StrongSwan IPsec... Whatever configuration you use, you should be able to use this guide as a basis for connecting your sites to your HP Cloud VPN.
 
-##Collect Network and Security Information##
+This guide covers the following:
+
+- [Collect network and security information](#netsecinfo)
+- [Define IPsec and IKE proposals](#defineipsecike)
+- [Collect the network credentials for all the sites](#creds)
+- [Configure the VPN for the IKE and IPsec proposals](#configvpn)
+- [Establish a connection with your HP Cloud VPN](#connect)
+- [Troubleshoot and verify connections](#trouble)
+- [For further information](#info)
+
+##Collect network and security information {#netsecinfo}
 
 Before proceeding, collect network and security information on both sides for the VPN connection you are trying to establish.
 
@@ -43,9 +53,9 @@ Collect the following information for the LEFT VPC network:
 - VPN support PFS
 - VPN support DPD 
 
-##Define IPsec and IKE Proposals##
+##Define IPsec and IKE proposals{#defineipsecike}
  
-Define the IPsec and IKE Proposals in their routers. A router can support both IKEv1 and IKEv2.
+Define the IPsec and IKE proposals in their routers. A router can support both IKEv1 and IKEv2.
 
 **Note:** IKEv1 is supported in most router platforms, so this configuration provides only information about how to configure the IKEv1.
  
@@ -88,7 +98,9 @@ For simplicity, assume that all routers you will connect use the IKE and IPsec p
 	- DPD Interval             : 10
 	- DPD Retries              : 3
 
-##Collect the network credentials for all the sites
+back to the [top](#top)
+
+##Collect the network credentials for all the sites{#creds}
 
 We recommend that you compile the information in a spreadsheet to have handy when you need to input the data.
 
@@ -106,14 +118,16 @@ For each right network you want to make a connection with:
 - Private Subnet: e.g., 192.168.4.0/24
 - NAT: Yes/No
 
-##Configure the VPN for the IKE and IPsec proposals
+back to the [top](#top)
+
+##Configure the VPN for the IKE and IPsec proposals{#configvpn}
 
 This section uses strongSwan to configure the IKE and IPsec proposals from the previous section.
 
 ###strongSwan configuration files
 
-1.	ssh into the VPN instance on your VPC using your Public IP Address and ssh keys. 
-**Note:** Use either a Windows client with PuTTY or a Linux client with ssh to access your VPN VM shell (see the VPN Quick Start Guide).
+1.	SSH into the VPN instance on your VPC using your Public IP Address and ssh keys. 
+**Note:** Use either a Windows client with PuTTY or a Linux client with ssh to access your VPN instance shell (see the [VPN Quick Start Guide](http://docs.hpcloud.com/compute/vpn-quickstart)).
 2.	Once logged in, run the following command to see the *IPsec.conf* file in the strongSwan configuration files.
 
 	ls IPsec* strongswan*
@@ -236,8 +250,9 @@ This section includes examples for IKE and IPsec proposals.
 
 
 
+back to the [top](#top)
 
-##Establish a connection with your HP Cloud VPN
+##Establish a connection with your HP Cloud VPN {#connect}
 
 You can establish a connection with the remote router in two ways:
 
@@ -255,11 +270,17 @@ In this router configuration, the router will only negotiate a connection when i
 - From Site-B send traffic from subnet 192.168.4.0/24 to subnet 10.2.0.0/16. HP Networking MSR router starts IKE negotiation with VPC VPN in the Cloud when it receives the first packet.
 - From Site-C send traffic from subnet 192.168.3.0/24 to subnet 10.2.0.0/16. HP Networking MSR router starts IKE negotiation with VPC VPN in the Cloud when it receives the first packet.
 
-## Troubleshoot and verify connections
+back to the [top](#top)
+
+## Troubleshoot and verify connections {#trouble}
 
 See the "[VPN Quick Start Guide](http://docs.hpcloud.com/compute/vpn-quickstart)" for instructions on how to troubleshoot and verify connections.
 
-###For further information
+###For further information {#info}
 
 - [strongSwan wiki](http://wiki.strongswan.org)
-- HP Networking MSR 20-40 Router Security Configuration Guide: [http://www.h3c.com/portal/download.do?id=1223846](http://www.h3c.com/portal/download.do?id=1223846) 
+- HP Networking MSR 20-40 Router Security Configuration Guide: [http://www.h3c.com/portal/download.do?id=1223846](http://www.h3c.com/portal/download.do?id=1223846)
+ 
+back to the [top](#top)
+
+
