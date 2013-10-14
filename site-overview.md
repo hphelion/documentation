@@ -15,10 +15,10 @@ Rather than force you to read this whole page to find the info you need, here ar
 * [Knowledge Base](https://community.hpcloud.com/knowledge-base): A collection of searchable information about HP Cloud Services. (This link is also in the navigation sidebar over on the right-hand side of every page.)
 * [Forums](https://community.hpcloud.com/): Where users get together and discuss issues with each other and some members of the HP Cloud Services team. (This link is also in the navigation sidebar over on the right-hand side of every page.)
 * [Console](https://console.hpcloud.com/): A link straight to the main HP Cloud Services console.  Click on it and go!
-* [Release Notes](/release-notes): Release note information for the various components (Ruby Fog, Windows PowerShell CLI, and so on) of the HP Cloud Services.
 * [Downloads](/downloads): A listing of all the downloads currently available for HP Cloud Services.
-<!--* [Quick Start](/quickstart): Information to get you up to speed with the HP Cloud Services as quickly as possible.  It is best if you use the Quick Start in conjunction with the "Getting Started" video on the documentation main page.
-* [FAQ](/faq): A list of frequently asked questions about the HP Cloud Services, and our best answers.-->
+
+<!--Add this back in at GA:
+* [Release Notes](/release-notes): Overall release note information for the HP Cloud services software. -->
 
 ##Site Navigation
 You may have already noticed that the site has multiple methods for navigating; we've included these so that you can choose the method that works best for you:
@@ -36,9 +36,7 @@ You may have already noticed that the site has multiple methods for navigating; 
 ##Where to Start
 "Okay", you're thinking to yourself, "That's a lot of stuff; where do I start?"  
 
-* For beginners, we recommend the [Getting Started with HP Cloud Services](https://docs.hpcloud.com/) page, particularly the introductory video
-<!--alternately, send them to the text version of the Getting Started page--when you get a chance to write it, that is!-->
-<!--* For folks with a bit more experience, our Quick Start page is probably the right place for you-->
+* For beginners, we recommend the [Getting Started Guide](https://community.hpcloud.com/article/getting-started-guide/) in our [Knowledge Base](https://community.hpcloud.com/) to help you get started navigating the web interface, activating your services, and getting up and running with the various available services
 * If you're already well versed in the cloud, feel free to just go straight to the [console](https://console.hpcloud.com/) and get going
 
 So there you have it; a quick overview of what's available to you.  If you have any comments or questions, please get in touch with us via the forums.  Enjoy!
