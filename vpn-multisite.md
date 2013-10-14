@@ -21,27 +21,27 @@ Before proceeding, collect network and security information on both sides for th
 
 Collect the following information for the RIGHT remote network:
 
-*Router Public IP Address
-*Router Private Subnet
-*Client system behind NAT
-*Router IKE Proposal
-*Router IPsec Proposal
-*Router IPsec Policy
-*Router support Perfect Forward Secrecy (PFS)
-*Router support Dead Peer Detection (DPD)
-*Router Shared Secret/Certificates
-*Router ACL
+- Router Public IP Address
+- Router Private Subnet
+- Client system behind NAT
+- Router IKE Proposal
+- Router IPsec Proposal
+- Router IPsec Policy
+- Router support Perfect Forward Secrecy (PFS)
+- Router support Dead Peer Detection (DPD)
+- Router Shared Secret/Certificates
+- Router ACL
 
 Collect the following information for the LEFT VPC network:
 
-*VPN instance Floating IP Address
-*VPCs Private Subnet
-*VPN VM behind NAT
-*VPN IKE Proposal
-*VPN IPsec Proposal
-*VPN IPsec Policy
-*VPN support PFS
-*VPN support DPD 
+- VPN instance Floating IP Address
+- VPCs Private Subnet
+- VPN VM behind NAT
+- VPN IKE Proposal
+- VPN IPsec Proposal
+- VPN IPsec Policy
+- VPN support PFS
+- VPN support DPD 
 
 ##Define IPsec and IKE Proposals##
  
@@ -157,11 +157,11 @@ The *config setup* subsection in the `IPsec.conf` file defines the general confi
 
 4.	If the network is behind "NAT" turn the `nat_traversal` parameter to **yes**:
 
-	nat_traversal=yes
+	`nat_traversal=yes`
 
 5.	Use the plutodebug parameter to enable Pluto debug:
 
-	plutodebug=all|control
+	`plutodebug=all|control`
 
 Setting to all logs all Pluto-related messages, but control only enables the control related messages.
 
@@ -174,11 +174,11 @@ First, modify the config setup section:
 
 	nat_transversal=yes
 	plutostart-yes
-The remaining configurations can say the same.
+The remaining configurations can stay the same.
 
 Modify the connection information in the `conn %default` section:
 
-**Note:** As mentioned above all common IKE and IPsec proposal information can be addressed in this section.
+**Note:** As mentioned above, all common IKE and IPsec proposal information can be addressed in this section.
 
       ike=aes128-sha1-modp1024!
       ikelifetime=28800s
@@ -194,7 +194,7 @@ Modify the connection information in the `conn %default` section:
 
 For each specific network connection information modify the file. This shows an example of a generic connection setup with conn-default.
 
-	 conn Site-name	#the name you designate that site
+      conn Site-name	#the name you designate that site
       left=%defaultroute
       leftid=10.2.79.21
       leftsubnet=10.2.0.0/16
@@ -210,6 +210,7 @@ For each specific network connection information modify the file. This shows an 
 Repeat the above for every site needed in the network.
 
 **Note:** Once you have made the modifications, restart the IPsec process to use the latest information from the `IPsec.conf` file: 
+
 	# sudo IPsec restart
 
 ####Customize the IPsec.secrets file
@@ -221,7 +222,7 @@ Based on the authentication type and shared secret for the VPC VPN VM, the custo
 	#include /var/lib/strongswan/IPsec.secrets.inc
 	10.2.79.21 209.65.244.238 192.168.1.50 : PSK "abcd" 
 
-**Note:** Before you enter the ID of the remote router, verify the ID the remote router will send as “PEER_ID” during the IKE negotiation.  The ID can be the IP address, FQDN, etc. When configured as the IP Address the ID can be either the Public IP of the router or the gateway Public IP address. Add the IP in the list above to authenticate against the PSK.
+**Note:** Before you enter the ID of the remote router, verify the ID the remote router will send as "PEER_ID" during the IKE negotiation.  The ID can be the IP address, FQDN, etc. When configured as the IP Address the ID can be either the Public IP of the router or the gateway Public IP address. Add the IP in the list above to authenticate against the PSK.
 
 **Note:** Do not modify the IPsec.conf file for other strongSwan applications.  Only IPsec starter can parse the IPsec.conf file, which is created by default, and IPsec starter automatically loads the necessary modules based on the IPsec.conf file definition. 
 
@@ -256,7 +257,7 @@ In this router configuration, the router will only negotiate a connection when i
 
 ## Troubleshoot and verify connections
 
-See the "VPN Quick Start Guide" for instructions on how to troubleshoot and verify connections.
+See the "[VPN Quick Start Guide](http://docs.hpcloud.com/compute/vpn-quickstart)" for instructions on how to troubleshoot and verify connections.
 
 ###For further information
 
