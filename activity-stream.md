@@ -21,4 +21,4 @@ This initial version of the **Activity Stream** should be considered a prototype
 - **Monitoring Events** give you deep insight into each of the nodes under your supervision and shows stops, starts, restarts, etc. without having to access the nodes themselves--all right from within the Management Console.
 - Events have **Embedded Actions** that provide the ability to initiate an action (reboot, provision, snapshot etc.) right from within a message, making the management of your nodes even simpler and more straightforward.
 
-Stay tuned--this first prototype is just a hint of what's to come!
+Stay tuned--this first prototype is just a hint of what's to come! 
