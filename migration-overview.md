@@ -11,6 +11,7 @@ This page provides you with information to help you transition from version 12.1
 * [Before you begin](#BeforeYouBegin)
 * [Transitioning data for ephemeral instances](#Ephermeral)
 * [Transitioning data for persistent instances](#Persistent)
+* [Block volumes](#BlockVolumes)
 * [Key pairs](#KeyPairs)
 * [Managing security groups](#SecurityGroups)
 * [For further information](#MoreInfo)
@@ -59,7 +60,7 @@ For information on moving data:
 <!--For information on persistent instances while performing a support services assisted transition, please see the [snapshots](/migration-details/) section of the [assisted transition](/migration-details/) page. -->
 
 
-###Block volumes## {#BlockVolumes}
+##Block volumes## {#BlockVolumes}
 
 To transition the data for block volumes:
 
