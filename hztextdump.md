@@ -54,7 +54,7 @@ You are now ready to use the options under "Manage Compute." Mosey on over to th
 1. Overview
 2. Instances
 3. Volumes
-4. Imanges and Snapshots
+4. Images and Snapshots
 5. Access and Security
 
 A. Select "Overview" under "Manage Compute," to display your usage summary and quotas for:
@@ -64,6 +64,69 @@ A. Select "Overview" under "Manage Compute," to display your usage summary and q
 4. Floating IPs
 5. Security Groups
 
-As you use HP Cloud, click on these options to query current usage as well as usage during specific time frames.
+As you use HP Cloud, click on the "Overview" options to query current usage as well as usage during specific time frames.
 
 B. Create an Instance
+1. Click "Instances" under "Manage Compute" to create an instance (virtual server).
+2. Click "+Launch Instance" in the upper right-hand navigation of the screen.
+a. You can leave the default choice of "Any Availability Zone" (AZ) box to work across AZs, or click the drop box to specify  where to locate an instance.
+
+Note: You might specify an AZ for an instance if you want to segregate AZs per function for your own organizational purposes; e.g., you could select AZ1 for your data center, and set the remaining two up later for other discrete functions. Such a setup is completely optional as the AZs share all information and work in tandem.
+
+b. Name the Instance
+
+c. Click the drop-down menu under "Flavor" to select the hardware bed you want to emulate, i.e., how much disk space and RAM you need. When you select a Flavor, the "Flavor Details" box displays:
+1. Name
+2. # of VCPUs
+3. Root disk size
+4. Ephemeral disk size
+5. Total disk size
+6. RAM usage
+"Project Limits" graphs quotas allowed and usage of Instances, VCPUs, and Total RAM
+
+d. Enter the number of instances to create under "Instance Count."
+
+e. Select the source from which you want to boot your Instance from the drop-down menu under "Instance Boot Source," enter any required information for that source in the box displayed, and click "Launch".
+
+f. Drag and drop the network desired from the "Available Network" box to the "Selected Networks" box or click the "+" next to the desired network.
+
+g. Click "Launch."
+
+C. Create and Attach a Volume
+A volume is a block device you can attach to an instance.
+1. In the left-hand nav, click "Volumes" under "Manage Compute."
+2. Click "+Create Volume" in the upper right-hand navigation.
+3. Enter a name under "Volume Name" and optionally, a description in the box below and a "Type" from the following drop-down menu.
+4. Staying within the "Volume Limits" shown in the "Create Volume" box, enter a number of GBs under "Size."
+5. Select a volume source from the drop-down menu.
+6. Click "Create Volume"
+7. To attache the volume to an instance, click "Edit Attachments" under "Action" on the "Volumes" page.
+8. Select an instance to attach the volume to from the drop-down menu on the "Manage Volume Attachments" page.
+9. Under "Device Name," you can specify a location in the system if desired or enter the displayed default.
+
+Note: If going with the default, you must still enter it by hand even though it is displayed (greyed out). Otherwise, you receive an error message that you must specify a location. Good times.
+10. Click "Attach Volume."
+
+D. Images and Snapshots
+1. Click "Images and Snapshots" in the left hand-navigation, select your image and click "Launch.". To view instance information, choose an image name and an instance, and click "Launch"?????
+2. The "Launch Instance" box displays instance information under the following tabs:
+a. Details
+b. Networking
+c. Post-Creation
+What are we doing here? Under details, adding more instances? Displaying access and security under access security. Did I decide to just let the user figure this out and just list the tabs?
+
+E.  Click Security Groups
+Add Name
+Edit Rule
+Add rule
+Similar to 1.0.  See my Network Guide
+
+F. Identity -  Need full explanation of identities and how to manage identity. In a project - Managing machines' interactions. How to set it up.
+Descending order
+1. Domains - highest level
+2. Projects
+3. Users
+4. Groups - collection of people can have roles also.
+5. Role
+
+
