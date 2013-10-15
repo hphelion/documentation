@@ -48,6 +48,10 @@ The following are known issues and limitation for version 13.5 of the HP Public 
 * Jclouds is supported for Keystone version 2 API and earlier only.
 * In rare cases, after successfully launching an instance `SSH` may not function. <br>
     *Workaround*: Reboot the instance.
+* Windows instances with attached volumes in US East are not accessible directly or via `ssh`. <br>
+    *Workaround*: Use Windows instances without attached volumes.
+* In some cases, you may be unable to connect to a VNC URL. <br>
+    *Workaround*: Connect using other clients such as `ssh`, `putty`, or RDP.
 
 <!--##Resolved Issues in Version 13.5## {#v135resolved}
 
