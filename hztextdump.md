@@ -45,4 +45,25 @@ D.  Connect Your Network
 
 Note: You can optionally specify an IP address in the box provided, but the default interface IP address is the selected subnet's external gateway and the best choice unless you are setting up a more complicated connection. Any IP address you specify must belong to the subnet in the drop-down menu.
 
-4. 
+4. Click "Add Interface."
+
+III. Manage HP Cloud
+A. Overview
+
+You are now ready to use the options under "Manage Compute." Mosey on over to the left-hand navigation, click that bad boy and let's get started. "Manage Compute" options include:
+1. Overview
+2. Instances
+3. Volumes
+4. Imanges and Snapshots
+5. Access and Security
+
+A. Select "Overview" under "Manage Compute," to display your usage summary and quotas for:
+1. Instances
+2. VPCUs
+3. RAM
+4. Floating IPs
+5. Security Groups
+
+As you use HP Cloud, click on these options to query current usage as well as usage during specific time frames.
+
+B. Create an Instance
