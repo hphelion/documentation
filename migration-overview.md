@@ -9,7 +9,7 @@ permalink: /migration-overview/
 This page provides you with information to help you transition from version 12.12 to 13.5 of the HP Cloud software services.  This overview covers the following topics and tasks:
 
 * [Before you begin](#BeforeYouBegin)
-* [Transitioning data for ephemeral instances](#Ephermeral)
+* [Transitioning data for ephemeral instances](#Ephemeral)
 * [Transitioning data for persistent instances](#Persistent)
 * [Block volumes](#BlockVolumes)
 * [Key pairs](#KeyPairs)
