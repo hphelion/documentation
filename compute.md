@@ -35,4 +35,4 @@ Check out the following pages for more information on using HP Cloud compute ser
 * [Ruby Fog bindings compute examples](/bindings/fog/compute/)
 * [CLI UNIX compute examples](/cli/unix/compute/)
 * [Windows PowerShell CLI compute examples](/cli/windows/compute/)
-* [Mnagement console compute dashboard information](/mc/compute/)
+* [Management console compute dashboard information](/mc/compute/)
