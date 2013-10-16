@@ -21,13 +21,13 @@ You can also avail yourself of one of the following APIs now in private beta; fo
 
 * [Load Balancer as a Service (LBaaS)](/api/lbaas/): API for the HP Cloud Load Balancer service; facilitates creation and management of load balancers.<br>
   **Note**: This service requires activation while in private beta; please [request access on our sign-up page](https://account.hpcloud.com/cases/betarequest/lbaas).  Service use is free of charge during the private beta period.
-* [Monitoring as a Service (MaaS) v1.1](/api/v13/monitoring/): API for the HP Cloud Monitoring service v1.1; facilitates monitoring of the health and other metrics for the resources in HP Cloud.<br>
+* [Monitoring as a Service (MaaS) v1.1](/api/v13/monitoring/): API for the HP Cloud Monitoring service v1.1; facilitates monitoring of the health and other metrics for the resources in HP Cloud.
   **Note**: This service requires activation while in private beta; please [request access on our sign-up page](https://account.hpcloud.com/cases/betarequest/maas). Service use is free of charge during the private beta period.
-* [Monitoring as a Service (MaaS) v1.0](/api/monitoring/): API for the HP Cloud Monitoring service v1.0; facilitates monitoring of the health and other metrics for the resources in HP Cloud.<br>
-  **Note**: The v1.0 API of the service will be deprecated soon.
-* [Application Platform as a Service (aPaaS)](/apaas/) - An application platform for development, deployment, and management of cloud applications hosted by HP.<br>
-  **Note**: This service requires activation while in private beta; please [request access on our sign-up page](http://go.hpcloud.com/PaaS-private-beta-signup).  Service use is free of charge during the private beta period.
-* [Messaging as a Service (MSGaaS)](/api/msgaas/): API for the HP Cloud Messaging service; provides you with a standards-based, inter-application asynchronous message queuing system with guaranteed first in, first out (FIFO) message delivery in the HP Cloud.<br>
+* [Monitoring as a Service (MaaS) v1.0](/api/monitoring/): API for the HP Cloud Monitoring service v1.0; facilitates monitoring of the health and other metrics for the resources in HP Cloud.
+  **Note**: The v1.0 API of the service is now deprecated.
+* [Application Platform as a Service (aPaaS)](/apaas/) - An application platform for development, deployment, and management of cloud applications hosted by HP.
+  **Note**: This service requires activation while in private beta; please [request access on our sign-up page](http://go.hpcloud.com/PaaS-private-beta-signup). Service use is free of charge during the private beta period.
+* [Messaging as a Service (MSGaaS)](/api/msgaas/): API for the HP Cloud Messaging service; provides you with a standards-based, inter-application asynchronous message queuing system with guaranteed first in, first out (FIFO) message delivery in the HP Cloud.
   **Note**: This service requires activation while in private beta; please [request access on our sign-up page](https://account.hpcloud.com/cases/betarequest/msgaas). Service use is free of charge during the private beta period.
 
 <!--If you are a more visual learner, perhaps you would prefer our videos on these topics:
