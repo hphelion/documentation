@@ -1,4 +1,3 @@
-Text dump to be formatted in files later.
 
 Introduction
 Cloud Console Getting Started walks you through network setup, connection, and management, instance and volume creation, security options, and identity parameters that facilitate your organization's HP Cloud use.
