@@ -1,3 +1,23 @@
+---
+layout: default
+title: "HP Management Console Getting Started"
+permalink: /hz/gettingstarted/
+product: hz-Getting Started
+
+---
+# Management console compute dashboard
+
+This page provides you with an overview of the management console (MC) compute dashboard, which displays your compute information and acts as your main interface to your compute functions.  This page covers the following topics:
+
+* [Compute dashboard overview](#Overview)
+* [Navigating to other compute screens](#Navigating)
+* [For further information](#ForFurtherInformation)
+
+##Compute dashboard overview## {#Overview}
+
+The MC compute main dashboard displays your active compute instances, divided by region:
+
+<img src="media/main-dash-all-services.png" width="580" alt="" />
 
 Introduction
 Cloud Console Getting Started walks you through network setup, connection, and management, instance and volume creation, security options, and identity parameters that facilitate your organization's HP Cloud use.
