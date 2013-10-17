@@ -21,7 +21,7 @@ and provides links:
 * [For further information](#Forfurtherinformation)
 
 
-Screenshot of Interface. Screenshots everywhere!!!! They're coming!
+**Screenshot of Interface. Screenshots everywhere!!!! They're coming!**
 
 
 ##Begin Cloud setup## {#Begin}
@@ -85,8 +85,8 @@ Note: For router details, you can click the router "Name" to display its ID numb
 You are now ready to use the options under "Manage Compute." Mosey on over to the left-hand navigation, click that bad boy and let's get started. This section includes:
 
 * [Overview](#Overview)
-* [Create an Instances](#Instance)
-* [Create and attach a volumes](#Volumes)
+* [Create an Instance](#Instance)
+* [Create and attach a volume](#Volumes)
 * [Images and Snapshots](#Imagesandsnapshots)
 * [Access and Security](#Accessandsecurity)
 
@@ -163,7 +163,9 @@ Edit Rule
 Add rule
 Similar to 1.0.  See my Network Guide
 
-####Identity#### -  Need full explanation of identities and how to manage identity. In a project - Managing machines' interactions. How to set it up.
+####Identity####
+
+Need full explanation of identities and how to manage identity. In a project - Managing machines' interactions. How to set it up.
 Descending order
 1. Domains - highest level
 2. Projects
