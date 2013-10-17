@@ -29,7 +29,7 @@ Screenshot of Interface. Screenshots everywhere!!!! They're coming!
 1. Login to HP Cloud with your username and password.
 2. Activate an Availability Zone (AZ) from the list under "Compute" in the Cloud Console interface. 
 
-##Create and connect a network## {Createandconnect}
+##Create and connect a network## {#Createandconnect}
 
 This section includes how to:
 
@@ -37,7 +37,6 @@ This section includes how to:
 * [Create a subnet](#Createasubnet)
 * [Create a router](#Createarouter)
 * [Connect your network](#Connectyournetwork)
-* [Compute dashboard overview](#Overview)
 
 
 ###Create a network### {#Createanetwork}
@@ -81,7 +80,7 @@ Note: For router details, you can click the router "Name" to display its ID numb
 
 4. Click "Add Interface."
 
-##Manage HP Cloud## {ManageHPCloud}
+##Manage HP Cloud## {#ManageHPCloud}
 
 You are now ready to use the options under "Manage Compute." Mosey on over to the left-hand navigation, click that bad boy and let's get started. This section includes:
 
