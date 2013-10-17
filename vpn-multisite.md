@@ -11,9 +11,9 @@ tags: networking neutron vpn
 
 Once you have set up your initial VPN connection, you can extend your network to your different private sites. This guide provides you the basic steps to configure a VPN Virtual Machine (instance) and establish a secure connection between private sites to your HP Cloud VPN.
 
-For this procedure, we assume that you have an active HP Cloud account with a VPN instance set up (see the vpn quick start guide to set up the initial VPN instance).
+For this procedure, we assume that you have an active HP Cloud account with a VPN instance set up (see the [VPN Quick Start Guide](http://docs.hpcloud.com/compute/vpn-quickstart) to set up the initial VPN instance).
 
-While you can set up your compute instance and VPN using any Linux OS, for the purpose of this guide, we use an Ubuntu instance and StrongSwan IPsec... Whatever configuration you use, you should be able to use this guide as a basis for connecting your sites to your HP Cloud VPN.
+While you can set up your compute instance and VPN using any Linux OS, for the purpose of this guide, we use an Ubuntu instance and strongSwan IPsec. This configuration has been tested, but you can use this guide as a basis for connecting your sites to your HP Cloud VPN.
 
 This guide covers the following:
 
@@ -25,11 +25,11 @@ This guide covers the following:
 - [Troubleshoot and verify connections](#trouble)
 - [For further information](#info)
 
-##Collect network and security information {#netsecinfo}
+##Collect network and security information## {#netsecinfo}
 
 Before proceeding, collect network and security information on both sides for the VPN connection you are trying to establish.
 
-Collect the following information for the RIGHT remote network:
+Collect the following information for each RIGHT remote network:
 
 - Router Public IP Address
 - Router Private Subnet
@@ -53,7 +53,7 @@ Collect the following information for the LEFT VPC network:
 - VPN support PFS
 - VPN support DPD 
 
-##Define IPsec and IKE proposals{#defineipsecike}
+##Define IPsec and IKE proposals## {#defineipsecike}
  
 Define the IPsec and IKE proposals in their routers. A router can support both IKEv1 and IKEv2.
 
@@ -100,7 +100,7 @@ For simplicity, assume that all routers you will connect use the IKE and IPsec p
 
 back to the [top](#top)
 
-##Collect the network credentials for all the sites{#creds}
+##Collect the network credentials for all the sites## {#creds}
 
 We recommend that you compile the information in a spreadsheet to have handy when you need to input the data.
 
@@ -120,7 +120,7 @@ For each right network you want to make a connection with:
 
 back to the [top](#top)
 
-##Configure the VPN for the IKE and IPsec proposals{#configvpn}
+##Configure the VPN for the IKE and IPsec proposals## {#configvpn}
 
 This section uses strongSwan to configure the IKE and IPsec proposals from the previous section.
 
@@ -229,7 +229,7 @@ Repeat the above for every site needed in the network.
 
 ####Customize the IPsec.secrets file
 
-Based on the authentication type and shared secret for the VPC VPN VM, the customized IPsec.secrets file with the “Peer” and “Local” id is shown below. 
+Based on the authentication type and shared secret for the VPC VPN instance, the customized *IPsec.secrets* file with the "Peer" and "Local" id is shown below. 
 
 **Note:** You can use the same pre-shared key for all the connections or choose different pre-shared keys for different connections. This example demonstrates the same key for all connections.
 
@@ -244,15 +244,145 @@ Based on the authentication type and shared secret for the VPC VPN VM, the custo
 
 This section includes examples for IKE and IPsec proposals.
 
-####Remote site IKE and IPsec proposals example
+####Examples for remote site IKE and IPsec proposals
+
+These examples have three remote sites named a, b, and c (you can, of course, name your remote sites whatever makes sense to you). 
+
+**Setting the IKE and IPsec proposals:**
+
+In the configuration files, modify the following for Site-A:
+
+	IKE
+	#1: Internet Key Exchange Configuration
+	
+	- Pre-Shared Key           : "abcd"
+
+	- Encryption Algorithm     : aes-128-cbc
+
+	IPsec
+	
+	#2: IPsec Configuration
+	
+	- Encryption Algorithm     : aes-128-cbc
+
+Modify the following for Site-B:
+
+	IKE
+	#1: Internet Key Exchange Configuration
+	
+	- Pre-Shared Key           : "siteb"
+	- Encryption Algorithm     : aes-256-cbc
+
+	IPsec
+	
+	#2: IPsec Configuration
+	
+	- Encryption Algorithm     : aes-256-cbc
+
+Modify the following for Site-C:
+
+	IKE
+	#1: Internet Key Exchange Configuration
+	
+	- Pre-Shared Key           : "sitec"
+
+	- Perfect Forward Secrecy  : Diffie-Hellman Group 5
+
+	IPsec
+	
+	#2: IPsec Configuration
+	
+	- Perfect Forward Secrecy  : Diffie-Hellman Group 5
+
+**Sample IPsec configuration file for all sites (A, B and C) in the VPC**
+
+The *ipsec.conf* file can hold multiple connection sections. Because we have three connections in this example, you have one `conn %default` that includes all the common options for all the connections. The specific options are included in the **conn Site-A**, **conn Site-B**, and **conn Site-C**.
+
+    # ipsec.conf - strongSwan IPsec configuration file
+    
+    # basic configuration
+    
+    config setup
+    	plutodebug=all
+    	plutostderrlog=/home/ubuntu/plutolog.txt
+    	nat_traversal=yes
+    	charonstart=no
+    	plutostart=yes
+    
+    # Add connections here.
+    
+    # Sample VPN connections
+    # NOTE: As mentioned above all common IKE and IPsec Proposal information can be
+    # included in the section below
+    
+    conn %default 
+      ikelifetime=28800s
+      keyexchange=ikev1
+      keyingtries=10
+      keylife=3600s
+      rekeymargin=5m
+      type=tunnel
+      pfs=yes
+      compress=no
+      authby=secret
+    
+    # Site specific network connection information
+    conn Site-A 
+      left=%defaultroute
+      leftid=10.2.79.21
+      leftsubnet=10.2.0.0/16
+      leftfirewall=yes
+      right=209.65.244.238
+      rightid=192.168.1.50
+      rightsubnet=192.168.2.0/24
+      ike=aes128-sha1-modp1024!
+      esp=aes128-sha1-modp1024!
+      dpdaction=hold
+      dpddelay=60
+      dpdtimeout=500 
+      auto=add
+      
+    conn Site-B 
+      left=%defaultroute
+      leftid=10.2.79.21
+      leftsubnet=10.2.0.0/16
+      leftfirewall=yes
+      right=209.65.244.239
+      rightid=172.168.2.50
+      rightsubnet=192.168.4.0/24
+      ike=aes256-sha1-modp1024!
+      esp=aes256-sha1-modp1024!
+      dpdaction=hold
+      dpddelay=60
+      dpdtimeout=500 
+      auto=add
+    
+    conn Site-C 
+      left=%defaultroute
+      leftid=10.2.79.21
+      leftsubnet=10.2.0.0/16
+      leftfirewall=yes
+      right=209.65.244.240
+      rightid=172.168.1.50
+      rightsubnet=192.168.3.0/24
+      ike=aes256-sha1-modp1536!
+      esp=aes256-sha1-modp1536!
+      dpdaction=hold
+      dpddelay=60
+      dpdtimeout=500 
+      auto=add
 
 
+**Modify the *ipsec.secrets* file for connections with different keys:**
 
-
+	#include /var/lib/strongswan/ipsec.secrets.inc
+	10.2.79.21 209.65.244.238 192.168.1.50 : PSK "abcd" 
+	10.2.79.21 209.65.244.239 172.168.2.50 : PSK “siteb”
+	10.2.79.21 209.65.244.240 172.168.1.50 : PSK “sitec”
 
 back to the [top](#top)
 
-##Establish a connection with your HP Cloud VPN {#connect}
+##Establish a connection with your HP Cloud VPN## {#connect}
 
 You can establish a connection with the remote router in two ways:
 
@@ -262,21 +392,21 @@ You can establish a connection with the remote router in two ways:
 
 2. The router can accept a negotiation from the remote node.
 
-In this example, either automatically start the connection from the VPC VPN (auto=start option in the IPsec.conf file) or configure it in passive mode listening for connections (auto=add option in the IPsec.conf file).
+In this example, either automatically start the connection from the VPC VPN (auto=start option in the *IPsec.conf* file) or configure it in passive mode listening for connections (`auto=add` option in the *IPsec.conf* file).
 
-In this router configuration, the router will only negotiate a connection when it sees a packet destined for the remote subnet in the Cloud.
+In this router configuration, the router will only negotiate a connection when it sees a packet destined for the remote subnet in the Cloud. In this example, the site's are named Site-A, Site-B, and Site-C, but you can name them anything that makes sense to you.
 
-- From Site-A send traffic from subnet 192.168.2.0/24 to subnet 10.2.0.0/16. HP Networking MSR router starts IKE negotiation with VPC VPN in the Cloud when it receives the first packet.
-- From Site-B send traffic from subnet 192.168.4.0/24 to subnet 10.2.0.0/16. HP Networking MSR router starts IKE negotiation with VPC VPN in the Cloud when it receives the first packet.
-- From Site-C send traffic from subnet 192.168.3.0/24 to subnet 10.2.0.0/16. HP Networking MSR router starts IKE negotiation with VPC VPN in the Cloud when it receives the first packet.
+- From Site-A send traffic from subnet 192.168.2.0/24 to subnet 10.2.0.0/16. HP Networking MSR router starts IKE negotiation with VPC VPN in the cloud when it receives the first packet.
+- From Site-B send traffic from subnet 192.168.4.0/24 to subnet 10.2.0.0/16. HP Networking MSR router starts IKE negotiation with VPC VPN in the cloud when it receives the first packet.
+- From Site-C send traffic from subnet 192.168.3.0/24 to subnet 10.2.0.0/16. HP Networking MSR router starts IKE negotiation with VPC VPN in the cloud when it receives the first packet.
 
 back to the [top](#top)
 
-## Troubleshoot and verify connections {#trouble}
+## Troubleshoot and verify connections## {#trouble}
 
 See the "[VPN Quick Start Guide](http://docs.hpcloud.com/compute/vpn-quickstart)" for instructions on how to troubleshoot and verify connections.
 
-###For further information {#info}
+###For further information## {#info}
 
 - [strongSwan wiki](http://wiki.strongswan.org)
 - HP Networking MSR 20-40 Router Security Configuration Guide: [http://www.h3c.com/portal/download.do?id=1223846](http://www.h3c.com/portal/download.do?id=1223846)
