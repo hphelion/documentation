@@ -5,59 +5,51 @@ permalink: /hz/gettingstarted/
 product: hz-Getting Started
 
 ---
-# Management console compute dashboard
 
-This page provides you with an overview of the management console (MC) compute dashboard, which displays your compute information and acts as your main interface to your compute functions.  This page covers the following topics:
-
-* [Compute dashboard overview](#Overview)
-* [Navigating to other compute screens](#Navigating)
-* [For further information](#ForFurtherInformation)
 
 ##Compute dashboard overview## {#Overview}
 
-The MC compute main dashboard displays your active compute instances, divided by region:
 
 <img src="media/main-dash-all-services.png" width="580" alt="" />
 
 # HP Cloud Console Getting Started
-Cloud Console Getting Started walks you through network setup, connection, and management, instance and volume creation, security options, and identity parameters that facilitate your organization's HP Cloud use. This page covers how to:
+Cloud Console Getting Started walks you through network setup, connection, instance and volume creation, security options, identity parameters, and management tools that facilitate your organization's HP Cloud use.This page takes you through the interface in the chronological order needed to get up and running, rather than the order displayed. After initial setup, revisit the interface to monitor usage, modify, add, and delete networks, instances, volumes, usergroups, etc.
 
-* [Begin](#Begin)
-* [Create and connect a network](#Createnetwork)
+This page covers how to:
+
+* [Begin Cloud setup](#Begin)
+* [Create and connect a network](#Createandconnect)
 * [Manage HP Cloud](#ManageHPCloud)
-* 
+
 and provides links:
 
-* [For further information](#ForFurtherInformation)
+* [For further information](#Forfurtherinformation)
 
-
-This page takes you through the interface in the chronological order needed to get up and running, rather than the order displayed. After initial setup, revisit the interface to monitor usage, modify, add, and delete networks, instances, volumes, usergroups, etc.
 
 Screenshot of Interface.
 
-##Begin Cloud setup##
-1. Login to HP Cloud with your username and password
+
+##Begin Cloud setup## {#Begin}
+1. Login to HP Cloud with your username and password.
 2. Activate an Availability Zone (AZ) from the list under "Compute" in the Cloud Console Interface. 
 
-
-##Create and connect a network##
+##Create and connect a network## {Createandconnect}
 
 This section includes how to:
-* [Create a network](#Create a network)
-* [Create a subnet](#Create a subnet)
-* [Create a router](#Create a router)
-* [Connect your network](#Connect your network)
+* [Create a network](#Createanetwork)
+* [Create a subnet](#Createasubnet)
+* [Create a router](#Createarouter)
+* [Connect your network](#Connectyournetwork)
 * [Compute dashboard overview](#Overview)
 
 
-###Create a network###
-
+###Create a network### {#Createanetwork}
 
 1. On the Cloud Console Interface, click "Project," then "Networks" under "Manage Networks."
 2. Click "+Create Network" in the right-hand navigation.
 3. Enter a "Network Name." (Look at again for description/use of "Admin State" and then if needed, ask Steve - should you leave the default checked for it?)
 
-###Create a subnet###
+###Create a subnet### {#Createasubnet}
 
 1. On the "Subnet" page, enter the name of your subnet.
 2. Tab to or click in the the "Network Address" box. The pop-up window states the network address is in Classless Inter-Domain Routing (CIDR) format:  000.000.0.0/00. Enter the network address displayed: 192.168.0.0/24.
@@ -67,39 +59,40 @@ This section includes how to:
 6. The "Networks" screen displays your network name and associated subnets.
 7. To see a graphic display of your network setup, click "Network Topology."
 
-###Create a Router###
+
+###Create a router### {#Createarouter}
 
 1.  If on the "Network Topology" screen, click "Create Router" on the top right-hand navigation. If not, click "Routers" under the "Manage Network" heading in the left-hand navigation.
 2.  Enter your router name and click "Create Router." The router name and status appear on the "Routers" page.
 
-NOTE: For router details, you can click the router "Name" to display its ID number and status. If you do this, click "Back" before the following steps to make the "Set Gateway" action available.
+Note: For router details, you can click the router "Name" to display its ID number and status. If you do this, click "Back" before the following steps to make the "Set Gateway" action available.
 
 3. On the "Router" page, click "Set Gateway" under "Actions" to connect your router to the subnet.
 4. Click the drop-down menu in the "External Network" box in the "Set Gateway" pop-up, select "Ext-Net," and click "Set Gateway."
 
 NOTE: Th external network is the router's default route, with the router acting as a gateway for external connectivity. While you can configure a subnet that is internal-only, you must connect it to another subnet with external connectivity.
 
-###Connect Your Network###
+###Connect your network### {#Connectyournetwork}
 1. Click the router name on the "Routers" page.
 2. Click "+Add Interface" on the top far-right of the "Router Details" page.
 3. Click the drop-down menu in the "Select Subnet" box in the "Add Interface" pop-up and click on the network you configured.
 
-NOTE: You can optionally specify an IP address in the box provided, but the default interface IP address is the selected subnet's external gateway and the best choice unless you are setting up a more complicated connection. Any IP address you specify must belong to the subnet in the drop-down menu.
+Note: You can optionally specify an IP address in the box provided, but the default interface IP address is the selected subnet's external gateway and the best choice unless you are setting up a more complicated connection. Any IP address you specify must belong to the subnet in the drop-down menu.
 
 4. Click "Add Interface."
 
-##Manage HP Cloud##
+##Manage HP Cloud## {ManageHPCloud}
 
 You are now ready to use the options under "Manage Compute." Mosey on over to the left-hand navigation, click that bad boy and let's get started. This section includes:
 
 * [Overview](#Overview)
-* [Create an Instances](#Instances)
+* [Create an Instances](#Instance)
 * [Create and attach a volumes](#Volumes)
-* [Images and Snapshots](#Images and Snapshots)
-* [Access and Security](#Access and Security)
+* [Images and Snapshots](#Imagesandsnapshots)
+* [Access and Security](#Accessandsecurity)
 
 
-###Overview###
+###Overview### {#Overview}
 Select "Overview" under "Manage Compute," to display your usage summary and quotas for:
 * Instances
 * VPCUs
@@ -109,11 +102,11 @@ Select "Overview" under "Manage Compute," to display your usage summary and quot
 
 As you use HP Cloud, click on the "Overview" options any time to query current usage as well as usage during specific time frames.
 
-####Create an instance####
+####Create an instance#### {#Instance}
 1. Click "Instances" under "Manage Compute" to create an instance (virtual server).
 2. Click "+Launch Instance" in the upper right-hand navigation of the screen.You can leave the default choice of the "Any Availability Zone" (AZ) box to work across AZs, or click the drop box to specify  where to locate an instance.
 
-NOTE: You might specify an AZ for an instance if you want to segregate AZs per function for your own organizational purposes; e.g., you could select AZ1 for your data center, and set the remaining two up later for other discrete functions. Such a setup is completely optional as the AZs share all information and work in tandem.
+Note: You might specify an AZ for an instance if you want to segregate AZs per function for your own organizational purposes; e.g., you could select AZ1 for your data center, and set the remaining two up later for other discrete functions. Such a setup is completely optional as the AZs share all information and work in tandem.
 
 #####Name the instance and launch#####
 1. Click the drop-down menu under "Flavor" to select the hardware bed you want to emulate, i.e., how much disk space and RAM you need. When you select a Flavor, the "Flavor Details" box displays:
@@ -135,7 +128,7 @@ NOTE: You might specify an AZ for an instance if you want to segregate AZs per f
 
 5. Click "Launch."
 
-###Create and Attach a Volume###
+###Create and Attach a Volume### {Volumes}
 
 A volume is a block storage device you attach to an instance.
 
@@ -149,11 +142,11 @@ A volume is a block storage device you attach to an instance.
 8. Select an instance to attach the volume to from the drop-down menu on the "Manage Volume Attachments" page.
 9. Under "Device Name," you can specify a location in the system if desired or enter the displayed default.
 
-NOTE: If going with the default, you must still enter it by hand even though it is displayed (greyed out). Otherwise, you receive an error message that you must specify a location. Good times.
+Note: If going with the default, you must still enter it by hand even though it is displayed (greyed out). Otherwise, you receive an error message that you must specify a location. Good times.
 
 10. Click "Attach Volume."
 
-###Images and Snapshots###
+###Images and Snapshots### {Imagesandsnapshots}
 1. Click "Images and Snapshots" in the left hand-navigation, select your image and click "Launch.". To view instance information, choose an image name and an instance, and click "Launch"?????
 2. The "Launch Instance" box displays instance information under the following tabs:
 * Details
@@ -161,7 +154,7 @@ NOTE: If going with the default, you must still enter it by hand even though it 
 * Post-Creation
 What are we doing here? Under details, adding more instances? Displaying access and security under access security. Did I decide to just let the user figure this out and just list the tabs?
 
-###Access and Security###
+###Access and Security### {Accessandsecurity}
 Click Security Groups
 Add Name
 Edit Rule
@@ -177,3 +170,7 @@ Descending order
 5. Role
 
 
+##For further information## {#Forfurtherinformation}
+
+* For basic information about our HP Cloud compute services, take a look at the [HP Cloud compute overview](/compute/) page
+* If you'd rather use the HP Cloud Command Line Interface (CLI) features, choose your topic of interest from our [HP CLoud CLI](/cli) pages.
