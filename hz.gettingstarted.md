@@ -68,7 +68,7 @@ Note: For router details, you can click the router "Name" to display its ID numb
 
 4. Click the drop-down menu in the "External Network" box in the "Set Gateway" pop-up, select "Ext-Net," and click "Set Gateway."
 
-**Note: The external network is the router's default route, with the router acting as a gateway for external connectivity. While you can configure a subnet that is internal-only, you must connect it to another subnet with external connectivity.**
+**Note**: The external network is the router's default route, with the router acting as a gateway for external connectivity. While you can configure a subnet that is internal-only, you must connect it to another subnet with external connectivity.
 
 ###Connect your network### {#Connectyournetwork}
 
@@ -76,7 +76,7 @@ Note: For router details, you can click the router "Name" to display its ID numb
 2. Click "+Add Interface" on the top far-right of the "Router Details" page.
 3. Click the drop-down menu in the "Select Subnet" box in the "Add Interface" pop-up and click on the network you configured.
 
-**Note: You can optionally specify an IP address in the box provided, but the default interface IP address is the selected subnet's external gateway and the best choice unless you are setting up a more complicated connection. Any IP address you specify must belong to the subnet in the drop-down menu.**
+**Note**: You can optionally specify an IP address in the box provided, but the default interface IP address is the selected subnet's external gateway and the best choice unless you are setting up a more complicated connection. Any IP address you specify must belong to the subnet in the drop-down menu.
 
 4. Click "Add Interface."
 
@@ -85,9 +85,13 @@ Note: For router details, you can click the router "Name" to display its ID numb
 You are now ready to use the options under "Manage Compute." Mosey on over to the left-hand navigation, click that bad boy and let's get started. This section includes:
 
 * [Overview](#Overview)
+
 * [Create an Instance](#Instance)
+
 * [Create and attach a volume](#Volumes)
+
 * [Images and Snapshots](#Imagesandsnapshots)
+
 * [Access and Security](#Accessandsecurity)
 
 
@@ -95,9 +99,13 @@ You are now ready to use the options under "Manage Compute." Mosey on over to th
 
 Select "Overview" under "Manage Compute," to display your usage summary and quotas for:
 * Instances
+
 * VPCUs
+
 * RAM
+
 * Floating IPs
+
 * Security Groups
 
 As you use HP Cloud, click on the "Overview" options any time to query current usage as well as usage during specific time frames.
@@ -107,11 +115,11 @@ As you use HP Cloud, click on the "Overview" options any time to query current u
 1. Click "Instances" under "Manage Compute" to create an instance (virtual server).
 2. Click "+Launch Instance" in the upper right-hand navigation of the screen.You can leave the default choice of the "Any Availability Zone" (AZ) box to work across AZs, or click the drop box to specify  where to locate an instance.
 
-**Note: You might specify an AZ for an instance if you want to segregate AZs per function for your own organizational purposes; e.g., you could select AZ1 for your data center, and set the remaining two up later for other discrete functions. Such a setup is completely optional as the AZs share all information and work in tandem.**
+**Note**: You can specify an AZ for an instance if you want to segregate AZs per function for your own organizational purposes; e.g., you could select AZ1 for your data center, and set the remaining two up later for other discrete functions. Such a setup is completely optional as the AZs share all information and work in tandem.
 
-#####Name the instance and launch#####
+3. Name the instance:
 
-1. Click the drop-down menu under "Flavor" to select the hardware bed you want to emulate, i.e., how much disk space and RAM you need. When you select a Flavor, the "Flavor Details" box displays:
+Click the drop-down menu under "Flavor" to select the hardware bed you want to emulate, i.e., how much disk space and RAM you need. When you select a Flavor, the "Flavor Details" box displays:
 
 * Name
 * # of VCPUs
@@ -120,15 +128,15 @@ As you use HP Cloud, click on the "Overview" options any time to query current u
 * Total disk size
 * RAM usage
 
-"Project Limits" graphs quotas allowed and usage of Instances, VCPUs, and Total RAM.
+**Note** "Project Limits" graphs quotas allowed and usage of Instances, VCPUs, and Total RAM.
 
-2. Enter the number of instances to create under "Instance Count."
+4. Enter the number of instances to create under "Instance Count."
 
-3. Select the source from which you want to boot your Instance from the drop-down menu under "Instance Boot Source," enter any required information for that source in the box displayed, and click "Launch".
+5. Select the source from which you want to boot your Instance from the drop-down menu under "Instance Boot Source," enter any required information for that source in the box displayed, and click "Launch".
 
-4. Drag and drop the network desired from the "Available Network" box to the "Selected Networks" box or click the "+" next to the desired network.
+6. Drag and drop the network desired from the "Available Network" box to the "Selected Networks" box or click the "+" next to the desired network.
 
-5. Click "Launch."
+7. Click "Launch."
 
 ###Create and Attach a Volume### {#Volumes}
 
@@ -144,7 +152,7 @@ A volume is a block storage device you attach to an instance.
 8. Select an instance to attach the volume to from the drop-down menu on the "Manage Volume Attachments" page.
 9. Under "Device Name," you can specify a location in the system if desired or enter the displayed default.
 
-**Note: If going with the default, you must still enter it by hand even though it is displayed (greyed out). Otherwise, you receive an error message that you must specify a location. Good times.**
+**Note**: If going with the default, you must still enter it by hand even though it is displayed (greyed out). Otherwise, you receive an error message that you must specify a location. Good times.
 
 10. Click "Attach Volume."
 
