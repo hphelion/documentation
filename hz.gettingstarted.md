@@ -69,7 +69,7 @@ Note: For router details, you can click the router "Name" to display its ID numb
 
 4. Click the drop-down menu in the "External Network" box in the "Set Gateway" pop-up, select "Ext-Net," and click "Set Gateway."
 
-_Note: The external network is the router's default route, with the router acting as a gateway for external connectivity. While you can configure a subnet that is internal-only, you must connect it to another subnet with external connectivity._
+**Note: The external network is the router's default route, with the router acting as a gateway for external connectivity. While you can configure a subnet that is internal-only, you must connect it to another subnet with external connectivity.**
 
 ###Connect your network### {#Connectyournetwork}
 
@@ -77,7 +77,7 @@ _Note: The external network is the router's default route, with the router actin
 2. Click "+Add Interface" on the top far-right of the "Router Details" page.
 3. Click the drop-down menu in the "Select Subnet" box in the "Add Interface" pop-up and click on the network you configured.
 
-_Note: You can optionally specify an IP address in the box provided, but the default interface IP address is the selected subnet's external gateway and the best choice unless you are setting up a more complicated connection. Any IP address you specify must belong to the subnet in the drop-down menu._
+**Note: You can optionally specify an IP address in the box provided, but the default interface IP address is the selected subnet's external gateway and the best choice unless you are setting up a more complicated connection. Any IP address you specify must belong to the subnet in the drop-down menu.**
 
 4. Click "Add Interface."
 
@@ -108,7 +108,7 @@ As you use HP Cloud, click on the "Overview" options any time to query current u
 1. Click "Instances" under "Manage Compute" to create an instance (virtual server).
 2. Click "+Launch Instance" in the upper right-hand navigation of the screen.You can leave the default choice of the "Any Availability Zone" (AZ) box to work across AZs, or click the drop box to specify  where to locate an instance.
 
-Note: You might specify an AZ for an instance if you want to segregate AZs per function for your own organizational purposes; e.g., you could select AZ1 for your data center, and set the remaining two up later for other discrete functions. Such a setup is completely optional as the AZs share all information and work in tandem.
+**Note: You might specify an AZ for an instance if you want to segregate AZs per function for your own organizational purposes; e.g., you could select AZ1 for your data center, and set the remaining two up later for other discrete functions. Such a setup is completely optional as the AZs share all information and work in tandem.**
 
 #####Name the instance and launch#####
 
@@ -145,7 +145,7 @@ A volume is a block storage device you attach to an instance.
 8. Select an instance to attach the volume to from the drop-down menu on the "Manage Volume Attachments" page.
 9. Under "Device Name," you can specify a location in the system if desired or enter the displayed default.
 
-_Note: If going with the default, you must still enter it by hand even though it is displayed (greyed out). Otherwise, you receive an error message that you must specify a location. Good times._
+**Note: If going with the default, you must still enter it by hand even though it is displayed (greyed out). Otherwise, you receive an error message that you must specify a location. Good times.**
 
 10. Click "Attach Volume."
 
