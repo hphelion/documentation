@@ -12,7 +12,6 @@ Cloud Console Getting Started walks you through network setup, connection, insta
 
 This page covers how to:
 
-* [Begin Cloud setup](#Begin)
 * [Create and connect a network](#Createandconnect)
 * [Manage HP Cloud](#ManageHPCloud)
 
@@ -24,10 +23,8 @@ and provides links:
 **Screenshot of Interface. Screenshots everywhere!!!! They're coming!**
 
 
-##Begin Cloud setup## {#Begin}
 
-1. Login to HP Cloud with your username and password.
-2. Activate an Availability Zone (AZ) from the list under "Compute" in the Cloud Console interface. 
+
 
 ##Create and connect a network## {#Createandconnect}
 
@@ -41,13 +38,14 @@ This section includes how to:
 
 ###Create a network### {#Createanetwork}
 
-1. On the Cloud Console Interface, click "Project," then "Networks" under "Manage Networks."
-2. Click "+Create Network" in the right-hand navigation.
-3. Enter a "Network Name." (Look at again for description/use of "Admin State" and then if needed, ask Steve - should you leave the default checked for it?)
+1. Login to HP Cloud with your username and password.
+2. On the Cloud Console Interface, click "Project," then "Networks" under "Manage Networks."
+3. Click "+Create Network" in the right-hand navigation.
+4. Enter a "Network Name" in the pop-up screen and continue to the directions in "{#Create a subnet}" below
 
 ###Create a subnet### {#Createasubnet}
 
-1. On the "Subnet" page, enter the name of your subnet.
+1. Click the "Subnet" tab after entering the "Network Name" nameOn the "Subnet" page, enter the name of your subnet.
 2. Tab to or click in the the "Network Address" box. The pop-up window states the network address is in Classless Inter-Domain Routing (CIDR) format; i.e.,  000.000.0.0/00. Enter the network address displayed: 192.168.0.0/24.
 3. Keep the IPv4 default in the "IP Version" box unless you know you have moved to IPv6.
 4. Leave the "Gateway IP" box blank to use the default value of the network address; e.g., 192.168.0.1 for 192.168.0.0/24.
