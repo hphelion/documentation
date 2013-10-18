@@ -27,23 +27,24 @@ Based on the OpenStack Nova project, the HP Cloud Compute service provides on-de
 
 ###Instance types available### {#sizes}
 
-| Size     | API Name          | RAM (GB) | # of Cores | Total HP CCUs | Disk Size |
-| -------- | ----------------- | -------- | ---------- | ------------- | --------- |
-| XS       | standard.xsmall   | 1        | 1          | 1             | 20GB      |
-| S        | standard.small    | 2        | 2          | 2             | 40GB      |
-| M        | standard.medium   | 4        | 2          | 4             | 80GB      |
-| L        | standard.large    | 8        | 4          | 8             | 160GB     |
-| XL       | standard.xlarge   | 15       | 4          | 15            | 300GB     |
-| 2XL      | standard.2xlarge  | 30       | 8          | 30            | 500GB     |
-| 4XL      | standard.4xlarge* | 60       | 12         | 60            | 900GB     |
-| 8XL      | standard.8xlarge* | 120      | 16         | 104           | 1800GB    |
-|          |  **High Memory**  |          |            |               |           |
-| High Mem | highmem.large*    | 16       | 4          | 8             | 160GB     |
-| L                                                                                |      
-| High Mem | highmem.xlarge*   | 30       | 4          | 15            | 300GB     |
-| XL                                                                               | 
-| High Mem | highmem.2xlarge*  | 60       | 8          | 30            | 500GB     |
-| 2XL                                                                              | 
+| Size     | API Name           | RAM (GB) | # of Cores | Total HP CCUs | Disk Size |
+| -------- | ------------------ | -------- | ---------- | ------------- | --------- |
+| XS       | standard.xsmall    | 1        | 1          | 1             | 20GB      |
+| S        | standard.small     | 2        | 2          | 2             | 40GB      |
+| M        | standard.medium    | 4        | 2          | 4             | 80GB      |
+| L        | standard.large     | 8        | 4          | 8             | 160GB     |
+| XL       | standard.xlarge    | 15       | 4          | 15            | 300GB     |
+| 2XL      | standard.2xlarge   | 30       | 8          | 30            | 500GB     |
+| 4XL      | standard.4xlarge*  | 60       | 12         | 60            | 900GB     |
+| 8XL      | standard.8xlarge*  | 120      | 16         | 104           | 1800GB    |
+
+**High memory versions**
+
+| Size        | API Name        | RAM (GB) | # of Cores | Total HP CCUs | Disk Size |
+| ----------- | --------------- | -------- | ---------- | ------------- | --------- |
+| High Mem-L  | highmem.large*  | 16       | 4          | 8             | 160GB     |     
+| High Mem-XL | highmem.xlarge* | 30       | 4          | 15            | 300GB     |
+| High Mem-2XL| highmem.2xlarge*| 60       | 8          | 30            | 500GB     |
 
 *New sizes/configurations
 
