@@ -71,7 +71,7 @@ For a quick search of the [Knowledge Base](https://community.hpcloud.com/knowled
 ###[Cloud Compute](https://community.hpcloud.com/search/knowledge/Cloud+compute) ### {#CloudCompute}
 :    HP's cloud computing platform, designed to provision and manage large networks of virtual machines. 
 
-###Cloud Compute Unit (CCU)
+###[Cloud Compute Unit (CCU)](https://community.hpcloud.com/search/knowledge/CCU) ### {#CloudCompute}
 :    An HP Cloud Compute Unit (CCU) is a unit of CPU capacity that describes the amount of compute power that a virtual core has available to it. Thus 6.5 CCUs are roughly equivalent to the minimum power of one logical core (a hardware hyper-thread) of an Intel® 2012 Xeon® 2.60 GHz CPU.
 
 ###[CodePlex](https://community.hpcloud.com/search/knowledge/CodePlex) ### {#CodePlex}
@@ -131,7 +131,7 @@ For a quick search of the [Knowledge Base](https://community.hpcloud.com/knowled
 ###[Identity Management](https://community.hpcloud.com/search/knowledge/identity+management) ### {#IdentityManagement}
 :    Allocation and dynamic distribution of identity information across security domains.
 
-###IKE ###
+###[IKE](https://community.hpcloud.com/search/knowledge/IKE) ### {#CloudCompute}
 :    Internet Key Exchange
 
 ###[Image](https://community.hpcloud.com/search/knowledge/image) ### {#Image}
@@ -152,7 +152,7 @@ For a quick search of the [Knowledge Base](https://community.hpcloud.com/knowled
 ###[Instance](https://community.hpcloud.com/search/knowledge/instance) ### {#Instance}
 :    A virtual machine or server in the cloud environment.
 
-###IPsec ###
+###[IPsec](https://community.hpcloud.com/search/knowledge/IPsec) ### {#CloudCompute}
 :    Internet Protocol Security (IPsec) is a technology protocol suite for securing Internet Protocol (IP) communications by authenticating and/or encrypting each IP packet of a communication session. IPsec also includes protocols for establishing mutual authentication between agents at the beginning of the session and negotiation of cryptographic keys to be used during the session.
 
 ## J ##
@@ -187,7 +187,7 @@ For a quick search of the [Knowledge Base](https://community.hpcloud.com/knowled
 
 ## N ##
 
-###NAT-T ###
+###[NAT-T](https://community.hpcloud.com/search/knowledge/nat-t) ### {#CloudCompute}
 :    Network Address Translation - Traversal
 
 ## O ##
@@ -263,7 +263,7 @@ For a quick search of the [Knowledge Base](https://community.hpcloud.com/knowled
 ###[SSL](https://community.hpcloud.com/search/knowledge/SSL) ### {#SSL}
 :    Acronym for the secure socket layer encryption protocol. 
 
-###strongSwan ###
+###[strongSwan](https://community.hpcloud.com/search/knowledge/strongSwan) ### {#CloudCompute}
 :    strongSwan is an open source IPsec implementation for Linux 2.6 and 3.x kernels. The focus of the project is on strong authentication mechanisms using X.509 public key certificates and optional secure storage of private keys on smartcards through a standardized PKCS#11 interface.
 
 ## T ##
