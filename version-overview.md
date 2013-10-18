@@ -27,28 +27,30 @@ Based on the OpenStack Nova project, the HP Cloud Compute service provides on-de
 
 ###Instance types available### {#sizes}
 
-| Size     | API Name           | RAM (GB) | # of Cores | Total HP CCUs | Disk Size |
-| -------- | ------------------ | -------- | ---------- | ------------- | --------- |
-| XS       | standard.xsmall    | 1        | 1          | 1             | 20GB      |
-| S        | standard.small     | 2        | 2          | 2             | 40GB      |
-| M        | standard.medium    | 4        | 2          | 4             | 80GB      |
-| L        | standard.large     | 8        | 4          | 8             | 160GB     |
-| XL       | standard.xlarge    | 15       | 4          | 15            | 300GB     |
-| 2XL      | standard.2xlarge   | 30       | 8          | 30            | 500GB     |
-| 4XL      | standard.4xlarge*  | 60       | 12         | 60            | 900GB     |
-| 8XL      | standard.8xlarge*  | 120      | 16         | 104           | 1800GB    |
+| Size     | API Name            | RAM (GB) | # of Cores | Total HP CCUs | Disk Size |
+| -------- | ------------------- | -------- | ---------- | ------------- | --------- |
+| XS*      | standard.xsmall     | 1        | 1          | 1             | 20GB      |
+| S        | standard.small      | 2        | 2          | 2             | 40GB      |
+| M        | standard.medium     | 4        | 2          | 4             | 80GB      |
+| L        | standard.large      | 8        | 4          | 8             | 160GB     |
+| XL       | standard.xlarge     | 15       | 4          | 15            | 300GB     |
+| 2XL      | standard.2xlarge    | 30       | 8          | 30            | 500GB     |
+| 4XL      | standard.4xlarge**  | 60       | 12         | 60            | 900GB     |
+| 8XL      | standard.8xlarge**  | 120      | 16         | 104           | 1800GB    |
 
 **High memory versions**
 
-| Size        | API Name        | RAM (GB) | # of Cores | Total HP CCUs | Disk Size |
-| ----------- | --------------- | -------- | ---------- | ------------- | --------- |
-| High Mem-L  | highmem.large*  | 16       | 4          | 8             | 160GB     |     
-| High Mem-XL | highmem.xlarge* | 30       | 4          | 15            | 300GB     |
-| High Mem-2XL| highmem.2xlarge*| 60       | 8          | 30            | 500GB     |
+| Size        | API Name         | RAM (GB) | # of Cores | Total HP CCUs | Disk Size |
+| ----------- | ---------------- | -------- | ---------- | ------------- | --------- |
+| High Mem-L  | highmem.large**  | 16       | 4          | 8             | 160GB     |     
+| High Mem-XL | highmem.xlarge** | 30       | 4          | 15            | 300GB     |
+| High Mem-2XL| highmem.2xlarge**| 60       | 8          | 30            | 500GB     |
 
-*New sizes/configurations
+*Running an extra small (XS) Windows instance requires a 30GB local disk. In order to run an XS Windows instance you must create a bootable block storage volume and run your Windows instance from this.
 
-**Note:** An HP Cloud Compute Unit (CCU) is a unit of CPU capacity that describes the amount of compute power that a virtual core has available to it. Thus 6.5 CCUs are roughly equivalent to the minimum power of one logical core (a hardware hyper-thread) of an Intel&reg; 2012 Xeon&reg; 2.60 GHz CPU .
+**New sizes/configurations
+
+**Note:** An HP Cloud Compute Unit (CCU) is a unit of CPU capacity that describes the amount of compute power that a virtual core has available to it. Thus 6.5 CCUs are roughly equivalent to the minimum power of one logical core (a hardware hyper-thread) of an Intel&reg; 2012 Xeon&reg; 2.60 GHz CPU.
 
 ## Availability Zones ## {#AZ}
 Each region--US East and US West--consists of three physically isolated availability zones in which you can create instances and/or block storage volumes. You can use resources spread across multiple availability zones to create an application with high availability.  When you work in a region, the following objects are region wide:
