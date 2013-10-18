@@ -39,11 +39,11 @@ Based on the OpenStack Nova project, the HP Cloud Compute service provides on-de
 | 8XL      | standard.8xlarge* | 120      | 16         | 104           | 1800GB    |
 |          |  **High Memory**  |          |            |               |           |
 | High Mem | highmem.large*    | 16       | 4          | 8             | 160GB     |
-| L        |                   |          |            |               |           |
+  L        
 | High Mem | highmem.xlarge*   | 30       | 4          | 15            | 300GB     |
-| XL       |                   |          |            |               |           |
+  XL  
 | High Mem | highmem.2xlarge*  | 60       | 8          | 30            | 500GB     |
-| 2XL      |                   |          |            |               |           |
+  2XL 
 
 *New sizes/configurations
 
