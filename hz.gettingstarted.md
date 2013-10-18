@@ -23,9 +23,6 @@ and provides links:
 **Screenshot of Interface. Screenshots everywhere!!!! They're coming!**
 
 
-
-
-
 ##Create and connect a network## {#Createandconnect}
 
 This section includes how to:
@@ -41,28 +38,27 @@ This section includes how to:
 1. Login to HP Cloud with your username and password.
 2. On the Cloud Console Interface, click "Project," then "Networks" under "Manage Networks."
 3. Click "+Create Network" in the right-hand navigation.
-4. Enter a "Network Name" in the pop-up screen and continue to the directions in "{#Create a subnet}" below
+4. Enter a "Network Name" in the "Create Network" pop-up screen, leave the Admin State box checked, and continue to the directions in "{#Create a subnet}" below.
 
 ###Create a subnet### {#Createasubnet}
 
-1. Click the "Subnet" tab after entering the "Network Name" nameOn the "Subnet" page, enter the name of your subnet.
-2. Tab to or click in the the "Network Address" box. The pop-up window states the network address is in Classless Inter-Domain Routing (CIDR) format; i.e.,  000.000.0.0/00. Enter the network address displayed: 192.168.0.0/24.
-3. Keep the IPv4 default in the "IP Version" box unless you know you have moved to IPv6.
-4. Leave the "Gateway IP" box blank to use the default value of the network address; e.g., 192.168.0.1 for 192.168.0.0/24.
-5. Leave the "Disable Gateway" box unchecked to use the default and click "Create." 
-6. The "Networks" screen displays your network name and associated subnets.
-7. To see a graphic display of your network setup, click "Network Topology."
+1. Click the "Subnet" tab in the "Create Network" pop-up screen. *Note*: If you click the "Create" button before the "Subnet" tab, the interface automatically defaults to the same screen as the "Subnet tab" takes you to, but displays an error message.
+2. Enter the name of your subnet.
+3. Click in the the "Network Address" box. The pop-up message states the network address is in Classless Inter-Domain Routing (CIDR) format; i.e.,  000.000.0.0/00. Enter the network address displayed: 192.168.0.0/24.
+4. Keep the IPv4 default in the "IP Version" box unless you know you have moved to IPv6.
+5. Leave the "Gateway IP" box blank to use the default value of the network address; e.g., 192.168.0.1 for 192.168.0.0/24.
+6. Leave the "Disable Gateway" box unchecked to use the default and click "Create." 
+7. The "Networks" screen displays your network name and associated subnets.
+8. To see a graphic display of your network setup, click "Network Topology" under "Manage Network" in the left-hand navigation.
 
 
 ###Create a router### {#Createarouter}
 
-1.  If on the "Network Topology" screen, click "Create Router" on the top right-hand navigation. If not, click "Routers" under the "Manage Network" heading in the left-hand navigation.
+1.  If on the "Network Topology" screen, click "Create Router" in the top right-hand navigation. If not, click "Routers" under the "Manage Network" heading in the left-hand navigation.
 
-2.  Enter your router name and click "Create Router." The router name and status appear on the "Routers" page.
+2.  Enter your router name and click "Create Router." The router name and status appear on the "Routers" page. *Note*: For router details, you can click the router "Name" to display its ID number and status. If you do this, click "Back" before the following steps to make the "Set Gateway" action available.
 
-Note: For router details, you can click the router "Name" to display its ID number and status. If you do this, click "Back" before the following steps to make the "Set Gateway" action available.
-
-3. On the "Router" page, click "Set Gateway" under "Actions" to connect your router to the subnet.
+3. On the "Router" page, click "Set Gateway" under "Actions" to connect your router to the Internet.
 
 4. Click the drop-down menu in the "External Network" box in the "Set Gateway" pop-up, select "Ext-Net," and click "Set Gateway."
 
@@ -71,16 +67,16 @@ Note: For router details, you can click the router "Name" to display its ID numb
 ###Connect your network### {#Connectyournetwork}
 
 1. Click the router name on the "Routers" page.
-2. Click "+Add Interface" on the top far-right of the "Router Details" page.
-3. Click the drop-down menu in the "Select Subnet" box in the "Add Interface" pop-up and click on the network you configured.
 
-**Note**: You can optionally specify an IP address in the box provided, but the default interface IP address is the selected subnet's external gateway and the best choice unless you are setting up a more complicated connection. Any IP address you specify must belong to the subnet in the drop-down menu.
+2. Click "+Add Interface" on the top far-right of the "Router Details" page. *Note*: You can click on the "Network Topology" link under "Manage Network" in the left-hand navigation to see a graphical representation of your network.
+
+3. Click the drop-down menu in the "Select Subnet" box in the "Add Interface" pop-up and click on the network you configured. **Note**: You can optionally specify an IP address in the box provided, but the default interface IP address is the selected subnet's external gateway and the best choice unless you are setting up a more complicated connection. Any IP address you specify must belong to the subnet in the drop-down menu.
 
 4. Click "Add Interface."
 
 ##Manage HP Cloud## {#ManageHPCloud}
 
-You are now ready to use the options under "Manage Compute." Mosey on over to the left-hand navigation, click that bad boy and let's get started. This section includes:
+You are now ready to use the options under "Manage Compute" under "Project" in the left-hand navigation. This section includes:
 
 * [Overview](#Overview)
 
@@ -96,6 +92,7 @@ You are now ready to use the options under "Manage Compute." Mosey on over to th
 ###Overview### {#Overview}
 
 Select "Overview" under "Manage Compute," to display your usage summary and quotas for:
+
 * Instances
 
 * VPCUs
@@ -111,12 +108,9 @@ As you use HP Cloud, click on the "Overview" options any time to query current u
 ####Create an instance#### {#Instance}
 
 1. Click "Instances" under "Manage Compute" to create an instance (virtual server).
-2. Click "+Launch Instance" in the upper right-hand navigation of the screen.You can leave the default choice of the "Any Availability Zone" (AZ) box to work across AZs, or click the drop box to specify  where to locate an instance.
-
-**Note**: You can specify an AZ for an instance if you want to segregate AZs per function for your own organizational purposes; e.g., you could select AZ1 for your data center, and set the remaining two up later for other discrete functions. Such a setup is completely optional as the AZs share all information and work in tandem.
+2. Click "+Launch Instance" in the upper right-hand navigation of the screen. You can leave the default choice of the "Any Availability Zone" (AZ) box to work across AZs, or click the drop box to specify  where to locate an instance. *Note*: You can specify an AZ for an instance if you want to segregate AZs per function for your own organizational purposes; e.g., you could select AZ1 for your data center, and set the remaining two up later for other discrete functions. Such a setup is completely optional as the AZs share all information and work in tandem.
 
 3. Name the instance:
-
 Click the drop-down menu under "Flavor" to select the hardware bed you want to emulate, i.e., how much disk space and RAM you need. When you select a Flavor, the "Flavor Details" box displays:
 
 * Name
@@ -132,7 +126,7 @@ Click the drop-down menu under "Flavor" to select the hardware bed you want to e
 
 5. Select the source from which you want to boot your Instance from the drop-down menu under "Instance Boot Source," enter any required information for that source in the box displayed, and click "Launch".
 
-6. Drag and drop the network desired from the "Available Network" box to the "Selected Networks" box or click the "+" next to the desired network.
+6. Click the "Networking" tab in the upper navigation and drag and drop the desired network from the "Available Networks box the the "Selected Networks" box or click the (+) next to the desired network to select it. *Note* You can also drag and drop the network desired from the "Available Network" box to the "Selected Networks" box (this is the part that needs work to describe exactly where user is) or click the "+" next to the desired network; however, if you do not click the "Networking" tab you see an error message. (Go over this. Needs work.)
 
 7. Click "Launch."
 
@@ -148,10 +142,7 @@ A volume is a block storage device you attach to an instance.
 6. Click "Create Volume."
 7. To attach the volume to an instance, click "Edit Attachments" under "Action" on the "Volumes" page.
 8. Select an instance to attach the volume to from the drop-down menu on the "Manage Volume Attachments" page.
-9. Under "Device Name," you can specify a location in the system if desired or enter the displayed default.
-
-**Note**: If going with the default, you must still enter it by hand even though it is displayed (greyed out). Otherwise, you receive an error message that you must specify a location. Good times.
-
+9. Under "Device Name," you can specify a location in the system if desired or enter the displayed default. **Note**: If going with the default, you must still enter it by hand even though it is displayed (greyed out). Otherwise, you receive an error message that you must specify a location. Good times. Steve checking on whether used has to use default. If so, it's a bug. Follow up to see if fixed.
 10. Click "Attach Volume."
 
 ###Images and Snapshots### {#Imagesandsnapshots}
