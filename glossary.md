@@ -71,6 +71,9 @@ For a quick search of the [Knowledge Base](https://community.hpcloud.com/knowled
 ###[Cloud Compute](https://community.hpcloud.com/search/knowledge/Cloud+compute) ### {#CloudCompute}
 :    HP's cloud computing platform, designed to provision and manage large networks of virtual machines. 
 
+###Cloud Compute Unit (CCU)
+:    An HP Cloud Compute Unit (CCU) is a unit of CPU capacity that describes the amount of compute power that a virtual core has available to it. Thus 6.5 CCUs are roughly equivalent to the minimum power of one logical core (a hardware hyper-thread) of an Intel® 2012 Xeon® 2.60 GHz CPU.
+
 ###[CodePlex](https://community.hpcloud.com/search/knowledge/CodePlex) ### {#CodePlex}
 :    An open source project-hosting web site maintained by MicroSoft.
 
@@ -128,6 +131,9 @@ For a quick search of the [Knowledge Base](https://community.hpcloud.com/knowled
 ###[Identity Management](https://community.hpcloud.com/search/knowledge/identity+management) ### {#IdentityManagement}
 :    Allocation and dynamic distribution of identity information across security domains.
 
+###IKE ###
+:    Internet Key Exchange
+
 ###[Image](https://community.hpcloud.com/search/knowledge/image) ### {#Image}
 :    1) An installable release package of a program, application, or software system.  As in, "We need to install the new image of Ruby Fog."  2) A copy of a virtual server including the operating system information, system state, and application configurations.
 
@@ -145,6 +151,9 @@ For a quick search of the [Knowledge Base](https://community.hpcloud.com/knowled
 
 ###[Instance](https://community.hpcloud.com/search/knowledge/instance) ### {#Instance}
 :    A virtual machine or server in the cloud environment.
+
+###IPsec ###
+:    Internet Protocol Security (IPsec) is a technology protocol suite for securing Internet Protocol (IP) communications by authenticating and/or encrypting each IP packet of a communication session. IPsec also includes protocols for establishing mutual authentication between agents at the beginning of the session and negotiation of cryptographic keys to be used during the session.
 
 ## J ##
 
@@ -177,6 +186,9 @@ For a quick search of the [Knowledge Base](https://community.hpcloud.com/knowled
 :    A model layer can also include particular kinds of objects, and expose those objects characteristics using simple properties or attributes. For example, "Server" is a model that represents the concept of a virtual [instance](#Instance), with the "Server" model including properties and attributes such as name, [flavor](#Flavor), [image](#Image), addresses, and so on.   See also, [abstraction layer](#AbstractionLayer).
 
 ## N ##
+
+###NAT-T ###
+:    Network Address Translation - Traversal
 
 ## O ##
 
@@ -250,6 +262,9 @@ For a quick search of the [Knowledge Base](https://community.hpcloud.com/knowled
 
 ###[SSL](https://community.hpcloud.com/search/knowledge/SSL) ### {#SSL}
 :    Acronym for the secure socket layer encryption protocol. 
+
+###strongSwan ###
+:    strongSwan is an open source IPsec implementation for Linux 2.6 and 3.x kernels. The focus of the project is on strong authentication mechanisms using X.509 public key certificates and optional secure storage of private keys on smartcards through a standardized PKCS#11 interface.
 
 ## T ##
 
