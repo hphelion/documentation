@@ -162,6 +162,9 @@ A volume is a block storage device you attach to an instance.
 
 ###Images and Snapshots### {#Imagesandsnapshots}
 
+[Terms and Provisions](#TermsandProvisions) 
+##Terms and Provisions## {#TermsandProvisions} 
+
 **Functionality Overview**
 Click "Images and Snapshots" to view available server and volume images. You can view image details as well as launch an instance or volume from here. In addition, you can create your own images from which to launch an instance or a volume and delete images.   as discussed in [Create an Instance](#Instance) and [Create a Volume](#Volume). 
  
@@ -173,13 +176,14 @@ Follow up with Steve - There is a Public tab - Public should only be under a pro
 
 **Important** HP provides a list of server and volume images for your use. If you have a server image already customized with developer tools, software, etc., or a volume image with your data, you can also create a "snapshot" of your own server or volume image.
 
-We covered launching an instance under [####Create an Instance####](#Instance) above. You can also  launch an instance from the list displayed when you click "Images and Snapshots" in the interface.
+We covered launching an instance under Create an Instance {#Instance} above. You can also  launch an instance from the list displayed when you click "Images and Snapshots" in the interface.
 
 You can create your own image with "+Create Image" in the top navigation or go to Instances in the left-hand navigation and create a snapshot of your own server and setup custom instances to replicate. 
 
 Under Project tab is my own image after I create a snapshot/"+Create Image" Check this out in interface.  Then I can launch another one.
 
 Can do the same with volumes, but you can't create an image with a volume attached. Make volume snapshot. Create volume from a snapshot and attach to other instances.
+
 ##Identity## {#Identity}
 
 ###Access and Security### {#Accessandsecurity}
