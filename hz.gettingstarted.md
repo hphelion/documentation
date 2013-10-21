@@ -111,7 +111,7 @@ As you use HP Cloud, click on the "Overview" options any time to query current u
 
 An instance is a virtual server.
 
-**Important** You can boot an instance from the HP-provided list of images or your own image. If the latter, you must first create a snapshot of the image. See (#Images and Snapshots) for details then complete the steps in this section. 
+**Important** You can boot an instance from the HP-provided list of images or your own image. If the latter, you must first create a snapshot of the image. See [Images and Snapshots](#Imagesandsnapshots) for details then complete the steps in this section. 
 
 1. Click "Instances" under "Manage Compute."
 
@@ -138,7 +138,7 @@ An instance is a virtual server.
 
 7. Click the "Networking" tab in the upper navigation of  "Launch Instance" and drag and drop the network from which you want to launch the instance from the "Available Networks" box to the "Selected Networks" box or click the (+) next to the desired network to select it. 
 
-**Note** If you click "Launch" after "Select Image," before clicking the "Networking" tab, you can also drag and drop the network desired from the "Available Network" box to the "Selected Networks" box. However, if you do not click the "Networking" tab an error message displays. 
+**Note** If you click "Launch" after "Select Image," before clicking the "Networking" tab, you can also drag and drop the network desired from the "Available Network" box to the "Selected Networks" box; however, an error message displays.
 
 8. Click "Launch."
 
@@ -146,14 +146,14 @@ An instance is a virtual server.
 
 A volume is a block storage device you attach to an instance.
 
-**Important**: You can boot from the HP-provided list of volumes or your own volume. If the latter, you must first create a snapshot of the volume. See (#Images and Snapshots) for details then complete the steps in this section.
+**Important**: You can boot from the HP-provided list of volumes or your own volume. If the latter, you must first create a snapshot of the volume. See [Imagess and Snqapshots](#Imagesandsnapshots) for details then complete the steps in this section.
  
 1. In the left-hand navigation, click "Volumes" under "Manage Compute."
 2. Click "+Create Volume" in the upper right-hand navigation.
 3. Enter a name under "Volume Name" and, optionally, a description in the box below and a "Type" from the following drop-down menu.
 4. Staying within the "Volume Limits" shown in the "Create Volume" box, enter a number of GBs under "Size."
 5. Select a volume source from the drop-down menu. 
-6. If you select "Image" as your volume source, click the drop-down menu for "Choose an image" under the "Use image as a source" box that appears. Select 
+6. If you select "Image" as your volume source, click the drop-down menu for "Choose an image" under the "Use image as a source" box that appears. Click on the image you want to use. 
 7. Click "Create Volume."
 8. To attach the volume to an instance, click "Edit Attachments" under "Action" on the "Volumes" page.
 9. Select an instance to attach the volume to from the drop-down menu on the "Manage Volume Attachments" page.
@@ -162,29 +162,35 @@ A volume is a block storage device you attach to an instance.
 
 ###Images and Snapshots### {#Imagesandsnapshots}
 
-[Terms and Provisions](#TermsandProvisions) 
-##Terms and Provisions## {#TermsandProvisions} 
-
 **Functionality Overview**
-Click "Images and Snapshots" to view available server and volume images. You can view image details as well as launch an instance or volume from here. In addition, you can create your own images from which to launch an instance or a volume and delete images.   as discussed in [Create an Instance](#Instance) and [Create a Volume](#Volume). 
- 
+
+Click "Images and Snapshots" to view available server and volume images and their details. HP provides a list of server and volume images for your use or you can create a "snapshot" of your own server or volume image.  You can launch an instance from the instructions in this section as well as from the instructions under [Create an Instance](#Instance) above. 
+
 1. Click "Images and Snapshots" in the left hand-navigation to display image names and information. For more details, click the image name on the "Images" page. 
 
-The "Projects" tab is my own image after I create a snapshot/"+Create Image." Once created, I can launch another one. Check this out in interface.  Not right is it? Shouldn't this just display in the "Images Name" list? 
+2. To delete an image, clck the box next to its name and click "Delete Images" in the upper-right hand navigation.
 
-Follow up with Steve - There is a Public tab - Public should only be under a project and not here. Did this get submitted as bug and fixed?
+3. To create an image, click "+Create Image" in the top navigation to open the "Create an Image" pop-up. 
 
-**Important** HP provides a list of server and volume images for your use. If you have a server image already customized with developer tools, software, etc., or a volume image with your data, you can also create a "snapshot" of your own server or volume image.
+4. Enter an image name and an optional description in the respective fields.
 
-We covered launching an instance under Create an Instance {#Instance} above. You can also  launch an instance from the list displayed when you click "Images and Snapshots" in the interface.
+5. Click the drop-down menu under "Select an Image Source." Depending which image source you use, enter the HTTP URL in the "Image Location" field or click  "Choose File" to select the image source.
 
-You can create your own image with "+Create Image" in the top navigation or go to Instances in the left-hand navigation and create a snapshot of your own server and setup custom instances to replicate. 
+**Important** Only images available via an HTTP URL are supported. Compressed image binaries (.zip and .tar.gz) are supported. The "Image Location" field MUST be a valid and direct URL to the image binary. URLs that redirect or serve error pages will result in unusable images.
 
-Under Project tab is my own image after I create a snapshot/"+Create Image" Check this out in interface.  Then I can launch another one.
+6. Click the drop-down box in the "Format" field and select your format.
 
-Can do the same with volumes, but you can't create an image with a volume attached. Make volume snapshot. Create volume from a snapshot and attach to other instances.
+7. Enter the minimum disk space required to boot the image in the "Minimum Disk (GB)" Field. If none entered, the field defaults to 0 (no minimum). 
 
-##Identity## {#Identity}
+8. Click "Public" or "Protected." OK, so what does Public vs Protected mean exactly?
+
+9. Click the blue "Create Image" button.
+
+10. After creating an image, it appears under the "Project" tab on the "Images and Snapshots" page. Launch as many instances as you like from the image your created.  **Is the image also available from the list of image names???**
+
+**Follow up with Steve - There is a Public tab - Public should only be under a project and not here. Did this get submitted as bug and fixed?**
+
+**Note** You can create volume the same way you create instance images, but you cannot create an image with a volume attached. You must attach the volume to each instance separately.  
 
 ###Access and Security### {#Accessandsecurity}
 Add security and group rules from Networking Guide:
@@ -199,55 +205,22 @@ Edit Rule
 Add rule
 Similar to 1.0.  See my Network Guide
 
-####Identity####
-Domain
-(Projects that I enable) 
-A domain administrator can perform all services. 
-The entity that serves as a collection of users, groups, roles, and tenants. It represents the primary relationship between the customer and HP.  A Domain can be an individual or company.  
- 
-When a Domain is created, the public Groups User and Admin are created in the Domain.  Additionally, the domainadmin and domainuser Role will be placed on the Admin and User Group respectively.  The first User created in a Domain is marked the Domain owner and placed in both the User and Admin Group.  
- 
-Cross Domain trust relationships can be established to enable one Domain to allow Users of another Domain access to its Tenants
-A Domain will have one Owner
-A Domain may have multiple Users
-A Domain may have multiple Groups
-A Domain may have multiple Roles
+###Organize and manage HP Cloud Access## {#Identity}
 
-Project
-Represents a collection of HP service subscriptions within a domain.  (compute, storage, etc)   In OpenStack Cactus terminology a project would equate to a Swift account or Nova project.  
-A project may define its own public Roles (e.g. Nova defines sysadmin, developer, projectowner, and netadmin)
+Click  "Identify" in the left-hand interface to display links to:
 
-A Project may contain multiple service subscriptions
-The same service type (e.g. Nova, Swift) subscriptions may exist multiple times within the same Tenant as long as they differ service endpoint.
+* Domains - The domain is the primary relationship between you and HP Cloud and can be an individual or a company. A domain owner enables a project and encompasses the permissions and functions of its users, groups, and roles. The first user created in a domain is marked the domain owner and placed in both "Users" and "Groups". A domain owner can perform all services. 
 
+A domain has one owner and may have multiple users, groups and roles. A domain owner can allow users of another domain access to its projects.
 
-Service specify or define roles.
+* Projects - A project is a collection of HP Cloud services within a domain, e.g., compute, storage, etc. A project may define its own roles, e.g. Compute defines sysadmin, developer, project owner, and netadmin. A Project may contain multiple services, such as Compute or Object Storage. Services can exist multiple times within the same projects as long as they have different service endpoints, distinguised by their geography, region, and AZ. *Check this wording with Steve.*
 
-Represents a service subscription.  Services are distinguished between one another by their service type (compute, object-store, etc) and service endpoint.  Service endpoints are distinguished by their location described by a geography, region, and zone.
+* Users - Users are defined individually and have role identities in the groups to which they are assigned. A user may have multiple roles.
 
-User are defined separately and put in a group with role identities.
-An identity stored in the Control Services identity store used by a client to authenticate to HP OpenStack.
-A User may wield multiple Roles
+* Groups - A group is created when a domain is created. A group may contain multiple users. Domain owners can add individuals to a group and create new groups. 
 
-Group
-A collection of Users within a Domain.  
+* Roles - A role is a user or group responsibility within a project that determines access rights. Roles include domain owner, sysadmin, netadmin, developer, and project owner. Domain owners can create roles with specific function permissions. A role may be associated with multiple users and multiple groups.
 
-There exist system defined public Groups (User, Admin) available by default to all domains.  For each new Domain created, an Admin and User Group will be created.  Additionally, Domain administrators can create new Groups for their own usage.
-A Group may contain multiple Users
-A User may be a member of multiple Groups
-Public Groups cannot be deleted or modified by Domain administrators or their Users
-Role
-A responsibility which is linked to a User or Group and scoped to a particular Tenant for the purpose of determining access rights.  There exist system defined public Roles (domainadmin, domainuser, sysadmin, netadmin, developer, projectowner) available to all Domains.  Domain administrators can create new Roles with specific Grants for their own usage.
-A Role may be associated with multiple Users
-A Role may be associated with multiple Groups
-Public Roles cannot be deleted or modified by Domain administrators or their Users
-Need full explanation of identities and how to manage identity. In a project - Managing machines' interactions. How to set it up.
-Descending order
-1. Domains - highest level
-2. Projects
-3. Users
-4. Groups - collection of people can have roles also.
-5. Role
 
 
 ##For further information## {#Forfurtherinformation}
