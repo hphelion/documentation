@@ -2,7 +2,7 @@
 layout: default
 title: "HP Cloud application PaaS overview"
 permalink: /apaas/
-product: apaas
+product: apaas 
 
 ---
 # HP Cloud application platform as a service (aPaaS) overview
