@@ -19,8 +19,6 @@ the relationship with OpenStack, and the HP value-add components.
 
 Cloud OS is based on (and adds value to) the OpenStack technology. Refer to the OpenStack documentation site.
 
-[request access on our sign-up page](https://account.hpcloud.com/cases/betarequest/lbaas/).
-
 * [OpenStack documentation home page] (http://docs.openstack.org/)
 * [OpenStack Glossary] (http://docs.openstack.org/glossary/content/glossary.html)
 * [OpenStack End User Guide] (http://docs.openstack.org/user-guide/content/index.html)
