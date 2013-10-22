@@ -16,10 +16,9 @@ Welcome! You've got questions, we have the answers.
 * Why should I use an OpenStack distribution from HP?
 * How is HP Cloud OS different from upstream (OpenStack)?
 * How can I participate?
-* For which distributions (platforms?) does HP Cloud OS provide packages?
+* For which distributions does HP Cloud OS provide packages?
 * Is HP Cloud OS a fork from OpenStack?
 * How do I deploy HP Cloud OS?
-* Is HP Cloud OS a "true cloud"?
 * Which OpenStack components does HP Cloud OS include?
 * Which OpenStack components does HP Cloud OS offer as an alternative, and why?
 * Which components or functionality does HP Cloud OS add?
