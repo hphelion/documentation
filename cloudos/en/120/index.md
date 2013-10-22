@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Cloud OS Documentation"
+title: "HP Cloud OS Documentation Home"
 permalink: /cloudos/en/120/
 product: cloudos
 ---
