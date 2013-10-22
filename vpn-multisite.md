@@ -19,7 +19,6 @@ This guide covers the following:
 
 - [Collect network and security information](#netsecinfo)
 - [Define IPsec and IKE proposals](#defineipsecike)
-- [Collect the network credentials for all the sites](#creds)
 - [Configure the VPN for the IKE and IPsec proposals](#configvpn)
 - [Establish a connection with your HP Cloud VPN](#connect)
 - [Troubleshoot and verify connections](#trouble)
@@ -28,6 +27,8 @@ This guide covers the following:
 ##Collect network and security information## {#netsecinfo}
 
 Before proceeding, collect network and security information on both sides for the VPN connection you are trying to establish.
+
+We recommend that you compile the information in a spreadsheet to have handy when you need to input the data.
 
 Collect the following information for each RIGHT remote network:
 
@@ -60,8 +61,6 @@ Define the IPsec and IKE proposals in their routers. A router can support both I
 **Note:** IKEv1 is supported in most router platforms, so this configuration provides only information about how to configure the IKEv1.
  
 The output below provides information about the IKE proposal and the IPsec proposal, with details about the authentication algorithm, encryption algorithm, perfect forward secrecy, shared secret, and using the main mode or aggressive mode.   
-
-**Note:** The VPN software instance here does not support aggressive mode.
 
 **Note:** Each location can have different IKE and IPsec proposals. Adjust the configuration at the VPC end (Left side) to adopt all the proposals as needed. 
 
@@ -100,29 +99,11 @@ For simplicity, assume that all routers you will connect use the IKE and IPsec p
 
 back to the [top](#top)
 
-##Collect the network credentials for all the sites## {#creds}
-
-We recommend that you compile the information in a spreadsheet to have handy when you need to input the data.
-
-For the left (VPC) network:
-
-- Public Floating IP: e.g., 15.xxx.xxx.xxx
-- Private IP: e.g., e.g., 10.2.79.21 
-- Private Subnet: e.g., 10.2.0.0/16
-- NAT: Yes/No
-
-For each right network you want to make a connection with:
-
-- Public IP (Gateway IP): e.g., 209.65.244.239
-- Public IP of VPN Router: e.g., 172.168.2.50
-- Private Subnet: e.g., 192.168.4.0/24
-- NAT: Yes/No
-
-back to the [top](#top)
-
 ##Configure the VPN for the IKE and IPsec proposals## {#configvpn}
 
 This section uses strongSwan to configure the IKE and IPsec proposals from the previous section.
+
+**Note:** Make sure you have configured your VPN Gateway instance according to the ["VPN Quick Start Guide"](http://docs.hpcloud.com/compute/vpn-quickstart).
 
 ###strongSwan configuration files
 
@@ -134,7 +115,7 @@ This section uses strongSwan to configure the IKE and IPsec proposals from the p
 
 strongSwan creates three configuration files during installation:
 
-- IPsec.cong
+- IPsec.conf
 - IPsec.secrets
 - strongswan.conf
 
@@ -149,15 +130,7 @@ These files are in the /etc/ directory of the installation file as well as a fol
 
 Before looking into the configuration options of this file, familiarize yourself with some of the key configuration attributes.  When configuring the VPC VPN instance, always consider it as the LEFT node and the remote server as the RIGHT node. The diagram below shows the basic pieces of the network’s LEFT and RIGHT sides.  
 
-**Note:** strongSwan always considers the remote network with the hardware router at RIGHT.
-
 insert image
-
-The configuration has two or three major subsections:
- 
-- `config setup`
-- `conn <name>`
-- `ca  <custom>`
 
 ####Config setup file
 
