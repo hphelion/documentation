@@ -1,8 +1,8 @@
 ---
 layout: default
-title: "HP Cloud Fog Binding CDN Examples"
-permalink: /bindings/fog/cdn/
-product: fog
+title: "HP Cloud OS Test"
+permalink: /cloudos/test6/
+product: cloudos
 
 ---
 # Test 6
