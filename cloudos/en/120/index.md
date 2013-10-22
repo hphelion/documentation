@@ -15,4 +15,16 @@ the fastest growing open-source cloud community. This documentation site is for 
 If you're new to HP Cloud OS, read the HP Cloud OS Technical Overview [link]. It describes the architecture, 
 the relationship with OpenStack, and the HP value-add components.
 
+## Upstream Documentation
+
+Cloud OS is based on (and adds value to) the OpenStack technology. Refer to the OpenStack documentation site.
+
+* OpenStack documentation home page
+* OpenStack Glossary
+* OpenStack End User Guide
+* OpenStack Compute Administration Manual
+* OpenStack Networking Administration Guide
+* OpenStack Object Storage Administration Manual
+* OpenStack Operations Guide
+
 Copyright &copy; 2012-2013 Hewlett-Packard Corp. All rights reserved.
