@@ -5,9 +5,11 @@ permalink: /version-overview/
 
 ---
 # HP Cloud version 13.5 overview
-HP Cloud Services bases our services on the open source cloud management project OpenStack. Our latest version of HP Cloud Compute runs the most recent version of OpenStack (Havana) that expands functionality and enhances the current capabilities of the existing services.  One of the most significant changes is the addition of our new networking capabilities based on the OpenStack Networking project Neutron with an SDN plugin from HP Networking. This new networking service provides enhanced network functionality and the ability to fine-tune and define your own virtual network.
+HP Cloud Services bases our services on the open source cloud management project OpenStack. Our latest version of HP Cloud Compute runs the most recent version of OpenStack (Havana) that expands functionality and enhances the current capabilities of the existing services.  One of the most significant changes is the addition of our new best-in-class software defined networking (SDN) for virtual private clouds. This new networking service provides enhanced network functionality and the ability to fine-tune and define your own virtual network.
 
 In addition, you now have larger and more powerful instance types (sizes) to choose from--four times the size of the largest instances offered by most public clouds. And, our large, xlarge, and 2xlarge sizes are also offered in high memory versions. (See the [chart below](#sizes) for all available instance types.)
+
+Putting all of this together, along with bulk data import capability, means that it's much simpler to move applications to the public cloud and to create applications for the public cloud. 
 
 Since HP Cloud Compute version 13.5 is based on the latest code from the OpenStack community there are now separate Networking and Block Storage services with API endpoints independent from the HP Cloud Compute API.  In addition, the Image Management API is now exposed to users.  While you can continue to execute basic networking, block storage and image management commands through the HP Cloud Compute API, these newly exposed interfaces provide you even more control and allow you access to new advanced features. 
 
@@ -16,10 +18,10 @@ Finally, the new versions of these services will now be closely tracking upstrea
 The sections below explain each piece of our service.
 
 - [HP Cloud Compute](#Compute)
-- [Availability Zones](#AZ)
-- [Image Management](#Image)
-- [Networking](#Network)
+- [Region-wide resources](#AZ)
+- [Software Defined Networking](#Network)
 - [Block Storage](#BlockSt)
+- [Bulk data import](#BulkImp)
 
 ## HP Cloud Compute ## {#Compute}
 Based on the OpenStack Nova project, the HP Cloud Compute service provides on-demand computing giving you the ability to provision and manage large clusters of instances (virtual machines). With the new version you have more flexibility to select the type of instance that meets the needs of your application without having to pay for additional resources.
@@ -52,13 +54,14 @@ Based on the OpenStack Nova project, the HP Cloud Compute service provides on-de
 
 **Note:** An HP Cloud Compute Unit (CCU) is a unit of CPU capacity that describes the amount of compute power that a virtual core has available to it. Thus 6.5 CCUs are roughly equivalent to the minimum power of one logical core (a hardware hyper-thread) of an Intel&reg; 2012 Xeon&reg; 2.60 GHz CPU.
 
-## Availability Zones ## {#AZ}
+## Region-wide resources ## {#AZ}
 Each region--US East and US West--consists of three physically isolated availability zones in which you can create instances and/or block storage volumes. You can use resources spread across multiple availability zones to create an application with high availability.  When you work in a region, the following objects are region wide:
 
 - Images
 - Floating IPs
-- Networking
-- Security Groups
+- Network definitions
+- Security group definitions
+- Keypairs
 - SSH keys
 
 If you start from the Management Console you can select the availability zone that you want your instance or volume to reside. You can also list and select availability zones from the API:
@@ -80,11 +83,8 @@ If you don't specify an availability zone the compute or storage service automat
 
 **Important:** Volumes can only be attached to servers created in the same availability zone.
 
-## Image Management ## {#Image}
-With the new version of HP Cloud Compute the Image Management service, based on OpenStack Glance, is now exposed as a separate API endpoint. This provides for more control over images and we will be adding more functionality to this going forward.
-
-## Networking ## {#Network}
-HP Cloud v13.5 builds on the OpenStack Neutron service complemented with SDN technology from HP Networking to offer more robust networking capabilities and the ability to fine tune your network as needed. Spinning up a compute instance automatically configures
+## Software Defined Networking ## {#Network}
+HP Cloud v13.5 builds on the OpenStack Neutron service complemented with Software Defined Networking (SDN) technology from HP Networking to offer more robust and flexible networking capabilities to rapidly customize your network as needed. Then, you can simply connect it with your existing on-premise datacenter via a VPN tunnel. Spinning up a compute instance automatically configures
 
 - A default network 
 - A subnet
@@ -94,11 +94,12 @@ HP Cloud v13.5 builds on the OpenStack Neutron service complemented with SDN tec
 Our [Networking API](/api/v13/networking/) or the [Management Console](/mc/compute/networks/) exposes a rich set of additional functionality including the ability to 
 
 - Define and configure your own private Virtual L2 Networks
-- Establish Virtual Private Network (VPN) connection to the networks you create 
-- Specify IP address ranges and security group parameters that define the firewall rules for your instances
+- Establish Virtual Private Network (VPN)  
+- Specify IP address ranges and security group parameters that define the firewall rules for your instances to ensure they don’t conflict with your existing on-premise network
 - Allocate and manage public floating IP addresses
 - Connect to a specific network
 - Connect an instance to more than one network
+- Establish a Virtual Private Network (VPN) connection between the networks you create and your existing on-premise network
 
 You also have the ability to set communication rules (security group rules) for both inbound and outbound traffic, create separate networks with their own IP address ranges, and control how servers connect to them.  As a region-wide service you have the ability to
 
@@ -109,3 +110,6 @@ You also have the ability to set communication rules (security group rules) for 
 
 ## Block Storage ## {#BlockSt}
 Block storage has always been available in the HP Cloud Compute service, but now HP Cloud provides it as a separate but integrated service based on OpenStack Cinder.  Block storage provides persistent, manageable volumes along with the ability to take a snapshot of a volume.   Bootable volumes can be created from images in the Image Management service and these bootable volumes can be used to create persistent instances.  The physical implementation of our storage solution is based on technology developed in HP labs and provides enterprise class volume availability.
+
+## Bulk data import ## {#BulkImp}
+Bulk import means we load your data into HP Cloud Block Storage or HP Cloud Object Storage--just send a hard drive directly to the HP data centers where we rapidly transfer your data to the cloud. Get apps with big data sets to the HP Cloud quickly and easily.
