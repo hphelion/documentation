@@ -1,0 +1,100 @@
+---
+layout: default
+title: "HP Cloud OS API Quick Start"
+permalink: /cloudos/en/120/api/quickstart/
+product: cloudos
+---
+
+# HP Cloud OS API Quick Start
+
+                    <!-- Table of Contents --> 
+                    <div class="toc-title"><p>Contents</p>
+                        <dl>
+                            <dt><span class="section"><a href="index.html#Cloud-OS-API-Introduction">HP Cloud OS API Introduction</a></span></dt>
+                            <dd class="no-dash">
+                                <dl><dt><span class="section"><a href="index.html#Prerequisites">Prerequisites</a></span></dt>
+                                    <dt><span class="section"><a href="index.html#What-is-Cloud-OS">What is HP Cloud OS?</a></span></dt>
+                                    <dt><span class="section"><a href="index.html#What-are-the-Cloud-OS-Services">What are the HP Cloud OS Services?</a></span></dt>
+                                    <dt><span class="section"><a href="index.html#What-is-the-Interactive-REST-API-Documentation-app">What is the HP Cloud OS API Documentation?</a></span></dt>
+                                    <dt><span class="section"><a href="index.html#API-Documentation-Ports-per-Service">API Documentation Ports per Service</a></span></dt>
+                                    <dt><span class="section"><a href="index.html#API-Security-Tokens">API Security Tokens</a></span></dt>
+                                </dl>
+                            </dd>
+                            <dt><span class="section"><a href="index.html#Use-Case-How-to-Provision-Topologies-OpenStack">Use Case #1: Define &amp; Provision a Topology (Grizzly)</a></span></dt>
+                            <!-- <dd>
+                                <dl>
+                                    <dt><span class="section"><a href="index.html#Create-Resource-Pool-OpenStack">Task 1: Create a Resource Pool (Grizzly)</a></span></dt>
+                                    <dt><span class="section"><a href="index.html#Post-Infrastructure-Topology-Document-OpenStack">Task 2: Post an Infrastructure Topology Document (Grizzly)</a></span></dt>
+                                    <dt><span class="section"><a href="index.html#Provision-Topology-OpenStack">Task 3: Provision the Topology (Grizzly)</a></span></dt>
+                                    <dt><span class="section"><a href="index.html#Verify-Provisioning-Job-Completion-OpenStack">Task 4: Verify Provisioning Job Completion (Grizzly)</a></span></dt>
+                                    <dt><span class="section"><a href="index.html#Verify-Realized-Topology-OpenStack">Task 5: Verify the Realized Topology (Grizzly)</a></span></dt>
+                            </dd> --> 
+                            <dt><span class="section"><a href="index.html#Use-Case-How-to-Provision-Topologies-HPCS">Use Case #2: Define &amp; Provision a Topology (Diablo)</a></span></dt>
+                            <!-- <dd>
+                                <dl>
+                                    <dt><span class="section"><a href="index.html#Create-Resource-Pool-HPCS">Task 1: Create a Resource Pool (Diablo)</a></span></dt>
+                                    <dt><span class="section"><a href="index.html#Post-Infrastructure-Topology-Document-HPCS">Task 2: Post an Infrastructure Topology Document (Diablo)</a></span></dt>
+                                    <dt><span class="section"><a href="index.html#Provision-Topology-HPCS">Task 3: Provision the Topology (Diablo)</a></span></dt>
+                                    <dt><span class="section"><a href="index.html#Verify-Provisioning-Job-Completion-HPCS">Task 4: Verify Provisioning Job Completion (Diablo)</a></span></dt>
+                                    <dt><span class="section"><a href="index.html#Verify-Realized-Topology-HPCS">Task 5: Verify the Realized Topology (Diablo)</a></span></dt>
+                                </dl>
+                            </dd>   -->        
+                            
+                            <dt><span class="section"><a href="index.html#Use-Case-Deprovision-Topology-Grizzly-or-Diablo">Use Case #3: Deprovision a Topology (Grizzly or Diablo)</a></span></dt>   
+                            <dt><span class="section"><a href="index.html#Next-Steps">Next Steps</a></span></dt>
+                        </dl>
+                    </div>
+                    
+
+## HP Cloud OS API Introduction
+
+Welcome to the HP Cloud OS 1.2.0 release. For developers, HP Cloud OS includes a REST API that allows you to interact programmatically with your clouds.  
+        This API Quick Start topic is designed to help you learn the API by introducing the HP Cloud OS services and walking through several use cases.  
+        On your deployed clouds, we have also provided the HP Cloud OS API Documentation app. It's a framework for describing, producing, consuming, and visualizing the API. 
+        The app includes comprehensive reference API documentation and an interactive environment where you can try each request and view the response from your server. 
+   
+Also refer to the [OpenStack API documentation](http://docs.openstack.org).   
+
+### Prerequisites
+
+This topic assumes that you have already:
+
+* Installed and set up HP Cloud OS, following the instructions in the HP Cloud OS Installation Guide. 
+* Used the HP Cloud OS Operational Dashboard to define the OS image and related components for your cloud.
+* Launched an OS image on your cloud instance.
+* Created a project.
+
+If you have not yet set up a cloud, refer to the HP Cloud OS Installation Guide for instructions.
+
+Note: After a cloud environment has been created 
+            in the Operational Dashboard, you manage the cloud            
+            through the Administration Dashboard. The Administration Dashboard provides a simplified means             
+            of creating and managing Cloud Connector resources, infrastructure topology templates, resource             
+            binding documents, as well as the ability to provision a composite topology described by the             
+            topology templates and binding documents.
+            
+For details about the user interface dialogs, see the <i>HP Cloud OS Operational Dashboard Guide</i> and 
+            the <i>HP Cloud OS Administration Dashboard Guide</i>, which were provided on the FTP site for this 
+            release.
+            
+To submit REST API calls, you will need your Keystone authentication credentials so you can generate security tokens. 
+The steps are described in the [API Security Tokens](#API-Security-Tokens) section of this topic.
+   
+As you walk through the examples in this topic and submit REST calls, you'll need to provide the actual values that pertain to your cloud. We'll 
+             identify the properties you must modify in the REST calls, including some that are generated by prior calls and shown in the POST responses.
+        
+In call payloads, we recommend that you set the scope to the default <code>user-project</code> level, 
+            to prevent unintended impacts on other projects.
+
+## Upstream Documentation
+
+Cloud OS is based on (and adds value to) the OpenStack technology. Refer to the OpenStack documentation site.
+
+* [OpenStack documentation home page](http://docs.openstack.org/)
+* [OpenStack Glossary](http://docs.openstack.org/glossary/content/glossary.html)
+* [OpenStack End User Guide](http://docs.openstack.org/user-guide/content/index.html)
+* [OpenStack Cloud Administrator Guide](http://docs.openstack.org/trunk/openstack-compute/admin/content/index.html)
+* [OpenStack Networking Administration Guide](http://docs.openstack.org/trunk/openstack-network/admin/content/index.html)
+* [OpenStack Operations Guide](http://docs.openstack.org/trunk/openstack-ops/content/index.html)
+
+Copyright &copy; 2012-2013 Hewlett-Packard Corp. All rights reserved.
