@@ -7,44 +7,10 @@ product: cloudos
 
 # HP Cloud OS API Quick Start
 
-                    <!-- Table of Contents --> 
-                    <div class="toc-title"><p>Contents</p>
-                        <dl>
-                            <dt><span class="section"><a href="index.html#Cloud-OS-API-Introduction">HP Cloud OS API Introduction</a></span></dt>
-                            <dd class="no-dash">
-                                <dl><dt><span class="section"><a href="index.html#Prerequisites">Prerequisites</a></span></dt>
-                                    <dt><span class="section"><a href="index.html#What-is-Cloud-OS">What is HP Cloud OS?</a></span></dt>
-                                    <dt><span class="section"><a href="index.html#What-are-the-Cloud-OS-Services">What are the HP Cloud OS Services?</a></span></dt>
-                                    <dt><span class="section"><a href="index.html#What-is-the-Interactive-REST-API-Documentation-app">What is the HP Cloud OS API Documentation?</a></span></dt>
-                                    <dt><span class="section"><a href="index.html#API-Documentation-Ports-per-Service">API Documentation Ports per Service</a></span></dt>
-                                    <dt><span class="section"><a href="index.html#API-Security-Tokens">API Security Tokens</a></span></dt>
-                                </dl>
-                            </dd>
-                            <dt><span class="section"><a href="index.html#Use-Case-How-to-Provision-Topologies-OpenStack">Use Case #1: Define &amp; Provision a Topology (Grizzly)</a></span></dt>
-                            <!-- <dd>
-                                <dl>
-                                    <dt><span class="section"><a href="index.html#Create-Resource-Pool-OpenStack">Task 1: Create a Resource Pool (Grizzly)</a></span></dt>
-                                    <dt><span class="section"><a href="index.html#Post-Infrastructure-Topology-Document-OpenStack">Task 2: Post an Infrastructure Topology Document (Grizzly)</a></span></dt>
-                                    <dt><span class="section"><a href="index.html#Provision-Topology-OpenStack">Task 3: Provision the Topology (Grizzly)</a></span></dt>
-                                    <dt><span class="section"><a href="index.html#Verify-Provisioning-Job-Completion-OpenStack">Task 4: Verify Provisioning Job Completion (Grizzly)</a></span></dt>
-                                    <dt><span class="section"><a href="index.html#Verify-Realized-Topology-OpenStack">Task 5: Verify the Realized Topology (Grizzly)</a></span></dt>
-                            </dd> --> 
-                            <dt><span class="section"><a href="index.html#Use-Case-How-to-Provision-Topologies-HPCS">Use Case #2: Define &amp; Provision a Topology (Diablo)</a></span></dt>
-                            <!-- <dd>
-                                <dl>
-                                    <dt><span class="section"><a href="index.html#Create-Resource-Pool-HPCS">Task 1: Create a Resource Pool (Diablo)</a></span></dt>
-                                    <dt><span class="section"><a href="index.html#Post-Infrastructure-Topology-Document-HPCS">Task 2: Post an Infrastructure Topology Document (Diablo)</a></span></dt>
-                                    <dt><span class="section"><a href="index.html#Provision-Topology-HPCS">Task 3: Provision the Topology (Diablo)</a></span></dt>
-                                    <dt><span class="section"><a href="index.html#Verify-Provisioning-Job-Completion-HPCS">Task 4: Verify Provisioning Job Completion (Diablo)</a></span></dt>
-                                    <dt><span class="section"><a href="index.html#Verify-Realized-Topology-HPCS">Task 5: Verify the Realized Topology (Diablo)</a></span></dt>
-                                </dl>
-                            </dd>   -->        
-                            
-                            <dt><span class="section"><a href="index.html#Use-Case-Deprovision-Topology-Grizzly-or-Diablo">Use Case #3: Deprovision a Topology (Grizzly or Diablo)</a></span></dt>   
-                            <dt><span class="section"><a href="index.html#Next-Steps">Next Steps</a></span></dt>
-                        </dl>
-                    </div>
-                    
+Topics:
+
+* [HP Cloud OS API Introduction
+** [Prerequisites](#prerequisites)
 
 ## HP Cloud OS API Introduction
 
