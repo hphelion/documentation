@@ -115,11 +115,11 @@ An instance is a virtual server.
 
 1. Click "Instances" under "Manage Compute."
 
-2. Click "+Launch Instance" in the upper right-hand navigation of the screen. You can leave the default choice of the "Any Availability Zone" (AZ) box to work across AZs, or click the drop box to specify  where to locate an instance. **Note**: You can specify an AZ for an instance if you want to segregate AZs per function for your own organizational purposes; e.g., you could select AZ1 for your data center, and set the remaining two up later for other discrete functions. Such a setup is completely optional as the AZs share all information and work in tandem.
+2. Click "+Launch Instance" in the upper right-hand navigation of the screen. You can leave the default choice of the "Any Availability Zone" (AZ) box, which arbitrarily assigns an AZ for an instance or click the drop box to specify  where to locate an instance. **Note**: The default choice locating an instance in a single AZ offers high availability, ensuring a high level of operational performance. You can also specify an AZ for an instance if you want to segregate AZs per function for your own organizational purposes; e.g., you could select AZ1 for your data center, and set the remaining two up later for other discrete functions. Such a setup is completely optional as the AZs share all information and work in tandem.
 
 3. Enter a name in the "Instance Name" box.
 
-4. Click the drop-down menu under "Flavor" to select the hardware bed you want to emulate, i.e., how much disk space and RAM you need. When you select a flavor, the "Flavor Details" box displays the following:
+4. Click the drop-down menu under "Flavor" to select the hardware configuration you want to emulate, i.e., how much disk space and RAM you need. When you select a flavor, the "Flavor Details" box displays the following:
 
 * Name
 * # of VCPUs
@@ -146,7 +146,7 @@ An instance is a virtual server.
 
 A volume is a block storage device you attach to an instance.
 
-**Important**: You can boot from the HP-provided list of volumes or your own volume. If the latter, you must first create a snapshot of the volume. See [Imagess and Snqapshots](#Imagesandsnapshots) for details then complete the steps in this section.
+**Important**: You can boot from the HP-provided list of volumes or your own volume. If the latter, you must first create a snapshot of the volume. See [Images and Snapshots](#Imagesandsnapshots) for details then complete the steps in this section.
  
 1. In the left-hand navigation, click "Volumes" under "Manage Compute."
 2. Click "+Create Volume" in the upper right-hand navigation.
@@ -186,11 +186,11 @@ Click "Images and Snapshots" to view available server and volume images and thei
 
 9. Click the blue "Create Image" button.
 
-10. After creating an image, it appears under the "Project" tab on the "Images and Snapshots" page. Launch as many instances as you like from the image your created.  **Is the image also available from the list of image names???**
+10. After creating an image, it appears under the "Project" tab on the "Images and Snapshots" page. Launch as many instances as you like from the image you created.  **Is the image also available from the list of image names???**
 
 **Follow up with Steve - There is a Public tab - Public should only be under a project and not here. Did this get submitted as bug and fixed?**
 
-**Note** You can create volume the same way you create instance images, but you cannot create an image with a volume attached. You must attach the volume to each instance separately.  
+**Note** You can create volume images the same way you create instance images, but you cannot create an image with a volume attached. You must attach the volume to each instance separately.  
 
 ###Access and Security### {#Accessandsecurity}
 Add security and group rules from Networking Guide:
@@ -209,19 +209,17 @@ Similar to 1.0.  See my Network Guide
 
 Click  "Identify" in the left-hand interface to display links to:
 
-* Domains - The domain is the primary relationship between you and HP Cloud and can be an individual or a company. A domain owner enables a project and encompasses the permissions and functions of its users, groups, and roles. The first user created in a domain is marked the domain owner and placed in both "Users" and "Groups". A domain owner can perform all services. 
+*Domain - The domain is your primary work space in HP Cloud.  An individual or company can be the domain owner and enables a project with the necessary services and permissions. The first user created in a domain is considered the domain owner and placed in both the “Users” and “Domain Administrators” groups. 
 
 A domain has one owner and may have multiple users, groups and roles. A domain owner can allow users of another domain access to its projects.
 
-* Projects - A project is a collection of HP Cloud services within a domain, e.g., compute, storage, etc. A project may define its own roles, e.g. Compute defines sysadmin, developer, project owner, and netadmin. A Project may contain multiple services, such as Compute or Object Storage. Services can exist multiple times within the same projects as long as they have different service endpoints, distinguised by their geography, region, and AZ. *Check this wording with Steve.*
+*Projects – A project is a collection of HP Cloud services within a domain, e.g., compute, storage, etc.  A project is defined by selecting services to be activated and a set of users to interact with the services. A Project may contain multiple services, such as compute or object storage. Services can exist multiple times within the same project as long as they have different service endpoints, distinguished by their geography and region.Check this wording with Steve.
 
-* Users - Users are defined individually and have role identities in the groups to which they are assigned. A user may have multiple roles.
+*Users - Users are defined individually and can be assigned to groups and granted roles either directly or through inclusion in groups.  A user may have multiple roles.
 
-* Groups - A group is created when a domain is created. A group may contain multiple users. Domain owners can add individuals to a group and create new groups. 
+* Groups - When you create a domain, two default groups are created: Users and Domain Administrators. Domain Administrators can add individuals to a group and create new groups, which may contain multiple users. 
 
-* Roles - A role is a user or group responsibility within a project that determines access rights. Roles include domain owner, sysadmin, netadmin, developer, and project owner. Domain owners can create roles with specific function permissions. A role may be associated with multiple users and multiple groups.
-
-
+* Roles - A role is a user or group  capability within a  service that determines access rights. Roles include  Compute Admin, Network Admin, Object Storage Admin, and others.  Domain owners can  assign roles to individuals or groups. A role may be associated with multiple users and multiple groups.
 
 ##For further information## {#Forfurtherinformation}
 
