@@ -12,6 +12,8 @@ Cloud Console Getting Started walks you through network setup, connection, insta
 
 After initial setup, revisit the interface to monitor usage, modify, add, and delete networks, instances, volumes, usergroups, etc.
 
+***Add screenshot HP Public Cloud Horizon Preview Edition
+
 This page covers how to:
 
 * [Create and connect a network](#Createandconnect)
@@ -20,9 +22,6 @@ This page covers how to:
 and provides links:
 
 * [For further information](#Forfurtherinformation)
-
-
-**Screenshot of Interface. Screenshots everywhere!!!! They're coming!**
 
 
 ##Create and connect a network## {#Createandconnect}
@@ -39,8 +38,16 @@ This section includes how to:
 
 1. Login to HP Cloud with your username and password.
 2. On the Cloud Console Interface, click "Project," then "Networks" under "Manage Networks."
+
+***Add screenshot Create a Network Image 1
 3. Click "+Create Network" in the right-hand navigation.
+
+***Add screenshot Create a Network Image 2
+
+
 4. Enter a "Network Name" in the "Create Network" pop-up screen, leave the Admin State box checked, and continue to the directions in "{#Create a subnet}" below.
+
+***Add screenshot Create a Network Image 3
 
 ###Create a subnet### {#Createasubnet}
 
@@ -50,15 +57,21 @@ This section includes how to:
 4. Keep the IPv4 default in the "IP Version" box unless you know you have moved to IPv6.
 5. Leave the "Gateway IP" box blank to use the default value of the network address; e.g., 192.168.0.1 for 192.168.0.0/24.
 6. Leave the "Disable Gateway" box unchecked to use the default and click "Create." 
+
+***Add screenshot Create a Subnet Image 1
+
 7. The "Networks" screen displays your network name and associated subnets.
+
+***Add screenshot Create a Subnet Image 2
+
 8. To see a graphic display of your network setup, click "Network Topology" under "Manage Network" in the left-hand navigation.
 
 
 ###Create a router### {#Createarouter}
 
-1.  If on the "Network Topology" screen, click "Create Router" in the top right-hand navigation. If not, click "Routers" under the "Manage Network" heading in the left-hand navigation.
+1.  If on the "Network Topology" screen, click "Create Router" in the top right-hand navigation or left-hand navigation. If not, click "Routers" under the "Manage Network" heading in the left-hand navigation.
 
-2.  If you clicked "Routers" under "Manage Network", click "+Create Router" and enter the router name in the pop-up. If you cleaked "Create Router" on the "Network Topology" screen, enter your router name.  The router name and status appear on the "Routers" page. **Note**: For router details, click the router "Name" to display its ID number and status. If you do this, click "Back" before the following steps to make the "Set Gateway" action available.
+2.  If you clicked "Routers" under "Manage Network", click "+Create Router" and enter the router name in the pop-up. If you clicked "Create Router" on the "Network Topology" screen, enter your router name.  The router name and status appear on the "Routers" page. **Note**: For router details, click the router "Name" to display its ID number and status. If you do this, click "Back" on the browser before the following steps to make the "Set Gateway" action available.
 
 3. On the "Router" page, click "Set Gateway" under "Actions" to connect your router to the Internet.
 
@@ -157,7 +170,7 @@ A volume is a block storage device you attach to an instance.
 7. Click "Create Volume."
 8. To attach the volume to an instance, click "Edit Attachments" under "Action" on the "Volumes" page.
 9. Select an instance to attach the volume to from the drop-down menu on the "Manage Volume Attachments" page.
-10. Under "Device Name," you can specify a location in the system if desired or enter the displayed default. **Note**: If going with the default, you must still enter it by hand even though it is displayed (greyed out). Otherwise, you receive an error message that you must specify a location. Good times. (Steve checking on whether user has to use default. If so, it's a bug. Follow up to see if fixed.)
+10. Under "Device Name," you can specify a location in the system if desired or enter the displayed default. **Note**: If going with the default, you must still enter it by hand even though it is displayed (greyed out). Otherwise, you receive an error message that you must specify a location. Good times. 
 11. Click "Attach Volume."
 
 ###Images and Snapshots### {#Imagesandsnapshots}
@@ -186,9 +199,9 @@ Click "Images and Snapshots" to view available server and volume images and thei
 
 9. Click the blue "Create Image" button.
 
-10. After creating an image, it appears under the "Project" tab on the "Images and Snapshots" page. Launch as many instances as you like from the image you created.  **Is the image also available from the list of image names???**
+10. After creating an image, it appears under the "Project" tab on the "Images and Snapshots" page. Launch as many instances as you like from the image you created.  
 
-**Follow up with Steve - There is a Public tab - Public should only be under a project and not here. Did this get submitted as bug and fixed?**
+**Add Lin's stuff to this section. Shared field - if someone makes an image available to you it shows up in Shared Field. Add other explanations from Lin.**
 
 **Note** You can create volume images the same way you create instance images, but you cannot create an image with a volume attached. You must attach the volume to each instance separately.  
 
@@ -203,7 +216,6 @@ Click Security Groups
 Add Name
 Edit Rule
 Add rule
-Similar to 1.0.  See my Network Guide
 
 ###Organize and manage HP Cloud Access## {#Identity}
 
@@ -213,7 +225,7 @@ Click  "Identify" in the left-hand interface to display links to:
 
 A domain has one owner and may have multiple users, groups and roles. A domain owner can allow users of another domain access to its projects.
 
-*Projects – A project is a collection of HP Cloud services within a domain, e.g., compute, storage, etc.  A project is defined by selecting services to be activated and a set of users to interact with the services. A Project may contain multiple services, such as compute or object storage. Services can exist multiple times within the same project as long as they have different service endpoints, distinguished by their geography and region.Check this wording with Steve.
+*Projects – A project is a collection of HP Cloud services within a domain, e.g., compute, storage, etc.  A project is defined by selecting services to be activated and a set of users to interact with the services. A Project may contain multiple services, such as compute or object storage. Services can exist multiple times within the same project as long as they have different service endpoints, distinguished by their geography and region.
 
 *Users - Users are defined individually and can be assigned to groups and granted roles either directly or through inclusion in groups.  A user may have multiple roles.
 
