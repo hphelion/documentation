@@ -36,9 +36,9 @@ Based on the OpenStack Nova project, the HP Cloud Compute service provides on-de
 | M        | standard.medium     | 4        | 2          | 4             | 80GB      |
 | L        | standard.large      | 8        | 4          | 8             | 160GB     |
 | XL       | standard.xlarge     | 15       | 4          | 15            | 300GB     |
-| 2XL      | standard.2xlarge    | 30       | 8          | 30            | 500GB     |
-| 4XL      | standard.4xlarge**  | 60       | 12         | 60            | 900GB     |
-| 8XL      | standard.8xlarge**  | 120      | 16         | 104           | 1800GB    |
+| 2XL      | standard.2xlarge    | 30       | 8          | 30            | 570GB     |
+| 4XL      | standard.4xlarge**  | 60       | 8          | 60            | 1100GB    |
+| 8XL      | standard.8xlarge**  | 120      | 16         | 120           | 2200GB    |
 
 **High memory versions**
 
@@ -46,7 +46,7 @@ Based on the OpenStack Nova project, the HP Cloud Compute service provides on-de
 | ----------- | ---------------- | -------- | ---------- | ------------- | --------- |
 | High Mem-L  | highmem.large**  | 16       | 4          | 8             | 160GB     |     
 | High Mem-XL | highmem.xlarge** | 30       | 4          | 15            | 300GB     |
-| High Mem-2XL| highmem.2xlarge**| 60       | 8          | 30            | 500GB     |
+| High Mem-2XL| highmem.2xlarge**| 60       | 8          | 30            | 570GB     |
 
 *Running an extra small (XS) Windows instance requires a 30GB local disk. In order to run an XS Windows instance you must create a bootable block storage volume and run your Windows instance from this.
 
