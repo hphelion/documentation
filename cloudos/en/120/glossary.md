@@ -8,9 +8,9 @@ product: cloudos
 # HP Cloud OS Glossary
 
 
-Index: [A](#A) | [B](#B) | [C](#C) | [D](#D) | [E](#E) | [F](#F) | [G](#G) | [H](#H) | [I](#I) | [J](#J) | [K](#K) | [L](#L) | [M](#M) | [N](#N) | [O](#O) | [P](#P) | [Q](#Q) | [R](#R) | [S](#S) | [T](#T) | [U](#U) | [V](#V) | [W](#W) | [X](#X) | [Y](#Y) | [Z](#Z) | 
+Index: [A](#a) | [B](#b) | [C](#C) | [D](#D) | [E](#E) | [F](#F) | [G](#G) | [H](#H) | [I](#I) | [J](#J) | [K](#K) | [L](#L) | [M](#M) | [N](#N) | [O](#O) | [P](#P) | [Q](#Q) | [R](#R) | [S](#S) | [T](#T) | [U](#U) | [V](#V) | [W](#W) | [X](#X) | [Y](#Y) | [Z](#Z) | 
 
-## -A- {A}
+## A{a}
 
 *API*
 > An Application Programming Interface (API) is a set of routines, protocols, and tools for building software applications. 
@@ -21,7 +21,7 @@ Cloud OS provides a REST API so that programmers can write applications consiste
 > Definition...
 
 
-## -B- {B}
+## B{b}
 
 *Term*
 > Definition...
