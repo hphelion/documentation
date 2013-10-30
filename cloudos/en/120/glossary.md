@@ -45,7 +45,7 @@ Cloud OS provides a REST API so that programmers can write applications consiste
 > Definition...
 
 
-## -D- {D}
+## D
 
 *Term*
 > Definition...
@@ -57,7 +57,7 @@ Cloud OS provides a REST API so that programmers can write applications consiste
 > Definition...
 
 
-## -E- {E}
+## E
 
 *Term*
 > Definition...
@@ -69,7 +69,7 @@ Cloud OS provides a REST API so that programmers can write applications consiste
 > Definition...
 
 
-## -F- {F}
+## F
 
 *Term*
 > Definition...
@@ -81,7 +81,7 @@ Cloud OS provides a REST API so that programmers can write applications consiste
 > Definition...
 
 
-## -G- {G}
+## G
 
 *Term*
 > Definition...
@@ -93,7 +93,7 @@ Cloud OS provides a REST API so that programmers can write applications consiste
 > Definition...
 
 
-## -H- {H}
+## H
 
 *Term*
 > Definition...
@@ -105,7 +105,7 @@ Cloud OS provides a REST API so that programmers can write applications consiste
 > Definition...
 
 
-## -I- {I}
+## I
 
 *Term*
 > Definition...
@@ -117,7 +117,7 @@ Cloud OS provides a REST API so that programmers can write applications consiste
 > Definition...
 
 
-## -J- {J}
+## J
 
 *Term*
 > Definition...
@@ -129,7 +129,7 @@ Cloud OS provides a REST API so that programmers can write applications consiste
 > Definition...
 
 
-## -K- {K}
+## K
 
 *Term*
 > Definition...
@@ -142,7 +142,7 @@ Cloud OS provides a REST API so that programmers can write applications consiste
 
 
 
-## -L- {L}
+## L
 
 *Term*
 > Definition...
@@ -154,7 +154,7 @@ Cloud OS provides a REST API so that programmers can write applications consiste
 > Definition...
 
 
-## -M- {M}
+## M
 
 *Term*
 > Definition...
@@ -166,7 +166,7 @@ Cloud OS provides a REST API so that programmers can write applications consiste
 > Definition...
 
 
-## -N- {N}
+## N
 
 *Term*
 > Definition...
@@ -178,7 +178,7 @@ Cloud OS provides a REST API so that programmers can write applications consiste
 > Definition...
 
 
-## -O- {O}
+## O
 
 *Term*
 > Definition...
@@ -190,7 +190,7 @@ Cloud OS provides a REST API so that programmers can write applications consiste
 > Definition...
 
 
-## -P- {P}
+## P
 
 *private cloud*
 > In a private cloud, the cloud infrastructure is provisioned for exclusive use by a single organization comprising multiple consumers, 
@@ -204,7 +204,7 @@ them, and it may exist on or off the owner's premises.
 > Definition...
 
 
-## -Q- {Q}
+## Q
 
 *Term*
 > Definition...
@@ -216,7 +216,7 @@ them, and it may exist on or off the owner's premises.
 > Definition...
 
 
-## -R- {R}
+## R
 
 *Term*
 > Definition...
@@ -228,7 +228,7 @@ them, and it may exist on or off the owner's premises.
 > Definition...
 
 
-## -S- {S}
+## S
 
 *Term*
 > Definition...
@@ -240,7 +240,7 @@ them, and it may exist on or off the owner's premises.
 > Definition...
 
 
-## -T- {T}
+## T
 
 *Term*
 > Definition...
@@ -252,7 +252,7 @@ them, and it may exist on or off the owner's premises.
 > Definition...
 
 
-## -U- {U}
+## U
 
 *Term*
 > Definition...
@@ -264,7 +264,7 @@ them, and it may exist on or off the owner's premises.
 > Definition...
 
 
-## -V- {V}
+## V
 
 *Term*
 > Definition...
@@ -276,7 +276,7 @@ them, and it may exist on or off the owner's premises.
 > Definition...
 
 
-## -W- {W}
+## W
 
 *Term*
 > Definition...
@@ -288,7 +288,7 @@ them, and it may exist on or off the owner's premises.
 > Definition...
 
 
-## -X- {X}
+## X
 
 *Term*
 > Definition...
@@ -300,7 +300,7 @@ them, and it may exist on or off the owner's premises.
 > Definition...
 
 
-## -Y- {Y}
+## Y
 
 *Term*
 > Definition...
@@ -312,7 +312,7 @@ them, and it may exist on or off the owner's premises.
 > Definition...
 
 
-## -Z- {Z}
+## Z
 
 *Term*
 > Definition...
