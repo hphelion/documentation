@@ -58,7 +58,7 @@ This section includes how to:
 
 1.  If on the "Network Topology" screen, click "Create Router" in the top right-hand navigation. If not, click "Routers" under the "Manage Network" heading in the left-hand navigation.
 
-2.  Enter your router name and click "Create Router." The router name and status appear on the "Routers" page. **Note**: For router details, you can click the router "Name" to display its ID number and status. If you do this, click "Back" before the following steps to make the "Set Gateway" action available.
+2.  If you clicked "Routers" under "Manage Network", click "+Create Router" and enter the router name in the pop-up. If you cleaked "Create Router" on the "Network Topology" screen, enter your router name.  The router name and status appear on the "Routers" page. **Note**: For router details, click the router "Name" to display its ID number and status. If you do this, click "Back" before the following steps to make the "Set Gateway" action available.
 
 3. On the "Router" page, click "Set Gateway" under "Actions" to connect your router to the Internet.
 
@@ -113,7 +113,7 @@ An instance is a virtual server.
 
 **Important** You can boot an instance from the HP-provided list of images or your own image. If the latter, you must first create a snapshot of the image. See [Images and Snapshots](#Imagesandsnapshots) for details then complete the steps in this section. 
 
-1. Click "Instances" under "Manage Compute."
+1. Click "Instances" under "Manage Compute" in the left-hand navigation.
 
 2. Click "+Launch Instance" in the upper right-hand navigation of the screen. You can leave the default choice of the "Any Availability Zone" (AZ) box, which arbitrarily assigns an AZ for an instance or click the drop box to specify  where to locate an instance. **Note**: The default choice locating an instance in a single AZ offers high availability, ensuring a high level of operational performance. You can also specify an AZ for an instance if you want to segregate AZs per function for your own organizational purposes; e.g., you could select AZ1 for your data center, and set the remaining two up later for other discrete functions. Such a setup is completely optional as the AZs share all information and work in tandem.
 
@@ -132,9 +132,9 @@ An instance is a virtual server.
 
 4. Enter the number of instances you want to create under "Instance Count."
 
-5. Select the "Instance Boot Source" source from the drop-down menu, enter information (if the interface prompts) for the source, and click "Launch". 
+5. Select the "Instance Boot Source" source from the drop-down menu. To select an HP Cloud default image, select "Boot from Image" from the drop-down. If you created a snapshot image, select "Boot from snapshot." Enter information (if the interface prompts) for the source.
 
-6. Click the "Select Image" drop down under "Image Name." Select one of the default images HP Cloud provides or an image you created (as discussed [above](#Instance).
+6. Click the "Select Image" drop down under "Image Name." Select one of the default images HP Cloud provides or an image you created (as discussed [above](#Instance) and click "Launch."
 
 7. Click the "Networking" tab in the upper navigation of  "Launch Instance" and drag and drop the network from which you want to launch the instance from the "Available Networks" box to the "Selected Networks" box or click the (+) next to the desired network to select it. 
 
