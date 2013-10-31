@@ -15,6 +15,19 @@ the fastest growing open-source cloud community. This documentation site is for 
 If you're new to HP Cloud OS, read the HP Cloud OS Technical Overview [link]. It describes the architecture, 
 the relationship with OpenStack, and the HP value-add components.
 
+## Video Tutorial
+
+<iframe width="400" height="225" src="//www.youtube.com/embed/Ba2wMPU5tpk" frameborder="0" allowfullscreen> </iframe>
+
+Mark Perriera, Cloud 0S chief architect, introduces the platform, its services, and related OpenStack technology.
+
+[More HP Cloud OS videos...](/cloudos/en/120/videos/)
+
+## Install &amp; Configure Your Clouds
+
+Ready to define and deploy your clouds? Read the [HP Cloud OS Installation &amp; Configuration Guide](/cloudos/en/120/install/). 
+It covers prerequisites, supported platforms, and the installation steps you'll perform in the Operational Dashboard, the Administration Dashboard, and related tools.
+
 ## Upstream Documentation
 
 Cloud OS is based on (and adds value to) the OpenStack technology. Refer to the OpenStack documentation site.
