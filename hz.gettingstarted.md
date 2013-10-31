@@ -82,11 +82,11 @@ This section includes how to:
 
 <img src="media/CreateaRouteImage2.png" width="580" alt="" />
 
-    3. On the "Router" page, click "Set Gateway" under "Actions" to connect your router to the Internet.
+    4. On the "Router" page, click "Set Gateway" under "Actions" to connect your router to the Internet.
 
 <img src="media/CreateaRouterImage3.png" width="580" alt="" />
 
-4. Click the drop-down menu in the "External Network" box in the "Set Gateway" pop-up, select "Ext-Net," and click "Set Gateway."
+    5. Click the drop-down menu in the "External Network" box in the "Set Gateway" pop-up, select "Ext-Net," and click "Set Gateway."
 
 **Note**: The external network is the router's default route, with the router acting as a gateway for external connectivity. While you can configure a subnet that is internal-only, you must connect it to another subnet with external connectivity.
 
@@ -100,7 +100,7 @@ This section includes how to:
 
 <img src="media/Connectyournetworkimage1.png" width="580" alt="" />
 
-3. Click the drop-down menu in the "Select Subnet" box in the "Add Interface" pop-up and click on the network you configured. **Note**: You can optionally specify an IP address in the box provided, but the default interface IP address is the selected subnet's external gateway and the best choice unless you are setting up a more complicated connection. Any IP address you specify must belong to the subnet in the drop-down menu.
+    3. Click the drop-down menu in the "Select Subnet" box in the "Add Interface" pop-up and click on the network you configured. **Note**: You can optionally specify an IP address in the box provided, but the default interface IP address is the selected subnet's external gateway and the best choice unless you are setting up a more complicated connection. Any IP address you specify must belong to the subnet in the drop-down menu.
 
 4. Click "Add Interface."
 
@@ -156,8 +156,7 @@ An instance is a virtual server.
 
 <img src="media/CreateaninstanceImage1.png" width="580" alt="" />
 
-
-3. You can leave the default choice of the "Any Availability Zone" (AZ) box, which arbitrarily assigns an AZ for an instance or click the drop box to specify  where to locate an instance. **Note**: The default choice locating an instance in any AZ offers high availability, ensuring a high level of operational performance. You can also specify an AZ for an instance if you want to segregate AZs per function for your own organizational purposes; e.g., you could select AZ1 for your data center, and set the remaining two up later for other discrete functions. Such a setup is completely optional as the AZs share all information and work in tandem.
+    3. You can leave the default choice of the "Any Availability Zone" (AZ) box, which arbitrarily assigns an AZ for an instance or click the drop box to specify  where to locate an instance. **Note**: The default choice locating an instance in any AZ offers high availability, ensuring a high level of operational performance. You can also specify an AZ for an instance if you want to segregate AZs per function for your own organizational purposes; e.g., you could select AZ1 for your data center, and set the remaining two up later for other discrete functions. Such a setup is completely optional as the AZs share all information and work in tandem.
 
 3. Enter a name in the "Instance Name" box.
 
@@ -174,22 +173,21 @@ An instance is a virtual server.
 
 <img src="media/CreateanInstanceImage2.png" width="580" alt="" />
 
-
-4. Enter the number of instances you want to create under "Instance Count."
+    4. Enter the number of instances you want to create under "Instance Count."
 
 5. Select the "Instance Boot Source" source from the drop-down menu. To select an HP Cloud default image, select "Boot from Image" from the drop-down.  
 
 <img src="media/CreateanInstanceImage3.png" width="580" alt="" />
 
-6. Click the "Select Image" drop down under "Image Name." Select one of the images HP Public Cloud provides and click "Launch."
+    6. Click the "Select Image" drop down under "Image Name." Select one of the images HP Public Cloud provides and click "Launch."
 
 <img src="media/CreateanInstanceImage4.png" width="580" alt="" />
 
-7. Click the "Networking" tab in the upper navigation of  "Launch Instance" and click the "+" next to the network you want to launch an instance from.  You can also drag and drop the network from which you want to launch the instance from the "Available Networks" box to the "Selected Networks" box.
+    7. Click the "Networking" tab in the upper navigation of  "Launch Instance" and click the "+" next to the network you want to launch an instance from.  You can also drag and drop the network from which you want to launch the instance from the "Available Networks" box to the "Selected Networks" box.
 
 **Note** If you click "Launch" after "Select Image," before clicking the "Networking" tab, an error message displays; however, you can still select the network desired from the "Available Network" box to the "Selected Networks" box.
 
-8. Click "Launch."
+    8. Click "Launch."
 
 <img src="media/CreateanInstanceImage5.png" width="580" alt="" />
 
@@ -204,31 +202,31 @@ A volume is a block storage device you attach to an instance.
 
 <img src="media/VolumeImage1.png" width="580" alt="" />
 
-3. Enter a name under "Volume Name" and, optionally, a description in the box below and a "Type" from the following drop-down menu.
+    3. Enter a name under "Volume Name" and, optionally, a description in the box below and a "Type" from the following drop-down menu.
 
 4. Staying within the "Volume Limits" shown in the "Create Volume" box, enter a number of GBs under "Size."
 
 <img src="media/VolumeImage2.png" width="580" alt="" />
 
-5. Select a volume source from the drop-down menu. 
+    5. Select a volume source from the drop-down menu. 
 6. If you select "Image" as your volume source, click the drop-down menu for "Choose an image" under the "Use image as a source" box that appears. Click on the image you want to use. 
 
 <img src="media/VolumeImage3.png" width="580" alt="" />
 
-8. Select an AZ. HP Public Cloud recommends the pre-filled "Any Availability Zone."
-7. Click "Create Volume."
+    7. Select an AZ. HP Public Cloud recommends the pre-filled "Any Availability Zone."
+8. Click "Create Volume."
 
 <img src="media/VolumeImage4.png" width="580" alt="" />
 
-8. To attach the volume to an instance, click "Edit Attachments" under "Action" on the "Volumes" page.
+    9. To attach the volume to an instance, click "Edit Attachments" under "Action" on the "Volumes" page.
 
 <img src="media/VolumeImage5.png" width="580" alt="" />
 
-9. Select an instance to attach the volume to from the drop-down menu on the "Manage Volume Attachments" page.
+    10. Select an instance to attach the volume to from the drop-down menu on the "Manage Volume Attachments" page.
 
-10. Under "Device Name," you can specify a location in the system if desired or enter the displayed default. **Note**: If choosing the default, you must still enter it manually even though it is displayed (greyed out). Otherwise, you receive an error message that you must specify a location. 
+11. Under "Device Name," you can specify a location in the system if desired or enter the displayed default. **Note**: If choosing the default, you must still enter it manually even though it is displayed (greyed out). Otherwise, you receive an error message that you must specify a location. 
 
-11. Click "Attach Volume."
+12. Click "Attach Volume."
 
 <img src="media/VolumeImage6.png" width="580" alt="" />
 
