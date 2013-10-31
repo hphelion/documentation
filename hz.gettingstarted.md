@@ -71,23 +71,37 @@ This section includes how to:
 
 1.  If on the "Network Topology" screen, click "Create Router" in the top right-hand navigation or left-hand navigation. If not, click "Routers" under the "Manage Network" heading in the left-hand navigation.
 
-2.  If you clicked "Routers" under "Manage Network", click "+Create Router" and enter the router name in the pop-up. If you clicked "Create Router" on the "Network Topology" screen, enter your router name.  The router name and status appear on the "Routers" page. **Note**: For router details, click the router "Name" to display its ID number and status. If you do this, click "Back" on the browser before the following steps to make the "Set Gateway" action available.
+***Create a Router Image 1.
+
+2.  If you clicked "Routers" under "Manage Network", click "+Create Router" in the upper right-hand navigation and enter the router name in the pop-up. If you clicked "+Create Router" on the "Network Topology" screen, enter your router name and click "Create Router."  
+
+3. Click "Router" in the left-hand navigation to see the router name and status. **Note**:  Click the router "Name" to display its ID number and status. If you do this, click "Routers" in the left-hand navigation to make the "Set Gateway" action available for the following step or click the "Back" button in your browser.
+
+***Create a Router Image 2
 
 3. On the "Router" page, click "Set Gateway" under "Actions" to connect your router to the Internet.
+
+***Create a Router Image 3
 
 4. Click the drop-down menu in the "External Network" box in the "Set Gateway" pop-up, select "Ext-Net," and click "Set Gateway."
 
 **Note**: The external network is the router's default route, with the router acting as a gateway for external connectivity. While you can configure a subnet that is internal-only, you must connect it to another subnet with external connectivity.
 
+***Create a Router Image 4
+
 ###Connect your network### {#Connectyournetwork}
 
 1. Click the router name on the "Routers" page.
 
-2. Click "+Add Interface" on the top far-right of the "Router Details" page. **Note**: You can click on the "Network Topology" link under "Manage Network" in the left-hand navigation to see a graphical representation of your network.
+2. Click "+Add Interface" on the top far-right of the "Router Details" page. 
+
+***Connect your network image 1
 
 3. Click the drop-down menu in the "Select Subnet" box in the "Add Interface" pop-up and click on the network you configured. **Note**: You can optionally specify an IP address in the box provided, but the default interface IP address is the selected subnet's external gateway and the best choice unless you are setting up a more complicated connection. Any IP address you specify must belong to the subnet in the drop-down menu.
 
 4. Click "Add Interface."
+
+***Connect your network Image 2
 
 ##Manage HP Cloud## {#ManageHPCloud}
 
@@ -118,7 +132,7 @@ Select "Overview" under "Manage Compute," to display your usage summary and quot
 
 * Security Groups
 
-As you use HP Cloud, click on the "Overview" options any time to query current usage as well as usage during specific time frames.
+Move this after launching an instance.  As you use HP Cloud, click on the "Overview" options any time to query current usage as well as usage during specific time frames.
 
 ####Create an instance#### {#Instance}
 
@@ -128,7 +142,11 @@ An instance is a virtual server.
 
 1. Click "Instances" under "Manage Compute" in the left-hand navigation.
 
-2. Click "+Launch Instance" in the upper right-hand navigation of the screen. You can leave the default choice of the "Any Availability Zone" (AZ) box, which arbitrarily assigns an AZ for an instance or click the drop box to specify  where to locate an instance. **Note**: The default choice locating an instance in a single AZ offers high availability, ensuring a high level of operational performance. You can also specify an AZ for an instance if you want to segregate AZs per function for your own organizational purposes; e.g., you could select AZ1 for your data center, and set the remaining two up later for other discrete functions. Such a setup is completely optional as the AZs share all information and work in tandem.
+2. Click "+Launch Instance" in the upper right-hand navigation of the screen. 
+
+***Create an Instance Image 1
+
+3. You can leave the default choice of the "Any Availability Zone" (AZ) box, which arbitrarily assigns an AZ for an instance or click the drop box to specify  where to locate an instance. **Note**: The default choice locating an instance in any AZ offers high availability, ensuring a high level of operational performance. You can also specify an AZ for an instance if you want to segregate AZs per function for your own organizational purposes; e.g., you could select AZ1 for your data center, and set the remaining two up later for other discrete functions. Such a setup is completely optional as the AZs share all information and work in tandem.
 
 3. Enter a name in the "Instance Name" box.
 
@@ -143,11 +161,17 @@ An instance is a virtual server.
 
 **Note** The "Project Limits" box under "Flavor Details" graphically displays quotas allowed and usage of Instances, VCPUs, and Total RAM after you select a flavor.
 
+***Create an Instance Image 2
+
 4. Enter the number of instances you want to create under "Instance Count."
 
 5. Select the "Instance Boot Source" source from the drop-down menu. To select an HP Cloud default image, select "Boot from Image" from the drop-down. If you created a snapshot image, select "Boot from snapshot." Enter information (if the interface prompts) for the source.
 
+***Create an Instance 3
+
 6. Click the "Select Image" drop down under "Image Name." Select one of the default images HP Cloud provides or an image you created (as discussed [above](#Instance) and click "Launch."
+
+***Create an Instance 4
 
 7. Click the "Networking" tab in the upper navigation of  "Launch Instance" and drag and drop the network from which you want to launch the instance from the "Available Networks" box to the "Selected Networks" box or click the (+) next to the desired network to select it. 
 
