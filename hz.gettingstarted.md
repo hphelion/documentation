@@ -7,10 +7,10 @@ product: hz-Getting Started
 ---
 
 
-# HP Cloud Console Getting Started
-Cloud Console Getting Started walks you through network setup, connection, instance and volume creation, security options, identity parameters, and management tools that facilitate your organization's HP Cloud use. **This page takes you through the interface in the chronological order needed to get up and running, rather than the order displayed**. 
+# Getting Started with HP Public Cloud Console
+This Getting Started guide walks you through network setup, connection, instance and volume creation, security options, identity parameters, and management tools that facilitate your organization's HP Cloud use. **This page takes you through the interface in the chronological order needed to get up and running, rather than the order displayed in the console**. 
 
-After initial setup, revisit the interface to monitor usage, modify, add, and delete networks, instances, volumes, usergroups, etc.
+After initial setup, revisit the interface to monitor usage, modify, add, and delete networks, instances, volumes, roles, groups, and more.
 
 ***HP Public Cloud Horizon Preview Edition
 
@@ -36,8 +36,8 @@ This section includes how to:
 
 ###Create a network### {#Createanetwork}
 
-1. Login to HP Cloud with your username and password.
-2. On the Cloud Console Interface, click "Project," then "Networks" under "Manage Networks."
+1. Login to HP Public Cloud with your username and password.
+2. On the Cloud console interface, click "Project," on the left side-bar then "Networks" under "Manage Networks."
 
 ***Add screenshot Create a Network Image 1
 3. Click "+Create Network" in the right-hand navigation.
@@ -51,7 +51,7 @@ This section includes how to:
 
 ###Create a subnet### {#Createasubnet}
 
-1. Click the "Subnet" tab in the "Create Network" pop-up screen. **Note**: If you click the "Create" button before the "Subnet" tab, the interface automatically defaults to the same screen as the "Subnet" tab takes you to, but it displays an error message.
+1. Click the "Subnet" tab in the "Create Network" pop-up screen. **Note**: If you click the "Create" button on the "Network" pop-up before setting up a "Subnet,"  You are prompted to specify a network address or turn off the option to create a subnet through an error message.
 2. Enter the name of your subnet.
 3. Click in the "Network Address" box. The pop-up message states the network address is in Classless Inter-Domain Routing (CIDR) format; i.e.,  000.000.0.0/00. Enter the network address displayed: 192.168.0.0/24.
 4. Keep the IPv4 default in the "IP Version" box unless you know you have moved to IPv6.
@@ -132,7 +132,7 @@ Select "Overview" under "Manage Compute," to display your usage summary and quot
 
 * Security Groups
 
-Move this after launching an instance.  As you use HP Cloud, click on the "Overview" options any time to query current usage as well as usage during specific time frames.
+As you use HP Public Cloud, click on the "Overview" options any time to query current usage as well as usage during specific time frames.
 
 ####Create an instance#### {#Instance}
 
@@ -185,7 +185,7 @@ An instance is a virtual server.
 
 A volume is a block storage device you attach to an instance.
 
-**Important**: You can boot from the HP-provided list of volumes or your own volume. If the latter, you must first create a snapshot of the volume. See [Images and Snapshots](#Imagesandsnapshots) for details then complete the steps in this section.
+**Important**: You can boot from the HP-provided list of volumes or your own volume. If the latter, you must first create a snapshot of the volume. See [Images and Snapshots](#Imagesandsnapshots) for details, then complete the steps in this section.
  
 1. In the left-hand navigation, click "Volumes" under "Manage Compute."
 2. Click "+Create Volume" in the upper right-hand navigation.
@@ -214,7 +214,7 @@ A volume is a block storage device you attach to an instance.
 
 9. Select an instance to attach the volume to from the drop-down menu on the "Manage Volume Attachments" page.
 
-10. Under "Device Name," you can specify a location in the system if desired or enter the displayed default. **Note**: If going with the default, you must still enter it by hand even though it is displayed (greyed out). Otherwise, you receive an error message that you must specify a location. Good times. 
+10. Under "Device Name," you can specify a location in the system if desired or enter the displayed default. **Note**: If choosing the default, you must still enter it manually even though it is displayed (greyed out). Otherwise, you receive an error message that you must specify a location. Good times. 
 
 11. Click "Attach Volume."
 
@@ -231,27 +231,21 @@ Click "Images and Snapshots" to view available server and volume images and thei
 
 ***Images and Snapshots Image 1
 
-2. To delete an image, click the box next to its name and click "Delete Images" in the upper-right hand navigation.
+2. To delete an image, select the check box in the left column next to its name and click "Delete Images" in the upper-right hand navigation.
 
 3. To create an image, click "+Create Image" in the top navigation to open the "Create an Image" pop-up. 
 
 4. Enter an image name and an optional description in the respective fields.
 
-5. Click the drop-down menu under "Select an Image Source." Depending which image source you use, enter the HTTP URL in the "Image Location" field or click  "Choose File" to select the image source.
-
-**Important** Only images available via an HTTP URL are supported. Compressed image binaries (.zip and .tar.gz) are supported. The "Image Location" field MUST be a valid and direct URL to the image binary. URLs that redirect or serve error pages will result in unusable images.
+5. Click the drop-down menu under "Select an Image Source." Depending on which image source you use, enter the HTTP URL in the "Image Location" field or click  "Choose File" to select the image source. **Important** Only images available via an HTTP URL are supported. Compressed image binaries (.zip and .tar.gz) are supported. The "Image Location" field MUST be a valid and direct URL to the image binary. URLs that redirect or serve error pages will result in unusable images.
 
 6. Click the drop-down box in the "Format" field and select your format.
 
 7. Enter the minimum disk space required to boot the image in the "Minimum Disk (GB)" Field. If none entered, the field defaults to 0 (no minimum). 
 
-8. Click "Public" or "Protected." OK, so what does Public vs Protected mean exactly?
+8. Click the blue "Create Image" button.
 
-9. Click the blue "Create Image" button.
-
-10. After creating an image, it appears under the "Project" tab on the "Images and Snapshots" page. Launch as many instances as you like from the image you created.  
-
-**Add Lin's stuff to this section. Shared field - if someone makes an image available to you it shows up in Shared Field. Add other explanations from Lin.**
+9. After creating an image, it appears under the "Project" tab on the "Images and Snapshots" page. Launch as many instances as you like from your image.  
 
 **Note** You can create volume images the same way you create instance images, but you cannot create an image with a volume attached. You must attach the volume to each instance separately.  
 
@@ -266,11 +260,11 @@ Click "Access & Security" in the left-hand bar under "Project" and "Manage Compu
 
 Click  "Identify" in the left-hand interface to display links to:
 
-*Domain - The domain is your primary work space in HP Cloud.  An individual or company can be the domain owner and enables a project with the necessary services and permissions. The first user created in a domain is considered the domain owner and placed in both the “Users” and “Domain Administrators” groups. 
+*Domain - The domain is your primary work space in HP Public Cloud.  An individual or company can be the domain owner and enables a project with the necessary services and permissions. The first user created in a domain is considered the domain owner and placed in both the “Users” and “Domain Administrators” groups. 
 
 A domain has one owner and may have multiple users, groups and roles. A domain owner can allow users of another domain access to its projects.
 
-*Projects – A project is a collection of HP Cloud services within a domain, e.g., compute, storage, etc.  A project is defined by selecting services to be activated and a set of users to interact with the services. A Project may contain multiple services, such as compute or object storage. Services can exist multiple times within the same project as long as they have different service endpoints, distinguished by their geography and region.
+*Projects – A project is a collection of HP Public Cloud services, e.g., compute, storage, etc. within a domain  A project is defined by selecting services to be activated and a set of users to interact with the services. A Project may contain multiple services, such as compute or object storage. Services can exist multiple times within the same project as long as they have different service endpoints, distinguished by their geography and region.
 
 *Users - Users are defined individually and can be assigned to groups and granted roles either directly or through inclusion in groups.  A user may have multiple roles.
 
