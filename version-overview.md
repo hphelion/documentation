@@ -5,7 +5,7 @@ permalink: /version-overview/
 
 ---
 # HP Cloud version 13.5 overview
-HP Cloud Services bases our services on the open source cloud management project OpenStack. Our latest version of HP Cloud Compute runs the most recent version of OpenStack (Havana) that expands functionality and enhances the current capabilities of the existing services.  One of the most significant changes is the addition of our new best-in-class software defined networking (SDN) for virtual private clouds. This new networking service provides enhanced network functionality and the ability to fine-tune and define your own virtual network.
+HP Public Cloud bases our services on the open source cloud management project OpenStack. Our latest version of HP Cloud Compute runs the most recent version of OpenStack (Havana) that expands functionality and enhances the current capabilities of the existing services.  One of the most significant changes is the addition of our new best-in-class software defined networking (SDN) for virtual private clouds. This new networking service provides enhanced network functionality and the ability to fine-tune and define your own virtual network.
 
 In addition, you now have larger and more powerful instance types (sizes) to choose from--four times the size of the largest instances offered by most public clouds. And, our large, xlarge, and 2xlarge sizes are also offered in high memory versions. (See the [chart below](#sizes) for all available instance types.)
 
@@ -13,7 +13,7 @@ Putting all of this together, along with bulk data import capability, means that
 
 Since HP Cloud Compute version 13.5 is based on the latest code from the OpenStack community there are now separate Networking and Block Storage services with API endpoints independent from the HP Cloud Compute API.  In addition, the Image Management API is now exposed to users.  While you can continue to execute basic networking, block storage and image management commands through the HP Cloud Compute API, these newly exposed interfaces provide you even more control and allow you access to new advanced features. 
 
-Finally, the new versions of these services will now be closely tracking upstream OpenStack. This means that HP Cloud Services will be releasing regular updates based on the latest tested and approved code submitted to OpenStack trunk, you'll always be working with the latest OpenStack code.
+Finally, the new versions of these services will now be closely tracking upstream OpenStack. This means that HP Public Cloud will be releasing regular updates based on the latest tested and approved code submitted to OpenStack trunk, you'll always be working with the latest OpenStack code.
 
 The sections below explain each piece of our service.
 
