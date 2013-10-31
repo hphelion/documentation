@@ -14,6 +14,7 @@ After initial setup, revisit the interface to monitor usage, modify, add, and de
 
 <img src="media/HPPublicCloudConsoleHorizonPreviewEdition.png" width="580" alt="" />
 
+
 This page covers how to:
 
 * [Create and connect a network](#Createandconnect)
@@ -42,7 +43,9 @@ This section includes how to:
 <img src="media/CreateaNetworkImage1.png" width="580" alt="" />
 
 
+
 3. Click "+Create Network" in the right-hand navigation.
+
 
 <img src="media/CreateaNetworkImage2.png" width="580" alt="" />
 
@@ -153,8 +156,9 @@ An instance is a virtual server.
 
 2. Click "+Launch Instance" in the upper right-hand navigation of the screen. 
 
-***Create an Instance Image 1
+
 <img src="media/CreateaninstanceImage1.png" width="580" alt="" />
+
 
 3. You can leave the default choice of the "Any Availability Zone" (AZ) box, which arbitrarily assigns an AZ for an instance or click the drop box to specify  where to locate an instance. **Note**: The default choice locating an instance in any AZ offers high availability, ensuring a high level of operational performance. You can also specify an AZ for an instance if you want to segregate AZs per function for your own organizational purposes; e.g., you could select AZ1 for your data center, and set the remaining two up later for other discrete functions. Such a setup is completely optional as the AZs share all information and work in tandem.
 
