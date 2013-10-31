@@ -179,7 +179,7 @@ An instance is a virtual server.
 
 8. Click "Launch."
 
-***Select an Instance 5
+***Create an Instance 5
 
 ###Create and Attach a Volume### {#Volumes}
 
@@ -227,9 +227,11 @@ A volume is a block storage device you attach to an instance.
 
 Click "Images and Snapshots" to view available server and volume images and their details. HP provides a list of server and volume images for your use or you can create a "snapshot" of your own server or volume image.  You can launch an instance from the instructions in this section as well as from the instructions under [Create an Instance](#Instance) above. 
 
-1. Click "Images and Snapshots" in the left hand-navigation to display image names and information. For more details, click the image name on the "Images" page. 
+1. Click "Images and Snapshots" in the left hand-navigation to display image names and information. For more details, click the image name on the "Images" page. Images listed under "Public" are available to anyone. "Project" images are private.
 
-2. To delete an image, clck the box next to its name and click "Delete Images" in the upper-right hand navigation.
+***Images and Snapshots Image 1
+
+2. To delete an image, click the box next to its name and click "Delete Images" in the upper-right hand navigation.
 
 3. To create an image, click "+Create Image" in the top navigation to open the "Create an Image" pop-up. 
 
