@@ -42,13 +42,12 @@ This section includes how to:
 
 <img src="media/CreateaNetworkImage1.png" width="580" alt="" />
 
-        3. Click "+Create Network" in the right-hand navigation.
+    3. Click "+Create Network" in the right-hand navigation.
 
 
-<img src="media/CreateaNetworkImage2.png" width="580" alt="" />
+<img src="media/CreateaNetworkImage2.png" width="580" alt="" /> 
 
-
-4. Enter a "Network Name" in the "Create Network" pop-up screen, leave the Admin State box checked, and continue to the directions in "{#Create a subnet}" below.
+    4. Enter a "Network Name" in the "Create Network" pop-up screen, leave the Admin State box checked, and continue to the directions in "{#Create a subnet}" below.
 
 <img src="media/CreateaNetworkImage3.png" width="580" alt="" />
 
@@ -63,11 +62,11 @@ This section includes how to:
 
 <img src="media/CreateaSubnetImage1.png" width="580" alt="" />
 
-7. The "Networks" screen displays your network name and associated subnets.
+    7. The "Networks" screen displays your network name and associated subnets.
 
 <img src="media/CreateaSubnetImage2.png" width="580" alt="" />
 
-8. To see a graphic display of your network setup, click "Network Topology" under "Manage Network" in the left-hand navigation.  
+    8. To see a graphic display of your network setup, click "Network Topology" under "Manage Network" in the left-hand navigation.  
 
 <img src="media/CreateaSubnetImage3.png" width="580" alt="" />
 
@@ -77,13 +76,13 @@ This section includes how to:
 
 <img src="media/CreateaRouterImage1.png" width="580" alt="" />
 
-2.  If you clicked "Routers" under "Manage Network", click "+Create Router" in the upper right-hand navigation and enter the router name in the pop-up. If you clicked "+Create Router" on the "Network Topology" screen, enter your router name and click "Create Router."  
+    2.  If you clicked "Routers" under "Manage Network", click "+Create Router" in the upper right-hand navigation and enter the router name in the pop-up. If you clicked "+Create Router" on the "Network Topology" screen, enter your router name and click "Create Router."  
 
 3. Click "Router" in the left-hand navigation to see the router name and status. **Note**:  Click the router "Name" to display its ID number and status. If you do this, click "Routers" in the left-hand navigation to make the "Set Gateway" action available for the following step or click the "Back" button in your browser.
 
 <img src="media/CreateaRouteImage2.png" width="580" alt="" />
 
-3. On the "Router" page, click "Set Gateway" under "Actions" to connect your router to the Internet.
+    3. On the "Router" page, click "Set Gateway" under "Actions" to connect your router to the Internet.
 
 <img src="media/CreateaRouterImage3.png" width="580" alt="" />
 
