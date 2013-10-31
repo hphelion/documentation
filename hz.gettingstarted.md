@@ -69,7 +69,7 @@ This section includes how to:
 
 ###Create a router### {#Createarouter}
 
-1.  If on the "Network Topology" screen, click "Create Router" in the top right-hand navigation or left-hand navigation. If not, click "Routers" under the "Manage Network" heading in the left-hand navigation.
+1.  If on the "Network Topology" screen, click "Create Router" in the top right-hand navigation. If not, click "Routers" under the "Manage Network" heading in the left-hand navigation.
 
 ***Create a Router Image 1.
 
@@ -138,7 +138,7 @@ As you use HP Public Cloud, click on the "Overview" options any time to query cu
 
 An instance is a virtual server.
 
-**Important** You can boot an instance from the HP-provided list of images or your own image. If the latter, you must first create a snapshot of the image. See [Images and Snapshots](#Imagesandsnapshots) for details then complete the steps in this section. 
+**Important** You can boot an instance from the HP-provided list of images or an HP Public Cloud instance you have launched and customized. If the latter, you must create a snapshot of the customized instance to replicate it. See [Images and Snapshots](#Imagesandsnapshots) for details then complete the steps in this section. 
 
 1. Click "Instances" under "Manage Compute" in the left-hand navigation.
 
@@ -185,7 +185,7 @@ An instance is a virtual server.
 
 A volume is a block storage device you attach to an instance.
 
-**Important**: You can boot from the HP-provided list of volumes or your own volume. If the latter, you must first create a snapshot of the volume. See [Images and Snapshots](#Imagesandsnapshots) for details, then complete the steps in this section.
+**Important**: You can boot from a volume created from the HP Public Cloud-provided list of images or from a snapshot of an instance you have already launched.  If the latter, you must first create a volume from the snapshot. See [Images and Snapshots](#Imagesandsnapshots) for details, then complete the steps in this section.
  
 1. In the left-hand navigation, click "Volumes" under "Manage Compute."
 2. Click "+Create Volume" in the upper right-hand navigation.
