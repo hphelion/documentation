@@ -44,7 +44,7 @@ This section includes how to:
 
 
 
-      3. Click "+Create Network" in the right-hand navigation.
+        3. Click "+Create Network" in the right-hand navigation.
 
 
 <img src="media/CreateaNetworkImage2.png" width="580" alt="" />
