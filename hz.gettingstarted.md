@@ -52,7 +52,7 @@ This section includes how to:
 ###Create a subnet### {#Createasubnet}
 
 1. Click the "Subnet" tab in the "Create Network" pop-up screen. **Note**: If you click the "Create" button on the "Network" pop-up before setting up a "Subnet,"  you are prompted to specify a network address or turn off the option to create a subnet through an error message.
-2. Enter the name of your subnet.
+2. Enter the subnet name.
 3. Click in the "Network Address" box. The pop-up message states the network address is in Classless Inter-Domain Routing (CIDR) format; i.e.,  000.000.0.0/00. Enter the network address displayed: 192.168.0.0/24.
 4. Keep the IPv4 default in the "IP Version" box unless you know you have moved to IPv6.
 5. Leave the "Gateway IP" box blank to use the default value of the network address; e.g., 192.168.0.1 for 192.168.0.0/24.
@@ -64,7 +64,7 @@ This section includes how to:
 
 ***Add screenshot Create a Subnet Image 2
 
-8. To see a graphic display of your network setup, click "Network Topology" under "Manage Network" in the left-hand navigation.
+8. To see a graphic display of your network setup, click "Network Topology" under "Manage Network" in the left-hand navigation.  
 
 
 ###Create a router### {#Createarouter}
@@ -103,6 +103,12 @@ This section includes how to:
 
 ***Connect your network Image 2
 
+**Important**: To delete a network, you must first delete the router interface:
+1. Click"Routers" under "Manage Network in the left-hand bar.
+2. Click on the router "Name." 
+3. On the "Router Details" page, select the check box next to the "Interface" name, and click "Delete Interface." 
+4. Click "Networks" in the left-hand navigation, select the check box next to the network you want to delete, and click "Delete Networks" in the upper right-hand navigation. 
+
 ##Manage HP Cloud## {#ManageHPCloud}
 
 You are now ready to use the options under "Manage Compute" under "Project" in the left-hand navigation. This section includes:
@@ -138,7 +144,7 @@ As you use HP Public Cloud, click on the "Overview" options any time to query cu
 
 An instance is a virtual server.
 
-**Important** You can boot an instance from the HP-provided list of images or an HP Public Cloud instance you have launched and customized. If the latter, you must create a snapshot of the customized instance to replicate it. See [Images and Snapshots](#Imagesandsnapshots) for details then complete the steps in this section. 
+**Note**: HP Public Cloud provides a list of images from which you can boot an instance.  While you can also boot from an HP Public Cloud instance you have launched using "Images and Snapshots," it is unnecessary to get up and running and beyond the scope of this document.   
 
 1. Click "Instances" under "Manage Compute" in the left-hand navigation.
 
@@ -165,17 +171,17 @@ An instance is a virtual server.
 
 4. Enter the number of instances you want to create under "Instance Count."
 
-5. Select the "Instance Boot Source" source from the drop-down menu. To select an HP Cloud default image, select "Boot from Image" from the drop-down. If you created a snapshot image, select "Boot from snapshot." Enter information (if the interface prompts) for the source.
+5. Select the "Instance Boot Source" source from the drop-down menu. To select an HP Cloud default image, select "Boot from Image" from the drop-down.  
 
 ***Create an Instance 3
 
-6. Click the "Select Image" drop down under "Image Name." Select one of the default images HP Cloud provides or an image you created (as discussed [above](#Instance) and click "Launch."
+6. Click the "Select Image" drop down under "Image Name." Select one of the images HP Public Cloud provides and click "Launch."
 
 ***Create an Instance 4
 
-7. Click the "Networking" tab in the upper navigation of  "Launch Instance" and drag and drop the network from which you want to launch the instance from the "Available Networks" box to the "Selected Networks" box or click the (+) next to the desired network to select it. 
+7. Click the "Networking" tab in the upper navigation of  "Launch Instance" and click the "+" next to the network you want to launch an instance from.  You can also drag and drop the network from which you want to launch the instance from the "Available Networks" box to the "Selected Networks" box.
 
-**Note** If you click "Launch" after "Select Image," before clicking the "Networking" tab, an error message displays; however, you can still select  the network desired from the "Available Network" box to the "Selected Networks" box.
+**Note** If you click "Launch" after "Select Image," before clicking the "Networking" tab, an error message displays; however, you can still select the network desired from the "Available Network" box to the "Selected Networks" box.
 
 8. Click "Launch."
 
@@ -185,7 +191,7 @@ An instance is a virtual server.
 
 A volume is a block storage device you attach to an instance.
 
-**Important**: You can boot from a volume created from the HP Public Cloud-provided list of images or from a snapshot of an instance you have already launched.  If the latter, you must first create a volume from the snapshot. See [Images and Snapshots](#Imagesandsnapshots) for details, then complete the steps in this section.
+**Note**: HP Public Cloud provides a list of images from which you can boot an instance or volume.  While you can also boot from an HP Public Cloud instance you have launched using "Images and Snapshots," it is unnecessary to get up and running in HP Public Cloud and beyond the scope of this document.  
  
 1. In the left-hand navigation, click "Volumes" under "Manage Compute."
 2. Click "+Create Volume" in the upper right-hand navigation.
@@ -203,7 +209,7 @@ A volume is a block storage device you attach to an instance.
 
 ***Volume Image 3
 
-8. Select an AZ. HP recommends the pre-filled "Any Availability Zone."
+8. Select an AZ. HP Public Cloud recommends the pre-filled "Any Availability Zone."
 7. Click "Create Volume."
 
 ***Volume Image 4
@@ -214,7 +220,7 @@ A volume is a block storage device you attach to an instance.
 
 9. Select an instance to attach the volume to from the drop-down menu on the "Manage Volume Attachments" page.
 
-10. Under "Device Name," you can specify a location in the system if desired or enter the displayed default. **Note**: If choosing the default, you must still enter it manually even though it is displayed (greyed out). Otherwise, you receive an error message that you must specify a location. Good times. 
+10. Under "Device Name," you can specify a location in the system if desired or enter the displayed default. **Note**: If choosing the default, you must still enter it manually even though it is displayed (greyed out). Otherwise, you receive an error message that you must specify a location. 
 
 11. Click "Attach Volume."
 
@@ -225,29 +231,9 @@ A volume is a block storage device you attach to an instance.
 
 **Functionality Overview**
 
-Click "Images and Snapshots" to view available server and volume images and their details. HP provides a list of server and volume images for your use or you can create a "snapshot" of your own server or volume image.  You can launch an instance from the instructions in this section as well as from the instructions under [Create an Instance](#Instance) above. 
+**Important**: HP Public Cloud provides a list of images from which you can boot an instance.  While you can also boot from an HP Public Cloud instance you have launched and customized using "Images and Snapshots," it is unnecessary to get up and running in the Cloud and beyond the scope of this document. 
 
-1. Click "Images and Snapshots" in the left hand-navigation to display image names and information. For more details, click the image name on the "Images" page. Images listed under "Public" are available to anyone. "Project" images are private.
-
-***Images and Snapshots Image 1
-
-2. To delete an image, select the check box in the left column next to its name and click "Delete Images" in the upper-right hand navigation.
-
-3. To create an image, click "+Create Image" in the top navigation to open the "Create an Image" pop-up. 
-
-4. Enter an image name and an optional description in the respective fields.
-
-5. Click the drop-down menu under "Select an Image Source." Depending on which image source you use, enter the HTTP URL in the "Image Location" field or click  "Choose File" to select the image source. **Important** Only images available via an HTTP URL are supported. Compressed image binaries (.zip and .tar.gz) are supported. The "Image Location" field MUST be a valid and direct URL to the image binary. URLs that redirect or serve error pages will result in unusable images.
-
-6. Click the drop-down box in the "Format" field and select your format.
-
-7. Enter the minimum disk space required to boot the image in the "Minimum Disk (GB)" Field. If none entered, the field defaults to 0 (no minimum). 
-
-8. Click the blue "Create Image" button.
-
-9. After creating an image, it appears under the "Project" tab on the "Images and Snapshots" page. Launch as many instances as you like from your image.  
-
-**Note** You can create volume images the same way you create instance images, but you cannot create an image with a volume attached. You must attach the volume to each instance separately.  
+While this document does not cover creating snapshots, click "Images and Snapshots" in the left-hand bar to view available server and volume images and their details. For more details, click the image name on the "Images" page. Images listed under "Public" are available to anyone. "Project" images are for your specific project only.
 
 ###Access and Security### {#Accessandsecurity}
 Security groups and security group rules allow you to specify the type of traffic and direction (inbound/outbound) that is allowed to pass through a network port. A security group is a container for security group rules.
