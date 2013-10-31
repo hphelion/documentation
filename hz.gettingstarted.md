@@ -104,8 +104,7 @@ This section includes how to:
 
 4. Click "Add Interface."
 
-***Connect your network Image 2
-<img src="media/images-main.jpg" width="580" alt="" />
+<img src="media/Connectyournetworkimage2.png" width="580" alt="" />
 
 **Important**: To delete a network, you must first delete the router interface:
 1. Click"Routers" under "Manage Network in the left-hand bar.
@@ -155,7 +154,7 @@ An instance is a virtual server.
 2. Click "+Launch Instance" in the upper right-hand navigation of the screen. 
 
 ***Create an Instance Image 1
-<img src="media/images-main.jpg" width="580" alt="" />
+<img src="media/CreateaninstanceImage1.png" width="580" alt="" />
 
 3. You can leave the default choice of the "Any Availability Zone" (AZ) box, which arbitrarily assigns an AZ for an instance or click the drop box to specify  where to locate an instance. **Note**: The default choice locating an instance in any AZ offers high availability, ensuring a high level of operational performance. You can also specify an AZ for an instance if you want to segregate AZs per function for your own organizational purposes; e.g., you could select AZ1 for your data center, and set the remaining two up later for other discrete functions. Such a setup is completely optional as the AZs share all information and work in tandem.
 
@@ -172,21 +171,18 @@ An instance is a virtual server.
 
 **Note** The "Project Limits" box under "Flavor Details" graphically displays quotas allowed and usage of Instances, VCPUs, and Total RAM after you select a flavor.
 
-***Create an Instance Image 2
-<img src="media/images-main.jpg" width="580" alt="" />
+<img src="media/CreateanInstanceImage2.png" width="580" alt="" />
 
 
 4. Enter the number of instances you want to create under "Instance Count."
 
 5. Select the "Instance Boot Source" source from the drop-down menu. To select an HP Cloud default image, select "Boot from Image" from the drop-down.  
 
-***Create an Instance 3
-<img src="media/images-main.jpg" width="580" alt="" />
+<img src="media/CreateanInstanceImage3.png" width="580" alt="" />
 
 6. Click the "Select Image" drop down under "Image Name." Select one of the images HP Public Cloud provides and click "Launch."
 
-***Create an Instance 4
-<img src="media/images-main.jpg" width="580" alt="" />
+<img src="media/CreateanInstanceImage4.png" width="580" alt="" />
 
 7. Click the "Networking" tab in the upper navigation of  "Launch Instance" and click the "+" next to the network you want to launch an instance from.  You can also drag and drop the network from which you want to launch the instance from the "Available Networks" box to the "Selected Networks" box.
 
@@ -194,8 +190,7 @@ An instance is a virtual server.
 
 8. Click "Launch."
 
-***Create an Instance 5
-<img src="media/images-main.jpg" width="580" alt="" />
+<img src="media/CreateanInstanceImage5.png" width="580" alt="" />
 
 ###Create and Attach a Volume### {#Volumes}
 
@@ -206,32 +201,27 @@ A volume is a block storage device you attach to an instance.
 1. In the left-hand navigation, click "Volumes" under "Manage Compute."
 2. Click "+Create Volume" in the upper right-hand navigation.
 
-***Volume Image 1
-<img src="media/images-main.jpg" width="580" alt="" />
+<img src="media/VolumeImage1.png" width="580" alt="" />
 
 3. Enter a name under "Volume Name" and, optionally, a description in the box below and a "Type" from the following drop-down menu.
 
 4. Staying within the "Volume Limits" shown in the "Create Volume" box, enter a number of GBs under "Size."
 
-***Volume Image 2
-<img src="media/images-main.jpg" width="580" alt="" />
+<img src="media/VolumeImage2.png" width="580" alt="" />
 
 5. Select a volume source from the drop-down menu. 
 6. If you select "Image" as your volume source, click the drop-down menu for "Choose an image" under the "Use image as a source" box that appears. Click on the image you want to use. 
 
-***Volume Image 3
-<img src="media/images-main.jpg" width="580" alt="" />
+<img src="media/VolumeImage3.png" width="580" alt="" />
 
 8. Select an AZ. HP Public Cloud recommends the pre-filled "Any Availability Zone."
 7. Click "Create Volume."
 
-***Volume Image 4
-<img src="media/images-main.jpg" width="580" alt="" />
+<img src="media/VolumeImage4.png" width="580" alt="" />
 
 8. To attach the volume to an instance, click "Edit Attachments" under "Action" on the "Volumes" page.
 
-**Volume Image 5
-<img src="media/images-main.jpg" width="580" alt="" />
+<img src="media/VolumeImage5.png" width="580" alt="" />
 
 9. Select an instance to attach the volume to from the drop-down menu on the "Manage Volume Attachments" page.
 
@@ -239,8 +229,7 @@ A volume is a block storage device you attach to an instance.
 
 11. Click "Attach Volume."
 
-***Volume Image 6
-<img src="media/images-main.jpg" width="580" alt="" />
+<img src="media/VolumeImage6.png" width="580" alt="" />
 
 
 ###Images and Snapshots### {#Imagesandsnapshots}
