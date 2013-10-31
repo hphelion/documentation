@@ -28,7 +28,7 @@ and provides links:
 
 This section includes how to:
 
-* [Create a network](#Createanetwork)
+* [Create a network](#Createanetwork) 
 * [Create a subnet](#Createasubnet)
 * [Create a router](#Createarouter)
 * [Connect your network](#Connectyournetwork)
@@ -51,7 +51,7 @@ This section includes how to:
 
 ###Create a subnet### {#Createasubnet}
 
-1. Click the "Subnet" tab in the "Create Network" pop-up screen. **Note**: If you click the "Create" button on the "Network" pop-up before setting up a "Subnet,"  You are prompted to specify a network address or turn off the option to create a subnet through an error message.
+1. Click the "Subnet" tab in the "Create Network" pop-up screen. **Note**: If you click the "Create" button on the "Network" pop-up before setting up a "Subnet,"  you are prompted to specify a network address or turn off the option to create a subnet through an error message.
 2. Enter the name of your subnet.
 3. Click in the "Network Address" box. The pop-up message states the network address is in Classless Inter-Domain Routing (CIDR) format; i.e.,  000.000.0.0/00. Enter the network address displayed: 192.168.0.0/24.
 4. Keep the IPv4 default in the "IP Version" box unless you know you have moved to IPv6.
@@ -258,15 +258,15 @@ Click "Access & Security" in the left-hand bar under "Project" and "Manage Compu
 
 ###Organize and manage HP Cloud Access## {#Identity}
 
-Click  "Identify" in the left-hand interface to display links to:
+Click  "Identify" in the left-hand interface to display links:
 
-*Domain - The domain is your primary work space in HP Public Cloud.  An individual or company can be the domain owner and enables a project with the necessary services and permissions. The first user created in a domain is considered the domain owner and placed in both the “Users” and “Domain Administrators” groups. 
+* Domain - The domain is your primary work space in HP Public Cloud.  An individual or company can be the domain owner and enables a project with the necessary services and permissions. The first user created in a domain is considered the domain owner and placed in both the “Users” and “Domain Administrators” groups. 
 
 A domain has one owner and may have multiple users, groups and roles. A domain owner can allow users of another domain access to its projects.
 
-*Projects – A project is a collection of HP Public Cloud services, e.g., compute, storage, etc. within a domain  A project is defined by selecting services to be activated and a set of users to interact with the services. A Project may contain multiple services, such as compute or object storage. Services can exist multiple times within the same project as long as they have different service endpoints, distinguished by their geography and region.
+* Projects – A project is a collection of HP Public Cloud services, e.g., compute, storage, etc. within a domain  A project is defined by selecting services to be activated and a set of users to interact with the services. A Project may contain multiple services, such as compute or object storage. Services can exist multiple times within the same project as long as they have different service endpoints, distinguished by their geography and region.
 
-*Users - Users are defined individually and can be assigned to groups and granted roles either directly or through inclusion in groups.  A user may have multiple roles.
+* Users - Users are defined individually and can be assigned to groups and granted roles either directly or through inclusion in groups.  A user may have multiple roles.
 
 * Groups - When you create a domain, two default groups are created: Users and Domain Administrators. Domain Administrators can add individuals to a group and create new groups, which may contain multiple users. 
 
