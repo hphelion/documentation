@@ -12,7 +12,7 @@ Cloud Console Getting Started walks you through network setup, connection, insta
 
 After initial setup, revisit the interface to monitor usage, modify, add, and delete networks, instances, volumes, usergroups, etc.
 
-***Add screenshot HP Public Cloud Horizon Preview Edition
+***HP Public Cloud Horizon Preview Edition
 
 This page covers how to:
 
@@ -175,9 +175,11 @@ An instance is a virtual server.
 
 7. Click the "Networking" tab in the upper navigation of  "Launch Instance" and drag and drop the network from which you want to launch the instance from the "Available Networks" box to the "Selected Networks" box or click the (+) next to the desired network to select it. 
 
-**Note** If you click "Launch" after "Select Image," before clicking the "Networking" tab, you can also drag and drop the network desired from the "Available Network" box to the "Selected Networks" box; however, an error message displays.
+**Note** If you click "Launch" after "Select Image," before clicking the "Networking" tab, an error message displays; however, you can still select  the network desired from the "Available Network" box to the "Selected Networks" box.
 
 8. Click "Launch."
+
+***Select an Instance 5
 
 ###Create and Attach a Volume### {#Volumes}
 
@@ -187,15 +189,37 @@ A volume is a block storage device you attach to an instance.
  
 1. In the left-hand navigation, click "Volumes" under "Manage Compute."
 2. Click "+Create Volume" in the upper right-hand navigation.
+
+***Volume Image 1
+
 3. Enter a name under "Volume Name" and, optionally, a description in the box below and a "Type" from the following drop-down menu.
+
 4. Staying within the "Volume Limits" shown in the "Create Volume" box, enter a number of GBs under "Size."
+
+***Volume Image 2
+
 5. Select a volume source from the drop-down menu. 
 6. If you select "Image" as your volume source, click the drop-down menu for "Choose an image" under the "Use image as a source" box that appears. Click on the image you want to use. 
+
+***Volume Image 3
+
+8. Select an AZ. HP recommends the pre-filled "Any Availability Zone."
 7. Click "Create Volume."
+
+***Volume Image 4
+
 8. To attach the volume to an instance, click "Edit Attachments" under "Action" on the "Volumes" page.
+
+**Volume Image 5
+
 9. Select an instance to attach the volume to from the drop-down menu on the "Manage Volume Attachments" page.
+
 10. Under "Device Name," you can specify a location in the system if desired or enter the displayed default. **Note**: If going with the default, you must still enter it by hand even though it is displayed (greyed out). Otherwise, you receive an error message that you must specify a location. Good times. 
+
 11. Click "Attach Volume."
+
+***Volume Image 6
+
 
 ###Images and Snapshots### {#Imagesandsnapshots}
 
@@ -230,16 +254,11 @@ Click "Images and Snapshots" to view available server and volume images and thei
 **Note** You can create volume images the same way you create instance images, but you cannot create an image with a volume attached. You must attach the volume to each instance separately.  
 
 ###Access and Security### {#Accessandsecurity}
-Add security and group rules from Networking Guide:
-Security Groups and Security Group Rules: Security groups and security group rules allow you to specify the type of traffic and direction (inbound/outbound) that is allowed to pass through a port. A security group is a container for security group rules.
+Security groups and security group rules allow you to specify the type of traffic and direction (inbound/outbound) that is allowed to pass through a network port. A security group is a container for security group rules.
 
-When a port is created in HP Cloud Networking it is associated with a security group. If a security group is not specified the port is associated with a default security group. Security group default rules allow inbound traffic from the same subnet and all outbound traffic. You can add rules to this group to modify behavior.
+When a port is created in HP Cloud Networking it is associated with a security group. If a security group is not specified the port is associated with a default security group. Security group default rules allow inbound traffic from the same subnet and all outbound traffic. You can add rules to this group to modify behavior or create additional security groups to contain the rules your need.
 
-Go back through navigation and refine this. May need more help from Steve:
-Click Security Groups
-Add Name
-Edit Rule
-Add rule
+Click "Access & Security" in the left-hand bar under "Project" and "Manage Compute."   
 
 ###Organize and manage HP Cloud Access## {#Identity}
 
