@@ -43,7 +43,7 @@ You can use the default network to deploy HP Public Cloud compute instances (vir
 ###Create a network### {#Createanetwork}
 
 1. Login to HP Public Cloud with your username and password.
-2. On the HP Public Cloud console interface, click "Project," on the left side-bar then "Networks" under "Manage Networks."
+2. On the HP Public Cloud console interface, click "Project," on the left-side bar then "Networks" under "Manage Networks."
 
     <img src="media/CreateaNetworkImage1.png" width="580" alt="" />
 
@@ -80,7 +80,7 @@ You can use the default network to deploy HP Public Cloud compute instances (vir
 
     <img src="media/CreateaRouterImage1.png" width="580" alt="" />
 
-2.  If you clicked "Routers" under "Manage Network", click "+Create Router" in the upper right-hand navigation and enter the router name in the pop-up. If you clicked "+Create Router" on the "Network Topology" screen, enter your router name and click "Create Router."  
+2.  If you clicked "+Create Router" on the "Network Topology" screen, enter your router name and click "Create Router." If you clicked "Routers" under "Manage Network", click "+Create Router" in the upper right-hand navigation and enter the router name in the pop-up. 
     
 3. Click "Router" in the left-hand navigation to see the router name and status. **Note**:  Click the router "Name" to display its ID number and status. If you do this, click "Routers" in the left-hand navigation to make the "Set Gateway" action available for the following step or click the "Back" button in your browser.
 
