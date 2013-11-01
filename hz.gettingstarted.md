@@ -77,6 +77,7 @@ This section includes how to:
 <img src="media/CreateaRouterImage1.png" width="580" alt="" />
 
     2.  If you clicked "Routers" under "Manage Network", click "+Create Router" in the upper right-hand navigation and enter the router name in the pop-up. If you clicked "+Create Router" on the "Network Topology" screen, enter your router name and click "Create Router."  
+    
     3. Click "Router" in the left-hand navigation to see the router name and status. **Note**:  Click the router "Name" to display its ID number and status. If you do this, click "Routers" in the left-hand navigation to make the "Set Gateway" action available for the following step or click the "Back" button in your browser.
 
 <img src="media/CreateaRouteImage2.png" width="580" alt="" />
@@ -99,7 +100,7 @@ This section includes how to:
 
 <img src="media/Connectyournetworkimage1.png" width="580" alt="" />
 
-    3. Click the drop-down menu in the "Select Subnet" box in the "Add Interface" pop-up and click on the network you configured. **Note**: You can optionally specify an IP address in the box provided, but the default interface IP address is the selected subnet's external gateway and the best choice unless you are setting up a more complicated connection. Any IP address you specify must belong to the subnet in the drop-down menu.
+    3. Click the drop-down menu in the "Select Subnet" box in the "Add Interface" pop-up and click on the network you configured. **Note**: You can optionally specify an IP address in the box provided, but the default interface IP address is the selected subnet's external gateway and the best choice unless you are setting up a more complicated connection. Any IP address you specify must belong to the subnet in the drop-down menu. 
     4. Click "Add Interface."
 
 <img src="media/Connectyournetworkimage2.png" width="580" alt="" />
@@ -120,7 +121,7 @@ You are now ready to use the options under "Manage Compute" under "Project" in t
 
 * [Overview](#Overview)
 
-* [Create an Instance](#Instance)
+* [Create an instance](#Instance)
 
 * [Create and attach a volume](#Volumes)
 
