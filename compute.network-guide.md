@@ -43,7 +43,7 @@ HP Cloud Networking expands networking capabilities, allowing you to perform man
 
 __Floating IP Addresses__: On-demand, public IP addresses on a network. With HP Cloud, you can allocate several floating IP addresses and assign them to virtual servers. 
 
-__Network__: Allows you to define network connectivity and addressing in the Cloud, providing "networking as a service" between interface devices managed by other HP Cloud Services, such as compute. 
+__Network__: Allows you to define network connectivity and addressing in the Cloud, providing "networking as a service" between interface devices managed by other HP Public Cloud, such as compute. 
 
 __Port__: A connection point for attaching a single device, such as a virtual server's NIC, to a virtual network.  The port describes the associated network configuration, such as the MAC and IP addresses to be used by the attached device.
 
@@ -115,7 +115,7 @@ HP Cloud Networking regional capabilities include:
 
 ##Customizing your Configuration## {#CustomizingyourConfiguration}
 
-Optionally, modify the default network and create additional networks to exact specifications through the OpenStack Networking API. Customize the configuration either on the command line or through the HP Cloud Services MC to: 
+Optionally, modify the default network and create additional networks to exact specifications through the OpenStack Networking API. Customize the configuration either on the command line or through the HP Cloud MC to: 
  
 * Define and configure your own private virtual networks
 
