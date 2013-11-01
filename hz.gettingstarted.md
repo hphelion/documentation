@@ -100,8 +100,7 @@ This section includes how to:
 <img src="media/Connectyournetworkimage1.png" width="580" alt="" />
 
     3. Click the drop-down menu in the "Select Subnet" box in the "Add Interface" pop-up and click on the network you configured. **Note**: You can optionally specify an IP address in the box provided, but the default interface IP address is the selected subnet's external gateway and the best choice unless you are setting up a more complicated connection. Any IP address you specify must belong to the subnet in the drop-down menu.
-
-4. Click "Add Interface."
+    4. Click "Add Interface."
 
 <img src="media/Connectyournetworkimage2.png" width="580" alt="" />
 
@@ -156,10 +155,8 @@ An instance is a virtual server.
 <img src="media/CreateaninstanceImage1.png" width="580" alt="" />
 
     3. You can leave the default choice of the "Any Availability Zone" (AZ) box, which arbitrarily assigns an AZ for an instance or click the drop box to specify  where to locate an instance. **Note**: The default choice locating an instance in any AZ offers high availability, ensuring a high level of operational performance. You can also specify an AZ for an instance if you want to segregate AZs per function for your own organizational purposes; e.g., you could select AZ1 for your data center, and set the remaining two up later for other discrete functions. Such a setup is completely optional as the AZs share all information and work in tandem.
-
-4. Enter a name in the "Instance Name" box.
-
-5. Click the drop-down menu under "Flavor" to select the hardware configuration you want to emulate, i.e., how much disk space and RAM you need. When you select a flavor, the "Flavor Details" box displays the following:
+    4. Enter a name in the "Instance Name" box.
+    5. Click the drop-down menu under "Flavor" to select the hardware configuration you want to emulate, i.e., how much disk space and RAM you need. When you select a flavor, the "Flavor Details" box displays the following:
 
 * Name
 * # of VCPUs
@@ -173,8 +170,7 @@ An instance is a virtual server.
 <img src="media/CreateanInstanceImage2.png" width="580" alt="" />
 
     6. Enter the number of instances you want to create under "Instance Count."
-
-7. Select the "Instance Boot Source" source from the drop-down menu. To select an HP Cloud default image, select "Boot from Image" from the drop-down.  
+    7. Select the "Instance Boot Source" source from the drop-down menu. To select an HP Cloud default image, select "Boot from Image" from the drop-down.  
 
 <img src="media/CreateanInstanceImage3.png" width="580" alt="" />
 
@@ -202,18 +198,17 @@ A volume is a block storage device you attach to an instance.
 <img src="media/VolumeImage1.png" width="580" alt="" />
 
     3. Enter a name under "Volume Name" and, optionally, a description in the box below and a "Type" from the following drop-down menu.
-
-4. Staying within the "Volume Limits" shown in the "Create Volume" box, enter a number of GBs under "Size."
+    4. Staying within the "Volume Limits" shown in the "Create Volume" box, enter a number of GBs under "Size."
 
 <img src="media/VolumeImage2.png" width="580" alt="" />
 
     5. Select a volume source from the drop-down menu. 
-6. If you select "Image" as your volume source, click the drop-down menu for "Choose an image" under the "Use image as a source" box that appears. Click on the image you want to use. 
+    6. If you select "Image" as your volume source, click the drop-down menu for "Choose an image" under the "Use image as a source" box that appears. Click on the image you want to use. 
 
 <img src="media/VolumeImage3.png" width="580" alt="" />
 
     7. Select an AZ. HP Public Cloud recommends the pre-filled "Any Availability Zone."
-8. Click "Create Volume."
+    8. Click "Create Volume."
 
 <img src="media/VolumeImage4.png" width="580" alt="" />
 
@@ -222,10 +217,8 @@ A volume is a block storage device you attach to an instance.
 <img src="media/VolumeImage5.png" width="580" alt="" />
 
     10. Select an instance to attach the volume to from the drop-down menu on the "Manage Volume Attachments" page.
-
-11. Under "Device Name," you can specify a location in the system if desired or enter the displayed default. **Note**: If choosing the default, you must still enter it manually even though it is displayed (greyed out). Otherwise, you receive an error message that you must specify a location. 
-
-12. Click "Attach Volume."
+    11. Under "Device Name," you can specify a location in the system if desired or enter the displayed default. **Note**: If choosing the default, you must still enter it manually even though it is displayed (greyed out). Otherwise, you receive an error message that you must specify a location. 
+    12. Click "Attach Volume."
 
 <img src="media/VolumeImage6.png" width="580" alt="" />
 
