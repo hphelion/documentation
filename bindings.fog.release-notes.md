@@ -1,13 +1,13 @@
 ---
 layout: default
-title: "Release Notes for the HP Cloud Services Ruby Fog Binding"
+title: "Release Notes for the HP Cloud Ruby Fog Binding"
 permalink: /bindings/fog/release-notes/
 product: fog
 
 ---
-# Release Notes for the HP Cloud Services Ruby Fog Binding
+# Release Notes for the HP Cloud Ruby Fog Binding
 
-These are the release notes for the HP Cloud services Ruby Fog bindings.  The current release number for the [HP Cloud Services Ruby Fog software bindings](/bindings) is version 0.0.20, released on Mar. 15th, 2013.  These release notes contain the following information:
+These are the release notes for the HP Cloud Ruby Fog bindings.  The current release number for the [HP Cloud Ruby Fog software bindings](/bindings) is version 0.0.20, released on Mar. 15th, 2013.  These release notes contain the following information:
 
 * [Release 0.0.20 Information](#v0020)
 * [Release 0.0.19 Information](#v0019)

@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "HP Cloud Services Ruby Fog Binding Installation"
+title: "HP Cloud Ruby Fog Binding Installation"
 permalink: /bindings/fog/install/
 product: fog
 
 ---
-# HP Cloud Services Ruby Fog Binding Installation
+# HP Cloud Ruby Fog Binding Installation
 
 Before you can begin working with the Ruby Fog bindings, you have to install them (of course!).  <!--We recommend installing with the [RVM package](https://rvm.io//).-->  This page provides you with the installation information for the following operating systems:
 

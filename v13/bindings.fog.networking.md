@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Cloud Services Ruby Fog Networking Examples"
+title: "HP Cloud Ruby Fog Networking Examples"
 permalink: /v13/bindings/fog/networking/
 product: fog
 
@@ -34,7 +34,7 @@ This page discusses the following topics:
 
 ##Connecting to the Service## {#ConnectingtotheService}
 
-For information on connecting to the service, please see the [Connecting to the HP Cloud Service](/bindings/fog/connect) page.
+For information on connecting to the service, please see the [Connecting to the HP Public Cloud](/bindings/fog/connect) page.
 
 ##Network Operations (Model Layer)## {#ModelNetworks}
 

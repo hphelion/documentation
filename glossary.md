@@ -1,10 +1,10 @@
 ---
 layout: default
-title: "Glossary of HP Cloud Services Terms"
+title: "Glossary of HP Public Cloud Terms"
 permalink: /glossary/
 
 ---
-# Glossary of HP Cloud Services Terms
+# Glossary of HP Public Cloud Terms
 
 Sometimes it's a little easy to become lost in the weeds of the cloud nomenclature; for such times, we've created this glossary to help you through.  While this glossary concentrates primarily on terms that are more specific to the HP Cloud environment, we have tried to include a salad of general cloud computing terms to help you along.  If you need additional definitions, we suggest going on over to the [Open Stack Glossary](http://cloudglossary.com/) and checking there.
 
@@ -280,7 +280,7 @@ For a quick search of the [Knowledge Base](https://community.hpcloud.com/knowled
 ## U ##
 
 ###[User](https://community.hpcloud.com/search/knowledge/User) ### {#User}
-:    A digital representation of a person, system, or service who uses HP Cloud Services. The Identity Service will validate that incoming request are being made by the user who claims to be making the call. Users have a login and may be assigned tokens to access resources. Users can scope their authentication to a tenant which then limits where and how their tokens can be used to interact with services. Users are associated with tenants based on roles assigned to them with that tenant.
+:    A digital representation of a person, system, or service who uses HP Public Cloud. The Identity Service will validate that incoming request are being made by the user who claims to be making the call. Users have a login and may be assigned tokens to access resources. Users can scope their authentication to a tenant which then limits where and how their tokens can be used to interact with services. Users are associated with tenants based on roles assigned to them with that tenant.
 
 ## V ##
 
