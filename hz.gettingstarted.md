@@ -105,7 +105,7 @@ This section includes how to:
 
 <img src="media/Connectyournetworkimage2.png" width="580" alt="" />
 
-**Important**: To delete a network, you must first delete the router interface:
+**Important**: To delete a network, you must first delete the router interface, router:
 
 1. Click "Routers" under "Manage Network in the left-hand bar.
 
