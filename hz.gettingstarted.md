@@ -77,8 +77,7 @@ This section includes how to:
 <img src="media/CreateaRouterImage1.png" width="580" alt="" />
 
     2.  If you clicked "Routers" under "Manage Network", click "+Create Router" in the upper right-hand navigation and enter the router name in the pop-up. If you clicked "+Create Router" on the "Network Topology" screen, enter your router name and click "Create Router."  
-
-3. Click "Router" in the left-hand navigation to see the router name and status. **Note**:  Click the router "Name" to display its ID number and status. If you do this, click "Routers" in the left-hand navigation to make the "Set Gateway" action available for the following step or click the "Back" button in your browser.
+    3. Click "Router" in the left-hand navigation to see the router name and status. **Note**:  Click the router "Name" to display its ID number and status. If you do this, click "Routers" in the left-hand navigation to make the "Set Gateway" action available for the following step or click the "Back" button in your browser.
 
 <img src="media/CreateaRouteImage2.png" width="580" alt="" />
 
@@ -158,9 +157,9 @@ An instance is a virtual server.
 
     3. You can leave the default choice of the "Any Availability Zone" (AZ) box, which arbitrarily assigns an AZ for an instance or click the drop box to specify  where to locate an instance. **Note**: The default choice locating an instance in any AZ offers high availability, ensuring a high level of operational performance. You can also specify an AZ for an instance if you want to segregate AZs per function for your own organizational purposes; e.g., you could select AZ1 for your data center, and set the remaining two up later for other discrete functions. Such a setup is completely optional as the AZs share all information and work in tandem.
 
-3. Enter a name in the "Instance Name" box.
+4. Enter a name in the "Instance Name" box.
 
-4. Click the drop-down menu under "Flavor" to select the hardware configuration you want to emulate, i.e., how much disk space and RAM you need. When you select a flavor, the "Flavor Details" box displays the following:
+5. Click the drop-down menu under "Flavor" to select the hardware configuration you want to emulate, i.e., how much disk space and RAM you need. When you select a flavor, the "Flavor Details" box displays the following:
 
 * Name
 * # of VCPUs
@@ -173,21 +172,21 @@ An instance is a virtual server.
 
 <img src="media/CreateanInstanceImage2.png" width="580" alt="" />
 
-    4. Enter the number of instances you want to create under "Instance Count."
+    6. Enter the number of instances you want to create under "Instance Count."
 
-5. Select the "Instance Boot Source" source from the drop-down menu. To select an HP Cloud default image, select "Boot from Image" from the drop-down.  
+7. Select the "Instance Boot Source" source from the drop-down menu. To select an HP Cloud default image, select "Boot from Image" from the drop-down.  
 
 <img src="media/CreateanInstanceImage3.png" width="580" alt="" />
 
-    6. Click the "Select Image" drop down under "Image Name." Select one of the images HP Public Cloud provides and click "Launch."
+    8. Click the "Select Image" drop down under "Image Name." Select one of the images HP Public Cloud provides and click "Launch."
 
 <img src="media/CreateanInstanceImage4.png" width="580" alt="" />
 
-    7. Click the "Networking" tab in the upper navigation of  "Launch Instance" and click the "+" next to the network you want to launch an instance from.  You can also drag and drop the network from which you want to launch the instance from the "Available Networks" box to the "Selected Networks" box.
+    9. Click the "Networking" tab in the upper navigation of  "Launch Instance" and click the "+" next to the network you want to launch an instance from.  You can also drag and drop the network from which you want to launch the instance from the "Available Networks" box to the "Selected Networks" box.
 
 **Note** If you click "Launch" after "Select Image," before clicking the "Networking" tab, an error message displays; however, you can still select the network desired from the "Available Network" box to the "Selected Networks" box.
 
-    8. Click "Launch."
+    10. Click "Launch."
 
 <img src="media/CreateanInstanceImage5.png" width="580" alt="" />
 
