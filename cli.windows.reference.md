@@ -27,7 +27,7 @@ Below you can find a full reference of supported HP Cloud environment CLI softwa
 
 #Non-service-specific# {#Nonservicespecific}
 
-Following is the complete list of HP Cloud Windows CLI commands that are not applicable to a specific service (compute, object storage, etc.).   To issue these commands, you need to navigate to a container or the HP Cloud Services (HPCS) provider, issuing the following command:
+Following is the complete list of HP Cloud Windows CLI commands that are not applicable to a specific service (compute, object storage, etc.).   To issue these commands, you need to navigate to a container or the HP Public Cloud provider, issuing the following command:
 
     cd HPCS:
 
