@@ -7,7 +7,7 @@ product: unix-cli
 ---
 #HP Cloud UNIX CLI Release Notes
 
-**Important Notice** 
+###Important Notice###
 
 On November 4, 2013, the UNIX CLI will be moved into its End-of-Life Cycle process to final deprecation. During this 6-month transition time:
 
