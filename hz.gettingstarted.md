@@ -106,7 +106,7 @@ This section includes how to:
 
 **Important**: To delete a network, you must first delete the router interface:
 
-1. Click"Routers" under "Manage Network in the left-hand bar.
+1. Click "Routers" under "Manage Network in the left-hand bar.
 
 2. Click on the router "Name." 
 
