@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "HP Cloud Services UNIX CLI Installation"
+title: "HP Cloud UNIX CLI Installation"
 permalink: /cli/unix/install/
 product: unix-cli
 
 ---
-# HP Cloud Services UNIX CLI Installation
+# HP Cloud UNIX CLI Installation
 
 Before you can begin working with the UNIX CLI, you have to install the package (of course!).  The instructions below work for Ubuntu, MacOS X, and CentOS installations.  Take a look at the [HP Cloud Unix CLI - Release Notes](/cli/unix/release-notes) for the latest features.
 

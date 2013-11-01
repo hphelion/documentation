@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Cloud Services CLI"
+title: "HP Public Cloud CLI"
 permalink: /cli/
 
 ---

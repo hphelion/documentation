@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "HP Cloud Services Software Downloads"
+title: "HP Public Cloud Software Downloads"
 permalink: /downloads/
 
 ---
-# HP Cloud Services Software Downloads# 
+# HP Public Cloud Software Downloads# 
 
-HP Cloud Services has a few software downloads, each of which is on its appropriate page--the Ruby Fog Bindings download is on the Ruby Fog Bindings page, for example.  But to give you quick and easy access, we have also consolidated our list of downloads here on this page.  Find what you're looking for and download away!
+HP Public Cloud has a few software downloads, each of which is on its appropriate page--the Ruby Fog Bindings download is on the Ruby Fog Bindings page, for example.  But to give you quick and easy access, we have also consolidated our list of downloads here on this page.  Find what you're looking for and download away!
 
 Here's what we have for you:
 

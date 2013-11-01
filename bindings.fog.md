@@ -1,13 +1,13 @@
 ---
 layout: default
-title: "HP Cloud Services Extensions to Ruby Fog Binding"
+title: "HP Cloud Extensions to Ruby Fog Binding"
 permalink: /bindings/fog/
 product: fog
 
 ---
-# HP Cloud Services Extensions to Ruby Fog Binding
+# HP Cloud Extensions to Ruby Fog Binding
 
-HP provides a native Ruby library through an HP Cloud developed extension to the Ruby Fog provider.  By using the HP Cloud Ruby library, developers can write applications using Ruby that interacts with the HP Cloud Services without having to deal with the underlying REST API or XML document formats.
+HP provides a native Ruby library through an HP Cloud developed extension to the Ruby Fog provider.  By using the HP Cloud Ruby library, developers can write applications using Ruby that interacts with the HP Public Cloud without having to deal with the underlying REST API or XML document formats.
 
 This library is an extension of [Fog](http://github.com/fog/fog), a Ruby open-source cloud computing library. 
 
