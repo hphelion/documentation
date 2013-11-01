@@ -51,7 +51,7 @@ You can use the default network to deploy HP Public Cloud compute instances (vir
 
     <img src="media/CreateaNetworkImage2.png" width="580" alt="" /> 
 
-4. Enter a "Network Name" in the "Create Network" pop-up screen, leave the Admin State box checked, and continue to the directions in "{#Create a subnet}" below.
+4. Enter a "Network Name" in the "Create Network" pop-up screen, leave the Admin State box checked, and continue to the directions in "Create a subnet" below.
 
     <img src="media/CreateaNetworkImage3.png" width="580" alt="" />
 
@@ -86,7 +86,7 @@ You can use the default network to deploy HP Public Cloud compute instances (vir
 
     <img src="media/CreateaRouteImage2.png" width="580" alt="" />
 
-4. On the "Router" page, click "Set Gateway" under "Actions" to connect your router to the Internet.
+4. On the "Routers" page, click "Set Gateway" under "Actions" to connect your router to the Internet.
 
     <img src="media/CreateaRouterImage3.png" width="580" alt="" />
 
