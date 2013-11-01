@@ -15,17 +15,14 @@ After initial setup, revisit the interface to monitor usage, modify, add, and de
 <img src="media/HPPublicCloudConsoleHorizonPreviewEdition.png" width="580" alt="" />
 
 
-This page covers how to:
+This page contains the following sections:
 
-* [Create and connect a network](#Createandconnect)
-* [Manage HP Public Cloud](#ManageHPPublicCloud)
-
-and provides links:
-
+* [Creating and connecting a network](#Createandconnect)
+* [Managing HP Public Cloud](#ManageHPPublicCloud)
 * [For further information](#Forfurtherinformation)
 
 
-##Create and connect a network## {#Createandconnect}
+##Creating and connecting a network## {#Createandconnect}
 
 This section includes how to:
 
@@ -114,7 +111,7 @@ This section includes how to:
 
 4. Click "Networks" in the left-hand navigation, select the check box next to the network you want to delete, and click "Delete Networks" in the upper right-hand navigation. 
 
-##Manage HP Public Cloud## {#ManageHPPublicCloud}
+##Managing HP Public Cloud## {#ManageHPPublicCloud}
 
 You are now ready to use the options under "Manage Compute" under "Project" in the left-hand navigation. This section includes:
 
