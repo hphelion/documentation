@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "HP Cloud Services Overview"
+title: "HP Public Cloud Overview"
 permalink: /
 
 ---
 <!-- <iframe src="https://player.vimeo.com/video/38064508?title=0&amp;byline=0&amp;portrait=0" width="580" height="420" frameborder="0"> </iframe> -->
 
-# HP Cloud Services Overview
+# HP Public Cloud Overview
 
 Welcome to HP Public Cloud!  We have a pretty wide variety of services available to you, and a bunch of documentation to match.  This page provides you a quick overview of our services and the information that we have available for you about those services.  This page covers the following topics:
 
@@ -28,7 +28,7 @@ HP Cloud consists of the following publicly-available services:
 * [Content Delivery Network (CDN)](/cdn/) - A content delivery network hosted by HP
 * [Domain Name Service (DNS)](/dns/) - A managed domain name service featuring anycast routing hosted by HP
 
-The following HP Cloud services are now in private beta; follow the links to sign up and begin trying them out!
+The following HP Public Cloud are now in private beta; follow the links to sign up and begin trying them out!
 
 * [Load Balancer](/lbaas/) -  A managed service enabling automatic traffic routing to multiple back end servers hosted by HP.<br>
   **Note**: This service requires activation while in private beta; please [request access on our sign-up page](https://account.hpcloud.com/cases/betarequest/lbaas).  Service use is free of charge during the private beta period.
@@ -41,7 +41,7 @@ The following HP Cloud services are now in private beta; follow the links to sig
   
 ## Interacting with the services ## {#Interacting}
 
-For direct interactivity with HP Cloud Services, you can use the following officially supported tools:
+For direct interactivity with HP Public Cloud, you can use the following officially supported tools:
 
 * [Management Console](https://console.hpcloud.com) - The GUI experience on this website
 * [Command Line Interfaces](/cli/) - Command line tool for easy scripting
