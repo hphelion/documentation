@@ -131,15 +131,15 @@ Of course, you don't want to leave your password lying around in a bash script. 
 
     #!/bin/bash
     
-    read -sp "Please enter the password for your HP Cloud Services account
+    read -sp "Please enter the password for your HP Public Cloud account
     Password:" PASS
 
     swift -A https://region-a.geo-1.identity.hpcloudsvc.com:35357/v2.0/ -V 2.0 --os-username=my_email@example.com --key=$PASS --os-storage-url=https://region-a.geo-1.objects.hpcloudsvc.com/v1.0/13632180903902 --os-tenant-id=my_tenant_id download my_container
 
-Here, the "read" command in the script promts the user for input, with the message "Please enter the password for your HP Cloud Services account", with the "Password:" phrase on the next-line, followed by an input cursor.
+Here, the "read" command in the script promts the user for input, with the message "Please enter the password for your HP Public Cloud account", with the "Password:" phrase on the next-line, followed by an input cursor.
 
     ~$ ./my_bash_script.sh
-    Please enter the password for your HP Cloud Services account
+    Please enter the password for your HP Public Cloud account
     Password:
     
     No handlers could be found for logger "keystoneclient.v2_0.client"
