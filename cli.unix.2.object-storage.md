@@ -262,7 +262,7 @@ To force the removal of a container even there are files in it, run:
 
 ##Migration Commands## {#Migration}
 
-Use the `migrate` command to migrate files from one account to another.  The source account may be another HP Cloud Services account or an account from another provider such as AWS, Google, or Rackspace.  If the provider for the other account is not HP, use the `-p` option of the [`account:setup`](/cli/unix/2/reference#account:setup) command to create the account.
+Use the `migrate` command to migrate files from one account to another.  The source account may be another HP Public Cloud account or an account from another provider such as AWS, Google, or Rackspace.  If the provider for the other account is not HP, use the `-p` option of the [`account:setup`](/cli/unix/2/reference#account:setup) command to create the account.
 
 Now use the `migrate` command and specify the source account, source container (or object), and destination in the default account.  `migrate` is similar to the [`copy`](/cli/unix/2/reference#copy) command in that it supports recursive copy and regular expressions:
 

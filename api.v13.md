@@ -1,14 +1,14 @@
 ---
 layout: default_new
-title: "HP Cloud service APIs (v13.5)"
+title: "HP Cloud APIs (v13.5)"
 permalink: /api/v13/
 
 ---
-# HP Cloud Service APIs (v13.5)
+# HP Cloud APIs (v13.5)
 
 There are a number of HP Cloud APIs available for your programming pleasure: 
 
-* [Identity service](/api/v13/identity/): API for the HP Cloud identity service; one-stop authentication for all HP Cloud service offerings.
+* [Identity service](/api/v13/identity/): API for the HP Cloud identity service; one-stop authentication for all HP Cloud services.
 * [Object Storage](/api/object-storage/): API for HP Cloud object storage; a way to store and retrieve objects in a highly redundant cluster of publicly accessible physical machines hosted in HP data centers. 
 * [CDN](/api/CDN/): API for the HP Cloud content delivery network (CDN) service; content inside HP Cloud Object Storage can easily be cached on servers in metropolitan areas all over the world to speed client access to them by removing much of the network latency.
 * [Compute](/api/v13/compute/): API for the HP Cloud compute service; a way to instantiate virtual servers on publicly accessible physical machines hosted in HP data centers
