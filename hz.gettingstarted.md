@@ -27,7 +27,7 @@ This page contains the following sections:
 This section includes how to:
 
 * [Create a network](#Createanetwork) 
-* [Create a subnet](#Createasubnet)
+* [Create a subnet](#Createasubnet) 
 * [Create a router](#Createarouter)
 * [Connect your network](#Connectyournetwork)
 
