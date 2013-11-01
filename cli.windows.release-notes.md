@@ -92,7 +92,7 @@ None this release.
 ###New Features###
 
 * *Nova compute*: Full access to the OpenStack Nova compute infrastructure via the Windows command line, allowing you to manage and manipulate servers, flavors, images, keypairs, security groups, and so on.
-* *CDN*: Support through the CLI for the HP Cloud Services content delivery network (CDN), providing you with distributed caching of object storage objects on geographically dispersed caching servers. Copies of the object are stored at a location more convenient to the end user system, allowing for better performance.
+* *CDN*: Support through the CLI for the HP Cloud content delivery network (CDN), providing you with distributed caching of object storage objects on geographically dispersed caching servers. Copies of the object are stored at a location more convenient to the end user system, allowing for better performance.
 
 ###Known Issues###
 
