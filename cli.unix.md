@@ -7,6 +7,16 @@ product: unix-cli
 ---
 # Unix Command Line Interface
 
+**Notice** On November 4, 2013, the UNIX CLI will be moved into its End-of-Life Cycle process to final deprecation. During this 6-month transition time:
+
+* New and existing customers are encouraged to migrate to the OpenStackClient (Unified) CLIs
+* No new feature requests will be honored
+* Support will be provided
+
+After 6-months, access to online resources will still be available, but no support will be offered from HPPC, and the software download will be disabled – although you are most welcome to continue development at your discretion
+
+_________________________________________
+
 The Unix Command Line Interface is a tool which allows Unix or Mac users to manage their HP Public Cloud from the command line or automated through scripts.  There is no need to understand the underlying REST API or XML document format to use the Unix CLI.
 
 * [Installation](/cli/unix/install)
