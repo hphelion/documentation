@@ -15,7 +15,7 @@ This page provides you some examples of how to use the various commands (sometim
 
 ##Navigation## {#Navigation}
 
-To execute HP cloud commands in Windows PowerShell, first open a Windows PowerShell window; under the Start menu, it is typically under `All Programs > Accessories > Windows PowerShell`.  Select the shell appropriate to your system, either the 64-bit or 32-bit version.  Enter the HP Cloud Services CLI by entering:
+To execute HP cloud commands in Windows PowerShell, first open a Windows PowerShell window; under the Start menu, it is typically under `All Programs > Accessories > Windows PowerShell`.  Select the shell appropriate to your system, either the 64-bit or 32-bit version.  Enter the HP Public Cloud CLI by entering:
 
     PS C:> cd HPCS:
 
