@@ -16,7 +16,7 @@ After initial setup, revisit the interface to monitor usage, modify, add, and de
 
 
 This page covers how to:
-
+c
 * [Create and connect a network](#Createandconnect)
 * [Manage HP Public Cloud](#ManageHPPublicCloud)
 
@@ -60,13 +60,13 @@ This section includes how to:
 5. Leave the "Gateway IP" box blank to use the default value of the network address; e.g., 192.168.0.1 for 192.168.0.0/24.
 6. Leave the "Disable Gateway" box unchecked to use the default and click "Create." 
 
-<img src="media/CreateaSubnetImage1.png" width="580" alt="" />
+    <img src="media/CreateaSubnetImage1.png" width="580" alt="" />
 
-    7. The "Networks" screen displays your network name and associated subnets.
+7. The "Networks" screen displays your network name and associated subnets.
 
-<img src="media/CreateaSubnetImage2.png" width="580" alt="" />
+    <img src="media/CreateaSubnetImage2.png" width="580" alt="" />
 
-    8. To see a graphic display of your network setup, click "Network Topology" under "Manage Network" in the left-hand navigation.  
+8. To see a graphic display of your network setup, click "Network Topology" under "Manage Network" in the left-hand navigation.  
 
 <img src="media/CreateaSubnetImage3.png" width="580" alt="" />
 
