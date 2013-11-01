@@ -5,6 +5,16 @@ permalink: /cli/unix/reference/
 product: unix-cli
 
 ---
+**Notice** On November 4, 2013, the UNIX CLI will be moved into its End-of-Life Cycle process to final deprecation. During this 6-month transition time:
+
+* New and existing customers are encouraged to migrate to the OpenStackClient (Unified) CLIs
+* No new feature requests will be honored
+* Support will be provided
+
+After 6-months, access to online resources will still be available, but no support will be offered from HPPC, and the software download will be disabled – although you are most welcome to continue development at your discretion
+
+_________________________________________
+
 Below you can find a full reference of supported UNIX command-line interface (CLI) commands. The commands are alphabetized.  You can also use the <font face="Courier">hpcloud help [<em>command</em>]</font> tool (where <em>command</em> is the name of the command on which you want help, for example <font face="Courier">account:setup</font>) to display usage, description, and option information from the command line.
 
 Many of the commands support a `--debug` option to print verbose trace.  This trace may help you diagnose problems if the CLI is having difficulty communicating with the servers.
