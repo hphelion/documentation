@@ -1,13 +1,13 @@
 ---
 layout: default
-title: "Release Notes for the HP Cloud Services Java/Cloture jclouds Binding"
+title: "Release Notes for the HP Cloud Java/Cloture jclouds Binding"
 permalink: /bindings/jclouds/release-notes/
 product: jclouds
 
 ---
-# Release Notes for the HP Cloud Services Ruby Fog Binding
+# Release Notes for the HP Cloud Ruby Fog Binding
 
-These are the release notes for the HP Cloud services Java/Cloture jclouds bindings.  The current release number for the [HP Cloud Services Java/Cloture jclouds software bindings](/bindings) is version blah, released on Mar. 15th, 2013.  These release notes contain the following information:
+These are the release notes for the HP Cloud Java/Cloture jclouds bindings.  The current release number for the [HP Cloud Java/Cloture jclouds software bindings](/bindings) is version 0.0.20, released on Mar. 15th, 2013.  These release notes contain the following information:
 
 * [Release 0.0.20 Information](#v0020)
 
