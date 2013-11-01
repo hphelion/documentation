@@ -105,9 +105,13 @@ This section includes how to:
 <img src="media/Connectyournetworkimage2.png" width="580" alt="" />
 
 **Important**: To delete a network, you must first delete the router interface:
+
 1. Click"Routers" under "Manage Network in the left-hand bar.
+
 2. Click on the router "Name." 
+
 3. On the "Router Details" page, select the check box next to the "Interface" name, and click "Delete Interface." 
+
 4. Click "Networks" in the left-hand navigation, select the check box next to the network you want to delete, and click "Delete Networks" in the upper right-hand navigation. 
 
 ##Manage HP Cloud## {#ManageHPCloud}
