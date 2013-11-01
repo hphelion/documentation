@@ -31,6 +31,14 @@ This section includes how to:
 * [Create a router](#Createarouter)
 * [Connect your network](#Connectyournetwork)
 
+**Note**:A default configuration comes with HP Cloud compute activation and includes:
+
+* A network 
+* A subnet
+* A router connecting the subnets to the Internet
+* A security group with basic server options, both SSH and Ping rules
+
+You can use the default network to deploy HP Public Cloud compute instances (virtual servers), or create a network configuration through the HP Public Cloud Console with the following instructions.
 
 ###Create a network### {#Createanetwork}
 
