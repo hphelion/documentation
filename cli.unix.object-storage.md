@@ -9,7 +9,7 @@ product: unix-cli
 
 <iframe src="http://player.vimeo.com/video/32534203?title=0&amp;byline=0&amp;portrait=0" width="580" height="420" frameborder="0"> </iframe>
 
-This page gives you a few examples of how to perform various object storage tasks using the HP Cloud service.  This page discusses the following tasks:
+This page gives you a few examples of how to perform various object storage tasks using the HP Public Cloud.  This page discusses the following tasks:
 
 * [Container Commands](#ContainerCommands)
 * [Copy Commands](#CopyCommands)
@@ -262,7 +262,7 @@ To force the removal of a container even there are files in it:
 
 ##Migration Commands## {#Migration}
 
-You can use the `migrate` command to migrate files from one account to another.  The source account may be another HP Cloud Services account or an account from another provider such as AWS, Google, or Rackspace.  If the provider is not HP for the other account, use the `-p` option of the [`account:setup`](/cli/unix/reference#account:setup) command to create the account.
+You can use the `migrate` command to migrate files from one account to another.  The source account may be another HP Public Cloud account or an account from another provider such as AWS, Google, or Rackspace.  If the provider is not HP for the other account, use the `-p` option of the [`account:setup`](/cli/unix/reference#account:setup) command to create the account.
 
 Once the account is set up, use the `migrate` command and specify the source account, source container (or object), and destination in the default account.  `migrate` works similarly to the [`copy`](/cli/unix/reference#copy) command in that it supports recursive copy and regular expressions:
 
