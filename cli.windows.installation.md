@@ -91,7 +91,7 @@ The first time that you run the shell you must supply the access key, secret key
 The shell detects that this is your first time logging in and prompts you for these items. 
 
     ===============================================================
-    Welcome to the HP Cloud Services Powershell Environment.
+    Welcome to the HP Cloud Powershell Environment.
     ===============================================================
     
        --> Registering Providers. . .
@@ -113,7 +113,7 @@ You only need to enter these credentials the first time you run the shell.  Afte
 
 ##Navigate to the Command Line## {#NavigatetotheCommandLine}
 
-To issue HP Cloud environment CLI Windows PowerShell commands (also sometimes called *cmdlets*), you need to first navigate to a container or the HP Cloud Services (HPCS) provider, which you can do by issuing the following command:
+To issue HP Cloud environment CLI Windows PowerShell commands (also sometimes called *cmdlets*), you need to first navigate to a container or the HP Public Cloud provider, which you can do by issuing the following command:
 
     cd HPCS:
 
