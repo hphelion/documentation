@@ -13,7 +13,7 @@ Using the HP Cloud Content Delivery Network (CDN) service, content inside [HP Cl
 
 For a step-by-step guide to enable CDN on the [management console](https://console.hpcloud.com), take a look at the [Knowledge Base](https://community.hpcloud.com/knowledge-base) article [Activating CDN for your Object Storage](https://community.hpcloud.com/article/activating-cdn-your-object-storage).
 
-If you have any questions, try our [Forums](https://community.hpcloud.com) where you can learn from our own internal experts as well as other users in the HP Cloud Services community.
+If you have any questions, try our [Forums](https://community.hpcloud.com) where you can learn from our own internal experts as well as other users in the HP Public Cloud community.
 
 ## API
 Do you need low level, raw REST API access to HP Cloud CDN?  Head on over to the [CDN API page](/cdn/api) for details, including a video showing usage of the API using cURL.

@@ -40,7 +40,7 @@ The guide provides instructions for creating an IPsec VPN (also known as a site-
 
 A site-to-site VPN allows multiple fixed locations to establish secure connections with each other over a public network such as the Internet. Site-to-site VPN extends a defined network, making computer resources from one network available to other networks.
 
-For VPN site-to-site connectivity, you will need to modify either the provided default network configuration or create your own network, subnet, router and ports using the OpenStack Networking API.  The customization can be done on either the command line or through the HP Cloud Services Management Console.  
+For VPN site-to-site connectivity, you will need to modify either the provided default network configuration or create your own network, subnet, router and ports using the OpenStack Networking API.  The customization can be done on either the command line or through the HP Cloud Management Console.  
 
 Before starting, ensure that you have adequate permissions to accomplish each of the following steps.  
 

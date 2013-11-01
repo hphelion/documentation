@@ -7,7 +7,7 @@ product: unix-cli
 ---
 # Unix Command Line Interface
 
-The Unix Command Line Interface is a tool which allows Unix or Mac users to manage their HP Cloud Services from the command line or automated through scripts.  There is no need to understand the underlying REST API or XML document format to use the Unix CLI.
+The Unix Command Line Interface is a tool which allows Unix or Mac users to manage their HP Public Cloud from the command line or automated through scripts.  There is no need to understand the underlying REST API or XML document format to use the Unix CLI.
 
 * [Installation](/cli/unix/install)
 * [Account Configuration](/cli/unix/configuration)
