@@ -8,7 +8,7 @@ product: hz-Getting Started
 
 
 # Getting Started with HP Public Cloud Console
-This Getting Started guide walks you through network setup, connection, instance and volume creation, security options, identity parameters, and management tools that facilitate your organization's use of HP Public Cloud. **This page takes you through the interface in the chronological order needed to get up and running, rather than the order displayed in the console**. 
+Welcome to HP Public Cloud Console Horizon Preview Edition! HP Public Cloud wants you up and running quickly so this Getting Started guide walks you through network setup and connection (if not going with the default configuration setup when you activate compute services), instance and volume creation, security options, identity parameters, and management tools that facilitate your organization's use of HP Public Cloud. **This page takes you through the interface in the chronological order needed to get up and running, rather than the order displayed in the console**. 
 
 After initial setup, revisit the interface to monitor usage, modify, add, and delete networks, instances, volumes, roles, groups, and more.
 
