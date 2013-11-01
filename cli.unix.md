@@ -7,7 +7,8 @@ product: unix-cli
 ---
 # Unix Command Line Interface
 
-**Notice** On November 4, 2013, the UNIX CLI will be moved into its End-of-Life Cycle process to final deprecation. During this 6-month transition time:
+**Important Notice** 
+On November 4, 2013, the UNIX CLI will be moved into its End-of-Life Cycle process to final deprecation. During this 6-month transition time:
 
 * New and existing customers are encouraged to migrate to the OpenStackClient (Unified) CLIs
 * No new feature requests will be honored
