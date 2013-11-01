@@ -8,7 +8,7 @@ product: hz-Getting Started
 
 
 # Getting Started with HP Public Cloud Console
-This Getting Started guide walks you through network setup, connection, instance and volume creation, security options, identity parameters, and management tools that facilitate your organization's HP Cloud use. **This page takes you through the interface in the chronological order needed to get up and running, rather than the order displayed in the console**. 
+This Getting Started guide walks you through network setup, connection, instance and volume creation, security options, identity parameters, and management tools that facilitate your organization's use of HP Public Cloud. **This page takes you through the interface in the chronological order needed to get up and running, rather than the order displayed in the console**. 
 
 After initial setup, revisit the interface to monitor usage, modify, add, and delete networks, instances, volumes, roles, groups, and more.
 
@@ -18,7 +18,7 @@ After initial setup, revisit the interface to monitor usage, modify, add, and de
 This page covers how to:
 
 * [Create and connect a network](#Createandconnect)
-* [Manage HP Cloud](#ManageHPCloud)
+* [Manage HP Public Cloud](#ManageHPPublicCloud)
 
 and provides links:
 
@@ -38,7 +38,7 @@ This section includes how to:
 ###Create a network### {#Createanetwork}
 
 1. Login to HP Public Cloud with your username and password.
-2. On the Cloud console interface, click "Project," on the left side-bar then "Networks" under "Manage Networks."
+2. On the HP Public Cloud console interface, click "Project," on the left side-bar then "Networks" under "Manage Networks."
 
 <img src="media/CreateaNetworkImage1.png" width="580" alt="" />
 
@@ -114,7 +114,7 @@ This section includes how to:
 
 4. Click "Networks" in the left-hand navigation, select the check box next to the network you want to delete, and click "Delete Networks" in the upper right-hand navigation. 
 
-##Manage HP Cloud## {#ManageHPCloud}
+##Manage HP Public Cloud## {#ManageHPPublicCloud}
 
 You are now ready to use the options under "Manage Compute" under "Project" in the left-hand navigation. This section includes:
 
