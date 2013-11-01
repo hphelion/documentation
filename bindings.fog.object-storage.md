@@ -7,7 +7,7 @@ product: fog
 ---
 #Ruby Fog Bindings Object Storage Examples
 
-The HP Cloud services provides object storage support via both the model abstraction and the request abstraction.  Executing commands in both layers are detailed
+The HP Public Cloud provides object storage support via both the model abstraction and the request abstraction.  Executing commands in both layers are detailed
 in this page. 
 
 <!--ACLs in separate section-->
@@ -24,7 +24,7 @@ This page discusses the following topics:
 
 ##Connecting to the Service## {#ConnectingtotheService}
 
-For information on connecting to the service, please see the [Connecting to the HP Cloud Service](/bindings/fog/connect) page.
+For information on connecting to the service, please see the [Connecting to the HP Public Cloud](/bindings/fog/connect) page.
 
 ##Using the Model Abstraction## {#UsingtheModelAbstraction}
 
@@ -104,7 +104,7 @@ For information on connecting to the service, please see the [Connecting to the 
 
 ###About using object ACLs### {#UsingObjectACLsModelLayer}
 
-Object ACLs allow you to share containers and objects with other registered HP Cloud Services users.  The owner of a container or object can grant read, write, read/write access to other users.  The shared containers and objects can then be accessed based on the permissions granted by the owner.
+Object ACLs allow you to share containers and objects with other registered HP Public Cloud users.  The owner of a container or object can grant read, write, read/write access to other users.  The shared containers and objects can then be accessed based on the permissions granted by the owner.
 
 ###Using the object ACLs to grant access### 
 

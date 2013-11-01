@@ -12,7 +12,7 @@ product: identity
 
 With the introduction of the HP Cloud Identity Service, the days of having to keep track of different sets of access keys for each individual service and not being able to access anyone else’s service except your own will be over.  A much more sophisticated mechanism for managing access to services will become available and this document spells out how you will be impacted by this significant, but welcome change.
 
-Before going any further, though, we highly recommend that you read Introducing the HP Cloud Identity Service for an overview of how this new service works (an explanation of the new terminology, etc.).  The remainder of this document will focus on how steps that existing private beta customers will need to take in order to keep your use of HP Cloud Services functional to take advantage of this new authentication and access management approach.
+Before going any further, though, we highly recommend that you read Introducing the HP Cloud Identity Service for an overview of how this new service works (an explanation of the new terminology, etc.).  The remainder of this document will focus on how steps that existing private beta customers will need to take in order to keep your use of HP Public Cloud functional to take advantage of this new authentication and access management approach.
 
 ## How Am I Impacted?
 
@@ -25,7 +25,7 @@ With a change to something as fundamental as how authentication works, all custo
 
 ## Interruption of Service During the Upgrade
 
-There will be some disruption to HP Cloud Services during the upgrade.  Specifics about the timing of the upgrade will be posted in the [HP Cloud Services Console](https://manage.hpcloud.com) at least three days prior to the upgrade.
+There will be some disruption to HP Public Cloud during the upgrade.  Specifics about the timing of the upgrade will be posted in the [HP Public Cloud Console](https://manage.hpcloud.com) at least three days prior to the upgrade.
 
 ### HP Cloud Object Storage
 * The service will be shutdown and unavailable during the upgrade.
@@ -55,7 +55,7 @@ In order to provide some backward compatibility with Object Storage, you may use
 
 This enables you to simply change endpoint, X-Auth-Key, and X-Auth-User and the remainder of your code written on top of the Object Storage REST API will continue to work.   Note, though, that this only works for the v1.0 version of the Identity Service endpoint.  The v2.0 version of the Identity Service endpoint does not support this backward compatibility.
 
-It should be noted that this backward compatibility is provided as a convenience to help ease migration to the full blown Identity Service.  HP Cloud Services highly recommends you begin using the v2.0 endpoint and its operations as soon as possible as the v1.0 endpoint is deprecated.  The v1.0 endpoint will be removed at some point in the future.
+It should be noted that this backward compatibility is provided as a convenience to help ease migration to the full blown Identity Service.  HP Public Cloud highly recommends you begin using the v2.0 endpoint and its operations as soon as possible as the v1.0 endpoint is deprecated.  The v1.0 endpoint will be removed at some point in the future.
 
 ## Account Specifiers in Object Storage Paths
 In HP Cloud Object Storage, the first part of the path is referred to as the account. For example, this path refers to an object pic.gif, in container pictures in account AUTH_86ca9388-b3df-4016-ad3b-ca05a917455c:
@@ -127,5 +127,5 @@ For example:
         export EC2_ACCESS_KEY=87135022548315:2MYBW5CYD2U55VLWDTF8
         export EC2_SECRET_KEY=s9VQhwCK49TOPnEp+80ypRD7AK7rs8qgWp0zYCyE
 
-Similar to the statements made in the Object Storage compatibility section  HP Cloud Services highly recommends you begin using the OpenStack Compute API and associated client libraries as soon as possible, as the EC2 compatible API is deprecated and will be removed at some point in the future.
+Similar to the statements made in the Object Storage compatibility section  HP Public Cloud highly recommends you begin using the OpenStack Compute API and associated client libraries as soon as possible, as the EC2 compatible API is deprecated and will be removed at some point in the future.
 

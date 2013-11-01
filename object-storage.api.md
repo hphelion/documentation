@@ -7,7 +7,7 @@ product: object-storage
 ---
 # HP Cloud Object Storage  API
 
-Surf on over to our [Object Storage API Reference](/api/object-storage) for lots of details on the HP Cloud Services object storage service.  For a detailed overview of how to interact with the Object Storage REST API using cURL:
+Surf on over to our [Object Storage API Reference](/api/object-storage) for lots of details on the HP Public Cloud object storage service.  For a detailed overview of how to interact with the Object Storage REST API using cURL:
 
 <iframe src="http://player.vimeo.com/video/32288319?title=0&amp;byline=0&amp;portrait=0" width="640" height="464" frameborder="0"> </iframe>
 

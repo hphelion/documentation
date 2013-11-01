@@ -1,13 +1,13 @@
 ---
 layout: default
-title: "Connecting to the HP Cloud Service"
+title: "Connecting to the HP Public Cloud"
 permalink: /v13/bindings/fog/connect/
 product: fog
 
 ---
-#Ruby Fog Bindings: Connecting to the HP Cloud Service
+#Ruby Fog Bindings: Connecting to the HP Public Cloud
 
-This page gives you details on how to connect to the HP Cloud service and contains the following sections:
+This page gives you details on how to connect to the HP Public Cloud and contains the following sections:
 
 * [Initial Connection](#InitialConnection)
 * [Supplying Your Credentials](#SupplyingyourCredentials)
@@ -16,7 +16,7 @@ This page gives you details on how to connect to the HP Cloud service and contai
 
 ##Initial Connection## {#InitialConnection}
 
-To connect to the HP Cloud Service, follow these steps:
+To connect to the HP Public Cloud, follow these steps:
 
 1. Enter IRB
 
@@ -31,7 +31,7 @@ To connect to the HP Cloud Service, follow these steps:
     
         irb -r 'rubygems'
 
-3. Establish a connection to the desired HP Cloud service
+3. Establish a connection to the desired service
 
         conn = Fog::<SERVICE-NAME>.new(
                :provider      => "HP", 
@@ -77,7 +77,7 @@ The current usable availability zones for the block storage service:
 
 ##Optional Parameters## {#OptionalParameters}
 
-This section describes the optional parameters that you can use when connecting to any of the HP Cloud services.  The examples below show the Compute service, but these optional parameters work with all of the HP Cloud services.
+This section describes the optional parameters that you can use when connecting to any of the services.  The examples below show the Compute service, but these optional parameters work with all of the available HP Public cloud services.
 
 The `user_agent` parameter allows you to specify a string to pass as a `user_agent` header for the connection.  You can use this to track the caller of the operations.  You can set the `user_agent` parameter as follows:
 

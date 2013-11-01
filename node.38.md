@@ -10,7 +10,7 @@ product: identity
 <!--This is a comment. Comments are not displayed in the browser-->
 <!--<iframe src="LINK" width="640" height="464" frameborder="0"> </iframe>-->
 
-Based on [Keystone, the OpenStack Identity Service](http://keystone.openstack.org/), the HP Cloud Identity Service provides one-stop authentication for all HP Cloud Service offerings.  The Identity Service allows clients to obtain tokens that can be used to access cloud services.  (If you are unfamiliar with the Keystone terminology, the [HP Cloud Identity Service Overview](/identity) page contains a list of key terms.)
+Based on [Keystone, the OpenStack Identity Service](http://keystone.openstack.org/), the HP Cloud Identity Service provides one-stop authentication for all HP Public Cloud offerings.  The Identity Service allows clients to obtain tokens that can be used to access cloud services.  (If you are unfamiliar with the Keystone terminology, the [HP Cloud Identity Service Overview](/identity) page contains a list of key terms.)
 
 ## Identity Service Information Flow
 
@@ -22,19 +22,19 @@ The following figure shows you how the HP Cloud Identity Service works and how y
 As you can see in the illustration, the authentication process goes like this:
 
 <!--I'd like to take out those parentheticals and replace them with links to the definitions, but perhaps not; is there some programmatic way we can pull up definitions without the user having to surf to the glossary page?-->
-1. A User sends an authentication request to the Identity Service.  You can send access keys or your username and password combination to prove that you are who you say you are.<br><strong>Note</strong>:  HP Cloud Services recommends you perform authentication using the access key method.  Most importantly, a breach of access keys is far more recoverable than one involving username/password.  In addition, Tenant IDs don’t change, whereas Tenant names can be modified, so if you use Tenant IDs you guarantee a modified Tenant name won’t cause authentication errors or breakdowns.<br>
+1. A User sends an authentication request to the Identity Service.  You can send access keys or your username and password combination to prove that you are who you say you are.<br><strong>Note</strong>:  HP Public Cloud recommends you perform authentication using the access key method.  Most importantly, a breach of access keys is far more recoverable than one involving username/password.  In addition, Tenant IDs don’t change, whereas Tenant names can be modified, so if you use Tenant IDs you guarantee a modified Tenant name won’t cause authentication errors or breakdowns.<br>
 2. The Identity Service responds and the response contains an _Authentication Token_ (a string which must be used for subsequent requests to other services) and a _Service Catalog_ (a list of services and their endpoints for which the Authentication Token is valid).
-3. A User sends requests to the services from the Service Catalog, passing along the Authentication Token.  All HP Cloud Services are integrated with the Identity Service so that the Authentication Token can correctly identify a User and provide the appropriate access.
+3. A User sends requests to the services from the Service Catalog, passing along the Authentication Token.  All HP Public Cloud are integrated with the Identity Service so that the Authentication Token can correctly identify a User and provide the appropriate access.
 
 ## Key Identity Service Concepts
 
 When working with the HP Cloud Identity Services, it's critical to understand the concept of Tenants, Tokens (Scoped and Unscoped), and the REST API.
 
 ### Tenants
-A Tenant is a collection of HP Cloud Services subscriptions and/or resources.  Think of a Tenant as a set of Compute, Storage and/or other resources that you might use for a given project.  Currently your account only has one Tenant and all your HP Cloud resources are managed within that Tenant.  Over time, we’ll add the ability to manage multiple Tenants so that you can group resources by project or in any other manner you like.  Associated with a Tenant is a catalog of services that are available to that Tenant called a Service Catalog.  As you dig deeper and start to use the Identity Service more, you’ll come across the Tenant ID and associated Service Catalog concepts.
+A Tenant is a collection of HP Public Cloud subscriptions and/or resources.  Think of a Tenant as a set of Compute, Storage and/or other resources that you might use for a given project.  Currently your account only has one Tenant and all your HP Cloud resources are managed within that Tenant.  Over time, we’ll add the ability to manage multiple Tenants so that you can group resources by project or in any other manner you like.  Associated with a Tenant is a catalog of services that are available to that Tenant called a Service Catalog.  As you dig deeper and start to use the Identity Service more, you’ll come across the Tenant ID and associated Service Catalog concepts.
 
 ### Scoped and Unscoped Tokens
-A Scoped Token is one that is associated with a Tenant and can be used to access HP Cloud Services  or resources managed within that Tenant. In other words, you need a Scoped Token to access the services and other resources within your account.  A Service Catalog returned with a Scoped Token includes all the services that are available to you.
+A Scoped Token is one that is associated with a Tenant and can be used to access HP Public Cloud  or resources managed within that Tenant. In other words, you need a Scoped Token to access the services and other resources within your account.  A Service Catalog returned with a Scoped Token includes all the services that are available to you.
 
 An Unscoped Token is not associated with a Tenant, and you cannot use it to access the services or resources within your account.  You can only use Unscoped Tokens to access the Identity Service itself.  That is, you can use Unscoped Tokens to make Identity Service API calls.  For example, if you need to determine information about your Tenant then you would use an Unscoped Token to call the Identity Service.
 
