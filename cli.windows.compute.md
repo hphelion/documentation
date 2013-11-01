@@ -22,7 +22,7 @@ For complete details on the commands--syntax, descriptions, and so forth--take a
 
 ##Navigation## {#Navigation}
 
-To execute commands in Windows PowerShell, first open a Windows PowerShell window; under the Start menu, it is typically under `All Programs > Accessories > Windows PowerShell`.  Select the shell appropriate to your system, either the 64-bit or 32-bit version.  Enter the HP Cloud Services CLI by entering:
+To execute commands in Windows PowerShell, first open a Windows PowerShell window; under the Start menu, it is typically under `All Programs > Accessories > Windows PowerShell`.  Select the shell appropriate to your system, either the 64-bit or 32-bit version.  Enter the HP Public Cloud CLI by entering:
 
     PS C:\> cd HPCS:
 
