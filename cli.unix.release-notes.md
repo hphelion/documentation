@@ -9,13 +9,13 @@ product: unix-cli
 
 ###Important Notice###
 
-On November 4, 2013, the UNIX CLI will be moved into its End-of-Life Cycle process to final deprecation. During this 6-month transition time:
+On November 4, 2013, the UNIX CLI will be moved into its End-of-Life Cycle process toward final deprecation. During this 6-month transition time:
 
-* New and existing customers are encouraged to migrate to the OpenStackClient (Unified) CLIs
+* New and existing customers are encouraged to migrate to the [OpenStackClient (Unified) CLIs](https://wiki.openstack.org/wiki/OpenStackClient)
 * No new feature requests will be honored
-* Support will be provided
+* Support will be accepted
 
-After 6-months, access to online resources will still be available, but no support will be offered from HPPC, and the software download will be disabled – although you are most welcome to continue development at your discretion
+After 6-months, access to online resources will still be available, but no support will be offered from HPPC, and the software download will be disabled&mdash;although you are most welcome to continue development at your discretion
 
 _________________________________________
 
