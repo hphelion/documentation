@@ -15,7 +15,7 @@ Leveraging [OpenStack Compute](http://openstack.org/projects/compute/), HP Cloud
 * **Image** - A collection of files used as a base installation, typically an operating system such as Ubuntu 10.10 or something similar.
 * **Server** - An instance created out of a **Flavor** + an **Image**
 
-A variety of flavors and images are provided by HP Cloud compute that can be used to create a wide mix of servers.  The best way to learn more is to start using it yourself over at the [Management Console](https://console.hpcloud.com).  If you have any questions, try our [Forums](https://community.hpcloud.com) where you can learn from our own internal experts as well as other users in the HP Cloud Services community.
+A variety of flavors and images are provided by HP Cloud compute that can be used to create a wide mix of servers.  The best way to learn more is to start using it yourself over at the [Management Console](https://console.hpcloud.com).  If you have any questions, try our [Forums](https://community.hpcloud.com) where you can learn from our own internal experts as well as other users in the HP Public Cloud community.
 
 **Note**: For security purposes, when you create a server, it is automatically assigned a floating, non-removable IP address.
 
