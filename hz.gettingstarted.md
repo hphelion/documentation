@@ -16,7 +16,7 @@ After initial setup, revisit the interface to monitor usage, modify, add, and de
 
 
 This page covers how to:
-c
+
 * [Create and connect a network](#Createandconnect)
 * [Manage HP Public Cloud](#ManageHPPublicCloud)
 
@@ -40,16 +40,15 @@ This section includes how to:
 1. Login to HP Public Cloud with your username and password.
 2. On the HP Public Cloud console interface, click "Project," on the left side-bar then "Networks" under "Manage Networks."
 
-<img src="media/CreateaNetworkImage1.png" width="580" alt="" />
+    <img src="media/CreateaNetworkImage1.png" width="580" alt="" />
 
-    3. Click "+Create Network" in the right-hand navigation.
+3. Click "+Create Network" in the right-hand navigation.
 
+    <img src="media/CreateaNetworkImage2.png" width="580" alt="" /> 
 
-<img src="media/CreateaNetworkImage2.png" width="580" alt="" /> 
+4. Enter a "Network Name" in the "Create Network" pop-up screen, leave the Admin State box checked, and continue to the directions in "{#Create a subnet}" below.
 
-    4. Enter a "Network Name" in the "Create Network" pop-up screen, leave the Admin State box checked, and continue to the directions in "{#Create a subnet}" below.
-
-<img src="media/CreateaNetworkImage3.png" width="580" alt="" />
+    <img src="media/CreateaNetworkImage3.png" width="580" alt="" />
 
 ###Create a subnet### {#Createasubnet}
 
