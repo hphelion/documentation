@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Cloud Console Getting Started"
-permalink: /hz/gettingstarted/
+permalink: hpcloudconsole
 product: hz-Getting Started
 
 ---
