@@ -51,7 +51,7 @@ You can use the default network to deploy HP Public Cloud compute instances (vir
 
     <img src="media/CreateaNetworkImage2.png" width="580" alt="" /> 
 
-4. Enter a "Network Name" in the "Create Network" pop-up screen, leave the Admin State box checked, and continue to the directions in "Create a subnet" below.
+4. Enter a "Network Name" in the "Create Network" pop-up screen, leave the "Admin" State box checked, and continue to the directions in "Create a subnet" below.
 
     <img src="media/CreateaNetworkImage3.png" width="580" alt="" />
 
@@ -100,7 +100,7 @@ You can use the default network to deploy HP Public Cloud compute instances (vir
 
 1. Click the router name on the "Routers" page.
 
-2. Click "+Add Interface" on the top far-right of the "Router Details" page. 
+2. Click "+Add Interface" on the far-right of the "Router Details" page. 
 
     <img src="media/Connectyournetworkimage1.png" width="580" alt="" />
 
@@ -182,13 +182,13 @@ An instance is a virtual server.
 
     <img src="media/CreateanInstanceImage3.png" width="580" alt="" />
 
-8. Click the "Select Image" drop down under "Image Name." Select one of the images HP Public Cloud provides and click "Launch."
+8. Click the "Select Image" drop down under "Image Name." Select one of the images HP Public Cloud provides.
 
     <img src="media/CreateanInstanceImage4.png" width="580" alt="" />
 
 9. Click the "Networking" tab in the upper navigation of  "Launch Instance" and click the "+" next to the network you want to launch an instance from.  You can also drag and drop the network from which you want to launch the instance from the "Available Networks" box to the "Selected Networks" box.
 
-    **Note** If you click "Launch" after "Select Image," before clicking the "Networking" tab, an error message displays; however, you can still select the network desired from the "Available Network" box to the "Selected Networks" box.
+    **Note** If you click "Launch" before clicking the "Networking" tab, an error message displays; however, you can still select the network desired from the "Available Network" box to the "Selected Networks" box.
 
 10. Click "Launch."
 
