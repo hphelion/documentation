@@ -114,15 +114,15 @@ You can use the default network to deploy HP Public Cloud compute instances (vir
 
 1. If you have created an instance, click "Instances" on the left-hand bar under "Manage Compute."
 
- 2. Select the check box for any instance running on the network you want to delete and click "Terminate Instances" in the upper right-hand navigation. 
+2. Select the check box for any instance running on the network you want to delete and click "Terminate Instances" in the upper right-hand navigation. 
 
 3. Click "Routers" under "Manage Network in the left-hand bar.
 
 4. Click on the router "Name." 
 
-3. On the "Router Details" page, select the check box next to the "Interface" name, and click "Delete Interface." 
+5. On the "Router Details" page, select the check box next to the "Interface" name, and click "Delete Interface." 
 
-4. Click "Networks" in the left-hand bar, select the check box next to the network you want to delete, and click "Delete Networks" in the upper right-hand navigation. 
+6. Click "Networks" in the left-hand bar, select the check box next to the network you want to delete, and click "Delete Networks" in the upper right-hand navigation. 
 
 ##Managing HP Public Cloud## {#ManageHPPublicCloud}
 
