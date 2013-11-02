@@ -31,7 +31,7 @@ This section includes how to:
 * [Create a router](#Createarouter)
 * [Connect your network](#Connectyournetwork)
 
-**Note**: A default configuration comes with HP Cloud compute activation and includes:
+**Note**: A default configuration comes with HP Public Cloud compute activation and includes:
 
 * A network 
 * A subnet
