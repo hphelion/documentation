@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Cloud Services: Assisted Data Migration Reference Guide from Version 12.12 to 13.5"
-permalink: /migration-details/
+permalink: /migration-details-references/
 
 ---
 <!--
@@ -12,9 +12,9 @@ Troubleshooting or frequently asked questions (?)
 
 # HP Cloud Services version 12.12 to 13.5: Assisted Data Migration Reference Guide
 
-If you need assistance in migrating your data from HP Cloud Services version 12.12 to 13.5, this page provides you with detailed information about the tasks you need to complete before the data migration. Review this document and [contact support](#ContactSupport) with any questions.
+If you need assistance in migrating your data from HP Cloud Services version 12.12 to 13.5, this page provides you with detailed information about the tasks you need to complete before the data migration. Review this document and [contact support](#ContactingSupport) with any questions.
 
-If you plan on performing the migration without support services, the [Self-Migration Reference Guide](/self-migration-reference-guide) page contains details on how to migrate your data yourself from version 12.12 to 13.5 of the HP Cloud Services.
+If you plan on performing the migration without support services, the [Self-Migration Reference Guide](/migration-overview) page contains details on how to migrate your data yourself from version 12.12 to 13.5 of the HP Cloud Services.
 
 ## Before you begin ## {#TransitionOverview)
 For assistance with transitioning your data from version 12.12 to 13.5, there are a few preliminary tasks you must complete first:
@@ -25,7 +25,7 @@ For assistance with transitioning your data from version 12.12 to 13.5, there ar
 * [Prepare a volume for migration](#PrepVolume)
 * [Terminate a persistent instance created from a block volume](#TerminatingPersistent)
 
-Once you have completed these tasks, you must [contact support](#ContactSupport) to assist you with the rest of your migration.
+Once you have completed these tasks, you must [contact support](#ContactingSupport) to assist you with the rest of your migration.
 
 ## Understand what's new for HP Cloud Services version 13.5 ## {#VersionDiffs}
 HP Cloud Services version 13.5 is based on the latest version of OpenStack (Havana), which expands functionality and enhances the current capabilities of the existing services. The sections below give a brief overview of what's new for version 13.5.
@@ -41,7 +41,7 @@ Each region--US East and US West--consists of three physically isolated availabi
 
 **Important!** Volumes can only be attached to servers created in the same availability zone.
 
-### Software defined networking ###{#SDN}
+### Software defined networking ### {#SDN}
 
 With the addition of our new best-in-class software defined networking (SDN) technology from HP Networking, you get enhanced network functionality and  a rich set of additional functionality including the ability to:
 
@@ -59,7 +59,7 @@ Block storage has always been available in the HP Cloud Compute service, but now
 
 Bulk import means we load your data into HP Cloud Block Storage or HP Cloud Object Storage--just send a hard drive directly to the HP data centers where we rapidly transfer your data to the cloud. Get apps with big data sets to the HP Cloud quickly and easily.
 
-###For more information ###{#MoreVersionDiffInfo}
+### For more information ### {#MoreVersionDiffInfo}
 For more information on migrating your services, and to better understand the differences between versions 12.12 and 13.5, see:
 
 * [Release Notes](/release-notes)
@@ -74,11 +74,11 @@ For each instance, you need to determine if you want to keep the data that resid
 + Move an instance snapshot to version 13.5
 + Create a new, version 13.5 instance and migrate the data
 
-To move an instance snapshot, continue with the tasks in this document. To create a new instance and migrate your data, *do not continue with this document*; instead, you must follow the [Self-Migration Reference Guide](/self-migration-reference-guide).
+To move an instance snapshot, continue with the tasks in this document. To create a new instance and migrate your data, *do not continue with this document*; instead, you must follow the [Self-Migration Reference Guide](/migration-overview).
 
-Using an instance snapshot can make migration easier, but might not be suitable for all transitions. An instance snapshot includes only the root partition; ephemeral or additional disk space is not stored in a snapshot.  If you use ephemeral storage, you must [manually transition this data](/self-migration-reference-guide#createephinstance/).  
+Using an instance snapshot can make migration easier, but might not be suitable for all transitions. An instance snapshot includes only the root partition; ephemeral or additional disk space is not stored in a snapshot.  If you use ephemeral storage, you must [manually transition this data](/migration-overview#createephinstance).  
 
-**Important!** If you have questions about which process is best for your situation, [contact your support engineer](#ContactSupport). If you do not need to keep your existing data, you should simply [create a new instance](/creating-your-first-instance-135).
+**Important!** If you have questions about which process is best for your situation, [contact your support engineer](#ContactingSupport). If you do not need to keep your existing data, you should simply [create a new instance](/article/creating-your-first-instance-135).
 
 ## Review key migration information ## {#TransitionInfo}
 Before you attempt an assisted migration from HP Cloud Services version 12.12 to 13.5, review the following critical pieces of information.
@@ -136,7 +136,7 @@ To transition your data to version 13.5, you must prepare your volume (and assoc
 
 All volume snapshots and volumes created from those snapshots are migrated as well.
 
-###Detaching a block volume### {#DetachingBlock}
+### Detaching a block volume ### {#DetachingBlock}
 
 **IMPORTANT!** You need to unmount any device from your instance prior to detaching it to avoid  possible issues, such as data corruption.
 
@@ -164,7 +164,7 @@ Support must migrate all assets associated with your volumes (such as volume sna
 
 See the [Managing volumes](/mc/compute/volumes/manage/) page for details on using the MC for creating and deleting a volume and bootable volumes, attaching and detaching volumes, managing volume snapshots, and viewing volume details.
 
-##Terminating a persistent instance created from a block volume ## {#TerminatingPersistent}
+## Terminating a persistent instance created from a block volume ## {#TerminatingPersistent}
 
 You cannot detach a volume that is running an instance; you must first terminate the instance to make the volume available.  To terminate an instance:
 
