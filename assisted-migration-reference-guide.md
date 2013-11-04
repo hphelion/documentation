@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Cloud Services: Assisted Data Migration Reference Guide from Version 12.12 to 13.5"
-permalink: /migration-details-refernces/
+permalink: /migration-details-reference/
 
 ---
 <!--
