@@ -11,7 +11,6 @@ do
   git checkout -b "${BRANCH}" || git checkout -f "${BRANCH}"
   git reset HEAD || true
   git pull origin "${BRANCH}"
-  git merge origin "${BRANCH}" || true
-  git push origin "${BRANCH}" || true
+  git rebase master || true
 done
 exit 0
