@@ -7,6 +7,18 @@ product: unix-cli
 ---
 #HP Cloud UNIX CLI Release Notes
 
+###Important Notice###
+
+On November 4, 2013, the UNIX CLI will be moved into its End-of-Life Cycle process toward final deprecation. During this 6-month transition time:
+
+* New and existing customers are encouraged to migrate to the [OpenStackClient (Unified) CLIs](https://wiki.openstack.org/wiki/OpenStackClient)
+* No new feature requests will be honored
+* Bug reports will be accepted
+
+After 6-months, access to online resources will still be available, but no support will be offered from HP Public Cloud, and the software download will be disabled&mdash;although you are most welcome to continue development at your discretion
+
+_________________________________________
+
 These are the release notes for the HP Cloud UNIX CLI.  The current release number for the [UNIX CLI software](/cli/unix) is version 1.9.1, released on 05/15/13.
 
 <!-- * [Release 2.0.0 Features](#v2_0_0) -->
