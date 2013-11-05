@@ -389,50 +389,48 @@ This section discusses the snapshot operations you can perform using the request
 1. List all available snapshots for an account:
 
         response = conn.list_snapshots
-        body['snapshots']                       # returns an array of snapshot hashes
-        headers                                 # returns the headers
-        body['snapshots'][0]['displayName']     # returns the name of the snapshot
-        body['snapshots'][0]['size']            # returns the size of the snapshot
-        body['snapshots'][0]['volumeId']        # returns the volume id of the snapshot
+        response.body['snapshots']                        # returns an array of snapshot hashes
+        response.headers                                  # returns the headers
+        response.body['snapshots'][0]['display_name']     # returns the name of the snapshot
+        response.body['snapshots'][0]['size']             # returns the size of the snapshot
+        response.body['snapshots'][0]['volume_id']        # returns the volume id of the snapshot
 
 2. List the details of all snapshots:
 
-        response = conn.list_snapshots_detail
+        conn.list_snapshots_detail
 
 3. List the details of a snapshot using a filter:
 
-        response = conn.get_snapshot_details("snapshot_id")
+        conn.list_snapshots_detail(:limit => 2)
+
+4. Obtain the details of a snapshot by ID:
+
+        response = conn.get_snapshot_details("<snapshot_id>")
         snapshot = response.body['snapshot']
-        snapshot['displayName']                  # returns the name of the snapshot
-        snapshot['size']                         # returns the size of the snapshot
-        snapshot['volumeId']                     # returns the volume id of the snapshot
-        snapshot['status']                       # returns the status of the snapshot e.g. available, in-use
+        snapshot['display_name']                  # returns the name of the snapshot
+        snapshot['size']                          # returns the size of the snapshot
+        snapshot['volume_id']                     # returns the volume id of the snapshot
+        snapshot['status']                        # returns the status of the snapshot e.g. available, in-use
 
-4. Create a new snapshot:
+5. Create a new snapshot:
 
-        response = conn.create_snapshot("volume_id",
-        'display_name' => 'Test Snapshot', 
-        'display_description' => 'Test Snapshot from Vol Test')
-        snapshot['id']                          # returns the id of the new volume
-        snapshot['displayName']                 # => "demo-vol"
-        snapshot['size']                        # => 1
-        snapshot['volumeId']                    # returns the volume id of the snapshot
-        snapshot['status']                      # returns the status of the snapshot e.g. creating, available
-
-5. Create a new snapshot using the force parameter:
-
-        response = conn.create_snapshot("volume_id", 
-        'display_name' => 'Test Snapshot 1', 
-        'display_description' => 'Test Snapshot 1 from bootable Vol Test 2 in AZ2', 
-        'force' => true )
+        response = conn.create_snapshot("<volume_id>",
+                'display_name' => 'Test Snapshot', 
+                'display_description' => 'Test Snapshot from Vol Test')
+        snapshot = response.body['snapshot']
+        snapshot['id']                           # returns the id of the new volume
+        snapshot['display_name']                 # => "demo-vol"
+        snapshot['size']                         # => 1
+        snapshot['volume_id']                    # returns the volume id of the snapshot
+        snapshot['status']                       # returns the status of the snapshot e.g. creating, available
 
 6. Update a snapshot:
 
-        response = conn.update_snapshot("snapshot_id", 'display_name' => "Test Snapshot 1")
+        conn.update_snapshot("<snapshot_id>", 'display_name' => "Test Snapshot 1 Update")
 
 7. Delete a snapshot:
 
-        conn.delete_snapshot("snapshot_id")
+        conn.delete_snapshot("<snapshot_id>")
 
 ###Volume Backup Operations (Request Layer)### {#RequestVolBackupOperations}
 
