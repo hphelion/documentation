@@ -7,20 +7,10 @@ product: fog
 ---
 # Release Notes for the HP Cloud Ruby Fog Binding
 
-These are the release notes for the HP Cloud Ruby Fog bindings.  The current release number for the [HP Cloud Ruby Fog software bindings](/bindings) is version 0.0.20, released on Mar. 15th, 2013.  These release notes contain the following information:
-
-* [Release 0.0.22 Information](#v0022)
-* [Release 0.0.21 Information](#v0021)
-* [Release 0.0.20 Information](#v0020)
-* [Release 0.0.19 Information](#v0019)
-* [Release 0.0.18 Information](#v0018)
-* [Release 0.0.17 Information](#v0017)
-* [Release 0.0.16 Information](#v0016)
-* [Release 0.0.15 Information](#v0015)
-
+This page contains the release notes for the [latest](#latest) and all [previous](#previous) HP Cloud Ruby Fog bindings.   
 To install and use HP Cloud Ruby bindings for Fog, please install the [latest release](http://fog.io) of Fog.
 
-##Latest Release
+##Latest Release##{#latest}
 The HP Cloud Ruby Fog bindings has been feature-merged with upstream [Fog](http://fog.io) version 1.18.0. Note that the downloadable 'hpfog' gem versions has been **deprecated**. All further updates and issues will be maintained at the main [Fog repo](https://github.com/fog/fog).
 
 This release was made available on 10/31/2013 and contains the following new features:
@@ -31,6 +21,20 @@ This release was made available on 10/31/2013 and contains the following new fea
 ###Known Issues###
 
 None in this release.
+
+##Previous Releases##{#previous}
+
+For release notes on previous HP Cloud Ruby Fog bindings:
+
+* [Release 0.0.22 Information](#v0022)
+* [Release 0.0.21 Information](#v0021)
+* [Release 0.0.20 Information](#v0020)
+* [Release 0.0.19 Information](#v0019)
+* [Release 0.0.18 Information](#v0018)
+* [Release 0.0.17 Information](#v0017)
+* [Release 0.0.16 Information](#v0016)
+* [Release 0.0.15 Information](#v0015)
+
 
 ##Release 0.0.22 Information## {#v0022}
 

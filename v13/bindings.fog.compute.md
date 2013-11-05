@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "HP Cloud Fog Binding Compute Examples"
+title: "HP Cloud Fog Binding Compute v2.0 Examples"
 permalink: /v13/bindings/fog/compute/
 product: fog
 
 ---
-#Ruby Fog Bindings Compute Examples 
+#Ruby Fog Bindings v2.0 Compute Examples 
 
 The HP Cloud services provides compute support using two abstractions - [a model layer](#ModelLayer) and [a request layer](#RequestLayer). Both layers are detailed below.  The code samples on this page can be executed from within a Ruby console (IRB):
 
@@ -14,7 +14,9 @@ The HP Cloud services provides compute support using two abstractions - [a model
 This page discusses the following topics:
 
 * [Connecting to the Service](#ConnectingtotheService)<br>
+
 **Model Layer Examples**
+
 * [Server Operations](#ModelServerOperations)
 * [Volume Operations](#ModelVolumeOperations)
 * [Server Metadata Operations](#ModelServerMetadataOperations)
@@ -23,7 +25,9 @@ This page discusses the following topics:
 * [Image Metadata Operations](#ModelImageMetadataOperations)
 * [Keypair Operations](#ModelKeypairOperations)
 * [Address Operations](#ModelAddressOperations)<br>
+
 **Request Layer Examples**
+
 * [Server Operations](#RequestServerOperations)
 * [Server Metadata Operations](#RequestServerMetadataOperations)
 * [Flavor Operations](#RequestFlavorOperations)
