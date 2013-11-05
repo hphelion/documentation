@@ -81,7 +81,7 @@ This section discusses the volume operations you can perform using the model abs
 
 2. Obtain the details of a volume by the volume ID:
 
-        volume = conn.volumes.get("volume_id")
+        volume = conn.volumes.get("<volume_id>")
         volume.name             # returns name of the volume
         volume.created_at       # returns the date the volume was created
         volume.status           # returns the state of the volume e.g. available, in-use
@@ -103,6 +103,7 @@ This section discusses the volume operations you can perform using the model abs
 5. Create a new bootable volume from an suitable single-part image
 
         new_volume = conn.bootable_volumes.create(
+               conn.bootable_volumes.create --> conn.volumes.create
                :name => "BootVolume",
                :description => "My Boot Volume",
                :image_id => 11111,
