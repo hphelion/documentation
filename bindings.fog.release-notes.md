@@ -26,7 +26,7 @@ The HP Cloud Ruby Fog bindings has been feature-merged with upstream [Fog](http:
 This release was made available on 10/31/2013 and contains the following new features:
 
 * Feature merge with upstream Fog
-* Deprecated ;hpfog' gems and released HP Cloud Ruby Bindings as part of Fog release v1.18.0
+* Deprecated 'hpfog' gem and released HP Cloud Ruby Bindings as part of Fog release v1.18.0
 
 ###Known Issues###
 
