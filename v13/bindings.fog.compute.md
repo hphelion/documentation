@@ -52,7 +52,7 @@ For information on connecting to the service, please see the [Connecting to the 
 
 3. Obtain the details of a particular server:
 
-        server = conn.servers.get("server_id")
+        server = conn.servers.get("<server_id>")
         server.name                         # returns name of the server
         server.flavor_id                    # returns id of the flavor used to create the server
         server.image_id                     # returns id of the image used to create the server
@@ -65,7 +65,7 @@ For information on connecting to the service, please see the [Connecting to the 
         new_server = conn.servers.create(
               :name => "My Shiny Server",
               :flavor_id => 101,
-              :image_id => "server_id"
+              :image_id => "<server_id>"
         )
         new_server.id       # returns the id of the server
         new_server.name     # => "My Shiny Server"
@@ -78,7 +78,7 @@ For information on connecting to the service, please see the [Connecting to the 
         new_server = conn.servers.create(
                 :name=> "My Shiny Server",
                 :flavor_id => 101,
-                :image_id => "image_id",
+                :image_id => "<image_id>",
                 :key_name => "my_keypair",
                 :security_groups => ["My Security Group"]
         )
@@ -88,7 +88,7 @@ For information on connecting to the service, please see the [Connecting to the 
         new_server = conn.servers.create(
                 :name=> "My Shiny Server",
                 :flavor_id => 101,
-                :image_id => "image_id",
+                :image_id => "<image_id>",
                 :key_name => "my_keypair",
                 :security_groups => ["My Security Group"],
                 :networks => ["<network_id>"]
@@ -166,44 +166,44 @@ For information on connecting to the service, please see the [Connecting to the 
 
 10. Get console output:
 
-        server = conn.servers.get("server_id")
+        server = conn.servers.get("<server_id>")
         server.console_output(10)           # returns 10 lines of console output
         
 11. Get VNC console:
 
-        server = conn.servers.get("server_id")
+        server = conn.servers.get("<server_id>")
         server.vnc_console_url('novnc')     # URL to access the VNC console of a server from a browser
 
 12. Update a server:
 
-        server = conn.servers.get("server_id")
+        server = conn.servers.get("<server_id>")
         server.update_name("My Shiny Server Updated")
 
 13. Reboot a server:
 
-        server = conn.servers.get("server_id")
+        server = conn.servers.get("server_id>")
         server.reboot          # soft reboot by default
 
         server.reboot("HARD")  # hard reboot also possible
 
 14. Rebuild a server:
 
-        server = conn.servers.get("server_id")
+        server = conn.servers.get("<server_id>")
         server.rebuild('server_id', 'My Shiny Server Rebuild')
 
 15. Delete a server:
 
-        server = conn.servers.get("server_id").destroy
+        server = conn.servers.get("<server_id>").destroy
 
 
 ##Volume Operations (Model Layer)## {#ModelVolumeOperations}
 
 1. Attach a volume to a server:
 
-        server = conn.servers.get("server_id")
+        server = conn.servers.get("<server_id>")
         server.volume_attachments.create(
                 :server_id => s.id,
-                :volume_id => "volume id",
+                :volume_id => "<volume id>",
                 :device => "/dev/sdf"
         )
         server.reload                    #reload the server
@@ -211,17 +211,17 @@ For information on connecting to the service, please see the [Connecting to the 
 
 2. Obtain details for an volume attached to a server:
 
-        server = conn.servers.get("server_id")
-        server.volume_attachements.get("volume_id")
+        server = conn.servers.get("<server_id>")
+        server.volume_attachements.get("<volume_id>")
         
 3. List attached volumes for a server:
 
-        server = conn.servers.get("server_id")
+        server = conn.servers.get("<server_id>")
         server.volume_attachments.all
 
 4. Detach a volume from a server:
 
-        server = conn.servers.get("server_id")
+        server = conn.servers.get("<server_id>")
         att_volume = server.volume_attachments.get("<volume_id>")
         att_volume.destroy     # also aliased to att_volume.detach
 
@@ -284,7 +284,7 @@ For information on connecting to the service, please see the [Connecting to the 
 
 3. Obtain the details of a particular flavor:
 
-        flavor = conn.flavors.get(flavor_id)   # get the flavor
+        flavor = conn.flavors.get("<flavor_id>")   # get the flavor
         flavor.name    # returns the name of the flavor eg: m1.tiny, m1.small etc.
         flavor.ram     # returns the ram memory in bytes for the flavor, eg: 4096
         flavor.disk    # returns the disk size in GB for the flavor, eg: 80
@@ -301,7 +301,7 @@ For information on connecting to the service, please see the [Connecting to the 
 
 2. Obtain the details of a particular image:
 
-        image = conn.images.get(image_id)    # get the image
+        image = conn.images.get("<image_id>")    # get the image
         image.name          # returns name of the image
         image.created_at    # returns the date the image was created
         image.status        # returns the state of the image e.g. ACTIVE
@@ -309,12 +309,12 @@ For information on connecting to the service, please see the [Connecting to the 
 3. Create a new snapshot image based on an existing server:
 
         # first, get a server
-        server = conn.servers.get("server_id")
+        server = conn.servers.get("<server_id>")
         s.create_image("My Image")
 
 4. Delete an existing snapshot image:
 
-        image = conn.images.get(image_id).destroy
+        image = conn.images.get("<image_id>").destroy
 
 ##Image Metadata Operations (Model Layer)## {#ModelImageMetadataOperations}
 
@@ -324,7 +324,7 @@ For information on connecting to the service, please see the [Connecting to the 
 
 2. Get the metadata item:
 
-        image = conn.images.get(image_id)
+        image = conn.images.get("<image_id>")
         image.metadata.set({"Meta3" => "MetaValue3"})
 
 3. Update the metadata:
@@ -406,7 +406,7 @@ For information on connecting to the service, please see the [Connecting to the 
 
 2. Obtain the details of a particular address:
 
-        address = conn.addresses.get("address_id")  # get the address
+        address = conn.addresses.get("<address_id>")  # get the address
         address.ip                                  # returns the ip address
 
 3. Create or allocate a new address:
@@ -416,27 +416,27 @@ For information on connecting to the service, please see the [Connecting to the 
 
 4. Associate a server to an existing address:
 
-        server = conn.servers.get("server_id")        # get the server
-        address = conn.addresses.get("address_id")    # get the address
+        server = conn.servers.get("<server_id>")        # get the server
+        address = conn.addresses.get("<address_id>")    # get the address
         address.server = server                     # associate the server
         address.reload
 
 5. Disassociate a server from an existing address:
 
-        address = conn.addresses.get(address_id)    # get the address
+        address = conn.addresses.get("<address_id>")    # get the address
         address.server = nil                        # disassociate the server
         address.instance_id                         # => nil
 
 6. Delete (release) an existing address:
 
-        server = conn.servers.get("server_id")      # get the server
-        address = conn.addresses.get("address_id")  # get the address
+        server = conn.servers.get("<server_id>")      # get the server
+        address = conn.addresses.get("<address_id>")  # get the address
         address.server = nil       # disassociate the server
         address.reload
 
 7. Release an address back into the IP pool:
 
-        address = conn.addresses.get("address_id").destroy
+        address = conn.addresses.get("<address_id>").destroy
         => true
 
 ##Server Operations (Request Layer)## {#RequestServerOperations}
@@ -460,7 +460,7 @@ For information on connecting to the service, please see the [Connecting to the 
 
 4. Obtain the details of a particular server:
 
-        response = conn.get_server_details(server_id)
+        response = conn.get_server_details("<server_id>")
         server = response.body['server']
         server['name']                              # returns the name of the server
         server['flavor']                            # returns the flavor used to create the server
@@ -518,11 +518,11 @@ For information on connecting to the service, please see the [Connecting to the 
 8. Create a new Windows server and retrieve the encrypted password:
 
         # Make sure to use a Windows image
-        response = conn.create_server("My Windows Server", flavor_id, image_id)
+        response = conn.create_server("My Windows Server", "<flavor_id>", "<image_id>")
         win_server = response.body['server']
         server_id = win_server['id']                # returns the id of the new server
         # Retrieve the encrypted password 
-        conn.get_windows_password(server_id)
+        conn.get_windows_password("<server_id>")
         # => "Im6ZJ8auyMRnkJ24KKWQvTgWDug1s ... y0uY1BcHLJ5OrkEPHhQoQntIKOoQ=\n"
     **Note**: You must retrieve the Windows password immediately after you create the Windows instance. Also, make sure you have a security rule defined to open RDP port 3389 so that you can connect to the Windows server.
 
@@ -578,39 +578,39 @@ For information on connecting to the service, please see the [Connecting to the 
 
 11. Update the name for a server:
 
-        address = conn.update_server(server_id, {'name' => "My Cool Server"})
-        response = conn.get_server_details("server_id")
+        address = conn.update_server("<server_id>", {'name' => "My Cool Server"})
+        response = conn.get_server_details("<server_id>")
         response.body['server']['name']             # => "My Cool Server"
 
 12. Reboot a server (SOFT):
 
-        address = conn.reboot_server(server_id, "SOFT")
+        address = conn.reboot_server("<server_id>", "SOFT")
 
 13. Reboot a server (HARD):
 
-        address = conn.rebuild_server(server_id, "HARD")
+        address = conn.rebuild_server("<server_id>", "HARD")
 
 14. Rebuild a server:
 
-        address = conn.reboot_server(server_id, "MyRebuiltServer")
+        address = conn.reboot_server("<server_id>", "MyRebuiltServer")
 
 15. List both public and private addresses of a particular server:
 
-        response = conn.list_server_addresses("server_id")
+        response = conn.list_server_addresses("<server_id>")
 
 13. Display console output:
 
-        response = conn.get_console_output("server_id", 10)
+        response = conn.get_console_output("<server_id>", 10)
         # => 10 lines of console output are returned
 
 14. Get the VNC console for a server:
 
-        response = conn.get_vnc_console("server_id")
+        response = conn.get_vnc_console("<server_id>")
         # => Url to access the VNC console of a server from a browser
 
 16. Delete an existing server:
 
-        conn.delete_server("server_id")
+        conn.delete_server("<server_id>")
 
 ##Server Metadata Operations (Request Layer)## {#RequestServerMetadataOperations}
 
@@ -627,37 +627,37 @@ For information on connecting to the service, please see the [Connecting to the 
 
 2. List the existing metadata:
 
-        response = conn.list_metadata("servers", server_id)
+        response = conn.list_metadata("servers", "<server_id>")
         response.body['metadata']       
         # => {"Meta1"=>"MetaValue1", "Meta2"=>"MetaValue2"}
 
 3. Set new values to the existing metadata:
 
-        response = conn.set_metadata("servers", server_id, {"MetaNew1" => "MetaNewValue1"})
+        response = conn.set_metadata("servers", "<server_id>", {"MetaNew1" => "MetaNewValue1"})
         response.body['metadata']      
         # => {"MetaNew1"=>"MetaNewValue1"}
 
 4. Update the existing metadata:
 
-        response = conn.update_metadata("servers", server_id, {"Meta2" => "MetaValue2"})
+        response = conn.update_metadata("servers", "<server_id>", {"Meta2" => "MetaValue2"})
         response.body['metadata']      
         # => {"Meta2"=>"MetaValue2"}
 
 5. Get a metadata item:
 
-        response = conn.get_meta("servers", server_id, "Meta1")
+        response = conn.get_meta("servers", "<server_id>", "Meta1")
         response.body['meta']       
         # => {"Meta1"=>"MetaValue1"}
 
 6. Set a new metadata item or update an existing metadata item:
 
-        response = conn.update_meta("servers", server_id, "Meta1", "MetaUpdated1")
+        response = conn.update_meta("servers", "<server_id>", "Meta1", "MetaUpdated1")
         response.body['meta']       
         # => {"Meta1"=>"MetaUpdated1"}
 
 7. Delete a metadata item:
 
-        conn.delete_meta("servers", server_id, "Meta1")
+        conn.delete_meta("servers", "<server_id>", "Meta1")
 
 ##Flavor Operations (Request Layer)## {#RequestFlavorOperations}
 
@@ -675,7 +675,7 @@ For information on connecting to the service, please see the [Connecting to the 
 
 3. Obtain the details of a particular flavor:
 
-        response = conn.get_flavor_details(flavor_id)
+        response = conn.get_flavor_details("<flavor_id>")
         flavor = response.body['flavor']
         flavor['name']                              # returns the name of the flavor
         flavor['disk']                              # returns the disk size of the flavor
@@ -698,7 +698,7 @@ For information on connecting to the service, please see the [Connecting to the 
 
 3. Obtain the details of a particular image:
 
-        response = conn.get_image_details(image_id)
+        response = conn.get_image_details("<image_id>")
         image = response.body['image']
         image['name']                               # returns name of the image
         image['status']                             # returns the state of the image e.g. ACTIVE
@@ -707,51 +707,51 @@ For information on connecting to the service, please see the [Connecting to the 
 
 3. Create a new snapshot image based on an existing server:
 
-        conn.create_image(server_id, "My Image")    # creates an snapshot image from the server referenced by "server_id"
+        conn.create_image("<server_id>", "My Image")    # creates an snapshot image from the server referenced by "server_id"
 
 4. Delete an existing snapshot image:
 
-        conn.delete_image("image_id")
+        conn.delete_image("<image_id>")
 
 ##Image Metadata Operations (Request Layer)## {#RequestImageMetadataOperations}
 
 1. Create an image and pass it some metadata at creation:
 
-        conn.create_image(server_id, "myimage", {'Meta1' => 'MetaValue1', 'Meta2' => 'MetaValue2'})
+        conn.create_image("<server_id>", "myimage", {'Meta1' => 'MetaValue1', 'Meta2' => 'MetaValue2'})
 
 2. List the existing metadata:
 
-        response = conn.list_metadata("images", image_id)
+        response = conn.list_metadata("images", "<image_id>")
         response.body['metadata']   
         #  => {"Meta1"=>"MetaValue1", "Meta2"=>"MetaValue2"}
 
 3. Set new values to the existing metadata:
 
-        response = conn.set_metadata("images", image_id, {"MetaNew1" => "MetaNewValue1"})
+        response = conn.set_metadata("images", "<image_id>", {"MetaNew1" => "MetaNewValue1"})
         response.body['metadata']   
         # => {"MetaNew1"=>"MetaNewValue1"}
 
 4. Update the existing metadata:
 
-        response = conn.update_metadata("images", image_id, {"Meta2" => "MetaValue2"})
+        response = conn.update_metadata("images", "<image_id>", {"Meta2" => "MetaValue2"})
         response.body['metadata']   
         # => {"Meta2"=>"MetaValue2"}
 
 5. Get a metadata item:
 
-        response = conn.get_meta("images", image_id, "Meta1")
+        response = conn.get_meta("images", "<image_id>", "Meta1")
         response.body['meta']       
         # => {"Meta1"=>"MetaValue1"}
 
 6. Update a metadata item:
 
-        response = conn.update_meta("images", image_id, "Meta1", "MetaUpdated1")
+        response = conn.update_meta("images", "<image_id>", "Meta1", "MetaUpdated1")
         response.body['meta']       
         # => {"Meta1"=>"MetaUpdated1"}
 
 7. Delete a metadata item:
 
-        conn.delete_meta("images", image_id, "Meta1")
+        conn.delete_meta("images", "<image_id>", "Meta1")
 
 ##Keypair Operations (Request Layer)## {#RequestKeypairOperations}
 
@@ -796,11 +796,11 @@ For information on connecting to the service, please see the [Connecting to the 
 
 2. List addresses by network for a server:
 
-        response = conn.list_server_addresses_by_network("address_id")     # get the address
+        response = conn.list_server_addresses_by_network("<address_id>")     # get the address
 
 3. Obtain the details of a particular address:
 
-        response = conn.get_address(address_id)     # get the address
+        response = conn.get_address("<address_id>")     # get the address
         response.body['address']['ip']              # returns the ip address
 
 3. Create (allocate) a new address:
@@ -810,12 +810,12 @@ For information on connecting to the service, please see the [Connecting to the 
 
 4. Associate a server to an existing address:
 
-        conn.associate_address("server_id", "ip_address")
+        conn.associate_address("<server_id>", "<ip_address>")
 
 5. Disassociate a server from an existing address:
 
-        conn.disassociate_address("server_id", "ip_address")
+        conn.disassociate_address("<server_id>", "<ip_address>")
 
 6. Delete (release) an existing address:
 
-        conn.release_address("address_id")            # releases the ip address to the pool
+        conn.release_address("<address_id>")            # releases the ip address to the pool
