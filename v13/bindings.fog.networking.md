@@ -14,7 +14,7 @@ The HP Public Cloud provides networking support using two abstractions - [a mode
 This page discusses the following topics:
 
 * [Connecting to the Service](#ConnectingtotheService)
-* 
+
 **Model Layer Examples**
 
 * [Network Operations](#ModelNetworks)
