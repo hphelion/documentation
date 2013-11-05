@@ -149,12 +149,6 @@ For information on connecting to the service, please see the [Connecting to the 
         # Removing the interface also deletes the auto-created port
 
 7. Add a router interface using a port:
-
-        # Create a new port
-        conn.ports.create(
-                :name => "Port Model 1",
-                :network_id => "network_id"
-        )
         
         # Add a router interface using the port you created
         network = router.add_interface(nil, "port_id")
@@ -169,7 +163,7 @@ For information on connecting to the service, please see the [Connecting to the 
 
 9. Delete a router:
 
-        router.destroy
+        conn.routers.get("router_id").destroy
 
 ##Security Group Operations (Model Layer)## {#ModelSecurityGroups}
 
@@ -234,7 +228,7 @@ For information on connecting to the service, please see the [Connecting to the 
 
 2. List floating IPs using a filter:
 
-        network = conn.floating_ips.all("fixed_ip_address" => "ip address")
+        conn.floating_ips.all("fixed_ip_address" => "ip address")
 
 3. Obtain a floating IP by ID:
 
@@ -248,7 +242,7 @@ For information on connecting to the service, please see the [Connecting to the 
 
 5. Delete a floating IP:
 
-        network = conn.floating_ips.get("FloatingIp_id").destroy
+        conn.floating_ips.get("FloatingIp_id").destroy
 
 
 ##Network Operations (Request Layer)## {#RequestNetworks}
@@ -361,7 +355,8 @@ For information on connecting to the service, please see the [Connecting to the 
 
 7. Remove a router interface using a subnet:
 
-        conn.remove_router_interface("router_id", "subnet_id") # Removes a port with no name using the subnet_id
+        conn.remove_router_interface("router_id", "subnet_id") 
+        # Removes a port with no name using the subnet_id
 
 8. Add a router interface using a port:
 
@@ -369,9 +364,9 @@ For information on connecting to the service, please see the [Connecting to the 
 
 **Note:** Updates the router_id and device_owner for this port.
 
-9. Remove a router interace using a port:
+9. Remove a router interface using a port:
 
-        conn.remove_router_interface("router_id", nil, "port_id") #guesses as to the ids
+        conn.remove_router_interface("router_id", nil, "port_id") 
 
 10. Delete a router:
 
