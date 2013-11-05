@@ -438,29 +438,29 @@ This section discusses the volume backup operations you can perform using the re
 
 1. List all available volume backups for an account:
 
-        response = conn.list_volume_backups
+        conn.list_volume_backups
 
 2. List details of all available volume backups:
 
-        response = conn.list_volume_backups_detail
+        conn.list_volume_backups_detail
 
 3. Obtain the details of a volume backup by ID:
 
-        response = conn.get_volume_backup_details("volume_backup_id")
+        conn.get_volume_backup_details("<volume_backup_id>")
 
 4. Create a volume backup:
 
-        response = conn.create_volume_backup("volume_id")
+        conn.create_volume_backup("<volume_id>")
 
 5. Restore into a new volume using a volume backup:
 
-        response = conn.restore_volume_backup("volume_backup_id")
+        conn.restore_volume_backup("<volume_backup_id>")
         # creates a new volume that is a clone of the volume the backup was created from
 
 6. Restore into an existing volume using a volume backup:
 
-        response = conn.restore_volume_backup("volume_backup_id", "volume_id")
+        conn.restore_volume_backup("<volume_backup_id>", "<existing_volume_id>")
 
 7. Delete a volume backup:
 
-        conn.delete_volume_backup("volume_backup_id")
+        conn.delete_volume_backup("<volume_backup_id>")
