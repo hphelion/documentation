@@ -16,6 +16,7 @@ This page discusses the following topics:
 * [Connecting to the Service](#ConnectingtotheService)<br>
 
 **Model Layer Examples**
+
 * [Server Operations](#ModelServerOperations)
 * [Volume Operations](#ModelVolumeOperations)
 * [Server Metadata Operations](#ModelServerMetadataOperations)
@@ -26,6 +27,7 @@ This page discusses the following topics:
 * [Address Operations](#ModelAddressOperations)<br>
 
 **Request Layer Examples**
+
 * [Server Operations](#RequestServerOperations)
 * [Server Metadata Operations](#RequestServerMetadataOperations)
 * [Flavor Operations](#RequestFlavorOperations)
