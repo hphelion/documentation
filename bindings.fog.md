@@ -40,6 +40,7 @@ For the release of HP Cloud v13.5, the HP Cloud Ruby library added new examples 
 
 For our release-by-release information, take a look at [our release notes](/bindings/fog/release-notes)!  And if you want to look at the main Fog reference documents, surf on over to the [Documentation for fog/fog (master) Alphabetic Index](http://rubydoc.info/github/fog/fog/frames/index); the ReadMe file might be a good place for you to start.
 
+To install and use HP Cloud Ruby bindings for Fog, please install the [latest release](http://fog.io/) of Fog.
 
 <!-- To help you out a bit, here are some articles on how to use the HP cloud Ruby Fog binding:
 
