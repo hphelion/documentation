@@ -13,8 +13,10 @@ The HP Public Cloud provides networking support using two abstractions - [a mode
 
 This page discusses the following topics:
 
-* [Connecting to the Service](#ConnectingtotheService)<br>
+* [Connecting to the Service](#ConnectingtotheService)
+* 
 **Model Layer Examples**
+
 * [Network Operations](#ModelNetworks)
 * [Subnet Operations](#ModelSubnets)
 * [Port Operations](#ModelPorts)
@@ -22,8 +24,9 @@ This page discusses the following topics:
 * [Security Group Operations](#ModelSecurityGroups)
 * [Security Group Rules](#ModelSecurityGroupRules)
 * [Floating IPs](#ModelFloatingIPs)
-<br>
+
 **Request Layer Examples**
+
 * [Network Operations](#RequestNetworks)
 * [Subnet Operations](#RequestSubnets)
 * [Port Operations](#RequestPorts)
