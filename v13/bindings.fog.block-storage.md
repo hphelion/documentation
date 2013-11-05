@@ -277,45 +277,56 @@ This section discusses the volume operations you can perform using the request a
 1. List all available volumes for an account:
 
         response = conn.list_volumes
-        response.body['volumes']                    # returns an array of volume hashes
-        response.headers                            # returns the headers
-        response.body['volumes'][0]['displayName']  # returns the name of the volume
+        response.body['volumes']                     # returns an array of volume hashes
+        response.headers                             # returns the headers
+        response.body['volumes'][0]['display_name']  # returns the name of the volume
 
 2. List available volumes using a filter:
 
+        conn.list_volumes(:limit => 2 )
+
+3. List volumes with details:
+
+        response = conn.list_volumes_detail
+        response.body['volumes'][0]['volume_image_metadata']  # returns volume image metadata
+
+4. List volumes with details using a filter:
+
         response = conn.list_volumes_detail(:display_name => "Test Volume")
+        response.body['volumes'][0]['volume_image_metadata']  # returns volume image metadata
 
-3. Obtain the details of a volume by ID:
+5. Obtain the details of a volume by ID:
 
-        response = conn.get_volume_details("volume_id")
+        response = conn.get_volume_details("<volume_id>")
         volume = response.body['volume']
-        volume['displayName']        # returns the name of the volume
-        volume['size']               # returns the size of the volume
-        volume['status']             # returns the status of the volume e.g. available, in-use
+        volume['display_name']        # returns the name of the volume
+        volume['size']                # returns the size of the volume
+        volume['status']              # returns the status of the volume e.g. available, in-use
 
-
-4. Create a volume:
+6. Create a volume:
 
         response = conn.create_volume('display_name' => 'Test Volume', 'size' => 10)
-        volume['id']                    # returns the id of the new volume
-        volume['displayName']           # => "demo-vol"
-        volume['size']                  # => 10
-        volume['status']                # returns the status of the volume e.g. creating, available
+        volume = response.body['volume']
+        volume['id']                     # returns the id of the new volume
+        volume['display_name']           # => "demo-vol"
+        volume['size']                   # => 10
+        volume['status']                 # returns the status of the volume e.g. creating, available
 
-5. Create a new volume from an existing image:
+7. Create a new volume from an existing image:
 
-        response = conn.create_volume('display_name' => 'Test Volume 1', 
-        'display_description' => 'Test Volume from image', 
-        'size' => 10, 
-        'imageRef' => 'image_id')
+        conn.create_volume('display_name' => 'Test Volume 1', 
+                        'display_description' => 'Test Volume from image', 
+                        'size' => 10, 
+                        'imageRef' => "<image_id>")
 
-6. Create a new volume from an existing snapshot:
+8. Create a new volume from an existing snapshot:
 
         response = conn.create_volume(
                 'display_name' => 'Test Volume 2', 
                 'display_description' => 'New Volume from Snapshot', 
-                'snapshot_id' => 'snapshot_id'
-                )
+                'snapshot_id' => "<snapshot_id>")
+        volume = response.body['volume']
+        
         volume['id']                         # returns the id of the new volume
         volume['display_name']               # => "Test Volume 2"
         volume['size']                       # => 1
@@ -323,52 +334,53 @@ This section discusses the volume operations you can perform using the request a
         volume['status']                     # returns the status of the volume e.g. creating, available
 **Note**: The size of the volume you create from a snapshot is the same as that of the snapshot. The third parameter (the size) has no effect in this case.
 
-7. Create a new volume from an existing volume:
+9. Create a new volume from an existing volume:
 
-        response = conn.create_volume(
+        conn.create_volume(
                 'display_name' => 'Test Volume 3', 
                 'display_description' => 'Test volume from another image', 
-                'source_volid' => 'source_volid')
+                'source_volid' => "<source_volid>")
 
+10. Create a new bootable volume from an suitable single-part image:
 
-8. Create a new bootable volume from an suitable single-part image:
-
-        new_volume = conn.create_volume("TestBootVol", 
-                                                        "My Test Boot Volume", 
-                                                        10, 
-                                                        {"imageRef" => "1111111"}
-                                                     )
-        new_volume.id       # returns the id of the volume
+        conn.create_volume(
+                'display_name' => "TestBootVol", 
+                'display_description' => "My Test Boot Volume", 
+                'size' => 10, 
+                'imageRef' => "<bootable_image_id>")
 **Note**: You can use a bootable volume to create a persistent server instance.
 
-8. Attach an existing volume to an existing server:
+11. Attach an existing volume to an existing server:
 
-        response = conn.attach_volume(server_id, volume_id, device)
+        response = conn.attach_volume("<server_id>", "<volume_id>", "/dev/sdf")
         volume_attachment = response.body['volumeAttachment']
         volume_attachment['id']        # returns the id of the volume
         volume_attachment['volumeId']  # returns the id of the volume
+        volume_attachment['serverId']  # returns the id of the server
+        volume_attachment['device']    # returns the device of the volume
 **Note**: The device parameter is the mount point on the server instance to which the volume is attached (for example, `/dev/sdf`)
 
-9. List volumes attached to a server:
+12. List volumes attached to a server:
 
-        response = conn.list_server_volumes("server_id")
+        response = conn.list_server_volumes("<server_id>")
         volume_attachments = response.body['volumeAttachments']
         volume_attachment[0]['id']       # returns the id of the volume
         volume_attachment[0]['volumeId'] # returns the id of the volume
+        volume_attachment[0]['serverId'] # returns the id of the volume
         volume_attachment[0]['device']   # returns the device of the volume
 
-10. Detach an existing volume from a server:
+13. Detach an existing volume from a server:
 
-        response = conn.detach_volume("server_id", "volume_id")
+        conn.detach_volume("<server_id>", "<volume_id>")
 
-11. Update a volume:
+14. Update a volume:
 
-        response = conn.update_volume("volume_id", 
+        conn.update_volume("<volume_id>", 
                 {'display_name' => 'Test Volume Update'})
 
-12. Delete an existing volume:
+15. Delete an existing volume:
 
-        response = conn.delete_volume("volume_id")
+        conn.delete_volume("<volume_id>")
 
 ###Snapshot Operations### {#RequestSnapshotOperations}
 
