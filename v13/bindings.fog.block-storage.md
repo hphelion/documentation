@@ -221,22 +221,15 @@ This section discusses the volume backup operations you can perform using the mo
 
 1. List available volume backups for an account:
 
-        volume = conn.volume_backups
+        conn.volume_backups
 
 2. List details of volume backups:
 
-        volume = conn.volume_backups.all(:details => true)
-        
-        volume.name                     # returns the name of the volume backup
-        volume.status                   # provides the status of the volume backup e.g., available
-        volume.created_at               # provides the date the backup was created
-        volume.availability_zone        # returns the availability zone where a backup is hosted
-        volume.volume_id                # returns the id of the volume
-        volume.container                # returns the container holding the backup
+        conn.volume_backups.all(:details => true)
 
 3. Obtain the details of a volume backup by ID:
 
-        volume = conn.volume_backups.get("VolumeBackup_id")
+        volume = conn.volume_backups.get("<volume_backup_id>")
         
         volume.name             # returns the name of the volume backup
         volume.status           # provides the status of the volume backup e.g., available
@@ -248,25 +241,25 @@ This section discusses the volume backup operations you can perform using the mo
 
         volume = conn.volume_backups.create(
                 :name => "My Volume Backup",
-                :volume_id => "volume_id")
+                :volume_id => "<volume_id>")
 
 5. Restore from a volume backup into a new volume:
 
         # restore into a new volume
-        backup = conn.volume_backups.get("VolumeBackup_id")
+        backup = conn.volume_backups.get("<volume_backup_id>")
         backup.restore
         => true
 
 6. Restore from a volume backup into an existing volume:
 
         # restore into an existing volume
-        backup = conn.volume_backups.get("VolumeBackup_id")
-        backup.restore("existing_volume_id")
+        backup = conn.volume_backups.get("<volume_backup_id>")
+        backup.restore("<existing_volume_id>")
         => true
 
 7. Delete a volume backup:
 
-        backup = conn.volume_backups.get("VolumeBackup_id")
+        backup = conn.volume_backups.get("<volume_backup_id>")
         backup.destroy
 
 ##Using the Request Abstraction## {#RequestLayer}
