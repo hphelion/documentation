@@ -91,7 +91,7 @@ For information on connecting to the service, please see the [Connecting to the 
                 :image_id => "image_id",
                 :key_name => "my_keypair",
                 :security_groups => ["My Security Group"],
-                :networks => ["nework_id"]
+                :networks => ["<network_id>"]
         )
 
 7. Create a Linux-based persistent server by passing in a bootable volume:
@@ -100,7 +100,7 @@ For information on connecting to the service, please see the [Connecting to the 
                 :name=> "My Sticky Server",
                 :flavor_id => 104,
                 :block_device_mapping => [{ 'volume_size' => '', 
-                'volume_id' => "111111", 
+                'volume_id' => "<volume_id>", 
                 'delete_on_termination' => '0', 
                 'device_name' => 'vda'
                 }]
@@ -155,8 +155,8 @@ For information on connecting to the service, please see the [Connecting to the 
               :name => "My Windows Server",
               :flavor_id => 1,
               :image_id => 3,   # Make sure it is a Windows image
-              :key_name => "hpdefault",
-              :security_groups => ["aaa"]
+              :key_name => "<key_name>",
+              :security_groups => ["<security_group_name>"]
         )
         win_server.id           # returns the id of the server
         # Retrieve the encrypted password
@@ -201,28 +201,29 @@ For information on connecting to the service, please see the [Connecting to the 
 1. Attach a volume to a server:
 
         server = conn.servers.get("server_id")
-        server = s.volume_attachments.create(
+        server.volume_attachments.create(
                 :server_id => s.id,
                 :volume_id => "volume id",
                 :device => "/dev/sdf"
         )
-        s.reload        #reload the server
-        s.volume_attachments.all        #list the attachments
+        server.reload                    #reload the server
+        server.volume_attachments.all    #list the attachments
 
 2. Obtain details for an volume attached to a server:
 
         server = conn.servers.get("server_id")
-        att = s.volume_attachements.get("volume_id")
+        server.volume_attachements.get("volume_id")
         
 3. List attached volumes for a server:
 
         server = conn.servers.get("server_id")
-        server = s.volume_attachments.all
+        server.volume_attachments.all
 
 4. Detach a volume from a server:
 
         server = conn.servers.get("server_id")
-        att.destroy     # also aliased to att.detach
+        att_volume = server.volume_attachments.get("<volume_id>")
+        att_volume.destroy     # also aliased to att_volume.detach
 
 ##Server Metadata Operations (Model Layer)## {#ModelServerMetadataOperations}
 
