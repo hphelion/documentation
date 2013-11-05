@@ -9,6 +9,8 @@ product: fog
 
 These are the release notes for the HP Cloud Ruby Fog bindings.  The current release number for the [HP Cloud Ruby Fog software bindings](/bindings) is version 0.0.20, released on Mar. 15th, 2013.  These release notes contain the following information:
 
+* [Release 0.0.22 Information](#v0022)
+* [Release 0.0.21 Information](#v0021)
 * [Release 0.0.20 Information](#v0020)
 * [Release 0.0.19 Information](#v0019)
 * [Release 0.0.18 Information](#v0018)
@@ -16,7 +18,45 @@ These are the release notes for the HP Cloud Ruby Fog bindings.  The current rel
 * [Release 0.0.16 Information](#v0016)
 * [Release 0.0.15 Information](#v0015)
 
-[You can download the latest version of the Ruby Fog bindings software here](/file/hpfog-0.0.20.gem)!
+To install and use HP Cloud Ruby bindings for Fog, please install the [latest release](http://fog.io) of Fog.
+
+##Latest Release
+The HP Cloud Ruby Fog bindings has been feature-merged with upstream [Fog](http://fog.io) version 1.18.0. Note that the downloadable 'hpfog' gem versions has been **deprecated**. All further updates and issues will be maintained at the main [Fog repo](https://github.com/fog/fog).
+
+This release was made available on 10/31/2013 and contains the following new features:
+
+* Feature merge with upstream Fog
+* Deprecated ;hpfog' gems and released HP Cloud Ruby Bindings as part of Fog release v1.18.0
+
+###Known Issues###
+
+None in this release.
+
+##Release 0.0.22 Information## {#v0022}
+
+This release was made available on 10/16/2013 and contains the following new features:
+
+* Support for new LoadBalancer provider
+* Support for new DNS provider
+
+###Known Issues###
+
+None in this release.
+
+##Release 0.0.21 Information## {#v0021}
+
+This release was made available on 06/11/2013 and contains the following new features:
+
+* Support for new Networking (Neutron) provider (Grizzly release)
+* Support for new Compute V2 provider (Grizzly release)
+* Support for new BlockStorage V2 (Cinder) provider (Grizzly release)
+* Support for caching auth credentials
+* Support for filtering queries for all new V2 collections
+* Support for side by side usage of both Compute and BlockStorage, V1/V2 providers
+
+###Known Issues###
+
+None in this release.
 
 ##Release 0.0.20 Information## {#v0020}
 
