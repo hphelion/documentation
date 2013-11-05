@@ -102,54 +102,62 @@ This section discusses the volume operations you can perform using the model abs
 
 5. Create a new bootable volume from an suitable single-part image
 
-        new_volume = conn.bootable_volumes.create(
-               conn.bootable_volumes.create --> conn.volumes.create
+        new_volume = conn.volumes.create(
                :name => "BootVolume",
                :description => "My Boot Volume",
                :image_id => 11111,
                :size => 10)
         new_volume.id       # returns the id of the volume
 **Note**: You can use a bootable volume to create a persistent server instance.
+**Note**: The size of the volume you create from an image is the same as that of the image. The `:size` parameter has no effect in this case.
 
 6. Create a volume from a volume snapshot:
 
         new_volume = conn.volumes.create(
-                :name => 'SnapVolume', 
-                :source_volid => "source_volid")
-**Note**: The size of the volume you create from an image is the same as that of the image. The `:size` parameter has no effect in this case.
+                :name => 'VolumeFromSnapshot', 
+                :snapshot_id => "<snapshot_id>")
+**Note**: The size of the volume you create from a snapshot, is the same as that of the snapshot.
 
-7. Attach a volume to a server:
+7. Create a volume from another source volume:
 
-        server = conn.servers.get("server_id")s.volume_attachments.create(
-                :server_id => s.id, 
-                :volume_id => "volume_id", 
+        new_volume = conn.volumes.create(
+                :name => 'VolumeClone', 
+                :source_volid => "<source_volid>")
+**Note**: The size of the volume you create from a source volume, is the same as that of the source volume.
+
+8. Attach a volume to a server:
+
+        # assuming we have a server
+        server.volume_attachments.create(
+                :server_id => server.id, 
+                :volume_id => "<volume_id>", 
                 :device => "/dev/sdf")
         # => true
 **Note**: The device parameter is the mount point on the server instance to which the volume is attached (for example, `/dev/sdf`).
 
-8. List the attached volumes for a server:
+9. List the attached volumes for a server:
 
-        volume = conn.servers.get("server_id")
-        s.volume_attachments.all
+        # assuming we have a server
+        server.volume_attachments.all
 
-9. Detach a volume from a server:
-
-        volume = conn.servers.get("server_id")
-        att.destroy
+10. Detach a volume from a server:
+        
+        # assuming we have a server
+        att_vol = server.volume_attachments.get("<volume_id>")
+        att_vol.destroy
         # => true
 
-10. Update a volume:
+11. Update a volume:
 
-        volume = conn.volumes.get("volume_id")
+        volume = conn.volumes.get("<volume_id>")
         vol.description = "from a source vol. in a diff. availability zone"
         => "from a source vol. in a diff. availability zone"
         vol.save
         => true
-        vol.reload
 
-11. Delete a volume:
+12. Delete a volume:
 
-        volume = conn.volumes.get("volume_id")
+        volume = conn.volumes.get("<volume_id>")
         volume.destroy
         # => true
 
