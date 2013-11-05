@@ -30,8 +30,8 @@ The HP Cloud Ruby library currently supports HP Cloud Compute, HP Cloud Object S
 
 For the release of HP Cloud v13.5, the HP Cloud Ruby library added new examples for HP Cloud Networking and changes were made to the HP Cloud Compute and HP Cloud Block Storage examples. All other examples are compatible with v13.5.
 
-* [Compute Examples](/v13/bindings/fog/compute)
-* [Block Storage Examples](/v13/bindings/fog/block-storage)
+* [Compute v2.0 Examples](/v13/bindings/fog/compute)
+* [Block Storage v2.0 Examples](/v13/bindings/fog/block-storage)
 * [Networking Examples](/v13/bindings/fog/networking)
 
 ##Reference Materials
