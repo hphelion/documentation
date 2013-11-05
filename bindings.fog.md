@@ -7,9 +7,9 @@ product: fog
 ---
 # HP Cloud Extensions to Ruby Fog Binding
 
-HP provides a native Ruby library through an HP Cloud developed extension to the Ruby Fog provider.  By using the HP Cloud Ruby library, developers can write applications using Ruby that interacts with the HP Public Cloud without having to deal with the underlying REST API or XML document formats.
+HP provides a native Ruby library through an HP Cloud developed extension to the Ruby Fog provider. By using the HP Cloud Ruby library, developers can write applications using Ruby that interacts with the HP Public Cloud without having to deal with the underlying REST API or XML document formats.
 
-This library is an extension of [Fog](http://github.com/fog/fog), a Ruby open-source cloud computing library. 
+This library is an extension of [Fog](http://github.com/fog/fog), a Ruby open-source multi-cloud computing library. 
 
 <!--Currently we are maintaining a running branch of the Fog library that contains all HP-specific support. Very soon, we intend to return our contributions to the primary open-source library.-->
 
@@ -26,7 +26,7 @@ The HP Cloud Ruby library currently supports HP Cloud Compute, HP Cloud Object S
 
 For our release-by-release information, take a look at [our release notes](/bindings/fog/release-notes)!  And if you want to look at the main Fog reference documents, surf on over to the [Documentation for fog/fog (master) Alphabetic Index](http://rubydoc.info/github/fog/fog/frames/index); the ReadMe file might be a good place for you to start.
 
-[**Download** the Ruby Fog package](/file/hpfog-0.0.20.gem).
+To install and use HP Cloud Ruby bindings for Fog, please install the [latest release](http://fog.io) of Fog.
 
 <!-- To help you out a bit, here are some articles on how to use the HP cloud Ruby Fog binding:
 
