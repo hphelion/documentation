@@ -41,20 +41,20 @@ The following are new features in version 13.5 of the HP Public Cloud software:
 
 **Faster data upload to the Cloud** - A new bulk import service reduces the time to market for applications requiring existing data by allowing you to quickly and easily load your data into HP Public Cloud block storage or object storage. The new service bypasses the process of transferring large amounts of information over the Internet and allows you to provide hard drives directly to HP's data centers where your data can be rapidly transferred.
 
-**Cross-Region Replication** - HP Public Cloud Console users can setup and control object storage container synchronization across multiple regions. 
+**Cross-region replication** - HP Public Cloud Console users can setup and control object storage container synchronization across multiple regions. 
 
-**Object Storage Container Versioning** - HP Public Cloud Console users can now toggle on or off the ability to duplicate and synchronize objects within storage containers.
+**Object storage container versioning** - HP Public Cloud Console users can now toggle on or off the ability to duplicate and synchronize objects within storage containers.
 
-**Upload Improvements** - The 50Mb file upload limitation is no longer an impedance.  
+**Upload improvements** - The 50Mb file upload limitation is no longer an impedance.  
 
-**Enhanced Identity Management** - When creating a new project, you can activate a new compute, object storage or platform service; list the project permissions; and manage the project role assignments.  Once you've activated services, you can set the Project Permissions for Compute Admin, Compute Network Admin, Block Storage Admin, Network Admin, and Image Management Admin, and more.   You can add and remove groups to each role, and assign users to specific roles for each project.
+**Enhanced identity management** - When creating a new project, you can activate a new compute, object storage or platform service; list the project permissions; and manage the project role assignments.  Once you've activated services, you can set the Project Permissions for Compute Admin, Compute Network Admin, Block Storage Admin, Network Admin, and Image Management Admin, and more.   You can add and remove groups to each role, and assign users to specific roles for each project.
 
 As a domain admin, you can manage each user's projects, roles, and groups.
 You can manage the membership of each group, and manage the user assignment within each role. 
 
- **User Roles** (New italicized)
+ **User roles** (New italicized)
 
- Block Storage Admin
+Block Storage Admin
  
 CDN Admin
  
@@ -146,6 +146,6 @@ The following are resolved issues in version 13.5 of the HP Public Cloud softwar
 
 While these release notes contain information information for the software package as a whole, we also provide you with release notes for individual products and services:
 
-* [Ruby Fog Bindings](/binding/fog/release-notes/)
+* [Ruby Fog Bindings](/bindings/fog/release-notes/)
 * [UNIX command-line interface (CLI)](/cli/unix/release-notes/)
 * [Windows PowerShell CLI](/cli/windows/release-notes/)
