@@ -14,6 +14,7 @@ The HP Cloud services provides compute support using two abstractions - [a model
 This page discusses the following topics:
 
 * [Connecting to the Service](#ConnectingtotheService)<br>
+
 **Model Layer Examples**
 * [Server Operations](#ModelServerOperations)
 * [Volume Operations](#ModelVolumeOperations)
@@ -23,6 +24,7 @@ This page discusses the following topics:
 * [Image Metadata Operations](#ModelImageMetadataOperations)
 * [Keypair Operations](#ModelKeypairOperations)
 * [Address Operations](#ModelAddressOperations)<br>
+
 **Request Layer Examples**
 * [Server Operations](#RequestServerOperations)
 * [Server Metadata Operations](#RequestServerMetadataOperations)
