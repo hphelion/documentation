@@ -48,7 +48,7 @@ For information on connecting to the service, please see the [Connecting to the 
 
 3. Obtain a network by ID:
 
-        conn.networks.get("network_id")
+        conn.networks.get("<network_id>")
 
 4. Create a network:
 
@@ -56,7 +56,7 @@ For information on connecting to the service, please see the [Connecting to the 
 
 5. Delete a network:
 
-        conn.networks.get("network_id").destroy
+        conn.networks.get("<network_id>").destroy
 
 ##Subnet Operations (Model Layer)## {#ModelSubnets}
 
@@ -71,7 +71,7 @@ For information on connecting to the service, please see the [Connecting to the 
 3. Create a subnet:
 
         conn.subnets.create(
-                :network_id => "network_id",
+                :network_id => "<network_id>",
                 :cidr => "12.0.3.0/24",
                 :ip_version => 4,
                 :name => "My Subnet Model 1"
@@ -79,17 +79,17 @@ For information on connecting to the service, please see the [Connecting to the 
 
 4. Obtain a subnet by ID:
 
-        conn.subnets.get("subnet_id")
+        conn.subnets.get("<subnet_id>")
 
 5. Assign a DNS server to a subnet:
 
-        subnet = conn.subnets.get("subnet_id")
+        subnet = conn.subnets.get("<subnet_id>")
         subnet.dns_nameservers = ["dns_ip"]
         subnet.save
 
 6. Delete a subnet:
 
-        conn.subnets.get("subnet_id").destroy
+        conn.subnets.get("<subnet_id>").destroy
 
 ##Port Operations (Model Layer)## {#ModelPorts}
 
@@ -99,23 +99,23 @@ For information on connecting to the service, please see the [Connecting to the 
 
 2. List ports using a filter:
 
-        conn.ports.all({:mac_address => "mac_address"})
+        conn.ports.all({:mac_address => "<mac_address>"})
 
 
 3. Obtain a port by ID:
 
-        conn.ports.get("port_id")
+        conn.ports.get("<port_id>")
 
 4. Create a port:
 
         conn.ports.create(
                 :name => "Port Model 1",
-                :network_id => "network_id"
+                :network_id => "<network_id>"
                 )
 
 5. Delete a port:
 
-        conn.ports.get("port_id").destroy
+        conn.ports.get("<port_id>").destroy
 
 ##Router Operations (Model Layer)## {#ModelRouters}
 
@@ -129,7 +129,7 @@ For information on connecting to the service, please see the [Connecting to the 
 
 3. Obtain a router by ID:
 
-        router = conn.routers.get("router_id")
+        router = conn.routers.get("<router_id>")
 
 4. Create a router:
 
@@ -140,36 +140,30 @@ For information on connecting to the service, please see the [Connecting to the 
 
 5. Add a router interface using a subnet:
 
-        router.add_interface("subnet_id", nil)
+        router.add_interface("<subnet_id>", nil)
         conn.ports        # If you look at the ports, note that a new port is auto. created, the device_id is assigned to the router id, and the device_owner is updated
 
 6. Remove a router interface using a subnet:
 
-        router.remove_interface("subnet_id", nil)
+        router.remove_interface("<subnet_id>", nil)
         # Removing the interface also deletes the auto-created port
 
 7. Add a router interface using a port:
-
-        # Create a new port
-        conn.ports.create(
-                :name => "Port Model 1",
-                :network_id => "network_id"
-        )
         
         # Add a router interface using the port you created
-        network = router.add_interface(nil, "port_id")
+        network = router.add_interface(nil, "<port_id>")
         
         # Port is updated with device_id and device_owner
-        conn.ports.get("port_id")
+        conn.ports.get("<port_id>")
 
 8. Remove a router interface using a port:
 
-        router.remove_interface(nil, "port_id")
+        router.remove_interface(nil, "<port_id>")
         # after removing the interface, the associated port is deleted
 
 9. Delete a router:
 
-        router.destroy
+        conn.routers.get("<router_id>").destroy
 
 ##Security Group Operations (Model Layer)## {#ModelSecurityGroups}
 
@@ -183,7 +177,7 @@ For information on connecting to the service, please see the [Connecting to the 
 
 3. Obtain a security group by ID:
 
-        conn.security_groups.get("SecurityGroup_id")
+        conn.security_groups.get("<SecurityGroup_id>")
 
 4. Create a security group:
 
@@ -195,7 +189,7 @@ For information on connecting to the service, please see the [Connecting to the 
 
 5. Delete a security group:
 
-        conn.security_groups.get("SecurityGroup_id").destroy
+        conn.security_groups.get("<SecurityGroup_id>").destroy
 
 ##Security Group Rules Operations (Model Layer)## {#ModelSecurityGroupRules}
 
@@ -209,12 +203,12 @@ For information on connecting to the service, please see the [Connecting to the 
 
 3. Obtain a security group by ID:
 
-        conn.security_group_rules.get("SecurityGroupRule_id")
+        conn.security_group_rules.get("<SecurityGroupRule_id>")
 
 4. Create a security group rule:
 
         conn.security_group_rules.create(
-            :security_group_id => "SecurityGroup_id",
+            :security_group_id => "<SecurityGroup_id>",
             :direction => 'ingress',
             :protocol => 'tcp',
             :port_range_min => 22,
@@ -224,7 +218,7 @@ For information on connecting to the service, please see the [Connecting to the 
 
 5. Delete a security group rule:
 
-        conn.security_group_rules.get("SecurityGroupRule_id").destroy
+        conn.security_group_rules.get("<SecurityGroupRule_id>").destroy
 
 ##Floating IPs Operations (Model Layer)## {#ModelFloatingIPs}
 
@@ -234,21 +228,21 @@ For information on connecting to the service, please see the [Connecting to the 
 
 2. List floating IPs using a filter:
 
-        network = conn.floating_ips.all("fixed_ip_address" => "ip address")
+        conn.floating_ips.all("fixed_ip_address" => "<ip address>")
 
 3. Obtain a floating IP by ID:
 
-        conn.floating_ips.get("FloatingIp_id")
+        conn.floating_ips.get("<FloatingIp_id>")
 
 4. Create a floating IP:
 
         conn.floating_ips.create(
-        	:floating_network_id => "network_id"
+        	:floating_network_id => "<network_id>"
         )
 
 5. Delete a floating IP:
 
-        network = conn.floating_ips.get("FloatingIp_id").destroy
+        conn.floating_ips.get("<FloatingIp_id>").destroy
 
 
 ##Network Operations (Request Layer)## {#RequestNetworks}
@@ -263,7 +257,7 @@ For information on connecting to the service, please see the [Connecting to the 
 
 3. Obtain a network by ID:
 
-        conn.get_network("network_id")
+        conn.get_network("<network_id>")
 
 4. Create a network:
 
@@ -271,11 +265,11 @@ For information on connecting to the service, please see the [Connecting to the 
 
 5. Update a network:
 
-        conn.update_network("network_id", {:name => "Network 1"})
+        conn.update_network("<network_id>", {:name => "Network 1"})
 
 6. Delete a network:
 
-        conn.delete_network("network_id")
+        conn.delete_network("<network_id>")
 
 ##Subnet Operations (Request Layer)## {#RequestSubnets}
 
@@ -289,23 +283,23 @@ For information on connecting to the service, please see the [Connecting to the 
 
 3. Create a subnet:
 
-        conn.create_subnet("network_id", "11.0.3.0/24", 4, {:name => "My Subnet"})
+        conn.create_subnet("<network_id>", "11.0.3.0/24", 4, {:name => "My Subnet"})
 
 4. Obtain a subnet by ID:
 
-        conn.get_subnet("subnet_id")
+        conn.get_subnet("<subnet_id>")
 
 5. Update a subnet:
 
-        conn.update_subnet("subnet_id", {:name => My Subnet Upd"})
+        conn.update_subnet("<subnet_id>", {:name => My Subnet Upd"})
 
 6. Assign a DNS server to a subnet:
 
-        conn.update_subnet("subnet_id", {:dns_nameservers => ["15.185.9.24"]})
+        conn.update_subnet("<subnet_id>", {:dns_nameservers => ["15.185.9.24"]})
 
 7. Delete a subnet:
 
-        conn.delete_subnet("subnet_id")
+        conn.delete_subnet("<subnet_id>")
 
 ##Port Operations (Request Layer)## {#RequestPorts}
 
@@ -315,23 +309,23 @@ For information on connecting to the service, please see the [Connecting to the 
 
 2. List ports using a filter:
 
-        conn.list_ports({"router_id" => "router_id"})
+        conn.list_ports({"router_id" => "<router_id>"})
 
 3. Obtain a port by ID:
 
-        conn.get_port("port_id")
+        conn.get_port("<port_id>")
 
 4. Create a port:
 
-        conn.create_port("network_id", {:name => "myport"})
+        conn.create_port("<network_id>", {:name => "myport"})
 
 5. Update a port:
 
-        conn.update_port("port_id", {:name => "My Port Upd"})
+        conn.update_port("<port_id>", {:name => "My Port Upd"})
 
 6. Delete a port:
 
-        conn.delete_port("port_id")
+        conn.delete_port("<port_id>")
 
 ##Router Operations (Request Layer)## {#RequestRouters}
 
@@ -345,7 +339,7 @@ For information on connecting to the service, please see the [Connecting to the 
 
 3. Obtain a router:
 
-        conn.get_router("router_id")
+        conn.get_router("<router_id>")
 
 4. Create a router:
 
@@ -353,29 +347,30 @@ For information on connecting to the service, please see the [Connecting to the 
 
 5. Update a router:
 
-        conn.update_router("router_id" {:name => 'My Router Updates'})
+        conn.update_router("<router_id>" {:name => 'My Router Updates'})
 
 6. Add a router interface using a subnet:
 
-        conn.add_router_interface("router_id", "subnet_id")
+        conn.add_router_interface("<router_id>", "<subnet_id>")
 
 7. Remove a router interface using a subnet:
 
-        conn.remove_router_interface("router_id", "subnet_id") # Removes a port with no name using the subnet_id
+        conn.remove_router_interface("<router_id>", "<subnet_id>") 
+        # Removes a port with no name using the subnet_id
 
 8. Add a router interface using a port:
 
-        conn.add_router_interface("router_id", nil, "port_id")
+        conn.add_router_interface("<router_id>", nil, "<port_id>")
 
 **Note:** Updates the router_id and device_owner for this port.
 
-9. Remove a router interace using a port:
+9. Remove a router interface using a port:
 
-        conn.remove_router_interface("router_id", nil, "port_id") #guesses as to the ids
+        conn.remove_router_interface("router_id", nil, "port_id") 
 
 10. Delete a router:
 
-        conn.delete_router("router_id")
+        conn.delete_router("<router_id>")
         
 ##Security Group Operations (Request Layer)## {#RequestSecurityGroups}
 
@@ -389,7 +384,7 @@ For information on connecting to the service, please see the [Connecting to the 
 
 3. Obtain a security group by ID:
 
-        conn.get_security_group("security_group_id")
+        conn.get_security_group("<security_group_id>")
 
 4. Create a security group:
 
@@ -400,7 +395,7 @@ For information on connecting to the service, please see the [Connecting to the 
 
 5. Delete a security group:
 
-        conn.delete_security_group("security_group_id")
+        conn.delete_security_group("<security_group_id>")
 
 ##Security Group Rules Operations (Request Layer)## {#RequestSecurityGroupRules}
 
@@ -414,11 +409,11 @@ For information on connecting to the service, please see the [Connecting to the 
 
 3. Obtain a security group rule by ID:
 
-        conn.get_security_group_rule("rule_id")
+        conn.get_security_group_rule("<rule_id>")
 
 4. Create a security group rule:
 
-        conn.create_security_group_rule("security_group_id", 'ingress',{
+        conn.create_security_group_rule("<security_group_id>", 'ingress',{
                 :remote_ip_prefix => ""0.0.0.0/0",
                 :protocol => "tcp",
                 :port_range_min => 22,
@@ -427,7 +422,7 @@ For information on connecting to the service, please see the [Connecting to the 
 
 5. Delete a security group rule:
 
-        conn.delete_security_group_rule("rule_id")
+        conn.delete_security_group_rule("<rule_id>")
 
 ##Floating IPs Operations (Request Layer)## {#RequestFloatingIPs}
 
@@ -441,12 +436,12 @@ For information on connecting to the service, please see the [Connecting to the 
 
 3. Obtain a floating IP by ID:
 
-        conn.get_floating_ip("FloatingIp_id")
+        conn.get_floating_ip("<FloatingIp_id>")
 
 4. Create a floating IP:
 
-        conn.create_floating_ip("FloatingIp_id")
+        conn.create_floating_ip("<FloatingIp_id>")
 
 5. Delete a floating IP:
 
-        conn.delete_floating_IP("FloatingIp_id")
+        conn.delete_floating_IP("<FloatingIp_id>")
