@@ -182,7 +182,7 @@ This section discusses the snapshot operations you can perform using the model a
 
 3. Obtain the details of a snapshot by the ID:
 
-        snapshot = conn.snapshots.get("Snapshot_id")
+        snapshot = conn.snapshots.get("<snapshot_id>")
         snapshot.name            # returns name of the volume
         snapshot.description     # returns the description of the snapshot           
         snapshot.status          # returns the state of the snapshot e.g., available
@@ -192,10 +192,10 @@ This section discusses the snapshot operations you can perform using the model a
 4. Create a snapshot:
 
         snapshot = conn.snapshots.create(
-               :volume_id => "volume_id",
-               :name => "TestVolume",
-               :description => "My Test Volume",
-
+               :volume_id => "<volume_id>",
+               :name => "TestSnapshot",
+               :description => "My Test Snapshot")
+               
         snapshot.id              # returns the id of the volume
         snapshot.name            # => "TestVolume"
         snapshot.description     # returns the description of the snapshot
@@ -205,15 +205,14 @@ This section discusses the snapshot operations you can perform using the model a
 
 5. Update a snapshot
 
-        snapshot = conn.snapshots.get("snapshot_id")
+        snapshot = conn.snapshots.get("<snapshot_id>")
         snapshot.name = "Snapshot 1"
         snapshot.save
         => true
-        snapshot.reload
 
 6. Delete an existing snapshot
 
-        snapshot = conn.snapshots.get("snapshot_id").destroy
+        conn.snapshots.get("<snapshot_id>").destroy
         => true
 
 ###Volume Backup Operations (Model Layer)### {#ModelVolBackupOperations}
