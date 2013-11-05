@@ -50,12 +50,10 @@ To install the Ruby Fog bindings on the Ubuntu operating system, follow these st
 
         gem install rdoc
 
-5. Download and install the HP Cloud Ruby Fog bindings gem package:
+5. Install the HP Cloud Ruby Fog bindings (now as part of main Fog gem):
 
-        curl -sL https://docs.hpcloud.com/file/hpfog-0.0.20.gem >hpfog-0.0.20.gem
-        gem install hpfog-0.0.20.gem
+        gem install fog
 
-**Note**: Substitute the version number of the most current installation package (for example, `0.0.20`), which we have helpfully listed at the top of this page, in to the `curl` and `gem install` commands above.
 
 ##MacOS X Installation## {#MacOS}
 
@@ -105,14 +103,12 @@ To install the Ruby Fog bindings on MacOS X, follow these steps while logged in 
 
         rvm use 1.9.2 --default
 
-10. Download and install the HP Cloud Ruby Fog bindings gem:
+10. Install the HP Cloud Ruby Fog bindings (now as part of main Fog gem):
 
-        curl -sL https://docs.hpcloud.com/file/hpfog-0.0.20.gem >hpfog-0.0.20.gem
-        gem install hpfog-0.0.20.gem
+        gem install fog
 
 For further details, see [Installation Notes](#InstallationNotes).  See the [Connecting to the Cloud Service](/bindings/fog/connect) page for details on how to connect.
 
-**Note**: Substitute the version number of the most current installation package (for example, `0.0.20`), which we have helpfully listed at the top of this page, in to the `curl` and `gem install` commands above.
 
 ##CentOS Installation ## {#CentOS}
 
@@ -136,12 +132,9 @@ To install the Ruby Fog bindings on CentOS, follow these steps while logged in a
 
         gem install rdoc
 
-5. Download and install the HP Ruby Fog gem package:
+5. Install the HP Cloud Ruby Fog bindings (now as part of main Fog gem):
 
-        curl -sL https://docs.hpcloud.com/file/hpfog-0.0.20.gem >hpfog-0.0.20.gem
-        gem install hpfog-0.0.20.gem
-
-**Note**: Substitute the version number of the most current installation package (for example, `0.0.20`), which we have helpfully listed at the top of this page, in to the `curl` and `gem install` commands above.
+        gem install fog
 
 <!--##Installation Notes## {#Installation}
 
@@ -155,4 +148,4 @@ Ensure RVM is loaded into a shell session as a function. For example, if you are
 
 Its recommended that you uninstall a previous version prior to upgrading. To uninstall, execute the followin command while logged in as the root user:
 
-        gem uninstall hpfog
+        gem uninstall fog
