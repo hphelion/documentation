@@ -33,6 +33,8 @@ For the release of HP Cloud v13.5, the HP Cloud Ruby library added new examples 
 * [Compute v2.0 Examples](/v13/bindings/fog/compute)
 * [Block Storage v2.0 Examples](/v13/bindings/fog/block-storage)
 * [Networking Examples](/v13/bindings/fog/networking)
+* Load Balancer Examples (coming soon)
+* DNS Examples (coming soon)
 
 ##Reference Materials
 
