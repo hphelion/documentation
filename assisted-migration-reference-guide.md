@@ -10,7 +10,7 @@ permalink: /migration-details-reference/
 Troubleshooting or frequently asked questions (?)
 -->
 
-# HP Cloud Services version 12.12 to 13.5: Assisted Data Migration Reference Guide
+# HP Cloud Services version 12.12 to 13.5: Assisted Data Migration Reference Guide 
 
 If you need assistance in migrating your data from HP Cloud Services version 12.12 to 13.5, this page provides you with detailed information about the tasks you need to complete before the data migration. Review this document and [contact support](#ContactingSupport) with any questions.
 
