@@ -4,7 +4,7 @@ title: "HP Cloud Services: Assisted Transition from Version 12.12 to 13.5"
 permalink: /migration-details/
 
 ---
-# HP Cloud Services version 12.12 to 13.5 assisted transit ion
+# HP Cloud Services version 12.12 to 13.5 assisted transition
 
 This page provides with the key details you need to perform an assisted transition--using the HP Cloud support team--from version 12.12 to 13.5 of the HP Cloud software services.  If you plan on performing the migration yourself without support services, surf over to the [transition overview](/migration-overview) page for details.
 
