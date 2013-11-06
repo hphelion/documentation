@@ -12,315 +12,316 @@ Index: [A](#a) | [B](#b) | [C](#c) | [D](#d) | [E](#e) | [F](#f) | [G](#g) | [H]
 
 ## A
 
-*API*
+**API**
 > An Application Programming Interface (API) is a set of routines, protocols, and tools for building software applications. 
 An API makes it easier to develop a program by providing all the building blocks. A programmer then puts the blocks together. 
 Cloud OS provides a REST API so that programmers can write applications consistent with the operating environment.
 
-*Term*
+**Term**
 > Definition...
 
 
 ## B
 
-*Term*
+**Term**
 > Definition...
 
-*Term*
+**Term**
 > Definition...
 
-*Term*
+**Term**
 > Definition...
 
 
 ## C
 
-*Term*
+**Term**
 > Definition...
 
-*Term*
+**Term**
 > Definition...
 
-*Term*
+**Term**
 > Definition...
 
 
 ## D
 
-*Term*
+**Term**
 > Definition...
 
-*Term*
+**Term**
 > Definition...
 
-*Term*
+**Term**
 > Definition...
 
 
 ## E
 
-*Term*
+**Term**
 > Definition...
 
-*Term*
+**Term**
 > Definition...
 
-*Term*
+**Term**
 > Definition...
 
 
 ## F
 
-*Term*
+**Term**
 > Definition...
 
-*Term*
+**Term**
 > Definition...
 
-*Term*
+**Term**
 > Definition...
 
 
 ## G
 
-*Term*
+**Term**
 > Definition...
 
-*Term*
+**Term**
 > Definition...
 
-*Term*
+**Term**
 > Definition...
 
 
 ## H
 
-*Term*
+**hybrid cloud**
+> In a hybrid cloud, the cloud infrastrcture is a compos...
+
+**Term**
 > Definition...
 
-*Term*
-> Definition...
-
-*Term*
+**Term**
 > Definition...
 
 
 ## I
 
-*Term*
+**Term**
 > Definition...
 
-*Term*
+**Term**
 > Definition...
 
-*Term*
+**Term**
 > Definition...
 
 
 ## J
 
-*Term*
+**Term**
 > Definition...
 
-*Term*
+**Term**
 > Definition...
 
-*Term*
+**Term**
 > Definition...
 
 
 ## K
 
-*Term*
+**Term**
 > Definition...
 
-*Term*
+**Term**
 > Definition...
 
-*Term*
+**Term**
 > Definition...
 
 
 
 ## L
 
-*Term*
+**Term**
 > Definition...
 
-*Term*
+**Term**
 > Definition...
 
-*Term*
+**Term**
 > Definition...
 
 
 ## M
 
-*Term*
+**Term**
 > Definition...
 
-*Term*
+**Term**
 > Definition...
 
-*Term*
+**Term**
 > Definition...
 
 
 ## N
 
-*Term*
+**Term**
 > Definition...
 
-*Term*
+**Term**
 > Definition...
 
-*Term*
+**Term**
 > Definition...
 
 
 ## O
 
-*Term*
+**Term**
 > Definition...
 
-*Term*
+**Term**
 > Definition...
 
-*Term*
+**Term**
 > Definition...
 
 
 ## P
 
-*private cloud*
+**private cloud**
 > In a private cloud, the cloud infrastructure is provisioned for exclusive use by a single organization comprising multiple consumers, 
-such as business units.  The private cloud may be owned, managed and operated by the organization, a third party. or some combination of 
-them, and it may exist on or off the owner's premises.
+such as business units.  The private cloud may be owned, managed and operated by the organization, a third party. or some combination, 
+and it may exist on or off the owner's premises.
 
-*Term*
-> Definition...
+**public cloud**
+> In a public cloud,the cloud intrastructure is provisionedfor open use by the general public.  It may be owned, managed and operated 
+by a business, academic, or government organization, or some combination.  It exists on the premises of the cloud provider.
 
-*Term*
+**Term**
 > Definition...
 
 
 ## Q
 
-*Term*
+**Term**
 > Definition...
 
-*Term*
+**Term**
 > Definition...
 
-*Term*
+**Term**
 > Definition...
 
 
 ## R
 
-*Term*
+**Term**
 > Definition...
 
-*Term*
+**Term**
 > Definition...
 
-*Term*
+**Term**
 > Definition...
 
 
 ## S
 
-*Term*
+**Term**
 > Definition...
 
-*Term*
+**Term**
 > Definition...
 
-*Term*
+**Term**
 > Definition...
 
 
 ## T
 
-*Term*
+**Term**
 > Definition...
 
-*Term*
+**Term**
 > Definition...
 
-*Term*
+**Term**
 > Definition...
 
 
 ## U
 
-*Term*
+**Term**
 > Definition...
 
-*Term*
+**Term**
 > Definition...
 
-*Term*
+**Term**
 > Definition...
 
 
 ## V
 
-*Term*
+**Term**
 > Definition...
 
-*Term*
+**Term**
 > Definition...
 
-*Term*
+**Term**
 > Definition...
 
 
 ## W
 
-*Term*
+**Term**
 > Definition...
 
-*Term*
+**Term**
 > Definition...
 
-*Term*
+**Term**
 > Definition...
 
 
 ## X
 
-*Term*
+**Term**
 > Definition...
 
-*Term*
+**Term**
 > Definition...
 
-*Term*
+**Term**
 > Definition...
 
 
 ## Y
 
-*Term*
+**Term**
 > Definition...
 
-*Term*
+**Term**
 > Definition...
 
-*Term*
+**Term**
 > Definition...
 
 
 ## Z
 
-*Term*
+**Term**
 > Definition...
 
-*Term*
+**Term**
 > Definition...
 
-*Term*
+**Term**
 > Definition...
 
 

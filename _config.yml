@@ -167,3 +167,15 @@ apinavigation:
   url: https://apaas-docs.hpcloud.com
 - text: Messaging
   url: /api/msgaas/
+  
+ cloudos:
+  - text: FAQs
+    url: /cloudos/en/120/faqs/
+  - text: Glossary
+    url: /cloudos/en/120/glossary/ 
+  - text: Technical Overview
+    url: /cloudos/en/120/overview/
+  - text: API Quick Start
+    url: /cloudos/en/120/api/quickstart/
+  - text: Video Tutorials
+    url: /cloudos/en/120/videos/
