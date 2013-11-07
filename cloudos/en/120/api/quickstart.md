@@ -3,14 +3,15 @@ layout: default
 title: "HP Cloud OS API Quick Start"
 permalink: /cloudos/en/120/api/quickstart/
 product: cloudos
+
 ---
 
 # HP Cloud OS API Quick Start
 
-Topics:
-
 * [HP Cloud OS API Introduction
 ** [Prerequisites](#prerequisites)
+** [What is HP Cloud OS?](#what-is-hp-cloud-os)
+* [Upstream Documentation](#upstream-documentation)
 
 ## HP Cloud OS API Introduction
 
@@ -32,9 +33,8 @@ This topic assumes that you have already:
 
 If you have not yet set up a cloud, refer to the HP Cloud OS Installation Guide for instructions.
 
-Note: After a cloud environment has been created 
-            in the Operational Dashboard, you manage the cloud            
-            through the Administration Dashboard. The Administration Dashboard provides a simplified means             
+Note: After a cloud environment has been created in the Operational Dashboard, you manage the cloud 
+through the Administration Dashboard. The Administration Dashboard provides a simplified means        
             of creating and managing Cloud Connector resources, infrastructure topology templates, resource             
             binding documents, as well as the ability to provision a composite topology described by the             
             topology templates and binding documents.
@@ -43,7 +43,7 @@ For details about the user interface dialogs, see the <i>HP Cloud OS Operational
             the <i>HP Cloud OS Administration Dashboard Guide</i>, which were provided on the FTP site for this 
             release.
             
-To submit REST API calls, you will need your Keystone authentication credentials so you can generate security tokens. 
+To submit REST API calls, you will need your OpenStack Keystone authentication credentials so you can generate security tokens. 
 The steps are described in the [API Security Tokens](#API-Security-Tokens) section of this topic.
    
 As you walk through the examples in this topic and submit REST calls, you'll need to provide the actual values that pertain to your cloud. We'll 
@@ -52,6 +52,25 @@ As you walk through the examples in this topic and submit REST calls, you'll nee
 In call payloads, we recommend that you set the scope to the default <code>user-project</code> level, 
             to prevent unintended impacts on other projects.
 
+### What is HP Cloud OS?
+
+HP Cloud OS is an open and extensible architecture that leverages the power of OpenStack technology, 
+the fastest growing open-source cloud computing platform community. HP Cloud OS is a technology platform 
+that enables the products in the HP Converged Cloud portfolio to enhance workload portability, 
+simplify installation and enhance lifecycle management across private, public and hybrid cloud environments. 
+You can use the HP Cloud OS technology to help accelerate business outcomes. 
+
+The HP Cloud OS technology platform includes enhanced features, providing immediate advantages for IT sysadmins and developers:
+
+* A unified installer that packages together all the HP Cloud OS components along with the OpenStack components into a single ISO, saving you time and effort to get started.
+* Additional topology services, which we'll introduce in this topic: Eve, Graffiti and Focus.
+* Pre-configured, optimized 'flavors' to meet a variety of computing and storage scenarios and requirements.
+* Two UIs to manage the operational and administrative tasks that are inherent in cloud-based computing.
+* HP Cloud OS API Documentation, an app featuring "Try it out!" request/response actions and embedded reference documentation.
+* A common architecture for all HP Cloud technologies.
+
+<img src="media/converged_cloud_concept.png" />
+			
 ## Upstream Documentation
 
 Cloud OS is based on (and adds value to) the OpenStack technology. Refer to the OpenStack documentation site.

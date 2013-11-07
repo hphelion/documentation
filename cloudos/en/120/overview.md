@@ -7,7 +7,8 @@ product: cloudos
 
 # HP Cloud OS Technical Overview
 
-Welcome! This technical overview introduces you to the HP Cloud OS architecture, services, and relationship with OpenStack.
+Welcome! This technical overview introduces you to the HP Cloud OS architecture, components and services, and the Cloud OS 
+relationship with OpenStack.
 
 Adding the actual text here... this is just a PLACEHOLDER.  
 

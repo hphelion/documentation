@@ -21,8 +21,8 @@ Mark Perriera, Cloud 0S chief architect, introduces the platform, its services, 
 
 ## Technical Overview
 
-If you're new to HP Cloud OS, read the HP Cloud OS [Technical Overview](/cloudos/en/120/overview/). It describes the architecture, 
-the relationship with OpenStack, and the HP value-add components.
+If you're new to HP Cloud OS, read the HP Cloud OS [Technical Overview](/cloudos/en/120/overview/). It describes the Cloud OS architecture, 
+its relationship with OpenStack, and the HP value-add components and services.
 
 ## Install &amp; Configure Your Clouds
 

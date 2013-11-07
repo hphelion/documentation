@@ -8,7 +8,8 @@ product: cloudos
 
 # HP Cloud OS Videos
 
-Watch videos about HP Cloud OS. They're hosted on the <b>HewlettPackardVideos</b> channel of YouTube.
+For visual learners, we have provided a set of HP Cloud OS video tutorials.  Enjoy! These same videos are 
+hosted on the HewlettPackardVideos channel of YouTube.
 
 ## HP Converged Cloud brings OpenStack to the Enterprise
 

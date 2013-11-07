@@ -24,8 +24,10 @@ Cloud OS provides a REST API so that programmers can write applications consiste
 
 ## B
 
-**Term**
-> Definition...
+**broad network access**
+> Broad network access means the capabilities are available over the network and are accessed through standard 
+mechanisms that promote the use by heterogenous thin-client or thick-client platforms.  Examples: mobile phones, tablets, laptops 
+and workstations.
 
 **Term**
 > Definition...
@@ -36,8 +38,11 @@ Cloud OS provides a REST API so that programmers can write applications consiste
 
 ## C
 
-**Term**
-> Definition...
+**cloud computing**
+> Cloud computing is a model for enabling ubiquitous, convenient, on-demand network access to a shared pool of 
+configurable computing resources.  These resources include networks, servers, storage, applications and services. 
+An advantage of cloud computing is that the resources can be provisioned or released rapidly, with minimal 
+management effort or service provider interaction.
 
 **Term**
 > Definition...
@@ -97,7 +102,9 @@ Cloud OS provides a REST API so that programmers can write applications consiste
 ## H
 
 **hybrid cloud**
-> In a hybrid cloud, the cloud infrastrcture is a compos...
+> In a hybrid cloud, the cloud infrastructure is a composition of two or more distinct cloud infrastructures (private or public) 
+that remain unique entities, but are bound together by standardized or proprietary technology that enables data and application 
+portability, such as cloud bursting for load balancing between clouds.  
 
 **Term**
 > Definition...
@@ -157,8 +164,11 @@ Cloud OS provides a REST API so that programmers can write applications consiste
 
 ## M
 
-**Term**
-> Definition...
+**measured service**
+> Measured service means cloud systems automatically control and optimize resource usage by leveraging a metering capability.  
+This metering may occur at some level of abstraction that's appropriate to the type of service, such as storage, processing 
+power, bandwidth, and the number of active users.  Resource usage may be monitored, controlled, and reported.  Measured service 
+provides transparency for the provider and the consumer of the utilized service. 
 
 **Term**
 > Definition...
@@ -181,8 +191,9 @@ Cloud OS provides a REST API so that programmers can write applications consiste
 
 ## O
 
-**Term**
-> Definition...
+**on-demand self service**
+> With on-demand self service, a consumer can unilaterally provision computing capabilities, such as server time and network storage, 
+as needed, automatically, without requiring human interaction with each service provider. 
 
 **Term**
 > Definition...
@@ -199,7 +210,7 @@ such as business units.  The private cloud may be owned, managed and operated by
 and it may exist on or off the owner's premises.
 
 **public cloud**
-> In a public cloud,the cloud intrastructure is provisionedfor open use by the general public.  It may be owned, managed and operated 
+> In a public cloud,the cloud infrastructure is provisioned for open use by the general public.  It may be owned, managed and operated 
 by a business, academic, or government organization, or some combination.  It exists on the premises of the cloud provider.
 
 **Term**
@@ -220,11 +231,17 @@ by a business, academic, or government organization, or some combination.  It ex
 
 ## R
 
-**Term**
-> Definition...
+**rapid elasticity**
+> Rapid elasticity means capabilities can be provisioned and released, in some cases automatically, to scale rapidly outward and inward 
+commensurate with demand.  To the consumer, these capabilities available for provisioning often appear to be unlimited and can be 
+appropriated in any quantity at any time.
 
-**Term**
-> Definition...
+**resource pooling**
+> Resource pooling means the provider's computing resources are pooled to server multiple consumers using a 
+multi-tenant model. Different physical and virtual resources are dynamically assigned and reassigned according to consumer 
+demand. A characteristic of resource pooling is location independence.  The customer does not need to know or manage or control 
+the exact location of the provided resources, but may be able to specify it at a high-level of abstraction, such as a resource's 
+country, state, or data center.  Examples of resources include storage, processing power, memory and network bandwidth.
 
 **Term**
 > Definition...

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Cloud OS Examples"
-permalink: /cloudos/en/120/example/
+permalink: /cloudos/en/120/examples/
 product: cloudos
 
 ---
