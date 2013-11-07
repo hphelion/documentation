@@ -19,21 +19,21 @@ If you have any questions or concerns about which files to copy, [contact our Su
 
 In order to transition version 12.12 to version 13.5, you will need to perform the following general steps: 
 
-1: [Review the tasks in Before You Begin](#before).
+1. [Review the tasks in Before You Begin](#before).
 
-2: [Generate a security key pair to use with the 13.5 instance](#keypair).
+2. [Generate a security key pair to use with the 13.5 instance](#keypair).
 
-3: [Configure security groups to use with the 13.5 instance](#securitygroup).
+3. [Configure security groups to use with the 13.5 instance](#securitygroup).
 
-4: [Create the HP Cloud Services 13.5 instance](#createinstance).
+4. [Create the HP Cloud Services 13.5 instance](#createinstance).
 
-5: [Connect to the 13.5 instance from a local system](#connect).
+5. [Connect to the 13.5 instance from a local system](#connect).
 
-6: [Copy data from the 12.12 instance to 13.5 instance](#copydata).
+6. [Copy data from the 12.12 instance to 13.5 instance](#copydata).
 
-7: [Create and attach block volumes to the instance, if needed](#transdata).
+7. [Create and attach block volumes to the instance, if needed](#transdata).
 
-8: [Review further information](#furtherinfo).
+8. [Review further information](#furtherinfo).
 
 Within each of these general tasks, there are procedures for different operating systems and software tools.
 
