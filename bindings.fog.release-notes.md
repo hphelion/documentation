@@ -7,11 +7,10 @@ product: fog
 ---
 # Release Notes for the HP Cloud Ruby Fog Binding
 
-This page contains the release notes for the [latest](#latest) and all [previous](#previous) HP Cloud Ruby Fog bindings.   
-To install and use HP Cloud Ruby bindings for Fog, please install the [latest release](http://fog.io) of Fog.
+You can find the release notes for the [latest](#latest) and all [previous](#previous) HP Cloud Ruby Fog bindings releases here. To install and use HP Cloud Ruby bindings for Fog, please install the [latest release](http://fog.io) of Fog.
 
-##Latest Release##{#latest}
-The HP Cloud Ruby Fog bindings has been feature-merged with upstream [Fog](http://fog.io) version 1.18.0. Note that the downloadable 'hpfog' gem versions has been **deprecated**. All further updates and issues will be maintained at the main [Fog repo](https://github.com/fog/fog).
+##Latest Release## {#latest}
+The HP Cloud Ruby Fog bindings has been feature-merged with upstream [Fog](http://fog.io) version 1.18.0. Note that the downloadable 'hpfog' gem versions has been **deprecated**. All further updates and issues will be maintained at the main [Fog repository](https://github.com/fog/fog).
 
 This release was made available on 10/31/2013 and contains the following new features:
 
@@ -22,7 +21,7 @@ This release was made available on 10/31/2013 and contains the following new fea
 
 None in this release.
 
-##Previous Releases##{#previous}
+##Previous Releases## {#previous}
 
 For release notes on previous HP Cloud Ruby Fog bindings:
 
