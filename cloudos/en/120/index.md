@@ -15,7 +15,7 @@ the fastest growing open-source cloud community. This documentation site is for 
 
 <iframe width="400" height="225" src="//www.youtube.com/embed/Ba2wMPU5tpk" frameborder="0" allowfullscreen> </iframe>
 
-Mark Perriera, Cloud 0S chief architect, introduces the platform, its services, and related OpenStack technology.
+Mark Perriera, HP Cloud 0S Chief Architect, introduces the platform, its services, and related OpenStack technology.
 
 [More HP Cloud OS videos...](/cloudos/en/120/videos/)
 
