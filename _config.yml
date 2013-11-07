@@ -140,16 +140,20 @@ navigation:
   - text: Object Storage Examples
     url: /bindings/jclouds/object-storage/
   cloudos:
-  - text: FAQs
-    url: /cloudos/en/120/faqs/
-  - text: Glossary
-    url: /cloudos/en/120/glossary/ 
-  - text: Technical Overview
-    url: /cloudos/en/120/overview/
-  - text: API Quick Start
-    url: /cloudos/en/120/api/quickstart/
+  - text: Cloud OS home
+    url: /cloudos/en/120/
   - text: Video Tutorials
     url: /cloudos/en/120/videos/
+  - text: Technical Overview
+    url: /cloudos/en/120/overview/
+  - text: Install & Configure
+    url: /cloudos/en/120/install/
+  - text: Value-Add Services
+    url: /cloudos/en/120/services/
+  - text: API Quick Start
+    url: /cloudos/en/120/api/quickstart/
+  - text: More...
+    url: /cloudos/en/120/more/
     
 apinavigation:
 - text: Site home page
