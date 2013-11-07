@@ -3,6 +3,7 @@ layout: default
 title: "HP Cloud OS Videos"
 permalink: /cloudos/en/120/videos/
 product: cloudos
+
 ---
 
 # HP Cloud OS Videos

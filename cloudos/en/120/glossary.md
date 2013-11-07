@@ -3,6 +3,7 @@ layout: default
 title: "HP Cloud OS Glossary"
 permalink: /cloudos/en/120/glossary/
 product: cloudos
+
 ---
 
 # HP Cloud OS Glossary
