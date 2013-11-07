@@ -1,22 +1,21 @@
 ---
 layout: default
-title: "More... Additional HP Cloud OS Documents"
+title: "Additional Resources"
 permalink: /cloudos/en/120/more/
 product: cloudos
 
 ---
 
-# More... Additional HP Cloud OS Documents
+# Additional Resources
 
-We have provided additional documents to help you learn and use HP Cloud OS.
+We have provided additional resources to help you learn and use HP Cloud OS.
 
-* FAQs
-* Glossary
-* Release Notes
-* Support Matrix
-* PDF Library
+* [Support Matrix](/cloudos/en/120/supportmatrix/) - a reference document that describes the supported operating systems, hardware platforms, and specifics for related computing resources.
+* [FAQs](/cloudos/en/120/faqs/) - answers to frequently asked questions about HP Cloud OS and related technologies.
+* [Glossary](/cloudos/en/120/glossary/) - definitions of terms used in the HP Cloud OS components, user interfaces, and documentation.
+* [Topic Index](/cloudos/en/120/topicindex/) - an alphabetized, hyperlinked list of topics in the HP Cloud OS documentation.  
 
-Will add info here ... this is just a PLACEHOLDER. 
+As the HP Cloud OS documentation set evolves each release, we may add more documents to this site.  
 
 Copyright &copy; 2012-2013 Hewlett-Packard Corp. All rights reserved.
 
