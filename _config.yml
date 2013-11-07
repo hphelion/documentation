@@ -168,7 +168,7 @@ apinavigation:
 - text: Messaging
   url: /api/msgaas/
   
- cloudos:
+  cloudos:
   - text: FAQs
     url: /cloudos/en/120/faqs/
   - text: Glossary
@@ -179,3 +179,6 @@ apinavigation:
     url: /cloudos/en/120/api/quickstart/
   - text: Video Tutorials
     url: /cloudos/en/120/videos/
+  - text: Examples
+    url: /cloudos/en/120/example/
+  
