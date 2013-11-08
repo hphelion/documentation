@@ -13,7 +13,7 @@ the fastest growing open-source cloud community. This documentation site is for 
 
 ## Technical Overview
 
-If you're new to HP Cloud OS, read this HP Cloud OS [Technical Overview](/cloudos/en/120/overview/) to get started.  
+If you're new to HP Cloud OS, read the HP Cloud OS [Technical Overview](/cloudos/en/120/overview/).  
 
 ## Video Tutorial
 
