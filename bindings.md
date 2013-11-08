@@ -8,11 +8,7 @@ permalink: /bindings/
 
 One of the advantages of being active with OpenStack is that there is a healthy community of developers working on language bindings.  HP augments those in strategic areas and recommends others for your general use.  Take a gander at the choices you have at your disposal below.  Don't see what you need?  Don't be shy. [Get involved and create something for submittal back to OpenStack](http://openstack.org/community/).
 
-## HP Cloud extended open source bindings
-HP Cloud offers [an extension to Ruby Fog](/bindings/fog) for interacting with HP Cloud Services based on the open source Ruby Fog bindings.
-
-
-## Additional available open source bindings
+## Available open source bindings
 We created this set of bindings and have them available as open source.  While not actively supported, we use these ourselves for various use cases and anyone in the public is free to expand upon them.
 
 ###Java/Clojure
@@ -29,4 +25,7 @@ For our friends on the Microsoft platform, [we have a .NET open source binding o
 
 ###Javascript (node.js)
 The [HP Cloud Javascript bindings](http://hpcloud.github.io/hpcloud-js/) support our identity services and object storage functionality. We use this in our own applications.
+
+###Ruby Fog
+HP Cloud offers [an extension to Ruby Fog](/bindings/fog) for interacting with HP Cloud Services based on the open source Ruby Fog bindings. We have turned this over to be enhanced and maintained by the Ruby Fog community and will move the documentation there as well.
 
