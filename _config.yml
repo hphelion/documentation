@@ -140,7 +140,7 @@ navigation:
   - text: Object Storage Examples
     url: /bindings/jclouds/object-storage/
   cloudos:
-  - text: Cloud OS home
+  - text: Cloud OS Home
     url: /cloudos/en/120/
   - text: Video Tutorials
     url: /cloudos/en/120/videos/
