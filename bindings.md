@@ -12,7 +12,7 @@ One of the advantages of being active with OpenStack is that there is a healthy 
 We created this set of bindings and have them available as open source.  While not actively supported, we use these ourselves for various use cases and anyone in the public is free to expand upon them.
 
 ###Java/Clojure
-Similar to our stance on Ruby, we like the Java/Clojure supported [jclouds multi-cloud binding](/bindings/jclouds).
+HP offers the Java/Clojure supported [jclouds multi-cloud binding](/bindings/jclouds).
 
 ###PHP
 The [HPCloud-PHP bindings](http://hpcloud.github.com/HPCloud-PHP/) on our GitHub account supports Object Storage and CDN.  We use this on our own Drupal-based sites, like the one you're reading right now.
