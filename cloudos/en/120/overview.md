@@ -14,18 +14,10 @@ Welcome! This technical overview introduces you to the HP Cloud OS architecture,
 * [What is HP Cloud OS?](#what-is-hp-cloud-os)
 * [Understanding the Cloud OS Architecture](#understanding-the-cloud-os-architecture)
 * [Execution Environment](#execution-environment)
-    * [Kernel Layer](#kernel-layer)
-	* [Base Layer](#base-layer)
-	    * [Eve Service](#eve-service)
-		* [Graffiti Service](#graffiti-service)
-		* [Focus Service](#focus-service)
 * [Administrative Environment](#administrative-environment)
-    * [Administration Dashboard](#administration-dashboard)
-	* [Operational Dashboard](#operational-dashboard)
-	* [Install and Upgrade Mechanism](#install-and-upgrade-mechanism)
-* [Summary][#summary]
+* [Summary](#summary)
 
-## What is Cloud Computing Important?
+## Why is Cloud Computing Important?
 
 Cloud computing is fundamentally changing the way technologists work. In today's enterprises, organizations are looking for ways to capitalize on opportunities for revenue growth and competitive advantages. To do this, they need to speed the rate of innovation, accelerate execution, and lower cost.
 
