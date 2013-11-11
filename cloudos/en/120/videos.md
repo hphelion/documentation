@@ -27,7 +27,7 @@ Mark Perriera, HP Cloud 0S chief architect, introduces the platform, its service
 
 <iframe style="border: 1px solid gray;" width="400" height="225" src="//www.youtube.com/embed/XnUqB7V_j8Q?rel=0" frameborder="0" allowfullscreen> </iframe>
 
-In this video with HP Product Manager J.R. Horton, we learn how HP Cloud OS leverages OpenStack to help Converged Cloud enable workload portability, simplified installation, and enhanced lifecycle management.
+In this video with HP Product Manager JR Horton, we learn how HP Cloud OS leverages OpenStack to help Converged Cloud enable workload portability, simplified installation, and enhanced lifecycle management.
 
 ## HP Cloud OS Whiteboard Demo - Building a Cloud
 
