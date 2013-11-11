@@ -118,12 +118,7 @@ To uninstall the UNIX CLI, all you have to do is run the uninstall command:
 
 
 
-Plenty of places!  You might consider starting with the [Ruby Fog documentation](/bindings/fog) itself.  If what you're looking for isn't there, you can also try [our community forums](https://community.hpcloud.com/).  If you're still baffled, you can [open a support case](https://console.hpcloud.com/cases), or click the "Chat Now" icon in the upper-right corner of this page to chat with our support folks.  And of course, feel free to browse [our entire site](https://www.hpcloud.com/)!
-
-
-
-<!--I need the HTML for launching a support chat window-->
-
+Plenty of places!  You might consider starting with the [UNIX CLI documentation](/cli/unix) itself.  If what you're looking for isn't there, you can also try [our community forums](https://community.hpcloud.com/).  
 
 
 ##Ruby Fog Bindings## {#RubyFogBindings}
@@ -196,7 +191,7 @@ To uninstall Ruby Fog, all you have to do is run the uninstall command:
 
 
 
-Plenty of places!  You might consider starting with the [Ruby Fog documentation](/bindings/fog) itself.  If what you're looking for isn't there, you can also try [our community forums](https://community.hpcloud.com/).  If you're still baffled, you can [open a support case](https://console.hpcloud.com/cases), or click the "Chat Now" icon in the upper-right corner of this page to chat with our support folks.  And of course, feel free to browse [our entire site](https://www.hpcloud.com/)!
+Plenty of places!  You might consider starting with the [Ruby Fog documentation](/bindings/fog) itself.  If what you're looking for isn't there, you can also try [our community forums](https://community.hpcloud.com/). 
 
 
 
