@@ -198,20 +198,22 @@ You can also terminate the instance from the [server details](/mc/compute/server
 Congratulations on completing your preliminary transition steps. Before you contact us, you need to have the following information available for [our Support team](https://www.hpcloud.com/contact_us):
 
 Volume migration requirements
-
-* Project ID
-* User ID
-* List of volume IDs
-* Availability zone of current volume
+<ul>
+<li>Project ID</>
+<li>User ID</>
+<li>List of volume IDs</>
+<li>Availability zone of current volume</>
+</ul>
 
 Image migration requirements
+<ul>
+<li>User ID owner of the image</>
+<li>Tenant</>
+<li>Image ID</>
+<li>Availability zone where snapshot/image resides</>
+</ul>
 
-* User ID owner of the image
-* Tenant
-* Image ID
-* Availability zone where snapshot/image resides
-
-Once you have this information, contact support in any of these ways:
+Once you have this information in hand, you can contact support in any of these ways:
 
 * [Live chat from hpcloud.com](https://account.hpcloud.com/cases#support_chat)
 * [Open a support case](https://account.hpcloud.com/cases)
