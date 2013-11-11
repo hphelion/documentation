@@ -3,15 +3,8 @@ layout: default
 title: "HP Cloud Services: Overview of Transitioning from Version 12.12 to 13.5"
 permalink: /migration-overview-reference/
 
-
 ---
 #HP Cloud Services: Overview of Transitioning from Version 12.12 to 13.5 #
-
-##Test##
-###Test###
-####Test####
-#####Test#####
-######Test######	
 
 This page provides you with information to help you transition your HP Cloud Services version 12.12 instance(s) to an HP Cloud Services 13.5 instance. 
 
