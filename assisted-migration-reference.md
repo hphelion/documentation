@@ -211,7 +211,7 @@ Image migration requirements
 * Image ID
 * Availability zone where snapshot/image resides
 
-Once you have this information, contact support in any of these ways:
+Once you have this information, contact support:
 
 * [Live chat from hpcloud.com](https://account.hpcloud.com/cases#support_chat)
 * [Open a support case](https://account.hpcloud.com/cases)
