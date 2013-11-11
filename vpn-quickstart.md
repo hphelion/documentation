@@ -12,6 +12,8 @@ tags: networking neutron vpn
 
 With HP Cloud Networking you can set up an IPsec, or site-to-site, VPN connecting your external network directly to your HP cloud virtual network. This guide provides the basic instructions for setting this up with your network using strongSwan. For more complex configuration, please refer to the [strongSwan documentation](http://wiki.strongswan.org/projects/strongswan/wiki/UserDocumentation).
 
+**Note:** These instructions use an Ubuntu server instance. You may, of course, choose to use another instance type and still use these directions as a general guide for setting up your VPN.
+
 This guide covers the following:
 
 - [Overview](#top)
@@ -120,6 +122,13 @@ For more details on the Nova and Neutron commands please see the [HP Cloud Netwo
 
 If you have not previously created an account and activated the compute service please sign up at [http://hpcloud.com](http://hpcloud.com).  Once you activate the compute service, you need to install the [compute](https://docs.hpcloud.com/api/v13/compute/) and [networking](https://docs.hpcloud.com/api/v13/networking/) clients or the [CLI](http://docs.hpcloud.com/cli/unix/network). Make sure you activate a compute instance in HP Cloud version 13.5 to access the networking and VPN capabilities.
 
+##Create a new Ubuntu server instance
+
+Set up a new Ubuntu server instance&mdash;separate from your other VPC gateway machines and using the command line. Test the setup of this new server.
+
+1. Install Nova and Neutron Python client on this server. See the [Knowledge Base](https://community.hpcloud.com/article/cloud-135-cli-installation-instructions) for instructions.
+2. Verify that you can access the Nova and Neutron APIs for your tenant from this Python Client by running nova `list` and neutron `port-list` commands.
+
 ### Set up the private network ### {#gtwy}
 
 #### Create the router and attach it to the external network   
@@ -146,7 +155,7 @@ In the example we use **vpn_network** for the name of the network.
 
 ### Create ports ### {#port}
 
-Create two ports and disable the port security on the VPN gateway port.  
+Create two ports and disable the port security on the VPN gateway port. Use this new gateway machine in the SRX-VPC set up for the VPN connection.  
 
 **NOTE:** disabling port security will disable the use of all security groups on the port.
 	
@@ -185,11 +194,11 @@ The above command creates a new keypair called **ipsec_vpn_gateway**.  View all 
 
 #### Select your compute image
 
-To boot a compute instance you will need to know which [operating system and size of image](https://docs.hpcloud.com/api/v13/compute/) you would like to use.  For the purpose of this guide, we use a small image. Select the type of image you want and then assess the amount of bandwidth you need and select the appropriately sized flavor.
+To boot a compute instance you will need to know which [operating system and size of image](https://docs.hpcloud.com/api/v13/compute/) you would like to use.  For the purpose of this guide, we use a small image using Ubuntu. Select the type of image you want and then assess the amount of bandwidth you need and select the appropriately sized flavor.
 
 #### Boot the gateway instance and test instance
 
-Boot two instances--one to use as the VPN gateway (vm-gateway) and the other (vm-test) to test with.
+Boot two instances&mdash;one to use as the VPN gateway (vm-gateway) and the other (vm-test) to test with.
 
 - --image:  the name or ID of the image to launch.  View available images by running **nova image-list**
  
@@ -257,6 +266,8 @@ To enable the UFW, connect to the gateway instance and run these commands:
 	
 	# After the last command, a prompt appears stating that this command "may disrupt existing ssh connections. Proceed with operation (y|n)?"
 	# Answer "y" and ENTER to complete the procedure.
+
+**Note:** The UFW capability is found in Ubuntu. If you are using another OS you should approximate this firewall functionality.
 
 #### Advanced security option
 
