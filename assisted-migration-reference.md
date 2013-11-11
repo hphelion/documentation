@@ -16,7 +16,7 @@ If you need assistance migrating your data from HP Cloud Services version 12.12 
 
 If you plan on performing the migration without support services, the [Self-Migration Reference Guide](/migration-overview) page contains details on how to migrate your data yourself from version 12.12 to 13.5 of the HP Cloud Services.
 
-## Before you begin ## {#TransitionOverview)
+## Before you begin ## {#TransitionOverview}
 For assistance with transitioning your data from version 12.12 to 13.5, there are a few preliminary tasks you must complete first:
 
 * [Understand what's new for version 13.5](#VersionDiffs)
