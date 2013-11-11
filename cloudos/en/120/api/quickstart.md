@@ -8,7 +8,7 @@ product: cloudos
 
 # HP Cloud OS API Quick Start
 
-* [HP Cloud OS API Introduction
+* [HP Cloud OS API Introduction](#hp-cloud-os-api-introduction)
     * [Prerequisites](#prerequisites)
     * [What is HP Cloud OS?](#what-is-hp-cloud-os)
 * [Upstream Documentation](#upstream-documentation)

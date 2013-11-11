@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Additional Resources"
+title: "HP Cloud OS Support Matrix"
 permalink: /cloudos/en/120/supportmatrix/
 product: cloudos
 

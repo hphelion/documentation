@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Additional Resources"
+title: "HP Cloud OS Topic Index"
 permalink: /cloudos/en/120/topicindex/
 product: cloudos
 

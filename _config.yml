@@ -142,10 +142,10 @@ navigation:
   cloudos:
   - text: Cloud OS Home
     url: /cloudos/en/120/
-  - text: Video Tutorials
-    url: /cloudos/en/120/videos/
   - text: Technical Overview
     url: /cloudos/en/120/overview/
+  - text: Video Tutorials
+    url: /cloudos/en/120/videos/	
   - text: Install & Configure
     url: /cloudos/en/120/install/
   - text: API Quick Start

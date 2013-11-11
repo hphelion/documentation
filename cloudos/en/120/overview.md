@@ -10,15 +10,22 @@ product: cloudos
 
 Welcome! This technical overview introduces you to the HP Cloud OS architecture, its components and services, and the HP Cloud OS relationship with OpenStack.
 
-* [Why is Cloud Computing Important][]
-* [What is HP Cloud OS?][]
-* [Understanding the Cloud OS Architecture][]
-* [Execution Environment][]
-* [Administrative Environment][]
-* [Summary][]
+* [Why is Cloud Computing Important?](#why-is-cloud-computing-important)
+* [What is HP Cloud OS?](#what-is-hp-cloud-os)
+* [Understanding the Cloud OS Architecture](#understanding-the-cloud-os-architecture)
+* [Execution Environment](#execution-environment)
+    * [Kernel Layer](#kernel-layer)
+	* [Base Layer](#base-layer)
+	    * [Eve Service](#eve-service)
+		* [Graffiti Service](#graffiti-service)
+		* [Focus Service](#focus-service)
+* [Administrative Environment](#administrative-environment)
+    * [Administration Dashboard](#administration-dashboard)
+	* [Operational Dashboard](#operational-dashboard)
+	* [Install and Upgrade Mechanism](#install-and-upgrade-mechanism)
+* [Summary][#summary]
 
-
-## Why is Cloud Computing Important?
+## What is Cloud Computing Important?
 
 Cloud computing is fundamentally changing the way technologists work. In today's enterprises, organizations are looking for ways to capitalize on opportunities for revenue growth and competitive advantages. To do this, they need to speed the rate of innovation, accelerate execution, and lower cost.
 
@@ -158,13 +165,13 @@ and to perform lifecycle management of that architecture.  HP Cloud OS provides 
 
 * Administrative Dashboard
 * Operational Dashboard
-* Install / upgrade tools
+* Install and Upgrade Mechanisms
 
-### Administrative Dashboard
+### Administration Dashboard
 
-The HP Cloud OS Administrative Dashboard enables self-service usage of the cloud. HP technologists sometimes refer to the Administrative Dashbaord as "Skyline." 
+The HP Cloud OS Administration Dashboard enables self-service usage of the cloud. HP technologists sometimes refer to the Administration Dashboard as "Skyline." 
 Any authorized user can use the Administrative Dashboard to interact with the cloud and build the user's own virtual resources in the cloud.  The HP Cloud OS 
-Adnministrative Dashboard is based on the OpenStack "Horizon" technology; it looks and acts similar to Horizon, but at HP we have added new capabilities, 
+Administration Dashboard is based on the OpenStack "Horizon" technology; it looks and acts similar to Horizon, but at HP we have added new capabilities, 
 and new user interface workflow features to provide a more streamlined experience with clouds.
 
 The HP Cloud OS Administration Dashboard provides a simplified means of creating and managing HP Cloud OS resources, infrastructure topology templates, and infrastructure design documents.
@@ -187,7 +194,7 @@ Operational Dashboard, you can:
 
 In terms of sequencing, you'll you can use the Administration Dashboard to view, allocate, and manage all virtual resources within a cloud. 
 
-### Install / Upgrade Mechanism
+### Install and Upgrade Mechanism
 
 As indicated in the conceptual diagram that started this technical overview, the Operational Dashboard sits on top of an install and upgrade 
 component.  It allows HP Cloud OS and its customers to perform tasks such as upgrading the software version of the cloud, patch components with fixes, and 
@@ -199,7 +206,7 @@ Essentially, the whole install / upgrade mechanism allows us to manage the entir
 
 The HP Cloud OS architecture ensures that any product based on it will get a fundamental set of capabilities that are guaranteed 
 across the implemented products. For example in a hybrid delivery mechanism, being able to use another cloud's resources (as if they were your own) will be consistent across all products that use HP Cloud OS.  With template-based provisioning, you can use HP Cloud OS to 
-create a template and build infrastructure based on that template.  You can then use that template repeatedly, even in a hybrid environment, and there will be a consistent capabilitity across
+create a template and build infrastructure based on that template.  You can then use that template repeatedly, even in a hybrid environment, and there will be a consistent capability across
 all the technologies that use HP Cloud OS. 
 
 
