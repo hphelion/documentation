@@ -276,9 +276,10 @@ country, state, or data center.  Examples of resources include storage, processi
 
 ###Request Abstraction### {#RequestAbstraction}
 :     A coding layer that provides programming language-specific access to the underlying core code base REST API HTTP calls.  
-For example, instead of including a call to the REST API by using HTTP **verb** (GET), path (/flavors), format (?format=json)</font:    , and the other HTTP attributes, 
-using the request layer you can simplify the call to `list_flavors()` (the specific call depends on the details of your specific request layer syntax).  
-The request layer handles all HTTP request and response parsing and exception handling.  Also **request layer**.
+For example, instead of including a call to the REST API by using HTTP **verb** (GET), path (/flavors), format (?format=json), 
+and the other HTTP attributes, using the request layer you can simplify the call to `list_flavors()` (the specific call depends on the 
+details of your specific request layer syntax).  The request layer handles all HTTP request and response parsing and exception handling.  
+Also known as the **request layer**.
 
 ###Role### {#Role}
 :     A personality that a user assumes when performing a specific set of operations. A role includes a set of rights and privileges. A user assuming that role inherits 
