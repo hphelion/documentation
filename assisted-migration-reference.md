@@ -5,16 +5,18 @@ permalink: /migration-details-reference/
 
 ---
 <!--
+
+
 Troubleshooting or frequently asked questions (?)
 -->
 
-# HP Cloud Services version 12.12 to 13.5: Assisted Data Migration Reference Guide 
+# HP Cloud Services version 12.12 to 13.5: Assisted Data Migration Reference Guide
 
-If you need assistance in migrating your data from HP Cloud Services version 12.12 to 13.5, this page provides you with detailed information about the tasks you need to complete before the data migration. Review this document and [contact support](#ContactingSupport) with any questions.
+If you need assistance migrating your data from HP Cloud Services version 12.12 to 13.5, this page provides you with detailed information about the tasks you need to complete before the data migration. Review this document and [contact support](#ContactingSupport) with any questions.
 
 If you plan on performing the migration without support services, the [Self-Migration Reference Guide](/migration-overview) page contains details on how to migrate your data yourself from version 12.12 to 13.5 of the HP Cloud Services.
 
-## Before you begin ## {#TransitionOverview}
+## Before you begin ## {#TransitionOverview)
 For assistance with transitioning your data from version 12.12 to 13.5, there are a few preliminary tasks you must complete first:
 
 * [Understand what's new for version 13.5](#VersionDiffs)
@@ -109,7 +111,8 @@ To create a snapshot of an ephemeral instance:
 
 1. From the MC, click the `Images` tab.
 2. In the [Images screen](/mc/compute/images/), enter an `Image Name` and `Description` for your instance snapshot.
-3. In the `From server` drop-down menu, select the server from which you want to create your snapshot .
+3. In the `From server` drop-down menu, select the server from which you want to create your snapshot.
+    <img src="media/images-snapshot-1212.png" width="580" alt="" />
 4. Click `Create`.
 
 <img src="media/images-snapshot-1212.png" width="580" alt="" />
@@ -126,7 +129,7 @@ This launches the `Image Details` screen for your image, which contains the `ID`
 
 ## Preparing a volume for migration ## {#PrepVolume}
 
-To transition your data to version 13.5, you must prepare your volume (and associated data) for migration. When you migrate a block volume, the volume must be in an Available state:
+To transition your data to version 13.5, you must prepare your volume (and associated data) for migration. When you migrate a block volume, the volume, and any volume created from a snapshot of the volume being migrated, must be in an Available state:
 
 - The data on the volume is not accessible
 - The volume is not attached to an instance 
@@ -140,17 +143,20 @@ All volume snapshots and volumes created from those snapshots are migrated as we
 
 To detach a volume:
 
-1. From the MC, click the [Volumes](/mc/compute/volumes/) tab.
-2. In the `Inventory` pane, click the action button (`*`) of the volume whose instance you want to detach and select `Detach`.
+<ol>
+<li>From the MC, click the [Volumes](/mc/compute/volumes/) tab.</li>
+<li>In the `Inventory` pane, click the action button (`*`) of the volume whose instance you want to detach and select `Detach`.
 
-<img src="media/volume-detach-1212.png" width="580" alt="" />
+<p><img src="media/volume-detach-1212.png" width="580" alt="" /></p>
+</li>
 
+<li>To verify the request, click `Yes, detach this volume`.
 
-3. To verify the request, click `Yes, detach this volume`.
+<p><img src="media/volume-detach-verify-1212.png" width="580" alt="" /></p>
 
-<img src="media/volume-detach-verify-1212.png" width="580" alt="" />
-
-Your volume is detached. 
+<p>Your volume is detached.</p>
+</li>
+</ol> 
 
 You can also detach a volume using the [volume details](/mc/compute/servers/view-details/) screen of the MC. To access the volume details screen from the `Inventory` pane, click on the volume name or click the action button (`*`) and select `Volume Details`.
 
@@ -166,17 +172,20 @@ See the [Managing volumes](/mc/compute/volumes/manage/) page for details on usin
 
 You cannot detach a volume that is running an instance; you must first terminate the instance to make the volume available.  To terminate an instance:
 
-1. From the MC, click the `Servers` tab.
-2. In the `Inventory` pane, click the action button (`*`) of the server whose instance you wish to terminate and select `Terminate`.
+<ol>
+<li>From the MC, click the `Servers` tab.</li>
+<li>In the `Inventory` pane, click the action button (`*`) of the server whose instance you wish to terminate and select `Terminate`.
 
-<img src="media/terminate-instance-1212.png" width="580" alt="" />
+<p><img src="media/terminate-instance-1212.png" width="580" alt="" /></p>
+</li>
 
-3. To verify the request, click `Yes, terminate this server`.
+<li>To verify the request, click `Yes, terminate this server`.
 
-<img src="media/terminate-instance-verify-1212.png" width="580" alt="" />
+<p><img src="media/terminate-instance-verify-1212.png" width="580" alt="" /></p>
 
-Your instance is terminated.
-
+<p>Your instance is terminated.</p>
+</li>
+</ol>
 You can also terminate the instance from the [server details](/mc/compute/servers/view-details/) screen of the MC. To access the server details screen from the `Inventory` pane, click on the server name or click the action button (`*`) and select `Server Details`.
 
 <img src="media/terminate-instance-details-1212.png" width="580" alt="" />
@@ -186,7 +195,25 @@ You can also terminate the instance from the [server details](/mc/compute/server
 
 ## Contacting support ## {#ContactingSupport}
 
-Now that you have completed your preliminary transition steps, you need to [contact our Support team](https://www.hpcloud.com/contact_us):
+Congratulations on completing your preliminary transition steps. Before you contact us, you need to have the following information available for [our Support team](https://www.hpcloud.com/contact_us):
+
+Volume migration requirements
+<ul>
+<li>Project ID</>
+<li>User ID</>
+<li>List of volume IDs</>
+<li>Availability zone of current volume</>
+</ul>
+
+Image migration requirements
+<ul>
+<li>User ID owner of the image</>
+<li>Tenant</>
+<li>Image ID</>
+<li>Availability zone where snapshot/image resides</>
+</ul>
+
+Once you have this information in hand, you can contact support in any of these ways:
 
 * [Live chat from hpcloud.com](https://account.hpcloud.com/cases#support_chat)
 * [Open a support case](https://account.hpcloud.com/cases)
@@ -196,7 +223,7 @@ Now that you have completed your preliminary transition steps, you need to [cont
 
 ## For further information ## {#MoreInfo}
 
-For more information on migrating your services, as well as general information about version 13.5:
+For more information on migration, as well as general information about version 13.5:
 
 * The [Self-Migration Reference Guide](/migration-overview) page contains details on how to migrate your data yourself from version 12.12 to 13.5 of the HP Cloud Services
 * Our [release notes for version 13.5](/release-notes/) of the HP Cloud software
