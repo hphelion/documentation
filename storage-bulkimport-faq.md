@@ -23,6 +23,7 @@ The following should answer most of your questions about our Bulk Import service
 - [How much does Bulk Import cost?](#cost)
 - [How do I use the Bulk Import script, and why would I use it?](#script)
 - [What happens if my disk is lost in the mail? Is the data encrypted? Can anyone read my data?](#lost)
+
 _____________
 
 ####Q:	What file system formats do you accept?{#fileformat}
@@ -57,9 +58,13 @@ A:	Yes, we will either ship your device back to you or destroy the drive based o
 ####Q:	How will I know the status of my bulk Import?{#status}
 
 A:	HP will inform you of status via updates along the way. You will be notified when:
+
 1.	The device arrives in the data center
+
 2.	The data import process begins
+
 3.	The import is complete
+
 4.	The device has been shipped back/destroyed.
 
 
@@ -67,10 +72,15 @@ A:	HP will inform you of status via updates along the way. You will be notified 
 
 A:	The bulk import service works with your existing HP Cloud account. If you don’t have an account, [create one here](http://www.hpcloud.com/free-trial).
 1.	Use the Management Console to contact your HP Cloud support technician. He or she will get the process started for you. 
+
 2.	Sign a legal consent form.
+
 3.	Fill out a form with information about your device.
+
 4.	Copy the data to your device. Unless you want your data to be stored and retrieved encrypted, you should not encrypt your data, as HP will not decrypt it for you.
+
 5.	Download the HP Cloud Bulk Import client script and run the script on your data to prepare your account for bulk import.
+
 6.	You support contact will review all the logistics with respect to shipping your device to an HP Cloud data center. When we receive your data, we’ll hook up your device to a workstation that has a direct Gigabit link to our Cloud storage infrastructure. Once your data is copied, we’ll ship your device back to you or destroy it based on your directions.
 
 ####Q:	How much does Bulk Import cost?{#cost}
