@@ -11,7 +11,7 @@ product: cloudos
 * [HP Cloud OS API Introduction](#hp-cloud-os-api-introduction)
     * [Prerequisites](#prerequisites)
     * [What is HP Cloud OS?](#what-is-hp-cloud-os)
-* [Upstream Documentation](#upstream-documentation)
+* Many more topics coming...
 
 ## HP Cloud OS API Introduction
 
@@ -71,8 +71,7 @@ The HP Cloud OS technology platform includes enhanced features, providing immedi
 
 <img src="media/converged_cloud_concept.png" />
 
-## Upstream Documentation
-			
-More coming... converting from HTML.
+## More topics...
 
-Copyright &copy; 2012-2013 Hewlett-Packard Corp. All rights reserved.
+More coming... converting from HTML.  Prior version is [here](http://docscloudos.hpswlabs.adapps.hp.com/quickstart/index.html). 
+

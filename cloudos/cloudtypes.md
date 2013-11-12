@@ -6,7 +6,8 @@ product: cloudos
 
 ---
 
-# Introduction to Cloud Types <br/> &amp; the Cloud OS Installation Steps
+# Introduction to Cloud Types  
+&amp; the Cloud OS Installation Steps
 
 **Internal note:** Bill may work with JR to refine the text in this topic.  The info formerly resided on the Cosmos Welcome page.
 
@@ -99,9 +100,9 @@ along with a list of logical connection interfaces (intf0, intf1, and so on) wit
 
 Examples of Physical Interface values:
 
-        1Gb (preferred) on 1st port
-        1Gb (preferred) on 2nd port
-        1Gb (preferred) on 3rd port
+* `1Gb (preferred) on 1st port`
+* `1Gb (preferred) on 2nd port`
+* `1Gb (preferred) on 3rd port`
 
 In this Dual mode example, `1Gb (preferred) on 2nd port` means a one gigabit network for port 2, as enumerated by default from the server's BIOS or as overridden 
 in the Server Types panel. The "preferred"  tag suggests that if the NIC/port does not support 1Gb, Cloud OS falls back to the next maximum 

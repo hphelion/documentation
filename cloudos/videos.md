@@ -46,5 +46,3 @@ In this video with HP Product Manager Hari Kannan, we learn about the benefits o
 <iframe style="border: 1px solid gray;" width="400" height="225" src="//www.youtube.com/embed/4a8LwWhWAZs?rel=0" frameborder="0" allowfullscreen> </iframe>
 
 Mark Perriera shows how to create and use infrastructure templates for single or multi-tier applications with HP Cloud OS. 
-
-Copyright &copy; 2012-2013 Hewlett-Packard Corp. All rights reserved.

@@ -12,6 +12,4 @@ Welcome! The following topics explain how to install &amp; configure your clouds
 
 Will add the installation and configuration info here... this is just a PLACEHOLDER.  
 
-Copyright &copy; 2012-2013 Hewlett-Packard Corp. All rights reserved.
-
 

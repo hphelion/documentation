@@ -22,6 +22,4 @@ We have provided additional resources to help you learn and use HP Cloud OS.
 
 As the HP Cloud OS documentation set evolves each release, we may add more documents to this site.  Check back often! 
 
-Copyright &copy; 2012-2013 Hewlett-Packard Corp. All rights reserved.
-
 

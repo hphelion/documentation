@@ -205,11 +205,3 @@ across the implemented products. For example in a hybrid delivery mechanism, bei
 create a template and build infrastructure based on that template.  You can then use that template repeatedly, even in a hybrid environment, and there will be a consistent capability across
 all the technologies that use HP Cloud OS. 
 
-
-
-
-
-
-
-Copyright &copy; 2012-2013 Hewlett-Packard Corp. All rights reserved.
-

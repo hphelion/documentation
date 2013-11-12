@@ -15,6 +15,3 @@ Here's a sample Topic Index from another vendor.
 [Amazon S3 Topic Index](http://docs.aws.amazon.com/AmazonS3/latest/API/BookIndex.html)
 
 
-Copyright &copy; 2012-2013 Hewlett-Packard Corp. All rights reserved.
-
-
