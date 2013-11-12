@@ -12,6 +12,8 @@ In general, the process for transitioning to 13.5 involves creating a new 13.5 i
 
 This overview outlines the tasks you will need to perform, based upon the operating system on your cloud client system (your local system) and the operating systems used by your cloud instance(s).
 
+**Note**: Some of the links in this document contain information on using the HP Public Cloud Console to interact with your instances. HP Public Cloud Console is an alternative method for performing these tasks. The procedures in this document for using the management console are correct and should be followed at this time."
+
 If you have any questions or concerns about which files to copy, [contact our Support team](#support).
 
 
@@ -79,9 +81,10 @@ You can use the management console to generate a key pair.
 
 To create a key pair using the management console:
 
-1. Log in to the [management console](https://console.hpcloud.com/manage) using an HP Cloud Services client.
+1. Log in to the [management console](https://console.hpcloud.com/manage) using an HP Cloud Services client. 
 
-    <img src="media/cloud_login.png"  alt="" />
+	The log in page is similar to the following: 
+    <br><img src="media/cloud_login.png"  alt="" />
 
 2. In the Dashboard, click the appropriate the Availability Zone for your 13.5 instance.
 
@@ -94,9 +97,10 @@ To create a key pair using the management console:
 
 4. Click `Add Key Pair`.
 
-5. In the Name field, enter a name for the key pair. 
+	The Name field displays, as shown.
+	<br><img src="media/mc_keypair_add.png"  alt="" />
 
-    <img src="media/mc_keypair_add.png"  alt="" />
+5. In the Name field, enter a name for the key pair. 
 
 	Use only alphanumeric characters. Do not use spaces or special characters, such as periods. For more information, see [Naming Convention Best Practices](https://community.hpcloud.com/article/naming-convention-best-practices).
 
@@ -104,8 +108,8 @@ To create a key pair using the management console:
 
 6. Click `Create Key`.
 
-	After creating the key pair, the management console displays the contents of the private key. 
-<br><img src="media/mc_keypair_key.png"  alt="" />
+	After creating the key pair, the management console displays the contents of the private key, as shown. 
+	<br><img src="media/mc_keypair_key.png"  alt="" />
 
 7. Click `Download` to save the private key in a PEM file to the local system or copy the key pairs into a text editor and save the file in the PEM format on the local system. Note the location where you save the file for later use.
 
@@ -203,7 +207,7 @@ To generate a key pair in UNIX:
 	The key pair file contains text similar to the following:
 	<br><img src="media/keypair_unix.png"  alt="" />
 
-4. Copy the entire output into a text file on the local system and save it with a .pem extension.
+4. Copy the entire output into a text file on the local system, as shown in the following figure, and save the file with a .pem extension. Note the location for future use.
 	<br><img src="media/keypair_copy_text.png"  alt="" />
 	
 ###Generating a Key Pair using the NovaClient CLI### {#keypairnova}
@@ -224,10 +228,11 @@ To generate a key pair in UNIX:
 
 	**Note**: There is a 255-character limit in the NAME field. You will see a "Invalid keypair name (HTTP 400)" error if you've exceeded that limit.
 
-	NovaClient creates the key pair. The private key pairs appear. 
+	NovaClient creates the key pair. The private key pair displays, similar to the following. 
 <br><img src="media/keypair_python.png"  alt="" />
 
-3. Copy the key pair into a text editor and save the file in the PEM format on the local system. Note the location where you save the file for later use.
+3. Copy the key pair into a text editor, as shown in the following figure, and save the file with a .pem extension. Note the location for future use.
+<br><img src="media/keypair_copy_text.png"  alt="" />
 
 	**Note**: If you plan to connect to an instance using PuTTY, convert the PEM file to PPK file for use in PuTTY using a program such as PuTTYgen. For more information, see [Converting Your Keypair File](https://community.hpcloud.com/article/converting-your-keypair-file). 
 
@@ -252,10 +257,10 @@ To generate a new public key using an existing private key:
 
 	**Note**: In the management console, there is a 100-character limit in the Key Name field. To use a longer name, [use the API](#keypairapi) to create a key pair.
 
-6. Click `Show Public Key Field`. The `Show Public Key` field appears.
+6. Click `Show Public Key Field`. The `Show Public Key` field displays, similar to the following.
 <br><img src="media/keypair_show_public.png"  alt="" />
 
-7. Copy and paste your public key into the text box, then click `Create Key`.
+7. Copy and paste your public key into the text box, as shown. Then click `Create Key`.
 <br><img src="media/keypair_own.png"  alt="" />
 
 	The management console creates the key pair based on the public key you entered.
@@ -274,6 +279,8 @@ You can use one of the following procedures, based on your environment:
 
 
 **Note**: In the US West region, key pairs are specific to an Availability Zone (AZ). A key pair you create in AZ-1 cannot be used in AZ-2 until you migrate that key pair to that zone. In the US East region, you create a key pair that can be used in all of the availability zones in the region.
+
+The following image shows the Key Pairs page in the management console for the US West AZ1 availability zone and the US East region.
 <img src="media/keypair_zones.png" alt="" />
 
 ####Transferring a key pair using the API#### {#keypairmigrateapi}
@@ -419,7 +426,7 @@ To transfer a key pair using PuTTYgen:
 
 	Information about the key pair displays.
 
-4. Copy the entire contents of the `Public key for pasting into OpenSSH authorized_keys file field`, starting with `ssh-rsa` to the end of `imported-openssh-key`.
+4. Copy the entire contents of the `Public key for pasting into OpenSSH authorized_keys file field`, starting with `ssh-rsa` to the end of `imported-openssh-key`, as highlighted in the following image.
 <br><img src="media/trans_keypair_pgen.png" alt="" />
 
 5. Log in to the [management console](https://console.hpcloud.com/manage).
@@ -434,9 +441,11 @@ To transfer a key pair using PuTTYgen:
 9. Enter a name for the key pair.
 
 10. Click `Show Public Key Field`.
-<br><img src="media/keypair_show_public.png"  alt="" />
 
-11. Paste the data from your public key into the `Select the Show Public Key` field.
+	A blank field displays, as shown.
+	<br><img src="media/keypair_show_public.png"  alt="" />
+
+11. Paste the data from your public key into the `Select the Show Public Key` field, as shown.
 <br><img src="media/keypair_own.png"  alt="" />
 
 12. Click `Create Key`.
@@ -461,7 +470,7 @@ To transfer a key pair using the Linux CLI:
 
     `cat /home/ubuntu/.ssh/authorized_keys`
 
-3. Copy the output from the command, starting with `ssh-rsa`.
+3. Copy the output from the command, as shown, starting with `ssh-rsa`.
 <br><img src="media/keypair_linux.png"  alt="" />
 
 4. Log in to the [management console](https://console.hpcloud.com/manage).
@@ -476,9 +485,11 @@ To transfer a key pair using the Linux CLI:
 8. Enter a name for the key pair.
 
 9. Click `Show Public Key Field`.
-<br><img src="media/keypair_show_public.png"  alt="" />
 
-10. Paste the data from your public key into the `Select the Show Public Key` field.
+	A blank field displays, as shown.
+	<br><img src="media/keypair_show_public.png"  alt="" />
+
+10. Paste the data from your public key into the `Select the Show Public Key` field, as shown.
 <br><img src="media/keypair_own.png"  alt="" />
 
 11. Click `Create Key`.
