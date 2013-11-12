@@ -98,7 +98,7 @@ For more information on transitioning to version 13.5, as well as general inform
 
 * Our [release notes for version 13.5](/release-notes/) of the HP Cloud software
 * The [version overview](/version-overview/) provides a look at the different software versions available
-* The [version 13.5 API specs](/api/13/)
+* The [version 13.5 API specs](/api/v13/)
 * The [technical support knowledge base](https://community.hpcloud.com)
 * [UNIX command-line interface migration information](/cli/unix/articles/migration/)
 
