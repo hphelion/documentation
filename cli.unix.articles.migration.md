@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Unix Command Line Interface: Object Store Migration"
-permalink: /cli/unix/articles/migration
+permalink: /cli/unix/articles/migration/
 product: unix-cli
 categories: cli linux object store migration
 tags: cli linux object store migration aws rackspace google
