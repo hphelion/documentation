@@ -69,7 +69,7 @@ You create both keys at the same time using any of multiple methods, including t
 In the US West region, key pairs are specific to an Availability Zone (AZ). A key pair you create in AZ-1 cannot be used in AZ-2 until you have [migrated that key pair to that zone](#keypairmigrate).
 
 In the US East region, you create a key pair that can be used in all of the availability zones in the region.
-<img src="media/keypair_zones.png" width="350" alt="" />
+<br><img src="media/keypair_zones.png" width="350" alt="" />
 
 If your environment includes multiple Availability Zones, you can transfer a key pair for one Availability Zone to the other Availability Zones, as required. Transferring a key pair allows you to create, manage, and maintain only one key pair, rather than using separate key pairs for each zone. For more information, see [Migrating or Transferring Your Key Pairs](#keypairmigrate).
 
@@ -122,7 +122,7 @@ To generate the key pair using the API:
 
 	Where:
 
-    	tenant_id (optional) - xsd:string - The ID for the tenant or account in a multi-tenancy cloud.
+    	tenant_id (optional) - xsd:string - The ID for the tenant or account in a multi-tenancy cloud. You can find the tenant ID on the API Keys page in the management console. 
 
     	name (required) - xsd:string - The name to be associated with the key pair.
 
@@ -281,7 +281,7 @@ You can use one of the following procedures, based on your environment:
 
 	Where:
 	
-		tenant_id - xsd:string - The ID of the cloud tenant.
+		tenant_id - xsd:string - The ID of the cloud tenant. You can find the tenant ID on the API Keys page in the management console.
 
 		name (required) - xsd:string - The name to be assigned to the key pair.
 
@@ -360,7 +360,7 @@ You can use one of the following procedures, based on your environment:
 
 	Where
 
-	    tenant_id - xsd:string - The ID of the tenant.
+	    tenant_id - xsd:string - The ID of the tenant. You can find the tenant ID on the API Keys page in the management console.
 
 	    name (required) - xsd:string - The name to be associated with the key pair.
 
@@ -601,7 +601,7 @@ Add a security zone
 
 	Where: 
 
-    	tenant_id - xsd:string - The ID for the tenant or account in a multi-tenancy cloud.
+    	tenant_id - xsd:string - The ID for the tenant or account in a multi-tenancy cloud. You can find the tenant ID on the API Keys page in the management console.
 
 		server_id - csapi:ID or UUID -- Server ID. This parameter can be an integer ID or a UUID. In either case, the specified server must be in the addressed Availability Zone. 
 
@@ -627,7 +627,7 @@ Add a security zone
 
 	Where:
 
-		tenant_id (optional) - xsd:string - The ID for the tenant or account in a multi-tenancy cloud.	
+		tenant_id (optional) - xsd:string - The ID for the tenant or account in a multi-tenancy cloud.	You can find the tenant ID on the API Keys page in the management console.
 
 		parent_group_id (required) - xsd:int - ID of the security group to which this rule will belong.
 
@@ -920,7 +920,7 @@ The process for creating a persistent instance involves creating a storage volum
 
 8. Select the specific image from the drop down list.
 	
-9. In the Servers page, click `Create Volume`.
+9. In the Volumes page, click `Create Volume`.
 
 	The volume is created. Now, you create the instance and attach the new volume.
 
