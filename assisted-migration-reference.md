@@ -33,7 +33,7 @@ HP Cloud Services version 13.5 is based on the latest version of OpenStack (Hava
 ### HP Cloud Compute ### {#hpCloudCompute}   
 In version 13.5, the HP Cloud Compute service provides on-demand computing giving you the ability to provision and manage large clusters of instances (virtual machines). You have more flexibility to select the type of instance that meets the needs of your application without having to pay for additional resources.
 
-In addition, you now have larger and more powerful instance types (sizes) to choose from--four times the size of the largest instances offered by most public clouds. And, our large, xlarge, and 2xlarge sizes are also offered in high memory versions.
+In addition, you now have larger and more powerful instance types (sizes) to choose from--four times the size of the largest instances offered by most public clouds. And, our large, xlarge, and 2xlarge sizes are also offered in high-memory versions.
 
 ### Region-wide resources ### {#RegionWideResources}
 
@@ -143,20 +143,17 @@ All volume snapshots and volumes created from those snapshots are migrated as we
 
 To detach a volume:
 
-<ol>
-<li>From the MC, click the [Volumes](/mc/compute/volumes/) tab.</li>
-<li>In the `Inventory` pane, click the action button (`*`) of the volume whose instance you want to detach and select `Detach`.
+1. From the MC, click the [Volumes](/mc/compute/volumes/) tab.
+2. In the `Inventory` pane, click the action button (`*`) of the volume whose instance you want to detach and select `Detach`.
 
-<p><img src="media/volume-detach-1212.png" width="580" alt="" /></p>
-</li>
+    <img src="media/volume-detach-1212.png" width="580" alt="" />
 
-<li>To verify the request, click `Yes, detach this volume`.
 
-<p><img src="media/volume-detach-verify-1212.png" width="580" alt="" /></p>
+3. To verify the request, click `Yes, detach this volume`.
 
-<p>Your volume is detached.</p>
-</li>
-</ol> 
+    <img src="media/volume-detach-verify-1212.png" width="580" alt="" />
+
+Your volume is detached.
 
 You can also detach a volume using the [volume details](/mc/compute/servers/view-details/) screen of the MC. To access the volume details screen from the `Inventory` pane, click on the volume name or click the action button (`*`) and select `Volume Details`.
 
@@ -172,30 +169,27 @@ See the [Managing volumes](/mc/compute/volumes/manage/) page for details on usin
 
 You cannot detach a volume that is running an instance; you must first terminate the instance to make the volume available.  To terminate an instance:
 
-<ol>
-<li>From the MC, click the `Servers` tab.</li>
-<li>In the `Inventory` pane, click the action button (`*`) of the server whose instance you wish to terminate and select `Terminate`.
+1. From the MC, click the `Servers` tab.
+2. In the `Inventory` pane, click the action button (`*`) of the server whose instance you want to terminate and select `Terminate`.
 
-<p><img src="media/terminate-instance-1212.png" width="580" alt="" /></p>
-</li>
+    <img src="media/terminate-instance-1212.png" width="580" alt="" />
 
-<li>To verify the request, click `Yes, terminate this server`.
 
-<p><img src="media/terminate-instance-verify-1212.png" width="580" alt="" /></p>
+3. To verify the request, click `Yes, terminate this server`.
 
-<p>Your instance is terminated.</p>
-</li>
-</ol>
+    <img src="media/terminate-instance-verify-1212.png" width="580" alt="" />
+
+Your instance is terminated.
+
 You can also terminate the instance from the [server details](/mc/compute/servers/view-details/) screen of the MC. To access the server details screen from the `Inventory` pane, click on the server name or click the action button (`*`) and select `Server Details`.
 
 <img src="media/terminate-instance-details-1212.png" width="580" alt="" />
 
 **Note**: When you terminate a persistent instance that was created from a bootable volume, any ephemeral storage that is being used is lost and the public IP is released for use. 
 
-
 ## Contacting support ## {#ContactingSupport}
 
-Congratulations on completing your preliminary transition steps. Before you contact us, you need to have the following information available for [our Support team](https://www.hpcloud.com/contact_us):
+Congratulations on completing your preliminary transition steps. Before you contact [our Support team](https://www.hpcloud.com/contact_us), you must have the following information available:
 
 Volume migration requirements
 
