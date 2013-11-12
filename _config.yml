@@ -141,21 +141,21 @@ navigation:
     url: /bindings/jclouds/object-storage/
   cloudos:
   - text: Cloud OS Home
-    url: /cloudos/en/120/
+    url: /cloudos/
   - text: Technical Overview
-    url: /cloudos/en/120/overview/
+    url: /cloudos/overview/
   - text: Video Tutorials
-    url: /cloudos/en/120/videos/	
+    url: /cloudos/videos/	
   - text: Install & Configure
-    url: /cloudos/en/120/install/
+    url: /cloudos/install/
   - text: API Quick Start
-    url: /cloudos/en/120/api/quickstart/
+    url: /cloudos/api/quickstart/
   - text: Value-Add Services
-    url: /cloudos/en/120/services/
+    url: /cloudos/services/
   - text: Release Notes
-    url: /cloudos/en/120/releasenotes/
+    url: /cloudos/releasenotes/
   - text: Additional Resources
-    url: /cloudos/en/120/more/
+    url: /cloudos/more/
     
 apinavigation:
 - text: Site home page

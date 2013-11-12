@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Cloud OS FAQs"
-permalink: /cloudos/en/120/faqs/
+permalink: /cloudos/faqs/
 product: cloudos
 
 ---
