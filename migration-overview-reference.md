@@ -196,7 +196,10 @@ To generate a key pair in UNIX:
 
 3. Navigate to the key pair file and display the file. By default, the key pair is stored in the `/home/ubuntu/.hpcloud/keypairs/` directory.
 
+4. Execute the following command to view the key pair file.
 	`cat KEYPAIR_NAME2.pem`
+
+	The key pair file contains text similar to the following:
 	<br><img src="media/keypair_unix.png"  alt="" />
 
 4. Copy the entire output into a text file on the local system and save it with a .pem extension.
