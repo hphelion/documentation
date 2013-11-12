@@ -73,6 +73,10 @@ a Microsoft Hyper-V, or VMware ESXi Hypervisor.
 * **Cinder** &mdash; the OpenStack volume management service that allows you to take your storage architecture and infrastructure, and create volumes that can be attached 
 to the virtual environment within the cloud.
 * **Neutron** &mdash; the virtual networking service in OpenStack that allows you to create and provision virtual networks. (Formerly called Quantum in OpenStack.)
+* **Swift** &mdash; the OpenStack highly available, distributed, eventually consistent object/blob store. Organizations can use Swift to store lots of data efficiently, 
+safely, and cheaply.
+* **Horizon** &mdash; the OpenStack dashboard, which provides a web based user interface to OpenStack services including Nova, Swift, Keystone, and so on.  
+HP Cloud OS has provided an enhanced version with two UI dashboards, as described later in this topic.
 
 Along with these services that make up the kernel layer of Cloud OS, we also have a set of plugins that attach to your infrastructure environment. 
 We provide plugins in the following ways. 

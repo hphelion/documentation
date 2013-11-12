@@ -8,7 +8,7 @@ product: cloudos
 
 # Introduction to Cloud Types &amp; the Installation Steps
 
-**Internal note:** BillG may work with JR to refine the text in this topic.  The info formerly resided on the Cosmos Welcome page.
+**Internal note:** Bill may work with JR to refine the text in this topic.  The info formerly resided on the Cosmos Welcome page.
 
 The first step in creating a cloud is to consider the type of cloud you want to create for your organization:
 
@@ -34,7 +34,7 @@ Using the HP Cloud OS Operational Dashboard, the Cloud Administration Node can b
 * Hybrid-only cloud
 * Virtual Hybrid-only Cloud
 
-**Internal note:** BillG, in particular, you and JR probably want to revisit those terms and change the associated text below...
+**Internal note:** Bill, in particular, you and JR probably want to revisit those terms and change the associated text below...
 
 ### Private Cloud
 
@@ -50,8 +50,8 @@ Controller that offers virtualized compute, network, and storage. After they are
 In addition, a private cloud supports hybrid Compute Region Controllers. This means you can use Compute Region Controllers from other OpenStack-compatible 
 clouds as if they were part of this cloud to expand the amount of resources available to your self-service users. 
 
-If you want to install a private cloud, go to the Configure tab (**Internal note: tab name correct?**) and follow the instructions. To complete the install, refer to the 
-Install &amp; Configure topic [link](#) on the HP Cloud OS documentation website.
+If you want to install a private cloud, go to the Configure tab (**Internal note: tab name correct?**) and follow the instructions. To complete the install, refer to  
+[Install &amp; Configure Your Clouds](/cloudos/en/120/install/).
 
 ### Hybrid-only Cloud
 
@@ -79,7 +79,7 @@ information that will be required to complete the setup.
 ## Set up a Private or Hybrid-only Cloud
 
 Here is a summary of the steps required to install a private or hybrid-only cloud. For more specific instructions on Server Types, Connections, and Networks, 
-please refer to the Install & Configure topic [link](#) on the HP Cloud OS documentation website.
+please refer to [Install &amp; Configure Your Clouds](/cloudos/en/120/install/). 
 
 ### Server Types
 
@@ -99,25 +99,25 @@ along with a list of logical connection interfaces (intf0, intf1, and so on) wit
 
 Examples of Physical Interface values:
 
-* 1Gb (preferred) on 1st port
-* 1Gb (preferred) on 2nd port
-* 1Gb (preferred) on 3rd port
+    1Gb (preferred) on 1st port
+    1Gb (preferred) on 2nd port
+    1Gb (preferred) on 3rd port
 
-In this Dual mode example, "1Gb (preferred) on 2nd port" means a one gigabit network for port 2, as enumerated by default from the server's BIOS or as overridden 
+In this Dual mode example, `1Gb (preferred) on 2nd port` means a one gigabit network for port 2, as enumerated by default from the server's BIOS or as overridden 
 in the Server Types panel. The "preferred"  tag suggests that if the NIC/port does not support 1Gb, Cloud OS falls back to the next maximum 
 speed supported by the NIC or port.  However, if there is no preferred tag, it means the port has to support 1Gb; otherwise the deployment may fail.
 
-In the Edit Connections dialog, the physical interface descriptions are abbreviated.  For example, 1g1 means a one gigabit network on port 1.  For details, see the 
-Install & Configure topic [link](#).
+In the Edit Connections dialog, the physical interface descriptions are abbreviated.  For example, `1g1` means a one gigabit network on port 1.  For details, see 
+[Install &amp; Configure Your Clouds](/cloudos/en/120/install/).
 
 ### Networks
 
-Finally, you will need to define the networks that are used in your IT environment. For each logical connection (such as intf0, intf1) a network is defined 
+Finally, you will need to define the networks that are used in your IT environment. For each logical connection (such as `intf0, intf1`) a network is defined 
 (admin network, public network, OpenStack Software Defined Network, BMC network, and so on). These definitions are used for various purposes in the cloud such 
 as networking between the nodes and this Cloud Administration Node (such as admin network), the public or corporate network (such as public network) attached 
 to your cloud, or a Baseboard Management Controller (BMC) network, which is a network that integrates with the Intelligent Platform Management Interface (IPMI) 
 built into the server's motherboard allowing administrators to remotely control servers. The BMC network controls the bare-metal aspects required to install 
-and remotely boot the servers from this Cloud Administration Node. The OpenStack Software Defined Network (os_sdn) carries traffic between virtual machines.
+and remotely boot the servers from this Cloud Administration Node. The OpenStack Software Defined Network (`os_sdn`) carries traffic between virtual machines.
 
 ### Network Mode
 
@@ -139,7 +139,7 @@ If you are installing a virtual hybrid-only cloud, you can skip most, if not all
 networking configuration to determine how to set up a virtual machine (which machine and how many virtual network ports) for your cloud.
 
 Before completing the setup of the Cloud Administration Node for your cloud type, make sure all the information entered in the panels on 
-the left side of this dashboard is accurate. Consult with your IT Administrator as needed, and see the Install & Configure topic [link](#).
+the left side of this dashboard is accurate. Consult with your IT Administrator as needed, and see [Install &amp; Configure Your Clouds](/cloudos/en/120/install/).
 
 When you are sure you have captured the correct information that describes your IT environment, go to the Configure tab (**Internal note: tab name correct?**) 
 and click the Complete Install button (**Internal note: button name correct?**) to complete the setup of the Cloud Administration Node. 
@@ -210,7 +210,8 @@ The next step is to select which node will be used for your Cloud Controller, Ne
 different nodes, or any combination depending upon the type of cloud you are creating. Once you have selected the nodes, click the Attributes tab. 
 Change the values of the attributes that need to be modified to match the cloud you are creating. The default values should suffice for most cases. 
 Once you are ready, click the Create Cloud button and the cloud will go through the process of creating the cloud. Note that if you have an advanced 
-environment where the automated process will not work for you, consult the Install & Configure topic [link](#) for details on how to configure and set up more complex clouds.
+environment where the automated process will not work for you, consult [Install &amp; Configure Your Clouds](/cloudos/en/120/install/) 
+for details on how to configure and set up more complex clouds.
 
 Once the cloud has been created, it enters the Active state. You can click the name of the cloud at any time to view the details for that cloud. 
 If your cloud will include Resource Regions, you will need to create them. To do this, click the Create Compute Region button. The Region Name 
