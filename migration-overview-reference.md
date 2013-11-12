@@ -504,7 +504,7 @@ Access to your instances is controlled by security groups. A security group is a
 
 Security group rules specify the traffic that is allowed through to the server. No traffic can be received by an instance unless a security group rule explicitly allows that traffic from that IP address. 
 
-<p id="securitygroupdefault">The system includes one default security group, which contains four rules:
+<p id="securitygroupdefault">The system includes one default security group, which contains four rules, which appear similar to the following in the management console:
 <br><img src="media/sec_group_defafult.png"  alt="" /></p>
 
     Outgoing: This rule allows all outgoing traffic.
