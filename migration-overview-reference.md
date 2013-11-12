@@ -12,6 +12,7 @@ In general, the process for transitioning to 13.5 involves creating a new 13.5 i
 
 This overview outlines the tasks you will need to perform, based upon the operating system on your cloud client system (your local system) and the operating systems used by your cloud instance(s).
 
+
 **Note**: Some of the links in this document contain information on using the HP Public Cloud Console to interact with your instances. HP Public Cloud Console is an alternative method for performing these tasks. The procedures in this document for using the management console are correct and should be followed at this time."
 
 If you have any questions or concerns about which files to copy, [contact our Support team](#support).
