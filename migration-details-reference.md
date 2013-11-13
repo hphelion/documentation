@@ -216,8 +216,6 @@ Once you have this information, contact support:
 * [Email support@hpcloud.com](mailto:support@hpcloud.com)
 * Call at 1-855-61CLOUD (1-855-612-5683) in the U.S. or +1-678-745-9010 internationally.
 
-<table>
-<td>
 
 ## For further information ## {#MoreInfo}
 
