@@ -65,11 +65,12 @@ Bulk import means we load your data into HP Cloud Block Storage or HP Cloud Obje
 ### For more information ### {#MoreVersionDiffInfo}
 For more information on migrating your services, and to better understand the differences between versions 12.12 and 13.5, see:
 
-* [Release Notes](/release-notes)
-* [Getting Started](/article/getting-started-compute-135) 
-* [Account Limits](/article/hp-cloud-account-limits-135)
-* [Managing Floating IPs](/article/managing-your-floating-ips-135)
-* [API Documentation](/api/v13/)
+* [Release notes](/release-notes)
+* [Getting started](/article/getting-started-compute-135) 
+* [Account limits](/article/hp-cloud-account-limits-135)
+* [Managing floating IPs](/article/managing-your-floating-ips-135)
+* [API documentation](/api/v13/)
+* [Known issues and best practices](/article/known-issues-and-best-practices-compute-and-networking-135)
 
 ## Determine if you are moving an instance snapshot or creating a new instance ## {#moveInstanceCreateNew}
 For each instance, you need to determine if you want to keep the data that resides on each instance. If you want to keep your existing data, you can do one of two things:
@@ -86,28 +87,58 @@ Using an instance snapshot can make migration easier, but might not be suitable 
 ## Review key migration information ## {#TransitionInfo}
 Before you attempt an assisted migration from HP Cloud Services version 12.12 to 13.5, review the following critical pieces of information.
 
+<!--
 <ul>
 <li>Unnecessary data and files
 <p>Before you transition to version 13.5, we recommend you purge any data you no longer need and remove any unnecessary log files.</p>
 </li>
 <li>Floating IPs and DNS entries
-<p>You must acquire new floating IP addresses in version 13.5. Since IP addresses change between the two environments, if you have any DNS entries that point to your current configuration, you must plan to change them after your transition. </p>
+<p>You must acquire new [floating IP addresses](/article/managing-your-floating-ips-135) in version 13.5. Since IP addresses change between the two environments, if you have any DNS entries that point to your current configuration, you must plan to change them after your transition.</p>
 </li>
 <li>Instances and volumes
 <p>Complete instances cannot be directly moved or copied between version 12.12 and 13.5.</p>
 <p>All of your instances will be offline and your volumes will not be available during the transition process outlined on this page.</p>
-<p>By request to customer support, your block volumes can be moved to version 13.5 and would be immediately available for attachment to instances. When moved, these volumes are available in the same availability zone as the one in which they originated.</p>
+<p>By request to customer support, [your block volumes](/article/managing-your-block-storage-135) can be moved to version 13.5 and would be immediately available for attachment to instances. When moved, these volumes are available in the same availability zone as the one in which they originated.</p>
 </li>
 <li>Snapshots
-<p>By request to customer support, your snapshots can be copied to version 13.5, and would be available for use in both version 12.12 and version 13.5.</p>
+<p>By request to customer support, [your snapshots](/article/managing-your-block-storage-135) can be copied to version 13.5, and would be available for use in both version 12.12 and version 13.5.</p>
 </li>
-<li>Keypairs
-<p>Keypairs must be recreated in version 13.5; although, you can use your existing version 12.12 keypairs to create your version 13.5 keypairs.</p>
+<li>Keypairs 
+<p>You must [recreate your keypairs](/article/managing-your-key-pairs-135) in version 13.5; although, you can use your existing version 12.12 keypairs to create your version 13.5 keypairs.</p>
 </li>
-<li>Security Groups
-<p>You must recreate your security groups in version 13.5.
+<li>Security groups 
+<p>You must [recreate your security groups](/article/managing-your-security-groups-135) in version 13.5.</p>
 </li>
 </ul>
+-->
+
+* Unnecessary data and files
+
+    Before you transition to version 13.5, we recommend you purge any data you no longer need and remove any unnecessary log files.
+
+* Floating IPs and DNS entries
+
+    You must acquire [new floating IP addresses](/article/managing-your-floating-ips-135) in version 13.5. Since IP addresses change between the two environments, if you have any DNS entries that point to your current configuration, you must plan to change them after your transition.
+
+* Instances and volumes
+
+    Complete instances cannot be directly moved or copied between version 12.12 and 13.5.
+    
+    All of your instances will be offline and your volumes will not be available during the transition process outlined on this page.
+    
+    By request to customer support, [your block volumes](/article/managing-your-block-storage-135) can be moved to version 13.5 and would be immediately available for attachment to instances. When moved, these volumes are available in the same availability zone as the one in which they originated.
+
+* Snapshots
+
+    By request to customer support, [your snapshots](/article/managing-your-block-storage-135) can be copied to version 13.5, and would be available for use in both version 12.12 and version 13.5.
+
+* Keypairs 
+
+    You must [recreate your keypairs](/article/managing-your-key-pairs-135) in version 13.5; although, you can use your existing version 12.12 keypairs to create your version 13.5 keypairs.
+
+* Security groups 
+
+    You must [recreate your security groups](/article/managing-your-security-groups-135) in version 13.5.
 
 ## Taking a snapshot of an ephemeral instance ## {#Snapshot}
 The first step in preparing your data for migration to version 13.5 is to use the [Images screen](/mc/compute/images/) of the [Management Console](/mc/) (MC) to take a snapshot of your instance.  
@@ -228,9 +259,10 @@ Once you have this information, contact support:
 
 ## For further information ## {#MoreInfo}
 
-For more information on migration, as well as general information about version 13.5:
+For more information on data migration, as well as general information about version 13.5:
 
 * The [Self-Migration Reference Guide](/migration-overview) page contains details on how to migrate your data yourself from version 12.12 to 13.5 of the HP Cloud Services
+* [Known issues and best practices](/article/known-issues-and-best-practices-compute-and-networking-135) in version 13.5
 * Our [release notes for version 13.5](/release-notes/) of the HP Cloud software
 * The [version 13.5 overview](/version-overview/) provides a look at the different software versions available
 * The [technical support knowledge base](https://community.hpcloud.com)
