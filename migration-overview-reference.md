@@ -64,8 +64,8 @@ You create both keys at the same time using any of multiple methods, including t
 	
 - [Using the Management Console](#keypairconsole) 
 - [Using the API](#keypairapi) 
-- [Using the NovaClient CLI](#keypairconnova)
-- [Using an existing public key](#keypaircown)
+- [Using the NovaClient CLI](#keypairnova)
+- [Using an existing public key](#keypairown)
 
 ####Key Pairs and Availability Zones####
 
@@ -507,7 +507,7 @@ Security group rules specify the traffic that is allowed through to the server. 
 <p id="securitygroupdefault">The system includes one default security group, which contains four rules, which appear similar to the following in the management console:
 <br><img src="media/sec_group_defafult.png"  alt="" /></p>
 
-    Outgoing: This rule allows all outgoing traffic.
+	Outgoing: This rule allows all outgoing traffic.
     Incoming ICMP: This rule allows all inbound ICMP traffic.
 	Incoming TCP Port 22: This rule allows SSH traffic through port 22.
     Incoming Group Rule: A rule that adds the default group to itself.
@@ -572,10 +572,11 @@ To create a new security group:
 
 5. Enter a name and description for the security group in the fields that appear.
 
-	A new security group is listed.
+	A new security group is listed, similar to the following image.
+	<br><img src="media/sec_group_new.png"  alt="" />
 
 6. Click the name of the security group in the list to edit that group using the steps in the [following section](#securitygroupconsoleedit).
-<br><img src="media/sec_group_defafult.png"  alt="" />
+
 
 
 ####Modifying a security group#### {#securitygroupconsoleedit}
@@ -600,8 +601,8 @@ To modify a security group:
 		-  Port Max / ICMP Code. Enter the port or ICMP type the rule affects. For a single port, enter the same port that you entered in the Port Min field. For a range of ports, enter the last port in the range.
 		-  Remote IP Prefix. Enter the IP address and associated network mask that the rule affects, [using CIDR](#securitygroupcidr).
 
-	- Delete a rule by clicking `Delete` in the Manage column for that rule 
-<br><img src="media/sec_group_edit.png" alt="" />
+	- Delete a rule by clicking `Delete` in the Manage column for that rule, as shown. 
+<br><img src="media/sec_group_delete.png" alt="" />
 
 
 ###Managing your Security Groups using the API### {#securitygroupapi}
@@ -697,7 +698,9 @@ To modify a security group:
 3. Execute the following command to display a list of the security groups for the current instance.
 
 	`nova secgroup-list`
-<br><img src="media/Python_secgroup_list.png" alt="" />
+
+	A list of security groups displays, similar to the following: 
+	<br><img src="media/Python_secgroup_list.png" alt="" />
 
 4. Execute the following command to display the rules in a specified security group.
 
@@ -710,7 +713,9 @@ To modify a security group:
 	The following example lists the rules in the default security group.
 
 		`nova secgroup-list-rules default`
-<br><img src="media/Python_secgroup_list_rules.png" alt="" />
+
+	A list of rules in that security group displays, similar to the following: 
+	<br><img src="media/Python_secgroup_list_rules.png" alt="" />
 
 		- The ICMP rule allows all ICMP traffic.
 		- The TCP port 22 rule allows SSH traffic over port 22.
@@ -825,7 +830,7 @@ To create an ephemeral instance using Python-NovaClient commands:
 
 		--availability_zone (optional) -- The availability zone for instance placement.
 
-		--security_group (optional) - The name of the security group to use. 
+		--security_groups (optional) - The name of the security group to use. 
 	
 		--block_device_mapping (optional) - A definition of any block devices to attach to the instance. For onformaton, see [Block mapping](#blockmapping). 
 
@@ -838,9 +843,9 @@ To create an ephemeral instance using Python-NovaClient commands:
 
 		--name (required) - The name for the instance.
 
-	The following example is a NovaClient command to create an XSmall Ubuntu 12.04 instance:
+	The following example is a NovaClient command to create an XSmall Ubuntu 12.04 instance.  The following example will attempt boot from volume with ID=5035 on a selected network. The instance does not delete on terminate.
 
-	    nova boot --flavor "100" --image "75845" --key_name "az1" --security_groups "default" TEST_SERVER
+	    nova boot --flavor "100" --image "75845" --key_name "az1" --security_groups "default" -block_device_mapping vda=50357:::0 --nic net-id=net1-id TEST_SERVER
 
 	The output displays, similar to the following:
 	<br><img src="media/Python_Create_Instance.png"  alt="" />
@@ -881,6 +886,8 @@ Where:
 
 	delete_on_terminate. Indicate whether the volume should be deleted when the instance is terminated. Enter *True* or *1* to delete the volume. Enter *False* or *0* to not delete.
 
+The following example attaches a 10GB snapshot volume with ID 50357 to a device named vda. The volume will not be deleted when the associated instance is terminated.
+-block_device_mapping vda=50357:::0 boot-from-vol-test
 	
 Tip: To connect with the instance over the internet then you need to allocate and assign a Floating IP to the instance, see [Managing Your Floating IPs](https://community.hpcloud.com/article/managing-your-floating-ips-135#fipnovacli)
 
@@ -996,7 +1003,7 @@ After you assign the floating IP address, you can [connect to the instance](#con
 	A list of images displays, with an ID on the left column.
 	<br><img src="media/image-list.png"  alt="" />
 
-	**Note**: Multi-part images listed below work as bootable volumes (Kernel and Ramdisk separated). They will look like this in the NovaClient:
+	**Note**: Multi-part images (where the kernel and RAM disk are separate) do not work as bootable volumes. You can identify a multi-part volume in an image list if the image names are identical, as shown in the following example.
 	<br><img src="media/image-list_multi.png"  alt="" />
 	
 4. Create the volume using the following command:</p>
@@ -1215,11 +1222,11 @@ To connect to an instance using a Mac operating system:
 5. If you see a prompt similar to the following, enter `Y` to continue connecting,
 
 		The authenticity of host 'FLOATING_IP (FLOATING_IP)' can't be established.
-		RSA key fingerprint is 17:7f:a9:ae:9d:6c:76:bf:be:68:a4:05:f6:da:84:7b.
+		RSA key fingerprint is 17:7f:a9:ae:9d:6c:68:a4:05:f6:da:84:7b.
 		Are you sure you want to continue connecting (yes/no)? yes
 		Warning: Permanently added 'FLOATING_IP' (RSA) to the list of known hosts.
 
-##Copying data from a 12.12 instance to v13.5 instance## {#copydata}
+##Section 5: Copying data from a 12.12 instance to v13.5 instance## {#copydata}
 
 After you create a new 13.5 instance and have connected to that instance on your local system, you can copy the data from your version 12.12 instance to your new 13.5 instance. You can use any tool transfer program of your choice (for example, SCP or FTP), including the following methods, to copy the data to the new instance.
 
@@ -1269,11 +1276,11 @@ Before starting to transfer files, make sure the private key associated with the
 
 To transfer files using rsync:
 
-1. On the 12.12 instance, launch a Terminal from the Applications -> Utilities menu.
+1. On the 12.12 instance, click `Applications` > `Utilities` to launch a terminal.
 
 2. Browse to the directory where the key pair (.pem) file is located.
 
-3. Execute the following command,  to protect your key pair file:
+3. Execute the following command, to protect your key pair file:
 
 	`chmod 400 KEYPAIR_NAME.pem`
 
@@ -1410,7 +1417,7 @@ To use FileZilla to transfer files to the 13.5 instance:
 
 6. Locate and copy the required files, as needed.
 
-##Section 5: Creating and attaching block volumes## {#transdata}
+##Section 6: Creating and attaching block volumes## {#transdata}
 
 If your environment uses one or more cloud block storage volumes, you must transition the date in those block volumes to a 13.5 instance.	
 
