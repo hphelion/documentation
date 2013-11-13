@@ -72,7 +72,7 @@ For more information on migrating your services, and to better understand the di
 * [API documentation](/api/v13/)
 * [Known issues and best practices](/article/known-issues-and-best-practices-compute-and-networking-135)
 
-## Determine if you are moving an instance snapshot or creating a new instance ## {#moveInstanceCreateNew}
+## Determining if you are moving an instance snapshot or creating a new instance ## {#moveInstanceCreateNew}
 For each instance, you need to determine if you want to keep the data that resides on each instance. If you want to keep your existing data, you can do one of two things:
 
 + Move an instance snapshot to version 13.5
@@ -84,7 +84,7 @@ Using an instance snapshot can make migration easier, but might not be suitable 
 
 **Important!** If you have questions about which process is best for your situation, [contact your support engineer](#ContactingSupport). If you do not need to keep your existing data, you should simply [create a new instance](/article/creating-your-first-instance-135).
 
-## Review key migration information ## {#TransitionInfo}
+## Reviewing key migration information ## {#TransitionInfo}
 Before you attempt an assisted migration from HP Cloud Services version 12.12 to 13.5, review the following critical pieces of information.
 
 <!--
