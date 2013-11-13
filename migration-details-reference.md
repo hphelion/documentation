@@ -19,6 +19,46 @@ If you plan on performing the migration without support services, the [Self-Migr
 **Note:**
 Some of the links in this document contain information on using the HP Public Cloud Console to interact with your instances. HP Public Cloud Console is an alternative method for performing these tasks. The procedures in this document for using the management console are correct and should be followed at this time.
 
+<table>
+<tr>
+<td>Content</td>
+<td>Migrate?</td>
+<td>Detail</td>
+</tr>
+
+<tr>
+<td>Block Volumes</td>
+<td>Yes</td>
+<td>By request to customer support, block volumes can be moved to version 13.5 and are immediately available for attachment to instances. When moved, volumes are available in the same availability zone as the one in which they originated.</td>
+</tr>
+			 
+<tr>
+<td>Snapshots</td>
+<td>Yes</td>
+<td>By request to customer support, snapshots can be copied to version 13.5, and are available for use in both the version 12.12 and version 13.5.</td>
+</tr>
+<tr>
+<td>Instances</td>
+<td>No</td>
+<td>Complete instances cannot be directly moved or copied between version 12.12 and 13.5.</td>
+</tr>
+<tr>
+<td>Keypairs</td>
+<td>No</td>
+<td>Keypairs must be recreated in version 13.5; although, you can use your existing version 12.12 keypairs to create your version 13.5 keypairs.</td>
+</tr>
+<tr>
+<td>Floating IPs</td>
+<td>No</td>
+<td>New floating IP addresses must be acquired in version 13.5.</td>
+</tr>
+<tr>
+<td>Security Groups</td>
+<td>No</td>
+<td>Security groups must be recreated in 13.5.</td>
+</tr>
+</table>
+
 
 ## Before you begin ## {#TransitionOverview}
 For assistance with transitioning your data from version 12.12 to 13.5, there are a few preliminary tasks you must complete first:
