@@ -87,31 +87,6 @@ Using an instance snapshot can make migration easier, but might not be suitable 
 ## Reviewing key migration information ## {#TransitionInfo}
 Before you attempt an assisted migration from HP Cloud Services version 12.12 to 13.5, review the following critical pieces of information.
 
-<!--
-<ul>
-<li>Unnecessary data and files
-<p>Before you transition to version 13.5, we recommend you purge any data you no longer need and remove any unnecessary log files.</p>
-</li>
-<li>Floating IPs and DNS entries
-<p>You must acquire new [floating IP addresses](/article/managing-your-floating-ips-135) in version 13.5. Since IP addresses change between the two environments, if you have any DNS entries that point to your current configuration, you must plan to change them after your transition.</p>
-</li>
-<li>Instances and volumes
-<p>Complete instances cannot be directly moved or copied between version 12.12 and 13.5.</p>
-<p>All of your instances will be offline and your volumes will not be available during the transition process outlined on this page.</p>
-<p>By request to customer support, [your block volumes](/article/managing-your-block-storage-135) can be moved to version 13.5 and would be immediately available for attachment to instances. When moved, these volumes are available in the same availability zone as the one in which they originated.</p>
-</li>
-<li>Snapshots
-<p>By request to customer support, [your snapshots](/article/managing-your-block-storage-135) can be copied to version 13.5, and would be available for use in both version 12.12 and version 13.5.</p>
-</li>
-<li>Keypairs 
-<p>You must [recreate your keypairs](/article/managing-your-key-pairs-135) in version 13.5; although, you can use your existing version 12.12 keypairs to create your version 13.5 keypairs.</p>
-</li>
-<li>Security groups 
-<p>You must [recreate your security groups](/article/managing-your-security-groups-135) in version 13.5.</p>
-</li>
-</ul>
--->
-
 * Unnecessary data and files
 
     Before you transition to version 13.5, we recommend you purge any data you no longer need and remove any unnecessary log files.
@@ -156,20 +131,18 @@ To create a snapshot of an ephemeral instance:
 1. From the MC, click the `Images` tab.
 2. In the [Images screen](/mc/compute/images/), enter an `Image Name` and `Description` for your instance snapshot.
 3. In the `From server` drop-down menu, select the server from which you want to create your snapshot.
+    
     <img src="media/images-snapshot-1212.png" width="580" alt="" />
-4. Click `Create`.
 
-<img src="media/images-snapshot-1212.png" width="580" alt="" />
+4. Click `Create`.
 
 The image appears in the list immediately with the status of `Queued`. While your image is being created, the `Status` changes to `Saving` and finally `Active`.  The new image is a snapshot of your server.
 
 To display the details for the image, you can either click the image name, or click the action button (`*`) and select `Image Details`.
-
-<img src="media/images-snapshot-launchdetails-1212.png" width="580" alt="" />
+    <img src="media/images-snapshot-launchdetails-1212.png" width="580" alt="" />
 
 This launches the `Image Details` screen for your image, which contains the `ID`, `Description`, `Status`, `Source Server`, and `Created At` time for your image.
-
-<img src="media/images-snapshot-details-1212.png" width="580" alt="" />
+    <img src="media/images-snapshot-details-1212.png" width="580" alt="" />
 
 ## Preparing a volume for migration ## {#PrepVolume}
 
@@ -192,7 +165,6 @@ To detach a volume:
 
     <img src="media/volume-detach-1212.png" width="580" alt="" />
 
-
 3. To verify the request, click `Yes, detach this volume`.
 
     <img src="media/volume-detach-verify-1212.png" width="580" alt="" />
@@ -200,8 +172,7 @@ To detach a volume:
 Your volume is detached.
 
 You can also detach a volume using the [volume details](/mc/compute/servers/view-details/) screen of the MC. To access the volume details screen from the `Inventory` pane, click on the volume name or click the action button (`*`) and select `Volume Details`.
-
-<img src="media/volume-detach-details-1212.png" width="580" alt="" />
+    <img src="media/volume-detach-details-1212.png" width="580" alt="" />
 
 Support must migrate all assets associated with your volumes (such as volume snapshots, the original volume if created from a snapshot, and the volume being requested). [Contact support](#ContactingSupport) for help when you reach this step.
 
@@ -226,8 +197,7 @@ You cannot detach a volume that is running an instance; you must first terminate
 Your instance is terminated.
 
 You can also terminate the instance from the [server details](/mc/compute/servers/view-details/) screen of the MC. To access the server details screen from the `Inventory` pane, click on the server name or click the action button (`*`) and select `Server Details`.
-
-<img src="media/terminate-instance-details-1212.png" width="580" alt="" />
+    <img src="media/terminate-instance-details-1212.png" width="580" alt="" />
 
 **Note**: When you terminate a persistent instance that was created from a bootable volume, any ephemeral storage that is being used is lost and the public IP is released for use. 
 
