@@ -138,12 +138,10 @@ To create a snapshot of an ephemeral instance:
 
 The image appears in the list immediately with the status of `Queued`. While your image is being created, the `Status` changes to `Saving` and finally `Active`.  The new image is a snapshot of your server.
 
-To display the details for the image, you can either click the image name, or click the action button (`*`) and select `Image Details`.
-
+To display the details for the image, you can either click the image name, or click the action button (`*`) and select `Image Details`.<br>
     <img src="media/images-snapshot-launchdetails-1212.png" width="580" alt="" />
 
-This launches the `Image Details` screen for your image, which contains the `ID`, `Description`, `Status`, `Source Server`, and `Created At` time for your image.
-
+This launches the `Image Details` screen for your image, which contains the `ID`, `Description`, `Status`, `Source Server`, and `Created At` time for your image.<br>
     <img src="media/images-snapshot-details-1212.png" width="580" alt="" />
 
 ## Preparing a volume for migration ## {#PrepVolume}
@@ -173,8 +171,7 @@ To detach a volume:
 
 Your volume is detached.
 
-You can also detach a volume using the [volume details](/mc/compute/servers/view-details/) screen of the MC. To access the volume details screen from the `Inventory` pane, click on the volume name or click the action button (`*`) and select `Volume Details`.
-
+You can also detach a volume using the [volume details](/mc/compute/servers/view-details/) screen of the MC. To access the volume details screen from the `Inventory` pane, click on the volume name or click the action button (`*`) and select `Volume Details`.<br>
     <img src="media/volume-detach-details-1212.png" width="580" alt="" />
 
 Support must migrate all assets associated with your volumes (such as volume snapshots, the original volume if created from a snapshot, and the volume being requested). [Contact support](#ContactingSupport) for help when you reach this step.
@@ -198,8 +195,7 @@ You cannot detach a volume that is running an instance; you must first terminate
 
 Your instance is terminated.
 
-You can also terminate the instance from the [server details](/mc/compute/servers/view-details/) screen of the MC. To access the server details screen from the `Inventory` pane, click on the server name or click the action button (`*`) and select `Server Details`.
-
+You can also terminate the instance from the [server details](/mc/compute/servers/view-details/) screen of the MC. To access the server details screen from the `Inventory` pane, click on the server name or click the action button (`*`) and select `Server Details`.<br>
     <img src="media/terminate-instance-details-1212.png" width="580" alt="" />
 
 **Note**: When you terminate a persistent instance that was created from a bootable volume, any ephemeral storage that is being used is lost and the public IP is released for use. 
