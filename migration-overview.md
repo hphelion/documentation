@@ -6,7 +6,7 @@ permalink: /migration-overview/
 ---
 # HP Cloud Services 12.12 to 13.5 transition overview
 
-This page provides you with information to help you transition from version 12.12 to 13.5 of the HP Cloud software services.  This overview covers the following topics and tasks:
+This page provides you with information to help you transition from version 12.12 to 13.5 of the HP Cloud services.  This overview covers the following topics and tasks:
 
 * [Before you begin](#BeforeYouBegin)
 * [Transitioning data for ephemeral instances](#Ephemeral)
@@ -36,11 +36,8 @@ To transition the data for an ephemeral instance:
 
 For information on moving data:
 
-* Using WinSCP, see our Knowledge Base article [Using WinSCP to transfer files to your Instance](https://community.hpcloud.com/article/using-winscp-transfer-files-your-instance)
 * Using rsync on Mac OSX or Linux, see our Knowledge Base article [Uploading files to a Linux instance from Linux or Mac OSX using rsync](https://community.hpcloud.com/article/uploading-files-linux-instance-linux-or-mac-osx-using-rsync)
-* On Linux systems, see our Knowledge Base articles on [Installing and Configuring FTP Server: vsftpd](https://community.hpcloud.com/article/installing-and-configuring-ftp-server-vsftpd) and [Compressing Files](https://community.hpcloud.com/article/compressing-files)
-* On Windows systems, see [Using FileZilla to Setup a FTP Server on Your Windows Instance](https://community.hpcloud.com/article/using-filezilla-setup-ftp-server-your-windows-instance) and [Install and Setup FileZilla](https://community.hpcloud.com/article/install-and-setup-filezilla)
-
+* On Linux systems, see our Knowledge Base articles on [Using SFTP to Transfer Files between Windows Instances](https://community.hpcloud.com/article/using-sftp-transfer-files-between-windows-instances) and [Compressing Files](https://community.hpcloud.com/article/compressing-files)
 
 
 ##Transitioning data for persistent instances## {#Persistent}
@@ -52,10 +49,8 @@ To transition the data for a persistent instance:
 
 For information on moving data:
 
-* Using WinSCP, see our Knowledge Base article [Using WinSCP to transfer files to your Instance](https://community.hpcloud.com/article/using-winscp-transfer-files-your-instance)
 * Using rsync on Mac OSX or Linux, see our Knowledge Base article [Uploading files to a Linux instance from Linux or Mac OSX using rsync](https://community.hpcloud.com/article/uploading-files-linux-instance-linux-or-mac-osx-using-rsync)
-* On Linux systems, see our Knowledge Base articles on [Installing and Configuring FTP Server: vsftpd](https://community.hpcloud.com/article/installing-and-configuring-ftp-server-vsftpd) and [Compressing Files](https://community.hpcloud.com/article/compressing-files)
-* On Windows systems, see [Using FileZilla to Setup a FTP Server on Your Windows Instance](https://community.hpcloud.com/article/using-filezilla-setup-ftp-server-your-windows-instance) and [Install and Setup FileZilla](https://community.hpcloud.com/article/install-and-setup-filezilla)
+* On Linux systems, see our Knowledge Base articles on [Using SFTP to Transfer Files between Windows Instances](https://community.hpcloud.com/article/using-sftp-transfer-files-between-windows-instances) and [Compressing Files](https://community.hpcloud.com/article/compressing-files)
 
 <!--For information on persistent instances while performing a support services assisted transition, please see the [snapshots](/migration-details/) section of the [assisted transition](/migration-details/) page. -->
 
@@ -70,10 +65,8 @@ To transition the data for block volumes:
 
 For information on moving data:
 
-* Using WinSCP, see our Knowledge Base article [Using WinSCP to transfer files to your Instance](https://community.hpcloud.com/article/using-winscp-transfer-files-your-instance)
 * Using rsync on Mac OSX or Linux, see our Knowledge Base article [Uploading files to a Linux instance from Linux or Mac OSX using rsync](https://community.hpcloud.com/article/uploading-files-linux-instance-linux-or-mac-osx-using-rsync)
-* On Linux systems, see our Knowledge Base articles on [Installing and Configuring FTP Server: vsftpd](https://community.hpcloud.com/article/installing-and-configuring-ftp-server-vsftpd) and [Compressing Files](https://community.hpcloud.com/article/compressing-files)
-* On Windows systems, see [Using FileZilla to Setup a FTP Server on Your Windows Instance](https://community.hpcloud.com/article/using-filezilla-setup-ftp-server-your-windows-instance) and [Install and Setup FileZilla](https://community.hpcloud.com/article/install-and-setup-filezilla)
+* On Linux systems, see our Knowledge Base articles on [Using SFTP to Transfer Files between Windows Instances](https://community.hpcloud.com/article/using-sftp-transfer-files-between-windows-instances) and [Compressing Files](https://community.hpcloud.com/article/compressing-files)
 
 <!--For information on persistent instances, snapshots, and moving block volumes, please see the appropriate section of the [assisted transition](/migration-details/) page.  -->
 
@@ -99,8 +92,7 @@ For more information on transitioning to version 13.5, as well as general inform
 * Our [release notes for version 13.5](/release-notes/) of the HP Cloud software
 * The [version overview](/version-overview/) provides a look at the different software versions available
 * The [version 13.5 API specs](/api/v13/)
-* The [technical support knowledge base](https://community.hpcloud.com)
-* [UNIX command-line interface migration information](/cli/unix/articles/migration/)
+* The [technical support knowledge base](https://community.hpcloud.com/knowledge-base)
 
 <!--* If you need to perform an assisted transition with the aid of our Support organization, please read through the [transition details](/migration-details/) page, and [contact our Support team](https://www.hpcloud.com/contact_us):
     - [live chat from hpcloud.com](https://account.hpcloud.com/cases#support_chat)
