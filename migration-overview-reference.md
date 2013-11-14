@@ -50,7 +50,7 @@ Within each of these general tasks, there are procedures for different operating
 
 ##Before you begin## {#before}
 
-Before you begin transitioning to a 13.5 instance, it can be helpful to purge any unneeded data or log files from your 12.12 instance(s). 
+Before you begin transitioning to a 13.5 instance, we recommend you purge any data you no longer need and remove any unnecessary log files from your 12.12 instance(s). 
 
 ##Section 1: Generating a key pair## {#keypair}
 
@@ -105,7 +105,7 @@ To create a key pair using the management console:
 
 	Use only alphanumeric characters. Do not use spaces or special characters, such as periods. For more information, see [Naming Convention Best Practices](https://community.hpcloud.com/article/naming-convention-best-practices).
 
-	**Note**: In the management console, there is a 100-character limit in the `Key Name` field. To use a longer name, [use the API](#keypairapi) to create a key pair.
+	**Note**: In the management console, there is a 100-character limit in the `Key Name` field. To use a longer name, use the API following [the steps below](#keypairapi) to create a key pair.
 
 6. Click `Create Key`.
 
@@ -183,7 +183,7 @@ There are two methods you can use to create a key pair using the HP Cloud Servic
 
 You can view the full details of the command by entering `hpcloud help keypairs:add`
 
-For the full list of supported UNIX commands, see the [UNIX command line interface commands](#http://docs.hpcloud.com/cli/unix/reference).
+For the full list of supported UNIX commands, see the [UNIX command line interface commands](http://docs.hpcloud.com/cli/unix/reference).
 
 To generate a key pair in UNIX:
 
@@ -256,7 +256,7 @@ To generate a new public key using an existing private key:
 
 	Use only alphanumeric characters for the key pair name. Do not use spaces or special characters, such as periods. Refer to [Naming Convention Best Practices](https://community.hpcloud.com/article/naming-convention-best-practices) for more information.
 
-	**Note**: In the management console, there is a 100-character limit in the Key Name field. To use a longer name, [use the API](#keypairapi) to create a key pair.
+	**Note**: In the management console, there is a 100-character limit in the Key Name field. To use a longer name, use the API following [the steps below](#keypairapi) to create a key pair.
 
 6. Click `Show Public Key Field`. The `Show Public Key` field displays, similar to the following.
 <br><img src="media/keypair_show_public.png"  alt="" />
@@ -549,7 +549,7 @@ The following examples show how to restrict access using CIDR:
 	15.185.1.1/24 - This CIDR affects traffic to IP addresses starting with 15.185.1.x
 	15.185.1.1/32 - This CIDR affects traffic to a single host with IP address 15.185.1.1
 
-For more information on security groups, see [How To Add/Remove Security Groups from an Existing Instance](https://community.hpcloud.com/article/how-addremove-security-groups-existing-instance)
+For more information on security groups, see [How To Add/Remove Security Groups from an Existing Instance](https://community.hpcloud.com/article/how-addremove-security-groups-existing-instance) and
 [Common Ports and their Service](https://community.hpcloud.com/article/common-ports-and-their-service).
 
 ###Controlling traffic using the management console ### {#securitygroupconsole}
@@ -607,7 +607,7 @@ To modify a security group:
 
 ###Managing your Security Groups using the API### {#securitygroupapi}
 
-For information on using the API to create and configure security groups, see [Compute API - Security Groups](https://docs.hpcloud.com/api/v13/compute/#4.1.12SecurityGroups).
+For information on using the API to create and configure security groups, see the [HP Cloud Compute Service API Reference: Security Groups](https://docs.hpcloud.com/api/v13/compute/#4.1.12SecurityGroups).
 
 Add a security zone
 
@@ -720,7 +720,7 @@ To modify a security group:
 		- The ICMP rule allows all ICMP traffic.
 		- The TCP port 22 rule allows SSH traffic over port 22.
 		
-5. Use the commands in the [Python NovaClient CLI Reference](https://docs.hpcloud.com/cli/nova/reference) to add and remove the rules as needed.
+5. Use the commands in the [Python Novaclient CLI: Command Line Reference](https://docs.hpcloud.com/cli/nova/reference) to add and remove the rules as needed.
 
 	`Add a rule to a security group.`
 
@@ -756,16 +756,21 @@ Persistent image storage exists beyond the life of an instance. When you create 
 - [Create an ephemeral instance](#createephinstance)
 - [Create a persistent instance](#createpersinstance)
 
+After you create the instance, you can copy the data from your HP Cloud Services version 12.12 instance to your new version 13.5 instance.
+
 ###Creating an ephemeral instance### {#createephinstance}
 
 You can create an ephemeral instance for HP Cloud Services by using either the management console or by using Python-NovaClient commands.
 
 - [Using the management console](#createephinstanceconsole)
-- [Using Python-NovaClient](#createephinstancenova)
+- [Using Python-NovaClient](#createephinstancepyth)
 
-After you create the instance, you can copy the data from your HP Cloud Services version 12.12 instance to your new version 13.5 instance.
+**Note:** HP Cloud Services 13.5 does not assign a public IP address automatically. To connect with the instance, you must assign a floating IP address to the instance. The following procedures contain steps to assign the floating IP to the new instance.
+
+For more information on floating IP addresses, see [Managing Your Floating IPs](https://community.hpcloud.com/article/managing-your-floating-ips-135#fipnovacli). 
 
 ####Creating an ephemeral instance using the management console#### {#createephinstanceconsole}
+
 To create an ephemeral instance using the management console:
 
 1. Log in to the [management console](https://console.hpcloud.com/manage).
@@ -790,7 +795,19 @@ To create an ephemeral instance using the management console:
 
 5. Click `Create`.
 
-After the instance is active, you can [connect to the new instance](#connect).
+	The management console lists the new instance with a status of `Build`. When the instance is `Active`, you must assign a floating IP address to the instance in order to access the instance.
+
+6. In the menu, click `Floating IPs`.
+
+7. In the Floating IPs page, click `Allocate New IP`.
+
+	A new floating IP address is added to the table on the page.
+
+8. Select the new instance from the `Port` drop down and click `Apply`. 
+
+	The IP is assigned to the instance and can be used to connect with that instance.
+
+After you assign the floating IP address, you can [connect to the instance](#connect).
 
 ####Creating an ephemeral instance using Python-NovaClient commands#### {#createephinstancepyth}
 
@@ -845,7 +862,7 @@ To create an ephemeral instance using Python-NovaClient commands:
 
 	The following example is a NovaClient command to create an XSmall Ubuntu 12.04 instance.  The following example will attempt boot from volume with ID=5035 on a selected network. The instance does not delete on terminate.
 
-	    nova boot --flavor "100" --image "75845" --key_name "az1" --security_groups "default" -block_device_mapping vda=50357:::0 --nic net-id=net1-id TEST_SERVER
+	    nova boot --flavor "100" --image "75845" --key_name "az1" --security_groups "default" -block_device_mapping vda=50357:::0 --nic network-id=UUID1 TEST_SERVER
 
 	The output displays, similar to the following:
 	<br><img src="media/Python_Create_Instance.png"  alt="" />
@@ -867,8 +884,7 @@ To create an ephemeral instance using Python-NovaClient commands:
 
 		IP_Address - The floating IP address you allocated.
 
-For more information on floating IPs, see [Managing Your Floating IPs](https://community.hpcloud.com/article/managing-your-floating-ips-135#fipnovacli).
-
+After you assign the floating IP address, you can [connect to the instance](#connect).
 
 ####About block mapping#### {#blockmapping}
 
@@ -913,7 +929,11 @@ The process for creating a persistent instance involves creating a storage volum
 - [Using the Management Console](#createperinstanceconsole)
 - [Using Python-NovaClient commands](#createperinstancepyth)	
 
-####Creating a persistent instance using the management console#### {#createperinstanceconsole}
+**Note:** HP Cloud Services 13.5 does not assign a public IP address automatically. To connect with the instance, you must assign a floating IP address to the instance. The following procedures contain steps to assign the floating IP to the new instance.
+
+For more information on floating IP addresses, see [Managing Your Floating IPs](https://community.hpcloud.com/article/managing-your-floating-ips-135#fipnovacli). 
+
+####Creating a persistent instance using the management console#### {#createpersinstance}
 
 1. Log in to the [management console](https://console.hpcloud.com/manage).
 
@@ -939,7 +959,13 @@ The process for creating a persistent instance involves creating a storage volum
 
 	A bootable volume enables you to launch an instance from that volume. You must make the volume bootable to use the volume to create a persistent server.
 
-7. Click one of the image type buttons: Public Images, Partner Images, or Private Images. For more information, see [About the image types](#https://docs.hpcloud.com/mc/compute/servers/manage#ImageTypes).
+7. Click one of the image type buttons: 
+
+	- Public Images
+	- Partner Images
+	- Private Images. 
+	 
+	For more information, see [About the image types](#https://docs.hpcloud.com/mc/compute/servers/manage#ImageTypes).
 
 8. Select the specific image from the drop down list.
 	
@@ -974,10 +1000,6 @@ The process for creating a persistent instance involves creating a storage volum
 	The management console lists the new instance with a status of `Build`. When the instance is `Active`, you must assign a floating IP address to the instance in order to access the instance.
 
 13. In the menu, click `Floating IPs`.
-
-	HP Cloud Services 13.5 does not assign a public IP address automatically. To connect with the instance, you must assign a floating IP address to the instance. 
-
-	For more information on floating IPs, see [Managing Your Floating IPs](https://community.hpcloud.com/article/managing-your-floating-ips-135#fipnovacli).
 
 13. In the Floating IPs page, click `Allocate New IP`.
 
@@ -1067,8 +1089,8 @@ After you assign the floating IP address, you can [connect to the instance](#con
 
 	`nova floating-ip-create`
 
-	HP Cloud Services 13.5 does not assign a public IP address automatically. To connect with the instance, you must assign a floating IP address to the instance. 
-	<br><img src="media/floating_ip_create.png"  alt="" />
+	Output similar to the following lists the allocated IP address.
+	<img src="media/floating_ip_create.png"  alt="" />
 
 10. Use the following command to attach the floating IP to an instance:
 
@@ -1080,15 +1102,13 @@ After you assign the floating IP address, you can [connect to the instance](#con
 
 		IP_Address - The floating IP address you allocated.
 
-For more information on floating IPs, see [Managing Your Floating IPs](https://community.hpcloud.com/article/managing-your-floating-ips-135#fipnovacli).
-
-Once you have created your instance, you can [connect to the instance](#connect).
+After you assign the floating IP address, you can [connect to the instance](#connect).
 
 ##Section 4: Connecting To Your Instance## {#connect}
 
 After you have created your instance, you need to connect to the instance in order to work with the instance. For example, you must connect to the instance to copy data to the instance.
 
-Important: When you connect to an HP Cloud Services version 13.5 instance, you must use the floating IP address you created for the instance.
+**Note:** When you connect to an HP Cloud Services version 13.5 instance, you must use the floating IP address you created for the instance. If you do not know the floating IP, you can find the address using the management console on the Server Details page for your server. 
 	
 Use one of the following methods to connect to the new instance, based on the operating system you are connecting from.
 
@@ -1130,9 +1150,6 @@ To connect to an instance using the Linux CLI:
 
 		(user)@floating_ip - the default user name and floating IP address assigned to the instance.
 
-	In order to access an instance, you must allocate and assign a Floating IP to that instance.  See [Managing Your Floating IPs](https://community.hpcloud.com/article/managing-your-floating-ips-135#fipnovacli)
-
-
 4. If you see a prompt similar to the following, enter `Y` to select Yes to continue connecting.
 
 	`The authenticity of host 'FLOATING_IP (FLOATING_IP)' can't be established.
@@ -1142,11 +1159,9 @@ To connect to an instance using the Linux CLI:
 
 You are now connected to the instance.
 
-###Connecting to a Linux instance from a Windows system using PuTTY
-### {#connectwindows}
+###Connecting to a Linux instance from a Windows system using PuTTY### {#connectwindows}
 
 Before you start, make sure your key pair file has been converted from the PEM to PPK format and is stored on the local system.
-
 
 To connect to an instance using PuTTY:
 	
@@ -1157,8 +1172,6 @@ To connect to an instance using PuTTY:
 	a. In the Category list, select `Session`. This pane might be active by default. 
 
 	b. In `Host Name (or IP address)` field, enter the floating IP address for your instance.
-
-	You must allocate and assign a Floating IP to your instance. See [Managing Your Floating IPs](https://community.hpcloud.com/article/managing-your-floating-ips-135#fipnovacli).
 
 	c. In the `Category` list, select `Connection` -> `SSH` -> `Auth`. 
 
@@ -1186,8 +1199,6 @@ After logging in, a system window displays, which indicates you are connected to
 ###Connecting to a Linux instance from a Mac system### {#connectmac}
 
 Before you start, make sure your key pair file in the PEM format is stored on the local system.
-
-You must to allocate and assign a floating IP to your instance. See [Managing Your Floating IPs](https://community.hpcloud.com/article/managing-your-floating-ips-135#fipnovacli).
 
 To connect to an instance using a Mac operating system:
 
@@ -1217,8 +1228,6 @@ To connect to an instance using a Mac operating system:
 
 		(user)@floating_ip - the default user name and floating IP address assigned to the instance.
 
-	In order to access an instance, you must allocate and assign a Floating IP to that instance.  See [Managing Your Floating IPs](https://community.hpcloud.com/article/managing-your-floating-ips-135#fipnovacli).
-
 5. If you see a prompt similar to the following, enter `Y` to continue connecting,
 
 		The authenticity of host 'FLOATING_IP (FLOATING_IP)' can't be established.
@@ -1246,7 +1255,8 @@ To use WinSCP to transfer files, either the 12.12 instance or the 13.5 instance 
 
 Before starting to transfer files:
 
-- Make sure that Port 22 is open in the security group associated with your instance. For more information, see [Controlling traffic using security groups](#ecuritygroup).
+- You must use the floating IP address you created for the instance. If you do not know the floating IP, you can find the address using the management console on the Server Details page for your server. 
+- Make sure that Port 22 is open in the security group associated with your instance. For more information, see [Controlling traffic using security groups](#securitygroup).
 - Make sure your private key file is in PPK format on the client system.  You can convert a PEM key pair into PPK format. For more information, see
 [Converting Your Keypair File](https://community.hpcloud.com/article/converting-your-keypair-file).
 
@@ -1257,7 +1267,7 @@ To transfer files to your 13.5 instance:
 2. In the instance, launch WinSCP.
 
 3. Use WinSCP to log into the HP Cloud Services 12.12 instance using the fields on the Session page:
-	- Host name. Enter the Public IP address of your instance.
+	- Host name. Enter the floating IP address of your instance.
 	- Port number. Enter the port number for your instance or use the default, port 22.
 	- User name: If the instance requires a specific user for WinSCP enter the name.
 	- Password. Enter the password for the specified user or leave blank if a password is not required.
@@ -1317,7 +1327,7 @@ The following example moves files from the local system (`/home/user1/projects/w
 	rsync -e "ssh -i /home/usr1/Key1.pem" -avz  /home/user1/projects/web/html administrator@15.15.15.15:/var/www
 
 
-For more information on using rsync to move files, see [Using RSYNC to Upload or Transfer Files on Linux and Mac OSX](#https://community.hpcloud.com/article/using-rsync-upload-or-transfer-files-linux-and-mac-osx).
+For more information on using rsync to move files, see [Using RSYNC to Upload or Transfer Files on Linux and Mac OSX](https://community.hpcloud.com/article/using-rsync-upload-or-transfer-files-linux-and-mac-osx).
 
 ###Using FileZilla to transfer files to your instance### {#copydatazill}
 
@@ -1340,7 +1350,6 @@ To set up a FileZilla FTP server on the 12.12 instance:
 1. Use Windows Remote Desktop to access the 12.12 instance from your local system. 
 
 2. Download the FileZilla Server from [the FileZilla website](http://filezilla-project.org/download.php?type=server) and install on the 12.12 instance.
-
 
 3. Launch the FileZilla Server.
 
@@ -1405,7 +1414,7 @@ To use FileZilla to transfer files to the 13.5 instance:
 
 4. In the `Quickconnect` tool bar, enter the appropriate information in the following fields, or leave the default values:
 
-	Host. Enter the IP address of the server to which you want to connect.
+	Host. Enter the floating IP address of the server to which you want to connect.
 
 	Username. Enter the user name created in the FileZilla server. 
 	
@@ -1570,19 +1579,16 @@ To create a block volume and attach the volume to the instance:
 
 If you have any questions or concerns about which files to copy, contact our Support team:
 
-- [Live chat from hpcloud.com](#https://account.hpcloud.com/cases#support_chat)
-- [Open a support case](#https://account.hpcloud.com/cases)
-- [Using email](#support@hpcloud.com)
+- [Live chat from hpcloud.com](https://account.hpcloud.com/cases#support_chat)
+- [Open a support case](https://account.hpcloud.com/cases)
+- [Using email](support@hpcloud.com)
 - By phone at 1-855-61CLOUD (1-855-612-5683) in the U.S. or +1-678-745-9010 internationally.
 
 ##For further information## {#furtherinfo}
 
 For more information on version 13.5:
 
-<li>The <a href="/migration-overview">Self-Migration Reference Guide</a> page contains details on how to migrate your data yourself from version 12.12 to 13.5 of the HP Cloud Services</li>
 <li>Our <a href="/release-notes/">release notes for version 13.5</a> of the HP Cloud software</li>
 <li>The <a href="/version-overview/">version 13.5 overview</a> provides a look at the different software versions available</li>
 <li>The <a href="https://community.hpcloud.com">technical support knowledge base</a></li>
-<li><a href="/cli/unix/articles/migration/">UNIX command-line interface migration information</a></li>
-</ul>
 
