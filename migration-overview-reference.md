@@ -12,6 +12,9 @@ In general, the process for transitioning to 13.5 involves creating a new 13.5 i
 
 This overview outlines the tasks you will need to perform, based upon the operating system on your cloud client system (your local system) and the operating systems used by your cloud instance(s).
 
+
+**Note**: Some of the links in this document contain information on using the HP Public Cloud Console to interact with your instances. HP Public Cloud Console is an alternative method for performing these tasks. The procedures in this document for using the management console are correct and should be followed at this time."
+
 If you have any questions or concerns about which files to copy, [contact our Support team](#support).
 
 
@@ -47,7 +50,7 @@ Within each of these general tasks, there are procedures for different operating
 
 ##Before you begin## {#before}
 
-Before you begin transitioning to a 13.5 instance, it can be helpful to purge any unneeded data or log files from your 12.12 instance(s). 
+Before you begin transitioning to a 13.5 instance, we recommend you purge any data you no longer need and remove any unnecessary log files from your 12.12 instance(s). 
 
 ##Section 1: Generating a key pair## {#keypair}
 
@@ -61,15 +64,15 @@ You create both keys at the same time using any of multiple methods, including t
 	
 - [Using the Management Console](#keypairconsole) 
 - [Using the API](#keypairapi) 
-- [Using the NovaClient CLI](#keypairconnova)
-- [Using an existing public key](#keypaircown)
+- [Using the NovaClient CLI](#keypairnova)
+- [Using an existing public key](#keypairown)
 
 ####Key Pairs and Availability Zones####
 
 In the US West region, key pairs are specific to an Availability Zone (AZ). A key pair you create in AZ-1 cannot be used in AZ-2 until you have [migrated that key pair to that zone](#keypairmigrate).
 
 In the US East region, you create a key pair that can be used in all of the availability zones in the region.
-<img src="media/keypair_zones.png" width="350" alt="" />
+<br><img src="media/keypair_zones.png" width="350" alt="" />
 
 If your environment includes multiple Availability Zones, you can transfer a key pair for one Availability Zone to the other Availability Zones, as required. Transferring a key pair allows you to create, manage, and maintain only one key pair, rather than using separate key pairs for each zone. For more information, see [Migrating or Transferring Your Key Pairs](#keypairmigrate).
 
@@ -79,9 +82,10 @@ You can use the management console to generate a key pair.
 
 To create a key pair using the management console:
 
-1. Log in to the [management console](https://console.hpcloud.com/manage) using an HP Cloud Services client.
+1. Log in to the [management console](https://console.hpcloud.com/manage) using an HP Cloud Services client. 
 
-    <img src="media/cloud_login.png"  alt="" />
+	The log in page is similar to the following: 
+    <br><img src="media/cloud_login.png"  alt="" />
 
 2. In the Dashboard, click the appropriate the Availability Zone for your 13.5 instance.
 
@@ -94,18 +98,19 @@ To create a key pair using the management console:
 
 4. Click `Add Key Pair`.
 
-5. In the Name field, enter a name for the key pair. 
+	The Name field displays, as shown.
+	<br><img src="media/mc_keypair_add.png"  alt="" />
 
-    <img src="media/mc_keypair_add.png"  alt="" />
+5. In the Name field, enter a name for the key pair. 
 
 	Use only alphanumeric characters. Do not use spaces or special characters, such as periods. For more information, see [Naming Convention Best Practices](https://community.hpcloud.com/article/naming-convention-best-practices).
 
-	**Note**: In the management console, there is a 100-character limit in the `Key Name` field. To use a longer name, [use the API](#keypairapi) to create a key pair.
+	**Note**: In the management console, there is a 100-character limit in the `Key Name` field. To use a longer name, use the API following [the steps below](#keypairapi) to create a key pair.
 
 6. Click `Create Key`.
 
-	After creating the key pair, the management console displays the contents of the private key. 
-<br><img src="media/mc_keypair_key.png"  alt="" />
+	After creating the key pair, the management console displays the contents of the private key, as shown. 
+	<br><img src="media/mc_keypair_key.png"  alt="" />
 
 7. Click `Download` to save the private key in a PEM file to the local system or copy the key pairs into a text editor and save the file in the PEM format on the local system. Note the location where you save the file for later use.
 
@@ -122,7 +127,7 @@ To generate the key pair using the API:
 
 	Where:
 
-    	tenant_id (optional) - xsd:string - The ID for the tenant or account in a multi-tenancy cloud.
+    	tenant_id (optional) - xsd:string - The ID for the tenant or account in a multi-tenancy cloud. You can find the tenant ID on the API Keys page in the management console. 
 
     	name (required) - xsd:string - The name to be associated with the key pair.
 
@@ -178,7 +183,7 @@ There are two methods you can use to create a key pair using the HP Cloud Servic
 
 You can view the full details of the command by entering `hpcloud help keypairs:add`
 
-For the full list of supported UNIX commands, see the [UNIX command line interface commands](#http://docs.hpcloud.com/cli/unix/reference).
+For the full list of supported UNIX commands, see the [UNIX command line interface commands](http://docs.hpcloud.com/cli/unix/reference).
 
 To generate a key pair in UNIX:
 
@@ -196,10 +201,14 @@ To generate a key pair in UNIX:
 
 3. Navigate to the key pair file and display the file. By default, the key pair is stored in the `/home/ubuntu/.hpcloud/keypairs/` directory.
 
+4. Execute the following command to view the key pair file.
+
 	`cat KEYPAIR_NAME2.pem`
+
+	The key pair file contains text similar to the following:
 	<br><img src="media/keypair_unix.png"  alt="" />
 
-4. Copy the entire output into a text file on the local system and save it with a .pem extension.
+4. Copy the entire output into a text file on the local system, as shown in the following figure, and save the file with a .pem extension. Note the location for future use.
 	<br><img src="media/keypair_copy_text.png"  alt="" />
 	
 ###Generating a Key Pair using the NovaClient CLI### {#keypairnova}
@@ -220,10 +229,11 @@ To generate a key pair in UNIX:
 
 	**Note**: There is a 255-character limit in the NAME field. You will see a "Invalid keypair name (HTTP 400)" error if you've exceeded that limit.
 
-	NovaClient creates the key pair. The private key pairs appear. 
+	NovaClient creates the key pair. The private key pair displays, similar to the following. 
 <br><img src="media/keypair_python.png"  alt="" />
 
-3. Copy the key pair into a text editor and save the file in the PEM format on the local system. Note the location where you save the file for later use.
+3. Copy the key pair into a text editor, as shown in the following figure, and save the file with a .pem extension. Note the location for future use.
+<br><img src="media/keypair_copy_text.png"  alt="" />
 
 	**Note**: If you plan to connect to an instance using PuTTY, convert the PEM file to PPK file for use in PuTTY using a program such as PuTTYgen. For more information, see [Converting Your Keypair File](https://community.hpcloud.com/article/converting-your-keypair-file). 
 
@@ -246,12 +256,12 @@ To generate a new public key using an existing private key:
 
 	Use only alphanumeric characters for the key pair name. Do not use spaces or special characters, such as periods. Refer to [Naming Convention Best Practices](https://community.hpcloud.com/article/naming-convention-best-practices) for more information.
 
-	**Note**: In the management console, there is a 100-character limit in the Key Name field. To use a longer name, [use the API](#keypairapi) to create a key pair.
+	**Note**: In the management console, there is a 100-character limit in the Key Name field. To use a longer name, use the API following [the steps below](#keypairapi) to create a key pair.
 
-6. Click `Show Public Key Field`. The `Show Public Key` field appears.
+6. Click `Show Public Key Field`. The `Show Public Key` field displays, similar to the following.
 <br><img src="media/keypair_show_public.png"  alt="" />
 
-7. Copy and paste your public key into the text box, then click `Create Key`.
+7. Copy and paste your public key into the text box, as shown. Then click `Create Key`.
 <br><img src="media/keypair_own.png"  alt="" />
 
 	The management console creates the key pair based on the public key you entered.
@@ -270,6 +280,8 @@ You can use one of the following procedures, based on your environment:
 
 
 **Note**: In the US West region, key pairs are specific to an Availability Zone (AZ). A key pair you create in AZ-1 cannot be used in AZ-2 until you migrate that key pair to that zone. In the US East region, you create a key pair that can be used in all of the availability zones in the region.
+
+The following image shows the Key Pairs page in the management console for the US West AZ1 availability zone and the US East region.
 <img src="media/keypair_zones.png" alt="" />
 
 ####Transferring a key pair using the API#### {#keypairmigrateapi}
@@ -281,7 +293,7 @@ You can use one of the following procedures, based on your environment:
 
 	Where:
 	
-		tenant_id - xsd:string - The ID of the cloud tenant.
+		tenant_id - xsd:string - The ID of the cloud tenant. You can find the tenant ID on the API Keys page in the management console.
 
 		name (required) - xsd:string - The name to be assigned to the key pair.
 
@@ -360,7 +372,7 @@ You can use one of the following procedures, based on your environment:
 
 	Where
 
-	    tenant_id - xsd:string - The ID of the tenant.
+	    tenant_id - xsd:string - The ID of the tenant. You can find the tenant ID on the API Keys page in the management console.
 
 	    name (required) - xsd:string - The name to be associated with the key pair.
 
@@ -415,7 +427,7 @@ To transfer a key pair using PuTTYgen:
 
 	Information about the key pair displays.
 
-4. Copy the entire contents of the `Public key for pasting into OpenSSH authorized_keys file field`, starting with `ssh-rsa` to the end of `imported-openssh-key`.
+4. Copy the entire contents of the `Public key for pasting into OpenSSH authorized_keys file field`, starting with `ssh-rsa` to the end of `imported-openssh-key`, as highlighted in the following image.
 <br><img src="media/trans_keypair_pgen.png" alt="" />
 
 5. Log in to the [management console](https://console.hpcloud.com/manage).
@@ -430,9 +442,11 @@ To transfer a key pair using PuTTYgen:
 9. Enter a name for the key pair.
 
 10. Click `Show Public Key Field`.
-<br><img src="media/keypair_show_public.png"  alt="" />
 
-11. Paste the data from your public key into the `Select the Show Public Key` field.
+	A blank field displays, as shown.
+	<br><img src="media/keypair_show_public.png"  alt="" />
+
+11. Paste the data from your public key into the `Select the Show Public Key` field, as shown.
 <br><img src="media/keypair_own.png"  alt="" />
 
 12. Click `Create Key`.
@@ -457,7 +471,7 @@ To transfer a key pair using the Linux CLI:
 
     `cat /home/ubuntu/.ssh/authorized_keys`
 
-3. Copy the output from the command, starting with `ssh-rsa`.
+3. Copy the output from the command, as shown, starting with `ssh-rsa`.
 <br><img src="media/keypair_linux.png"  alt="" />
 
 4. Log in to the [management console](https://console.hpcloud.com/manage).
@@ -472,9 +486,11 @@ To transfer a key pair using the Linux CLI:
 8. Enter a name for the key pair.
 
 9. Click `Show Public Key Field`.
-<br><img src="media/keypair_show_public.png"  alt="" />
 
-10. Paste the data from your public key into the `Select the Show Public Key` field.
+	A blank field displays, as shown.
+	<br><img src="media/keypair_show_public.png"  alt="" />
+
+10. Paste the data from your public key into the `Select the Show Public Key` field, as shown.
 <br><img src="media/keypair_own.png"  alt="" />
 
 11. Click `Create Key`.
@@ -488,10 +504,10 @@ Access to your instances is controlled by security groups. A security group is a
 
 Security group rules specify the traffic that is allowed through to the server. No traffic can be received by an instance unless a security group rule explicitly allows that traffic from that IP address. 
 
-<p id="securitygroupdefault">The system includes one default security group, which contains four rules:
+<p id="securitygroupdefault">The system includes one default security group, which contains four rules, which appear similar to the following in the management console:
 <br><img src="media/sec_group_defafult.png"  alt="" /></p>
 
-    Outgoing: This rule allows all outgoing traffic.
+	Outgoing: This rule allows all outgoing traffic.
     Incoming ICMP: This rule allows all inbound ICMP traffic.
 	Incoming TCP Port 22: This rule allows SSH traffic through port 22.
     Incoming Group Rule: A rule that adds the default group to itself.
@@ -533,7 +549,7 @@ The following examples show how to restrict access using CIDR:
 	15.185.1.1/24 - This CIDR affects traffic to IP addresses starting with 15.185.1.x
 	15.185.1.1/32 - This CIDR affects traffic to a single host with IP address 15.185.1.1
 
-For more information on security groups, see [How To Add/Remove Security Groups from an Existing Instance](https://community.hpcloud.com/article/how-addremove-security-groups-existing-instance)
+For more information on security groups, see [How To Add/Remove Security Groups from an Existing Instance](https://community.hpcloud.com/article/how-addremove-security-groups-existing-instance) and
 [Common Ports and their Service](https://community.hpcloud.com/article/common-ports-and-their-service).
 
 ###Controlling traffic using the management console ### {#securitygroupconsole}
@@ -556,10 +572,11 @@ To create a new security group:
 
 5. Enter a name and description for the security group in the fields that appear.
 
-	A new security group is listed.
+	A new security group is listed, similar to the following image.
+	<br><img src="media/sec_group_new.png"  alt="" />
 
 6. Click the name of the security group in the list to edit that group using the steps in the [following section](#securitygroupconsoleedit).
-<br><img src="media/sec_group_defafult.png"  alt="" />
+
 
 
 ####Modifying a security group#### {#securitygroupconsoleedit}
@@ -584,13 +601,13 @@ To modify a security group:
 		-  Port Max / ICMP Code. Enter the port or ICMP type the rule affects. For a single port, enter the same port that you entered in the Port Min field. For a range of ports, enter the last port in the range.
 		-  Remote IP Prefix. Enter the IP address and associated network mask that the rule affects, [using CIDR](#securitygroupcidr).
 
-	- Delete a rule by clicking `Delete` in the Manage column for that rule 
-<br><img src="media/sec_group_edit.png" alt="" />
+	- Delete a rule by clicking `Delete` in the Manage column for that rule, as shown. 
+<br><img src="media/sec_group_delete.png" alt="" />
 
 
 ###Managing your Security Groups using the API### {#securitygroupapi}
 
-For information on using the API to create and configure security groups, see [Compute API - Security Groups](https://docs.hpcloud.com/api/v13/compute/#4.1.12SecurityGroups).
+For information on using the API to create and configure security groups, see the [HP Cloud Compute Service API Reference: Security Groups](https://docs.hpcloud.com/api/v13/compute/#4.1.12SecurityGroups).
 
 Add a security zone
 
@@ -601,7 +618,7 @@ Add a security zone
 
 	Where: 
 
-    	tenant_id - xsd:string - The ID for the tenant or account in a multi-tenancy cloud.
+    	tenant_id - xsd:string - The ID for the tenant or account in a multi-tenancy cloud. You can find the tenant ID on the API Keys page in the management console.
 
 		server_id - csapi:ID or UUID -- Server ID. This parameter can be an integer ID or a UUID. In either case, the specified server must be in the addressed Availability Zone. 
 
@@ -627,7 +644,7 @@ Add a security zone
 
 	Where:
 
-		tenant_id (optional) - xsd:string - The ID for the tenant or account in a multi-tenancy cloud.	
+		tenant_id (optional) - xsd:string - The ID for the tenant or account in a multi-tenancy cloud.	You can find the tenant ID on the API Keys page in the management console.
 
 		parent_group_id (required) - xsd:int - ID of the security group to which this rule will belong.
 
@@ -681,7 +698,9 @@ To modify a security group:
 3. Execute the following command to display a list of the security groups for the current instance.
 
 	`nova secgroup-list`
-<br><img src="media/Python_secgroup_list.png" alt="" />
+
+	A list of security groups displays, similar to the following: 
+	<br><img src="media/Python_secgroup_list.png" alt="" />
 
 4. Execute the following command to display the rules in a specified security group.
 
@@ -694,12 +713,14 @@ To modify a security group:
 	The following example lists the rules in the default security group.
 
 		`nova secgroup-list-rules default`
-<br><img src="media/Python_secgroup_list_rules.png" alt="" />
+
+	A list of rules in that security group displays, similar to the following: 
+	<br><img src="media/Python_secgroup_list_rules.png" alt="" />
 
 		- The ICMP rule allows all ICMP traffic.
 		- The TCP port 22 rule allows SSH traffic over port 22.
 		
-5. Use the commands in the [Python NovaClient CLI Reference](https://docs.hpcloud.com/cli/nova/reference) to add and remove the rules as needed.
+5. Use the commands in the [Python Novaclient CLI: Command Line Reference](https://docs.hpcloud.com/cli/nova/reference) to add and remove the rules as needed.
 
 	`Add a rule to a security group.`
 
@@ -735,16 +756,21 @@ Persistent image storage exists beyond the life of an instance. When you create 
 - [Create an ephemeral instance](#createephinstance)
 - [Create a persistent instance](#createpersinstance)
 
+After you create the instance, you can copy the data from your HP Cloud Services version 12.12 instance to your new version 13.5 instance.
+
 ###Creating an ephemeral instance### {#createephinstance}
 
 You can create an ephemeral instance for HP Cloud Services by using either the management console or by using Python-NovaClient commands.
 
 - [Using the management console](#createephinstanceconsole)
-- [Using Python-NovaClient](#createephinstancenova)
+- [Using Python-NovaClient](#createephinstancepyth)
 
-After you create the instance, you can copy the data from your HP Cloud Services version 12.12 instance to your new version 13.5 instance.
+**Note:** HP Cloud Services 13.5 does not assign a public IP address automatically. To connect with the instance, you must assign a floating IP address to the instance. The following procedures contain steps to assign the floating IP to the new instance.
+
+For more information on floating IP addresses, see [Managing Your Floating IPs](https://community.hpcloud.com/article/managing-your-floating-ips-135#fipnovacli). 
 
 ####Creating an ephemeral instance using the management console#### {#createephinstanceconsole}
+
 To create an ephemeral instance using the management console:
 
 1. Log in to the [management console](https://console.hpcloud.com/manage).
@@ -769,7 +795,19 @@ To create an ephemeral instance using the management console:
 
 5. Click `Create`.
 
-After the instance is active, you can [connect to the new instance](#connect).
+	The management console lists the new instance with a status of `Build`. When the instance is `Active`, you must assign a floating IP address to the instance in order to access the instance.
+
+6. In the menu, click `Floating IPs`.
+
+7. In the Floating IPs page, click `Allocate New IP`.
+
+	A new floating IP address is added to the table on the page.
+
+8. Select the new instance from the `Port` drop down and click `Apply`. 
+
+	The IP is assigned to the instance and can be used to connect with that instance.
+
+After you assign the floating IP address, you can [connect to the instance](#connect).
 
 ####Creating an ephemeral instance using Python-NovaClient commands#### {#createephinstancepyth}
 
@@ -809,7 +847,7 @@ To create an ephemeral instance using Python-NovaClient commands:
 
 		--availability_zone (optional) -- The availability zone for instance placement.
 
-		--security_group (optional) - The name of the security group to use. 
+		--security_groups (optional) - The name of the security group to use. 
 	
 		--block_device_mapping (optional) - A definition of any block devices to attach to the instance. For onformaton, see [Block mapping](#blockmapping). 
 
@@ -822,9 +860,9 @@ To create an ephemeral instance using Python-NovaClient commands:
 
 		--name (required) - The name for the instance.
 
-	The following example is a NovaClient command to create an XSmall Ubuntu 12.04 instance:
+	The following example is a NovaClient command to create an XSmall Ubuntu 12.04 instance.  The following example will attempt boot from volume with ID=5035 on a selected network. The instance does not delete on terminate.
 
-	    nova boot --flavor "100" --image "75845" --key_name "az1" --security_groups "default" TEST_SERVER
+	    nova boot --flavor "100" --image "75845" --key_name "az1" --security_groups "default" -block_device_mapping vda=50357:::0 --nic network-id=UUID1 TEST_SERVER
 
 	The output displays, similar to the following:
 	<br><img src="media/Python_Create_Instance.png"  alt="" />
@@ -846,8 +884,7 @@ To create an ephemeral instance using Python-NovaClient commands:
 
 		IP_Address - The floating IP address you allocated.
 
-For more information on floating IPs, see [Managing Your Floating IPs](https://community.hpcloud.com/article/managing-your-floating-ips-135#fipnovacli).
-
+After you assign the floating IP address, you can [connect to the instance](#connect).
 
 ####About block mapping#### {#blockmapping}
 
@@ -865,6 +902,8 @@ Where:
 
 	delete_on_terminate. Indicate whether the volume should be deleted when the instance is terminated. Enter *True* or *1* to delete the volume. Enter *False* or *0* to not delete.
 
+The following example attaches a 10GB snapshot volume with ID 50357 to a device named vda. The volume will not be deleted when the associated instance is terminated.
+-block_device_mapping vda=50357:::0 boot-from-vol-test
 	
 Tip: To connect with the instance over the internet then you need to allocate and assign a Floating IP to the instance, see [Managing Your Floating IPs](https://community.hpcloud.com/article/managing-your-floating-ips-135#fipnovacli)
 
@@ -890,7 +929,11 @@ The process for creating a persistent instance involves creating a storage volum
 - [Using the Management Console](#createperinstanceconsole)
 - [Using Python-NovaClient commands](#createperinstancepyth)	
 
-####Creating a persistent instance using the management console#### {#createperinstanceconsole}
+**Note:** HP Cloud Services 13.5 does not assign a public IP address automatically. To connect with the instance, you must assign a floating IP address to the instance. The following procedures contain steps to assign the floating IP to the new instance.
+
+For more information on floating IP addresses, see [Managing Your Floating IPs](https://community.hpcloud.com/article/managing-your-floating-ips-135#fipnovacli). 
+
+####Creating a persistent instance using the management console#### {#createpersinstance}
 
 1. Log in to the [management console](https://console.hpcloud.com/manage).
 
@@ -916,11 +959,17 @@ The process for creating a persistent instance involves creating a storage volum
 
 	A bootable volume enables you to launch an instance from that volume. You must make the volume bootable to use the volume to create a persistent server.
 
-7. Click one of the image type buttons: Public Images, Partner Images, or Private Images. For more information, see [About the image types](#https://docs.hpcloud.com/mc/compute/servers/manage#ImageTypes).
+7. Click one of the image type buttons: 
+
+	- Public Images
+	- Partner Images
+	- Private Images. 
+	 
+	For more information, see [About the image types](#https://docs.hpcloud.com/mc/compute/servers/manage#ImageTypes).
 
 8. Select the specific image from the drop down list.
 	
-9. In the Servers page, click `Create Volume`.
+9. In the Volumes page, click `Create Volume`.
 
 	The volume is created. Now, you create the instance and attach the new volume.
 
@@ -952,10 +1001,6 @@ The process for creating a persistent instance involves creating a storage volum
 
 13. In the menu, click `Floating IPs`.
 
-	HP Cloud Services 13.5 does not assign a public IP address automatically. To connect with the instance, you must assign a floating IP address to the instance. 
-
-	For more information on floating IPs, see [Managing Your Floating IPs](https://community.hpcloud.com/article/managing-your-floating-ips-135#fipnovacli).
-
 13. In the Floating IPs page, click `Allocate New IP`.
 
 	A new floating IP address is added to the table on the page.
@@ -980,7 +1025,7 @@ After you assign the floating IP address, you can [connect to the instance](#con
 	A list of images displays, with an ID on the left column.
 	<br><img src="media/image-list.png"  alt="" />
 
-	**Note**: Multi-part images listed below work as bootable volumes (Kernel and Ramdisk separated). They will look like this in the NovaClient:
+	**Note**: Multi-part images (where the kernel and RAM disk are separate) do not work as bootable volumes. You can identify a multi-part volume in an image list if the image names are identical, as shown in the following example.
 	<br><img src="media/image-list_multi.png"  alt="" />
 	
 4. Create the volume using the following command:</p>
@@ -1044,8 +1089,8 @@ After you assign the floating IP address, you can [connect to the instance](#con
 
 	`nova floating-ip-create`
 
-	HP Cloud Services 13.5 does not assign a public IP address automatically. To connect with the instance, you must assign a floating IP address to the instance. 
-	<br><img src="media/floating_ip_create.png"  alt="" />
+	Output similar to the following lists the allocated IP address.
+	<img src="media/floating_ip_create.png"  alt="" />
 
 10. Use the following command to attach the floating IP to an instance:
 
@@ -1057,15 +1102,13 @@ After you assign the floating IP address, you can [connect to the instance](#con
 
 		IP_Address - The floating IP address you allocated.
 
-For more information on floating IPs, see [Managing Your Floating IPs](https://community.hpcloud.com/article/managing-your-floating-ips-135#fipnovacli).
-
-Once you have created your instance, you can [connect to the instance](#connect).
+After you assign the floating IP address, you can [connect to the instance](#connect).
 
 ##Section 4: Connecting To Your Instance## {#connect}
 
 After you have created your instance, you need to connect to the instance in order to work with the instance. For example, you must connect to the instance to copy data to the instance.
 
-Important: When you connect to an HP Cloud Services version 13.5 instance, you must use the floating IP address you created for the instance.
+**Note:** When you connect to an HP Cloud Services version 13.5 instance, you must use the floating IP address you created for the instance. If you do not know the floating IP, you can find the address using the management console on the Server Details page for your server. 
 	
 Use one of the following methods to connect to the new instance, based on the operating system you are connecting from.
 
@@ -1107,9 +1150,6 @@ To connect to an instance using the Linux CLI:
 
 		(user)@floating_ip - the default user name and floating IP address assigned to the instance.
 
-	In order to access an instance, you must allocate and assign a Floating IP to that instance.  See [Managing Your Floating IPs](https://community.hpcloud.com/article/managing-your-floating-ips-135#fipnovacli)
-
-
 4. If you see a prompt similar to the following, enter `Y` to select Yes to continue connecting.
 
 	`The authenticity of host 'FLOATING_IP (FLOATING_IP)' can't be established.
@@ -1119,11 +1159,9 @@ To connect to an instance using the Linux CLI:
 
 You are now connected to the instance.
 
-###Connecting to a Linux instance from a Windows system using PuTTY
-### {#connectwindows}
+###Connecting to a Linux instance from a Windows system using PuTTY### {#connectwindows}
 
 Before you start, make sure your key pair file has been converted from the PEM to PPK format and is stored on the local system.
-
 
 To connect to an instance using PuTTY:
 	
@@ -1134,8 +1172,6 @@ To connect to an instance using PuTTY:
 	a. In the Category list, select `Session`. This pane might be active by default. 
 
 	b. In `Host Name (or IP address)` field, enter the floating IP address for your instance.
-
-	You must allocate and assign a Floating IP to your instance. See [Managing Your Floating IPs](https://community.hpcloud.com/article/managing-your-floating-ips-135#fipnovacli).
 
 	c. In the `Category` list, select `Connection` -> `SSH` -> `Auth`. 
 
@@ -1163,8 +1199,6 @@ After logging in, a system window displays, which indicates you are connected to
 ###Connecting to a Linux instance from a Mac system### {#connectmac}
 
 Before you start, make sure your key pair file in the PEM format is stored on the local system.
-
-You must to allocate and assign a floating IP to your instance. See [Managing Your Floating IPs](https://community.hpcloud.com/article/managing-your-floating-ips-135#fipnovacli).
 
 To connect to an instance using a Mac operating system:
 
@@ -1194,16 +1228,14 @@ To connect to an instance using a Mac operating system:
 
 		(user)@floating_ip - the default user name and floating IP address assigned to the instance.
 
-	In order to access an instance, you must allocate and assign a Floating IP to that instance.  See [Managing Your Floating IPs](https://community.hpcloud.com/article/managing-your-floating-ips-135#fipnovacli).
-
 5. If you see a prompt similar to the following, enter `Y` to continue connecting,
 
 		The authenticity of host 'FLOATING_IP (FLOATING_IP)' can't be established.
-		RSA key fingerprint is 17:7f:a9:ae:9d:6c:76:bf:be:68:a4:05:f6:da:84:7b.
+		RSA key fingerprint is 17:7f:a9:ae:9d:6c:68:a4:05:f6:da:84:7b.
 		Are you sure you want to continue connecting (yes/no)? yes
 		Warning: Permanently added 'FLOATING_IP' (RSA) to the list of known hosts.
 
-##Copying data from a 12.12 instance to v13.5 instance## {#copydata}
+##Section 5: Copying data from a 12.12 instance to v13.5 instance## {#copydata}
 
 After you create a new 13.5 instance and have connected to that instance on your local system, you can copy the data from your version 12.12 instance to your new 13.5 instance. You can use any tool transfer program of your choice (for example, SCP or FTP), including the following methods, to copy the data to the new instance.
 
@@ -1223,7 +1255,8 @@ To use WinSCP to transfer files, either the 12.12 instance or the 13.5 instance 
 
 Before starting to transfer files:
 
-- Make sure that Port 22 is open in the security group associated with your instance. For more information, see [Controlling traffic using security groups](#ecuritygroup).
+- You must use the floating IP address you created for the instance. If you do not know the floating IP, you can find the address using the management console on the Server Details page for your server. 
+- Make sure that Port 22 is open in the security group associated with your instance. For more information, see [Controlling traffic using security groups](#securitygroup).
 - Make sure your private key file is in PPK format on the client system.  You can convert a PEM key pair into PPK format. For more information, see
 [Converting Your Keypair File](https://community.hpcloud.com/article/converting-your-keypair-file).
 
@@ -1234,7 +1267,7 @@ To transfer files to your 13.5 instance:
 2. In the instance, launch WinSCP.
 
 3. Use WinSCP to log into the HP Cloud Services 12.12 instance using the fields on the Session page:
-	- Host name. Enter the Public IP address of your instance.
+	- Host name. Enter the floating IP address of your instance.
 	- Port number. Enter the port number for your instance or use the default, port 22.
 	- User name: If the instance requires a specific user for WinSCP enter the name.
 	- Password. Enter the password for the specified user or leave blank if a password is not required.
@@ -1253,11 +1286,11 @@ Before starting to transfer files, make sure the private key associated with the
 
 To transfer files using rsync:
 
-1. On the 12.12 instance, launch a Terminal from the Applications -> Utilities menu.
+1. On the 12.12 instance, click `Applications` > `Utilities` to launch a terminal.
 
 2. Browse to the directory where the key pair (.pem) file is located.
 
-3. Execute the following command,  to protect your key pair file:
+3. Execute the following command, to protect your key pair file:
 
 	`chmod 400 KEYPAIR_NAME.pem`
 
@@ -1294,7 +1327,7 @@ The following example moves files from the local system (`/home/user1/projects/w
 	rsync -e "ssh -i /home/usr1/Key1.pem" -avz  /home/user1/projects/web/html administrator@15.15.15.15:/var/www
 
 
-For more information on using rsync to move files, see [Using RSYNC to Upload or Transfer Files on Linux and Mac OSX](#https://community.hpcloud.com/article/using-rsync-upload-or-transfer-files-linux-and-mac-osx).
+For more information on using rsync to move files, see [Using RSYNC to Upload or Transfer Files on Linux and Mac OSX](https://community.hpcloud.com/article/using-rsync-upload-or-transfer-files-linux-and-mac-osx).
 
 ###Using FileZilla to transfer files to your instance### {#copydatazill}
 
@@ -1317,7 +1350,6 @@ To set up a FileZilla FTP server on the 12.12 instance:
 1. Use Windows Remote Desktop to access the 12.12 instance from your local system. 
 
 2. Download the FileZilla Server from [the FileZilla website](http://filezilla-project.org/download.php?type=server) and install on the 12.12 instance.
-
 
 3. Launch the FileZilla Server.
 
@@ -1382,7 +1414,7 @@ To use FileZilla to transfer files to the 13.5 instance:
 
 4. In the `Quickconnect` tool bar, enter the appropriate information in the following fields, or leave the default values:
 
-	Host. Enter the IP address of the server to which you want to connect.
+	Host. Enter the floating IP address of the server to which you want to connect.
 
 	Username. Enter the user name created in the FileZilla server. 
 	
@@ -1394,7 +1426,7 @@ To use FileZilla to transfer files to the 13.5 instance:
 
 6. Locate and copy the required files, as needed.
 
-##Section 5: Creating and attaching block volumes## {#transdata}
+##Section 6: Creating and attaching block volumes## {#transdata}
 
 If your environment uses one or more cloud block storage volumes, you must transition the date in those block volumes to a 13.5 instance.	
 
@@ -1547,19 +1579,16 @@ To create a block volume and attach the volume to the instance:
 
 If you have any questions or concerns about which files to copy, contact our Support team:
 
-- [Live chat from hpcloud.com](#https://account.hpcloud.com/cases#support_chat)
-- [Open a support case](#https://account.hpcloud.com/cases)
-- [Using email](#support@hpcloud.com)
+- [Live chat from hpcloud.com](https://account.hpcloud.com/cases#support_chat)
+- [Open a support case](https://account.hpcloud.com/cases)
+- [Using email](support@hpcloud.com)
 - By phone at 1-855-61CLOUD (1-855-612-5683) in the U.S. or +1-678-745-9010 internationally.
 
 ##For further information## {#furtherinfo}
 
 For more information on version 13.5:
 
-<li>The <a href="/migration-overview">Self-Migration Reference Guide</a> page contains details on how to migrate your data yourself from version 12.12 to 13.5 of the HP Cloud Services</li>
 <li>Our <a href="/release-notes/">release notes for version 13.5</a> of the HP Cloud software</li>
 <li>The <a href="/version-overview/">version 13.5 overview</a> provides a look at the different software versions available</li>
 <li>The <a href="https://community.hpcloud.com">technical support knowledge base</a></li>
-<li><a href="/cli/unix/articles/migration/">UNIX command-line interface migration information</a></li>
-</ul>
 
