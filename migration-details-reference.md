@@ -61,11 +61,11 @@ Bulk import means we load your data into HP Cloud Block Storage or HP Cloud Obje
 For more information on transitioning your services, and to better understand the differences between versions 12.12 and 13.5, see:
 
 * [Release notes](/release-notes)
-* [Getting started](/article/getting-started-compute-135) 
-* [Account limits](/article/hp-cloud-account-limits-135)
-* [Managing floating IPs](/article/managing-your-floating-ips-135)
+* [Getting started](https://community.hpcloud.com/article/getting-started-compute-135) 
+* [Account limits](https://community.hpcloud.com/article/hp-cloud-account-limits-135)
+* [Managing floating IPs](https://community.hpcloud.com/article/managing-your-floating-ips-135)
 * [API documentation](/api/v13/)
-* [Known issues and best practices](/article/known-issues-and-best-practices-compute-and-networking-135)
+* [Known issues and best practices](https://community.hpcloud.com/article/known-issues-and-best-practices-compute-and-networking-135)
 
 ## Determining if you are copying an instance snapshot or creating a new instance ## {#moveInstanceCreateNew}
 For each instance, you need to determine if you want to keep the data that resides on each instance. If you want to keep your existing data, you can do one of two things:
@@ -77,7 +77,7 @@ To have an instance snapshot copied, continue with the tasks in this document. T
 
 Using an instance snapshot can make a transition easier, but might not be suitable for all transitions. An instance snapshot includes only the root partition; ephemeral or additional disk space is not stored in a snapshot.  If you use ephemeral storage, you must [manually transition this data](/migration-overview#createephinstance).  
 
-**Important!** If you have questions about which process is best for your situation, [contact your support engineer](#ContactingSupport). If you do not need to keep your existing data, you should simply [create a new instance](/article/creating-your-first-instance-135).
+**Important!** If you have questions about which process is best for your situation, [contact your support engineer](#ContactingSupport). If you do not need to keep your existing data, you should simply [create a new instance](https://community.hpcloud.com/article/creating-your-first-instance-135).
 
 ## Reviewing key transition information ## {#TransitionInfo}
 Before you attempt an assisted transition from HP Cloud Services version 12.12 to 13.5, review the following critical pieces of information.
@@ -88,7 +88,7 @@ Before you transition to version 13.5, we recommend you purge any data you no lo
 
 ##### Floating IPs and DNS entries #####
 
-You must acquire [new floating IP addresses](/article/managing-your-floating-ips-135) in version 13.5. Since IP addresses change between the two environments, if you have any DNS entries that point to your current configuration, you must plan to change them after your transition.
+You must acquire [new floating IP addresses](https://community.hpcloud.com/article/managing-your-floating-ips-135) in version 13.5. Since IP addresses change between the two environments, if you have any DNS entries that point to your current configuration, you must plan to change them after your transition.
 
 ##### Instances and volumes #####
 
@@ -96,11 +96,11 @@ Complete instances cannot be directly moved or copied between version 12.12 and 
     
 Ephemeral instances might go offline while the snapshot is in process. In the steps below, persistent instances are terminated, thus not available. Volumes and volumes created from snapshots must be in an Available state during the transition process and will not be accessible by instances.
     
-By request to customer support, [your block volumes](/article/managing-your-block-storage-135) can be moved to version 13.5 and would be immediately available for attachment to instances. When moved, these volumes are available in the same availability zone as the one in which they originated.
+By request to customer support, [your block volumes](https://community.hpcloud.com/article/managing-your-block-storage-135) can be moved to version 13.5 and would be immediately available for attachment to instances. When moved, these volumes are available in the same availability zone as the one in which they originated.
 
 ##### Snapshots #####
 
-By request to customer support, [your snapshots](/article/managing-your-block-storage-135) can be copied to version 13.5, and would be available for use in both version 12.12 and version 13.5.
+By request to customer support, [your snapshots](https://community.hpcloud.com/article/managing-your-block-storage-135) can be copied to version 13.5, and would be available for use in both version 12.12 and version 13.5.
 
 ##### Keypairs #####
 
@@ -108,10 +108,10 @@ You must [recreate your keypairs](https://community.hpcloud.com/article/managing
 
 ##### Security groups #####
 
-You must [recreate your security groups](/article/managing-your-security-groups-135) in version 13.5.
+You must [recreate your security groups](https://community.hpcloud.com/article/managing-your-security-groups-135) in version 13.5.
 
 ## Taking a snapshot of an ephemeral instance ## {#Snapshot}
-The first step in preparing your data for transition to version 13.5 is to use the [Images screen](/mc/compute/images/) of the [classic management onsole](/mc/) to take a snapshot of your instance.  
+The first step in preparing your data for transition to version 13.5 is to use the [Images screen](/mc/compute/images/) of the [classic management console](/mc/) to take a snapshot of your instance.  
 
 **Note:**
 For best results, we recommend using the latest version of the  following HTML5 browsers when accessing the classic management console:
@@ -226,7 +226,7 @@ Once you have this information, contact support:
 For more information on data transitioning, as well as general information about version 13.5:
 
 * The [Self-Migration Reference Guide](/migration-overview) page contains details on how to migrate your data yourself from version 12.12 to 13.5 of the HP Cloud Services
-* [Known issues and best practices](/article/known-issues-and-best-practices-compute-and-networking-135) in version 13.5
+* [Known issues and best practices](https://community.hpcloud.com/article/known-issues-and-best-practices-compute-and-networking-135) in version 13.5
 * Our [release notes for version 13.5](/release-notes/) of the HP Cloud software
 * The [version 13.5 overview](/version-overview/) provides a look at the different software versions available
 * The [technical support knowledge base](https://community.hpcloud.com/knowledge-base)
