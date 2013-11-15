@@ -25,9 +25,9 @@ This page provides you with the installation information for the following opera
 
 ##Installation Prerequisites## {#Installation}
 
-To install the Python Novaclient CLI on CentOS, you must first download and install [the dependency software (in TAR format)](https://docs.hpcloud.com/file/nova-stuff.tar)--follow the instructions in the `setup.py` file included with the package.  (We also assume that you have Python already installed!)
+To install the Python Novaclient CLI on CentOS, you must first download and install [the dependency software (in TAR format)](https://pypi.python.org/packages/source/P/PrettyTable/prettytable-0.5.tar.gz)--follow the instructions in the `setup.py` file included with the package.  (We also assume that you have Python already installed!)
 
-**Note**: We recommend installing the NovaClient on your local system so you always have it available, rather than installing it on an instance which you may want to terminate later.
+**Note**: We recommend installing the NovaClient on your local system so you always have it available, rather than installing it on an instance which you may want tceo terminate later.
 
 ##Ubuntu Installation## {#Ubuntu}
 
@@ -97,7 +97,7 @@ CentOS has both Python 2.6.6 and Python-Setuptools 0.1.10 installed by default. 
         
 3. Unpack the TAR file:
 
-        tar -zxvf python-novaclient_2.6.8-1hp17.tar.gz
+        tar -zxvf python-novaclient_2.6.8-17.tar.gz
         
 4. Change directory to the build directory:
 
@@ -113,7 +113,7 @@ CentOS has both Python 2.6.6 and Python-Setuptools 0.1.10 installed by default. 
         
 7. Download the `python-prettytables` package:
 
-        wget https://docs.hpcloud.com/file/nova-stuff.tar --no-check-certificate
+        wget https://pypi.python.org/packages/source/P/PrettyTable/prettytable-0.5.tar.gz --no-check-certificate
         
 8. Unpack the TAR file:
 
