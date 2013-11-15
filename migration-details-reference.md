@@ -3,7 +3,7 @@ layout: default
 title: "HP Cloud Services: Assisted Data Transition Reference Guide from Version 12.12 to 13.5"
 permalink: /migration-details-reference/
 
-
+---
 
 # HP Cloud Services version 12.12 to 13.5: Assisted Data Transition Reference Guide
 
