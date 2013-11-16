@@ -250,7 +250,33 @@ Security groups and security group rules allow you to specify the type of traffi
 
 When a port is created in HP Cloud Networking it is associated with a security group. If a security group is not specified the port is associated with a default security group. Security group default rules allow inbound traffic from the same subnet and all outbound traffic. You can add rules to this group to modify behavior or create additional security groups to contain the rules your need.
 
-Click "Access & Security" in the left-hand bar under "Project" and "Manage Compute."   
+Security group rules have three parts:
+
+1. Rule
+
+2. Open Port/Port Range
+
+3.  Remote
+
+**Talk to Steve about variations/choices one would make here to default group rules in a usual situation and why the ones we have set up are set up that way.**
+
+1.  Click "Access & Security" in the left-hand bar under "Project" and "Manage Compute."   
+
+2. Click "+Create Security Group" in the upper right-hand navigation.
+
+3. Enter a name and description then click "Create Security Group."
+
+4. Click "Edit Rules" for the security group you just created under "Actions" in the right-hand navigation to customize security group rules.
+
+**Talk to Steve:  When I create a Security Group, the parameters have "Egress" listed twice under "Direction. One with ether type IPv6, the other IPv4. Both have IP Protocol "Any, etc. Go over what someone would put there and why if creating own security group.**
+
+5. Click "+Add Rule" in the right hand navigation. In the "Add Rule" make selections for the three security group parts.
+
+6. Select "Custom TCP Rule" - A rule template or rules you create: Either Custom TCP Rule; Custom UDP Rule; or Custom ICMP Rule.
+
+2. Open Port/Port Range: You can choose to open either a single port or a range of ports for TCP and UDP rules. When you select "Port Range" you have space to provide the start and endports for the range. When you slect ICMP rules, you must specify an ICMP type and code in the spaces provided.
+
+3.  Remote: For this rule, you must specify the source of allowed traffic in either the form of an IP address block (CIDR) or through a source group (security group). Selecting a security group as the source allows any instance in that security group access to any other instance through the Remote rule.
 
 ###Organize and manage HP Cloud Access## {#Identity}
 
