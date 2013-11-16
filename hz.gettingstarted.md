@@ -250,17 +250,18 @@ Security groups and security group rules allow you to specify the type of traffi
 
 When a port is created in HP Cloud Networking it is associated with a security group. If a security group is not specified the port is associated with a default security group. Security group default rules allow inbound traffic from the same subnet and all outbound traffic. You can add rules to this group to modify behavior or create additional security groups to contain the rules your need.
 
-Security group rules have three parts:
+Security group rules have three parts:  
 
-1. Rule
+1. Rule - A rule template or rules you create: Either Custom TCP Rule; Custom UDP Rule; or Custom ICMP Rule. **Rules have many more choices than these three. Follow up with Steve.**
 
-2. Open Port/Port Range
+2. Open Port/Port Range: You can choose to open either a single port or a range of ports for TCP and UDP rules. When you select "Port Range" you have space to provide the start and endports for the range. When you slect ICMP rules, you must specify an ICMP type and code in the spaces provided.
 
-3.  Remote
+3.  Remote: For this rule, you must specify the source of allowed traffic in either the form of an IP address block (CIDR) or through a source group (security group). Selecting a security group as the source allows any instance in that security group access to any other instance through the Remote rule.
+
 
 **Talk to Steve about variations/choices one would make here to default group rules in a usual situation and why the ones we have set up are set up that way.**
 
-1.  Click "Access & Security" in the left-hand bar under "Project" and "Manage Compute."   
+1. Click "Access & Security" in the left-hand bar under "Project" and "Manage Compute."   
 
 2. Click "+Create Security Group" in the upper right-hand navigation.
 
@@ -268,15 +269,17 @@ Security group rules have three parts:
 
 4. Click "Edit Rules" for the security group you just created under "Actions" in the right-hand navigation to customize security group rules.
 
-**Talk to Steve:  When I create a Security Group, the parameters have "Egress" listed twice under "Direction. One with ether type IPv6, the other IPv4. Both have IP Protocol "Any, etc. Go over what someone would put there and why if creating own security group.**
+**Talk to Steve:  When I create a Security Group, the parameters have "Egress" listed twice under "Direction. One with ether type IPv6, the other IPv4. Both have IP Protocol "Any," etc. Go over what someone would put there and why if creating own security group.**
 
-5. Click "+Add Rule" in the right hand navigation. In the "Add Rule" make selections for the three security group parts.
+5. Click "+Add Rule" in the right hand navigation. In the "Add Rule" box make selections for the three security group parts.
 
-6. Select "Custom TCP Rule" - A rule template or rules you create: Either Custom TCP Rule; Custom UDP Rule; or Custom ICMP Rule.
+6. Click the "Rule" drop-down box and make a selection. **What should we advise here?**
 
-2. Open Port/Port Range: You can choose to open either a single port or a range of ports for TCP and UDP rules. When you select "Port Range" you have space to provide the start and endports for the range. When you slect ICMP rules, you must specify an ICMP type and code in the spaces provided.
+7. Click the "Direction" drop-down box and select "Egress" to designate outbound traffic or "Ingress" to designate inbound traffic.
 
-3.  Remote: For this rule, you must specify the source of allowed traffic in either the form of an IP address block (CIDR) or through a source group (security group). Selecting a security group as the source allows any instance in that security group access to any other instance through the Remote rule.
+8. Select "Port" to open a single port, or "Port Range" to specify a range from the drop-down under "Open Port."  Enter the port number or start and end port numbers based on your selection. You can choose to open either a single port or a range of ports for TCP and UDP rules. 
+
+9. Select "CIDR" or "Security Group" from the drop-down under "Remote" to specify the source of the allowed traffic for the rule. If CIDR, enter an IP address block under "CIDR." If "Security Group," select the name from the drop-down box, then designate IPv4 or IPv6 under "Ether Type." If you do not already know you are using IPv6, select IPv4. Selecting a security group as the source allows any instance in that security group access to any other instance through the "Remote" rule.
 
 ###Organize and manage HP Cloud Access## {#Identity}
 
