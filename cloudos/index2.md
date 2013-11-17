@@ -13,12 +13,12 @@ the fastest growing open-source cloud community. This documentation site is for 
 
 <table style="color:#1796D3">
 <tr>
-<td><a href="/cloudos/overview/"><img align="center" src="media/cloudos-icon1.png" border="0"/></a></td><!-- PREPARE --> 
-<td><a href="/cloudos/install/"><img align="center" src="media/cloudos-icon2.png" border="0"/></td><!-- INSTALL --> 
+<td><a href="/cloudos/overview/"><img align="middle" src="media/cloudos-icon1.png" border="0"/></a></td>
+<td><a href="/cloudos/install/"><img align="middle" src="media/cloudos-icon2.png" border="0"/></td>
 </tr>
 <tr>
-<td><a href="/cloudos/overview/"><img align="center" src="media/cloudos-icon3.png" border="0"/></td><!-- MANAGE --> 
-<td><a href="/cloudos/api/quickstart/"><img align="center" src="media/cloudos-icon4.png" border="0"/></td><!-- DEVELOP --> 
+<td><a href="/cloudos/overview/"><img align="middle" src="media/cloudos-icon3.png" border="0"/></td>
+<td><a href="/cloudos/api/quickstart/"><img align="middle" src="media/cloudos-icon4.png" border="0"/></td>
 </tr>
 </table>
 
