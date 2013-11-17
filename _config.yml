@@ -142,15 +142,15 @@ navigation:
   cloudos:
   - text: Cloud OS Home
     url: /cloudos/
-  - text:   Prepare
+  - text: Prepare
     url: /cloudos/overview/	
-  - text: Technical Overview
+  - text: --Technical Overview
     url: /cloudos/overview/
-  - text: Video Tutorials
+  - text: &nbsp;&nbsp;Video Tutorials
     url: /cloudos/videos/	
-  - text: Install & Configure
+  - text: ++Install & Configure
     url: /cloudos/install/
-  - text: API Quick Start
+  - text: __API Quick Start
     url: /cloudos/api/quickstart/
   - text: Value-Add Services
     url: /cloudos/services/
