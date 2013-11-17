@@ -142,6 +142,8 @@ navigation:
   cloudos:
   - text: Cloud OS Home
     url: /cloudos/
+  - text:   Prepare
+    url: /cloudos/overview/	
   - text: Technical Overview
     url: /cloudos/overview/
   - text: Video Tutorials
