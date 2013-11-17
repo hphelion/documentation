@@ -11,14 +11,14 @@ product: cloudos
 Welcome! HP Cloud OS is an enterprise-grade, open and extensible architecture that leverages the power of OpenStack technology, 
 the fastest growing open-source cloud community. This documentation site is for anyone interested in HP Cloud OS.
 
-<table style="color:#1796D3">
+<table>
 <tr>
-<td><a href="/cloudos/overview/"><img align="middle" src="media/cloudos-icon1.png" border="0"/></a></td>
-<td><a href="/cloudos/install/"><img align="middle" src="media/cloudos-icon2.png" border="0"/></td>
+<td style="text-align: center; vertical-align: middle;"><a href="/cloudos/overview/"><img src="media/cloudos-icon1.png" border="0"/></a></td>
+<td style="text-align: center; vertical-align: middle;"><a href="/cloudos/install/"><img src="media/cloudos-icon2.png" border="0"/></td>
 </tr>
 <tr>
-<td><a href="/cloudos/overview/"><img align="middle" src="media/cloudos-icon3.png" border="0"/></td>
-<td><a href="/cloudos/api/quickstart/"><img align="middle" src="media/cloudos-icon4.png" border="0"/></td>
+<td style="text-align: center; vertical-align: middle;"><a href="/cloudos/overview/"><img src="media/cloudos-icon3.png" border="0"/></td>
+<td style="text-align: center; vertical-align: middle;"><a href="/cloudos/api/quickstart/"><img src="media/cloudos-icon4.png" border="0"/></td>
 </tr>
 </table>
 
