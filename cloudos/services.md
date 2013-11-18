@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Cloud OS Value-Add Services"
-permalink: /cloudos/services/
+permalink: /cloudos/api/services/
 product: cloudos
 
 ---
