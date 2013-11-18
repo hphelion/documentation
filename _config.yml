@@ -143,41 +143,55 @@ navigation:
   - text: Cloud OS Home
     url: /cloudos/
   - text: Prepare
-    url: /cloudos/prepare/  
-  - text: &#160;&#160;&#160;&#160;FAQs
-    url: /cloudos/faqs/	  
-  - text: &#160;&#160;&#160;&#160;Technical Overview
-    url: /cloudos/overview/
-  - text: &#160;&#160;&#160;&#160;Video Tutorials
-    url: /cloudos/videos/
-  - text: &#160;&#160;&#160;&#160;Glossary
-    url: /cloudos/glossary/			
+    url: /cloudos/prepare/  	
   - text: Install
     url: /cloudos/install/
-  - text: &#160;&#160;&#160;&#160;Install Overview
+  - text: Manage
+    url: /cloudos/manage/
+  - text: Develop
+    url: /cloudos/develop/
+  - text: Additional Resources
+    url: /cloudos/more/	
+  cloudos-prepare:
+  - text: Cloud OS Home
+    url: /cloudos/
+  - text: Prepare
+    url: /cloudos/prepare/ 
+  - text: &#160;&#160;FAQs
+    url: /cloudos/faqs/	  
+  - text: &#160;&#160;Technical Overview
+    url: /cloudos/overview/
+  - text: &#160;&#160;Video Tutorials
+    url: /cloudos/videos/
+  - text: &#160;&#160;Glossary
+    url: /cloudos/glossary/	
+  - text: Install
+    url: /cloudos/install/
+  - text: Manage
+    url: /cloudos/manage/
+  - text: Develop
+    url: /cloudos/develop/
+  - text: Additional Resources
+    url: /cloudos/more/	
+  cloudos-install:
+  - text: Cloud OS Home
+    url: /cloudos/
+  - text: Prepare
+    url: /cloudos/prepare/  	
+  - text: Install
+    url: /cloudos/install/
+  - text: &#160;&#160;&#160;Install Overview
     url: /cloudos/install/overview/
-  - text: &#160;&#160;&#160;&#160;Install Steps
+  - text: &#160;&#160;&#160;Install Steps
     url: /cloudos/install/steps/	
-  - text: &#160;&#160;&#160;&#160;Install Configuration
+  - text: &#160;&#160;&#160;Install Configuration
     url: /cloudos/install/configuration/	
   - text: Manage
     url: /cloudos/manage/
   - text: Develop
     url: /cloudos/develop/
-  - text: &#160;&#160;&#160;&#160;API Quick Start
-    url: /cloudos/api/quickstart/
-  - text: &#160;&#160;&#160;&#160;Value-Add Services
-    url: /cloudos/services/	
   - text: Additional Resources
     url: /cloudos/more/	
-  - text: &#160;&#160;&#160;&#160;Release Notes
-    url: /cloudos/releasenotes/
-  - text: &#160;&#160;&#160;&#160;Support Matrix
-    url: /cloudos/supportmatrix/
-  - text: &#160;&#160;&#160;&#160;Troubleshooting
-    url: /cloudos/troubleshooting/ 	
-  - text: &#160;&#160;&#160;&#160;Cloud Utilities
-    url: /cloudos/utilities/ 		
 	    
 apinavigation:
 - text: Site home page

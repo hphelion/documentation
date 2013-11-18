@@ -2,7 +2,7 @@
 layout: default
 title: "Install &amp; Configure Your Clouds"
 permalink: /cloudos/install/
-product: cloudos
+product: cloudos-install
 
 ---
 

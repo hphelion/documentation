@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Cloud OS - Cloud Utilities"
-permalink: /cloudos/supportmatrix/
+permalink: /cloudos/utilities/
 product: cloudos
 
 ---

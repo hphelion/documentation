@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Manage your Clouds"
-permalink: /cloudos/install/manage/
+permalink: /cloudos/manage/
 product: cloudos
 
 ---

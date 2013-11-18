@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Cloud OS Development"
-permalink: /cloudos/install/develop/
+permalink: /cloudos/develop/
 product: cloudos
 
 ---
