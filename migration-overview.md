@@ -14,6 +14,7 @@ This page provides you with information to help you transition from version 12.1
 * [Block volumes](#BlockVolumes)
 * [Key pairs](#KeyPairs)
 * [Managing security groups](#SecurityGroups)
+* [Note on ongoing CLI support](#CLIdeprecation)
 * [For further information](#MoreInfo)
 
 <!--**Note**:  Use this overview in conjunction with the information on the [assisted transition](/migration-details/) page if you are planning on performing a customer support-assisted transition. -->  
@@ -83,6 +84,17 @@ The process for transitioning key pairs varies according to your platform.  Chec
 ##Managing security group creation## {#SecurityGroups}
 
 Managing security groups has changed significantly between versions 12.12 (and earlier) and version 13.5 of the HP Cloud software.  For information on security groups in version 13.5, please see the knowledge base article [Managing Your Security Groups](https://community.hpcloud.com/article/managing-your-security-groups-135) for details.
+
+
+## Note on ongoing CLI support ## {#CLIdeprecation}
+
+On November 4, 2013, the UNIX CLI moved into its End-of-Life Cycle process toward final deprecation. During this 6-month transition time until June 1, 2014:
+
+* New and existing customers are encouraged to migrate to the OpenStackClient (Unified) CLIs or leverage the OpenStack command-line clients for each respective service.
+* No new feature requests will be honored
+* Bug reports will be accepted
+
+After 6-months, access to online resources will still be available, but no support will be offered from HP Public Cloud, and the software download will be disabled—although you are most welcome to continue development at your discretion.
 
 
 ## For further information ## {#MoreInfo}
