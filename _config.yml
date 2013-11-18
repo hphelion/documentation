@@ -143,12 +143,16 @@ navigation:
   - text: Cloud OS Home
     url: /cloudos/
   - text: Prepare&#58;
-    url: /cloudos/overview/	
-  - text: &nbsp; &nbsp; Technical Overview
+    url: /cloudos/prepare/  
+  - text: &nbsp&#59; &nbsp&#59; FAQs
+    url: /cloudos/faqs/	
+  - text: &nbsp&#59; &nbsp&#59; Glossary
+    url: /cloudos/glossary/		  
+  - text: &nbsp&#59; &nbsp&#59; Technical Overview
     url: /cloudos/overview/
-  - text: &nbsp; &nbsp; Video Tutorials
-    url: /cloudos/videos/	
-  - text: Install &#58;
+  - text: &nbsp; &nbsp&#59; Video Tutorials
+    url: /cloudos/videos/		
+  - text: Install&#58;
     url: /cloudos/install/
   - text: API Quick Start
     url: /cloudos/api/quickstart/
