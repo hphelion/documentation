@@ -88,7 +88,7 @@ Managing security groups has changed significantly between versions 12.12 (and e
 
 ## Note on ongoing CLI support ## {#CLIdeprecation}
 
-On November 4, 2013, the UNIX CLI moved into its End-of-Life Cycle process toward final deprecation. During this 6-month transition time until June 1, 2014:
+On November 4, 2013, the UNIX CLI moved into its End-of-Life Cycle process toward final deprecation. During this 6-month transition time until May 4, 2014:
 
 * New and existing customers are encouraged to migrate to the OpenStackClient (Unified) CLIs or leverage the OpenStack command-line clients for each respective service.
 * No new feature requests will be honored
