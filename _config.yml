@@ -144,21 +144,21 @@ navigation:
     url: /cloudos/
   - text: Prepare&#58;
     url: /cloudos/prepare/  
-  - text: &nbsp&#59; &nbsp&#59; FAQs
+  - text: "  FAQs"
     url: /cloudos/faqs/	
-  - text: &nbsp&#59; &nbsp&#59; Glossary
+  - text: "  Glossary"
     url: /cloudos/glossary/		  
-  - text: &nbsp&#59; &nbsp&#59; Technical Overview
+  - text: "  Technical Overview"
     url: /cloudos/overview/
-  - text: &nbsp; &nbsp&#59; Video Tutorials
+  - text: "  Video Tutorials"
     url: /cloudos/videos/		
   - text: Install&#58;
     url: /cloudos/install/
-  - text: API Quick Start
+  - text: &#160;&#160;API Quick Start
     url: /cloudos/api/quickstart/
   - text: Value-Add Services
     url: /cloudos/services/
-  - text: Release Notes
+  - text: &#160;Release Notes
     url: /cloudos/releasenotes/
   - text: Additional Resources
     url: /cloudos/more/
