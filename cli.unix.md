@@ -11,9 +11,9 @@ product: unix-cli
 
 ###Important Notice###
 
-On November 4, 2013, the UNIX CLI will be moved into its End-of-Life Cycle process toward final deprecation. During this 6-month transition time:
+On November 4, 2013, the UNIX CLI was moved into its End-of-Life Cycle process toward final deprecation. During this 6-month transition time:
 
-* New and existing customers are encouraged to migrate to the [OpenStackClient (Unified) CLIs](https://wiki.openstack.org/wiki/OpenStackClient)
+* New and existing customers are encouraged to migrate to the [OpenStackClient (Unified) CLIs](https://wiki.openstack.org/wiki/OpenStackClient) or the [OpenStack command-line clients](http://docs.openstack.org/user-guide/content/section_cli_overview.html) for each respective service
 * No new feature requests will be honored
 * Bug reports will be accepted
 
