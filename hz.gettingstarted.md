@@ -246,13 +246,13 @@ A volume is a block storage device you attach to an instance.
 While this document does not cover creating snapshots, click "Images and Snapshots" in the left-hand bar to view available server and volume images and their details. For more details, click the image name on the "Images" page. Images listed under "Public" are available to anyone. "Project" images are for your specific project only.
 
 ###Access and Security### {#Accessandsecurity}
-Security groups and security group rules allow you to specify the type of traffic and direction (inbound/outbound) that is allowed to pass through a network port. A security group is a container for security group rules.
+Security groups and security group rules allow you to specify the type of traffic and direction (inbound/outbound) that is allowed to pass through a project's network port(s). When you create a project in HP Public Cloud, you must also create security group rules to define access types through its ports, designating security group members depending on their job functions and access needs. 
 
-When a port is created in HP Cloud Networking it is associated with a security group. If a security group is not specified the port is associated with a default security group. Security group default rules allow inbound traffic from the same subnet and all outbound traffic. You can add rules to this group to modify behavior or create additional security groups to contain the rules your need.
+When a port is created in HP Cloud Networking it is associated, unless you specify otherwise, with a default security group that allows inbound traffic from the same subnet and all outbound traffic. You can add security group rules to the default security group to modify access or create a new security group to contain the rules you need.
 
 Security group rules have three parts:  
 
-1. Rule - A rule template or rules you create: Either Custom TCP Rule; Custom UDP Rule; or Custom ICMP Rule. **Rules have many more choices than these three. Follow up with Steve.**
+1. Rule - A rule template or rules you create: Either Custom TCP Rule; Custom UDP Rule; or Custom ICMP Rule. 
 
 2. Open Port/Port Range: You can choose to open either a single port or a range of ports for TCP and UDP rules. When you select "Port Range" you have space to provide the start and endports for the range. When you slect ICMP rules, you must specify an ICMP type and code in the spaces provided.
 
