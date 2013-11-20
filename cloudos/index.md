@@ -18,7 +18,7 @@ the fastest growing open-source cloud community. This documentation site is for 
 </tr>
 <tr>
 <td style="text-align: center; vertical-align: middle;"><a href="/cloudos/overview/" title="Learn how to manage your deployed clouds"><img src="media/cloudos-manage.jpg" border="0"/></td>
-<td style="text-align: center; vertical-align: middle;"><a href="/cloudos/api/quickstart/" title="Read about the REST APIs for the Cloud OS services"><img src="media/cloudos-develop.jpg" border="0"/></td>
+<td style="text-align: center; vertical-align: middle;"><a href="/cloudos/develop/" title="Read about the REST APIs for the Cloud OS services"><img src="media/cloudos-develop.jpg" border="0"/></td>
 </tr>
 </table>
 

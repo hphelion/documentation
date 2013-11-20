@@ -16,9 +16,11 @@ HP Cloud OS features an interactive REST API environment: the HP Cloud OS API Do
 properties by reading the well-organized reference details. Submit each request using the provided forms and immediately 
 view the server response. The app is installed on your deployed clouds. The documentation app's URLs per service are:
 
-Eve service: &lt;my_server>:21051/eve/docs/index.html
-Focus: http://&lt;my_server>:21061/docs/index.html
-Graffiti: http://&lt;my_server>:21071/docs/index.html
+ * Eve service: &lt;my_server>:21051/eve/docs/index.html
+
+ * Focus: http://&lt;my_server>:21061/docs/index.html
+
+ * Graffiti: http://&lt;my_server>:21071/docs/index.html
 
 On your cloud, replace &lt;my_server> with the server’s IP or DNS value.
 
