@@ -37,8 +37,8 @@ To transition the data for an ephemeral instance:
 
 For information on moving data:
 
-* Using rsync on Mac OSX or Linux, see our Knowledge Base article [Uploading files to a Linux instance from Linux or Mac OSX using rsync](https://community.hpcloud.com/article/uploading-files-linux-instance-linux-or-mac-osx-using-rsync)
-* On Linux systems, see our Knowledge Base articles on [Using SFTP to Transfer Files between Windows Instances](https://community.hpcloud.com/article/using-sftp-transfer-files-between-windows-instances) and [Compressing Files](https://community.hpcloud.com/article/compressing-files)
+* For Windows instance, see our Knowledge Base article [Using SFTP to Transfer Files between Windows Instances](https://community.hpcloud.com/article/using-sftp-transfer-files-between-windows-instances)
+* For Linux Instances, see our Knowledge Base article [Uploading files to a Linux instance from Linux or Mac OSX using rsync](https://community.hpcloud.com/article/uploading-files-linux-instance-linux-or-mac-osx-using-rsync)
 
 
 ##Transitioning data for persistent instances## {#Persistent}
@@ -50,8 +50,8 @@ To transition the data for a persistent instance:
 
 For information on moving data:
 
-* Using rsync on Mac OSX or Linux, see our Knowledge Base article [Uploading files to a Linux instance from Linux or Mac OSX using rsync](https://community.hpcloud.com/article/uploading-files-linux-instance-linux-or-mac-osx-using-rsync)
-* On Linux systems, see our Knowledge Base articles on [Using SFTP to Transfer Files between Windows Instances](https://community.hpcloud.com/article/using-sftp-transfer-files-between-windows-instances) and [Compressing Files](https://community.hpcloud.com/article/compressing-files)
+* For Windows instance, see our Knowledge Base article [Using SFTP to Transfer Files between Windows Instances](https://community.hpcloud.com/article/using-sftp-transfer-files-between-windows-instances)
+* For Linux Instances, see our Knowledge Base article [Uploading files to a Linux instance from Linux or Mac OSX using rsync](https://community.hpcloud.com/article/uploading-files-linux-instance-linux-or-mac-osx-using-rsync)
 
 <!--For information on persistent instances while performing a support services assisted transition, please see the [snapshots](/migration-details/) section of the [assisted transition](/migration-details/) page. -->
 
@@ -66,8 +66,8 @@ To transition the data for block volumes:
 
 For information on moving data:
 
-* Using rsync on Mac OSX or Linux, see our Knowledge Base article [Uploading files to a Linux instance from Linux or Mac OSX using rsync](https://community.hpcloud.com/article/uploading-files-linux-instance-linux-or-mac-osx-using-rsync)
-* On Linux systems, see our Knowledge Base articles on [Using SFTP to Transfer Files between Windows Instances](https://community.hpcloud.com/article/using-sftp-transfer-files-between-windows-instances) and [Compressing Files](https://community.hpcloud.com/article/compressing-files)
+* For Windows instance, see our Knowledge Base article [Using SFTP to Transfer Files between Windows Instances](https://community.hpcloud.com/article/using-sftp-transfer-files-between-windows-instances)
+* For Linux Instances, see our Knowledge Base article [Uploading files to a Linux instance from Linux or Mac OSX using rsync](https://community.hpcloud.com/article/uploading-files-linux-instance-linux-or-mac-osx-using-rsync)
 
 <!--For information on persistent instances, snapshots, and moving block volumes, please see the appropriate section of the [assisted transition](/migration-details/) page.  -->
 
