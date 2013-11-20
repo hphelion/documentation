@@ -152,47 +152,9 @@ navigation:
     url: /cloudos/develop/
   - text: Additional Resources
     url: /cloudos/more/	
-  cloudos-prepare:
-  - text: Cloud OS Home
-    url: /cloudos/
-  - text: Prepare
-    url: /cloudos/prepare/ 
-  - text: &#160;&#160;FAQs
-    url: /cloudos/faqs/	  
-  - text: &#160;&#160;Technical Overview
-    url: /cloudos/overview/
-  - text: &#160;&#160;Video Tutorials
-    url: /cloudos/videos/
-  - text: &#160;&#160;Glossary
-    url: /cloudos/glossary/	
-  - text: Install
-    url: /cloudos/install/
-  - text: Manage
-    url: /cloudos/manage/
-  - text: Develop
-    url: /cloudos/develop/
-  - text: Additional Resources
-    url: /cloudos/more/	
-  cloudos-install:
-  - text: Cloud OS Home
-    url: /cloudos/
-  - text: Prepare
-    url: /cloudos/prepare/  	
-  - text: Install
-    url: /cloudos/install/
-  - text: &#160;&#160;&#160;Install Overview
-    url: /cloudos/install/overview/
-  - text: &#160;&#160;&#160;Install Steps
-    url: /cloudos/install/steps/	
-  - text: &#160;&#160;&#160;Install Configuration
-    url: /cloudos/install/configuration/	
-  - text: Manage
-    url: /cloudos/manage/
-  - text: Develop
-    url: /cloudos/develop/
-  - text: Additional Resources
-    url: /cloudos/more/	
-	    
+  - text: Site Index
+    url: /cloudos/siteindex/	
+
 apinavigation:
 - text: Site home page
   url: /

@@ -2,7 +2,7 @@
 layout: default
 title: "HP Cloud OS - Getting Started"
 permalink: /cloudos/prepare/
-product: cloudos-prepare
+product: cloudos
 
 ---
 
@@ -21,7 +21,7 @@ summary of the Cloud OS installation steps.
 
 * [Video Tutorials](/cloudos/videos/) - These videos are perfect for anyone who prefers tutorial-style explanations of new functionality.
 
-Here's one of the video tutorials, in which HP Cloud 0S chief architect Mark Perriera introduces the platform, its services, and related OpenStack technology. 
+Here's a sample video tutorial, in which HP Cloud 0S chief architect Mark Perriera introduces the platform, its services, and related OpenStack technology. 
 
 <iframe width="400" height="225" src="//www.youtube.com/embed/Ba2wMPU5tpk" frameborder="0" allowfullscreen> </iframe>
 
