@@ -21,11 +21,14 @@ summary of the Cloud OS installation steps.
 
 * [Video Tutorials](/cloudos/videos/) - These videos are perfect for anyone who prefers tutorial-style explanations of new functionality.
 
-> Here's a sample video tutorial, in which HP Cloud 0S chief architect Mark Perriera introduces the platform, its services, and related OpenStack technology.
+> Here's a good video to get you started.  Mark Perriera, HP Cloud 0S chief architect, introduces the platform, its services, and related OpenStack technology.
 
->  <iframe width="400" height="225" src="//www.youtube.com/embed/Ba2wMPU5tpk" frameborder="0" allowfullscreen> </iframe> 
+<table style="border:0px;"> <tr>
+<td style="text-align: center; vertical-align: middle; width:500px;"> 
+ <iframe width="400" height="225" src="//www.youtube.com/embed/Ba2wMPU5tpk" frameborder="0" allowfullscreen> </iframe> </td>
+</tr> </table>
 
-## Upstream Documentation
+#### Upstream Documentation
 
 Cloud OS is based on (and adds value to) the OpenStack technology. Refer to the OpenStack documentation site.
 
