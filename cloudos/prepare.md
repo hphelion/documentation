@@ -18,13 +18,6 @@ If you're new to HP Cloud OS, see these topics and the video tutorials to learn 
 
 * [Video Tutorials](/cloudos/videos/) - These videos are perfect for anyone who prefers tutorial-style explanations of new functionality.
 
-> Here's a good video to get you started.  Mark Perriera, HP Cloud 0S chief architect, introduces the platform, its services, and related OpenStack technology.
-
-<table style="border:0px;"> <tr>
-<td style="text-align: center; vertical-align: middle; width:500px;"> 
- <iframe width="400" height="225" src="//www.youtube.com/embed/Ba2wMPU5tpk" frameborder="0" allowfullscreen> </iframe> </td>
-</tr> </table>
-
 * [Technical Overview](/cloudos/overview/) - helpful information to read before you install &amp; configure HP Cloud OS and create your cloud.
 
 * [Introduction to Cloud Types](/cloudos/cloudtypes/) - covers the hybrid, private, and public clouds offers by HP.  Also presents a high-level 

@@ -42,7 +42,7 @@ product: cloudos
  * [API Quick Start](/cloudos/api/quickstart/)
  * [Value-Added Services](/cloudos/api/services/)   
  
-#### [Upstream Documentation](/cloudos/upstreamdoc/)
+#### [OpenStack Links](/cloudos/openstack/)
  
  * [OpenStack documentation home page](http://docs.openstack.org/)
  * [OpenStack Glossary](http://docs.openstack.org/glossary/content/glossary.html)
