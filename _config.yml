@@ -150,8 +150,8 @@ navigation:
     url: /cloudos/manage/
   - text: Develop
     url: /cloudos/develop/
-  - text: Additional Resources
-    url: /cloudos/more/	
+  - text: Upstream Documentation
+    url: /cloudos/upstreamdoc/	
   - text: Site Index
     url: /cloudos/siteindex/	
 

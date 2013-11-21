@@ -12,11 +12,13 @@ product: cloudos
 
 #### [Prepare: Getting Started with HP Cloud OS](/cloudos/prepare/)
 
+ * [Release Notes](/cloudos/releasenotes/) 
+ * [Support Matrix](/cloudos/supportmatrix/) 
+ * [Video Tutorials](/cloudos/videos/) 
  * [FAQs](/cloudos/faqs/)  
  * [Technical Overview](/cloudos/overview/)  
  * [Introduction to Cloud Types](/cloudos/cloudtypes/) 
  * [Glossary](/cloudos/glossary/)
- * [Video Tutorials](/cloudos/videos/)
 
 #### [Install &amp; Configure Your Clouds](/cloudos/install/)
 
@@ -27,25 +29,20 @@ product: cloudos
  * [Cloud OS Installation - Customize Network Settings (Required)](/cloudos/install/customize-network-settings/)
  * [Cloud OS Installation - Complete Admin Node Installation (Required)](/cloudos/install/complete-admin-node-installation/)
  * [Cloud OS Installation - Updates &amp; Extensions (Optional)](/cloudos/install/updates-extensions/)
- * [HP Cloud OS Operational Dashboard Help](http://docs.hpcloud.com/cloudos/operational_dashboard/index.htm) Note: not deployed yet. 
 
 #### [Manage your Clouds](/cloudos/manage/)
 
- * [HP Cloud OS Administration Dashboard Help](http://docs.hpcloud.com/cloudos/admin_dashboard/index.htm) Note: not deployed yet. 
+* [HP Cloud OS Operational Dashboard Help](http://docs.hpcloud.com/cloudos/operational_dashboard/index.htm)  Note: not deployed yet.
+* [HP Cloud OS Administration Dashboard Help](http://docs.hpcloud.com/cloudos/admin_dashboard/index.htm)  Note: not deployed yet.
+* [HP Cloud OS Troubleshooting](/cloudos/troubleshooting/) 
+* [HP Cloud OS Utilities](/cloudos/utilities/)
 
 #### [Develop](/cloudos/develop/)
 
  * [API Quick Start](/cloudos/api/quickstart/)
- * [Value-Added Services](/cloudos/api/services/)  
-
-#### [Additional Resources](/cloudos/more/)
-
- * [Release Notes](/cloudos/releasenotes/) 
- * [Support Matrix](/cloudos/supportmatrix/) 
- * [Troubleshooting](/cloudos/troubleshooting/) 
- * [Cloud Utilities](/cloudos/utilities/)  
+ * [Value-Added Services](/cloudos/api/services/)   
  
- #### Upstream Documentation
+#### [Upstream Documentation](/cloudos/upstreamdoc/)
  
  * [OpenStack documentation home page](http://docs.openstack.org/)
  * [OpenStack Glossary](http://docs.openstack.org/glossary/content/glossary.html)
