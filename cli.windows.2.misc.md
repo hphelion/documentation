@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Windows CLI: misc-features"
-permalink: /cli/windows/misc/
+permalink: /cli/windows/2/misc/
 product: win-cli
 
 ---
