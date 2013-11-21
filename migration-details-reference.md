@@ -1,18 +1,18 @@
 ---
 layout: default
-title: "HP Cloud Services: Assisted Data Transition Reference Guide from Version 12.12 to 13.5"
+title: "HP Cloud: Assisted Data Transition Guide from Version 12.12 to 13.5"
 permalink: /migration-details-reference/
 
 ---
 
-# HP Cloud Services version 12.12 to 13.5: Assisted Data Transition Reference Guide
+# HP Cloud version 12.12 to 13.5: Assisted Data Transition Guide
 
-If you need assistance transitioning your data from HP Cloud Services version 12.12 to 13.5, this page provides you with detailed information about the tasks you need to complete before the data transition. Review this document and [contact support](#ContactingSupport) with any questions.
+If you need assistance transitioning your data from HP Cloud version 12.12 to 13.5, this page provides you with detailed information about the tasks you need to complete before the data transition. Review this document and [contact support](#ContactingSupport) with any questions.
 
-If you plan on performing the transition without support services, the [Self-Migration Reference Guide](/migration-overview) page contains details on how to migrate your data yourself from version 12.12 to 13.5 of the HP Cloud Services.
+If you plan on performing the transition without support services, the [Self-Migration Reference Guide](/migration-overview) page contains details on how to migrate your data yourself from version 12.12 to 13.5 of the HP Cloud.
 
 **Note:**
-Some of the links in this document contain information on using the Horizon-based HP Public Cloud Console to interact with your instances. HP Public Cloud Console is an alternative method for performing these tasks. The procedures in this document for using the classic management console are correct and should be followed at this time.
+Some of the links in this document contain information on using the Horizon-based HP Cloud Console to interact with your instances. HP Cloud Console is an alternative method for performing these tasks. The procedures in this document for using the classic management console are correct and should be followed at this time.
 
 ## Before you begin ## {#TransitionOverview}
 For assistance with transitioning your data from version 12.12 to 13.5, there are a few preliminary tasks you must complete first:
@@ -25,11 +25,11 @@ For assistance with transitioning your data from version 12.12 to 13.5, there ar
 
 Once you have completed these tasks, you must [contact support](#ContactingSupport) to assist you with the rest of your transition.
 
-## Understand what's new for HP Cloud Services version 13.5 ## {#VersionDiffs}
-HP Cloud Services version 13.5 is based on the latest version of OpenStack (Havana), which expands functionality and enhances the current capabilities of the existing services. The sections below give a brief overview of what's new for version 13.5.
+## Understand what's new for HP Cloud version 13.5 ## {#VersionDiffs}
+HP Cloud version 13.5 is based on the latest version of OpenStack (Havana), which expands functionality and enhances the current capabilities of the existing services. The sections below give a brief overview of what's new for version 13.5.
 
 ### HP Cloud Compute ### {#hpCloudCompute}   
-In version 13.5, the HP Cloud Compute service provides on-demand computing giving you the ability to provision and manage large clusters of instances (virtual machines). You have more flexibility to select the type of instance that meets the needs of your application without having to pay for additional resources.
+In version 13.5, the HP Cloud Compute provides on-demand computing giving you the ability to provision and manage large clusters of instances (virtual machines). You have more flexibility to select the type of instance that meets the needs of your application without having to pay for additional resources.
 
 In addition, you now have larger and more powerful instance types (sizes) to choose from--four times the size of the largest instances offered by most public clouds. And, our large, xlarge, and 2xlarge sizes are also offered in high-memory versions.
 
@@ -41,17 +41,17 @@ Each region--US East and US West--consists of three physically isolated availabi
 
 ### Software defined networking ### {#SDN}
 
-With the addition of our new best-in-class software defined networking (SDN) technology from HP Networking, you get enhanced network functionality and  a rich set of additional functionality including the ability to:
+With the addition of our new best-in-class software defined networking (SDN) technology from HP Networking, you get enhanced network functionality and a rich set of additional functionality including the ability to:
 
 * Define and configure your own private virtual L2 networks
 * Establish a VPN connection between the networks you create and your existing on-premise network
 * Specify IP address ranges and security group parameters that define the firewall rules for your instances to ensure they don't conflict with your existing on-premise network
-* Allocate and manage public floating IP addresses
+* Allocate and [manage public floating IP addresses](https://community.hpcloud.com/article/managing-your-floating-ips-135)
 * Connect to a specific network and connect an instance to more than one network
 	
 ### Block storage ### {#BlockStorage}
 
-Block storage has always been available in the HP Cloud Compute service, but now it is a separate, but integrated, service, providing persistent, manageable volumes along with the ability to take a snapshot of a volume. Bootable volumes can be created from images in the Image Management service and these bootable volumes can be used to create persistent instances.
+Block storage has always been available in the HP Cloud Compute, but now it is a separate, but integrated, service, providing persistent, manageable volumes along with the ability to take a snapshot of a volume. Bootable volumes can be created from images in the Image Management service and these bootable volumes can be used to create persistent instances.
 
 ### Bulk data import ### {#BulkDataImport}
 
@@ -80,7 +80,7 @@ Using an instance snapshot can make a transition easier, but might not be suitab
 **Important!** If you have questions about which process is best for your situation, [contact your support engineer](#ContactingSupport). If you do not need to keep your existing data, you should simply [create a new instance](https://community.hpcloud.com/article/creating-your-first-instance-135).
 
 ## Reviewing key transition information ## {#TransitionInfo}
-Before you attempt an assisted transition from HP Cloud Services version 12.12 to 13.5, review the following critical pieces of information.
+Before you attempt an assisted transition from HP Cloud version 12.12 to 13.5, review the following critical pieces of information.
 
 ##### Unnecessary data and files #####
 
@@ -220,12 +220,78 @@ Once you have this information, contact support:
 * [Email support@hpcloud.com](mailto:support@hpcloud.com)
 * Call at 1-855-61CLOUD (1-855-612-5683) in the U.S. or +1-678-745-9010 internationally.
 
+## Post-transition steps for Windows images ## {PostTransWindows}
+
+After customer support has assisted with your Windows image transition from version 12.12 to 13.5, you will not be able to connect to the KMS host to receive the required license activation, and you might not be able to connect to your volume using remote desktop (RDP). To ensure your Windows 12.12 image is usable in 13.5, you **must** follow the steps below to modify the KMS host and change RDP settings. 
+
+### Modifying KMS host ###
+
+Any instance booted from a Windows image migrated from version 12.12 will not be able to connect to the KMS host to receive the required license activation. To fix this:
+
+1. Log in to the Windows instance.
+2. Run the following as Administrator:
+
+    `slmgr.vbs /skms 169.254.169.254:1688`
+
+Microsoft gives you a 3-day grace period for acquiring a license activation for *new instances*. However, KMS activations are valid for 180 days. For volumes that are migrated, we assume those volumes had an instance using the volume and had acquired license activation . This means you would be working within the 180-day limit and not the 3-day grace period.
+
+You must reactivate your license for your KMS client within 180 days; however, by default the KMS client will attempt to reactivate every 7 days. If this fails, the client will then try every 2 hours until it is reactivated, giving up after 180 days.
+
+### Changing RDP settings ###
+
+Once you boot an instance based on a transitioned Windows volume, you might not be able to connect using RDP. This can happen if Windows detects a different DHCP subnet or a different DNS domain; it will change the network type from a private network to a public network and disable the RDP exception that the volume originally had enabled.
+
+You can easily fix this by logging into your instance and re-enabling the RDP exception in the Windows Firewall settings.
+
+1. Log in to the instance from either the Horizon-based HP Cloud Management Console or through a VNC connection using your Web Browser.
+
+	**Note:** You will **NOT** be able to complete this step using the classic management console.
+	
+	a. From the Horizon-based HP Cloud Management Console, look for the More option and select Console.
+
+	<img src="media/images-rdp-mc-console.png" width="580" alt="" />
+
+	b. Using the Nova CLI, get your instance id (e.g. b290ade3-2fbb-46fc-bdd4-322741daeeb) and issue the following:
+    
+	`nova get-vnc-console b290ade3-2fbb-46fc-bdd4-322741daeeb novnc`
+
+	You will get a URL to use in your favorite Web Browser to connect to the VNC display.
+
+2. Once connected, navigate to Windows Firewall. Depending on how your Control Panel is setup, use one of these two paths:
+
+    - Start->Control Panel->Security->Windows Firewall
+	- Start->Control Panel->Windows Firewall
+
+3. Since the Windows Firewall GUIs are slightly different between Windows Server 2008 R2 SP1 and Windows Server 2008 R1 SP2, follow the appropriate  steps for your instance:
+
+	**For Windows Server 2008 R2 SP1**
+
+	a. Click `Advanced settings`.
+    <img src="media/images-rdp-advanced-settings.png" width="580" alt="" />
+
+	b. From the Windows Firewall with Advanced Security window, click `Inbound Rules`.
+    <img src="media/images-rdp-inbound-rules.png" width="580" alt="" />
+
+	c. In the Inbound Rules pane, right-click the `Remote Desktop (TCP-in)` entry, and select `Enable`.
+    <img src="media/images-rdp-tcp-in.png" width="580" alt="" />
+
+	**For Windows Server 2008 R1 SP2 x86 and x64**
+
+	a. Click Allow a program through Windows Firewall.
+    <img src="media/images-rdp-allow-program.png" width="580" alt="" />
+
+	b. In the Windows Firewall Settings window, click the Exceptions tab.
+
+	c. Select `Remote Desktop`, and then click `OK`.
+    <img src="media/images-rdp-enable-rdp.png" width="580" alt="" />
+
+You have now added the Remote Desktop exception back into the Windows Firewall settings.
 
 ## For further information ## {#MoreInfo}
 
 For more information on data transitioning, as well as general information about version 13.5:
 
-* The [Self-Migration Reference Guide](/migration-overview) page contains details on how to migrate your data yourself from version 12.12 to 13.5 of the HP Cloud Services
+* The [Self-Migration Reference Guide](/migration-overview) page contains details on how to migrate your data yourself from version 12.12 to 13.5 of the HP Cloud
 * [Known issues and best practices](https://community.hpcloud.com/article/known-issues-and-best-practices-compute-and-networking-135) in version 13.5
 * Our [release notes for version 13.5](/release-notes/) of the HP Cloud software
 * The [version 13.5 overview](/version-overview/) provides a look at the different software versions available
