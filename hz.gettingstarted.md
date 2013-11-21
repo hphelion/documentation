@@ -260,13 +260,17 @@ Security group rules have three parts:
 
 **To add a rule to the default security group or create a new one, click "Access & Security" in the left-hand bar under "Project" and "Manage Compute."**   
 
-<img src="media/Accesssecurity1" width="580" alt="" />
+<img src="media/Accesssecurity1.png" width="580" alt="" />
 
 1. To create new security group, click "+Create Security Group" in the upper right-hand navigation. If using the default, skip to Step 3.
 
+<img src="media/Accesssecurity2.png" width="580" alt="" />
+
 2. Enter a name and description, then click "Create Security Group."
 
-3. Click "Edit Rules" next to the security group you want to modify under "Actions" in the right-hand navigation to customize security group rules. For your convenience, the default security group rules have "Ether Types" IPv4 and IPv6 set up for "Ingress" (Incoming) and "Egress" (Outbound) directions.
+3. Click "Edit Rules" next to the security group you want to modify under "Actions" in the right-hand navigation to customize security group rules.  For your convenience, the default security group rules have "Ether Types" IPv4 and IPv6 set up for "Ingress" (Incoming) and "Egress" (Outbound) directions.
+
+<img src="media/Accesssecurity3.png" width="580" alt="" />
 
 4. Click "+Add Rule" in the right hand navigation.
 
