@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Windows CLI : Getting Help"
-permalink: /cli/windows/help/
+permalink: /cli/windows/2/help/
 product: win-cli
 
 ---
