@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Release Notes for the HP Cloud Environment CLI Software for Windows PowerShell"
-permalink: /cli/windows/release-notes/
+permalink: /cli/windows/2/release-notes/
 product: win-cli
 
 ---
