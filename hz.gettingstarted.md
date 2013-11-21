@@ -260,6 +260,8 @@ Security group rules have three parts:
 
 **To add a rule to the default security group or create a new one, click "Access & Security" in the left-hand bar under "Project" and "Manage Compute."**   
 
+<img src="media/Accesssecurity1" width="580" alt="" />
+
 1. To create new security group, click "+Create Security Group" in the upper right-hand navigation. If using the default, skip to Step 3.
 
 2. Enter a name and description, then click "Create Security Group."
