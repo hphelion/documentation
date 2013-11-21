@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Cloud Environment CLI Software for Windows PowerShell Installation"
-permalink: /cli/windows/installation/
+permalink: /cli/windows/2/installation/
 product: win-cli
 
 ---
