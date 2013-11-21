@@ -5,7 +5,7 @@ permalink: /cli/windows/
 product: win-cli
 
 ---
-# HP Cloud Environment CLI Software for Windows PowerShell
+# HP Cloud Environment CLI Software for Windows PowerShell #
 
 The HP Cloud environment command-line interface (CLI) software for Windows PowerShell is a tool which allows Windows users to manage their HP Cloud services from the command line.
 
