@@ -256,7 +256,7 @@ Security group rules have three parts:
 
 2. Open Port/Port Range: Open a single port or a range of ports.
 
-3.  Remote: For this rule, you must specify the source of allowed traffic in either the form of an IP address block (CIDR) or through a security group. Selecting a security group as the source allows any instance in that security group access to any other instance through the Remote rule.
+3.  Remote: For this rule, you must specify the source of allowed traffic in either the form of an IP address block (CIDR) or through a security group. 
 
 **To add a rule to the default security group or create a new one, click "Access & Security" in the left-hand bar under "Project" and "Manage Compute."**   
 
@@ -274,7 +274,7 @@ Security group rules have three parts:
 
 7. Select "Port" to open a single port, or "Port Range" to specify a range from the drop-down under "Open Port."  Enter the port number or start and end port numbers based on your selection. 
 
-8. Select "CIDR" or "Security Group" from the drop-down under "Remote" to specify the source of the allowed traffic for the rule. If CIDR, enter an IP address block under "CIDR." If "Security Group," select the name from the drop-down box, then designate IPv4 or IPv6 under "Ether Type." If you do not already know you are using IPv6, select IPv4. Selecting a security group as the source allows any instance in that security group access to any other instance through the "Remote" rule.
+8. Select "CIDR" or "Security Group" from the drop-down under "Remote" to specify the source of the allowed traffic for the rule. If CIDR, enter an IP address block under "CIDR." If "Security Group," select the name from the drop-down box, then designate IPv4 or IPv6 under "Ether Type." If you do not already know you are using IPv6, select IPv4. 
 
 9. Click "Add."
 
