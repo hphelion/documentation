@@ -1,8 +1,8 @@
 ---
 layout: default
 title: "Windows CLI: Folder Operations"
-permalink: /cli/windows/folder-operations/
-product: win-2-cli
+permalink: /cli/windows/2/folder-operations/
+product: win-cli
 
 ---
 # Windows CLI: Folder Operations
