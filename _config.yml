@@ -100,6 +100,27 @@ navigation:
     url: /cli/windows/help/
   - text: Release Notes
     url: /cli/windows/release-notes/
+  win-2-cli:
+  - text: Site home page
+    url: /
+  - text: Overview
+    url: /cli/windows/2/
+  - text: Installation
+    url: /cli/windows/2/installation/
+  - text: Non-Service Specific Commands
+    url: /cli/windows/2/commands/
+  - text: Compute Examples
+    url: /cli/windows/2/compute/
+  - text: Object Storage Examples
+    url: /cli/windows/2/containers-and-folders/
+  - text: Block Storage Examples
+    url: /cli/windows/2/block-storage/
+  - text: CLI Reference
+    url: /cli/windows/2/reference/
+  - text: Getting Help
+    url: /cli/windows/2/help/
+  - text: Release Notes
+    url: /cli/windows/2/release-notes/
   nova-cli:
   - text: Site home page
     url: /
