@@ -5,7 +5,7 @@ permalink: /cli/windows/block-storage/
 product: win-cli
 
 ---
-# HP Cloud Environment CLI Software for Windows PowerShell Block Storage Examples
+# HP Cloud Environment CLI Software for Windows PowerShell Block Storage Examples #
 
 This page provides you some examples of how to use the various commands (sometimes called "cmdlets") for HP Cloud environment CLI software for Windows PowerShell implementation of Compute.
 

@@ -1,8 +1,8 @@
 ---
 layout: default
 title: "HP Cloud Environment CLI Software for Windows PowerShell Compute Examples"
-permalink: /cli/windows/compute/
-product: win-2-cli
+permalink: /cli/windows/2/compute/
+product: win-cli
 
 ---
 # HP Cloud Environment CLI Software for Windows PowerShell Compute Examples
