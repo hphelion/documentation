@@ -244,19 +244,19 @@ You can easily fix this by logging into your instance and re-enabling the Remote
 	
 <p><b>Using the Horizon-based HP Cloud Management Console:</b></p>
 
-<ol>
+<ol type="a">
 <li>Locate your Windows instance on the Instances screen.</li>
 
 <li>In the Actions column, click More -> Console for your  transitioned instance.
 
-    <img src="media/images-rdp-mc-console.png" width="580" alt="" />
+<img src="media/images-rdp-mc-console.png" width="580" alt="" />
 </li>
 <li>At the Windows log in screen, enter a user name and password with Administrator privileges.</li>
 </ol>
 
 <p><b>Using the Nova CLI:</b></p>
 
-<ol>
+<ol type="a">
 <li>Find your instance id (for example, b290ade3-2fbb-46fc-bdd4-322741daeeb) using a command such as `nova list`.</li>
 
 <li>Issue the following command to get a VNC connection URL:</li>
@@ -278,32 +278,28 @@ You can easily fix this by logging into your instance and re-enabling the Remote
 <li>Since the Windows Firewall GUIs are slightly different between Windows Server 2008 R2 SP1 and Windows Server 2008 R1 SP2, follow the appropriate  steps for your instance:
 
 <p><b>For Windows Server 2008 R2 SP1</b></p>
-<ol>
+<ol type="a">
 <li>Click `Advanced settings`.
-
-    <img src="media/images-rdp-advanced-settings.png" width="580" alt="" />
+<img src="media/images-rdp-advanced-settings.png" width="580" alt="" />
 </li>
 <li>In the Windows Firewall with Advanced Security window, click `Inbound Rules`.
-
-    <img src="media/images-rdp-inbound-rules.png" width="580" alt="" />
+<img src="media/images-rdp-inbound-rules.png" width="580" alt="" />
 </li>
 <li>In the Inbound Rules pane, right-click the `Remote Desktop (TCP-in)` entry, and select `Enable`.
-
-    <img src="media/images-rdp-tcp-in.png" width="580" alt="" />
+<img src="media/images-rdp-tcp-in.png" width="580" alt="" />
 </li>
 </ol>
 <p><b>For Windows Server 2008 R1 SP2 x86 and x64</b></p>
 
-<ol>
+<ol type="a">
 <li>Click `Allow a program through Windows Firewall`.
-
-    <img src="media/images-rdp-allow-program.png" width="580" alt="" />
+<img src="media/images-rdp-allow-program.png" width="580" alt="" />
 </li>
 <li>In the Windows Firewall Settings window, click the `Exceptions` tab.</li>
 
 <li>Select `Remote Desktop`, and then click `OK`.
 
-    <img src="media/images-rdp-enable-rdp.png" width="580" alt="" />
+<img src="media/images-rdp-enable-rdp.png" width="580" alt="" />
 </li>
 </ol>
 </ol>
