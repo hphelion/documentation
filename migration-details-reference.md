@@ -294,7 +294,7 @@ You can easily fix this by logging into your instance and re-enabling the Remote
 
     c. Select `Remote Desktop`, and then click `OK`.
 
-    <img src="media/images-rdp-enable-rdp.png" width="580" alt="" />
+<img src="media/images-rdp-enable-rdp.png" width="580" alt="" />
 
 You have now added the Remote Desktop exception back into the Windows Firewall settings.
 
