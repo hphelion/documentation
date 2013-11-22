@@ -6,7 +6,7 @@ permalink: /release-notes/
 ---
 # HP Public Cloud Release Notes
 
-You know the problem:  you see the phrase "release notes" and you immediately think "boring bug list."  But you're in luck!  This page--the release notes for the HP Public Cloud software--<i>does</i> contain a list of bugs, but HP has worked hard to make it easier for you to navigate and locate the information you're looking for.  HP has also included information about the new features for each release, links to the most current release, and a few other items here and there that we hope will be helpful for you.   
+You know the problem:  you see the phrase "release notes" and you immediately think "boring bug list."  But, you're in luck!  This page--the release notes for the HP Public Cloud software--<i>does</i> contain a list of bugs, but HP has worked hard to make it easier for you to navigate and locate the information you're looking for.  HP has also included information about the new features for each release, links to the most current release, and a few other items here and there that we hope will be helpful for you.   
 
 This page contains the following information on our software package:
 
@@ -37,15 +37,13 @@ The following are new features in version 13.5 of the HP Public Cloud software:
 
 **Networking topology visualization** - Interactively build and manage your network through a 2-D visualization dashboard.
 
-**Faster and simpler custom image upload** - Increases productivity by offering simplified set up and deployment of new instances. You can now create your own images and upload them to the HP Public Cloud image management service to use as a starting point for creating new instances. HP Public Cloud services also provide a wide variety of pre-configured images, allowing you to create images from your running instances to produce new instances.
-
 **Faster data upload to the Cloud** - A new bulk import service reduces the time to market for applications requiring existing data by allowing you to quickly and easily load your data into HP Public Cloud block storage or object storage. The new service bypasses the process of transferring large amounts of information over the Internet and allows you to provide hard drives directly to HP's data centers where your data can be rapidly transferred.
 
 **Cross-region replication** - HP Public Cloud Console users can setup and control object storage container synchronization across multiple regions. 
 
 **Object storage container versioning** - HP Public Cloud Console users can now toggle on or off the ability to duplicate and synchronize objects within storage containers.
 
-**Upload improvements** - The 50Mb file upload limitation is no longer an impedance.  
+**Upload improvements** - The 50MB file upload limitation is no longer an impedance.  If uploading through the Cloud Console, there is a limit of 5GB. The recommendation from the Console team is that anything over 1GB should go through a CLI/API.  
 
 **Enhanced identity management** - When creating a new project, you can activate a new compute, object storage or platform service; list the project permissions; and manage the project role assignments.  Once you've activated services, you can set the Project Permissions for Compute Admin, Compute Network Admin, Block Storage Admin, Network Admin, and Image Management Admin, and more.   You can add and remove groups to each role, and assign users to specific roles for each project.
 
@@ -86,7 +84,7 @@ Compute Admin
 
 ###Known issues in version 13.5### {#v135issues}
 
-The following are known issues and limitation for version 13.5 of the HP Public Cloud software:
+The following are known issues and limitations for version 13.5 of the HP Public Cloud software:
 
 * "Classic" management console still required - Because the HP Public Cloud Console is a Horizon Preview Edition, you still need to manage your service account information through the classic console.  Specifically, you will need to use the classic console for:
 
@@ -125,8 +123,69 @@ Navigating back to the classic management console requires you to re-login to th
 
 * In some cases, you may be unable to connect to a VNC URL. <br>
     *Workaround*: Connect using other clients such as `ssh`, `putty`, or RDP.
+	
+* You cannot boot an xsmall VM from a VM snapshot of a larger flavor. <br>
+	* Because all flavors larger than xsmall require a root disk size of 30GB, you cannot use a larger flavor to create an xsmall VM instance.
+	
+* VMs are not able to resolve their own names.
+
+* Windows instances require flavors larger than xsmall; the instance will fail to schedule using an xsmall instance.
+	* The system displays the following message:
+		* Error: Instance type's disk is too small for requested image. (HTTP 400) (Request-ID: req-b006ef19-f20d-4e76-ac98-c64d27368518)
+	* Windows instances do not fit into the 10GB root disk used for xsmall instances. All other flavors have a 30GB root disk, which does accommodate Windows instances.
+
+* Windows VM does not cleanly detach from the instance.
+	* Workaround*: First, take the disk offline within the Windows VM. Then, detach the VM.
+
+* The command "nova image-meta" does not change the "image name". Instead, it adds a new attribute called "name" to the metadata. If you want to change the name of a VM snapshot (private image), use Glance. Please refer to the following [API](http://api.openstack.org/api-ref-compute.html) documentation from Openstack.
+
+* Do not use the personality option to create a server. Use the Openstack python CLI.
+	
+* Do not use Windows CLI to attacth or detach a volume. Use the management console.
+
+* Do not attempt to detach and delete a volume simultaneously. Such an action causes the volume to enter an inconsistent state.
+
+* VMs with invalid file injections paths are not created.
+
+* In rare cases, a VM might be created with two fixed IPs rather than one. Please, delete the VM and try again. 
+
+* Cannot have a VM with 2TB root partition. 
+
+* Contact customer support if you can no longer ssh into your VM.
+
+* In rare cases, you might not be able to see the private IP in the networks section of a Windows instance. Use the VNC console to see the private IP for the Windows instance.
+
+* The Reset-Password feature of the Windows CLI does not work. 
+
+* Windows CLI might not display the server ID in the attached volume column. 
+
+* The Windows CLI cannot upload files of 20MB or more. 
+	* Workaround: Use the Openstacks CLIs or the management console to upload large files.
+	
+*  Accessing VNC console as soon as the VM gets active might cause the Windows VM to hang. Also, the console log would be empty. 
+
+* If you do not clean up excess ports, you might not be able to start all the VMs. 
+	* Workaround: Use neutron port-list, and remove all ports that are not the dhcp or router port. There should be two ports in addition to those used for existing VMs. The neutron port-show <port-id> command indicates the port usage. 
+
+ * We recommend that you use the Neutron interface for any quota checks.
+ 
+ * A 5xlarge instance will take a longer time to reach the active state.
+ 
+ * The Ext-Gateway field might not be populated in the CLI. 
+	* Workaround: You can confirm the status via the management console. 
+	
+*  Windows CLI: If the Flavors Details section is blank, use the management console to get the information.
+
+* Windows CLI : Network Information is not getting displayed in the Assigned Network Addresses section.
+	*Workaround: Use the horizon console to find the network address.
+	
+* Windows CLI: You cannot download a file larger than 700MB.
+	*Workaround: Use another CLI or the management console to download a file that is larger than 700MB.
+	
+* We no longer support the EUCA API.
 
 <!--##Resolved Issues in Version 13.5## {#v135resolved}
+
 
 The following are resolved issues in version 13.5 of the HP Public Cloud software:
 
@@ -147,5 +206,5 @@ The following are resolved issues in version 13.5 of the HP Public Cloud softwar
 While these release notes contain information information for the software package as a whole, we also provide you with release notes for individual products and services:
 
 * [Ruby Fog Bindings](/bindings/fog/release-notes/)
-* [UNIX command-line interface (CLI)](/cli/unix/release-notes/)
-* [Windows PowerShell CLI](/cli/windows/release-notes/)
+* [UNIX command-line interface (CLI)](/cli/unix/2/release-notes/)
+* [Windows PowerShell CLI](/cli/windows/2/release-notes/)
