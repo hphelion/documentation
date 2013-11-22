@@ -2,7 +2,7 @@
 layout: default
 title: "Windows CLI: Working with Meta-Data"
 permalink: /cli/windows/metadata/
-product: win-cli
+product: win-2-cli
 
 ---
 # Windows CLI: Working with Meta-Data
