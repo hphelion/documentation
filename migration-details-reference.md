@@ -270,31 +270,31 @@ You can easily fix this by logging into your instance and re-enabling the Remote
 
 3. Since the Windows Firewall GUIs are slightly different between Windows Server 2008 R2 SP1 and Windows Server 2008 R1 SP2, follow the appropriate  steps for your instance:
 
-    **For Windows Server 2008 R2 SP1**
+**For Windows Server 2008 R2 SP1**
 
-    a. Click `Advanced settings`.
+Click `Advanced settings`.
 
     <img src="media/images-rdp-advanced-settings.png" width="580" alt="" />
 
-    b. In the Windows Firewall with Advanced Security window, click `Inbound Rules`.
+In the Windows Firewall with Advanced Security window, click `Inbound Rules`.
 
     <img src="media/images-rdp-inbound-rules.png" width="580" alt="" />
 
-    c. In the Inbound Rules pane, right-click the `Remote Desktop (TCP-in)` entry, and select `Enable`.
+In the Inbound Rules pane, right-click the `Remote Desktop (TCP-in)` entry, and select `Enable`.
 
     <img src="media/images-rdp-tcp-in.png" width="580" alt="" />
 
-    **For Windows Server 2008 R1 SP2 x86 and x64**
+**For Windows Server 2008 R1 SP2 x86 and x64**
 
-    a. Click `Allow a program through Windows Firewall`.
+Click `Allow a program through Windows Firewall`.
 
     <img src="media/images-rdp-allow-program.png" width="580" alt="" />
 
-    b. In the Windows Firewall Settings window, click the `Exceptions` tab.
+In the Windows Firewall Settings window, click the `Exceptions` tab.
 
-    c. Select `Remote Desktop`, and then click `OK`.
+Select `Remote Desktop`, and then click `OK`.
 
-<img src="media/images-rdp-enable-rdp.png" width="580" alt="" />
+    <img src="media/images-rdp-enable-rdp.png" width="580" alt="" />
 
 You have now added the Remote Desktop exception back into the Windows Firewall settings.
 
