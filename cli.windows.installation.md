@@ -5,7 +5,7 @@ permalink: /cli/windows/installation/
 product: win-cli
 
 ---
-# HP Cloud Environment CLI Software for Windows PowerShell Installation
+# HP Cloud Environment CLI Software for Windows PowerShell Installation #
 
 To get the HP Cloud Environment CLI Software for Windows PowerShell installed and running properly you must complete the following tasks:
 
