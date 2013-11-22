@@ -3,7 +3,7 @@ layout: default
 title: "HP Cloud Services Windows PowerShell Tutorials"
 permalink: /cli/windows/2/tutorials/
 published: false
-product: win-cli
+product: win-2-cli
 
 ---
 # HP Cloud Services Windows PowerShell Tutorials
