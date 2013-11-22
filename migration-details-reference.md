@@ -240,6 +240,7 @@ You can easily fix this by logging into your instance and re-enabling the Remote
 <ol>
 <li>Log in to the instance from either the Horizon-based HP Cloud Management Console or through a [VNC connection](https://community.hpcloud.com/article/using-vnc-console-access-your-instance-135) using your Web Browser.
 
+<<<<<<< HEAD
 <p><b>Note:</b> You will NOT be able to complete this step using the classic management console.</p>
 	
 <p><b>Using the Horizon-based HP Cloud Management Console:</b></p>
@@ -260,9 +261,29 @@ You can easily fix this by logging into your instance and re-enabling the Remote
 <li>Find your instance id (for example, b290ade3-2fbb-46fc-bdd4-322741daeeb) using a command such as `nova list`.</li>
 
 <li>Issue the following command to get a VNC connection URL:</li>
-    
-    `nova get-vnc-console <instance_id> novnc`
+=======
+	**Note:** You will **NOT** be able to complete this step using the classic management console.
+	
+	* Using the Horizon-based HP Cloud Management Console:
 
+		a. Find your Windows instance on the Instances screen.
+
+		b. In the Actions column, click More -> Console for your  transitioned instance. 
+
+		<img src="media/images-rdp-mc-console.png" width="580" alt="" />
+
+		c. At the Windows log in screen, enter a user name and password with Administrator privileges.
+
+	* Using the Nova CLI:
+
+		a. Find your instance id (for example, b290ade3-2fbb-46fc-bdd4-322741daeeb) using a command such as `nova list`.
+
+		b. Issue the following command to get a URL:
+>>>>>>> parent of 8a4c2c4... fixing images and spacing migration-details-reference
+    
+		`nova get-vnc-console <instance_id> novnc`
+
+<<<<<<< HEAD
 <li>Copy the URL and paste it into the URL field of your favorite Web Browser to connect to the VNC display.</li>
 
 <li>At the Windows log in screen, enter a user name and password with Administrator privileges.</li>
@@ -303,6 +324,45 @@ You can easily fix this by logging into your instance and re-enabling the Remote
 </li>
 </ol>
 </ol>
+=======
+		c. Copy the URL and paste it into the URL field of your favorite Web Browser to connect to the VNC display.
+
+		d. At the Windows log in screen, enter a user name and password with Administrator privileges.
+
+2. Once connected, navigate to Windows Firewall. Depending on how your Control Panel is configured, use one of these two paths:
+
+    - Start->Control Panel->Security->Windows Firewall
+	- Start->Control Panel->Windows Firewall
+
+3. Since the Windows Firewall GUIs are slightly different between Windows Server 2008 R2 SP1 and Windows Server 2008 R1 SP2, follow the appropriate  steps for your instance:
+
+	**For Windows Server 2008 R2 SP1**
+
+	a. Click `Advanced settings`.
+
+    <img src="media/images-rdp-advanced-settings.png" width="580" alt="" />
+
+	b. In the Windows Firewall with Advanced Security window, click `Inbound Rules`.
+
+    <img src="media/images-rdp-inbound-rules.png" width="580" alt="" />
+
+	c. In the Inbound Rules pane, right-click the `Remote Desktop (TCP-in)` entry, and select `Enable`.
+
+    <img src="media/images-rdp-tcp-in.png" width="580" alt="" />
+
+	**For Windows Server 2008 R1 SP2 x86 and x64**
+
+	a. Click `Allow a program through Windows Firewall`.
+
+    <img src="media/images-rdp-allow-program.png" width="580" alt="" />
+
+	b. In the Windows Firewall Settings window, click the `Exceptions` tab.
+
+	c. Select `Remote Desktop`, and then click `OK`.
+
+    <img src="media/images-rdp-enable-rdp.png" width="580" alt="" />
+
+>>>>>>> parent of 8a4c2c4... fixing images and spacing migration-details-reference
 You have now added the Remote Desktop exception back into the Windows Firewall settings.
 
 ### Modifying KMS host ###
