@@ -22,6 +22,7 @@ For assistance with transitioning your data from version 12.12 to 13.5, there ar
 * [Take a snapshot of an ephemeral instance](#Snapshot)
 * [Prepare a volume for transition](#PrepVolume)
 * [Terminate a persistent instance created from a block volume](#TerminatingPersistent)
+* [Post-transition configuration for Windows images](#PostTransWindows)
 
 Once you have completed these tasks, you must [contact support](#ContactingSupport) to assist you with the rest of your transition.
 
@@ -227,9 +228,9 @@ Once you have this information, contact support:
 * [Email support@hpcloud.com](mailto:support@hpcloud.com)
 * Call at 1-855-61CLOUD (1-855-612-5683) in the U.S. or +1-678-745-9010 internationally.
 
-## Post-transition steps for Windows images ## {#PostTransWindows}
+## Post-transition configuration for Windows images ## {#PostTransWindows}
 
-After customer support has assisted with your Windows image transition from version 12.12 to 13.5, you will not be able to connect to the KMS host to receive the required license activation, and you might not be able to connect to your volume using a remote desktop connection. To ensure your Windows 12.12 image is usable in 13.5, you **must** follow the steps below to change your remote desktop firewall exceptions and modify the KMS host. 
+After customer support has assisted with your Windows image transition from version 12.12 to 13.5, you will not be able to connect to the KMS host to receive the required license activation, and you might not be able to connect to your volume using a remote desktop connection. To ensure your Windows 12.12 image is usable in 13.5, you **must** change your remote desktop firewall exceptions and modify the KMS host. 
 
 ### Changing Remote Desktop Firewall exception ###
 
@@ -243,7 +244,7 @@ You can easily fix this by logging into your instance and re-enabling the Remote
 	
     **Using the Horizon-based HP Cloud Management Console:**
 
-    a. Find your Windows instance on the Instances screen.
+    a. Locate your Windows instance on the Instances screen.
 
     b. In the Actions column, click More -> Console for your  transitioned instance. 
 
