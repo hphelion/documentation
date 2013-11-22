@@ -1,8 +1,8 @@
 ---
 layout: default
 title: "HP Cloud Environment CLI Software for Windows PowerShell Block Storage Examples"
-permalink: /cli/windows/block-storage/
-product: win-2-cli
+permalink: /cli/windows/2/block-storage/
+product: win-cli
 
 ---
 # HP Cloud Environment CLI Software for Windows PowerShell Block Storage Examples
