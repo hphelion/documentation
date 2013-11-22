@@ -2,7 +2,7 @@
 layout: default
 title: "HP Cloud Environment CLI Software for Windows PowerShell"
 permalink: /cli/windows/2/
-product: win-cli
+product: win-2-cli
 
 ---
 # HP Cloud Environment CLI Software for Windows PowerShell
