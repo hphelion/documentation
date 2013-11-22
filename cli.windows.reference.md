@@ -6,7 +6,7 @@ product: win-2-cli
 
 ---
 <!-- Removed all html tags -->
-# HP Cloud Environment CLI Software for Windows PowerShell Command Line Reference
+# HP Cloud Environment CLI Software for Windows PowerShell Command Line Reference #
 
 Below you can find a full reference of supported HP Cloud environment CLI software for Windows PowerShell commands (sometimes called "cmdlets").  The commands are broken up into separate sections by functional area:
 

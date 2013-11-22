@@ -1,8 +1,8 @@
 ---
 layout: default
 title: "HP Cloud Environment CLI Software for Windows PowerShell Non-Service Specific Commands"
-permalink: /cli/windows/commands/
-product: win-2-cli
+permalink: /cli/windows/2/commands/
+product: win-cli
 
 ---
 # HP Cloud Environment CLI Software for Windows PowerShell Non-Service Specific Commands
