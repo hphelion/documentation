@@ -27,7 +27,8 @@ Here's what we have for you:
 * [Release Notes](/cli/unix/release-notes)
 
 ###Windows CLI### {#WinCLIInstall}
-* [Installation package, Version 1.3.3.9](/file/WinCLI-1.3.3.9.zip)
+* [Installation package, Version 1.3.3.9](/file/WinCLI-1.3.3.9.zip)  (for software version 12.12)
+* [Installation package, Version 1.3.5.7](https://git.hpcloud.net/DevExDocs/docs.hpcloud.com/tree/master/file)  (for software version 13.5)
 * [Overview page](/cli/windows)
 * [Release Notes](/cli/windows/release-notes)
 
