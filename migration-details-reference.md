@@ -237,65 +237,76 @@ Once you boot an instance based on a transitioned Windows volume, you might not 
 
 You can easily fix this by logging into your instance and re-enabling the Remote Desktop exception in the Windows Firewall settings.
 
-1. Log in to the instance from either the Horizon-based HP Cloud Management Console or through a [VNC connection](https://community.hpcloud.com/article/using-vnc-console-access-your-instance-135) using your Web Browser.
+<ol>
+<li>Log in to the instance from either the Horizon-based HP Cloud Management Console or through a [VNC connection](https://community.hpcloud.com/article/using-vnc-console-access-your-instance-135) using your Web Browser.
 
-**Note:** You will **NOT** be able to complete this step using the classic management console.
+<p><b>Note:</b> You will NOT be able to complete this step using the classic management console.</p>
 	
-**Using the Horizon-based HP Cloud Management Console:**
+<p><b>Using the Horizon-based HP Cloud Management Console:</b></p>
 
-a. Find your Windows instance on the Instances screen.
+<ol>
+<li>Locate your Windows instance on the Instances screen.</li>
 
-b. In the Actions column, click More -> Console for your  transitioned instance. 
+<li>In the Actions column, click More -> Console for your  transitioned instance.
 
    <img src="media/images-rdp-mc-console.png" width="580" alt="" />
+</li>
+<li>At the Windows log in screen, enter a user name and password with Administrator privileges.</li>
+</ol>
 
-c. At the Windows log in screen, enter a user name and password with Administrator privileges.
+<p><b>Using the Nova CLI:</b></p>
 
-**Using the Nova CLI:**
+<ol>
+<li>Find your instance id (for example, b290ade3-2fbb-46fc-bdd4-322741daeeb) using a command such as `nova list`.</li>
 
-a. Find your instance id (for example, b290ade3-2fbb-46fc-bdd4-322741daeeb) using a command such as `nova list`.
-
-b. Issue the following command to get a VNC connection URL:
+<li>Issue the following command to get a VNC connection URL:</li>
     
     `nova get-vnc-console <instance_id> novnc`
 
-c. Copy the URL and paste it into the URL field of your favorite Web Browser to connect to the VNC display.
+<li>Copy the URL and paste it into the URL field of your favorite Web Browser to connect to the VNC display.</li>
 
-d. At the Windows log in screen, enter a user name and password with Administrator privileges.
+<li>At the Windows log in screen, enter a user name and password with Administrator privileges.</li>
+</ol>
 
-2. Once connected, navigate to Windows Firewall. Depending on how your Control Panel is configured, use one of these two paths:
+<li>Once connected, navigate to Windows Firewall. Depending on how your Control Panel is configured, use one of these two paths:
+<ul>
+     <li>Start->Control Panel->Security->Windows Firewall</li>
+	 <li>Start->Control Panel->Windows Firewall</li>
+</ul>
+</li>
 
-    - Start->Control Panel->Security->Windows Firewall
-	- Start->Control Panel->Windows Firewall
+<li>Since the Windows Firewall GUIs are slightly different between Windows Server 2008 R2 SP1 and Windows Server 2008 R1 SP2, follow the appropriate  steps for your instance:
 
-3. Since the Windows Firewall GUIs are slightly different between Windows Server 2008 R2 SP1 and Windows Server 2008 R1 SP2, follow the appropriate  steps for your instance:
-
-**For Windows Server 2008 R2 SP1**
-
-a. Click `Advanced settings`.
+<p><b>For Windows Server 2008 R2 SP1</b></p>
+<ol>
+<li>Click `Advanced settings`.
 
    <img src="media/images-rdp-advanced-settings.png" width="580" alt="" />
-
-b. In the Windows Firewall with Advanced Security window, click `Inbound Rules`.
+</li>
+<li>In the Windows Firewall with Advanced Security window, click `Inbound Rules`.
 
    <img src="media/images-rdp-inbound-rules.png" width="580" alt="" />
-
-c. In the Inbound Rules pane, right-click the `Remote Desktop (TCP-in)` entry, and select `Enable`.
+</li>
+<li>In the Inbound Rules pane, right-click the `Remote Desktop (TCP-in)` entry, and select `Enable`.
 
    <img src="media/images-rdp-tcp-in.png" width="580" alt="" />
+</li>
+</ol>
+<p><b>For Windows Server 2008 R1 SP2 x86 and x64</b></p>
 
-**For Windows Server 2008 R1 SP2 x86 and x64**
-
-a. Click `Allow a program through Windows Firewall`.
+<ol>
+<li>Click `Allow a program through Windows Firewall`.
 
    <img src="media/images-rdp-allow-program.png" width="580" alt="" />
+</li>
+<li>In the Windows Firewall Settings window, click the `Exceptions` tab.</li>
 
-b. In the Windows Firewall Settings window, click the `Exceptions` tab.
-
-c. Select `Remote Desktop`, and then click `OK`.
+<li>Select `Remote Desktop`, and then click `OK`.
 
    <img src="media/images-rdp-enable-rdp.png" width="580" alt="" />
-
+</li>
+</ol>
+</ol>
 You have now added the Remote Desktop exception back into the Windows Firewall settings.
 
 ### Modifying KMS host ###
