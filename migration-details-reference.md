@@ -250,8 +250,6 @@ You can easily fix this by logging into your instance and re-enabling the Remote
 
     <img src="media/images-rdp-mc-console.png" width="580" alt="" />
     
-    c. At the Windows log in screen, enter a user name and password with Administrator privileges.
-
     **Using the Nova CLI:**
 
     a. Find your instance id (for example, b290ade3-2fbb-46fc-bdd4-322741daeeb) using a command such as `nova list`.
@@ -262,14 +260,14 @@ You can easily fix this by logging into your instance and re-enabling the Remote
 
     c. Copy the URL and paste it into the URL field of your favorite Web Browser to connect to the VNC display.
 
-    d. At the Windows log in screen, enter a user name and password with Administrator privileges.
+2. At the Windows log in screen, enter a user name and password with Administrator privileges. Your password will be the same as it was before transition.
 
-2. Once connected, navigate to Windows Firewall. Depending on how your Control Panel is configured, use one of these two paths:
+3. Once connected, navigate to Windows Firewall. Depending on how your Control Panel is configured, use one of these two paths:
 
     - Start->Control Panel->Security->Windows Firewall
 	- Start->Control Panel->Windows Firewall
 
-3. Since the Windows Firewall GUIs are slightly different between Windows Server 2008 R2 SP1 and Windows Server 2008 R1 SP2, follow the appropriate  steps for your instance:
+4. Since the Windows Firewall GUIs are slightly different between Windows Server 2008 R2 SP1 and Windows Server 2008 R1 SP2, follow the appropriate  steps for your instance:
 
     **For Windows Server 2008 R2 SP1**
 
