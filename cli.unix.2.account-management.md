@@ -2,7 +2,7 @@
 layout: default
 title: "UNIX CLI: Advanced Account Management"
 permalink: /cli/unix/2/account-management/
-product: unix-cli
+product: unix-2-cli
 
 ---
 #UNIX CLI: Advanced Account Management
