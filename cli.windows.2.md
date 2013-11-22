@@ -2,7 +2,7 @@
 layout: default
 title: "HP Cloud Environment CLI Software for Windows PowerShell"
 permalink: /cli/windows/2/
-product: win-cli
+product: win-2-cli
 
 ---
 # HP Cloud Environment CLI Software for Windows PowerShell
@@ -22,4 +22,4 @@ For a full list of all the commands available, start with the [command line refe
 + [Getting Help](/cli/windows/2/help)
 + [Release Notes](/cli/windows/2/release-notes)
 
-[**Download** the HP Cloud environment command-line interface (CLI) software for Windows PowerShell](https://git.hpcloud.net/DevExDocs/docs.hpcloud.com/tree/master/file). 
+[**Download** the HP Cloud environment command-line interface (CLI) software for Windows PowerShell](/file/WinCLI-1.3.5.7.zip). 
