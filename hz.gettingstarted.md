@@ -258,33 +258,59 @@ Security group rules have three parts:
 
 3.  Remote: For this rule, you must specify the source of allowed traffic in either the form of an IP address block (CIDR) or through a security group. 
 
-**To add a rule to the default security group or create a new one, click "Access & Security" in the left-hand bar under "Project" and "Manage Compute."**   
+####Default Security Group Rules####
+1. Click "Access & Security" in the left-hand bar under "Project" and "Manage Compute" to begin.
 
 <img src="media/Accesssecurity1.png" width="580" alt="" />
 
-1. To create new security group, click "+Create Security Group" in the upper right-hand navigation. If using the default, skip to Step 3.
+2. A default security group is already set up. To display the default rules, click the "Edit Rules" button next to "default" on the "Security Groups" page. The default security group rules have "Ether Types" IPv4 and IPv6 set up for "Ingress" (Incoming) and "Egress" (Outbound) directions. **It may be easiest to add any new security group rules to the default so you do not have to recreate ingress and egress directions.** 
 
-<img src="media/Accesssecurity2.png" width="580" alt="" />
+<img src="media/Accesssecuritydefaultsecuritygrouprulesimage2" width="580" alt="" />
 
-2. Enter a name and description, then click "Create Security Group."
+3. Click the "+Add Rule" button in the top-right navigation if you want to create a new rule in the default security group.
 
-3. Click "Edit Rules" next to the security group you want to modify under "Actions" in the right-hand navigation to customize security group rules.  For your convenience, the default security group rules have "Ether Types" IPv4 and IPv6 set up for "Ingress" (Incoming) and "Egress" (Outbound) directions.
+<img src="media/Accesssecurityaddruletodefault" width="580" alt="" />
+
+4. In the "Add Rule" box, make selections for the rule as outlined below. Additional selections appear depending on your setup.
+
+<img src="media/Accesssecurityaddrulebox" width="580" alt="" />
+
+Click the "Rule" drop-down box and make a selection based on the function of your VM.
+
+5. Select "Port" to open a single port, or "Port Range" to specify a range from the drop-down under "Open Port."  Enter the port number or start and end port numbers based on your selection. 
+
+6. Select "CIDR" or "Security Group" from the drop-down under "Remote" to specify the source of the allowed traffic for the rule. If CIDR, enter an IP address block under "CIDR." If "Security Group," select the name from the drop-down box, then designate IPv4 or IPv6 under "Ether Type." If you do not already know you are using IPv6, select IPv4. **Ask Steve - wouldn't any new rule need the user to specify the traffic source allowed for the rule, even with default settings for ingress and egress?**
+
+7. Click "Add."
+
+8. To delete a rule from the default group, click "Access & Security in the left-hand bar, then click "Edit Rules" to the right of the default security group, which is what you did to add a rule.
+
+9. Click "Delete Rule" next to the rule you want to get rid of.
+
+<img src="media/Accesssecuritydeletedefaultgrouprule" width="580" alt="" />
+
+
+####Add To create new security group, click "+Create Security Group" in the upper right-hand navigation. If using the default security group, skip to Step 3.
+
+<img src="" width="580" alt="" />
+
+3. Enter a name and description, then click "Create Security Group."
+
+4. Click "Edit Rules" next to the security group you want to modify under "Actions" in the right-hand navigation to customize security group rules. 
 
 <img src="media/Accesssecurity3.png" width="580" alt="" />
 
-4. Click "+Add Rule" in the right hand navigation.
+7. Click the "Rule" drop-down box and make a selection based on the function of your VM.
 
-5. Click the "Rule" drop-down box and make a selection based on the function of your VM.
+8. Click the "Direction" drop-down box and select "Egress" to designate outbound traffic or "Ingress" to designate inbound traffic.
 
-6. Click the "Direction" drop-down box and select "Egress" to designate outbound traffic or "Ingress" to designate inbound traffic.
+9. Select "Port" to open a single port, or "Port Range" to specify a range from the drop-down under "Open Port."  Enter the port number or start and end port numbers based on your selection. 
 
-7. Select "Port" to open a single port, or "Port Range" to specify a range from the drop-down under "Open Port."  Enter the port number or start and end port numbers based on your selection. 
+10. Select "CIDR" or "Security Group" from the drop-down under "Remote" to specify the source of the allowed traffic for the rule. If CIDR, enter an IP address block under "CIDR." If "Security Group," select the name from the drop-down box, then designate IPv4 or IPv6 under "Ether Type." If you do not already know you are using IPv6, select IPv4. 
 
-8. Select "CIDR" or "Security Group" from the drop-down under "Remote" to specify the source of the allowed traffic for the rule. If CIDR, enter an IP address block under "CIDR." If "Security Group," select the name from the drop-down box, then designate IPv4 or IPv6 under "Ether Type." If you do not already know you are using IPv6, select IPv4. 
+11. Click "Add."
 
-9. Click "Add."
-
-10. Click "Access & Security" in the left-hand bar to see your security groups.
+12. Click "Access & Security" in the left-hand bar to see your security groups.
 
 ###Organize and manage HP Cloud Access## {#Identity}
 
