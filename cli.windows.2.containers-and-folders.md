@@ -2,7 +2,7 @@
 layout: default
 title: "HP Cloud Environment CLI Software for Windows PowerShell Object Storage Examples"
 permalink: /cli/windows/2/containers-and-folders/
-product: win-cli
+product: win-2-cli
 
 ---
 # HP Cloud Environment CLI Software for Windows PowerShell Object Storage Examples
