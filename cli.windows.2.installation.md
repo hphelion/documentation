@@ -2,7 +2,7 @@
 layout: default
 title: "HP Cloud Environment CLI Software for Windows PowerShell Installation"
 permalink: /cli/windows/2/installation/
-product: win-cli
+product: win-2-cli
 
 ---
 # HP Cloud Environment CLI Software for Windows PowerShell Installation
@@ -18,7 +18,7 @@ To get the HP Cloud Environment CLI Software for Windows PowerShell installed an
 
 This page also describes how to [upgrade to a new version](#Upgrading) of the Windows CLI software.
 
-[Please download the latest version of the HP Cloud environment CLI software package for Windows PowerShell here (Version 1.3.5.7)](https://git.hpcloud.net/DevExDocs/docs.hpcloud.com/tree/master/file)! 
+[Please download the latest version of the HP Cloud environment CLI software package for Windows PowerShell here (Version 1.3.5.7)](/file/WinCLI-1.3.5.7.zip)! 
 
 ##Installation Prerequisites## {#InstallationPrerequisites}
 
