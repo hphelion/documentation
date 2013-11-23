@@ -130,8 +130,7 @@ Refer to [Install &amp; Configure Your Clouds](/cloudos/install/) for a complete
 </tr>
 
 <tr>
-<td style="font-weight: bold;"> Operating System </td>
-<td> </td>
+<td style="font-weight: bold; background-color: #F8F8F8;" rowspan="2"> Operating System </td>
 </tr>
 
 <tr>
@@ -145,34 +144,85 @@ Refer to [Install &amp; Configure Your Clouds](/cloudos/install/) for a complete
 </tr>
 
 <tr>
-<td style="font-weight: bold;"> Database </td>
-<td> </td>
+<td style="font-weight: bold; background-color: #F8F8F8;" rowspan="2"> Database </td>
 </tr>
 
 <tr>
-<td style="margin-left: 40px;"> CouchDB </td>
+<td style="padding-left: 40px;"> CouchDB </td>
 <td> 1.2.0 </td>
 </tr>
 
 <tr>
-<td style="margin-left: 40px;"> PostgreSQL </td>
+<td style="padding-left: 40px;"> PostgreSQL </td>
 <td> 9.1.5 </td>
 </tr>
 
 <tr>
-<td style="font-weight: bold;"> Application Server </td>
-<td> </td>
+<td style="font-weight: bold; background-color: #F8F8F8;" rowspan="2"> Application Server </td>
 </tr>
 
 <tr>
-<td style="padding: 0px 0px 0px 40px;"> Apache httpd </td>
+<td style="padding-left: 40px;"> Apache httpd </td>
 <td> 2.3 and above </td>
 </tr>
 
 <tr>
-<td style="padding: 0px 0px 0px 40px;"> Tomcat </td>
+<td style="padding-left: 40px;"> Tomcat </td>
 <td> 7 </td>
 </tr>
+
+<tr>
+<td style="font-weight: bold; background-color: #F8F8F8;" rowspan="2"> Web Browser </td>
+</tr>
+
+<tr>
+<td style="padding-left: 40px;"> Internet Explorer </td>
+<td> 9 </td>
+</tr>
+
+<tr>
+<td style="padding-left: 40px;"> Firefox </td>
+<td> 17 </td>
+</tr>
+
+<tr>
+<td style="padding-left: 40px;"> Chrome </td>
+<td> 26 </td>
+</tr>
+
+<tr>
+<td style="font-weight: bold; background-color: #F8F8F8;" rowspan="2"> Kernel </td>
+</tr>
+
+<tr>
+<td style="padding-left: 40px;"> OpenStack release </td>
+<td> Grizzly 2013.1.4 </td>
+</tr>
+
+<tr>
+<td style="font-weight: bold; background-color: #F8F8F8;" rowspan="2"> OpenStack Components and Plugins </td>
+</tr>
+
+<tr>
+<td style="padding-left: 40px; font-weight: bold;"> Cinder </td>
+<td> Grizzly 2013.1.4 </td>
+</tr>
+
+<tr>
+<td style="padding-left: 60px;"> Cinder plugin LVM-iSCSI </td>
+<td> Grizzly 2013.1.4 </td>
+</tr>
+
+<tr>
+<td style="padding-left: 40px; font-weight: bold;"> Glance </td>
+<td> Grizzly 2013.1.4 </td>
+</tr>
+
+<tr>
+<td style="padding-left: 60px;"> Glance plugin Filesystem Persistence </td>
+<td> Grizzly 2013.1.4 </td>
+</tr>
+
 
 
 <tr>
