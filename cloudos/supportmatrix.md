@@ -35,14 +35,15 @@ Ubuntu Server 12.04 LTS installation media.
 ### Minimum Recommendations
 
 <table style="text-align: left; vertical-align: top; background-color: white; color: black;">
-<tr style="background-color: DarkGray; color: white;">
+
+<tr style="background-color: black; color: white;">
 <th>Node Type</th>
 <th>Virtual/Physical Node</th>
 <th>CPU Cores</th>
 <th>Memory</th>
 <th>Internal Storage</th>
 <th>NICs</th>
-<th> <nobr> OS (included as part of ISO) </nobr></th>
+<th> <nobr>  OS (included as part of ISO)  </nobr></th>
 </tr>
 
 <tr>
@@ -117,7 +118,8 @@ HP is actively developing additional deployment scenarios that may be supported 
 Refer to [Install &amp; Configure Your Clouds](/cloudos/install/) for a complete list of installation prerequisites and requirements, plus step-by-step instructions.
 
 <table style="text-align: left; vertical-align: top; background-color: white; color: black;">
-<tr style="background-color: DarkGray; color: white;">
+
+<tr style="background-color: black; color: white;">
 <th>HP Cloud OS Platforms</th>
 <th>Supported Versions</th>
 </tr>
@@ -127,20 +129,51 @@ Refer to [Install &amp; Configure Your Clouds](/cloudos/install/) for a complete
 <td> </td>
 </tr>
 
-<tr style="margin-left: 40px;">
+<tr style="padding-left: 40px;">
 <td style="font-weight: bold;">Operating System</td>
 <td> </td>
 </tr>
 
-<tr style="margin-left: 40px;">
+<tr style="padding-left:40px;">
 <td>Ubuntu Linux</td>
 <td>12.04 LTS (64-bit)</td>
 </tr>
 
-<tr style="margin-left: 40px;">
-<td> Java Developer Kit/Java Runtime Environment </td>
-<td> 1.7 </td>
+<tr style="padding-left: 40px;">
+<td>Java Developer Kit/Java Runtime Environment</td>
+<td>1.7</td>
 </tr>
+
+<tr style="padding-left: 40px;">
+<td style="font-weight: bold;">Database</td>
+<td> </td>
+</tr>
+
+<tr style="padding-left: 40px;">
+<td>CouchDB</td>
+<td>1.2.0</td>
+</tr>
+
+<tr style="padding-left: 40px;">
+<td>PostgreSQL</td>
+<td>9.1.5</td>
+</tr>
+
+<tr style="padding-left: 40px;">
+<td style="font-weight: bold;">Application Server</td>
+<td> </td>
+</tr>
+
+<tr style="padding-left: 40px;">
+<td>Apache httpd</td>
+<td>2.3 and above</td>
+</tr>
+
+<tr style="padding-left: 40px;">
+<td>Tomcat</td>
+<td>7</td>
+</tr>
+
 
 <tr>
 <td style="font-weight: bold;"> Cloud Providers </td>
