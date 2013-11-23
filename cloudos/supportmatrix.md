@@ -34,65 +34,65 @@ Ubuntu Server 12.04 LTS installation media.
 
 ### Minimum Recommendations
 
-<table style="width: 100%;">
+<table style="text-align: left; vertical-align: top; background-color: white; color: black;">
 <tr>
-<th style="background-color: green; color: white;">Node Type</th>
+<th>Node Type</th>
 <th>Virtual/Physical Node</th>
 <th>CPU Cores</th>
 <th>Memory</th>
 <th>Internal Storage</th>
 <th>NICs</th>
-<th style="width: 300px;">OS (included as part of ISO)</th>
+<th> <nobr> OS (included as part of ISO) </nobr></th>
 </tr>
 
 <tr>
-<td style="text-align: left; vertical-align: top; background-color: white; color: black;"> Admin Node </td>
-<td style="text-align: left; vertical-align: top; background-color: white; color: black;"> Virtual Only </td>
-<td style="text-align: left; vertical-align: top; background-color: white; color: black;"> 2 </td>
-<td style="text-align: left; vertical-align: top; background-color: white; color: black;"> 12 GB </td>
-<td style="text-align: left; vertical-align: top; background-color: white; color: black;"> 20 GB </td>
-<td style="text-align: left; vertical-align: top; background-color: white; color: black;"> 2 </td>
-<td style="text-align: left; vertical-align: top; background-color: white; color: black;"> Ubuntu Server 12.04 LTS (64-bit) </td>
+<td> Admin Node </td>
+<td> Virtual Only </td>
+<td> 2 </td>
+<td> 12 GB </td>
+<td> 20 GB </td>
+<td> 2 </td>
+<td> Ubuntu Server 12.04 LTS (64-bit) </td>
 </tr>
 
 <tr>
-<td style="text-align: left; vertical-align: top;"> Controller Node </td>
-<td style="text-align: left; vertical-align: top;"> Virtual and Physical </td>
-<td style="text-align: left; vertical-align: top;"> 4 </td>
-<td style="text-align: left; vertical-align: top;"> 32 GB </td>
-<td style="text-align: left; vertical-align: top;"> 60 GB </td>
-<td style="text-align: left; vertical-align: top;"> 1 * </td>
-<td style="text-align: left; vertical-align: top;"> Ubuntu Server 12.04 LTS (64-bit) </td>
+<td> Controller Node </td>
+<td> Virtual and Physical </td>
+<td> 4 </td>
+<td> 32 GB </td>
+<td> 60 GB </td>
+<td> 1 * </td>
+<td> Ubuntu Server 12.04 LTS (64-bit) </td>
 </tr>		
 
 <tr>
-<td style="text-align: left; vertical-align: top;"> Compute Node </td>
-<td style="text-align: left; vertical-align: top;"> Physical Only </td>
-<td style="text-align: left; vertical-align: top;"> 4 ** </td>
-<td style="text-align: left; vertical-align: top;"> 32 GB </td>
-<td style="text-align: left; vertical-align: top;"> 60 GB </td>
-<td style="text-align: left; vertical-align: top;"> 1 </td>
-<td style="text-align: left; vertical-align: top;"> Ubuntu Server running KVM hypervisor 12.04 LTS (64-bit) </td>
+<td> Compute Node </td>
+<td> Physical Only </td>
+<td> 4 ** </td>
+<td> 32 GB </td>
+<td> 60 GB </td>
+<td> 1 </td>
+<td> Ubuntu Server running KVM hypervisor 12.04 LTS (64-bit) </td>
 </tr>			
 
 <tr>
-<td style="text-align: left; vertical-align: top;"> Swift Proxy Node </td>
-<td style="text-align: left; vertical-align: top;"> Virtual and Physical </td>
-<td style="text-align: left; vertical-align: top;"> 8 </td>
-<td style="text-align: left; vertical-align: top;"> 12 GB </td>
-<td style="text-align: left; vertical-align: top;"> 20 GB </td>
-<td style="text-align: left; vertical-align: top;"> 3 </td>
-<td style="text-align: left; vertical-align: top;"> Ubuntu Server 12.04 LTS (64-bit) *** </td>
+<td> Swift Proxy Node </td>
+<td> Virtual and Physical </td>
+<td> 8 </td>
+<td> 12 GB </td>
+<td> 20 GB </td>
+<td> 3 </td>
+<td> Ubuntu Server 12.04 LTS (64-bit) *** </td>
 </tr>	   
 
 <tr>
-<td style="text-align: left; vertical-align: top;"> Storage Node </td>
-<td style="text-align: left; vertical-align: top;"> Virtual and Physical </td>
-<td style="text-align: left; vertical-align: top;"> 8 </td>
-<td style="text-align: left; vertical-align: top;"> 12 GB </td>
-<td style="text-align: left; vertical-align: top;"> 60 GB </td>
-<td style="text-align: left; vertical-align: top;"> 3 </td>
-<td style="text-align: left; vertical-align: top;"> Ubuntu Server 12.04 LTS (64-bit)\*\*\* </td>
+<td> Storage Node </td>
+<td> Virtual and Physical </td>
+<td> 8 </td>
+<td> 12 GB </td>
+<td> 60 GB </td>
+<td> 3 </td>
+<td> Ubuntu Server 12.04 LTS (64-bit) *** </td>
 </tr>	   
 
 </table>
