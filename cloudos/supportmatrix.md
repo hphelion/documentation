@@ -35,7 +35,7 @@ Ubuntu Server 12.04 LTS installation media.
 ### Minimum Recommendations
 
 <table style="text-align: left; vertical-align: top; background-color: white; color: black;">
-<tr>
+<tr background-color: DarkGray; color: white;>
 <th>Node Type</th>
 <th>Virtual/Physical Node</th>
 <th>CPU Cores</th>
@@ -117,7 +117,38 @@ HP is actively developing additional deployment scenarios that may be supported 
 Refer to [Install &amp; Configure Your Clouds](/cloudos/install/) for a complete list of installation prerequisites and requirements, 
 plus step-by-step instructions.
 
-( next table TBS... ) 
+<table style="text-align: left; vertical-align: top; background-color: white; color: black;">
+<tr background-color: DarkGray; color: white;>
+<th>HP Cloud OS Platforms</th>
+<th>Supported Versions</th>
+</tr>
+
+<tr>
+<td style="font-weight: bold;"> Admin and Controller Node </td>
+<td> </td>
+</tr>
+
+<tr>
+<td style="font-weight: bold; padding-left: 10px;"> Operating System </td>
+<td> </td>
+</tr>
+
+<tr style="padding-left: 10px;">
+<td> Ubuntu Linux </td>
+<td> 12.04 LTS (64-bit) </td>
+</tr>
+
+<tr style="padding-left: 10px;">
+<td> Java Developer Kit/Java Runtime Environment </td>
+<td> 1.7 </td>
+</tr>
+
+<tr>
+<td style="font-weight: bold;"> Cloud Providers </td>
+<td> HP Cloud </td>
+</tr>
+
+</table>
 
 
 
