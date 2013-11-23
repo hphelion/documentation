@@ -130,7 +130,7 @@ Refer to [Install &amp; Configure Your Clouds](/cloudos/install/) for a complete
 </tr>
 
 <tr>
-<td style="font-weight: bold; background-color: #F8F8F8;" rowspan="2"> Operating System </td>
+<td style="font-weight: bold; background-color: #F8F8F8;" colspan="2"> Operating System </td>
 </tr>
 
 <tr>
@@ -144,7 +144,7 @@ Refer to [Install &amp; Configure Your Clouds](/cloudos/install/) for a complete
 </tr>
 
 <tr>
-<td style="font-weight: bold; background-color: #F8F8F8;" rowspan="2"> Database </td>
+<td style="font-weight: bold; background-color: #F8F8F8;" colspan="2"> Database </td>
 </tr>
 
 <tr>
@@ -158,7 +158,7 @@ Refer to [Install &amp; Configure Your Clouds](/cloudos/install/) for a complete
 </tr>
 
 <tr>
-<td style="font-weight: bold; background-color: #F8F8F8;" rowspan="2"> Application Server </td>
+<td style="font-weight: bold; background-color: #F8F8F8;" colspan="2"> Application Server </td>
 </tr>
 
 <tr>
@@ -172,7 +172,7 @@ Refer to [Install &amp; Configure Your Clouds](/cloudos/install/) for a complete
 </tr>
 
 <tr>
-<td style="font-weight: bold; background-color: #F8F8F8;" rowspan="2"> Web Browser </td>
+<td style="font-weight: bold; background-color: #F8F8F8;" colspan="2"> Web Browser </td>
 </tr>
 
 <tr>
@@ -191,7 +191,7 @@ Refer to [Install &amp; Configure Your Clouds](/cloudos/install/) for a complete
 </tr>
 
 <tr>
-<td style="font-weight: bold; background-color: #F8F8F8;" rowspan="2"> Kernel </td>
+<td style="font-weight: bold; background-color: #F8F8F8;" colspan="2"> Kernel </td>
 </tr>
 
 <tr>
@@ -200,7 +200,7 @@ Refer to [Install &amp; Configure Your Clouds](/cloudos/install/) for a complete
 </tr>
 
 <tr>
-<td style="font-weight: bold; background-color: #F8F8F8;" rowspan="2"> OpenStack Components and Plugins </td>
+<td style="font-weight: bold; background-color: #F8F8F8;" colspan="2"> OpenStack Components and Plugins </td>
 </tr>
 
 <tr>
@@ -209,7 +209,7 @@ Refer to [Install &amp; Configure Your Clouds](/cloudos/install/) for a complete
 </tr>
 
 <tr>
-<td style="padding-left: 60px;"> Cinder plugin LVM-iSCSI </td>
+<td style="padding-left: 60px;"> Cinder plugin: LVM-iSCSI </td>
 <td> Grizzly 2013.1.4 </td>
 </tr>
 
@@ -219,11 +219,54 @@ Refer to [Install &amp; Configure Your Clouds](/cloudos/install/) for a complete
 </tr>
 
 <tr>
-<td style="padding-left: 60px;"> Glance plugin Filesystem Persistence </td>
+<td style="padding-left: 60px;"> Glance plugin: Filesystem Persistence </td>
 <td> Grizzly 2013.1.4 </td>
 </tr>
 
+<tr>
+<td style="padding-left: 40px; font-weight: bold;"> Keystone </td>
+<td> Grizzly 2013.1.4 </td>
+</tr>
 
+<tr>
+<td style="padding-left: 60px;"> Keystone plugin: Database Store </td>
+<td> Grizzly 2013.1.4 </td>
+</tr>
+
+<tr>
+<td style="padding-left: 40px; font-weight: bold;"> Nova </td>
+<td> Grizzly 2013.1.4 </td>
+</tr>
+
+<tr>
+<td style="padding-left: 60px;"> Nova plugin: KVM </td>
+<td> Grizzly 2013.1.4 </td>
+</tr>
+
+<tr>
+<td style="padding-left: 40px; font-weight: bold;"> Neutron </td>
+<td> Grizzly 2013.1.4 </td>
+</tr>
+
+<tr>
+<td style="padding-left: 60px;"> Neutron plugin: Open vSwitch </td>
+<td> Grizzly 2013.1.4 </td>
+</tr>
+
+<tr>
+<td style="padding-left: 40px; font-weight: bold;"> Horizon </td>
+<td> Grizzly 2013.1.4 </td>
+</tr>
+
+<tr>
+<td style="padding-left: 60px;"> Python </td>
+<td> 2.6, 2.7 </td>
+</tr>
+
+<tr>
+<td style="padding-left: 40px; font-weight: bold;"> Swift </td>
+<td> Grizzly 2013.1.4 </td>
+</tr>
 
 <tr>
 <td style="font-weight: bold;"> Cloud Providers </td>
