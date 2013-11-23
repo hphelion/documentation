@@ -4,7 +4,7 @@ title: "HP Cloud Release Notes"
 permalink: /release-notes/
 
 ---
-# HP Public Cloud Release Notes
+# HP Public Cloud Release Notes #
 
 You know the problem:  you see the phrase "release notes" and you immediately think "boring bug list."  But, you're in luck!  This page--the release notes for the HP Public Cloud software--<i>does</i> contain a list of bugs, but HP has worked hard to make it easier for you to navigate and locate the information you're looking for.  HP has also included information about the new features for each release, links to the most current release, and a few other items here and there that we hope will be helpful for you.   
 
