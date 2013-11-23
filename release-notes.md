@@ -11,21 +11,14 @@ You know the problem:  you see the phrase "release notes" and you immediately th
 This page contains the following information on our software package:
 
 * [Release information for version 13.5](#v135Info)
+* [New features in version 13.5](#v135features)
+* [Known issues and limitation in version 13.5](#v135issues)
 * [For further information](#SeeAlso)
 
 <!--Moving forward, there will be more bulleted items for each release-->
 
-##Information for version 13.5## {#v135Info}
 
-This section includes the following information for version 13.5 of the HP Public Cloud services software:
-
-* [New features in version 13.5](#v135features)
-* [Known issues in version 13.5](#v135issues)
-
-<!--* [Resolved issues in version 13.5](#v135resolved)-->
-
-
-###New Features in Version 13.5### {#v135features}
+##New features in version 13.5## {#v135features}
 
 The following are new features in version 13.5 of the HP Public Cloud software:
 
@@ -50,55 +43,38 @@ The following are new features in version 13.5 of the HP Public Cloud software:
 As a domain admin, you can manage each user's projects, roles, and groups.
 You can manage the membership of each group, and manage the user assignment within each role. 
 
- **User roles** (New italicized)
+**User roles** (New roles *italicized*)
 
-Block Storage Admin
- 
-CDN Admin
- 
-Compute Admin
+* Block Storage Admin
+* CDN Admin
+* Compute Admin
+* *Compute Network Admin*
+* *Compute Project Manager*
+* DNS Admin
+* *Identity Domain Admin* – Super User of the Domain; manage project role assignments including domain roles
+* *Identity Domain User* – Normal Domain User
+* Image Management Admin
+* Load Balancing Admin
+* Messaging Admin
+* Monitoring Admin
+* MySQL Admin
+* Network Admin
+* Object Storage Admin
 
- <i>Compute Network Admin</i>
 
- <i>Compute Project Manager</i>
-
- DNS Admin
-
- <i>Identity Domain Admin – Super User of the Domain; manage project role assignments including domain roles</i>
-
- <i>Identity Domain User – Normal Domain User</i>
-
- Image Management Admin
-
- Load Balancing Admin
-
- Messaging Admin
-
- Monitoring Admin
-
- MySQL Admin
-
- Network Admin
-
- Object Storage Admin
-
-###Known issues in version 13.5### {#v135issues}
+##Known issues and limitations in version 13.5## {#v135issues}
 
 The following are known issues and limitations for version 13.5 of the HP Public Cloud software:
 
-* "Classic" management console still required - Because the HP Public Cloud Console is a Horizon Preview Edition, you still need to manage your service account information through the classic console.  Specifically, you will need to use the classic console for:
-
-1. Changing/updating credit card information.
-
-2. Managing account details and billing information.
-
-3. Creating/accessing Support Cases.
-
-Navigating back to the classic management console requires you to re-login to the HP Public Cloud Horizon Preview console if you do not currently have an open session.
-
+* ["Classic" management console](/mc/) still required - Because the HP Public Cloud Console is a Horizon Preview Edition, you must manage your service account information through the classic console.  Specifically, you need to use the classic console for:
+    1. Changing/updating credit card information.
+    2. Managing account details and billing information.
+    3. Creating/accessing Support Cases.<br>
+    Navigating back to the classic management console requires you to re-login to the HP Public Cloud Horizon Preview console if you do not currently have an open session.
+    
 * Latest OpenStack Version supported - The new Horizon-based console is based on the OpenStack Icehouse release.  If you need to manage services that are built from pre-Havana OpenStack instances, you cannot take advantage of the preview edition of the new HP Public Cloud Console built on Horizon software. 
 
-* If attempting to simultaneously launch a larger number of instances, some instances may go into an error state. HP recommends staggering your launch of multiple instances to batches of 30-40 at a time for best performance.
+* If you attempt to simultaneously launch a large number of instances, some instances may go into an error state. HP recommends staggering your launch of multiple instances to batches of 30-40 at a time for best performance.
 
 * When passing through a router to move off your local network, your throughput speed is limited to approximately 1500 megabits per second.
 
@@ -108,7 +84,6 @@ Navigating back to the classic management console requires you to re-login to th
 
 * Snapshot support for a virtual machine (VM) booted from a block volume is not yet available.<br>
     *Workaround*: Shut down the virtual machine (VM), then delete the VM and wait until the volume is marked as "available." Take a snapshot of the volume using, for instance, the python cinder binding. Once the snapshot is complete, re-create the VM from the volume, and re-attach the original floating IP if necessary. **Note**: The port/fixed-IP associated to the new VM may be different from the original one.
-
 * Identity Service - Currently, role-based access control (RBAC) is not implemented at the panel level, so you may be presented with actions and services options you do not have permission to invoke. The error messages reported for limitations on user role permissions will be improved while development changes are adopted.
 
 * Relational Database MySQL service - The Relational Database MySQL service provides core functionality, but as HP Public Cloud aligns with the latest Trove client, DBaaS support will be updated and upgraded accordingly.
@@ -125,7 +100,7 @@ Navigating back to the classic management console requires you to re-login to th
     *Workaround*: Connect using other clients such as `ssh`, `putty`, or RDP.
 	
 * You cannot boot an xsmall VM from a VM snapshot of a larger flavor. <br>
-	* Because all flavors larger than xsmall require a root disk size of 30GB, you cannot use a larger flavor to create an xsmall VM instance.
+    - Because all flavors larger than xsmall require a root disk size of 30GB, you cannot use a larger flavor to create an xsmall VM instance.
 	
 * VMs are not able to resolve their own names.
 
@@ -134,8 +109,8 @@ Navigating back to the classic management console requires you to re-login to th
 		* Error: Instance type's disk is too small for requested image. (HTTP 400) (Request-ID: req-b006ef19-f20d-4e76-ac98-c64d27368518)
 	* Windows instances do not fit into the 10GB root disk used for xsmall instances. All other flavors have a 30GB root disk, which does accommodate Windows instances.
 
-* Windows VM does not cleanly detach from the instance.
-	* Workaround*: First, take the disk offline within the Windows VM. Then, detach the VM.
+* Windows VM does not cleanly detach from the instance.<br>
+    *Workaround*: First, take the disk offline within the Windows VM. Then, detach the VM.
 
 * The command "nova image-meta" does not change the "image name". Instead, it adds a new attribute called "name" to the metadata. If you want to change the name of a VM snapshot (private image), use Glance. Please refer to the following [API](http://api.openstack.org/api-ref-compute.html) documentation from Openstack.
 
@@ -147,42 +122,43 @@ Navigating back to the classic management console requires you to re-login to th
 
 * VMs with invalid file injections paths are not created.
 
-* In rare cases, a VM might be created with two fixed IPs rather than one. Please, delete the VM and try again. 
+* In rare cases, a VM might be created with two rather than a single fixed IP. 
+    *Workaround*: Delete and recreate the VM. 
 
-* Cannot have a VM with 2TB root partition. 
+* The root partition on a VM is limited to 2TB You cannot have a VM with 2TB root partition. 
 
-* Contact customer support if you can no longer ssh into your VM.
+* `ssh` access to your VM may unexpectedly cease functioning.
+    *Workaround*: Contact customer support.
 
 * In rare cases, you might not be able to see the private IP in the networks section of a Windows instance. Use the VNC console to see the private IP for the Windows instance.
 
-* The Reset-Password feature of the Windows CLI does not work. 
+* In the Windows CLI, the reset password feature is not currently available. 
 
-* Windows CLI might not display the server ID in the attached volume column. 
+* In the Windows CLI, the server ID in the attached volume column sometimes does not display. 
 
 * The Windows CLI cannot upload files of 20MB or more. 
 	* Workaround: Use the Openstacks CLIs or the management console to upload large files.
 	
-*  Accessing VNC console as soon as the VM gets active might cause the Windows VM to hang. Also, the console log would be empty. 
+*  Accessing VNC console as soon as the VM gets active might cause the Windows VM to stop responding, and display an empty console log.
+* If you do not clean up excess ports, you might not be able to start all the VMs. <br>
+    *Workaround*: Use neutron port-list, and remove all ports that are not the dhcp or router port. There should be two ports in addition to those used for existing VMs. The neutron port-show <port-id> command indicates the port usage. 
 
-* If you do not clean up excess ports, you might not be able to start all the VMs. 
-	* Workaround: Use neutron port-list, and remove all ports that are not the dhcp or router port. There should be two ports in addition to those used for existing VMs. The neutron port-show <port-id> command indicates the port usage. 
-
- * We recommend that you use the Neutron interface for any quota checks.
+* We recommend that you use the Neutron interface for any quota checks.
  
- * A 5xlarge instance will take a longer time to reach the active state.
+* A 5xlarge instance will take a longer time to reach the active state.
  
- * The Ext-Gateway field might not be populated in the CLI. 
-	* Workaround: You can confirm the status via the management console. 
+* The Ext-Gateway field might not be populated in the CLI. <br>
+    *Workaround*: You can confirm the status via the management console. 
 	
-*  Windows CLI: If the Flavors Details section is blank, use the management console to get the information.
+* When using the windows CLI, if the Flavors Details section is blank, retrieve the information using the [management console](/mc/).
 
-* Windows CLI : Network Information is not getting displayed in the Assigned Network Addresses section.
-	*Workaround: Use the horizon console to find the network address.
+* When using the windows CLI, the network information is not displayed in the Assigned Network Addresses section.<br>
+    *Workaround*: Use the horizon console to find the network address.
 	
-* Windows CLI: You cannot download a file larger than 700MB.
-	*Workaround: Use another CLI or the management console to download a file that is larger than 700MB.
+* When using the Windows CLI, you cannot download a file larger than 700MB.<br>
+    *Workaround*: Use another CLI or the [management console](/mc/) to download a file that is larger than 700MB.
 	
-* We no longer support the EUCA API.
+* The EUCA API is not supported in this release.
 
 <!--##Resolved Issues in Version 13.5## {#v135resolved}
 
@@ -206,5 +182,5 @@ The following are resolved issues in version 13.5 of the HP Public Cloud softwar
 While these release notes contain information information for the software package as a whole, we also provide you with release notes for individual products and services:
 
 * [Ruby Fog Bindings](/bindings/fog/release-notes/)
-* [UNIX command-line interface (CLI)](/cli/unix/2/release-notes/)
-* [Windows PowerShell CLI](/cli/windows/2/release-notes/)
+* [UNIX command-line interface (CLI)](/cli/unix/release-notes/)
+* [Windows PowerShell CLI](/cli/windows/release-notes/)
