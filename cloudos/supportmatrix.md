@@ -34,25 +34,25 @@ Ubuntu Server 12.04 LTS installation media.
 
 ### Minimum Recommendations
 
-<table>
+<table style="width: 100%;">
 <tr>
-<th>Node Type</th>
+<th style="background-color: green; color: white;">Node Type</th>
 <th>Virtual/Physical Node</th>
-<th>CPU CoresM</th>
+<th>CPU Cores</th>
 <th>Memory</th>
 <th>Internal Storage</th>
 <th>NICs</th>
-<th>OS (included as part of ISO)</th>
+<th style="width: 300px;">OS (included as part of ISO)</th>
 </tr>
 
 <tr>
-<td style="text-align: left; vertical-align: top;"> Admin Node </td>
-<td style="text-align: left; vertical-align: top;"> Virtual Only </td>
-<td style="text-align: left; vertical-align: top;"> 2 </td>
-<td style="text-align: left; vertical-align: top;"> 12 GB </td>
-<td style="text-align: left; vertical-align: top;"> 20 GB </td>
-<td style="text-align: left; vertical-align: top;"> 2 </td>
-<td style="text-align: left; vertical-align: top; width:33%"> Ubuntu Server 12.04 LTS (64-bit) </td>
+<td style="text-align: left; vertical-align: top; background-color: white; color: black;"> Admin Node </td>
+<td style="text-align: left; vertical-align: top; background-color: white; color: black;"> Virtual Only </td>
+<td style="text-align: left; vertical-align: top; background-color: white; color: black;"> 2 </td>
+<td style="text-align: left; vertical-align: top; background-color: white; color: black;"> 12 GB </td>
+<td style="text-align: left; vertical-align: top; background-color: white; color: black;"> 20 GB </td>
+<td style="text-align: left; vertical-align: top; background-color: white; color: black;"> 2 </td>
+<td style="text-align: left; vertical-align: top; background-color: white; color: black;"> Ubuntu Server 12.04 LTS (64-bit) </td>
 </tr>
 
 <tr>
