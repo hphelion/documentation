@@ -2,7 +2,7 @@
 layout: default
 title: "HP Cloud Console Getting Started"
 permalink: hpcloudconsole
-product: hz-Getting Started
+product: HP Cloud Console
 
 ---
 
@@ -246,7 +246,7 @@ A volume is a block storage device you attach to an instance.
 While this document does not cover creating snapshots, click "Images and Snapshots" in the left-hand bar to view available server and volume images and their details. For more details, click the image name on the "Images" page. Images listed under "Public" are available to anyone. "Project" images are for your specific project only.
 
 ###Access and Security### {#Accessandsecurity}
-Security groups and security group rules allow you to specify the type of traffic and direction (inbound/outbound) that is allowed to pass through a project's network port(s). When you create a project in HP Public Cloud, you must also create security group rules to define access types through its ports, designating security group members depending on their job functions and access needs. 
+Security groups and security group rules allow you to specify the type of traffic and direction (inbound/outbound) that are allowed to pass through a project's network port(s). When you create a project in HP Public Cloud, you must also create security group rules to define access types through its ports, designating security group members depending on their job functions and access needs. 
 
 When a port is created in HP Cloud Networking it is associated, unless you specify otherwise, with a default security group that allows inbound traffic from the same subnet and all outbound traffic. You can add security group rules to the default security group to modify access or create a new security group to contain the rules you need.
 
@@ -258,12 +258,12 @@ Security group rules have three parts:
 
 3.  Remote: For this rule, you must specify the source of allowed traffic in either the form of an IP address block (CIDR) or through a security group. 
 
-####Default Security Group Rules####
-1. Click "Access & Security" in the left-hand bar under "Project" and "Manage Compute" to begin.
+####Default security group####
+1. Click "Access & Security" in the left-hand bar under "Manage Compute" and "Project" to begin.
 
 <img src="media/Accesssecurity1.png" width="580" alt="" />
 
-2. A default security group is already set up. To display the default rules, click the "Edit Rules" button next to "default" on the "Security Groups" page. The default security group rules have "Ether Types" IPv4 and IPv6 set up for "Ingress" (Incoming) and "Egress" (Outbound) directions. **It may be easiest to add any new security group rules to the default so you do not have to recreate ingress and egress directions.** 
+2. A default security group is already set up. To display the default rules, click the "Edit Rules" button next to "default" on the "Security Groups" page. The default security group rules have "Ether Types" IPv4 and IPv6 set up for "Ingress" (Incoming) and "Egress" (Outbound) directions. **Note**: It may be easiest to add any new security group rules to the default group so you do not have to recreate ingress and egress directions. 
 
 <img src="media/Accesssecuritydefaultsecuritygrouprulesimage2" width="580" alt="" />
 
@@ -271,34 +271,45 @@ Security group rules have three parts:
 
 <img src="media/Accesssecurityaddruletodefault" width="580" alt="" />
 
-4. In the "Add Rule" box, make selections for the rule as outlined below. Additional selections appear depending on your setup.
+4. In the "Add Rule" box, make selections for the rule as outlined below. Additional selections may pop up depending on your setup choices.
 
 <img src="media/Accesssecurityaddrulebox" width="580" alt="" />
 
-Click the "Rule" drop-down box and make a selection based on the function of your VM.
+5. Click the "Rule" drop-down box and make a selection based on the function of your VM.
 
-5. Select "Port" to open a single port, or "Port Range" to specify a range from the drop-down under "Open Port."  Enter the port number or start and end port numbers based on your selection. 
+6. Select "Port" to open a single port, or "Port Range" to specify a range from the drop-down under "Open Port."  Enter the port number or start and end port numbers based on your selection. 
 
-6. Select "CIDR" or "Security Group" from the drop-down under "Remote" to specify the source of the allowed traffic for the rule. If CIDR, enter an IP address block under "CIDR." If "Security Group," select the name from the drop-down box, then designate IPv4 or IPv6 under "Ether Type." If you do not already know you are using IPv6, select IPv4. **Ask Steve - wouldn't any new rule need the user to specify the traffic source allowed for the rule, even with default settings for ingress and egress?**
+7. Select "CIDR" or "Security Group" from the drop-down under "Remote" to specify the source of the allowed traffic for the rule. If CIDR, enter an IP address block under "CIDR." If "Security Group," select the name from the drop-down box, then designate IPv4 or IPv6 under "Ether Type." If you do not already know you are using IPv6, select IPv4.
 
-7. Click "Add."
+8. Click "Add."
 
-8. To delete a rule from the default group, click "Access & Security in the left-hand bar, then click "Edit Rules" to the right of the default security group, which is what you did to add a rule.
+9. To delete a rule from the default group, click "Access & Security in the left-hand bar, then click "Edit Rules" to the right of the default security group, which is what you did to add a rule.
 
-9. Click "Delete Rule" next to the rule you want to get rid of.
+10. Click "Delete Rule" next to the rule you want to get rid of.
 
 <img src="media/Accesssecuritydeletedefaultgrouprule" width="580" alt="" />
 
 
-####Add To create new security group, click "+Create Security Group" in the upper right-hand navigation. If using the default security group, skip to Step 3.
+####New security group#### 
 
-<img src="" width="580" alt="" />
+1. Click "Access & Security" in the left-hand bar under "Manage Compute" and "Project" to begin.
 
-3. Enter a name and description, then click "Create Security Group."
+<img src="media/Accesssecurity1.png" width="580" alt="" />
 
-4. Click "Edit Rules" next to the security group you want to modify under "Actions" in the right-hand navigation to customize security group rules. 
+2. Click "+Create Security Group" in the upper right-hand navigation.
 
-<img src="media/Accesssecurity3.png" width="580" alt="" />
+<img src="media/ASCreatenewsecuritygroup.png" width="580" alt="" />
+
+3. Enter a name in ASCII-only characters and numbers, a description, then click "Create Security Group."
+
+4. Click "Edit Rules" next to the new security group under "Actions" in the right-hand navigation to add security group rules. 
+
+<img src="media/ASClickeditrules.png" width="580" alt="" />
+
+
+Click the "+Add Rule" button in the top-right navigation.
+
+<img src="media/Accesssecurityaddruletodefault" width="580" alt="" />
 
 7. Click the "Rule" drop-down box and make a selection based on the function of your VM.
 
@@ -308,9 +319,15 @@ Click the "Rule" drop-down box and make a selection based on the function of you
 
 10. Select "CIDR" or "Security Group" from the drop-down under "Remote" to specify the source of the allowed traffic for the rule. If CIDR, enter an IP address block under "CIDR." If "Security Group," select the name from the drop-down box, then designate IPv4 or IPv6 under "Ether Type." If you do not already know you are using IPv6, select IPv4. 
 
-11. Click "Add."
+11. Click "Add" and your new rule displays in the security group.
 
-12. Click "Access & Security" in the left-hand bar to see your security groups.
+<img src="media/ASNewruledisplay" width="580" alt="" />
+
+12. Click "Delete Rule" next to a rule you want to get rid of.
+
+13. Click "Access & Security" in the left-hand bar to display your security groups.
+
+<img src="media/ASSecurityGroupsdisplay" width="580" alt="" />
 
 ###Organize and manage HP Cloud Access## {#Identity}
 
