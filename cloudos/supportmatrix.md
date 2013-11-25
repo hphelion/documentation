@@ -6,6 +6,8 @@ product: cloudos
 
 ---
 
+<a name="_top"> </a>
+
 # HP Cloud OS Support Matrix for Hardware and Software
 
 This topic identifies the supported hardware and software for the current release of HP Cloud OS, including information needed to set up the 
@@ -125,7 +127,7 @@ Refer to [Install &amp; Configure Your Clouds](/cloudos/install/) for a complete
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td style="font-weight: bold;"> Admin and Controller Node </td>
+<td style="font-weight: bold; background-color: #F8F8F8;"> Admin and Controller Node </td>
 <td> </td>
 </tr>
 
@@ -336,11 +338,14 @@ Refer to [Install &amp; Configure Your Clouds](/cloudos/install/) for a complete
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td style="font-weight: bold;"> Cloud Providers </td>
+<td style="font-weight: bold; background-color: #F8F8F8;"> Cloud Providers </td>
 <td> HP Cloud </td>
 </tr>
 
 </table>
+
+<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
 
 
 
