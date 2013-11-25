@@ -127,8 +127,7 @@ Refer to [Install &amp; Configure Your Clouds](/cloudos/install/) for a complete
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td style="font-weight: bold; background-color: #F8F8F8;"> Admin and Controller Node </td>
-<td> </td>
+<td style="font-weight: bold; background-color: #F8F8F8;" colspan="2"> Admin and Controller Node </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -141,7 +140,7 @@ Refer to [Install &amp; Configure Your Clouds](/cloudos/install/) for a complete
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td style="padding-left: 40px;"> Java Developer Kit/Java Runtime Environment </td>
+<td style="padding-left: 40px;"> <nobr> Java Developer Kit / Java Runtime Environment </nobr> </td>
 <td> 1.7 </td>
 </tr>
 
