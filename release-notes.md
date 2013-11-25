@@ -88,13 +88,14 @@ The following are known issues and limitations for version 13.5 of the HP Public
 
 * Jclouds is supported for Keystone version 2 API and earlier only.
 
-* You cannot boot an xsmall VM from a VM snapshot of a larger flavor. <br>
-    - Because all flavors larger than xsmall require a root disk size of 30GB, you cannot use a larger flavor to create an xsmall VM instance.
+* You cannot boot an xsmall VM from a VM snapshot of a larger flavor. 
+
+* Because all flavors larger than xsmall require a root disk size of 30GB, you cannot use a larger flavor to create an xsmall VM instance.
 	
 * VMs are not able to resolve their own names.
 
 * Windows instances require flavors larger than xsmall; the instance will fail to schedule using an xsmall instance.  The system displays the following message:<br>
-      Error: Instance type's disk is too small for requested image. (HTTP 400) (Request-ID: req-b006ef19-f20d-4e76-ac98-c64d27368518)
+      `Error: Instance type's disk is too small for requested image. (HTTP 400) (Request-ID: req-b006ef19-f20d-4e76-ac98-c64d27368518)`
       
 * Windows instances do not fit into the 10GB root disk used for xsmall instances. All other flavors have a 30GB root disk, which does accommodate Windows instances.
 
@@ -129,7 +130,7 @@ The following are known issues and limitations for version 13.5 of the HP Public
 * Snapshot support for a virtual machine (VM) booted from a block volume is not yet available.<br>
     *Workaround*: Shut down the virtual machine (VM), then delete the VM and wait until the volume is marked as `available`. Take a snapshot of the volume using, for instance, the python cinder binding. Once the snapshot is complete, re-create the VM from the volume, and re-attach the original floating IP if necessary. **Note**: The port/fixed-IP associated to the new VM may be different from the original one.
     
-* In rare cases, after successfully launching an instance `SSH` may not function. <br>
+* In rare cases, after successfully launching an instance `ssh` may not function. <br>
     *Workaround*: Reboot the instance.
 
 * Windows instances with attached volumes in US East are not accessible directly or via `ssh`. <br>
@@ -171,6 +172,8 @@ The following are resolved issues in version 13.5 of the HP Public Cloud softwar
 -->
 
 ##For further information## {#SeeAlso}
+
+For additional related information on HP Cloud:
 
 * See [Getting Started with HP Public Cloud Console] (http:docs.hpcloud.com/hpcloudconsole) for detailed console information.
 * See [HP Cloud version 13.5 overview](/version-overview/) for an overview of the 13.5 release set.
