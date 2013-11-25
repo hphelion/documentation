@@ -5,7 +5,7 @@ permalink: /migration-details-reference/
 
 ---
 
-# HP Cloud version 12.12 to 13.5: Assisted Data Transition Guide
+# HP Cloud version 12.12 to 13.5: Assisted Data Transition Guide #
 
 If you need assistance transitioning your data from HP Cloud version 12.12 to 13.5, this page provides you with detailed information about the tasks you need to complete before the data transition. Review this document and [contact support](#ContactingSupport) with any questions.
 
