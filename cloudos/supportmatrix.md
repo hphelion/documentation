@@ -332,7 +332,7 @@ Refer to [Install &amp; Configure Your Clouds](/cloudos/install/) for a complete
 
 <tr style="background-color: white; color: black;">
 <td style="padding-left: 40px;"> KVM <br/> QEMU <br/> ESXi (Admin node only) </td>
-<td> Ubuntu 12.04 LTS (64-bit) <br/> Ubuntu 12.04 LTS (64-bit)
+<td> <nobr> Ubuntu 12.04 LTS (64-bit) </nobr> <br/> Ubuntu 12.04 LTS (64-bit)
  </td>
 </tr>
 
