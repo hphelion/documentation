@@ -248,7 +248,7 @@ You can easily fix this by logging into your instance and re-enabling the Remote
 
     b. In the Actions column, click More -> Console for your  transitioned instance. 
 
-    <img src="media/images-rdp-mc-console.png" width="580" alt="" />
+    <img src="media/images-rdp-mc-console.PNG" width="580" alt="" />
     
     **Using the Nova CLI:**
 
@@ -281,7 +281,7 @@ You can easily fix this by logging into your instance and re-enabling the Remote
 
     c. In the Inbound Rules pane, right-click the `Remote Desktop (TCP-in)` entry, and select `Enable`.
 
-    <img src="media/images-rdp-tcp-in2.png" width="580" alt="" />
+    <img src="media/images-rdp-tcp-in.PNG" width="580" alt="" />
 
     **For Windows Server 2008 R1 SP2 x86 and x64**
 
