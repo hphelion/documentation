@@ -93,8 +93,8 @@ The following are known issues and limitations for version 13.5 of the HP Public
 	
 * VMs are not able to resolve their own names.
 
-* Windows instances require flavors larger than xsmall; the instance will fail to schedule using an xsmall instance.  The system displays the following message:
-      `Error: Instance type's disk is too small for requested image. (HTTP 400) (Request-ID: req-b006ef19-f20d-4e76-ac98-c64d27368518)`
+* Windows instances require flavors larger than xsmall; the instance will fail to schedule using an xsmall instance.  The system displays the following message:<br>
+      Error: Instance type's disk is too small for requested image. (HTTP 400) (Request-ID: req-b006ef19-f20d-4e76-ac98-c64d27368518)
       
 * Windows instances do not fit into the 10GB root disk used for xsmall instances. All other flavors have a 30GB root disk, which does accommodate Windows instances.
 
@@ -141,10 +141,10 @@ The following are known issues and limitations for version 13.5 of the HP Public
 * Windows VM does not cleanly detach from the instance.<br>
     *Workaround*: First, take the disk offline within the Windows VM. Then, detach the VM.
 
-* In rare cases, a VM might be created with two rather than a single fixed IP. 
+* In rare cases, a VM might be created with two rather than a single fixed IP. <br>
     *Workaround*: Delete and recreate the VM. 
 
-* `ssh` access to your VM may unexpectedly cease functioning.
+* `ssh` access to your VM may unexpectedly cease functioning.<br>
     *Workaround*: Contact customer support.
 
 * The Windows CLI cannot upload files of 20MB or more. <br>
@@ -172,7 +172,7 @@ The following are resolved issues in version 13.5 of the HP Public Cloud softwar
 
 ##For further information## {#SeeAlso}
 
-*See [Getting Started with HP Public Cloud Console] (http:docs.hpcloud.com/hpcloudconsole) for detailed console information.
+* See [Getting Started with HP Public Cloud Console] (http:docs.hpcloud.com/hpcloudconsole) for detailed console information.
 * See [HP Cloud version 13.5 overview](/version-overview/) for an overview of the 13.5 release set.
 * See [HP Cloud Service APIs] (v13.5)](/api/v13/) for an overview of the 13.5 API specifications.
 * See [migration overview page](/migration-overview/) for information on migrating from version 12.12 to 13.5n.
