@@ -34,7 +34,7 @@ Ubuntu Server 12.04 LTS installation media.
 
 ### Minimum Recommendations
 
-<table style="text-align: left; vertical-align: top; background-color: white; color: black;">
+<table style="text-align: left; vertical-align: top;">
 
 <tr style="background-color: #1796D3;">
 <th>Node Type</th>
@@ -46,7 +46,7 @@ Ubuntu Server 12.04 LTS installation media.
 <th> <nobr>  OS (included as part of ISO)  </nobr></th>
 </tr>
 
-<tr>
+<tr style="background-color: white; color: black;">
 <td> Admin Node </td>
 <td> Virtual Only </td>
 <td> 2 </td>
@@ -56,7 +56,7 @@ Ubuntu Server 12.04 LTS installation media.
 <td> Ubuntu Server 12.04 LTS (64-bit) </td>
 </tr>
 
-<tr>
+<tr style="background-color: white; color: black;">
 <td> Controller Node </td>
 <td> Virtual and Physical </td>
 <td> 4 </td>
@@ -66,7 +66,7 @@ Ubuntu Server 12.04 LTS installation media.
 <td> Ubuntu Server 12.04 LTS (64-bit) </td>
 </tr>		
 
-<tr>
+<tr style="background-color: white; color: black;">
 <td> Compute Node </td>
 <td> Physical Only </td>
 <td> 4 ** </td>
@@ -76,7 +76,7 @@ Ubuntu Server 12.04 LTS installation media.
 <td> Ubuntu Server running KVM hypervisor 12.04 LTS (64-bit) </td>
 </tr>			
 
-<tr>
+<tr style="background-color: white; color: black;">
 <td> Swift Proxy Node </td>
 <td> Virtual and Physical </td>
 <td> 8 </td>
@@ -86,7 +86,7 @@ Ubuntu Server 12.04 LTS installation media.
 <td> Ubuntu Server 12.04 LTS (64-bit) *** </td>
 </tr>	   
 
-<tr>
+<tr style="background-color: white; color: black;">
 <td> Storage Node </td>
 <td> Virtual and Physical </td>
 <td> 8 </td>
@@ -117,158 +117,225 @@ HP is actively developing additional deployment scenarios that may be supported 
 
 Refer to [Install &amp; Configure Your Clouds](/cloudos/install/) for a complete list of installation prerequisites and requirements, plus step-by-step instructions.
 
-<table style="text-align: left; vertical-align: top; background-color: white; color: black;">
+<table style="text-align: left; vertical-align: top;">
 
 <tr style="background-color: #1796D3;">
 <th> HP Cloud OS Platforms </th>
 <th> Supported Versions </th>
 </tr>
 
-<tr>
+<tr style="background-color: white; color: black;">
 <td style="font-weight: bold;"> Admin and Controller Node </td>
 <td> </td>
 </tr>
 
-<tr>
+<tr style="background-color: white; color: black;">
 <td style="font-weight: bold; background-color: #F8F8F8;" colspan="2"> Operating System </td>
 </tr>
 
-<tr>
+<tr style="background-color: white; color: black;">
 <td  style="padding-left: 40px;"> Ubuntu Linux </td>
 <td> 12.04 LTS (64-bit) </td>
 </tr>
 
-<tr>
+<tr style="background-color: white; color: black;">
 <td style="padding-left: 40px;"> Java Developer Kit/Java Runtime Environment </td>
 <td> 1.7 </td>
 </tr>
 
-<tr>
+<tr style="background-color: white; color: black;">
 <td style="font-weight: bold; background-color: #F8F8F8;" colspan="2"> Database </td>
 </tr>
 
-<tr>
+<tr style="background-color: white; color: black;">
 <td style="padding-left: 40px;"> CouchDB </td>
 <td> 1.2.0 </td>
 </tr>
 
-<tr>
+<tr style="background-color: white; color: black;">
 <td style="padding-left: 40px;"> PostgreSQL </td>
 <td> 9.1.5 </td>
 </tr>
 
-<tr>
+<tr style="background-color: white; color: black;">
 <td style="font-weight: bold; background-color: #F8F8F8;" colspan="2"> Application Server </td>
 </tr>
 
-<tr>
+<tr style="background-color: white; color: black;">
 <td style="padding-left: 40px;"> Apache httpd </td>
 <td> 2.3 and above </td>
 </tr>
 
-<tr>
+<tr style="background-color: white; color: black;">
 <td style="padding-left: 40px;"> Tomcat </td>
 <td> 7 </td>
 </tr>
 
-<tr>
+<tr style="background-color: white; color: black;">
 <td style="font-weight: bold; background-color: #F8F8F8;" colspan="2"> Web Browser </td>
 </tr>
 
-<tr>
+<tr style="background-color: white; color: black;">
 <td style="padding-left: 40px;"> Internet Explorer </td>
 <td> 9 </td>
 </tr>
 
-<tr>
+<tr style="background-color: white; color: black;">
 <td style="padding-left: 40px;"> Firefox </td>
 <td> 17 </td>
 </tr>
 
-<tr>
+<tr style="background-color: white; color: black;">
 <td style="padding-left: 40px;"> Chrome </td>
 <td> 26 </td>
 </tr>
 
-<tr>
+<tr style="background-color: white; color: black;">
 <td style="font-weight: bold; background-color: #F8F8F8;" colspan="2"> Kernel </td>
 </tr>
 
-<tr>
+<tr style="background-color: white; color: black;">
 <td style="padding-left: 40px;"> OpenStack release </td>
 <td> Grizzly 2013.1.4 </td>
 </tr>
 
-<tr>
+<tr style="background-color: white; color: black;">
 <td style="font-weight: bold; background-color: #F8F8F8;" colspan="2"> OpenStack Components and Plugins </td>
 </tr>
 
-<tr>
+<tr style="background-color: white; color: black;">
 <td style="padding-left: 40px; font-weight: bold;"> Cinder </td>
 <td> Grizzly 2013.1.4 </td>
 </tr>
 
-<tr>
+<tr style="background-color: white; color: black;">
 <td style="padding-left: 60px;"> Cinder plugin: LVM-iSCSI </td>
 <td> Grizzly 2013.1.4 </td>
 </tr>
 
-<tr>
+<tr style="background-color: white; color: black;">
 <td style="padding-left: 40px; font-weight: bold;"> Glance </td>
 <td> Grizzly 2013.1.4 </td>
 </tr>
 
-<tr>
+<tr style="background-color: white; color: black;">
 <td style="padding-left: 60px;"> Glance plugin: Filesystem Persistence </td>
 <td> Grizzly 2013.1.4 </td>
 </tr>
 
-<tr>
+<tr style="background-color: white; color: black;">
 <td style="padding-left: 40px; font-weight: bold;"> Keystone </td>
 <td> Grizzly 2013.1.4 </td>
 </tr>
 
-<tr>
+<tr style="background-color: white; color: black;">
 <td style="padding-left: 60px;"> Keystone plugin: Database Store </td>
 <td> Grizzly 2013.1.4 </td>
 </tr>
 
-<tr>
+<tr style="background-color: white; color: black;">
 <td style="padding-left: 40px; font-weight: bold;"> Nova </td>
 <td> Grizzly 2013.1.4 </td>
 </tr>
 
-<tr>
+<tr style="background-color: white; color: black;">
 <td style="padding-left: 60px;"> Nova plugin: KVM </td>
 <td> Grizzly 2013.1.4 </td>
 </tr>
 
-<tr>
+<tr style="background-color: white; color: black;">
 <td style="padding-left: 40px; font-weight: bold;"> Neutron </td>
 <td> Grizzly 2013.1.4 </td>
 </tr>
 
-<tr>
+<tr style="background-color: white; color: black;">
 <td style="padding-left: 60px;"> Neutron plugin: Open vSwitch </td>
 <td> Grizzly 2013.1.4 </td>
 </tr>
 
-<tr>
+<tr style="background-color: white; color: black;">
 <td style="padding-left: 40px; font-weight: bold;"> Horizon </td>
 <td> Grizzly 2013.1.4 </td>
 </tr>
 
-<tr>
+<tr style="background-color: white; color: black;">
 <td style="padding-left: 60px;"> Python </td>
 <td> 2.6, 2.7 </td>
 </tr>
 
-<tr>
+<tr style="background-color: white; color: black;">
 <td style="padding-left: 40px; font-weight: bold;"> Swift </td>
 <td> Grizzly 2013.1.4 </td>
 </tr>
 
-<tr>
+<tr style="background-color: white; color: black;">
+<td style="font-weight: bold; background-color: #F8F8F8;" colspan="2"> Base </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td style="padding-left: 40px; font-weight: bold;"> Graffiti </td>
+<td> HP Cloud OS 1.20 </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td style="padding-left: 40px; font-weight: bold;"> Eve </td>
+<td> HP Cloud OS 1.20 </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td style="padding-left: 60px;"> Plug-in: CouchDB 1.2.0 Persistence <br /> Plug-in: MongoDB 2.2 Persistence </td>
+<td> HP Cloud OS 1.20 </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td style="padding-left: 40px; font-weight: bold;"> Focus </td>
+<td> HP Cloud OS 1.20 </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td style="padding-left: 60px;"> Plug-in: FileSystem Persistence </td>
+<td> HP Cloud OS 1.20 </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td style="padding-left: 40px; font-weight:bold;"> Skyline </td>
+<td> HP Cloud OS 1.20 </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td style="font-weight: bold; background-color: #F8F8F8;" colspan="2"> Deployment </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td style="padding-left: 40px;"> Cosmos </td>
+<td> HP Cloud OS 1.20 </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td style="padding-left: 40px;"> Crowbar </td>
+<td> 1.4 </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td style="font-weight: bold; background-color: #F8F8F8;" colspan="2"> Message Queue </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td style="padding-left: 40px;"> RabbitMQ </td>
+<td> 2.7.1 and above </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td style="font-weight: bold; background-color: #F8F8F8;" colspan="2"> Supported Hypervisors for hosting Admin node </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td style="padding-left: 40px;"> KVM <br/> QEMU <br/> ESXi (Admin node only) </td>
+<td> Ubuntu 12.04 LTS (64-bit) <br/> Ubuntu 12.04 LTS (64-bit)
+ </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
 <td style="font-weight: bold;"> Cloud Providers </td>
 <td> HP Cloud </td>
 </tr>
