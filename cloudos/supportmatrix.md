@@ -25,7 +25,7 @@ hardware and software.
 
 ## Server Infrastructure
 
-For the performance and stability of the HP Cloud OS environment, it is very important to meet the minimum recommendations for memory, 
+For the performance and stability of your HP Cloud OS environment, it is important to meet the minimum recommendations for memory, 
 processors, and disk space for each of the components in the table below. 
 
 Before you install Cloud OS, please refer to the appropriate platform support matrix for each component product.
