@@ -4,15 +4,15 @@ title: "HP Cloud Version 12.12 to HP Cloud Version 13.5: Data Transition Guide"
 permalink: /migration-overview-reference/
 
 ---
-#HP Cloud Version 12.12 to HP Cloud Version 13.5: Data Transition Guide#
+#HP Cloud Compute Version 12.12 to HP Cloud Compute Version 13.5: Data Transition Guide#
 
-This page provides you with information to help you transition an HP Cloud version 12.12 instance to an HP Services 13.5 instance. 
+This page provides you with information to help you transition an HP Cloud Compute version 12.12 instance to an HP Cloud Compute version 13.5 instance. 
 
 In general, the process for transitioning to 13.5 involves creating a new 13.5 instance, configuring that instance, and copying any required data files to that new instance.  
 
-This overview outlines the tasks you will need to perform, based upon the operating system on your cloud client system (your local system) and the operating systems used by your cloud instance(s).
+This overview outlines the tasks you will need to perform, based upon the operating system on your local system and the operating systems used by your cloud instance(s).
 
-Before deciding which tool to use, make sure the tools are installed and configured on the client system and your instances, as required. 
+Before deciding which tool to use, make sure the tools are installed and configured on the local system and your instances, as required. 
 
 **Note**: Some of the links in this document contain information on using the Horizon-based HP Public Cloud Console to interact with your instances. HP Public Cloud Console is an alternative method for performing these tasks. The procedures in this document for using the classic management console are correct and should be followed at this time.
 
@@ -29,7 +29,7 @@ In order to transition version 12.12 to version 13.5, you will need to perform t
 
 3. [Configure security groups to use with the 13.5 instance](#securitygroup).
 
-4. [Create the HP Cloud version 13.5 instance](#createinstance).
+4. [Create the HP Cloud Compute version 13.5 instance](#createinstance).
 
 5. [Connect to the 13.5 instance from a local system](#connect).
 
@@ -37,7 +37,9 @@ In order to transition version 12.12 to version 13.5, you will need to perform t
 
 7. [Create and attach 13.5 block volumes to the 13.5 instance and copy data, as needed](#transdata).
 
-8. [Review further information](#furtherinfo).
+8. [Review information on ongoing HP Cloud UNIX CLI support](#CLIdeprecation)
+
+9. [Review further information](#furtherinfo).
 
 Within each of these general tasks, there are procedures for different operating systems and software tools.
 
@@ -45,8 +47,8 @@ Within each of these general tasks, there are procedures for different operating
 
 Before you begin transitioning to a 13.5 instance, there are a few preliminary tasks you must complete.
 
-### Understand what's new for HP Cloud version 13.5 ### {#VersionDiffs}
-HP Cloud version 13.5 is based on the latest version of OpenStack (Havana), which expands functionality and enhances the current capabilities of the existing services. The sections below give a brief overview of what's new for version 13.5.
+### Understand what's new for HP Cloud Compute version 13.5 ### {#VersionDiffs}
+HP Cloud Compute version 13.5 is based on the latest version of OpenStack (Havana), which expands functionality and enhances the current capabilities of the existing services. The sections below give a brief overview of what's new for version 13.5.
 
 #### Region-wide resources #### {#RegionWideResources}
 
@@ -66,40 +68,40 @@ For more information on migrating your services, and to better understand the di
 
 We recommend you purge any data you no longer need and remove any unnecessary log files from your 12.12 instance(s). 
 
-Log into the 12.12 instance using a tool such as WinSCP or rsync and delete any files and data that does not need to be copied to the 13.5 instance. Having less data to copy will make the process quicker.
+Log into the 12.12 instance using a tool such as PuTTY, an SSH client, or Remote Desktop Connection depending on your instance type. Delete any files and data that does not need to be copied to the 13.5 instance. Having less data to copy will make the process quicker.
 
 ##Section 1: Generating a key pair## {#keypair}
 
-Before you create your first HP Cloud version 13.5 instance, you must generate a key pair for that instance. The new key pair can be used with any subsequent 13.5 instances you create. 
+Before you create your first HP Cloud Compute version 13.5 instance, you must generate a key pair for that instance. You can create a new key pair or use an existing public key to generate a new key pair. The new key pair can be used with any subsequent 13.5 instances you create. 
 
 A key pair is a cryptographic tool that uses two mathematically related keys. One key can be used to encrypt a message that can only be decrypted using the other key. 
 
-When you create a key pair, the key pair tool creates a private key and a public key. When you create an instance, you must select a key pair. The public key is injected into your instance and saved in the `.ssh` folder as an authorized key. To access that instance, you must have the private key associated with that public key on the client system.
+When you create a key pair, the key pair tool creates a private key and a public key. When you create an instance, you must select a key pair. The public key is injected into your instance and saved in the `.ssh` folder as an authorized key. To access that instance, you must have the private key associated with that public key on the local system.
 
 You create both keys at the same time using any of multiple methods, including the following:
 	
 - [Using the classic management console](#keypairconsole) 
 - [Using the API](#keypairapi) 
 - [Using the HP Cloud UNIX CLI](#keypairunix)
-- [Using the NovaClient CLI](#keypairnova)
+- [Using the Python Novaclient CLI](#keypairnova)
 - [Using an existing public key](#keypairown)
 
 ####Key Pairs and Availability Zones####
 
 Key pairs are specific to a region, either US East or US West. Key pairs created in the US West or US East region can be used in any availability zone in that region.
 
-In HP Cloud version 12.12, key pairs could be used only in a specific availability zone in the US West region. 
+In HP Cloud Compute version 12.12, key pairs could be used only in a specific availability zone in the US West region. 
 
 
-###Generating a Key Pair using the management console### {#keypairconsole}
+###Generating a Key Pair using the classic management console### {#keypairconsole}
 
-You can use the management console to generate a key pair.
+You can use the classic management console to generate a key pair.
 
-**Note**: In the management console, there is a 100-character limit in the **Key Name** field. To use a longer name, use the API following [the steps below](#keypairapi) to create a key pair.
+**Note**: In the classic management console, there is a 100-character limit in the **Key Name** field. To use a longer name, use the API following [the steps below](#keypairapi) to create a key pair.
 
-To create a key pair using the management console:
+To create a key pair using the classic management console:
 
-1. Log in to the [classic management console](https://console.hpcloud.com/manage) using an HP Cloud client. 
+1. Log in to the [classic management console](https://console.hpcloud.com/manage). 
 
 	The log in page is similar to the following: 
     <br><img src="media/cloud_login.png"  alt="" />
@@ -122,7 +124,7 @@ To create a key pair using the management console:
 
 6. Click **Create Key**.
 
-	After creating the key pair, the management console displays the contents of the private key, as shown. 
+	After creating the key pair, the classic management console displays the contents of the private key, as shown. 
 	<br><img src="media/mc_keypair_key.png"  alt="" />
 
 7. Click **Download** to save the private key in a PEM file on the local system or copy the key pairs into a text editor and save the file in the PEM format on the local system. Note the location where you save the file for later use.
@@ -140,7 +142,7 @@ To generate the key pair using the API:
 
 	Where:
 
-    	tenant_id (optional) - xsd:string - The ID for the tenant or account in a multi-tenancy cloud. You can find the tenant ID on the API Keys page in the management console. 
+    	tenant_id (optional) - xsd:string - The ID for the tenant or account in a multi-tenancy cloud. You can find the tenant ID on the API Keys page in the classic management console. 
 
     	name (required) - xsd:string - The name to be associated with the key pair.
 
@@ -189,10 +191,10 @@ For more information on this API call, see [HP Cloud Compute Service API Referen
 
 There are two methods you can use to create a key pair using the HP Cloud UNIX CLI. 
 
-- Create your key pair using the `-o` flag to save the key pair file in the `~/.hpcloud/keypairs` folder. The flag does not display the key pair on the screen. Saving to a file allows you to use the auto-connect feature after you create an instance with that key pair. 
+- Create your key pair using the `-o` flag to save the key pair file in the `~/.hpcloud/keypairs` folder. The CLI does not display the key pair on the screen. Saving to a file allows you to use the auto-connect feature after you create an instance with that key pair. 
 - Create a key pair without the `-o` flag to have the key pair display on screen. You will need to manually save the key pair in a text file.
 
-**Tip**: For the full list of HP Cloud UNIX CLI commands, see the [UNIX command line interface commands](http://docs.hpcloud.com/cli/unix/reference).
+**Tip**: For the full list of HP Cloud UNIX CLI commands, see the [HP Cloud UNIX CLI Release Notes](http://docs.hpcloud.com/cli/unix/reference).
 
 To generate a key pair in UNIX:
 
@@ -222,7 +224,11 @@ If you use the `-o` flag, you have completed the key pair creation. If you did n
 5. Copy the entire output into a text file on the local system, as shown in the following figure, and save the file in the PEM format. Note the location for future use.
 	<br><img src="media/keypair_copy_text.png"  alt="" />
 	
-###Generating a Key Pair using the NovaClient CLI### {#keypairnova}
+###Generating a Key Pair using the Python Novaclient CLI### {#keypairnova}
+
+To generate a keypair using the Python Novaclient commands.
+
+	**Important**: You must have the Python Novaclient installed on the instance before using the CLI commands. For more information, see [HP Cloud Python Novaclient CLI Installation](https://docs.hpcloud.com/cli/nova/install).
 
 1. Connect with the 12.12 instance you are migrating.
 
@@ -240,7 +246,7 @@ If you use the `-o` flag, you have completed the key pair creation. If you did n
 
 	**Note**: There is a 255-character limit in the NAME field. You will see a "Invalid keypair name (HTTP 400)" error if exceed that limit.
 
-	NovaClient creates the key pair. The private key pair displays, similar to the following. 
+	Novaclient creates the key pair. The private key pair displays, similar to the following. 
 <br><img src="media/keypair_python.png"  alt="" />
 
 3. Copy the key pair into a text editor, as shown in the following figure, and save the file in the PEM format. Note the location for future use.
@@ -255,7 +261,7 @@ You can use an existing public key to generate a new key pair based on that publ
 
 To generate a new public key using an existing private key:
 
-1. Locate the public key file on the client system.
+1. Locate the public key file on the local system.
 
 2. Log in to the [classic management console](https://console.hpcloud.com/manage).
 
@@ -281,11 +287,15 @@ To generate a new public key using an existing private key:
 
 ##Section 2: Controlling traffic using security groups## {#securitygroup}
 
-Access to your instances is controlled by security groups. A security group is a collection of inbound and outbound rules that determine the protocols and ports an instance can send and receive traffic from. When you create an instance, you select a security group.
+Access to your instances is controlled by security groups. A security group is a collection of inbound (ingress) and outbound (egress) rules that determine the protocols and ports an instance can send and receive traffic from. When you create an instance, you select a security group.
 
-Security group rules specify the traffic that is allowed through to the server. No traffic can be received by an instance unless a security group rule explicitly allows that traffic from that IP address. 
+Security group rules specify the traffic that is allowed into (ingress) and out from (egress) the server. No traffic can be received by an instance unless a security group rule explicitly allows that traffic from that IP address. 
 
-<p id="securitygroupdefault">The system includes one default security group, containing four rules, which appears similar to the following in the management console:
+For example, in order to use FTP to access an instance, the security group associated with that instance must be configured to allow access port 22.
+
+In HP Cloud Compute version 13.5, you can specify both individual ingress and egress rules. 
+
+<p id="securitygroupdefault">The system includes one default security group, containing four rules, which appears similar to the following in the classic management console:
 <br><img src="media/sec_group_defafult.png"  alt="" /></p>
 
 	Outgoing: This rule allows all outgoing traffic.
@@ -295,17 +305,17 @@ Security group rules specify the traffic that is allowed through to the server. 
 
 You can create your own security groups or you can change the default group, as needed.
 
+When you add, modify, or delete a security group rule, the rule immediately goes into effect for all instances using that security group.
+
 There are different methods that you can use to manage security groups:
 
-- [Using the Management Console to control traffic](#securitygroupconsole)
+- [Using the classic management console to control traffic](#securitygroupconsole)
 - [Using the API](#securitygroupapi)
-- [Using Python-NovaClient commands](#securitygrouppyth)
+- [Using Python Novaclient commands](#securitygrouppyth)
 
 ####About using CIDR to control traffic#### {#securitygroupcidr}
 
 You can restrict access to your 13.5 instance by configuring security group rules using Classless Inter-Domain Routing (CIDR).
-
-When you add, modify, or delete a security group rule, the rule immediately goes into effect for all instances using that security group.
 
 CIDR specifies an IP address range using a combination of an IP address and its associated network mask. CIDR notation uses the following format:
 
@@ -327,17 +337,17 @@ The following examples show how to restrict access using CIDR:
 
 	0.0.0.0/0 - This CIDR affects traffic across all IP addresses
 	15.185.1.1/0 - This CIDR affects traffic across all IP addresses
-	15.185.1.1/8 - This CIDR affects traffic to IP addresses starting with 15.x.x.x
-	15.185.1.1/16 - This CIDR affects traffic to IP addresses starting with 15.185.x.x
-	15.185.1.1/24 - This CIDR affects traffic to IP addresses starting with 15.185.1.x
-	15.185.1.1/32 - This CIDR affects traffic to a single host with IP address 15.185.1.1
+	15.185.1.1/8 - This CIDR affects traffic to/from IP addresses starting with 15.x.x.x
+	15.185.1.1/16 - This CIDR affects traffic to/from IP addresses starting with 15.185.x.x
+	15.185.1.1/24 - This CIDR affects traffic to/from IP addresses starting with 15.185.1.x
+	15.185.1.1/32 - This CIDR affects traffic to/from a single host with IP address 15.185.1.1
 
 For more information on security groups, see [How To Add/Remove Security Groups from an Existing Instance](https://community.hpcloud.com/article/how-addremove-security-groups-existing-instance) and
 [Common Ports and their Service](https://community.hpcloud.com/article/common-ports-and-their-service).
 
 ###Controlling traffic using the classic management console ### {#securitygroupconsole}
 
-You can use the management console to add, delete, and modify security groups. 	
+You can use the classic management console to add, delete, and modify security groups. 	
 
 ####Creating a security group#### {#securitygroupconsolecreate}
 
@@ -372,7 +382,7 @@ To modify a security group:
 
 5. Add or edit a rule as follows:
 
-	- Add a new rule by specifying the following in the top row in the Rules table, then click `Add` in the Manage column:
+	- Add a new rule by specifying the following in the top row in the Rules table, then click **Add** in the **Manage** column:
 
 		-  Direction. Select **incoming** if the rule applies to traffic coming into the instance or **outgoing** if the traffic is leaving the instance.
 		-  IP Protocol. Select UDP, TCP, or ICMP for the rule.
@@ -397,7 +407,7 @@ To create a security zone and add rules:
 
 	Where: 
 
-    	tenant_id - xsd:string - The ID for the tenant or account in a multi-tenancy cloud. You can find the tenant ID on the API Keys page in the management console.
+    	tenant_id - xsd:string - The ID for the tenant or account in a multi-tenancy cloud. You can find the tenant ID on the API Keys page in the classic management console.
 
 		server_id - csapi:ID or UUID -- Server ID. This parameter can be an integer ID or a UUID. In either case, the specified server must be in the addressed Availability Zone. 
 
@@ -423,7 +433,7 @@ To create a security zone and add rules:
 
 	Where:
 
-		tenant_id (optional) - xsd:string - The ID for the tenant or account in a multi-tenancy cloud.	You can find the tenant ID on the API Keys page in the management console.
+		tenant_id (optional) - xsd:string - The ID for the tenant or account in a multi-tenancy cloud.	You can find the tenant ID on the API Keys page in the classic management console.
 
 		parent_group_id (required) - xsd:int - ID of the security group to which this rule will belong.
 
@@ -441,9 +451,11 @@ To create a security zone and add rules:
 For information on using the API to create and configure security groups, see the [HP Cloud Compute Service API Reference: Security Groups](https://docs.hpcloud.com/api/v13/compute/#4.1.12SecurityGroups).
 
 
-###Managing your Security Groups using Python-NovaClient commands### {#securitygrouppyth}
+###Managing your Security Groups using Python Novaclient commands### {#securitygrouppyth}
 
-You can use Python-NovaClient commands to add, delete, and modify security groups. 
+You can use Python Novaclient commands to add, delete, and modify security groups. 
+
+**Important**: You must have the Python Novaclient installed on the instance before using the CLI commands. For more information, see [HP Cloud Python Novaclient CLI Installation](https://docs.hpcloud.com/cli/nova/install).
 
 ####Creating a security group#### {#securitygrouppythcreate}
 
@@ -495,7 +507,7 @@ To modify a security group:
 
 	The following example lists the rules in the default security group.
 
-		`nova secgroup-list-rules default`
+	`nova secgroup-list-rules default`
 
 	A list of rules in that security group displays, similar to the following: 
 	<br><img src="media/Python_secgroup_list_rules.png" alt="" />
@@ -503,9 +515,9 @@ To modify a security group:
 		- The ICMP rule allows all ICMP traffic.
 		- The TCP port 22 rule allows SSH traffic over port 22.
 		
-5. Use the commands in the [Python Novaclient CLI: Command Line Reference](https://docs.hpcloud.com/cli/nova/reference) to add and remove the rules as needed.
+5. Execute the following commands to add or remove the rules as needed.
 
-	**Add a rule to a security group.**
+	**Add a rule to a security group**
 
     `nova secgroup-add-rule <secgroup> <ip_proto> <from_port> <to_port> <cidr>`
 
@@ -521,38 +533,44 @@ To modify a security group:
 
 		cidr - Classless inter-domain routing (CIDR) for the address range. 
 
-	**Remove a rule from a security group.**
+	**Remove a rule from a security group**
 
 	`nova secgroup-delete-rule <secgroup> <ip_proto> <from_port> <to_port> <cidr>`
 
-**Note**: You can type `nova help` before any of the commands for more information and to get the syntax used including both required and optional arguments. 
+**Note**: You can type `nova help` before any of the commands for more information and to get the syntax used including both required and optional arguments. For a complete list of commands, see the [Python Novaclient CLI: Command Line Reference](https://docs.hpcloud.com/cli/nova/reference)
 
 
 ##Section 3: Creating the storage instance## {#createinstance}
 
-The [OpenStack Storage](http://www.openstack.org/software/openstack-storage) infrastructure provides two classes of storage: *ephemeral* instance storage and *persistent* instance storage.
+The OpenStack Storage infrastructure provides two classes of storage: *ephemeral* instance storage and *persistent* instance storage.
 
-Ephemeral instance storage exists only for the life of an instance. An ephemeral instance persists across reboots of the client system, but when an instance is terminated the associated data is also deleted.  
+Ephemeral instance storage, or On-instance, exists only for the life of an instance. An ephemeral instance persists across reboots of the local system, but when an instance is terminated the associated data is also deleted.  
 
-Persistent image storage exists beyond the life of an instance. When you create a persistent instance, you also create a bootable volume. If you terminate the instance, the root file system continues to exist and the data is retained.
+Persistent instance storage, or HP Cloud Block Storage, exists beyond the life of an instance. If you terminate the instance, any data stored on associated volumes is retained.
+
+The process for creating an instance involves selecting an *image*, which defines the type of operating system, and a *flavor*, which defines the hardware configuration (disk space and memory capacity). Images can be provided by HP or based on other instances to which you have access. Flavors are defined by HP.
+
+For more information on the available storage options, see [What cloud storage is right for you?](http://www.hpcloud.com/sites/default/files/Right-storage-for-you.pdf)
 
 - [Create an ephemeral instance](#createephinstance)
 - [Create a persistent instance](#createpersinstance)
 
-After you create the instance, you can copy the data from your HP Cloud version 12.12 instance to your new version 13.5 instance.
+After you create the instance, you can copy the data from your HP Cloud Compute version 12.12 instance to your new HP Cloud Compute version 13.5 instance.
 
 ###Creating an ephemeral instance### {#createephinstance}
 
-You can create an ephemeral instance for HP Cloud by using either the management console or by using Python-NovaClient commands.
+The process for creating an ephemeral instance involves selecting an *image*, which defines the type of operating system, and a *flavor*, which defines the hardware configuration (disk space and memory capacity). Images can be provided by HP or based on other instances to which you have access. Flavors are defined by HP.
+
+You can use HP Cloud Compute to create on-instance (ephemeral) storage by using either the classic management console or by using Python Novaclient commands.
 
 - [Using the classic management console](#createephinstanceconsole)
-- [Using Python-NovaClient](#createephinstancepyth)
+- [Using Python Novaclient](#createephinstancepyth)
 
-**Note:** HP Cloud version 13.5 does not assign a public IP address automatically. To connect with the instance, you must assign a *floating* public IP address to the instance. The following procedures contain steps to assign the floating IP to the new instance.
+**Note:** HP Cloud Compute version 13.5 does not assign a public IP address automatically. To connect with the instance, you must assign a *floating* public IP address to the instance. A floating IP address is the same as the public IP in HP Cloud Compute version 12.12. The following procedures contain steps to assign the floating IP to the new instance.
 
 For more information on floating IP addresses, see [Managing Your Floating IPs](https://community.hpcloud.com/article/managing-your-floating-ips-135#fipnovacli). 
 
-####Creating an ephemeral instance using the management console#### {#createephinstanceconsole}
+####Creating an ephemeral instance using the classic management console#### {#createephinstanceconsole}
 
 To create an ephemeral instance using the classic management console:
 
@@ -560,7 +578,7 @@ To create an ephemeral instance using the classic management console:
 
 2. In the Dashboard, click the appropriate compute region for the 13.5 instance.
 
-3. In the Security Groups page, click **Create Server**.
+3. In the Servers page, click **Create Server**.
 
 4. Enter the appropriate information in the following fields:
 
@@ -568,10 +586,10 @@ To create an ephemeral instance using the classic management console:
 
 	AZ - Select a specific availability zone. Select **No Preference** to have an availability zone assigned randomly.
 
-	Source Image - Select a bootable image, denoted in the list with a (b) from one of the following lists:
-	- Public - A user-uploaded images or custom images (for example, made from a snapshot of current images)
+	Source Image - Select an image from one of the following lists:
+	- Public - An HP provided base image. 
 	- Partner Images - An image made available by HP partners.
-	- Private - A private image that are available only to a limited set of users.
+	- Private - Snapshots that you have created.
 	- Bootable Volume - A saved bootable volume that you previously created. 
 
 		**Tip**: The public image list might contain deprecated images. You should avoid using deprecated images, except in specific situations where that operating system is required.
@@ -584,7 +602,7 @@ To create an ephemeral instance using the classic management console:
 
 5. Click **Create**.
 
-	The classic management console lists the new instance with a status of `Build`. When the instance is `Active`, you must assign a *floating* public IP address to the instance in order to access the instance.
+	The classic management console lists the new instance with a status of `Build`. When the instance is `Active`, you must assign a floating public IP address to the instance in order to access the instance.
 
 6. In the menu, click **Floating IPs**.
 
@@ -592,15 +610,17 @@ To create an ephemeral instance using the classic management console:
 
 	A new floating IP address is added to the table on the page.
 
-8. Select the new instance from the `Port` drop down and click **Apply**. 
+8. Select the new instance from the **Port** drop down and click **Apply**. 
 
 	The IP is assigned to the instance and can be used to connect with that instance.
 
 After you assign the floating IP address, you can [connect to the instance](#connect).
 
-####Creating an ephemeral instance using Python-NovaClient commands#### {#createephinstancepyth}
+####Creating an ephemeral instance using Python Novaclient commands#### {#createephinstancepyth}
 
-To create an ephemeral instance using Python-NovaClient commands:
+To create an ephemeral instance using Python Novaclient commands:
+
+	**Important**: You must have the Python Novaclient installed on the instance before using the CLI commands. For more information, see [HP Cloud Python Novaclient CLI Installation](https://docs.hpcloud.com/cli/nova/install).
 
 1. Connect with the 12.12 instance you are migrating using a SSH tool, such as PuTTY.
 
@@ -608,7 +628,7 @@ To create an ephemeral instance using Python-NovaClient commands:
 
 3. Execute the `nova boot` command:
 
-		nova help boot
+		nova boot
 		usage: nova boot [--flavor ] [--image ]
 		[--meta ] [--file ]
 		[--key-name ] [--user_data ]
@@ -649,18 +669,18 @@ To create an ephemeral instance using Python-NovaClient commands:
 
 		--name (required) - The name for the instance.
 
-	The following example is a NovaClient command to create an XSmall Ubuntu 12.04 instance.  The following example boots from image 75845 on a selected network. The instance does not delete on terminate.
+	The following example is a Novaclient command to create an XSmall Ubuntu 12.04 instance.  The following example boots from image 75845 on a selected network.
 
 	    nova boot --flavor "100" --image "75845" --key_name "az1" --security_groups "default" -block_device_mapping vda=50357:::0 --nic network-id=UUID1 TEST_SERVER
 
 	The output displays, similar to the following:
-	<br><img src="media/Python_Create_Instance.png"  alt="" />
+    <br><img src="media/Python_Create_Instance.png"  alt="" />
 
 4. Use the following command to allocate a floating IP address that you can attach to the instance.
 
 	`nova floating-ip-create`
 
-	HP Cloud version 13.5 does not assign a public IP address automatically. To connect with the instance, you must assign a *floating* public IP address to the instance. 
+	HP Cloud Compute version 13.5 does not assign a public IP address automatically. To connect with the instance, you must assign a *floating* public IP address to the instance. 
 	<br><img src="media/floating_ip_create.png"  alt="" />
 
 5. Use the following command to attach the floating IP to an instance:
@@ -699,14 +719,14 @@ The following example attaches a volume with ID 50357 to a device named `vda`. T
 	
 ###Creating a persistent instance### {#createpersinstance}
 
-Use any of several tools to create bootable block volume and a 13.5 persistent instance.
+Use any of following tools to create a persistent HP Cloud Block Storage version 13.5 instance.
 
-The process for creating a persistent instance involves creating a storage volume then creating a server to host that volume.
+The process for creating a persistent instance involves creating a bootable storage volume then creating a server to host that volume. A bootable volume defines the amount of memory (size), the operating system, and an availability zone.   
 
 - [Using the classic management console](#createperinstanceconsole)
-- [Using Python-NovaClient commands](#createperinstancepyth)	
+- [Using Python Novaclient commands](#createperinstancepyth)	
 
-**Note:** HP Cloud version 13.5 does not assign a public IP address automatically. To connect with the instance, you must assign a *floating* public IP address to the instance. The following procedures contain steps to assign the floating IP to the new instance.
+**Note:** HP Cloud Compute version 13.5 does not assign a public IP address automatically. To connect with the instance, you must assign a floating public IP address to the instance. The following procedures contain steps to assign the floating IP to the new instance.
 
 For more information on floating IP addresses, see [Managing Your Floating IPs](https://community.hpcloud.com/article/managing-your-floating-ips-135#fipnovacli). 
 
@@ -722,13 +742,13 @@ For more information on floating IP addresses, see [Managing Your Floating IPs](
 
 5. Enter the appropriate information in the following fields:	
 
-	Volume Name - Enter a name for the volume.
+	Volume Name. Enter a name for the volume.
 
-	Description - Enter a description for the volume.
+	Description. Enter a description for the volume.
 
-	Availability Zone - Select the Availability Zone for the volume, or select **No Preference** to use the volume in any zone.
+	Availability Zone. Select the Availability Zone for the volume, or select **No Preference** to use the volume in any zone.
 
-	Size - Select the size of the volume from the drop down menu.
+	Size. Select the size of the volume from the drop down menu.
 	
 6. Select the **Make bootable from image**. 
 
@@ -738,10 +758,10 @@ For more information on floating IP addresses, see [Managing Your Floating IPs](
 
 7. Click one of the image type buttons: 
 
-	- Public - A user-uploaded images or custom images (for example, made from a snapshot of current images)
-	- Partner Images - An image made available by HP partners.
-	- Private - A private image that are available only to a limited set of users.
-	- Bootable Volume - A saved bootable volume that you previously created. 
+	- Public. An HP provided base image. 
+	- Partner Images. An image made available by HP partners.
+	- Private. Snapshots that you have created.
+	- Bootable Volume. A saved bootable volume that you previously created. 
 
 8. Select the specific image from the drop down list.
 	
@@ -755,25 +775,25 @@ For more information on floating IP addresses, see [Managing Your Floating IPs](
 
 12. Enter the appropriate information in the following fields:
 	
-	Name - Enter a name for the server.
+	Name. Enter a name for the server.
 
-	Availability Zone - Select the same Availability Zone as the volume you created, or select **No Preference** to use a volume from any zone.
+	Availability Zone. Select the same Availability Zone as the volume you created, or select **No Preference** to use a volume from any zone.
 
-	Network Port - Select a port use if you've manually created a network port.
+	Network Port. Select a port use if you've manually created a network port.
 
-	Image type - Click **Bootable Volumes** and select the bootable volume you created.
+	Image type. Click **Bootable Volumes** and select the bootable volume you created.
 	
-	Key name - Select the key pair to use with the server.
+	Key name. Select the key pair to use with the instance.
 
-	Flavor - Select a flavor for the server.
+	Flavor. Select a flavor for the instance.
 	
-	Security Groups - Select a security group to use with the server.
+	Security Groups. Select a security group to use with the instance.
 
-	Tags (optional) - Enter text to create metadata to associate with the instance for use with the metadata service.
+	Tags (optional). Enter text to create metadata to associate with the instance for use with the metadata service.
 
 12. Click **Create** to create the instance.
 
-	The management console lists the new instance with a status of `Build`. When the instance is `Active`, you must assign a *floating* public IP address to the instance in order to access the instance.
+	The classic management console lists the new instance with a status of `Build`. When the instance is `Active`, you must assign a floating public IP address to the instance in order to access the instance.
 
 13. In the menu, click **Floating IPs**.
 
@@ -788,7 +808,12 @@ For more information on floating IP addresses, see [Managing Your Floating IPs](
 After you assign the floating IP address, you can [connect to the instance](#connect).
 
 
-####Creating a persistent instance using Python-NovaClient commands#### {#createperinstancepyth}
+####Creating a persistent instance using Python Novaclient commands#### {#createperinstancepyth}
+
+To create a persistent instance using Python Novaclient commands:
+
+	**Important**: You must have the Python Novaclient installed on the instance before using the CLI commands. For more information, see [HP Cloud Python Novaclient CLI Installation](https://docs.hpcloud.com/cli/nova/install).
+
 
 1. Connect with the 12.12 instance you are migrating using a SSH tool, such as PuTTY.
 
@@ -852,14 +877,14 @@ After you assign the floating IP address, you can [connect to the instance](#con
 
 	**Note**: Only `--image`, `--flavor`, and name are required. 
 
-	For definitions of each property, see [Creating an ephemeral instance using Python-NovaClient commands](#createephinstancepyth).
+	For definitions of each property, see [Creating an ephemeral instance using Python Novaclient commands](#createephinstancepyth).
 
 	Output similar to the following indicates that the persistent instance has been created:
 	<br><img src="media/Python_nova_boot.png" alt="" />
 
 8. Allocate and assign a floating IP using the following command.	
 
-	HP Cloud version 13.5 does not assign a public IP address automatically. To connect with the instance, the instance requires a floating IP address.
+	HP Cloud Compute version 13.5 does not assign a public IP address automatically. To connect with the instance, the instance requires a floating IP address.
 
 9. Use the following command to allocate a floating IP address that you can attach to the instance.
 
@@ -884,7 +909,7 @@ After you assign the floating IP address, you can [connect to the instance](#con
 
 After you have created your instance, you need to connect to the instance in order to work with the instance. For example, you must connect to the instance to copy data to the instance.
 
-**Note:** When you connect to an HP Cloud version 13.5 instance, you must use the floating IP address you created for the instance. If you do not know the floating IP, you can find the address using the classic management console on the Server Details page for your server. 
+**Note:** When you connect to an HP Cloud Compute version 13.5 instance, you must use the floating IP address you created for the instance. If you do not know the floating IP, you can find the address using the classic management console on the Server Details page for your server. 
 	
 Use one of the following methods to connect to the new instance, based on the operating system you are connecting from.
 
@@ -893,13 +918,13 @@ Use one of the following methods to connect to the new instance, based on the op
 
 ###Connecting to a Windows instance### {#connectwindows}
 
-You can use Windows Remote Desktop Connection (RDC) to access the new instance from a Windows client system. 
+You can use Windows Remote Desktop Connection (RDC) to access the new instance from a Windows local system. 
 
 In order to use RDC, you must have the password for a user account on the 13.5 instance. By default, an Administrator account is present on all new instances. The following procedure includes steps for retrieving the Administrator password.
 
-**IMPORTANT!** You must have [port 3389 open in your Security Group](#securitygroup) in order to RDP as this is the port that service uses.
+**IMPORTANT!** You must have [port 3389 open in your Security Group](#securitygroup), as this is the port that the remote desktop protocol uses.
 
-To connect to a Windows instance from a Windows client:
+To connect to a Windows instance from a Windows system:
 
 1. Launch Windows Remote Desktop connection, by default **Start > All Programs > Accessories > Remote Desktop Connection**. 
 
@@ -927,16 +952,16 @@ RDC launches the Windows desktop for the new instance.
 
 ###Connecting to a Linux instance### {#connectlinux}
 
-The methods for connecting to a Linux instance depend upon the operating system of your client system. Use one of the following methods as appropriate:
+The methods for connecting to a Linux instance depend upon the operating system of your local system. Use one of the following methods as appropriate:
 
-- [Using a Windows client](#connectputty)
-- [Using a Linux client](#connectlinux)
-- [Using a Mac client](#connectmac)
+- [Using a Windows system](#connectputty)
+- [Using a Linux system](#connectlinux)
+- [Using a Mac system](#connectmac)
 
 
-####Connecting from a Windows client using PuTTY#### {#connectputty}
+####Connecting to a Linux instance from a Windows system using PuTTY#### {#connectputty}
 
-Before you start, make sure your key pair file has been converted from the PEM to PPK format and is stored on the local system. For more information, see [Converting Your Keypair File](https://community.hpcloud.com/article/converting-your-keypair-file). 
+Before you start, make sure the key pair file associated with the instance has been converted from the PEM to PPK format and is stored on the local system. For more information, see [Converting Your Keypair File](https://community.hpcloud.com/article/converting-your-keypair-file). 
 
 To connect to an instance using PuTTY:
 	
@@ -946,7 +971,7 @@ To connect to an instance using PuTTY:
 
 	a. In the Category list, select **Session**. This pane might be active by default. 
 
-	b. In **Host Name (or IP address)** field, enter the floating IP address for your instance.
+	b. In the **Host Name (or IP address)** field, enter the floating IP address for your instance.
 
 	c. In the **Category** list, select **Connection > SSH > Auth**. 
 
@@ -956,7 +981,7 @@ To connect to an instance using PuTTY:
 
 	f. In **Saved Sessions** field, enter a name for the SSH session and click **Save**.
 
-3. Open the session by selecting saved sessions and click `Open`.
+3. Open the session by selecting a saved sessions and clicking `Open`.
 
 4. In the dialog that appears, click `YES`.
 
@@ -974,7 +999,7 @@ After logging in, a system window displays, which indicates you are connected to
 
 ####Connecting from a Linux system using Terminal#### {#connectlinux}
 
-Before you start, make sure your key pair file in PEM format is stored on the local system. For more information, see [Generate a security key pair]($keypair).
+Before you start, make sure the key pair file associated with the instance is stored on the local system in PEM format. For more information, see [Generate a security key pair]($keypair).
 
 To connect to an instance using the Linux CLI:
 
@@ -1018,7 +1043,7 @@ You are now connected to the instance.
 
 ####Connecting to a Linux instance from a Mac system#### {#connectmac}
 
-Before you start, make sure your key pair file in the PEM format is stored on the local system.
+Before you start, make sure the key pair file associated with the instance is stored on the local system in PEM format.
 
 To connect to an instance using a Mac operating system:
 
@@ -1084,11 +1109,11 @@ Before using the SFTP client and server to copy files:
 
 - Disable the Windows Firewall on the Windows instance or configure the firewall to allow traffic to and from port 22.
 
-	If you disable the firewall, ensure that you disable both the public and private network location settings for the Windows Firewall. When you are done copying files, restart the firewall as needed.
+	If you disable the firewall, make sure that you disable both the public and private network location settings for the Windows Firewall. When you are done copying files, restart the firewall as needed.
 
-	For more information, see [Configuring your Windows Firewall to mirror your Security Group](https://community.hpcloud.com/article/configuring-your-windows-firewall-mirror-your-security-group)
+	For more information, see [Configuring your Windows Firewall to mirror your Security Group](https://community.hpcloud.com/article/configuring-your-windows-firewall-mirror-your-security-group).
 
-####Installing an SFTP client on an instance####{#copydatasftpinst}
+####Installing an SFTP server on an instance####{#copydatasftpinst}
 
 You can use freeFTPd to install an SFTP server on your instance. freeFTPd is a freeware program for Windows that provides FTP and SFTP server software. 
 
@@ -1107,13 +1132,13 @@ To install freeFTPd on your instance:
 
 5. The installer prompts you to run freeFTPd as a service. Click **Yes**.
 
-6. After completing the installation, click the freeFTPd icon on your desktop to launch the configuration screen.
+6. After completing the installation, click the freeFTPd icon on the desktop to launch the configuration screen.
 
 7. Click **Users > Add** to add a user account.
 
 	a. In the **Login** field, enter a user name. 
 	
-	b. From the Authorization drop down, select **Password stored as SHA1 hash**. 
+	b. From the **Authorization** drop down, select **Password stored as SHA1 hash**. 
 
 	c. In the **Password** field, enter a password for the user, then confirm in the **Password (again)** field. 
 
@@ -1123,41 +1148,41 @@ To install freeFTPd on your instance:
 
 9. Click **Start** to start the server.
 
-
 ####Using WinSCP to transfer files to your Windows instance#### {#copydatasftpuse}
 
 WinSCP is a free program available for Windows that enables you to transfer files between attached systems.
 
-To use WinSCP to transfer files, either the 12.12 instance or the 13.5 instance must have an FTP server configured and running and the other instance must have a properly-configured Win SCP client. The following procedure assumes the 12.12 instance is the server and the 13.5 instance is the client.
+To use WinSCP to transfer files, either the 12.12 instance or the 13.5 instance must have an SFTP server configured and running and the other instance must have a properly-configured WinSCP client. The following procedure assumes the 12.12 instance is the server and the 13.5 instance is the client.
 
 Before starting to transfer files:
 
-- You must use the floating IP address you created for the instance. If you do not know the floating IP, you can find the address using the classic management console on the Server Details page for your server. 
 - Make sure that Port 22 is open in the security group associated with your instance. For more information, see [Controlling traffic using security groups](#securitygroup).
 - Make sure your private key file is in PPK format on the client system.  You can convert a PEM key pair into PPK format. For more information, see
 [Converting Your Keypair File](https://community.hpcloud.com/article/converting-your-keypair-file).
 
 To transfer files to your 13.5 instance:
 
-1. Use a remote desktop application (RDA) to connect with the 13.5 instance with the WinSCP client. For more information, see [Connecting to a Windows instance](#connectwindows).
+1. Use a remote desktop application (RDA) to connect with the 13.5 instance. For more information, see [Connecting to a Windows instance](#connectwindows).
 
-2. In the instance, launch WinSCP.
+2. In the instance, launch an WinSCP client.
 
-3. Use WinSCP to log into the HP Cloud version 12.12 instance using the fields on the Session page:
-	- Host name. Enter the floating IP address of your instance.
-	- Port number. Enter the port number for your instance or use the default, port 22.
-	- User name: If the instance requires a specific user for WinSCP enter the name.
-	- Password. Enter the password for the specified user or leave blank if a password is not required.
-	- Private key file: Click `Browse` to locate the PPK file that you created for this instance.
+3. Use WinSCP to log into the HP Cloud version 12.12 instance using the fields on the **Session** page:
+	- File Protocol. Select SFTP.
+    - Host name. Enter the public IP address of the 12.12 instance.
+    - Port number. Enter the port number for your instance or use the default, port 22.
+    - User name: If the instance requires a specific user for WinSCP enter the name.
+    - Password. Enter the password for the specified user or leave blank if a password is not required.
+    - Private key file: Click `Browse` to locate the PPK file that you created for this instance.
 
-4. Click **Login** to connect. 
+4. Click `Login` to connect. 
 
 	When you are connected, the files and folders in the default directory display.
 
-5. Select all required files from the 12.12 server and copy the files to the 13.5 instance.
+5. Select all required files from the 12.12 server and move the files to the 13.5 instance.
 
 
-###Using rsync to transfer files to your Instance (Mac OSX or Linux)### {#copydatarsync}
+
+###Using rsync to transfer files between Linux Instances### {#copydatarsync}
 
 rsync is an open source utility that provides file transfers between connected systems. 
 
@@ -1213,7 +1238,7 @@ For more information on using rsync to move files, see [Using RSYNC to Upload or
 
 If 12.12 instance uses one or more cloud block storage volumes, you must transition the data in those block volumes to a 13.5 instance.	
 
-The process for transitioning the data for block volumes involves creating and attaching a 13.5 block volume and copying the data from your version 12.12 instance to the new instance.
+The process for transitioning the data for block volumes to the 13.5 instance involves creating and attaching a 13.5 block volume to the 13.5 instance. Then, copy the data from your version 12.12 instance to the new instance.
 
 You can perform these tasks using a number of tools including:
 
@@ -1223,7 +1248,7 @@ You can perform these tasks using a number of tools including:
 
 ###Creating and attaching a block volume using the classic management console### {#transdataconsole}
 
-You can use the classic management console to create a block storage volume.
+You can use the classic management console to create a block storage volume. Then, copy the data on the 12.12 instance to the new 13.5 instance.
 
 	**Note**: The volume attaches to the first available device on the specified server. If only one volume is attached to the instance, the first device will be `/dev/vdc`. 
 	
@@ -1241,19 +1266,19 @@ To create a block volume and attach the volume to the instance:
 
 5. Enter the appropriate information in the following fields:
 
-	Volume Name - Enter a name for the volume.
+	Volume Name. Enter a name for the volume.
 
-	Description - Enter a description for the volume.
+	Description. Enter a description for the volume.
 
-	Availability Zone - Select the Availability Zone for the volume, or select No Preference to use the volume in any zone.
+	Availability Zone. Select the Availability Zone for the volume, or select No Preference to use the volume in any zone.
 
-	Size - Select the size of the volume from the drop down menu.
+	Size. Select the size of the volume from the drop down menu.
 
 6. Click **Create Volume**.
 
-	The volume appears in the **Volumes** screen with a status of `Creating`. When the volume creation is complete, the status changes to `Available`.
+	The volume appears in the Volumes page with a status of `Creating`. When the volume creation is complete, the status changes to `Available`.
 
-7. To attach the volume to an instance, click **Options > Attach** in the Manage column. 
+7. To attach the volume to an instance, click **Options > Attach** in the **Manage** column. 
 
 8. In the Attach to Server page, select the instance from the drop-down menu.
 
@@ -1263,7 +1288,7 @@ To create a block volume and attach the volume to the instance:
 
 	After the volume is attached to the instance, the volume appears in the Volumes screen with a status of `In Use`, and the name of the attached server.
 
-10. You need to prepare your volume for use, to bring the volume on line or partition and format the volume. See [Preparing Your Block Storage Volume For Use](https://community.hpcloud.com/article/preparing-your-block-storage-volume-use).
+10. You need to prepare your volume for use, to bring the volume on line. See [Preparing Your Block Storage Volume For Use](https://community.hpcloud.com/article/preparing-your-block-storage-volume-use).
 
 11. When the volume is available, you can copy the data from your version 12.12 instance attached volume to your new version 13.5 instance, as described in [Copy data from the 12.12 instance to the 13.5 instance](#copydata).
 
@@ -1302,7 +1327,7 @@ To create a block volume and attach the volume to the instance:
 	
 		device - The Linux device name (or drive name) ID of the device where the instance resides. This value is typically /dev/vda#.
 		
-		**Tip**: Use the Linux commmands such as `fdisk -l` or `cat /proc/partitions` to view a list of device names.
+	**Tip**: Use the Linux commmands such as `fdisk -l` or `cat /proc/partitions` to view a list of device names.
 
 	The following example attaches a volume, *test*, to the srv1 instance on */dev/vdi*.
 
@@ -1342,8 +1367,8 @@ To create a block volume and attach the volume to the instance:
 
 	The following example creates a new volume with the name `MyNewVolume`, a description of `MyNewVolume Description` and a volume size of 10 gigabytes. 
 
-    	PS HPCS:\\> New-Volume "MyNewVolume" "MyNewVolume Description" 10 "test|data"
-<br><img src="media/volume_create_ps.png"  alt="" />
+    `PS HPCS:\\> New-Volume "MyNewVolume" "MyNewVolume Description" 10 "test|data"`
+	<br><img src="media/volume_create_ps.png"  alt="" />
 
 4. Attach the volume to an existing server by executing the following command, using the appropriate values:
 
@@ -1376,6 +1401,18 @@ If you have any questions or concerns about which files to copy, contact our Sup
 - [Open a support case](https://account.hpcloud.com/cases)
 - [Using email](support@hpcloud.com)
 - By phone at 1-855-61CLOUD (1-855-612-5683) in the U.S. or +1-678-745-9010 internationally.
+
+## Note on ongoing CLI support ## {#CLIdeprecation}
+
+On November 4, 2013, the UNIX CLI moved into its End-of-Life Cycle process toward final deprecation. During this 6-month transition time until May 4, 2014:
+
+* New and existing customers are encouraged to migrate to the OpenStackClient (Unified) CLIs or leverage the OpenStack command-line clients for each respective service.
+* No new feature requests will be honored
+* Bug reports will be accepted
+
+After 6-months, access to online resources will still be available, but no support will be offered from HP Public Cloud, and the software download will be disabled—although you are most welcome to continue development at your discretion.
+
+
 
 ##For further information## {#furtherinfo}
 
