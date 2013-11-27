@@ -1089,7 +1089,7 @@ After you create a new 13.5 instance and have connected to that instance on your
 
 If you have any questions or concerns about which files to copy, contact [Support](#support).
 
-###Using SFTP to Transfer Files between Windows Instances###{#copydatasftp}
+###Using SFTP to Transfer Files between Windows Instances### {#copydatasftp}
 
 You can use any SFTP client to securely transfer files between Windows instances.
 
@@ -1100,7 +1100,7 @@ Use the following methods to install the SFTP server and copy data using an SFTP
 - [Installing an SFTP client on an instance](#copydatasftpinst)
 - [Using WinSCP to transfer files to your Windows instance](#copydatasftpuse)
 
-####Prerequisites####{#copydatasftppre}
+####Prerequisites#### {#copydatasftppre}
 
 Before using the SFTP client and server to copy files:
 
@@ -1113,7 +1113,7 @@ Before using the SFTP client and server to copy files:
 
 	For more information, see [Configuring your Windows Firewall to mirror your Security Group](https://community.hpcloud.com/article/configuring-your-windows-firewall-mirror-your-security-group).
 
-####Installing an SFTP server on an instance####{#copydatasftpinst}
+####Installing an SFTP server on an instance#### {#copydatasftpinst}
 
 You can use freeFTPd to install an SFTP server on your instance. freeFTPd is a freeware program for Windows that provides FTP and SFTP server software. 
 
