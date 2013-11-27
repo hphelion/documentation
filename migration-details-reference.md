@@ -9,7 +9,7 @@ permalink: /migration-details-reference/
 
 If you need assistance transitioning your data from HP Cloud version 12.12 to 13.5, this page provides you with detailed information about the tasks you need to complete before the data transition. Review this document and [contact support](#ContactingSupport) with any questions.
 
-If you plan on performing the transition without support services, the [Data Transition Guide](/migration-overview) page contains details on how to migrate your data yourself from version 12.12 to 13.5 of the HP Cloud.
+If you plan on performing the transition without support services, the [Data Transition Guide](/migration-overview) document contains details on how to migrate your data yourself from HP Cloud version 12.12 to 13.5.
 
 **Note:**
 Some of the links in this document contain information on using the Horizon-based HP Cloud Console to interact with your instances. HP Cloud Console is an alternative method for performing these tasks. The procedures in this document for using the classic management console are correct and should be followed at this time.
@@ -22,9 +22,8 @@ For assistance with transitioning your data from version 12.12 to 13.5, there ar
 * [Take a snapshot of an ephemeral instance](#Snapshot)
 * [Prepare a volume for transition](#PrepVolume)
 * [Terminate a persistent instance created from a block volume](#TerminatingPersistent)
-* [Post-transition configuration for Windows images](#PostTransWindows)
 
-Once you have completed these tasks, you must [contact support](#ContactingSupport) to assist you with the rest of your transition.
+Once you have completed these tasks, you must [contact support](#ContactingSupport) to assist you with the rest of your transition. After HP Support has finished helping you transition, you must complete the [post-transition configuration steps for any Windows instances](#PostTransWindows).
 
 ## Understand what's new for HP Cloud version 13.5 ## {#VersionDiffs}
 HP Cloud version 13.5 is based on the latest version of OpenStack (Havana), which expands functionality and enhances the current capabilities of the existing services. The sections below give a brief overview of what's new for version 13.5.
@@ -85,7 +84,7 @@ To have an instance snapshot copied, continue with the tasks in this document. T
 
 Using an instance snapshot can make a transition easier, but might not be suitable for all transitions. An instance snapshot includes only the root partition; ephemeral or additional disk space is not stored in a snapshot.  If you use ephemeral storage, you must [manually transition this data](/migration-overview#createephinstance).  
 
-**Important!** If you have questions about which process is best for your situation, [contact your support engineer](#ContactingSupport). If you do not need to keep your existing data, you should simply [create a new instance](https://community.hpcloud.com/article/creating-your-first-instance-135).
+**Important!** If you have questions about which process is best for your situation, [contact your support engineer](#ContactingSupport). If you do not need to keep your existing data, you should simply [create a new 13.5 instance](https://community.hpcloud.com/article/creating-your-first-instance-135).
 
 ## Reviewing key transition information ## {#TransitionInfo}
 Before you attempt an assisted transition from HP Cloud version 12.12 to 13.5, review the following critical pieces of information.
@@ -100,11 +99,11 @@ You must acquire [new floating IP addresses](https://community.hpcloud.com/artic
 
 ##### Instances and volumes #####
 
-Complete instances cannot be directly moved or copied between version 12.12 and 13.5.
-    
-Ephemeral instances might go offline while the snapshot is in process. In the steps below, persistent instances are terminated, thus not available. Volumes and volumes created from snapshots must be in an Available state during the transition process and will not be accessible by instances.
-    
-By request to customer support, [your block volumes](https://community.hpcloud.com/article/managing-your-block-storage-135) can be moved to version 13.5 and would be immediately available for attachment to instances. When moved, these volumes are available in the same availability zone as the one in which they originated.
+* Complete instances cannot be directly moved or copied between version 12.12 and 13.5.
+* Ephemeral instances might go offline while the snapshot is in process.
+* In the steps below, persistent instances are terminated, thus not available.
+* Volumes and volumes created from snapshots must be in an Available state during the transition process and will not be accessible by instances.
+* By request to customer support, [your block volumes](https://community.hpcloud.com/article/managing-your-block-storage-135) can be moved to version 13.5 and would be immediately available for attachment to instances. When moved, these volumes are available in the same availability zone as the one in which they originated.
 
 ##### Snapshots #####
 
@@ -119,7 +118,7 @@ You must [recreate your keypairs](https://community.hpcloud.com/article/managing
 You must [recreate your security groups](https://community.hpcloud.com/article/managing-your-security-groups-135) in version 13.5.
 
 ## Taking a snapshot of an ephemeral instance ## {#Snapshot}
-The first step in preparing your data for transition to version 13.5 is to use the [Images screen](/mc/compute/images/) of the [classic management console](/mc/) to take a snapshot of your instance.  
+To prepare your data for transition to version 13.5, use the [Images screen](/mc/compute/images/) of the [classic management console](/mc/) to take a snapshot of your instance.  
 
 **Note:**
 For best results, we recommend using the latest version of the  following HTML5 browsers when accessing the classic management console:
@@ -181,7 +180,11 @@ Support must transition all assets associated with your volumes (such as volume 
 
 ## Terminating a persistent instance created from a block volume ## {#TerminatingPersistent}
 
-You cannot detach a volume that is running an instance; you must terminate the instance to make the volume available.  To terminate an instance:
+You cannot detach a volume that is running an instance; you must terminate the instance to make the volume available.
+
+**Note**: When you terminate a persistent instance that was created from a bootable volume, any ephemeral storage that is being used is lost and the public IP is released for use. 
+
+To terminate an instance:
 
 1. From the classic management console, click the `Servers` tab.
 2. In the `Inventory` pane, click the action button (`*`) of the server whose instance you want to terminate and select `Terminate`.
@@ -196,8 +199,6 @@ Your instance is terminated.
 
 You can also terminate the instance from the [server details](/mc/compute/servers/view-details/) screen of the classic management console. To access the server details screen from the `Inventory` pane, click on the server name or click the action button (`*`) and select `Server Details`.<br>
     <img src="media/terminate-instance-details-1212.png" width="580" alt="" />
-
-**Note**: When you terminate a persistent instance that was created from a bootable volume, any ephemeral storage that is being used is lost and the public IP is released for use. 
 
 See the [Managing volumes](/mc/compute/volumes/manage/) page for details on using the classic management console for creating and deleting a volume and bootable volumes, attaching and detaching volumes, managing volume snapshots, and viewing volume details.
 
@@ -230,7 +231,7 @@ Once you have this information, contact support:
 
 ## Post-transition configuration for Windows images ## {#PostTransWindows}
 
-After customer support has assisted with your Windows image transition from version 12.12 to 13.5, you will not be able to connect to the KMS host to receive the required license activation, and you might not be able to connect to your volume using a remote desktop connection. To ensure your Windows 12.12 image is usable in 13.5, you **must** change your remote desktop firewall exceptions and modify the KMS host. 
+After customer support has assisted with your Windows image transition from HP Cloud version 12.12 to 13.5, you will not be able to connect to the KMS host to receive the required license activation, and you might not be able to connect to your volume using a remote desktop connection. To ensure your Windows 12.12 image is usable in 13.5, you **must** change your remote desktop firewall exceptions and modify the KMS host. 
 
 ### Changing Remote Desktop Firewall exception ###
 
@@ -260,14 +261,14 @@ You can easily fix this by logging into your instance and re-enabling the Remote
 
     c. Copy the URL and paste it into the URL field of your favorite Web Browser to connect to the VNC display.
 
-2. At the Windows log in screen, enter a user name and password with Administrator privileges. Your password will be the same as it was before transition.
+2. At the Windows log in screen, enter a user name and password with Administrator privileges. This password will be the same as it was before transition.
 
 3. Once connected, navigate to Windows Firewall. Depending on how your Control Panel is configured, use one of these two paths:
 
     - Start->Control Panel->Security->Windows Firewall
 	- Start->Control Panel->Windows Firewall
 
-4. Since the Windows Firewall GUIs are slightly different between Windows Server 2008 R2 SP1 and Windows Server 2008 R1 SP2, follow the appropriate  steps for your instance:
+4. Since the Windows Firewall user interfaces are slightly different between Windows Server 2008 R2 SP1 and Windows Server 2008 R1 SP2, follow the appropriate  steps for your instance.
 
     **For Windows Server 2008 R2 SP1**
 
