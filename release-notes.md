@@ -34,9 +34,9 @@ The following are new features in version 13.5 of the HP Public Cloud software:
 
 **Object storage container versioning** - HP Public Cloud Console users can now toggle on or off the ability to duplicate and synchronize objects within storage containers.
 
-**Upload improvements** - The 50MB file upload limitation is no longer an impedance in the Horizon Console .  If uploading through the Cloud Console, there is a limit of 5GB. The recommendation from the Console team is that anything over 1GB should go through a CLI/API.  
+**Upload improvements** - The Horizon console is no longer limited to a 50MB file upload size.  If you upload through the Cloud Console you are limited to a size of 5GB. HP recommends that you upload anything larger than 1GB the CLI/API.  
 
-**Enhanced identity management** - When creating a new project, you can activate a new compute, object storage or platform service; list the project permissions; and manage the project role assignments.  Once you've activated services, you can set the Project Permissions for Compute Admin, Compute Network Admin, Block Storage Admin, Network Admin, and Image Management Admin, and more.   You can add and remove groups to each role, and assign users to specific roles for each project.
+**Enhanced identity management** - When you create a new project, you can:  Activate a new compute, object storage or platform service; list the project permissions; and manage the project role assignments.  Once you've activated services, you can set the Project Permissions for Compute Admin, Compute Network Admin, Block Storage Admin, Network Admin, and Image Management Admin, and more.   You can add and remove groups to each role, and assign users to specific roles for each project.
 
 As a domain admin, you can manage each user's projects, roles, and groups.
 You can manage the membership of each group, and manage the user assignment within each role. 
@@ -88,11 +88,11 @@ The following are known issues and limitations for version 13.5 of the HP Public
 	
 * Instances are not able to resolve their own names.
       
-* Windows instances require flavors larger than `xsmall`. Windows instances do not fit into the 10GB root disk used for `xsmall` instances. All other flavors have a 30GB root disk, which does accommodate Windows instances. However, Windows typically requires at least 4GB of memory, so using flavors with less memory is not recommended even if the root partition is sufficient.
+* Windows typically requires at least 4GB of memory, so Windows instances do not fit into the 10GB root disk used for `xsmall` instances even if the root partition is sufficient. DOUG 
 
 * The command `nova image-meta` does not change the `image name`. Instead, it adds a new attribute called `name` to the metadata. If you want to change the name of an instance snapshot (private image), use the image management utilities ("Glance"). Please refer to the [API documentation](http://api.openstack.org/api-ref-compute.html) from Openstack.
 
-* Serialize detaching and then deleting a volume; performing a detach and delete simultaneously causes the volume to enter an inconsistent state.
+* You should serialize detaching and then deleting a volume; performing a detach and delete simultaneously causes the volume to enter an inconsistent state.
 
 * In rare cases, you might not be able to see the private IP in the networks section of a Windows instance. Use the VNC console to see the private IP for the Windows instance.
 
@@ -104,6 +104,31 @@ The following are known issues and limitations for version 13.5 of the HP Public
 
 * The EUCA API is not supported in this release.
 
+* Cinder backup-restore gives an unnecessary attribute error but the restore completes.
+	
+* Neutron port-update does not support attaching an instance to a port. You must use nova boot to attach a precreated port to an instance.
+
+* Currently, volume detach does not hook inside VM to flush out busy devices and proc I/O values, semophores, locks clear. This presents different issues in Windows and Linux VMs.
+
+* Windows instances booted using the `highmem` flavor are unusable.
+
+* Use the OpenStack Python CLI to create a server rather than the personality option to create a server. 
+	
+* We recommend that you use the [management console](/mc/) rather than the Windows CLI to attach or detach a volume.
+
+* In the Windows CLI, the reset password feature is not currently available. 
+
+* In the Windows CLI, the server ID in the attached volume column sometimes does not display.  
+ 
+* When using the windows CLI, if the Flavors Details section is blank, retrieve the information using the [management console](/mc/).
+
+* A Windows instance of a large size can sometimes become stuck in the rebooting state.
+
+* When your VM `libvirt` state is `in shutdown`, Nova delete may not remove the VM.
+	
+* You may run into a quota issue for network tasks when using the Horizon Preview Edition for tasks such as floating IP creation. 
+    *Workaround*: Use the [classic console](/mc/) for the task.
+
 * Snapshot support for a virtual machine (VM) booted from a block volume is not yet available.<br>
     *Workaround*: Shut down the virtual machine (VM), then delete the VM and wait until the volume is marked as `available`. Take a snapshot of the volume using, for example, the python cinder binding. Once the snapshot is complete, re-create the instance from the volume, and re-attach the original floating IP, if necessary. **Note**: The port/fixed-IP associated with the new instance might be different from the original one.
     
@@ -113,7 +138,7 @@ The following are known issues and limitations for version 13.5 of the HP Public
 * In some cases, you might be unable to connect to a VNC URL. <br>
     *Workaround*: Connect using other clients such as `ssh`, `putty`, or RDP.
 	
-* Volumes do not cleanly detach from Windows instances unless you put the disk offline from within Windows.
+* Always make sure that your volumes are unmounted--or offline for Windows instances--before you detach a volume.
 
 * In rare cases, an instance might be created with two rather than one single fixed IP. <br>
     *Workaround*: Delete and recreate the instance. 
@@ -121,28 +146,9 @@ The following are known issues and limitations for version 13.5 of the HP Public
 * `ssh` access to your instance might unexpectedly cease functioning.<br>
     *Workaround*: Contact customer support.
 	
-* Cinder backup-restore gives an unnecessary attribute error but the restore completes.
-	
-* Neutron port-update does not support attaching an instance to a port. You must use nova boot to attach a precreated port to an instance.
-
-* Currently, volume detach does not hook inside VM to flush out busy devices and proc io values, semophores, locks clear. This presents different issues in Windows and Linux VMs.
-
-* When using Horizon Preview Edition, you might run into a quota issue for network tasks, like floating IP creation. In that case, you may use the classic console to create a floating IP.
-
-* Windows instances booted using the highmem flavor are unusable.
-
 * The Ext-Gateway field might not be populated in the CLI. <br>
     *Workaround*: You can confirm the status via the management console. 
 
-* Use the OpenStack Python CLI to create a server rather than the personality option to create a server. 
-	
-* We recommend that you use the [management console](/mc/) rather than the Windows CLI to attach or detach a volume.
-* In the Windows CLI, the reset password feature is not currently available. 
-
-* In the Windows CLI, the server ID in the attached volume column sometimes does not display.  
- 
-* When using the windows CLI, if the Flavors Details section is blank, retrieve the information using the [management console](/mc/).
-	
 * When using the Windows CLI, the Assigned Network Addresses section does not display the network information.<br>
     *Workaround*: Use the Horizon console to find the network address.
 	
