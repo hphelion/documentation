@@ -6,8 +6,6 @@ permalink: /release-notes/
 ---
 # HP Public Cloud Release Notes
 
-You know the problem:  you see the phrase "release notes" and you immediately think "boring bug list."  But, you're in luck!  This page--the release notes for the HP Public Cloud software--<i>does</i> contain a list of bugs, but HP has worked hard to make it easier for you to navigate and locate the information you're looking for.  HP has also included information about the new features for each release, links to the most current release, and a few other items here and there that we hope will be helpful for you.   
-
 This page contains the following information on our software package:
 
 * [Release information for version 13.5](#v135Info)
@@ -28,7 +26,7 @@ The following are new features in version 13.5 of the HP Public Cloud software:
 
 **New virtual private cloud (VPC) networking capabilities** - The new VPC functionality provides advanced security in the public cloud by allowing you to create your own isolated virtual network within the HP Cloud compute service. Using a Software Defined Networking (SDN) stack, this service allows you to select whether or not your public cloud network instances are also accessible from the internet. This network isolation offers an additional layer of security to cloud deployments. You can also connect your public cloud network to your on-premise network, treating private and public infrastructures as a single connected system.
 
-**Networking topology visualization** - Interactively build and manage your network through a 2-D visualization dashboard.
+**Networking topology visualization** - Interactively build and manage your network through a 2-D visualization dashboard in the Horizon Console .
 
 **Faster data upload to the Cloud** - A new bulk import service reduces the time to market for applications requiring existing data by allowing you to quickly and easily load your data into HP Public Cloud block storage or object storage. The new service bypasses the process of transferring large amounts of information over the Internet and allows you to provide hard drives directly to HP's data centers where your data can be rapidly transferred.
 
@@ -36,7 +34,7 @@ The following are new features in version 13.5 of the HP Public Cloud software:
 
 **Object storage container versioning** - HP Public Cloud Console users can now toggle on or off the ability to duplicate and synchronize objects within storage containers.
 
-**Upload improvements** - The 50MB file upload limitation is no longer an impedance.  If uploading through the Cloud Console, there is a limit of 5GB. The recommendation from the Console team is that anything over 1GB should go through a CLI/API.  
+**Upload improvements** - The 50MB file upload limitation is no longer an impedance in the Horizon Console .  If uploading through the Cloud Console, there is a limit of 5GB. The recommendation from the Console team is that anything over 1GB should go through a CLI/API.  
 
 **Enhanced identity management** - When creating a new project, you can activate a new compute, object storage or platform service; list the project permissions; and manage the project role assignments.  Once you've activated services, you can set the Project Permissions for Compute Admin, Compute Network Admin, Block Storage Admin, Network Admin, and Image Management Admin, and more.   You can add and remove groups to each role, and assign users to specific roles for each project.
 
@@ -51,8 +49,8 @@ You can manage the membership of each group, and manage the user assignment with
 * *Compute Network Admin*
 * *Compute Project Manager*
 * DNS Admin
-* *Identity Domain Admin* – Super User of the Domain; manage project role assignments including domain roles
-* *Identity Domain User* – Normal Domain User
+* *Identity Domain Admin* -- Super User of the Domain; manage project role assignments including domain roles
+* *Identity Domain User* -- Normal Domain User
 * Image Management Admin
 * Load Balancing Admin
 * Messaging Admin
@@ -74,13 +72,11 @@ The following are known issues and limitations for version 13.5 of the HP Public
     
 * Latest OpenStack Version supported - The new Horizon-based console is based on the OpenStack Icehouse release.  If you need to manage services that are built from pre-Havana OpenStack instances, you cannot take advantage of the preview edition of the new HP Public Cloud Console built on Horizon software. 
 
-* If you attempt to simultaneously launch a large number of instances, some instances may go into an error state. HP recommends staggering your launch of multiple instances to batches of 30-40 at a time for best performance.
+* If you attempt to simultaneously launch a large number of instances, some instances might not be pingable or accessible via ssh. HP recommends staggering your launch of multiple instances to batches of at most 100 at a time for the best performance.
 
-* When passing through a router to move off your local network, your throughput speed is limited to approximately 1500 megabits per second.
+* When passing through a router to move off your local network, your throughput is limited to approximately 1500 megabits per second.
 
-* Snapshot support is not yet available for `standard.4xlarge` and `standard.5xlarge` instances.
-
-* Do not delete egress rules from your security group as doing so removes the ability of your VM to access any external nodes (including fetching metadata required by your SSH key), and causing newly-booted VMs to be unusable.
+* Do not delete egress rules from your security group as doing so removes the ability of your instance to access any external nodes (including fetching metadata required by your SSH key) and causes newly-booted instances to be unusable.
 
 * Identity Service - Currently, role-based access control (RBAC) is not implemented at the panel level, so you may be presented with actions and services options you do not have permission to invoke. The error messages reported for limitations on user role permissions will be improved while development changes are adopted.
 
@@ -88,80 +84,73 @@ The following are known issues and limitations for version 13.5 of the HP Public
 
 * Jclouds is supported for Keystone version 2 API and earlier only.
 
-* You cannot boot an xsmall VM from a VM snapshot of a larger flavor. 
-
-* Because all flavors larger than xsmall require a root disk size of 30GB, you cannot use a larger flavor to create an xsmall VM instance.
+* Because all flavors larger than `xsmall` require a root disk size of 30GB, you cannot boot an `xsmall` instance from an instance snapshot of a larger flavor. 
 	
-* VMs are not able to resolve their own names.
-
-* Windows instances require flavors larger than xsmall; the instance will fail to schedule using an xsmall instance.  The system displays the following message:<br>
-      `Error: Instance type's disk is too small for requested image. (HTTP 400) (Request-ID: req-b006ef19-f20d-4e76-ac98-c64d27368518)`
+* Instances are not able to resolve their own names.
       
-* Windows instances do not fit into the 10GB root disk used for xsmall instances. All other flavors have a 30GB root disk, which does accommodate Windows instances.
+* Windows instances require flavors larger than `xsmall`. Windows instances do not fit into the 10GB root disk used for `xsmall` instances. All other flavors have a 30GB root disk, which does accommodate Windows instances. However, Windows typically requires at least 4GB of memory, so using flavors with less memory is not recommended even if the root partition is sufficient.
 
-* The command `nova image-meta` does not change the `image name`. Instead, it adds a new attribute called `name` to the metadata. If you want to change the name of a VM snapshot (private image), use the image management utilities ("Glance"). Please refer to the [API documentation](http://api.openstack.org/api-ref-compute.html) from Openstack.
-
-* Use the OpenStack Python CLI to create a server rather than the personality option to create a server. 
-	
-* We recommend that you use the [management console](/mc/) rather than the Windows CLI to attach or detach a volume.
+* The command `nova image-meta` does not change the `image name`. Instead, it adds a new attribute called `name` to the metadata. If you want to change the name of an instance snapshot (private image), use the image management utilities ("Glance"). Please refer to the [API documentation](http://api.openstack.org/api-ref-compute.html) from Openstack.
 
 * Serialize detaching and then deleting a volume; performing a detach and delete simultaneously causes the volume to enter an inconsistent state.
 
-* You cannot create VMs with invalid file injections paths.
-
 * In rare cases, you might not be able to see the private IP in the networks section of a Windows instance. Use the VNC console to see the private IP for the Windows instance.
 
-* In the Windows CLI, the reset password feature is not currently available. 
+* The size limit of bootable volumes is 1.4TB, rather than the maximum volume size of 2TB. 
 
-* In the Windows CLI, the server ID in the attached volume column sometimes does not display. 
+* Accessing the VNC console as soon as the instance gets active might cause the Windows instance to stop responding, and display an empty console log.
 
-* The root partition on a VM is limited to 2TB You cannot have a VM with 2TB root partition. 
-
-*  Accessing VNC console as soon as the VM gets active might cause the Windows VM to stop responding, and display an empty console log.
-
-* We recommend that you use the Neutron interface for any quota checks.
- 
-* A 5xlarge instance takes longer to reach the active state.
- 
-* When using the windows CLI, if the Flavors Details section is blank, retrieve the information using the [management console](/mc/).
+* We recommend that you use the Neutron interface for any network quota checks.
 
 * The EUCA API is not supported in this release.
 
 * Snapshot support for a virtual machine (VM) booted from a block volume is not yet available.<br>
-    *Workaround*: Shut down the virtual machine (VM), then delete the VM and wait until the volume is marked as `available`. Take a snapshot of the volume using, for instance, the python cinder binding. Once the snapshot is complete, re-create the VM from the volume, and re-attach the original floating IP if necessary. **Note**: The port/fixed-IP associated to the new VM may be different from the original one.
+    *Workaround*: Shut down the virtual machine (VM), then delete the VM and wait until the volume is marked as `available`. Take a snapshot of the volume using, for example, the python cinder binding. Once the snapshot is complete, re-create the instance from the volume, and re-attach the original floating IP, if necessary. **Note**: The port/fixed-IP associated with the new instance might be different from the original one.
     
-* In rare cases, after successfully launching an instance `ssh` may not function. <br>
+* In rare cases, after successfully launching an instance, `ssh` might not function. <br>
     *Workaround*: Reboot the instance.
 
-* Windows instances with attached volumes in US East are not accessible directly or via `ssh`. <br>
-    *Workaround*: Use Windows instances without attached volumes.
-
-* In some cases, you may be unable to connect to a VNC URL. <br>
+* In some cases, you might be unable to connect to a VNC URL. <br>
     *Workaround*: Connect using other clients such as `ssh`, `putty`, or RDP.
 	
-* Windows VM does not cleanly detach from the instance.<br>
-    *Workaround*: First, take the disk offline within the Windows VM. Then, detach the VM.
+* Volumes do not cleanly detach from Windows instances unless you put the disk offline from within Windows.
 
-* In rare cases, a VM might be created with two rather than a single fixed IP. <br>
-    *Workaround*: Delete and recreate the VM. 
+* In rare cases, an instance might be created with two rather than one single fixed IP. <br>
+    *Workaround*: Delete and recreate the instance. 
 
-* `ssh` access to your VM may unexpectedly cease functioning.<br>
+* `ssh` access to your instance might unexpectedly cease functioning.<br>
     *Workaround*: Contact customer support.
-
-* The Windows CLI cannot upload files of 20MB or more. <br>
-    *Workaround*: Use the Openstacks CLIs or the management console to upload large files.
 	
-* If you do not clean up excess ports, you might not be able to start all the VMs. <br>
-    *Workaround*: Use neutron port-list, and remove all ports that are not the dhcp or router port. There should be two ports in addition to those used for existing VMs. The neutron port-show <port-id> command indicates the port usage. 
+* Cinder backup-restore gives an unnecessary attribute error but the restore completes.
+	
+* Neutron port-update does not support attaching an instance to a port. You must use nova boot to attach a precreated port to an instance.
+
+* Currently, volume detach does not hook inside VM to flush out busy devices and proc io values, semophores, locks clear. This presents different issues in Windows and Linux VMs.
+
+* When using Horizon Preview Edition, you might run into a quota issue for network tasks, like floating IP creation. In that case, you may use the classic console to create a floating IP.
+
+* Windows instances booted using the highmem flavor are unusable.
 
 * The Ext-Gateway field might not be populated in the CLI. <br>
     *Workaround*: You can confirm the status via the management console. 
+
+* Use the OpenStack Python CLI to create a server rather than the personality option to create a server. 
 	
-* When using the windows CLI, the network information is not displayed in the Assigned Network Addresses section.<br>
-    *Workaround*: Use the horizon console to find the network address.
+* We recommend that you use the [management console](/mc/) rather than the Windows CLI to attach or detach a volume.
+* In the Windows CLI, the reset password feature is not currently available. 
+
+* In the Windows CLI, the server ID in the attached volume column sometimes does not display.  
+ 
+* When using the windows CLI, if the Flavors Details section is blank, retrieve the information using the [management console](/mc/).
+	
+* When using the Windows CLI, the Assigned Network Addresses section does not display the network information.<br>
+    *Workaround*: Use the Horizon console to find the network address.
 	
 * When using the Windows CLI, you cannot download a file larger than 700MB.<br>
     *Workaround*: Use another CLI or the [management console](/mc/) to download a file that is larger than 700MB.
+	
+* Large file upload (5GB) with the Windows CLI may have issues. 
+	*Workaround*: Use another tool to upload your file, e.g. the [management console](/mc/) or the Openstack CLIs. 
 	
 <!--##Resolved Issues in Version 13.5## {#v135resolved}
 
