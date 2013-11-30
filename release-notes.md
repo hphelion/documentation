@@ -80,7 +80,7 @@ The following are known issues and limitations for version 13.5 of the HP Public
 
 * Identity Service - Role-based access control (RBAC) is not implemented at the panel level, so you may be presented with actions and services options you do not have permission to invoke. The error messages reported for limitations on user role permissions will be improved while development changes are adopted.
 
-* Relational Database MySQL service - The Relational Database MySQL service provides core functionality, but as HP Public Cloud aligns with the latest Trove client, DBaaS support is updated and upgraded accordingly.
+* Relational Database MySQL service - This service provides core functionality aligned with the latest [OpenStack Trove client](https://wiki.openstack.org/wiki/Trove).
 
 * Jclouds is supported for Keystone version 2 API and earlier only.
 
@@ -100,7 +100,7 @@ The following are known issues and limitations for version 13.5 of the HP Public
 
 * We recommend that you use the Neutron interface for any network quota checks.
 
-* The EUCA API is not supported in this release.
+* The ec2 API and euca-tools are not supported in this release.
 
 * Cinder backup-restore gives an unnecessary attribute error but the restore completes.
 	
