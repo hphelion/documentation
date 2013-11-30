@@ -80,7 +80,7 @@ The following are known issues and limitations for version 13.5 of the HP Public
 
 * Identity Service - Role-based access control (RBAC) is not implemented at the panel level, so you may be presented with actions and services options you do not have permission to invoke. The error messages reported for limitations on user role permissions will be improved while development changes are adopted.
 
-* Relational Database MySQL service - The Relational Database MySQL service provides core functionality, but as HP Public Cloud aligns with the latest Trove client, DBaaS support is updated and upgraded accordingly.
+* Relational Database MySQL service - This service provides core functionality aligned with the latest [OpenStack Trove client](https://wiki.openstack.org/wiki/Trove).
 
 * Jclouds is supported for Keystone version 2 API and earlier only.
 
@@ -88,7 +88,7 @@ The following are known issues and limitations for version 13.5 of the HP Public
 	
 * Instances are not able to resolve their own names.
       
-* Windows typically requires at least 4GB of memory, so Windows instances do not fit into the 10GB root disk used for `xsmall` instances even if the root partition is sufficient. DOUG 
+* Windows typically requires at least 4GB of memory, so Windows instances do not fit into the 10GB root disk used for `xsmall` instances even if the root partition is sufficient. 
 
 * The command `nova image-meta` does not change the `image name`. Instead, it adds a new attribute called `name` to the metadata. If you want to change the name of an instance snapshot (private image), use the image management utilities ("Glance"). Please refer to the [API documentation](http://api.openstack.org/api-ref-compute.html) from Openstack.
 
@@ -100,7 +100,7 @@ The following are known issues and limitations for version 13.5 of the HP Public
 
 * We recommend that you use the Neutron interface for any network quota checks.
 
-* The EUCA API is not supported in this release.
+* The ec2 API and euca-tools are not supported in this release.
 
 * Cinder backup-restore gives an unnecessary attribute error but the restore completes.
 	
@@ -120,7 +120,7 @@ The following are known issues and limitations for version 13.5 of the HP Public
 
 * A Windows instance of a large size can sometimes become stuck in the rebooting state.
 
-* When your VM `libvirt` state is `in shutdown`, Nova delete may not remove the VM.
+* When the `libvirt` state of your instance is `in shutdown`, Nova delete may not remove the instance.
 	
 * You should detach a volume before you delete it; performing a detach and delete simultaneously causes the volume to enter an inconsistent state.
 	
@@ -128,8 +128,8 @@ The following are known issues and limitations for version 13.5 of the HP Public
 * You may run into a quota issue for network tasks when using the Horizon Preview Edition for tasks such as floating IP creation. 
     *Workaround*: Use the [classic console](/mc/) for the task.
 
-* Snapshot support for a virtual machine (VM) booted from a block volume is not yet available.<br>
-    *Workaround*: Shut down the virtual machine (VM), then delete the VM and wait until the volume is marked as `available`. Take a snapshot of the volume using, for example, the python cinder binding. Once the snapshot is complete, re-create the instance from the volume, and re-attach the original floating IP, if necessary. **Note**: The port/fixed-IP associated with the new instance might be different from the original one.
+* Snapshot support for an instance booted from a block volume is not yet available.<br>
+    *Workaround*: Shut down the instance, then delete the instance and wait until the volume is marked as `available`. Take a snapshot of the volume using, for example, the python cinder binding. Once the snapshot is complete, re-create the instance from the volume, and re-attach the original floating IP, if necessary. **Note**: The port/fixed-IP associated with the new instance might be different from the original one.
     
 * In rare cases, after successfully launching an instance, `ssh` might not function. <br>
     *Workaround*: Reboot the instance.
@@ -171,7 +171,7 @@ For additional related information on HP Cloud:
 * See [HP Cloud version 13.5 overview](/version-overview/) for an overview of the 13.5 release set.
 * See [HP Cloud Service APIs] (v13.5)](/api/v13/) for an overview of the 13.5 API specifications.
 * See [migration overview page](/migration-overview/) for information on migrating from version 12.12 to 13.5n.
-* See [Getting Started with Compute 13.5].(https://community.hpcloud.com/article/getting-started-compute-135) for information on how to get started with the compute service in version 13.5.
+* See [Getting Started with Compute 13.5](https://community.hpcloud.com/article/getting-started-compute-135) for information on how to get started with the compute service in version 13.5.
 * Speaking of which, the [Getting Started Guide](https://community.hpcloud.com/article/getting-started-guide/) is a great resource for getting yourself up and running with the various HP Cloud services in general.
 * See the [main HP Cloud web site](https://www.hpcloud.com/#) for a discussion of our various products and services.
 * Go to our [support page](https://www.hpcloud.com/support) if you are seeking support information.
