@@ -78,9 +78,9 @@ The following are known issues and limitations for version 13.5 of the HP Public
 
 * Do not delete egress rules from your security group as doing so removes the ability of your instance to access any external nodes (including fetching metadata required by your SSH key) and causes newly-booted instances to be unusable.
 
-* Identity Service - Currently, role-based access control (RBAC) is not implemented at the panel level, so you may be presented with actions and services options you do not have permission to invoke. The error messages reported for limitations on user role permissions will be improved while development changes are adopted.
+* Identity Service - Role-based access control (RBAC) is not implemented at the panel level, so you may be presented with actions and services options you do not have permission to invoke. The error messages reported for limitations on user role permissions will be improved while development changes are adopted.
 
-* Relational Database MySQL service - The Relational Database MySQL service provides core functionality, but as HP Public Cloud aligns with the latest Trove client, DBaaS support will be updated and upgraded accordingly.
+* Relational Database MySQL service - The Relational Database MySQL service provides core functionality, but as HP Public Cloud aligns with the latest Trove client, DBaaS support is updated and upgraded accordingly.
 
 * Jclouds is supported for Keystone version 2 API and earlier only.
 
@@ -91,8 +91,6 @@ The following are known issues and limitations for version 13.5 of the HP Public
 * Windows typically requires at least 4GB of memory, so Windows instances do not fit into the 10GB root disk used for `xsmall` instances even if the root partition is sufficient. DOUG 
 
 * The command `nova image-meta` does not change the `image name`. Instead, it adds a new attribute called `name` to the metadata. If you want to change the name of an instance snapshot (private image), use the image management utilities ("Glance"). Please refer to the [API documentation](http://api.openstack.org/api-ref-compute.html) from Openstack.
-
-* You should serialize detaching and then deleting a volume; performing a detach and delete simultaneously causes the volume to enter an inconsistent state.
 
 * In rare cases, you might not be able to see the private IP in the networks section of a Windows instance. Use the VNC console to see the private IP for the Windows instance.
 
@@ -107,8 +105,6 @@ The following are known issues and limitations for version 13.5 of the HP Public
 * Cinder backup-restore gives an unnecessary attribute error but the restore completes.
 	
 * Neutron port-update does not support attaching an instance to a port. You must use nova boot to attach a precreated port to an instance.
-
-* Currently, volume detach does not hook inside VM to flush out busy devices and proc I/O values, semophores, locks clear. This presents different issues in Windows and Linux VMs.
 
 * Windows instances booted using the `highmem` flavor are unusable.
 
@@ -126,6 +122,9 @@ The following are known issues and limitations for version 13.5 of the HP Public
 
 * When your VM `libvirt` state is `in shutdown`, Nova delete may not remove the VM.
 	
+* You should detach a volume before you delete it; performing a detach and delete simultaneously causes the volume to enter an inconsistent state.
+	
+* Always make sure that your volumes are unmounted--or offline for Windows instances--before you detach a volume.
 * You may run into a quota issue for network tasks when using the Horizon Preview Edition for tasks such as floating IP creation. 
     *Workaround*: Use the [classic console](/mc/) for the task.
 
@@ -137,8 +136,6 @@ The following are known issues and limitations for version 13.5 of the HP Public
 
 * In some cases, you might be unable to connect to a VNC URL. <br>
     *Workaround*: Connect using other clients such as `ssh`, `putty`, or RDP.
-	
-* Always make sure that your volumes are unmounted--or offline for Windows instances--before you detach a volume.
 
 * In rare cases, an instance might be created with two rather than one single fixed IP. <br>
     *Workaround*: Delete and recreate the instance. 
