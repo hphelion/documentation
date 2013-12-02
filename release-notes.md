@@ -74,8 +74,6 @@ The following are known issues and limitations for version 13.5 of the HP Public
 
 * If you attempt to simultaneously launch a large number of instances, some instances might not be pingable or accessible via ssh. HP recommends staggering your launch of multiple instances to batches of at most 100 at a time for the best performance.
 
-* When passing through a router to move off your local network, your throughput is limited to approximately 1500 megabits per second.
-
 * Do not delete egress rules from your security group as doing so removes the ability of your instance to access any external nodes (including fetching metadata required by your SSH key) and causes newly-booted instances to be unusable.
 
 * Identity Service - Role-based access control (RBAC) is not implemented at the panel level, so you may be presented with actions and services options you do not have permission to invoke. The error messages reported for limitations on user role permissions will be improved while development changes are adopted.
