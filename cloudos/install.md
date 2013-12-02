@@ -11,6 +11,7 @@ product: cloudos
 Welcome! The following topics explain how to install &amp; configure your clouds with the HP Cloud OS platform.
 
  * [Cloud OS Installation - Overview](/cloudos/install/overview/)
+ * [Cloud OS Installation - Before You Install](/cloudos/install/before-you-install/)
  * [Cloud OS Installation - Set Admin Node Prerequisites (Required)](/cloudos/install/set-admin-node-prerequisites/)
  * [Cloud OS Installation - Customize Server Types (Optional)](/cloudos/install/customize-server-types/)
  * [Cloud OS Installation - Customize Network Connections (Optional)](/cloudos/install/customize-network-connections/)
