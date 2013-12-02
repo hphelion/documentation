@@ -50,7 +50,7 @@ Need to Pause an instance? An easy way to do this is by taking a snapshot of you
 
 ## How to Access a Windows Instance via the Remote Desktop ##  {#WindowsRDP}
 
-You can create Windows instances using the [management console](https://console.hpcloud.com), [bindings](bindings) and [CLIs](cli). The output of creating a Windows instance is an administrator password. You need this password to connect to Windows instances via the Remote Desktop Protocol (RDP).
+You can create Windows instances using the [management console](https://console.hpcloud.com), [bindings](/bindings/) and [CLIs](/cli/). The output of creating a Windows instance is an administrator password. You need this password to connect to Windows instances via the Remote Desktop Protocol (RDP).
 
 ### RDP via Windows ### {#RDPviaWindows}
 

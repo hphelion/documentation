@@ -27,13 +27,12 @@ HP Cloud consists of the following publicly-available services:
 * [Relational Database](/dbaas/) - An OpenStack Trove implementation that provides managed database services hosted by HP
 * [Content Delivery Network (CDN)](/cdn/) - A content delivery network hosted by HP
 * [Domain Name Service (DNS)](/dns/) - A managed domain name service featuring anycast routing hosted by HP
+* [Monitoring](/maas/): A managed monitoring service facilitating the monitoring of health and other metrics for the resources in HP Cloud.<br>
 
 The following HP Public Cloud are now in private beta; follow the links to sign up and begin trying them out!
 
 * [Load Balancer](/lbaas/) -  A managed service enabling automatic traffic routing to multiple back end servers hosted by HP.<br>
   **Note**: This service requires activation while in private beta; please [request access on our sign-up page](https://account.hpcloud.com/cases/betarequest/lbaas).  Service use is free of charge during the private beta period.
-* [Monitoring](/maas/): A managed monitoring service facilitating the monitoring of health and other metrics for the resources in HP Cloud.<br>
-  **Note**: This service requires activation while in private beta; please [request access on our sign-up page](https://account.hpcloud.com/cases/betarequest/maas). Service use is free of charge during the private beta period.
 * [Application Platform as a Service (aPaaS)](/apaas/) - An application platform for development, deployment, and management of cloud applications hosted by HP.<br>
   **Note**: This service requires activation while in private beta; please [request access on our sign-up page](https://apaas.hpcloud.com/shared/free-private-beta/signup).  Service use is free of charge during the private beta period.
 * [Messaging](/msgaas/): API for the HP Cloud messaging service; provides you with a standards-based, inter-application asynchronous message queuing system with guaranteed first in, first out (FIFO) message delivery in the HP Cloud.<br>
