@@ -21,7 +21,7 @@ After 6-months, access to online resources will still be available, but no suppo
 
 _________________________________________
 
-The Unix Command Line Interface is a tool which allows Unix or Mac users to manage their HP Public Cloud from the command line or automated through scripts.  There is no need to understand the underlying REST API or XML document format to use the Unix CLI.
+The Unix Command Line Interface tool allows Unix or Mac users to manage their HP Public Cloud from the command line or automated through scripts.  There is no need to understand the underlying REST API or XML document format to use the Unix CLI.
 
 * [Installation](/cli/unix/install)
 * [Account Configuration](/cli/unix/configuration)
@@ -38,7 +38,10 @@ The Unix Command Line Interface is a tool which allows Unix or Mac users to mana
 
 For some release-by-release information, take a look at [the UNIX CLI release notes](/cli/unix/release-notes)!
 
-[**Download** the HP Cloud environment command-line interface (CLI) software for UNIX CLI](/file/hpcloud.gem).
+**Download** the HP Cloud environment command-line interface (CLI) software for UNIX CLI for the HP Cloud version you are using:
+
++ [**HP Cloud version 13.5** environment CLI software for UNIX CLI](http://rubygems.org/gems/hpcloud)
++ [**HP Cloud version 12.12** environment CLI software for UNIX CLI](/file/hpcloud.gem)
 
 Some articles about ways you can use the Unix CLI:
 
