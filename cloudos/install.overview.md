@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "Cloud OS Installation - Overview"
+title: "Installation Overview"
 permalink: /cloudos/install/overview/
 product: cloudos
 
 ---
 
-# Cloud OS Installation - Overview
+# Installation Overview
 
 Welcome! This topic presents an overview of the installation steps.  
 
@@ -39,8 +39,6 @@ neutral, open source cloud architecture.
 <img src="media/cloudos-install-process.png" title="HP Cloud OS installation process" /> 
 
 ## Components of the Cloud OS Environment
-
-( diagram here ) ... Admin Node ... Services ... Controller and Compute Nodes ... 
 
 ### Cloud OS Administration Node
 
@@ -124,10 +122,10 @@ Compute Region Nodes can be created to expand cloud capacity.
 
 See these installation &amp configuration topics:
 
- * [Cloud OS Installation - Set Admin Node Prerequisites (Required)](/cloudos/install/set-admin-node-prerequisites/)
- * [Cloud OS Installation - Customize Server Types (Optional)](/cloudos/install/customize-server-types/)
- * [Cloud OS Installation - Customize Network Connections (Optional)](/cloudos/install/customize-network-connections/)
- * [Cloud OS Installation - Customize Network Settings (Required)](/cloudos/install/customize-network-settings/)
- * [Cloud OS Installation - Complete Admin Node Installation (Required)](/cloudos/install/complete-admin-node-installation/)
- * [Cloud OS Installation - Updates &amp; Extensions (Optional)](/cloudos/install/updates-extensions/)
+ * [Set Admin Node Prerequisites (Required)](/cloudos/install/set-admin-node-prerequisites/)
+ * [Customize Server Types (Optional)](/cloudos/install/customize-server-types/)
+ * [Customize Network Connections (Optional)](/cloudos/install/customize-network-connections/)
+ * [Customize Network Settings (Required)](/cloudos/install/customize-network-settings/)
+ * [Complete Admin Node Installation (Required)](/cloudos/install/complete-admin-node-installation/)
+ * [Updates &amp; Extensions (Optional)](/cloudos/install/updates-extensions/)
 

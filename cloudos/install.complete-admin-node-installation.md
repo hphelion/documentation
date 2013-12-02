@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "Cloud OS Installation - Complete Admin Node Installation (Required)"
+title: "Complete Admin Node Installation (Required)"
 permalink: /cloudos/install/complete-admin-node-installation/
 product: cloudos
 
 ---
 
-# Cloud OS Installation - Complete Admin Node Installation (Required)
+# Complete Admin Node Installation (Required)
 
 This topic describes the steps to complete the Admin Node installation. These steps are required. 
 

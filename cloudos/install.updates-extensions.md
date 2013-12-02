@@ -1,15 +1,15 @@
 ---
 layout: default
-title: "Cloud OS Installation - Updated &amp; Extensions"
+title: "Updates &amp; Extensions"
 permalink: /cloudos/install/updates-extensions/
 product: cloudos
 
 ---
 
-# Cloud OS Installation - Updates &amp; Extensions 
+# Updates &amp; Extensions 
 
 This topic describes the steps to apply updates (such as hot fixes) or extensions, or both, to your deployed clouds. While the extensions 
-may be optional, the updates from may be recommended, as determined by your requirements and discussion with HP Support.
+may be optional, the updates from HP may be recommended by HP Support, as determined by your requirements and discussion with the support representative.
 
 Will add the updates &amp; extensions info here... this is just a PLACEHOLDER.  
 

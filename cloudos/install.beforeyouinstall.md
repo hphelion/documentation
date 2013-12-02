@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "Cloud OS Installation - Before You Install"
+title: "Before You Install"
 permalink: /cloudos/install/before-you-install/
 product: cloudos
 
 ---
 
-# Cloud OS Installation - Before You Install
+# Before You Install
 
 Before you can start working in the HP Cloud OS Operational Dashboard, you must set up the VM guest and boot the Admin Node from the HP Cloud OS ISO. 
 
@@ -41,8 +41,7 @@ The Operational Dashboard has been successfully installed on the Admin Node.
 
 ## Launch the Operational Dashboard
 
-After you boot from the HP Cloud OS ISO, you are ready to launch the Operational Dashboard to set up the Admin
-Node.
+After you boot from the HP Cloud OS ISO, you are ready to launch the Operational Dashboard to set up the Admin Node.
 
 To launch the Operational Dashboard:
 

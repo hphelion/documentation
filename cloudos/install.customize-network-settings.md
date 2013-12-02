@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "Cloud OS Installation - Customize Network Settings (Required)"
+title: "Customize Network Settings (Required)"
 permalink: /cloudos/install/customize-network-settings/
 product: cloudos
 
 ---
 
-# Cloud OS Installation - Customize Network Settings (Required)
+# Customize Network Settings (Required)
 
 This topic describes the steps to customize the network settings. These steps are required. 
 
