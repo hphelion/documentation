@@ -12,7 +12,7 @@ This topic describes the steps to set your Admin Node's prerequisites.  These st
 
 Your first step in the Operational Dashboard is to configure the following Admin Node prerequisites.
 
-> **Caution:** Any prerequisites you want to configure, must be done before you complete the
+ **Caution:** Any prerequisites you want to configure, must be done before you complete the
 steps in "Complete the Admin Node Installation". After that, the Edit Prerequisite dialogs will
 be read-only. Once the install process is triggered, no changes can be made. If you want to
 make changes, you need to start over by re-installing the Admin Node. See [Boot the Admin
@@ -50,7 +50,7 @@ uncheck DHCP.
 
 5. Set the HTTP Proxy Information applicable for your environment. If you are on a network that has a proxy, you must fill in this Proxy information.
 
-> **Caution:** Specifying incorrect proxy host settings might cause failures in launching the Operational Dashboard and the Administration Dashboard.
+ **Caution:** Specifying incorrect proxy host settings might cause failures in launching the Operational Dashboard and the Administration Dashboard.
 
  a. Specify the Host - &lt;IP address>
  
@@ -132,5 +132,5 @@ If any of the prerequisite steps fail to complete, an error message displays.  I
 Access Prerequisites fail to complete](/cloudos/troubleshooting/) in the Troubleshooting topic. 
 
 
-> [Previous: Before You Install](/cloudos/install/before-you-install/) | [Next: Customize Server Types](/cloudos/install/customize-server-types/)
+[Previous: Before You Install](/cloudos/install/before-you-install/) | [Next: Customize Server Types](/cloudos/install/customize-server-types/)
 
