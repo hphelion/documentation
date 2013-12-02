@@ -70,13 +70,17 @@ In Dual mode, if the wiring of networks between the nodes are non-contiguous and
 * Example 1: For all the nodes, `eth0 - admin`, `eth1 - public`, `eth2 - private` &mdash; the Connections table must be customized to look like the following:
 
     intf0 - 1Gb (preferred) on 1st port
+	
     intf1 - 1Gb (preferred) on 3rd port
+	
     intf2 - 1Gb (preferred) on 2nd port
 
 * Example 2: For all the nodes, `eth0 - admin`, `eth2 - os_sdn`, `eth4 - public/external` &mdash; the Connections table must be customized to look like the following:
 
     intf0 - 1Gb (preferred) on 1st port
+	
     intf1 - 1Gb (preferred) on 3rd port
+	
     intf2 - 1Gb (preferred) on 5th port
 	
 ### Single Mode Example
@@ -97,26 +101,31 @@ Note that in this example, the eth0 and eth1 interfaces belongs to same VLAN; th
 Here's a partial example of how the Team mode configuration could look on this Connections dialog:
 
 <table style="background-color: white; color: black;">
+
 <tr>
 <th>Logical Interface</th>
 <th>Physical Interface</th>
 <th>Interface Mode</th>
 </tr>
+
 <tr>
 <td>intf0 (admin, bmc_vlan)</td>
 <td>1Gb on 1st port, 1Gb on 2nd port</td>
 <td>6</td>
 </tr>
+
 <tr>
 <td>intf1 (os_sdn)</td>
 <td>1Gb on 1st port, 1Gb on 2nd port</td>
 <td>6</td>
 </tr>
+
 <tr>
 <td>intf2 (public)</td>
 <td>1Gb on 1st port, 1Gb on 2nd port</td>
 <td>6</td>
 </tr>
+
 </table>
 
 ### Interface Mode
@@ -148,7 +157,7 @@ This mode selects the same slave for each destination MAC address and provides l
 > Mode 4 is also called Dynamic Link Aggregation. It creates aggregation groups that share the same speed and duplex settings. 
 This mode requires a switch that supports IEEE 802.3ad Dynamic link.
 
-* ** Mode 5 (balance-tlb)**
+* **Mode 5 (balance-tlb)**
 
 > Mode 5 is also called Adaptive transmit load balancing. The outgoing traffic is distributed according to the current load and queue on each 
 slave interface. Incoming traffic is received by the current slave.
@@ -165,7 +174,7 @@ If you need to edit the connections:
 
 1. In the Operational Dashboard, from the Environment tab, click Edit Connection for the Network Mode you want to customize.  Most likely, this would be Dual or Team.
 
-2. The Edit Connection dialog presents the Physical Interface values in a succinct format, such as `?1g1`. The value contains (up to) four characters, and follows these conventions: 
+2. The Edit Connection dialog presents the Physical Interface values in a succinct format, such as ?1g1. The value contains (up to) four characters, and follows these conventions: 
 
     * 1st character: the allowable value is a question mark (?) or blank.  The question mark indicates a preferred connection, meaning the  available bandwidth supported by the Network Interface card (NIC). If not specified (blank), Cloud OS configures the physical interface to the value specified by the next character.
 

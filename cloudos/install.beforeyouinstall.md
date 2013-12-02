@@ -53,8 +53,5 @@ To launch the Operational Dashboard:
 
 ## Next Step
 
-Now proceed to the instructions where you will [set the Admin Node prerequisites](/cloudos/install/set-admin-node-prerequisites/).  
-
-
-
+Proceed to the next topic, [Set the Admin Node Prerequisites](/cloudos/install/admin-node-prerequisites/).  
 

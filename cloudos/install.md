@@ -12,7 +12,7 @@ Welcome! The following topics explain how to install &amp; configure your clouds
 
  * [Installation Overview](/cloudos/install/overview/)
  * [Before You Install](/cloudos/install/before-you-install/)
- * [Set Admin Node Prerequisites (Required)](/cloudos/install/set-admin-node-prerequisites/)
+ * [Set Admin Node Prerequisites (Required)](/cloudos/install/admin-node-prerequisites/)
  * [Customize Server Types (Optional)](/cloudos/install/customize-server-types/)
  * [Customize Network Connections (Optional)](/cloudos/install/customize-network-connections/)
  * [Customize Network Settings (Required)](/cloudos/install/customize-network-settings/)
