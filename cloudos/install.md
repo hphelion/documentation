@@ -11,7 +11,9 @@ product: cloudos
 Welcome! The following topics explain how to install &amp; configure your clouds with the HP Cloud OS platform. 
 
 It's important to read the topics and perform the described steps in order. While some steps are optional, the sequence that you'll follow in 
-the HP Cloud OS Operational Dashboard does matter to ensure a proper deployment of your cloud. 
+the HP Cloud OS Operational Dashboard is significant, to ensure a proper deployment of your cloud. 
+
+Install and Setup the Admin Node:
 
 * [Installation Overview](/cloudos/install/overview/)
 * [Before You Install](/cloudos/install/before-you-install/)
@@ -20,6 +22,10 @@ the HP Cloud OS Operational Dashboard does matter to ensure a proper deployment 
 * [Customize Network Connections (Optional)](/cloudos/install/customize-network-connections/)
 * [Customize Network Settings (Required)](/cloudos/install/customize-network-settings/)
 * [Complete Admin Node Installation (Required)](/cloudos/install/complete-admin-node-installation/)
+
+After you install the Admin node, you can perform additional configuration steps:
+
+* [Create Your Cloud](/cloudos/install/create-your-cloud/) 
 * [Review Licensing Details](/cloudos/install/review-licensing-details/)
 * [Updates &amp; Extensions](/cloudos/install/updates-extensions/)
 
