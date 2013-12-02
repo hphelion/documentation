@@ -10,13 +10,13 @@ product: cloudos
 
 Your first step in the HP Cloud OS Operational Dashboard is to configure the following Admin Node prerequisites:
 
- * Cloud Administration Node Internet Access &mdash; Set up Internet access on the Admin Node. You will need Internet access for downloading install modules or plugins using the Updates and Extensions panel. For details, see the [Updates and Extensions](/cloudos/install/updates-and-extensions/) topic.
+* Cloud Administration Node Internet Access &mdash; Set up Internet access on the Admin Node. You will need Internet access for downloading install modules or plugins using the Updates and Extensions panel. For details, see the [Updates and Extensions](/cloudos/install/updates-and-extensions/) topic.
 
- * External DNS Server &mdash;  Add the IP address of the external DNS server that your Cloud OS environment is using to access named websites within your cloud.
+* External DNS Server &mdash;  Add the IP address of the external DNS server that your Cloud OS environment is using to access named websites within your cloud.
 
- * Cloud Administration Node Time Settings &mdash; configure your cloud to reflect the current time to ensure that the cloud is created successfully.
+* Cloud Administration Node Time Settings &mdash; configure your cloud to reflect the current time to ensure that the cloud is created successfully.
 
- * Email Notification Settings &mdash; configure your cloud to send email notifications when the Cloud and Compute Region operation completes since this takes some time. By enabling and setting
+* Email Notification Settings &mdash; configure your cloud to send email notifications when the Cloud and Compute Region operation completes since this takes some time. By enabling and setting
 this prerequisite, you can be alerted by e-mail when each operation completes.
 
 ### Enable Admin Node Internet Access
@@ -25,7 +25,7 @@ To enable the Admin Node Internet Access:
 
 1. On the Operational Dashboard, select the Environment tab > Prerequisites.
 
-2. For Cloud Administration Node Internet Access, click Edit to open the prerequisites dialog.
+2. For Cloud Administration Node Internet Access, click Edit to open the prerequisites.
 
 3. Set the Network Interface to the network interface on the Admin Node that has been configured for internet access, for example, eth1.
 
@@ -33,21 +33,21 @@ To enable the Admin Node Internet Access:
 
 5. Set the HTTP Proxy Information applicable for your environment. If you are on a network that has a proxy, you must fill in this Proxy information.
 
- **Caution:** Specifying incorrect proxy host settings might cause failures in launching the Operational Dashboard and the Administration Dashboard.
+**Caution:** Specifying incorrect proxy host settings might cause failures in launching the Operational Dashboard and the Administration Dashboard.
 
-    * Specify the Host's IP address
+ a. Specify the Host's IP address
  
-    > Get this value from your system administrator or from the settings in your web browser.
+> Get this value from your system administrator or from the settings in your web browser.
  
-    * Specify the Port
+ b. Specify the Port
 
-    > Get this value from your system administrator or from the settings in your web browser.
+> Get this value from your system administrator or from the settings in your web browser.
  
-     * Specify the Non-Proxy Hosts' IP addresses
+ c. Specify the Non-Proxy Hosts' IP addresses
 	 
-     > Specify addresses that should not use proxy servers (for the Controller/Compute Nodes' admin and os_sdn networks, IP range). Each network needs to be separated by a pipe bar "|". For example: 10.*|192.*|localhost.
+> Specify addresses that should not use proxy servers (for the Controller/Compute Nodes' admin and os_sdn networks, IP range). Each network needs to be separated by a pipe bar "|". For example: 10.*|192.*|localhost.
  
-    * If necessary, specify the optional Username and Password.
+ d. If necessary, specify the optional Username and Password.
  
 6. Click Update Prerequisite.
 
@@ -91,7 +91,7 @@ To set the email notification:
 
 1. On the Operational Dashboard, select the Environment tab > Prerequisites.
 
-2. For Email Notification Settings, click Edit Prerequisites to open the email notification dialog.
+2. For Email Notification Settings, click Edit Prerequisites.
 
 3. Click the Enable Notification checkbox.
 
@@ -109,7 +109,7 @@ When this prerequisite completes, a timestamp will be displayed in the Last Upda
 
 ## Prerequisite Troubleshooting
 
-If any of the prerequisite steps fail to complete, an error message displays.  If this happens, see [Problem Admin Node Internet
+If any of the prerequisite steps fail to complete, an error message displays.  If this happens, see [Admin Node Internet
 Access Prerequisites fail to complete](/cloudos/troubleshooting/) in the Troubleshooting topic. 
 
 ## Next Step

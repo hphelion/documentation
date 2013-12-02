@@ -145,7 +145,7 @@ Only one slave in the bond is active at an instance of time. A different slave b
 
 * **Mode 2 (balance-xor)**
 
-> Mode 2 transmits based on XOR formula. (Source MAC address is XOR’d with destination MAC address) modula slave count. 
+> Mode 2 transmits based on XOR formula. (Source MAC address is XOR'd with destination MAC address) modula slave count. 
 This mode selects the same slave for each destination MAC address and provides load balancing and fault tolerance.
 
 * **Mode 3 (broadcast)**

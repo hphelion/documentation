@@ -12,7 +12,7 @@ Before you can start working in the HP Cloud OS Operational Dashboard, you must 
 
 ## Set Up the VM Guest
 
-The Admin Node can only be installed on a virtual machine. Here are general guidelines for creating a virtual machine in an existing or a new hypervisor infrastructure:
+You can only install the Admin Node on a virtual machine. Here are general guidelines for creating a virtual machine in an existing or new hypervisor infrastructure:
 
 1. Configure the hypervisor host's network. The host must provide connectivity to the Virtual Machine guest on an isolated private network to all the bare-metal nodes' port eth0. And, the guest must also have connectivity to a routable network for Internet access.
 

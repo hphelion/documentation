@@ -120,7 +120,7 @@ Compute Region Nodes can be created to expand cloud capacity.
 
 ## Next Step
 
-Proceed to the [Before You Install](/cloudos/install/before-you-install/) topic. 
+Proceed to the next topic, [Before You Install](/cloudos/install/before-you-install/). 
 
 
 
