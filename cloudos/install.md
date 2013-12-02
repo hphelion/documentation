@@ -17,7 +17,7 @@ Welcome! The following topics explain how to install &amp; configure your clouds
  * [Customize Network Connections (Optional)](/cloudos/install/customize-network-connections/)
  * [Customize Network Settings (Required)](/cloudos/install/customize-network-settings/)
  * [Complete Admin Node Installation (Required)](/cloudos/install/complete-admin-node-installation/)
- * [Review Licensing Details]](/cloudos/install/review-licensing-details/)
+ * [Review Licensing Details](/cloudos/install/review-licensing-details/)
  * [Updates &amp; Extensions](/cloudos/install/updates-extensions/)
 
 Also see the website copy of the [HP Cloud OS Operational Dashboard Help](http://docs.hpcloud.com/cloudos/operational_dashboard/index.htm). 

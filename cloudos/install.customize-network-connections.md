@@ -96,28 +96,28 @@ Note that in this example, the eth0 and eth1 interfaces belongs to same VLAN; th
 
 Here's a partial example of how the Team mode configuration could look on this Connections dialog:
 
-            <table style="background-color: white; color: black;">
-                <tr>
-                    <th>Logical Interface</th>
-                    <th>Physical Interface</th>
-                    <th>Interface Mode</th>
-                </tr>
-                <tr>
-                    <td>intf0 (admin, bmc_vlan)</td>
-                    <td>1Gb on 1st port, 1Gb on 2nd port</td>
-                    <td>6</td>
-                </tr>
-                <tr>
-                    <td>intf1 (os_sdn)</td>
-                    <td>1Gb on 1st port, 1Gb on 2nd port</td>
-                    <td>6</td>
-                </tr>
-                <tr>
-                    <td>intf2 (public)</td>
-                    <td>1Gb on 1st port, 1Gb on 2nd port</td>
-                    <td>6</td>
-                </tr>
-            </table>
+<table style="background-color: white; color: black;">
+<tr>
+<th>Logical Interface</th>
+<th>Physical Interface</th>
+<th>Interface Mode</th>
+</tr>
+<tr>
+<td>intf0 (admin, bmc_vlan)</td>
+<td>1Gb on 1st port, 1Gb on 2nd port</td>
+<td>6</td>
+</tr>
+<tr>
+<td>intf1 (os_sdn)</td>
+<td>1Gb on 1st port, 1Gb on 2nd port</td>
+<td>6</td>
+</tr>
+<tr>
+<td>intf2 (public)</td>
+<td>1Gb on 1st port, 1Gb on 2nd port</td>
+<td>6</td>
+</tr>
+</table>
 
 ### Interface Mode
 
@@ -167,17 +167,19 @@ If you need to edit the connections:
 
 2. The Edit Connection dialog presents the Physical Interface values in a succinct format, such as `?1g1`. The value contains (up to) four characters, and follows these conventions: 
 
-  * 1st character: the allowable value is a question mark (?) or blank.  The question mark indicates a preferred connection, meaning the  available bandwidth supported by the Network Interface card (NIC). If not specified (blank), Cloud OS configures the physical interface to the value specified by the next character.
+    * 1st character: the allowable value is a question mark (?) or blank.  The question mark indicates a preferred connection, meaning the  available bandwidth supported by the Network Interface card (NIC). If not specified (blank), Cloud OS configures the physical interface to the value specified by the next character.
 
-  * 2nd character: the allowable value may be 1, 10, or 100. It is a numerical value to indicate the network bandwidth.
+    * 2nd character: the allowable value may be 1, 10, or 100. It is a numerical value to indicate the network bandwidth.
 
-  * 3rd character: the value may be g, m, or k. It is the bandwidth unit. g represents gigabits; m represents megabits; k represents kilobits.
+    * 3rd character: the value may be g, m, or k. It is the bandwidth unit. g represents gigabits; m represents megabits; k represents kilobits.
 
-  * 4th character: the value may be a number between 1 and 16.  It is a numerical value to specify the port or NIC number.
+    * 4th character: the value may be a number between 1 and 16.  It is a numerical value to specify the port or NIC number.
 
 3. To add settings, click Add Details to add a new blank row, and add the logical interface, physical interface and optional interface mode.
 
 4. To delete settings, click one or more checkboxes next to the existing settings and click Delete Details.
 
-[Previous: Customize Server Types (Optional)](/cloudos/install/customize-server-types/) | [Next: Customize Network Settings (Required)](/cloudos/install/customize-network-settings/)
+## Next Step
+
+Proceed to the [Customize Network Settings (Required)](/cloudos/install/customize-network-settings/) topic.
 

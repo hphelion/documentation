@@ -118,14 +118,9 @@ hypervisor with OpenStack. However, for this release, Cloud OS supports KVM as t
 This node hosts OpenStack services called Nova-compute and Neutron l2 agent. Multiple
 Compute Region Nodes can be created to expand cloud capacity. 
 
-## Related Topics
+## Next Step
 
-See these installation &amp configuration topics:
+Proceed to the [Before You Install](/cloudos/install/before-you-install/) topic. 
 
- * [Set Admin Node Prerequisites (Required)](/cloudos/install/set-admin-node-prerequisites/)
- * [Customize Server Types (Optional)](/cloudos/install/customize-server-types/)
- * [Customize Network Connections (Optional)](/cloudos/install/customize-network-connections/)
- * [Customize Network Settings (Required)](/cloudos/install/customize-network-settings/)
- * [Complete Admin Node Installation (Required)](/cloudos/install/complete-admin-node-installation/)
- * [Updates &amp; Extensions (Optional)](/cloudos/install/updates-extensions/)
+
 
