@@ -1093,7 +1093,7 @@ Use the following methods to install the SFTP server and copy data using an SFTP
 Before using the SFTP client and server to copy files:
 
 - Configure the security group assigned to the 12.12 and 13.5 instances to allow traffic through to and from port 22. 
-	For more information, see [Configuring Security Groups](#securitygroup).
+	For more information, see [Controlling traffic using security groups](#securitygroup).
 
 - Disable the Windows Firewall on the Windows instance or configure the firewall to allow traffic to and from port 22.
 
