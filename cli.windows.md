@@ -5,8 +5,6 @@ permalink: /cli/windows/
 product: win-cli
 
 ---
-# HP Cloud Environment CLI Software for Windows PowerShell #
-
 The HP Cloud environment command-line interface (CLI) software for Windows PowerShell allows Windows users to manage their HP Cloud services from the command line.
 
 Surf to the appropriate page to learn how to install the software, use the various features, and see how to go about getting help.  <!--The [tutorials](/cli/windows/tutorials) page contains a video tutorial for the Object Storage functionality; full tutorials for Compute and CDN are coming soon.  -->
@@ -24,5 +22,5 @@ For a full list of all the commands available, start with the [command line refe
 
 **Download** the HP Cloud environment command-line interface (CLI) software for Windows PowerShell for the HP Cloud version you are using:
 
-+ [**HP Cloud version 13.5** environment CLI software for Windows PowerShell](http://rubygems.org/gems/hpcloud)
++ [**HP Cloud version 13.5** environment CLI software for Windows PowerShell](/file/WinCLI-1.3.5.7.zip)
 + [**HP Cloud version 12.12** environment CLI software for Windows PowerShell](/file/WinCLI-1.3.3.9.zip)
