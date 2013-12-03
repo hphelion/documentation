@@ -134,18 +134,17 @@ Note: The Operational Dashboard displays subsequent options based on the followi
 
 To edit the os_sdn address ranges:
 
-1. In the os_sdn Edit Network drop-down list, select Edit Address Ranges to open the Edit
-Address Ranges dialog.
+1. In the os_sdn Edit Network drop-down list, select Edit Address Ranges to open the Address Ranges dialog.
 
 2. The Network Type and Subnet values are pre-populated by default with the correct settings.
 
 3. Review the default configurations for each Node Type, IPV4 Start Addr, IPV4 End Addr. Here are the default Node Types and address ranges:
 
- * **Node Type** = host
+ a. **Node Type** = host
 
- * **IPV4 Start Addr** = 192.168.130.81
+ b. **IPV4 Start Addr** = 192.168.130.81
  
- * **IPV4 End Addr** = 192.168.130.160
+ c. **IPV4 End Addr** = 192.168.130.160
  
 4. Click Update Address Ranges to save your changes to validate that the IP address is correct. 
 
