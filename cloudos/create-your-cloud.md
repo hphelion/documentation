@@ -92,42 +92,39 @@ To create a cloud:
 
 2. Click Create Cloud to open the Create Cloud dialog.
 
-3. Specify a Cloud Name. This will be the Domain name that is used to initialize Keystone and
-will be displayed in the Administration Dashboard.
-Note: A cloud name must contain only letters and numbers. It cannot contain spaces or
-special characters.
+3. Specify a Cloud Name. This will be the Domain name that is used to initialize Keystone and will be displayed in the Administration Dashboard.
+Note: A cloud name must contain only letters and numbers. It cannot contain spaces or special characters.
 
-4. Select the Controllers tab and specify which node will have the Cloud Controller, Network
-Controller, and Storage Controller respective services.
+4. Select the Controllers tab and specify which node will have the Cloud Controller, Network Controller, and Storage Controller respective services.
 You install all these core controller services on one Cloud Controller node.
 
 5. (Optional) Select the Attributes tab to specify property values required to create a Cloud.
 
- * Keystone Signing &mdash; Set the Keystone Signing method based upon the authentication
+* Keystone Signing &mdash; Set the Keystone Signing method based upon the authentication
 scheme: UUID or PKI.  PKI (the default setting) is a large token that contains token information such as the user ID
 and user roles. UUID is the alternative 32-character token choice.
 
- * Networking mode &mdash; Specify gre (default setting). Local and Flat are not supported.
+* Networking mode &mdash; Specify gre (default setting). Local and Flat are not supported.
 
- * Local Volume File Name &mdash; Name of the file to be created on the target node's file system
+* Local Volume File Name &mdash; Name of the file to be created on the target node's file system
 and used with `losetup` when creating the logical volume group.  
 
- * Maximum Volume File Size (GB) &mdash; Specify the maximum size of the file created on the
+* Maximum Volume File Size (GB) &mdash; Specify the maximum size of the file created on the
 target node’s file system to represent the size of the cinder volume. If the file size is too big
 for the file system, the size of the file will be capped at 90% of the free space in that file
 system (at the time of creation). Best practice is to adjust the size to a value appropriate for
 the file-system associated with the Local Volume File.
 
- * Admin User Password &mdash; Admin user's password for a granted administrator role on an
+* Admin User Password &mdash; Admin user's password for a granted administrator role on an
 Admin project in the Administration Dashboard.
 
- * Arch User Password &mdash; Architect user's password for a granted architect role on an Admin
+* Arch User Password &mdash; Architect user's password for a granted architect role on an Admin
 project in the Administration Dashboard.
 
- * Trash User Password &mdash; Trash user's password for a granted user's role on a trash project
+* Trash User Password &mdash; Trash user's password for a granted user's role on a trash project
 in the Administration Dashboard.
 
- * **Remember the passwords** &mdash; You will use them to log into the HP Cloud OS Administration Dashboard.
+* **Remember the passwords** &mdash; You will use them to log into the HP Cloud OS Administration Dashboard.
 
 6. Click Create Cloud.
 
@@ -158,17 +155,14 @@ To create a compute region:
 2. For the cloud just created, click Create Compute Region to open the Create Compute
 Region dialog.
 
-3. Specify a Region Name. This will be the Region name that is used to initialize Keystone and
-will be displayed on the Administration Dashboard.
+3. Specify a Region Name. This will be the Region name that is used to initialize Keystone and will be displayed on the Administration Dashboard.
 
-4. From the Compute Controller drop down list, select the node that will have the Compute
-Controller services. The Compute Controller service can reside on the same Cloud Controller.
+4. From the Compute Controller drop down list, select the node that will have the Compute Controller services. The Compute Controller service can reside on the same Cloud Controller.
 
-5. Specify which nodes will have the Compute Nodes service. Select the Compute Node(s) in
-one of the following ways:
+5. Specify which nodes will have the Compute Nodes service. Select the Compute Node(s) in one of the following ways:
 
-  * Choose a number from the drop-down list to auto-select check boxes for you.
-  * Individually select the check boxes of the node(s) you want.
+* Choose a number from the drop-down list to auto-select check boxes for you.
+* Individually select the check boxes of the node(s) you want.
  
 > **Note:** You can have a single node act as both the Compute Controller and Compute
 Node. If you choose this configuration, make sure the underlying node has enough
@@ -194,16 +188,14 @@ appear on the Manage Clouds page as a comma-separated list.
 To see all the cloud and compute region(s) values you configured, click the cloud name to open the
 Manage Clouds Detail page.
 
-* The created cloud details show the timestamp of the cloud creation, the nodes specified for the
-Cloud Controller, Network Controller, and Storage Controller.
+* The created cloud details show the timestamp of the cloud creation, the nodes specified for the Cloud Controller, Network Controller, and Storage Controller.
 
-* Each compute region is a tab with the region's name. Each region's tab shows the timestamp of
-that compute region creation, the nodes specified for the Compute Controller and Compute
+* Each compute region is a tab with the region's name. Each region's tab shows the timestamp of that compute region creation, the nodes specified for the Compute Controller and Compute
 Nodes, and the Hypervisor.
 
 ## Next Step
 
-After successfully creating a cloud and compute region(s), you can manage your cloud environment
-by launching the HP Cloud OS Administration Dashboard: click More > Launch Dashboard for the cloud you
-created.  For more, see the next topic, [Launch the Cloud's Administration Dashboard](/cloudos/install/launch-admin-dashboard/).
+After successfully creating a cloud and compute region(s), you can manage your cloud environment by launching the HP Cloud OS Administration Dashboard.  To get there, click More > Launch Dashboard for the cloud you
+created.  For more, see [Launch the Cloud's Administration Dashboard](/cloudos/install/launch-admin-dashboard/).
+
 

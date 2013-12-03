@@ -74,9 +74,7 @@ To edit the admin network:
 
 4. Select the VLAN tab and review the settings. Modify these settings based on your required private network settings.
 
-5. Select the Router tab and review the settings. Modify these settings, based on your required private network settings.  
-
-> **Note:** It is recommended to provide a non-routable private network for the admin network. Therefore, do not specify a Router IP address in the Router tab.
+5. Select the Router tab and review the settings. Modify these settings, based on your required private network settings. **Note:** It is recommended to provide a non-routable private network for the admin network. Therefore, do not specify a Router IP address in the Router tab.
 
 6. Click Update Network to save your changes.
 
@@ -141,19 +139,17 @@ Address Ranges dialog.
 
 2. The Network Type and Subnet values are pre-populated by default with the correct settings.
 
-3. Review the default configurations for each Node Type, IPV4 Start Addr, IPV4 End Addr.
+3. Review the default configurations for each Node Type, IPV4 Start Addr, IPV4 End Addr. Here are the default Node Types and address ranges:
 
-> Here are the default Node Types and address ranges:
+ * **Node Type** = host
 
-  * **Node Type** = host
-
-  * **IPV4 Start Addr** = 192.168.130.81
+ * **IPV4 Start Addr** = 192.168.130.81
  
-  * **IPV4 End Addr** = 192.168.130.160
+ * **IPV4 End Addr** = 192.168.130.160
  
-4. Click Update Address Ranges to save your changes to validate that the IP address is correct.
+4. Click Update Address Ranges to save your changes to validate that the IP address is correct. 
 
-> **Note:** If you enter invalid address ranges, you will get a validation error, which identifies the incorrect address (start or end) for the corresponding network type. You must fix all
+**Note:** If you enter invalid address ranges, you will get a validation error, which identifies the incorrect address (start or end) for the corresponding network type. You must fix all
 errors in the Edit Address Ranges dialog and click Update Address Ranges to validate the addresses are correct.
 
 ## Customize the Public Network
