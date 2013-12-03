@@ -28,9 +28,7 @@ consist of lowercase characters with no numbers or special characters. It may en
 .com, .org, .net, .edu, .mil, .gov.
 
  b. **Network Mode:** Select the displayed option, DUAL or SINGLE. The DUAL / SINGLE option is based on your network infrastructure and previously selected choices. If you have
-separate wired networks for admin, os_sdn and public, you want DUAL. The recommended practice is to use DUAL.
-
-> **Note:** The Operational Dashboard displays the option based on the following rules. If the os_sdn and public networks were both previously set to VLAN=True, the only displayed choice for Network mode is SINGLE. If os_sdn or public were previously set to VLAN=False, the only displayed choice for Network mode is DUAL.
+separate wired networks for admin, os_sdn and public, you want DUAL. The recommended practice is to use DUAL. **Note:** The Operational Dashboard displays the option based on the following rules. If the os_sdn and public networks were both previously set to VLAN=True, the only displayed choice for Network mode is SINGLE. If os_sdn or public were previously set to VLAN=False, the only displayed choice for Network mode is DUAL.
   
  c. **IPMI/BMC Network Status:** Select Disabled. (The IPMI/BMC feature is for testing purposes only.)
 
