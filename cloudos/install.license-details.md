@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "Cloud OS License Details"
-permalink: /cloudos/install/license-details/
+title: "Cloud OS License"
+permalink: /cloudos/install/license/
 product: cloudos
 
 ---
 
-# Cloud OS License Details
+# Cloud OS License
 
 This topic describes the steps to review and update your HP Cloud OS license. 
 

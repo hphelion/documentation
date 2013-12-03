@@ -27,7 +27,7 @@ After you install the Admin node, you can perform additional steps:
 
 * [Create a Cloud (Required)](/cloudos/install/create-cloud/) 
 * [Launch Administration Dashboard](/cloudos/install/launch-admin-dashboard/)
-* [Review License Details](/cloudos/install/review-license-details/)
+* [Check the Cloud OS License](/cloudos/install/license/)
 * [Updates &amp; Extensions](/cloudos/install/updates-extensions/)
 * [Advanced Cloud Setup (Optional)](/cloudos/install/advanced-cloud-setup/)
 
