@@ -684,7 +684,7 @@ Remove floating IP value `15.185.105.97` from server `694541`:
 ##remove-secgroup## {#remove-secgroup}
 Removes a security group from an instance
 ###Syntax
-`nova remove-remove-secgroup <server> <secgroup>`
+`nova remove-secgroup <server> <secgroup>`
 
 **server**
 :  Name or ID of the server.
@@ -695,7 +695,7 @@ Removes a security group from an instance
 ###Example
 Remove security group default from server `703829`:
 
-     nova remove-remove-secgroup 703829 default
+     nova remove-secgroup 703829 default
 
 
 ##rename## {#rename}
