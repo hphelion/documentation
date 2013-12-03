@@ -40,19 +40,12 @@ done so).
 
 2. In the HP Cloud OS Operational Dashboard, select the Cloud tab, then Manage Nodes.
 
-> Once the Controller and Compute Nodes have booted, each node displays
-in the table, indicating the Alias Name set to the node's MAC address (of the NIC associated
+> Once the Controller and Compute Nodes have booted, each node displays in the table, indicating the Alias Name set to the node's MAC address (of the NIC associated
 with the Administration Network). Each node will be in the Not Allocated state.
 
-3. Click Edit Node to rename the MAC address in the Alias column to a more meaningful name
-such as controllercompute, cloudcontroller, compute1, compute2.
+3. Click Edit Node to rename the MAC address in the Alias column to a more meaningful name such as controllercompute, cloudcontroller, compute1, compute2. **Note:** The node name can only be letters (capitalization is allowed) and numbers with no spaces. The node table then displays with the new alias names.
 
-> **Note:** The node name can only be letters (capitalization is allowed) and numbers with no spaces.
-
-> The node table displays with the new alias names.
-
-4. Select the node, then click Allocate Nodes. The node allocation process completes the setup
-and configuration of the nodes so that OpenStack services can be deployed to them.
+4. Select the node, then click Allocate Nodes. The node allocation process completes the setup and configuration of the nodes so that OpenStack services can be deployed to them.
 
 As the Controller and Compute Nodes are being allocated, they progress through these different states: 
 
@@ -64,16 +57,11 @@ As the Controller and Compute Nodes are being allocated, they progress through t
  * Finalizing
  * Allocated
  
-When the nodes are ready for cloud deployment, their status ends with Allocated.
+When the nodes are ready for cloud deployment, their status ends with Allocated. **Tip:** Access the bare-metal node's remote console to monitor the operating system
+installation. Some of your hardware requires non-free firmware files to operate. The firmware can be loaded from removable media, such as a USB stick or CD/DVD. 
+If a dialog box displays prompting you to load missing firmware, provide the appropriate drive.
 
-> **Tip:** Access the bare-metal node's remote console to monitor the operating system
-installation. Some of your hardware requires non-free firmware files to operate. The
-firmware can be loaded from removable media, such as a USB stick or CD/DVD. 
-If a dialog box displays prompting you to load missing firmware, provide the appropriate
-drive.
-
-5. In the case where a node results in status = Off, select the More > Reboot Node action for
-the node.
+5. In the case where a node results in status = Off, select the More > Reboot Node action for the node.
 
 Note: To de-allocate a Compute or Controller node from your Admin Node, click the Delete
 Node option from the drop-down menu on the Manage Node dialog. This action sets the
@@ -81,7 +69,7 @@ identified node to a de-allocated state.
 
 ## Complete Storage Configuration
 
-Based on your Storage Infrastructure layout (see "Storage Infrastructure" ( link ) ) at this point,
+Based on your Storage Infrastructure layout (see "Storage Infrastructure" (link) ) at this point,
 you can configure the additional storage on the nodes.
 
 **Note:** The default root partition is approximately 10 GB.
@@ -92,7 +80,7 @@ You may choose between the following options:
 
 * After creating the cloud, mount the folders suggested in the "Storage Infrastructure" ( link ) on their respective external storage.
 HP recommends, for ease of installation, that you extend the root partition of all the nodes based on the Storage
-Infrastructure table in the "Storage Infrastructure" ( link ).
+Infrastructure table in the "Storage Infrastructure" (link).
 
 ## Create a Cloud
 
@@ -115,32 +103,31 @@ You install all these core controller services on one Cloud Controller node.
 
 5. (Optional) Select the Attributes tab to specify property values required to create a Cloud.
 
- * Keystone Signing — Set the Keystone Signing method based upon the authentication
+ * Keystone Signing &mdash; Set the Keystone Signing method based upon the authentication
 scheme: UUID or PKI.  PKI (the default setting) is a large token that contains token information such as the user ID
 and user roles. UUID is the alternative 32-character token choice.
 
- * Networking mode — Specify gre (default setting). Local and Flat are not supported.
+ * Networking mode &mdash; Specify gre (default setting). Local and Flat are not supported.
 
- * Local Volume File Name — Name of the file to be created on the target node's file system
+ * Local Volume File Name &mdash; Name of the file to be created on the target node's file system
 and used with `losetup` when creating the logical volume group.  
 
- * Maximum Volume File Size (GB) — Specify the maximum size of the file created on the
+ * Maximum Volume File Size (GB) &mdash; Specify the maximum size of the file created on the
 target node’s file system to represent the size of the cinder volume. If the file size is too big
 for the file system, the size of the file will be capped at 90% of the free space in that file
 system (at the time of creation). Best practice is to adjust the size to a value appropriate for
 the file-system associated with the Local Volume File.
 
- * Admin User Password — Admin user's password for a granted administrator role on an
+ * Admin User Password &mdash; Admin user's password for a granted administrator role on an
 Admin project in the Administration Dashboard.
 
- * Arch User Password — Architect user's password for a granted architect role on an Admin
+ * Arch User Password &mdash; Architect user's password for a granted architect role on an Admin
 project in the Administration Dashboard.
 
- * Trash User Password — Trash user's password for a granted user's role on a trash project
+ * Trash User Password &mdash; Trash user's password for a granted user's role on a trash project
 in the Administration Dashboard.
 
-> **Remember these passwords** &mdash; You will be using these passwords to log into the
-HP Cloud OS Administration Dashboard.
+ * **Remember the passwords** &mdash; You will use them to log into the HP Cloud OS Administration Dashboard.
 
 6. Click Create Cloud.
 
@@ -180,9 +167,8 @@ Controller services. The Compute Controller service can reside on the same Cloud
 5. Specify which nodes will have the Compute Nodes service. Select the Compute Node(s) in
 one of the following ways:
 
- * Choose a number from the drop-down list to auto-select check boxes for you.
- 
- * Individually select the check boxes of the node(s) you want.
+  * Choose a number from the drop-down list to auto-select check boxes for you.
+  * Individually select the check boxes of the node(s) you want.
  
 > **Note:** You can have a single node act as both the Compute Controller and Compute
 Node. If you choose this configuration, make sure the underlying node has enough

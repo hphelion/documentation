@@ -32,11 +32,11 @@ separate wired networks for admin, os_sdn and public, you want DUAL. The recomme
 
 > Note: The Operational Dashboard displays the option based on the following rules:
 
-  * In the prior dialogs, if the os_sdn and public networks were both set to VLAN=True, the only displayed choice for Network mode is SINGLE.
+  * In prior dialogs, if the os_sdn and public networks were both set to VLAN=True, the only displayed choice for Network mode is SINGLE.
   
   * If os_sdn or public were set to VLAN=False, the only displayed choice for Network mode is DUAL.
   
-c. **IPMI/BMC Network Status:** Select Disabled.
+ c. **IPMI/BMC Network Status:** Select Disabled.
 
 > **Note:** The IPMI/BMC feature is for testing purposes only.
 
@@ -56,5 +56,5 @@ c. **IPMI/BMC Network Status:** Select Disabled.
 
 ## Next Step
 
-Now that you have installed the Admin node, you can configure the Admin Node to set up a cloud. See the next topic, [Set Up a Cloud(/cloudos/install/setup-a-cloud/).
+Now that you have installed the Admin node, you can configure the Admin Node to create a cloud. See the next topic, [Create Your Cloud(/cloudos/install/create-your-cloud/).
 

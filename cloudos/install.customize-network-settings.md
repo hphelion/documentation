@@ -13,13 +13,10 @@ This topic describes the steps to customize the network settings. These steps ar
 **Caution:** If you plan to customize the network settings, you must do it before performing the steps in [Complete the Admin Node Installation](/cloudos/install/complete-admin-node-installation/). 
 After that, the network settings in the HP Cloud OS Operational Dashboard are read only. Once the install process is triggered, no changes can be made. If you want to make changes, you need to start over by re-installing the Admin Node.
 
-<ul>
-    <li>[Introduction](#introduction)</li>
-    <li>[Customize the Admin Network](#customize-the-admin-network)</li>
-    <li>[Customize the OS-SDN Network](#customize-the-os_sdn-network)</li>
-    <li>[Customize the Public Network](#customize-the-public-network)</li>
-</ul> 
-
+* [Introduction](#introduction)
+* [Customize the Admin Network](#customize-the-admin-network)
+* [Customize the OS-SDN Network](#customize-the-os_sdn-network)
+* [Customize the Public Network](#customize-the-public-network)
 
 ## Introduction
 
@@ -77,7 +74,7 @@ To edit the admin network:
 
 4. Select the VLAN tab and review the settings. Modify these settings based on your required private network settings.
 
-5. Select the Router tab and review the settings. Modify these settings, based on your required private network settings.
+5. Select the Router tab and review the settings. Modify these settings, based on your required private network settings.  
 
 > **Note:** It is recommended to provide a non-routable private network for the admin network. Therefore, do not specify a Router IP address in the Router tab.
 
@@ -94,19 +91,17 @@ To edit the admin address ranges:
 3. Review the default configurations for each Node Type, IPV4 Start Addr, IPV4 End Addr.
 Following are the default Node Types and address ranges:
 
- a. admin: IP range for the Admin Node-- 192.168.124.10 to 192.168.124.11
+ a. **admin**: IP range for the Admin Node &mdash; 192.168.124.10 to 192.168.124.11
 
- b. dhcp: Temporary IP address assignment for the PXE booted nodes --192.168.124.21 to
-192.168.124.80
+ b. **dhcp**: Temporary IP address assignment for the PXE booted nodes &mdash; 192.168.124.21 to 192.168.124.80
 
- c. host: Permanent admin network IP address assignment for the participating nodes --
-192.168.124.81 to 192.168.124.160
+ c. **host**: Permanent admin network IP address assignment for the participating nodes &mdash; 192.168.124.81 to 192.168.124.160
 
- d. switch: This is for test purposes only.
+ d. **switch**: This is for test purposes only.
 
 4. Click Update Address Ranges to save your changes and to validate that the IP address is correct.
 
-> **Note: If you enter invalid address ranges, you will get a validation error, which identifies the incorrect address (start or end) for the corresponding network type. You must fix all
+> **Note:** If you enter invalid address ranges, you will get a validation error, which identifies the incorrect address (start or end) for the corresponding network type. You must fix all
 errors in the Edit Address Ranges dialog and click Update Address Ranges to validate the addresses are correct.
 
 ## Customize the OS_SDN Network
@@ -119,7 +114,7 @@ set VLAN as false and provide the IP address range.
 
 To edit the os_sdn network:
 
-1. On the Operational Dashboard, select the Environment tab > Networks.
+1. On the Operational Dashboard, select the Environment tab, then Networks.
 
 2. Click Edit Network for the os_sdn network type.
 
@@ -148,13 +143,13 @@ Address Ranges dialog.
 
 3. Review the default configurations for each Node Type, IPV4 Start Addr, IPV4 End Addr.
 
-Here are the default Node Types and address ranges:
+> Here are the default Node Types and address ranges:
 
- * Node Type = host
+  * **Node Type** = host
 
- * IPV4 Start Addr = 192.168.130.81
+  * **IPV4 Start Addr** = 192.168.130.81
  
- * IPV4 End Addr = 192.168.130.160
+  * **IPV4 End Addr** = 192.168.130.160
  
 4. Click Update Address Ranges to save your changes to validate that the IP address is correct.
 
@@ -190,9 +185,9 @@ range and set Bridge Enabled to False.
 True. If you plan to use the DUAL Network mode, set the VLAN value to False.
 Note: The Operational Dashboard displays subsequent options based on the following rules:
 
- * If os_sdn and public are both set to VLAN=True, the only displayed choice for Network mode will be SINGLE.
+  * If os_sdn and public are both set to VLAN=True, the only displayed choice for Network mode will be SINGLE.
 
- * If os_sdn or public are set to VLAN=False, the only displayed choice for Network mode will be DUAL.
+  * If os_sdn or public are set to VLAN=False, the only displayed choice for Network mode will be DUAL.
 
 5. On the Router tab, specify the Router value as a Gateway IP address of your Public IP address range. Use the default Router Preference.
 
