@@ -43,9 +43,15 @@ At a high level, here are the steps to setup and install the Admin node:
 The steps shown above feature an automated process in the HP Cloud OS Operational Dashboard, where you can accept defaults or enter values that are specific to your requirements (such as your network settings). Using 
 this automated approach, HP Cloud OS handles all of the installation details for you, installing the OpenStack services and the Cloud OS value-added services.
 
-Taking a broader view, this next diagram illustrates those steps in a larger context:
+Taking a broader view, this next diagram illustrates those steps in a larger context. Notice how once you've installed and set up the Admin node, you have a choice between two paths: wizard-based (in the Operational Dashboard), **or** manual, advanced steps (in the Installation Dashboard).
 
-( insert visio diagram here showing prep, install, and branch to Automated vs Advance Cloud Setup ) 
+<img src="media/cloudos-create-cloud-paths.png" title="HP Cloud OS - choosing between two create cloud paths" /> 
+
+What this means: When you create a cloud using the process defined in [Create Your Cloud](/cloudos/create-your-cloud/), a number of OpenStack and Cloud OS 
+install modules are automatically configured and deployed for you. In most cases, the automated deployment of install modules will suffice. 
+However, should you need to customize values in the install modules that are not exposed in the Create Cloud Attributes tab, 
+this advanced section, along with [Cloud Controller Install Modules Reference](/cloudos/install-modules/), are provided to assist 
+you in the process of customizing and deploying the individual install modules.  
 
 ## Components of the Cloud OS Environment
 
