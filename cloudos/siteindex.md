@@ -22,18 +22,23 @@ product: cloudos
 
 #### [Install &amp; Configure Your Clouds](/cloudos/install/)
 
- * [Cloud OS Installation - Overview](/cloudos/install/overview/)
- * [Cloud OS Installation - Set Admin Node Prerequisites (Required)](/cloudos/install/set-admin-node-prerequisites/)
- * [Cloud OS Installation - Customize Server Types (Optional)](/cloudos/install/customize-server-types/)
- * [Cloud OS Installation - Customize Network Connections (Optional)](/cloudos/install/customize-network-connections/)
- * [Cloud OS Installation - Customize Network Settings (Required)](/cloudos/install/customize-network-settings/)
- * [Cloud OS Installation - Complete Admin Node Installation (Required)](/cloudos/install/complete-admin-node-installation/)
- * [Cloud OS Installation - Updates &amp; Extensions (Optional)](/cloudos/install/updates-extensions/)
+ * [Installation Overview](/cloudos/install/overview/)
+ * [Before You Install](/cloudos/install/before-you-install/)
+ * [Set Admin Node Prerequisites (Required)](/cloudos/install/admin-node-prerequisites/)
+ * [Customize Server Types (Optional)](/cloudos/install/customize-server-types/)
+ * [Customize Network Connections (Optional)](/cloudos/install/customize-network-connections/)
+ * [Customize Network Settings (Required)](/cloudos/install/customize-network-settings/)
+ * [Complete Admin Node Installation (Required)](/cloudos/install/complete-admin-node-installation/)
+ * [Create a Cloud (Required)](/cloudos/install/create-cloud/) 
+ * [Launch Administration Dashboard](/cloudos/install/launch-admin-dashboard/)
+ * [Review License Details](/cloudos/install/review-license-details/)
+ * [Updates &amp; Extensions](/cloudos/install/updates-extensions/)
+ * [Advanced Cloud Setup (Optional)](/cloudos/install/advanced-cloud-setup/)
 
 #### [Manage your Clouds](/cloudos/manage/)
 
-* [HP Cloud OS Operational Dashboard Help](http://docs.hpcloud.com/cloudos/operational_dashboard/index.htm)  Note: not deployed yet.
-* [HP Cloud OS Administration Dashboard Help](http://docs.hpcloud.com/cloudos/admin_dashboard/index.htm)  Note: not deployed yet.
+* [HP Cloud OS Operational Dashboard Help](http://docs.hpcloud.com/cloudos/operational-dashboard/index.htm)  Note: not deployed yet.
+* [HP Cloud OS Administration Dashboard Help](http://docs.hpcloud.com/cloudos/admin-dashboard/index.htm)  Note: not deployed yet.
 * [HP Cloud OS Troubleshooting](/cloudos/troubleshooting/) 
 * [HP Cloud OS Utilities](/cloudos/utilities/)
 

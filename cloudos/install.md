@@ -25,10 +25,11 @@ Install and setup the Admin node:
 
 After you install the Admin node, you can perform additional steps:
 
-* [Create Your Cloud](/cloudos/install/create-your-cloud/) 
+* [Create a Cloud (Required)](/cloudos/install/create-cloud/) 
 * [Launch Administration Dashboard](/cloudos/install/launch-admin-dashboard/)
-* [Review Licensing Details](/cloudos/install/review-licensing-details/)
+* [Review License Details](/cloudos/install/review-license-details/)
 * [Updates &amp; Extensions](/cloudos/install/updates-extensions/)
+* [Advanced Cloud Setup (Optional)](/cloudos/install/advanced-cloud-setup/)
 
 Also see the website copy of the [HP Cloud OS Operational Dashboard Help](http://docs.hpcloud.com/cloudos/operational-dashboard/index.htm). 
 Note: website copy not deployed yet. To access this document in the Operational Dashboard, click **Help** in its top banner.

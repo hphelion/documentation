@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "Review Licensing Details"
-permalink: /cloudos/install/review-licensing-details/
+title: "Review License Details"
+permalink: /cloudos/install/review-license-details/
 product: cloudos
 
 ---
 
-# Review Licensing Details
+# Review License Details
 
 This topic describes the steps to review the licensing details for your instance of the HP Cloud OS Operational Dashboard. 
 

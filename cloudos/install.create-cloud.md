@@ -38,9 +38,7 @@ done so).
 
 1. Power ON the Controller and Compute nodes.
 
-2. In the HP Cloud OS Operational Dashboard, select the Cloud tab, then Manage Nodes.
-
-> Once the Controller and Compute Nodes have booted, each node displays in the table, indicating the Alias Name set to the node's MAC address (of the NIC associated
+2. In the HP Cloud OS Operational Dashboard, select the Cloud tab, then Manage Nodes. Once the Controller and Compute Nodes have booted, each node displays in the table, indicating the Alias Name set to the node's MAC address (of the NIC associated
 with the Administration Network). Each node will be in the Not Allocated state.
 
 3. Click Edit Node to rename the MAC address in the Alias column to a more meaningful name such as controllercompute, cloudcontroller, compute1, compute2. **Note:** The node name can only be letters (capitalization is allowed) and numbers with no spaces. The node table then displays with the new alias names.
