@@ -36,7 +36,16 @@ neutral, open source cloud architecture.
 
 ## Preview of the Installation Steps
 
+At a high level, here are the steps to setup and install the Admin node:
+
 <img src="media/cloudos-install-process.png" title="HP Cloud OS installation process" /> 
+
+The steps shown above feature an automated process in the HP Cloud OS Operational Dashboard, where you can accept defaults or enter values that are specific to your requirements (such as your network settings). Using 
+this automated approach, HP Cloud OS handles all of the installation details for you, installing the OpenStack services and the Cloud OS value-added services.
+
+Taking a broader view, this next diagram illustrates those steps in a larger context:
+
+( insert visio diagram here showing prep, install, and branch to Automated vs Advance Cloud Setup ) 
 
 ## Components of the Cloud OS Environment
 
