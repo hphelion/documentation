@@ -30,11 +30,9 @@ consist of lowercase characters with no numbers or special characters. It may en
  b. **Network Mode:** Select the displayed option, DUAL or SINGLE. The DUAL / SINGLE option is based on your network infrastructure and previously selected choices. If you have
 separate wired networks for admin, os_sdn and public, you want DUAL. The recommended practice is to use DUAL.
 
-> Note: The Operational Dashboard displays the option based on the following rules:
-> In prior dialogs, if the os_sdn and public networks were both set to VLAN=True, the only displayed choice for Network mode is SINGLE.
-> If os_sdn or public were set to VLAN=False, the only displayed choice for Network mode is DUAL.
+> **Note:** The Operational Dashboard displays the option based on the following rules. If the os_sdn and public networks were both previously set to VLAN=True, the only displayed choice for Network mode is SINGLE. If os_sdn or public were previously set to VLAN=False, the only displayed choice for Network mode is DUAL.
   
- c. **IPMI/BMC Network Status:** Select Disabled. **Note:** The IPMI/BMC feature is for testing purposes only.
+ c. **IPMI/BMC Network Status:** Select Disabled. (The IPMI/BMC feature is for testing purposes only.)
 
 4. Click Complete Install. This action installs required software on the Admin Node. This will take several minutes.
 
@@ -50,5 +48,5 @@ separate wired networks for admin, os_sdn and public, you want DUAL. The recomme
 
 ## Next Step
 
-Now that you have installed the Admin node, you can configure the Admin Node to create a cloud. See the next topic, [Create Your Cloud](/cloudos/install/create-your-cloud/).
+Now that you have installed the Admin node, you can configure the Admin Node to create a cloud. See the next topic, [Create a Cloud](/cloudos/install/create-cloud/).
 

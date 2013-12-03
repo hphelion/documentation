@@ -180,9 +180,9 @@ range and set Bridge Enabled to False.
 True. If you plan to use the DUAL Network mode, set the VLAN value to False.
 Note: The Operational Dashboard displays subsequent options based on the following rules:
 
-  * If os_sdn and public are both set to VLAN=True, the only displayed choice for Network mode will be SINGLE.
+ a. If os_sdn and public are both set to VLAN=True, the only displayed choice for Network mode will be SINGLE.
 
-  * If os_sdn or public are set to VLAN=False, the only displayed choice for Network mode will be DUAL.
+ b. If os_sdn or public are set to VLAN=False, the only displayed choice for Network mode will be DUAL.
 
 5. On the Router tab, specify the Router value as a Gateway IP address of your Public IP address range. Use the default Router Preference.
 

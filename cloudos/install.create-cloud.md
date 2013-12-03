@@ -59,7 +59,7 @@ When the nodes are ready for cloud deployment, their status ends with Allocated.
 installation. Some of your hardware requires non-free firmware files to operate. The firmware can be loaded from removable media, such as a USB stick or CD/DVD. 
 If a dialog box displays prompting you to load missing firmware, provide the appropriate drive.
 
-5. In the case where a node results in status = Off, select the More > Reboot Node action for the node.
+In the case where a node results in status = Off, select the More > Reboot Node action for the node.
 
 Note: To de-allocate a Compute or Controller node from your Admin Node, click the Delete
 Node option from the drop-down menu on the Manage Node dialog. This action sets the
@@ -122,11 +122,9 @@ project in the Administration Dashboard.
 * Trash User Password &mdash; Trash user's password for a granted user's role on a trash project
 in the Administration Dashboard.
 
-* **Remember the passwords** &mdash; You will use them to log into the HP Cloud OS Administration Dashboard.
+**Remember the passwords** &mdash; You will use them to log into the HP Cloud OS Administration Dashboard.
 
-6. Click Create Cloud.
-
-The cloud will go through a series of steps to create an active cloud, showing the percent (%) completed.
+When you're ready, click **Create Cloud**. The cloud will go through a series of steps to create an active cloud, showing the percent (%) completed.
 
 ## Create Compute Regions
 
@@ -159,21 +157,19 @@ Region dialog.
 
 5. Specify which nodes will have the Compute Nodes service. Select the Compute Node(s) in one of the following ways:
 
-* Choose a number from the drop-down list to auto-select check boxes for you.
-* Individually select the check boxes of the node(s) you want.
+ * Choose a number from the drop-down list to auto-select check boxes for you.
+ * Individually select the check boxes of the node(s) you want.
  
 > **Note:** You can have a single node act as both the Compute Controller and Compute
 Node. If you choose this configuration, make sure the underlying node has enough
 CPU, Memory and Storage capacity to be able to run all the controller services as well
 as act as the virtualization host.
 
-6. The Attributes tab can be used to specify property values required to create a Compute
+At this point, you can use the Attributes tab to specify property values required to create a Compute
 Region. For the Hypervisor attribute, use `kvm` (the default) if the compute nodes are baremetal
 nodes. Use `qemu` if the compute nodes are VMs.
 
-7. Select Create Compute Region.
-
-The compute region will go through a series of steps to create an active cloud, showing the
+When you're ready, now select **Create Compute Region**. The compute region will go through a series of steps to create an active cloud, showing the
 percent (%) completed.
 
 Once the Create Compute Region step is complete, the name supplied for the region will be

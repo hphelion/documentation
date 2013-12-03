@@ -19,7 +19,7 @@ and discussion with the support representative.
 ## Next Step
 
 If you followed the automated steps to create your cloud, which provided a default set of install modules, you are done and may proceed to the Administration Dashboard. 
-However, if you need to customize values in the install modules that are not exposed in the Create Cloud Attributes tab, see the next topic, [Advanced Cloud Setup](/cloudos/advanced-cloud-setup/). 
+However, if you need to customize values in the install modules that are not exposed in the Create Cloud Attributes tab, see the next topic, [Advanced Cloud Setup](/cloudos/install/advanced-cloud-setup/). 
 
 
 
