@@ -307,27 +307,26 @@ Security group rules have three parts:
     <img src="media/ASClickeditrules.png" width="580" alt="" />
 
 
-Click the "+Add Rule" button in the top-right navigation.
-
+5. Click the "+Add Rule" button in the top-right navigation.
 
     <img src="media/Accesssecurityaddruletodefault" width="580" alt="" />
 
 
-7. Click the "Rule" drop-down box and make a selection based on the function of your VM.
+6. Click the "Rule" drop-down box and make a selection based on the function of your VM.
 
-8. Click the "Direction" drop-down box and select "Egress" to designate outbound traffic or "Ingress" to designate inbound traffic.
+7. Click the "Direction" drop-down box and select "Egress" to designate outbound traffic or "Ingress" to designate inbound traffic.
 
-9. Select "Port" to open a single port, or "Port Range" to specify a range from the drop-down under "Open Port."  Enter the port number or start and end port numbers based on your selection. 
+8. Select "Port" to open a single port, or "Port Range" to specify a range from the drop-down under "Open Port."  Enter the port number or start and end port numbers based on your selection. 
 
-10. Select "CIDR" or "Security Group" from the drop-down under "Remote" to specify the source of the allowed traffic for the rule. If CIDR, enter an IP address block under "CIDR." If "Security Group," select the name from the drop-down box, then designate IPv4 or IPv6 under "Ether Type." If you do not already know you are using IPv6, select IPv4. 
+9. Select "CIDR" or "Security Group" from the drop-down under "Remote" to specify the source of the allowed traffic for the rule. If CIDR, enter an IP address block under "CIDR." If "Security Group," select the name from the drop-down box, then designate IPv4 or IPv6 under "Ether Type." If you do not already know you are using IPv6, select IPv4. 
 
-11. Click "Add" and your new rule displays in the security group.
+10. Click "Add" and your new rule displays in the security group.
 
     <img src="media/ASNewruledisplay" width="580" alt="" />
 
-12. Click "Delete Rule" next to a rule you want to get rid of.
+11. Click "Delete Rule" next to a rule you want to get rid of.
 
-13. Click "Access & Security" in the left-hand bar to display your security groups.
+12. Click "Access & Security" in the left-hand bar to display your security groups.
 
     <img src="media/ASSecurityGroupsdisplay" width="580" alt="" />
 
