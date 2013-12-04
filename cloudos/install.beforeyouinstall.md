@@ -31,6 +31,8 @@ that are described and illustrated in the following sections:
 
 ### Server Infrastructure
 
+The following table provides the server requirements for your cloud environment.
+
 <table style="text-align: left; vertical-align: top;">
 
 <tr style="background-color: #1796D3;">
@@ -47,7 +49,7 @@ that are described and illustrated in the following sections:
 <td> Virtual Only </td>
 <td> >= 4</td>
 <td> >= 12 GB </td>
-<td> >= 2 * </td>
+<td> <nobr> >= 2 * </nobr> </td>
 <td> Ubuntu Server 12.04 LTS (64-bit) </td>
 </tr>
 
@@ -84,7 +86,10 @@ requirements must be sized based on the VM instances hosted by the compute node.
 
 ### Network Infrastructure
 
-Intro coming...
+To plan the Cloud Environment's network infrastructure, see the following sections:
+
+* [Switch Configuration](#switch-configuration)
+* [Network Configuration](#network-configuration)
 
 #### Switch Configuration
 
@@ -93,12 +98,72 @@ tagging/trunking) for tagged networks.
 
 #### Network Configuration
 
-Table coming next...
+The following table provides the network requirements for your cloud environment.
+
+<table style="text-align: left; vertical-align: top;">
+
+<tr style="background-color: #1796D3;">
+<th> Network </th>
+<th> Speed </th>
+<th> Tagged * </th>
+<th> Required </th>
+<th> Notes </th>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> admin Network </td>
+<td> 1 Gb </td>
+<td> N </td>
+<td> Y </td>
+<td> Used for administrative functions, such as managed node installation, TFTP booting, DHCP assignments, system logs, backups, and other monitoring tasks. This also carries
+cinder-volume traffic. Must be an Isolated Private Network. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> bmc Network * </td>
+<td> 1 Gb </td>
+<td> N </td>
+<td> N </td>
+<td> Baseboard Management Controller LAN for Intelligent Platform Management Interface (IPMI) traffic. For test purposes only. </td>
+</tr>	
+
+<tr style="background-color: white; color: black;">
+<td> bmc_vlan Network </td>
+<td> 1 Gb </td>
+<td> Y (100) </td>
+<td> N </td>
+<td> Baseboard Management Controller VLAN (IPMI traffic VLAN). For test purposes only. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> os_sdn Network </td>
+<td> 1 Gb </td>
+<td> Y (700) or N.  Default is N (not tagged). </td>
+<td> Y </td>
+<td> OpenStack Software-Defined-Network. This network is for data traffic between the Virtual Machine instances, and the traffic from the instances to the Controller Node. Must be an
+isolated Private Network. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> public Network </td>
+<td> 1 Gb </td>
+<td> Y (300) or N.  Default is N (not tagged). </td>
+<td> Y </td>
+<td> Must provide a pool of IP addresses for the controller node and floating IP assignments. Size of the pool depends on the number of usage requirements. This network handles
+traffic to the outside world for the instances. </td>
+</tr>
+
+</table> 
+
+\* Default configuration of network tagging to combine logical networks onto a single physical network. Recommended practice is to use a separate Network for each type of network instead of
+VLAN. See [Customize Network Settings (Required)](/cloudos/install/customize-network-settings) for instructions on customizing the os_sdn, public and admin networks.
+
 
 ### Storage Infrastructure
 
-Table coming next...
+The following table provides the storage requirements for your cloud environment.
 
+( table coming next...  12/4 ) 
 
 ## Set Up the VM Guest
 
