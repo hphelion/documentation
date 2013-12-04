@@ -17,12 +17,12 @@ Before you can start working in the HP Cloud OS Operational Dashboard, you must:
 
 ## Plan the Infrastructure for a Cloud
 
-For the simplest deployment, a cloud environment requires a Cloud Administration Node (Admin Node), a Controller Node, and a set of Compute Node(s). You may need support from your IT
+For the simplest deployment, a cloud environment requires a Cloud Administration Node (Admin Node), a Cloud Controller Node, and a set of Compute Node(s). You may need support from your IT
 Administrator to correctly capture information about your environment.
 
-You need to determine the type of cloud you want to create for your organization: private, public, or hybrid. See the [Introduction to Cloud Types](/cloudos/cloudtypes/). 
+You need to determine the type of cloud you want to create for your organization: private, public, or hybrid. With HP Cloud OS, you can create private or hybrid clouds. You can create public clouds with HP Public Cloud. See the [Introduction to Cloud Types](/cloudos/cloudtypes/). 
 
-Then, based on the type of cloud you intend to create, you can determine the requirements for the server, network, and storage infrastructures 
+Based on the type of cloud you intend to create, you can determine the requirements for the server, network, and storage infrastructures 
 that are described and illustrated in the following sections:
 
 * [Server Infrastructure](#server-infrastructure)
@@ -185,25 +185,21 @@ The following table identifies storage requirements for your cloud environment.
 <td> Controller node </td>
 <td> >= 60 GB </td>
 <td> Block storage </td>
-<td> <nobr> /tmp: >= 200 GB <nobr> 
-
-/var/lib/glance/images: >= 300 GB
-
-LVM Volume Group: >= 2 TB, **or** 
-
+<td> <nobr> /tmp: >= 200 GB </nobr> <br />
+/var/lib/glance/images: >= 300 GB <br /> <br />
+LVM Volume Group: >= 2 TB, **or** <br />
 /var/lib/cinder/volumes: >= 2 TB </td>
 <td> The controller node hosts the Image and Volume Management services, which require block storage, either Direct Attached Storage or SAN or iSCSI. 
 The sizing depends on two factors: Size and number of images, and Size and number of volumes, attached to the VM instances.
 
-**Tip:** Infrastructure services like rabbitMQ, postgreSQL and couchDB require their repositories to be on high-performance storage. </td>
+**Tip:** Infrastructure services like RabbitMQ, PostgreSQL and CouchDB require their repositories to be on high-performance storage. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Compute node(s) </td>
 <td> >= 60 GB </td>
 <td> Block storage </td>
-<td> /tmp: >= 150 GB
-
+<td> /tmp: >= 150 GB <br/>
 /var/lib/nova/instances: >= 300 GB </td>
 <td> The compute node(s) need storage space for on-instance, ephemeral disks. The sizing is based on the flavor chosen for the launched instances. </td>
 </tr>

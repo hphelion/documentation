@@ -55,17 +55,22 @@ you in the process of customizing and deploying the individual install modules.
 
 ## Components of the Cloud OS Environment
 
+The following diagram illustrates the Cloud OS environment.
+
+( redrawing Hrushi's pptx diagram in Visio 12/4 to 12/5 - will insert here ) 
+
 ### Cloud OS Administration Node
 
 The Cloud OS Administration Node (Admin Node) hosts the Operational Dashboard that deploys
-private and hybrid-only cloud infrastructure environments by network booting the managed baremetal
-servers, which are typically Controller and Compute nodes. Using Chef Server and recipes,
-the services are installed on the managed nodes.
+private and hybrid-only cloud infrastructure environments by network booting the managed bare-metal
+servers, which are the Controller and Compute nodes. Using Chef Server and recipes,
+the services are installed on the managed bare-metal servers. **Note:** In this and subsequent Cloud OS topics, 
+we refer to these managed bare-metal servers more simply as "managed nodes."
 
 ### Services
 
 Cloud Infrastructure consists of individual services installed and integrated together across one or
-more machines to form a cloud environment. These are composite services that are integrated
+more nodes to form a cloud environment. These are composite services that are integrated
 together into a single cloud solution. Services are exposed or published as RESTful APIs.
 The list of services that can be deployed for HP Cloud OS are:
 
@@ -128,14 +133,10 @@ resources that are backed up with heavy compute and fault-tolerant resources.
 
 > **Note:** HP recommends that you define and use multiple compute regions. In this scenario, the Compute Region Controller is its own node.
 
-**Compute Node:** A compute node hosts the Cloud virtual machine instances using any supported
-hypervisor with OpenStack. However, for this release, Cloud OS supports KVM as the hypervisor.
-This node hosts OpenStack services called Nova-compute and Neutron l2 agent. Multiple
-Compute Region Nodes can be created to expand cloud capacity. 
+**Compute Node:** A compute node hosts the Cloud virtual machine instances using any supported hypervisor with OpenStack. In the current release, Cloud OS supports KVM as the hypervisor.
+This node hosts OpenStack services called Nova-compute and Neutron l2 agent. Multiple Compute Region Nodes can be created to expand cloud capacity. 
 
 ## Next Step
 
 Proceed to the next topic, [Before You Install](/cloudos/install/before-you-install/). 
-
-
 
