@@ -130,8 +130,22 @@ Here's a partial example of how the Team mode configuration could look on this C
 
 ### Interface Mode
 
-The Interface Mode signifies how traffic sent out of the bonded interface is dispersed over the actual interfaces.
+Interface Mode refers to the default teaming algorithm to use for the bonding driver in Linux. The default value is 6, which indicates that 
+teaming uses the "adaptive load balancing" algorithm. Other values used with teaming are not supported in this Cloud OS release. 
 
+* 0: Round-robin policy (balance-rr)
+* 1: Active backup policy (active-backup)
+* 2: XOR policy (balance-xor)
+* 3: Broadcast policy (broadcast)
+* 4: IEEE 802.3ad Dynamic link aggregation (802.3ad)
+* 5: Adaptive transmit load balancing (balance-tlb)
+* 6: Adaptive load balancing (balance-alb) &mdash; Mode 6 includes balance-tlb + receive load balancing (rlb) for IPV4 traffic. 
+The receive load balancing is achieved by ARP negotiation. The bonding driver intercepts the ARP Replies sent by the server on their 
+way out and overwrites the src hw address with the unique hardware address of one of the slaves in the bond such that different clients use 
+different hardware addresses for the server.
+
+
+<!-- 
 * **Mode 0 (balance-rr)**
 
 > Mode means the packets are transmitted in sequential order from the first available slave through the last. If two real interfaces are slaves in the 
@@ -167,6 +181,8 @@ slave interface. Incoming traffic is received by the current slave.
 > Mode 6 is also called Adaptive load balancing. This mode includes balance-tlb + receive load balancing (rlb) for IPV4 traffic. 
 The receive load balancing is achieved by ARP negotiation. The bonding driver intercepts the ARP Replies sent by the server on their 
 way out and overwrites the src hw address with the unique hw address of one of the slaves in the bond such that different clients use different hw addresses for the server.
+
+--> 
 
 ## Edit Connections
 

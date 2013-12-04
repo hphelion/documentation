@@ -8,7 +8,97 @@ product: cloudos
 
 # Before You Install
 
-Before you can start working in the HP Cloud OS Operational Dashboard, you must set up the VM guest and boot the Admin Node from the HP Cloud OS ISO. 
+Before you can start working in the HP Cloud OS Operational Dashboard, you must:
+
+* [Plan the Infrastructure for a Cloud](#plan-the-infrastructure-for-a-cloud)
+* [Set up the VM guest](#set-up-the-vm-guest)
+* [Boot the Admin Node Using the HP Cloud OS ISO](#boot-the-admin-node-using-the-hp-cloud-iso)
+* [Launch the Operational Dashboard](#launch-the-operational-dashboard)
+
+## Plan the Infrastructure for a Cloud
+
+For the simplest deployment, a cloud environment requires a Cloud Administration Node (Admin Node), a Controller Node, and a set of Compute Node(s). You may need support from your IT
+Administrator to correctly capture information about your environment.
+
+You need to determine the type of cloud you want to create for your organization: private, public, or hybrid. See the [Introduction to Cloud Types](/cloudos/cloudtypes/). 
+
+Then, based on the type of cloud you intend to create, you can determine the requirements for the server, network, and storage infrastructures 
+that are described and illustrated in the following sections:
+
+* [Server Infrastructure](#server-infrastructure)
+* [Network Infrastructure](#network-infrastructure)
+* [Storage Infrastructure](#storage-infrastructure)
+
+### Server Infrastructure
+
+<table style="text-align: left; vertical-align: top;">
+
+<tr style="background-color: #1796D3;">
+<th>Node Type</th>
+<th>Virtual/Physical Node</th>
+<th>CPU Cores</th>
+<th>Memory</th>
+<th>NICs</th>
+<th> <nobr>  OS (included as part of ISO)  </nobr></th>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Admin Node </td>
+<td> Virtual Only </td>
+<td> >= 4</td>
+<td> >= 12 GB </td>
+<td> >= 2 * </td>
+<td> Ubuntu Server 12.04 LTS (64-bit) </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Controller Node **** </td>
+<td> Virtual or Physical </td>
+<td> >= 4 </td>
+<td> >= 32 GB </td>
+<td> >= 1 ** </td>
+<td> Ubuntu Server 12.04 LTS (64-bit) </td>
+</tr>		
+
+<tr style="background-color: white; color: black;">
+<td> Compute Node **** </td>
+<td> Physical Only </td>
+<td> >= 4 *** </td>
+<td> 32 GB </td>
+<td> >= 1 </td>
+<td> Ubuntu Server running KVM hypervisor 12.04 LTS (64-bit) </td>
+</tr>	
+
+</table> 
+
+**Note:** HP recommends identical set of hardware for both compute and controller nodes.
+
+\* External Internet Connection Required
+
+\*\* External Internet Connection Required for Hybrid Cloud/HP Cloud (Public) Usage
+
+\*\*\* Intel or AMD Hardware Virtualization Support Required. The CPU Cores and Memory
+requirements must be sized based on the VM instances hosted by the compute node.
+
+\*\*\*\* HP recommends using hardware that is Ubuntu certified. See the [Support Matrix](/cloudos/supportmatrix/) for a list of compatible servers.
+
+### Network Infrastructure
+
+Intro coming...
+
+#### Switch Configuration
+
+Your environment must provide physical switches and wiring for 3 to 4 networks, depending on the cloud configuration. Or the environment must support the 802.1Q specification (VLAN
+tagging/trunking) for tagged networks.
+
+#### Network Configuration
+
+Table coming next...
+
+### Storage Infrastructure
+
+Table coming next...
+
 
 ## Set Up the VM Guest
 
