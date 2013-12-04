@@ -44,7 +44,9 @@ The Unix Command Line Interface tool allows Unix or Mac users to manage their HP
 
 For some release-by-release information, take a look at [the UNIX CLI release notes](/cli/unix/release-notes)!
 
-{#downloads}**Download** the HP Cloud environment command-line interface (CLI) software for UNIX CLI for the HP Cloud version you are using:
+##Download the software{#downloads}
+
+Download the HP Cloud environment command-line interface (CLI) software for UNIX CLI for the HP Cloud version you are using:
 
 + [**HP Cloud version 13.5** environment CLI software for UNIX CLI](http://rubygems.org/gems/hpcloud)
 + [**HP Cloud version 12.12** environment CLI software for UNIX CLI](/file/hpcloud.gem)
