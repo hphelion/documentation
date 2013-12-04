@@ -283,7 +283,7 @@ Security group rules have three parts:
 
 8. Click "Add."
 
-9. To delete a rule from the default group, click "Access & Security in the left-hand bar, then click "Edit Rules" to the right of the default security group, which is what you did to add a rule.
+9. To delete a rule from the default group, click "Access & Security" in the left-hand bar, then click "Edit Rules" to the right of the default security group, which is what you did to add a rule.
 
 10. Click "Delete Rule" next to the rule you want to get rid of.
 
