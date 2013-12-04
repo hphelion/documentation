@@ -9,8 +9,26 @@ product: cloudos
 # Create a Cloud
 
 Now that the Admin Node is installed, it's time to create your cloud. 
+
 This topic explains how to set up a cloud with a Cloud Controller Node (Cloud, Network, Storage, and Compute Controllers) 
 and the separate Compute node(s). 
+
+As indicated in the following illustration, which was also presented in the [Installation Overview](#/cloudos/install/overview) topic, you have a choice at this point: 
+
+* You can follow the wizard-based steps presented in this topic (recommended)
+* Or you can perform the [Advanced Setup Steps](#/cloudos/install/advanced-setup-steps) to apply and configure the install modules yourself.
+
+<img src="media/cloudos-create-cloud-paths.png" title="HP Cloud OS - choosing between two create cloud paths" /> 
+
+What this means: When you create a cloud using the process defined in this topic, a number of OpenStack and Cloud OS 
+install modules are automatically configured and deployed for you. In most cases, the automated deployment of install modules will suffice. 
+However, should you need to customize values in the install modules that are not exposed in the Create Cloud Attributes tab, 
+this advanced section, along with [Install Modules Reference](/cloudos/install/install-modules/), are provided to assist 
+you in the process of customizing and deploying the individual install modules. 
+
+## Introduction
+
+If you elected to use the wizard-based steps described in this topic (recommended), read on.
 
 You'll continue to use the HP Cloud OS Operational Dashboard to execute these steps. Follow these procedures in order.
 

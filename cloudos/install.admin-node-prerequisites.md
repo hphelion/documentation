@@ -6,6 +6,8 @@ product: cloudos
 
 ---
 
+<a name="_top"> </a>
+
 # Set Admin Node Prerequisites (Required)
 
 Your first step in the HP Cloud OS Operational Dashboard is to configure the following Admin Node prerequisites:
@@ -89,9 +91,9 @@ When this prerequisite completes, a timestamp will be displayed in the Last Upda
 
 To set the email notification:
 
-1. On the Operational Dashboard, select the Environment tab > Prerequisites.
+1. On the Operational Dashboard, select the Environment tab,then Prerequisites.
 
-2. For Email Notification Settings, click Edit Prerequisites.
+2. For the email notification settings, click Edit Prerequisites.
 
 3. Click the Enable Notification checkbox.
 
@@ -115,4 +117,6 @@ Access Prerequisites fail to complete](/cloudos/troubleshooting/) in the Trouble
 ## Next Step
 
 Proceed to the next topic, [Customize Server Types](/cloudos/install/customize-server-types/). 
+
+<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

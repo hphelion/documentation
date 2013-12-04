@@ -8,10 +8,18 @@ product: cloudos
 
 <a name="_top"> </a>
 
+<script> 
+
+ onLoad="window.refresh"
+ 
+</script>
+
 # HP Cloud OS Support Matrix for Hardware and Software
 
 This topic identifies the supported hardware and software for the current release of HP Cloud OS, including information needed to set up the 
-hardware and software.
+hardware and software. 
+
+Internal test of cache control: kfjdkfkdkjfkdkjfkdjk fkdkjfkdkj kdjfkjdkjk kjdkfjkdjfkdjk !
 
 * [Server Infrastructure](#server-infrastructure)
 

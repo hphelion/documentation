@@ -29,11 +29,11 @@ product: cloudos
  * [Customize Network Connections (Optional)](/cloudos/install/customize-network-connections/)
  * [Customize Network Settings (Required)](/cloudos/install/customize-network-settings/)
  * [Complete Admin Node Installation (Required)](/cloudos/install/complete-admin-node-installation/)
- * [Create a Cloud (Required)](/cloudos/install/create-cloud/) 
+ * [Create a Cloud](/cloudos/install/create-cloud/) 
  * [Launch Administration Dashboard](/cloudos/install/launch-admin-dashboard/)
  * [Check the Cloud OS License](/cloudos/install/license/)
  * [Updates &amp; Extensions](/cloudos/install/updates-extensions/)
- * [Advanced Cloud Setup (Optional)](/cloudos/install/advanced-cloud-setup/)
+ * [Advanced Cloud Setup](/cloudos/install/advanced-cloud-setup/)
 
 #### [Manage your Clouds](/cloudos/manage/)
 
