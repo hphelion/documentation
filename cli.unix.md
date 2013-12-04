@@ -18,7 +18,7 @@ We wanted to ensure you were aware of the changes that may affect you during thi
 + The UNIX CLI has moved to the HP Cloud Github repository
 
   + In order to encourage development by the community, HP Cloud is sharing it with the community as open source, hosted on [https://github.com/hpcloud/unix_cli](https://github.com/hpcloud/unix_cli). 
-  + However, links to 12.12 and 13.5 UNIX CLI downloads, and all documentation, are still currently available on docs.hpcloud.com, as usual.
+  + However, [links to 12.12 and 13.5 UNIX CLI downloads](#downloads), and all documentation, are still currently available on docs.hpcloud.com, as usual.
 + Bugs will be addressed
 
   + Although the CLI has moved into the open source community, showstoppers and significant defects will be examined and addressed by the HP Cloud SDK/CLI team on a case-by-case basis.
@@ -44,7 +44,7 @@ The Unix Command Line Interface tool allows Unix or Mac users to manage their HP
 
 For some release-by-release information, take a look at [the UNIX CLI release notes](/cli/unix/release-notes)!
 
-**Download** the HP Cloud environment command-line interface (CLI) software for UNIX CLI for the HP Cloud version you are using:
+{#downloads}**Download** the HP Cloud environment command-line interface (CLI) software for UNIX CLI for the HP Cloud version you are using:
 
 + [**HP Cloud version 13.5** environment CLI software for UNIX CLI](http://rubygems.org/gems/hpcloud)
 + [**HP Cloud version 12.12** environment CLI software for UNIX CLI](/file/hpcloud.gem)
