@@ -12,7 +12,7 @@ In general, the process for transitioning to 13.5 involves creating a new 13.5 i
 
 This overview outlines the tasks you will need to perform, based upon the operating system on your local system and the operating systems used by your cloud instance(s). 
 
-The tasks require software tools such as the HP Unix CLI, the Pythons Novaclient CLI, or the HP Cloud Compute Service API. Before deciding which tools to use, make sure the tools are installed and configured on the local system and your instances, as required. 
+The tasks require software tools such as the UNIX CLI for HP Cloud, the Pythons Novaclient CLI, or the HP Cloud Compute Service API. Before deciding which tools to use, make sure the tools are installed and configured on the local system and your instances, as required. 
 
 **Note**: Some of the links in this document contain information on using the Horizon-based HP Public Cloud Console to interact with your instances. HP Public Cloud Console is an alternative method for performing these tasks. The procedures in this document for using the classic management console are correct and should be followed at this time.
 
@@ -37,7 +37,7 @@ In order to transition version 12.12 to version 13.5, you will need to perform t
 
 7. [Create and attach 13.5 block volumes to the 13.5 instance and copy data, as needed](#transdata).
 
-8. [Review information on ongoing HP Cloud UNIX CLI support](#CLIdeprecation)
+8. [Review information on ongoing UNIX CLI for HP Cloud support](#CLIdeprecation)
 
 9. [Review further information](#furtherinfo).
 
@@ -82,7 +82,7 @@ You create both keys at the same time using any of the following methods:
 	
 - [Using the classic management console](#keypairconsole) 
 - [Using the API](#keypairapi) 
-- [Using the HP Cloud UNIX CLI](#keypairunix)
+- [Using the UNIX CLI for HP Cloud](#keypairunix)
 - [Using the Python Novaclient CLI](#keypairnova)
 - [Using an existing public key](#keypairown)
 
@@ -189,14 +189,14 @@ To generate the key pair using the API:
 For more information on this API call, see [HP Cloud Compute Service API Reference](https://docs.hpcloud.com/api/v13/compute/#createKeypair).
 
 
-###Generating a Key Pair using the HP Cloud UNIX CLI### {#keypairunix}
+###Generating a Key Pair using the UNIX CLI for HP Cloud### {#keypairunix}
 
-There are two methods you can use to generate a key pair using the HP Cloud UNIX CLI. 
+There are two methods you can use to generate a key pair using the UNIX CLI for HP Cloud. 
 
 - Create your key pair using the `-o` flag to save the key pair file in the `~/.hpcloud/keypairs` folder. The CLI does not display the key pair on the screen. Saving to a file allows you to use the auto-connect feature after you create an instance with that key pair. 
 - Create a key pair without the `-o` flag to have the key pair display on screen. You will need to manually save the key pair in a text file in the PEM format.
 
-**Tip**: For the full list of HP Cloud UNIX CLI commands, see the [HP Cloud UNIX CLI Release Notes](http://docs.hpcloud.com/cli/unix).
+**Tip**: For the full list of UNIX CLI for HP Cloud commands, see the [UNIX CLI for HP Cloud Release Notes](http://docs.hpcloud.com/cli/unix).
 
 To generate a key pair in UNIX:
 
@@ -210,7 +210,7 @@ To generate a key pair in UNIX:
 
 	The following example creates a key pair named `test` and saves the key pair to a file at `/home/ubuntu/.hpcloud/keypairs/test.pem`:
 
-    `$ hpcloud keypairs:add -o test`
+    `hpcloud keypairs:add -o test`
 
 	If you use the `-o` flag, you have completed the key pair creation. If you did not use the `-o` flag, continue with the following steps.
 
@@ -1279,9 +1279,9 @@ To create a block volume and attach the volume to the instance:
 11. When the volume is available, you can copy the data from your version 12.12 instance attached volume to your new version 13.5 instance, as described in [Copy data from the 12.12 instance to the 13.5 instance](#copydata).
 
 
-###Creating and attaching a block volume using a UNIX CLI tool### {#transdataunix}
+###Creating and attaching a block volume using the UNIX CLI for HP Cloud tool### {#transdataunix}
 
-You can use a HP Cloud UNIX CLI to create and attach a block volume on the 13.5 instance. Then, copy the data on the 12.12 instance to the new 13.5 instance.
+You can use the UNIX CLI for HP Cloud to create and attach a block volume on the 13.5 instance. Then, copy the data on the 12.12 instance to the new 13.5 instance.
 
 To create a block volume and attach the volume to the instance:
 
@@ -1319,7 +1319,7 @@ To create a block volume and attach the volume to the instance:
 
     	$ hpcloud volumes:attach test srv1 /dev/vdi
 
-4. You need to prepare your volume for use, by using  the UNIX CLI to partition and format the volume. See [Preparing Your Block Storage Volume For Use](https://community.hpcloud.com/article/preparing-your-block-storage-volume-use).
+4. You need to prepare your volume for use, by using the UNIX CLI to partition and format the volume. See [Preparing Your Block Storage Volume For Use](https://community.hpcloud.com/article/preparing-your-block-storage-volume-use).
 
 5. Copy the data from your version 12.12 instance attached volume to your new version 13.5 instance, as described in [Copy data from the 12.12 instance to the 13.5 instance](#copydata).
 
