@@ -12,7 +12,7 @@ Before you can start working in the HP Cloud OS Operational Dashboard, you must:
 
 * [Plan the Infrastructure for a Cloud](#plan-the-infrastructure-for-a-cloud)
 * [Set up the VM guest](#set-up-the-vm-guest)
-* [Boot the Admin Node Using the HP Cloud OS ISO](#boot-the-admin-node-using-the-hp-cloud-iso)
+* [Boot the Admin Node Using the HP Cloud OS ISO](#boot-the-admin-node-using-the-hp-cloud-os-iso)
 * [Launch the Operational Dashboard](#launch-the-operational-dashboard)
 
 ## Plan the Infrastructure for a Cloud
@@ -31,7 +31,7 @@ that are described and illustrated in the following sections:
 
 ### Server Infrastructure
 
-The following table provides the server requirements for your cloud environment.
+The following table identifies server requirements for your cloud environment.
 
 <table style="text-align: left; vertical-align: top;">
 
@@ -98,7 +98,7 @@ tagging/trunking) for tagged networks.
 
 #### Network Configuration
 
-The following table provides the network requirements for your cloud environment.
+The following table identifies network requirements for your cloud environment.
 
 <table style="text-align: left; vertical-align: top;">
 
@@ -161,9 +161,58 @@ VLAN. See [Customize Network Settings (Required)](/cloudos/install/customize-net
 
 ### Storage Infrastructure
 
-The following table provides the storage requirements for your cloud environment.
+The following table identifies storage requirements for your cloud environment.
 
-( table coming next...  12/4 ) 
+<table style="text-align: left; vertical-align: top;">
+
+<tr style="background-color: #1796D3;">
+<th> Node Type </th>
+<th> Internal Storage </th>
+<th> Partition Scheme </th>
+<th> File System Mounts </th>
+<th> Notes </th>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Admin node </td>
+<td> <nobr> >= 20 GB </nobr> </td>
+<td>  </td>
+<td>  </td>
+<td> </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Controller node </td>
+<td> >= 60 GB </td>
+<td> Block storage </td>
+<td> <nobr> /tmp: >= 200 GB <nobr> 
+
+/var/lib/glance/images: >= 300 GB
+
+LVM Volume Group: >= 2 TB, **or** 
+
+/var/lib/cinder/volumes: >= 2 TB </td>
+<td> The controller node hosts the Image and Volume Management services, which require block storage, either Direct Attached Storage or SAN or iSCSI. 
+The sizing depends on two factors: Size and number of images, and Size and number of volumes, attached to the VM instances.
+
+**Tip:** Infrastructure services like rabbitMQ, postgreSQL and couchDB require their repositories to be on high-performance storage. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Compute node(s) </td>
+<td> >= 60 GB </td>
+<td> Block storage </td>
+<td> /tmp: >= 150 GB
+
+/var/lib/nova/instances: >= 300 GB </td>
+<td> The compute node(s) need storage space for on-instance, ephemeral disks. The sizing is based on the flavor chosen for the launched instances. </td>
+</tr>
+
+</table> 
+
+This illustration shows how the storage space is used by the VM instances in a cloud's infrastructure:
+
+<img src="/images/cloudos-compute-node.png" title="Storage space used by VM instances in a cloud's infrastructure" />
 
 ## Set Up the VM Guest
 
@@ -200,13 +249,14 @@ After you boot from the HP Cloud OS ISO, you are ready to launch the Operational
 
 To launch the Operational Dashboard:
 
-1. From the virtual machine client, open a browser that does not have a proxy set.
+1. From the virtual machine client, open a browser that **does not have a proxy set**.
 
-2. On the browser, enter http://192.168.124.10:9000 to launch the Operational Dashboard user interface. IMPORTANT: Use Google Chrome or Mozilla Firefox to access the Admin Node.
+2. In the browser, enter **http://192.168.124.10:9000** to launch the Operational Dashboard user interface. 
+IMPORTANT: Use Google Chrome or Mozilla Firefox.
 
 3. On the Environment tab, review the types of servers, connections, and networks in your environment.
 
 ## Next Step
 
-Proceed to the next topic, [Set the Admin Node Prerequisites](/cloudos/install/admin-node-prerequisites/).  
+Proceed to the next topic, [Set the Admin Node Prerequisites](/cloudos/install/admin-node-prerequisites/), to begin the process of setting up and installing the Admin node.  
 
