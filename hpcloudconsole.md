@@ -263,7 +263,7 @@ Security group rules have three parts:
 
     <img src="media/Accesssecurity1.png" width="580" alt="" />
 
-2. A default security group is already set up. To display the default rules, click the "Edit Rules" button next to "default" on the "Security Groups" page. The default security group rules have "Ether Types" IPv4 and IPv6 set up for "Ingress" (Incoming) and "Egress" (Outbound) directions. **Note**: It may be easiest to add any new security group rules to the default group so you do not have to recreate ingress and egress directions. 
+2. A default security group is already set up. To display the default rules, click the "Edit Rules" button next to "default" on the "Security Groups" page. As shown below, the default security group rules have "Ether Types" IPv4 and IPv6 set up for "Ingress" (Incoming) and "Egress" (Outbound) directions. **Note**: It may be easiest to add any new security group rules to the default group so you do not have to recreate ingress and egress directions. 
 
     <img src="media/Accesssecuritydefaultsecuritygrouprulesimage2" width="580" alt="" />
 
