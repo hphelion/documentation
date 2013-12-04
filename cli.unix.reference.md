@@ -9,13 +9,19 @@ product: unix-cli
 
 ###Important Notice###
 
-On November 4, 2013, the UNIX CLI was moved into its End-of-Life Cycle process toward final deprecation. During this 6-month transition time:
+On November 4, 2013, the UNIX CLI was moved into its End-of-Life (EOL) Cycle process toward final deprecation. Please be aware that this does not mean that the UNIX CLI is "going away", but simply that HP Cloud is relinquishing its ownership of this CLI and, instead, making it available on the [HPCloud Github](https://github.com/hpcloud/unix_cli) repository. We encourage our existing customers to eventually consider migrating to the OpenStackClient (Unified) CLIs. As such, during this 6-month transition timeframe, HP Cloud will be dedicating engineering efforts around the OpenStackClient CLI as the primary Unified CLI of choice for development around your OpenStack cloud services.
 
-* New and existing customers are encouraged to migrate to the [OpenStackClient (Unified) CLIs](https://wiki.openstack.org/wiki/OpenStackClient) or the [OpenStack command-line clients](http://docs.openstack.org/user-guide/content/section_cli_overview.html) for each respective service
-* No new feature requests will be honored
-* Bug reports will be accepted
+We wanted to ensure you were aware of the changes that may affect you during this 6-month transition time:
 
-After 6-months, access to online resources will still be available, but no support will be offered from HP Public Cloud, and the software download will be disabled&mdash;although you are most welcome to continue development at your discretion.
++ The UNIX CLI has moved to the HP Cloud Github repository
+
+  + In order to encourage development by the community, HP Cloud is sharing it with the community as open source, hosted on [https://github.com/hpcloud/unix_cli](https://github.com/hpcloud/unix_cli). 
+  + However, [links to 12.12 and 13.5 UNIX CLI downloads](/cli/unix/#downloads), and all documentation, are still currently available on docs.hpcloud.com, as usual.
++ Bugs will be addressed
+
+  + Although the CLI has moved into the open source community, showstoppers and significant defects will be examined and addressed by the HP Cloud SDK/CLI team on a case-by-case basis.
+
+After 6 months, access to online resources will be available through GitHub, and no support will be offered from HP Public Cloud. Of course, you are most welcome to access the install from GitHub and continue your development.
 
 _________________________________________
 
