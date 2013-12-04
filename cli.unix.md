@@ -17,7 +17,8 @@ We wanted to ensure you were aware of the changes that may affect you during thi
 
 + The UNIX CLI has moved to the HP Cloud Github repository
 
-  + In order to encourage development by the community, HP Cloud is sharing it with the community as open source, hosted on [https://github.com/hpcloud/unix_cli](https://github.com/hpcloud/unix_cli). That said, links to 12.12 and 13.5 UNIX CLI downloads, and all documentation, are still currently available on docs.hpcloud.com, as usual.
+  + In order to encourage development by the community, HP Cloud is sharing it with the community as open source, hosted on [https://github.com/hpcloud/unix_cli](https://github.com/hpcloud/unix_cli). 
+  + However, links to 12.12 and 13.5 UNIX CLI downloads, and all documentation, are still currently available on docs.hpcloud.com, as usual.
 + Bugs will be addressed
 
   + Although the CLI has moved into the open source community, showstoppers and significant defects will be examined and addressed by the HP Cloud SDK/CLI team on a case-by-case basis.
