@@ -47,10 +47,10 @@ Taking a broader view, this next diagram illustrates those steps in a larger con
 
 <img src="media/cloudos-create-cloud-paths.png" title="HP Cloud OS - choosing between two create cloud paths" /> 
 
-What this means: When you create a cloud using the process defined in [Create Your Cloud](/cloudos/create-your-cloud/), a number of OpenStack and Cloud OS 
+What this means: When you create a cloud using the process defined in [Create a Cloud](/cloudos/install/create-cloud/), a number of OpenStack and Cloud OS 
 install modules are automatically configured and deployed for you. In most cases, the automated deployment of install modules will suffice. 
 However, should you need to customize values in the install modules that are not exposed in the Create Cloud Attributes tab, 
-this advanced section, along with [Cloud Controller Install Modules Reference](/cloudos/install-modules/), are provided to assist 
+this advanced section, along with [Cloud Controller Install Modules Reference](/cloudos/install/install-modules/), are provided to assist 
 you in the process of customizing and deploying the individual install modules.  
 
 ## Components of the Cloud OS Environment

@@ -8,10 +8,10 @@ product: cloudos
 
 # Advanced Cloud Setup (Optional) 
 
-When you create a cloud using the process defined in [Create Your Cloud](/cloudos/create-your-cloud/), a number of OpenStack and Cloud OS 
+When you create a cloud using the process defined in [Create a Cloud](/cloudos/install/create-cloud/), a number of OpenStack and Cloud OS 
 install modules are automatically configured and deployed for you. In most cases, the automated deployment of install modules will suffice. 
 However, should you need to customize values in the install modules that are not exposed in the Create Cloud Attributes tab, 
-this advanced section, along with [Cloud Controller Install Modules Reference](/cloudos/install-modules/), are provided to assist 
+this advanced section, along with [Cloud Controller Install Modules Reference](/cloudos/install/install-modules/), are provided to assist 
 you in the process of customizing and deploying the individual install modules. 
 
 If you use this advanced option, all install modules will need to be applied manually and in the order specified in the 
