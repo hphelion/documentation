@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Cloud OS Installation - Customize Network Connections (Optional)"
+title: "Customize Network Connections (Optional)"
 permalink: /cloudos/install/customize-network-connections/
 product: cloudos
 

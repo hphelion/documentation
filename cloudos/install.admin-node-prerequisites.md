@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "Cloud OS Installation - Set Admin Node Prerequisites (Required)"
+title: "Set Admin Node Prerequisites (Required)"
 permalink: /cloudos/install/admin-node-prerequisites/
 product: cloudos
 
 ---
 
-# Cloud OS Installation - Set Admin Node Prerequisites (Required)
+# Set Admin Node Prerequisites (Required)
 
 Your first step in the HP Cloud OS Operational Dashboard is to configure the following Admin Node prerequisites:
 

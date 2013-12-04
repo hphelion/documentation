@@ -189,7 +189,7 @@ The following table identifies storage requirements for your cloud environment.
 /var/lib/glance/images: >= 300 GB <br /> <br />
 LVM Volume Group: >= 2 TB, **or** <br />
 /var/lib/cinder/volumes: >= 2 TB </td>
-<td> The controller node hosts the Image and Volume Management services, which require block storage, either Direct Attached Storage or SAN or iSCSI. 
+<td> <nobr> The controller node hosts the Image </nobr> and Volume Management services, which require block storage, either Direct Attached Storage or SAN or iSCSI. 
 The sizing depends on two factors: Size and number of images, and Size and number of volumes, attached to the VM instances.
 
 **Tip:** Infrastructure services like RabbitMQ, PostgreSQL and CouchDB require their repositories to be on high-performance storage. </td>

@@ -33,5 +33,5 @@ After you install and set up the Admin node, you can perform additional steps:
 Also see the website copy of the [HP Cloud OS Operational Dashboard Help](http://docs.hpcloud.com/cloudos/operational-dashboard/index.htm). 
 Note: website copy not deployed yet. To access this document in the Operational Dashboard, click **Help** in its top banner.
 
-Finally, if you do not intend to use the wizard-based Cloud OS installation process that's described in the Create a Cloud topic, and instead decide to manually apply and configure install modules, see this topic: [Advanced Cloud Setup](/cloudos/install/advanced-cloud-setup/).
+Finally, if you do not intend to use the wizard-based Cloud OS installation process that's described in the Create a Cloud topic, and instead decide to apply and configure the install modules yourself, see this topic: [Advanced Cloud Setup](/cloudos/install/advanced-cloud-setup/).
 
