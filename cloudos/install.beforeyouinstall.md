@@ -208,7 +208,7 @@ The sizing depends on two factors: Size and number of images, and Size and numbe
 
 This illustration shows how the storage space is used by the VM instances in a cloud's infrastructure:
 
-<img src="/images/cloudos-compute-node.png" title="Storage space used by VM instances in a cloud's infrastructure" />
+<img src="media/cloudos-compute-node.png" title="Storage space used by VM instances in a cloud's infrastructure" />
 
 ## Set Up the VM Guest
 
@@ -245,7 +245,7 @@ After you boot from the HP Cloud OS ISO, you are ready to launch the Operational
 
 To launch the Operational Dashboard:
 
-1. From the virtual machine client, open a browser that **does not have a proxy set**.
+1. From the virtual machine client, open a Firefox or Google Chrome browser that **does not have a proxy set**.
 
 2. In the browser, enter **http://192.168.124.10:9000** to launch the Operational Dashboard user interface. 
 IMPORTANT: Use Google Chrome or Mozilla Firefox.
