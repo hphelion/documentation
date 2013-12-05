@@ -165,7 +165,7 @@ The following are resolved issues in version 13.5 of the HP Public Cloud softwar
 
 For additional related information on HP Cloud:
 
-* See [Getting Started with HP Public Cloud Console] (http:docs.hpcloud.com/hpcloudconsole) for detailed console information.
+* See [Getting Started with HP Public Cloud Console](http:docs.hpcloud.com/hpcloudconsole) for detailed console information.
 * See [HP Cloud version 13.5 overview](/version-overview/) for an overview of the 13.5 release set.
 * See [HP Cloud Service APIs] (v13.5)](/api/v13/) for an overview of the 13.5 API specifications.
 * See [migration overview page](/migration-overview/) for information on migrating from version 12.12 to 13.5n.
