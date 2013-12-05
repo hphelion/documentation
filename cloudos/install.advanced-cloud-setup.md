@@ -28,7 +28,7 @@ This topic explains how to perform an advanced cloud setup, as an **alternative*
   * [Terminology](#terminology)
   * [Proposals](#proposals)
 * [Steps to Apply Install Modules](#steps-to-apply-install-modules)
-  * [Apply Cloud Controller Modules](#apply-cloud-controller-modules)
+  * [Apply Cloud Controller Modules](#apply-cloud-controller-install-modules)
   * [Apply the Nova Install Module](#apply-the-nova-install-module)
 * [Next Step](#next-step)
 
@@ -141,13 +141,13 @@ The following table lists the install modules **in the order they must be applie
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> HP Cos Admin 120 </td>
+<td> Hp Cos Admin 100 </td>
 <td> Provides administration services. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Postgresql 915 </td>
-<td> Provides a PostgreSQL based database engine to the Cloud Controller and Compute Region Controller(s). </td>
+<td> <nobr> Provides a PostgreSQL-based database engine to the Cloud Controller </nobr> and Compute Region Controller(s). </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -156,69 +156,65 @@ The following table lists the install modules **in the order they must be applie
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> Couchdb 120 </td>
+<td> Couchdb 100 </td>
 <td> Configures a CouchDB server. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> HP Cos Keystone 120 </td>
+<td> Hp Cos Keystone 100 </td>
 <td> Provides Identity Management services to the cloud infrastructure. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> HP Cos Glance 120 </td>
+<td> Hp Cos Glance 100 </td>
 <td> Provides Image Repository services to launch virtual machine instances. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> HP Cos Cinder 120 </td>
+<td> Hp Cos Cinder 100 </td>
 <td> Provides a volume storage service. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> HP Cos Neutron 120 </td>
-<td> Provides a network connectivity service. **Reviewers:** name is Neutron, not Quantum, correct? </td>
+<td> Hp Cos Quantum 100 </td>
+<td> Provides a network connectivity service. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> HP Cos Nova 120 * </td>
+<td> <nobr> Hp Cos Nova 100 * </nobr> </td>
 <td> Provides multi-controller and multi-compute services. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> HP Cos Graffiti 120 </td>
+<td> <nobr> HP Cos Graffiti 100 </nobr> </td>
 <td> Provides dictionary services, a searchable directory of cloud resources, and resource pool registry services. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> HP Cos Focus 120 </td>
+<td> HP Cos Focus 100 </td>
 <td> Provides a topology document repository. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> HP Cos Eden 120 **??** </td>
-<td> Provides a service framework for all Cloud Controller services. **Still list Eden in G3?** </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> HP Cos Eve 120 </td>
+<td> HP Cos Eve 100 </td>
 <td> Provides a topology provisioning service for the cloud infrastructure. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> HP Skyline 120 </td>
+<td> HP Skyline 100 </td>
 <td> Provides the Administration Dashboard. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> HP Cos Cloud Utils 120 </td>
+<td> HP Cos Cloud Utils 100 </td>
 <td> Provides cloud utilities scripts. </td>
 </tr>
 
 </table>
 
 \* The Nova install module will appear in the list of install modules after the Neutron install module. 
-The best practice is to create and apply the Nova proposal after all the others have been applied - see [Apply the Nova Install Module](#apply-the-nova-install-module) in this topic.
+The best practice is to create and apply the Nova proposal after all the others have been applied. 
+After following the instructions below, see [Apply the Nova Install Module](#apply-the-nova-install-module) in this topic.
 
 To apply the install modules in Firefox or Google Chrome:
 
@@ -229,17 +225,26 @@ To apply the install modules in Firefox or Google Chrome:
 3. **Reminder**: Apply the install modules in the order specified in the previous table, **except for the Nova install module,** as previously noted. For each install module in the list:
 
  a. Click the name of the install module.
+
  b. In the Proposal text box, change the default name of the proposal to a custom name that helps you identify one proposal from another. For example, the name of the node to which the proposal will be applied. **Important:** The proposal name can only be letters (capitalization is allowed) and numbers, with no spaces.
+
  c. Click Create to open the created install module's Edit Proposal page.
+
  d. Make sure the default values for the proposal are correct. For a complete list of all install modules and their default values, see the [Install Modules Reference](/cloudos/install/install-modules-reference).
+
  e. Make the node-to-role associations. In the proposal section, notice the Available Nodes and the Roles. Use the following notes to associate a node to a role, or to remove a node from a role. When the install module is Applied, the node-to-role association(s) will be used to determine which of the install module's roles (also known as 'services') will be applied to which node.
   * In the Edit Proposal view, select the Cloud Controller node name in the Available Nodes list to drag it to the appropriate role. You may need to remove a node in order to add a node to a role, if there can only be one node associated with the role.
   * To remove the association of the Cloud Controller node from a role, select the Cloud Controller node delete icon.
   * Note: Selecting the Cloud Controller node link icon simply opens the node's details page.
+
  f. Click Save, then Apply and then click OK.
+
  g. Wait for the proposal status to indicate Ready.
+
  h. If the proposal fails to apply, the Installation Dashboard displays an error message. See [Troubleshooting](/cloudos/troubleshooting/).
+
  i. Select Barclamps > Cloud Infrastructure to review the install module list. The proposal Status is also displayed in the Cloud Infrastructure install module list.
+
  j. Apply the next install module in the list, from top to bottom, until all install modules related to the Cloud Controller Node have been applied. **Exception:** Apply all Nova install module after applying all the other install modules in the list. 
 
 Now you can move on to applying the Nova install module - see the next section.
@@ -258,7 +263,7 @@ Content is coming 12/5...
 
 ## Next Step
 
-For details about each install module, see the [Install Modules Reference](#/cloudos/install/install-modules-reference/). 
+For details about each install module, see the [Install Modules Reference](/cloudos/install/install-modules-reference/). 
 
 <a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
