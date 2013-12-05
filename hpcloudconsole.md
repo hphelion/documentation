@@ -310,6 +310,7 @@ Security group rules have three parts:
 5. Click the "+Add Rule" button in the top-right navigation.
 
     <img src="Accesssecurityaddruletonewgroup.png" width="580" alt="" />
+    
 
 6. Click the "Rule" drop-down in the "Add Rule" box and make a selection based on the function of your VM.
 
