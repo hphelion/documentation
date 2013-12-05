@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "Advanced Cloud Setup (Optional)"
+title: "Advanced Cloud Setup"
 permalink: /cloudos/install/advanced-cloud-setup/
 product: cloudos
 
 ---
 
-# Advanced Cloud Setup (Optional) 
+# Advanced Cloud Setup
 
 When you create a cloud using the process defined in [Create a Cloud](/cloudos/install/create-cloud/), a number of OpenStack and Cloud OS 
 install modules are automatically configured and deployed for you. In most cases, the automated deployment of install modules will suffice. 
@@ -14,37 +14,47 @@ However, should you need to customize values in the install modules that are not
 this advanced section, along with [Cloud Controller Install Modules Reference](/cloudos/install/install-modules/), are provided to assist 
 you in the process of customizing and deploying the individual install modules. 
 
-If you use this advanced option, all install modules will need to be applied manually and in the order specified in the 
-"Apply Cloud Controller Install Modules" section of this topic.
+If you use this advanced option, all install modules will need to be applied manually and in the order specified in the [Apply Cloud Controller Install Modules](#) section of this topic.
 
-The following overview introduces some basic Install Module terms, concepts and tips.
+You'll use a separate UI, the HP Cloud OS Installation Dashboard, to perform these advanced steps.  Its URL is:
+
+http://192.168.124.10:3000
+
+You should open the Installation Dashboard in Firefox or Google Chrome.
+
+* [Install Module Overview](#install-module-overview)
+* [Steps to Apply Install Modules](#steps-to-apply-install-modules)
+* [Other topics to be listed here](#)
+* [Other topics to be listed here](#)
+* [Other topics to be listed here](#)
+* [Other topics to be listed here](#)
+* [Other topics to be listed here](#)
 
 ## Install Module Overview
 
-Let's define our terms and understand the process.
+This overview introduces some basic Install Module terms, concepts and tips.
 
 ### Terminology
 
-**Install Module** &mdash; Represents a mechanism through which specific cloud services are configured
+Let's define our terms and understand the process.
+
+**Install Module** &mdash; An install module represents a mechanism through which specific cloud services are configured
 and deployed. Each install module will specify one or more Roles that it can fulfill.
 
-**Role** &mdash; Identifies a type of service that is provided by the install module. Roles represent a logical
+**Role** &mdash; A role identifies a type of service that is provided by the install module. Roles represent a logical
 service provided by the install module, but, may in fact be comprised of multiple processes that will
 be installed and configured on the target node. An install module may support one or more roles. For
 example, the Nova install module supports both the multi-controller role as well as the multicompute
 role.
 
-**Proposal** &mdash; Named deployment configuration for a given install module. More than one proposal
-(deployment configuration) can be created for a given install module.
+**Proposal** &mdash; A proposal is a named deployment configuration for a given install module. More than one proposal (deployment configuration) can be created for a given install module.
 
 Before you begin going through the procedures to apply the install modules, review the following 
 section for information about the process of applying and customizing install modules.
 
 ### Proposal Details
 
-First, create a proposal to deploy an install module:
-
-A proposal is comprised of two sections - the Node Deployment section and the Attributes section.
+First, create a proposal to deploy an install module. A proposal is comprised of two sections - the Node Deployment section and the Attributes section.
 
 The Node Deployment section is used to specify Node-to-Role associations. These associations are used to determine which module services are to be deployed to which
 specific nodes. See the "Create Node to Role Association" step in "Apply Cloud Controller Install Modules" 
@@ -90,7 +100,7 @@ being both a controller node as well as being a virtualization host).
 ## Steps to Apply Install Modules
 
 After you have allocated the Controller and Compute Nodes, you can complete the cloud creation process by manually applying 
-install modules that are available in the Installation Dashboard.  To access this UI, open in Firefox or Chrome:
+install modules that are available in the Installation Dashboard.  As noted previously to access this UI, open in Firefox or Chrome:
 
 http://192.168.124.10:3000
 
