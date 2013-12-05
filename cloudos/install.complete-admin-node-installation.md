@@ -6,6 +6,18 @@ product: cloudos
 
 ---
 
+<a name="_top"> </a>
+
+<script> 
+ 
+function PageRefresh { 
+onLoad="window.refresh" 
+} 
+ 
+PageRefresh();
+
+</script>
+
 # Complete Admin Node Installation (Required)
 
 This topic describes the steps to complete the Admin Node installation. These steps are required. 
@@ -46,5 +58,7 @@ separate wired networks for admin, os_sdn and public, you want DUAL. The recomme
 
 ## Next Step
 
-Now that you have installed the Admin node, you can configure the Admin Node to create a cloud. See the next topic, [Create a Cloud](/cloudos/install/create-cloud/).
+Now that you have installed the Admin node, you can [Create a Cloud](/cloudos/install/create-cloud/).
+
+<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

@@ -9,11 +9,11 @@ product: cloudos
 <a name="_top"> </a>
 
 <script> 
-
+ 
 function PageRefresh { 
-onLoad="window.refresh"
-}
-
+onLoad="window.refresh" 
+} 
+ 
 PageRefresh();
 
 </script>
@@ -118,7 +118,7 @@ The following table identifies network requirements for your cloud environment.
 <tr style="background-color: #C8C8C8;">
 <th> Network </th>
 <th> Speed </th>
-<th> Tagged * </th>
+<th> <nobr> Tagged * </nobr> </th>
 <th> Required </th>
 <th> Notes </th>
 </tr>

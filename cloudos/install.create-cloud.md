@@ -29,7 +29,7 @@ and the separate Compute node(s).
 As indicated in the [Installation Overview](/cloudos/install/overview) topic, you have a choice at this point: 
 
 * You can follow the wizard-based steps presented in this topic (recommended)
-* Or you can perform the [Advanced Setup Steps](/cloudos/install/advanced-setup-steps) to apply and configure the install modules yourself.
+* Or you can perform the [Advanced Cloud Setup](/cloudos/install/advanced-cloud-setup) to apply and configure the install modules yourself.
 
 When you create a cloud using the process defined in this topic, a number of OpenStack and Cloud OS 
 install modules are automatically configured and deployed for you. In most cases, the automated deployment of install modules will suffice. 
@@ -218,7 +218,7 @@ Nodes, and the Hypervisor.
 ## Next Step
 
 After successfully creating a cloud and compute region(s), you can manage your cloud environment by launching the HP Cloud OS Administration Dashboard.  To get there, click More > Launch Dashboard for the cloud you
-created.  For more, see [Launch the Cloud's Administration Dashboard](/cloudos/install/launch-admin-dashboard/).
+created.  For more, see [Launch the Administration Dashboard](/cloudos/install/launch-admin-dashboard/).
 
 <a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

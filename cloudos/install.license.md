@@ -11,9 +11,9 @@ product: cloudos
 <script> 
 
 function PageRefresh { 
-onLoad="window.refresh"
-}
-
+onLoad="window.refresh" 
+} 
+ 
 PageRefresh();
 
 </script>
@@ -54,7 +54,9 @@ The HP Support representative will need this value when your new license is gene
 ## Next Step
 
 Before leaving the Operational Dashboard, you should become familiar with certain tasks that you may perform, as needed, 
-with the Cloud OS updates and extensions. See the next topic, [Updates and Extensions](/cloudos/install/updates-extensions/).
+with the Cloud OS [Updates and Extensions](/cloudos/install/updates-extensions/).
 
 <a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
+<!-- To request access to the HP Cloud OS Sandbox, see http://www.hp.com/go/cloudos. --> 
 
