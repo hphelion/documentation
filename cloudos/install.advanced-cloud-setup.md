@@ -281,7 +281,7 @@ To apply the Nova install module:
  
  g. Select Barclamps > Cloud Infrastructure to review the install module list. The proposal status is also displayed in the Cloud Infrastructure install module list. 
  
-> **Tip:** If you want to add another Compute Node later, complete the steps to discover and allocate the new node, and then add the node to an existing Hp Cos Nova 100 proposal. Do not create a separate proposal for the newly added node.
+> **Tip**: If you want to add another Compute Node later, complete the steps to discover and allocate the new node, and then add the node to an existing Hp Cos Nova 100 proposal. Do not create a separate proposal for the newly added node.
 
 #### Nova Install Module Roles
 
@@ -290,7 +290,7 @@ The Nova install module supports the following roles:
 * Hp Cos Nova 100-multi-controller &mdash; This role determines which node provides the infrastructure management and API services.
 * Hp Cos Nova 100-multi-compute &mdash; This role identifies the Compute Nodes that act as virtualization hosts.
 
-> **Tip: As a best practice, the node used earlier for the Cloud Controller is assigned the Nova-multi-controller role and the Nova-multi-volume role. The remaining managed nodes that are designated as Compute Nodes can be assigned to the Nova-multi-compute role.
+> **Tip**: As a best practice, the node used earlier for the Cloud Controller can be assigned the Nova-multi-controller role and the Nova-multi-volume role. The remaining managed nodes that are designated as Compute Nodes can be assigned to the Nova-multi-compute role.
 
 #### Nova Install Module Proposal Settings
 

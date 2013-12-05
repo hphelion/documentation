@@ -39,7 +39,7 @@ noted in the [Advanced Cloud Setup](/cloudos/advanced-cloud-setup/) topic.
 
 <tr>
 <td style="background-color: #C8C8C8;"> Description </td> 
-<td colspan="2" style="background-color: white;"> Configures a CouchDB server </td>
+<td colspan="2" style="background-color: white;"> Configures a CouchDB server. </td>
 </tr>
 
 <tr>
@@ -62,6 +62,90 @@ noted in the [Advanced Cloud Setup](/cloudos/advanced-cloud-setup/) topic.
 <td> log directory </td> 
 <td> /var/log/couchdb </td>
 <td> Directory of the couchdb log file. </td>
+</tr>
+
+</table>
+
+
+## Hp Cos Admin 100
+
+<table style="text-align: left; vertical-align: top;">
+
+<tr>
+<td style="background-color: #C8C8C8;"> Install Module </td> 
+<td colspan="2" style="background-color: white;"> Hp Cos Admin 100 </td>
+</tr>
+
+<tr>
+<td style="background-color: #C8C8C8;"> Description </td> 
+<td colspan="2" style="background-color: white;"> Configures an administration service. </td>
+</tr>
+
+<tr>
+<td style="background-color: #C8C8C8;"> Node Deployment </td> 
+<td colspan="2" style="background-color: white;"> Cloud Controller Node and Compute Node </td>
+</tr>
+
+<tr>
+<td style="background-color: #C8C8C8;"> Role </td> 
+<td colspan="2" style="background-color: white;"> Hp cos admin 100-server, Hp cos admin 100-client. <br /> <br /> 
+<b> Note: </b> The client role is automatically deployed to all allocated nodes. The server role is automatically installed on the Admin Node during setup. </td>
+</tr>
+
+<tr style="background-color: #C8C8C8;">
+<th> Attributes </th> 
+<th> Default Value </th>
+<th> Description </th>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Log level </td> 
+<td> INFO </td>
+<td> Sets the level of the log file: INFO or DEBUG. </td>
+</tr>
+
+</table>
+
+## Hp Cos Cinder 100
+
+<table style="text-align: left; vertical-align: top;">
+
+<tr>
+<td style="background-color: #C8C8C8;"> Install Module </td> 
+<td colspan="2" style="background-color: white;"> Hp Cos Cinder 100 </td>
+</tr>
+
+<tr>
+<td style="background-color: #C8C8C8;"> Description </td> 
+<td colspan="2" style="background-color: white;"> Configures volume connectivity service. </td>
+</tr>
+
+<tr>
+<td style="background-color: #C8C8C8;"> Node Deployment </td> 
+<td colspan="2" style="background-color: white;"> Cloud Controller Node </td>
+</tr>
+
+<tr>
+<td style="background-color: #C8C8C8;"> Role </td> 
+<td colspan="2" style="background-color: white;"> Hp cos cinder 100-server </td>
+</tr>
+
+<tr style="background-color: #C8C8C8;">
+<th> Attributes </th> 
+<th> Default Value </th>
+<th> Description </th>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> PostgreSQL </td> 
+<td> &lt;first-proposal-instance> </td>
+<td> The PostgreSQL proposal to use. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Lots more... </td> 
+<td> &lt; lots more ... > </td>
+<td> Lots more... </td>
 </tr>
 
 </table>
