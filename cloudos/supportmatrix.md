@@ -9,8 +9,11 @@ product: cloudos
 <a name="_top"> </a>
 
 <script> 
-
+function PageRefresh { 
  onLoad="window.refresh"
+ }
+ 
+ PageRefresh();
  
 </script>
 
@@ -19,7 +22,7 @@ product: cloudos
 This topic identifies the supported hardware and software for the current release of HP Cloud OS, including information needed to set up the 
 hardware and software. 
 
-Internal test of cache control: kfjdkfkdkjfkdkjfkdjk fkdkjfkdkj kdjfkjdkjk kjdkfjkdjfkdjk !
+Internal test of cache control: Stevie Ray Vaughan
 
 * [Server Infrastructure](#server-infrastructure)
 
@@ -46,7 +49,7 @@ Ubuntu Server 12.04 LTS installation media.
 
 <table style="text-align: left; vertical-align: top;">
 
-<tr style="background-color: #1796D3;">
+<tr style="background-color: #151515; color: white;">
 <th>Node Type</th>
 <th>Virtual/Physical Node</th>
 <th>CPU Cores</th>
@@ -129,7 +132,7 @@ Refer to [Install &amp; Configure Your Clouds](/cloudos/install/) for a complete
 
 <table style="text-align: left; vertical-align: top;">
 
-<tr style="background-color: #1796D3;">
+<tr style="background-color: #151515; color: white;">
 <th> HP Cloud OS Platforms </th>
 <th> Supported Versions </th>
 </tr>
@@ -352,21 +355,4 @@ Refer to [Install &amp; Configure Your Clouds](/cloudos/install/) for a complete
 </table>
 
 <a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
 
