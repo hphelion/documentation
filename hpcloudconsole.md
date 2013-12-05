@@ -311,7 +311,6 @@ Security group rules have three parts:
 
     <img src="Accesssecurityaddruletonewgroup.png" width="580" alt="" />
 
-
 6. Click the "Rule" drop-down in the "Add Rule" box and make a selection based on the function of your VM.
 
 7. Click the "Direction" drop-down box and select "Egress" to designate outbound traffic or "Ingress" to designate inbound traffic.
