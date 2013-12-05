@@ -261,19 +261,19 @@ Security group rules have three parts:
 ####Default security group####
 1. Click "Access & Security" in the left-hand bar under "Manage Compute" and "Project" to begin.
 
-<img src="media/Accesssecurity1.png" width="580" alt="" />
+    <img src="media/Accesssecurity1.png" width="580" alt="" />
 
-2. A default security group is already set up. To display the default rules, click the "Edit Rules" button next to "default" on the "Security Groups" page. The default security group rules have "Ether Types" IPv4 and IPv6 set up for "Ingress" (Incoming) and "Egress" (Outbound) directions. **Note**: It may be easiest to add any new security group rules to the default group so you do not have to recreate ingress and egress directions. 
+2. A default security group is already set up. To display the default rules, click the "Edit Rules" button next to "default" on the "Security Groups" page. As shown below, the default security group rules have "Ether Types" IPv4 and IPv6 set up for "Ingress" (Incoming) and "Egress" (Outbound) directions. **Note**: It may be easiest to add any new security group rules to the default group so you do not have to recreate ingress and egress directions. 
 
-<img src="media/Accesssecuritydefaultsecuritygrouprulesimage2" width="580" alt="" />
+    <img src="media/Accesssecuritydefaultsecuritygrouprulesimage2.png" width="580" alt="" />
 
 3. Click the "+Add Rule" button in the top-right navigation if you want to create a new rule in the default security group.
 
-<img src="media/Accesssecurityaddruletodefault" width="580" alt="" />
+    <img src="media/Accesssecurityaddruletodefault.png" width="580" alt="" />
 
 4. In the "Add Rule" box, make selections for the rule as outlined below. Additional selections may pop up depending on your setup choices.
 
-<img src="media/Accesssecurityaddrulebox" width="580" alt="" />
+    <img src="media/Accesssecurityaddrulebox.png" width="580" alt="" />
 
 5. Click the "Rule" drop-down box and make a selection based on the function of your VM.
 
@@ -283,61 +283,62 @@ Security group rules have three parts:
 
 8. Click "Add."
 
-9. To delete a rule from the default group, click "Access & Security in the left-hand bar, then click "Edit Rules" to the right of the default security group, which is what you did to add a rule.
+9. To delete a rule from the default group, click "Access & Security" in the left-hand bar, then click "Edit Rules" to the right of the default security group, which is what you did to add a rule.
 
 10. Click "Delete Rule" next to the rule you want to get rid of.
 
-<img src="media/Accesssecuritydeletedefaultgrouprule" width="580" alt="" />
+    <img src="media/Accesssecuritydeletedefaultgrouprule.png" width="580" alt="" />
 
 
 ####New security group#### 
 
 1. Click "Access & Security" in the left-hand bar under "Manage Compute" and "Project" to begin.
 
-<img src="media/Accesssecurity1.png" width="580" alt="" />
+    <img src="media/Accesssecurity1.png" width="580" alt="" />
 
 2. Click "+Create Security Group" in the upper right-hand navigation.
 
-<img src="media/ASCreatenewsecuritygroup.png" width="580" alt="" />
+    <img src="media/ASCreatenewsecuritygroup.png" width="580" alt="" />
 
 3. Enter a name in ASCII-only characters and numbers, a description, then click "Create Security Group."
 
 4. Click "Edit Rules" next to the new security group under "Actions" in the right-hand navigation to add security group rules. 
 
-<img src="media/ASClickeditrules.png" width="580" alt="" />
+    <img src="media/ASClickeditrules.png" width="580" alt="" />
 
 
-Click the "+Add Rule" button in the top-right navigation.
+5. Click the "+Add Rule" button in the top-right navigation.
 
-<img src="media/Accesssecurityaddruletodefault" width="580" alt="" />
+    <img src="media/Accesssecurityaddruletonewgroup.png" width="580" alt="" />
+    
 
-7. Click the "Rule" drop-down box and make a selection based on the function of your VM.
+6. Click the "Rule" drop-down in the "Add Rule" box and make a selection based on the function of your VM.
 
-8. Click the "Direction" drop-down box and select "Egress" to designate outbound traffic or "Ingress" to designate inbound traffic.
+7. Click the "Direction" drop-down box and select "Egress" to designate outbound traffic or "Ingress" to designate inbound traffic.
 
-9. Select "Port" to open a single port, or "Port Range" to specify a range from the drop-down under "Open Port."  Enter the port number or start and end port numbers based on your selection. 
+8. Select "Port" to open a single port, or "Port Range" to specify a range from the drop-down under "Open Port."  Enter the port number or start and end port numbers based on your selection. 
 
-10. Select "CIDR" or "Security Group" from the drop-down under "Remote" to specify the source of the allowed traffic for the rule. If CIDR, enter an IP address block under "CIDR." If "Security Group," select the name from the drop-down box, then designate IPv4 or IPv6 under "Ether Type." If you do not already know you are using IPv6, select IPv4. 
+9. Select "CIDR" or "Security Group" from the drop-down under "Remote" to specify the source of the allowed traffic for the rule. If CIDR, enter an IP address block under "CIDR." If "Security Group," select the name from the drop-down box, then designate IPv4 or IPv6 under "Ether Type." If you do not already know you are using IPv6, select IPv4. 
 
-11. Click "Add" and your new rule displays in the security group.
+10. Click "Add" and your new rule displays in the security group.
 
-<img src="media/ASNewruledisplay" width="580" alt="" />
+    <img src="media/ASNewruledisplay.png" width="580" alt="" />
 
-12. Click "Delete Rule" next to a rule you want to get rid of.
+11. Click "Delete Rule" next to a rule you want to get rid of.
 
-13. Click "Access & Security" in the left-hand bar to display your security groups.
+12. Click "Access & Security" in the left-hand bar to display your security groups.
 
-<img src="media/ASSecurityGroupsdisplay" width="580" alt="" />
+    <img src="media/ASSecurityGroupsdisplay.png" width="580" alt="" />
 
 ###Organize and manage HP Cloud Access## {#Identity}
 
-Click  "Identify" in the left-hand interface to display links:
+Click  "Identity" in the left-hand interface to display links:
 
 * Domain - The domain is your primary work space in HP Public Cloud.  An individual or company can be the domain owner and enables a project with the necessary services and permissions. The first user created in a domain is considered the domain owner and placed in both the "Users" and "Domain Administrators" groups. 
 
     A domain has one owner and may have multiple users, groups and roles. A domain owner can allow users of another domain access to its projects.
 
-* Projects - A project is a collection of HP Public Cloud services, e.g., compute, storage, etc. within a domain  A project is defined by selecting services to be activated and a set of users to interact with the services. A Project may contain multiple services, such as compute or object storage. Services can exist multiple times within the same project as long as they have different service endpoints, distinguished by their geography and region.
+* Projects - A project is a collection of HP Public Cloud services, e.g., compute, storage, etc. within a domain  A project is defined by selecting services to be activated and a set of users to interact with the services. A project may contain multiple services, such as compute or object storage. Services can exist multiple times within the same project as long as they have different service endpoints, distinguished by their geography and region.
 
 * Users - Users are defined individually and can be assigned to groups and granted roles either directly or through inclusion in groups.  A user may have multiple roles.
 
