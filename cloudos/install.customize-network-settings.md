@@ -6,6 +6,19 @@ product: cloudos
 
 ---
 
+<a name="_top"> </a>
+
+<script>
+
+function PageRefresh {
+onLoad="window.refresh"
+}
+
+PageRefresh();
+
+</script>
+
+
 # Customize Network Settings (Required)
 
 This topic describes the steps to customize the network settings. These steps are required. 
@@ -214,4 +227,7 @@ the addresses are correct.
 ## Next Step
 
 Proceed to the next topic, [Complete Admin Node Installation (Required)](/cloudos/install/complete-admin-node-installation/).
+
+<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
 

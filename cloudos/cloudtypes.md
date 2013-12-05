@@ -8,9 +8,9 @@ product: cloudos
 
 <a name="_top"> </a>
 
-<script> 
+<script>
 
-function PageRefresh { 
+function PageRefresh {
 onLoad="window.refresh"
 }
 

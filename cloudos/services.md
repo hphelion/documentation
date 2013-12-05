@@ -6,13 +6,28 @@ product: cloudos
 
 ---
 
+<a name="_top"> </a>
+
+<script>
+
+function PageRefresh {
+onLoad="window.refresh"
+}
+
+PageRefresh();
+
+</script>
+
+
 # HP Cloud OS Value-Add Services
 
 OpenStack provides important services for cloud Computing, including Nova, Keystone, Glance, and Cinder.  Complementing the OpenStack services are a number of value-add 
 services from HP:
 
 * [Eve Service](#eve-service)
+
 * [Focus Service](#focus-service)
+
 * [Graffiti Service](#graffiti-service)
 
 This topic describes the HP Cloud OS value-add services.
@@ -29,4 +44,5 @@ Will add info here ... this is just a PLACEHOLDER.
 
 Will add info here ... this is just a PLACEHOLDER. 
 
+<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

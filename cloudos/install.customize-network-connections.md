@@ -6,6 +6,19 @@ product: cloudos
 
 ---
 
+<a name="_top"> </a>
+
+<script>
+
+function PageRefresh {
+onLoad="window.refresh"
+}
+
+PageRefresh();
+
+</script>
+
+
 # Customize Network Connections (Optional)
 
 This topic describes the steps to customize the network connections. These steps are optional. 
@@ -207,4 +220,7 @@ If you need to edit the connections:
 ## Next Step
 
 Proceed to the [Customize Network Settings (Required)](/cloudos/install/customize-network-settings/) topic.
+
+<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
 

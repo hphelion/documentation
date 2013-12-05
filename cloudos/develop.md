@@ -6,6 +6,19 @@ product: cloudos
 
 ---
 
+<a name="_top"> </a>
+
+<script>
+
+function PageRefresh {
+onLoad="window.refresh"
+}
+
+PageRefresh();
+
+</script>
+
+
 # Cloud OS Development with REST APIs
 
 Welcome! These topics describe the Cloud OS REST APIs for the value-added services. 
@@ -31,4 +44,7 @@ Read the HP Cloud OS [API Quick Start](/cloudos/api/quickstart/) to learn about 
 ## Read the Value-Added Services topic
 
 Read the [Value-Added Services](/cloudos/api/services/) topic to learn more about Eve, Focus, and Graffiti from HP Cloud OS.
+
+<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
 

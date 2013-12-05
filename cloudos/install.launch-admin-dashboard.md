@@ -6,6 +6,19 @@ product: cloudos
 
 ---
 
+<a name="_top"> </a>
+
+<script>
+
+function PageRefresh {
+onLoad="window.refresh"
+}
+
+PageRefresh();
+
+</script>
+
+
 # Launch the Administration Dashboard
 
 After a cloud environment has been created in the HP Cloud OS Operational Dashboard, you manage the cloud
@@ -31,5 +44,8 @@ For details about the Administration Dashboard, see the [HP Cloud OS Administrat
 
 While you are still in the Operational Dashboard, check the license details for your instance. 
 See the next topic, [Check the Cloud OS License](/cloudos/install/license/).
+
+<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
 
 

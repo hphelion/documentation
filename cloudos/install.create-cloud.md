@@ -26,9 +26,10 @@ Now that the Admin Node is installed, it's time to create your cloud.
 This topic explains how to set up a cloud with a Cloud Controller node (Cloud, Network, Storage, and Compute Controllers) 
 and the separate Compute node(s). 
 
-As indicated in the [Installation Overview](/cloudos/install/overview) topic, you have a choice at this point: 
+As indicated in the [Installation Overview](/cloudos/install/overview#preview-of-the-installation-steps) topic, you have a choice at this point: 
 
 * You can follow the wizard-based steps presented in this topic (recommended)
+
 * Or you can perform the [Advanced Cloud Setup](/cloudos/install/advanced-cloud-setup) to apply and configure the install modules yourself.
 
 When you create a cloud using the process defined in this topic, a number of OpenStack and Cloud OS 

@@ -6,6 +6,19 @@ product: cloudos
 
 ---
 
+<a name="_top"> </a>
+
+<script>
+
+function PageRefresh {
+onLoad="window.refresh"
+}
+
+PageRefresh();
+
+</script>
+
+
 # HP Cloud OS API Quick Start
 
 * [HP Cloud OS API Introduction](#hp-cloud-os-api-introduction)
@@ -73,5 +86,8 @@ The HP Cloud OS technology platform includes enhanced features, providing immedi
 
 ## More topics...
 
-More coming... converting from HTML.  Prior version is [here](http://docscloudos.hpswlabs.adapps.hp.com/quickstart/index.html). 
+More coming... converting from HTML.  Prior version is [here](http://docscloudos.hpswlabs.adapps.hp.com/quickstart/index.html).
+
+<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+ 
 

@@ -6,6 +6,19 @@ product: cloudos
 
 ---
 
+<a name="_top"> </a>
+
+<script>
+
+function PageRefresh {
+onLoad="window.refresh"
+}
+
+PageRefresh();
+
+</script>
+
+
 # HP Cloud OS Site Index
 
 #### [Cloud OS Home](/cloudos/)
@@ -56,4 +69,6 @@ product: cloudos
  * [OpenStack Cloud Administrator Guide](http://docs.openstack.org/trunk/openstack-compute/admin/content/index.html)
  * [OpenStack Networking Administration Guide](http://docs.openstack.org/trunk/openstack-network/admin/content/index.html)
  * [OpenStack Operations Guide](http://docs.openstack.org/trunk/openstack-ops/content/index.html)
+ 
+<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
  

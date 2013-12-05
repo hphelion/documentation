@@ -1,17 +1,32 @@
 ---
 layout: default
-title: "HP Cloud OS Videos"
+title: "HP Cloud OS Video Tutorials"
 permalink: /cloudos/videos/
 product: cloudos
 
 ---
 
-# HP Cloud OS Videos
+<a name="_top"> </a>
 
-To help you learn about HP Cloud OS, we have provided a set of video tutorials. Enjoy! These same videos are hosted on the HewlettPackardVideos channel of YouTube.
+<script>
+
+function PageRefresh {
+onLoad="window.refresh"
+}
+
+PageRefresh();
+
+</script>
+
+
+# HP Cloud OS Video Tutorials
+
+To help you learn about HP Cloud OS, we have provided a set of videos tutorials. Enjoy! These same videos are hosted on the HewlettPackardVideos channel of YouTube.
 
 * [HP and OpenStack](#hp-and-openstack)
+
 * [HP Cloud OS Tutorials](#hp-cloud-os-tutorials)
+
 * [HP Cloud Security](#hp-cloud-security)
 
 ## HP and OpenStack
@@ -90,3 +105,6 @@ In this whiteboard demo, Mark Perriera illustrates SDN with Cloud OS.
 <iframe style="border: 1px solid gray;" width="400" height="225" src="//www.youtube.com/embed/dOtpwBH1n7U" frameborder="0" allowfullscreen> </iframe>
 
 HP has enhanced Cloud Security across the HP Cloud portfolio. Ben de Bont, CSO of HP Cloud, highlights some of the advanced security offerings and intriguing solutions available to HP Customers.
+
+<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+

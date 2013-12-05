@@ -6,6 +6,19 @@ product: cloudos
 
 ---
 
+<a name="_top"> </a>
+
+<script>
+
+function PageRefresh {
+onLoad="window.refresh"
+}
+
+PageRefresh();
+
+</script>
+
+
 # Customize Server Types (Optional)
 
 This topic describes the steps to customize the server types. These steps are optional. 
@@ -57,4 +70,7 @@ To create or edit the server types:
 ## Next Step
 
 Proceed to the next topic, [Customize Network Connections (Optional)](/cloudos/install/customize-network-connections/).
+
+<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
 

@@ -6,6 +6,19 @@ product: cloudos
 
 ---
 
+<a name="_top"> </a>
+
+<script>
+
+function PageRefresh {
+onLoad="window.refresh"
+}
+
+PageRefresh();
+
+</script>
+
+
 # HP Cloud OS FAQs
 
 Welcome! You've got questions, we have the answers.
@@ -101,4 +114,7 @@ HP Cloud OS Administration Dashboard.
 ## How often will updates of HP Cloud OS made available?
 
 > Adding text soon...
+
+<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
 
