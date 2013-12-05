@@ -6,6 +6,19 @@ product: cloudos
 
 ---
 
+<a name="_top"> </a>
+
+<script> 
+
+function PageRefresh { 
+onLoad="window.refresh"
+}
+
+PageRefresh();
+
+</script>
+
+
 # Before You Install
 
 Before you can start working in the HP Cloud OS Operational Dashboard, you must:
@@ -35,7 +48,7 @@ The following table identifies server requirements for your cloud environment.
 
 <table style="text-align: left; vertical-align: top;">
 
-<tr style="background-color: #1796D3;">
+<tr style="background-color: #C8C8C8;">
 <th>Node Type</th>
 <th>Virtual/Physical Node</th>
 <th>CPU Cores</th>
@@ -102,7 +115,7 @@ The following table identifies network requirements for your cloud environment.
 
 <table style="text-align: left; vertical-align: top;">
 
-<tr style="background-color: #1796D3;">
+<tr style="background-color: #C8C8C8;">
 <th> Network </th>
 <th> Speed </th>
 <th> Tagged * </th>
@@ -165,7 +178,7 @@ The following table identifies storage requirements for your cloud environment.
 
 <table style="text-align: left; vertical-align: top;">
 
-<tr style="background-color: #1796D3;">
+<tr style="background-color: #C8C8C8;">
 <th> Node Type </th>
 <th> Internal Storage </th>
 <th> Partition Scheme </th>
@@ -255,4 +268,6 @@ IMPORTANT: Use Google Chrome or Mozilla Firefox.
 ## Next Step
 
 Proceed to the next topic, [Set the Admin Node Prerequisites](/cloudos/install/admin-node-prerequisites/), to begin the process of setting up and installing the Admin node.  
+
+<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

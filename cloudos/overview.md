@@ -6,6 +6,19 @@ product: cloudos
 
 ---
 
+<a name="_top"> </a>
+
+<script> 
+
+function PageRefresh { 
+onLoad="window.refresh"
+}
+
+PageRefresh();
+
+</script>
+
+
 # HP Cloud OS Technical Overview
 
 Welcome! This technical overview introduces you to the HP Cloud OS architecture, its components and services, and the HP Cloud OS relationship with OpenStack.
@@ -204,4 +217,7 @@ The HP Cloud OS architecture ensures that any product based on it will get a fun
 across the implemented products. For example in a hybrid delivery mechanism, being able to use another cloud's resources (as if they were your own) will be consistent across all products that use HP Cloud OS.  With template-based provisioning, you can use HP Cloud OS to 
 create a template and build infrastructure based on that template.  You can then use that template repeatedly, even in a hybrid environment, and there will be a consistent capability across
 all the technologies that use HP Cloud OS. 
+
+<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
 

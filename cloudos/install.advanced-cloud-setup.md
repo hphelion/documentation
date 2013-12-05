@@ -40,7 +40,7 @@ However, should you need to customize values in the install modules that are not
 this advanced section, along with [Cloud Controller Install Modules Reference](/cloudos/install/install-modules/), are provided to assist 
 you in the process of customizing and deploying the individual install modules. 
 
-If you use this advanced option, all install modules will need to be applied manually and in the order specified in the [Apply Cloud Controller Install Modules](#) section of this topic.
+If you use this advanced option, all install modules will need to be applied manually and in the order specified in the [Apply Cloud Controller Install Modules](#apply-cloud-controller-modules) section of this topic.
 
 You'll use a separate UI, the HP Cloud OS Installation Dashboard, to perform these advanced steps.  Its URL is:
 
@@ -80,7 +80,7 @@ for details on how to make these associations in the proposal.
 
 The Attributes section represents service configuration parameters that can be customized as needed. The Attributes section may also include "references" to other proposals. Proposal
 "references" are used to indicate that one install module requires the services of another install module. The "reference" also allows you to pick a specific instance of that service.
-For example, Glance has a "reference" to Keystone Instances. This appears in Glance's Proposal as a dorp-down list of previously created Keystone Proposals. When a Keystone
+For example, Glance has a "reference" to Keystone Instances. This appears in Glance's Proposal as a drop-down list of previously created Keystone Proposals. When a Keystone
 Proposal is selected, you are actually selecting a specific deployed instance of Keystone because that Proposal is tied to a specific node due to the Node-to-Role association that is
 part of the Keystone Proposal.
 
@@ -126,7 +126,16 @@ Login with crowbar/crowbar.
 
 ### Apply Cloud Controller Modules
 
-Content is coming 12/5...
+The Controller install modules have dependencies and must be applied so that they will be listed in the HP Cloud OS Installation Dashboard.
+
+Caution: Each install module must be successfully applied, one at a time, and in a Ready state before you apply the next install module 
+in the list.
+
+The following table lists the install modules in the order they must be applied.
+
+( table here ) 
+
+
 
 ### Apply the Nova Install Module
 

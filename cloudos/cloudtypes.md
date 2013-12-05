@@ -6,8 +6,20 @@ product: cloudos
 
 ---
 
-# Introduction to Cloud Types  
-#  &amp; the Cloud OS Installation Steps
+<a name="_top"> </a>
+
+<script> 
+
+function PageRefresh { 
+onLoad="window.refresh"
+}
+
+PageRefresh();
+
+</script>
+
+
+# Introduction to Cloud Types &amp; the Cloud OS Installation Steps
 
 The first step in creating a cloud is to consider the type of cloud you want to create for your organization:
 
@@ -228,4 +240,6 @@ Actions column. You can also add nodes to the compute region by selecting Extend
 region by selecting Reduce Compute Region. 
 
 Finally, you can create as many compute regions as you need to fulfill the requirements of your cloud.
+
+<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

@@ -26,10 +26,10 @@ Now that the Admin Node is installed, it's time to create your cloud.
 This topic explains how to set up a cloud with a Cloud Controller node (Cloud, Network, Storage, and Compute Controllers) 
 and the separate Compute node(s). 
 
-As indicated in the [Installation Overview](#/cloudos/install/overview) topic, you have a choice at this point: 
+As indicated in the [Installation Overview](/cloudos/install/overview) topic, you have a choice at this point: 
 
 * You can follow the wizard-based steps presented in this topic (recommended)
-* Or you can perform the [Advanced Setup Steps](#/cloudos/install/advanced-setup-steps) to apply and configure the install modules yourself.
+* Or you can perform the [Advanced Setup Steps](/cloudos/install/advanced-setup-steps) to apply and configure the install modules yourself.
 
 When you create a cloud using the process defined in this topic, a number of OpenStack and Cloud OS 
 install modules are automatically configured and deployed for you. In most cases, the automated deployment of install modules will suffice. 
@@ -61,8 +61,7 @@ drivers when prompted.
 
 * The Network and Storage Infrastructures are set up correctly. For the post-install of the operating system, a few steps are required to configure and mount the folder on an additional storage resource.
 
-**Note:** Ensure that the boot order on all nodes is configured to boot from the network first (this
-only occurs once as the PXE service will not try to network boot a node again if it has already
+**Note:** Ensure that the boot order on all nodes is configured to boot from the network first (this only occurs once as the PXE service will not try to network boot a node again if it has already
 done so).
 
 1. Power ON the Controller and Compute nodes.
@@ -137,7 +136,7 @@ and user roles. UUID is the alternative 32-character token choice.
 and used with `losetup` when creating the logical volume group.  
 
 * Maximum Volume File Size (GB) &mdash; Specify the maximum size of the file created on the
-target node’s file system to represent the size of the cinder volume. If the file size is too big
+target node's file system to represent the size of the cinder volume. If the file size is too big
 for the file system, the size of the file will be capped at 90% of the free space in that file
 system (at the time of creation). Best practice is to adjust the size to a value appropriate for
 the file-system associated with the Local Volume File.

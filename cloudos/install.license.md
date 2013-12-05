@@ -6,6 +6,19 @@ product: cloudos
 
 ---
 
+<a name="_top"> </a>
+
+<script> 
+
+function PageRefresh { 
+onLoad="window.refresh"
+}
+
+PageRefresh();
+
+</script>
+
+
 # Check the Cloud OS License
 
 This topic describes the steps to review and update your HP Cloud OS license. 
@@ -19,7 +32,7 @@ days, you may still open the Operational Dashboard and Administration Dashboard.
 
 After you have completed the Admin node installation in the Operational Dashboard:
 
-1. Cick Settings in the top banner.
+1. Click Settings in the top banner.
 
 2. Click Licensing.
 
@@ -33,10 +46,15 @@ When your license expires, contact HP Support to purchase a renewed license. The
 
 2. Click Licensing.
 
-3. In the licensing information, enter the license key (alphanumeric characters) that was given to you by the HP Support representative. 
+3. In the licensing information, note the Instance ID value for your cloud.  
+The HP Support representative will need this value when your new license is generated. 
+
+4. Now enter the license key (alphanumeric characters) given to you by the HP Support representative. 
 
 ## Next Step
 
 Before leaving the Operational Dashboard, you should become familiar with certain tasks that you may perform, as needed, 
 with the Cloud OS updates and extensions. See the next topic, [Updates and Extensions](/cloudos/install/updates-extensions/).
+
+<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

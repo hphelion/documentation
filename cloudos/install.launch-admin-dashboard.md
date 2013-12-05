@@ -29,6 +29,7 @@ Or, use the default login: Admin / secretword.
 
 For details about the Administration Dashboard, see the [HP Cloud OS Administration Dashboard Help](/cloudos/admin-dashboard/index.htm) (not deployed to the live server yet).
 
-While you are still in the Operational Dashboard, check the license details for your instance. See the next topic, [Check Cloud OS License](/cloudos/install/license/).
+While you are still in the Operational Dashboard, check the license details for your instance. 
+See the next topic, [Check the Cloud OS License](/cloudos/install/license/).
 
 
