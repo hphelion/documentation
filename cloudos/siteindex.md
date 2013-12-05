@@ -45,7 +45,7 @@ PageRefresh();
  * [Create a Cloud](/cloudos/install/create-cloud/) 
  * [Launch Administration Dashboard](/cloudos/install/launch-admin-dashboard/)
  * [Check the Cloud OS License](/cloudos/install/license/)
- * [Updates &amp; Extensions](/cloudos/install/updates-extensions/)
+ * [Install Hot Fixes](/cloudos/install/hot-fixes/)
  * [Advanced Cloud Setup](/cloudos/install/advanced-cloud-setup/)
  * [Install Modules Reference](/cloudos/install/install-modules-reference/)
 

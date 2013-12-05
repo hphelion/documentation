@@ -23,7 +23,7 @@ function PageRefresh {
 
 Your first step in the HP Cloud OS Operational Dashboard is to configure the Admin Node prerequisites. See the sections in this topic:
 
-* [Enable Admin Node Internet Access](#enable-admin-node-internet-access) &mdash; Set up Internet access on the Admin Node. You will need Internet access for downloading install modules or plugins using the Updates and Extensions panel. For details, see the [Updates and Extensions](/cloudos/install/updates-extensions/) topic.
+* [Enable Admin Node Internet Access](#enable-admin-node-internet-access) &mdash; Set up Internet access on the Admin Node. You will need Internet access for downloading hot fixes using the Hot Fixes panel of the Cloud tab. For details, see the [Install Hot Fixes](/cloudos/install/hot-fixes/) topic.
 * [Set the External DNS Server](#set-the-external-dns-server) &mdash;  Add the IP address of the external DNS server that your Cloud OS environment is using to access named websites within your cloud.
 * [Set the Time for the Admin Node](#set-the-time-for-the-admin-node) &mdash; Configure your cloud to reflect the current time to ensure that the cloud is created successfully.
 * [Set the Email Notification](#set-the-email-notification) &mdash; Configure your cloud to send email notifications when the Cloud and Compute Region operation completes since this takes some time. By enabling and setting this prerequisite, you can be alerted by e-mail when each operation completes.
