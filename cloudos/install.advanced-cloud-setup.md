@@ -6,7 +6,33 @@ product: cloudos
 
 ---
 
+<a name="_top"> </a>
+
+<script> 
+
+function PageRefresh { 
+ onLoad="window.refresh"
+ }
+ 
+ PageRefresh();
+ 
+</script>
+
+
 # Advanced Cloud Setup
+
+This topic explains how to perform an advanced cloud setup, as an **alternative** to the wizard-based Create Cloud steps in the HP Cloud OS Operational Dashboard.
+
+* [Introduction](#introduction)
+* [Install Module Overview](#install-module-overview)
+  * [Terminology](#terminology)
+  * [Proposals](#proposals)
+* [Steps to Apply Install Modules](#steps-to-apply-install-modules)
+  * [Apply Cloud Controller Modules](#apply-cloud-controller-modules)
+  * [Apply the Nova Install Module](#apply-the-nova-install-module)
+* [Next Step](#next-step)
+
+## Introduction
 
 When you create a cloud using the process defined in [Create a Cloud](/cloudos/install/create-cloud/), a number of OpenStack and Cloud OS 
 install modules are automatically configured and deployed for you. In most cases, the automated deployment of install modules will suffice. 
@@ -21,14 +47,6 @@ You'll use a separate UI, the HP Cloud OS Installation Dashboard, to perform the
 http://192.168.124.10:3000
 
 You should open the Installation Dashboard in Firefox or Google Chrome.
-
-* [Install Module Overview](#install-module-overview)
-* [Steps to Apply Install Modules](#steps-to-apply-install-modules)
-* [Other topics to be listed here](#)
-* [Other topics to be listed here](#)
-* [Other topics to be listed here](#)
-* [Other topics to be listed here](#)
-* [Other topics to be listed here](#)
 
 ## Install Module Overview
 
@@ -52,7 +70,7 @@ role.
 Before you begin going through the procedures to apply the install modules, review the following 
 section for information about the process of applying and customizing install modules.
 
-### Proposal Details
+### Proposals
 
 First, create a proposal to deploy an install module. A proposal is comprised of two sections - the Node Deployment section and the Attributes section.
 
@@ -100,23 +118,31 @@ being both a controller node as well as being a virtualization host).
 ## Steps to Apply Install Modules
 
 After you have allocated the Controller and Compute Nodes, you can complete the cloud creation process by manually applying 
-install modules that are available in the Installation Dashboard.  As noted previously to access this UI, open in Firefox or Chrome:
+install modules that are available in the Installation Dashboard.  As noted previously, to access this UI, open it in Firefox or Google Chrome:
 
 http://192.168.124.10:3000
 
 Login with crowbar/crowbar.
 
-## Much more coming...
+### Apply Cloud Controller Modules
+
+Content is coming 12/5...
+
+### Apply the Nova Install Module
+
+Content is coming 12/5...
+
+#### Nova Install Module Roles
+
+Content is coming 12/5...
+
+#### Nova Install Module Proposal Settings
+
+Content is coming 12/5...
 
 ## Next Step
 
-See the HP Cloud OS Administration Dashboard Help.  It's available by clicking Help in the top banner of that UI. Or you can [open this copy on the 
-website](http://docs.hpcloud.com/cloudos/admin-dashboard/index.htm).  Note: Help files not deployed yet to the live server.
+For details about each install module, see the [Install Modules Reference](#/cloudos/install/install-modules/). 
 
-
-
-
-
-
-
+<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
