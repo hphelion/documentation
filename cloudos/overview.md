@@ -127,7 +127,7 @@ additional functionality in Eve allows you to:
 The HP Cloud OS Graffiti service:
 
 * Provides a dictionary of the "capabilities" of all the resources in a cloud environment
-* Provides A searchable directory to find cloud resources based on their capabilities
+* Provides a searchable directory to find cloud resources based on their capabilities
 * The mechanism for dynamic binding, allowing you to describe requirements rather than concrete bindings
 * Supports the base concepts of requirements and capabilities within TOSCA
 

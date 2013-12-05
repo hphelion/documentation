@@ -34,7 +34,7 @@ product: cloudos
  * [Check the Cloud OS License](/cloudos/install/license/)
  * [Updates &amp; Extensions](/cloudos/install/updates-extensions/)
  * [Advanced Cloud Setup](/cloudos/install/advanced-cloud-setup/)
- * [Install Modules Reference](/cloudos/install/install-modules/)
+ * [Install Modules Reference](/cloudos/install/install-modules-reference/)
 
 #### [Manage your Clouds](/cloudos/manage/)
 

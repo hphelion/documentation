@@ -51,7 +51,7 @@ the Create a Cloud topic, and instead decide to apply and configure the install 
 see these topics: 
 
 * [Advanced Cloud Setup](/cloudos/install/advanced-cloud-setup/)
-* [Install Modules Reference](/cloudos/install/install-modules/)
+* [Install Modules Reference](/cloudos/install/install-modules-reference/)
 
 <a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
