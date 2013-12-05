@@ -167,7 +167,7 @@ For additional related information on HP Cloud:
 
 * See [Getting Started with HP Public Cloud Console](http:docs.hpcloud.com/hpcloudconsole) for detailed console information.
 * See [HP Cloud version 13.5 overview](/version-overview/) for an overview of the 13.5 release set.
-* See [HP Cloud Service APIs] (v13.5)](/api/v13/) for an overview of the 13.5 API specifications.
+* See [HP Cloud Service APIs (v13.5)](/api/v13/) for an overview of the 13.5 API specifications.
 * See [migration overview page](/migration-overview/) for information on migrating from version 12.12 to 13.5n.
 * See [Getting Started with Compute 13.5](https://community.hpcloud.com/article/getting-started-compute-135) for information on how to get started with the compute service in version 13.5.
 * Speaking of which, the [Getting Started Guide](https://community.hpcloud.com/article/getting-started-guide/) is a great resource for getting yourself up and running with the various HP Cloud services in general.
