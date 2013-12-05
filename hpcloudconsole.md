@@ -332,13 +332,13 @@ Security group rules have three parts:
 
 ###Organize and manage HP Cloud Access## {#Identity}
 
-Click  "Identify" in the left-hand interface to display links:
+Click  "Identity" in the left-hand interface to display links:
 
 * Domain - The domain is your primary work space in HP Public Cloud.  An individual or company can be the domain owner and enables a project with the necessary services and permissions. The first user created in a domain is considered the domain owner and placed in both the "Users" and "Domain Administrators" groups. 
 
     A domain has one owner and may have multiple users, groups and roles. A domain owner can allow users of another domain access to its projects.
 
-* Projects - A project is a collection of HP Public Cloud services, e.g., compute, storage, etc. within a domain  A project is defined by selecting services to be activated and a set of users to interact with the services. A Project may contain multiple services, such as compute or object storage. Services can exist multiple times within the same project as long as they have different service endpoints, distinguished by their geography and region.
+* Projects - A project is a collection of HP Public Cloud services, e.g., compute, storage, etc. within a domain  A project is defined by selecting services to be activated and a set of users to interact with the services. A project may contain multiple services, such as compute or object storage. Services can exist multiple times within the same project as long as they have different service endpoints, distinguished by their geography and region.
 
 * Users - Users are defined individually and can be assigned to groups and granted roles either directly or through inclusion in groups.  A user may have multiple roles.
 
