@@ -46,7 +46,7 @@ separate wired networks for admin, os_sdn and public, you want DUAL. The recomme
 
 4. Click Complete Install. This action installs required software on the Admin Node. This will take several minutes.
 
-5. The Operational Dashbaord displays a working status message in the Install Complete column. *Note:** Any failure during this part of the process requires rebuilding the Admin Node through the bootable ISO. 
+5. The Operational Dashboard displays a working status message in the Install Complete column. *Note:** Any failure during this part of the process requires rebuilding the Admin Node through the bootable ISO. 
 
 6. (Optional) Click Show Install Log to view the install activity in the /var/log/install.log, which appears on the bottom of the window.
 

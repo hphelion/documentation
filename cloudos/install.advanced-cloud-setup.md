@@ -45,7 +45,8 @@ However, should you need to customize values in the install modules that are not
 this advanced section, along with [Cloud Controller Install Modules Reference](/cloudos/install/install-modules-reference/), are provided to assist 
 you in the process of customizing and deploying the individual install modules. 
 
-If you use the advanced option described in this topic, all install modules will need to be applied manually and in the order specified in the [Apply Cloud Controller Install Modules](#apply-cloud-controller-modules) section.
+If you use the advanced option described in this topic, all install modules will need to be applied manually and in the 
+order specified in the [Apply Cloud Controller Install Modules](#apply-cloud-controller-install-modules) section.
 
 To perform these tasks, you'll use a separate UI: the HP Cloud OS Installation Dashboard.  Its URL is:
 
@@ -186,7 +187,7 @@ The following table lists the install modules **in the order they must be applie
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> <nobr> Hp Cos Nova 100 * See the important footnote below this table. </nobr> </td>
+<td> <nobr> Hp Cos Nova 100 * See the footnote below this table. </nobr> </td>
 <td> Provides multi-controller and multi-compute services. </td>
 </tr>
 
@@ -217,7 +218,7 @@ The following table lists the install modules **in the order they must be applie
 
 </table>
 
-\* **Important:** The Nova install module will appear in the list of install modules after the Neutron install module. 
+\* **Important:** The Nova install module will appear in the list of install modules after the Quantum install module. 
 The best practice is to create and apply the Nova proposal after all the others have been applied. 
 First follow the instructions below, then see [Apply the Nova Install Module](#apply-the-nova-install-module) in this topic.
 
@@ -301,8 +302,6 @@ In the Installation Dashboard:
 * You can set the attribute values that are based on roles associated with the install module.
 * Each install module may have specific logic that requires minimums or maximums for node assignments.
 
-( table coming 12/5 - today!  ) 
-
 <table style="text-align: left; vertical-align: top;">
 
 <tr style="background-color: #C8C8C8;">
@@ -324,9 +323,46 @@ In the Installation Dashboard:
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> more coming today 12/5 ... </td>
-<td> &lt; more coming today 12/5 ... > </td>
-<td> more coming today 12/5 ... </td>
+<td> Keystone </td>
+<td> &lt;first-proposal-instance> </td>
+<td> The Keystone proposal to use. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <nobr> Keystone Service User </nobr> </td>
+<td> Nova </td>
+<td> <nobr> The type of user that Nova uses when authenticating with Keystone. </nobr>  </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <nobr> Keystone Service Password </nobr> </td>
+<td> &lt;first-proposal-instance> </td>
+<td> The password for the Nova Keystone authentication user. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Glance </td>
+<td> <nobr> &lt;first-proposal-instance> </nobr> </td>
+<td> The Glance proposal to use. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Verbose </td>
+<td> false </td>
+<td> Boolean indicating whether Nova runs in verbose mode. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <nobr> Use NoVNC (otherwise VPN-VNC) </nobr> </td>
+<td> true </td>
+<td> Boolean indicating whether the nova-novncproxy service is used. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Hypervisor </td>
+<td> qemu </td>
+<td> Indicates the hypervisor that Nova should use when launching virtual machines. May be either qemu or kvm. Select qemu if nova-compute
+nodes are on virtual machines. Select kvm if nova-compute nodes are bare-metal. </td>
 </tr>
 
 </table> 
