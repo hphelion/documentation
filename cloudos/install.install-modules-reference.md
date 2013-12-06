@@ -851,13 +851,186 @@ Table coming today 12/6...
 
 ## Hp Cos Keystone 100
 
-Table coming today 12/6...
+<table style="text-align: left; vertical-align: top;">
+
+<tr>
+<th style="background-color: #C8C8C8;"> Install Module </th> 
+<td colspan="2" style="background-color: white;"> Hp Cos Keystone 100 </td>
+</tr>
+
+<tr>
+<th style="background-color: #C8C8C8;"> Description </th> 
+<td colspan="2" style="background-color: white;"> Configures the identity management service. </td>
+</tr>
+
+<tr>
+<th style="background-color: #C8C8C8;"> Node Deployment </th> 
+<td colspan="2" style="background-color: white;"> Cloud Controller Node </td>
+</tr>
+
+<tr>
+<th style="background-color: #C8C8C8;"> Role </th> 
+<td colspan="2" style="background-color: white;"> Hp cos keystone 100-server  </td>
+</tr>
+
+<tr style="background-color: #C8C8C8;">
+<th> Attributes </th> 
+<th> Default Value </th>
+<th> Description </th>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> PostgreSQL Instance </td> 
+<td> <nobr> &lt;first-proposal-instance> </nobr> </td>
+<td> The name of the PostgreSQL proposal. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Domain Name </td> 
+<td> Cloud name (copied from the cloud installation pages) </td>
+<td> A user-editable name for the Domain field on the HP Cloud OS Administration Dashboard login screen. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Domain Admin Password </td> 
+<td> &lt;password> <b> Internal note: should we show the value here? </b> </td>
+<td> The Admin user's password; Granted domain admin role on the AdminProject. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Domain Arch Password </td> 
+<td> &lt;password> <b> Internal note: should we show the value here? </b> </td>
+<td> Architect user's password; Granted domain architect role on the AdminProject project. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Domain Trash Password </td> 
+<td> &lt;password> <b> Internal note: should we show the value here? </b> </td>
+<td> Trash user's password; the granted user role on the trash project. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Signing </td> 
+<td> PKI </b> </td>
+<td> PKI is a large token that contains token information such as the user ID and user roles. UUID is the alternative 32-character token choice. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Create new Admin Token on Apply </td> 
+<td> FALSE </b> </td>
+<td> Boolean indicating whether the token is only generated the first time the proposal is created and applied. TRUE means that the token is generated each time the proposal is
+applied. </td>
+</tr>
+
+</table>
 
 
 ## Hp Cos Nova 100
 
-Table coming today 12/6...
+<table style="text-align: left; vertical-align: top;">
 
+<tr>
+<th style="background-color: #C8C8C8;"> Install Module </th> 
+<td colspan="2" style="background-color: white;"> Hp Cos Nova 100 </td>
+</tr>
+
+<tr>
+<th style="background-color: #C8C8C8;"> Description </th> 
+<td colspan="2" style="background-color: white;"> Configures the Nova-controller and Nova-compute services. <br/><br/>
+Note: The Nova install module has two roles: the <b>hp_cos_nova_100-multi-controller</b> role is applied to the controller node. The 
+<b>hp_cos_nova_100-multi-compute</b> role is applied to the compute node. </td>
+</tr>
+
+<tr>
+<th style="background-color: #C8C8C8;"> Node Deployment </th> 
+<td colspan="2" style="background-color: white;"> Cloud Controller Node and Compute Node</td>
+</tr>
+
+<tr>
+<th style="background-color: #C8C8C8;"> Role </th> 
+<td colspan="2" style="background-color: white;"> hp_cos_nova_100-multi-controller, hp_cos_nova_100-multi-compute </td>
+</tr>
+
+<tr style="background-color: #C8C8C8;">
+<th> Attributes </th> 
+<th> Default Value </th>
+<th> Description </th>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Compute Region Name </td> 
+<td> <nobr> &lt;compute-region-name> </nobr> </td>
+<td> The name of the compute region. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> RabbitMQ </td> 
+<td> <nobr> &lt;first-proposal-instance> </nobr> </td>
+<td> The RabbitMQ proposal to use. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> PostgreSQL </td> 
+<td> <nobr> &lt;first-proposal-instance> </nobr> </td>
+<td> The PostgreSQL proposal to use. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Keystone </td> 
+<td> <nobr> &lt;first-proposal-instance> </nobr> </td>
+<td> The Keystone proposal to use. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Keystone Service User </td> 
+<td> nova </td>
+<td> The user that Nova uses when authenticating with Keystone. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Keystone Service Password </td> 
+<td> ( generated ) </td>
+<td> The password for the Nova Keystone authentication user. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Glance </td> 
+<td> <nobr> &lt;first-proposal-instance> </nobr> </td>
+<td> The Glance proposal to use. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Verbose </td> 
+<td> TRUE </td>
+<td> Boolean indicating whether Nova will log INFO messages. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Use NoVNC (otherwise VPN-VNC) </td> 
+<td> TRUE </td>
+<td> Boolean indicating whether the nova-novncproxy service is used. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Hypervisor </td> 
+<td> qemu </td>
+<td> Indicates the hypervisor Nova should use when launching virtual machines. May be either qemu or kvm. Select qemu if nova-compute nodes are on
+virtual machines. Select kvm if nova-compute nodes are bare-metal. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Quantum </td> 
+<td> <nobr> &lt;first-proposal-instance> </nobr> </td>
+<td> The Quantum proposal to use. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Cinder </td> 
+<td> <nobr> &lt;first-proposal-instance> </nobr> </td>
+<td> The Cinder proposal to use. </td>
+</tr>
+
+</table>
 
 ## Hp Cos Postgresql 915
 
