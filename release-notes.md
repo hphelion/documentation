@@ -36,10 +36,13 @@ The following are new features in version 13.5 of the HP Public Cloud software:
 
 **Upload improvements** - The Horizon console is no longer limited to a 50MB file upload size.  If you upload through the Cloud Console you are limited to a size of 5GB. HP recommends that you upload anything larger than 1GB the CLI/API.  
 
+**Relational Database MySQL service support** - The HP Cloud RDB MySQL service provides core functionality aligned with the latest [OpenStack Trove client](https://wiki.openstack.org/wiki/Trove).
+
+**Jclouds support** - Jclouds support is provided for the Keystone version 2 (and earlier) API.
+
 **Enhanced identity management** - When you create a new project, you can:  Activate a new compute, object storage or platform service; list the project permissions; and manage the project role assignments.  Once you've activated services, you can set the Project Permissions for Compute Admin, Compute Network Admin, Block Storage Admin, Network Admin, and Image Management Admin, and more.   You can add and remove groups to each role, and assign users to specific roles for each project.
 
-As a domain admin, you can manage each user's projects, roles, and groups.
-You can manage the membership of each group, and manage the user assignment within each role. 
+As a domain admin, you can manage each user's projects, roles, and groups.  You can manage the membership of each group, and manage the user assignment within each role. 
 
 **User roles** - The following user roles are available with this release (new user roles *italicized*):
 
@@ -60,98 +63,107 @@ You can manage the membership of each group, and manage the user assignment with
 * Object Storage Admin
 
 
-##Known issues and limitations in version 13.5## {#v135issues}
+##Recommendations for version 13.5## {#Recommendations}
 
-The following are known issues and limitations for version 13.5 of the HP Public Cloud software:
+This section of the release notes describes the HP recommendations for best performance, utility, and functionality with this software version.   We have also provided information about some limitations and known issues for your reference purposes.  This section contains
 
-* ["Classic" management console](/mc/) is required - Because the HP Public Cloud Console is a Horizon Preview Edition, you must manage your service account information through the classic console.  Specifically, you need to use the classic console for:
-    1. Changing/updating credit card information.
-    2. Managing account details and billing information.
-    3. Creating/accessing Support Cases.<br>
-  Navigating back to the classic management console requires you to re-login to the HP Public Cloud Horizon Preview console if you do not currently have an open session.
+* [Software recommendations](#Recommendations) for best functionality and performance
+* [Limitations](#Limitations) of version 13.5
+* [Known issues](#Issues) and workarounds with version 13.5
+
+
+###Recommendations## {#Recommendations} 
+
+<!-- recommendations instead of limitations? 
+Make known issues a sub-head?-->
+
+For maximum utility and functionality with this software version, use the ["Classic" management console](/mc/) for a very few of the basic account transactions (changing or updating billing or credit card information, managing account details, creating and accessing support cases) rather than the OpenStack [Horizon Preview Edition](/hpcloudconsole/) interface.   <!-- move this down to bury it-->
+
+For best performance and reliability with multiple instances, stagger your instance launches to batches of 100 or less.
+
+Allow egress rules to remain as part of their security groups; HP recommends against deleting them.
+
+Boot instance snapshots from an instance using the same flavor.  For example, if you have created a snapshot of an `xsmall` instance, boot it from an instance that also has flavor `xsmall`.
+
+For maximum flexibility, use flavors of `small` or larger for Windows instances. 
+
+Use the image management ("Glance") tools to effect image name changes.
+
+To get the most timely and accurate results for your quota checks, use the [Neutron networking interface](/hpcloudconsole#ManageHPPublicCloud).
+
+Use the Nova boot utility to attach pre-created ports to instances.
+
+Use large standard flavors (`standard.large`, `standard.xlarge`, etc.) rather than highmem flavors for your larger Windows instances.
+
+For speed and ease-of-use, use the [management console](/mc/) rather than the Windows command-line interface (CLI) to attach or detach a volume.
+
+For best results when deleting a volume, unmount the volume (or for Windows instances take it offline) and detach it prior to deleting it.
+
+When transferring large files (greater than 700MB for downloads and 5GB for uploads), use either the [classic management console](/mc/) or the [UNIX CLI](/cli/unix/) utilities.
+
+For best results, use the [Horizon Preview Edition](/hpcloudconsole/) interface or the [classic management console](/mc/) to reset your password.
+
+Use the Nova boot utility to attach a pre-created instance to a port.
+
+To create a snapshot for an instance booted from a block volume, follow these steps for best results:
+* Shut down the instance
+* Delete the instance and wait until the volume is marked as `available`
+* Take a snapshot of the volume using a utility such as the python cinder binding
+* When the snapshot is complete, re-create the instance from the volume
+* Re-attach the original floating IP (if necessary) 
+Note that the port (fixed-IP address) associated with the new instance might have changed.
+
+
+###Limitations### {#Limitations}
+
+Version 13.5 of the HP Public Cloud software has the following minor limitations:
+
+* Instances with flavors larger than `xsmall` require a root disk size of 30GB.
+* Windows instances require at least 4GB of memory.
+* The bootable volume size limit is 1.4TB.
+* In the Windows CLI, the maximum file size is 700MB for downloads and 5GB for uploads. 
+* The EC2 API and AWS Eucalyptus toolset are not supported in this release.
+
+
+###Known issues### {#Issues}
+
+The following are the known issues (and workarounds) for Version 13.5 of the HP Public Cloud software:
+
+* Deleting an egress rule from a security group may limit the ability of your instance to access external nodes (including the capability to fetch metadata required by your SSH key), and may cause issues in newly-booted instances.
+* If you use the Identity service role-based access control (RBAC) at the panel level, you may see action and service options that exceed your permission levels.
+* An instance cannot resolve its own name.
+* In you are unable to see the private IP in the networks section of a Windows instance, display it using the [VNC console](https://community.hpcloud.com/article/using-vnc-console-access-your-instance).
+* If your VNC console log appears empty immediately after instance activation, just wait a few moments and try again; it sometimes takes a moment for the instance information to be recorded in the log file.
+* During backups and restores you may see an `Unnecessary attribute` error; this is a spurious error that has no effect on successfully completing the backup and can be ignored.
+* You cannot use Neutron `port-update` to attach an instance to a port; use Nova boot.
+* If you don't see information displayed for `Flavors Details` when using the Windows CLI, you can retrieve the information using the [classic management console](/mc/).
+* If you encounter a quota issue when performing network tasks while using the [Horizon Preview Edition](/hpcloudconsole), use the [classic management console](/mc/).
+* After successfully launching an instance if you find `ssh` not functioning properly, just relaunch the instance.
+* When using a VNC URL if you find yourself unable to connect, use an alternative client such as `ssh`, `putty`, or remote desktop protocol (RDP).
+* In the rare case where an instance is created with two fixed IPs, simply delete and recreate the instance to clear the additional IP.
+* The reset password feature is currently available in the UNIX CLI and through the [Horizon Preview Edition](/hpcloudconsole/) interface or the [classic management console](/mc/) only. 
+
+<!-- Open items where additional details have been requested:
+
+* When the `libvirt` state of your instance is `in shutdown`, Nova delete may not remove the instance.  DOUG: When and where is this encountered exactly?  What can the user do to avoid it?  What is the workaround?
+
+* In the Windows CLI, the server ID in the attached volume column sometimes does not display.  Doug: Under what circumstances?  After which command is executed?  Do we have screen shots of what it looks like when it is correct, and when it is incorrect?  What is the workaround; to use the console?  Which console?
+Possible reword: On rare occasions, when you view instance information using the Windows CLI, the server ID information in the `Attached volume` column does not display properly.  Re-execute the display command? 
     
-* Latest OpenStack Version supported - The new Horizon-based console is based on the OpenStack Icehouse release.  If you need to manage services that are built from pre-Havana OpenStack instances, you cannot take advantage of the preview edition of the new HP Public Cloud Console built on Horizon software. 
-
-* If you attempt to simultaneously launch a large number of instances, some instances might not be pingable or accessible via ssh. HP recommends staggering your launch of multiple instances to batches of at most 100 at a time for the best performance.
-
-* Do not delete egress rules from your security group as doing so removes the ability of your instance to access any external nodes (including fetching metadata required by your SSH key) and causes newly-booted instances to be unusable.
-
-* Identity Service - Role-based access control (RBAC) is not implemented at the panel level, so you may be presented with actions and services options you do not have permission to invoke. The error messages reported for limitations on user role permissions will be improved while development changes are adopted.
-
-* Relational Database MySQL service - This service provides core functionality aligned with the latest [OpenStack Trove client](https://wiki.openstack.org/wiki/Trove).
-
-* Jclouds is supported for Keystone version 2 API and earlier only.
-
-* Because all flavors larger than `xsmall` require a root disk size of 30GB, you cannot boot an `xsmall` instance from an instance snapshot of a larger flavor. 
-	
-* Instances are not able to resolve their own names.
-      
-* Windows typically requires at least 4GB of memory, so Windows instances do not fit into the 10GB root disk used for `xsmall` instances even if the root partition is sufficient. 
-
-* The command `nova image-meta` does not change the `image name`. Instead, it adds a new attribute called `name` to the metadata. If you want to change the name of an instance snapshot (private image), use the image management utilities ("Glance"). Please refer to the [API documentation](http://api.openstack.org/api-ref-compute.html) from Openstack.
-
-* In rare cases, you might not be able to see the private IP in the networks section of a Windows instance. Use the VNC console to see the private IP for the Windows instance.
-
-* The size limit of bootable volumes is 1.4TB, rather than the maximum volume size of 2TB. 
-
-* Accessing the VNC console as soon as the instance gets active might cause the Windows instance to stop responding, and display an empty console log.
-
-* We recommend that you use the Neutron interface for any network quota checks.
-
-* The ec2 API and euca-tools are not supported in this release.
-
-* Cinder backup-restore gives an unnecessary attribute error but the restore completes.
-	
-* Neutron port-update does not support attaching an instance to a port. You must use nova boot to attach a precreated port to an instance.
-
-* Windows instances booted using the `highmem` flavor are unusable.
-
-* Use the OpenStack Python CLI to create a server rather than the personality option to create a server. 
-	
-* We recommend that you use the [management console](/mc/) rather than the Windows CLI to attach or detach a volume.
-
-* In the Windows CLI, the reset password feature is not currently available. 
-
-* In the Windows CLI, the server ID in the attached volume column sometimes does not display.  
- 
-* When using the windows CLI, if the Flavors Details section is blank, retrieve the information using the [management console](/mc/).
-
-* A Windows instance of a large size can sometimes become stuck in the rebooting state.
-
-* When the `libvirt` state of your instance is `in shutdown`, Nova delete may not remove the instance.
-	
-* You should detach a volume before you delete it; performing a detach and delete simultaneously causes the volume to enter an inconsistent state.
-	
-* Always make sure that your volumes are unmounted--or offline for Windows instances--before you detach a volume.
-* You may run into a quota issue for network tasks when using the Horizon Preview Edition for tasks such as floating IP creation. 
-    *Workaround*: Use the [classic console](/mc/) for the task.
-
-* Snapshot support for an instance booted from a block volume is not yet available.<br>
-    *Workaround*: Shut down the instance, then delete the instance and wait until the volume is marked as `available`. Take a snapshot of the volume using, for example, the python cinder binding. Once the snapshot is complete, re-create the instance from the volume, and re-attach the original floating IP, if necessary. **Note**: The port/fixed-IP associated with the new instance might be different from the original one.
-    
-* In rare cases, after successfully launching an instance, `ssh` might not function. <br>
-    *Workaround*: Reboot the instance.
-
-* In some cases, you might be unable to connect to a VNC URL. <br>
-    *Workaround*: Connect using other clients such as `ssh`, `putty`, or RDP.
-
-* In rare cases, an instance might be created with two rather than one single fixed IP. <br>
-    *Workaround*: Delete and recreate the instance. 
-
 * `ssh` access to your instance might unexpectedly cease functioning.<br>
-    *Workaround*: Contact customer support.
+    *Workaround*: Contact customer support.  DOUG: we got *hammered* on this; what is a *real* workaround? 
 	
 * The Ext-Gateway field might not be populated in the CLI. <br>
-    *Workaround*: You can confirm the status via the management console. 
+    *Workaround*: You can confirm the status via the management console. DOUG: under what circumstances would this happen?  When *what* is being done in the CLI?  Which CLI; UNIX or Windows?  Which management console; classic or Horizon?  Where can you get the status information in the console *exactly*?
 
 * When using the Windows CLI, the Assigned Network Addresses section does not display the network information.<br>
-    *Workaround*: Use the Horizon console to find the network address.
-	
-* When using the Windows CLI, you cannot download a file larger than 700MB.<br>
-    *Workaround*: Use another CLI or the [management console](/mc/) to download a file that is larger than 700MB.
-	
-* Large file upload (5GB) with the Windows CLI may have issues. 
-	*Workaround*: Use another tool to upload your file, e.g. the [management console](/mc/) or the Openstack CLIs. 
+    *Workaround*: Use the Horizon console to find the network address.  DOUG: the assigned network address section *of what*?  When does this come up?  After what command is executed?
+    
+* A Windows instance of a large size can sometimes become stuck in the rebooting state.  DOUG: *All* large sizes, or just some?  What are the exact parameters of "large"?  What is the workaround?
+
+
+-->
+    
 	
 <!--##Resolved Issues in Version 13.5## {#v135resolved}
 
