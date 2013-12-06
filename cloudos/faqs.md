@@ -23,15 +23,18 @@ PageRefresh();
 
 Welcome! You've got questions, we have the answers.
 
-* [What is HP's POV on cloud solutions?](#what-is-hp's-pov-on-cloud-solutions?)
-* [What is HP Cloud?](#what-is-hp-cloud?)
-* [How does HP help solve the challenges faced by enterprises?](#how-does-hp-help-solve-the-challenges-faced-by-enterprises?)
-* [What is HP Cloud OS?](#what-is-hp-cloud-os?)
-* [What is OpenStack?](#what-is-openstack?)
-* [What are HP's differentiators?](#what-are-hp's-differentiators?)
-* [What does HP Cloud OS support?](#what-does-hp-cloud-os-support?)
-* [How does HP Cloud OS help customers? What are the key benefits?](#how-does-hp-cloud-os-help-customers?) 
-* more...
+* [What is HP's POV on cloud solutions?](#what-is-hp's-pov-on-cloud-solutions)
+* [What is HP Cloud?](#what-is-hp-cloud)
+* [How does HP help solve the challenges faced by enterprises?](#how-does-hp-help-solve-the-challenges-faced-by-enterprises)
+* [What is HP Cloud OS?](#what-is-hp-cloud-os)
+* [What is OpenStack?](#what-is-openstack)
+* [What are HP's differentiators?](#what-are-hp's-differentiators)
+* [What does HP Cloud OS support?](#what-does-hp-cloud-os-support)
+* [How does HP Cloud OS help customers?](#how-does-hp-cloud-os-help-customers) 
+* [What is the HP Cloud OS Sandbox?](#what-is-the-hp-cloud-os-sandbox)
+* [Where can I get the HP Cloud OS Sandbox kit?](#where-can-i-get-the-hp-cloud-os-sandbox-kit)
+* [How is HP Cloud OS integrated into the HP Cloud portfolio?](#how-is-hp-cloud-os-integrated-into-the-hp-cloud-portfolio)
+
 
 ## What is HP's POV on cloud solutions?
 
@@ -121,6 +124,26 @@ resources throughout a datacenter, all managed through a dashboard that gives ad
   * Workload aware provisioning
 
 > HP Cloud OS provides the foundation for the HP Cloud common architecture enabling enterprise customers to accelerate hybrid delivery &amp; accelerate business outcomes.
+
+## What is the HP Cloud OS Sandbox?
+
+> To allow customers to evaluate and educate themselves on an OpenStack-based architecture for their cloud needs, HP offers the HP Cloud OS Sandbox, which is now available as a developer preview. This helps customers and partners gain experience with OpenStack prior to deploying HP Cloud solutions that leverage HP Cloud OS. 
+
+> The HP Cloud OS sandbox is an OpenStack distribution from HP that contains a HP installer and a standards based infrastructure and application modeling capability. It provides an in-depth insight for customers and partners prior to deploying 
+HP Cloud solutions that leverage HP Cloud OS. Cloud OS sandbox is not supported and is meant for non-production, 
+limited scale (up to 10 compute nodes) and limited time (90-day) use. 
+
+## Where can I get the HP Cloud OS Sandbox kit?
+
+> To request HP Cloud OS Sandbox kit, <a href="https://ssl.www8.hp.com/h41268/live/index.aspx?qid=19897" target="new"> click here </a> and register on the portal.
+
+## How is HP Cloud OS integrated into the HP Cloud portfolio? 
+
+HP Cloud OS is already powering or compatible with several existing HP cloud solutions, delivering on our commitment to a common architecture across the HP Cloud portfolio with HP Cloud OS as a foundational technology component embedded in our existing cloud solutions and new innovative offerings. This technology provides the foundation for the common cloud architecture across private, public, and managed cloud delivery models.  Today, HP Cloud OS is NOT a product, but rather a technology that will be offered and supported as part of other HP products.
+
+* CloudSystem currently embeds OpenStack technology, offering customers greater choice in deployment options for their cloud workloads by enabling KVM resource pools.  The next generation of CloudSystem software was built on Cloud OS technology (coming in Q2 2014).
+* Moonshot servers will be available with Cloud OS technology to simplify the provisioning and management of Moonshot servers for specific cloud workloads, such as dedicated hosting and large-scale websites.  This is currently available as a private beta, and HP Moonshot with Cloud OS will be publicly available in Q2 2014. 
+
 
 ## More FAQs coming...
 
