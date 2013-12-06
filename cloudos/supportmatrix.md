@@ -34,6 +34,8 @@ hardware and software.
 
 * [Software Requirements](#software-requirements)
 
+<p style="color: red; font-weight: bold; padding: 4px 4px 4px 4px; border: 1px dotted;"> Internal note: Getting updated info from Mike Cudahy between Dec 9-12. </p>
+
 ## Server Infrastructure
 
 For the performance and stability of your HP Cloud OS environment, it is important to meet the minimum recommendations for memory, 
