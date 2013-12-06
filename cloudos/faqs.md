@@ -23,12 +23,12 @@ PageRefresh();
 
 Welcome! You've got questions, we have the answers.
 
-* [What is HP's POV on cloud solutions?](#what-is-hp's-pov-on-cloud-solutions)
+* [What is HP's POV on cloud solutions?](#what-is-the-hp-pov-on-cloud-solutions)
 * [What is HP Cloud?](#what-is-hp-cloud)
 * [How does HP help solve the challenges faced by enterprises?](#how-does-hp-help-solve-the-challenges-faced-by-enterprises)
 * [What is HP Cloud OS?](#what-is-hp-cloud-os)
 * [What is OpenStack?](#what-is-openstack)
-* [What are HP's differentiators?](#what-are-hp's-differentiators)
+* [What are HP's differentiators?](#what-are-the-hp-differentiators)
 * [What does HP Cloud OS support?](#what-does-hp-cloud-os-support)
 * [How does HP Cloud OS help customers?](#how-does-hp-cloud-os-help-customers) 
 * [What is the HP Cloud OS Sandbox?](#what-is-the-hp-cloud-os-sandbox)
@@ -36,7 +36,7 @@ Welcome! You've got questions, we have the answers.
 * [How is HP Cloud OS integrated into the HP Cloud portfolio?](#how-is-hp-cloud-os-integrated-into-the-hp-cloud-portfolio)
 
 
-## What is HP's POV on cloud solutions?
+## What is the HP POV on cloud solutions?
 
 > HP believes organizations will need to implement a hybrid delivery strategy that leverages the right mix of cloud and traditional 
 IT to optimize application and service creation and delivery.
@@ -89,7 +89,7 @@ economics of an open source approach. It enables easier deployment, application 
 Foundation, a non-profit corporate entity established in September 2012 to promote OpenStack software and its community. The technology consists of a series of interrelated projects that control pools of processing, storage, and networking 
 resources throughout a datacenter, all managed through a dashboard that gives administrators control while empowering its users to provision resources through a web interface.
   
-## What are HP's differentiators?
+## What are the HP differentiators?
 
 > HP Cloud is based on a common architecture. This enables HP to provide its customers with Choice, Confidence and Consistency.
 
