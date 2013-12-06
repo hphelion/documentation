@@ -27,50 +27,35 @@ A default configuration comes with HP Cloud compute activation and includes:
 - 10 Security Groups
 - 50 Security Group Rules
 
+For a high level understanding of the default Network topology in Compute 13.5, see [Understanding Network Topology in 13.5](https://community.hpcloud.com/article/understanding-network-topology-135). 
+
+##Customizing your Configuration##
+
 You can use the default network to deploy HP Cloud compute virtual servers, or modify the network configuration through the OpenStack Networking API. Use the command line or the HP Cloud management console's (MC) easy-to-use interface to customize.
 
 HP Cloud Networking expands networking capabilities, allowing you to perform many tasks, including:
 
-    Defining and configuring virtual networks
-    Specifying IP subnets for those networks
-    Defining security group parameters
-    Allocating and managing public floating IP addresses
+- Creating and deleting a network
+- Managing a subnet
+- Adding and deleting an interface to a router
+- Configure security group parameters that define the firewall rules for virtual servers
+- Allocating and managing public floating IP addresses
+- Viewing network and router details
 
+You can create additional networks to exact specifications through the OpenStack Networking API. 
 
-##Customizing your Configuration##
-
-You can modify the default network and create additional networks to exact specifications through the OpenStack Networking API. 
-
-Customize the configuration either on the command line or through the HP Cloud MC to:
-
-Define and configure your own private virtual networks
-
-Specify IP addressing for those networks
-
-Configure security group parameters that define the firewall rules for virtual servers
-
-Allocate and manage public floating IP addresses
-
-
-From the networks screen you can perform any of the following functions:
-
-Creating and deleting a network
-Managing a subnet
-Adding and deleting an interface to a router
-Viewing network details
-Viewing subnet details
-Viewing router details
-
+For more information on modifying the default network and creating additional networks, see [HP Cloud Networking Overview](https://docs.hpcloud.com/compute/network-guide/).
 
 ##Security Groups##
 
-Security Groups are a feature of HP Cloud Networking and are fully supported by the Networking API. A limited set of Security Group features are also accessible via the compute API for convenience and backwards compatibility. To directly access the API's broader functionality, HP recommends working only through the OpenStack Networking API and does not recommend mixing compute and OpenStack Networking API calls for security group configuration.
+Security Groups are a feature of HP Cloud Networking and are fully supported by the Networking API. 
 
 ## For further information
 
-Check out the following pages for more information on using HP Cloud compute services:
+Check out the following pages for more information on using HP Cloud Networking services:
 
-* [Ruby Fog bindings compute examples](/bindings/fog/compute/)
-* [CLI UNIX compute examples](/cli/unix/compute/)
-* [Windows PowerShell CLI compute examples](/cli/windows/compute/)
-* [Management console compute dashboard information](/mc/compute/)
+- [Known Issues and Best Practices in Compute and Networking in 13.5](https://community.hpcloud.com/article/known-issues-and-best-practices-compute-and-networking-135)
+- [Getting Started with Compute 13.5](https://community.hpcloud.com/article/getting-started-compute-135)
+- [Management console: Networks screen](http://docs.hpcloud.com/mc/compute/networks/)
+- [UNIX CLI for HP Documentation](http://docs.hpcloud.com/cli/unix)
+- [OpenStack networking wiki](https://wiki.openstack.org/wiki/Quantum)
