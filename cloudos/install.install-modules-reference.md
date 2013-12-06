@@ -26,24 +26,24 @@ This topic identifies the proposal attributes associated with each install modul
 This topic also indicates the role(s) associated with each install module and to which node(s) the proposal should be deployed.
 
 In the tables below, the install modules are listed alphabetically for reference purposes.  However, when you apply install modules, there is a specific order, as 
-noted in the [Advanced Cloud Setup](/cloudos/advanced-cloud-setup/) topic.
+noted in the [Advanced Cloud Setup](/cloudos/install/advanced-cloud-setup/) topic.
 
 ## Couchdb 120
 
-<table style="text-align: left; vertical-align: top;">
+<table style="text-align: left; vertical-align: top; border: 1px black;">
 
 <tr>
-<td style="background-color: #C8C8C8;"> Install Module </td> 
+<td style="background-color: #C8C8C8; font-weight:bold;"> Install Module </td> 
 <td colspan="2" style="background-color: white;"> Couchdb 120 </td>
 </tr>
 
 <tr>
-<td style="background-color: #C8C8C8;"> Description </td> 
+<td style="background-color: #C8C8C8; font-weight:bold;"> Description </td> 
 <td colspan="2" style="background-color: white;"> Configures a CouchDB server. </td>
 </tr>
 
 <tr>
-<td style="background-color: #C8C8C8;"> Node Deployment </td> 
+<td style="background-color: #C8C8C8; font-weight:bold;"> Node Deployment </td> 
 <td colspan="2" style="background-color: white;"> Cloud Controller Node </td>
 </tr>
 
@@ -69,25 +69,25 @@ noted in the [Advanced Cloud Setup](/cloudos/advanced-cloud-setup/) topic.
 
 ## Hp Cos Admin 100
 
-<table style="text-align: left; vertical-align: top;">
+<table style="text-align: left; vertical-align: top; border: 1px black;">
 
 <tr>
-<td style="background-color: #C8C8C8;"> Install Module </td> 
+<th style="background-color: #C8C8C8;"> Install Module </th> 
 <td colspan="2" style="background-color: white;"> Hp Cos Admin 100 </td>
 </tr>
 
 <tr>
-<td style="background-color: #C8C8C8;"> Description </td> 
+<th style="background-color: #C8C8C8;"> Description </th> 
 <td colspan="2" style="background-color: white;"> Configures an administration service. </td>
 </tr>
 
 <tr>
-<td style="background-color: #C8C8C8;"> Node Deployment </td> 
+<th style="background-color: #C8C8C8;"> Node Deployment </th> 
 <td colspan="2" style="background-color: white;"> Cloud Controller Node and Compute Node </td>
 </tr>
 
 <tr>
-<td style="background-color: #C8C8C8;"> Role </td> 
+<th style="background-color: #C8C8C8;"> Role </th> 
 <td colspan="2" style="background-color: white;"> Hp cos admin 100-server, Hp cos admin 100-client. <br /> <br /> 
 <b> Note: </b> The client role is automatically deployed to all allocated nodes. The server role is automatically installed on the Admin Node during setup. </td>
 </tr>
@@ -108,25 +108,25 @@ noted in the [Advanced Cloud Setup](/cloudos/advanced-cloud-setup/) topic.
 
 ## Hp Cos Cinder 100
 
-<table style="text-align: left; vertical-align: top;">
+<table style="text-align: left; vertical-align: top; border: 1px black;">
 
 <tr>
-<td style="background-color: #C8C8C8;"> Install Module </td> 
+<th style="background-color: #C8C8C8;"> Install Module </th> 
 <td colspan="2" style="background-color: white;"> Hp Cos Cinder 100 </td>
 </tr>
 
 <tr>
-<td style="background-color: #C8C8C8;"> Description </td> 
+<th style="background-color: #C8C8C8;"> Description </th> 
 <td colspan="2" style="background-color: white;"> Configures volume connectivity service. </td>
 </tr>
 
 <tr>
-<td style="background-color: #C8C8C8;"> Node Deployment </td> 
+<th style="background-color: #C8C8C8;"> Node Deployment </th> 
 <td colspan="2" style="background-color: white;"> Cloud Controller Node </td>
 </tr>
 
 <tr>
-<td style="background-color: #C8C8C8;"> Role </td> 
+<th style="background-color: #C8C8C8;"> Role </th> 
 <td colspan="2" style="background-color: white;"> Hp cos cinder 100-server </td>
 </tr>
 
@@ -150,7 +150,7 @@ noted in the [Advanced Cloud Setup](/cloudos/advanced-cloud-setup/) topic.
 
 </table>
 
-<p style="color: red; font-weight: bold; padding: 4px 4px 4px 4px; border: 1px dotted;"> Internal note: 14 more tables coming soon ... working on this 12/5. </p>
+<p style="color: red; font-weight: bold; padding: 4px 4px 4px 4px; border: 1px dotted;"> Internal note: 12 more tables coming soon ... working on this 12/5. </p>
 
 <a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
