@@ -33,7 +33,16 @@ noted in the [Advanced Cloud Setup](/cloudos/install/advanced-cloud-setup/) topi
 * [Hp Cos Cinder 100](#hp-cos-cinder-100)
 * [Hp Cos Cloud Utils 100](#hp-cos-cloud-utils-100)
 * [Hp Cos Eve 100](#hp-cos-eve-100)
-* remaining tables coming today 12/6 ...
+* [Hp Cos Focus 100](#hp-cos-focus-100)
+* [Hp Cos Glance 100](#hp-cos-glance-100)
+* [Hp Cos Graffiti 100](#hp-cos-graffiti-100)
+* [Hp Cos Keystone 100](#hp-cos-keystone-100)
+* [Hp Cos Nova 100](#hp-cos-nova-100)
+* [Hp Cos Postgresql 915](#hp-cos-postgresql-915)
+* [Hp Cos Quantum 100](#hp-cos-quantum-100)
+* [Hp Cos RabbitMQ 271](#hp-cos-rabbitmq-271)
+* [Hp Cos Skyline 100](#hp-cos-skyline-100)
+* [Hp Cos Swift 100](#hp-cos-swift-100)
 
 <p style="color: red; font-weight: bold; padding: 4px 4px 4px 4px; border: 1px dotted;"> Internal note for <b>G3</b> release: Okay to not list Eden? Okay to use Graffiti instead of Peer? Okay to add Swift table? Okay to keep Cinder table? Okay to use "Quantum" instead of "Neutron"? </p>
 
@@ -444,6 +453,437 @@ will be ignored. </td>
 </tr>
 
 </table>
+
+
+## Hp Cos Focus 100
+
+<table style="text-align: left; vertical-align: top;">
+
+<tr>
+<th style="background-color: #C8C8C8;"> Install Module </th> 
+<td colspan="2" style="background-color: white;"> Hp Cos Focus 100 </td>
+</tr>
+
+<tr>
+<th style="background-color: #C8C8C8;"> Description </th> 
+<td colspan="2" style="background-color: white;"> Configures the document repository service. </td>
+</tr>
+
+<tr>
+<th style="background-color: #C8C8C8;"> Node Deployment </th> 
+<td colspan="2" style="background-color: white;"> Cloud Controller Node </td>
+</tr>
+
+<tr>
+<th style="background-color: #C8C8C8;"> Role </th> 
+<td colspan="2" style="background-color: white;"> Hp cos focus 100-server  </td>
+</tr>
+
+<tr style="background-color: #C8C8C8;">
+<th> Attributes </th> 
+<th> Default Value </th>
+<th> Description </th>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Keystone Instance </td> 
+<td> <nobr> &lt;first-proposal-instance> </nobr> </td>
+<td> The Keystone proposal to use. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Log Level </td> 
+<td> Global </td>
+<td> The log level to use: Global, Info, Debug. </td>
+</tr>
+
+</table>
+
+
+
+
+
+## Hp Cos Glance 100
+
+<table style="text-align: left; vertical-align: top;">
+
+<tr>
+<th style="background-color: #C8C8C8;"> Install Module </th> 
+<td colspan="2" style="background-color: white;"> Hp Cos Glance 100 </td>
+</tr>
+
+<tr>
+<th style="background-color: #C8C8C8;"> Description </th> 
+<td colspan="2" style="background-color: white;"> Configures the image repository service. </td>
+</tr>
+
+<tr>
+<th style="background-color: #C8C8C8;"> Node Deployment </th> 
+<td colspan="2" style="background-color: white;"> Cloud Controller Node </td>
+</tr>
+
+<tr>
+<th style="background-color: #C8C8C8;"> Role </th> 
+<td colspan="2" style="background-color: white;"> Hp cos glance 100-server </td>
+</tr>
+
+<tr style="background-color: #C8C8C8;">
+<th> Attributes </th> 
+<th> Default Value </th>
+<th> Description </th>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Working Directory </td> 
+<td> /var/lib/glance </td>
+<td> The Glance working directory. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> PID Directory </td> 
+<td> /var/run/glance </td>
+<td> Location of Glance's PID files. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Notification Strategy </td> 
+<td> Noop </td>
+<td> The only option is Noop (No Operation). </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Image Store Directory </td> 
+<td> /var/lib/glance/images </td>
+<td>  Location of images. </td>
+</tr>
+
+<tr>
+<td colspan=3> <b> Scrubber: </b> </td> 
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Log File </td> 
+<td> /var/log/glance/scrubber.log </td>
+<td> The location of the scrubber log file. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Config File </td> 
+<td> /etc/glance/glance-scrubber.conf </td>
+<td> The configuration file for the scrubber. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Debug </td> 
+<td> FALSE </td>
+<td> Boolean indicating whether the scrubber will run in debug mode. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Verbose File </td> 
+<td> TRUE </td>
+<td> Boolean indicating whether the scrubber will run in verbose mode. </td>
+</tr>
+
+<tr>
+<td colspan=3> <b> Reaper: </b> </td> 
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Log File </td> 
+<td> /var/log/glance/reaper.log </td>
+<td> The location of the scrubber log file. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Config File </td> 
+<td> /etc/glance/glance-reaper.conf </td>
+<td> The configuration file for the reaper. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Debug </td> 
+<td> FALSE </td>
+<td> Boolean indicating whether the reaper will run in debug mode. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Verbose File </td> 
+<td> TRUE </td>
+<td> Boolean indicating whether the reaper will run in verbose mode. </td>
+</tr>
+
+<tr>
+<td colspan=3> <b> Pruner: </b> </td> 
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Log File </td> 
+<td> /var/log/glance/pruner.log </td>
+<td> The location of the pruner log file. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Config File </td> 
+<td> /etc/glance/glance-pruner.conf </td>
+<td> The configuration file for the pruner. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Debug </td> 
+<td> FALSE </td>
+<td> Boolean indicating whether the pruner will run in debug mode. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Verbose File </td> 
+<td> TRUE </td>
+<td> Boolean indicating whether the pruner will run in verbose mode. </td>
+</tr>
+
+<tr>
+<td colspan=3> <b> Prefetcher: </b> </td> 
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Log File </td> 
+<td> /var/log/glance/prefetcher.log </td>
+<td> The location of the prefetcher log file. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Config File </td> 
+<td> /etc/glance/glance-prefetcher.conf </td>
+<td> The configuration file for the prefetcher. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Debug </td> 
+<td> FALSE </td>
+<td> Boolean indicating whether the prefetcher will run in debug mode. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Verbose File </td> 
+<td> TRUE </td>
+<td> Boolean indicating whether the prefetcher will run in verbose mode. </td>
+</tr>
+
+<tr>
+<td colspan=3> <b> API: </b> </td> 
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Log File </td> 
+<td> /var/log/glance/api.log </td>
+<td> The location of the API log file. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Config File </td> 
+<td> /etc/glance/glance-api.conf </td>
+<td> The configuration file for the API. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Paste INI File </td> 
+<td> /etc/glance/glance-api-paste.ini </td>
+<td> Paste Deploy configuration file for the API. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Debug </td> 
+<td> FALSE </td>
+<td> Boolean indicating whether the API will run in debug mode. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Verbose File </td> 
+<td> TRUE </td>
+<td> Boolean indicating whether the API will run in verbose mode. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Bind to All Addresses </td> 
+<td> TRUE </td>
+<td> Controls if the API will bind to all addresses or the public address only. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Access Port </td> 
+<td> 9292 </td>
+<td> The port on which the API service will run. </td>
+</tr>
+
+<tr>
+<td colspan=3> <b> Registry: </b> </td> 
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Log File </td> 
+<td> /var/log/glance/registry.log </td>
+<td> The location of the registry log file. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Config File </td> 
+<td> /etc/glance/glance-registry.conf </td>
+<td> The configuration file for the registry. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Paste INI File </td> 
+<td> /etc/glance/glance-registry-paste.ini </td>
+<td> Paste Deploy configuration file for the registry. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Debug </td> 
+<td> FALSE </td>
+<td> Boolean indicating whether the registry will run in debug mode. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Verbose File </td> 
+<td> TRUE </td>
+<td> Boolean indicating whether the registry will run in verbose mode. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Bind to All Addresses </td> 
+<td> TRUE </td>
+<td> Controls if the registry will bind to all addresses or the public address only. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Access Port </td> 
+<td> 9191 </td>
+<td> The port on which the registry service will run. </td>
+</tr>
+
+<tr>
+<td colspan=3> <b> Caching: </b> </td> 
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Enable Caching </td> 
+<td> FALSE </td>
+<td> Boolean indicating whether caching is on. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Turn On Cache Management </td> 
+<td> FALSE </td>
+<td> Boolean indicating whether to enable the use of the <b> glance-cache-manage </b> CLI and the corresponding API. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Directory </td> 
+<td> /var/lib/glance/image-cache </td>
+<td> The location where images are cached. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Grace Period </td> 
+<td> 3600 </td>
+<td>  The timeout <b> (in seconds???) </b> for accessing the image. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Stall Timeout </td> 
+<td> 86400 </td>
+<td>  The timeout <b> (in seconds???) </b> to wait for a stalled GET request. </td>
+</tr>
+
+<tr>
+<td colspan=3> <b> Database: </b> </td> 
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> SQL Idle Timeout </td> 
+<td> 3600 </td>
+<td> PostgreSQL idle time check <b>(in seconds???)</b>. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> PostgreSQL Instance </td> 
+<td> &lt;first-proposal-instance> </td>
+<td> The PostgreSQL proposal to use. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Use Keystone </td> 
+<td> TRUE </td>
+<td> Boolean indicating whether Keystone is to be used for authentication. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Keystone Instance </td> 
+<td> &lt;first-proposal-instance> </td>
+<td> The Keystone proposal to use. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Service User </td> 
+<td> glance </td>
+<td> The user that Glance uses when authenticating with Keystone. </td> 
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Service Password </td> 
+<td> ( generated ) </td>
+<td> The password for the Glance Keystone authentication user. </td> 
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Use Syslog </td> 
+<td> FALSE </td>
+<td> Boolean indicating whether Glance should log to syslog. </td> 
+</tr>
+
+</table>
+
+
+## Hp Cos Graffiti 100
+
+Table coming today 12/6...
+
+
+## Hp Cos Keystone 100
+
+Table coming today 12/6...
+
+
+## Hp Cos Nova 100
+
+Table coming today 12/6...
+
+
+## Hp Cos Postgresql 915
+
+Table coming today 12/6...
+
+
+## Hp Cos Quantum 100
+
+Table coming today 12/6...
+
+
+## Hp Cos RabbitMQ 271
+
+Table coming today 12/6...
+
+
+## Hp Cos Skyline 100
+
+Table coming today 12/6...
+
+
+## Hp Cos Swift 100
+
+Table coming today 12/6...
+
+
 
 <a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
