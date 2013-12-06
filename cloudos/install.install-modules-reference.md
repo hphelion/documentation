@@ -44,7 +44,12 @@ noted in the [Advanced Cloud Setup](/cloudos/install/advanced-cloud-setup/) topi
 * [Hp Cos Skyline 100](#hp-cos-skyline-100)
 * [Hp Cos Swift 100](#hp-cos-swift-100)
 
-<p style="color: red; font-weight: bold; padding: 4px 4px 4px 4px; border: 1px dotted;"> Internal note for <b>G3</b> release: Okay to not list Eden? Okay to use Graffiti instead of Peer? Okay to add Swift table? Okay to keep Cinder table? Okay to use "Quantum" instead of "Neutron"? </p>
+<p style="color: red; font-weight: bold; padding: 4px 4px 4px 4px; border: 1px dotted;"> Internal note for <b>G3</b> release: <br/>
+Okay to not include an Eden install module table or any Eden attributes in other install module tables?<br/>
+Okay to use Graffiti instead of Peer? <br/>
+Okay to add the Swift table? <br/>
+Okay to keep the Cinder table? <br/>
+Okay to use "Quantum" instead of "Neutron"? </p>
 
 ## Couchdb 120
 
@@ -1034,28 +1039,312 @@ virtual machines. Select kvm if nova-compute nodes are bare-metal. </td>
 
 ## Hp Cos Postgresql 915
 
-Table coming today 12/6...
+<table style="text-align: left; vertical-align: top;">
+
+<tr>
+<th style="background-color: #C8C8C8;"> Install Module </th> 
+<td colspan="2" style="background-color: white;"> Hp Cos Postgresql 915 </td>
+</tr>
+
+<tr>
+<th style="background-color: #C8C8C8;"> Description </th> 
+<td colspan="2" style="background-color: white;"> Configures a PostgreSQL server. </td>
+</tr>
+
+<tr>
+<th style="background-color: #C8C8C8;"> Node Deployment </th> 
+<td colspan="2" style="background-color: white;"> Cloud Controller Node </td>
+</tr>
+
+<tr>
+<th style="background-color: #C8C8C8;"> Roles </th> 
+<td colspan="2" style="background-color: white;"> Postgresql 915-server, Postgresql 915-client (Optional) </td>
+</tr>
+
+<tr style="background-color: #C8C8C8;">
+<th> Attribute </th> 
+<th> Default Value </th>
+<th> Description </th>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Datadir </td> 
+<td> <nobr> /var/lib/postgresql </nobr> </td>
+<td> The location where the database files will reside. </td>
+</tr>
+
+</table>
 
 
 ## Hp Cos Quantum 100
 
-Table coming today 12/6...
+<table style="text-align: left; vertical-align: top;">
+
+<tr>
+<th style="background-color: #C8C8C8;"> Install Module </th> 
+<td colspan="2" style="background-color: white;"> Hp Cos Quantum 100 </td>
+</tr>
+
+<tr>
+<th style="background-color: #C8C8C8;"> Description </th> 
+<td colspan="2" style="background-color: white;"> Configures the network connectivity service. </td>
+</tr>
+
+<tr>
+<th style="background-color: #C8C8C8;"> Node Deployment </th> 
+<td colspan="2" style="background-color: white;"> Cloud Controller Node </td>
+</tr>
+
+<tr>
+<th style="background-color: #C8C8C8;"> Role </th> 
+<td colspan="2" style="background-color: white;"> Hp cos quantum 100-server </td>
+</tr>
+
+<tr style="background-color: #C8C8C8;">
+<th> Attributes </th> 
+<th> Default Value </th>
+<th> Description </th>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Keystone </td> 
+<td> <nobr> &lt;first-proposal-instance> </nobr> </td>
+<td> The Keystone proposal to use. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> RabbitMQ </td> 
+<td> <nobr> &lt;first-proposal-instance> </nobr> </td>
+<td> The RabbitMQ proposal to use. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Keystone Service User </td> 
+<td> nova </td>
+<td> The user that Nova uses when authenticating with Keystone. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Keystone Service Password </td> 
+<td> ( generated ) </td>
+<td> The password for the Nova Keystone authentication user. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> SQL Engine </td> 
+<td> PostgreSQL </td>
+<td> The SQL engine to use. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Mode </td> 
+<td> gre </td>
+<td> The Quantum mode to use: gre, flat or vlan. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> PostgreSQL Instance </td> 
+<td> <nobr> &lt;first-proposal-instance> </nobr> </td>
+<td> The PostgreSQL proposal to use. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Regular User Username </td> 
+<td> crowbar </td>
+<td> Default regular user name to use. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Regular User Password </td> 
+<td> &lt;password> <b> Internal note: should we show the value here? </b> </td>
+<td> Default regular password to use. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Administrator Username </td> 
+<td> admin </td>
+<td> The Admin Quantum user defined in Keystone. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Administrator Password </td> 
+<td> &lt;password> <b> Internal note: should we show the value here? </b> </td>
+<td> The Admin Quantum user password. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Administrator Token </td> 
+<td> ( generated ) </td>
+<td> The Admin Quantum Keystone token. </td>
+</tr>
+
+</table>
 
 
 ## Hp Cos RabbitMQ 271
 
-Table coming today 12/6...
+<table style="text-align: left; vertical-align: top;">
+
+<tr>
+<th style="background-color: #C8C8C8;"> Install Module </th> 
+<td colspan="2" style="background-color: white;"> Hp Cos RabbitMQ 271 </td>
+</tr>
+
+<tr>
+<th style="background-color: #C8C8C8;"> Description </th> 
+<td colspan="2" style="background-color: white;"> Configures a RabbitMQ server. </td>
+</tr>
+
+<tr>
+<th style="background-color: #C8C8C8;"> Node Deployment </th> 
+<td colspan="2" style="background-color: white;"> Cloud Controller Node </td>
+</tr>
+
+<tr>
+<th style="background-color: #C8C8C8;"> Role </th> 
+<td colspan="2" style="background-color: white;"> Rabbitmsgq 271-server </td>
+</tr>
+
+<tr style="background-color: #C8C8C8;">
+<th> Attributes </th> 
+<th> Default Value </th>
+<th> Description </th>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> LogPath </td> 
+<td> <nobr> /var/log/rabbitmq </nobr> </td>
+<td> The location of the rabbitmq log file. </td>
+</tr>
+
+</table>
+
 
 
 ## Hp Cos Skyline 100
 
-Table coming today 12/6...
+<table style="text-align: left; vertical-align: top;">
+
+<tr>
+<th style="background-color: #C8C8C8;"> Install Module </th> 
+<td colspan="2" style="background-color: white;"> Hp Cos Skyline 100 </td>
+</tr>
+
+<tr>
+<th style="background-color: #C8C8C8;"> Description </th> 
+<td colspan="2" style="background-color: white;"> Installs the self-service HP Cloud OS Administration Dashboard. </td>
+</tr>
+
+<tr>
+<th style="background-color: #C8C8C8;"> Node Deployment </th> 
+<td colspan="2" style="background-color: white;"> Cloud Controller Node </td>
+</tr>
+
+<tr>
+<th style="background-color: #C8C8C8;"> Roles </th> 
+<td colspan="2" style="background-color: white;"> Hp cos skyline 100-server, Hp cos skyline 100-designer </td>
+</tr>
+
+<tr style="background-color: #C8C8C8;">
+<th> Attributes </th> 
+<th> Default Value </th>
+<th> Description </th>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Keystone Instance </td> 
+<td> <nobr> &lt;first-proposal-instance> </nobr> </td>
+<td> The Keystone proposal to use. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Proxy Host (Optional) </td> 
+<td> <nobr> &lt;IS-address> </nobr> </td>
+<td> Web proxy server's IP address to access the Internet. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Proxy Port </td> 
+<td> <nobr> &lt;port-number> </nobr> </td>
+<td> The port used by web proxy server. If your environment does not require specifying Proxy Host, do not clear the default value, such as 8080. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Non Proxy Host(s) (Optional) </td> 
+<td> <nobr> 10.*|192.*|localhost|127.0 </nobr> </td>
+<td> Use this field to specify addresses that should not use proxy servers. Each network needs to be separated by a bar "|". For example:<nobr> 10.*|192.*|localhost </nobr> </td>
+</tr>
+
+</table>
 
 
 ## Hp Cos Swift 100
 
-Table coming today 12/6...
+<table style="text-align: left; vertical-align: top;">
 
+<tr>
+<th style="background-color: #C8C8C8;"> Install Module </th> 
+<td colspan="2" style="background-color: white;"> Hp Cos Swift 100 </td>
+</tr>
+
+<tr>
+<th style="background-color: #C8C8C8;"> Description </th> 
+<td colspan="2" style="background-color: white;"> Configures the object/blob storage service. </td>
+</tr>
+
+<tr>
+<th style="background-color: #C8C8C8;"> Node Deployment </th> 
+<td colspan="2" style="background-color: white;"> Cloud Controller Node </td>
+</tr>
+
+<tr>
+<th style="background-color: #C8C8C8;"> Role </th> 
+<td colspan="2" style="background-color: white;"> Hp cos swift 100-server </td>
+</tr>
+
+<tr style="background-color: #C8C8C8;">
+<th> Attributes </th> 
+<th> Default Value </th>
+<th> Description </th>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> TBS  </td> 
+<td> TBS </td>
+<td> TBS </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> TBS  </td> 
+<td> TBS </td>
+<td> TBS </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> TBS  </td> 
+<td> TBS </td>
+<td> TBS </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> TBS  </td> 
+<td> TBS </td>
+<td> TBS </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> TBS  </td> 
+<td> TBS </td>
+<td> TBS </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> TBS  </td> 
+<td> TBS </td>
+<td> TBS </td>
+</tr>
+
+</table>
 
 
 <a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
