@@ -10,7 +10,7 @@ This page contains the following information on our software package:
 
 * [Release information for version 13.5](#v135Info)
 * [New features in version 13.5](#v135features)
-* [Known issues and limitation in version 13.5](#v135issues)
+* [Recommendations](#Recommendations)
 * [For further information](#SeeAlso)
 
 <!--Moving forward, there will be more bulleted items for each release-->
@@ -106,11 +106,13 @@ For best results, use the [Horizon Preview Edition](/hpcloudconsole/) interface 
 Use the Nova boot utility to attach a pre-created instance to a port.
 
 To create a snapshot for an instance booted from a block volume, follow these steps for best results:
+
 * Shut down the instance
 * Delete the instance and wait until the volume is marked as `available`
 * Take a snapshot of the volume using a utility such as the python cinder binding
 * When the snapshot is complete, re-create the instance from the volume
 * Re-attach the original floating IP (if necessary) 
+
 Note that the port (fixed-IP address) associated with the new instance might have changed.
 
 
