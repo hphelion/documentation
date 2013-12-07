@@ -144,26 +144,19 @@ The following are the known issues (and workarounds) for Version 13.5 of the HP 
 * When using a VNC URL if you find yourself unable to connect, use an alternative client such as `ssh`, `putty`, or remote desktop protocol (RDP).
 * In the rare case where an instance is created with two fixed IPs, simply delete and recreate the instance to clear the additional IP.
 * The reset password feature is currently available in the UNIX CLI and through the [Horizon Preview Edition](/hpcloudconsole/) interface or the [classic management console](/mc/) only. 
+* Sometimes under certain circumstances in the Windows CLI, the `ls` command displays some fields as blank:
+    - The `Attached To` and `Server Attached To` fields are may display as blank after you attach a server to a volume using the `[Attach-Volume](/cli/windows/reference#Attach-Volume)` command
+    - The `Ext Gateway` field may display as blank after you execute the `[Update-Router](/cli/windows/reference#Update-Router)` command
+    - The `Assigned Network Addresses` field may display as blank after you execute the `[New-Server](/cli/windows/reference#New-Server)` command
+    To view the contents of these fields, you can re-execute the `ls` command or display the information using the [Horizon Preview Edition](/hpcloudconsole/) interface or the [classic management console](/mc/). 
 
-<!-- Open items where additional details have been requested:
 
-* When the `libvirt` state of your instance is `in shutdown`, Nova delete may not remove the instance.  DOUG: When and where is this encountered exactly?  What can the user do to avoid it?  What is the workaround?
-
-* In the Windows CLI, the server ID in the attached volume column sometimes does not display.  Doug: Under what circumstances?  After which command is executed?  Do we have screen shots of what it looks like when it is correct, and when it is incorrect?  What is the workaround; to use the console?  Which console?
-Possible reword: On rare occasions, when you view instance information using the Windows CLI, the server ID information in the `Attached volume` column does not display properly.  Re-execute the display command? 
+<!-- * When the `libvirt` state of your instance is `in shutdown`, Nova delete may not remove the instance.  DOUG: When and where is this encountered exactly?  What can the user do to avoid it?  What is the workaround?
     
 * `ssh` access to your instance might unexpectedly cease functioning.<br>
     *Workaround*: Contact customer support.  DOUG: we got *hammered* on this; what is a *real* workaround? 
-	
-* The Ext-Gateway field might not be populated in the CLI. <br>
-    *Workaround*: You can confirm the status via the management console. DOUG: under what circumstances would this happen?  When *what* is being done in the CLI?  Which CLI; UNIX or Windows?  Which management console; classic or Horizon?  Where can you get the status information in the console *exactly*?
-
-* When using the Windows CLI, the Assigned Network Addresses section does not display the network information.<br>
-    *Workaround*: Use the Horizon console to find the network address.  DOUG: the assigned network address section *of what*?  When does this come up?  After what command is executed?
-    
+	    
 * A Windows instance of a large size can sometimes become stuck in the rebooting state.  DOUG: *All* large sizes, or just some?  What are the exact parameters of "large"?  What is the workaround?
-
-
 -->
     
 	
