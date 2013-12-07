@@ -34,9 +34,7 @@ The following are new features in version 13.5 of the HP Public Cloud software:
 
 **Object storage container versioning** - HP Public Cloud Console users can now toggle on or off the ability to duplicate and synchronize objects within storage containers.
 
-**Upload improvements** - The Horizon console is no longer limited to a 50MB file upload size.  If you upload through the Cloud Console you are limited to a size of 5GB. HP recommends that you upload anything larger than 1GB the CLI/API.  
-
-**Relational Database MySQL service support** - The HP Cloud RDB MySQL service provides core functionality aligned with the latest [OpenStack Trove client](https://wiki.openstack.org/wiki/Trove).
+**Upload improvements** - The Horizon console is no longer limited to a 50MB file upload size.   
 
 **Jclouds support** - Jclouds support is provided for the Keystone version 2 (and earlier) API.
 
@@ -87,23 +85,23 @@ Boot instance snapshots from an instance using the same flavor.  For example, if
 
 For maximum flexibility, use flavors of `small` or larger for Windows instances. 
 
-Use the image management ("Glance") tools to effect image name changes.
-
 To get the most timely and accurate results for your quota checks, use the [Neutron networking interface](/hpcloudconsole#ManageHPPublicCloud).
 
 Use the Nova boot utility to attach pre-created ports to instances.
 
-Use large standard flavors (`standard.large`, `standard.xlarge`, etc.) rather than highmem flavors for your larger Windows instances.
+For best reliability, terminate instances only when they are in the `Active` or `Error` state.
+
+Use large standard flavors (`standard.large`, `standard.xlarge`, etc.) rather than `highmem` flavors for your larger Windows instances.
 
 For speed and ease-of-use, use the [management console](/mc/) rather than the Windows command-line interface (CLI) to attach or detach a volume.
 
 For best results when deleting a volume, unmount the volume (or for Windows instances take it offline) and detach it prior to deleting it.
 
-When transferring large files (greater than 700MB for downloads and 5GB for uploads), use either the [classic management console](/mc/) or the [UNIX CLI](/cli/unix/) utilities.
-
-For best results, use the [Horizon Preview Edition](/hpcloudconsole/) interface or the [classic management console](/mc/) to reset your password.
+When transferring large files (greater than 700MB for downloads and 1GB for uploads), use either the [classic management console](/mc/) or the [UNIX CLI](/cli/unix/) utilities.
 
 Use the Nova boot utility to attach a pre-created instance to a port.
+
+For best reliability, reboot instances of sizes `standard.2xlarge`, `standard.4xlarge`, and `standard.8xlarge` from within the instance.
 
 To create a snapshot for an instance booted from a block volume, follow these steps for best results:
 
@@ -126,13 +124,12 @@ Version 13.5 of the HP Public Cloud software has the following minor limitations
 * In the Windows CLI, the maximum file size is 700MB for downloads and 5GB for uploads. 
 * The EC2 API and AWS Eucalyptus toolset are not supported in this release.
 
-
 ###Known issues### {#Issues}
 
 The following are the known issues (and workarounds) for Version 13.5 of the HP Public Cloud software:
 
 * Deleting an egress rule from a security group may limit the ability of your instance to access external nodes (including the capability to fetch metadata required by your SSH key), and may cause issues in newly-booted instances.
-* If you use the Identity service role-based access control (RBAC) at the panel level, you may see action and service options that exceed your permission levels.
+* If you use the Identity service role-based access control (RBAC) at the panel level in the [Horizon Preview Edition](/hpcloudconsole), you may see action and service options that exceed your permission levels.  You can access these features through the CLI or the the [classic management console](/mc/).
 * An instance cannot resolve its own name.
 * In you are unable to see the private IP in the networks section of a Windows instance, display it using the [VNC console](https://community.hpcloud.com/article/using-vnc-console-access-your-instance).
 * If your VNC console log appears empty immediately after instance activation, just wait a few moments and try again; it sometimes takes a moment for the instance information to be recorded in the log file.
@@ -141,8 +138,6 @@ The following are the known issues (and workarounds) for Version 13.5 of the HP 
 * If you don't see information displayed for `Flavors Details` when using the Windows CLI, you can retrieve the information using the [classic management console](/mc/).
 * If you encounter a quota issue when performing network tasks while using the [Horizon Preview Edition](/hpcloudconsole), use the [classic management console](/mc/).
 * After successfully launching an instance if you find `ssh` not functioning properly, just relaunch the instance.
-* When using a VNC URL if you find yourself unable to connect, use an alternative client such as `ssh`, `putty`, or remote desktop protocol (RDP).
-* In the rare case where an instance is created with two fixed IPs, simply delete and recreate the instance to clear the additional IP.
 * The reset password feature is currently available in the UNIX CLI and through the [Horizon Preview Edition](/hpcloudconsole/) interface or the [classic management console](/mc/) only. 
 * Sometimes under certain circumstances in the Windows CLI, the `ls` command displays some fields as blank:
     - The `Attached To` and `Server Attached To` fields are may display as blank after you attach a server to a volume using the `[Attach-Volume](/cli/windows/reference#Attach-Volume)` command
@@ -151,15 +146,6 @@ The following are the known issues (and workarounds) for Version 13.5 of the HP 
     To view the contents of these fields, you can re-execute the `ls` command or display the information using the [Horizon Preview Edition](/hpcloudconsole/) interface or the [classic management console](/mc/). 
 
 
-<!-- * When the `libvirt` state of your instance is `in shutdown`, Nova delete may not remove the instance.  DOUG: When and where is this encountered exactly?  What can the user do to avoid it?  What is the workaround?
-    
-* `ssh` access to your instance might unexpectedly cease functioning.<br>
-    *Workaround*: Contact customer support.  DOUG: we got *hammered* on this; what is a *real* workaround? 
-	    
-* A Windows instance of a large size can sometimes become stuck in the rebooting state.  DOUG: *All* large sizes, or just some?  What are the exact parameters of "large"?  What is the workaround?
--->
-    
-	
 <!--##Resolved Issues in Version 13.5## {#v135resolved}
 
 
