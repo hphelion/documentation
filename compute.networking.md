@@ -31,24 +31,30 @@ For a high level understanding of the default Network topology in Compute 13.5, 
 
 ##Customizing your Configuration##
 
-You can use the default network to deploy HP Cloud compute virtual servers, or modify the network configuration through the OpenStack Networking API. Use the command line or the HP Cloud management console's (MC) easy-to-use interface to customize.
+HP Cloud Networking is a virtual network service that provides a powerful API to define the network connectivity and addressing used by devices from HP Cloud Services Compute. The HP Cloud Networking API supports virtual network, subnet, router and port abstractions to describe network resources.
+
+You can use the default network or customize the default network using either the HP Cloud Networking API or the HP Cloud Management Console. Customizing a network enables you to manage the networks your virtual servers connect to.
 
 HP Cloud Networking expands networking capabilities, allowing you to perform many tasks, including:
 
 - Creating and deleting a network
 - Managing a subnet
 - Adding and deleting an interface to a router
-- Configure security group parameters that define the firewall rules for virtual servers
+- Configuring security group parameters that define the firewall rules for virtual servers
 - Allocating and managing public floating IP addresses
 - Viewing network and router details
 
-You can create additional networks to exact specifications through the OpenStack Networking API. 
-
 For more information on modifying the default network and creating additional networks, see [HP Cloud Networking Overview](https://docs.hpcloud.com/compute/network-guide/).
+
+For more information on using the HP Cloud Networking API, an extension to the OpenStack API, see [Management console: Networks screen](http://docs.hpcloud.com/mc/compute/networks/)
+ 
+For more information on using the HP Cloud Networking API, see [HP Cloud Networking API Specifications](https://docs.hpcloud.com/api/v13/networking)
 
 ##Security Groups##
 
 Security Groups are a feature of HP Cloud Networking and are fully supported by the Networking API. 
+
+When you create a port in HP Cloud Networking, you can associate the port with a custom security group or the default security group. You can use the API or Management console to add or modify security group rules to the specified group.
 
 ## For further information
 
