@@ -31,8 +31,6 @@ For a high level understanding of the default Network topology in Compute 13.5, 
 
 ##Customizing your Configuration##
 
-HP Cloud Networking is a virtual network service that provides a powerful API to define the network connectivity and addressing used by devices from HP Cloud Services Compute. The HP Cloud Networking API supports virtual network, subnet, router and port abstractions to describe network resources.
-
 You can use the default network or customize the default network using either the HP Cloud Networking API or the HP Cloud Management Console. Customizing a network enables you to manage the networks your virtual servers connect to.
 
 HP Cloud Networking expands networking capabilities, allowing you to perform many tasks, including:
