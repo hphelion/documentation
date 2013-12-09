@@ -211,4 +211,3 @@ Plenty of places!  You might consider starting with the [Ruby Fog documentation]
 
 ## Windows CLI
 
--->
