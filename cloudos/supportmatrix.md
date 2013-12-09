@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Cloud OS Support Matrix"
+title: "HP Cloud OS Support Matrix for Hardware and Software"
 permalink: /cloudos/supportmatrix/
 product: cloudos
 
@@ -8,9 +8,9 @@ product: cloudos
 
 <a name="_top"> </a>
 
-<script> 
+<script>
 
-function PageRefresh { 
+function PageRefresh {
 onLoad="window.refresh"
 }
 
@@ -21,8 +21,7 @@ PageRefresh();
 
 # HP Cloud OS Support Matrix for Hardware and Software
 
-This topic identifies the supported hardware and software for the current release of HP Cloud OS, including information needed to set up the 
-hardware and software. 
+This document provides an overview of the supported hardware and software for the HP Cloud OS Sandbox Version 1.20, including information for hardware and software setup. 
 
 * [Server Infrastructure](#server-infrastructure)
 
@@ -34,18 +33,15 @@ hardware and software.
 
 * [Software Requirements](#software-requirements)
 
-<p style="color: red; font-weight: bold; padding: 4px 4px 4px 4px; border: 1px dotted;"> Internal note: Getting updated info from Mike Cudahy between Dec 9-12. </p>
-
 ## Server Infrastructure
 
-For the performance and stability of your HP Cloud OS environment, it is important to meet the minimum recommendations for memory, 
-processors, and disk space for each of the components in the table below. 
+For the performance and stability of the HP Cloud OS environment, it is very important to meet the minimum recommendations for memory, processors, and disk space for each of the components in the table below. 
+Before installation, please reference the appropriate platform support matrix for each component product.
 
-Before you install Cloud OS, please refer to the appropriate platform support matrix for each component product.
 
 ### Prerequisites
 
-Ubuntu Server 12.04 LTS installation media.
+Ubuntu Server 12.04 LTS installation media + security updates.
 
 ### Minimum Recommendations
 
@@ -92,8 +88,8 @@ Ubuntu Server 12.04 LTS installation media.
 </tr>			
 
 <tr style="background-color: white; color: black;">
-<td> Swift Proxy Node </td>
-<td> Virtual and Physical </td>
+<td> Swift Controller (Ring, Proxy, Dispersion) </td>
+<td> Virtual or Physical </td>
 <td> 8 </td>
 <td> 12 GB </td>
 <td> 20 GB </td>
@@ -103,7 +99,7 @@ Ubuntu Server 12.04 LTS installation media.
 
 <tr style="background-color: white; color: black;">
 <td> Storage Node </td>
-<td> Virtual and Physical </td>
+<td> Virtual or Physical </td>
 <td> 8 </td>
 <td> 12 GB </td>
 <td> 60 GB </td>
@@ -115,18 +111,75 @@ Ubuntu Server 12.04 LTS installation media.
 
 \* External Internet connection required for public or hybrid cloud.
 
-\*\* Intel or AMD hardware virtualization support required. The CPU cores and memory requirements must be sized based on the VM instances hosted by the compute node.
+\*\* Intel or AMD hardware virtualization support required. The CPU cores and memory requirements must be sized based 
+on the VM instances hosted by the compute node.
 
-\*\*\* The Ubuntu Operating System has to be manually installed.
+\*\*\* The Ubuntu Operating System to be manually installed.
 
 
-### Supported Deployment Scenario
+### Supported Deployment Scenarios
 
-The cloud deployment includes single Admin and Controller nodes and multiple Compute nodes.
+The diagrams in this section illustrate the deployment scenarios supported in HP Cloud OS 1.20.
 
-<img src="media/cloudos-supported-deployment-scenario.png" title="HP Cloud OS Supported Deployment Scenario" />
+**Diagram 1:** Single Region. All controllers in a single virtual machine. Compute node is bare metal.
 
-HP is actively developing additional deployment scenarios that may be supported in a subsequent Cloud OS release.
+<img src="media/cloudos-single-region1.jpg" title="HP Cloud OS Single Region. All controllers in a single virtual machine. Compute node is bare metal." />
+
+**Diagram 2:** Multi-region. All controllers in virtual machines.
+
+<img src="media/cloudos-multi-region2.jpg" title="HP Cloud OS Multi-region. All controllers in virtual machines." />
+
+**Diagram 3:** Single region. Controllers are in separate virtual machines.
+
+<img src="media/cloudos-single-region-controllers-vm3.jpg" title="HP Cloud OS Single region. Controllers are in separate virtual machines." />
+
+**Diagram 4:** Single region. All controllers in a single bare metal server. 
+
+<img src="media/cloudos-single-region-controllers-baremetal4.jpg" title="HP Cloud OS Single region. All controllers in a single bare metal server." />
+
+**Diagram 5:** Swift storage for all deployment scenarios.  
+
+<img src="media/cloudos-swift-storage5.jpg" title="HP Cloud OS Swift storage for all deployment scenarios." />
+
+## Hardware Requirements
+
+<table style="text-align: left; vertical-align: top;">
+
+<tr style="background-color: #C8C8C8;">
+<th> HP </th>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td style="font-weight: bold; background-color: #F8F8F8;"> HP DL 360/380 </td>
+</tr>
+<tr style="background-color: white; color: black;">
+<td style="font-weight: bold; background-color: #F8F8F8;"> HP C7000 Chassis (BL servers) </td>
+</tr>
+
+<tr style="background-color: #C8C8C8;">
+<th> Dell </th>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td style="font-weight: bold; background-color: #F8F8F8;"> Dell R620CTL </td>
+</tr>
+<tr style="background-color: white; color: black;">
+<td style="font-weight: bold; background-color: #F8F8F8;"> PowerEdge M620 </td>
+</tr>
+
+<tr style="background-color: #C8C8C8;">
+<th> IBM </th>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td style="font-weight: bold; background-color: #F8F8F8;"> IBM x3550 M4 CTL </td>
+</tr>
+<tr style="background-color: white; color: black;">
+<td style="font-weight: bold; background-color: #F8F8F8;"> IBM Blade Center HS23 </td>
+</tr>
+
+</table>
+
 
 ## Software Requirements 
 
@@ -149,7 +202,7 @@ Refer to [Install &amp; Configure Your Clouds](/cloudos/install/) for a complete
 
 <tr style="background-color: white; color: black;">
 <td  style="padding-left: 40px;"> Ubuntu Linux </td>
-<td> 12.04 LTS (64-bit) </td>
+<td> 12.04 LTS (64-bit) + security updates </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -191,17 +244,17 @@ Refer to [Install &amp; Configure Your Clouds](/cloudos/install/) for a complete
 
 <tr style="background-color: white; color: black;">
 <td style="padding-left: 40px;"> Internet Explorer </td>
-<td> 9 </td>
+<td> 10 </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td style="padding-left: 40px;"> Firefox </td>
-<td> 17 </td>
+<td> 25 and above </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td style="padding-left: 40px;"> Chrome </td>
-<td> 26 </td>
+<td> 30 and above </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -258,12 +311,12 @@ Refer to [Install &amp; Configure Your Clouds](/cloudos/install/) for a complete
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td style="padding-left: 40px; font-weight: bold;"> Neutron </td>
+<td style="padding-left: 40px; font-weight: bold;"> Quantum (Neutron) </td>
 <td> Grizzly 2013.1.4 </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td style="padding-left: 60px;"> Neutron plugin: Open vSwitch </td>
+<td style="padding-left: 60px;"> Quantum (Neutron) plugin: Open vSwitch </td>
 <td> Grizzly 2013.1.4 </td>
 </tr>
 

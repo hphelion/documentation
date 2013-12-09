@@ -23,12 +23,12 @@ PageRefresh();
 
 Welcome! You've got questions, we have the answers.
 
-* [What is HP's POV on cloud solutions?](#what-is-the-hp-pov-on-cloud-solutions)
+* [What is the HP POV on cloud solutions?](#what-is-the-hp-pov-on-cloud-solutions)
 * [What is HP Cloud?](#what-is-hp-cloud)
 * [How does HP help solve the challenges faced by enterprises?](#how-does-hp-help-solve-the-challenges-faced-by-enterprises)
 * [What is HP Cloud OS?](#what-is-hp-cloud-os)
 * [What is OpenStack?](#what-is-openstack)
-* [What are HP's differentiators?](#what-are-the-hp-differentiators)
+* [What are the HP differentiators?](#what-are-the-hp-differentiators)
 * [What does HP Cloud OS support?](#what-does-hp-cloud-os-support)
 * [How does HP Cloud OS help customers?](#how-does-hp-cloud-os-help-customers) 
 * [What is the HP Cloud OS Sandbox?](#what-is-the-hp-cloud-os-sandbox)
@@ -38,8 +38,7 @@ Welcome! You've got questions, we have the answers.
 
 ## What is the HP POV on cloud solutions?
 
-> HP believes organizations will need to implement a hybrid delivery strategy that leverages the right mix of cloud and traditional 
-IT to optimize application and service creation and delivery.
+> HP believes organizations will need to implement a hybrid delivery strategy that leverages the right mix of cloud and traditional IT to optimize application and service creation and delivery.
 
 ## What is HP Cloud?
 
@@ -135,7 +134,7 @@ limited scale (up to 10 compute nodes) and limited time (90-day) use.
 
 ## Where can I get the HP Cloud OS Sandbox kit?
 
-> To request HP Cloud OS Sandbox kit, <a href="https://ssl.www8.hp.com/h41268/live/index.aspx?qid=19897" target="new"> click here </a> and register on the portal.
+> To request HP Cloud OS Sandbox kit, register for an account on the <a href="https://cloudos.hpwsportal.com" target="new"> HP Cloud OS Catalog</a> portal.
 
 ## How is HP Cloud OS integrated into the HP Cloud portfolio? 
 
