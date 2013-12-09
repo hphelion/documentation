@@ -69,73 +69,71 @@ This section of the release notes describes the HP recommendations for best perf
 
 ###Recommendations## {#Recommendations} 
 
-<!-- recommendations instead of limitations? 
-Make known issues a sub-head?-->
+The following are our best-practices recommendations for versions 13.5.
 
-For best performance and reliability with multiple instances, stagger your instance launches to batches of a maximum size of 100 instances.
+####Cloud Compute####
+* For best performance and reliability with multiple instances, stagger your instance launches to batches of a maximum size of 100 instances.
+* Boot instance snapshots from an instance using the same flavor.  For example, if you have created a snapshot of an `xsmall` instance, boot it from an instance that also has flavor `xsmall`.
+* For reliability, use Nova delete to terminate instances only when they are in the `Active` or `Error` state.
+* For reliability, make sure you have a root disk size of 30GB for instances with flavors larger than `xsmall`.
+* For best reliability, reboot instances of sizes `standard.2xlarge`, `standard.4xlarge`, and `standard.8xlarge` from within the instance.
+* For improved performance, keep the size of your bootable volumes to less than 1.4TB
 
-To ensure full external node access, allow egress rules to remain part of their security groups; HP recommends against deleting them.
+####Cloud Networking###
 
-Boot instance snapshots from an instance using the same flavor.  For example, if you have created a snapshot of an `xsmall` instance, boot it from an instance that also has flavor `xsmall`.
+* To ensure full external node access, allow egress rules to remain part of their security groups; HP recommends against deleting them.
+* To get the most timely and accurate results for your quota checks, use the [Neutron networking interface](/hpcloudconsole#ManageHPPublicCloud).
+* To ensure that your instance consistently resolves its own name, add an entry to the `/etc/hosts` file that matches the host name.
 
-For full functionality when creating instances using the Windows CLI, use flavors of `small` or greater. 
+####Command-line Interface####
 
-To get the most timely and accurate results for your quota checks, use the [Neutron networking interface](/hpcloudconsole#ManageHPPublicCloud).
+* For best performance when transferring large files (greater than 700MB for downloads and 1GB for uploads), use either the [classic management console](/mc/) or the [UNIX CLI](/cli/unix/) utilities.
+* For easiest password reset, use the [Horizon Preview Edition](/hpcloudconsole) interface or the [classic management console](/mc/) or the [UNIX CLI](/cli/unix/) utilities.
+* To create a snapshot for an instance booted from a block volume, follow these steps for best results:
+    - Shut down the instance
+    - Delete the instance and wait until the volume is marked as `available`
+    - Take a snapshot of the volume using a utility such as the python cinder binding
+    - When the snapshot is complete, re-create the instance from the volume
+    - Re-attach the original floating IP (if necessary) 
+    Note that the port (fixed-IP address) associated with the new instance might have changed.
 
-Use the Nova boot utility to attach pre-created ports to instances.
+####Windows####
 
-For reliability, use Nova delete to terminate instances only when they are in the `Active` or `Error` state.
-
-Use large standard flavors (`standard.large`, `standard.xlarge`, etc.) rather than `highmem` flavors for your larger Windows instances.
-
-For speed and ease-of-use, use the [management console](/mc/) rather than the Windows command-line interface (CLI) to attach or detach a volume.
-
-For best results when deleting a volume, unmount the volume (or for Windows instances take it offline) and detach it prior to deleting it.
-
-To ensure quality performance, allow at least 4GB of memory for your Windows instances.
-
-For reliability, make sure you have a root disk size of 30GB for instances with flavors larger than `xsmall`.
-
-For best performance when transferring large files (greater than 700MB for downloads and 1GB for uploads), use either the [classic management console](/mc/) or the [UNIX CLI](/cli/unix/) utilities.
-
-Use the Nova boot utility to attach a pre-created instance to a port.
-
-For best reliability, reboot instances of sizes `standard.2xlarge`, `standard.4xlarge`, and `standard.8xlarge` from within the instance.
-
-To ensure that your instance consistently resolves its own name, add an entry to the `/etc/hosts` file that matches the host name.
-
-For improved performance, keep the size of your bootable volumes to less than 1.4TB
-
-To create a snapshot for an instance booted from a block volume, follow these steps for best results:
-
-* Shut down the instance
-* Delete the instance and wait until the volume is marked as `available`
-* Take a snapshot of the volume using a utility such as the python cinder binding
-* When the snapshot is complete, re-create the instance from the volume
-* Re-attach the original floating IP (if necessary) 
-
-Note that the port (fixed-IP address) associated with the new instance might have changed.
+* Use large standard flavors (`standard.large`, `standard.xlarge`, etc.) rather than `highmem` flavors for your larger Windows instances.
+* For speed and ease-of-use, use the [management console](/mc/) rather than the Windows command-line interface (CLI) to attach or detach a volume.
+* For best results when deleting a volume, unmount the volume (or for Windows instances take it offline) and detach it prior to deleting it.
+* To ensure quality performance, allow at least 4GB of memory for your Windows instances.
+* For full functionality when creating instances using the Windows CLI, use flavors of `small` or greater. 
 
 
 ###Known issues### {#Issues}
 
-The following are the known issues (and workarounds) for Version 13.5 of the HP Public Cloud software:
+The following are the known issues (and workarounds) for Version 13.5 of the HP Public Cloud software.
 
-* If you use the Identity service role-based access control (RBAC) at the panel level in the [Horizon Preview Edition](/hpcloudconsole), you may see action and service options that exceed your permission levels.  You can access these features through the CLI or the the [classic management console](/mc/).
+####Cloud Compute####
+
 * The EC2 API and AWS Eucalyptus toolset are not supported in this release.
 * In you are unable to see the private IP in the networks section of a Windows instance, display it using the [VNC console](https://community.hpcloud.com/article/using-vnc-console-access-your-instance).
 * If your VNC console log appears empty immediately after instance activation, just wait a few moments and try again; it sometimes takes a moment for the instance information to be recorded in the log file.
+
+####Cloud Block Storage####
+
 * During backups and restores you may see an `Unnecessary attribute` error; this is a spurious error that has no effect on successfully completing the backup and can be ignored.
-* You cannot use Neutron `port-update` to attach an instance to a port; use Nova boot.
+
+####Command-line Interface####
+
 * If you don't see information displayed for `Flavors Details` when using the Windows CLI, you can retrieve the information using the [classic management console](/mc/).
-* If you encounter a quota issue when performing network tasks while using the [Horizon Preview Edition](/hpcloudconsole), use the [classic management console](/mc/).
 * After successfully launching an instance if you find `ssh` not functioning properly, just relaunch the instance.
-* The reset password feature is currently available in the UNIX CLI and through the [Horizon Preview Edition](/hpcloudconsole) interface or the [classic management console](/mc/) only. 
 * Sometimes under certain circumstances in the Windows CLI, the `ls` command displays some fields as blank:
     - The `Attached To` and `Server Attached To` fields are may display as blank after you attach a server to a volume using the `[Attach-Volume](/cli/windows/reference#Attach-Volume)` command
     - The `Ext Gateway` field may display as blank after you execute the `[Update-Router](/cli/windows/reference#Update-Router)` command
     - The `Assigned Network Addresses` field may display as blank after you execute the `[New-Server](/cli/windows/reference#New-Server)` command<br>
     To view the contents of these fields, display the information using the [Horizon Preview Edition](/hpcloudconsole) interface or the [classic management console](/mc/) or the [UNIX CLI](/cli/unix/) utilities. 
+
+####Horizon Preview Edition Console###
+
+* If you use the Identity service role-based access control (RBAC) at the panel level in the [Horizon Preview Edition](/hpcloudconsole), you may see action and service options that exceed your permission levels.  You can access these features through the CLI or the the [classic management console](/mc/).
+* If you encounter a quota issue when performing network tasks while using the [Horizon Preview Edition](/hpcloudconsole), use the [classic management console](/mc/).
 
 
 <!--##Resolved Issues in Version 13.5## {#v135resolved}
