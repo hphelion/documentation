@@ -44,9 +44,24 @@ HP Cloud Networking expands networking capabilities, allowing you to perform man
 
 For more information on modifying the default network and creating additional networks, see [HP Cloud Networking Overview](https://docs.hpcloud.com/compute/network-guide/).
 
-For more information on using the HP Cloud Networking API, an extension to the OpenStack API, see [Management console: Networks screen](http://docs.hpcloud.com/mc/compute/networks/)
+###Using the console###
+
+You can use the HP Public Cloud console to access HP Cloud compute. For more information on using the HP Public Cloud console, see [Getting Started with HP Public Cloud Console](http://docs.hpcloud.com/hpcloudconsole).
+
+
+###Using the API###
  
-For more information on using the HP Cloud Networking API, see [HP Cloud Networking API Specifications](https://docs.hpcloud.com/api/v13/networking)
+You can use a low level, raw REST API to access HP Cloud compute. For more information on using the HP Cloud Networking API, see [HP Cloud Networking API Specifications](https://docs.hpcloud.com/api/v13/networking).
+
+
+####Using language bindings"
+
+You can use any of several language bindings to access HP Cloud compute. For more information on using the HP Cloud Networking API, see [HP Cloud binding support](http://docs.hpcloud.com/bindings/).
+
+###Using the CLI###
+
+You can use any of several command-line interface software to access HP Cloud compute. For more information on using the HP Cloud Networking API, see [HP Cloud CLI](http://docs.hpcloud.com/cli/).
+
 
 ##Security Groups##
 
