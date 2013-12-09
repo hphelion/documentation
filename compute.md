@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "HP Cloud Compute Overview"
-permalink: /compute/
+title: "HP Cloud Networking Overview"
+permalink: /compute/networking
 product: compute
 
 ---
-# HP Cloud Compute Overview
+# HP Cloud Networking Overview
 
 <!-- <iframe src="http://player.vimeo.com/video/33922384?title=0&amp;byline=0&amp;portrait=0" width="580" height="420" frameborder="0"> </iframe> -->
 

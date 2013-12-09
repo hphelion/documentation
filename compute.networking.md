@@ -5,7 +5,7 @@ permalink: /compute/networking
 product: compute
 
 ---
-# HP Cloud Networking Overview TEST TEST TEST #
+# HP Cloud Networking Overview #
 
 <!-- <iframe src="http://player.vimeo.com/video/33922384?title=0&amp;byline=0&amp;portrait=0" width="580" height="420" frameborder="0"> </iframe> -->
 
