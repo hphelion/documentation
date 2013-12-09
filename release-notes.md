@@ -18,15 +18,13 @@ This page contains the following information on our software package:
 
 ##New features in version 13.5## {#v135features}
 
-The following are new features in version 13.5 of the HP Public Cloud software:
+**New look and feel for the Management Console** - Based on the OpenStack Horizon project, the HP Public Cloud Console interface is significantly different from the original classic console.  Dashboards and their respective service navigation panels are vertically displayed on the left-hand side of the console, while documentation is provided in-line and embedded throughout on various forms.  See [Getting Started with HP Public Cloud Console](http://docs.hpcloud.com/hpcloudconsole) for more information.
 
-**New look and feel** - Based on the OpenStack Horizon project, the HP Public Cloud Console interface is significantly different from the original classic console.  Dashboards and their respective service navigation panels are vertically displayed on the left-hand side of the console, while documentation is provided in-line and embedded throughout on various forms.  See [Getting Started with HP Public Cloud Console](http://docs.hpcloud.com/hpcloudconsole) for more information.
+**Larger compute instances for big data and high-performance computing are now supported** -  New larger instance types allows you to run big data, analytics, and high performance computing (HPC) workloads in the public cloud.  You can access instances with up to 120 GB of RAM and up to 16 virtual cores. The new instance types allow even greater flexibility to choose the virtual machine size that best fits your application's compute resource needs.
 
-**Larger compute instances for big data and high-performance computing is now supported** -  Access to new larger instance types allows you to run big data, analytics, and high performance computing (HPC) workloads in the public cloud.  You can access instances with up to 120 GB of RAM and up to 16 virtual cores. The new instance types allow you to choose the virtual machine size that best fits your application's needs.
+**New virtual private cloud (VPC) networking capabilities** - The new VPC functionality provides the ability to deploy your workloads with even greater security within the public cloud for public cloud only or hybrid delivery  by enabling you to create  isolated virtual networks within the HP Cloud compute service. UsingSoftware Defined Networking (SDN), VPC  allows you create a wide variety of network configurations specific to your individual workloads needs with a variety of public internet accessibility options. You can also connect your public cloud network to your on-premise network, enabling true hybrid delivery through private and public infrastructures with a secure VPN connection performing as a single integrated system.
 
-**New virtual private cloud (VPC) networking capabilities** - The new VPC functionality provides advanced security in the public cloud by allowing you to create your own isolated virtual network within the HP Cloud compute service. Using a Software Defined Networking (SDN) stack, this service allows you to select whether or not your public cloud network instances are also accessible from the internet. This network isolation offers an additional layer of security to cloud deployments. You can also connect your public cloud network to your on-premise network, treating private and public infrastructures as a single connected system.
-
-**Networking topology visualization** - Interactively build and manage your network through a 2-D visualization dashboard in the Horizon Console .
+**Networking topology visualization** - Interactively build and manage your network through a 2-D visualization dashboard in the Horizon Console.
 
 **Faster data upload to the Cloud** - A new bulk import service reduces the time to market for applications requiring existing data by allowing you to quickly and easily load your data into HP Public Cloud block storage or object storage. The new service bypasses the process of transferring large amounts of information over the Internet and allows you to provide hard drives directly to HP's data centers where your data can be rapidly transferred.
 
@@ -38,7 +36,7 @@ The following are new features in version 13.5 of the HP Public Cloud software:
 
 **Jclouds support** - Jclouds support is provided for the Keystone version 2 (and earlier) API.
 
-**Enhanced identity management** - When you create a new project, you can:  Activate a new compute, object storage or platform service; list the project permissions; and manage the project role assignments.  Once you've activated services, you can set the Project Permissions for Compute Admin, Compute Network Admin, Block Storage Admin, Network Admin, and Image Management Admin, and more.   You can add and remove groups to each role, and assign users to specific roles for each project.
+**Enhanced identity management** - When creating new projects, youcan: Activate a new compute, object storage or platform service; list the project permissions; and manage the project role assignments. Once you've activated services, you can set the Project Permissions for Compute Admin, Compute Network Admin, Block Storage Admin, Network Admin, and Image Management Admin, and more. Users can add and remove groups to each role, and assign users to specific roles for each project.
 
 As a domain admin, you can manage each user's projects, roles, and groups.  You can manage the membership of each group, and manage the user assignment within each role. 
 
@@ -65,7 +63,7 @@ As a domain admin, you can manage each user's projects, roles, and groups.  You 
 
 This section of the release notes describes the HP recommendations for best performance, utility, and functionality with this software version.   We have also provided information about some limitations and known issues for your reference purposes.  This section contains
 
-* [Software recommendations](#Recommendations) for best functionality and performance
+* [Best practices recommendations](#Recommendations) for best functionality and performance
 * [Known issues](#Issues) and workarounds with version 13.5
 
 
@@ -74,21 +72,19 @@ This section of the release notes describes the HP recommendations for best perf
 <!-- recommendations instead of limitations? 
 Make known issues a sub-head?-->
 
-For maximum utility and functionality with this software version, use the ["Classic" management console](/mc/) for a very few of the basic account transactions (changing or updating billing or credit card information, managing account details, creating and accessing support cases) rather than the OpenStack [Horizon Preview Edition](/hpcloudconsole) interface.   <!-- move this down to bury it-->
+For best performance and reliability with multiple instances, stagger your instance launches to batches of a maximum size of 100 instances.
 
-For best performance and reliability with multiple instances, stagger your instance launches to batches of 100 or less.
-
-Allow egress rules to remain as part of their security groups; HP recommends against deleting them.
+To ensure full external node access, allow egress rules to remain part of their security groups; HP recommends against deleting them.
 
 Boot instance snapshots from an instance using the same flavor.  For example, if you have created a snapshot of an `xsmall` instance, boot it from an instance that also has flavor `xsmall`.
 
-For maximum flexibility, use flavors of `small` or larger for Windows instances. 
+For full functionality when creating instances using the Windows CLI, use flavors of `small` or greater. 
 
 To get the most timely and accurate results for your quota checks, use the [Neutron networking interface](/hpcloudconsole#ManageHPPublicCloud).
 
 Use the Nova boot utility to attach pre-created ports to instances.
 
-For best reliability, terminate instances only when they are in the `Active` or `Error` state.
+For reliability, use Nova delete to terminate instances only when they are in the `Active` or `Error` state.
 
 Use large standard flavors (`standard.large`, `standard.xlarge`, etc.) rather than `highmem` flavors for your larger Windows instances.
 
@@ -100,11 +96,13 @@ To ensure quality performance, allow at least 4GB of memory for your Windows ins
 
 For reliability, make sure you have a root disk size of 30GB for instances with flavors larger than `xsmall`.
 
-When transferring large files (greater than 700MB for downloads and 1GB for uploads), use either the [classic management console](/mc/) or the [UNIX CLI](/cli/unix/) utilities.
+For best performance when transferring large files (greater than 700MB for downloads and 1GB for uploads), use either the [classic management console](/mc/) or the [UNIX CLI](/cli/unix/) utilities.
 
 Use the Nova boot utility to attach a pre-created instance to a port.
 
 For best reliability, reboot instances of sizes `standard.2xlarge`, `standard.4xlarge`, and `standard.8xlarge` from within the instance.
+
+To ensure that your instance consistently resolves its own name, add an entry to the `/etc/hosts` file that matches the host name.
 
 For improved performance, keep the size of your bootable volumes to less than 1.4TB
 
@@ -123,10 +121,8 @@ Note that the port (fixed-IP address) associated with the new instance might hav
 
 The following are the known issues (and workarounds) for Version 13.5 of the HP Public Cloud software:
 
-* Deleting an egress rule from a security group may limit the ability of your instance to access external nodes (including the capability to fetch metadata required by your SSH key), and may cause issues in newly-booted instances.
 * If you use the Identity service role-based access control (RBAC) at the panel level in the [Horizon Preview Edition](/hpcloudconsole), you may see action and service options that exceed your permission levels.  You can access these features through the CLI or the the [classic management console](/mc/).
 * The EC2 API and AWS Eucalyptus toolset are not supported in this release.
-* An instance cannot resolve its own name.
 * In you are unable to see the private IP in the networks section of a Windows instance, display it using the [VNC console](https://community.hpcloud.com/article/using-vnc-console-access-your-instance).
 * If your VNC console log appears empty immediately after instance activation, just wait a few moments and try again; it sometimes takes a moment for the instance information to be recorded in the log file.
 * During backups and restores you may see an `Unnecessary attribute` error; this is a spurious error that has no effect on successfully completing the backup and can be ignored.
