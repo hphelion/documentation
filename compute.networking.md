@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Cloud Networking Overview"
-permalink: /compute/network/
+permalink: /compute/networking/
 product: compute
 
 ---
@@ -29,6 +29,8 @@ A default configuration comes with HP Cloud compute activation and includes:
 
 For a high level understanding of the default Network topology in Compute 13.5, see [Understanding Network Topology in 13.5](https://community.hpcloud.com/article/understanding-network-topology-135). 
 
+For more specific questions, try our [Forum](https://community.hpcloud.com/search/forum/network) where you can learn from our own internal experts as well as other users in the HP Public Cloud community.
+
 ##Customizing your Configuration##
 
 You can use the default network or customize the default network using either the HP Cloud Networking API or the HP Cloud Management Console. Customizing a network enables you to manage the networks your virtual servers connect to.
@@ -44,9 +46,24 @@ HP Cloud Networking expands networking capabilities, allowing you to perform man
 
 For more information on modifying the default network and creating additional networks, see [HP Cloud Networking Overview](https://docs.hpcloud.com/compute/network-guide/).
 
-For more information on using the HP Cloud Networking API, an extension to the OpenStack API, see [Management console: Networks screen](http://docs.hpcloud.com/mc/compute/networks/)
+###Using the console###
+
+You can use the HP Public Cloud console to access HP Cloud compute. For more information on using the HP Public Cloud console, see [Getting Started with HP Public Cloud Console](http://docs.hpcloud.com/hpcloudconsole).
+
+
+###Using the API###
  
-For more information on using the HP Cloud Networking API, see [HP Cloud Networking API Specifications](https://docs.hpcloud.com/api/v13/networking)
+You can use a low level, raw REST API to access HP Cloud compute. For more information on using the HP Cloud Networking API, see [HP Cloud Networking API Specifications](https://docs.hpcloud.com/api/v13/networking).
+
+
+###Using language bindings###
+
+You can use any of several language bindings to access HP Cloud compute. For more information on using the HP Cloud Networking API, see [HP Cloud binding support](http://docs.hpcloud.com/bindings/).
+
+###Using the CLI###
+
+You can use any of several command-line interface software to access HP Cloud compute. For more information on using the HP Cloud Networking API, see [HP Cloud CLI](http://docs.hpcloud.com/cli/).
+
 
 ##Security Groups##
 
