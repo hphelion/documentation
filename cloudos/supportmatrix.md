@@ -94,7 +94,7 @@ Ubuntu Server 12.04 LTS installation media + security updates.
 <td> 12 GB </td>
 <td> 20 GB </td>
 <td> 3 </td>
-<td> Ubuntu Server 12.04 LTS (64-bit) *** </td>
+<td> Ubuntu Server 12.04 LTS (64-bit) </td>
 </tr>	   
 
 <tr style="background-color: white; color: black;">
@@ -104,7 +104,7 @@ Ubuntu Server 12.04 LTS installation media + security updates.
 <td> 12 GB </td>
 <td> 60 GB </td>
 <td> 3 </td>
-<td> Ubuntu Server 12.04 LTS (64-bit) *** </td>
+<td> Ubuntu Server 12.04 LTS (64-bit) </td>
 </tr>	   
 
 </table>
@@ -114,30 +114,28 @@ Ubuntu Server 12.04 LTS installation media + security updates.
 \*\* Intel or AMD hardware virtualization support required. The CPU cores and memory requirements must be sized based 
 on the VM instances hosted by the compute node.
 
-\*\*\* The Ubuntu Operating System to be manually installed.
-
 
 ### Supported Deployment Scenarios
 
 The diagrams in this section illustrate the deployment scenarios supported in HP Cloud OS 1.20.
 
-**Diagram 1:** Single Region. All controllers in a single virtual machine. Compute node is bare metal.
+##### Diagram 1: Single Region. All controllers in a single virtual machine. Compute node is bare metal.
 
 <img src="media/cloudos-single-region1.jpg" title="HP Cloud OS Single Region. All controllers in a single virtual machine. Compute node is bare metal." />
 
-**Diagram 2:** Multi-region. All controllers in virtual machines.
+##### Diagram 2: Multi-region. All controllers in virtual machines.
 
 <img src="media/cloudos-multi-region2.jpg" title="HP Cloud OS Multi-region. All controllers in virtual machines." />
 
-**Diagram 3:** Single region. Controllers are in separate virtual machines.
+##### Diagram 3: Single region. Controllers are in separate virtual machines.
 
 <img src="media/cloudos-single-region-controllers-vm3.jpg" title="HP Cloud OS Single region. Controllers are in separate virtual machines." />
 
-**Diagram 4:** Single region. All controllers in a single bare metal server. 
+##### Diagram 4: Single region. All controllers in a single bare metal server. 
 
 <img src="media/cloudos-single-region-controllers-baremetal4.jpg" title="HP Cloud OS Single region. All controllers in a single bare metal server." />
 
-**Diagram 5:** Swift storage for all deployment scenarios.  
+##### Diagram 5: Supported Swift (Object Store) deployment scenario  
 
 <img src="media/cloudos-swift-storage5.jpg" title="HP Cloud OS Swift storage for all deployment scenarios." />
 
@@ -150,10 +148,23 @@ The diagrams in this section illustrate the deployment scenarios supported in HP
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td style="font-weight: bold; background-color: #F8F8F8;"> HP DL 360/380 </td>
+<td> ProLiant DL360p Gen8 </td>
 </tr>
+
 <tr style="background-color: white; color: black;">
-<td style="font-weight: bold; background-color: #F8F8F8;"> HP C7000 Chassis (BL servers) </td>
+<td> ProLiant DL380p Gen7 </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> BladeSystem c7000 - ProLiant BL490c Gen6 </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> BladeSystem c7000 - ProLiant BL490c Gen7 </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> BladeSystem c7000 - ProLiant BL460c Gen8 </td>
 </tr>
 
 <tr style="background-color: #C8C8C8;">
@@ -161,10 +172,11 @@ The diagrams in this section illustrate the deployment scenarios supported in HP
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td style="font-weight: bold; background-color: #F8F8F8;"> Dell R620CTL </td>
+<td> Dell R620CTL </td>
 </tr>
+
 <tr style="background-color: white; color: black;">
-<td style="font-weight: bold; background-color: #F8F8F8;"> PowerEdge M620 </td>
+<td> M100E - PowerEdge M620 </td>
 </tr>
 
 <tr style="background-color: #C8C8C8;">
@@ -172,10 +184,11 @@ The diagrams in this section illustrate the deployment scenarios supported in HP
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td style="font-weight: bold; background-color: #F8F8F8;"> IBM x3550 M4 CTL </td>
+<td> IBM x3550 M4 CTL </td>
 </tr>
+
 <tr style="background-color: white; color: black;">
-<td style="font-weight: bold; background-color: #F8F8F8;"> IBM Blade Center HS23 </td>
+<td> BladeCenter S -  IBM Blade Center HS23 </td>
 </tr>
 
 </table>
@@ -365,7 +378,7 @@ Refer to [Install &amp; Configure Your Clouds](/cloudos/install/) for a complete
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td style="padding-left: 40px; font-weight:bold;"> Skyline </td>
+<td style="padding-left: 40px; font-weight:bold;"> HP Cloud OS Administration Dashboard </td>
 <td> HP Cloud OS 1.20 </td>
 </tr>
 
@@ -374,7 +387,12 @@ Refer to [Install &amp; Configure Your Clouds](/cloudos/install/) for a complete
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td style="padding-left: 40px;"> Cosmos </td>
+<td style="padding-left: 40px;"> HP Cloud OS Operational Dashboard </td>
+<td> HP Cloud OS 1.20 </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td style="padding-left: 40px;"> HP Cloud OS Installation Dashboard </td>
 <td> HP Cloud OS 1.20 </td>
 </tr>
 
