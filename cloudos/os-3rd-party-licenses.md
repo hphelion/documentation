@@ -464,7 +464,7 @@ Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
 are met:
 
-1. Redistributions of source code must retain the above copyright
+1) Redistributions of source code must retain the above copyright
 notice, this list of conditions and the following disclaimer.
 
 2. Redistributions in binary form must reproduce the above copyright
@@ -903,7 +903,7 @@ any such terms You offer.
 terms of this License and distribute the Larger Work as a single product. In such a case, You must make sure the 
 requirements of this License are fulfilled for the Covered Software.  
 
-4. Versions of the License.
+4) Versions of the License.
 
 4.1. New Versions. Sun Microsystems, Inc. is the initial license steward and may publish revised and/or new versions of this 
 License from time to time. Each version will be given a distinguishing version number. Except as provided in Section 4.3, no 
@@ -922,7 +922,7 @@ Software, You may create and use a modified version of this License if You: (a) 
 references to the name of the license steward (except to note that the license differs from this License); and (b) otherwise 
 make it clear that the license contains terms which differ from this License.  
 
-5. DISCLAIMER OF WARRANTY. COVERED SOFTWARE IS PROVIDED UNDER THIS LICENSE ON AN AS IS 
+5) DISCLAIMER OF WARRANTY. COVERED SOFTWARE IS PROVIDED UNDER THIS LICENSE ON AN AS IS 
 BASIS, WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, WITHOUT 
 LIMITATION, WARRANTIES THAT THE COVERED SOFTWARE IS FREE OF DEFECTS, MERCHANTABLE, FIT 
 FOR A PARTICULAR PURPOSE OR NON-INFRINGING. THE ENTIRE RISK AS TO THE QUALITY AND 
@@ -932,7 +932,7 @@ ASSUME THE COST OF ANY NECESSARY SERVICING, REPAIR OR CORRECTION. THIS DISCLAIME
 WARRANTY CONSTITUTES AN ESSENTIAL PART OF THIS LICENSE. NO USE OF ANY COVERED SOFTWARE 
 IS AUTHORIZED HEREUNDER EXCEPT UNDER THIS DISCLAIMER.  
 
- 6. TERMINATION.  
+6) TERMINATION.  
 
 6.1. This License and the rights granted hereunder will terminate automatically if You fail to comply with terms herein and 
 fail to cure such breach within 30 days of becoming aware of the breach. Provisions which, by their nature, must remain in 
@@ -952,7 +952,7 @@ written agreement with Participant.
 or any distributor hereunder prior to termination (excluding licenses granted to You by any distributor) shall survive 
 termination.  
 
-7. LIMITATION OF LIABILITY. UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY, WHETHER 
+7) LIMITATION OF LIABILITY. UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY, WHETHER 
 TORT (INCLUDING NEGLIGENCE), CONTRACT, OR OTHERWISE, SHALL YOU, THE INITIAL DEVELOPER, 
 ANY OTHER CONTRIBUTOR, OR ANY DISTRIBUTOR OF COVERED SOFTWARE, OR ANY SUPPLIER OF ANY 
 OF SUCH PARTIES, BE LIABLE TO ANY PERSON FOR ANY INDIRECT, SPECIAL, INCIDENTAL, OR 
@@ -965,7 +965,7 @@ EXTENT APPLICABLE LAW PROHIBITS SUCH LIMITATION. SOME JURISDICTIONS DO NOT ALLOW
 EXCLUSION OR LIMITATION OF INCIDENTAL OR CONSEQUENTIAL DAMAGES, SO THIS EXCLUSION AND 
 LIMITATION MAY NOT APPLY TO YOU.  
 
-8. U.S. GOVERNMENT END USERS. The Covered Software is a commercial item, as that term is defined in 
+8) U.S. GOVERNMENT END USERS. The Covered Software is a commercial item, as that term is defined in 
 48 C.F.R. 2.101 (Oct. 1995), consisting of commercial computer software (as that term is defined at 48 C.F.R. 252.227-
 7014(a)(1)) and commercial computer software documentation as such terms are used in 48 C.F.R. 12.212 (Sept. 1995). 
 Consistent with 48 C.F.R. 12.212 and 48 C.F.R. 227.7202-1 through 227.7202-4 (June 1995), all U.S. Government End 
@@ -973,7 +973,7 @@ Users acquire Covered Software with only those rights set forth herein. This U.S
 supersedes, any other FAR, DFAR, or other clause or provision that addresses Government rights in computer software under 
 this License.  
 
-9. MISCELLANEOUS. This License represents the complete agreement concerning subject matter hereof. If any provision 
+9) MISCELLANEOUS. This License represents the complete agreement concerning subject matter hereof. If any provision 
 of this License is held to be unenforceable, such provision shall be reformed only to the extent necessary to make it 
 enforceable. This License shall be governed by the law of the jurisdiction specified in a notice contained within the Original 
 Software (except to the extent applicable law, if any, provides otherwise), excluding such jurisdictions conflict-of-law 
@@ -985,7 +985,7 @@ language of a contract shall be construed against the drafter shall not apply to
 responsible for compliance with the United States export administration regulations (and the export control laws and 
 regulation of any other countries) when You use, distribute or otherwise make available any Covered Software.  
 
-10. RESPONSIBILITY FOR CLAIMS. As between Initial Developer and the Contributors, each party is responsible for 
+10) RESPONSIBILITY FOR CLAIMS. As between Initial Developer and the Contributors, each party is responsible for 
 claims and damages arising, directly or indirectly, out of its utilization of rights under this License and You agree to work 
 with Initial Developer and Contributors to distribute such responsibility on an equitable basis. Nothing herein is intended or 
 shall be deemed to constitute any admission of liability.  
@@ -1008,7 +1008,7 @@ HP acknowledges the redistribution of the following open source components that 
 * jersey-server, Version 1.15
 * jersey-servlet, Version 1.15
 
-1. Definitions.
+1) Definitions.
 
 1.1. "Contributor" means each individual or entity that creates or contributes to the creation of Modifications.
 
@@ -1055,7 +1055,7 @@ common control with You. For purposes of this definition, "control" means (a) th
 the direction or management of such entity, whether by contract or otherwise, or (b) ownership of more than fifty 
 percent (50%) of the outstanding shares or beneficial ownership of such entity.
 
-2. License Grants.
+2) License Grants.
 
 2.1. The Initial Developer Grant.
 
@@ -1151,7 +1151,7 @@ You may create a Larger Work by combining Covered Software with other code not g
 License and distribute the Larger Work as a single product. In such a case, You must make sure the requirements of 
 this License are fulfilled for the Covered Software.
 
-4. Versions of the License.
+4) Versions of the License.
 
 4.1. New Versions.
 
@@ -1176,7 +1176,7 @@ create and use a modified version of this License if You: (a) rename the license
 name of the license steward (except to note that the license differs from this License); and (b) otherwise make it 
 clear that the license contains terms which differ from this License.
 
-5. DISCLAIMER OF WARRANTY.
+5) DISCLAIMER OF WARRANTY.
 
 COVERED SOFTWARE IS PROVIDED UNDER THIS LICENSE ON AN "AS IS" BASIS, WITHOUT WARRANTY OF 
 ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, WITHOUT LIMITATION, WARRANTIES THAT THE 
@@ -1188,7 +1188,7 @@ REPAIR OR CORRECTION. THIS DISCLAIMER OF WARRANTY CONSTITUTES AN ESSENTIAL PART 
 LICENSE. NO USE OF ANY COVERED SOFTWARE IS AUTHORIZED HEREUNDER EXCEPT UNDER THIS 
 DISCLAIMER.
 
-6. TERMINATION.
+6) TERMINATION.
 
 6.1. This License and the rights granted hereunder will terminate automatically if You fail to comply with terms 
 herein and fail to cure such breach within 30 days of becoming aware of the breach. Provisions which, by their 
@@ -1213,7 +1213,7 @@ of patent infringement litigation, then the reasonable value of the licenses gra
 by You or any distributor hereunder prior to termination (excluding licenses granted to You by any distributor) shall 
 survive termination.
 
-7. LIMITATION OF LIABILITY.
+7) LIMITATION OF LIABILITY.
 
 UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY, WHETHER TORT (INCLUDING 
 NEGLIGENCE), CONTRACT, OR OTHERWISE, SHALL YOU, THE INITIAL DEVELOPER, ANY OTHER 
@@ -1228,7 +1228,7 @@ PROHIBITS SUCH LIMITATION. SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OR LIMI
 INCIDENTAL OR CONSEQUENTIAL DAMAGES, SO THIS EXCLUSION AND LIMITATION MAY NOT APPLY TO 
 YOU.
 
-8. U.S. GOVERNMENT END USERS.
+8) U.S. GOVERNMENT END USERS.
 
 The Covered Software is a "commercial item," as that term is defined in 48 C.F.R. 2.101 (Oct. 1995), consisting of 
 "commercial computer software" (as that term is defined at 48 C.F.R. 252.227-7014(a)(1)) and "commercial computer 
@@ -1237,7 +1237,7 @@ C.F.R. 227.7202-1 through 227.7202-4 (June 1995), all U.S. Government End Users 
 those rights set forth herein. This U.S. Government Rights clause is in lieu of, and supersedes, any other FAR, DFAR, or 
 other clause or provision that addresses Government rights in computer software under this License.
 
-9. MISCELLANEOUS.
+9) MISCELLANEOUS.
 
 This License represents the complete agreement concerning subject matter hereof. If any provision of this License is held to 
 be unenforceable, such provision shall be reformed only to the extent necessary to make it enforceable. This License shall be 
@@ -1251,7 +1251,7 @@ be construed against the drafter shall not apply to this License. You agree that
 the United States export administration regulations (and the export control laws and regulation of any other countries) when 
 You use, distribute or otherwise make available any Covered Software.
 
-10. RESPONSIBILITY FOR CLAIMS.
+10) RESPONSIBILITY FOR CLAIMS.
 
 As between Initial Developer and the Contributors, each party is responsible for claims and damages arising, directly or 
 indirectly, out of its utilization of rights under this License and You agree to work with Initial Developer and Contributors to 
@@ -1275,7 +1275,7 @@ Copyright 2001-2005 &copy; MetaStuff, Ltd. All Rights Reserved.
 Redistribution and use of this software and associated documentation ("Software"), with or without modification, are 
 permitted provided that the following conditions are met: 
 
-1. Redistributions of source code must retain copyright statements and notices. Redistributions must also contain a 
+1) Redistributions of source code must retain copyright statements and notices. Redistributions must also contain a 
 copy of this document. 
 
 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following 
@@ -1310,7 +1310,7 @@ THE ACCOMPANYING PROGRAM IS PROVIDED UNDER THE TERMS OF THIS ECLIPSE PUBLIC LICE
 ("AGREEMENT"). ANY USE, REPRODUCTION OR DISTRIBUTION OF THE PROGRAM CONSTITUTES 
 RECIPIENT'S ACCEPTANCE OF THIS AGREEMENT.
 
-1. DEFINITIONS
+1) DEFINITIONS
 
 "Contribution" means:
 
@@ -1334,7 +1334,7 @@ Contribution alone or when combined with the Program.
 
 "Recipient" means anyone who receives the Program under this Agreement, including all Contributors.
 
-2. GRANT OF RIGHTS
+2) GRANT OF RIGHTS
 
 a) Subject to the terms of this Agreement, each Contributor hereby grants Recipient a non-exclusive, worldwide, 
 royalty-free copyright license to reproduce, prepare derivative works of, publicly display, publicly perform, 
@@ -1391,7 +1391,7 @@ Contributors may not remove or alter any copyright notices contained within the 
 Each Contributor must identify itself as the originator of its Contribution, if any, in a manner that reasonably allows 
 subsequent Recipients to identify the originator of the Contribution.
 
-4. COMMERCIAL DISTRIBUTION
+4) COMMERCIAL DISTRIBUTION
 
 Commercial distributors of software may accept certain responsibilities with respect to end users, business partners and the 
 like. While this license is intended to facilitate the commercial use of the Program, the Contributor who includes the Program 
@@ -1412,7 +1412,7 @@ section, the Commercial Contributor would have to defend claims against the othe
 claims and warranties, and if a court requires any other Contributor to pay any damages as a result, the Commercial 
 Contributor must pay those damages.
 
-5. NO WARRANTY
+5) NO WARRANTY
 
 EXCEPT AS EXPRESSLY SET FORTH IN THIS AGREEMENT, THE PROGRAM IS PROVIDED ON AN "AS IS" 
 BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, EITHER EXPRESS OR IMPLIED INCLUDING, 
@@ -1422,7 +1422,7 @@ determining the appropriateness of using and distributing the Program and assume
 rights under this Agreement , including but not limited to the risks and costs of program errors, compliance with applicable 
 laws, damage to or loss of data, programs or equipment, and unavailability or interruption of operations.
 
-6. DISCLAIMER OF LIABILITY
+6) DISCLAIMER OF LIABILITY
 
 EXCEPT AS EXPRESSLY SET FORTH IN THIS AGREEMENT, NEITHER RECIPIENT NOR ANY CONTRIBUTORS 
 SHALL HAVE ANY LIABILITY FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR 
@@ -1432,7 +1432,7 @@ NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OR DISTRIBUTION OF TH
 PROGRAM OR THE EXERCISE OF ANY RIGHTS GRANTED HEREUNDER, EVEN IF ADVISED OF THE 
 POSSIBILITY OF SUCH DAMAGES.
 
-7. GENERAL
+7) GENERAL
 
 If any provision of this Agreement is invalid or unenforceable under applicable law, it shall not affect the validity or 
 enforceability of the remainder of the terms of this Agreement, and without further action by the parties hereto, such 
@@ -1482,7 +1482,7 @@ States Department of Energy and the University of California.
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following 
 conditions are met: 
 
-1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following 
+1) Redistributions of source code must retain the above copyright notice, this list of conditions and the following 
 disclaimer. 
 
 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following 
@@ -1503,11 +1503,13 @@ HP acknowledges the redistribution of the following open source components that 
 * java-1.7.0-openJDK, Version 1.7.0
 * ubuntu-standard, Version 12.04.lts
 
-### GNU GENERAL PUBLIC LICENSE <br />
+### GNU GENERAL PUBLIC LICENSE
+
 Version 2, June 1991
 
 Copyright &copy; 1989, 1991 Free Software Foundation, Inc.,
 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
+
 Everyone is permitted to copy and distribute verbatim copies
 of this license document, but changing it is not allowed.
 
@@ -1582,7 +1584,7 @@ is covered only if its contents constitute a work based on the
 Program (independent of having been made by running the Program).
 Whether that is true depends on what the Program does.
 
-1. You may copy and distribute verbatim copies of the Program's
+1) You may copy and distribute verbatim copies of the Program's
 source code as you receive it, in any medium, provided that you
 conspicuously and appropriately publish on each copy an appropriate
 copyright notice and disclaimer of warranty; keep intact all the
@@ -1593,7 +1595,7 @@ along with the Program.
 You may charge a fee for the physical act of transferring a copy, and
 you may at your option offer warranty protection in exchange for a fee.
 
-2. You may modify your copy or copies of the Program or any portion
+2) You may modify your copy or copies of the Program or any portion
 of it, thus forming a work based on the Program, and copy and
 distribute such modifications or work under the terms of Section 1
 above, provided that you also meet all of these conditions:
@@ -1637,7 +1639,7 @@ with the Program (or with a work based on the Program) on a volume of
 a storage or distribution medium does not bring the other work under
 the scope of this License.
 
-3. You may copy and distribute the Program (or a work based on it,
+3) You may copy and distribute the Program (or a work based on it,
 under Section 2) in object code or executable form under the terms of
 Sections 1 and 2 above provided that you also do one of the following:
 
@@ -1675,7 +1677,7 @@ access to copy the source code from the same place counts as
 distribution of the source code, even though third parties are not
 compelled to copy the source along with the object code.
 
-4. You may not copy, modify, sublicense, or distribute the Program
+4) You may not copy, modify, sublicense, or distribute the Program
 except as expressly provided under this License.  Any attempt
 otherwise to copy, modify, sublicense or distribute the Program is
 void, and will automatically terminate your rights under this License.
@@ -1963,7 +1965,7 @@ work under this License, and how to view a copy of this License.  If
 the interface presents a list of user commands or options, such as a
 menu, a prominent item in the list meets this criterion.
 
-1. Source Code.
+1) Source Code.
 
 The "source code" for a work means the preferred form of the work
 for making modifications to it.  "Object code" means any non-source
@@ -2005,7 +2007,7 @@ Source.
 The Corresponding Source for a work in source code form is that
 same work.
 
-2. Basic Permissions.
+2) Basic Permissions.
 
 All rights granted under this License are granted for the term of
 copyright on the Program, and are irrevocable provided the stated
@@ -2029,7 +2031,7 @@ Conveying under any other circumstances is permitted solely under
 the conditions stated below.  Sublicensing is not allowed; section 10
 makes it unnecessary.
 
-3. Protecting Users' Legal Rights From Anti-Circumvention Law.
+3) Protecting Users' Legal Rights From Anti-Circumvention Law.
 
 No covered work shall be deemed part of an effective technological
 measure under any applicable law fulfilling obligations under article
@@ -2045,7 +2047,7 @@ modification of the work as a means of enforcing, against the work's
 users, your or third parties' legal rights to forbid circumvention of
 technological measures.
 
-4. Conveying Verbatim Copies.
+4) Conveying Verbatim Copies.
 
 You may convey verbatim copies of the Program's source code as you
 receive it, in any medium, provided that you conspicuously and
@@ -2058,7 +2060,7 @@ recipients a copy of this License along with the Program.
 You may charge any price or no price for each copy that you convey,
 and you may offer support or warranty protection for a fee.
 
-5. Conveying Modified Source Versions.
+5) Conveying Modified Source Versions.
 
 You may convey a work based on the Program, or the modifications to
 produce it from the Program, in the form of source code under the
@@ -2068,8 +2070,7 @@ a) The work must carry prominent notices stating that you modified
 it, and giving a relevant date.
 
 b) The work must carry prominent notices stating that it is
-released under this License and any conditions added under section
-7.  This requirement modifies the requirement in section 4 to
+released under this License and any conditions added under section 7. This requirement modifies the requirement in section 4 to
 "keep intact all notices".
 
 c) You must license the entire work, as a whole, under this
@@ -2095,7 +2096,7 @@ beyond what the individual works permit.  Inclusion of a covered work
 in an aggregate does not cause this License to apply to the other
 parts of the aggregate.
 
-6. Conveying Non-Source Forms.
+6) Conveying Non-Source Forms.
 
 You may convey a covered work in object code form under the terms
 of sections 4 and 5, provided that you also convey the
@@ -2187,14 +2188,13 @@ network may be denied when the modification itself materially and
 adversely affects the operation of the network or violates the rules and
 protocols for communication across the network.
 
-
 Corresponding Source conveyed, and Installation Information provided,
 in accord with this section must be in a format that is publicly
 documented (and with an implementation available to the public in
 source code form), and must require no special password or key for
 unpacking, reading or copying.
 
-7. Additional Terms.
+7) Additional Terms.
 
 "Additional permissions" are terms that supplement the terms of this
 License by making exceptions from one or more of its conditions.
@@ -2258,7 +2258,7 @@ Additional terms, permissive or non-permissive, may be stated in the
 form of a separately written license, or stated as exceptions;
 the above requirements apply either way.
 
-8. Termination.
+8) Termination.
 
 You may not propagate or modify a covered work except as expressly
 provided under this License.  Any attempt otherwise to propagate or
@@ -2286,7 +2286,7 @@ this License.  If your rights have been terminated and not permanently
 reinstated, you do not qualify to receive new licenses for the same
 material under section 10.
 
-9. Acceptance Not Required for Having Copies.
+9) Acceptance Not Required for Having Copies.
 
 You are not required to accept this License in order to receive or
 run a copy of the Program.  Ancillary propagation of a covered work
@@ -2297,7 +2297,7 @@ modify any covered work.  These actions infringe copyright if you do
 not accept this License.  Therefore, by modifying or propagating a
 covered work, you indicate your acceptance of this License to do so.
 
-10. Automatic Licensing of Downstream Recipients.
+10) Automatic Licensing of Downstream Recipients.
 
 Each time you convey a covered work, the recipient automatically
 receives a license from the original licensors, to run, modify and
@@ -2322,7 +2322,7 @@ rights granted under this License, and you may not initiate litigation
 any patent claim is infringed by making, using, selling, offering for
 sale, or importing the Program or any portion of it.
 
-11. Patents.
+11) Patents.
 
 A "contributor" is a copyright holder who authorizes use under this
 License of the Program or a work on which the Program is based.  The
@@ -2362,6 +2362,7 @@ actual knowledge that, but for the patent license, your conveying the
 covered work in a country, or your recipient's use of the covered work
 in a country, would infringe one or more identifiable patents in that
 country that you have reason to believe are valid.
+
 If, pursuant to or in connection with a single transaction or
 arrangement, you convey, or propagate by procuring conveyance of, a
 covered work, and grant a patent license to some of the parties
@@ -2389,7 +2390,7 @@ Nothing in this License shall be construed as excluding or limiting
 any implied license or other defenses to infringement that may
 otherwise be available to you under applicable patent law.
 
-12. No Surrender of Others' Freedom.
+12) No Surrender of Others' Freedom.
 
 If conditions are imposed on you (whether by court order, agreement or
 otherwise) that contradict the conditions of this License, they do not
@@ -2401,7 +2402,7 @@ to collect a royalty for further conveying from those to whom you convey
 the Program, the only way you could satisfy both those terms and this
 License would be to refrain entirely from conveying the Program.
 
-13. Use with the GNU Affero General Public License.
+13) Use with the GNU Affero General Public License.
 
 Notwithstanding any other provision of this License, you have
 permission to link or combine any covered work with a work licensed
@@ -2412,7 +2413,7 @@ but the special requirements of the GNU Affero General Public License,
 section 13, concerning interaction through a network will apply to the
 combination as such.
 
-14. Revised Versions of this License.
+14) Revised Versions of this License.
 
 The Free Software Foundation may publish revised and/or new versions of
 the GNU General Public License from time to time.  Such new versions will
@@ -2438,7 +2439,7 @@ permissions.  However, no additional obligations are imposed on any
 author or copyright holder as a result of your choosing to follow a
 later version.
 
-15. Disclaimer of Warranty.
+15) DISCLAIMER OF WARRANTY.
 
 THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY
 APPLICABLE LAW.  EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT
@@ -2449,7 +2450,7 @@ PURPOSE.  THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM
 IS WITH YOU.  SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF
 ALL NECESSARY SERVICING, REPAIR OR CORRECTION.
 
-16. Limitation of Liability.
+16) Limitation of Liability.
 
 IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING
 WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MODIFIES AND/OR CONVEYS
@@ -2461,7 +2462,7 @@ PARTIES OR A FAILURE OF THE PROGRAM TO OPERATE WITH ANY OTHER PROGRAMS),
 EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF
 SUCH DAMAGES.
 
-17. Interpretation of Sections 15 and 16.
+17) Interpretation of Sections 15 and 16.
 
 If the disclaimer of warranty and limitation of liability provided
 above cannot be given local legal effect according to their terms,
@@ -2472,7 +2473,7 @@ copy of the Program in return for a fee.
 
 END OF TERMS AND CONDITIONS
 
-How to Apply These Terms to Your New Programs
+#### How to Apply These Terms to Your New Programs
 
 If you develop a new program, and you want it to be of the greatest
 possible use to the public, the best way to achieve this is to make it
@@ -2577,6 +2578,7 @@ you legal permission to copy, distribute and/or modify the library.
 To protect each distributor, we want to make it very clear that there is no warranty for the free library. Also, if the library is 
 modified by someone else and passed on, the recipients should know that what they have is not the original version, so that 
 the original author's reputation will not be affected by problems that might be introduced by others.
+
 Finally, software patents pose a constant threat to the existence of any free program. We wish to make sure that a company 
 cannot effectively restrict the users of a free program by obtaining a restrictive license from a patent holder. Therefore, we 
 insist that any patent license obtained for a version of the library must be consistent with the full freedom of use specified in 
@@ -2585,6 +2587,7 @@ this license.
 Most GNU software, including some libraries, is covered by the ordinary GNU General Public License. This license, the 
 GNU Lesser General Public License, applies to certain designated libraries, and is quite different from the ordinary General 
 Public License. We use this license for certain libraries in order to permit linking those libraries into non-free programs.
+
 When a program is linked with a library, whether statically or using a shared library, the combination of the two is legally 
 speaking a combined work, a derivative of the original library. The ordinary General Public License therefore permits such 
 linking only if the entire combination fits its criteria of freedom. The Lesser General Public License permits more lax criteria 
@@ -2626,6 +2629,7 @@ programs (which use some of those functions and data) to form executables.
 The "Library", below, refers to any such software library or work which has been distributed under these terms. A "work 
 based on the Library" means either the Library or any derivative work under copyright law: that is to say, a work containing 
 the Library or a portion of it, either verbatim or with modifications and/or translated straightforwardly into another language. 
+
 (Hereinafter, translation is included without limitation in the term "modification".)
 
 "Source code" for a work means the preferred form of the work for making modifications to it. For a library, complete 
@@ -2762,10 +2766,12 @@ You may not copy, modify, sublicense, link with, or distribute the Library excep
 Any attempt otherwise to copy, modify, sublicense, link with, or distribute the Library is void, and will automatically 
 terminate your rights under this License. However, parties who have received copies, or rights, from you under this License 
 will not have their licenses terminated so long as such parties remain in full compliance.
+
 You are not required to accept this License, since you have not signed it. However, nothing else grants you permission to 
 modify or distribute the Library or its derivative works. These actions are prohibited by law if you do not accept this License. 
 Therefore, by modifying or distributing the Library (or any work based on the Library), you indicate your acceptance of this 
 License to do so, and all its terms and conditions for copying, distributing or modifying the Library or works based on it.
+
 Each time you redistribute the Library (or any work based on the Library), the recipient automatically receives a license from 
 the original licensor to copy, distribute, link with or modify the Library subject to these terms and conditions. You may not 
 impose any further restrictions on the recipients' exercise of the rights granted herein. You are not responsible for enforcing 
@@ -2912,12 +2918,12 @@ object code and/or source code for the Application, including any data
 and utility programs needed for reproducing the Combined Work from the
 Application, but excluding the System Libraries of the Combined Work.
 
-1. Exception to Section 3 of the GNU GPL.
+1) Exception to Section 3 of the GNU GPL.
 
 You may convey a covered work under sections 3 and 4 of this License
 without being bound by section 3 of the GNU GPL.
 
-2. Conveying Modified Versions.
+2) Conveying Modified Versions.
 
 If you modify a copy of the Library, and, in your modifications, a
 facility refers to a function or data to be supplied by an Application
@@ -2933,7 +2939,7 @@ whatever part of its purpose remains meaningful, or
 b) under the GNU GPL, with none of the additional permissions of
 this License applicable to that copy.
 
-3. Object Code Incorporating Material from Library Header Files.
+3) Object Code Incorporating Material from Library Header Files.
 
 The object code form of an Application may incorporate material from
 a header file that is part of the Library.  You may convey such object
@@ -2949,7 +2955,7 @@ covered by this License.
 b) Accompany the object code with a copy of the GNU GPL and this license
 document.
 
-4. Combined Works.
+4) Combined Works.
 
 You may convey a Combined Work under terms of your choice that,
 taken together, effectively do not restrict modification of the
@@ -2971,20 +2977,12 @@ copies of the GNU GPL and this license document.
 
 d) Do one of the following:
 
-0) Convey the Minimal Corresponding Source under the terms of this
-License, and the Corresponding Application Code in a form
-suitable for, and under terms that permit, the user to
-recombine or relink the Application with a modified version of
-the Linked Version to produce a modified Combined Work, in the
-manner specified by section 6 of the GNU GPL for conveying
+> 0) Convey the Minimal Corresponding Source under the terms of this License, and the Corresponding Application Code in a form suitable for, and under terms that permit, the user to
+recombine or relink the Application with a modified version of the Linked Version to produce a modified Combined Work, in the manner specified by section 6 of the GNU GPL for conveying
 Corresponding Source.
 
-1) Use a suitable shared library mechanism for linking with the
-Library.  A suitable mechanism is one that (a) uses at run time
-a copy of the Library already present on the user's computer
-system, and (b) will operate properly with a modified version
-of the Library that is interface-compatible with the Linked
-Version.
+> 1) Use a suitable shared library mechanism for linking with the Library.  A suitable mechanism is one that (a) uses at run time a copy of the Library already present on the user's computer
+system, and (b) will operate properly with a modified version of the Library that is interface-compatible with the Linked Version.
 
 e) Provide Installation Information, but only if you would otherwise
 be required to provide such information under section 6 of the
@@ -2998,7 +2996,7 @@ Code. If you use option 4d1, you must provide the Installation
 Information in the manner specified by section 6 of the GNU GPL
 for conveying Corresponding Source.)
 
-5. Combined Libraries.
+5) Combined Libraries.
 
 You may place library facilities that are a work based on the
 Library side by side in a single library together with other library
@@ -3015,7 +3013,7 @@ b) Give prominent notice with the combined library that part of it
 is a work based on the Library, and explaining where to find the
 accompanying uncombined form of the same work.
 
-6. Revised Versions of the GNU Lesser General Public License.
+6) Revised Versions of the GNU Lesser General Public License.
 
 The Free Software Foundation may publish revised and/or new versions
 of the GNU Lesser General Public License from time to time. Such new
@@ -3198,7 +3196,7 @@ Version 1.1
 
 ---------------
 
-1. Definitions.
+1) Definitions.
 
 1.0.1. "Commercial Use" means distribution or otherwise making the
 Covered Code available to a third party.
@@ -3213,7 +3211,6 @@ made by that particular Contributor.
 1.3. "Covered Code" means the Original Code or Modifications or the
 combination of the Original Code and Modifications, in each case
 including portions thereof.
-
 
 1.4. "Electronic Distribution Mechanism" means a mechanism generally
 accepted in the software development community for the electronic
@@ -3275,7 +3272,7 @@ contract or otherwise, or (b) ownership of more than fifty percent
 (50%) of the outstanding shares or beneficial ownership of such
 entity.
 
-2. Source Code License.
+2) Source Code License.
 
 2.1. The Initial Developer Grant.
 
@@ -3459,7 +3456,7 @@ not governed by the terms of this License and distribute the Larger
 Work as a single product. In such a case, You must make sure the
 requirements of this License are fulfilled for the Covered Code.
 
-4. Inability to Comply Due to Statute or Regulation.
+4) Inability to Comply Due to Statute or Regulation.
 
 If it is impossible for You to comply with any of the terms of this
 License with respect to some or all of the Covered Code due to
@@ -3472,12 +3469,12 @@ extent prohibited by statute or regulation, such description must be
 sufficiently detailed for a recipient of ordinary skill to be able to
 understand it.
 
-5. Application of this License.
+5) Application of this License.
 
 This License applies to code to which the Initial Developer has
 attached the notice in Exhibit A and to related Covered Code.
 
-6. Versions of the License.
+6) Versions of the License.
 
 6.1. New Versions.
 Netscape Communications Corporation ("Netscape") may publish revised
@@ -3506,7 +3503,7 @@ Developer, Original Code or Contributor in the notice described in
 Exhibit A shall not of themselves be deemed to be modifications of
 this License.)
 
-7. DISCLAIMER OF WARRANTY.
+7) DISCLAIMER OF WARRANTY.
 
 COVERED CODE IS PROVIDED UNDER THIS LICENSE ON AN "AS IS" BASIS,
 WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING,
@@ -3519,7 +3516,7 @@ COST OF ANY NECESSARY SERVICING, REPAIR OR CORRECTION. THIS DISCLAIMER
 OF WARRANTY CONSTITUTES AN ESSENTIAL PART OF THIS LICENSE. NO USE OF
 ANY COVERED CODE IS AUTHORIZED HEREUNDER EXCEPT UNDER THIS DISCLAIMER.
 
-8. TERMINATION.
+8) TERMINATION.
 
 8.1.  This License and the rights granted hereunder will terminate
 automatically if You fail to comply with terms herein and fail to cure
@@ -3570,7 +3567,7 @@ all end user license agreements (excluding distributors and resellers)
 which have been validly granted by You or any distributor hereunder
 prior to termination shall survive termination.
 
-9. LIMITATION OF LIABILITY.
+9) LIMITATION OF LIABILITY.
 
 UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY, WHETHER TORT
 (INCLUDING NEGLIGENCE), CONTRACT, OR OTHERWISE, SHALL YOU, THE INITIAL
@@ -3587,7 +3584,7 @@ PROHIBITS SUCH LIMITATION. SOME JURISDICTIONS DO NOT ALLOW THE
 EXCLUSION OR LIMITATION OF INCIDENTAL OR CONSEQUENTIAL DAMAGES, SO
 THIS EXCLUSION AND LIMITATION MAY NOT APPLY TO YOU.
 
-10. U.S. GOVERNMENT END USERS.
+10) U.S. GOVERNMENT END USERS.
 
 The Covered Code is a "commercial item," as that term is defined in
 48 C.F.R. 2.101 (Oct. 1995), consisting of "commercial computer
@@ -3597,7 +3594,7 @@ C.F.R. 12.212 and 48 C.F.R. 227.7202-1 through 227.7202-4 (June 1995),
 all U.S. Government End Users acquire Covered Code with only those
 rights set forth herein.
 
-11. MISCELLANEOUS.
+11) MISCELLANEOUS.
 
 This License represents the complete agreement concerning subject
 matter hereof. If any provision of this License is held to be
@@ -3618,7 +3615,7 @@ Any law or regulation which provides that the language of a contract
 shall be construed against the drafter shall not apply to this
 License.
 
-12. RESPONSIBILITY FOR CLAIMS.
+12) RESPONSIBILITY FOR CLAIMS.
 
 As between Initial Developer and the Contributors, each party is
 responsible for claims and damages arising, directly or indirectly,
@@ -3627,7 +3624,7 @@ work with Initial Developer and Contributors to distribute such
 responsibility on an equitable basis. Nothing herein is intended or
 shall be deemed to constitute any admission of liability.
 
-13. MULTIPLE-LICENSED CODE.
+13) MULTIPLE-LICENSED CODE.
 
 Initial Developer may designate portions of the Covered Code as
 "Multiple-Licensed".  "Multiple-Licensed" means that the Initial
@@ -3656,13 +3653,6 @@ NOTE: The text of this Exhibit A may differ slightly from the text of
 the notices in the Source Code files of the Original Code. You should
 use the text of this Exhibit A rather than the text found in the
 Original Code Source Code for Your Modifications.
-
-
-
-
-
-
-<!-- Insert above here --> 
 
 ### OpenLDAP Public License Version 2.8
 
@@ -3891,25 +3881,25 @@ Redistribution and use in source and binary forms, with or without
 modification, is permitted provided that the following conditions
 are met:
 
-1. Redistributions of source code must retain the above copyright
+1) Redistributions of source code must retain the above copyright
 notice, this list of conditions and the following disclaimer.
 
-2. Redistributions in binary form must reproduce the above copyright
+2) Redistributions in binary form must reproduce the above copyright
 notice, this list of conditions and the following disclaimer in
 the documentation and/or other materials provided with the
 distribution.
 
-3. The name "PHP" must not be used to endorse or promote products
+3) The name "PHP" must not be used to endorse or promote products
 derived from this software without prior written permission. For
 written permission, please contact group@php.net.
 
-4. Products derived from this software may not be called "PHP", nor
+4) Products derived from this software may not be called "PHP", nor
 may "PHP" appear in their name, without prior written permission
 from group@php.net.  You may indicate that your software works in
 conjunction with PHP by saying "Foo for PHP" instead of calling
 it "PHP Foo" or "phpfoo"
 
-5. The PHP Group may publish revised and/or new versions of the
+5) The PHP Group may publish revised and/or new versions of the
 license from time to time. Each version will be given a
 distinguishing version number.
 
@@ -3921,10 +3911,8 @@ published by the PHP Group. No one other than the PHP Group has
 the right to modify the terms applicable to covered code created
 under this License.
 
-6. Redistributions of any form whatsoever must retain the following
-acknowledgment:
-"This product includes PHP software, freely available from
-http://www.php.net/software/".
+6) Redistributions of any form whatsoever must retain the following
+acknowledgment: "This product includes PHP software, freely available from http://www.php.net/software/".
 
 THIS SOFTWARE IS PROVIDED BY THE PHP DEVELOPMENT TEAM ''AS IS'' AND 
 ANY EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
@@ -3996,6 +3984,7 @@ disclaimer in the documentation and/or other materials provided with the distrib
 
 3. Neither the name of Django nor the names of its contributors may be used to endorse or promote products derived from 
 this software without specific prior written permission.
+
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY 
 EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF 
 MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL 
@@ -4201,8 +4190,7 @@ documentation and/or other materials provided with the distribution.
 contributors may be used to endorse or promote products derived 
 from this software without specific prior written permission.
 
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS
-IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
 TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
 PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER
 OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
