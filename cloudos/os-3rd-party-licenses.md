@@ -32,37 +32,37 @@ Software Release Date: December 2013
   * [ANTLR License](#antlr-license)
   * [ANTLR 2 License](#antlr-2-license)
   * [AOP Alliance License](#aop-alliance-license)
-  * [Apache License Version 2.0](#apache-license-version-2.0)
+  * [Apache License Version 2.0](#apache-license-version-20)
   * [ASM License](#asm-license)
-  * [Bouncycastle License](#)
-  * [Common Development and Distribution License (CDDL) Version 1.0](#)
-  * [Common Development And Distribution License (CDDL) Version 1.0.1](#)
-  * [Common Development And Distribution License (CDDL)Version 1.1](#)
-  * [Dom4j License](#)
-  * [Eclipse Public License Version 1.0](#)
-  * [Flex License](#)
-  * [GNU General Public License (GPL) Version 2](#)
-  * [GNU General Public License (GPL) Version 3](#)
-  * [GNU Lesser General Public License (LGPL) Version 2.1](#)
-  * [GNU Lesser General Public License (LGPL) Version 3.0](#)
-  * [HyperSQL License](#)
-  * [Joyent, Inc License](#)
-  * [JSON License](#)
-  * [JSR-305 License](#)
-  * [Mozilla Public License Version 1.1](#)
-  * [OpenLDAP Public License Version 2.8](#)
-  * [Oracle Berkeley DB License](#)
-  * [PHP License Version 3.01](#)
-  * [PostgreSQL License](#)
-  * [Python-Django License](#)
-  * [QOS.ch License](#)
-  * [Runit License](#)
-  * [Stax2 License](#)
-  * [Sudo License](#)
-  * [Tatsuhiro Tsuijikawa License](#)
-  * [VirtualEnv License](#)
-  * [Werken Company License](#)
-  * [XOM License](#)
+  * [Bouncycastle License](#bouncycastle-license)
+  * [Common Development and Distribution License (CDDL) Version 1.0](#common-development-and-distribution-license-cddl-version-10)
+  * [Common Development And Distribution License (CDDL) Version 1.0 1](#common-development-and-distribution-license-cddl-version-10-1)
+  * [Common Development And Distribution License (CDDL) Version 1.1](#common-development-and-distribution-license-cddl-version-11)
+  * [Dom4j License](#dom4j-license)
+  * [Eclipse Public License Version 1.0](#eclipse-public-license-version-10)
+  * [Flex License](#flex-license)
+  * [GNU General Public License (GPL) Version 2](#gnu-general-public-license-gpl-version-2)
+  * [GNU General Public License (GPL) Version 3](#gnu-general-public-license-gpl-version-3)
+  * [GNU Lesser General Public License (LGPL) Version 2.1](#gnu-lesser-general-public-license-lgpl-version-21)
+  * [GNU Lesser General Public License (LGPL) Version 3.0](#gnu-lesser-general-public-license-lgpl-version-30)
+  * [HyperSQL License](#hypersql-license)
+  * [Joyent, Inc License](#joyent-inc-license)
+  * [JSON License](#json-license)
+  * [JSR-305 License](#jsr-305-license)
+  * [Mozilla Public License Version 1.1](#mozilla-public-license-version-11)
+  * [OpenLDAP Public License Version 2.8](#openldap-public-license-version-28)
+  * [Oracle Berkeley DB License](#oracle-berkeley-db-license)
+  * [PHP License Version 3.01](#php-license-version-301)
+  * [PostgreSQL License](#postgresql-license)
+  * [Python-Django License](#python-django-license)
+  * [QOS.ch License](#qosch-license)
+  * [Runit License](#runit-license)
+  * [Stax2 License](#stax2-license)
+  * [Sudo License](#sudo-license)
+  * [Tatsuhiro Tsuijikawa License](#tatsuhiro-tsuijikawa-license)
+  * [VirtualEnv License](#virtualenv-license)
+  * [Werken Company License](#werken-company-license)
+  * [XOM License](#xom-license)
 
   
 ## Legal Notices
@@ -97,9 +97,11 @@ The only warranties for HP products and services are set forth in the express wa
 accompanying such products and services. Nothing herein should be construed as constituting an additional 
 warranty. HP shall not be liable for technical or editorial errors or omissions contained herein.
 The information contained herein is subject to change without notice.
+
 HP Cloud OS is experimental and is provided as a courtesy, free of charge, "AS-IS" by Hewlett-Packard 
-Company ("HP"). HP shall have no obligation to maintain or support this software. HP MAKES NO 
-EXPRESS OR IMPLIED WARRANTY OF ANY KIND REGARDING THIS SOFTWARE INCLUDING ANY 
+Company ("HP"). HP shall have no obligation to maintain or support this software. 
+
+HP MAKES NO EXPRESS OR IMPLIED WARRANTY OF ANY KIND REGARDING THIS SOFTWARE INCLUDING ANY 
 WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE OR NON-
 INFRINGEMENT. HP SHALL NOT BE LIABLE FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL 
 OR CONSEQUENTIAL DAMAGES, WHETHER BASED ON CONTRACT, TORT OR ANY OTHER LEGAL 
@@ -254,7 +256,7 @@ http://www.apache.org/licenses/
 
 TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
 
-1. Definitions.
+1) Definitions.
 
 "License" shall mean the terms and conditions for use, reproduction,
 and distribution as defined by Sections 1 through 9 of this document.
@@ -312,14 +314,14 @@ designated in writing by the copyright owner as "Not a Contribution."
 on behalf of whom a Contribution has been received by Licensor and
 subsequently incorporated within the Work.
 
-2. Grant of Copyright License. Subject to the terms and conditions of
+2) Grant of Copyright License. Subject to the terms and conditions of
 this License, each Contributor hereby grants to You a perpetual,
 worldwide, non-exclusive, no-charge, royalty-free, irrevocable
 copyright license to reproduce, prepare Derivative Works of,
 publicly display, publicly perform, sublicense, and distribute the
 Work and such Derivative Works in Source or Object form.
 
-3. Grant of Patent License. Subject to the terms and conditions of
+3) Grant of Patent License. Subject to the terms and conditions of
 this License, each Contributor hereby grants to You a perpetual,
 worldwide, non-exclusive, no-charge, royalty-free, irrevocable
 (except as stated in this section) patent license to make, have made,
@@ -335,7 +337,7 @@ or contributory patent infringement, then any patent licenses
 granted to You under this License for that Work shall terminate
 as of the date such litigation is filed.
 
-4. Redistribution. You may reproduce and distribute copies of the
+4) Redistribution. You may reproduce and distribute copies of the
 Work or Derivative Works thereof in any medium, with or without
 modifications, and in Source or Object form, provided that You
 meet the following conditions:
@@ -376,7 +378,7 @@ for any such Derivative Works as a whole, provided Your use,
 reproduction, and distribution of the Work otherwise complies with
 the conditions stated in this License.
 
-5. Submission of Contributions. Unless You explicitly state otherwise,
+5) Submission of Contributions. Unless You explicitly state otherwise,
 any Contribution intentionally submitted for inclusion in the Work
 by You to the Licensor shall be under the terms and conditions of
 this License, without any additional terms or conditions.
@@ -384,12 +386,12 @@ Notwithstanding the above, nothing herein shall supersede or modify
 the terms of any separate license agreement you may have executed
 with Licensor regarding such Contributions.
 
-6. Trademarks. This License does not grant permission to use the trade
+6) Trademarks. This License does not grant permission to use the trade
 names, trademarks, service marks, or product names of the Licensor,
 except as required for reasonable and customary use in describing the
 origin of the Work and reproducing the content of the NOTICE file.
 
-7. Disclaimer of Warranty. Unless required by applicable law or
+7) Disclaimer of Warranty. Unless required by applicable law or
 agreed to in writing, Licensor provides the Work (and each
 Contributor provides its Contributions) on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
@@ -399,7 +401,7 @@ PARTICULAR PURPOSE. You are solely responsible for determining the
 appropriateness of using or redistributing the Work and assume any
 risks associated with Your exercise of permissions under this License.
 
-8. Limitation of Liability. In no event and under no legal theory,
+8) Limitation of Liability. In no event and under no legal theory,
 whether in tort (including negligence), contract, or otherwise,
 unless required by applicable law (such as deliberate and grossly
 negligent acts) or agreed to in writing, shall any Contributor be
@@ -411,7 +413,7 @@ work stoppage, computer failure or malfunction, or any and all
 other commercial damages or losses), even if such Contributor
 has been advised of the possibility of such damages.
 
-9. Accepting Warranty or Additional Liability. While redistributing
+9) Accepting Warranty or Additional Liability. While redistributing
 the Work or Derivative Works thereof, You may choose to offer,
 and charge a fee for, acceptance of support, warranty, indemnity,
 or other liability obligations and/or rights consistent with this
@@ -516,9 +518,9 @@ HP acknowledges the redistribution of the following open source component that a
 * javax-transaction-jta, Version 1.1
 * libjsr311-api-java, Version 1.1.1
 
-### COMMON DEVELOPMENT AND DISTRIBUTION LICENSE (CDDL) Version 1.0
+COMMON DEVELOPMENT AND DISTRIBUTION LICENSE (CDDL) Version 1.0
 
-1. Definitions.
+1) Definitions.
 
 1.1. "Contributor" means each individual or entity that creates or contributes to the creation of Modifications.
 
@@ -565,7 +567,7 @@ common control with You. For purposes of this definition, "control" means (a) th
 the direction or management of such entity, whether by contract or otherwise, or (b) ownership of more than fifty 
 percent (50%) of the outstanding shares or beneficial ownership of such entity.
 
-2. License Grants. 
+2) License Grants. 
 
 2.1. The Initial Developer Grant.
 
@@ -615,7 +617,7 @@ Contributor Version, or (ii) the combination of Modifications made by that Contr
 (except as part of the Contributor Version) or other devices; or (3) under Patent Claims infringed by 
 Covered Software in the absence of Modifications made by that Contributor. 
 
-3. Distribution Obligations.
+3) Distribution Obligations.
 
 3.1. Availability of Source Code.
 
@@ -665,7 +667,7 @@ You may create a Larger Work by combining Covered Software with other code not g
 License and distribute the Larger Work as a single product. In such a case, You must make sure the requirements of 
 this License are fulfilled for the Covered Software. 
 
-4. Versions of the License. 
+4) Versions of the License. 
 
 4.1. New Versions.
 
@@ -690,7 +692,7 @@ create and use a modified version of this License if You: (a) rename the license
 name of the license steward (except to note that the license differs from this License); and (b) otherwise make it 
 clear that the license contains terms which differ from this License.
 
-5. DISCLAIMER OF WARRANTY.
+5) DISCLAIMER OF WARRANTY.
 
 COVERED SOFTWARE IS PROVIDED UNDER THIS LICENSE ON AN "AS IS" BASIS, WITHOUT WARRANTY OF 
 ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, WITHOUT LIMITATION, WARRANTIES THAT THE 
@@ -702,7 +704,7 @@ REPAIR OR CORRECTION. THIS DISCLAIMER OF WARRANTY CONSTITUTES AN ESSENTIAL PART 
 LICENSE. NO USE OF ANY COVERED SOFTWARE IS AUTHORIZED HEREUNDER EXCEPT UNDER THIS 
 DISCLAIMER. 
 
-6. TERMINATION. 
+6) TERMINATION. 
 
 6.1. This License and the rights granted hereunder will terminate automatically if You fail to comply with terms 
 herein and fail to cure such breach within 30 days of becoming aware of the breach. Provisions which, by their 
@@ -722,7 +724,7 @@ against such Participant either unilaterally or pursuant to a written agreement 
 by You or any distributor hereunder prior to termination (excluding licenses granted to You by any distributor) shall 
 survive termination.
 
-7. LIMITATION OF LIABILITY.
+7) LIMITATION OF LIABILITY.
 
 UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY, WHETHER TORT (INCLUDING 
 NEGLIGENCE), CONTRACT, OR OTHERWISE, SHALL YOU, THE INITIAL DEVELOPER, ANY OTHER 
@@ -737,7 +739,7 @@ APPLICABLE LAW PROHIBITS SUCH LIMITATION. SOME JURISDICTIONS DO NOT ALLOW THE EX
 OR LIMITATION OF INCIDENTAL OR CONSEQUENTIAL DAMAGES, SO THIS EXCLUSION AND LIMITATION 
 MAY NOT APPLY TO YOU.
 
-8. U.S. GOVERNMENT END USERS.
+8) U.S. GOVERNMENT END USERS.
 
 The Covered Software is a "commercial item," as that term is defined in 48 C.F.R. 2.101 (Oct. 1995), consisting of 
 "commercial computer software" (as that term is defined at 48 C.F.R. 252.227-7014(a)(1)) and "commercial computer 
@@ -746,7 +748,7 @@ C.F.R. 227.7202-1 through 227.7202-4 (June 1995), all U.S. Government End Users 
 those rights set forth herein. This U.S. Government Rights clause is in lieu of, and supersedes, any other FAR, DFAR, or 
 other clause or provision that addresses Government rights in computer software under this License.
 
-9. MISCELLANEOUS.
+9) MISCELLANEOUS.
 
 This License represents the complete agreement concerning subject matter hereof. If any provision of this License is held to 
 be unenforceable, such provision shall be reformed only to the extent necessary to make it enforceable. This License shall be 
@@ -760,7 +762,7 @@ be construed against the drafter shall not apply to this License. You agree that
 the United States export administration regulations (and the export control laws and regulation of any other countries) when 
 You use, distribute or otherwise make available any Covered Software.
 
-10. RESPONSIBILITY FOR CLAIMS.
+10) RESPONSIBILITY FOR CLAIMS.
 
 As between Initial Developer and the Contributors, each party is responsible for claims and damages arising, directly or 
 indirectly, out of its utilization of rights under this License and You agree to work with Initial Developer and Contributors to 
@@ -773,15 +775,15 @@ The code released under the CDDL shall be governed by the laws of the State of C
 provisions). Any litigation relating to this License shall be subject to the jurisdiction of the Federal Courts of the Northern 
 District of California and the state courts of the State of California, with venue lying in Santa Clara County, California.
 
-### Common Development And Distribution License (CDDL) Version 1.0
+### Common Development And Distribution License (CDDL) Version 1.0 1
 
 HP acknowledges the redistribution of the following open source components that are provided under this license:
 
 * glassfish-activation, Version 1.1
 
-COMMON DEVELOPMENT AND DISTRIBUTION LICENSE (CDDL) Version 1.0 
+COMMON DEVELOPMENT AND DISTRIBUTION LICENSE (CDDL) Version 1.0 1
 
-1. Definitions.  
+1) Definitions.  
 
 1.1. Contributor means each individual or entity that creates or contributes to the creation of Modifications.  
 
@@ -823,7 +825,7 @@ For purposes of this definition, control means (a) the power, direct or indirect
 entity, whether by contract or otherwise, or (b) ownership of more than fifty percent (50%) of the outstanding shares or 
 beneficial ownership of such entity.  
 
- 2. License Grants. 
+2) License Grants. 
 
 2.1. The Initial Developer Grant. Conditioned upon Your compliance with Section 3.1 below and subject to third party 
 intellectual property claims, the Initial Developer hereby grants You a world-wide, royalty-free, non-exclusive license:  
@@ -863,7 +865,7 @@ combination of Modifications made by that Contributor with other software (excep
 other devices; or (3) under Patent Claims infringed by Covered Software in the absence of Modifications made by that 
 Contributor.  
 
-    3. Distribution Obligations.  
+3) Distribution Obligations.  
 
 3.1. Availability of Source Code. Any Covered Software that You distribute or otherwise make available in Executable form 
 must also be made available in Source Code form and that Source Code form must be distributed only under the terms of this 
@@ -993,9 +995,9 @@ The code released under the CDDL shall be governed by the laws of the State of C
 provisions). Any litigation relating to this License shall be subject to the jurisdiction of the Federal Courts of the Northern 
 District of California and the state courts of the State of California, with venue lying in Santa Clara County, California.
 
-### Common Development And Distribution License (CDDL)Version 1.1
+### Common Development And Distribution License (CDDL) Version 1.1
 
-COMMON DEVELOPMENT AND DISTRIBUTION LICENSE (CDDL)Version 1.1
+COMMON DEVELOPMENT AND DISTRIBUTION LICENSE (CDDL) Version 1.1
 
 HP acknowledges the redistribution of the following open source components that are provided under this license:
 
@@ -1099,7 +1101,7 @@ or (ii) the combination of Modifications made by that Contributor with other sof
 Contributor Version) or other devices; or (3) under Patent Claims infringed by Covered Software in the absence of 
 Modifications made by that Contributor.
 
-3. Distribution Obligations.
+3) Distribution Obligations.
 
 3.1. Availability of Source Code.
 
@@ -3337,7 +3339,7 @@ Contributor Version) or other devices; or 4) under Patent Claims
 infringed by Covered Code in the absence of Modifications made by
 that Contributor.
 
-3. Distribution Obligations.
+3) Distribution Obligations.
 
 3.1. Application of License.
 The Modifications which You create or to which You contribute are
@@ -4119,7 +4121,7 @@ HP acknowledges the redistribution of the following open source component that a
 
 * argparse4j, Version 0.2.2
 
-
+<pre>
     /*
     * Copyright &copy; 2011, 2013 Tatsuhiro Tsujikawa
     *
@@ -4143,18 +4145,16 @@ HP acknowledges the redistribution of the following open source component that a
     * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
     * SOFTWARE.
     */
+</pre>	
 
-	
 ### VirtualEnv License
 
 HP acknowledges the redistribution of the following open source components that are provided under this license:
 
 * python-virtualenv, Version 1.7.2
 
-Copyright &copy; 2007 Ian Bicking and Contributors 
-
-Copyright &copy; 2009 Ian Bicking, The Open Planning Project 
-
+Copyright &copy; 2007 Ian Bicking and Contributors <br />
+Copyright &copy; 2009 Ian Bicking, The Open Planning Project <br />
 Copyright &copy; 2011-2013 The virtualenv developers
 
 Permission is hereby granted, free of charge, to any person obtaining
