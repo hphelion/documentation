@@ -22,7 +22,7 @@ the fastest growing open-source cloud community. This documentation site is for 
 </tr>
 </table>
 
-<p style="font-size:small;"> <a href="/cloudos/os-3rd-party-license-agreements/" target="os3p"> HP Cloud OS Open Source and Third-Party Software License Agreements </a> </p>
+<p style="font-size: x-small;"> <a href="/cloudos/os-3rd-party-license-agreements/" target="os3p">HP Cloud OS Open Source and Third-Party Software License Agreements &#187;</a> </p>
 
 <!-- 
 ## Video Tutorial

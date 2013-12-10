@@ -94,6 +94,8 @@ Note: To de-allocate a Compute or Controller node from your Admin Node, click th
 Node option from the drop-down menu on the Manage Node dialog. This action sets the
 identified node to a de-allocated state.
 
+> **Note**: If a node is part of a compute region, its state is Deployed, and you cannot perform the Delete Node action on it. If you were to delete the compute region, the node's state would become Not Allocated; then if desired, you could use Delete Node to delete it. 
+
 ## Complete Storage Configuration
 
 Based on your Storage Infrastructure layout (see "Storage Infrastructure" (link) ) at this point,
