@@ -94,22 +94,20 @@ Note: To de-allocate a Compute or Controller node from your Admin Node, click th
 Node option from the drop-down menu on the Manage Node dialog. This action sets the
 identified node to a de-allocated state.
 
-> **Note**: If a node is part of a compute region, its state is Deployed, and you cannot perform the Delete Node action on it. If you were to delete the compute region, the node's state would become Not Allocated; then if desired, you could use Delete Node to delete it. 
+<!-- US1896, removed from UI
+**Note**: If a node is part of a compute region, its state is Deployed, and you cannot perform the Delete Node action on it. 
+If you were to delete the compute region, the node's state would become Not Allocated; then if desired, you could use 
+Delete Node to delete it. 
+--> 
 
 ## Complete Storage Configuration
 
-Based on your Storage Infrastructure layout (see "Storage Infrastructure" (link) ) at this point,
-you can configure the additional storage on the nodes.
+Based on your previously determined [Storage Infrastructure](#storage-infrastructure) layout, at this point, you can configure the additional storage on the nodes.
 
-**Note:** The default root partition is approximately 10 GB.
+The default root partitioning scheme is to reserve the first 255 MB for the boot partition, and then allocate the entire rest 
+of the disk to the LVM partition, with the Ubuntu OS calculating how much goes to swap space and how goes to the root file system.
 
-You may choose between the following options:
-
-* Extend the root partition on all the nodes to use the additional storage space.
-
-* After creating the cloud, mount the folders suggested in the "Storage Infrastructure" ( link ) on their respective external storage.
-HP recommends, for ease of installation, that you extend the root partition of all the nodes based on the Storage
-Infrastructure table in the "Storage Infrastructure" (link).
+For details, see the [Ubuntu documentation](https://help.ubuntu.com/community/DiskSpace).
 
 ## Create a Cloud
 
