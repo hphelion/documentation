@@ -137,7 +137,7 @@ For a quick search of the [Knowledge Base](https://community.hpcloud.com/knowled
 ###[Image](https://community.hpcloud.com/search/knowledge/image) ### {#Image}
 :    1) An installable release package of a program, application, or software system.  As in, "We need to install the new image of Ruby Fog."  2) A copy of a virtual server including the operating system information, system state, and application configurations.
 
-###[Image (bootable)](https://community.hpcloud.com/search/knowledge/image+bootable) ### {#ImageBootable)
+###[Image (bootable)](https://community.hpcloud.com/search/knowledge/image+bootable) ### {#ImageBootable}
 :    *See* [Volume (bootable)](#VolumeBootable).
 
 ###[Image (partner)](https://community.hpcloud.com/search/knowledge/image+partner) ### {#ImagePartner}
@@ -290,7 +290,7 @@ For a quick search of the [Knowledge Base](https://community.hpcloud.com/knowled
 ###[Volume](blah) ### {#Volume}
 :    Definition
 
-###[Volume (bootable)](https://community.hpcloud.com/search/knowledge/volume+bootable) ### {#VolumeBootable)
+###[Volume (bootable)](https://community.hpcloud.com/search/knowledge/volume+bootable) ### {#VolumeBootable}
 :    A previously-saved (by a user) bootable server [volume](#Volume) (also sometimes called an [image](#Image)).
 
 ## W ##
