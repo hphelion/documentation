@@ -29,7 +29,7 @@ A default configuration comes with HP Cloud compute activation and includes:
 
 For a high level understanding of the default Network topology in Compute 13.5, see [Understanding Network Topology in 13.5](https://community.hpcloud.com/article/understanding-network-topology-135). 
 
-For more specific questions, try our [Forum](https://community.hpcloud.com/search/forum/network) where you can learn from our own internal experts as well as other users in the HP Public Cloud community.
+For more specific questions, use the [Knowledge Base](https://community.hpcloud.com/search/knowledge/network) or [Forums](https://community.hpcloud.com/search/forum/network) where you can learn from our own internal experts as well as other users in the HP Public Cloud community.
 
 ##Customizing your Configuration##
 
