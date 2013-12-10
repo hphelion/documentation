@@ -22,6 +22,9 @@ the fastest growing open-source cloud community. This documentation site is for 
 </tr>
 </table>
 
+<p style="font-size:small;"> <a href="/cloudos/os-3rd-party-license-agreements/" target="os3p"> HP Cloud OS Open Source and Third-Party Software License Agreements </a> </p>
+
+<!-- 
 ## Video Tutorial
 
 Here's a good video to get you started.  Mark Perriera, HP Cloud 0S chief architect, introduces the platform, its services, and related OpenStack technology.
@@ -30,6 +33,8 @@ Here's a good video to get you started.  Mark Perriera, HP Cloud 0S chief archit
 <td style="text-align: center; vertical-align: middle; width:500px;"> 
  <iframe width="400" height="225" src="//www.youtube.com/embed/Ba2wMPU5tpk" frameborder="0" allowfullscreen> </iframe> </td>
 </tr> </table>
+--> 
+
 
 <!-- Note: Cloud OS blue = #1796D3 --> 
 
