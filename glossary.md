@@ -141,13 +141,13 @@ For a quick search of the [Knowledge Base](https://community.hpcloud.com/knowled
 :    *See* [Volume (bootable)](#VolumeBootable).
 
 ###[Image (partner)](https://community.hpcloud.com/search/knowledge/image+partner) ### {#ImagePartner)
-:    definition
+:    A server volume made available by HP partners. *See also* [Image](#Image).
 
 ###[Image (private)](https://community.hpcloud.com/search/knowledge/image+private) ### {#ImagePrivate)
-:    definition
+:    A server volume you created from a [snapshot](#snapshot) of an instance. *See also* [Image](#Image).
 
 ###[Image (public)](https://community.hpcloud.com/search/knowledge/image+public) ### {#ImagePublic)
-:    definition
+:    A server volume provided by HP. *See also* [Image](#Image).
 
 ###[Instance](https://community.hpcloud.com/search/knowledge/instance) ### {#Instance}
 :    A virtual machine or server in the cloud environment.
@@ -259,6 +259,9 @@ For a quick search of the [Knowledge Base](https://community.hpcloud.com/knowled
 
 ###[Service Catalog](https://community.hpcloud.com/search/knowledge/Service+Catalog) ### {#ServiceCatalog}
 :    List of services available to your and the endpoints that you access using the Authentication Token.
+
+###[Snapshot](https://community.hpcloud.com/search/knowledge/snapshot) ### {#Snapshot} 
+:    A replica of an instance or volume that can be used to create new images or volumes.
 
 ###[SSL](https://community.hpcloud.com/search/knowledge/SSL) ### {#SSL}
 :    Acronym for the secure socket layer encryption protocol. 
