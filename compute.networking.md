@@ -29,7 +29,7 @@ A default configuration comes with HP Cloud compute activation and includes:
 
 For a high level understanding of the default Network topology in Compute 13.5, see [Understanding Network Topology in 13.5](https://community.hpcloud.com/article/understanding-network-topology-135). 
 
-For more specific questions, use the [Knowledge Base](https://community.hpcloud.com/search/knowledge/network) or [Forums](https://community.hpcloud.com/search/forum/network) where you can learn from our own internal experts as well as other users in the HP Public Cloud community.
+For more specific questions, use the [Knowledge Base](https://community.hpcloud.com/search/knowledge/network	) or [Forums](https://community.hpcloud.com/search/forum/network) where you can learn from our own internal experts as well as other users in the HP Public Cloud community.
 
 ##Customizing your Configuration##
 
@@ -65,7 +65,15 @@ You can use any of several language bindings to access HP Cloud compute. For mor
 You can use any of several command-line interface software to access HP Cloud compute. For more information on using the HP Cloud Networking API, see [HP Cloud CLI](http://docs.hpcloud.com/cli/).
 
 
-##Security Groups##
+##Using VPN##
+
+With HP Cloud Networking you can set up an IPsec, or site-to-site, VPN connecting your external network directly to your HP cloud virtual network.
+
+For VPN site-to-site connectivity, you will need to modify either the provided default network configuration or create your own network, subnet, router and ports.
+
+For more information on using VPN with HP Cloud Networking, see [HP Cloud Networking: VPN setup quick start guide](http://docs.hpcloud.com/compute/vpn-quickstart).
+
+##Using Security Groups##
 
 Security Groups are a feature of HP Cloud Networking and are fully supported by the Networking API. 
 
