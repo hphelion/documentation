@@ -54,7 +54,7 @@ You can use the HP Public Cloud console to access HP Cloud compute. For more inf
 You can use a low level, raw REST API to access HP Cloud compute. For more information on using the HP Cloud Networking API, see [HP Cloud Networking API Specifications](https://docs.hpcloud.com/api/v13/networking).
 
 
-####Using language bindings"
+###Using language bindings###
 
 You can use any of several language bindings to access HP Cloud compute. For more information on using the HP Cloud Networking API, see [HP Cloud binding support](http://docs.hpcloud.com/bindings/).
 
