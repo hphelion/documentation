@@ -28,6 +28,17 @@ Your first step in the HP Cloud OS Operational Dashboard is to configure the Adm
 * [Set the Time for the Admin Node](#set-the-time-for-the-admin-node) &mdash; Configure your cloud to reflect the current time to ensure that the cloud is created successfully.
 * [Set the Email Notification](#set-the-email-notification) &mdash; Configure your cloud to send email notifications when the Cloud and Compute Region operation completes since this takes some time. By enabling and setting this prerequisite, you can be alerted by e-mail when each operation completes.
 
+**Note:** After you complete the Admin Node installation, you may continue to use the Operational Dashboard to modify the following prerequisite values:  
+
+* Cloud Admin Node Time settings 
+* Email Notification settings
+
+In the current release, you cannot go back (after completing the installation) and modify:
+
+* Admin Node Internet Access settings
+* External DNS Server settings
+
+Set the values carefully! 
 
 ## Enable Admin Node Internet Access
 

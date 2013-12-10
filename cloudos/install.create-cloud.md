@@ -102,12 +102,16 @@ Delete Node to delete it.
 
 ## Complete Storage Configuration
 
-Based on your previously determined [Storage Infrastructure](#storage-infrastructure) layout, at this point, you can configure the additional storage on the nodes.
+At this point, based on your previously determined [Storage Infrastructure](/cloudos/install/before-you-install#storage-infrastructure) layout, you can configure the additional storage on the nodes.
 
 The default root partitioning scheme is to reserve the first 255 MB for the boot partition, and then allocate the entire rest 
 of the disk to the LVM partition, with the Ubuntu OS calculating how much goes to swap space and how goes to the root file system.
 
-For details, see the [Ubuntu documentation](https://help.ubuntu.com/community/DiskSpace).
+For details, see the Ubuntu configuration documentation:
+
+<a href="https://help.ubuntu.com/lts/installation-guide/i386/preseed-contents.html" title="Ubuntu topic opens in new tab or window" target="ubuntu"> Contents of the Ubuntu Preconfiguration File </a> <br />
+
+<a href="https://help.ubuntu.com/community/DiskSpace" title="Ubuntu topic opens in new tab or window" target="ubuntu2"> Ubuntu Disk Space - community discussion </a>
 
 ## Create a Cloud
 
