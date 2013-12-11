@@ -4,7 +4,7 @@ title: "HP Noble Code App Contest Getting Started"
 permalink: /noblecode/
 
 ---
-#HP Noble Code App Contest Getting Started
+#HP Noble Code App Contest: Getting Started
 
 Welcome! We're looking forward to seeing what you code for good in the HP Noble Code App contest. Here you'll find a collection of information to help you develop in the HP Public Cloud. As the contest progresses we will be adding information, tips, and scripts to help you on your way, so check back.
 
