@@ -49,7 +49,7 @@ Nagios services. Running these tasks regularly keeps the Cloud OS and OpenStack 
 
 This section includes:
 
-* [Clean-up Tasks](#cleanup-tasks)
+* [Clean-up Tasks](#clean-up-tasks)
 
 * [Using Nagios](#using-nagios)
 
