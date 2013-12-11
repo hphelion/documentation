@@ -18,6 +18,8 @@ PageRefresh();
  
 </script>
 
+<p style="font-size: x-small; text-align:right;"> <a href="/cloudos/install/advanced-cloud-setup">PREV</a> | <a href="/cloudos/install/">UP</a> | <a href="/cloudos/install/">NEXT</a> </p>
+
 
 # Install Modules Reference
 
@@ -1156,7 +1158,7 @@ virtual machines. Select kvm if nova-compute nodes are bare-metal. </td>
 
 <tr style="background-color: white; color: black;">
 <td> Regular User Password </td> 
-<td> &lt;password> <b> Internal note: should we show the value here? </b> </td>
+<td> &lt;password></td>
 <td> Default regular password to use. </td>
 </tr>
 
@@ -1168,7 +1170,7 @@ virtual machines. Select kvm if nova-compute nodes are bare-metal. </td>
 
 <tr style="background-color: white; color: black;">
 <td> Administrator Password </td> 
-<td> &lt;password> <b> Internal note: should we show the value here? </b> </td>
+<td> &lt;password></td>
 <td> The Admin Quantum user password. </td>
 </tr>
 
@@ -1280,6 +1282,8 @@ virtual machines. Select kvm if nova-compute nodes are bare-metal. </td>
 
 ## Hp Cos Swift 100
 
+In most cases, you can use the default values. 
+
 <table style="text-align: left; vertical-align: top;">
 
 <tr>
@@ -1298,8 +1302,8 @@ virtual machines. Select kvm if nova-compute nodes are bare-metal. </td>
 </tr>
 
 <tr>
-<th style="background-color: #C8C8C8;"> Role </th> 
-<td colspan="2" style="background-color: white;"> Hp cos swift 100-server </td>
+<th style="background-color: #C8C8C8;"> Roles </th> 
+<td colspan="2" style="background-color: white;"> Hp cos swift 100-storage, Hp cos swift 100-ring-compute, Hp cos swift 100-proxy, Hp cos swift 100-dispersion</td>
 </tr>
 
 <tr style="background-color: #C8C8C8;">
@@ -1309,39 +1313,103 @@ virtual machines. Select kvm if nova-compute nodes are bare-metal. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> TBS  </td> 
-<td> TBS </td>
-<td> TBS </td>
+<td> Keystone instance   </td> 
+<td> </td>
+<td> From the pull-down menu, select the name of the Keystone instance to use. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> TBS  </td> 
-<td> TBS </td>
-<td> TBS </td>
+<td> Allow Public Containers   </td> 
+<td> false </td>
+<td> Boolean indicating whether Swift should be able to use public containers. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> TBS  </td> 
-<td> TBS </td>
-<td> TBS </td>
+<td> Zones  </td> 
+<td> 2 </td>
+<td> The number of zones Swift should use. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> TBS  </td> 
-<td> TBS </td>
-<td> TBS </td>
+<td> Partitions </td> 
+<td> 18 </td>
+<td> The number of partitions Swift should use. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> TBS  </td> 
-<td> TBS </td>
-<td> TBS </td>
+<td> Minimum Partitions per Hour  </td> 
+<td> 1 </td>
+<td> The minimum number of partitions Swift should use each hour. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> TBS  </td> 
-<td> TBS </td>
-<td> TBS </td>
+<td> Replicas </td> 
+<td> 1 </td>
+<td> The number of replicas Swift should use. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Cluster Hash </td> 
+<td> &lt;random-string> </td>
+<td> A random string you can enter to seed the hash calculations done by Swift. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Cluster Admin Password </td> 
+<td> &lt;password> </td>
+<td> The password for the cluster's Admin account. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> User </td> 
+<td> swift </td>
+<td> The user account Swift should use. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Group </td> 
+<td> swift </td>
+<td> The group to which the user account belongs. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Debug </td> 
+<td> false </td>
+<td> Boolean indicating whether Swift should run in debug mode. </td>
+</tr>
+
+<tr>
+<td colspan="3" style="background-color: #C8C8C8;"> Additional middleware: <br/> For example: S3.</td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Enabled </td> 
+<td> false </td>
+<td> Boolean indicating whether the additional middleware, S3 in this example, is enabled for Swift. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Git repo url </td> 
+<td> http://github.com/fujita/swift3 </td>
+<td> The URL of the git repo for Swift. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Git ref_spec  </td> 
+<td> ( generated ) </td>
+<td> The refspec of the git repo for Swift. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Use PFS for S3 </td> 
+<td> true </td>
+<td> Boolean indicating whether Swift should use a parallel file system. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Use barclamp-git to checkout </td> 
+<td> true </td>
+<td> Boolean indicating whether Swift should ...?  </td>
 </tr>
 
 </table>

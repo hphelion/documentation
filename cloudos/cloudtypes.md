@@ -34,9 +34,8 @@ Depending on which type of cloud you need to deploy, you may need support from y
 about your environment. After you have captured the requisite information about your environment and completed the setup of this 
 Admin Node, you will be able to start deploying the services that make up your cloud.  
 
-If you are interested in creating a public cloud, start in the [HP Public Cloud Overview](http://docs.hpcloud.com).  
-
-If you want to create a private or hybrid cloud with Cloud OS, this topic is for you.  
+If you are interested in creating a public cloud, start in the 
+<a href="http://docs.hpcloud.com" target="hpcs"> HP Public Cloud Overview.</a>  This page opens in a new browser tab or window.
 
 ## Cloud Environment Types
 
@@ -45,10 +44,8 @@ Using the HP Cloud OS Operational Dashboard, the Admin Node can be set up for:
 * Private clouds
 * Hybrid clouds
 
-A private cloud is very similar in functionality to a public cloud, except the infrastructure resources for a private cloud are  
-contained within the host company's internal network. A public cloud is deployed on external networks that are run by a cloud provider, 
-such as HP Cloud Services (HPCS).  A hybrid cloud is one where resources from two clouds (private, public, or both) can be shared 
-by users of the hybrid cloud. 
+A private cloud is very similar in functionality to a public cloud, except the infrastructure resources for a private cloud are contained within the host company's internal network. A public cloud is deployed on external networks that are run by a cloud provider, 
+such as HP Cloud Services (HPCS).  A hybrid cloud is one where resources from two clouds (private, public, or both) can be shared by users of the hybrid cloud. 
 
 ### Private Cloud
 
