@@ -20,8 +20,7 @@ If you're new to HP Cloud OS, see these topics and the video tutorials to learn 
 
 * [Technical Overview](/cloudos/overview/) - helpful information to read before you install &amp; configure HP Cloud OS and create your cloud.
 
-* [Introduction to Cloud Types](/cloudos/cloudtypes/) - covers the hybrid, private, and public clouds offers by HP.  Also presents a high-level 
-summary of the Cloud OS installation steps. 
+* [Introduction to Cloud Types](/cloudos/cloudtypes/) - covers the hybrid, private, and public clouds offers by HP.  
 
 * [Glossary](/cloudos/glossary/) - definitions of terms used in the HP Cloud OS components, user interfaces, and documentation.
 

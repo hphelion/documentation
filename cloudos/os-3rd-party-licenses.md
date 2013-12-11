@@ -19,7 +19,7 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: x-small;"> <a href="/cloudos/"> &#171; Return to HP Cloud OS documentation home </a> </p>
+<p style="font-size: small;"> <a href="/cloudos/"> &#171; Return to HP Cloud OS home </a> </p>
 
 # HP Cloud OS Open Source and Third-Party Software License Agreements
 
@@ -4204,5 +4204,5 @@ Also see GNU Lesser General Public License (LGPL) Version 2.1.
 
 <a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
-<p style="font-size: x-small;"> <a href="/cloudos/"> &#171; Return to HP Cloud OS documentation home </a> </p>
+<p style="font-size: small;"> <a href="/cloudos/"> &#171; Return to HP Cloud OS home </a> </p>
 

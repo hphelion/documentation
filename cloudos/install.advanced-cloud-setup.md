@@ -34,16 +34,18 @@ This topic explains how to perform an advanced cloud setup, as an **alternative*
 
 ## Introduction
 
-Cloud infrastructure services are delivered as "install modules," which are also known as "barclamps."  We use the term install modules here. 
+Cloud infrastructure services are delivered as "install modules," which are also known as "barclamps."   
 
 Install modules are a mechanism to install and configure a service on the compute region's control node. 
 
 When you create a cloud using the process defined in [Create a Cloud](/cloudos/install/create-cloud/), a number of OpenStack and Cloud OS 
 install modules are automatically configured and deployed for you. In most cases, the automated deployment of install modules will suffice. 
+**Note:** the Swift barclamp must be installed manually, as discussed in [Create a Cloud](/cloudos/install/create-cloud/). 
 
-However, should you need to customize values in the install modules that are not exposed in the Create Cloud Attributes tab, 
-this advanced section, along with [Cloud Controller Install Modules Reference](/cloudos/install/install-modules-reference/), are provided to assist 
-you in the process of customizing and deploying the individual install modules. 
+If you decide instead to apply the install modules yourself, or should you need to customize values in the install modules 
+that were not exposed in the Create Cloud Attributes tab, this advanced section, along with 
+[Cloud Controller Install Modules Reference](/cloudos/install/install-modules-reference/), 
+are provided to assist you in the process of customizing and deploying the individual install modules. 
 
 If you use the advanced option described in this topic, all install modules will need to be applied manually and in the 
 order specified in the [Apply Cloud Controller Install Modules](#apply-cloud-controller-install-modules) section.
@@ -82,8 +84,8 @@ specific nodes. See the "Create Node to Role Association" step in "Apply Cloud C
 for details on how to make these associations in the proposal.
 
 The Attributes section represents service configuration parameters that can be customized as needed. The Attributes section may also include "references" to other proposals. Proposal
-"references" are used to indicate that one install module requires the services of another install module. The "reference" also allows you to pick a specific instance of that service.
-For example, Glance has a "reference" to Keystone Instances. This appears in Glance's Proposal as a drop-down list of previously created Keystone Proposals. When a Keystone
+references are used to indicate that one install module requires the services of another install module. The reference also allows you to pick a specific instance of that service.
+For example, Glance has a reference to Keystone Instances. This appears in Glance's Proposal as a drop-down list of previously created Keystone Proposals. When a Keystone
 Proposal is selected, you are actually selecting a specific deployed instance of Keystone because that Proposal is tied to a specific node due to the Node-to-Role association that is
 part of the Keystone Proposal.
 
@@ -214,6 +216,13 @@ The following table lists the install modules **in the order they must be applie
 <tr style="background-color: white; color: black;">
 <td> HP Cos Cloud Utils 100 </td>
 <td> Provides cloud utilities scripts. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Hp Cos Swift 100 </td>
+<td> Provides an object/blog storage service. **Note:** the Swift barclamp must be installed manually, as discussed in [Create a Cloud](/cloudos/install/create-cloud/), before you can 
+apply it to your cloud environment.
+</td>
 </tr>
 
 </table>
