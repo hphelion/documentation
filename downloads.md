@@ -41,8 +41,9 @@ Here's what we have for you:
 ##Language Bindings##
 
 ###Ruby Fog Bindings### {#RubyFogBindingsInstall}
-* [Installation page](http://fog.io)
+* [Installation page](http://rubygems.org/gems/fog)
 * [Overview page](https://github.com/fog/fog/blob/master/lib/fog/hp/README.md) 
+* [Ruby Fog Community Documentation](http://fog.io/)
 
 ###Java/Clojure jclouds Bindings### {#jcloudsBindingsInstall}
 * [Installation page](http://www.jclouds.org/documentation/userguide/installation-guide) (This is the [jclouds.org](http://www.jclouds.org) installation page)
