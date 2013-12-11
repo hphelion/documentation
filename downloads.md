@@ -41,6 +41,9 @@ Here's what we have for you:
 ##Language Bindings##
 
 ###Ruby Fog Bindings### {#RubyFogBindingsInstall}
+
+We have moved all our Ruby Fog bindings to the Fog Community; please continue to use them and contribute back as well!
+
 * [Installation page](http://rubygems.org/gems/fog)
 * [Overview page](https://github.com/fog/fog/blob/master/lib/fog/hp/README.md) 
 * [Ruby Fog Community Documentation](http://fog.io/)
