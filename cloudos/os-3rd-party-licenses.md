@@ -64,7 +64,6 @@ Software Release Date: December 2013
   * [Werken Company License](#werken-company-license)
   * [XOM License](#xom-license)
 
-  
 ## Legal Notices
 
 ### Warranty
@@ -464,16 +463,11 @@ Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
 are met:
 
-1) Redistributions of source code must retain the above copyright
-notice, this list of conditions and the following disclaimer.
+1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
 
-2. Redistributions in binary form must reproduce the above copyright
-notice, this list of conditions and the following disclaimer in the
-documentation and/or other materials provided with the distribution.
+2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
 
-3. Neither the name of the copyright holders nor the names of its
-contributors may be used to endorse or promote products derived from
-this software without specific prior written permission.
+3. Neither the name of the copyright holders nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
 AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
@@ -545,8 +539,7 @@ grant or subsequently acquired, any and all of the rights conveyed herein.
 
 1.9. "Modifications" means the Source Code and Executable form of any of the following: 
 
-A. Any file that results from an addition to, deletion from or modification of the contents of a file 
-containing Original Software or previous Modifications; 
+A. Any file that results from an addition to, deletion from or modification of the contents of a file containing Original Software or previous Modifications; 
 
 B. Any new file that contains any part of the Original Software or previous Modification; or 
 
@@ -1046,8 +1039,7 @@ released under this License.
 1.11. "Patent Claims" means any patent claim(s), now owned or hereafter acquired, including without limitation, 
 method, process, and apparatus claims, in any patent Licensable by grantor.
 
-1.12. "Source Code" means (a) the common form of computer software code in which modifications are made and 
-(b) associated documentation included in or with such code.
+1.12. "Source Code" means (a) the common form of computer software code in which modifications are made and (b) associated documentation included in or with such code.
 
 1.13. "You" (or "Your") means an individual or a legal entity exercising rights under, and complying with all of the 
 terms of, this License. For legal entities, "You" includes any entity which controls, is controlled by, or is under 
@@ -1275,19 +1267,16 @@ Copyright 2001-2005 &copy; MetaStuff, Ltd. All Rights Reserved.
 Redistribution and use of this software and associated documentation ("Software"), with or without modification, are 
 permitted provided that the following conditions are met: 
 
-1) Redistributions of source code must retain copyright statements and notices. Redistributions must also contain a 
-copy of this document. 
+1. Redistributions of source code must retain copyright statements and notices. Redistributions must also contain a copy of this document. 
 
-2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following 
-disclaimer in the documentation and/or other materials provided with the distribution. 
+2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution. 
 
-3. The name "DOM4J" must not be used to endorse or promote products derived from this Software without prior 
-written permission of MetaStuff, Ltd. For written permission, please contact dom4j-info@metastuff.com. 
+3. The name "DOM4J" must not be used to endorse or promote products derived from this Software without prior written permission of MetaStuff, Ltd. For written permission, please contact dom4j-info@metastuff.com. 
 
-4. Products derived from this Software may not be called "DOM4J" nor may "DOM4J" appear in their names without 
-prior written permission of MetaStuff, Ltd. DOM4J is a registered trademark of MetaStuff, Ltd. 
+4. Products derived from this Software may not be called "DOM4J" nor may "DOM4J" appear in their names without prior written permission of MetaStuff, Ltd. DOM4J is a registered trademark of MetaStuff, Ltd. 
 
 5. Due credit should be given to the DOM4J Project - http://dom4j.sourceforge.net 
+
 THIS SOFTWARE IS PROVIDED BY METASTUFF, LTD. AND CONTRIBUTORS ''AS IS'' AND ANY EXPRESSED 
 OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF 
 MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL 
@@ -1405,6 +1394,7 @@ to any claims or Losses relating to any actual or alleged intellectual property 
 Contributor must: a) promptly notify the Commercial Contributor in writing of such claim, and b) allow the Commercial 
 Contributor to control, and cooperate with the Commercial Contributor in, the defense and any related settlement 
 negotiations. The Indemnified Contributor may participate in any such claim at its own expense.
+
 For example, a Contributor might include the Program in a commercial product offering, Product X. That Contributor is then 
 a Commercial Contributor. If that Commercial Contributor then makes performance claims, or offers warranties related to 
 Product X, those performance claims and warranties are such Commercial Contributor's responsibility alone. Under this 
@@ -1482,13 +1472,10 @@ States Department of Energy and the University of California.
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following 
 conditions are met: 
 
-1) Redistributions of source code must retain the above copyright notice, this list of conditions and the following 
-disclaimer. 
+1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer. 
 
-2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following 
-disclaimer in the documentation and/or other materials provided with the distribution. 
-Neither the name of the University nor the names of its contributors may be used to endorse or promote products derived 
-from this software without specific prior written permission. 
+2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution. 
+Neither the name of the University nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission. 
 
 THIS SOFTWARE IS PROVIDED "AS IS" AND WITHOUT ANY EXPRESS OR IMPLIED WARRANTIES, 
 INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS 
@@ -1503,8 +1490,7 @@ HP acknowledges the redistribution of the following open source components that 
 * java-1.7.0-openJDK, Version 1.7.0
 * ubuntu-standard, Version 12.04.lts
 
-### GNU GENERAL PUBLIC LICENSE
-
+GNU GENERAL PUBLIC LICENSE <br />
 Version 2, June 1991
 
 Copyright &copy; 1989, 1991 Free Software Foundation, Inc.,
@@ -1563,7 +1549,7 @@ patent must be licensed for everyone's free use or not licensed at all.
 The precise terms and conditions for copying, distribution and
 modification follow.
 
-### GNU GENERAL PUBLIC LICENSE
+GNU GENERAL PUBLIC LICENSE
 
 TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
 
@@ -1685,7 +1671,7 @@ However, parties who have received copies, or rights, from you under
 this License will not have their licenses terminated so long as such
 parties remain in full compliance.
 
-5. You are not required to accept this License, since you have not
+5) You are not required to accept this License, since you have not
 signed it.  However, nothing else grants you permission to modify or
 distribute the Program or its derivative works.  These actions are
 prohibited by law if you do not accept this License.  Therefore, by
@@ -1694,7 +1680,7 @@ Program), you indicate your acceptance of this License to do so, and
 all its terms and conditions for copying, distributing or modifying
 the Program or works based on it.
 
-6. Each time you redistribute the Program (or any work based on the
+6) Each time you redistribute the Program (or any work based on the
 Program), the recipient automatically receives a license from the
 original licensor to copy, distribute or modify the Program subject to
 these terms and conditions.  You may not impose any further
@@ -1702,7 +1688,7 @@ restrictions on the recipients' exercise of the rights granted herein.
 You are not responsible for enforcing compliance by third parties to
 this License.
 
-7. If, as a consequence of a court judgment or allegation of patent
+7) If, as a consequence of a court judgment or allegation of patent
 infringement or for any other reason (not limited to patent issues),
 conditions are imposed on you (whether by court order, agreement or
 otherwise) that contradict the conditions of this License, they do not
@@ -1734,14 +1720,14 @@ impose that choice.
 This section is intended to make thoroughly clear what is believed to
 be a consequence of the rest of this License.
 
-8. If the distribution and/or use of the Program is restricted in
+8) If the distribution and/or use of the Program is restricted in
 certain countries either by patents or by copyrighted interfaces, the
 original copyright holder who places the Program under this License
 may add an explicit geographical distribution limitation excluding those countries, so that distribution is permitted only in or among
 countries not thus excluded.  In such case, this License incorporates
 the limitation as if written in the body of this License.
 
-9. The Free Software Foundation may publish revised and/or new versions
+9) The Free Software Foundation may publish revised and/or new versions
 of the General Public License from time to time.  Such new versions will
 be similar in spirit to the present version, but may differ in detail to
 address new problems or concerns.
@@ -1754,7 +1740,7 @@ Software Foundation.  If the Program does not specify a version number of
 this License, you may choose any version ever published by the Free Software
 Foundation.
 
-10. If you wish to incorporate parts of the Program into other free
+10) If you wish to incorporate parts of the Program into other free
 programs whose distribution conditions are different, write to the author
 to ask for permission.  For software which is copyrighted by the Free
 Software Foundation, write to the Free Software Foundation; we sometimes
@@ -1762,9 +1748,9 @@ make exceptions for this.  Our decision will be guided by the two goals
 of preserving the free status of all derivatives of our free software and
 of promoting the sharing and reuse of software generally.
 
-**NO WARRANTY**
+NO WARRANTY
 
-11. BECAUSE THE PROGRAM IS LICENSED FREE OF CHARGE, THERE IS NO WARRANTY
+11) BECAUSE THE PROGRAM IS LICENSED FREE OF CHARGE, THERE IS NO WARRANTY
 FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW.  EXCEPT WHEN
 OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES
 PROVIDE THE PROGRAM "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
@@ -1774,7 +1760,7 @@ TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU.  SHOULD THE
 PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING,
 REPAIR OR CORRECTION.
 
-12. IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING
+12) IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING
 WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MAY MODIFY AND/OR
 REDISTRIBUTE THE PROGRAM AS PERMITTED ABOVE, BE LIABLE TO YOU FOR DAMAGES,
 INCLUDING ANY GENERAL, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING
@@ -1784,7 +1770,7 @@ YOU OR THIRD PARTIES OR A FAILURE OF THE PROGRAM TO OPERATE WITH ANY OTHER
 PROGRAMS), EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE
 POSSIBILITY OF SUCH DAMAGES.
 
-**END OF TERMS AND CONDITIONS**
+END OF TERMS AND CONDITIONS
 
 #### How to Apply These Terms to Your New Programs
 
@@ -1795,8 +1781,7 @@ free software which everyone can redistribute and change under these terms.
 To do so, attach the following notices to the program.  It is safest
 to attach them to the start of each source file to most effectively
 convey the exclusion of warranty; and each file should have at least
-the "copyright" line and a pointer to where the full notice is found.
-&lt;one line to give the program's name and a brief idea of what it does.>
+the "copyright" line and a pointer to where the full notice is found. &lt;one line to give the program's name and a brief idea of what it does.>
 Copyright &copy; &lt;year>  &lt;name of author>
 
 This program is free software; you can redistribute it and/or modify
@@ -1852,8 +1837,7 @@ HP acknowledges the redistribution of the following open source components that 
 * bison, Version 1:2.5.dfsg-2.1
 * python-psycopg2, Version 2.4.5
 
-### GNU GENERAL PUBLIC LICENSE
-
+GNU GENERAL PUBLIC LICENSE <br />
 Version 3, 29 June 2007
 
 Copyright &copy; 2007 Free Software Foundation, Inc. http://fsf.org/
@@ -1924,9 +1908,9 @@ patents cannot be used to render the program non-free.
 The precise terms and conditions for copying, distribution and
 modification follow.
 
-#### TERMS AND CONDITIONS
+TERMS AND CONDITIONS
 
-0. Definitions.
+0) Definitions.
 
 "This License" refers to version 3 of the GNU General Public License.
 
@@ -3339,6 +3323,7 @@ that Contributor.
 3) Distribution Obligations.
 
 3.1. Application of License.
+
 The Modifications which You create or to which You contribute are
 governed by the terms of this License, including without limitation
 Section 2.2. The Source Code version of Covered Code may be
@@ -3352,6 +3337,7 @@ an additional document offering the additional rights described in
 Section 3.5.
 
 3.2. Availability of Source Code.
+
 Any Modification which You create or to which You contribute must be
 made available in Source Code form under the terms of this License
 either on the same media as an Executable version or via an accepted
@@ -3365,6 +3351,7 @@ ensuring that the Source Code version remains available even if the
 Electronic Distribution Mechanism is maintained by a third party.
 
 3.3. Description of Modifications.
+
 You must cause all Covered Code to which You contribute to contain a
 file documenting the changes You made to create that Covered Code and
 the date of any change. You must include a prominent statement that
@@ -3408,6 +3395,7 @@ Contributor has sufficient rights to grant the rights conveyed by
 this License.
 
 3.5. Required Notices.
+
 You must duplicate the notice in Exhibit A in each file of the Source
 Code.  If it is not possible to put such notice in a particular Source
 Code file due to its structure, then You must include such notice in a
@@ -3428,6 +3416,7 @@ Initial Developer or such Contributor as a result of warranty,
 support, indemnity or liability terms You offer.
 
 3.6. Distribution of Executable Versions.
+
 You may distribute Covered Code in Executable form only if the
 requirements of Section 3.1-3.5 have been met for that Covered Code,
 and if You include a notice stating that the Source Code version of
@@ -3451,6 +3440,7 @@ the Initial Developer or such Contributor as a result of any such
 terms You offer.
 
 3.7. Larger Works.
+
 You may create a Larger Work by combining Covered Code with other code
 not governed by the terms of this License and distribute the Larger
 Work as a single product. In such a case, You must make sure the
@@ -3477,11 +3467,13 @@ attached the notice in Exhibit A and to related Covered Code.
 6) Versions of the License.
 
 6.1. New Versions.
+
 Netscape Communications Corporation ("Netscape") may publish revised
 and/or new versions of the License from time to time. Each version
 will be given a distinguishing version number.
 
 6.2. Effect of New Versions.
+
 Once Covered Code has been published under a particular version of the
 License, You may always continue to use it under the terms of that
 version. You may also choose to use such Covered Code under the terms
@@ -3490,6 +3482,7 @@ other than Netscape has the right to modify the terms applicable to
 Covered Code created under this License.
 
 6.3. Derivative Works.
+
 If You create or use a modified version of this License (which you may
 only do in order to apply it to code which is not already Covered Code
 governed by this License), You must (a) rename Your license so that
@@ -3668,12 +3661,9 @@ Redistribution and use of this software and associated documentation
 ("Software"), with or without modification, are permitted provided
 that the following conditions are met:
 
-1. Redistributions in source form must retain copyright statements
-and notices,
+1. Redistributions in source form must retain copyright statements and notices,
 
-2. Redistributions in binary form must reproduce applicable copyright
-statements and notices, this list of conditions, and the following
-disclaimer in the documentation and/or other materials provided
+2. Redistributions in binary form must reproduce applicable copyright statements and notices, this list of conditions, and the following disclaimer in the documentation and/or other materials provided
 with the distribution, and
 
 3. Redistributions must contain a verbatim copy of this document.
@@ -3979,11 +3969,9 @@ conditions are met:
 
 1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
 
-2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following 
-disclaimer in the documentation and/or other materials provided with the distribution.
+2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
 
-3. Neither the name of Django nor the names of its contributors may be used to endorse or promote products derived from 
-this software without specific prior written permission.
+3. Neither the name of Django nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY 
 EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF 
@@ -4031,11 +4019,9 @@ conditions are met:
 
 1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
 
-2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following 
-disclaimer in the documentation and/or other materials provided with the distribution.
+2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
 
-3. The name of the author may not be used to endorse or promote products derived from this software without specific prior 
-written permission.
+3. The name of the author may not be used to endorse or promote products derived from this software without specific prior written permission.
 
 THIS SOFTWARE IS PROVIDED BY THE AUTHOR ''AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, 
 INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR 
@@ -4061,13 +4047,10 @@ Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
 "Software"), to deal in the Software without restriction, including
 without limitation the rights to use, copy, modify, merge, publish,
-distribute, sublicense, and/or sell copies of the Software, and to
-
-permit persons to whom the Software is furnished to do so, subject to
+distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to
 the following conditions:
 
-The above copyright notice and this permission notice shall be
-included in all copies or substantial portions of the Software.
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
 EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
@@ -4111,7 +4094,7 @@ HP acknowledges the redistribution of the following open source component that a
 * argparse4j, Version 0.2.2
 
 <pre>
-    /*
+   /*
     * Copyright &copy; 2011, 2013 Tatsuhiro Tsujikawa
     *
     * Permission is hereby granted, free of charge, to any person

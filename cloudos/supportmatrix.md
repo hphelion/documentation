@@ -121,23 +121,23 @@ The diagrams in this section illustrate the deployment scenarios supported in HP
 
 ##### Diagram 1: Single Region. All controllers in a single virtual machine. Compute node is bare metal.
 
-<img src="media/cloudos-single-region1.jpg" width="95%" title="HP Cloud OS Single Region. All controllers in a single virtual machine. Compute node is bare metal." />
+<img src="media/cloudos-single-region1.jpg" title="HP Cloud OS Single Region. All controllers in a single virtual machine. Compute node is bare metal." />
 
 ##### Diagram 2: Multi-region. All controllers in virtual machines.
 
-<img src="media/cloudos-multi-region2.jpg" width="95%" title="HP Cloud OS Multi-region. All controllers in virtual machines." />
+<img src="media/cloudos-multi-region2.jpg" title="HP Cloud OS Multi-region. All controllers in virtual machines." />
 
 ##### Diagram 3: Single region. Controllers are in separate virtual machines.
 
-<img src="media/cloudos-single-region-controllers-vm3.jpg" width="95%" title="HP Cloud OS Single region. Controllers are in separate virtual machines." />
+<img src="media/cloudos-single-region-controllers-vm3.jpg" title="HP Cloud OS Single region. Controllers are in separate virtual machines." />
 
 ##### Diagram 4: Single region. All controllers in a single bare metal server. 
 
-<img src="media/cloudos-single-region-controllers-baremetal4.jpg" width="95%" title="HP Cloud OS Single region. All controllers in a single bare metal server." />
+<img src="media/cloudos-single-region-controllers-baremetal4.jpg" title="HP Cloud OS Single region. All controllers in a single bare metal server." />
 
 ##### Diagram 5: Supported Swift (Object Store) deployment scenario  
 
-<img src="media/cloudos-swift-storage5.jpg" width="95%" title="HP Cloud OS Swift storage for all deployment scenarios." />
+<img src="media/cloudos-swift-storage5.jpg" title="HP Cloud OS Swift storage for all deployment scenarios." />
 
 ## Hardware Requirements
 
