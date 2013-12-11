@@ -18,11 +18,11 @@ This page contains the following information on our software package:
 
 ##New features in version 13.5## {#v135features}
 
-**New look and feel for the Management Console** - Based on the OpenStack Horizon project, the new HP Public Cloud Console interface and user experience is significantly different from the original classic management console.  As part of this new user interface, Project dashboards, vertically accessible on the left side of the console, group related services for easier availability and service management; and much documentation is now provided in-line and embedded throughout the console on many forms, to reduce your clicks and improve your console experience. Although workflows may look different, you can still manage your standard functions through the console, including initializing instances, creating volumes, launching images and snapshots, and creating security groups and keypairs.  See [Getting Started with HP Public Cloud Console](/hpcloudconsole) for more information.
+**New look and feel for the Management Console** - Based on the OpenStack Horizon project, the new HP Public Cloud Console interface and user experience is significantly different from the original classic management console.  As part of this new user interface, Project dashboards, vertically accessible on the left side of the console, group related services for easier availability and service management; and much documentation is now provided in-line and embedded throughout the console on many forms, to reduce your clicks and improve your console experience. Although workflows may look different, you can still manage your standard functions through the console, including initializing instances, creating volumes, launching images and snapshots, and creating security groups and key pairs.  See [Getting Started with HP Public Cloud Console](/hpcloudconsole) for more information.
 
-**Larger compute instances for big data and high-performance computing are now supported** -  New larger instance types allows you to run big data, analytics, and high performance computing (HPC) workloads in the public cloud.  You can access instances with up to 120 GB of RAM and up to 16 virtual cores. The new instance types allow even greater flexibility to choose the virtual machine size that best fits your application's compute resource needs.
+**Larger compute instances for big data and high-performance computing are now supported** -  New larger instance types allow you to run big data, analytics, and high performance computing (HPC) workloads in the public cloud.  You can access instances with up to 120 GB of RAM and up to 16 virtual cores. The new instance types allow even greater flexibility to choose the virtual machine size that best fits your application's compute resource needs.
 
-**New virtual private cloud (VPC) networking capabilities** - The new VPC functionality provides the ability to deploy your workloads with even greater security within the public cloud for public cloud only or hybrid delivery  by enabling you to create  isolated virtual networks within the HP Cloud compute service. UsingSoftware Defined Networking (SDN), VPC  allows you create a wide variety of network configurations specific to your individual workloads needs with a variety of public internet accessibility options. You can also connect your public cloud network to your on-premise network, enabling true hybrid delivery through private and public infrastructures with a secure VPN connection performing as a single integrated system.
+**New virtual private cloud (VPC) networking capabilities** - The new VPC functionality provides the ability to deploy your workloads with even greater security within the public cloud for public cloud only or hybrid delivery  by enabling you to create  isolated virtual networks within the HP Cloud compute service. UsingSoftware Defined Networking (SDN), VPC  allows you to create a wide variety of network configurations specific to your individual workloads needs with a variety of public Internet accessibility options. You can also connect your public cloud network to your on-premise network, enabling true hybrid delivery through private and public infrastructures with a secure VPN connection performing as a single integrated system.
 
 **Networking topology visualization** - The new [Horizon-based public cloud console](/hpcloudconsole) inherits network topology infographics.  In addition to visualizing network relationships, you can perform dynamic network management, interactively creating networks and routers, and launching instances through a 2-D visualization scene.
 
@@ -34,7 +34,7 @@ This page contains the following information on our software package:
 
 **Jclouds support** - Jclouds support is provided for the Keystone version 2 (and earlier) API.
 
-**Enhanced identity management** - Particularly attractive for administrators in the enterprise, we’ve provided more flexibility and options when managing roles, domains, users and groups in the new Horizon-based public cloud console. Specifically, roles can now be assigned to groups of users, or domain administrators can be defined for managing domains and respective users.   In addition, you can assign roles around the latest platform services, such as the new HP Cloud [Relational Database](/dbaas/) service.
+**Enhanced identity management** - Particularly attractive for administrators in the enterprise, this release provides more flexibility and options when managing roles, domains, users and groups in the new Horizon-based public cloud console. Specifically, roles can now be assigned to groups of users, or domain administrators can be defined for managing domains and respective users.   In addition, you can assign roles around the latest platform services, such as the new HP Cloud [Relational Database](/dbaas/) service.
 
 As a domain admin, you can manage each user's projects, roles, and groups.  You can manage the membership of each group, and manage the user assignment within each role. 
 
@@ -59,7 +59,7 @@ As a domain admin, you can manage each user's projects, roles, and groups.  You 
 
 ##Recommendations for version 13.5## {#Recommendations}
 
-This section of the release notes describes the HP recommendations for best performance, utility, and functionality with this software version.   We have also provided information about some limitations and known issues for your reference purposes.  This section contains
+This section of the release notes describes the HP recommendations for best performance, utility, and functionality with this software version.   We have also provided information about some limitations and known issues for reference purposes.  This section contains
 
 * [Best practices recommendations](#Recommendations) for best functionality and performance
 * [Known issues](#Issues) and workarounds with version 13.5
@@ -70,7 +70,7 @@ This section of the release notes describes the HP recommendations for best perf
 The following are our best-practices recommendations for versions 13.5.
 
 ####Cloud Compute####
-* For best performance and reliability with multiple instances, stagger your instance launches to batches of a maximum size of 100 instances.
+* For best performance and reliability with multiple instances, launch instances in batches of 100 or fewer.
 * Boot instance snapshots from an instance using the same flavor.  For example, if you have created a snapshot of an `xsmall` instance, boot it from an instance that also has flavor `xsmall`.
 * For reliability, use Nova delete to terminate instances only when they are in the `Active` or `Error` state.
 * For reliability, make sure you have a root disk size of 30GB for instances with flavors larger than `xsmall`.
@@ -81,7 +81,7 @@ The following are our best-practices recommendations for versions 13.5.
 
 * To ensure full external node access, allow egress rules to remain part of their security groups; HP recommends against deleting them.
 * To get the most timely and accurate results for your quota checks, use the [Neutron networking interface](/hpcloudconsole#ManageHPPublicCloud).
-* To ensure that your instance consistently resolves its own name, add an entry to the `/etc/hosts` file that matches the host name.
+* •	To ensure that your Linux instance is able to resolve its own hostname, add an entry to the `/etc/hosts` file that matches the hostname.
 
 ####Command-line Interface####
 
@@ -93,13 +93,13 @@ The following are our best-practices recommendations for versions 13.5.
     - Take a snapshot of the volume using a utility such as the python cinder binding
     - When the snapshot is complete, re-create the instance from the volume
     - Re-attach the original floating IP (if necessary) 
-    Note that the port (fixed-IP address) associated with the new instance might have changed.
+    Note that the port (fixed IP address) associated with the new instance might have changed.
 
 ####Windows####
 
-* Use large standard flavors (`standard.large`, `standard.xlarge`, etc.) rather than `highmem` flavors for your larger Windows instances.
+* Use the standard rather than `highmem` family of flavors (`standard.large`, `standard.xlarge`, etc.) for creating Windows instances.
 * For speed and ease-of-use, use the [management console](/mc/) rather than the Windows command-line interface (CLI) to attach or detach a volume.
-* For best results when deleting a volume, unmount the volume (or for Windows instances take it offline) and detach it prior to deleting it.
+* For best results when deleting a volume, unmount the volume (or for Windows instances take it offline) and detach the volume prior to deleting it.
 * To ensure quality performance, allow at least 4GB of memory for your Windows instances.
 * For full functionality when creating instances using the Windows CLI, use flavors of `small` or greater. 
 
@@ -111,8 +111,7 @@ The following are the known issues (and workarounds) for Version 13.5 of the HP 
 ####Cloud Compute####
 
 * The EC2 API and AWS Eucalyptus toolset are not supported in this release.
-* In you are unable to see the private IP in the networks section of a Windows instance, display it using the [VNC console](https://community.hpcloud.com/article/using-vnc-console-access-your-instance).
-* If your VNC console log appears empty immediately after instance activation, just wait a few moments and try again; it sometimes takes a moment for the instance information to be recorded in the log file.
+* •	If the console log appears empty immediately after instance activation, wait a few moments and try again; it can take some time for the instance information to be recorded in the log file.
 
 ####Cloud Block Storage####
 
