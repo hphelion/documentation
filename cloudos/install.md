@@ -46,6 +46,7 @@ After you install and set up the Admin node, you can perform additional steps:
 * [Launch Administration Dashboard](/cloudos/install/launch-admin-dashboard/)
 * [Check the Cloud OS License](/cloudos/install/license/)
 * [Install Hot Fixes](/cloudos/install/hot-fixes/)
+* [Updates and Extensions](/cloudos/install/updates-and-extensions/)
 
 Also see the website copy of the [HP Cloud OS Operational Dashboard Help](http://docs.hpcloud.com/cloudos/operational-dashboard/index.htm). 
 Note: website copy not deployed yet. To access this document in the Operational Dashboard, click **Help** in its top banner.

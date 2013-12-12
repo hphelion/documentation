@@ -105,6 +105,16 @@ Here are the network configuration steps:
 
 5. Enter "200" as the VLAN id
 
+6. Enter "192.168.125.1" as the router address
+
+7. Next, click on the down arrow to the right of the storage network and select the Edit "Address Ranges" item.
+
+8. In the Edit Address Ranges dialog, click "Add Range" and specify the range as:
+
+ * Node Type: host 
+ * IPV4 Start Addr: 192.168.125.81
+ * IPV4 End Addr: 192.168.125.160
+
 Keep all the other default values.
 
 The next set of steps are to:
