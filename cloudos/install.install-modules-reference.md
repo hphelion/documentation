@@ -1330,49 +1330,53 @@ information about the roles, see the Swift Roles section of the [Setup Swift](/c
 <tr style="background-color: white; color: black;">
 <td> Allow Public Containers </td> 
 <td> false </td>
-<td> Boolean indicating whether Swift should allow containers across tenants. Setting this to true causes a performance penalty. 
-See https://blueprints.launchpad.net/horizon/+spec/swift-container-public-access.  Used in `delay_auth_decision`.</td>
+<td> Boolean indicating whether Swift should allow containers across tenants. Setting this to true causes a performance penalty. Used in delay_auth_decision.
+See <a href="https://blueprints.launchpad.net/horizon/+spec/swift-container-public-access" target="new1">Swift Container Public Access</a>.  
+</td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Zones  </td> 
 <td> 2 </td>
 <td> The number of zones Swift should use. These are logical divisions of the Swift storage, with a minimum of 2. 
-Copies of data will be stored in different zones. See http://searchcloudstorage.techtarget.com/answer/OpenStack-Swift-object-storage-How-does-data-placement-work. Used in `ring-builder` commands.</td>
+Copies of data will be stored in different zones. Used in ring-builder commands. See 
+<a href="http://searchcloudstorage.techtarget.com/answer/OpenStack-Swift-object-storage-How-does-data-placement-work" target="new2">OpenStack Swift Object Storage - How does Placement Work?"</a>. 
+</td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Partitions </td> 
 <td> 18 </td>
 <td> The number of partitions Swift should use. A partition is a storage unit, at a lower level than zones. The number represents the power of 2 for the number of partitions. For example, 
-18 represents 2^18 or 262,144 partitions. See http://searchcloudstorage.techtarget.com/answer/OpenStack-Swift-object-storage-How-does-data-placement-work. Used in ring builder commands.</td>
+18 represents 2^18 or 262,144 partitions. Used in ring builder commands. See <a href="http://searchcloudstorage.techtarget.com/answer/OpenStack-Swift-object-storage-How-does-data-placement-work" target="new2">OpenStack Swift Object Storage - How does Placement Work?"</a>. 
+</td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Minimum Partitions per Hour  </td> 
 <td> 1 </td>
-<td> The time in hours before a specific partition can be moved in succession. See http://docs.openstack.org/developer/swift/deployment_guide.html. 
-Used in ring builder commands.</td>
+<td> The time in hours before a specific partition can be moved in succession. Used in ring builder commands.  See the 
+<a href="http://docs.openstack.org/developer/swift/deployment_guide.html" target="new3">OpenStack Deployment Guide</a>. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Replicas </td> 
 <td> 1 </td>
-<td> The number of replicas in which to store the data. See http://docs.openstack.org/developer/swift/deployment_guide.html. Used in ring 
-builder commands.</td>
+<td> The number of replicas in which to store the data. Used in ring builder commands. 
+See the <a href="http://docs.openstack.org/developer/swift/deployment_guide.html" target="new3">OpenStack Deployment Guide</a>. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Cluster Hash </td> 
 <td> ( generated ) </td>
 <td> A unique id for the Swift install. Initially assigned a random number. Shared among all nodes in a Swift cluster. Can be generated using <code> od -t x8 -N 8 -A n &lt;/dev/random </code>. 
-See http://swiftstack.com/openstack-swift/architecture/. Used in swift.conf `cluster_hash`. </td>
+Used in swift.conf cluster_hash. See the <a href="http://swiftstack.com/openstack-swift/architecture/" target="new4">Swift Architecture document</a>. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Cluster Admin Password </td> 
 <td> &lt;password> </td>
-<td> The password for the administrative user for Swift in the `swauth` method. **Note:** Not used because HP Cloud OS defaults to Keystone authentication. </td>
+<td> The password for the administrative user for Swift in the swauth method. **Note:** Not used - HP Cloud OS defaults to Keystone authentication. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -1404,12 +1408,13 @@ See http://swiftstack.com/openstack-swift/architecture/. Used in swift.conf `clu
 <tr style="background-color: white; color: black;">
 <td> Enabled </td> 
 <td> false </td>
-<td> Boolean indicating whether Swift3 middleware is enabled for Swift. Swift3 allows access to OpenStack Swift via the Amazon S3 API. See https://github.com/fujita/swift3. </td>
+<td> Boolean indicating whether Swift3 middleware is enabled for Swift. Swift3 allows access to OpenStack Swift via the Amazon S3 API. 
+See the <a href="https://github.com/fujita/swift3" target="swift3">Swift3 documentation</a>. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Git repo url </td> 
-<td> http://github.com/fujita/swift3 </td>
+<td> <a href="http://github.com/fujita/swift3" target="swift3">Swift3 documentation.</a> </td>
 <td> The URL of the git repo for Swift. </td>
 </tr>
 
@@ -1428,7 +1433,7 @@ See http://swiftstack.com/openstack-swift/architecture/. Used in swift.conf `clu
 <tr style="background-color: white; color: black;">
 <td> Use barclamp-git to checkout </td> 
 <td> true </td>
-<td> Boolean indicating whether Swift should <b> ...? </b> </td>
+<td>  </td>
 </tr>
 
 <tr>
@@ -1438,7 +1443,10 @@ See http://swiftstack.com/openstack-swift/architecture/. Used in swift.conf `clu
 <tr style="background-color: white; color: black;">
 <td> Enabled </td> 
 <td> false </td>
-<td> Boolean indicating whether StaticWeb middleware is enabled for Swift. StaticWeb serves container data as a static website with an index file and error file resolution, and optional file listings. See https://github.com/openstack/swift/blob/master/swift/common/middleware/staticweb.py. </td>
+<td> Boolean indicating whether StaticWeb middleware is enabled for Swift. 
+StaticWeb serves container data as a static website with an index file and error file resolution, 
+and optional file listings. See the 
+<a href="https://github.com/openstack/swift/blob/master/swift/common/middleware/staticweb.py" target="new5">StaticWeb documentation</a>. </td>
 </tr>
 
 <tr>
@@ -1448,7 +1456,8 @@ See http://swiftstack.com/openstack-swift/architecture/. Used in swift.conf `clu
 <tr style="background-color: white; color: black;">
 <td> Enabled </td> 
 <td> false </td>
-<td> Boolean indicating whether TempURL middleware is enabled for Swift. TempURL allows the creation of URLs to provide temporary access to objects. See https://github.com/openstack/swift/blob/master/swift/common/middleware/tempurl.py. </td>
+<td> Boolean indicating whether TempURL middleware is enabled for Swift. TempURL allows the creation of URLs to provide temporary access to objects. 
+See the <a href="https://github.com/openstack/swift/blob/master/swift/common/middleware/tempurl.py" target="new6">TempURL documentation</a>. </td>
 </tr>
 
 <tr>
@@ -1458,7 +1467,8 @@ See http://swiftstack.com/openstack-swift/architecture/. Used in swift.conf `clu
 <tr style="background-color: white; color: black;">
 <td> Enabled </td> 
 <td> false </td>
-<td> Boolean indicating whether FormPOST middleware is enabled for Swift. FormPOST translates a browser form post into a regular Swift object PUT. See https://github.com/openstack/swift/blob/master/swift/common/middleware/formpost.py. </td>
+<td> Boolean indicating whether FormPOST middleware is enabled for Swift. FormPOST translates a browser form post into a regular Swift object PUT. 
+See the <a href="https://github.com/openstack/swift/blob/master/swift/common/middleware/formpost.py" target="new7">FormPOST documentation</a>. </td>
 </tr>
 
 <tr>
@@ -1468,7 +1478,9 @@ See http://swiftstack.com/openstack-swift/architecture/. Used in swift.conf `clu
 <tr style="background-color: white; color: black;">
 <td> Enabled </td> 
 <td> false </td>
-<td> Boolean indicating whether Domain Remap middleware is enabled for Swift. Domain Remap translates container and account parts of a domain to path parameters that the proxy server understands. See https://github.com/openstack/swift/blob/master/swift/common/middleware/domain_remap.py. </td>
+<td> Boolean indicating whether Domain Remap middleware is enabled for Swift. Domain Remap translates container and 
+account parts of a domain to path parameters that the proxy server understands. See the 
+<a href="https://github.com/openstack/swift/blob/master/swift/common/middleware/domain_remap.py" target="new8">Domain Remap documentation</a>. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -1492,14 +1504,16 @@ See http://swiftstack.com/openstack-swift/architecture/. Used in swift.conf `clu
 <td> false </td>
 <td> Boolean indicating whether CNAME Lookup middleware is enabled for Swift. 
 CNAME Lookup translates an unknown domain in the host header to something that ends with the configured `storage_domain` by looking up the 
-given domain's CNAME record in DNS. See https://github.com/openstack/swift/blob/master/swift/common/middleware/cname_lookup.py. </td>
+given domain's CNAME record in DNS. See the 
+<a href="https://github.com/openstack/swift/blob/master/swift/common/middleware/cname_lookup.py" target="new9">CNAME Lookup documentation</a>. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Lookup depth </td> 
 <td> 1 </td>
-<td> The CNAME middleware will continue to follow a CNAME chain in DNS until it finds a record ending in the configured storage domain or it reaches the configured
-maximum lookup depth. If a match is found, the environment's Host header is rewritten and the request is passed further down the WSGI chain. </td>
+<td> The CNAME middleware will continue to follow a CNAME chain in DNS until it finds a record ending in the configured storage domain or it 
+reaches the configured maximum lookup depth. If a match is found, the environment's Host header is rewritten and the request is passed 
+further down the WSGI chain. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -1519,19 +1533,20 @@ maximum lookup depth. If a match is found, the environment's Host header is rewr
 Rate limiting is performed on requests that result in database writes to the account and container sqlite dbs.  
 Ratelimit uses memcached and is dependent on the proxy servers having highly synchronized time. 
 The rate limits are limited by the accuracy of the proxy server clocks.
-See <a href="http://docs.openstack.org/developer/swift/ratelimit.html" target="ratelimit">Rate Limiting</a> on the OpenStack website.  </td>
+See the <a href="http://docs.openstack.org/developer/swift/ratelimit.html" target="ratelimit">Rate Limiting documentation</a> on the OpenStack website.  </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Clock accuracy </td> 
 <td> 1000 </td>
-<td> Represents how accurate the proxy servers' system clocks are with each other. 1000 means that all the proxies' clocks are accurate to each other within 1 millisecond. No ratelimit should be higher than the clock accuracy. </td>
+<td> Represents how accurate the proxy servers' system clocks are with each other. 1000 means that all the proxies' 
+clocks are accurate to each other within 1 millisecond. No ratelimit should be higher than the clock accuracy. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Max sleep time seconds </td> 
 <td> 60 </td>
-<td> HP Cloud OS immediately returns a 498 response if the necessary sleep time ever exceeds the given `max_sleep_time_seconds`.</td>
+<td> HP Cloud OS immediately returns a 498 response if the necessary sleep time ever exceeds the given max_sleep_time_seconds.</td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -1543,7 +1558,8 @@ See <a href="http://docs.openstack.org/developer/swift/ratelimit.html" target="r
 <tr style="background-color: white; color: black;">
 <td> Rate buffer seconds </td> 
 <td> 5 </td>
-<td> The number of seconds the rate counter can drop and be allowed to catch up (at a faster than listed rate). A larger number will result in larger spikes in rate but better average accuracy. </td>
+<td> The number of seconds the rate counter can drop and be allowed to catch up (at a faster than listed rate). A 
+larger number will result in larger spikes in rate but better average accuracy. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -1567,10 +1583,11 @@ See <a href="http://docs.openstack.org/developer/swift/ratelimit.html" target="r
 <tr style="background-color: white; color: black;">
 <td> Container_ratelimit_size </td> 
 <td> 100=100,200=50,500=20 </td>
-<td> When set with container_ratelimit_x = r: for containers of size x, limit requests per second to r. Will limit PUT, DELETE, and POST requests to /a/c/o. <br /> 
-For details, see <a href="http://docs.openstack.org/developer/swift/ratelimit.html" target="ratelimit">Rate Limiting</a> on the OpenStack website. </td>
+<td> When set with container_ratelimit_x = r: for containers of size x, limit requests per second to r. 
+Will limit PUT, DELETE, and POST requests to /a/c/o. <br /> 
+For details, see the 
+<a href="http://docs.openstack.org/developer/swift/ratelimit.html" target="ratelimit">Rate Limiting documentation</a> on the OpenStack website. </td>
 </tr>
-
 
 </table>
 
