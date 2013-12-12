@@ -19,7 +19,7 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> <a href="/cloudos/"> &#171; Return to HP Cloud OS home </a> </p>
+<p style="font-size: small;"> <a href="/cloudos/">&#9664; PREV | <a href="/cloudos/">&#9650; UP</a> | NEXT &#9654; </p>
 
 # HP Cloud OS Open Source and Third-Party Software License Agreements
 

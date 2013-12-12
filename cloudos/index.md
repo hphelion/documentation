@@ -9,7 +9,14 @@ product: cloudos
 # HP Cloud OS Documentation
 
 Welcome! HP Cloud OS is an enterprise-grade, open and extensible architecture that leverages the power of OpenStack technology, 
-the fastest growing open-source cloud community. This documentation site is for anyone interested in HP Cloud OS.
+the fastest growing open-source cloud community. This documentation site is for anyone interested in <nobr>HP Cloud OS.</nobr> 
+
+We have organized the site into four logical areas:
+
+* Prepare: Resources to help you get started, including Release Notes, FAQs, a Tech Overview, and Video Tutorials.
+* Install: Instructions to install and configure your clouds, using automated or advanced options.
+* Manage: Information about the HP Cloud OS dashboards and related tools.
+* Develop: Details about the HP Cloud OS REST API and where to find reference documentation.
 
 <table>
 <tr>

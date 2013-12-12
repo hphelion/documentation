@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Cloud OS Technical Overview"
-permalink: /cloudos/overview/
+permalink: /cloudos/prepare/overview/
 product: cloudos
 
 ---
@@ -19,7 +19,7 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> <a href="/cloudos/videos/">&#9664; PREV | <a href="/cloudos/prepare/">&#9650; UP</a> | <a href="/cloudos/cloudtypes/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/cloudos/prepare/videos/">&#9664; PREV | <a href="/cloudos/prepare/">&#9650; UP</a> | <a href="/cloudos/prepare/cloudtypes/">NEXT &#9654;</a> </p>
 
 
 

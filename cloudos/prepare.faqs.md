@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Cloud OS FAQs"
-permalink: /cloudos/faqs/
+permalink: /cloudos/prepare/faqs/
 product: cloudos
 
 ---
@@ -19,7 +19,7 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> <a href="/cloudos/supportmatrix/">&#9664; PREV | <a href="/cloudos/prepare/">&#9650; UP</a> | <a href="/cloudos/install/videos/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/cloudos/prepare/supportmatrix/">&#9664; PREV | <a href="/cloudos/prepare/">&#9650; UP</a> | <a href="/cloudos/prepare/videos/">NEXT &#9654;</a> </p>
 
 # HP Cloud OS FAQs
 

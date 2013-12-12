@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Introduction to Cloud Types"
-permalink: /cloudos/cloudtypes/
+permalink: /cloudos/prepare/cloudtypes/
 product: cloudos
 
 ---
@@ -19,7 +19,7 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> <a href="/cloudos/overview/">&#9664; PREV | <a href="/cloudos/prepare/">&#9650; UP</a> | <a href="/cloudos/glossary/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/cloudos/prepare/overview/">&#9664; PREV | <a href="/cloudos/prepare/">&#9650; UP</a> | <a href="/cloudos/prepare/glossary/">NEXT &#9654;</a> </p>
 
 # Introduction to Cloud Types
 

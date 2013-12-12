@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Cloud OS Glossary"
-permalink: /cloudos/glossary/
+permalink: /cloudos/prepare/glossary/
 product: cloudos
 
 ---
@@ -19,7 +19,7 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> <a href="/cloudos/cloudtypes/">&#9664; PREV | <a href="/cloudos/prepare/">&#9650; UP</a> | NEXT &#9654; </p>
+<p style="font-size: small;"> <a href="/cloudos/prepare/cloudtypes/">&#9664; PREV | <a href="/cloudos/prepare/">&#9650; UP</a> | NEXT &#9654; </p>
 
 # HP Cloud OS Glossary
 

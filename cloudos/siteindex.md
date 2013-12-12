@@ -21,17 +21,19 @@ PageRefresh();
 
 # HP Cloud OS Site Index
 
-#### [Cloud OS Home](/cloudos/)
+#### [HP Cloud OS Home](/cloudos/)
+
+#### [HP Cloud OS Open Source and Third-Party Software License Agreements](/cloudos/os-3rd-party-license-agreements/)
 
 #### [Prepare: Getting Started with HP Cloud OS](/cloudos/prepare/)
 
  * [HP Cloud OS Release Notes](/cloudos/releasenotes/) 
- * [HP Cloud OS Support Matrix for Hardware and Software](/cloudos/supportmatrix/) 
- * [Video Tutorials](/cloudos/videos/) 
- * [FAQs](/cloudos/faqs/)  
- * [Technical Overview](/cloudos/overview/)  
- * [Introduction to Cloud Types](/cloudos/cloudtypes/) 
- * [Glossary](/cloudos/glossary/)
+ * [HP Cloud OS Support Matrix for Hardware and Software](/cloudos/prepare/supportmatrix/) 
+ * [Video Tutorials](/cloudos/prepare/videos/) 
+ * [FAQs](/cloudos/prepare/faqs/)  
+ * [Technical Overview](/cloudos/prepare/overview/)  
+ * [Introduction to Cloud Types](/cloudos/prepare/cloudtypes/) 
+ * [Glossary](/cloudos/prepare/glossary/)
 
 #### [Install &amp; Configure Your Clouds](/cloudos/install/)
 
