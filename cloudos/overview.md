@@ -19,6 +19,10 @@ PageRefresh();
 </script>
 
 
+<p style="font-size: small;"> <a href="/cloudos/videos/">&#9664; PREV | <a href="/cloudos/prepare/">&#9650; UP</a> | <a href="/cloudos/cloudtypes/">NEXT &#9654;</a> </p>
+
+
+
 # HP Cloud OS Technical Overview
 
 Welcome! This technical overview introduces you to the HP Cloud OS architecture, its components and services, and the HP Cloud OS relationship with OpenStack.

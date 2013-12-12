@@ -19,6 +19,8 @@ PageRefresh();
 </script>
 
 
+<p style="font-size: small;"> <a href="/cloudos/supportmatrix/">&#9664; PREV | <a href="/cloudos/prepare/">&#9650; UP</a> | <a href="/cloudos/install/videos/">NEXT &#9654;</a> </p>
+
 # HP Cloud OS FAQs
 
 Welcome! You've got questions, we have the answers.

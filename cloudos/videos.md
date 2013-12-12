@@ -19,6 +19,8 @@ PageRefresh();
 </script>
 
 
+<p style="font-size: small;"> <a href="/cloudos/faqs/">&#9664; PREV | <a href="/cloudos/prepare/">&#9650; UP</a> | <a href="/cloudos/overview/">NEXT &#9654;</a> </p>
+
 # HP Cloud OS Video Tutorials
 
 To help you learn about HP Cloud OS, we have provided a set of videos tutorials. Enjoy! These same videos are hosted on the HewlettPackardVideos channel of YouTube.

@@ -19,6 +19,8 @@ PageRefresh();
 </script>
 
 
+<p style="font-size: small;"> <a href="/cloudos/cloudtypes/">&#9664; PREV | <a href="/cloudos/prepare/">&#9650; UP</a> | NEXT &#9654; </p>
+
 # HP Cloud OS Glossary
 
 [A](#a) | [B](#b) | [C](#c) | [D](#d) | [E](#e) | [F](#f) | [G](#g) | [H](#h) | [I](#i) | [J](#j) | [K](#k) | [L](#l) | [M](#m) | 

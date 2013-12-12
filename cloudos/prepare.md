@@ -6,6 +6,9 @@ product: cloudos
 
 ---
 
+
+<p style="font-size: small;"> &#9664; PREV | <a href="/cloudos/">&#9650; UP</a> | <a href="/cloudos/install/supportmatrix/">NEXT &#9654;</a> </p>
+
 # Prepare: Getting Started with HP Cloud OS
 
 If you're new to HP Cloud OS, see these topics and the video tutorials to learn about the platform's functionality.
