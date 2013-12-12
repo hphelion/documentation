@@ -855,7 +855,7 @@ will be ignored. </td>
 
 ## Hp Cos Graffiti 100
 
-Table coming today 12/6...
+( coming soon ) 
 
 
 ## Hp Cos Keystone 100
@@ -902,19 +902,19 @@ Table coming today 12/6...
 
 <tr style="background-color: white; color: black;">
 <td> Domain Admin Password </td> 
-<td> &lt;password> <b> Internal note: should we show the value here? </b> </td>
+<td> &lt;password> </td>
 <td> The Admin user's password; Granted domain admin role on the AdminProject. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Domain Arch Password </td> 
-<td> &lt;password> <b> Internal note: should we show the value here? </b> </td>
+<td> &lt;password> </td>
 <td> Architect user's password; Granted domain architect role on the AdminProject project. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Domain Trash Password </td> 
-<td> &lt;password> <b> Internal note: should we show the value here? </b> </td>
+<td> &lt;password> </td>
 <td> Trash user's password; the granted user role on the trash project. </td>
 </tr>
 

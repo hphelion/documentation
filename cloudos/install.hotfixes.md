@@ -34,13 +34,10 @@ and you need to add its functionality to your cloud:
 
 3. Follow the dialogs to apply the hot fix. 
 
-<p style="color: red; font-weight: bold; padding: 4px 4px 4px 4px; border: 1px dotted;"> Internal note: getting info about the dialogs... </p>
- 
+( details coming soon )  
  
 <!-- 
 ## Configure Option
-
-**Internal note**: This feature might be removed from Cosmos in G3 - waiting for final word.
 
 Click the Configure option to sign up for an HP Web Catalog account, or login with your credentials.
 

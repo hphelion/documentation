@@ -34,7 +34,7 @@ the HP Cloud OS Operational Dashboard, you cannot go back and setup Swift.
 * [Zeroing Disks](#zeroing-disks)
 * [Setup Network Configuration for Swift](#setup-network-configuration-for-swift)
 * [Preview of Swift Deployment Steps](#preview-of-swift-deployment-steps)
-* [Next Steps](#next-steps)
+* [Next Step](#next-step)
 
 
 ## Swift Requirements
@@ -57,17 +57,17 @@ To show the start and end megabyte, you can use the following on each Swift stor
 
 Show start and end:
 
-<p style="font-size: small; font-family:monospace;">
+<p style="font-size: small; font-family:monospace; border: dotted 1px #cccccc; padding: 2px 2px 2px 2px;">
 dd if=/dev/sdb bs=1M count=1 | hd <br/>
-size=$(fdisk -l  /dev/sdb | grep Disk | grep bytes | cut -f 5 -d" ") &amp;&amp; echo $size <br />
+<nobr>size=$(fdisk -l  /dev/sdb | grep Disk | grep bytes | cut -f 5 -d" ") &amp;&amp; echo $size</nobr> <br />
 skip=$(python -c "print ($size / (1024*1024)) - 1") &amp;&amp; echo $skip <br />
 dd if=/dev/sdb bs=1M skip=$skip count=1 2>/dev/null | hd
 </p>	
 
 In the start and end data, look for a display of all zeros, similar to this example:
 
-<p style="font-size: small; font-family:monospace;">
-00000000  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................| <br />
+<p style="font-size: small; font-family:monospace; border: dotted; 1px #cccccc; padding: 2px 2px 2px 2px;">
+<nobr>00000000  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|</nobr> <br />
 * <br />
 1+0 records in <br />
 1+0 records out
@@ -75,16 +75,16 @@ In the start and end data, look for a display of all zeros, similar to this exam
 
 If the results show something like the following, the disk is not zeroed:
 
-<p style="font-size: small; font-family:monospace;">
-000fbe00  a2 a0 d0 eb e5 b9 33 44  87 c0 68 b6 b7 26 99 c7  |......3D..h..&amp;..|
+<p style="font-size: small; font-family:monospace; border: dotted 1px #cccccc; padding: 2px 2px 2px 2px;">
+<nobr>000fbe00  a2 a0 d0 eb e5 b9 33 44  87 c0 68 b6 b7 26 99 c7  |......3D..h..&amp;..|</nobr>
 </p>	
 
 To zero out the first and last meg, use this:
 
-<p style="font-size: small; font-family:monospace;">
+<p style="font-size: small; font-family:monospace; border: dotted 1px #cccccc; padding: 2px 2px 2px 2px;">
 dd if=/dev/zero of=/dev/sdb bs=1M count=1 <br />
-size=$(fdisk -l  /dev/sdb | grep Disk | grep bytes | cut -f 5 -d" ") && echo $size <br />
-seek=$(python -c "print ($size / (1024*1024)) - 1") &amp;&amp; echo $seek <br />
+<nobr>size=$(fdisk -l  /dev/sdb | grep Disk | grep bytes | cut -f 5 -d" ") && echo $size <br />
+seek=$(python -c "print ($size / (1024*1024)) - 1") &amp;&amp; echo $seek</nobr> <br />
 dd if=/dev/zero of=/dev/sdb seek=$seek bs=1M <br />
 </p>	
 
