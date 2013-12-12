@@ -222,8 +222,8 @@ The following table lists the install modules **in the order they must be applie
 
 <tr style="background-color: white; color: black;">
 <td> Hp Cos Swift 100 </td>
-<td> Provides an object/blog storage service. **Note:** the Swift barclamp must be installed manually, as discussed in [Create a Cloud](/cloudos/install/create-cloud/), before you can 
-apply it to your cloud environment.
+<td> Provides an object/blob storage service. **Note:** the Swift barclamp must be installed manually, before clicking Complete Install in the HP Cloud OS Operational Dashboard. 
+See [Install Swift (Optional)](/cloudos/install/install-swift/).
 </td>
 </tr>
 

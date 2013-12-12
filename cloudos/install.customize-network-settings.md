@@ -19,6 +19,9 @@ PageRefresh();
 </script>
 
 
+<p style="font-size: small;"> <a href="/cloudos/install/customize-network-connections/">&#9664; PREV</a> | <a href="/cloudos/install/">&#9650; UP</a> | <a href="/cloudos/install/install-swift/">NEXT &#9654;</a> </p>
+
+
 # Customize Network Settings (Required)
 
 This topic describes the steps to customize the network settings. These steps are required. 
@@ -33,8 +36,8 @@ After that, the network settings in the HP Cloud OS Operational Dashboard are re
 
 ## Introduction
 
-Based on the network infrastructure suggested in "Plan Server, Network and Storage Infrastructure
-for a Cloud" ( link ), you must customize the network settings. Here are some of the
+Based on the network infrastructure suggested in the "Plan the Infrastructure for a Cloud" section of 
+[Before You Install](/cloudos/before-you-install), you must customize the network settings. Here are some of the
 criteria to be considered while making changes to the default settings:
 
 * The default settings assume you have a single physical network across the Admin Node and all

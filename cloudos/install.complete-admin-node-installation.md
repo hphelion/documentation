@@ -23,9 +23,11 @@ PageRefresh();
 This topic describes the steps to complete the Admin Node installation. These steps are required. 
 
 > **Caution:** Be sure the values for the Prerequisites, Server Types, Connections and Networks
-are what you need, before you follow the steps in this topic. Once the install process is triggered, no
-changes can be made. If you want to make changes, you need to start over by re-installing the
-Admin Node.  
+are what you need, before you follow the steps in this topic. Also, if you want to use Swift in your cloud, you must 
+manually install Swift before clicking Complete Install in the HP Cloud OS Operational Dashboard, as noted in the 
+[Install Swift (Optional)](/cloudos/install/install-swift/) topic. 
+
+Once the install process is triggered, no changes can be made to the preceding steps. If you want to make changes, you need to start over by re-installing the Admin Node.  
 
 To complete the Admin Node installation:
 

@@ -19,6 +19,9 @@ function PageRefresh {
 </script>
 
 
+<p style="font-size: small;"> <a href="/cloudos/install/admin-node-prerequisites/">&#9664; PREV</a> | <a href="/cloudos/install/">&#9650; UP</a> | <a href="/cloudos/install/customize-server-types/">NEXT &#9654;</a> </p>
+
+
 # Set Admin Node Prerequisites (Required)
 
 Your first step in the HP Cloud OS Operational Dashboard is to configure the Admin Node prerequisites. See the sections in this topic:

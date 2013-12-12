@@ -1282,7 +1282,11 @@ virtual machines. Select kvm if nova-compute nodes are bare-metal. </td>
 
 ## Hp Cos Swift 100
 
-In most cases, you can use the default values. 
+**Important:** As noted in a prior topic, [Install Swift (Optional)](/cloudos/install/install-swift/), if 
+you want to use Swift in your cloud, you must manually install Swift before clicking Complete Install in the HP Cloud OS Operational 
+Dashboard.
+
+If you installed Swift, you can modify its attributes shown in this table. In most cases, you can use the default values.
 
 <table style="text-align: left; vertical-align: top;">
 
@@ -1319,21 +1323,24 @@ In most cases, you can use the default values.
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> Allow Public Containers   </td> 
+<td> Allow Public Containers </td> 
 <td> false </td>
-<td> Boolean indicating whether Swift should be able to use public containers. </td>
+<td> Boolean indicating whether Swift should allow containers across tenants. Setting this to true causes a performance penalty. 
+See https://blueprints.launchpad.net/horizon/+spec/swift-container-public-access.  Used in `delay_auth_decision`.</td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Zones  </td> 
 <td> 2 </td>
-<td> The number of zones Swift should use. </td>
+<td> The number of zones Swift should use. These are logical divisions of the Swift storage, with a minimum of 2. 
+Copies of data will be stored in different zones. See http://searchcloudstorage.techtarget.com/answer/OpenStack-Swift-object-storage-How-does-data-placement-work. Used in `ring-builder` commands.</td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Partitions </td> 
 <td> 18 </td>
-<td> The number of partitions Swift should use. </td>
+<td> The number of partitions Swift should use. A partition is a storage unit, at a lower level than zones. The number represents the power of 2 for the number of partitions. For example, 
+18 represents 2^18 or 262,144 partitions. See http://searchcloudstorage.techtarget.com/answer/OpenStack-Swift-object-storage-How-does-data-placement-work. Used in ring builder commands.</td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -1383,7 +1390,7 @@ In most cases, you can use the default values.
 </tr>
 
 <tr>
-<td colspan="3" style="background-color: #C8C8C8;"> S3 </td>
+<td colspan="3" style="background-color: #C8C8C8;"> S3 &mdash; Note: currently not supported. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -1417,7 +1424,7 @@ In most cases, you can use the default values.
 </tr>
 
 <tr>
-<td colspan="3" style="background-color: #C8C8C8;"> StaticWeb </td>
+<td colspan="3" style="background-color: #C8C8C8;"> StaticWeb &mdash; Note: currently not supported. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -1427,7 +1434,7 @@ In most cases, you can use the default values.
 </tr>
 
 <tr>
-<td colspan="3" style="background-color: #C8C8C8;"> TempURL </td>
+<td colspan="3" style="background-color: #C8C8C8;"> TempURL &mdash; Note: currently not supported. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -1437,7 +1444,7 @@ In most cases, you can use the default values.
 </tr>
 
 <tr>
-<td colspan="3" style="background-color: #C8C8C8;"> FormPOST </td>
+<td colspan="3" style="background-color: #C8C8C8;"> FormPOST &mdash; Note: currently not supported. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -1447,7 +1454,7 @@ In most cases, you can use the default values.
 </tr>
 
 <tr>
-<td colspan="3" style="background-color: #C8C8C8;"> Domain Remap </td>
+<td colspan="3" style="background-color: #C8C8C8;"> Domain Remap &mdash; Note: currently not supported. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -1469,7 +1476,7 @@ In most cases, you can use the default values.
 </tr>
 
 <tr>
-<td colspan="3" style="background-color: #C8C8C8;"> CNAME Lookup </td>
+<td colspan="3" style="background-color: #C8C8C8;"> CNAME Lookup &mdash; Note: currently not supported. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -1494,7 +1501,7 @@ maximum lookup depth. If a match is found, the environment's Host header is rewr
 </tr>
 
 <tr>
-<td colspan="3" style="background-color: #C8C8C8;"> Ratelimit </td>
+<td colspan="3" style="background-color: #C8C8C8;"> Ratelimit &mdash; Note: currently not supported. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">

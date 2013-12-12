@@ -18,6 +18,9 @@ function PageRefresh {
  
 </script>
 
+<p style="font-size: small;"> &#9664; PREV | <a href="/cloudos/">&#9650; UP</a> | <a href="/cloudos/install/overview/">NEXT &#9654;</a> </p>
+
+
 
 # Install &amp; Configure Your Clouds
 
@@ -34,6 +37,7 @@ Install and set up the Admin node:
 * [Customize Server Types (Optional)](/cloudos/install/customize-server-types/)
 * [Customize Network Connections (Optional)](/cloudos/install/customize-network-connections/)
 * [Customize Network Settings (Required)](/cloudos/install/customize-network-settings/)
+* [Install Swift (Optional)](/cloudos/install/install-swift/)
 * [Complete Admin Node Installation (Required)](/cloudos/install/complete-admin-node-installation/)
 
 After you install and set up the Admin node, you can perform additional steps:
