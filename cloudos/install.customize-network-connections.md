@@ -19,6 +19,8 @@ PageRefresh();
 </script>
 
 
+<p style="font-size: small;"> <a href="/cloudos/install/customize-server-types/">&#9664; PREV</a> | <a href="/cloudos/install/">&#9650; UP</a> | <a href="/cloudos/install/customize-network-settings/">NEXT &#9654;</a> </p>
+
 # Customize Network Connections (Optional)
 
 This topic describes the steps to customize the network connections. These steps are optional. 

@@ -19,7 +19,7 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> <a href="/cloudos/install/">&#9664; PREV</a> | <a href="/cloudos/install/">&#9650; UP</a> | <a href="/cloudos/install/beore-you-install/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/cloudos/install/">&#9664; PREV</a> | <a href="/cloudos/install/">&#9650; UP</a> | <a href="/cloudos/install/before-you-install/">NEXT &#9654;</a> </p>
 
 
 
@@ -74,7 +74,7 @@ you in the process of customizing and deploying the individual install modules.
 
 The following diagram illustrates the Cloud OS environment.
 
-( redrawing Hrushi's pptx diagram in Visio 12/4 to 12/5 - will insert here ) 
+( coming soon ) 
 
 ### Cloud OS Administration Node
 

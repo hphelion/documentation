@@ -55,28 +55,36 @@ To show the start and end megabyte, you can use the following on each Swift stor
 
 Show start and end:
 
+<pre>
     dd if=/dev/sdb bs=1M count=1 | hd
     size=$(fdisk -l  /dev/sdb | grep Disk | grep bytes | cut -f 5 -d" ") && echo $size
     skip=$(python -c "print ($size / (1024*1024)) - 1") && echo $skip
     dd if=/dev/sdb bs=1M skip=$skip count=1 2>/dev/null | hd
+</pre>	
 
 In the start and end data, look for a display of all zeros, similar to this example:
 
+<pre>
     00000000  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|
     *
     1+0 records in
     1+0 records out
+</pre>	
 
 If the results show something like the following, the disk is not zeroed:
 
+<pre>
     000fbe00  a2 a0 d0 eb e5 b9 33 44  87 c0 68 b6 b7 26 99 c7  |......3D..h..&..|
+</pre>	
 
 To zero out the first and last meg, use this:
 
+<pre>
     dd if=/dev/zero of=/dev/sdb bs=1M count=1
     size=$(fdisk -l  /dev/sdb | grep Disk | grep bytes | cut -f 5 -d" ") && echo $size
     seek=$(python -c "print ($size / (1024*1024)) - 1") && echo $seek
     dd if=/dev/zero of=/dev/sdb seek=$seek bs=1M
+</pre>	
 
 ## Setup Network Configuration for Swift
 
