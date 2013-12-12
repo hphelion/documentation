@@ -27,5 +27,5 @@ For our friends on the Microsoft platform, [we have a .NET open source binding o
 The [HP Cloud Javascript bindings](http://hpcloud.github.io/hpcloud-js/) support our identity services and object storage functionality. We use this in our own applications.
 
 ###Ruby Fog
-HP Cloud offers [an extension to Ruby Fog](/bindings/fog) for interacting with HP Cloud Services based on the open source Ruby Fog bindings. We have turned this over to be enhanced and maintained by the Ruby Fog community and will move the documentation there as well.
+HP Cloud offers [an extension to Ruby Fog](/bindings/fog) for interacting with HP Cloud Services based on the open source Ruby Fog bindings. We have turned this over to be enhanced and maintained by the Ruby Fog community along with the [documentation](https://github.com/fog/fog/blob/master/lib/fog/hp/README.md).
 
