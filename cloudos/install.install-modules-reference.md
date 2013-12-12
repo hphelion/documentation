@@ -18,7 +18,7 @@ PageRefresh();
  
 </script>
 
-<p style="font-size: x-small;"> <a href="/cloudos/install/advanced-cloud-setup">&#9664; PREV</a> | <a href="/cloudos/install/">&#9650; UP</a> | NEXT &#9654; </p>
+<p style="font-size: small;"> <a href="/cloudos/install/advanced-cloud-setup">&#9664; PREV</a> | <a href="/cloudos/install/">&#9650; UP</a> | NEXT &#9654; </p>
 
 
 # Install Modules Reference
@@ -1274,7 +1274,7 @@ virtual machines. Select kvm if nova-compute nodes are bare-metal. </td>
 <tr style="background-color: white; color: black;">
 <td> Non Proxy Host(s) (Optional) </td> 
 <td> <nobr> 10.*|192.*|localhost|127.0 </nobr> </td>
-<td> Use this field to specify addresses that should not use proxy servers. Each network needs to be separated by a bar "|". For example:<nobr> 10.*|192.*|localhost </nobr> </td>
+<td> Use this field to specify addresses that should not use proxy servers. Each network needs to be separated by a bar "|". For example: <nobr> 10.*|192.*|localhost </nobr> </td>
 </tr>
 
 </table>
@@ -1293,7 +1293,7 @@ In most cases, you can use the default values.
 
 <tr>
 <th style="background-color: #C8C8C8;"> Description </th> 
-<td colspan="2" style="background-color: white;"> Configures the object/blob storage service. </td>
+<td colspan="2" style="background-color: white;"> Configures the Swift object/blob storage service. </td>
 </tr>
 
 <tr>
@@ -1303,7 +1303,7 @@ In most cases, you can use the default values.
 
 <tr>
 <th style="background-color: #C8C8C8;"> Roles </th> 
-<td colspan="2" style="background-color: white;"> Hp cos swift 100-storage, Hp cos swift 100-ring-compute, Hp cos swift 100-proxy, Hp cos swift 100-dispersion</td>
+<td colspan="2" style="background-color: white;"> Hp cos swift 100-storage <br /> Hp cos swift 100-ring-compute <br /> Hp cos swift 100-proxy <br /> Hp cos swift 100-dispersion </td>
 </tr>
 
 <tr style="background-color: #C8C8C8;">
@@ -1383,13 +1383,13 @@ In most cases, you can use the default values.
 </tr>
 
 <tr>
-<td colspan="3" style="background-color: #C8C8C8;"> S3: </td>
+<td colspan="3" style="background-color: #C8C8C8;"> S3 </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Enabled </td> 
 <td> false </td>
-<td> Boolean indicating whether S3 is enabled for Swift. Swift3 Middleware for OpenStack allows access to OpenStack Swift via the Amazon S3 API.</td>
+<td> Boolean indicating whether Swift3 middleware is enabled for Swift. Swift3 allows access to OpenStack Swift via the Amazon S3 API. See https://github.com/fujita/swift3. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -1413,7 +1413,7 @@ In most cases, you can use the default values.
 <tr style="background-color: white; color: black;">
 <td> Use barclamp-git to checkout </td> 
 <td> true </td>
-<td> Boolean indicating whether Swift should ...?  </td>
+<td> Boolean indicating whether Swift should <b> ...? </b> </td>
 </tr>
 
 <tr>
@@ -1423,8 +1423,7 @@ In most cases, you can use the default values.
 <tr style="background-color: white; color: black;">
 <td> Enabled </td> 
 <td> false </td>
-<td> Boolean indicating whether StaticWeb middleware is enabled for Swift. This middleware serves container data as a static website
-with an index file and error file resolution, and optional file listings. See https://github.com/openstack/swift/blob/master/swift/common/middleware/staticweb.py. </td>
+<td> Boolean indicating whether StaticWeb middleware is enabled for Swift. StaticWeb serves container data as a static website with an index file and error file resolution, and optional file listings. See https://github.com/openstack/swift/blob/master/swift/common/middleware/staticweb.py. </td>
 </tr>
 
 <tr>
@@ -1434,8 +1433,7 @@ with an index file and error file resolution, and optional file listings. See ht
 <tr style="background-color: white; color: black;">
 <td> Enabled </td> 
 <td> false </td>
-<td> Boolean indicating whether TempURL middleware is enabled for Swift. Allows the creation of URLs to provide temporary access to objects. See 
-https://github.com/openstack/swift/blob/master/swift/common/middleware/tempurl.py. </td>
+<td> Boolean indicating whether TempURL middleware is enabled for Swift. TempURL allows the creation of URLs to provide temporary access to objects. See https://github.com/openstack/swift/blob/master/swift/common/middleware/tempurl.py. </td>
 </tr>
 
 <tr>
@@ -1445,11 +1443,121 @@ https://github.com/openstack/swift/blob/master/swift/common/middleware/tempurl.p
 <tr style="background-color: white; color: black;">
 <td> Enabled </td> 
 <td> false </td>
-<td> Boolean indicating whether FormPOST is enabled for Swift. FormPOST translates a browser form post into a regular Swift object PUT. See https://github.com/openstack/swift/blob/master/swift/common/middleware/formpost.py. </td>
+<td> Boolean indicating whether FormPOST middleware is enabled for Swift. FormPOST translates a browser form post into a regular Swift object PUT. See https://github.com/openstack/swift/blob/master/swift/common/middleware/formpost.py. </td>
 </tr>
 
-</table>
+<tr>
+<td colspan="3" style="background-color: #C8C8C8;"> Domain Remap </td>
+</tr>
 
+<tr style="background-color: white; color: black;">
+<td> Enabled </td> 
+<td> false </td>
+<td> Boolean indicating whether Domain Remap middleware is enabled for Swift. Domain Remap translates container and account parts of a domain to path parameters that the proxy server understands. See https://github.com/openstack/swift/blob/master/swift/common/middleware/domain_remap.py. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Path root </td> 
+<td> v1 </td>
+<td>  </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Storage Domain </td> 
+<td> swift.storage.crowbar.org </td>
+<td> Sets the storage domain used by Swift. </td>
+</tr>
+
+<tr>
+<td colspan="3" style="background-color: #C8C8C8;"> CNAME Lookup </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Enabled </td> 
+<td> false </td>
+<td> Boolean indicating whether CNAME Lookup middleware is enabled for Swift. 
+CNAME Lookup translates an unknown domain in the host header to something that ends with the configured `storage_domain` by looking up the 
+given domain's CNAME record in DNS. See https://github.com/openstack/swift/blob/master/swift/common/middleware/cname_lookup.py. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Lookup depth </td> 
+<td> 1 </td>
+<td> The CNAME middleware will continue to follow a CNAME chain in DNS until it finds a record ending in the configured storage domain or it reaches the configured
+maximum lookup depth. If a match is found, the environment's Host header is rewritten and the request is passed further down the WSGI chain. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Storage Domain </td> 
+<td> swift.storage.crowbar.org </td>
+<td> Sets the storage domain for Swift. </td>
+</tr>
+
+<tr>
+<td colspan="3" style="background-color: #C8C8C8;"> Ratelimit </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Enabled </td> 
+<td> false </td>
+<td> Boolean indicating whether Ratelimit middleware is enabled for Swift. 
+Rate limiting is performed on requests that result in database writes to the account and container sqlite dbs.  
+Ratelimit uses memcached and is dependent on the proxy servers having highly synchronized time. 
+The rate limits are limited by the accuracy of the proxy server clocks.
+See <a href="http://docs.openstack.org/developer/swift/ratelimit.html" target="ratelimit">Rate Limiting</a> on the OpenStack website.  </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Clock accuracy </td> 
+<td> 1000 </td>
+<td> Represents how accurate the proxy servers' system clocks are with each other. 1000 means that all the proxies' clocks are accurate to each other within 1 millisecond. No ratelimit should be higher than the clock accuracy. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Max sleep time seconds </td> 
+<td> 60 </td>
+<td> HP Cloud OS immediately returns a 498 response if the necessary sleep time ever exceeds the given `max_sleep_time_seconds`.</td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Log sleep time seconds </td> 
+<td> 0 </td>
+<td> For visibility into rate limiting, set this value to greater than zero, and all sleeps greater than the number will be logged. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Rate buffer seconds </td> 
+<td> 5 </td>
+<td> The number of seconds the rate counter can drop and be allowed to catch up (at a faster than listed rate). A larger number will result in larger spikes in rate but better average accuracy. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Account Ratelimit </td> 
+<td> 0 </td>
+<td> If set, will limit PUT and DELETE requests to /account_name/container_name. Number is in requests per second. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Account whitelist </td> 
+<td> </td>
+<td> Comma separated lists of account names that will not be rate limited. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Account blacklist </td> 
+<td> </td>
+<td> Comma separated lists of account names that will not be allowed. Returns a 497 response. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Container_ratelimit_size </td> 
+<td> 100=100,200=50,500=20 </td>
+<td> When set with container_ratelimit_x = r: for containers of size x, limit requests per second to r. Will limit PUT, DELETE, and POST requests to /a/c/o. <br /> 
+For details, see <a href="http://docs.openstack.org/developer/swift/ratelimit.html" target="ratelimit">Rate Limiting</a> on the OpenStack website. </td>
+</tr>
+
+
+</table>
 
 <a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

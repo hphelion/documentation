@@ -35,7 +35,7 @@ view the server response. The app is installed on your deployed clouds. The docu
 
  * Graffiti: http://&lt;my_server>:21071/docs/index.html
 
-On your cloud, replace &lt;my_server> with the server’s IP or DNS value.
+On your cloud, replace &lt;my_server> with the server's IP or DNS value.
 
 ## Read the API Quick Start topic
 
