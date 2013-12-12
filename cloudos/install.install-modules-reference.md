@@ -1311,7 +1311,8 @@ If you setup Swift, you can modify its attributes, which are shown in the follow
 
 <tr>
 <th style="background-color: #C8C8C8;"> Roles </th> 
-<td colspan="2" style="background-color: white;"> Hp cos swift 100-storage <br /> Hp cos swift 100-ring-compute <br /> Hp cos swift 100-proxy <br /> Hp cos swift 100-dispersion </td>
+<td colspan="2" style="background-color: white;"> Hp cos swift 100-ring-storage <br /> Hp cos swift 100-ring-compute <br /> Hp cos swift 100-proxy <br /> Hp cos swift 100-dispersion. For 
+information about the roles, see the Swift Roles section of the [Setup Swift](/cloudos/install/setup-swift) topic. </td>
 </tr>
 
 <tr style="background-color: #C8C8C8;">
@@ -1363,9 +1364,9 @@ builder commands.</td>
 
 <tr style="background-color: white; color: black;">
 <td> Cluster Hash </td> 
-<td> &lt;random-string> </td>
-<td> A unique id for the Swift install. Initially assigned a random number. See http://swiftstack.com/openstack-swift/architecture/. 
-Used in swift.conf `cluster_hash`.</td>
+<td> ( generated ) </td>
+<td> A unique id for the Swift install. Initially assigned a random number. Shared among all nodes in a Swift cluster. Can be generated using <code> od -t x8 -N 8 -A n &lt;/dev/random </code>. 
+See http://swiftstack.com/openstack-swift/architecture/. Used in swift.conf `cluster_hash`. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
