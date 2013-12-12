@@ -111,9 +111,9 @@ Here are the network configuration steps:
 
 8. In the Edit Address Ranges dialog, click "Add Range" and specify the range as:
 
- * Node Type: host 
- * IPV4 Start Addr: 192.168.125.81
- * IPV4 End Addr: 192.168.125.160
+  * Node Type: host 
+  * IPV4 Start Addr: 192.168.125.81
+  * IPV4 End Addr: 192.168.125.160
 
 Keep all the other default values.
 

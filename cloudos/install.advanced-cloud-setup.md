@@ -19,7 +19,7 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> <a href="/cloudos/install/hot-fixes/">&#9664; PREV</a> | <a href="/cloudos/install/">&#9650; UP</a> | <a href="/cloudos/install/install-modules-reference/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/cloudos/install/updates-and-extensions/">&#9664; PREV</a> | <a href="/cloudos/install/">&#9650; UP</a> | <a href="/cloudos/install/install-modules-reference/">NEXT &#9654;</a> </p>
 
 # Advanced Cloud Setup
 

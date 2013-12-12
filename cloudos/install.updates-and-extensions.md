@@ -21,15 +21,13 @@ PageRefresh();
 
 <p style="font-size: small;"> <a href="/cloudos/install/hot-fixes/">&#9664; PREV</a> | <a href="/cloudos/install/">&#9650; UP</a> | <a href="/cloudos/install/advanced-cloud-setup/">NEXT &#9654;</a> </p>
 
-# Install Hot Fixes
+# Updates and Extensions
 
-This topic explains how to obtain patches and other functionality that is relevant to your cloud environments from the 
-HP Cloud OS Distribution Network (CODN). 
+This topic explains how to obtain patches and other relevant functionality from the HP Cloud OS Distribution Network (CODN). 
 
 ## Start in the HP Cloud OS Operational Dashboard
 
-1. From the Cloud tab in the Operational Dashboard, click the Updates and Extensions panel.   
-If you are accessing this page for the first time, there is no data to display in the table.
+1. From the Cloud tab in the Operational Dashboard, click the Updates and Extensions panel. If you are accessing this page for the first time, there is no data to display in the table.
 
 2. Click the Configure button.
 
