@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: "HP Cloud services"
 permalink: /services/
 
