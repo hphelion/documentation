@@ -46,12 +46,14 @@ noted in the [Advanced Cloud Setup](/cloudos/install/advanced-cloud-setup/) topi
 * [Hp Cos Skyline 100](#hp-cos-skyline-100)
 * [Hp Cos Swift 100](#hp-cos-swift-100)
 
+<!-- 
 <p style="color: red; font-weight: bold; padding: 4px 4px 4px 4px; border: 1px dotted;"> Internal note for <b>G3</b> release: <br/>
 Okay to not include an Eden install module table or any Eden attributes in other install module tables?<br/>
 Okay to use Graffiti instead of Peer? <br/>
 Okay to add the Swift table? <br/>
 Okay to keep the Cinder table? <br/>
 Okay to use "Quantum" instead of "Neutron"? </p>
+--> 
 
 ## Couchdb 120
 
@@ -1282,11 +1284,13 @@ virtual machines. Select kvm if nova-compute nodes are bare-metal. </td>
 
 ## Hp Cos Swift 100
 
-**Important:** As noted in a prior topic, [Install Swift (Optional)](/cloudos/install/install-swift/), if 
+**Important:** As noted in a prior topic, [Setup Swift (Optional)](/cloudos/install/setup-swift/), if 
 you want to use Swift in your cloud, you must manually install Swift before clicking Complete Install in the HP Cloud OS Operational 
 Dashboard.
 
-If you installed Swift, you can modify its attributes shown in this table. In most cases, you can use the default values.
+If you setup Swift, you can modify its attributes, which are shown in the following table. In most cases, you can use the default values. 
+
+**Note:** The Additional Middleware and their attributes are not supported in the current release.  
 
 <table style="text-align: left; vertical-align: top;">
 
@@ -1319,7 +1323,7 @@ If you installed Swift, you can modify its attributes shown in this table. In mo
 <tr style="background-color: white; color: black;">
 <td> Keystone instance   </td> 
 <td> </td>
-<td> From the pull-down menu, select the name of the Keystone instance to use. </td>
+<td> The Keystone instance Swift should register with.</td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -1346,37 +1350,40 @@ Copies of data will be stored in different zones. See http://searchcloudstorage.
 <tr style="background-color: white; color: black;">
 <td> Minimum Partitions per Hour  </td> 
 <td> 1 </td>
-<td> The minimum number of partitions Swift should use each hour. </td>
+<td> The time in hours before a specific partition can be moved in succession. See http://docs.openstack.org/developer/swift/deployment_guide.html. 
+Used in ring builder commands.</td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Replicas </td> 
 <td> 1 </td>
-<td> The number of replicas Swift should use. </td>
+<td> The number of replicas in which to store the data. See http://docs.openstack.org/developer/swift/deployment_guide.html. Used in ring 
+builder commands.</td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Cluster Hash </td> 
 <td> &lt;random-string> </td>
-<td> A random string you can enter to seed the hash calculations done by Swift. </td>
+<td> A unique id for the Swift install. Initially assigned a random number. See http://swiftstack.com/openstack-swift/architecture/. 
+Used in swift.conf `cluster_hash`.</td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Cluster Admin Password </td> 
 <td> &lt;password> </td>
-<td> The password for the cluster's Admin account. </td>
+<td> The password for the administrative user for Swift in the `swauth` method. **Note:** Not used because HP Cloud OS defaults to Keystone authentication. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> User </td> 
 <td> swift </td>
-<td> The user account Swift should use. </td>
+<td> The Swift user account. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Group </td> 
 <td> swift </td>
-<td> The group to which the user account belongs. </td>
+<td> The Swift group. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
