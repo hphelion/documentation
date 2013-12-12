@@ -19,6 +19,8 @@ PageRefresh();
 </script>
 
 
+<p style="font-size: small;"> <a href="/cloudos/install/license/">&#9664; PREV</a> | <a href="/cloudos/install/">&#9650; UP</a> | <a href="/cloudos/install/advanced-cloud-setup/">NEXT &#9654;</a> </p>
+
 # Install Hot Fixes
 
 This topic describes the steps to import and apply hot fixes to your deployed clouds.  

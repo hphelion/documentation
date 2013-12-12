@@ -19,6 +19,10 @@ PageRefresh();
 </script>
 
 
+<p style="font-size: small;"> <a href="/cloudos/install/admin-node-prerequisites/">&#9664; PREV</a> | <a href="/cloudos/install/">&#9650; UP</a> | <a href="/cloudos/install/customize-network-settings/">NEXT &#9654;</a> </p>
+
+
+
 # Customize Server Types (Optional)
 
 This topic describes the steps to customize the server types. These steps are optional. 

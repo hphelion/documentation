@@ -19,6 +19,10 @@ PageRefresh();
 </script>
 
 
+<p style="font-size: small;"> <a href="/cloudos/install/">&#9664; PREV</a> | <a href="/cloudos/install/">&#9650; UP</a> | <a href="/cloudos/install/beore-you-install/">NEXT &#9654;</a> </p>
+
+
+
 # Installation Overview
 
 Welcome! This topic presents an overview of the installation steps.  

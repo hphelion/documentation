@@ -19,7 +19,7 @@ function PageRefresh {
 </script>
 
 
-<p style="font-size: small;"> <a href="/cloudos/install/admin-node-prerequisites/">&#9664; PREV</a> | <a href="/cloudos/install/">&#9650; UP</a> | <a href="/cloudos/install/customize-server-types/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/cloudos/install/before-you-install/">&#9664; PREV</a> | <a href="/cloudos/install/">&#9650; UP</a> | <a href="/cloudos/install/customize-server-types/">NEXT &#9654;</a> </p>
 
 
 # Set Admin Node Prerequisites (Required)

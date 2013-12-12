@@ -18,6 +18,9 @@ PageRefresh();
 
 </script>
 
+
+<p style="font-size: small;"> <a href="/cloudos/install/setup-swift/">&#9664; PREV</a> | <a href="/cloudos/install/">&#9650; UP</a> | <a href="/cloudos/install/create-cloud/">NEXT &#9654;</a> </p>
+
 # Complete Admin Node Installation (Required)
 
 This topic describes the steps to complete the Admin Node installation. These steps are required. 

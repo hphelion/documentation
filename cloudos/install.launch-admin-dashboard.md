@@ -19,6 +19,8 @@ PageRefresh();
 </script>
 
 
+<p style="font-size: small;"> <a href="/cloudos/install/create-cloud/">&#9664; PREV</a> | <a href="/cloudos/install/">&#9650; UP</a> | <a href="/cloudos/install/license/">NEXT &#9654;</a> </p>
+
 # Launch the Administration Dashboard
 
 After a cloud environment has been created in the HP Cloud OS Operational Dashboard, you manage the cloud

@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Install Swift"
-permalink: /cloudos/install/install-swift/
+title: "Setup Swift (Optional)"
+permalink: /cloudos/install/setup-swift/
 product: cloudos
 
 ---
@@ -21,13 +21,13 @@ PageRefresh();
 
 <p style="font-size: small;"> <a href="/cloudos/install/customize-network-settings/">&#9664; PREV</a> | <a href="/cloudos/install/">&#9650; UP</a> | <a href="/cloudos/install/complete-admin-node-installation/">NEXT &#9654;</a> </p>
 
-# Install Swift (Optional) 
+# Setup Swift (Optional) 
 
-Swift is the OpenStack object/blob storage service for cloud computing. Organizations can use Swift to store lots of data efficiently, safely, and cheaply.
+Swift is the OpenStack object/blob storage service for cloud computing. You can use Swift to store lots of data efficiently, safely, and cheaply.
 
-**Important**: Swift is an optional service. However, if you want to use Swift in your cloud, you **must** manually install it as described 
+**Important**: Swift is an optional service. However, if you want to use it in your cloud, you **must** manually setup Swift as described 
 in this topic **before completing** the Admin Node installation. Once you click the Complete Install button on the Environment tab of 
-the HP Cloud OS Operational Dashboard, you cannot go back and install Swift. 
+the HP Cloud OS Operational Dashboard, you cannot go back and setup Swift. 
 
 * [Swift Requirements](#swift-requirements)
 * [Zeroing Disks](#zeroing-disks)

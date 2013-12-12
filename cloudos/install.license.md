@@ -19,6 +19,8 @@ PageRefresh();
 </script>
 
 
+<p style="font-size: small;"> <a href="/cloudos/install/launch-admin-dashboard/">&#9664; PREV</a> | <a href="/cloudos/install/">&#9650; UP</a> | <a href="/cloudos/install/hot-fixes/">NEXT &#9654;</a> </p>
+
 # Check the Cloud OS License
 
 This topic describes the steps to review and update your HP Cloud OS license. 
