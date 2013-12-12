@@ -18,7 +18,7 @@ PageRefresh();
  
 </script>
 
-<p style="font-size: x-small; text-align:right;"> <a href="/cloudos/install/advanced-cloud-setup">PREV</a> | <a href="/cloudos/install/">UP</a> | <a href="/cloudos/install/">NEXT</a> </p>
+<p style="font-size: x-small;"> <a href="/cloudos/install/advanced-cloud-setup">&#9664; PREV</a> | <a href="/cloudos/install/">&#9650; UP</a> | NEXT &#9654; </p>
 
 
 # Install Modules Reference
@@ -1379,13 +1379,17 @@ In most cases, you can use the default values.
 </tr>
 
 <tr>
-<td colspan="3" style="background-color: #C8C8C8;"> Additional middleware: <br/> For example: S3.</td>
+<td colspan="3" style="background-color: #C8C8C8;"> Additional middleware:</td>
+</tr>
+
+<tr>
+<td colspan="3" style="background-color: #C8C8C8;"> S3: </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Enabled </td> 
 <td> false </td>
-<td> Boolean indicating whether the additional middleware, S3 in this example, is enabled for Swift. </td>
+<td> Boolean indicating whether S3 is enabled for Swift. Swift3 Middleware for OpenStack allows access to OpenStack Swift via the Amazon S3 API.</td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -1410,6 +1414,38 @@ In most cases, you can use the default values.
 <td> Use barclamp-git to checkout </td> 
 <td> true </td>
 <td> Boolean indicating whether Swift should ...?  </td>
+</tr>
+
+<tr>
+<td colspan="3" style="background-color: #C8C8C8;"> StaticWeb </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Enabled </td> 
+<td> false </td>
+<td> Boolean indicating whether StaticWeb middleware is enabled for Swift. This middleware serves container data as a static website
+with an index file and error file resolution, and optional file listings. See https://github.com/openstack/swift/blob/master/swift/common/middleware/staticweb.py. </td>
+</tr>
+
+<tr>
+<td colspan="3" style="background-color: #C8C8C8;"> TempURL </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Enabled </td> 
+<td> false </td>
+<td> Boolean indicating whether TempURL middleware is enabled for Swift. Allows the creation of URLs to provide temporary access to objects. See 
+https://github.com/openstack/swift/blob/master/swift/common/middleware/tempurl.py. </td>
+</tr>
+
+<tr>
+<td colspan="3" style="background-color: #C8C8C8;"> FormPOST </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Enabled </td> 
+<td> false </td>
+<td> Boolean indicating whether FormPOST is enabled for Swift. FormPOST translates a browser form post into a regular Swift object PUT. See https://github.com/openstack/swift/blob/master/swift/common/middleware/formpost.py. </td>
 </tr>
 
 </table>

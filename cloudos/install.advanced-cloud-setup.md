@@ -19,6 +19,8 @@ PageRefresh();
 </script>
 
 
+<p style="font-size: x-small;"> <a href="/cloudos/install/hot-fixes/">&#9664; PREV</a> | <a href="/cloudos/install/">&#9650; UP</a> | <a href="/cloudos/install/install-modules-reference/">NEXT &#9654;</a> </p>
+
 # Advanced Cloud Setup
 
 This topic explains how to perform an advanced cloud setup, as an **alternative** to the wizard-based Create Cloud steps in the HP Cloud OS Operational Dashboard.
