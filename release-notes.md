@@ -87,6 +87,7 @@ The following are our best-practices recommendations for versions 13.5.
 
 * For best performance when transferring large files (greater than 700MB for downloads and 1GB for uploads), use either the [classic management console](/mc/) or the [UNIX CLI](/cli/unix/) utilities.
 * For easiest password reset, use the [Horizon Preview Edition](/hpcloudconsole) interface or the [classic management console](/mc/) or the [UNIX CLI](/cli/unix/) utilities.
+* Use the [classic management console](/mc/) to display the `Flavors Details` information rather than the Windows CLI.
 * To create a snapshot for an instance booted from a block volume, follow these steps for best results:
     - Shut down the instance
     - Delete the instance and wait until the volume is marked as `available`
@@ -100,7 +101,7 @@ The following are our best-practices recommendations for versions 13.5.
 * Use the standard rather than `highmem` family of flavors (`standard.large`, `standard.xlarge`, etc.) for creating Windows instances.
 * For speed and ease-of-use, use the [management console](/mc/) rather than the Windows command-line interface (CLI) to attach or detach a volume.
 * For best results when deleting a volume, unmount the volume (or for Windows instances take it offline) and detach the volume prior to deleting it.
-* To ensure quality performance, allow at least 4GB of memory for your Windows instances.
+* For optimum performance and reliability when running Windows instances, HP recommends you use flavors of 4GB or greater.
 * For full functionality when creating instances using the Windows CLI, use flavors of `small` or greater. 
 
 
@@ -111,7 +112,7 @@ The following are the known issues (and workarounds) for Version 13.5 of the HP 
 ####Cloud Compute####
 
 * The EC2 API and AWS Eucalyptus toolset are not supported in this release.
-* •	If the console log appears empty immediately after instance activation, wait a few moments and try again; it can take some time for the instance information to be recorded in the log file.
+* If the console log appears empty immediately after instance activation, wait a few moments and try again; it can take some time for the instance information to be recorded in the log file.
 
 ####Cloud Block Storage####
 
@@ -119,7 +120,6 @@ The following are the known issues (and workarounds) for Version 13.5 of the HP 
 
 ####Command-line Interface####
 
-* If you don't see information displayed for `Flavors Details` when using the Windows CLI, you can retrieve the information using the [classic management console](/mc/).
 * After successfully launching an instance if you find `ssh` not functioning properly, just relaunch the instance.
 * Sometimes under certain circumstances in the Windows CLI, the `ls` command displays some fields as blank:
     - The `Attached To` and `Server Attached To` fields are may display as blank after you attach a server to a volume using the `[Attach-Volume](/cli/windows/reference#Attach-Volume)` command
