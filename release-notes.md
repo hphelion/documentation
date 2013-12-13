@@ -74,7 +74,6 @@ The following are our best-practices recommendations for versions 13.5.
 * Boot instance snapshots from an instance using the same flavor.  For example, if you have created a snapshot of an `xsmall` instance, boot it from an instance that also has flavor `xsmall`.
 * For reliability, use Nova delete to terminate instances only when they are in the `Active` or `Error` state.
 * For reliability, make sure you have a root disk size of 30GB for instances with flavors larger than `xsmall`.
-* For best reliability, reboot instances of sizes `standard.2xlarge`, `standard.4xlarge`, and `standard.8xlarge` from within the instance.
 * For improved performance, keep the size of your bootable volumes to less than 1.4TB
 
 ####Cloud Networking###
@@ -103,6 +102,7 @@ The following are our best-practices recommendations for versions 13.5.
 * For best results when deleting a volume, unmount the volume (or for Windows instances take it offline) and detach the volume prior to deleting it.
 * For optimum performance and reliability when running Windows instances, HP recommends you use flavors of 4GB or greater.
 * For full functionality when creating instances using the Windows CLI, use flavors of `small` or greater. 
+* For best reliability, reboot instances of sizes `standard.2xlarge`, `standard.4xlarge`, and `standard.8xlarge` from within the instance.
 
 
 ###Known issues### {#Issues}
