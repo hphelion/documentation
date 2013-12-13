@@ -16,11 +16,11 @@ This page contains the following information on our software package:
 <!--Moving forward, there will be more bulleted items for each release-->
 
 
-##New features in version 13.5## {#v135features}
+##New in version 13.5## {#v135features}
 
-**New look and feel for the Management Console** - Based on the OpenStack Horizon project, the new HP Public Cloud Console interface and user experience is significantly different from the original classic management console.  As part of this new user interface, Project dashboards, vertically accessible on the left side of the console, group related services for easier availability and service management; and much documentation is now provided in-line and embedded throughout the console on many forms, to reduce your clicks and improve your console experience. Although workflows may look different, you can still manage your standard functions through the console, including initializing instances, creating volumes, launching images and snapshots, and creating security groups and key pairs.  See [Getting Started with HP Public Cloud Console](/hpcloudconsole) for more information.
+**New look and feel for the Management Console** - Based on the OpenStack Horizon project, the new HP Public Cloud Console interface and user experience is significantly improved from the original classic management console.  This new user interface provides you with project dashboards that display group-related services for easier availability and service management.  Key documentation is  provided in-line and embedded throughout the console on many forms, reducing your clicks and improving your console experience. Although workflows may look different, you can still manage your standard functions through the console, including initializing instances, creating volumes, launching images and snapshots, and creating security groups and key pairs.  See [Getting Started with HP Public Cloud Console](/hpcloudconsole) for more information.
 
-**Larger compute instances for big data and high-performance computing are now supported** -  New larger instance types allow you to run big data, analytics, and high performance computing (HPC) workloads in the public cloud.  You can access instances with up to 120 GB of RAM and up to 16 virtual cores. The new instance types allow even greater flexibility to choose the virtual machine size that best fits your application's compute resource needs.
+**Larger compute instances for big data and high-performance computing** -  New larger instance types allow you to run big data, analytics, and high performance computing (HPC) workloads in the public cloud.  You can access instances with up to 120 GB of RAM and up to 16 virtual cores. The new instance types allow even greater flexibility to choose the virtual machine size that best fits your application's compute resource needs.
 
 **New virtual private cloud (VPC) networking capabilities** - The new VPC functionality provides the ability to deploy your workloads with even greater security within the public cloud for public cloud only or hybrid delivery  by enabling you to create  isolated virtual networks within the HP Cloud compute service. UsingSoftware Defined Networking (SDN), VPC  allows you to create a wide variety of network configurations specific to your individual workloads needs with a variety of public Internet accessibility options. You can also connect your public cloud network to your on-premise network, enabling true hybrid delivery through private and public infrastructures with a secure VPN connection performing as a single integrated system.
 
@@ -79,7 +79,7 @@ The following are our best-practices recommendations for versions 13.5.
 
 ####Cloud Networking###
 
-* To ensure full external node access, allow egress rules to remain part of their security groups; HP recommends against deleting them.
+* To ensure full external node access, HP recommends that you do not delete  egress rules and allow those rules to remain part of their security groups.
 * To get the most timely and accurate results for your quota checks, use the [Neutron networking interface](/hpcloudconsole#ManageHPPublicCloud).
 * •	To ensure that your Linux instance is able to resolve its own hostname, add an entry to the `/etc/hosts` file that matches the hostname.
 
@@ -107,7 +107,7 @@ The following are our best-practices recommendations for versions 13.5.
 
 ###Known issues### {#Issues}
 
-The following are the known issues (and workarounds) for Version 13.5 of the HP Public Cloud software.
+The following are the known issues for Version 13.5 of the HP Public Cloud software.
 
 ####Cloud Compute####
 
@@ -121,11 +121,11 @@ The following are the known issues (and workarounds) for Version 13.5 of the HP 
 ####Command-line Interface####
 
 * After successfully launching an instance if you find `ssh` not functioning properly, just relaunch the instance.
-* Sometimes under certain circumstances in the Windows CLI, the `ls` command displays some fields as blank:
+* Sometimes under certain circumstances in the Windows CLI, the `ls` command displays some fields as blank.  To view the contents of these fields, display the information using the [Horizon Preview Edition](/hpcloudconsole) interface or the [classic management console](/mc/) or the [UNIX CLI](/cli/unix/) utilities. The fields are:
     - The `Attached To` and `Server Attached To` fields are may display as blank after you attach a server to a volume using the `[Attach-Volume](/cli/windows/reference#Attach-Volume)` command
     - The `Ext Gateway` field may display as blank after you execute the `[Update-Router](/cli/windows/reference#Update-Router)` command
     - The `Assigned Network Addresses` field may display as blank after you execute the `[New-Server](/cli/windows/reference#New-Server)` command<br>
-    To view the contents of these fields, display the information using the [Horizon Preview Edition](/hpcloudconsole) interface or the [classic management console](/mc/) or the [UNIX CLI](/cli/unix/) utilities. 
+    
 
 ####Horizon Preview Edition Console###
 
@@ -145,16 +145,16 @@ The following are resolved issues in version 13.5 of the HP Public Cloud softwar
 
 For additional related information on HP Cloud:
 
-* See [Getting Started with HP Public Cloud Console](http:docs.hpcloud.com/hpcloudconsole) for detailed console information.
-* See [HP Cloud version 13.5 overview](/version-overview/) for an overview of the 13.5 release set.
-* See [HP Cloud Service APIs (v13.5)](/api/v13/) for an overview of the 13.5 API specifications.
-* See [migration overview page](/migration-overview/) for information on migrating from version 12.12 to 13.5.
-* See [Getting Started with Compute 13.5](https://community.hpcloud.com/article/getting-started-compute-135) for information on how to get started with the compute service in version 13.5.
-* Speaking of which, the [Getting Started Guide](https://community.hpcloud.com/article/getting-started-guide/) is a great resource for getting yourself up and running with the various HP Cloud services in general.
-* See the [main HP Cloud web site](https://www.hpcloud.com/#) for a discussion of our various products and services.
-* Go to our [support page](https://www.hpcloud.com/support) if you are seeking support information.
+* [Getting Started with HP Public Cloud Console](http:docs.hpcloud.com/hpcloudconsole) for detailed console information.
+* [HP Cloud version 13.5 overview](/version-overview/) for an overview of the 13.5 release set.
+* [HP Cloud Service APIs (v13.5)](/api/v13/) for an overview of the 13.5 API specifications.
+* [migration overview page](/migration-overview/) for information on migrating from version 12.12 to 13.5.
+* [Getting Started with Compute 13.5](https://community.hpcloud.com/article/getting-started-compute-135) for information on how to get started with the compute service in version 13.5.
+* The [Getting Started Guide](https://community.hpcloud.com/article/getting-started-guide/) is a great resource for getting yourself up and running with the various HP Cloud services in general.
+* [HP Cloud web site](https://www.hpcloud.com/#) for a discussion of our various products and services. 
+* Our [support page](https://www.hpcloud.com/support) provides support information.
 
-While these release notes contain information information for the software package as a whole, we also provide you with release notes for individual products and services:
+While these release notes contain information information for the software package as a whole, we also have release notes for individual products and services:
 
 * [Ruby Fog Bindings](/bindings/fog/release-notes/)
 * [UNIX command-line interface (CLI)](/cli/unix/release-notes/)
