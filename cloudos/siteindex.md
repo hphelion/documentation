@@ -55,8 +55,8 @@ PageRefresh();
 
 #### [Manage your Clouds](/cloudos/manage/)
 
-* [HP Cloud OS Operational Dashboard Help](http://docs.hpcloud.com/cloudos/operational-dashboard/index.htm)  Note: not deployed yet.
-* [HP Cloud OS Administration Dashboard Help](http://docs.hpcloud.com/cloudos/admin-dashboard/index.htm)  Note: not deployed yet.
+* [HP Cloud OS Operational Dashboard Help](http://docs.hpcloud.com/cloudos/operational-dashboard/index.htm)  
+* [HP Cloud OS Administration Dashboard Help](http://docs.hpcloud.com/cloudos/administration-dashboard/index.htm)  
 * [HP Cloud OS Troubleshooting](/cloudos/troubleshooting/) 
 * [HP Cloud OS Utilities](/cloudos/utilities/)
 

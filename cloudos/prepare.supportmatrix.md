@@ -31,7 +31,7 @@ This document provides an overview of the supported hardware and software for th
 
   * [Minimum Recommendations](#minimum-recommendations)
 
-  * [Supported Deployment Scenario](#supported-deployment-scenario)
+  * [Supported Deployment Scenarios](#supported-deployment-scenarios)
 
 * [Software Requirements](#software-requirements)
 
@@ -62,8 +62,8 @@ Ubuntu Server 12.04 LTS installation media + security updates.
 <tr style="background-color: white; color: black;">
 <td> Admin Node </td>
 <td> Virtual Only </td>
-<td> 2 </td>
-<td> 12 GB </td>
+<td> 4 * </td>
+<td> 16 GB * </td>
 <td> 20 GB </td>
 <td> 2 </td>
 <td> Ubuntu Server 12.04 LTS (64-bit) </td>
@@ -75,14 +75,14 @@ Ubuntu Server 12.04 LTS installation media + security updates.
 <td> 4 </td>
 <td> 32 GB </td>
 <td> 60 GB </td>
-<td> 1 * </td>
+<td> 1 ** </td>
 <td> Ubuntu Server 12.04 LTS (64-bit) </td>
 </tr>		
 
 <tr style="background-color: white; color: black;">
 <td> Compute Node </td>
 <td> Physical Only </td>
-<td> 4 ** </td>
+<td> 4 *** </td>
 <td> 32 GB </td>
 <td> 60 GB </td>
 <td> 1 </td>
@@ -111,9 +111,11 @@ Ubuntu Server 12.04 LTS installation media + security updates.
 
 </table>
 
-\* External Internet connection required for public or hybrid cloud.
+\* For the Admin Node, the CPU and memory should be dedicated to this VM and not shared with other virtual machines on the same KVM host.
 
-\*\* Intel or AMD hardware virtualization support required. The CPU cores and memory requirements must be sized based 
+\*\* External Internet connection required for public or hybrid cloud.
+
+\*\*\* Intel or AMD hardware virtualization support required. The CPU cores and memory requirements must be sized based 
 on the VM instances hosted by the compute node.
 
 
