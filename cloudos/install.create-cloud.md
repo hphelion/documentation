@@ -50,7 +50,7 @@ You'll continue to use the HP Cloud OS Operational Dashboard to execute these st
 
 * [Complete Storage Configuration](#complete-storage-configuration)
 
-* [Create a Cloud](#create-a-cloud)
+* [Create Cloud](#create-cloud)
 
 * [Create Compute Regions](#create-compute-regions)
 
@@ -115,7 +115,7 @@ For details, see the Ubuntu configuration documentation:
 
 <a href="https://help.ubuntu.com/community/DiskSpace" title="Ubuntu topic opens in new tab or window" target="ubuntu2"> Ubuntu Disk Space - community discussion </a>
 
-## Create a Cloud
+## Create Cloud
 
 After you complete the setup of the Admin Node, you are ready to create your cloud. 
 
@@ -160,6 +160,11 @@ in the Administration Dashboard.
 **Remember the passwords** &mdash; You will use them to log into the HP Cloud OS Administration Dashboard.
 
 When you're ready, click **Create Cloud**. The cloud will go through a series of steps to create an active cloud, showing the percent (%) completed.
+
+> **Note:** When creating a cloud or a compute region, all of the nodes involved are first checked to ensure they can be resolved on the network. This verification process can take (up to) approximately five minutes.  During this time, the progress percentage will remain at 0%. If any of the nodes fail to resolve during the verification process, the cloud or region creation will fail. 
+<!-- If this happens, check that you correctly entered the nodes' network settings in a prior step. 
+If that's the cause of the Create Cloud failure, you will need to start over with the Admin Node installation process.  
+--> 
 
 ## Create Compute Regions
 
@@ -206,6 +211,8 @@ nodes. Use `qemu` if the compute nodes are VMs.
 
 When you're ready, now select **Create Compute Region**. The compute region will go through a series of steps to create an active cloud, showing the
 percent (%) completed.
+
+> **Note:** When creating a cloud or a compute region, all of the nodes involved are first checked to ensure they can be resolved on the network. This verification process can take (up to) approximately five minutes.  During this time, the progress percentage will remain at 0%. If any of the nodes fail to resolve during the verification process, the cloud or region creation will fail. 
 
 Once the Create Compute Region step is complete, the name supplied for the region will be
 displayed and the cloud's Status will be Active. This indicates that the cloud and compute region
