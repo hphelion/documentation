@@ -66,7 +66,7 @@ Ubuntu Server 12.04 LTS installation media + security updates.
 <td> 16 GB * </td>
 <td> 20 GB </td>
 <td> 2 </td>
-<td> Ubuntu Server 12.04 LTS (64-bit) </td>
+<td> <nobr> Ubuntu Server 12.04 LTS (64-bit) </nobr> </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -426,7 +426,7 @@ Refer to [Install &amp; Configure Your Clouds](/cloudos/install/) for a complete
 
 <tr style="background-color: white; color: black;">
 <td style="font-weight: bold; background-color: #F8F8F8;"> Cloud Providers </td>
-<td> HP Cloud </td>
+<td> HP Cloud Compute Service v12.12 </td>
 </tr>
 
 </table>
