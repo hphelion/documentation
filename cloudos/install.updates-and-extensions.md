@@ -67,7 +67,9 @@ HP Cloud OS Administration Dashboard.
 
 On your controller node, the CODN configuration file is here:
 
-    /etc/codn/codn.conf
+<pre>
+/etc/codn/codn.conf
+</pre>
 
 It contains parameters that can be used to change the runtime behavior of the CODN server. 
 
@@ -75,29 +77,31 @@ It contains parameters that can be used to change the runtime behavior of the CO
 
 You can start, monitor, and stop the CODN service with the following commands:
 
-    service codn start  
-	
-	service codn status 
-	
-	service codn stop
-
+<pre>
+service codn start  
+service codn status 
+service codn stop
+</pre> 
 
 ### Server Host and Port
 
 In /etc/codn/codn.conf, you can configure the host and port and proxy information for the web service.
 
- 
-    server = 
-        'port': '21131',  
-        'host': '0.0.0.0' 
-    }
+<pre>
+server = 
+    'port': '21131',  
+    'host': '0.0.0.0' 
+}
+</pre>
 	
 ### Proxy Configuration
 
 In /etc/codn/codn.conf, you can configure the proxy for connecting to the CODN Web catalog. For example:
 
-    http_proxy = 'http://myproxy.myco.com:8080'
-    https_proxy = http_proxy
+<pre>
+http_proxy = 'http://myproxy.myco.com:8080'
+https_proxy = http_proxy
+</pre>
 
 ### Logging
 
@@ -139,16 +143,18 @@ logging = {
 
 If you have edited codn.conf, be sure to stop and then start the service again:
 
-    service codn stop 
-    
-	service codn start
+<pre>
+service codn stop 
+service codn start
+</pre>
 
 Then check its status:
 
-    service codn status
+<pre>
+service codn status
+</pre>
 
-
-If the service will not restart, check the codn.conf file for syntax errors.
+If the service does not restart, check the codn.conf file for syntax errors.
 
 ## Next Step
 
