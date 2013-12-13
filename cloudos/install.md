@@ -20,8 +20,6 @@ function PageRefresh {
 
 <p style="font-size: small;"> &#9664; PREV | <a href="/cloudos/">&#9650; UP</a> | <a href="/cloudos/install/overview/">NEXT &#9654;</a> </p>
 
-
-
 # Install &amp; Configure Your Clouds
 
 Welcome! The following topics explain how to install &amp; configure your clouds with the HP Cloud OS platform. 

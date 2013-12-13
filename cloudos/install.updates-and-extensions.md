@@ -23,45 +23,132 @@ PageRefresh();
 
 # Updates and Extensions
 
-This topic explains how to obtain patches and other relevant functionality from the HP Cloud OS Distribution Network (CODN). 
+This topic explains how to obtain patches and other relevant functionality from the HP Cloud OS Distribution Network (CODN).
+
+* [Start in the HP Cloud OS Operational Dashboard](#start-in-the-hp-cloud-os-operational-dashboard)
+* [Modify the CODN Runtime Configuration](#modify-the-codn-runtime-configuration) 
+  * [Service Commands](#service-commands)
+  * [Server Host and Port](#server-host-and-port)
+  * [Proxy Configuration](#proxy-configuration)
+  * [Logging](#logging)
+  * [Restart the Service](#restart-the-service)
+* [Next Step](#next-step)
+
 
 ## Start in the HP Cloud OS Operational Dashboard
 
-1. From the Cloud tab in the Operational Dashboard, click the Updates and Extensions panel. If you are accessing this page for the first time, there is no data to display in the table.
+1. From the Cloud tab in the Operational Dashboard, click the **Updates and Extensions** panel. If you are accessing this page for the first time, there is no data to display in the table.
 
-2. Click the Configure button.
+2. Click the **Configure** button.
 
 3. On the Configure dialog, if you are using it for the first time, sign up for the CODN catalog store.
 
-4. After registering or logging in, you are returned to the Updates and Extensions panel. Available downloads that are relevant to HP Cloud OS are presented.
+4. After registering or logging in, you are returned to the Updates and Extensions panel. The Operational Dashboard presents the available downloads that are relevant to your HP Cloud OS environment.
 
-5. Click the Download button. This step queues up the download but does not execute it yet.
+5. Click the **Download** button that is located next to an item you want to acquire.  
 
-6. If you are about to install a hot fix to an install module, for example "Keystone Token Expiration Hotfix", you should first go to the HP Cloud OS Installation Dashboard, at http://192.168.124.10:3000. The login is crowbar / crowbar.
+6. Before installing an install module's hot fix, such as one labeled (for example) "Keystone Token Expiration Hotfix", verify the install module that's about to get updated exists for your cloud. Do this by going to the HP Cloud OS Installation Dashboard. In Mozilla Firefox or Google Chrome, open http://192.168.124.10:3000. The login is crowbar / crowbar.
 
-7. In the Installation Dashboard, open the proposal by clicking the Edit button.  Verify that its role(s) and attributes are appropriately set for your cloud.  
+7. In the Installation Dashboard, open the proposal for the hot fix by clicking the **Edit** button next to the listed item.   
 
-8. Now return to the Operational Dashboard.  Back in the Updates and Extensions panel, click Install. 
+8. Return to the Operational Dashboard and its Updates and Extensions panel. Click **More > Install** next to the hot fix. The installation process starts. 
 
-9. More coming...
+9. To check on the progress of the installation, click **More > View Progress**.  
+
+10. Verify the patch installation. Once the job is in its completed state, reopen the patched proposal in the Installation Dashboard.  Click **Edit**. For example, you should see the name of the hot fix, such as 
+"Token-Expiration Hotfix Enabled." To apply the hot fix in your cloud, set its attribute Boolean value to **true**, click **Apply** and then **Save**.
+
+New patches may be available periodically. Be sure to click the Configure button on a regular basis to log in and see if additional modules are present. 
+
+## Modify the CODN Runtime Configuration
+
+CODN is a web service that provides catalog integration and content download services for the HP Cloud OS Operational Dashboard and 
+HP Cloud OS Administration Dashboard. 
+
+On your controller node, the CODN configuration file is here:
+
+    /etc/codn/codn.conf
+
+It contains parameters that can be used to change the runtime behavior of the CODN server. 
+
+### Service Commands
+
+You can start, monitor, and stop the CODN service with the following commands:
+
+    service codn start  
+	
+	service codn status 
+	
+	service codn stop
+
+
+### Server Host and Port
+
+In /etc/codn/codn.conf, you can configure the host and port and proxy information for the web service.
 
  
- 
-<!-- 
-## Configure Option
+    server = 
+        'port': '21131',  
+        'host': '0.0.0.0' 
+    }
+	
+### Proxy Configuration
 
-Click the Configure option to sign up for an HP Web Catalog account, or login with your credentials.
+In /etc/codn/codn.conf, you can configure the proxy for connecting to the CODN Web catalog. For example:
 
-In the CODN catalog, search for relevant functionality.  This could include:
+    http_proxy = 'http://myproxy.myco.com:8080'
+    https_proxy = http_proxy
 
-* Hot fixes (patches) to your version of HP Cloud OS.
+### Logging
 
-* An HP Moonshot workload that you want to execute on your cloud environment.  This could include portions of HP Cloud OS such as a customized Glance image and Focus topology document, which you could then deploy to your HP Moonshot chassis.  
+You can also configure the logging level and related parameters for the CODN service.
 
-* Specific VMs that support High Availability (HA) Apache servers.
+<pre>
+logging = {
+    'loggers': {
+        'root': {'level': 'INFO', 'handlers': ['console']},
+        'codn': {'level': 'DEBUG', 'handlers': ['console', 'file']},
+        'py.warnings': {'handlers': ['console']},
+        '__force_dict__': True
+    },
+    'handlers': {
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'simple'
+        },
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': '/var/log/codn/codn.log',
+            'maxBytes': 1048576,
+            'backupCount': 5,
+            'formatter': 'simple'
+        }
+    },
+    'formatters': {
+        'simple': {
+            'format': ('%(asctime)s %(levelname)-5.5s [%(name)s]'
+                       '[%(threadName)s] %(message)s')
+        }
+    }
+}
+</pre>
 
-* Or other value-added software, such as a Microsoft Outlook Mail Server, to be used as a resource in your cloud.
---> 
+### Restart the Service
+
+If you have edited codn.conf, be sure to stop and then start the service again:
+
+    service codn stop 
+    
+	service codn start
+
+Then check its status:
+
+    service codn status
+
+
+If the service will not restart, check the codn.conf file for syntax errors.
 
 ## Next Step
 

@@ -23,27 +23,17 @@ PageRefresh();
 
 # Install Hot Fixes
 
-This topic describes the steps to import and apply hot fixes to your deployed clouds.  
+This topic describes the steps to import and apply hot fixes to your deployed clouds.  In this topic, we refer to hot fixes as content packages.
 
-If you have already downloaded a package to your client's local filesystem, 
-and you need to add its functionality to your cloud:
+If you have already downloaded a content package to your client's local filesystem, and you need to add its functionality to your cloud:
 
-1. From the Operational Dashboard's Cloud tab, click Hot Fixes.
+1. From the HP Cloud OS Operational Dashboard's Cloud tab, click the **Hot Fixes** panel.
 
-2. Click Import and browse to the .CSU file that contains the hot fix.
+2. Click **Import Package** and browse to the .csu file that contains the content package.
 
 3. Follow the dialogs to apply the hot fix. 
 
-You can search for and download hot fixes (patches and other updates) from the HP Cloud OS Distribution Network (CODN). It's an online catalog store. 
-In the CODN catalog, you can log in and search for relevant functionality.  This could include:
-
-* Hot fixes (patches) to your version of HP Cloud OS.
-
-* An HP Moonshot workload that you want to execute on your cloud environment.  This could include portions of HP Cloud OS such as a customized Glance image and Focus topology document, which you could then deploy to your HP Moonshot chassis.  
-
-* Specific VMs that support High Availability (HA) Apache servers.
-
-* Or other value-added software, such as a Microsoft Outlook Mail Server, to be used as a resource in your cloud.
+You can also download hot fixes (patches and other updates) from the HP Cloud OS Distribution Network (CODN). 
 
 For CODN information, see the next topic, [Updates and Extensions](/cloudos/install/updates-and-extensions/).
 
