@@ -161,7 +161,7 @@ in the Administration Dashboard.
 
 When you're ready, click **Create Cloud**. The cloud will go through a series of steps to create an active cloud, showing the percent (%) completed.
 
-> **Note:** When creating a cloud or a compute region, all of the nodes involved are first checked to ensure they can be resolved on the network. This verification process can take (up to) approximately five minutes.  During this time, the progress percentage will remain at 0%. If any of the nodes fail to resolve during the verification process, the cloud or region creation will fail. 
+> **Note:** When creating a cloud or a compute region, all of the nodes involved are first checked to ensure they can be resolved on the network. This verification process can take (up to) approximately five minutes.  During this time, the progress percentage will remain at 1%. If any of the nodes fail to resolve during the verification process, the cloud or region creation will fail. 
 <!-- If this happens, check that you correctly entered the nodes' network settings in a prior step. 
 If that's the cause of the Create Cloud failure, you will need to start over with the Admin Node installation process.  
 --> 
@@ -212,7 +212,7 @@ nodes. Use `qemu` if the compute nodes are VMs.
 When you're ready, now select **Create Compute Region**. The compute region will go through a series of steps to create an active cloud, showing the
 percent (%) completed.
 
-> **Note:** When creating a cloud or a compute region, all of the nodes involved are first checked to ensure they can be resolved on the network. This verification process can take (up to) approximately five minutes.  During this time, the progress percentage will remain at 0%. If any of the nodes fail to resolve during the verification process, the cloud or region creation will fail. 
+> **Note:** When creating a cloud or a compute region, all of the nodes involved are first checked to ensure they can be resolved on the network. This verification process can take (up to) approximately five minutes.  During this time, the progress percentage will remain at 1%. If any of the nodes fail to resolve during the verification process, the cloud or region creation will fail. 
 
 Once the Create Compute Region step is complete, the name supplied for the region will be
 displayed and the cloud's Status will be Active. This indicates that the cloud and compute region

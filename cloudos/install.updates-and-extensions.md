@@ -31,7 +31,6 @@ This topic explains how to obtain patches and other relevant functionality from 
   * [Server Host and Port](#server-host-and-port)
   * [Proxy Configuration](#proxy-configuration)
   * [Logging](#logging)
-  * [Restart the Service](#restart-the-service)
 * [Next Step](#next-step)
 
 
@@ -47,25 +46,27 @@ This topic explains how to obtain patches and other relevant functionality from 
 
 5. Click the **Download** button that is located next to an item you want to acquire.  
 
-6. Before installing an install module's hot fix, such as one labeled (for example) "Keystone Token Expiration Hotfix", verify the install module that's about to get updated exists for your cloud. Do this by going to the HP Cloud OS Installation Dashboard. In Mozilla Firefox or Google Chrome, open http://192.168.124.10:3000. The login is crowbar / crowbar.
+6. Before installing an install module's hot fix, such as one labeled (for example) "Keystone Token Expiration Hotfix", verify that 
+the install module you're about to update does exist for your cloud. To do this, access the HP Cloud OS Installation Dashboard. 
+In Mozilla Firefox or Google Chrome, open http://192.168.124.10:3000. <!-- The login is crowbar / crowbar. --> 
 
 7. In the Installation Dashboard, open the proposal for the hot fix by clicking the **Edit** button next to the listed item.   
 
-8. Return to the Operational Dashboard and its Updates and Extensions panel. Click **More > Install** next to the hot fix. The installation process starts. 
+8. Return to the Operational Dashboard and its Updates and Extensions panel. Click **Install** next to the hot fix. The installation process starts. 
 
 9. To check on the progress of the installation, click **More > View Progress**.  
 
 10. Verify the patch installation. Once the job is in its completed state, reopen the patched proposal in the Installation Dashboard.  Click **Edit**. For example, you should see the name of the hot fix, such as 
 "Token-Expiration Hotfix Enabled." To apply the hot fix in your cloud, set its attribute Boolean value to **true**, click **Apply** and then **Save**.
 
-New patches may be available periodically. Be sure to click the Configure button on a regular basis to log in and see if additional modules are present. 
+New patches may be available periodically. Be sure to revisit the Updates and Extensions panel on a regular basis. 
 
 ## Modify the CODN Runtime Configuration
 
 CODN is a web service that provides catalog integration and content download services for the HP Cloud OS Operational Dashboard and 
 HP Cloud OS Administration Dashboard. 
 
-On your controller node, the CODN configuration file is here:
+On your cloud controller node, the CODN configuration file is here:
 
 <pre>
 /etc/codn/codn.conf
@@ -82,6 +83,21 @@ service codn start
 service codn status 
 service codn stop
 </pre> 
+
+If you edit codn.conf, be sure to stop and then start the service again:
+
+<pre>
+service codn stop 
+service codn start
+</pre>
+
+Then check its status:
+
+<pre>
+service codn status
+</pre>
+
+If the service does not restart, check the codn.conf file for syntax errors.
 
 ### Server Host and Port
 
@@ -138,23 +154,6 @@ logging = {
     }
 }
 </pre>
-
-### Restart the Service
-
-If you have edited codn.conf, be sure to stop and then start the service again:
-
-<pre>
-service codn stop 
-service codn start
-</pre>
-
-Then check its status:
-
-<pre>
-service codn status
-</pre>
-
-If the service does not restart, check the codn.conf file for syntax errors.
 
 ## Next Step
 
