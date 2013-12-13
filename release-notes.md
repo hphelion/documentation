@@ -16,7 +16,7 @@ This page contains the following information on our software package:
 <!--Moving forward, there will be more bulleted items for each release-->
 
 
-##New in version 13.5## {#v135features}
+##New and Changed in version 13.5## {#v135features}
 
 **New look and feel for the Management Console** - Based on the OpenStack Horizon project, the new HP Public Cloud Console interface and user experience is significantly improved from the original classic management console.  This new user interface provides you with project dashboards that display group-related services for easier availability and service management.  Key documentation is  provided in-line and embedded throughout the console on many forms, reducing your clicks and improving your console experience. Although workflows may look different, you can still manage your standard functions through the console, including initializing instances, creating volumes, launching images and snapshots, and creating security groups and key pairs.  See [Getting Started with HP Public Cloud Console](/hpcloudconsole) for more information.
 
@@ -37,6 +37,8 @@ This page contains the following information on our software package:
 **Enhanced identity management** - Particularly attractive for administrators in the enterprise, this release provides more flexibility and options when managing roles, domains, users and groups in the new Horizon-based public cloud console. Specifically, roles can now be assigned to groups of users, or domain administrators can be defined for managing domains and respective users.   In addition, you can assign roles around the latest platform services, such as the new HP Cloud [Relational Database](/dbaas/) service.
 
 As a domain admin, you can manage each user's projects, roles, and groups.  You can manage the membership of each group, and manage the user assignment within each role. 
+
+**Hybrid cloud focus** - In response to the significant customer feedback, and to enable a more open and robust Hybrid cloud environment, EC2 API and AWS Eucalyptus toolset support have been discontinued at this time.
 
 **User roles** - The following user roles are available with this release (new user roles *italicized*):
 
@@ -111,7 +113,6 @@ The following are the known issues for Version 13.5 of the HP Public Cloud softw
 
 ####Cloud Compute####
 
-* The EC2 API and AWS Eucalyptus toolset are not supported in this release.
 * If the console log appears empty immediately after instance activation, wait a few moments and try again; it can take some time for the instance information to be recorded in the log file.
 
 ####Cloud Block Storage####
