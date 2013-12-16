@@ -42,7 +42,7 @@ After you install and set up the Admin node, you can perform additional steps:
 
 * [Create a Cloud](/cloudos/install/create-cloud/) 
 * [Launch Administration Dashboard](/cloudos/install/launch-admin-dashboard/)
-* [Check the Cloud OS License](/cloudos/install/license/)
+* [Check the HP Cloud OS License](/cloudos/install/license/)
 * [Install Hot Fixes](/cloudos/install/hot-fixes/)
 * [Updates and Extensions](/cloudos/install/updates-and-extensions/)
 

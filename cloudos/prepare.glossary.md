@@ -170,7 +170,7 @@ portability, such as cloud bursting for load balancing between clouds.
 ## J
 
 ###Job###
-:     A job is created when the user submits a desired topology to the Cloud OS Eve service API, and requests provisioning based on the topology. Eve creates the job, for which the 
+:     A job is created when the user submits a desired topology to the HP Cloud OS Eve service API, and requests provisioning based on the topology. Eve creates the job, for which the 
 Eden Service API -frameworkthen publishes status updates. Once the provisioning is finished, the job is marked as completed.
 
 ###Term###

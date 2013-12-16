@@ -130,7 +130,8 @@ For instructions on the automated steps (Create Cloud button and related tasks),
 
 ## Preview of Swift Deployment Steps
 
-After creating the cloud and defining your compute region(s), you can deploy Swift in your cloud by following these steps:
+After creating the cloud and defining your compute regions (see this later topic, [Create a Cloud](/cloudos/install/create-cloud), 
+you can deploy Swift in your cloud by following these steps:
 
 1. Launch the HP Cloud OS Installation Dashboard. Its URL is http://192.168.124.10:3000.  The login is crowbar / crowbar. 
 
@@ -147,7 +148,6 @@ After creating the cloud and defining your compute region(s), you can deploy Swi
 6. All the other defaults should be adequate.
 
 7. Click the Apply button to deploy Swift in your cloud. 
-
 
 ## Swift Roles
 
@@ -195,8 +195,6 @@ A single object's health, especially an older object, usually reflects the healt
 If you make enough objects on a distinct percentage of the partitions in the cluster, you can get a valid estimate of the overall 
 cluster health. In practice, about 1% partition coverage seems to balance well between accuracy and the amount of time 
 it takes to gather results.
-
-
 
 ## Next Step
 

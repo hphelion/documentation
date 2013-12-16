@@ -34,7 +34,7 @@ As indicated in the [Installation Overview](/cloudos/install/overview#preview-of
 
 * Or you can perform the [Advanced Cloud Setup](/cloudos/install/advanced-cloud-setup) to apply and configure the install modules yourself.
 
-When you create a cloud using the process defined in this topic, a number of OpenStack and Cloud OS 
+When you create a cloud using the process defined in this topic, a number of OpenStack and HP Cloud OS 
 install modules are automatically configured and deployed for you. In most cases, the automated deployment of install modules will suffice. 
 However, should you need to customize values in the install modules that are not exposed in the Create Cloud Attributes tab, 
 this advanced section, along with [Install Modules Reference](/cloudos/install/install-modules-reference/), are provided to assist 

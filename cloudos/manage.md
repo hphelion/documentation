@@ -18,5 +18,5 @@ Refer to these documentation resources:
 
 * [HP Cloud OS Troubleshooting](/cloudos/troubleshooting/) - presents a set of topics that help you troubleshoot issues you may encounter with Cloud OS.
 
-* [HP Cloud OS Utilities](/cloudos/utilities/) - describes the Cloud OS utilities.
+* [HP Cloud OS Utilities](/cloudos/utilities/) - describes the HP Cloud OS utilities.
  

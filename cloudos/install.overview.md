@@ -63,7 +63,7 @@ At a high level, here are the steps to setup and install the Admin node:
 <img src="media/cloudos-install-process.png" title="HP Cloud OS installation process" /> 
 
 The steps shown above feature an automated process in the HP Cloud OS Operational Dashboard, where you can accept defaults or enter values that are specific to your requirements (such as your network settings). Using 
-this automated approach, HP Cloud OS handles all of the installation details for you, installing the OpenStack services and the Cloud OS value-added services.
+this automated approach, HP Cloud OS handles all of the installation details for you, installing the OpenStack services and the HP Cloud OS value-added services.
 
 Taking a broader view, this next diagram illustrates those steps in a larger context. 
 Notice how once you've installed and set up the Admin node, you have a choice between two paths: wizard-based (in the Operational Dashboard), **or** advanced steps (in the Installation Dashboard).
@@ -82,9 +82,9 @@ The following diagram illustrates the HP Cloud OS environment.
 
 ( coming soon ) 
 
-### Cloud OS Administration Node
+### HP Cloud OS Administration Node
 
-The Cloud OS Administration Node (Admin Node) hosts the Operational Dashboard that deploys
+The HP Cloud OS Administration Node (Admin Node) hosts the Operational Dashboard that deploys
 private and hybrid-only cloud infrastructure environments by network booting the managed bare-metal
 servers, which are the Controller and Compute nodes. Using Chef Server and recipes,
 the services are installed on the managed bare-metal servers. **Note:** In this and subsequent HP Cloud OS topics, 

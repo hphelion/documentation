@@ -29,9 +29,13 @@ This topic describes the steps to customize the network settings. These steps ar
 After that, the network settings in the HP Cloud OS Operational Dashboard are read only. Once the install process is triggered, no changes can be made. If you want to make changes, you need to start over by re-installing the Admin Node.
 
 * [Introduction](#introduction)
+
 * [Customize the Admin Network](#customize-the-admin-network)
+
 * [Customize the OS-SDN Network](#customize-the-os_sdn-network)
+
 * [Customize the Public Network](#customize-the-public-network)
+
 * [Next Step](#next-step)
 
 ## Introduction
@@ -74,7 +78,7 @@ editing, the defaults disappear -- there is no reset.
 
 **Note:** HP recommends that you keep the default values because this network type is considered
 to be an isolated, private network. If you wish to customize the Admin network, the Operational Dashboard would not be accessible 
-on the current IP address. You may have to set the browser client's network configuration to be on the same network as the 
+on the current IP address, post Complete Install. You may have to set the browser client's network configuration to be on the same network as the 
 customized Admin network to continue accessing it. The Complete Install process in the Operational Dashboard will suggest the required changes. 
 
 ### Edit the Admin Network

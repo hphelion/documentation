@@ -47,7 +47,7 @@ PageRefresh();
  * [Complete Admin Node Installation (Required)](/cloudos/install/complete-admin-node-installation/)
  * [Create a Cloud](/cloudos/install/create-cloud/) 
  * [Launch Administration Dashboard](/cloudos/install/launch-admin-dashboard/)
- * [Check the Cloud OS License](/cloudos/install/license/)
+ * [Check the HP Cloud OS License](/cloudos/install/license/)
  * [Install Hot Fixes](/cloudos/install/hot-fixes/)
  * [Updates and Extensions](/cloudos/install/updates-and-extensions/)
  * [Advanced Cloud Setup](/cloudos/install/advanced-cloud-setup/)

@@ -40,7 +40,7 @@ Cloud infrastructure services are delivered as "install modules," which are also
 
 Install modules are a mechanism to install and configure a service on the compute region's control node. 
 
-When you create a cloud using the process defined in [Create a Cloud](/cloudos/install/create-cloud/), a number of OpenStack and Cloud OS 
+When you create a cloud using the process defined in [Create a Cloud](/cloudos/install/create-cloud/), a number of OpenStack and HP Cloud OS 
 install modules are automatically configured and deployed for you. In most cases, the automated deployment of install modules will suffice. 
 **Note:** the Swift barclamp must be installed manually, as discussed in [Create a Cloud](/cloudos/install/create-cloud/). 
 
@@ -196,44 +196,44 @@ The following table lists the install modules **in the order they must be applie
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> <nobr> HP Cos Graffiti 100 </nobr> </td>
-<td> Provides dictionary services, a searchable directory of cloud resources, and resource pool registry services. </td>
+<td> <nobr> Hp Cos Graffiti 100 </nobr> </td>
+<td> Provides the HP Cloud OS Resource Pool Registry and Capability Tagging Service. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> HP Cos Focus 100 </td>
-<td> Provides a topology document repository. </td>
+<td> Hp Cos Focus 100 </td>
+<td> Provides the HP Cloud OS topology document repository. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> HP Cos Eve 100 </td>
-<td> Provides a topology provisioning service for the cloud infrastructure. </td>
+<td> Hp Cos Eve 100 </td>
+<td> Provides the HP Cloud OS topology provisioning service for the cloud infrastructure. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> HP Skyline 100 </td>
+<td> Hp Skyline 100 </td>
 <td> Provides the Administration Dashboard. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> HP Cos Cloud Utils 100 </td>
+<td> Hp Cos Cloud Utils 100 </td>
 <td> Provides cloud utilities scripts. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Hp Cos Swift 100 </td>
-<td> Provides an object/blob storage service. **Note:** the Swift barclamp must be installed manually, before clicking Complete Install in the HP Cloud OS Operational Dashboard. 
+<td> Provides an object/blob storage service. <b> Note: </b> The Swift barclamp must be installed manually, before clicking Complete Install in the HP Cloud OS Operational Dashboard. 
 See [Setup Swift (Optional)](/cloudos/install/setup-swift/).
 </td>
 </tr>
 
 </table>
 
-\* **Important:** The Nova install module will appear in the list of install modules after the Quantum install module. 
-The best practice is to create and apply the Nova proposal after all the others have been applied. 
+\* **Important:** In the HP Cloud OS Installation Dashboard, the Nova install module will appear alphabetically in the list of install modules. 
+The best practice, though, is to create and apply the Nova proposal after all the others have been applied. 
 First follow the instructions below, then see [Apply the Nova Install Module](#apply-the-nova-install-module) in this topic.
 
-To apply the install modules in Firefox or Google Chrome:
+To apply the install modules in Mozilla Firefox or Google Chrome:
 
 1. Open the HP Cloud OS Installation Dashboard at http://192.168.124.10:3000.
 

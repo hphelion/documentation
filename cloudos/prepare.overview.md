@@ -31,7 +31,7 @@ Welcome! This technical overview introduces you to the HP Cloud OS architecture,
 
 * [What is HP Cloud OS?](#what-is-hp-cloud-os)
 
-* [Understanding the Cloud OS Architecture](#understanding-the-cloud-os-architecture)
+* [Understanding the HP Cloud OS Architecture](#understanding-the-hp-cloud-os-architecture)
 
 * [Execution Environment](#execution-environment)
 
@@ -56,7 +56,7 @@ HP Cloud OS is an enterprise-grade cloud technology that is open and extensible.
 
 Cloud OS also provides the foundation for a common cloud architecture across private, public, and hybrid cloud delivery.
 
-## Understanding the Cloud OS Architecture
+## Understanding the HP Cloud OS Architecture
 
 Cloud OS is organized into a set of services and an architecture that acts like a "datacenter-level" operating system focused on cloud computing. 
 
@@ -78,9 +78,9 @@ We'll start in the execution environment.
 
 The execution environment is broken into two components:
 
-* The Cloud OS **kernel** layer, which is similar to an operating system's kernel layer, across the cloud 
+* The HP Cloud OS **kernel** layer, which is similar to an operating system's kernel layer, across the cloud 
 
-* The Cloud OS **base** layer, which is comprised of advanced services that sit above the kernel, like subsystem services in an operating system.
+* The HP Cloud OS **base** layer, which is comprised of advanced services that sit above the kernel, like subsystem services in an operating system.
 
 These execution components works together to create a cloud environment for a customer that's installable, manageable and usable by the users of that cloud.
 
@@ -119,8 +119,8 @@ We provide plugins in the following ways.
 
 ### Base Layer
 
-On top of the kernel layer is the base layer where we've created value-added services and Cloud OS to do additional functionality and things are advanced beyond the basic 
-infrastructure service. The value-added services from HP Cloud OS are:
+On top of the kernel layer is the base layer, where we've created HP Cloud OS value-added services to provide advanced, additional functionality that goes beyond the basic infrastructure service. 
+The value-added services from HP Cloud OS are:
 
 * Eve
 
@@ -149,15 +149,15 @@ additional functionality in Eve allows you to:
 
 #### Graffiti Service
 
-The HP Cloud OS Graffiti service:
+Graffiti is the HP Cloud OS Resource Pool Registry and Capability Tagging Service, providing:
 
-* Provides a dictionary of the "capabilities" of all the resources in a cloud environment
+* A dictionary of the "capabilities" of all the resources in a cloud environment
 
-* Provides a searchable directory to find cloud resources based on their capabilities
+* A searchable directory to find cloud resources based on their capabilities
 
 * The mechanism for dynamic binding, allowing you to describe requirements rather than concrete bindings
 
-* Supports the base concepts of requirements and capabilities within TOSCA
+* The base concepts of requirements and capabilities within TOSCA
 
 As illustrated here, Graffiti allows users to:
 
@@ -217,7 +217,7 @@ and to perform lifecycle management of that architecture.  HP Cloud OS provides 
 
 ### Operational Dashboard
 
-HP Cloud OS provides the Operational Dashboard. It is used to complete the Cloud OS installation process after the HP Cloud OS Administration Node (Admin Node) has been booted with the HP Cloud OS *.iso package.  
+HP Cloud OS provides the Operational Dashboard. It is used to complete the HP Cloud OS installation process after the Admin Node has been booted with the HP Cloud OS *.iso package.  
 
 On the Operational Dashboard, you set up your cloud environment, complete the Admin Node installation and configuration, and create a cloud.
 

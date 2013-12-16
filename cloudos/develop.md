@@ -21,7 +21,7 @@ PageRefresh();
 
 # Cloud OS Development with REST APIs
 
-Welcome! These topics describe the Cloud OS REST APIs for the value-added services. 
+Welcome! These topics describe the HP Cloud OS REST APIs for the value-added services. 
 
 ## Introduction
 
@@ -41,9 +41,10 @@ On your cloud, replace &lt;my_server> with the server's IP or DNS value.
 
 Read the HP Cloud OS [API Quick Start](/cloudos/api/quickstart/) to learn about the REST calls.
 
+<!-- Add this topic later:
 ## Read the Value-Added Services topic
-
 Read the [Value-Added Services](/cloudos/api/services/) topic to learn more about Eve, Focus, and Graffiti from HP Cloud OS.
+--> 
 
 <a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

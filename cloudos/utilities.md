@@ -23,31 +23,31 @@ PageRefresh();
 
 # HP Cloud OS - Cloud Utilities
 
-Only a single utility is available for the current Cloud OS release, the Clean-up Utility. 
+Only a single utility is available for the current HP Cloud OS release, the Clean-up Utility. 
 Additional utilities may be added in future releases and described in this topic.
 
-## Cloud OS Clean-up Utility
+## HP Cloud OS Clean-up Utility
  
-The Cloud OS Clean-up Utility ensures that the databases used to store data within Cloud OS are kept clean, 
+The HP Cloud OS Clean-up Utility ensures that the databases used to store data within HP Cloud OS are kept clean, 
 and do not retain and accumulate data that is no longer being accessed. 
 
 ### Overview
 
-The Cloud OS Clean-up Utility ensures that the Cloud OS and OpenStack databases are running smoothly and the databases are clean. 
+The HP Cloud OS Clean-up Utility ensures that the HP Cloud OS and OpenStack databases are running smoothly and the databases are clean. 
 The utility uses the Nagios web interface for scheduling database clean-up tasks.
 
-It is possible for a Cloud OS or OpenStack resource in one table to be reliant on a resource in another table with 
+It is possible for a HP Cloud OS or OpenStack resource in one table to be reliant on a resource in another table with 
 no foreign key reference. If the dependent resource were simply deleted, a dangling reference in the referring table 
 would result. Likewise, if there are two tables with foreign key relationships and the data is deleted in one table 
 but not the other, referential integrity is broken. 
 
 As an example, a user entity may be associated with various resources in the system-projects, templates, key pairs, security groups, 
 and so on. If the user represents an employee who has left the organization, and that user is removed in the Administration Dashboard, 
-the data representing the user is marked for deletion in Cloud OS, but it is important that the data not be removed from the 
+the data representing the user is marked for deletion in HP Cloud OS, but it is important that the data not be removed from the 
 database until the associated data can be removed with the Clean-up Utility.
 
-The Cloud OS Clean-up Utility addresses referential integrity issues by running a number of tasks that are offered as 
-Nagios services. Running these tasks regularly keeps the Cloud OS and OpenStack databases clean. 
+The HP Cloud OS Clean-up Utility addresses referential integrity issues by running a number of tasks that are offered as 
+Nagios services. Running these tasks regularly keeps the HP Cloud OS and OpenStack databases clean. 
 
 This section includes:
 
@@ -58,11 +58,11 @@ This section includes:
 
 ## Clean-up Tasks
 
-The Cloud OS Clean-up Utility performs the following tasks:
+The HP Cloud OS Clean-up Utility performs the following tasks:
 
-* Clean up all resources associated with previously deleted resources. The Cloud OS Administration Dashboard does not delete projects or users. Instead, it "moves them to the trash can" by removing as many resources as possible and then prefixing the Project (or User) name with a tilde ~. Flavors are already only "marked for deletion" in the database.
+* Clean up all resources associated with previously deleted resources. The HP Cloud OS Administration Dashboard does not delete projects or users. Instead, it "moves them to the trash can" by removing as many resources as possible and then prefixing the Project (or User) name with a tilde ~. Flavors are already only "marked for deletion" in the database.
 
-* Prevent select Cloud OS database entries from existing in their respective tables longer than 24-Hours.
+* Prevent select HP Cloud OS database entries from existing in their respective tables longer than 24-Hours.
 
 * Ensure that all of the database tables are referentially accurate. In other words, Cloud Utils cleans the database of all invalid data.
 
