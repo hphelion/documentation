@@ -55,10 +55,11 @@ PageRefresh();
 
 #### [Manage your Clouds](/cloudos/manage/)
 
+* [HP Cloud OS Utilities](/cloudos/manage/utilities/)
+* [HP Cloud OS Troubleshooting](/cloudos/manage/troubleshooting/) 
 * [HP Cloud OS Operational Dashboard Help](http://docs.hpcloud.com/cloudos/operational-dashboard/index.htm)  
 * [HP Cloud OS Administration Dashboard Help](http://docs.hpcloud.com/cloudos/administration-dashboard/index.htm)  
-* [HP Cloud OS Troubleshooting](/cloudos/troubleshooting/) 
-* [HP Cloud OS Utilities](/cloudos/utilities/)
+
 
 #### [Develop](/cloudos/develop/)
 

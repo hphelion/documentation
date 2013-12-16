@@ -44,7 +44,8 @@ Based on the network infrastructure suggested in the "Plan the Infrastructure fo
 [Before You Install](/cloudos/before-you-install), you must customize the network settings. Here are some of the
 criteria to be considered while making changes to the default settings:
 
-* The default settings, "Dual", assume you have a separate physical network for each interface. That is, admin, os_sdn, and public network across the Admin Node and all the managed nodes. 
+* The default settings, "Dual", assume you have a separate physical network for each interface. 
+That is, admin, os_sdn, and public network across the Admin Node and all the managed nodes. 
 
 * For a production type of deployment and to reduce the complexities of configuring the switches
 (as suggested above), it is strongly recommended that you provide separate wired networks for
@@ -87,21 +88,22 @@ To edit the admin network:
 
 1. On the Operational Dashboard, select the Environment tab > Networks.
 
-2. Click Edit Network for the Network Type admin.
+2. Click **Edit Network** for the Network Type admin.
 
 3. Select the Network tab and review the settings. Modify these settings based on your required private network settings.
 
 4. Select the VLAN tab and review the settings. Modify these settings based on your required private network settings.
 
-5. Select the Router tab and review the settings. Modify these settings, based on your required private network settings. **Note:** It is recommended to provide a non-routable private network for the admin network. Therefore, do not specify a Router IP address in the Router tab.
+5. Select the Router tab and review the settings. Modify these settings, based on your required private network settings. 
+**Note:** It is recommended to provide a non-routable private network for the admin network. <!-- Therefore, do not specify a Router IP address in the Router tab. -->
 
-6. Click Update Network to save your changes.
+6. Click **Update Network** to save your changes.
 
 ### Edit the Admin Address Ranges
 
 To edit the admin address ranges:
 
-1. In the admin Edit Network drop-down list, select Edit Address Ranges to open the Edit Address Ranges dialog.
+1. In the admin Edit Network drop-down list, select **Edit Address Ranges** to open the Edit Address Ranges dialog.
 
 2. The Network Type and Subnet values are pre-populated by default with the correct settings.
 
@@ -116,7 +118,7 @@ Following are the default Node Types and address ranges:
 
  d. **switch**: This is for test purposes only.
 
-4. Click Update Address Ranges to save your changes and to validate that the IP address is correct.
+4. Click **Update Address Ranges** to save your changes and to validate that the IP address is correct.
 
 > **Note:** If you enter invalid address ranges, you will get a validation error, which identifies the incorrect address (start or end) for the corresponding network type. You must fix all
 errors in the Edit Address Ranges dialog and click Update Address Ranges to validate the addresses are correct.
@@ -124,14 +126,14 @@ errors in the Edit Address Ranges dialog and click Update Address Ranges to vali
 ## Customize the OS_SDN Network
 
 The os_sdn network is the private network between the provisioned VMs, as well as from the VMs
-to the Networking Node. By default this network is configured to use VLAN. Update the network to
+to the Networking Node. By default this network is not configured to use VLAN. Update the network to
 set VLAN as false and provide the IP address range.
 
 ### Edit the os_sdn Network
 
 To edit the os_sdn network:
 
-1. On the Operational Dashboard, select the Environment tab, then Networks.
+1. On the Operational Dashboard, select the Environment tab > Networks.
 
 2. Click Edit Network for the os_sdn network type.
 
@@ -141,9 +143,9 @@ To edit the os_sdn network:
 True. If you plan to use the DUAL Network mode, set the VLAN value to False.
 Note: The Operational Dashboard displays subsequent options based on the following rules:
 
- a. If os_sdn and public are both set to VLAN=True, the only displayed choice for Network mode will be SINGLE.
+ a. If os_sdn and public are both set to VLAN=True, the only displayed choice in the Complete Install dialog for Network mode will be SINGLE.
 
- b. If os_sdn or public are set to VLAN=False, the only displayed choice for Network mode will be DUAL.
+ b. If os_sdn or public are set to VLAN=False, the only displayed choice in the Complete Install dialog for Network mode will be DUAL.
 
 5. Select the Router tab and review the settings. Do not make any changes.
 
@@ -165,24 +167,23 @@ To edit the os_sdn address ranges:
  
  c. **IPV4 End Addr** = 192.168.130.160
  
-4. Click Update Address Ranges to save your changes to validate that the IP address is correct. 
+4. Click **Update Address Ranges** to save your changes to validate that the IP address is correct. 
 
 **Note:** If you enter invalid address ranges, you will get a validation error, which identifies the incorrect address (start or end) for the corresponding network type. You must fix all
 errors in the Edit Address Ranges dialog and click Update Address Ranges to validate the addresses are correct.
 
 ## Customize the Public Network
 
-To provide external access, make sure you have two sets of contiguous IP address ranges:
+To provide external access, make sure you specify the &lt;External/Public IP Address Range>. This range is used for PXE booted managed nodes. 
+Upon successful deployment of a cloud, only the managed nodes get the external IP address. Therefore, a small range of this IP pool is sufficient. 
+Get the range from your IT administrator.
 
-* **Range 1:** &lt;External/Public IP Address Range>. This range is used for PXE booted managed
-nodes. On successful deployment of a Cloud, only the Controller Node gets the external IP
-address. Therefore, a small range of this IP pool is sufficient. Get the range from your IT
-administrator.
-
+<!--
 * **Range 2:** &lt;External/Public IP Address Range>. This range is used for a Floating IP assignment
 of provisioned instances within OpenStack. Get the range from your IT administrator. This range
 will be used when you create an External (Floating IP) IP Network on the Administration
 Dashboard.  
+--> 
 
 ### Edit the Public Network
 
@@ -190,7 +191,7 @@ To edit the public network:
 
 1. On the Operational Dashboard, select the Environment tab > Networks.
 
-2. Click Edit Network for the public Network Type.
+2. Click **Edit Network** for the public Network Type.
 
 3. On the Network tab, specify the Subnet and Netmask explicitly for your public IP address
 range and set Bridge Enabled to False.
@@ -199,11 +200,11 @@ range and set Bridge Enabled to False.
 True. If you plan to use the DUAL Network mode, set the VLAN value to False.
 Note: The Operational Dashboard displays subsequent options based on the following rules:
 
- a. If os_sdn and public are both set to VLAN=True, the only displayed choice for Network mode will be SINGLE.
+ a. If os_sdn and public are both set to VLAN=True, the only displayed choice in the Complete Install dialog for Network mode will be SINGLE.
 
- b. If os_sdn or public are set to VLAN=False, the only displayed choice for Network mode will be DUAL.
+ b. If os_sdn or public are set to VLAN=False, the only displayed choice in the Complete Install dialog for Network mode will be DUAL.
 
-5. On the Router tab, specify the Router value as a Gateway IP address of your Public IP address range. Use the default Router Preference.
+5. On the Router tab, specify the Router value as a Gateway IP address of your Public IP address range.  
 
 6. Click Update Network to save your changes.
 
@@ -211,19 +212,19 @@ Note: The Operational Dashboard displays subsequent options based on the followi
 
 To edit the public address ranges:
 
-1. In the public Edit Network drop-down list, select Edit Address Ranges.
+1. In the public Edit Network drop-down list, select **Edit Address Ranges** to open the Edit Address Ranges dialog.
 
 2. The Network Type and Subnet values are pre-populated by default, with the correct settings.
 
-3. Click Add Address Range to add a set of address range options (each time you click, you add another set of address range options to be filled in):
+3. Click **Add Address Range** to modify the set of address range options.  Each time you click, you modify another set 
+of address range options, based upon your public network. Get the range from your IT administrator:
 
- a. Set Node Type to host.
+ a. Set IPV4 Start Addr to the start of the &lt;External/Public IP Address Range> described above.
 
- b. Set IPV4 Start Addr to the start of the IP address range 1 described above.
+ b. Set IPV4 End Addr to the end of the &lt;External/Public IP Address Range>. 
+ Note: Provide the IP address range corresponding to the network address.
 
- c. Set IPV4 End Addr to the end of the IP address range 1. Note: Provide the IP address range corresponding to the network address.
-
-4. Click Update Address Ranges to save your changes to validate that the IP address is correct.
+4. Click **Update Address Ranges** to save your changes to validate that the IP address is correct.
 
 **Note:** If you enter invalid address ranges, you will get a validation error, which identifies
 the incorrect address (start or end) for the corresponding network type. You must fix all

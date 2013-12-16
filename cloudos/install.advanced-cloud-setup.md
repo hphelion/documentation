@@ -258,7 +258,7 @@ To apply the install modules in Mozilla Firefox or Google Chrome:
 
  g. Wait for the proposal status to indicate Ready.
 
- h. If the proposal fails to apply, the Installation Dashboard displays an error message. See [Troubleshooting](/cloudos/troubleshooting/).
+ h. If the proposal fails to apply, the Installation Dashboard displays an error message. See [Troubleshooting](/cloudos/manage/troubleshooting/).
 
  i. Select Barclamps > Cloud Infrastructure to review the install module list. The proposal Status is also displayed in the Cloud Infrastructure install module list.
 
@@ -288,7 +288,7 @@ To apply the Nova install module:
  
  e. Wait for the proposal status to indicate Ready.
  
- f. If the proposal fails to apply, an error message displays. See the [Troubleshooting](/cloudos/troubleshooting/) topic.
+ f. If the proposal fails to apply, an error message displays. See the [Troubleshooting](/cloudos/manage/troubleshooting/) topic.
  
  g. Select Barclamps > Cloud Infrastructure to review the install module list. The proposal status is also displayed in the Cloud Infrastructure install module list. 
  

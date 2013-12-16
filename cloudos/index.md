@@ -14,16 +14,17 @@ the fastest growing open-source cloud community. This documentation site is for 
 <table>
 <tr>
 <td style="text-align: center; vertical-align: middle;"><a href="/cloudos/prepare/" title="Topics to help you learn about HP Cloud OS,including FAQs and Video Tutorials"><img src="media/cloudos-prepare.jpg" border="0"/></a></td>
-<td style="text-align: center; vertical-align: middle;"><a href="/cloudos/install/" title="Install and configure your clouds"><img src="media/cloudos-install.jpg" border="0"/></td>
+<td style="text-align: center; vertical-align: middle;"><a href="/cloudos/install/" title="Instructions to install &amp; configure your clouds, using automated or advanced options"><img src="media/cloudos-install.jpg" border="0"/></td>
 </tr>
 <tr>
-<td style="text-align: center; vertical-align: middle;"><a href="/cloudos/manage/" title="Learn how to manage your deployed clouds"><img src="media/cloudos-manage.jpg" border="0"/></td>
-<td style="text-align: center; vertical-align: middle;"><a href="/cloudos/develop/" title="Read about the REST APIs for the HP Cloud OS services"><img src="media/cloudos-develop.jpg" border="0"/></td>
+<td style="text-align: center; vertical-align: middle;"><a href="/cloudos/manage/" title="Information about the HP Cloud OS dashboards, troubleshooting, and utilities"><img src="media/cloudos-manage.jpg" border="0"/></td>
+<td style="text-align: center; vertical-align: middle;"><a href="/cloudos/develop/" title="Details about the HP Cloud OS REST API and where to find installed reference documentation"><img src="media/cloudos-develop.jpg" border="0"/></td>
 </tr>
 </table>
 
 We have organized the site into four logical areas:
-* Prepare &mdash; Topics to help you learn about HP Cloud OS,including FAQs and Video Tutorials
+
+* Prepare &mdash; Topics that help you learn about HP Cloud OS, such as FAQs and video tutorials
 * Install &mdash; Instructions to install &amp; configure your clouds, using automated or advanced options
 * Manage &mdash; Information about the HP Cloud OS dashboards, troubleshooting, and utilities
 * Develop &mdash; Details about the HP Cloud OS REST API and where to find installed reference documentation

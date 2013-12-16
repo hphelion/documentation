@@ -143,7 +143,7 @@ When this prerequisite completes, a timestamp will be displayed in the Last Upda
 ## Prerequisite Troubleshooting
 
 If any of the prerequisite steps fail to complete, an error message displays.  If this happens, see the "Admin Node Internet Access 
-Prerequisites fail to complete" section of the [Troubleshooting](/cloudos/troubleshooting/) topic. 
+Prerequisites fail to complete" section of the [Troubleshooting](/cloudos/manage/troubleshooting/) topic. 
 
 ## Next Step
 
