@@ -40,14 +40,11 @@ Based on the network infrastructure suggested in the "Plan the Infrastructure fo
 [Before You Install](/cloudos/before-you-install), you must customize the network settings. Here are some of the
 criteria to be considered while making changes to the default settings:
 
-* The default settings assume you have a single physical network across the Admin Node and all
-the managed nodes, and other networks such as public and os_sdn are configured as VLAN on
-the same physical network. To set up in this mode, it is recommended that you configure the
-switch to allow tagged VLAN traffic.
+* The default settings, "Dual", assume you have a separate physical network for each interface. That is, admin, os_sdn, and public network across the Admin Node and all the managed nodes. 
 
 * For a production type of deployment and to reduce the complexities of configuring the switches
 (as suggested above), it is strongly recommended that you provide separate wired networks for
-public, os_sdn and admin. This requires you to specify your own range of IP addresses and
+public, os_sdn, and admin. This requires you to specify your own range of IP addresses and
 other settings.
 
 * Some networks and address ranges for those networks are provided by default. You can modify
@@ -68,15 +65,17 @@ the validation check will show the network type and possibly the address value. 
 the Edit Address Ranges dialog for the specified network and click Update Address
 Ranges to identify the incorrect address.  
 
+<!-- fixed:
 **Tip:** Before editing any network's settings, take a screenshot of the default values. When you start
 editing, the defaults disappear -- there is no reset.
+--> 
 
 ## Customize the Admin Network
 
 **Note:** HP recommends that you keep the default values because this network type is considered
-to be an isolated, private network. Keeping the default values will overwrite any non-default IP
-address that is provided during the booting of the Admin Node using the HP Cloud OS ISO. You can still
-access the Operational Dashboard using the default URL: http://192.168.124.10:9000.
+to be an isolated, private network. If you wish to customize the Admin network, the Operational Dashboard would not be accessible 
+on the current IP address. You may have to set the browser client's network configuration to be on the same network as the 
+customized Admin network to continue accessing it. The Complete Install process in the Operational Dashboard will suggest the required changes. 
 
 ### Edit the Admin Network
 

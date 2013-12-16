@@ -35,12 +35,9 @@ Your first step in the HP Cloud OS Operational Dashboard is to configure the Adm
 
 <!--
 ...., you may continue to use the Operational Dashboard to modify the following prerequisite values:  
-
 * Cloud Admin Node Time settings 
 * Email Notification settings
-
 You cannot change:
-
 * Admin Node Internet Access settings
 * External DNS Server settings
 --> 
@@ -94,12 +91,14 @@ To set the external DNS server:
 
 3. Type the appropriate IP address for the external DNS server used by your Cloud OS environment to be able to access named websites within your cloud.
 
-4. Click Update Prerequisite.
+4. Click **Update Prerequisite**.
 
 When this prerequisite completes, a timestamp will be displayed in the Last Updated column.
 
 
 ## Set the Time for the Admin Node
+
+In this section, configure the date/time settings accurately because the Admin Node acts as the NTP Server to all the managed nodes.
 
 To set the time for the Admin Node:
 
@@ -111,7 +110,9 @@ To set the time for the Admin Node:
 
 4. Set the Date and Time applicable for your environment if different from the default.
  
-5. Click **Update Prerequisite**, then **Complete Prerequisite**.
+5. Click **Update Prerequisite**.
+
+6. Click **Complete Prerequisite** to complete this setup for the Set the Time for the Admin Node entry.
  
 When this prerequisite completes, a timestamp will be displayed in the Last Updated column.
 
@@ -132,18 +133,16 @@ To set the email notification:
 
 6. Set To Address to an applicable email address or comma-separated addresses for your environment. This address could be to the person who started the cloud build, or anyone who is interested in following the cloud build process.
 
-7. Click **Update Prerequisite**, then **Complete Prerequisite**.
+7. Click **Update Prerequisite**.
 
 When the Cloud and Compute Region operation completes, the email goes to the listed recipients, showing the start and completion times.
 
 When this prerequisite completes, a timestamp will be displayed in the Last Updated column.
 
-
 ## Prerequisite Troubleshooting
 
-If any of the prerequisite steps fail to complete, an error message displays.  If this happens, see [Admin Node Internet
-Access Prerequisites fail to complete](/cloudos/troubleshooting/) in the Troubleshooting topic. 
-
+If any of the prerequisite steps fail to complete, an error message displays.  If this happens, see the "Admin Node Internet Access 
+Prerequisites fail to complete" section of the [Troubleshooting](/cloudos/troubleshooting/) topic. 
 
 ## Next Step
 
