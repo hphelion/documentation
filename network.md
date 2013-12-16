@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "HP Cloud Networking Guide"
-permalink: /compute/network-guide/
+title: "HP Cloud Networking Overview"
+permalink: /compute/network-overview/
 product: compute
 categories: neutron
 tags: networking neutron
@@ -47,5 +47,6 @@ You can use any of several command-line interface software to access HP Cloud co
 Check out the following pages for more information on using HP Cloud Networking services:
 
 - [Getting Started with Networking 13.5](/compute.networking.getting-started)
+- [HP Cloud Networking Overview](/networking/)
 - [Known Issues and Best Practices in Compute and Networking in 13.5](https://community.hpcloud.com/article/known-issues-and-best-practices-compute-and-networking-135)
 - [OpenStack networking wiki](https://wiki.openstack.org/wiki/Quantum)
