@@ -19,6 +19,8 @@ PageRefresh();
 </script>
 
 
+<p style="font-size: small;"> <a href="/cloudos/manage/">&#9664; PREV</a> | <a href="/cloudos/manage/">&#9650; UP</a> | <a href="/cloudos/troubleshooting/">NEXT &#9654;</a> </p>
+
 # HP Cloud OS - Cloud Utilities
 
 Only a single utility is available for the current Cloud OS release, the Clean-up Utility. 

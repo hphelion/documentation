@@ -18,6 +18,7 @@ PageRefresh();
 
 </script>
 
+<p style="font-size: small;"> <a href="/cloudos/utilities/">&#9664; PREV</a> | <a href="/cloudos/manage/">&#9650; UP</a> | NEXT &#9654; </p>
 
 # HP Cloud OS Troubleshooting
 
