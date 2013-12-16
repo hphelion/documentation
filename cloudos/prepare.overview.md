@@ -132,7 +132,7 @@ infrastructure service. The value-added services from HP Cloud OS are:
 
 Eve is the HP Cloud OS infrastructure topology provisioning service.  Eve allows you to:
 
-* Provision TOSCA-based infrastructure topology templates (composite, hybrid, and distributed).
+* Provision TOSCA-based infrastructure topology designs (composite, hybrid, and distributed).
 
 * Separate template creation and resource pool binding, for simpler, reusable templates.
 
@@ -190,7 +190,7 @@ Graffiti supports the base concepts of requirements and capabilities within the 
  
 #### Focus Service
 
-The HP Cloud OS Focus service serves as the Topology Template Registry and Repository Service. Focus provides for persistent store and management of TOSCA-based templates. Focus allows you to:
+The HP Cloud OS Focus service serves as the Topology Design Registry and Repository Service. Focus provides for persistent store and management of TOSCA-based templates. Focus allows you to:
 
 Focus allows you to:
 
@@ -238,9 +238,9 @@ The HP Cloud OS Administration Dashboard enables self-service usage of the cloud
 Administration Dashboard is based on the OpenStack "Horizon" technology; it looks and acts similar to Horizon, but at HP we have added new capabilities, 
 and new user interface workflow features to provide a more streamlined experience with clouds.
 
-The HP Cloud OS Administration Dashboard provides a simplified means of creating and managing HP Cloud OS resources, infrastructure topology templates, and infrastructure design documents.
+The HP Cloud OS Administration Dashboard provides a simplified means of creating and managing HP Cloud OS resources, infrastructure topology designs, and infrastructure design documents.
 
-The Administration Dashboard also provides the ability to provision a composite topology described by the topology templates and infrastructure design documents. Cloud OS launches infrastructure design documents to create virtual infrastructure in the cloud. The Administration Dashboard is associated with a single cloud.  
+The Administration Dashboard also provides the ability to provision a composite topology described by the topology designs and infrastructure design documents. Cloud OS launches infrastructure design documents to create virtual infrastructure in the cloud. The Administration Dashboard is associated with a single cloud.  
 
 ### Install and Upgrade Mechanism
 

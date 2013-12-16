@@ -118,7 +118,7 @@ static binding; and provides support for discovering, registering, and retrievin
 definitions for compute, network, and volume resources.
 
 * Eve (Topology Provisioning Service)&mdash; HP Cloud OS service to provide for provisioning lifecycle
-of a TOSCA-based infrastructure topology template of compute, network, and volume resources
+of a TOSCA-based infrastructure topology design of the compute, network, and volume resources
 in a defined resource pool. Also provides security and management.
 
 * Focus (Topology Document Repository Service)&mdash; HP Cloud OS service to provide for

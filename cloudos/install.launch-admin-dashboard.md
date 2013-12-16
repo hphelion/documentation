@@ -25,7 +25,7 @@ PageRefresh();
 
 After a cloud environment has been created in the HP Cloud OS Operational Dashboard, you manage the cloud
 through the HP Cloud OS Administration Dashboard. The Administration Dashboard provides a simplified means
-of creating and managing Cloud resources, infrastructure topology templates, and resource binding
+of creating and managing Cloud resources, infrastructure topology designs, and resource binding
 documents.  The Administration Dashboard also enables you to provision a composite topology described by the topology
 templates and binding documents.
 

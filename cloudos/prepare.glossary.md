@@ -105,7 +105,7 @@ management effort or service provider interaction.
 :     Elastic compute cloud; Amazon's cloud computing platform.
 
 ###Eve###
-:     An HP Cloud OS composite provisioning service that uses a topology template and profile to create VMs, volumes, and network segments as described in the topology. Eve uses Graffiti service for determining resource pool existence, traits, and User identity mapping.
+:     An HP Cloud OS composite provisioning service that uses a topology design and profile to create VMs, volumes, and network segments as described in the topology. Eve uses Graffiti service for determining resource pool existence, traits, and User identity mapping.
 
 ###Term###
 :     Definition...

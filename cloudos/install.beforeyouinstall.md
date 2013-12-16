@@ -26,7 +26,7 @@ PageRefresh();
 Before you can start working in the HP Cloud OS Operational Dashboard, you must:
 
 * [Plan the Infrastructure for a Cloud](#plan-the-infrastructure-for-a-cloud)
-* [Set up the VM guest](#set-up-the-vm-guest)
+* [Set up the Admin Node](#set-up-the-admin-node)
 * [Boot the Admin Node Using the HP Cloud OS ISO](#boot-the-admin-node-using-the-hp-cloud-os-iso)
 * [Launch the Operational Dashboard](#launch-the-operational-dashboard)
 
@@ -35,7 +35,8 @@ Before you can start working in the HP Cloud OS Operational Dashboard, you must:
 For the simplest deployment, a cloud environment requires a Cloud Administration Node (Admin Node), a Cloud Controller Node, and a set of Compute Node(s). You may need support from your IT
 Administrator to correctly capture information about your environment.
 
-You need to determine the type of cloud you want to create for your organization: private, public, or hybrid. With HP Cloud OS, you can create private or hybrid clouds. You can create public clouds with HP Public Cloud. See the [Introduction to Cloud Types](/cloudos/cloudtypes/). 
+You need to determine the type of cloud you want to create for your organization: private, public, or hybrid. With HP Cloud OS, you can create private or hybrid clouds. You can create public clouds with HP Public Cloud. 
+See the [Introduction to Cloud Types](/cloudos/prepare/cloudtypes/). 
 
 Based on the type of cloud you intend to create, you can determine the requirements for the server, network, and storage infrastructures 
 that are described and illustrated in the following sections:
@@ -48,7 +49,7 @@ that are described and illustrated in the following sections:
 
 The following table identifies server requirements for your cloud environment.
 
-<table style="text-align: left; vertical-align: top;">
+<table style="text-align: left; vertical-align: top; width:700px;">
 
 <tr style="background-color: #C8C8C8;">
 <th>Node Type</th>
@@ -118,6 +119,7 @@ The following table identifies server requirements for your cloud environment.
 
 \*\*\* Intel or AMD hardware virtualization support required. The CPU cores and memory requirements must be sized based 
 on the VM instances hosted by the compute node.
+
 ### Network Infrastructure
 
 To plan the Cloud Environment's network infrastructure, see the following sections:
@@ -134,7 +136,7 @@ Or the environment must support the 802.1Q specification (VLAN tagging/trunking)
 
 The following table identifies network requirements for your cloud environment.
 
-<table style="text-align: left; vertical-align: top;">
+<table style="text-align: left; vertical-align: top; width:700px;">
 
 <tr style="background-color: #C8C8C8;">
 <th> Network </th>
@@ -183,8 +185,10 @@ isolated Private Network. </td>
 <td> 1 Gb </td>
 <td> Y (300) or N.  Default is N (not tagged). </td>
 <td> Y </td>
-<td> Must provide a pool of IP addresses for the controller node and floating IP assignments. Size of the pool depends on the number of usage requirements. This network handles
-traffic to the outside world for the instances. </td>
+<td> Public or corporate network that is attached to your cloud infrastructure. 
+Must provide a pool of IP addresses for the Cloud Controller node for floating IP assignments. 
+Size of the pool depends on the number of Virtual Machine instances. This network handles traffic 
+to the outside world for the instances. </td>
 </tr>
 
 </table> 
@@ -197,7 +201,7 @@ VLAN. See [Customize Network Settings (Required)](/cloudos/install/customize-net
 
 The following table identifies storage requirements for your cloud environment.
 
-<table style="text-align: left; vertical-align: top;">
+<table style="text-align: left; vertical-align: top; width:700px;">
 
 <tr style="background-color: #C8C8C8;">
 <th> Node Type </th>
@@ -244,32 +248,36 @@ This illustration shows how the storage space is used by the VM instances in a c
 
 <img src="media/cloudos-compute-node.png" title="Storage space used by VM instances in a cloud's infrastructure" />
 
-## Set Up the VM Guest
+## Set Up the Admin Node
 
-You can only install the Admin Node on a virtual machine. Here are general guidelines for creating a virtual machine in an existing or new hypervisor infrastructure:
+You are recommended to only install the Admin Node on a virtual machine. 
+Here are general guidelines for creating a virtual machine in an existing or new hypervisor infrastructure:
 
-1. Configure the hypervisor host's network. The host must provide connectivity to the Virtual Machine guest on an isolated private network to all the bare-metal nodes' port eth0. And, the guest must also have connectivity to a routable network for Internet access.
+1. Configure the hypervisor host's network. The host must provide connectivity to the virtual machine Admin Node on an isolated private network 
+to all the bare-metal nodes' port eth0. And the virtual machine Admin Node must also have connectivity to a routable network for Internet access.
 
-2. Create a virtual machine with the hardware configuration suggested in "Plan Server, Network and Storage Infrastructure for a Cloud" ( link ) . The following configuration must be
-reviewed during this step:
+2. Create a virtual machine Admin Node with the hardware configuration suggested in the previous section, [Plan the Infrastructure for a Cloud](#plan-the-infrastructure-for-a-cloud). 
+The following configuration must be reviewed during this step:
 
- a. Ensure the guest's primary NIC is bridged or connected to the admin network and the second NIC is bridged or connected to a routable network for Internet access.
+ a. Ensure the virtual machine Admin Node's primary NIC is bridged or connected to the admin network and the second NIC is bridged or connected to a routable network for Internet access.
 
  b. For the disk configuration, the default Disk bus type/controller uses proprietary technology. Ensure you set that to the IDE/SCSI type.
  
  c. If your hypervisor is KVM, ensure the virt type is set to KVM.
  
-3. Download the Cloud OS ISO to the host's local file system or data store.
+3. Download the HP Cloud OS ISO to the host's local file system or data store.
 
-4. Configure the VM guest to point to the ISO as a CD/DVD drive or install media ISO image. 
+4. Configure the virtuala machine Admin Node to point to the ISO as a CD/DVD drive or install media ISO image. 
 
 ## Boot the Admin Node Using the HP Cloud OS ISO
 
 To boot the Admin Node using the ISO:
 
-1. Power ON the virtual machine and open up its console.
+1. Power ON the virtual machine Admin Node and open up its console.
 
-2. (Optional) Power DOWN the Admin Node VM, edit it to disconnect the ISO CD, then Power UP the VM.
+2. In the console window, you can view the boot up process. Once completed, a login prompt displays.
+
+3. (Optional) Power DOWN the Admin Node VM, edit it to disconnect the ISO CD, then Power UP the VM.
 
 The Operational Dashboard has been successfully installed on the Admin Node.
 
@@ -279,12 +287,13 @@ After you boot from the HP Cloud OS ISO, you are ready to launch the Operational
 
 To launch the Operational Dashboard:
 
-1. From the virtual machine client, open a Firefox or Google Chrome browser that **does not have a proxy set**.
+1. From the virtual machine Admin Node, open a Mozilla Firefox or Google Chrome browser that has the IP addresses <code> 192.*;10.*;localhost </code>  
+set as proxy exceptions.
 
 2. In the browser, enter **http://192.168.124.10:9000** to launch the Operational Dashboard user interface. 
 IMPORTANT: Use Google Chrome or Mozilla Firefox.
 
-3. On the Environment tab, review the types of servers, connections, and networks in your environment.
+3. On the Environment tab, review the types of prepreqisites, servers, connections, and networks in your environment.
 
 ## Next Step
 
