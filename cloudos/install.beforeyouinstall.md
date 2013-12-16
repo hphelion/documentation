@@ -55,6 +55,7 @@ The following table identifies server requirements for your cloud environment.
 <th>Virtual/Physical Node</th>
 <th>CPU Cores</th>
 <th>Memory</th>
+<th>Internal Storage</th>
 <th>NICs</th>
 <th> <nobr>  OS (included as part of ISO)  </nobr></th>
 </tr>
@@ -62,43 +63,61 @@ The following table identifies server requirements for your cloud environment.
 <tr style="background-color: white; color: black;">
 <td> Admin Node </td>
 <td> Virtual Only </td>
-<td> >= 4</td>
-<td> >= 12 GB </td>
-<td> <nobr> >= 2 * </nobr> </td>
-<td> Ubuntu Server 12.04 LTS (64-bit) </td>
+<td> 4 * </td>
+<td> 16 GB * </td>
+<td> 20 GB </td>
+<td> 2 </td>
+<td> <nobr> Ubuntu Server 12.04 LTS (64-bit) </nobr> </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> Controller Node **** </td>
-<td> Virtual or Physical </td>
-<td> >= 4 </td>
-<td> >= 32 GB </td>
-<td> >= 1 ** </td>
+<td> Controller Node </td>
+<td> Virtual and Physical </td>
+<td> 4 </td>
+<td> 32 GB </td>
+<td> 60 GB </td>
+<td> 1 ** </td>
 <td> Ubuntu Server 12.04 LTS (64-bit) </td>
 </tr>		
 
 <tr style="background-color: white; color: black;">
-<td> Compute Node **** </td>
+<td> Compute Node </td>
 <td> Physical Only </td>
-<td> >= 4 *** </td>
+<td> 4 *** </td>
 <td> 32 GB </td>
-<td> >= 1 </td>
+<td> 60 GB </td>
+<td> 1 </td>
 <td> Ubuntu Server running KVM hypervisor 12.04 LTS (64-bit) </td>
-</tr>	
+</tr>			
 
-</table> 
+<tr style="background-color: white; color: black;">
+<td> Swift Controller (Ring, Proxy, Dispersion) </td>
+<td> Virtual or Physical </td>
+<td> 8 </td>
+<td> 12 GB </td>
+<td> 20 GB </td>
+<td> 3 </td>
+<td> Ubuntu Server 12.04 LTS (64-bit) </td>
+</tr>	   
 
-**Note:** HP recommends identical set of hardware for both compute and controller nodes.
+<tr style="background-color: white; color: black;">
+<td> Storage Node </td>
+<td> Virtual or Physical </td>
+<td> 8 </td>
+<td> 12 GB </td>
+<td> 60 GB </td>
+<td> 3 </td>
+<td> Ubuntu Server 12.04 LTS (64-bit) </td>
+</tr>	   
 
-\* External Internet Connection Required
+</table>
 
-\*\* External Internet Connection Required for Hybrid Cloud/HP Cloud (Public) Usage
+\* For the Admin Node, the CPU and memory should be dedicated to this VM and not shared with other virtual machines on the same KVM host.
 
-\*\*\* Intel or AMD Hardware Virtualization Support Required. The CPU Cores and Memory
-requirements must be sized based on the VM instances hosted by the compute node.
+\*\* External Internet connection required for public or hybrid cloud.
 
-\*\*\*\* HP recommends using hardware that is Ubuntu certified. See the [Support Matrix](/cloudos/supportmatrix/) for a list of compatible servers.
-
+\*\*\* Intel or AMD hardware virtualization support required. The CPU cores and memory requirements must be sized based 
+on the VM instances hosted by the compute node.
 ### Network Infrastructure
 
 To plan the Cloud Environment's network infrastructure, see the following sections:
@@ -108,8 +127,8 @@ To plan the Cloud Environment's network infrastructure, see the following sectio
 
 #### Switch Configuration
 
-Your environment must provide physical switches and wiring for 3 to 4 networks, depending on the cloud configuration. Or the environment must support the 802.1Q specification (VLAN
-tagging/trunking) for tagged networks.
+Your environment must provide physical switches and wiring for 3 to 4 networks, depending on the cloud configuration. 
+Or the environment must support the 802.1Q specification (VLAN tagging/trunking) for tagged networks.
 
 #### Network Configuration
 

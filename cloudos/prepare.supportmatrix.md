@@ -40,7 +40,6 @@ This document provides an overview of the supported hardware and software for th
 For the performance and stability of the HP Cloud OS environment, it is very important to meet the minimum recommendations for memory, processors, and disk space for each of the components in the table below. 
 Before installation, please reference the appropriate platform support matrix for each component product.
 
-
 ### Prerequisites
 
 Ubuntu Server 12.04 LTS installation media + security updates.

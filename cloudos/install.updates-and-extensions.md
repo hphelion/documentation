@@ -26,11 +26,17 @@ PageRefresh();
 This topic explains how to obtain patches and other relevant functionality from the HP Cloud OS Distribution Network (CODN).
 
 * [Start in the HP Cloud OS Operational Dashboard](#start-in-the-hp-cloud-os-operational-dashboard)
+
 * [Modify the CODN Runtime Configuration](#modify-the-codn-runtime-configuration) 
-  * [Service Commands](#service-commands)
+
   * [Server Host and Port](#server-host-and-port)
+
   * [Proxy Configuration](#proxy-configuration)
+
   * [Logging](#logging)
+
+* [CODN Service Commands](#codn-service-commands)
+
 * [Next Step](#next-step)
 
 
@@ -72,32 +78,13 @@ On your cloud controller node, the CODN configuration file is here:
 /etc/codn/codn.conf
 </pre>
 
-It contains parameters that can be used to change the runtime behavior of the CODN server. 
+It contains parameters that set the runtime behavior of the CODN server. You can modify some, but not all, of the parameters. 
 
-### Service Commands
+**Note:** Do not modify these sections of codn.conf:
 
-You can start, monitor, and stop the CODN service with the following commands:
+* **codn_data**: this is the location of the job data information. 
 
-<pre>
-service codn start  
-service codn status 
-service codn stop
-</pre> 
-
-If you edit codn.conf, be sure to stop and then start the service again:
-
-<pre>
-service codn stop 
-service codn start
-</pre>
-
-Then check its status:
-
-<pre>
-service codn status
-</pre>
-
-If the service does not restart, check the codn.conf file for syntax errors.
+* **codn_cache**: this is the location of the downloaded catalog entries. There is a directory for each catalog entry. 
 
 ### Server Host and Port
 
@@ -121,24 +108,22 @@ https_proxy = http_proxy
 
 ### Logging
 
-You can also configure the logging level and related parameters for the CODN service.
-
+You will probably not have to change the default logging configuration.
+                
 <pre>
 logging = {
     'loggers': {
         'root': {'level': 'INFO', 'handlers': ['console']},
-        'codn': {'level': 'DEBUG', 'handlers': ['console', 'file']},
+        'codn': {'level': 'INFO', 'handlers': ['console', 'file']},
         'py.warnings': {'handlers': ['console']},
         '__force_dict__': True
     },
     'handlers': {
         'console': {
-            'level': 'DEBUG',
             'class': 'logging.StreamHandler',
             'formatter': 'simple'
         },
         'file': {
-            'level': 'DEBUG',
             'class': 'logging.handlers.RotatingFileHandler',
             'filename': '/var/log/codn/codn.log',
             'maxBytes': 1048576,
@@ -146,14 +131,124 @@ logging = {
             'formatter': 'simple'
         }
     },
-    'formatters': {
-        'simple': {
-            'format': ('%(asctime)s %(levelname)-5.5s [%(name)s]'
-                       '[%(threadName)s] %(message)s')
-        }
-    }
-}
 </pre>
+
+The **INFO** level logging will look like following examples. The formats shown below were modified to avoid long line breaks.
+
+The following shows the CODN start time:
+
+<pre>
+2013-12-13 13:45:09,755 INFO  [codn.api.app][MainThread] *** CODN service started ***
+</pre>
+
+The following shows CODN getting all the catalog entries:
+
+<pre>
+2013-12-13 13:45:18,283 INFO  [codn.api.controllers.hooks][MainThread]  
+Response  to: 10.1.34.33 "GET /v1/catalog" 200 3485
+</pre>
+
+Here CODN gets catalog entry 470:
+
+<pre>
+2013-12-13 13:45:53,846 INFO  [codn.api.controllers.hooks][MainThread]  
+Request from: 10.1.34.33 "GET /v1/catalog/470"
+
+2013-12-13 13:45:54,699 INFO  [codn.api.controllers.hooks][MainThread]  
+Response  to: 10.1.34.33 "GET /v1/catalog/470" 200 414
+</pre>
+
+CODN requests download of catalog entry 470:
+
+<pre>
+2013-12-13 13:45:58,263 INFO  [codn.api.controllers.hooks][MainThread]  
+Request from: 10.1.34.33 "POST /v1/catalog/470/download"
+
+2013-12-13 13:45:58,290 INFO  [codn.api.controllers.hooks][MainThread]  
+Response  to: 10.1.34.33 "POST /v1/catalog/470/download" 200 51
+</pre>
+
+The next log entry shows the progress of the download for catalog entry 470:
+
+<pre>
+2013-12-13 13:45:58,306 INFO  [codn.common.util.job][MainThread] 
+Download job(id=f386e918-643f-11e3-969d-0050569f1ba4) for catalog entry(id=470) 
+changed status from CREATED to PROCESSING
+
+2013-12-13 13:45:58,361 INFO  [codn.api.controllers.hooks][MainThread]  
+Request from: 10.1.34.33 "GET /v1/catalog"
+
+2013-12-13 13:45:59,501 INFO  [codn.api.controllers.hooks][MainThread]  
+Response  to: 10.1.34.33 "GET /v1/catalog" 200 3489
+</pre>
+
+Here the download of catalog entry 470 has completed:
+
+<pre>
+2013-12-13 13:46:07,945 INFO  [codn.common.util.job][MainThread] 
+Download job(id=f386e918-643f-11e3-969d-0050569f1ba4) for catalog entry(id=470) 
+changed status from PROCESSING to COMPLETED
+</pre>
+
+The next log entry shows the install of downloaded catalog entry 470:
+
+<pre>
+2013-12-13 13:48:33,464 INFO  [codn.common.util.job][MainThread] 
+Install job(id=50020722-6440-11e3-969d-0050569f1ba4) for catalog entry(id=470) 
+changed status from CREATED to PROCESSING
+
+2013-12-13 13:48:33,777 INFO  [codn.handlers.content.image][MainThread] 
+Image Content Handler 
+var/cache/codn/470/cirros.d/component/cirros-0.3.0-x86_64-disk.img
+</pre>
+
+Here in the log is the completed installation of catalog entry 470:
+
+<pre>
+2013-12-13 13:49:48,914 INFO  [codn.common.util.job][MainThread] 
+Install job(id=50020722-6440-11e3-969d-0050569f1ba4) for catalog entry(id=470) 
+changed status from PROCESSING to COMPLETED
+</pre>
+
+The CODN service should always be running, but if it is ever 'stopped' or restarted then you will see that also in the log:
+
+<pre>
+2013-12-13 14:00:56,921 INFO  [codn.api.app]  *** CODN service stopping ***
+</pre>
+
+### Setting Verbose Logging with DEBUG
+
+If you need more detailed logging information, change 'codn' level logging from INFO to DEBUG, which would result in verbose logging: 
+
+<pre>
+'codn': {'level': 'DEBUG', 'handlers': ['console', 'file']},
+</pre>
+
+
+## CODN Service Commands
+
+You can start, monitor, and stop the CODN service with the following commands:
+
+<pre>
+service codn start  
+service codn status 
+service codn stop
+</pre> 
+
+If you edit codn.conf, be sure to stop and then start the service again:
+
+<pre>
+service codn stop 
+service codn start
+</pre>
+
+Then check its status:
+
+<pre>
+service codn status
+</pre>
+
+If the service does not restart, check the codn.conf file for syntax errors.
 
 ## Next Step
 
