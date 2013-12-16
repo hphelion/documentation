@@ -267,7 +267,7 @@ The following configuration must be reviewed during this step:
  
 3. Download the HP Cloud OS ISO to the host's local file system or data store.
 
-4. Configure the virtuala machine Admin Node to point to the ISO as a CD/DVD drive or install media ISO image. 
+4. Configure the virtual machine Admin Node to point to the ISO as a CD/DVD drive or install media ISO image. 
 
 ## Boot the Admin Node Using the HP Cloud OS ISO
 
@@ -293,7 +293,7 @@ set as proxy exceptions.
 2. In the browser, enter **http://192.168.124.10:9000** to launch the Operational Dashboard user interface. 
 IMPORTANT: Use Google Chrome or Mozilla Firefox.
 
-3. On the Environment tab, review the types of prepreqisites, servers, connections, and networks in your environment.
+3. On the Environment tab, review the types of prerequisites, servers, connections, and networks in your environment.
 
 ## Next Step
 

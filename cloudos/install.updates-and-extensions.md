@@ -26,17 +26,11 @@ PageRefresh();
 This topic explains how to obtain patches and other relevant functionality from the HP Cloud OS Distribution Network (CODN).
 
 * [Start in the HP Cloud OS Operational Dashboard](#start-in-the-hp-cloud-os-operational-dashboard)
-
 * [Modify the CODN Runtime Configuration](#modify-the-codn-runtime-configuration) 
-
   * [Server Host and Port](#server-host-and-port)
-
   * [Proxy Configuration](#proxy-configuration)
-
   * [Logging](#logging)
-
 * [CODN Service Commands](#codn-service-commands)
-
 * [Next Step](#next-step)
 
 
