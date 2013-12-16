@@ -36,6 +36,11 @@ The HP Cloud OS installation deploys the HP Cloud OS Operational Dashboard (used
 configure, and install an HP cloud infrastructure) and the HP Cloud OS Administration Dashboard
 (used to create and manage cloud resources).
 
+* [HP Cloud OS Environment](#hp-cloud-os-environment)
+* [Preview of the Installation Steps](#preview-of-the-installation-steps)
+* [Components of the HP Cloud OS Environment](#components-of-the-hp-cloud-os-environment)
+* [Next Step](#next-step)
+
 ## HP Cloud OS Environment
 
 The HP Cloud OS environment consists of an installer, services and controllers that provide:
@@ -70,9 +75,9 @@ However, should you need to customize values in the install modules that are not
 this advanced section, along with [Install Modules Reference](/cloudos/install/install-modules-reference/), are provided to assist 
 you in the process of customizing and deploying the individual install modules.  
 
-## Components of the Cloud OS Environment
+## Components of the HP Cloud OS Environment
 
-The following diagram illustrates the Cloud OS environment.
+The following diagram illustrates the HP Cloud OS environment.
 
 ( coming soon ) 
 
@@ -81,7 +86,7 @@ The following diagram illustrates the Cloud OS environment.
 The Cloud OS Administration Node (Admin Node) hosts the Operational Dashboard that deploys
 private and hybrid-only cloud infrastructure environments by network booting the managed bare-metal
 servers, which are the Controller and Compute nodes. Using Chef Server and recipes,
-the services are installed on the managed bare-metal servers. **Note:** In this and subsequent Cloud OS topics, 
+the services are installed on the managed bare-metal servers. **Note:** In this and subsequent HP Cloud OS topics, 
 we refer to these managed bare-metal servers more simply as "managed nodes."
 
 ### Services
@@ -106,17 +111,17 @@ compute fabric controller.
 
 * Swift (OpenStack Object Store) &mdash; OpenStack service to store and retrieve lots of data in virtual containers. 
 
-* Graffiti (Dictionary, Directory, and Resource Pool Service)&mdash; Cloud OS service to support
+* Graffiti (Dictionary, Directory, and Resource Pool Service)&mdash; HP Cloud OS service to support
 diverse functions: a dictionary of the cloud's capabilities; a searchable directory to find cloud
 resources based on their capabilities; dynamic binding, describing the requirements instead of
 static binding; and provides support for discovering, registering, and retrieving resource pool
 definitions for compute, network, and volume resources.
 
-* Eve (Topology Provisioning Service)&mdash; Cloud OS service to provide for provisioning lifecycle
+* Eve (Topology Provisioning Service)&mdash; HP Cloud OS service to provide for provisioning lifecycle
 of a TOSCA-based infrastructure topology template of compute, network, and volume resources
 in a defined resource pool. Also provides security and management.
 
-* Focus (Topology Document Repository Service)&mdash; Cloud OS service to provide for
+* Focus (Topology Document Repository Service)&mdash; HP Cloud OS service to provide for
 discovering, registering, versioning, and retrieving of document types necessary to describe
 TOSCA-based infrastructure topologies.
 

@@ -104,8 +104,8 @@ management effort or service provider interaction.
 ###EC2###
 :     Elastic compute cloud; Amazon's cloud computing platform.
 
-###Term###
-:     Definition...
+###Eve###
+:     An HP Cloud OS composite provisioning service that uses a topology template and profile to create VMs, volumes, and network segments as described in the topology. Eve uses Graffiti service for determining resource pool existence, traits, and User identity mapping.
 
 ###Term###
 :     Definition...
@@ -120,8 +120,9 @@ management effort or service provider interaction.
 :     An on-demand, allocatable public IP address on a network. You can allocate a number of floating IP addresses up to the quota limit, and then assign them to server [instances](#Instance).
 
 
-###Term###
-:     Definition...
+###Focus###
+:     An HP Cloud OS repository for topology templates and profiles that are used for provisioning.
+...
 
 ###Term###
 :     Definition...
@@ -129,8 +130,9 @@ management effort or service provider interaction.
 
 ## G
 
-###Term###
-:     Definition...
+###Grafitti###
+:     an HP Cloud OS searchable directory to find cloud resources based on their capabilities.
+
 
 ###Term###
 :     Definition...

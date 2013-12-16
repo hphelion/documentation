@@ -217,11 +217,11 @@ and to perform lifecycle management of that architecture.  HP Cloud OS provides 
 
 ### Operational Dashboard
 
-HP Cloud OS provides the Operational Dashboard (sometimes called "Cosmos"). The Operational Dashboard is used to complete the Cloud OS installation process after the Cloud OS Administration Node (Admin Node) has been booted with the HP Cloud OS *.iso package.  
+HP Cloud OS provides the Operational Dashboard. It is used to complete the Cloud OS installation process after the HP Cloud OS Administration Node (Admin Node) has been booted with the HP Cloud OS *.iso package.  
 
 On the Operational Dashboard, you set up your cloud environment, complete the Admin Node installation and configuration, and create a cloud.
 
-The Operational Dashboard is used for the initial setup; it's not for the self-service users who will subsequently work in the Administrative Dashboard. 
+The Operational Dashboard is used for the initial setup. It is not for the self-service users who will subsequently work in the Administrative Dashboard. 
 
 The Operational Dashboard, which is also based on OpenStack's Horizon (but again with significant improvements), allows authorized users to define the architecture of the cloud.  With the 
 Operational Dashboard, you can:
@@ -234,8 +234,7 @@ In terms of sequencing, you'll you can use the Administration Dashboard to view,
 
 ### Administration Dashboard
 
-The HP Cloud OS Administration Dashboard enables self-service usage of the cloud. HP technologists sometimes refer to the Administration Dashboard as "Skyline." 
-Any authorized user can use the Administrative Dashboard to interact with the cloud and build the user's own virtual resources in the cloud.  The HP Cloud OS 
+The HP Cloud OS Administration Dashboard enables self-service usage of the cloud. Any authorized user can use the Administrative Dashboard to interact with the cloud and build the user's own virtual resources in the cloud.  The HP Cloud OS 
 Administration Dashboard is based on the OpenStack "Horizon" technology; it looks and acts similar to Horizon, but at HP we have added new capabilities, 
 and new user interface workflow features to provide a more streamlined experience with clouds.
 

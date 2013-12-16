@@ -381,10 +381,12 @@ Refer to [Install &amp; Configure Your Clouds](/cloudos/install/) for a complete
 <td> HP Cloud OS 1.20 </td>
 </tr>
 
+<!--
 <tr style="background-color: white; color: black;">
 <td style="padding-left: 40px; font-weight:bold;"> HP Cloud OS Administration Dashboard </td>
 <td> HP Cloud OS 1.20 </td>
 </tr>
+-->
 
 <tr style="background-color: white; color: black;">
 <td style="font-weight: bold; background-color: #F8F8F8;" colspan="2"> Deployment </td>
