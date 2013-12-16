@@ -38,7 +38,7 @@ This page contains the following information on our software package:
 
 As a domain admin, you can manage each user's projects, roles, and groups.  You can manage the membership of each group, and manage the user assignment within each role. 
 
-**Hybrid cloud focus** - In response to the significant customer feedback, and to enable a more open and robust Hybrid cloud environment, EC2 API and AWS Eucalyptus toolset support have been discontinued at this time.
+**Hybrid cloud focus** - In response to significant feedback received from our rapidly growing open source developer community, and the notably modest usage of the AWS EC2 API in the open HP Cloud environment, support for the AWS EC2 API and Eucalyptus API have been discontinued at this time.
 
 **User roles** - The following user roles are available with this release (new user roles *italicized*):
 
