@@ -82,7 +82,7 @@ The following are our best-practices recommendations for versions 13.5.
 
 * To ensure full external node access, HP recommends that you do not delete  egress rules and allow those rules to remain part of their security groups.
 * To get the most timely and accurate results for your quota checks, use the [Neutron networking interface](/hpcloudconsole#ManageHPPublicCloud).
-* •	To ensure that your Linux instance is able to resolve its own hostname, add an entry to the `/etc/hosts` file that matches the hostname.
+* To ensure that your Linux instance is able to resolve its own hostname, add an entry to the `/etc/hosts` file that matches the hostname.
 
 ####Command-line Interface####
 
