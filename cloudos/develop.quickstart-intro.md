@@ -225,18 +225,20 @@ The HP Cloud OS API Documentation includes other handy features, as you'll see w
 
 ## API Documentation Ports per Service
 
-Your HP Cloud OS instance comes installed with the HP Cloud OS API Documentation. Each service reserves a unique port number in the URL. Using a Chrome or Firefox browser, you can open the HP Cloud OS API Documentation as follows. Just replace "my_server" with the DNS hostname or IP address of your server:
+Your HP Cloud OS instance comes installed with the HP Cloud OS API Documentation. Each service reserves a unique port number in the URL. 
+Using a Google Chrome or Mozilla Firefox browser, you can open the HP Cloud OS API Documentation as follows. 
+Just replace "my_server" with the DNS hostname or IP address of your controller node:
 
-* Eve: http://my_server:21051/eve/docs/index.html
+* Eve: http://my_server:21051/?token=&lt;keystone-token-value>
 
-* Focus: http://my_server:21061/docs/index.html
+* Focus: http://my_server:21061/?token=&lt;keystone-token-value>
 
-* Graffiti: http://my_server:21071/docs/index.html
+* Graffiti: http://my_server:21071/?token=&lt;keystone-token-value>
 
 ## API Security Tokens
 
 Before you can submit REST calls to your HP Cloud OS instance, or use the interactive features of the HP Cloud OS API Documentation app, 
-you must generate a security token from Keystone, which is an OpenStack service. If you skip this step, or if you have an expired token, 
+you must generate a v3 security token from Keystone, which is an OpenStack service. If you skip this step, or if you have an expired token, 
 you will receive a 401 error message in the response. 
 
 <img src="media/cloudos-unauthorized-example.png" /> 
@@ -250,10 +252,10 @@ Copy the token's value and proceed to the next section of this topic.
 
 ### Getting the Security Token via a REST Call
 
-To generate a security token, use:
+To generate a v3 security token, use:
 
 <pre>
-&lt;keystone_server>:35357/v3/tokens
+POST &lt;keystone_server>:5000/v3/auth/tokens
 </pre> 
 
 In the Header, specify:
@@ -264,20 +266,37 @@ accept = application/json
 </pre>
 
 In the POST payload, use the following JSON to get a security token. **The values shown here are just examples. 
-You must provide your username, password, and tenantName.**  Based on the information provided, Keystone will verify the 
-roles and, if valid, return the token.
+You must provide your user name, password, project domain name, and project role name.**  
+Based on the information provided, Keystone will verify the roles and, if valid, return the token.
 
 <pre>
 {
-  "auth":{
-    "passwordCredentials":{
-    "username":"myusername",
-    "password":"mysecretpassword"
-    },
-    "tenantName":"AdminProject"
-  }
+    "auth":{
+        "identity": {
+            "methods": ["password"],
+            "password": {
+                "user": {
+                    "domain":{
+                         "name": "Default"
+                     },
+                    "name": "admin",
+                    "password": "admin_pass"
+                }
+            }
+        },
+        "scope": {
+             "project": {
+                    "domain": {
+                         "name": "Default"
+                     },
+               "name": "admin"
+              }
+        }
+    }
 }
 </pre>
+
+You can then include the returned token's value on the <code> ?/token=&lt;value> </code> query parameter with each REST call. 
 
 ## Next Step
 
