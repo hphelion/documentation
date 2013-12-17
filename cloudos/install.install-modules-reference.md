@@ -18,6 +18,8 @@ PageRefresh();
  
 </script>
 
+<p style="font-size: small;"> <a href="/cloudos/install/advanced-cloud-setup">&#9664; PREV</a> | <a href="/cloudos/install/">&#9650; UP</a> | NEXT &#9654; </p>
+
 
 # Install Modules Reference
 
@@ -38,18 +40,11 @@ noted in the [Advanced Cloud Setup](/cloudos/install/advanced-cloud-setup/) topi
 * [Hp Cos Graffiti 100](#hp-cos-graffiti-100)
 * [Hp Cos Keystone 100](#hp-cos-keystone-100)
 * [Hp Cos Nova 100](#hp-cos-nova-100)
-* [Hp Cos Postgresql 915](#hp-cos-postgresql-915)
 * [Hp Cos Quantum 100](#hp-cos-quantum-100)
-* [Hp Cos RabbitMQ 271](#hp-cos-rabbitmq-271)
 * [Hp Cos Skyline 100](#hp-cos-skyline-100)
 * [Hp Cos Swift 100](#hp-cos-swift-100)
-
-<p style="color: red; font-weight: bold; padding: 4px 4px 4px 4px; border: 1px dotted;"> Internal note for <b>G3</b> release: <br/>
-Okay to not include an Eden install module table or any Eden attributes in other install module tables?<br/>
-Okay to use Graffiti instead of Peer? <br/>
-Okay to add the Swift table? <br/>
-Okay to keep the Cinder table? <br/>
-Okay to use "Quantum" instead of "Neutron"? </p>
+* [Postgresql 915](#postgresql-915)
+* [RabbitMQ 271](#rabbitmq-271)
 
 ## Couchdb 120
 
@@ -851,7 +846,7 @@ will be ignored. </td>
 
 ## Hp Cos Graffiti 100
 
-Table coming today 12/6...
+( coming soon ) 
 
 
 ## Hp Cos Keystone 100
@@ -898,19 +893,19 @@ Table coming today 12/6...
 
 <tr style="background-color: white; color: black;">
 <td> Domain Admin Password </td> 
-<td> &lt;password> <b> Internal note: should we show the value here? </b> </td>
+<td> &lt;password> </td>
 <td> The Admin user's password; Granted domain admin role on the AdminProject. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Domain Arch Password </td> 
-<td> &lt;password> <b> Internal note: should we show the value here? </b> </td>
+<td> &lt;password> </td>
 <td> Architect user's password; Granted domain architect role on the AdminProject project. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Domain Trash Password </td> 
-<td> &lt;password> <b> Internal note: should we show the value here? </b> </td>
+<td> &lt;password> </td>
 <td> Trash user's password; the granted user role on the trash project. </td>
 </tr>
 
@@ -1037,45 +1032,6 @@ virtual machines. Select kvm if nova-compute nodes are bare-metal. </td>
 
 </table>
 
-## Hp Cos Postgresql 915
-
-<table style="text-align: left; vertical-align: top;">
-
-<tr>
-<th style="background-color: #C8C8C8;"> Install Module </th> 
-<td colspan="2" style="background-color: white;"> Hp Cos Postgresql 915 </td>
-</tr>
-
-<tr>
-<th style="background-color: #C8C8C8;"> Description </th> 
-<td colspan="2" style="background-color: white;"> Configures a PostgreSQL server. </td>
-</tr>
-
-<tr>
-<th style="background-color: #C8C8C8;"> Node Deployment </th> 
-<td colspan="2" style="background-color: white;"> Cloud Controller Node </td>
-</tr>
-
-<tr>
-<th style="background-color: #C8C8C8;"> Roles </th> 
-<td colspan="2" style="background-color: white;"> Postgresql 915-server, Postgresql 915-client (Optional) </td>
-</tr>
-
-<tr style="background-color: #C8C8C8;">
-<th> Attribute </th> 
-<th> Default Value </th>
-<th> Description </th>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Datadir </td> 
-<td> <nobr> /var/lib/postgresql </nobr> </td>
-<td> The location where the database files will reside. </td>
-</tr>
-
-</table>
-
-
 ## Hp Cos Quantum 100
 
 <table style="text-align: left; vertical-align: top;">
@@ -1156,7 +1112,7 @@ virtual machines. Select kvm if nova-compute nodes are bare-metal. </td>
 
 <tr style="background-color: white; color: black;">
 <td> Regular User Password </td> 
-<td> &lt;password> <b> Internal note: should we show the value here? </b> </td>
+<td> &lt;password></td>
 <td> Default regular password to use. </td>
 </tr>
 
@@ -1168,7 +1124,7 @@ virtual machines. Select kvm if nova-compute nodes are bare-metal. </td>
 
 <tr style="background-color: white; color: black;">
 <td> Administrator Password </td> 
-<td> &lt;password> <b> Internal note: should we show the value here? </b> </td>
+<td> &lt;password></td>
 <td> The Admin Quantum user password. </td>
 </tr>
 
@@ -1179,46 +1135,6 @@ virtual machines. Select kvm if nova-compute nodes are bare-metal. </td>
 </tr>
 
 </table>
-
-
-## Hp Cos RabbitMQ 271
-
-<table style="text-align: left; vertical-align: top;">
-
-<tr>
-<th style="background-color: #C8C8C8;"> Install Module </th> 
-<td colspan="2" style="background-color: white;"> Hp Cos RabbitMQ 271 </td>
-</tr>
-
-<tr>
-<th style="background-color: #C8C8C8;"> Description </th> 
-<td colspan="2" style="background-color: white;"> Configures a RabbitMQ server. </td>
-</tr>
-
-<tr>
-<th style="background-color: #C8C8C8;"> Node Deployment </th> 
-<td colspan="2" style="background-color: white;"> Cloud Controller Node </td>
-</tr>
-
-<tr>
-<th style="background-color: #C8C8C8;"> Role </th> 
-<td colspan="2" style="background-color: white;"> Rabbitmsgq 271-server </td>
-</tr>
-
-<tr style="background-color: #C8C8C8;">
-<th> Attributes </th> 
-<th> Default Value </th>
-<th> Description </th>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> LogPath </td> 
-<td> <nobr> /var/log/rabbitmq </nobr> </td>
-<td> The location of the rabbitmq log file. </td>
-</tr>
-
-</table>
-
 
 
 ## Hp Cos Skyline 100
@@ -1272,13 +1188,21 @@ virtual machines. Select kvm if nova-compute nodes are bare-metal. </td>
 <tr style="background-color: white; color: black;">
 <td> Non Proxy Host(s) (Optional) </td> 
 <td> <nobr> 10.*|192.*|localhost|127.0 </nobr> </td>
-<td> Use this field to specify addresses that should not use proxy servers. Each network needs to be separated by a bar "|". For example:<nobr> 10.*|192.*|localhost </nobr> </td>
+<td> Use this field to specify addresses that should not use proxy servers. Each network needs to be separated by a bar "|". For example: <nobr> 10.*|192.*|localhost </nobr> </td>
 </tr>
 
 </table>
 
 
 ## Hp Cos Swift 100
+
+**Important:** As noted in a prior topic, [Setup Swift (Optional)](/cloudos/install/setup-swift/), if 
+you want to use Swift in your cloud, you must manually install Swift before clicking Complete Install in the HP Cloud OS Operational 
+Dashboard.
+
+If you setup Swift, you can modify its attributes, which are shown in the following table. In most cases, you can use the default values. 
+
+**Note:** The Additional Middleware and their attributes are not supported in the current release.  
 
 <table style="text-align: left; vertical-align: top;">
 
@@ -1289,7 +1213,7 @@ virtual machines. Select kvm if nova-compute nodes are bare-metal. </td>
 
 <tr>
 <th style="background-color: #C8C8C8;"> Description </th> 
-<td colspan="2" style="background-color: white;"> Configures the object/blob storage service. </td>
+<td colspan="2" style="background-color: white;"> Configures the Swift object/blob storage service. </td>
 </tr>
 
 <tr>
@@ -1298,8 +1222,9 @@ virtual machines. Select kvm if nova-compute nodes are bare-metal. </td>
 </tr>
 
 <tr>
-<th style="background-color: #C8C8C8;"> Role </th> 
-<td colspan="2" style="background-color: white;"> Hp cos swift 100-server </td>
+<th style="background-color: #C8C8C8;"> Roles </th> 
+<td colspan="2" style="background-color: white;"> Hp cos swift 100-ring-storage <br /> Hp cos swift 100-ring-compute <br /> Hp cos swift 100-proxy <br /> Hp cos swift 100-dispersion. For 
+information about the roles, see the Swift Roles section of the [Setup Swift](/cloudos/install/setup-swift) topic. </td>
 </tr>
 
 <tr style="background-color: #C8C8C8;">
@@ -1309,43 +1234,355 @@ virtual machines. Select kvm if nova-compute nodes are bare-metal. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> TBS  </td> 
-<td> TBS </td>
-<td> TBS </td>
+<td> Keystone instance   </td> 
+<td> </td>
+<td> The Keystone instance Swift should register with.</td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> TBS  </td> 
-<td> TBS </td>
-<td> TBS </td>
+<td> Allow Public Containers </td> 
+<td> false </td>
+<td> Boolean indicating whether Swift should allow containers across tenants. Setting this to true causes a performance penalty. Used in delay_auth_decision.
+See <a href="https://blueprints.launchpad.net/horizon/+spec/swift-container-public-access" target="new1">Swift Container Public Access</a>.  
+</td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> TBS  </td> 
-<td> TBS </td>
-<td> TBS </td>
+<td> Zones  </td> 
+<td> 2 </td>
+<td> The number of zones Swift should use. These are logical divisions of the Swift storage, with a minimum of 2. 
+Copies of data will be stored in different zones. Used in ring-builder commands. See 
+<a href="http://searchcloudstorage.techtarget.com/answer/OpenStack-Swift-object-storage-How-does-data-placement-work" target="new2">OpenStack Swift Object Storage - How does Placement Work?"</a>. 
+</td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> TBS  </td> 
-<td> TBS </td>
-<td> TBS </td>
+<td> Partitions </td> 
+<td> 18 </td>
+<td> The number of partitions Swift should use. A partition is a storage unit, at a lower level than zones. The number represents the power of 2 for the number of partitions. For example, 
+18 represents 2^18 or 262,144 partitions. Used in ring builder commands. See <a href="http://searchcloudstorage.techtarget.com/answer/OpenStack-Swift-object-storage-How-does-data-placement-work" target="new2">OpenStack Swift Object Storage - How does Placement Work?"</a>. 
+</td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> TBS  </td> 
-<td> TBS </td>
-<td> TBS </td>
+<td> Minimum Partitions per Hour  </td> 
+<td> 1 </td>
+<td> The time in hours before a specific partition can be moved in succession. Used in ring builder commands.  See the 
+<a href="http://docs.openstack.org/developer/swift/deployment_guide.html" target="new3">OpenStack Deployment Guide</a>. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> TBS  </td> 
-<td> TBS </td>
-<td> TBS </td>
+<td> Replicas </td> 
+<td> 1 </td>
+<td> The number of replicas in which to store the data. Used in ring builder commands. 
+See the <a href="http://docs.openstack.org/developer/swift/deployment_guide.html" target="new3">OpenStack Deployment Guide</a>. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Cluster Hash </td> 
+<td> ( generated ) </td>
+<td> A unique id for the Swift install. Initially assigned a random number. Shared among all nodes in a Swift cluster. Can be generated using <code> od -t x8 -N 8 -A n &lt;/dev/random </code>. 
+Used in swift.conf cluster_hash. See the <a href="http://swiftstack.com/openstack-swift/architecture/" target="new4">Swift Architecture document</a>. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Cluster Admin Password </td> 
+<td> &lt;password> </td>
+<td> The password for the administrative user for Swift in the swauth method. **Note:** Not used - HP Cloud OS defaults to Keystone authentication. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> User </td> 
+<td> swift </td>
+<td> The Swift user account. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Group </td> 
+<td> swift </td>
+<td> The Swift group. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Debug </td> 
+<td> false </td>
+<td> Boolean indicating whether Swift should run in debug mode. </td>
+</tr>
+
+<tr>
+<td colspan="3" style="background-color: #C8C8C8;"> Additional middleware:</td>
+</tr>
+
+<tr>
+<td colspan="3" style="background-color: #C8C8C8;"> S3 &mdash; Note: currently not supported. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Enabled </td> 
+<td> false </td>
+<td> Boolean indicating whether Swift3 middleware is enabled for Swift. Swift3 allows access to OpenStack Swift via the Amazon S3 API. 
+See the <a href="https://github.com/fujita/swift3" target="swift3">Swift3 documentation</a>. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Git repo url </td> 
+<td> <a href="http://github.com/fujita/swift3" target="swift3">Swift3 documentation.</a> </td>
+<td> The URL of the git repo for Swift. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Git ref_spec  </td> 
+<td> ( generated ) </td>
+<td> The refspec of the git repo for Swift. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Use PFS for S3 </td> 
+<td> true </td>
+<td> Boolean indicating whether Swift should use a parallel file system. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Use barclamp-git to checkout </td> 
+<td> true </td>
+<td>  </td>
+</tr>
+
+<tr>
+<td colspan="3" style="background-color: #C8C8C8;"> StaticWeb &mdash; Note: currently not supported. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Enabled </td> 
+<td> false </td>
+<td> Boolean indicating whether StaticWeb middleware is enabled for Swift. 
+StaticWeb serves container data as a static website with an index file and error file resolution, 
+and optional file listings. See the 
+<a href="https://github.com/openstack/swift/blob/master/swift/common/middleware/staticweb.py" target="new5">StaticWeb documentation</a>. </td>
+</tr>
+
+<tr>
+<td colspan="3" style="background-color: #C8C8C8;"> TempURL &mdash; Note: currently not supported. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Enabled </td> 
+<td> false </td>
+<td> Boolean indicating whether TempURL middleware is enabled for Swift. TempURL allows the creation of URLs to provide temporary access to objects. 
+See the <a href="https://github.com/openstack/swift/blob/master/swift/common/middleware/tempurl.py" target="new6">TempURL documentation</a>. </td>
+</tr>
+
+<tr>
+<td colspan="3" style="background-color: #C8C8C8;"> FormPOST &mdash; Note: currently not supported. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Enabled </td> 
+<td> false </td>
+<td> Boolean indicating whether FormPOST middleware is enabled for Swift. FormPOST translates a browser form post into a regular Swift object PUT. 
+See the <a href="https://github.com/openstack/swift/blob/master/swift/common/middleware/formpost.py" target="new7">FormPOST documentation</a>. </td>
+</tr>
+
+<tr>
+<td colspan="3" style="background-color: #C8C8C8;"> Domain Remap &mdash; Note: currently not supported. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Enabled </td> 
+<td> false </td>
+<td> Boolean indicating whether Domain Remap middleware is enabled for Swift. Domain Remap translates container and 
+account parts of a domain to path parameters that the proxy server understands. See the 
+<a href="https://github.com/openstack/swift/blob/master/swift/common/middleware/domain_remap.py" target="new8">Domain Remap documentation</a>. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Path root </td> 
+<td> v1 </td>
+<td>  </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Storage Domain </td> 
+<td> swift.storage.crowbar.org </td>
+<td> Sets the storage domain used by Swift. </td>
+</tr>
+
+<tr>
+<td colspan="3" style="background-color: #C8C8C8;"> CNAME Lookup &mdash; Note: currently not supported. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Enabled </td> 
+<td> false </td>
+<td> Boolean indicating whether CNAME Lookup middleware is enabled for Swift. 
+CNAME Lookup translates an unknown domain in the host header to something that ends with the configured `storage_domain` by looking up the 
+given domain's CNAME record in DNS. See the 
+<a href="https://github.com/openstack/swift/blob/master/swift/common/middleware/cname_lookup.py" target="new9">CNAME Lookup documentation</a>. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Lookup depth </td> 
+<td> 1 </td>
+<td> The CNAME middleware will continue to follow a CNAME chain in DNS until it finds a record ending in the configured storage domain or it 
+reaches the configured maximum lookup depth. If a match is found, the environment's Host header is rewritten and the request is passed 
+further down the WSGI chain. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Storage Domain </td> 
+<td> swift.storage.crowbar.org </td>
+<td> Sets the storage domain for Swift. </td>
+</tr>
+
+<tr>
+<td colspan="3" style="background-color: #C8C8C8;"> Ratelimit &mdash; Note: currently not supported. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Enabled </td> 
+<td> false </td>
+<td> Boolean indicating whether Ratelimit middleware is enabled for Swift. 
+Rate limiting is performed on requests that result in database writes to the account and container sqlite dbs.  
+Ratelimit uses memcached and is dependent on the proxy servers having highly synchronized time. 
+The rate limits are limited by the accuracy of the proxy server clocks.
+See the <a href="http://docs.openstack.org/developer/swift/ratelimit.html" target="ratelimit">Rate Limiting documentation</a> on the OpenStack website.  </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Clock accuracy </td> 
+<td> 1000 </td>
+<td> Represents how accurate the proxy servers' system clocks are with each other. 1000 means that all the proxies' 
+clocks are accurate to each other within 1 millisecond. No ratelimit should be higher than the clock accuracy. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Max sleep time seconds </td> 
+<td> 60 </td>
+<td> HP Cloud OS immediately returns a 498 response if the necessary sleep time ever exceeds the given max_sleep_time_seconds.</td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Log sleep time seconds </td> 
+<td> 0 </td>
+<td> For visibility into rate limiting, set this value to greater than zero, and all sleeps greater than the number will be logged. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Rate buffer seconds </td> 
+<td> 5 </td>
+<td> The number of seconds the rate counter can drop and be allowed to catch up (at a faster than listed rate). A 
+larger number will result in larger spikes in rate but better average accuracy. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Account Ratelimit </td> 
+<td> 0 </td>
+<td> If set, will limit PUT and DELETE requests to /account_name/container_name. Number is in requests per second. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Account whitelist </td> 
+<td> </td>
+<td> Comma separated lists of account names that will not be rate limited. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Account blacklist </td> 
+<td> </td>
+<td> Comma separated lists of account names that will not be allowed. Returns a 497 response. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Container_ratelimit_size </td> 
+<td> 100=100,200=50,500=20 </td>
+<td> When set with container_ratelimit_x = r: for containers of size x, limit requests per second to r. 
+Will limit PUT, DELETE, and POST requests to /a/c/o. <br /> 
+For details, see the 
+<a href="http://docs.openstack.org/developer/swift/ratelimit.html" target="ratelimit">Rate Limiting documentation</a> on the OpenStack website. </td>
 </tr>
 
 </table>
 
+
+## Postgresql 915
+
+<table style="text-align: left; vertical-align: top;">
+
+<tr>
+<th style="background-color: #C8C8C8;"> Install Module </th> 
+<td colspan="2" style="background-color: white;"> Hp Cos Postgresql 915 </td>
+</tr>
+
+<tr>
+<th style="background-color: #C8C8C8;"> Description </th> 
+<td colspan="2" style="background-color: white;"> Configures a PostgreSQL server. </td>
+</tr>
+
+<tr>
+<th style="background-color: #C8C8C8;"> Node Deployment </th> 
+<td colspan="2" style="background-color: white;"> Cloud Controller Node </td>
+</tr>
+
+<tr>
+<th style="background-color: #C8C8C8;"> Roles </th> 
+<td colspan="2" style="background-color: white;"> Postgresql 915-server, Postgresql 915-client (Optional) </td>
+</tr>
+
+<tr style="background-color: #C8C8C8;">
+<th> Attribute </th> 
+<th> Default Value </th>
+<th> Description </th>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Datadir </td> 
+<td> <nobr> /var/lib/postgresql </nobr> </td>
+<td> The location where the database files will reside. </td>
+</tr>
+
+</table>
+
+
+
+
+
+## RabbitMQ 271
+
+<table style="text-align: left; vertical-align: top;">
+
+<tr>
+<th style="background-color: #C8C8C8;"> Install Module </th> 
+<td colspan="2" style="background-color: white;"> Hp Cos RabbitMQ 271 </td>
+</tr>
+
+<tr>
+<th style="background-color: #C8C8C8;"> Description </th> 
+<td colspan="2" style="background-color: white;"> Configures a RabbitMQ server. </td>
+</tr>
+
+<tr>
+<th style="background-color: #C8C8C8;"> Node Deployment </th> 
+<td colspan="2" style="background-color: white;"> Cloud Controller Node </td>
+</tr>
+
+<tr>
+<th style="background-color: #C8C8C8;"> Role </th> 
+<td colspan="2" style="background-color: white;"> Rabbitmsgq 271-server </td>
+</tr>
+
+<tr style="background-color: #C8C8C8;">
+<th> Attributes </th> 
+<th> Default Value </th>
+<th> Description </th>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> LogPath </td> 
+<td> <nobr> /var/log/rabbitmq </nobr> </td>
+<td> The location of the rabbitmq log file. </td>
+</tr>
+
+</table>
 
 <a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
