@@ -19,6 +19,8 @@ PageRefresh();
 </script>
 
 
+<p style="font-size: small;"> &#9664; PREV | <a href="/cloudos/">&#9650; UP</a> | <a href="/cloudos/develop/quickstart-intro">NEXT &#9654;</a> </p>
+
 # Cloud OS Development with REST APIs
 
 Welcome! These topics describe the HP Cloud OS REST APIs for the value-added services. 
