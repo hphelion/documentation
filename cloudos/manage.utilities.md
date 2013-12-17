@@ -60,7 +60,9 @@ This section includes:
 
 The HP Cloud OS Clean-up Utility performs the following tasks:
 
-* Clean up all resources associated with previously deleted resources. The HP Cloud OS Administration Dashboard does not delete projects or users. Instead, it "moves them to the trash can" by removing as many resources as possible and then prefixing the Project (or User) name with a tilde ~. Flavors are already only "marked for deletion" in the database.
+* Clean up all resources associated with previously deleted resources. The HP Cloud OS Administration Dashboard does not 
+delete projects or users. Instead, it "moves them to the trash can" by removing as many resources as possible and then 
+prefixing the Project (or User) name with a tilde ~. Flavors are already only "marked for deletion" in the database.
 
 * Prevent select HP Cloud OS database entries from existing in their respective tables longer than 24-Hours.
 
@@ -68,7 +70,8 @@ The HP Cloud OS Clean-up Utility performs the following tasks:
 
 * Monitor key services to ensure that they are in a run state.
 
-The Clean-up Utility runs every 24 hours by default, between 23:00 and 00:00 hours local time, but can be scheduled through Nagios to run whenever the admin needs to clean up the database.
+The Clean-up Utility runs every 24 hours by default, between 23:00 and 00:00 hours local time, but can be scheduled 
+through Nagios to run whenever the admin needs to clean up the database.
 
 The Clean-up Utility consists of the following four Nagios services:
 

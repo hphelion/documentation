@@ -34,9 +34,9 @@ Welcome! You've got questions, we have the answers.
 * [What does HP Cloud OS support?](#what-does-hp-cloud-os-support)
 * [How does HP Cloud OS help customers?](#how-does-hp-cloud-os-help-customers) 
 * [What is the HP Cloud OS Sandbox?](#what-is-the-hp-cloud-os-sandbox)
-* [Where can I get the HP Cloud OS Sandbox kit?](#where-can-i-get-the-hp-cloud-os-sandbox-kit)
 * [How is HP Cloud OS integrated into the HP Cloud portfolio?](#how-is-hp-cloud-os-integrated-into-the-hp-cloud-portfolio)
-
+* [Where can I get the HP Cloud OS Sandbox kit?](#where-can-i-get-the-hp-cloud-os-sandbox-kit)
+* [Where can I get the login credentials for the HP Cloud OS dashboards?](#where-can-i-get-login-credentials-for-the-hp-cloud-os-dashboards)
 
 ## What is the HP POV on cloud solutions?
 
@@ -134,16 +134,21 @@ and has found no issues running RHEL or SLES as a guest OS on HP Cloud OS.
 > The HP Cloud OS sandbox is an OpenStack distribution from HP that contains a HP installer, a standards-based infrastructure, and application modeling capability. It provides an in-depth insight for customers and partners prior to deploying HP Cloud solutions that leverage HP Cloud OS.  HP Cloud OS sandbox is not supported, and is meant for non-production, 
 limited scale (up to 10 compute nodes) and limited time (90-day) use. 
 
-## Where can I get the HP Cloud OS Sandbox kit?
-
-> To request the HP Cloud OS Sandbox kit, register for an account on the <a href="https://cloudos.hpwsportal.com" target="new"> HP Cloud OS Catalog</a> portal.
-
 ## How is HP Cloud OS integrated into the HP Cloud portfolio? 
 
 HP Cloud OS is already powering or compatible with several existing HP cloud solutions, delivering on our commitment to a common architecture across the HP Cloud portfolio with HP Cloud OS as a foundational technology component embedded in our existing cloud solutions and new innovative offerings. This technology provides the foundation for the common cloud architecture across private, public, and managed cloud delivery models.  Today, HP Cloud OS is NOT a product, but rather a technology that will be offered and supported as part of other HP products.
 
 * CloudSystem currently embeds OpenStack technology, offering customers greater choice in deployment options for their cloud workloads by enabling KVM resource pools.  The next generation of CloudSystem software was built on Cloud OS technology (coming in 2014).
 * Moonshot servers will be available with Cloud OS technology to simplify the provisioning and management of Moonshot servers for specific cloud workloads, such as dedicated hosting and large-scale websites.  This is currently available as a private beta.  HP Moonshot with HP Cloud OS may be available in 2014. 
+
+## Where can I request the HP Cloud OS Sandbox kit?
+
+> To request the HP Cloud OS Sandbox kit (ISO), register for an account on the <a href="https://cloudos.hpwsportal.com" target="new"> HP Cloud OS Catalog</a> portal.
+
+## Where can I get login credentials for the HP Cloud OS dashboards?
+
+> In the current release, the HP Cloud OS dashboards use pre-defined login credentials. These are not published in the web-hosted documentation. 
+If you have successfully registered for an account on the <a href="https://cloudos.hpwsportal.com" target="new"> HP Cloud OS Catalog</a> portal, login and see the topic about the dashboard credentials.
 
 <a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

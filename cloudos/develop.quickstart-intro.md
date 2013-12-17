@@ -21,39 +21,30 @@ PageRefresh();
 
 # HP Cloud OS API Quick Start - Introduction
 
-* [HP Cloud OS API Introduction](#hp-cloud-os-api-introduction)
-  
-  * [Prerequisites](#prerequisites)
-  
-  * [What is HP Cloud OS?](#what-is-hp-cloud-os)
-  
-  * What are the HP Cloud OS Services?
-
-  * [What is the HP Cloud OS API Documentation app?]
-  
-  * API Documentation Ports per Service
-  
-  * API Security Tokens
-
-## HP Cloud OS API Introduction
-
-Welcome to the HP Cloud OS 1.2.0 release. For developers, HP Cloud OS includes a REST API that allows you to interact programmatically with your clouds.  
+For developers, HP Cloud OS includes a REST API that allows you to interact programmatically with your clouds.  
 
 This API Quick Start topic is designed to help you learn the API by introducing the HP Cloud OS services and walking through several use cases.  
 
-On your deployed clouds, we have also provided the HP Cloud OS API Documentation app. It's a framework for describing, producing, consuming, and visualizing the API. 
-The app includes comprehensive reference API documentation and an interactive environment where you can try each request and view the response from your server. 
-   
-Also refer to the [OpenStack API documentation](http://docs.openstack.org).   
+On your deployed clouds, we have also provided the HP Cloud OS API Documentation app. It's a framework for describing, producing, consuming, and 
+visualizing the API. The app includes comprehensive reference API documentation and an interactive environment where you can try each 
+request and view the response from your server. 
+
+* [Prerequisites](#prerequisites)
+* [What is HP Cloud OS?](#what-is-hp-cloud-os)
+* [What are the HP Cloud OS Services?](#what-are-the-hp-cloud-os-services)
+* [What is the HP Cloud OS API Documentation app?](#what-is-the-hp-cloud-os-api-documentation-app)
+* [API Documentation Ports per Service](#api-documentation-ports-per-service)
+* [API Security Tokens](#api-security-tokens)
+* [Next Step](#next-step) 
+
+Also refer to the [OpenStack API documentation](http://docs.openstack.org). 
 
 ### Prerequisites
 
 This topic assumes that you have already:
 
 * Installed and set up HP Cloud OS, following the instructions in the HP Cloud OS Installation Guide. 
-
 * Used the HP Cloud OS Operational Dashboard to define the OS image and related components for your cloud.
-
 * Launched an OS image on your cloud instance.* Created a project.
 
 If you have not yet set up a cloud, refer to the HP Cloud OS Installation Guide for instructions.
@@ -65,7 +56,6 @@ topology templates and binding documents.
 For details about the user interface dialogs, click Help from the top banner of the dashboards. Or see these web-hosted URLs:
 
 * [HP Cloud OS Operational Dashboard Help](/cloudos/operational-dashboard/) 
-
 * [HP Cloud OS Administration Dashboard Help](/cloudos/administration-dashboard)
          
 To submit REST API calls, you will need your OpenStack Keystone authentication credentials so you can generate security tokens. 
@@ -88,15 +78,10 @@ You can use the HP Cloud OS technology to help accelerate business outcomes.
 The HP Cloud OS technology platform includes enhanced features, providing immediate advantages for IT sysadmins and developers:
 
 * A unified installer that packages together all the HP Cloud OS components along with the OpenStack components into a single ISO, saving you time and effort to get started.
-
 * Additional topology services, which we'll introduce in this topic: Eve, Graffiti and Focus.
-
 * Pre-configured, optimized 'flavors' to meet a variety of computing and storage scenarios and requirements.
-
 * Three UIs to manage the operational, administrative, and advanced installation tasks that are inherent in cloud-based computing.
-
 * HP Cloud OS API Documentation, an app featuring "Try it out!" request/response actions and embedded reference documentation.
-
 * A common architecture for all HP Cloud technologies.
 
 <img src="media/converged_cloud_concept.png" />
@@ -107,9 +92,7 @@ The HP Cloud OS technology platform includes enhanced features, providing immedi
 HP Cloud OS provides the following services:
 
 * Eve - topology provisioning service
-
 * Focus - topology document repository service
-
 * Graffiti - resource pools registry service and disctionary service
 
 Here's a summary about the HP Cloud OS services:
@@ -129,13 +112,9 @@ The app is defined in JSON files and is presented in a web interface. Here's an 
 The app provides developers who are learning a new REST API quick and easy access to:
 
 * Each call's URI syntax
-
 * Whether there are any required or optional query parameters
-
 * The data type of each parameter
-
 * The model and its schema
-
 * Interactive "Try it out!" dialogs that let you submit calls to your server, see the results, and figure out how you need to construct your REST URIs and any payloads.
 
 For example, in the HP Cloud OS API Documentation app for Focus, having entered a known ID of a document, we can retrieve it from the 
@@ -156,9 +135,7 @@ The HP Cloud OS API Documentation includes other handy features, as you'll see w
 Your HP Cloud OS instance comes installed with the HP Cloud OS API Documentation. Each service reserves a unique port number in the URL. Using a Chrome or Firefox browser, you can open the HP Cloud OS API Documentation as follows. Just replace "my_server" with the DNS hostname or IP address of your server:
 
 * Eve: http://my_server:21051/eve/docs/index.html
-
 * Focus: http://my_server:21061/docs/index.html
-
 * Graffiti: http://my_server:21071/docs/index.html
 
 ## API Security Tokens
@@ -169,7 +146,7 @@ you will receive a 401 error message in the response. Example:
 
 ( image ) 
 
-cloudos-unauthroized-example.png
+cloudos-unauthorized-example.png
 
 ### Getting the Security Token from the HP Cloud OS Administration Dashboard
 
@@ -214,9 +191,10 @@ roles and, if valid, return the token.
 }
 </pre>
 
+## Next Step
 
+Proceed to the next API Quick Start topic, [Use Case #1: TBS](#)
 
 
 <a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
  
-

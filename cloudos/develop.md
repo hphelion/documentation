@@ -39,7 +39,7 @@ On your cloud, replace &lt;my_server> with the server's IP or DNS value.
 
 ## Read the API Quick Start topic
 
-Read the HP Cloud OS [API Quick Start](/cloudos/api/quickstart/) to learn about the REST calls.
+For information about the HP Cloud OS REST API, start with the [API Quick Start - Introduction](/cloudos/develop/quickstart-intro/).
 
 <!-- Add this topic later:
 ## Read the Value-Added Services topic

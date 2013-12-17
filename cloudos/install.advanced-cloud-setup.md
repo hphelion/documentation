@@ -132,7 +132,7 @@ Mozilla Firefox or Google Chrome:
 
 http://192.168.124.10:3000
 
-Login with crowbar/crowbar.
+For informatiom about the login credentials, please register or login on the [HP Cloud OS portal]().
 
 ### Apply Cloud Controller Install Modules
 

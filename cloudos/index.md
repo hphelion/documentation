@@ -24,24 +24,12 @@ the fastest growing open-source cloud community. This documentation site is for 
 
 We have organized the site into four logical areas:
 
-* Prepare &mdash; Topics that help you learn about HP Cloud OS, such as FAQs and video tutorials
-* Install &mdash; Instructions to install &amp; configure your clouds, using automated or advanced options
-* Manage &mdash; Information about the HP Cloud OS dashboards, troubleshooting, and utilities
-* Develop &mdash; Details about the HP Cloud OS REST API and where to find installed reference documentation
+* Prepare &mdash; Topics to help you get started: video tutorials &amp; more
+* Install &mdash; Instructions to install &amp; configure your clouds
+* Manage &mdash; Info covering utilities, troubleshooting, &amp; dashboards
+* Develop &mdash; Details on the REST API and reference documentation
 
 <p style="font-size: small; text-align:right;"> <a href="/cloudos/os-3rd-party-license-agreements/" target="os3p">HP Cloud OS Open Source and Third-Party Software License Agreements &#187;</a> </p>
-
-<!-- 
-## Video Tutorial
-
-Here's a good video to get you started.  Mark Perriera, HP Cloud 0S chief architect, introduces the platform, its services, and related OpenStack technology.
-
-<table style="border:0px;"> <tr>
-<td style="text-align: center; vertical-align: middle; width:500px;"> 
- <iframe width="400" height="225" src="//www.youtube.com/embed/Ba2wMPU5tpk" frameborder="0" allowfullscreen> </iframe> </td>
-</tr> </table>
---> 
-
 
 <!-- Note: Cloud OS blue = #1796D3 --> 
 
