@@ -72,9 +72,9 @@ This section of the release notes describes the HP recommendations for best perf
 The following are our best-practices recommendations for versions 13.5.
 
 ####Cloud Compute####
-* For best performance and reliability with multiple instances, launch instances in batches of 100 or fewer.
+* For best performance and reliability with multiple instances, launch instances in batches of at most 100.
 * Boot instance snapshots from an instance using the same flavor.  For example, if you have created a snapshot of an `xsmall` instance, boot it from an instance that also has flavor `xsmall`.
-* For reliability, use Nova delete to terminate instances only when they are in the `Active` or `Error` state.
+* To ensure proper operation, do not delete an instance in `shutdown` state; reboot the instance to ensure it it is in `Active` or `Error` state prior to deletion.
 * Please use a root disk size of 30GB for instances with flavors larger than `xsmall`.
 * For improved performance, keep the size of your bootable volumes to less than 1.4TB
 
@@ -82,7 +82,8 @@ The following are our best-practices recommendations for versions 13.5.
 
 * To ensure full external node access, HP recommends that you do not delete  egress rules and allow those rules to remain part of their security groups.
 * To get the most timely and accurate results for your quota checks, use the [Neutron networking interface](/hpcloudconsole#ManageHPPublicCloud).
-* To ensure that your Linux instance is able to resolve its own hostname, add an entry to the `/etc/hosts` file that matches the hostname.
+* To ensure that your Linux instance is able to resolve its own hostname, add an entry to the `/etc/hosts` file that matches the hostname.  This can be accomplished by running the command:
+    echo "*hostname* -l" | sudo tee -a /etc/hosts
 
 ####Command-line Interface####
 
