@@ -28,7 +28,6 @@ HP Cloud consists of the following publicly-available services:
 * [Content Delivery Network (CDN)](/cdn/) - A content delivery network hosted by HP
 * [Domain Name Service (DNS)](/dns/) - A managed domain name service featuring anycast routing hosted by HP
 * [Monitoring](/maas/): A managed monitoring service facilitating the monitoring of health and other metrics for the resources in HP Cloud.<br>
-  **Note**: This service requires activation while in public beta; please [request access on our sign-up page](https://account.hpcloud.com/cases/betarequest/maas).
 
 The following HP Public Cloud are now in private beta; follow the links to sign up and begin trying them out!
 

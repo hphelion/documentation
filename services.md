@@ -18,6 +18,5 @@ There are a number of HP Cloud services available for you:
   **Note**: This service is currently in private beta and requires activation before use; please [request access on our sign-up page](https://account.hpcloud.com/cases/betarequest/lbaas).  Service use is free of charge during the private beta period.
 * [DNS](/dns/): A managed domain name service that features anycast routing hosted by HP.
 * [Monitoring as a service (MaaS)](/maas/): Allows you to monitor  the health and other metrics of your resources in HP Cloud.<br>
-  **Note**: This service requires activation while in public beta; please [request access on our sign-up page](https://account.hpcloud.com/cases/betarequest/maas).
 * [Messaging as a Service (MSGaaS)](/api/msgaas/): API for the HP Cloud messaging service; provides you with a standards-based, inter-application asynchronous message queuing system with guaranteed first in, first out (FIFO) message delivery in the HP Cloud.<br>
   **Note**: This service requires activation while in private beta; please [request access on our sign-up page](https://account.hpcloud.com/cases/betarequest/msgaas). Service use is free of charge during the private beta period.
