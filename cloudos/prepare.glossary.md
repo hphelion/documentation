@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Cloud OS Glossary"
-permalink: /cloudos/glossary/
+permalink: /cloudos/prepare/glossary/
 product: cloudos
 
 ---
@@ -18,6 +18,8 @@ PageRefresh();
 
 </script>
 
+
+<p style="font-size: small;"> <a href="/cloudos/prepare/cloudtypes/">&#9664; PREV | <a href="/cloudos/prepare/">&#9650; UP</a> | NEXT &#9654; </p>
 
 # HP Cloud OS Glossary
 
@@ -102,8 +104,8 @@ management effort or service provider interaction.
 ###EC2###
 :     Elastic compute cloud; Amazon's cloud computing platform.
 
-###Term###
-:     Definition...
+###Eve###
+:     An HP Cloud OS composite provisioning service that uses a topology design and profile to create VMs, volumes, and network segments as described in the topology. Eve uses Graffiti service for determining resource pool existence, traits, and User identity mapping.
 
 ###Term###
 :     Definition...
@@ -118,8 +120,9 @@ management effort or service provider interaction.
 :     An on-demand, allocatable public IP address on a network. You can allocate a number of floating IP addresses up to the quota limit, and then assign them to server [instances](#Instance).
 
 
-###Term###
-:     Definition...
+###Focus###
+:     An HP Cloud OS repository for topology templates and profiles that are used for provisioning.
+...
 
 ###Term###
 :     Definition...
@@ -127,8 +130,9 @@ management effort or service provider interaction.
 
 ## G
 
-###Term###
-:     Definition...
+###Grafitti###
+:     an HP Cloud OS searchable directory to find cloud resources based on their capabilities.
+
 
 ###Term###
 :     Definition...
@@ -166,7 +170,7 @@ portability, such as cloud bursting for load balancing between clouds.
 ## J
 
 ###Job###
-:     A job is created when the user submits a desired topology to the Cloud OS Eve service API, and requests provisioning based on the topology. Eve creates the job, for which the 
+:     A job is created when the user submits a desired topology to the HP Cloud OS Eve service API, and requests provisioning based on the topology. Eve creates the job, for which the 
 Eden Service API -frameworkthen publishes status updates. Once the provisioning is finished, the job is marked as completed.
 
 ###Term###
