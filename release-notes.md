@@ -16,13 +16,13 @@ This page contains the following information on our software package:
 <!--Moving forward, there will be more bulleted items for each release-->
 
 
-##New and Changed in version 13.5## {#v135features}
+##New and Updated in version 13.5## {#v135features}
 
-**New look and feel for the Management Console** - Based on the OpenStack Horizon project, the new HP Public Cloud Console interface and user experience is significantly improved from the original classic management console.  This new user interface provides you with project dashboards that display group-related services for easier availability and service management.  Key documentation is  provided in-line and embedded throughout the console on many forms, reducing your clicks and improving your console experience. Although workflows may look different, you can still manage your standard functions through the console, including initializing instances, creating volumes, launching images and snapshots, and creating security groups and key pairs.  See [Getting Started with HP Public Cloud Console](/hpcloudconsole) for more information.
+**New look and feel for the Management Console** - Based on the [OpenStack Horizon project](http://docs.openstack.org/developer/horizon/), the new HP Public Cloud Console interface and user experience is significantly improved from the original classic management console.  This new user interface provides you with project dashboards that display group-related services for easier availability and service management.  Documentation is  provided in-line and embedded throughout the console on many forms, reducing your clicks and improving your console experience. Although workflows may look different, you can still manage your standard functions through the console, including initializing instances, creating volumes, launching images and snapshots, and creating security groups and key pairs.  See [Getting Started with HP Public Cloud Console](/hpcloudconsole) for more information.
 
 **Larger compute instances for big data and high-performance computing** -  New larger instance types allow you to run big data, analytics, and high performance computing (HPC) workloads in the public cloud.  You can access instances with up to 120 GB of RAM and up to 16 virtual cores. The new instance types allow even greater flexibility to choose the virtual machine size that best fits your application's compute resource needs.
 
-**New virtual private cloud (VPC) networking capabilities** - The new VPC functionality provides the ability to deploy your workloads with even greater security within the public cloud for public cloud only or hybrid delivery  by enabling you to create  isolated virtual networks within the HP Cloud compute service. UsingSoftware Defined Networking (SDN), VPC  allows you to create a wide variety of network configurations specific to your individual workloads needs with a variety of public Internet accessibility options. You can also connect your public cloud network to your on-premise network, enabling true hybrid delivery through private and public infrastructures with a secure VPN connection performing as a single integrated system.
+**New virtual private cloud (VPC) networking capabilities** - The new VPC functionality provides the ability to deploy your workloads with even greater security within the public cloud for hybrid delivery or public cloud only by enabling you to create  isolated virtual networks within the HP Cloud compute service. UsingSoftware Defined Networking (SDN), VPC  allows you to create a wide variety of network configurations specific to your individual workloads needs with a variety of public Internet accessibility options. You can also connect your public cloud network to your on-premise network, enabling true hybrid delivery through private and public infrastructures with a secure VPN connection performing as a single integrated system.
 
 **Networking topology visualization** - The new [Horizon-based public cloud console](/hpcloudconsole) inherits network topology infographics.  In addition to visualizing network relationships, you can perform dynamic network management, interactively creating networks and routers, and launching instances through a 2-D visualization scene.
 
@@ -30,15 +30,15 @@ This page contains the following information on our software package:
 
 **More object storage options** - HP Public Cloud Console users can now setup and control object storage container synchronization across multiple regions. Cross-region replication contributes to a more achievable business continuity plan for disaster recovery options which are often at the forefront of most enterprise organizations priorities.  Public Cloud Console users also have the ability to store duplicate versions of content within these storage containers, to restore from unintended failures or deletions, or for the purpose of data archiving, among others. 
 
-**Upload improvements** - The Horizon console is no longer limited to a 50MB file upload size.  You can also now use the Windows CLI to transfer files up to 700MB for downloads and 5GB for uploads. 
-
-**Jclouds support** - Jclouds support is provided for the Keystone version 2 (and earlier) API.
+**Larger file size transfers via the CLI** - You can now use the Windows CLI to transfer files up to 700MB for downloads and 5GB for uploads, a significant increase in the file size ceiling for transfers via the Windows CLI.
 
 **Enhanced identity management** - Particularly attractive for administrators in the enterprise, this release provides more flexibility and options when managing roles, domains, users and groups in the new Horizon-based public cloud console. Specifically, roles can now be assigned to groups of users, or domain administrators can be defined for managing domains and respective users.   In addition, you can assign roles around the latest platform services, such as the new HP Cloud [Relational Database](/dbaas/) service.
 
 As a domain admin, you can manage each user's projects, roles, and groups.  You can manage the membership of each group, and manage the user assignment within each role. 
 
 **Hybrid cloud focus** - In response to significant feedback received from our rapidly growing open source developer community, and the notably modest usage of the AWS EC2 API in the open HP Cloud environment, support for the AWS EC2 API and Eucalyptus API have been discontinued at this time.
+
+**Jclouds support** - Jclouds support is provided for the Keystone version 2 (and earlier) API.
 
 **User roles** - The following user roles are available with this release (new user roles *italicized*):
 
@@ -75,7 +75,7 @@ The following are our best-practices recommendations for versions 13.5.
 * For best performance and reliability with multiple instances, launch instances in batches of 100 or fewer.
 * Boot instance snapshots from an instance using the same flavor.  For example, if you have created a snapshot of an `xsmall` instance, boot it from an instance that also has flavor `xsmall`.
 * For reliability, use Nova delete to terminate instances only when they are in the `Active` or `Error` state.
-* For reliability, make sure you have a root disk size of 30GB for instances with flavors larger than `xsmall`.
+* Please use a root disk size of 30GB for instances with flavors larger than `xsmall`.
 * For improved performance, keep the size of your bootable volumes to less than 1.4TB
 
 ####Cloud Networking###
@@ -89,7 +89,7 @@ The following are our best-practices recommendations for versions 13.5.
 * For best performance when transferring large files (greater than 700MB for downloads and 1GB for uploads), use either the [classic management console](/mc/) or the [UNIX CLI](/cli/unix/) utilities.
 * For easiest password reset, use the [Horizon Preview Edition](/hpcloudconsole) interface or the [classic management console](/mc/) or the [UNIX CLI](/cli/unix/) utilities.
 * Use the [classic management console](/mc/) to display the `Flavors Details` information rather than the Windows CLI.
-* To create a snapshot for an instance booted from a block volume, follow these steps for best results:
+* To create a snapshot for an instance booted from a block volume, follow these steps for best results:<br>
     - Shut down the instance
     - Delete the instance and wait until the volume is marked as `available`
     - Take a snapshot of the volume using a utility such as the python cinder binding
@@ -99,10 +99,9 @@ The following are our best-practices recommendations for versions 13.5.
 
 ####Windows####
 
-* Use the standard rather than `highmem` family of flavors (`standard.large`, `standard.xlarge`, etc.) for creating Windows instances.
-* For speed and ease-of-use, use the [management console](/mc/) rather than the Windows command-line interface (CLI) to attach or detach a volume.
+* For best ease-of-use, use the [management console](/mc/) rather than the Windows command-line interface (CLI) to attach or detach a volume.
 * For best results when deleting a volume, unmount the volume (or for Windows instances take it offline) and detach the volume prior to deleting it.
-* For optimum performance and reliability when running Windows instances, HP recommends you use flavors of 4GB or greater.
+* For optimum performance and reliability when running Windows instances, HP recommends you use flavors with sizes of 4GB or greater.
 * For full functionality when creating instances using the Windows CLI, use flavors of `small` or greater. 
 * For best reliability, reboot instances of sizes `standard.2xlarge`, `standard.4xlarge`, and `standard.8xlarge` from within the instance.
 
@@ -113,6 +112,7 @@ The following are the known issues for Version 13.5 of the HP Public Cloud softw
 
 ####Cloud Compute####
 
+* Use the standard rather than `highmem` family of flavors (`standard.large`, `standard.xlarge`, etc.) for creating Windows instances.
 * If the console log appears empty immediately after instance activation, wait a few moments and try again; it can take some time for the instance information to be recorded in the log file.
 
 ####Cloud Block Storage####
