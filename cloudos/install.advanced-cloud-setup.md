@@ -19,6 +19,8 @@ PageRefresh();
 </script>
 
 
+<p style="font-size: small;"> <a href="/cloudos/install/updates-and-extensions/">&#9664; PREV</a> | <a href="/cloudos/install/">&#9650; UP</a> | <a href="/cloudos/install/install-modules-reference/">NEXT &#9654;</a> </p>
+
 # Advanced Cloud Setup
 
 This topic explains how to perform an advanced cloud setup, as an **alternative** to the wizard-based Create Cloud steps in the HP Cloud OS Operational Dashboard.
@@ -34,16 +36,18 @@ This topic explains how to perform an advanced cloud setup, as an **alternative*
 
 ## Introduction
 
-Cloud infrastructure services are delivered as "install modules," which are also known as "barclamps."  We use the term install modules here. 
+Cloud infrastructure services are delivered as "install modules," which are also known as "barclamps."   
 
 Install modules are a mechanism to install and configure a service on the compute region's control node. 
 
-When you create a cloud using the process defined in [Create a Cloud](/cloudos/install/create-cloud/), a number of OpenStack and Cloud OS 
+When you create a cloud using the process defined in [Create a Cloud](/cloudos/install/create-cloud/), a number of OpenStack and HP Cloud OS 
 install modules are automatically configured and deployed for you. In most cases, the automated deployment of install modules will suffice. 
+**Note:** the Swift barclamp must be installed manually, as discussed in [Create a Cloud](/cloudos/install/create-cloud/). 
 
-However, should you need to customize values in the install modules that are not exposed in the Create Cloud Attributes tab, 
-this advanced section, along with [Cloud Controller Install Modules Reference](/cloudos/install/install-modules-reference/), are provided to assist 
-you in the process of customizing and deploying the individual install modules. 
+If you decide instead to apply the install modules yourself, or should you need to customize values in the install modules 
+that were not exposed in the Create Cloud Attributes tab, this advanced section, along with 
+[Cloud Controller Install Modules Reference](/cloudos/install/install-modules-reference/), 
+are provided to assist you in the process of customizing and deploying the individual install modules. 
 
 If you use the advanced option described in this topic, all install modules will need to be applied manually and in the 
 order specified in the [Apply Cloud Controller Install Modules](#apply-cloud-controller-install-modules) section.
@@ -82,8 +86,8 @@ specific nodes. See the "Create Node to Role Association" step in "Apply Cloud C
 for details on how to make these associations in the proposal.
 
 The Attributes section represents service configuration parameters that can be customized as needed. The Attributes section may also include "references" to other proposals. Proposal
-"references" are used to indicate that one install module requires the services of another install module. The "reference" also allows you to pick a specific instance of that service.
-For example, Glance has a "reference" to Keystone Instances. This appears in Glance's Proposal as a drop-down list of previously created Keystone Proposals. When a Keystone
+references are used to indicate that one install module requires the services of another install module. The reference also allows you to pick a specific instance of that service.
+For example, Glance has a reference to Keystone Instances. This appears in Glance's Proposal as a drop-down list of previously created Keystone Proposals. When a Keystone
 Proposal is selected, you are actually selecting a specific deployed instance of Keystone because that Proposal is tied to a specific node due to the Node-to-Role association that is
 part of the Keystone Proposal.
 
@@ -128,7 +132,7 @@ Mozilla Firefox or Google Chrome:
 
 http://192.168.124.10:3000
 
-Login with crowbar/crowbar.
+For informatiom about the login credentials, please register or login on the [HP Cloud OS portal]().
 
 ### Apply Cloud Controller Install Modules
 
@@ -192,37 +196,44 @@ The following table lists the install modules **in the order they must be applie
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> <nobr> HP Cos Graffiti 100 </nobr> </td>
-<td> Provides dictionary services, a searchable directory of cloud resources, and resource pool registry services. </td>
+<td> <nobr> Hp Cos Graffiti 100 </nobr> </td>
+<td> Provides the HP Cloud OS Resource Pool Registry and Capability Tagging Service. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> HP Cos Focus 100 </td>
-<td> Provides a topology document repository. </td>
+<td> Hp Cos Focus 100 </td>
+<td> Provides the HP Cloud OS topology document repository. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> HP Cos Eve 100 </td>
-<td> Provides a topology provisioning service for the cloud infrastructure. </td>
+<td> Hp Cos Eve 100 </td>
+<td> Provides the HP Cloud OS topology provisioning service for the cloud infrastructure. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> HP Skyline 100 </td>
+<td> Hp Skyline 100 </td>
 <td> Provides the Administration Dashboard. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> HP Cos Cloud Utils 100 </td>
+<td> Hp Cos Cloud Utils 100 </td>
 <td> Provides cloud utilities scripts. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Hp Cos Swift 100 </td>
+<td> Provides an object/blob storage service. <b> Note: </b> The Swift barclamp must be installed manually, before clicking Complete Install in the HP Cloud OS Operational Dashboard. 
+See [Setup Swift (Optional)](/cloudos/install/setup-swift/).
+</td>
 </tr>
 
 </table>
 
-\* **Important:** The Nova install module will appear in the list of install modules after the Quantum install module. 
-The best practice is to create and apply the Nova proposal after all the others have been applied. 
+\* **Important:** In the HP Cloud OS Installation Dashboard, the Nova install module will appear alphabetically in the list of install modules. 
+The best practice, though, is to create and apply the Nova proposal after all the others have been applied. 
 First follow the instructions below, then see [Apply the Nova Install Module](#apply-the-nova-install-module) in this topic.
 
-To apply the install modules in Firefox or Google Chrome:
+To apply the install modules in Mozilla Firefox or Google Chrome:
 
 1. Open the HP Cloud OS Installation Dashboard at http://192.168.124.10:3000.
 
@@ -247,7 +258,7 @@ To apply the install modules in Firefox or Google Chrome:
 
  g. Wait for the proposal status to indicate Ready.
 
- h. If the proposal fails to apply, the Installation Dashboard displays an error message. See [Troubleshooting](/cloudos/troubleshooting/).
+ h. If the proposal fails to apply, the Installation Dashboard displays an error message. See [Troubleshooting](/cloudos/manage/troubleshooting/).
 
  i. Select Barclamps > Cloud Infrastructure to review the install module list. The proposal Status is also displayed in the Cloud Infrastructure install module list.
 
@@ -277,7 +288,7 @@ To apply the Nova install module:
  
  e. Wait for the proposal status to indicate Ready.
  
- f. If the proposal fails to apply, an error message displays. See the [Troubleshooting](/cloudos/troubleshooting/) topic.
+ f. If the proposal fails to apply, an error message displays. See the [Troubleshooting](/cloudos/manage/troubleshooting/) topic.
  
  g. Select Barclamps > Cloud Infrastructure to review the install module list. The proposal status is also displayed in the Cloud Infrastructure install module list. 
  
