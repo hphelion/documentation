@@ -21,17 +21,19 @@ PageRefresh();
 
 # HP Cloud OS Site Index
 
-#### [Cloud OS Home](/cloudos/)
+#### [HP Cloud OS Home](/cloudos/)
+
+#### [HP Cloud OS Open Source and Third-Party Software License Agreements](/cloudos/os-3rd-party-license-agreements/)
 
 #### [Prepare: Getting Started with HP Cloud OS](/cloudos/prepare/)
 
  * [HP Cloud OS Release Notes](/cloudos/releasenotes/) 
- * [HP Cloud OS Support Matrix for Hardware and Software](/cloudos/supportmatrix/) 
- * [Video Tutorials](/cloudos/videos/) 
- * [FAQs](/cloudos/faqs/)  
- * [Technical Overview](/cloudos/overview/)  
- * [Introduction to Cloud Types](/cloudos/cloudtypes/) 
- * [Glossary](/cloudos/glossary/)
+ * [HP Cloud OS Support Matrix for Hardware and Software](/cloudos/prepare/supportmatrix/) 
+ * [Video Tutorials](/cloudos/prepare/videos/) 
+ * [FAQs](/cloudos/prepare/faqs/)  
+ * [Technical Overview](/cloudos/prepare/overview/)  
+ * [Introduction to Cloud Types](/cloudos/prepare/cloudtypes/) 
+ * [Glossary](/cloudos/prepare/glossary/)
 
 #### [Install &amp; Configure Your Clouds](/cloudos/install/)
 
@@ -41,20 +43,23 @@ PageRefresh();
  * [Customize Server Types (Optional)](/cloudos/install/customize-server-types/)
  * [Customize Network Connections (Optional)](/cloudos/install/customize-network-connections/)
  * [Customize Network Settings (Required)](/cloudos/install/customize-network-settings/)
+ * [Setup Swift (Optional)](/cloudos/install/setup-swift/)
  * [Complete Admin Node Installation (Required)](/cloudos/install/complete-admin-node-installation/)
  * [Create a Cloud](/cloudos/install/create-cloud/) 
  * [Launch Administration Dashboard](/cloudos/install/launch-admin-dashboard/)
- * [Check the Cloud OS License](/cloudos/install/license/)
+ * [Check the HP Cloud OS License](/cloudos/install/license/)
  * [Install Hot Fixes](/cloudos/install/hot-fixes/)
+ * [Updates and Extensions](/cloudos/install/updates-and-extensions/)
  * [Advanced Cloud Setup](/cloudos/install/advanced-cloud-setup/)
  * [Install Modules Reference](/cloudos/install/install-modules-reference/)
 
 #### [Manage your Clouds](/cloudos/manage/)
 
-* [HP Cloud OS Operational Dashboard Help](http://docs.hpcloud.com/cloudos/operational-dashboard/index.htm)  Note: not deployed yet.
-* [HP Cloud OS Administration Dashboard Help](http://docs.hpcloud.com/cloudos/admin-dashboard/index.htm)  Note: not deployed yet.
-* [HP Cloud OS Troubleshooting](/cloudos/troubleshooting/) 
-* [HP Cloud OS Utilities](/cloudos/utilities/)
+* [HP Cloud OS Utilities](/cloudos/manage/utilities/)
+* [HP Cloud OS Troubleshooting](/cloudos/manage/troubleshooting/) 
+* [HP Cloud OS Operational Dashboard Help](http://docs.hpcloud.com/cloudos/operational-dashboard/index.htm)  
+* [HP Cloud OS Administration Dashboard Help](http://docs.hpcloud.com/cloudos/administration-dashboard/index.htm)  
+
 
 #### [Develop](/cloudos/develop/)
 
