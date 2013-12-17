@@ -8,7 +8,7 @@ product: cloudos
 
 # OpenStack Links
 
-Cloud OS is based on (and adds value to) the OpenStack technology. The current Cloud OS release includes OpenStack Grizzly 1.4. 
+Cloud OS is based on (and adds value to) the OpenStack technology. The current Cloud OS release includes OpenStack Grizzly 2013.1.4. 
 
 Refer to the OpenStack documentation site: 
 

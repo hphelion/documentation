@@ -19,6 +19,10 @@ PageRefresh();
 </script>
 
 
+<p style="font-size: small;"> <a href="/cloudos/install/admin-node-prerequisites/">&#9664; PREV</a> | <a href="/cloudos/install/">&#9650; UP</a> | <a href="/cloudos/install/customize-network-settings/">NEXT &#9654;</a> </p>
+
+
+
 # Customize Server Types (Optional)
 
 This topic describes the steps to customize the server types. These steps are optional. 
@@ -26,6 +30,10 @@ This topic describes the steps to customize the server types. These steps are op
 **Caution:** If you plan to customize the servers, you must do it before performing the steps in [Complete the Admin Node Installation](/cloudos/install/complete-admin-node-installation/). 
 After that, the server type dialogs in the HP Cloud OS Operational Dashboard are read only. Once the install process is triggered, no changes can be made. 
 If you want to make changes, you need to start over by re-installing the Admin Node.  
+
+* [Introduction](#introduction)
+* [Edit the Server Types](#edit-the-server-types)
+* [Next Step](#next-step)
 
 ## Introduction
 
@@ -51,21 +59,25 @@ enumeration order.
 
 > **Tip:** Based on your network and hardware infrastructure, you can accept defaults or customize Server Types.
 
-## Create or Edit the Server Types
+## Edit the Server Types
 
-To create or edit the server types:
+To edit the server types:
 
 1. On the Operational Dashboard, select the Environment tab > Server Types.
 
-2. Click Edit Server Types for the server type you want to customize. The Edit Server Definition opens.
+2. Click **Edit Server Types** for the server type you want to customize. The Edit Server Definition opens.
 
-3. Click Add Bus Order to add a blank bus order text box in which you type the new bus order related to the server type.
+3. Click **Add Bus Order** to add a blank bus order text box in which you type the new bus order related to the server type.
 
 4. Add the appropriate number of bus orders for the server type.
 
-5. To delete a bus order, click the checkbox next to the bus order and click Delete Bus Order.
+5. To delete a bus order, click the checkbox next to the bus order and click **Delete Bus Order**.
 
-6. Click Update Server Definition to save the updated server definition.
+6. Click **Update Server Definition** to save the updated server definition.
+
+**Note:** The preceding steps explained how to edit server types. If you need to create server types, click the **Create Server Definition** button. 
+For more information, click Help from the top banner of the HP Cloud OS Operational Dashboard. Or 
+see the web-hosted version of the HP Cloud OS Operational Dashboard Help](/cloudos/operational-dashboard/).
 
 ## Next Step
 
