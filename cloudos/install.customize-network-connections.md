@@ -19,16 +19,20 @@ PageRefresh();
 </script>
 
 
+<p style="font-size: small;"> <a href="/cloudos/install/customize-server-types/">&#9664; PREV</a> | <a href="/cloudos/install/">&#9650; UP</a> | <a href="/cloudos/install/customize-network-settings/">NEXT &#9654;</a> </p>
+
 # Customize Network Connections (Optional)
 
 This topic describes the steps to customize the network connections. These steps are optional. 
 
-**Caution:** If you plan to customize the connections, you must do it before you complete the steps in "Complete the Admin Node Installation". After that, the connections dialogs are read only.
-Once the install process is triggered, no changes can be made. If you want to make changes, you need to start over by re-installing the Admin Node.  
+**Caution:** If you plan to customize the connections, you must do it before you complete the steps described in [Complete Admin Node Installation (Required)](/cloudos/install/complete-admin-node-installation). 
+After that, the connections dialogs are read only. Once the install process is triggered, no changes can be made. If you want to make changes, 
+you need to start over by re-installing the Admin Node.  
 
-Based on the network infrastructure suggested in "Plan Server, Network and Storage Infrastructure for a Cloud" ( link ) , you must customize the Connections settings in the Connections view.
+Based on the network infrastructure suggested in the "Plan the Infrastructure for a Cloud" section of [Before You Install](/cloudos/install/before-you-install), 
+you must customize the Connections settings in the Connections view.
 
-After the enumeration of ports is consistent across all machines in the cloud, the Connections view defines those ports into a set of logical connections (interfaces) that will be used to eventually
+After the enumeration of ports is consistent across all servers in the cloud, the Connections view defines those ports into a set of logical connections (interfaces) that will be used to eventually
 define the networks.
 
 The connections are defined based on the Network Modes along with a list of logical interfaces and the corresponding physical interfaces' ports and bandwidth. For each logical connection (intf0, intf1,
@@ -40,7 +44,7 @@ intf2) the network type is identified (admin, os_sdn, public). The `os_sdn` valu
 
 * Dual Mode: All connections have their own interfaces where VLAN and bridge are off.
 
-* Team Mode: All connections are shared on the same physical
+* Team Mode: All connections are shared on the same two physical interfaces through VLAN. Teaming means treating the wires like a single bundle.
 
 ## Examples of Logical Interface Values
 
@@ -98,7 +102,8 @@ In Dual mode, if the wiring of networks between the nodes are non-contiguous and
 	
 ### Single Mode Example
 
-In Single mode, keep the defaults. It is assumed that the `eth0` port is configured on the switch to support tagged VLANs, as discussed in the next topic ( link ).
+In Single mode, keep the defaults. It is assumed that the `eth0` port is configured on the switch to support tagged VLANs, 
+as discussed in the next topic, [Customize Network Settings (Required)](/cloudos/install/customize-network-settings/).
 
 > **Note:** Interface mapping must be identical on all the nodes.
 
@@ -109,7 +114,7 @@ In Team mode, configure the virtual connections to use both trunks. For example:
 * Map eth0, eth2, and eth4 to trunk 1.
 * Map eth1, eth3, and eth5 to trunk 2.
 
-Note that in this example, the eth0 and eth1 interfaces belongs to same VLAN; the same is true for the eth2 and eth3 pair, and the eth4 and eth5 pair. When the Admin node allocates the baremetal node, Cloud OS should create a teaming NIC using the NIC pairs.
+Note that in this example, the eth0 and eth1 interfaces belongs to same VLAN; the same is true for the eth2 and eth3 pair, and the eth4 and eth5 pair. When the Admin Node allocates the bare-metal node, Cloud OS should create a teaming NIC using the NIC pairs.
 
 Here's a partial example of how the Team mode configuration could look on this Connections dialog:
 
@@ -201,7 +206,7 @@ way out and overwrites the src hw address with the unique hw address of one of t
 
 If you need to edit the connections:
 
-1. In the Operational Dashboard, from the Environment tab, click Edit Connection for the Network Mode you want to customize.  Most likely, this would be Dual or Team.
+1. From the Environment tab > Connection, edit the Network Mode you want to customize.  Most likely, this would be Dual or Team.
 
 2. The Edit Connection dialog presents the Physical Interface values in a succinct format, such as ?1g1. The value contains (up to) four characters, and follows these conventions: 
 

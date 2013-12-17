@@ -18,14 +18,20 @@ PageRefresh();
 
 </script>
 
+
+<p style="font-size: small;"> <a href="/cloudos/install/setup-swift/">&#9664; PREV</a> | <a href="/cloudos/install/">&#9650; UP</a> | <a href="/cloudos/install/create-cloud/">NEXT &#9654;</a> </p>
+
 # Complete Admin Node Installation (Required)
 
 This topic describes the steps to complete the Admin Node installation. These steps are required. 
 
 > **Caution:** Be sure the values for the Prerequisites, Server Types, Connections and Networks
-are what you need, before you follow the steps in this topic. Once the install process is triggered, no
-changes can be made. If you want to make changes, you need to start over by re-installing the
-Admin Node.  
+are what you need, before you follow the steps in this topic. Also, if you want to use Swift in your cloud, you must 
+manually install Swift before clicking Complete Install in the HP Cloud OS Operational Dashboard, as noted in the 
+[Setup Swift (Optional)](/cloudos/install/setup-swift/) topic. 
+
+Once the install process is triggered, the settings in preceding steps cannot be changed. 
+If you want to make changes, you need to start over by re-installing the Admin Node.  
 
 To complete the Admin Node installation:
 
@@ -39,8 +45,11 @@ To complete the Admin Node installation:
 consist of lowercase characters with no numbers or special characters. It may end in any valid web domain type, such as (but not limited to) 
 .com, .org, .net, .edu, .mil, .gov.
 
- b. **Network Mode:** Select the displayed option, DUAL or SINGLE. The DUAL / SINGLE option is based on your network infrastructure and previously selected choices. If you have
-separate wired networks for admin, os_sdn and public, you want DUAL. The recommended practice is to use DUAL. **Note:** The Operational Dashboard displays the option based on the following rules. If the os_sdn and public networks were both previously set to VLAN=True, the only displayed choice for Network mode is SINGLE. If os_sdn or public were previously set to VLAN=False, the only displayed choice for Network mode is DUAL.
+ b. **Network Mode:** Select the displayed option, DUAL or SINGLE. The DUAL / SINGLE option is based on your network infrastructure and previously 
+ selected choices. If you have separate wired networks for admin, os_sdn and public, you want DUAL. The recommended practice is to use DUAL. 
+ **Note:** The Operational Dashboard displays the option based on the following rules. 
+ If the os_sdn and public networks were both previously set to VLAN=True, the only displayed choice for Network mode is SINGLE. 
+ If os_sdn or public were previously set to VLAN=False, the only displayed choice for Network mode is DUAL.
   
  c. **IPMI/BMC Network Status:** Select Disabled. (The IPMI/BMC feature is for testing purposes only.)
 
