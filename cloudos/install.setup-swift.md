@@ -25,15 +25,16 @@ PageRefresh();
 
 Swift is the OpenStack object/blob storage service for cloud computing. You can use Swift to store lots of data efficiently, safely, and cheaply.
 
-**Important**: Swift is an optional service. However, if you want to use it in your cloud, you **must** manually setup Swift as described 
-in this topic **before completing** the Admin Node installation. Once you click the Complete Install button on the Environment tab of 
-the HP Cloud OS Operational Dashboard, you cannot go back and setup Swift. 
+**Important**: Swift is an optional service. However, if you want to use it in your cloud, you must manually setup Swift as described 
+in this topic **before performing** the steps in [Complete Admin Node Installation](/cloudos/install/complete-admin-node-installation). 
+After that, the network settings in the HP Cloud OS Operational Dashboard are read only. Once the install process is triggered, 
+no changes can be made. If you want to make changes, you need to start over by re-installing the Admin Node.
 
 * [Swift Requirements](#swift-requirements)
-* [Swift Roles](#swift-roles)
 * [Zeroing Disks](#zeroing-disks)
 * [Setup Network Configuration for Swift](#setup-network-configuration-for-swift)
 * [Preview of Swift Deployment Steps](#preview-of-swift-deployment-steps)
+* [Swift Roles](#swift-roles)
 * [Next Step](#next-step)
 
 

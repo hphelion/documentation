@@ -40,20 +40,11 @@ noted in the [Advanced Cloud Setup](/cloudos/install/advanced-cloud-setup/) topi
 * [Hp Cos Graffiti 100](#hp-cos-graffiti-100)
 * [Hp Cos Keystone 100](#hp-cos-keystone-100)
 * [Hp Cos Nova 100](#hp-cos-nova-100)
-* [Hp Cos Postgresql 915](#hp-cos-postgresql-915)
 * [Hp Cos Quantum 100](#hp-cos-quantum-100)
-* [Hp Cos RabbitMQ 271](#hp-cos-rabbitmq-271)
 * [Hp Cos Skyline 100](#hp-cos-skyline-100)
 * [Hp Cos Swift 100](#hp-cos-swift-100)
-
-<!-- 
-<p style="color: red; font-weight: bold; padding: 4px 4px 4px 4px; border: 1px dotted;"> Internal note for <b>G3</b> release: <br/>
-Okay to not include an Eden install module table or any Eden attributes in other install module tables?<br/>
-Okay to use Graffiti instead of Peer? <br/>
-Okay to add the Swift table? <br/>
-Okay to keep the Cinder table? <br/>
-Okay to use "Quantum" instead of "Neutron"? </p>
---> 
+* [Postgresql 915](#postgresql-915)
+* [RabbitMQ 271](#rabbitmq-271)
 
 ## Couchdb 120
 
@@ -1041,45 +1032,6 @@ virtual machines. Select kvm if nova-compute nodes are bare-metal. </td>
 
 </table>
 
-## Hp Cos Postgresql 915
-
-<table style="text-align: left; vertical-align: top;">
-
-<tr>
-<th style="background-color: #C8C8C8;"> Install Module </th> 
-<td colspan="2" style="background-color: white;"> Hp Cos Postgresql 915 </td>
-</tr>
-
-<tr>
-<th style="background-color: #C8C8C8;"> Description </th> 
-<td colspan="2" style="background-color: white;"> Configures a PostgreSQL server. </td>
-</tr>
-
-<tr>
-<th style="background-color: #C8C8C8;"> Node Deployment </th> 
-<td colspan="2" style="background-color: white;"> Cloud Controller Node </td>
-</tr>
-
-<tr>
-<th style="background-color: #C8C8C8;"> Roles </th> 
-<td colspan="2" style="background-color: white;"> Postgresql 915-server, Postgresql 915-client (Optional) </td>
-</tr>
-
-<tr style="background-color: #C8C8C8;">
-<th> Attribute </th> 
-<th> Default Value </th>
-<th> Description </th>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Datadir </td> 
-<td> <nobr> /var/lib/postgresql </nobr> </td>
-<td> The location where the database files will reside. </td>
-</tr>
-
-</table>
-
-
 ## Hp Cos Quantum 100
 
 <table style="text-align: left; vertical-align: top;">
@@ -1183,46 +1135,6 @@ virtual machines. Select kvm if nova-compute nodes are bare-metal. </td>
 </tr>
 
 </table>
-
-
-## Hp Cos RabbitMQ 271
-
-<table style="text-align: left; vertical-align: top;">
-
-<tr>
-<th style="background-color: #C8C8C8;"> Install Module </th> 
-<td colspan="2" style="background-color: white;"> Hp Cos RabbitMQ 271 </td>
-</tr>
-
-<tr>
-<th style="background-color: #C8C8C8;"> Description </th> 
-<td colspan="2" style="background-color: white;"> Configures a RabbitMQ server. </td>
-</tr>
-
-<tr>
-<th style="background-color: #C8C8C8;"> Node Deployment </th> 
-<td colspan="2" style="background-color: white;"> Cloud Controller Node </td>
-</tr>
-
-<tr>
-<th style="background-color: #C8C8C8;"> Role </th> 
-<td colspan="2" style="background-color: white;"> Rabbitmsgq 271-server </td>
-</tr>
-
-<tr style="background-color: #C8C8C8;">
-<th> Attributes </th> 
-<th> Default Value </th>
-<th> Description </th>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> LogPath </td> 
-<td> <nobr> /var/log/rabbitmq </nobr> </td>
-<td> The location of the rabbitmq log file. </td>
-</tr>
-
-</table>
-
 
 
 ## Hp Cos Skyline 100
@@ -1587,6 +1499,87 @@ larger number will result in larger spikes in rate but better average accuracy. 
 Will limit PUT, DELETE, and POST requests to /a/c/o. <br /> 
 For details, see the 
 <a href="http://docs.openstack.org/developer/swift/ratelimit.html" target="ratelimit">Rate Limiting documentation</a> on the OpenStack website. </td>
+</tr>
+
+</table>
+
+
+## Postgresql 915
+
+<table style="text-align: left; vertical-align: top;">
+
+<tr>
+<th style="background-color: #C8C8C8;"> Install Module </th> 
+<td colspan="2" style="background-color: white;"> Hp Cos Postgresql 915 </td>
+</tr>
+
+<tr>
+<th style="background-color: #C8C8C8;"> Description </th> 
+<td colspan="2" style="background-color: white;"> Configures a PostgreSQL server. </td>
+</tr>
+
+<tr>
+<th style="background-color: #C8C8C8;"> Node Deployment </th> 
+<td colspan="2" style="background-color: white;"> Cloud Controller Node </td>
+</tr>
+
+<tr>
+<th style="background-color: #C8C8C8;"> Roles </th> 
+<td colspan="2" style="background-color: white;"> Postgresql 915-server, Postgresql 915-client (Optional) </td>
+</tr>
+
+<tr style="background-color: #C8C8C8;">
+<th> Attribute </th> 
+<th> Default Value </th>
+<th> Description </th>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Datadir </td> 
+<td> <nobr> /var/lib/postgresql </nobr> </td>
+<td> The location where the database files will reside. </td>
+</tr>
+
+</table>
+
+
+
+
+
+## RabbitMQ 271
+
+<table style="text-align: left; vertical-align: top;">
+
+<tr>
+<th style="background-color: #C8C8C8;"> Install Module </th> 
+<td colspan="2" style="background-color: white;"> Hp Cos RabbitMQ 271 </td>
+</tr>
+
+<tr>
+<th style="background-color: #C8C8C8;"> Description </th> 
+<td colspan="2" style="background-color: white;"> Configures a RabbitMQ server. </td>
+</tr>
+
+<tr>
+<th style="background-color: #C8C8C8;"> Node Deployment </th> 
+<td colspan="2" style="background-color: white;"> Cloud Controller Node </td>
+</tr>
+
+<tr>
+<th style="background-color: #C8C8C8;"> Role </th> 
+<td colspan="2" style="background-color: white;"> Rabbitmsgq 271-server </td>
+</tr>
+
+<tr style="background-color: #C8C8C8;">
+<th> Attributes </th> 
+<th> Default Value </th>
+<th> Description </th>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> LogPath </td> 
+<td> <nobr> /var/log/rabbitmq </nobr> </td>
+<td> The location of the rabbitmq log file. </td>
 </tr>
 
 </table>
