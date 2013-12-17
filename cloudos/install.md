@@ -18,13 +18,14 @@ function PageRefresh {
  
 </script>
 
+<p style="font-size: small;"> &#9664; PREV | <a href="/cloudos/">&#9650; UP</a> | <a href="/cloudos/install/overview/">NEXT &#9654;</a> </p>
 
 # Install &amp; Configure Your Clouds
 
 Welcome! The following topics explain how to install &amp; configure your clouds with the HP Cloud OS platform. 
 
 It's important to read the topics and perform the described steps in order. While some steps are optional, the sequence that you'll follow in 
-the HP Cloud OS Operational Dashboard is significant, to ensure a proper deployment of your cloud. 
+the HP Cloud OS Operational Dashboard user interface is significant, to ensure a proper deployment of your cloud. 
 
 Install and set up the Admin node:
 
@@ -34,14 +35,16 @@ Install and set up the Admin node:
 * [Customize Server Types (Optional)](/cloudos/install/customize-server-types/)
 * [Customize Network Connections (Optional)](/cloudos/install/customize-network-connections/)
 * [Customize Network Settings (Required)](/cloudos/install/customize-network-settings/)
+* [Setup Swift (Optional)](/cloudos/install/setup-swift/)
 * [Complete Admin Node Installation (Required)](/cloudos/install/complete-admin-node-installation/)
 
 After you install and set up the Admin node, you can perform additional steps:
 
 * [Create a Cloud](/cloudos/install/create-cloud/) 
 * [Launch Administration Dashboard](/cloudos/install/launch-admin-dashboard/)
-* [Check the Cloud OS License](/cloudos/install/license/)
+* [Check the HP Cloud OS License](/cloudos/install/license/)
 * [Install Hot Fixes](/cloudos/install/hot-fixes/)
+* [Updates and Extensions](/cloudos/install/updates-and-extensions/)
 
 Also see the website copy of the [HP Cloud OS Operational Dashboard Help](http://docs.hpcloud.com/cloudos/operational-dashboard/index.htm). 
 Note: website copy not deployed yet. To access this document in the Operational Dashboard, click **Help** in its top banner.

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Cloud OS Troubleshooting"
-permalink: /cloudos/troubleshooting/
+permalink: /cloudos/manage/troubleshooting/
 product: cloudos
 
 ---
@@ -18,11 +18,11 @@ PageRefresh();
 
 </script>
 
+<p style="font-size: small;"> <a href="/cloudos/manage/utilities/">&#9664; PREV</a> | <a href="/cloudos/manage/">&#9650; UP</a> | NEXT &#9654; </p>
 
 # HP Cloud OS Troubleshooting
 
-<p style="color: red; font-weight: bold; padding: 4px 4px 4px 4px; border: 1px dotted;"> Internal note: Getting this content from Mike Cudahy between Dec 9-12. </p>
-
+( coming soon ) 
  
 <a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
