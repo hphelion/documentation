@@ -19,6 +19,8 @@ function PageRefresh {
 </script>
 
 
+<p style="font-size: small;"> <a href="/cloudos/install/complete-admin-node-installation/">&#9664; PREV</a> | <a href="/cloudos/install/">&#9650; UP</a> | <a href="/cloudos/install/launch-admin-dashboard/">NEXT &#9654;</a> </p>
+
 # Create a Cloud
 
 Now that the Admin Node is installed, it's time to create your cloud. 
@@ -32,7 +34,7 @@ As indicated in the [Installation Overview](/cloudos/install/overview#preview-of
 
 * Or you can perform the [Advanced Cloud Setup](/cloudos/install/advanced-cloud-setup) to apply and configure the install modules yourself.
 
-When you create a cloud using the process defined in this topic, a number of OpenStack and Cloud OS 
+When you create a cloud using the process defined in this topic, a number of OpenStack and HP Cloud OS 
 install modules are automatically configured and deployed for you. In most cases, the automated deployment of install modules will suffice. 
 However, should you need to customize values in the install modules that are not exposed in the Create Cloud Attributes tab, 
 this advanced section, along with [Install Modules Reference](/cloudos/install/install-modules-reference/), are provided to assist 
@@ -48,7 +50,7 @@ You'll continue to use the HP Cloud OS Operational Dashboard to execute these st
 
 * [Complete Storage Configuration](#complete-storage-configuration)
 
-* [Create a Cloud](#create-a-cloud)
+* [Create Cloud](#create-cloud)
 
 * [Create Compute Regions](#create-compute-regions)
 
@@ -94,22 +96,26 @@ Note: To de-allocate a Compute or Controller node from your Admin Node, click th
 Node option from the drop-down menu on the Manage Node dialog. This action sets the
 identified node to a de-allocated state.
 
+<!-- US1896, removed from UI
+**Note**: If a node is part of a compute region, its state is Deployed, and you cannot perform the Delete Node action on it. 
+If you were to delete the compute region, the node's state would become Not Allocated; then if desired, you could use 
+Delete Node to delete it. 
+--> 
+
 ## Complete Storage Configuration
 
-Based on your Storage Infrastructure layout (see "Storage Infrastructure" (link) ) at this point,
-you can configure the additional storage on the nodes.
+At this point, based on your previously determined [Storage Infrastructure](/cloudos/install/before-you-install#storage-infrastructure) layout, you can configure the additional storage on the nodes.
 
-**Note:** The default root partition is approximately 10 GB.
+The default root partitioning scheme is to reserve the first 255 MB for the boot partition, and then allocate the entire rest 
+of the disk to the LVM partition, with the Ubuntu OS calculating how much goes to swap space and how goes to the root file system.
 
-You may choose between the following options:
+For details, see the Ubuntu configuration documentation:
 
-* Extend the root partition on all the nodes to use the additional storage space.
+<a href="https://help.ubuntu.com/lts/installation-guide/i386/preseed-contents.html" title="Ubuntu topic opens in new tab or window" target="ubuntu"> Contents of the Ubuntu Preconfiguration File </a> <br />
 
-* After creating the cloud, mount the folders suggested in the "Storage Infrastructure" ( link ) on their respective external storage.
-HP recommends, for ease of installation, that you extend the root partition of all the nodes based on the Storage
-Infrastructure table in the "Storage Infrastructure" (link).
+<a href="https://help.ubuntu.com/community/DiskSpace" title="Ubuntu topic opens in new tab or window" target="ubuntu2"> Ubuntu Disk Space - community discussion </a>
 
-## Create a Cloud
+## Create Cloud
 
 After you complete the setup of the Admin Node, you are ready to create your cloud. 
 
@@ -154,6 +160,11 @@ in the Administration Dashboard.
 **Remember the passwords** &mdash; You will use them to log into the HP Cloud OS Administration Dashboard.
 
 When you're ready, click **Create Cloud**. The cloud will go through a series of steps to create an active cloud, showing the percent (%) completed.
+
+> **Note:** When creating a cloud or a compute region, all of the nodes involved are first checked to ensure they can be resolved on the network. This verification process can take (up to) approximately five minutes.  During this time, the progress percentage will remain at 1%. If any of the nodes fail to resolve during the verification process, the cloud or region creation will fail. 
+<!-- If this happens, check that you correctly entered the nodes' network settings in a prior step. 
+If that's the cause of the Create Cloud failure, you will need to start over with the Admin Node installation process.  
+--> 
 
 ## Create Compute Regions
 
@@ -200,6 +211,8 @@ nodes. Use `qemu` if the compute nodes are VMs.
 
 When you're ready, now select **Create Compute Region**. The compute region will go through a series of steps to create an active cloud, showing the
 percent (%) completed.
+
+> **Note:** When creating a cloud or a compute region, all of the nodes involved are first checked to ensure they can be resolved on the network. This verification process can take (up to) approximately five minutes.  During this time, the progress percentage will remain at 1%. If any of the nodes fail to resolve during the verification process, the cloud or region creation will fail. 
 
 Once the Create Compute Region step is complete, the name supplied for the region will be
 displayed and the cloud's Status will be Active. This indicates that the cloud and compute region
