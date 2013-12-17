@@ -37,8 +37,7 @@ view the server response. The app is installed on your deployed clouds. The docu
 
 * Graffiti: http://my_server:21071/?token=&lt;keystone-token-value>
 
-On your cloud, replace &lt;my_server> with the your cloud controller node's IP or DNS value.  
-See the next topic for the steps to generate or copy the Keystone v3 token used in REST calls.
+On your cloud, replace &lt;my_server> with the your cloud controller node's IP or DNS value. See the next topic for the steps to generate or copy the Keystone v3 token used in REST calls.
 
 
 ## Read the API Quick Start topic

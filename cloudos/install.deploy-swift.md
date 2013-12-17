@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Setup Swift (Optional)"
-permalink: /cloudos/install/setup-swift/
+title: "Deploy Swift"
+permalink: /cloudos/install/deploy-swift/
 product: cloudos
 
 ---
@@ -19,106 +19,17 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> <a href="/cloudos/install/customize-network-settings/">&#9664; PREV</a> | <a href="/cloudos/install/">&#9650; UP</a> | <a href="/cloudos/install/complete-admin-node-installation/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/cloudos/install/advanced-cloud-setup/">&#9664; PREV</a> | <a href="/cloudos/install/">&#9650; UP</a> | <a href="/cloudos/install/install-modules-reference/">NEXT &#9654;</a> </p>
 
-# Setup Swift (Optional) 
+# Deploy Swift 
 
 Swift is the OpenStack object/blob storage service for cloud computing. You can use Swift to store lots of data efficiently, safely, and cheaply.
 
-**Important**: Swift is an optional service. However, if you want to use it in your cloud, you must manually setup Swift as described 
-in this topic **before performing** the steps in [Complete Admin Node Installation](/cloudos/install/complete-admin-node-installation). 
-After that, the network settings in the HP Cloud OS Operational Dashboard are read only. Once the install process is triggered, 
-no changes can be made. If you want to make changes, you need to start over by re-installing the Admin Node.
+If you [Setup Swift](/cloudos/install/setup-swift) already, this topic explains how to deploy the service.
 
-* [Swift Requirements](#swift-requirements)
-* [Zeroing Disks](#zeroing-disks)
-* [Setup Network Configuration for Swift](#setup-network-configuration-for-swift)
-* [Preview of Swift Deployment Steps](#preview-of-swift-deployment-steps)
-* [Swift Roles](#swift-roles)
-* [Next Step](#next-step)
+## Swift Deployment Steps
 
-
-## Swift Requirements
-
-The Swift service requires the following:
-
-* A single controller node, which you'll later assign to the following Swift roles: 
-
- * ring-compute
- * proxy
- * dispersion
-
-* Between 2-5 storage nodes. On each storage node, Swift needs a dedicated disk that is independent of the OS disk. 
-This dedicated disk must have the first and last megabyte of the disk zeroed out; this is required even for new disks. See the next section, 
-[Zeroing Disks](#zeroing-disks).
-
-## Zeroing Disks
-
-To show the start and end megabyte, you can use the following on each Swift storage node:
-
-Show start and end:
-
-<pre>
-dd if=/dev/sdb bs=1M count=1 | hd <br/>
-<nobr>size=$(fdisk -l  /dev/sdb | grep Disk | grep bytes | cut -f 5 -d" ") &amp;&amp; echo $size</nobr> <br />
-skip=$(python -c "print ($size / (1024*1024)) - 1") &amp;&amp; echo $skip <br />
-dd if=/dev/sdb bs=1M skip=$skip count=1 2>/dev/null | hd
-</pre>	
-
-In the start and end data, look for a display of all zeros, similar to this example:
-
-<pre>
-<nobr>00000000  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|</nobr> <br />
-* <br />
-1+0 records in <br />
-1+0 records out
-</pre>	
-
-If the results show something like the following, the disk is not zeroed:
-
-<pre>
-<nobr>000fbe00  a2 a0 d0 eb e5 b9 33 44  87 c0 68 b6 b7 26 99 c7  |......3D..h..&amp;..|</nobr>
-</pre>	
-
-To zero out the first and last meg, use this:
-
-<pre>
-dd if=/dev/zero of=/dev/sdb bs=1M count=1 <br />
-<nobr>size=$(fdisk -l  /dev/sdb | grep Disk | grep bytes | cut -f 5 -d" ") && echo $size <br />
-seek=$(python -c "print ($size / (1024*1024)) - 1") &amp;&amp; echo $seek</nobr> <br />
-dd if=/dev/zero of=/dev/sdb seek=$seek bs=1M <br />
-</pre>	
-
-## Setup Network Configuration for Swift
-
-Here are the network configuration steps:
-
-1. Add a new network named "storage"
-
-2. Assign Logical Interface "intf1"
-
-3. Enter "192.168.125.0" as the subnet
-
-4. Enter "255.255.255.0" as the Netmask
-
-5. Enter "200" as the VLAN id
-
-6. Enter "192.168.125.1" as the router address
-
-7. Next, click on the down arrow to the right of the storage network and select the Edit "Address Ranges" item.
-
-8. In the Edit Address Ranges dialog, click "Add Range" and specify the range as:
-
-  * Node Type: host 
-  * IPV4 Start Addr: 192.168.125.81
-  * IPV4 End Addr: 192.168.125.160
-
-Keep all the other default values.
-
-## Preview of Swift Deployment Steps
-
-After creating the cloud and defining your compute regions (see this later topic, [Create a Cloud](/cloudos/install/create-cloud), 
-you can deploy Swift in your cloud by following these steps:
+After creating the cloud and defining your compute regions (see [Create a Cloud](/cloudos/install/create-cloud) ), you can deploy Swift in your cloud by following these steps:
 
 1. Launch the HP Cloud OS Installation Dashboard. Its URL is http://192.168.124.10:3000.  For the Installation Dashboard's login, see the dashboard credentials topic on the <a href="https://cloudos.hpwsportal.com" target="new"> HP Cloud OS Catalog</a> portal. (Requires registration and login.)
 
@@ -185,7 +96,7 @@ it takes to gather results.
 
 ## Next Step
 
-Proceed to the next topic, [Complete Admin Node Installation (Required)](/cloudos/install/complete-admin-node-installation/).
+Proceed to the next topic, [Install Modules Reference](/cloudos/install/install-modules-reference/).
 
 <a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

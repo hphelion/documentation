@@ -29,13 +29,16 @@ Let's walk through ...
 
 ## Next Step
 
-See the HP Cloud OS API Documentation app that's installed on your controller node.  The URLs per service are:
+As noted earlier, see the HP Cloud OS API Documentation app that's installed on your controller node. It provides reference documentation about each call and includes a "Try it out!" interactive feature 
+to submit calls and view the response. The URLs per service are:
 
- * Eve service: &lt;my_server>:21051/eve/docs/index.html
+* Eve: http://my_server:21051/?token=&lt;keystone-token-value>
 
- * Focus: http://&lt;my_server>:21061/docs/index.html
+* Focus: http://my_server:21061/?token=&lt;keystone-token-value>
 
- * Graffiti: http://&lt;my_server>:21071/docs/index.html
+* Graffiti: http://my_server:21071/?token=&lt;keystone-token-value>
+
+On your cloud, replace &lt;my_server> with the your cloud controller node's IP or DNS value. 
 
 <a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
  
