@@ -68,9 +68,9 @@ provision a composite topology described by the topology templates and binding d
             
 For details about the user interface dialogs, click Help from the top banner of the dashboards. Or see these web-hosted URLs:
 
-* [HP Cloud OS Operational Dashboard Help](/cloudos/operational-dashboard/) 
+* <a href="http://docs.hpcloud.com/cloudos/operational-dashboard/index.htm" target="opdash">HP Cloud OS Operational Dashboard Help</a> &mdash; This document is a copy of the Help that's available in the HP Cloud OS Operational Dashboard.  
 
-* [HP Cloud OS Administration Dashboard Help](/cloudos/administration-dashboard)
+* <a href="http://docs.hpcloud.com/cloudos/administration-dashboard/index.htm" target="admindash">HP Cloud OS Administration Dashboard Help</a> &mdash; This document is a copy of the Help that's available in the HP Cloud OS Administration Dashboard. 
          
 To submit REST API calls, you will need your OpenStack Keystone V3 authentication credentials so you can generate security tokens. 
 The steps are described in the [API Security Tokens](#API-Security-Tokens) section of this topic.
@@ -280,7 +280,7 @@ Based on the information provided, Keystone will verify the roles and, if valid,
                          "name": "Default"
                      },
                     "name": "admin",
-                    "password": "notmyrealpswd"
+                    "password": "nottherealpswd"
                 }
             }
         },
@@ -300,7 +300,9 @@ You can then include the returned token's value on the <code> ?/token=&lt;value>
 
 ## Next Step
 
-Proceed to the next API Quick Start topic, [Use Case 1: Define &amp; Provision a Topology](/cloudos/develop/quickstart-usecase1).
+We are updating our API use case documentation &mdash; coming soon.
+
+<!-- Proceed to the next API Quick Start topic, [Use Case 1: Define &amp; Provision a Topology](/cloudos/develop/quickstart-usecase1). --> 
 
 <a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
  
