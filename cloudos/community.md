@@ -11,13 +11,11 @@ product: cloudos
 
 # Connect on the HP Cloud Community Forum
 
-## Join the conversation! 
+Join the conversation! Connect with HP Cloud OS specialists and other users in discussions about HP Cloud OS, OpenStack, and related solutions.  Ask you questions or read previously submitted topic threads.
 
-Connect with HP Cloud OS specialists and other users in discussions about HP Cloud OS, OpenStack, and related solutions.  Ask you questions or read previously submitted topic threads.
-
-<p style="border: 1px dotted #1796D3; padding: 4px 4px 4px 4px; font-weight:bold; font-size:larger;"><a href="http://community.hpcloud.com/forum"> Join us on the HP Cloud Community Forum </a> </p>
+<p style="border: 1px dotted #1796D3; padding: 4px 4px 4px 4px; font-weight:bold; font-size:larger; text-align:center;"><a href="http://community.hpcloud.com/forum" target="forum"> Join us on the HP Cloud Community Forum </a> </p>
 
 **Tip:** To actively participate in the forum, you must register on the site, if you have not already done so. Be sure to use the promo code **HP Cloud OS** when registering.
 
-See you in the forum! 
+See you in the forum...
 

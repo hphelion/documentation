@@ -1081,7 +1081,7 @@ Navigate to another item in the menu of the dashboard; if the problem persist, j
 
 <pre>
   /opt/dell/crowbar_framework/log/production.log
-  /opt/dell/crowbar_framework/log/* (for more informations)
+  /opt/dell/crowbar_framework/log/* (for more information)
   /var/log/barclamps/*
 </pre>
 
@@ -1102,86 +1102,101 @@ Navigate to another item in the menu of the dashboard; if the problem persist, j
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>
-<td>    </td>
+<td> Launching a topology fails but all the components in the design (router, network,..) will be created with success and the instance have an Error status.  </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Primary software component </td>
-<td>   </td>
+<td> Operational Dashboard </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Failure message </td>
-<td>    </td>
+<td> N/A </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Probable cause </td>
-<td>   </td>
+<td> This problem happen normally when Cloud OS services had any problem executing the operation, normally happens in environments with I18N. </td>
 </tr>
 
 </table>
+
+#### Solution
+
+Cleanup all the items created by the topology that was launched and failed (e.g.: router, network, groups, instance…) and restart in the controller node the Cloud OS services mentioned below:
+
+<pre>
+service eve-requestworker restart
+service eve-api restart
+</pre>
+
 
 
 
 ### Problem: Complete Node Internet Access prerequisite hang and fail after some time
 
-
-
 <table style="text-align: left; vertical-align: top; width:700px;">
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>
-<td>    </td>
+<td> "Complete the Cloud Administration Node Internet Access" prerequisite hangs for a long time, and fail in the end.  </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Primary software component </td>
-<td>   </td>
+<td> Admin Node </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Failure message </td>
-<td>    </td>
+<td> Unable to access the Internet. Check network and proxy settings  </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Probable cause </td>
-<td>   </td>
+<td> The Admin Node server can't access the Internet using the proxy information that was used to configure the prerequisite. </td>
 </tr>
 
 </table>
+
+#### Solution
+
+1.	Check if the proxy details in is really correct, if not fix and try again.
+2.	Check if the Admin Node really has access to the proxy server, if not fix and try again.
+3.	The last option is to remove the proxy information and complete the prerequisite without the proxy information.
 
 
 
 ### Problem: Incorrect Manage Node status prevents use of the node
 
-
-
 <table style="text-align: left; vertical-align: top; width:700px;">
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>
-<td>    </td>
+<td> After some operations the manage node status remains incorrect, for example Resetting. Because of that the node is no longer usable. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Primary software component </td>
-<td>   </td>
+<td> Admin Node </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Failure message </td>
-<td>    </td>
+<td> N/A </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Probable cause </td>
-<td>   </td>
+<td> The node entered in an invalid state for an unknown reason, and its status is no longer updated. </td>
 </tr>
 
 </table>
 
+#### Solution: 
+
+If the node is not been used at the moment, shut down the node, power on again, and make it PXE boot again. This should fix the status and set the node to "Not Allocated," allowing the user to use the node again.
 
 
 
@@ -1202,41 +1217,44 @@ This section describes the following known problems and solutions for the Admini
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>
-<td>    </td>
+<td> In the Administration Dashboard, if you click the provisioned instance, and use Internet Explorer to open the Console, a Console Connect timeout issue occurs. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Primary software component </td>
-<td>   </td>
+<td> Browser used for the Console in Administration Dashboard. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Failure message </td>
-<td>    </td>
+<td> Console Connect timeout </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Probable cause </td>
-<td>   </td>
+<td> Microsoft Internet Explorer browser is not supported. </td>
 </tr>
 
 </table>
+
+#### Solution
+
+Only use Google Chrome 14 or Mozilla Firefox 6 to open the Console.
 
 
 
 ### Problem: Default Ubuntu cloud image and CirrOS images only show one active network even if multiple networks are specified
 
-
 <table style="text-align: left; vertical-align: top; width:700px;">
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>
-<td>    </td>
+<td> The default Ubuntu cloud image and CirrOS images have only one active NIC in their network configuration. If you specify multiple VNICs (networks) when creating a VM, only the first interface is used. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Primary software component </td>
-<td>   </td>
+<td> Administration Dashboard  </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -1246,10 +1264,33 @@ This section describes the following known problems and solutions for the Admini
 
 <tr style="background-color: white; color: black;">
 <td> Probable cause </td>
-<td>   </td>
+<td> Default number of networks for the Ubuntu cloud image and CirrOS images is one. </td>
 </tr>
 
 </table>
+
+#### Solution
+
+There are two ways to get the second NIC up and running.
+
+<ol>
+
+<li>Bring up eth1 manually. 
+<p>Place the entry for the eth1 in /etc/network/interfaces file to make it persistent across reboots.</p>
+<p>Sample eth1 entry:</p>
+<pre>
+auto eth1
+iface eth1 inet dhcp 
+dhclient eth1 
+</pre>
+<p> (The last command above will query for the DHCP ip for eth1.) </p> </li>
+
+<li>Create a custom image with 2 active NICs. 
+
+<p>To do this, specify both `eth0` and `eth1` in the `./etc/network/interfaces` file while creating an image.</p>  </li>
+
+</ol>
+
 
 
 ### Problem: Instance resize feature does not work when there is only a single compute node
@@ -1259,28 +1300,29 @@ This section describes the following known problems and solutions for the Admini
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>
-<td>    </td>
+<td> In a cloud with only a single compute node, if you click More in the Instances tab of the Administration Dashboard and try to resize the instance to a different flavor, the operation will fail. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Primary software component </td>
-<td>   </td>
+<td> Browser used for the Console in Administration Dashboard. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Failure message </td>
-<td>    </td>
+<td> N/A </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Probable cause </td>
-<td>   </td>
+<td> Instance resize only works with multiple compute nodes. </td>
 </tr>
 
 </table>
 
+#### Solution
 
-
+Use this feature only if your HP Cloud OS environment includes multiple compute nodes.
 
 
 
@@ -1298,8 +1340,6 @@ This section describes the following known problems and solutions for the Instal
 
 
 ### Problem: Cloud Infrastructure install module proposal fails
-
-
 
 <table style="text-align: left; vertical-align: top; width:700px;">
 
@@ -1339,7 +1379,6 @@ Try applying the proposal again. If that fails:
 
 ### Problem: Cloud Controller node or Compute Region node displays the "not ready" (grey) state
 
-
 <table style="text-align: left; vertical-align: top; width:700px;">
 
 <tr style="background-color: white; color: black;">
@@ -1369,7 +1408,6 @@ Try applying the proposal again. If that fails:
 
 ### Problem: Stopping services before Cloud OS completes processing jobs can cause a job failure
 
-
 <table style="text-align: left; vertical-align: top; width:700px;">
 
 <tr style="background-color: white; color: black;">
@@ -1395,9 +1433,7 @@ Try applying the proposal again. If that fails:
 </table>
 
 
-
 ### Problem: Configure Cinder to use RAW multipath devices
-
 
 <table style="text-align: left; vertical-align: top; width:700px;">
 
@@ -1426,8 +1462,6 @@ Try applying the proposal again. If that fails:
 
 
 ### Problem: Red screen when installing OS on bare metal nodes
-
-
 
 <table style="text-align: left; vertical-align: top; width:700px;">
 
