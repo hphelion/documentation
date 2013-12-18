@@ -179,7 +179,7 @@ This section describes the following known problems and solutions for the Operat
 2.	Before setting up the Admin Node, be sure to power down all participating nodes that were running controller and compute roles.
 3.	After the Admin Node is set up, you must use the PXE boot process to power up the participating nodes.
 
-See [Install &amp; Configure Your Clouds](/cloudos/install) for complete instructions. If the nodes boot to the original operating system that was set up with the earlier Admin Node, the boot process will cause irreparable damage to the Admin Node and the entire process will need to be restarted.
+See [Install &amp; Configure Your Cloud](/cloudos/install) for complete instructions. If the nodes boot to the original operating system that was set up with the earlier Admin Node, the boot process will cause irreparable damage to the Admin Node and the entire process will need to be restarted.
 
 
 
@@ -1081,8 +1081,8 @@ Navigate to another item in the menu of the dashboard; if the problem persist, j
 
 <pre>
   /opt/dell/crowbar_framework/log/production.log
-  /opt/dell/crowbar_framework/log/* (for more information)
-  /var/log/barclamps/*
+  /opt/dell/crowbar_framework/log/* 
+  /var/log/barclamps/* 
 </pre>
 
 * Launch Topology Logs:
@@ -1372,7 +1372,7 @@ Try applying the proposal again. If that fails:
 * Deactivate the proposal.
 * Delete the proposal and create it again.
 * SSH in to the Admin Node using the credentials: crowbar/crowbar.
-* Review the log files /opt/dell/crowbar_framework/log/production.log and MacAddressHostname>.chef.log.
+* Review the log files /opt/dell/crowbar_framework/log/production.log and &lt;MacAddressHostname>.chef.log.
 * Review the log file /var/log/apache2/error.log.
 * Review the folder /var/tmp/cosmos and verify the installer settings.
 
@@ -1474,7 +1474,7 @@ Ensure you get the multipath storage configured, for that use the below commands
 apt-get install multipath-tools
 cp /home/crowbar/multipath.conf /etc
 /lib/udev/scsi_id -g -u -d /dev/sdb
-sed \-i 's/36001438005df087b0000600003d40000/Replace with value from line #3/' /etc/multipath.conf
+<nobr>sed \-i 's/36001438005df087b0000600003d40000/Replace with value from line #3/' /etc/multipath.conf</nobr>
 cat /etc/multipath.conf
 reboot
 </pre>
@@ -1487,7 +1487,7 @@ mke2fs -t ext4 /dev/nova_instances/logical_nova1
 mount -t ext4 /dev/nova_instances/logical_nova1 /var/lib/nova/instances/
 chown nova:nova /var/lib/nova/instances/
 restart nova-compute
-sed -i '$ a /dev/nova_instances/logical_nova1 /var/lib/nova/instances 0 2' /etc/fstab
+<nobr>sed -i '$ a /dev/nova_instances/logical_nova1 /var/lib/nova/instances 0 2' /etc/fstab</nobr>
 </pre>
 
 After that, follow the instruction below post reboot:

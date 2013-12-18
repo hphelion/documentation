@@ -38,7 +38,7 @@ PageRefresh();
 * [Introduction to Cloud Types](/cloudos/prepare/cloudtypes/) 
 * [Glossary](/cloudos/prepare/glossary/)
 
-#### [Install &amp; Configure Your Clouds](/cloudos/install/)
+#### [Install &amp; Configure Your Cloud](/cloudos/install/)
 
 * [Installation Overview](/cloudos/install/overview/)
 * [Before You Install](/cloudos/install/before-you-install/)
@@ -55,7 +55,7 @@ PageRefresh();
 * [Advanced Cloud Setup](/cloudos/install/advanced-cloud-setup/)
 * [Install Modules Reference](/cloudos/install/install-modules-reference/) 
 
-#### [Manage your Clouds](/cloudos/manage/)
+#### [Manage your Cloud](/cloudos/manage/)
 
 * [HP Cloud OS Utilities](/cloudos/manage/utilities/)
 * [HP Cloud OS Troubleshooting](/cloudos/manage/troubleshooting/) 

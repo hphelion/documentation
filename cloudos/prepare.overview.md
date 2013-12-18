@@ -66,7 +66,7 @@ Let's look at the components. HP Cloud OS provides two important environments:
 
 * An **Execution environment**, which is used to execute the cloud itself on top of the customer's infrastructure: servers, networks, and storage.
 
-Used together, the two environments allow you to stand up, manage, and self-serve your clouds, based on Cloud OS.
+Used together, the two environments allow you to stand up, manage, and self-serve your cloud, based on Cloud OS.
 
 In this technical overview, we will walk through the components illustrated here:
 
@@ -115,7 +115,7 @@ We provide plugins in the following ways.
 
 * For Cinder, we provide an LVM plugin that does Logical Volume Management so that you can do raw storage or logical volumes.
 
-* For Neutron, we provide an Open vSwitch plugin that allows you to open the switch plugin OpenFlow technology to do virtual networking across your environment.
+* For Quantum, we provide an Open vSwitch plugin that allows you to open the switch plugin OpenFlow technology to do virtual networking across your environment.
 
 ### Base Layer
 

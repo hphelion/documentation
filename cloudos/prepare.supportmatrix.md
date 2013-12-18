@@ -199,7 +199,7 @@ The diagrams in this section illustrate the deployment scenarios supported in HP
 
 ## Software Requirements 
 
-Refer to [Install &amp; Configure Your Clouds](/cloudos/install/) for a complete list of installation prerequisites and requirements, plus step-by-step instructions.
+Refer to [Install &amp; Configure Your Cloud](/cloudos/install/) for a complete list of installation prerequisites and requirements, plus step-by-step instructions.
 
 <table style="text-align: left; vertical-align: top;">
 
