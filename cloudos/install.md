@@ -35,7 +35,7 @@ Install and set up the Admin node:
 * [Customize Server Types (Optional)](/cloudos/install/customize-server-types/)
 * [Customize Network Connections (Optional)](/cloudos/install/customize-network-connections/)
 * [Customize Network Settings (Required)](/cloudos/install/customize-network-settings/)
-* [Setup Swift (Optional)](/cloudos/install/setup-swift/)
+* [Setup Swift Storage Network (Optional)](/cloudos/install/setup-swift/)
 * [Complete Admin Node Installation (Required)](/cloudos/install/complete-admin-node-installation/)
 
 After you install and set up the Admin node, you can perform additional steps:

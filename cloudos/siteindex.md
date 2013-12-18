@@ -44,7 +44,7 @@ PageRefresh();
 * [Customize Server Types (Optional)](/cloudos/install/customize-server-types/)
 * [Customize Network Connections (Optional)](/cloudos/install/customize-network-connections/)
 * [Customize Network Settings (Required)](/cloudos/install/customize-network-settings/)
-* [Setup Swift (Optional)](/cloudos/install/setup-swift/)
+* [Setup Swift Storage Network (Optional)](/cloudos/install/setup-swift/)
 * [Complete Admin Node Installation (Required)](/cloudos/install/complete-admin-node-installation/)
 * [Create a Cloud](/cloudos/install/create-cloud/) 
 * [Launch Administration Dashboard](/cloudos/install/launch-admin-dashboard/)

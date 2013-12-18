@@ -26,12 +26,11 @@ function PageRefresh {
 Now that the Admin Node is installed, it's time to create your cloud. 
 
 This topic explains how to set up a cloud with a Cloud Controller node (Cloud, Network, Storage, and Compute Controllers) 
-and the separate Compute node(s). 
+and the separate Compute node(s). Optional: This topic also explains how to setup a Swift Controller node (Ring-compute, Proxy,  and Dispersion) and the separate Swift Storage Node(s).
 
 As indicated in the [Installation Overview](/cloudos/install/overview#preview-of-the-installation-steps) topic, you have a choice at this point: 
 
 * You can follow the wizard-based steps presented in this topic (recommended)
-
 * Or you can perform the [Advanced Cloud Setup](/cloudos/install/advanced-cloud-setup) to apply and configure the install modules yourself.
 
 When you create a cloud using the process defined in this topic, a number of OpenStack and HP Cloud OS 
@@ -40,11 +39,7 @@ However, should you need to customize values in the install modules that are not
 this advanced section, along with [Install Modules Reference](/cloudos/install/install-modules-reference/), are provided to assist 
 you in the process of customizing and deploying the individual install modules. 
 
-## Introduction
-
-If you elected to use the wizard-based steps described in this topic (recommended), read on.
-
-You'll continue to use the HP Cloud OS Operational Dashboard to execute these steps. Follow these procedures in order.
+If you elected to use the wizard-based steps described in this topic (recommended), read on. You'll continue to use the HP Cloud OS Operational Dashboard to execute these steps. Follow these procedures in order.
 
 * [Manage Controller and Compute Nodes](#manage-controller-and-compute-nodes)
 
@@ -61,6 +56,8 @@ Before you begin, make sure:
 * You have remote console access to all the virtual and bare-metal servers. This is required to power on the servers to trigger Network (PXE) boot, monitor operating system installation, and if need be provide additional firmware drivers when prompted.
 
 * The Network and Storage Infrastructures are set up correctly. For the post-install of the operating system, a few steps are required to configure and mount the folder on an additional storage resource.
+
+* (Optional) The Swift infrastructure is set up correctly. For the post-install of the operating system, a few steps are required to zero out the first and last megabyte of the disk.
 
 **Note:** Ensure that the boot order on all nodes is configured to boot from the network first (this only occurs once as the PXE service will not try to network boot a node again if it has already
 done so).
@@ -270,10 +267,20 @@ To see all the cloud and compute region(s) values you configured, click the clou
 * Each compute region is a tab with the region's name. Each region's tab shows the timestamp of that compute region creation, the nodes specified for the Compute Controller and Compute
 Nodes, and the Hypervisor.
 
-## Next Step
+## Next Steps
 
-After successfully creating a cloud and compute region(s), you can manage your cloud environment by launching the HP Cloud OS Administration Dashboard.  To get there, click More > Launch Dashboard for the cloud you
-created.  For more, see [Launch the Administration Dashboard](/cloudos/install/launch-admin-dashboard/).
+After you complete the compute region steps, and prior to launching the Administration Dashboard, you can install Swift (optional - if used). 
+This statement assumes you have already:
+
+* [Setup Swift Storage Network](/cloudos/install/setup-swift) as described in a prior topic
+* Zeroed out the disks, as described in the [Object Storage](#object-storage) section of this topic
+
+For information about applying install modules, including Swift, see two topics: 
+
+* [Advanced Cloud Setup](/cloudos/install/advanced-cloud-setup/)
+* [Install Modules Reference](/cloudos/install/install-modules-reference)
+
+When you're ready, manage your cloud environment by launching the HP Cloud OS Administration Dashboard.  To get there, click More > Launch Dashboard for the cloud you created.  For more, see [Launch the Administration Dashboard](/cloudos/install/launch-admin-dashboard/).
 
 <a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

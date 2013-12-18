@@ -27,10 +27,49 @@ PageRefresh();
 This topic describes known problems and solutions for the following areas:
 
 * [Troubleshooting Cloud OS ISO](#troubleshooting-cloud-os-iso)
+
+ * [Problem: Admin Node displays the "not ready" (grey) state](#problem-admin-node-displays-the-not-ready-grey-state)
+ * [Problem: Create new router fails](#problem-create-new-router-fails)
+ * [Problem: When creating a new PXE node, the PXE boot fails with a TFTP timeout error](#problem-when-creating-a-new-pxe-node-the-pxe-boot-fails-with-a-tftp-timeout-error)
+ * [Problem: Manage Nodes not updating the status](#problem-manage-nodes-not-updating-the-status)
+ * [Problem: Create cloud or compute region fails](#problem-create-cloud-or-compute-region-fails)
+ * [Problem: Admin Node Internet Access Prerequisites fail to complete](#problem-admin-node-internet-access-prerequisites-fail-to-complete)
+ * [Problem: Instance not getting IP from a private network](#problem-instance-not-getting-ip-from-a-private-network)
+ * [Problem: Admin node redirects to License page](#problem-admin-node-redirects-to-license-page)
+ * [Problem: Fiber-Channel errors when booting node](#problem-fiber-channel-errors-when-booting-node)
+ * [Problem: Error in the log during Deploy Cloud](#problem-error-in-the-log-during-deploy-cloud)
+ * [Problem: Services not started after controller node is rebooted](#problem-services-not-started-after-controller-node-is-rebooted)
+ * [Problem: Yellow screen with exception is thrown when using the Cloud OS solution](#problem-yellow-screen-with-exception-is-thrown-when-using-the-cloud-os-solution)
+ * [Problem: After restart Cloud OS not working anymore](#problem-after-restart-cloud-os-not-working-anymore)
+ * [Problem: Compute node not listed in the user-interface](#problem-compute-node-not-listed-in-the-user-interface)
+ * [Problem: The time zone in the controller node is incorrect](#problem-the-time-zone-in-the-controller-node-is-incorrect)
+ * [Problem: Compute node fails to install OS (kernel error)](#problem-compute-node-fails-to-install-os-kernel-error)
+ * [Problem: Problem creating images using remote location](#problem-problem-creating-images-using-remote-location)
+ * [Problem: Problem creating image using image file](#problem-problem-creating-image-using-image-file)
+ * [Problem: Unable to launch more instances](#problem-unable-to-launch-more-instances)
+ * [Problem: Default route disappears from controller node](#problem-default-route-disappears-from-controller-node)
+ * [Problem: Not possible to log in the dashboard (license has expired)](#problem-not-possible-to-log-in-the-dashboard-license-has-expired)
+ * [Problem: Create Cloud failed](#create-cloud-failed)
+ * [Problem: Find why Launch Topology Fails](#find-why-launch-topology-fails)
+ * [Problem: Unauthorized exceptions when navigating in the dashboard](#problem-unauthorized-exceptions-when-navigating-in-the-dashboard)
+ * [Problem: Location of the log files](#problem-location-of-the-log-files)
+ * [Problem: Launch topology fails and Instance is created but with Error status](#problem-launch-topology-fails-and-instance-is-created-but-with-error-status)
+ * [Problem: Complete Node Internet Access prerequisite hang and fail after some time](#problem-complete-node-internet-access-prerequisite-hang-and-fail-after-some-time)
+ * [Problem: Incorrect Manage Node status prevents use of the node](#problem-incorrect-manage-node-status-prevents-use-of-the-node)
+
 * [Troubleshooting Cloud OS Operational Dashboard](#troubleshooting-cloud-os-operational-dashboard)
+
+( TOC intra-file xrefs coming...)
+
 * [Troubleshooting Cloud OS Administration Dashboard](#troubleshooting-cloud-os-administration-dashboard)
+
+ * [Problem: Console Connect timeout issue in the Administration Dashboard](#problem-console-connect-timeout-issue-in-the-administration-dashboard)
+ * [Problem: Default Ubuntu cloud image and CirrOS images only show one active network even if multiple networks are specified](#problem-default-ubuntu-cloud-image-and-cirros-images-only-show-one-active-network-even-if-multiple-networks-are-specified)
+ * [Problem: Instance resize feature does not work when there is only a single compute node](#problem-instance-resize-feature-does-not-work-when-there-is-only-a-single-compute-node)
+
 * [Troubleshooting Cloud OS Installation](#troubleshooting-cloud-os-installation)
 
+(TOC intra-file xrefs coming...) 
 
 
 ## Troubleshooting Cloud OS ISO
@@ -81,49 +120,40 @@ Ensure that the virtual disk format is either IDE or SCSI before booting the VM 
 
 This section describes the following known problems and solutions for the Operational Dashboard:
 
-* [Problem: Admin Node displays the "not ready" (grey) state](#)
-* [Problem: Create new router fails](#)
-* [Problem: When creating a new PXE node, the PXE boot fails with a TFTP timeout error](#)
-* [Problem: Manage Nodes not updating the status](#)
-* [Problem: Create cloud or compute region fails](#)
-* [Problem: Admin Node Internet Access Prerequisites fail to complete](#)
-* [Problem: Instance not getting IP from a private network](#)
-* [Problem: Admin node redirects to License page](#)
-* [Problem: Fiber-Channel errors when booting node](#)
-* [Problem: Error in the log during Deploy Cloud](#)
-* [Problem: Services not started after controller node is rebooted](#)
-* [Problem: Yellow screen with exception is thrown when using the Cloud OS solution](#)
-* [Problem: After restart Cloud OS not working anymore](#)
-* [Problem: Compute node not listed in the user-interface](#)
-* [Problem: The time zone in the controller node is incorrect](#)
-* [Problem: Compute node fails to install OS (kernel error)](#)
-* [Problem: Problem creating images using remote location](#)
-* [Problem: Problem creating image using image file](#)
-* [Problem: Unable to launch more instances](#)
-* [Problem: Default route disappears from controller node](#)
-* [Problem: Not possible to log in the dashboard (license has expired)](#)
-* [Problem: Create Cloud failed](#)
-* [Problem: Find why Launch Topology Fails](#)
-* [Problem: Unauthorized exceptions when navigating in the dashboard](#)
-* [Problem: Location of the log files](#)
-* [Problem: Launch topology fails and Instance is created but with Error status](#)
-* [Problem: Complete Node Internet Access prerequisite hang and fail after some time](#)
-* [Problem: Incorrect Manage Node status prevents use of the node](#)
+* [Problem: Admin Node displays the "not ready" (grey) state](#problem-admin-node-displays-the-not-ready-grey-state)
+* [Problem: Create new router fails](#problem-create-new-router-fails)
+* [Problem: When creating a new PXE node, the PXE boot fails with a TFTP timeout error](#problem-when-creating-a-new-pxe-node-the-pxe-boot-fails-with-a-tftp-timeout-error)
+* [Problem: Manage Nodes not updating the status](#problem-manage-nodes-not-updating-the-status)
+* [Problem: Create cloud or compute region fails](#problem-create-cloud-or-compute-region-fails)
+* [Problem: Admin Node Internet Access Prerequisites fail to complete](#problem-admin-node-internet-access-prerequisites-fail-to-complete)
+* [Problem: Instance not getting IP from a private network](#problem-instance-not-getting-ip-from-a-private-network)
+* [Problem: Admin node redirects to License page](#problem-admin-node-redirects-to-license-page)
+* [Problem: Fiber-Channel errors when booting node](#problem-fiber-channel-errors-when-booting-node)
+* [Problem: Error in the log during Deploy Cloud](#problem-error-in-the-log-during-deploy-cloud)
+* [Problem: Services not started after controller node is rebooted](#problem-services-not-started-after-controller-node-is-rebooted)
+* [Problem: Yellow screen with exception is thrown when using the Cloud OS solution](#problem-yellow-screen-with-exception-is-thrown-when-using-the-cloud-os-solution)
+* [Problem: After restart Cloud OS not working anymore](#problem-after-restart-cloud-os-not-working-anymore)
+* [Problem: Compute node not listed in the user-interface](#problem-compute-node-not-listed-in-the-user-interface)
+* [Problem: The time zone in the controller node is incorrect](#problem-the-time-zone-in-the-controller-node-is-incorrect)
+* [Problem: Compute node fails to install OS (kernel error)](#problem-compute-node-fails-to-install-os-kernel-error)
+* [Problem: Problem creating images using remote location](#problem-problem-creating-images-using-remote-location)
+* [Problem: Problem creating image using image file](#problem-problem-creating-image-using-image-file)
+* [Problem: Unable to launch more instances](#problem-unable-to-launch-more-instances)
+* [Problem: Default route disappears from controller node](#problem-default-route-disappears-from-controller-node)
+* [Problem: Not possible to log in the dashboard (license has expired)](#problem-not-possible-to-log-in-the-dashboard-license-has-expired)
+* [Problem: Create Cloud failed](#create-cloud-failed)
+* [Problem: Find why Launch Topology Fails](#find-why-launch-topology-fails)
+* [Problem: Unauthorized exceptions when navigating in the dashboard](#problem-unauthorized-exceptions-when-navigating-in-the-dashboard)
+* [Problem: Location of the log files](#problem-location-of-the-log-files)
+* [Problem: Launch topology fails and Instance is created but with Error status](#problem-launch-topology-fails-and-instance-is-created-but-with-error-status)
+* [Problem: Complete Node Internet Access prerequisite hang and fail after some time](#problem-complete-node-internet-access-prerequisite-hang-and-fail-after-some-time)
+* [Problem: Incorrect Manage Node status prevents use of the node](#problem-incorrect-manage-node-status-prevents-use-of-the-node)
 
 
-
-
-
-
-### Problem: Admin Node displays the "not ready" (grey) state](#)
+### Problem: Admin Node displays the "not ready" (grey) state
 
 
 <table style="text-align: left; vertical-align: top; width:700px;">
-
-<tr style="background-color: white; color: black;">
-<td> Symptoms </td>
-<td>   </td>
-</tr>
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>
@@ -148,51 +178,11 @@ This section describes the following known problems and solutions for the Operat
 </table>
 
 
-### Problem: Create new router fails](#)
+### Problem: Create new router fails
 
 
 
 <table style="text-align: left; vertical-align: top; width:700px;">
-
-<tr style="background-color: white; color: black;">
-<td> Symptoms </td>
-<td>   </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Symptoms </td>
-<td>    </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Primary software component </td>
-<td>   </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Failure message </td>
-<td>    </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Probable cause </td>
-<td>   </td>
-</tr>
-
-</table>
-
-
-
-### Problem: When creating a new PXE node, the PXE boot fails with a TFTP timeout error](#)
-
-
-
-<table style="text-align: left; vertical-align: top; width:700px;">
-
-<tr style="background-color: white; color: black;">
-<td> Symptoms </td>
-<td>   </td>
-</tr>
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>
@@ -218,16 +208,11 @@ This section describes the following known problems and solutions for the Operat
 
 
 
-### Problem: Manage Nodes not updating the status](#)
+### Problem: When creating a new PXE node, the PXE boot fails with a TFTP timeout error
 
 
 
 <table style="text-align: left; vertical-align: top; width:700px;">
-
-<tr style="background-color: white; color: black;">
-<td> Symptoms </td>
-<td>   </td>
-</tr>
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>
@@ -253,16 +238,11 @@ This section describes the following known problems and solutions for the Operat
 
 
 
-### Problem: Create cloud or compute region fails](#)
+### Problem: Manage Nodes not updating the status
 
 
 
 <table style="text-align: left; vertical-align: top; width:700px;">
-
-<tr style="background-color: white; color: black;">
-<td> Symptoms </td>
-<td>   </td>
-</tr>
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>
@@ -288,16 +268,11 @@ This section describes the following known problems and solutions for the Operat
 
 
 
-### Problem: Admin Node Internet Access Prerequisites fail to complete](#)
+### Problem: Create cloud or compute region fails
 
 
 
 <table style="text-align: left; vertical-align: top; width:700px;">
-
-<tr style="background-color: white; color: black;">
-<td> Symptoms </td>
-<td>   </td>
-</tr>
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>
@@ -323,16 +298,11 @@ This section describes the following known problems and solutions for the Operat
 
 
 
-### Problem: Instance not getting IP from a private network](#)
+### Problem: Admin Node Internet Access Prerequisites fail to complete
 
 
 
 <table style="text-align: left; vertical-align: top; width:700px;">
-
-<tr style="background-color: white; color: black;">
-<td> Symptoms </td>
-<td>   </td>
-</tr>
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>
@@ -358,16 +328,11 @@ This section describes the following known problems and solutions for the Operat
 
 
 
-### Problem: Admin node redirects to License page](#)
+### Problem: Instance not getting IP from a private network
 
 
 
 <table style="text-align: left; vertical-align: top; width:700px;">
-
-<tr style="background-color: white; color: black;">
-<td> Symptoms </td>
-<td>   </td>
-</tr>
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>
@@ -393,16 +358,11 @@ This section describes the following known problems and solutions for the Operat
 
 
 
-### Problem: Fiber-Channel errors when booting node](#)
+### Problem: Admin node redirects to License page
 
 
 
 <table style="text-align: left; vertical-align: top; width:700px;">
-
-<tr style="background-color: white; color: black;">
-<td> Symptoms </td>
-<td>   </td>
-</tr>
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>
@@ -428,16 +388,11 @@ This section describes the following known problems and solutions for the Operat
 
 
 
-### Problem: Error in the log during Deploy Cloud](#)
+### Problem: Fiber-Channel errors when booting node
 
 
 
 <table style="text-align: left; vertical-align: top; width:700px;">
-
-<tr style="background-color: white; color: black;">
-<td> Symptoms </td>
-<td>   </td>
-</tr>
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>
@@ -463,16 +418,11 @@ This section describes the following known problems and solutions for the Operat
 
 
 
-### Problem: Services not started after controller node is rebooted](#)
+### Problem: Error in the log during Deploy Cloud
 
 
 
 <table style="text-align: left; vertical-align: top; width:700px;">
-
-<tr style="background-color: white; color: black;">
-<td> Symptoms </td>
-<td>   </td>
-</tr>
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>
@@ -498,16 +448,11 @@ This section describes the following known problems and solutions for the Operat
 
 
 
-### Problem: Yellow screen with exception is thrown when using the Cloud OS solution](#)
+### Problem: Services not started after controller node is rebooted
 
 
 
 <table style="text-align: left; vertical-align: top; width:700px;">
-
-<tr style="background-color: white; color: black;">
-<td> Symptoms </td>
-<td>   </td>
-</tr>
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>
@@ -533,17 +478,11 @@ This section describes the following known problems and solutions for the Operat
 
 
 
-### Problem: After restart Cloud OS not working anymore](#)
-
+### Problem: Yellow screen with exception is thrown when using the Cloud OS solution
 
 
 
 <table style="text-align: left; vertical-align: top; width:700px;">
-
-<tr style="background-color: white; color: black;">
-<td> Symptoms </td>
-<td>   </td>
-</tr>
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>
@@ -569,17 +508,12 @@ This section describes the following known problems and solutions for the Operat
 
 
 
-### Problem: Compute node not listed in the user-interface](#)
+### Problem: After restart Cloud OS not working anymore
 
 
 
 
 <table style="text-align: left; vertical-align: top; width:700px;">
-
-<tr style="background-color: white; color: black;">
-<td> Symptoms </td>
-<td>   </td>
-</tr>
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>
@@ -605,17 +539,12 @@ This section describes the following known problems and solutions for the Operat
 
 
 
-### Problem: The time zone in the controller node is incorrect](#)
+### Problem: Compute node not listed in the user-interface
 
 
 
 
 <table style="text-align: left; vertical-align: top; width:700px;">
-
-<tr style="background-color: white; color: black;">
-<td> Symptoms </td>
-<td>   </td>
-</tr>
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>
@@ -641,17 +570,12 @@ This section describes the following known problems and solutions for the Operat
 
 
 
-### Problem: Compute node fails to install OS (kernel error)](#)
+### Problem: The time zone in the controller node is incorrect
 
 
 
 
 <table style="text-align: left; vertical-align: top; width:700px;">
-
-<tr style="background-color: white; color: black;">
-<td> Symptoms </td>
-<td>   </td>
-</tr>
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>
@@ -677,16 +601,12 @@ This section describes the following known problems and solutions for the Operat
 
 
 
-### Problem: Problem creating images using remote location](#)
+### Problem: Compute node fails to install OS (kernel error)
+
 
 
 
 <table style="text-align: left; vertical-align: top; width:700px;">
-
-<tr style="background-color: white; color: black;">
-<td> Symptoms </td>
-<td>   </td>
-</tr>
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>
@@ -712,16 +632,11 @@ This section describes the following known problems and solutions for the Operat
 
 
 
-### Problem: Problem creating image using image file](#)
+### Problem: Problem creating images using remote location
 
 
 
 <table style="text-align: left; vertical-align: top; width:700px;">
-
-<tr style="background-color: white; color: black;">
-<td> Symptoms </td>
-<td>   </td>
-</tr>
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>
@@ -747,17 +662,11 @@ This section describes the following known problems and solutions for the Operat
 
 
 
-### Problem: Unable to launch more instances](#)
-
+### Problem: Problem creating image using image file
 
 
 
 <table style="text-align: left; vertical-align: top; width:700px;">
-
-<tr style="background-color: white; color: black;">
-<td> Symptoms </td>
-<td>   </td>
-</tr>
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>
@@ -783,16 +692,12 @@ This section describes the following known problems and solutions for the Operat
 
 
 
-### Problem: Default route disappears from controller node](#)
+### Problem: Unable to launch more instances
+
 
 
 
 <table style="text-align: left; vertical-align: top; width:700px;">
-
-<tr style="background-color: white; color: black;">
-<td> Symptoms </td>
-<td>   </td>
-</tr>
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>
@@ -818,16 +723,11 @@ This section describes the following known problems and solutions for the Operat
 
 
 
-### Problem: Not possible to log in the dashboard (license has expired)](#)
+### Problem: Default route disappears from controller node
 
 
 
 <table style="text-align: left; vertical-align: top; width:700px;">
-
-<tr style="background-color: white; color: black;">
-<td> Symptoms </td>
-<td>   </td>
-</tr>
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>
@@ -853,17 +753,11 @@ This section describes the following known problems and solutions for the Operat
 
 
 
-### Problem: Create Cloud failed](#)
-
+### Problem: Not possible to log in the dashboard (license has expired)
 
 
 
 <table style="text-align: left; vertical-align: top; width:700px;">
-
-<tr style="background-color: white; color: black;">
-<td> Symptoms </td>
-<td>   </td>
-</tr>
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>
@@ -889,16 +783,12 @@ This section describes the following known problems and solutions for the Operat
 
 
 
-### Problem: Find why Launch Topology Fails](#)
+### Problem: Create Cloud failed
+
 
 
 
 <table style="text-align: left; vertical-align: top; width:700px;">
-
-<tr style="background-color: white; color: black;">
-<td> Symptoms </td>
-<td>   </td>
-</tr>
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>
@@ -924,17 +814,11 @@ This section describes the following known problems and solutions for the Operat
 
 
 
-### Problem: Unauthorized exceptions when navigating in the dashboard](#)
-
+### Problem: Find why Launch Topology Fails
 
 
 
 <table style="text-align: left; vertical-align: top; width:700px;">
-
-<tr style="background-color: white; color: black;">
-<td> Symptoms </td>
-<td>   </td>
-</tr>
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>
@@ -960,16 +844,12 @@ This section describes the following known problems and solutions for the Operat
 
 
 
-### Problem: Location of the log files](#)
+### Problem: Unauthorized exceptions when navigating in the dashboard
+
 
 
 
 <table style="text-align: left; vertical-align: top; width:700px;">
-
-<tr style="background-color: white; color: black;">
-<td> Symptoms </td>
-<td>   </td>
-</tr>
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>
@@ -995,16 +875,11 @@ This section describes the following known problems and solutions for the Operat
 
 
 
-### Problem: Launch topology fails and Instance is created but with Error status](#)
+### Problem: Location of the log files
 
 
 
 <table style="text-align: left; vertical-align: top; width:700px;">
-
-<tr style="background-color: white; color: black;">
-<td> Symptoms </td>
-<td>   </td>
-</tr>
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>
@@ -1030,16 +905,11 @@ This section describes the following known problems and solutions for the Operat
 
 
 
-### Problem: Complete Node Internet Access prerequisite hang and fail after some time](#)
+### Problem: Launch topology fails and Instance is created but with Error status
 
 
 
 <table style="text-align: left; vertical-align: top; width:700px;">
-
-<tr style="background-color: white; color: black;">
-<td> Symptoms </td>
-<td>   </td>
-</tr>
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>
@@ -1065,7 +935,7 @@ This section describes the following known problems and solutions for the Operat
 
 
 
-### Problem: Incorrect Manage Node status prevents use of the node](#)
+### Problem: Complete Node Internet Access prerequisite hang and fail after some time
 
 
 
@@ -1073,8 +943,33 @@ This section describes the following known problems and solutions for the Operat
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>
+<td>    </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Primary software component </td>
 <td>   </td>
 </tr>
+
+<tr style="background-color: white; color: black;">
+<td> Failure message </td>
+<td>    </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Probable cause </td>
+<td>   </td>
+</tr>
+
+</table>
+
+
+
+### Problem: Incorrect Manage Node status prevents use of the node
+
+
+
+<table style="text-align: left; vertical-align: top; width:700px;">
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>
@@ -1106,22 +1001,15 @@ This section describes the following known problems and solutions for the Operat
 
 This section describes the following known problems and solutions for the Administration Dashboard:
 
-* [Problem: Console Connect timeout issue in the Administration Dashboard](#)
-* [Problem: Default Ubuntu cloud image and CirrOS images only show one active network even if multiple networks are specified](#)
-* [Problem: Instance resize feature does not work when there is only a single compute node](#)
-
-
+* [Problem: Console Connect timeout issue in the Administration Dashboard](#problem-console-connect-timeout-issue-in-the-administration-dashboard)
+* [Problem: Default Ubuntu cloud image and CirrOS images only show one active network even if multiple networks are specified](#problem-default-ubuntu-cloud-image-and-cirros-images-only-show-one-active-network-even-if-multiple-networks-are-specified)
+* [Problem: Instance resize feature does not work when there is only a single compute node](#problem-instance-resize-feature-does-not-work-when-there-is-only-a-single-compute-node)
 
 
 ### Problem: Console Connect timeout issue in the Administration Dashboard
 
 
 <table style="text-align: left; vertical-align: top; width:700px;">
-
-<tr style="background-color: white; color: black;">
-<td> Symptoms </td>
-<td>   </td>
-</tr>
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>
@@ -1154,11 +1042,6 @@ This section describes the following known problems and solutions for the Admini
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>
-<td>   </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Symptoms </td>
 <td>    </td>
 </tr>
 
@@ -1184,11 +1067,6 @@ This section describes the following known problems and solutions for the Admini
 
 
 <table style="text-align: left; vertical-align: top; width:700px;">
-
-<tr style="background-color: white; color: black;">
-<td> Symptoms </td>
-<td>   </td>
-</tr>
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>
@@ -1223,11 +1101,11 @@ This section describes the following known problems and solutions for the Admini
 
 This section describes the following known problems and solutions for the Installation Dashboard:
 
-* [Problem: Cloud Infrastructure install module proposal fails](#)
-* [Problem: Cloud Controller node or Compute Region node displays the "not ready" (grey) state](#)
-* [Problem: Stopping services before Cloud OS completes processing jobs can cause a job failure](#)
-* [Problem: Configure Cinder to use RAW multipath devices](#)
-* [Problem: Red screen when installing OS on bare metal nodes](#)
+* [Problem: Cloud Infrastructure install module proposal fails
+* [Problem: Cloud Controller node or Compute Region node displays the "not ready" (grey) state
+* [Problem: Stopping services before Cloud OS completes processing jobs can cause a job failure
+* [Problem: Configure Cinder to use RAW multipath devices
+* [Problem: Red screen when installing OS on bare metal nodes
 
 
 ### Problem: Cloud Infrastructure install module proposal fails
@@ -1235,11 +1113,6 @@ This section describes the following known problems and solutions for the Instal
 
 
 <table style="text-align: left; vertical-align: top; width:700px;">
-
-<tr style="background-color: white; color: black;">
-<td> Symptoms </td>
-<td>   </td>
-</tr>
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>
@@ -1282,11 +1155,6 @@ Try applying the proposal again. If that fails:
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>
-<td>   </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Symptoms </td>
 <td>    </td>
 </tr>
 
@@ -1314,11 +1182,6 @@ Try applying the proposal again. If that fails:
 
 
 <table style="text-align: left; vertical-align: top; width:700px;">
-
-<tr style="background-color: white; color: black;">
-<td> Symptoms </td>
-<td>   </td>
-</tr>
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>
@@ -1351,11 +1214,6 @@ Try applying the proposal again. If that fails:
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>
-<td>   </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Symptoms </td>
 <td>    </td>
 </tr>
 
@@ -1383,11 +1241,6 @@ Try applying the proposal again. If that fails:
 
 
 <table style="text-align: left; vertical-align: top; width:700px;">
-
-<tr style="background-color: white; color: black;">
-<td> Symptoms </td>
-<td>   </td>
-</tr>
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>

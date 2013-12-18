@@ -21,7 +21,7 @@ PageRefresh();
 
 <p style="font-size: small;"> <a href="/cloudos/install/customize-network-settings/">&#9664; PREV</a> | <a href="/cloudos/install/">&#9650; UP</a> | <a href="/cloudos/install/complete-admin-node-installation/">NEXT &#9654;</a> </p>
 
-# Setup Swift  Storage Network (Optional) 
+# Setup Swift Storage Network (Optional) 
 
 Swift is the OpenStack object/blob storage service for cloud computing. You can use Swift to store lots of data efficiently, safely, and cheaply.
 
