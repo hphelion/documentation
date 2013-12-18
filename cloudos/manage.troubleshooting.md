@@ -608,7 +608,7 @@ Refresh your browser. If the problem persist, please contact HP Support.
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>
-<td> After restart all the nodes, the solution don`t seem to be working as before, services not working as expected. </td>
+<td> After restart all the nodes, the solution doesn't seem to be working as before, services not working as expected. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -1287,7 +1287,7 @@ dhclient eth1
 
 <li>Create a custom image with 2 active NICs. 
 
-<p>To do this, specify both `eth0` and `eth1` in the `./etc/network/interfaces` file while creating an image.</p>  </li>
+<p>To do this, specify both eth0 and eth1 in the ./etc/network/interfaces file while creating an image.</p>  </li>
 
 </ol>
 
@@ -1345,22 +1345,22 @@ This section describes the following known problems and solutions for the Instal
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>
-<td>    </td>
+<td> An error message displays and the status turns red if a proposal fails. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Primary software component </td>
-<td>   </td>
+<td> Installation Dashboard </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Failure message </td>
-<td>    </td>
+<td> Failed to apply the proposal to: &lt;Cloud Controller Node name> </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Probable cause </td>
-<td>   </td>
+<td> There are a number of possible causes. See the solution section. </td>
 </tr>
 
 </table>
@@ -1383,12 +1383,12 @@ Try applying the proposal again. If that fails:
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>
-<td>    </td>
+<td>  Installation Dashboard is unable to monitor the Cloud Controller Node or the Compute Region Node. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Primary software component </td>
-<td>   </td>
+<td> Installation Dashboard </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -1398,11 +1398,14 @@ Try applying the proposal again. If that fails:
 
 <tr style="background-color: white; color: black;">
 <td> Probable cause </td>
-<td>   </td>
+<td> The Cloud Controller Node or the Compute Region Node has not updated the live status to the Admin Node.  </td>
 </tr>
 
 </table>
 
+#### Solution
+
+Log in to the suspect node through SSH and run <code>sudo chef-client</code>. This will force the node to update its status with Chef.
 
 
 
@@ -1412,7 +1415,7 @@ Try applying the proposal again. If that fails:
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>
-<td>    </td>
+<td> Jobs may fail if services (such as Eve, Peer, and Focus) are stopped before Cloud OS completes provisioning or deprovisioning the jobs. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -1422,15 +1425,19 @@ Try applying the proposal again. If that fails:
 
 <tr style="background-color: white; color: black;">
 <td> Failure message </td>
-<td>    </td>
+<td>   </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Probable cause </td>
-<td>   </td>
+<td> The state of the job may vary in this situation. The job might fail with an error message or be stuck in processing with no error message. In some cases, the job may even resume once the service has restarted. Make sure all the processing jobs are completed or canceled before stopping any Cloud OS services. </td>
 </tr>
 
 </table>
+
+#### Solution
+
+Wait for the job processing to complete or manually terminate those jobs, before re-applying the install modules or restarting the upstart services manually in the Installation Dashboard.
 
 
 ### Problem: Configure Cinder to use RAW multipath devices
@@ -1439,25 +1446,57 @@ Try applying the proposal again. If that fails:
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>
-<td>    </td>
+<td> The administrator wants to configure Cinder to use a multipath device. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Primary software component </td>
-<td>   </td>
+<td> Installation </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Failure message </td>
-<td>    </td>
+<td> N/A </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Probable cause </td>
-<td>   </td>
+<td> By default Cinder doesn't come configured for multipath.</td>
 </tr>
 
 </table>
+
+#### Solution 
+
+Ensure you get the multipath storage configured, for that use the below commands:
+
+<pre>
+apt-get install multipath-tools
+cp /home/crowbar/multipath.conf /etc
+/lib/udev/scsi_id -g -u -d /dev/sdb
+sed \-i 's/36001438005df087b0000600003d40000/Replace with value from line #3/' /etc/multipath.conf
+cat /etc/multipath.conf
+reboot
+</pre>
+
+<pre>
+pvcreate /dev/mapper/iaasc
+vgcreate nova_instances /dev/mapper/iaasc
+lvcreate -L999G -n logical_nova1 nova_instances
+mke2fs -t ext4 /dev/nova_instances/logical_nova1
+mount -t ext4 /dev/nova_instances/logical_nova1 /var/lib/nova/instances/
+chown nova:nova /var/lib/nova/instances/
+restart nova-compute
+sed -i '$ a /dev/nova_instances/logical_nova1 /var/lib/nova/instances 0 2' /etc/fstab
+</pre>
+
+After that, follow the instruction below post reboot:
+
+<pre>
+pvcreate --metadatasize 1020 /dev/mapper/iaasc
+vgextend cinder-volumes /dev/mapper/iaasc
+vgreduce cinder-volumes  /dev/loop0
+</pre>
 
 
 
@@ -1467,25 +1506,31 @@ Try applying the proposal again. If that fails:
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>
-<td>    </td>
+<td> During the installation process the partition could not be created. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Primary software component </td>
-<td>   </td>
+<td> Installation </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Failure message </td>
-<td>    </td>
+<td> No root file system is defined </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Probable cause </td>
-<td>   </td>
+<td> The iLO lost the virtual drive connection. See the example screen capture.</td>
 </tr>
 
 </table>
+
+<img src="media/cloudos-red-screen.png" title="Example red screen" /> 
+
+#### Solution 
+
+Reboot the server, check if the iLO is still mapped correctly and re-execute the operation.
 
 
 <a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
