@@ -58,9 +58,7 @@ You'll continue to use the HP Cloud OS Operational Dashboard to execute these st
 
 Before you begin, make sure:
 
-* You have remote console access to all the bare-metal nodes. This is required to trigger Network
-(PXE) boot, monitor operating system installation and if need be provide additional firmware
-drivers when prompted.
+* You have remote console access to all the virtual and bare-metal servers. This is required to power on the servers to trigger Network (PXE) boot, monitor operating system installation, and if need be provide additional firmware drivers when prompted.
 
 * The Network and Storage Infrastructures are set up correctly. For the post-install of the operating system, a few steps are required to configure and mount the folder on an additional storage resource.
 
@@ -69,12 +67,12 @@ done so).
 
 1. Power ON the Controller and Compute nodes.
 
-2. In the HP Cloud OS Operational Dashboard, select the Cloud tab, then Manage Nodes. Once the Controller and Compute Nodes have booted, each node displays in the table, indicating the Alias Name set to the node's MAC address (of the NIC associated
+2. In the HP Cloud OS Operational Dashboard, select the Cloud tab > Manage Nodes. Once the Controller and Compute Nodes have booted, each node displays in the table, indicating the Alias Name set to the node's MAC address (of the NIC associated
 with the Administration Network). Each node will be in the Not Allocated state.
 
-3. Click Edit Node to rename the MAC address in the Alias column to a more meaningful name such as controllercompute, cloudcontroller, compute1, compute2. **Note:** The node name can only be letters (capitalization is allowed) and numbers with no spaces. The node table then displays with the new alias names.
+3. For a node, click More > Edit Node to rename the MAC address in the Alias column to a more meaningful name such as controllercompute, cloudcontroller, compute1, compute2. **Note:** The node name can only be letters (capitalization is allowed) and numbers with no spaces. The node table then displays with the new alias names.
 
-4. Select the node, then click Allocate Nodes. The node allocation process completes the setup and configuration of the nodes so that OpenStack services can be deployed to them.
+4. For a node, click More > Allocate Nodes. The node allocation process completes the setup and configuration of the nodes so that OpenStack services can be deployed to them.
 
 As the Controller and Compute Nodes are being allocated, they progress through these different states: 
 
@@ -86,23 +84,27 @@ As the Controller and Compute Nodes are being allocated, they progress through t
  * Finalizing
  * Allocated
  
-When the nodes are ready for cloud deployment, their status ends with Allocated. **Tip:** Access the bare-metal node's remote console to monitor the operating system
-installation. Some of your hardware requires non-free firmware files to operate. The firmware can be loaded from removable media, such as a USB stick or CD/DVD. 
+When the nodes are ready for cloud deployment, their status ends with Allocated. 
+
+**Tip:** Access the bare-metal node's remote console to monitor the operating system installation. Some of your hardware requires non-free firmware files to operate. The firmware can be loaded from removable media, such as a USB stick or CD/DVD. 
 If a dialog box displays prompting you to load missing firmware, provide the appropriate drive.
 
-In the case where a node results in status = Off, select the More > Reboot Node action for the node.
+**Tip:** In the case where a node results in status = Off, select the More > Reboot Node action for the node.
 
+<!-- US1896, removed from UI
 Note: To de-allocate a Compute or Controller node from your Admin Node, click the Delete
 Node option from the drop-down menu on the Manage Node dialog. This action sets the
 identified node to a de-allocated state.
-
-<!-- US1896, removed from UI
 **Note**: If a node is part of a compute region, its state is Deployed, and you cannot perform the Delete Node action on it. 
 If you were to delete the compute region, the node's state would become Not Allocated; then if desired, you could use 
 Delete Node to delete it. 
 --> 
 
 ## Complete Storage Configuration
+
+### Block Storage
+
+Cinder requirements:
 
 At this point, based on your previously determined [Storage Infrastructure](/cloudos/install/before-you-install#storage-infrastructure) layout, you can configure the additional storage on the nodes.
 
@@ -115,18 +117,65 @@ For details, see the Ubuntu configuration documentation:
 
 <a href="https://help.ubuntu.com/community/DiskSpace" title="Ubuntu topic opens in new tab or window" target="ubuntu2"> Ubuntu Disk Space - community discussion </a>
 
+### Object Storage
+
+Swift requirements:
+
+On each storage node, Swift needs a dedicated disk that is independent of the OS disk. This dedicated disk must have the first and last 
+megabyte of the disk zeroed out; this is required even for new disks. 
+
+If you have not already done so, execute the following steps to zero out the disks.  
+
+To show the start and end megabyte, you can use the following on each Swift storage node:
+
+Show start and end:
+
+<pre>
+dd if=/dev/sdb bs=1M count=1 | hd <br/>
+<nobr>size=$(fdisk -l  /dev/sdb | grep Disk | grep bytes | cut -f 5 -d" ") &amp;&amp; echo $size</nobr> <br />
+skip=$(python -c "print ($size / (1024*1024)) - 1") &amp;&amp; echo $skip <br />
+dd if=/dev/sdb bs=1M skip=$skip count=1 2>/dev/null | hd
+</pre>	
+
+In the start and end data, look for a display of all zeros, similar to this example:
+
+<pre>
+<nobr>00000000  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|</nobr> <br />
+* <br />
+1+0 records in <br />
+1+0 records out
+</pre>	
+
+If the results show something like the following, the disk is not zeroed:
+
+<pre>
+<nobr>000fbe00  a2 a0 d0 eb e5 b9 33 44  87 c0 68 b6 b7 26 99 c7  |......3D..h..&amp;..|</nobr>
+</pre>	
+
+To zero out the first and last meg, use this:
+
+<pre>
+dd if=/dev/zero of=/dev/sdb bs=1M count=1 <br />
+<nobr>size=$(fdisk -l  /dev/sdb | grep Disk | grep bytes | cut -f 5 -d" ") && echo $size <br />
+seek=$(python -c "print ($size / (1024*1024)) - 1") &amp;&amp; echo $seek</nobr> <br />
+dd if=/dev/zero of=/dev/sdb seek=$seek bs=1M <br />
+</pre>	
+
+In addition, you will need to login to the Swift storage nodes from the remote console.  For the credentials, go to the 
+<a href="https://cloudos.hpwsportal.com" target="new"> HP Cloud OS Catalog</a> portal, and see the topic about the dashboard credentials.
+
 ## Create Cloud
 
-After you complete the setup of the Admin Node, you are ready to create your cloud. 
+You are ready to create your cloud. 
 
 To create a cloud:
 
-1. In the Operational Dashboard, select the Cloud tab, then Manage Clouds.
+1. In the Operational Dashboard, select the Cloud tab > Manage Clouds.
 
 2. Click Create Cloud to open the Create Cloud dialog.
 
 3. Specify a Cloud Name. This will be the Domain name that is used to initialize Keystone and will be displayed in the Administration Dashboard.
-Note: A cloud name must contain only letters and numbers. It cannot contain spaces or special characters.
+**Note:** A cloud name must contain only letters and numbers. It cannot contain spaces or special characters.
 
 4. Select the Controllers tab and specify which node will have the Cloud Controller, Network Controller, and Storage Controller respective services.
 You install all these core controller services on one Cloud Controller node.
