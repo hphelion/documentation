@@ -25,7 +25,7 @@ PageRefresh();
 
 This topic explains how to obtain patches and other relevant functionality from the HP Cloud OS Distribution Network (CODN).
 
-* [Start in the HP Cloud OS Operational Dashboard](#start-in-the-hp-cloud-os-operational-dashboard)
+* [Configure and Download Steps](#configure-and-download-steps)
 * [Next Step](#next-step)
 
 <!--
@@ -36,22 +36,19 @@ This topic explains how to obtain patches and other relevant functionality from 
 * [CODN Service Commands](#codn-service-commands)
 -->
 
-## Start in the HP Cloud OS Operational Dashboard
+## Configure and Download Steps
 
-1. From the Cloud tab in the Operational Dashboard, click the **Updates and Extensions** panel. If you are accessing this page for the first time, there is no data to display in the table.
+1. From the Cloud tab in the Operational Dashboard, click the **Updates and Extensions** panel. If you are accessing this page for the first time, there is no data to display in the table.  **Note:** The Operational Dashboard displays a warning message indicating that your credentials are not configured or there is no active session with the CODN. A session may timeout after 20 minutes.
 
 2. Click the **Configure** button.
 
-3. On the Configure dialog, if you are using it for the first time, sign up for the CODN catalog store.
+3. On the Configure dialog, if you are using it for the first time, sign up for the CODN.
 
 4. After registering or logging in, you are returned to the Updates and Extensions panel. The Operational Dashboard presents the available downloads that are relevant to your HP Cloud OS environment.
 
 5. Click the **Download** button that is located next to an item you want to acquire.  
 
-6. Before installing an install module's hot fix, such as one labeled (for example) "Keystone Token Expiration Hotfix", verify that 
-the install module you're about to update does exist for your cloud. To do this, access the HP Cloud OS Installation Dashboard. 
-In Mozilla Firefox or Google Chrome, open http://192.168.124.10:3000. **Note:** In the current release, the dashboards use pre-defined login credentials. These are not published in the web-hosted documentation. 
-After you download the ISO from the <a href="https://cloudos.hpwsportal.com" target="codn">HP Cloud OS Distribution Network</a>, look for the readme file in the same ZIP that contains the ISO. The readme identifies the login credentials.
+6. Before installing an install module's hot fix, such as one labeled (for example) "Keystone Token Expiration Hotfix", verify that the install module you're about to update does exist for your cloud. To do this, access the HP Cloud OS Installation Dashboard. In Mozilla Firefox or Google Chrome, open http://192.168.124.10:3000. **Note:** In the current release, the dashboards use pre-defined login credentials. These are not published in the web-hosted documentation. To get the pre-defined login credentials, refer to the readme file included in the same ZIP that contained the HP Cloud OS ISO. If you have not already done so, see the ZIP on the <a href="https://cloudos.hpwsportal.com" target="codn">HP Cloud OS Distribution Network</a>. 
 
 7. In the Installation Dashboard, open the proposal for the hot fix by clicking the **Edit** button next to the listed item.   
 
