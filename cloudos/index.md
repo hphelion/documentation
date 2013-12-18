@@ -11,7 +11,7 @@ product: cloudos
 Welcome! HP Cloud OS is an enterprise-grade, open and extensible architecture that leverages the power of OpenStack technology, 
 the fastest growing open-source cloud community. 
 
-<p style="border: 1px dotted #1796D3; padding: 4px 4px 4px 4px;"> <b>To get started</b>, download the HP Cloud OS Sandbox 1.20 ISO from the <a href="https://cloudos.hpwsportal.com" target="codn">HP Cloud OS Distribution Network</a>. On the site, see the Technology Preview section and follow the links.</p>
+<p style="border: 1px dotted #1796D3; padding: 4px 4px 4px 4px;"> <b>To get started</b>, download the HP Cloud OS Sandbox 1.20 ISO from the <nobr><a href="https://cloudos.hpwsportal.com" target="codn">HP Cloud OS Distribution Network</a>.</nobr> On the site, see the Technology Preview section and follow the links.</p>
 
 After downloading the kit, dive into these categorized topics to learn about HP Cloud OS:
 
