@@ -120,7 +120,7 @@ Keep all the other default values.
 After creating the cloud and defining your compute regions (see this later topic, [Create a Cloud](/cloudos/install/create-cloud), 
 you can deploy Swift in your cloud by following these steps:
 
-1. Launch the HP Cloud OS Installation Dashboard. Its URL is http://192.168.124.10:3000.  For the Installation Dashboard's login, see the dashboard credentials topic on the <a href="https://cloudos.hpwsportal.com" target="new"> HP Cloud OS Catalog</a> portal. (Requires registration and login.)
+1. Launch the HP Cloud OS Installation Dashboard. Its URL is http://192.168.124.10:3000.  **Note:** In the current release, the dashboards use pre-defined login credentials. These are not published in the web-hosted documentation. To get the pre-defined login credentials, refer to the readme file included in the same ZIP that contained the HP Cloud OS ISO. If you have not already done so, see the ZIP on the <a href="https://cloudos.hpwsportal.com" target="codn">HP Cloud OS Distribution Network</a>. 
 
 2. The Swift install module is pre-installed with a default proposal created (without assigned nodes).
 

@@ -31,6 +31,7 @@ This topic explains how to perform an advanced cloud setup, as an **alternative*
   * [Proposals](#proposals)
 * [Steps to Apply Install Modules](#steps-to-apply-install-modules)
   * [Apply Cloud Controller Modules](#apply-cloud-controller-install-modules)
+  * [Apply the Swift Install Module (Optional)](#apply-the-swift-install-module-optional)
   * [Apply the Nova Install Module](#apply-the-nova-install-module)
 * [Next Step](#next-step)
 
@@ -204,7 +205,7 @@ See [Setup Swift Storage Network (Optional)](/cloudos/install/setup-swift/).
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> <nobr> Hp Cos Nova 100 * See the footnote below this table. </nobr> </td>
+<td> <nobr> Hp Cos Nova 100 * </nobr> </td>
 <td> Provides multi-controller and multi-compute services. </td>
 </tr>
 
@@ -236,8 +237,8 @@ See [Setup Swift Storage Network (Optional)](/cloudos/install/setup-swift/).
 </table>
 
 \* **Important:** In the HP Cloud OS Installation Dashboard, the Nova install module will appear alphabetically in the list of install modules. 
-The best practice, though, is to create and apply the Nova proposal after all the others have been applied. 
-First follow the instructions below, then see [Apply the Nova Install Module](#apply-the-nova-install-module) in this topic.
+
+The best practice, though, is to create and apply the Nova proposal after all the others have been applied. First follow the instructions below, then see [Apply the Nova Install Module](#apply-the-nova-install-module) in this topic.
 
 To apply the install modules in Mozilla Firefox or Google Chrome:
 
@@ -256,9 +257,9 @@ To apply the install modules in Mozilla Firefox or Google Chrome:
  d. Make sure the default values for the proposal are correct. For a complete list of all install modules and their default values, see the [Install Modules Reference](/cloudos/install/install-modules-reference).
 
  e. Make the node-to-role associations. In the proposal section, notice the Available Nodes and the Roles. Use the following notes to associate a node to a role, or to remove a node from a role. When the install module is Applied, the node-to-role association(s) will be used to determine which of the install module's roles (also known as 'services') will be applied to which node.
-  * In the Edit Proposal view, select the Cloud Controller node name in the Available Nodes list to drag it to the appropriate role. You may need to remove a node in order to add a node to a role, if there can only be one node associated with the role.
-  * To remove the association of the Cloud Controller node from a role, select the Cloud Controller node delete icon.
-  * Note: Selecting the Cloud Controller node link icon simply opens the node's details page.
+  * In the Edit Proposal view, select the controller name in the Available Nodes list to drag it to the appropriate role. You may need to remove a node in order to add a node to a role, if there can only be one node associated with the role.
+  * To remove the association of the controller from a role, select the controller's delete icon.
+  * **Note:** Selecting the controller's link icon simply opens the node's details page.
 
  f. Click Save, then Apply and then click OK.
 
@@ -268,9 +269,77 @@ To apply the install modules in Mozilla Firefox or Google Chrome:
 
  i. Select Barclamps > Cloud Infrastructure to review the install module list. The proposal Status is also displayed in the Cloud Infrastructure install module list.
 
- j. Apply the next install module in the list, from top to bottom, until all install modules related to the Cloud Controller Node have been applied. **Exception:** Apply all Nova install module after applying all the other install modules in the list. 
+ j. Apply the next install module in the list, from top to bottom, until all install modules related to the Cloud Controller Node have been applied. 
+ 
+**Exception:** Apply the Nova install module after applying all the other install modules in the list. 
 
-Now you can move on to applying the Nova install module - see the next section.
+
+### Apply the Swift Install Module (Optional)
+
+After creating the cloud and defining your compute region(s), you can deploy Swift in your cloud (if you elected to setup Swift) by following these steps:
+
+1. Launch the HP Cloud OS Installation Dashboard. Its URL is http://192.168.124.10:3000. **Note:** In the current release, the dashboards use pre-defined login credentials. These are not published in the web-hosted documentation. To get the pre-defined login credentials, refer to the readme file included in the same ZIP that contained the HP Cloud OS ISO. If you have not already done so, see the ZIP on the <a href="https://cloudos.hpwsportal.com" target="codn">HP Cloud OS Distribution Network</a>. 
+
+2. The Swift install module is pre-installed with a default proposal created (without assigned nodes).
+
+3. From the UI's top menu, select Barclamps > Cloud Infrastructure > Hp Cos Swift 100.
+
+4. Click the Edit button for the pre-existing Swift proposal.
+
+4. Assign the controller node to the Swift ring-compute, proxy and dispersion roles. For background information, see the next section, [Swift Roles](#swift-roles). 
+
+5. Assign between 2-5 nodes to the Swift storage role. 
+
+6. All the other defaults should be adequate.
+
+7. Click the Apply button to deploy Swift in your cloud. 
+
+#### Swift Roles
+
+##### Proxy
+
+The proxy server is responsible for tying together the Swift storage architecture. For each request sent to the proxy server, 
+it will look up the location of the account, container, or object in the ring (see below) and route the request accordingly. The 
+proxy server also exposes the public API. 
+
+A large number of failures are also handled in the proxy server. For example, if a server is unavailable for an object PUT, 
+it will ask the ring for a handoff server and route there instead.
+
+When objects are streamed to (or from) an object server, they are streamed directly through the proxy server to (or from) the user.  The 
+proxy server does not spool them.
+
+##### Ring-compute
+
+In a Swift environment, a ring represents a mapping between the names of entities stored on disk and their physical location. 
+There are separate rings for accounts, containers, and objects. When other components need to perform any operation on an object, 
+container, or account, they need to interact with the appropriate ring to determine its location in the cluster.
+
+The Ring maintains this mapping using zones, devices, partitions, and replicas. Each partition in the ring is replicated, by default, 
+three times across the cluster.  The locations for a partition are stored in the mapping maintained by the ring. The ring is 
+also responsible for determining which devices are used for handoff in failure scenarios.
+
+Data can be isolated with the concept of zones in the ring. Each replica of a partition is guaranteed to reside in a different zone. 
+A zone could represent a drive, a server, a cabinet, a switch, or even a datacenter. The partitions of the ring are equally divided 
+among all the devices in the Swift installation. When partitions need to be moved around (for example if a device is added to the cluster), 
+the ring ensures that a minimum number of partitions are moved at a time, and only one replica of a partition is moved at a time.
+
+Weights can be used to balance the distribution of partitions on drives across the cluster. This can be useful, for example, 
+when different sized drives are used in a cluster. The ring is used by the proxy server and several background processes (like replication).
+
+##### Dispersion
+
+The Swift dispersion role is used for cluster health monitoring. 
+
+There is a swift-dispersion-report tool that you can use to measure the overall cluster health. This is accomplished by checking if a 
+set of deliberately distributed containers and objects are currently in their proper places within the cluster. 
+
+For instance, a common deployment has three replicas of each object. The health of that object can be measured by checking if each 
+replica is in its proper place. If only two of the three is in place, the object's health can be said to be at 66.66%.
+
+A single object's health, especially an older object, usually reflects the health of that entire partition the object is in. 
+If you make enough objects on a distinct percentage of the partitions in the cluster, you can get a valid estimate of the overall 
+cluster health. In practice, about 1% partition coverage seems to balance well between accuracy and the amount of time 
+it takes to gather results.
 
 ### Apply the Nova Install Module
 
@@ -307,7 +376,7 @@ The Nova install module supports the following roles:
 * Hp Cos Nova 100-multi-controller &mdash; This role determines which node provides the infrastructure management and API services.
 * Hp Cos Nova 100-multi-compute &mdash; This role identifies the Compute Nodes that act as virtualization hosts.
 
-> **Tip**: As a best practice, the node used earlier for the Cloud Controller can be assigned the Nova-multi-controller role and the Nova-multi-volume role. The remaining managed nodes that are designated as Compute Nodes can be assigned to the Nova-multi-compute role.
+> **Tip**: As a best practice, the Compute Controller should be assigned the Nova-multi-controller role and the Nova-multi-volume role. The remaining managed nodes that are designated as Compute Nodes can be assigned to the Nova-multi-compute role.
 
 #### Nova Install Module Proposal Settings
 
