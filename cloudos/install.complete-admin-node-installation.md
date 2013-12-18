@@ -19,14 +19,13 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> <a href="/cloudos/install/setup-swift/">&#9664; PREV</a> | <a href="/cloudos/install/">&#9650; UP</a> | <a href="/cloudos/install/create-cloud/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/cloudos/install/customize-network-settings/">&#9664; PREV</a> | <a href="/cloudos/install/">&#9650; UP</a> | <a href="/cloudos/install/create-cloud/">NEXT &#9654;</a> </p>
 
 # Complete Admin Node Installation (Required)
 
 This topic describes the steps to complete the Admin Node installation. These steps are required. 
 
-> **Caution:** Be sure the values for the Prerequisites, Server Types, Connections and Networks are what you need, before you follow the steps in this topic. Also, if you want to use Swift in your cloud, you must 
-manually create the storage region before clicking Complete Install in the HP Cloud OS Operational Dashboard, as noted in the [Setup Swift (Optional)](/cloudos/install/setup-swift/) topic. Once the install process is triggered, the settings in preceding steps cannot be changed. 
+> **Caution:** Be sure the values for the Prerequisites, Server Types, Connections and Networks are what you need, before you follow the steps in this topic. Once the install process is triggered, the settings in preceding steps cannot be changed. 
 If you want to make changes, you need to start over by re-installing the Admin Node.  
 
 To complete the Admin Node installation:

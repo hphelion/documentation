@@ -23,17 +23,14 @@ PageRefresh();
 
 # Launch the Administration Dashboard
 
-After a cloud environment has been created in the HP Cloud OS Operational Dashboard, you manage the cloud
-through the HP Cloud OS Administration Dashboard. The Administration Dashboard provides a simplified means
-of creating and managing Cloud resources, infrastructure topology designs, and resource binding
-documents.  The Administration Dashboard also enables you to provision a composite topology described by the topology
-templates and binding documents.
+After a cloud environment has been created in the HP Cloud OS Operational Dashboard, you manage the cloud through the HP Cloud OS Administration Dashboard. The Administration Dashboard provides a simplified means
+of creating and managing Cloud resources and topology design documents.  The Administration Dashboard also enables you to provision a composite topology described by the topology design documents.
 
 To access the Administration Dashboard:
 
-1. On the Operational Dashboard, select the Cloud tab, then Manage Clouds.
+1. On the Operational Dashboard, select the Cloud tab > Manage Clouds.
 
-2. Select More > Launch Dashboard.   
+2. Select More > Launch for the cloud created.   
 
 When you return to the Administration Dashboard, at http://&lt;public-IP-of-your-cloud-controller>, you will need to login. 
 

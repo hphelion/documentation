@@ -19,7 +19,7 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> <a href="/cloudos/install/customize-network-connections/">&#9664; PREV</a> | <a href="/cloudos/install/">&#9650; UP</a> | <a href="/cloudos/install/setup-swift/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/cloudos/install/customize-network-connections/">&#9664; PREV</a> | <a href="/cloudos/install/">&#9650; UP</a> | <a href="/cloudos/install/complete-admin-node-installation/">NEXT &#9654;</a> </p>
 
 # Customize Network Settings (Required)
 
@@ -233,7 +233,7 @@ the addresses are correct.
 
 ## Next Step
 
-Proceed to the next topic, [Setup Swift (Optional)](/cloudos/install/setup-swift/).
+Proceed to the next topic, [Complete Admin Node Installation (Required)](/cloudos/install/complete-admin-node-installation/).
 
 <a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
