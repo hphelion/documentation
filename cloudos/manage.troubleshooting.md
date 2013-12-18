@@ -28,6 +28,10 @@ This topic describes known problems and solutions for the following areas:
 
 * [Troubleshooting Cloud OS ISO](#troubleshooting-cloud-os-iso)
 
+ * [Problem: ISO Error Running on a VM Hosted on a KVM Hypervisor](#problem-iso-error-running-on-a-vm-hosted-on-a-kvm-hypervisor)
+
+* [Troubleshooting Cloud OS Operational Dashboard](#troubleshooting-cloud-os-operational-dashboard)
+
  * [Problem: Admin Node displays the "not ready" (grey) state](#problem-admin-node-displays-the-not-ready-grey-state)
  * [Problem: Create new router fails](#problem-create-new-router-fails)
  * [Problem: When creating a new PXE node, the PXE boot fails with a TFTP timeout error](#problem-when-creating-a-new-pxe-node-the-pxe-boot-fails-with-a-tftp-timeout-error)
@@ -57,10 +61,6 @@ This topic describes known problems and solutions for the following areas:
  * [Problem: Complete Node Internet Access prerequisite hang and fail after some time](#problem-complete-node-internet-access-prerequisite-hang-and-fail-after-some-time)
  * [Problem: Incorrect Manage Node status prevents use of the node](#problem-incorrect-manage-node-status-prevents-use-of-the-node)
 
-* [Troubleshooting Cloud OS Operational Dashboard](#troubleshooting-cloud-os-operational-dashboard)
-
-( TOC intra-file xrefs coming...)
-
 * [Troubleshooting Cloud OS Administration Dashboard](#troubleshooting-cloud-os-administration-dashboard)
 
  * [Problem: Console Connect timeout issue in the Administration Dashboard](#problem-console-connect-timeout-issue-in-the-administration-dashboard)
@@ -79,11 +79,6 @@ This section describes the following known problems and solutions for the Cloud 
 #### Problem: ISO Error Running on a VM Hosted on a KVM Hypervisor
 
 <table style="text-align: left; vertical-align: top; width:700px;">
-
-<tr style="background-color: white; color: black;">
-<td> Symptoms </td>
-<td> The HP Cloud OS ISO shows an error when running on a virtual machine (VM) hosted on a KVM hypervisor. </td>
-</tr>
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>
@@ -110,9 +105,6 @@ This section describes the following known problems and solutions for the Cloud 
 ### Solution
 
 Ensure that the virtual disk format is either IDE or SCSI before booting the VM with the HP Cloud OS ISO media.
-
-
-
 
 
 
@@ -1266,3 +1258,4 @@ Try applying the proposal again. If that fails:
 
 
 <a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+

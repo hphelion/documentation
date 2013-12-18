@@ -122,7 +122,7 @@ you can deploy Swift in your cloud by following these steps:
 
 1. Launch the HP Cloud OS Installation Dashboard. Its URL is http://192.168.124.10:3000.  For the Installation Dashboard's login, see the dashboard credentials topic on the <a href="https://cloudos.hpwsportal.com" target="new"> HP Cloud OS Catalog</a> portal. (Requires registration and login.)
 
-2. The Swift barclamp is pre-installed with a default proposal created (without assigned nodes).
+2. The Swift install module is pre-installed with a default proposal created (without assigned nodes).
 
 3. From the UI's top menu, select Barclamps > Cloud Infrastructure > Hp Cos Swift 100.
 

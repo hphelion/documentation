@@ -38,15 +38,16 @@ This topic explains how to perform an advanced cloud setup, as an **alternative*
 
 Cloud infrastructure services are delivered as "install modules," which are also known as "barclamps."   
 
-Install modules are a mechanism to install and configure a service on the compute region's control node. 
+Install modules are a mechanism to install and configure a service on the Controller and Compute Nodes. 
 
 When you create a cloud using the process defined in [Create a Cloud](/cloudos/install/create-cloud/), a number of OpenStack and HP Cloud OS 
 install modules are automatically configured and deployed for you. In most cases, the automated deployment of install modules will suffice. 
-**Note:** the Swift barclamp must be installed manually, as discussed in [Create a Cloud](/cloudos/install/create-cloud/). 
+**Exception:** the Swift install module must be installed manually following the general steps in this topic; this assumes you have already setup Swift, 
+as explained in [Setup Swift Storage Network](/cloudos/install/setup-swift) and [Create a Cloud](/cloudos/install/create-cloud).
 
 If you decide instead to apply the install modules yourself, or should you need to customize values in the install modules 
-that were not exposed in the Create Cloud Attributes tab, this advanced section, along with 
-[Cloud Controller Install Modules Reference](/cloudos/install/install-modules-reference/), 
+that were not exposed in the Create Cloud Attributes tab, this advanced topic, along with 
+[Install Modules Reference](/cloudos/install/install-modules-reference/), 
 are provided to assist you in the process of customizing and deploying the individual install modules. 
 
 If you use the advanced option described in this topic, all install modules will need to be applied manually and in the 
@@ -56,7 +57,8 @@ To perform these tasks, you'll use a separate UI: the HP Cloud OS Installation D
 
 http://192.168.124.10:3000
 
-You should open the Installation Dashboard in Mozilla Firefox or Google Chrome.
+You should open the Installation Dashboard in Mozilla Firefox or Google Chrome. **Note:** In the current release, the dashboards use pre-defined login credentials. These are not published in the web-hosted documentation. To get the pre-defined login credentials, refer to the readme file included in the same ZIP that contained the HP Cloud OS ISO. 
+If you have not already done so, see the ZIP on the <a href="https://cloudos.hpwsportal.com" target="codn">HP Cloud OS Distribution Network</a>. 
 
 ## Install Module Overview
 
@@ -70,8 +72,7 @@ and deployed. Each install module will specify one or more Roles that it can ful
 **Role** &mdash; A role identifies a type of service that is provided by the install module. Roles represent a logical
 service provided by the install module, but, may in fact be comprised of multiple processes that will
 be installed and configured on the target node. An install module may support one or more roles. For
-example, the Nova install module supports both the multi-controller role as well as the multicompute
-role.
+example, the Nova install module supports both the multi-controller role as well as the multi-compute role.
 
 **Proposal** &mdash; A proposal is a named deployment configuration for a given install module. More than one proposal (deployment configuration) can be created for a given install module.
 
@@ -82,8 +83,11 @@ Before you go through the procedures to apply the install modules, review the ne
 First, create a proposal to deploy an install module. A proposal is comprised of two sections - the Node Deployment section and the Attributes section.
 
 The Node Deployment section is used to specify Node-to-Role associations. These associations are used to determine which module services are to be deployed to which
-specific nodes. See the "Create Node to Role Association" step in "Apply Cloud Controller Install Modules" 
-for details on how to make these associations in the proposal.
+specific nodes. In this topic, see the following sections for details on how to make these associations in the proposal:
+
+* [Create Node to Role Association](#create-node-to-role-associations)
+
+* [Apply Cloud Controller Install Modules](#apply-cloud-controller-install-modules)
 
 The Attributes section represents service configuration parameters that can be customized as needed. The Attributes section may also include "references" to other proposals. Proposal
 references are used to indicate that one install module requires the services of another install module. The reference also allows you to pick a specific instance of that service.
@@ -99,9 +103,9 @@ If you have named your proposals well, you will be able to more easily pick the 
 
 Examples: 
 
-* Give all the proposals that will be deployed to the Cloud Controller the name of the Cloud Controller node. 
+* Give all the proposals that will be deployed to the Cloud Controller the name of the Cloud Controller node. Space characters are allowed in the proposal name.
 
-* Give the Nova proposal that will be used to create a compute region the name of the compute region.
+* Give the Nova proposal that will be used to create a compute region the name of the Compute Controller node. Space character can be included in the proposal name. 
 
 #### Node-to-Role Association Tips
 
@@ -126,19 +130,21 @@ example, the same node could be associated with both the controller and the comp
 
 ## Steps to Apply Install Modules
 
-After you have allocated the controller and compute nodes, you can complete the cloud creation process by manually applying 
+After you have allocated the managed nodes, you can complete the cloud creation process by manually applying 
 install modules that are available in the HP Cloud OS Installation Dashboard.  As noted previously, to access this UI, open it in 
 Mozilla Firefox or Google Chrome:
 
 http://192.168.124.10:3000
 
-For informatiom about the login credentials, please register or login on the [HP Cloud OS portal]().
+**Note:** In the current release, the dashboards use pre-defined login credentials. These are not published in the web-hosted documentation. To get the pre-defined login credentials, refer to the readme file included in the same ZIP that contained the HP Cloud OS ISO. 
+If you have not already done so, see the ZIP on the <a href="https://cloudos.hpwsportal.com" target="codn">HP Cloud OS Distribution Network</a>. 
 
+ 
 ### Apply Cloud Controller Install Modules
 
-The Cloud Controller install modules have dependencies and must be applied so that they will be listed in the HP Cloud OS Installation Dashboard.
+The Cloud Controller install modules have dependencies and must be applied in the order that they are listed in the HP Cloud OS Installation Dashboard.
 
-> **Caution:** Each install module must be successfully applied, one at a time, and in a Ready state before you apply the next install module 
+> **Important:** Each install module must be successfully applied, one at a time, and in a Ready state before you apply the next install module 
 in the list.
 
 The following table lists the install modules **in the order they must be applied** as you're creating a cloud instance.
@@ -166,13 +172,20 @@ The following table lists the install modules **in the order they must be applie
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> Couchdb 100 </td>
+<td> Couchdb 120 </td>
 <td> Configures a CouchDB server. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Hp Cos Keystone 100 </td>
 <td> Provides Identity Management services to the cloud infrastructure. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Hp Cos Swift 100 </td>
+<td> Provides an object/blob storage service. <b> Note: </b> The Swift install module must be setup manually, before clicking Complete Install in the HP Cloud OS Operational Dashboard. 
+See [Setup Swift Storage Network (Optional)](/cloudos/install/setup-swift/).
+</td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -218,13 +231,6 @@ The following table lists the install modules **in the order they must be applie
 <tr style="background-color: white; color: black;">
 <td> Hp Cos Cloud Utils 100 </td>
 <td> Provides cloud utilities scripts. </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Hp Cos Swift 100 </td>
-<td> Provides an object/blob storage service. <b> Note: </b> The Swift barclamp must be installed manually, before clicking Complete Install in the HP Cloud OS Operational Dashboard. 
-See [Setup Swift (Optional)](/cloudos/install/setup-swift/).
-</td>
 </tr>
 
 </table>
