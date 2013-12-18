@@ -270,10 +270,7 @@ Nodes, and the Hypervisor.
 ## Next Steps
 
 After you complete the compute region steps, and prior to launching the Administration Dashboard, you can install Swift (optional - if used). 
-This statement assumes you have already:
-
-* [Setup Swift Storage Network](/cloudos/install/setup-swift) as described in a prior topic
-* Zeroed out the disks, as described in the [Object Storage](#object-storage) section of this topic
+This statement assumes you have already zeroed out the disks, as described in the [Object Storage](#object-storage) section of this topic. 
 
 For information about applying install modules, including Swift, see two topics: 
 

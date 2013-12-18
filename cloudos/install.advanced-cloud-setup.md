@@ -43,8 +43,7 @@ Install modules are a mechanism to install and configure a service on the Contro
 
 When you create a cloud using the process defined in [Create a Cloud](/cloudos/install/create-cloud/), a number of OpenStack and HP Cloud OS 
 install modules are automatically configured and deployed for you. In most cases, the automated deployment of install modules will suffice. 
-**Exception:** the Swift install module must be installed manually following the general steps in this topic; this assumes you have already setup Swift, 
-as explained in [Setup Swift Storage Network](/cloudos/install/setup-swift) and [Create a Cloud](/cloudos/install/create-cloud).
+**Exception:** the Swift install module must be installed manually following the general steps in this topic. 
 
 If you decide instead to apply the install modules yourself, or should you need to customize values in the install modules 
 that were not exposed in the Create Cloud Attributes tab, this advanced topic, along with 
@@ -184,8 +183,7 @@ The following table lists the install modules **in the order they must be applie
 
 <tr style="background-color: white; color: black;">
 <td> Hp Cos Swift 100 </td>
-<td> Provides an object/blob storage service. <b> Note: </b> The Swift install module must be setup manually, before clicking Complete Install in the HP Cloud OS Operational Dashboard. 
-See [Setup Swift Storage Network (Optional)](/cloudos/install/setup-swift/).
+<td> Provides an object/blob storage service.
 </td>
 </tr>
 

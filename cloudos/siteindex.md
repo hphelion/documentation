@@ -44,7 +44,6 @@ PageRefresh();
 * [Customize Server Types (Optional)](/cloudos/install/customize-server-types/)
 * [Customize Network Connections (Optional)](/cloudos/install/customize-network-connections/)
 * [Customize Network Settings (Required)](/cloudos/install/customize-network-settings/)
-* [Setup Swift Storage Network (Optional)](/cloudos/install/setup-swift/)
 * [Complete Admin Node Installation (Required)](/cloudos/install/complete-admin-node-installation/)
 * [Create a Cloud](/cloudos/install/create-cloud/) 
 * [Launch Administration Dashboard](/cloudos/install/launch-admin-dashboard/)
@@ -52,15 +51,14 @@ PageRefresh();
 * [Install Hot Fixes](/cloudos/install/hot-fixes/)
 * [Updates and Extensions](/cloudos/install/updates-and-extensions/)
 * [Advanced Cloud Setup](/cloudos/install/advanced-cloud-setup/)
-* [Install Modules Reference](/cloudos/install/install-modules-reference/)
+* [Install Modules Reference](/cloudos/install/install-modules-reference/) 
 
 #### [Manage your Clouds](/cloudos/manage/)
 
 * [HP Cloud OS Utilities](/cloudos/manage/utilities/)
 * [HP Cloud OS Troubleshooting](/cloudos/manage/troubleshooting/) 
-* [HP Cloud OS Operational Dashboard Help](http://docs.hpcloud.com/cloudos/operational-dashboard/index.htm)  
-* [HP Cloud OS Administration Dashboard Help](http://docs.hpcloud.com/cloudos/administration-dashboard/index.htm)  
-
+* [HP Cloud OS Operational Dashboard Help (website copy)](http://docs.hpcloud.com/cloudos/operational-dashboard/index.htm) 
+* [HP Cloud OS Administration Dashboard Help (website copy)](http://docs.hpcloud.com/cloudos/administration-dashboard/index.htm)  
 
 #### [Develop](/cloudos/develop/)
 

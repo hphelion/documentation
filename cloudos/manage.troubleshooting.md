@@ -69,7 +69,11 @@ This topic describes known problems and solutions for the following areas:
 
 * [Troubleshooting Cloud OS Installation](#troubleshooting-cloud-os-installation)
 
-(TOC intra-file xrefs coming...) 
+ * [Problem: Cloud Infrastructure install module proposal fails](#problem-cloud-infrastructure-install-module-proposal-fails)
+ * [Problem: Cloud Controller node or Compute Region node displays the "not ready" (grey) state](#problem-cloud-controller-node-or-compute-region-node-displays-the-not-ready-grey-state)
+ * [Problem: Stopping services before Cloud OS completes processing jobs can cause a job failure](#problem-stopping-services-before-cloud-os-completes-processing-jobs-can-cause-a-job-failure)
+ * [Problem: Configure Cinder to use RAW multipath devices](#problem-configure-cinder-to-use-raw-multipath-devices)
+ * [Problem: Red screen when installing OS on bare metal nodes](#problem-red-screen-when-installing-os-on-bare-metal-nodes)
 
 
 ## Troubleshooting Cloud OS ISO
@@ -1192,11 +1196,11 @@ This section describes the following known problems and solutions for the Admini
 
 This section describes the following known problems and solutions for the Installation Dashboard:
 
-* [Problem: Cloud Infrastructure install module proposal fails
-* [Problem: Cloud Controller node or Compute Region node displays the "not ready" (grey) state
-* [Problem: Stopping services before Cloud OS completes processing jobs can cause a job failure
-* [Problem: Configure Cinder to use RAW multipath devices
-* [Problem: Red screen when installing OS on bare metal nodes
+* [Problem: Cloud Infrastructure install module proposal fails](#problem-cloud-infrastructure-install-module-proposal-fails)
+* [Problem: Cloud Controller node or Compute Region node displays the "not ready" (grey) state](#problem-cloud-controller-node-or-compute-region-node-displays-the-not-ready-grey-state)
+* [Problem: Stopping services before Cloud OS completes processing jobs can cause a job failure](#problem-stopping-services-before-cloud-os-completes-processing-jobs-can-cause-a-job-failure)
+* [Problem: Configure Cinder to use RAW multipath devices](#problem-configure-cinder-to-use-raw-multipath-devices)
+* [Problem: Red screen when installing OS on bare metal nodes](#problem-red-screen-when-installing-os-on-bare-metal-nodes)
 
 
 ### Problem: Cloud Infrastructure install module proposal fails

@@ -35,7 +35,6 @@ Install and set up the Admin node:
 * [Customize Server Types (Optional)](/cloudos/install/customize-server-types/)
 * [Customize Network Connections (Optional)](/cloudos/install/customize-network-connections/)
 * [Customize Network Settings (Required)](/cloudos/install/customize-network-settings/)
-* [Setup Swift Storage Network (Optional)](/cloudos/install/setup-swift/)
 * [Complete Admin Node Installation (Required)](/cloudos/install/complete-admin-node-installation/)
 
 After you install and set up the Admin node, you can perform additional steps:
@@ -46,15 +45,17 @@ After you install and set up the Admin node, you can perform additional steps:
 * [Install Hot Fixes](/cloudos/install/hot-fixes/)
 * [Updates and Extensions](/cloudos/install/updates-and-extensions/)
 
-Also see the website copy of the [HP Cloud OS Operational Dashboard Help](http://docs.hpcloud.com/cloudos/operational-dashboard/index.htm). 
-Note: website copy not deployed yet. To access this document in the Operational Dashboard, click **Help** in its top banner.
-
 Finally, if you do not intend to use the wizard-based Cloud OS installation process that's described in 
 the Create a Cloud topic, and instead decide to apply and configure the install modules yourself, 
 see these topics: 
 
 * [Advanced Cloud Setup](/cloudos/install/advanced-cloud-setup/)
 * [Install Modules Reference](/cloudos/install/install-modules-reference/)
+
+**Note:** Also see the Help topics that are available in the Operational Dashboard and Administration Dashboard.  Wbsite copies are available:
+
+* [HP Cloud OS Operational Dashboard Help](http://docs.hpcloud.com/cloudos/operational-dashboard/index.htm)
+* [HP Cloud OS Administration Dashboard Help](http://docs.hpcloud.com/cloudos/administration-dashboard/index.htm)
 
 <a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
