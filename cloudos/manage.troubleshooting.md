@@ -102,7 +102,7 @@ This section describes the following known problems and solutions for the Cloud 
 
 </table>
 
-### Solution
+##### Solution
 
 Ensure that the virtual disk format is either IDE or SCSI before booting the VM with the HP Cloud OS ISO media.
 
@@ -149,12 +149,12 @@ This section describes the following known problems and solutions for the Operat
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>
-<td>    </td>
+<td> You may not be able to PXE boot any new node. This problem occurs when you re-install Cloud OS on machines that have been used with a Cloud OS environment earlier. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Primary software component </td>
-<td>   </td>
+<td> Admin Node  </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -164,56 +164,66 @@ This section describes the following known problems and solutions for the Operat
 
 <tr style="background-color: white; color: black;">
 <td> Probable cause </td>
-<td>   </td>
+<td> You changed the date on the Admin Node or you brought up a previously allocated node to the Admin Node.  </td>
 </tr>
 
 </table>
 
+##### Solution
+
+1.	Create a new Admin Node.
+2.	Before setting up the Admin Node, be sure to power down all participating nodes that were running controller and compute roles.
+3.	After the Admin Node is set up, you must use the PXE boot process to power up the participating nodes.
+
+See [Install &amp; Configure Your Clouds](/cloudos/install) for complete instructions. If the nodes boot to the original operating system that was set up with the earlier Admin Node, the boot process will cause irreparable damage to the Admin Node and the entire process will need to be restarted.
+
+
 
 ### Problem: Create new router fails
-
-
 
 <table style="text-align: left; vertical-align: top; width:700px;">
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>
-<td>    </td>
+<td> The operation to create a new router fails if using designer or manually creating a new router and adding the interfaces.   </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Primary software component </td>
-<td>   </td>
+<td> Operational Dashboard  </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Failure message </td>
-<td>    </td>
+<td> Failed to add interface to router XYZ   </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Probable cause </td>
-<td>   </td>
+<td> The environment already has a router configured connecting the same networks. Only one router connecting the same networks is allowed.  </td>
 </tr>
 
 </table>
+
+##### Solution
+
+Provision with the already existing router instead of creating a new one. 
+
 
 
 
 ### Problem: When creating a new PXE node, the PXE boot fails with a TFTP timeout error
 
-
-
 <table style="text-align: left; vertical-align: top; width:700px;">
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>
-<td>    </td>
+<td> In the Operational Dashboard, the Admin Node takes a long time to reboot. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Primary software component </td>
-<td>   </td>
+<td> Admin Node  </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -223,40 +233,60 @@ This section describes the following known problems and solutions for the Operat
 
 <tr style="background-color: white; color: black;">
 <td> Probable cause </td>
-<td>   </td>
+<td> This occurs in a few cases after the Admin Node is rebooted. </td>
 </tr>
 
 </table>
+
+##### Solution
+
+<ol>
+
+<li> Log in to the Admin Node and run the following commands:
+
+<pre>
+sudo bluepill tftpd stop
+sudo bluepill tftpd start
+</pre>  
+
+</li>
+
+<li> After these commands have run, PXE boot the nodes.
+
+</ol>
 
 
 
 ### Problem: Manage Nodes not updating the status
 
-
-
 <table style="text-align: left; vertical-align: top; width:700px;">
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>
-<td>    </td>
+<td> The status of the Manage Nodes page is not updated after any operation.  </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Primary software component </td>
-<td>   </td>
+<td> Admin Node </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Failure message </td>
-<td>    </td>
+<td>  N/A  </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Probable cause </td>
-<td>   </td>
+<td> The manage node page fails to update the status of the nodes.  </td>
 </tr>
 
 </table>
+
+##### Solution
+
+Navigate to other menus and back to the Manage Nodes tab to force an update of the status.
+
 
 
 
@@ -268,25 +298,40 @@ This section describes the following known problems and solutions for the Operat
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>
-<td>    </td>
+<td> The operation to create a cloud or a compute region fails without reason.  </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Primary software component </td>
-<td>   </td>
+<td> Admin Node  </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Failure message </td>
-<td>    </td>
+<td> Failed  </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Probable cause </td>
-<td>   </td>
+<td> One or more of the nodes used wasn't ready to be used or in bad state. </td>
 </tr>
 
 </table>
+
+##### Solution
+
+1.	Check if the used nodes are in a good status, using SSH check:
+
+ * Node not with problem or hanged in PXE boot (PXE-MOF: Exiting Emulex PXE ROM), in this case reboot the node and do again a PXE boot.
+ * Chef-client running in the node, if no errors happen re-try the operation otherwise reboot the node and do again a PXE boot. 
+ 
+2.	If everything is correctly check the logs for more information.
+
+<pre>
+/var/log/cosmos/cosmos.log
+/var/log/apache2/error.log
+</pre> 
+
 
 
 
@@ -298,25 +343,47 @@ This section describes the following known problems and solutions for the Operat
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>
-<td>    </td>
+<td> For the Cloud Administration Node Internet Access prerequisite, after completing the Complete Prerequisite action, a failure message displays.   </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Primary software component </td>
-<td>   </td>
+<td> Operational Dashboard  </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Failure message </td>
-<td>    </td>
+<td> Failed completing the Prerequisite  </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Probable cause </td>
-<td>   </td>
+<td> The selected interface does not exist in your environment. For example, if you have a system with two NICs, (eth0 and eth1), selecting eth2 will cause the prerequisite to fail.
+On the Admin Node, view the log files for details:
+
+<pre>
+/var/log/cosmos/cosmos.log
+/var/log/apache2/error.log
+</pre>
+
+</td>
 </tr>
 
 </table>
+
+##### Solution
+
+* Verify a public network is configured in the Admin Node.
+* Redo the steps for Cloud Administration Node Internet Access prerequisite - see "Set Admin Node Prerequisites" in the HP Cloud OS Installation and Configuration Dashboard.
+* Correct the proxy entries and/or specify a different proxy host and/or port.
+
+You must do pre-work before starting cloud deployment. If there are any incorrect details, the entire operation needs to be re-done. 
+
+The pre-work includes:
+
+* Identifying the NIC card sequence for Admin, OS_SDN and Public interfaces on all participating machines. 
+* Identifying the private IP range for hosts and guest VMs.
+* Identifying the Public IP range for hosts and guestVMs
 
 
 
@@ -328,17 +395,17 @@ This section describes the following known problems and solutions for the Operat
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>
-<td>    </td>
+<td>  After a new private network is created the new launched instances are not getting IP from this specific network.  </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Primary software component </td>
-<td>   </td>
+<td> Operational Dashboard  </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Failure message </td>
-<td>    </td>
+<td>  N/A  </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -348,6 +415,14 @@ This section describes the following known problems and solutions for the Operat
 
 </table>
 
+##### Solution
+
+Restart the network services on network controller executing the command below in the in the respective node.
+
+<pre>
+cd /etc/init.d/
+for i in $( ls quantum-* ); do sudo service $i restart; done
+</pre>
 
 
 ### Problem: Admin node redirects to License page
@@ -358,55 +433,64 @@ This section describes the following known problems and solutions for the Operat
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>
-<td>    </td>
+<td> All operations executed in the Admin Node redirect the user to the license page. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Primary software component </td>
-<td>   </td>
+<td> Admin Node </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Failure message </td>
-<td>    </td>
+<td> N/A </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Probable cause </td>
-<td>   </td>
+<td> The license is expired. </td>
 </tr>
 
 </table>
+
+##### Solution
+
+The license is expired. Contact HP Support to renew your license. 
 
 
 
 ### Problem: Fiber-Channel errors when booting node
 
-
-
 <table style="text-align: left; vertical-align: top; width:700px;">
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>
-<td>    </td>
+<td> After node is allocated Fiber-Channel (FC) error can appear during the boot of the operational system. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Primary software component </td>
-<td>   </td>
+<td> Admin Node </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Failure message </td>
-<td>    </td>
+<td> Blocked FC remote port timeout: removing rport </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Probable cause </td>
-<td>   </td>
+<td> The blade FC connection is not configured and because of that a timeout happened and the port will be removed from in the OS level. See screen capture. </td>
 </tr>
 
 </table>
+
+<img src="media/cloudos-fiber-channel-errors.png" title="Fiber channel errors" /> 
+
+
+##### Solution
+
+This problem can be ignored and shouldn't case future problem. IF any side-effect happen, contact HP Support.
 
 
 
@@ -418,26 +502,29 @@ This section describes the following known problems and solutions for the Operat
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>
-<td>    </td>
+<td> Compute node not been listed in the user-interface (UI) after PXE boot and installation completed with success.   </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Primary software component </td>
-<td>   </td>
+<td> Admin Node  </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Failure message </td>
-<td>    </td>
+<td> Crowbar configuration has errors. Please fix and rerun install. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Probable cause </td>
-<td>   </td>
+<td> That's a known message in the logs and won't cause any problem during the use of the solution.  </td>
 </tr>
 
 </table>
 
+##### Solution 
+
+You can ignore this error message. If any other problem happens during the deployment of the cloud, please contact HP Support.
 
 
 ### Problem: Services not started after controller node is rebooted
@@ -448,62 +535,74 @@ This section describes the following known problems and solutions for the Operat
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>
-<td>    </td>
+<td> After reboot the controller node, some of the services are not started, this mean they are stopped when they shouldn't be.   </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Primary software component </td>
-<td>   </td>
+<td> Controller Node  </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Failure message </td>
-<td>    </td>
+<td> N/A  </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Probable cause </td>
-<td>   </td>
+<td> This is normally a timing issue caused by the hardware that was used, a possible reason for this problem is that the server is with a lower configuration than the minimum required.  </td>
 </tr>
 
 </table>
+
+
+##### Solution
+
+Connect to the controller node using SSH and check if the services are started using the commands bellow, if any service is stopped just start manually.
+
+<pre>
+for job in $( ls /etc/init.d/nova-* ); do service ${job##*/} status; done
+for job in $( ls /etc/init.d/cinder-* ); do service ${job##*/} status; done
+for job in $( ls /etc/init.d/quantum-* ); do service ${job##*/} status; done
+</pre>
 
 
 
 ### Problem: Yellow screen with exception is thrown when using the Cloud OS solution
 
-
-
 <table style="text-align: left; vertical-align: top; width:700px;">
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>
-<td>    </td>
+<td> Yellow exception may occur when using and navigating in the dashboards.   </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Primary software component </td>
-<td>   </td>
+<td> Installation, Administration and Operational Dashboards</td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Failure message </td>
-<td>    </td>
+<td> Value Error at XYZ </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Probable cause </td>
-<td>   </td>
+<td> It wasn't possible to get specific information or the information was wrong. See examples in the screen capture. </td>
 </tr>
 
 </table>
 
+<img src="media/cloudos-yellow-screen.png" title="Example yellow screen" /> 
+
+#### Solution
+
+Refresh your browser. If the problem persist, please contact HP Support.
+
 
 
 ### Problem: After restart Cloud OS not working anymore
-
-
-
 
 <table style="text-align: left; vertical-align: top; width:700px;">
 
@@ -1128,7 +1227,7 @@ This section describes the following known problems and solutions for the Instal
 
 </table>
 
-### Solution
+#### Solution
 
 Try applying the proposal again. If that fails:
 
