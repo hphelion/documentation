@@ -69,7 +69,7 @@ For details about the user interface dialogs, click Help from the top banner of 
 
 * <a href="http://docs.hpcloud.com/cloudos/administration-dashboard/index.htm" target="admindash">HP Cloud OS Administration Dashboard Help</a> &mdash; This document is a copy of the Help that's available in the HP Cloud OS Administration Dashboard. 
          
-To submit REST API calls, you will need your OpenStack Keystone V3 authentication credentials so you can generate security tokens. 
+To submit REST API calls, you will need your OpenStack Keystone v2 authentication credentials so you can generate security tokens. 
 The steps are described in the [API Security Tokens](#api-security-tokens) section of this topic.
    
 As you walk through the examples in this topic and submit REST calls, you'll need to provide the actual values that pertain to your cloud. We'll 
@@ -217,7 +217,7 @@ Just replace "my_server" with the DNS hostname or IP address of your Cloud Contr
 ## API Security Tokens
 
 Before you can submit REST calls to your HP Cloud OS instance, or use the interactive features of the HP Cloud OS API Documentation app, 
-you must generate a v3 security token from Keystone, which is an OpenStack service. If you skip this step, or if you have an expired token, 
+you must generate a v2 security token from Keystone, which is an OpenStack service. If you skip this step, or if you have an expired token, 
 you will receive a 401 error message in the response. 
 
 <img src="media/cloudos-unauthorized-example.png" /> 
@@ -230,7 +230,7 @@ Copy the token's value and proceed to the next section of this topic.
 
 ### Getting the Security Token via a REST Call
 
-To generate a v3 security token, use:
+To generate a v2 security token, use:
 
 <pre>
 POST http://&lt;keystone_Server>:5000/v2.0/tokens
