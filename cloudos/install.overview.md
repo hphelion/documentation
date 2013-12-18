@@ -21,8 +21,6 @@ PageRefresh();
 
 <p style="font-size: small;"> <a href="/cloudos/install/">&#9664; PREV</a> | <a href="/cloudos/install/">&#9650; UP</a> | <a href="/cloudos/install/before-you-install/">NEXT &#9654;</a> </p>
 
-
-
 # Installation Overview
 
 Welcome! This topic presents an overview of the installation steps.  
@@ -110,8 +108,7 @@ compute fabric controller.
 
 * Quantum (Neutron) (Network Connectivity Service)&mdash; An OpenStack service to create and provision virtual networks.
 
-* Swift (OpenStack Object Store) &mdash; An OpenStack service to store and retrieve lots of data in virtual containers. In the current release, must 
-be setup manually as described in [Setup Swift (Optional)](/cloudos/install/setup-swift), before you click Complete Install.
+* Swift (OpenStack Object Store) &mdash; An OpenStack service to store and retrieve lots of data in virtual containers.  
 
 * Graffiti (Resource Pool Registry and Capability Tagging Service) &mdash; An HP Cloud OS service to support
 diverse functions: discovering, registering, and retrieving resource pool definitions for compute, network, and volume resources; 

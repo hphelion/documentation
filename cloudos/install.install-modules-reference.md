@@ -1196,11 +1196,7 @@ virtual machines. Select kvm if nova-compute nodes are bare-metal. </td>
 
 ## Hp Cos Swift 100
 
-**Important:** As noted in a prior topic, [Setup Swift (Optional)](/cloudos/install/setup-swift/), if 
-you want to use Swift in your cloud, you must manually install Swift before clicking Complete Install in the HP Cloud OS Operational 
-Dashboard.
-
-If you setup Swift, you can modify its attributes, which are shown in the following table. In most cases, you can use the default values. 
+In most cases, you can use the default values. 
 
 **Note:** The Additional Middleware and their attributes are not supported in the current release.  
 
@@ -1224,7 +1220,7 @@ If you setup Swift, you can modify its attributes, which are shown in the follow
 <tr>
 <th style="background-color: #C8C8C8;"> Roles </th> 
 <td colspan="2" style="background-color: white;"> Hp cos swift 100-ring-storage <br /> Hp cos swift 100-ring-compute <br /> Hp cos swift 100-proxy <br /> Hp cos swift 100-dispersion. For 
-information about the roles, see the Swift Roles section of the [Setup Swift](/cloudos/install/setup-swift) topic. </td>
+information about the roles, see the Swift Roles section of [Advanced Cloud Setup](/cloudos/install/advanced-cloud-setup) topic. </td>
 </tr>
 
 <tr style="background-color: #C8C8C8;">
