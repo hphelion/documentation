@@ -500,8 +500,6 @@ This problem can be ignored and shouldn't case future problem. IF any side-effec
 
 ### Problem: Error in the log during Deploy Cloud
 
-
-
 <table style="text-align: left; vertical-align: top; width:700px;">
 
 <tr style="background-color: white; color: black;">
@@ -532,8 +530,6 @@ You can ignore this error message. If any other problem happens during the deplo
 
 
 ### Problem: Services not started after controller node is rebooted
-
-
 
 <table style="text-align: left; vertical-align: top; width:700px;">
 
@@ -612,56 +608,66 @@ Refresh your browser. If the problem persist, please contact HP Support.
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>
-<td>    </td>
+<td> After restart all the nodes, the solution don`t seem to be working as before, services not working as expected. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Primary software component </td>
-<td>   </td>
+<td> Admin Node </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Failure message </td>
-<td>    </td>
+<td> General problems using the solution </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Probable cause </td>
-<td>   </td>
+<td> Sometimes after a restart the services don't start automatically or in a good state. </td>
 </tr>
 
 </table>
 
+#### Solution
+ 
+Check if all services are running fine in the controller node, first declare all the system variables and after that execute:
+
+* <code>keystone user-list</code> (list of all user should return)
+* <code>glance index</code> (list of images should return)
+* <code>cinder list</code> (list of volumes should return, if any created)
+* <code>quantum agent-list</code> (list of the agents should return with "happy" status)
+* <code>nova-manage service list</code> (list of services should return with "happy" status)
 
 
 ### Problem: Compute node not listed in the user-interface
-
-
-
 
 <table style="text-align: left; vertical-align: top; width:700px;">
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>
-<td>    </td>
+<td> Compute node is not listed in the user-interface (UI) after PXE boot and installation completed with success. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Primary software component </td>
-<td>   </td>
+<td> Admi Node </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> Failure message </td>
+<td> N/A </td>
 <td>    </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Probable cause </td>
-<td>   </td>
+<td> Cloud OS network with more than one DHCP server running.  </td>
 </tr>
 
 </table>
+
+#### Solution 
+
+If the installation completed without problem and the node is not been listed, probably the node booted using another DHCP server, and this caused the problem. The Cloud OS network should be isolated.
 
 
 
@@ -674,26 +680,33 @@ Refresh your browser. If the problem persist, please contact HP Support.
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>
-<td>    </td>
+<td> The time zone in the controller node by default will be different than the one in the admin node.   </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Primary software component </td>
-<td>   </td>
+<td> Controller Node </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Failure message </td>
-<td>    </td>
+<td>  N/A </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Probable cause </td>
-<td>   </td>
+<td> This behavior is by design.  </td>
 </tr>
 
 </table>
 
+#### Solution 
+
+Change the time-zone to the one you need/want in the Controller Node using the command:
+
+<pre>
+pkg-reconfigure tzdata.
+</pre>
 
 
 ### Problem: Compute node fails to install OS (kernel error)
