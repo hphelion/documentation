@@ -80,7 +80,7 @@ you in the process of customizing and deploying the individual install modules.
 
 The following diagram illustrates the HP Cloud OS environment.
 
-( coming soon ) 
+<img src="media/cloudos-environment.png" title="HP Cloud OS environment" /> 
 
 ### HP Cloud OS Administration Node
 

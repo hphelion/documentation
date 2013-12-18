@@ -206,13 +206,13 @@ Note: The Operational Dashboard displays subsequent options based on the followi
 
 5. On the Router tab, specify the Router value as a Gateway IP address of your Public IP address range.  
 
-6. Click Update Network to save your changes.
+6. Click **Update Network** to save your changes.
 
 ### Edit the Public Address Ranges
 
 To edit the public address ranges:
 
-1. In the public Edit Network drop-down list, select **Edit Address Ranges** to open the Edit Address Ranges dialog.
+1. In the public Edit Network drop-down list, select Edit Address Ranges to open the Edit Address Ranges dialog.
 
 2. The Network Type and Subnet values are pre-populated by default, with the correct settings.
 
