@@ -35,10 +35,10 @@ To access the Administration Dashboard:
 
 2. Select More > Launch Dashboard.   
 
-3. Login to the Administration Dashboard with the Admin account and password you specified on the Create Cloud > Attributes dialog, as described in the [Create Your Cloud](/cloudos/install/create-your-cloud/) topic.
-Or, use the default login: Admin / secretword.
+When you return to the Administration Dashboard, at http://&lt;public-IP-of-your-cloud-controller>, you will need to login. 
 
-4. Click Sign In.
+In the current release, the dashboards use pre-defined login credentials. These are not published in the web-hosted documentation. To get the pre-defined login credentials, refer to the readme file included in the same ZIP that contained the HP Cloud OS ISO. 
+If you have not already done so, see the ZIP on the <a href="https://cloudos.hpwsportal.com" target="codn">HP Cloud OS Distribution Network</a>. 
 
 ## Next Step
 

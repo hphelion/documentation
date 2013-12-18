@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Cloud OS API Quick Start - Introduction"
+title: "API Quick Start - Introduction"
 permalink: /cloudos/develop/quickstart-intro/
 product: cloudos
 
@@ -19,7 +19,9 @@ PageRefresh();
 </script>
 
 
-# HP Cloud OS API Quick Start - Introduction
+<p style="font-size: small;"> <a href="/cloudos/develop/quickstart-intro">&#9664; PREV</a> | <a href="/cloudos/">&#9650; UP</a> | <a href="/cloudos/develop/quickstart-usecase1">NEXT &#9654;</a> </p>
+
+# API Quick Start - Introduction
 
 For developers, HP Cloud OS includes a REST API that allows you to interact programmatically with your clouds.  
 
@@ -30,11 +32,17 @@ visualizing the API. The app includes comprehensive reference API documentation 
 request and view the response from your server. 
 
 * [Prerequisites](#prerequisites)
+
 * [What is HP Cloud OS?](#what-is-hp-cloud-os)
+
 * [What are the HP Cloud OS Services?](#what-are-the-hp-cloud-os-services)
+
 * [What is the HP Cloud OS API Documentation app?](#what-is-the-hp-cloud-os-api-documentation-app)
+
 * [API Documentation Ports per Service](#api-documentation-ports-per-service)
+
 * [API Security Tokens](#api-security-tokens)
+
 * [Next Step](#next-step) 
 
 Also refer to the [OpenStack API documentation](http://docs.openstack.org). 
@@ -43,22 +51,28 @@ Also refer to the [OpenStack API documentation](http://docs.openstack.org).
 
 This topic assumes that you have already:
 
-* Installed and set up HP Cloud OS, following the instructions in the HP Cloud OS Installation Guide. 
+* Installed and set up HP Cloud OS, following the instructions in [Install &amp; Configure Your Clouds](/cloudos/install/).
+
 * Used the HP Cloud OS Operational Dashboard to define the OS image and related components for your cloud.
-* Launched an OS image on your cloud instance.* Created a project.
 
-If you have not yet set up a cloud, refer to the HP Cloud OS Installation Guide for instructions.
+* Launched an OS image on your cloud instance.
 
-Note: After a cloud environment has been created in the Operational Dashboard, you manage the cloud through the Administration Dashboard. The Administration Dashboard provides a simplified means of creating and managing Cloud Connector resources, infrastructure topology templates, resource             
-binding documents, as well as the ability to provision a composite topology described by the             
-topology templates and binding documents.
+* Created a project.
+
+If you have not yet set up a cloud, refer to [Install &amp; Configure Your Clouds](/cloudos/install/) for instructions.
+
+Note: After a cloud environment has been created in the Operational Dashboard, you manage the cloud through the 
+Administration Dashboard. The Administration Dashboard provides a simplified means of creating and managing Cloud 
+Connector resources, infrastructure topology templates, resource binding documents, as well as the ability to 
+provision a composite topology described by the topology templates and binding documents.
             
 For details about the user interface dialogs, click Help from the top banner of the dashboards. Or see these web-hosted URLs:
 
 * [HP Cloud OS Operational Dashboard Help](/cloudos/operational-dashboard/) 
+
 * [HP Cloud OS Administration Dashboard Help](/cloudos/administration-dashboard)
          
-To submit REST API calls, you will need your OpenStack Keystone authentication credentials so you can generate security tokens. 
+To submit REST API calls, you will need your OpenStack Keystone V3 authentication credentials so you can generate security tokens. 
 The steps are described in the [API Security Tokens](#API-Security-Tokens) section of this topic.
    
 As you walk through the examples in this topic and submit REST calls, you'll need to provide the actual values that pertain to your cloud. We'll 
@@ -71,18 +85,25 @@ to prevent unintended impacts on other projects.
 
 HP Cloud OS is an open and extensible architecture that leverages the power of OpenStack technology, 
 the fastest growing open-source cloud computing platform community. HP Cloud OS is a technology platform 
-that enables the products in the HP Converged Cloud portfolio to enhance workload portability, 
-simplify installation and enhance lifecycle management across private, public and hybrid cloud environments. 
+that enables the products in the HP Cloud portfolio to enhance workload portability, 
+simplify installation and enhance lifecycle management across private, public, and hybrid cloud environments. 
 You can use the HP Cloud OS technology to help accelerate business outcomes. 
 
 The HP Cloud OS technology platform includes enhanced features, providing immediate advantages for IT sysadmins and developers:
 
-* A unified installer that packages together all the HP Cloud OS components along with the OpenStack components into a single ISO, saving you time and effort to get started.
+* A unified installer that packages together all the HP Cloud OS components along with the OpenStack components into a single ISO, 
+saving you time and effort to get started.
+
 * Additional topology services, which we'll introduce in this topic: Eve, Graffiti and Focus.
+
 * Pre-configured, optimized 'flavors' to meet a variety of computing and storage scenarios and requirements.
+
 * Three UIs to manage the operational, administrative, and advanced installation tasks that are inherent in cloud-based computing.
+
 * HP Cloud OS API Documentation, an app featuring "Try it out!" request/response actions and embedded reference documentation.
+
 * A common architecture for all HP Cloud technologies.
+
 
 <img src="media/converged_cloud_concept.png" />
 
@@ -92,14 +113,84 @@ The HP Cloud OS technology platform includes enhanced features, providing immedi
 HP Cloud OS provides the following services:
 
 * Eve - topology provisioning service
+
 * Focus - topology document repository service
-* Graffiti - resource pools registry service and disctionary service
+
+* Graffiti - resource pool registry and capability tagging service
 
 Here's a summary about the HP Cloud OS services:
 
-( table ) 
+<table style="text-align: left; vertical-align: top;">
 
-What is the HP Cloud OS API Documentation app?
+<tr style="background-color: #C8C8C8;">
+<th> Service </th>
+<th> Its Role in HP Cloud OS </th>
+<th> Good to know... </th>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Eve </td>
+<td> <nobr> Infrastructure Topology Provisioning Service</nobr> and UI. Allows you to:
+
+<ul>
+<li>Provision TOSCA-based infrastructure topology templates (composite, hybrid, and distributed). </li>
+<li>Separate template creation and resource pool binding, for simpler, reusable templates. </li>
+<li>Integrate via a plug-in model with Cloud API's (e.g., OpenStack Nova) for orchestrating provisioning. </li>
+<li>Create and configure network services such as virtual load-balancers and configuration management services. </li>
+</ul>
+</td>
+<td> <nobr>TOSCA: A standard means to describe the topology of applications</nobr> along with dependent environments, services 
+and artifacts inside a single service template. TOSCA standard enables each customer to deploy and manage topologies 
+against the capabilities offered by any cloud provider, regardless of the customer's infrastructure or service model.  
+<br /> <br />
+About "jobs" : A job is created when the user submits a desired topology to Eve and requests provisioning based on it. Eve creates the job and 
+publishes status updates for it. Once the provisioning is finished, the job is marked as completed. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Focus </td>
+<td> As the Topology Template Registry and Repository Service, Focus provides for persistent store and management of TOSCA-based templates. Allows you to:
+<ul>
+<li> Search for documents based on criteria </li>
+<li> Store new documents </li>
+<li> Retrieve a version of an existing document </li>
+<li> Update the contents and/or metadata of a document </li>
+<li> Delete a document or a specific document version </li>
+</ul>
+</td>
+<td> About resource pools: Consist of resources in a single administrative domain. As the Resource Pool Registry Service, 
+Graffiti encapsulates a collection of descriptions about available resource pools. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Graffiti </td>
+<td> Resource Pool Registry and Capability Tagging Service, providing:
+
+<ul>
+<li> A dictionary of the "capabilities" of all the resources in a cloud environment </li>
+<li> A searchable directory to find cloud resources based on their capabilities </li>
+<li> The mechanism for dynamic binding, allowing you to describe requirements rather than concrete bindings </li>
+<li> The base concepts of requirements and capabilities within TOSCA </li>
+</ul>
+
+<br /> <br /> Graffiti allows you to:
+
+<ul>
+<li> Publish a Common Capability Ontology </li>
+<li> Publish resources that are described by the Common Capability Ontology </li>
+<li> Select resource pools </li>
+<li> Search the Directory to find resource(s) based on required common capabilities </li>
+<li> Provision a topology binding </li>
+<li> Verify that the provisioning was successful in the cloud </li>
+</ul>
+</td>
+<td> About resource pools: Consist of resources in a single administrative domain. As the Resource Pool Registry Service, 
+Graffiti encapsulates a collection of descriptions about available resource pools. </td>
+</tr>
+
+</table>
+
+## What is the HP Cloud OS API Documentation app?
 
 The HP Cloud OS API Documentation app is a tool for describing, producing, and visualizing RESTful web services. 
 The goal is to enable client and documentation systems to update at the same pace as the server. 
@@ -107,65 +198,64 @@ The documentation of methods, parameters, and models are tightly integrated into
 
 The app is defined in JSON files and is presented in a web interface. Here's an example of the app for the HP Cloud OS Focus service.
 
-( image ) 
+<img src="media/cloudos-rest-doc-focus-example1.png" />
 
 The app provides developers who are learning a new REST API quick and easy access to:
 
 * Each call's URI syntax
+
 * Whether there are any required or optional query parameters
+
 * The data type of each parameter
+
 * The model and its schema
+
 * Interactive "Try it out!" dialogs that let you submit calls to your server, see the results, and figure out how you need to construct your REST URIs and any payloads.
 
 For example, in the HP Cloud OS API Documentation app for Focus, having entered a known ID of a document, we can retrieve it from the 
 repository with this <code> GET /1/document_list/1672048591 </code> call, using the "Try it out!" button:
 
-( image) 
-
-cloudos-try-it-out1.png
+<img src="media/cloudos-try-it-out1.png" />
 
 After clicking "Try it out!", the app displays the response. In this case, the specified document was found:
 
-cloudos-try-it-out2.png
+<img src="media/cloudos-try-it-out2.png" />
 
 The HP Cloud OS API Documentation includes other handy features, as you'll see when we walk through the use cases.
 
 ## API Documentation Ports per Service
 
-Your HP Cloud OS instance comes installed with the HP Cloud OS API Documentation. Each service reserves a unique port number in the URL. Using a Chrome or Firefox browser, you can open the HP Cloud OS API Documentation as follows. Just replace "my_server" with the DNS hostname or IP address of your server:
+Your HP Cloud OS instance comes installed with the HP Cloud OS API Documentation. Each service reserves a unique port number in the URL. 
+Using a Google Chrome or Mozilla Firefox browser, you can open the HP Cloud OS API Documentation as follows. 
+Just replace "my_server" with the DNS hostname or IP address of your controller node:
 
-* Eve: http://my_server:21051/eve/docs/index.html
-* Focus: http://my_server:21061/docs/index.html
-* Graffiti: http://my_server:21071/docs/index.html
+* Eve: http://my_server:21051/?token=&lt;keystone-token-value>
+
+* Focus: http://my_server:21061/?token=&lt;keystone-token-value>
+
+* Graffiti: http://my_server:21071/?token=&lt;keystone-token-value>
 
 ## API Security Tokens
 
 Before you can submit REST calls to your HP Cloud OS instance, or use the interactive features of the HP Cloud OS API Documentation app, 
-you must generate a security token from Keystone, which is an OpenStack service. If you skip this step, or if you have an expired token, 
-you will receive a 401 error message in the response. Example:
+you must generate a v3 security token from Keystone, which is an OpenStack service. If you skip this step, or if you have an expired token, 
+you will receive a 401 error message in the response. 
 
-( image ) 
-
-cloudos-unauthorized-example.png
+<img src="media/cloudos-unauthorized-example.png" /> 
 
 ### Getting the Security Token from the HP Cloud OS Administration Dashboard
 
 The easiest, "non-programmatic" way to get the security token is via the HP Cloud OS Administration Dashboard. 
 If you have Admin access, login and click Settings > Cloud API / CLI. The UI displays the current security token returned from Keystone. 
-Example:
-
-( image ) 
-
-cloudos-admin-dashboard-settings-token.png  (need updated version)
 
 Copy the token's value and proceed to the next section of this topic.
 
 ### Getting the Security Token via a REST Call
 
-To generate a security token, use:
+To generate a v3 security token, use:
 
 <pre>
-&lt;keystone_server>:35357/v3.0/tokens
+POST &lt;keystone_server>:5000/v3/auth/tokens
 </pre> 
 
 In the Header, specify:
@@ -175,26 +265,42 @@ content-type = application/json
 accept = application/json
 </pre>
 
-In the POST payload, use the following JSON to get a security token. The values shown here are just examples. 
-You must provide your username, password, and tenantName. Based on the information provided, Keystone will verify the 
-roles and, if valid, return the token.
+In the POST payload, use the following JSON to get a security token. **The values shown here are just examples. 
+You must provide your user name, password, project domain name, and project role name.**  
+Based on the information provided, Keystone will verify the roles and, if valid, return the token.
 
 <pre>
 {
-  "auth":{
-    "passwordCredentials":{
-    "username":"myusername",
-    "password":"mysecretpassword"
-    },
-    "tenantName":"AdminProject"
-  }
+    "auth":{
+        "identity": {
+            "methods": ["password"],
+            "password": {
+                "user": {
+                    "domain":{
+                         "name": "Default"
+                     },
+                    "name": "admin",
+                    "password": "notmyrealpswd"
+                }
+            }
+        },
+        "scope": {
+             "project": {
+                    "domain": {
+                         "name": "Default"
+                     },
+               "name": "admin"
+              }
+        }
+    }
 }
 </pre>
 
+You can then include the returned token's value on the <code> ?/token=&lt;value> </code> query parameter with each REST call. 
+
 ## Next Step
 
-Proceed to the next API Quick Start topic, [Use Case #1: TBS](#)
-
+Proceed to the next API Quick Start topic, [Use Case 1: Define &amp; Provision a Topology](/cloudos/develop/quickstart-usecase1).
 
 <a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
  

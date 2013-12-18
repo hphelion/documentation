@@ -13,7 +13,9 @@ product: cloudos
 
 If you're new to HP Cloud OS, see these topics and the video tutorials to learn about the platform's functionality.
 
+<!--
 * [Release Notes](/cloudos/releasenotes/) - describes new features, fixed limitations, and known limitations.  Read this document first. 
+--> 
 
 * [HP Cloud OS Support Matrix for Hardware and Software](/cloudos/prepare/supportmatrix/) - provides an overview of the supported hardware and software for the HP Cloud OS Sandbox, including information for hardware and software setup.
 

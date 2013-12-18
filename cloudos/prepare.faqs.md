@@ -141,14 +141,14 @@ HP Cloud OS is already powering or compatible with several existing HP cloud sol
 * CloudSystem currently embeds OpenStack technology, offering customers greater choice in deployment options for their cloud workloads by enabling KVM resource pools.  The next generation of CloudSystem software was built on Cloud OS technology (coming in 2014).
 * Moonshot servers will be available with Cloud OS technology to simplify the provisioning and management of Moonshot servers for specific cloud workloads, such as dedicated hosting and large-scale websites.  This is currently available as a private beta.  HP Moonshot with HP Cloud OS may be available in 2014. 
 
-## Where can I request the HP Cloud OS Sandbox kit?
+## Where can I get the HP Cloud OS Sandbox kit?
 
-> To request the HP Cloud OS Sandbox kit (ISO), register for an account on the <a href="https://cloudos.hpwsportal.com" target="new"> HP Cloud OS Catalog</a> portal.
+> To get the HP Cloud OS Sandbox ISO, register for an account on the <a href="https://cloudos.hpwsportal.com" target="codn">HP Cloud OS Distribution Network</a>.  Once logged in, look for the 
+Technology Preview section, provide your information, and download the ZIP package containing the HP Cloud OS 1.20 Sandbox ISO. 
 
 ## Where can I get login credentials for the HP Cloud OS dashboards?
 
-> In the current release, the HP Cloud OS dashboards use pre-defined login credentials. These are not published in the web-hosted documentation. 
-If you have successfully registered for an account on the <a href="https://cloudos.hpwsportal.com" target="new"> HP Cloud OS Catalog</a> portal, login and see the topic about the dashboard credentials.
+> In the current release, the dashboards use pre-defined login credentials. These are not published in the web-hosted documentation. After you download the ISO from the <a href="https://cloudos.hpwsportal.com" target="new"> HP Cloud OS Distribution Network</a>, look for the readme file in the same ZIP that contains the ISO. The readme identifies the login credentials.
 
 <a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

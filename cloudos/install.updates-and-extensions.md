@@ -48,7 +48,8 @@ This topic explains how to obtain patches and other relevant functionality from 
 
 6. Before installing an install module's hot fix, such as one labeled (for example) "Keystone Token Expiration Hotfix", verify that 
 the install module you're about to update does exist for your cloud. To do this, access the HP Cloud OS Installation Dashboard. 
-In Mozilla Firefox or Google Chrome, open http://192.168.124.10:3000. <!-- The login is crowbar / crowbar. --> 
+In Mozilla Firefox or Google Chrome, open http://192.168.124.10:3000. **Note:** In the current release, the dashboards use pre-defined login credentials. These are not published in the web-hosted documentation. 
+After you download the ISO from the <a href="https://cloudos.hpwsportal.com" target="codn">HP Cloud OS Distribution Network</a>, look for the readme file in the same ZIP that contains the ISO. The readme identifies the login credentials.
 
 7. In the Installation Dashboard, open the proposal for the hot fix by clicking the **Edit** button next to the listed item.   
 
