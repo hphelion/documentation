@@ -9,7 +9,16 @@ product: cloudos
 # HP Cloud OS Documentation
 
 Welcome! HP Cloud OS is an enterprise-grade, open and extensible architecture that leverages the power of OpenStack technology, 
-the fastest growing open-source cloud community. This documentation site is for anyone interested in <nobr> HP Cloud OS. </nobr> 
+the fastest growing open-source cloud community. 
+
+<p style="border: 1px dotted #1796D3; padding: 4px 4px 4px 4px;"> <b>To get started</b>, download the HP Cloud OS Sandbox 1.20 ISO from the <nobr><a href="https://cloudos.hpwsportal.com" target="codn">HP Cloud OS Distribution Network</a>.</nobr> On the site, see the Technology Preview section and follow the links.</p>
+
+After downloading the kit, dive into these categorized topics to learn about HP Cloud OS:
+
+1. <a href="/cloudos/prepare/">Prepare</a> &mdash; Topics to help you get started: video tutorials &amp; more
+2. <a href="/cloudos/install/">Install</a> &mdash; Instructions to install &amp; configure your clouds
+3. <a href="/cloudos/manage/">Manage</a>   &mdash; Info covering utilities, troubleshooting, &amp; dashboards
+4. <a href="/cloudos/develop/">Develop</a> &mdash; Details on the REST API and reference documentation
 
 <table>
 <tr>
@@ -22,12 +31,6 @@ the fastest growing open-source cloud community. This documentation site is for 
 </tr>
 </table>
 
-We have organized the site into four logical areas:
-
-* Prepare &mdash; Topics to help you get started: video tutorials &amp; more
-* Install &mdash; Instructions to install &amp; configure your clouds
-* Manage &mdash; Info covering utilities, troubleshooting, &amp; dashboards
-* Develop &mdash; Details on the REST API and reference documentation
 
 <p style="font-size: small; text-align:right;"> <a href="/cloudos/os-3rd-party-license-agreements/" target="os3p">HP Cloud OS Open Source and Third-Party Software License Agreements &#187;</a> </p>
 

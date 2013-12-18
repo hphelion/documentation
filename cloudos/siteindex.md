@@ -19,6 +19,8 @@ PageRefresh();
 </script>
 
 
+<p style="font-size: small;"> <a href="/cloudos/">&#9664; PREV</a> | <a href="/cloudos/">&#9650; UP</a> | NEXT &#9654; </p>
+
 # HP Cloud OS Site Index
 
 #### [HP Cloud OS Home](/cloudos/)
@@ -27,7 +29,7 @@ PageRefresh();
 
 #### [Prepare: Getting Started with HP Cloud OS](/cloudos/prepare/)
 
- * [HP Cloud OS Release Notes](/cloudos/releasenotes/) 
+<!--  * [HP Cloud OS Release Notes](/cloudos/releasenotes/) -->
  * [HP Cloud OS Support Matrix for Hardware and Software](/cloudos/prepare/supportmatrix/) 
  * [Video Tutorials](/cloudos/prepare/videos/) 
  * [FAQs](/cloudos/prepare/faqs/)  
@@ -63,8 +65,9 @@ PageRefresh();
 
 #### [Develop](/cloudos/develop/)
 
- * [API Quick Start](/cloudos/api/quickstart/)
- * [Value-Added Services](/cloudos/api/services/)   
+ * [API Quick Start](/cloudos/develop/quickstart-intro/)
+ 
+<!-- * [Value-Added Services](/cloudos/api/services/)   -->
  
 #### [OpenStack Links](/cloudos/openstack/)
  
