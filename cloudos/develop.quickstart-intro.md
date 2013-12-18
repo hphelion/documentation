@@ -27,7 +27,7 @@ For developers, HP Cloud OS includes a REST API that allows you to interact prog
 
 This API Quick Start topic is designed to help you learn the API by introducing the HP Cloud OS services and walking through several use cases.  
 
-On your deployed cloud, we have also provided the HP Cloud OS API Documentation app. It's a framework for describing, producing, consuming, and 
+On your Cloud Controller node, we have provided the HP Cloud OS API Documentation app. It's a framework for describing, producing, consuming, and 
 visualizing the API. The app includes comprehensive reference API documentation and an interactive environment where you can try each 
 request and view the response from your server. 
 

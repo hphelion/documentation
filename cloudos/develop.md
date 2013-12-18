@@ -29,7 +29,7 @@ Welcome! These topics describe the HP Cloud OS REST APIs for the value-added ser
 
 HP Cloud OS features an interactive REST API environment: the HP Cloud OS API Documentation app. Learn the syntax and 
 properties by reading the well-organized reference details. Submit each request using the provided forms and immediately 
-view the server response. The app is installed on your deployed cloud. The documentation app's URLs per service are:
+view the server response. The app is installed on your Cloud Controller. The documentation app's URLs per service are:
 
 * Eve: http://my_server:21051/?token=&lt;keystone-token-value>
 
@@ -37,7 +37,7 @@ view the server response. The app is installed on your deployed cloud. The docum
 
 * Graffiti: http://my_server:21071/?token=&lt;keystone-token-value>
 
-On your cloud, replace &lt;my_server> with the your cloud controller node's IP or DNS value. 
+On your cloud, replace &lt;my_server> with the your Cloud Controller node's IP or DNS value. 
 See the next topic for the steps to generate or copy the Keystone v2 token used in REST calls.
 
 
