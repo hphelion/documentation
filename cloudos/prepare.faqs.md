@@ -143,13 +143,12 @@ HP Cloud OS is already powering or compatible with several existing HP cloud sol
 
 ## Where can I get the HP Cloud OS Sandbox kit?
 
-> To get the HP Cloud OS Sandbox ISO, register for an account on the <a href="https://cloudos.hpwsportal.com" target="new">HP Cloud OS Distribution Network</a>.  Once logged in, look for the 
+> To get the HP Cloud OS Sandbox ISO, register for an account on the <a href="https://cloudos.hpwsportal.com" target="codn">HP Cloud OS Distribution Network</a>.  Once logged in, look for the 
 Technology Preview section, provide your information, and download the ZIP package containing the HP Cloud OS 1.20 Sandbox ISO. 
 
 ## Where can I get login credentials for the HP Cloud OS dashboards?
 
-> In the current release, the HP Cloud OS dashboards use pre-defined login credentials. These are not published in the web-hosted documentation. 
-After you download the ISO from the <a href="https://cloudos.hpwsportal.com" target="new"> HP Cloud OS Distribution Network</a>, look for the readme file in the same ZIP that contains the ISO.
+> In the current release, the dashboards use pre-defined login credentials. These are not published in the web-hosted documentation. After you download the ISO from the <a href="https://cloudos.hpwsportal.com" target="new"> HP Cloud OS Distribution Network</a>, look for the readme file in the same ZIP that contains the ISO. The readme identifies the login credentials.
 
 <a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

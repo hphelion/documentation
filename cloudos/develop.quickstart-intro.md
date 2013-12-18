@@ -51,7 +51,7 @@ Also refer to the [OpenStack API documentation](http://docs.openstack.org).
 
 This topic assumes that you have already:
 
-* Installed and set up HP Cloud OS, following the instructions in [Install &amp Configure Your Clouds](/cloudos/install/).
+* Installed and set up HP Cloud OS, following the instructions in [Install &amp; Configure Your Clouds](/cloudos/install/).
 
 * Used the HP Cloud OS Operational Dashboard to define the OS image and related components for your cloud.
 
@@ -59,7 +59,7 @@ This topic assumes that you have already:
 
 * Created a project.
 
-If you have not yet set up a cloud, refer to [Install &amp Configure Your Clouds](/cloudos/install/) for instructions.
+If you have not yet set up a cloud, refer to [Install &amp; Configure Your Clouds](/cloudos/install/) for instructions.
 
 Note: After a cloud environment has been created in the Operational Dashboard, you manage the cloud through the 
 Administration Dashboard. The Administration Dashboard provides a simplified means of creating and managing Cloud 
@@ -280,7 +280,7 @@ Based on the information provided, Keystone will verify the roles and, if valid,
                          "name": "Default"
                      },
                     "name": "admin",
-                    "password": "admin_pass"
+                    "password": "notmyrealpswd"
                 }
             }
         },
