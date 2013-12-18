@@ -26,12 +26,11 @@ function PageRefresh {
 Now that the Admin Node is installed, it's time to create your cloud. 
 
 This topic explains how to set up a cloud with a Cloud Controller node (Cloud, Network, Storage, and Compute Controllers) 
-and the separate Compute node(s). 
+and the separate Compute node(s). Optional: This topic also explains how to setup a Swift Controller node (Ring-compute, Proxy,  and Dispersion) and the separate Swift Storage Node(s).
 
 As indicated in the [Installation Overview](/cloudos/install/overview#preview-of-the-installation-steps) topic, you have a choice at this point: 
 
 * You can follow the wizard-based steps presented in this topic (recommended)
-
 * Or you can perform the [Advanced Cloud Setup](/cloudos/install/advanced-cloud-setup) to apply and configure the install modules yourself.
 
 When you create a cloud using the process defined in this topic, a number of OpenStack and HP Cloud OS 
@@ -40,11 +39,7 @@ However, should you need to customize values in the install modules that are not
 this advanced section, along with [Install Modules Reference](/cloudos/install/install-modules-reference/), are provided to assist 
 you in the process of customizing and deploying the individual install modules. 
 
-## Introduction
-
-If you elected to use the wizard-based steps described in this topic (recommended), read on.
-
-You'll continue to use the HP Cloud OS Operational Dashboard to execute these steps. Follow these procedures in order.
+If you elected to use the wizard-based steps described in this topic (recommended), read on. You'll continue to use the HP Cloud OS Operational Dashboard to execute these steps. Follow these procedures in order.
 
 * [Manage Controller and Compute Nodes](#manage-controller-and-compute-nodes)
 
@@ -62,6 +57,8 @@ Before you begin, make sure:
 
 * The Network and Storage Infrastructures are set up correctly. For the post-install of the operating system, a few steps are required to configure and mount the folder on an additional storage resource.
 
+* (Optional) The Swift infrastructure is set up correctly. For the post-install of the operating system, a few steps are required to zero out the first and last megabyte of the disk.
+
 **Note:** Ensure that the boot order on all nodes is configured to boot from the network first (this only occurs once as the PXE service will not try to network boot a node again if it has already
 done so).
 
@@ -76,13 +73,13 @@ with the Administration Network). Each node will be in the Not Allocated state.
 
 As the Controller and Compute Nodes are being allocated, they progress through these different states: 
 
- * Not Allocated
- * Hardware Installed
- * Installing
- * Installed
- * Readying
- * Finalizing
- * Allocated
+* Not Allocated
+* Hardware Installed
+* Installing
+* Installed
+* Readying
+* Finalizing
+* Allocated
  
 When the nodes are ready for cloud deployment, their status ends with Allocated. 
 
@@ -166,7 +163,7 @@ In addition, you will need to login to the Swift storage nodes from the remote c
 
 ## Create Cloud
 
-You are ready to create your cloud. 
+You are now ready to create your cloud. 
 
 To create a cloud:
 
@@ -174,13 +171,11 @@ To create a cloud:
 
 2. Click Create Cloud to open the Create Cloud dialog.
 
-3. Specify a Cloud Name. This will be the Domain name that is used to initialize Keystone and will be displayed in the Administration Dashboard.
-**Note:** A cloud name must contain only letters and numbers. It cannot contain spaces or special characters.
+3. Specify a Cloud Name. This will be the Domain name that is used to initialize Keystone and will be displayed in the Administration Dashboard. **Note:** A cloud name must contain only letters and numbers. It cannot contain spaces or special characters.
 
-4. Select the Controllers tab and specify which node will have the Cloud Controller, Network Controller, and Storage Controller respective services.
-You install all these core controller services on one Cloud Controller node.
+4. Select the Controllers tab and specify which node will have the Cloud Controller, Network Controller, and Storage Controller respective services. You install all these core controller services on different nodes or on the same Cloud Controller.
 
-5. (Optional) Select the Attributes tab to specify property values required to create a Cloud.
+5. Select the Attributes tab to specify property values required to create a Cloud.
 
 * Keystone Signing &mdash; Set the Keystone Signing method based upon the authentication
 scheme: UUID or PKI.  PKI (the default setting) is a large token that contains token information such as the user ID
@@ -211,6 +206,7 @@ in the Administration Dashboard.
 When you're ready, click **Create Cloud**. The cloud will go through a series of steps to create an active cloud, showing the percent (%) completed.
 
 > **Note:** When creating a cloud or a compute region, all of the nodes involved are first checked to ensure they can be resolved on the network. This verification process can take (up to) approximately five minutes.  During this time, the progress percentage will remain at 1%. If any of the nodes fail to resolve during the verification process, the cloud or region creation will fail. 
+
 <!-- If this happens, check that you correctly entered the nodes' network settings in a prior step. 
 If that's the cause of the Create Cloud failure, you will need to start over with the Admin Node installation process.  
 --> 
@@ -221,10 +217,8 @@ When the Create Cloud step is complete, the cloud's state displays Active. You c
 one or more compute regions. This is the last step in the process of creating a cloud.
 When the compute region is created, you have created an active cloud.
 
-The simplest cloud has one compute region with one Compute Controller that manages all the
-compute nodes. After creating an active cloud, you can go back and add more regions as your cloud
-environment expands. Or, you can plan to include several compute regions in your cloud depending
-on your environment.
+The simplest cloud has one compute region with one Compute Controller that manages all the compute nodes. After creating an active cloud, you can go back and add more compute regions as your cloud
+environment expands. Or, you can plan to include several compute regions in your cloud depending on your environment.
 
 There are multiple use cases where you would prefer to have separate compute regions, such as:
 
@@ -235,24 +229,21 @@ dedicated endpoints with a full Nova installation including its own message queu
 
 To create a compute region:
 
-1. In the Operational Dashboard, select the Cloud tab, then Manage Clouds.
+1. In the Operational Dashboard, select the Cloud tab > Manage Clouds.
 
-2. For the cloud just created, click Create Compute Region to open the Create Compute
-Region dialog.
+2. For the cloud just created, click **Create Compute Region** to open the Create Compute Region dialog.
 
-3. Specify a Region Name. This will be the Region name that is used to initialize Keystone and will be displayed on the Administration Dashboard.
+3. Specify a Region Name. This will be the Region name that is used to initialize Keystone and will be displayed on the Administration Dashboard. A region name must contain only letters and numbers. It cannot contain spaces or special characters.
 
-4. From the Compute Controller drop down list, select the node that will have the Compute Controller services. The Compute Controller service can reside on the same Cloud Controller.
+4. From the Compute Controller drop down list, select the node that will have the Compute Controller services. The Compute Controller service can reside on a different node (recommended) or on the same Cloud Controller.
 
 5. Specify which nodes will have the Compute Nodes service. Select the Compute Node(s) in one of the following ways:
 
  * Choose a number from the drop-down list to auto-select check boxes for you.
  * Individually select the check boxes of the node(s) you want.
  
-> **Note:** You can have a single node act as both the Compute Controller and Compute
-Node. If you choose this configuration, make sure the underlying node has enough
-CPU, Memory and Storage capacity to be able to run all the controller services as well
-as act as the virtualization host.
+> **Note:** You can have a single node act as both the Compute Controller and Compute Node. If you choose this configuration, make sure the underlying node has enough
+CPU, Memory and Storage capacity to be able to run all the controller services as well as act as the virtualization host.
 
 At this point, you can use the Attributes tab to specify property values required to create a Compute
 Region. For the Hypervisor attribute, use `kvm` (the default) if the compute nodes are baremetal
@@ -267,21 +258,26 @@ Once the Create Compute Region step is complete, the name supplied for the regio
 displayed and the cloud's Status will be Active. This indicates that the cloud and compute region
 have been successfully created.
 
-You can now add additional compute regions using steps in the prior list. The added compute regions
-appear on the Manage Clouds page as a comma-separated list.
+You can now add additional compute regions using steps in the prior list. The added compute regions appear on the Manage Clouds page as a comma-separated list.
 
-To see all the cloud and compute region(s) values you configured, click the cloud name to open the
-Manage Clouds Detail page.
+To see all the cloud and compute region(s) values you configured, click the cloud name to open the Manage Clouds Detail page.
 
 * The created cloud details show the timestamp of the cloud creation, the nodes specified for the Cloud Controller, Network Controller, and Storage Controller.
 
 * Each compute region is a tab with the region's name. Each region's tab shows the timestamp of that compute region creation, the nodes specified for the Compute Controller and Compute
 Nodes, and the Hypervisor.
 
-## Next Step
+## Next Steps
 
-After successfully creating a cloud and compute region(s), you can manage your cloud environment by launching the HP Cloud OS Administration Dashboard.  To get there, click More > Launch Dashboard for the cloud you
-created.  For more, see [Launch the Administration Dashboard](/cloudos/install/launch-admin-dashboard/).
+After you complete the compute region steps, and prior to launching the Administration Dashboard, you can install Swift (optional - if used). 
+This statement assumes you have already zeroed out the disks, as described in the [Object Storage](#object-storage) section of this topic. 
+
+For information about applying install modules, including Swift, see two topics: 
+
+* [Advanced Cloud Setup](/cloudos/install/advanced-cloud-setup/)
+* [Install Modules Reference](/cloudos/install/install-modules-reference)
+
+When you're ready, manage your cloud environment by launching the HP Cloud OS Administration Dashboard.  To get there, click More > Launch Dashboard for the cloud you created.  For more, see [Launch the Administration Dashboard](/cloudos/install/launch-admin-dashboard/).
 
 <a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
