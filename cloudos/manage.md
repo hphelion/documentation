@@ -19,9 +19,7 @@ Refer to these documentation resources:
 
 * [HP Cloud OS Troubleshooting](/cloudos/manage/troubleshooting/) &mdash; Presents a set of topics that help you troubleshoot issues you may encounter with HP Cloud OS.
 
-* [HP Cloud OS Operational Dashboard Help](http://docs.hpcloud.com/cloudos/operational-dashboard/index.htm) &mdash; This document is a copy of the Help that's available in the HP Cloud OS Operational Dashboard.  
+* <a href="http://docs.hpcloud.com/cloudos/operational-dashboard/index.htm" target="opdash">HP Cloud OS Operational Dashboard Help (website copy)</a> &mdash; This document is a copy of the Help that's available in the HP Cloud OS Operational Dashboard.  
 
-* [HP Cloud OS Administration Dashboard Help](http://docs.hpcloud.com/cloudos/administration-dashboard/index.htm) This document is a copy of the Help that's available in the HP Cloud OS Administration Dashboard. 
-
-
+* <a href="http://docs.hpcloud.com/cloudos/administration-dashboard/index.htm" target="admindash">HP Cloud OS Administration Dashboard Help (website copy)</a> &mdash; This document is a copy of the Help that's available in the HP Cloud OS Administration Dashboard. 
  
