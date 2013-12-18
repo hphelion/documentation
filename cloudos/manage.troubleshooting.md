@@ -650,7 +650,7 @@ Check if all services are running fine in the controller node, first declare all
 
 <tr style="background-color: white; color: black;">
 <td> Primary software component </td>
-<td> Admi Node </td>
+<td> Admin Node </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -711,32 +711,34 @@ pkg-reconfigure tzdata.
 
 ### Problem: Compute node fails to install OS (kernel error)
 
-
-
-
 <table style="text-align: left; vertical-align: top; width:700px;">
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>
-<td>    </td>
+<td> After reboot the controller node, some of the services are not started, this mean they are stopped when shouldn't be. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Primary software component </td>
-<td>   </td>
+<td> Admin Node </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Failure message </td>
-<td>    </td>
+<td> N/A  </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Probable cause </td>
-<td>   </td>
+<td> Server configuration (hardware) not supported by the OS.  </td>
 </tr>
 
 </table>
+
+#### Solution 
+
+Will be necessary to check why the problem is happening; normally will be related with the hardware used. The easy way is to search in the Internet why the specific error happened and try again.
+
 
 
 
@@ -748,87 +750,109 @@ pkg-reconfigure tzdata.
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>
-<td>    </td>
+<td> Creating an image using the remote location option, pointing to an external server not working. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Primary software component </td>
-<td>   </td>
+<td> Operational Dashboard  </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Failure message </td>
-<td>    </td>
+<td> Connection was reset </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Probable cause </td>
-<td>   </td>
+<td> Connectivity problem between the server with the image and the controller node. </td>
 </tr>
 
 </table>
 
+#### Solution 
+
+Check if the controller node can access the image server, for that SSH to the server and execute this command:
+
+<pre>
+curl -O http://server.ip/image.file
+</pre>
+
+If the curl didn't worked this mean the server can't access the image, probably a proxy issue or no connectivity. Fix that and try again.
 
 
 ### Problem: Problem creating image using image file
-
-
 
 <table style="text-align: left; vertical-align: top; width:700px;">
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>
-<td>    </td>
+<td> Creating an image using the image file option, pointing to a file that is located in your local system not working. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Primary software component </td>
-<td>   </td>
+<td> Operational Dashboard </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Failure message </td>
-<td>    </td>
+<td> Connection was reset </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Probable cause </td>
-<td>   </td>
+<td> The image is bigger than the supported for this specific operation. </td>
 </tr>
 
 </table>
+
+#### Solution
+
+Images bigger than 1.5 GB cannot be uploaded using the Image File option (image located in the user's computer). 
+The solution for this problem is to:
+
+1. Win SCP to the Admin Node.
+2. Upload the image to /tmp/.
+3. Change the permission of the file to 777 (chmod 777 /tmp/&amp;image.name>).
+4. Move the file to the folder <code>tftpboot</code>.
+5. Create the image pointing to this URL (http://&amp;admin.node.ip>:8091/&amp;image.name>).
 
 
 
 ### Problem: Unable to launch more instances
 
-
-
-
 <table style="text-align: left; vertical-align: top; width:700px;">
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>
-<td>    </td>
+<td> Launch new instances stopped to work after some instances was created without any problem. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Primary software component </td>
-<td>   </td>
+<td> Operational Dashboard </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Failure message </td>
-<td>    </td>
+<td> Quota exceeded for instances: Requested 1, but already used 1 of 1 instances", "code": 413  </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Probable cause </td>
-<td>   </td>
+<td> The limit of instances for the specific project was reached. </td>
 </tr>
 
 </table>
 
+#### Solution 
+
+To change the project limits,  access the dashboard's Domain > Projects > Select a Project > Properties > Limits tab; update the necessary values. For network and storage quota, you need to change it through command line options, such as:
+
+<pre>
+cinder quota-update; quantum -quota-update
+</pre>
 
 
 ### Problem: Default route disappears from controller node
@@ -839,159 +863,178 @@ pkg-reconfigure tzdata.
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>
-<td>    </td>
+<td> The default route disappears from the controller node after reboot. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Primary software component </td>
-<td>   </td>
+<td> Operational Dashboard  </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Failure message </td>
-<td>    </td>
+<td> N/A </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Probable cause </td>
-<td>   </td>
+<td> This behavior is by design. </td>
 </tr>
 
 </table>
 
+#### Solution 
+
+Nothing needs to be done. The default route should be re-added automatically after 20 minutes or less after the reboot of the node. Also is possible to manually start the process connecting to the controller node and executing the command <code>chef-client</code>.
 
 
 ### Problem: Not possible to log in the dashboard (license has expired)
-
-
 
 <table style="text-align: left; vertical-align: top; width:700px;">
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>
-<td>    </td>
+<td> Trying to open/log in any of the dashboards will be blocked.   </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Primary software component </td>
-<td>   </td>
+<td> Admin Node  </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Failure message </td>
-<td>    </td>
+<td>  The HP Cloud OS license has expired  </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Probable cause </td>
-<td>   </td>
+<td>  The license being used expired. </td>
 </tr>
 
 </table>
+
+#### Solution 
+
+This means your license expired; to solve the problem, contact HP Support to renew your license, then add the new license in the 
+Admin Node (Settings > License).
 
 
 
 ### Problem: Create Cloud failed
 
-
-
-
 <table style="text-align: left; vertical-align: top; width:700px;">
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>
-<td>    </td>
+<td>  The operation to create cloud failed without any useful information to find what happened.  </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Primary software component </td>
-<td>   </td>
+<td> Admin Node </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Failure message </td>
-<td>    </td>
+<td> N/A </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Probable cause </td>
-<td>   </td>
+<td> Check the logs for indications of a possible cause.  </td>
 </tr>
 
 </table>
+
+#### Solution
+ 
+Check the logs below for more information, the logs may help to point what was the cause of the error.
+
+<pre>
+/opt/dell/crowbar_framework/log/production.log
+/opt/dell/crowbar_framework/log/* (for more information)
+/var/log/barclamps/*
+</pre>
 
 
 
 ### Problem: Find why Launch Topology Fails
 
-
-
 <table style="text-align: left; vertical-align: top; width:700px;">
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>
-<td>    </td>
+<td> The operation to create cloud failed without any useful information to find what happened. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Primary software component </td>
-<td>   </td>
+<td> Admin Node </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Failure message </td>
-<td>    </td>
+<td> N/A  </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Probable cause </td>
-<td>   </td>
+<td> Check the logs for indications of a possible cause. </td>
 </tr>
 
 </table>
 
+####Solution 
+
+Click in the topology that failed to see the details of the error, if the message doesn't explain why the provisioning fail check the 
+Cloud OS logs in the controller node located at:
+
+<pre>
+/var/log/eve-requestworker/eve-requestworker.log
+/var/log/eve-api/eve-api.log
+</pre>
 
 
 ### Problem: Unauthorized exceptions when navigating in the dashboard
 
-
-
-
 <table style="text-align: left; vertical-align: top; width:700px;">
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>
-<td>    </td>
+<td> When user navigating in the dashboard a Unauthorized error message may appear in the top of the browser and no items will be rendered in the user interface. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Primary software component </td>
-<td>   </td>
+<td> Operational Dashboard  </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Failure message </td>
-<td>    </td>
+<td> Unauthorized (HTTP 401) </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Probable cause </td>
-<td>   </td>
+<td> Session expired but the user didn't logout from the dashboard. </td>
 </tr>
 
 </table>
+
+#### Solution
+
+Navigate to another item in the menu of the dashboard; if the problem persist, just logout and re-login to the dashboard.
 
 
 
 ### Problem: Location of the log files
 
-
-
 <table style="text-align: left; vertical-align: top; width:700px;">
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>
-<td>    </td>
+<td> Sometimes will be necessary to check the logs or collect the logs for further investigation and the logs are not all in the same place. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -1006,16 +1049,54 @@ pkg-reconfigure tzdata.
 
 <tr style="background-color: white; color: black;">
 <td> Probable cause </td>
-<td>   </td>
+<td> Sometimes only with the logs will be possible to figure out what is the problem or what happened. </td>
 </tr>
 
 </table>
 
+#### Solution
+
+* Admin Node Logs:
+
+<pre>
+  /var/log/cosmos/cosmos.log
+  /var/log/apache2/error.log
+</pre>
+
+* Deploy Cloud Logs:
+
+<pre>
+  /var/log/install*.log
+  /var/log/install*.err
+</pre>
+
+* Controller Node Logs:
+
+<pre>
+  /var/log/cosmos/cosmos.log
+  /var/log/apache2/error.log
+</pre>
+
+* Deploying Admin Node:
+
+<pre>
+  /opt/dell/crowbar_framework/log/production.log
+  /opt/dell/crowbar_framework/log/* (for more informations)
+  /var/log/barclamps/*
+</pre>
+
+* Launch Topology Logs:
+
+<pre>
+  /var/log/eve-api/eve-api.log
+  /var/log/eve-requestworker/eve-requestworker.log
+  /var/log/focus-api/focus-api.log
+  /var/log/graffiti-api/graffiti.log
+</pre>
+
 
 
 ### Problem: Launch topology fails and Instance is created but with Error status
-
-
 
 <table style="text-align: left; vertical-align: top; width:700px;">
 

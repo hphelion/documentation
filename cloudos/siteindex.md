@@ -25,6 +25,8 @@ PageRefresh();
 
 #### [HP Cloud OS Home](/cloudos/)
 
+#### [Connect on the HP Cloud Community Forum](/cloudos/community/)
+
 #### [HP Cloud OS Open Source and Third-Party Software License Agreements](/cloudos/os-3rd-party-license-agreements/)
 
 #### [Prepare: Getting Started with HP Cloud OS](/cloudos/prepare/)
