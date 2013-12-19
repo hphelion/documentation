@@ -31,6 +31,7 @@ PageRefresh();
 
 #### [Prepare: Getting Started with HP Cloud OS](/cloudos/prepare/)
 
+* [HP Cloud OS Release Notes](/cloudos/prepare/releasenotes/) 
 * [HP Cloud OS Support Matrix for Hardware and Software](/cloudos/prepare/supportmatrix/) 
 * [Video Tutorials](/cloudos/prepare/videos/) 
 * [FAQs](/cloudos/prepare/faqs/)  
