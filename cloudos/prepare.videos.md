@@ -49,7 +49,7 @@ Monty Taylor, Distinguished Technologist and OpenStack Guru, talks about the Ope
 
 ### HP Converged Cloud brings OpenStack to the Enterprise
 
-<iframe style="border: 1px solid gray;" width="400" height="225" src="//www.youtube.com/embed/HrhFmRgKYEA?rel=0" frameborder="0" allowfullscreen> </iframe>
+<iframe style="border: 1px solid gray;" width="400" height="225" src="//www.youtube.com/embed/m28Xvif8uwI" frameborder="0" allowfullscreen> </iframe>
 
 HP Converged Cloud delivers choice, confidence, and consistency. Learn how HP Cloud OS, as part of the HP Converged Cloud portfolio, leverages OpenStack to enable workload portability, simplified installation, and enhanced service lifecycle management.
 
