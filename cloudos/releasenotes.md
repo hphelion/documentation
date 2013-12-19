@@ -19,6 +19,10 @@ PageRefresh();
 </script>
 
 
+<p style="font-size: small;"> <a href="/cloudos/prepare">&#9664; PREV | <a href="/cloudos/prepare">&#9650; UP</a> | <a href="/cloudos/prepare/supportmatrix/">NEXT &#9654;</a> </p>
+
+
+
 # HP Cloud OS Release Notes
 
 Content will be posted on http://docs.hpcloud.com/cloudos/releasenotes/.  
