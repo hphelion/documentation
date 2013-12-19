@@ -27,7 +27,23 @@ After 6 months, access to online resources will be available through GitHub, and
 
 _________________________________________
 
-The Unix Command Line Interface tool allows Unix or Mac users to manage their HP Public Cloud from the command line or automated through scripts.  There is no need to understand the underlying REST API or XML document format to use the Unix CLI.
+The Unix Command Line Interface is a tool which allows Unix or Mac users to manage their HP Public Cloud from the command line or automated through scripts.  There is no need to understand the underlying REST API or XML document format to use the Unix CLI.  There are two versions of the Unix CLI: the 2.0 version for Cloud 1.1 and the 1.9 version for Cloud 1.0.
+
+Cloud 1.1 (Unix CLI 2.0) Documenation:
+
+* [Installation](/cli/unix/2/install)
+* [Account Configuration](/cli/unix/2/configuration)
+* [Advanced Account Management](/cli/unix/2/account-management)
+* [Compute Examples](/cli/unix/2/compute)
+* [Object Storage Examples](/cli/unix/2/object-storage)
+* [CDN Examples](/cli/unix/2/cdn)
+* [Block Storage Examples](/cli/unix/2/block-storage)
+* [Volume Management](/block-storage/volume)
+* [DNS Examples](/cli/unix/2/dns)
+* [CLI Reference](/cli/unix/2/reference)
+* [Release Notes](/cli/unix/release-notes)
+
+Cloud 1.0 (Unix CLI 1.9) Documenation:
 
 * [Installation](/cli/unix/install)
 * [Account Configuration](/cli/unix/configuration)
@@ -40,7 +56,6 @@ The Unix Command Line Interface tool allows Unix or Mac users to manage their HP
 * [DNS Examples](/cli/unix/dns)
 * [CLI Reference](/cli/unix/reference)
 * [Release Notes](/cli/unix/release-notes)
-* [FAQ](/faq#UnixCLI)
 
 For some release-by-release information, take a look at [the UNIX CLI release notes](/cli/unix/release-notes)!
 
