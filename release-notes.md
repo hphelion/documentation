@@ -8,15 +8,14 @@ permalink: /release-notes/
 
 This page contains the following information on our software package:
 
-* [Release information for version 13.5](#v135Info)
-* [New features in version 13.5](#v135features)
+* [New and updated in version 13.5](#v135features)
 * [Recommendations](#Recommendations)
 * [For further information](#SeeAlso)
 
 <!--Moving forward, there will be more bulleted items for each release-->
 
 
-##New and Updated in version 13.5## {#v135features}
+##New and updated in version 13.5## {#v135features}
 
 **New look and feel for the Management Console** - Based on the [OpenStack Horizon project](http://docs.openstack.org/developer/horizon/), the new HP Public Cloud Console interface and user experience is significantly improved from the original classic management console.  This new user interface provides you with project dashboards that display group-related services for easier availability and service management.  Documentation is  provided in-line and embedded throughout the console on many forms, reducing your clicks and improving your console experience. Although workflows may look different, you can still manage your standard functions through the console, including initializing instances, creating volumes, launching images and snapshots, and creating security groups and key pairs.  See [Getting Started with HP Public Cloud Console](/hpcloudconsole) for more information.
 
