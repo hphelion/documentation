@@ -77,6 +77,24 @@ navigation:
     url: /cli/unix/dns/
   - text: CLI Reference
     url: /cli/unix/reference/
+  - text: Installation 2.0
+    url: /cli/unix/2/install/
+  - text: Account Configuration 2.0
+    url: /cli/unix/2/configuration/
+  - text: Advanced Account Management 2.0
+    url: /cli/unix/2/account-management/
+  - text: Compute Examples 2.0
+    url: /cli/unix/2/compute/
+  - text: Object Storage Examples 2.0
+    url: /cli/unix/2/object-storage/
+  - text: CDN Examples 2.0
+    url: /cli/unix/2/cdn/
+  - text: Block Storage Examples 2.0
+    url: /cli/unix/2/block-storage/
+  - text: DNS Examples 2.0
+    url: /cli/unix/2/dns/
+  - text: CLI Reference 2.0
+    url: /cli/unix/2/reference/
   - text: Release Notes
     url: /cli/unix/release-notes/
   win-cli:
