@@ -133,7 +133,7 @@ you can ensure the deletion of the volume with the following process:
 * When you use Eve to provision a new subnet, in some cases the IP address space may overlap with an existing network, which can create an IP conflict with other machines on the existing network.  If you encounter this issue, you can create the subnet manually using the HP Cloud OS Administration Dashboard. Specify the exact IP range and reference the range in the topology binding.
 * Under some networking conditions, Web proxy server connection problems can cause a provision or de-provision issue. To resolve this issue, execute your provision or de-provision task again.
 * In this HP Cloud OS Sandbox release, job progress status reporting has not yet been implemented.
-* When you use shared networks across a project, you may see the error message:<br /><nobr>`[com.hp.iaasc.eve.networksegment.openstack.NetworkSegmentServiceOpenStackQuantum:createPort:112]`</nobr><br /><nobr>`{"statusCode": 403, "message": "Tenant is forbidden to create port on the subnet(s): PrivSub ", "details": ""}`</nobr><br />`{"statusCode": 403, "message": "Tenant is forbidden to create port on the subnet(s): PrivSub ", "details": ""} at`.<br /> Currently, Quantum prevents users from creating ports on the shared <nobr> private network. </nobr> 
+* When you use shared networks across a project, you may see the error message:<br /><nobr>`[com.hp.iaasc.eve.networksegment.openstack.NetworkSegmentServiceOpenStackQuantum:createPort:112]`</nobr><br /><nobr>`{"statusCode": 403, "message": "Tenant is forbidden to create port on the subnet(s): PrivSub ", "details": ""}`</nobr><br />`{"statusCode": 403, "message": "Tenant is forbidden to create port on the subnet(s): PrivSub ", "details": ""} at`.<br /> <nobr>Currently, Quantum prevents users from creating ports on the shared private network.</nobr> 
 * When you are running on a virtual machine hosted on a KVM hypervisor, you may see the message: `No root file system, no root file system is defined`.  Verify that the virtual disk format is either IDE or SCSI before booting the VM with the HP Cloud OS Sandbox ISO media.
 * If a volume group provisioning tasks fails and does not delete the created volume group, use the Terminate Topology or Delete Topology actions in the HP Cloud OS Administration Dashboard to remove the dangling provisioned resources.
 * If there are more than eight concurrent topology provisioning requests submitted to HP Cloud OS at exactly the same time, you may see the error: `Cannot get a connection, pool error`.  To get the requests successfully submitted, follow this process:
@@ -171,20 +171,19 @@ The following two sections identify the known and resolved OpenStack community i
 
 ####Known OpenStack Issues####
 
-* Sometimes provision does not attach a volume for a Cirros image. It may take a long time to fail.
-* The Keystone table grows unconditionally. By design, Keystone is not meant to flush the expired tokens on its own. In the Havana release, OpenStack provides an API to flush tokens during a scheduled job.
-* The Nova list response time is badly impacted by the number of active VM instances. Unfortunately, the transition from Project to Region to Cloud or other buttons always executes this command through nova-api and keeps waiting.
-* Volume creation fails randomly:  `Failed to create iscsi target for volume id:volume-<UUID>`.  Please ensure that your tgtd config file contains `include /var/lib/cinder/volumes/*`.
-* Volume creation or deletion fails randomly with the message `Exception during message handling`.
-* 60% of the launched instances fail to reach the metadata server due to high latency in its response time. The failure to reach the metadata server makes the launched instance unusable, because it cannot inject any key and does not perform the remaining operations related to security group block devices. 
-* Quantum requests too many tokens. Even when idle, a system can continue requesting tokens every second. This results in slower performance for Keystone's authentication and authorization process.
+* Sometimes provision does not attach a volume for a Cirros image. It may take a long time to fail. Community issue [1099611](https://bugs.launchpad.net/cirros/+bug/1099611).
+* The Keystone table grows unconditionally. By design, Keystone is not meant to flush the expired tokens on its own. In the Havana release, OpenStack provides an API to flush tokens during a scheduled job. Community issue [1032633](https://bugs.launchpad.net/ubuntu/+source/keystone/+bug/1032633).
+* The Nova list response time is badly impacted by the number of active VM instances. Unfortunately, the transition from Project to Region to Cloud or other buttons always executes this command through nova-api and keeps waiting. Community issues [1160487](https://bugs.launchpad.net/nova/+bug/1160487) and [1176446](https://bugs.launchpad.net/nova/+bug/1176446).
+* Volume creation fails randomly:  `Failed to create iscsi target for volume id:volume-<UUID>`.  Please ensure that your tgtd config file contains `include /var/lib/cinder/volumes/*`. Community issue [1191429](https://bugs.launchpad.net/bugs/1191429).
+* Volume creation or deletion fails randomly with the message `Exception during message handling`. Community issue [1191431](https://bugs.launchpad.net/bugs/1191431).
+* 60% of the launched instances fail to reach the metadata server due to high latency in its response time. The failure to reach the metadata server makes the launched instance unusable, because it cannot inject any key and does not perform the remaining operations related to security group block devices. Community issue [851159](https://bugs.launchpad.net/nova/+bug/851159). 
+* Quantum requests too many tokens. Even when idle, a system can continue requesting tokens every second. This results in slower performance for Keystone's authentication and authorization process. Community issue [1191159](https://bugs.launchpad.net/quantum/+bug/1191159).
 * Volume creation can fail with message details indicating `overLimit` or `The body of your request was too large for this server`. The likely cause is that the volume could not be created because there was not enough space in the volume group to fulfill the request. As an additional confirmation, check the Cinder-API log file for the following message: `Requested volume or snapshot exceeds allowed Gigabytes quota`.
 * Provisioning can fail with the `internal error` message detail. The likely cause is out-of-disk space or memory issues.
 
-
 ####Resolved OpenStack Issues####
 
-* When you provision from the HP Cloud OS Administration Dashboard and the space available is inadequate to create the volume, the dashboard still shows volume creations as successful – although it has failed in the background. (Community issue# [1188039](https://bugs.launchpad.net/cinder/+bug/1188039).)
+* When you provision from the HP Cloud OS Administration Dashboard and the space available is inadequate to create the volume, the dashboard still shows volume creations as successful – although it has failed in the background. Community issue [1188039](https://bugs.launchpad.net/cinder/+bug/1188039).
 * A security group is used to grant accessibility to an instance, such as ping (ICMP) and SSH (TCP), by enabling the associated ports. The default security group provided for each project is pre-filled with two rules that are incorrectly specified.  Remove the provided rules. Add new rules as appropriate.
 
 ##For Further Information## {#for-further-information}
