@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Manage your Clouds"
+title: "Manage your Cloud"
 permalink: /cloudos/manage/
 product: cloudos
 
@@ -9,9 +9,9 @@ product: cloudos
 
 <p style="font-size: small;"> &#9664; PREV</a> | <a href="/cloudos/">&#9650; UP</a> | <a href="/cloudos/manage/utilities/">NEXT &#9654;</a> </p>
 
-# Manage your Clouds
+# Manage your Cloud
 
-Welcome! To manage your clouds, use the HP Cloud OS dashboards, which are based on OpenStack Horizon and provide enhanced features.
+Welcome! To manage your cloud, use the HP Cloud OS dashboards, which are based on OpenStack Horizon and provide enhanced features.
 
 Refer to these documentation resources:
 

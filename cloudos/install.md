@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Install &amp; Configure Your Clouds"
+title: "Install &amp; Configure Your Cloud"
 permalink: /cloudos/install/
 product: cloudos
 
@@ -20,9 +20,9 @@ function PageRefresh {
 
 <p style="font-size: small;"> &#9664; PREV | <a href="/cloudos/">&#9650; UP</a> | <a href="/cloudos/install/overview/">NEXT &#9654;</a> </p>
 
-# Install &amp; Configure Your Clouds
+# Install &amp; Configure Your Cloud
 
-Welcome! The following topics explain how to install &amp; configure your clouds with the HP Cloud OS platform. 
+Welcome! The following topics explain how to install &amp; configure your cloud with the HP Cloud OS platform. 
 
 It's important to read the topics and perform the described steps in order. While some steps are optional, the sequence that you'll follow in 
 the HP Cloud OS Operational Dashboard user interface is significant, to ensure a proper deployment of your cloud. 

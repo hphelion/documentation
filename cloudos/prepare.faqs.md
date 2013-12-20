@@ -52,7 +52,7 @@ provide the customer with choice, confidence and consistency.
 ## How does HP help solve the challenges faced by enterprises?
 
 > The HP Cloud offerings provide enterprises with the essential foundation of technologies and services to 
-confidently build, operate, and consume IT across private, managed, and public clouds, based on a core set of principles. 
+confidently build, operate, and consume IT across private, hybrid, and public clouds, based on a core set of principles. 
 HP delivers customers the industry's only hybrid cloud strategy and solution portfolio with:  
 
 * Choice
@@ -67,7 +67,7 @@ HP delivers customers the industry's only hybrid cloud strategy and solution por
   * In the ability to manage and secure across delivery models, and provide the scalability enterprises need to drive business forward
 
 * Consistency 
-  * Provide a common architecture across traditional IT and private, managed, and public clouds
+  * Provide a common architecture across traditional IT and private, hybrid, and public clouds
   * Allow you to create and consume portable cloud services through a unified, consistent experience across all deployment models
   
 ## What is HP Cloud OS?

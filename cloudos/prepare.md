@@ -7,15 +7,13 @@ product: cloudos
 ---
 
 
-<p style="font-size: small;"> &#9664; PREV | <a href="/cloudos/">&#9650; UP</a> | <a href="/cloudos/prepare/supportmatrix/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> &#9664; PREV | <a href="/cloudos/">&#9650; UP</a> | <a href="/cloudos/prepare/releasenotes/">NEXT &#9654;</a> </p>
 
 # Prepare: Get Started with HP Cloud OS
 
 If you're new to HP Cloud OS, see these topics and the video tutorials to learn about the platform's functionality.
 
-<!--
-* [Release Notes](/cloudos/releasenotes/) - describes new features, fixed limitations, and known limitations.  Read this document first. 
---> 
+* [Release Notes](/cloudos/prepare/releasenotes/) - describes new features and recommendations.  Read this document first. 
 
 * [HP Cloud OS Support Matrix for Hardware and Software](/cloudos/prepare/supportmatrix/) - provides an overview of the supported hardware and software for the HP Cloud OS Sandbox, including information for hardware and software setup.
 
