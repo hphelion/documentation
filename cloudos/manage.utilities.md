@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Cloud OS - Cloud Utilities"
+title: "HP Cloud OS Utilities"
 permalink: /cloudos/manage/utilities/
 product: cloudos
 
@@ -21,10 +21,9 @@ PageRefresh();
 
 <p style="font-size: small;"> <a href="/cloudos/manage/">&#9664; PREV</a> | <a href="/cloudos/manage/">&#9650; UP</a> | <a href="/cloudos/manage/troubleshooting/">NEXT &#9654;</a> </p>
 
-# HP Cloud OS - Cloud Utilities
+# HP Cloud OS Utilities
 
-Only a single utility is available for the current HP Cloud OS release, the Clean-up Utility. 
-Additional utilities may be added in future releases and described in this topic.
+The current release features the HP Cloud OS Clean-up Utility. Additional utilities may be added in future releases and described in this topic.
 
 ## HP Cloud OS Clean-up Utility
  

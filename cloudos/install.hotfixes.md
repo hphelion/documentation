@@ -23,7 +23,7 @@ PageRefresh();
 
 # Install Hot Fixes
 
-This topic describes the steps to import and apply hot fixes to your deployed clouds.  In this topic, hot fixes are referred to as content packages.
+This topic describes the steps to import and apply hot fixes to your deployed cloud.  In this topic, hot fixes are referred to as content packages.
 
 If you have already downloaded a content package to your client's local filesystem, and you need to add its functionality to your cloud:
 
