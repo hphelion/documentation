@@ -40,10 +40,10 @@ If you are interested in creating a public cloud, start in the
 
 ## Cloud Environment Types
 
-Using the HP Cloud OS Operational Dashboard, the Admin Node can be set up for:
+Using the HP Cloud OS Operational Dashboard, the Admin Node can be set up for a:
 
-* Private clouds
-* Hybrid clouds
+* Private cloud
+* Hybrid cloud
 
 A private cloud is very similar in functionality to a public cloud, except the infrastructure resources for a private cloud are contained within the host company's internal network. A public cloud is deployed on external networks that are run by a cloud provider, such as <a href="http://www.hpcloud.com"> HP Cloud.</a>  A hybrid cloud is one where resources from two clouds (private, public, or both) can be shared by users of the hybrid cloud. 
 
@@ -59,7 +59,7 @@ Controllers are elastic, and can be expanded (or reduced) to many more bare-meta
 A private cloud also supports hybrid Compute Region Controllers. This means you can use Compute Region Controllers from other OpenStack-compatible clouds as if they were part of your private cloud to expand the amount of resources available to your self-service users. 
 
 If you want to install a private cloud, go to the Environment tab and follow the instructions. To complete the install, refer to  
-[Install &amp; Configure Your Clouds](/cloudos/install/).
+[Install &amp; Configure Your Cloud](/cloudos/install/).
 
 ### Hybrid Cloud
 
