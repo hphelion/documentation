@@ -108,7 +108,7 @@ This section describes the following known problems and solutions for the Cloud 
 
 ##### Solution
 
-Ensure that the virtual disk format is either IDE or SCSI before booting the VM with the HP Cloud OS ISO media.
+Before booting the VM with the HP Cloud OS ISO media, ensure that the virtual disk format is IDE or SCSI.
 
 
 
@@ -148,7 +148,6 @@ This section describes the following known problems and solutions for the Operat
 
 ### Problem: Admin Node displays the "not ready" (grey) state
 
-
 <table style="text-align: left; vertical-align: top; width:700px;">
 
 <tr style="background-color: white; color: black;">
@@ -181,8 +180,6 @@ This section describes the following known problems and solutions for the Operat
 
 See [Install &amp; Configure Your Cloud](/cloudos/install) for complete instructions. If the nodes boot to the original operating system that was set up with the earlier Admin Node, the boot process will cause irreparable damage to the Admin Node and the entire process will need to be restarted.
 
-
-
 ### Problem: Create new router fails
 
 <table style="text-align: left; vertical-align: top; width:700px;">
@@ -199,7 +196,7 @@ See [Install &amp; Configure Your Cloud](/cloudos/install) for complete instruct
 
 <tr style="background-color: white; color: black;">
 <td> Failure message </td>
-<td> Failed to add interface to router XYZ   </td>
+<td> Failed to add interface to router &lt;router-name> </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -212,8 +209,6 @@ See [Install &amp; Configure Your Cloud](/cloudos/install) for complete instruct
 ##### Solution
 
 Provision with the already existing router instead of creating a new one. 
-
-
 
 
 ### Problem: When creating a new PXE node, the PXE boot fails with a TFTP timeout error
@@ -1002,7 +997,7 @@ Cloud OS logs in the controller node located at:
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>
-<td> When user navigating in the dashboard a Unauthorized error message may appear in the top of the browser and no items will be rendered in the user interface. </td>
+<td> While navigating through the Operational Dashboard menus, you may see an Unauthorized error, and no items will be rendered in the user interface. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -1017,14 +1012,14 @@ Cloud OS logs in the controller node located at:
 
 <tr style="background-color: white; color: black;">
 <td> Probable cause </td>
-<td> Session expired but the user didn't logout from the dashboard. </td>
+<td> Session expired but the user did not log out from the Operational Dashboard. </td>
 </tr>
 
 </table>
 
 #### Solution
 
-Navigate to another item in the menu of the dashboard; if the problem persist, just logout and re-login to the dashboard.
+Navigate to another item in the menu of the Operational Dashboard, If the problem persist, logout and login again. 
 
 
 
