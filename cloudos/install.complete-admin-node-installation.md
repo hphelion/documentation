@@ -25,8 +25,7 @@ PageRefresh();
 
 This topic describes the steps to complete the Admin Node installation. These steps are required. 
 
-> **Caution:** Be sure the values for the Prerequisites, Server Types, Connections and Networks are what you need, before you follow the steps in this topic. Once the install process is triggered, the settings in preceding steps cannot be changed. 
-If you want to make changes, you need to start over by re-installing the Admin Node.  
+> **Caution:** Be sure the values for the Prerequisites, Server Types, Connections and Networks are what you need, before you follow the steps in this topic. Once the install process is triggered, the settings in preceding steps cannot be changed. If you want to make changes, you need to start over by re-installing the Admin Node.  
 
 To complete the Admin Node installation:
 
@@ -38,8 +37,7 @@ To complete the Admin Node installation:
  special characters. In the current release, it must end in .com, .org, .net, .edu, .mil, .gov, or .local. <!-- It may end in any valid web domain type, such as (but not limited to) 
 .com, .org, .net, .edu, .mil, .gov. -->
 
- b. **Network Mode:** Select the displayed option, Dual, Single, or Teaming. For related details, see [Customize Network Settings (Required)]
- (/cloudos/install/customize-network-settings). 
+ b. **Network Mode:** Select the displayed option, Dual, Single, or Teaming. For related details, see [Customize Network Settings (Required)](/cloudos/install/customize-network-settings). 
  <!-- 
  The DUAL / SINGLE option is based on your network infrastructure and previously 
  selected choices. If you have separate wired networks for admin, os_sdn and public, you want DUAL. The recommended practice is to use DUAL. 
@@ -50,17 +48,17 @@ To complete the Admin Node installation:
  
  c. **IPMI/BMC Network Status:** Select Disabled. (The IPMI/BMC feature is for testing purposes only.)
 
-4. Click Complete Install. This action installs required software on the Admin Node. This will take several minutes.
+4. Click **Complete Install**. This action installs required software on the Admin Node. This will take several minutes.
 
 5. The Operational Dashboard displays a working status message in the Install Complete column. **Note:** Any failure during this part of the process requires rebuilding the Admin Node through the bootable ISO. 
 
-6. (Optional) Click Show Install Log to view the install activity in the /var/log/install.log, which appears on the bottom of the window.
+6. (Optional) Click **Show Install Log** to view the install activity in the /var/log/install.log, which appears on the bottom of the window.
 
-7. (Optional) Click Refresh to monitor the install progress.
+7. (Optional) Click **Refresh** to monitor the install progress.
 
-8. After the Admin Node is installed, the screen will display the timestamp in the Install Complete column. The Complete Install button is replaced by the Continue... button.
+8. After the Admin Node is installed, the screen will display the timestamp in the Install Complete column. The Complete Install button is replaced by the **Continue...** button.
 
-9. Click Continue... to add the Cloud tab.
+9. Click **Continue...** to add the Cloud tab.
 
 ## Next Step
 
