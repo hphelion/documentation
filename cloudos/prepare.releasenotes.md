@@ -23,7 +23,7 @@ PageRefresh();
 
 # HP Cloud OS Release Notes
 
-This topic contains the following information on the HP Cloud OS 1.20 Sandbox release:
+This topic provides information about the HP Cloud OS 1.20 Sandbox release.
 
 * [New and Updated in HP Cloud OS 1.20](#120features)
 * [Recommendations for HP Cloud OS 1.20](#120recommendations)
@@ -61,8 +61,7 @@ by using automated deployment of applications on heterogeneous, hybrid cloud ser
 
 ##Recommendations for HP Cloud OS 1.20## {#120recommendations}
 
-This section of the release notes describes the HP recommendations for best performance, utility, and functionality with this software version.   
-We have also provided information about some limitations and known issues for reference purposes.  This section contains:
+This section describes the HP recommendations for best performance, utility, and functionality with this software release. We have also provided information about some limitations and known issues for reference purposes.   
 
 * [Best Practices](#best-practices) for optimal functionality and performance
 * [Known Issues](#known-issues) and suggested operational alternatives with HP Cloud OS 1.20
@@ -110,7 +109,7 @@ you can ensure the deletion of the volume with the following process:
     1. Stop the service using the volume with the command sequence:
         `service tgt stop`<br /> 
         `lvremove /dev/cinder-volumes/volume-078cd44b-7b39-4867-a1e9-78bb758ae0a7`<br /> <br /> 
-    Where `078cd44b-7b39-4867-a1e9-78bb758ae0a7` is the volume ID, which you can find in the HP Cloud OS Administration Dashboard's Volumes panel.
+    Where `078cd44b-7b39-4867-a1e9-78bb758ae0a7` is the volume ID, which you can find in the HP Cloud OS Administration Dashboard's Volumes tab.
 
     2. Remove the volume using the Cinder API or CLI: <br /> 
         `service tgt start` <br /> 
@@ -120,38 +119,38 @@ you can ensure the deletion of the volume with the following process:
     `dmsetup remove --force -c /dev/cinder-volumes/volume-078cd44b-7b39-4867-a1e9-78bb758ae0a7`<br />
     `lsof /dev/cinder-volumes/volume-078cd44b-7b39-4867-a1e9-78bb758ae0a7`
 
-* In the HP Cloud OS Administration Dashboard, if you experience a connection timeout error `Connection was reset` while creating an image of size 1.5 GB or larger, you can clear the situation with the following process:
+* In the HP Cloud OS Administration Dashboard, if you experience a `Connection was reset` timeout error while creating an image of size 1.5 GB or larger, you can clear the situation with the following process:
 
     1. Open a WinSCP session to the Admin node.
     2. Upload the image file to the /tmp/ directory.
-    3. Change the permission of the file to 777 (chmod 777 /tmp/<image.name>)
+    3. Change the permission of the file to 777 (`chmod 777 /tmp/<image.name>`)
     4. Move the file to the tftpboot folder.
-    5. Create the image pointing to the URL `http://<admin.node.ip>:8091/<*image.name*>`
+    5. Create the image pointing to the <nobr> URL `http://<admin.node.ip>:8091/<*image.name*>` </nobr>
 
 
 ####Provisioning####
 
-* When you use Eve to provision a new subnet, in some cases the IP address space may overlap with an existing network and create an IP conflict with 
-other machines on the existing network.  If you encounter this issue, you can create the subnet manually using the HP Cloud OS Administration 
-Dashboard. Specify the exact IP range and reference the range in the topology binding.
-* Under some networking conditions, Web proxy server connection problems can cause a provision or de-provision issue.  
-Simply execute again your provision or de-provision task.
+* When you use Eve to provision a new subnet, in some cases the IP address space may overlap with an existing network, which can create an IP conflict with other machines on the existing network.  If you encounter this issue, you can create the subnet manually using the HP Cloud OS Administration Dashboard. Specify the exact IP range and reference the range in the topology binding.
+* Under some networking conditions, Web proxy server connection problems can cause a provision or de-provision issue. To resolve this issue, execute your provision or de-provision task again.
 * In this HP Cloud OS Sandbox release, job progress status reporting has not yet been implemented.
-* When you use shared networks across a project, you may see the error message:<br /><nobr>`[com.hp.iaasc.eve.networksegment.openstack.NetworkSegmentServiceOpenStackQuantum:createPort:112]`</nobr><br /><nobr>`{"statusCode": 403, "message": "Tenant is forbidden to create port on the subnet(s): PrivSub ", "details": ""}`</nobr><br />`{"statusCode": 403, "message": "Tenant is forbidden to create port on the subnet(s): PrivSub ", "details": ""} at`.<br /> Currently, Quantum prevents users from creating ports on the shared private network.
+* When you use shared networks across a project, you may see the error message:<br /><nobr>`[com.hp.iaasc.eve.networksegment.openstack.NetworkSegmentServiceOpenStackQuantum:createPort:112]`</nobr><br /><nobr>`{"statusCode": 403, "message": "Tenant is forbidden to create port on the subnet(s): PrivSub ", "details": ""}`</nobr><br />`{"statusCode": 403, "message": "Tenant is forbidden to create port on the subnet(s): PrivSub ", "details": ""} at`.<br /> Currently, Quantum prevents users from creating ports on the shared <nobr> private network. </nobr> 
 * When you are running on a virtual machine hosted on a KVM hypervisor, you may see the message: `No root file system, no root file system is defined`.  Verify that the virtual disk format is either IDE or SCSI before booting the VM with the HP Cloud OS Sandbox ISO media.
 * If a volume group provisioning tasks fails and does not delete the created volume group, use the Terminate Topology or Delete Topology actions in the HP Cloud OS Administration Dashboard to remove the dangling provisioned resources.
 * If there are more than eight concurrent topology provisioning requests submitted to HP Cloud OS at exactly the same time, you may see the error: `Cannot get a connection, pool error`.  To get the requests successfully submitted, follow this process:
-    1. Log into the Admin node using the crowbar credentials.
+    1. Log into the Admin node using the crowbar credentials. (See the Note below this list.)
     2. Add the line:<br /><nobr>`url: jdbc:postgresql://[ipaddress]/iaascdb:maxWaitForConnection: 1m`</nobr><br />to the file:<br /><nobr>`/opt/dell/chef/cookbooks/hp_cos_eve_100/templates/default/eve-requestworker.yml.erb`</nobr>
     3. To get the new configuration values pushed to the respective nodes, execute the command:<br /><nobr>`knife cookbook upload hp_cos_eve_100 -o /opt/dell/chef/cookbooks/ -V -k /etc/chef/webui.pem -u chef-webui`</nobr>
     4. Execute the following commands on the cloud controller node:<br />
         `chef-client`<br />
         `restart eve-api`<br />
         `restart eve-requestworker`   
+
+**Note:** In the current release, the dashboards use pre-defined login credentials. These are not published in the web-hosted documentation. To get the pre-defined login credentials, refer to the readme file included in the same ZIP that contained the HP Cloud OS Sandbox ISO. 
+If you have not already done so, see the ZIP on the <a href="https://cloudos.hpwsportal.com" target="codn">HP Cloud OS Distribution Network</a>. 
 		
 ###Resolved Issues in Version 1.20## {#v120resolved}
 
-The following are resolved issues in version 1.20 of the HP Cloud OS software.
+The following issues have been resolved in HP Cloud OS 1.20.
 
 ####Cloud Utilities####
 
@@ -168,16 +167,14 @@ You can now successfully delete a compute region.
 
 ###OpenStack Community Issues### {#openstack-community-issues}
 
-The following are known open and fixed OpenStack community issues in version 1.20 of the HP Cloud OS software.
+The following two sections identify the known and resolved OpenStack community issues in HP Cloud OS 1.20.
 
 ####Known OpenStack Issues####
 
 * Sometimes provision does not attach a volume for a Cirros image. It may take a long time to fail.
-* The Keystone table grows unconditionally. By design, Keystone is not meant to flush the expired tokens on its own. 
-In the Havana release, OpenStack provides an API to flush tokens during a scheduled job.
+* The Keystone table grows unconditionally. By design, Keystone is not meant to flush the expired tokens on its own. In the Havana release, OpenStack provides an API to flush tokens during a scheduled job.
 * The Nova list response time is badly impacted by the number of active VM instances. Unfortunately, the transition from Project to Region to Cloud or other buttons always executes this command through nova-api and keeps waiting.
-* Volume creation fails randomly:  `Failed to create iscsi target for volume id:volume-<UUID>`.  
-Please ensure that your tgtd config file contains `include /var/lib/cinder/volumes/*`.
+* Volume creation fails randomly:  `Failed to create iscsi target for volume id:volume-<UUID>`.  Please ensure that your tgtd config file contains `include /var/lib/cinder/volumes/*`.
 * Volume creation or deletion fails randomly with the message `Exception during message handling`.
 * 60% of the launched instances fail to reach the metadata server due to high latency in its response time. The failure to reach the metadata server makes the launched instance unusable, because it cannot inject any key and does not perform the remaining operations related to security group block devices. 
 * Quantum requests too many tokens. Even when idle, a system can continue requesting tokens every second. This results in slower performance for Keystone's authentication and authorization process.
@@ -187,11 +184,8 @@ Please ensure that your tgtd config file contains `include /var/lib/cinder/volum
 
 ####Resolved OpenStack Issues####
 
-* When you provision from the HP Cloud OS Administration Dashboard and the space available is inadequate to create the volume, 
-the dashboard still shows volume creations as successful – although it has failed in the background. (Community issue# [1188039](https://bugs.launchpad.net/cinder/+bug/1188039).)
-* A security group is used to grant accessibility to an instance, such as ping (ICMP) and SSH (TCP), by enabling the associated ports.  
-The default security group provided for each project is pre-filled with two rules that are incorrectly specified.  Remove the provided rules. 
-Add new rules as appropriate.
+* When you provision from the HP Cloud OS Administration Dashboard and the space available is inadequate to create the volume, the dashboard still shows volume creations as successful – although it has failed in the background. (Community issue# [1188039](https://bugs.launchpad.net/cinder/+bug/1188039).)
+* A security group is used to grant accessibility to an instance, such as ping (ICMP) and SSH (TCP), by enabling the associated ports. The default security group provided for each project is pre-filled with two rules that are incorrectly specified.  Remove the provided rules. Add new rules as appropriate.
 
 ##For Further Information## {#for-further-information}
 
@@ -206,9 +200,9 @@ For additional related information on HP Cloud OS:
 * [HP Cloud OS Utilities](/cloudos/manage/utilities/): Describes the HP Cloud OS utilities.
 * [HP Cloud OS Troubleshooting](/cloudos/manage/troubleshooting/): Advice to resolve issues you may encounter with HP Cloud OS.
 * [HP Cloud OS Open Source and Third-Party Software License Agreements](/cloudos/os-3rd-party-license-agreements/): License information regarding the HP Cloud OS product. This topic includes legal notices and the disclaimer for experimental software.
-* HP Cloud OS Operational Dashboard Help: From the dashboard's top banner, the Help link opens topics about its user interface dialogs and options, including how to create your cloud. A [web-hosted copy](/cloudos/operational-dashboard/index.htm) of the Help is available. 
-* HP Cloud OS Administration Dashboard Help: From the dashboard's top banner, the Help link opens topics about its user interface dialogs and options, including how to view, allocate, and manage all virtual resources within a cloud. A [web-hosted copy](/cloudos/administration-dashboard/index.htm) of the Help is available. 
-* HP Cloud OS Release Notes: Contains a list of release contents and any known problems and workarounds (this document).
+* HP Cloud OS Operational Dashboard Help: From the dashboard's top banner, the Help link opens topics about its user interface dialogs and options, including how to create your cloud. A [web-hosted copy](http://docs.hpcloud.com/cloudos/operational-dashboard/index.htm) of the Help is available. 
+* HP Cloud OS Administration Dashboard Help: From the dashboard's top banner, the Help link opens topics about its user interface dialogs and options, including how to view, allocate, and manage all virtual resources within a cloud. A [web-hosted copy](http://docs.hpcloud.com/cloudos/administration-dashboard/index.htm) of the Help is available. 
+* HP Cloud OS Release Notes (this topic): Information about the release's new features, recommendations, known issues, and resolved limitations.
 
 **Note:** In the current release, the dashboards use pre-defined login credentials. These are not published in the web-hosted documentation. To get the pre-defined login credentials, refer to the readme file included in the same ZIP that contained the HP Cloud OS Sandbox ISO. 
 If you have not already done so, see the ZIP on the <a href="https://cloudos.hpwsportal.com" target="codn">HP Cloud OS Distribution Network</a>. 
@@ -221,7 +215,7 @@ The HP Cloud OS Sandbox installation deploys the HP Cloud OS Operational Dashboa
 
 When you are ready to install the HP Cloud OS Sandbox, see the Install category of the [HP Cloud OS documentation](http://docs.hpcloud.com/cloudos/install/).
 
-###Legal Notices and Disclaimer for Experimental Software### {legal-notices-disclaimer}
+###Legal Notices and Disclaimer for Experimental Software### {#legal-notices-disclaimer}
 
 See the [HP Cloud OS Open Source and Third-Party Software License Agreements](/cloudos/os-3rd-party-license-agreements/).
 
