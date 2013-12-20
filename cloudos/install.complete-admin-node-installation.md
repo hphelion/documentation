@@ -34,8 +34,9 @@ To complete the Admin Node installation:
 
 3. On the confirmation page, specify the following information.
 
- a. **Domain Name:** Enter the top-level domain name for your cloud. The name must consist of lowercase characters with no numbers or special characters. It may end in any valid web domain type, such as (but not limited to) 
-.com, .org, .net, .edu, .mil, .gov.
+ a. **Domain Name:** Enter the top-level domain name for your cloud. The name must consist of lowercase characters with no numbers or 
+ special characters. In the current release, it must end in .com, .org, .net, .edu, .mil, .gov, or .local. <!-- It may end in any valid web domain type, such as (but not limited to) 
+.com, .org, .net, .edu, .mil, .gov. -->
 
  b. **Network Mode:** Select the displayed option, Dual, Single, or Teaming. For related details, see [Customize Network Settings (Required)]
  (/cloudos/install/customize-network-settings). 
