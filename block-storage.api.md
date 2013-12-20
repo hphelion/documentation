@@ -11,4 +11,4 @@ product: block-storage
 
 Surf on over to our [Block Storage API Reference](/api/block-storage) for lots of details on the HP Cloud block storage service. For a detailed overview of how to interact with the Block Storage REST API using cURL:
 
-<iframe src="http://player.vimeo.com/video/49874335?title=0&amp;byline=0&amp;portrait=0" width="640" height="464" frameborder="0"> </iframe>
+<iframe width="560" height="315" src="//www.youtube.com/embed/xxYVIHHZ9I4?list=PL8SRnLljMoSMk2veMd-qtZYj20nREEuzC" frameborder="0" allowfullscreen></iframe>
