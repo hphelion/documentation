@@ -66,7 +66,7 @@ Let's look at the components. HP Cloud OS provides two important environments:
 
 * An **Execution environment**, which is used to execute the cloud itself on top of the customer's infrastructure: servers, networks, and storage.
 
-Used together, the two environments allow you to stand up, manage, and self-serve your clouds, based on Cloud OS.
+Used together, the two environments allow you to stand up, manage, and self-serve your cloud, based on Cloud OS.
 
 In this technical overview, we will walk through the components illustrated here:
 
@@ -115,7 +115,7 @@ We provide plugins in the following ways.
 
 * For Cinder, we provide an LVM plugin that does Logical Volume Management so that you can do raw storage or logical volumes.
 
-* For Neutron, we provide an Open vSwitch plugin that allows you to open the switch plugin OpenFlow technology to do virtual networking across your environment.
+* For Quantum, we provide an Open vSwitch plugin that allows you to open the switch plugin OpenFlow technology to do virtual networking across your environment.
 
 ### Base Layer
 
@@ -134,7 +134,7 @@ Eve is the HP Cloud OS infrastructure topology provisioning service.  Eve allows
 
 * Provision TOSCA-based infrastructure topology designs (composite, hybrid, and distributed).
 
-* Separate template creation and resource pool binding, for simpler, reusable templates.
+* Separate topology creation and resource pool binding, for simpler, reusable topologies.
 
 * Integrate via a plug-in model with Cloud API's (e.g., OpenStack Nova) for orchestrating provisioning.
 
@@ -253,9 +253,14 @@ Essentially, the whole install / upgrade mechanism allows us to manage the entir
 ## Summary
 
 The HP Cloud OS architecture ensures that any product based on it will get a fundamental set of capabilities that are guaranteed 
-across the implemented products. For example in a hybrid delivery mechanism, being able to use another cloud's resources (as if they were your own) will be consistent across all products that use HP Cloud OS.  With template-based provisioning, you can use HP Cloud OS to 
-create a template and build infrastructure based on that template.  You can then use that template repeatedly, even in a hybrid environment, and there will be a consistent capability across
-all the technologies that use HP Cloud OS. 
+across the implemented products. For example in a hybrid delivery mechanism, being able to use another cloud's resources 
+(as if they were your own) will be consistent across all products that use HP Cloud OS.  
+
+HP Cloud OS provides the ability to produce a topology model for a multi-tier infrastructure.  This model can then be mapped to a physical 
+resource pool at deployment time by creating a deployment profile.  Multiple deployment profiles can be associated with a single topology 
+model enabling a "model-once deploy-anywhere" repeatable process, standardizing the deployment of workload infrastructure across a hybrid cloud.  
+The deployment profiles allow addressing capability and configuration differences that could exist between the different physical resource pools 
+for deploying a common topological model. 
 
 <a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

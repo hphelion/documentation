@@ -19,7 +19,7 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> <a href="/cloudos/prepare/">&#9664; PREV</a> | <a href="/cloudos/prepare/">&#9650; UP</a> | <a href="/cloudos/prepare/faqs/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/cloudos/prepare/releasenotes">&#9664; PREV</a> | <a href="/cloudos/prepare/">&#9650; UP</a> | <a href="/cloudos/prepare/faqs/">NEXT &#9654;</a> </p>
 
 # HP Cloud OS Support Matrix for Hardware and Software
 
@@ -199,7 +199,7 @@ The diagrams in this section illustrate the deployment scenarios supported in HP
 
 ## Software Requirements 
 
-Refer to [Install &amp; Configure Your Clouds](/cloudos/install/) for a complete list of installation prerequisites and requirements, plus step-by-step instructions.
+Refer to [Install &amp; Configure Your Cloud](/cloudos/install/) for a complete list of installation prerequisites and requirements, plus step-by-step instructions.
 
 <table style="text-align: left; vertical-align: top;">
 
