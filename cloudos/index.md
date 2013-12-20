@@ -16,14 +16,14 @@ the fastest growing open-source cloud community.
 After downloading the kit, dive into these categorized topics to learn about HP Cloud OS:
 
 1. <a href="/cloudos/prepare/">Prepare</a> &mdash; Topics to help you get started: video tutorials &amp; more
-2. <a href="/cloudos/install/">Install</a> &mdash; Instructions to install &amp; configure your clouds
+2. <a href="/cloudos/install/">Install</a> &mdash; Instructions to install &amp; configure your cloud
 3. <a href="/cloudos/manage/">Manage</a>   &mdash; Info covering utilities, troubleshooting, &amp; dashboards
 4. <a href="/cloudos/develop/">Develop</a> &mdash; Details on the REST API and reference documentation
 
 <table>
 <tr>
 <td style="text-align: center; vertical-align: middle;"><a href="/cloudos/prepare/" title="Topics to help you learn about HP Cloud OS,including FAQs and Video Tutorials"><img src="media/cloudos-prepare.jpg" border="0"/></a></td>
-<td style="text-align: center; vertical-align: middle;"><a href="/cloudos/install/" title="Instructions to install &amp; configure your clouds, using automated or advanced options"><img src="media/cloudos-install.jpg" border="0"/></td>
+<td style="text-align: center; vertical-align: middle;"><a href="/cloudos/install/" title="Instructions to install &amp; configure your cloud, using automated or advanced options"><img src="media/cloudos-install.jpg" border="0"/></td>
 </tr>
 <tr>
 <td style="text-align: center; vertical-align: middle;"><a href="/cloudos/manage/" title="Information about the HP Cloud OS dashboards, troubleshooting, and utilities"><img src="media/cloudos-manage.jpg" border="0"/></td>
