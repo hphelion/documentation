@@ -104,9 +104,3 @@ Unless required by applicable law or agreed to in writing, software distributed 
 Copyright &copy; 2013 Hewlett-Packard Development Company, L.P.
 
 ----
-
-## Messaging as a Service (MSGaaS) ## {#messaging}
-
-Copyright &copy; 2013 Hewlett-Packard Development Company, L.P.
-
-----
