@@ -27,8 +27,7 @@ You can also avail yourself of one of the following APIs now in private beta; fo
   **Note**: The v1.0 API of the service is now deprecated.
 * [Application Platform as a Service (aPaaS)](/apaas/) - An application platform for development, deployment, and management of cloud applications hosted by HP.
   **Note**: This service requires activation while in private beta; please [request access on our sign-up page](http://go.hpcloud.com/PaaS-private-beta-signup). Service use is free of charge during the private beta period.
-* [Messaging as a Service (MSGaaS)](/api/msgaas/): API for the HP Cloud Messaging service; provides you with a standards-based, inter-application asynchronous message queuing system with guaranteed first in, first out (FIFO) message delivery in the HP Cloud.
-  **Note**: This service requires activation while in private beta; please [request access on our sign-up page](https://account.hpcloud.com/cases/betarequest/msgaas). Service use is free of charge during the private beta period.
+
 
 <!--If you are a more visual learner, perhaps you would prefer our videos on these topics:
 
