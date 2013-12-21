@@ -35,8 +35,7 @@ The following HP Public Cloud are now in private beta; follow the links to sign 
   **Note**: This service requires activation while in private beta; please [request access on our sign-up page](https://account.hpcloud.com/cases/betarequest/lbaas).  Service use is free of charge during the private beta period.
 * [Application Platform as a Service (aPaaS)](/apaas/) - An application platform for development, deployment, and management of cloud applications hosted by HP.<br>
   **Note**: This service requires activation while in private beta; please [request access on our sign-up page](https://apaas.hpcloud.com/shared/free-private-beta/signup).  Service use is free of charge during the private beta period.
-* [Messaging](/msgaas/): API for the HP Cloud messaging service; provides you with a standards-based, inter-application asynchronous message queuing system with guaranteed first in, first out (FIFO) message delivery in the HP Cloud.<br>
-  **Note**: This service requires activation while in private beta; please [request access on our sign-up page](https://account.hpcloud.com/cases/betarequest/msgaas). Service use is free of charge during the private beta period.
+
   
 ## Interacting with the services ## {#Interacting}
 
