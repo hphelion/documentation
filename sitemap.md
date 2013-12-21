@@ -40,7 +40,6 @@ Having a bit of trouble navigating our site, and so you're looking for a single 
 &nbsp;&nbsp;&nbsp;&nbsp;[Monitoring as a Service (MaaS) Overview](/maas)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[MaaS API](/api/monitoring)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Application Platform as a Service (aPaaS) Overview](/apaas)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Messaging as a Service (MaaS) Overview](/msgaas)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[MSGaaS API](/api/msgaas)<br>
 [HP Cloud Bindings](/bindings)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Ruby Fog Overview](/bindings/fog)<br>
