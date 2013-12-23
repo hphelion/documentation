@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Cloud Networking Overview"
-permalink: /compute/network-overview/
+permalink: /compute/network/
 product: compute
 categories: neutron
 tags: networking neutron

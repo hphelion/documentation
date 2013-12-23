@@ -1,19 +1,23 @@
 ---
 layout: default
-title: "How To's with the Compute Service"
+title: "Creating Your First Network - 13.5"
 permalink: /compute/using/
 product: compute
 
 ---
-# How To's with HP Cloud Networking version 13.5
+# Creating Your First Network - 13.5 #
 
 <!-- Modeled after How To's with the Compute Service (https://docs.hpcloud.com/compute/using/) Some text from network guide. -->
 
-As you get used to using the networking service, you might need to modify the default network or create additional networks.  This page gives you some how-to's for the following tasks: 
+As you get used to using the compute service, you might need to modify the default network or create additional networks.  This page gives you some how-to's for the following tasks: 
  
-* Specifying an IP address for those networks 
-* Configuring security group parameters that define the firewall rules for virtual servers
-* Allocating and managing public floating IP addresses
+* Define and configure your own private virtual networks
+
+* Specify IP addressing for those networks 
+
+* Configure security group parameters that define the firewall rules for virtual servers
+
+* Allocate and manage public floating IP addresses
 
 You can use the the Horizon Cloud Console, the HP Cloud CLI, or the HP Cloud Compute Service API to customize a network configuration.  
 
@@ -22,11 +26,31 @@ You can use the the Horizon Cloud Console, the HP Cloud CLI, or the HP Cloud Com
 
 You can use the Horizon Cloud Console to perform the following tasks:
 
-* Creating a sub-network
-* Specifying an IP address
-* Allocating floating IP address
-* Configuring security group
+* Create a network
+* Manage a network
+* Delete a network
+* View network, subnet, and router details
 
+### How to create a network ###
+
+1. Login to the [Horizon Console](https://horizon.hpcloud.com/).
+
+2. Select the Networks tab under the Project section:
+    <br><img src="media/network-new.png"  alt="" />
+
+3. Click **Create Network**. 
+	<br><img src="media/network-create.png"  alt="" />
+
+4. On the **Network** tab, enter a name for the network.  
+	<br><img src="media/network-fields.png"  alt="" />
+
+5. Enter the following values, as appropriate:
+	<br><img src="media/network-fields-2.png"  alt="" />
+
+6. Enter the following values, as appropriate:
+	<br><img src="media/network-fields-3.png"  alt="" />
+
+7. Click **Create**.
 
 ### How to add a sub-network ###
 
@@ -45,28 +69,6 @@ You can use the Horizon Cloud Console to perform the following tasks:
 
 6. Enter the following values, as appropriate:
 	<br><img src="media/network-fields-sub-2.png"  alt="" />
-
-7. Click **Create**.
-
-
-### How to specify an IP address ###
-
-1. Login to the [Horizon Console](https://horizon.hpcloud.com/).
-
-2. Select the Networks tab under the Project section:
-    <br><img src="media/network-new.png"  alt="" />
-
-3. Click **Create Network**. 
-	<br><img src="media/network-create.png"  alt="" />
-
-4. On the **Network** tab, enter a name for the network.  
-	<br><img src="media/network-fields.png"  alt="" />
-
-5. Enter the following values, as appropriate:
-	<br><img src="media/network-fields-2.png"  alt="" />
-
-6. Enter the following values, as appropriate:
-	<br><img src="media/network-fields-3.png"  alt="" />
 
 7. Click **Create**.
 
