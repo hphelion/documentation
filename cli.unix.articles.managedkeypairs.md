@@ -8,6 +8,20 @@ tags: cli linux compute servers keypairs
 ---
 #UNIX CLI: Accessing Servers with Managed Keypairs#
 
+___________________
+
+###Important Notice###
+
+On November 4, 2013, the UNIX CLI was moved into its End-of-Life Cycle process toward final deprecation. During this 6-month transition time:
+
+* New and existing customers are encouraged to migrate to the OpenStackClient (Unified) CLIs or the OpenStack command-line clients for each respective service
+* No new feature requests will be honored
+* Bug reports will be accepted
+
+After 6-months, access to online resources will still be available, but no support will be offered from HP Public Cloud, and the software download will be disabled—although you are most welcome to continue development at your discretion! HP Cloud has contributed the Unix CLI back to the open source community, and you can access the source code, documentation, and downloads [here](https://github.com/hpcloud/unix_cli).
+
+_________________________________________
+
 Accessing Linux instances with the Unix CLI is easier than ever with managed key pairs.  When you add a new key with the `-o` option, it is saved in your home directory under `~/.hpcloud/keypairs/`.  When you create a server with that key pair, the CLI saves that information.  See the following examples for some details:
 
 * [Creating a key pair using the -o flag](#CreatingaNewKeyPair)

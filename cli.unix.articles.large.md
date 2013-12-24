@@ -8,6 +8,20 @@ tags: large file upload download
 ---
 #UNIX CLI: Performing large file uploads#
 
+___________________
+
+###Important Notice###
+
+On November 4, 2013, the UNIX CLI was moved into its End-of-Life Cycle process toward final deprecation. During this 6-month transition time:
+
+* New and existing customers are encouraged to migrate to the OpenStackClient (Unified) CLIs or the OpenStack command-line clients for each respective service
+* No new feature requests will be honored
+* Bug reports will be accepted
+
+After 6-months, access to online resources will still be available, but no support will be offered from HP Public Cloud, and the software download will be disabled—although you are most welcome to continue development at your discretion! HP Cloud has contributed the Unix CLI back to the open source community, and you can access the source code, documentation, and downloads [here](https://github.com/hpcloud/unix_cli).
+
+_________________________________________
+
 The Unix command-line interface (CLI) is the perfect way to upload large files.  This article contains some tuning and recovery tips about uploading large files.
 
 If you upload files larger than 5 gigabytes (GB) with the Unix CLI, they are divided into 1 GB segments and a manifest file is created to reassemble the segments.  You can use the manifests file as you would any object and do not remove the segments.

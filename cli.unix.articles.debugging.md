@@ -8,6 +8,20 @@ tags: cli linux
 ---
 #UNIX CLI: Generating verbose debugging output#
 
+___________________
+
+###Important Notice###
+
+On November 4, 2013, the UNIX CLI was moved into its End-of-Life Cycle process toward final deprecation. During this 6-month transition time:
+
+* New and existing customers are encouraged to migrate to the OpenStackClient (Unified) CLIs or the OpenStack command-line clients for each respective service
+* No new feature requests will be honored
+* Bug reports will be accepted
+
+After 6-months, access to online resources will still be available, but no support will be offered from HP Public Cloud, and the software download will be disabled—although you are most welcome to continue development at your discretion! HP Cloud has contributed the Unix CLI back to the open source community, and you can access the source code, documentation, and downloads [here](https://github.com/hpcloud/unix_cli).
+
+_________________________________________
+
 Almost every command in the UNIX command-line interface (CLI) contains an option that allows you to display verbose debugging information.  The debugging log includes a trace of the HTTP requests made with both requests and responses as well as a stack trace if an exception is generated.  The verbose mode assists you in debugging problems if the standard error messages are not enough. 
 
 Here is the `list` command without verbose debugging enabled:
