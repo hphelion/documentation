@@ -44,7 +44,7 @@ to create a server using the new key pair that you created in the previous examp
 
     hpcloud servers:add NAME FLAVOR_ID -i IMAGE_ID -s SECURITY_GROUP -k KEYPAIR_NAME
 
-**Note**: You can view more configurations and examples for the `hpcloud servers:add` on the [Unix CLI compute page](/cli/unix/compute#ServerCommands).
+**Note**: You can view more configurations and examples for the `hpcloud servers:add` on the [Unix CLI compute page](/cli/unix/compute).
 
 So to create a server named `Smeagol` with the ID `721935` and the key pair with the name `myprecious`:
 
