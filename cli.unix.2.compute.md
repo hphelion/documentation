@@ -155,7 +155,7 @@ To add a new key pair and save it to a file, run:
     $ hpcloud keypairs:add mykeypair2 --output
     Created key pair 'mykeypair2' and saved it in a file at '/home/terry/.hpcloud/keypairs/mykeypair2.pem'.
 
-For additional information, see [Accessing Servers with Managed Key Pairs](/cli/unix/articles/managedkeypairs/).
+For additional information, see [Accessing Servers with Managed Key Pairs](/cli/unix/articles/managedkeypairs).
 
 To add a new key pair by importing public key data, run:
 
