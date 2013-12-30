@@ -78,3 +78,5 @@ For additional tips and How-tos on using your UNIX command-line interface (CLI),
 * [Performing large file uploads](/cli/unix/articles/large)
 * [Creating servers with user data](/cli/unix/articles/userdata)
 * [Modifying report paging](/cli/unix/articles/paging)
+* * [Creating servers with custom personality](/cli/unix/articles/personality)
+* [Creating servers with custom user data](/cli/unix/articles/userdata)

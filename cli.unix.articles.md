@@ -29,5 +29,5 @@ In addition to the pages of examples we have for the compute, object storage, an
 * [Performing large file uploads](/cli/unix/articles/large)<br>
 * [Using automation and performing report customization](/cli/unix/articles/reports)<br>
 * [Modifying report paging](/cli/unix/articles/paging)
-* [Creating servers with custom personality](/cli/unix/articles/personality)
+* [Creating servers with custom personality](/cli/unix/articles/personality)<br>
 * [Creating servers with custom user data](/cli/unix/articles/userdata)<br>
