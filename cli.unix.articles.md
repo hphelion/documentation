@@ -22,12 +22,12 @@ _________________________________________
 
 In addition to the pages of examples we have for the compute, object storage, and other HP Cloud services, we wanted to give you a few additional tips and How-tos to make using your UNIX command-line interface (CLI) access even easier. Take a look at one of the "How to" articles listed below to find out more!
 
-* [Using Bash Command Completion](/cli/unix/articles/complete)<br>
-* [Generating Verbose Debugging Output](/cli/unix/articles/debugging)<br>
-* [Accessing Servers with Managed Key Pairs](/cli/unix/articles/managedkeypairs)<br>
-* [Performing Object Store Migration](/cli/unix/articles/migration)<br>
-* [Performing Large File Uploads](/cli/unix/articles/large)<br>
-* [Using Automation and Performing Report Customization](/cli/unix/articles/reports)<br>
-* [Modifying Report Paging](/cli/unix/articles/paging)
-* [Creating servers with custom Personality](/cli/unix/articles/personality)
+* [Using bash shell command completion](/cli/unix/articles/complete)<br>
+* [Generating verbose debugging output](/cli/unix/articles/debugging)<br>
+* [Accessing servers with managed key pairs](/cli/unix/articles/managedkeypairs)<br>
+* [Performing object store migration](/cli/unix/articles/migration)<br>
+* [Performing large file uploads](/cli/unix/articles/large)<br>
+* [Using automation and performing report customization](/cli/unix/articles/reports)<br>
+* [Modifying report paging](/cli/unix/articles/paging)
+* [Creating servers with custom personality](/cli/unix/articles/personality)
 * [Creating servers with custom user data](/cli/unix/articles/userdata)<br>
