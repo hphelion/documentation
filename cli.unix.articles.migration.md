@@ -28,6 +28,7 @@ You can perform object migration from the AWS, Google, and Rackspace services.  
 
 * [Getting started migrating your data](#GettingStarted)
 * [Performing a migration](#Performing)
+* [For more information](#articles)
 
 ##Getting started migrating your data## {#GettingStarted}
 
@@ -68,3 +69,8 @@ To move files from the `tuna` container in the Rackspace `sharkey` account to th
 
 
 You can ignore the deprecation message.  The last part of the object name is displayed during the migration, but the full names of objects are preserved.
+
+
+##For more information## {#articles}
+
+For more tips and How-tos on using your UNIX command-line interface (CLI), see [UNIX CLI: Articles on to use the UNIX CLI](/cli/unix/articles/).

@@ -28,4 +28,6 @@ In addition to the pages of examples we have for the compute, object storage, an
 * [Performing Object Store Migration](/cli/unix/articles/migration)<br>
 * [Performing Large File Uploads](/cli/unix/articles/large)<br>
 * [Using Automation and Performing Report Customization](/cli/unix/articles/reports)<br>
-* [Modifying Report Paging](/cli/unix/articles/paging)<br>
+* [Modifying Report Paging](/cli/unix/articles/paging)
+* [Creating servers with custom Personality](/cli/unix/articles/personality)
+* [Creating servers with custom user data](/cli/unix/articles/userdata)<br>

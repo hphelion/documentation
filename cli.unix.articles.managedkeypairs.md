@@ -26,6 +26,7 @@ Accessing Linux instances with the Unix CLI is easier than ever with managed key
 
 * [Creating a key pair using the -o flag](#CreatingaNewKeyPair)
 * [Creating a server using that new key pair](#CreatingaServer)
+* [For more information](#articles)
 
 ##Creating a Key Pair Using the -o Flag## {#CreatingaNewKeyPair}
 
@@ -51,3 +52,7 @@ So to create a server named `Smeagol` with the ID `721935` and the key pair with
     $ hpcloud servers:add Smeagol large -i 75845 -s default -k myprecious
     Created server 'Smeagol' with id '721935'.
     
+
+##For more information## {#articles}
+
+For more tips and How-tos on using your UNIX command-line interface (CLI), see [UNIX CLI: Articles on to use the UNIX CLI](/cli/unix/articles/).

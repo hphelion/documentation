@@ -40,3 +40,8 @@ To change the number of records for a particular read to a value other than the 
 Setting `storage_page_open` to a very small value creates more read calls to the server, and slows down report generation. 
 
 In general, we suggest you leave these values set to their defaults.
+
+
+##For more information## {#articles}
+
+For more tips and How-tos on using your UNIX command-line interface (CLI), see [UNIX CLI: Articles on to use the UNIX CLI](/cli/unix/articles/).

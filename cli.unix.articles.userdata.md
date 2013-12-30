@@ -84,3 +84,6 @@ If there is any problem with the user data, information about the improper data 
 
     $ hpcloud servers:console userver 1000 >out
     
+##For more information## {#articles}
+
+For more tips and How-tos on using your UNIX command-line interface (CLI), see [UNIX CLI: Articles on to use the UNIX CLI](/cli/unix/articles/).

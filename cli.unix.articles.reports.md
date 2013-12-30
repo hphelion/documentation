@@ -50,3 +50,7 @@ You can pipe the output of this command to another command:
       ping -c 5 $IP || echo "${NAME} is down!!!"
     done
 
+
+##For more information## {#articles}
+
+For more tips and How-tos on using your UNIX command-line interface (CLI), see [UNIX CLI: Articles on to use the UNIX CLI](/cli/unix/articles/).

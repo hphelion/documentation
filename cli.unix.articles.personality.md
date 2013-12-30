@@ -36,3 +36,7 @@ Use the `--personality` option to pass in the personality directory:
 The server will be created with the files in your personality directory.  In this example, the `/etc/apache2/sites-available/100www` and `/home/ubuntu/.profile` files will be created.
 
 There are limits to the number and size of the files that can be used with.  Use the `hpcloud servers:limits` command to see the personality limits.
+
+##For more information## {#articles}
+
+For more tips and How-tos on using your UNIX command-line interface (CLI), see [UNIX CLI: Articles on to use the UNIX CLI](/cli/unix/articles/).
