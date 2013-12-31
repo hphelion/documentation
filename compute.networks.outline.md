@@ -8,7 +8,7 @@ product: compute
 # HP Cloud Compute Networking Outline#
 
 ## HP Cloud Networking Overview ##
-[HP Cloud Networking Overview](/compute/network/) 
+[HP Cloud Networking Overview](/compute/networks/) 
 Short, very high level
 
 * Using the Default Network Configuration
@@ -48,7 +48,7 @@ Short, very high level
 
 ### Creating Your First Network - 13.5 ###
 
-[Creating Your First Network](/compute/network/first-network/)
+[Creating Your First Network](/compute/network/first-networks/)
 
 #### Using the Horizon Cloud Console ####
 
@@ -146,7 +146,7 @@ Short, very high level
 
 ### How to's ###
 
-[How To's with HP Cloud Networking version 13.5](/compute/network/howto/)
+[How To's with HP Cloud Networking version 13.5](/compute/networks/howto/)
 
 
 *File created, but empty; do we need?; modeled after How To's with the Compute Service* 
