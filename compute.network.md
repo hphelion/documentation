@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Cloud Networking Overview"
-permalink: /compute/networking/
+permalink: /compute/network/
 product: compute
 
 ---
