@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To's with the Compute Service"
-permalink: /compute/using/
+permalink: /compute/howto/
 product: compute
 
 ---
