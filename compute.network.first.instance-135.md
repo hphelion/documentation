@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Creating Your First Network - 13.5"
-permalink: /compute/creating/
+permalink: /compute/network/first-network/
 product: compute
 
 ---
