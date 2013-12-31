@@ -172,5 +172,14 @@ The HP Cloud environment command-line interface (CLI) software for Windows Power
 	new-port "testPort1" -nid bd1c30f7-71f1-455e b91e-8d03da7f5224 -asu -did "sdf\etc" 
 
 
-## Using the HP Cloud Compute Service API ##
+### How to delete a network ###
 
+1. On the 13.5 instance, launch a Windows PowerShell window.  
+
+	Select the shell appropriate to your system, either the 64-bit or 32-bit version. 
+
+2. Enter the HP Cloud environment CLI by entering:
+
+	`PS C:> cd HPCS:`
+
+3. Create a new network by executing the following command, using the appropriate values:
