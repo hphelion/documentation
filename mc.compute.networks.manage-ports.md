@@ -5,7 +5,7 @@ permalink: /mc/compute/networks/manage-ports/
 product: mc-compute
 
 ---
-# Management console: Managing ports
+# Management console: Managing ports #
 
 With the default network configuration the instance you create will also create a port automatically for you, with an IP assigned from your subnet, and attach it to your default network.
 
