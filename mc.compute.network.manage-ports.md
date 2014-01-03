@@ -25,8 +25,9 @@ Create router
 This page covers how to create and delete a port using the networks screen of the Horizon-based HP Cloud Management Console.  This page covers the following topics:
 
 * [Before you begin](#Overview)
-* [Enabling a port](#Enabling)
-* [Disabling a router](#Disabling)
+* [Renaming a port](#Rename)
+* [Enabling a port](#Enable)
+* [Disabling a router](#Disable)
 * [For further information](#ForFurtherInformation)
 
 
@@ -41,7 +42,7 @@ Before you perform any network management on your routers, you must:
 <!--When cloudadmin tool deployed, add a link to it here?-->
 <!--Include a link to the CLI process for creating a router here as well?-->
 
-## Rename a port ##
+## Rename a port ## {#Rename}
 
 When you create a subnet, a port is automatically created and assigned an ID. On the HP Cloud Management Console **Network Overview** page, the ID appears as the name for the port. You can assign a more meaningful name for the port, if needed.
 
@@ -69,7 +70,7 @@ To rename a port:
 
 8. Click **Save Changes**.
 
-## Enable a port ##
+## Enable a port ## {#Enable}
 
 Ports are enabled by default. However, if a port has been diabled, you can enable the port by turning the administrative status `UP`.
 
@@ -100,7 +101,7 @@ To enable a port:
 8. Click **Save Changes**.
 
 
-## Disable a port ##
+## Disable a port ## {#Disable}
 
 Ports are enabled by default. However, you can disable a port. You disable a port by turning the administrative status `DOWN`. 
 
