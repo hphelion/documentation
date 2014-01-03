@@ -20,8 +20,6 @@ Create network with a subnet (DHCP port)
 Add subnet to existing network (DHCP port)
 Create router
 
-<br><img src="media/network-fields.png"  alt="" />
-
 This page covers how to create and delete a port using the networks screen of the Horizon-based HP Cloud Management Console.  This page covers the following topics:
 
 * [Before you begin](#Overview)
@@ -52,17 +50,17 @@ To rename a port:
 
 2. Select the appropriate project and region under the **Project/Region Scope** section.
 
-	<img src="media/network-select.PNG" alt="" />
+	<img src="media/network-select.png" alt="" />
 
 3. Select the **Networks** tab under the **Project** section.
 
 4. Click the network associated with the port on the **Networks** screen.
 
-	<img src="media/network-screen.PNG" alt="" />
+	<img src="media/network-screen.png" alt="" />
 
 5. Locate the port to enable on the **Network Overview** screen.
 
-	<img src="media/network-port.PNG" alt="" />
+	<img src="media/network-port.png" alt="" />
 
 6. In the **Actions** column, click **Edit Port**. 
 
@@ -80,23 +78,23 @@ To enable a port:
 
 2. Select the appropriate project and region under the **Project/Region Scope** section.
 
-	<img src="media/network-select.PNG" alt="" />
+	<img src="media/network-select.png" alt="" />
 
 3. Select the **Networks** tab under the **Project** section.
 
 4. Click the network associated with the port on the **Networks** screen.
 
-	<img src="media/network-screen.PNG" alt="" />
+	<img src="media/network-screen.png" alt="" />
 
 5. Locate the port to enable on the **Network Overview** screen.
 
-	<img src="media/network-port.PNG" alt="" />
+	<img src="media/network-port.png" alt="" />
 
 6. In the **Actions** column, click **Edit Port**. 
 
 7. Select the **Admin State** option to enable the port. 
 
-	<img src="media/network-port-enable.PNG" alt="" />
+	<img src="media/network-port-enable.png" alt="" />
 
 8. Click **Save Changes**.
 
@@ -111,23 +109,23 @@ To disable a port:
 
 2. Select the appropriate project and region under the **Project/Region Scope** section.
 
-	<img src="media/network-select.PNG" alt="" />
+	<img src="media/network-select.png" alt="" />
 
 3. Select the **Networks** tab under the **Project** section.
 
 4. Click the network associated with the port on the **Networks** screen.
 
-	<img src="media/network-screen.PNG" alt="" />
+	<img src="media/network-screen.png" alt="" />
 
 5. Locate the port to disable on the **Network Overview** screen.
 
-	<img src="media/network-port.PNG" alt="" />
+	<img src="media/network-port.png" alt="" />
 
 6. In the **Actions** column, click **Edit Port**. 
 
 7. Clear the **Admin State** option to enable the port. 
 
-	<img src="media/network-port-disable.PNG" alt="" />
+	<img src="media/network-port-disable.png" alt="" />
 
 8. Click **Save Changes**.
 
