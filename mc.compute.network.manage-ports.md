@@ -22,7 +22,7 @@ Create router
 
 <br><img src="media/network-fields.png"  alt="" />
 
-This page covers how to create and delete a port using the networks screen of the management console (MC).  This page covers the following topics:
+This page covers how to create and delete a port using the networks screen of the Horizon-based HP Cloud Management Console.  This page covers the following topics:
 
 * [Before you begin](#Overview)
 * [Enabling a port](#Enabling)
@@ -36,29 +36,99 @@ Before you perform any network management on your routers, you must:
 
 * [Sign up for an HP Cloud compute account](https://account.hpcloud.com/signup)
 * [Activate compute service on your account](https://community.hpcloud.com/article/getting-started-compute-135#actservice)
-* [Create a network](/mc/compute/networks/create-network/)
+* [Create a network](/mc/compute/networks/create-network/) that has an associated subnet.
 
 <!--When cloudadmin tool deployed, add a link to it here?-->
 <!--Include a link to the CLI process for creating a router here as well?-->
 
+## Rename a port ##
 
-##Enabling a router## {#Enabling}
+When you create a subnet, a port is automatically created and assigned an ID. On the HP Cloud Management Console **Network Overview** page, the ID appears as the name for the port. You can assign a more meaningful name for the port, if needed.
 
-When you enable the compute service, a router is enabled by default.  If you have [disabled](#Disabling) the router, to enable it, in the `Manage` column, select the `Options` button for the router you wish to disable and click the `Disable` item:
+To rename a port:
 
-<img src="media/disable-router.jpg" width="580" alt="" />
- 
+1. Log in to the [HP Cloud Management Console](https://horizon.hpcloud.com/).
 
-##Disabling a router## {#Disabling}
+2. Select the appropriate project and region under the **Project/Region Scope** section.
 
-When you enable the compute service, a router is enabled by default.  To disable the router, in the `Manage` column, select the `Options` button for the router you wish to disable and click the `Disable` item:
+	<img src="media/network-select.PNG" alt="" />
 
-<img src="media/enable-router.jpg" width="580" alt="" />
+3. Select the **Networks** tab under the **Project** section.
+
+4. Click the network associated with the port on the **Networks** screen.
+
+	<img src="media/network-screen.PNG" alt="" />
+
+5. Locate the port to enable on the **Network Overview** screen.
+
+	<img src="media/network-port.PNG" alt="" />
+
+6. In the **Actions** column, click **Edit Port**. 
+
+7. Enter a name for the port in the **Name** field.
+
+8. Click **Save Changes**.
+
+## Enable a port ##
+
+Ports are enabled by default. However, if a port has been diabled, you can enable the port by turning the administrative status `UP`.
+
+To enable a port:
+
+1. Log in to the [HP Cloud Management Console](https://horizon.hpcloud.com/).
+
+2. Select the appropriate project and region under the **Project/Region Scope** section.
+
+	<img src="media/network-select.PNG" alt="" />
+
+3. Select the **Networks** tab under the **Project** section.
+
+4. Click the network associated with the port on the **Networks** screen.
+
+	<img src="media/network-screen.PNG" alt="" />
+
+5. Locate the port to enable on the **Network Overview** screen.
+
+	<img src="media/network-port.PNG" alt="" />
+
+6. In the **Actions** column, click **Edit Port**. 
+
+7. Select the **Admin State** option to enable the port. 
+
+	<img src="media/network-port-enable.PNG" alt="" />
+
+8. Click **Save Changes**.
 
 
-##Attaching an interface to a router## {#Attaching}
+## Disable a port ##
 
-To attach an interface to a router, you must first open the [router details](/mc/compute/networks/view-router) screen.  In the `Manage` column, select the `Options` button for the router you wish to view the details of and click the `Router Details` item:
+Ports are enabled by default. However, you can disable a port. You disable a port by turning the administrative status `DOWN`. 
+
+To disable a port:
+
+1. Log in to the [HP Cloud Management Console](https://horizon.hpcloud.com/).
+
+2. Select the appropriate project and region under the **Project/Region Scope** section.
+
+	<img src="media/network-select.PNG" alt="" />
+
+3. Select the **Networks** tab under the **Project** section.
+
+4. Click the network associated with the port on the **Networks** screen.
+
+	<img src="media/network-screen.PNG" alt="" />
+
+5. Locate the port to disable on the **Network Overview** screen.
+
+	<img src="media/network-port.PNG" alt="" />
+
+6. In the **Actions** column, click **Edit Port**. 
+
+7. Clear the **Admin State** option to enable the port. 
+
+	<img src="media/network-port-disable.PNG" alt="" />
+
+8. Click **Save Changes**.
 
 
 ##For further information## {#ForFurtherInformation}
