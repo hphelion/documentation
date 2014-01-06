@@ -9,20 +9,14 @@ product: compute
 
 <!-- Modeled after How To's with the Compute Service (https://docs.hpcloud.com/compute/using/) Some text from network guide. -->
 
-As you get used to using the compute service, you might need to modify the default network or create additional networks.  This page gives you some how-to's for the following tasks: 
+Once you are ready to create your first network, you can choose from a variety of ways depending on which tool you feel most comfortable with. 
  
-* Define and configure your own private virtual networks
+You can use the the Horizon Cloud Console or Windows PowerShell to create the network. 
 
-* Specify IP addressing for those networks 
+- [Using the Horizon Cloud Console](#console)
+- [Using the Windows PowerShell](#powershell)
 
-* Configure security group parameters that define the firewall rules for virtual servers
-
-* Allocate and manage public floating IP addresses
-
-You can use the the Horizon Cloud Console, the HP Cloud CLI, or the HP Cloud Compute Service API to customize a network configuration.  
-
-
-## Using the Horizon Cloud Console ## 
+## Using the Horizon Cloud Console ## {#console}
 
 You can use the Horizon Cloud Console to perform the following tasks:
 
@@ -76,7 +70,7 @@ You can use the Horizon Cloud Console to perform the following tasks:
 
 See [the MC networking pages](/mc/compute/networks/) for more information about setting up networking using the MC.
 
-## Using the Windows PowerShell ##
+## Using the Windows PowerShell ## {#powershell}
 
 The HP Cloud environment command-line interface (CLI) software for Windows PowerShell allows Windows users to manage their HP Cloud services from the command line.
 
@@ -160,3 +154,12 @@ The HP Cloud environment command-line interface (CLI) software for Windows Power
 
 		new-port "testPort1" -nid bd1c30f7-71f1-455e b91e-8d03da7f5224 -asu -did "sdf\etc" 
 
+##For further information## {#info} 
+
+Check out the following pages for more information on using HP Cloud Networking services:
+
+- [Known Issues and Best Practices in Compute and Networking in 13.5](https://community.hpcloud.com/article/known-issues-and-best-practices-compute-and-networking-135)
+- [Getting Started with Compute 13.5](https://community.hpcloud.com/article/getting-started-compute-135)
+- [Management console: Networks screen](http://docs.hpcloud.com/mc/compute/networks/)
+- [UNIX CLI for HP Documentation](http://docs.hpcloud.com/cli/unix)
+- [OpenStack networking wiki](https://wiki.openstack.org/wiki/Quantum)
