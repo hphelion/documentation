@@ -8,7 +8,7 @@ product: compute
 # HP Cloud Compute Networking Outline#
 
 
-## HP Cloud Networking Overview ##
+##1.0 HP Cloud Networking Overview ##
 [HP Cloud Networking Overview](/compute/networks/) 
 
 Short, very high level
@@ -26,8 +26,33 @@ Short, very high level
 
 *I created a new file; modeled after HP Cloud version 13.5 overview; text from networking guide*
 
+###2.0 Creating Your First Network - 13.5 ###
 
-#### Networks screen overview ####
+[Creating Your First Network](/compute/network/first-networks/)
+
+*I created this file; not complete; based on Creating first instance (https://community.hpcloud.com/article/creating-your-first-instance-135); **do we need**?*
+
+**Using the Horizon Cloud Console**
+
+* Create a network
+* Manage a network
+* Delete a network
+* View network, subnet, and router details
+
+**Using the Windows PowerShell**
+
+* Create a network
+* Manage a network
+* Delete a network
+* View network, subnet, and router details
+
+*I created a new file; modeled after HP Cloud version 13.5 overview*
+
+###3.0 Managing networks ###
+
+Management console: Networks screen
+
+####3.1 Networks screen overview ####
 
 [Management console: Networks screen](/mc/compute/networks/)
 
@@ -37,44 +62,10 @@ Short, very high level
 
 *File exists for MC; need to update to Horizon*
 
-#### Networks screen functions ####
 
-[Networks screen functions](https://docs.hpcloud.com/mc/compute/networks/)
+####3.2 Viewing network details ####
 
-- Creating and deleting a network
-- Managing a subnet
-- Adding and deleting an interface to a router
-- Viewing network details
-- Viewing subnet details
-- Viewing router details
-
-*File exists for MC; need to update to Horizon*
-
-### Creating Your First Network - 13.5 ###
-
-[Creating Your First Network](/compute/network/first-networks/)
-
-*I created this file; not complete; based on Creating first instance (https://community.hpcloud.com/article/creating-your-first-instance-135); **do we need**?*
-
-#### Using the Horizon Cloud Console ####
-
-* Create a network
-* Manage a network
-* Delete a network
-* View network, subnet, and router details
-
-#### Using the Windows PowerShell ####
-
-* Create a network
-* Manage a network
-* Delete a network
-* View network, subnet, and router details
-
-*I created a new file; modeled after HP Cloud version 13.5 overview*
-
-### Viewing network details ###
-
-[Viewing network details](/mc/compute/networks/mc.compute.networks.sys-messages)
+[Viewing network details](/mc/compute/networks/mc.compute.networks.view-network)
 
 - Before you begin
 - Accessing the network details screen
@@ -86,7 +77,7 @@ Short, very high level
 
 *File exists for MC; need to update to Horizon*
 
-### Managing a subnet ###
+####3.3 Managing a subnet ####
 
 [Managing a subnet](/mc/compute/networks/manage-subnet)
 
@@ -99,7 +90,7 @@ Short, very high level
 
 *File exists for MC; need to update to Horizon*
 
-### Viewing subnet details ###
+####3.4 Viewing subnet details ####
 
 [Viewing subnet details](/mc/compute/networks/mc.compute.networks.view-subnet)
 
@@ -110,7 +101,7 @@ Short, very high level
 
 *File exists for MC; need to update to Horizon*
 
-### Managing routers ###
+###4.0 Managing routers ###
 
 [Managing routers](/mc/compute/networks/mc.compute.networks.manage-routers.md)
 
@@ -125,7 +116,7 @@ Short, very high level
 
 *File exists for MC; need to update to Horizon*
 
-### Viewing router details ###
+####4.1 Viewing router details ####
 
 [Viewing router details](/mc/compute/networks/mc.compute.networks.view-router)
 
@@ -138,7 +129,7 @@ Short, very high level
 
 *File exists for MC; need to update to Horizon*
 
-### Managing Ports ###
+###5.0 Managing Ports ###
 
 [Managing Ports](/mc/compute/networks/manage-ports/)
 
@@ -150,7 +141,7 @@ Short, very high level
 
 *I create file; do we need? Add to Viewing router details?*
 
-### How to's ###
+###6.0 How to's ###
 
 [How To's with HP Cloud Networking version 13.5](/compute/networks/howto/)
 
@@ -158,7 +149,7 @@ Short, very high level
 *File created, but empty; do we need?; modeled after How To's with the Compute Service* 
 
 
-### Enabling and disabling a network ###
+####6.1 Enabling and disabling a network ####
 
 [Enabling and disabling a network](/mc/compute/networks/enable-network.md)
 
@@ -174,8 +165,13 @@ Known Issues and Workarounds
     repeat as needed
     For further information
 *File exists, but empty; complete and move into How To's?*	
+[Viewing network details](/mc/compute/networks/mc.compute.networks.sys-messages)
+
+
+###7.0 For more information###
 
 Community links to consider:
+
 [Understanding Network Topology in 13.5](https://community.hpcloud.com/article/understanding-network-topology-135)
 [Knowledge Base](https://community.hpcloud.com/search/knowledge/network)
 [Forums](https://community.hpcloud.com/search/forum/network)
