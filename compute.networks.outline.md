@@ -7,6 +7,7 @@ product: compute
 ---
 # HP Cloud Compute Networking Outline#
 
+
 ## HP Cloud Networking Overview ##
 [HP Cloud Networking Overview](/compute/networks/) 
 Short, very high level
