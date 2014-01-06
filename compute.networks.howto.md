@@ -17,18 +17,39 @@ As you get used to using the networking service, you might need to modify the de
 
 You can use the the Horizon Cloud Console, the HP Cloud CLI, or the HP Cloud Compute Service API to customize a network configuration.  
 
-
-## Using the Horizon Cloud Console ## 
-
 You can use the Horizon Cloud Console to perform the following tasks:
 
+* Enabling and disabling a network
 * Creating a sub-network
 * Specifying an IP address
 * Allocating floating IP address
 * Configuring security group
 
+##Before you begin## {#Overview}
 
-### How to add a sub-network ###
+Before you can enable or disable networks, you must:
+
+* [Sign up for an HP Cloud compute account](https://account.hpcloud.com/signup)
+* Activate compute service on your account
+* [Create a network](/mc/compute/networks/create-network/)
+
+## How to enable a network
+
+By default, when you [create a network](/mc/compute/networks/create-network#Creating/), that network is created in an enabled admin state.  
+
+<img src="media/compute-networks03.jpg" width="580" alt="" />
+
+If you have at some point [disabled](#Disabling) a network and want to enable it, in the `Manage` column of the `Networks` list, select the `Options` button and choose the `Enable` option.
+
+<!-- Illustration of "Enable" option being selected needed here -->
+
+##How to disable a network## {#Disabling}
+
+By default, when you [create a network](/mc/compute/networks/create-network#Creating/), that network is created in an enabled admin state.  If you want to disable your network, in the `Manage` column of the `Networks` list, select the `Options` button and choose the `Disable` option.
+
+<img src="media/compute-networks04.jpg" width="580" alt="" />
+
+## How to add a sub-network ###
 
 1. Login to the [Horizon Console](https://horizon.hpcloud.com/).
 
@@ -49,7 +70,7 @@ You can use the Horizon Cloud Console to perform the following tasks:
 7. Click **Create**.
 
 
-### How to specify an IP address ###
+## How to specify an IP address ###
 
 1. Login to the [Horizon Console](https://horizon.hpcloud.com/).
 
@@ -70,7 +91,7 @@ You can use the Horizon Cloud Console to perform the following tasks:
 
 7. Click **Create**.
 
-### How to delete a network ###
+## How to delete a network ###
 
 1. Login to the [Horizon Console](https://horizon.hpcloud.com/).
 
