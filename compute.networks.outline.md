@@ -28,7 +28,7 @@ Short, very high level
 
 ###2.0 Creating Your First Network - 13.5 ###
 
-[Creating Your First Network](/compute/network/first-networks/)
+[Creating Your First Network](/compute/networks/first-network/)
 
 *I created this file; not complete; based on Creating first instance (https://community.hpcloud.com/article/creating-your-first-instance-135); **do we need**?*
 

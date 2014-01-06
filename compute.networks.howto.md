@@ -49,6 +49,24 @@ By default, when you [create a network](/mc/compute/networks/create-network#Crea
 
 <img src="media/compute-networks04.jpg" width="580" alt="" />
 
+
+## How to delete a network ##
+
+1. Login to the [Horizon Console](https://horizon.hpcloud.com/).
+
+2. Select the Networks tab under the Project section:
+    <br><img src="media/network-new.png"  alt="" />
+
+3. On the Networks screen, locate the network which you want to delete.
+
+4. In the Actions column, click **More** -> **Delete Network** for your the network. 
+	<br><img src="media/network-delete.png"  alt="" />
+
+5. In the confirmation dialog, click **Delete Network**.
+
+
+
+
 ## How to add a sub-network ###
 
 1. Login to the [Horizon Console](https://horizon.hpcloud.com/).
@@ -111,7 +129,7 @@ See [the MC networking pages](/mc/compute/networks/) for more information about 
 
 The HP Cloud environment command-line interface (CLI) software for Windows PowerShell allows Windows users to manage their HP Cloud services from the command line.
 
-### How to create a network ###
+### How to delete a network ###
 
 1. On the 13.5 instance, launch a Windows PowerShell window.  
 
@@ -122,73 +140,25 @@ The HP Cloud environment command-line interface (CLI) software for Windows Power
 	`PS C:> cd HPCS:`
 
 3. Create a new network by executing the following command, using the appropriate values:
-
-	`new-network -n Name - asu AdminStateUp`
-
-	Where:
-
-	`n` - The name of new Network.
-
-	`asu` - Determines if the `AdminStateUp` flag is true or false.
-
-	The following example creates a new network named `testNet1` with AdminStateUp set to `true`.
 	
-	`new-network "testNet1" -asu` 
+	remove-network
 
-### How to create a sub-network ###
+	remove-network -id -all
 
-1. On the 13.5 instance, launch a Windows PowerShell window.  
-
-	Select the shell appropriate to your system, either the 64-bit or 32-bit version. 
-
-2. Enter the HP Cloud environment CLI by entering:
-
-	`PS C:> cd HPCS:`
-
-3. Create a new network by executing the following command, using the appropriate values:
-
-	`new-subnet -nid NetworkID -ipv IPVersion -c CIDRValue -a AllocationPools`
-
-	Where:
-
-	nid - Subnet name.
-
-	ipv - Sets the IP Version
-
-	c - CIDR value.
-
-	a - Lists Allocation Pools, separating them by commas.
-
-	The following example creates a new subnet called `testSubnet`.
-
-	new-subnet -n testSubnet -nid bd1c30f7-71f1-455e-b91e-8d03da7f5224 -ipv 4 -c "10.0.6.0/24" -a "10.0.6.20", "10.0.6.22" , "10.0.6.26", "10.0.6.29" 
-
-### How to create a port ###
-
-1. On the 13.5 instance, launch a Windows PowerShell window.  
-
-	Select the shell appropriate to your system, either the 64-bit or 32-bit version. 
-
-2. Enter the HP Cloud environment CLI by entering:
-
-	`PS C:> cd HPCS:`
-
-3. Create a new network by executing the following command, using the appropriate values:
-
-	`new-port -n Name - asu AdminStateUp -nid NetworkID -did PortsDeviceID`
-
-	Where:
-	`n` - The port name.
+	Where
 	
-	`asu` - Determines if the `AdminStateUp` flag is true or false.
+		id - The ID of the network to delete.
 
-	`nid` - Identifies Port Network.
+		all - Removes all networks in the current availability-zone associated with your project.
 
-	`did`	- Identifies Port Device.
+	The following example deletes a network with the specified ID
 
-	The following example creates a new port named `testPort1` on network `bd1c30f7-71f1-455e b91e-8d03da7f5224`. 
+		remove-network -id 12857174-99cf-40e9-999e-fb0fa2e84898  
 
-	new-port "testPort1" -nid bd1c30f7-71f1-455e b91e-8d03da7f5224 -asu -did "sdf\etc" 
+Deletes the Network with the id of 12857174-99cf-40e9-999e-fb0fa2e84898
+
+
+
 
 
 ## Using the HP Cloud Compute Service API ##

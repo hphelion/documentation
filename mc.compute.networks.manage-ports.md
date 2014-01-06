@@ -41,24 +41,35 @@ Before you perform any network management on your routers, you must:
 <!--When cloudadmin tool deployed, add a link to it here?-->
 <!--Include a link to the CLI process for creating a router here as well?-->
 
+### How to create a port ###
 
-##Enabling a router## {#Enabling}
+1. On the 13.5 instance, launch a Windows PowerShell window.  
 
-When you enable the compute service, a router is enabled by default.  If you have [disabled](#Disabling) the router, to enable it, in the `Manage` column, select the `Options` button for the router you wish to disable and click the `Disable` item:
+	Select the shell appropriate to your system, either the 64-bit or 32-bit version. 
 
-<img src="media/disable-router.jpg" width="580" alt="" />
- 
+2. Enter the HP Cloud environment CLI by entering:
 
-##Disabling a router## {#Disabling}
+	`PS C:> cd HPCS:`
 
-When you enable the compute service, a router is enabled by default.  To disable the router, in the `Manage` column, select the `Options` button for the router you wish to disable and click the `Disable` item:
+3. Create a new network by executing the following command, using the appropriate values:
 
-<img src="media/enable-router.jpg" width="580" alt="" />
+	`new-port -n Name - asu AdminStateUp -nid NetworkID -did PortsDeviceID`
+
+	Where:
+	`n` - The port name.
+	
+	`asu` - Determines if the `AdminStateUp` flag is true or false.
+
+	`nid` - Identifies Port Network.
+
+	`did`	- Identifies Port Device.
+
+	The following example creates a new port named `testPort1` on network `bd1c30f7-71f1-455e b91e-8d03da7f5224`. 
+
+	new-port "testPort1" -nid bd1c30f7-71f1-455e b91e-8d03da7f5224 -asu -did "sdf\etc" 
 
 
-##Attaching an interface to a router## {#Attaching}
 
-To attach an interface to a router, you must first open the [router details](/mc/compute/networks/view-router) screen.  In the `Manage` column, select the `Options` button for the router you wish to view the details of and click the `Router Details` item:
 
 
 ##For further information## {#ForFurtherInformation}
