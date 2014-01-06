@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Cloud Compute Networking"
-permalink: /compute/networking/outline
+permalink: /compute/networks/outline
 product: compute
 
 ---
