@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Cloud Compute Networking"
-permalink: /compute/networking/
+permalink: /compute/networking/outline
 product: compute
 
 ---
@@ -10,6 +10,7 @@ product: compute
 
 ## HP Cloud Networking Overview ##
 [HP Cloud Networking Overview](/compute/networks/) 
+
 Short, very high level
 
 * Using the Default Network Configuration
@@ -26,7 +27,7 @@ Short, very high level
 *I created a new file; modeled after HP Cloud version 13.5 overview; text from networking guide*
 
 
-### About the Networks screen ###
+#### Networks screen overview ####
 
 [Management console: Networks screen](/mc/compute/networks/)
 
@@ -34,9 +35,11 @@ Short, very high level
 - Networks screen functions
 - For further information
 
-#### Networks screen overview ####
+*File exists for MC; need to update to Horizon*
 
 #### Networks screen functions ####
+
+[Networks screen functions](https://docs.hpcloud.com/mc/compute/networks/)
 
 - Creating and deleting a network
 - Managing a subnet
@@ -50,6 +53,8 @@ Short, very high level
 ### Creating Your First Network - 13.5 ###
 
 [Creating Your First Network](/compute/network/first-networks/)
+
+*I created this file; not complete; based on Creating first instance; **do we need**?*
 
 #### Using the Horizon Cloud Console ####
 
