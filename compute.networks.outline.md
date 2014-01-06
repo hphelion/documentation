@@ -54,7 +54,7 @@ Short, very high level
 
 [Creating Your First Network](/compute/network/first-networks/)
 
-*I created this file; not complete; based on Creating first instance; **do we need**?*
+*I created this file; not complete; based on Creating first instance (https://community.hpcloud.com/article/creating-your-first-instance-135); **do we need**?*
 
 #### Using the Horizon Cloud Console ####
 

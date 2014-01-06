@@ -108,13 +108,13 @@ The HP Cloud environment command-line interface (CLI) software for Windows Power
 
 	Where:
 
-	`n` - The name of new Network.
+		n - The name of new Network.
 
-	`asu` - Determines if the `AdminStateUp` flag is true or false.
+		asu - Determines if the `AdminStateUp` flag is true or false.
 
 	The following example creates a new network named `testNet1` with AdminStateUp set to `true`.
 	
-	`new-network "testNet1" -asu` 
+		new-network "testNet1" -asu 
 
 ### How to create a sub-network ###
 
@@ -132,17 +132,17 @@ The HP Cloud environment command-line interface (CLI) software for Windows Power
 
 	Where:
 
-	nid - Subnet name.
+		nid - Subnet name.
 
-	ipv - Sets the IP Version
+		ipv - Sets the IP Version
 
-	c - CIDR value.
+		c - CIDR value.
 
-	a - Lists Allocation Pools, separating them by commas.
+		a - Lists Allocation Pools, separating them by commas.
 
 	The following example creates a new subnet called `testSubnet`.
 
-	new-subnet -n testSubnet -nid bd1c30f7-71f1-455e-b91e-8d03da7f5224 -ipv 4 -c "10.0.6.0/24" -a "10.0.6.20", "10.0.6.22" , "10.0.6.26", "10.0.6.29" 
+		new-subnet -n testSubnet -nid bd1c30f7-71f1-455e-b91e-8d03da7f5224 -ipv 4 -c "10.0.6.0/24" -a "10.0.6.20", "10.0.6.22" , "10.0.6.26", "10.0.6.29" 
 
 ### How to create a port ###
 
@@ -159,17 +159,18 @@ The HP Cloud environment command-line interface (CLI) software for Windows Power
 	`new-port -n Name - asu AdminStateUp -nid NetworkID -did PortsDeviceID`
 
 	Where:
-	`n` - The port name.
 	
-	`asu` - Determines if the `AdminStateUp` flag is true or false.
+		n - The port name.
+	
+		asu - Determines if the `AdminStateUp` flag is true or false.
 
-	`nid` - Identifies Port Network.
+		nid - Identifies Port Network.
 
-	`did`	- Identifies Port Device.
+		did - Identifies Port Device.
 
 	The following example creates a new port named `testPort1` on network `bd1c30f7-71f1-455e b91e-8d03da7f5224`. 
 
-	new-port "testPort1" -nid bd1c30f7-71f1-455e b91e-8d03da7f5224 -asu -did "sdf\etc" 
+		new-port "testPort1" -nid bd1c30f7-71f1-455e b91e-8d03da7f5224 -asu -did "sdf\etc" 
 
 
 ### How to delete a network ###
@@ -183,3 +184,20 @@ The HP Cloud environment command-line interface (CLI) software for Windows Power
 	`PS C:> cd HPCS:`
 
 3. Create a new network by executing the following command, using the appropriate values:
+	
+	remove-network
+
+	remove-network -id -all
+
+	Where
+	
+		id - The ID of the network to delete.
+
+		all - Removes all networks in the current availability-zone associated with your project.
+
+	The following example deletes a network with the specified ID
+
+		remove-network -id 12857174-99cf-40e9-999e-fb0fa2e84898  
+
+Deletes the Network with the id of 12857174-99cf-40e9-999e-fb0fa2e84898
+
