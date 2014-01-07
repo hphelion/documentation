@@ -98,10 +98,10 @@ Short, very high level
 
 ###4.0 Managing routers ###
 
-[Management console: Routers screen](/mc/compute/networks.md)
+[Management console: Routers screen](/mc/compute/routers)
 
-- Networks screen overview
-- Networks screen functions
+- Routers screen overview
+- Routers screen functions
 - For further information
 
 ###4.0 Managing routers ###
