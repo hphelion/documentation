@@ -17,7 +17,7 @@ The Horizon console compute dashboard Routers screen allows you to view and mani
 
 The Routers screen displays the router information for your project.
 
-<p><img src="media/compute-routers.png" alt="" />
+<img src="media/compute-routers.png" width="580" alt="" />
 
 The name, status, and attached networks are displayed.
 
