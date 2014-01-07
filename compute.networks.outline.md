@@ -158,23 +158,21 @@ Short, very high level
 *File created, but empty; do we need?; modeled after How To's with the Compute Service* 
 
 
-####6.1 Enabling and disabling a network ####
+Moved [Enabling and disabling a network](/mc/compute/networks/enable-network.md) into How To's
 
-[Enabling and disabling a network](/mc/compute/networks/enable-network.md)
+###7.0 Known Issues and Workarounds###
 
-*File exists; move into How To's?* 
-	
+[Known issues and workarounds](/compute/networks/issues/)
 
-Known Issues and Workarounds
-
-[Understanding network screen system messages](/compute/networks/sys-messages)
+Understanding network screen system messages
     Before you begin
     System message 1
     System message 2
     repeat as needed
     For further information
-*File exists, but empty; complete and move into How To's?*	
-[Viewing network details](/mc/compute/networks/mc.compute.networks.sys-messages)
+*File exists Understanding network screen system messages](/compute/networks/sys-messages), but empty; moved into How To's?*	
+
+
 
 
 ###7.0 For more information###

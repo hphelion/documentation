@@ -86,21 +86,6 @@ By default, when you [create a network](/mc/compute/networks/create-network#Crea
 
 7. Click **Create**.
 
-## How to delete a network ###
-
-1. Login to the [Horizon Console](https://horizon.hpcloud.com/).
-
-2. Select the Networks tab under the Project section:
-    <br><img src="media/network-new.png"  alt="" />
-
-3. On the Networks screen, locate the network which you want to delete.
-
-4. In the Actions column, click **More** -> **Delete Network** for your the network. 
-	<br><img src="media/network-delete.png"  alt="" />
-
-5. In the confirmation dialog, click **Delete Network**.
-
-See [the MC networking pages](/mc/compute/networks/) for more information about setting up networking using the MC.
 
 <!--Can users enable/disable routers in 13.5?
 ##Enabling a router## {#Enabling}
@@ -123,6 +108,14 @@ When you enable the compute service, a router is enabled by default.  To disable
 ## Using the Windows PowerShell ##
 
 The HP Cloud environment command-line interface (CLI) software for Windows PowerShell allows Windows users to manage their HP Cloud services from the command line.
+
+### How to enable a network ###
+
+By default, when you [create a network](/mc/compute/networks/create-network#Creating/), that network is created in an enabled admin state.  
+
+###How to disable a network### {#Disabling}
+
+By default, when you [create a network](/mc/compute/networks/create-network#Creating/), that network is created in an enabled admin state.  If you want to disable your network, in the `Manage` column of the `Networks` list, select the `Options` button and choose the `Disable` option.
 
 ### How to delete a network ###
 
@@ -153,7 +146,7 @@ The HP Cloud environment command-line interface (CLI) software for Windows Power
 Deletes the Network with the id of 12857174-99cf-40e9-999e-fb0fa2e84898
 
 
-
+## How to specify an IP address ###
 
 
 ## Using the HP Cloud Compute Service API ##
