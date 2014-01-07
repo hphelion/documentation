@@ -98,7 +98,15 @@ Short, very high level
 
 ###4.0 Managing routers ###
 
-[Managing routers](/mc/compute/networks/mc.compute.networks.manage-routers.md)
+[Management console: Routers screen](/mc/compute/networks.md)
+
+- Networks screen overview
+- Networks screen functions
+- For further information
+
+###4.0 Managing routers ###
+
+[Managing routers](/mc/compute/networks/manage-routers)
 
 - Before you begin
 - Enabling a router
