@@ -50,10 +50,6 @@ Short, very high level
 
 ###3.0 Managing networks ###
 
-Management console: Networks screen
-
-####3.1 Networks screen overview ####
-
 [Management console: Networks screen](/mc/compute/networks/)
 
 - Networks screen overview
@@ -62,8 +58,7 @@ Management console: Networks screen
 
 *File exists for MC; need to update to Horizon*
 
-
-####3.2 Viewing network details ####
+####3.1 Viewing network details ####
 
 [Viewing network details](/mc/compute/networks/mc.compute.networks.view-network)
 
@@ -77,7 +72,7 @@ Management console: Networks screen
 
 *File exists for MC; need to update to Horizon*
 
-####3.3 Managing a subnet ####
+####3.2 Managing a subnet ####
 
 [Managing a subnet](/mc/compute/networks/manage-subnet)
 
@@ -90,7 +85,7 @@ Management console: Networks screen
 
 *File exists for MC; need to update to Horizon*
 
-####3.4 Viewing subnet details ####
+####3.3 Viewing subnet details ####
 
 [Viewing subnet details](/mc/compute/networks/mc.compute.networks.view-subnet)
 

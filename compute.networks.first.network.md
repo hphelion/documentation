@@ -25,7 +25,7 @@ You can use the Horizon Cloud Console to perform the following tasks:
 * Delete a network
 * View network, subnet, and router details
 
-### How to create a network ###
+### Creating a network ###
 
 1. Login to the [Horizon Console](https://horizon.hpcloud.com/).
 
@@ -46,7 +46,7 @@ You can use the Horizon Cloud Console to perform the following tasks:
 
 7. Click **Create**.
 
-### How to add a sub-network ###
+### Adding a sub-network ###
 
 1. Login to the [Horizon Console](https://horizon.hpcloud.com/).
 
@@ -65,7 +65,6 @@ You can use the Horizon Cloud Console to perform the following tasks:
 	<br><img src="media/network-fields-sub-2.png"  alt="" />
 
 7. Click **Create**.
-
 
 
 See [the MC networking pages](/mc/compute/networks/) for more information about setting up networking using the MC.
