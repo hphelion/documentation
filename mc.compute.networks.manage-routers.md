@@ -10,8 +10,9 @@ product: mc-compute
 This page covers how to create and delete a router using the networks screen of the management console (MC).  This page covers the following topics:
 
 * [Before you begin](#Overview)
+* <!--Can users enable/disable routers in 13.5?
 * [Enabling a router](#Enabling)
-* [Disabling a router](#Disabling)
+* [Disabling a router](#Disabling) -->
 * [Attaching an interface to a router](#Attaching)
 * [Detaching an interface from a router](#Detaching)
 * [Attaching a router to an external network](#AttachExternal)
@@ -30,7 +31,7 @@ Before you perform any network management on your routers, you must:
 <!--When cloudadmin tool deployed, add a link to it here?-->
 <!--Include a link to the CLI process for creating a router here as well?-->
 
-
+<!--Can users enable/disable routers in 13.5?
 ##Enabling a router## {#Enabling}
 
 When you enable the compute service, a router is enabled by default.  If you have [disabled](#Disabling) the router, to enable it, in the `Manage` column, select the `Options` button for the router you wish to disable and click the `Disable` item:
@@ -44,6 +45,7 @@ When you enable the compute service, a router is enabled by default.  To disable
 
 <img src="media/enable-router.jpg" width="580" alt="" />
 
+-->
 
 ##Attaching an interface to a router## {#Attaching}
 
