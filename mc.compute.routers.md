@@ -9,8 +9,8 @@ product: mc-compute
 
 The Horizon console compute dashboard Routers screen allows you to view and manipulate routers.  This page covers the following topics:
 
-* [Networks screen overview](#Overview)
-* [Networks screen functions](#Functions)
+* [Routers screen overview](#Overview)
+* [Routers screen functions](#Functions)
 * [For further information](#ForFurtherInformation)
 
 ##Routers screen overview## {#Overview}
@@ -34,4 +34,5 @@ From the networks screen you can perform any of the following functions:
 ##For further information## {#ForFurtherInformation}
 
 * For basic information about our HP Cloud compute services, take a look at the [HP Cloud compute overview](/compute/) page
-* Use the MC [site map](/mc/sitemap) for a full list of all available MC documentation pages---
+* Use the MC [site map](/mc/sitemap) for a full list of all available MC documentation pages
+* For information about the Open Stack networking features, surf on over to [their networking wiki](https://wiki.openstack.org/wiki/Quantum)
