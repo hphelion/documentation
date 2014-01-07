@@ -108,6 +108,8 @@ Short, very high level
 - Routers screen functions
 - For further information
 
+*I created a new file for this; as an intro section, matching that of [Management console: Networks screen](/mc/compute/networks/).*
+
 ####4.1 Managing routers ####
 
 [Managing routers](/mc/compute/networks/manage-routers)
