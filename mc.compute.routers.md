@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Management console: Networks screen"
-permalink: /mc/compute/router/
+permalink: /mc/compute/routers/
 product: mc-compute
 
 ---
@@ -23,8 +23,7 @@ The name, status, and attached networks are displayed.
 
 Clicking the `+ Create Router` button launches the router creation screen.  Clicking the `Set Gateway` button launches a screen that allows you to attach an external network to the router. Clicking the `More` button allows you to delete the router. 
 
-
-##Networks screen functions## {#Functions}
+##Routers screen functions## {#Functions}
 
 From the networks screen you can perform any of the following functions:
 
