@@ -65,29 +65,6 @@ By default, when you [create a network](/mc/compute/networks/create-network#Crea
 5. In the confirmation dialog, click **Delete Network**.
 
 
-
-
-## How to add a sub-network ###
-
-1. Login to the [Horizon Console](https://horizon.hpcloud.com/).
-
-2. Select the Networks tab under the Project section:
-    <br><img src="media/network-new.png"  alt="" />
-
-3. On the Networks screen, locate the network to which you want to add a subnet.
-
-4. In the Actions column, click **More** -> **Add Subnet** for your the network. 
-	<br><img src="media/network-delete.png"  alt="" />
-
-5. Enter the following values, as appropriate:
-	<br><img src="media/network-fields-sub.png"  alt="" />
-
-6. Enter the following values, as appropriate:
-	<br><img src="media/network-fields-sub-2.png"  alt="" />
-
-7. Click **Create**.
-
-
 ## How to specify an IP address ###
 
 1. Login to the [Horizon Console](https://horizon.hpcloud.com/).
@@ -124,6 +101,24 @@ By default, when you [create a network](/mc/compute/networks/create-network#Crea
 5. In the confirmation dialog, click **Delete Network**.
 
 See [the MC networking pages](/mc/compute/networks/) for more information about setting up networking using the MC.
+
+<!--Can users enable/disable routers in 13.5?
+##Enabling a router## {#Enabling}
+
+When you enable the compute service, a router is enabled by default.  If you have [disabled](#Disabling) the router, to enable it, in the `Manage` column, select the `Options` button for the router you wish to disable and click the `Disable` item:
+
+<img src="media/disable-router.jpg" width="580" alt="" />
+ 
+
+##Disabling a router## {#Disabling}
+
+When you enable the compute service, a router is enabled by default.  To disable the router, in the `Manage` column, select the `Options` button for the router you wish to disable and click the `Disable` item:
+
+<img src="media/enable-router.jpg" width="580" alt="" />
+
+-->
+
+
 
 ## Using the Windows PowerShell ##
 

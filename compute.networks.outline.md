@@ -48,7 +48,7 @@ Short, very high level
 
 *I created a new file; modeled after HP Cloud version 13.5 overview*
 
-###3.0 Managing networks ###
+###3.0 Working with networks ###
 
 [Management console: Networks screen](/mc/compute/networks/)
 
@@ -100,7 +100,7 @@ Short, very high level
 
 *File exists for MC; need to update to Horizon*
 
-###4.0 Managing routers ###
+###4.0 Working with routers ###
 
 [Management console: Routers screen](/mc/compute/routers)
 
@@ -108,7 +108,7 @@ Short, very high level
 - Routers screen functions
 - For further information
 
-###4.0 Managing routers ###
+####4.1 Managing routers ####
 
 [Managing routers](/mc/compute/networks/manage-routers)
 
@@ -123,7 +123,7 @@ Short, very high level
 
 *File exists for MC; need to update to Horizon*
 
-####4.1 Viewing router details ####
+####4.2 Viewing router details ####
 
 [Viewing router details](/mc/compute/networks/mc.compute.networks.view-router)
 
@@ -136,7 +136,7 @@ Short, very high level
 
 *File exists for MC; need to update to Horizon*
 
-###5.0 Managing Ports ###
+###5.0 Working with ports ###
 
 [Managing Ports](/mc/compute/networks/manage-ports/)
 
