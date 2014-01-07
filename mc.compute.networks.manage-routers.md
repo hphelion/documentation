@@ -10,7 +10,7 @@ product: mc-compute
 This page covers how to create and delete a router using the networks screen of the management console (MC).  This page covers the following topics:
 
 * [Before you begin](#Overview)
-* <!--Can users enable/disable routers in 13.5?
+<!--Can users enable/disable routers in 13.5?
 * [Enabling a router](#Enabling)
 * [Disabling a router](#Disabling) -->
 * [Attaching an interface to a router](#Attaching)
