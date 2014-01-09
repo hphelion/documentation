@@ -41,25 +41,34 @@ For procedural instructions, see [Install and Configure Your Clouds](/cloudos/in
 The following information provides details about the Prerequisites panel:
 
 * **Concepts:**
- * [Prerequisites Overview](#Prerequisites Overview)
+
+ * [Prerequisites Overview](#prerequisites-overview)
+
 * **UI Description:**
- * [Prerequisites Page](#Prerequisites Page)
- * [Cloud Administration Node Internet Access Prerequisite Dialog](#Cloud Administration Node Internet Access Prerequisite Dialog)
- * [External DNS Server Prerequisite Dialog](#External DNS Server Prerequisite Dialog)
- * [Cloud Administration Node Time Settings Prerequisite Dialog](#Cloud Administration Node Time Settings Prerequisite Dialog)
- * [Email Notification Settings Prerequisite Dialog](#Email Notification Settings Prerequisite Dialog)
+
+ * [Prerequisites Page](#prerequisites-page)
+
+ * [Cloud Administration Node Internet Access Prerequisite Dialog](#cloud-administration-node-internet-access-prerequisite-dialog)
+
+ * [External DNS Server Prerequisite Dialog](#external-dns-server-prerequisite-dialog)
+
+ * [Cloud Administration Node Time Settings Prerequisite Dialog](#cloud-administration-node-time-settings-prerequisite-dialog)
+
+ * [Email Notification Settings Prerequisite Dialog](#email-notification-settings-prerequisite-dialog)
 
 ### Prerequisites Overview
 
 The first step on the Operational Dashboard is to configure the HP Cloud OS Administration node prerequisites.
 
-> **Caution:** Any prerequisites you want to configure, must be done before you complete the steps on the Complete Install page. 
-For details, see the [Complete Install Overview](/cloudos/manage/operational-dashboard/environment-tab/#complete-install-overview). 
-After that, the Edit Prerequisite dialogs will be read-only. Once the install process is triggered, no changes can be made. If you want to make changes, you need to start over by re-installing the HP Cloud OS Administration node. For procedural instructions, see [Install and Configure Your Cloud](/cloudos/install).
+> **Caution:** Any prerequisites you want to configure, must be done before you complete the steps on the Complete Install page. For details, see the [Complete Install Overview](/cloudos/manage/operational-dashboard/environment-tab/#complete-install-overview). After that, the Edit Prerequisite dialogs will be read-only. Once the install process is triggered, no changes can be made. If you want to make changes, you need to start over by re-installing the HP Cloud OS Administration node. For procedural instructions, see [Install and Configure Your Cloud](/cloudos/install).
+
 * **Cloud Administration Node Internet Access** &mdash; Configure to set up Internet access on the HP Cloud OS Administration node. You will need Internet access for downloading hot fixes and updates using the [Hot Fixes](/cloudos/manage/operational-dashboard/cloud-tab/#hot-fixes) panel, 
 or the [Updates and Extensions](/cloudos/manage/operational-dashboard/cloud-tab/#updates-and-extensions) panel.
+
 * **(Optional) External DNS Server** &mdash; Configure to add the IP address of the external DNS server your Cloud OS environment is using to access named websites within your cloud.
+
 * **Cloud Administration Node Time Settings** &mdash; Configure to reflect the current time to ensure that the Cloud is created successfully.
+
 * **(Optional) Email Notification Settings** &mdash; Configure to send email notifications when the Cloud and Compute Region operations complete because this takes some time. By enabling and setting this prerequisite, you can be alerted by e-mail when each operation completes.
 
 	
@@ -69,7 +78,7 @@ To access: Select the Environment tab > Prerequisites.
 
 The following table describes the Prerequisites page UI elements:
 
-<table style="text-align: left; vertical-align: top; width:700px;">
+<table style="text-align: left; vertical-align: top; min-width:900px;">
 
 <tr style="background-color: #C8C8C8;">
 <th>UI Elements</th>
@@ -77,7 +86,7 @@ The following table describes the Prerequisites page UI elements:
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> Prerequisite Description column </td>
+<td> <nobr> Prerequisite Description column </nobr> </td>
 <td> HP Cloud OS Administration node prerequisite settings:
 <ul>
 <li>Cloud Administration Node Internet Access</li>
@@ -95,7 +104,7 @@ The following table describes the Prerequisites page UI elements:
 
 <tr style="background-color: white; color: black;">
 <td> Edit Prerequisite button </td>
-<td> Opens the Edit Prerequisite dialog for the corresponding Prerequisite. </td>
+<td> <nobr> Opens the Edit Prerequisite dialog for the corresponding Prerequisite. </nobr> </td>
 </tr> 	
  	
 <tr style="background-color: white; color: black;">
@@ -110,15 +119,13 @@ The following table describes the Prerequisites page UI elements:
 
 To access: Select the Environment tab > Prerequisites> click Edit Prerequisite for the Cloud Administration Node Internet Access Prerequisite.
 
-**Caution:** If you want to set the Administration Node Internet Access Prerequisite, you must configure it before you complete the steps on the 
-Complete Install panel- see [Complete Install](#). After that, the Administration Node Internet Access Prerequisite dialog 
-will be read-only. Once the install process is triggered, no changes can be made. If you want to make changes, 
-you need to start over by re-installing the HP Cloud OS Administration node. 
+> **Caution:** If you want to set the Administration Node Internet Access Prerequisite, you must configure it before you complete the steps on the Complete Install panel- see [Complete Install](/cloudos/manage/operational-dashboard/environment-tab/#complete-install). After that, the Administration Node Internet Access Prerequisite dialog 
+will be read-only. Once the install process is triggered, no changes can be made. If you want to make changes, you need to start over by re-installing the HP Cloud OS Administration node. 
 For procedural instructions, see [Install and Configure Your Cloud](/cloudos/install).
 
 The following table describes the Cloud Administration Node Internet Access Prerequisite dialog UI elements:
 
-<table style="text-align: left; vertical-align: top; width:700px;">
+<table style="text-align: left; vertical-align: top; min-width:900px;">
 
 <tr style="background-color: #C8C8C8;">
 <th>UI Elements</th>
@@ -127,8 +134,7 @@ The following table describes the Cloud Administration Node Internet Access Prer
 
 <tr style="background-color: white; color: black;">
 <td> Network Interface </td>
-<td> Select the network interface on the HP Cloud OS Administration node that has been configured for Internet access. 
-<p><b>Note:</b> Interface eth0 is not used for Internet access. </p>
+<td> Select the network interface on the HP Cloud OS Administration node that has been configured for Internet access. <b>Note:</b> Interface <code>eth0</code> is not used for Internet access.
 </td>
 </tr>
 
@@ -166,7 +172,7 @@ The following table describes the Cloud Administration Node Internet Access Prer
 
 <tr style="background-color: #f8f8f8; color: black;">
 <td colspan="2"> HTTP Proxy Information -- Set proxy information applicable for your environment. If you are on a network that has a proxy, you must fill in this proxy information.
-<p>Caution: Specifying incorrect proxy host settings might cause some features to not work correctly in the Administration Dashboard.</p>
+<b>Caution:</b> Specifying incorrect proxy host settings might cause some features to not work correctly in the Administration Dashboard.</p>
 </td>
 </tr>
 
@@ -196,31 +202,43 @@ The following table describes the Cloud Administration Node Internet Access Prer
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> Update Prerequisite </td>
+<td> <nobr> Update Prerequisite </nobr> </td>
 <td> Click to save these settings, then click Complete Prerequisite to complete this setup.
 </tr>
 
 </table>
 
-> **Note:** If this prerequisite fails to complete successfully, an error message displays on the Prerequisites page. 
-For a potential solution, see [Problem: Admin Node Internet Access Prerequisites fail to complete](/cloudos/manage/troubleshooting/#problem-admin-node-internet-access-prerequisites-fail-to-complete) 
-in the Troubleshooting topic. 
+> **Note:** If this prerequisite fails to complete successfully, an error message displays on the Prerequisites page. For a potential solution, see [Problem: Admin Node Internet Access Prerequisites fail to complete](/cloudos/manage/troubleshooting/#problem-admin-node-internet-access-prerequisites-fail-to-complete) in the Troubleshooting topic. 
 
 ### External DNS Server Prerequisite Dialog
 
-Coming soon ... not formatted yet.
-
-Caution: If you want to set the External DNS Server Prerequisite, you must configure it before you complete the steps on the Complete Install panel- see Complete Install. After that, the External DNS Server Prerequisite dialog will be read-only. Once the install process is triggered, no changes can be made. If you want to make changes, you need to start over by re-installing the HP Cloud OS Administration node. See the Install section of the HP Cloud OS Documentation web site for instructions.
+<p style="background-color:#cccccc; padding:4px 4px 4px 4px;"> <b>Caution:</b>  If you want to set the External DNS Server Prerequisite, 
+you must configure it before you complete the steps on the Complete Install panel. See [Complete Install](/cloudos/manage/operational-dashboard/environment-tab/#complete-install). 
+After that, the External DNS Server Prerequisite dialog will be read-only. Once the install process is triggered, no changes can be made. 
+If you want to make changes, you need to start over by re-installing the HP Cloud OS Administration node. 
+For procedural instructions, see [Install and Configure Your Cloud](/cloudos/install).</p>
 
 To access: Select the Environment tab > Prerequisites> click Edit Prerequisite for the External DNS Server Prerequisite.
 
 The following table describes the External DNS Server Prerequisite dialog UI elements:
 
-UI Elements	Description
-External DNS Server IP Address	
-Type the IP address of the external DNS server used by your Cloud OS environment to be able to access named websites within your cloud.
+<table style="text-align: left; vertical-align: top; min-width:900px;">
 
-Update Prerequisite	Click to save the IP address.
+<tr style="background-color: #C8C8C8;">
+<th>UI Elements</th>
+<th>Description</th>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> External DNS Server IP Address </td>
+<td> Type the IP address of the external DNS server used by your Cloud OS environment to be able to access named websites within your cloud. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Update Prerequisite </td>
+<td> Click to save the IP address. </tr>
+
+</table> 
 
 ### Cloud Administration Node Time Settings Prerequisite Dialog
 
