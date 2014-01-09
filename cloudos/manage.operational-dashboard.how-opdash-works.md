@@ -44,7 +44,6 @@ The Operational Dashboard consists of the following tabs:
 
  This tab displays the following panels on which you complete the installation process to manage the nodes that will be used in your cloud and create a cloud. You can also download install modules or plugins. For details on each panel, see the [Cloud Tab](/cloudos/manage/operational-dashboard/cloud-tab) topic.
 
-
  * Overview
  * Manage Nodes
  * Manage Clouds

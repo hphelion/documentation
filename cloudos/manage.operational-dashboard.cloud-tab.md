@@ -24,7 +24,15 @@ PageRefresh();
 
 # Operational Dashboard: Cloud Tab
 
-Coming soon ...
+* [Prerequisites](#prerequisites)
+* [Server Types](#server-types)
+* [Connections](#connections)
+* [Networks](#networks)
+* [Complete Install](#complete-install)
+
+For procedural instructions, see [Install and Configure Your Clouds](/cloudos/install/).
+
+
  
  <a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

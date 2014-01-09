@@ -24,7 +24,9 @@ PageRefresh();
 
 # Operational Dashboard: Environment Tab
 
-The Environment tab contains the following panels on which you begin the installation process on the Operational Dashboard. On these panels, you set up your cloud environment and complete the HP Cloud OS Administration node installation. For the installation process, you must complete each panel in the order they are displayed.  
+The Environment tab contains the following panels on which you begin the installation process on the Operational Dashboard. 
+On these panels, you set up your cloud environment and complete the HP Cloud OS Administration node installation. 
+For the installation process, you must complete each panel in the order they are displayed. 
 
 * [Prerequisites](#prerequisites)
 * [Server Types](#server-types)
@@ -38,85 +40,171 @@ For procedural instructions, see [Install and Configure Your Clouds](/cloudos/in
 
 The following information provides details about the Prerequisites panel:
 
-* Concepts:
- * Prerequisites Overview
-* UI Description:
- * Prerequisites Page
-  ** Cloud Administration Node Internet Access Prerequisite Dialog
-  ** External DNS Server Prerequisite Dialog
-  ** Cloud Administration Node Time Settings Prerequisite Dialog
-  ** Email Notification Settings Prerequisite Dialog
+* **Concepts:**
+ * [Prerequisites Overview](#Prerequisites Overview)
+* **UI Description:**
+ * [Prerequisites Page](#Prerequisites Page)
+ * [Cloud Administration Node Internet Access Prerequisite Dialog](#Cloud Administration Node Internet Access Prerequisite Dialog)
+ * [External DNS Server Prerequisite Dialog](#External DNS Server Prerequisite Dialog)
+ * [Cloud Administration Node Time Settings Prerequisite Dialog](#Cloud Administration Node Time Settings Prerequisite Dialog)
+ * [Email Notification Settings Prerequisite Dialog](#Email Notification Settings Prerequisite Dialog)
 
 ### Prerequisites Overview
 
-Coming soon ... not formatted yet.
+The first step on the Operational Dashboard is to configure the HP Cloud OS Administration node prerequisites.
 
-The first step on the Operational Dashboard, is to configure the HP Cloud OS Administration node prerequisites.
+> **Caution:** Any prerequisites you want to configure, must be done before you complete the steps on the Complete Install page. 
+For details, see the [Complete Install Overview](/cloudos/manage/operational-dashboard/environment-tab/#complete-install-overview). 
+After that, the Edit Prerequisite dialogs will be read-only. Once the install process is triggered, no changes can be made. If you want to make changes, you need to start over by re-installing the HP Cloud OS Administration node. For procedural instructions, see [Install and Configure Your Cloud](/cloudos/install).
+* **Cloud Administration Node Internet Access** &mdash; Configure to set up Internet access on the HP Cloud OS Administration node. You will need Internet access for downloading hot fixes and updates using the [Hot Fixes](/cloudos/manage/operational-dashboard/cloud-tab/#hot-fixes) panel, 
+or the [Updates and Extensions](/cloudos/manage/operational-dashboard/cloud-tab/#updates-and-extensions) panel.
+* **(Optional) External DNS Server** &mdash; Configure to add the IP address of the external DNS server your Cloud OS environment is using to access named websites within your cloud.
+* **Cloud Administration Node Time Settings** &mdash; Configure to reflect the current time to ensure that the Cloud is created successfully.
+* **(Optional) Email Notification Settings** &mdash; Configure to send email notifications when the Cloud and Compute Region operations complete because this takes some time. By enabling and setting this prerequisite, you can be alerted by e-mail when each operation completes.
 
-Caution: Any prerequisites you want to configure, must be done before you complete the steps on the Complete Install page - see Complete Install Overview for details. After that, the Edit Prerequisite dialogs will be read-only. Once the install process is triggered, no changes can be made. If you want to make changes, you need to start over by re-installing the HP Cloud OS Administration node. See the Install section of the HP Cloud OS Documentation web site for instructions.
-
-Cloud Administration Node Internet Access -- configure to set up internet access on the HP Cloud OS Administration node. You will need internet access for downloading hot fixes and updates using the Hot Fixes panel (see Hot Fixes ) or the Updates and Extensions panel (see Updates and Extensions ).
-(Optional) External DNS Server - configure to add the IP address of the external DNS server your Cloud OS environment is using to access named websites within your cloud.
-Cloud Administration Node Time Settings -- configure to reflect the current time to ensure that the Cloud is created successfully.
-(Optional) Email Notification Settings -- configure to send email notifications when the Cloud and Compute Region operations complete since this takes some time. By enabling and setting this prerequisite, you can be alerted by e-mail when each operation completes.
-
+	
 ### Prerequisites Page
-
-Coming soon ... not formatted yet.
 
 To access: Select the Environment tab > Prerequisites.
 
 The following table describes the Prerequisites page UI elements:
 
-UI Elements	Description
-Prerequisite Description column	
-HP Cloud OS Administration node prerequisite settings:
+<table style="text-align: left; vertical-align: top; width:700px;">
 
-Cloud Administration Node Internet Access
-External DNS Server
-Cloud Administration Node Time Settings
-Email Notification Settings
-Last Updated column	Timestamp when the prerequisite was completed.
-Edit Prerequisite button	Opens the Edit Prerequisite dialog for the corresponding Prerequisite.
-Complete Prerequisite button	Completes the setup of the setting.
+<tr style="background-color: #C8C8C8;">
+<th>UI Elements</th>
+<th>Description</th>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Prerequisite Description column </td>
+<td> HP Cloud OS Administration node prerequisite settings:
+<ul>
+<li>Cloud Administration Node Internet Access</li>
+<li>External DNS Server</li>
+<li>Cloud Administration Node Time Settings</li>
+<li>Email Notification Settings </li>
+</ul>
+</td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Last Updated column </td>
+<td> Timestamp when the prerequisite was completed. </td>
+</tr> 	
+
+<tr style="background-color: white; color: black;">
+<td> Edit Prerequisite button </td>
+<td> Opens the Edit Prerequisite dialog for the corresponding Prerequisite. </td>
+</tr> 	
+ 	
+<tr style="background-color: white; color: black;">
+<td> Complete Prerequisite button </td>
+<td> Completes the setup of the setting. </td>
+</tr> 	
+
+</table>
+
 
 ### Cloud Administration Node Internet Access Prerequisite Dialog
 
-Coming soon ... not formatted yet.
-
 To access: Select the Environment tab > Prerequisites> click Edit Prerequisite for the Cloud Administration Node Internet Access Prerequisite.
 
-Caution: If you want to set the Administration Node Internet Access Prerequisite, you must configure it before you complete the steps on the Complete Install panel- see Complete Install. After that, the Administration Node Internet Access Prerequisite dialog will be read-only. Once the install process is triggered, no changes can be made. If you want to make changes, you need to start over by re-installing the HP Cloud OS Administration node. See the Install section of the HP Cloud OS Documentation web site for instructions.
+**Caution:** If you want to set the Administration Node Internet Access Prerequisite, you must configure it before you complete the steps on the 
+Complete Install panel- see [Complete Install](#). After that, the Administration Node Internet Access Prerequisite dialog 
+will be read-only. Once the install process is triggered, no changes can be made. If you want to make changes, 
+you need to start over by re-installing the HP Cloud OS Administration node. 
+For procedural instructions, see [Install and Configure Your Cloud](/cloudos/install).
 
 The following table describes the Cloud Administration Node Internet Access Prerequisite dialog UI elements:
 
-UI Elements	Description
-Network Interface	
-Select the network interface on the HP Cloud OS Administration node that has been configured for Internet access.
+<table style="text-align: left; vertical-align: top; width:700px;">
 
-Note: Interface eth0 is not used for Internet access.
-Network Configuration	
-Disable (default) or enable DHCP.
+<tr style="background-color: #C8C8C8;">
+<th>UI Elements</th>
+<th>Description</th>
+</tr>
 
-If you have a static IP address allocated for the node, fill in the appropriate information and uncheck DHCP.
+<tr style="background-color: white; color: black;">
+<td> Network Interface </td>
+<td> Select the network interface on the HP Cloud OS Administration node that has been configured for Internet access. 
+<p><b>Note:</b> Interface eth0 is not used for Internet access. </p>
+</td>
+</tr>
 
-IP Address	Leave blank unless you have a static IP address, which you enter here.
-Network Mask	Leave blank unless you have a static IP address. Type the network mask.
-Gateway	Leave blank unless you have a static IP address. Type the gateway.
-DNS Address	Leave blank unless you have a static IP address. Type the DNS address.
-HTTP Proxy Information -- Set proxy information applicable for your environment. If you are on a network that has a proxy, you must fill in this proxy information.
+<tr style="background-color: #f8f8f8; color: black;">
+<td colspan="2"> Network Configuration - Set the network configuration for your environment. </td>
+</tr>
 
-Caution: Specifying incorrect proxy host settings might cause some features to not work correctly in the Administration Dashboard.
+<tr style="background-color: white; color: black;">
+<td> DHCP checkbox </td>
+<td>Enable (default) or disable DHCP.
+<p>If the node will receive its IP configuration via DHCP, leave the DHCP checkbox checked. When DHCP is checked, the four Network Configuration fields are disabled, and can be left blank.</p>
+<p>If you have a static IP address allocated for the node, uncheck the DHCP checkbox and enter the appropriate information into the IP Address, Network Mask, Gateway, and DNS Address fields.</p> 
+</td>
+</tr> 	
 
-Host	Get this from your system administrator or from the settings in your web browser.
-Port	
-Get this from your system administrator or from the settings in your web browser.
+<tr style="background-color: white; color: black;">
+<td> IP Address </td>
+<td> Leave blank unless you have a static IP address, which you enter here. </td>
+</tr> 	
+ 	
+<tr style="background-color: white; color: black;">
+<td> Network Mask </td>
+<td> Leave blank unless you have a static IP address. Type the network mask. </td>
+</tr> 	
 
-Non-Proxy Hosts	 Specify addresses that should not use proxy servers (for Controller/Compute Nodes' admin and os_sdn networks, IP range). Each network needs to be separated by a bar "|". For example: 10.*|192.*|localhost.
-Username (Optional)	Specify the username if necessary for the proxy setting.
-Password (Optional)	Specify the password if necessary for the proxy setting..
-Update Prerequisite	Click to save these settings, then click Complete Prerequisite to complete this setup..
-Note: If this prerequisite fails to complete successfully, an error message displays on the Prerequisites page. See "Problem Admin Node Internet Access Prerequisites fail to complete" in the HP Cloud OS Troubleshooting Guide for a solution.
+<tr style="background-color: white; color: black;">
+<td> Gateway </td>
+<td> Leave blank unless you have a static IP address. Type the gateway. </td>
+</tr> 
+
+<tr style="background-color: white; color: black;">
+<td> DNS Address </td>
+<td> Leave blank unless you have a static IP address. Type the DNS address. </td>
+</tr>
+
+<tr style="background-color: #f8f8f8; color: black;">
+<td colspan="2"> HTTP Proxy Information -- Set proxy information applicable for your environment. If you are on a network that has a proxy, you must fill in this proxy information.
+<p>Caution: Specifying incorrect proxy host settings might cause some features to not work correctly in the Administration Dashboard.</p>
+</td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Host </td>
+<td> Get this from your system administrator or from the settings in your web browser. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Port </td>
+<td> Get this from your system administrator or from the settings in your web browser. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Non-Proxy Hosts </td>
+<td> Specify addresses that should not use proxy servers (for Controller/Compute Nodes' admin and os_sdn networks, IP range). Each network needs to be separated by a bar "|". For example: <code>10.*|192.*|localhost</code>. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Username (Optional) </td>
+<td> Specify the username if necessary for the proxy setting.
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Password (Optional) </td>
+<td> Specify the password if necessary for the proxy setting.
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Update Prerequisite </td>
+<td> Click to save these settings, then click Complete Prerequisite to complete this setup.
+</tr>
+
+</table>
+
+> **Note:** If this prerequisite fails to complete successfully, an error message displays on the Prerequisites page. 
+For a potential solution, see [Problem: Admin Node Internet Access Prerequisites fail to complete](/cloudos/manage/troubleshooting/#problem-admin-node-internet-access-prerequisites-fail-to-complete) 
+in the Troubleshooting topic. 
 
 ### External DNS Server Prerequisite Dialog
 
@@ -191,7 +279,7 @@ Caution: If you plan to customize the servers, you must do that before you compl
 
 The Server Types panel allows you to capture new or use existing server definitions about the networking ports for various servers in your bare-metal cloud environment. If all servers in your cloud are the same server type (homogeneous nodes), you are not required to configure anything in this view. HP recommends that you keep and accept the default settings.
 
-However, if the servers in your cloud are different types of servers, you may be required to use a Linux utility such as dmidecode to get the pattern and CLI commands to determine the bus addresses of your server’s network ports.
+However, if the servers in your cloud are different types of servers, you may be required to use a Linux utility such as dmidecode to get the pattern and CLI commands to determine the bus addresses of your server's network ports.
 
 Here is one way to get the values for Server Name Pattern and Bus Order:
 
