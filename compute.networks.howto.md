@@ -11,24 +11,24 @@ product: compute
 
 As you get used to using the networking service, you might need to modify the default network or create additional networks.  This page gives you some how-to's for the following tasks: 
 
-[Enable a network](#Enabling)
-[Disable a network](#Disabling)
-[Delete a network](#Deleting)
-[Specify an IP address](#SpecifyIP)
-[Rename a network](#RenameNet)
-[Edit a sub-net](#EditSub)
-[Rename a port](#RenamePort)
-[Assign a router to a network](#AssignRouter)
+[Enable - a network](#Enabling)
+- [Disable a network](#Disabling)
+- [Delete a network](#Deleting)
+- [Specify an IP address](#SpecifyIP)
+- [Rename a network](#RenameNet)
+- [Edit a sub-net](#EditSub)
+- [Rename a port](#RenamePort)
+- [Assign a router to a network](#AssignRouter)
  
-[Delete a network using the CLI](#DeleteCLI)
-[Rename a network using the CLI](#RenameNet)
-[Edit a sub-net using the CLI](#EditSubCLI)
-[Rename a port using the CLI](#RenamePortCLI)
-[Assign a router to a network using the CLI](#AssignRouterCLI)
-[Rename a network using the CLI](#RenameNet)
-[Edit a sub-net using the CLI](#EditSub)
-[Rename a port using the CLI](#RenamePort)
-[Assign a router to a network using the CLI](#AssignRouter)
+[D- elete a network using the CLI](#DeleteCLI)
+- [Rename a network using the CLI](#RenameNet)
+- [Edit a sub-net using the CLI](#EditSubCLI)
+- [Rename a port using the CLI](#RenamePortCLI)
+- [Assign a router to a network using the CLI](#AssignRouterCLI)
+- [Rename a network using the CLI](#RenameNet)
+- [Edit a sub-net using the CLI](#EditSub)
+- [Rename a port using the CLI](#RenamePort)
+- [Assign a router to a network using the CLI](#AssignRouter)
 
 
 
@@ -127,7 +127,7 @@ By default, when you [create a network](/mc/compute/networks/create-network#Crea
 7. Click **Create**.
 
 
-### How to rename a network ### {RenameNet}
+### How to rename a network ### {#RenameNet}
 
 1. Login to the [Horizon Console](https://horizon.hpcloud.com/).
 
@@ -154,7 +154,7 @@ By default, when you [create a network](/mc/compute/networks/create-network#Crea
 	<br><img src="media/network-subnet-edit.png"  alt="" />
 
 
-###How to rename a port### (#RenamePort)
+###How to rename a port### {#RenamePort}
 
 1. Login to the [Horizon Console](https://horizon.hpcloud.com/).
 
@@ -204,7 +204,7 @@ The HP Cloud environment command-line interface (CLI) software for Windows Power
 
 For the full reference of supported HP Cloud CLI commands for Windows PowerShell, see [HP Cloud Environment CLI Software for Windows PowerShell Command Line Reference](docs.hpcloud.com/cli/windows/2/reference/). 
 
-### How to delete a network ### {DeleteCLI}
+### How to delete a network ### {#DeleteCLI}
 
 1. On the 13.5 instance, launch a Windows PowerShell window.  
 
@@ -232,7 +232,7 @@ For the full reference of supported HP Cloud CLI commands for Windows PowerShell
 
 Deletes the Network with the id of 12857174-99cf-40e9-999e-fb0fa2e84898
 
-### How to rename a network ### {RenameNetCLI}
+### How to rename a network ### {#RenameNetCLI}
 
 You can change the name of a network, as needed.
 
