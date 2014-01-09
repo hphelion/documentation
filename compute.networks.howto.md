@@ -62,7 +62,7 @@ All of the procedures in this section require that you access the Networks or Ro
 
 ## How to enable a network {#Enabling}
 
-By default, when you [create a network](/mc/compute/networks/create-network#Creating/), that network is created in an enabled admin state.  
+By default, when you [create a network](/mc/compute/networks/create-network#Creating), that network is created in an enabled admin state.  
 
 If you have at some point [disabled](#Disabling) a network, you can enable it.
 
