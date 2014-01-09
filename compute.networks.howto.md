@@ -41,17 +41,20 @@ Before you can enable or disable networks, you must:
 
 * [Sign up for an HP Cloud compute account](https://account.hpcloud.com/signup)
 * Activate compute service on your account
-* [Create a network](/mc/compute/networks/create-network/)
+* [Create a network](/mc/compute/networks/create-network/#Creating-jumplink-span/)
 
 ## Using the Horizon Cloud Console ## {#console}
 
 You can use the Horizon Cloud Console to perform the following tasks:
 
-* Enabling and disabling a network
-* Creating a sub-network
-* Specifying an IP address
-* Allocating floating IP address
-* Configuring security group
+- [Enable a network](#Enabling)
+- [Disable a network](#Disabling)
+- [Delete a network](#Deleting)
+- [Specify an IP address](#SpecifyIP)
+- [Rename a network](#RenameNet)
+- [Edit a sub-net](#EditSub)
+- [Rename a port](#RenamePort)
+- [Assign a router to a network](#AssignRouter)
 
 All of the procedures in this section require that you access the Networks or Routers tab in the Project section of the Horizon Cloud Console, as shown: {#NetworkTab}
 
