@@ -20,7 +20,7 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> &#9664; PREV</a> | <a href="/cloudos/">&#9650; UP</a> | <a href="/cloudos/manage/operational-dashboard/how-opdash-works/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/cloudos/manage/troubleshooting/">&#9664; PREV</a> | <a href="/cloudos/manage/">&#9650; UP</a> | <a href="/cloudos/manage/operational-dashboard/how-opdash-works/">NEXT &#9654;</a> </p>
 
 # HP Cloud OS Operational Dashboard Help
 

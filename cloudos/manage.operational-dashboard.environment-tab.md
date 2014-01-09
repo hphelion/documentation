@@ -20,12 +20,11 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> <a href="/cloudos/manage/operational-dashboard/how-opdash-works/">&#9664; PREV</a> | <a href="/cloudos/">&#9650; UP</a> | <a href="<a href="/cloudos/manage/operational-dashboard/cloud-tab/">">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/cloudos/manage/operational-dashboard/how-opdash-works/">&#9664; PREV</a> | <a href="/cloudos/manage/operational-dashboard/">&#9650; UP</a> | <a href="/cloudos/manage/operational-dashboard/cloud-tab/">NEXT &#9654;</a> </p>
 
 # Operational Dashboard: Environment Tab
 
 The Environment tab contains the following panels on which you begin the installation process on the Operational Dashboard. On these panels, you set up your cloud environment and complete the HP Cloud OS Administration node installation. For the installation process, you must complete each panel in the order they are displayed.  
-For procedural instructions, see [Install and Configure Your Clouds](/cloudos/install/).
 
 * [Prerequisites](#prerequisites)
 * [Server Types](#server-types)
@@ -33,20 +32,20 @@ For procedural instructions, see [Install and Configure Your Clouds](/cloudos/in
 * [Networks](#networks)
 * [Complete Install](#complete-install)
 
-## Prerequisites
+For procedural instructions, see [Install and Configure Your Clouds](/cloudos/install/).
 
-Coming soon ... not formatted yet.
+## Prerequisites
 
 The following information provides details about the Prerequisites panel:
 
-* Concepts
+* Concepts:
  * Prerequisites Overview
-* UI Description
+* UI Description:
  * Prerequisites Page
-  * Cloud Administration Node Internet Access Prerequisite Dialog
-  * External DNS Server Prerequisite Dialog
-  * Cloud Administration Node Time Settings Prerequisite Dialog
-  * Email Notification Settings Prerequisite Dialog
+  ** Cloud Administration Node Internet Access Prerequisite Dialog
+  ** External DNS Server Prerequisite Dialog
+  ** Cloud Administration Node Time Settings Prerequisite Dialog
+  ** Email Notification Settings Prerequisite Dialog
 
 ### Prerequisites Overview
 

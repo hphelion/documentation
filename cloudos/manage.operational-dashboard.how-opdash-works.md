@@ -51,7 +51,7 @@ The Operational Dashboard consists of the following tabs:
  * Hot Fixes
  * Updates and Extensions
 
-**Note:** The Cloud tab does not appear until you have completed the HP Cloud OS Administration node install on the Environment tab. See the [Complete Install](/cloudos/manage/operational-dashboard/environment-tab#complete-install) section of the Environment tab topic.
+> **Note:** The Cloud tab does not appear until you have completed the HP Cloud OS Administration node install on the Environment tab. See the [Complete Install](/cloudos/manage/operational-dashboard/environment-tab#complete-install) section of the Environment tab topic.
 
 * Settings Tab
 

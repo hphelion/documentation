@@ -20,7 +20,7 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> <a href="/cloudos/manage/operational-dashboard/environment-tab/">&#9664; PREV</a> | <a href="/cloudos/">&#9650; UP</a> | <a href="<a href="/cloudos/manage/operational-dashboard/settings-tab/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/cloudos/manage/operational-dashboard/environment-tab/">&#9664; PREV</a> | <a href="/cloudos/manage/operational-dashboard/">&#9650; UP</a> | <a href="/cloudos/manage/operational-dashboard/settings-tab/">NEXT &#9654;</a> </p>
 
 # Operational Dashboard: Cloud Tab
 
