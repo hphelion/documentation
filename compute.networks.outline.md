@@ -154,11 +154,28 @@ Short, very high level
 
 [How To's with HP Cloud Networking version 13.5](/compute/networks/howto/)
 
+- Enable a network
+- Disable a network
+- Delete a network
+- Specify an IP address
+- Rename a network
+- Edit a sub-net
+- Rename a port
+- Assign a router to a network
+ 
+- Delete a network using the CLI
+- Rename a network using the CLI
+- Edit a sub-net using the CLI
+- Rename a port using the CLI
+- Assign a router to a network using the CLI
+- Rename a network using the CLI
+- Edit a sub-net using the CLI
+- Rename a port using the CLI
+- Assign a router to a network using the CLI
 
-*File created, but empty; do we need?; modeled after How To's with the Compute Service* 
 
-
-Moved [Enabling and disabling a network](/mc/compute/networks/enable-network.md) into How To's
+*File created, but empty; do we need?; I added tasks that didn't fit elsewhere, modeled after How To's with the Compute Service.* 
+*Moved [Enabling and disabling a network](/mc/compute/networks/enable-network.md) into How To's*
 
 ###7.0 Known Issues and Workarounds###
 
@@ -170,12 +187,13 @@ Understanding network screen system messages
     System message 2
     repeat as needed
     For further information
+
 *File exists Understanding network screen system messages](/compute/networks/sys-messages), but empty; moved into How To's?*	
 
 
 
 
-###7.0 For more information###
+###8.0 For more information###
 
 Community links to consider:
 
