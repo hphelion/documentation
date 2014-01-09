@@ -10,10 +10,29 @@ product: compute
 <!-- Modeled after How To's with the Compute Service (https://docs.hpcloud.com/compute/using/) Some text from network guide. -->
 
 As you get used to using the networking service, you might need to modify the default network or create additional networks.  This page gives you some how-to's for the following tasks: 
+
+[Enable a network](#Enabling)
+[Disable a network](#Disabling)
+[Delete a network](#Deleting)
+[Specify an IP address](#SpecifyIP)
+[Rename a network](#RenameNet)
+[Edit a sub-net](#EditSub)
+[Rename a port](#RenamePort)
+[Assign a router to a network](#AssignRouter)
  
-* Specifying an IP address for those networks 
-* Configuring security group parameters that define the firewall rules for virtual servers
-* Allocating and managing public floating IP addresses
+[Delete a network using the CLI](#DeleteCLI)
+[Rename a network using the CLI](#RenameNet)
+[Edit a sub-net using the CLI](#EditSubCLI)
+[Rename a port using the CLI](#RenamePortCLI)
+[Assign a router to a network using the CLI](#AssignRouterCLI)
+[Rename a network using the CLI](#RenameNet)
+[Edit a sub-net using the CLI](#EditSub)
+[Rename a port using the CLI](#RenamePort)
+[Assign a router to a network using the CLI](#AssignRouter)
+
+
+
+
 
 You can use the the [Horizon Cloud Console](#console) or [HP Cloud CLI for Windows PowerShell](#powershell) to work with a network.  
 
@@ -35,29 +54,49 @@ You can use the Horizon Cloud Console to perform the following tasks:
 * Allocating floating IP address
 * Configuring security group
 
+All of the procedures in this section require that you access the Networks or Routers tab in the Project section of the Horizon Cloud Console, as shown: {#NetworkTab}
+
+   <br><img src="media/network-tab.png"  alt="" />
+
 ## How to enable a network
 
 By default, when you [create a network](/mc/compute/networks/create-network#Creating/), that network is created in an enabled admin state.  
 
-<img src="media/compute-networks03.jpg" width="580" alt="" />
-
-If you have at some point [disabled](#Disabling) a network and want to enable it, in the `Manage` column of the `Networks` list, select the `Options` button and choose the `Enable` option.
-
-<!-- Illustration of "Enable" option being selected needed here -->
-
-##How to disable a network## {#Disabling}
-
-By default, when you [create a network](/mc/compute/networks/create-network#Creating/), that network is created in an enabled admin state.  If you want to disable your network, in the `Manage` column of the `Networks` list, select the `Options` button and choose the `Disable` option.
-
-<img src="media/compute-networks04.jpg" width="580" alt="" />
-
-
-## How to delete a network ##
+If you have at some point [disabled](#Disabling) a network, you can enable it.
 
 1. Login to the [Horizon Console](https://horizon.hpcloud.com/).
 
-2. Select the Networks tab under the Project section:
-    <br><img src="media/network-new.png"  alt="" />
+2. Select the [Networks tab](#NetworkTab) under the Project section.
+
+3. On the Networks screen, locate the network which you want to enable.
+
+4. In the Actions column, click **Edit Network** for your the network. 
+
+5. In the Edit Network screen, select the **Admin State** option and click **Save Changes**:
+	<br><img src="media/network-enable.png"  alt="" />
+
+
+##How to disable a network## {#Disabling}
+
+By default, when you [create a network](/mc/compute/networks/create-network#Creating/), that network is created in an enabled admin state.  You can disable a network, as needed.
+
+1. Login to the [Horizon Console](https://horizon.hpcloud.com/).
+
+2. Select the [Networks tab](#NetworkTab) under the Project section.
+
+3. On the Networks screen, locate the network which you want to disable.
+
+4. In the Actions column, click **Edit Network** for your the network. 
+
+5. In the Edit Network screen, clear the **Admin State** option and click **Save Changes**:
+	<br><img src="media/network-disable.png"  alt="" />
+
+
+## How to delete a network ## {#Deleting}
+
+1. Login to the [Horizon Console](https://horizon.hpcloud.com/).
+
+2. Select the [Networks tab](#NetworkTab) under the Project section.
 
 3. On the Networks screen, locate the network which you want to delete.
 
@@ -67,12 +106,11 @@ By default, when you [create a network](/mc/compute/networks/create-network#Crea
 5. In the confirmation dialog, click **Delete Network**.
 
 
-## How to specify an IP address ###
+## How to specify an IP address ### {#SpecifyIP}
 
 1. Login to the [Horizon Console](https://horizon.hpcloud.com/).
 
-2. Select the Networks tab under the Project section:
-    <br><img src="media/network-new.png"  alt="" />
+2. Select the [Networks tab](#NetworkTab) under the Project section.
 
 3. Click **Create Network**. 
 	<br><img src="media/network-create.png"  alt="" />
@@ -88,6 +126,60 @@ By default, when you [create a network](/mc/compute/networks/create-network#Crea
 
 7. Click **Create**.
 
+
+### How to rename a network ### {RenameNet}
+
+1. Login to the [Horizon Console](https://horizon.hpcloud.com/).
+
+2. Select the [Networks tab](#NetworkTab) under the Project section.
+
+3. On the Networks screen, locate the network which you want to rename.
+
+4. In the Actions column, click **Edit Network** for your the network. 
+
+5. In the Edit Network screen, enter a new name and click **Save Changes**
+	<br><img src="media/network-edit.png"  alt="" />
+
+###How to rename a sub-net### {#EditSub}
+
+1. Login to the [Horizon Console](https://horizon.hpcloud.com/).
+
+2. Select the [Networks tab](#NetworkTab) under the Project section.
+
+3. On the Networks screen, click the network associated with the subnet you want to rename.
+
+4. In the Actions column, click **Edit Subnet** for your the subnet you are changing. 
+
+5. In the Edit Subnet screen, enter a new name and click **Save**
+	<br><img src="media/network-subnet-edit.png"  alt="" />
+
+
+###How to rename a port### (#RenamePort)
+
+1. Login to the [Horizon Console](https://horizon.hpcloud.com/).
+
+2. Select the [Networks tab](#NetworkTab) under the Project section.
+
+3. On the Networks screen, click the network associated with the port you want to rename.
+
+4. In the Actions column, click **Edit Port** for your the port you are changing. 
+
+5. In the Edit Port screen, enter a new name and click **Save**
+	<br><img src="media/network-port-edit.png"  alt="" />
+
+
+###How to assign a router to an external network### {#AssignRouter}
+
+1. Login to the [Horizon Console](https://horizon.hpcloud.com/).
+
+2. Select the [Routers tab](#NetworkTab) under the Project section.
+
+3. On the Routers screen, locate the network which you want to rename.
+
+4. In the Actions column, click **Set Gateway** for your the network. 
+
+5. In the Set Gateway screen, select a network from the **External Network** list and click **Set Gateway**
+	<br><img src="media/network-gateway.png"  alt="" />
 
 <!--Can users enable/disable routers in 13.5?
 ##Enabling a router## {#Enabling}
@@ -112,7 +204,7 @@ The HP Cloud environment command-line interface (CLI) software for Windows Power
 
 For the full reference of supported HP Cloud CLI commands for Windows PowerShell, see [HP Cloud Environment CLI Software for Windows PowerShell Command Line Reference](docs.hpcloud.com/cli/windows/2/reference/). 
 
-### How to delete a network ###
+### How to delete a network ### {DeleteCLI}
 
 1. On the 13.5 instance, launch a Windows PowerShell window.  
 
@@ -140,7 +232,7 @@ For the full reference of supported HP Cloud CLI commands for Windows PowerShell
 
 Deletes the Network with the id of 12857174-99cf-40e9-999e-fb0fa2e84898
 
-### How to rename a network ###
+### How to rename a network ### {RenameNetCLI}
 
 You can change the name of a network, as needed.
 
@@ -166,7 +258,7 @@ You can change the name of a network, as needed.
 
 		update-Network -id 12857174-99cf-40e9-999e-fb0fa2e84898 -n "Network1" 
 
-### How to edit a sub-net###
+### How to edit a sub-net### {#EditSubCLI}
 
 You can modify a sub-net to rename the sub-net or change the the external gateway assigned to the sub-net.
 
@@ -195,7 +287,7 @@ You can modify a sub-net to rename the sub-net or change the the external gatewa
 	update-Subnet -id 12857174-99cf-40e9-999e-fb0fa2e84898 -egw 129.15.124.12 -n "NewSubnetName" 
 
 
-### How to rename a port###
+### How to rename a port### {#RenamePortCLI}
 
 By default, when a port is created, the port is automatically assigned a name and ID. For example, when you create a subnet, a port is created for that subnet. 
 
@@ -223,7 +315,7 @@ You can change the name of a port, as needed.
 
 	update-Port -id 12857174-99cf-40e9-999e-fb0fa2e84898 -did "port1" 
 
-### How to assign a router to a network###
+### How to assign a router to a network### {#AssignRouterCLI}
 
 You can assign a router to an external network, as needed.
 
