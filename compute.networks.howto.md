@@ -56,7 +56,7 @@ You can use the Horizon Cloud Console to perform the following tasks:
 - [Rename a port](#RenamePort)
 - [Assign a router to a network](#AssignRouter)
 
-All of the procedures in this section require that you access the Networks or Routers tab in the Project section of the Horizon Cloud Console, as shown: {#NetworkTab}
+All of the procedures in this section require that you access the Networks or Routers tab in the Project section of the Horizon Cloud Console, as shown: <a name="NetworkTab"></a>
 
    <br><img src="media/network-tab.png"  alt="" />
 
