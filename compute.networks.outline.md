@@ -181,16 +181,15 @@ Short, very high level
 
 [Known issues and workarounds](/compute/networks/issues/)
 
-Understanding network screen system messages
-    Before you begin
-    System message 1
-    System message 2
-    repeat as needed
-    For further information
+- Port Configuration
+- Security Groups
+- Understanding network screen system messages
+- Before you begin
+	- System message 1
+	- System message 2
+- For further information
 
-*File exists Understanding network screen system messages](/compute/networks/sys-messages), but empty; moved into How To's?*	
-
-
+*File exists [Understanding network screen system messages](/compute/networks/sys-messages), but empty; moved into How To's?*	
 
 
 ###8.0 For more information###

@@ -9,7 +9,9 @@ product: compute
 
 <!-- Modeled after How To's with the Compute Service (https://docs.hpcloud.com/compute/using/) Some text from network guide. -->
 
-As you get used to using the networking service, you might need to modify the default network or create additional networks.  This page gives you some how-to's for the following tasks: 
+You might need to modify the default network or create additional networks.  This page gives you some how-to's to use the [Horizon Cloud Console](#console) or [HP Cloud CLI for Windows PowerShell](#powershell) to perform the following tasks:  
+
+**Horizon Cloud Console**
 
 - [Enable a network](#Enabling)
 - [Disable a network](#Disabling)
@@ -20,6 +22,8 @@ As you get used to using the networking service, you might need to modify the de
 - [Rename a port](#RenamePort)
 - [Assign a router to a network](#AssignRouter)
  
+**HP Cloud CLI for Windows PowerShell**
+
 - [Delete a network using the CLI](#DeleteCLI)
 - [Rename a network using the CLI](#RenameNet)
 - [Edit a sub-net using the CLI](#EditSubCLI)
@@ -30,11 +34,6 @@ As you get used to using the networking service, you might need to modify the de
 - [Rename a port using the CLI](#RenamePort)
 - [Assign a router to a network using the CLI](#AssignRouter)
 
-
-
-
-
-You can use the the [Horizon Cloud Console](#console) or [HP Cloud CLI for Windows PowerShell](#powershell) to work with a network.  
 
 ##Before you begin## {#Overview}
 
