@@ -17,7 +17,7 @@ This document also lists [network screen system messages](#messages) that you mi
 **Tip**: For a list of known issues and best practices when working between the Compute and Networking services, see [Best Practices in Compute and Networking in 13.5](https://community.hpcloud.com/article/known-issues-and-best-practices-compute-and-networking-135).
 
 
-##Port Configuration:## {#port}
+##Port Configuration## {#port}
 **Background**
 
 The HP Cloud compute service attaches virtual servers to the network via HP Cloud Networking ports, which are created in one of the two following ways:
