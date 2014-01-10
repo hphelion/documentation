@@ -60,13 +60,11 @@ The following information provides details about the Prerequisites panel:
 
 * [Email Notification Settings Prerequisite Dialog](#email-notification-settings-prerequisite-dialog)
 
-<div style="min-width:900px;">
- 
 ### Prerequisites Overview
 
 The first step on the Operational Dashboard is to configure the HP Cloud OS Administration node prerequisites.
 
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:900px;"> <b>Caution:</b> 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px;"> <b>Caution:</b> 
 Any prerequisites you want to configure, must be done before you complete the steps on the Complete Install page. 
 For details, see the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install-overview">Complete Install Overview</a>. 
 After that, the Edit Prerequisite dialogs are read-only. Once the install process is triggered, no changes can be made. 
@@ -90,7 +88,7 @@ To access: Select the Environment tab > Prerequisites.
 
 The following table describes the Prerequisites page UI elements:
 
-<table style="text-align: left; vertical-align: top; min-width:900px;">
+<table style="text-align: left; vertical-align: top; min-width:700px;">
 
 <tr style="background-color: #C8C8C8;">
 <th>UI Elements</th>
@@ -134,7 +132,7 @@ The following table describes the Prerequisites page UI elements:
 
 To access: Select the Environment tab > Prerequisites> click <b>Edit Prerequisite</b> for the Cloud Administration Node Internet Access Prerequisite.
 
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:900px;"> <b>Caution:</b> 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px;"> <b>Caution:</b> 
 If you want to set the Administration Node Internet Access Prerequisite, you must configure it before you complete the steps on the 
 Complete Install panel. For details, see the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a> topic.
 After that, the Administration Node Internet Access Prerequisite dialogs are read-only. Once the install process is triggered, 
@@ -144,7 +142,7 @@ For procedural instructions, see <a href="/cloudos/install/">Install and Configu
 
 The following table describes the Cloud Administration Node Internet Access Prerequisite dialog UI elements:
 
-<table style="text-align: left; vertical-align: top; min-width:900px;">
+<table style="text-align: left; vertical-align: top; min-width:700px;">
 
 <tr style="background-color: #C8C8C8;">
 <th>UI Elements</th>
@@ -229,7 +227,7 @@ Each network needs to be separated by a bar "|". For example: <code>10.*|192.*|l
 
 </table>
 
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:900px;"> <b>Note:</b> If this prerequisite fails to 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px;"> <b>Note:</b> If this prerequisite fails to 
 complete successfully, an error message displays on the Prerequisites page. For a potential solution, see <a href="/cloudos/manage/troubleshooting/#problem-admin-node-internet-access-prerequisites-fail-to-complete">Problem: Admin Node Internet Access Prerequisites fail to complete</a> in the Troubleshooting topic. 
 </p>
 
@@ -237,7 +235,7 @@ complete successfully, an error message displays on the Prerequisites page. For 
 
 ### External DNS Server Prerequisite Dialog
 
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:900px;"> <b>Caution:</b> 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px;"> <b>Caution:</b> 
 If you want to set the External DNS Server Prerequisite, you must configure it before you complete the steps on the 
 Complete Install panel. For details, see the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a> topic.
 After that, the External DNS Server Prerequisite dialogs are read-only. Once the install process is triggered, 
@@ -249,7 +247,7 @@ To access: Select the Environment tab > Prerequisites> click <b>Edit Prerequisit
 
 The following table describes the External DNS Server Prerequisite dialog UI elements:
 
-<table style="text-align: left; vertical-align: top; min-width:900px;">
+<table style="text-align: left; vertical-align: top; min-width:700px;">
 
 <tr style="background-color: #C8C8C8;">
 <th>UI Elements</th>
@@ -273,7 +271,7 @@ The following table describes the External DNS Server Prerequisite dialog UI ele
 
 ### Cloud Administration Node Time Settings Prerequisite Dialog
 
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:900px;"> <b>Caution:</b> 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px;"> <b>Caution:</b> 
 If you want to set the Administration Node Time Settings Prerequisite, you must configure it before you complete the steps on the 
 Complete Install panel. For details, see the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a> topic.
 After that, the Administration Node Time Settings Prerequisite dialogs are read-only. Once the install process is triggered, 
@@ -285,7 +283,7 @@ To access: Select the Environment tab > Prerequisites> click Edit Prerequisite f
 
 The following table describes the Cloud Administration Node Time Settings Prerequisite dialog UI elements:
 
-<table style="text-align: left; vertical-align: top; min-width:900px;">
+<table style="text-align: left; vertical-align: top; min-width:700px;">
 
 <tr style="background-color: #C8C8C8;">
 <th>UI Elements</th>
@@ -319,7 +317,7 @@ The following table describes the Cloud Administration Node Time Settings Prereq
 
 ### Email Notification Settings Prerequisite Dialog
 
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:900px;"> <b>Caution:</b> 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px;"> <b>Caution:</b> 
 If you want to set the Email Notification Settings Prerequisite, you must configure it before you complete the steps on the 
 Complete Install panel. For details, see the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a> topic.
 After that, the Email Notification Settings Prerequisite dialogs are read-only. Once the install process is triggered, 
@@ -331,7 +329,7 @@ To access: Select the Environment tab > Prerequisites> click Edit Prerequisite f
 
 The following table describes the Email Notification Settings Prerequisite dialog UI elements:
 
-<table style="text-align: left; vertical-align: top; min-width:900px;">
+<table style="text-align: left; vertical-align: top; min-width:700px;">
 
 <tr style="background-color: #C8C8C8;">
 <th>UI Elements</th>
@@ -379,7 +377,7 @@ The following information provides details about the Server Types panel:
 
 ### Server Types Overview
 
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:900px;"> <b>Caution:</b> If you plan to customize the servers, 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px;"> <b>Caution:</b> If you plan to customize the servers, 
 you must do that before you complete the steps on the Complete Install page. For details, see 
 the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a> topic.
 After that, the Server Types dialogs are read-only. Once the install process is triggered, 
@@ -412,7 +410,7 @@ This is necessary to define the correct order of those ports for the various ser
 same enumeration of network ports (0, 1, 2, 3 and so on) across the cloud. If you do not configure the server types for a cloud with 
 heterogeneous nodes in this way, you will experience networking failures because the servers will not have the same network port enumeration order.
 
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:900px;"> <b>Tip:</b> Based on your network and hardware infrastructure, 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px;"> <b>Tip:</b> Based on your network and hardware infrastructure, 
 you can accept defaults or customize Server Types.
 </p>
 
@@ -424,7 +422,7 @@ To access: Select the Environment tab > Server Types.
 
 The following table describes the Server Types page UI elements: 
 
-<table style="text-align: left; vertical-align: top; min-width:900px;">
+<table style="text-align: left; vertical-align: top; min-width:700px;">
 
 <tr style="background-color: #C8C8C8;">
 <th>UI Elements</th>
@@ -471,7 +469,7 @@ this menu item disappears and you cannot add new servers or edit or delete exist
 
 To access: Select the Environment tab > Server Types > click <b>Edit Server Definition</b> for the server you want to customize.
 
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:900px;"> <b>Caution:</b> If you plan to customize the servers, 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px;"> <b>Caution:</b> If you plan to customize the servers, 
 you must do that before you complete the steps on the Complete Install page. For details, see 
 the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a> topic.
 After that, the Edit Server Definition dialogs are read-only. Once the install process is triggered, 
@@ -479,7 +477,7 @@ no changes can be made. If you want to make changes, you need to start over by r
 For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
 </p>
 
-<table style="text-align: left; vertical-align: top; min-width:900px;">
+<table style="text-align: left; vertical-align: top; min-width:700px;">
 
 <tr style="background-color: #C8C8C8;">
 <th>UI Elements</th>
@@ -526,14 +524,14 @@ the dialog become read-only and this button disappears.
 
 To access: Select the Environment tab > Server Types > click <b>Create Server Definition</b>.
 
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:900px;"> <b>Caution:</b> The <b>Create Server Definition</b> button only displays while the servers are editable. 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px;"> <b>Caution:</b> The <b>Create Server Definition</b> button only displays while the servers are editable. 
 Once the install process is triggered by the 
 <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>, this button disappears and no 
 changes can be made. If you want to make changes, you need to start over by re-installing the HP Cloud OS Administration node. 
 For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
 </p>
 
-<table style="text-align: left; vertical-align: top; min-width:900px;">
+<table style="text-align: left; vertical-align: top; min-width:700px;">
 
 <tr style="background-color: #C8C8C8;">
 <th>UI Elements</th>
@@ -577,22 +575,135 @@ the dialog become read-only and this button disappears.
 
 ## Connections
 
-Coming soon ... not formatted yet.
-
 The following information provides details about the Connections panel:
 
-* Concepts
-* Connections Overview
-* UI Description
- * Connections Page
- * Edit Connection Dialog
- * Create Connection Dialog
+**Concepts:**
+
+[Connections Overview](#connections-overview)
+
+**UI Descriptions:**
+
+* [Connections Page](#connections-page)
+* [Edit Connection Dialog](#edit-connection-dialog)
+* [Create Connection Dialog](#create-connection-dialog)
  
 ### Connections Overview
 
-Coming soon ... not formatted yet.
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px;"> <b>Caution:</b> 
+If you plan to customize the connections, you must do that before you complete the steps on the Complete Install page.  
+For details, see the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install-overview">Complete Install Overview</a>. 
+After that, the Connections dialogs are read-only. Once the install process is triggered, no changes can be made. 
+If you want to make changes, you need to start over by re-installing the HP Cloud OS Administration node. 
+For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
+</p>
+
+Based on your network infrastructure, you must customize the Connections settings in the Connections panel. 
+After the enumeration of ports is consistent across all servers in the cloud, the Connections panel defines those 
+ports into a set of logical connections (interfaces) that will be used to eventually define the networks.
+
+The connections are defined based on the Network Modes along with a list of logical interfaces and the corresponding 
+physical interfaces' ports and bandwidth. For each logical connection (intf0, intf1, intf2) the network type is 
+identified (admin, os_sdn, public). The os_sdn value stands for OpenStack Software-Defined-Network.
+
+Examples of Network Modes:
+
+* Single Mode: All connections are shared on the same physical interface through VLAN.
+* Dual Mode: All connections have their own interfaces where VLAN and bridge are off.
+* Team Mode: All connections are shared on the same two physical interfaces through VLAN. Teaming means treating the wires like a single bundle.
+
+Examples of Logical Interface values:
+
+<pre>
+intf0 (admin, bmc_vlan)
+intf1 (os_sdn)
+intf2 (public)
+</pre>
+
+Examples of Physical Interface values:
+
+<pre>
+1Gb (preferred) on 1st port
+1Gb (preferred) on 2nd port
+1Gb (preferred) on 3rd port
+</pre>
+
+In this Dual mode example, "1Gb (preferred) on 2nd port" means a one gigabit network for port 2, as enumerated by default from the 
+server's BIOS or as overridden in the Server Types panel. The "preferred" tag suggests that if the NIC/port does not support 1Gb, HP Cloud 
+OS falls back to the next maximum speed supported by the NIC or port. However, if there is no preferred tag, it means the port has to 
+support 1Gb; otherwise the deployment might not succeed.
+
+Following are some of the criteria to be considered when making changes to the default settings. 
+
+In Dual mode, the default settings assume that all the nodes have their interfaces wired as:
+
+<pre>
+eth0 - admin network
+eth1 - os_sdn network
+eth2 - public/external network
+</pre>
+
+**IMPORTANT:** In such a scenario, keep the default values intact.
+
+In Dual mode, if the wiring of networks between the nodes are non-contiguous and/or not in sequence, you need to change the default mapping:
+
+**Example 1:** For all the nodes, eth0 - admin; eth1 - public, eth2 - private; the Connections table must be customized to look like the following:
+
+<pre>
+intf0 - 1Gb (preferred) on 1st port
+intf1 - 1Gb (preferred) on 3rd port
+intf2 - 1Gb (preferred) on 2nd port
+</pre>
 
 
+**Example 2:** For all the nodes, eth0 - admin, eth2 - os_sdn, eth4 - public/external the Connections table must be customized to look like the following:
+
+<pre>
+intf0 - 1Gb (preferred) on 1st port
+intf1 - 1Gb (preferred) on 3rd port
+intf2 - 1Gb (preferred) on 5th port
+</pre>
+
+In Single mode, keep the defaults. It is assumed that eth0 port is configured on the switch to support tagged VLANs (discussed in the next section).
+
+**Note:** Interface mapping must be identical on all the nodes.
+
+In Team mode, configure virtual connections to use both trunks. For example:
+
+* Map eth0, eth2, and eth4 to trunk 1.
+* Map eth1, eth3, and eth5 to trunk 2.
+
+Note that in this example, the eth0 and eth1 interfaces belongs to same VLAN; the same is true for the eth2 and eth3 pair, and the eth4 and eth5 pair. 
+When the HP Cloud OS Administration node allocates the bare-metal server, Cloud OS should create a teaming NIC using the NIC pairs.
+
+Here's a partial example of how the Team mode configuration could look on this Connections dialog:
+
+<table style="text-align: left; vertical-align: top; min-width:700px;">
+
+<tr style="background-color: #C8C8C8;">
+<th>Logical Interface</th>
+<th>Physical Interface</th>
+<th>Interface Mode</th>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> intf0 (admin, bmc_vlan) </td>
+<td> 1Gb on 1st port, 1Gb on 2nd port </td>
+<td> 6 </td> 
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> intf1 (os_sdn) </td>
+<td> 1Gb on 1st port, 1Gb on 2nd port </td>
+<td> 6 </td> 
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> intf2 (public) </td>
+<td> 1Gb on 1st port, 1Gb on 2nd port </td>
+<td> 6 </td> 
+</tr>
+
+</table>
 
 
 ### Connections Page
@@ -683,6 +794,4 @@ Coming soon ... not formatted yet.
 
 
 <a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-
-</div>
 
