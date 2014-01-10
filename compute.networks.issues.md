@@ -12,6 +12,8 @@ This document lists the following issues you may experience when working with ou
 - [A modification to a port through networking might not appear immediately in compute](#port)
 - [A security group configured using networking might not appear properly in the compute services](#security)
 
+This document also lists [network screen system messages](#messages) that you might encounter and what those messages indicate. 
+
 **Tip**: For a list of known issues and best practices when working between the Compute and Networking services, see [Best Practices in Compute and Networking in 13.5](https://community.hpcloud.com/article/known-issues-and-best-practices-compute-and-networking-135).
 
 
@@ -66,7 +68,7 @@ Note: Security Groups are a feature of  HP Cloud Networking and are fully suppor
 
 
 
-## Understanding network screen system messages
+## Understanding network screen system messages ## {#messages}
 
 This page provides details for the various system messages you might see while using the networks screen of the management console (MC).  This page covers the following topics:
 
