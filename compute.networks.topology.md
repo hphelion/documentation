@@ -1,34 +1,36 @@
 ---
 layout: default
-title: "Management console: Networks screen"
-permalink: /mc/compute/routers/
+title: "Management console: Network Topology screen"
+permalink: /mc/compute/topology/
 product: mc-compute
-
 ---
-# Horizon console: Routers screen
+# Horizon console: Network Topology screen
 
-The Horizon console compute dashboard Routers screen allows you to view and manipulate routers.  This page covers the following topics:
+The Horizon console Network Topology screen allows you to view and manipulate the networks in your project.  This page covers the following topics:
 
-* [Routers screen overview](#Overview)
-* [Routers screen functions](#Functions)
+* [Network Topology screen overview](#Overview)
+* [Network Topology screen functions](#Functions)
 * [For further information](#ForFurtherInformation)
 
-##Routers screen overview## {#Overview}
+##Network Topology screen overview## {#Overview}
 
-The Routers screen displays the router information for your project.
+The Network Topology screen...
 
-<img src="media/compute-routers.png" width="580" alt="" />
+<img src="media/compute-network-topology.png" width="580" alt="" />
 
-The name, status, and attached networks are displayed.
 
-Clicking the `+ Create Router` button launches the router creation screen.  Clicking the `Set Gateway` button launches a screen that allows you to attach an external network to the router. Clicking the `More` button allows you to delete the router. 
-
-##Routers screen functions## {#Functions}
+##Network Topology screen functions## {#Functions}
 
 From the networks screen you can perform any of the following functions:
 
-* [Managing routers](/mc/compute/networks/mc.compute.networks.manage-routers.md)
-* [Viewing router details](/mc/compute/networks/mc.compute.networks.view-router)
+[Create an instance](/mc/compute/images/create/)
+[View instance details](/mc/compute/servers/view-details)
+[Terminate an instance](/mc/compute/servers/manage#Terminating)
+[Create a network](/mc/compute/networks/create-network/)
+[Create a router](mc/compute/routers/)
+[View router details](/mc/compute/networks/view-router)
+[Delete a router](/mc/compute/networks/manage-routers)
+[Delete a network interface](/mc/compute/networks/manage-routers)
 
 
 ##For further information## {#ForFurtherInformation}
