@@ -29,9 +29,13 @@ On these panels, you set up your cloud environment and complete the HP Cloud OS 
 For the installation process, you must complete each panel in the order they are displayed. 
 
 * [Prerequisites](#prerequisites)
+
 * [Server Types](#server-types)
+
 * [Connections](#connections)
+
 * [Networks](#networks)
+
 * [Complete Install](#complete-install)
 
 For procedural instructions, see [Install and Configure Your Clouds](/cloudos/install/).
@@ -40,22 +44,24 @@ For procedural instructions, see [Install and Configure Your Clouds](/cloudos/in
 
 The following information provides details about the Prerequisites panel:
 
-* **Concepts:**
+**Concepts:**
 
- * [Prerequisites Overview](#prerequisites-overview)
+[Prerequisites Overview](#prerequisites-overview)
 
-* **UI Description:**
+**UI Description:**
 
- * [Prerequisites Page](#prerequisites-page)
+* [Prerequisites Page](#prerequisites-page)
 
- * [Cloud Administration Node Internet Access Prerequisite Dialog](#cloud-administration-node-internet-access-prerequisite-dialog)
+* [Cloud Administration Node Internet Access Prerequisite Dialog](#cloud-administration-node-internet-access-prerequisite-dialog)
 
- * [External DNS Server Prerequisite Dialog](#external-dns-server-prerequisite-dialog)
+* [External DNS Server Prerequisite Dialog](#external-dns-server-prerequisite-dialog)
 
- * [Cloud Administration Node Time Settings Prerequisite Dialog](#cloud-administration-node-time-settings-prerequisite-dialog)
+* [Cloud Administration Node Time Settings Prerequisite Dialog](#cloud-administration-node-time-settings-prerequisite-dialog)
 
- * [Email Notification Settings Prerequisite Dialog](#email-notification-settings-prerequisite-dialog)
+* [Email Notification Settings Prerequisite Dialog](#email-notification-settings-prerequisite-dialog)
 
+<div style="min-width:900px;">
+ 
 ### Prerequisites Overview
 
 The first step on the Operational Dashboard is to configure the HP Cloud OS Administration node prerequisites.
@@ -63,7 +69,7 @@ The first step on the Operational Dashboard is to configure the HP Cloud OS Admi
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:900px;"> <b>Caution:</b> 
 Any prerequisites you want to configure, must be done before you complete the steps on the Complete Install page. 
 For details, see the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install-overview">Complete Install Overview</a>. 
-After that, the Edit Prerequisite dialogs will be read-only. Once the install process is triggered, no changes can be made. 
+After that, the Edit Prerequisite dialogs are read-only. Once the install process is triggered, no changes can be made. 
 If you want to make changes, you need to start over by re-installing the HP Cloud OS Administration node. 
 For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
 </p>
@@ -126,12 +132,12 @@ The following table describes the Prerequisites page UI elements:
 
 ### Cloud Administration Node Internet Access Prerequisite Dialog
 
-To access: Select the Environment tab > Prerequisites> click Edit Prerequisite for the Cloud Administration Node Internet Access Prerequisite.
+To access: Select the Environment tab > Prerequisites> click <b>Edit Prerequisite</b> for the Cloud Administration Node Internet Access Prerequisite.
 
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:900px;"> <b>Caution:</b> 
 If you want to set the Administration Node Internet Access Prerequisite, you must configure it before you complete the steps on the 
 Complete Install panel. For details, see the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a> topic.
-After that, the Administration Node Internet Access Prerequisite dialog will be read-only. Once the install process is triggered, 
+After that, the Administration Node Internet Access Prerequisite dialogs are read-only. Once the install process is triggered, 
 no changes can be made. If you want to make changes, you need to start over by re-installing the HP Cloud OS Administration node. 
 For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
 </p>
@@ -207,12 +213,12 @@ Each network needs to be separated by a bar "|". For example: <code>10.*|192.*|l
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> Username (Optional) </td>
+<td> <nobr> Username (Optional) </nobr> </td>
 <td> Specify the username if necessary for the proxy setting. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> Password (Optional) </td>
+<td> <nobr> Password (Optional) </nobr> </td>
 <td> Specify the password if necessary for the proxy setting. </td>
 </tr>
 
@@ -223,7 +229,9 @@ Each network needs to be separated by a bar "|". For example: <code>10.*|192.*|l
 
 </table>
 
-> **Note:** If this prerequisite fails to complete successfully, an error message displays on the Prerequisites page. For a potential solution, see [Problem: Admin Node Internet Access Prerequisites fail to complete](/cloudos/manage/troubleshooting/#problem-admin-node-internet-access-prerequisites-fail-to-complete) in the Troubleshooting topic. 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:900px;"> <b>Note:</b> If this prerequisite fails to 
+complete successfully, an error message displays on the Prerequisites page. For a potential solution, see <a href="/cloudos/manage/troubleshooting/#problem-admin-node-internet-access-prerequisites-fail-to-complete">Problem: Admin Node Internet Access Prerequisites fail to complete</a> in the Troubleshooting topic. 
+</p>
 
 <a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
@@ -232,12 +240,12 @@ Each network needs to be separated by a bar "|". For example: <code>10.*|192.*|l
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:900px;"> <b>Caution:</b> 
 If you want to set the External DNS Server Prerequisite, you must configure it before you complete the steps on the 
 Complete Install panel. For details, see the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a> topic.
-After that, the External DNS Server Prerequisite dialog will be read-only. Once the install process is triggered, 
+After that, the External DNS Server Prerequisite dialogs are read-only. Once the install process is triggered, 
 no changes can be made. If you want to make changes, you need to start over by re-installing the HP Cloud OS Administration node. 
 For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
 </p>
 
-To access: Select the Environment tab > Prerequisites> click Edit Prerequisite for the External DNS Server Prerequisite.
+To access: Select the Environment tab > Prerequisites> click <b>Edit Prerequisite</b> for the External DNS Server Prerequisite.
 
 The following table describes the External DNS Server Prerequisite dialog UI elements:
 
@@ -268,7 +276,7 @@ The following table describes the External DNS Server Prerequisite dialog UI ele
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:900px;"> <b>Caution:</b> 
 If you want to set the Administration Node Time Settings Prerequisite, you must configure it before you complete the steps on the 
 Complete Install panel. For details, see the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a> topic.
-After that, the Administration Node Time Settings Prerequisite dialog will be read-only. Once the install process is triggered, 
+After that, the Administration Node Time Settings Prerequisite dialogs are read-only. Once the install process is triggered, 
 no changes can be made. If you want to make changes, you need to start over by re-installing the HP Cloud OS Administration node. 
 For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
 </p>
@@ -314,7 +322,7 @@ The following table describes the Cloud Administration Node Time Settings Prereq
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:900px;"> <b>Caution:</b> 
 If you want to set the Email Notification Settings Prerequisite, you must configure it before you complete the steps on the 
 Complete Install panel. For details, see the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a> topic.
-After that, the Email Notification Settings Prerequisite dialog will be read-only. Once the install process is triggered, 
+After that, the Email Notification Settings Prerequisite dialogs are read-only. Once the install process is triggered, 
 no changes can be made. If you want to make changes, you need to start over by re-installing the HP Cloud OS Administration node. 
 For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
 </p>
@@ -357,30 +365,213 @@ The following table describes the Email Notification Settings Prerequisite dialo
 
 ## Server Types
 
-Coming soon ... not formatted yet.
+The following information provides details about the Server Types panel:
 
+**Concepts:**
 
+[Server Types Overview](#server-types-overview)
+
+**UI Descriptions:**
+
+* [Server Types Page](#server-types-page)
+* [Edit Server Definition Dialog](#edit-server-definition-dialog)
+* [Create Server Definition Dialog](#create-server-definition-dialog)
 
 ### Server Types Overview
 
-Coming soon ... not formatted yet.
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:900px;"> <b>Caution:</b> If you plan to customize the servers, 
+you must do that before you complete the steps on the Complete Install page. For details, see 
+the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a> topic.
+After that, the Server Types dialogs are read-only. Once the install process is triggered, 
+no changes can be made. If you want to make changes, you need to start over by re-installing the HP Cloud OS Administration node. 
+For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
+</p>
+
+The Server Types panel allows you to capture new or use existing server definitions about the networking ports for various servers in 
+your bare-metal cloud environment. If all servers in your cloud are the same server type (homogeneous nodes), you are not required to 
+configure anything in this view. HP recommends that you keep and accept the default settings.
+
+However, if the servers in your cloud are different types of servers, you may be required to use a Linux utility such as dmidecode to 
+get the pattern and CLI commands to determine the bus addresses of your server's network ports.
+
+Here is one way to get the values for Server Name Pattern and Bus Order:
+
+Server Name Pattern:
+
+<pre>
+dmidecode | grep "Product Name"
+</pre>
+
+Bus Order (for UbuntuOS):
+
+<pre>
+ls -l /sys/class/net | egrep pci | sed -e 's/^.*pci//' -e 's%/net.*$%%'
+</pre>
+
+This is necessary to define the correct order of those ports for the various server types so that all the servers have the 
+same enumeration of network ports (0, 1, 2, 3 and so on) across the cloud. If you do not configure the server types for a cloud with 
+heterogeneous nodes in this way, you will experience networking failures because the servers will not have the same network port enumeration order.
+
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:900px;"> <b>Tip:</b> Based on your network and hardware infrastructure, 
+you can accept defaults or customize Server Types.
+</p>
+
 
 
 ### Server Types Page
 
-Coming soon ... not formatted yet.
+To access: Select the Environment tab > Server Types.
 
+The following table describes the Server Types page UI elements: 
+
+<table style="text-align: left; vertical-align: top; min-width:900px;">
+
+<tr style="background-color: #C8C8C8;">
+<th>UI Elements</th>
+<th>Description</th>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Server Name Pattern column </td>
+<td> List of the Cloud OS supported server types. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Bus Order column </td>
+<td> List of the bus orders related to the corresponding server types. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Edit Server Definition button </td>
+<td> Click to open the <a href="/cloudos/manage/operational-dashboard/environment-tab/#edit-server-definition-dialog">Edit Server Definition dialog</a> to customize the server type. 
+</td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td>Create Server Definition button </td>
+<td> Click to add a new server type on the Create Server Definition dialog. <br /> <br />
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px;"> <b>Note:</b> The Create Server Definition button only displays 
+while the servers can be added or edited. Once you do the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>, this button disappears and you cannot 
+add new servers or edit or delete existing servers.</p>
+</td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Drop-down arrow > Delete Server Definition </td>
+<td> Select to delete the server type from the HP Cloud OS Administration node. You are prompted to confirm the deletion. <br /> <br />
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px;"> <b>Note:</b> The Delete Server Definition menu item only displays while 
+the servers can be added or edited.  Once you do the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>, 
+this menu item disappears and you cannot add new servers or edit or delete existing servers.
+</td>
+</tr>
+
+</table> 
 
 ### Edit Server Definition Dialog
 
-Coming soon ... not formatted yet.
+To access: Select the Environment tab > Server Types > click <b>Edit Server Definition</b> for the server you want to customize.
+
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:900px;"> <b>Caution:</b> If you plan to customize the servers, 
+you must do that before you complete the steps on the Complete Install page. For details, see 
+the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a> topic.
+After that, the Edit Server Definition dialogs are read-only. Once the install process is triggered, 
+no changes can be made. If you want to make changes, you need to start over by re-installing the HP Cloud OS Administration node. 
+For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
+</p>
+
+<table style="text-align: left; vertical-align: top; min-width:900px;">
+
+<tr style="background-color: #C8C8C8;">
+<th>UI Elements</th>
+<th>Description</th>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Server Name Pattern </td>
+<td> Name of the server type you are editing.</td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Bus Order </td>
+<td> One or more bus addresses of your server's network ports.  </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Add Bus Order </td>
+<td> Click to add a blank bus order textbox, in which you then type the new bus order related to the server type. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Delete Bus Order </td>
+<td> Click to delete the selected bus order(s) that are not relevant to the server type. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td>Update Server Definition </td>
+<td> Click to save the updated server definition. <br /> <br />
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px;"> <b>Note:</b> The <b>Update Server Definition</b> button only 
+displays while the servers are editable. Once you do the 
+<a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>, 
+the dialog become read-only and this button disappears.
+</p>
+</td>
+</tr>
+
+</table> 
+
+
 
 
 ### Create Server Definition Dialog
 
-Coming soon ... not formatted yet.
+To access: Select the Environment tab > Server Types > click <b>Create Server Definition</b>.
 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:900px;"> <b>Caution:</b> The <b>Create Server Definition</b> button only displays while the servers are editable. 
+Once the install process is triggered by the 
+<a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>, this button disappears and no 
+changes can be made. If you want to make changes, you need to start over by re-installing the HP Cloud OS Administration node. 
+For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
+</p>
 
+<table style="text-align: left; vertical-align: top; min-width:900px;">
+
+<tr style="background-color: #C8C8C8;">
+<th>UI Elements</th>
+<th>Description</th>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Server Name Pattern </td>
+<td> Name of the server type you are creating.</td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Bus Order </td>
+<td> One or more bus addresses of your server's network ports.  </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Add Bus Order </td>
+<td> Click to add a blank bus order textbox, in which you then type the new bus order related to the server type. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Delete Bus Order </td>
+<td> Click to delete the selected bus order(s) that are not relevant to the server type. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td>Create Server Definition </td>
+<td> Click to create the updated server definition. <br /> <br />
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px;"> <b>Note:</b> The <b>Create Server Definition</b> button only 
+displays while the servers are editable. Once you do the 
+<a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>, 
+the dialog become read-only and this button disappears.
+</p>
+</td>
+</tr>
+
+</table> 
 
 <a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
@@ -492,4 +683,6 @@ Coming soon ... not formatted yet.
 
 
 <a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
+</div>
 
