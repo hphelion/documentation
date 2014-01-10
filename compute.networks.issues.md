@@ -7,7 +7,15 @@ product: compute
 ---
 # HP Cloud Compute Networking Known Issues and Workarounds#
 
-##Port Configuration:##
+This document lists the following issues you may experience when working with our networking services and suggests workarounds for those issues:
+
+- [A modification to a port through networking might not appear immediately in compute](#port)
+- [A security group configured using networking might not appear properly in the compute services](#security)
+
+**Tip**: For a list of known issues and best practices when working between the Compute and Networking services, see [Best Practices in Compute and Networking in 13.5](https://community.hpcloud.com/article/known-issues-and-best-practices-compute-and-networking-135).
+
+
+##Port Configuration:## {#port}
 **Background**
 
 The HP Cloud compute service attaches virtual servers to the network via HP Cloud Networking ports, which are created in one of the two following ways:
@@ -40,7 +48,7 @@ If you allow compute to create the ports instead of going through Networking, co
 3. Only make changes through the compute service for ports that are assigned to servers.
 
 
-##Security Groups: 
+##Security Groups## {#security}
  
 **Background**
 
