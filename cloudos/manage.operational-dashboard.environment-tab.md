@@ -84,7 +84,7 @@ or the [Updates and Extensions](/cloudos/manage/operational-dashboard/cloud-tab/
 	
 ### Prerequisites Page
 
-To access: Select the Environment tab > Prerequisites.
+**To access:** Select the Environment tab > Prerequisites.
 
 The following table describes the Prerequisites page UI elements:
 
@@ -114,7 +114,7 @@ The following table describes the Prerequisites page UI elements:
 
 <tr style="background-color: white; color: black;">
 <td> Edit Prerequisite button </td>
-<td> <nobr> Opens the Edit Prerequisite dialog for the corresponding Prerequisite. </nobr> </td>
+<td> Opens the Edit Prerequisite dialog for the corresponding Prerequisite. </td>
 </tr> 	
  	
 <tr style="background-color: white; color: black;">
@@ -130,7 +130,7 @@ The following table describes the Prerequisites page UI elements:
 
 ### Cloud Administration Node Internet Access Prerequisite Dialog
 
-To access: Select the Environment tab > Prerequisites> click <b>Edit Prerequisite</b> for the Cloud Administration Node Internet Access Prerequisite.
+**To access:** Select the Environment tab > Prerequisites> click <b>Edit Prerequisite</b> for the Cloud Administration Node Internet Access Prerequisite.
 
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px;"> <b>Caution:</b> 
 If you want to set the Administration Node Internet Access Prerequisite, you must configure it before you complete the steps on the 
@@ -243,7 +243,7 @@ no changes can be made. If you want to make changes, you need to start over by r
 For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
 </p>
 
-To access: Select the Environment tab > Prerequisites> click <b>Edit Prerequisite</b> for the External DNS Server Prerequisite.
+**To access:** Select the Environment tab > Prerequisites> click <b>Edit Prerequisite</b> for the External DNS Server Prerequisite.
 
 The following table describes the External DNS Server Prerequisite dialog UI elements:
 
@@ -279,7 +279,7 @@ no changes can be made. If you want to make changes, you need to start over by r
 For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
 </p>
 
-To access: Select the Environment tab > Prerequisites> click Edit Prerequisite for the Cloud Administration Node Time Settings Prerequisite.
+**To access:** Select the Environment tab > Prerequisites> click **Edit Prerequisite** for the Cloud Administration Node Time Settings Prerequisite.
 
 The following table describes the Cloud Administration Node Time Settings Prerequisite dialog UI elements:
 
@@ -325,7 +325,7 @@ no changes can be made. If you want to make changes, you need to start over by r
 For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
 </p>
 
-To access: Select the Environment tab > Prerequisites> click Edit Prerequisite for the Email Notification Settings Prerequisite.
+**To access:** Select the Environment tab > Prerequisites> click **Edit Prerequisite** for the Email Notification Settings Prerequisite.
 
 The following table describes the Email Notification Settings Prerequisite dialog UI elements:
 
@@ -418,7 +418,7 @@ you can accept defaults or customize Server Types.
 
 ### Server Types Page
 
-To access: Select the Environment tab > Server Types.
+**To access:** Select the Environment tab > Server Types.
 
 The following table describes the Server Types page UI elements: 
 
@@ -455,7 +455,7 @@ add new servers or edit or delete existing servers.</p>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> Drop-down arrow > Delete Server Definition </td>
+<td> <nobr> Drop-down arrow > </nobr> Delete Server Definition </td>
 <td> Select to delete the server type from the HP Cloud OS Administration node. You are prompted to confirm the deletion. <br /> <br />
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px;"> <b>Note:</b> The Delete Server Definition menu item only displays while 
 the servers can be added or edited.  Once you do the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>, 
@@ -467,7 +467,7 @@ this menu item disappears and you cannot add new servers or edit or delete exist
 
 ### Edit Server Definition Dialog
 
-To access: Select the Environment tab > Server Types > click <b>Edit Server Definition</b> for the server you want to customize.
+**To access:** Select the Environment tab > Server Types > click <b>Edit Server Definition</b> for the server you want to customize.
 
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px;"> <b>Caution:</b> If you plan to customize the servers, 
 you must do that before you complete the steps on the Complete Install page. For details, see 
@@ -505,7 +505,7 @@ For procedural instructions, see <a href="/cloudos/install/">Install and Configu
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td>Update Server Definition </td>
+<td> <nobr> Update Server Definition </nobr> </td>
 <td> Click to save the updated server definition. <br /> <br />
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px;"> <b>Note:</b> The <b>Update Server Definition</b> button only 
 displays while the servers are editable. Once you do the 
@@ -518,11 +518,9 @@ the dialog become read-only and this button disappears.
 </table> 
 
 
-
-
 ### Create Server Definition Dialog
 
-To access: Select the Environment tab > Server Types > click <b>Create Server Definition</b>.
+**To access:** Select the Environment tab > Server Types > click <b>Create Server Definition</b>.
 
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px;"> <b>Caution:</b> The <b>Create Server Definition</b> button only displays while the servers are editable. 
 Once the install process is triggered by the 
@@ -559,7 +557,7 @@ For procedural instructions, see <a href="/cloudos/install/">Install and Configu
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td>Create Server Definition </td>
+<td> <nobr> Create Server Definition </nobr> </td>
 <td> Click to create the updated server definition. <br /> <br />
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px;"> <b>Note:</b> The <b>Create Server Definition</b> button only 
 displays while the servers are editable. Once you do the 
@@ -708,27 +706,256 @@ Here's a partial example of how the Team mode configuration could look on this C
 
 ### Connections Page
 
-Coming soon ... not formatted yet.
+**To access:** Select the Environment tab > Connections.
 
+The following table describes the Connections page UI elements: 
 
+<table style="text-align: left; vertical-align: top; min-width:700px;">
+
+<tr style="background-color: #C8C8C8;">
+<th> UI Elements </th>
+<th> Description </th>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Network Mode column </td>
+<td> Lists the available network modes for the connection set:
+<ul>
+<li>Single Mode: All connections are shared on the same physical interface through VLAN.
+<li>Dual Mode: All connections have their own interfaces where VLAN and bridge are off.
+<li>Team Mode: All connections are shared on the same two physical interfaces through VLAN. Teaming means treating the wires like a single bundle.
+</ul>
+</td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Role column </td>
+<td> Lists the roles for the connection set. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Logical Interface column </td>
+<td> Lists the network modes' logical interfaces for the connection set. For each logical connection (intf0, intf1, intf2) 
+the network type is identified (admin, os_sdn, public):
+<ul>
+<li>intf0 (admin, bmc_vlan)
+<li>intf1 (os_sdn)
+<li>intf2 (public)
+</ul>
+</td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Physical Interface column </td>
+<td> Lists the network modes' physical interface values for the corresponding connection set. For details, see the 
+<a href="/cloudos/manage/operational-dashboard/environment-tab/#edit-connections-dialog">Edit Connection Dialog</a> section.
+</td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Interface Mode column </td>
+<td> Lists the interface mode for the network mode. 
+The interface mode is the default teaming algorithm to use for the bonding driver in Linux. 
+It is applicable only for team mode.
+</td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Edit Connection button </td>
+<td> Click to open the Edit Connection dialog. For details, see the 
+<a href="/cloudos/manage/operational-dashboard/environment-tab/#edit-connections-dialog">Edit Connection Dialog</a> section.
+</td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Create Connection button </td>
+<td> Click to add a new connection on the Create Connection dialog. <br /> <br /> 
+**Note:** The Create Connection button only displays while the connections can be added or edited. 
+Once you do the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>, 
+this button disappears and you cannot add new or edit connections.
+</td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Drop-down arrow > Delete Connection </td>
+<td> Select to delete the connection. You are prompted to confirm the deletion. <br /> <br /> 
+**Note:** This option is unavailable after the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>.
+</td>
+</tr>
+
+</table>
 
 
 ### Edit Connection Dialog
 
-Coming soon ... not formatted yet.
+To access: Select the Environment tab > Connections > click **Edit Connection** for the connection you want to customize.
 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px;"> <b>Caution:</b> 
+If you plan to customize the connections, you must do that before you complete the steps on the Complete Install page.  
+For details, see the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install-overview">Complete Install Overview</a>. 
+After that, the Edit Connections dialogs are read-only. Once the install process is triggered, no changes can be made. 
+If you want to make changes, you need to start over by re-installing the HP Cloud OS Administration node. 
+For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
+</p>
 
+The following table describes the Edit Connection dialog UI elements:
+
+<table style="text-align: left; vertical-align: top; min-width:700px;">
+
+<tr style="background-color: #C8C8C8;">
+<th> UI Elements </th>
+<th> Description </th>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Connection Type </td>
+<td> Connection type name (network mode) of the connection set you want to customize.
+</td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Role </td>
+<td> Indicates the networking configuration needed for a specific managed node or nodes. By default, it is set to blank, 
+which means for any role a managed node takes, the networking configuration must be the same across all managed nodes. <br /> <br /> 
+<b>Note:</b> Do not change from the default value (blank) for this release.
+</td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Add Details </td>
+<td> Click to add a new blank row on which you add the logical interface and physical interface. Interface mode is applicable for Team mode only. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Delete Details </td>
+<td> Click to delete the selected row(s). </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Logical Interface </td>
+<td> Default logical interface for the corresponding connection set. <br /> <br /> 
+
+For each logical connection (intf0, intf1, intf2) the network type is identified (admin, os_sdn, public):
+
+<pre>
+intf0 (admin, bmc_vlan)
+intf1 (os_sdn)
+intf2 (public)
+</pre>
+</td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Physical Interface </td>
+<td> Default physical interface values for the corresponding connection set. The value contains (up to) four characters, and follows these conventions:
+<ul>
+<li>1st character: the allowable value is a question mark (?) or blank. The question mark indicates a preferred connection, meaning the available bandwidth supported by the Network Interface card (NIC). If not specified (blank), Cloud OS configures the physical interface to the value specified by the next character.
+<li>2nd character: the allowable value may be 1, 10, or 100. It is a numerical value to indicate the network bandwidth.
+<li>3rd character: the value may be g, m, or k. It is the bandwidth unit. g represents gigabits; m represents megabits; k represents kilobits.
+<li>4th character: the value may be a number between 1 and 16. It is a numerical value to specify the port or NIC number.
+</ul>
+</td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Interface Mode </td>
+<td> The default teaming algorithm to use for the bonding driver in Linux. The default value is 6 which indicates teaming uses 
+the "adaptive load balancing" algorithm. The other values used with teaming are not supported in this release. This parameter is 
+applicable only if you are using a Team mode. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Update Connection </td>
+<td> Click to save the connection settings. <br /> <br /> 
+**Note:** The Update Connection button only displays the connections that are editable.  
+Once you do the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>, 
+this dialog become read-only and this button disappears. </td>
+</tr>
+
+</table>
 
 
 ### Create Connection Dialog
 
-Coming soon ... not formatted yet.
+To access: Select the Environment tab > Connections > click **Create Connection** for the connection you want to customize.
 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px;"> <b>Caution:</b> The Create Connection button only displays 
+while the connections are editable. Once the install process is triggered by the 
+<a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>, this button disappears and no changes can be made. 
+If you want to make changes, you need to start over by re-installing the HP Cloud OS Administration node. 
+For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
+</p>
+
+The following table describes the Create Connection dialog UI elements:
+
+<table style="text-align: left; vertical-align: top; min-width:700px;">
+
+<tr style="background-color: #C8C8C8;">
+<th> UI Elements </th>
+<th> Description </th>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Connection Type </td>
+<td> Type the network mode for the connection set. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Role </td>
+<td>  	
+
+Indicates the networking configuration needed for a specific managed node or nodes. By default, it is set to blank, which means for any role a 
+managed node takes, the networking configuration must be the same across all managed nodes. <br /> <br /> 
+<b>Note:</b> Do not change from the default value (blank) for this release.
+</td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Add Details </td>
+<td> Click to add a new blank row on which you add the logical interface and physical interface. 
+Interface mode is applicable for Team mode only. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Delete Details </td>
+<td> Click to delete the selected row(s). </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Logical Interface </td>
+<td> Type the logical interface appropriate for the network mode. <br /> <br /> 
+For each logical connection (intf0, intf1, intf2) the network type is identified (admin, os_sdn, public). For details, see 
+<a href="/cloudos/manage/operational-dashboard/environment-tab/#edit-connection-dialog">Edit Connection Dialog</a>. 
+</td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Physical Interface </td>
+<td> Type the physical interface values for the corresponding network mode. The value contains (up to) four characters, 
+and follows specific conventions. For details see 
+<a href="/cloudos/manage/operational-dashboard/environment-tab/#edit-connection-dialog">Edit Connection Dialog</a>.
+</td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Interface Mode </td>
+<td> The default teaming algorithm to use for the bonding driver in Linux. The default value is 6 which indicates teaming uses 
+the "adaptive load balancing" algorithm. The other values used with teaming are not supported in this release. This parameter is 
+applicable only if you are using a Team mode. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Create Connection </td>
+<td> Click to create the connection. <br /> <br /> 
+**Note:** The Create Connection button only displays the connections that are editable.  
+Once you do the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>, 
+this dialog become read-only and this button disappears. </td>
+</tr>
+
+</table>
 
 
 <a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-
-
 
 
 
