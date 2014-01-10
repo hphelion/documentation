@@ -21,7 +21,7 @@ HP Cloud Console now includes the following features:
 
 ##Enhanced identity management## {#Enhancedidentitymanagement}
 
-Particularly attractive for administrators in the enterprise, HP Cloud provides more flexibility and options for managing roles, domains, users and groups in the new Horizon-based HP Cloud Console. Specifically, roles can now be assigned to groups of users, or domain administrators can be defined for managing domains and respective users. In addition, you can assign roles around the latest platform services, such as the new HP Cloud Relational Database service.    
+Particularly attractive for administrators in the enterprise, HP Cloud provides more flexibility and options for managing roles, domains, users and groups in the new Horizon-based HP Cloud Console. Specifically, roles can now be assigned to groups of users, or domain administrators can be defined for managing domains and respective users. In addition, you can assign roles around the latest platform services.   
 
 ##Network topology visualization## {#Networktopologyvisualization}
 
