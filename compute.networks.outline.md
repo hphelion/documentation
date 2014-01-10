@@ -24,13 +24,13 @@ Short, very high level
 * Using Regions and Availability Zones
 * For further information
 
-*I created a new file; modeled after HP Cloud version 13.5 overview; text from networking guide*
+*I created a new file; modeled after [HP Cloud version 13.5 overview](https://docs.hpcloud.com/version-overview); including text from networking guide*
 
 ###2.0 Creating Your First Network - 13.5 ###
 
 [Creating Your First Network](/compute/networks/first-network/)
 
-*I created this file; not complete; based on Creating first instance (https://community.hpcloud.com/article/creating-your-first-instance-135); **do we need**?*
+*I created this file; not complete; based on [Creating first instance](https://community.hpcloud.com/article/creating-your-first-instance-135); **do we need**?*
 
 **Using the Horizon Cloud Console**
 
@@ -60,7 +60,7 @@ Short, very high level
 
 ####3.1 Viewing the network topology####
 
-*Should have something for the Network Topology page (https://horizon.hpcloud.com/project/network_topology/)*
+*We should have something for the Network Topology page that describes that page, what it represents and what you  can do there. Created a (https://horizon.hpcloud.com/project/network_topology/)*
 
 ####3.2 Viewing network details ####
 
