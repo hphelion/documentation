@@ -197,5 +197,7 @@ Short, very high level
 Community links to consider:
 
 [Understanding Network Topology in 13.5](https://community.hpcloud.com/article/understanding-network-topology-135)
+
 [Knowledge Base](https://community.hpcloud.com/search/knowledge/network)
+
 [Forums](https://community.hpcloud.com/search/forum/network)
