@@ -65,7 +65,7 @@ The following information provides details about the Prerequisites panel:
 The first step on the Operational Dashboard is to configure the HP Cloud OS Administration node prerequisites.
 
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px;"> <b>Caution:</b> 
-Any prerequisites you want to configure, must be done before you complete the steps on the Complete Install page. 
+Any prerequisites you want to configure, must be done before you complete the steps on the Complete Install panel. 
 For details, see the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install-overview">Complete Install Overview</a>. 
 After that, the Edit Prerequisite dialogs are read-only. Once the install process is triggered, no changes can be made. 
 If you want to make changes, you need to start over by re-installing the HP Cloud OS Administration node. 
@@ -84,7 +84,7 @@ or the [Updates and Extensions](/cloudos/manage/operational-dashboard/cloud-tab/
 	
 ### Prerequisites Page
 
-**To access:** Select the Environment tab > Prerequisites.
+To access: Select the Environment tab > Prerequisites.
 
 The following table describes the Prerequisites page UI elements:
 
@@ -130,7 +130,7 @@ The following table describes the Prerequisites page UI elements:
 
 ### Cloud Administration Node Internet Access Prerequisite Dialog
 
-**To access:** Select the Environment tab > Prerequisites> click <b>Edit Prerequisite</b> for the Cloud Administration Node Internet Access Prerequisite.
+To access: Select the Environment tab > Prerequisites> click <b>Edit Prerequisite</b> for the Cloud Administration Node Internet Access Prerequisite.
 
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px;"> <b>Caution:</b> 
 If you want to set the Administration Node Internet Access Prerequisite, you must configure it before you complete the steps on the 
@@ -243,7 +243,7 @@ no changes can be made. If you want to make changes, you need to start over by r
 For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
 </p>
 
-**To access:** Select the Environment tab > Prerequisites> click <b>Edit Prerequisite</b> for the External DNS Server Prerequisite.
+To access: Select the Environment tab > Prerequisites> click <b>Edit Prerequisite</b> for the External DNS Server Prerequisite.
 
 The following table describes the External DNS Server Prerequisite dialog UI elements:
 
@@ -279,7 +279,7 @@ no changes can be made. If you want to make changes, you need to start over by r
 For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
 </p>
 
-**To access:** Select the Environment tab > Prerequisites> click **Edit Prerequisite** for the Cloud Administration Node Time Settings Prerequisite.
+To access: Select the Environment tab > Prerequisites> click **Edit Prerequisite** for the Cloud Administration Node Time Settings Prerequisite.
 
 The following table describes the Cloud Administration Node Time Settings Prerequisite dialog UI elements:
 
@@ -325,7 +325,7 @@ no changes can be made. If you want to make changes, you need to start over by r
 For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
 </p>
 
-**To access:** Select the Environment tab > Prerequisites> click **Edit Prerequisite** for the Email Notification Settings Prerequisite.
+To access: Select the Environment tab > Prerequisites> click **Edit Prerequisite** for the Email Notification Settings Prerequisite.
 
 The following table describes the Email Notification Settings Prerequisite dialog UI elements:
 
@@ -378,7 +378,7 @@ The following information provides details about the Server Types panel:
 ### Server Types Overview
 
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px;"> <b>Caution:</b> If you plan to customize the servers, 
-you must do that before you complete the steps on the Complete Install page. For details, see 
+you must do that before you complete the steps on the Complete Install panel. For details, see 
 the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a> topic.
 After that, the Server Types dialogs are read-only. Once the install process is triggered, 
 no changes can be made. If you want to make changes, you need to start over by re-installing the HP Cloud OS Administration node. 
@@ -418,7 +418,7 @@ you can accept defaults or customize Server Types.
 
 ### Server Types Page
 
-**To access:** Select the Environment tab > Server Types.
+To access: Select the Environment tab > Server Types.
 
 The following table describes the Server Types page UI elements: 
 
@@ -467,10 +467,10 @@ this menu item disappears and you cannot add new servers or edit or delete exist
 
 ### Edit Server Definition Dialog
 
-**To access:** Select the Environment tab > Server Types > click <b>Edit Server Definition</b> for the server you want to customize.
+To access: Select the Environment tab > Server Types > click <b>Edit Server Definition</b> for the server you want to customize.
 
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px;"> <b>Caution:</b> If you plan to customize the servers, 
-you must do that before you complete the steps on the Complete Install page. For details, see 
+you must do that before you complete the steps on the Complete Install panel. For details, see 
 the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a> topic.
 After that, the Edit Server Definition dialogs are read-only. Once the install process is triggered, 
 no changes can be made. If you want to make changes, you need to start over by re-installing the HP Cloud OS Administration node. 
@@ -520,7 +520,7 @@ the dialog become read-only and this button disappears.
 
 ### Create Server Definition Dialog
 
-**To access:** Select the Environment tab > Server Types > click <b>Create Server Definition</b>.
+To access: Select the Environment tab > Server Types > click <b>Create Server Definition</b>.
 
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px;"> <b>Caution:</b> The <b>Create Server Definition</b> button only displays while the servers are editable. 
 Once the install process is triggered by the 
@@ -588,7 +588,7 @@ The following information provides details about the Connections panel:
 ### Connections Overview
 
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px;"> <b>Caution:</b> 
-If you plan to customize the connections, you must do that before you complete the steps on the Complete Install page.  
+If you plan to customize the connections, you must do that before you complete the steps on the Complete Install panel.  
 For details, see the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install-overview">Complete Install Overview</a>. 
 After that, the Connections dialogs are read-only. Once the install process is triggered, no changes can be made. 
 If you want to make changes, you need to start over by re-installing the HP Cloud OS Administration node. 
@@ -706,7 +706,7 @@ Here's a partial example of how the Team mode configuration could look on this C
 
 ### Connections Page
 
-**To access:** Select the Environment tab > Connections.
+To access: Select the Environment tab > Connections.
 
 The following table describes the Connections page UI elements: 
 
@@ -748,7 +748,7 @@ the network type is identified (admin, os_sdn, public):
 <tr style="background-color: white; color: black;">
 <td> Physical Interface column </td>
 <td> Lists the network modes' physical interface values for the corresponding connection set. For details, see the 
-<a href="/cloudos/manage/operational-dashboard/environment-tab/#edit-connections-dialog">Edit Connection Dialog</a> section.
+<a href="/cloudos/manage/operational-dashboard/environment-tab/#edit-connection-dialog">Edit Connection Dialog</a> section.
 </td>
 </tr>
 
@@ -763,14 +763,14 @@ It is applicable only for team mode.
 <tr style="background-color: white; color: black;">
 <td> Edit Connection button </td>
 <td> Click to open the Edit Connection dialog. For details, see the 
-<a href="/cloudos/manage/operational-dashboard/environment-tab/#edit-connections-dialog">Edit Connection Dialog</a> section.
+<a href="/cloudos/manage/operational-dashboard/environment-tab/#edit-connection-dialog">Edit Connection Dialog</a> section.
 </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Create Connection button </td>
 <td> Click to add a new connection on the Create Connection dialog. <br /> <br /> 
-**Note:** The Create Connection button only displays while the connections can be added or edited. 
+<b>Note:</b> The Create Connection button only displays while the connections can be added or edited. 
 Once you do the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>, 
 this button disappears and you cannot add new or edit connections.
 </td>
@@ -779,7 +779,7 @@ this button disappears and you cannot add new or edit connections.
 <tr style="background-color: white; color: black;">
 <td> Drop-down arrow > Delete Connection </td>
 <td> Select to delete the connection. You are prompted to confirm the deletion. <br /> <br /> 
-**Note:** This option is unavailable after the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>.
+<b>Note:</b> This option is unavailable after the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>.
 </td>
 </tr>
 
@@ -791,7 +791,7 @@ this button disappears and you cannot add new or edit connections.
 To access: Select the Environment tab > Connections > click **Edit Connection** for the connection you want to customize.
 
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px;"> <b>Caution:</b> 
-If you plan to customize the connections, you must do that before you complete the steps on the Complete Install page.  
+If you plan to customize the connections, you must do that before you complete the steps on the Complete Install panel.  
 For details, see the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install-overview">Complete Install Overview</a>. 
 After that, the Edit Connections dialogs are read-only. Once the install process is triggered, no changes can be made. 
 If you want to make changes, you need to start over by re-installing the HP Cloud OS Administration node. 
@@ -867,7 +867,7 @@ applicable only if you are using a Team mode. </td>
 <tr style="background-color: white; color: black;">
 <td> Update Connection </td>
 <td> Click to save the connection settings. <br /> <br /> 
-**Note:** The Update Connection button only displays the connections that are editable.  
+<b>Note:</b> The Update Connection button only displays the connections that are editable.  
 Once you do the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>, 
 this dialog become read-only and this button disappears. </td>
 </tr>
@@ -902,12 +902,9 @@ The following table describes the Create Connection dialog UI elements:
 
 <tr style="background-color: white; color: black;">
 <td> Role </td>
-<td>  	
-
-Indicates the networking configuration needed for a specific managed node or nodes. By default, it is set to blank, which means for any role a 
+<td> Indicates the networking configuration needed for a specific managed node or nodes. By default, it is set to blank, which means for any role a 
 managed node takes, the networking configuration must be the same across all managed nodes. <br /> <br /> 
-<b>Note:</b> Do not change from the default value (blank) for this release.
-</td>
+<b>Note:</b> Do not change from the default value (blank) for this release. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -947,7 +944,7 @@ applicable only if you are using a Team mode. </td>
 <tr style="background-color: white; color: black;">
 <td> Create Connection </td>
 <td> Click to create the connection. <br /> <br /> 
-**Note:** The Create Connection button only displays the connections that are editable.  
+<b>Note:</b> The Create Connection button only displays the connections that are editable.  
 Once you do the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>, 
 this dialog become read-only and this button disappears. </td>
 </tr>
@@ -961,31 +958,281 @@ this dialog become read-only and this button disappears. </td>
 
 ## Networks
 
-Coming soon ... not formatted yet.
-
 The following information provides details about the Networks panel:
 
-* Concepts
+**Concepts:**
 
-* Networks Panel Overview:
+[Networks Panel Overview](#network-panel-overview)
 
-* UI Description
- * Networks Page
- * Edit Network Dialog
- * Edit Address Ranges Dialog
- * Create Network Dialog
+**UI Descriptions:**
+
+* [Networks Page](#network-page)
+
+* [Edit Network Dialog](#edit-network-dialog)
+
+* [Edit Address Ranges Dialog](#edit-address-ranges-dialog)
+
+* [Create Network Dialog](#create-network-dialog)
  
-
 
 ### Networks Panel Overview
 
-Coming soon ... not formatted yet.
+On the Networks panel, you define the networks that are used in your IT environment. For each logical connection (intf0, intf1, intf2) a network 
+is defined (admin, os_sdn, and public). These definitions are used for various purposes in the cloud such as networking between the nodes and 
+the Cloud OS Administration node (using the admin network), the public or corporate network (such as public network) attached to your cloud, 
+or networking between the Virtual Machine instances and the traffic from the instances to the Cloud Controller Node (using the os_sdn network).
+
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px;"> <b>Important:</b> Customizing the public network settings is 
+critical. Any missing or incorrect values will result in you having to re-install the HP Cloud OS Administration node. 
+For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
+</p>
+
+Following are some of the criteria to be considered while making changes to the default settings:
+
+* The default settings "Dual" assume you have a separate physical network for each interface; the admin, os_sdn, and public network across the Cloud OS Administration node and all managed nodes.
+
+* For a production type of deployment and to reduce the complexities of configuring the switches, it is strongly recommended that you provide separate wired networks for public, os_sdn and admin. This requires you to specify your own range of IP addresses and other settings.
+
+* Some networks and address ranges for those networks are provided by default. You can modify or delete the IP address ranges as well as add new ones. You must use valid ranges that fall within the subnet as defined by the subnet address and mask specified in the network details.
+
+* If you edit the network IP address ranges and enter invalid ranges, you will get a validation error when you click Update Address Ranges in the Edit Address Ranges dialog. The validation error shows the invalid address (start or end) and the corresponding network type. You must fix all errors in the Edit Address Ranges dialog and click Update Address Ranges to validate the addresses are correct. Clicking Cancel will not trigger the validation step.
+
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px;"> <b>Caution:</b> The address ranges validation only occurs when you 
+open the Edit Address Ranges dialog for each network and click Update Address Ranges. Otherwise,you will not know if you have any errors. 
+However, the Complete Install step will run a validation check and cannot be completed until the errors are fixed. If there is an address 
+range error, the validation check will show the network type and possibly the address value. If not, open the Edit Address Ranges dialog 
+for the specified network and click <b>Update Address Ranges</b> to identify the incorrect address. For details, see 
+<a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>.
+
+
+
+### Networks Page
+
+To access: Select the Environment tab > Networks.
+
+The following table describes the Networks page UI elements:
+
+<table style="text-align: left; vertical-align: top; min-width:700px;">
+
+<tr style="background-color: #C8C8C8;">
+<th> UI Elements </th>
+<th> Description </th>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td><b>Network Type</b> column</td>
+<td> Lists the available network types: 
+
+<ol>
+<li><b>admin</b> — Used for administrative functions, such as managed node installation, TFTP booting, DHCP assignments, system logs, backups, 
+and other monitoring tasks. This also carries cinder-volume traffic. Must be an isolated private network.</li>
+<li><b>bmc</b> — Baseboard Management Controller LAN network for Intelligent Platform Management Interface (IPMI) traffic. For test purposes only.</li>
+<li><b>bmc_vlan</b> — Baseboard Management Controller VLAN (IPMI traffic VLAN). For test purposes only.</li>
+<li><b>os_sdn</b> — OpenStack Software-Defined-Network. This network is for data traffic between the Virtual Machine instances, 
+and the traffic from the instances to the Cloud Controller Node. Must be an isolated private network.</li>
+<li><b>public</b> — Public or corporate network that is attached to your cloud infrastructure.  Must provide a pool of IP addresses 
+for the Cloud Controller node for floating IP assignments. Size of the pool depends on the number of Virtual Machine instances. 
+This network handles traffic to the outside world for the instances.</li>
+</ol>
+</td>
+</tr>
+
+<tr>
+<td><b>Logical Interface</b> column</td>
+<td>Logical interface connection associated with the network type.</td>
+</tr>
+    
+<tr>
+<td><b>Subnet</b> column</td>
+<td>IP address associated with the network type.</td>
+</tr>
+
+<tr>
+<td><b>VLAN</b> column</td>
+<td>Virtual Local Area Network ID number associated with the network type. </td>
+</tr>
+
+<tr>
+<td><b>VLAN Enabled</b> column</td>
+<td> Indicates whether the associated network coexists on the same physical interface as other networks. 
+
+<p>If the networks (particularly os_sdn and public) co-exist on the same physical network, VLAN Enabled must be set to <b>True</b>. 
+This means that the Network Mode will be set to <b>single</b> by default on the 
+<a href="/cloudos/manage/operational-dashboard/environment-tab/#confirm-complete-install-dialog">Confirm Complete Install Dialog</a>.</p>
+
+<p>If the networks (particularly os_sdn and public) exist on separate physical interfaces,VLAN Enabled must be set to <b>False</b>. 
+This means that the Network Mode will be set to <b>dual</b> by default on the 
+<a href="/cloudos/manage/operational-dashboard/environment-tab/#confirm-complete-install-dialog">Confirm Complete Install Dialog</a>. </p>
+
+</td>
+</tr>
+				
+<tr>
+<td><b>Bridge Enabled</b> column </td>
+<td>Indicates whether a bridge interface should be added on top of the interface for the corresponding network: <b>False</b> (default) or <b>True</b>. </td>
+</tr>
+
+<tr>
+<td><b>Create Network</b> button</td>
+<td> Click to add a new network type on the <a href="/cloudos/manage/operational-dashboard/environment-tab/#create-network-dialog">Create Network Dialog</a>. 
+					
+<p><b>Note:</b> The <b>Create Network</b> button only displays while the networks can be added or edited. 
+Once you do the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>, this button disappears and you cannot 
+add or edit networks.</p>
+</td>
+</tr>
+				
+<tr>
+<td><b>Edit Network</b> button</td>
+<td>Click to open the <a href="/cloudos/manage/operational-dashboard/environment-tab/#edit-network-dialog">Edit Network Dialog</a>. </td>
+</tr>
+
+<tr>
+<td>Down arrow > <b>Edit Address Ranges</b></td>
+<td>Click to open the <a href="/cloudos/manage/operational-dashboard/environment-tab/#edit-address-ranges-dialog">Edit Address Ranges Dialog</a>. </td>
+</tr>
+
+</table>
+
+
+### Edit Network Dialog
+
+To access: Select the Environment tab > Networks > click **Edit Network** for the network you want to customize.
+
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px;"> <b>Caution:</b> If you plan to customize the networks, 
+you must do that before you complete the steps on the Complete Install panel. For details, see 
+the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a> topic.
+After that, the Edit Network dialogs are read-only. Once the install process is triggered, no changes can be made. If you want to make changes, 
+you need to start over by re-installing the HP Cloud OS Administration node. 
+For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
+</p>
+
+The following table describes the Edit Network dialog UI elements:
+
+<table style="text-align: left; vertical-align: top; min-width:700px;">
+
+<tr style="background-color: #C8C8C8;">
+<th> UI Elements </th>
+<th> Description </th>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td colspan="2"><b>Network Tab</b></td>
+</tr>
+
+<tr>
+<td> <b>Type</b> </td>
+<td> Default network type. </td>
+</tr>
+
+<tr>
+<td><b>Logical Interface</b> </td>
+<td>Logical interface connection associated with the network type.</td>
+</tr>
+
+<tr>
+<td><b>Subnet</b> </td>
+<td>
+   <p>IP address associated with the network type.</p>
+   <p>For the public network, specify explicitly for your public IP address range.</p>
+</td>
+</tr>
+
+<tr>
+<td><b>Netmask</b> </td>
+<td>
+CIDR notation value used to distinguish the network and host portions of an IP address.
+
+<p>For the public network, specify explicitly for your public IP address range.</p>
+</td>
+</tr>
+
+<tr>
+<td> <b>Bridge Enabled</b> </td>
+<td> Indicates whether a bridge interface should be added on top of the interface for the corresponding network: True or False.
+
+<p>For the public network, set to <b>False</b>. The default is <b>False</b> for all provided networks.</p>
+
+</td>
+</tr>
+
+<tr>
+<td colspan="2"><b>VLAN Tab</b> </td>
+</tr>
+
+<tr>
+<td><b>VLAN ID</b> </td>
+<td>Virtual Local Area Network ID number associated with the network type. Do not change the default for the admin, os_sdn or public networks.</td>
+</tr>
+
+<tr>
+<td><b>VLAN Enabled</b> </td>
+<td> Indicates whether the associated network coexists on the same physical interface as other networks.
+
+<p>(<i>Recommended</i>) Leave set to <b>False</b> (the default value) if the networks  (particularly os_sdn and public) exist on 
+separate physical interfaces. This means that the Network Mode will be set to <b>dual</b> by default on the 
+<a href="/cloudos/manage/operational-dashboard/environment-tab/#confirm-complete-install-dialog">Confirm Complete Install Dialog</a>. </p>
+
+<p>Set to <b>True</b> if the networks (particularly os_sdn and public) co-exist on the same physical network. 
+This means that the Network Mode will be set to <b>single</b> by default on the 
+<a href="/cloudos/manage/operational-dashboard/environment-tab/#confirm-complete-install-dialog">Confirm Complete Install Dialog</a>. </p>
+
+</td>
+</tr>
+
+<tr>
+<td colspan="2"><b>Router Tab</b>
+</td>
+</tr>
+
+<tr>
+<td><b>Router</b> </td>
+<td> Device's IP Address that passes network traffic between different IP networks.
+
+<p>Note: For the admin network, it is recommended to provide a non-routable private network for the admin network.</p>
+</td>
+</tr>
+
+<tr>
+<td><b>Router Preference</b> </td>
+<td>Any value used by a routing protocol to determine whether one particular route should be chosen over another.</td>
+</tr>
+
+<tr>
+<td><b>Update Network</b> button</td>
+<td>Saves the edited settings for all three tabs. </td>
+</tr>
+				
+</table>
+
+
+### Edit Address Ranges Dialog
+
+
+
+
+
+#### Admin Network Edit Address Ranges Dialog
+
+
+
+#### OS_SDN Network Edit Address Ranges Dialog
+
+
+
+#### Public Network Edit Address Ranges Dialog
+
+
+
+
+
+
+### Create Network Dialog
+
+
 
 
 <a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-
-
-
 
 ## Complete Install
 
