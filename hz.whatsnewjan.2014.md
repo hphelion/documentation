@@ -29,7 +29,7 @@ The new Horizon-based HP Cloud Console inherits network topology infographics to
 
 ##Cross-region object replication## {#Crossregionobjectreplication}
 
-With the OpenStack Storage infrastructure as its foundation, HP Cloud Object Store (previously known as “Object Storage”) allows you to store and retrieve objects in a highly redundant cluster of publicly accessible physical machines hosted in HP data centers. In a new enhancement, you can now setup and control object storage container synchronization across multiple regions with Object Store in the HP Cloud Console. When you activate synchronization between two containers in different regions, you can store objects in and access objects from both simultaneously.  
+With the OpenStack Storage infrastructure as its foundation, HP Cloud Object Store (previously known as "Object Storage") allows you to store and retrieve objects in a highly redundant cluster of publicly accessible physical machines hosted in HP data centers. In a new enhancement, you can now setup and control object storage container synchronization across multiple regions with Object Store in the HP Cloud Console. When you activate synchronization between two containers in different regions, you can store objects in and access objects from both simultaneously.  
 
 ##More object storage uses## {#Moreobjectstorageuses}
 
