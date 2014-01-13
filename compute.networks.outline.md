@@ -58,6 +58,17 @@ Short, very high level
 
 *File exists for MC; need to update to Horizon*
 
+####Working with networks using the API. ###
+
+The network service that provides a powerful API to define the network connectivity and addressing used by devices from other services, such as the Compute service. 
+
+The HP Cloud Services API supports virtual network, subnet, router and port abstractions to describe network resources (taken from cloud wiki: https://wiki.hpcloud.net/display/iaas/Neutron+-+HPCS+Cloud+Network+Service).
+
+You can use the API to:
+Allocate and add floating IPs
+Work with security groups
+
+
 For Network API details, see the [HP Cloud Compute Service API Reference](https://docs.hpcloud.com/api/compute/#2.3Network).
 
 ####3.1 Viewing the network topology####
