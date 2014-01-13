@@ -19,6 +19,8 @@ PageRefresh();
 </script>
 
 
+<p style="font-size: small;"> <a href="/cloudos/install/">&#9664; PREV</a> | <a href="/cloudos/install/">&#9650; UP</a> | <a href="/cloudos/install/before-you-install/">NEXT &#9654;</a> </p>
+
 # Installation Overview
 
 Welcome! This topic presents an overview of the installation steps.  
@@ -31,6 +33,11 @@ These installation topics provide the means to plan, install, configure, and cre
 The HP Cloud OS installation deploys the HP Cloud OS Operational Dashboard (used to set up,
 configure, and install an HP cloud infrastructure) and the HP Cloud OS Administration Dashboard
 (used to create and manage cloud resources).
+
+* [HP Cloud OS Environment](#hp-cloud-os-environment)
+* [Preview of the Installation Steps](#preview-of-the-installation-steps)
+* [Components of the HP Cloud OS Environment](#components-of-the-hp-cloud-os-environment)
+* [Next Step](#next-step)
 
 ## HP Cloud OS Environment
 
@@ -54,30 +61,31 @@ At a high level, here are the steps to setup and install the Admin node:
 <img src="media/cloudos-install-process.png" title="HP Cloud OS installation process" /> 
 
 The steps shown above feature an automated process in the HP Cloud OS Operational Dashboard, where you can accept defaults or enter values that are specific to your requirements (such as your network settings). Using 
-this automated approach, HP Cloud OS handles all of the installation details for you, installing the OpenStack services and the Cloud OS value-added services.
+this automated approach, HP Cloud OS handles all of the installation details for you, installing the OpenStack services and the HP Cloud OS value-added services.
 
-Taking a broader view, this next diagram illustrates those steps in a larger context. Notice how once you've installed and set up the Admin node, you have a choice between two paths: wizard-based (in the Operational Dashboard), **or** manual, advanced steps (in the Installation Dashboard).
+Taking a broader view, this next diagram illustrates those steps in a larger context. 
+Notice how once you've installed and set up the Admin node, you have a choice between two paths: wizard-based (in the Operational Dashboard), **or** advanced steps (in the Installation Dashboard).
 
 <img src="media/cloudos-create-cloud-paths.png" title="HP Cloud OS - choosing between two create cloud paths" /> 
 
-What this means: When you create a cloud using the process defined in [Create a Cloud](/cloudos/install/create-cloud/), a number of OpenStack and Cloud OS 
+What this means: When you create a cloud using the process defined in [Create a Cloud](/cloudos/install/create-cloud/), a number of OpenStack and HP Cloud OS 
 install modules are automatically configured and deployed for you. In most cases, the automated deployment of install modules will suffice. 
 However, should you need to customize values in the install modules that are not exposed in the Create Cloud Attributes tab, 
 this advanced section, along with [Install Modules Reference](/cloudos/install/install-modules-reference/), are provided to assist 
 you in the process of customizing and deploying the individual install modules.  
 
-## Components of the Cloud OS Environment
+## Components of the HP Cloud OS Environment
 
-The following diagram illustrates the Cloud OS environment.
+The following diagram illustrates the HP Cloud OS environment.
 
-( redrawing Hrushi's pptx diagram in Visio 12/4 to 12/5 - will insert here ) 
+<img src="media/cloudos-environment.png" title="HP Cloud OS environment" /> 
 
-### Cloud OS Administration Node
+### HP Cloud OS Administration Node
 
-The Cloud OS Administration Node (Admin Node) hosts the Operational Dashboard that deploys
+The HP Cloud OS Administration Node (Admin Node) hosts the Operational Dashboard that deploys
 private and hybrid-only cloud infrastructure environments by network booting the managed bare-metal
 servers, which are the Controller and Compute nodes. Using Chef Server and recipes,
-the services are installed on the managed bare-metal servers. **Note:** In this and subsequent Cloud OS topics, 
+the services are installed on the managed bare-metal servers. **Note:** In this and subsequent HP Cloud OS topics, 
 we refer to these managed bare-metal servers more simply as "managed nodes."
 
 ### Services
@@ -87,32 +95,31 @@ more nodes to form a cloud environment. These are composite services that are in
 together into a single cloud solution. Services are exposed or published as RESTful APIs.
 The list of services that can be deployed for HP Cloud OS are:
 
-* Keystone (Identity Management Service)&mdash; OpenStack service to provide identity (domain,
+* Keystone (Identity Management Service)&mdash; An OpenStack service to provide identity (domain,
 project and users) management, access token, and service catalog functionality.
 
-* Glance (Image Repository Service)&mdash; OpenStack service to provide for discovering,
+* Glance (Image Repository Service)&mdash; An OpenStack service to provide for discovering,
 registering, and retrieving virtual machine images.
 
-* Nova (Compute Controller and Compute Node Service)&mdash; OpenStack service to provide a
+* Nova (Compute Controller and Compute Node Service)&mdash; An OpenStack service to provide a
 compute fabric controller.
 
-* Cinder (Volume Connectivity Service)&mdash; OpenStack service to provide volume management.
+* Cinder (Volume Connectivity Service)&mdash; An OpenStack service to provide volume management.
 
-* Neutron (Network Connectivity Service)&mdash; OpenStack service to create and provision virtual networks.  Formerly called Quantum. 
+* Quantum (Neutron) (Network Connectivity Service)&mdash; An OpenStack service to create and provision virtual networks.
 
-* Swift (OpenStack Object Store) &mdash; OpenStack service to store and retrieve lots of data in virtual containers. 
+* Swift (OpenStack Object Store) &mdash; An OpenStack service to store and retrieve lots of data in virtual containers.  
 
-* Graffiti (Dictionary, Directory, and Resource Pool Service)&mdash; Cloud OS service to support
-diverse functions: a dictionary of the cloud's capabilities; a searchable directory to find cloud
-resources based on their capabilities; dynamic binding, describing the requirements instead of
-static binding; and provides support for discovering, registering, and retrieving resource pool
-definitions for compute, network, and volume resources.
+* Graffiti (Resource Pool Registry and Capability Tagging Service) &mdash; An HP Cloud OS service to support
+diverse functions: discovering, registering, and retrieving resource pool definitions for compute, network, and volume resources; 
+a dictionary of the cloud's capabilities; a searchable directory to find cloud resources based on their capabilities; and 
+dynamic binding, describing the requirements instead of static binding.  
 
-* Eve (Topology Provisioning Service)&mdash; Cloud OS service to provide for provisioning lifecycle
-of a TOSCA-based infrastructure topology template of compute, network, and volume resources
+* Eve (Topology Provisioning Service)&mdash; An HP Cloud OS service to provide for provisioning lifecycle
+of a TOSCA-based infrastructure topology design of the compute, network, and volume resources
 in a defined resource pool. Also provides security and management.
 
-* Focus (Topology Document Repository Service)&mdash; Cloud OS service to provide for
+* Focus (Topology Document Repository Service)&mdash; An HP Cloud OS service to provide for
 discovering, registering, versioning, and retrieving of document types necessary to describe
 TOSCA-based infrastructure topologies.
 

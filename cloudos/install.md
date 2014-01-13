@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Install &amp; Configure Your Clouds"
+title: "Install &amp; Configure Your Cloud"
 permalink: /cloudos/install/
 product: cloudos
 
@@ -18,13 +18,14 @@ function PageRefresh {
  
 </script>
 
+<p style="font-size: small;"> &#9664; PREV | <a href="/cloudos/">&#9650; UP</a> | <a href="/cloudos/install/overview/">NEXT &#9654;</a> </p>
 
-# Install &amp; Configure Your Clouds
+# Install &amp; Configure Your Cloud
 
-Welcome! The following topics explain how to install &amp; configure your clouds with the HP Cloud OS platform. 
+Welcome! The following topics explain how to install &amp; configure your cloud with the HP Cloud OS platform. 
 
 It's important to read the topics and perform the described steps in order. While some steps are optional, the sequence that you'll follow in 
-the HP Cloud OS Operational Dashboard is significant, to ensure a proper deployment of your cloud. 
+the HP Cloud OS Operational Dashboard user interface is significant, to ensure a proper deployment of your cloud. 
 
 Install and set up the Admin node:
 
@@ -40,11 +41,9 @@ After you install and set up the Admin node, you can perform additional steps:
 
 * [Create a Cloud](/cloudos/install/create-cloud/) 
 * [Launch Administration Dashboard](/cloudos/install/launch-admin-dashboard/)
-* [Check the Cloud OS License](/cloudos/install/license/)
+* [Check the HP Cloud OS License](/cloudos/install/license/)
 * [Install Hot Fixes](/cloudos/install/hot-fixes/)
-
-Also see the website copy of the [HP Cloud OS Operational Dashboard Help](http://docs.hpcloud.com/cloudos/operational-dashboard/index.htm). 
-Note: website copy not deployed yet. To access this document in the Operational Dashboard, click **Help** in its top banner.
+* [Updates and Extensions](/cloudos/install/updates-and-extensions/)
 
 Finally, if you do not intend to use the wizard-based Cloud OS installation process that's described in 
 the Create a Cloud topic, and instead decide to apply and configure the install modules yourself, 
@@ -52,6 +51,11 @@ see these topics:
 
 * [Advanced Cloud Setup](/cloudos/install/advanced-cloud-setup/)
 * [Install Modules Reference](/cloudos/install/install-modules-reference/)
+
+**Note:** Also see the Help topics that are available in the Operational Dashboard and Administration Dashboard.  Wbsite copies are available:
+
+* [HP Cloud OS Operational Dashboard Help](http://docs.hpcloud.com/cloudos/operational-dashboard/index.htm)
+* [HP Cloud OS Administration Dashboard Help](http://docs.hpcloud.com/cloudos/administration-dashboard/index.htm)
 
 <a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

@@ -1,25 +1,25 @@
 ---
 layout: default
-title: "Manage your Clouds"
+title: "Manage your Cloud"
 permalink: /cloudos/manage/
 product: cloudos
 
 ---
 
-# Manage your Clouds
 
-Welcome! To manage your clouds, use the HP Cloud OS dashboards, which are based on OpenStack Horizon and provide enhanced features.
+<p style="font-size: small;"> &#9664; PREV</a> | <a href="/cloudos/">&#9650; UP</a> | <a href="/cloudos/manage/utilities/">NEXT &#9654;</a> </p>
 
-( maybe include two side-by-side screen shots of Cosmos and Skyline here ) 
+# Manage your Cloud
+
+Welcome! To manage your cloud, use the HP Cloud OS dashboards, which are based on OpenStack Horizon and provide enhanced features.
 
 Refer to these documentation resources:
 
-* [HP Cloud OS Operational Dashboard Help](http://docs.hpcloud.com/cloudos/operational_dashboard/index.htm) This document is a copy of the Help that's available in the Operational Dashboard. 
-Note: not deployed yet - will be http://docs.hpcloud.com/cloudos/admin_dashboard/index.htm.
+* [HP Cloud OS Utilities](/cloudos/manage/utilities/) &mdash; Describes the HP Cloud OS utilities.
 
-* [HP Cloud OS Administration Dashboard Help](http://docs.hpcloud.com/cloudos/admin_dashboard/index.htm) This document is a copy of the Help that's available in the Administration Dashboard. 
-Note: not deployed yet - will be http://docs.hpcloud.com/cloudos/admin_dashboard/index.htm.
+* [HP Cloud OS Troubleshooting](/cloudos/manage/troubleshooting/) &mdash; Presents a set of topics that help you troubleshoot issues you may encounter with HP Cloud OS.
 
-* [HP Cloud OS Troubleshooting](/cloudos/troubleshooting/) - presents a set of topics that help you troubleshoot issues you may encounter with Cloud OS.
+* <a href="http://docs.hpcloud.com/cloudos/operational-dashboard/index.htm" target="opdash">HP Cloud OS Operational Dashboard Help (website copy)</a> &mdash; This document is a copy of the Help that's available in the HP Cloud OS Operational Dashboard.  
 
-* [HP Cloud OS Utilities](/cloudos/utilities/) - describes the Cloud OS utilities. 
+* <a href="http://docs.hpcloud.com/cloudos/administration-dashboard/index.htm" target="admindash">HP Cloud OS Administration Dashboard Help (website copy)</a> &mdash; This document is a copy of the Help that's available in the HP Cloud OS Administration Dashboard. 
+ 

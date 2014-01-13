@@ -19,43 +19,25 @@ PageRefresh();
 </script>
 
 
+<p style="font-size: small;"> <a href="/cloudos/install/license/">&#9664; PREV</a> | <a href="/cloudos/install/">&#9650; UP</a> | <a href="/cloudos/install/updates-and-extensions/">NEXT &#9654;</a> </p>
+
 # Install Hot Fixes
 
-This topic describes the steps to import and apply hot fixes to your deployed clouds.  
+This topic describes the steps to import and apply hot fixes to your deployed cloud.  In this topic, hot fixes are referred to as content packages.
 
-If you have already downloaded a package to your client's local filesystem, 
-and you need to add its functionality to your cloud:
+If you have already downloaded a content package to your client's local filesystem, and you need to add its functionality to your cloud:
 
-1. From the Operational Dashboard's Cloud tab, click Hot Fix.
+1. From the HP Cloud OS Operational Dashboard, select Cloud tab > Hot Fixes.
 
-2. Click Import and browse to the .CSU file that contains the hot fix.
+2. Click **Import Package** and browse to the .csu file that contains the content package.
 
-3. Follow the dialogs to apply the hot fix. 
+3. Click **Choose File** to open a standard operating system "open file" dialog box, in which you can browse to and select the content package to be imported to the Cloud OS Administration node from the client's local file system. Note that such package files have a .csu extension.
 
-<p style="color: red; font-weight: bold; padding: 4px 4px 4px 4px; border: 1px dotted;"> Internal note: getting info about the dialogs... </p>
- 
- 
-<!-- 
-## Configure Option
-
-**Internal note**: This feature might be removed from Cosmos in G3 - waiting for final word.
-
-Click the Configure option to sign up for an HP Web Catalog account, or login with your credentials.
-
-In the CODN catalog, search for relevant functionality.  This could include:
-
-* Hot fixes (patches) to your version of HP Cloud OS.
-
-* An HP Moonshot workload that you want to execute on your cloud environment.  This could include portions of HP Cloud OS such as a customized Glance image and Focus topology document, which you could then deploy to your HP Moonshot chassis.  
-
-* Specific VMs that support High Availability (HA) Apache servers.
-
-* Or other value-added software, such as a Microsoft Outlook Mail Server, to be used as a resource in your cloud.
---> 
+4. After choosing a valid content package (.csu) file using the Choose File dialog, click **Import** to import the file to the Admin node. If no file has been chosen, "No file chosen" will appear next to the Choose File button.
 
 ## Next Step
 
-If you have not already done so, proceed to [Launch the Administration Dashboard](/cloudos/install/launch-admin-dashboard).
+Proceed to [Updates and Extensions](/cloudos/install/updates-and-extensions/).
 
 <a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Cloud OS FAQs"
-permalink: /cloudos/faqs/
+permalink: /cloudos/prepare/faqs/
 product: cloudos
 
 ---
@@ -19,6 +19,8 @@ PageRefresh();
 </script>
 
 
+<p style="font-size: small;"> <a href="/cloudos/prepare/supportmatrix/">&#9664; PREV | <a href="/cloudos/prepare/">&#9650; UP</a> | <a href="/cloudos/prepare/videos/">NEXT &#9654;</a> </p>
+
 # HP Cloud OS FAQs
 
 Welcome! You've got questions, we have the answers.
@@ -32,49 +34,49 @@ Welcome! You've got questions, we have the answers.
 * [What does HP Cloud OS support?](#what-does-hp-cloud-os-support)
 * [How does HP Cloud OS help customers?](#how-does-hp-cloud-os-help-customers) 
 * [What is the HP Cloud OS Sandbox?](#what-is-the-hp-cloud-os-sandbox)
-* [Where can I get the HP Cloud OS Sandbox kit?](#where-can-i-get-the-hp-cloud-os-sandbox-kit)
 * [How is HP Cloud OS integrated into the HP Cloud portfolio?](#how-is-hp-cloud-os-integrated-into-the-hp-cloud-portfolio)
-
+* [Where can I get the HP Cloud OS Sandbox kit?](#where-can-i-get-the-hp-cloud-os-sandbox-kit)
+* [Where can I get the login credentials for the HP Cloud OS dashboards?](#where-can-i-get-login-credentials-for-the-hp-cloud-os-dashboards)
 
 ## What is the HP POV on cloud solutions?
 
-> HP believes organizations will need to implement a hybrid delivery strategy that leverages the right mix of cloud and traditional IT to optimize application and service creation and delivery.
+> HP believes organizations will need to implement a hybrid delivery strategy that leverages the right mix of cloud and traditional IT, to optimize application creation &amp; delivery, and to optimize service creation &amp; delivery.
 
 ## What is HP Cloud?
 
-> HP Cloud delivers the essential foundation of technologies and services to enable our customers to confidently build, operate and 
+> HP Cloud delivers the essential foundation of technologies and services to enable our customers to confidently build, operate, and 
 consume IT services across private, managed and public clouds. HP Cloud allows the Enterprise customer to become more agile, 
-speed innovation and lower costs. HP delivers the industry's only hybrid cloud strategy and solution portfolio that 
+speed innovation, and lower costs. HP delivers the industry's only hybrid cloud strategy and solution portfolio that 
 provide the customer with choice, confidence and consistency.
 
 ## How does HP help solve the challenges faced by enterprises?
 
 > The HP Cloud offerings provide enterprises with the essential foundation of technologies and services to 
-confidently build, operate and consume IT across private, managed and public clouds based on a core set of principles. 
+confidently build, operate, and consume IT across private, hybrid, and public clouds, based on a core set of principles. 
 HP delivers customers the industry's only hybrid cloud strategy and solution portfolio with:  
 
 * Choice
-  * In delivery model (private, managed, public and traditional IT)
+  * In delivery model (private, managed, public, and traditional IT)
   * In platform (Microsoft, VMware, Linux) and support for heterogeneous environments
-  * In a global partner ecosystem (independent software vendors, system integrators, outsourcers and service providers)
+  * In a global partner ecosystem (independent software vendors, system integrators, outsourcers, and service providers)
 
 * Confidence 
   * Managed and secure your cloud-based assets across all deployment models
   * Gain scalability to meet rapidly changing business requirements
   * Deliver on enterprise-class service level agreements (SLAs) 
-  * In the ability to manage and secure across delivery models and the scalability enterprises need to drive business forward
+  * In the ability to manage and secure across delivery models, and provide the scalability enterprises need to drive business forward
 
 * Consistency 
-  * Provide a common architecture across traditional IT and private, managed and public clouds
+  * Provide a common architecture across traditional IT and private, hybrid, and public clouds
   * Allow you to create and consume portable cloud services through a unified, consistent experience across all deployment models
   
 ## What is HP Cloud OS?
 
 > HP Cloud OS is an open and extensible cloud technology platform based on OpenStack that is available through cloud products and services in the HP Cloud portfolio, or as a public beta sandbox edition. You can think of it as an "internal" distribution 
-of OpenStack that provides the technology foundation for the Cloud common architecture across private, public, and hybrid cloud delivery. HP Cloud OS is targeted to meet the needs of enterprises who want to leverage OpenStack for rapid innovation and the beneficial 
+of OpenStack that provides the technology foundation for the Cloud common architecture across private, public, and hybrid cloud delivery. HP Cloud OS is targeted to meet the needs of enterprises who want to leverage OpenStack for rapid innovation, and the beneficial 
 economics of an open source approach. It enables easier deployment, application portability, and streamlined OpenStack patching and updates, among other features.   
 
-> HP Cloud OS includes Ubuntu 12.04LTS, KVM hypervisor, hardened, curated and supported OpenStack distribution, a number of value-added services and miscellaneous software packaged as an ISO for an easy deployment. The key technology components of HP Cloud OS are:
+> HP Cloud OS includes Ubuntu 12.04LTS, KVM hypervisor, hardened, curated, and supported OpenStack distribution, a number of value-added services, and miscellaneous software packaged as an ISO for an easy deployment. The key technology components of HP Cloud OS are:
 
 * Internal OpenStack distribution by HP
 * HP installer
@@ -90,7 +92,7 @@ resources throughout a datacenter, all managed through a dashboard that gives ad
   
 ## What are the HP differentiators?
 
-> HP Cloud is based on a common architecture. This enables HP to provide its customers with Choice, Confidence and Consistency.
+> HP Cloud is based on a common architecture. This enables HP to provide its customers with choice, confidence, and consistency.
 
 * Choice &mdash; HP Cloud enables the customer to choose from any combination of: cloud delivery model (public, private or managed); OS; hypervisor; combination of infrastructure elements; and partners.
 * Confidence &mdash; HP Cloud allows the customer to manage and secure the delivery of applications and services across a combination of delivery models (public, private, managed); and provides the confidence that the cloud will scale - with the appropriate SLA expectations - for future business needs.
@@ -98,18 +100,19 @@ resources throughout a datacenter, all managed through a dashboard that gives ad
 
 ## What does HP Cloud OS support?
 
-> OpenStack components supported by HP Cloud OS includes all major components of OpenStack: Nova, Keystone, Neutron, Glance, Cinder, Horizon, and Swift. 
+> OpenStack components supported by HP Cloud OS includes all major components of OpenStack: Nova, Keystone, Quantum (Neutron), Glance, Cinder, Horizon, and Swift. 
 
 > Linux distribution support includes HP Cloud OS supported on Ubuntu 12.04 LTS Linux. 
 
-> Guest OS support for HP Cloud OS includes guest VMs running Ubuntu 12.04 LTS as well as Windows 2008 R2 and Windows 2012 R1. While Red Hat Enterprise Linux and SUSE Linux Enterprise Server are not yet officially supported, HP has conducted tests and has found no issues running RHEL and SLES as guest OS on HP Cloud OS. 
+> Guest OS support for HP Cloud OS includes guest VMs running Ubuntu 12.04 LTS as well as Windows 2008 R2 and Windows 2012 R1. While Red Hat Enterprise Linux and SUSE Linux Enterprise Server are not yet officially supported, HP has conducted tests 
+and has found no issues running RHEL or SLES as a guest OS on HP Cloud OS. 
 
 ## How does HP Cloud OS help customers?
 
 > For enterprises who want to leverage OpenStack for rapid innovation and the beneficial economics of an open source approach, HP Cloud OS delivers enterprise-grade OpenStack.  The key benefits are:
 
 * Simplified delivery
-  * Simple and accelerated installation and configuration process
+  * Simple, accelerated installation and configuration process
   * Centralize management of your cloud environments
   * Automated-live content distribution (upgrades, patches, content)
 
@@ -128,24 +131,24 @@ resources throughout a datacenter, all managed through a dashboard that gives ad
 
 > To allow customers to evaluate and educate themselves on an OpenStack-based architecture for their cloud needs, HP offers the HP Cloud OS Sandbox, which is now available as a developer preview. This helps customers and partners gain experience with OpenStack prior to deploying HP Cloud solutions that leverage HP Cloud OS. 
 
-> The HP Cloud OS sandbox is an OpenStack distribution from HP that contains a HP installer and a standards based infrastructure and application modeling capability. It provides an in-depth insight for customers and partners prior to deploying 
-HP Cloud solutions that leverage HP Cloud OS. Cloud OS sandbox is not supported and is meant for non-production, 
+> The HP Cloud OS sandbox is an OpenStack distribution from HP that contains a HP installer, a standards-based infrastructure, and application modeling capability. It provides an in-depth insight for customers and partners prior to deploying HP Cloud solutions that leverage HP Cloud OS.  HP Cloud OS sandbox is not supported, and is meant for non-production, 
 limited scale (up to 10 compute nodes) and limited time (90-day) use. 
-
-## Where can I get the HP Cloud OS Sandbox kit?
-
-> To request HP Cloud OS Sandbox kit, register for an account on the <a href="https://cloudos.hpwsportal.com" target="new"> HP Cloud OS Catalog</a> portal.
 
 ## How is HP Cloud OS integrated into the HP Cloud portfolio? 
 
 HP Cloud OS is already powering or compatible with several existing HP cloud solutions, delivering on our commitment to a common architecture across the HP Cloud portfolio with HP Cloud OS as a foundational technology component embedded in our existing cloud solutions and new innovative offerings. This technology provides the foundation for the common cloud architecture across private, public, and managed cloud delivery models.  Today, HP Cloud OS is NOT a product, but rather a technology that will be offered and supported as part of other HP products.
 
-* CloudSystem currently embeds OpenStack technology, offering customers greater choice in deployment options for their cloud workloads by enabling KVM resource pools.  The next generation of CloudSystem software was built on Cloud OS technology (coming in Q2 2014).
-* Moonshot servers will be available with Cloud OS technology to simplify the provisioning and management of Moonshot servers for specific cloud workloads, such as dedicated hosting and large-scale websites.  This is currently available as a private beta, and HP Moonshot with Cloud OS will be publicly available in Q2 2014. 
+* CloudSystem currently embeds OpenStack technology, offering customers greater choice in deployment options for their cloud workloads by enabling KVM resource pools.  The next generation of CloudSystem software was built on Cloud OS technology (coming in 2014).
+* Moonshot servers will be available with Cloud OS technology to simplify the provisioning and management of Moonshot servers for specific cloud workloads, such as dedicated hosting and large-scale websites.  This is currently available as a private beta.  HP Moonshot with HP Cloud OS may be available in 2014. 
 
+## Where can I get the HP Cloud OS Sandbox kit?
 
-## More FAQs coming...
+> To get the HP Cloud OS Sandbox ISO, register for an account on the <a href="https://cloudos.hpwsportal.com" target="codn">HP Cloud OS Distribution Network</a>.  Once logged in, look for the 
+Technology Preview section, provide your information, and download the ZIP package containing the HP Cloud OS 1.20 Sandbox ISO. 
+
+## Where can I get login credentials for the HP Cloud OS dashboards?
+
+> In the current release, the dashboards use pre-defined login credentials. These are not published in the web-hosted documentation. After you download the ISO from the <a href="https://cloudos.hpwsportal.com" target="new"> HP Cloud OS Distribution Network</a>, look for the readme file in the same ZIP that contains the ISO. The readme identifies the login credentials.
 
 <a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-
 

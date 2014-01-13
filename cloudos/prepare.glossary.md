@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Cloud OS Glossary"
-permalink: /cloudos/glossary/
+permalink: /cloudos/prepare/glossary/
 product: cloudos
 
 ---
@@ -18,6 +18,8 @@ PageRefresh();
 
 </script>
 
+
+<p style="font-size: small;"> <a href="/cloudos/prepare/cloudtypes/">&#9664; PREV | <a href="/cloudos/prepare/">&#9650; UP</a> | NEXT &#9654; </p>
 
 # HP Cloud OS Glossary
 
@@ -81,33 +83,19 @@ management effort or service provider interaction.
 ###Credentials###
 :     Data that belongs to, is owned by, and generally only known by a user, which that user can present to prove their identity.
 
-###Term###
-:     Definition...
-
 
 ## D
 
-###Term###
-:     Definition...
-
-###Term###
-:     Definition...
-
-###Term###
-:     Definition...
-
+###Deprovisioning###
+:     Deallocating a cloud resource. See [Provisioning](#Provisioning).
 
 ## E
 
 ###EC2###
 :     Elastic compute cloud; Amazon's cloud computing platform.
 
-###Term###
-:     Definition...
-
-###Term###
-:     Definition...
-
+###Eve###
+:     An HP Cloud OS composite provisioning service that uses a topology design and profile to create VMs, volumes, and network segments as described in the topology. Eve uses Graffiti service for determining resource pool existence, traits, and User identity mapping.
 
 ## F
 
@@ -118,24 +106,14 @@ management effort or service provider interaction.
 :     An on-demand, allocatable public IP address on a network. You can allocate a number of floating IP addresses up to the quota limit, and then assign them to server [instances](#Instance).
 
 
-###Term###
-:     Definition...
-
-###Term###
-:     Definition...
+###Focus###
+:     An HP Cloud OS repository for topology templates and profiles that are used for provisioning.
 
 
 ## G
 
-###Term###
-:     Definition...
-
-###Term###
-:     Definition...
-
-###Term###
-:     Definition...
-
+###Grafitti###
+:     The HP Cloud OS Resource Pool Registry and Capability Tagging Service, providing a dictionary of the "capabilities" of all the resources in a cloud environment; a searchable directory to find cloud resources based on their capabilities; the mechanism for dynamic binding, allowing you to describe requirements rather than concrete bindings; and the base concepts of requirements and capabilities within TOSCA.
 
 ## H
 
@@ -143,13 +121,6 @@ management effort or service provider interaction.
 :     In a hybrid cloud, the cloud infrastructure is a composition of two or more distinct cloud infrastructures (private or public) 
 that remain unique entities, but are bound together by standardized or proprietary technology that enables data and application 
 portability, such as cloud bursting for load balancing between clouds.  
-
-###Term###
-:     Definition...
-
-###Term###
-:     Definition...
-
 
 ## I
 
@@ -159,47 +130,18 @@ portability, such as cloud bursting for load balancing between clouds.
 ###Instance### {#Instance}
 :     A virtual machine or server in the cloud environment.
 
-###Term###
-:     Definition...
-
-
 ## J
 
 ###Job###
-:     A job is created when the user submits a desired topology to the Cloud OS Eve service API, and requests provisioning based on the topology. Eve creates the job, for which the 
+:     A job is created when the user submits a desired topology to the HP Cloud OS Eve service API, and requests provisioning based on the topology. Eve creates the job, for which the 
 Eden Service API -frameworkthen publishes status updates. Once the provisioning is finished, the job is marked as completed.
-
-###Term###
-:     Definition...
-
-###Term###
-:     Definition...
-
 
 ## K
 
 ###Key pair###
 :     A pair of key values used for verification purposes; generally one key value is private, and the other public (i.e. user-owned).
 
-###Term###
-:     Definition...
-
-###Term###
-:     Definition...
-
-
-
 ## L
-
-###Term###
-:     Definition...
-
-###Term###
-:     Definition...
-
-###Term###
-:     Definition...
-
 
 ## M
 
@@ -210,25 +152,15 @@ power, bandwidth, and the number of active users.  Resource usage may be monitor
 provides transparency for the provider and the consumer of the utilized service. 
 
 ###Model abstraction###
-:     A coding layer that provides a more functional and user-friendly abstraction for the [REST](#Rest) API programming calls. For example, instead of a direct call to GET containers, via the model abstraction layer the programming call for GET container ###container-name### is `directories.get("container-name")` . 
+:     A coding layer that provides a more functional and user-friendly abstraction for the [REST](#Rest) API programming calls. For example, instead of a direct call to GET containers, via the model abstraction layer the programming call for GET container **container-name** is `directories.get("container-name")` . 
 :     A model layer can also include particular kinds of objects, and expose those objects characteristics using simple properties or attributes. For example, "Server" is a model that represents the concept of a virtual [instance](#Instance), with the "Server" model including properties and attributes such as name, [flavor](#Flavor), [image](#Image), addresses, and so on.   See also, [Abstraction layer](#AbstractionLayer).
-...
 
-###Term###
-:     Definition...
 
 
 ## N
 
 ###Node###
 :     A computing resource in a network. In other publications, sometimes called a machine.
-
-###Term###
-:     Definition...
-
-###Term###
-:     Definition...
-
 
 ## O
 
@@ -239,9 +171,6 @@ as needed, automatically, without requiring human interaction with each service 
 ###OpenStack###
 :     An open-source cloud computing operating system.
 
-###Term###
-:     Definition...
-
 
 ## P
 
@@ -250,25 +179,15 @@ as needed, automatically, without requiring human interaction with each service 
 such as business units.  The private cloud may be owned, managed and operated by the organization, a third party. or some combination, 
 and it may exist on or off the owner's premises.
 
+###Provisioning###
+:    Allocating, auditing, and monitoring cloud resources for those who accesses and utilizes them. 
+
 ###Public cloud###
 :     In a public cloud,the cloud infrastructure is provisioned for open use by the general public.  It may be owned, managed and operated 
 by a business, academic, or government organization, or some combination.  It exists on the premises of the cloud provider.
 
-###Term###
-:     Definition...
-
 
 ## Q
-
-###Term###
-:     Definition...
-
-###Term###
-:     Definition...
-
-###Term###
-:     Definition...
-
 
 ## R
 
@@ -305,35 +224,20 @@ how they interpret the set of roles a user has and which operations or resources
 ###Server### {#Server}
 :     A compute instance that is created from a [flavor](#Flavor) combined with an [image](#Image).
 
-###Term###
-:     Definition...
-
-###Term###
-:     Definition...
-
 
 ## T
 
-###Term###
-:     Definition...
 
-###Term###
-:     Definition...
+###Tenant### {#Tenant}
+:    A collection of HP service subscriptions and/or resources (Compute, Object Storage, etc).
 
-###Term###
-:     Definition...
+###Tenant ID### {#TenantID}
+:    An ID linking one or more accounts to one or more subscribed services. APIs and Bindings often require a Tenant ID in addition to authentication information.
 
+###Token### {#Token}
+:    An arbitrary bit of text that is used to access resources. Each token has a scope which describes which resources are accessible with it. 
 
 ## U
-
-###Term###
-:     Definition...
-
-###Term###
-:     Definition...
-
-###Term###
-:     Definition...
 
 
 ## V
@@ -341,59 +245,13 @@ how they interpret the set of roles a user has and which operations or resources
 ###Volume (bootable)### {#VolumeBootable}
 :     A bootable server, previously saved by a user.
 
-###Term###
-:     Definition...
-
-###Term###
-:     Definition...
-
-
 ## W
-
-###Term###
-:     Definition...
-
-###Term###
-:     Definition...
-
-###Term###
-:     Definition...
-
 
 ## X
 
-###Term###
-:     Definition...
-
-###Term###
-:     Definition...
-
-###Term###
-:     Definition...
-
-
 ## Y
 
-###Term###
-:     Definition...
-
-###Term###
-:     Definition...
-
-###Term###
-:     Definition...
-
-
 ## Z
-
-###Term###
-:     Definition...
-
-###Term###
-:     Definition...
-
-###Term###
-:     Definition...
 
 <a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
