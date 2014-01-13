@@ -58,9 +58,11 @@ Short, very high level
 
 *File exists for MC; need to update to Horizon*
 
+For Network API details, see the [HP Cloud Compute Service API Reference](https://docs.hpcloud.com/api/compute/#2.3Network).
+
 ####3.1 Viewing the network topology####
 
-*We should have something for the Network Topology page that describes that page, what it represents and what you  can do there. Created a (https://horizon.hpcloud.com/project/network_topology/)*
+*We should have something for the Network Topology screen (https://horizon.hpcloud.com/project/network_topology/) that describes that page, what it represents and what you  can do there. Created a [Horizon console: Network Topology screen](/mc/compute/topology/) placeholder.*
 
 ####3.2 Viewing network details ####
 
@@ -189,7 +191,7 @@ Short, very high level
 	- System message 2
 - For further information
 
-*File exists [Understanding network screen system messages](/compute/networks/sys-messages), but empty; moved into How To's?*	
+*Taken from Networking Guide and [Understanding network screen system messages](/compute/networks/sys-messages), which was empty*	
 
 
 ###8.0 For more information###
