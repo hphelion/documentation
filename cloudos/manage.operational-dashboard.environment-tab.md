@@ -1005,6 +1005,9 @@ for the specified network and click <b>Update Address Ranges</b> to identify the
 <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>.
 </p>
 
+<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
+
 
 ### Networks Page
 
@@ -1088,11 +1091,14 @@ add or edit networks.</p>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td>Down arrow > <b>Edit Address Ranges</b></td>
+<td> <nobr> Down arrow > <b>Edit Address Ranges</b> </nobr> </td>
 <td>Click to open the <a href="/cloudos/manage/operational-dashboard/environment-tab/#edit-address-ranges-dialog">Edit Address Ranges Dialog</a>. </td>
 </tr>
 
 </table>
+
+<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
 
 
 ### Edit Network Dialog
@@ -1194,7 +1200,7 @@ This means that the Network Mode will be set to <b>single</b> by default on the
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td><b>Router Preference</b> </td>
+<td> <nobr> <b>Router Preference</b> </nobr> </td>
 <td>Any value used by a routing protocol to determine whether one particular route should be chosen over another.</td>
 </tr>
 
@@ -1205,31 +1211,99 @@ This means that the Network Mode will be set to <b>single</b> by default on the
 				
 </table>
 
+<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
+
 
 ### Edit Address Ranges Dialog
 
+To access: Select the Environment tab > Networks > click the down arrow and select Edit Address Ranges for the admin, os_sdn or public network type you want to view or edit the IP address ranges.
 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px;"> <b>Caution:</b> If you plan to customize the address ranges, 
+you must do that before you complete the steps on the Complete Install panel. For details, see 
+the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a> topic.
+After that, the Edit Address Ranges dialogs are read-only. Once the install process is triggered, no changes can be made. If you want to make changes, 
+you need to start over by re-installing the HP Cloud OS Administration node. 
+For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
+</p>
 
+The following table describes the Edit Network dialog UI elements:
+
+<table style="text-align: left; vertical-align: top; min-width:700px;">
+
+<tr style="background-color: #C8C8C8;">
+<th> UI Elements </th>
+<th> Description </th>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Network Type</b> </td>
+<td> Network type being viewed or edited. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td><b>Subnet</b> </td>
+<td> Subnet for the network type. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td><b>Add Address Range</b> </td>
+<td> Click to add a blank address range. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <nobr> <b>Delete Address Range</b> </nobr> </td>
+<td> Click to delete the selected address range. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> &lt;address range> </td>
+<td> Default address range(s) of the network type (see each network type below for details). </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <nobr> <b>Update Address Ranges</b> button </nobr> </td>
+<td> Click to save the edited settings, and to validate that the IP address ranges are correct.
+<br />
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px;"> <b>Note:</b> If you enter invalid ranges, 
+you will get a validation error when you click <b>Update Address Ranges</b>. The validation error identifies the incorrect address 
+(start or end) for the corresponding network type. You must fix all errors in this Edit Address Ranges dialog for the install to be 
+successful. Clicking <b>cancel</b> will not trigger the validation step. Identify the incorrect address.</p>
+</td>
+</tr>
+				
+</table>
+
+See each network's Edit Address Ranges dialog for the defaults, as described in these sections:
+
+* [Admin Network Edit Address Ranges Dialog](#admin-network-edit-address-ranges-dialog)
+
+* [OS_SDN Network Edit Address Ranges Dialog](#os-sdn-network-edit-address-ranges-dialog) 
+    
+* [Public Network Edit Address Ranges Dialog](#public-network-edit-address-ranges-dialog)
+
+<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 
 #### Admin Network Edit Address Ranges Dialog
 
+TBS...
 
 
 #### OS_SDN Network Edit Address Ranges Dialog
 
-
+TBS...
 
 #### Public Network Edit Address Ranges Dialog
 
-
+TBS...
 
 
 
 
 ### Create Network Dialog
 
-
+TBS...
 
 
 <a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
@@ -1238,14 +1312,15 @@ This means that the Network Mode will be set to <b>single</b> by default on the
 
 The following information provides details about the Complete Install panel.
 
-* Concepts
+**Concepts:**
 
- * Complete Install Overview
+* Complete Install Overview
 
-* UI Description
+**UI Descriptions:**
 
- * Complete Install Page
- * Confirm Complete Install Dialog
+* Complete Install Page
+ 
+* Confirm Complete Install Dialog
 
 ### Complete Install Overview
 
