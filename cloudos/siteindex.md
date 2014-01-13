@@ -60,12 +60,12 @@ PageRefresh();
 
 * [HP Cloud OS Utilities](/cloudos/manage/utilities/)
 * [HP Cloud OS Troubleshooting](/cloudos/manage/troubleshooting/) 
-* [HP Cloud OS Operational Dashboard Help](/cloudos/operational-dashboard/) 
+* [HP Cloud OS Operational Dashboard Help](/cloudos/manage/operational-dashboard/) 
   * [How the Operational Dashboard Works](/cloudos/manage/operational-dashboard/how-opdash-works)
   * [Operational Dashboard: Environment Tab](/cloudos/manage/operational-dashboard/environment-tab)
   * [Operational Dashboard: Cloud Tab](/cloudos/manage/operational-dashboard/cloud-tab)
   * [Operational Dashboard: Settings Tab](/cloudos/manage/operational-dashboard/settings-tab)
-* [HP Cloud OS Administration Dashboard Help](/cloudos/administration-dashboard/)  
+* [HP Cloud OS Administration Dashboard Help](/cloudos/manage/administration-dashboard/)  
 
 #### [Develop](/cloudos/develop/)
 
