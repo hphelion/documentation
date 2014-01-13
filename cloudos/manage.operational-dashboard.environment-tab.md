@@ -777,7 +777,7 @@ this button disappears and you cannot add new or edit connections.
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> Drop-down arrow > Delete Connection </td>
+<td> <nobr> Drop-down arrow > Delete Connection </nobr> </td>
 <td> Select to delete the connection. You are prompted to confirm the deletion. <br /> <br /> 
 <b>Note:</b> This option is unavailable after the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>.
 </td>
@@ -865,7 +865,7 @@ applicable only if you are using a Team mode. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> Update Connection </td>
+<td> <nobr> Update Connection </nobr> </td>
 <td> Click to save the connection settings. <br /> <br /> 
 <b>Note:</b> The Update Connection button only displays the connections that are editable.  
 Once you do the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>, 
@@ -927,7 +927,7 @@ For each logical connection (intf0, intf1, intf2) the network type is identified
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> Physical Interface </td>
+<td> <nobr> Physical Interface </nobr> </td>
 <td> Type the physical interface values for the corresponding network mode. The value contains (up to) four characters, 
 and follows specific conventions. For details see 
 <a href="/cloudos/manage/operational-dashboard/environment-tab/#edit-connection-dialog">Edit Connection Dialog</a>.
@@ -1003,7 +1003,7 @@ However, the Complete Install step will run a validation check and cannot be com
 range error, the validation check will show the network type and possibly the address value. If not, open the Edit Address Ranges dialog 
 for the specified network and click <b>Update Address Ranges</b> to identify the incorrect address. For details, see 
 <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>.
-
+</p>
 
 
 ### Networks Page
@@ -1023,38 +1023,38 @@ The following table describes the Networks page UI elements:
 <td><b>Network Type</b> column</td>
 <td> Lists the available network types: 
 
-<ol>
-<li><b>admin</b> — Used for administrative functions, such as managed node installation, TFTP booting, DHCP assignments, system logs, backups, 
+<ul>
+<li><b>admin</b> &mdash; Used for administrative functions, such as managed node installation, TFTP booting, DHCP assignments, system logs, backups, 
 and other monitoring tasks. This also carries cinder-volume traffic. Must be an isolated private network.</li>
-<li><b>bmc</b> — Baseboard Management Controller LAN network for Intelligent Platform Management Interface (IPMI) traffic. For test purposes only.</li>
-<li><b>bmc_vlan</b> — Baseboard Management Controller VLAN (IPMI traffic VLAN). For test purposes only.</li>
-<li><b>os_sdn</b> — OpenStack Software-Defined-Network. This network is for data traffic between the Virtual Machine instances, 
+<li><b>bmc</b> &mdash; Baseboard Management Controller LAN network for Intelligent Platform Management Interface (IPMI) traffic. For test purposes only.</li>
+<li><b>bmc_vlan</b> &mdash; Baseboard Management Controller VLAN (IPMI traffic VLAN). For test purposes only.</li>
+<li><b>os_sdn</b> &mdash; OpenStack Software-Defined-Network. This network is for data traffic between the Virtual Machine instances, 
 and the traffic from the instances to the Cloud Controller Node. Must be an isolated private network.</li>
-<li><b>public</b> — Public or corporate network that is attached to your cloud infrastructure.  Must provide a pool of IP addresses 
+<li><b>public</b> &mdash; Public or corporate network that is attached to your cloud infrastructure.  Must provide a pool of IP addresses 
 for the Cloud Controller node for floating IP assignments. Size of the pool depends on the number of Virtual Machine instances. 
 This network handles traffic to the outside world for the instances.</li>
-</ol>
+</ul>
 </td>
 </tr>
 
-<tr>
+<tr style="background-color: white; color: black;">
 <td><b>Logical Interface</b> column</td>
 <td>Logical interface connection associated with the network type.</td>
 </tr>
     
-<tr>
+<tr style="background-color: white; color: black;">
 <td><b>Subnet</b> column</td>
 <td>IP address associated with the network type.</td>
 </tr>
 
-<tr>
+<tr style="background-color: white; color: black;">
 <td><b>VLAN</b> column</td>
 <td>Virtual Local Area Network ID number associated with the network type. </td>
 </tr>
 
-<tr>
+<tr style="background-color: white; color: black;">
 <td><b>VLAN Enabled</b> column</td>
-<td> Indicates whether the associated network coexists on the same physical interface as other networks. 
+<td> Indicates whether the associated network coexists on the same physical interface as other networks. <br />
 
 <p>If the networks (particularly os_sdn and public) co-exist on the same physical network, VLAN Enabled must be set to <b>True</b>. 
 This means that the Network Mode will be set to <b>single</b> by default on the 
@@ -1067,27 +1067,27 @@ This means that the Network Mode will be set to <b>dual</b> by default on the
 </td>
 </tr>
 				
-<tr>
+<tr style="background-color: white; color: black;">
 <td><b>Bridge Enabled</b> column </td>
 <td>Indicates whether a bridge interface should be added on top of the interface for the corresponding network: <b>False</b> (default) or <b>True</b>. </td>
 </tr>
 
-<tr>
+<tr style="background-color: white; color: black;">
 <td><b>Create Network</b> button</td>
 <td> Click to add a new network type on the <a href="/cloudos/manage/operational-dashboard/environment-tab/#create-network-dialog">Create Network Dialog</a>. 
-					
+<br /> 		
 <p><b>Note:</b> The <b>Create Network</b> button only displays while the networks can be added or edited. 
 Once you do the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>, this button disappears and you cannot 
 add or edit networks.</p>
 </td>
 </tr>
 				
-<tr>
+<tr style="background-color: white; color: black;">
 <td><b>Edit Network</b> button</td>
 <td>Click to open the <a href="/cloudos/manage/operational-dashboard/environment-tab/#edit-network-dialog">Edit Network Dialog</a>. </td>
 </tr>
 
-<tr>
+<tr style="background-color: white; color: black;">
 <td>Down arrow > <b>Edit Address Ranges</b></td>
 <td>Click to open the <a href="/cloudos/manage/operational-dashboard/environment-tab/#edit-address-ranges-dialog">Edit Address Ranges Dialog</a>. </td>
 </tr>
@@ -1120,17 +1120,17 @@ The following table describes the Edit Network dialog UI elements:
 <td colspan="2"><b>Network Tab</b></td>
 </tr>
 
-<tr>
+<tr style="background-color: white; color: black;">
 <td> <b>Type</b> </td>
 <td> Default network type. </td>
 </tr>
 
-<tr>
+<tr style="background-color: white; color: black;">
 <td><b>Logical Interface</b> </td>
 <td>Logical interface connection associated with the network type.</td>
 </tr>
 
-<tr>
+<tr style="background-color: white; color: black;">
 <td><b>Subnet</b> </td>
 <td>
    <p>IP address associated with the network type.</p>
@@ -1138,7 +1138,7 @@ The following table describes the Edit Network dialog UI elements:
 </td>
 </tr>
 
-<tr>
+<tr style="background-color: white; color: black;">
 <td><b>Netmask</b> </td>
 <td>
 CIDR notation value used to distinguish the network and host portions of an IP address.
@@ -1147,7 +1147,7 @@ CIDR notation value used to distinguish the network and host portions of an IP a
 </td>
 </tr>
 
-<tr>
+<tr style="background-color: white; color: black;">
 <td> <b>Bridge Enabled</b> </td>
 <td> Indicates whether a bridge interface should be added on top of the interface for the corresponding network: True or False.
 
@@ -1156,19 +1156,19 @@ CIDR notation value used to distinguish the network and host portions of an IP a
 </td>
 </tr>
 
-<tr>
+<tr style="background-color: #f8f8f8;">
 <td colspan="2"><b>VLAN Tab</b> </td>
 </tr>
 
-<tr>
+<tr style="background-color: white; color: black;">
 <td><b>VLAN ID</b> </td>
 <td>Virtual Local Area Network ID number associated with the network type. Do not change the default for the admin, os_sdn or public networks.</td>
 </tr>
 
-<tr>
+<tr style="background-color: white; color: black;">
 <td><b>VLAN Enabled</b> </td>
 <td> Indicates whether the associated network coexists on the same physical interface as other networks.
-
+<br /> 
 <p>(<i>Recommended</i>) Leave set to <b>False</b> (the default value) if the networks  (particularly os_sdn and public) exist on 
 separate physical interfaces. This means that the Network Mode will be set to <b>dual</b> by default on the 
 <a href="/cloudos/manage/operational-dashboard/environment-tab/#confirm-complete-install-dialog">Confirm Complete Install Dialog</a>. </p>
@@ -1180,25 +1180,25 @@ This means that the Network Mode will be set to <b>single</b> by default on the
 </td>
 </tr>
 
-<tr>
+<tr style="background-color: #f8f8f8;">
 <td colspan="2"><b>Router Tab</b>
 </td>
 </tr>
 
-<tr>
+<tr style="background-color: white; color: black;">
 <td><b>Router</b> </td>
 <td> Device's IP Address that passes network traffic between different IP networks.
-
+<br /> 
 <p>Note: For the admin network, it is recommended to provide a non-routable private network for the admin network.</p>
 </td>
 </tr>
 
-<tr>
+<tr style="background-color: white; color: black;">
 <td><b>Router Preference</b> </td>
 <td>Any value used by a routing protocol to determine whether one particular route should be chosen over another.</td>
 </tr>
 
-<tr>
+<tr style="background-color: white; color: black;">
 <td><b>Update Network</b> button</td>
 <td>Saves the edited settings for all three tabs. </td>
 </tr>
