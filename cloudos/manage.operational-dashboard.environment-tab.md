@@ -224,7 +224,7 @@ Each network needs to be separated by a bar "|". For example: <code>10.*|192.*|l
 
 <tr style="background-color: white; color: black;">
 <td> <nobr> Update Prerequisite </nobr> </td>
-<td> Click to save these settings, then click Complete Prerequisite to complete this setup. </td>
+<td> Click to save these settings, then click <b>Complete Prerequisite</b> to complete this setup. </td>
 </tr>
 
 </table>
@@ -997,10 +997,10 @@ Following are some of the criteria to be considered while making changes to the 
 
 * Some networks and address ranges for those networks are provided by default. You can modify or delete the IP address ranges as well as add new ones. You must use valid ranges that fall within the subnet as defined by the subnet address and mask specified in the network details.
 
-* If you edit the network IP address ranges and enter invalid ranges, you will get a validation error when you click Update Address Ranges in the Edit Address Ranges dialog. The validation error shows the invalid address (start or end) and the corresponding network type. You must fix all errors in the Edit Address Ranges dialog and click Update Address Ranges to validate the addresses are correct. Clicking Cancel will not trigger the validation step.
+* If you edit the network IP address ranges and enter invalid ranges, you will get a validation error when you click Update Address Ranges in the Edit Address Ranges dialog. The validation error shows the invalid address (start or end) and the corresponding network type. You must fix all errors in the Edit Address Ranges dialog and click <b>Update Address Ranges</b> to validate the addresses are correct. Clicking Cancel will not trigger the validation step.
 
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px;"> <b>Caution:</b> The address ranges validation only occurs when you 
-open the Edit Address Ranges dialog for each network and click Update Address Ranges. Otherwise,you will not know if you have any errors. 
+open the Edit Address Ranges dialog for each network and click <b>Update Address Ranges</b>. Otherwise,you will not know if you have any errors. 
 However, the Complete Install step will run a validation check and cannot be completed until the errors are fixed. If there is an address 
 range error, the validation check will show the network type and possibly the address value. If not, open the Edit Address Ranges dialog 
 for the specified network and click <b>Update Address Ranges</b> to identify the incorrect address. For details, see 
@@ -1599,7 +1599,7 @@ You specify the install settings on the Confirm Complete Install Dialog and then
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px;"> <b>Note:</b> The Complete Install step runs a validation check 
 of the network IP address ranges. If there is an error, this step cannot be completed until the error is fixed. 
 The validation check shows the network type and possibly the address value. You must open the Edit Address Ranges dialog for the specified 
-network and click Update Address Ranges to identify the incorrect address, and fix it. 
+network and click <b>Update Address Ranges</b> to identify the incorrect address, and fix it. 
 See <a href="/cloudos/manage/operational-dashboard/environment-tab/#edit-address-ranges-dialog">Edit Address Ranges Dialog</a>.
 </p>
 
@@ -1613,15 +1613,142 @@ For procedural instructions, see <a href="/cloudos/install/">Install and Configu
 
 ### Complete Install Page
 
-Coming soon ... not formatted yet.
+To access: Select the Environment tab > Complete Install.
 
+The following table describes the Complete Install page UI elements:
+
+<table style="text-align: left; vertical-align: top; min-width:700px;">
+
+<tr style="background-color: #C8C8C8;">
+<th> UI Elements </th>
+<th> Description </th>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <nobr> <b>Complete Install</b> button </nobr> </td> </td>
+<td> Click to open the Confirm Complete Install dialog, where you will then specify configuration information to complete the 
+HP Cloud OS Administration node installation. After the HP Cloud OS Administration node is installed, this button is replaced by the Continue... button. <br />
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px;"> <b>Note:</b> The Complete Install step runs a validation check 
+of the network IP address ranges. If there is an error, this step cannot be completed until the error is fixed. 
+The validation check shows the network type and possibly the address value. You must open the Edit Address Ranges dialog for the specified 
+network and click <b>Update Address Ranges</b> to identify the incorrect address, and fix it. 
+See <a href="/cloudos/manage/operational-dashboard/environment-tab/#edit-address-ranges-dialog">Edit Address Ranges Dialog</a>.
+</p>
+</td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Install Launched</b> column </td>
+<td> The timestamp that the HP Cloud OS Administration node install is started. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td><b>Install Complete</b> column </td>
+<td> The timestamp that the HP Cloud OS Administration node install is completed. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Network Mode</b> column </td>
+<td> The mode specified in the Confirm Complete Install dialog. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>IPMI/BMC Network Status</b> column </td>
+<td> The IPMI/BMC Network status specified in the Confirm Complete Install dialog. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>IPMI Username</b> column </td>
+<td> IPMI username, if one was specified in the Confirm Complete Install dialog. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>IPMI Password</b> column </td>
+<td> IPMI password, if one was specified in the Confirm Complete Install dialog. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Show Install Log</b> column </td>
+<td> Click to view the install activity in the /var/log/install.log, which appears on the bottom of the window. 
+This button then becomes a Refresh button. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Refresh</b> button </td>
+<td> Replaces the Show Install Log button to monitor the install progress. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Continue...</b> button </td>
+<td> Replaces the Complete Install button after the HP Cloud OS Administration node install is complete. 
+Click to add the Cloud tab. The HP Cloud OS Administration node is now ready to be configured to set up a cloud. 
+See the <a href="/cloudos/manage/operational-dashboard/cloud-tab">Cloud Tab</a> topic for descriptions of the panels that set up a cloud.</td>
+</tr>
+				
+</table>
+
+
+<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 
 
 ### Confirm Complete Install Dialog
 
-Coming soon ... not formatted yet.
+To access: Select the Environment tab > Complete Install and click **Complete Install**.
 
+The following table describes the Confirm Complete Install UI elements:
+
+<table style="text-align: left; vertical-align: top; min-width:700px;">
+
+<tr style="background-color: #C8C8C8;">
+<th> UI Elements </th>
+<th> Description </th>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Domain Name</b> </td>
+<td> Enter the top-level domain name for your infrastructure. The name must be lowercase characters with no numbers or 
+special characters. In the current release, it must end in .com, .org, .net, .edu, .mil, .gov, or .local. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Network Mode</b>  </td>
+<td> Select <b>single</b> or <b>team</b> if the admin, os_sdn, and public networks co-exist on the <b>same</b> physical interface. <br />
+<p><b>Note:</b> If the admin, os_sdn, and public networks are on <b>separate</b> physical interfaces, the only choice given is <b>dual</b>.</p>
+</td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>IPMI/BMC Network Status</b> </td>
+<td> Select Disabled. <br />
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px;"> <b>Tip:</b> The enable IPMI/BMC feature is for test purposes only. </p>
+</td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>IPMI Username</b> column </td>
+<td> Ignore unless the IPMI/BMC Network Status is enabled. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>IPMI Password</b> column </td>
+<td> Ignore unless the IPMI/BMC Network Status is enabled. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Complete Install</b> </td>
+<td> Click to install the required software on the HP Cloud OS Administration node. This may take several minutes. <br /> 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px;"> <b>Note:</b> The Complete Install step runs a validation check 
+of the network IP address ranges. If there is an error, this step cannot be completed until the error is fixed. 
+The validation check shows the network type and possibly the address value. You must open the Edit Address Ranges dialog for the specified 
+network and click <b>Update Address Ranges</b> to identify the incorrect address, and fix it. 
+See <a href="/cloudos/manage/operational-dashboard/environment-tab/#edit-address-ranges-dialog">Edit Address Ranges Dialog</a>.
+</p>
+
+</td>
+</tr>
+		
+</table>
 
 
 <a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
