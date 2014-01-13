@@ -1603,12 +1603,13 @@ network and click Update Address Ranges to identify the incorrect address, and f
 See <a href="/cloudos/manage/operational-dashboard/environment-tab/#edit-address-ranges-dialog">Edit Address Ranges Dialog</a>.
 </p>
 
-When the install is complete, the Operational Dashboard displays the Cloud tab (see <a href="/cloudos/manage/operational-dashboard/cloud-tab/">) after the user clicks the Continue... button.
+When the install is complete, the Operational Dashboard displays the Cloud tab (see the <a href="/cloudos/manage/operational-dashboard/cloud-tab/">Cloud Tab</a> section of this topic), after the user clicks the Continue... button.
 
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px;"> <b>Caution:</b> Be sure the values for the 
 Prerequisites, Server Types, Connections and Networks are what you need, before you start the install process. Once the install process is triggered, 
 no changes can be made. If you want to make changes, you need to start over by re-installing the HP Cloud OS Administration node. 
 For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
+</p>
 
 ### Complete Install Page
 
