@@ -63,11 +63,11 @@ If you have not yet set up a cloud, refer to [Install &amp; Configure Your Cloud
 Administration Dashboard. The Administration Dashboard provides a simplified means of creating and managing cloud 
 resources, as well as the ability to provision a composite topology described by topology designs.
             
-For details about the user interface dialogs, click Help from the top banner of the dashboards. Or see these web-hosted URLs:
+For details about the user interface dialogs, click Help from the top banner of the dashboards, or see on this site:
 
-* <a href="http://docs.hpcloud.com/cloudos/operational-dashboard/index.htm" target="opdash">HP Cloud OS Operational Dashboard Help</a> &mdash; This document is a copy of the Help that's available in the HP Cloud OS Operational Dashboard.  
+* <a href="/cloudos/manage/operational-dashboard/">HP Cloud OS Operational Dashboard Help</a> &mdash; This document is a copy of the Help that's available in the HP Cloud OS Operational Dashboard.  
 
-* <a href="http://docs.hpcloud.com/cloudos/administration-dashboard/index.htm" target="admindash">HP Cloud OS Administration Dashboard Help</a> &mdash; This document is a copy of the Help that's available in the HP Cloud OS Administration Dashboard. 
+* <a href="/cloudos/manage/administration-dashboard/">HP Cloud OS Administration Dashboard Help</a> &mdash; This document is a copy of the Help that's available in the HP Cloud OS Administration Dashboard. 
          
 To submit REST API calls, you will need your OpenStack Keystone v2 authentication credentials so you can generate security tokens. 
 The steps are described in the [API Security Tokens](#api-security-tokens) section of this topic.
