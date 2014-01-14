@@ -98,8 +98,8 @@ The following table describes the Manage Nodes page UI elements:
 
 <tr style="background-color: white; color: black;">
 <td style="min-width:150px;"> <b>Alias</b> column </td>
-<td> Renamed MAC address ( in the [Edit Node dialog](#edit-node-dialog) ) to a more meaningful name such as controllercompute, 
-cloudcontroller, compute1, compute2.
+<td> Renamed MAC address ( in the <a href="/cloudos/manage/operational-dashboard/#edit-node-dialog">Edit Node dialog</a> ) to a more 
+meaningful name such as controllercompute, cloudcontroller, compute1, compute2.
 <br /> <br />
 Once the nodes have finished booting up, each node displays in the table, indicating the Alias Name set to the node's MAC 
 address (of the NIC associated with the Administration Network). Each node will be in the Not Allocated state.  </td>
@@ -117,8 +117,8 @@ Not Allocated, Hardware Installed, Installing, Installed, Readying, Finalizing, 
 <br /> <br />
 Once the nodes are ready for cloud deployment, their status ends with Allocated.
 <br /> <br />
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> In the case where a node results in status = Off, select the 
-More > Reboot Node action for the node.
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> In the case where a 
+node results in status = Off, select the More > Reboot Node action for the node.
 </p>
 </td>
 </tr>
@@ -136,7 +136,7 @@ contain the string in any column on the row. </td>
 
 <tr style="background-color: white; color: black;">
 <td> <b>Edit Node</b> button </td>
-<td> Click to open the [Edit Node dialog](#edit-node-dialog). </td>
+<td> Click to open the <a href="/cloudos/manage/operational-dashboard/#edit-node-dialog">Edit Node dialog</a>. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -360,8 +360,8 @@ The following table describes the Manage Clouds page UI elements:
 
 <tr style="background-color: white; color: black;">
 <td style="min-width:150px;"> <b>Name</b> </td>
-<td> Cloud name specified on the [Create Cloud dialog](#create-cloud-dialog). This is the Domain name that is used to initialize Keystone and will 
-be displayed in the Administration Dashboard.
+<td> Cloud name specified on the <a href="/cloudos/manage/operational-dashboard/#create-cloud-dialog">Create Cloud dialog</a>. 
+This is the Domain name that is used to initialize Keystone and will be displayed in the Administration Dashboard.
 <br /> <br/>
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> A cloud name must contain only letters and numbers. 
 It cannot contain spaces or special characters.</p>
