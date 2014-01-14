@@ -11,11 +11,11 @@ product: cloudos
 <script> 
 
 function PageRefresh { 
- onLoad="window.refresh"
- }
- 
- PageRefresh();
- 
+onLoad="window.refresh"
+}
+
+PageRefresh();
+
 </script>
 
 
