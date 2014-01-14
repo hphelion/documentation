@@ -95,6 +95,7 @@ You can find partner-provided examples of the required documentation on the foll
 
 * [HP Cloud Stackato documentation](http://docs.stackato.com/server/hpcs.html)
 * [Setting up Stackato on HP Cloud](https://community.hpcloud.com/article/how-do-i-set-stackato-hp-cloud-services) 
+
 ### Upload/publish overview ### {#publishImageOverview}
 Image upload refers to the uploading of a virtual machine image into HP Cloud. A new image is created in HP Cloud with the supplied image data and associated metadata.
 
