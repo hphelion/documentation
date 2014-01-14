@@ -72,8 +72,8 @@ operating system installation and if need be provide additional firmware drivers
 * Network and storage infrastructures are set up correctly. For the post-install of the operating system, a few steps are required to configure 
 and mount the folder on an additional storage.
 
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px;"> <b>Note:</b> Ensure that the boot order on all nodes is configured to boot from the network first (this only occurs once as the PXE service will not 
-try to network boot a node again if it has already done so).</p>
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px;"> <b>Note:</b> Ensure that the boot order on all nodes is configured to 
+boot from the network first (this only occurs once as the PXE service will not try to network boot a node again if it has already done so).</p>
 
 For procedural instructions on setting up and configuring your nodes, see [Install and Configure Your Cloud](/cloudos/install).
 
@@ -156,7 +156,7 @@ if it is in the Not Allocated, Allocated, or Deployed state. </p>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> <b>More > Reset Node</b> </td>
+<td> <nobr> <b>More > Reset Node</b> </nobr> </td>
 <td> Select to reset the node.
 <br /> <br />
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px;"> <b>Note:</b> A node can be reset if it is in the Not Allocated or Allocated state. 
@@ -195,7 +195,7 @@ and numbers with no spaces or special characters. </p>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> <b>Update Node</b>  </td>
+<td> <nobr> <b>Update Node</b> </nobr> </td>
 <td> Click to save the settings and return to the [Manage Nodes page](#manage-nodes-page).  </td>
 </tr>
 
@@ -278,7 +278,7 @@ This domain name is used in the Fully Qualified Domain Name (FQDN) for the manag
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> <b>Roles</b> </td>
+<td style="min-width:120px;"> <b>Roles</b> </td>
 <td> Type of role(s) for which the selected node has been specified: 
 Cloud Controller, Network Controller, and Storage Controller respective services, and Compute Node.   </td>
 </tr>
@@ -358,16 +358,56 @@ The following table describes the Manage Clouds page UI elements:
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td>   </td>
-<td>   </td>
+<td> <b>Name</b> </td>
+<td> Cloud name specified on the [Create Cloud dialog](#create-cloud-dialog). This is the Domain name that is used to initialize Keystone and will 
+be displayed in the Administration Dashboard.
+<br /> <br/>
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px;"> <b>Note:</b> A cloud name must contain only letters and numbers. 
+It cannot contain spaces or special characters.</p>
+</td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Compute Region(s)</b> </td>
+<td> List of created compute regions. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Status</b> </td>
+<td> The status of the cloud being created or removed, or the status of the region being created. 
+The status goes through a series of steps showing the % completed. When the cloud and compute region or regions are created, 
+the status displays Active.   </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Create Cloud</b> </td>
+<td> Opens the [Create Cloud dialog](#create-cloud-dialog). </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Create Compute Region</b> </td>
+<td> Opens the [Create Compute Region dialog](#create-compute-region-dialog).  </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>More</b> </td>
+<td> Provides the following options:
+<ul>
+<li><b>Launch Dashboard</b> &mdash; Opens the Administration Dashboard login on a new tab in the browser. 
+You can login with the Admin account and password you specified on the Create Cloud > Attributes dialog. 
+<li><b>Extend Compute Region</b> &mdash; Opens the Extend Compute Region Dialog.
+<li><b>Reduce Compute Region</b> &mdash; Opens the Reduce Compute Region Dialog.
+<li><b>Remove Compute Region</b> &mdash; Opens the Remove Compute Region Dialog.
+<li><b>Remove Cloud</b> &mdash; Opens the Remove Cloud Dialog.
+</ul>
+<br />
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px;"> <b>Note:</b> Some of the above actions might not always available, 
+depending upon the context of the cloud and the compute regions.</p>
+</td>
 </tr>
 
 </table> 
   
-
-
-
-    
 ### Create Cloud Dialog
 
 To access: Select the Cloud tab > Manage Clouds and click **Create Cloud**.
@@ -384,13 +424,105 @@ The following table describes the Create Cloud dialog UI elements:
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td>   </td>
-<td>   </td>
+<td> <b>Cloud Name</b>  </td>
+<td> Type the name of the cloud. This is the Domain name that is used to initialize Keystone and will be displayed in the Administration Dashboard.
+<br /> <br/>
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px;"> <b>Note:</b> A cloud name must contain only letters and numbers. 
+It cannot contain spaces or special characters.</p>
+</td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td colspan="2"> <b>Controllers Tab</b> <br /> <br />
+Specify which node will have the Cloud Controller, Network Controller, and Storage Controller respective services. 
+You can install all these core controller services on a single node, or on a dedicated node for each service.
+<br /> <br/>
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px;"> <b>Important:</b> You must have Powered On and Allocated the nodes 
+on the Manage Nodes panel to be able to select which nodes to use here.</p>
+</td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Cloud Controller</b> </td>
+<td> Select which allocated node will have the Cloud Controller service. The Cloud Controller contains those services that are considered 
+single services for a cloud environment, such as Keystone, Glance, Graffiti, Eve, and Focus, and define the boundaries of the cloud 
+environment from an identity standpoint.
+</td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Network Controller</b> </td>
+<td> Select which allocated node will have the Network Controller service. The Network Controller contains Quantum's server, l3 agent 
+and DHCP services. It is a single service in a cloud and can co-exist with (or separate from) the cloud controller services.
+</td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Storage Controller</b> </td>
+<td> Select which allocated node will have the Storage Controller service. The Storage Controller contains Cinder services that 
+provide block storage and volume connectivity to launched instances. It is a single service in a cloud and can co-exist with (or separate from) 
+the cloud controller services.
+</td>
+</tr>
+
+<tr style="background-color: #f8f8f8; color: black;">
+<td colspan="2"> <b>Attribute Tab</b> </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Keystone Signing</b> </td>
+<td> Set the Keystone Signing method based upon the authentication scheme: <br />
+<ul>
+<li><b>PKI</b> &mdash; (default setting) Large token that contains token information such as the user ID and user roles.
+<li><b>UUID</b> &mdash; alternative 32-character token choice.
+</ul>
+</td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Networking mode</b> </td>
+<td> Specify <code>gre</code> (the default setting). Local and Flat are not supported. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Local Volume File Name</b> </td>
+<td> Name of the file to be created on the target node's file system and used with <code>losetup</code> when creating the logical volume group.   </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Maximum Volume File Size (GB)</b> </td>
+<td> Specify the maximum size of the file created on the target node's file system to represent the size of the Cinder volume. 
+If the file size is too big for the file system, the size of the file will be capped at 90% of the free space in that file 
+system (at the time of creation). The <b>best practice</b> is to adjust the size to a value that is appropriate for the 
+file system associated with the Local Volume File. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Admin User Password</b> </td>
+<td> Admin user's password for a granted administrator role on an Admin project in the Administration Dashboard.   </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Arch User Password</b> </td>
+<td> Architect user's password for a granted architect role on an Admin project in the Administration Dashboard.  </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Trash User Password</b> </td>
+<td> Trash user's password for a granted user's role on a trash project(s) in the Administration Dashboard.
+<br /> <br />
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px;"> <b>Note:</b> Remember these passwords. You will be using these as 
+appropriate to login to the Administration Dashboard &mdash; see [Manage Clouds Page](#manage-clouds-page). </p> </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Create Cloud</b> button </td>
+<td> Click to begin the process of creating the cloud. The cloud will go through a series of steps to create an active cloud, 
+showing the % completed on the [Manage Clouds Page](#manage-clouds-page). </td>
 </tr>
 
 </table> 
   
-
 
 ### Create Compute Region Dialog
 
@@ -403,8 +535,9 @@ When the compute region is created, you have created an active cloud.
 After successfully creating a cloud and compute region, you can manage your cloud environment by launching the 
 HP Cloud OS Administration Dashboard.
 
-Note: Successfully creating a compute region automatically creates a default resource pool for that region, which is configured and visible 
-in the Administration Dashboard. For details, see the [HP Cloud OS Administration Dashboard Help](/cloudos/manage/administration-dashboard/).
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px;"> <b>Note:</b> Successfully creating a compute region 
+automatically creates a default resource pool for that region, which is configured and visible 
+in the Administration Dashboard. For details, see the <a href="/cloudos/manage/administration-dashboard/">HP Cloud OS Administration Dashboard Help</a>. </p>
 
 The following table describes the Compute Region dialog UI elements:
 
@@ -457,7 +590,8 @@ When a node is successfully removed from a compute region, its previous context 
 that had been previously installed on it. To use such a node again, re-set its alias and re-allocate it. Once in the Allocated state, 
 the node can be associated with a cloud.
 
-**Note:** You reset a node's alias in the Edit Node Dialog, and you re-allocate it in the Manage Nodes Page.
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px;"> <b>Note:</b> You reset a node's alias in the Edit Node Dialog, 
+and you re-allocate it in the Manage Nodes Page.</p>
 
 The following table describes the Reduce Compute Region dialog UI elements:
 
@@ -488,12 +622,14 @@ nodes that comprise the compute region to the Not Allocated state. In the Not Al
 including their alias names and any Cloud OS software that had been previously installed on them. To use such nodes again, reset 
 their aliases and reallocate them. Once in the Allocated state, they can be associated with a cloud.
 
-**Note:** If the compute controller is co-located with the cloud controller, the compute region cannot be removed.
-
-**Note:** You reset a node's alias in the Edit Node Dialog, and re-allocate it in the Manage Nodes Page.
-
-**Tip:** You can remove the last compute region from the cloud, in which case, it becomes a hybrid-only cloud. This is useful when provisioning 
-should be done in a public cloud, such as HP Cloud.
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px;"> <b>Notes:</b> 
+<ul>
+<li>If the compute controller is co-located with the cloud controller, the compute region cannot be removed.</li>
+<li>You reset a node's alias in the Edit Node Dialog, and re-allocate it in the Manage Nodes Page.</li>
+<li>You can remove the last compute region from the cloud, in which case, it becomes a hybrid-only cloud. This is useful when provisioning 
+should be done in a public cloud, such as HP Cloud.</li>
+</ul>
+</p>
 
 The following table describes the Remove Compute Region dialog UI elements:
   
@@ -535,14 +671,25 @@ The following table describes the Remove Cloud dialog UI elements:
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td>   </td>
-<td>   </td>
+<td> <b>Cloud Name</b> </td>
+<td> The name of the cloud to be removed.  </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <nobr> <b>To confirm removal of the cloud, </nobr> type the word: remove</b> </td>
+<td> Enter the word "remove" into this field. If that string is not contained in this field when you click the<b> Remove Cloud</b> button, 
+an error message displays and the cloud removal process will not take place.  </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Remove Cloud</b> button </td>
+<td> Click to begin removing the cloud. <br />  <br />
+On the Manage Nodes page, the Status for all nodes that comprised the cloud that was removed will change to Not Allocated, 
+and they will be listed by their MAC addresses.  </td>
 </tr>
 
 </table> 
   
-
-
 
 
 ### Manage Clouds Details Page
@@ -745,7 +892,7 @@ The following table describes the Configure dialog UI elements:
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> <b>Sign up now</b> link  </td>
+<td style="min-width:120px;"> <b>Sign up now</b> link  </td>
 <td> Click to go to the "Create Account" page of the HP Cloud OS Distribution Network web site, where you can sign up for an account to access the network. </td>
 </tr>
 
