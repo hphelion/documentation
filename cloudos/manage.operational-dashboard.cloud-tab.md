@@ -81,7 +81,7 @@ For procedural instructions on setting up and configuring your nodes, see [Insta
 
 To access: Select the Cloud tab > Manage Nodes.
 
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px; 1px dotted #000000;"> <b>Tip:</b> Access the virtual and bare-metal server's consoles 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px; border: 1px dotted #000000;"> <b>Tip:</b> Access the virtual and bare-metal server's consoles 
 to monitor operating system installation. Some of your hardware requires non-free firmware files to operate. The firmware can be loaded from removable media, 
 such as a USB stick or CD/DVD.</p>
 
@@ -197,7 +197,7 @@ and numbers with no spaces or special characters. </p>
 
 <tr style="background-color: white; color: black;">
 <td> <nobr> <b>Update Node</b> </nobr> </td>
-<td> Click to save the settings and return to the [Manage Nodes page](#manage-nodes-page).  </td>
+<td> Click to save the settings and return to the <a href="/cloudos/manage/operational-dashboard/#manage-nodes-page">Manage Nodes page</a>.  </td>
 </tr>
 
 </table>
@@ -341,8 +341,8 @@ There are multiple use cases where you would prefer to have separate compute reg
 * To distribute the workload across regions to get better response times. Each region can contain dedicated endpoints with a full Nova installation 
 including its own message queue and database.
 
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px; border: 1px dotted #000000;"> <b>Note:</b> Each region must use unique nodes - managed nodes cannot be 
-shared between regions.</p> 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px; border: 1px dotted #000000;"> <b>Note:</b> Each region must use unique 
+nodes &mdash; managed nodes cannot be shared between regions.</p> 
 
 
 ### Manage Clouds Page
@@ -382,12 +382,12 @@ the status displays Active.   </td>
 
 <tr style="background-color: white; color: black;">
 <td> <b>Create Cloud</b> </td>
-<td> Opens the [Create Cloud dialog](#create-cloud-dialog). </td>
+<td> Opens the <a href="/cloudos/manage/operational-dashboard/#create-cloud-dialog">Create Cloud dialog</a>. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> <b>Create Compute Region</b> </td>
-<td> Opens the [Create Compute Region dialog](#create-compute-region-dialog).  </td>
+<td> Opens the <a href="/cloudos/manage/operational-dashboard/#create-compute-region-dialog">Create Compute Region dialog</a>. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -513,13 +513,15 @@ file system associated with the Local Volume File. </td>
 <td> Trash user's password for a granted user's role on a trash project(s) in the Administration Dashboard.
 <br /> <br />
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> Remember these passwords. You will be using these as 
-appropriate to login to the Administration Dashboard &mdash; see [Manage Clouds Page](#manage-clouds-page). </p> </td>
+appropriate to login to the Administration Dashboard &mdash; see <a href="/cloudos/manage/operational-dashboard/#manage-clouds-page">Manage Clouds page</a>. </p> 
+</td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> <b>Create Cloud</b> button </td>
 <td> Click to begin the process of creating the cloud. The cloud will go through a series of steps to create an active cloud, 
-showing the % completed on the [Manage Clouds Page](#manage-clouds-page). </td>
+showing the % completed on the <a href="/cloudos/manage/operational-dashboard/#manage-clouds-page">Manage Clouds page</a>.
+</td>
 </tr>
 
 </table> 
@@ -577,13 +579,12 @@ and act as the virtualization host.</p>
 <li>Choose a number from the drop-down list to auto-select check boxes of the node(s) for you.</li>
 <li>Individually select the check boxes of the node(s) you want.</li>
 </ul>
-<br /> 
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> HP recommends that the Compute Nodes be separate nodes.
 </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> <b>Attributes</b> tab  </td>
+<td> <b>Attributes</b> tab </td>
 <td> Use to specify property values required to create a Compute Region. For the Hypervisor attribute:
 <ul>
 <li>Use <code>kvm</code> (the default) if the compute nodes are bare-metal servers.
@@ -593,7 +594,7 @@ and act as the virtualization host.</p>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> <b>Create Region Name</b>  </td>
+<td> <b>Create Region Name</b> </td>
 <td> Click to begin creating the Compute Region.
 <br /> <br />
 On the Manage Clouds page, the compute region will go through a series of steps to create an active compute region, 
