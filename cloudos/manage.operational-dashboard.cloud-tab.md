@@ -36,7 +36,7 @@ they are displayed.
     
 * [Updates and Extensions](#updates-and-extensions) 
 
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px;"> <b>Note:</b> The Cloud tab does not appear until you have 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:600px;"> <b>Note:</b> The Cloud tab does not appear until you have 
 completed all the installation steps on the <a href="/cloudos/manage/operational-dashboard/environment-tab">Environment tab</a>.</p>
 
 For procedural instructions, see [Install and Configure Your Clouds](/cloudos/install/).
@@ -97,7 +97,7 @@ The following table describes the Manage Nodes page UI elements:
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> <b>Alias</b> column </td>
+<td style="min-width:150px;"> <b>Alias</b> column </td>
 <td> Renamed MAC address (in the Edit Node dialog) to a more meaningful name such as controllercompute, cloudcontroller, compute1, compute2.
 <br /> <br />
 Once the nodes have finished booting up, each node displays in the table, indicating the Alias Name set to the node's MAC 
@@ -181,7 +181,7 @@ The following table describes the Edit Nodes dialog UI elements:
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> <b>Alias</b> </td>
+<td style="min-width:150px;"> <b>Alias</b> </td>
 <td> Type a meaningful name for the MAC address such as controllercompute, cloudcontroller, compute1, compute2.
 <br /> <br />
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px;"> <b>Note:</b> The node name can only be letters (capitalization is allowed) 
@@ -223,7 +223,7 @@ The following table describes the Manage Nodes Details page UI elements:
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> <b>UUID</b>  </td>
+<td style="min-width:150px;"> <b>UUID</b>  </td>
 <td> MAC address of the selected node. </td>
 </tr>
 
@@ -358,7 +358,7 @@ The following table describes the Manage Clouds page UI elements:
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> <b>Name</b> </td>
+<td style="min-width:150px;"> <b>Name</b> </td>
 <td> Cloud name specified on the [Create Cloud dialog](#create-cloud-dialog). This is the Domain name that is used to initialize Keystone and will 
 be displayed in the Administration Dashboard.
 <br /> <br/>
@@ -424,7 +424,7 @@ The following table describes the Create Cloud dialog UI elements:
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> <b>Cloud Name</b>  </td>
+<td style="min-width:150px;"> <b>Cloud Name</b>  </td>
 <td> Type the name of the cloud. This is the Domain name that is used to initialize Keystone and will be displayed in the Administration Dashboard.
 <br /> <br/>
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px;"> <b>Note:</b> A cloud name must contain only letters and numbers. 
@@ -549,8 +549,56 @@ The following table describes the Compute Region dialog UI elements:
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td>   </td>
-<td>   </td>
+<td style="min-width:150px;"> <b>Region Name</b>  </td>
+<td> This will be the region name that is used to initialize Keystone and to be displayed in the Administration Dashboard.
+<br /> <br/>
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px;"> <b>Note:</b> A region name must contain only letters and numbers. 
+It cannot contain spaces or special characters.</p>
+</td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Compute Controller</b>  </td>
+<td> Select the node that will have the Compute Controller services. The Compute Controller service can reside on the same 
+node as the Cloud Controller, but HP recommends that it be on a separate node.
+<br /> <br/>
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px;"> <b>Note:</b> You can have a single node act as both the Compute Controller 
+and Cloud Controller.  However, HP recommends that they be on separate nodes. If you choose to have them both on the same node, 
+make sure the underlying node has enough CPU, Memory and Storage capacity to be able to run all the controller services 
+and act as the virtualization host.</p>
+</td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Compute Nodes</b> service  </td>
+<td> Specify which nodes will have the Compute Nodes service. Select the Compute Node(s) in one of the following ways:
+<ul>
+<li>Choose a number from the drop-down list to auto-select check boxes of the node(s) for you.</li>
+<li>Individually select the check boxes of the node(s) you want.</li>
+</ul>
+<br /> 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px;"> <b>Note:</b> HP recommends that the Compute Nodes be separate nodes.
+</td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Attributes</b> tab  </td>
+<td> Use to specify property values required to create a Compute Region. For the Hypervisor attribute:
+<ul>
+<li>Use <code>kvm</code> (the default) if the compute nodes are bare-metal servers.
+<li>Use <code>qemu</code> if the compute nodes are VMs.
+</ul>
+</td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Create Region Name</b>  </td>
+<td> Click to begin creating the Compute Region.
+<br /> <br />
+On the Manage Clouds page, the compute region will go through a series of steps to create an active compute region, 
+showing the % completed until the Cloud's Status is Active. This indicates that the cloud and compute region have been successfully created.
+<br /> <br />
+You can now add additional compute regions. The added compute regions appear on the Manage Clouds page as a comma-separated list. </td>
 </tr>
 
 </table>  
@@ -573,11 +621,43 @@ The following table describes the Extend Compute Region dialog UI elements:
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td>   </td>
-<td>   </td>
+<td style="min-width:150px;"> <b>Cloud Name</b>  </td>
+<td> The name of the cloud containing the compute region to be extended. </td>
 </tr>
 
-</table> 
+<tr style="background-color: white; color: black;">
+<td> <b>Region Name</b>  </td>
+<td> Select the name of the compute region to be extended. </td>
+</tr>
+
+<tr style="background-color: #f8f8f8; color: black;">
+<td colspan="2"> <b>Compute Nodes</b> tab  </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Current Node Count</b>  </td>
+<td> The number of compute nodes currently in the compute region. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Compute Nodes</b> checkboxes  </td>
+<td> Select the nodes to be added to the compute region.
+<br /> <br /> 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px;"> <b>Note:</b> Nodes available to be added to a region are those nodes 
+that are in the Allocated state. </p>
+</td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Extend Compute Region</b> button </td>
+<td> Click to begin extending the compute region.
+<br /> <br /> 
+On the Manage Nodes page, the Status for the nodes that have successfully been added to the compute region will change to <b>Deployed</b>. 
+You can also view the compute nodes that are currently in the compute region on the [Manage Clouds Details page](#manage-clouds-details-page).
+</td>
+</tr>
+
+</table>  
   
 
 
@@ -603,8 +683,8 @@ The following table describes the Reduce Compute Region dialog UI elements:
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td>   </td>
-<td>   </td>
+<td style="min-width:150px;"> TBS...   </td>
+<td> TBS today 1/14/2014  </td>
 </tr>
 
 </table> 
@@ -641,7 +721,7 @@ The following table describes the Remove Compute Region dialog UI elements:
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td>   </td>
+<td style="min-width:150px;"> TBS...   </td>
 <td>   </td>
 </tr>
 
@@ -671,7 +751,7 @@ The following table describes the Remove Cloud dialog UI elements:
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> <b>Cloud Name</b> </td>
+<td style="min-width:150px;"> <b>Cloud Name</b> </td>
 <td> The name of the cloud to be removed.  </td>
 </tr>
 
@@ -708,7 +788,7 @@ The following table describes the Manage Clouds Details page UI elements:
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td>   </td>
+<td style="min-width:150px;">   </td>
 <td>   </td>
 </tr>
 
@@ -755,7 +835,7 @@ The following table describes the Hot Fixes page UI elements:
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td>   </td>
+<td style="min-width:150px;"> TBS...   </td>
 <td>   </td>
 </tr>
 
@@ -782,7 +862,7 @@ The following table describes the UI elements on the Overview tab on the content
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td>   </td>
+<td style="min-width:150px;"> TBS...   </td>
 <td>   </td>
 </tr>
 
@@ -808,7 +888,7 @@ The following table describes the Import Package dialog UI elements:
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> <b>Choose File</b> button   </td>
+<td style="min-width:150px;"> <b>Choose File</b> button   </td>
 <td> Click to open a standard operating system "open file" dialog box, in which you can browse to and select the content 
 package to be imported to the Cloud OS Administration node from the client's local file system. 
 Note that such package files have a .csu extension.  </td>
@@ -860,7 +940,7 @@ The following table describes the Updates and Extensions page UI elements:
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td>   </td>
+<td style="min-width:150px;"> TBS...  </td>
 <td>   </td>
 </tr>
 
@@ -882,7 +962,7 @@ The following table describes the Configure dialog UI elements:
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> <b>User Name</b>  </td>
+<td style="min-width:150px;"> <b>User Name</b>  </td>
 <td> Enter the email address that you entered when you set up your account to access the HP Cloud OS Distribution Network (CODN). </td>
 </tr>
 
@@ -892,7 +972,7 @@ The following table describes the Configure dialog UI elements:
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td style="min-width:120px;"> <b>Sign up now</b> link  </td>
+<td style="min-width:150px;"> <b>Sign up now</b> link  </td>
 <td> Click to go to the "Create Account" page of the HP Cloud OS Distribution Network web site, where you can sign up for an account to access the network. </td>
 </tr>
 
