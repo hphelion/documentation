@@ -81,7 +81,7 @@ For procedural instructions on setting up and configuring your nodes, see [Insta
 
 To access: Select the Cloud tab > Manage Nodes.
 
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px;"> <b>Tip:</b> Access the virtual and bare-metal server's consoles 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px; 1px dotted #000000;"> <b>Tip:</b> Access the virtual and bare-metal server's consoles 
 to monitor operating system installation. Some of your hardware requires non-free firmware files to operate. The firmware can be loaded from removable media, 
 such as a USB stick or CD/DVD.</p>
 
@@ -117,7 +117,7 @@ Not Allocated, Hardware Installed, Installing, Installed, Readying, Finalizing, 
 <br /> <br />
 Once the nodes are ready for cloud deployment, their status ends with Allocated.
 <br /> <br />
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px;"> <b>Note:</b> In the case where a node results in status = Off, select the 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> In the case where a node results in status = Off, select the 
 More > Reboot Node action for the node.
 </p>
 </td>
@@ -143,7 +143,7 @@ contain the string in any column on the row. </td>
 <td> <b>More > Reboot Node</b> </td>
 <td> Select to reboot the node.
 <br /> <br />
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px;"> <b>Note:</b> A node can be rebooted 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> A node can be rebooted 
 if it is in the Not Allocated, Allocated, or Deployed state. </p>
 </td>
 </tr>
@@ -152,7 +152,7 @@ if it is in the Not Allocated, Allocated, or Deployed state. </p>
 <td> <b>More > Allocate Node</b> </td>
 <td> Select to complete the node allocation process, to set up and configure the node so that OpenStack services can be deployed on it.
 <br /> <br />
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px;"> <b>Note:</b> A node can be allocated if it is in the Not Allocated state. </p>
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> A node can be allocated if it is in the Not Allocated state. </p>
 </td>
 </tr>
 
@@ -160,7 +160,7 @@ if it is in the Not Allocated, Allocated, or Deployed state. </p>
 <td> <nobr> <b>More > Reset Node</b> </nobr> </td>
 <td> Select to reset the node.
 <br /> <br />
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px;"> <b>Note:</b> A node can be reset if it is in the Not Allocated or Allocated state. 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> A node can be reset if it is in the Not Allocated or Allocated state. 
 A node that is in the Deployed state cannot be reset. When a node is reset, it is returned to the Not Allocated state if it is not in that state. </p>
 </td>
 </tr>
@@ -185,7 +185,7 @@ The following table describes the Edit Nodes dialog UI elements:
 <td style="min-width:150px;"> <b>Alias</b> </td>
 <td> Type a meaningful name for the MAC address such as controllercompute, cloudcontroller, compute1, compute2.
 <br /> <br />
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px;"> <b>Note:</b> The node name can only be letters (capitalization is allowed) 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> The node name can only be letters (capitalization is allowed) 
 and numbers with no spaces or special characters. </p>
 </td>
 </tr>
@@ -363,7 +363,7 @@ The following table describes the Manage Clouds page UI elements:
 <td> Cloud name specified on the [Create Cloud dialog](#create-cloud-dialog). This is the Domain name that is used to initialize Keystone and will 
 be displayed in the Administration Dashboard.
 <br /> <br/>
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px;"> <b>Note:</b> A cloud name must contain only letters and numbers. 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> A cloud name must contain only letters and numbers. 
 It cannot contain spaces or special characters.</p>
 </td>
 </tr>
@@ -402,7 +402,7 @@ You can login with the Admin account and password you specified on the Create Cl
 <li><b>Remove Cloud</b> &mdash; Opens the Remove Cloud Dialog.
 </ul>
 <br />
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px;"> <b>Note:</b> Some of the above actions might not always available, 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> Some of the above actions might not always available, 
 depending upon the context of the cloud and the compute regions.</p>
 </td>
 </tr>
@@ -428,7 +428,7 @@ The following table describes the Create Cloud dialog UI elements:
 <td style="min-width:150px;"> <b>Cloud Name</b>  </td>
 <td> Type the name of the cloud. This is the Domain name that is used to initialize Keystone and will be displayed in the Administration Dashboard.
 <br /> <br/>
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px;"> <b>Note:</b> A cloud name must contain only letters and numbers. 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> A cloud name must contain only letters and numbers. 
 It cannot contain spaces or special characters.</p>
 </td>
 </tr>
@@ -438,7 +438,7 @@ It cannot contain spaces or special characters.</p>
 Specify which node will have the Cloud Controller, Network Controller, and Storage Controller respective services. 
 You can install all these core controller services on a single node, or on a dedicated node for each service.
 <br /> <br/>
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px;"> <b>Important:</b> You must have Powered On and Allocated the nodes 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Important:</b> You must have Powered On and Allocated the nodes 
 on the Manage Nodes panel to be able to select which nodes to use here.</p>
 </td>
 </tr>
@@ -512,7 +512,7 @@ file system associated with the Local Volume File. </td>
 <td> <b>Trash User Password</b> </td>
 <td> Trash user's password for a granted user's role on a trash project(s) in the Administration Dashboard.
 <br /> <br />
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px;"> <b>Note:</b> Remember these passwords. You will be using these as 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> Remember these passwords. You will be using these as 
 appropriate to login to the Administration Dashboard &mdash; see [Manage Clouds Page](#manage-clouds-page). </p> </td>
 </tr>
 
@@ -553,7 +553,7 @@ The following table describes the Compute Region dialog UI elements:
 <td style="min-width:150px;"> <b>Region Name</b>  </td>
 <td> This will be the region name that is used to initialize Keystone and to be displayed in the Administration Dashboard.
 <br /> <br/>
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px;"> <b>Note:</b> A region name must contain only letters and numbers. 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> A region name must contain only letters and numbers. 
 It cannot contain spaces or special characters.</p>
 </td>
 </tr>
@@ -563,7 +563,7 @@ It cannot contain spaces or special characters.</p>
 <td> Select the node that will have the Compute Controller services. The Compute Controller service can reside on the same 
 node as the Cloud Controller, but HP recommends that it be on a separate node.
 <br /> <br/>
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px;"> <b>Note:</b> You can have a single node act as both the Compute Controller 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> You can have a single node act as both the Compute Controller 
 and Cloud Controller.  However, HP recommends that they be on separate nodes. If you choose to have them both on the same node, 
 make sure the underlying node has enough CPU, Memory and Storage capacity to be able to run all the controller services 
 and act as the virtualization host.</p>
@@ -578,7 +578,7 @@ and act as the virtualization host.</p>
 <li>Individually select the check boxes of the node(s) you want.</li>
 </ul>
 <br /> 
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px;"> <b>Note:</b> HP recommends that the Compute Nodes be separate nodes.
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> HP recommends that the Compute Nodes be separate nodes.
 </td>
 </tr>
 
@@ -644,7 +644,7 @@ The following table describes the Extend Compute Region dialog UI elements:
 <td> <b>Compute Nodes</b> checkboxes  </td>
 <td> Select the nodes to be added to the compute region.
 <br /> <br /> 
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px;"> <b>Note:</b> Nodes available to be added to a region are those nodes 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> Nodes available to be added to a region are those nodes 
 that are in the Allocated state. </p>
 </td>
 </tr>
@@ -690,7 +690,7 @@ The following table describes the Reduce Compute Region dialog UI elements:
 <tr style="background-color: white; color: black;">
 <td> <b>Region Name</b>  </td>
 <td> Select the name of the compute region to be reduced. <br />  <br />
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px;"> <b>Note:</b> Only compute regions that contain more 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> Only compute regions that contain more 
 than one compute node will display in this list. A compute region must contain at least one compute node. </p> 
 </td>
 </tr>
@@ -703,7 +703,7 @@ than one compute node will display in this list. A compute region must contain a
 <td> <b>Compute Nodes</b> checkboxes </td>
 <td> Select the compute nodes to be removed from the compute region.
 <br />  <br />
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px;"> <b>Note:</b> You cannot remove all nodes from a compute region. 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> You cannot remove all nodes from a compute region. 
 A compute region must contain at least one compute node. </p> 
 </td>
 </tr>
@@ -1025,7 +1025,7 @@ contain the string in any column. The filter function is not case sensitive. </t
 <td>  Click, and then click the <b>Install</b> button in the confirmation box, to start the content package installation process. 
 When the installation process completes, a Success message will appear in the upper right side of the interface.
 <br /> <br/>
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px;"> <b>Note:</b> Upon successful completion of the installation process, 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> Upon successful completion of the installation process, 
 the content package has been properly installed on the HP Cloud OS Administration node, but not yet enabled. Such enabling is performed 
 in the HP Cloud OS Installation Dashboard. For information on how to enable and disable content packages, 
 refer to the <a href="/cloudos/install/updates-and-extensions">Updates and Extensions</a> topic, which is part of 
