@@ -26,11 +26,11 @@ PageRefresh();
 
 The Settings tab contains the following panels:
 
-* User Settings(#user-settings)
+* [User Settings](#user-settings)
 
-* License(#license)
+* [License](#license)
 
-* About(#about) 
+* [About](#about) 
 
 For procedural instructions, see [Install and Configure Your Clouds](/cloudos/install/).
 
@@ -38,7 +38,7 @@ For procedural instructions, see [Install and Configure Your Clouds](/cloudos/in
 
 This topic provides details about the User Settings panel. The following table describes the User Settings UI elements:
 
-<table style="text-align: left; vertical-align: top; min-width:700px;">
+<table style="text-align: left; vertical-align: top; min-width:600px;">
 
 <tr style="background-color: #C8C8C8;">
 <th> UI Elements </th>
@@ -98,7 +98,7 @@ for the HP Cloud OS installation having this Instance ID.  </td>
 <tr style="background-color: white; color: black;">
 <td style="font-weight:bold;"> License key </td>
 <td> Enter a valid license key into this field and click the </b>Save button to update the HP Cloud OS license. 
-Contact your HP Support representative to obtain a valid license key. <br />
+Contact your HP Support representative to obtain a valid license key. <br /> <br />
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px;"> <b>Note:</b> After you click the <b>Save</b> button, 
 about 20 minutes elapses before the new license is activated.</p>
 </td>

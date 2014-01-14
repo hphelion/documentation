@@ -187,10 +187,10 @@ The following table describes the Cloud Administration Node Internet Access Prer
 <td> Leave blank unless you have a static IP address. Type the DNS address. </td>
 </tr>
 
-<tr style="background-color: #f8f8f8; color: black;">
+<tr style="background-color: white; color: black;">
 <td> HTTP Proxy Information </td>
 <td>Set proxy information applicable for your environment. If you are on a network that has a proxy, you must fill in this proxy information.
-<br />
+<br /> <br />
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px;"> <b>Caution:</b>  
 Specifying incorrect proxy host settings might cause some features to not work correctly in the Administration Dashboard.</p>
 </td>
@@ -1628,7 +1628,7 @@ The following table describes the Complete Install page UI elements:
 <td> <nobr> <b>Complete Install</b> button </nobr> </td> </td>
 <td> Click to open the Confirm Complete Install dialog, where you will then specify configuration information to complete the 
 HP Cloud OS Administration node installation. After the HP Cloud OS Administration node is installed, this button is replaced by the Continue... button. <br />
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px;"> <b>Note:</b> The Complete Install step runs a validation check 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px;"> <b>Note:</b> The Complete Install step runs a validation check 
 of the network IP address ranges. If there is an error, this step cannot be completed until the error is fixed. 
 The validation check shows the network type and possibly the address value. You must open the Edit Address Ranges dialog for the specified 
 network and click <b>Update Address Ranges</b> to identify the incorrect address, and fix it. 
@@ -1713,8 +1713,8 @@ special characters. In the current release, it must end in .com, .org, .net, .ed
 
 <tr style="background-color: white; color: black;">
 <td> <b>Network Mode</b>  </td>
-<td> Select <b>single</b> or <b>team</b> if the admin, os_sdn, and public networks co-exist on the <b>same</b> physical interface. <br />
-<p><b>Note:</b> If the admin, os_sdn, and public networks are on <b>separate</b> physical interfaces, the only choice given is <b>dual</b>.</p>
+<td> Select <b>single</b> or <b>team</b> if the admin, os_sdn, and public networks co-exist on the same physical interface. <br /> <br />
+<p><b>Note:</b> If the admin, os_sdn, and public networks are on separate physical interfaces, the only choice given is <b>dual</b>.</p>
 </td>
 </tr>
 
@@ -1736,9 +1736,9 @@ special characters. In the current release, it must end in .com, .org, .net, .ed
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> <b>Complete Install</b> </td>
+<td> <nobr> <b>Complete Install</b> </nobr> </td>
 <td> Click to install the required software on the HP Cloud OS Administration node. This may take several minutes. <br /> 
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px;"> <b>Note:</b> The Complete Install step runs a validation check 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px;"> <b>Note:</b> The Complete Install step runs a validation check 
 of the network IP address ranges. If there is an error, this step cannot be completed until the error is fixed. 
 The validation check shows the network type and possibly the address value. You must open the Edit Address Ranges dialog for the specified 
 network and click <b>Update Address Ranges</b> to identify the incorrect address, and fix it. 

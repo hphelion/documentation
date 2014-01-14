@@ -37,7 +37,7 @@ they are displayed.
 * [Updates and Extensions](#updates-and-extensions) 
 
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px;"> <b>Note:</b> The Cloud tab does not appear until you have 
-completed all the installation steps on the <a href="/cloudos/manage/operational-dashboard/environment-tab">Environment tab</a>.
+completed all the installation steps on the <a href="/cloudos/manage/operational-dashboard/environment-tab">Environment tab</a>.</p>
 
 For procedural instructions, see [Install and Configure Your Clouds](/cloudos/install/).
 
@@ -124,25 +124,25 @@ The following information provides details about the Manage Clouds panel.
 
 **Concepts:**
 
-* Manage Clouds Overview(#manage-clouds-overview)
+* [Manage Clouds Overview](#manage-clouds-overview)
 
 **UI Descriptions:**
 
-* Manage Clouds Page(#manage-clouds-page)
+* [Manage Clouds Page](#manage-clouds-page)
     
-* Create Cloud Dialog(#create-cloud-dialog)
+* [Create Cloud Dialog](#create-cloud-dialog)
 
-* Create Compute Region Dialog(#create-compute-region-dialog)
+* [Create Compute Region Dialog](#create-compute-region-dialog)
 	
-* Extend Compute Region Dialog(#extend-compute-region-dialog)
+* [Extend Compute Region Dialog](#extend-compute-region-dialog)
 
-* Reduce Compute Region Dialog(#reduce-compute-region-dialog)
+* [Reduce Compute Region Dialog](#reduce-compute-region-dialog)
 
-* Remove Compute Region Dialog(#remove-compute-region-dialog)
+* [Remove Compute Region Dialog](#remove-compute-region-dialog)
 
-* Remove Cloud Dialog(#remove-cloud-dialog)
+* [Remove Cloud Dialog](#remove-cloud-dialog)
 
-* Manage Clouds Details Page(#manage-clouds-details-page)
+* [Manage Clouds Details Page](#manage-clouds-details-page)
 
 
 
@@ -333,7 +333,7 @@ The following table describes the Hot Fixes page UI elements:
 
 ### Package Details Page
 
-To access: Select the Cloud tab > Hot Fixes and click a **Package Name** link.
+To access: Select the Cloud tab > Hot Fixes and click a Package Name link.
 
 This page displays detailed information about a particular content package. The following sections describe the content package details page UI elements.
 
@@ -367,13 +367,13 @@ The following information provides details about the Updates and Extensions pane
 
 **Concepts::**
 
-* Updates and Extensions Overview(#updates-and-extensions-overview) 
+* [Updates and Extensions Overview](#updates-and-extensions-overview) 
 
 **UI Descriptions:**
 
-* Updates and Extensions Page(#updates-and-extensions-page) 
+* [Updates and Extensions Page](#updates-and-extensions-page) 
 
-* Configure Dialog(#configure-dialog) 
+* [Configure Dialog](#configure-dialog) 
 
 
 ### Updates and Extensions Overview
@@ -387,7 +387,7 @@ To access: Select the Cloud tab > Updates and Extensions.
 
 The following table describes the Updates and Extensions page UI elements:
 
-(table) 
+( table - coming soon ) 
 
 
 
@@ -397,7 +397,7 @@ To access: Select the Cloud tab > Updates and Extensions, and then the Configure
 
 The following table describes the Configure dialog UI elements:
 
-( table) 
+( table - coming soon) 
 
 
 
