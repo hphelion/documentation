@@ -89,7 +89,82 @@ If a dialog displays prompting you to load missing firmware, provide the appropr
 
 The following table describes the Manage Nodes page UI elements:
 
-( table - coming soon ) 
+<table style="text-align: left; vertical-align: top; min-width:700px;">
+
+<tr style="background-color: #C8C8C8;">
+<th>UI Elements</th>
+<th>Description</th>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Alias</b> column </td>
+<td> Renamed MAC address (in the Edit Node dialog) to a more meaningful name such as controllercompute, cloudcontroller, compute1, compute2.
+<br /> <br />
+Once the nodes have finished booting up, each node displays in the table, indicating the Alias Name set to the node's MAC 
+address (of the NIC associated with the Administration Network). Each node will be in the Not Allocated state.  </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Node ID</b> column </td>
+<td> The node's unique identifier, which is the MAC address of the node's NIC that is associated with the Administration network. It is read only. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Status</b> column </td>
+<td> As the nodes are being allocated, they progress through these different states: 
+Not Allocated, Hardware Installed, Installing, Installed, Readying, Finalizing, Allocated.
+<br /> <br />
+Once the nodes are ready for cloud deployment, their status ends with Allocated.
+<br /> <br />
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px;"> <b>Note:</b> In the case where a node results in status = Off, select the 
+More > Reboot Node action for the node.
+</p>
+</td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Description</b> column </td>
+<td> Lists any optional descriptions that were entered for the corresponding nodes. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Filter</b> field and button </td>
+<td> Entering a text string into the field will display only those entries in the list of managed nodes that 
+contain the string in any column on the row. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Edit Node</b> button </td>
+<td> Click to open the [Edit Node dialog](#edit-node-dialog). </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>More > Reboot Node</b> </td>
+<td> Select to reboot the node.
+<br /> <br />
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px;"> <b>Note:</b> A node can be rebooted 
+if it is in the Not Allocated, Allocated, or Deployed state. </p>
+</td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>More > Allocate Node</b> </td>
+<td> Select to complete the node allocation process, to set up and configure the node so that OpenStack services can be deployed on it.
+<br /> <br />
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px;"> <b>Note:</b> A node can be allocated if it is in the Not Allocated state. </p>
+</td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>More > Reset Node</b> </td>
+<td> Select to reset the node.
+<br /> <br />
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px;"> <b>Note:</b> A node can be reset if it is in the Not Allocated or Allocated state. 
+A node that is in the Deployed state cannot be reset. When a node is reset, it is returned to the Not Allocated state if it is not in that state. </p>
+</td>
+</tr>
+
+</table> 
 
 
 ### Edit Node Dialog
@@ -98,7 +173,33 @@ To access: Select the Cloud tab > Manage Nodes > Edit Node for the node you want
 
 The following table describes the Edit Nodes dialog UI elements:
 
-( table - coming soon )
+<table style="text-align: left; vertical-align: top; min-width:700px;">
+
+<tr style="background-color: #C8C8C8;">
+<th>UI Elements</th>
+<th>Description</th>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Alias</b> </td>
+<td> Type a meaningful name for the MAC address such as controllercompute, cloudcontroller, compute1, compute2.
+<br /> <br />
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px;"> <b>Note:</b> The node name can only be letters (capitalization is allowed) 
+and numbers with no spaces or special characters. </p>
+</td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Description   </td>
+<td> Optional &mdash; Type a description of the node. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Update Node</b>  </td>
+<td> Click to save the settings and return to the [Manage Nodes page](#manage-nodes-page).  </td>
+</tr>
+
+</table>
 
 
 
@@ -110,7 +211,84 @@ This page displays all the values used for the selected node.
 
 The following table describes the Manage Nodes Details page UI elements:
 
-( table - coming soon ) 
+<table style="text-align: left; vertical-align: top; min-width:700px;">
+
+<tr style="background-color: #C8C8C8;">
+<th>UI Elements</th>
+<th>Description</th>
+</tr>
+
+<tr style="background-color: #f8f8f8; color: black;">
+<td colspan="2"> <b>Info</b> </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>UUID</b>  </td>
+<td> MAC address of the selected node. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Alias</b> column  </td>
+<td> Renamed MAC address of the selected node. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Description</b> </td>
+<td> Optional description that was entered for the corresponding node. None is the default, if no description was entered.  </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Domain</b> </td>
+<td> The Cloud OS Administration node acts as a Domain Name Server (DNS server) for all the managed nodes. 
+This domain name is used in the Fully Qualified Domain Name (FQDN) for the managed nodes.  </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>IP Address</b> </td>
+<td> IP address of the selected node. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Uptime</b> </td>
+<td> Number of days, hours, minutes and seconds the node has been powered on.  </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Total RAM</b> </td>
+<td> Total RAM size in kilobytes of the selected node. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Free RAM</b> </td>
+<td> Size in kilobytes of the amount of RAM that is left on the selected node. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>OS</b> </td>
+<td> Operating system of the selected node. The default is Ubuntu. </td>
+</tr>
+
+<tr style="background-color: #f8f8f8; color: black;">
+<td colspan="2"> <b>Cloud Info</b> </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Cloud Name</b> </td>
+<td> Name of the cloud in which the selected node belongs. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Roles</b> </td>
+<td> Type of role(s) for which the selected node has been specified: 
+Cloud Controller, Network Controller, and Storage Controller respective services, and Compute Node.   </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Compute Region</b> </td>
+<td> Name of the compute region in which the selected node belongs. </td>
+</tr>
+
+</table> 
   
 
 
@@ -172,7 +350,19 @@ To access: Select the Cloud tab > Manage Clouds and click the cloud name link.
 
 The following table describes the Manage Clouds page UI elements:
 
-( table - coming soon ) 
+<table style="text-align: left; vertical-align: top; min-width:700px;">
+
+<tr style="background-color: #C8C8C8;">
+<th>UI Elements</th>
+<th>Description</th>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td>   </td>
+<td>   </td>
+</tr>
+
+</table> 
   
 
 
@@ -186,7 +376,19 @@ After you complete allocating the nodes on the Manage Nodes panel, you are ready
 
 The following table describes the Create Cloud dialog UI elements:
 
-( table - coming soon ) 
+<table style="text-align: left; vertical-align: top; min-width:700px;">
+
+<tr style="background-color: #C8C8C8;">
+<th>UI Elements</th>
+<th>Description</th>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td>   </td>
+<td>   </td>
+</tr>
+
+</table> 
   
 
 
@@ -206,7 +408,19 @@ in the Administration Dashboard. For details, see the [HP Cloud OS Administratio
 
 The following table describes the Compute Region dialog UI elements:
 
-( table - coming soon )  
+<table style="text-align: left; vertical-align: top; min-width:700px;">
+
+<tr style="background-color: #C8C8C8;">
+<th>UI Elements</th>
+<th>Description</th>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td>   </td>
+<td>   </td>
+</tr>
+
+</table>  
 
 
 
@@ -218,7 +432,19 @@ To access: Select the Cloud tab > Manage Clouds and then click **More** > **Exte
 The Extend Compute Region dialog is used to add nodes to an existing compute region. 
 The following table describes the Extend Compute Region dialog UI elements:
 
-( table - coming soon ) 
+<table style="text-align: left; vertical-align: top; min-width:700px;">
+
+<tr style="background-color: #C8C8C8;">
+<th>UI Elements</th>
+<th>Description</th>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td>   </td>
+<td>   </td>
+</tr>
+
+</table> 
   
 
 
@@ -235,7 +461,19 @@ the node can be associated with a cloud.
 
 The following table describes the Reduce Compute Region dialog UI elements:
 
-( table - coming soon ) 
+<table style="text-align: left; vertical-align: top; min-width:700px;">
+
+<tr style="background-color: #C8C8C8;">
+<th>UI Elements</th>
+<th>Description</th>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td>   </td>
+<td>   </td>
+</tr>
+
+</table> 
   
 
 
@@ -259,7 +497,19 @@ should be done in a public cloud, such as HP Cloud.
 
 The following table describes the Remove Compute Region dialog UI elements:
   
-( table - coming soon ) 
+<table style="text-align: left; vertical-align: top; min-width:700px;">
+
+<tr style="background-color: #C8C8C8;">
+<th>UI Elements</th>
+<th>Description</th>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td>   </td>
+<td>   </td>
+</tr>
+
+</table> 
 
 
 
@@ -277,7 +527,19 @@ Note: You reset a node's alias in the Edit Node Dialog, and re-allocate it in th
 
 The following table describes the Remove Cloud dialog UI elements:
 
-( table - coming soon ) 
+<table style="text-align: left; vertical-align: top; min-width:700px;">
+
+<tr style="background-color: #C8C8C8;">
+<th>UI Elements</th>
+<th>Description</th>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td>   </td>
+<td>   </td>
+</tr>
+
+</table> 
   
 
 
@@ -291,7 +553,19 @@ This page displays the values you used to create the cloud and compute regions.
 
 The following table describes the Manage Clouds Details page UI elements:
 
-( table - coming soon ) 
+<table style="text-align: left; vertical-align: top; min-width:700px;">
+
+<tr style="background-color: #C8C8C8;">
+<th>UI Elements</th>
+<th>Description</th>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td>   </td>
+<td>   </td>
+</tr>
+
+</table> 
   
 
 
@@ -326,7 +600,19 @@ To access: Select the Cloud tab > Hot Fixes.
 
 The following table describes the Hot Fixes page UI elements:
 
-( table - coming soon ) 
+<table style="text-align: left; vertical-align: top; min-width:700px;">
+
+<tr style="background-color: #C8C8C8;">
+<th>UI Elements</th>
+<th>Description</th>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td>   </td>
+<td>   </td>
+</tr>
+
+</table> 
 
 
 
@@ -341,7 +627,19 @@ This page displays detailed information about a particular content package. The 
 
 The following table describes the UI elements on the Overview tab on the content package details page.
 
-( table - coming soon ) 
+<table style="text-align: left; vertical-align: top; min-width:700px;">
+
+<tr style="background-color: #C8C8C8;">
+<th>UI Elements</th>
+<th>Description</th>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td>   </td>
+<td>   </td>
+</tr>
+
+</table> 
 
 
 #### Log Tab
@@ -351,11 +649,31 @@ Click the Log tab to select a log to view.
 
 ### Import Package Dialog
 
-To access: Select the Cloud tab, > Hot Fixes, and then click the Import Package button on the Hot Fixes page.
+To access: Select the Cloud tab, > Hot Fixes, and then click the **Import Package** button on the Hot Fixes page.
 
 The following table describes the Import Package dialog UI elements:
 
-( table - coming soon ) 
+<table style="text-align: left; vertical-align: top; min-width:700px;">
+
+<tr style="background-color: #C8C8C8;">
+<th>UI Elements</th>
+<th>Description</th>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Choose File</b> button   </td>
+<td> Click to open a standard operating system "open file" dialog box, in which you can browse to and select the content 
+package to be imported to the Cloud OS Administration node from the client's local file system. 
+Note that such package files have a .csu extension.  </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Import</b> button   </td>
+<td> Click after choosing a valid content package (.csu) file using the <b>Choose File</b> button to import the file to the 
+HP Cloud OS Administration node. If no file has been chosen, "No file chosen" will appear next to the <b>Choose File</b> button.  </td>
+</tr>
+
+</table> 
 
 
 
@@ -387,7 +705,19 @@ To access: Select the Cloud tab > Updates and Extensions.
 
 The following table describes the Updates and Extensions page UI elements:
 
-( table - coming soon ) 
+<table style="text-align: left; vertical-align: top; min-width:700px;">
+
+<tr style="background-color: #C8C8C8;">
+<th>UI Elements</th>
+<th>Description</th>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td>   </td>
+<td>   </td>
+</tr>
+
+</table> 
 
 
 
@@ -397,7 +727,29 @@ To access: Select the Cloud tab > Updates and Extensions, and then the Configure
 
 The following table describes the Configure dialog UI elements:
 
-( table - coming soon) 
+<table style="text-align: left; vertical-align: top; min-width:700px;">
+
+<tr style="background-color: #C8C8C8;">
+<th>UI Elements</th>
+<th>Description</th>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>User Name</b>  </td>
+<td> Enter the email address that you entered when you set up your account to access the HP Cloud OS Distribution Network (CODN). </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Password</b>  </td>
+<td> Enter the password that you entered when you set up your account to access the HP Cloud OS Distribution Network. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Sign up now</b> link  </td>
+<td> Click to go to the "Create Account" page of the HP Cloud OS Distribution Network web site, where you can sign up for an account to access the network. </td>
+</tr>
+
+</table> 
 
 
 
