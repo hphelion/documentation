@@ -76,8 +76,7 @@ To edit the server types:
 6. Click **Update Server Definition** to save the updated server definition.
 
 **Note:** The preceding steps explained how to edit server types. If you need to create server types, click the **Create Server Definition** button. 
-For more information, click Help from the top banner of the HP Cloud OS Operational Dashboard. Or 
-see the web-hosted version of the HP Cloud OS Operational Dashboard Help](/cloudos/operational-dashboard/).
+For more information, click Help from the top banner of the HP Cloud OS Operational Dashboard. Or go directly to the web-hosted [HP Cloud OS Operational Dashboard Help](/cloudos/manage/operational-dashboard/).
 
 ## Next Step
 
