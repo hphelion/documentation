@@ -26,6 +26,5 @@ PageRefresh();
 
 Welcome to the HP Cloud OS Administration Dashboard Help, which provides information about its user interface dialogs and options.
 
-* TBS...
-
+* Coming soon in the format of other HP Cloud OS topics on this documentation site. For now, please see <a href="http://docs.hpcloud.com/cloudos/administration-dashboard/index.htm">this copy on the website</a>. 
 
