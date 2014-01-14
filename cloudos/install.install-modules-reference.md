@@ -1220,7 +1220,7 @@ In most cases, you can use the default values.
 <tr>
 <th style="background-color: #C8C8C8;"> Roles </th> 
 <td colspan="2" style="background-color: white;"> Hp cos swift 100-ring-storage <br /> Hp cos swift 100-ring-compute <br /> Hp cos swift 100-proxy <br /> Hp cos swift 100-dispersion. For 
-information about the roles, see the Swift Roles section of [Advanced Cloud Setup](/cloudos/install/advanced-cloud-setup) topic. </td>
+information about the roles, see the Swift Roles section of the <a href="http://docs.hpcloud.com/cloudos/install/advanced-cloud-setup#apply-the-swift-install-module-optional" target="adv-cloud-setup">Advanced Cloud Setup</a> topic. </td>
 </tr>
 
 <tr style="background-color: #C8C8C8;">
