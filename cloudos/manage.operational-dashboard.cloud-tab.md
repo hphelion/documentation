@@ -660,7 +660,6 @@ You can also view the compute nodes that are currently in the compute region on 
 </table>  
   
 
-
 ### Reduce Compute Region Dialog
 
 To access: Select the Cloud tab > Manage Clouds and then click **More** > **Reduce Compute Region** for the corresponding cloud.
@@ -683,15 +682,42 @@ The following table describes the Reduce Compute Region dialog UI elements:
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td style="min-width:150px;"> TBS...   </td>
-<td> TBS today 1/14/2014  </td>
+<td style="min-width:150px;"> <b>Cloud Name</b>  </td>
+<td> The name of the cloud containing the compute region to be reduced. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Region Name</b>  </td>
+<td> Select the name of the compute region to be reduced. <br />  <br />
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px;"> <b>Note:</b> Only compute regions that contain more 
+than one compute node will display in this list. A compute region must contain at least one compute node. </p> 
+</td>
+</tr>
+
+<tr style="background-color: #f8f8f8; color: black;">
+<td colspan="2"> <b>Compute Nodes</b> tab  </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Compute Nodes</b> checkboxes </td>
+<td> Select the compute nodes to be removed from the compute region.
+<br />  <br />
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px;"> <b>Note:</b> You cannot remove all nodes from a compute region. 
+A compute region must contain at least one compute node. </p> 
+</td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Reduce Compute Region</b> button </td>
+<td> Click to begin removing the selected nodes from the compute region.
+<br />  <br />
+On the Manage Nodes page, the Status for the nodes that have successfully been removed from the compute region will 
+change to <b>Not Allocated</b>, and they will be listed by their MAC addresses.
+</td>
 </tr>
 
 </table> 
   
-
-
-
 
 ### Remove Compute Region Dialog
 
@@ -702,14 +728,15 @@ nodes that comprise the compute region to the Not Allocated state. In the Not Al
 including their alias names and any Cloud OS software that had been previously installed on them. To use such nodes again, reset 
 their aliases and reallocate them. Once in the Allocated state, they can be associated with a cloud.
 
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px;"> <b>Notes:</b> 
+<div style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px; border: 1px dotted #000000;"> 
+<b>Notes:</b> 
 <ul>
 <li>If the compute controller is co-located with the cloud controller, the compute region cannot be removed.</li>
 <li>You reset a node's alias in the Edit Node Dialog, and re-allocate it in the Manage Nodes Page.</li>
 <li>You can remove the last compute region from the cloud, in which case, it becomes a hybrid-only cloud. This is useful when provisioning 
 should be done in a public cloud, such as HP Cloud.</li>
 </ul>
-</p>
+</div>
 
 The following table describes the Remove Compute Region dialog UI elements:
   
@@ -721,13 +748,40 @@ The following table describes the Remove Compute Region dialog UI elements:
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td style="min-width:150px;"> TBS...   </td>
-<td>   </td>
+<td style="min-width:150px;"> <b>Cloud Name</b>  </td>
+<td> The name of the cloud containing the compute region to be removed. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Region Name</b>  </td>
+<td> Select the name of the compute region to be removed. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>To confirm removal of the region, type the word: remove </b> </td>
+<td> Enter the word "remove" into this field. If that string is not contained in this field when you click the <b>Remove Compute Region</b> button, 
+an error message displays and the compute region removal process will not take place. </td>
+</tr>
+
+<tr style="background-color: #f8f8f8; color: black;">
+<td colspan="2"> <b>Compute Nodes</b> tab  </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Compute Nodes</b> list </td>
+<td> A list of the compute nodes that are currently in the compute region. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Remove Compute Region</b> button </td>
+<td> Click to begin removing the compute region. 
+<br />  <br />
+On the Manage Nodes page, the Status for the compute controller and the compute nodes that comprised the compute region that was removed 
+will change to <b>Not Allocated</b>, and they will be listed by their MAC addresses.
+</td>
 </tr>
 
 </table> 
-
-
 
 
 ### Remove Cloud Dialog
@@ -756,8 +810,8 @@ The following table describes the Remove Cloud dialog UI elements:
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> <nobr> <b>To confirm removal of the cloud, </nobr> type the word: remove</b> </td>
-<td> Enter the word "remove" into this field. If that string is not contained in this field when you click the<b> Remove Cloud</b> button, 
+<td> <b>To confirm removal of the cloud, type the word: remove </b> </td>
+<td> Enter the word "remove" into this field. If that string is not contained in this field when you click the <b>Remove Cloud</b> button, 
 an error message displays and the cloud removal process will not take place.  </td>
 </tr>
 
@@ -787,15 +841,88 @@ The following table describes the Manage Clouds Details page UI elements:
 <th>Description</th>
 </tr>
 
+<tr style="background-color: #f8f8f8; color: black;">
+<td colspan="2"> <b>Created Cloud Info</b>  </td>
+</tr>
+
 <tr style="background-color: white; color: black;">
-<td style="min-width:150px;">   </td>
-<td>   </td>
+<td style="min-width:150px;"> <b>Name</b> </td>
+<td> Cloud name. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Creation Started</b> </td>
+<td> Timestamp of the date and time the cloud creation started. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Creation Ended</b> </td>
+<td> Timestamp of the date and time the cloud creation ended. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Cloud Controller</b> </td>
+<td> Node selected to be the Cloud Controller. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Network Controller</b> </td>
+<td> Node selected to be the Network Controller. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Storage Controller</b> </td>
+<td> Node selected to be the Storage Controller. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Cloud Attributes</b> </td>
+<td>
+<ul>
+<li> <b>Keystone Signing</b> &mdash;Specified <code>keystone.signing</code> method: <code>PKI</code> (default) or <code>UUID</code>. </li>
+<li> <b>Networking Mode</b> &mdash; Specified networking mode: <code>gre</code> (default). </li>
+<li> <b>Local Volume File Name</b> &mdash; Path of the local volume file name. </li>
+<li> <b>Maximum Volume File Size (GB)</b> &mdash; Number specified for the maximum volume allowed in gigabytes. </li>
+</ul>
+</td>
+</tr>
+
+<tr style="background-color: #f8f8f8; color: black;">
+<td colspan="2"> <b>Regions Tabs</b> &mdash; Each region is a separate tab with the following information specific to each region. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Name</b> </td>
+<td> The name of the selected region. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Creation Started</b> </td>
+<td> Timestamp of the date and time the region creation started. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Creation Ended</b> </td>
+<td> Timestamp of the date and time the region creation completed. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Compute Controller</b> </td>
+<td>  	Node selected to be the Compute Controller for the selected region. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Compute Nodes</b> </td>
+<td> List of the allocated compute nodes for the selected region. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Compute Region Attributes</b> </td>
+<td> <b>Hypervisor</b> &mdash; selected hypervisor for the selected region.  </td>
 </tr>
 
 </table> 
   
-
-
 
 <a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
@@ -805,15 +932,15 @@ The following information provides details about the Hot Fixes panel.
 
 **Concepts:**
 
-* Hot Fixes Overview(#hot-fixes-overview) 
+* [Hot Fixes Overview](#hot-fixes-overview) 
 
 **UI Descriptions:**
 
-* Hot Fixes Page(#hot-fixes-page)
+* [Hot Fixes Page](#hot-fixes-page)
     
-* Package Details Page(#package-details-page)
+* [Package Details Page](#package-details-page)
     
-* Import Package Dialog(#import-package-dialog) 
+* [Import Package Dialog](#import-package-dialog) 
 
 
 ### Hot Fixes Overview
@@ -950,7 +1077,7 @@ The following table describes the Updates and Extensions page UI elements:
 
 ### Configure Dialog
 
-To access: Select the Cloud tab > Updates and Extensions, and then the Configure button.
+To access: Select the Cloud tab > Updates and Extensions, and then the **Configure** button.
 
 The following table describes the Configure dialog UI elements:
 
