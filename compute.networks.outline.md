@@ -8,7 +8,7 @@ product: compute
 # HP Cloud Compute Networking Outline#
 
 
-##1.0 HP Cloud Networking Overview ##
+##HP Cloud Networking Overview ##
 [HP Cloud Networking Overview](/compute/networks/) 
 
 Short, very high level
@@ -26,7 +26,7 @@ Short, very high level
 
 *I created a new file; modeled after [HP Cloud version 13.5 overview](https://docs.hpcloud.com/version-overview); including text from networking guide*
 
-###2.0 Creating Your First Network - 13.5 ###
+###Creating Your First Network - 13.5 ###
 
 [Creating Your First Network](/compute/networks/first-network/)
 
@@ -48,7 +48,7 @@ Short, very high level
 
 *I created a new file; modeled after HP Cloud version 13.5 overview*
 
-###3.0 Working with networks ###
+###Working with networks ###
 
 [Management console: Networks screen](/mc/compute/networks/)
 
@@ -65,17 +65,17 @@ The network service that provides a powerful API to define the network connectiv
 The HP Cloud Services API supports virtual network, subnet, router and port abstractions to describe network resources (taken from cloud wiki: https://wiki.hpcloud.net/display/iaas/Neutron+-+HPCS+Cloud+Network+Service).
 
 You can use the API to:
-Allocate and add floating IPs
-Work with security groups
+- Allocate and add floating IPs
+- Work with security groups
 
 
 For Network API details, see the [HP Cloud Compute Service API Reference](https://docs.hpcloud.com/api/compute/#2.3Network).
 
-####3.1 Viewing the network topology####
+####Viewing the network topology####
 
 *We should have something for the Network Topology screen (https://horizon.hpcloud.com/project/network_topology/) that describes that page, what it represents and what you  can do there. Created a [Horizon console: Network Topology screen](/mc/compute/topology/) placeholder.*
 
-####3.2 Viewing network details ####
+####Viewing network details ####
 
 [Viewing network details](/mc/compute/networks/mc.compute.networks.view-network)
 
@@ -89,7 +89,7 @@ For Network API details, see the [HP Cloud Compute Service API Reference](https:
 
 *File exists for MC; need to update to Horizon*
 
-####3.3 Managing a subnet ####
+####Managing a subnet ####
 
 [Managing a subnet](/mc/compute/networks/manage-subnet)
 
@@ -102,7 +102,7 @@ For Network API details, see the [HP Cloud Compute Service API Reference](https:
 
 *File exists for MC; need to update to Horizon*
 
-####3.4 Viewing subnet details ####
+####Viewing subnet details ####
 
 [Viewing subnet details](/mc/compute/networks/mc.compute.networks.view-subnet)
 
@@ -113,7 +113,7 @@ For Network API details, see the [HP Cloud Compute Service API Reference](https:
 
 *File exists for MC; need to update to Horizon*
 
-###4.0 Working with routers ###
+###Working with routers ###
 
 [Management console: Routers screen](/mc/compute/routers)
 
@@ -123,7 +123,7 @@ For Network API details, see the [HP Cloud Compute Service API Reference](https:
 
 *I created a new file for this; as an intro section, matching that of [Management console: Networks screen](/mc/compute/networks/).*
 
-####4.1 Managing routers ####
+####Managing routers ####
 
 [Managing routers](/mc/compute/networks/manage-routers)
 
@@ -138,7 +138,7 @@ For Network API details, see the [HP Cloud Compute Service API Reference](https:
 
 *File exists for MC; need to update to Horizon*
 
-####4.2 Viewing router details ####
+####Viewing router details ####
 
 [Viewing router details](/mc/compute/networks/mc.compute.networks.view-router)
 
@@ -151,7 +151,7 @@ For Network API details, see the [HP Cloud Compute Service API Reference](https:
 
 *File exists for MC; need to update to Horizon*
 
-###5.0 Working with ports ###
+###Working with ports ###
 
 [Managing Ports](/mc/compute/networks/manage-ports/)
 
@@ -163,7 +163,7 @@ For Network API details, see the [HP Cloud Compute Service API Reference](https:
 
 *I create file; do we need? Add to Viewing router details?*
 
-###6.0 How to's ###
+###How to's ###
 
 [How To's with HP Cloud Networking version 13.5](/compute/networks/howto/)
 
@@ -190,7 +190,7 @@ For Network API details, see the [HP Cloud Compute Service API Reference](https:
 *File created, but empty; do we need?; I added tasks that didn't fit elsewhere, modeled after How To's with the Compute Service.* 
 *Moved [Enabling and disabling a network](/mc/compute/networks/enable-network.md) into How To's*
 
-###7.0 Known Issues and Workarounds###
+###Known Issues and Workarounds###
 
 [Known issues and workarounds](/compute/networks/issues/)
 
@@ -205,7 +205,7 @@ For Network API details, see the [HP Cloud Compute Service API Reference](https:
 *Taken from Networking Guide and [Understanding network screen system messages](/compute/networks/sys-messages), which was empty*	
 
 
-###8.0 For more information###
+###For more information###
 
 Community links to consider:
 
