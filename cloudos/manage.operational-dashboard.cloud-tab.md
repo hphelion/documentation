@@ -36,7 +36,7 @@ they are displayed.
     
 * [Updates and Extensions](#updates-and-extensions) 
 
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:600px;"> <b>Note:</b> The Cloud tab does not appear until you have 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:600px; border: 1px dotted #000000;"> <b>Note:</b> The Cloud tab does not appear until you have 
 completed all the installation steps on the <a href="/cloudos/manage/operational-dashboard/environment-tab">Environment tab</a>.</p>
 
 For procedural instructions, see [Install and Configure Your Clouds](/cloudos/install/).
@@ -72,7 +72,7 @@ operating system installation and if need be provide additional firmware drivers
 * Network and storage infrastructures are set up correctly. For the post-install of the operating system, a few steps are required to configure 
 and mount the folder on an additional storage.
 
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px;"> <b>Note:</b> Ensure that the boot order on all nodes is configured to 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px; border: 1px dotted #000000;"> <b>Note:</b> Ensure that the boot order on all nodes is configured to 
 boot from the network first (this only occurs once as the PXE service will not try to network boot a node again if it has already done so).</p>
 
 For procedural instructions on setting up and configuring your nodes, see [Install and Configure Your Cloud](/cloudos/install).
@@ -98,7 +98,8 @@ The following table describes the Manage Nodes page UI elements:
 
 <tr style="background-color: white; color: black;">
 <td style="min-width:150px;"> <b>Alias</b> column </td>
-<td> Renamed MAC address (in the Edit Node dialog) to a more meaningful name such as controllercompute, cloudcontroller, compute1, compute2.
+<td> Renamed MAC address ( in the [Edit Node dialog](#edit-node-dialog) ) to a more meaningful name such as controllercompute, 
+cloudcontroller, compute1, compute2.
 <br /> <br />
 Once the nodes have finished booting up, each node displays in the table, indicating the Alias Name set to the node's MAC 
 address (of the NIC associated with the Administration Network). Each node will be in the Not Allocated state.  </td>
@@ -190,7 +191,7 @@ and numbers with no spaces or special characters. </p>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> Description   </td>
+<td> <b>Description</b>   </td>
 <td> Optional &mdash; Type a description of the node. </td>
 </tr>
 
@@ -219,7 +220,7 @@ The following table describes the Manage Nodes Details page UI elements:
 </tr>
 
 <tr style="background-color: #f8f8f8; color: black;">
-<td colspan="2"> <b>Info</b> </td>
+<td colspan="2"> <b>Info</b> section</td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -269,7 +270,7 @@ This domain name is used in the Fully Qualified Domain Name (FQDN) for the manag
 </tr>
 
 <tr style="background-color: #f8f8f8; color: black;">
-<td colspan="2"> <b>Cloud Info</b> </td>
+<td colspan="2"> <b>Cloud Info</b> section </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -340,7 +341,7 @@ There are multiple use cases where you would prefer to have separate compute reg
 * To distribute the workload across regions to get better response times. Each region can contain dedicated endpoints with a full Nova installation 
 including its own message queue and database.
 
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px;"> <b>Note:</b> Each region must use unique nodes - managed nodes cannot be 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px; border: 1px dotted #000000;"> <b>Note:</b> Each region must use unique nodes - managed nodes cannot be 
 shared between regions.</p> 
 
 
@@ -466,7 +467,7 @@ the cloud controller services.
 </tr>
 
 <tr style="background-color: #f8f8f8; color: black;">
-<td colspan="2"> <b>Attribute Tab</b> </td>
+<td colspan="2"> <b>Attributes Tab</b> </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -535,7 +536,7 @@ When the compute region is created, you have created an active cloud.
 After successfully creating a cloud and compute region, you can manage your cloud environment by launching the 
 HP Cloud OS Administration Dashboard.
 
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px;"> <b>Note:</b> Successfully creating a compute region 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px; border: 1px dotted #000000;"> <b>Note:</b> Successfully creating a compute region 
 automatically creates a default resource pool for that region, which is configured and visible 
 in the Administration Dashboard. For details, see the <a href="/cloudos/manage/administration-dashboard/">HP Cloud OS Administration Dashboard Help</a>. </p>
 
@@ -653,7 +654,7 @@ that are in the Allocated state. </p>
 <td> Click to begin extending the compute region.
 <br /> <br /> 
 On the Manage Nodes page, the Status for the nodes that have successfully been added to the compute region will change to <b>Deployed</b>. 
-You can also view the compute nodes that are currently in the compute region on the [Manage Clouds Details page](#manage-clouds-details-page).
+You can also view the compute nodes that are currently in the compute region on the <a href="/cloudos/manage/operational-dashboard/#manage-clouds-details-page">Manage Clouds Details page</a>.
 </td>
 </tr>
 
@@ -669,7 +670,7 @@ When a node is successfully removed from a compute region, its previous context 
 that had been previously installed on it. To use such a node again, re-set its alias and re-allocate it. Once in the Allocated state, 
 the node can be associated with a cloud.
 
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px;"> <b>Note:</b> You reset a node's alias in the Edit Node Dialog, 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px; border: 1px dotted #000000;"> <b>Note:</b> You reset a node's alias in the Edit Node Dialog, 
 and you re-allocate it in the Manage Nodes Page.</p>
 
 The following table describes the Reduce Compute Region dialog UI elements:
@@ -736,7 +737,7 @@ their aliases and reallocate them. Once in the Allocated state, they can be asso
 <li>You can remove the last compute region from the cloud, in which case, it becomes a hybrid-only cloud. This is useful when provisioning 
 should be done in a public cloud, such as HP Cloud.</li>
 </ul>
-</div>
+</div> <br />
 
 The following table describes the Remove Compute Region dialog UI elements:
   
@@ -962,14 +963,77 @@ The following table describes the Hot Fixes page UI elements:
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td style="min-width:150px;"> TBS...   </td>
-<td>   </td>
+<td style="min-width:150px;"> <b>Product Name</b> column  </td>
+<td> The name of the product to which the content package applies. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td style="min-width:150px;"> <b>Product Version</b> column  </td>
+<td> The version number of the product to which the content package applies. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td style="min-width:150px;"> <b>Package Name</b> column  </td>
+<td> The name of the content package. Click on the package name to open 
+the <a href="/cloudos/manage/operational-dashboard/#package-details-page">Package Details Page</a>.  </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td style="min-width:150px;"> <b>Package Version</b> column  </td>
+<td>  	The content package version number. </td>
+</tr>
+
+<!-- BG: This should be updated for US 2516 G3.1, KB to GB --> 
+<tr style="background-color: white; color: black;">
+<td style="min-width:150px;"> <b>Size</b> column  </td>
+<td> The size of the content package, in bytes.  </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td style="min-width:150px;"> <b>Imported</b> column  </td>
+<td> The date and time at which the content package was imported to the HP Cloud OS Administration node. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td style="min-width:150px;"> <b>Installed</b> column  </td>
+<td> The date and time at which the content package was installed, or n/a if the content package has not been installed. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td style="min-width:150px;"> <b>Actions</b> column  </td>
+<td> Buttons, menus, or other items that can be used to perform some action with the content package. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td style="min-width:150px;"> <b>Filter</b> button and field  </td>
+<td> Enter a character string into the field to display only those content packages in the list that 
+contain the string in any column. The filter function is not case sensitive. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td style="min-width:150px;"> <b>Refresh List</b> button  </td>
+<td> Click, and then click the <b>Refresh</b> button in the confirmation box that appears to refresh the list of content packages. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td style="min-width:150px;"> <b>Import Package</b> button  </td>
+<td> Click to open the <a href="/cloudos/manage/operational-dashboard/#import-package-dialog">Import Package Dialog</a>. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td style="min-width:150px;"> <b>Install</b> button </td>
+<td>  Click, and then click the <b>Install</b> button in the confirmation box, to start the content package installation process. 
+When the installation process completes, a Success message will appear in the upper right side of the interface.
+<br /> <br/>
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px;"> <b>Note:</b> Upon successful completion of the installation process, 
+the content package has been properly installed on the HP Cloud OS Administration node, but not yet enabled. Such enabling is performed 
+in the HP Cloud OS Installation Dashboard. For information on how to enable and disable content packages, 
+refer to the <a href="/cloudos/install/updates-and-extensions">Updates and Extensions</a> topic, which is part of 
+<a href="/cloudos/install/">Install and Configure Your Cloud</a>.</p>
+</td>
 </tr>
 
 </table> 
-
-
-
 
 ### Package Details Page
 
@@ -988,9 +1052,80 @@ The following table describes the UI elements on the Overview tab on the content
 <th>Description</th>
 </tr>
 
+<tr style="background-color: #f8f8f8; color: black;">
+<td colspan="2"> <b>Info</b> section  </td>
+</tr>
+
 <tr style="background-color: white; color: black;">
-<td style="min-width:150px;"> TBS...   </td>
-<td>   </td>
+<td style="min-width:150px;"> <b>Filename</b> </td>
+<td> The name of the content package file. </td>
+</tr>
+
+<!-- BG: This should be updated for US 2516 G3.1, KB to GB --> 
+<tr style="background-color: white; color: black;">
+<td> <b>Size</b> </td>
+<td> The size of the content package file, in bytes. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Downloaded</b> </td>
+<td> The date and time at which the content package file was imported to the Cloud OS Administration node. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Executed</b> </td>
+<td> The date and time at which the content package was installed. </td>
+</tr>
+
+<tr style="background-color: #f8f8f8; color: black;">
+<td colspan="2"> <b>Product Details</b> section  </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Name</b> </td>
+<td> The name of the content package. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Type</b> </td>
+<td> The type of content package. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Version</b> </td>
+<td> The content package version number. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Created By</b> </td>
+<td> The entity that created the content package. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Publication Date</b> </td>
+<td> The date and time that the content package was published. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Priority</b> </td>
+<td> The priority of the content package. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Install Requires Admin Permissions</b> </td>
+<td> "True" if installation of the content package requires administrator permissions, 
+or "false" if installation of the content package does not require administrator permissions. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Install Requires Admin Node Reboot</b> </td>
+<td> "True" if the Cloud OS Administration node will require a reboot after the content package is installed, 
+or "false" if the Cloud OS Administration node will not require a reboot after the content package is installed.  </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Notes</b> </td>
+<td> Any notes that are included with the content package. </td>
 </tr>
 
 </table> 
@@ -1051,7 +1186,7 @@ The following information provides details about the Updates and Extensions pane
 ### Updates and Extensions Overview
 
 The updates and extensions feature allows you to connect to, list, and retrieve hot fixes and updates from the HP Cloud OS Distribution Network (CODN) 
-and apply them to your HP Cloud OS environment. In this help, such hot fixes and updates are referred to as *content packages*.
+and apply them to your HP Cloud OS environment. In this topic, such hot fixes and updates are referred to as *content packages*.
 
 ### Updates and Extensions Page
 
@@ -1067,8 +1202,67 @@ The following table describes the Updates and Extensions page UI elements:
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td style="min-width:150px;"> TBS...  </td>
-<td>   </td>
+<td style="min-width:150px;"> <b>Name</b> column </td>
+<td> The name of the content package. Click on the name to open a panel that shows details of the content package. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Version</b> column </td>
+<td> The version number of the content package. </td>
+</tr>
+
+<!-- BG: This should be updated for US 2516 G3.1, KB to GB --> 
+<tr style="background-color: white; color: black;">
+<td> <b>Size (Bytes)</b> column </td>
+<td> The size of the content package file, in bytes. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Provider</b> column </td>
+<td> The entity (such as a company name) that is the provider of the content package. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Type</b> column </td>
+<td> The type of content package. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Status</b> </td>
+<td> The current status of the content package. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Actions</b> </td>
+<td> Buttons, menus, or other items that can be used to perform some action. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Filter</b> button and field </td>
+<td> Enter a character string into the field to display only those content packages in the list that 
+contain the string in any column. The filter function is not case sensitive. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Configure</b> </td>
+<td> Click to open the <a href="/cloudos/manage/operational-dashboard/#configure-dialog">Configure Dialog</a>. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Download</b> button </td>
+<td> Click, and then click the <b>Download</b> button in the confirmation box that appears to download a 
+copy of the content package from the catalog to your local system where you can use it. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Install</b> button </td>
+<td> Click to start the content package installation process. If no install action is supported for a particular item, 
+the Install button will not be shown. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>More > View Progress</b> </td>
+<td> Select to view the progress of the operation. </td>
 </tr>
 
 </table> 
