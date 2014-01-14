@@ -99,7 +99,7 @@ for the HP Cloud OS installation having this Instance ID.  </td>
 <td style="font-weight:bold;"> License key </td>
 <td> Enter a valid license key into this field and click the </b>Save button to update the HP Cloud OS license. 
 Contact your HP Support representative to obtain a valid license key. <br /> <br />
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px;"> <b>Note:</b> After you click the <b>Save</b> button, 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> After you click the <b>Save</b> button, 
 about 20 minutes elapses before the new license is activated.</p>
 </td>
 </tr>
