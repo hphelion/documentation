@@ -24,8 +24,9 @@ PageRefresh();
 
 Welcome! The following topics explain how to install &amp; configure your cloud with the HP Cloud OS platform. 
 
-It's important to read the topics and perform the described steps in order. While some steps are optional, the sequence that you'll follow in 
-the HP Cloud OS Operational Dashboard user interface is significant, to ensure a proper deployment of your cloud. 
+It's important to read the topics and perform the described steps in order. While some steps are optional, 
+the sequence that you'll follow in the HP Cloud OS Operational Dashboard user interface is significant, to ensure 
+a proper deployment of your cloud. 
 
 Install and set up the Admin node:
 
