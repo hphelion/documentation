@@ -1,9 +1,11 @@
 ---
+
 layout: default
 title: "HP Cloud 13.5: Uploading and Publishing Partner Images"
 permalink: /upload-publish-partner-images135/
 product: image
 
+---
 
 # HP Cloud 13.5: Uploading and Publishing Partner Images # {#publishPartnerImage}
 This document describes how to use the HP Cloud Image API to upload images and make them available for public use in HP Cloud 13.5. It is not intended to be an exhaustive description of the Glance client. See the [HP Cloud API documentation](https://docs.hpcloud.com/api/compute/) for complete details.
