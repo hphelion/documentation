@@ -77,6 +77,8 @@ boot from the network first (this only occurs once as the PXE service will not t
 
 For procedural instructions on setting up and configuring your nodes, see [Install and Configure Your Cloud](/cloudos/install).
 
+<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
 ### Manage Nodes Page
 
 To access: Select the Cloud tab > Manage Nodes.
@@ -167,6 +169,9 @@ A node that is in the Deployed state cannot be reset. When a node is reset, it i
 
 </table> 
 
+<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
+
 
 ### Edit Node Dialog
 
@@ -201,6 +206,9 @@ and numbers with no spaces or special characters. </p>
 </tr>
 
 </table>
+
+<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
 
 
 
