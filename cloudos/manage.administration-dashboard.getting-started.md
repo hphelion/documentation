@@ -62,16 +62,15 @@ The Admin user creates projects and creates users for projects. An Admin user ca
 
 **Tasks:**
 
-* How to Create a Project
+For each task, the link goes to a section in the Tasks by Tabs topic.    
 
-* How to Create a User
+* [How to Create a Project](/cloudos/manage/administration-dashboard/#how-to-create-a-project)
 
-* How to See All Domains
+* [How to Create a User](/cloudos/manage/administration-dashboard/#how-to-create-a-user)
 
-* How to See All Services
+* [How to See All Domains](/cloudos/manage/administration-dashboard/#how-to-see-all-domains)
 
-These descriptions are coming soon in the format of other HP Cloud OS topics. For now, please see 
-<a href="http://docs.hpcloud.com/cloudos/administration-dashboard/index.htm">this copy on the website</a>. 
+* [How to See All Services](#)
 
 When you are done, tell a cloud administrator to perform [Getting Started for Cloud Administrators](#getting-started-for-cloud-administrators). 
 
@@ -87,28 +86,25 @@ including the ability to make resources available to users.
 
 **Tasks:**
 
-* How to Import, Create, or Delete a Keypair
+* [How to Import, Create, or Delete a Keypair](#)
 
-* How to Access All Images
+* [How to Access All Images](#)
 
-* How to Change a Project's Compute or Storage Limits
+* [How to Change a Project's Compute or Storage Limits](#)
 
-* How to Create an External Network
+* [How to Create an External Network](#)
 
-* How to Create a Subnet
+* [How to Create a Subnet](#)
 
-* Resource Pools
+* [Resource Pools](#)
 
-* How to See an Overview of Usage
+* [How to See an Overview of Usage](#)
 
 However, some organizations might also use cloud administrators to create profiles and topology designs. See:
 
-* How to Create a Deployment Profile
+* [How to Create a Deployment Profile](#)
 
-* How to Create a Topology Design
-
-These descriptions are coming soon in the format of other HP Cloud OS topics. For now, please see 
-<a href="http://docs.hpcloud.com/cloudos/administration-dashboard/index.htm">this copy on the website</a>. 
+* [How to Create a Topology Design](#)
 
 When you are done, tell a cloud architect to perform [Getting Started for Cloud Architects](#getting-started-for-cloud-architects). 
 
@@ -122,16 +118,13 @@ Cloud architects create images, topology designs, and deployment profiles.
 
 **Tasks:**
 
-* How to Import, Create, or Delete a Keypair
+* [How to Import, Create, or Delete a Keypair](#)
 
-* How to Access All Images
+* [How to Access All Images](#)
 
-* How to Create a Deployment Profile
+* [How to Create a Deployment Profile](#)
 
-* How to Create a Topology Design
-
-These descriptions are coming soon in the format of other HP Cloud OS topics. For now, please see 
-<a href="http://docs.hpcloud.com/cloudos/administration-dashboard/index.htm">this copy on the website</a>. 
+* [How to Create a Topology Design](#)
 
 When you are done, tell a project administrator to perform [Getting Started for Project Administrators](#getting-started-for-project-administrators).
 
@@ -147,30 +140,28 @@ and manage project resources that are created by project users. See [Project Use
 
 **Tasks:**
 
-* How to Import, Create, or Delete a Keypair
+* [How to Import, Create, or Delete a Keypair](#)
 
-* Images and Snapshots
+* [Images and Snapshots](#)
 
-* How to Launch an Instance
+* [How to Launch an Instance](#)
 
-* How to Create a Private Network
+* [How to Create a Private Network](#)
 
-* How to Create a Subnet
+* [How to Create a Subnet](#)
 
-* Routers
+* [Routers](#)
 
-* Security Groups and Rules
+* [Security Groups and Rules](#)
 
-* How to Create a Deployment Profile
+* [How to Create a Deployment Profile](#)
 
-* How to Create a Topology Design
-
-These descriptions are coming soon in the format of other HP Cloud OS topics. For now, please see 
-<a href="http://docs.hpcloud.com/cloudos/administration-dashboard/index.htm">this copy on the website</a>.
+* [How to Create a Topology Design](#)
 
 Some organizations might also use project administrators to create resource pools. See [How to Create a Resource Pool](#).
 
-When you are done, tell your project users that they can start working in the HP Cloud OS Administration Dashboard. See [Getting Started for Project Users](#getting-started-for-project-users).
+When you are done, tell your project users that they can start working in the HP Cloud OS Administration Dashboard. 
+See [Getting Started for Project Users](#getting-started-for-project-users).
 
 <a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
@@ -184,21 +175,18 @@ Project users' main goal when using the dashboard is to provision topologies.
 
 **Tasks:**
 
-* How to Import, Create, or Delete a Keypair
+* [How to Import, Create, or Delete a Keypair](#)
 
-* Running Topologies
+* [Running Topologies](#)
 
-* How to Launch a Topology
+* [How to Launch a Topology](#)
 
-* How to Create a Deployment Profile
+* [How to Create a Deployment Profile](#)
 
-* How to Create a Topology Design
+* [How to Create a Topology Design](#)
 
-* How to Launch a Deployment Profile
+* [How to Launch a Deployment Profile](#)
 
-* How to Create or Delete a Security Group
-
-These descriptions are coming soon in the format of other HP Cloud OS topics. For now, please see 
-<a href="http://docs.hpcloud.com/cloudos/administration-dashboard/index.htm">this copy on the website</a>.
+* [How to Create or Delete a Security Group](#)
 
 <a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
