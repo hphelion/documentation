@@ -77,6 +77,8 @@ boot from the network first (this only occurs once as the PXE service will not t
 
 For procedural instructions on setting up and configuring your nodes, see [Install and Configure Your Cloud](/cloudos/install).
 
+<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
 ### Manage Nodes Page
 
 To access: Select the Cloud tab > Manage Nodes.
@@ -98,8 +100,8 @@ The following table describes the Manage Nodes page UI elements:
 
 <tr style="background-color: white; color: black;">
 <td style="min-width:150px;"> <b>Alias</b> column </td>
-<td> Renamed MAC address ( in the [Edit Node dialog](#edit-node-dialog) ) to a more meaningful name such as controllercompute, 
-cloudcontroller, compute1, compute2.
+<td> Renamed MAC address ( in the <a href="/cloudos/manage/operational-dashboard/cloud-tab/#edit-node-dialog">Edit Node dialog</a> ) to a more 
+meaningful name such as controllercompute, cloudcontroller, compute1, compute2.
 <br /> <br />
 Once the nodes have finished booting up, each node displays in the table, indicating the Alias Name set to the node's MAC 
 address (of the NIC associated with the Administration Network). Each node will be in the Not Allocated state.  </td>
@@ -117,8 +119,8 @@ Not Allocated, Hardware Installed, Installing, Installed, Readying, Finalizing, 
 <br /> <br />
 Once the nodes are ready for cloud deployment, their status ends with Allocated.
 <br /> <br />
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> In the case where a node results in status = Off, select the 
-More > Reboot Node action for the node.
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> In the case where a 
+node results in status = Off, select the More > Reboot Node action for the node.
 </p>
 </td>
 </tr>
@@ -136,7 +138,7 @@ contain the string in any column on the row. </td>
 
 <tr style="background-color: white; color: black;">
 <td> <b>Edit Node</b> button </td>
-<td> Click to open the [Edit Node dialog](#edit-node-dialog). </td>
+<td> Click to open the <a href="/cloudos/manage/operational-dashboard/cloud-tab/#edit-node-dialog">Edit Node dialog</a>. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -166,6 +168,9 @@ A node that is in the Deployed state cannot be reset. When a node is reset, it i
 </tr>
 
 </table> 
+
+<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
 
 
 ### Edit Node Dialog
@@ -197,10 +202,13 @@ and numbers with no spaces or special characters. </p>
 
 <tr style="background-color: white; color: black;">
 <td> <nobr> <b>Update Node</b> </nobr> </td>
-<td> Click to save the settings and return to the <a href="/cloudos/manage/operational-dashboard/#manage-nodes-page">Manage Nodes page</a>.  </td>
+<td> Click to save the settings and return to the <a href="/cloudos/manage/operational-dashboard/cloud-tab/#manage-nodes-page">Manage Nodes page</a>.  </td>
 </tr>
 
 </table>
+
+<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
 
 
 
@@ -360,8 +368,8 @@ The following table describes the Manage Clouds page UI elements:
 
 <tr style="background-color: white; color: black;">
 <td style="min-width:150px;"> <b>Name</b> </td>
-<td> Cloud name specified on the [Create Cloud dialog](#create-cloud-dialog). This is the Domain name that is used to initialize Keystone and will 
-be displayed in the Administration Dashboard.
+<td> Cloud name specified on the <a href="/cloudos/manage/operational-dashboard/cloud-tab/#create-cloud-dialog">Create Cloud dialog</a>. 
+This is the Domain name that is used to initialize Keystone and will be displayed in the Administration Dashboard.
 <br /> <br/>
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> A cloud name must contain only letters and numbers. 
 It cannot contain spaces or special characters.</p>
@@ -382,12 +390,12 @@ the status displays Active.   </td>
 
 <tr style="background-color: white; color: black;">
 <td> <b>Create Cloud</b> </td>
-<td> Opens the <a href="/cloudos/manage/operational-dashboard/#create-cloud-dialog">Create Cloud dialog</a>. </td>
+<td> Opens the <a href="/cloudos/manage/operational-dashboard/cloud-tab/#create-cloud-dialog">Create Cloud dialog</a>. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> <b>Create Compute Region</b> </td>
-<td> Opens the <a href="/cloudos/manage/operational-dashboard/#create-compute-region-dialog">Create Compute Region dialog</a>. </td>
+<td> Opens the <a href="/cloudos/manage/operational-dashboard/cloud-tab/#create-compute-region-dialog">Create Compute Region dialog</a>. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -513,14 +521,14 @@ file system associated with the Local Volume File. </td>
 <td> Trash user's password for a granted user's role on a trash project(s) in the Administration Dashboard.
 <br /> <br />
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> Remember these passwords. You will be using these as 
-appropriate to login to the Administration Dashboard &mdash; see <a href="/cloudos/manage/operational-dashboard/#manage-clouds-page">Manage Clouds page</a>. </p> 
+appropriate to login to the Administration Dashboard &mdash; see <a href="/cloudos/manage/operational-dashboard/cloud-tab/#manage-clouds-page">Manage Clouds page</a>. </p> 
 </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> <b>Create Cloud</b> button </td>
 <td> Click to begin the process of creating the cloud. The cloud will go through a series of steps to create an active cloud, 
-showing the % completed on the <a href="/cloudos/manage/operational-dashboard/#manage-clouds-page">Manage Clouds page</a>.
+showing the % completed on the <a href="/cloudos/manage/operational-dashboard/cloud-tab/#manage-clouds-page">Manage Clouds page</a>.
 </td>
 </tr>
 
@@ -655,7 +663,7 @@ that are in the Allocated state. </p>
 <td> Click to begin extending the compute region.
 <br /> <br /> 
 On the Manage Nodes page, the Status for the nodes that have successfully been added to the compute region will change to <b>Deployed</b>. 
-You can also view the compute nodes that are currently in the compute region on the <a href="/cloudos/manage/operational-dashboard/#manage-clouds-details-page">Manage Clouds Details page</a>.
+You can also view the compute nodes that are currently in the compute region on the <a href="/cloudos/manage/operational-dashboard/cloud-tab/#manage-clouds-details-page">Manage Clouds Details page</a>.
 </td>
 </tr>
 
@@ -976,7 +984,7 @@ The following table describes the Hot Fixes page UI elements:
 <tr style="background-color: white; color: black;">
 <td style="min-width:150px;"> <b>Package Name</b> column  </td>
 <td> The name of the content package. Click on the package name to open 
-the <a href="/cloudos/manage/operational-dashboard/#package-details-page">Package Details Page</a>.  </td>
+the <a href="/cloudos/manage/operational-dashboard/cloud-tab/#package-details-page">Package Details Page</a>.  </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -1018,7 +1026,7 @@ contain the string in any column. The filter function is not case sensitive. </t
 
 <tr style="background-color: white; color: black;">
 <td style="min-width:150px;"> <b>Import Package</b> button  </td>
-<td> Click to open the <a href="/cloudos/manage/operational-dashboard/#import-package-dialog">Import Package Dialog</a>. </td>
+<td> Click to open the <a href="/cloudos/manage/operational-dashboard/cloud-tab/#import-package-dialog">Import Package Dialog</a>. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -1246,7 +1254,7 @@ contain the string in any column. The filter function is not case sensitive. </t
 
 <tr style="background-color: white; color: black;">
 <td> <b>Configure</b> </td>
-<td> Click to open the <a href="/cloudos/manage/operational-dashboard/#configure-dialog">Configure Dialog</a>. </td>
+<td> Click to open the <a href="/cloudos/manage/operational-dashboard/cloud-tab/#configure-dialog">Configure Dialog</a>. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
