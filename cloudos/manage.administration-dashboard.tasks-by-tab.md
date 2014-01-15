@@ -75,8 +75,12 @@ These descriptions are coming soon in the format of other HP Cloud OS topics. Fo
   
 ## Cloud Tab Tasks
 
+TBS...
+
 
 ### How to See All Services
+
+TBS...
 
 
 ### How to See All Domains
@@ -88,12 +92,10 @@ To learn whether you have permission, see Administration Dashboard Tasks by Role
 To view all domains in the cloud:
 
 1. Click Cloud > Domains.
-
-Information shown includes domain name and description.
+  Information shown includes domain name and description.
 
 2. Optional: To see details of a domain, click the Domain Name.
-
-Information shown includes domain name, ID, description, whether the domain is enabled, and a link to the domain.
+  Information shown includes domain name, ID, description, whether the domain is enabled, and a link to the domain.
 
 ### How to Access All Projects
 
@@ -111,11 +113,8 @@ To create a project:
 2. Click Create Project to open the Create Project dialog box.
 
 3. On the Project Info tab, enter:
-
   * Name: required.
-
   * Description: optional.
-
   * Enabled: By default, Enabled is selected, which means project content is available to assigned users.
 
 4. Optional: On the Project Members tab, add project members from the list of available users. Click the plus sign (+) to add a project member. Click the minus sign (-) to remove a member.
@@ -163,14 +162,12 @@ Users include both people and services (such as Nova). When you create a person 
 To see a list of users:
 
 1. Click Cloud > Users to open the Users window. 
-
- Information shown includes user name, role, email address, and whether the user is enabled.
-
+  Information shown includes user name, role, email address, and whether the user is enabled.
+ 
 2. Optional: Click an email address to automatically create an email addressed to that user.
 
 3. Optional: To see user details, click User Name to open an Overview window.
-
- Information shown includes all the information from the Users window, and every project and role associated with the user.
+  Information shown includes all the information from the Users window, and every project and role associated with the user.
 
 **Tasks:**
 
@@ -211,9 +208,13 @@ TBS...
 
 **Concepts:**
 
-The Region tab provides a convenient place for users who have permission to work with region services and content. To learn whether you have permission, see Administration Dashboard Tasks by Role.
+The Region tab provides a convenient place for users who have permission to work with region services and content. 
+To learn whether you have permission, see Administration Dashboard Tasks by Role.
 
-A Region is a compute grouping that provides the context for the usage of compute servers, networking systems, and storage resources. A region makes use of a defined set of users, projects, topology templates, profiles, and services governed by a single OpenStack Keystone domain service. Regions are used to group different locations, different types of hardware, or to separate different resources belonging to different groups.
+A Region is a compute grouping that provides the context for the usage of compute servers, networking systems, and storage resources. 
+A region makes use of a defined set of users, projects, topology templates, profiles, and services governed by a single OpenStack 
+Keystone domain service. Regions are used to group different locations, different types of hardware, or to separate different resources 
+belonging to different groups.
 
 If your cloud contains more than one region, select the region to manage:
 
@@ -241,56 +242,103 @@ Note: Changing regions might switch the point of action to the Project tab. Clic
 
 ### How to See an Overview of Usage
 
+TBS...
+
 ### How to Access Instances
+
+TBS...
 
 ### How to See Info about Services, Compute Services, and Default Quotas
 
+TBS...
+
 ### How to Access Volumes
+
+TBS...
 
 ### How to Access Images
 
+TBS...
+
 ### How to Access Networks
+
+TBS...
 
 ### How to Access Routers
 
+TBS...
+
 ### How to Access Flavors and Flavor Extra Specs
 
-
-
+TBS...
 
 ## Project Tab Tasks
 
+TBS...
+
 ### How to See a Project Overview
 
+TBS...
+
 ### Running Topologies
+
+TBS...
   
 ### Deployment Profiles
+
+TBS...
   
 ### Resource Pools
+
+TBS...
   
 ### Instances
+
+TBS...
   
 ### Volumes
+
+TBS...
   
 ### Images and Snapshots
+
+TBS...
   
 ### Networks
+
+TBS...
   
 ### Routers
+
+TBS...
   
 ### How to See a Network Topology Diagram
+
+TBS...
   
 ### Security Groups and Rules
+
+TBS...
   
 ### How to Import, Create, or Delete a Keypair
+
+TBS...
   
 ### Floating IPs
+
+TBS...
   
 ### How to Access API Endpoints
+
+TBS...
   
 ### How to Access Your Authentication Token
+
+TBS...
   
 ### Updates and Extensions
+
+TBS...
 
   
 <a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
@@ -300,14 +348,22 @@ Note: Changing regions might switch the point of action to the Project tab. Clic
 
 ## Administration Dashboard Settings
 
+TBS...
+
 
 ### How to Change User Settings
+
+TBS...
 
 
 ### How to Change Your Password
 
+TBS...
+
 
 ### About the HP Cloud OS Administration Dashboard  
+
+TBS...
 
   
 <a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

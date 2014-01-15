@@ -155,7 +155,7 @@ Every HP Cloud OS Administration Dashboard user can see the Project tab.
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td colspan=2""> Provisioning </td>
+<td colspan="2" style="background-color: #f8f8f8;"> Provisioning </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -182,7 +182,7 @@ associated with the resources.
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td colspan=2""> Infrastructure </td>
+<td colspan="2" style="background-color: #f8f8f8;"> Infrastructure </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -224,7 +224,7 @@ Snapshots preserve the disk state of running Instances and Volumes.
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td colspan=2""> Access and Security </td>
+<td colspan="2" style="background-color: #f8f8f8;"> Access and Security </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -254,7 +254,7 @@ You can access the token for use outside the dashboard. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td colspan=2""> Updates and Extensions </td>
+<td colspan="2" style="background-color: #f8f8f8;"> Updates and Extensions </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
