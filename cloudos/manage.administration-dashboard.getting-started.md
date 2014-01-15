@@ -64,13 +64,13 @@ The Admin user creates projects and creates users for projects. An Admin user ca
 
 For each task, the link goes to a section in the Tasks by Tabs topic.    
 
-* [How to Create a Project](/cloudos/manage/administration-dashboard/#how-to-create-a-project)
+* [How to Create a Project](/cloudos/manage/administration-dashboard/tasks-by-tab/#how-to-create-a-project)
 
-* [How to Create a User](/cloudos/manage/administration-dashboard/#how-to-create-a-user)
+* [How to Create a User](/cloudos/manage/administration-dashboard/tasks-by-tab/#how-to-create-a-user)
 
-* [How to See All Domains](/cloudos/manage/administration-dashboard/#how-to-see-all-domains)
+* [How to See All Domains](/cloudos/manage/administration-dashboard/tasks-by-tab/#how-to-see-all-domains)
 
-* [How to See All Services](#)
+* [How to See All Services](/cloudos/manage/administration-dashboard/tasks-by-tab/#how-to-see-all-services)
 
 When you are done, tell a cloud administrator to perform [Getting Started for Cloud Administrators](#getting-started-for-cloud-administrators). 
 
