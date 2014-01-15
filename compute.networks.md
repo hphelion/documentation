@@ -72,7 +72,7 @@ You can use any of several language bindings to access HP Cloud compute. For mor
 
 You can use any of several command-line interface software to access HP Cloud compute. For more information on using the HP Cloud Networking API, see [HP Cloud CLI](http://docs.hpcloud.com/cli/).
 
-##Using VPN## {#vpn)
+##Using VPN## {#vpn}
 
 With HP Cloud Networking you can set up an IPsec, or site-to-site, VPN connecting your external network directly to your HP cloud virtual network.
 
