@@ -527,8 +527,423 @@ When you open the editor, the following controls are available in the left toolb
 
 ### How to Lay Out a Topology Design
 
-TBS...
+For information on how to create a new design, see [How to Create a Topology Design](#how-to-create-a-topology-design).
 
+After creating the design, you then select and arrange the free-form component nodes and connectors in the Editor.
+
+To create the topology design layout, follow the instructions in the following sections.
+
+#### Nodes
+
+As you move your cursor around the canvas in the Editor, gray tiles display. Clicking a tile presents you with a list of available node types 
+determined by the Cloud Profile.
+
+A new blank design displays at least one validation error indicating the design layout is unsaved. As you add nodes, more validation issues will 
+display until you set required properties for the nodes and save the design.
+
+By default, the system proposes a Name for the node consisting of the node type and a sequential number, e.g., Network Segment 1. This name can be changed 
+by editing the node properties.
+
+#### Connectors
+
+Connectors are used to establish relationships between nodes, for example between a Server Group and a Volume Group. Line connectors represent one or 
+more purposes for the connection between two nodes, even though there is a single line displayed. This design helps prevent excess visual display and 
+allows the connector to represent multiple networking relationships.
+
+You can add a connector and a node in a single operation by dragging a connector from a node to an empty tile. There you will be presented with a list of 
+valid nodes for connection. You can also select a node and drag the blue circle from either side and drop it on the canvas in position. Only valid nodes 
+display for selection.
+
+If connector properties are required, the connector displays a validation error.
+
+**Rules for node and connector layout**
+
+The system validates the following rules as you create a design:
+
+* You can only set node properties in the Editor if you selected a Resource Pool during design creation.
+
+* Only a Router node, a Load Balancer Service node, or a Server Group node can be connected to an External Network node.
+
+* Only a Server Group node and a Load Balancer Service node can be connected to a Network Segment node.
+
+* Only a Network Segment node and an External Network node can be connected to a Router node.
+
+* A Server Group node can be connected to all other nodes. A Server Group node must be connected to a Network Segment node to make it accessible to an end user after it is created in a service.
+
+* A Volume Group node must be connected to a Server Group node to create a valid topology.
+
+#### Design steps
+
+<ol>
+
+<li> After you create a new design, the Editor opens with a blank canvas.
+
+<li> Left-click a tile to add the first node.
+
+<li> Select a topology node type from the list, which is populated according to the Cloud Profile selected during design creation. As you hover over a node, 
+a tool tip displays. Possible node options are shown in this table:
+
+<table style="text-align: left; vertical-align: top; min-width:700px;">
+
+<tr style="background-color: #C8C8C8;">
+<th> Icon </th>
+<th> Node Name </th>
+<th> Description </th> 
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td style="min-width:50px;"> <img src="media/cloudos_icon_external_network.png" /> </td>
+<td style="min-width:150px;"> External Network </td> 
+<td> A logical representation of a public network. </td> 
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td style="min-width:50px;"> <img src="media/cloudos_icon_loadbalancer.png" /> </td>
+<td style="min-width:150px;"> Load Balancer </td> 
+<td> A logical representation of a network load balancer that is configured on a virtual machine. </td> 
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td style="min-width:50px;"> <img src="media/cloudos_icon_networksegment.png" /> </td>
+<td style="min-width:150px;"> Network Segment </td> 
+<td> A logical representation of a network or security group definition. </td> 
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td style="min-width:50px;"> <img src="media/cloudos_icon_router.png" /> </td>
+<td style="min-width:150px;"> Router (available only with HP Cloud OS Grizzly Cloud Profile)  </td> 
+<td> A logical representation of a network router.  </td> 
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td style="min-width:50px;"> <img src="media/cloudos_icon_servergroup.png" /> </td>
+<td style="min-width:150px;"> Server Group </td> 
+<td> A logical representation of a single server or multiple servers with the same configuration.   </td> 
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td style="min-width:50px;"> <img src="media/cloudos_icon_volumegroup.png" /> </td>
+<td style="min-width:150px;"> Volume Group </td> 
+<td> A logical representation of a storage device. </td> 
+</tr>
+
+</table> 
+
+</li> 
+
+<li> The node icon and name display on the canvas in the selected tile and node Properties display in the right panel. NOTE: The red "x" on the node and the red text in the Properties panel indicate that properties need to be updated before saving. These missing properties are flagged as invalid and are tracked in the Validation tab.
+    
+<li> With the node selected (blue highlighting), drag one of the blue circles on either side of the node and drop. You are presented with a list of valid nodes.
+    
+<li> Make your selection from the list of available nodes.
+
+<li> Repeat steps 5 and 6 to design your template.
+
+</ol> 
+
+#### To set properties
+
+Properties set here become the default configuration for the design.
+
+<ol>
+
+<li> Select a node. The Properties panel opens on the right with red asterisks indicating required fields.
+    
+<li> Node properties are defined in the table below.
+
+<div style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> 
+<b>Notes:</b> 
+<ul>
+<li> An asterisk (*) in the table indicates the field is required.
+<li> Check the <b>Modifiable</b> box to indicate the property can be modified by a user of other HP Cloud provisioning software that is using Topology Designs 
+from HP Cloud OS.
+</ul>
+</div>
+
+<table style="text-align: left; vertical-align: top; min-width:700px;">
+
+<tr style="background-color: #C8C8C8;">
+<th> Node Name </th>
+<th> Node Properties </th>
+<th> Description </th> 
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td style="min-width:100px;" rowspan="2"> External Network </td>
+<td style="min-width:150px;"> Name * </td> 
+<td> By default, the system proposes a name with a sequential number for each external network segment added to the design, e.g., 
+External Network Segment 1, External Network Segment 2. Replace this name, if needed, to meet your business needs. </td> 
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td style="min-width:150px;"> External Network * </td> 
+<td> Select the name of the external (public) network. </td> 
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td style="min-width:100px;" rowspan="2"> Load Balancer </td>
+<td style="min-width:150px;"> Name * </td> 
+<td> Name of the load balancer. </td> 
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td style="min-width:150px;"> Service * </td> 
+<td> Options are:
+
+<ul>
+<li> <b>Use existing service</b> - Use the existing resource pool's Load Balancer service.
+<li> <b>Create new service</b> by entering the following information:
+</ul>
+
+<!-- inner table -->
+<table style="text-align: left; vertical-align: top; border: 1px gray solid; background-color: white;">
+
+<tr>
+<td style="font-weight: bold;"> Name * </td>
+<td> By default, the system proposes a name with a sequential number for each load balancer added to the design. 
+Replace this name, if needed, to meet your business needs. </td>
+</tr>
+
+<tr>
+<td style="font-weight: bold;"> Service </td>
+<td> </td>
+</tr>
+
+<tr>
+<td style="font-weight: bold;"> Resource Pool service * </td>
+<td> A pool of resources associated with the resource provider when the Resource Pool was created through Graffiti. </td>
+</tr>
+
+<tr>
+<td style="font-weight: bold;"> Instance Name prefix * </td>
+<td> A unique prefix to the name of the host you are creating that provides useful identification and avoids duplication. </td>
+</tr>
+
+<tr>
+<td style="font-weight: bold;"> Key Name </td>
+<td> Select the keypair to be used for this instance. Keypairs are SSH security keys that provide authentication and allow you to exchange traffic securely within a VM. </td>
+</tr>
+
+</table>
+<!-- end inner table --> 
+
+</td> 
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td style="min-width:100px;" rowspan="4"> Network Segment </td>
+<td style="min-width:150px;"> Name * </td> 
+<td> By default, the system proposes a name with a sequential number for each network segment added to the design, e.g., Network Segment 1, Network Segment 2. 
+Replace this name, if needed, to meet your business needs. </td> 
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td style="min-width:150px;"> Type * </td> 
+<td> Currently the only type of network is <b>Subnet</b>, which indicates a network that may be connected to zero or more subnets. </td> 
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td style="min-width:150px;"> Network * </td> 
+<td> Available private networks defined in HP Cloud OS. </td> 
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td style="min-width:150px;"> Select a Subnet * </td> 
+<td> Select:
+<ul>
+<li> <b>Existing subnet</b> - subnets defined in HP Cloud OS </li>
+<li> <b>Create a subnet</b> - if selected, you are prompted to enter the following fields:
+</ul>
+
+<!-- inner table -->
+<table style="text-align: left; vertical-align: top; border: 1px gray solid; background-color: white;">
+
+<tr>
+<td style="font-weight: bold;"> Subnet Name </td>
+<td>  </td>
+</tr>
+
+<tr>
+<td style="font-weight: bold;"> Subnet Description </td>
+<td> </td>
+</tr>
+
+<tr>
+<td style="font-weight: bold;"> IP Version </td>
+<td> Version of IP protocol to be used. </td>
+</tr>
+
+<tr>
+<td style="font-weight: bold;"> Mask Size </td>
+<td>   </td>
+</tr>
+
+<tr>
+<td style="font-weight: bold;"> Enable DHCP </td>
+<td> Yes or No. </td>
+</tr>
+
+<tr>
+<td style="font-weight: bold;"> DNS Servers </td>
+<td> Hostname or IP of DNA Server. </td>
+</tr>
+
+<tr>
+<td style="font-weight: bold;"> Disable Gateway </td>
+<td>  </td>
+</tr>
+
+</table>
+<!-- end inner table --> 
+
+</td> 
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td style="min-width:100px;" rowspan="2"> Router </td>
+<td style="min-width:150px;"> Name * </td> 
+<td> By default, the system proposes a name with a sequential number for each router added to the design, e.g., Router 1, Router 2. 
+Replace this name, if needed, to meet your business needs. </td> 
+</tr>
+
+<tr>
+<td> Router * </td>
+<td> Select:
+<ul>
+<li> Existing Router - routers that are defined in HP Cloud OS.
+<li> Create new router - Enter the Router Name.
+</ul>
+</td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td style="min-width:100px;" rowspan="6"> Server Group </td>
+<td style="min-width:150px;"> Name * </td> 
+<td> By default, the system proposes a name with a sequential number for each server group added to the design, e.g., Server Group 1, Server Group 2. 
+Replace this name, if needed, to meet your business needs. </td> 
+</tr>
+
+<tr>
+<td> Instance Name Prefix * </td>
+<td> A prefix to the name of the host you are creating. </td>
+</tr>
+
+<tr>
+<td> Number of Instances </td>
+<td> Controls the minimum and maximum number of servers that can be used in the server group.
+<br />  <br /> 
+To create a single server Server Group, specify 1 for both values. For a Server Group where the maximum number of servers is greater than the minimum, 
+the user is allowed to add additional servers in the future up to the maximum. </td>
+</tr>
+
+<tr>
+<td> Image </td>
+<td> <b>Image</b> is only available if a Resource Pool was selected during design creation. 
+To add a Resource Pool to the design, click the <b>Edit Design Properties</b> button. </td>
+</tr>
+
+<tr>
+<td> Machine Flavor * </td>
+<td>  	
+A flavor describes the machine configuration size (amount of memory, number of CPUs, and ephemeral disk space available) used to create new VMs.
+<br />  <br /> 
+Machine Flavor is only available if a Resource Pool was selected during design creation. To add a Resource Pool to the design, click Edit.  
+</td>
+</tr>
+
+<tr>
+<td> Key Name </td>
+<td> Select the keypair to be used for this instance. Keypairs are the SSH credentials required to login to a server. 
+To be able to use a keypair for accessing an instance, the user must have the private key.
+<br />  <br /> 
+Key Name is only available if a Resource Pool was selected during design creation. 
+</td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td style="min-width:100px;" rowspan="2"> Volume Group </td>
+<td style="min-width:150px;"> Name * </td> 
+<td> By default, the system proposes a name with a sequential number for each volume group added to the design, e.g., Volume Group 1, Volume Group 2. 
+Replace this name, if needed, to meet your business needs. </td> 
+</tr>
+
+<tr>
+<td> Volume * </td>
+<td> Identifies the disc storage volume allocated to the group.  
+<br /> <br />
+Options: 
+<ul>
+<li> Use Existing Volume - enter the Volume Reference and indicate if it is Modifiable.
+<li> Create a volume - you are prompted to enter the following fields: 
+</ul> 
+
+<!-- inner table -->
+<table style="text-align: left; vertical-align: top; border: 1px gray solid; background-color: white;">
+
+<tr>
+<td> <b>Name</b> * </td>
+<td> By default, the system proposes a name with a sequential number for each volume group added to the design, e.g., Volume Group 1, Volume Group 2. 
+	 Replace this name, if needed, to meet your business needs. </td>
+</tr>
+
+<tr>
+<td> <b>Volume</b> * </td>
+<td> Keep the default option <b>Create a Volume</b>. </td>
+</tr>
+
+<tr>
+<td> <b>Instance Name Prefix * </b> <br /> <br /> (Modifiable)</td>
+<td> A prefix to the name of the volume group you are creating. </td>
+</tr>
+
+<tr>
+<td> <b>Volume Size (GB) </b> <br /> <br /> (Modifiable)</td>
+<td> Enter a number representing the size of the volume in GB.  </td>
+</tr>
+
+<tr>
+<td> <b>Volume Type </b> <br /> <br /> (Modifiable)</td>
+<td> Available values from HP Cloud OS that identify the storage backend driver capabilities such as SATA or SSD retrieved from the Eve API. 
+Eve is an HP Cloud OS infrastructure topology design provisioner for OpenStack-based IaaS.  </td>
+</tr>
+
+</td>
+</tr>
+
+</table>
+<!-- end inner table -->
+
+
+</table> </li>
+
+<li> Click <b>Save</b>.
+
+</ol>
+
+#### To set connector properties
+
+Connector properties are required if the connector is red. If required, properties open in the right panel:
+
+<table style="text-align: left; vertical-align: top; min-width:700px;">
+
+<tr style="background-color: #C8C8C8;">
+<th> Nodes </th>
+<th> Field(s) </th>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Between a Volume Group and a Server Group </td>
+<td> <b>Device (Modifiable)</b> </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Between a Server Group and a Network Segment </td>
+<td> <b>Security Group (Modifiable)</b> - Select a <b>Security Group</b> or <b>Create a Security Group</b>.
+<br /> <br /> 
+If you select <b>Create a Security Group</b>, select <b>Yes</b> if you want an unassigned Floating IP address allocated to each server in the Server Group. </td>
+</tr>
+
+</table> 
 
 
 ### How to Edit Topology Design Nodes and Connectors
