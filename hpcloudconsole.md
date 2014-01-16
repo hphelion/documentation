@@ -10,7 +10,7 @@ product: HP Cloud Console
 # Getting Started with HP Public Cloud Console
 Welcome to HP Public Cloud Console Horizon Preview Edition! HP Public Cloud wants you up and running quickly so this Getting Started guide walks you through network setup and connection (if not going with the default configuration setup when you activate compute services), instance and volume creation, security options, identity parameters, and management tools that facilitate your organization's use of HP Public Cloud. **This page takes you through the interface in the chronological order needed to get up and running, rather than the order displayed in the console**. 
 
-After initial setup, revisit the interface to monitor usage, modify, add, and delete networks, instances, volumes, roles, groups, and more. For the latest updates to the current HP Public Cloud Console release, see [What's new with HP Public Cloud Console](/hz/whatsnewjan/2014/).
+After initial setup, revisit the interface to monitor usage, modify, add, and delete networks, instances, volumes, roles, groups, and more. For the latest updates to the current HP Public Cloud Console release, see [What's new with HP Public Cloud Console](/whats_new_with_HP_Cloud_Console/). 
 
 <img src="media/HPPublicCloudConsoleHorizonPreviewEdition.png" width="580" alt="" />
 
@@ -348,8 +348,6 @@ Click  "Identity" in the left-hand interface to display links:
 
 ##For further information## {#Forfurtherinformation}
 
-*For the latest updates to the current HP Public Cloud Console release, see [What's new with HP Public Cloud Console](/hz/whatsnewjan/2014)
-
+*For the latest updates to the current HP Public Cloud Console release, see [What's new with HP Public Cloud Console](/hz/whatsnewjan/2014/)..
 * For basic information about our HP Cloud compute services, take a look at the [HP Cloud compute overview](/compute/) page
-
 * If you'd rather use the HP Cloud Command Line Interface (CLI) features, choose your topic of interest from our [HP CLoud CLI](/cli) pages.
