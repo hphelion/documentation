@@ -92,9 +92,11 @@ To learn whether you have permission, see Administration Dashboard Tasks by Role
 To view all domains in the cloud:
 
 1. Click Cloud > Domains.
+
   Information shown includes domain name and description.
 
 2. Optional: To see details of a domain, click the Domain Name.
+
   Information shown includes domain name, ID, description, whether the domain is enabled, and a link to the domain.
 
 ### How to Access All Projects

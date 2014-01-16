@@ -115,7 +115,7 @@ details about errors within the Editor.
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td style="min-width:100px;"> <a href="how-to-revert-to-a-previous-topology-design-version">Revisions</a> </td>
+<td style="min-width:100px;"> <a href="#how-to-revert-to-a-previous-topology-design-version">Revisions</a> </td>
 <td> The system tracks design revisions sequentially in the Revisions tab, allowing you to revert to an earlier version if needed.
 </td> 
 <td> <b>Revert to selected</b> </td> 
@@ -176,14 +176,18 @@ Select a design from the list of Deployment Templates. See Browse Topology Desig
 
 A view-only graphical representation of the design components opens in the right panel of the Overview tab with the following details displayed on the left:
 
-<ul>
-<li>        <b>Name</b>: The name of the design.
-<li>        <b>Last Modified</b>: The date, time, and user who last updated the design.
-<li>        <b>Cloud Profile</b>: Represents the supported OpenStack version and capabilities of the cloud to which you are deploying.
-<li>        <b>Resource Pool</b>: The Resource Pool selected during creation.
-<li>        <b>Validation status</b>: Indicates the validation status of the Document, Nodes, Relations, and Profiles.
-<li>        <b>Structure Overview</b>: Shows the number of nodes and connections.
-</ul>
+* <b>Name</b>: The name of the design.
+
+* <b>Last Modified</b>: The date, time, and user who last updated the design.
+
+* <b>Cloud Profile</b>: Represents the supported OpenStack version and capabilities of the cloud to which you are deploying.
+
+* <b>Resource Pool</b>: The Resource Pool selected during creation.
+
+* <b>Validation status</b>: Indicates the validation status of the Document, Nodes, Relations, and Profiles.
+
+* <b>Structure Overview</b>: Shows the number of nodes and connections.
+
 
 
 ### How to Create a Topology Design
@@ -191,11 +195,11 @@ A view-only graphical representation of the design components opens in the right
 To create a topology design:
 
 <ol>
-            <li value="1">On the Project tab, select a <b>Current Project</b>.</li>
-            <li value="2">Click <b>Provisioning &gt; Topology Designs</b> to open the <b>Browse Designs</b> window. </li>
-            <li value="3">Click <b>Create</b>. The Create New Design wizard opens.</li>
-            <li value="4">With the <b>General</b> step highlighted on the left, enter the following information:</li>
-            </ol>
+<li value="1">On the Project tab, select a <b>Current Project</b>.</li>
+<li value="2">Click <b>Provisioning &gt; Topology Designs</b> to open the <b>Browse Designs</b> window. </li>
+<li value="3">Click <b>Create</b>. The Create New Design wizard opens.</li>
+<li value="4">With the <b>General</b> step highlighted on the left, enter the following information:</li>
+</ol>
 			
 <table style="text-align: left; vertical-align: top; min-width:600px;">
 
@@ -266,7 +270,7 @@ Allows you access while working in this project. This document can only be viewe
 <li value="9">Click <b>Save.</b></li>
 </ol>
         
-To add nodes and connectors to the design, see <a href="#how-to-lay-out-a-topology-design">How to Lay Out a Topology Design</a>.</p>
+To add nodes and connectors to the design, see the next section, How to Lay Out a Topology Design.
 
 
 ### How to Import a Topology Design
@@ -276,9 +280,13 @@ The import process imports archives of topology designs and their supported arti
 To import a topology design:
 
 1. On the Project tab, select a Current Project.
+
 2. Click Provisioning > Topology Designs to open the Browse Designs window.
+
 3. From Browse Designs, click the **Import** button.
+
 4. Enter or click () to specify the Archive File (.zip file) that contains the service design you want to import. Archive file names for service designs begin with `SERVICE_DESIGN_`.
+
 5. Click OK.
 
 
@@ -292,48 +300,57 @@ The Overview tab opens with the selected topology design details on the left and
 
 To view topology design details:
 
-    On the Project tab, select a Current Project.
+1. On the Project tab, select a Current Project.
 
-    Click Provisioning > Topology Designs to open the Browse Designs window.
+2. Click Provisioning > Topology Designs to open the Browse Designs window.
 
-    The design opens in the Overview tab with the following details:
-        Name: Name of the design.
-        Last Modified: Date, time, and user who last modified the design.
-        Cloud Profile: Represents the supported OpenStack version and capabilities of the cloud to which you are deploying.
-        Resource Pool: Indicates the name of the Resource Pool if one was associated to the design.
-        Validation Status: Indicates the status of the four validation categories (Document, Nodes, Relations, and Profiles). For more information, see Validation.
-        Structure Overview: Displays a count of nodes and connections in the topology design.
-        Topology diagram: A graphical view of the nodes and connectors representing the design.
+3. The design opens in the Overview tab with the following details:
+  * Name: Name of the design.
+  * Last Modified: Date, time, and user who last modified the design.
+  * Cloud Profile: Represents the supported OpenStack version and capabilities of the cloud to which you are deploying.
+  * Resource Pool: Indicates the name of the Resource Pool if one was associated to the design.
+  * Validation Status: Indicates the status of the four validation categories (Document, Nodes, Relations, and Profiles). For more information, see Validation.
+  * Structure Overview: Displays a count of nodes and connections in the topology design.
+  * Topology diagram: A graphical view of the nodes and connectors representing the design.
 
- 
 
 **Tasks:**
 
-* How to Edit Topology Design Properties
+* [How to Edit Topology Design Properties](#how-to-edit-topology-properties)
 
-* How to Copy a Topology Design
+* [How to Copy a Topology Design](#how-to-copy-a-topology-design)
 
-* How to Publish or Unpublish a Topology Design
+* [How to Publish or Unpublish a Topology Design](#how-to-publish-or-unpublish-a-topology-design)
 
-* How to Export a Topology Design
+* [How to Export a Topology Design](#how-to-export-a-topology-design)
 
-* How to Delete a Topology Design 
+* [How to Delete a Topology Design](#how-to-delete-a-topology-design) 
 
 
 
 ### How to Edit Topology Design Properties
 
+TBS...
+
 
 ### How to Copy a Topology Design
 
+TBS...
+
 ### How to Publish or Unpublish a Topology Design
+
+TBS...
 
 
 ### How to Export a Topology Design
 
+TBS...
+
 
 
 ### How to Delete a Topology Design 
+
+TBS...
 
 
 <a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
@@ -342,46 +359,47 @@ To view topology design details:
 
 The Editor tab within Topology Designs is where you create and edit a design in a free-form component layout by:
 
-    Adding nodes
-    Adding relationship connectors
-    Configuring properties for nodes and connectors
-    Editing properties for nodes and relationships
+* Adding nodes
 
-To edit an existing design
+* Adding relationship connectors
 
-    On the Project tab, select a Current Project.
-    Click Provisioning > Topology Designs to open the Browse Designs window.
+* Configuring properties for nodes and connectors
+  
+* Editing properties for nodes and relationships
 
-    Select the design to edit.
+### To edit an existing design
 
- 
-To create a new design
+1. On the Project tab, select a Current Project.
+    
+2. Click Provisioning > Topology Designs to open the Browse Designs window.
 
-    From Browse Designs, click Create. A blank design opens in the Editor tab. For more information, see How to Create a Topology Design.
+3. Select the design to edit.
 
- 
-To use the editor controls
+### To create a new design
 
-When you open the editor, the following controls are available in the left toolbar:
-	Edit the selected item.
-	Delete selected item.
-	
+1. From Browse Designs, click Create. 
 
-Zoom in.
+2. A blank design opens in the Editor tab. For more information, see [How to Create a Topology Design](#how-to-create-a-topology-design).
 
-NOTE: You can also use the wheel on your mouse to zoom in and out within the Editor.
-	Zoom out.
-	Zoom the design to fit the window.
+### To use the editor controls
 
- 
+1. When you open the editor, the following controls are available in the left toolbar:
+  * Edit the selected item.
+  * Delete selected item.
+  
+2. Zoom in.  **NOTE:** You can also use the wheel on your mouse to zoom in and out within the Editor.
 
-Tasks:
+3. Zoom out.
 
-    How to Lay Out a Topology Design
+4. Zoom the design to fit the window.
 
-    How to Edit Topology Design Nodes and Connectors
 
-	
+**Tasks:**
+
+* How to Lay Out a Topology Design
+
+* How to Edit Topology Design Nodes and Connectors
+
 
 <a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
@@ -395,25 +413,27 @@ Profiles are validated by the topology designer and tracked in the Validation ta
 
 You can create as many profiles as needed. You can create a new profile based on an existing profile.  This can save you time and effort if the profiles have similar configurations. This process copies all the nodes, connectors, and properties of the original profile into the new profile where you can then change the properties.
 
- 
-
 To view profiles and details:
 
-    On the Project tab, select a Current Project.
-    Click Provisioning > Topology Designs to open the Browse Designs window.
-    From Browse Designs, select the design for which you want to view profiles.
-    Click the Profiles tab. A list of existing profiles displays.
-    Select a profile. The profile opens in the Overview tab, showing the Name, Description, Changed Properties and a visual representation of the topology design. NOTE: The linked path at the top of this window allows you to move back as needed.
+1. On the Project tab, select a Current Project.
+    
+2. Click Provisioning > Topology Designs to open the Browse Designs window.
+    
+3. From Browse Designs, select the design for which you want to view profiles.
+   
+4. Click the Profiles tab. A list of existing profiles displays.
+    
+5. Select a profile. The profile opens in the Overview tab, showing the Name, Description, Changed Properties and a visual representation of the topology design. NOTE: The linked path at the top of this window allows you to move back as needed.
 
  
 
-Tasks:
+**Tasks:**
 
-    How to Create a Deployment Profile
+* How to Create a Deployment Profile
 
-    How to Edit Deployment Profile Properties
+* How to Edit Deployment Profile Properties
 
-    How to Delete a Deployment Profile
+* How to Delete a Deployment Profile
 
 	
 
@@ -424,16 +444,6 @@ Tasks:
 The designer tracks topology design revisions on the Revisions tab. Every time you edit or save a topology design, the revisions list is updated. You can revert to an earlier topology design.
 
 To revert to an previous topology design version:
-
-1. On the Project tab, select a Current Project.
-2. Click Provisioning > Topology Designs to open the Browse Designs window.
-3. Select the design you want to revert.
-4. From the Overview tab, click the Revisions tab. A read-only list of design revisions displays with the Revision number, Date, and Author.
-5. Select a revision from the list.
-6. Click Revert to Selected. Click Yes to confirm.
-7. A new version is created (a copy of the selected version) with updated details.
-
-Or:
 
 1. On the Project tab, select a Current Project.
 
@@ -458,24 +468,28 @@ Or:
 **Concepts:**
 
 Validation is a continuing process during design creation, configuration, and editing. 
-Topology Designs provides a validation log where you can view details about all design issues in one place. 
-In addition to this log, you will see red validation flags as you create a design in the Editor and create Profiles. 
+
+Topology Designs provides a validation log where you can view details about all design issues in one place. In addition to this log, you will see red validation flags as you create a design in the Editor and create Profiles. 
+
 The validation process checks that a Profile contains all the required configuration properties, e.g., that Flavor is set for a server group node.
 
 Within the Editor, the following artifacts are validated:
 
 * Document properties
+
 * Node properties
+
 * Connector properties
 
 Rules regarding saving, validation, and publishing:
 
 * You can create and save a design with validation errors.
+
 * You can create and save a profile with errors.
+
 * You cannot save a profile that has errors if the underlying design is published.
 
-As part of the validation process, any new node that is added in the Editor immediately displays with an Unsaved icon () and a 
-list of specific property errors highlighted in the right panel. Within the Validation tab, you can click on the artifact name to be 
+As part of the validation process, any new node that is added in the Editor immediately displays with an Unsaved icon () and a list of specific property errors highlighted in the right panel. Within the Validation tab, you can click on the artifact name to be 
 linked back to the source of the error.
 
 The Validation tab can be accessed at any time during the design process. 

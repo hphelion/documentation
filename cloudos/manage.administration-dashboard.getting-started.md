@@ -54,6 +54,8 @@ Other role-specific tasks:
 * [Getting Started for Project Users](#getting-started-for-project-users)
 
 
+
+
 ## Getting Started for the Admin User
 
 **Concepts:**
@@ -75,6 +77,8 @@ For each task, the link goes to a section in the Tasks by Tabs topic.
 When you are done, tell a cloud administrator to perform [Getting Started for Cloud Administrators](#getting-started-for-cloud-administrators). 
 
 <a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
+
 
 
 ## Getting Started for Cloud Administrators
@@ -100,15 +104,21 @@ including the ability to make resources available to users.
 
 * [How to See an Overview of Usage](/cloudos/manage/administration-dashboard/tasks-by-tab/#how-to-see-an-overview-of-usage)
 
+
 However, some organizations might also use cloud administrators to create profiles and topology designs. See:
 
 * [How to Create a Deployment Profile](/cloudos/manage/administration-dashboard/tasks-by-tab/#how-to-create-a-deployment-profile) 
 
 * [How to Create a Topology Design](/cloudos/manage/administration-dashboard/tasks-by-tab/#how-to-create-a-topology-design)
 
+
 When you are done, tell a cloud architect to perform [Getting Started for Cloud Architects](#getting-started-for-cloud-architects). 
 
 <a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
+
+
+
 
 ## Getting Started for Cloud Architects
 
@@ -158,7 +168,8 @@ and manage project resources that are created by project users. See [Project Use
 
 * [How to Create a Topology Design](/cloudos/manage/administration-dashboard/topology-designs/#how-to-create-a-topology-design)
 
-Some organizations might also use project administrators to create resource pools. See [How to Create a Resource Pool](/cloudos/manage/administration-dashboard/tasks-by-tab/#.
+Some organizations might also use project administrators to create resource pools. 
+See [How to Create a Resource Pool](/cloudos/manage/administration-dashboard/tasks-by-tab/#how-to-create-a-resource-pool).
 
 When you are done, tell your project users that they can start working in the HP Cloud OS Administration Dashboard. 
 See [Getting Started for Project Users](#getting-started-for-project-users).
