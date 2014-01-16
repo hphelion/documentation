@@ -66,7 +66,7 @@ The first step on the Operational Dashboard is to configure the HP Cloud OS Admi
 
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Caution:</b> 
 Any prerequisites you want to configure, must be done before you complete the steps on the Complete Install panel. 
-For details, see the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install-overview">Complete Install Overview</a>. 
+For details, see <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>. 
 After that, the Edit Prerequisite dialogs are read-only. Once the install process is triggered, no changes can be made. 
 If you want to make changes, you need to start over by re-installing the HP Cloud OS Administration node. 
 For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
@@ -591,7 +591,7 @@ The following information provides details about the Connections panel:
 
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Caution:</b> 
 If you plan to customize the connections, you must do that before you complete the steps on the Complete Install panel.  
-For details, see the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install-overview">Complete Install Overview</a>. 
+For details, see <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>. 
 After that, the Connections dialogs are read-only. Once the install process is triggered, no changes can be made. 
 If you want to make changes, you need to start over by re-installing the HP Cloud OS Administration node. 
 For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
@@ -794,7 +794,7 @@ To access: Select the Environment tab > Connections > click **Edit Connection** 
 
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Caution:</b> 
 If you plan to customize the connections, you must do that before you complete the steps on the Complete Install panel.  
-For details, see the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install-overview">Complete Install Overview</a>. 
+For details, see the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>. 
 After that, the Edit Connections dialogs are read-only. Once the install process is triggered, no changes can be made. 
 If you want to make changes, you need to start over by re-installing the HP Cloud OS Administration node. 
 For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
@@ -964,11 +964,11 @@ The following information provides details about the Networks panel:
 
 **Concepts:**
 
-[Networks Panel Overview](#network-panel-overview)
+[Networks Panel Overview](#networks-panel-overview)
 
 **UI Descriptions:**
 
-* [Networks Page](#network-page)
+* [Networks Page](#networks-page)
 
 * [Edit Network Dialog](#edit-network-dialog)
 
