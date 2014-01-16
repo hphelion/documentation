@@ -29,15 +29,15 @@ Your topology designs become the recipes for automating the cloud. The designer 
 layout where connection relationships implicitly define the service fulfillment lifecycle.
 
 HP Cloud OS is the provider for your designs. Available components are determined by the OpenStack version (for example Diablo, Grizzly) you 
-select within HP Cloud OS. As part of creating a design, you add nodes and connectors and set properties in the Editor tab. Use the Validation 
+select within HP Cloud OS. As part of creating a design, you add nodes and connectors and set properties in the <b>Editor</b> tab. Use the <b>Validation</b> 
 tab at any time to view details about design errors.
 
-After creating the design, you can optionally create one or more Profiles based on that design which allows you to override some 
+After creating the design, you can optionally create one or more <b>Profiles</b> based on that design which allows you to override some 
 of the original configuration properties. Profiles create an association to a design document and allow you to set different 
 values such as flavors, machine images, or keypairs.
 
-Click Project > Provisioning > Topology Designs to access the designer. A list of existing designs and their status display in the 
-Browse Designs window.
+Click <b>Project</b> > <b>Provisioning</b> > <b>Topology Designs</b> to access the designer. A list of existing designs and their status display in the 
+<b>Browse Designs</b> window.
 
 Tasks are organized by the following tabs:
 
@@ -87,7 +87,7 @@ Tasks are organized by the following tabs:
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td style="min-width:100px;"> <a href="#topology-designs-overview">Editor</a> </td>
+<td style="min-width:100px;"> <a href="#topology-design-editor">Editor</a> </td>
 <td> A canvas area used to select and arrange nodes, connectors, and properties. Use the Validation tab if you need more 
 details about errors within the Editor.
 </td> 
@@ -122,7 +122,7 @@ details about errors within the Editor.
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td style="min-width:100px;"> <a href="validation">Validation</a> </td>
+<td style="min-width:100px;"> <a href="#validation">Validation</a> </td>
 <td> Provides details about design errors in the Editor and Profiles areas.  The following artifacts are validated:
 <ul>
 <li> Document properties
@@ -143,19 +143,19 @@ details about errors within the Editor.
 
 **Concepts:**
 
-1. On the Project tab, select a Current Project.
+1. On the Project tab, select a <b>Current Project</b>.
 
-2. Click Provisioning > Topology Designs to open the Browse Designs window. The list of Deployment Templates displays the design Name and Publishing status.
+2. Click <b>Provisioning</b> > <b>Topology Designs</b> to open the <b>Browse Designs</b> window. The list of Deployment Templates displays the design Name and Publishing status.
 
 To filter the design list:
 
-* By default, all designs display alphabetically By Name when you open Topology Designs.
+* By default, all designs display alphabetically <b>By Name</b> when you open Topology Designs.
 
 Other options to reorder or filter the design list:
 
-* Click the arrow in the By Name field and select Recently modified.
+* Click the arrow in the <b>By Name</b> field and select <b>Recently modified</b>.
     
-* Click in the Search field () and enter the first few characters of the search string.
+* Click in the Search field (<img src="media/cloudos_icon_magnifying_glass.png" />) and enter the first few characters of the search string.
 
 **Tasks:**
 
@@ -168,11 +168,11 @@ Other options to reorder or filter the design list:
 
 ### How to View Topology Design Details
 
-On the Project tab, select a Current Project.
+On the Project tab, select a <b>Current Project</b>.
 
-Click Provisioning > Topology Designs to open the Browse Designs window.
+Click <b>Provisioning</b> > <b>Topology Designs</b> to open the <b>Browse Designs</b> window.
 
-Select a design from the list of Deployment Templates. See Browse Topology Designs for more information on how to filter the list of designs.
+Select a design from the list of Deployment Templates. See [Browse Topology Designs](#browse-topology-designs) for more information on how to filter the list of designs.
 
 A view-only graphical representation of the design components opens in the right panel of the Overview tab with the following details displayed on the left:
 
@@ -201,16 +201,17 @@ To create a topology design:
 <li value="4">With the <b>General</b> step highlighted on the left, enter the following information:</li>
 </ol>
 			
-<table style="text-align: left; vertical-align: top; min-width:600px;">
+<table style="text-align: left; vertical-align: top; min-width:700px;">
 
-<tr style="background-color: #C8C8C8;">
+<tr style="background-color: #C8C8C8; min-width:700px;">
 <th> Field </th>
 <th> Description </th>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td style="min-width:150px;">Cloud Profile <i>(Required)</i></td>
-<td>Represents the supported OpenStack version and capabilities of the cloud to which you are deploying. Your selection here determines which node types are available during design layout in the <b>Editor </b>and 
+<td>Represents the supported OpenStack version and capabilities of the cloud to which you are deploying. 
+Your selection here determines which node types are available during design layout in the <b>Editor </b>and 
 which Resource Pools are available for selection.</td>
 </tr>
 					
@@ -227,11 +228,12 @@ which Resource Pools are available for selection.</td>
 
 <ol>
 <li value="5">Click <b>Next</b>. A check mark appears in the <b>General</b> step and the <b>Resource Pool &amp; Scope</b> step is highlighted. </li>
-<li value="6">Optionally select a <b>Resource Pool</b>, which is a pool of resources associated with the selected Cloud Profile. Selecting a Resource Pool allows you to set node and connector properties when laying out the design. </li>
+<li value="6">Optionally select a <b>Resource Pool</b>, which is a pool of resources associated with the selected Cloud Profile. 
+Selecting a Resource Pool allows you to set node and connector properties when laying out the design. </li>
 <li value="7">Select the <b>Scope</b>, which is required:</li>
 </ol>
 
-<table style="text-align: left; vertical-align: top; min-width:600px;">
+<table style="text-align: left; vertical-align: top; min-width:700px;">
 
 <tr style="background-color: #C8C8C8;">
 <th> Scope </th>
@@ -240,19 +242,20 @@ which Resource Pools are available for selection.</td>
 
 <tr style="background-color: white; color: black;">
 <td style="min-width:150px;">Private, project</td>
-<td>
-Allows you access while working in this project. This document can only be viewed by the user who created it in the project in which it was created and some admin users.</span>
-</td>
+<td> Allows you access while working in this project. This document can only be viewed by the user who created it in the project in which 
+it was created and some admin users. </td>
 </tr>
 				
 <tr style="background-color: white; color: black;">
 <td style="min-width:150px;">Private, cloud </td>
-<td>Allows you access while working in any project. This document can only be viewed by the user who created it, from any project of which the user is a member, and by some admin users.</td>
+<td> Allows you access while working in any project. This document can only be viewed by the user who created it, 
+from any project of which the user is a member, and by some admin users. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td style="min-width:150px;">Public, project</td>
-<td>Allows you and other project members access. This document can be viewed by members of the project in the project in which it was created and by some admin users.</td>
+<td> Allows you and other project members access. This document can be viewed by members of the project in the project in which 
+it was created and by some admin users. </td>
 </tr>
 				
 <tr style="background-color: white; color: black;">
@@ -270,7 +273,7 @@ Allows you access while working in this project. This document can only be viewe
 <li value="9">Click <b>Save.</b></li>
 </ol>
         
-To add nodes and connectors to the design, see the next section, How to Lay Out a Topology Design.
+To add nodes and connectors to the design, see [How to Lay Out a Topology Design](#how-to-lay-out-a-topology-design).
 
 
 ### How to Import a Topology Design
@@ -279,15 +282,15 @@ The import process imports archives of topology designs and their supported arti
 
 To import a topology design:
 
-1. On the Project tab, select a Current Project.
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
 
-2. Click Provisioning > Topology Designs to open the Browse Designs window.
+2. Click <b>Provisioning</b> > <b>Topology Designs</b> to open the <b>Browse Designs</b> window.
 
-3. From Browse Designs, click the **Import** button.
+3. From Browse Designs, click the <b>Import</b> button.
 
-4. Enter or click () to specify the Archive File (.zip file) that contains the service design you want to import. Archive file names for service designs begin with `SERVICE_DESIGN_`.
+4. Enter or click (<img src="media/cloudos_icon_ellipse.png" />) to specify the Archive File (.zip file) that contains the service design you want to import. Archive file names for service designs begin with `SERVICE_DESIGN_`.
 
-5. Click OK.
+5. Click <b>OK</b>.
 
 
 <a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
@@ -296,22 +299,23 @@ To import a topology design:
 
 **Concepts:**
 
-The Overview tab opens with the selected topology design details on the left and a visual representation of the topology design networking layout on the right.
+The <b>Overview</b> tab opens with the selected topology design details on the left and a visual representation of the topology design 
+networking layout on the right.
 
 To view topology design details:
 
-1. On the Project tab, select a Current Project.
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
 
-2. Click Provisioning > Topology Designs to open the Browse Designs window.
+2. Click <b>Provisioning</b> > <b>Topology Designs</b> to open the <b>Browse Designs</b> window.
 
-3. The design opens in the Overview tab with the following details:
-  * Name: Name of the design.
-  * Last Modified: Date, time, and user who last modified the design.
-  * Cloud Profile: Represents the supported OpenStack version and capabilities of the cloud to which you are deploying.
-  * Resource Pool: Indicates the name of the Resource Pool if one was associated to the design.
-  * Validation Status: Indicates the status of the four validation categories (Document, Nodes, Relations, and Profiles). For more information, see Validation.
-  * Structure Overview: Displays a count of nodes and connections in the topology design.
-  * Topology diagram: A graphical view of the nodes and connectors representing the design.
+3. The design opens in the <b>Overview</b> tab with the following details:
+  * <b>Name</b>: Name of the design.
+  * <b>Last Modified</b>: Date, time, and user who last modified the design.
+  * <b>Cloud Profile</b>: Represents the supported OpenStack version and capabilities of the cloud to which you are deploying.
+  * <b>Resource Pool</b>: Indicates the name of the Resource Pool if one was associated to the design.
+  * <b>Validation Status</b>: Indicates the status of the four validation categories (Document, Nodes, Relations, and Profiles). For more information, see [Validation](#validation).
+  * <b>Structure Overview</b>: Displays a count of nodes and connections in the topology design.
+  * <b>Topology diagram</b>: A graphical view of the nodes and connectors representing the design.
 
 
 **Tasks:**
@@ -330,27 +334,121 @@ To view topology design details:
 
 ### How to Edit Topology Design Properties
 
-TBS...
+All design properties except the Cloud Profile can be edited in both the <b>Overview</b> and <b>Editor</b> tabs.
+
+To edit topology design properties:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+    
+2. Click <b>Provisioning</b> > <b>Topology Designs</b> to open the <b>Browse Designs</b> window.
+
+3. Select the design to edit.
+
+4. From the <b>Overview</b> tab, click <b>Edit</b> to open the Edit Properties dialog box.
+
+5. Edit as needed. See [How to Create a Topology Design](#how-to-create-a-topology-design) for specific field information.
+
+6. When you are done editing, click <b>Finish</b> to return to the <b>Overview</b> tab.
+    
+7. Click <b>Save</b>.
 
 
 ### How to Copy a Topology Design
 
-TBS...
+Using <b>Save As</b> makes a copy of a design and all its components, including categories, topology, and profiles.
+
+To copy a topology design:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Provisioning</b> > <b>Topology Designs</b> to open the <b>Browse Designs</b> window.
+
+3. Select the design to copy. The design opens in the <b>Overview</b> tab.
+
+4. Click <b>Save as...</b>
+
+5. Enter a new <b>Name</b> or keep the default which appends "copy of" to the original design name.
+
+6. Edit the <b>Description</b> as needed.
+
+7. Click <b>Save</b>.
+
 
 ### How to Publish or Unpublish a Topology Design
 
-TBS...
+A saved topology design has a status of <b>Published</b> or <b>Unpublished</b>. Published status indicates the design is fully bound 
+(has a Resource Pool defined), has no validation errors, and can be used to provision. Published designs and their associated profiles 
+can be viewed and launched by selecting <b>Project</b> > <b>Provisioning</b> > <b>Deployment Profiles</b>.
 
+Rules regarding saving, validation, and publishing:
 
-### How to Export a Topology Design
+* You can create and save a design with validation errors.
 
-TBS...
+* You can create and save a profile with errors.
 
+* You cannot save a profile that has errors if the underlying design is published.
+
+Publishing status can be viewed in Browse Designs and can be changed in the <b>Overview</b> or the <b>Editor</b> tabs.
+
+#### Publish a topology design
+
+To publish a topology design:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Provisioning</b> > <b>Topology Designs</b> to open the <b>Browse Designs</b> window.
+
+3. Select the design to publish.
+
+4. From the <b>Overview</b> tab, click <b>Publish</b>. If the design has no validation errors, publish is successful and the button in the lower portion of the window changes to Unpublish.
+
+#### Unpublish a topology design
+	
+To unpublish a topology design:
+
+1. Follow steps 1-3 above.
+    
+2. From the Overview tab, click <b>Unpublish</b>. The Publish button becomes available and within Browse Designs the status is blank.
 
 
 ### How to Delete a Topology Design 
 
-TBS...
+To delete a topology design:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Provisioning</b> > <b>Topology Designs</b> to open the <b>Browse Designs</b> window.
+
+3. Select the design to delete.
+
+4. From the <b>Overview</b> tab, click <b>Delete</b>. You are prompted to confirm deletion.
+
+5. Click <b>Yes</b>. You are returned to Browse Designs where the design is no longer available.
+
+	
+	
+### How to Export a Topology Design
+
+The export process takes all the topology files, including the design in XML format, and creates a content archive (.zip) file. 
+Exporting is used for data backup within the same HP Cloud OS instance. 
+
+#### Configuring a topology design for export
+
+The design must be valid and you must specify a Resource Pool before exporting.
+
+For more information about specifying a Resource Pool, see [How to Create a Topology Design](#how-to-create-a-topology-design).
+
+#### How to Export a Topology Design
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Provisioning</b> > <b>Topology Designs</b> to open the <b>Browse Designs</b> window.
+
+3. Select the design to export.
+
+4. From the <b>Overview</b> tab, click <b>Export</b>. A dialog box opens prompting you to save the archive (.zip) file.
+
+5. Click <b>Save</b>.
 
 
 <a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
@@ -369,36 +467,68 @@ The Editor tab within Topology Designs is where you create and edit a design in 
 
 ### To edit an existing design
 
-1. On the Project tab, select a Current Project.
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
     
-2. Click Provisioning > Topology Designs to open the Browse Designs window.
+2. Click <b>Provisioning</b> > <b>Topology Designs</b> to open the <b>Browse Designs</b> window.
 
 3. Select the design to edit.
 
 ### To create a new design
 
-1. From Browse Designs, click Create. 
+1. From <b>Browse Designs</b>, click <b>Create</b>. 
 
-2. A blank design opens in the Editor tab. For more information, see [How to Create a Topology Design](#how-to-create-a-topology-design).
+2. A blank design opens in the <b>Editor</b> tab. For more information, see [How to Create a Topology Design](#how-to-create-a-topology-design).
 
 ### To use the editor controls
 
-1. When you open the editor, the following controls are available in the left toolbar:
-  * Edit the selected item.
-  * Delete selected item.
-  
-2. Zoom in.  **NOTE:** You can also use the wheel on your mouse to zoom in and out within the Editor.
+When you open the editor, the following controls are available in the left toolbar:
 
-3. Zoom out.
+<table style="text-align: left; vertical-align: top; min-width:700px;">
 
-4. Zoom the design to fit the window.
+<tr min-width:600px;">
+<td style="min-width:100px;"> <img src="media/cloudos_icon_pencil_editdocname.png" /> </td>
+<td> Edit the selected item </td>
+</tr>
+
+<tr min-width:600px;">
+<td style="min-width:100px;"> <img src="media/cloudos_icon_x_black_delete.png" /> </td>
+<td> Delete the selected item </td>
+</tr>
+
+<tr min-width:600px;">
+<td style="min-width:100px;"> <img src="media/cloudos_icon_zoom_in.png" /> </td>
+<td> Zoom in. <br /> <br /> **NOTE:** You can also use the wheel on your mouse to zoom in and out within the Editor. </td>
+</tr>
+
+<tr min-width:600px;">
+<td style="min-width:100px;"> <img src="media/cloudos_icon_zoom_out.png" /> </td>
+<td> Zoom out.  </td>
+</tr>
+
+<tr min-width:600px;">
+<td style="min-width:100px;"> <img src="media/cloudos_icon_fit_screen.png" /> </td>
+<td> Zoom the design to fit the window. </td>
+</tr>
+
+</table>
 
 
 **Tasks:**
 
-* How to Lay Out a Topology Design
+* [How to Lay Out a Topology Design](#how-to-lay-out-a-topology-design)
 
-* How to Edit Topology Design Nodes and Connectors
+* [How to Edit Topology Design Nodes and Connectors](#how-to-edit-topology-design-nodes-and-connectors)
+
+
+### How to Lay Out a Topology Design
+
+TBS...
+
+
+
+### How to Edit Topology Design Nodes and Connectors
+
+TBS...
 
 
 <a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
@@ -407,11 +537,18 @@ The Editor tab within Topology Designs is where you create and edit a design in 
 
 Concepts:
 
-When you create a topology design, the properties you set for the nodes become the default configuration for the design. Within HP Cloud OS, this original configuration displays as the Default Profile in the Provisioning > Deployment Profiles area. Profiles provide a way to override the default configuration by allowing you to set different values for node properties such as flavors, machine images, or keypairs. Profiles create an association to a binding document. Profiles are optional and are not required in order to publish a design. For more information, see How to Publish or Unpublish a Topology Design.
+When you create a topology design, the properties you set for the nodes become the default configuration for the design. 
+Within HP Cloud OS, this original configuration displays as the Default Profile in the Provisioning > Deployment Profiles area. 
+Profiles provide a way to override the default configuration by allowing you to set different values for node properties such as 
+flavors, machine images, or keypairs. Profiles create an association to a binding document. Profiles are optional and are not required 
+in order to publish a design. For more information, see [How to Publish or Unpublish a Topology Design](#how-to-publish-or-unpublish-a-topology-design).
 
-Profiles are validated by the topology designer and tracked in the Validation tab. The validation process checks that a profile contains valid values for the configuration properties that are being overwritten.
+Profiles are validated by the topology designer and tracked in the Validation tab. The validation process checks that a profile contains 
+valid values for the configuration properties that are being overwritten.
 
-You can create as many profiles as needed. You can create a new profile based on an existing profile.  This can save you time and effort if the profiles have similar configurations. This process copies all the nodes, connectors, and properties of the original profile into the new profile where you can then change the properties.
+You can create as many profiles as needed. You can create a new profile based on an existing profile.  
+This can save you time and effort if the profiles have similar configurations. This process copies all the nodes, connectors, and 
+properties of the original profile into the new profile where you can then change the properties.
 
 To view profiles and details:
 
@@ -495,8 +632,6 @@ linked back to the source of the error.
 The Validation tab can be accessed at any time during the design process. 
 
 **Tasks:**
-
-[How to View Validation Errors](#how-to-view-validation-errors)
 
 ### How to View Validation Errors
 
