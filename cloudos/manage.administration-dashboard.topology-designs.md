@@ -581,7 +581,7 @@ The system validates the following rules as you create a design:
 <li> Left-click a tile to add the first node.
 
 <li> Select a topology node type from the list, which is populated according to the Cloud Profile selected during design creation. As you hover over a node, 
-a tool tip displays. Possible node options are shown in this table:
+a tool tip displays. Possible node options are shown in this table:  <br /> <br />
 
 <table style="text-align: left; vertical-align: top; min-width:700px;">
 
@@ -651,14 +651,14 @@ Properties set here become the default configuration for the design.
     
 <li> Node properties are defined in the table below.
 
-<div style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> 
-<b>Notes:</b> 
-<ul>
-<li> An asterisk (*) in the table indicates the field is required.
-<li> Check the <b>Modifiable</b> box to indicate the property can be modified by a user of other HP Cloud provisioning software that is using Topology Designs 
+</ol>
+
+**Note:**
+
+* An asterisk (*) in the table indicates the field is required.
+
+* Check the <b>Modifiable</b> box to indicate the property can be modified by a user of other HP Cloud provisioning software that is using Topology Designs 
 from HP Cloud OS.
-</ul>
-</div>
 
 <table style="text-align: left; vertical-align: top; min-width:700px;">
 
@@ -669,7 +669,7 @@ from HP Cloud OS.
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td style="min-width:100px;" rowspan="2"> External Network </td>
+<td style="min-width:100px;" rowspan="2"> <b>External Network</b> </td>
 <td style="min-width:150px;"> Name * </td> 
 <td> By default, the system proposes a name with a sequential number for each external network segment added to the design, e.g., 
 External Network Segment 1, External Network Segment 2. Replace this name, if needed, to meet your business needs. </td> 
@@ -681,10 +681,10 @@ External Network Segment 1, External Network Segment 2. Replace this name, if ne
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td style="min-width:100px;" rowspan="2"> Load Balancer </td>
+<td style="min-width:100px;" rowspan="2"> <b>Load Balancer</b> </td>
 <td style="min-width:150px;"> Name * </td> 
 <td> Name of the load balancer. </td> 
-</tr>
+</tr>	  
 
 <tr style="background-color: white; color: black;">
 <td style="min-width:150px;"> Service * </td> 
@@ -731,7 +731,7 @@ Replace this name, if needed, to meet your business needs. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td style="min-width:100px;" rowspan="4"> Network Segment </td>
+<td style="min-width:100px;" rowspan="4"> <b>Network Segment</b> </td>
 <td style="min-width:150px;"> Name * </td> 
 <td> By default, the system proposes a name with a sequential number for each network segment added to the design, e.g., Network Segment 1, Network Segment 2. 
 Replace this name, if needed, to meet your business needs. </td> 
@@ -800,13 +800,13 @@ Replace this name, if needed, to meet your business needs. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td style="min-width:100px;" rowspan="2"> Router </td>
+<td style="min-width:100px;" rowspan="2"> <b>Router</b> </td>
 <td style="min-width:150px;"> Name * </td> 
 <td> By default, the system proposes a name with a sequential number for each router added to the design, e.g., Router 1, Router 2. 
 Replace this name, if needed, to meet your business needs. </td> 
 </tr>
 
-<tr>
+<tr style="background-color: white; color: black;">
 <td> Router * </td>
 <td> Select:
 <ul>
@@ -823,12 +823,12 @@ Replace this name, if needed, to meet your business needs. </td>
 Replace this name, if needed, to meet your business needs. </td> 
 </tr>
 
-<tr>
+<tr style="background-color: white; color: black;">
 <td> Instance Name Prefix * </td>
 <td> A prefix to the name of the host you are creating. </td>
 </tr>
 
-<tr>
+<tr style="background-color: white; color: black;">
 <td> Number of Instances </td>
 <td> Controls the minimum and maximum number of servers that can be used in the server group.
 <br />  <br /> 
@@ -836,13 +836,13 @@ To create a single server Server Group, specify 1 for both values. For a Server 
 the user is allowed to add additional servers in the future up to the maximum. </td>
 </tr>
 
-<tr>
+<tr style="background-color: white; color: black;">
 <td> Image </td>
 <td> <b>Image</b> is only available if a Resource Pool was selected during design creation. 
 To add a Resource Pool to the design, click the <b>Edit Design Properties</b> button. </td>
 </tr>
 
-<tr>
+<tr style="background-color: white; color: black;">
 <td> Machine Flavor * </td>
 <td>  	
 A flavor describes the machine configuration size (amount of memory, number of CPUs, and ephemeral disk space available) used to create new VMs.
@@ -851,7 +851,7 @@ Machine Flavor is only available if a Resource Pool was selected during design c
 </td>
 </tr>
 
-<tr>
+<tr style="background-color: white; color: black;">
 <td> Key Name </td>
 <td> Select the keypair to be used for this instance. Keypairs are the SSH credentials required to login to a server. 
 To be able to use a keypair for accessing an instance, the user must have the private key.
@@ -867,14 +867,14 @@ Key Name is only available if a Resource Pool was selected during design creatio
 Replace this name, if needed, to meet your business needs. </td> 
 </tr>
 
-<tr>
+<tr style="background-color: white; color: black;">
 <td> Volume * </td>
 <td> Identifies the disc storage volume allocated to the group.  
 <br /> <br />
 Options: 
 <ul>
-<li> Use Existing Volume - enter the Volume Reference and indicate if it is Modifiable.
-<li> Create a volume - you are prompted to enter the following fields: 
+<li> <b>Use Existing Volume</b> - enter the Volume Reference and indicate if it is Modifiable.
+<li> <b>Create a volume</b> - you are prompted to enter the following fields: 
 </ul> 
 
 <!-- inner table -->
@@ -892,17 +892,17 @@ Options:
 </tr>
 
 <tr>
-<td> <b>Instance Name Prefix * </b> <br /> <br /> (Modifiable)</td>
+<td> <b>Instance Name Prefix * </b> <br />(Modifiable)</td>
 <td> A prefix to the name of the volume group you are creating. </td>
 </tr>
 
 <tr>
-<td> <b>Volume Size (GB) </b> <br /> <br /> (Modifiable)</td>
+<td> <b>Volume Size (GB) </b> <br />(Modifiable)</td>
 <td> Enter a number representing the size of the volume in GB.  </td>
 </tr>
 
 <tr>
-<td> <b>Volume Type </b> <br /> <br /> (Modifiable)</td>
+<td> <b>Volume Type </b> <br />(Modifiable)</td>
 <td> Available values from HP Cloud OS that identify the storage backend driver capabilities such as SATA or SSD retrieved from the Eve API. 
 Eve is an HP Cloud OS infrastructure topology design provisioner for OpenStack-based IaaS.  </td>
 </tr>
@@ -944,6 +944,8 @@ If you select <b>Create a Security Group</b>, select <b>Yes</b> if you want an u
 </tr>
 
 </table> 
+
+<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 
 ### How to Edit Topology Design Nodes and Connectors

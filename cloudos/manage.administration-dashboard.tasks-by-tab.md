@@ -35,7 +35,7 @@ These descriptions are coming soon in the format of other HP Cloud OS topics. Fo
 
 * [Project Tab Tasks](#project-tab-tasks)
 
-* [Administration Dashboard Settings](administration-dashboard-settings)
+* [Administration Dashboard Settings](#administration-dashboard-settings)
 
   
 ## Cloud Tab Tasks
@@ -313,7 +313,7 @@ TBS...
 
 
 
-
+<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 ## Region Tab Tasks
 
@@ -383,6 +383,11 @@ TBS...
 
 TBS...
 
+
+
+
+<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
 ## Project Tab Tasks
 
 TBS...
@@ -449,13 +454,150 @@ TBS...
   
 ### Updates and Extensions
 
-TBS...
+**Concepts:**
+
+The Updates and Extensions window provides a convenient place for users who have permission to access the HP Cloud OS Distribution Network (CODN). 
+Use the Updates and Extensions window to access catalog updates and content. Updates include software versions and security patches. 
+Content includes material such as images and topology templates.
+
+You can update and upgrade the Administration Dashboard while your system continues to run. CODN contains all the products and services 
+HP offers to help maintain your cloud.
+
+To learn whether you have permission to use CODN, see [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role).
+
+You must configure the HP Cloud OS Administration Dashboard to access an HP Cloud OS Distribution Network account before you can use the 
+Updates and Extensions window. See the Tasks sections, below.
+
+The Updates and Extensions window provides the standard Administration Dashboard filter capability, and you can click on the column headings 
+to sort by that item.
+
+To see updates:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Updates and Extensions</b> > <b>Updates and Extensions</b> to open the Updates and Extensions window.
+
+3. You see information about the available updates and extensions:
+
+ * <b>Name</b>: of the update.
+ * <b>Version</b>: of the update. Information for each version is listed on a separate line.
+ * <b>Size</b>: of the update.
+ * <b>Provider</b>: which organization created and is responsible for the update.
+ * <b>Type</b>: the kind of image that downloads.
+ * <b>Status</b>: the state of the update in the catalog. This state is independent of your local system. For example, you may successfully download an update, but the update later becomes suspended in the catalog. You can continue to publish and use the update on your local system.
+ * <b>Actions</b>: tasks you can perform on the update.
+
+To see details of an update:
+
+* Click a <b>Name</b> to open an Overview window.
+
+  Information includes the update name, version, targets where it is installed, and manifest. (In future releases, the manifest will define the contents of the file.)
+
+**Tasks:**
+
+* [How to Configure an Updates and Extensions Account](#how-to-configure-an-updates-and-extensions-account)
+
+* [How to Download an Update or Extension](#how-to-download-an-update-or-extension)
+
+* [How to Publish an Update or Extension](#how-to-publish-an-update-or-extension)
+
+
+
+#### How to Configure an Updates and Extensions Account
+
+If you want to use CODN, you must configure the Administration Dashboard to access it. If you do not have access, the Administration Dashboard displays 
+a warning when you open the Updates and Extensions window.
+
+To configure:
+
+1. Create a CODN account.
+
+2. Configure the Administration Dashboard to access that account.
+
+To create an account:
+
+1. On the Project tab, select a <b>Current Project</b>.
+
+2. Click <b>Updates and Extensions</b> > <b>Updates and Extensions</b> to open the Updates and Extensions window. You see a warning that your credentials are not configured to access the catalog.
+
+3. Click <b>Configure</b> to open the Configure window. 
+  * If you already have a CODN account, you can skip to Step 5.
+  * If you need to create an HP catalog account, continue.
+
+4. Click <b>Sign up now</b> to open the CODN Create Account window, where you:
+  * Enter your <b>Name</b>, <b>Email</b>, and <b>Password</b>.
+  * Agree to the terms.
+  * Click <b>Submit</b>. You can close the CODN window.
+
+5. On the Administration Dashboard Configure window:
+  * Enter your CODN account email address for your <b>User Name</b>.
+  * Enter your CODN account password for your <b>Password</b>.
+  * Click <b>OK</b>.
+
+6. If you configure successfully, you can use the Updates and Extensions window.
+
+**Related Topics:**
+
+* [How to Download an Update or Extension](#how-to-download-an-update-or-extension)
+
+* [How to Publish an Update or Extension](#how-to-publish-an-update-or-extension)
+
+ 
+##### About Account Cookies
+
+When you configure an account, the Administration Dashboard stores a cookie on your computer. The Administration Dashboard uses the cookie the next 
+time you access the Updates and Extensions window, so you need to enter username and password information only one time.
+
+If your browser blocks cookies, you cannot configure an account.
+
+If you clear cookies on your computer, you must configure your account again. You do not have access to CODN until you configure. However, if you downloaded 
+updates and they exist in your cache, you still see them on your Updates and Extensions window. 
+
+#### How to Download an Update or Extension
+
+Download an update to copy it from the catalog to your local system where you can use it. If an update is not available for download, you do not see Download. 
+For example, you cannot download an update that was previously downloaded and still exists in cache.
+
+To download an update:
+
+1. Click <b>Updates and Extensions</b> > <b>Updates and Extensions</b> to open the Updates and Extensions window.
+
+2. Find the update or extension that you want to download, and click <b>Download</b> to open the Download confirmation box.
+
+3. Confirm the download name and version, and click <b>Download</b>.
+
+  The download is scheduled and runs in background. The Administration Dashboard allows 24 hours for a download to complete. If the download runs for more than 24 hours, the download terminates with an error message. You can reschedule the download for a time when fewer jobs are running, so it executes more quickly.
+
+4. <i>Optional</i>: You can check the download progress action to understand the details of the download status.
+
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Note:</b> Downloads require large amounts of 
+disk space. Successful downloads require that your local system contains adequate disk space. For information about what to do when you run out of space or 
+experience other download problems, see the [Troubleshooting](/cloudos/manage/troubleshooting) topic. </p>
+
+####How to Publish an Update or Extension
+
+You can publish an update after you download it. If you have not yet downloaded the update, you do not see Publish.
+
+A download can consist of one or more pieces that must be distributed to multiple HP Cloud OS repositories. Publish routes the download contents to 
+their appropriate repositories.
+
+To publish an update:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Updates and Extensions</b> > <b>Updates and Extensions</b> to open the Updates and Extensions window.
+
+3. Click <b>Publish</b> to open the Targets dialog box.
+  * Enter <b>Scope</b> to define who can use the update. The Administration Dashboard offers scope choices, depending upon the update type.
+  * Click <b>Publish</b>.
+
+4. After a successful publish, you see the update in the appropriate section of the Administration Dashboard. For example, if the update is a Glance image, 
+you can see it on <b>Infrastructure</b> > <b>Images and Snapshots</b>.
+
+
 
   
 <a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-
-
-
 
 ## Administration Dashboard Settings
 
