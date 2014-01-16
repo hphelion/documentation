@@ -502,7 +502,7 @@ When you open the editor, the following controls are available in the left toolb
 
 <tr style="background-color: white; color: black;">
 <td> <img src="media/cloudos_icon_zoom_in.png" /> </td>
-<td> Zoom in. <br /> <br /> **NOTE:** You can also use the wheel on your mouse to zoom in and out within the Editor. </td>
+<td> Zoom in. <br /> <br /> <b>NOTE:</b> You can also use the wheel on your mouse to zoom in and out within the Editor. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -598,7 +598,7 @@ In addition to using the contextual menu outlined below, you can delete using th
 
 ## Deployment Profiles
 
-Concepts:
+**Concepts:**
 
 When you create a topology design, the properties you set for the nodes become the default configuration for the design. 
 Within HP Cloud OS, this original configuration displays as the Default Profile in the Provisioning > Deployment Profiles area. 
@@ -653,7 +653,7 @@ To create a deployment profile:
 
 <li> Click <b>Create</b>.
 
-<li> Enter the following information:
+<li> Enter the following information: <br /> <br />
 
 <table style="text-align: left; vertical-align: top; min-width: 700px;">
 
@@ -681,7 +681,34 @@ profile with the existing profile properties. If this option is not set, you wil
 
 <tr style="background-color: white; color: black;">
 <td> Scope </td>
-<td> TBS... </td>
+<td> 
+
+<!-- inner table --> 
+<table style="text-align: left; vertical-align: top; border: 1px gray solid; background-color: white;">
+<tr>
+<td>Private, project</td>
+<td>Allows you access while working in this project. This document can only be viewed by the user who created it in the project in which it was 
+created and some admin users.</td>
+</tr>
+<tr>
+<td>Private, cloud</td>
+<td>Allows you access while working in any project. This document can only be viewed by the user who created it, from any project of which the 
+user is a member, and by some admin users.</td>
+</tr>
+<tr>
+<td>Public, project</td>
+<td>Allows you and other project members access. This document can be viewed by members of the project in the project in which it was created 
+and by some admin users.</td>
+</tr>
+<td>Public, cloud</td>
+<td>Only Cloud Admin users have the necessary privileges to create documents that are scoped as Public, cloud.
+<br />  <br />
+Allows access for all users. This document can be viewed by anyone in the cloud in any project.</td>
+</tr>
+</table>
+<!-- end inner table -->
+
+</td>
 </tr>
 
 </table> 
