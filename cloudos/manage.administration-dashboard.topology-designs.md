@@ -481,32 +481,37 @@ The Editor tab within Topology Designs is where you create and edit a design in 
 
 ### To use the editor controls
 
-When you open the editor, the following controls are available in the left toolbar:
+When you open the editor, the following controls are available in the left toolbar.
 
-<table style="text-align: left; vertical-align: top; min-width:700px;">
+<table style="text-align: left; vertical-align: top; min-width:600px;">
 
-<tr min-width:600px;">
+<tr style="background-color: #C8C8C8;">
+<th> Control Icon </th>
+<th> Purpose </th>
+</tr>
+
+<tr style="background-color: white; color: black;">
 <td style="min-width:100px;"> <img src="media/cloudos_icon_pencil_editdocname.png" /> </td>
 <td> Edit the selected item </td>
 </tr>
 
-<tr min-width:600px;">
-<td style="min-width:100px;"> <img src="media/cloudos_icon_x_black_delete.png" /> </td>
+<tr style="background-color: white; color: black;">
+<td> <img src="media/cloudos_icon_x_black_delete.png" /> </td>
 <td> Delete the selected item </td>
 </tr>
 
-<tr min-width:600px;">
-<td style="min-width:100px;"> <img src="media/cloudos_icon_zoom_in.png" /> </td>
+<tr style="background-color: white; color: black;">
+<td> <img src="media/cloudos_icon_zoom_in.png" /> </td>
 <td> Zoom in. <br /> <br /> **NOTE:** You can also use the wheel on your mouse to zoom in and out within the Editor. </td>
 </tr>
 
-<tr min-width:600px;">
-<td style="min-width:100px;"> <img src="media/cloudos_icon_zoom_out.png" /> </td>
+<tr style="background-color: white; color: black;">
+<td> <img src="media/cloudos_icon_zoom_out.png" /> </td>
 <td> Zoom out.  </td>
 </tr>
 
-<tr min-width:600px;">
-<td style="min-width:100px;"> <img src="media/cloudos_icon_fit_screen.png" /> </td>
+<tr style="background-color: white; color: black;">
+<td> <img src="media/cloudos_icon_fit_screen.png" /> </td>
 <td> Zoom the design to fit the window. </td>
 </tr>
 
@@ -528,7 +533,65 @@ TBS...
 
 ### How to Edit Topology Design Nodes and Connectors
 
-TBS...
+After a design is created and saved, you can modify the properties of the components and change the layout of the nodes and connectors within the Editor tab. 
+A selected component is indicated with blue highlighting and associated properties open in the right panel for editing.
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Provisioning</b> > <b>Topology Designs</b> to open the <b>Browse Designs</b> window.
+
+3. Select the design to edit.
+
+4. Click on the <b>Editor</b> tab. The design displays on the canvas.
+
+#### To add nodes and connectors
+
+To add nodes and connectors, see [How to Lay Out a Topology Design](#how-to-lay-out-a-topology-design).
+
+####To rearrange the layout
+
+You can drag and drop nodes to change the arrangement of the design. Connectors follow, and it is acceptable to have connectors overlapping nodes.
+
+#### To edit node properties
+
+1. Within the <b>Editor</b>, click the node to edit. The properties display in the right panel.
+
+2. Edit the fields as necessary.
+
+3. Click <b>Save</b>.
+
+#### To edit connector properties
+
+The only connector properties that are editable are:
+
+* Between a Volume Group and a Server Group
+
+* Between a Server Group and a Network Segment
+
+* Between a Load Balancer and an External Network
+
+* Between a Load Balancer and a Network Segment
+
+To edit connector properties:
+
+1. Within the <b>Editor</b>, click the connector to edit. Properties display in the right panel.
+
+2. Edit the fields as necessary.
+
+3. Click <b>Save</b>.
+
+#### To delete nodes and connections
+
+If you delete a node that has a connection, both the node and the connection are deleted. You can also delete a connector itself without deleting any nodes. 
+Deletion cannot be undone.
+
+In addition to using the contextual menu outlined below, you can delete using the Delete option in the toolbox or just pressing <b>Delete</b> on the keyboard.
+
+1. Select the item on the canvas to be deleted.
+   
+2. Right-click and select <b>Delete Item</b>. They system prompts you to confirm the deletion.
+
+3. Click <b>Yes</b> to confirm. The item is removed from the layout.
 
 
 <a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
@@ -562,16 +625,130 @@ To view profiles and details:
     
 5. Select a profile. The profile opens in the Overview tab, showing the Name, Description, Changed Properties and a visual representation of the topology design. NOTE: The linked path at the top of this window allows you to move back as needed.
 
- 
 
 **Tasks:**
 
-* How to Create a Deployment Profile
+* [How to Create a Deployment Profile](#how-to-create-a-deployment-profile)
 
-* How to Edit Deployment Profile Properties
+* [How to Edit Deployment Profile Properties](#how-to-edit-deployment-profile-properties)
 
-* How to Delete a Deployment Profile
+* [How to Delete a Deployment Profile](#how-to-delete-a-deployment-profile)
 
+
+### How to Create a Deployment Profile
+
+For more information about Profiles, see [Deployment Profiles(#deployment-profiles).
+
+To create a deployment profile:
+
+<ol>
+
+<li> On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+<li> Click <b>Provisioning</b> > <b>Topology Designs</b> to open the <b>Browse Designs</b> window.
+
+<li> Select the design for which you want to create a profile.
+
+<li> Click the <b>Profiles</b> tab.
+
+<li> Click <b>Create</b>.
+
+<li> Enter the following information:
+
+<table style="text-align: left; vertical-align: top; min-width: 700px;">
+
+<tr style="background-color: #C8C8C8;">
+<th>Field</th>
+<th>Description</th>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td style="min-width:150px;"> Based on </td>
+<td> Select an existing profile on which to base this new profile. This can save you some configuration time and effort as this option populates the new 
+profile with the existing profile properties. If this option is not set, you will be creating a profile based on the original design configuration.
+</td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Name (required) </td>
+<td> Enter a unique, descriptive name for the profile, with or without spaces. </td>
+</tr>	
+
+<tr style="background-color: white; color: black;">
+<td> Resource pool (required) </td>
+<td> Select an existing resource pool for the profile. </td>
+</tr>	
+
+<tr style="background-color: white; color: black;">
+<td> Scope </td>
+<td> TBS... </td>
+</tr>
+
+</table> 
+
+<li> Click <b>OK</b>. The profile opens in the Editor tab, with the title bar at the top of the window displaying the path to the <b>Profile Detail</b> 
+of the current design.
+
+<li> Within the Editor, select a node or connector to reconfigure. The properties panel opens on the right, allowing you to update.
+
+<li> Update fields as required for the new configuration profile.
+
+<li> Continue selecting nodes or connectors and updating properties as needed.
+
+<li> Click <b>Save</b>. To return to the <b>Profiles</b> tab, click the design name in the title bar path.
+
+</ol> 
+
+
+### How to Edit Deployment Profile Properties
+
+For more information about Profiles, see [Deployment Profiles](#deployment-profiles).
+
+To edit deployment profile properties:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Provisioning</b> > <b>Topology Designs</b> to open the <b>Browse Designs</b> window.
+
+3. Select the design with the profile to edit. From the <b>Overview</b> tab, click the <b>Profiles</b> tab.
+
+4. Click on the profile you want to edit. The profile opens in the Overview tab, showing the topology design diagram on the right and details in the left panel.
+
+5. Click <b>Edit</b>.
+
+6. All fields are editable. See [How to Create a Deployment Profile](#how-to-create-a-deployment-profile) for field descriptions.
+  * <b>Name</b>
+  * <b>Description</b>
+  * <b>Resource Pool</b>
+  * <b>Scope</b>
+
+7. Click <b>OK</b>.
+
+8. Click <b>Save</b>.
+
+Select a destination in the top navigation area to move back as desired.
+
+
+###  How to Delete a Deployment Profile
+
+For more information about deployment profiles, see [Deployment Profiles](#deployment-profiles).
+
+The ability to delete a profile is determined by your Scope. For example, only a Cloud Administrator can create, edit, or delete profiles that are 
+scoped Public, Cloud.
+
+To delete a deployment profile:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Provisioning</b> > <b>Topology Designs</b> to open the <b>Browse Designs</b> window.
+
+3. Select the design with the profile to delete. From the <b>Overview</b> tab, click the <b>Profiles</b> tab. 
+
+4. Click on the profile you want to delete. The profile opens in the <b>Overview</b> tab, showing the topology design diagram on the right and details in the left panel.
+    
+5. Click <b>Delete</b>. A confirmation dialog box displays.
+
+6. Click <b>Yes</b>. The profile is deleted.
 	
 
 <a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
