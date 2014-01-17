@@ -226,14 +226,14 @@ To create a project:
 </li>
 
 <li> <i>Optional</i>: On the <b>Project Members</b> tab, add project members from the list of available users. Click the plus sign (<b>+</b>) to add a project member. Click the minus sign (<b>-</b>) to remove a member.
-<br /> <p><b>Note:</b> You do not see cloud administrators under Available Users, because they are automatically added to projects.</p>
+<br /> <br /> <p><b>Note:</b> You do not see cloud administrators under Available Users, because they are automatically added to projects.</p>
 </li>
 
 <li> <i>Optional</i>: On the <b>Integrations</b> tab, select <b>Create Default Resource Pool</b> if you need to create a resource pool for your compute regions. 
 You select this option if your HP Cloud OS Operational Dashboard administrator used the advanced method to create compute regions. The advanced option 
 does not automatically create resource pools. In most cases, you can leave the default (not selected) for Create Default Resource Pool. Operational Dashboard 
 administrators usually create compute regions that automatically contain a resource pool. 
-<br /> <p> <b>Note</b>: You can create a resource pool later. See [How to Create a Resource Pool](#how-to-create-a-resource-pool).</p>
+<br /> <br/> <p> <b>Note</b>: You can create a resource pool later. See <a href="#how-to-create-a-resource-pool">How to Create a Resource Pool</a>.</p>
 </li>
 
 <li> <i>Optional</i>: On the <b>Compute Limits</b> tab, select a <b>Region</b> for the project. Accept or edit the <b>Absolute Computer Limits</b>. 
@@ -328,23 +328,30 @@ To learn whether you have permission to create a user on the Cloud tab, see [Adm
 
 To create a user:
 
-1. Click <b>Cloud</b> > <b>Users</b> to open the Users window.
+<ol>
 
-2. Click <b>Create User</b> to open the Create User dialog box.
+<li> Click <b>Cloud</b> > <b>Users</b> to open the Users window. </li> 
 
-3. On the <b>User</b> tab of the dialog box, enter the <b>User Name</b> and <b>Password</b>.
+<li> Click <b>Create User</b> to open the Create User dialog box.  </li> 
 
-   <i>Optional</i>: Enter an <b>Email</b> address for the user.
+<li> On the <b>User</b> tab of the dialog box, enter the <b>User Name</b> and <b>Password</b>.
+<br /> <br /> 
+<p> <i>Optional</i>: Enter an <b>Email</b> address for the user. </p>
+</li>
 
-4. Click the <b>Project</b> tab to assign the user to a project.
+<li> Click the <b>Project</b> tab to assign the user to a project.
+<ul>
+<li> Select a <b>Primary Project</b> for the user.
+<li> Select a project role from the list. The user will be assigned that role on the project.
+</ul> 
+</li> 
 
-   * Select a <b>Primary Project</b> for the user.
+<li> <i>Optional</i>: Click the <b>Cloud</b> tab if you want to assign the user cloud-specific roles. 
+See <a href="/cloudos/manage/administration-dashboard/tasks-by-role/">Administration Dashboard Tasks by Roles</a>.  </li> 
 
-   * Select a project role from the list. The user will be assigned that role on the project.
+<li> Click <b>Create User</b>.  </li> 
 
-5. <i>Optional</i>: Click the <b>Cloud</b> tab if you want to assign the user cloud-specific roles. See [Administration Dashboard Tasks by Roles](/cloudos/manage/administration-dashboard/tasks-by-role/).
-
-6. Click <b>Create User</b>.
+</ol> 
 
 
 #### How to Edit a User
@@ -541,25 +548,36 @@ The Admin user or cloud administrators can create an external network on the <b>
 
 To create an external network:
 
-1. Click <b>Region</b> > <b>Networks</b> to open the Networks window.
+<ol> 
 
-2. Click <b>Create Network</b> to open the Create Network dialog box where you:
+<li> Click <b>Region</b> > <b>Networks</b> to open the Networks window. </li> 
 
-   * Enter a <b>Name</b> for the network.
+<li> Click <b>Create Network</b> to open the Create Network dialog box where you:
 
-   * Select a <b>Project</b> to associate with the network.
+<ul>
 
-   * <b>Keep Admin State</b> selected to create a network that is active and operational.
+<li> Enter a <b>Name</b> for the network. </li> 
 
-   * Select <b>Shared</b> to associate the network with all projects in the cloud.
+<li> Select a <b>Project</b> to associate with the network. </li> 
 
-   * Select <b>External Network</b> to create a network that is operational outside the cloud.
+<li> <b>Keep Admin State</b> selected to create a network that is active and operational. </li> 
 
-     **Note:** If you select <b>Admin State</b> and <b>Shared</b>, and do not select <b>External Network</b>, the combination of settings is invalid. You can create the network, but it will fail during provisioning.
+<li> Select <b>Shared</b> to associate the network with all projects in the cloud. </li> 
 
-   * Click <b>Create Network</b>.
+<li> Select <b>External Network</b> to create a network that is operational outside the cloud.
+<br /> <br /> 
+<p> <b>Note</b>: If you select <b>Admin State</b> and <b>Shared</b>, and do not select <b>External Network</b>, the combination of settings is invalid. 
+You can create the network, but it will fail during provisioning.</p>
+</ul>
 
-3. If the network is created successfully, the Administration Dashboard displays the network information on the <b>Project</b> > <b>Infrastructure</b> > <b>Networks</b> window.
+</li> 
+
+<li> Click <b>Create Network</b>. </li>    
+
+<li> If the network is created successfully, the Administration Dashboard displays the network information on the <b>Project</b> > <b>Infrastructure</b> > <b>Networks</b> window. 
+</li> 
+
+</ol>
 
 **Related Topic:**
 
@@ -572,25 +590,38 @@ The Admin user and cloud administrators can create a private network on the Regi
 
 To create a private network:
 
-1. Click <b>Region</b> > <b>Networks</b> to open the Networks window.
+<ol>
 
-2. Click <b>Create Networks</b> and to open the Create Network dialog box where you:
+<li> Click <b>Region</b> > <b>Networks</b> to open the Networks window. </li> 
 
-   * Enter a <b>Name</b> for the network.
+<li> Click <b>Create Networks</b> and to open the Create Network dialog box where you:
 
-   * Select a <b>Project</b> to associate with the network.
+<ul>
 
-   * Keep <b>Admin State</b> selected to create a network that is active and operational.
+<li> Enter a <b>Name</b> for the network. </li> 
 
-   * Do <b><i>not</i></b> select Shared, because you are creating a private network. You do not want to share the network with other projects.
+<li> Select a <b>Project</b> to associate with the network. </li> 
 
-   * Do <b><i>not</i></b> select External Network. External networks are always shared.
+<li> Keep <b>Admin State</b> selected to create a network that is active and operational. </li> 
 
-     **Note:** If you select <b>Admin State</b> and <b>Shared</b>, and do not select <b>External Network</b>, the combination of settings is invalid. You can create the network, but it will fail during provisioning.
+<li> Do <b><i>not</i></b> select Shared, because you are creating a private network. You do not want to share the network with other projects.  </li> 
 
-   * Click <b>Create Network</b>.
+<li> Do <b><i>not</i></b> select External Network. External networks are always shared.
+<br /> <br /> 
+<p> <b>Note:</b> If you select <b>Admin State</b> and <b>Shared</b>, and do not select <b>External Network</b>, the combination of 
+settings is invalid. You can create the network, but it will fail during provisioning. </p> 
+</li> 
+
+<li> Click <b>Create Network</b>. </li> 
+
+</ul>
+
+</li> 
     
-3. If the network is created successfully, the Administration Dashboard displays the network information on the Project > Infrastructure > Networks window.
+<li> If the network is created successfully, the Administration Dashboard displays the network information on the Project > Infrastructure > Networks window.
+</li> 
+
+</ol> 
 
 **Related Topics:**
 
@@ -682,11 +713,8 @@ To see a list of running topologies:
   Information shown includes topology name, action, state, task, and last update.
 
 3. <i>Optional</i>: To see details of a running topology, click the Topology Name, to open a window that offers the following tabs:
-
   * <b>Overview</b>
-  
   * <b>Job</b>
-  
   * <b>Content</b>
 
 **Tasks:**
@@ -743,9 +771,7 @@ To see a list of deployment profiles:
   Information shown includes deployment name, version, based on, scope, and associated project.
   
 3. <i>Optional</i>: To see details of a deployment profile, click the <b>Deployment Name</b> to open a window that offers the following tabs:
-
   * <b>Overview</b>, where you see detailed deployment profile information, including versions.
-  
   * <b>Contents</b>, where you see deployment profile contents.
 
 **Tasks:**
@@ -1152,48 +1178,56 @@ See <a href="#how-to-create-an-external-network">How to Create an External Netwo
 
 To create a private network:
 
-1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+<ol>
 
-2. Click <b>Infrastructure</b> > <b>Networks</b> to open the Networks window.
+<li> On the <b>Project</b> tab, select a <b>Current Project</b>.  </li> 
 
-3. Click <b>Create Network</b> to open the Create Network dialog box
+<li> Click <b>Infrastructure</b> > <b>Networks</b> to open the Networks window.  </li> 
 
-4. On the <b>Network</b> tab of the dialog box:
+<li> Click <b>Create Network</b> to open the Create Network dialog box.  </li> 
 
-  a. Enter a <b>Network Name</b> for your network.
+<li> On the <b>Network</b> tab of the dialog box:
 
-  b. Make sure <b>Admin State</b> is checked. This is the administrative state of the network. If you select Admin State, the network forwards packets. If you do not select Admin State, the network does not forward packets.
+<ul>
+<li>Enter a <b>Network Name</b> for your network. </li> 
+<li>Make sure <b>Admin State</b> is checked. This is the administrative state of the network. If you select Admin State, the network forwards packets. 
+If you do not select Admin State, the network does not forward packets. </li> 
+</ul>
+</li>
 
-5. On the <b>Subnet</b> tab of the dialog box:
+<li>On the <b>Subnet</b> tab of the dialog box:
+<ul>
+<li> To create a network with no associated subnet, unselect <b>Create Subnet</b> and click <b>Create</b>.  </li> 
+<li> If you want to create a network with an associated subnet, keep <b>Create Subnet</b> selected and continue through the following steps:
 
-   * To create a network with no associated subnet, unselect <b>Create Subnet</b> and click <b>Create</b>.
+<ul>
+<li>Enter a <b>Subnet Name</b>.  </li> 
+<li>Enter <b>Network Address</b>.  </li> 
+<li>Select an <b>IP Version</b>.  </li> 
+<li><i>Optional</i>: Enter a <b>Gateway IP</b>. This is the IP address that servers on the subnet will use if the address they want to send to is not on 
+the subnet. It is a gateway to other networks. In a common use case, the gateway address would be that of a router; however, it could also be of another 
+server that is providing routing services.</li>
+<li> Select <b>Disable Gateway</b> to make the subnet private. Packets cannot leave the subnet, except through other devices on the network.  </li> 
+</ul>  
+</li> 
 
-   * If you want to create a network with an associated subnet, keep <b>Create Subnet</b> selected and continue through the following steps:
+</ul> 
+</li>
 
-     * Enter a <b>Subnet Name</b>.
+<li> On the Subnet Detail tab of the dialog box:
+<ul>
+<li> Leave <b>Enable DHCP</b> selected to dynamically allocate IP addresses. This is the appropriate selection for a private network.  </li> 
+<li> Enter an <b>Allocation Pools</b> IP address list for the subnet, using one line in the entry box for each address.  </li> 
+<li> Enter a <b>DNS Name Servers</b> IP address list for the subnet, using one line in the entry box for each address.  </li> 
+<li> Enter a <b>Host Routes</b> IP address list to announce additional routes to the hosts. Use one line in the entry box for each address.  </li> 
+</ul> 
+</li> 
 
-     * Enter <b>Network Address</b>.
+<li> Click <b>Create</b>.  </li> 
 
-     * Select an <b>IP Version</b>.
+<li> Verify that the network you just created is included in the Networks list.  </li> 
 
-     * <i>Optional</i>: Enter a <b>Gateway IP</b>. This is the IP address that servers on the subnet will use if the address they want to send to is not on the subnet. It is a gateway to other networks. In a common use case, the gateway address would be that of a router; however, it could also be of another server that is providing routing services.
-
-	 * Select <b>Disable Gateway</b> to make the subnet private. Packets cannot leave the subnet, except through other devices on the network.
-
-6. On the Subnet Detail tab of the dialog box:
-
-   * Leave <b>Enable DHCP</b> selected to dynamically allocate IP addresses. This is the appropriate selection for a private network.
-
-   * Enter an <b>Allocation Pools</b> IP address list for the subnet, using one line in the entry box for each address.
-
-   * Enter a <b>DNS Name Servers</b> IP address list for the subnet, using one line in the entry box for each address.
-
-   * Enter a <b>Host Routes</b> IP address list to announce additional routes to the hosts. Use one line in the entry box for each address.
-
-7. Click <b>Create</b>.
-
-8. Verify that the network you just created is included in the Networks list.
-
+</ol> 
 
 
 #### How to Edit a Network
@@ -1556,26 +1590,18 @@ To create an account:
 2. Click <b>Updates and Extensions</b> > <b>Updates and Extensions</b> to open the Updates and Extensions window. You see a warning that your credentials are not configured to access the catalog.
 
 3. Click <b>Configure</b> to open the Configure window. 
-
-  * If you already have a CODN account, you can skip to Step 5.
-
-  * If you need to create an HP catalog account, continue.
+ * If you already have a CODN account, you can skip to Step 5.
+ * If you need to create an HP catalog account, continue.
 
 4. Click <b>Sign up now</b> to open the CODN Create Account window, where you:
-
-  * Enter your <b>Name</b>, <b>Email</b>, and <b>Password</b>.
-
-  * Agree to the terms.
-
-  * Click <b>Submit</b>. You can close the CODN window.
+ * Enter your <b>Name</b>, <b>Email</b>, and <b>Password</b>.
+ * Agree to the terms.
+ * Click <b>Submit</b>. You can close the CODN window.
 
 5. On the Administration Dashboard Configure window:
-
-  * Enter your CODN account email address for your <b>User Name</b>.
-
-  * Enter your CODN account password for your <b>Password</b>.
-
-  * Click <b>OK</b>.
+ * Enter your CODN account email address for your <b>User Name</b>.
+ * Enter your CODN account password for your <b>Password</b>.
+ * Click <b>OK</b>.
 
 6. If you configure successfully, you can use the Updates and Extensions window.
 
@@ -1631,15 +1657,10 @@ To publish an update:
 2. Click <b>Updates and Extensions</b> > <b>Updates and Extensions</b> to open the Updates and Extensions window.
 
 3. Click <b>Publish</b> to open the Targets dialog box.
+ * Enter <b>Scope</b> to define who can use the update. The Administration Dashboard offers scope choices, depending upon the update type.
+ * Click <b>Publish</b>.
 
-  * Enter <b>Scope</b> to define who can use the update. The Administration Dashboard offers scope choices, depending upon the update type.
-
-  * Click <b>Publish</b>.
-
-4. After a successful publish, you see the update in the appropriate section of the Administration Dashboard. For example, if the update is a Glance image, 
-you can see it on <b>Infrastructure</b> > <b>Images and Snapshots</b>.
-
-
+4. After a successful publish, you see the update in the appropriate section of the Administration Dashboard. For example, if the update is a Glance image, you can see it on <b>Infrastructure</b> > <b>Images and Snapshots</b>.
 
   
 <a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
@@ -1668,13 +1689,9 @@ To change Administration Dashboard display settings:
 2. Click <b>User</b>.
 
 3. In the User Settings window, keep or change the following settings:
-
  * <b>Language</b>: English (en).
-
  * <b>Timezone</b>: UTC (Coordinated Universal Time). To change the default, select a timezone from the drop-down list.
-
  * <b>Items Per Page</b>: This number represents how many line items display on one page. To change the default, enter a different number.
-
  * Click <b>Save</b>.
 
 4. Wait for the success message.
@@ -1688,13 +1705,9 @@ To change your Administration Dashboard password:
 2. Click <b>Password</b>.
 
 3. In the Change Password window:
-
  * <b>Current password</b>: Enter your current password.
-
  * <b>New password</b>: Enter the word that you want for your new password.
-
  * <b>Confirm new password</b>: Enter your new password again to confirm your entry.
-
  * Click <b>Change</b>.
 
 ### About the HP Cloud OS Administration Dashboard  
