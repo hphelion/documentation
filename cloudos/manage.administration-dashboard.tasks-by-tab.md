@@ -215,8 +215,11 @@ To create a project:
 2. Click <b>Create Project</b> to open the Create Project dialog box.
 
 3. On the <b>Project Info</b> tab, enter:
+
   * <b>Name</b>: required.
+
   * <b>Description</b>: optional.
+
   * <b>Enabled</b>: By default, Enabled is selected, which means project content is available to assigned users.
 
 4. Optional: On the <b>Project Members</b> tab, add project members from the list of available users. Click the plus sign (<b>+</b>) to add a project member. Click the minus sign (<b>-</b>) to remove a member.
@@ -330,7 +333,9 @@ To create a user:
   <i>Optional</i>: Enter an <b>Email</b> address for the user.
 
 4. Click the <b>Project</b> tab to assign the user to a project.
+
   * Select a <b>Primary Project</b> for the user.
+
   * Select a project role from the list. The user will be assigned that role on the project.
 
 5. <i>Optional</i>: Click the <b>Cloud</b> tab if you want to assign the user cloud-specific roles. See [Administration Dashboard Tasks by Roles](/cloudos/manage/administration-dashboard/tasks-by-role/).
@@ -535,12 +540,19 @@ To create an external network:
 1. Click <b>Region</b> > <b>Networks</b> to open the Networks window.
 
 2. Click <b>Create Network</b> to open the Create Network dialog box where you:
+
   * Enter a <b>Name</b> for the network.
+
   * Select a <b>Project</b> to associate with the network.
+
   * <b>Keep Admin State</b> selected to create a network that is active and operational.
+
   * Select <b>Shared</b> to associate the network with all projects in the cloud.
+
   * Select <b>External Network</b> to create a network that is operational outside the cloud.
+
     **Note:** If you select <b>Admin State</b> and <b>Shared</b>, and do not select <b>External Network</b>, the combination of settings is invalid. You can create the network, but it will fail during provisioning.
+
   * Click <b>Create Network</b>.
 
 3. If the network is created successfully, the Administration Dashboard displays the network information on the <b>Project</b> > <b>Infrastructure</b> > <b>Networks</b> window.
@@ -559,12 +571,19 @@ To create a private network:
 1. Click <b>Region</b> > <b>Networks</b> to open the Networks window.
 
 2. Click <b>Create Networks</b> and to open the Create Network dialog box where you:
+
   * Enter a <b>Name</b> for the network.
+
   * Select a <b>Project</b> to associate with the network.
+
   * Keep <b>Admin State</b> selected to create a network that is active and operational.
+
   * Do <b><i>not</i></b> select Shared, because you are creating a private network. You do not want to share the network with other projects.
+
   * Do <b><i>not</i></b> select External Network. External networks are always shared.
+
     **Note:** If you select <b>Admin State</b> and <b>Shared</b>, and do not select <b>External Network</b>, the combination of settings is invalid. You can create the network, but it will fail during provisioning.
+
   * Click <b>Create Network</b>.
     
 3. If the network is created successfully, the Administration Dashboard displays the network information on the Project > Infrastructure > Networks window.
@@ -1335,7 +1354,7 @@ To delete one or more security groups:
 
 4. Confirm your selection in the warning dialog box, and click <b>Delete Security Groups</b>.
 
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Note:</b> You cannot delete the default Security Group.
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Note:</b> You cannot delete the default Security Group. </p>
 
 
 #### How to Add or Delete a Security Group Rule
@@ -1425,8 +1444,11 @@ You might have previously created a keypair that you want to use. To import a ke
 3. Click <b>Import Keypair</b>.
 
 4. On the Import Keypair dialog, enter:
+
   * <b>Keypair Name</b>: Free form text that does not include spaces, for example testonlykeypair.
+
   * <b>Public Key</b>: The public key portion.
+
   * Click <b>Import Keypair</b>.
 
  
@@ -1482,11 +1504,17 @@ To see updates:
 3. You see information about the available updates and extensions:
 
  * <b>Name</b>: of the update.
+
  * <b>Version</b>: of the update. Information for each version is listed on a separate line.
+
  * <b>Size</b>: of the update.
+
  * <b>Provider</b>: which organization created and is responsible for the update.
+
  * <b>Type</b>: the kind of image that downloads.
+
  * <b>Status</b>: the state of the update in the catalog. This state is independent of your local system. For example, you may successfully download an update, but the update later becomes suspended in the catalog. You can continue to publish and use the update on your local system.
+
  * <b>Actions</b>: tasks you can perform on the update.
 
 To see details of an update:
@@ -1523,17 +1551,25 @@ To create an account:
 2. Click <b>Updates and Extensions</b> > <b>Updates and Extensions</b> to open the Updates and Extensions window. You see a warning that your credentials are not configured to access the catalog.
 
 3. Click <b>Configure</b> to open the Configure window. 
+
   * If you already have a CODN account, you can skip to Step 5.
+
   * If you need to create an HP catalog account, continue.
 
 4. Click <b>Sign up now</b> to open the CODN Create Account window, where you:
+
   * Enter your <b>Name</b>, <b>Email</b>, and <b>Password</b>.
+
   * Agree to the terms.
+
   * Click <b>Submit</b>. You can close the CODN window.
 
 5. On the Administration Dashboard Configure window:
+
   * Enter your CODN account email address for your <b>User Name</b>.
+
   * Enter your CODN account password for your <b>Password</b>.
+
   * Click <b>OK</b>.
 
 6. If you configure successfully, you can use the Updates and Extensions window.
@@ -1590,7 +1626,9 @@ To publish an update:
 2. Click <b>Updates and Extensions</b> > <b>Updates and Extensions</b> to open the Updates and Extensions window.
 
 3. Click <b>Publish</b> to open the Targets dialog box.
+
   * Enter <b>Scope</b> to define who can use the update. The Administration Dashboard offers scope choices, depending upon the update type.
+
   * Click <b>Publish</b>.
 
 4. After a successful publish, you see the update in the appropriate section of the Administration Dashboard. For example, if the update is a Glance image, 
@@ -1625,9 +1663,13 @@ To change Administration Dashboard display settings:
 2. Click <b>User</b>.
 
 3. In the User Settings window, keep or change the following settings:
+
  * <b>Language</b>: English (en).
+
  * <b>Timezone</b>: UTC (Coordinated Universal Time). To change the default, select a timezone from the drop-down list.
+
  * <b>Items Per Page</b>: This number represents how many line items display on one page. To change the default, enter a different number.
+
  * Click <b>Save</b>.
 
 4. Wait for the success message.
@@ -1641,9 +1683,13 @@ To change your Administration Dashboard password:
 2. Click <b>Password</b>.
 
 3. In the Change Password window:
+
  * <b>Current password</b>: Enter your current password.
+
  * <b>New password</b>: Enter the word that you want for your new password.
+
  * <b>Confirm new password</b>: Enter your new password again to confirm your entry.
+
  * Click <b>Change</b>.
 
 ### About the HP Cloud OS Administration Dashboard  
