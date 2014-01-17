@@ -26,8 +26,9 @@ PageRefresh();
 
 Dashboard users see the tabs that they need to perform their roles' tasks.
 
-These descriptions are coming soon in the format of other HP Cloud OS topics. For now, please see 
-<a href="http://docs.hpcloud.com/cloudos/administration-dashboard/index.htm">this copy on the website</a>. 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:580px;"> <b>Note:</b> Some descriptions are coming 
+soon in the format of other HP Cloud OS topics. For any sections with an "Available soon" indicator, please see 
+<a href="http://docs.hpcloud.com/cloudos/administration-dashboard/index.htm">this copy on the website</a>. </p>
 
 * [Cloud Tab Tasks](#cloud-tab-tasks)
 
