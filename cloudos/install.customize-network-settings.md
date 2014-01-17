@@ -41,7 +41,7 @@ After that, the network settings in the HP Cloud OS Operational Dashboard are re
 ## Introduction
 
 Based on the network infrastructure suggested in the "Plan the Infrastructure for a Cloud" section of 
-[Before You Install](/cloudos/before-you-install), you must customize the network settings. Here are some of the
+[Before You Install](/cloudos/install/before-you-install), you must customize the network settings. Here are some of the
 criteria to be considered while making changes to the default settings:
 
 * The default settings, "Dual", assume you have a separate physical network for each interface. 

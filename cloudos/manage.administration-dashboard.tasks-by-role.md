@@ -42,28 +42,29 @@ the HP Cloud OS Administration Dashboard Help provides guidance for best practic
 
 * [Project User Tasks](#project-user-tasks)
 
-These descriptions are coming soon in the format of other HP Cloud OS topics. For now, please see 
-<a href="http://docs.hpcloud.com/cloudos/administration-dashboard/index.htm">this copy on the website</a>. 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Note:</b> These descriptions are coming 
+soon in the format of other HP Cloud OS topics. For now, please see 
+<a href="http://docs.hpcloud.com/cloudos/administration-dashboard/index.htm">this copy on the website</a>. </p>
 
 ## Admin User Tasks
 
-TBS...
+Available soon...
 
 ## Cloud Administrator Tasks
 
-TBS...
+Available soon...
 
 ## Cloud Architect Tasks
 
-TBS...
+Available soon...
 
 ## Project Administrator Tasks
 
-TBS...
+Available soon...
 
 ## Project User Tasks
 
-TBS...
+Available soon...
 
 
 <a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
