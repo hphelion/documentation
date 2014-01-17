@@ -1305,11 +1305,82 @@ the group. Within a security group, you can add, edit, and delete rules to speci
 
 #### How to Create or Delete a Security Group
 
-Available soon...
+Security groups are one way to provide a measure of network isolation between different VMs because they limit the ports into which network traffic can enter the group. Within a security group, you can add, edit, and delete rules to specify communications to other ports.
+
+To create a security group:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Access and Security</b> > <b>Access and Security</b> > <b>Security Groups</b> tab.
+
+3. Click <b>Create Security Group</b>.
+
+4. On the <b>Create Security Group</b> dialog, enter a <b>Name</b> and <b>Description</b>.
+
+5. Click <b>Create Security Group</b>.
+
+6. Wait for the success message.
+
+7. Verify that the new security group is included in the Security Groups list.
+
+To delete one or more security groups:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Access and Security</b> > <b>Access and Security</b> > <b>Security Groups</b> tab.
+
+3. Find the security group that you want to delete, and click <b>More</b> > <b>Delete Security Group</b>.
+
+  <i>Optional</i>: To delete multiple security groups, select the security groups and click <b>Delete Security Groups</b>.
+
+4. Confirm your selection in the warning dialog box, and click <b>Delete Security Groups</b>.
+
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Note:</b> You cannot delete the default Security Group.
+
 
 #### How to Add or Delete a Security Group Rule
 
-Available soon...
+Within a security group, you can add, edit, and delete rules to specify communications to other ports.
+
+To create a security group rules:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Access and Security</b> > <b>Access and Security</b> > <b>Security Groups</b> tab.
+
+3. Select the group to edit, and click <b>Edit Rules</b>.
+
+4. In the <b>Security Group Rules</b> view, click <b>Add Rule</b>.
+
+5. In the Add Rule window, enter the following information:
+
+  a. <b>Rule</b>: Select from the drop-down list.
+
+  b. <b>Direction</b>: Select Ingress or Egress.
+
+  c. <b>Open Port</b>:
+
+     Select <b>Port</b> to open a single port. Then enter <b>Port</b>.
+
+     Select <b>Port Range</b> if you want to enter a starting and ending port. Then enter <b>From Port</b> (the source port, such as 80) and <b>To Port</b> (the port where VMs inside the security group receive traffic, such as 80).
+
+     <b>Remote</b>: Specify the source of traffic this rule allows. Select one of the following.
+
+     <b>CIDR</b>: To specify a range (a block) of IP addresses. The block defines how many addresses to create. Then enter <b>CIDR</b>.
+
+     <b>Security Group</b>: The source group will allow any other instance in this security group access to any other instance. Then select a <b>Security Group</b> and <b>Ether Type</b>.
+
+6. Click <b>Add</b>.
+
+7. Verify that the new rule is included in the Security Group Rules list.
+
+To delete security group rules:
+
+1. In the <b>Security Group Rules</b> list, find the rule you want to delete, and click <b>Delete Rule</b>.
+
+2. In the <b>Confirm Delete Rule</b> dialog, verify the name of the rule, and then click <b>Delete Rule</b>.
+
+3. Verify that the new rule is excluded from in the Security Group Rules list.
 
   
 ### How to Import, Create, or Delete a Keypair
