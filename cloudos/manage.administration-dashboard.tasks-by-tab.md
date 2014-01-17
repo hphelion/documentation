@@ -367,7 +367,7 @@ The Images window shows all non-snapshot images with the following formats:
 <table style="text-align: left; vertical-align: top; min-width:700px;">
 
 <tr style="background-color: white; color: black;">
-<td colspan="2"> <b>AMI (Amazon Machine Image)</b> — Not valid unless it is associated with a kernel image (AKI) and a RAMdisk Image (ARI). </td>
+<td colspan="2"> <b>AMI (Amazon Machine Image)</b> &mdash; Not valid unless it is associated with a kernel image (AKI) and a RAMdisk Image (ARI). </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -709,7 +709,44 @@ Available soon...
   
 ### Deployment Profiles
 
-Available soon...
+**Concepts:**
+
+To see a list of deployment profiles:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Provisioning</b> > <b>Deployment Profiles</b> to open the Deployments window.
+
+  Information shown includes deployment name, version, based on, scope, and associated project.
+  
+3. <i>Optional</i>: To see details of a deployment profile, click the <b>Deployment Name</b> to open a window that offers the following tabs:
+
+  * <b>Overview</b>, where you see detailed deployment profile information, including versions.
+  
+  * <b>Contents</b>, where you see deployment profile contents.
+
+**Tasks:**
+
+* [How to Launch a Deployment Profile](#how-to-launch-a-deployment-profile)
+
+
+
+#### How to Launch a Deployment Profile
+
+To launch a deployment profile:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Provisioning</b> > <b>Deployment Profiles</b> to open the Deployment Profiles window.
+
+3. Find the deployment that you want to launch. Click <b>Launch</b> to open the Launch dialog box where you:
+
+  a. Accept or modify the Infrastructure Name.
+
+  b. Click <b>Launch</b>.
+
+4. If the launch is successful, you create a running topology. A deployment profile can be launched multiple times to create multiple running topologies. See [Running Topologies](#running-topologies).
+
   
 ### Resource Pools
 
@@ -757,65 +794,66 @@ Depending upon how your cloud was created, your cloud might automatically contai
 
 To create a resource pool:
 
-1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+<ol>
 
-2. Click <b>Provisioning</b> > <b>Resource Pools</b> to open the Resource Pools window. If resource pools have been created, you see them listed on the window.
+<li> On the <b>Project</b> tab, select a <b>Current Project</b>. </li> 
 
-3. Click <b>Create Resource Pool</b> to open the Create Resource Pool dialog box.
+<li> Click <b>Provisioning</b> > <b>Resource Pools</b> to open the Resource Pools window. If resource pools have been created, you see them listed on the window. </li> 
 
-4. Select a <b>Cloud Type</b> to create a resource pool when you are using local (on premise services) or HP Cloud services.
+<li> Click <b>Create Resource Pool</b> to open the Create Resource Pool dialog box. </li> 
 
-  * <b>Custom</b>: All provider details are required.
-  
-  * <b>HP Cloud OS - OpenStack (Grizzly)</b>: The dashboard provides values for the HP Cloud OS Administration Dashboard environment. Provider details are not required.
+<li> Select a <b>Cloud Type</b> to create a resource pool when you are using local (on premise services) or HP Cloud services. 
 
-  * <b>HP Cloud - OpenStack (Diablo)</b>: The dashboard provides values for the HP Cloud Services environment. You must enter <b>Provider Details</b>, which are required.
+<ul>
+<li> <b>Custom</b>: All provider details are required.
+<li> <b>HP Cloud OS - OpenStack (Grizzly)</b>: The dashboard provides values for the HP Cloud OS Administration Dashboard environment. Provider details are not required.
+<li> <b>HP Cloud - OpenStack (Diablo)</b>: The dashboard provides values for the HP Cloud Services environment. You must enter <b>Provider Details</b>, which are required.
+<li> <b>Custom - OpenStack (Grizzly)</b>: Provides maximum flexibility when you are creating a resource pool. <b>Details</b> and <b>Provider Details</b> are required.
+</ul>
+</li> 
 
-  * <b>Custom - OpenStack (Grizzly)</b>: Provides maximum flexibility when you are creating a resource pool. <b>Details</b> and <b>Provider Details</b> are required.
+<li> Select a Compute Region to create a resource pool when you are using local (on premise) services or HP Cloud services. If you do not select a Compute Region, you must enter information in the remaining fields. </li> 
 
-5. Select a Compute Region to create a resource pool when you are using local (on premise) services or HP Cloud services. If you do not select a Compute Region, you must enter information in the remaining fields.
+<li> In the <b>Details</b> section:
+<ul>
+<li> Enter a <b>Name</b>.
+<li> Select a <b>Scope</b>:
+<p> <b>Private, cloud</b>: Allows you access while working in any project. This resource pool can only be viewed by the user who created it, from any project of which the user is a member, and by cloud administrators. </p>
+<p> <b>Private, project</b>: Allows you access while working in the current project. This resource pool can only be viewed by the user who created it in the project in which it was created, and by cloud administrators. </p>
+<p> <b>Public, cloud</b>: Allows access for all users. This resource pool can be viewed by anyone in the cloud, in any project. </p>
+<p> <b>Public, project</b>: Allows you and other project members access. This resource pool can be viewed by members of the project in the project in which it was created, and by cloud administrators. </p>
+</ul>
+</li>
 
-6. In the <b>Details</b> section:
+<li> Select a <b>Cloud Profile</b> to represent the current supported OpenStack version and capabilities of the cloud to which you are deploying.
+<p> HP Cloud OS Grizzly </p>
+<p> HP Cloud Service </p>
+<p> <b>Note:</b> The dashboard automatically enters Type, Version, Region ID and Provider URL based upon the cloud type and compute region you selected. </p>
+</li> 
 
-  a. Enter a <b>Name</b>.
-  
-  b. Select a <b>Scope</b>:
-  
-     <b>Private, cloud</b>: Allows you access while working in any project. This resource pool can only be viewed by the user who created it, from any project of which the user is a member, and by cloud administrators.
+<li> <i>Optional</i>: In the <b>Provider Details</b> section, enter a Project ID, User Domain Name, Project Domain Name, User Name, and Password. Enter the password again in <b>Confirm Password</b> to validate.
+<ul>
+<li> If you are using a local (on premise service), such as HP Cloud OS, you do not need an account on that service to create and edit resource pools. </li> 
+<li> If you are using a remote service, such as HP Cloud or Rackspace, you must have an account on that cloud provider's system to create and edit resource pools.  </li> 
+<li> If you create a resource pool that requires credentials, the Administration Dashboard validates them when you create a resource pool, instead of when you first use the resource pool.  </li> 
+</ul>
+</li> 
 
-     <b>Private, project</b>: Allows you access while working in the current project. This resource pool can only be viewed by the user who created it in the project in which it was created, and by cloud administrators.
+<li> Click <b>Create Resource Pool</b>. </li> 
 
-     <b>Public, cloud</b>: Allows access for all users. This resource pool can be viewed by anyone in the cloud, in any project.
-
-     <b>Public, project</b>: Allows you and other project members access. This resource pool can be viewed by members of the project in the project in which it was created, and by cloud administrators.
-
-  c. Select a <b>Cloud Profile</b> to represent the current supported OpenStack version and capabilities of the cloud to which you are deploying.
-
-     HP Cloud OS Grizzly
-
-     HP Cloud Service
-
-     **Note:** The dashboard automatically enters Type, Version, Region ID and Provider URL based upon the cloud type and compute region you selected.
-
-7. <i>Optional</i>: In the <b>Provider Details</b> section, enter a Project ID, User Domain Name, Project Domain Name, User Name, and Password. Enter the password again in <b>Confirm Password</b> to validate.
-
-  a. If you are using a local (on premise service), such as HP Cloud OS, you do not need an account on that service to create and edit resource pools.
-
-  b. If you are using a remote service, such as HP Cloud or Rackspace, you must have an account on that cloud provider's system to create and edit resource pools.
-
-  c. If you create a resource pool that requires credentials, the Administration Dashboard validates them when you create a resource pool, instead of when you first use the resource pool.
-
-8. Click <b>Create Resource Pool</b>.
-
+</ol> 
 
 #### How to Edit a Resource Pool
 
+Available soon... 
 
 #### How to Add, Edit, or Delete a Resource Pool Service
 
+Available soon... 
 
 #### How to Delete a Resource Pool
 
+Available soon... 
   
 ### Instances
 
@@ -832,8 +870,11 @@ To view a list of instances:
   Information shown includes instance name, image name, IP address, size, keypair, status, task, power state, and uptime.
 
 3. <i>Optional</i>: To see instance details, click an Instance Name to open a window that offers the following tabs:
+
   * <b>Overview</b>, where you see instance details and specifications.
+
   * <b>Log</b>, which is the system log from the VM. Use this log for debugging and troubleshooting. You can view the full instance log or specify the number of lines of the log file to view.
+
   * <b>Console</b>, where you can remotely log directly in to the VM.
 
 **Tasks:**
@@ -986,7 +1027,7 @@ When you launch a VM, the launch is based on an image. This Images view lists on
 <table style="text-align: left; vertical-align: top; min-width:700px;">
 
 <tr style="background-color: white; color: black;">
-<td colspan="2"> <b>AMI (Amazon Machine Image)</b> — Not valid unless it is associated with a kernel image (AKI) and a RAMdisk Image (ARI). </td>
+<td colspan="2"> <b>AMI (Amazon Machine Image)</b> &mdash; Not valid unless it is associated with a kernel image (AKI) and a RAMdisk Image (ARI). </td>
 </tr>
 
 <tr style="background-color: white; color: black;">

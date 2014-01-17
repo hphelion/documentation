@@ -196,7 +196,7 @@ Project users' main goal when using the dashboard is to provision topologies.
 
 * [How to Create a Topology Design](/cloudos/manage/administration-dashboard/topology-designs/#how-to-create-a-topology-design)
 
-* [How to Launch a Deployment Profile](/cloudos/manage/administration-dashboard/tasks-by-tab/#how-to-launch-a-deployment-profile
+* [How to Launch a Deployment Profile](/cloudos/manage/administration-dashboard/tasks-by-tab/#how-to-launch-a-deployment-profile)
 
 * [How to Create or Delete a Security Group](/cloudos/manage/administration-dashboard/tasks-by-tab/#how-to-create-or-delete-a-security-group) 
 

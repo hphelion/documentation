@@ -41,7 +41,7 @@ Click <b>Project</b> > <b>Provisioning</b> > <b>Topology Designs</b> to access t
 
 Tasks are organized by the following tabs:
 
-<table style="text-align: left; vertical-align: top; min-width:600px;">
+<table style="text-align: left; vertical-align: top; min-width:700px;">
 
 <tr style="background-color: #C8C8C8;">
 <th> Window </th>
@@ -483,7 +483,7 @@ The Editor tab within Topology Designs is where you create and edit a design in 
 
 When you open the editor, the following controls are available in the left toolbar.
 
-<table style="text-align: left; vertical-align: top; min-width:600px;">
+<table style="text-align: left; vertical-align: top; min-width:700px;">
 
 <tr style="background-color: #C8C8C8;">
 <th> Control Icon </th>
@@ -671,7 +671,7 @@ from HP Cloud OS.
 <tr style="background-color: white; color: black;">
 <td style="min-width:100px;" rowspan="2"> <b>External Network</b> </td>
 <td style="min-width:150px;"> Name * </td> 
-<td> By default, the system proposes a name with a sequential number for each external network segment added to the design, e.g., 
+<td style="min-width:440px;"> By default, the system proposes a name with a sequential number for each external network segment added to the design, e.g., 
 External Network Segment 1, External Network Segment 2. Replace this name, if needed, to meet your business needs. </td> 
 </tr>
 
