@@ -46,7 +46,7 @@ The Cloud tab provides a convenient place for users who have permission to acces
 
 For example, on Cloud > Projects, you can see a list of all projects in the cloud. You can edit, create, or delete projects on the Cloud > Projects window.
 
-To learn whether you can perform tasks on the Cloud tab, refer to the [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role) topic.
+To learn whether you can perform tasks on the Cloud tab, refer to the [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/) topic.
 
 **Tasks:**
 
@@ -68,13 +68,13 @@ To learn whether you can perform tasks on the Cloud tab, refer to the [Administr
 
 The Services window provides a convenient place for users who have permission to see a read-only list of services that are registered in the cloud.
 
-To learn whether you have permission, see your role under [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role).
+To learn whether you have permission, see your role under [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
 
 To see cloud services:
 
 <ol>
 
-<li> Click <b>Cloud</b> > <b>Services</b>. The following cloud services display.
+<li> Click <b>Cloud</b> > <b>Services</b>. The following cloud services display. <br />  <br /> 
 	
 <table style="text-align: left; vertical-align: top; min-width:700px;">
 
@@ -155,15 +155,15 @@ For information about how to use the documentation application, see the [Develop
 
 The Domains window provides a convenient place for users who have permission to see a list of domains in the cloud. (Currently, the cloud contains one domain.)
 
-To learn whether you have permission, see [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role).
+To learn whether you have permission, see [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
 
 To view all domains in the cloud:
 
-1. Click Cloud > Domains.
+1. Click <b>Cloud</b> > <b>Domains</b>.
 
   Information shown includes domain name and description.
 
-2. Optional: To see details of a domain, click the Domain Name.
+2. Optional: To see details of a domain, click the <b>Domain Name</b>.
 
   Information shown includes domain name, ID, description, whether the domain is enabled, and a link to the domain.
 
@@ -172,7 +172,7 @@ To view all domains in the cloud:
 **Concepts:**
 
 The Project window provides a convenient place for users who have permission to see a list of all projects in the cloud and to work with those projects. 
-To learn whether you have permission, see [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role).
+To learn whether you have permission, see [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
 
 Projects are groupings that allow designated users to view the same set of content. Projects protect topology designs and profiles, and realized 
 resources (such as VMs, volumes, and others) from being visible to all users.
@@ -204,7 +204,7 @@ To see a list of all projects:
 
 #### How to Create a Project
 
-To learn whether you have permission to create a project on the Cloud tab, see [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role).
+To learn whether you have permission to create a project on the Cloud tab, see [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
 
 When you create a project, you need only one required entry - <b>Name</b>. You can keep default settings for integrations and limits, and add users later.
 
@@ -241,23 +241,49 @@ This sets limits on how many system resources (such as CPU cores, floating IP, a
 	
 #### How to See a Project's Usage
 
-TBS...
+Available soon...
 
 #### How to Add or Remove a Project User
 
-TBS...
+Available soon...
 
 #### How to Change a Project's Compute or Storage Limits
 
-TBS...
+You can change your default compute and storage limits to more closely reflect your capacity. For example, if your compute region is hosted on a very large system, you can offer users more than the default capacity. 
+If your compute region is hosted on a VM, you can restrict capacity.
+
+To learn whether you have permission to change a project's limits, see [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
+
+To change a project's compute limits:
+
+1. Click <b>Cloud</b> > <b>Projects</b> to open the Projects window.
+
+2. Find the project where you want to change the compute limits, and click <b>More</b> > <b>Modify Compute Limits</b> to open the Edit Project dialog box.
+
+3. On the <b>Compute Limits</b> tab of the dialog box, select a <b>Region</b>. Compute limits are defined on a region-by-region basis.
+
+4. Keep or modify the existing <b>Absolute Compute Limits</b>. Enter integer values that are -1 (to set unlimited capacity) or greater.
+
+5. Click Save.
+
+To change a project's storage limits:
+
+1. Click <b>Cloud</b> > <b>Projects</b> to open the Projects window.
+
+2. Find the project where you want to change the storage limits, and click <b>More</b> > <b>Modify Storage Limits</b> to open the Edit Project dialog box.
+
+3. On the <b>Storage Limits</b> tab of the dialog box, keep or modify the existing <b>Absolute Storage Limits</b>.
+
+4. Click <b>Save</b>.
+
 
 #### How to Edit a Project Name or Description
 
-TBS...
+Available soon...
 
 #### How to Delete or Restore a Project
 
-TBS...
+Available soon...
 
 
 ### How to Access All Users
@@ -265,7 +291,7 @@ TBS...
 **Concepts:**
 
 The Users window provides a convenient place for users who have permission to see a list of all users in the cloud and to work with those users. 
-To learn whether you have permission, read about your role under [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role).
+To learn whether you have permission, read about your role under [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
 
 Users include both people and services (such as Nova). When you create a person user, you must add that user to a project and assign a project role. 
 Later, you can add the user to additional projects and roles.
@@ -282,34 +308,127 @@ To see a list of users:
 
 **Tasks:**
 
-* How to Create a User
+* [How to Create a User](#how-to-create-a-user)
 
-* How to Edit a User
+* [How to Edit a User](#how-to-edit-a-user)
 
-* How to Delete, Disable, or Enable a User
+* [How to Delete, Disable, or Enable a User](#how-to-delete-disable-or-enable-a-user)
+
 
 #### How to Create a User
 
-TBS...
+To learn whether you have permission to create a user on the Cloud tab, see the [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/) topic.
+
+To create a user:
+
+1. Click <b>Cloud</b> > <b>Users</b> to open the Users window.
+
+2. Click <b>Create User</b> to open the Create User dialog box.
+
+3. On the <b>User</b> tab of the dialog box, enter the <b>User Name</b> and <b>Password</b>.
+
+  <i>Optional</i>: Enter an <b>Email</b> address for the user.
+
+4. Click the <b>Project</b> tab to assign the user to a project.
+  a. Select a <b>Primary Project</b> for the user.
+  b. Select a project role from the list. The user will be assigned that role on the project.
+
+5. <i>Optional</i>: Click the <b>Cloud</b> tab if you want to assign the user cloud-specific roles. See [Administration Dashboard Tasks by Roles](/cloudos/manage/administration-dashboard/tasks-by-role/).
+
+6. Click Create User.
+
 
 #### How to Edit a User
 
-TBS...
+Available soon...
 
 #### How to Delete, Disable, or Enable a User
 
-TBS...
+Available soon...
 
 
 
 ### How to Access All Roles
 
-TBS...
+Available soon...
 
 
 ### How to Access All Images
 
-TBS...
+**Concepts:**
+
+The Images window provides a convenient place for users who have permission to see a list of all images in the cloud and to work with those images. 
+To learn whether you have permission, see [Administration Dashboard Tasks by Roles](/cloudos/manage/administration-dashboard/tasks-by-role/).
+
+If you create a Public image, project users can access the image and use it to launch a VM. Only Public images are visible to all users.
+
+The Images window shows all non-snapshot images with the following formats:
+
+<table style="text-align: left; vertical-align: top; min-width:700px;">
+
+<tr style="background-color: white; color: black;">
+<td colspan="2"> <b>AMI (Amazon Machine Image)</b> — Not valid unless it is associated with a kernel image (AKI) and a RAMdisk Image (ARI). </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>ISO</b> — Optical Disk Image </td>
+<td> <b>QCOW2</b> — QEMU Emulator </td> 
+</tr>
+	 
+<tr style="background-color: white; color: black;">
+<td> <b>RAW</b> </td>
+<td> <b>VDI</b> — Virtual Disk Image </td> 
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>VHD</b> — Virtual Hard Disk Image </td>
+<td> <b>VMDK</b> — Virtual Machine Disk Image </td> 
+</tr>
+
+</table> 
+
+
+To see a list of images:
+
+1. Click <b>Cloud</b> > <b>Images</b> to open the Images window.
+
+  Information shown includes image name, type, status, format, whether the image is public, and whether the image is protected.
+
+2. <i>Optional</i>: To see image details, click the <b>Image Name</b> to open the Image Overview window.
+
+**Tasks:**
+
+* [How to Create an Image](#how-to-create-an-image)
+
+* [How to Launch an Image](#how-to-launch-an-image)
+
+* [How to Edit an Image](#how-to-edit-an-image)
+
+* [How to Delete an Image](#how-to-delete-an-image)
+
+
+
+
+#### How to Create an Image 
+
+Available soon...
+
+
+
+#### How to Launch an Image
+
+Available soon...
+
+
+
+
+#### How to Edit an Image
+
+Available soon...
+
+#### How to Delete an Image
+
+Available soon...
 
 
 
@@ -320,7 +439,7 @@ TBS...
 **Concepts:**
 
 The Region tab provides a convenient place for users who have permission to work with region services and content. 
-To learn whether you have permission, see [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role).
+To learn whether you have permission, see [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
 
 A Region is a compute grouping that provides the context for the usage of compute servers, networking systems, and storage resources. 
 A region makes use of a defined set of users, projects, topology templates, profiles, and services governed by a single OpenStack 
@@ -353,35 +472,116 @@ might switch the point of action to the Project tab. Click the <b>Region</b> tab
 
 ### How to See an Overview of Usage
 
-TBS...
+Available soon...
 
 ### How to Access Instances
 
-TBS...
+Available soon...
 
 ### How to See Info about Services, Compute Services, and Default Quotas
 
-TBS...
+Available soon...
 
 ### How to Access Volumes
 
-TBS...
+Available soon...
 
 ### How to Access Images
 
-TBS...
+Available soon...
 
 ### How to Access Networks
 
-TBS...
+**Concepts:**
+
+The Region tab provides a convenient place for users who have permission to see a list of networks and work with those networks. 
+To learn whether you have permission, see Administration Dashboard Tasks by Role.
+
+To see a list of networks:
+
+1. Click <b>Region</b> > <b>Networks</b>.
+
+  The information shown includes the networks' status, administrative state, associated subnets, and whether the network is shared.
+
+2. <i>Optional</i>: To see the details of a network, click the <b>Network Name</b>. The Administration Dashboard opens the Network Overview window of the associated project.
+
+**Tasks:**
+
+* [How to Create an External Network](#how-to-create-an-external-network)
+
+* [How to Create a Private Network](#how-to-create-a-private-network-region-tab)
+
+* [How to Edit a Network](#how-to-edit-a-network)
+
+* [How to Delete a Network](#how-to-delete-a-network)
+
+
+#### How to Create an External Network
+
+The Admin user or cloud administrators can create an external network on the <b>Region</b> tab. The cloud can only support one external network, so the network should be created as a shared network. As a shared network, it can be used by multiple projects, if needed.
+
+To create an external network:
+
+1. Click <b>Region</b> > <b>Networks</b> to open the Networks window.
+
+2. Click <b>Create Network</b> to open the Create Network dialog box where you:
+  a. Enter a <b>Name</b> for the network.
+  b. Select a <b>Project</b> to associate with the network.
+  c. <b>Keep Admin State</b> selected to create a network that is active and operational.
+  d. Select <b>Shared</b> to associate the network with all projects in the cloud.
+  e. Select <b>External Network</b> to create a network that is operational outside the cloud.
+    **Note:** If you select <b>Admin State</b> and <b>Shared</b>, and do not select <b>External Network</b>, the combination of settings is invalid. You can create the network, but it will fail during provisioning.
+  f. Click <b>Create Network</b>.
+
+3. If the network is created successfully, the Administration Dashboard displays the network information on the <b>Project</b> > <b>Infrastructure</b> > <b>Networks</b> window.
+
+**Related Topic:**
+
+[How to Create a Subnet](#how-to-create-a-subnet)
+
+
+#### How to Create a Private Network #### {#how-to-create-a-private-network-region-tab} 
+
+The Admin user and cloud administrators can create a private network on the Region tab.
+
+To create a private network:
+
+1. Click <b>Region</b> > <b>Networks</b> to open the Networks window.
+
+2. Click <b>Create Networks</b> and to open the Create Network dialog box where you:
+  a. Enter a <b>Name</b> for the network.
+  b. Select a <b>Project</b> to associate with the network.
+  c. Keep <b>Admin State</b> selected to create a network that is active and operational.
+  d. Do <b><i>not</i></b> select Shared, because you are creating a private network. You do not want to share the network with other projects.
+  e. Do <b><i>not</i></b> select External Network. External networks are always shared.
+    **Note:** If you select <b>Admin State</b> and <b>Shared</b>, and do not select <b>External Network</b>, the combination of settings is invalid. You can create the network, but it will fail during provisioning.
+  f. Click <b>Create Network</b>.
+    
+3. If the network is created successfully, the Administration Dashboard displays the network information on the Project > Infrastructure > Networks window.
+
+**Related Topics:**
+
+[How to Create a Subnet](#how-to-create-a-subnet)
+
+
+ 
+#### How to Edit a Network
+
+Available soon...
+
+
+#### How to Delete a Network
+
+Available soon...
+
 
 ### How to Access Routers
 
-TBS...
+Available soon...
 
 ### How to Access Flavors and Flavor Extra Specs
 
-TBS...
+Available soon...
 
 
 
@@ -390,67 +590,503 @@ TBS...
 
 ## Project Tab Tasks
 
-TBS...
+**Concepts:**
+
+Projects are groupings that allow designated users to view the same set of content. Projects protect topology templates, infrastructure designs, and 
+realized resources (such as VMs, volumes, and others) from being visible to all users.
+
+To learn about which tasks you can perform on the Project tab, see your role under Administration Dashboard Tasks by Role.
+
+**Tasks:**
+
+* [How to See a Project Overview](#how-to-see-a-project-overview)
+
+* [Running Topologies](#running-topologies) 
+
+* [Deployment Profiles](#deployment-profiles)
+
+* [Resource Pools](#resource-pools)
+
+* [Instances](#instances)
+
+* [Volumes](#volumes)
+
+* [Images and Snapshots](#images-and-snapshots)
+
+* [Networks](#networks)
+
+* [Routers](#routers)
+
+* [How to See a Network Topology Diagram](#how-to-see-a-network-topology-diagram) 
+
+* [Security Groups and Rules](#security-groups-and-rules)
+
+* [How to Import, Create, or Delete a Keypair](#how-to-import-create-or-delete-a-keypair)
+
+* [Floating IPs](#floating-ips)
+
+* [How to Access API Endpoints](#how-to-access-api-endpoints)
+
+* [How to Access Your Authentication Token](#how-to-access-your-authentication-token)
+
+* [Updates and Extensions](#updates-and-extensions)
+
 
 ### How to See a Project Overview
 
-TBS...
+Available soon...
 
 ### Running Topologies
 
-TBS...
+Available soon...
   
 ### Deployment Profiles
 
-TBS...
+Available soon...
   
 ### Resource Pools
 
-TBS...
+**Concepts:**
+
+Resource pools are used to access various cloud providers. For multiple regions, one resource pool is required for each region.
+
+A resource pool consists of resources in a single cloud. A resource pool could represent one compute region, or it could represent a pool of resources on another cloud provider.
+
+Resource pools help you locate compute and storage resources to use when you provision.
+
+Depending upon how your cloud was created, your cloud might automatically contain a default resource pool.
+
+Graffiti is the service used for resource pool registry. Every time you want to access a different cloud provider, you must define a new record in the Graffiti Resource Pool Registry. These records define how to access a certain cloud provider.
+
+To see a list of resource pools:
+
+1. On the Project tab, select a Current Project.
+
+2. Click Provisioning > Resource Pools to open the Resource Pools window.
+
+3. Information shown includes resource pool name, type, version, scope, user name and provider.
+
+4. <i>Optional</i>: To see resource pool details, click the <b>Resource Pool Name</b> to open an Overview window.
+
+5. Information shown includes resource pool name, type, scope, ID information, provider information, and more.
+
+**Tasks:**
+
+* [How to Create a Resource Pool](#how-to-create-a-resource-pool)
+
+* [How to Edit a Resource Pool(#how-to-edit-a-resource-pool)
+
+* [How to Add, Edit, or Delete a Resource Pool Service(#how-to-add-edit-or-delete-a-resource-pool-service)
+
+* [How to Delete a Resource Pool(#how-to-delete-a-resource-pool)
+	
+
+
+#### How to Create a Resource Pool
+
+Resource pools help you locate compute and storage resources to use when you provision.
+
+Depending upon how your cloud was created, your cloud might automatically contain default resource pools for the cloud's compute regions.
+
+To create a resource pool:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Provisioning</b> > <b>Resource Pools</b> to open the Resource Pools window. If resource pools have been created, you see them listed on the window.
+
+3. Click <b>Create Resource Pool</b> to open the Create Resource Pool dialog box.
+
+4. Select a <b>Cloud Type</b> to create a resource pool when you are using local (on premise services) or HP Cloud services.
+
+  * <b>Custom</b>: All provider details are required.
+  * <b>HP Cloud OS - OpenStack (Grizzly)</b>: The dashboard provides values for the HP Cloud OS Administration Dashboard environment. Provider details are not required.
+  * <b>HP Cloud - OpenStack (Diablo)</b>: The dashboard provides values for the HP Cloud Services environment. You must enter <b>Provider Details</b>, which are required.
+  * <b>Custom - OpenStack (Grizzly)</b>: Provides maximum flexibility when you are creating a resource pool. <b>Details</b> and <b>Provider Details</b> are required.
+
+5. Select a Compute Region to create a resource pool when you are using local (on premise) services or HP Cloud services. If you do not select a Compute Region, you must enter information in the remaining fields.
+
+6. In the <b>Details</b> section:
+
+  a. Enter a <b>Name</b>.
+  
+  b. Select a <b>Scope</b>:
+  
+     <b>Private, cloud</b>: Allows you access while working in any project. This resource pool can only be viewed by the user who created it, from any project of which the user is a member, and by cloud administrators.
+
+     <b>Private, project</b>: Allows you access while working in the current project. This resource pool can only be viewed by the user who created it in the project in which it was created, and by cloud administrators.
+
+     <b>Public, cloud</b>: Allows access for all users. This resource pool can be viewed by anyone in the cloud, in any project.
+
+     <b>Public, project</b>: Allows you and other project members access. This resource pool can be viewed by members of the project in the project in which it was created, and by cloud administrators.
+
+  c. Select a <b>Cloud Profile</b> to represent the current supported OpenStack version and capabilities of the cloud to which you are deploying.
+
+     HP Cloud OS Grizzly
+
+     HP Cloud Service
+
+     **Note:** The dashboard automatically enters Type, Version, Region ID and Provider URL based upon the cloud type and compute region you selected.
+
+7. <i>Optional</i>: In the <b>Provider Details</b> section, enter a Project ID, User Domain Name, Project Domain Name, User Name, and Password. Enter the password again in <b>Confirm Password</b> to validate.
+  a. If you are using a local (on premise service), such as HP Cloud OS, you do not need an account on that service to create and edit resource pools.
+  b. If you are using a remote service, such as HP Cloud or Rackspace, you must have an account on that cloud provider's system to create and edit resource pools.
+  c. If you create a resource pool that requires credentials, the Administration Dashboard validates them when you create a resource pool, instead of when you first use the resource pool.
+
+8. Click <b>Create Resource Pool</b>.
+
+
+#### How to Edit a Resource Pool
+
+
+#### How to Add, Edit, or Delete a Resource Pool Service
+
+
+#### How to Delete a Resource Pool
+
   
 ### Instances
 
-TBS...
+**Concepts:**
+
+Instances are all of the VMs running within a selected project.
+
+To view a list of instances:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b> from the drop-down list.
+
+2. Select <b>Infrastructure</b> > <b>Instances</b> to open the Instances window.
+
+  Information shown includes instance name, image name, IP address, size, keypair, status, task, power state, and uptime.
+
+3. <i>Optional</i>: To see instance details, click an Instance Name to open a window that offers the following tabs:
+  * <b>Overview</b>, where you see instance details and specifications.
+  * <b>Log</b>, which is the system log from the VM. Use this log for debugging and troubleshooting. You can view the full instance log or specify the number of lines of the log file to view.
+  * <b>Console</b>, where you can remotely log directly in to the VM.
+
+**Tasks:**
+
+* [How to Launch an Instance](#how-to-launch-an-instance)
+
+* [How to Create an Instance Snapshot](#how-to-create-an-instance-snapshot)
+
+* [How to Edit an Instance](#how-to-edit-an-instance)
+
+* [How to Associate a Floating IP to an Instance](#how-to-associate-a-floating-ip-to-an-instance)
+
+* [How to Disassociate a Floating IP from an Instance](#how-to-disassociate-a-floating-ip-from-an-instance)
+
+* [How to Pause or Resume an Instance](#how-to-pause-or-resume-an-instance)
+
+* [How to Hard Reboot an Instance](#how-to-hard-reboot-an-instance)
+
+* [How to Suspend or Resume an Instance](#how-to-suspend-or-resume-an-instance)
+
+* [How to Force Delete an Instance](#how-to-force-delete-an-instance)
+
+* [How to Terminate an Instance](#how-to-terminate-an-instance)
+
+
+
+
+
+#### How to Launch an Instance
+
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Caution:</b> When you set up an instance, 
+carefully make your selections. After the instance is launched, the only editable property is its <b>Name</b>. </p>
+
+To launch an instance:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Infrastructure</b> > <b>Instances</b> to open the Instances window.
+
+3. Click <b>Launch Instance</b> to open the Launch Instance window.
+
+4. The window opens at the <b>Details</b> tab. Enter the following information:
+  a. <b>Instance Source</b>: Whether you are launching an image (default) or snapshot.
+  b. <b>Image</b>: Depending on your selection in the Instance Source field, you are required to select an AMI, RAW, and QCOW2 formatted image or a specific snapshot. (ARI and AKI types cannot be launched.)
+  c. <b>Availability Zone</b>: Any availability zone or Nova.
+  d. <b>Instance Name</b>: The name of the host you are creating (Required).
+  e. <b>Flavor</b>: Indicates the size of the node. When you select a flavor here, the Flavor Details table on the right changes to indicate the node properties and values associated with your size selection.
+    i. <b>Name</b> : This is tiny, small, medium, large, or xlarge, or the name of a custom flavor that has been created
+	ii. <b>CPUs</b> : The number of virtual CPUs.
+	iii. <b>Root Disk</b>: Assigned by the image.
+	iv. <b>Ephemeral Disk</b>: A second storage disk available to the VM.
+	v. <b>Total Disk</b>: This size is defined in Region > Flavors by the Domain Administrator. It is known as the Root Disk.
+	vi. <b>RAM</b>: Processor memory.
+  f. <b>Instance Count</b>: Can be more than 1.
+  
+5. Use the Access and Security tab to control access to your instance via keypairs and security groups.
+  a. <b>Keypair</b>: Keypairs are ssh credentials that are injected into images when they are launched. The public key is installed on the VM; you will use the private key to log in.
+    To add a keypair, either:
+	  i. Select a keypair from the list, or
+	  ii. Click (<b>+</b>) to import a keypair. Enter <b>Keypair Name</b> and <b>Public Key</b>.
+	To create a keypair, see [How to Import, Create, or Delete a Keypair](#how-to-import-create-or-delete-a-keypair).
+  b. <b>Security Groups</b>: Security groups are one way to provide a measure of network isolation between different VMs, as they limit the ports into which network traffic can enter the group. You can select multiple groups.
+
+6. Use the <b>Networking</b> tab to select one or more networks.
+
+  You must specify at least one network. You can use the plus (<b>+</b>) symbol or drag-and-drop to select networks. Use the minus (<b>-</b>) sign to remove networks.
+
+7. Use the <b>Volume Options</b> tab to select boot options for an instance that is launching with attached storage.
+
+8. Use the <b>Post Creation</b> to customize the instance. This tab is analogous to "User Data" in other systems. The tab allows you to customize the instance by adding a script to run after instance launch.
+
+9. Click <b>Launch</b>. If the launch is successful, the instance is added to the Instances list with a Power State of Running.
+
+
+
+#### How to Create an Instance Snapshot
+
+Available soon...
+
+
+#### How to Edit an Instance
+
+Available soon...
+
+
+
+#### How to Associate a Floating IP to an Instance
+
+Available soon...
+
+
+#### How to Disassociate a Floating IP from an Instance
+
+Available soon...
+
+
+#### How to Pause or Resume an Instance
+
+Available soon...
+
+
+#### How to Hard Reboot an Instance
+
+
+Available soon...
+
+#### How to Suspend or Resume an Instance
+
+Available soon...
+
+
+#### How to Force Delete an Instance
+
+Available soon...
+
+
+#### How to Terminate an Instance
+
+Available soon...
+
   
 ### Volumes
 
-TBS...
+Available soon...
   
 ### Images and Snapshots
 
-TBS...
+Available soon...
   
 ### Networks
 
-TBS...
+**Concepts:**
+
+From this view, you can create, edit, and delete project networks. You can also add subnets using this view.
+
+**Tasks:**
+
+* [How to Create a Private Network](#how-to-create-a-private-network-project-tab)
+
+* [How to Edit a Network](#how-to-edit-a-network)
+
+* [How to Create a Subnet](#how-to-create-a-subnet)
+
+* [How to Edit a Subnet](#how-to-edit-a-subnet)
+
+* [How to Delete a Subnet](#how-to-delete-a-subnet)
+
+* [How to Delete a Network](#how-to-delete-a-network)
+
+
+#### How to Create a Private Network {#how-to-create-a-private-network-project-tab} 
+
+You can create a private network that is assigned to your current project.
+
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Note:</b> You cannot create an external network 
+on the Project tab. You must have access to the Region tab to create a shared or external network. 
+See <a href="#how-to-create-an-external-network">How to Create an External Network</a>. </p>
+
+To create a private network:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Infrastructure</b> > <b>Networks</b> to open the Networks window.
+
+3. Click <b>Create Network</b> to open the Create Network dialog box
+
+4. On the <b>Network</b> tab of the dialog box:
+  a. Enter a <b>Network Name</b> for your network.
+  b. Make sure <b>Admin State</b> is checked. This is the administrative state of the network. If you select Admin State, the network forwards packets. If you do not select Admin State, the network does not forward packets.
+
+5. On the <b>Subnet</b> tab of the dialog box:
+  a. To create a network with no associated subnet, unselect <b>Create Subnet</b> and click <b>Create</b>.
+  b. If you want to create a network with an associated subnet, keep <b>Create Subnet</b> selected and continue through the following steps:
+    i. Enter a <b>Subnet Name</b>.
+    ii. Enter <b>Network Address</b>.
+    iii. Select an <b>IP Version</b>.
+    iv. <i>Optional</i>: Enter a <b>Gateway IP</b>. This is the IP address that servers on the subnet will use if the address they want to send to is not on the subnet. It is a gateway to other networks. In a common use case, the gateway address would be that of a router; however, it could also be of another server that is providing routing services.
+	v. Select <b>Disable Gateway</b> to make the subnet private. Packets cannot leave the subnet, except through other devices on the network.
+
+6. On the Subnet Detail tab of the dialog box:
+  a. Leave <b>Enable DHCP</b> selected to dynamically allocate IP addresses. This is the appropriate selection for a private network.
+  b. Enter an <b>Allocation Pools</b> IP address list for the subnet, using one line in the entry box for each address.
+  c. Enter a <b>DNS Name Servers</b> IP address list for the subnet, using one line in the entry box for each address.
+  d. Enter a <b>Host Routes</b> IP address list to announce additional routes to the hosts. Use one line in the entry box for each address.
+
+7. Click <b>Create</b>.
+
+8. Verify that the network you just created is included in the Networks list.
+
+
+
+#### How to Edit a Network
+
+Available soon...
+
+
+#### How to Create a Subnet
+
+You can create a subnet on a network. Subnets allow you to divide a network into addressable segments.
+
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Note:</b> You must be the Admin user or a 
+cloud administrator to create a subnet on an external network or shared network. </p> 
+
+To create a subnet:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Infrastructure</b> > <b>Networks</b> to open the Networks window.
+
+3. Find the network where you want to add a subnet, and click <b>More</b> > <b>Add Subnet</b> to open the Create Subnet dialog box.
+
+  **Note:** An alternate method is to click <b>Create Subnet</b> on the Networks Overview window. The Create Subnet dialog box opens.
+
+4. On the <b>Subnet</b> tab of the dialog box:
+  a. Enter a unique <b>Subnet Name</b>.
+  b. Enter a <b>Network Address</b> from your assigned, dedicated IP address range.
+  c. Keep the defaults for IP Version, Gateway IP, and Disable Gateway.
+
+5. On the <b>Subnet Detail</b> tab of the dialog box:
+  a. Leave <b>Enable DHCP</b>.
+  b. Enter an <b>Allocation Pools IP</b> address list for the subnet, using one line in the entry box for each address.
+  c. Enter a <b>DNS Name Servers IP</b> address list for the subnet, using one line in the entry box for each address.
+  d. Enter a <b>Host Routes IP</b> address list to announce additional routes to the hosts. Use one line in the entry box for each address.
+
+6. The Networks window opens, and you see the subnet.
+
+
+#### How to Edit a Subnet
+
+Available soon...
+
+
+#### How to Delete a Subnet
+
+Available soon...
+
+
+#### How to Delete a Network
+
+Available soon...
+
+
+
   
 ### Routers
 
-TBS...
+Available soon...
   
 ### How to See a Network Topology Diagram
 
-TBS...
+Available soon...
   
 ### Security Groups and Rules
 
-TBS...
+Available soon...
   
 ### How to Import, Create, or Delete a Keypair
 
-TBS...
+If you need a keypair, you must create or import the keypair for yourself. No other user can create or import a keypair for you.
+
+Keypairs are ssh security keys (credentials) that are 512 bits long. A keypair consists of a public key and a private key. 
+The credentials provide authentication and allow you to exchange traffic securely within a VM.
+
+If you want a secure, provisioned cloud instance, you must use a keypair to launch images or topologies:
+
+* The public key portion is installed on the VM.
+
+* Users use the private key portion to ssh to the launched instance.
+
+You can use the Administration Dashboard to create a keypair, or to import a keypair you previously created. 
+
+#### To create a keypair
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Access and Security</b> > <b>Access and Security</b> > <b>Keypairs</b> tab.
+
+3. On the <b>Keypairs</b> tab, click <b>Create Keypair</b>.
+
+4. Enter a <b>Keypair Name</b> &mdash; free-form text that does not include spaces, for example: <code>testonlykeypair</code>.
+
+5. Click <b>Create Keypair</b>.
+
+  The private key portion is downloaded to your browser system as a .pem file. You can only download the file once. It is important to save the file in a safe location.
+   
+  The Administration Dashboard maintains the public key portion within the cloud and injects it into launched instances.
+
+#### To import a keypair
+
+You might have previously created a keypair that you want to use. To import a keypair:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Access and Security</b> > <b>Access and Security</b> > <b>Keypairs</b> tab.
+
+3. Click <b>Import Keypair</b>.
+
+4. On the Import Keypair dialog, enter:
+  * <b>Keypair Name</b>: Free form text that does not include spaces, for example testonlykeypair.
+  * <b>Public Key</b>: The public key portion.
+  * Click <b>Import Keypair</b>.
+
+ 
+
+#### To delete a keypair
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Access and Security</b> > <b>Access and Security</b> > <b>Keypairs</b> tab.
+
+3. Select one or more keypairs.
+
+4. Click <b>Delete Keypair</b>.
+
   
 ### Floating IPs
 
-TBS...
+Available soon...
   
 ### How to Access API Endpoints
 
-TBS...
+Available soon...
   
 ### How to Access Your Authentication Token
 
-TBS...
+Available soon...
   
 ### Updates and Extensions
 
@@ -463,7 +1099,7 @@ Content includes material such as images and topology templates.
 You can update and upgrade the Administration Dashboard while your system continues to run. CODN contains all the products and services 
 HP offers to help maintain your cloud.
 
-To learn whether you have permission to use CODN, see [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role).
+To learn whether you have permission to use CODN, see [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
 
 You must configure the HP Cloud OS Administration Dashboard to access an HP Cloud OS Distribution Network account before you can use the 
 Updates and Extensions window. See the Tasks sections, below.

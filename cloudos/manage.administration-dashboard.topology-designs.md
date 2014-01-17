@@ -914,11 +914,12 @@ Eve is an HP Cloud OS infrastructure topology design provisioner for OpenStack-b
 <!-- end inner table -->
 
 
-</table> </li>
+</table>
 
-<li> Click <b>Save</b>.
-
+<ol>
+<li value="3"> Click <b>Save</b>.
 </ol>
+
 
 #### To set connector properties
 
