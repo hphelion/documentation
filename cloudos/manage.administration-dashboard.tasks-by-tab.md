@@ -210,37 +210,41 @@ When you create a project, you need only one required entry - <b>Name</b>. You c
 
 To create a project:
 
-1. Click <b>Cloud</b> > <b>Projects</b> to open the Projects window.
+<ol>
 
-2. Click <b>Create Project</b> to open the Create Project dialog box.
+<li> Click <b>Cloud</b> > <b>Projects</b> to open the Projects window.
 
-3. On the <b>Project Info</b> tab, enter:
+<li> Click <b>Create Project</b> to open the Create Project dialog box.
 
-  * <b>Name</b>: required.
+<li> On the <b>Project Info</b> tab, enter:
 
-  * <b>Description</b>: optional.
+<ul>
+<li> <b>Name</b>: required.
+<li> <b>Description</b>: optional.
+<li> <b>Enabled</b>: By default, Enabled is selected, which means project content is available to assigned users.
+</ul>
+</li>
 
-  * <b>Enabled</b>: By default, Enabled is selected, which means project content is available to assigned users.
+<li> <i>Optional</i>: On the <b>Project Members</b> tab, add project members from the list of available users. Click the plus sign (<b>+</b>) to add a project member. Click the minus sign (<b>-</b>) to remove a member.
+<br /> <p><b>Note:</b> You do not see cloud administrators under Available Users, because they are automatically added to projects.</p>
+</li>
 
-4. Optional: On the <b>Project Members</b> tab, add project members from the list of available users. Click the plus sign (<b>+</b>) to add a project member. Click the minus sign (<b>-</b>) to remove a member.
- 
-  **Note:** You do not see cloud administrators under Available Users, because they are automatically added to projects.
-
-5. Optional: On the <b>Integrations</b> tab, select <b>Create Default Resource Pool</b> if you need to create a resource pool for your compute regions. 
+<li> <i>Optional</i>: On the <b>Integrations</b> tab, select <b>Create Default Resource Pool</b> if you need to create a resource pool for your compute regions. 
 You select this option if your HP Cloud OS Operational Dashboard administrator used the advanced method to create compute regions. The advanced option 
 does not automatically create resource pools. In most cases, you can leave the default (not selected) for Create Default Resource Pool. Operational Dashboard 
 administrators usually create compute regions that automatically contain a resource pool. 
+<br /> <p> <b>Note</b>: You can create a resource pool later. See [How to Create a Resource Pool](#how-to-create-a-resource-pool).</p>
+</li>
 
-  <b>Note</b>: You can create a resource pool later. See [How to Create a Resource Pool](#how-to-create-a-resource-pool).
-
-6. Optional: On the <b>Compute Limits</b> tab, select a <b>Region</b> for the project. Accept or edit the <b>Absolute Computer Limits</b>. 
+<li> <i>Optional</i>: On the <b>Compute Limits</b> tab, select a <b>Region</b> for the project. Accept or edit the <b>Absolute Computer Limits</b>. 
 This sets limits on how many system resources (such as CPU cores, floating IP, and others) project users can consume at one time in that region.
 
-7. Optional: On the <b>Storage Limits</b> tab, accept or edit the <b>Absolute Computer Limits</b>. This sets limits on how many storage resources 
+<li> <i>Optional</i>: On the <b>Storage Limits</b> tab, accept or edit the <b>Absolute Computer Limits</b>. This sets limits on how many storage resources 
 (such as snapshots, volumes, and others) project users can consume at one time.
 
-8. Click <b>Create Project</b>. 
+<li> Click <b>Create Project</b>. 
 
+</ol> 
 	
 #### How to See a Project's Usage
 
@@ -330,17 +334,17 @@ To create a user:
 
 3. On the <b>User</b> tab of the dialog box, enter the <b>User Name</b> and <b>Password</b>.
 
-  <i>Optional</i>: Enter an <b>Email</b> address for the user.
+   <i>Optional</i>: Enter an <b>Email</b> address for the user.
 
 4. Click the <b>Project</b> tab to assign the user to a project.
 
-  * Select a <b>Primary Project</b> for the user.
+   * Select a <b>Primary Project</b> for the user.
 
-  * Select a project role from the list. The user will be assigned that role on the project.
+   * Select a project role from the list. The user will be assigned that role on the project.
 
 5. <i>Optional</i>: Click the <b>Cloud</b> tab if you want to assign the user cloud-specific roles. See [Administration Dashboard Tasks by Roles](/cloudos/manage/administration-dashboard/tasks-by-role/).
 
-6. Click Create User.
+6. Click <b>Create User</b>.
 
 
 #### How to Edit a User
@@ -541,19 +545,19 @@ To create an external network:
 
 2. Click <b>Create Network</b> to open the Create Network dialog box where you:
 
-  * Enter a <b>Name</b> for the network.
+   * Enter a <b>Name</b> for the network.
 
-  * Select a <b>Project</b> to associate with the network.
+   * Select a <b>Project</b> to associate with the network.
 
-  * <b>Keep Admin State</b> selected to create a network that is active and operational.
+   * <b>Keep Admin State</b> selected to create a network that is active and operational.
 
-  * Select <b>Shared</b> to associate the network with all projects in the cloud.
+   * Select <b>Shared</b> to associate the network with all projects in the cloud.
 
-  * Select <b>External Network</b> to create a network that is operational outside the cloud.
+   * Select <b>External Network</b> to create a network that is operational outside the cloud.
 
-    **Note:** If you select <b>Admin State</b> and <b>Shared</b>, and do not select <b>External Network</b>, the combination of settings is invalid. You can create the network, but it will fail during provisioning.
+     **Note:** If you select <b>Admin State</b> and <b>Shared</b>, and do not select <b>External Network</b>, the combination of settings is invalid. You can create the network, but it will fail during provisioning.
 
-  * Click <b>Create Network</b>.
+   * Click <b>Create Network</b>.
 
 3. If the network is created successfully, the Administration Dashboard displays the network information on the <b>Project</b> > <b>Infrastructure</b> > <b>Networks</b> window.
 
@@ -572,19 +576,19 @@ To create a private network:
 
 2. Click <b>Create Networks</b> and to open the Create Network dialog box where you:
 
-  * Enter a <b>Name</b> for the network.
+   * Enter a <b>Name</b> for the network.
 
-  * Select a <b>Project</b> to associate with the network.
+   * Select a <b>Project</b> to associate with the network.
 
-  * Keep <b>Admin State</b> selected to create a network that is active and operational.
+   * Keep <b>Admin State</b> selected to create a network that is active and operational.
 
-  * Do <b><i>not</i></b> select Shared, because you are creating a private network. You do not want to share the network with other projects.
+   * Do <b><i>not</i></b> select Shared, because you are creating a private network. You do not want to share the network with other projects.
 
-  * Do <b><i>not</i></b> select External Network. External networks are always shared.
+   * Do <b><i>not</i></b> select External Network. External networks are always shared.
 
-    **Note:** If you select <b>Admin State</b> and <b>Shared</b>, and do not select <b>External Network</b>, the combination of settings is invalid. You can create the network, but it will fail during provisioning.
+     **Note:** If you select <b>Admin State</b> and <b>Shared</b>, and do not select <b>External Network</b>, the combination of settings is invalid. You can create the network, but it will fail during provisioning.
 
-  * Click <b>Create Network</b>.
+   * Click <b>Create Network</b>.
     
 3. If the network is created successfully, the Administration Dashboard displays the network information on the Project > Infrastructure > Networks window.
 
@@ -836,7 +840,7 @@ To create a resource pool:
 <li> In the <b>Details</b> section:
 <ul>
 <li> Enter a <b>Name</b>.
-<li> Select a <b>Scope</b>:
+<li> Select a <b>Scope</b>: <br /> <br /> 
 <p> <b>Private, cloud</b>: Allows you access while working in any project. This resource pool can only be viewed by the user who created it, from any project of which the user is a member, and by cloud administrators. </p>
 <p> <b>Private, project</b>: Allows you access while working in the current project. This resource pool can only be viewed by the user who created it in the project in which it was created, and by cloud administrators. </p>
 <p> <b>Public, cloud</b>: Allows access for all users. This resource pool can be viewed by anyone in the cloud, in any project. </p>
@@ -845,8 +849,9 @@ To create a resource pool:
 </li>
 
 <li> Select a <b>Cloud Profile</b> to represent the current supported OpenStack version and capabilities of the cloud to which you are deploying.
-<p> HP Cloud OS Grizzly </p>
-<p> HP Cloud Service </p>
+ <br /> <br /> 
+<p> <b>HP Cloud OS Grizzly</b> </p>
+<p> <b>HP Cloud Service</b> </p>
 <p> <b>Note:</b> The dashboard automatically enters Type, Version, Region ID and Provider URL based upon the cloud type and compute region you selected. </p>
 </li> 
 
@@ -1161,29 +1166,29 @@ To create a private network:
 
 5. On the <b>Subnet</b> tab of the dialog box:
 
-  * To create a network with no associated subnet, unselect <b>Create Subnet</b> and click <b>Create</b>.
+   * To create a network with no associated subnet, unselect <b>Create Subnet</b> and click <b>Create</b>.
 
-  * If you want to create a network with an associated subnet, keep <b>Create Subnet</b> selected and continue through the following steps:
+   * If you want to create a network with an associated subnet, keep <b>Create Subnet</b> selected and continue through the following steps:
 
-    * Enter a <b>Subnet Name</b>.
+     * Enter a <b>Subnet Name</b>.
 
-    * Enter <b>Network Address</b>.
+     * Enter <b>Network Address</b>.
 
-    * Select an <b>IP Version</b>.
+     * Select an <b>IP Version</b>.
 
-    * <i>Optional</i>: Enter a <b>Gateway IP</b>. This is the IP address that servers on the subnet will use if the address they want to send to is not on the subnet. It is a gateway to other networks. In a common use case, the gateway address would be that of a router; however, it could also be of another server that is providing routing services.
+     * <i>Optional</i>: Enter a <b>Gateway IP</b>. This is the IP address that servers on the subnet will use if the address they want to send to is not on the subnet. It is a gateway to other networks. In a common use case, the gateway address would be that of a router; however, it could also be of another server that is providing routing services.
 
-	* Select <b>Disable Gateway</b> to make the subnet private. Packets cannot leave the subnet, except through other devices on the network.
+	 * Select <b>Disable Gateway</b> to make the subnet private. Packets cannot leave the subnet, except through other devices on the network.
 
 6. On the Subnet Detail tab of the dialog box:
 
-  * Leave <b>Enable DHCP</b> selected to dynamically allocate IP addresses. This is the appropriate selection for a private network.
+   * Leave <b>Enable DHCP</b> selected to dynamically allocate IP addresses. This is the appropriate selection for a private network.
 
-  * Enter an <b>Allocation Pools</b> IP address list for the subnet, using one line in the entry box for each address.
+   * Enter an <b>Allocation Pools</b> IP address list for the subnet, using one line in the entry box for each address.
 
-  * Enter a <b>DNS Name Servers</b> IP address list for the subnet, using one line in the entry box for each address.
+   * Enter a <b>DNS Name Servers</b> IP address list for the subnet, using one line in the entry box for each address.
 
-  * Enter a <b>Host Routes</b> IP address list to announce additional routes to the hosts. Use one line in the entry box for each address.
+   * Enter a <b>Host Routes</b> IP address list to announce additional routes to the hosts. Use one line in the entry box for each address.
 
 7. Click <b>Create</b>.
 
