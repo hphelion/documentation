@@ -107,9 +107,9 @@ including the ability to make resources available to users.
 
 However, some organizations might also use cloud administrators to create profiles and topology designs. See:
 
-* [How to Create a Deployment Profile](/cloudos/manage/administration-dashboard/tasks-by-tab/#how-to-create-a-deployment-profile) 
+* [How to Create a Deployment Profile](/cloudos/manage/administration-dashboard/topology-designs/#how-to-create-a-deployment-profile) 
 
-* [How to Create a Topology Design](/cloudos/manage/administration-dashboard/tasks-by-tab/#how-to-create-a-topology-design)
+* [How to Create a Topology Design](/cloudos/manage/administration-dashboard/topology-designs/#how-to-create-a-topology-design)
 
 
 When you are done, tell a cloud architect to perform [Getting Started for Cloud Architects](#getting-started-for-cloud-architects). 
@@ -156,7 +156,7 @@ and manage project resources that are created by project users. See [Project Use
 
 * [How to Launch an Instance](/cloudos/manage/administration-dashboard/tasks-by-tab/#how-to-launch-an-instance)
 
-* [How to Create a Private Network](/cloudos/manage/administration-dashboard/tasks-by-tab/#how-to-create-a-private-network)
+* [How to Create a Private Network](/cloudos/manage/administration-dashboard/tasks-by-tab/#how-to-create-a-private-network-project-tab)
 
 * [How to Create a Subnet](/cloudos/manage/administration-dashboard/tasks-by-tab/#how-to-create-a-subnet)
 
@@ -196,7 +196,7 @@ Project users' main goal when using the dashboard is to provision topologies.
 
 * [How to Create a Topology Design](/cloudos/manage/administration-dashboard/topology-designs/#how-to-create-a-topology-design)
 
-* [How to Launch a Deployment Profile](/cloudos/manage/administration-dashboard/tasks-by-tab/#how-to-launch-a-deployment-profile
+* [How to Launch a Deployment Profile](/cloudos/manage/administration-dashboard/tasks-by-tab/#how-to-launch-a-deployment-profile)
 
 * [How to Create or Delete a Security Group](/cloudos/manage/administration-dashboard/tasks-by-tab/#how-to-create-or-delete-a-security-group) 
 
