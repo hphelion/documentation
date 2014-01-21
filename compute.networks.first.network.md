@@ -10,7 +10,7 @@ product: compute
 <!-- Modeled after How To's with the Compute Service (https://docs.hpcloud.com/compute/using/) Some text from network guide. -->
 
 Once you are ready to create your first network, you can choose from a variety of ways depending on which tool you feel most comfortable with. 
- 
+
 You can use the the Horizon Cloud Console or Windows PowerShell to create the network. 
 
 - [Using the Horizon Cloud Console](#console)

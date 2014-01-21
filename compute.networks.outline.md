@@ -197,7 +197,6 @@ For Network API details, see the [HP Cloud Compute Service API Reference](https:
 
 *Taken from Networking Guide and [Understanding network screen system messages](/compute/networks/sys-messages), which was empty*	
 
-
 - Port Configuration
 - Security Groups
 - Understanding network screen system messages
