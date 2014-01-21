@@ -66,6 +66,12 @@ PageRefresh();
   * [Operational Dashboard: Cloud Tab](/cloudos/manage/operational-dashboard/cloud-tab)
   * [Operational Dashboard: Settings Tab](/cloudos/manage/operational-dashboard/settings-tab)
 * [HP Cloud OS Administration Dashboard Help](/cloudos/manage/administration-dashboard/)  
+  * [Before You Begin with the Administration Dashboard Help](/cloudos/manage/administration-dashboard/before-you-begin/)
+  * [Welcome to the HP Cloud OS Administration Dashboard](/cloudos/manage/administration-dashboard/welcome/)
+  * [Getting Started with the Administration Dashboard](/cloudos/manage/administration-dashboard/getting-started/)
+  * [Topology Designs](/cloudos/manage/administration-dashboard/topology-designs/)
+  * [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/)
+  * [Administration Dashboard Tasks by Tab](/cloudos/manage/administration-dashboard/tasks-by-tab/)
 
 #### [Develop](/cloudos/develop/)
 

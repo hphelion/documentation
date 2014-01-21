@@ -124,7 +124,6 @@ For Network API details, see the [HP Cloud Compute Service API Reference](https:
 - Routers screen functions
 - For further information
 
-
 ####Managing routers ####
 
 [Managing routers](/mc/compute/networks/manage-routers)
