@@ -41,7 +41,7 @@ Click <b>Project</b> > <b>Provisioning</b> > <b>Topology Designs</b> to access t
 
 Tasks are organized by the following tabs:
 
-<table style="text-align: left; vertical-align: top; min-width:700px;">
+<table style="text-align: left; vertical-align: top; min-width:580px;">
 
 <tr style="background-color: #C8C8C8;">
 <th> Window </th>
