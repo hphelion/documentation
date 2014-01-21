@@ -8,12 +8,27 @@ tags: cli linux object store migration aws rackspace google
 ---
 #UNIX CLI: Performing UNIX object storage migration#
 
+___________________
+
+###Important Notice###
+
+On November 4, 2013, the UNIX CLI was moved into its End-of-Life Cycle process toward final deprecation. During this 6-month transition time:
+
+* New and existing customers are encouraged to migrate to the OpenStackClient (Unified) CLIs or the OpenStack command-line clients for each respective service
+* No new feature requests will be honored
+* Bug reports will be accepted
+
+After 6-months, access to online resources will still be available, but no support will be offered from HP Public Cloud, and the software download will be disabled—although you are most welcome to continue development at your discretion! HP Cloud has contributed the Unix CLI back to the open source community, and you can access the source code, documentation, and downloads [here](https://github.com/hpcloud/unix_cli).
+
+_________________________________________
+
 You can use the Unix CLI to migrate object store data from other cloud storage providers to your HP Cloud object storage containers.  You can copy objects individually, or perform a recursive copy of multiple files.
 
 You can perform object migration from the AWS, Google, and Rackspace services.  You may be able to migrate objects from other providers but that functionality is not currently supported.
 
 * [Getting started migrating your data](#GettingStarted)
 * [Performing a migration](#Performing)
+* [For more information](#articles)
 
 ##Getting started migrating your data## {#GettingStarted}
 
@@ -54,3 +69,8 @@ To move files from the `tuna` container in the Rackspace `sharkey` account to th
 
 
 You can ignore the deprecation message.  The last part of the object name is displayed during the migration, but the full names of objects are preserved.
+
+
+##For more information## {#articles}
+
+For more tips and How-tos on using your UNIX command-line interface (CLI), see [UNIX CLI: Articles on to use the UNIX CLI](/cli/unix/articles/).

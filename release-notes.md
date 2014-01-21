@@ -110,10 +110,6 @@ The following are our best-practices recommendations for versions 13.5.
 
 The following are the known issues for Version 13.5 of the HP Public Cloud software.
 
-####Cloud Compute####
-
-* Use the standard rather than `highmem` family of flavors (`standard.large`, `standard.xlarge`, etc.) for creating Windows instances.
-* If the console log appears empty immediately after instance activation, wait a few moments and try again; it can take some time for the instance information to be recorded in the log file.
 
 ####Cloud Block Storage####
 
