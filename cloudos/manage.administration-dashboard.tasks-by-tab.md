@@ -446,15 +446,91 @@ To see a list of images:
 
 #### How to Create an Image 
 
-Available soon...
+To learn whether you have permission to create an image on the Cloud tab, see [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
+
+The image must be available on an HTTP URL. Compressed image binaries, such as .zip, and .tar.gz, are supported.
+
+To create an image:
+
+1. Click <b>Cloud</b> > <b>Images</b> to open the Images window.
+
+2. Click <b>Create Image</b> to open the <b>Create an Image</b> dialog box.
+
+3. Enter <b>Name</b> and optional <b>Description</b>.
+
+4. Select an <b>Image Source</b>.
+ * <b>Image Location</b> to enter and external URL from which to load the image.
+ * <b>Image File</b> to browse to a local image.
+
+5. Enter an Image Location that meets the following requirements:
+
+ a. A valid and direct HTTP URL to the image binary. URLs that redirect or serve error pages will result in unusable images.
+    
+	**Note:** If you do not have rights to the image binary url, you receive an error when trying to create the image
+
+ b. The image must be accessible to the Image Service.
+
+ c. The image must be in a supported format.
+ 
+    **Note:** If you upload an image with a format that is not supported, you will receive an Error 404, Not Found error when you attempt to create the image.
+
+6. Select a <b>Format</b> from the menu. The image must be in one of the formats listed.
+
+7. Enter the <b>Minimum Disk space</b> and <b>Minimum Ram</b>.
+
+8. Select <b>Public</b> if you want the image visible to all users in the cloud. Your user role must have the appropriate permission to make an image Public.
+
+9. Select <b>Protected</b> to mark the image as read-only. The image cannot be edited or deleted.
+
+10. Click <b>Create Image</b>. If successful, the image displays with an Active status. If creation is not successful within a specified amount of time (set by your system administrator; typically no more than five minutes), the Status of the image in the list displays Upload Failed.
+
+**Note:** Only AMI, RAW, and QCOW2 images are launchable.
 
 
 
 #### How to Launch an Image
 
-Available soon...
+To learn whether you have permission to launch an image on the Cloud tab, see [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
 
+You can only launch images that are formatted as AMI, RAW, and QCOW2. Launching an image provisions it to the cloud.
 
+To launch an image:
+
+1. Click <b>Cloud</b> > <b>Images</b> to open the Images view.
+
+2. Find the image to launch and then click <b>Launch</b> to open the Launch Instance dialog box. The dialog opens to the Details tab. Some fields are automatically populated from the image.
+
+3. Enter or edit the <b>Details</b> tab information as needed:
+ * <b>Instance Source</b>: Specify whether you are using an image or snapshot.
+ * <b>Image</b>: Select from the list of images that have been uploaded to the system.
+ * <b>Instance Name</b>: The name of the host you are creating (Required).
+ 
+   **Note:** At this point, you can go ahead and launch the instance, using the defaults for the remaining options.
+   
+ * <b>Flavor</b>: Indicates the size of the node. When you select a flavor here, the <b>Flavor Details</b> table on the right changes to show the node properties and values associated with your size selection.
+ * <b>Instance Count</b>: Can be more than 1.
+
+4. Use the <b>Access and Security</b> tab to control access to your instance via keypairs and security groups.
+
+ a. <b>Keypair</b>: Keypairs are SSH security keys that are 512 bits long, provide authentication, and allow you to exchange traffic securely within a VM. These credentials are injected into images when they are launched.
+ 
+   Creating a new keypair registers the public key and downloads the private key (a .pem file), allowing you to log into the VM. The public key gets installed on the VM; the private key is used to log in.
+
+   To add a keypair, either:
+    * Select a keypair from the list, or
+	* Click (<b>+</b>) to import a keypair. Enter <b>Keypair Name</b> and <b>Public Key</b>.
+
+ b. <b>Admin Pass</b> and <b>Confirm Admin Pass</b>
+ 
+ c. <b>Security Groups</b>
+
+5. Use the <b>Networking</b> tab to select one or more networks. You can click the plus (<b>+</b>) symbol or drag and drop to make your selections. Use the minus (<b>-</b>) symbol to remove networks.
+    
+6. Use the <b>Volume Options</b> tab to select boot options for an instance that launches with attached storage.
+
+7. Use the <b>Post Creation</b> tab to customize the instance by adding a script to run after launch. The <b>Customization Script</b> field is analogous to "User Data" in other systems.
+
+8. Click <b>Launch</b>. If successful, the image is added to the Images list with an Active status.
 
 
 #### How to Edit an Image
@@ -571,7 +647,142 @@ Available soon...
 
 ### How to Access Images
 
-Available soon...
+**Concepts:**
+
+The Region tab provides a convenient place for users who have permission to see a list of images (that are not snapshots) and to work with those images. 
+To learn whether you have permission, see [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
+
+Images are stored at the Domain level with a single Glance service and are unaffected by region selection. Only Public images are visible to all users.
+
+Launchable images must be in one of the following formats:
+
+<table style="text-align: left; vertical-align: top; min-width:700px;">
+
+<tr style="background-color: white; color: black;">
+<td colspan="2"> <b>AMI (Amazon Machine Image)</b> &mdash; Not valid unless it is associated with a kernel image (AKI) and a RAMdisk Image (ARI). </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>ISO</b> &mdash; Optical Disk Image </td>
+<td> <b>QCOW2</b> &mdash; QEMU Emulator </td> 
+</tr>
+	 
+<tr style="background-color: white; color: black;">
+<td> <b>RAW</b> </td>
+<td> <b>VDI</b> &mdash; Virtual Disk Image </td> 
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>VHD</b> &mdash; Virtual Hard Disk Image </td>
+<td> <b>VMDK</b> &mdash; Virtual Machine Disk Image </td> 
+</tr>
+
+</table> 
+
+
+To see a list of all images:
+
+1. Click Regions > Images to open the Images window.
+
+  The information shown includes name, type, status, whether the image is public or protected, and format.
+
+2. <i>Optional</i>: To see image details, click the Image Name link to open its Overview window.
+
+  The information shown includes image name, ID, whether protected, checksum, creation date, updated date, and specs.
+
+**Tasks:**
+
+* [How to Create an Image](#how-to-create-an-image-region-tab)
+
+* [How to Edit an Image](#how-to-edit-an-image-region-tab)
+
+* [How to Delete an Image](#how-to-delete-an-image-region-tab)
+
+
+#### How to Create an Image {#how-to-create-an-image-region-tab}
+
+You can create and configure an image to upload to the image service used by the Administration Dashboard. The image must be available on an HTTP URL. 
+Compressed image binaries, such as .zip, and .tar.gz, are supported.
+
+To create an image:
+
+1. Click <b>Region</b> > <b>Images</b> > <b>Create Image</b>.
+
+2. In the <b>Create an Image</b> dialog box, enter a <b>Name</b>.
+
+3. Enter an <b>Image Location</b> that meets the following requirements:
+
+ a. A valid and direct HTTP URL to the image binary. URLs that redirect or serve error pages will result in unusable images.
+   
+    **Note:** If you do not have rights to the image binary url, you receive an error when trying to create the image
+
+ b. The image must be accessible to the image service.
+
+ c. The image must be in a supported format.
+ 
+    **Note:** If you upload an image with a format that is not supported, you will receive an Error 404, Not Found error when you attempt to create the image.
+
+4. Select an <b>Image File</b>.
+
+   Select a <b>Format</b> from the drop-down list. The image must be in one of the formats listed.
+   
+5. Enter the <b>Minimum Disk space</b> and <b>Minimum Ram</b>.
+
+6. Keep <b>Public</b> checked if you want the image visible to all users.
+
+7. Click <b>Create Image</b>. If successful, the image displays with an Active status. If creation is not successful within a specified amount of time (set by your system administrator; typically no more than five minutes), the <b>Status</b> of the image in the list displays <b>Upload Failed</b>.
+
+**Note:** Only AMI, RAW, and QCOW2 images are launchable.
+
+
+
+#### How to Edit an Image {#how-to-edit-an-image-region-tab}
+
+You cannot modify an image format.
+
+When you edit an Amazon Machine Image (AMI) image, you see additional fields allowing you to select a Kernel image (AKI) and a RAMdisk Image (ARI). An AMI image is not valid unless it is associated with an AKI and ARI.
+
+To edit an image:
+
+1. Click <b>Region</b> > <b>Images</b> to open the Images window.
+
+2. Find the image to edit. Click <b>Edit</b>.
+
+3. Keep or edit:
+ * <b>Name</b>: As desired.
+ * <b>Description</b>: Optional description.
+ * <b>KernelID</b>
+ * <b>Ramdisk ID</b>
+ * <b>Architecture</b>: Optional information about hardware requirements for the VM the image runs on. For example, x86 64 bits.
+ * <b>Public</b>: Visibility
+ 
+   **Note**: If you edit an AMI image, you can select a different AKI and ARI.
+   
+ * <b>Protected</b>: Select to create a read-only image. Protected images cannot be edited or deleted.
+
+4. Click <b>Update Image</b>.
+
+
+
+#### How to Delete an Image {#how-to-delete-an-image-region-tab}
+
+After you delete an image, you cannot create instances based on that (deleted) image. Also, if you delete an image that a topology template references, provisioning will fail.
+
+Images are protected from deletion by rules. If you are not allowed to delete an image, you do not see <b>Delete Image</b>.
+
+To delete one or more images:
+
+1. Click <b>Region</b> > <b>Images</b> to open the Images window.
+
+2. Find the image you want to delete, and click <b>Delete Image</b>.
+
+  <i>Optional</i>: To delete more than one image, select the images and click <b>Delete Images</b>.
+
+3. A confirmation dialog box opens, warning that the action cannot be undone.
+
+4. Click <b>Delete Image</b>. The Images list redisplays and the image or images are removed.
+
+
 
 ### How to Access Networks
 
@@ -1307,7 +1518,7 @@ To see a list of project images:
 
 **Tasks:**
 
-* [How to Create an Image](#how-to-create-an-image)
+* [How to Create an Image](#how-to-create-an-image-project-tab)
 
 * [How to Edit an Image or Instance Snapshot](#how-to-edit-an-image-or-instance-snapshot)
 
@@ -1318,31 +1529,148 @@ To see a list of project images:
 * [How to Delete a Volume Snapshot](#how-to-delete-a-volume-snapshot)
 	
 	
-#### How to Create an Image
+#### How to Create an Image {#how-to-create-an-image-project-tab}
 
-Available soon...
+You can create and configure an image to upload to the Image Service. Compressed image binaries, such as .zip, and .tar.gz, are supported.
+
+To create an image:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Infrastructure</b> > <b>Images and Snapshots</b> > <b>Create Image</b>.
+
+3. On the <b>Create an Image</b> dialog box, enter a <b>Name</b> and optional <b>Description</b>.
+
+4. Enter one of the following for the Image Source:
+ * <b>Image File</b>: Then browse to select the file.
+ * <b>Image Location</b>: Then enter the image URL. It must be a valid and direct HTTP URL to the image binary. URLs that redirect or serve error pages will result in unusable images.
+   
+   **Note:** If you do not have rights to the image's URL, you receive an error when trying to create the image.
+
+   The image must be accessible to the Image Service and in a supported format.
+   
+   **Note:** If you upload an image with a format that is not supported, you will receive an Error 404, Not Found error when you attempt to create the image.
+
+5. Select a <b>Format</b>. The image must be in one of the formats listed.
+
+6. Enter the <b>Minimum Disk space</b> and <b>Minimum Ram</b>.
+
+7. Leave <b>Public</b> unselected to create a private image. <!-- Private images can be seen by --> 
+
+    To learn whether you have permission to create a public image, see your role tasks under [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
+
+8. Leave <b>Protected</b> unselected to create an image that other users can edit or delete.
+
+9. Select <b>Protected</b> to create a read-only image that other users cannot edit or delete. To learn whether you have permission to create a protected 
+image, see your role under [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
+
+10. Click <b>Create Image</b>. If successful, the image displays with an <b>Active</b> status. If creation is not successful within a specified amount of time (set by your system administrator; typically no more than five minutes), the <b>Status</b> of the image in the list displays <b>Upload Failed</b>.
+
+**Note:** Only AMI, RAW, and QCOW2 images are launchable.
+
+
 
 #### How to Edit an Image or Instance Snapshot
 
-Available soon...
+You cannot modify an image format.
+
+When you edit an Amazon Machine Image (AMI) image, you see additional fields allowing you to select a Kernel image (AKI) and a RAMdisk Image (ARI). 
+An AMI image is not valid unless it is associated with an AKI and ARI.
+
+To edit an image or instance snapshot:
+
+1. Click <b>Project</b> > <b>Images and Snapshots</b> to open the Images and Snapshots window.
+
+2. Find the image or snapshot you want to edit, and click More > Edit.
+
+3. Keep or edit:
+ * <b>Name</b>: As desired.
+ * <b>Description</b>: Optional description.
+ * <b>Public</b>: Visibility.
+ * <b>Protected</b>: Select to mark the image as read-only. A protected image cannot be edited or deleted.
+    
+4. Click <b>Update Image</b>.
 
 
-#### How to Launch an Image or Instance Snapshot
+#### How to Launch an Image or Instance Snapshot  <!-- on Project tab --> 
 
-Available soon...
+You can only launch images that are formatted as AMI, RAW, and QCOW2. Launching an image provisions it to the cloud.
+
+To launch a project image:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Infrastructure</b> > <b>Images and Snapshots</b> to open the Images window.
+
+3. Find the image to launch, and click <b>Launch</b> to open the Launch Instance dialog box. The dialog opens to the <b>Details</b> tab. Some fields are automatically populated from the image.
+
+4. Enter or edit the Details tab information as needed:
+ * <b>Instance Source</b>: Specify whether you are using an image or snapshot.
+ * <b>Image or Instance Snapshot</b>: Select from the list of images that have been uploaded to the system.
+ * <b>Availability Zone</b>: Any availability zone or Nova.
+ * <b>Instance Name</b>: The name of the host you are creating (Required).
+ * <b>Flavor</b>: Indicates the size of the node. When you select a flavor here, the Flavor Details table on the right changes to show the node properties and values associated with your size selection.
+ * <b>Instance Count</b>: Can be more than 1.
+ 
+5. Use the <b>Access and Security</b> tab to control access to your instance via keypairs and security groups.
+
+ a. <b>Keypair</b>: Keypairs are ssh credentials that are injected into images when they are launched. The public key is installed on the VM; you will use the private key to log in.
+
+    To add a keypair, either:
+	
+	* Select a keypair from the list, or
+	* Click (<b>+</b>) to import a keypair. Enter <b>Keypair Name</b> and <b>Public Key</b>.
+
+    To create a keypair, see [How to Import, Create, or Delete a Keypair](#how-to-import-create-to-delete-a-keypair).
+
+ b. Enter <b>Admin Password</b> and <b>Confirm Admin Password</b>.
+ 
+ c. Select a <b>Security Group</b>.
+
+6. Use the <b>Networking</b> tab to select one or more networks (required).
+
+  You must specify at least one network. You can click the plus (<b>+</b>) symbol or drag and drop to make your selections. Use the minus (<b>-</b>) symbol to remove networks.
+
+7. Use the <b>Volume Options</b> tab to select boot options for an instance that launches with attached storage.
+
+8. Use the <b>Post Creation</b> tab to customize the instance by adding a script to run after launch. The Customization Script field is analogous to "User Data" in other systems.
+
+9. Click <b>Launch</b>. If successful, the image is added to the <b>Images</b> list with an <b>Active</b> status.
 
 
 #### How to Delete an Image or Instance Snapshot
 
-Available soon...
+Images are protected from deletion by rules. If you are not allowed to delete an image, you receive an error when you attempt to delete the image.
+
+If you delete an image that is used in a design or profile, an attempt to provision the document will fail.
+
+To delete one or more images:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Infrastructure</b> > <b>Images and Snapshots</b>.
+
+3. Find the image you want to delete, and click <b>More</b> > <b>Delete Image</b>.
+
+  <i>Optional</i>: To delete multiple images, select the images and click <b>Delete Images</b>.
+
+4. Confirm your selection in the warning dialog box. Click <b>Delete Image</b>.
+
 
 
 #### How to Delete a Volume Snapshot
 	
-Available soon...
-	
-	
-		
+To delete one or more volume snapshots:
+
+1. On the Project tab, select a Current Project.
+
+2. Click Infrastructure > Images and Snapshots to open the Images and Snapshots window.
+
+3. Find the volume snapshot you want to delete, and click More > Delete Volume Snapshot.
+
+  <i>Optional</i>: To delete multiple volume snapshots, select the snapshots and click <b>Delete Volume Snapshots</b>.
+
+4. Confirm your selection in the warning dialog box, and click <b>Delete Volume Snapshot</b>.
 
   
 ### Networks
