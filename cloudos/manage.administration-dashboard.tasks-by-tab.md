@@ -253,7 +253,25 @@ Available soon...
 
 #### How to Add or Remove a Project User
 
-Available soon...
+To learn whether you have permission to add or remove a project user on the Cloud tab, 
+see [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
+
+Before adding a new user to a project, make sure the user is logged out. If you add users to a project while they are logged in, the 
+Administration Dashboard may log them out without warning or show an error message. If so, users should sign out and sign back in. Carefully coordinate with 
+users, or schedule adding users to a project when they are not logged in.
+
+To add or remove a project user:
+
+1. Click <b>Cloud</b> > <b>Projects</b> to open the Projects window.
+
+2. Find the project, and click <b>Modify Users</b> to open the Edit Project dialog box at the Project Members tab.
+
+3. Use the plus sign (<b>+</b>) to add Available Users. Use the minus sign (<b>-</b>) to remove Project Members.
+
+  <b>Note</b>: You can only add or remove project users and project administrators. Higher level roles, such as cloud administrators and Arch are added 
+  automatically. To see all project users, open the detail view of the project. See [How to Access All Projects](#how-to-access-all-projects).
+
+4. Click Save.
 
 #### How to Change a Project's Compute or Storage Limits
 
@@ -441,15 +459,53 @@ Available soon...
 
 #### How to Edit an Image
 
-Available soon...
+To learn whether you have permission to edit an image on the Cloud tab, see [Administration Dashboard Tasks by Roles](/cloudos/manage/administration-dashboard/tasks-by-role/).
+
+You cannot modify an image format.
+
+When you edit an Amazon Machine Image (AMI) image, you see additional fields allowing you to select a Kernel image (AKI) and a RAMdisk Image (ARI). 
+An AMI image is not valid unless it is associated with an AKI and ARI.
+
+To edit an image:
+
+1. Click <b>Cloud</b> > <b>Images</b> to open the Images window.
+
+2. Find the image you want to edit, and click <b>More</b> > <b>Edit</b>.
+
+3. Keep or edit:
+  * <b>Name</b> : As desired.
+  * <b>Description</b>: Optional.
+  * <b>Architecture</b>: Optional information about hardware requirements for the VM the image runs on. For example, <code>x86 64 bits</code>.
+  * <b>Format</b>: You cannot edit format.  Note: If you edit an AMI image, you can select a different AKI and ARI.
+  * <b>Public</b>: Visibility.
+  * <b>Protected</b>: Select to mark the image as read-only. A protected image cannot be edited or deleted.
+    
+4. Click <b>Update Image</b>.
+
 
 #### How to Delete an Image
 
-Available soon...
+To learn whether you have permission to delete an image or protected image on the Cloud tab, see [Administration Dashboard Tasks by Roles](/cloudos/manage/administration-dashboard/tasks-by-role/).
 
+If you have permission to delete a protected image, you must first edit the image, so it is not protected. See [How to Edit an Image](#how-to-edit-an-image).
+
+After you delete an image, you cannot create instances based on that (deleted) image. Also, if you delete an image that a topology document references, the infrastructure design document will fail during an attempt to provision.
+
+To delete one or more images:
+
+1. Click <b>Cloud</b> > <b>Images</b> to open the Images window.
+
+2. To delete one image, click <b>More</b> > <b>Delete Image</b>.
+
+3. <i>Optional</i>: To delete one or more images, select the images and click <b>Delete Images</b>.
+
+4. A confirmation dialog box opens, warning that the action cannot be undone.
+
+5. Click <b>Delete Image</b>. The Images list redisplays and the image or images are removed.
 
 
 <a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
 
 ## Region Tab Tasks
 
@@ -660,7 +716,7 @@ Available soon...
 Projects are groupings that allow designated users to view the same set of content. Projects protect topology templates, infrastructure designs, and 
 realized resources (such as VMs, volumes, and others) from being visible to all users.
 
-To learn about which tasks you can perform on the Project tab, see your role under Administration Dashboard Tasks by Role.
+To learn about which tasks you can perform on the Project tab, see your role under [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
 
 **Tasks:**
 
@@ -1321,26 +1377,89 @@ To see a list of routers:
 
 #### How to Create a Router
 
-Available soon...
+You can create a router to interconnect subnets and forward traffic within the subnets.
+
+A router has an interface for each subnet it is associated with. By default, the IP address of this interface is the subnet's gateway IP. When a router is associated with a subnet, a port for that router interface will be added to the subnet's network.
+
+To create a router:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Infrastructure</b> > <b>Routers</b> to open the Routers window.
+
+3. Click <b>Create Router</b>.
+
+4. On the <b>Create Router</b> dialog, enter a <b>Router Name</b>.
+
+5. Click <b>Create Router</b>.
+
 
 
 #### How to Add an Internal Interface to a Router
 
-Available soon...
+To learn whether you have permission, see your role under [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
+
+To add an internal interface to a project router:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Infrastructure</b> > <b>Routers</b> to open the Routers window.
+
+3. Click the name of a router where you want to add an interface to open an Overview window.
+
+4. Click <b>Add Interface</b>.
+
+5. In the Add Interface window:
+  * Select a subnet from the drop-down list.
+  * Leave the IP Address field blank.
+
+6. Click <b>Add Interface</b>.
+
+7. Wait for the success message.
+
+8. Go back to the Router Overview to verify the <b>Interfaces</b> information:
+  * External and Internal interfaces are identified.
+  * The initial Internal Interface <b>Status</b> is <b>DOWN</b>.
+  * After an Instance is created using this router, the <b>Status</b> will change to <b>ACTIVE</b>.
 
 
 #### How to Add an External Interface to a Router
 
-Available soon...
+To learn whether you have permission, see your role under [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
+
+To add an external interface to a router:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Infrastructure</b> > <b>Routers</b> to open the Routers window.
+
+3. Click the router <b>Name</b> to open an Overview window.
+
+4. Click <b>Add Gateway</b> Interface.
+
+5. In the Set Gateway window, select an <b>External Network</b> from the drop-down list.
+
+6. Click <b>Set Gateway</b>.
+
 
 #### How to Delete a Router
 
-Available soon...
+To delete one or more project routers:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Infrastructure</b> > <b>Routers</b> to open the Routers window.
+
+3. Find the router you want to delete, and click <b>More</b> > <b>Delete Router</b>.
+
+  <i>Optional</i>: To delete multiple routers, select routers and click <b>Delete Routers</b>.
+
+5. Confirm your selection in the warning dialog box, and click <b>Delete Router</b>.
+
+6. The Routers window opens, and you do not see the routers listed.
 
 
-
-
-  
+ 
 ### How to See a Network Topology Diagram
 
 Available soon...
@@ -1514,7 +1633,17 @@ Available soon...
   
 ### How to Access Your Authentication Token
 
-Available soon...
+The Administration Dashboard manages your authentication token. The Administration Dashboard retrieves your token from the Keystone service when you successfully log in to the dashboard.
+
+You can access your authentication token in the Administration Dashboard for subsequent use outside the dashboard. For example, when you use a REST client to request an OpenStack service, you might need to supply your authentication token.
+
+To access your authentication token:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Access and Security</b> > <b>Access and Security</b> > <b>Authentication Token</b> tab.
+
+3. A truncated version of the token displays. Click <b>More</b> to see the entire token.
   
 ### Updates and Extensions
 
