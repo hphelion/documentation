@@ -1662,32 +1662,143 @@ To associate a floating IP to an instance:
 
 #### How to Disassociate a Floating IP from an Instance
 
-Available soon...
+To disassociate a floating IP from an instance:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Infrastructure</b> > <b>Instances</b> to open the Instances window.
+
+3. Find the instance you want to disassociate, and click <b>More</b> > <b>Disassociate Floating I</b>P. A confirmation window opens, warning that the action cannot be undone.
+    
+4. Click <b>Disassociate Floating IP</b> to confirm.
+
 
 
 #### How to Pause or Resume an Instance
 
-Available soon...
+Pausing an instance stores the content of the VM in memory (RAM). This keeps the instance running, but in a frozen state.
+
+To free up memory and vCPUs, you should suspend an instance.
+
+To pause a project instance:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Infrastructure</b> > <b>Instances</b> to open the Instances window.
+
+3. Find the instance you want to pause, and click <b>More</b> > <b>Pause Instance</b>.
+
+4. The <b>Status</b> and <b>Power State</b> of the instance show <b>Paused</b>.
+
+ 
+
+To resume an instance:
+
+1. Select the <b>instance</b> > <b>More</b> > <b>Resume Instance</b>.
+
+2. After a short time, the Status returns to Active and the Power State returns to <b>Running</b>.
+
 
 
 #### How to Hard Reboot an Instance
 
+Rebooting an instance is similar to cycling power on a physical server &mdash; the operating system is restarted from scratch. Rebooting temporarily makes the 
+VM and all the services it hosts unavailable. In a common use case, your installation requires a reboot because you installed new software.
 
-Available soon...
+To reboot an instance:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Infrastructure</b> > <b>Instances</b> to open the Instances window.
+
+3. Find the instance you want to reboot, and click <b>More</b> > <b>Hard Reboot Instance</b>. A confirmation window opens, warning that the action cannot be undone.
+
+4. Click <b>Hard Reboot Instance</b>. The <b>Task</b> column indicates the instance is <b>Rebooting Hard</b>. If reboot is successful, the 
+<b>Status</b> shows <b>Active</b> and the <b>Power State</b> shows <b>Running</b>.
+
 
 #### How to Suspend or Resume an Instance
 
-Available soon...
+Suspending an instance frees up memory and vCPUs. Suspension could be compared to hibernation mode.
+ 
+##### Suspend an Instance
+
+To suspend an instance:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Infrastructure</b> > <b>Instances</b> to open the Instances window.
+
+3. Find the instance you want to suspend, and click <b>More</b> > <b>Suspend Instance</b>. The <b>Task</b> column indicates the instance is suspending. 
+When this process completes, the <b>Status</b> shows <b>Suspended</b>, and the <b>Power State</b> shows <b>Shutoff</b>.
+
+ 
+##### Resume an Instance
+
+To resume an instance:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Infrastructure</b> > <b>Instances</b> to open the Instances window.
+
+3. Find the instance you want to resume, and click <b>More</b> > <b>Resume Instance</b>. The Task column indicates the instance is resuming. 
+When this process completes, the <b>Status</b> returns to <b>Active</b>, and the <b>Power State</b> returns to <b>Running</b>.
+
 
 
 #### How to Force Delete an Instance
 
-Available soon...
+Use the <b>Force Delete</b> option to delete an instance when it appears to be in an unresponsive state. Any user has the option to Force Delete, 
+which immediately and completely deletes the instance from the project.
+
+To force delete a project instance:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Infrastructure</b> > <b>Instances</b> to open the Instances window.
+
+3. In the <b>Instances</b> list, select the instance you want to force delete, and select <b>More</b> > <b>Force Delete</b>. 
+The instance is deleted without a warning prompt.
 
 
 #### How to Terminate an Instance
 
-Available soon...
+When you terminate an instance, the VM is shut down and the resources associated with it are released. It is not possible to start the VM after it 
+is terminated because it no longer exists. Termination is scheduled because it takes some time to free all the resources.
+
+When an instance is terminated:
+
+* Any changes associated with the volume that the image is running on are discarded.
+
+* Any changes associated with the volume implied by the disk space (ephemeral) that are specified in the flavor are discarded.
+
+* Any changes associated with attached volumes are retained in the attached volume and could be reattached to a different VM.
+
+* The VM is removed from any security group it was associated with, and frees its floating IP addresses.
+
+ 
+
+To terminate one or more instances:
+
+1. On the Project tab, select a Current Project.
+
+2. Click Infrastructure > Instances to open the Instances window.
+
+3. Select one or more instances to terminate, and click More > Terminate Instance.
+
+4. In the Confirm Terminate Instance dialog, verify your selection and then click Terminate Instance(s).
+
+5. Wait for the success message.
+
+ 
+**Related topics:**
+
+* [How to Pause or Resume an Instance](#how-to-pause-to-resume-an-instance)
+
+* [How to Suspend or Resume an Instance](#how-to-suspend-or-resume-an-instance)
+
+* [How to Force Delete an Instance](#how-to-force-delete-an-instance)
+
 
   
 ### Volumes

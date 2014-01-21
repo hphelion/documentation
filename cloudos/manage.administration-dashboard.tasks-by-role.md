@@ -221,8 +221,7 @@ although they have rights to work with all the tasks listed below.
 
 ### How to Create a Standalone Load Balancer
 
-You can create a standalone (referenced instance) load balancer and use it to provide load-balancing features for one or more provisioned topologies. \
-Create the load balancer and reference it in your deployment profile.
+You can create a standalone (referenced instance) load balancer and use it to provide load-balancing features for one or more provisioned topologies. Create the load balancer and reference it in your deployment profile.
 
 To create a standalone load balancer:
 
