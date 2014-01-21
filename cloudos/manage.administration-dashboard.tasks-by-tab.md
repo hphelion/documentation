@@ -755,7 +755,16 @@ To learn about which tasks you can perform on the Project tab, see your role und
 
 ### How to See a Project Overview
 
-Available soon...
+To see a project overview:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Overview</b> > <b>Overview</b> to see limit and usage summaries for the current month.
+
+3. <i>Optional</i>: Change the <b>From</b> and <b>To</b> range, and click <b>Submit</b> to see limit and usage summaries for a different time period.
+
+4. <i>Optional</i>: Click <b>Download CSV Summary</b> to open a text file in Microsoft Excel with current month usage information.
+
 
 ### Running Topologies
 
@@ -1123,7 +1132,139 @@ Available soon...
   
 ### Volumes
 
-Available soon...
+**Concepts:**
+
+Volumes are the disk storage volumes that have been created in the project. Volumes are persistent &mdash; you can create data in these volumes and attach 
+them to various VMs (instances) over time, as needed.
+
+To see a list of volumes:
+
+1. On the Project tab, select a Current Project.
+
+2. Click Infrastructure > Volumes to open the Volumes window.
+
+**Tasks:**
+
+* [How to Create a Volume](#how-to-create-a-volume)
+
+* [How to Create a Volume from an Image or Instance Snapshot](#how-to-create-a-volume-from-an-image-or-instance-snapshot)
+
+* [How to Attach or Detach Volumes to an Instance](#how-to-attach-or-detach-volumes-to-an-instance)
+
+* [How to Create a Volume Snapshot](#how-to-create-a-volume-snapshot)
+
+* [How to Delete a Volume](#how-to-delete-a-volume)
+	
+	
+#### How to Create a Volume
+
+After you create a volume, you can attach it to a VM and place content in it.
+
+To create a volume:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Infrastructure</b> > <b>Volumes</b> to open the Volumes window.
+
+ a. To create a volume that is not based on an image, enter:
+ 
+   * <b>Volume Name</b>: A volume name is required.
+   * <b>Description</b>: Optional description.
+   * <b>Type</b>: Choose a volume type. Volume types are defined by cloud administrators, at the region level.
+   * <b>Size</b>: In GB.
+   * <b>Volume Source</b>: Leave the default, not based on a snapshot or image.
+
+ b. To create a volume that is based on an image or snapshot:
+ 
+   * Volume Source
+   
+     * Select <b>Snapshot</b> to display the Use snapshot as a source menu. If the dashboard does not contain snapshots, you do not see this option.
+     * Select <b>Image</b> to display the <b>Use image as a source</b> menu.
+	 
+   * Select an image or snapshot from the source menu. Keep or modify the entries that are automatically populated from the source.
+
+3. Click <b>Create Volume</b>. The volume is created and available to attach to VMs.
+
+
+#### How to Create a Volume from an Image or Instance Snapshot
+
+To create a volume from an image or instance snapshot:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Infrastructure</b> > <b>Images and Snapshots</b> to open the Images and Snapshots window.
+
+3. Find the image or snapshot that you want to use, and click <b>More</b> > <b>Create Volume</b> to open a dialog box where you enter:
+  * <b>Volume Name</b>: A default name is based on the image name.
+  * <b>Description</b>: Optional description.
+  * <b>Type</b>: Defined by cloud administrators, at the region level.
+  * <b>Size</b>: In GB.
+  * <b>Use image as source</b>: Populated by the image name.
+
+4. Click <b>Create Volume</b>.
+
+
+#### How to Attach or Detach Volumes to an Instance
+
+Volumes are disk storage volumes that have been created in a project and can be attached to an instance. A volume can only be attached to a single VM 
+at a time, and that VM has sole use of that volume.
+
+To attach a project volume to an instance:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Infrastructure</b> > <b>Volumes</b> to open the Volumes window.
+
+3. Find the volume you want to attach, and click <b>Edit Attachments</b> to open the <b>Manage Volume Attachments</b> dialog box.
+
+4. Select an instance from <b>Attach</b> to <b>Instance</b>.
+
+5. Enter a <b>Device Name</b>, which is an attached device, such as a device between <code> /dev/vdc </code> and <code> /dev/vdz</code>.
+
+6. Click <b>Attach Volume</b>.
+
+ 
+
+To detach a volume from an instance:
+
+* After a volume is attached, <b>Detach Volume</b> is available through the <b>Attach Volume</b> action.
+
+
+#### How to Create a Volume Snapshot
+
+To create a project volume snapshot:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Infrastructure</b> > <b>Volumes</b> to open the Volumes window.
+
+3. Find the volume you want to snapshot, and click <b>More</b> > <b>Create Snapshot</b>.
+
+4. Enter a <b>Name</b> for the snapshot and a <b>Description</b>.
+
+5. Click <b>Create Snapshot</b>. The volume snapshot is added to Images and Snapshots.
+
+
+#### How to Delete a Volume
+	
+Deleting a volume means the volume will no longer exist, the data will be lost, it cannot be attached to any VM, and no user can access it.
+
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Caution:</b> 
+Deleting a volume cannot be undone. </p>
+
+To delete one or more project volumes:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Infrastructure</b> > <b>Volumes</b> to open the Volumes window.
+
+3. To delete one volume, find the volume and select <b>More</b> > <b>Delete Volume</b>.
+
+4. <i>Optional</i>: To delete multiple volumes, select the checkboxes for the volumes you want to delete, and click <b>Delete Volume</b>.
+
+5. In the warning dialog box, verify your selection, and click <b>Delete Volume</b>.
+	
+
   
 ### Images and Snapshots
 
@@ -1462,7 +1603,24 @@ To delete one or more project routers:
  
 ### How to See a Network Topology Diagram
 
-Available soon...
+**Concepts:**
+
+You can see a layout diagram of project networks, subnets, and routers.
+
+To see the diagram:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Infrastructure</b> > <b>Network Topology</b>. You can launch instances, and create networks and routers on this window. Follow the steps described in the instances, networks, and routers topics below.
+
+**Related topics:**
+
+* [How to Launch an Instance](#how-to-launch-an-instance)
+
+* [How to Create a Private Network](#how-to-create-a-private-network-project-tab)
+
+* [How to Create a Router](#how-to-create-a-router)
+
   
 ### Security Groups and Rules
 
@@ -1625,11 +1783,99 @@ You might have previously created a keypair that you want to use. To import a ke
   
 ### Floating IPs
 
-Available soon...
+**Concepts:**
+
+You can allocate additional floating IP addresses to a project. This process does not assign the address to a particular instance in the project.
+
+After you allocate an IP to your project, you can associate or disassociate the address to an instance.
+
+You can release a floating IP address that is associated with your project. When you release the floating IP, it becomes available to other projects.
+
+**Tasks:**
+
+* [How to Allocate a Floating IP](#how-to-allocate-a-floating-ip)
+
+* [How to Associate or Disassociate Floating IPs](#how-to-associate-or-disassociate-floating-ips)
+
+* [How to Release a Floating IP](#how-to-release-a-floating-ip)
+	
+	
+	
+	
+#### How to Allocate a Floating IP
+
+To allocate a floating IP to a project:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Access and Security</b> > <b>Access and Security</b> > <b>Floating IPs</b> tab.
+
+3. In the Floating IPs list, click <b>Allocate IP To Project</b>.
+
+4. In the Allocate Floating IP dialog, select a <b>Pool</b> from the drop-down list.
+
+5. Click <b>Allocate IP</b>.
+
+
+
+#### How to Associate or Disassociate Floating IPs
+
+You can assign an address to a particular VM instance.
+
+To associate a floating IP:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Access and Security</b> > <b>Access and Security</b> > <b>Floating IPs</b> tab.
+
+3. In the Floating IPs list, select an IP address and click <b>Allocate IP to Project</b>.
+
+4. In the Allocate Floating IP dialog, select a <b>Pool</b> from the drop-down list.
+
+5. Click <b>Allocate IP</b>.
+
+6. Wait for the success message.
+
+ 
+
+To disassociate a floating IP:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Access and Security</b> > <b>Access and Security</b> > <b>Floating IPs</b> tab.
+
+3. In the Floating IPs list, select an address where the <b>Disassociate Floating IP</b>action is available.
+
+4. Click <b>Disassociate Floating IP</b>.
+
+5. Wait for the success message.
+
+
+
+#### How to Release a Floating IP 
+
+To release a floating IP:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Access and Security</b> > <b>Access and Security</b> > <b>Floating IPs</b> tab.
+
+3. Find the IP that you want to release, and click <b>More</b> > <b>Release Floating IP</b>.
+
+4. Wait for the success message.
+
+	
   
 ### How to Access API Endpoints
 
-Available soon...
+To access API endpoints:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Access and Security</b> > <b>Access and Security</b> > <b>API Access</b> tab.
+
+3. Information shown includes service name and service endpoint.
+
   
 ### How to Access Your Authentication Token
 

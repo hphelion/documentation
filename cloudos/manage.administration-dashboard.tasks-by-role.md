@@ -200,7 +200,7 @@ although they have rights to work with all the tasks listed below.
 
 * [Security Groups and Rules](/cloudos/manage/administration-dashboard/tasks-by-tab/#security-groups-and-rules)
 
-* [How to Create a Standalone Load Balancer](/cloudos/manage/administration-dashboard/tasks-by-tab/#how-to-create-a-standalone-load-balancer)
+* [How to Create a Standalone Load Balancer](#how-to-create-a-standalone-load-balancer)
 
 * [How to See a Project Overview](/cloudos/manage/administration-dashboard/tasks-by-tab/#how-to-see-a-project-overview)
 
@@ -217,11 +217,6 @@ although they have rights to work with all the tasks listed below.
 * [How to See a Network Topology Diagram](/cloudos/manage/administration-dashboard/tasks-by-tab/#how-to-see-a-network-topology-diagram)
 
 * [Administration Dashboard Settings](/cloudos/manage/administration-dashboard/tasks-by-tab/#administration-dashboard-settings)
-
-
-
-
-
 
 
 ### How to Create a Standalone Load Balancer
