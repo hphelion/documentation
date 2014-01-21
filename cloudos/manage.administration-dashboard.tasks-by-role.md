@@ -350,13 +350,9 @@ REST service is running.</li>
 
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"><b>Note:</b> After you create a standalone load 
 balancer instance, you can save it as a snapshot. See 
-<a href="/cloudos/manage/administration-dashboaard/tasks-by-tab/#how-to-create-an-instance-snapshot">How to Create an Instance Snapshot</a>.</p> 
+<a href="/cloudos/manage/administration-dashboard/tasks-by-tab/#how-to-create-an-instance-snapshot">How to Create an Instance Snapshot</a>.</p> 
 
 <a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-
-
-
-
 
 
 

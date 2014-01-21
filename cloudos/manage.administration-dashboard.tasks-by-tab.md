@@ -1460,7 +1460,29 @@ Available soon...
 
 #### How to Delete a Resource Pool
 
-Available soon... 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Caution:</b> Make sure you really want to 
+delete a resource pool. Deleted resource pools cannot be restored. You must recreate them.
+</p>
+
+<b>Best Practice</b>: Delete the resource pool after deleting all services that were using that resource pool.
+
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Note:</b> 
+You can delete a resource pool even if a service is provisioned using that resource pool. Also, after the resource pool is deleted, the 
+de-provisioning operation will still succeed.
+</p>
+
+To delete one or more resource pools:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Provisioning</b> > <b>Resource Pools</b> to open the Resource Pools window.
+
+3. To delete one resource pool, find the resource pool you want to delete and click <b>More</b> > <b>Delete Resource Pool</b>.
+
+4. <i>Optional</i>: To delete more than one resource pool, select the resource pools, and click <b>Delete Resource Pools</b>.
+
+5. Confirm your selection in the warning dialog box, and click <b>Delete Resource Pool</b>.
+
   
 ### Instances
 
@@ -1577,18 +1599,65 @@ To launch an instance:
 
 #### How to Create an Instance Snapshot
 
-Available soon...
+After you set up, install, and configure an instance, you can create a snapshot to preserve the disk state of the running instance. At a later time, you can use the snapshot to start up another VM.
+
+To create an instance snapshot:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Infrastructure</b> > <b>Instances</b> to open the Instances window.
+
+3. Find the instance you want to snapshot, and click <b>Create Snapshot</b>.
+
+4. Enter a name for the snapshot.
+
+5. Click <b>Create Snapshot</b>. The Administration Dashboard displays the snapshot as an image on the <b>Images and Snapshots</b> panel. 
+See [Images and Snapshots](#images-and-snapshots).
+
 
 
 #### How to Edit an Instance
 
-Available soon...
+To edit a project instance:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Infrastructure</b> > <b>Instances</b> to open the Instances window.
+
+3. In the Instances list, select the Instance you want to edit and then click <b>Edit Instance</b>.
+
+4. Select the <b>Info</b> tab to update the <b>Name</b>.
+
+5. In the <b>Security Groups</b> tab, edit security groups, use the plus symbol (<b>+</b>) to add groups and the minus symbol (<b>-</b>) to remove groups:
+  * <b>All Security Groups</b> &mdash; A list of security groups that are associated with the project, but not the instance.
+  * <b>Instance Security Groups</b> &mdash; A list of security groups that are currently associated with the instance.
+
+6. Click <b>Save</b>.
+
 
 
 
 #### How to Associate a Floating IP to an Instance
 
-Available soon...
+You can associate a Floating IP address to an instance that needs to be visible outside the cloud.
+
+To associate a floating IP to an instance:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Infrastructure</b> > <b>Instances</b> to open the Instances window.
+
+3. Select an instance and then click <b>Associate Floating IP</b> to open the Manage Floating IP Associations window.
+   
+4. Select an <b>IP Address</b> from the list.
+
+5. <i>Optional</i>: If you do not see available addresses:
+ * Click (<b>+</b>) to allocate a floating IP from a pool.
+ * Select a <b>Pool</b> and then click <b>Allocate IP</b>.
+
+6. Select a <b>Port</b> to be associated from the list.
+
+7. Click <b>Associate</b>.
 
 
 #### How to Disassociate a Floating IP from an Instance
