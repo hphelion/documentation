@@ -129,7 +129,7 @@ For Network API details, see the [HP Cloud Compute Service API Reference](https:
 
 [Managing routers](/mc/compute/networks/manage-routers)
 
-*File exists for MC; need to update to Horizon; used HTML to hide enable/disable sections (can't do this in 13.5?)*
+*File exists for MC; need to update to Horizon; used HTML to hide enable/disable sections (can't do this in 13.5???)*
 
 - Before you begin
 - Enabling a router
