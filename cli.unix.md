@@ -66,7 +66,9 @@ Download the HP Cloud environment command-line interface (CLI) software for UNIX
 + [**HP Cloud version 13.5** environment CLI software for UNIX CLI](http://rubygems.org/gems/hpcloud)
 + [**HP Cloud version 12.12** environment CLI software for UNIX CLI](/file/hpcloud.gem)
 
-Some articles about ways you can use the Unix CLI:
+##For more information## {#articles}
+
+For additional tips and How-tos on using your UNIX command-line interface (CLI), see [UNIX CLI: Articles on to use the UNIX CLI](/cli/unix/articles/):
 
 * [Using bash command completion](/cli/unix/articles/complete)
 * [Generating verbose debugging output](/cli/unix/articles/debugging)
@@ -76,3 +78,5 @@ Some articles about ways you can use the Unix CLI:
 * [Performing large file uploads](/cli/unix/articles/large)
 * [Creating servers with user data](/cli/unix/articles/userdata)
 * [Modifying report paging](/cli/unix/articles/paging)
+* * [Creating servers with custom personality](/cli/unix/articles/personality)
+* [Creating servers with custom user data](/cli/unix/articles/userdata)
