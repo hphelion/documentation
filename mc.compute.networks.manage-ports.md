@@ -9,7 +9,7 @@ product: mc-compute
 
 With the default network configuration the instance you create will also create a port automatically for you, with an IP assigned from your subnet, and attach it to your default network.
 
-<!--What is this port? -->
+<!--What is default port? -->
 
 A port represents a virtual switch port on a logical network switch. Virtual instances attach their interfaces into ports. The logical port also defines the MAC address and the IP address(es) to be assigned to the interfaces plugged into them.
 
