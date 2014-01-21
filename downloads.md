@@ -22,7 +22,8 @@ Here's what we have for you:
 ##Command-line Interface (CLI) Packages##
 
 ###UNIX CLI### {#UNIXCLIInstall}
-* [Installation package, Version 1.9.1](/file/hpcloud-1.9.1.gem)
+* [Openstack Unified CLI Download and Documentation](https://wiki.openstack.org/wiki/OpenStackClient)
+* [HP Unix CLI Installation package, Version 1.9.1](/file/hpcloud-1.9.1.gem) (Available for download until May 5th, 2014)
 * [Overview page](/cli/unix)
 * [Release Notes](/cli/unix/release-notes)
 
