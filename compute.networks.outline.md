@@ -28,7 +28,7 @@ product: compute
 
 [Creating Your First Network](/compute/networks/first-network/)
 
-*I created this file; not complete; based on [Creating first instance](https://community.hpcloud.com/article/creating-your-first-instance-135); **do we need**?*
+*I created this file; not complete; based on [Creating first instance](https://community.hpcloud.com/article/creating-your-first-instance-135); **do we need**? Similar file to [Getting Started with HP Public Cloud Console](http://docs.hpcloud.com/hpcloudconsole)*
 
 **Using the Horizon Cloud Console**
 
@@ -60,7 +60,7 @@ product: compute
 
 The network service that provides a powerful API to define the network connectivity and addressing used by devices from other services, such as the Compute service. 
 
-The HP Cloud Services API supports virtual network, subnet, router and port abstractions to describe network resources (taken from cloud wiki: https://wiki.hpcloud.net/display/iaas/Neutron+-+HPCS+Cloud+Network+Service).
+The HP Cloud Services API supports virtual network, subnet, router and port abstractions to describe network resources; text taken from [cloud wiki](https://wiki.hpcloud.net/display/iaas/Neutron+-+HPCS+Cloud+Network+Service).
 
 You can use the API to:
 - Allocate and add floating IPs
@@ -71,7 +71,7 @@ For Network API details, see the [HP Cloud Compute Service API Reference](https:
 
 #####Viewing the network topology####
 
-*We should have something for the Network Topology screen (https://horizon.hpcloud.com/project/network_topology/) that describes that page, what it represents and what you  can do there. Created a [Horizon console: Network Topology screen](/mc/compute/topology/) placeholder.*
+*We should have something for the [Network Topology screen](https://horizon.hpcloud.com/project/network_topology/) that describes that page, what it represents and what you  can do there. Created a [Horizon console: Network Topology screen](/mc/compute/topology/) placeholder.*
 
 #####Viewing network details#####
 
@@ -129,7 +129,7 @@ For Network API details, see the [HP Cloud Compute Service API Reference](https:
 
 [Managing routers](/mc/compute/networks/manage-routers)
 
-*File exists for MC; need to update to Horizon*
+*File exists for MC; need to update to Horizon; used HTML to hide enable/disable sections (can't do this in 13.5?)*
 
 - Before you begin
 - Enabling a router
