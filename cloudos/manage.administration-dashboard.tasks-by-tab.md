@@ -249,7 +249,18 @@ This sets limits on how many system resources (such as CPU cores, floating IP, a
 	
 #### How to See a Project's Usage
 
-Available soon...
+To learn whether you have permission to see a project's usage on the Cloud tab, see [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
+
+To see a project's usage:
+
+1. Click <b>Cloud</b> > <b>Projects</b> to open the Projects window.
+
+2. Find the project where you want to see usage, and click <b>More</b> > <b>View Usage</b> to open the Usage Summary window.
+
+3. You can select a different month to view and click <b>Submit</b>.
+
+4. <b>Download CSV Summary</b> opens a text file in Microsoft Excel with current month usage information.
+
 
 #### How to Add or Remove a Project User
 
@@ -305,11 +316,48 @@ To change a project's storage limits:
 
 #### How to Edit a Project Name or Description
 
-Available soon...
+To edit a project:
+
+1. Click Cloud > Projects to open the Projects window.
+
+2. Find the project to edit, and click More > Edit Project to open the Edit Project dialog box.
+
+3. On the Project Info tab, you can change the Name, Description, and whether the project is Enabled.
+
+4. Click Save.
+
+**Related Topics:**
+
+* [How to Change a Project's Compute or Storage Limits](#how-to-change-a-projects-compute-or-storage-limits)
+
+* [How to Add or Remove a Project User](#how-to-add-or-remove-a-project-user)
+
 
 #### How to Delete or Restore a Project
 
-Available soon...
+When you delete a project, it is marked for deletion by adding a tilde (<b>~</b>) prefix to its name.
+
+The project is not actually deleted until a cloud clean-up utility runs. At that time, all resources associated with the project are removed. You can restore the project any time before the utility runs.
+
+To delete a project:
+
+1. Click <b>Cloud</b> > <b>Projects</b> to open the Projects view.
+
+2. Find the project you want to delete, and click <b>More</b> > <b>Delete Project</b>.
+    
+3. In the confirmation dialog, click <b>Delete Project</b>. The project list redisplays. The project appears at the bottom of the list and is marked for deletion.
+
+
+To restore a project:
+
+1. Click <b>Cloud</b> > <b>Projects</b> to open the Projects view.
+
+2. Find the project to restore. It display at the bottom of the <b>Project Name</b> list with a tilde (<b>~</b>) preceding the name.
+
+3. Click <b>More</b> > <b>Restore Project</b>.
+   
+4. In the confirmation dialog, verify your selection and then click <b>Restore</b>. The project is restored.
+
 
 
 ### How to Access All Users
@@ -375,17 +423,159 @@ See <a href="/cloudos/manage/administration-dashboard/tasks-by-role/">Administra
 
 #### How to Edit a User
 
-Available soon...
+To learn whether you have permission to edit a user on the Cloud tab, see [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
+
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Note:</b>  You cannot edit control users such 
+as Trash or Nova. Edit does not display for users that cannot be edited. </p>
+
+To edit a user:
+
+1. Click <b>Cloud</b> > <b>Users</b> to open the Users window.
+
+2. Find the user you want to edit, and click <b>Edit</b> to open the Update User dialog box.
+
+3. On the <b>User</b> tab of the dialog box, update the <b>User Name</b>, <b>Email</b>, or <b>Password</b>.
+
+4. On the <b>Cloud</b> tab, update the user cloud role. See [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
+
+5. Click <b>Update User</b>.
+
 
 #### How to Delete, Disable, or Enable a User
 
-Available soon...
+To learn whether you have permission to perform the following tasks on the Cloud tab, see [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
+
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Note:</b>  You cannot delete, disable, or 
+enable the following users: Admin, Arch, and control users such as Trash or Nova. Delete, Disable, and Enable do not display for those users. </p>
+
+Deleting a user marks the user for deletion by adding a tilde (<b></b>) prefix to the name. The user will be permanently removed from this list when a 
+cloud clean-up utility runs.
+
+To delete a user:
+
+1. Click <b>Cloud</b> > <b>Users</b> to open the Users window.
+
+2. Find the user you want to delete. Click <b>More</b> > <b>Delete User</b>.
+
+3. A confirmation dialog box opens, warning you that the action cannot be undone. To confirm, click <b>Delete User</b>.
+   
+4. The <b>Users</b> list redisplays and the user is marked for deletion. The deleted user will be permanently removed from the list when the cloud clean-up utility runs.
+
+ 
+
+A deleted user is not removed from the Administration Dashboard until the cloud clean-up utility runs. You can restore a deleted user before the utility runs.
+
+To restore a deleted user:
+
+1. Click <b>Cloud</b> > <b>Users</b> to open the Users window.
+
+2. Find the user you want to restore and click <b>Restore User</b>.
+
+3. A confirmation dialog box opens. To confirm, click <b>Restore</b>.
+
+4. The Users list redisplays and the user moves back into the list alphabetically.
+
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Note:</b>  After you restore a user, 
+the user is no longer associated with any project. </p>
+
+ 
+
+You can disable a user, so the user remains in the Administration Dashboard, but cannot log in.
+
+To disable a user:
+
+1. Click <b>Cloud</b> > <b>Users</b> to open the User view.
+
+2. Find the user you want to disable. Click <b>More</b> > <b>Disable User</b>.
+
+3. The user remains on the list but the <b>Enabled</b> field changes to <b>False</b>.
+
+     
+
+You can enable a disabled user. To enable a user:
+
+1. Click <b>Users</b> to open the User view.
+
+2. Find the user you want to enable. Click <b>More</b> > <b>Enable User</b>.
+
+3. The user remains on the list and the <b>Enabled</b> field changes to <b>True</b>.
 
 
 
 ### How to Access All Roles
 
-Available soon...
+**Concepts:**
+
+The Roles window provides a convenient place for users who have permission to see a list of all roles in the cloud and to work with those roles. 
+To learn whether you have permission, see [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
+
+Use roles to give a user privileges to access project resources. Different roles assign different privileges.
+
+To see all roles:
+
+1. Click <b>Cloud</b> > <b>Roles</b> to open the Roles window. Roles display alphabetically by Role Name.
+
+2. <i>Optional</i>: To see role details, click the <b>Role Name</b> to open an Overview window.
+
+3. Information shown includes role name, ID, and all users and projects associated with the role.
+
+**Tasks:**
+
+* [How to Create a Role](#how-to-create-a-role)
+
+* [How to Edit a Role](#how-to-edit-a-role)
+
+* [How to Delete a Role](#how-to-delete-a-role)
+	
+	
+#### How to Create a Role
+
+Cloud administrators and the Admin user can create a new role on the Cloud tab.
+
+To create a role:
+
+1. Click <b>Cloud</b> > <b>Roles</b> to open the Roles view.
+
+2. Click <b>Create Role</b>.
+
+3. On the <b>Create Role</b> dialog box, enter a <b>Role Name</b> and click <b>Create Role</b>.
+
+4. The role is added to the Roles list alphabetically.
+
+
+#### How to Edit a Role
+
+Cloud administrators and the Admin user can edit a role to change the name that is associated with the role. The role maintains the privileges that were previously assigned to it, but with a different name.
+
+In a common use case, you edit a role name to be more appropriate to your company's titles.
+
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Note:</b> You cannot edit the Admin or Arch roles.
+</p>
+
+To edit a role:
+
+1. Click <b>Cloud</b> > <b>Roles</b> to open the Roles window.
+
+2. Find the role you want to edit and click <b>Edit</b>.
+
+3. On the <b>Update Role</b> dialog box, edit the <b>Role Name</b> and click <b>Update Role</b>.
+
+
+#### How to Delete a Role
+
+Cloud administrators and the Admin user can delete a role. When you delete a role, it is removed throughout the Administration Dashboard.
+
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Note:</b> 
+You cannot delete the Admin or Arch roles.
+</p>
+
+To delete a role:
+
+1. Click <b>Cloud</b> > <b>Roles</b> to open the Roles view.
+
+2. Find the role to delete, and click <b>More</b> > <b>Delete Role</b>.
+
+3. In the confirmation dialog, verify your selection and click <b>Delete Role</b>.	
 
 
 ### How to Access All Images
