@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Cloud Compute Networking"
-permalink: /compute/networks/issues
+permalink: /compute/networks/issues/
 product: compute
 
 ---
