@@ -26,8 +26,9 @@ PageRefresh();
 
 Dashboard users see the tabs that they need to perform their roles' tasks.
 
-These descriptions are coming soon in the format of other HP Cloud OS topics. For now, please see 
-<a href="http://docs.hpcloud.com/cloudos/administration-dashboard/index.htm">this copy on the website</a>. 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:580px;"> <b>Note:</b> Some descriptions are coming 
+soon in the format of other HP Cloud OS topics. For any sections with an "Available soon" indicator, please see 
+<a href="http://docs.hpcloud.com/cloudos/administration-dashboard/index.htm">this copy on the website</a>. </p>
 
 * [Cloud Tab Tasks](#cloud-tab-tasks)
 
@@ -248,11 +249,40 @@ This sets limits on how many system resources (such as CPU cores, floating IP, a
 	
 #### How to See a Project's Usage
 
-Available soon...
+To learn whether you have permission to see a project's usage on the Cloud tab, see [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
+
+To see a project's usage:
+
+1. Click <b>Cloud</b> > <b>Projects</b> to open the Projects window.
+
+2. Find the project where you want to see usage, and click <b>More</b> > <b>View Usage</b> to open the Usage Summary window.
+
+3. You can select a different month to view and click <b>Submit</b>.
+
+4. <b>Download CSV Summary</b> opens a text file in Microsoft Excel with current month usage information.
+
 
 #### How to Add or Remove a Project User
 
-Available soon...
+To learn whether you have permission to add or remove a project user on the Cloud tab, 
+see [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
+
+Before adding a new user to a project, make sure the user is logged out. If you add users to a project while they are logged in, the 
+Administration Dashboard may log them out without warning or show an error message. If so, users should sign out and sign back in. Carefully coordinate with 
+users, or schedule adding users to a project when they are not logged in.
+
+To add or remove a project user:
+
+1. Click <b>Cloud</b> > <b>Projects</b> to open the Projects window.
+
+2. Find the project, and click <b>Modify Users</b> to open the Edit Project dialog box at the Project Members tab.
+
+3. Use the plus sign (<b>+</b>) to add Available Users. Use the minus sign (<b>-</b>) to remove Project Members.
+
+  <b>Note</b>: You can only add or remove project users and project administrators. Higher level roles, such as cloud administrators and Arch are added 
+  automatically. To see all project users, open the detail view of the project. See [How to Access All Projects](#how-to-access-all-projects).
+
+4. Click Save.
 
 #### How to Change a Project's Compute or Storage Limits
 
@@ -286,11 +316,48 @@ To change a project's storage limits:
 
 #### How to Edit a Project Name or Description
 
-Available soon...
+To edit a project:
+
+1. Click Cloud > Projects to open the Projects window.
+
+2. Find the project to edit, and click More > Edit Project to open the Edit Project dialog box.
+
+3. On the Project Info tab, you can change the Name, Description, and whether the project is Enabled.
+
+4. Click Save.
+
+**Related Topics:**
+
+* [How to Change a Project's Compute or Storage Limits](#how-to-change-a-projects-compute-or-storage-limits)
+
+* [How to Add or Remove a Project User](#how-to-add-or-remove-a-project-user)
+
 
 #### How to Delete or Restore a Project
 
-Available soon...
+When you delete a project, it is marked for deletion by adding a tilde (<b>~</b>) prefix to its name.
+
+The project is not actually deleted until a cloud clean-up utility runs. At that time, all resources associated with the project are removed. You can restore the project any time before the utility runs.
+
+To delete a project:
+
+1. Click <b>Cloud</b> > <b>Projects</b> to open the Projects view.
+
+2. Find the project you want to delete, and click <b>More</b> > <b>Delete Project</b>.
+    
+3. In the confirmation dialog, click <b>Delete Project</b>. The project list redisplays. The project appears at the bottom of the list and is marked for deletion.
+
+
+To restore a project:
+
+1. Click <b>Cloud</b> > <b>Projects</b> to open the Projects view.
+
+2. Find the project to restore. It display at the bottom of the <b>Project Name</b> list with a tilde (<b>~</b>) preceding the name.
+
+3. Click <b>More</b> > <b>Restore Project</b>.
+   
+4. In the confirmation dialog, verify your selection and then click <b>Restore</b>. The project is restored.
+
 
 
 ### How to Access All Users
@@ -356,17 +423,159 @@ See <a href="/cloudos/manage/administration-dashboard/tasks-by-role/">Administra
 
 #### How to Edit a User
 
-Available soon...
+To learn whether you have permission to edit a user on the Cloud tab, see [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
+
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Note:</b>  You cannot edit control users such 
+as Trash or Nova. Edit does not display for users that cannot be edited. </p>
+
+To edit a user:
+
+1. Click <b>Cloud</b> > <b>Users</b> to open the Users window.
+
+2. Find the user you want to edit, and click <b>Edit</b> to open the Update User dialog box.
+
+3. On the <b>User</b> tab of the dialog box, update the <b>User Name</b>, <b>Email</b>, or <b>Password</b>.
+
+4. On the <b>Cloud</b> tab, update the user cloud role. See [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
+
+5. Click <b>Update User</b>.
+
 
 #### How to Delete, Disable, or Enable a User
 
-Available soon...
+To learn whether you have permission to perform the following tasks on the Cloud tab, see [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
+
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Note:</b>  You cannot delete, disable, or 
+enable the following users: Admin, Arch, and control users such as Trash or Nova. Delete, Disable, and Enable do not display for those users. </p>
+
+Deleting a user marks the user for deletion by adding a tilde (<b></b>) prefix to the name. The user will be permanently removed from this list when a 
+cloud clean-up utility runs.
+
+To delete a user:
+
+1. Click <b>Cloud</b> > <b>Users</b> to open the Users window.
+
+2. Find the user you want to delete. Click <b>More</b> > <b>Delete User</b>.
+
+3. A confirmation dialog box opens, warning you that the action cannot be undone. To confirm, click <b>Delete User</b>.
+   
+4. The <b>Users</b> list redisplays and the user is marked for deletion. The deleted user will be permanently removed from the list when the cloud clean-up utility runs.
+
+ 
+
+A deleted user is not removed from the Administration Dashboard until the cloud clean-up utility runs. You can restore a deleted user before the utility runs.
+
+To restore a deleted user:
+
+1. Click <b>Cloud</b> > <b>Users</b> to open the Users window.
+
+2. Find the user you want to restore and click <b>Restore User</b>.
+
+3. A confirmation dialog box opens. To confirm, click <b>Restore</b>.
+
+4. The Users list redisplays and the user moves back into the list alphabetically.
+
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Note:</b>  After you restore a user, 
+the user is no longer associated with any project. </p>
+
+ 
+
+You can disable a user, so the user remains in the Administration Dashboard, but cannot log in.
+
+To disable a user:
+
+1. Click <b>Cloud</b> > <b>Users</b> to open the User view.
+
+2. Find the user you want to disable. Click <b>More</b> > <b>Disable User</b>.
+
+3. The user remains on the list but the <b>Enabled</b> field changes to <b>False</b>.
+
+     
+
+You can enable a disabled user. To enable a user:
+
+1. Click <b>Users</b> to open the User view.
+
+2. Find the user you want to enable. Click <b>More</b> > <b>Enable User</b>.
+
+3. The user remains on the list and the <b>Enabled</b> field changes to <b>True</b>.
 
 
 
 ### How to Access All Roles
 
-Available soon...
+**Concepts:**
+
+The Roles window provides a convenient place for users who have permission to see a list of all roles in the cloud and to work with those roles. 
+To learn whether you have permission, see [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
+
+Use roles to give a user privileges to access project resources. Different roles assign different privileges.
+
+To see all roles:
+
+1. Click <b>Cloud</b> > <b>Roles</b> to open the Roles window. Roles display alphabetically by Role Name.
+
+2. <i>Optional</i>: To see role details, click the <b>Role Name</b> to open an Overview window.
+
+3. Information shown includes role name, ID, and all users and projects associated with the role.
+
+**Tasks:**
+
+* [How to Create a Role](#how-to-create-a-role)
+
+* [How to Edit a Role](#how-to-edit-a-role)
+
+* [How to Delete a Role](#how-to-delete-a-role)
+	
+	
+#### How to Create a Role
+
+Cloud administrators and the Admin user can create a new role on the Cloud tab.
+
+To create a role:
+
+1. Click <b>Cloud</b> > <b>Roles</b> to open the Roles view.
+
+2. Click <b>Create Role</b>.
+
+3. On the <b>Create Role</b> dialog box, enter a <b>Role Name</b> and click <b>Create Role</b>.
+
+4. The role is added to the Roles list alphabetically.
+
+
+#### How to Edit a Role
+
+Cloud administrators and the Admin user can edit a role to change the name that is associated with the role. The role maintains the privileges that were previously assigned to it, but with a different name.
+
+In a common use case, you edit a role name to be more appropriate to your company's titles.
+
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Note:</b> You cannot edit the Admin or Arch roles.
+</p>
+
+To edit a role:
+
+1. Click <b>Cloud</b> > <b>Roles</b> to open the Roles window.
+
+2. Find the role you want to edit and click <b>Edit</b>.
+
+3. On the <b>Update Role</b> dialog box, edit the <b>Role Name</b> and click <b>Update Role</b>.
+
+
+#### How to Delete a Role
+
+Cloud administrators and the Admin user can delete a role. When you delete a role, it is removed throughout the Administration Dashboard.
+
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Note:</b> 
+You cannot delete the Admin or Arch roles.
+</p>
+
+To delete a role:
+
+1. Click <b>Cloud</b> > <b>Roles</b> to open the Roles view.
+
+2. Find the role to delete, and click <b>More</b> > <b>Delete Role</b>.
+
+3. In the confirmation dialog, verify your selection and click <b>Delete Role</b>.	
 
 
 ### How to Access All Images
@@ -427,28 +636,142 @@ To see a list of images:
 
 #### How to Create an Image 
 
-Available soon...
+To learn whether you have permission to create an image on the Cloud tab, see [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
+
+The image must be available on an HTTP URL. Compressed image binaries, such as .zip, and .tar.gz, are supported.
+
+To create an image:
+
+1. Click <b>Cloud</b> > <b>Images</b> to open the Images window.
+
+2. Click <b>Create Image</b> to open the <b>Create an Image</b> dialog box.
+
+3. Enter <b>Name</b> and optional <b>Description</b>.
+
+4. Select an <b>Image Source</b>.
+ * <b>Image Location</b> to enter and external URL from which to load the image.
+ * <b>Image File</b> to browse to a local image.
+
+5. Enter an Image Location that meets the following requirements:
+
+ a. A valid and direct HTTP URL to the image binary. URLs that redirect or serve error pages will result in unusable images.
+    
+	**Note:** If you do not have rights to the image binary url, you receive an error when trying to create the image
+
+ b. The image must be accessible to the Image Service.
+
+ c. The image must be in a supported format.
+ 
+    **Note:** If you upload an image with a format that is not supported, you will receive an Error 404, Not Found error when you attempt to create the image.
+
+6. Select a <b>Format</b> from the menu. The image must be in one of the formats listed.
+
+7. Enter the <b>Minimum Disk space</b> and <b>Minimum Ram</b>.
+
+8. Select <b>Public</b> if you want the image visible to all users in the cloud. Your user role must have the appropriate permission to make an image Public.
+
+9. Select <b>Protected</b> to mark the image as read-only. The image cannot be edited or deleted.
+
+10. Click <b>Create Image</b>. If successful, the image displays with an Active status. If creation is not successful within a specified amount of time (set by your system administrator; typically no more than five minutes), the Status of the image in the list displays Upload Failed.
+
+**Note:** Only AMI, RAW, and QCOW2 images are launchable.
 
 
 
 #### How to Launch an Image
 
-Available soon...
+To learn whether you have permission to launch an image on the Cloud tab, see [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
 
+You can only launch images that are formatted as AMI, RAW, and QCOW2. Launching an image provisions it to the cloud.
 
+To launch an image:
+
+1. Click <b>Cloud</b> > <b>Images</b> to open the Images view.
+
+2. Find the image to launch and then click <b>Launch</b> to open the Launch Instance dialog box. The dialog opens to the Details tab. Some fields are automatically populated from the image.
+
+3. Enter or edit the <b>Details</b> tab information as needed:
+ * <b>Instance Source</b>: Specify whether you are using an image or snapshot.
+ * <b>Image</b>: Select from the list of images that have been uploaded to the system.
+ * <b>Instance Name</b>: The name of the host you are creating (Required).
+ 
+   **Note:** At this point, you can go ahead and launch the instance, using the defaults for the remaining options.
+   
+ * <b>Flavor</b>: Indicates the size of the node. When you select a flavor here, the <b>Flavor Details</b> table on the right changes to show the node properties and values associated with your size selection.
+ * <b>Instance Count</b>: Can be more than 1.
+
+4. Use the <b>Access and Security</b> tab to control access to your instance via keypairs and security groups.
+
+ a. <b>Keypair</b>: Keypairs are SSH security keys that are 512 bits long, provide authentication, and allow you to exchange traffic securely within a VM. These credentials are injected into images when they are launched.
+ 
+   Creating a new keypair registers the public key and downloads the private key (a .pem file), allowing you to log into the VM. The public key gets installed on the VM; the private key is used to log in.
+
+   To add a keypair, either:
+    * Select a keypair from the list, or
+	* Click (<b>+</b>) to import a keypair. Enter <b>Keypair Name</b> and <b>Public Key</b>.
+
+ b. <b>Admin Pass</b> and <b>Confirm Admin Pass</b>
+ 
+ c. <b>Security Groups</b>
+
+5. Use the <b>Networking</b> tab to select one or more networks. You can click the plus (<b>+</b>) symbol or drag and drop to make your selections. Use the minus (<b>-</b>) symbol to remove networks.
+    
+6. Use the <b>Volume Options</b> tab to select boot options for an instance that launches with attached storage.
+
+7. Use the <b>Post Creation</b> tab to customize the instance by adding a script to run after launch. The <b>Customization Script</b> field is analogous to "User Data" in other systems.
+
+8. Click <b>Launch</b>. If successful, the image is added to the Images list with an Active status.
 
 
 #### How to Edit an Image
 
-Available soon...
+To learn whether you have permission to edit an image on the Cloud tab, see [Administration Dashboard Tasks by Roles](/cloudos/manage/administration-dashboard/tasks-by-role/).
+
+You cannot modify an image format.
+
+When you edit an Amazon Machine Image (AMI) image, you see additional fields allowing you to select a Kernel image (AKI) and a RAMdisk Image (ARI). 
+An AMI image is not valid unless it is associated with an AKI and ARI.
+
+To edit an image:
+
+1. Click <b>Cloud</b> > <b>Images</b> to open the Images window.
+
+2. Find the image you want to edit, and click <b>More</b> > <b>Edit</b>.
+
+3. Keep or edit:
+  * <b>Name</b> : As desired.
+  * <b>Description</b>: Optional.
+  * <b>Architecture</b>: Optional information about hardware requirements for the VM the image runs on. For example, <code>x86 64 bits</code>.
+  * <b>Format</b>: You cannot edit format.  Note: If you edit an AMI image, you can select a different AKI and ARI.
+  * <b>Public</b>: Visibility.
+  * <b>Protected</b>: Select to mark the image as read-only. A protected image cannot be edited or deleted.
+    
+4. Click <b>Update Image</b>.
+
 
 #### How to Delete an Image
 
-Available soon...
+To learn whether you have permission to delete an image or protected image on the Cloud tab, see [Administration Dashboard Tasks by Roles](/cloudos/manage/administration-dashboard/tasks-by-role/).
 
+If you have permission to delete a protected image, you must first edit the image, so it is not protected. See [How to Edit an Image](#how-to-edit-an-image).
+
+After you delete an image, you cannot create instances based on that (deleted) image. Also, if you delete an image that a topology document references, the infrastructure design document will fail during an attempt to provision.
+
+To delete one or more images:
+
+1. Click <b>Cloud</b> > <b>Images</b> to open the Images window.
+
+2. To delete one image, click <b>More</b> > <b>Delete Image</b>.
+
+3. <i>Optional</i>: To delete one or more images, select the images and click <b>Delete Images</b>.
+
+4. A confirmation dialog box opens, warning that the action cannot be undone.
+
+5. Click <b>Delete Image</b>. The Images list redisplays and the image or images are removed.
 
 
 <a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
 
 ## Region Tab Tasks
 
@@ -500,9 +823,99 @@ To see an overview of usage:
 3. <b>Download CSV Summary</b> opens a text file in Microsoft Excel with current month usage information.
 
 
-### How to Access Instances
+### How to See Instances
 
-Available soon...
+**Concepts:**
+
+Instances are running VMs. The Region tab provides a convenient place for users who have permission to see region instances. To learn whether you have 
+permission, see [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
+
+To see a list of instances:
+
+1. Click Region > Instances to open the Instances window.
+
+2. Information shown includes instance name, image name, IP address, size, keypair, status, task, power state, and uptime.
+
+3. Optional: To display details of a region instance, click the Name to open a window that offers the following tabs:
+ * Overview, where you see instance details and specifications.
+ * Log, which is the system log from the VM. Use this log for debugging and troubleshooting. You can view the full instance log or specify the number of lines of the log file to view.
+ * Console, where you can remotely log directly in to the VM.
+
+**Tasks:**
+
+* [How to See the Instance Console, Console Log, and Overview](#how-to-see-the-instance-console-console-log-and-overview)
+* [How to Edit an Instance](#how-to-edit-an-instance)
+* [How to Suspend, Resume, or Terminate an Instance](#how-to-suspend-resume-or-terminate-an-instance)
+
+
+#### How to See the Instance Console, Console Log, and Overview
+
+The instance console is the system log from the VM, and it is used for debugging and troubleshooting. You can view the full instance log or specify the 
+number of lines of the log file to view.
+
+ To display the instance console:
+
+1. On the <b>Region</b> tab, select a <b>Current Compute Region</b>.
+
+2. Click <b>Instances</b> to open the Instances window.
+
+3. Find the instance you want to learn more about, and click <b>More</b> > <b>Console</b> to open the Console window.
+
+4. <i>Optional</i>: Click the <b>Log</b> tab to see the most recent 35 lines from the Instance Console Log. 
+To change the number of display lines, enter a value in <b>Log Length</b> and click <b>Go</b>. 
+Click <b>View Full</b> Log to view all logged entries in a separate window.
+
+5. <i>Optional</i>: Click the <b>Overview</b> tab to see high level information (such as status, specs, security, and so on) about the region instance.
+
+
+#### How to Edit an Instance
+
+To edit a region instance:
+
+1. On the <b>Region</b> tab, select a <b>Current Compute Region</b>.
+   
+2. Click b to open the Instances window.
+
+3. Find the Instance you want to edit, and click <b>Edit Instance</b>.
+
+4. Select the <b>Info</b> tab to update the <b>Name</b>.
+
+5. Select the <b>Security Groups</b> tab to edit security groups. Use the plus symbol (<b>+</b>) to add groups and the minus symbol (<b>-</b>) to remove groups.
+ * <b>All Security Groups</b> &mdash; A list of security groups that are associated with the project, but not the instance.
+ * <b>Instance Security Groups</b> &mdash; A list of security groups that are currently associated with the instance.
+
+ 6. Click <b>Save</b>.
+
+
+#### How to Suspend, Resume, or Terminate an Instance
+
+When you terminate an instance, the Administration Dashboard shuts the VM down, and the resources associated with it are released. You cannot start the 
+VM after it is terminated, because it no longer exists. Termination is scheduled, because it takes some time to free all the resources. The scheduled 
+termination script runs in the background.
+
+When you terminate an instance:
+
+* Any changes associated with the volume that the image is running on are discarded.
+
+* Any changes associated with the volume implied by the disk space (ephemeral) that are specified in the flavor are discarded.
+
+* Any changes associated with attached volumes are retained in the attached volume and could be reattached to a different VM.
+
+* The VM is removed from any security group it was associated with, and frees its floating IP addresses.
+
+To terminate one or more instances:
+
+1. On the <b>Region</b> tab, select a <b>Current Compute Region</b>.
+
+2. Click <b>Instances</b> to open the Instances window.
+
+3. To terminate one instance, find the instance and select <b>More</b> > <b>Terminate Instance</b>.
+
+4. <i>Optional</i>: To terminate multiple instances, select the instances you want to terminate, and click <b>Terminate Instances</b>.
+
+5. In the warning dialog box, verify your selection and click <b>Terminate Instance</b>(<b>s</b>).
+
+
 
 ### How to See Info about Services, Compute Services, and Default Quotas
 
@@ -514,7 +927,142 @@ Available soon...
 
 ### How to Access Images
 
-Available soon...
+**Concepts:**
+
+The Region tab provides a convenient place for users who have permission to see a list of images (that are not snapshots) and to work with those images. 
+To learn whether you have permission, see [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
+
+Images are stored at the Domain level with a single Glance service and are unaffected by region selection. Only Public images are visible to all users.
+
+Launchable images must be in one of the following formats:
+
+<table style="text-align: left; vertical-align: top; min-width:700px;">
+
+<tr style="background-color: white; color: black;">
+<td colspan="2"> <b>AMI (Amazon Machine Image)</b> &mdash; Not valid unless it is associated with a kernel image (AKI) and a RAMdisk Image (ARI). </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>ISO</b> &mdash; Optical Disk Image </td>
+<td> <b>QCOW2</b> &mdash; QEMU Emulator </td> 
+</tr>
+	 
+<tr style="background-color: white; color: black;">
+<td> <b>RAW</b> </td>
+<td> <b>VDI</b> &mdash; Virtual Disk Image </td> 
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>VHD</b> &mdash; Virtual Hard Disk Image </td>
+<td> <b>VMDK</b> &mdash; Virtual Machine Disk Image </td> 
+</tr>
+
+</table> 
+
+
+To see a list of all images:
+
+1. Click Regions > Images to open the Images window.
+
+  The information shown includes name, type, status, whether the image is public or protected, and format.
+
+2. <i>Optional</i>: To see image details, click the Image Name link to open its Overview window.
+
+  The information shown includes image name, ID, whether protected, checksum, creation date, updated date, and specs.
+
+**Tasks:**
+
+* [How to Create an Image](#how-to-create-an-image-region-tab)
+
+* [How to Edit an Image](#how-to-edit-an-image-region-tab)
+
+* [How to Delete an Image](#how-to-delete-an-image-region-tab)
+
+
+#### How to Create an Image {#how-to-create-an-image-region-tab}
+
+You can create and configure an image to upload to the image service used by the Administration Dashboard. The image must be available on an HTTP URL. 
+Compressed image binaries, such as .zip, and .tar.gz, are supported.
+
+To create an image:
+
+1. Click <b>Region</b> > <b>Images</b> > <b>Create Image</b>.
+
+2. In the <b>Create an Image</b> dialog box, enter a <b>Name</b>.
+
+3. Enter an <b>Image Location</b> that meets the following requirements:
+
+ a. A valid and direct HTTP URL to the image binary. URLs that redirect or serve error pages will result in unusable images.
+   
+    **Note:** If you do not have rights to the image binary url, you receive an error when trying to create the image
+
+ b. The image must be accessible to the image service.
+
+ c. The image must be in a supported format.
+ 
+    **Note:** If you upload an image with a format that is not supported, you will receive an Error 404, Not Found error when you attempt to create the image.
+
+4. Select an <b>Image File</b>.
+
+   Select a <b>Format</b> from the drop-down list. The image must be in one of the formats listed.
+   
+5. Enter the <b>Minimum Disk space</b> and <b>Minimum Ram</b>.
+
+6. Keep <b>Public</b> checked if you want the image visible to all users.
+
+7. Click <b>Create Image</b>. If successful, the image displays with an Active status. If creation is not successful within a specified amount of time (set by your system administrator; typically no more than five minutes), the <b>Status</b> of the image in the list displays <b>Upload Failed</b>.
+
+**Note:** Only AMI, RAW, and QCOW2 images are launchable.
+
+
+
+#### How to Edit an Image {#how-to-edit-an-image-region-tab}
+
+You cannot modify an image format.
+
+When you edit an Amazon Machine Image (AMI) image, you see additional fields allowing you to select a Kernel image (AKI) and a RAMdisk Image (ARI). An AMI image is not valid unless it is associated with an AKI and ARI.
+
+To edit an image:
+
+1. Click <b>Region</b> > <b>Images</b> to open the Images window.
+
+2. Find the image to edit. Click <b>Edit</b>.
+
+3. Keep or edit:
+ * <b>Name</b>: As desired.
+ * <b>Description</b>: Optional description.
+ * <b>KernelID</b>
+ * <b>Ramdisk ID</b>
+ * <b>Architecture</b>: Optional information about hardware requirements for the VM the image runs on. For example, x86 64 bits.
+ * <b>Public</b>: Visibility
+ 
+   **Note**: If you edit an AMI image, you can select a different AKI and ARI.
+   
+ * <b>Protected</b>: Select to create a read-only image. Protected images cannot be edited or deleted.
+
+4. Click <b>Update Image</b>.
+
+
+
+#### How to Delete an Image {#how-to-delete-an-image-region-tab}
+
+After you delete an image, you cannot create instances based on that (deleted) image. Also, if you delete an image that a topology template references, provisioning will fail.
+
+Images are protected from deletion by rules. If you are not allowed to delete an image, you do not see <b>Delete Image</b>.
+
+To delete one or more images:
+
+1. Click <b>Region</b> > <b>Images</b> to open the Images window.
+
+2. Find the image you want to delete, and click <b>Delete Image</b>.
+
+  <i>Optional</i>: To delete more than one image, select the images and click <b>Delete Images</b>.
+
+3. A confirmation dialog box opens, warning that the action cannot be undone.
+
+4. Click <b>Delete Image</b>. The Images list redisplays and the image or images are removed.
+
+
 
 ### How to Access Networks
 
@@ -659,7 +1207,7 @@ Available soon...
 Projects are groupings that allow designated users to view the same set of content. Projects protect topology templates, infrastructure designs, and 
 realized resources (such as VMs, volumes, and others) from being visible to all users.
 
-To learn about which tasks you can perform on the Project tab, see your role under Administration Dashboard Tasks by Role.
+To learn about which tasks you can perform on the Project tab, see your role under [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
 
 **Tasks:**
 
@@ -698,7 +1246,16 @@ To learn about which tasks you can perform on the Project tab, see your role und
 
 ### How to See a Project Overview
 
-Available soon...
+To see a project overview:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Overview</b> > <b>Overview</b> to see limit and usage summaries for the current month.
+
+3. <i>Optional</i>: Change the <b>From</b> and <b>To</b> range, and click <b>Submit</b> to see limit and usage summaries for a different time period.
+
+4. <i>Optional</i>: Click <b>Download CSV Summary</b> to open a text file in Microsoft Excel with current month usage information.
+
 
 ### Running Topologies
 
@@ -903,7 +1460,29 @@ Available soon...
 
 #### How to Delete a Resource Pool
 
-Available soon... 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Caution:</b> Make sure you really want to 
+delete a resource pool. Deleted resource pools cannot be restored. You must recreate them.
+</p>
+
+<b>Best Practice</b>: Delete the resource pool after deleting all services that were using that resource pool.
+
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Note:</b> 
+You can delete a resource pool even if a service is provisioned using that resource pool. Also, after the resource pool is deleted, the 
+de-provisioning operation will still succeed.
+</p>
+
+To delete one or more resource pools:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Provisioning</b> > <b>Resource Pools</b> to open the Resource Pools window.
+
+3. To delete one resource pool, find the resource pool you want to delete and click <b>More</b> > <b>Delete Resource Pool</b>.
+
+4. <i>Optional</i>: To delete more than one resource pool, select the resource pools, and click <b>Delete Resource Pools</b>.
+
+5. Confirm your selection in the warning dialog box, and click <b>Delete Resource Pool</b>.
+
   
 ### Instances
 
@@ -1020,53 +1599,339 @@ To launch an instance:
 
 #### How to Create an Instance Snapshot
 
-Available soon...
+After you set up, install, and configure an instance, you can create a snapshot to preserve the disk state of the running instance. At a later time, you can use the snapshot to start up another VM.
+
+To create an instance snapshot:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Infrastructure</b> > <b>Instances</b> to open the Instances window.
+
+3. Find the instance you want to snapshot, and click <b>Create Snapshot</b>.
+
+4. Enter a name for the snapshot.
+
+5. Click <b>Create Snapshot</b>. The Administration Dashboard displays the snapshot as an image on the <b>Images and Snapshots</b> panel. 
+See [Images and Snapshots](#images-and-snapshots).
+
 
 
 #### How to Edit an Instance
 
-Available soon...
+To edit a project instance:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Infrastructure</b> > <b>Instances</b> to open the Instances window.
+
+3. In the Instances list, select the Instance you want to edit and then click <b>Edit Instance</b>.
+
+4. Select the <b>Info</b> tab to update the <b>Name</b>.
+
+5. In the <b>Security Groups</b> tab, edit security groups, use the plus symbol (<b>+</b>) to add groups and the minus symbol (<b>-</b>) to remove groups:
+  * <b>All Security Groups</b> &mdash; A list of security groups that are associated with the project, but not the instance.
+  * <b>Instance Security Groups</b> &mdash; A list of security groups that are currently associated with the instance.
+
+6. Click <b>Save</b>.
+
 
 
 
 #### How to Associate a Floating IP to an Instance
 
-Available soon...
+You can associate a Floating IP address to an instance that needs to be visible outside the cloud.
+
+To associate a floating IP to an instance:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Infrastructure</b> > <b>Instances</b> to open the Instances window.
+
+3. Select an instance and then click <b>Associate Floating IP</b> to open the Manage Floating IP Associations window.
+   
+4. Select an <b>IP Address</b> from the list.
+
+5. <i>Optional</i>: If you do not see available addresses:
+ * Click (<b>+</b>) to allocate a floating IP from a pool.
+ * Select a <b>Pool</b> and then click <b>Allocate IP</b>.
+
+6. Select a <b>Port</b> to be associated from the list.
+
+7. Click <b>Associate</b>.
 
 
 #### How to Disassociate a Floating IP from an Instance
 
-Available soon...
+To disassociate a floating IP from an instance:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Infrastructure</b> > <b>Instances</b> to open the Instances window.
+
+3. Find the instance you want to disassociate, and click <b>More</b> > <b>Disassociate Floating I</b>P. A confirmation window opens, warning that the action cannot be undone.
+    
+4. Click <b>Disassociate Floating IP</b> to confirm.
+
 
 
 #### How to Pause or Resume an Instance
 
-Available soon...
+Pausing an instance stores the content of the VM in memory (RAM). This keeps the instance running, but in a frozen state.
+
+To free up memory and vCPUs, you should suspend an instance.
+
+To pause a project instance:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Infrastructure</b> > <b>Instances</b> to open the Instances window.
+
+3. Find the instance you want to pause, and click <b>More</b> > <b>Pause Instance</b>.
+
+4. The <b>Status</b> and <b>Power State</b> of the instance show <b>Paused</b>.
+
+ 
+
+To resume an instance:
+
+1. Select the <b>instance</b> > <b>More</b> > <b>Resume Instance</b>.
+
+2. After a short time, the Status returns to Active and the Power State returns to <b>Running</b>.
+
 
 
 #### How to Hard Reboot an Instance
 
+Rebooting an instance is similar to cycling power on a physical server &mdash; the operating system is restarted from scratch. Rebooting temporarily makes the 
+VM and all the services it hosts unavailable. In a common use case, your installation requires a reboot because you installed new software.
 
-Available soon...
+To reboot an instance:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Infrastructure</b> > <b>Instances</b> to open the Instances window.
+
+3. Find the instance you want to reboot, and click <b>More</b> > <b>Hard Reboot Instance</b>. A confirmation window opens, warning that the action cannot be undone.
+
+4. Click <b>Hard Reboot Instance</b>. The <b>Task</b> column indicates the instance is <b>Rebooting Hard</b>. If reboot is successful, the 
+<b>Status</b> shows <b>Active</b> and the <b>Power State</b> shows <b>Running</b>.
+
 
 #### How to Suspend or Resume an Instance
 
-Available soon...
+Suspending an instance frees up memory and vCPUs. Suspension could be compared to hibernation mode.
+ 
+##### Suspend an Instance
+
+To suspend an instance:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Infrastructure</b> > <b>Instances</b> to open the Instances window.
+
+3. Find the instance you want to suspend, and click <b>More</b> > <b>Suspend Instance</b>. The <b>Task</b> column indicates the instance is suspending. 
+When this process completes, the <b>Status</b> shows <b>Suspended</b>, and the <b>Power State</b> shows <b>Shutoff</b>.
+
+ 
+##### Resume an Instance
+
+To resume an instance:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Infrastructure</b> > <b>Instances</b> to open the Instances window.
+
+3. Find the instance you want to resume, and click <b>More</b> > <b>Resume Instance</b>. The Task column indicates the instance is resuming. 
+When this process completes, the <b>Status</b> returns to <b>Active</b>, and the <b>Power State</b> returns to <b>Running</b>.
+
 
 
 #### How to Force Delete an Instance
 
-Available soon...
+Use the <b>Force Delete</b> option to delete an instance when it appears to be in an unresponsive state. Any user has the option to Force Delete, 
+which immediately and completely deletes the instance from the project.
+
+To force delete a project instance:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Infrastructure</b> > <b>Instances</b> to open the Instances window.
+
+3. In the <b>Instances</b> list, select the instance you want to force delete, and select <b>More</b> > <b>Force Delete</b>. 
+The instance is deleted without a warning prompt.
 
 
 #### How to Terminate an Instance
 
-Available soon...
+When you terminate an instance, the VM is shut down and the resources associated with it are released. It is not possible to start the VM after it 
+is terminated because it no longer exists. Termination is scheduled because it takes some time to free all the resources.
+
+When an instance is terminated:
+
+* Any changes associated with the volume that the image is running on are discarded.
+
+* Any changes associated with the volume implied by the disk space (ephemeral) that are specified in the flavor are discarded.
+
+* Any changes associated with attached volumes are retained in the attached volume and could be reattached to a different VM.
+
+* The VM is removed from any security group it was associated with, and frees its floating IP addresses.
+
+ 
+
+To terminate one or more instances:
+
+1. On the Project tab, select a Current Project.
+
+2. Click Infrastructure > Instances to open the Instances window.
+
+3. Select one or more instances to terminate, and click More > Terminate Instance.
+
+4. In the Confirm Terminate Instance dialog, verify your selection and then click Terminate Instance(s).
+
+5. Wait for the success message.
+
+ 
+**Related topics:**
+
+* [How to Pause or Resume an Instance](#how-to-pause-to-resume-an-instance)
+
+* [How to Suspend or Resume an Instance](#how-to-suspend-or-resume-an-instance)
+
+* [How to Force Delete an Instance](#how-to-force-delete-an-instance)
+
 
   
 ### Volumes
 
-Available soon...
+**Concepts:**
+
+Volumes are the disk storage volumes that have been created in the project. Volumes are persistent &mdash; you can create data in these volumes and attach 
+them to various VMs (instances) over time, as needed.
+
+To see a list of volumes:
+
+1. On the Project tab, select a Current Project.
+
+2. Click Infrastructure > Volumes to open the Volumes window.
+
+**Tasks:**
+
+* [How to Create a Volume](#how-to-create-a-volume)
+
+* [How to Create a Volume from an Image or Instance Snapshot](#how-to-create-a-volume-from-an-image-or-instance-snapshot)
+
+* [How to Attach or Detach Volumes to an Instance](#how-to-attach-or-detach-volumes-to-an-instance)
+
+* [How to Create a Volume Snapshot](#how-to-create-a-volume-snapshot)
+
+* [How to Delete a Volume](#how-to-delete-a-volume)
+	
+	
+#### How to Create a Volume
+
+After you create a volume, you can attach it to a VM and place content in it.
+
+To create a volume:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Infrastructure</b> > <b>Volumes</b> to open the Volumes window.
+
+ a. To create a volume that is not based on an image, enter:
+  * <b>Volume Name</b>: A volume name is required.
+  * <b>Description</b>: Optional description.
+  * <b>Type</b>: Choose a volume type. Volume types are defined by cloud administrators, at the region level.
+  * <b>Size</b>: In GB.
+  * <b>Volume Source</b>: Leave the default, not based on a snapshot or image.
+
+ b. To create a volume that is based on an image or snapshot:
+  * Volume Source
+   * Select <b>Snapshot</b> to display the Use snapshot as a source menu. If the dashboard does not contain snapshots, you do not see this option.
+   * Select <b>Image</b> to display the <b>Use image as a source</b> menu.
+   * Select an image or snapshot from the source menu. Keep or modify the entries that are automatically populated from the source.
+
+3. Click <b>Create Volume</b>. The volume is created and available to attach to VMs.
+
+
+#### How to Create a Volume from an Image or Instance Snapshot
+
+To create a volume from an image or instance snapshot:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Infrastructure</b> > <b>Images and Snapshots</b> to open the Images and Snapshots window.
+
+3. Find the image or snapshot that you want to use, and click <b>More</b> > <b>Create Volume</b> to open a dialog box where you enter:
+  * <b>Volume Name</b>: A default name is based on the image name.
+  * <b>Description</b>: Optional description.
+  * <b>Type</b>: Defined by cloud administrators, at the region level.
+  * <b>Size</b>: In GB.
+  * <b>Use image as source</b>: Populated by the image name.
+
+4. Click <b>Create Volume</b>.
+
+
+#### How to Attach or Detach Volumes to an Instance
+
+Volumes are disk storage volumes that have been created in a project and can be attached to an instance. A volume can only be attached to a single VM 
+at a time, and that VM has sole use of that volume.
+
+To attach a project volume to an instance:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Infrastructure</b> > <b>Volumes</b> to open the Volumes window.
+
+3. Find the volume you want to attach, and click <b>Edit Attachments</b> to open the <b>Manage Volume Attachments</b> dialog box.
+
+4. Select an instance from <b>Attach</b> to <b>Instance</b>.
+
+5. Enter a <b>Device Name</b>, which is an attached device, such as a device between <code> /dev/vdc </code> and <code> /dev/vdz</code>.
+
+6. Click <b>Attach Volume</b>.
+
+ 
+
+To detach a volume from an instance:
+
+* After a volume is attached, <b>Detach Volume</b> is available through the <b>Attach Volume</b> action.
+
+
+#### How to Create a Volume Snapshot
+
+To create a project volume snapshot:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Infrastructure</b> > <b>Volumes</b> to open the Volumes window.
+
+3. Find the volume you want to snapshot, and click <b>More</b> > <b>Create Snapshot</b>.
+
+4. Enter a <b>Name</b> for the snapshot and a <b>Description</b>.
+
+5. Click <b>Create Snapshot</b>. The volume snapshot is added to Images and Snapshots.
+
+
+#### How to Delete a Volume
+	
+Deleting a volume means the volume will no longer exist, the data will be lost, it cannot be attached to any VM, and no user can access it.
+
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Caution:</b> 
+Deleting a volume cannot be undone. </p>
+
+To delete one or more project volumes:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Infrastructure</b> > <b>Volumes</b> to open the Volumes window.
+
+3. To delete one volume, find the volume and select <b>More</b> > <b>Delete Volume</b>.
+
+4. <i>Optional</i>: To delete multiple volumes, select the checkboxes for the volumes you want to delete, and click <b>Delete Volume</b>.
+
+5. In the warning dialog box, verify your selection, and click <b>Delete Volume</b>.
+	
+
   
 ### Images and Snapshots
 
@@ -1109,7 +1974,7 @@ To see a list of project images:
 
 **Tasks:**
 
-* [How to Create an Image](#how-to-create-an-image)
+* [How to Create an Image](#how-to-create-an-image-project-tab)
 
 * [How to Edit an Image or Instance Snapshot](#how-to-edit-an-image-or-instance-snapshot)
 
@@ -1120,31 +1985,148 @@ To see a list of project images:
 * [How to Delete a Volume Snapshot](#how-to-delete-a-volume-snapshot)
 	
 	
-#### How to Create an Image
+#### How to Create an Image {#how-to-create-an-image-project-tab}
 
-Available soon...
+You can create and configure an image to upload to the Image Service. Compressed image binaries, such as .zip, and .tar.gz, are supported.
+
+To create an image:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Infrastructure</b> > <b>Images and Snapshots</b> > <b>Create Image</b>.
+
+3. On the <b>Create an Image</b> dialog box, enter a <b>Name</b> and optional <b>Description</b>.
+
+4. Enter one of the following for the Image Source:
+ * <b>Image File</b>: Then browse to select the file.
+ * <b>Image Location</b>: Then enter the image URL. It must be a valid and direct HTTP URL to the image binary. URLs that redirect or serve error pages will result in unusable images.
+   
+   **Note:** If you do not have rights to the image's URL, you receive an error when trying to create the image.
+
+   The image must be accessible to the Image Service and in a supported format.
+   
+   **Note:** If you upload an image with a format that is not supported, you will receive an Error 404, Not Found error when you attempt to create the image.
+
+5. Select a <b>Format</b>. The image must be in one of the formats listed.
+
+6. Enter the <b>Minimum Disk space</b> and <b>Minimum Ram</b>.
+
+7. Leave <b>Public</b> unselected to create a private image. <!-- Private images can be seen by --> 
+
+    To learn whether you have permission to create a public image, see your role tasks under [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
+
+8. Leave <b>Protected</b> unselected to create an image that other users can edit or delete.
+
+9. Select <b>Protected</b> to create a read-only image that other users cannot edit or delete. To learn whether you have permission to create a protected 
+image, see your role under [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
+
+10. Click <b>Create Image</b>. If successful, the image displays with an <b>Active</b> status. If creation is not successful within a specified amount of time (set by your system administrator; typically no more than five minutes), the <b>Status</b> of the image in the list displays <b>Upload Failed</b>.
+
+**Note:** Only AMI, RAW, and QCOW2 images are launchable.
+
+
 
 #### How to Edit an Image or Instance Snapshot
 
-Available soon...
+You cannot modify an image format.
+
+When you edit an Amazon Machine Image (AMI) image, you see additional fields allowing you to select a Kernel image (AKI) and a RAMdisk Image (ARI). 
+An AMI image is not valid unless it is associated with an AKI and ARI.
+
+To edit an image or instance snapshot:
+
+1. Click <b>Project</b> > <b>Images and Snapshots</b> to open the Images and Snapshots window.
+
+2. Find the image or snapshot you want to edit, and click More > Edit.
+
+3. Keep or edit:
+ * <b>Name</b>: As desired.
+ * <b>Description</b>: Optional description.
+ * <b>Public</b>: Visibility.
+ * <b>Protected</b>: Select to mark the image as read-only. A protected image cannot be edited or deleted.
+    
+4. Click <b>Update Image</b>.
 
 
-#### How to Launch an Image or Instance Snapshot
+#### How to Launch an Image or Instance Snapshot  <!-- on Project tab --> 
 
-Available soon...
+You can only launch images that are formatted as AMI, RAW, and QCOW2. Launching an image provisions it to the cloud.
+
+To launch a project image:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Infrastructure</b> > <b>Images and Snapshots</b> to open the Images window.
+
+3. Find the image to launch, and click <b>Launch</b> to open the Launch Instance dialog box. The dialog opens to the <b>Details</b> tab. Some fields are automatically populated from the image.
+
+4. Enter or edit the Details tab information as needed:
+ * <b>Instance Source</b>: Specify whether you are using an image or snapshot.
+ * <b>Image or Instance Snapshot</b>: Select from the list of images that have been uploaded to the system.
+ * <b>Availability Zone</b>: Any availability zone or Nova.
+ * <b>Instance Name</b>: The name of the host you are creating (Required).
+ * <b>Flavor</b>: Indicates the size of the node. When you select a flavor here, the Flavor Details table on the right changes to show the node properties and values associated with your size selection.
+ * <b>Instance Count</b>: Can be more than 1.
+ 
+5. Use the <b>Access and Security</b> tab to control access to your instance via keypairs and security groups.
+
+ a. <b>Keypair</b>: Keypairs are ssh credentials that are injected into images when they are launched. The public key is installed on the VM; you will use the private key to log in.
+
+    To add a keypair, either:
+	
+	* Select a keypair from the list, or
+	* Click (<b>+</b>) to import a keypair. Enter <b>Keypair Name</b> and <b>Public Key</b>.
+
+    To create a keypair, see [How to Import, Create, or Delete a Keypair](#how-to-import-create-to-delete-a-keypair).
+
+ b. Enter <b>Admin Password</b> and <b>Confirm Admin Password</b>.
+ 
+ c. Select a <b>Security Group</b>.
+
+6. Use the <b>Networking</b> tab to select one or more networks (required).
+
+  You must specify at least one network. You can click the plus (<b>+</b>) symbol or drag and drop to make your selections. Use the minus (<b>-</b>) symbol to remove networks.
+
+7. Use the <b>Volume Options</b> tab to select boot options for an instance that launches with attached storage.
+
+8. Use the <b>Post Creation</b> tab to customize the instance by adding a script to run after launch. The Customization Script field is analogous to "User Data" in other systems.
+
+9. Click <b>Launch</b>. If successful, the image is added to the <b>Images</b> list with an <b>Active</b> status.
 
 
 #### How to Delete an Image or Instance Snapshot
 
-Available soon...
+Images are protected from deletion by rules. If you are not allowed to delete an image, you receive an error when you attempt to delete the image.
+
+If you delete an image that is used in a design or profile, an attempt to provision the document will fail.
+
+To delete one or more images:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Infrastructure</b> > <b>Images and Snapshots</b>.
+
+3. Find the image you want to delete, and click <b>More</b> > <b>Delete Image</b>.
+
+  <i>Optional</i>: To delete multiple images, select the images and click <b>Delete Images</b>.
+
+4. Confirm your selection in the warning dialog box. Click <b>Delete Image</b>.
+
 
 
 #### How to Delete a Volume Snapshot
 	
-Available soon...
-	
-	
-		
+To delete one or more volume snapshots:
+
+1. On the Project tab, select a Current Project.
+
+2. Click Infrastructure > Images and Snapshots to open the Images and Snapshots window.
+
+3. Find the volume snapshot you want to delete, and click More > Delete Volume Snapshot.
+
+  <i>Optional</i>: To delete multiple volume snapshots, select the snapshots and click <b>Delete Volume Snapshots</b>.
+
+4. Confirm your selection in the warning dialog box, and click <b>Delete Volume Snapshot</b>.
 
   
 ### Networks
@@ -1320,29 +2302,111 @@ To see a list of routers:
 
 #### How to Create a Router
 
-Available soon...
+You can create a router to interconnect subnets and forward traffic within the subnets.
+
+A router has an interface for each subnet it is associated with. By default, the IP address of this interface is the subnet's gateway IP. When a router is associated with a subnet, a port for that router interface will be added to the subnet's network.
+
+To create a router:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Infrastructure</b> > <b>Routers</b> to open the Routers window.
+
+3. Click <b>Create Router</b>.
+
+4. On the <b>Create Router</b> dialog, enter a <b>Router Name</b>.
+
+5. Click <b>Create Router</b>.
+
 
 
 #### How to Add an Internal Interface to a Router
 
-Available soon...
+To learn whether you have permission, see your role under [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
+
+To add an internal interface to a project router:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Infrastructure</b> > <b>Routers</b> to open the Routers window.
+
+3. Click the name of a router where you want to add an interface to open an Overview window.
+
+4. Click <b>Add Interface</b>.
+
+5. In the Add Interface window:
+  * Select a subnet from the drop-down list.
+  * Leave the IP Address field blank.
+
+6. Click <b>Add Interface</b>.
+
+7. Wait for the success message.
+
+8. Go back to the Router Overview to verify the <b>Interfaces</b> information:
+  * External and Internal interfaces are identified.
+  * The initial Internal Interface <b>Status</b> is <b>DOWN</b>.
+  * After an Instance is created using this router, the <b>Status</b> will change to <b>ACTIVE</b>.
 
 
 #### How to Add an External Interface to a Router
 
-Available soon...
+To learn whether you have permission, see your role under [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
+
+To add an external interface to a router:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Infrastructure</b> > <b>Routers</b> to open the Routers window.
+
+3. Click the router <b>Name</b> to open an Overview window.
+
+4. Click <b>Add Gateway</b> Interface.
+
+5. In the Set Gateway window, select an <b>External Network</b> from the drop-down list.
+
+6. Click <b>Set Gateway</b>.
+
 
 #### How to Delete a Router
 
-Available soon...
+To delete one or more project routers:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Infrastructure</b> > <b>Routers</b> to open the Routers window.
+
+3. Find the router you want to delete, and click <b>More</b> > <b>Delete Router</b>.
+
+  <i>Optional</i>: To delete multiple routers, select routers and click <b>Delete Routers</b>.
+
+5. Confirm your selection in the warning dialog box, and click <b>Delete Router</b>.
+
+6. The Routers window opens, and you do not see the routers listed.
 
 
-
-
-  
+ 
 ### How to See a Network Topology Diagram
 
-Available soon...
+**Concepts:**
+
+You can see a layout diagram of project networks, subnets, and routers.
+
+To see the diagram:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Infrastructure</b> > <b>Network Topology</b>. You can launch instances, and create networks and routers on this window. Follow the steps described in the instances, networks, and routers topics below.
+
+**Related topics:**
+
+* [How to Launch an Instance](#how-to-launch-an-instance)
+
+* [How to Create a Private Network](#how-to-create-a-private-network-project-tab)
+
+* [How to Create a Router](#how-to-create-a-router)
+
+* [Topology Designs](/cloudos/manage/administration-dashboard/topology-designs/)
+
   
 ### Security Groups and Rules
 
@@ -1505,15 +2569,113 @@ You might have previously created a keypair that you want to use. To import a ke
   
 ### Floating IPs
 
-Available soon...
+**Concepts:**
+
+You can allocate additional floating IP addresses to a project. This process does not assign the address to a particular instance in the project.
+
+After you allocate an IP to your project, you can associate or disassociate the address to an instance.
+
+You can release a floating IP address that is associated with your project. When you release the floating IP, it becomes available to other projects.
+
+**Tasks:**
+
+* [How to Allocate a Floating IP](#how-to-allocate-a-floating-ip)
+
+* [How to Associate or Disassociate Floating IPs](#how-to-associate-or-disassociate-floating-ips)
+
+* [How to Release a Floating IP](#how-to-release-a-floating-ip)
+	
+	
+	
+	
+#### How to Allocate a Floating IP
+
+To allocate a floating IP to a project:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Access and Security</b> > <b>Access and Security</b> > <b>Floating IPs</b> tab.
+
+3. In the Floating IPs list, click <b>Allocate IP To Project</b>.
+
+4. In the Allocate Floating IP dialog, select a <b>Pool</b> from the drop-down list.
+
+5. Click <b>Allocate IP</b>.
+
+
+
+#### How to Associate or Disassociate Floating IPs
+
+You can assign an address to a particular VM instance.
+
+To associate a floating IP:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Access and Security</b> > <b>Access and Security</b> > <b>Floating IPs</b> tab.
+
+3. In the Floating IPs list, select an IP address and click <b>Allocate IP to Project</b>.
+
+4. In the Allocate Floating IP dialog, select a <b>Pool</b> from the drop-down list.
+
+5. Click <b>Allocate IP</b>.
+
+6. Wait for the success message.
+
+ 
+
+To disassociate a floating IP:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Access and Security</b> > <b>Access and Security</b> > <b>Floating IPs</b> tab.
+
+3. In the Floating IPs list, select an address where the <b>Disassociate Floating IP</b> action is available.
+
+4. Click <b>Disassociate Floating IP</b>.
+
+5. Wait for the success message.
+
+
+
+#### How to Release a Floating IP 
+
+To release a floating IP:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Access and Security</b> > <b>Access and Security</b> > <b>Floating IPs</b> tab.
+
+3. Find the IP that you want to release, and click <b>More</b> > <b>Release Floating IP</b>.
+
+4. Wait for the success message.
+
+	
   
 ### How to Access API Endpoints
 
-Available soon...
+To access API endpoints:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Access and Security</b> > <b>Access and Security</b> > <b>API Access</b> tab.
+
+3. Information shown includes service name and service endpoint.
+
   
 ### How to Access Your Authentication Token
 
-Available soon...
+The Administration Dashboard manages your authentication token. The Administration Dashboard retrieves your token from the Keystone service when you successfully log in to the dashboard.
+
+You can access your authentication token in the Administration Dashboard for subsequent use outside the dashboard. For example, when you use a REST client to request an OpenStack service, you might need to supply your authentication token.
+
+To access your authentication token:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Access and Security</b> > <b>Access and Security</b> > <b>Authentication Token</b> tab.
+
+3. A truncated version of the token displays. Click <b>More</b> to see the entire token.
   
 ### Updates and Extensions
 
