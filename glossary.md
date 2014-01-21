@@ -137,17 +137,17 @@ For a quick search of the [Knowledge Base](https://community.hpcloud.com/knowled
 ###[Image](https://community.hpcloud.com/search/knowledge/image) ### {#Image}
 :    1) An installable release package of a program, application, or software system.  As in, "We need to install the new image of Ruby Fog."  2) A copy of a virtual server including the operating system information, system state, and application configurations.
 
-###[Image (bootable)](https://community.hpcloud.com/search/knowledge/image+bootable) ### {#ImageBootable)
+###[Image (bootable)](https://community.hpcloud.com/search/knowledge/image+bootable) ### {#ImageBootable}
 :    *See* [Volume (bootable)](#VolumeBootable).
 
-###[Image (partner)](https://community.hpcloud.com/search/knowledge/image+partner) ### {#ImagePartner)
-:    definition
+###[Image (partner)](https://community.hpcloud.com/search/knowledge/image+partner) ### {#ImagePartner}
+:    A server volume made available by HP partners. *See* [Image](#Image).
 
-###[Image (private)](https://community.hpcloud.com/search/knowledge/image+private) ### {#ImagePrivate)
-:    definition
+###[Image (private)](https://community.hpcloud.com/search/knowledge/image+private) ### {#ImagePrivate}
+:    A server volume you created from a [snapshot](#Snapshot) of an instance. *See* [Image](#Image).
 
-###[Image (public)](https://community.hpcloud.com/search/knowledge/image+public) ### {#ImagePublic)
-:    definition
+###[Image (public)](https://community.hpcloud.com/search/knowledge/image+public) ### {#ImagePublic}
+:    A server volume provided by HP. *See* [Image](#Image).
 
 ###[Instance](https://community.hpcloud.com/search/knowledge/instance) ### {#Instance}
 :    A virtual machine or server in the cloud environment.
@@ -260,6 +260,9 @@ For a quick search of the [Knowledge Base](https://community.hpcloud.com/knowled
 ###[Service Catalog](https://community.hpcloud.com/search/knowledge/Service+Catalog) ### {#ServiceCatalog}
 :    List of services available to your and the endpoints that you access using the Authentication Token.
 
+###[Snapshot](https://community.hpcloud.com/search/knowledge/snapshot) ### {#Snapshot} 
+:    A replica of an instance or volume that can be used to create new images or volumes.
+
 ###[SSL](https://community.hpcloud.com/search/knowledge/SSL) ### {#SSL}
 :    Acronym for the secure socket layer encryption protocol. 
 
@@ -284,10 +287,10 @@ For a quick search of the [Knowledge Base](https://community.hpcloud.com/knowled
 
 ## V ##
 
-###[Volume](blah) ### {#Volume}
-:    Definition
+###[Volume](https://community.hpcloud.com/search/knowledge/volume) ### {#Volume}
+:    A defined partition of block-level storage that can be attached to an instance.
 
-###[Volume (bootable)](https://community.hpcloud.com/search/knowledge/volume+bootable) ### {#VolumeBootable)
+###[Volume (bootable)](https://community.hpcloud.com/search/knowledge/volume+bootable) ### {#VolumeBootable}
 :    A previously-saved (by a user) bootable server [volume](#Volume) (also sometimes called an [image](#Image)).
 
 ## W ##
