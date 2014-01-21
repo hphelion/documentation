@@ -391,9 +391,9 @@ As a best practice, project administrators maintain projects, with a focus on th
 
 * [Security Groups and Rules](/cloudos/manage/administration-dashboard/tasks-by-tab/#security-groups-and-rules)
 
-* [How to Create a Deployment Profile](/cloudos/manage/administration-dashboard/tasks-by-tab/#how-to-create-a-deployment-profile)
+* [How to Create a Deployment Profile](/cloudos/manage/administration-dashboard/topology-designs/#how-to-create-a-deployment-profile)
 
-* [How to Create a Topology Design](/cloudos/manage/administration-dashboard/tasks-by-tab/#how-to-create-a-topology-design)
+* [How to Create a Topology Design](/cloudos/manage/administration-dashboard/topology-designs/#how-to-create-a-topology-design)
 
 * [How to Launch an Instance](/cloudos/manage/administration-dashboard/tasks-by-tab/#how-to-launch-an-instance)
 

@@ -823,9 +823,99 @@ To see an overview of usage:
 3. <b>Download CSV Summary</b> opens a text file in Microsoft Excel with current month usage information.
 
 
-### How to Access Instances
+### How to See Instances
 
-Available soon...
+**Concepts:**
+
+Instances are running VMs. The Region tab provides a convenient place for users who have permission to see region instances. To learn whether you have 
+permission, see [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
+
+To see a list of instances:
+
+1. Click Region > Instances to open the Instances window.
+
+2. Information shown includes instance name, image name, IP address, size, keypair, status, task, power state, and uptime.
+
+3. Optional: To display details of a region instance, click the Name to open a window that offers the following tabs:
+ * Overview, where you see instance details and specifications.
+ * Log, which is the system log from the VM. Use this log for debugging and troubleshooting. You can view the full instance log or specify the number of lines of the log file to view.
+ * Console, where you can remotely log directly in to the VM.
+
+**Tasks:**
+
+* [How to See the Instance Console, Console Log, and Overview](#how-to-see-the-instance-console-console-log-and-overview)
+* [How to Edit an Instance](#how-to-edit-an-instance)
+* [How to Suspend, Resume, or Terminate an Instance](#how-to-suspend-resume-or-terminate-an-instance)
+
+
+#### How to See the Instance Console, Console Log, and Overview
+
+The instance console is the system log from the VM, and it is used for debugging and troubleshooting. You can view the full instance log or specify the 
+number of lines of the log file to view.
+
+ To display the instance console:
+
+1. On the <b>Region</b> tab, select a <b>Current Compute Region</b>.
+
+2. Click <b>Instances</b> to open the Instances window.
+
+3. Find the instance you want to learn more about, and click <b>More</b> > <b>Console</b> to open the Console window.
+
+4. <i>Optional</i>: Click the <b>Log</b> tab to see the most recent 35 lines from the Instance Console Log. 
+To change the number of display lines, enter a value in <b>Log Length</b> and click <b>Go</b>. 
+Click <b>View Full</b> Log to view all logged entries in a separate window.
+
+5. <i>Optional</i>: Click the <b>Overview</b> tab to see high level information (such as status, specs, security, and so on) about the region instance.
+
+
+#### How to Edit an Instance
+
+To edit a region instance:
+
+1. On the <b>Region</b> tab, select a <b>Current Compute Region</b>.
+   
+2. Click b to open the Instances window.
+
+3. Find the Instance you want to edit, and click <b>Edit Instance</b>.
+
+4. Select the <b>Info</b> tab to update the <b>Name</b>.
+
+5. Select the <b>Security Groups</b> tab to edit security groups. Use the plus symbol (<b>+</b>) to add groups and the minus symbol (<b>-</b>) to remove groups.
+ * <b>All Security Groups</b> &mdash; A list of security groups that are associated with the project, but not the instance.
+ * <b>Instance Security Groups</b> &mdash; A list of security groups that are currently associated with the instance.
+
+ 6. Click <b>Save</b>.
+
+
+#### How to Suspend, Resume, or Terminate an Instance
+
+When you terminate an instance, the Administration Dashboard shuts the VM down, and the resources associated with it are released. You cannot start the 
+VM after it is terminated, because it no longer exists. Termination is scheduled, because it takes some time to free all the resources. The scheduled 
+termination script runs in the background.
+
+When you terminate an instance:
+
+* Any changes associated with the volume that the image is running on are discarded.
+
+* Any changes associated with the volume implied by the disk space (ephemeral) that are specified in the flavor are discarded.
+
+* Any changes associated with attached volumes are retained in the attached volume and could be reattached to a different VM.
+
+* The VM is removed from any security group it was associated with, and frees its floating IP addresses.
+
+To terminate one or more instances:
+
+1. On the <b>Region</b> tab, select a <b>Current Compute Region</b>.
+
+2. Click <b>Instances</b> to open the Instances window.
+
+3. To terminate one instance, find the instance and select <b>More</b> > <b>Terminate Instance</b>.
+
+4. <i>Optional</i>: To terminate multiple instances, select the instances you want to terminate, and click <b>Terminate Instances</b>.
+
+5. In the warning dialog box, verify your selection and click <b>Terminate Instance</b>(<b>s</b>).
+
+
 
 ### How to See Info about Services, Compute Services, and Default Quotas
 
@@ -1568,20 +1658,16 @@ To create a volume:
 2. Click <b>Infrastructure</b> > <b>Volumes</b> to open the Volumes window.
 
  a. To create a volume that is not based on an image, enter:
- 
-   * <b>Volume Name</b>: A volume name is required.
-   * <b>Description</b>: Optional description.
-   * <b>Type</b>: Choose a volume type. Volume types are defined by cloud administrators, at the region level.
-   * <b>Size</b>: In GB.
-   * <b>Volume Source</b>: Leave the default, not based on a snapshot or image.
+  * <b>Volume Name</b>: A volume name is required.
+  * <b>Description</b>: Optional description.
+  * <b>Type</b>: Choose a volume type. Volume types are defined by cloud administrators, at the region level.
+  * <b>Size</b>: In GB.
+  * <b>Volume Source</b>: Leave the default, not based on a snapshot or image.
 
  b. To create a volume that is based on an image or snapshot:
- 
-   * Volume Source
-   
-     * Select <b>Snapshot</b> to display the Use snapshot as a source menu. If the dashboard does not contain snapshots, you do not see this option.
-     * Select <b>Image</b> to display the <b>Use image as a source</b> menu.
-	 
+  * Volume Source
+   * Select <b>Snapshot</b> to display the Use snapshot as a source menu. If the dashboard does not contain snapshots, you do not see this option.
+   * Select <b>Image</b> to display the <b>Use image as a source</b> menu.
    * Select an image or snapshot from the source menu. Keep or modify the entries that are automatically populated from the source.
 
 3. Click <b>Create Volume</b>. The volume is created and available to attach to VMs.
@@ -2139,6 +2225,8 @@ To see the diagram:
 
 * [How to Create a Router](#how-to-create-a-router)
 
+* [Topology Designs](/cloudos/manage/administration-dashboard/topology-designs/)
+
   
 ### Security Groups and Rules
 
@@ -2362,7 +2450,7 @@ To disassociate a floating IP:
 
 2. Click <b>Access and Security</b> > <b>Access and Security</b> > <b>Floating IPs</b> tab.
 
-3. In the Floating IPs list, select an address where the <b>Disassociate Floating IP</b>action is available.
+3. In the Floating IPs list, select an address where the <b>Disassociate Floating IP</b> action is available.
 
 4. Click <b>Disassociate Floating IP</b>.
 
