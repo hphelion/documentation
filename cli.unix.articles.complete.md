@@ -8,12 +8,27 @@ tags: cli linux bash
 ---
 #UNIX CLI: Using bash shell command completion#
 
+___________________
+
+###Important Notice###
+
+On November 4, 2013, the UNIX CLI was moved into its End-of-Life Cycle process toward final deprecation. During this 6-month transition time:
+
+* New and existing customers are encouraged to migrate to the OpenStackClient (Unified) CLIs or the OpenStack command-line clients for each respective service
+* No new feature requests will be honored
+* Bug reports will be accepted
+
+After 6-months, access to online resources will still be available, but no support will be offered from HP Public Cloud, and the software download will be disabled—although you are most welcome to continue development at your discretion! HP Cloud has contributed the Unix CLI back to the open source community, and you can access the source code, documentation, and downloads [here](https://github.com/hpcloud/unix_cli).
+
+_________________________________________
+
 The Unix CLI supports bash shell command completion.  This page covers the following topics:
 
 * [Enabling bash cmmand completion](#Enabling)
 * [Using bash command completion](#Using)
 * [Troubleshooting](#Troubleshooting)
 * [Uninstalling](#Uninstalling)
+* [For more information](#articles)
 
 ##Enabling bash command completion## {#Enabling}
 
@@ -70,3 +85,7 @@ If the `source` command gives you an error message, or the tab completion doesn'
 ##Uninstalling## {#Uninstalling}
 
 The gem uninstall does not uninstall the bash completion file, so if you uninstall the CLI, you must manually uninstall it.  The completion file is installed in either `/etc/bash_completion.d/hpcloud` or `~/.bash_completion.d/hpcloud`.
+
+##For more information## {#articles}
+
+For more tips and How-tos on using your UNIX command-line interface (CLI), see [UNIX CLI: Articles on to use the UNIX CLI](/cli/unix/articles/).
