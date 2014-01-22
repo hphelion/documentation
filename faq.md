@@ -6,20 +6,6 @@ permalink: /faq/
 ---
 # HP Public Cloud FAQ
 
-___________________
-
-###Important Notice###
-
-On November 4, 2013, the UNIX CLI was moved into its End-of-Life Cycle process toward final deprecation. During this 6-month transition time:
-
-* New and existing customers are encouraged to migrate to the OpenStackClient (Unified) CLIs or the OpenStack command-line clients for each respective service
-* No new feature requests will be honored
-* Bug reports will be accepted
-
-After 6-months, access to online resources will still be available, but no support will be offered from HP Public Cloud, and the software download will be disabled—although you are most welcome to continue development at your discretion! HP Cloud has contributed the Unix CLI back to the open source community, and you can access the source code, documentation, and downloads [here](https://github.com/hpcloud/unix_cli).
-
-_________________________________________
-
 What is a web site without an FAQ or two?  Well, a pain in the neck to use, honestly; that's why we've tried to provide you with a comprehensive one here.  If you have any suggestions on additions or improvements to our little effort here, please let us know on the forums!
 
 
@@ -42,6 +28,19 @@ For your edification and delectation, we have FAQs in the following areas:
 
 ## UNIX CLI## {#UnixCLI}
 
+___________________
+
+###Important Notice###
+
+On November 4, 2013, the UNIX CLI was moved into its End-of-Life Cycle process toward final deprecation. During this 6-month transition time:
+
+* New and existing customers are encouraged to migrate to the OpenStackClient (Unified) CLIs or the OpenStack command-line clients for each respective service
+* No new feature requests will be honored
+* Bug reports will be accepted
+
+After 6-months, access to online resources will still be available, but no support will be offered from HP Public Cloud, and the software download will be disabled—although you are most welcome to continue development at your discretion! HP Cloud has contributed the Unix CLI back to the open source community, and you can access the source code, documentation, and downloads [here](https://github.com/hpcloud/unix_cli).
+
+_________________________________________
 
 
 The questions we address in the UNIX CLI section of this FAQ are:
