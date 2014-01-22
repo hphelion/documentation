@@ -1,11 +1,11 @@
 ---
 layout: default
 title: "What’s New with the HP Public Cloud Console"
-permalink: whats_new_with_HP_Cloud_Console
+permalink: /whats_new_with_HP_Cloud_Console/
 product: HP Cloud Console
 ---
 
-# What's new with the HP Public Cloud Console
+# What's new with the HP Public Cloud Console #
 
 The HP Public Cloud Console now includes the following features:
 

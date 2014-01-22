@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Cloud Networking Overview"
-permalink: /compute/networking/
+permalink: /compute/networks/
 product: compute
 
 ---
@@ -68,11 +68,11 @@ You can use a low level, raw REST API to access HP Cloud compute. For more infor
 
 You can use any of several language bindings to access HP Cloud compute. For more information on using the HP Cloud Networking API, see [HP Cloud binding support](http://docs.hpcloud.com/bindings/).
 
-###Using the CLI### {cli}
+###Using the CLI### {#cli}
 
 You can use any of several command-line interface software to access HP Cloud compute. For more information on using the HP Cloud Networking API, see [HP Cloud CLI](http://docs.hpcloud.com/cli/).
 
-##Using VPN## {#vpn)
+##Using VPN## {#vpn}
 
 With HP Cloud Networking you can set up an IPsec, or site-to-site, VPN connecting your external network directly to your HP cloud virtual network.
 

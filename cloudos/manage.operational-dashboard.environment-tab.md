@@ -64,9 +64,9 @@ The following information provides details about the Prerequisites panel:
 
 The first step on the Operational Dashboard is to configure the HP Cloud OS Administration node prerequisites.
 
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px;"> <b>Caution:</b> 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Caution:</b> 
 Any prerequisites you want to configure, must be done before you complete the steps on the Complete Install panel. 
-For details, see the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install-overview">Complete Install Overview</a>. 
+For details, see <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>. 
 After that, the Edit Prerequisite dialogs are read-only. Once the install process is triggered, no changes can be made. 
 If you want to make changes, you need to start over by re-installing the HP Cloud OS Administration node. 
 For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
@@ -132,7 +132,7 @@ The following table describes the Prerequisites page UI elements:
 
 To access: Select the Environment tab > Prerequisites> click <b>Edit Prerequisite</b> for the Cloud Administration Node Internet Access Prerequisite.
 
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px;"> <b>Caution:</b> 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Caution:</b> 
 If you want to set the Administration Node Internet Access Prerequisite, you must configure it before you complete the steps on the 
 Complete Install panel. For details, see the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a> topic.
 After that, the Administration Node Internet Access Prerequisite dialogs are read-only. Once the install process is triggered, 
@@ -191,7 +191,7 @@ The following table describes the Cloud Administration Node Internet Access Prer
 <td> HTTP Proxy Information </td>
 <td>Set proxy information applicable for your environment. If you are on a network that has a proxy, you must fill in this proxy information.
 <br /> <br />
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px;"> <b>Caution:</b>  
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Caution:</b>  
 Specifying incorrect proxy host settings might cause some features to not work correctly in the Administration Dashboard.</p>
 </td>
 </tr>
@@ -229,7 +229,7 @@ Each network needs to be separated by a bar "|". For example: <code>10.*|192.*|l
 
 </table>
 
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px;"> <b>Note:</b> If this prerequisite fails to 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Note:</b> If this prerequisite fails to 
 complete successfully, an error message displays on the Prerequisites page. For a potential solution, see <a href="/cloudos/manage/troubleshooting/#problem-admin-node-internet-access-prerequisites-fail-to-complete">Problem: Admin Node Internet Access Prerequisites fail to complete</a> in the Troubleshooting topic. 
 </p>
 
@@ -237,7 +237,7 @@ complete successfully, an error message displays on the Prerequisites page. For 
 
 ### External DNS Server Prerequisite Dialog
 
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px;"> <b>Caution:</b> 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Caution:</b> 
 If you want to set the External DNS Server Prerequisite, you must configure it before you complete the steps on the 
 Complete Install panel. For details, see the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a> topic.
 After that, the External DNS Server Prerequisite dialogs are read-only. Once the install process is triggered, 
@@ -273,7 +273,7 @@ The following table describes the External DNS Server Prerequisite dialog UI ele
 
 ### Cloud Administration Node Time Settings Prerequisite Dialog
 
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px;"> <b>Caution:</b> 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Caution:</b> 
 If you want to set the Administration Node Time Settings Prerequisite, you must configure it before you complete the steps on the 
 Complete Install panel. For details, see the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a> topic.
 After that, the Administration Node Time Settings Prerequisite dialogs are read-only. Once the install process is triggered, 
@@ -319,7 +319,7 @@ The following table describes the Cloud Administration Node Time Settings Prereq
 
 ### Email Notification Settings Prerequisite Dialog
 
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px;"> <b>Caution:</b> 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Caution:</b> 
 If you want to set the Email Notification Settings Prerequisite, you must configure it before you complete the steps on the 
 Complete Install panel. For details, see the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a> topic.
 After that, the Email Notification Settings Prerequisite dialogs are read-only. Once the install process is triggered, 
@@ -379,7 +379,7 @@ The following information provides details about the Server Types panel:
 
 ### Server Types Overview
 
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px;"> <b>Caution:</b> If you plan to customize the servers, 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Caution:</b> If you plan to customize the servers, 
 you must do that before you complete the steps on the Complete Install panel. For details, see 
 the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a> topic.
 After that, the Server Types dialogs are read-only. Once the install process is triggered, 
@@ -412,7 +412,7 @@ This is necessary to define the correct order of those ports for the various ser
 same enumeration of network ports (0, 1, 2, 3 and so on) across the cloud. If you do not configure the server types for a cloud with 
 heterogeneous nodes in this way, you will experience networking failures because the servers will not have the same network port enumeration order.
 
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px;"> <b>Tip:</b> Based on your network and hardware infrastructure, 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Tip:</b> Based on your network and hardware infrastructure, 
 you can accept defaults or customize Server Types.
 </p>
 
@@ -450,7 +450,7 @@ The following table describes the Server Types page UI elements:
 <tr style="background-color: white; color: black;">
 <td>Create Server Definition button </td>
 <td> Click to add a new server type on the Create Server Definition dialog. <br /> <br />
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px;"> <b>Note:</b> The Create Server Definition button only displays 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> The Create Server Definition button only displays 
 while the servers can be added or edited. Once you do the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>, this button disappears and you cannot 
 add new servers or edit or delete existing servers.</p>
 </td>
@@ -459,7 +459,7 @@ add new servers or edit or delete existing servers.</p>
 <tr style="background-color: white; color: black;">
 <td> <nobr> Drop-down arrow > </nobr> Delete Server Definition </td>
 <td> Select to delete the server type from the HP Cloud OS Administration node. You are prompted to confirm the deletion. <br /> <br />
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px;"> <b>Note:</b> The Delete Server Definition menu item only displays while 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> The Delete Server Definition menu item only displays while 
 the servers can be added or edited.  Once you do the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>, 
 this menu item disappears and you cannot add new servers or edit or delete existing servers.
 </td>
@@ -471,7 +471,7 @@ this menu item disappears and you cannot add new servers or edit or delete exist
 
 To access: Select the Environment tab > Server Types > click <b>Edit Server Definition</b> for the server you want to customize.
 
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px;"> <b>Caution:</b> If you plan to customize the servers, 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Caution:</b> If you plan to customize the servers, 
 you must do that before you complete the steps on the Complete Install panel. For details, see 
 the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a> topic.
 After that, the Edit Server Definition dialogs are read-only. Once the install process is triggered, 
@@ -509,7 +509,7 @@ For procedural instructions, see <a href="/cloudos/install/">Install and Configu
 <tr style="background-color: white; color: black;">
 <td> <nobr> Update Server Definition </nobr> </td>
 <td> Click to save the updated server definition. <br /> <br />
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px;"> <b>Note:</b> The <b>Update Server Definition</b> button only 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> The <b>Update Server Definition</b> button only 
 displays while the servers are editable. Once you do the 
 <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>, 
 the dialog become read-only and this button disappears.
@@ -524,7 +524,7 @@ the dialog become read-only and this button disappears.
 
 To access: Select the Environment tab > Server Types > click <b>Create Server Definition</b>.
 
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px;"> <b>Caution:</b> The <b>Create Server Definition</b> button only displays while the servers are editable. 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Caution:</b> The <b>Create Server Definition</b> button only displays while the servers are editable. 
 Once the install process is triggered by the 
 <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>, this button disappears and no 
 changes can be made. If you want to make changes, you need to start over by re-installing the HP Cloud OS Administration node. 
@@ -561,7 +561,7 @@ For procedural instructions, see <a href="/cloudos/install/">Install and Configu
 <tr style="background-color: white; color: black;">
 <td> <nobr> Create Server Definition </nobr> </td>
 <td> Click to create the updated server definition. <br /> <br />
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px;"> <b>Note:</b> The <b>Create Server Definition</b> button only 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> The <b>Create Server Definition</b> button only 
 displays while the servers are editable. Once you do the 
 <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>, 
 the dialog become read-only and this button disappears.
@@ -589,9 +589,9 @@ The following information provides details about the Connections panel:
  
 ### Connections Overview
 
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px;"> <b>Caution:</b> 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Caution:</b> 
 If you plan to customize the connections, you must do that before you complete the steps on the Complete Install panel.  
-For details, see the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install-overview">Complete Install Overview</a>. 
+For details, see <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>. 
 After that, the Connections dialogs are read-only. Once the install process is triggered, no changes can be made. 
 If you want to make changes, you need to start over by re-installing the HP Cloud OS Administration node. 
 For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
@@ -792,9 +792,9 @@ this button disappears and you cannot add new or edit connections.
 
 To access: Select the Environment tab > Connections > click **Edit Connection** for the connection you want to customize.
 
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px;"> <b>Caution:</b> 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Caution:</b> 
 If you plan to customize the connections, you must do that before you complete the steps on the Complete Install panel.  
-For details, see the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install-overview">Complete Install Overview</a>. 
+For details, see the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>. 
 After that, the Edit Connections dialogs are read-only. Once the install process is triggered, no changes can be made. 
 If you want to make changes, you need to start over by re-installing the HP Cloud OS Administration node. 
 For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
@@ -881,7 +881,7 @@ this dialog become read-only and this button disappears. </td>
 
 To access: Select the Environment tab > Connections > click **Create Connection** for the connection you want to customize.
 
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px;"> <b>Caution:</b> The Create Connection button only displays 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Caution:</b> The Create Connection button only displays 
 while the connections are editable. Once the install process is triggered by the 
 <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>, this button disappears and no changes can be made. 
 If you want to make changes, you need to start over by re-installing the HP Cloud OS Administration node. 
@@ -964,11 +964,11 @@ The following information provides details about the Networks panel:
 
 **Concepts:**
 
-[Networks Panel Overview](#network-panel-overview)
+[Networks Panel Overview](#networks-panel-overview)
 
 **UI Descriptions:**
 
-* [Networks Page](#network-page)
+* [Networks Page](#networks-page)
 
 * [Edit Network Dialog](#edit-network-dialog)
 
@@ -984,7 +984,7 @@ is defined (admin, os_sdn, and public). These definitions are used for various p
 the Cloud OS Administration node (using the admin network), the public or corporate network (such as public network) attached to your cloud, 
 or networking between the Virtual Machine instances and the traffic from the instances to the Cloud Controller Node (using the os_sdn network).
 
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px;"> <b>Important:</b> Customizing the public network settings is 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Important:</b> Customizing the public network settings is 
 critical. Any missing or incorrect values will result in you having to re-install the HP Cloud OS Administration node. 
 For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
 </p>
@@ -999,7 +999,7 @@ Following are some of the criteria to be considered while making changes to the 
 
 * If you edit the network IP address ranges and enter invalid ranges, you will get a validation error when you click Update Address Ranges in the Edit Address Ranges dialog. The validation error shows the invalid address (start or end) and the corresponding network type. You must fix all errors in the Edit Address Ranges dialog and click <b>Update Address Ranges</b> to validate the addresses are correct. Clicking Cancel will not trigger the validation step.
 
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px;"> <b>Caution:</b> The address ranges validation only occurs when you 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Caution:</b> The address ranges validation only occurs when you 
 open the Edit Address Ranges dialog for each network and click <b>Update Address Ranges</b>. Otherwise,you will not know if you have any errors. 
 However, the Complete Install step will run a validation check and cannot be completed until the errors are fixed. If there is an address 
 range error, the validation check will show the network type and possibly the address value. If not, open the Edit Address Ranges dialog 
@@ -1107,7 +1107,7 @@ add or edit networks.</p>
 
 To access: Select the Environment tab > Networks > click **Edit Network** for the network you want to customize.
 
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px;"> <b>Caution:</b> If you plan to customize the networks, 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Caution:</b> If you plan to customize the networks, 
 you must do that before you complete the steps on the Complete Install panel. For details, see 
 the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a> topic.
 After that, the Edit Network dialogs are read-only. Once the install process is triggered, no changes can be made. If you want to make changes, 
@@ -1221,7 +1221,7 @@ This means that the Network Mode will be set to <b>single</b> by default on the
 
 To access: Select the Environment tab > Networks > click the down arrow and select Edit Address Ranges for the admin, os_sdn or public network type you want to view or edit the IP address ranges.
 
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px;"> <b>Caution:</b> If you plan to customize the address ranges, 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Caution:</b> If you plan to customize the address ranges, 
 you must do that before you complete the steps on the Complete Install panel. For details, see 
 the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a> topic.
 After that, the Edit Address Ranges dialogs are read-only. Once the install process is triggered, no changes can be made. If you want to make changes, 
@@ -1267,7 +1267,7 @@ The following table describes the Edit Network dialog UI elements:
 <td> <nobr> <b>Update Address Ranges</b> button </nobr> </td>
 <td> Click to save the edited settings, and to validate that the IP address ranges are correct.
 <br />
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px;"> <b>Note:</b> If you enter invalid ranges, 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> If you enter invalid ranges, 
 you will get a validation error when you click <b>Update Address Ranges</b>. The validation error identifies the incorrect address 
 (start or end) for the corresponding network type. You must fix all errors in this Edit Address Ranges dialog for the install to be 
 successful. Clicking <b>Cancel</b> will not trigger the validation step. Identify the incorrect address.</p>
@@ -1293,7 +1293,7 @@ See each network's Edit Address Ranges dialog for the defaults, as described in 
 
 To access: Select the Environment tab > Networks > click the down arrow and select Edit Address Ranges for the admin network type.
 
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px;"> <b>Caution:</b> If you plan to customize the address ranges, 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Caution:</b> If you plan to customize the address ranges, 
 you must do that before you complete the steps on the Complete Install panel. For details, see 
 the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a> topic.
 After that, the Edit Address Ranges dialogs are read-only. Once the install process is triggered, no changes can be made. If you want to make changes, 
@@ -1337,7 +1337,7 @@ The following table describes the admin network type address range default UI el
 <td> <nobr> <b>Update Address Ranges</b> </nobr> </td>
 <td> Click to save the edited settings, and to validate that the IP address ranges are correct.
 <br />
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px;"> <b>Note:</b> If you enter invalid ranges, 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> If you enter invalid ranges, 
 you will get a validation error when you click <b>Update Address Ranges</b>. The validation error identifies the incorrect address 
 (start or end) for the corresponding network type. You must fix all errors in this Edit Address Ranges dialog for the install to be 
 successful. Clicking <b>Cancel</b> will not trigger the validation step. Identify the incorrect address.</p>
@@ -1351,7 +1351,7 @@ successful. Clicking <b>Cancel</b> will not trigger the validation step. Identif
 
 To access: Select the Environment tab > Networks > click the down arrow and select Edit Address Ranges for the os_sdn network type.
 
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px;"> <b>Caution:</b> If you plan to customize the address ranges, 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Caution:</b> If you plan to customize the address ranges, 
 you must do that before you complete the steps on the Complete Install panel. For details, see 
 the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a> topic.
 After that, the Edit Address Ranges dialogs are read-only. Once the install process is triggered, no changes can be made. If you want to make changes, 
@@ -1395,7 +1395,7 @@ host
 <td> <nobr> <b>Update Address Ranges</b> button </nobr> </td>
 <td> Click to save the edited settings, and to validate that the IP address ranges are correct.
 <br />
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px;"> <b>Note:</b> If you enter invalid ranges, 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> If you enter invalid ranges, 
 you will get a validation error when you click <b>Update Address Ranges</b>. The validation error identifies the incorrect address 
 (start or end) for the corresponding network type. You must fix all errors in this Edit Address Ranges dialog for the install to be 
 successful. Clicking <b>Cancel</b> will not trigger the validation step. Identify the incorrect address.</p>
@@ -1408,7 +1408,7 @@ successful. Clicking <b>Cancel</b> will not trigger the validation step. Identif
 
 To access: Select the Environment tab > Networks > click the down arrow and select Edit Address Ranges for the public network type.
 
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px;"> <b>Caution:</b> If you plan to customize the address ranges, 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Caution:</b> If you plan to customize the address ranges, 
 you must do that before you complete the steps on the Complete Install panel. For details, see 
 the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a> topic.
 After that, the Edit Address Ranges dialogs are read-only. Once the install process is triggered, no changes can be made. If you want to make changes, 
@@ -1453,7 +1453,7 @@ This IP range is used for the PXE booted managed nodes. Get the range from your 
 <td> <nobr> <b>Update Address Ranges</b> button </nobr> </td>
 <td> Click to save the edited settings, and to validate that the IP address ranges are correct.
 <br />
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px;"> <b>Note:</b> If you enter invalid ranges, 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> If you enter invalid ranges, 
 you will get a validation error when you click <b>Update Address Ranges</b>. The validation error identifies the incorrect address 
 (start or end) for the corresponding network type. You must fix all errors in this Edit Address Ranges dialog for the install to be 
 successful. Clicking <b>Cancel</b> will not trigger the validation step. Identify the incorrect address.</p>
@@ -1466,7 +1466,7 @@ successful. Clicking <b>Cancel</b> will not trigger the validation step. Identif
 
 To access: Select the Environment tab > Networks > click <b>Create Network</b>.
 
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px;"> <b>Caution:</b> The <b>Create Network</b> button only displays 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Caution:</b> The <b>Create Network</b> button only displays 
 while the networks are editable. Once the install process is triggered by the 
 <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>, this button disappears and no 
 changes can be made. If you want to make changes, you need to start over by re-installing the HP Cloud OS Administration node. 
@@ -1596,7 +1596,7 @@ On the Complete Install panel, you complete the HP Cloud OS Administration node 
 
 You specify the install settings on the Confirm Complete Install Dialog and then finish the install process on the Complete Install Page.
 
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px;"> <b>Note:</b> The Complete Install step runs a validation check 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Note:</b> The Complete Install step runs a validation check 
 of the network IP address ranges. If there is an error, this step cannot be completed until the error is fixed. 
 The validation check shows the network type and possibly the address value. You must open the Edit Address Ranges dialog for the specified 
 network and click <b>Update Address Ranges</b> to identify the incorrect address, and fix it. 
@@ -1605,7 +1605,7 @@ See <a href="/cloudos/manage/operational-dashboard/environment-tab/#edit-address
 
 When the install is complete, the Operational Dashboard displays the Cloud tab (see the <a href="/cloudos/manage/operational-dashboard/cloud-tab/">Cloud Tab</a> section of this topic), after the user clicks the Continue... button.
 
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px;"> <b>Caution:</b> Be sure the values for the 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Caution:</b> Be sure the values for the 
 Prerequisites, Server Types, Connections and Networks are what you need, before you start the install process. Once the install process is triggered, 
 no changes can be made. If you want to make changes, you need to start over by re-installing the HP Cloud OS Administration node. 
 For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
@@ -1628,7 +1628,7 @@ The following table describes the Complete Install page UI elements:
 <td> <nobr> <b>Complete Install</b> button </nobr> </td> </td>
 <td> Click to open the Confirm Complete Install dialog, where you will then specify configuration information to complete the 
 HP Cloud OS Administration node installation. After the HP Cloud OS Administration node is installed, this button is replaced by the Continue... button. <br />
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px;"> <b>Note:</b> The Complete Install step runs a validation check 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> The Complete Install step runs a validation check 
 of the network IP address ranges. If there is an error, this step cannot be completed until the error is fixed. 
 The validation check shows the network type and possibly the address value. You must open the Edit Address Ranges dialog for the specified 
 network and click <b>Update Address Ranges</b> to identify the incorrect address, and fix it. 
@@ -1721,7 +1721,7 @@ special characters. In the current release, it must end in .com, .org, .net, .ed
 <tr style="background-color: white; color: black;">
 <td> <b>IPMI/BMC Network Status</b> </td>
 <td> Select Disabled. <br />
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px;"> <b>Tip:</b> The enable IPMI/BMC feature is for test purposes only. </p>
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Tip:</b> The enable IPMI/BMC feature is for test purposes only. </p>
 </td>
 </tr>
 
@@ -1738,7 +1738,7 @@ special characters. In the current release, it must end in .com, .org, .net, .ed
 <tr style="background-color: white; color: black;">
 <td> <nobr> <b>Complete Install</b> </nobr> </td>
 <td> Click to install the required software on the HP Cloud OS Administration node. This may take several minutes. <br /> 
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px;"> <b>Note:</b> The Complete Install step runs a validation check 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> The Complete Install step runs a validation check 
 of the network IP address ranges. If there is an error, this step cannot be completed until the error is fixed. 
 The validation check shows the network type and possibly the address value. You must open the Edit Address Ranges dialog for the specified 
 network and click <b>Update Address Ranges</b> to identify the incorrect address, and fix it. 
