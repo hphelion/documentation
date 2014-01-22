@@ -61,7 +61,7 @@ To learn whether you can perform tasks on the Cloud tab, refer to [Administratio
 
 * [How to Access All Roles](#how-to-access-all-roles)
 
-* [How to Access All Images(#how-to-access-all-images)
+* [How to Access All Images](#how-to-access-all-images)
 
 
 
@@ -86,39 +86,39 @@ To see cloud services:
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td style="min-width:100px;"> Eve </td>
+<td style="min-width:100px; font-weight: bold;"> Eve </td>
 <td> Provisioning</td> 
 <td> A composite provisioning service that uses a topology design and profile to create VMs, volumes, and network segments as described in the topology. 
 Eve uses the Graffiti service for determining resource pool existence, traits, and user identity mapping. </td> 
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td style="min-width:100px;"> Focus </td>
+<td style="min-width:100px; font-weight: bold;"> Focus </td>
 <td> Design storage </td> 
 <td> Repository for topology designs and profiles that are used for provisioning. </td> 
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td style="min-width:100px;"> Glance </td>
+<td style="min-width:100px; font-weight: bold;"> Glance </td>
 <td> Image storage </td> 
 <td> Repository for images used to create new VMs. </td> 
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td style="min-width:100px;"> Graffiti </td>
+<td style="min-width:100px; font-weight: bold;"> Graffiti </td>
 <td> Registry </td> 
 <td> A searchable directory to find cloud resources based on their capabilities. <br />  <br />
 An example of a cloud resource is resource pool definitions that you can use to provision to various cloud providers. </td> 
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td style="min-width:100px;"> Keystone </td>
+<td style="min-width:100px; font-weight: bold;"> Keystone </td>
 <td> Identity and security </td> 
 <td> Provides user authentication and tracks various projects within the regions. If Keystone is disabled, you cannot log into the Administration Dashboard. </td> 
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td style="min-width:100px;"> Quantum (new name - Neutron) </td>
+<td style="min-width:100px;"> <b>Quantum</b> (new name &mdash; <b>Neutron</b>) </td>
 <td> Networking </td> 
 <td> Provides network management for VMs. </td>
 </tr>
@@ -686,42 +686,58 @@ You can only launch images that are formatted as AMI, RAW, and QCOW2. Launching 
 
 To launch an image:
 
-1. Click <b>Cloud</b> > <b>Images</b> to open the Images view.
+<ol>
 
-2. Find the image to launch and then click <b>Launch</b> to open the Launch Instance dialog box. The dialog opens to the Details tab. Some fields are automatically populated from the image.
+<li> Click <b>Cloud</b> > <b>Images</b> to open the Images view. </li>
 
-3. Enter or edit the <b>Details</b> tab information as needed:
- * <b>Instance Source</b>: Specify whether you are using an image or snapshot.
- * <b>Image</b>: Select from the list of images that have been uploaded to the system.
- * <b>Instance Name</b>: The name of the host you are creating (Required).
- 
-   **Note:** At this point, you can go ahead and launch the instance, using the defaults for the remaining options.
-   
- * <b>Flavor</b>: Indicates the size of the node. When you select a flavor here, the <b>Flavor Details</b> table on the right changes to show the node properties and values associated with your size selection.
- * <b>Instance Count</b>: Can be more than 1.
+<li> Find the image to launch and then click <b>Launch</b> to open the Launch Instance dialog box. 
+The dialog opens to the Details tab. Some fields are automatically populated from the image. </li>
 
-4. Use the <b>Access and Security</b> tab to control access to your instance via keypairs and security groups.
+<li> Enter or edit the <b>Details</b> tab information as needed:
+<ul>
+<li> <b>Instance Source</b>: Specify whether you are using an image or snapshot.  </li>
+<li> <b>Image</b>: Select from the list of images that have been uploaded to the system.  </li>
+<li> <b>Instance Name</b>: The name of the host you are creating (Required). 
+<br /> <br /> 
+<b>Note:</b> At this point, you can go ahead and launch the instance, using the defaults for the remaining options. </li>
+<li> <b>Flavor</b>: Indicates the size of the node. When you select a flavor here, the <b>Flavor Details</b> table on the right changes to 
+show the node properties and values associated with your size selection.  </li>
+<li> <b>Instance Count</b>: Can be more than 1.  </li>
+</ul> 
+</li>
 
- a. <b>Keypair</b>: Keypairs are SSH security keys that are 512 bits long, provide authentication, and allow you to exchange traffic securely within a VM. These credentials are injected into images when they are launched.
- 
-   Creating a new keypair registers the public key and downloads the private key (a .pem file), allowing you to log into the VM. The public key gets installed on the VM; the private key is used to log in.
+<li> Use the <b>Access and Security</b> tab to control access to your instance via keypairs and security groups.
+<ul>
+<li> <b>Keypair</b>: Keypairs are SSH security keys that are 512 bits long, provide authentication, and allow you to exchange traffic securely 
+within a VM. These credentials are injected into images when they are launched. 
+<br /> <br /> 
+Creating a new keypair registers the public key and downloads the private key (a .pem file), allowing you to log into the VM. 
+The public key gets installed on the VM; the private key is used to log in.
+<br /> <br /> 
+To add a keypair, either:
+<ul>
+<li> Select a keypair from the list, or </li>
+<li> Click (<b>+</b>) to import a keypair. Enter <b>Keypair Name</b> and <b>Public Key</b> </li>
+</ul>
+</li>
 
-   To add a keypair, either:
-    * Select a keypair from the list, or
-	* Click (<b>+</b>) to import a keypair. Enter <b>Keypair Name</b> and <b>Public Key</b>.
+<li> <b>Admin Pass</b> and <b>Confirm Admin Pass</b> </li>
 
- b. <b>Admin Pass</b> and <b>Confirm Admin Pass</b>
- 
- c. <b>Security Groups</b>
+<li> <b>Security Groups</b> </li>
+</ul>
+</li>
 
-5. Use the <b>Networking</b> tab to select one or more networks. You can click the plus (<b>+</b>) symbol or drag and drop to make your selections. Use the minus (<b>-</b>) symbol to remove networks.
+<li> Use the <b>Networking</b> tab to select one or more networks. You can click the plus (<b>+</b>) symbol or drag and drop to make your selections. 
+Use the minus (<b>-</b>) symbol to remove networks. </li>
     
-6. Use the <b>Volume Options</b> tab to select boot options for an instance that launches with attached storage.
+<li> Use the <b>Volume Options</b> tab to select boot options for an instance that launches with attached storage. </li>
 
-7. Use the <b>Post Creation</b> tab to customize the instance by adding a script to run after launch. The <b>Customization Script</b> field is analogous to "User Data" in other systems.
+<li> Use the <b>Post Creation</b> tab to customize the instance by adding a script to run after launch. The <b>Customization Script</b> 
+field is analogous to "User Data" in other systems. </li>
 
-8. Click <b>Launch</b>. If successful, the image is added to the Images list with an Active status.
+<li> Click <b>Launch</b>. If successful, the image is added to the Images list with an Active status. </li>
 
+</ol> 
 
 #### How to Edit an Image
 
@@ -844,7 +860,7 @@ To see a list of instances:
 **Tasks:**
 
 * [How to See the Instance Console, Console Log, and Overview](#how-to-see-the-instance-console-console-log-and-overview)
-* [How to Edit an Instance](#how-to-edit-an-instance)
+* [How to Edit an Instance](#how-to-edit-an-instance-region-tab)
 * [How to Suspend, Resume, or Terminate an Instance](#how-to-suspend-resume-or-terminate-an-instance)
 
 
@@ -868,7 +884,7 @@ Click <b>View Full</b> Log to view all logged entries in a separate window.
 5. <i>Optional</i>: Click the <b>Overview</b> tab to see high level information (such as status, specs, security, and so on) about the region instance.
 
 
-#### How to Edit an Instance
+#### How to Edit an Instance  {#how-to-edit-an-instance-region-tab} <!-- Region tab --> 
 
 To edit a region instance:
 
@@ -881,8 +897,8 @@ To edit a region instance:
 4. Select the <b>Info</b> tab to update the <b>Name</b>.
 
 5. Select the <b>Security Groups</b> tab to edit security groups. Use the plus symbol (<b>+</b>) to add groups and the minus symbol (<b>-</b>) to remove groups.
- * <b>All Security Groups</b> &mdash; A list of security groups that are associated with the project, but not the instance.
- * <b>Instance Security Groups</b> &mdash; A list of security groups that are currently associated with the instance.
+  * <b>All Security Groups</b> &mdash; A list of security groups that are associated with the project, but not the instance.
+  * <b>Instance Security Groups</b> &mdash; A list of security groups that are currently associated with the instance.
 
  6. Click <b>Save</b>.
 
@@ -1029,16 +1045,16 @@ To edit an image:
 2. Find the image to edit. Click <b>Edit</b>.
 
 3. Keep or edit:
- * <b>Name</b>: As desired.
- * <b>Description</b>: Optional description.
- * <b>KernelID</b>
- * <b>Ramdisk ID</b>
- * <b>Architecture</b>: Optional information about hardware requirements for the VM the image runs on. For example, x86 64 bits.
- * <b>Public</b>: Visibility
+  * <b>Name</b>: As desired.
+  * <b>Description</b>: Optional description.
+  * <b>KernelID</b>
+  * <b>Ramdisk ID</b>
+  * <b>Architecture</b>: Optional information about hardware requirements for the VM the image runs on. For example, x86 64 bits.
+  * <b>Public</b>: Visibility
  
-   **Note**: If you edit an AMI image, you can select a different AKI and ARI.
+  **Note**: If you edit an AMI image, you can select a different AKI and ARI.
    
- * <b>Protected</b>: Select to create a read-only image. Protected images cannot be edited or deleted.
+  * <b>Protected</b>: Select to create a read-only image. Protected images cannot be edited or deleted.
 
 4. Click <b>Update Image</b>.
 
@@ -1512,7 +1528,7 @@ To view a list of instances:
 
 * [How to Create an Instance Snapshot](#how-to-create-an-instance-snapshot)
 
-* [How to Edit an Instance](#how-to-edit-an-instance)
+* [How to Edit an Instance](#how-to-edit-an-instance-project-tab)
 
 * [How to Associate a Floating IP to an Instance](#how-to-associate-a-floating-ip-to-an-instance)
 
@@ -1616,7 +1632,7 @@ See [Images and Snapshots](#images-and-snapshots).
 
 
 
-#### How to Edit an Instance
+#### How to Edit an Instance {#how-to-edit-an-instance-project-tab} <!-- Project tab --> 
 
 To edit a project instance:
 
@@ -2048,7 +2064,7 @@ To edit an image or instance snapshot:
 4. Click <b>Update Image</b>.
 
 
-#### How to Launch an Image or Instance Snapshot  <!-- on Project tab --> 
+#### How to Launch an Image or Instance Snapshot {#how-to-launch-an-image-or-instance-snapshot} 
 
 You can only launch images that are formatted as AMI, RAW, and QCOW2. Launching an image provisions it to the cloud.
 
@@ -2803,7 +2819,7 @@ To download an update:
 
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Note:</b> Downloads require large amounts of 
 disk space. Successful downloads require that your local system contains adequate disk space. For information about what to do when you run out of space or 
-experience other download problems, see the [Troubleshooting](/cloudos/manage/troubleshooting) topic. </p>
+experience other download problems, see the <a href="/cloudos/manage/troubleshooting/">Troubleshooting</a> topic. </p>
 
 ####How to Publish an Update or Extension
 
