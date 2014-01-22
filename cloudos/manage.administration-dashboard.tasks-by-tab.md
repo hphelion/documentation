@@ -880,7 +880,7 @@ Click <b>View Full</b> Log to view all logged entries in a separate window.
 5. <i>Optional</i>: Click the <b>Overview</b> tab to see high level information (such as status, specs, security, and so on) about the region instance.
 
 
-#### How to Edit an Instance  {#how-to-edit-an-instance-region-tab} <!-- Region tab --> 
+#### How to Edit an Instance {#how-to-edit-an-instance-region-tab}
 
 To edit a region instance:
 
@@ -2087,7 +2087,7 @@ See [Images and Snapshots](#images-and-snapshots).
 
 
 
-#### How to Edit an Instance {#how-to-edit-an-instance-project-tab} <!-- Project tab --> 
+#### How to Edit an Instance {#how-to-edit-an-instance-project-tab}
 
 To edit a project instance:
 
@@ -2752,6 +2752,7 @@ In many cases, especially if the subnet is associated with an external network, 
 * You can change or add DNS servers, and modify routing information.
 
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Note:</b> Only the Admin user can edit a subnet on an external network.
+</p>
 
 To edit a subnet:
 
