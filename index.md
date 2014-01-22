@@ -8,10 +8,10 @@ permalink: /
 
 # HP Public Cloud Overview
 
-Welcome to HP Public Cloud!  We have a pretty wide variety of services available to you, and a bunch of documentation to match.  This page provides you a quick overview of our services and the information that we have available for you about those services.  This page covers the following topics:
+Welcome to HP Public Cloud!  We have a pretty wide variety of services available with documentation to match.  This page provides you a quick overview of our services and the information that we have available for you about those services.  This page covers the following topics:
 
 * [Available services](#Services)
-* [Interacting with the services](#Interacting)
+* [Starting to work with HP Public Cloud](#Starting)
 * [REST API information](#API)
 * [Language bindings](#Bindings)
 * [For further information](#SeeAlso)
@@ -37,12 +37,16 @@ The following HP Public Cloud are now in private beta; follow the links to sign 
   **Note**: This service requires activation while in private beta; please [request access on our sign-up page](https://apaas.hpcloud.com/shared/free-private-beta/signup).  Service use is free of charge during the private beta period.
 
   
-## Interacting with the services ## {#Interacting}
+## Starting to work with HP Public Cloud ## {#Starting}
 
-For direct interactivity with HP Public Cloud, you can use the following officially supported tools:
+Use the following links and tools to get to work with HP Public Cloud:
 
-* [Management Console](https://console.hpcloud.com) - The GUI experience on this website
-* [Command Line Interfaces](/cli/) - Command line tool for easy scripting
+* [Information, pricing, and setting up a free trial of HP Public Cloud](http://www.hpcloud.com/?jumpid=em_R11646_us/en/b_to_b/hpcs/email_newsl/hpcs_home2/20130905&elq=c335ccb3cf434b9b969905b419a13b18&elqCampaignId=)
+* [Getting Started with HP Public Cloud Console](/hpcloudconsole/) walks you through HP Public Cloud setup.
+* [What's new with HP Public Cloud Console](/whats_new_with_HP_Cloud_Console/) has the latest updates to the current HP Public Cloud Console release
+* [Command Line Interfaces](/cli/) provides a command line tool for easy scripting
+
+ 
 
 You might also benefit from taking a look at our introductory page on the [Activity Stream](/activity-stream).
 
@@ -66,13 +70,17 @@ For creating your own applications, take a look at our [Bindings information](/b
 
 ##For further information## {#SeeAlso}
 
-There's a lot of information out there to help you get going with your services.  We recommend you take a look at the list below, and then begin poking around:
+There's a lot of information out there to help you get going with your services.  We recommend you take a look at the list below:
 
 <!--add a link to the release notes at GA-->
 
-* Check out the [Getting Started Guide](https://community.hpcloud.com/article/getting-started-guide/) in our [Knowledge Base](https://community.hpcloud.com/) to help you get started navigating the web interface, activating your services, and getting up and running with the various available services
-* If you're a developer, you'll want to look at the [OpenStack software development kit (SDK) information](https://wiki.openstack.org/wiki/SDKs).
-* Take a look at the a site map of the [documentation available on the site](/sitemap) for a full list of the technical content pages available on the site
-* If flat lists aren't your thing, there's also a [site overview](/site-overview) that includes pointers to key pages that you might find helpful
 
-And if you have a question, feel free to [post something over on our forums](https://connect.hpcloud.com). We'd love to help.
+* See [Getting Started with HP Public Cloud Console](/hpcloudconsole/) to navigate the web interface and activate services.
+
+* If you're a developer, you'll want to look at the [OpenStack software development kit (SDK) information](https://wiki.openstack.org/wiki/SDKs).
+
+* Take a look at the a site map of the [documentation available on the site](/sitemap) for a full list of the technical content pages available on the site.
+
+* See also a [site overview](/site-overview) that includes pointers to key pages that you might find helpful.
+
+If you have a question, feel free to [post something over on our forums](https://connect.hpcloud.com). We'd love to help.
