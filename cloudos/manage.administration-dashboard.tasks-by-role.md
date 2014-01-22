@@ -88,11 +88,11 @@ To access site settings:
 
 On the Site Settings window, you can:
 
-1. Change the log level.
+* Change the log level.
 
-2. Enable extra logging.
+* Enable extra logging.
 
-3. Change proxy settings.
+* Change proxy settings.
 
 #### To Change the Log Level
 
