@@ -26,10 +26,6 @@ PageRefresh();
 
 Dashboard users see the tabs that they need to perform their roles' tasks.
 
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:580px;"> <b>Note:</b> Some descriptions are coming 
-soon in the format of other HP Cloud OS topics. For any sections with an "Available soon" indicator, please see 
-<a href="http://docs.hpcloud.com/cloudos/administration-dashboard/index.htm">this copy on the website</a>. </p>
-
 * [Cloud Tab Tasks](#cloud-tab-tasks)
 
 * [Region Tab Tasks](#region-tab-tasks)
@@ -884,7 +880,7 @@ Click <b>View Full</b> Log to view all logged entries in a separate window.
 5. <i>Optional</i>: Click the <b>Overview</b> tab to see high level information (such as status, specs, security, and so on) about the region instance.
 
 
-#### How to Edit an Instance  {#how-to-edit-an-instance-region-tab} <!-- Region tab --> 
+#### How to Edit an Instance {#how-to-edit-an-instance-region-tab}
 
 To edit a region instance:
 
@@ -935,11 +931,181 @@ To terminate one or more instances:
 
 ### How to See Info about Services, Compute Services, and Default Quotas
 
-Available soon...
+**Concepts:**
+
+The Region tab provides a convenient place for users who have permission to see information about services, compute service and default quotas (limits). 
+To learn whether you have permission, see [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
+
+**Tasks:**
+
+* [How to See a List of Services](#how-to-see-a-list-of-services)
+
+* [How to See a List of Compute Services](#how-to-see-a-list-of-compute-services)
+
+* [How to See a List of Default Quotas (Limits)](#how-to-see-a-list-of-default-quotas-limits)
+
+
+#### How to See a List of Services
+
+The Services window provides a convenient place for users who have permission to see a read-only list of registered services.
+
+Services can be run on the same node as the compute region controller or they can be run on a different server.
+
+To see a list of services, click <b>Region</b> > <b>Info</b> > <b>Services</b> tab, which opens the Services window.
+
+<table style="text-align: left; vertical-align: top; min-width:700px;">
+
+<tr style="background-color: #C8C8C8;">
+<th> Service Name </th>
+<th> Description </th> 
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td style="min-width:100px; font-weight: bold;"> Nova </td>
+<td> A region is constructed by installing and naming a compute server called Nova. </td> 
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td style="min-width:100px; font-weight: bold;"> Quantum </td>
+<td> Provides network management for VMs. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td style="min-width:100px; font-weight: bold;"> Focus </td> 
+<td> Repository for topology designs and profiles that are used for provisioning. </td> 
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td style="min-width:100px; font-weight: bold;"> Glance </td>
+<td> Repository for images used to create new VMs. </td> 
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td style="min-width:100px; font-weight: bold;"> Cinder </td>
+<td> Provides block-storage based volume management for VMs. </td> 
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td style="min-width:100px; font-weight: bold;"> EC2 </td>
+<td> An alternate service interface for the Nova service. </td> 
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td style="min-width:100px; font-weight: bold;"> Eve </td>
+<td> A composite provisioning service that uses a topology design and profile to create VMs, volumes, and network segments as described in the topology. 
+Eve uses the Graffiti service for determining resource pool existence, traits, and user identity mapping. </td> 
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td style="min-width:100px; font-weight: bold;"> Keystone </td>
+<td> Provides user authentication and tracks various projects within the regions. If Keystone is disabled, you cannot log into the Administration Dashboard. </td> 
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td style="min-width:100px; font-weight: bold;"> Graffiti </td>
+<td> A searchable directory to find cloud resources based on their capabilities. <br />  <br />
+An example of a cloud resource is resource pool definitions that you can use to provision to various cloud providers. </td> 
+</tr>
+
+</table>
+
+The <b>Host</b> column shows the IP address where the service is running.
+
+The <b>Status</b> shows whether the service is enabled.
+
+
+#### How to See a List of Compute Services
+
+The Compute Services window provides a convenient place for users who have permission to see a read-only list of registered compute services.
+
+To see a list of registered compute services, click <b>Region</b> > <b>Info</b> > <b>Compute Services</b> tab, which opens the Compute Services window.
+
+
+#### How to See a List of Default Quotas (Limits)
+
+The Default Quotas window provides a convenient place for users who have permission to see a read-only list of region quotas. 
+The Administration Dashboard provides default limits, but you can modify those limits at the project level. 
+See [How to Change a Project's Compute or Storage Limits](#how-to-change-a-projects-compute-or-storage-limits). 
+
+To see a list of region default quotas (limits), click <b>Region</b> > <b>Info</b> > <b>Default Quotas</b> tab, which opens the Default Quotas window.
+
 
 ### How to Access Volumes
 
-Available soon...
+**Concepts:**
+
+The Region tab provides a convenient place for users who have permission see volumes. To learn whether you have permission, see 
+[Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
+
+Volumes are the disk storage volumes that have been created in the region. Volumes are persistent, meaning you can create data in these volumes and attach 
+to various VMs (instances) over time as needed.
+
+To see a list of volumes:
+
+1. Click <b>Region</b> > <b>Volumes</b> to open the Volumes window.
+
+  The information shown includes volume name, host size, status, type, attached to, and the associated project name.
+
+2. <i>Optional</i>: To see details of a volume, click the <b>Name</b> to open an Overview window.
+
+  Information shown includes volume name, ID, status, specs, and attachments.
+
+**Tasks:**
+
+* [How to Create a Volume Type](#how-to-create-a-volume-type)
+
+* [How to Delete a Volume Type](#how-to-delete-a-volume-type)
+
+* [How to Delete a Volume](#how-to-delete-a-volume)
+
+
+
+#### How to Create a Volume Type 
+
+To create a region volume type:
+
+1. On the <b>Region</b> tab, select a <b>Current Compute Region</b>.
+
+2. Click <b>Volumes</b> to open the Volumes window.
+
+3. Click <b>Create Volume Type</b>.
+
+4. Enter a <b>Name</b>. This is commonly associated with the storage backend driver capabilities, such as Performance, SSD, or Backup.
+
+5. Click <b>Create Volume Type</b>.
+
+
+#### How to Delete a Volume Type 
+
+To delete one or more volume types:
+
+1. Click <b>Region</b> > <b>Volumes</b> to open the Volumes window.
+
+2. Find the volume type you want to delete, and click <b>Delete Volume Type</b>.
+
+  <i>Optional</i>: To delete more than one volume type, select the volume types and click <b>Delete Volume Types</b>.
+
+3. In the confirmation dialog, verify your selection and then click <b>Delete Volume Types</b>.
+
+
+#### How to Delete a Volume 
+
+Deleting a volume means the volume will no longer exist, the data will be lost, it cannot be attached to any VM, and no user can access it. 
+Deleting a volume cannot be undone.
+
+ 
+
+To delete one or more volumes:
+
+1. Click <b>Region</b> > <b>Volumes</b> to open the Volumes window.
+
+2. Find the volume you want to delete and click <b>Delete Volume</b>.
+
+  <i>Optional</i>: To delete more than one volume, select the volumes and click <b>Delete Volumes</b>.
+
+3. In the confirmation dialog, verify your selection and then click <b>Delete Volume</b>.
+
+
 
 ### How to Access Images
 
@@ -1195,24 +1361,213 @@ settings is invalid. You can create the network, but it will fail during provisi
  
 #### How to Edit a Network
 
-Available soon...
+The <b>Region</b> > <b>Networks</b> window provides a convenient place for the Admin user and cloud administrators to see all the networks in all the 
+regions, so administrators can decide which networks to edit.
+
+If you originally created the network for a single project, and you later decide to share it, you must edit the <b>Shared</b> and <b>External Network</b> options.
+
+ 
+To edit a network:
+
+1. Click <b>Region</b> > <b>Networks</b> to open the Networks window.
+
+2. Find the network you want to edit, and click <b>Edit Networks</b> to open the Edit Network dialog box.
+
+3. Keep or edit the <b>Name</b>, <b>Admin State</b>, <b>Shared</b>, or <b>External Network</b> values. You cannot edit the <b>ID</b>.
+
+  **Note:** If you select <b>Admin State</b> and <b>Shared</b>, and do not select <b>External Network</b>, the combination of settings is invalid. You can create the network, but it will fail during provisioning.
+
+4. Click <b>Save Changes</b>.
+
 
 
 #### How to Delete a Network
 
-Available soon...
+The <b>Region</b> > <b>Networks</b> window provides a convenient place for the Admin user and cloud administrators to see all the networks in all the regions, so administrators can decide which networks to delete.
+
+A network is referenced by subnets and routers, which are, in turn, referenced by VMs. You cannot delete a network that has VMs connected to one of its subnets. To delete a network, VMs must not be connected to that network.
+
+ 
+
+To delete one or more networks:
+
+1. Click <b>Region</b> > <b>Networks</b> to open the Networks window.
+
+2. To delete one network, click <b>More</b> > <b>Delete Network</b>.
+
+  <i>Optional</i>: To delete one or more networks, select the networks and click <b>Delete Networks</b>.
+
+4. In the <b>Confirm Delete Network</b> dialog, verify your selection, and click <b>Delete Network</b>(<b>s</b>).
+
+5. The Networks window opens, and you do not see the networks listed.
+
 
 
 ### How to Access Routers
 
-Available soon...
+**Concepts:**
+
+The Region tab provides a convenient place for users who have permission to see a list of routers. and work with those routers. To learn whether you have 
+permission, see [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
+
+
+To see a list of routers:
+
+1. Click <b>Region</b> > <b>Routers</b> to open the Routers window.
+
+  The information shown includes the router name, status, external network, and associated project.
+  
+2. <i>Optional</i>: To see the details of a router, click the <b>Name</b>. The Administration Dashboard opens the Routers window in the associated project. You are now working on the project level. 
+
+**Tasks:**
+
+* [How to Delete a Router](#how-to-delete-a-router)
+
+#### How to Delete a Router
+
+The <b>Region</b> > <b>Routers</b> window provides a convenient place for the admin user and cloud administrators to see all the routers in all the regions, so administrators can decide which routers to delete.
+
+To delete one or more routers:
+
+1. Click <b>Region</b> > <b>Routers</b> to open the Routers window.
+
+2. Select one or more routers, and then click <b>Delete Routers</b>.
+
+3. In the confirmation dialog, verify your selection, and then click <b>Delete Router</b>.
+
+4. The Routers window opens, and you do not see the routers listed.
+
 
 ### How to Access Flavors and Flavor Extra Specs
 
-Available soon...
+**Concepts:**
+
+The Region tab provides a convenient place for users who have permission to see a list of flavors and work with those flavors. 
+To learn whether you have permission, see [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
+
+Flavors are machine configurations that can be used to create new VMs. A flavor describes the amount of memory, number of CPUs, and ephemeral disk space available to the VM. You can create an extra spec key-value for a flavor.
+
+To see a list of flavors, click Regions > Flavors to open the Flavors window. The information shown includes name, VCPUs, RAM, Root Disk, ephemeral disk, swap disk, and ID.
+
+**Tasks:**
+
+* [How to Create a Flavor](#how-to-create-a-flavor)
+
+* [How to Edit a Flavor](#how-to-edit-a-flavor)
+
+* [How to Delete a Flavor](#how-to-delete-a-favor)
+
+* [How to Create a Flavor Extra Spec](#how-to-create-a-flavor-extra-spec)
+
+* [How to Edit a Flavor Extra Spec](#how-to-edit-a-flavor-extra-spec)
+
+* [How to Delete a Flavor Extra Spec](#how-to-delete-a-flavor-extra-spec)
 
 
 
+#### How to Create a Flavor
+
+Only cloud architects can create flavors. Creating a flavor defines a new configuration used to create new VMs. Typically, the pre-defined flavors m1.tiny through m1.xlarge are valid.
+
+To create a region flavor:
+
+1. On the <b>Region</b> tab, select a <b>Current Compute Region</b>.
+
+2. Click <b>Flavors</b> to open the Flavors window.
+
+3. Click <b>Create Flavor</b> to open the Create Flavor dialog box.
+
+4. All fields are required. All fields are integer values except for the <b>Name</b> field.
+
+5. Click <b>Create Flavor</b>. The list redisplays with the new flavor listed alphabetically and a system-assigned <b>Flavor ID</b>.
+
+
+#### How to Edit a Flavor
+
+To edit a region flavor:
+
+1. On the <b>Region</b> tab, select a <b>Current Compute Region</b>.
+
+2. Click <b>Flavors</b> to open the Flavors window.
+
+3. Find the flavor you want to edit, and click <b>Edit Flavor</b> to open the Edit Flavor dialog box.
+
+4. Keep or change the values.
+
+5. Click <b>Save</b>.
+
+
+#### How to Delete a Flavor
+
+Only a domain administrator within a region can delete flavors. When you delete a flavor, the flavor is no longer visible in the Administration Dashboard 
+and cannot be used to create a new VM, to assign in resource pool services, or to specify in Infrastructure Design documents.
+
+A deleted flavor still exists in the Nova database until the clean flavors script (scheduled by a system administrator) runs. The script cannot delete a 
+flavor, if the flavor is in use by an active instance. You must terminate the instance.
+
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Note:</b> If all flavors are deleted, you 
+cannot create VMs. </p>
+
+To delete one or more region flavors:
+
+1. On the <b>Region</b> tab, select a Current Compute Region.
+
+2. Click <b>Flavors</b> to open the Flavors window.
+
+3. Select the flavors you want to delete. To select all, click the top checkbox in the header row.
+
+4. Click <b>Delete Flavors</b>.
+
+5. In the <b>Confirm Delete Flavors</b> dialog box, verify your selections and then click <b>Delete Flavors</b>.
+
+6. Wait for the success message.
+
+
+#### How to Create a Flavor Extra Spec
+
+You can create an extra spec key-value for a flavor.
+
+To create an extra spec for a flavor:
+
+1. Click <b>Region</b> > <b>Flavors</b> to open the Flavors window.
+
+2. Find the flavor in the Flavors list, and click <b>More</b> > <b>View Extra Specs</b> to open the Extra Specs window.
+
+3. Click <b>Create</b> to open the <b>Create Flavor Extra Spec</b> dialog box. Enter:
+
+4. Click <b>Create</b>.
+
+
+#### How to Edit a Flavor Extra Spec
+
+You can edit an extra spec value. If you make changes to the extra spec name, the Administration Dashboard creates a new extra specs key.
+
+To edit a flavor extra spec:
+
+1. Click <b>Region</b> > <b>Flavors</b> to open the Flavors window.
+
+2. Find the flavor where you want to edit specs, and click <b>More</b> > <b>View Extra Specs</b> to open the Extra Specs window.
+
+3. Click <b>Edit</b>.
+
+4. Make changes to Value and then click <b>Save</b>.
+
+
+#### How to Delete a Flavor Extra Spec
+
+To delete a flavor extra specs key:
+
+1. Click <b>Region</b> > <b>Flavors</b> to open the Flavors window.
+
+2. Find the flavor where you want to delete specs. Click <b>More</b> > <b>View Extra Specs</b> to open the Extra Specs window.
+
+3. Find the extra spec you want to delete. Click <b>More</b> > <b>Delete Extra Spec</b>. A confirmation window opens, warning you that the action cannot be undone.
+    
+4. Click <b>Delete Extra Spec</b>. The extra spec is deleted from the Extra Specs list and the system.
+
+	
+	
+	
 
 <a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
@@ -1325,9 +1680,41 @@ Servers that are part of the topology will appear in the Instances list, but the
 
 #### How to Delete or Terminate a Running Topology
 
-Available soon...
+When you delete a running topology, the Administration Dashboard stops the VM and other topology elements (such as networks, volumes, and others), 
+and permanently removes them. This action cannot be undone.
+
+To delete a running topology:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+   
+2. Click <b>Provisioning</b> > <b>Running Topologies</b> to open the Topologies window.
+
+3. Select the topology you want to delete and then click <b>Delete Topology</b>.
+   
+4. Wait for the success message.
+   
+5. Verify that the deleted topology is excluded from the Topologies list.
 
 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Note:</b> Although terminated topologies 
+are not running, they are still included in the <b>Running Topologies</b> window, with an updated <b>State</b>.
+</p>
+
+To terminate a running topology:
+
+1. On the Project tab, select a Current Project.
+
+2. Click Provisioning > Running Topologies to open the Topologies window.
+
+3. Select the Topology you want to terminate, and click Terminate Topology. The State changes to Inactive.
+
+Terminating a topology can fail in the following case:
+
+* Assume that you provision topology A, and it includes a subnet, router and security group.
+
+* Assume that you next provision topology B, and it uses the subnet, router, and security group from topology A.
+
+If you attempt to terminate topology A, the terminate will fail for all components that are also provisioned to topology B. You must terminate topology B before you can terminate topology A.
 
 
   
@@ -1468,11 +1855,79 @@ To create a resource pool:
 
 #### How to Edit a Resource Pool
 
-Available soon... 
+Use the <b>Edit Resource Pool</b> view to update resource pool definitions that will be used during topology provisioning. In common use cases, you can:
+
+* Change the name of the resource pool.
+  
+* Switch to a new region.
+  
+* Update the OpenStack server domain URL.
+  
+* Modify different provider credentials when the resource is an HP Cloud.
+  
+* Modify values that were not accurate when you originally entered them.
+
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Note:</b> If you change your HP Cloud password, 
+you must also change your password in the <b>Edit Resource Pool</b> view.
+</p>
+
+To update resource pool definitions:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Provisioning</b> > <b>Resource Pools</b> to open the Resource Pools window.
+
+3. Find the resource pool that you want to edit, and click <b>Edit Resource Pool</b>.
+
+4. In the <b>Details</b> section, modify the <b>Name</b>, <b>Type</b>, <b>Region ID</b>, <b>Version</b>, <b>Scope</b>, <b>Cloud Profile</b>, and <b>Provider URL</b>.
+
+5. Depending on the Cloud Type, in the Provider Credentials section, modify the <b>Tenant ID</b>, <b>User Name</b>, and <b>Password</b>. Enter the password again in <b>Confirm Password</b> to validate. If you create a resource pool that requires credentials, the Administration Dashboard validates them when you edit a resource pool, instead of when you first use the resource pool.
+
+6. Click <b>Update Resource Pool</b> to save your changes.
+
 
 #### How to Add, Edit, or Delete a Resource Pool Service
 
-Available soon... 
+Use the <b>Edit Resource Pool Services</b> view to add, edit, and delete services to and from a resource pool.
+
+A service definition uses the model and version properties to identify an infrastructure service that is realized using the specified image/flavor combination. If you find problems in particular model/version, you might be required to add a new resource pool service.
+
+To add a resource pool service:
+
+1. On the Project tab, select a Current Project.
+
+2. Click <b>Provisioning</b> > <b>Resource Pools</b> to open the Resource Pools window. **Note:** Version must be prefixed by "v". For example, to enter a version 1.0, enter "v1.0".
+
+3. Click <b>Add Service</b> to open a row of entry boxes for your new service.
+
+4. Enter the <b>Name</b>, <b>Type</b>, <b>Model</b>, <b>Version</b>, <b>Flavor ID</b>, and select an <b>Image ID</b> (if you have images loaded). **Note:** Version must be prefixed by "v". For example, to enter a version 1.0, enter "v1.0".
+
+5. Click <b>Update Resource Pool Services</b> to save your changes.
+
+ 
+
+To edit a resource pool service:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Provisioning</b> > <b>Resource Pools</b> to open the Resource Pools window.
+
+3. Find the resource pool you want to edit, and click <b>More</b> > <b>Edit Services</b>.
+
+4. Keep or modify the service entry boxes.
+
+5. Click <b>Update Resource Pool Services</b> to save your changes.
+
+     
+
+To delete one or more resource pool services:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Provisioning</b> > <b>Resource Pools</b> to open the Resource Pools window.
+
+3. Select the resource pools you want to delete, and click <b>Delete Services</b>.
+
 
 #### How to Delete a Resource Pool
 
@@ -1632,7 +2087,7 @@ See [Images and Snapshots](#images-and-snapshots).
 
 
 
-#### How to Edit an Instance {#how-to-edit-an-instance-project-tab} <!-- Project tab --> 
+#### How to Edit an Instance {#how-to-edit-an-instance-project-tab}
 
 To edit a project instance:
 
@@ -2230,7 +2685,22 @@ server that is providing routing services.</li>
 
 #### How to Edit a Network
 
-Available soon...
+You can edit a network that is assigned to a project. In a common use case, you need to edit when the Admin State should be changed, such as for maintenance or testing efforts.
+
+To edit a network:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Infrastructure</b> > <b>Networks</b> to open the Networks window.
+
+3. Find the network you want to edit, and click <b>Edit Network</b> to open the Edit Network window.
+
+4. Change the <b>Name</b> or <b>Admin State</b>. You cannot edit the <b>ID</b>.
+
+5. Click <b>Save Changes</b>.
+
+6. Wait for the success message.
+
 
 
 #### How to Create a Subnet
@@ -2273,17 +2743,67 @@ To create a subnet:
 
 #### How to Edit a Subnet
 
-Available soon...
+The <b>Region</b> > <b>Networks</b> window provides a convenient place for the admin user and cloud administrators to see all the subnets in all the regions, so administrators can decide which subnets to edit.
+
+In many cases, especially if the subnet is associated with an external network, subnet details change after it is created. As a result of these changes, you might need to update information. For example:
+
+* If you entered an incorrect subnet gateway address during subnet creation, or if the subnet gateway address changes, you can correct the subnet gateway address. You cannot change the mask of a subnet.
+  
+* You can change or add DNS servers, and modify routing information.
+
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Note:</b> Only the Admin user can edit a subnet on an external network.
+</p>
+
+To edit a subnet:
+
+1. Click <b>Region</b> > <b>Networks</b> to open the Networks window.
+
+2. Click the <b>Network Name</b> where you want to edit a subnet. The Administration Dashboard opens the Network Overview window in the associated project. You are now working at the project level.
+
+3. Find the subnet you want to edit, and click <b>Edit Subnet</b> to open the <b>Update Subnet</b> dialog box where:
+  * On the <b>Subnet</b> tab of the dialog box, you can change the <b>Subnet Name</b>, <b>Gateway IP</b>, or <b>Disable Gateway</b> settings. You cannot edit the Network Address.
+  * On the <b>Subnet Details</b> tab of the dialog box, you can change the <b>Enable DHCP</b> setting, <b>DNS Name Servers</b>, or <b>Host Routes</b> settings.
+
+4. Click <b>Update</b>.
+
+5. The Network Overview window opens, and you see the edits.
+
 
 
 #### How to Delete a Subnet
 
-Available soon...
+To delete a subnet:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Infrastructure</b> > <b>Networks</b> to open the Networks window.
+
+3. Find the network where you want to delete a subnet, and click the <b>Name</b> to open the Network Overview window.
+
+4. Find the subnet you want to delete, and click <b>More</b> > <b>Delete Subnet</b>.
+
+  <i>Optional</i>: To delete multiple subnets, select the subnets, and click <b>Delete Subnet</b>.
+
+5. Confirm your selection in the warning dialog box, and click <b>Delete Subnet</b>.
+
 
 
 #### How to Delete a Network
 
-Available soon...
+You can delete a network that is assigned to a project. In a common use case, you want to delete a network that you decide is no longer required in the project.
+
+To delete a one or more networks:
+
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
+
+2. Click <b>Infrastructure</b> > <b>Networks</b> to open the Networks window.
+
+3. Find the network you want to delete, and click <b>More</b> > <b>Delete Network</b>.
+
+4. <i>Optional</i>: To delete multiple networks, select the networks, and click <b>Delete Networks</b>.
+
+5. Confirm your selection in the warning dialog box, and click <b>Delete Network</b>.
+
 
 
 
