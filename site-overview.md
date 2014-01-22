@@ -34,9 +34,8 @@ You may have already noticed that the site has multiple methods for navigating; 
 * Also on the right-hand side, when you are on certain pages lower in the documentation hierarchy, a second navigation bar appears to provide you with quick access different levels in that particular hierarchy.  For example, when you surf to Bindings page, you can see a secondary navigation box that contains links to Overview page, and the two subordinate bindings pages on Ruby Fog and jclouds. Whatever page you are on is highlighted, to help you keep your place in the hierarchy.
 
 ##Where to Start
-"Okay", you're thinking to yourself, "That's a lot of stuff; where do I start?"  
 
-* For beginners, we recommend the [Getting Started Guide](https://community.hpcloud.com/article/getting-started-guide/) in our [Knowledge Base](https://community.hpcloud.com/) to help you get started navigating the web interface, activating your services, and getting up and running with the various available services
+* See the [Getting Started Guide with HP Public Cloud Console ](/hpcloudconsole/) to start navigating the web interface, activating your services, and getting up and running with the various available services
 * If you're already well versed in the cloud, feel free to just go straight to the [console](https://console.hpcloud.com/) and get going
 
 So there you have it; a quick overview of what's available to you.  If you have any comments or questions, please get in touch with us via the forums.  Enjoy!
