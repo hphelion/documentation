@@ -38,4 +38,4 @@ With the new functionality of cross-region replication, you can also construct a
 
 ##Other improvements## {#Otherimprovements}
 
-The 50MB file upload size limitation within the classic console is no longer an impedance with the new Horizon-based HP Public Cloud Console. You'll also notice more consumable UI and UX changes with your account management and invoice presentation.
+The 50MB file upload size limitation within the classic console is no longer an impedance with the new Horizon-based HP Public Cloud Console. You'll also notice more consumable UI and UX changes with your account management and invoice presentation. 
