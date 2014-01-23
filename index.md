@@ -8,7 +8,7 @@ permalink: /
 
 # HP Public Cloud Overview
 
-Welcome to HP Public Cloud!  We have a pretty wide variety of services available with documentation to match.  This page provides you a quick overview of our services and the information that we have available for you about those services.  This page covers the following topics:
+Welcome to HP Public Cloud!  We have a wide variety of services available with documentation to match.  This page provides you a quick overview of our services and the information that we have available for you about those services.  This page covers the following topics:
 
 * [Available services](#Services)
 * [Starting to work with HP Public Cloud](#Starting)
