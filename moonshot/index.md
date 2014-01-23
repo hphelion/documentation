@@ -8,30 +8,31 @@ product: moonshot
 
 # HP Cloud OS for Moonshot Documentation 
 
-<p> Welcome! HP Moonshot servers are designed and tailored for specific workloads to deliver optimum performance. These support a wide range of 
-complex IT demands right from cloud based applications to Social Media, Big Data and Mobility. Building on this requirement, HP has designed 
-<b>HP Cloud OS for Moonshot</b> to enable you to efficiently create and run cloud environments using Moonshot servers. 
-<img src="media/moonshot-server-hardware.jpg" title="Moonshot server hardware" align="left" style="padding: 0px 14px 4px 0px;" /> 
-</p> 
+Welcome! HP Moonshot servers are designed and tailored for specific workloads to deliver optimum performance. These support a wide range of 
+complex IT demands right from cloud based applications to Social Media, Big Data and Mobility. 
 
-This Moonshot section of the documentation website builds on the [HP Cloud OS documentation](/cloudos/) by providing topics that are customized 
+Building on this requirement, HP has designed <nobr><b>HP Cloud OS for Moonshot</b></nobr> to enable you to efficiently create and run cloud environments using Moonshot servers. 
+
+<img src="media/moonshot-server-hardware.jpg" title="Moonshot server" /> 
+
+This Moonshot section of the documentation site builds on the [HP Cloud OS documentation](/cloudos/) by providing topics that are customized 
 specifically for Moonshot customers.
 
-* [HP Cloud OS for Moonshot Release Notes](/cloudos/moonshot/releasenotes)
+* [HP Cloud OS for Moonshot Release Notes](/cloudos/moonshot/prepare/releasenotes/)
 
 * [HP Cloud OS for Moonshot Installation](/cloudos/moonshot/install/)
 
-* [HP Cloud OS for Moonshot Support Matrix](/cloudos/moonshot/supportmatrix/)
+* [HP Cloud OS for Moonshot Support Matrix](/cloudos/moonshot/prepare/supportmatrix/)
 
-* [HP Cloud OS for Moonshot Operational Dashboard Help](/cloudos/moonshot/operational-dashboard/)
+* [HP Cloud OS for Moonshot Operational Dashboard Help](/cloudos/moonshot/manage/operational-dashboard/)
 
-* [HP Cloud OS for Moonshot Administration Dashboard Help](/cloudos/moonshot/administration-dashboard)
+* [HP Cloud OS for Moonshot Administration Dashboard Help](/cloudos/moonshot/manage/administration-dashboard/)
 
-* [HP Cloud OS for Moonshot Administration Guide](/cloudos/moonshot/administration-guide)
+* [HP Cloud OS for Moonshot Administration Guide](/cloudos/moonshot/manage/administration-guide/)
 
-* [HP Cloud OS for Moonshot Image Builder](/cloudos/moonshot/image-builder) 
+* [HP Cloud OS for Moonshot Image Builder](/cloudos/moonshot/manage/image-builder/) 
 
-* [HP Cloud OS for Moonshot Troubleshooting](/cloudos/moonshot/troubleshooting/)
+* [HP Cloud OS for Moonshot Troubleshooting](/cloudos/moonshot/manage/troubleshooting/)
 
 </ul>
 

@@ -6,7 +6,6 @@ product: cloudos
 
 ---
 
-<a name="_top"> </a>
 
 <script>
 
@@ -226,6 +225,6 @@ If you need to edit the connections:
 
 Proceed to the [Customize Network Settings (Required)](/cloudos/moonshot/install/customize-network-settings/) topic.
 
-<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 

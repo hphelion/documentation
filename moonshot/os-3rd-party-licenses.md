@@ -6,7 +6,6 @@ product: cloudos
 
 ---
 
-<a name="_top"> </a>
 
 <script> 
 
@@ -4202,7 +4201,7 @@ options:
 
 Also see GNU Lesser General Public License (LGPL) Version 2.1.
 
-<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 <p style="font-size: small;"> <a href="/cloudos/moonshot/"> &#171; Return to HP Cloud OS home </a> </p>
 

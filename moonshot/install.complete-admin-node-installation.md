@@ -6,7 +6,6 @@ product: cloudos
 
 ---
 
-<a name="_top"> </a>
 
 <script> 
  
@@ -64,5 +63,5 @@ To complete the Admin Node installation:
 
 Now that you have installed the Admin node, you can [Create a Cloud](/cloudos/moonshot/install/create-cloud/).
 
-<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

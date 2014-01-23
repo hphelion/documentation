@@ -6,7 +6,6 @@ product: cloudos
 
 ---
 
-<a name="_top"> </a>
 
 <script>
 
@@ -235,6 +234,6 @@ the addresses are correct.
 
 Proceed to the next topic, [Complete Admin Node Installation (Required)](/cloudos/moonshot/install/complete-admin-node-installation/).
 
-<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 

@@ -7,7 +7,6 @@ product: cloudos
 ---
 
 
-<a name="_top"> </a>
 
 <script> 
 
@@ -67,7 +66,7 @@ This topic provides details about the User Settings panel. The following table d
 
 </table>
 
-<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 ## License
 
@@ -115,6 +114,6 @@ about 20 minutes elapses before the new license is activated.</p>
 
 The About panel displays the version of the Operational Dashboard and the HP Cloud OS build, and the copyrights.
 
-<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 

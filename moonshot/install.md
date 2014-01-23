@@ -6,7 +6,6 @@ product: cloudos
 
 ---
 
-<a name="_top"> </a>
 
 <script> 
 
@@ -22,7 +21,9 @@ PageRefresh();
 
 # Install &amp; Configure Your Cloud
 
-Welcome! The following topics explain how to install &amp; configure your cloud with the HP Cloud OS platform. 
+Welcome! The following topics explain how to install &amp; configure your cloud with HP Cloud OS for Moonshot. 
+
+( please reword / edit for Moonshot ) 
 
 It's important to read the topics and perform the described steps in order. While some steps are optional, 
 the sequence that you'll follow in the HP Cloud OS Operational Dashboard user interface is significant, to ensure 
@@ -58,5 +59,5 @@ see these topics:
 * [HP Cloud OS Operational Dashboard Help](/cloudos/moonshot/manage/operational-dashboard/)
 * [HP Cloud OS Administration Dashboard Help](/cloudos/moonshot/manage/administration-dashboard/)
 
-<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

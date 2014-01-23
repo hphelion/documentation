@@ -6,7 +6,6 @@ product: cloudos
 
 ---
 
-<a name="_top"> </a>
 
 <script>
 
@@ -82,6 +81,6 @@ For more information, click Help from the top banner of the HP Cloud OS Operatio
 
 Proceed to the next topic, [Customize Network Connections (Optional)](/cloudos/moonshot/install/customize-network-connections/).
 
-<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 

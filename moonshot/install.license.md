@@ -6,7 +6,6 @@ product: cloudos
 
 ---
 
-<a name="_top"> </a>
 
 <script> 
 
@@ -57,7 +56,7 @@ When your license expires, contact HP Support to purchase a renewed license. In 
 Before leaving the Operational Dashboard, you should become familiar with certain tasks that you may perform, as needed, 
 to [Install Hot Fixes](/cloudos/moonshot/install/hot-fixes/) and perform [Updates and Extensions](/cloudos/moonshot/install/updates-and-extensions/).
 
-<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 <!-- To request access to the HP Cloud OS Sandbox, see http://www.hp.com/go/cloudos. --> 
 

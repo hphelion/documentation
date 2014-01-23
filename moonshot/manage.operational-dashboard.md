@@ -7,7 +7,6 @@ product: cloudos
 ---
 
 
-<a name="_top"> </a>
 
 <script> 
 
