@@ -26,7 +26,7 @@ Particularly attractive for administrators in the enterprise, HP Cloud provides 
 
 ##Network topology visualization## {#Networktopologyvisualization}
 
-The new Horizon-based HP Public Cloud Console inherits network topology infographics to graphically display your network, routers, and instances.  In addition to visualizing network relationships, you can perform dynamic network management, interactively creating networks and routers, and launching instances through a 2-D visualization scene. Hover over graphical network elements to see detailed information and access links to perform tasks on that element. 
+The new Horizon-based HP Public Cloud Console inherits network topology infographics to graphically display your network, routers, and instances.  In addition to visualizing network relationships, you can perform dynamic network management, interactively creating networks and routers, and launching instances through a 2-D visualization scene. Hover over graphical network elements to see detailed information and access links to perform tasks on that element.  
 
 ##Cross-region object replication## {#Crossregionobjectreplication}
 
