@@ -74,7 +74,7 @@ You can use the default network to deploy HP Public Cloud compute instances (vir
 
     <img src="media/CreateaSubnetImage3.png" width="580" alt="" />
 
-###Create a router### {#Createarouter}
+###Create a router### {#Createarouter} 
 
 1.  If on the "Network Topology" screen, click "Create Router" in the top right-hand navigation. If not, click "Routers" under the "Manage Network" heading in the left-hand navigation.
 
