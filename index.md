@@ -42,7 +42,7 @@ The following HP Public Cloud are now in private beta; follow the links to sign 
 Use the following links and tools to get to work with HP Public Cloud:
 
 * [Information, pricing, and setting up a free trial of HP Public Cloud](http://www.hpcloud.com/?jumpid=em_R11646_us/en/b_to_b/hpcs/email_newsl/hpcs_home2/20130905&elq=c335ccb3cf434b9b969905b419a13b18&elqCampaignId=)
-* [Getting Started with HP Public Cloud Console](/hpcloudconsole/) walks you through HP Public Cloud setup
+* [Getting Started with HP Public Cloud Console](/hpcloudconsole) walks you through HP Public Cloud setup
 * [What's new with HP Public Cloud Console](/whats_new_with_HP_Cloud_Console/) has the latest updates to the current HP Public Cloud Console release
 * [Command Line Interfaces](/cli/) provides a command line tool for easy scripting
 
@@ -75,7 +75,7 @@ There's a lot of information out there to help you get going with your services.
 <!--add a link to the release notes at GA-->
 
 
-* See [Getting Started with HP Public Cloud Console](/hpcloudconsole/) to navigate the web interface and activate services.
+* See [Getting Started with HP Public Cloud Console](/hpcloudconsole) to navigate the web interface and activate services.
 
 * If you're a developer, you'll want to look at the [OpenStack software development kit (SDK) information](https://wiki.openstack.org/wiki/SDKs).
 
