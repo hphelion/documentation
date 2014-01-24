@@ -1,8 +1,8 @@
 ---
 layout: default
-title: "HP Cloud OS Support Matrix for Hardware and Software"
+title: "HP Cloud OS for Moonshot Support Matrix"
 permalink: /cloudos/moonshot/prepare/supportmatrix/
-product: cloudos
+product: moonshot
 
 ---
 

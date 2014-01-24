@@ -2,7 +2,7 @@
 layout: default
 title: "Operational Dashboard: Cloud Tab"
 permalink: /cloudos/moonshot/manage/operational-dashboard/cloud-tab/
-product: cloudos
+product: moonshot
 
 ---
 

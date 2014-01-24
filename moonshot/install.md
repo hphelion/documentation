@@ -2,7 +2,7 @@
 layout: default
 title: "Install &amp; Configure Your Cloud"
 permalink: /cloudos/moonshot/install/
-product: cloudos
+product: moonshot
 
 ---
 

@@ -2,7 +2,7 @@
 layout: default
 title: "Updates and Extensions"
 permalink: /cloudos/moonshot/install/updates-and-extensions/
-product: cloudos
+product: moonshot
 
 ---
 

@@ -1,8 +1,8 @@
 ---
 layout: default
-title: "HP Cloud OS for Moonshot Release Notes"
+title: "HP Cloud OS for Moonshot for Moonshot Release Notes"
 permalink: /cloudos/moonshot/prepare/releasenotes/
-product: cloudos
+product: moonshot
 
 ---
 

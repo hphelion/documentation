@@ -2,7 +2,7 @@
 layout: default
 title: "Installation Overview"
 permalink: /cloudos/moonshot/install/overview/
-product: cloudos
+product: moonshot
 
 ---
 

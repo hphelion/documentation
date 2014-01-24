@@ -2,7 +2,7 @@
 layout: default
 title: "Customize Network Connections (Optional)"
 permalink: /cloudos/moonshot/install/customize-network-connections/
-product: cloudos
+product: moonshot
 
 ---
 

@@ -2,7 +2,7 @@
 layout: default
 title: "Deploy Swift"
 permalink: /cloudos/moonshot/install/deploy-swift/
-product: cloudos
+product: moonshot
 
 ---
 

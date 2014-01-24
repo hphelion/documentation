@@ -2,7 +2,7 @@
 layout: default
 title: "How the Operational Dashboard Works"
 permalink: /cloudos/moonshot/manage/operational-dashboard/how-opdash-works/
-product: cloudos
+product: moonshot
 
 ---
 

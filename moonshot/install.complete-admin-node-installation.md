@@ -2,7 +2,7 @@
 layout: default
 title: "Complete Admin Node Installation (Required)"
 permalink: /cloudos/moonshot/install/complete-admin-node-installation/
-product: cloudos
+product: moonshot
 
 ---
 

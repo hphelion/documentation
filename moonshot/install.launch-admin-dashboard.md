@@ -2,7 +2,7 @@
 layout: default
 title: "Launch the Administration Dashboard"
 permalink: /cloudos/moonshot/install/launch-admin-dashboard/
-product: cloudos
+product: moonshot
 
 ---
 

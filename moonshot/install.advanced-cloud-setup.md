@@ -2,7 +2,7 @@
 layout: default
 title: "Advanced Cloud Setup"
 permalink: /cloudos/moonshot/install/advanced-cloud-setup/
-product: cloudos
+product: moonshot
 
 ---
 

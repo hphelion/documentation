@@ -2,7 +2,7 @@
 layout: default
 title: "Install Modules Reference"
 permalink: /cloudos/moonshot/install/install-modules-reference/
-product: cloudos
+product: moonshot
 
 ---
 

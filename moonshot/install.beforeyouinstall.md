@@ -2,7 +2,7 @@
 layout: default
 title: "Before You Install"
 permalink: /cloudos/moonshot/install/before-you-install/
-product: cloudos
+product: moonshot
 
 ---
 

@@ -2,7 +2,7 @@
 layout: default
 title: "Create a Cloud"
 permalink: /cloudos/moonshot/install/create-cloud/
-product: cloudos
+product: moonshot
 
 ---
 

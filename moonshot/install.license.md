@@ -2,7 +2,7 @@
 layout: default
 title: "Check the HP Cloud OS License"
 permalink: /cloudos/moonshot/install/license/
-product: cloudos
+product: moonshot
 
 ---
 

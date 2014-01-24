@@ -2,7 +2,7 @@
 layout: default
 title: "Set Admin Node Prerequisites (Required)"
 permalink: /cloudos/moonshot/install/admin-node-prerequisites/
-product: cloudos
+product: moonshot
 
 ---
 

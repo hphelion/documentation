@@ -2,7 +2,7 @@
 layout: default
 title: "Install Hot Fixes"
 permalink: /cloudos/moonshot/install/hot-fixes/
-product: cloudos
+product: moonshot
 
 ---
 

@@ -2,7 +2,7 @@
 layout: default
 title: "Customize Server Types (Optional)"
 permalink: /cloudos/moonshot/install/customize-server-types/
-product: cloudos
+product: moonshot
 
 ---
 

@@ -1,8 +1,8 @@
 ---
 layout: default
-title: "HP Cloud OS Open Source and Third-Party Software License Agreements"
+title: "HP Cloud OS for Moonshot Open Source and Third-Party Software License Agreements"
 permalink: /cloudos/moonshot/os-3rd-party-license-agreements/
-product: cloudos
+product: moonshot
 
 ---
 
