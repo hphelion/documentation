@@ -6,8 +6,6 @@ product: cloudos
 
 ---
 
-<a name="_top"> </a>
-
 <script>
 
 function PageRefresh {
@@ -150,5 +148,5 @@ Technology Preview section, provide your information, and download the ZIP packa
 
 > In the current release, the dashboards use pre-defined login credentials. These are not published in the web-hosted documentation. After you download the ISO from the <a href="https://cloudos.hpwsportal.com" target="new"> HP Cloud OS Distribution Network</a>, look for the readme file in the same ZIP that contains the ISO. The readme identifies the login credentials.
 
-<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

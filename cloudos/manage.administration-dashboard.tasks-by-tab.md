@@ -782,7 +782,7 @@ To delete one or more images:
 5. Click <b>Delete Image</b>. The Images list redisplays and the image or images are removed.
 
 
-<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 
 ## Region Tab Tasks
@@ -1569,7 +1569,7 @@ To delete a flavor extra specs key:
 	
 	
 
-<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 ## Project Tab Tasks
 
@@ -3361,7 +3361,7 @@ To publish an update:
 4. After a successful publish, you see the update in the appropriate section of the Administration Dashboard. For example, if the update is a Glance image, you can see it on <b>Infrastructure</b> > <b>Images and Snapshots</b>.
 
   
-<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 ## Administration Dashboard Settings
 
@@ -3419,5 +3419,5 @@ To view version information about the Administration Dashboard:
 3. In the <b>About</b> window, review the Dashboard Version, Build Version, and Copyrights information.
 
   
-<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

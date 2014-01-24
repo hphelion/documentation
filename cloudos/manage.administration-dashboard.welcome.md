@@ -395,5 +395,5 @@ specified on the Create Cloud > Attributes dialog in the HP Cloud OS Operational
 
 * Within the Operational Dashboard, Manage Clouds > More > Launch Dashboard for the cloud you created.
 
-<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

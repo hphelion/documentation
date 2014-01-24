@@ -76,7 +76,7 @@ For each task, the link goes to a section in the Tasks by Tabs topic.
 
 When you are done, tell a cloud administrator to perform [Getting Started for Cloud Administrators](#getting-started-for-cloud-administrators). 
 
-<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 
 
@@ -114,7 +114,7 @@ However, some organizations might also use cloud administrators to create profil
 
 When you are done, tell a cloud architect to perform [Getting Started for Cloud Architects](#getting-started-for-cloud-architects). 
 
-<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 
 
@@ -138,7 +138,7 @@ Cloud architects create images, topology designs, and deployment profiles.
 
 When you are done, tell a project administrator to perform [Getting Started for Project Administrators](#getting-started-for-project-administrators).
 
-<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 
 ## Getting Started for Project Administrators
@@ -174,7 +174,7 @@ See [How to Create a Resource Pool](/cloudos/manage/administration-dashboard/tas
 When you are done, tell your project users that they can start working in the HP Cloud OS Administration Dashboard. 
 See [Getting Started for Project Users](#getting-started-for-project-users).
 
-<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 
 ## Getting Started for Project Users
@@ -200,5 +200,5 @@ Project users' main goal when using the dashboard is to provision topologies.
 
 * [How to Create or Delete a Security Group](/cloudos/manage/administration-dashboard/tasks-by-tab/#how-to-create-or-delete-a-security-group) 
 
-<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

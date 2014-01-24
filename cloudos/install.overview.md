@@ -6,8 +6,6 @@ product: cloudos
 
 ---
 
-<a name="_top"> </a>
-
 <script>
 
 function PageRefresh {
@@ -160,6 +158,6 @@ This node hosts OpenStack services called Nova-compute and Neutron l2 agent. Mul
 
 Proceed to the next topic, [Before You Install](/cloudos/install/before-you-install/). 
 
-<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 

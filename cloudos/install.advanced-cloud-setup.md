@@ -6,8 +6,6 @@ product: cloudos
 
 ---
 
-<a name="_top"> </a>
-
 <script> 
 
 function PageRefresh { 
@@ -455,5 +453,5 @@ nodes are on virtual machines. Select kvm if nova-compute nodes are bare-metal. 
 
 For details about each install module, see the next topic, [Install Modules Reference](/cloudos/install/install-modules-reference/). 
 
-<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

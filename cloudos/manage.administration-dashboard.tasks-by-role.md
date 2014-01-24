@@ -154,7 +154,7 @@ You can change the following proxy information:
 
 
 
-<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 	
 ## Cloud Administrator Tasks
 
@@ -177,7 +177,7 @@ the <b>Cloud</b> and <b>Region</b> tabs.
 * [Updates and Extensions](/cloudos/manage/administration-dashboard/tasks-by-tab/#updates-and-extensions)
 	
 
-<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 	
 ## Cloud Architect Tasks
 
@@ -351,7 +351,7 @@ REST service is running.</li>
 balancer instance, you can save it as a snapshot. See 
 <a href="/cloudos/manage/administration-dashboard/tasks-by-tab/#how-to-create-an-instance-snapshot">How to Create an Instance Snapshot</a>.</p> 
 
-<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 
 
@@ -396,7 +396,7 @@ As a best practice, project administrators maintain projects, with a focus on th
 
 
 
-<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 ## Project User Tasks
 
@@ -438,5 +438,5 @@ As a best practice, project users focus on the following tasks.
 
 
 
-<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

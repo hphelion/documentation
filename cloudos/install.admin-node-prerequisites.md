@@ -6,8 +6,6 @@ product: cloudos
 
 ---
 
-<a name="_top"> </a>
-
 <script> 
 
 function PageRefresh { 
@@ -149,5 +147,5 @@ Prerequisites fail to complete" section of the [Troubleshooting](/cloudos/manage
 
 Proceed to the next topic, [Customize Server Types](/cloudos/install/customize-server-types/). 
 
-<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
