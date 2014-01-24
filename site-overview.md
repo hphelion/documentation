@@ -35,7 +35,7 @@ You may have already noticed that the site has multiple methods for navigating; 
 
 ##Where to Start
 
-* See the [Getting Started Guide with HP Public Cloud Console ](/hpcloudconsole/) to start navigating the web interface, activating your services, and getting up and running with the various available services
+* See the [Getting Started Guide with HP Public Cloud Console ](/hpcloudconsole) to start navigating the web interface, activating your services, and getting up and running with the various available services
 * If you're already well versed in the cloud, feel free to just go straight to the [console](https://console.hpcloud.com/) and get going
 
 So there you have it; a quick overview of what's available to you.  If you have any comments or questions, please get in touch with us via the forums.  Enjoy!
