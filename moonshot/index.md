@@ -46,17 +46,18 @@ On the site, see the Moonshot section and follow the links.
 
 For an introduction to HP Cloud OS for Moonshot, watch this video: 
 
-<iframe style="border: 1px solid gray;" width="560" height="315" src="//www.youtube.com/embed/NriyVYHqYQk" frameborder="0" allowfullscreen></iframe>
+<iframe style="border: 1px solid gray;" width="400" height="225" src="//www.youtube.com/embed/NriyVYHqYQk" frameborder="0" allowfullscreen></iframe>
 
 HP Cloud OS product manager Hari Kannan talks about the benefits of HP's Moonshot servers with HP Cloud OS, providing simplified provisioning and management for specific cloud workloads.
 
-<p style="font-size: small; text-align:right;"> 
-<a href="/cloudos/moonshot/os-3rd-party-license-agreements/" target="os3p">HP Cloud OS for Moonshot Open Source and Third-Party Software License Agreements &#187;</a> 
-</p>
-
 ## HP Moonshot System
 
-For information about the Moonshot hardware offerings, see the [HP Moonshot System](http://www.hp.com/go/moonshot) topics on hp.com.
+For related information, see the [HP Moonshot System](http://www.hp.com/go/moonshot) topics on hp.com.
 
 <!-- Note: Cloud OS blue = #1796D3 --> 
+
+<p style="font-size: x-small; text-align:right;"> 
+<a href="/cloudos/moonshot/os-3rd-party-license-agreements/" target="os3p">HP Cloud OS for Moonshot Open Source and Third-Party Software 
+License Agreements &#187;</a> 
+</p>
 
