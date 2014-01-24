@@ -51,8 +51,8 @@ This topic describes known problems and solutions for the following areas:
  * [Problem: Unable to launch more instances](#problem-unable-to-launch-more-instances)
  * [Problem: Default route disappears from Controller node](#problem-default-route-disappears-from-controller-node)
  * [Problem: Not possible to log in the dashboard (license has expired)](#problem-not-possible-to-log-in-the-dashboard-license-has-expired)
- * [Problem: Create Cloud failed](#create-cloud-failed)
- * [Problem: Find why Launch Topology fails](#find-why-launch-topology-fails)
+ * [Problem: Create Cloud failed](#problem-create-cloud-failed)
+ * [Problem: Find why Launch Topology fails](#problem-find-why-launch-topology-fails)
  * [Problem: Unauthorized exceptions when navigating in the dashboard](#problem-unauthorized-exceptions-when-navigating-in-the-dashboard)
  * [Problem: Location of the log files](#problem-location-of-the-log-files)
  * [Problem: Launch topology fails and Instance is created but with Error status](#problem-launch-topology-fails-and-instance-is-created-but-with-error-status)
@@ -73,7 +73,10 @@ This topic describes known problems and solutions for the following areas:
  * [Problem: How to configure Cinder to use RAW multipath devices](#problem-how-to-configure-cinder-to-use-raw-multipath-devices)
  * [Problem: Red screen when installing OS on bare metal nodes](#problem-red-screen-when-installing-os-on-bare-metal-nodes)
 
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a> 
+
+
 
 ## Troubleshooting Cloud OS ISO
 
@@ -109,7 +112,7 @@ This section describes the following known problems and solutions for the Cloud 
 
 Before booting the VM with the HP Cloud OS ISO media, ensure that the virtual disk format is IDE or SCSI.
 
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a> 
 
 
 ## Troubleshooting Cloud OS Operational Dashboard
@@ -137,8 +140,8 @@ This section describes the following known problems and solutions for the Operat
 * [Problem: Unable to launch more instances](#problem-unable-to-launch-more-instances)
 * [Problem: Default route disappears from Controller node](#problem-default-route-disappears-from-controller-node)
 * [Problem: Not possible to log in the dashboard (license has expired)](#problem-not-possible-to-log-in-the-dashboard-license-has-expired)
-* [Problem: Create Cloud failed](#create-cloud-failed)
-* [Problem: Find why Launch Topology Fails](#find-why-launch-topology-fails)
+* [Problem: Create Cloud failed](#problem-create-cloud-failed)
+* [Problem: Find why Launch Topology ails](#problem-find-why-launch-topology-fails)
 * [Problem: Unauthorized exceptions when navigating in the dashboard](#problem-unauthorized-exceptions-when-navigating-in-the-dashboard)
 * [Problem: Location of the log files](#problem-location-of-the-log-files)
 * [Problem: Launch topology fails and Instance is created but with Error status](#problem-launch-topology-fails-and-instance-is-created-but-with-error-status)
@@ -342,7 +345,7 @@ Navigate to other menus, and then back to the Manage Nodes tab to force the disp
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>
-<td> You work through the steps for the Cloud Administration node internet access prerequisite. You click **Complete Prerequisite**, and a failure message displays.   </td>
+<td> You work through the steps for the Cloud Administration node internet access prerequisite. You click <b>Complete Prerequisite</b>, and a failure message displays.   </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -627,7 +630,8 @@ Refresh your browser. If the problem persists, contact HP Support.
  
 Check whether all services are running well in the Controller node.  First, declare all the system variables, and then execute:
 
-* <code>keystone user-list</code> (Should return a list of all users.)
+* <code>keystone user-list</code> (Should 
+*  a list of all users.)
 * <code>glance index</code> (Should return a list of images.)
 * <code>cinder list</code> (Should return a list of volumes, if any were created.)
 * <code>quantum agent-list</code> (Should return a list of agents with "happy" status.)
@@ -809,9 +813,9 @@ The solution is to:
 
 1. Win SCP to the Admin node.
 2. Upload the image to /tmp/.
-3. Change the permission of the file to 777 (chmod 777 /tmp/&amp;image.name>).
+3. Change the permission of the file to 777 (chmod 777 /tmp/<image.name>).
 4. Move the file to the folder <code>tftpboot</code>.
-5. Create the image pointing to this URL (http://&amp;admin.node.ip>:8091/&amp;image.name>).
+5. Create the image pointing to this URL (http://<admin.node.ip>:8091/<image.name>).
 
 
 
@@ -821,7 +825,7 @@ The solution is to:
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>
-<td> You have created instances successfully. Then **Launch new instance** fails. </td>
+<td> You have created instances successfully. Then "Launch new instance" fails. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -1189,7 +1193,8 @@ service eve-api restart
 
 If the node is not in use, shut it down, power it on again, and make it PXE boot again. This should fix the status and set the node to "Not Allocated," allowing you to use the node again.
 
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a> 
 
 
 ## Troubleshooting Cloud OS Administration Dashboard
@@ -1317,7 +1322,7 @@ dhclient eth1
 Use this feature only if your HP Cloud OS environment includes multiple Compute nodes.
 
 
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a> 
 
 
 ## Troubleshooting Cloud OS Installation
@@ -1527,5 +1532,5 @@ vgreduce cinder-volumes  /dev/loop0
 Reboot the server, check whether the iLO is still mapped correctly, and re-execute the operation.
 
 
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a> 
 
