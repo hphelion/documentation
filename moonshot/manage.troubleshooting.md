@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Cloud OS Troubleshooting"
-permalink: /cloudos/manage/troubleshooting/
+permalink: /cloudos/moonshot/manage/troubleshooting/
 product: cloudos
 
 ---
@@ -20,7 +20,7 @@ PageRefresh();
 
 <!-- Look for passwords --> 
 
-<p style="font-size: small;"> <a href="/cloudos/manage/utilities/">&#9664; PREV</a> | <a href="/cloudos/manage/">&#9650; UP</a> | <a href="/cloudos/manage/operational-dashboard">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/utilities/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage/">&#9650; UP</a> | <a href="/cloudos/moonshot/manage/operational-dashboard">NEXT &#9654;</a> </p>
 
 # HP Cloud OS Troubleshooting
 

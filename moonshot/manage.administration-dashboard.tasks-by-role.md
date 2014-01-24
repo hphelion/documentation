@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Administration Dashboard Tasks by Role"
-permalink: /cloudos/manage/administration-dashboard/tasks-by-role/
+permalink: /cloudos/moonshot/manage/administration-dashboard/tasks-by-role/
 product: cloudos
 
 ---
@@ -20,7 +20,7 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> <a href="/cloudos/manage/administration-dashboard/topology-designs/">&#9664; PREV</a> | <a href="/cloudos/manage/administration-dashboard/">&#9650; UP</a> | <a href="/cloudos/manage/administration-dashboard/tasks-by-tab/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/administration-dashboard/topology-designs/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage/administration-dashboard/">&#9650; UP</a> | <a href="/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/">NEXT &#9654;</a> </p>
 
 # Administration Dashboard Tasks by Role
 
@@ -53,23 +53,23 @@ and delete protected images.
 
 **Tasks:**
 
-* [How to Create a Project](/cloudos/manage/administration-dashboard/tasks-by-tab/#how-to-create-a-project)
+* [How to Create a Project](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#how-to-create-a-project)
 
-* [How to Create a User](/cloudos/manage/administration-dashboard/tasks-by-tab/#how-to-create-a-user)
+* [How to Create a User](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#how-to-create-a-user)
 
-* [How to Add or Remove a Project User](/cloudos/manage/administration-dashboard/tasks-by-tab/#how-to-add-or-remove-a-project-user)
+* [How to Add or Remove a Project User](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#how-to-add-or-remove-a-project-user)
 
-* [How to See All Domains](/cloudos/manage/administration-dashboard/tasks-by-tab/#how-to-see-all-domains)
+* [How to See All Domains](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#how-to-see-all-domains)
 
-* [How to See All Services](/cloudos/manage/administration-dashboard/tasks-by-tab/#how-to-see-all-services)
+* [How to See All Services](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#how-to-see-all-services)
 
-* [How to Delete an Image](/cloudos/manage/administration-dashboard/tasks-by-tab/#how-to-delete-an-image)
+* [How to Delete an Image](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#how-to-delete-an-image)
 
-* [Administration Dashboard Settings](/cloudos/manage/administration-dashboard/tasks-by-tab/#administration-dashboard-settings)
+* [Administration Dashboard Settings](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#administration-dashboard-settings)
 
 * [How to Change Site Settings](#how-to-change-site-settings)
 
-* [Updates and Extensions](/cloudos/manage/administration-dashboard/tasks-by-tab/#updates-and-extensions)
+* [Updates and Extensions](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#updates-and-extensions)
 
 
 ### How to Change Site Settings
@@ -160,21 +160,21 @@ You can change the following proxy information:
 
 **Concepts:**
 
-After your organization works through [Getting Started with the Administration Dashboard](/cloudos/manage/administration-dashboard/getting-started/), 
+After your organization works through [Getting Started with the Administration Dashboard](/cloudos/moonshot/manage/administration-dashboard/getting-started/), 
 cloud administrators can focus on day-to-day cloud administrator tasks. As a best practice, cloud administrators concentrate on 
 the <b>Cloud</b> and <b>Region</b> tabs.
 
 **Tasks:**
 
-* [Cloud Tab Tasks](/cloudos/manage/administration-dashboard/tasks-by-tab/#cloud-tab-tasks)
+* [Cloud Tab Tasks](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#cloud-tab-tasks)
 
-* [Region Tab Tasks](/cloudos/manage/administration-dashboard/tasks-by-tab#region-tab-tasks)
+* [Region Tab Tasks](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab#region-tab-tasks)
 
-* [How to Access Your Authentication Token](/cloudos/manage/administration-dashboard/tasks-by-tab/#how-to-access-your-authentication-token)
+* [How to Access Your Authentication Token](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#how-to-access-your-authentication-token)
 
-* [Administration Dashboard Settings](/cloudos/manage/administration-dashboard/tasks-by-tab/#administration-dashboard-settings)
+* [Administration Dashboard Settings](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#administration-dashboard-settings)
 
-* [Updates and Extensions](/cloudos/manage/administration-dashboard/tasks-by-tab/#updates-and-extensions)
+* [Updates and Extensions](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#updates-and-extensions)
 	
 
 <a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
@@ -183,40 +183,40 @@ the <b>Cloud</b> and <b>Region</b> tabs.
 
 **Concepts:**
 
-After your organization works through [Getting Started with the Administration Dashboard](/cloudos/manage/administration-dashboard/getting-started/), cloud architects can focus on day-to-day cloud architect tasks.
+After your organization works through [Getting Started with the Administration Dashboard](/cloudos/moonshot/manage/administration-dashboard/getting-started/), cloud architects can focus on day-to-day cloud architect tasks.
 
 As a best practice, cloud architects are mostly concerned with creating deployment profiles, topology designs, and load balancers, 
 although they have rights to work with all the tasks listed below.
 
 **Tasks:**
 
-* [How to Import, Create, or Delete a Keypair](/cloudos/manage/administration-dashboard/tasks-by-tab/#how-to-import-create-or-delete-a-keypair)
+* [How to Import, Create, or Delete a Keypair](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#how-to-import-create-or-delete-a-keypair)
 
-* [Networks](/cloudos/manage/administration-dashboard/tasks-by-tab/#networks)
+* [Networks](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#networks)
 
-* [Routers](/cloudos/manage/administration-dashboard/tasks-by-tab/#routers)
+* [Routers](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#routers)
 
-* [Topology Designs](/cloudos/manage/administration-dashboard/topology-designs/)
+* [Topology Designs](/cloudos/moonshot/manage/administration-dashboard/topology-designs/)
 
-* [Security Groups and Rules](/cloudos/manage/administration-dashboard/tasks-by-tab/#security-groups-and-rules)
+* [Security Groups and Rules](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#security-groups-and-rules)
 
 * [How to Create a Standalone Load Balancer](#how-to-create-a-standalone-load-balancer)
 
-* [How to See a Project Overview](/cloudos/manage/administration-dashboard/tasks-by-tab/#how-to-see-a-project-overview)
+* [How to See a Project Overview](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#how-to-see-a-project-overview)
 
-* [Running Topologies](/cloudos/manage/administration-dashboard/tasks-by-tab/#running-topologies)
+* [Running Topologies](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#running-topologies)
 
-* [Resource Pools](/cloudos/manage/administration-dashboard/tasks-by-tab/#resource-pools)
+* [Resource Pools](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#resource-pools)
 
-* [Instances](/cloudos/manage/administration-dashboard/tasks-by-tab/#instances)
+* [Instances](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#instances)
 
-* [Volumes](/cloudos/manage/administration-dashboard/tasks-by-tab/#volumes)
+* [Volumes](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#volumes)
 
-* [Images and Snapshots](/cloudos/manage/administration-dashboard/tasks-by-tab/#images-and-snapshots)
+* [Images and Snapshots](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#images-and-snapshots)
 
-* [How to See a Network Topology Diagram](/cloudos/manage/administration-dashboard/tasks-by-tab/#how-to-see-a-network-topology-diagram)
+* [How to See a Network Topology Diagram](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#how-to-see-a-network-topology-diagram)
 
-* [Administration Dashboard Settings](/cloudos/manage/administration-dashboard/tasks-by-tab/#administration-dashboard-settings)
+* [Administration Dashboard Settings](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#administration-dashboard-settings)
 
 
 ### How to Create a Standalone Load Balancer
@@ -228,7 +228,7 @@ To create a standalone load balancer:
 <ol>
 
 <li> Create an image, if it does not already exist. See 
-<a href="/cloudos/manage/administration-dashboard/tasks-by-tab/#how-to-create-an-image">How to Create an Image</a>.
+<a href="/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#how-to-create-an-image">How to Create an Image</a>.
 
 <li> Create the resources required for this activity:
 <ul>
@@ -349,7 +349,7 @@ REST service is running.</li>
 
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"><b>Note:</b> After you create a standalone load 
 balancer instance, you can save it as a snapshot. See 
-<a href="/cloudos/manage/administration-dashboard/tasks-by-tab/#how-to-create-an-instance-snapshot">How to Create an Instance Snapshot</a>.</p> 
+<a href="/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#how-to-create-an-instance-snapshot">How to Create an Instance Snapshot</a>.</p> 
 
 <a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
@@ -360,7 +360,7 @@ balancer instance, you can save it as a snapshot. See
 
 Concepts:
 
-After your organization works through [Getting Started with the Administration Dashboard](/cloudos/manage/administration-dashboard/getting-started/), project administrators can focus on their day-to-day tasks - monitoring and maintaining project resources and content.
+After your organization works through [Getting Started with the Administration Dashboard](/cloudos/moonshot/manage/administration-dashboard/getting-started/), project administrators can focus on their day-to-day tasks - monitoring and maintaining project resources and content.
 
 Project administrators can perform all of the project user tasks (see Project User Tasks), plus project administrators have rights to modify or delete project resources and content.
 
@@ -368,31 +368,31 @@ As a best practice, project administrators maintain projects, with a focus on th
 
 **Tasks:**
 
-* [How to Import, Create, or Delete a Keypair](/cloudos/manage/administration-dashboard/tasks-by-tab/#how-to-import-create-or-delete-a-keypair)
+* [How to Import, Create, or Delete a Keypair](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#how-to-import-create-or-delete-a-keypair)
 
-* [How to See a Project Overview](/cloudos/manage/administration-dashboard/tasks-by-tab/#how-to-see-a-project-overview)
+* [How to See a Project Overview](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#how-to-see-a-project-overview)
 
-* [Running Topologies](/cloudos/manage/administration-dashboard/tasks-by-tab/#running-topologies)
+* [Running Topologies](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#running-topologies)
 
-* [Resource Pools](/cloudos/manage/administration-dashboard/tasks-by-tab/#resource-pools)
+* [Resource Pools](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#resource-pools)
 
-* [Images and Snapshots](/cloudos/manage/administration-dashboard/tasks-by-tab/#images-and-snapshots)
+* [Images and Snapshots](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#images-and-snapshots)
 
-* [How to Create a Private Network](/cloudos/manage/administration-dashboard/tasks-by-tab/#how-to-create-a-private-network-project-tab)
+* [How to Create a Private Network](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#how-to-create-a-private-network-project-tab)
 
-* [How to Create a Subnet](/cloudos/manage/administration-dashboard/tasks-by-tab/#how-to-create-a-subnet)
+* [How to Create a Subnet](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#how-to-create-a-subnet)
 
-* [Routers](/cloudos/manage/administration-dashboard/tasks-by-tab/#routers)
+* [Routers](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#routers)
 
-* [Security Groups and Rules](/cloudos/manage/administration-dashboard/tasks-by-tab/#security-groups-and-rules)
+* [Security Groups and Rules](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#security-groups-and-rules)
 
-* [How to Create a Deployment Profile](/cloudos/manage/administration-dashboard/topology-designs/#how-to-create-a-deployment-profile)
+* [How to Create a Deployment Profile](/cloudos/moonshot/manage/administration-dashboard/topology-designs/#how-to-create-a-deployment-profile)
 
-* [How to Create a Topology Design](/cloudos/manage/administration-dashboard/topology-designs/#how-to-create-a-topology-design)
+* [How to Create a Topology Design](/cloudos/moonshot/manage/administration-dashboard/topology-designs/#how-to-create-a-topology-design)
 
-* [How to Launch an Instance](/cloudos/manage/administration-dashboard/tasks-by-tab/#how-to-launch-an-instance)
+* [How to Launch an Instance](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#how-to-launch-an-instance)
 
-* [How to See the Instance Console, Console Log, and Overview](/cloudos/manage/administration-dashboard/tasks-by-tab/#how-to-see-the-instance-console-console-log-and-overview)
+* [How to See the Instance Console, Console Log, and Overview](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#how-to-see-the-instance-console-console-log-and-overview)
 
 
 
@@ -402,7 +402,7 @@ As a best practice, project administrators maintain projects, with a focus on th
 
 **Concepts:**
 
-After your organization works through [Getting Started with the Administration Dashboard](/cloudos/manage/administration-dashboard/getting-started/), 
+After your organization works through [Getting Started with the Administration Dashboard](/cloudos/moonshot/manage/administration-dashboard/getting-started/), 
 project users can focus on day-to-day project tasks. They create topology designs and deployment profiles, and work extensively on the <b>Project</b> tab. 
 Project users' main goal when using the dashboard is to provision topologies.
 
@@ -410,31 +410,31 @@ As a best practice, project users focus on the following tasks.
 
 **Tasks:**
 
-* [Topology Designs](/cloudos/manage/administration-dashboard/topology-designs/)
+* [Topology Designs](/cloudos/moonshot/manage/administration-dashboard/topology-designs/)
 	
-* [How to See a Project Overview](/cloudos/manage/administration-dashboard/tasks-by-tab/#how-to-see-a-project-overview)
+* [How to See a Project Overview](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#how-to-see-a-project-overview)
 
-* [Running Topologies](/cloudos/manage/administration-dashboard/tasks-by-tab/#running-topologies)
+* [Running Topologies](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#running-topologies)
 
-* [Resource Pools](/cloudos/manage/administration-dashboard/tasks-by-tab/#resource-pools)
+* [Resource Pools](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#resource-pools)
 
-* [Instances](/cloudos/manage/administration-dashboard/tasks-by-tab/#instances)
+* [Instances](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#instances)
 
-* [Volumes](/cloudos/manage/administration-dashboard/tasks-by-tab/#volumes)
+* [Volumes](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#volumes)
 
-* [Images and Snapshots](/cloudos/manage/administration-dashboard/tasks-by-tab/#images-and-snapshots)
+* [Images and Snapshots](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#images-and-snapshots)
 
-* [Networks](/cloudos/manage/administration-dashboard/tasks-by-tab/#networks)
+* [Networks](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#networks)
 
-* [Routers](/cloudos/manage/administration-dashboard/tasks-by-tab/#routers)
+* [Routers](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#routers)
 
-* [How to See a Network Topology Diagram](/cloudos/manage/administration-dashboard/tasks-by-tab/#how-to-see-a-network-topology-diagram)
+* [How to See a Network Topology Diagram](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#how-to-see-a-network-topology-diagram)
 
-* [How to Import, Create, or Delete a Keypair](/cloudos/manage/administration-dashboard/tasks-by-tab/#how-to-import-create-or-delete-a-keypair)
+* [How to Import, Create, or Delete a Keypair](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#how-to-import-create-or-delete-a-keypair)
 
-* [Floating IPs](/cloudos/manage/administration-dashboard/tasks-by-tab/#floating-ips)
+* [Floating IPs](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#floating-ips)
 
-* [Administration Dashboard Settings](/cloudos/manage/administration-dashboard/tasks-by-tab/#administration-dashboard-settings)
+* [Administration Dashboard Settings](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#administration-dashboard-settings)
 
 
 
