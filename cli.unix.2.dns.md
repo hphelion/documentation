@@ -5,7 +5,7 @@ permalink: /cli/unix/2/dns/
 product: unix-cli
 
 ---
-# UNIX CLI DNS Examples
+# UNIX CLI v13.5 DNS Examples
 
 If you are using v12.12, click [here](https://docs.hpcloud.com/cli/unix/dns) for documentation.
 ___________________
