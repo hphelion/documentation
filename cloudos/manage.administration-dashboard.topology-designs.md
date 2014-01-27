@@ -7,8 +7,6 @@ product: cloudos
 ---
 
 
-<a name="_top"> </a>
-
 <script> 
 
 function PageRefresh { 
@@ -320,7 +318,7 @@ To view topology design details:
 
 **Tasks:**
 
-* [How to Edit Topology Design Properties](#how-to-edit-topology-properties)
+* [How to Edit Topology Design Properties](#how-to-edit-topology-design-properties)
 
 * [How to Copy a Topology Design](#how-to-copy-a-topology-design)
 

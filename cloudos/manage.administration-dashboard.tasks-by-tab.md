@@ -7,8 +7,6 @@ product: cloudos
 ---
 
 
-<a name="_top"> </a>
-
 <script> 
 
 function PageRefresh { 
@@ -43,8 +41,6 @@ The Cloud tab provides a convenient place for users who have permission to acces
 
 For example, on Cloud > Projects, you can see a list of all projects in the cloud. You can edit, create, or delete projects on the Cloud > Projects window.
 
-To learn whether you can perform tasks on the Cloud tab, refer to [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
-
 **Tasks:**
 
 * [How to See All Services](#how-to-see-all-services)
@@ -63,9 +59,7 @@ To learn whether you can perform tasks on the Cloud tab, refer to [Administratio
 
 ### How to See All Services
 
-The Services window provides a convenient place for users who have permission to see a read-only list of services that are registered in the cloud.
-
-To learn whether you have permission, see your role under [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
+The Services window provides a convenient place for users who have permission to see a read-only list of services that are registered in the cloud. To learn whether you have permission, see [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
 
 To see cloud services:
 
@@ -148,11 +142,12 @@ Click <b>REST API</b> to start the documentation application for a service.
 For information about how to use the documentation application, see the [Develop](/cloudos/develop) topic.
 
 
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
+
 ### How to See All Domains
 
-The Domains window provides a convenient place for users who have permission to see a list of domains in the cloud. (Currently, the cloud contains one domain.)
-
-To learn whether you have permission, see [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
+The Domains window provides a convenient place for users who have permission to see a list of domains in the cloud. (Currently, the cloud contains one domain.) To learn whether you have permission, see [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
 
 To view all domains in the cloud:
 
@@ -168,8 +163,7 @@ To view all domains in the cloud:
 
 **Concepts:**
 
-The Project window provides a convenient place for users who have permission to see a list of all projects in the cloud and to work with those projects. 
-To learn whether you have permission, see [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
+The Project window provides a convenient place for users who have permission to see a list of all projects in the cloud and to work with those projects. To learn whether you have permission, see [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
 
 Projects are groupings that allow designated users to view the same set of content. Projects protect topology designs and profiles, and realized 
 resources (such as VMs, volumes, and others) from being visible to all users.
@@ -200,8 +194,6 @@ To see a list of all projects:
 
 
 #### How to Create a Project
-
-To learn whether you have permission to create a project on the Cloud tab, see [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
 
 When you create a project, you need only one required entry - <b>Name</b>. You can keep default settings for integrations and limits, and add users later.
 
@@ -245,8 +237,6 @@ This sets limits on how many system resources (such as CPU cores, floating IP, a
 	
 #### How to See a Project's Usage
 
-To learn whether you have permission to see a project's usage on the Cloud tab, see [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
-
 To see a project's usage:
 
 1. Click <b>Cloud</b> > <b>Projects</b> to open the Projects window.
@@ -259,9 +249,6 @@ To see a project's usage:
 
 
 #### How to Add or Remove a Project User
-
-To learn whether you have permission to add or remove a project user on the Cloud tab, 
-see [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
 
 Before adding a new user to a project, make sure the user is logged out. If you add users to a project while they are logged in, the 
 Administration Dashboard may log them out without warning or show an error message. If so, users should sign out and sign back in. Carefully coordinate with 
@@ -285,7 +272,6 @@ To add or remove a project user:
 You can change your default compute and storage limits to more closely reflect your capacity. For example, if your compute region is hosted on a very large system, you can offer users more than the default capacity. 
 If your compute region is hosted on a VM, you can restrict capacity.
 
-To learn whether you have permission to change a project's limits, see [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
 
 To change a project's compute limits:
 
@@ -354,14 +340,14 @@ To restore a project:
    
 4. In the confirmation dialog, verify your selection and then click <b>Restore</b>. The project is restored.
 
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 
 ### How to Access All Users
 
 **Concepts:**
 
-The Users window provides a convenient place for users who have permission to see a list of all users in the cloud and to work with those users. 
-To learn whether you have permission, read about your role under [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
+The Users window provides a convenient place for users who have permission to see a list of all users in the cloud and to work with those users. To learn whether you have permission, see [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
 
 Users include both people and services (such as Nova). When you create a person user, you must add that user to a project and assign a project role. 
 Later, you can add the user to additional projects and roles.
@@ -386,8 +372,6 @@ To see a list of users:
 
 
 #### How to Create a User
-
-To learn whether you have permission to create a user on the Cloud tab, see [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
 
 To create a user:
 
@@ -419,8 +403,6 @@ See <a href="/cloudos/manage/administration-dashboard/tasks-by-role/">Administra
 
 #### How to Edit a User
 
-To learn whether you have permission to edit a user on the Cloud tab, see [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
-
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Note:</b>  You cannot edit control users such 
 as Trash or Nova. Edit does not display for users that cannot be edited. </p>
 
@@ -438,8 +420,6 @@ To edit a user:
 
 
 #### How to Delete, Disable, or Enable a User
-
-To learn whether you have permission to perform the following tasks on the Cloud tab, see [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
 
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Note:</b>  You cannot delete, disable, or 
 enable the following users: Admin, Arch, and control users such as Trash or Nova. Delete, Disable, and Enable do not display for those users. </p>
@@ -497,6 +477,7 @@ You can enable a disabled user. To enable a user:
 3. The user remains on the list and the <b>Enabled</b> field changes to <b>True</b>.
 
 
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 ### How to Access All Roles
 
@@ -526,8 +507,6 @@ To see all roles:
 	
 #### How to Create a Role
 
-Cloud administrators and the Admin user can create a new role on the Cloud tab.
-
 To create a role:
 
 1. Click <b>Cloud</b> > <b>Roles</b> to open the Roles view.
@@ -541,7 +520,7 @@ To create a role:
 
 #### How to Edit a Role
 
-Cloud administrators and the Admin user can edit a role to change the name that is associated with the role. The role maintains the privileges that were previously assigned to it, but with a different name.
+Users with permission can edit a role to change the name that is associated with the role. The role maintains the privileges that were previously assigned to it, but with a different name.
 
 In a common use case, you edit a role name to be more appropriate to your company's titles.
 
@@ -559,7 +538,7 @@ To edit a role:
 
 #### How to Delete a Role
 
-Cloud administrators and the Admin user can delete a role. When you delete a role, it is removed throughout the Administration Dashboard.
+When you delete a role, it is removed throughout the Administration Dashboard.
 
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Note:</b> 
 You cannot delete the Admin or Arch roles.
@@ -573,6 +552,8 @@ To delete a role:
 
 3. In the confirmation dialog, verify your selection and click <b>Delete Role</b>.	
 
+
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 ### How to Access All Images
 
@@ -632,8 +613,6 @@ To see a list of images:
 
 #### How to Create an Image 
 
-To learn whether you have permission to create an image on the Cloud tab, see [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
-
 The image must be available on an HTTP URL. Compressed image binaries, such as .zip, and .tar.gz, are supported.
 
 To create an image:
@@ -675,8 +654,6 @@ To create an image:
 
 
 #### How to Launch an Image
-
-To learn whether you have permission to launch an image on the Cloud tab, see [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
 
 You can only launch images that are formatted as AMI, RAW, and QCOW2. Launching an image provisions it to the cloud.
 
@@ -737,8 +714,6 @@ field is analogous to "User Data" in other systems. </li>
 
 #### How to Edit an Image
 
-To learn whether you have permission to edit an image on the Cloud tab, see [Administration Dashboard Tasks by Roles](/cloudos/manage/administration-dashboard/tasks-by-role/).
-
 You cannot modify an image format.
 
 When you edit an Amazon Machine Image (AMI) image, you see additional fields allowing you to select a Kernel image (AKI) and a RAMdisk Image (ARI). 
@@ -762,8 +737,6 @@ To edit an image:
 
 
 #### How to Delete an Image
-
-To learn whether you have permission to delete an image or protected image on the Cloud tab, see [Administration Dashboard Tasks by Roles](/cloudos/manage/administration-dashboard/tasks-by-role/).
 
 If you have permission to delete a protected image, you must first edit the image, so it is not protected. See [How to Edit an Image](#how-to-edit-an-image).
 
@@ -823,8 +796,7 @@ might switch the point of action to the Project tab. Click the <b>Region</b> tab
 
 ### How to See an Overview of Usage
 
-The Region tab provides a convenient place for users who have permission to see a usage summary. To learn whether you have permission, 
-see [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
+The Region tab provides a convenient place for users who have permission to see a usage summary. 
 
 To see an overview of usage:
 
@@ -928,6 +900,8 @@ To terminate one or more instances:
 5. In the warning dialog box, verify your selection and click <b>Terminate Instance</b>(<b>s</b>).
 
 
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
 
 ### How to See Info about Services, Compute Services, and Default Quotas
 
@@ -1030,6 +1004,8 @@ See [How to Change a Project's Compute or Storage Limits](#how-to-change-a-proje
 To see a list of region default quotas (limits), click <b>Region</b> > <b>Info</b> > <b>Default Quotas</b> tab, which opens the Default Quotas window.
 
 
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
 ### How to Access Volumes
 
 **Concepts:**
@@ -1106,6 +1082,7 @@ To delete one or more volumes:
 3. In the confirmation dialog, verify your selection and then click <b>Delete Volume</b>.
 
 
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 ### How to Access Images
 
@@ -1245,13 +1222,14 @@ To delete one or more images:
 4. Click <b>Delete Image</b>. The Images list redisplays and the image or images are removed.
 
 
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 ### How to Access Networks
 
 **Concepts:**
 
 The Region tab provides a convenient place for users who have permission to see a list of networks and work with those networks. 
-To learn whether you have permission, see Administration Dashboard Tasks by Role.
+To learn whether you have permission, see [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
 
 To see a list of networks:
 
@@ -1274,7 +1252,7 @@ To see a list of networks:
 
 #### How to Create an External Network
 
-The Admin user or cloud administrators can create an external network on the <b>Region</b> tab. The cloud can only support one external network, so the network should be created as a shared network. As a shared network, it can be used by multiple projects, if needed.
+ The cloud can only support one external network, so the network should be created as a shared network. As a shared network, it can be used by multiple projects, if needed.
 
 To create an external network:
 
@@ -1315,8 +1293,6 @@ You can create the network, but it will fail during provisioning.</p>
 
 
 #### How to Create a Private Network #### {#how-to-create-a-private-network-region-tab} 
-
-The Admin user and cloud administrators can create a private network on the Region tab.
 
 To create a private network:
 
@@ -1361,7 +1337,7 @@ settings is invalid. You can create the network, but it will fail during provisi
  
 #### How to Edit a Network
 
-The <b>Region</b> > <b>Networks</b> window provides a convenient place for the Admin user and cloud administrators to see all the networks in all the 
+The <b>Region</b> > <b>Networks</b> window provides a convenient place for users who have permission to see all the networks in all the 
 regions, so administrators can decide which networks to edit.
 
 If you originally created the network for a single project, and you later decide to share it, you must edit the <b>Shared</b> and <b>External Network</b> options.
@@ -1383,7 +1359,7 @@ To edit a network:
 
 #### How to Delete a Network
 
-The <b>Region</b> > <b>Networks</b> window provides a convenient place for the Admin user and cloud administrators to see all the networks in all the regions, so administrators can decide which networks to delete.
+The <b>Region</b> > <b>Networks</b> window provides a convenient place for users who have permission to see all the networks in all the regions, so users can decide which networks to delete.
 
 A network is referenced by subnets and routers, which are, in turn, referenced by VMs. You cannot delete a network that has VMs connected to one of its subnets. To delete a network, VMs must not be connected to that network.
 
@@ -1402,12 +1378,13 @@ To delete one or more networks:
 5. The Networks window opens, and you do not see the networks listed.
 
 
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 ### How to Access Routers
 
 **Concepts:**
 
-The Region tab provides a convenient place for users who have permission to see a list of routers. and work with those routers. To learn whether you have 
+The Region tab provides a convenient place for users who have permission to see a list of routers and work with those routers. To learn whether you have 
 permission, see [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
 
 
@@ -1425,7 +1402,7 @@ To see a list of routers:
 
 #### How to Delete a Router
 
-The <b>Region</b> > <b>Routers</b> window provides a convenient place for the admin user and cloud administrators to see all the routers in all the regions, so administrators can decide which routers to delete.
+The <b>Region</b> > <b>Routers</b> window provides a convenient place for users who have permission to see all the routers in all the regions, so users can decide which routers to delete.
 
 To delete one or more routers:
 
@@ -1437,6 +1414,8 @@ To delete one or more routers:
 
 4. The Routers window opens, and you do not see the routers listed.
 
+
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 ### How to Access Flavors and Flavor Extra Specs
 
@@ -1455,7 +1434,7 @@ To see a list of flavors, click Regions > Flavors to open the Flavors window. Th
 
 * [How to Edit a Flavor](#how-to-edit-a-flavor)
 
-* [How to Delete a Flavor](#how-to-delete-a-favor)
+* [How to Delete a Flavor](#how-to-delete-a-flavor)
 
 * [How to Create a Flavor Extra Spec](#how-to-create-a-flavor-extra-spec)
 
@@ -1469,7 +1448,7 @@ To see a list of flavors, click Regions > Flavors to open the Flavors window. Th
 
 Only cloud architects can create flavors. Creating a flavor defines a new configuration used to create new VMs. Typically, the pre-defined flavors m1.tiny through m1.xlarge are valid.
 
-To create a region flavor:
+To create a flavor:
 
 1. On the <b>Region</b> tab, select a <b>Current Compute Region</b>.
 
@@ -1499,8 +1478,8 @@ To edit a region flavor:
 
 #### How to Delete a Flavor
 
-Only a domain administrator within a region can delete flavors. When you delete a flavor, the flavor is no longer visible in the Administration Dashboard 
-and cannot be used to create a new VM, to assign in resource pool services, or to specify in Infrastructure Design documents.
+When you delete a flavor, the flavor is no longer visible in the Administration Dashboard 
+and cannot be used to create a new VM, to assign in resource pool services, or to specify in Topology Designs.
 
 A deleted flavor still exists in the Nova database until the clean flavors script (scheduled by a system administrator) runs. The script cannot delete a 
 flavor, if the flavor is in use by an active instance. You must terminate the instance.
@@ -1508,7 +1487,7 @@ flavor, if the flavor is in use by an active instance. You must terminate the in
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Note:</b> If all flavors are deleted, you 
 cannot create VMs. </p>
 
-To delete one or more region flavors:
+To delete one or more flavors:
 
 1. On the <b>Region</b> tab, select a Current Compute Region.
 
@@ -1564,9 +1543,6 @@ To delete a flavor extra specs key:
 3. Find the extra spec you want to delete. Click <b>More</b> > <b>Delete Extra Spec</b>. A confirmation window opens, warning you that the action cannot be undone.
     
 4. Click <b>Delete Extra Spec</b>. The extra spec is deleted from the Extra Specs list and the system.
-
-	
-	
 	
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
@@ -1717,6 +1693,8 @@ Terminating a topology can fail in the following case:
 If you attempt to terminate topology A, the terminate will fail for all components that are also provisioned to topology B. You must terminate topology B before you can terminate topology A.
 
 
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
   
 ### Deployment Profiles
 
@@ -1756,6 +1734,8 @@ To launch a deployment profile:
 
 4. If the launch is successful, you create a running topology. A deployment profile can be launched multiple times to create multiple running topologies. See [Running Topologies](#running-topologies).
 
+
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
   
 ### Resource Pools
 
@@ -1954,6 +1934,8 @@ To delete one or more resource pools:
 
 5. Confirm your selection in the warning dialog box, and click <b>Delete Resource Pool</b>.
 
+
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
   
 ### Instances
 
@@ -2264,12 +2246,13 @@ To terminate one or more instances:
  
 **Related topics:**
 
-* [How to Pause or Resume an Instance](#how-to-pause-to-resume-an-instance)
+* [How to Pause or Resume an Instance](#how-to-pause-or-resume-an-instance)
 
 * [How to Suspend or Resume an Instance](#how-to-suspend-or-resume-an-instance)
 
 * [How to Force Delete an Instance](#how-to-force-delete-an-instance)
 
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
   
 ### Volumes
@@ -2403,6 +2386,8 @@ To delete one or more project volumes:
 5. In the warning dialog box, verify your selection, and click <b>Delete Volume</b>.
 	
 
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
   
 ### Images and Snapshots
 
@@ -2449,7 +2434,7 @@ To see a list of project images:
 
 * [How to Edit an Image or Instance Snapshot](#how-to-edit-an-image-or-instance-snapshot)
 
-* [How to Launch an Image or Instance Snapshot](#how-to-launch-an-image-or-instance-snapshot)
+* [How to Launch an Image or Instance Snapshot](#how-to-launch-an-image-or-instance-snapshot-section)
 
 * [How to Delete an Image or Instance Snapshot](#how-to-delete-an-image-or-instance-snapshot)
 
@@ -2519,11 +2504,11 @@ To edit an image or instance snapshot:
 4. Click <b>Update Image</b>.
 
 
-#### How to Launch an Image or Instance Snapshot {#how-to-launch-an-image-or-instance-snapshot} 
+#### How to Launch an Image or Instance Snapshot {#how-to-launch-an-image-or-instance-snapshot-section} 
 
 You can only launch images that are formatted as AMI, RAW, and QCOW2. Launching an image provisions it to the cloud.
 
-To launch a project image:
+To launch an image:
 
 1. On the <b>Project</b> tab, select a <b>Current Project</b>.
 
@@ -2539,7 +2524,8 @@ To launch a project image:
  * <b>Flavor</b>: Indicates the size of the node. When you select a flavor here, the Flavor Details table on the right changes to show the node properties and values associated with your size selection.
  * <b>Instance Count</b>: Can be more than 1.
  
-5. Use the <b>Access and Security</b> tab to control access to your instance via keypairs and security groups.
+5. Use the <b>Access and Security</b> tab to control access to your instance via 
+6. pairs and security groups.
 
  a. <b>Keypair</b>: Keypairs are ssh credentials that are injected into images when they are launched. The public key is installed on the VM; you will use the private key to log in.
 
@@ -2548,7 +2534,7 @@ To launch a project image:
 	* Select a keypair from the list, or
 	* Click (<b>+</b>) to import a keypair. Enter <b>Keypair Name</b> and <b>Public Key</b>.
 
-    To create a keypair, see [How to Import, Create, or Delete a Keypair](#how-to-import-create-to-delete-a-keypair).
+    To create a keypair, see [How to Import, Create, or Delete a Keypair](#how-to-import-create-or-delete-a-keypair).
 
  b. Enter <b>Admin Password</b> and <b>Confirm Admin Password</b>.
  
@@ -2599,7 +2585,10 @@ To delete one or more volume snapshots:
 
 4. Confirm your selection in the warning dialog box, and click <b>Delete Volume Snapshot</b>.
 
+
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
   
+
 ### Networks
 
 **Concepts:**
@@ -2743,30 +2732,31 @@ To create a subnet:
 
 #### How to Edit a Subnet
 
-The <b>Region</b> > <b>Networks</b> window provides a convenient place for the admin user and cloud administrators to see all the subnets in all the regions, so administrators can decide which subnets to edit.
 
-In many cases, especially if the subnet is associated with an external network, subnet details change after it is created. As a result of these changes, you might need to update information. For example:
+In many cases, subnet details change after it is created. As a result of these changes, you might need to update information. For example:
 
 * If you entered an incorrect subnet gateway address during subnet creation, or if the subnet gateway address changes, you can correct the subnet gateway address. You cannot change the mask of a subnet.
   
 * You can change or add DNS servers, and modify routing information.
 
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Note:</b> Only the Admin user can edit a subnet on an external network.
-</p>
 
 To edit a subnet:
 
-1. Click <b>Region</b> > <b>Networks</b> to open the Networks window.
+ 
 
-2. Click the <b>Network Name</b> where you want to edit a subnet. The Administration Dashboard opens the Network Overview window in the associated project. You are now working at the project level.
+1. On the <b>Project</b> tab, select a <b>Current Project</b>.
 
-3. Find the subnet you want to edit, and click <b>Edit Subnet</b> to open the <b>Update Subnet</b> dialog box where:
+2. Click <b>Infrastructure</b> > <b>Networks</b> to open the Networks window.
+
+3. Click the <b>Network Name</b> where you want to edit a subnet. The Network Overview window opens.
+
+4. Find the subnet you want to edit, and click <b>Edit Subnet</b> to open the <b>Update Subnet</b> dialog box where:
   * On the <b>Subnet</b> tab of the dialog box, you can change the <b>Subnet Name</b>, <b>Gateway IP</b>, or <b>Disable Gateway</b> settings. You cannot edit the Network Address.
   * On the <b>Subnet Details</b> tab of the dialog box, you can change the <b>Enable DHCP</b> setting, <b>DNS Name Servers</b>, or <b>Host Routes</b> settings.
 
-4. Click <b>Update</b>.
+5. Click <b>Update</b>.
 
-5. The Network Overview window opens, and you see the edits.
+6. The Network Overview window opens, and you see the edits.
 
 
 
@@ -2805,7 +2795,7 @@ To delete a one or more networks:
 5. Confirm your selection in the warning dialog box, and click <b>Delete Network</b>.
 
 
-
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
   
 ### Routers
@@ -2942,6 +2932,9 @@ To see the diagram:
 * [How to Create a Router](#how-to-create-a-router)
 
 * [Topology Designs](/cloudos/manage/administration-dashboard/topology-designs/)
+
+
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
   
 ### Security Groups and Rules
@@ -3102,6 +3095,9 @@ You might have previously created a keypair that you want to use. To import a ke
 
 4. Click <b>Delete Keypair</b>.
 
+
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
   
 ### Floating IPs
 
@@ -3186,6 +3182,8 @@ To release a floating IP:
 
 4. Wait for the success message.
 
+
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 	
   
 ### How to Access API Endpoints
@@ -3212,6 +3210,9 @@ To access your authentication token:
 2. Click <b>Access and Security</b> > <b>Access and Security</b> > <b>Authentication Token</b> tab.
 
 3. A truncated version of the token displays. Click <b>More</b> to see the entire token.
+
+
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
   
 ### Updates and Extensions
 

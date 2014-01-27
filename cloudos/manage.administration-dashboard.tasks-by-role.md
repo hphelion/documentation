@@ -7,8 +7,6 @@ product: cloudos
 ---
 
 
-<a name="_top"> </a>
-
 <script> 
 
 function PageRefresh { 
@@ -162,7 +160,7 @@ You can change the following proxy information:
 
 After your organization works through [Getting Started with the Administration Dashboard](/cloudos/manage/administration-dashboard/getting-started/), 
 cloud administrators can focus on day-to-day cloud administrator tasks. As a best practice, cloud administrators concentrate on 
-the <b>Cloud</b> and <b>Region</b> tabs.
+the <b>Cloud</b> and <b>Region</b> tabs, and are the only users who create external networks or subnets on external networks.
 
 **Tasks:**
 
@@ -171,6 +169,10 @@ the <b>Cloud</b> and <b>Region</b> tabs.
 * [Region Tab Tasks](/cloudos/manage/administration-dashboard/tasks-by-tab#region-tab-tasks)
 
 * [How to Access Your Authentication Token](/cloudos/manage/administration-dashboard/tasks-by-tab/#how-to-access-your-authentication-token)
+
+* [How to Create an External Network](/cloudos/manage/administration-dashboard/tasks-by-tab/#how-to-create-an-external-network)
+
+* [How to Create a Subnet](/cloudos/manage/administration-dashboard/tasks-by-tab/#how-to-create-a-subnet)
 
 * [Administration Dashboard Settings](/cloudos/manage/administration-dashboard/tasks-by-tab/#administration-dashboard-settings)
 

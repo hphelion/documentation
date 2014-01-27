@@ -7,8 +7,6 @@ product: cloudos
 ---
 
 
-<a name="_top"> </a>
-
 <script> 
 
 function PageRefresh { 
@@ -86,19 +84,19 @@ When you are done, tell a cloud administrator to perform [Getting Started for Cl
 **Concepts:**
 
 Cloud administrators possess all administrator rights associated with the cloud and all HP Cloud OS services, 
-including the ability to make resources available to users.
+including the ability to make resources available to users. As a best practice, only cloud administrators create an external network or add subnets to an external network.
 
 **Tasks:**
 
 * [How to Import, Create, or Delete a Keypair](/cloudos/manage/administration-dashboard/tasks-by-tab/#how-to-import-create-or-delete-a-keypair)
 
-* [How to Access All Images](/cloudos/manage/administration-dashboard/tasks-by-tab/#how-to-access-all-images)
-
-* [How to Change a Project's Compute or Storage Limits](/cloudos/manage/administration-dashboard/tasks-by-tab/#how-to-change-a-projects-compute-or-storage-limits)
-
 * [How to Create an External Network](/cloudos/manage/administration-dashboard/tasks-by-tab/#how-to-create-an-external-network)
 
 * [How to Create a Subnet](/cloudos/manage/administration-dashboard/tasks-by-tab/#how-to-create-a-subnet)
+
+* [How to Access All Images](/cloudos/manage/administration-dashboard/tasks-by-tab/#how-to-access-all-images)
+
+* [How to Change a Project's Compute or Storage Limits](/cloudos/manage/administration-dashboard/tasks-by-tab/#how-to-change-a-projects-compute-or-storage-limits)
 
 * [Resource Pools](/cloudos/manage/administration-dashboard/tasks-by-tab/#resource-pools)
 

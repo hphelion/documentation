@@ -103,6 +103,8 @@ General rules about visibility in the Administration Dashboard include:
 
 * All users can see content that is marked Public, Cloud.
 
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
 ### Administration Dashboard Tabs
 
 #### Settings Tab
@@ -374,6 +376,8 @@ Allows you to work with the images (create, launch and delete).
 </tr>
 
 </table>
+
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 ## Prerequisites to Accessing the Administration Dashboard
 
