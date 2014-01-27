@@ -34,7 +34,7 @@ To create a project in the MC, you can access the project screen by, in the `Acc
 
 This launches the projects screen of the [account and services dashboard](/mc/account/).  In the projects screen, click the `+ New Project` button to open the new projects pane:
 
-<img src="media/create-projects.jpg" width="580" alt="" />
+<img src="media/create-project.jpg" width="580" alt="" />
 
 In the new projects pane, enter a `Project name` and `Description`, then click the `Create Project` button.  Your project is created and now appears in the projects screen:
 
