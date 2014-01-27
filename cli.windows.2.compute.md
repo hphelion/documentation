@@ -277,7 +277,7 @@ To use the `Get-Password` command, all of the following must be true:
 
 ###Reset-Password### {#ResetPassword}
 
-For Windows Instances only, if you change your Windows password manually via [RDP](http://msdn.microsoft.com/en-us/library/windows/desktop/aa383015(v=vs.85).aspx), you need to manually sync the password with the Windows CLI with the [`Reset-Password` cmdlet](cli/windows/reference#reset-password) for the `connect-server` command to work. If you use the `get-password` cmdlet to fetch your original de-crypted Administrator password, and it's available, it will overwrite the password sync.
+For Windows Instances only, if you change your Windows password manually via [RDP](http://msdn.microsoft.com/en-us/library/windows/desktop/aa383015(v=vs.85).aspx), you need to manually sync the password with the Windows CLI with the [`Reset-Password` cmdlet](http://docs.hpcloud.com/cli/windows/2/reference#reset-password) for the `connect-server` command to work. If you use the `get-password` cmdlet to fetch your original de-crypted Administrator password, and it's available, it will overwrite the password sync.
 
     PS HPCS:\> reset-password -id 1234 -p "Thisisalongpassword!"
 
