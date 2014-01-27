@@ -5,7 +5,7 @@ permalink: /cli/unix/2/account-management/
 product: unix-cli
 
 ---
-#UNIX CLI: Advanced Account Management, v13.5
+#UNIX CLI v13.5: Advanced Account Management
 
 If you are using v12.12, click [here](https://docs.hpcloud.com/cli/unix/account-management) for documentation.
 ___________________
