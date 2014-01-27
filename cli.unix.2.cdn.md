@@ -5,7 +5,9 @@ permalink: /cli/unix/2/cdn/
 product: unix-cli
 
 ---
-# UNIX CLI CDN Examples
+# UNIX CLI v13.5 CDN Examples
+
+If you are using v12.12, click [here](https://docs.hpcloud.com/cli/unix/cdn) for documentation.
 ___________________
 
 ###Important Notice###
