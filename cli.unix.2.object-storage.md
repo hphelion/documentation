@@ -28,7 +28,8 @@ We wanted to ensure you were aware of the changes that may affect you during thi
 
 After 6 months, access to online resources will be available through GitHub, and no support will be offered from HP Public Cloud. Of course, you are most welcome to access the install from GitHub and continue your development ([HPCloud Github](https://github.com/hpcloud/unix_cli)).
 _________________________________________
-<iframe src="http://player.vimeo.com/video/32534203?title=0&amp;byline=0&amp;portrait=0" width="580" height="420" frameborder="0"> </iframe>
+
+<!-- <iframe src="http://player.vimeo.com/video/32534203?title=0&amp;byline=0&amp;portrait=0" width="580" height="420" frameborder="0"> </iframe> -->
 
 This page gives discusses the following object storage tasks using HP Cloud and provides some examples: 
 
