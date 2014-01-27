@@ -231,7 +231,7 @@ To perform a quick-connect to an existing server instance:
 
     PS HPCS:\\>  Connect-Server 2111
 
-This connects you to the server with the ID `2111`.  You can also connect to a server by [navigating](blah) to a server directory and entering the `Connect-Server` command with no arguments:
+This connects you to the server with the ID `2111`.  You can also connect to a server by [navigating](http://docs.hpcloud.com/cli/windows/2/reference#Connect-Server) to a server directory and entering the `Connect-Server` command with no arguments:
 
     PS HPCS:\\>  cd Servers
     PS HPCS:\Servers> cd 2111
