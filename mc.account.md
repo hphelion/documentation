@@ -9,8 +9,8 @@ product: mc-account
 
 This page provides you with an overview of the management console (MC) account and services dashboard, which allows you to display and manage your account and services information.  This page covers the following topics:
 
-* [Account and services dashboard overview](Overview)
-* [Navigating to the other account and services screens](Navigating)
+* [Account and services dashboard overview](#Overview)
+* [Navigating to the other account and services screens](#Navigating)
 * [For further information](#ForFurtherInformation)
 
 ##Account and services dashboard overview## {#Overview}
