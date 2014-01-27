@@ -56,7 +56,7 @@ From the account and services dashboard, you can perform any of the following ta
 
 ##For further information## {#ForFurtherInformation}
 
-* A good place to help you get going managing your account is with our [account and services management use cases](/mc/account/using/)
+* A good place to help you get going managing your account is with our [account and services management use cases](/mc/compute/using/)
 * Use the MC [site map](/mc/sitemap) for a full list of all available MC documentation pages
 * For basic information about our HP Cloud compute services, take a look at the [HP Cloud compute overview](/compute/) page
 * If you'd rather use the HP Cloud CLI features, go choose your topic of interest from our [HP CLoud CLI](/cli) pages
