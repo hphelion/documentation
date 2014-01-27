@@ -128,7 +128,7 @@ This launches the subnet details screen.  In the subnet details screen, click th
 
 ##Deleting a subnet## {#Deleting}
 
-By default, when you [create a network](/mc/compute/networks/create-network/), that network is created with no subnets. If you used the subnet creation screen [create a subnet](/mc/compute/networks/create-subnet#Creating) to create a subnet that you now want to delete, click the subnet you want to delete:
+By default, when you [create a network](/mc/compute/networks/create-network/), that network is created with no subnets. If you used the subnet creation screen [create a subnet](/mc/compute/networks/manage-subnet#Creating) to create a subnet that you now want to delete, click the subnet you want to delete:
 
 <img src="media/compute-networks07.jpg" width="580" alt="" />
 
