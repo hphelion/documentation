@@ -1,12 +1,13 @@
 ---
 layout: default
 title: "Operational Dashboard: Cloud Tab"
-permalink: /cloudos/moonshot/manage/operational-dashboard/cloud-tab/
-product: moonshot
+permalink: /cloudos/manage/operational-dashboard/cloud-tab/
+product: cloudos
 
 ---
 
 
+<a name="_top"> </a>
 
 <script> 
 
@@ -19,7 +20,7 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage/operational-dashboard/">&#9650; UP</a> | <a href="/cloudos/moonshot/manage/operational-dashboard/settings-tab/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/cloudos/manage/operational-dashboard/environment-tab/">&#9664; PREV</a> | <a href="/cloudos/manage/operational-dashboard/">&#9650; UP</a> | <a href="/cloudos/manage/operational-dashboard/settings-tab/">NEXT &#9654;</a> </p>
 
 # Operational Dashboard: Cloud Tab
 
@@ -36,9 +37,9 @@ they are displayed.
 * [Updates and Extensions](#updates-and-extensions) 
 
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:600px; border: 1px dotted #000000;"> <b>Note:</b> The Cloud tab does not appear until you have 
-completed all the installation steps on the <a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab">Environment tab</a>.</p>
+completed all the installation steps on the <a href="/cloudos/manage/operational-dashboard/environment-tab">Environment tab</a>.</p>
 
-For procedural instructions, see [Install and Configure Your Clouds](/cloudos/moonshot/install/).
+For procedural instructions, see [Install and Configure Your Cloud](/cloudos/install/).
 
 ## Manage Nodes
 
@@ -74,13 +75,13 @@ and mount the folder on an additional storage.
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px; border: 1px dotted #000000;"> <b>Note:</b> Ensure that the boot order on all nodes is configured to 
 boot from the network first (this only occurs once as the PXE service will not try to network boot a node again if it has already done so).</p>
 
-For procedural instructions on setting up and configuring your nodes, see [Install and Configure Your Cloud](/cloudos/moonshot/install).
+For procedural instructions on setting up and configuring your nodes, see [Install and Configure Your Cloud](/cloudos/install).
 
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 ### Manage Nodes Page
 
-To access: Select the Cloud tab > Manage Nodes.
+**To access**: Select the **Cloud** tab > **Manage Nodes**.
 
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px; border: 1px dotted #000000;"> <b>Tip:</b> Access the virtual and bare-metal server's consoles 
 to monitor operating system installation. Some of your hardware requires non-free firmware files to operate. The firmware can be loaded from removable media, 
@@ -99,7 +100,7 @@ The following table describes the Manage Nodes page UI elements:
 
 <tr style="background-color: white; color: black;">
 <td style="min-width:150px;"> <b>Alias</b> column </td>
-<td> Renamed MAC address ( in the <a href="/cloudos/moonshot/manage/operational-dashboard/cloud-tab/#edit-node-dialog">Edit Node dialog</a> ) to a more 
+<td> Renamed MAC address ( in the <a href="/cloudos/manage/operational-dashboard/cloud-tab/#edit-node-dialog">Edit Node dialog</a> ) to a more 
 meaningful name such as controllercompute, cloudcontroller, compute1, compute2.
 <br /> <br />
 Once the nodes have finished booting up, each node displays in the table, indicating the Alias Name set to the node's MAC 
@@ -137,7 +138,7 @@ contain the string in any column on the row. </td>
 
 <tr style="background-color: white; color: black;">
 <td> <b>Edit Node</b> button </td>
-<td> Click to open the <a href="/cloudos/moonshot/manage/operational-dashboard/cloud-tab/#edit-node-dialog">Edit Node dialog</a>. </td>
+<td> Click to open the <a href="/cloudos/manage/operational-dashboard/cloud-tab/#edit-node-dialog">Edit Node dialog</a>. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -168,13 +169,13 @@ A node that is in the Deployed state cannot be reset. When a node is reset, it i
 
 </table> 
 
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 
 
 ### Edit Node Dialog
 
-To access: Select the Cloud tab > Manage Nodes > Edit Node for the node you want to edit.
+**To access**: Select the **Cloud** tab > **Manage Nodes** > **Edit Node** for the node you want to edit.
 
 The following table describes the Edit Nodes dialog UI elements:
 
@@ -201,19 +202,19 @@ and numbers with no spaces or special characters. </p>
 
 <tr style="background-color: white; color: black;">
 <td> <nobr> <b>Update Node</b> </nobr> </td>
-<td> Click to save the settings and return to the <a href="/cloudos/moonshot/manage/operational-dashboard/cloud-tab/#manage-nodes-page">Manage Nodes page</a>.  </td>
+<td> Click to save the settings and return to the <a href="/cloudos/manage/operational-dashboard/cloud-tab/#manage-nodes-page">Manage Nodes page</a>.  </td>
 </tr>
 
 </table>
 
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 
 
 
 ### Manage Nodes Details Page
 
-To access: Select the Cloud tab > Manage Nodes and click the node name link.
+**To access**: Select the **Cloud** tab > **Manage Nodes** and click the node name link.
 
 This page displays all the values used for the selected node.
 
@@ -302,7 +303,7 @@ Cloud Controller, Network Controller, and Storage Controller respective services
 
 
 
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 ## Manage Clouds
 
@@ -354,7 +355,7 @@ nodes &mdash; managed nodes cannot be shared between regions.</p>
 
 ### Manage Clouds Page
 
-To access: Select the Cloud tab > Manage Clouds and click the cloud name link.
+**To access**: Select the **Cloud** tab > **Manage Clouds** and click the cloud name link.
 
 The following table describes the Manage Clouds page UI elements:
 
@@ -367,7 +368,7 @@ The following table describes the Manage Clouds page UI elements:
 
 <tr style="background-color: white; color: black;">
 <td style="min-width:150px;"> <b>Name</b> </td>
-<td> Cloud name specified on the <a href="/cloudos/moonshot/manage/operational-dashboard/cloud-tab/#create-cloud-dialog">Create Cloud dialog</a>. 
+<td> Cloud name specified on the <a href="/cloudos/manage/operational-dashboard/cloud-tab/#create-cloud-dialog">Create Cloud dialog</a>. 
 This is the Domain name that is used to initialize Keystone and will be displayed in the Administration Dashboard.
 <br /> <br/>
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> A cloud name must contain only letters and numbers. 
@@ -389,12 +390,12 @@ the status displays Active.   </td>
 
 <tr style="background-color: white; color: black;">
 <td> <b>Create Cloud</b> </td>
-<td> Opens the <a href="/cloudos/moonshot/manage/operational-dashboard/cloud-tab/#create-cloud-dialog">Create Cloud dialog</a>. </td>
+<td> Opens the <a href="/cloudos/manage/operational-dashboard/cloud-tab/#create-cloud-dialog">Create Cloud dialog</a>. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> <b>Create Compute Region</b> </td>
-<td> Opens the <a href="/cloudos/moonshot/manage/operational-dashboard/cloud-tab/#create-compute-region-dialog">Create Compute Region dialog</a>. </td>
+<td> Opens the <a href="/cloudos/manage/operational-dashboard/cloud-tab/#create-compute-region-dialog">Create Compute Region dialog</a>. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -418,7 +419,7 @@ depending upon the context of the cloud and the compute regions.</p>
   
 ### Create Cloud Dialog
 
-To access: Select the Cloud tab > Manage Clouds and click **Create Cloud**.
+**To access**: Select the **Cloud** tab > **Manage Clouds** and click **Create Cloud**.
 
 After you complete allocating the nodes on the Manage Nodes panel, you are ready to create your cloud.
 
@@ -520,14 +521,14 @@ file system associated with the Local Volume File. </td>
 <td> Trash user's password for a granted user's role on a trash project(s) in the Administration Dashboard.
 <br /> <br />
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> Remember these passwords. You will be using these as 
-appropriate to login to the Administration Dashboard &mdash; see <a href="/cloudos/moonshot/manage/operational-dashboard/cloud-tab/#manage-clouds-page">Manage Clouds page</a>. </p> 
+appropriate to login to the Administration Dashboard &mdash; see <a href="/cloudos/manage/operational-dashboard/cloud-tab/#manage-clouds-page">Manage Clouds page</a>. </p> 
 </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> <b>Create Cloud</b> button </td>
 <td> Click to begin the process of creating the cloud. The cloud will go through a series of steps to create an active cloud, 
-showing the % completed on the <a href="/cloudos/moonshot/manage/operational-dashboard/cloud-tab/#manage-clouds-page">Manage Clouds page</a>.
+showing the % completed on the <a href="/cloudos/manage/operational-dashboard/cloud-tab/#manage-clouds-page">Manage Clouds page</a>.
 </td>
 </tr>
 
@@ -536,7 +537,7 @@ showing the % completed on the <a href="/cloudos/moonshot/manage/operational-das
 
 ### Create Compute Region Dialog
 
-To access: Select the Cloud tab > Manage Clouds and click **Create Compute Region** for the corresponding cloud.
+**To access**: Select the **Cloud** tab > **Manage Clouds** and click **Create Compute Region** for the corresponding cloud.
 
 When the Create Cloud step is complete, the cloud's state displays Active on the Manage Clouds page. 
 You can now create one or more compute regions. This is the last step in the installation process of creating a cloud. 
@@ -547,7 +548,7 @@ HP Cloud OS Administration Dashboard.
 
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px; border: 1px dotted #000000;"> <b>Note:</b> Successfully creating a compute region 
 automatically creates a default resource pool for that region, which is configured and visible 
-in the Administration Dashboard. For details, see the <a href="/cloudos/moonshot/manage/administration-dashboard/">HP Cloud OS Administration Dashboard Help</a>. </p>
+in the Administration Dashboard. For details, see the <a href="/cloudos/manage/administration-dashboard/">HP Cloud OS Administration Dashboard Help</a>. </p>
 
 The following table describes the Compute Region dialog UI elements:
 
@@ -617,7 +618,7 @@ You can now add additional compute regions. The added compute regions appear on 
 	
 ### Extend Compute Region Dialog
 
-To access: Select the Cloud tab > Manage Clouds and then click **More** > **Extend Compute Region** for the corresponding cloud.
+**To access**: Select the **Cloud** tab > **Manage Clouds** and then click **More** > **Extend Compute Region** for the corresponding cloud.
 
 The Extend Compute Region dialog is used to add nodes to an existing compute region. 
 The following table describes the Extend Compute Region dialog UI elements:
@@ -662,7 +663,7 @@ that are in the Allocated state. </p>
 <td> Click to begin extending the compute region.
 <br /> <br /> 
 On the Manage Nodes page, the Status for the nodes that have successfully been added to the compute region will change to <b>Deployed</b>. 
-You can also view the compute nodes that are currently in the compute region on the <a href="/cloudos/moonshot/manage/operational-dashboard/cloud-tab/#manage-clouds-details-page">Manage Clouds Details page</a>.
+You can also view the compute nodes that are currently in the compute region on the <a href="/cloudos/manage/operational-dashboard/cloud-tab/#manage-clouds-details-page">Manage Clouds Details page</a>.
 </td>
 </tr>
 
@@ -671,7 +672,7 @@ You can also view the compute nodes that are currently in the compute region on 
 
 ### Reduce Compute Region Dialog
 
-To access: Select the Cloud tab > Manage Clouds and then click **More** > **Reduce Compute Region** for the corresponding cloud.
+**To access**: Select the **Cloud** tab > **Manage Clouds** and then click **More** > **Reduce Compute Region** for the corresponding cloud.
 
 The Reduce Compute Region dialog is used to remove compute nodes from an existing compute region. 
 When a node is successfully removed from a compute region, its previous context is lost, including its alias name and any HP Cloud OS software 
@@ -730,7 +731,7 @@ change to <b>Not Allocated</b>, and they will be listed by their MAC addresses.
 
 ### Remove Compute Region Dialog
 
-To access: Select the Cloud tab > Manage Clouds and then click **More** > **Remove Compute Region** for the corresponding cloud.
+**To access**: Select the **Cloud** tab > **Manage Clouds** and then click **More** > **Remove Compute Region** for the corresponding cloud.
 
 The Remove Compute Region dialog is used to remove an existing compute region. This action sets the compute controller and compute 
 nodes that comprise the compute region to the Not Allocated state. In the Not Allocated state, the previous context of such nodes is lost, 
@@ -795,7 +796,7 @@ will change to <b>Not Allocated</b>, and they will be listed by their MAC addres
 
 ### Remove Cloud Dialog
 
-To access: Select the Cloud tab > Manage Clouds and then click **More** > **Remove Cloud** for the corresponding cloud.
+**To access**: Select the **Cloud** tab > **Manage Clouds** and then click **More** > **Remove Cloud** for the corresponding cloud.
 
 The Remove Cloud dialog is used to remove an existing cloud. This action sets all cloud, network, storage, and compute controller nodes, 
 and all compute nodes that comprise the cloud to the Not Allocated state. In the Not Allocated state, the previous context of the nodes is lost, 
@@ -837,7 +838,7 @@ and they will be listed by their MAC addresses.  </td>
 
 ### Manage Clouds Details Page
 
-To access: Select the Cloud tab > Manage Clouds and click the cloud name link.
+**To access**: Select the **Cloud** tab > **Manage Clouds** and click the cloud name link.
 
 This page displays the values you used to create the cloud and compute regions.
 
@@ -933,7 +934,7 @@ The following table describes the Manage Clouds Details page UI elements:
 </table> 
   
 
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 ## Hot Fixes
 
@@ -959,7 +960,7 @@ having the .csu extension, have been downloaded to the local file system. In thi
 
 ### Hot Fixes Page
 
-To access: Select the Cloud tab > Hot Fixes.
+**To access**: Select the **Cloud** tab > **Hot Fixes**.
 
 The following table describes the Hot Fixes page UI elements:
 
@@ -983,7 +984,7 @@ The following table describes the Hot Fixes page UI elements:
 <tr style="background-color: white; color: black;">
 <td style="min-width:150px;"> <b>Package Name</b> column  </td>
 <td> The name of the content package. Click on the package name to open 
-the <a href="/cloudos/moonshot/manage/operational-dashboard/cloud-tab/#package-details-page">Package Details Page</a>.  </td>
+the <a href="/cloudos/manage/operational-dashboard/cloud-tab/#package-details-page">Package Details Page</a>.  </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -1025,7 +1026,7 @@ contain the string in any column. The filter function is not case sensitive. </t
 
 <tr style="background-color: white; color: black;">
 <td style="min-width:150px;"> <b>Import Package</b> button  </td>
-<td> Click to open the <a href="/cloudos/moonshot/manage/operational-dashboard/cloud-tab/#import-package-dialog">Import Package Dialog</a>. </td>
+<td> Click to open the <a href="/cloudos/manage/operational-dashboard/cloud-tab/#import-package-dialog">Import Package Dialog</a>. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -1036,8 +1037,8 @@ When the installation process completes, a Success message will appear in the up
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> Upon successful completion of the installation process, 
 the content package has been properly installed on the HP Cloud OS Administration node, but not yet enabled. Such enabling is performed 
 in the HP Cloud OS Installation Dashboard. For information on how to enable and disable content packages, 
-refer to the <a href="/cloudos/moonshot/install/updates-and-extensions">Updates and Extensions</a> topic, which is part of 
-<a href="/cloudos/moonshot/install/">Install and Configure Your Cloud</a>.</p>
+refer to the <a href="/cloudos/install/updates-and-extensions">Updates and Extensions</a> topic, which is part of 
+<a href="/cloudos/install/">Install and Configure Your Cloud</a>.</p>
 </td>
 </tr>
 
@@ -1045,7 +1046,7 @@ refer to the <a href="/cloudos/moonshot/install/updates-and-extensions">Updates 
 
 ### Package Details Page
 
-To access: Select the Cloud tab > Hot Fixes and click a Package Name link.
+**To access**: Select the **Cloud** tab > **Hot Fixes** and click a Package Name link.
 
 This page displays detailed information about a particular content package. The following sections describe the content package details page UI elements.
 
@@ -1146,7 +1147,7 @@ Click the Log tab to select a log to view.
 
 ### Import Package Dialog
 
-To access: Select the Cloud tab, > Hot Fixes, and then click the **Import Package** button on the Hot Fixes page.
+**To access**: Select the **Cloud** tab, > **Hot Fixes**, and then click the **Import Package** button on the Hot Fixes page.
 
 The following table describes the Import Package dialog UI elements:
 
@@ -1174,7 +1175,7 @@ HP Cloud OS Administration node. If no file has been chosen, "No file chosen" wi
 
 
 
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 ## Updates and Extensions
 
@@ -1198,7 +1199,7 @@ and apply them to your HP Cloud OS environment. In this topic, such hot fixes an
 
 ### Updates and Extensions Page
 
-To access: Select the Cloud tab > Updates and Extensions.
+**To access**: Select the **Cloud** tab > **Updates and Extensions**.
 
 The following table describes the Updates and Extensions page UI elements:
 
@@ -1221,8 +1222,8 @@ The following table describes the Updates and Extensions page UI elements:
 
 <!-- BG: This should be updated for US 2516 G3.1, KB to GB --> 
 <tr style="background-color: white; color: black;">
-<td> <b>Size (Bytes)</b> column </td>
-<td> The size of the content package file, in bytes. </td>
+<td> <b>Size (MBytes)</b> column </td>
+<td> The size of the content package file, in megabytes. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -1253,7 +1254,7 @@ contain the string in any column. The filter function is not case sensitive. </t
 
 <tr style="background-color: white; color: black;">
 <td> <b>Configure</b> </td>
-<td> Click to open the <a href="/cloudos/moonshot/manage/operational-dashboard/cloud-tab/#configure-dialog">Configure Dialog</a>. </td>
+<td> Click to open the <a href="/cloudos/manage/operational-dashboard/cloud-tab/#configure-dialog">Configure Dialog</a>. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -1279,7 +1280,7 @@ the Install button will not be shown. </td>
 
 ### Configure Dialog
 
-To access: Select the Cloud tab > Updates and Extensions, and then the **Configure** button.
+**To access**: Select the **Cloud** tab > b, and then the **Configure** button.
 
 The following table describes the Configure dialog UI elements:
 
@@ -1309,5 +1310,5 @@ The following table describes the Configure dialog UI elements:
 
 
 
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

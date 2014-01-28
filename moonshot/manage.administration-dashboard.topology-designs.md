@@ -1,13 +1,11 @@
 ---
 layout: default
 title: "Topology Designs"
-permalink: /cloudos/moonshot/manage/administration-dashboard/topology-designs/
+permalink: /cloudos/manage/administration-dashboard/topology-designs/
 product: cloudos
 
 ---
 
-
-<a name="_top"> </a>
 
 <script> 
 
@@ -20,7 +18,7 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/administration-dashboard/getting-started/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage/administration-dashboard">&#9650; UP</a> | <a href="/cloudos/moonshot/manage/administration-dashboard/tasks-by-role/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/cloudos/manage/administration-dashboard/getting-started/">&#9664; PREV</a> | <a href="/cloudos/manage/administration-dashboard">&#9650; UP</a> | <a href="/cloudos/manage/administration-dashboard/tasks-by-role/">NEXT &#9654;</a> </p>
 
 # Topology Designs
 
@@ -137,7 +135,7 @@ details about errors within the Editor.
 </table>
 
 
-<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 ## Browse Topology Designs
 
@@ -293,7 +291,7 @@ To import a topology design:
 5. Click <b>OK</b>.
 
 
-<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 ## Topology Designs Overview
 
@@ -320,7 +318,7 @@ To view topology design details:
 
 **Tasks:**
 
-* [How to Edit Topology Design Properties](#how-to-edit-topology-properties)
+* [How to Edit Topology Design Properties](#how-to-edit-topology-design-properties)
 
 * [How to Copy a Topology Design](#how-to-copy-a-topology-design)
 
@@ -451,7 +449,7 @@ For more information about specifying a Resource Pool, see [How to Create a Topo
 5. Click <b>Save</b>.
 
 
-<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 ## Topology Design Editor
 
@@ -946,7 +944,7 @@ If you select <b>Create a Security Group</b>, select <b>Yes</b> if you want an u
 
 </table> 
 
-<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 
 ### How to Edit Topology Design Nodes and Connectors
@@ -1012,7 +1010,7 @@ In addition to using the contextual menu outlined below, you can delete using th
 3. Click <b>Yes</b> to confirm. The item is removed from the layout.
 
 
-<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 ## Deployment Profiles
 
@@ -1196,7 +1194,7 @@ To delete a deployment profile:
 6. Click <b>Yes</b>. The profile is deleted.
 	
 
-<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 ## How to Revert to a Previous Topology Design Version
 
@@ -1220,7 +1218,7 @@ To revert to an previous topology design version:
 
 
 
-<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 ## Validation
 
@@ -1272,5 +1270,5 @@ The Validation tab can be accessed at any time during the design process.
 
 6. Click a linked validation item to move to the source of the issue and correct.
 
-<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

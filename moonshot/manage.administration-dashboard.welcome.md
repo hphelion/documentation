@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Welcome to the HP Cloud OS Administration Dashboard"
-permalink: /cloudos/moonshot/manage/administration-dashboard/welcome/
+permalink: /cloudos/manage/administration-dashboard/welcome/
 product: cloudos
 
 ---
@@ -20,7 +20,7 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/administration-dashboard/before-you-begin/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage/administration-dashboard/">&#9650; UP</a> | <a href="/cloudos/moonshot/manage/administration-dashboard/getting-started/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/cloudos/manage/administration-dashboard/before-you-begin/">&#9664; PREV</a> | <a href="/cloudos/manage/administration-dashboard/">&#9650; UP</a> | <a href="/cloudos/manage/administration-dashboard/getting-started/">NEXT &#9654;</a> </p>
 
 # Welcome to the HP Cloud OS Administration Dashboard
 
@@ -102,6 +102,8 @@ General rules about visibility in the Administration Dashboard include:
 * Project users cannot see content within their project if the content was created by other users and scoped Private, Project or Private, Cloud.
 
 * All users can see content that is marked Public, Cloud.
+
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 ### Administration Dashboard Tabs
 
@@ -375,11 +377,13 @@ Allows you to work with the images (create, launch and delete).
 
 </table>
 
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
 ## Prerequisites to Accessing the Administration Dashboard
 
 Before you can access the HP Cloud OS Administration Dashboard, someone in your organization must use the HP Cloud OS Operational Dashboard 
 to install, set up, configure, and stand up a cloud environment. Use Operational Dashboard to set up and install an Admin node, create a cloud, 
-define compute regions, and apply updates and extensions to your cloud. See the [HP Cloud OS Operational Dashboard Help](/cloudos/moonshot/manage/operational-dashboard/).
+define compute regions, and apply updates and extensions to your cloud. See the [HP Cloud OS Operational Dashboard Help](/cloudos/manage/operational-dashboard/).
 
 For instructions on how to use an advanced method of installing a cloud, see [Install and Configure Your Clouds](/cloudos/install).
 
@@ -395,5 +399,5 @@ specified on the Create Cloud > Attributes dialog in the HP Cloud OS Operational
 
 * Within the Operational Dashboard, Manage Clouds > More > Launch Dashboard for the cloud you created.
 
-<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
