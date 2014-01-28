@@ -12,7 +12,7 @@ There are a number of HP Cloud services available for you:
 * [Object storage](/object-storage/): A way to store and retrieve objects in a highly redundant cluster of publicly accessible physical machines hosted in HP data centers. 
 * [Compute](/compute/): A method for you to instantiate virtual servers on publicly accessible physical machines hosted in HP data centers.
 * [Block storage](/block-storage/): Allows you to enable additional volumes to Compute instances.
-* [CDN](/CDN/): Content inside HP Cloud Object Storage can easily be cached on servers in metropolitan areas all over the world to speed client access to them by removing much of the network latency.
+* [CDN](/cdn/): Content inside HP Cloud Object Storage can easily be cached on servers in metropolitan areas all over the world to speed client access to them by removing much of the network latency.
 * [Relational Database](/dbaas/): Provides you with a simplified method for creation and management of MySQL database instances.
 * [DNS](/dns/): A managed domain name service that features anycast routing hosted by HP.
 * [Monitoring as a service (MaaS)](/maas/): Allows you to monitor  the health and other metrics of your resources in HP Cloud.<br>
