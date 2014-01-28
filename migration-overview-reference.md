@@ -985,7 +985,7 @@ After logging in, a system window displays, which indicates you are connected to
 
 ####Connecting from a Linux system using Terminal####  {#connectlinuxterm}
 
-Before you start, make sure the key pair file associated with the instance is stored on the local system in PEM format. For more information, see [Generate a security key pair]($keypair).
+Before you start, make sure the key pair file associated with the instance is stored on the local system in PEM format. For more information, see [Generate a security key pair](#keypair).
 
 To connect to an instance using the Linux CLI:
 
