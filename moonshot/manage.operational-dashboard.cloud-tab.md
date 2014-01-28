@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Operational Dashboard: Cloud Tab"
-permalink: /cloudos/manage/operational-dashboard/cloud-tab/
+permalink: /cloudos/moonshot/manage/operational-dashboard/cloud-tab/
 product: cloudos
 
 ---
@@ -20,7 +20,7 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> <a href="/cloudos/manage/operational-dashboard/environment-tab/">&#9664; PREV</a> | <a href="/cloudos/manage/operational-dashboard/">&#9650; UP</a> | <a href="/cloudos/manage/operational-dashboard/settings-tab/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage/operational-dashboard/">&#9650; UP</a> | <a href="/cloudos/moonshot/manage/operational-dashboard/settings-tab/">NEXT &#9654;</a> </p>
 
 # Operational Dashboard: Cloud Tab
 
@@ -37,7 +37,7 @@ they are displayed.
 * [Updates and Extensions](#updates-and-extensions) 
 
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:600px; border: 1px dotted #000000;"> <b>Note:</b> The Cloud tab does not appear until you have 
-completed all the installation steps on the <a href="/cloudos/manage/operational-dashboard/environment-tab">Environment tab</a>.</p>
+completed all the installation steps on the <a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab">Environment tab</a>.</p>
 
 For procedural instructions, see [Install and Configure Your Cloud](/cloudos/install/).
 
@@ -100,7 +100,7 @@ The following table describes the Manage Nodes page UI elements:
 
 <tr style="background-color: white; color: black;">
 <td style="min-width:150px;"> <b>Alias</b> column </td>
-<td> Renamed MAC address ( in the <a href="/cloudos/manage/operational-dashboard/cloud-tab/#edit-node-dialog">Edit Node dialog</a> ) to a more 
+<td> Renamed MAC address ( in the <a href="/cloudos/moonshot/manage/operational-dashboard/cloud-tab/#edit-node-dialog">Edit Node dialog</a> ) to a more 
 meaningful name such as controllercompute, cloudcontroller, compute1, compute2.
 <br /> <br />
 Once the nodes have finished booting up, each node displays in the table, indicating the Alias Name set to the node's MAC 
@@ -138,7 +138,7 @@ contain the string in any column on the row. </td>
 
 <tr style="background-color: white; color: black;">
 <td> <b>Edit Node</b> button </td>
-<td> Click to open the <a href="/cloudos/manage/operational-dashboard/cloud-tab/#edit-node-dialog">Edit Node dialog</a>. </td>
+<td> Click to open the <a href="/cloudos/moonshot/manage/operational-dashboard/cloud-tab/#edit-node-dialog">Edit Node dialog</a>. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -202,7 +202,7 @@ and numbers with no spaces or special characters. </p>
 
 <tr style="background-color: white; color: black;">
 <td> <nobr> <b>Update Node</b> </nobr> </td>
-<td> Click to save the settings and return to the <a href="/cloudos/manage/operational-dashboard/cloud-tab/#manage-nodes-page">Manage Nodes page</a>.  </td>
+<td> Click to save the settings and return to the <a href="/cloudos/moonshot/manage/operational-dashboard/cloud-tab/#manage-nodes-page">Manage Nodes page</a>.  </td>
 </tr>
 
 </table>
@@ -368,7 +368,7 @@ The following table describes the Manage Clouds page UI elements:
 
 <tr style="background-color: white; color: black;">
 <td style="min-width:150px;"> <b>Name</b> </td>
-<td> Cloud name specified on the <a href="/cloudos/manage/operational-dashboard/cloud-tab/#create-cloud-dialog">Create Cloud dialog</a>. 
+<td> Cloud name specified on the <a href="/cloudos/moonshot/manage/operational-dashboard/cloud-tab/#create-cloud-dialog">Create Cloud dialog</a>. 
 This is the Domain name that is used to initialize Keystone and will be displayed in the Administration Dashboard.
 <br /> <br/>
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> A cloud name must contain only letters and numbers. 
@@ -390,12 +390,12 @@ the status displays Active.   </td>
 
 <tr style="background-color: white; color: black;">
 <td> <b>Create Cloud</b> </td>
-<td> Opens the <a href="/cloudos/manage/operational-dashboard/cloud-tab/#create-cloud-dialog">Create Cloud dialog</a>. </td>
+<td> Opens the <a href="/cloudos/moonshot/manage/operational-dashboard/cloud-tab/#create-cloud-dialog">Create Cloud dialog</a>. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> <b>Create Compute Region</b> </td>
-<td> Opens the <a href="/cloudos/manage/operational-dashboard/cloud-tab/#create-compute-region-dialog">Create Compute Region dialog</a>. </td>
+<td> Opens the <a href="/cloudos/moonshot/manage/operational-dashboard/cloud-tab/#create-compute-region-dialog">Create Compute Region dialog</a>. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -521,14 +521,14 @@ file system associated with the Local Volume File. </td>
 <td> Trash user's password for a granted user's role on a trash project(s) in the Administration Dashboard.
 <br /> <br />
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> Remember these passwords. You will be using these as 
-appropriate to login to the Administration Dashboard &mdash; see <a href="/cloudos/manage/operational-dashboard/cloud-tab/#manage-clouds-page">Manage Clouds page</a>. </p> 
+appropriate to login to the Administration Dashboard &mdash; see <a href="/cloudos/moonshot/manage/operational-dashboard/cloud-tab/#manage-clouds-page">Manage Clouds page</a>. </p> 
 </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> <b>Create Cloud</b> button </td>
 <td> Click to begin the process of creating the cloud. The cloud will go through a series of steps to create an active cloud, 
-showing the % completed on the <a href="/cloudos/manage/operational-dashboard/cloud-tab/#manage-clouds-page">Manage Clouds page</a>.
+showing the % completed on the <a href="/cloudos/moonshot/manage/operational-dashboard/cloud-tab/#manage-clouds-page">Manage Clouds page</a>.
 </td>
 </tr>
 
@@ -548,7 +548,7 @@ HP Cloud OS Administration Dashboard.
 
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px; border: 1px dotted #000000;"> <b>Note:</b> Successfully creating a compute region 
 automatically creates a default resource pool for that region, which is configured and visible 
-in the Administration Dashboard. For details, see the <a href="/cloudos/manage/administration-dashboard/">HP Cloud OS Administration Dashboard Help</a>. </p>
+in the Administration Dashboard. For details, see the <a href="/cloudos/moonshot/manage/administration-dashboard/">HP Cloud OS Administration Dashboard Help</a>. </p>
 
 The following table describes the Compute Region dialog UI elements:
 
@@ -663,7 +663,7 @@ that are in the Allocated state. </p>
 <td> Click to begin extending the compute region.
 <br /> <br /> 
 On the Manage Nodes page, the Status for the nodes that have successfully been added to the compute region will change to <b>Deployed</b>. 
-You can also view the compute nodes that are currently in the compute region on the <a href="/cloudos/manage/operational-dashboard/cloud-tab/#manage-clouds-details-page">Manage Clouds Details page</a>.
+You can also view the compute nodes that are currently in the compute region on the <a href="/cloudos/moonshot/manage/operational-dashboard/cloud-tab/#manage-clouds-details-page">Manage Clouds Details page</a>.
 </td>
 </tr>
 
@@ -984,7 +984,7 @@ The following table describes the Hot Fixes page UI elements:
 <tr style="background-color: white; color: black;">
 <td style="min-width:150px;"> <b>Package Name</b> column  </td>
 <td> The name of the content package. Click on the package name to open 
-the <a href="/cloudos/manage/operational-dashboard/cloud-tab/#package-details-page">Package Details Page</a>.  </td>
+the <a href="/cloudos/moonshot/manage/operational-dashboard/cloud-tab/#package-details-page">Package Details Page</a>.  </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -1026,7 +1026,7 @@ contain the string in any column. The filter function is not case sensitive. </t
 
 <tr style="background-color: white; color: black;">
 <td style="min-width:150px;"> <b>Import Package</b> button  </td>
-<td> Click to open the <a href="/cloudos/manage/operational-dashboard/cloud-tab/#import-package-dialog">Import Package Dialog</a>. </td>
+<td> Click to open the <a href="/cloudos/moonshot/manage/operational-dashboard/cloud-tab/#import-package-dialog">Import Package Dialog</a>. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -1254,7 +1254,7 @@ contain the string in any column. The filter function is not case sensitive. </t
 
 <tr style="background-color: white; color: black;">
 <td> <b>Configure</b> </td>
-<td> Click to open the <a href="/cloudos/manage/operational-dashboard/cloud-tab/#configure-dialog">Configure Dialog</a>. </td>
+<td> Click to open the <a href="/cloudos/moonshot/manage/operational-dashboard/cloud-tab/#configure-dialog">Configure Dialog</a>. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">

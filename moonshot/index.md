@@ -38,12 +38,6 @@ specifically for Moonshot customers.
 
 ## Getting Started
 
-<p style="border: 1px dotted #1796D3; padding: 4px 4px 4px 4px;"> 
-<b>To get started</b>, download the HP Cloud OS for Moonshot (N.NN) ISO from the 
-<nobr><a href="https://cloudos.hpwsportal.com" target="codn">HP Cloud OS Distribution Network</a>.</nobr> 
-On the site, see the Moonshot section and follow the links.
-</p>
-
 For an introduction to HP Cloud OS for Moonshot, watch this video: 
 
 <iframe style="border: 1px solid gray;" width="400" height="225" src="//www.youtube.com/embed/NriyVYHqYQk" frameborder="0" allowfullscreen></iframe>

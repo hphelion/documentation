@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Operational Dashboard: Environment Tab"
-permalink: /cloudos/manage/operational-dashboard/environment-tab/
+permalink: /cloudos/moonshot/manage/operational-dashboard/environment-tab/
 product: cloudos
 
 ---
@@ -20,7 +20,7 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> <a href="/cloudos/manage/operational-dashboard/how-opdash-works/">&#9664; PREV</a> | <a href="/cloudos/manage/operational-dashboard/">&#9650; UP</a> | <a href="/cloudos/manage/operational-dashboard/cloud-tab/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/operational-dashboard/how-opdash-works/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage/operational-dashboard/">&#9650; UP</a> | <a href="/cloudos/moonshot/manage/operational-dashboard/cloud-tab/">NEXT &#9654;</a> </p>
 
 # Operational Dashboard: Environment Tab
 
@@ -66,14 +66,14 @@ The first step on the Operational Dashboard is to configure the HP Cloud OS Admi
 
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Caution:</b> 
 You must complete configuration of the Cloud Administration Node Internet Access and External DNS Server prerequisites before you complete the steps on the Complete Install panel. 
-For details, see <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>. 
+For details, see <a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>. 
 After that, the Edit Prerequisite dialogs for those settings are read-only. Once the install process is triggered, no changes can be made. 
 If you want to make changes to the Cloud Administration Node Internet Access and External DNS Server prerequisites, you will need to start over by re-installing the HP Cloud OS Administration node. 
 For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
 </p>
 
-* **Cloud Administration Node Internet Access** &mdash; Configure to set up Internet access on the HP Cloud OS Administration node. You will need Internet access for downloading hot fixes and updates using the [Hot Fixes](/cloudos/manage/operational-dashboard/cloud-tab/#hot-fixes) panel, 
-or the [Updates and Extensions](/cloudos/manage/operational-dashboard/cloud-tab/#updates-and-extensions) panel.
+* **Cloud Administration Node Internet Access** &mdash; Configure to set up Internet access on the HP Cloud OS Administration node. You will need Internet access for downloading hot fixes and updates using the [Hot Fixes](/cloudos/moonshot/manage/operational-dashboard/cloud-tab/#hot-fixes) panel, 
+or the [Updates and Extensions](/cloudos/moonshot/manage/operational-dashboard/cloud-tab/#updates-and-extensions) panel.
 
 * **(Optional) External DNS Server** &mdash; Configure to add the IP address of the external DNS server your Cloud OS environment is using to access named websites within your cloud.
 
@@ -132,7 +132,7 @@ The following table describes the Prerequisites page UI elements:
 
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Caution:</b> 
 If you want to set the Administration Node Internet Access Prerequisite, you must configure it before you complete the steps on the 
-Complete Install panel. For details, see the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a> topic.
+Complete Install panel. For details, see the <a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a> topic.
 After that, the Administration Node Internet Access Prerequisite dialogs are read-only. Once the install process is triggered, 
 no changes can be made. If you want to make changes, you need to start over by re-installing the HP Cloud OS Administration node. 
 For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
@@ -237,7 +237,7 @@ complete successfully, an error message displays on the Prerequisites page. For 
 
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Caution:</b> 
 If you want to set the External DNS Server Prerequisite, you must configure it before you complete the steps on the 
-Complete Install panel. For details, see the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a> topic.
+Complete Install panel. For details, see the <a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a> topic.
 After that, the External DNS Server Prerequisite dialogs are read-only. Once the install process is triggered, 
 no changes can be made. If you want to make changes, you need to start over by re-installing the HP Cloud OS Administration node. 
 For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
@@ -363,7 +363,7 @@ The following information provides details about the Server Types panel:
 
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Caution:</b> If you plan to customize the servers, 
 you must do that before you complete the steps on the Complete Install panel. For details, see 
-the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a> topic.
+the <a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a> topic.
 After that, the Server Types dialogs are read-only. Once the install process is triggered, 
 no changes can be made. If you want to make changes, you need to start over by re-installing the HP Cloud OS Administration node. 
 For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
@@ -425,7 +425,7 @@ The following table describes the Server Types page UI elements:
 
 <tr style="background-color: white; color: black;">
 <td> Edit Server Definition button </td>
-<td> Click to open the <a href="/cloudos/manage/operational-dashboard/environment-tab/#edit-server-definition-dialog">Edit Server Definition dialog</a> to customize the server type. 
+<td> Click to open the <a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#edit-server-definition-dialog">Edit Server Definition dialog</a> to customize the server type. 
 </td>
 </tr>
 
@@ -433,7 +433,7 @@ The following table describes the Server Types page UI elements:
 <td>Create Server Definition button </td>
 <td> Click to add a new server type on the Create Server Definition dialog. <br /> <br />
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> The Create Server Definition button only displays 
-while the servers can be added or edited. Once you do the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>, this button disappears and you cannot 
+while the servers can be added or edited. Once you do the <a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>, this button disappears and you cannot 
 add new servers or edit or delete existing servers.</p>
 </td>
 </tr>
@@ -442,7 +442,7 @@ add new servers or edit or delete existing servers.</p>
 <td> <nobr> Drop-down arrow > </nobr> Delete Server Definition </td>
 <td> Select to delete the server type from the HP Cloud OS Administration node. You are prompted to confirm the deletion. <br /> <br />
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> The Delete Server Definition menu item only displays while 
-the servers can be added or edited.  Once you do the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>, 
+the servers can be added or edited.  Once you do the <a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>, 
 this menu item disappears and you cannot add new servers or edit or delete existing servers.
 </td>
 </tr>
@@ -455,7 +455,7 @@ this menu item disappears and you cannot add new servers or edit or delete exist
 
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Caution:</b> If you plan to customize the servers, 
 you must do that before you complete the steps on the Complete Install panel. For details, see 
-the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a> topic.
+the <a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a> topic.
 After that, the Edit Server Definition dialogs are read-only. Once the install process is triggered, 
 no changes can be made. If you want to make changes, you need to start over by re-installing the HP Cloud OS Administration node. 
 For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
@@ -493,7 +493,7 @@ For procedural instructions, see <a href="/cloudos/install/">Install and Configu
 <td> Click to save the updated server definition. <br /> <br />
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> The <b>Update Server Definition</b> button only 
 displays while the servers are editable. Once you do the 
-<a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>, 
+<a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>, 
 the dialog become read-only and this button disappears.
 </p>
 </td>
@@ -508,7 +508,7 @@ the dialog become read-only and this button disappears.
 
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Caution:</b> The <b>Create Server Definition</b> button only displays while the servers are editable. 
 Once the install process is triggered by the 
-<a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>, this button disappears and no 
+<a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>, this button disappears and no 
 changes can be made. If you want to make changes, you need to start over by re-installing the HP Cloud OS Administration node. 
 For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
 </p>
@@ -545,7 +545,7 @@ For procedural instructions, see <a href="/cloudos/install/">Install and Configu
 <td> Click to create the updated server definition. <br /> <br />
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> The <b>Create Server Definition</b> button only 
 displays while the servers are editable. Once you do the 
-<a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>, 
+<a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>, 
 the dialog become read-only and this button disappears.
 </p>
 </td>
@@ -573,7 +573,7 @@ The following information provides details about the Connections panel:
 
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Caution:</b> 
 If you plan to customize the connections, you must do that before you complete the steps on the Complete Install panel.  
-For details, see <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>. 
+For details, see <a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>. 
 After that, the Connections dialogs are read-only. Once the install process is triggered, no changes can be made. 
 If you want to make changes, you need to start over by re-installing the HP Cloud OS Administration node. 
 For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
@@ -732,7 +732,7 @@ the network type is identified (admin, os_sdn, public):
 <tr style="background-color: white; color: black;">
 <td> Physical Interface column </td>
 <td> Lists the network modes' physical interface values for the corresponding connection set. For details, see the 
-<a href="/cloudos/manage/operational-dashboard/environment-tab/#edit-connection-dialog">Edit Connection Dialog</a> section.
+<a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#edit-connection-dialog">Edit Connection Dialog</a> section.
 </td>
 </tr>
 
@@ -747,7 +747,7 @@ It is applicable only for team mode.
 <tr style="background-color: white; color: black;">
 <td> Edit Connection button </td>
 <td> Click to open the Edit Connection dialog. For details, see the 
-<a href="/cloudos/manage/operational-dashboard/environment-tab/#edit-connection-dialog">Edit Connection Dialog</a> section.
+<a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#edit-connection-dialog">Edit Connection Dialog</a> section.
 </td>
 </tr>
 
@@ -755,7 +755,7 @@ It is applicable only for team mode.
 <td> Create Connection button </td>
 <td> Click to add a new connection on the Create Connection dialog. <br /> <br /> 
 <b>Note:</b> The Create Connection button only displays while the connections can be added or edited. 
-Once you do the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>, 
+Once you do the <a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>, 
 this button disappears and you cannot add new or edit connections.
 </td>
 </tr>
@@ -763,7 +763,7 @@ this button disappears and you cannot add new or edit connections.
 <tr style="background-color: white; color: black;">
 <td> <nobr> Drop-down arrow > Delete Connection </nobr> </td>
 <td> Select to delete the connection. You are prompted to confirm the deletion. <br /> <br /> 
-<b>Note:</b> This option is unavailable after the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>.
+<b>Note:</b> This option is unavailable after the <a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>.
 </td>
 </tr>
 
@@ -776,7 +776,7 @@ this button disappears and you cannot add new or edit connections.
 
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Caution:</b> 
 If you plan to customize the connections, you must do that before you complete the steps on the Complete Install panel.  
-For details, see the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>. 
+For details, see the <a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>. 
 After that, the Edit Connections dialogs are read-only. Once the install process is triggered, no changes can be made. 
 If you want to make changes, you need to start over by re-installing the HP Cloud OS Administration node. 
 For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
@@ -852,7 +852,7 @@ applicable only if you are using a Team mode. </td>
 <td> <nobr> Update Connection </nobr> </td>
 <td> Click to save the connection settings. <br /> <br /> 
 <b>Note:</b> The Update Connection button only displays the connections that are editable.  
-Once you do the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>, 
+Once you do the <a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>, 
 this dialog become read-only and this button disappears. </td>
 </tr>
 
@@ -865,7 +865,7 @@ this dialog become read-only and this button disappears. </td>
 
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Caution:</b> The Create Connection button only displays 
 while the connections are editable. Once the install process is triggered by the 
-<a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>, this button disappears and no changes can be made. 
+<a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>, this button disappears and no changes can be made. 
 If you want to make changes, you need to start over by re-installing the HP Cloud OS Administration node. 
 For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
 </p>
@@ -906,7 +906,7 @@ Interface mode is applicable for Team mode only. </td>
 <td> Logical Interface </td>
 <td> Type the logical interface appropriate for the network mode. <br /> <br /> 
 For each logical connection (intf0, intf1, intf2) the network type is identified (admin, os_sdn, public). For details, see 
-<a href="/cloudos/manage/operational-dashboard/environment-tab/#edit-connection-dialog">Edit Connection Dialog</a>. 
+<a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#edit-connection-dialog">Edit Connection Dialog</a>. 
 </td>
 </tr>
 
@@ -914,7 +914,7 @@ For each logical connection (intf0, intf1, intf2) the network type is identified
 <td> <nobr> Physical Interface </nobr> </td>
 <td> Type the physical interface values for the corresponding network mode. The value contains (up to) four characters, 
 and follows specific conventions. For details see 
-<a href="/cloudos/manage/operational-dashboard/environment-tab/#edit-connection-dialog">Edit Connection Dialog</a>.
+<a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#edit-connection-dialog">Edit Connection Dialog</a>.
 </td>
 </tr>
 
@@ -929,7 +929,7 @@ applicable only if you are using a Team mode. </td>
 <td> <nobr> Create Connection </nobr> </td>
 <td> Click to create the connection. <br /> <br /> 
 <b>Note:</b> The Create Connection button only displays the connections that are editable.  
-Once you do the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>, 
+Once you do the <a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>, 
 this dialog become read-only and this button disappears. </td>
 </tr>
 
@@ -986,7 +986,7 @@ open the Edit Address Ranges dialog for each network and click <b>Update Address
 However, the Complete Install step will run a validation check and cannot be completed until the errors are fixed. If there is an address 
 range error, the validation check will show the network type and possibly the address value. If not, open the Edit Address Ranges dialog 
 for the specified network and click <b>Update Address Ranges</b> to identify the incorrect address. For details, see 
-<a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>.
+<a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>.
 </p>
 
 <a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
@@ -1045,11 +1045,11 @@ This network handles traffic to the outside world for the instances.</li>
 
 <p>If the networks (particularly os_sdn and public) co-exist on the same physical network, VLAN Enabled must be set to <b>True</b>. 
 This means that the Network Mode will be set to <b>single</b> by default on the 
-<a href="/cloudos/manage/operational-dashboard/environment-tab/#confirm-complete-install-dialog">Confirm Complete Install Dialog</a>.</p>
+<a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#confirm-complete-install-dialog">Confirm Complete Install Dialog</a>.</p>
 
 <p>If the networks (particularly os_sdn and public) exist on separate physical interfaces,VLAN Enabled must be set to <b>False</b>. 
 This means that the Network Mode will be set to <b>dual</b> by default on the 
-<a href="/cloudos/manage/operational-dashboard/environment-tab/#confirm-complete-install-dialog">Confirm Complete Install Dialog</a>. </p>
+<a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#confirm-complete-install-dialog">Confirm Complete Install Dialog</a>. </p>
 
 </td>
 </tr>
@@ -1061,22 +1061,22 @@ This means that the Network Mode will be set to <b>dual</b> by default on the
 
 <tr style="background-color: white; color: black;">
 <td><b>Create Network</b> button</td>
-<td> Click to add a new network type on the <a href="/cloudos/manage/operational-dashboard/environment-tab/#create-network-dialog">Create Network Dialog</a>. 
+<td> Click to add a new network type on the <a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#create-network-dialog">Create Network Dialog</a>. 
 <br /> 		
 <p><b>Note:</b> The <b>Create Network</b> button only displays while the networks can be added or edited. 
-Once you do the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>, this button disappears and you cannot 
+Once you do the <a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>, this button disappears and you cannot 
 add or edit networks.</p>
 </td>
 </tr>
 				
 <tr style="background-color: white; color: black;">
 <td><b>Edit Network</b> button</td>
-<td>Click to open the <a href="/cloudos/manage/operational-dashboard/environment-tab/#edit-network-dialog">Edit Network Dialog</a>. </td>
+<td>Click to open the <a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#edit-network-dialog">Edit Network Dialog</a>. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> <nobr> Down arrow > <b>Edit Address Ranges</b> </nobr> </td>
-<td>Click to open the <a href="/cloudos/manage/operational-dashboard/environment-tab/#edit-address-ranges-dialog">Edit Address Ranges Dialog</a>. </td>
+<td>Click to open the <a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#edit-address-ranges-dialog">Edit Address Ranges Dialog</a>. </td>
 </tr>
 
 </table>
@@ -1091,7 +1091,7 @@ add or edit networks.</p>
 
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Caution:</b> If you plan to customize the networks, 
 you must do that before you complete the steps on the Complete Install panel. For details, see 
-the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a> topic.
+the <a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a> topic.
 After that, the Edit Network dialogs are read-only. Once the install process is triggered, no changes can be made. If you want to make changes, 
 you need to start over by re-installing the HP Cloud OS Administration node. 
 For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
@@ -1161,11 +1161,11 @@ CIDR notation value used to distinguish the network and host portions of an IP a
 <br /> 
 <p>(<i>Recommended</i>) Leave set to <b>False</b> (the default value) if the networks  (particularly os_sdn and public) exist on 
 separate physical interfaces. This means that the Network Mode will be set to <b>dual</b> by default on the 
-<a href="/cloudos/manage/operational-dashboard/environment-tab/#confirm-complete-install-dialog">Confirm Complete Install Dialog</a>. </p>
+<a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#confirm-complete-install-dialog">Confirm Complete Install Dialog</a>. </p>
 
 <p>Set to <b>True</b> if the networks (particularly os_sdn and public) co-exist on the same physical network. 
 This means that the Network Mode will be set to <b>single</b> by default on the 
-<a href="/cloudos/manage/operational-dashboard/environment-tab/#confirm-complete-install-dialog">Confirm Complete Install Dialog</a>. </p>
+<a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#confirm-complete-install-dialog">Confirm Complete Install Dialog</a>. </p>
 
 </td>
 </tr>
@@ -1205,7 +1205,7 @@ This means that the Network Mode will be set to <b>single</b> by default on the
 
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Caution:</b> If you plan to customize the address ranges, 
 you must do that before you complete the steps on the Complete Install panel. For details, see 
-the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a> topic.
+the <a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a> topic.
 After that, the Edit Address Ranges dialogs are read-only. Once the install process is triggered, no changes can be made. If you want to make changes, 
 you need to start over by re-installing the HP Cloud OS Administration node. 
 For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
@@ -1277,7 +1277,7 @@ See each network's Edit Address Ranges dialog for the defaults, as described in 
 
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Caution:</b> If you plan to customize the address ranges, 
 you must do that before you complete the steps on the Complete Install panel. For details, see 
-the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a> topic.
+the <a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a> topic.
 After that, the Edit Address Ranges dialogs are read-only. Once the install process is triggered, no changes can be made. If you want to make changes, 
 you need to start over by re-installing the HP Cloud OS Administration node. 
 For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
@@ -1335,7 +1335,7 @@ successful. Clicking <b>Cancel</b> will not trigger the validation step. Identif
 
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Caution:</b> If you plan to customize the address ranges, 
 you must do that before you complete the steps on the Complete Install panel. For details, see 
-the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a> topic.
+the <a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a> topic.
 After that, the Edit Address Ranges dialogs are read-only. Once the install process is triggered, no changes can be made. If you want to make changes, 
 you need to start over by re-installing the HP Cloud OS Administration node. 
 For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
@@ -1392,7 +1392,7 @@ successful. Clicking <b>Cancel</b> will not trigger the validation step. Identif
 
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Caution:</b> If you plan to customize the address ranges, 
 you must do that before you complete the steps on the Complete Install panel. For details, see 
-the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a> topic.
+the <a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a> topic.
 After that, the Edit Address Ranges dialogs are read-only. Once the install process is triggered, no changes can be made. If you want to make changes, 
 you need to start over by re-installing the HP Cloud OS Administration node. 
 For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
@@ -1450,7 +1450,7 @@ successful. Clicking <b>Cancel</b> will not trigger the validation step. Identif
 
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Caution:</b> The <b>Create Network</b> button only displays 
 while the networks are editable. Once the install process is triggered by the 
-<a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>, this button disappears and no 
+<a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>, this button disappears and no 
 changes can be made. If you want to make changes, you need to start over by re-installing the HP Cloud OS Administration node. 
 For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
 </p>
@@ -1522,10 +1522,10 @@ The following table describes the Create Network dialog UI elements:
 <ul>
 <li> <b>False</b> (Recommended) &mdash; Keep this default value if the networks  (particularly os_sdn and public) co-exist on 
 <b>separate</b> physical interfaces; if so, VLAN Enabled must be set to False. This means that the Network Mode will be set to <b>dual</b> by default on the 
-<a href="/cloudos/manage/operational-dashboard/environment-tab/#confirm-complete-install-dialog">Confirm Complete Install Dialog</a>. </li>
+<a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#confirm-complete-install-dialog">Confirm Complete Install Dialog</a>. </li>
 <li> <b>True</b> &mdash; Set to True if the networks (particularly os_sdn and public) co-exist on the same physical network; 
 if so, VLAN Enabled must be set to True. This means that the Network Mode will be set to <b>single</b> by default on the 
-<a href="/cloudos/manage/operational-dashboard/environment-tab/#confirm-complete-install-dialog">Confirm Complete Install Dialog</a>. </li>
+<a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#confirm-complete-install-dialog">Confirm Complete Install Dialog</a>. </li>
 </ul>
 </td>
 </tr>
@@ -1582,10 +1582,10 @@ You specify the install settings on the Confirm Complete Install Dialog and then
 of the network IP address ranges. If there is an error, this step cannot be completed until the error is fixed. 
 The validation check shows the network type and possibly the address value. You must open the Edit Address Ranges dialog for the specified 
 network and click <b>Update Address Ranges</b> to identify the incorrect address, and fix it. 
-See <a href="/cloudos/manage/operational-dashboard/environment-tab/#edit-address-ranges-dialog">Edit Address Ranges Dialog</a>.
+See <a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#edit-address-ranges-dialog">Edit Address Ranges Dialog</a>.
 </p>
 
-When the install is complete, the Operational Dashboard displays the Cloud tab (see the <a href="/cloudos/manage/operational-dashboard/cloud-tab/">Cloud Tab</a> section of this topic), after the user clicks the **Continue...** button.
+When the install is complete, the Operational Dashboard displays the Cloud tab (see the <a href="/cloudos/moonshot/manage/operational-dashboard/cloud-tab/">Cloud Tab</a> section of this topic), after the user clicks the **Continue...** button.
 
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Caution:</b> Be sure the values for the 
 Prerequisites, Server Types, Connections and Networks are what you need, before you start the install process. Once the install process is triggered, 
@@ -1614,7 +1614,7 @@ HP Cloud OS Administration node installation. After the HP Cloud OS Administrati
 of the network IP address ranges. If there is an error, this step cannot be completed until the error is fixed. 
 The validation check shows the network type and possibly the address value. You must open the Edit Address Ranges dialog for the specified 
 network and click <b>Update Address Ranges</b> to identify the incorrect address, and fix it. 
-See <a href="/cloudos/manage/operational-dashboard/environment-tab/#edit-address-ranges-dialog">Edit Address Ranges Dialog</a>.
+See <a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#edit-address-ranges-dialog">Edit Address Ranges Dialog</a>.
 </p>
 </td>
 </tr>
@@ -1664,7 +1664,7 @@ This button then becomes a Refresh button. </td>
 <td> <b>Continue...</b> button </td>
 <td> Replaces the Complete Install button after the HP Cloud OS Administration node install is complete. 
 Click to add the Cloud tab. The HP Cloud OS Administration node is now ready to be configured to set up a cloud. 
-See the <a href="/cloudos/manage/operational-dashboard/cloud-tab">Cloud Tab</a> topic for descriptions of the panels that set up a cloud.</td>
+See the <a href="/cloudos/moonshot/manage/operational-dashboard/cloud-tab">Cloud Tab</a> topic for descriptions of the panels that set up a cloud.</td>
 </tr>
 				
 </table>
@@ -1724,7 +1724,7 @@ special characters. In the current release, it must end in .com, .org, .net, .ed
 of the network IP address ranges. If there is an error, this step cannot be completed until the error is fixed. 
 The validation check shows the network type and possibly the address value. You must open the Edit Address Ranges dialog for the specified 
 network and click <b>Update Address Ranges</b> to identify the incorrect address, and fix it. 
-See <a href="/cloudos/manage/operational-dashboard/environment-tab/#edit-address-ranges-dialog">Edit Address Ranges Dialog</a>.
+See <a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#edit-address-ranges-dialog">Edit Address Ranges Dialog</a>.
 </p>
 
 </td>

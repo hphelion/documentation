@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How the Operational Dashboard Works"
-permalink: /cloudos/manage/operational-dashboard/how-opdash-works/
+permalink: /cloudos/moonshot/manage/operational-dashboard/how-opdash-works/
 product: cloudos
 
 ---
@@ -19,7 +19,7 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> <a href="/cloudos/manage/operational-dashboard/">&#9664; PREV</a> | <a href="/cloudos/">&#9650; UP</a> | <a href="/cloudos/manage/operational-dashboard/environment-tab/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/operational-dashboard/">&#9664; PREV</a> | <a href="/cloudos/">&#9650; UP</a> | <a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/">NEXT &#9654;</a> </p>
 
 # How the Operational Dashboard Works
 
@@ -31,7 +31,7 @@ The Operational Dashboard consists of the following tabs:
 
 * **Environment Tab**
 
- This tab displays the following panels on which you set up your cloud environment and complete the HP Cloud OS Administration node installation. The panels are displayed in the order you must follow for the installation process. For details on each panel, see the [Environment Tab](/cloudos/manage/operational-dashboard/environment-tab) topic.
+ This tab displays the following panels on which you set up your cloud environment and complete the HP Cloud OS Administration node installation. The panels are displayed in the order you must follow for the installation process. For details on each panel, see the [Environment Tab](/cloudos/moonshot/manage/operational-dashboard/environment-tab) topic.
 
  * Welcome
  * Prerequisites
@@ -42,7 +42,7 @@ The Operational Dashboard consists of the following tabs:
  
 * **Cloud Tab**
 
- This tab displays the following panels on which you complete the installation process to manage the nodes that will be used in your cloud and create a cloud. You can also download install modules or plugins. For details on each panel, see the [Cloud Tab](/cloudos/manage/operational-dashboard/cloud-tab) topic.
+ This tab displays the following panels on which you complete the installation process to manage the nodes that will be used in your cloud and create a cloud. You can also download install modules or plugins. For details on each panel, see the [Cloud Tab](/cloudos/moonshot/manage/operational-dashboard/cloud-tab) topic.
 
  * Overview
  * Manage Nodes
@@ -54,7 +54,7 @@ The Operational Dashboard consists of the following tabs:
 
 * **Settings Tab**
 
- The Settings tab displays the following panels on which you can specify user display settings, view the number of days remaining on and update the Cloud OS license, and view the Operational Dashboard and Cloud OS versions. For details on each panel, see the [Settings Tab](/cloudos/manage/operational-dashboard/settings-tab) topic.
+ The Settings tab displays the following panels on which you can specify user display settings, view the number of days remaining on and update the Cloud OS license, and view the Operational Dashboard and Cloud OS versions. For details on each panel, see the [Settings Tab](/cloudos/moonshot/manage/operational-dashboard/settings-tab) topic.
 
  * User Settings
  * License

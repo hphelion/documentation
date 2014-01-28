@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Operational Dashboard: Settings Tab"
-permalink: /cloudos/manage/operational-dashboard/settings-tab/
+permalink: /cloudos/moonshot/manage/operational-dashboard/settings-tab/
 product: cloudos
 
 ---
@@ -20,7 +20,7 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> <a href="/cloudos/manage/operational-dashboard/cloud-tab/">&#9664; PREV</a> | <a href="/cloudos/manage/operational-dashboard/">&#9650; UP</a> | <a href="/cloudos/manage/administration-dashboard/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/operational-dashboard/cloud-tab/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage/operational-dashboard/">&#9650; UP</a> | <a href="/cloudos/moonshot/manage/administration-dashboard/">NEXT &#9654;</a> </p>
 
 # Operational Dashboard: Settings Tab
 

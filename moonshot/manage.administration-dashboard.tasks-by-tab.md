@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Administration Dashboard Tasks by Tab"
-permalink: /cloudos/manage/administration-dashboard/tasks-by-tab/
+permalink: /cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/
 product: cloudos
 
 ---
@@ -18,7 +18,7 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> <a href="/cloudos/manage/administration-dashboard/tasks-by-role/">&#9664; PREV</a> | <a href="/cloudos/manage/administration-dashboard/">&#9650; UP</a> | NEXT &#9654; </p>
+<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/administration-dashboard/tasks-by-role/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage/administration-dashboard/">&#9650; UP</a> | NEXT &#9654; </p>
 
 # Administration Dashboard Tasks by Tab
 
@@ -59,7 +59,7 @@ For example, on Cloud > Projects, you can see a list of all projects in the clou
 
 ### How to See All Services
 
-The Services window provides a convenient place for users who have permission to see a read-only list of services that are registered in the cloud. To learn whether you have permission, see [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
+The Services window provides a convenient place for users who have permission to see a read-only list of services that are registered in the cloud. To learn whether you have permission, see [Administration Dashboard Tasks by Role](/cloudos/moonshot/manage/administration-dashboard/tasks-by-role/).
 
 To see cloud services:
 
@@ -147,7 +147,7 @@ For information about how to use the documentation application, see the [Develop
 
 ### How to See All Domains
 
-The Domains window provides a convenient place for users who have permission to see a list of domains in the cloud. (Currently, the cloud contains one domain.) To learn whether you have permission, see [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
+The Domains window provides a convenient place for users who have permission to see a list of domains in the cloud. (Currently, the cloud contains one domain.) To learn whether you have permission, see [Administration Dashboard Tasks by Role](/cloudos/moonshot/manage/administration-dashboard/tasks-by-role/).
 
 To view all domains in the cloud:
 
@@ -163,7 +163,7 @@ To view all domains in the cloud:
 
 **Concepts:**
 
-The Project window provides a convenient place for users who have permission to see a list of all projects in the cloud and to work with those projects. To learn whether you have permission, see [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
+The Project window provides a convenient place for users who have permission to see a list of all projects in the cloud and to work with those projects. To learn whether you have permission, see [Administration Dashboard Tasks by Role](/cloudos/moonshot/manage/administration-dashboard/tasks-by-role/).
 
 Projects are groupings that allow designated users to view the same set of content. Projects protect topology designs and profiles, and realized 
 resources (such as VMs, volumes, and others) from being visible to all users.
@@ -347,7 +347,7 @@ To restore a project:
 
 **Concepts:**
 
-The Users window provides a convenient place for users who have permission to see a list of all users in the cloud and to work with those users. To learn whether you have permission, see [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
+The Users window provides a convenient place for users who have permission to see a list of all users in the cloud and to work with those users. To learn whether you have permission, see [Administration Dashboard Tasks by Role](/cloudos/moonshot/manage/administration-dashboard/tasks-by-role/).
 
 Users include both people and services (such as Nova). When you create a person user, you must add that user to a project and assign a project role. 
 Later, you can add the user to additional projects and roles.
@@ -394,7 +394,7 @@ To create a user:
 </li> 
 
 <li> <i>Optional</i>: Click the <b>Cloud</b> tab if you want to assign the user cloud-specific roles. 
-See <a href="/cloudos/manage/administration-dashboard/tasks-by-role/">Administration Dashboard Tasks by Roles</a>.  </li> 
+See <a href="/cloudos/moonshot/manage/administration-dashboard/tasks-by-role/">Administration Dashboard Tasks by Roles</a>.  </li> 
 
 <li> Click <b>Create User</b>.  </li> 
 
@@ -414,7 +414,7 @@ To edit a user:
 
 3. On the <b>User</b> tab of the dialog box, update the <b>User Name</b>, <b>Email</b>, or <b>Password</b>.
 
-4. On the <b>Cloud</b> tab, update the user cloud role. See [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
+4. On the <b>Cloud</b> tab, update the user cloud role. See [Administration Dashboard Tasks by Role](/cloudos/moonshot/manage/administration-dashboard/tasks-by-role/).
 
 5. Click <b>Update User</b>.
 
@@ -484,7 +484,7 @@ You can enable a disabled user. To enable a user:
 **Concepts:**
 
 The Roles window provides a convenient place for users who have permission to see a list of all roles in the cloud and to work with those roles. 
-To learn whether you have permission, see [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
+To learn whether you have permission, see [Administration Dashboard Tasks by Role](/cloudos/moonshot/manage/administration-dashboard/tasks-by-role/).
 
 Use roles to give a user privileges to access project resources. Different roles assign different privileges.
 
@@ -560,7 +560,7 @@ To delete a role:
 **Concepts:**
 
 The Images window provides a convenient place for users who have permission to see a list of all images in the cloud and to work with those images. 
-To learn whether you have permission, see [Administration Dashboard Tasks by Roles](/cloudos/manage/administration-dashboard/tasks-by-role/).
+To learn whether you have permission, see [Administration Dashboard Tasks by Roles](/cloudos/moonshot/manage/administration-dashboard/tasks-by-role/).
 
 If you create a Public image, project users can access the image and use it to launch a VM. Only Public images are visible to all users.
 
@@ -763,7 +763,7 @@ To delete one or more images:
 **Concepts:**
 
 The Region tab provides a convenient place for users who have permission to work with region services and content. 
-To learn whether you have permission, see [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
+To learn whether you have permission, see [Administration Dashboard Tasks by Role](/cloudos/moonshot/manage/administration-dashboard/tasks-by-role/).
 
 A Region is a compute grouping that provides the context for the usage of compute servers, networking systems, and storage resources. 
 A region makes use of a defined set of users, projects, topology templates, profiles, and services governed by a single OpenStack 
@@ -812,7 +812,7 @@ To see an overview of usage:
 **Concepts:**
 
 Instances are running VMs. The Region tab provides a convenient place for users who have permission to see region instances. To learn whether you have 
-permission, see [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
+permission, see [Administration Dashboard Tasks by Role](/cloudos/moonshot/manage/administration-dashboard/tasks-by-role/).
 
 To see a list of instances:
 
@@ -908,7 +908,7 @@ To terminate one or more instances:
 **Concepts:**
 
 The Region tab provides a convenient place for users who have permission to see information about services, compute service and default quotas (limits). 
-To learn whether you have permission, see [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
+To learn whether you have permission, see [Administration Dashboard Tasks by Role](/cloudos/moonshot/manage/administration-dashboard/tasks-by-role/).
 
 **Tasks:**
 
@@ -1011,7 +1011,7 @@ To see a list of region default quotas (limits), click <b>Region</b> > <b>Info</
 **Concepts:**
 
 The Region tab provides a convenient place for users who have permission see volumes. To learn whether you have permission, see 
-[Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
+[Administration Dashboard Tasks by Role](/cloudos/moonshot/manage/administration-dashboard/tasks-by-role/).
 
 Volumes are the disk storage volumes that have been created in the region. Volumes are persistent, meaning you can create data in these volumes and attach 
 to various VMs (instances) over time as needed.
@@ -1089,7 +1089,7 @@ To delete one or more volumes:
 **Concepts:**
 
 The Region tab provides a convenient place for users who have permission to see a list of images (that are not snapshots) and to work with those images. 
-To learn whether you have permission, see [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
+To learn whether you have permission, see [Administration Dashboard Tasks by Role](/cloudos/moonshot/manage/administration-dashboard/tasks-by-role/).
 
 Images are stored at the Domain level with a single Glance service and are unaffected by region selection. Only Public images are visible to all users.
 
@@ -1229,7 +1229,7 @@ To delete one or more images:
 **Concepts:**
 
 The Region tab provides a convenient place for users who have permission to see a list of networks and work with those networks. 
-To learn whether you have permission, see [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
+To learn whether you have permission, see [Administration Dashboard Tasks by Role](/cloudos/moonshot/manage/administration-dashboard/tasks-by-role/).
 
 To see a list of networks:
 
@@ -1385,7 +1385,7 @@ To delete one or more networks:
 **Concepts:**
 
 The Region tab provides a convenient place for users who have permission to see a list of routers and work with those routers. To learn whether you have 
-permission, see [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
+permission, see [Administration Dashboard Tasks by Role](/cloudos/moonshot/manage/administration-dashboard/tasks-by-role/).
 
 
 To see a list of routers:
@@ -1422,7 +1422,7 @@ To delete one or more routers:
 **Concepts:**
 
 The Region tab provides a convenient place for users who have permission to see a list of flavors and work with those flavors. 
-To learn whether you have permission, see [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
+To learn whether you have permission, see [Administration Dashboard Tasks by Role](/cloudos/moonshot/manage/administration-dashboard/tasks-by-role/).
 
 Flavors are machine configurations that can be used to create new VMs. A flavor describes the amount of memory, number of CPUs, and ephemeral disk space available to the VM. You can create an extra spec key-value for a flavor.
 
@@ -1554,7 +1554,7 @@ To delete a flavor extra specs key:
 Projects are groupings that allow designated users to view the same set of content. Projects protect topology templates, infrastructure designs, and 
 realized resources (such as VMs, volumes, and others) from being visible to all users.
 
-To learn about which tasks you can perform on the Project tab, see your role under [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
+To learn about which tasks you can perform on the Project tab, see your role under [Administration Dashboard Tasks by Role](/cloudos/moonshot/manage/administration-dashboard/tasks-by-role/).
 
 **Tasks:**
 
@@ -2536,12 +2536,12 @@ To create an image:
 
 7. Leave <b>Public</b> unselected to create a private image. <!-- Private images can be seen by --> 
 
-    To learn whether you have permission to create a public image, see your role tasks under [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
+    To learn whether you have permission to create a public image, see your role tasks under [Administration Dashboard Tasks by Role](/cloudos/moonshot/manage/administration-dashboard/tasks-by-role/).
 
 8. Leave <b>Protected</b> unselected to create an image that other users can edit or delete.
 
 9. Select <b>Protected</b> to create a read-only image that other users cannot edit or delete. To learn whether you have permission to create a protected 
-image, see your role under [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
+image, see your role under [Administration Dashboard Tasks by Role](/cloudos/moonshot/manage/administration-dashboard/tasks-by-role/).
 
 10. Click <b>Create Image</b>. If successful, the image displays with an <b>Active</b> status. If creation is not successful within a specified amount of time (set by your system administrator; typically no more than five minutes), the <b>Status</b> of the image in the list displays <b>Upload Failed</b>.
 
@@ -2915,7 +2915,7 @@ To create a router:
 
 #### How to Add an Internal Interface to a Router
 
-To learn whether you have permission, see your role under [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
+To learn whether you have permission, see your role under [Administration Dashboard Tasks by Role](/cloudos/moonshot/manage/administration-dashboard/tasks-by-role/).
 
 To add an internal interface to a project router:
 
@@ -2943,7 +2943,7 @@ To add an internal interface to a project router:
 
 #### How to Add an External Interface to a Router
 
-To learn whether you have permission, see your role under [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
+To learn whether you have permission, see your role under [Administration Dashboard Tasks by Role](/cloudos/moonshot/manage/administration-dashboard/tasks-by-role/).
 
 To add an external interface to a router:
 
@@ -2998,7 +2998,7 @@ To see the diagram:
 
 * [How to Create a Router](#how-to-create-a-router)
 
-* [Topology Designs](/cloudos/manage/administration-dashboard/topology-designs/)
+* [Topology Designs](/cloudos/moonshot/manage/administration-dashboard/topology-designs/)
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
@@ -3292,7 +3292,7 @@ Content includes material such as images and topology templates.
 You can update and upgrade the Administration Dashboard while your system continues to run. CODN contains all the products and services 
 HP offers to help maintain your cloud.
 
-To learn whether you have permission to use CODN, see [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
+To learn whether you have permission to use CODN, see [Administration Dashboard Tasks by Role](/cloudos/moonshot/manage/administration-dashboard/tasks-by-role/).
 
 You must configure the HP Cloud OS Administration Dashboard to access an HP Cloud OS Distribution Network account before you can use the 
 Updates and Extensions window. See the Tasks sections, below.
