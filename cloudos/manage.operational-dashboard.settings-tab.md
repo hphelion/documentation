@@ -20,7 +20,7 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> <a href="/cloudos/manage/operational-dashboard/cloud-tab/">&#9664; PREV</a> | <a href="/cloudos/manage/operational-dashboard/">&#9650; UP</a> | <a href="/cloudos/manage/administration-dashboard/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/cloudos/manage/operational-dashboard/cloud-tab/">&#9664; PREV</a> | <a href="/cloudos/manage/operational-dashboard/">&#9650; UP</a> | NEXT &#9654; </p>
 
 # Operational Dashboard: Settings Tab
 
@@ -67,7 +67,7 @@ This topic provides details about the User Settings panel. The following table d
 
 </table>
 
-<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 ## License
 
@@ -115,6 +115,6 @@ about 20 minutes elapses before the new license is activated.</p>
 
 The About panel displays the version of the Operational Dashboard and the HP Cloud OS build, and the copyrights.
 
-<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 

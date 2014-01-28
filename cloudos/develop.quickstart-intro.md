@@ -6,8 +6,6 @@ product: cloudos
 
 ---
 
-<a name="_top"> </a>
-
 <script>
 
 function PageRefresh {
@@ -270,5 +268,5 @@ We are updating our API use case documentation &mdash; coming soon.
 
 <!-- Proceed to the next API Quick Start topic, [Use Case 1: Define &amp; Provision a Topology](/cloudos/develop/quickstart-usecase1). --> 
 
-<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
  
