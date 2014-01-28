@@ -7,8 +7,6 @@ product: cloudos
 ---
 
 
-<a name="_top"> </a>
-
 <script> 
 
 function PageRefresh { 
@@ -154,7 +152,7 @@ You can change the following proxy information:
 
 
 
-<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 	
 ## Cloud Administrator Tasks
 
@@ -162,7 +160,7 @@ You can change the following proxy information:
 
 After your organization works through [Getting Started with the Administration Dashboard](/cloudos/manage/administration-dashboard/getting-started/), 
 cloud administrators can focus on day-to-day cloud administrator tasks. As a best practice, cloud administrators concentrate on 
-the <b>Cloud</b> and <b>Region</b> tabs.
+the <b>Cloud</b> and <b>Region</b> tabs, and are the only users who create external networks or subnets on external networks.
 
 **Tasks:**
 
@@ -172,12 +170,16 @@ the <b>Cloud</b> and <b>Region</b> tabs.
 
 * [How to Access Your Authentication Token](/cloudos/manage/administration-dashboard/tasks-by-tab/#how-to-access-your-authentication-token)
 
+* [How to Create an External Network](/cloudos/manage/administration-dashboard/tasks-by-tab/#how-to-create-an-external-network)
+
+* [How to Create a Subnet](/cloudos/manage/administration-dashboard/tasks-by-tab/#how-to-create-a-subnet)
+
 * [Administration Dashboard Settings](/cloudos/manage/administration-dashboard/tasks-by-tab/#administration-dashboard-settings)
 
 * [Updates and Extensions](/cloudos/manage/administration-dashboard/tasks-by-tab/#updates-and-extensions)
 	
 
-<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 	
 ## Cloud Architect Tasks
 
@@ -351,7 +353,7 @@ REST service is running.</li>
 balancer instance, you can save it as a snapshot. See 
 <a href="/cloudos/manage/administration-dashboard/tasks-by-tab/#how-to-create-an-instance-snapshot">How to Create an Instance Snapshot</a>.</p> 
 
-<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 
 
@@ -396,7 +398,7 @@ As a best practice, project administrators maintain projects, with a focus on th
 
 
 
-<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 ## Project User Tasks
 
@@ -438,5 +440,5 @@ As a best practice, project users focus on the following tasks.
 
 
 
-<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

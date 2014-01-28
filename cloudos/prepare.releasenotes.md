@@ -6,8 +6,6 @@ product: cloudos
 
 ---
 
-<a name="_top"> </a>
-
 <script>
 
 function PageRefresh {
@@ -218,5 +216,5 @@ When you are ready to install the HP Cloud OS Sandbox, see the Install category 
 
 See the [HP Cloud OS Open Source and Third-Party Software License Agreements](/cloudos/os-3rd-party-license-agreements/).
 
-<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
