@@ -6,8 +6,6 @@ product: cloudos
 
 ---
 
-<a name="_top"> </a>
-
 <script> 
  
 function PageRefresh { 
@@ -299,5 +297,5 @@ IMPORTANT: Use Google Chrome or Mozilla Firefox.
 
 Proceed to the next topic, [Set the Admin Node Prerequisites](/cloudos/install/admin-node-prerequisites/), to begin the process of setting up and installing the Admin node.  
 
-<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

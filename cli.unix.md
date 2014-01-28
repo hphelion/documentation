@@ -23,7 +23,7 @@ We wanted to ensure you were aware of the changes that may affect you during thi
 
   + Although the CLI has moved into the open source community, showstoppers and significant defects will be examined and addressed by the HP Cloud SDK/CLI team on a case-by-case basis.
 
-After 6 months, access to online resources will be available through GitHub, and no support will be offered from HP Public Cloud. Of course, you are most welcome to access the install from GitHub and continue your development.
+After 6 months, access to online resources will be available through GitHub, and no support will be offered from HP Public Cloud. Of course, you are most welcome to access the install from GitHub and continue your development ([HPCloud Github](https://github.com/hpcloud/unix_cli)).
 
 _________________________________________
 
@@ -66,7 +66,9 @@ Download the HP Cloud environment command-line interface (CLI) software for UNIX
 + [**HP Cloud version 13.5** environment CLI software for UNIX CLI](http://rubygems.org/gems/hpcloud)
 + [**HP Cloud version 12.12** environment CLI software for UNIX CLI](/file/hpcloud.gem)
 
-Some articles about ways you can use the Unix CLI:
+##For more information## {#articles}
+
+For additional tips and How-tos on using your UNIX command-line interface (CLI), see [UNIX CLI: Articles on to use the UNIX CLI](/cli/unix/articles/):
 
 * [Using bash command completion](/cli/unix/articles/complete)
 * [Generating verbose debugging output](/cli/unix/articles/debugging)
@@ -76,3 +78,5 @@ Some articles about ways you can use the Unix CLI:
 * [Performing large file uploads](/cli/unix/articles/large)
 * [Creating servers with user data](/cli/unix/articles/userdata)
 * [Modifying report paging](/cli/unix/articles/paging)
+* * [Creating servers with custom personality](/cli/unix/articles/personality)
+* [Creating servers with custom user data](/cli/unix/articles/userdata)

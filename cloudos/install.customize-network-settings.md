@@ -6,8 +6,6 @@ product: cloudos
 
 ---
 
-<a name="_top"> </a>
-
 <script>
 
 function PageRefresh {
@@ -41,7 +39,7 @@ After that, the network settings in the HP Cloud OS Operational Dashboard are re
 ## Introduction
 
 Based on the network infrastructure suggested in the "Plan the Infrastructure for a Cloud" section of 
-[Before You Install](/cloudos/before-you-install), you must customize the network settings. Here are some of the
+[Before You Install](/cloudos/install/before-you-install), you must customize the network settings. Here are some of the
 criteria to be considered while making changes to the default settings:
 
 * The default settings, "Dual", assume you have a separate physical network for each interface. 
@@ -235,6 +233,6 @@ the addresses are correct.
 
 Proceed to the next topic, [Complete Admin Node Installation (Required)](/cloudos/install/complete-admin-node-installation/).
 
-<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 

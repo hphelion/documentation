@@ -6,8 +6,6 @@ product: cloudos
 
 ---
 
-<a name="_top"> </a>
-
 <script>
 
 function PageRefresh {
@@ -123,5 +121,5 @@ In this whiteboard demo, Mark Perriera illustrates SDN with Cloud OS.
 HP has enhanced Cloud Security across the HP Cloud portfolio. Ben de Bont, CSO of HP Cloud, highlights some of the advanced security offerings and intriguing solutions available to HP Customers.
 
 
-<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

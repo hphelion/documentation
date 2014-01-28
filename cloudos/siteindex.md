@@ -6,8 +6,6 @@ product: cloudos
 
 ---
 
-<a name="_top"> </a>
-
 <script>
 
 function PageRefresh {
@@ -66,6 +64,12 @@ PageRefresh();
   * [Operational Dashboard: Cloud Tab](/cloudos/manage/operational-dashboard/cloud-tab)
   * [Operational Dashboard: Settings Tab](/cloudos/manage/operational-dashboard/settings-tab)
 * [HP Cloud OS Administration Dashboard Help](/cloudos/manage/administration-dashboard/)  
+  * [Before You Begin with the Administration Dashboard Help](/cloudos/manage/administration-dashboard/before-you-begin/)
+  * [Welcome to the HP Cloud OS Administration Dashboard](/cloudos/manage/administration-dashboard/welcome/)
+  * [Getting Started with the Administration Dashboard](/cloudos/manage/administration-dashboard/getting-started/)
+  * [Topology Designs](/cloudos/manage/administration-dashboard/topology-designs/)
+  * [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/)
+  * [Administration Dashboard Tasks by Tab](/cloudos/manage/administration-dashboard/tasks-by-tab/)
 
 #### [Develop](/cloudos/develop/)
 
@@ -82,5 +86,5 @@ PageRefresh();
 * [OpenStack Networking Administration Guide](http://docs.openstack.org/trunk/openstack-network/admin/content/index.html)
 * [OpenStack Operations Guide](http://docs.openstack.org/trunk/openstack-ops/content/index.html)
  
-<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
  

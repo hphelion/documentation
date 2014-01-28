@@ -6,7 +6,7 @@ product: cloudos
 
 ---
 
-# HP Cloud OS Documentation
+# HP Cloud OS Documentation 
 
 Welcome! HP Cloud OS is an enterprise-grade, open and extensible architecture that leverages the power of OpenStack technology, 
 the fastest growing open-source cloud community. 
