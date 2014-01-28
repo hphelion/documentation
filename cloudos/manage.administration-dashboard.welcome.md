@@ -103,6 +103,8 @@ General rules about visibility in the Administration Dashboard include:
 
 * All users can see content that is marked Public, Cloud.
 
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
 ### Administration Dashboard Tabs
 
 #### Settings Tab
@@ -375,6 +377,8 @@ Allows you to work with the images (create, launch and delete).
 
 </table>
 
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
 ## Prerequisites to Accessing the Administration Dashboard
 
 Before you can access the HP Cloud OS Administration Dashboard, someone in your organization must use the HP Cloud OS Operational Dashboard 
@@ -395,5 +399,5 @@ specified on the Create Cloud > Attributes dialog in the HP Cloud OS Operational
 
 * Within the Operational Dashboard, Manage Clouds > More > Launch Dashboard for the cloud you created.
 
-<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
