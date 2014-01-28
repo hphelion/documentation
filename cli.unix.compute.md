@@ -21,7 +21,7 @@ After 6-months, access to online resources will still be available, but no suppo
 
 _________________________________________
 
-<iframe src="http://player.vimeo.com/video/37689112?title=0&amp;byline=0&amp;portrait=0" width="580" height="420" frameborder="0"> </iframe>
+<!-- <iframe src="http://player.vimeo.com/video/37689112?title=0&amp;byline=0&amp;portrait=0" width="580" height="420" frameborder="0"> </iframe> -->
 
 This page gives you a few examples of how to perform various compute tasks using the HP Cloud service.  This page discusses the following tasks:
 

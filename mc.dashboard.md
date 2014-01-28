@@ -68,7 +68,7 @@ The activity stream pane helps you track of various data about the resources you
 
 This pane displays platform alerts, including appropriate date and time information:
 
-<img src="media/Screen%20Shot%202012-11-09%20at%201.48.12%20PM_0.png" width="580" height="146" alt="" />
+<img src="media/Screen_Shot_2012-11-09_at_1.48.12_PM.png" width="580" height="146" alt="" />
 
 For more information, please see the [activity stream](/activity-stream/) page.
 
