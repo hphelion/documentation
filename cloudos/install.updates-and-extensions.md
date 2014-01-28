@@ -6,8 +6,6 @@ product: cloudos
 
 ---
 
-<a name="_top"> </a>
-
 <script> 
 
 function PageRefresh { 
@@ -250,5 +248,5 @@ If the service does not restart, check the codn.conf file for syntax errors.
 
 If you have not already done so, proceed to [Launch the Administration Dashboard](/cloudos/install/launch-admin-dashboard).
 
-<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
