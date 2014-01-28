@@ -6,8 +6,6 @@ product: cloudos
 
 ---
 
-<a name="_top"> </a>
-
 <script>
 
 function PageRefresh {
@@ -126,5 +124,5 @@ the Cloud clean deleted objects service will always fail if run on a Cloud Contr
 because that Clean-up Utility service includes tasks that interact with the OpenStack Nova compute service, 
 which is not installed on the Cloud Controller node, but only on Compute Controller nodes.
  
-<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
