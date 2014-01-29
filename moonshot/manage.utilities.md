@@ -2,7 +2,7 @@
 layout: default
 title: "HP Cloud OS Utilities"
 permalink: /cloudos/moonshot/manage/utilities/
-product: cloudos
+product: moonshot
 
 ---
 

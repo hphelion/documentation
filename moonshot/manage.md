@@ -2,7 +2,7 @@
 layout: default
 title: "Manage your Cloud"
 permalink: /cloudos/moonshot/manage/
-product: cloudos
+product: moonshot
 
 ---
 

@@ -2,7 +2,7 @@
 layout: default
 title: "HP Cloud OS Troubleshooting"
 permalink: /cloudos/moonshot/manage/troubleshooting/
-product: cloudos
+product: moonshot
 
 ---
 

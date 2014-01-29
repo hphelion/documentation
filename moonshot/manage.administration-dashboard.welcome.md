@@ -2,7 +2,7 @@
 layout: default
 title: "Welcome to the HP Cloud OS Administration Dashboard"
 permalink: /cloudos/moonshot/manage/administration-dashboard/welcome/
-product: cloudos
+product: moonshot
 
 ---
 

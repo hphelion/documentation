@@ -2,7 +2,7 @@
 layout: default
 title: "HP Cloud OS Operational Dashboard Help"
 permalink: /cloudos/moonshot/manage/operational-dashboard/
-product: cloudos
+product: moonshot
 
 ---
 

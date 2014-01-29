@@ -2,7 +2,7 @@
 layout: default
 title: "Getting Started with the Administration Dashboard"
 permalink: /cloudos/moonshot/manage/administration-dashboard/getting-started/
-product: cloudos
+product: moonshot
 
 ---
 
