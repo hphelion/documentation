@@ -27,9 +27,16 @@ After 6 months, access to online resources will be available through GitHub, and
 
 _________________________________________
 
-The Unix Command Line Interface is a tool which allows Unix or Mac users to manage their HP Public Cloud from the command line or automated through scripts.  There is no need to understand the underlying REST API or XML document format to use the Unix CLI.  There are two versions of the Unix CLI: the 2.0 version for Cloud 1.1 and the 1.9 version for Cloud 1.0.
+The Unix Command Line Interface is a tool which allows Unix or Mac users to manage their HP Cloud from the command line or automated through scripts.  There is no need to understand the underlying REST API or XML document format to use the Unix CLI.  There are two versions of the Unix CLI: the 2.0 version for HP Cloud version 13.5 and the 1.9 version for HP Cloud version 12.12. We recommend that you move to version v13.5, but during the transition you can still find the documentation for v12.12 here.
 
-Cloud 1.1 (Unix CLI 2.0) Documenation:
+Access the following documentation and resources:
+
+* [Version 13.5 documentation](#135)
+* [Version 12.12 documentation](#1212)
+* [Download the software](#downloads)
+* [For more information](#articles)
+
+##Version 13.5 (Unix CLI 2.0) documenation {#135}
 
 * [Installation](/cli/unix/2/install)
 * [Account Configuration](/cli/unix/2/configuration)
@@ -43,7 +50,7 @@ Cloud 1.1 (Unix CLI 2.0) Documenation:
 * [CLI Reference](/cli/unix/2/reference)
 * [Release Notes](/cli/unix/release-notes)
 
-Cloud 1.0 (Unix CLI 1.9) Documenation:
+##Version 12.12 (Unix CLI 1.9) documenation {#1212}
 
 * [Installation](/cli/unix/install)
 * [Account Configuration](/cli/unix/configuration)
@@ -78,5 +85,5 @@ For additional tips and How-tos on using your UNIX command-line interface (CLI),
 * [Performing large file uploads](/cli/unix/articles/large)
 * [Creating servers with user data](/cli/unix/articles/userdata)
 * [Modifying report paging](/cli/unix/articles/paging)
-* * [Creating servers with custom personality](/cli/unix/articles/personality)
+* [Creating servers with custom personality](/cli/unix/articles/personality)
 * [Creating servers with custom user data](/cli/unix/articles/userdata)
