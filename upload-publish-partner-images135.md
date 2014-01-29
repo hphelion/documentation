@@ -7,7 +7,7 @@ product: image
 ---
 
 # HP Cloud 13.5: Upload and Make Public a Partner Image # {#publishPartnerImage}
-This document describes how to use the HP Cloud Image API to upload images and make them available for public use in HP Cloud 13.5. It is not intended to be an exhaustive description of the [Glance client](http://docs.openstack.org/trunk/openstack-image-service/admin/content/using-the-glance-cli-tool.html). For additional detail, see the [HP Cloud Monitoring API specification](https://docs.hpcloud.com/api/v13/monitoring/).
+This document describes how to use the HP Cloud Image API to upload images and make them available for public use in HP Cloud 13.5. It is not intended to be an exhaustive description of the [Glance client](http://docs.openstack.org/trunk/openstack-image-service/admin/content/using-the-glance-cli-tool.html). For additional detail, see the [HP Cloud Image API specification](https://docs.hpcloud.com/api/).
 
 **Note:** As an image owner, it is your responsibility to ensure you have rights to use any software included in the image. HP is not responsible or liable for any unauthorized use of software by the owner of an image.
 
@@ -240,8 +240,10 @@ If you intend to use your public image outside of the HP Cloud environment (for 
 
 You can find partner-provided examples of the required documentation on the following pages:
 
-* [HP Cloud Stackato documentation](http://docs.stackato.com/server/hpcs.html)
-* [Setting up Stackato on HP Cloud](https://community.hpcloud.com/article/how-do-i-set-stackato-hp-cloud-services) 
+* [Setting up Stackato on HP Cloud](https://community.hpcloud.com/article/how-do-i-set-activestate-stackato-hp-cloud-services) 
+* [Stackato HP Cloud documentation](http://docs.stackato.com/admin/server/hpcs.html)
+* [CohesiveFT Partner Images](https://community.hpcloud.com/article/cohesiveft-partner-images-now-available)
+* [CohesiveFT VNS3 3.x Configuration for HP Cloud](http://www.cohesiveft.com/dnld/CohesiveFT-VNS3-3.0.4_HPCS.pdf)
 
 #### Required attributes and properties for images #### {#publishReqAttsProps}
 In general, you do not need to add additional attributes or properties to your image in order to use it in HP Cloud with the Image API; however, you must define certain image attributes and properties for the image to either be **deployed on HP Cloud** or **displayed in the HP Cloud management console**. 
