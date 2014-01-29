@@ -5,7 +5,9 @@ permalink: /cli/unix/2/block-storage/
 product: unix-cli
 
 ---
-# Unix CLI Block Storage Examples
+# Unix CLI v13.5 Block Storage Examples
+
+If you are using v12.12, click [here](https://docs.hpcloud.com/cli/unix/block-storage) for documentation.
 ___________________
 
 ###Important Notice###
