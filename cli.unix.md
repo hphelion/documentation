@@ -36,7 +36,7 @@ Access the following documentation and resources:
 * [Download the software](#downloads)
 * [For more information](#articles)
 
-##Version 13.5 (Unix CLI 2.0) documenation {#135}
+##Version 13.5 (Unix CLI 2.0) documentation {#135}
 
 * [Installation](/cli/unix/2/install)
 * [Account Configuration](/cli/unix/2/configuration)
@@ -50,7 +50,7 @@ Access the following documentation and resources:
 * [CLI Reference](/cli/unix/2/reference)
 * [Release Notes](/cli/unix/release-notes)
 
-##Version 12.12 (Unix CLI 1.9) documenation {#1212}
+##Version 12.12 (Unix CLI 1.9) documentation {#1212}
 
 * [Installation](/cli/unix/install)
 * [Account Configuration](/cli/unix/configuration)
