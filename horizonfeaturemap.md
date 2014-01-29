@@ -15,6 +15,6 @@ As of January 29, 2014, you can only manage your 13.5 services and update your a
 
 **Feature map: HP Classic Console to the HP Public Cloud Console** 
 
-     <img src="media/featuremap.png" width="580" alt="" />
+<img src="media/featuremap.png" width="580" alt="" />
 
 
