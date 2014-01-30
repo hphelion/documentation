@@ -1386,7 +1386,7 @@ On November 4, 2013, the UNIX CLI moved into its End-of-Life Cycle process towar
 * No new feature requests will be honored
 * Bug reports will be accepted
 
-After 6-months, access to online resources will still be available, but no support will be offered from HP Public Cloud, and the software download will be disabled—although you are most welcome to continue development at your discretion.
+After 6-months, you will still have access to online resources, but HP Cloud will not offer support and the software download will be disabled.
 
 ##Contacting Support## {#support}
 
