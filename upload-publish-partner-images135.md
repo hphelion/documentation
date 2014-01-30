@@ -6,8 +6,8 @@ product: image
 
 ---
 
-# HP Cloud 13.5: Upload and Make Public a Partner Image # {#publishPartnerImage}
-This document describes how to use the HP Cloud Image API to upload images and make them available for public use in HP Cloud 13.5. It is not intended to be an exhaustive description of the [Glance client](http://docs.openstack.org/trunk/openstack-image-service/admin/content/using-the-glance-cli-tool.html). For additional detail, see the [HP Cloud Image API specification](https://docs.hpcloud.com/api/).
+# HP Cloud 13.5: How to Upload a Partner Image and Make it Public # {#publishPartnerImage}
+This document describes how to use the HP Cloud Image API to upload images and make them available for public use in HP Cloud 13.5. It is not intended to be an exhaustive description of [managing images using the Glance client](http://docs.openstack.org/user-guide-admin/content/cli_manage_images.html). For additional detail, see the [glance command reference](http://docs.openstack.org/user-guide-admin/content/glanceclient_commands.html) and the [HP Cloud API specification](https://docs.hpcloud.com/api/).
 
 **Note:** As an image owner, it is your responsibility to ensure you have rights to use any software included in the image. HP is not responsible or liable for any unauthorized use of software by the owner of an image.
 
@@ -248,7 +248,7 @@ You can find partner-provided examples of the required documentation on the foll
 #### Required attributes and properties for images #### {#publishReqAttsProps}
 In general, you do not need to add additional attributes or properties to your image in order to use it in HP Cloud with the Image API; however, you must define certain image attributes and properties for the image to either be **deployed on HP Cloud** or **displayed in the HP Cloud management console**. 
 
-##### Deploying images in HP Cloud ##### {publishReqsDeploy}
+##### Deploying images in HP Cloud ##### {#publishReqsDeploy}
 To deploy an image in HP Cloud, you must define/set the following attributes and properties when you create the image: 
 
 **Attributes**
@@ -262,7 +262,7 @@ To deploy an image in HP Cloud, you must define/set the following attributes and
 * architecture = `x86_64` or `i686`<br>
     This property is used by Nova to spin up instances and you must set it to either x86_64 or i686.
 
-##### Displaying images in the HP Cloud management console ##### {publishReqsDisplay}
+##### Displaying images in the HP Cloud management console ##### {#publishReqsDisplay}
 The HP Cloud management console uses custom properties to categorize and display an image. If you want to use the management console, set the following custom properties to control how the image is categorized and displayed. 
 
 <table>
@@ -390,7 +390,7 @@ Before using the Glance client (or curl), ensure you have configured your enviro
 
 There is also a section on the most [common HTTP errors](#publishGlanceErrors) that might occur when using the Glance client tool. 
 
-**Important:** For more information, see Openstack's documentation on [using the Glance client tool](http://docs.openstack.org/trunk/openstack-image-service/admin/content/using-the-glance-cli-tool.html) and [managing your images using the Glance client](http://docs.openstack.org/user-guide/content/cli_manage_images.html).
+**Important:** For more information, see Openstack's documentation on [managing images using the Glance client](http://docs.openstack.org/user-guide-admin/content/cli_manage_images.html) and the [glance command reference](http://docs.openstack.org/user-guide-admin/content/glanceclient_commands.html).
 
 
 ### Listing images ### {#publishGlanceList}
@@ -441,9 +441,10 @@ To upload your new image using the Glance `image-create` command:
 1. Open your choice of command shell.
 2. Run the following command to upload your new image and define/set the required attributes and property, where your image name is `My Custom Image` and your image file location is `/root/images/my_test_image.qcow2`:
 
-    <pre>
-    $ glance image-create --name 'My Custom Image' --container-format bare 
-    --disk-format qcow2 --property architecture=x86_64 < /root/images/my_test_image.qcow2
+<pre>
+    $ glance image-create --name 'My Custom Image' 
+    --container-format bare --disk-format qcow2 --property 
+    architecture=x86_64 < /root/images/my_test_image.qcow2
 </pre>
 
     **Note:** You can define/set all [required](#publishReqsDeploy) and [optional](#publishReqsDisplay) attributes and properties in this step.
@@ -456,7 +457,7 @@ To upload your new image using the Glance `image-create` command:
 
 4. After the image status is `active`, you can boot it using the appropriate nova commands or the HP Cloud web interface. See the documentation for [creating instances](https://community.hpcloud.com/article/creating-your-first-instance) for more information.
 
-**Important:** Image upload duration will vary depending on your internet service provider's bandwidth and on the image size. If you have a problem with your system timing out, you can upload the image to an instance running on HP Cloud 13.5, and then use the Glance client tool to upload the image to Glance. Newer Glance clients provide a `–progress` argument to allow you to monitor the progress of the upload. If you need to monitor the progress and your version of the Glance client does not support `–progress`, use the curl command documented below.
+**Important:** Image upload duration will vary depending on your internet service provider's bandwidth and on the image size. If you have a problem with your system timing out, you can upload the image to an instance running on HP Cloud 13.5, and then use the Glance client tool to upload the image to Glance. Newer Glance clients provide a `–-progress` argument to allow you to monitor the progress of the upload. If you need to monitor the progress and your version of the Glance client does not support `–-progress`, use the curl command documented below.
 
 #### Curl #### {#publishCurlUpload}
 **Important:** You must supply `"X-Image-Meta-Container_format"` and `"X-Image-Meta-Disk_format"` headers.
@@ -466,9 +467,10 @@ To upload your image, complete the following steps:
 1. Run the following command, where `My Custom Image` is the name of your image and `tmp/image.qcow2` is the location and file name of your image:
 
     <pre>
-    $ curl -XPOST -H "X-Auth-Token: $TOKEN_ID" -H "Content-Type: application/octet-
-    stream" -H "X-Image-Meta-Disk_format: qcow2" -H "X-Image-Meta-Container_format: 
-    bare" -H "X-Image-Meta-Name: My Custom Image" --data-binary @/tmp/image.qcow2 
+    $ curl -XPOST -H "X-Auth-Token: $TOKEN_ID" -H "Content-Type: 
+    application/octet-stream" -H "X-Image-Meta-Disk_format: qcow2" 
+    -H "X-Image-Meta-Container_format: bare" -H "X-Image-Meta-Name: 
+    My Custom Image" --data-binary @/tmp/image.qcow2 
     --progress-bar $OS_IMAGE_URL/v1.0/images -o /tmp/out
     </pre>
 
@@ -479,12 +481,13 @@ To upload your image, complete the following steps:
     Your output should be similar to this:
 
     <pre>
-    {"image": {"status": "active", "name": "My Custom Image", "deleted": false,
-    "container_format": "bare", "created_at": "2013-05-24T11:44:48", "disk_format":
-    "qcow2", "updated_at": "2013-05-24T11:44:49", "id": "8d1ba046-b06e-425d-
-    b867-7b8c960ddaaa", "min_disk": 0, "protected": false, "min_ram": 0, "checksum":
-    "fcb3450fb99fd160f6567df398921aed", "owner": "123456", "is_public": false, 
-    "deleted_at": null, "properties": {}, "size": 456}}
+    {"image": {"status": "active", "name": "My Custom Image", 
+    "deleted": false, "container_format": "bare", "created_at": 
+    "2013-05-24T11:44:48", "disk_format": "qcow2", "updated_at":  
+    "2013-05-24T11:44:49", "id": "8d1ba046-b06e-425d-b867-7b8c960ddaaa", 
+    "min_disk": 0, "protected": false, "min_ram": 0, "checksum": 
+    "fcb3450fb99fd160f6567df398921aed", "owner": "123456", "is_public": 
+    false, "deleted_at": null, "properties": {}, "size": 456}}
    </pre>
 
 **Important:** When the upload is complete, your image status is `active`, and you can boot it using the relevant nova commands or the HP Cloud web interface. See the documentation for [creating instances](https://community.hpcloud.com/article/creating-your-first-instance) for more information.
@@ -495,19 +498,22 @@ If you want your images to display in the HP Cloud management console, you must 
 #### Glance ####
 Use the `--property` option of the `glance` command:
 
-    $ glance image-update <image_name_or_id> --property <property_name>=<property_value>
+    $ glance image-update <image_name_or_id> --property 
+    <property_name>=<property_value>
 
 For example, to set the `image type` property to `disk`, run the following command:
 
-    $ glance image-update <image_name_or_id> --property com.hp__1__image_type=disk
+    $ glance image-update <image_name_or_id> --property 
+    com.hp__1__image_type=disk
 <br>
 <img src="media/glance-image-property.png" width="580" alt="" />
 
 You can run this command for each required property, or you can include all the required properties in one command. For example:
 <pre>
-    $ glance image-update &lt;image_name_or_id&gt; --property com.hp__1__image_type=disk 
-    --property com.hp__1__image_lifecycle=active --property 
-    com.hp__1__bootable_volume=true --property com.hp__1__os_distro=org.debian
+    $ glance image-update &lt;image_name_or_id&gt; --property 
+    com.hp__1__image_type=disk --property com.hp__1__image_lifecycle
+    =active --property com.hp__1__bootable_volume=true --property 
+    com.hp__1__os_distro=org.debian
 </pre>
 If you want to define additional attributes or set additional properties, follow the same syntax.
 
@@ -515,7 +521,8 @@ If you want to define additional attributes or set additional properties, follow
 Run the following command:
 <pre>
     curl -v -XPUT -H "X-Auth-Token: $TOKEN_ID"  -H 'X-Image-Meta-Property-
-    &lt;property_name&gt;: &lt;property_value&gt;' $OS_IMAGE_URL/v1.0/images/&lt;image_id&gt;
+    &lt;property_name&gt;: &lt;property_value&gt;' $OS_IMAGE_URL/v1.0/
+    images/&lt;image_id&gt;
 </pre>
 For example, if you set the property `com.hp__1__image_type` to `disk`:
 <pre>
@@ -537,7 +544,8 @@ To display information about an image, run the following command:
 #### Curl #### {#publishCurlShow}
 To display information about an image, run the following command:
 
-    $ curl -v -XHEAD -H "X-Auth-Token: $TOKEN_ID" $OS_IMAGE_URL/v1.0/images/<image_id>
+    $ curl -v -XHEAD -H "X-Auth-Token: $TOKEN_ID" 
+    $OS_IMAGE_URL/v1.0/images/<image_id>
 
 ### Making an image public ### {#publishGlancePublic}
 Images are not public by default, and you must have been given privileges by HP Support to make an image publicly available. To make an image public, follow the instructions below.
@@ -552,8 +560,9 @@ To make an image public, run the `glance image-update` command:
 #### Curl ### {#publishCurlPublic}
 To make an image public, run the following command:
 <pre>
-    $ curl -v -XPUT -H "X-Auth-Token: $TOKEN_ID" -H 'X-Image-Meta-Is_public: True' 
-    -H 'X-glance-registry-Purge-props: False' $OS_IMAGE_URL/v1.0/images/&lt;image_id&gt;
+    $ curl -v -XPUT -H "X-Auth-Token: $TOKEN_ID" -H 'X-Image-Meta-
+    Is_public: True' -H 'X-glance-registry-Purge-props: False'  
+    $OS_IMAGE_URL/v1.0/images/&lt;image_id&gt;
 </pre>
 **Important:** To avoid removal of existing custom properties, you must include `X-glance-registry-Purge-props: False`.
 
@@ -578,7 +587,8 @@ To delete an image, use the `image-delete` command to remove it.
 #### Curl #### {#publishCurlDelete}
 To delete an image, run the following command:
 
-    curl -v -XDELETE -H "X-Auth-Token: $TOKEN_ID"   $OS_IMAGE_URL/v1.0/images/<image ID>
+    curl -v -XDELETE -H "X-Auth-Token: $TOKEN_ID" $OS_IMAGE_URL/v1.0
+    /images/<image ID>
 
 ### Deprecating an image ### {#publishGlanceDeprecate}
 <!--
@@ -592,8 +602,9 @@ As long as an image exists in HP Cloud, it will appear in all image listings usi
 #### Glance ####
 To deprecate an image in HP Cloud management console:
 <pre>
-    $ glance image-update &lt;image_name_or_id&gt; --property com.hp__1__image_lifecycle=deprecated 
-    --name '&lt;image_name&gt; (deprecated)'
+    $ glance image-update &lt;image_name_or_id&gt; --property 
+    com.hp__1__image_lifecycle=deprecated --name 
+    '&lt;image_name&gt; (deprecated)'
 </pre>
 #### Curl #### {#publishCurlDeprecate}
 To deprecate an image, run the following command:
@@ -614,7 +625,8 @@ Possible HTTP return codes are listed in HP Cloud Image API documentation. The m
 For additional information on uploading an image and making it publicly available, see:
 
 * [HP Cloud API documentation](https://docs.hpcloud.com/api/compute/)* [Openstack's documentation](http://docs.openstack.org/user-guide/content/ch_cli.html)* [Cloud 13.5 CLI Installation Instructions](https://community.hpcloud.com/article/cloud-135-cli-installation-instructions)
-* [Manage images using the Glance client](http://docs.openstack.org/user-guide/content/cli_manage_images.html)* [Technical support knowledge base](https://community.hpcloud.com)
+* [Manage images using the Glance client](http://docs.openstack.org/user-guide/content/cli_manage_images.html)
+* [glance command reference](http://docs.openstack.org/user-guide/content/glanceclient_commands.html)* [Technical support knowledge base](https://community.hpcloud.com)
 
 ## Contacting support ## {#contactSupport}
 If you need further assistance, you can contact support in any of these ways:
