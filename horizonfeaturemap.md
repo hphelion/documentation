@@ -13,7 +13,8 @@ HP encourages you to transition to HP Public Cloud 13.5 as soon as possible. The
 As of January 29, 2014, you can only manage your 13.5 services and update your account information through the HP Public Cloud Console. This document displays the feature map to the HP Public Cloud Console from the classic console.
 
 
-**Classic Console Features in the HP Public Public Cloud**:
+##Find Classic Console Features in the HP Public Public Cloud##
+
 [Account Cancelation](https://horizon.hpcloud.com/settings/account_info) 
 
 [API Keys](https://horizon.hpcloud.com/control_services/projects/)
