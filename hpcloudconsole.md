@@ -12,7 +12,7 @@ Welcome to HP Public Cloud Console Horizon! HP Public Cloud wants you up and run
 
 After initial setup, revisit the interface to monitor usage, modify, add, and delete networks, instances, volumes, roles, groups, and more. For the latest updates to the current HP Public Cloud Console release, see [What's new with HP Public Cloud Console](/whats_new_with_HP_Cloud_Console/). 
 
-For information on moving from the HP Classic Console to HP Public Cloud Console see [Feature Mapping: HP Classic Console to the HP Public Cloud Console](/horizonfeaturemap). 
+For information on moving from the HP Classic Console to HP Public Cloud Console see [Feature Mapping: HP Classic Console to the HP Public Cloud Console](/hpcloudconsolefeaturemap). 
 
 
 <img src="media/HPPublicCloudConsoleHorizonPreviewEdition.png" width="580" alt="" />
