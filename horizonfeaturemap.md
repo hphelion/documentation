@@ -21,7 +21,7 @@ As of January 29, 2014, you can only manage your 13.5 services and update your a
 
 [Billing History/Invoices](https://horizon.hpcloud.com/metering_billing/)
 
-[Compute 1.1 Interface (in US East/West services)](In West/East  Services: https://horizon.hpcloud.com/landing/)
+[Compute 1.1 Interface (in US East/West services)](https://horizon.hpcloud.com/landing/)
 
 [Dashboard](https://horizon.hpcloud.com/landing/)
 
@@ -35,11 +35,13 @@ As of January 29, 2014, you can only manage your 13.5 services and update your a
 
 [Monitoring (in US East/West)](https://horizon.hpcloud.com/landing/)
 
-[Object Storage(in US East/West](https://horizon.hpcloud.com/control_services/projects/)
+[Object Storage(in US East/West](https://horizon.hpcloud.com/landing/)
+
+[Relational DB MySQL (in US West](https://horizon.hpcloud.com/landing/)
 
 [Self-registration](https://horizon.hpcloud.com/register)
 
-[Service Activation](https://horizon.hpcloud.com/control_services/projects/)
+[Service Activation](https://horizon.hpcloud.com/landing/)
 
 [Support Cases](https://horizon.hpcloud.com/settings/cases/)
 
@@ -48,14 +50,10 @@ As of January 29, 2014, you can only manage your 13.5 services and update your a
 [Update Email](https://horizon.hpcloud.com/settings/account_info/)
 
 [Update General Account Info (Address/Enable/Groups, etc.)](https://horizon.hpcloud.com/control_services/users/)
-[API Keys](https://horizon.hpcloud.com/control_services/projects/)
 
 [Update Password](https://horizon.hpcloud.com/control_services/users/)
 
 
-
-
-<img src="media/featuremap.png" width="780" alt="" />
 
 
  
