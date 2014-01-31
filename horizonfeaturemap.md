@@ -138,7 +138,7 @@ Click "Identity," then "Projects" [here](https://horizon.hpcloud.com/control_ser
 
 **HP Public Cloud Console**
 
-Cancel an account from the pull-down menu next to the user's name on the [landing page](https://horizon.hpcloud.com/landing/) or click [here](https://horizon.hpcloud.com/settings/account_info/)
+Cancel an account from the pull-down menu next to the user's name on the [landing page](https://horizon.hpcloud.com/landing/) or click [here](https://horizon.hpcloud.com/settings/account_info/).
 
 <img src="hpcccancelaccount.png" width="580" alt="" />
 
