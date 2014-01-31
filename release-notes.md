@@ -87,7 +87,7 @@ The following are our best-practices recommendations for versions 13.5.
 ####Command-line Interface####
 
 * For best performance when transferring large files (greater than 700MB for downloads and 1GB for uploads), use either the [classic management console](/mc/) or the [UNIX CLI](/cli/unix/) utilities.
-* For easiest password reset, use the [Horizon Preview Edition](/hpcloudconsole) interface or the [classic management console](/mc/) or the [UNIX CLI](/cli/unix/) utilities.
+* For easiest password reset, use the [HP Public Cloud Console](/hpcloudconsole) interface or the [classic management console](/mc/) or the [UNIX CLI](/cli/unix/) utilities.
 * Use the [classic management console](/mc/) to display the `Flavors Details` information rather than the Windows CLI.
 * To create a snapshot for an instance booted from a block volume, follow these steps for best results:<br>
     - Shut down the instance
@@ -118,16 +118,16 @@ The following are the known issues for Version 13.5 of the HP Public Cloud softw
 ####Command-line Interface####
 
 * After successfully launching an instance if you find `ssh` not functioning properly, just relaunch the instance.
-* Sometimes under certain circumstances in the Windows CLI, the `ls` command displays some fields as blank.  To view the contents of these fields, display the information using the [Horizon Preview Edition](/hpcloudconsole) interface or the [classic management console](/mc/) or the [UNIX CLI](/cli/unix/) utilities. The fields are:
+* Sometimes under certain circumstances in the Windows CLI, the `ls` command displays some fields as blank.  To view the contents of these fields, display the information using the [HP Public Cloud Console](/hpcloudconsole) interface or the [classic management console](/mc/) or the [UNIX CLI](/cli/unix/) utilities. The fields are:
     - The `Attached To` and `Server Attached To` fields are may display as blank after you attach a server to a volume using the `[Attach-Volume](/cli/windows/reference#Attach-Volume)` command
     - The `Ext Gateway` field may display as blank after you execute the `[Update-Router](/cli/windows/reference#Update-Router)` command
     - The `Assigned Network Addresses` field may display as blank after you execute the `[New-Server](/cli/windows/reference#New-Server)` command<br>
     
 
-####Horizon Preview Edition Console###
+####HP Public Cloud Console###
 
-* If you use the Identity service role-based access control (RBAC) at the panel level in the [Horizon Preview Edition](/hpcloudconsole), you may see action and service options that exceed your permission levels.  You can access these features through the CLI or the the [classic management console](/mc/).
-* If you encounter a quota issue when performing network tasks while using the [Horizon Preview Edition](/hpcloudconsole), use the [classic management console](/mc/).
+* If you use the Identity service role-based access control (RBAC) at the panel level in the [HP Public Cloud Console](/hpcloudconsole), you may see action and service options that exceed your permission levels.  You can access these features through the CLI or the the [classic management console](/mc/).
+* If you encounter a quota issue when performing network tasks while using the [HP Public Cloud Console](/hpcloudconsole), use the [classic management console](/mc/).
 
 
 <!--##Resolved Issues in Version 13.5## {#v135resolved}
