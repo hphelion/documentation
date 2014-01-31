@@ -77,15 +77,15 @@ Before you upload an image and make it public, you must:
 * [Understand image requirements](#publishImageReqs)
 * [Understand required attributes and properties](#publishReqAttsProps)
 
-### Installing tools ### {toolsInstall}
+### Installing tools ### {#toolsInstall}
 To interact with the HP Cloud Image API, you need to install the Nova and Glance client tools. If your platform does not support the Glance client, you can use the curl command.
 
-#### The Nova and Glance client tools #### {publishInstallGlance}
+#### The Nova and Glance client tools #### {#publishInstallGlance}
 Openstack's Nova client tool provides API access to the Nova service. Openstack's Glance client tool provides the `glance` command, which is the preferred method for interacting with the HP Cloud Image API. Refer to [Openstack's documentation](http://docs.openstack.org/user-guide/content/install_clients.html) or [Cloud 13.5 CLI Installation Instructions](https://community.hpcloud.com/article/cloud-135-cli-installation-instructions) for information on installing the Nova and Glance client tools.
 
 If the Glance client is not available for your platform, see the alternate instructions below for [installing curl](#installCurl).
 
-#### The curl command #### {installCurl}
+#### The curl command #### {#installCurl}
 The preferred method for interacting with the HP Cloud Image API is to use the `glance` command in the Glance client tool. If the `glance` command is not available for your platform, you can manage your images using the `curl` command.
 
 **Important:** Before using curl, ensure that you have acquired a token and [configured environment variables](#publishConfigEnv) for your system.
