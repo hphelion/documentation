@@ -6,8 +6,6 @@ product: cloudos
 
 ---
 
-<a name="_top"> </a>
-
 <script> 
 
 function PageRefresh { 
@@ -262,6 +260,6 @@ model enabling a "model-once deploy-anywhere" repeatable process, standardizing 
 The deployment profiles allow addressing capability and configuration differences that could exist between the different physical resource pools 
 for deploying a common topological model. 
 
-<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 

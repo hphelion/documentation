@@ -6,8 +6,6 @@ product: cloudos
 
 ---
 
-<a name="_top"> </a>
-
 <script>
 
 function PageRefresh {
@@ -50,6 +48,6 @@ For information about the HP Cloud OS REST API, start with the [API Quick Start 
 Read the [Value-Added Services](/cloudos/api/services/) topic to learn more about Eve, Focus, and Graffiti from HP Cloud OS.
 --> 
 
-<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 

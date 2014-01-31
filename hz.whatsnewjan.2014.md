@@ -26,7 +26,7 @@ Particularly attractive for administrators in the enterprise, HP Cloud provides 
 
 ##Network topology visualization## {#Networktopologyvisualization}
 
-The new Horizon-based HP Public Cloud Console inherits network topology infographics to graphically display your network, routers, and instances.  In addition to visualizing network relationships, you can perform dynamic network management, interactively creating networks and routers, and launching instances through a 2-D visualization scene. Hover over graphical network elements to see detailed information and access links to perform tasks on that element. 
+The new Horizon-based HP Public Cloud Console inherits network topology infographics to graphically display your network, routers, and instances.  In addition to visualizing network relationships, you can perform dynamic network management, interactively creating networks and routers, and launching instances through a 2-D visualization scene. Hover over graphical network elements to see detailed information and access links to perform tasks on that element.  
 
 ##Cross-region object replication## {#Crossregionobjectreplication}
 
@@ -38,4 +38,4 @@ With the new functionality of cross-region replication, you can also construct a
 
 ##Other improvements## {#Otherimprovements}
 
-The 50MB file upload size limitation within the classic console is no longer an impedance with the new Horizon-based HP Public Cloud Console. You'll also notice more consumable UI and UX changes with your account management and invoice presentation.
+The 50MB file upload size limitation within the classic console is no longer an impedance with the new Horizon-based HP Public Cloud Console. You'll also notice more consumable UI and UX changes with your account management and invoice presentation. 

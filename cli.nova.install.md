@@ -158,7 +158,7 @@ Where the `USERNAME`, `PASSWORD`, and `TENANT_NAME` values are the ones you use 
         
 You can now access your `nova` commands.  For a full list of commands, surf on over to our [CLI Reference page](/cli/nova/reference).
 
-For information on how to install on versions of Ubuntu prior to Release 6.2, please check ou the [Linux Installation knowledge base article](https://community.hpcloud.com/article/python-novaclient-linux-installation).
+<!-- For information on how to install on versions of Ubuntu prior to Release 6.2, please check ou the [Linux Installation knowledge base article](https://community.hpcloud.com/article/python-novaclient-linux-installation).-->
 
 <!--##Fedora Installation## {#Fedora}
 

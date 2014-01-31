@@ -985,7 +985,7 @@ After logging in, a system window displays, which indicates you are connected to
 
 ####Connecting from a Linux system using Terminal####  {#connectlinuxterm}
 
-Before you start, make sure the key pair file associated with the instance is stored on the local system in PEM format. For more information, see [Generate a security key pair]($keypair).
+Before you start, make sure the key pair file associated with the instance is stored on the local system in PEM format. For more information, see [Generate a security key pair](#keypair).
 
 To connect to an instance using the Linux CLI:
 
@@ -1386,7 +1386,7 @@ On November 4, 2013, the UNIX CLI moved into its End-of-Life Cycle process towar
 * No new feature requests will be honored
 * Bug reports will be accepted
 
-After 6-months, access to online resources will still be available, but no support will be offered from HP Public Cloud, and the software download will be disabled—although you are most welcome to continue development at your discretion.
+HP Cloud has contributed the Unix CLI back to the open source community, and you can get support, access the documentation, and download the source code [here](https://github.com/hpcloud/unix_cli).
 
 ##Contacting Support## {#support}
 

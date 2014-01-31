@@ -140,7 +140,7 @@ The following are resolved issues in version 13.5 of the HP Public Cloud softwar
 
 ##For further information## {#SeeAlso}
 
-For additional related information on HP Cloud:
+Additional related information about HP Public Cloud can be found in the following links. Please note that HP Public Cloud 12.12 support will be discontinued when the product is fully deprecated on June 1, 2014
 
 * [Getting Started with HP Public Cloud Console](http:docs.hpcloud.com/hpcloudconsole) for detailed console information.
 * [HP Cloud version 13.5 overview](/version-overview/) for an overview of the 13.5 release set.
