@@ -80,11 +80,8 @@ Before you upload an image and make it public, you must:
 ### Installing tools ### {toolsInstall}
 To interact with the HP Cloud Image API, you need to install the Nova and Glance client tools. If your platform does not support the Glance client, you can use the curl command.
 
-#### The Nova client tool #### {novaClientTool}
-Openstack's Nova Client tool provides API access to the Nova service.
-
-#### The Glance client tool #### {#publishInstallGlance}
-Openstack's Glance client tool provides the `glance` command, which is the preferred method for interacting with the HP Cloud Image API. Refer to [Openstack's documentation](http://docs.openstack.org/user-guide/content/install_clients.html) or [Cloud 13.5 CLI Installation Instructions](https://community.hpcloud.com/article/cloud-135-cli-installation-instructions) for information on installing the Glance client tool.
+#### The Nova and Glance client tools #### {publishInstallGlance}
+Openstack's Nova client tool provides API access to the Nova service. Openstack's Glance client tool provides the `glance` command, which is the preferred method for interacting with the HP Cloud Image API. Refer to [Openstack's documentation](http://docs.openstack.org/user-guide/content/install_clients.html) or [Cloud 13.5 CLI Installation Instructions](https://community.hpcloud.com/article/cloud-135-cli-installation-instructions) for information on installing the Nova and Glance client tools.
 
 If the Glance client is not available for your platform, see the alternate instructions below for [installing curl](#installCurl).
 
@@ -396,7 +393,7 @@ There is also a section on the most [common HTTP errors](#publishGlanceErrors) t
 ### Listing images ### {#publishGlanceList}
 To see a list of available images, follow the instructions below.
 
-#### Glance ####
+#### Glance client ####
 
 1. Open your choice of command shell.
 2. Run the following command at the prompt to see a list of images:
@@ -435,7 +432,7 @@ When you upload your image, you must [define/set the required attributes and pro
 
 **Note:** The `architecture` property you set and the attributes you define, allow you to upload and boot your image. If you want to use the HP Cloud management console, you must [set additional properties](#publishReqsDisplay).
 
-#### Glance ####
+#### Glance client ####
 To upload your new image using the Glance `image-create` command:
 
 1. Open your choice of command shell.
@@ -495,7 +492,7 @@ To upload your image, complete the following steps:
 ### Updating properties required for HP Cloud management console ### {#publishGlanceUpdate}
 If you want your images to display in the HP Cloud management console, you must [set additional properties](#publishReqsDisplay). To update these properties, follow the instructions below.
 
-#### Glance ####
+#### Glance client ####
 Use the `--property` option of the `glance` command:
 
     $ glance image-update <image_name_or_id> --property 
@@ -534,7 +531,7 @@ Run this command for each required property substituting the property name and v
 ### Showing image details ### {#publishGlanceShow}
 Image details can be displayed using the `image-show` option. To see image details, follow the instructions below.
 
-#### Glance ####
+#### Glance client ####
 To display information about an image, run the following command:
 
     $ glance image-show <image_name_or_id>
@@ -550,7 +547,7 @@ To display information about an image, run the following command:
 ### Making an image public ### {#publishGlancePublic}
 Images are not public by default, and you must have been given privileges by HP Support to make an image publicly available. To make an image public, follow the instructions below.
 
-#### Glance ####
+#### Glance client ####
 To make an image public, run the `glance image-update` command:
 
     $ glance image-update <image_name_or_id> --is-public=true
@@ -571,7 +568,7 @@ To make an image public, run the following command:
 
 If you no longer want your image, follow the instructions below to delete it.
 
-#### Glance ####
+#### Glance client ####
 To delete an image, use the `image-delete` command to remove it.
 
 1. Type the following command: 
@@ -599,7 +596,7 @@ As long as an image exists in HP Cloud, it will appear in all image listings usi
 
 **Note:** We recommend you append `(deprecated)` to the image name so that other users can easily spot deprecated images when listing all images using the Glance or Nova client tools.
 
-#### Glance ####
+#### Glance client ####
 To deprecate an image in HP Cloud management console:
 <pre>
     $ glance image-update &lt;image_name_or_id&gt; --property 
