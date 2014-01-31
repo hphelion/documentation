@@ -176,8 +176,22 @@ Update user information using the pull-down menu on the [landing page](https://h
 
 **HP Public Cloud Console**
 
-Change the password using the pull-down menu next to the user's name on the [landing page](https://horizon.hpcloud.com/landing/)
+Change the password using the pull-down menu next to the user's name on the [landing page](https://horizon.hpcloud.com/landing/).
 
 <img src="hpccupdatepassword.png" width="580" alt="" />
 
+
+####Self-registration####
+
+**Classic Console**
+
+[Registration page](https://console.hpcloud.com/login).
+
+<img src="ccselfregistration.png" width="580" alt="" />
+
+**HP Public Cloud Console**
+
+[Registration page](https://horizon.hpcloud.com/register)
+
+<img src="hpccselfreg.png" width="580" alt="" />
 
