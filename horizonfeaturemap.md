@@ -111,7 +111,7 @@ Access API Keys in the HP Public Cloud Console via the pull-down menu next to th
 
 **HP Public Cloud Console**
 
-Click "Identity" then "Users" [here](https://horizon.hpcloud.com/control_services/users/) to manage account users.
+Click "Identity," then "Users" [here](https://horizon.hpcloud.com/control_services/users/) to manage account users.
 
 <img src="hpccmanageaccountusers.png" width="580" alt="" />
 
@@ -124,10 +124,26 @@ Click "Identity" then "Users" [here](https://horizon.hpcloud.com/control_service
 
 **HP Public Cloud Console**
 
-Click "Identity" then "Projects" [here](https://horizon.hpcloud.com/control_services/projects/) to manage projects.
+Click "Identity," then "Projects" [here](https://horizon.hpcloud.com/control_services/projects/) to manage projects.
 
 <img src="hpccmanageprojects.png" width="580" alt="" />
 
 
+####Account cancelation####
 
+**Classic Console**
+
+<img src="ccaccountcancelation.png" width="580" alt="" />
+
+
+**HP Public Cloud Console**
+
+Cancel an account from the pull-down menu next to the user's name on the [landing page](https://horizon.hpcloud.com/landing/) or click [here](https://horizon.hpcloud.com/settings/account_info/)
+
+<img src="hpcccancelaccount.png" width="580" alt="" />
+
+
+####Support cases####
+
+**Classic Console**
 
