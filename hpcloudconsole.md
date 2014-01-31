@@ -15,7 +15,7 @@ After initial setup, revisit the interface to monitor usage, modify, add, and de
 For information on moving from the HP Classic Console to HP Public Cloud Console see [Feature Mapping: HP Classic Console to the HP Public Cloud Console](/hpcloudconsolefeaturemap). 
 
 
-<img src="media/HPPublicCloudConsoleHorizonPreviewEdition.png" width="580" alt="" />
+<img src="media/landingpage.png" width="580" alt="" />
 
 
 This page contains the following sections:
