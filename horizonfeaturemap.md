@@ -78,7 +78,7 @@ This page contains the following sections:
 
 [Update Password](https://horizon.hpcloud.com/control_services/users/)
 
-##Using HP Public Cloud Console## {#Usinghpcc})
+##Using HP Public Cloud Console## {#Usinghpcc}
 In the HP Public Cloud Console, the services are displayed for the selected "Project/Region Scope" on the [landing page](https://horizon.hpcloud.com/landing/). The landing page replaces the "Dashboard" page in the Classic Console.
 
 <img src="media/figonelandingpage.png" width="580" alt="" />
