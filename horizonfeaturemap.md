@@ -62,7 +62,7 @@ This page contains the following sections:
 
 [Object Storage(in US East/West](https://horizon.hpcloud.com/landing/)
 
-[Relational DB MySQL (in US West](https://horizon.hpcloud.com/landing/)
+[Relational DB MySQL (in US West)](https://horizon.hpcloud.com/landing/)
 
 [Self-registration](https://horizon.hpcloud.com/register)
 
