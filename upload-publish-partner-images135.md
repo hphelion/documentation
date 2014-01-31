@@ -29,7 +29,7 @@ We have two types of public images:
 * HP Cloud-created public images 
 * Partner-created public images
 
-All HP Cloud users have access to both types of public images. When you create a server in the HP Cloud classic management console, your image options are:
+All HP Cloud users have access to both types of public images. When you create a server, your image options are:
 
 * Public images
 * Partner images
@@ -81,7 +81,7 @@ Before you upload an image and make it public, you must:
 To interact with the HP Cloud Image API, you need to install the Nova and Glance client tools. If your platform does not support the Glance client, you can use the curl command.
 
 #### The Nova client tool #### {novaClientTool}
-Openstack's Nova Client tool provides....
+Openstack's Nova Client tool provides API access to the Nova service.
 
 #### The Glance client tool #### {#publishInstallGlance}
 Openstack's Glance client tool provides the `glance` command, which is the preferred method for interacting with the HP Cloud Image API. Refer to [Openstack's documentation](http://docs.openstack.org/user-guide/content/install_clients.html) or [Cloud 13.5 CLI Installation Instructions](https://community.hpcloud.com/article/cloud-135-cli-installation-instructions) for information on installing the Glance client tool.
@@ -457,7 +457,7 @@ To upload your new image using the Glance `image-create` command:
 
 4. After the image status is `active`, you can boot it using the appropriate nova commands or the HP Cloud web interface. See the documentation for [creating instances](https://community.hpcloud.com/article/creating-your-first-instance) for more information.
 
-**Important:** Image upload duration will vary depending on your internet service provider's bandwidth and on the image size. If you have a problem with your system timing out, you can upload the image to an instance running on HP Cloud 13.5, and then use the Glance client tool to upload the image to Glance. Newer Glance clients provide a `–-progress` argument to allow you to monitor the progress of the upload. If you need to monitor the progress and your version of the Glance client does not support `–-progress`, use the curl command documented below.
+**Important:** Image upload duration will vary depending on your internet service provider's bandwidth and on the image size. If you have a problem with your system timing out, you can upload the image to an instance running on HP Cloud 13.5, and then use the Glance client tool to upload the image to Glance. Newer Glance clients provide a `progress` argument to allow you to monitor the progress of the upload. If you need to monitor the progress and your version of the Glance client does not support `progress`, use the curl command documented below.
 
 #### Curl #### {#publishCurlUpload}
 **Important:** You must supply `"X-Image-Meta-Container_format"` and `"X-Image-Meta-Disk_format"` headers.
