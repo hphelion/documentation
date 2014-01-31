@@ -21,7 +21,6 @@ This page contains the following sections:
 * [Feature mapping details](#featuremappingdetails)
 
 
-
 ##Logins and transition information for HP Classic Console and HP Public Cloud Console## {#Logins}
 
 [Login to the Classic Console](https://console.hpcloud.com/login)
