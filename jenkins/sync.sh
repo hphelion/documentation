@@ -43,7 +43,7 @@ HOST=15.185.109.123
 DEST=/var/www/
 DOCS=/var/www/docs
 for DIR
-in *
+in "$1"
 do
   cd "${SERVERS_DIR}"
   if [ -f "${DIR}" ]
