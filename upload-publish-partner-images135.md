@@ -84,7 +84,7 @@ To interact with the HP Cloud Image API, you need to install the Nova and Glance
 Openstack's Nova Client tool provides....
 
 #### The Glance client tool #### {#publishInstallGlance}
-OpenStack’s Glance client tool provides the `glance` command, which is the preferred method for interacting with the HP Cloud Image API. Refer to [Openstack's documentation](http://docs.openstack.org/user-guide/content/install_clients.html) or [Cloud 13.5 CLI Installation Instructions](https://community.hpcloud.com/article/cloud-135-cli-installation-instructions) for information on installing the Glance client tool.
+Openstack's Glance client tool provides the `glance` command, which is the preferred method for interacting with the HP Cloud Image API. Refer to [Openstack's documentation](http://docs.openstack.org/user-guide/content/install_clients.html) or [Cloud 13.5 CLI Installation Instructions](https://community.hpcloud.com/article/cloud-135-cli-installation-instructions) for information on installing the Glance client tool.
 
 If the Glance client is not available for your platform, see the alternate instructions below for [installing curl](#installCurl).
 
