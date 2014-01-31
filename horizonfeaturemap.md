@@ -185,7 +185,7 @@ Change the password using the pull-down menu next to the user's name on the [lan
 
 **Classic Console**
 
-[Registration page](https://console.hpcloud.com/login).
+[Registration page](https://console.hpcloud.com/login)
 
 <img src="ccselfregistration.png" width="580" alt="" />
 
