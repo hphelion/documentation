@@ -2,7 +2,7 @@
 layout: default
 title: "Administration Dashboard Tasks by Tab"
 permalink: /cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/
-product: moonshot
+product: cloudos
 
 ---
 
@@ -858,7 +858,7 @@ To edit a region instance:
 
 1. On the <b>Region</b> tab, select a <b>Current Compute Region</b>.
    
-2. Click to open the Instances window.
+2. Click b to open the Instances window.
 
 3. Find the Instance you want to edit, and click <b>Edit Instance</b>.
 
@@ -868,7 +868,7 @@ To edit a region instance:
   * <b>All Security Groups</b> &mdash; A list of security groups that are associated with the project, but not the instance.
   * <b>Instance Security Groups</b> &mdash; A list of security groups that are currently associated with the instance.
 
-6. Click <b>Save</b>.
+ 6. Click <b>Save</b>.
 
 
 #### How to Suspend, Resume, or Terminate an Instance
@@ -2591,7 +2591,8 @@ To launch an image:
  * <b>Flavor</b>: Indicates the size of the node. When you select a flavor here, the Flavor Details table on the right changes to show the node properties and values associated with your size selection.
  * <b>Instance Count</b>: Can be more than 1.
  
-5. Use the <b>Access and Security</b> tab to control access to your instance via pairs and security groups.
+5. Use the <b>Access and Security</b> tab to control access to your instance via 
+6. pairs and security groups.
 
  a. <b>Keypair</b>: Keypairs are ssh credentials that are injected into images when they are launched. The public key is installed on the VM; you will use the private key to log in.
 
@@ -3331,6 +3332,8 @@ To see details of an update:
 
 * [How to Configure an Updates and Extensions Account](#how-to-configure-an-updates-and-extensions-account)
 
+* [How to Import an Update or Extension](how-to-import-an-update-or-extension)
+
 * [How to Download an Update or Extension](#how-to-download-an-update-or-extension)
 
 * [How to Publish an Update or Extension](#how-to-publish-an-update-or-extension)
@@ -3369,13 +3372,6 @@ To create an account:
  * Click <b>OK</b>.
 
 6. If you configure successfully, you can use the Updates and Extensions window.
-
-**Related Topics:**
-
-* [How to Download an Update or Extension](#how-to-download-an-update-or-extension)
-
-* [How to Publish an Update or Extension](#how-to-publish-an-update-or-extension)
-
  
 ##### About Account Cookies
 
@@ -3386,6 +3382,20 @@ If your browser blocks cookies, you cannot configure an account.
 
 If you clear cookies on your computer, you must configure your account again. You do not have access to CODN until you configure. However, if you downloaded 
 updates and they exist in your cache, you still see them on your Updates and Extensions window. 
+
+
+#### How to Import an Update or Extension
+
+You can import a file from your local system to the local updates and extensions catalog.  In a common use case, a developer creates material and then shares it through the catalog.
+
+To import a file:
+
+1. Click <b>Updates and Extensions</b> > <b>Updates and Extensions</b> to open the Updates and Extensions window.
+2. Click <b>Import</b> to open the Import dialog box, where you can browse for a file on your local system.
+3. Select the file, and click <b>Import</b>.
+<br>
+The file is added to your local catalog, where you can download and install it, the same as updates and extensions from the catalog service.
+
 
 #### How to Download an Update or Extension
 
