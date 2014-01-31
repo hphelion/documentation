@@ -98,7 +98,7 @@ Following are screenshots of  Classic Console features followed by the updated f
 
 **HP Public Cloud Console**
 
-Access API Keys in the HP Public Cloud Console via the pull-down menu next to the user name on the [landing page](https://horizon.hpcloud.com/landing/)
+Access API Keys in the HP Public Cloud Console via the pull-down menu next to the user name on the [landing page](https://horizon.hpcloud.com/landing/).
 
 <img src="hpccAPIKeys.png" width="580" alt="" />
 
