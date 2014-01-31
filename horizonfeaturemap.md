@@ -91,7 +91,7 @@ Following are screenshots of  Classic Console features followed by the updated f
 
 **Classic Console**
 
-<img src="ccAPIkeys.png" width="580" alt="" />
+<img src="media/ccAPIkeys.png" width="580" alt="" />
 
 <img src="media/ccAPIkeys2.png" width="580" alt="" />
 
@@ -101,86 +101,86 @@ Following are screenshots of  Classic Console features followed by the updated f
 
 Access API Keys in the HP Public Cloud Console via the pull-down menu next to the user name on the [landing page](https://horizon.hpcloud.com/landing/).
 
-<img src="hpccAPIKeys.png" width="580" alt="" />
+<img src="media/hpccAPIKeys.png" width="580" alt="" />
 
 
 ####Manage account users####
 
 **Classic Console**
 
-<img src="ccmanageaccountusers.png" width="580" alt="" />
+<img src="media/ccmanageaccountusers.png" width="580" alt="" />
 
 
 **HP Public Cloud Console**
 
 Click "Identity," then "Users" [here](https://horizon.hpcloud.com/control_services/users/) to manage account users.
 
-<img src="hpccmanageaccountusers.png" width="580" alt="" />
+<img src="media/hpccmanageaccountusers.png" width="580" alt="" />
 
 
 ####Manage projects####
 
 **Classic Console**
 
-<img src="ccmanageprojects.png" width="580" alt="" />
+<img src="media/ccmanageprojects.png" width="580" alt="" />
 
 **HP Public Cloud Console**
 
 Click "Identity," then "Projects" [here](https://horizon.hpcloud.com/control_services/projects/) to manage projects.
 
-<img src="hpccmanageprojects.png" width="580" alt="" />
+<img src="media/hpccmanageprojects.png" width="580" alt="" />
 
 
 ####Account cancelation####
 
 **Classic Console**
 
-<img src="ccaccountcancelation.png" width="580" alt="" />
+<img src="media/ccaccountcancelation.png" width="580" alt="" />
 
 
 **HP Public Cloud Console**
 
 Cancel an account from the pull-down menu next to the user's name on the [landing page](https://horizon.hpcloud.com/landing/) or click [here](https://horizon.hpcloud.com/settings/account_info/).
 
-<img src="hpcccancelaccount.png" width="580" alt="" />
+<img src="media/hpcccancelaccount.png" width="580" alt="" />
 
 
 ####Support cases####
 
 **Classic Console**
 
-<img src="ccSupport.png" width="580" alt="" />
+<img src="media/ccSupport.png" width="580" alt="" />
 
 **HP Public Cloud Console**
 
 Click [here](https://horizon.hpcloud.com/settings/cases/).
 
-<img src="hpccsupport.png" width="580" alt="" />
+<img src="media/hpccsupport.png" width="580" alt="" />
 
 
 ####Update general user information####
 
 **Classic Console**
 
-<img src="ccupdategeneraluserinfo.png" width="580" alt="" />
+<img src="media/ccupdategeneraluserinfo.png" width="580" alt="" />
 
 **HP Public Cloud Console**
 
 Update user information using the pull-down menu on the [landing page](https://horizon.hpcloud.com/landing/) next to the user's name.
 
-<img src="hpccupdateuserinformation.png" width="580" alt="" />
+<img src="media/hpccupdateuserinformation.png" width="580" alt="" />
 
 ####Update password####
 
 **Classic Console**
 
-<img src="ccupdatepassword.png" width="580" alt="" />
+<img src="media/ccupdatepassword.png" width="580" alt="" />
 
 **HP Public Cloud Console**
 
 Change the password using the pull-down menu next to the user's name on the [landing page](https://horizon.hpcloud.com/landing/).
 
-<img src="hpccupdatepassword.png" width="580" alt="" />
+<img src="media/hpccupdatepassword.png" width="580" alt="" />
 
 
 ####Self-registration####
@@ -189,11 +189,11 @@ Change the password using the pull-down menu next to the user's name on the [lan
 
 [Registration page](https://console.hpcloud.com/login)
 
-<img src="ccselfregistration.png" width="580" alt="" />
+<img src="media/ccselfregistration.png" width="580" alt="" />
 
 **HP Public Cloud Console**
 
 [Registration page](https://horizon.hpcloud.com/register)
 
-<img src="hpccselfreg.png" width="580" alt="" />
+<img src="media/hpccselfreg.png" width="580" alt="" />
 
