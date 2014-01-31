@@ -8,12 +8,37 @@ product: HP Cloud Console
 
 
 #Feature Mapping: HP Classic Console to the HP Public Cloud Console
+
 HP encourages you to transition to HP Public Cloud 13.5 as soon as possible. The 13.5 version allows you to take advantage of significant product enhancements, including the new HP Public Cloud Console based on the OpenStack Horizon dashboard project.  Early transition also ensures uninterrupted service when support for the previous (12.12) version ends on June 1, 2014.
 
-As of January 29, 2014, you can only manage your 13.5 services and update your account information through the HP Public Cloud Console. This document displays links to classic console features in the HP Public Cloud Console.
+As of January 29, 2014, you can only manage your 13.5 services and update your account information through the HP Public Cloud Console. This document maps the feature changes from the HP Classic Console to the new HP Public Cloud Console and provides links to other relevant information.
+
+This page contains the following sections:
+
+* [Logins for HP Classic Console and HP Public Cloud Console](#Logins)
+* [Find Classic Console Features in the HP Public Public Cloud](#Findfeatures)
+* [Using HP Public Cloud Console](#Usinghpcc)
+* [Feature mapping details](#featuremappingdetails)
 
 
-##Find Classic Console Features in the HP Public Public Cloud##
+
+##Logins and transition information for HP Classic Console and HP Public Cloud Console## {#Logins}
+
+[Login to the Classic Console](https://console.hpcloud.com/login)
+
+[Register on HP Public Cloud Console](https://horizon.hpcloud.com/register)
+
+[Login to HP Public Cloud Console](https://horizon.hpcloud.com/)
+
+[HP Cloud version 13.5 overview](http://docs.hpcloud.com/version-overview?jumpid=em_R11646_us/en/b_to_b/hpcs/email_13.5_Console/hpcs_overview/20131218&elq=31433aa6c52548059ccea9f4ddbff345&elqCampaignId=)
+
+[HP Cloud Services 12.12 to 13.5 transition overview](https://docs.hpcloud.com/migration-overview/?jumpid=em_R11646_us/en/b_to_b/hpcs/email_13.5_Console/hpcs_migration-overview/20131218&elq=31433aa6c52548059ccea9f4ddbff345&elqCampaignId=)
+
+[Getting Started with HP Public Cloud Console](/hpcloudconsole/)
+
+
+
+##Find Classic Console Features in the HP Public Public Cloud## {#Findfeatures}
 
 [Account Cancelation](https://horizon.hpcloud.com/settings/account_info) 
 
@@ -52,4 +77,57 @@ As of January 29, 2014, you can only manage your 13.5 services and update your a
 [Update General Account Info (Address/Enable/Groups, etc.)](https://horizon.hpcloud.com/control_services/users/)
 
 [Update Password](https://horizon.hpcloud.com/control_services/users/)
+
+##Using HP Public Cloud Console## {#Usinghpcc})
+In the HP Public Cloud Console, the services are displayed for the selected "Project/Region Scope" on the [landing page](https://horizon.hpcloud.com/landing/). The landing page replaces the "Dashboard" page in the Classic Console.
+
+<img src="media/figonelandingpage.png" width="580" alt="" />
+
+###Feature mapping details### {#featuremappingdetails}
+
+Following are screenshots of  Classic Console features followed by the updated feature in the HP Public Cloud Console.
+
+####API keys####
+
+**Classic Console**
+
+<img src="ccAPIkeys.png" width="580" alt="" />
+
+<img src="media/ccAPIkeys2.png" width="580" alt="" />
+
+
+**HP Public Cloud Console**
+
+Access API Keys in the HP Public Cloud Console via the pull-down menu next to the user name on the [landing page](https://horizon.hpcloud.com/landing/)
+
+<img src="hpccAPIKeys.png" width="580" alt="" />
+
+####Manage account users####
+
+**Classic Console**
+
+<img src="ccmanageaccountusers.png" width="580" alt="" />
+
+
+**HP Public Cloud Console**
+
+Click "Identity" then "Users" [here](https://horizon.hpcloud.com/control_services/users/) to manage account users.
+
+<img src="hpccmanageaccountusers.png" width="580" alt="" />
+
+
+####Manage projects####
+
+**Classic Console**
+
+<img src="ccmanageprojects.png" width="580" alt="" />
+
+**HP Public Cloud Console**
+
+Click "Identity" then "Projects" [here](https://horizon.hpcloud.com/control_services/projects/) to manage projects.
+
+<img src="hpccmanageprojects.png" width="580" alt="" />
+
+
+
 
