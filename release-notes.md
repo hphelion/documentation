@@ -124,7 +124,7 @@ The following are the known issues for Version 13.5 of the HP Public Cloud softw
     - The `Assigned Network Addresses` field may display as blank after you execute the `[New-Server](/cli/windows/reference#New-Server)` command<br>
     
 
-###HP Public Cloud Console### 
+####HP Public Cloud Console#### 
 
 * If you use the Identity service role-based access control (RBAC) at the panel level in the [HP Public Cloud Console](/hpcloudconsole), you may see action and service options that exceed your permission levels.  You can access these features through the CLI or the the [classic management console](/mc/).
 * If you encounter a quota issue when performing network tasks while using the [HP Public Cloud Console](/hpcloudconsole), use the [classic management console](/mc/).
