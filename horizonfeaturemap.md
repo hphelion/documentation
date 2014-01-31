@@ -147,3 +147,37 @@ Cancel an account from the pull-down menu next to the user's name on the [landin
 
 **Classic Console**
 
+<img src="ccSupport.png" width="580" alt="" />
+
+**HP Public Cloud Console**
+
+Click [here](https://horizon.hpcloud.com/settings/cases/).
+
+<img src="hpccsupport.png" width="580" alt="" />
+
+
+####Update general user information####
+
+**Classic Console**
+
+<img src="ccupdategeneraluserinfo.png" width="580" alt="" />
+
+**HP Public Cloud Console**
+
+Update user information using the pull-down menu on the [landing page](https://horizon.hpcloud.com/landing/) next to the user's name.
+
+<img src="hpccupdateuserinformation.png" width="580" alt="" />
+
+####Update password####
+
+**Classic Console**
+
+<img src="ccupdatepassword.png" width="580" alt="" />
+
+**HP Public Cloud Console**
+
+Change the password using the pull-down menu next to the user's name on the [landing page](https://horizon.hpcloud.com/landing/)
+
+<img src="hpccupdatepassword.png" width="580" alt="" />
+
+
