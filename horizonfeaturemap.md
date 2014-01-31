@@ -15,7 +15,7 @@ As of January 29, 2014, you can only manage your 13.5 services and update your a
 
 This page contains the following sections:
 
-* [Logins for HP Classic Console and HP Public Cloud Console](#Logins)
+* [Logins and transition information for HP Classic Console and HP Public Cloud Console](#Logins)
 * [Find Classic Console Features in the HP Public Public Cloud](#Findfeatures)
 * [Using HP Public Cloud Console](#Usinghpcc)
 * [Feature mapping details](#featuremappingdetails)
