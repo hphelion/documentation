@@ -227,7 +227,7 @@ A volume is a block storage device you attach to an instance.
 
     <img src="media/VolumeImage4.png" width="580" alt="" />
 
-9. To attach the volume to an instance, click "Edit Attachments" under "Action" on the "Volumes" page.
+9. To attach the volume to an instance, click "Edit Volume" under "Action" on the "Volumes" page.
 
     <img src="media/VolumeImage5.png" width="580" alt="" />
 
