@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Use Case 3: Title TBS"
+title: "Use Case 3: Title To Be Supplied"
 permalink: /cloudos/develop/quickstart-usecase3/
 product: cloudos
 
