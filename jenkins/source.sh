@@ -4,7 +4,7 @@
 #
 export TERM=xterm-256color
 source "$HOME/.rvm/scripts/rvm"
-rvm use ruby-1.9.2@docs
+rvm use ruby-1.9@docs
 CD=$(pwd)
 
 SERVERS_DIR=$(pwd)/servers
