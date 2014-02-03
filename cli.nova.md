@@ -5,7 +5,7 @@ permalink: /cli/nova/
 product: nova-cli
 
 ---
-#HP Cloud Extended Python Novaclient#
+#Work with HP Cloud using a Python Novaclient#
 
 You can interact with HP Cloud using a Python Novaclient. If you are working with HP Cloud version 13.5 then you need to download the client from OpenStack.
 
