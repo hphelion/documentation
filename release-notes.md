@@ -102,7 +102,7 @@ The following are our best-practices recommendations for versions 13.5.
 * For best ease-of-use, use the [management console](/mc/) rather than the Windows command-line interface (CLI) to attach or detach a volume.
 * For best results when deleting a volume, unmount the volume (or for Windows instances take it offline) and detach the volume prior to deleting it.
 * For optimum performance and reliability when running Windows instances, HP recommends you use flavors with sizes of 4GB or greater.
-* For full functionality when creating instances using the Windows CLI, use flavors of `small` or greater. 
+* When creating a Windows instance, you must use a flavor of `small` or greater. The `xsmall` flavor contains a 10GB root disk, which is too small to accommodate a Windows root disk. 
 * For best reliability, reboot instances of sizes `standard.2xlarge`, `standard.4xlarge`, and `standard.8xlarge` from within the instance.
 
 
