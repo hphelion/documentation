@@ -7,7 +7,7 @@ product: image
 ---
 
 # HP Cloud 13.5: How to Upload a Partner Image and Make it Public # {#publishPartnerImage}
-This document describes how to use the HP Cloud Image API to upload images and make them available for public use in HP Cloud 13.5. It is not intended to be an exhaustive description of [managing images using the Glance client](http://docs.openstack.org/user-guide-admin/content/cli_manage_images.html). For additional detail, see the [glance command reference](http://docs.openstack.org/user-guide-admin/content/glanceclient_commands.html) and the [HP Cloud API specification](https://docs.hpcloud.com/api/).
+This document describes how to use the HP Cloud Image API to upload images and make them available for public use in HP Cloud 13.5. It is not intended to be an exhaustive description of [managing images using the Glance client](http://docs.openstack.org/user-guide-admin/content/cli_manage_images.html). For additional detail, see the [glance command reference](http://docs.openstack.org/user-guide-admin/content/glanceclient_commands.html) and the [HP Cloud Image Service API specification](https://docs.hpcloud.com/api/v13/image/).
 
 **Note:** As an image owner, it is your responsibility to ensure you have rights to use any software included in the image. HP is not responsible or liable for any unauthorized use of software by the owner of an image.
 
@@ -90,47 +90,6 @@ The preferred method for interacting with the HP Cloud Image API is to use the `
 
 **Important:** Before using curl, ensure that you have acquired a token and [configured environment variables](#publishConfigEnv) for your system.
 
-##### Acquiring a token ##### {#publishCurlToken}
-Before you can manage your images using curl, you must acquire a token using your credentials. To acquire a token:
-
-<ol><li>Run the following command:
-
-<pre>
-    $ curl -XPOST -H "Content-Type: application/json" -d"{\"auth\":{\"tenantName\": 
-    \"$OS_TENANT_NAME\", \"passwordCredentials\": {\"username\": \"$OS_USERNAME\",
-    \"password\": \"$OS_PASSWORD\"}}}" $OS_AUTH_URL/tokens
-</pre>`
-
-**Important:** Be careful using the double quotes (") and escaped double quotes (\") in the command above.
-
-The curl command should return output, such as:
-
-<pre>
-    {"access": {  
-      "token": {  
-        "expires": "2013-05-24T22:03:30.036Z",   
-        "id": "HPAuth10_a73d39f83b98359a7a0951f51a393aaeafdc00fcbcd31c300384917",  
-        "tenant": {  
-           "id": "12345678",   
-           "name": "jane.smith@example.com"  
-           }  
-        },
-    .  
-    .  
-    .
-</pre>
-</li>
-<li> Copy the token ID to the system clipboard. For example, in the output above the token ID is:
-
-<pre>HPAuth10_a73d39f83b98359a7a0951f51a393aaeafdc00fcbcd31c300384917
-</pre>
-</li>
-<li> To perform Glance API operations using curl, you must export the token. To export the token, run the <code>export</code> command using the generated token ID. For example:
-
-<pre>$ export TOKEN_ID=HPAuth10_a73d39f83b98359a7a0951f51a393aaeafdc00fcbcd31c300384917
-</pre>
-</li>
-</ol>
 ### Configuring environment variables ### {#publishConfigEnv}
 Before using the Glance client (or curl) to manage images, ensure you have followed these instructions to set your environment variables. To interact with HP Cloud Image API endpoint, appropriately set the following environment variables:
 
@@ -189,6 +148,48 @@ To configure your environment variables using bash, complete the following steps
 <li>Establish the environment:
 <pre>
     $ source .glancerc</pre>
+</li>
+</ol>
+
+#### Acquiring a token (curl) #### {#publishCurlToken}
+Before you can manage your images using curl, you must acquire a token using your credentials. To acquire a token:
+
+<ol><li>Run the following command:
+
+<pre>
+    $ curl -XPOST -H "Content-Type: application/json" -d"{\"auth\":{\"tenantName\": 
+    \"$OS_TENANT_NAME\", \"passwordCredentials\": {\"username\": \"$OS_USERNAME\",
+    \"password\": \"$OS_PASSWORD\"}}}" $OS_AUTH_URL/tokens
+</pre>`
+
+**Important:** Be careful using the double quotes (") and escaped double quotes (\") in the command above.
+
+The curl command should return output, such as:
+
+<pre>
+    {"access": {  
+      "token": {  
+        "expires": "2013-05-24T22:03:30.036Z",   
+        "id": "HPAuth10_a73d39f83b98359a7a0951f51a393aaeafdc00fcbcd31c300384917",  
+        "tenant": {  
+           "id": "12345678",   
+           "name": "jane.smith@example.com"  
+           }  
+        },
+    .  
+    .  
+    .
+</pre>
+</li>
+<li> Copy the token ID to the system clipboard. For example, in the output above the token ID is:
+
+<pre>HPAuth10_a73d39f83b98359a7a0951f51a393aaeafdc00fcbcd31c300384917
+</pre>
+</li>
+<li> To perform Glance API operations using curl, you must export the token. To export the token, run the <code>export</code> command using the generated token ID. For example:
+
+<pre>$ export TOKEN_ID=HPAuth10_a73d39f83b98359a7a0951f51a393aaeafdc00fcbcd31c300384917
+</pre>
 </li>
 </ol>
 
@@ -438,12 +439,11 @@ To upload your new image using the Glance `image-create` command:
 1. Open your choice of command shell.
 2. Run the following command to upload your new image and define/set the required attributes and property, where your image name is `My Custom Image` and your image file location is `/root/images/my_test_image.qcow2`:
 
-    <pre>
-    $ glance image-create --name 'My Custom Image' 
-    --container-format bare --disk-format qcow2 --property 
-    architecture=x86_64 < /root/images/my_test_image.qcow2
-    </pre>
-
+   
+    `$ glance image-create --name 'My Custom Image' --container-format `
+    `bare --disk-format qcow2 --property architecture=x86_64 &lt; /root/`
+    `images/my_test_image.qcow2`
+    
     **Note:** You can define/set all [required](#publishReqsDeploy) and [optional](#publishReqsDisplay) attributes and properties in this step.
 
 3. Verify that your image status is active.
@@ -621,7 +621,7 @@ Possible HTTP return codes are listed in HP Cloud Image API documentation. The m
 
 For additional information on uploading an image and making it publicly available, see:
 
-* [HP Cloud API documentation](https://docs.hpcloud.com/api/compute/)* [Openstack's documentation](http://docs.openstack.org/user-guide/content/ch_cli.html)* [Cloud 13.5 CLI Installation Instructions](https://community.hpcloud.com/article/cloud-135-cli-installation-instructions)
+* [HP Cloud Image Service API documentation](https://docs.hpcloud.com/api/v13/image/)* [Openstack's documentation](http://docs.openstack.org/user-guide/content/ch_cli.html)* [Cloud 13.5 CLI Installation Instructions](https://community.hpcloud.com/article/cloud-135-cli-installation-instructions)
 * [Manage images using the Glance client](http://docs.openstack.org/user-guide/content/cli_manage_images.html)
 * [glance command reference](http://docs.openstack.org/user-guide/content/glanceclient_commands.html)* [Technical support knowledge base](https://community.hpcloud.com)
 
