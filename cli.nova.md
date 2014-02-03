@@ -7,7 +7,9 @@ product: nova-cli
 ---
 #HP Cloud Extended Python Novaclient#
 
-The HP Cloud Python Novaclient is an extension to the OpenStack Python Novaclient that enables interaction with HP Cloud Compute and Block Storage.  
+You can interact with HP Cloud using a Python Novaclient. If you are working with HP Cloud version 13.5 then you need to download the client from OpenStack.
+
+For those of you using HP Cloud version 12.12, you need to download the HP Cloud Python Novaclient that is an extension to the OpenStack Python Novaclient enabling interaction with HP Cloud compute and block storage.  
 
 If you want to work with **version 13.5**, check out these links:
 
