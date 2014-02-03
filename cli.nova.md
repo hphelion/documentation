@@ -14,11 +14,11 @@ For those of you using HP Cloud version 12.12, you need to download the HP Cloud
 If you want to work with **version 13.5**, check out these links:
 
 * [Installation](https://community.hpcloud.com/article/cloud-135-cli-installation-instructions)
-* [**Download** the Python Novaclient package from OpenStack](http://docs.openstack.org/user-guide/content/install_clients.html).
+* [**Download** the Python Novaclient package from OpenStack](http://docs.openstack.org/user-guide/content/install_clients.html)
 
 If you want to work with **version 12.12**, check out these links:
 
 * [Installation](/cli/nova/install)
 * [Python Novaclient CLI Reference](/cli/nova/reference)
-* [**Download** the Python Novaclient package](/file/python-novaclient_2.6.8-17.tar.gz).
+* [**Download** the Python Novaclient package](/file/python-novaclient_2.6.8-17.tar.gz)
 
