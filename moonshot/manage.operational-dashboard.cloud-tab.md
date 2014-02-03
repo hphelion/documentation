@@ -2,7 +2,7 @@
 layout: default
 title: "Operational Dashboard: Cloud Tab"
 permalink: /cloudos/moonshot/manage/operational-dashboard/cloud-tab/
-product: moonshot
+product: cloudos
 
 ---
 
@@ -31,8 +31,6 @@ they are displayed.
 * [Manage Nodes](#manage-nodes)
   
 * [Manage Clouds](#manage-clouds)
-    
-* [Hot Fixes](#hot-fixes)
     
 * [Updates and Extensions](#updates-and-extensions) 
 
@@ -936,246 +934,6 @@ The following table describes the Manage Clouds Details page UI elements:
 
 <a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
-## Hot Fixes
-
-The following information provides details about the Hot Fixes panel.
-
-**Concepts:**
-
-* [Hot Fixes Overview](#hot-fixes-overview) 
-
-**UI Descriptions:**
-
-* [Hot Fixes Page](#hot-fixes-page)
-    
-* [Package Details Page](#package-details-page)
-    
-* [Import Package Dialog](#import-package-dialog) 
-
-
-### Hot Fixes Overview
-
-The hot fixes feature allows you to apply software hot fixes and updates to your HP Cloud OS environment after such hot fix or update files, 
-having the .csu extension, have been downloaded to the local file system. In this help, such hot fixes and updates are referred to as content packages.
-
-### Hot Fixes Page
-
-**To access**: Select the **Cloud** tab > **Hot Fixes**.
-
-The following table describes the Hot Fixes page UI elements:
-
-<table style="text-align: left; vertical-align: top; min-width:700px;">
-
-<tr style="background-color: #C8C8C8;">
-<th>UI Elements</th>
-<th>Description</th>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td style="min-width:150px;"> <b>Product Name</b> column  </td>
-<td> The name of the product to which the content package applies. </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td style="min-width:150px;"> <b>Product Version</b> column  </td>
-<td> The version number of the product to which the content package applies. </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td style="min-width:150px;"> <b>Package Name</b> column  </td>
-<td> The name of the content package. Click on the package name to open 
-the <a href="/cloudos/moonshot/manage/operational-dashboard/cloud-tab/#package-details-page">Package Details Page</a>.  </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td style="min-width:150px;"> <b>Package Version</b> column  </td>
-<td>  	The content package version number. </td>
-</tr>
-
-<!-- BG: This should be updated for US 2516 G3.1, KB to GB --> 
-<tr style="background-color: white; color: black;">
-<td style="min-width:150px;"> <b>Size</b> column  </td>
-<td> The size of the content package, in bytes.  </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td style="min-width:150px;"> <b>Imported</b> column  </td>
-<td> The date and time at which the content package was imported to the HP Cloud OS Administration node. </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td style="min-width:150px;"> <b>Installed</b> column  </td>
-<td> The date and time at which the content package was installed, or n/a if the content package has not been installed. </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td style="min-width:150px;"> <b>Actions</b> column  </td>
-<td> Buttons, menus, or other items that can be used to perform some action with the content package. </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td style="min-width:150px;"> <b>Filter</b> button and field  </td>
-<td> Enter a character string into the field to display only those content packages in the list that 
-contain the string in any column. The filter function is not case sensitive. </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td style="min-width:150px;"> <b>Refresh List</b> button  </td>
-<td> Click, and then click the <b>Refresh</b> button in the confirmation box that appears to refresh the list of content packages. </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td style="min-width:150px;"> <b>Import Package</b> button  </td>
-<td> Click to open the <a href="/cloudos/moonshot/manage/operational-dashboard/cloud-tab/#import-package-dialog">Import Package Dialog</a>. </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td style="min-width:150px;"> <b>Install</b> button </td>
-<td>  Click, and then click the <b>Install</b> button in the confirmation box, to start the content package installation process. 
-When the installation process completes, a Success message will appear in the upper right side of the interface.
-<br /> <br/>
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> Upon successful completion of the installation process, 
-the content package has been properly installed on the HP Cloud OS Administration node, but not yet enabled. Such enabling is performed 
-in the HP Cloud OS Installation Dashboard. For information on how to enable and disable content packages, 
-refer to the <a href="/cloudos/install/updates-and-extensions">Updates and Extensions</a> topic, which is part of 
-<a href="/cloudos/install/">Install and Configure Your Cloud</a>.</p>
-</td>
-</tr>
-
-</table> 
-
-### Package Details Page
-
-**To access**: Select the **Cloud** tab > **Hot Fixes** and click a Package Name link.
-
-This page displays detailed information about a particular content package. The following sections describe the content package details page UI elements.
-
-#### Overview Tab
-
-The following table describes the UI elements on the Overview tab on the content package details page.
-
-<table style="text-align: left; vertical-align: top; min-width:700px;">
-
-<tr style="background-color: #C8C8C8;">
-<th>UI Elements</th>
-<th>Description</th>
-</tr>
-
-<tr style="background-color: #f8f8f8; color: black;">
-<td colspan="2"> <b>Info</b> section  </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td style="min-width:150px;"> <b>Filename</b> </td>
-<td> The name of the content package file. </td>
-</tr>
-
-<!-- BG: This should be updated for US 2516 G3.1, KB to GB --> 
-<tr style="background-color: white; color: black;">
-<td> <b>Size</b> </td>
-<td> The size of the content package file, in bytes. </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> <b>Downloaded</b> </td>
-<td> The date and time at which the content package file was imported to the Cloud OS Administration node. </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> <b>Executed</b> </td>
-<td> The date and time at which the content package was installed. </td>
-</tr>
-
-<tr style="background-color: #f8f8f8; color: black;">
-<td colspan="2"> <b>Product Details</b> section  </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> <b>Name</b> </td>
-<td> The name of the content package. </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> <b>Type</b> </td>
-<td> The type of content package. </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> <b>Version</b> </td>
-<td> The content package version number. </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> <b>Created By</b> </td>
-<td> The entity that created the content package. </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> <b>Publication Date</b> </td>
-<td> The date and time that the content package was published. </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> <b>Priority</b> </td>
-<td> The priority of the content package. </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> <b>Install Requires Admin Permissions</b> </td>
-<td> "True" if installation of the content package requires administrator permissions, 
-or "false" if installation of the content package does not require administrator permissions. </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> <b>Install Requires Admin Node Reboot</b> </td>
-<td> "True" if the Cloud OS Administration node will require a reboot after the content package is installed, 
-or "false" if the Cloud OS Administration node will not require a reboot after the content package is installed.  </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> <b>Notes</b> </td>
-<td> Any notes that are included with the content package. </td>
-</tr>
-
-</table> 
-
-
-#### Log Tab
-
-Click the Log tab to select a log to view.
-
-
-### Import Package Dialog
-
-**To access**: Select the **Cloud** tab, > **Hot Fixes**, and then click the **Import Package** button on the Hot Fixes page.
-
-The following table describes the Import Package dialog UI elements:
-
-<table style="text-align: left; vertical-align: top; min-width:700px;">
-
-<tr style="background-color: #C8C8C8;">
-<th>UI Elements</th>
-<th>Description</th>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td style="min-width:150px;"> <b>Choose File</b> button   </td>
-<td> Click to open a standard operating system "open file" dialog box, in which you can browse to and select the content 
-package to be imported to the Cloud OS Administration node from the client's local file system. 
-Note that such package files have a .csu extension.  </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> <b>Import</b> button   </td>
-<td> Click after choosing a valid content package (.csu) file using the <b>Choose File</b> button to import the file to the 
-HP Cloud OS Administration node. If no file has been chosen, "No file chosen" will appear next to the <b>Choose File</b> button.  </td>
-</tr>
-
-</table> 
-
-
-
-<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 ## Updates and Extensions
 
@@ -1191,11 +949,13 @@ The following information provides details about the Updates and Extensions pane
 
 * [Configure Dialog](#configure-dialog) 
 
+* [Import Dialog](#import-dialog) 
+
 
 ### Updates and Extensions Overview
 
 The updates and extensions feature allows you to connect to, list, and retrieve hot fixes and updates from the HP Cloud OS Distribution Network (CODN) 
-and apply them to your HP Cloud OS environment. In this topic, such hot fixes and updates are referred to as *content packages*.
+and apply them to your HP Cloud OS environment. You can also import hot fixes and updates from a file system to the HP Cloud OS environment and install them. In this topic, such hot fixes and updates are referred to as *content packages*.
 
 ### Updates and Extensions Page
 
@@ -1253,34 +1013,45 @@ contain the string in any column. The filter function is not case sensitive. </t
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> <b>Configure</b> </td>
+<td> <b>Configure</b> button</td>
 <td> Click to open the <a href="/cloudos/moonshot/manage/operational-dashboard/cloud-tab/#configure-dialog">Configure Dialog</a>. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td style="min-width:150px;"> <b>Import</b> button  </td>
+<td> Click to open the <a href="/cloudos/moonshot/manage/operational-dashboard/cloud-tab/#import-dialog">Import Dialog</a>. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> <b>Download</b> button </td>
 <td> Click, and then click the <b>Download</b> button in the confirmation box that appears to download a 
-copy of the content package from the catalog to your local system where you can use it. </td>
+copy of the content package from the catalog to your local system where you can use it. Once the content package has been successfully downloaded, this button changes to the <b>Install</b> button.</td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> <b>Install</b> button </td>
-<td> Click to start the content package installation process. If no install action is supported for a particular item, 
-the Install button will not be shown. </td>
+<td>  Click, and then click the <b>Install</b> button in the confirmation box, to start the content package installation process. 
+When the installation process completes, a Success message will appear in the upper right side of the interface.
+<br /> <br/>
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> Upon successful completion of the installation process, 
+the content package has been properly installed on the HP Cloud OS Administration node, but not yet enabled. Such enabling is performed 
+in the HP Cloud OS Installation Dashboard. For information on how to enable and disable content packages, 
+refer to the <a href="/cloudos/install/updates-and-extensions">Updates and Extensions</a> topic, which is part of 
+<a href="/cloudos/install/">Install and Configure Your Cloud</a>.</p>
+</td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> <b>More > View Progress</b> </td>
-<td> Select to view the progress of the operation. </td>
+<td> Select to view the progress of the operation. The View Progress dialog box that opens shows the progress of the operation at the time it is opened.</td>
 </tr>
 
 </table> 
 
 
-
 ### Configure Dialog
 
-**To access**: Select the **Cloud** tab > b, and then the **Configure** button.
+**To access**: Select the **Cloud** tab > **Updates and Extensions**, and then the **Configure** button.
 
 The following table describes the Configure dialog UI elements:
 
@@ -1308,6 +1079,33 @@ The following table describes the Configure dialog UI elements:
 
 </table> 
 
+### Import Dialog
+
+**To access**: Select the **Cloud** tab, > **Updates and Extensions**, and then click the **Import** button on the Updates and Extensions page.
+
+The following table describes the Import dialog UI elements:
+
+<table style="text-align: left; vertical-align: top; min-width:700px;">
+
+<tr style="background-color: #C8C8C8;">
+<th>UI Elements</th>
+<th>Description</th>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td style="min-width:150px;"> <b>Choose File</b> button   </td>
+<td> Click to open a standard operating system "open file" dialog box, in which you can browse to and select the content 
+package to be imported to the Cloud OS Administration node from the client's local file system. 
+Note that such package files have a .csu extension.  </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>Import</b> button   </td>
+<td> Click after choosing a valid content package (.csu) file using the <b>Choose File</b> button to import the file to the 
+HP Cloud OS Administration node. If no file has been chosen, "No file chosen" will appear next to the <b>Choose File</b> button.  </td>
+</tr>
+
+</table> 
 
 
 <a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

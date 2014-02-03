@@ -2,7 +2,7 @@
 layout: default
 title: "Operational Dashboard: Settings Tab"
 permalink: /cloudos/moonshot/manage/operational-dashboard/settings-tab/
-product: moonshot
+product: cloudos
 
 ---
 
@@ -32,7 +32,7 @@ The Settings tab contains the following panels:
 
 * [About](#about) 
 
-For procedural instructions, see [Install and Configure Your Clouds](/cloudos/install/).
+For procedural instructions, see [Install and Configure Your Cloud](/cloudos/install/).
 
 ## User Settings
 

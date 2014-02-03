@@ -40,4 +40,4 @@ and follow links to step-by-step instructions for performing tasks. See [Getting
 * A topic that provides step-by-step instructions for tasks. This section's organization is based on the user interface tabs and windows. 
 See [Administration Dashboard Tasks by Tab](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/).
 
-Also, for your convenience, troubleshooting tips are organized and presented in the [Troubleshooting](/cloudos/manage/troubleshooting/) topic.
+Also, for your convenience, troubleshooting tips are organized and presented in the [Troubleshooting](/cloudos/moonshot/manage/troubleshooting/) topic.

@@ -2,7 +2,7 @@
 layout: default
 title: "Operational Dashboard: Environment Tab"
 permalink: /cloudos/moonshot/manage/operational-dashboard/environment-tab/
-product: moonshot
+product: cloudos
 
 ---
 
@@ -72,8 +72,7 @@ If you want to make changes to the Cloud Administration Node Internet Access and
 For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
 </p>
 
-* **Cloud Administration Node Internet Access** &mdash; Configure to set up Internet access on the HP Cloud OS Administration node. You will need Internet access for downloading hot fixes and updates using the [Hot Fixes](/cloudos/moonshot/manage/operational-dashboard/cloud-tab/#hot-fixes) panel, 
-or the [Updates and Extensions](/cloudos/moonshot/manage/operational-dashboard/cloud-tab/#updates-and-extensions) panel.
+* **Cloud Administration Node Internet Access** &mdash; Configure to set up Internet access on the HP Cloud OS Administration node. You will need Internet access for downloading hot fixes and updates using the [Updates and Extensions](/cloudos/moonshot/manage/operational-dashboard/cloud-tab/#updates-and-extensions) panel.
 
 * **(Optional) External DNS Server** &mdash; Configure to add the IP address of the external DNS server your Cloud OS environment is using to access named websites within your cloud.
 
@@ -99,7 +98,7 @@ The following table describes the Prerequisites page UI elements:
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> <nobr> Prerequisite Description column </nobr> </td>
+<td> <nobr> <b>Prerequisite Description</b> column </nobr> </td>
 <td> HP Cloud OS Administration node prerequisite settings:
 <ul>
 <li>Cloud Administration Node Internet Access</li>
@@ -111,12 +110,12 @@ The following table describes the Prerequisites page UI elements:
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> Last Updated column </td>
+<td> <b>Last Updated</b> column </td>
 <td> Timestamp when the prerequisite was completed. </td>
 </tr> 	
 
 <tr style="background-color: white; color: black;">
-<td> Edit Prerequisite button </td>
+<td> <b>Edit Prerequisite</b> button </td>
 <td> Opens the Edit Prerequisite dialog for the corresponding Prerequisite. </td>
 </tr> 	
  	
@@ -148,7 +147,7 @@ The following table describes the Cloud Administration Node Internet Access Prer
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> Network Interface </td>
+<td> <b>Network Interface</b> </td>
 <td> Select the network interface on the HP Cloud OS Administration node that has been configured for Internet access. <b>Note:</b> Interface <code>eth0</code> is not used for Internet access.
 </td>
 </tr>
@@ -158,7 +157,7 @@ The following table describes the Cloud Administration Node Internet Access Prer
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> DHCP checkbox </td>
+<td> <b>DHCP</b> checkbox </td>
 <td>Enable (default) or disable DHCP.
 <p>If the node will receive its IP configuration via DHCP, leave the DHCP checkbox checked. When DHCP is checked, the four Network Configuration fields are disabled, and can be left blank.</p>
 <p>If you have a static IP address allocated for the node, uncheck the DHCP checkbox and enter the appropriate information into the IP Address, Network Mask, Gateway, and DNS Address fields.</p> 
@@ -166,27 +165,27 @@ The following table describes the Cloud Administration Node Internet Access Prer
 </tr> 	
 
 <tr style="background-color: white; color: black;">
-<td> IP Address </td>
+<td> <b>IP Address</b> </td>
 <td> Leave blank unless you have a static IP address, which you enter here. </td>
 </tr> 	
  	
 <tr style="background-color: white; color: black;">
-<td> Network Mask </td>
+<td> <b>Network Mask</b> </td>
 <td> Leave blank unless you have a static IP address. Type the network mask. </td>
 </tr> 	
 
 <tr style="background-color: white; color: black;">
-<td> Gateway </td>
+<td> <b>Gateway</b> </td>
 <td> Leave blank unless you have a static IP address. Type the gateway. </td>
 </tr> 
 
 <tr style="background-color: white; color: black;">
-<td> DNS Address </td>
+<td> <b>DNS Address</b> </td>
 <td> Leave blank unless you have a static IP address. Type the DNS address. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> HTTP Proxy Information </td>
+<td> <b>HTTP Proxy Information</b> </td>
 <td>Set proxy information applicable for your environment. If you are on a network that has a proxy, you must fill in this proxy information.
 <br /> <br />
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Caution:</b>  
@@ -195,40 +194,40 @@ Specifying incorrect proxy host settings might cause some features to not work c
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> Host </td>
+<td> <b>Host</b> </td>
 <td> Get this from your system administrator or from the settings in your web browser. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> Port </td>
+<td> <b>Port</b> </td>
 <td> Get this from your system administrator or from the settings in your web browser. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> Non-Proxy Hosts </td>
+<td> <b>Non-Proxy Hosts</b> </td>
 <td> Specify addresses that should not use proxy servers (for Controller/Compute Nodes' admin and os_sdn networks, IP range). 
 Each network needs to be separated by a bar "|". For example: <code>10.*|192.*|localhost</code>. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> <nobr> Username (Optional) </nobr> </td>
+<td> <nobr> <b>Username</b> (Optional) </nobr> </td>
 <td> Specify the username if necessary for the proxy setting. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> <nobr> Password (Optional) </nobr> </td>
+<td> <nobr> <b>Password</b> (Optional) </nobr> </td>
 <td> Specify the password if necessary for the proxy setting. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> <nobr> Update Prerequisite </nobr> </td>
+<td> <nobr> <b>Update Prerequisite</b> </nobr> </td>
 <td> Click to save these settings and complete this setup. </td>
 </tr>
 
 </table>
 
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Note:</b> If this prerequisite fails to 
-complete successfully, an error message displays on the Prerequisites page. For a potential solution, see <a href="/cloudos/manage/troubleshooting/#problem-admin-node-internet-access-prerequisites-fail-to-complete">Problem: Admin Node Internet Access Prerequisites fail to complete</a> in the Troubleshooting topic. 
+complete successfully, an error message displays on the Prerequisites page. For a potential solution, see <a href="/cloudos/moonshot/manage/troubleshooting/#problem-admin-node-internet-access-prerequisites-fail-to-complete">Problem: Admin Node Internet Access Prerequisites fail to complete</a> in the Troubleshooting topic. 
 </p>
 
 <a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
@@ -255,12 +254,12 @@ The following table describes the External DNS Server Prerequisite dialog UI ele
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> External DNS Server IP Address </td>
+<td> <b>External DNS Server IP Address</b> </td>
 <td> Type the IP address of the external DNS server used by your Cloud OS environment to be able to access named websites within your cloud. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> Update Prerequisite </td>
+<td> <b>Update Prerequisite</b> </td>
 <td> Click to save the IP address. </td>
 </tr>
 
@@ -283,22 +282,22 @@ The following table describes the Cloud Administration Node Time Settings Prereq
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> Timezone </td>
+<td> <b>Timezone</b> </td>
 <td> Set the appropriate time zone for your area (UTC is the default). </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> Date </td>
+<td> <b>Date</b> </td>
 <td> Set the date applicable for your environment if different from the default. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> Time </td>
+<td> <b>Time</b> </td>
 <td> Set the time applicable for your environment if different from the default. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> Update Prerequisite </td>
+<td> <b>Update Prerequisite</b> </td>
 <td> Click to save these settings and complete this setup. </td>
 </tr>
 
@@ -321,22 +320,22 @@ The following table describes the Email Notification Settings Prerequisite dialo
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> Timezone </td>
+<td> <b>Timezone</b> </td>
 <td> Set the appropriate time zone for your area (UTC is the default). </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> Date </td>
+<td> <b>Date</b> </td>
 <td> Set the date applicable for your environment if different from the default. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> Time </td>
+<td> <b>Time</b> </td>
 <td> Set the time applicable for your environment if different from the default. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> Update Prerequisite </td>
+<td> <b>Update Prerequisite</b> </td>
 <td> Click to save these settings and complete this setup. </td>
 </tr>
 
@@ -414,23 +413,23 @@ The following table describes the Server Types page UI elements:
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> Server Name Pattern column </td>
+<td> <b>Server Name Pattern</b> column </td>
 <td> List of the Cloud OS supported server types. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> Bus Order column </td>
+<td> <b>Bus Order</b> column </td>
 <td> List of the bus orders related to the corresponding server types. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> Edit Server Definition button </td>
+<td> <b>Edit Server Definition</b> button </td>
 <td> Click to open the <a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#edit-server-definition-dialog">Edit Server Definition dialog</a> to customize the server type. 
 </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td>Create Server Definition button </td>
+<td><b>Create Server Definition</b> button </td>
 <td> Click to add a new server type on the Create Server Definition dialog. <br /> <br />
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> The Create Server Definition button only displays 
 while the servers can be added or edited. Once you do the <a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>, this button disappears and you cannot 
@@ -439,7 +438,7 @@ add new servers or edit or delete existing servers.</p>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> <nobr> Drop-down arrow > </nobr> Delete Server Definition </td>
+<td> <nobr> Drop-down arrow > </nobr> <b>Delete Server Definition</b> </td>
 <td> Select to delete the server type from the HP Cloud OS Administration node. You are prompted to confirm the deletion. <br /> <br />
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> The Delete Server Definition menu item only displays while 
 the servers can be added or edited.  Once you do the <a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>, 
@@ -469,27 +468,27 @@ For procedural instructions, see <a href="/cloudos/install/">Install and Configu
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> Server Name Pattern </td>
+<td> <b>Server Name Pattern</b> </td>
 <td> Name of the server type you are editing.</td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> Bus Order </td>
+<td> <b>Bus Order</b> </td>
 <td> One or more bus addresses of your server's network ports.  </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> Add Bus Order </td>
+<td> <b>Add Bus Order</b> </td>
 <td> Click to add a blank bus order textbox, in which you then type the new bus order related to the server type. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> Delete Bus Order </td>
+<td> <b>Delete Bus Order</b> </td>
 <td> Click to delete the selected bus order(s) that are not relevant to the server type. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> <nobr> Update Server Definition </nobr> </td>
+<td> <nobr> <b>Update Server Definition</b> </nobr> </td>
 <td> Click to save the updated server definition. <br /> <br />
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> The <b>Update Server Definition</b> button only 
 displays while the servers are editable. Once you do the 
@@ -521,27 +520,27 @@ For procedural instructions, see <a href="/cloudos/install/">Install and Configu
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> Server Name Pattern </td>
+<td> <b>Server Name Pattern</b> </td>
 <td> Name of the server type you are creating.</td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> Bus Order </td>
+<td> <b>Bus Order</b> </td>
 <td> One or more bus addresses of your server's network ports.  </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> Add Bus Order </td>
+<td> <b>Add Bus Order</b> </td>
 <td> Click to add a blank bus order textbox, in which you then type the new bus order related to the server type. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> Delete Bus Order </td>
+<td> <b>Delete Bus Order</b> </td>
 <td> Click to delete the selected bus order(s) that are not relevant to the server type. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> <nobr> Create Server Definition </nobr> </td>
+<td> <nobr> <b>Create Server Definition</b> </nobr> </td>
 <td> Click to create the updated server definition. <br /> <br />
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> The <b>Create Server Definition</b> button only 
 displays while the servers are editable. Once you do the 
@@ -702,7 +701,7 @@ The following table describes the Connections page UI elements:
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> Network Mode column </td>
+<td> <b>Network Mode</b> column </td>
 <td> Lists the available network modes for the connection set:
 <ul>
 <li> <b>Single Mode</b>: All connections are shared on the same physical interface through VLAN.
@@ -713,12 +712,12 @@ The following table describes the Connections page UI elements:
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> Role column </td>
+<td> <b>Role</b> column </td>
 <td> Lists the roles for the connection set. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> Logical Interface column </td>
+<td> <b>Logical Interface</b> column </td>
 <td> Lists the network modes' logical interfaces for the connection set. For each logical connection (intf0, intf1, intf2) 
 the network type is identified (admin, os_sdn, public):
 <ul>
@@ -730,14 +729,14 @@ the network type is identified (admin, os_sdn, public):
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> Physical Interface column </td>
+<td> <b>Physical Interface</b> column </td>
 <td> Lists the network modes' physical interface values for the corresponding connection set. For details, see the 
 <a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#edit-connection-dialog">Edit Connection Dialog</a> section.
 </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> Interface Mode column </td>
+<td> <b>Interface Mode</b> column </td>
 <td> Lists the interface mode for the network mode. 
 The interface mode is the default teaming algorithm to use for the bonding driver in Linux. 
 It is applicable only for team mode.
@@ -745,14 +744,14 @@ It is applicable only for team mode.
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> Edit Connection button </td>
+<td> <b>Edit Connection</b> button </td>
 <td> Click to open the Edit Connection dialog. For details, see the 
 <a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#edit-connection-dialog">Edit Connection Dialog</a> section.
 </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> Create Connection button </td>
+<td> <b>Create Connection</b> button </td>
 <td> Click to add a new connection on the Create Connection dialog. <br /> <br /> 
 <b>Note:</b> The Create Connection button only displays while the connections can be added or edited. 
 Once you do the <a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>, 
@@ -761,7 +760,7 @@ this button disappears and you cannot add new or edit connections.
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> <nobr> Drop-down arrow > Delete Connection </nobr> </td>
+<td> <nobr> Drop-down arrow > <b>Delete Connection</b> </nobr> </td>
 <td> Select to delete the connection. You are prompted to confirm the deletion. <br /> <br /> 
 <b>Note:</b> This option is unavailable after the <a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>.
 </td>
@@ -792,13 +791,13 @@ The following table describes the Edit Connection dialog UI elements:
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> Connection Type </td>
+<td> <b>Connection Type</b> </td>
 <td> Connection type name (network mode) of the connection set you want to customize.
 </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> Role </td>
+<td> <b>Role</b> </td>
 <td> Indicates the networking configuration needed for a specific managed node or nodes. By default, it is set to blank, 
 which means for any role a managed node takes, the networking configuration must be the same across all managed nodes. <br /> <br /> 
 <b>Note:</b> Do not change from the default value (blank) for this release.
@@ -806,17 +805,17 @@ which means for any role a managed node takes, the networking configuration must
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> Add Details </td>
+<td> <b>Add Details</b> </td>
 <td> Click to add a new blank row on which you add the logical interface and physical interface. Interface mode is applicable for Team mode only. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> Delete Details </td>
+<td> <b>Delete Details</b> </td>
 <td> Click to delete the selected row(s). </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> Logical Interface </td>
+<td> <b>Logical Interface</b> </td>
 <td> Default logical interface for the corresponding connection set. <br /> <br /> 
 
 For each logical connection (intf0, intf1, intf2) the network type is identified (admin, os_sdn, public):
@@ -830,7 +829,7 @@ intf2 (public)
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> Physical Interface </td>
+<td> <b>Physical Interface</b> </td>
 <td> Default physical interface values for the corresponding connection set. The value contains (up to) four characters, and follows these conventions:
 <ul>
 <li><b>1st character</b>: the allowable value is a question mark (?) or blank. The question mark indicates a preferred connection, meaning the available bandwidth supported by the Network Interface card (NIC). If not specified (blank), Cloud OS configures the physical interface to the value specified by the next character.
@@ -842,14 +841,14 @@ intf2 (public)
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> Interface Mode </td>
+<td> <b>Interface Mode</b> </td>
 <td> The default teaming algorithm to use for the bonding driver in Linux. The default value is 6 which indicates teaming uses 
 the "adaptive load balancing" algorithm. The other values used with teaming are not supported in this release. This parameter is 
 applicable only if you are using a Team mode. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> <nobr> Update Connection </nobr> </td>
+<td> <nobr> <b>Update Connection</b> </nobr> </td>
 <td> Click to save the connection settings. <br /> <br /> 
 <b>Note:</b> The Update Connection button only displays the connections that are editable.  
 Once you do the <a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>, 
@@ -880,30 +879,30 @@ The following table describes the Create Connection dialog UI elements:
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> Connection Type </td>
+<td> <b>Connection Type</b> </td>
 <td> Type the network mode for the connection set. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> Role </td>
+<td> <b>Role</b> </td>
 <td> Indicates the networking configuration needed for a specific managed node or nodes. By default, it is set to blank, which means for any role a 
 managed node takes, the networking configuration must be the same across all managed nodes. <br /> <br /> 
 <b>Note:</b> Do not change from the default value (blank) for this release. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> Add Details </td>
+<td> <b>Add Details</b> </td>
 <td> Click to add a new blank row on which you add the logical interface and physical interface. 
 Interface mode is applicable for Team mode only. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> Delete Details </td>
+<td> <b>Delete Details</b> </td>
 <td> Click to delete the selected row(s). </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> Logical Interface </td>
+<td> <b>Logical Interface</b> </td>
 <td> Type the logical interface appropriate for the network mode. <br /> <br /> 
 For each logical connection (intf0, intf1, intf2) the network type is identified (admin, os_sdn, public). For details, see 
 <a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#edit-connection-dialog">Edit Connection Dialog</a>. 
@@ -911,7 +910,7 @@ For each logical connection (intf0, intf1, intf2) the network type is identified
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> <nobr> Physical Interface </nobr> </td>
+<td> <nobr> <b>Physical Interface</b> </nobr> </td>
 <td> Type the physical interface values for the corresponding network mode. The value contains (up to) four characters, 
 and follows specific conventions. For details see 
 <a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#edit-connection-dialog">Edit Connection Dialog</a>.
@@ -919,14 +918,14 @@ and follows specific conventions. For details see
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> Interface Mode </td>
+<td> <b>Interface Mode</b> </td>
 <td> The default teaming algorithm to use for the bonding driver in Linux. The default value is 6 which indicates teaming uses 
 the "adaptive load balancing" algorithm. The other values used with teaming are not supported in this release. This parameter is 
 applicable only if you are using a Team mode. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> <nobr> Create Connection </nobr> </td>
+<td> <nobr> <b>Create Connection</b> </nobr> </td>
 <td> Click to create the connection. <br /> <br /> 
 <b>Note:</b> The Create Connection button only displays the connections that are editable.  
 Once you do the <a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>, 

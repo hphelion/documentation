@@ -2,7 +2,7 @@
 layout: default
 title: "How the Operational Dashboard Works"
 permalink: /cloudos/moonshot/manage/operational-dashboard/how-opdash-works/
-product: moonshot
+product: cloudos
 
 ---
 
@@ -19,7 +19,7 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/operational-dashboard/">&#9664; PREV</a> | <a href="/cloudos/">&#9650; UP</a> | <a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/operational-dashboard/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage/operational-dashboard/">&#9650; UP</a> | <a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/">NEXT &#9654;</a> </p>
 
 # How the Operational Dashboard Works
 
@@ -47,7 +47,6 @@ The Operational Dashboard consists of the following tabs:
  * Overview
  * Manage Nodes
  * Manage Clouds
- * Hot Fixes
  * Updates and Extensions
 
 > **Note:** The Cloud tab does not appear until you have completed the HP Cloud OS Administration node install on the Environment tab.

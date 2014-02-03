@@ -3416,7 +3416,7 @@ To download an update:
 
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Note:</b> Downloads require large amounts of 
 disk space. Successful downloads require that your local system contains adequate disk space. For information about what to do when you run out of space or 
-experience other download problems, see the <a href="/cloudos/manage/troubleshooting/">Troubleshooting</a> topic. </p>
+experience other download problems, see the <a href="/cloudos/moonshot/manage/troubleshooting/">Troubleshooting</a> topic. </p>
 
 ####How to Publish an Update or Extension
 
