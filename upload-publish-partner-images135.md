@@ -151,7 +151,7 @@ To configure your environment variables using bash, complete the following steps
 </li>
 </ol>
 
-#### Acquiring a token (curl) #### {#publishCurlToken}
+### Acquiring a token (curl) ### {#publishCurlToken}
 Before you can manage your images using curl, you must acquire a token using your credentials. To acquire a token:
 
 <ol><li>Run the following command:
