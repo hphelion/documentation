@@ -9,6 +9,5 @@ permalink: /cli/
 We provide you with the following software packages that give you command-line interface (CLI) access for the following environments:
 
 * [Unix CLI](/cli/unix) - Provides command line interactivity for Unix and Mac users
-* [Windows Powershell CLI](/cli/windows) - Control HP Cloud services from a Windows Powershell environment
-* [Python Novaclient CLI](/cli/nova) - An HP extended version of the OpenStack Python Novaclient
-<!-- * [Euca2ools](http://open.eucalyptus.com/wiki/Euca2oolsGuide) - Is a popular open source CLI that can be configured to work with HP Cloud Services -->
+* [Windows Powershell CLI](/cli/windows) - Control the HP Cloud from a Windows Powershell environment
+* [Python Novaclient CLI](/cli/nova) - Work with HP Cloud using a version of the OpenStack Python Novaclient
