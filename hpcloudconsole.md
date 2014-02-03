@@ -91,14 +91,14 @@ You can use the default network to deploy HP Public Cloud compute instances (vir
 
 4. On the "Routers" page, click "Set Gateway" under "Actions" to connect your router to the Internet.
 
-    <img src="media/CreateaRouterImage3.png" width="580" alt="" />
+     <img src="media/CreateaRouterImage3.png" width="580" alt="" />
 
 5. Click the drop-down menu in the "External Network" box in the "Set Gateway" pop-up, select "Ext-Net," and click "Set Gateway."
 
     **Note**: The external network is the router's default route, with the router acting as a gateway for external connectivity. While you can configure a subnet that is internal-only, you must connect it to another subnet with external connectivity.
-
+    
     <img src="media/CreateaRouterImage4.png" width="580" alt="" />
-
+    
 ###Connect your network### {#Connectyournetwork}
 
 1. Click the router name on the "Routers" page.
