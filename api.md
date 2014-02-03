@@ -28,6 +28,10 @@ You can also avail yourself of one of the following APIs now in private beta; fo
 * [Application Platform as a Service (aPaaS)](/apaas/) - An application platform for development, deployment, and management of cloud applications hosted by HP.
   **Note**: This service requires activation while in private beta; please [request access on our sign-up page](http://go.hpcloud.com/PaaS-private-beta-signup). Service use is free of charge during the private beta period.
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> 965c77fc9f9716a23fb3157c15b33ea614381136
 <!--If you are a more visual learner, perhaps you would prefer our videos on these topics:
 
 Get rid of this comment!

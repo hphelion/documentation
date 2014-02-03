@@ -16,8 +16,7 @@ There are a number of HP Cloud services available for you:
 * [Relational Database](/dbaas/): Provides you with a simplified method for creation and management of MySQL database instances.
 * [DNS](/dns/): A managed domain name service that features anycast routing hosted by HP.
 * [Monitoring as a service (MaaS)](/maas/): Allows you to monitor  the health and other metrics of your resources in HP Cloud.<br>
-  **Note**: This service is currently in private beta and requires activation before use; please [request access on our sign-up page](https://account.hpcloud.com/cases/betarequest/maas). Service use is free of charge during the private beta period.
-
+ 
 The following HP Public Cloud are now in private beta; follow the links to sign up and begin trying them out!
 
 * [Load Balancer](/lbaas/) -  A managed service enabling automatic traffic routing to multiple back end servers hosted by HP.<br>
