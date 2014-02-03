@@ -74,6 +74,7 @@ Before you upload an image and make it public, you must:
 
 * [Install tools](#toolsInstall)
 * [Configure environment variables](#publishConfigEnv)
+* [Acquire a token if using curl](#publishCurlToken)
 * [Understand image requirements](#publishImageReqs)
 * [Understand required attributes and properties](#publishReqAttsProps)
 
