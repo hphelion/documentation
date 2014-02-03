@@ -442,7 +442,7 @@ To upload your new image using the Glance `image-create` command:
 
    
     `$ glance image-create --name 'My Custom Image' --container-format `
-    `bare --disk-format qcow2 --property architecture=x86_64 &lt; /root/`
+    `bare --disk-format qcow2 --property architecture=x86_64 < /root/`
     `images/my_test_image.qcow2`
     
     **Note:** You can define/set all [required](#publishReqsDeploy) and [optional](#publishReqsDisplay) attributes and properties in this step.
