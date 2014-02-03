@@ -1,9 +1,8 @@
-#!/bin/bash
+#!/bin/bash -x
 #
 # This script merges master to all the branches
 #
-rm -f ${SERVERS_DIR}/*/active
-git branch -r | grep -v origin/HEAD | grep -v origin/develop | grep -v origin/master |
+git branch -r | grep -v origin/HEAD | grep -v origin/develop | grep -v origin/master | grep Deni |
 while read BRANCH ROL
 do
   BRANCH=$(echo ${BRANCH} | sed -s 's,origin/,,')
@@ -11,7 +10,6 @@ do
   git checkout -b "${BRANCH}" || git checkout -f "${BRANCH}"
   git reset HEAD || true
   git pull origin "${BRANCH}"
-  git merge origin "${BRANCH}" || true
-  git push origin "${BRANCH}" || true
+  git rebase master
 done
 exit 0
