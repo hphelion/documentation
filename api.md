@@ -6,7 +6,7 @@ permalink: /api/
 ---
 # HP Cloud APIs
 
-We offer a number of HP Cloud APIs both for HP Cloud version 13.5 and version 12.12. 
+We offer a number of HP Cloud APIs both for HP Cloud version 13.5 and version 12.12. In addition, we have some public beta and private beta APIs that our customers can put to use, so please give them a try.
 
 * [APIs for version 13.5](#api135)
 * [APIs for version 12.12](#api1212)
