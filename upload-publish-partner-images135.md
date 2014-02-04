@@ -64,7 +64,7 @@ In brief, to upload an image and make it public, you must
 1. Install the OpenStack Glance command line tool (or an appropriate API interaction tool like curl).
 2. Configure the tool to interact with the HP Cloud Image Service.
 3. Create an image by either:
-    * Creating an acceptable image in your environment and upload it to HP Cloud
+    * Creating an acceptable image in your environment and uploading it to HP Cloud
     * Creating a snapshot image from a running instance in HP Cloud
 4. Supply the required documentation if you intend to make your image public.
 
