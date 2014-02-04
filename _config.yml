@@ -145,9 +145,7 @@ navigation:
   - text: Overview
     url: /cli/nova
   - text: Installation
-    url: /cli/nova/install
-  - text: CLI Reference
-    url: /cli/nova/reference
+    url: https://community.hpcloud.com/article/cloud-135-cli-installation-instructions
   fog:
   - text: Site home page
     url: /
