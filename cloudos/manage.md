@@ -15,7 +15,7 @@ Welcome! To manage your cloud, use the HP Cloud OS dashboards, which are based o
 
 Refer to these documentation resources:
 
-* [HP Cloud OS Utilities](/cloudos/manage/utilities/) &mdash; Describes the HP Cloud OS utilities.
+* [HP Cloud OS Utilities](/cloudos/manage/utilities/) &mdash; Explains the HP Cloud OS utilities.
 
 * [HP Cloud OS Troubleshooting](/cloudos/manage/troubleshooting/) &mdash; Presents a set of topics that help you troubleshoot issues you may encounter with HP Cloud OS.
 
