@@ -10,8 +10,8 @@ We offer a number of HP Cloud APIs both for HP Cloud version 13.5 and version 12
 
 * [APIs for version 13.5](#api135)
 * [APIs for version 12.12](#api1212)
-* [Public beta APS](#pubbeta)
-* [Private beta APS](#privbeta)
+* [APIs in public beta](#pubbeta)
+* [APIs in private beta](#privbeta)
 
 
 ##HP Cloud APIs for version 13.5 {#api135}
