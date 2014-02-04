@@ -6,7 +6,36 @@ permalink: /api/
 ---
 # HP Cloud APIs
 
+We offer a number of HP Cloud APIs both for HP Cloud version 13.5 and version 12.12. 
+
+* [APIs for version 13.5](#api135)
+* [Private beta APS](#beta135)
+* [APIs for version 12.12](#api1212)
+* [Private beta APS](#beta1212)
+
+
+##HP Cloud APIs for version 13.5 {#api135}
+
 There are a number of HP Cloud APIs available for your programming pleasure: 
+
+* [Identity service](/api/v13/identity/): API for the HP Cloud identity service; one-stop authentication for all HP Cloud services.
+* [Object Storage](/api/object-storage/): API for HP Cloud object storage; a way to store and retrieve objects in a highly redundant cluster of publicly accessible physical machines hosted in HP data centers. 
+* [CDN](/api/CDN/): API for the HP Cloud content delivery network (CDN) service; content inside HP Cloud Object Storage can easily be cached on servers in metropolitan areas all over the world to speed client access to them by removing much of the network latency.
+* [Compute](/api/v13/compute/): API for the HP Cloud compute service; a way to instantiate virtual servers on publicly accessible physical machines hosted in HP data centers
+* [Image](/api/v13/image/): API for HP Cloud Image; enabling managing of virtual machine images.
+* [Block Storage](/api/v13/block-storage/): API for HP Cloud block storage; enabling additional volumes to Compute instances.
+* [Networking](/api/v13/networking/): API for HP Cloud Networking; enabling virtual network, subnet, router and port abstractions to describe network resources.
+* [Relational Database](/api/v13/dbaas/): API for the HP Cloud Relational Database service; simplifies the creation and management of MySQL database instances.
+
+###APIs in private beta {#beta135}
+
+You can also avail yourself of one of the following APIs now in private beta; follow the links to sign up and begin trying them out!
+
+* [Monitoring as a Service (MaaS)](/api/v13/monitoring/): API for the HP Cloud Monitoring service; facilitates monitoring of the health and other metrics for the resources in HP Cloud.<br>
+  **Note**: This service requires activation while in private beta; please [request access on our sign-up page](https://account.hpcloud.com/cases/betarequest/maas). Service use is free of charge during the private beta period.
+
+
+##HP Cloud APIs for version 12.12 {#api1212}
 
 * [Identity v3.0](/api/v13/identity/): API for the HP Cloud Identity service v3.0; one-stop authentication for all HP Cloud services.
 * [Identity v2.0](/api/identity/): API for the HP Cloud Identity service v2.0; one-stop authentication for all HP Cloud services.
@@ -19,6 +48,7 @@ There are a number of HP Cloud APIs available for your programming pleasure:
 * [Monitoring as a Service (MaaS) v1.1](/api/v13/monitoring/): API for the HP Cloud Monitoring service v1.1; facilitates monitoring of the health and other metrics for the resources in HP Cloud.
   **Note**: This service requires activation while in public beta; please [request access on our sign-up page](https://account.hpcloud.com/cases/betarequest/maas).
 
+###APIs in private beta {#beta1212}
 
 You can also avail yourself of one of the following APIs now in private beta; follow the links to sign up and begin trying them out!
 
@@ -28,25 +58,7 @@ You can also avail yourself of one of the following APIs now in private beta; fo
 * [Application Platform as a Service (aPaaS)](/apaas/) - An application platform for development, deployment, and management of cloud applications hosted by HP.
   **Note**: This service requires activation while in private beta; please [request access on our sign-up page](http://go.hpcloud.com/PaaS-private-beta-signup). Service use is free of charge during the private beta period.
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 965c77fc9f9716a23fb3157c15b33ea614381136
-<!--If you are a more visual learner, perhaps you would prefer our videos on these topics:
-
-Get rid of this comment!
-
-* [Identity Service](api/videos#Identity)
-* [Object Storage](/api/videos#Object-Storage)
-* [Compute](/api/videos#Compute)
-* [Block Storage](/api/videos#Block-Storage)
-* [CDN](/api/videos#CDN)
-* [RDB](/api/videos#RDB)
-
--->
-
-Share and enjoy!
 
 ## Copyright
 
-View the [copyright](/api/copyright/) messages.
+View the [copyright](/api/v13/copyright/) messages.
