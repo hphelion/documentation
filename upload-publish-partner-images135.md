@@ -102,9 +102,11 @@ Before using the Glance client (or curl) to manage images, ensure you have follo
 <li>OS_AUTH_STRATEGY</li>
 <li>OS_REGION_NAME
 <p><b>Important:</b> The following regions support uploading an image and making it publicly available:
+
 <ul><li>Region A West 13.5 (region-a.geo-1)</li>
 <li>Region B East 13.5 (region-b.geo-1)</li>
-</ul></p>
+</ul>
+<p>All other regions do not support the Image API.</p></p>
 </li>
 <li>OS_IMAGE_URL
 <p><b>Important:</b> If you are using curl, you must also set the image URL. Since the Glance client determines the image URL automatically, if it is set, you do not need this variable.</p>
@@ -144,12 +146,7 @@ To configure your environment variables using bash, complete the following steps
     # Note: If using 'curl' you must set "OS_IMAGE_URL"  
     export OS_IMAGE_URL=https://region-b.geo-1.images.hpcloudsvc.com:443
 </pre>
-<p>**Important:** The following regions support uploading an image and making it publicly available:
 
-<ul><li>Region A West 13.5 (region-a.geo-1)</i>
-<li>Region B East 13.5 (region-b.geo-1)</li>
-
-<p>All other regions do not support the Image API.</p?</p>
 </li>
 </ul>
 <li>Save your changes and exit the editor.</li>
