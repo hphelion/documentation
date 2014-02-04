@@ -19,7 +19,7 @@ This document describes how to use the HP Cloud Image API to upload images and m
 All other regions do not support the Image API.
 
 ### Why upload an image and make it public ### {#publishImageReason}
-HP Cloud offers several public images for you to use; however, we might not have the exact image you require. With that in mind, HP Cloud allows you to upload your own images and make them publicly available. For example, you might want a version of a Linux distribution that we do not currently offer. Or, you might want to create a customized `golden` master image to import into HP Cloud. Whatever the scenario, if you require some customization we do not currently offer, uploading your own image and making it public is ideal for you!
+HP Cloud offers several public images for you to use; however, we might not have the exact image you require. With that in mind, HP Cloud allows you to upload your own images and make them publicly available. For example, you might want a version of a Linux distribution that we do not currently offer. Or, you might want to create a customized golden master image to import into HP Cloud. Whatever the scenario, if you require a specific customized, public image that we do not currently offer, uploading your own image and making it public is ideal for you!
 
 ### Image types ### {#publishImageTypes}
 You can create either a public or private image to upload to HP Cloud. Anyone can see and use a public image. If you upload a private image, it is listed in your image catalog and only visible to you.
@@ -63,9 +63,9 @@ In brief, to upload an image and make it public, you must
 
 1. Install the OpenStack Glance command line tool (or an appropriate API interaction tool like curl).
 2. Configure the tool to interact with the HP Cloud Image Service.
-3. Create an image:
-    * Create an acceptable image in your environment and upload it to HP Cloud
-    * Create a snapshot image from a running instance in HP Cloud
+3. Create an image by either:
+    * Creating an acceptable image in your environment and upload it to HP Cloud
+    * Creating a snapshot image from a running instance in HP Cloud
 4. Supply the required documentation if you intend to make your image public.
 
 **Warning:** You should only make an image public after you have fully tested it!
@@ -144,7 +144,14 @@ To configure your environment variables using bash, complete the following steps
     # Note: If using 'curl' you must set "OS_IMAGE_URL"  
     export OS_IMAGE_URL=https://region-b.geo-1.images.hpcloudsvc.com:443
 </pre>
+<p>**Important:** The following regions support uploading an image and making it publicly available:
+
+<ul><li>Region A West 13.5 (region-a.geo-1)</i>
+<li>Region B East 13.5 (region-b.geo-1)</li>
+
+<p>All other regions do not support the Image API.</p?</p>
 </li>
+</ul>
 <li>Save your changes and exit the editor.</li>
 <li>Establish the environment:
 <pre>
@@ -595,7 +602,7 @@ To delete an image, run the following command:
 
 As long as an image exists in HP Cloud, it will appear in all image listings using an HP Cloud Image API. You can exclude an image from the HP Cloud management console by setting the `com.hp__1__image_lifecycle` property to `deprecated`. This will effectively deprecate the image for use by users of the management console. Use the following instructions to deprecate an image.
 
-**Note:** We recommend you append `(deprecated)` to the image name so that other users can easily spot deprecated images when listing all images using the Glance or Nova client tools.
+**Note:** We require that you append `(deprecated)` to the image name so that other users can easily spot deprecated images when listing all images using the Glance or Nova client tools.
 
 #### Glance client ####
 To deprecate an image in HP Cloud management console:
