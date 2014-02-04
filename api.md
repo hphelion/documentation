@@ -51,7 +51,7 @@ You can also avail yourself of one of the following APIs now in private beta; fo
   **Note**: This service requires activation while in private beta; please [request access on our sign-up page](http://go.hpcloud.com/PaaS-private-beta-signup). Service use is free of charge during the private beta period.
 
 * [Load Balancer as a Service (LBaaS)](/api/lbaas/): API for the HP Cloud Load Balancer service; facilitates creation and management of load balancers.
-  **Note**: This service requires activation while in private beta; please [request access on our sign-up page](https://account.hpcloud.com/cases/betarequest/lbaas).  Service use is free of charge during the private beta period.	
+  **Note**: This service requires activation while in private beta; please [request access on our sign-up page](https://horizon.hpcloud.com/landing/pbr/hpext:lbaas).  Service use is free of charge during the private beta period.	
 
 
 
