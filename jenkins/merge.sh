@@ -11,7 +11,7 @@ do
   echo "##### ${BRANCH} #####"
   git checkout -t "origin/${BRANCH}" 2>/dev/null || git checkout -f "${BRANCH}"
   git reset HEAD || true
-  git pull origin "${BRANCH}"
+  git pull
   git rebase master || true
   git push origin || true
 done
