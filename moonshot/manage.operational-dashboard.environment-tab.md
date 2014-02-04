@@ -7,7 +7,6 @@ product: cloudos
 ---
 
 
-<a name="_top"> </a>
 
 <script> 
 
@@ -81,7 +80,7 @@ For procedural instructions, see <a href="/cloudos/install/">Install and Configu
 * **(Optional) Email Notification Settings** &mdash; Configure to send email notifications when the Cloud and Compute Region operations complete because this takes some time. By enabling and setting this prerequisite, you can be alerted by e-mail when each operation completes.
 
 
-<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 	
 ### Prerequisites Page
@@ -121,7 +120,7 @@ The following table describes the Prerequisites page UI elements:
  	
 </table>
 
-<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 
 
@@ -230,7 +229,7 @@ Each network needs to be separated by a bar "|". For example: <code>10.*|192.*|l
 complete successfully, an error message displays on the Prerequisites page. For a potential solution, see <a href="/cloudos/moonshot/manage/troubleshooting/#problem-admin-node-internet-access-prerequisites-fail-to-complete">Problem: Admin Node Internet Access Prerequisites fail to complete</a> in the Troubleshooting topic. 
 </p>
 
-<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 ### External DNS Server Prerequisite Dialog
 
@@ -265,7 +264,7 @@ The following table describes the External DNS Server Prerequisite dialog UI ele
 
 </table> 
 
-<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 
 ### Cloud Administration Node Time Settings Prerequisite Dialog
@@ -303,7 +302,7 @@ The following table describes the Cloud Administration Node Time Settings Prereq
 
 </table> 
 
-<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 
 ### Email Notification Settings Prerequisite Dialog
@@ -341,7 +340,7 @@ The following table describes the Email Notification Settings Prerequisite dialo
 
 </table> 
 
-<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 
 ## Server Types
@@ -552,7 +551,7 @@ the dialog become read-only and this button disappears.
 
 </table> 
 
-<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 ## Connections
 
@@ -935,7 +934,7 @@ this dialog become read-only and this button disappears. </td>
 </table>
 
 
-<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 
 
@@ -988,7 +987,7 @@ for the specified network and click <b>Update Address Ranges</b> to identify the
 <a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>.
 </p>
 
-<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 
 
@@ -1080,7 +1079,7 @@ add or edit networks.</p>
 
 </table>
 
-<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 
 
@@ -1194,7 +1193,7 @@ This means that the Network Mode will be set to <b>single</b> by default on the
 				
 </table>
 
-<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 
 
@@ -1265,7 +1264,7 @@ See each network's Edit Address Ranges dialog for the defaults, as described in 
     
 * [Public Network Edit Address Ranges Dialog](#public-network-edit-address-ranges-dialog)
 
-<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 
 #### Admin Network Edit Address Ranges Dialog
@@ -1555,7 +1554,7 @@ The Router Preference determines the router order. </td>
 </table>
 
 
-<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 ## Complete Install
 
@@ -1669,7 +1668,7 @@ See the <a href="/cloudos/moonshot/manage/operational-dashboard/cloud-tab">Cloud
 </table>
 
 
-<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 
 
@@ -1732,5 +1731,5 @@ See <a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#edi
 </table>
 
 
-<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

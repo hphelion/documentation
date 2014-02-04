@@ -7,7 +7,6 @@ product: moonshot
 ---
 
 
-<a name="_top"> </a>
 
 <script> 
 

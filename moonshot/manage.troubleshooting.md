@@ -6,7 +6,6 @@ product: moonshot
 
 ---
 
-<a name="_top"> </a>
 
 <script>
 
@@ -1528,5 +1527,5 @@ vgreduce cinder-volumes  /dev/loop0
 Reboot the server, check if the iLO is still mapped correctly and re-execute the operation.
 
 
-<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
