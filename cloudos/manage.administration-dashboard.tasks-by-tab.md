@@ -858,7 +858,7 @@ To edit a region instance:
 
 1. On the <b>Region</b> tab, select a <b>Current Compute Region</b>.
    
-2. Click b to open the Instances window.
+2. Click to open the Instances window.
 
 3. Find the Instance you want to edit, and click <b>Edit Instance</b>.
 
@@ -868,7 +868,7 @@ To edit a region instance:
   * <b>All Security Groups</b> &mdash; A list of security groups that are associated with the project, but not the instance.
   * <b>Instance Security Groups</b> &mdash; A list of security groups that are currently associated with the instance.
 
- 6. Click <b>Save</b>.
+6. Click <b>Save</b>.
 
 
 #### How to Suspend, Resume, or Terminate an Instance
@@ -2524,8 +2524,7 @@ To launch an image:
  * <b>Flavor</b>: Indicates the size of the node. When you select a flavor here, the Flavor Details table on the right changes to show the node properties and values associated with your size selection.
  * <b>Instance Count</b>: Can be more than 1.
  
-5. Use the <b>Access and Security</b> tab to control access to your instance via 
-6. pairs and security groups.
+5. Use the <b>Access and Security</b> tab to control access to your instance via pairs and security groups.
 
  a. <b>Keypair</b>: Keypairs are ssh credentials that are injected into images when they are launched. The public key is installed on the VM; you will use the private key to log in.
 
