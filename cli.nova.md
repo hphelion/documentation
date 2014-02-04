@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Extended Python Novaclient"
+title: "HP Cloud Python Novaclient"
 permalink: /cli/nova/
 product: nova-cli
 
