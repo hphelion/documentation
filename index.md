@@ -60,7 +60,7 @@ For best results, we recommend that use one of the following supported HTML5 bro
 
 ## REST API information ## {#API}
 
-For detailed REST API information, dig into [those links above](#Services).  In order to interact with the services, you'll need [your API Keys](https://account.hpcloud.com/account/api_keys).
+For detailed REST API information, dig into [those links above](#Services).  In order to interact with the services, you'll need your API Keys. In the upper-right hand corner of the console, click your account menuand select *Manage Access Keys*.
 
 
 ## Language bindings ## {#Bindings}
