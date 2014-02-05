@@ -20,23 +20,22 @@ Welcome to HP Public Cloud!  We have a wide variety of services available with d
 
 HP Cloud consists of the following publicly-available services:
 
-* [Identity Service](/identity/) - An OpenStack Identity Services implementation hosted by HP
-* [Object Storage](/object-storage/) - An OpenStack Object Storage implementation hosted by HP
-* [Compute](/compute/) - An OpenStack Compute implementation hosted by HP
 * [Block Storage](/block-storage/) - Add additional volumes to HP Cloud Compute instances
-* [Relational Database](/dbaas/) - An OpenStack Trove implementation that provides managed database services hosted by HP
+* [Compute](/compute/) - An OpenStack Compute implementation hosted by HP
 * [Content Delivery Network (CDN)](/cdn/) - A content delivery network hosted by HP
 * [Domain Name Service (DNS)](/dns/) - A managed domain name service featuring anycast routing hosted by HP
+* [Identity Service](/identity/) - An OpenStack Identity Services implementation hosted by HP
 * [Monitoring](/maas/): A managed monitoring service facilitating the monitoring of health and other metrics for the resources in HP Cloud.<br>
+* [Object Storage](/object-storage/) - An OpenStack Object Storage implementation hosted by HP
+* [Relational Database](/dbaas/) - An OpenStack Trove implementation that provides managed database services hosted by HP
 
 The following HP Public Cloud are now in private beta; follow the links to sign up and begin trying them out!
 
-* [Load Balancer](/lbaas/) -  A managed service enabling automatic traffic routing to multiple back end servers hosted by HP.<br>
-  **Note**: This service requires activation while in private beta; please [request access on our sign-up page](https://account.hpcloud.com/cases/betarequest/lbaas).  Service use is free of charge during the private beta period.
 * [Application Platform as a Service (aPaaS)](/apaas/) - An application platform for development, deployment, and management of cloud applications hosted by HP.<br>
   **Note**: This service requires activation while in private beta; please [request access on our sign-up page](https://apaas.hpcloud.com/shared/free-private-beta/signup).  Service use is free of charge during the private beta period.
+* [Load Balancer](/lbaas/) -  A managed service enabling automatic traffic routing to multiple back end servers hosted by HP.<br>
+  **Note**: This service requires activation while in private beta; please [request access on our sign-up page](https://horizon.hpcloud.com/landing/pbr/hpext:lbaas).  Service use is free of charge during the private beta period.
 
-  
 ## Starting to work with HP Public Cloud ## {#Starting}
 
 Use the following links and tools to get to work with HP Public Cloud:
