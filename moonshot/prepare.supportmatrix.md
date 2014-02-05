@@ -21,7 +21,7 @@ PageRefresh();
 
 # HP Cloud OS for Moonshot Support Matrix
 
-This document provides an overview of the supported hardware and software for the HP Cloud OS Sandbox Version 1.20, including information for hardware and software setup. 
+This document provides an overview of the HP Cloud OS for Moonshot supported hardware and software. 
 
 * [Server Infrastructure](#server-infrastructure)
 
@@ -35,8 +35,8 @@ This document provides an overview of the supported hardware and software for th
 
 ## Server Infrastructure
 
-For the performance and stability of the HP Cloud OS environment, it is very important to meet the minimum recommendations for memory, processors, and disk space for each of the components in the table below. 
-Before installation, please reference the appropriate platform support matrix for each component product.
+For the performance and stability of the HP Cloud OS for Moonshot environment, it is very important to meet the minimum recommendations for memory, 
+processors, and disk space for each of the components in the table below. Before installation, please reference the appropriate platform support matrix for each component product.
 
 ### Prerequisites
 
@@ -44,7 +44,7 @@ Ubuntu Server 12.04 LTS installation media + security updates.
 
 ### Minimum Recommendations
 
-<table style="text-align: left; vertical-align: top;">
+<table style="text-align: left; vertical-align: top; min-width: 600px;">
 
 <tr style="background-color: #C8C8C8;">
 <th>Node Type</th>
@@ -118,31 +118,31 @@ on the VM instances hosted by the compute node.
 
 ### Supported Deployment Scenarios
 
-The diagrams in this section illustrate the deployment scenarios supported in HP Cloud OS 1.20.
+The diagrams in this section illustrate the deployment scenarios supported in HP Cloud OS for Moonshot.
 
 ##### Diagram 1: Single Region. All controllers in a single virtual machine. Compute node is bare metal.
 
-<img src="media/cloudos-single-region1.jpg" title="HP Cloud OS Single Region. All controllers in a single virtual machine. Compute node is bare metal." />
+<img src="media/cloudos-single-region1.jpg" title="HP Cloud OS for Moonshot Single Region. All controllers in a single virtual machine. Compute node is bare metal." />
 
 ##### Diagram 2: Multi-region. All controllers in virtual machines.
 
-<img src="media/cloudos-multi-region2.jpg" title="HP Cloud OS Multi-region. All controllers in virtual machines." />
+<img src="media/cloudos-multi-region2.jpg" title="HP Cloud OS for Moonshot Multi-region. All controllers in virtual machines." />
 
 ##### Diagram 3: Single region. Controllers are in separate virtual machines.
 
-<img src="media/cloudos-single-region-controllers-vm3.jpg" title="HP Cloud OS Single region. Controllers are in separate virtual machines." />
+<img src="media/cloudos-single-region-controllers-vm3.jpg" title="HP Cloud OS for Moonshot Single region. Controllers are in separate virtual machines." />
 
 ##### Diagram 4: Single region. All controllers in a single bare metal server. 
 
-<img src="media/cloudos-single-region-controllers-baremetal4.jpg" title="HP Cloud OS Single region. All controllers in a single bare metal server." />
+<img src="media/cloudos-single-region-controllers-baremetal4.jpg" title="HP Cloud OS for Moonshot Single region. All controllers in a single bare metal server." />
 
 ##### Diagram 5: Supported Swift (Object Store) deployment scenario  
 
-<img src="media/cloudos-swift-storage5.jpg" title="HP Cloud OS Swift storage for all deployment scenarios." />
+<img src="media/cloudos-swift-storage5.jpg" title="HP Cloud OS for Moonshot Swift storage for all deployment scenarios." />
 
 ## Hardware Requirements
 
-<table style="text-align: left; vertical-align: top;">
+<table style="text-align: left; vertical-align: top; min-width: 600px;">
 
 <tr style="background-color: #C8C8C8;">
 <th> HP </th>
@@ -199,10 +199,10 @@ The diagrams in this section illustrate the deployment scenarios supported in HP
 
 Refer to [Install &amp; Configure Your Cloud](/cloudos/moonshot/install/) for a complete list of installation prerequisites and requirements, plus step-by-step instructions.
 
-<table style="text-align: left; vertical-align: top;">
+<table style="text-align: left; vertical-align: top; min-width: 600px;">
 
 <tr style="background-color: #C8C8C8;">
-<th> HP Cloud OS Platforms </th>
+<th> HP Cloud OS for Moonshot Platforms </th>
 <th> Supported Versions </th>
 </tr>
 
