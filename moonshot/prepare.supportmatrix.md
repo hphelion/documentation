@@ -44,11 +44,11 @@ Ubuntu Server 12.04 LTS installation media + security updates.
 
 ### Minimum Recommendations
 
-<table style="text-align: left; vertical-align: top; min-width: 500px;">
+<table style="text-align: left; vertical-align: top; min-width: 400px;">
 
 <tr style="background-color: #C8C8C8;">
 <th>Node Type</th>
-<th>Virtual/Physical Node</th>
+<th>Virtual / Physical Node</th>
 <th>CPU Cores</th>
 <th>Memory</th>
 <th>Internal Storage</th>
