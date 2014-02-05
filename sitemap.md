@@ -96,7 +96,7 @@ Having a bit of trouble navigating our site, and so you're looking for a single 
 [HP Cloud APIs Overview](/api)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Compute](/compute/api)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Object Storage](/object-storage/api)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Using Object Storage with cURL](/object-storage/api/curl)<br>
+<!-- &nbsp;&nbsp;&nbsp;&nbsp;[Using Object Storage with cURL](/object-storage/api/curl)<br> -->
 &nbsp;&nbsp;&nbsp;&nbsp;[CDN](cdn/api)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Identity Service](/identity/api)<br>
 [Glossary of Terms](/glossary)<br>
