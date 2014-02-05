@@ -44,7 +44,7 @@ Ubuntu Server 12.04 LTS installation media + security updates.
 
 ### Minimum Recommendations
 
-<table style="text-align: left; vertical-align: top; min-width: 600px;">
+<table style="text-align: left; vertical-align: top; min-width: 500px;">
 
 <tr style="background-color: #C8C8C8;">
 <th>Node Type</th>
@@ -53,7 +53,7 @@ Ubuntu Server 12.04 LTS installation media + security updates.
 <th>Memory</th>
 <th>Internal Storage</th>
 <th>NICs</th>
-<th> <nobr>  OS (included as part of ISO)  </nobr></th>
+<th>OS (included as part of ISO)</th>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -63,7 +63,7 @@ Ubuntu Server 12.04 LTS installation media + security updates.
 <td> 16 GB * </td>
 <td> 20 GB </td>
 <td> 2 </td>
-<td> <nobr> Ubuntu Server 12.04 LTS (64-bit) </nobr> </td>
+<td> Ubuntu Server 12.04 LTS (64-bit) </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -220,7 +220,7 @@ Refer to [Install &amp; Configure Your Cloud](/cloudos/moonshot/install/) for a 
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td style="padding-left: 40px;"> <nobr> Java Developer Kit / Java Runtime Environment </nobr> </td>
+<td style="padding-left: 40px;"> Java Developer Kit / Java Runtime Environment </td>
 <td> 1.7 </td>
 </tr>
 
@@ -419,8 +419,7 @@ Refer to [Install &amp; Configure Your Cloud](/cloudos/moonshot/install/) for a 
 
 <tr style="background-color: white; color: black;">
 <td style="padding-left: 40px;"> KVM <br/> QEMU <br/> ESXi (Admin node only) </td>
-<td> <nobr> Ubuntu 12.04 LTS (64-bit) </nobr> <br/> Ubuntu 12.04 LTS (64-bit)
- </td>
+<td> Ubuntu 12.04 LTS (64-bit) <br/> Ubuntu 12.04 LTS (64-bit) </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
