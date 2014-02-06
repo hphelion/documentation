@@ -23,7 +23,7 @@ PageRefresh();
 
 Welcome! You've got questions, we have the answers.
 
-* [What is the HP POV on cloud solutions?](#what-is-the-hp-pov-on-cloud-solutions)
+* [What is the HP point-of-view on cloud solutions?](#what-is-the-hp-pov-on-cloud-solutions)
 * [What is HP Cloud?](#what-is-hp-cloud)
 * [How does HP help solve the challenges faced by enterprises?](#how-does-hp-help-solve-the-challenges-faced-by-enterprises)
 * [What is HP Cloud OS?](#what-is-hp-cloud-os)
@@ -53,20 +53,20 @@ provide the customer with choice, confidence and consistency.
 confidently build, operate, and consume IT across private, hybrid, and public clouds, based on a core set of principles. 
 HP delivers customers the industry's only hybrid cloud strategy and solution portfolio with:  
 
-* Choice
-  * In delivery model (private, managed, public, and traditional IT)
-  * In platform (Microsoft, VMware, Linux) and support for heterogeneous environments
-  * In a global partner ecosystem (independent software vendors, system integrators, outsourcers, and service providers)
+ * Choice
+   * In delivery model (private, managed, public, and traditional IT)
+   * In platform (Microsoft, VMware, Linux) and support for heterogeneous environments
+   * In a global partner ecosystem (independent software vendors, system integrators, outsourcers, and service providers)
 
-* Confidence 
-  * Managed and secure your cloud-based assets across all deployment models
-  * Gain scalability to meet rapidly changing business requirements
-  * Deliver on enterprise-class service level agreements (SLAs) 
-  * In the ability to manage and secure across delivery models, and provide the scalability enterprises need to drive business forward
+ * Confidence 
+   * Managed and secure your cloud-based assets across all deployment models
+   * Gain scalability to meet rapidly changing business requirements
+   * Deliver on enterprise-class service level agreements (SLAs) 
+   * In the ability to manage and secure across delivery models, and provide the scalability enterprises need to drive business forward
 
-* Consistency 
-  * Provide a common architecture across traditional IT and private, hybrid, and public clouds
-  * Allow you to create and consume portable cloud services through a unified, consistent experience across all deployment models
+ * Consistency 
+   * Provide a common architecture across traditional IT and private, hybrid, and public clouds
+   * Allow you to create and consume portable cloud services through a unified, consistent experience across all deployment models
   
 ## What is HP Cloud OS?
 
