@@ -23,7 +23,7 @@ PageRefresh();
 
 Welcome! You've got questions, we have the answers.
 
-* [What is the HP viewpoint on cloud solutions?](what-is-the-hp-viewpoint-on-cloud-solutions)
+* [What is the HP POV on cloud solutions?](#what-is-the-hp-pov-on-cloud-solutions)
 * [What is HP Cloud?](#what-is-hp-cloud)
 * [How does HP help solve the challenges faced by enterprises?](#how-does-hp-help-solve-the-challenges-faced-by-enterprises)
 * [What is HP Cloud OS?](#what-is-hp-cloud-os)
@@ -31,12 +31,12 @@ Welcome! You've got questions, we have the answers.
 * [What are the HP differentiators?](#what-are-the-hp-differentiators)
 * [What does HP Cloud OS support?](#what-does-hp-cloud-os-support)
 * [How does HP Cloud OS help customers?](#how-does-hp-cloud-os-help-customers) 
-* [What is the HP Cloud OS Sandbox?](#what-is-the-hp-cloud-os-sandbox)
+* [What is the HP Cloud OS technology preview?](#what-is-the-hp-cloud-os-technology-preview)
 * [How is HP Cloud OS integrated into the HP Cloud portfolio?](#how-is-hp-cloud-os-integrated-into-the-hp-cloud-portfolio)
-* [Where can I get the HP Cloud OS Sandbox kit?](#where-can-i-get-the-hp-cloud-os-sandbox-kit)
+* [Where can I get the HP Cloud OS technology preview ISO?](#where-can-i-get-the-hp-cloud-os-technology-preview-iso)
 * [Where can I get the login credentials for the HP Cloud OS dashboards?](#where-can-i-get-login-credentials-for-the-hp-cloud-os-dashboards)
 
-## What is the HP viewpoint on cloud solutions?  
+## What is the HP POV on cloud solutions?  
 
 > HP believes organizations will need to implement a hybrid delivery strategy that leverages the right mix of cloud and traditional IT, to optimize application creation &amp; delivery, and to optimize service creation &amp; delivery.
 
@@ -70,7 +70,7 @@ HP delivers customers the industry's only hybrid cloud strategy and solution por
   
 ## What is HP Cloud OS?
 
-> HP Cloud OS is an open and extensible cloud technology platform based on OpenStack that is available through cloud products and services in the HP Cloud portfolio, or as a public beta sandbox edition. You can think of it as an "internal" distribution 
+> HP Cloud OS is an open and extensible cloud technology platform based on OpenStack that is available through cloud products and services in the HP Cloud portfolio, or as a public beta preview edition. You can think of it as an "internal" distribution 
 of OpenStack that provides the technology foundation for the Cloud common architecture across private, public, and hybrid cloud delivery. HP Cloud OS is targeted to meet the needs of enterprises who want to leverage OpenStack for rapid innovation, and the beneficial 
 economics of an open source approach. It enables easier deployment, application portability, and streamlined OpenStack patching and updates, among other features.   
 
@@ -125,11 +125,11 @@ and has found no issues running RHEL or SLES as a guest OS on HP Cloud OS.
 
 > HP Cloud OS provides the foundation for the HP Cloud common architecture enabling enterprise customers to accelerate hybrid delivery &amp; accelerate business outcomes.
 
-## What is the HP Cloud OS Sandbox?
+## What is the HP Cloud OS technology preview?
 
-> To allow customers to evaluate and educate themselves on an OpenStack-based architecture for their cloud needs, HP offers the HP Cloud OS Sandbox, which is now available as a developer preview. This helps customers and partners gain experience with OpenStack prior to deploying HP Cloud solutions that leverage HP Cloud OS. 
+> To allow customers to evaluate and educate themselves on an OpenStack-based architecture for their cloud needs, HP offers the HP Cloud OS technology preview for developers and sysadmins. This helps customers and partners gain experience with OpenStack prior to deploying HP Cloud solutions that leverage HP Cloud OS. 
 
-> The HP Cloud OS sandbox is an OpenStack distribution from HP that contains a HP installer, a standards-based infrastructure, and application modeling capability. It provides an in-depth insight for customers and partners prior to deploying HP Cloud solutions that leverage HP Cloud OS.  HP Cloud OS sandbox is not supported, and is meant for non-production, 
+> The HP Cloud OS technology preview is an OpenStack distribution from HP that contains a HP installer, a standards-based infrastructure, and application modeling capability. It provides an in-depth insight for customers and partners prior to deploying HP Cloud solutions that leverage HP Cloud OS.  HP Cloud OS technology preview is not supported, and is meant for non-production, 
 limited scale (up to 10 compute nodes) and limited time (90-day) use. 
 
 ## How is HP Cloud OS integrated into the HP Cloud portfolio? 
