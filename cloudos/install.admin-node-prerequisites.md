@@ -71,7 +71,7 @@ To enable the Admin Node Internet Access:
  c. Specify the Non-Proxy Hosts' IP addresses
 	 
 > Specify addresses that **should not** use proxy servers (for the Controller/Compute Nodes' admin and os_sdn networks, IP range). 
-Each network needs to be separated by a pipe bar "|". For example: <nobr> 10.\*|192.\*|localhost|127.\* </nobr>.
+Each network needs to be separated by a bar "|". For example: <nobr> 10.\*|192.\*|localhost|127.\* </nobr>
  
  d. If necessary, specify the optional Username and Password.
  

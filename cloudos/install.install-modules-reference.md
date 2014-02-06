@@ -373,8 +373,9 @@ File-based parameters (<b> local </b> volume type) will be used to create a volu
 
 <tr style="background-color: white; color: black;">
 <td> Non Proxy Host(s) <br /> ("|" separated) </td> 
-<td> <nobr> 10.\*|192.\*|localhost|127.\* </nobr> </td>
-<td> Use this field to specify addresses that should not use proxy servers. Each network needs to be separated by a bar "|". For example: <nobr> 10.\*|192.\*|localhost|127.\* </nobr> </td>
+<td> <nobr> 10.*|192.*|localhost|127.* </nobr> </td>
+<td> Use this field to specify addresses that should not use proxy servers. Each network needs to be separated by a bar "|". For example: <br /> <br /> 
+<nobr> 10.*|192.*|localhost|127.* </nobr> </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -1185,8 +1186,9 @@ virtual machines. Select kvm if nova-compute nodes are bare-metal. </td>
 
 <tr style="background-color: white; color: black;">
 <td> Non Proxy Host(s) (Optional) </td> 
-<td> <nobr> 10.\*|192.\*|localhost|127.\* </nobr> </td>
-<td> Use this field to specify addresses that should not use proxy servers. Each network needs to be separated by a bar "|". For example: <nobr> 10.\*|192.\*|localhost|127.\* </nobr> </td>
+<td> <nobr> 10.*|192.*|localhost|127.* </nobr> </td>
+<td> Use this field to specify addresses that should not use proxy servers. Each network needs to be separated by a bar "|". For example: <br /> <br /> 
+<nobr> 10.*|192.*|localhost|127.* </nobr> </td>
 </tr>
 
 </table>
