@@ -8,7 +8,9 @@ permalink: /
 
 # HP Public Cloud Overview
 
-Welcome to HP Public Cloud!  We have a wide variety of services available with documentation to match.  This page provides you a quick overview of our services and the information that we have available for you about those services.  This page covers the following topics:
+Welcome to HP Public Cloud!  We have a wide variety of services available with documentation to match.  This page provides you a quick overview of our services and the information that we have available for you about those services. PLease note that we have two versions of our cloud service currently running&mdash;version 12.12 and the latest version 13.5. See the [Version Overview](/version-overview/) page for an overview of what's new in version 13.5. 
+
+This page covers the following topics:
 
 * [Available services](#Services)
 * [Starting to work with HP Public Cloud](#Starting)
@@ -18,36 +20,20 @@ Welcome to HP Public Cloud!  We have a wide variety of services available with d
 
 ## Available Services ## {#Services}
 
-HP Cloud consists of the following publicly-available services:
+HP Cloud consists of many services based on the different OpenStack projects to provide the functionality you need. Visit the [Available Services](/services/) page for a complete list of services.
 
-* [Identity Service](/identity/) - An OpenStack Identity Services implementation hosted by HP
-* [Object Storage](/object-storage/) - An OpenStack Object Storage implementation hosted by HP
-* [Compute](/compute/) - An OpenStack Compute implementation hosted by HP
-* [Block Storage](/block-storage/) - Add additional volumes to HP Cloud Compute instances
-* [Relational Database](/dbaas/) - An OpenStack Trove implementation that provides managed database services hosted by HP
-* [Content Delivery Network (CDN)](/cdn/) - A content delivery network hosted by HP
-* [Domain Name Service (DNS)](/dns/) - A managed domain name service featuring anycast routing hosted by HP
-* [Monitoring](/maas/): A managed monitoring service facilitating the monitoring of health and other metrics for the resources in HP Cloud.<br>
-
-The following HP Public Cloud are now in private beta; follow the links to sign up and begin trying them out!
-
-* [Load Balancer](/lbaas/) -  A managed service enabling automatic traffic routing to multiple back end servers hosted by HP.<br>
-  **Note**: This service requires activation while in private beta; please [request access on our sign-up page](https://horizon.hpcloud.com/landing/pbr/hpext:lbaas).  Service use is free of charge during the private beta period.
-* [Application Platform as a Service (aPaaS)](/apaas/) - An application platform for development, deployment, and management of cloud applications hosted by HP.<br>
-  **Note**: This service requires activation while in private beta; please [request access on our sign-up page](https://apaas.hpcloud.com/shared/free-private-beta/signup).  Service use is free of charge during the private beta period.
-
-  
 ## Starting to work with HP Public Cloud ## {#Starting}
 
 Use the following links and tools to get to work with HP Public Cloud:
 
 * [Information, pricing, and setting up a free trial of HP Public Cloud](http://www.hpcloud.com/?jumpid=em_R11646_us/en/b_to_b/hpcs/email_newsl/hpcs_home2/20130905&elq=c335ccb3cf434b9b969905b419a13b18&elqCampaignId=)
 * [Getting Started with HP Public Cloud Console](/hpcloudconsole) walks you through HP Public Cloud setup
+
+  We recommend that you visit this Getting Started page before you log on to the console.
 * [What's new with HP Public Cloud Console](/whats_new_with_HP_Cloud_Console/) has the latest updates to the current HP Public Cloud Console release
 * [Command Line Interfaces](/cli/) provides a command line tool for easy scripting
 
  
-
 You might also benefit from taking a look at our introductory page on the [Activity Stream](/activity-stream).
 
 For best results, we recommend that use one of the following supported HTML5 browsers when accessing the management console:
