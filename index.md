@@ -32,7 +32,7 @@ HP Cloud consists of the following publicly-available services:
 The following HP Public Cloud are now in private beta; follow the links to sign up and begin trying them out!
 
 * [Load Balancer](/lbaas/) -  A managed service enabling automatic traffic routing to multiple back end servers hosted by HP.<br>
-  **Note**: This service requires activation while in private beta; please [request access on our sign-up page](https://account.hpcloud.com/cases/betarequest/lbaas).  Service use is free of charge during the private beta period.
+  **Note**: This service requires activation while in private beta; please [request access on our sign-up page](https://horizon.hpcloud.com/landing/pbr/hpext:lbaas).  Service use is free of charge during the private beta period.
 * [Application Platform as a Service (aPaaS)](/apaas/) - An application platform for development, deployment, and management of cloud applications hosted by HP.<br>
   **Note**: This service requires activation while in private beta; please [request access on our sign-up page](https://apaas.hpcloud.com/shared/free-private-beta/signup).  Service use is free of charge during the private beta period.
 
@@ -60,7 +60,7 @@ For best results, we recommend that use one of the following supported HTML5 bro
 
 ## REST API information ## {#API}
 
-For detailed REST API information, dig into [those links above](#Services).  In order to interact with the services, you'll need [your API Keys](https://account.hpcloud.com/account/api_keys).
+For detailed REST API information, dig into [those links above](#Services).  In order to interact with the services, you'll need your API Keys. In the upper-right hand corner of the console, click your account menuand select *Manage Access Keys*.
 
 
 ## Language bindings ## {#Bindings}

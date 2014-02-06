@@ -22,7 +22,7 @@ For complete details on the commands--syntax, descriptions, and so forth--take a
 
 ##Navigation## {#Navigation}
 
-To execute commands in Windows PowerShell, first open a Windows PowerShell window; under the Start menu, it is typically under `All Programs > Accessories > Windows PowerShell`.  Select the shell appropriate to your system, either the 64-bit or 32-bit version.  Enter the HP Public Cloud CLI by entering:
+To execute commands in Windows PowerShell, open a Windows PowerShell window; under the Start menu, it is typically under `All Programs > Accessories > Windows PowerShell`.  Select the shell appropriate to your system, either the 64-bit or 32-bit version.  Enter the HP Public Cloud CLI by entering:
 
     PS C:\> cd HPCS:
 
@@ -231,7 +231,7 @@ To perform a quick-connect to an existing server instance:
 
     PS HPCS:\\>  Connect-Server 2111
 
-This connects you to the server with the ID `2111`.  You can also connect to a server by [navigating](blah) to a server directory and entering the `Connect-Server` command with no arguments:
+This connects you to the server with the ID `2111`.  You can also connect to a server by [navigating](#Navigation) to a server directory and entering the `Connect-Server` command with no arguments:
 
     PS HPCS:\\>  cd Servers
     PS HPCS:\Servers> cd 2111
@@ -277,7 +277,7 @@ To use the `Get-Password` command, all of the following must be true:
 
 ###Reset-Password### {#ResetPassword}
 
-For Windows Instances only, if you change your Windows password manually via [RDP](http://msdn.microsoft.com/en-us/library/windows/desktop/aa383015(v=vs.85).aspx), you need to manually sync the password with the Windows CLI with the [`Reset-Password` cmdlet](cli/windows/reference#reset-password) for the `connect-server` command to work. If you use the `get-password` cmdlet to fetch your original de-crypted Administrator password, and it's available, it will overwrite the password sync.
+For Windows Instances only, if you change your Windows password manually via [RDP](http://msdn.microsoft.com/en-us/library/windows/desktop/aa383015(v=vs.85).aspx), you need to manually sync the password with the Windows CLI with the [Reset-Password cmdlet](cli/windows/reference#reset-password) for the `connect-server` command to work. If you use the `get-password` cmdlet to fetch your original de-crypted Administrator password, and it's available, it will overwrite the password sync.
 
     PS HPCS:\> reset-password -id 1234 -p "Thisisalongpassword!"
 
