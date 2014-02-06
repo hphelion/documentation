@@ -52,7 +52,7 @@ To display the active availability zones for your services, use the `account:cat
 
     $ hpcloud account:catalog account2
 
-Or select `API Keys` on [compute dashboard](/mc/compute/) or account page to [find them in the system console](https://account.hpcloud.com/account/api_keys).
+Or log into the [console](https://horizon.hpcloud.com/) and select `Manage Access Keys` from the project menu.
 
 ## Updating Account Credentials ## {#ModifyingAccountCredentials}
 
