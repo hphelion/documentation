@@ -27,7 +27,9 @@ HP Cloud consists of many services based on the different OpenStack projects to 
 Use the following links and tools to get to work with HP Public Cloud:
 
 * [Information, pricing, and setting up a free trial of HP Public Cloud](http://www.hpcloud.com/?jumpid=em_R11646_us/en/b_to_b/hpcs/email_newsl/hpcs_home2/20130905&elq=c335ccb3cf434b9b969905b419a13b18&elqCampaignId=)
-* [Getting Started with HP Public Cloud Console](http://docs.hpcloud.com/#Starting) walks you through HP Public Cloud setup
+* [Getting Started with HP Public Cloud Console](/hpcloudconsole) walks you through HP Public Cloud setup
+
+  We recommend that you visit this Getting Started page before you log on to the console.
 * [What's new with HP Public Cloud Console](/whats_new_with_HP_Cloud_Console/) has the latest updates to the current HP Public Cloud Console release
 * [Command Line Interfaces](/cli/) provides a command line tool for easy scripting
 
