@@ -3332,7 +3332,7 @@ To see details of an update:
 
 * [How to Configure an Updates and Extensions Account](#how-to-configure-an-updates-and-extensions-account)
 
-* [How to Import an Update or Extension](how-to-import-an-update-or-extension)
+* [How to Import an Update or Extension](#how-to-import-an-update-or-extension)
 
 * [How to Download an Update or Extension](#how-to-download-an-update-or-extension)
 
