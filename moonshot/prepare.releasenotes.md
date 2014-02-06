@@ -18,23 +18,24 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> <a href="/cloudos/moonshot/prepare/">&#9664; PREV | <a href="/cloudos/moonshot/prepare/">&#9650; UP</a> | <a href="/cloudos/moonshot/prepare/supportmatrix/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/cloudos/moonshot/">&#9664; PREV | <a href="/cloudos/moonshot/">&#9650; UP</a> | <a href="/cloudos/moonshot/prepare/supportmatrix/">NEXT &#9654;</a> </p>
 
 # HP Cloud OS for Moonshot Release Notes
 
-This topic provides information about the HP Cloud OS for Moonshot (N.NN?) release.
+This topic provides information about the HP Cloud OS for Moonshot 1.0 release.
 
-* [New and Updated in HP Cloud OS for Moonshot N.NN](#120features)
-* [Recommendations for HP Cloud OS for Moonshot N.NN](#120recommendations)
+* [New and Updated in HP Cloud OS for Moonshot N.NN](#features)
+* [Recommendations for HP Cloud OS for Moonshot N.NN](#recommendations)
 * [For Further Information](#for-further-information)
 
-##New and Updated in HP Cloud OS for Moonshot N.NN## {#120features}
+##New and Updated in HP Cloud OS for Moonshot 1.0## {#features}
 
 ( list )
 
-##Recommendations for HP Cloud OS for Moonshot N.NN## {#120recommendations}
+##Recommendations for HP Cloud OS for Moonshot 1.0## {#recommendations}
 
-This section describes the HP recommendations for best performance, utility, and functionality with this software release. We have also provided information about some limitations and known issues for reference purposes.   
+This section describes the HP recommendations for best performance, utility, and functionality with this software release. 
+We have also provided information about some limitations and known issues for reference purposes.   
 
 * [Best Practices](#best-practices) for optimal functionality and performance
 * [Known Issues](#known-issues) and suggested operational alternatives with HP Cloud OS for Moonshot N.NN
@@ -42,13 +43,13 @@ This section describes the HP recommendations for best performance, utility, and
 
 ###Best Practices### {#best-practices} 
 
-HP recommends the following best practices for HP Cloud OS for Moonshot N.NN.
+HP recommends the following best practices for HP Cloud OS for Moonshot 1.0.
 
 ( create subsections and describe )
 
 ###Known Issues### {#known-issues}
 
-The following are known issues for HP Cloud OS for Moonshot N.NN.
+The following are known issues for HP Cloud OS for Moonshot 1.0.
 
 ####Installation####
 
@@ -67,11 +68,13 @@ For additional related information on HP Cloud OS:
 
 ###Installation Notes### {#installation-notes}
 
-Before installing the HP Cloud OS for Moonshot release, read the [HP Cloud OS for Moonshot Support Matrix](/cloudos/moonshot/prepare/supportmatrix/) to ensure that your installation environment meets the minimum requirements.
+Before installing the HP Cloud OS for Moonshot release, read the [HP Cloud OS for Moonshot Support Matrix](/cloudos/moonshot/prepare/supportmatrix/) 
+to ensure that your installation environment meets the minimum requirements.
 
-The HP Cloud OS for Moonshot installation deploys the Operational Dashboard (used to set up, configure, and install an HP cloud infrastructure) and the Administration Dashboard (used to create and manage cloud resources). 
+The HP Cloud OS for Moonshot installation deploys the Operational Dashboard (used to set up, configure, and install an HP cloud infrastructure) 
+and the Administration Dashboard (used to create and manage cloud resources). 
 
-When you are ready to install HP Cloud OS for Moonshot, see the Install category of the [HP Cloud OS for Moonshot documentation](http://docs.hpcloud.com/cloudos/moonshot/install/).
+When you are ready to install HP Cloud OS for Moonshot, see [Install & Configure Your Cloud](/cloudos/moonshot/install/).
 
 ###Legal Notices and Disclaimer for Experimental Software### {#legal-notices-disclaimer}
 
