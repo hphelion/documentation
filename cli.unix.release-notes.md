@@ -84,7 +84,7 @@ The 1.8.0 release was made available on 4/15/2013 and contained the following ne
 
 ##Release 1.7.0 Features## {#v1_7_0}
 
-The 1.7.0 release was made available on 3/1/2013 and contained the following new features:
+The 1.7.0 release was made available on 3/01/2013 and contained the following new features:
 
 * Support for large file uploads greater than 5 gigabytes added
 * Option `-r` (retry) to `copy` command for large file uploads added
