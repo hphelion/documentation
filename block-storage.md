@@ -13,7 +13,8 @@ Once created, you can easily disconnect Block Storage volumes from one instance 
 
 
 ## API
-Do you need low level, raw REST API access to HP Cloud Block Storage?  Take a look at the [Block Storage API page](/api/block-storage/).
+Do you need low level, raw REST API access to HP Cloud Block Storage?  Check out Block Storage API page for the HP Cloud version you are using:
 
-<!--## Volume Management
-Want some information about how to use the block storage service?  Surf on over to the [Volume Management](/block-storage/volume) page.-->
+* [**Block Storage API page for v13.5**](/api/block-storage/)
+* [**Block Storage API page for v12.12**](/api/block-storage/)
+
