@@ -19,7 +19,7 @@ A variety of flavors and images are provided by HP Cloud compute that can be use
 
 HP Cloud currently offers two versions of our cloud&mdash;v12.12 and the latest v13.5. See the [Version Overview](/version-overview) page for a description of what's new in v13.5.
 
-**Note**: For security purposes, when you create a server, it is automatically assigned a floating, non-removable IP address.
+**Note**: For security purposes, when you create a server in HP Cloud v12.12, it is automatically assigned a floating, non-removable IP address. With the latest v13.5, you have the full functionality of the OpenStack Neutron project complemented with Software Defined Networking (SDN) technology from HP Networking.
 
 ## API
 Do you need low level, raw REST API access to HP Cloud compute?  Take a look at the Compute API page for the version of HP Cloud you are using:
