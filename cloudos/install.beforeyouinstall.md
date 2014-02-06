@@ -285,7 +285,7 @@ After you boot from the HP Cloud OS ISO, you are ready to launch the Operational
 
 To launch the Operational Dashboard:
 
-1. From the virtual machine Admin Node, open a Mozilla Firefox or Google Chrome browser that has the IP addresses <nobr> <code> 10.*;192.*;localhost;127.* </code> </nobr> set as proxy exceptions.
+1. From the virtual machine Admin Node, open a Mozilla Firefox or Google Chrome browser that has the IP addresses <nobr> 10.*;192.*;localhost;127.* </nobr> set as proxy exceptions.
 
 2. In the browser, enter **http://192.168.124.10:9000** to launch the Operational Dashboard user interface. 
 IMPORTANT: Use Google Chrome or Mozilla Firefox.
