@@ -1392,8 +1392,8 @@ HP Cloud has contributed the Unix CLI back to the open source community, and you
 
 If you have any questions or concerns about which files to copy, contact our Support team:
 
-- [Live chat from hpcloud.com](https://account.hpcloud.com/cases#support_chat)
-- [Open a support case](https://account.hpcloud.com/cases)
+- [Live chat from hpcloud.com](https://horizon.hpcloud.com/settings/cases/)
+- [Open a support case](https://horizon.hpcloud.com/settings/cases/)
 - [Email support@hpcloud.com](mailto:support@hpcloud.com)
 - By phone at 1-855-61CLOUD (1-855-612-5683) in the U.S. or +1-678-745-9010 internationally.
 
