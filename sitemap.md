@@ -10,11 +10,11 @@ Having a bit of trouble navigating our site, and so you're looking for a single 
 
 [Getting Started with HP Cloud](/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Documentation Site Overview](/site-overview)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;[HP Public Cloud Console -- 13.5](/hpcloudconsole/)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;HP Public Cloud Console -- 13.5)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Getting Started with HP Public Cloud Console](/hpcloudconsole/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[What's new with the HP Public Cloud Console](/whats_new_with_HP_Cloud_Console/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Feature Mapping: HP Classic Console to the HP Public Cloud Console](/hpcloudconsolefeaturemap/)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Classic Management Console -- 12.12](/mc/)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Classic Management Console -- 12.12<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Management Console overview](/mc/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Management Console site map](/mc/sitemap/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Software release notes](/release-notes/)<br>
@@ -26,11 +26,7 @@ Having a bit of trouble navigating our site, and so you're looking for a single 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[HP Cloud FAQ](/faq)<br>
 [HP Cloud Available Services](/services/)<br> 
 &nbsp;&nbsp;&nbsp;&nbsp;[Compute Services Overview](/compute)<br>
-<<<<<<< HEAD
-nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Compute Services API](/api/v13/compute/)<br>
-=======
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Compute Services API](/api/v13/compute/)<br>
->>>>>>> master
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Using the Compute Service](/compute/using/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Identity Service Overview](/identity/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Identity Service API](/api/v13/identity/)<br>
