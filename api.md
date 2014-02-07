@@ -40,8 +40,8 @@ There are a number of HP Cloud APIs available for your programming pleasure:
 
 ###APIs in public beta {#pubbeta}
 
-* [Monitoring as a Service (MaaS) v13.5](/api/v13/monitoring/): API for the HP Cloud Monitoring service v13.5; facilitates monitoring of the health and other metrics for the resources in HP Cloud.
-  **Note**: This service requires activation while in public beta; please [request access on our sign-up page](https://account.hpcloud.com/cases/betarequest/maas).
+* [Monitoring v1.1](/api/v13/monitoring/): API for the HP Cloud Monitoring  v13.5; facilitates monitoring of the health and other metrics for the resources in HP Cloud.
+* [Monitoring v1.0](/api/monitoring/): API for the HP Cloud Monitoring v12.12 and v13.5. This version is deprecated.
 
 ###APIs in private beta {#privbeta}
 
