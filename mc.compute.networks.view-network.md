@@ -33,7 +33,7 @@ You can access the network details screen from the [network screen](https://hori
 
 <img src="media/network-details-launch.jpg" width="580" alt="" />
 
-You can also launch the network details screen from the network screen by, in the `Networks` list, clicking the name of the network for which you want to examine the details.
+You can also launch the network details screen from the network screen by, clicking the name of the network in the `Networks` list, for which you want to examine the details.
 
 
 ##Organization of the network details screen## {Organization}
