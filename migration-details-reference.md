@@ -225,7 +225,7 @@ Image transition requirements
 Once you have this information, contact support:
 
 * Start a live chat from hpcloud.com by clicking `Chat` in the top, right corner of the classic management console
-* [Open a support case](https://account.hpcloud.com/cases)
+* [Open a support case](https://horizon.hpcloud.com/settings/cases/)
 * [Email support@hpcloud.com](mailto:support@hpcloud.com)
 * Call at 1-855-61CLOUD (1-855-612-5683) in the U.S. or +1-678-745-9010 internationally.
 

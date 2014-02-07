@@ -52,7 +52,7 @@ Having a bit of trouble navigating our site, and so you're looking for a single 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Using authentication caching](/bindings/fog/articles/authcache)<br> -->
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Release Notes](/bindings/fog/release-notes)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Java/Clojure jclouds Overview and Installation](/bindings/jclouds)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Connecting to the Service](/bindings/jclouds/connecting)<br>
+<!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Connecting to the Service](/bindings/jclouds/connecting)<br> -->
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Compute Examples](/bindings/jclouds/compute)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Object Storage Examples](/bindings/jclouds/object-storage)<br>
 <!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[CDN Examples](/bindings/jclouds/cdn)<br>-->
@@ -94,11 +94,11 @@ Having a bit of trouble navigating our site, and so you're looking for a single 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Installation](/cli/nova/install)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[CLI Reference](/cli/nova/reference)<br>
 [HP Cloud APIs Overview](/api)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Compute](/compute/api)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Compute](/api/v13/compute)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Object Storage](/object-storage/api)<br>
 <!-- &nbsp;&nbsp;&nbsp;&nbsp;[Using Object Storage with cURL](/object-storage/api/curl)<br> -->
-&nbsp;&nbsp;&nbsp;&nbsp;[CDN](cdn/api)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Identity Service](/identity/api)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[CDN](api/CDN)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Identity Service](/api/v13/identity/)<br>
 [Glossary of Terms](/glossary)<br>
 [Software Downloads](/downloads)<br>
 
