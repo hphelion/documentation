@@ -136,6 +136,7 @@ You are now ready to use the options under "Manage Compute" under "Project" in t
 * [Create and attach a volume](#Volumes)
 * [Images and Snapshots](#Imagesandsnapshots)
 * [Access and Security](#Accessandsecurity)
+* [Monitoring](#Monitoring)
 
 
 ###Overview### {#Overview}
@@ -348,6 +349,15 @@ Click  "Identity" in the left-hand interface to display links:
 * Groups - When you create a domain, two default groups are created: Users and Domain Administrators. Domain Administrators can add individuals to a group and create new groups, which may contain multiple users. 
 
 * Roles - A role is a user or group  capability within a  service that determines access rights. Roles include  Compute Admin, Network Admin, Object Storage Admin, and others.  Domain owners can  assign roles to individuals or groups. A role may be associated with multiple users and multiple groups.
+
+###Monitoring### {#Monitoring}
+
+Use HP Cloud Monitoring to ascertain system health and track resource metrics. HP Cloud Monitoring provides:
+
+* Message subscription to the latest system information
+* Alarms that send notifications when a threshold has been passed
+* Metric posts that send metrics to HP Monitoring
+* Metric queries that query all the metrics HP Monitoring collects and receives.
 
 ##For further information## {#Forfurtherinformation}
 
