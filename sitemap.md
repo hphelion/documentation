@@ -97,6 +97,11 @@ Having a bit of trouble navigating our site, and so you're looking for a single 
 &nbsp;&nbsp;&nbsp;&nbsp;[Compute](/api/v13/compute)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Object Storage](/object-storage/api)<br>
 <!-- &nbsp;&nbsp;&nbsp;&nbsp;[Using Object Storage with cURL](/object-storage/api/curl)<br> -->
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Object Storage API](/api/v13/object-storage/)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Block Storage API](/api/v13/block-storage/)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[LBaaS API](/api/lbaas)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[DNS API](/api/dns)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[MaaS API](/api/v13/monitoring)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[CDN](api/CDN)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Identity Service](/api/v13/identity/)<br>
 [Glossary of Terms](/glossary)<br>
