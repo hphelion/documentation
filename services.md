@@ -13,7 +13,8 @@ There are a number of HP Cloud services available for you:
 * [Compute](/compute/): A method for you to instantiate virtual servers on publicly accessible physical machines hosted in HP data centers.
 * [DNS](/dns/): A managed domain name service that features anycast routing hosted by HP.
 * [Identity service](/identity/): One-stop authentication for all HP Cloud Service offerings.
-* [Monitoring as a service (MaaS)](/maas/): Allows you to monitor  the health and other metrics of your resources in HP Cloud.* [Object storage](/object-storage/): A way to store and retrieve objects in a highly redundant cluster of publicly accessible physical machines hosted in HP data centers. 
+* [Monitoring](/maas/): Allows you to monitor  the health and other metrics of your resources in HP Cloud.
+* [Object storage](/object-storage/): A way to store and retrieve objects in a highly redundant cluster of publicly accessible physical machines hosted in HP data centers. 
 * [Relational Database](/dbaas/): Provides you with a simplified method for creation and management of MySQL database instances.
 
 The following HP Public Cloud are now in private beta; follow the links to sign up and begin trying them out!
