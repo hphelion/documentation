@@ -10,7 +10,7 @@ Having a bit of trouble navigating our site, and so you're looking for a single 
 
 [Getting Started with HP Cloud](/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Documentation Site Overview](/site-overview)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;HP Public Cloud Console -- 13.5)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;HP Public Cloud Console -- 13.5<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Getting Started with HP Public Cloud Console](/hpcloudconsole/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[What's new with the HP Public Cloud Console](/whats_new_with_HP_Cloud_Console/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Feature Mapping: HP Classic Console to the HP Public Cloud Console](/hpcloudconsolefeaturemap/)<br>
