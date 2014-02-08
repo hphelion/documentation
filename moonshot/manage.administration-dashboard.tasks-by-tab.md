@@ -2,7 +2,7 @@
 layout: default
 title: "Administration Dashboard Tasks by Tab"
 permalink: /cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/
-product: cloudos
+product: moonshot
 
 ---
 
