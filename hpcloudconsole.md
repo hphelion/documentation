@@ -348,9 +348,20 @@ Use HP Cloud Monitoring to ascertain system health and track resource metrics. H
 
      <img src="media/Monitoring1.png" width="580" alt="" />
 
-2. Once activated, click "Monitoring" under the "Actions" heading to begin.
+2. Once activated, click "Monitoring" under the "Actions" heading on the [landing page](https://horizon.hpcloud.com/landing) to begin.
 
      <img src="media/Monitoring2.png" width="580" alt="" />    
+     
+3. Click "+Create Endpoint." **Note** Record the password for the generated endpoint in the pop-up display. It cannot be retrieved later."
+
+     <img src="media/Monitoring3CreateEndpoint" width="580" alt="" />   
+     
+4. Click the Endpoint ID in the "Endpoints" screen to display the endpoint ID, the URI, the Queue, and the User Name.
+
+     <img src="media/Monitoring5EndpointDisplaybox" width="580" alt="" />
+
+     
+     
 
 
 
