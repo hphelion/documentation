@@ -21,8 +21,8 @@ This page provides describes to use the management console (MC) to manage your p
 
 Before you perform any project management, you must:
 
-* [Sign up for an HP Cloud compute account](https://account.hpcloud.com/signup)
-* [Activate compute service on your account](/mc/compute/using/activating/)
+* [Sign up for an HP Cloud compute account](https://horizon.hpcloud.com/register)
+* [Activate compute service on your account](https://horizon.hpcloud.com/landing/)
 * [Create a network](/mc/compute/networks/create-network/)
 
 
@@ -67,7 +67,7 @@ Information TBD
 
 ##For further information## {#ForFurtherInformation}
 
-* A good place to help you get going managing your account is with our [account and services management use cases](/mc/account/using/)
+* A good place to help you get going managing your account is with our [account and services management use cases](/mc/compute/using/)
 * Use the MC [site map](/mc/sitemap) for a full list of all available MC documentation pages
 * For basic information about our HP Cloud compute services, take a look at the [HP Cloud compute overview](/compute/) page
 * If you'd rather use the HP Cloud CLI features, go choose your topic of interest from our [HP CLoud CLI](/cli) pages

@@ -52,7 +52,7 @@ To display the active availability zones for your services, use the `account:cat
 
     $ hpcloud account:catalog account2
 
-Or select `API Keys` on [compute dashboard](/mc/compute/) or account page to [find them in the system console](https://account.hpcloud.com/account/api_keys).
+Or log into the [console](https://horizon.hpcloud.com/) and select `Manage Access Keys` from the project menu.
 
 ## Updating Account Credentials ## {#ModifyingAccountCredentials}
 
@@ -109,7 +109,7 @@ To change the availability zone of the compute service from its current setting 
 
     $ hpcloud account:edit account2 'compute=az-2.region-a.geo-1'
 
-To display the active availability zones for your services, you can [find them in the system console](https://account.hpcloud.com/account/api_keys) by selecting `API Keys` on the dashboard or account page. 
+To display the active availability zones for your services, through the [HP Public Cloud Console](https://horizon.hpcloud.com). Click the project menu and select *Roles and API Endpoints*. 
 
 ## Updating Account Credentials ## {#ModifyingAccountCredentials}
 

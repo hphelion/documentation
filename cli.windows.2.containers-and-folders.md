@@ -18,7 +18,7 @@ One of the key features of the HP Cloud environment CLI software for Windows Pow
 
 ##Interacting with the Storage Service## {#InteractingwiththeStorageService}
 
-<iframe src="http://player.vimeo.com/video/33349560?title=0&amp;byline=0&amp;portrait=0" width="580" height="420" frameborder="0"> </iframe>
+<!-- <iframe src="http://player.vimeo.com/video/33349560?title=0&amp;byline=0&amp;portrait=0" width="580" height="420" frameborder="0"> </iframe> -->
 
 In addition to the video tutorial, which shows you how the basics of our object storage PowerShell environment, this page contains the following examples:
 

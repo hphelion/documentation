@@ -21,7 +21,7 @@ HP Cloud has contributed the Unix CLI back to the open source community, and you
 
 _________________________________________
 
-<iframe src="http://player.vimeo.com/video/32534203?title=0&amp;byline=0&amp;portrait=0" width="580" height="420" frameborder="0"> </iframe>
+<!-- <iframe src="http://player.vimeo.com/video/32534203?title=0&amp;byline=0&amp;portrait=0" width="580" height="420" frameborder="0"> </iframe> -->
 
 This page gives you a few examples of how to perform various object storage tasks using the HP Public Cloud.  This page discusses the following tasks:
 

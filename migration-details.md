@@ -107,8 +107,8 @@ You instance is terminated.  You can also terminate the instance from the [serve
 
 Now that you have completed your preliminary transition steps, you need to [contact our Support team](https://www.hpcloud.com/contact_us):
 
-* [live chat from hpcloud.com](https://account.hpcloud.com/cases#support_chat)
-* [open a support case](https://account.hpcloud.com/cases)
+* [live chat from hpcloud.com](https://horizon.hpcloud.com/settings/cases/)
+* [open a support case](https://horizon.hpcloud.com/settings/cases/)
 * [email support@hpcloud.com](mailto:support@hpcloud.com)
 * call at 1-855-61CLOUD (1-855-612-5683) in the U.S. or +1-678-745-9010 internationally.
 
