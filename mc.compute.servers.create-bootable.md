@@ -17,9 +17,8 @@ This page describes how to create a new server from a bootable volume using the 
 
 Before you can begin whatever, you must:
 
-* [Sign up for an HP Cloud compute account](https://account.hpcloud.com/signup)
-* [Activate compute service on your account](/mc/account/using/activating/)
-
+* [Sign up for an HP Cloud compute account](https://horizon.hpcloud.com/register)
+* [Activate compute service on your account](https://horizon.hpcloud.com/landing/)
 
 ##section
 

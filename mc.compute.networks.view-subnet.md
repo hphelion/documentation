@@ -19,8 +19,8 @@ This page covers how to view subnet details using the networks screen of the man
 
 Before you can view the details of a subnet of an existing network, you must:
 
-* [Sign up for an HP Cloud compute account](https://account.hpcloud.com/signup)
-* Activate compute service on your account
+* [Sign up for an HP Cloud compute account](https://horizon.hpcloud.com/register)
+* [Activate compute service on your account](https://horizon.hpcloud.com/landing/)
 * [Create a network](/mc/compute/networks/create-network#Creating/)
 * [Create a subnet](/mc/compute/networks/manage-subnet#Creating/)
 
