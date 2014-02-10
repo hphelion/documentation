@@ -23,8 +23,8 @@ This page describes how to create and delete volumes using the [volumes screen](
 
 Before you can begin creating or deleting an volume, you must:
 
-* [Sign up for an HP Cloud compute account](https://account.hpcloud.com/signup)
-* Activate compute service on your account
+* [Sign up for an HP Cloud compute account](https://horizon.hpcloud.com/register)
+* [Activate compute service on your account](https://horizon.hpcloud.com/landing/)
 
 
 ##Creating a volume ## {#Creating}
