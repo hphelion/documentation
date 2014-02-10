@@ -33,8 +33,8 @@ This page covers how to create and delete a port using the networks screen of th
 
 Before you perform any network management on your routers, you must:
 
-* [Sign up for an HP Cloud compute account](https://account.hpcloud.com/signup)
-* [Activate compute service on your account](https://community.hpcloud.com/article/getting-started-compute-135#actservice)
+* [Sign up for an HP Cloud compute account](https://horizon.hpcloud.com/register)
+* Activate compute service on your account
 * [Create a network](/mc/compute/networks/create-network/) that has an associated subnet.
 
 <!--When cloudadmin tool deployed, add a link to it here?-->
