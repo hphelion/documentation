@@ -8,11 +8,14 @@ product: HP Cloud Console
 
 
 # Getting Started with HP Public Cloud Console
-Welcome to HP Public Cloud Console Horizon Preview Edition! HP Public Cloud wants you up and running quickly so this Getting Started guide walks you through network setup and connection (if not going with the default configuration setup when you activate compute services), instance and volume creation, security options, identity parameters, and management tools that facilitate your organization's use of HP Public Cloud. **This page takes you through the interface in the chronological order needed to get up and running, rather than the order displayed in the console**. 
+Welcome to HP Public Cloud Console Horizon! HP Public Cloud wants you up and running quickly so this Getting Started guide walks you through network setup and connection (if not going with the default configuration setup when you activate compute services), instance and volume creation, security options, identity parameters, and management tools that facilitate your organization's use of HP Public Cloud. **This page takes you through the interface in the chronological order needed to get up and running, rather than the order displayed in the console**. 
 
 After initial setup, revisit the interface to monitor usage, modify, add, and delete networks, instances, volumes, roles, groups, and more. For the latest updates to the current HP Public Cloud Console release, see [What's new with HP Public Cloud Console](/whats_new_with_HP_Cloud_Console/). 
 
-<img src="media/HPPublicCloudConsoleHorizonPreviewEdition.png" width="580" alt="" />
+For information on moving from the HP Classic Console to HP Public Cloud Console see [Feature Mapping: HP Classic Console to the HP Public Cloud Console](/hpcloudconsolefeaturemap). 
+
+
+<img src="media/landingpage.png" width="580" alt="" />
 
 
 This page contains the following sections:
@@ -74,7 +77,7 @@ You can use the default network to deploy HP Public Cloud compute instances (vir
 
     <img src="media/CreateaSubnetImage3.png" width="580" alt="" />
 
-###Create a router### {#Createarouter}
+###Create a router### {#Createarouter} 
 
 1.  If on the "Network Topology" screen, click "Create Router" in the top right-hand navigation. If not, click "Routers" under the "Manage Network" heading in the left-hand navigation.
 
@@ -88,14 +91,14 @@ You can use the default network to deploy HP Public Cloud compute instances (vir
 
 4. On the "Routers" page, click "Set Gateway" under "Actions" to connect your router to the Internet.
 
-    <img src="media/CreateaRouterImage3.png" width="580" alt="" />
+     <img src="media/CreateaRouterImage3.png" width="580" alt="" />
 
 5. Click the drop-down menu in the "External Network" box in the "Set Gateway" pop-up, select "Ext-Net," and click "Set Gateway."
 
     **Note**: The external network is the router's default route, with the router acting as a gateway for external connectivity. While you can configure a subnet that is internal-only, you must connect it to another subnet with external connectivity.
-
+    
     <img src="media/CreateaRouterImage4.png" width="580" alt="" />
-
+    
 ###Connect your network### {#Connectyournetwork}
 
 1. Click the router name on the "Routers" page.
@@ -224,7 +227,7 @@ A volume is a block storage device you attach to an instance.
 
     <img src="media/VolumeImage4.png" width="580" alt="" />
 
-9. To attach the volume to an instance, click "Edit Attachments" under "Action" on the "Volumes" page.
+9. To attach the volume to an instance, click "Edit Volume" under "Action" on the "Volumes" page.
 
     <img src="media/VolumeImage5.png" width="580" alt="" />
 
@@ -351,3 +354,5 @@ Click  "Identity" in the left-hand interface to display links:
 *For the latest updates to the current HP Public Cloud Console release, see [What's new with HP Public Cloud Console](/whats_new_with_HP_Cloud_Console/)..
 * For basic information about our HP Cloud compute services, take a look at the [HP Cloud compute overview](/compute/) page
 * If you'd rather use the HP Cloud Command Line Interface (CLI) features, choose your topic of interest from our [HP CLoud CLI](/cli) pages.
+
+

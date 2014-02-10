@@ -17,7 +17,7 @@ On November 4, 2013, the UNIX CLI was moved into its End-of-Life Cycle process t
 * No new feature requests will be honored
 * Bug reports will be accepted
 
-After 6-months, access to online resources will still be available, but no support will be offered from HP Public Cloud, and the software download will be disabled—although you are most welcome to continue development at your discretion! HP Cloud has contributed the Unix CLI back to the open source community, and you can access the source code, documentation, and downloads [here](https://github.com/hpcloud/unix_cli).
+HP Cloud has contributed the Unix CLI back to the open source community, and you can get support, access the documentation, and download the source code [here](https://github.com/hpcloud/unix_cli).
 
 _________________________________________
 
@@ -43,7 +43,7 @@ The first thing you should do is set up an account.   To configure a new account
 
    $ hpcloud account:setup
 
-During a new configuration, you must supply the access key, secret key, and tenant ID that were assigned to you during the registration process; you can [find these in the system console](https://console.hpcloud.com/account/api_keys) by selecting `API Keys` on the dashboard or account page.  You can also define the availability zone during the initial setup.
+During a new configuration, you must supply the access key, secret key, and tenant ID that were assigned to you during the registration process; You can find the values for these variables through the [HP Public Cloud Console](https://horizon.hpcloud.com). Click the project menu and select *Manage Access Keys* and *Account Info*. You can also define the availability zone during the initial setup.
 
 ## Edit Account ## {#EditAccount}
 Executing the `account:edit` command with no arguments prompts the user in the same manner as the `account:setup` command, but for editing purposes. Current values are shown by default. Hit return to accept the current settings at each prompt.

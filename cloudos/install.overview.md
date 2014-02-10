@@ -6,8 +6,6 @@ product: cloudos
 
 ---
 
-<a name="_top"> </a>
-
 <script>
 
 function PageRefresh {
@@ -151,7 +149,9 @@ development/test team region's compute requirements can use commodity and less e
 hardware. Whereas a production deployment region's compute requirements need a set of compute
 resources that are backed up with heavy compute and fault-tolerant resources.
 
-> **Note:** HP recommends that you define and use multiple compute regions. In this scenario, the Compute Region Controller is its own node.
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Note:</b> HP recommends that 
+you define and use multiple compute regions. In this scenario, the Compute Region Controller is its own node.
+</p>
 
 **Compute Node:** A compute node hosts the Cloud virtual machine instances using any supported hypervisor with OpenStack. In the current release, Cloud OS supports KVM as the hypervisor.
 This node hosts OpenStack services called Nova-compute and Neutron l2 agent. Multiple Compute Region Nodes can be created to expand cloud capacity. 
@@ -160,6 +160,6 @@ This node hosts OpenStack services called Nova-compute and Neutron l2 agent. Mul
 
 Proceed to the next topic, [Before You Install](/cloudos/install/before-you-install/). 
 
-<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 

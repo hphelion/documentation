@@ -11,9 +11,9 @@ HP Cloud Relational Database for MySQL simplifies the creation and management of
 
 
 ## API ##
-Do you need low level, raw REST API access to HP Cloud Relational Database? Take a look at our [Relational Database API page](/api/v13/dbaas/) for details.
+Do you need low level, raw REST API access to HP Cloud Relational Database? Take a look at our [Relational Database API for v13.5 page](/api/v13/dbaas/) for details.
 
-[Archived API version 12.4](/api/dbaas/)
+[Archived API for v12.12](/api/dbaas/)
 
 ## CLI ##
 For instructions on installing and using the CLI visit our [Relational Database CLI page](https://community.hpcloud.com/article/relational-database-v136-python-troveclient-cli-linux-installation-0) for details.

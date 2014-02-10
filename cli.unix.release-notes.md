@@ -21,7 +21,8 @@ We wanted to ensure you were aware of the changes that may affect you during thi
 
   + Although the CLI has moved into the open source community, showstoppers and significant defects will be examined and addressed by the HP Cloud SDK/CLI team on a case-by-case basis.
 
-After 6 months, access to online resources will be available through GitHub, and no support will be offered from HP Public Cloud. Of course, you are most welcome to access the install from GitHub and continue your development.
+
+HP Cloud has contributed the Unix CLI back to the open source community, and you can get support, access the documentation, and download the source code [here](https://github.com/hpcloud/unix_cli).
 
 _________________________________________
 
@@ -72,7 +73,7 @@ The 1.9.1 release is available for download from [https://docs.hpcloud.com/file/
 
 ##Release 1.8.0 Features## {#v1_8_0}
 
-The 1.8.0 release is available for download from [https://docs.hpcloud.com/file/hpcloud-1.8.0.gem](/file/hpcloud-1.8.0.gem).  This release was made available on 4/15/2013 and contains the following new features:
+The 1.8.0 release was made available on 4/15/2013 and contained the following new features:
 
 * Support for the `after` and `at` options for the `remove` command added
 
@@ -83,7 +84,7 @@ The 1.8.0 release is available for download from [https://docs.hpcloud.com/file/
 
 ##Release 1.7.0 Features## {#v1_7_0}
 
-The 1.7.0 release is available for download from https://docs.hpcloud.com/file/hpcloud-1.7.0.gem.  This release was made available on 3/1/2013 and contains the following new features:
+The 1.7.0 release was made available on 3/01/2013 and contained the following new features:
 
 * Support for large file uploads greater than 5 gigabytes added
 * Option `-r` (retry) to `copy` command for large file uploads added
@@ -99,7 +100,7 @@ The 1.7.0 release is available for download from https://docs.hpcloud.com/file/h
 
 ##Release 1.6.0 Features## {#v1_6_0}
 
-The 1.6.0 release is available for download from https://docs.hpcloud.com/file/hpcloud-1.6.0.gem.  This release was made available on 1/30/2013 and contains the following new features:
+The 1.6.0 release was made available on 1/30/2013 and contained the following new features:
 
 * Compatibility with the 0.0.19 Ruby Fog release included
 * Command `servers:ssh` supports using an IP address in addition to the server name or ID added

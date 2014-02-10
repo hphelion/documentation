@@ -1,12 +1,10 @@
 ---
 layout: default
-title: "Use Case 3: Title TBS"
+title: "Use Case 3: Title To Be Supplied"
 permalink: /cloudos/develop/quickstart-usecase3/
 product: cloudos
 
 ---
-
-<a name="_top"> </a>
 
 <script>
 
@@ -40,5 +38,5 @@ to submit calls and view the response. The URLs per service are:
 
 On your cloud, replace &lt;my_server> with the your cloud controller node's IP or DNS value. 
 
-<a href="#_top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
  

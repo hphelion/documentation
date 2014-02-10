@@ -22,18 +22,18 @@ This page covers how to view network details using the networks screen of the ma
 
 Before you can view the details of an existing network, you must:
 
-* [Sign up for an HP Cloud compute account](https://account.hpcloud.com/signup)
-* Activate compute service on your account
-* [Create a network](/mc/compute/networks/create-network#Creating/)
+* [Sign up for an HP Cloud compute account](https://horizon.hpcloud.com/register)
+* [Activate compute service on your account](https://horizon.hpcloud.com/landing/)
+* [Create a network](https://horizon.hpcloud.com/project/networks/)
 
 
 ##Accessing the network details screen## {#Accessing}
 
-You can access the network details screen from the [network screen](/mc/compute/networks) by, in the `Manage` column of the `Networks` list, select the `Options` button in the row of the network you want to delete, and choose the `Network Details` option.
+You can access the network details screen from the [network screen](https://horizon.hpcloud.com/project/networks/) by, in the `Manage` column of the `Networks` list, select the `Options` button in the row of the network you want to delete, and choose the `Network Details` option.
 
 <img src="media/network-details-launch.jpg" width="580" alt="" />
 
-You can also launch the network details screen from the network screen by, in the `Networks` list, clicking the name of the network for which you want to examine the details.
+You can also launch the network details screen from the network screen by, clicking the name of the network in the `Networks` list, for which you want to examine the details.
 
 
 ##Organization of the network details screen## {Organization}

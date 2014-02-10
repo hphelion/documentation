@@ -87,7 +87,7 @@ The following are our best-practices recommendations for versions 13.5.
 ####Command-line Interface####
 
 * For best performance when transferring large files (greater than 700MB for downloads and 1GB for uploads), use either the [classic management console](/mc/) or the [UNIX CLI](/cli/unix/) utilities.
-* For easiest password reset, use the [Horizon Preview Edition](/hpcloudconsole) interface or the [classic management console](/mc/) or the [UNIX CLI](/cli/unix/) utilities.
+* For easiest password reset, use the [HP Public Cloud Console](/hpcloudconsole) interface or the [classic management console](/mc/) or the [UNIX CLI](/cli/unix/) utilities.
 * Use the [classic management console](/mc/) to display the `Flavors Details` information rather than the Windows CLI.
 * To create a snapshot for an instance booted from a block volume, follow these steps for best results:<br>
     - Shut down the instance
@@ -102,7 +102,7 @@ The following are our best-practices recommendations for versions 13.5.
 * For best ease-of-use, use the [management console](/mc/) rather than the Windows command-line interface (CLI) to attach or detach a volume.
 * For best results when deleting a volume, unmount the volume (or for Windows instances take it offline) and detach the volume prior to deleting it.
 * For optimum performance and reliability when running Windows instances, HP recommends you use flavors with sizes of 4GB or greater.
-* For full functionality when creating instances using the Windows CLI, use flavors of `small` or greater. 
+* When creating a Windows instance, you must use a flavor of `small` or greater. The `xsmall` flavor contains a 10GB root disk, which is too small to accommodate a Windows root disk. 
 * For best reliability, reboot instances of sizes `standard.2xlarge`, `standard.4xlarge`, and `standard.8xlarge` from within the instance.
 
 
@@ -118,16 +118,16 @@ The following are the known issues for Version 13.5 of the HP Public Cloud softw
 ####Command-line Interface####
 
 * After successfully launching an instance if you find `ssh` not functioning properly, just relaunch the instance.
-* Sometimes under certain circumstances in the Windows CLI, the `ls` command displays some fields as blank.  To view the contents of these fields, display the information using the [Horizon Preview Edition](/hpcloudconsole) interface or the [classic management console](/mc/) or the [UNIX CLI](/cli/unix/) utilities. The fields are:
+* Sometimes under certain circumstances in the Windows CLI, the `ls` command displays some fields as blank.  To view the contents of these fields, display the information using the [HP Public Cloud Console](/hpcloudconsole) interface or the [classic management console](/mc/) or the [UNIX CLI](/cli/unix/) utilities. The fields are:
     - The `Attached To` and `Server Attached To` fields are may display as blank after you attach a server to a volume using the `[Attach-Volume](/cli/windows/reference#Attach-Volume)` command
     - The `Ext Gateway` field may display as blank after you execute the `[Update-Router](/cli/windows/reference#Update-Router)` command
     - The `Assigned Network Addresses` field may display as blank after you execute the `[New-Server](/cli/windows/reference#New-Server)` command<br>
     
 
-####Horizon Preview Edition Console###
+####HP Public Cloud Console####
 
-* If you use the Identity service role-based access control (RBAC) at the panel level in the [Horizon Preview Edition](/hpcloudconsole), you may see action and service options that exceed your permission levels.  You can access these features through the CLI or the the [classic management console](/mc/).
-* If you encounter a quota issue when performing network tasks while using the [Horizon Preview Edition](/hpcloudconsole), use the [classic management console](/mc/).
+* If you use the Identity service role-based access control (RBAC) at the panel level in the [HP Public Cloud Console](/hpcloudconsole), you may see action and service options that exceed your permission levels.  You can access these features through the CLI or the the [classic management console](/mc/).
+* If you encounter a quota issue when performing network tasks while using the [HP Public Cloud Console](/hpcloudconsole), use the [classic management console](/mc/).
 
 
 <!--##Resolved Issues in Version 13.5## {#v135resolved}
@@ -140,9 +140,9 @@ The following are resolved issues in version 13.5 of the HP Public Cloud softwar
 
 ##For further information## {#SeeAlso}
 
-For additional related information on HP Cloud:
+Additional related information about HP Public Cloud can be found in the following links. Please note that HP Public Cloud 12.12 support will be discontinued when the product is fully deprecated on June 1, 2014
 
-* [Getting Started with HP Public Cloud Console](http:docs.hpcloud.com/hpcloudconsole) for detailed console information.
+* [Getting Started with HP Public Cloud Console](/hpcloudconsole) for detailed console information.
 * [HP Cloud version 13.5 overview](/version-overview/) for an overview of the 13.5 release set.
 * [HP Cloud Service APIs (v13.5)](/api/v13/) for an overview of the 13.5 API specifications.
 * [migration overview page](/migration-overview/) for information on migrating from version 12.12 to 13.5.

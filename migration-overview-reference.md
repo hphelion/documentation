@@ -4,7 +4,7 @@ title: "HP Cloud Version 12.12 to HP Cloud Version 13.5: Data Transition Guide"
 permalink: /migration-overview-reference/
 
 ---
-#HP Cloud Compute Version 12.12 to HP Cloud Compute Version 13.5: Data Transition Guide TEST TEST#
+#HP Cloud Compute Version 12.12 to HP Cloud Compute Version 13.5: Data Transition Guide#
 
 This page provides you with information to help you transition an HP Cloud Compute version 12.12 instance to an HP Cloud Compute version 13.5 instance. 
 
@@ -985,7 +985,7 @@ After logging in, a system window displays, which indicates you are connected to
 
 ####Connecting from a Linux system using Terminal####  {#connectlinuxterm}
 
-Before you start, make sure the key pair file associated with the instance is stored on the local system in PEM format. For more information, see [Generate a security key pair]($keypair).
+Before you start, make sure the key pair file associated with the instance is stored on the local system in PEM format. For more information, see [Generate a security key pair](#keypair).
 
 To connect to an instance using the Linux CLI:
 
@@ -1386,14 +1386,14 @@ On November 4, 2013, the UNIX CLI moved into its End-of-Life Cycle process towar
 * No new feature requests will be honored
 * Bug reports will be accepted
 
-After 6-months, access to online resources will still be available, but no support will be offered from HP Public Cloud, and the software download will be disabled—although you are most welcome to continue development at your discretion.
+HP Cloud has contributed the Unix CLI back to the open source community, and you can get support, access the documentation, and download the source code [here](https://github.com/hpcloud/unix_cli).
 
 ##Contacting Support## {#support}
 
 If you have any questions or concerns about which files to copy, contact our Support team:
 
-- [Live chat from hpcloud.com](https://account.hpcloud.com/cases#support_chat)
-- [Open a support case](https://account.hpcloud.com/cases)
+- [Live chat from hpcloud.com](https://horizon.hpcloud.com/settings/cases/)
+- [Open a support case](https://horizon.hpcloud.com/settings/cases/)
 - [Email support@hpcloud.com](mailto:support@hpcloud.com)
 - By phone at 1-855-61CLOUD (1-855-612-5683) in the U.S. or +1-678-745-9010 internationally.
 
