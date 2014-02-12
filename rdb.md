@@ -12,4 +12,4 @@ The HP Cloud Relational Database (RDB) provides you with a simplified method for
 The HP Cloud RDB service is currently in private beta.  Please [request access on our sign-up page](https://account.hpcloud.com/cases/betarequest/dbaas).  Service use is free of charge during the private beta period.
 
 ## API
-Do you need low level, raw REST API access to HP Cloud RDB?  Take a look at the [RDB API page](/api/dbaas/).
+Do you need low level, raw REST API access to HP Cloud RDB?  Take a look at the [RDB API page](/api/v13/dbaas/).
