@@ -65,7 +65,7 @@ The questions we address in the UNIX CLI section of this FAQ are:
 
 
 
-Please surf on over to the [installation page](/cli/unix/install) for full installation information.
+Please surf on over to the [installation page](/cli/unix/2/install) for full installation information.
 
 
 
