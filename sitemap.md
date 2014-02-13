@@ -31,7 +31,7 @@ Having a bit of trouble navigating our site, and so you're looking for a single 
 &nbsp;&nbsp;&nbsp;&nbsp;[Identity Service Overview](/identity/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Identity Service API](/api/v13/identity/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Object Storage Overview](/object-storage/)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Object Storage API](/api/v13/object-storage/)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Object Storage API](/api/object-storage/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[HP Cloud Block Storage Overview](/block-storage/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Block Storage API](/api/v13/block-storage/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Content Delivery Network (CDN) Overview](/cdn/)<br>
