@@ -48,7 +48,7 @@ Where `SERVICE-NAME` can be [Compute](/bindings/fog/compute), [Storage](/binding
 
 **Note**: You must use the `:hp_access_key` parameter rather than the now-deprecated  `:hp_account_id` parameter you might have used in previous Ruby Fog versions.
 
-You can find the values the access key, secret key, and other values by clicking the [`API Keys`](https://console.hpcloud.com/account/api_keys) button in the [Console Dashboard](https://console.hpcloud.com/dashboard).
+You can find the values the access key, secret key, and other values through the [HP Public Cloud Console](https://horizon.hpcloud.com). Click the project menu and select *Roles and API Endpoints*.
 
 
 ##Availability Zones## {#AvailabilityZones}

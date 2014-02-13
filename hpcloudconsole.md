@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Cloud Console Getting Started"
-permalink: hpcloudconsole
+permalink: /hpcloudconsole/
 product: HP Cloud Console
 
 ---
