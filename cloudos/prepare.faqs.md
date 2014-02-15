@@ -31,12 +31,12 @@ Welcome! You've got questions, we have the answers.
 * [What are the HP differentiators?](#what-are-the-hp-differentiators)
 * [What does HP Cloud OS support?](#what-does-hp-cloud-os-support)
 * [How does HP Cloud OS help customers?](#how-does-hp-cloud-os-help-customers) 
-* [What is the HP Cloud OS Sandbox?](#what-is-the-hp-cloud-os-sandbox)
+* [What is the HP Cloud OS technology preview?](#what-is-the-hp-cloud-os-technology-preview)
 * [How is HP Cloud OS integrated into the HP Cloud portfolio?](#how-is-hp-cloud-os-integrated-into-the-hp-cloud-portfolio)
-* [Where can I get the HP Cloud OS Sandbox kit?](#where-can-i-get-the-hp-cloud-os-sandbox-kit)
+* [Where can I get the HP Cloud OS technology preview ISO?](#where-can-i-get-the-hp-cloud-os-technology-preview-iso)
 * [Where can I get the login credentials for the HP Cloud OS dashboards?](#where-can-i-get-login-credentials-for-the-hp-cloud-os-dashboards)
 
-## What is the HP POV on cloud solutions?
+## What is the HP POV on cloud solutions?  
 
 > HP believes organizations will need to implement a hybrid delivery strategy that leverages the right mix of cloud and traditional IT, to optimize application creation &amp; delivery, and to optimize service creation &amp; delivery.
 
@@ -53,30 +53,30 @@ provide the customer with choice, confidence and consistency.
 confidently build, operate, and consume IT across private, hybrid, and public clouds, based on a core set of principles. 
 HP delivers customers the industry's only hybrid cloud strategy and solution portfolio with:  
 
-* Choice
-  * In delivery model (private, managed, public, and traditional IT)
-  * In platform (Microsoft, VMware, Linux) and support for heterogeneous environments
-  * In a global partner ecosystem (independent software vendors, system integrators, outsourcers, and service providers)
+> * Choice
+   * In delivery model (private, managed, public, and traditional IT)
+   * In platform (Microsoft, VMware, Linux) and support for heterogeneous environments
+   * In a global partner ecosystem (independent software vendors, system integrators, outsourcers, and service providers)
 
-* Confidence 
-  * Managed and secure your cloud-based assets across all deployment models
-  * Gain scalability to meet rapidly changing business requirements
-  * Deliver on enterprise-class service level agreements (SLAs) 
-  * In the ability to manage and secure across delivery models, and provide the scalability enterprises need to drive business forward
+> * Confidence 
+   * Managed and secure your cloud-based assets across all deployment models
+   * Gain scalability to meet rapidly changing business requirements
+   * Deliver on enterprise-class service level agreements (SLAs) 
+   * In the ability to manage and secure across delivery models, and provide the scalability enterprises need to drive business forward
 
-* Consistency 
-  * Provide a common architecture across traditional IT and private, hybrid, and public clouds
-  * Allow you to create and consume portable cloud services through a unified, consistent experience across all deployment models
+> * Consistency 
+   * Provide a common architecture across traditional IT and private, hybrid, and public clouds
+   * Allow you to create and consume portable cloud services through a unified, consistent experience across all deployment models   
   
 ## What is HP Cloud OS?
 
-> HP Cloud OS is an open and extensible cloud technology platform based on OpenStack that is available through cloud products and services in the HP Cloud portfolio, or as a public beta sandbox edition. You can think of it as an "internal" distribution 
+> HP Cloud OS is an open and extensible cloud technology platform based on OpenStack that is available through cloud products and services in the HP Cloud portfolio, or as a public beta preview edition. You can think of it as an "internal" distribution 
 of OpenStack that provides the technology foundation for the Cloud common architecture across private, public, and hybrid cloud delivery. HP Cloud OS is targeted to meet the needs of enterprises who want to leverage OpenStack for rapid innovation, and the beneficial 
 economics of an open source approach. It enables easier deployment, application portability, and streamlined OpenStack patching and updates, among other features.   
 
 > HP Cloud OS includes Ubuntu 12.04LTS, KVM hypervisor, hardened, curated, and supported OpenStack distribution, a number of value-added services, and miscellaneous software packaged as an ISO for an easy deployment. The key technology components of HP Cloud OS are:
 
-* Internal OpenStack distribution by HP
+> * Internal OpenStack distribution by HP
 * HP installer
 * Automated patch and OpenStack release management capability
 * Standards-based infrastructure and application modeling capability
@@ -92,7 +92,7 @@ resources throughout a datacenter, all managed through a dashboard that gives ad
 
 > HP Cloud is based on a common architecture. This enables HP to provide its customers with choice, confidence, and consistency.
 
-* Choice &mdash; HP Cloud enables the customer to choose from any combination of: cloud delivery model (public, private or managed); OS; hypervisor; combination of infrastructure elements; and partners.
+> * Choice &mdash; HP Cloud enables the customer to choose from any combination of: cloud delivery model (public, private or managed); OS; hypervisor; combination of infrastructure elements; and partners.
 * Confidence &mdash; HP Cloud allows the customer to manage and secure the delivery of applications and services across a combination of delivery models (public, private, managed); and provides the confidence that the cloud will scale - with the appropriate SLA expectations - for future business needs.
 * Consistency &mdash; HP Cloud provides the customer with a common architecture, and allows for workload portability across delivery models - providing the customer with a single consumption experience.
 
@@ -109,44 +109,46 @@ and has found no issues running RHEL or SLES as a guest OS on HP Cloud OS.
 
 > For enterprises who want to leverage OpenStack for rapid innovation and the beneficial economics of an open source approach, HP Cloud OS delivers enterprise-grade OpenStack.  The key benefits are:
 
-* Simplified delivery
-  * Simple, accelerated installation and configuration process
-  * Centralize management of your cloud environments
-  * Automated-live content distribution (upgrades, patches, content)
+> * Simplified delivery
+   * Simple, accelerated installation and configuration process
+   * Centralize management of your cloud environments
+   * Automated-live content distribution (upgrades, patches, content)
 
-* Enhanced service lifecycle
-  * Model-based infrastructure topology for multi-tier applications
-  * Enable hybrid delivery model
+> * Enhanced service lifecycle
+   * Model-based infrastructure topology for multi-tier applications
+   * Enable hybrid delivery model
  
-* Optimized workload portability for hybrid delivery
-  * Enable workload portability across cloud providers (for hybrid delivery)
-  * Model once - provision anywhere
-  * Workload aware provisioning
+> * Optimized workload portability for hybrid delivery
+   * Enable workload portability across cloud providers (for hybrid delivery)
+   * Model once - provision anywhere
+   * Workload aware provisioning
 
 > HP Cloud OS provides the foundation for the HP Cloud common architecture enabling enterprise customers to accelerate hybrid delivery &amp; accelerate business outcomes.
 
-## What is the HP Cloud OS Sandbox?
+## What is the HP Cloud OS technology preview?
 
-> To allow customers to evaluate and educate themselves on an OpenStack-based architecture for their cloud needs, HP offers the HP Cloud OS Sandbox, which is now available as a developer preview. This helps customers and partners gain experience with OpenStack prior to deploying HP Cloud solutions that leverage HP Cloud OS. 
+> To allow customers to evaluate and educate themselves on an OpenStack-based architecture for their cloud needs, HP offers the HP Cloud OS technology preview for developers and sysadmins. This helps customers and partners gain experience with OpenStack prior to deploying HP Cloud solutions that leverage HP Cloud OS. 
 
-> The HP Cloud OS sandbox is an OpenStack distribution from HP that contains a HP installer, a standards-based infrastructure, and application modeling capability. It provides an in-depth insight for customers and partners prior to deploying HP Cloud solutions that leverage HP Cloud OS.  HP Cloud OS sandbox is not supported, and is meant for non-production, 
+> The HP Cloud OS technology preview is an OpenStack distribution from HP that contains a HP installer, a standards-based infrastructure, and application modeling capability. It provides an in-depth insight for customers and partners prior to deploying HP Cloud solutions that leverage HP Cloud OS.  HP Cloud OS technology preview is not supported, and is meant for non-production, 
 limited scale (up to 10 compute nodes) and limited time (90-day) use. 
 
 ## How is HP Cloud OS integrated into the HP Cloud portfolio? 
 
 HP Cloud OS is already powering or compatible with several existing HP cloud solutions, delivering on our commitment to a common architecture across the HP Cloud portfolio with HP Cloud OS as a foundational technology component embedded in our existing cloud solutions and new innovative offerings. This technology provides the foundation for the common cloud architecture across private, public, and managed cloud delivery models.  Today, HP Cloud OS is NOT a product, but rather a technology that will be offered and supported as part of other HP products.
 
-* CloudSystem currently embeds OpenStack technology, offering customers greater choice in deployment options for their cloud workloads by enabling KVM resource pools.  The next generation of CloudSystem software was built on Cloud OS technology (coming in 2014).
+> * CloudSystem currently embeds OpenStack technology, offering customers greater choice in deployment options for their cloud workloads by enabling KVM resource pools.  The next generation of CloudSystem software was built on Cloud OS technology (coming in 2014).
 * Moonshot servers will be available with Cloud OS technology to simplify the provisioning and management of Moonshot servers for specific cloud workloads, such as dedicated hosting and large-scale websites.  This is currently available as a private beta.  HP Moonshot with HP Cloud OS may be available in 2014. 
 
-## Where can I get the HP Cloud OS Sandbox kit?
+## Where can I get the HP Cloud OS technology preview ISO?
 
-> To get the HP Cloud OS Sandbox ISO, register for an account on the <a href="https://cloudos.hpwsportal.com" target="codn">HP Cloud OS Distribution Network</a>.  Once logged in, look for the 
-Technology Preview section, provide your information, and download the ZIP package containing the HP Cloud OS 1.20 Sandbox ISO. 
+> To get the HP Cloud OS technology preview ISO, register for an account on the 
+<a href="https://cloudos.hpwsportal.com" target="codn">HP Cloud OS Distribution Network</a>.  Once logged in, look for the 
+Technology Preview section, provide your information, and download the ZIP package containing the HP Cloud OS 1.20 ISO. 
 
 ## Where can I get login credentials for the HP Cloud OS dashboards?
 
-> In the current release, the dashboards use pre-defined login credentials. These are not published in the web-hosted documentation. After you download the ISO from the <a href="https://cloudos.hpwsportal.com" target="new"> HP Cloud OS Distribution Network</a>, look for the readme file in the same ZIP that contains the ISO. The readme identifies the login credentials.
+> In the current release, the dashboards use pre-defined login credentials. These are not published in the web-hosted documentation. After you download the ISO from the <a href="https://cloudos.hpwsportal.com" target="new"> HP Cloud OS Distribution Network</a>, look for the 
+readme file in the same ZIP that contains the ISO. The readme identifies the login credentials.
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
