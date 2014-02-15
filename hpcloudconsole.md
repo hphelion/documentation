@@ -135,6 +135,7 @@ You are now ready to use the options under "Manage Compute" under "Project" in t
 * [Create an instance](#Instance)
 * [Create and attach a volume](#Volumes)
 * [Images and Snapshots](#Imagesandsnapshots)
+* [Monitoring](#Monitoring)
 * [Access and Security](#Accessandsecurity)
 
 
@@ -332,6 +333,37 @@ Security group rules have three parts:
 12. Click "Access & Security" in the left-hand bar to display your security groups.
 
     <img src="media/ASSecurityGroupsdisplay.png" width="580" alt="" />
+    
+    
+###Monitoring### {#Monitoring}
+
+Use HP Cloud Monitoring to ascertain system health and track resource metrics. HP Cloud Monitoring provides:
+
+* Message subscription to the latest system information
+* Alarms that send notifications when a threshold has been passed
+* Metric posts that send metrics to HP Monitoring
+* Metric queries that query all the metrics HP Monitoring collects and receives.
+
+1. Click "Manage Services" in the left-hand bar on the [HP Cloud Console landing page](https://horizon.hpcloud.com/landing), then "Activate" in the "Monitoring" row under the region you are setting up.
+
+     <img src="media/Monitoring1.png" width="580" alt="" />
+
+2. Once activated, click "Monitoring" under the "Actions" heading on the [landing page](https://horizon.hpcloud.com/landing) to begin.
+
+     <img src="media/Monitoring2.png" width="580" alt="" />    
+     
+3. Click "+Create Endpoint." **Note** Record the password for the generated endpoint in the pop-up display. It cannot be retrieved later."
+
+     <img src="media/Monitoring3CreateEndpoint" width="580" alt="" />   
+     
+4. Click the Endpoint ID in the "Endpoints" screen to display the endpoint ID, the URI, the Queue, and the User Name.
+
+     <img src="media/Monitoring5EndpointDisplaybox" width="580" alt="" />
+
+     
+     
+
+
 
 ###Organize and manage HP Cloud Access## {#Identity}
 
@@ -348,6 +380,7 @@ Click  "Identity" in the left-hand interface to display links:
 * Groups - When you create a domain, two default groups are created: Users and Domain Administrators. Domain Administrators can add individuals to a group and create new groups, which may contain multiple users. 
 
 * Roles - A role is a user or group  capability within a  service that determines access rights. Roles include  Compute Admin, Network Admin, Object Storage Admin, and others.  Domain owners can  assign roles to individuals or groups. A role may be associated with multiple users and multiple groups.
+
 
 ##For further information## {#Forfurtherinformation}
 
