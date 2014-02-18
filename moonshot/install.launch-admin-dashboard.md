@@ -22,7 +22,7 @@ PageRefresh();
 
 # Launch the Administration Dashboard
 
-After a cloud environment has been created in the HP Cloud OS Operational Dashboard, you manage the cloud through the HP Cloud OS Administration Dashboard. The Administration Dashboard provides a simplified means
+After a cloud environment has been created in the HP Cloud OS for Moonshot Operational Dashboard, you manage the cloud through the HP Cloud OS for Moonshot Administration Dashboard. The Administration Dashboard provides a simplified means
 of creating and managing Cloud resources and topology design documents.  The Administration Dashboard also enables you to provision a composite topology described by the topology design documents.
 
 To access the Administration Dashboard:
@@ -38,7 +38,7 @@ If you have not already done so, see the ZIP on the <a href="https://cloudos.hpw
 
 ## Next Step
 
-For details about the Administration Dashboard, see the [HP Cloud OS Administration Dashboard Help](/cloudos/moonshot/manage/administration-dashboard/).
+For details about the Administration Dashboard, see the [HP Cloud OS for Moonshot Administration Dashboard Help](/cloudos/moonshot/manage/administration-dashboard/).
 
 While you are still in the Operational Dashboard, check the license details for your instance. 
 See the next topic, [Check the HP Cloud OS License](/cloudos/moonshot/install/license/).

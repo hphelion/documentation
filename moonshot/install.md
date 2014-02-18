@@ -23,10 +23,8 @@ PageRefresh();
 
 Welcome! The following topics explain how to install &amp; configure your cloud with HP Cloud OS for Moonshot. 
 
-( please reword / edit for Moonshot ) 
-
 It's important to read the topics and perform the described steps in order. While some steps are optional, 
-the sequence that you'll follow in the HP Cloud OS Operational Dashboard user interface is significant, to ensure 
+the sequence that you'll follow in the HP Cloud OS for Moonshot Operational Dashboard user interface is significant, to ensure 
 a proper deployment of your cloud. 
 
 Install and set up the Admin node:
@@ -44,20 +42,21 @@ After you install and set up the Admin node, you can perform additional steps:
 * [Create a Cloud](/cloudos/moonshot/install/create-cloud/) 
 * [Launch Administration Dashboard](/cloudos/moonshot/install/launch-admin-dashboard/)
 * [Check the HP Cloud OS License](/cloudos/moonshot/install/license/)
-* [Install Hot Fixes](/cloudos/moonshot/install/hot-fixes/)
 * [Updates and Extensions](/cloudos/moonshot/install/updates-and-extensions/)
 
+<!-- 
 Finally, if you do not intend to use the wizard-based Cloud OS installation process that's described in 
 the Create a Cloud topic, and instead decide to apply and configure the install modules yourself, 
 see these topics: 
 
 * [Advanced Cloud Setup](/cloudos/moonshot/install/advanced-cloud-setup/)
 * [Install Modules Reference](/cloudos/moonshot/install/install-modules-reference/)
+-->
 
 **Note:** Also see the Help topics that are available in the Operational Dashboard and Administration Dashboard.  Website copies are available:
 
-* [HP Cloud OS Operational Dashboard Help](/cloudos/moonshot/manage/operational-dashboard/)
-* [HP Cloud OS Administration Dashboard Help](/cloudos/moonshot/manage/administration-dashboard/)
+* [HP Cloud OS for Moonshot Operational Dashboard Help](/cloudos/moonshot/manage/operational-dashboard/)
+* [HP Cloud OS for Moonshot Administration Dashboard Help](/cloudos/moonshot/manage/administration-dashboard/)
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

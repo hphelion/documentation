@@ -63,8 +63,8 @@ New patches may be available periodically. Be sure to revisit the Updates and Ex
 <!--
 ## Modify the CODN Runtime Configuration
 
-CODN is a web service that provides catalog integration and content download services for the HP Cloud OS Operational Dashboard and 
-HP Cloud OS Administration Dashboard. 
+CODN is a web service that provides catalog integration and content download services for the HP Cloud OS for Moonshot Operational Dashboard and 
+HP Cloud OS for Moonshot Administration Dashboard. 
 
 On your cloud controller node, the CODN configuration file is here:
 

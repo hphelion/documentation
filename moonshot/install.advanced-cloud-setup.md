@@ -22,7 +22,7 @@ PageRefresh();
 
 # Advanced Cloud Setup
 
-This topic explains how to perform an advanced cloud setup, as an **alternative** to the wizard-based Create Cloud steps in the HP Cloud OS Operational Dashboard.
+This topic explains how to perform an advanced cloud setup, as an **alternative** to the wizard-based Create Cloud steps in the HP Cloud OS for Moonshot Operational Dashboard.
 
 * [Introduction](#introduction)
 * [Install Module Overview](#install-module-overview)

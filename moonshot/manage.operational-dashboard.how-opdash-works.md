@@ -24,7 +24,7 @@ PageRefresh();
 
 The Operational Dashboard is used to complete the Cloud OS installation process after the HP Cloud OS Administration Node has been booted with the ISO (see the Install section of the HP Cloud OS Documentation web site). On the Operational Dashboard, you set up your cloud environment, complete the HP Cloud OS Administration node installation and configuration, and create a cloud.
 
-You can then access the HP Cloud OS Administration Dashboard to view, allocate, and manage all resources within the cloud.
+You can then access the HP Cloud OS for Moonshot Administration Dashboard to view, allocate, and manage all resources within the cloud.
 
 The Operational Dashboard consists of the following tabs:
 

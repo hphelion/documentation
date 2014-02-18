@@ -195,23 +195,21 @@ navigation:
     url: /cloudos/siteindex/	
   moonshot:
   - text: HP Cloud OS for Moonshot Home
-    url: /cloudos/moonshot/  	
-  - text: Release Notes
-    url: /cloudos/moonshot/prepare/releasenotes/	
+    url: /cloudos/moonshot/
+  - text: Prepare
+    url: /cloudos/moonshot/prepare/  	
   - text: Install
     url: /cloudos/moonshot/install/
-  - text: Support Matrix
-    url: /cloudos/moonshot/prepare/supportmatrix/
-  - text: Operational Dashboard Help
-    url: /cloudos/moonshot/manage/operational-dashboard/	
-  - text: Administration Dashboard Help
-    url: /cloudos/moonshot/manage/administration-dashboard/	
-  - text: Administration Guide
-    url: /cloudos/moonshot/manage/administration-guide/	
-  - text: Image Builder
-    url: /cloudos/moonshot/manage/image-builder/
-  - text: Troubleshooting
-    url: /cloudos/moonshot/manage/troubleshooting/
+  - text: Manage
+    url: /cloudos/moonshot/manage/
+  - text: Develop
+    url: /cloudos/moonshot/develop/
+  - text: Community Forum
+    url: /cloudos/moonshot/community/		
+  - text: OpenStack Links
+    url: /cloudos/moonshot/openstack/	
+  - text: Site Index
+    url: /cloudos/moonshot/siteindex/	
 
 apinavigation:
 - text: Site home page

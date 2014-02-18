@@ -22,11 +22,11 @@ PageRefresh();
 
 # Administration Dashboard Tasks by Role
 
-The following topics describe HP Cloud OS Administration Dashboard tasks for each dashboard role.
+The following topics describe HP Cloud OS for Moonshot Administration Dashboard tasks for each dashboard role.
 
 Generally, the privilege hierarchy gives each role all the rights of the roles beneath it. For example, 
 a project administrator can perform all the tasks of a project user, plus some additional tasks. Occasionally, 
-the HP Cloud OS Administration Dashboard Help provides guidance for best practices that supplement the privilege hierarchy.
+the HP Cloud OS for Moonshot Administration Dashboard Help provides guidance for best practices that supplement the privilege hierarchy.
 
 **Tasks:**
 

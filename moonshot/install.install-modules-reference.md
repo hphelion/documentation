@@ -887,7 +887,7 @@ will be ignored. </td>
 <tr style="background-color: white; color: black;">
 <td> Domain Name </td> 
 <td> Cloud name (copied from the cloud installation pages) </td>
-<td> A user-editable name for the Domain field on the HP Cloud OS Administration Dashboard login screen. </td>
+<td> A user-editable name for the Domain field on the HP Cloud OS for Moonshot Administration Dashboard login screen. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -1147,7 +1147,7 @@ virtual machines. Select kvm if nova-compute nodes are bare-metal. </td>
 
 <tr>
 <th style="background-color: #C8C8C8;"> Description </th> 
-<td colspan="2" style="background-color: white;"> Installs the self-service HP Cloud OS Administration Dashboard. </td>
+<td colspan="2" style="background-color: white;"> Installs the self-service HP Cloud OS for Moonshot Administration Dashboard. </td>
 </tr>
 
 <tr>

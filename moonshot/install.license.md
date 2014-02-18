@@ -26,7 +26,7 @@ This topic describes the steps to review and update your HP Cloud OS license.
 
 ## Introduction
 
-The HP Cloud OS Operational Dashboard and Administration Dashboard require a common, date-based HP Cloud OS license. From the time you first launch the Operational Dashboard, you have (by default) 90 days of use.  After 90 
+The HP Cloud OS for Moonshot Operational Dashboard and Administration Dashboard require a common, date-based HP Cloud OS license. From the time you first launch the Operational Dashboard, you have (by default) 90 days of use.  After 90 
 days, you may still open the Operational Dashboard and Administration Dashboard. However, until you renew the license, you cannot use any of the features such as managing updates or extensions to your deployed cloud. 
 
 ## Check Your License

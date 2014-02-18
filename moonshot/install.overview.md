@@ -29,8 +29,8 @@ configure, and install a specific network, storage, and hardware infrastructure.
 
 These installation topics provide the means to plan, install, configure, and create an HP Cloud OS infrastructure.
 
-The HP Cloud OS installation deploys the HP Cloud OS Operational Dashboard (used to set up,
-configure, and install an HP cloud infrastructure) and the HP Cloud OS Administration Dashboard
+The HP Cloud OS installation deploys the HP Cloud OS for Moonshot Operational Dashboard (used to set up,
+configure, and install an HP cloud infrastructure) and the HP Cloud OS for Moonshot Administration Dashboard
 (used to create and manage cloud resources).
 
 * [HP Cloud OS Environment](#hp-cloud-os-environment)
@@ -59,7 +59,7 @@ At a high level, here are the steps to setup and install the Admin node:
 
 <img src="media/cloudos-install-process.png" title="HP Cloud OS installation process" /> 
 
-The steps shown above feature an automated process in the HP Cloud OS Operational Dashboard, where you can accept defaults or enter values that are specific to your requirements (such as your network settings). Using 
+The steps shown above feature an automated process in the HP Cloud OS for Moonshot Operational Dashboard, where you can accept defaults or enter values that are specific to your requirements (such as your network settings). Using 
 this automated approach, HP Cloud OS handles all of the installation details for you, installing the OpenStack services and the HP Cloud OS value-added services.
 
 Taking a broader view, this next diagram illustrates those steps in a larger context. 

@@ -219,7 +219,7 @@ To create a project:
 </li>
 
 <li> <i>Optional</i>: On the <b>Integrations</b> tab, select <b>Create Default Resource Pool</b> if you need to create a resource pool for your compute regions. 
-You select this option if your HP Cloud OS Operational Dashboard administrator used the advanced method to create compute regions. The advanced option 
+You select this option if your HP Cloud OS for Moonshot Operational Dashboard administrator used the advanced method to create compute regions. The advanced option 
 does not automatically create resource pools. In most cases, you can leave the default (not selected) for Create Default Resource Pool. Operational Dashboard 
 administrators usually create compute regions that automatically contain a resource pool. 
 <br /> <br/> <p> <b>Note</b>: You can create a resource pool later. See <a href="#how-to-create-a-resource-pool">How to Create a Resource Pool</a>.</p>
@@ -1802,7 +1802,7 @@ To create a resource pool:
 
 <ul>
 <li> <b>Custom</b>: All provider details are required.
-<li> <b>HP Cloud OS - OpenStack (Grizzly)</b>: The dashboard provides values for the HP Cloud OS Administration Dashboard environment. Provider details are not required.
+<li> <b>HP Cloud OS - OpenStack (Grizzly)</b>: The dashboard provides values for the HP Cloud OS for Moonshot Administration Dashboard environment. Provider details are not required.
 <li> <b>HP Cloud - OpenStack (Diablo)</b>: The dashboard provides values for the HP Cloud Services environment. You must enter <b>Provider Details</b>, which are required.
 <li> <b>Custom - OpenStack (Grizzly)</b>: Provides maximum flexibility when you are creating a resource pool. <b>Details</b> and <b>Provider Details</b> are required.
 </ul>
@@ -3294,7 +3294,7 @@ HP offers to help maintain your cloud.
 
 To learn whether you have permission to use CODN, see [Administration Dashboard Tasks by Role](/cloudos/moonshot/manage/administration-dashboard/tasks-by-role/).
 
-You must configure the HP Cloud OS Administration Dashboard to access an HP Cloud OS Distribution Network account before you can use the 
+You must configure the HP Cloud OS for Moonshot Administration Dashboard to access an HP Cloud OS Distribution Network account before you can use the 
 Updates and Extensions window. See the Tasks sections, below.
 
 The Updates and Extensions window provides the standard Administration Dashboard filter capability, and you can click on the column headings 
@@ -3452,7 +3452,7 @@ All users see the <b>Settings</b> link on every Administration Dashboard window.
 
 * [How to Change Your Password](#how-to-change-your-password)
 
-* [About the HP Cloud OS Administration Dashboard](#about-the-hp-cloud-os-administration-dashboard)
+* [About the HP Cloud OS for Moonshot Administration Dashboard](#about-the-hp-cloud-os-administration-dashboard)
 
 
 ### How to Change User Settings
@@ -3485,7 +3485,7 @@ To change your Administration Dashboard password:
  * <b>Confirm new password</b>: Enter your new password again to confirm your entry.
  * Click <b>Change</b>.
 
-### About the HP Cloud OS Administration Dashboard  
+### About the HP Cloud OS for Moonshot Administration Dashboard  
 
 To view version information about the Administration Dashboard:
 

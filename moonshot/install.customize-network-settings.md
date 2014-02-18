@@ -25,7 +25,7 @@ PageRefresh();
 This topic describes the steps to customize the network settings. These steps are required. 
 
 **Caution:** If you plan to customize the network settings, you must do it before performing the steps in [Complete the Admin Node Installation](/cloudos/moonshot/install/complete-admin-node-installation/). 
-After that, the network settings in the HP Cloud OS Operational Dashboard are read only. Once the install process is triggered, no changes can be made. If you want to make changes, you need to start over by re-installing the Admin Node.
+After that, the network settings in the HP Cloud OS for Moonshot Operational Dashboard are read only. Once the install process is triggered, no changes can be made. If you want to make changes, you need to start over by re-installing the Admin Node.
 
 * [Introduction](#introduction)
 

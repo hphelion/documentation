@@ -541,11 +541,11 @@ You can now create one or more compute regions. This is the last step in the ins
 When the compute region is created, you have created an active cloud.
 
 After successfully creating a cloud and compute region, you can manage your cloud environment by launching the 
-HP Cloud OS Administration Dashboard.
+HP Cloud OS for Moonshot Administration Dashboard.
 
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px; border: 1px dotted #000000;"> <b>Note:</b> Successfully creating a compute region 
 automatically creates a default resource pool for that region, which is configured and visible 
-in the Administration Dashboard. For details, see the <a href="/cloudos/moonshot/manage/administration-dashboard/">HP Cloud OS Administration Dashboard Help</a>. </p>
+in the Administration Dashboard. For details, see the <a href="/cloudos/moonshot/manage/administration-dashboard/">HP Cloud OS for Moonshot Administration Dashboard Help</a>. </p>
 
 The following table describes the Compute Region dialog UI elements:
 

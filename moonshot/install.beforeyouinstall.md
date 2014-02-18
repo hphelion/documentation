@@ -22,7 +22,7 @@ PageRefresh();
 
 # Before You Install
 
-Before you can start working in the HP Cloud OS Operational Dashboard, you must:
+Before you can start working in the HP Cloud OS for Moonshot Operational Dashboard, you must:
 
 * [Plan the Infrastructure for a Cloud](#plan-the-infrastructure-for-a-cloud)
 * [Set up the Admin Node](#set-up-the-admin-node)

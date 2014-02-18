@@ -58,7 +58,7 @@ This section includes:
 
 The HP Cloud OS Clean-up Utility performs the following tasks:
 
-* Clean up all resources associated with previously deleted resources. The HP Cloud OS Administration Dashboard does not 
+* Clean up all resources associated with previously deleted resources. The HP Cloud OS for Moonshot Administration Dashboard does not 
 delete projects or users. Instead, it "moves them to the trash can" by removing as many resources as possible and then 
 prefixing the Project (or User) name with a tilde ~. Flavors are already only "marked for deletion" in the database.
 

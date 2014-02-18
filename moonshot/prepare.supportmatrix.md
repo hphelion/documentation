@@ -380,7 +380,7 @@ Refer to [Install &amp; Configure Your Cloud](/cloudos/moonshot/install/) for a 
 
 <!--
 <tr style="background-color: white; color: black;">
-<td style="padding-left: 40px; font-weight:bold;"> HP Cloud OS Administration Dashboard </td>
+<td style="padding-left: 40px; font-weight:bold;"> HP Cloud OS for Moonshot Administration Dashboard </td>
 <td> HP Cloud OS 1.20 </td>
 </tr>
 -->
@@ -390,7 +390,7 @@ Refer to [Install &amp; Configure Your Cloud](/cloudos/moonshot/install/) for a 
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td style="padding-left: 40px;"> HP Cloud OS Operational Dashboard </td>
+<td style="padding-left: 40px;"> HP Cloud OS for Moonshot Operational Dashboard </td>
 <td> HP Cloud OS 1.20 </td>
 </tr>
 

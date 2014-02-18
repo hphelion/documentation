@@ -27,7 +27,7 @@ PageRefresh();
 This topic describes the steps to customize the server types. These steps are optional. 
 
 **Caution:** If you plan to customize the servers, you must do it before performing the steps in [Complete the Admin Node Installation](/cloudos/moonshot/install/complete-admin-node-installation/). 
-After that, the server type dialogs in the HP Cloud OS Operational Dashboard are read only. Once the install process is triggered, no changes can be made. 
+After that, the server type dialogs in the HP Cloud OS for Moonshot Operational Dashboard are read only. Once the install process is triggered, no changes can be made. 
 If you want to make changes, you need to start over by re-installing the Admin Node.  
 
 * [Introduction](#introduction)
@@ -75,7 +75,7 @@ To edit the server types:
 6. Click **Update Server Definition** to save the updated server definition.
 
 **Note:** The preceding steps explained how to edit server types. If you need to create server types, click the **Create Server Definition** button. 
-For more information, click Help from the top banner of the HP Cloud OS Operational Dashboard. Or go directly to the web-hosted [HP Cloud OS Operational Dashboard Help](/cloudos/moonshot/manage/operational-dashboard/).
+For more information, click Help from the top banner of the HP Cloud OS for Moonshot Operational Dashboard. Or go directly to the web-hosted [HP Cloud OS for Moonshot Operational Dashboard Help](/cloudos/moonshot/manage/operational-dashboard/).
 
 ## Next Step
 
