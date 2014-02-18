@@ -10,8 +10,13 @@ Having a bit of trouble navigating our site, and so you're looking for a single 
 
 [Getting Started with HP Cloud](/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Documentation Site Overview](/site-overview)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Management Console overview](/mc/)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Management Console site map](/mc/sitemap/)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;HP Public Cloud Console -- 13.5<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Getting Started with HP Public Cloud Console](/hpcloudconsole/)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[What's new with the HP Public Cloud Console](/whats_new_with_HP_Cloud_Console/)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Feature Mapping: HP Classic Console to the HP Public Cloud Console](/hpcloudconsolefeaturemap/)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Classic Management Console -- 12.12<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Management Console overview](/mc/)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Management Console site map](/mc/sitemap/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Software release notes](/release-notes/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Version overview](/version-overview)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Version 12.12 to 13.5 transition overview](/migration-overview/)<br>
@@ -26,7 +31,7 @@ Having a bit of trouble navigating our site, and so you're looking for a single 
 &nbsp;&nbsp;&nbsp;&nbsp;[Identity Service Overview](/identity/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Identity Service API](/api/v13/identity/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Object Storage Overview](/object-storage/)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Object Storage API](/api/v13/object-storage/)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Object Storage API](/api/object-storage/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[HP Cloud Block Storage Overview](/block-storage/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Block Storage API](/api/v13/block-storage/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Content Delivery Network (CDN) Overview](/cdn/)<br>
@@ -97,12 +102,12 @@ Having a bit of trouble navigating our site, and so you're looking for a single 
 &nbsp;&nbsp;&nbsp;&nbsp;[Compute](/api/v13/compute)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Object Storage](/object-storage/api)<br>
 <!-- &nbsp;&nbsp;&nbsp;&nbsp;[Using Object Storage with cURL](/object-storage/api/curl)<br> -->
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Object Storage API](/api/v13/object-storage/)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Object Storage API](/api/object-storage/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Block Storage API](/api/v13/block-storage/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[LBaaS API](/api/lbaas)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[DNS API](/api/dns)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[MaaS API](/api/v13/monitoring)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;[CDN](api/CDN)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Monitoring API](/api/v13/monitoring)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[CDN](/api/CDN)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Identity Service](/api/v13/identity/)<br>
 [Glossary of Terms](/glossary)<br>
 [Software Downloads](/downloads)<br>

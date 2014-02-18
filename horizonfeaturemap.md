@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Feature Mapping: HP Classic Console to the HP Public Cloud Console"
-permalink: hpcloudconsolefeaturemap
+permalink: /hpcloudconsolefeaturemap/
 product: HP Cloud Console
 
 ---

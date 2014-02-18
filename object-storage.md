@@ -14,7 +14,7 @@ Leveraging [OpenStack Storage](http://openstack.org/projects/storage/), HP Cloud
 * **Object** - The basic storage entity, most typically a file
 * **Container** - A compartment for storing **Objects**
 
-The best way to learn more is to start using it yourself over at the [Management Console](https://console.hpcloud.com).  If you have any questions, try our [Forums](https://community.hpcloud.com) where you can learn from our own internal experts as well as other users in the HP Cloud community.
+The best way to learn more is to start using it yourself over at the [HP Public Cloud Console](https://horizon.hpcloud.com/).  If you have any questions, try our [Forums](https://community.hpcloud.com) where you can learn from our own internal experts as well as other users in the HP Cloud community.
 
 ## API
 Do you need low level, raw REST API access to HP Cloud object storage?  Trot on over to the [Object Storage API page](/api/object-storage) for details.

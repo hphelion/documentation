@@ -24,8 +24,8 @@ This page describes how to manage servers using the [servers screen](/mc/compute
 
 Before you can begin creating or deleting a server, you must:
 
-* [Sign up for an HP Cloud compute account](https://account.hpcloud.com/signup)
-* Activate compute services on your account
+* [Sign up for an HP Cloud compute account](https://horizon.hpcloud.com/register)
+* [Activate compute service on your account](https://horizon.hpcloud.com/landing/)
 * Create a key pair
 * Create an image or bootable volume (optional)
 
