@@ -15,7 +15,7 @@ Building on this requirement, HP has designed <nobr><b>HP Cloud OS for Moonshot<
 
 <img src="media/moonshot-server-hardware.jpg" title="Moonshot server" /> 
 
-This Moonshot section of the documentation site builds on the [HP Cloud OS documentation](/cloudos/) by providing topics that are customized 
+This Moonshot section of the documentation site builds on the [HP Cloud OS for Moonshot documentation](/cloudos/) by providing topics that are customized 
 specifically for Moonshot customers. Read these categorized topics to learn about HP Cloud OS for Moonshot:
 
 1. <a href="/cloudos/moonshot/prepare/">Prepare</a> &mdash; Topics to help you get started: video tutorials &amp; more

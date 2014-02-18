@@ -32,7 +32,7 @@ As indicated in the [Installation Overview](/cloudos/moonshot/install/overview#p
 * You can follow the wizard-based steps presented in this topic (recommended)
 * Or you can perform the [Advanced Cloud Setup](/cloudos/moonshot/install/advanced-cloud-setup) to apply and configure the install modules yourself.
 
-When you create a cloud using the process defined in this topic, a number of OpenStack and HP Cloud OS 
+When you create a cloud using the process defined in this topic, a number of OpenStack and HP Cloud OS for Moonshot 
 install modules are automatically configured and deployed for you. In most cases, the automated deployment of install modules will suffice. 
 However, should you need to customize values in the install modules that are not exposed in the Create Cloud Attributes tab, 
 this advanced section, along with [Install Modules Reference](/cloudos/moonshot/install/install-modules-reference/), are provided to assist 
@@ -158,7 +158,7 @@ dd if=/dev/zero of=/dev/sdb seek=$seek bs=1M <br />
 </pre>	
 
 In addition, you will need to login to the Swift storage nodes from the remote console.  For the credentials, go to the 
-<a href="https://cloudos.hpwsportal.com" target="new"> HP Cloud OS Catalog</a> portal, and see the topic about the dashboard credentials.
+<a href="https://cloudos.hpwsportal.com" target="new"> HP Cloud OS for Moonshot Catalog</a> portal, and see the topic about the dashboard credentials.
 
 ## Create Cloud
 

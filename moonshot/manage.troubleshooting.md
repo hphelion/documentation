@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Cloud OS Troubleshooting"
+title: "HP Cloud OS for Moonshot Troubleshooting"
 permalink: /cloudos/moonshot/manage/troubleshooting/
 product: moonshot
 
@@ -21,7 +21,7 @@ PageRefresh();
 
 <p style="font-size: small;"> <a href="/cloudos/moonshot/manage/utilities/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage/">&#9650; UP</a> | <a href="/cloudos/moonshot/manage/operational-dashboard">NEXT &#9654;</a> </p>
 
-# HP Cloud OS Troubleshooting
+# HP Cloud OS for Moonshot Troubleshooting
 
 This topic describes known problems and solutions for the following areas:
 
@@ -85,7 +85,7 @@ This section describes the following known problems and solutions for the Cloud 
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>
-<td> The HP Cloud OS ISO shows an error when running on a virtual machine (VM) hosted on a KVM hypervisor. </td>
+<td> The HP Cloud OS for Moonshot ISO shows an error when running on a virtual machine (VM) hosted on a KVM hypervisor. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -107,7 +107,7 @@ This section describes the following known problems and solutions for the Cloud 
 
 ##### Solution
 
-Before booting the VM with the HP Cloud OS ISO media, ensure that the virtual disk format is IDE or SCSI.
+Before booting the VM with the HP Cloud OS for Moonshot ISO media, ensure that the virtual disk format is IDE or SCSI.
 
 
 
@@ -372,7 +372,7 @@ On the Admin Node, view the log files for details:
 ##### Solution
 
 * Verify a public network is configured in the Admin Node.
-* Redo the steps for Cloud Administration Node Internet Access prerequisite - see "Set Admin Node Prerequisites" in the HP Cloud OS Installation and Configuration Dashboard.
+* Redo the steps for Cloud Administration Node Internet Access prerequisite - see "Set Admin Node Prerequisites" in the HP Cloud OS for Moonshot Installation and Configuration Dashboard.
 * Correct the proxy entries and/or specify a different proxy host and/or port.
 
 You must do pre-work before starting cloud deployment. If there are any incorrect details, the entire operation needs to be re-done. 
@@ -898,7 +898,7 @@ Nothing needs to be done. The default route should be re-added automatically aft
 
 <tr style="background-color: white; color: black;">
 <td> Failure message </td>
-<td>  The HP Cloud OS license has expired  </td>
+<td>  The HP Cloud OS for Moonshot license has expired  </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -1316,7 +1316,7 @@ dhclient eth1
 
 #### Solution
 
-Use this feature only if your HP Cloud OS environment includes multiple compute nodes.
+Use this feature only if your HP Cloud OS for Moonshot environment includes multiple compute nodes.
 
 
 

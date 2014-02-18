@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Cloud OS Glossary"
+title: "HP Cloud OS for Moonshot Glossary"
 permalink: /cloudos/moonshot/prepare/glossary/
 product: moonshot
 
@@ -19,7 +19,7 @@ PageRefresh();
 
 <p style="font-size: small;"> <a href="/cloudos/moonshot/prepare/cloudtypes/">&#9664; PREV | <a href="/cloudos/moonshot/prepare/">&#9650; UP</a> | NEXT &#9654; </p>
 
-# HP Cloud OS Glossary
+# HP Cloud OS for Moonshot Glossary
 
 [A](#a) | [B](#b) | [C](#c) | [D](#d) | [E](#e) | [F](#f) | [G](#g) | [H](#h) | [I](#i) | [J](#j) | [K](#k) | [L](#l) | [M](#m) | 
 [N](#n) | [O](#o) | [P](#p) | [Q](#q) | [R](#r) | [S](#s) | [T](#t) | [U](#u) | [V](#v) | [W](#w) | [X](#x) | [Y](#y) | [Z](#z)
@@ -93,7 +93,7 @@ management effort or service provider interaction.
 :     Elastic compute cloud; Amazon's cloud computing platform.
 
 ###Eve###
-:     An HP Cloud OS composite provisioning service that uses a topology design and profile to create VMs, volumes, and network segments as described in the topology. Eve uses Graffiti service for determining resource pool existence, traits, and User identity mapping.
+:     An HP Cloud OS for Moonshot composite provisioning service that uses a topology design and profile to create VMs, volumes, and network segments as described in the topology. Eve uses Graffiti service for determining resource pool existence, traits, and User identity mapping.
 
 ## F
 
@@ -105,13 +105,13 @@ management effort or service provider interaction.
 
 
 ###Focus###
-:     An HP Cloud OS repository for topology templates and profiles that are used for provisioning.
+:     An HP Cloud OS for Moonshot repository for topology templates and profiles that are used for provisioning.
 
 
 ## G
 
 ###Grafitti###
-:     The HP Cloud OS Resource Pool Registry and Capability Tagging Service, providing a dictionary of the "capabilities" of all the resources in a cloud environment; a searchable directory to find cloud resources based on their capabilities; the mechanism for dynamic binding, allowing you to describe requirements rather than concrete bindings; and the base concepts of requirements and capabilities within TOSCA.
+:     The HP Cloud OS for Moonshot Resource Pool Registry and Capability Tagging Service, providing a dictionary of the "capabilities" of all the resources in a cloud environment; a searchable directory to find cloud resources based on their capabilities; the mechanism for dynamic binding, allowing you to describe requirements rather than concrete bindings; and the base concepts of requirements and capabilities within TOSCA.
 
 ## H
 
@@ -148,7 +148,7 @@ portability, such as cloud bursting for load balancing between clouds.
 ## J
 
 ###Job###
-:     A job is created when the user submits a desired topology to the HP Cloud OS Eve service API, and requests provisioning based on the topology. Eve creates the job, for which the 
+:     A job is created when the user submits a desired topology to the HP Cloud OS for Moonshot Eve service API, and requests provisioning based on the topology. Eve creates the job, for which the 
 Eden Service API -frameworkthen publishes status updates. Once the provisioning is finished, the job is marked as completed.
 
 ## K

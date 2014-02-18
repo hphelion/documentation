@@ -11,7 +11,7 @@ product: moonshot
 
 # OpenStack Links
 
-HP Cloud OS and HP Cloud OS for Moonshot are based on (and add value to) the OpenStack technology. The current HP Cloud OS for Moonshot release includes OpenStack Grizzly 2013.1.4. 
+HP Cloud OS for Moonshot and HP Cloud OS for Moonshot are based on (and add value to) the OpenStack technology. The current HP Cloud OS for Moonshot release includes OpenStack Grizzly 2013.1.4. 
 
 Refer to the OpenStack documentation site: 
 

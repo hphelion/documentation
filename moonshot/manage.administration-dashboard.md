@@ -26,7 +26,7 @@ PageRefresh();
 Welcome to the HP Cloud OS for Moonshot Administration Dashboard Help, which provides information about its user interface dialogs and options.
 
 <!--
-* Coming soon in the format of other HP Cloud OS topics on this documentation site. For now, please see <a href="http://docs.hpcloud.com/cloudos/administration-dashboard/index.htm">this copy on the website</a>. 
+* Coming soon in the format of other HP Cloud OS for Moonshot topics on this documentation site. For now, please see <a href="http://docs.hpcloud.com/cloudos/administration-dashboard/index.htm">this copy on the website</a>. 
 -->
 
 * [Before You Begin with the Administration Dashboard Help](/cloudos/moonshot/manage/administration-dashboard/before-you-begin/)

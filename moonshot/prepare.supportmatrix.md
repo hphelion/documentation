@@ -355,33 +355,33 @@ Refer to [Install &amp; Configure Your Cloud](/cloudos/moonshot/install/) for a 
 
 <tr style="background-color: white; color: black;">
 <td style="padding-left: 40px; font-weight: bold;"> Graffiti </td>
-<td> HP Cloud OS 1.20 </td>
+<td> HP Cloud OS for Moonshot 1.20 </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td style="padding-left: 40px; font-weight: bold;"> Eve </td>
-<td> HP Cloud OS 1.20 </td>
+<td> HP Cloud OS for Moonshot 1.20 </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td style="padding-left: 60px;"> Plug-in: CouchDB 1.2.0 Persistence <br /> Plug-in: MongoDB 2.2 Persistence </td>
-<td> HP Cloud OS 1.20 </td>
+<td> HP Cloud OS for Moonshot 1.20 </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td style="padding-left: 40px; font-weight: bold;"> Focus </td>
-<td> HP Cloud OS 1.20 </td>
+<td> HP Cloud OS for Moonshot 1.20 </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td style="padding-left: 60px;"> Plug-in: FileSystem Persistence </td>
-<td> HP Cloud OS 1.20 </td>
+<td> HP Cloud OS for Moonshot 1.20 </td>
 </tr>
 
 <!--
 <tr style="background-color: white; color: black;">
 <td style="padding-left: 40px; font-weight:bold;"> HP Cloud OS for Moonshot Administration Dashboard </td>
-<td> HP Cloud OS 1.20 </td>
+<td> HP Cloud OS for Moonshot 1.20 </td>
 </tr>
 -->
 
@@ -391,12 +391,12 @@ Refer to [Install &amp; Configure Your Cloud](/cloudos/moonshot/install/) for a 
 
 <tr style="background-color: white; color: black;">
 <td style="padding-left: 40px;"> HP Cloud OS for Moonshot Operational Dashboard </td>
-<td> HP Cloud OS 1.20 </td>
+<td> HP Cloud OS for Moonshot 1.20 </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td style="padding-left: 40px;"> HP Cloud OS Installation Dashboard </td>
-<td> HP Cloud OS 1.20 </td>
+<td style="padding-left: 40px;"> HP Cloud OS for Moonshot Installation Dashboard </td>
+<td> HP Cloud OS for Moonshot 1.20 </td>
 </tr>
 
 <tr style="background-color: white; color: black;">

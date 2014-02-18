@@ -26,7 +26,7 @@ Before you can start working in the HP Cloud OS for Moonshot Operational Dashboa
 
 * [Plan the Infrastructure for a Cloud](#plan-the-infrastructure-for-a-cloud)
 * [Set up the Admin Node](#set-up-the-admin-node)
-* [Boot the Admin Node Using the HP Cloud OS ISO](#boot-the-admin-node-using-the-hp-cloud-os-iso)
+* [Boot the Admin Node Using the HP Cloud OS for Moonshot ISO](#boot-the-admin-node-using-the-hp-cloud-os-for-moonshot-iso)
 * [Launch the Operational Dashboard](#launch-the-operational-dashboard)
 
 ## Plan the Infrastructure for a Cloud
@@ -264,11 +264,11 @@ The following configuration must be reviewed during this step:
  
  c. If your hypervisor is KVM, ensure the virt type is set to KVM.
  
-3. Download the HP Cloud OS ISO to the host's local file system or data store.
+3. Download the HP Cloud OS for Moonshot ISO to the host's local file system or data store.
 
 4. Configure the virtual machine Admin Node to point to the ISO as a CD/DVD drive or install media ISO image. 
 
-## Boot the Admin Node Using the HP Cloud OS ISO
+## Boot the Admin Node Using the HP Cloud OS for Moonshot ISO
 
 To boot the Admin Node using the ISO:
 
@@ -282,7 +282,7 @@ The Operational Dashboard has been successfully installed on the Admin Node.
 
 ## Launch the Operational Dashboard
 
-After you boot from the HP Cloud OS ISO, you are ready to launch the Operational Dashboard to set up the Admin Node.
+After you boot from the HP Cloud OS for Moonshot ISO, you are ready to launch the Operational Dashboard to set up the Admin Node.
 
 To launch the Operational Dashboard:
 

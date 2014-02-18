@@ -22,7 +22,7 @@ PageRefresh();
 
 # How the Operational Dashboard Works
 
-The Operational Dashboard is used to complete the Cloud OS installation process after the HP Cloud OS Administration Node has been booted with the ISO (see the Install section of the HP Cloud OS Documentation web site). On the Operational Dashboard, you set up your cloud environment, complete the HP Cloud OS Administration node installation and configuration, and create a cloud.
+The Operational Dashboard is used to complete the Cloud OS installation process after the HP Cloud OS for Moonshot Administration Node has been booted with the ISO (see the Install section of the HP Cloud OS for Moonshot Documentation web site). On the Operational Dashboard, you set up your cloud environment, complete the HP Cloud OS for Moonshot Administration node installation and configuration, and create a cloud.
 
 You can then access the HP Cloud OS for Moonshot Administration Dashboard to view, allocate, and manage all resources within the cloud.
 
@@ -30,7 +30,7 @@ The Operational Dashboard consists of the following tabs:
 
 * **Environment Tab**
 
- This tab displays the following panels on which you set up your cloud environment and complete the HP Cloud OS Administration node installation. The panels are displayed in the order you must follow for the installation process. For details on each panel, see the [Environment Tab](/cloudos/moonshot/manage/operational-dashboard/environment-tab) topic.
+ This tab displays the following panels on which you set up your cloud environment and complete the HP Cloud OS for Moonshot Administration node installation. The panels are displayed in the order you must follow for the installation process. For details on each panel, see the [Environment Tab](/cloudos/moonshot/manage/operational-dashboard/environment-tab) topic.
 
  * Welcome
  * Prerequisites
@@ -48,7 +48,7 @@ The Operational Dashboard consists of the following tabs:
  * Manage Clouds
  * Updates and Extensions
 
-> **Note:** The Cloud tab does not appear until you have completed the HP Cloud OS Administration node install on the Environment tab.
+> **Note:** The Cloud tab does not appear until you have completed the HP Cloud OS for Moonshot Administration node install on the Environment tab.
 
 * **Settings Tab**
 

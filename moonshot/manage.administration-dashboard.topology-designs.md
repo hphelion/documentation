@@ -26,7 +26,7 @@ You can use the dashboard's designer to create and manage topology designs for s
 Your topology designs become the recipes for automating the cloud. The designer allows you to design in a free-form 
 layout where connection relationships implicitly define the service fulfillment lifecycle.
 
-HP Cloud OS is the provider for your designs. Available components are determined by the OpenStack version (for example Diablo, Grizzly) you 
+HP Cloud OS for Moonshot is the provider for your designs. Available components are determined by the OpenStack version (for example Diablo, Grizzly) you 
 select within HP Cloud OS. As part of creating a design, you add nodes and connectors and set properties in the <b>Editor</b> tab. Use the <b>Validation</b> 
 tab at any time to view details about design errors.
 
@@ -78,7 +78,7 @@ Tasks are organized by the following tabs:
 <li> <b>Edit</b> - the design properties.
 <li> <b>Save as</b> - make a copy of a design.
 <li> <b>Publish/Unpublish</b> - published designs can be used to provision.
-<li> <b>Export</b> - export the design to another HP Cloud OS instance.
+<li> <b>Export</b> - export the design to another HP Cloud OS for Moonshot instance.
 <li> <b>Delete</b>
 </ul>
 </td> 
@@ -276,7 +276,7 @@ To add nodes and connectors to the design, see [How to Lay Out a Topology Design
 
 ### How to Import a Topology Design
 
-The import process imports archives of topology designs and their supported artifacts within the same HP Cloud OS instance.
+The import process imports archives of topology designs and their supported artifacts within the same HP Cloud OS for Moonshot instance.
 
 To import a topology design:
 
@@ -428,7 +428,7 @@ To delete a topology design:
 ### How to Export a Topology Design
 
 The export process takes all the topology files, including the design in XML format, and creates a content archive (.zip) file. 
-Exporting is used for data backup within the same HP Cloud OS instance. 
+Exporting is used for data backup within the same HP Cloud OS for Moonshot instance. 
 
 #### Configuring a topology design for export
 
@@ -609,7 +609,7 @@ a tool tip displays. Possible node options are shown in this table:  <br /> <br 
 
 <tr style="background-color: white; color: black;">
 <td style="min-width:50px;"> <img src="media/cloudos_icon_router.png" /> </td>
-<td style="min-width:150px;"> Router (available only with HP Cloud OS Grizzly Cloud Profile)  </td> 
+<td style="min-width:150px;"> Router (available only with HP Cloud OS for Moonshot Grizzly Cloud Profile)  </td> 
 <td> A logical representation of a network router.  </td> 
 </tr>
 
@@ -749,7 +749,7 @@ Replace this name, if needed, to meet your business needs. </td>
 <td style="min-width:150px;"> Select a Subnet * </td> 
 <td> Select:
 <ul>
-<li> <b>Existing subnet</b> - subnets defined in HP Cloud OS </li>
+<li> <b>Existing subnet</b> - subnets defined in HP Cloud OS for Moonshot </li>
 <li> <b>Create a subnet</b> - if selected, you are prompted to enter the following fields:
 </ul>
 
@@ -901,8 +901,8 @@ Options:
 
 <tr>
 <td> <b>Volume Type </b> <br />(Modifiable)</td>
-<td> Available values from HP Cloud OS that identify the storage backend driver capabilities such as SATA or SSD retrieved from the Eve API. 
-Eve is an HP Cloud OS infrastructure topology design provisioner for OpenStack-based IaaS.  </td>
+<td> Available values from HP Cloud OS for Moonshot that identify the storage backend driver capabilities such as SATA or SSD retrieved from the Eve API. 
+Eve is an HP Cloud OS for Moonshot infrastructure topology design provisioner for OpenStack-based IaaS.  </td>
 </tr>
 
 </td>

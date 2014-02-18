@@ -20,7 +20,7 @@ PageRefresh();
 
 <p style="font-size: small;"> <a href="/cloudos/moonshot/">&#9664; PREV | <a href="/cloudos/moonshot/">&#9650; UP</a> | NEXT &#9654; </p>
 
-# HP Cloud OS Open Source and Third-Party Software License Agreements
+# HP Cloud OS for Moonshot Open Source and Third-Party Software License Agreements
 
 Document Release Date: December 2013 <br />
 Software Release Date: December 2013
@@ -96,7 +96,7 @@ accompanying such products and services. Nothing herein should be construed as c
 warranty. HP shall not be liable for technical or editorial errors or omissions contained herein.
 The information contained herein is subject to change without notice.
 
-HP Cloud OS is experimental and is provided as a courtesy, free of charge, "AS-IS" by Hewlett-Packard 
+HP Cloud OS for Moonshot is experimental and is provided as a courtesy, free of charge, "AS-IS" by Hewlett-Packard 
 Company ("HP"). HP shall have no obligation to maintain or support this software. 
 
 HP MAKES NO EXPRESS OR IMPLIED WARRANTY OF ANY KIND REGARDING THIS SOFTWARE INCLUDING ANY 
@@ -4203,5 +4203,5 @@ Also see GNU Lesser General Public License (LGPL) Version 2.1.
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
-<p style="font-size: small;"> <a href="/cloudos/moonshot/"> &#171; Return to HP Cloud OS home </a> </p>
+<p style="font-size: small;"> <a href="/cloudos/moonshot/"> &#171; Return to HP Cloud OS for Moonshot home </a> </p>
 

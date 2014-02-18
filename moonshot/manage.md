@@ -11,13 +11,13 @@ product: moonshot
 
 # Manage your Cloud
 
-Welcome! To manage your cloud, use the HP Cloud OS dashboards, which are based on OpenStack Horizon and provide enhanced features.
+Welcome! To manage your cloud, use the HP Cloud OS for Moonshot dashboards, which are based on OpenStack Horizon and provide enhanced features.
 
 Refer to these documentation resources:
 
-* [HP Cloud OS Utilities](/cloudos/moonshot/manage/utilities/) &mdash; Describes the HP Cloud OS utilities.
+* [HP Cloud OS for Moonshot Utilities](/cloudos/moonshot/manage/utilities/) &mdash; Describes the HP Cloud OS for Moonshot utilities.
 
-* [HP Cloud OS Troubleshooting](/cloudos/moonshot/manage/troubleshooting/) &mdash; Presents a set of topics that help you troubleshoot issues you may encounter with HP Cloud OS.
+* [HP Cloud OS for Moonshot Troubleshooting](/cloudos/moonshot/manage/troubleshooting/) &mdash; Presents a set of topics that help you troubleshoot issues you may encounter with HP Cloud OS.
 
 * [HP Cloud OS for Moonshot Operational Dashboard Help](/cloudos/moonshot/manage/operational-dashboard/) &mdash; This document is a copy of the Help that's available in the HP Cloud OS for Moonshot Operational Dashboard.  
 

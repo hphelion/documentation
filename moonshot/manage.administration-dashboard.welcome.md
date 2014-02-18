@@ -37,7 +37,7 @@ PageRefresh();
 
 ## Why You Use the Administration Dashboard
 
-You can use the Administration Dashboard as a simplified means of creating and managing HP Cloud OS resources, topology designs, and deployment profiles.
+You can use the Administration Dashboard as a simplified means of creating and managing HP Cloud OS for Moonshot resources, topology designs, and deployment profiles.
 
 The Administration Dashboard also provides the ability to provision a composite topology described by the topology templates and infrastructure design 
 documents. The Administration Dashboard is associated with a single cloud. 
@@ -70,7 +70,7 @@ Due to a defect located in the Keystone identity service, the Admin user should 
 If an Admin user attempts other tasks, the HP Cloud OS for Moonshot Administration Dashboard returns unpredictable functionality. 
 In particular, an Admin user should not remove users from projects. </p>
 
-**Cloud Administrator:** All administrator rights associated with the cloud and all HP Cloud OS services, including the ability to make resources available to users. Has global permission across the cloud, including all regions and projects.
+**Cloud Administrator:** All administrator rights associated with the cloud and all HP Cloud OS for Moonshot services, including the ability to make resources available to users. Has global permission across the cloud, including all regions and projects.
 
 **Cloud Architect:** Creates topology designs, deployment profiles, and load balancers.
 
@@ -260,7 +260,7 @@ You can access the token for use outside the dashboard. </td>
 
 <tr style="background-color: white; color: black;">
 <td>  Updates and Extensions </td>
-<td> Access the HP Cloud OS Distribution Network to update and upgrade your cloud while it continues to run. </td> 
+<td> Access the HP Cloud OS for Moonshot Distribution Network to update and upgrade your cloud while it continues to run. </td> 
 </tr>
 
 </table>

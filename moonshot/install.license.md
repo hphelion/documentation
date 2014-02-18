@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Check the HP Cloud OS License"
+title: "Check the HP Cloud OS for Moonshot License"
 permalink: /cloudos/moonshot/install/license/
 product: moonshot
 
@@ -20,13 +20,13 @@ PageRefresh();
 
 <p style="font-size: small;"> <a href="/cloudos/moonshot/install/launch-admin-dashboard/">&#9664; PREV</a> | <a href="/cloudos/moonshot/install/">&#9650; UP</a> | <a href="/cloudos/moonshot/install/hot-fixes/">NEXT &#9654;</a> </p>
 
-# Check the HP Cloud OS License
+# Check the HP Cloud OS for Moonshot License
 
-This topic describes the steps to review and update your HP Cloud OS license. 
+This topic describes the steps to review and update your HP Cloud OS for Moonshot license. 
 
 ## Introduction
 
-The HP Cloud OS for Moonshot Operational Dashboard and Administration Dashboard require a common, date-based HP Cloud OS license. From the time you first launch the Operational Dashboard, you have (by default) 90 days of use.  After 90 
+The HP Cloud OS for Moonshot Operational Dashboard and Administration Dashboard require a common, date-based HP Cloud OS for Moonshot license. From the time you first launch the Operational Dashboard, you have (by default) 90 days of use.  After 90 
 days, you may still open the Operational Dashboard and Administration Dashboard. However, until you renew the license, you cannot use any of the features such as managing updates or extensions to your deployed cloud. 
 
 ## Check Your License
@@ -58,5 +58,5 @@ to [Install Hot Fixes](/cloudos/moonshot/install/hot-fixes/) and perform [Update
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
-<!-- To request access to the HP Cloud OS Sandbox, see http://www.hp.com/go/cloudos. --> 
+<!-- To request access to the HP Cloud OS for Moonshot Sandbox, see http://www.hp.com/go/cloudos. --> 
 

@@ -24,23 +24,23 @@ PageRefresh();
 
 Welcome! This topic presents an overview of the installation steps.  
 
-An HP Cloud OS infrastructure requires planning and preparation by IT Administrators to set up,
+An HP Cloud OS for Moonshot infrastructure requires planning and preparation by IT Administrators to set up,
 configure, and install a specific network, storage, and hardware infrastructure. 
 
-These installation topics provide the means to plan, install, configure, and create an HP Cloud OS infrastructure.
+These installation topics provide the means to plan, install, configure, and create an HP Cloud OS for Moonshot infrastructure.
 
-The HP Cloud OS installation deploys the HP Cloud OS for Moonshot Operational Dashboard (used to set up,
+The HP Cloud OS for Moonshot installation deploys the HP Cloud OS for Moonshot Operational Dashboard (used to set up,
 configure, and install an HP cloud infrastructure) and the HP Cloud OS for Moonshot Administration Dashboard
 (used to create and manage cloud resources).
 
-* [HP Cloud OS Environment](#hp-cloud-os-environment)
+* [HP Cloud OS for Moonshot Environment](#hp-cloud-os-for-moonshot-environment)
 * [Preview of the Installation Steps](#preview-of-the-installation-steps)
-* [Components of the HP Cloud OS Environment](#components-of-the-hp-cloud-os-environment)
+* [Components of the HP Cloud OS for Moonshot Environment](#components-of-the-hp-cloud-os-for-moonshot-environment)
 * [Next Step](#next-step)
 
-## HP Cloud OS Environment
+## HP Cloud OS for Moonshot Environment
 
-The HP Cloud OS environment consists of an installer, services and controllers that provide:
+The HP Cloud OS for Moonshot environment consists of an installer, services and controllers that provide:
 Simplified service delivery with automated-live content distribution and easier installation and
 configuration processes. This allows manually intensive operational processes to be reduced from
 hundreds of steps over multiple packages to a simple, automated process.
@@ -57,34 +57,34 @@ neutral, open source cloud architecture.
 
 At a high level, here are the steps to setup and install the Admin node:
 
-<img src="media/cloudos-install-process.png" title="HP Cloud OS installation process" /> 
+<img src="media/cloudos-install-process.png" title="HP Cloud OS for Moonshot installation process" /> 
 
 The steps shown above feature an automated process in the HP Cloud OS for Moonshot Operational Dashboard, where you can accept defaults or enter values that are specific to your requirements (such as your network settings). Using 
-this automated approach, HP Cloud OS handles all of the installation details for you, installing the OpenStack services and the HP Cloud OS value-added services.
+this automated approach, HP Cloud OS for Moonshot handles all of the installation details for you, installing the OpenStack services and the HP Cloud OS for Moonshot value-added services.
 
 Taking a broader view, this next diagram illustrates those steps in a larger context. 
 Notice how once you've installed and set up the Admin node, you have a choice between two paths: wizard-based (in the Operational Dashboard), **or** advanced steps (in the Installation Dashboard).
 
-<img src="media/cloudos-create-cloud-paths.png" title="HP Cloud OS - choosing between two create cloud paths" /> 
+<img src="media/cloudos-create-cloud-paths.png" title="HP Cloud OS for Moonshot - choosing between two create cloud paths" /> 
 
-What this means: When you create a cloud using the process defined in [Create a Cloud](/cloudos/moonshot/install/create-cloud/), a number of OpenStack and HP Cloud OS 
+What this means: When you create a cloud using the process defined in [Create a Cloud](/cloudos/moonshot/install/create-cloud/), a number of OpenStack and HP Cloud OS for Moonshot 
 install modules are automatically configured and deployed for you. In most cases, the automated deployment of install modules will suffice. 
 However, should you need to customize values in the install modules that are not exposed in the Create Cloud Attributes tab, 
 this advanced section, along with [Install Modules Reference](/cloudos/moonshot/install/install-modules-reference/), are provided to assist 
 you in the process of customizing and deploying the individual install modules.  
 
-## Components of the HP Cloud OS Environment
+## Components of the HP Cloud OS for Moonshot Environment
 
-The following diagram illustrates the HP Cloud OS environment.
+The following diagram illustrates the HP Cloud OS for Moonshot environment.
 
-<img src="media/cloudos-environment.png" title="HP Cloud OS environment" /> 
+<img src="media/cloudos-environment.png" title="HP Cloud OS for Moonshot environment" /> 
 
-### HP Cloud OS Administration Node
+### HP Cloud OS for Moonshot Administration Node
 
-The HP Cloud OS Administration Node (Admin Node) hosts the Operational Dashboard that deploys
+The HP Cloud OS for Moonshot Administration Node (Admin Node) hosts the Operational Dashboard that deploys
 private and hybrid-only cloud infrastructure environments by network booting the managed bare-metal
 servers, which are the Controller and Compute nodes. Using Chef Server and recipes,
-the services are installed on the managed bare-metal servers. **Note:** In this and subsequent HP Cloud OS topics, 
+the services are installed on the managed bare-metal servers. **Note:** In this and subsequent HP Cloud OS for Moonshot topics, 
 we refer to these managed bare-metal servers more simply as "managed nodes."
 
 ### Services
@@ -92,7 +92,7 @@ we refer to these managed bare-metal servers more simply as "managed nodes."
 Cloud Infrastructure consists of individual services installed and integrated together across one or
 more nodes to form a cloud environment. These are composite services that are integrated
 together into a single cloud solution. Services are exposed or published as RESTful APIs.
-The list of services that can be deployed for HP Cloud OS are:
+The list of services that can be deployed for HP Cloud OS for Moonshot are:
 
 * Keystone (Identity Management Service)&mdash; An OpenStack service to provide identity (domain,
 project and users) management, access token, and service catalog functionality.
@@ -109,22 +109,22 @@ compute fabric controller.
 
 * Swift (OpenStack Object Store) &mdash; An OpenStack service to store and retrieve lots of data in virtual containers.  
 
-* Graffiti (Resource Pool Registry and Capability Tagging Service) &mdash; An HP Cloud OS service to support
+* Graffiti (Resource Pool Registry and Capability Tagging Service) &mdash; An HP Cloud OS for Moonshot service to support
 diverse functions: discovering, registering, and retrieving resource pool definitions for compute, network, and volume resources; 
 a dictionary of the cloud's capabilities; a searchable directory to find cloud resources based on their capabilities; and 
 dynamic binding, describing the requirements instead of static binding.  
 
-* Eve (Topology Provisioning Service)&mdash; An HP Cloud OS service to provide for provisioning lifecycle
+* Eve (Topology Provisioning Service)&mdash; An HP Cloud OS for Moonshot service to provide for provisioning lifecycle
 of a TOSCA-based infrastructure topology design of the compute, network, and volume resources
 in a defined resource pool. Also provides security and management.
 
-* Focus (Topology Document Repository Service)&mdash; An HP Cloud OS service to provide for
+* Focus (Topology Document Repository Service)&mdash; An HP Cloud OS for Moonshot service to provide for
 discovering, registering, versioning, and retrieving of document types necessary to describe
 TOSCA-based infrastructure topologies.
 
 ### Controller and Compute Nodes
 
-While each service can be individually deployed, HP Cloud OS groups these services into distinct
+While each service can be individually deployed, HP Cloud OS for Moonshot groups these services into distinct
 groups for ease of architectural description.
 
 **Cloud Controller:** This contains those services that are considered single services for a cloud

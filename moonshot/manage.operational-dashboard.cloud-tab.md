@@ -672,7 +672,7 @@ You can also view the compute nodes that are currently in the compute region on 
 **To access**: Select the **Cloud** tab > **Manage Clouds** and then click **More** > **Reduce Compute Region** for the corresponding cloud.
 
 The Reduce Compute Region dialog is used to remove compute nodes from an existing compute region. 
-When a node is successfully removed from a compute region, its previous context is lost, including its alias name and any HP Cloud OS software 
+When a node is successfully removed from a compute region, its previous context is lost, including its alias name and any HP Cloud OS for Moonshot software 
 that had been previously installed on it. To use such a node again, re-set its alias and re-allocate it. Once in the Allocated state, 
 the node can be associated with a cloud.
 
@@ -797,7 +797,7 @@ will change to <b>Not Allocated</b>, and they will be listed by their MAC addres
 
 The Remove Cloud dialog is used to remove an existing cloud. This action sets all cloud, network, storage, and compute controller nodes, 
 and all compute nodes that comprise the cloud to the Not Allocated state. In the Not Allocated state, the previous context of the nodes is lost, 
-including their alias names and any HP Cloud OS software that had been previously installed on them. To use such nodes again, reset their aliases 
+including their alias names and any HP Cloud OS for Moonshot software that had been previously installed on them. To use such nodes again, reset their aliases 
 and reallocate them. Once in the Allocated state, they can be associated with a cloud. 
 
 Note: You reset a node's alias in the Edit Node Dialog, and re-allocate it in the Manage Nodes Page.
@@ -953,8 +953,8 @@ The following information provides details about the Updates and Extensions pane
 
 ### Updates and Extensions Overview
 
-The updates and extensions feature allows you to connect to, list, and retrieve hot fixes and updates from the HP Cloud OS Distribution Network (CODN) 
-and apply them to your HP Cloud OS environment. You can also import hot fixes and updates from a file system to the HP Cloud OS environment and install them. In this topic, such hot fixes and updates are referred to as *content packages*.
+The updates and extensions feature allows you to connect to, list, and retrieve hot fixes and updates from the HP Cloud OS for Moonshot Distribution Network (CODN) 
+and apply them to your HP Cloud OS for Moonshot environment. You can also import hot fixes and updates from a file system to the HP Cloud OS for Moonshot environment and install them. In this topic, such hot fixes and updates are referred to as *content packages*.
 
 ### Updates and Extensions Page
 
@@ -1033,8 +1033,8 @@ copy of the content package from the catalog to your local system where you can 
 When the installation process completes, a Success message will appear in the upper right side of the interface.
 <br /> <br/>
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> Upon successful completion of the installation process, 
-the content package has been properly installed on the HP Cloud OS Administration node, but not yet enabled. Such enabling is performed 
-in the HP Cloud OS Installation Dashboard. For information on how to enable and disable content packages, 
+the content package has been properly installed on the HP Cloud OS for Moonshot Administration node, but not yet enabled. Such enabling is performed 
+in the HP Cloud OS for Moonshot Installation Dashboard. For information on how to enable and disable content packages, 
 refer to the <a href="/cloudos/install/updates-and-extensions">Updates and Extensions</a> topic, which is part of 
 <a href="/cloudos/install/">Install and Configure Your Cloud</a>.</p>
 </td>
@@ -1063,17 +1063,17 @@ The following table describes the Configure dialog UI elements:
 
 <tr style="background-color: white; color: black;">
 <td style="min-width:150px;"> <b>User Name</b>  </td>
-<td> Enter the email address that you entered when you set up your account to access the HP Cloud OS Distribution Network (CODN). </td>
+<td> Enter the email address that you entered when you set up your account to access the HP Cloud OS for Moonshot Distribution Network (CODN). </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> <b>Password</b>  </td>
-<td> Enter the password that you entered when you set up your account to access the HP Cloud OS Distribution Network. </td>
+<td> Enter the password that you entered when you set up your account to access the HP Cloud OS for Moonshot Distribution Network. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td style="min-width:150px;"> <b>Sign up now</b> link  </td>
-<td> Click to go to the "Create Account" page of the HP Cloud OS Distribution Network web site, where you can sign up for an account to access the network. </td>
+<td> Click to go to the "Create Account" page of the HP Cloud OS for Moonshot Distribution Network web site, where you can sign up for an account to access the network. </td>
 </tr>
 
 </table> 
@@ -1101,7 +1101,7 @@ Note that such package files have a .csu extension.  </td>
 <tr style="background-color: white; color: black;">
 <td> <b>Import</b> button   </td>
 <td> Click after choosing a valid content package (.csu) file using the <b>Choose File</b> button to import the file to the 
-HP Cloud OS Administration node. If no file has been chosen, "No file chosen" will appear next to the <b>Choose File</b> button.  </td>
+HP Cloud OS for Moonshot Administration node. If no file has been chosen, "No file chosen" will appear next to the <b>Choose File</b> button.  </td>
 </tr>
 
 </table> 

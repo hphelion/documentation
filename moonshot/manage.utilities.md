@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Cloud OS Utilities"
+title: "HP Cloud OS for Moonshot Utilities"
 permalink: /cloudos/moonshot/manage/utilities/
 product: moonshot
 
@@ -20,21 +20,21 @@ PageRefresh();
 
 <p style="font-size: small;"> <a href="/cloudos/moonshot/manage/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage/">&#9650; UP</a> | <a href="/cloudos/moonshot/manage/troubleshooting/">NEXT &#9654;</a> </p>
 
-# HP Cloud OS Utilities
+# HP Cloud OS for Moonshot Utilities
 
-The current release features the HP Cloud OS Clean-up Utility. Additional utilities may be added in future releases and described in this topic.
+The current release features the HP Cloud OS for Moonshot Clean-up Utility. Additional utilities may be added in future releases and described in this topic.
 
-## HP Cloud OS Clean-up Utility
+## HP Cloud OS for Moonshot Clean-up Utility
  
-The HP Cloud OS Clean-up Utility ensures that the databases used to store data within HP Cloud OS are kept clean, 
+The HP Cloud OS for Moonshot Clean-up Utility ensures that the databases used to store data within HP Cloud OS for Moonshot are kept clean, 
 and do not retain and accumulate data that is no longer being accessed. 
 
 ### Overview
 
-The HP Cloud OS Clean-up Utility ensures that the HP Cloud OS and OpenStack databases are running smoothly and the databases are clean. 
+The HP Cloud OS for Moonshot Clean-up Utility ensures that the HP Cloud OS for Moonshot and OpenStack databases are running smoothly and the databases are clean. 
 The utility uses the Nagios web interface for scheduling database clean-up tasks.
 
-It is possible for a HP Cloud OS or OpenStack resource in one table to be reliant on a resource in another table with 
+It is possible for a HP Cloud OS for Moonshot or OpenStack resource in one table to be reliant on a resource in another table with 
 no foreign key reference. If the dependent resource were simply deleted, a dangling reference in the referring table 
 would result. Likewise, if there are two tables with foreign key relationships and the data is deleted in one table 
 but not the other, referential integrity is broken. 
@@ -44,8 +44,8 @@ and so on. If the user represents an employee who has left the organization, and
 the data representing the user is marked for deletion in HP Cloud OS, but it is important that the data not be removed from the 
 database until the associated data can be removed with the Clean-up Utility.
 
-The HP Cloud OS Clean-up Utility addresses referential integrity issues by running a number of tasks that are offered as 
-Nagios services. Running these tasks regularly keeps the HP Cloud OS and OpenStack databases clean. 
+The HP Cloud OS for Moonshot Clean-up Utility addresses referential integrity issues by running a number of tasks that are offered as 
+Nagios services. Running these tasks regularly keeps the HP Cloud OS for Moonshot and OpenStack databases clean. 
 
 This section includes:
 
@@ -56,13 +56,13 @@ This section includes:
 
 ## Clean-up Tasks
 
-The HP Cloud OS Clean-up Utility performs the following tasks:
+The HP Cloud OS for Moonshot Clean-up Utility performs the following tasks:
 
 * Clean up all resources associated with previously deleted resources. The HP Cloud OS for Moonshot Administration Dashboard does not 
 delete projects or users. Instead, it "moves them to the trash can" by removing as many resources as possible and then 
 prefixing the Project (or User) name with a tilde ~. Flavors are already only "marked for deletion" in the database.
 
-* Prevent select HP Cloud OS database entries from existing in their respective tables longer than 24-Hours.
+* Prevent select HP Cloud OS for Moonshot database entries from existing in their respective tables longer than 24-Hours.
 
 * Ensure that all of the database tables are referentially accurate. In other words, Cloud Utils cleans the database of all invalid data.
 
@@ -87,13 +87,13 @@ Cleans up tokens that are expired for more than 24 hour, and for roles, removes 
 
 ## Using Nagios
 
-Nagios is used to run the HP Cloud OS Clean-up Utility. 
+Nagios is used to run the HP Cloud OS for Moonshot Clean-up Utility. 
 
 Note: In addition to the Clean-up Utility, other services that reside on the Cloud Controller and Compute Controller 
 can be monitored using Nagios. 
 
-1.	Access the Nagios dashboard (http://192.168.124.10/nagios3/). **Note:** In the current release, the dashboards use pre-defined login credentials. These are not published in the web-hosted documentation. To get the pre-defined login credentials, refer to the readme file included in the same ZIP that contained the HP Cloud OS ISO. 
-If you have not already done so, see the ZIP on the <a href="https://cloudos.hpwsportal.com" target="codn">HP Cloud OS Distribution Network</a>. 
+1.	Access the Nagios dashboard (http://192.168.124.10/nagios3/). **Note:** In the current release, the dashboards use pre-defined login credentials. These are not published in the web-hosted documentation. To get the pre-defined login credentials, refer to the readme file included in the same ZIP that contained the HP Cloud OS for Moonshot ISO. 
+If you have not already done so, see the ZIP on the <a href="https://cloudos.hpwsportal.com" target="codn">HP Cloud OS for Moonshot Distribution Network</a>. 
 
 2.	Click the Services link in the left panel of the Nagios web interface to see the cloud service checks and the other cloud services. 
 

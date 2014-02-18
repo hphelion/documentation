@@ -31,9 +31,9 @@ request and view the response from your server.
 
 * [Prerequisites](#prerequisites)
 
-* [What are the HP Cloud OS for Moonshot Services?](#what-are-the-hp-cloud-os-services)
+* [What are the HP Cloud OS for Moonshot Services?](#what-are-the-hp-cloud-os-for-moonshot-services)
 
-* [What is the HP Cloud OS for Moonshot API Documentation app?](#what-is-the-hp-cloud-os-api-documentation-app)
+* [What is the HP Cloud OS for Moonshot API Documentation app?](#what-is-the-hp-cloud-os-for-moonshot-api-documentation-app)
 
 * [API Documentation Ports per Service](#api-documentation-ports-per-service)
 

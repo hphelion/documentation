@@ -30,7 +30,7 @@ If you [Setup Swift](/cloudos/moonshot/install/setup-swift) already, this topic 
 
 After creating the cloud and defining your compute regions (see [Create a Cloud](/cloudos/moonshot/install/create-cloud) ), you can deploy Swift in your cloud by following these steps:
 
-1. Launch the HP Cloud OS Installation Dashboard. Its URL is http://192.168.124.10:3000.  For the Installation Dashboard's login, see the dashboard credentials topic on the <a href="https://cloudos.hpwsportal.com" target="new"> HP Cloud OS Catalog</a> portal. (Requires registration and login.)
+1. Launch the HP Cloud OS for Moonshot Installation Dashboard. Its URL is http://192.168.124.10:3000.  For the Installation Dashboard's login, see the dashboard credentials topic on the <a href="https://cloudos.hpwsportal.com" target="new"> HP Cloud OS for Moonshot Catalog</a> portal. (Requires registration and login.)
 
 2. The Swift barclamp is pre-installed with a default proposal created (without assigned nodes).
 

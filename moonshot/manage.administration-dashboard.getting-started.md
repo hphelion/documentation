@@ -83,7 +83,7 @@ When you are done, tell a cloud administrator to perform [Getting Started for Cl
 
 **Concepts:**
 
-Cloud administrators possess all administrator rights associated with the cloud and all HP Cloud OS services, 
+Cloud administrators possess all administrator rights associated with the cloud and all HP Cloud OS for Moonshot services, 
 including the ability to make resources available to users. As a best practice, only cloud administrators create an external network or add subnets to an external network.
 
 **Tasks:**

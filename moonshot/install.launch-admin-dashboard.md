@@ -33,15 +33,15 @@ To access the Administration Dashboard:
 
 When you return to the Administration Dashboard, at http://&lt;public-IP-of-your-cloud-controller>, you will need to login. 
 
-In the current release, the dashboards use pre-defined login credentials. These are not published in the web-hosted documentation. To get the pre-defined login credentials, refer to the readme file included in the same ZIP that contained the HP Cloud OS ISO. 
-If you have not already done so, see the ZIP on the <a href="https://cloudos.hpwsportal.com" target="codn">HP Cloud OS Distribution Network</a>. 
+In the current release, the dashboards use pre-defined login credentials. These are not published in the web-hosted documentation. To get the pre-defined login credentials, refer to the readme file included in the same ZIP that contained the HP Cloud OS for Moonshot ISO. 
+If you have not already done so, see the ZIP on the <a href="https://cloudos.hpwsportal.com" target="codn">HP Cloud OS for Moonshot Distribution Network</a>. 
 
 ## Next Step
 
 For details about the Administration Dashboard, see the [HP Cloud OS for Moonshot Administration Dashboard Help](/cloudos/moonshot/manage/administration-dashboard/).
 
 While you are still in the Operational Dashboard, check the license details for your instance. 
-See the next topic, [Check the HP Cloud OS License](/cloudos/moonshot/install/license/).
+See the next topic, [Check the HP Cloud OS for Moonshot License](/cloudos/moonshot/install/license/).
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
