@@ -9,44 +9,37 @@ tags: networking neutron vpn
 ---
 # HP Cloud Networking:  Quick start guide 
 
+HP Cloud Networking is a virtual networking service that provides network connectivity and addressing for HP Cloud compute devices. It is based on OpenStack Networking open source software. 
 
-With HP Cloud Networking you can set up an IPsec, or site-to-site, VPN connecting your external network directly to your HP cloud virtual network. This guide provides the basic instructions for setting this up with your network using strongSwan. 
+#####A default configuration comes with HP Cloud compute activation and includes:
 
-**Note:** These instructions use an Ubuntu server instance. You may, of course, choose to use another instance type and still use these directions as a general guide for setting up your network.
+* A network 
+* A subnet
+* A router connecting the subnets to the Internet
+* A security group with basic server options
 
-This guide covers the following:
+__Use as is or customize__ 
 
-- [Overview](#top)
-- [Audience](#audience)
-- [Key terms](#terms)
-- [Quick start](#quickstart)
-- [Tips and best practices](#tips)
-- [Troubleshooting](#troubleshooting)
-- [For further information](#refs)
+You can use the default network to deploy HP Cloud compute virtual servers, or modify the network configuration through the OpenStack Networking API.  Use the command line or the HP Cloud management console's (MC) easy-to-use interface to customize.
+ 
+HP Cloud Networking expands networking capabilities, allowing you to perform many tasks, including:
+
+* Defining and configuring virtual networks
+* Specifying IP subnets for those networks
+* Defining security group parameters
+* Allocating and managing public floating IP addresses
+
 
 
 ## Overview ## {#top}
 
-HP Cloud Networking, based on OpenStack Networking, gives you a broad new spectrum of functionality to define and configure virtual networks.
+This guide provides the information you will need to get started in setting up a VPN that connects your local network to your Virtual Private Cloud (VPC) located in the HP Cloud.  In this guide, you create two instances--one as an example to use and the other as a gateway.
 
-A default network configuration comes with HP Cloud Compute Service activation. Your network is ready to deploy HP Cloud Compute virtual machines (instances) without further configuration required. The default configuration includes:
+<img src="media/HPCS-VPC-VPN-SingleSite-Connection-Layer3-new-novendor.jpg" width="600" alt="Basic VPN setup" />
 
-- A network   
-- A subnet   
-- A router connecting the subnet to the Internet   
-- A security group with basic server options   
+**NOTE:**  This guide assumes a "left" case with the "right" case being the hardware.  
 
-The guide provides instructions for creating an IPsec VPN (also known as a site-to-site VPN) from your external network directly into your HP Cloud virtual network.
 
-**Note:** This guide uses strongSwan for the IPsec functionality.
-
-A site-to-site VPN allows multiple fixed locations to establish secure connections with each other over a public network such as the Internet. Site-to-site VPN extends a defined network, making computer resources from one network available to other networks.
-
-For VPN site-to-site connectivity, you will need to modify either the provided default network configuration or create your own network, subnet, router and ports using the OpenStack Networking API.  The customization can be done on either the command line or through the HP Cloud Management Console.  
-
-Before starting, ensure that you have adequate permissions to accomplish each of the following steps.  
-
-**Note:** VPN instances are a potential single point of failure. We will soon be posting a high availability VPN setup guide, so please stay tuned. 
 
 
 ### Audience ### {#audience}
@@ -67,43 +60,38 @@ To use this solution effectively, you should be familiar with
 
 ### Key Terms ### {#terms}
 
-**IKE** - Internet Key Exchange
+__Floating IP Addresses__: On-demand, public IP addresses on a network. With HP Cloud, you can allocate several floating IP addresses and assign them to virtual servers. 
 
-**IPsec** - Internet Protocol Security (IPsec) is a technology protocol suite for securing Internet Protocol (IP) communications by authenticating and/or encrypting each IP packet of a communication session. IPsec also includes protocols for establishing mutual authentication between agents at the beginning of the session and negotiation of cryptographic keys to be used during the session.
+__Network__: Allows you to define network connectivity and addressing in the Cloud, providing "networking as a service" between interface devices managed by other HP Public Cloud, such as compute. 
 
-**NAT-T** - Network Address Translation - Traversal
+__Port__: A connection point for attaching a single device, such as a virtual server's NIC, to a virtual network.  The port describes the associated network configuration, such as the MAC and IP addresses to be used by the attached device.
 
-**strongSwan** - strongSwan is an open source IPsec implementation for Linux 2.6 and 3.x kernels. The focus of the project is on strong authentication mechanisms using X.509 public key certificates and optional secure storage of private keys on smartcards through a standardized PKCS#11 interface.
+__Router__: A device that forwards data packets along networks. 
+
+__Security Groups and Security Group Rules__: Security groups and security group rules allow you to specify the type of traffic and direction (inbound/outbound) that is allowed to pass through a port. A security group is a container for security group rules.
+
+When a port is created in HP Cloud Networking it is associated with a security group. If a security group is not specified the port is associated with a default security group. Security group default rules allow inbound traffic from the same subnet and all outbound traffic. You can add rules to this group to modify behavior. 
+
+__Subnet__: Contains IP address blocks that assign IP addresses to virtual servers. In addition, a subnet can have a gateway, a list of DNS name servers, and host routes. Information provided by DHCP is pushed to servers with interfaces associated with the subnet.
 
 back to the [top](#top)
 
+
+##Customizing your Configuration##
+
+You can use the default network or customize the default network using either the HP Cloud Networking API or the HP Cloud Management Console. Customizing a network enables you to manage the networks your virtual servers connect to.
+
+HP Cloud Networking expands networking capabilities, allowing you to perform many tasks, including:
+
+- Creating and deleting a network
+- Managing a subnet
+- Adding and deleting an interface to a router
+- Configuring security group parameters that define the firewall rules for virtual servers
+- Allocating and managing public floating IP addresses
+- Viewing network and router details
+
 ## Quick start guide ## {#quickstart}
 
-This guide provides the information you will need to get started in setting up a VPN that connects your local network to your Virtual Private Cloud (VPC) located in the HP Cloud.  In this guide, you create two instances--one as an example to use and the other as a gateway.
-
-<img src="media/HPCS-VPC-VPN-SingleSite-Connection-Layer3-new-novendor.jpg" width="600" alt="Basic VPN setup" />
-
-**NOTE:**  This guide assumes a "left" case with the "right" case being the hardware.  
-
-This guide assumes that you are using Ubuntu as the operating system, but the concepts covered work in the OS of your choice. We also use strongSwan for this guide.  There are multiple ways to configure strongSwan and the instructions in this guide may not work for every environment.  Please refer to the [strongSwan user documentation](http://wiki.strongswan.org/projects/strongswan/wiki/UserDocumentation "strongSwan User Documentation") for advanced configuration information.
-
-All commands in this guide use command line interfaces. 
-
-The following steps walk you through the process:
-
-- [Activate the compute service in HP Cloud](#compute)  
-- [Set up the private network](#gtwy)
-- [Create ports](#port)   
-- [Create compute instances](#instances)
-- [Associate floating IPs](#floatip)  
-- [Enable UFW](#enableufw)
-- [Install strongSwan](#installss)
-- [Enable IP forwarding](#ipfrwrd)
-- [Set up *ipsec.conf* on the gateway](#ipsec)
-- [Set up Shared Secret](#secret)
-- [Set up routes on non-gateway instance](#routes)
-- [Establish connections](#connect)
-- [Stop VPN connection](#stopconnect)
 
 In this guide we use these parameters:
 
@@ -122,356 +110,352 @@ For more details on the Nova and Neutron commands please see the [HP Cloud Netwo
 
 If you have not previously created an account and activated the compute service please sign up at [http://hpcloud.com](http://hpcloud.com).  Once you activate the compute service, you need to install the [compute](https://docs.hpcloud.com/api/v13/compute/) and [networking](https://docs.hpcloud.com/api/v13/networking/) clients or the [CLI](http://docs.hpcloud.com/cli/unix/network). Make sure you activate a compute instance in HP Cloud version 13.5 to access the networking and VPN capabilities.
 
-##Create a new Ubuntu server instance
-
-Set up a new Ubuntu server instance&mdash;separate from your other VPC gateway machines and using the command line. Test the setup of this new server.
-
-1. Install Nova and Neutron Python client on this server. See the [Knowledge Base](https://community.hpcloud.com/article/cloud-135-cli-installation-instructions) for instructions.
-2. Verify that you can access the Nova and Neutron APIs for your tenant from this Python Client by running nova `list` and neutron `port-list` commands.
-
-### Set up the private network ### {#gtwy}
-
-#### Create the router and attach it to the external network   
-**Note**: Skip this step if you are using the router provided with your service activation.
-
-Create the router **vpn_router** and set its gateway to be the external network.
-
-	neutron router-create vpn_router
-	neutron router-gateway-set vpn_router $EXT_NET
-
-#### Create a network and subnet
-**Note**: Skip this step if you are using the network and subnet provided with your service activation.
-
-In the example we use **vpn_network** for the name of the network.
-
-    neutron net-create vpn_network
-    neutron subnet-create $NETWORK_ID $CIDR 
-
-#### Attach the router to the subnet  
-**Note**: Skip this step if you are using the default configuration provided with your service activation.
-
-    neutron router-interface-add vpn_router $SUBNET_ID  
 
 
-### Create ports ### {#port}
+You might need to modify the default network or create additional networks.  This page gives you some how-to's to use the [Horizon Cloud Console](#console) or [HP Cloud CLI for Windows PowerShell](#powershell) to perform the following tasks:  
 
-Create two ports and disable the port security on the VPN gateway port. Use this new gateway machine in the SRX-VPC set up for the VPN connection.  
+**Horizon Cloud Console**
+<!-- Taken from list under network quota default -->
 
-**NOTE:** disabling port security will disable the use of all security groups on the port.
-	
-    neutron port-create $NETWORK_ID --port_security_enabled False --name $PORT_ID1
-    neutron port-create $NETWORK_ID --name $PORT_ID2
-
-Ports can be viewed with **neutron port-list** command.
-
-    neutron port-list 	
-    +--------------------------------------+------+-------------------+-------------------------------------------------------------------------------------+
-    | id                                   | name | mac_address       | fixed_ips                                                                           |
-    +--------------------------------------+------+-------------------+-------------------------------------------------------------------------------------+
-    | baf13412-2641-4183-9533-de8f5b91444c |      | fa:16:3e:f6:ec:c7 | {"subnet_id": "15a09f6c-87a5-4d14-b2cf-03d97cd4b456", "ip_address": "10.2.0.21"}  |
-    | f7a08fe4-e79e-4b67-bbb8-a5002455a493 |      | fa:16:3e:97:e0:fc | {"subnet_id": "15a09f6c-87a5-4d14-b2cf-03d97cd4b456", "ip_address": "10.2.0.33"} |
-    +--------------------------------------+------+-------------------+-------------------------------------------------------------------------------------+
-
-
-### Create compute instances ### {#instances}
-You need to create two instances (VMs) to test and run your VPN.
-
-#### Create a keypair to allow ssh to the instance
-
-    nova keypair-add ipsec_vpn_gateway > ipsec_vpn_gateway.pem
-    chmod 600 ipsec_vpn_gateway.pem
-
-The above command creates a new keypair called **ipsec_vpn_gateway**.  View all available keypairs with the **nova keypair-list** command.
-
-    nova keypair-list
-    +-------+--------------------------------------------------------------+
-    |  Name              |                   Fingerprint                   |
-    +--------------------+-------------------------------------------------+
-    | ipsec_vpn_gateway  | b0:18:32:fa:4e:d4:3c:1b:c4:6c:dd:cb:53:29:13:82 |
-    | mykey2             | b0:18:32:fa:4e:d4:3c:1b:c4:6c:dd:cb:53:29:13:82 |
-    +--------------------+-------------------------------------------------+
-
-
-#### Select your compute image
-
-To boot a compute instance you will need to know which [operating system and size of image](https://docs.hpcloud.com/api/v13/compute/) you would like to use.  For the purpose of this guide, we use a small image using Ubuntu. Select the type of image you want and then assess the amount of bandwidth you need and select the appropriately sized flavor.
-
-#### Boot the gateway instance and test instance
-
-Boot two instances&mdash;one to use as the VPN gateway (vm-gateway) and the other (vm-test) to test with.
-
-- --image:  the name or ID of the image to launch.  View available images by running **nova image-list**
+- [Enable a network](#Enabling)
+- [Specify an IP address](#SpecifyIP)
+- [Assign a router to a network](#AssignRouter)
+- [Create a port]
+- [Create a floating IP address]
+* [Create a router]
+* [Create a security group]
+* [Create a security group rule
  
-- --key_name:  the name of the key to inject into the instance at launch
-- --flavor:  the name or ID of the size of the instance to create.  View the list of available flavors by running `nova flavor-list`.
+**HP Cloud CLI for Windows PowerShell**
 
-Example: 
-  
-    nova boot --image <image-name> --flavor=100 --key_name=<keypair-name> --security-groups=<security-group-name> --nic port-id=<portid-1> <name of vm>
+- [Enable a network](#Enabling)
+- [Specify an IP address](#SpecifyIP)
+- [Assign a router to a network](#AssignRouterCLI)
 
-Example:  Create the gateway instance 
+###HP Cloud Networking Quota Default:###
 
-    nova boot --image small --flavor=100 --keyname=ipsec_vpn_gateway --nic port-id=$PORT_ID1 vm-gateway
+* 5 Networks
+* 5 Subnets
+* 70 Ports
+* 45 Floating IP addresses
+* 1 Router
+* 10 Security Groups
+* 50 Security Group Rules
 
-Example:  Create the test instance   
+##Before you begin## {#Overview}
 
-    nova boot --image small --flavor=100 --keyname=ipsec_vpn_gateway --nic port-id=$PORT_ID2 vm-test
+Before you can enable or disable networks, you must:
 
-#### Validate status of instances
+* [Sign up for an HP Cloud compute account](https://account.hpcloud.com/signup)
+* Activate compute service on your account
+* [Create a network](/mc/compute/networks/create-network/#Creating)
 
-Check the status of the launched instance(s):   
-  
-    nova list
-    +--------------------------------------+------------+--------+-----------------+
-    | ID                                   | Name       | Status | Networks        |
-    +--------------------------------------+------------|--------+-----------------+
-    | 558159d5-1257-43db-b261-523207c8a290 | vm-gateway | ACTIVE | mynet=10.2.0.21 |
-    | 8c0dbcaa-8ef7-484f-8f89-47760fdcd44a | vm-test    | ACTIVE | mynet=10.2.0.33 |
-    +--------------------------------------+------------+--------+-----------------+
+## Using the Horizon Cloud Console ## {#console}
 
-After a short period of time the instance changes from BUILD to ACTIVE.  You can then connect to the launched instance using the private key that you created.
+You can use the Horizon Cloud Console to perform the following tasks:
 
-### Associate floating IPs ### {#floatip}
+- [Enable a network](#Enabling)
+- [Disable a network](#Disabling)
+- [Delete a network](#Deleting)
+- [Specify an IP address](#SpecifyIP)
+- [Rename a network](#RenameNet)
+- [Edit a sub-net](#EditSub)
+- [Rename a port](#RenamePort)
+- [Assign a router to a network](#AssignRouter)
 
-#### Create the floating IPs
+All of the procedures in this section require that you access the Networks or Routers tab in the Project section of the Horizon Cloud Console, <a name="NetworkTab">as shown</a>:
 
-Next, you need to create the floating IPs associated with the external network (Ext_Net).  Each created floating IP has an ID that we will refer to as `$FLOATING_ID1` and `$FLOATING_ID2`.
+   <br><img src="media/network-tab.png"  alt="" />
 
-    neutron floatingip-create $EXT_NET
-    neutron floatingip-create $EXT_NET
+## How to enable a network {#Enabling}
 
-#### Associated each floating IP with  a port
+By default, when you [create a network](/mc/compute/networks/create-network#Creating), that network is created in an enabled admin state.  
 
-    neutron floatingip-associate $FLOATING_ID1 $PORT_ID1
-    neutron floatingip-associate $FLOATING_ID2 $PORT_ID2
+If you have at some point [disabled](#Disabling) a network, you can enable it.
 
-To show the floating IP: 
-  
-    neutron floatingip-show $FLOATING_ID1
-    neutron floatingip-show $FLOATING_ID2
+1. Login to the [Horizon Console](https://horizon.hpcloud.com/).
 
-**Note:** You can also assign floating IPs via the Nova API and subsequently call the command `nova list` to display the instances and their status.
+2. Select the [Networks tab](#NetworkTab) under the Project section.
 
-### Enable UFW ### {#enableufw}
+3. On the Networks screen, locate the network which you want to enable.
 
-HP strongly recommends that you use the [UFW (uncomplicated firewall)](https://help.ubuntu.com/community/UFW) capability included in Ubuntu. Currently you need to disable port security to create a VPN; enabling UFW closes the potential security hole.
+4. In the Actions column, click **Edit Network** for your the network. 
 
-To enable the UFW, connect to the gateway instance and run these commands:
+5. In the Edit Network screen, select the **Admin State** option and click **Save Changes**:
+	<br><img src="media/network-enable.png"  alt="" />
 
-	prompt> sudo ufw allow 22/tcp
-	sudo ufw allow 500/udp
-	sudo ufw allow 1293/tcp
-	sudo ufw allow 4500/udp
-	sudo ufw enable
-	
-	# After the last command, a prompt appears stating that this command "may disrupt existing ssh connections. Proceed with operation (y|n)?"
-	# Answer "y" and ENTER to complete the procedure.
 
-**Note:** The UFW capability is found in Ubuntu. If you are using another OS you should approximate this firewall functionality.
+##How to disable a network## {#Disabling}
 
-#### Advanced security option
+By default, when you [create a network](/mc/compute/networks/create-network#Creating/), that network is created in an enabled admin state.  You can disable a network, as needed.
 
-If you know the public IP address of the gateway that you will be connecting from, and you want to exclude all others from being able to connect, use the following instructions:
+1. Login to the [Horizon Console](https://horizon.hpcloud.com/).
 
-	prompt> sudo ufw allow 22/tcp
-	sudo ufw allow from 16.17.18.19 to any port 500 proto udp
-	sudo ufw allow from 16.17.18.19 to any port 1293 proto tcp
-	sudo ufw allow from 16.17.18.19 to any port 4500 proto udp
-	# If you need to add more than one IP address, repeat the above three lines for every connection.
-	sudo ufw enable
+2. Select the [Networks tab](#NetworkTab) under the Project section.
 
-### Install strongSwan on the gateway instance ### {#installss}
+3. On the Networks screen, locate the network which you want to disable.
 
-strongSwan is a complete IPsec implementation for the Linux 2.6 and 3.x kernels.  The  Ubuntu distribution includes the strongSwan package. 
+4. In the Actions column, click **Edit Network** for your the network. 
 
-1. Log in to your gateway instance
-2. `prompt> sudo apt-get install -y strongswan`
-3. Install all dependencies including the kernel modules
+5. In the Edit Network screen, clear the **Admin State** option and click **Save Changes**:
+	<br><img src="media/network-disable.png"  alt="" />
 
-You can find additional information on installing strongSwan on the strongSwan wiki:  [strongSwan Installation Documentation](http://wiki.strongswan.org/projects/strongswan/wiki/InstallationDocumentation "strongSwan wiki")
 
-### Enable IP forwarding on the gateway instance ### {#ipfrwrd}
+## How to delete a network ## {#Deleting}
 
-By default, Linux distributions have IP forwarding disabled. To act as a VPN gateway, you need to enable IP forwarding.  
+1. Login to the [Horizon Console](https://horizon.hpcloud.com/).
 
-**NOTE:** The *sysctl* kernel parameter change should be made permanently.
+2. Select the [Networks tab](#NetworkTab) under the Project section.
 
-In the same instance where you installed strongSwan:   
-1.  Edit the **/etc/sysctl.conf** file    
-2.  Uncomment the line `net.ipv4.ip_forward=1` or set to `net.ipv4.ip_forward=1`   
-3.  Save the file and exit   
-4.  To enable the changes run the command: **sysctl -p /etc/sysctl.conf** 
+3. On the Networks screen, locate the network which you want to delete.
 
-Once you complete the above steps, verify that IP forwarding is enabled by running the command **sysctl net.ipv4.ip_forward**.
+4. In the Actions column, click **More** -> **Delete Network** for your the network. 
+	<br><img src="media/network-delete.png"  alt="" />
 
-Example:  
-    
-    prompt> sysctl net.ipv4.ip_forward
-    net.ipv4.ip_forward = 1   
+5. In the confirmation dialog, click **Delete Network**.
 
-### Set up ipsec.conf on the gateway instance ### {#ipsec}
 
-strongSwan always considers itself as "LEFT" and the other side of the network (the remote server) with the hardware router as the "RIGHT".  When configuring the gateway instance consider it the "LEFT" node and the remote server as the "RIGHT" node.
+## How to specify an IP address ### {#SpecifyIP}
 
-Below is an example strongSwan *ipsec.conf* file.  Note that the information that is added to this file for detailing the left and right cases must be entered as created into both this file and the *ipsec.secrets* file.
+1. Login to the [Horizon Console](https://horizon.hpcloud.com/).
 
-For more details on setting up the *ipsec.conf* file, see the [strongSwan ipsec.conf](http://wiki.strongswan.org/projects/strongswan/wiki/IpsecConf) wiki page.
+2. Select the [Networks tab](#NetworkTab) under the Project section.
 
-**Note:** the location of the *ipsec.conf* file is */etc/ipsec.conf*
+3. Click **Create Network**. 
+	<br><img src="media/network-create.png"  alt="" />
 
-	# ipsec.conf - strongSwan IPsec configuration file
-	
-	# basic configuration
-	
-	config setup
-		plutodebug=all
-		plutostderrlog=/home/ubuntu/plutolog.txt
-		# crlcheckinterval=600
-		# strictcrlpolicy=yes
-		# cachecrls=yes
-		nat_traversal=yes
-		charonstart=no
-		plutostart=yes
-	
-	# Add connections here.
-	
-	# Sample VPN connections
-	
-	conn %default 
-	      ike=aes128-sha1-modp1024!
-	      ikelifetime=28800s
-	      keyexchange=ikev1
-	      keyingtries=10
-	      esp=aes128-sha1-modp1024!
-	      keylife=3600s
-	      rekeymargin=5m
-	      type=tunnel
-	      pfs=yes
-	      compress=no
-	      authby=secret
-	conn vpn-test 
-	      left=%defaultroute
-	      leftid=10.2.0.21
-	      leftsubnet=10.2.0.0/24
-	      leftfirewall=yes
-	      right=192.168.1.50
-	      rightid=192.168.1.50
-	      rightsubnet=192.168.2.0/24
-	      dpdaction=hold
-	      dpddelay=60
-	      dpdtimeout=500 
-	      auto=add
-   
+4. On the **Network** tab, enter a name for the network.  
+	<br><img src="media/network-fields.png"  alt="" />
+
+5. Enter the following values, as appropriate:
+	<br><img src="media/network-fields-2.png"  alt="" />
+
+6. Enter the following values, as appropriate:
+	<br><img src="media/network-fields-3.png"  alt="" />
+
+7. Click **Create**.
+
+
+### How to rename a network ### {#RenameNet}
+
+1. Login to the [Horizon Console](https://horizon.hpcloud.com/).
+
+2. Select the [Networks tab](#NetworkTab) under the Project section.
+
+3. On the Networks screen, locate the network which you want to rename.
+
+4. In the Actions column, click **Edit Network** for your the network. 
+
+5. In the Edit Network screen, enter a new name and click **Save Changes**
+	<br><img src="media/network-edit.png"  alt="" />
+
+###How to rename a sub-net### {#EditSub}
+
+1. Login to the [Horizon Console](https://horizon.hpcloud.com/).
+
+2. Select the [Networks tab](#NetworkTab) under the Project section.
+
+3. On the Networks screen, click the network associated with the subnet you want to rename.
+
+4. In the Actions column, click **Edit Subnet** for your the subnet you are changing. 
+
+5. In the Edit Subnet screen, enter a new name and click **Save**
+	<br><img src="media/network-subnet-edit.png"  alt="" />
+
+
+###How to rename a port### {#RenamePort}
+
+1. Login to the [Horizon Console](https://horizon.hpcloud.com/).
+
+2. Select the [Networks tab](#NetworkTab) under the Project section.
+
+3. On the Networks screen, click the network associated with the port you want to rename.
+
+4. In the Actions column, click **Edit Port** for your the port you are changing. 
+
+5. In the Edit Port screen, enter a new name and click **Save**
+	<br><img src="media/network-port-edit.png"  alt="" />
+
+
+###How to assign a router to an external network### {#AssignRouter}
+
+1. Login to the [Horizon Console](https://horizon.hpcloud.com/).
+
+2. Select the [Routers tab](#NetworkTab) under the Project section.
+
+3. On the Routers screen, locate the network which you want to rename.
+
+4. In the Actions column, click **Set Gateway** for your the network. 
+
+5. In the Set Gateway screen, select a network from the **External Network** list and click **Set Gateway**
+	<br><img src="media/network-gateway.png"  alt="" />
+
+<!--Can users enable/disable routers in 13.5?
+##Enabling a router## {#Enabling}
+
+When you enable the compute service, a router is enabled by default.  If you have [disabled](#Disabling) the router, to enable it, in the `Manage` column, select the `Options` button for the router you wish to disable and click the `Disable` item:
+
+<img src="media/disable-router.jpg" width="580" alt="" />
  
-### Set up ipsec.secrets file on the gateway instance ### {#secret}
 
-Modify the *ipsec.secrets* file for the basic site-to-site VPN setup.
+##Disabling a router## {#Disabling}
 
-strongSwan's *ipsec.secrets* file contains an unlimited number of the following types of secrets:
+When you enable the compute service, a router is enabled by default.  To disable the router, in the `Manage` column, select the `Options` button for the router you wish to disable and click the `Disable` item:
 
-- RSA defines an RSA private key
-- ECDSA defines an ECDSA private key
-- PSK defines a pre-shared key
-- EAP defines EAP credentials
-- XAUTH defines XAUTH credentials
-- PIN defines a smartcard PIN
+<img src="media/enable-router.jpg" width="580" alt="" />
+
+-->
 
 
-For more details on modifying the *ipsec.secrets* file, see the [strongSwan ipsec.secrets](http://wiki.strongswan.org/projects/strongswan/wiki/IpsecSecrets) wiki page.
+## Using the Windows PowerShell ## {#powershell}
 
-**Note**: The location of the *ipsec.secrets* file is */etc/ipsec.secrets*.
+The HP Cloud environment command-line interface (CLI) software for Windows PowerShell allows Windows users to manage their HP Cloud services from the command line.
 
-Based upon the authentication type and shared secret for the VPN instance customize the *ipsec.secrets* file with information from the above steps.
+For the full reference of supported HP Cloud CLI commands for Windows PowerShell, see [HP Cloud Environment CLI Software for Windows PowerShell Command Line Reference](docs.hpcloud.com/cli/windows/2/reference/). 
 
-    # This file holds shared secrets or RSA private keys for inter-Pluto
-    # authentication.  See ipsec_pluto(8) manpage, and HTML documentation.
+### How to delete a network ### {#DeleteCLI}
+
+1. On the 13.5 instance, launch a Windows PowerShell window.  
+
+	Select the shell appropriate to your system, either the 64-bit or 32-bit version. 
+
+2. Enter the HP Cloud environment CLI by entering:
+
+	`PS C:> cd HPCS:`
+
+3. Create a new network by executing the following command, using the appropriate values:
 	
-    # RSA private key for this host, authenticating it to any other host
-    # which knows the public part.  Suitable public keys, for ipsec.conf, DNS,
-    # or configuration of other implementations, can be extracted conveniently
-    # with "ipsec showhostkey".
+	remove-network
+
+	remove-network -id -all
+
+	Where
 	
-    # this file is managed with debconf and will contain the automatically created private key
-    # include /var/lib/strongswan/ipsec.secrets.inc 
-    10.2.0.21 192.168.1.50 192.168.1.50 : PSK "abcd" 
+		id - The ID of the network to delete.
 
-### Set up routes on non-gateway instance ### {#routes}
+		all - Removes all networks in the current availability-zone associated with your project.
 
-On the non-VPN instance (vm-test) add the new route for the remote subnet.
+	The following example deletes a network with the specified ID
 
-Example: `route add -net <remote-subnet> gw <host gateway>`
+		remove-network -id 12857174-99cf-40e9-999e-fb0fa2e84898  
 
-    route add -net 192.168.2.0/24 gw 10.2.0.21
+Deletes the Network with the id of 12857174-99cf-40e9-999e-fb0fa2e84898
 
-Verify that the new route was added by running the command **route-n** and finding the entry that was added in the table.
+### How to rename a network ### {#RenameNetCLI}
+
+You can change the name of a network, as needed.
+
+1. On the 13.5 instance, launch a Windows PowerShell window.  
+
+	Select the shell appropriate to your system, either the 64-bit or 32-bit version. 
+
+2. Enter the HP Cloud environment CLI by entering:
+
+	`PS C:> cd HPCS:`
+
+3. Change the network name by executing the following command, using the appropriate values:
+	
+	update-network -id networkIP Identity -n Name
+
+	Where
+
+	id - The network ID.
+
+	n - The new name for the network.
+
+	The following example renames the specified network to Network1:
+
+		update-Network -id 12857174-99cf-40e9-999e-fb0fa2e84898 -n "Network1" 
+
+### How to edit a sub-net### {#EditSubCLI}
+
+You can modify a sub-net to rename the sub-net or change the the external gateway assigned to the sub-net.
+
+1. On the 13.5 instance, launch a Windows PowerShell window.  
+
+	Select the shell appropriate to your system, either the 64-bit or 32-bit version. 
+
+2. Enter the HP Cloud environment CLI by entering:
+
+	`PS C:> cd HPCS:`
+
+3. Modify the sub-net by executing the following command, using the appropriate values:
+	
+	update-subnet -id SubnetIdentifier -egw ExternalGatewayNetworkIPAddress - n Name
+
+	Where
+
+		id - The sub-net ID.
+
+		egw - The external gateway network ID to assign.
+
+		n - The new name for the sub-net.
+
+	The following example reassigns the subnet to the designated external network and renames the sub-net to "NewSubnetName":
+
+	update-Subnet -id 12857174-99cf-40e9-999e-fb0fa2e84898 -egw 129.15.124.12 -n "NewSubnetName" 
 
 
-### Establish connections ### {#connect}
+### How to rename a port### {#RenamePortCLI}
 
-Force IPsec to read the updated *ipsec.conf* and *ipsec.secrets* files and to establish a connection:
+By default, when a port is created, the port is automatically assigned a name and ID. For example, when you create a subnet, a port is created for that subnet. 
 
-    ipsec restart
+You can change the name of a port, as needed.
 
-Start the connection (conn) that is defined in *ipsec.conf*:
+1. On the 13.5 instance, launch a Windows PowerShell window.  
 
-    ipsec up vpn-test
+	Select the shell appropriate to your system, either the 64-bit or 32-bit version. 
+
+2. Enter the HP Cloud environment CLI by entering:
+
+	`PS C:> cd HPCS:`
+
+3. Change the port name by executing the following command, using the appropriate values:
+	
+	update-port  -id port -did name
+
+	Where
+
+	id - The port ID.
+
+	did - The new name for the port.
+
+	The following example renames the specified port to port1:
+
+	update-Port -id 12857174-99cf-40e9-999e-fb0fa2e84898 -did "port1" 
+
+### How to assign a router to a network ### {#AssignRouterCLI}
+
+You can assign a router to an external network, as needed.
+
+1. On the 13.5 instance, launch a Windows PowerShell window.  
+
+	Select the shell appropriate to your system, either the 64-bit or 32-bit version. 
+
+2. Enter the HP Cloud environment CLI by entering:
+
+	`PS C:> cd HPCS:`
+
+3. Assign the external network by executing the following command, using the appropriate values:
+	
+	update-router  -id RouterID -nid Name
+
+	Where
+
+	id - The router ID.
+
+	nid - The new name for the router.
+
+	The following example renames the specified router to router1:
+
+	update-Port -id 12857174-99cf-40e9-999e-fb0fa2e84898 -nid "router1" 
 
 
-Validate that the IPsec processes are available by running the  command **ps -welf | grep ipsec**
 
-### Stop the VPN connection ### {#stopconnect}
+##For further information## {#ForFurtherInformation}
 
-Force IPsec to read the updated *ipsec.conf* and 
-
-Stop the connection (conn) that is defined in *ipsec.conf*:
-
-    ipsec down vpn-test
-
-**Note:** The above step is required for a safe restart. 
-
-back to the [top](#top)
-
-## Tips and best practices ## {#tips}
-
-This portion of the document contains a collection of tips and best practices to help you to quickly setup your VPN configuration.
-
-* If you need to allow multiple subnets through the VPN, you need to create another connection in the strongSwan *ipsec.conf* file.  
-* Connect additional VPCs by adding additional IPsec configuration and secret files in */etc/ipsec.d*
-
-back to the [top](#top)
-
-## Troubleshooting ## {#troubleshooting}
-
-These topics can help you address problems that might occur when you are setting up and configuring your VPN solution.	
-
-
-1.  Confirm that strongSwan is running (IPsec process).  Verify that the IPsec processes are executing in the VPN instance.  If the below processes are not running restart the processes by following the steps found in the **Establish connections** section.
-    
-	* 	Run the command **ps -welf | grep ipsec**	
-	* 	Verify that the below three processes are running:
-		* 	IPsec starter process (/usr/lib/ipsec/starter)
-		* 	IPsec Pluto process (/usr/lib/ipsec/pluto --nofork --uniqueids)
-		* 	IPsec Charon process (usr/lib/ipsec/charon --use-syslog
-
-
-2. If the */etc/auth.log* file exists, check for errors.
-
-3. If able to connect the gateway VMs, but not go any further, validate that `port_security_enabled` is set to False (See [Create ports](#port)).
-
-4.  If unable to ping the VMs behind the VPN ensure that you have set up the necessary routes on the non-gateway VM (See [Set up routes on non-gateway instance](#routes)).
-
-back to the [top](#top)
-
-## For further information ## {#refs}
-
-- [UNIX CLI Network Examples](http://docs.hpcloud.com/cli/unix/network)
-- [HP Cloud Networking API Specifications](https://docs.hpcloud.com/api/v13/networking/)
-- [HP Cloud Compute Service API Reference](https://docs.hpcloud.com/api/v13/compute/)
-- [strongSwan wiki FAQ](http://wiki.strongswan.org/projects/strongswan/wiki/FAQ)
-- [strongSwan User Documentation](http://wiki.strongswan.org/projects/strongswan/wiki/UserDocumentation "strongSwan User Documentation")
-- [strongSwan ipsec.conf reference](http://wiki.strongswan.org/projects/strongswan/wiki/IpsecConf)
-- [strongSwan ipsec.secrets reference](http://wiki.strongswan.org/projects/strongswan/wiki/IpsecSecrets)
-- [strongSwan ipsec.conf: conn <name> reference](http://wiki.strongswan.org/projects/strongswan/wiki/ConnSection)
-- [strongSwan net2net-psk/ reference](http://www.strongswan.org/uml/testresults/ikev2/net2net-psk/)
-
-back to the [top](#top)
+* For information about the router details screen, take a look at the [Viewing router details](/mc/compute/networks/view-router/) page
+For the full reference of supported HP Cloud CLI commands for Windows PowerShell, see [HP Cloud Environment CLI Software for Windows PowerShell Command Line Reference](docs.hpcloud.com/cli/windows/2/reference/)
+* For basic information about our HP Cloud compute services, take a look at the [HP Cloud compute overview](/compute/) page
+* Use the MC [site map](/mc/sitemap) for a full list of all available MC documentation pages
+* For information about the Open Stack networking features, surf on over to [their networking wiki](https://wiki.openstack.org/wiki/Quantum)
