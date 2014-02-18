@@ -11,5 +11,6 @@ The HP Cloud Load Balancing as a Service (LBaaS) provides you with a managed ser
 
 The HP Cloud LBaas service is currently in private beta.  Please [request access on our sign-up page](https://horizon.hpcloud.com/landing/pbr/hpext:lbaas).  Service use is free of charge during the private beta period.
 
+
 ## API
 Do you need low level, raw REST API access to HP Cloud LBaaS?  Take a look at the [LBaaS API page](/api/lbaas/).
