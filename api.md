@@ -38,11 +38,11 @@ There are a number of HP Cloud APIs available for your programming pleasure:
 * [Object Storage](/api/object-storage/): API for HP Cloud Object Storage service; a way to store and retrieve objects in a highly redundant cluster of publicly accessible physical machines hosted in HP data centers.
 * [Relational Database](/api/dbaas/): API for the HP Cloud Relational Database service; simplifies the creation and management of MySQL database instances.
 
-###APIs in public beta {#pubbeta}
+##APIs in public beta {#pubbeta}
 
 * [Monitoring v1.1](/api/v13/monitoring/): API for the HP Cloud Monitoring  v13.5; facilitates monitoring of the health and other metrics for the resources in HP Cloud.
 
-###APIs in private beta {#privbeta}
+##APIs in private beta {#privbeta}
 
 You can also avail yourself of one of the following APIs now in private beta; follow the links to sign up and begin trying them out!
 
@@ -55,6 +55,6 @@ You can also avail yourself of one of the following APIs now in private beta; fo
 
 
 
-### Copyright
+## Copyright
 
 View the [copyright](/api/v13/copyright/) messages.
