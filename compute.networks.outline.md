@@ -14,7 +14,7 @@ product: compute
 *I created a new file; high-level detail; modeled after [HP Cloud version 13.5 overview](https://docs.hpcloud.com/version-overview); including text from networking guide*
 
 * Using the Default Network Configuration
-* Customizing your Configuration
+* Customizing the Configuration
 	* Using the console
 	* Using the API
 	* Using language bindings
