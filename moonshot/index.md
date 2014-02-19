@@ -10,15 +10,14 @@ product: moonshot
 
 <!-- hello world --> 
 
-Welcome! HP Moonshot servers are designed and tailored for specific workloads to deliver optimum performance. These support a wide range of 
-complex IT demands right from cloud based applications to Social Media, Big Data and Mobility. 
+Welcome! HP Moonshot hardware servers are designed and tailored for specific workloads to deliver optimum performance. These support a wide range of 
+complex IT demands right from cloud based applications to Social Media, Big Data and Mobility. Building on this requirement, <nobr><b>HP Cloud OS for Moonshot</b></nobr> software 
+enables you to efficiently create and run cloud environments using Moonshot servers. 
 
-Building on this requirement, HP has designed <nobr><b>HP Cloud OS for Moonshot</b></nobr> to enable you to efficiently create and run cloud environments using Moonshot servers. 
+<!-- <img src="media/moonshot-server-hardware.jpg" title="Moonshot server" /> --> 
 
-<img src="media/moonshot-server-hardware.jpg" title="Moonshot server" /> 
-
-This Moonshot section of the documentation site builds on the [HP Cloud OS for Moonshot documentation](/cloudos/) by providing topics that are customized 
-specifically for Moonshot customers. Read these categorized topics to learn about HP Cloud OS for Moonshot:
+This HP Cloud OS for Moonshot section of the documentation site builds on the [HP Cloud OS documentation](/cloudos/) by providing topics that are customized 
+specifically for Moonshot customers. Read the following categorized topics to learn about HP Cloud OS for Moonshot:
 
 1. <a href="/cloudos/moonshot/prepare/">Prepare</a> &mdash; Topics to help you get started: video tutorials &amp; more
 2. <a href="/cloudos/moonshot/install/">Install</a> &mdash; Instructions to install &amp; configure your cloud
@@ -36,15 +35,7 @@ specifically for Moonshot customers. Read these categorized topics to learn abou
 </tr>
 </table>
 
-## How do I order and license HP Cloud OS for Moonshot?
 
-> There are a set of HP Cloud OS for Moonshot SKUs for one-year to three-year licenses. If you have not already done so, you can order these in the same way you order other HP Server products (hardware or software) directly through HP or through an HP channel partner.
-
-> After ordering, you will receive via email or printed letter a certificate that you will redeem at HP.com. When you go to HP.com, you will register for support and receive a license key. You will be directed to the HP Software Depot website, where you can download the software.
-
-> You can then download and install the software. After completing the installation, you can enter your license key in the HP Cloud OS for Moonshot Operational Dashboard. For the steps, see [Check the HP Cloud OS for Moonshot License](/cloudos/moonshot/install/license/).
-
-> When your license expires, you will receive an informational message to purchase a new license key. 
 
 ## HP Moonshot System
 

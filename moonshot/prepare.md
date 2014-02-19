@@ -15,7 +15,7 @@ If you're new to HP Cloud OS for Moonshot, see these topics and the video tutori
 
 * [Release Notes](/cloudos/moonshot/prepare/releasenotes/) - describes new features and recommendations.  Read this document first. 
 
-* [HP Cloud OS for Moonshot Support Matrix](/cloudos/moonshot/prepare/supportmatrix/) - provides an overview of the HP Cloud OS for Moonshot supported hardware and software.
+* [Support Matrix](/cloudos/moonshot/prepare/supportmatrix/) - provides an overview of the HP Cloud OS for Moonshot supported hardware and software.
 
 * [FAQs](/cloudos/moonshot/prepare/faqs/) - answers to frequently asked questions about HP Cloud OS for Moonshot and related technologies.
 
@@ -24,4 +24,6 @@ If you're new to HP Cloud OS for Moonshot, see these topics and the video tutori
 * [Technical Overview](/cloudos/moonshot/prepare/overview/) - helpful information to read before you install &amp; configure HP Cloud OS for Moonshot, and create your cloud.
 
 * [Glossary](/cloudos/moonshot/prepare/glossary/) - definitions of terms used in the HP Cloud OS for Moonshot components, user interfaces, and documentation.
+
+* [How to order and license HP Cloud OS for Moonshot](/cloudos/moonshot/prepare/order-license/) - outlines the process to order and license the product.
 
