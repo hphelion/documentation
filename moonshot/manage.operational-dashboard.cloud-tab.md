@@ -36,7 +36,7 @@ they are displayed.
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:600px; border: 1px dotted #000000;"> <b>Note:</b> The Cloud tab does not appear until you have 
 completed all the installation steps on the <a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab">Environment tab</a>.</p>
 
-For procedural instructions, see [Install and Configure Your Cloud](/cloudos/install/).
+For procedural instructions, see [Install and Configure Your Cloud](/cloudos/moonshot/install/).
 
 ## Manage Nodes
 
@@ -72,7 +72,7 @@ and mount the folder on an additional storage.
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px; border: 1px dotted #000000;"> <b>Note:</b> Ensure that the boot order on all nodes is configured to 
 boot from the network first (this only occurs once as the PXE service will not try to network boot a node again if it has already done so).</p>
 
-For procedural instructions on setting up and configuring your nodes, see [Install and Configure Your Cloud](/cloudos/install).
+For procedural instructions on setting up and configuring your nodes, see [Install and Configure Your Cloud](/cloudos/moonshot/install).
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
@@ -1035,8 +1035,8 @@ When the installation process completes, a Success message will appear in the up
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> Upon successful completion of the installation process, 
 the content package has been properly installed on the HP Cloud OS for Moonshot Administration node, but not yet enabled. Such enabling is performed 
 in the HP Cloud OS for Moonshot Installation Dashboard. For information on how to enable and disable content packages, 
-refer to the <a href="/cloudos/install/updates-and-extensions">Updates and Extensions</a> topic, which is part of 
-<a href="/cloudos/install/">Install and Configure Your Cloud</a>.</p>
+refer to the <a href="/cloudos/moonshot/install/updates-and-extensions">Updates and Extensions</a> topic, which is part of 
+<a href="/cloudos/moonshot/install/">Install and Configure Your Cloud</a>.</p>
 </td>
 </tr>
 

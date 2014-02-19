@@ -37,7 +37,7 @@ For the installation process, you must complete each panel in the order they are
 
 * [Complete Install](#complete-install)
 
-For procedural instructions, see [Install and Configure Your Cloud](/cloudos/install/).
+For procedural instructions, see [Install and Configure Your Cloud](/cloudos/moonshot/install/).
 
 ## Prerequisites
 
@@ -68,7 +68,7 @@ You must complete configuration of the Cloud Administration Node Internet Access
 For details, see <a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>. 
 After that, the Edit Prerequisite dialogs for those settings are read-only. Once the install process is triggered, no changes can be made. 
 If you want to make changes to the Cloud Administration Node Internet Access and External DNS Server prerequisites, you will need to start over by re-installing the HP Cloud OS for Moonshot Administration node. 
-For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
+For procedural instructions, see <a href="/cloudos/moonshot/install/">Install and Configure Your Cloud</a>.
 </p>
 
 * **Cloud Administration Node Internet Access** &mdash; Configure to set up Internet access on the HP Cloud OS for Moonshot Administration node. You will need Internet access for downloading hot fixes and updates using the [Updates and Extensions](/cloudos/moonshot/manage/operational-dashboard/cloud-tab/#updates-and-extensions) panel.
@@ -133,7 +133,7 @@ If you want to set the Administration Node Internet Access Prerequisite, you mus
 Complete Install panel. For details, see the <a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a> topic.
 After that, the Administration Node Internet Access Prerequisite dialogs are read-only. Once the install process is triggered, 
 no changes can be made. If you want to make changes, you need to start over by re-installing the HP Cloud OS for Moonshot Administration node. 
-For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
+For procedural instructions, see <a href="/cloudos/moonshot/install/">Install and Configure Your Cloud</a>.
 </p>
 
 The following table describes the Cloud Administration Node Internet Access Prerequisite dialog UI elements:
@@ -238,7 +238,7 @@ If you want to set the External DNS Server Prerequisite, you must configure it b
 Complete Install panel. For details, see the <a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a> topic.
 After that, the External DNS Server Prerequisite dialogs are read-only. Once the install process is triggered, 
 no changes can be made. If you want to make changes, you need to start over by re-installing the HP Cloud OS for Moonshot Administration node. 
-For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
+For procedural instructions, see <a href="/cloudos/moonshot/install/">Install and Configure Your Cloud</a>.
 </p>
 
 **To access**: Select the **Environment** tab > **Prerequisites**> click **Edit Prerequisite** for the External DNS Server Prerequisite.
@@ -364,7 +364,7 @@ you must do that before you complete the steps on the Complete Install panel. Fo
 the <a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a> topic.
 After that, the Server Types dialogs are read-only. Once the install process is triggered, 
 no changes can be made. If you want to make changes, you need to start over by re-installing the HP Cloud OS for Moonshot Administration node. 
-For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
+For procedural instructions, see <a href="/cloudos/moonshot/install/">Install and Configure Your Cloud</a>.
 </p>
 
 The Server Types panel allows you to capture new or use existing server definitions about the networking ports for various servers in 
@@ -456,7 +456,7 @@ you must do that before you complete the steps on the Complete Install panel. Fo
 the <a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a> topic.
 After that, the Edit Server Definition dialogs are read-only. Once the install process is triggered, 
 no changes can be made. If you want to make changes, you need to start over by re-installing the HP Cloud OS for Moonshot Administration node. 
-For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
+For procedural instructions, see <a href="/cloudos/moonshot/install/">Install and Configure Your Cloud</a>.
 </p>
 
 <table style="text-align: left; vertical-align: top; min-width:700px;">
@@ -508,7 +508,7 @@ the dialog become read-only and this button disappears.
 Once the install process is triggered by the 
 <a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>, this button disappears and no 
 changes can be made. If you want to make changes, you need to start over by re-installing the HP Cloud OS for Moonshot Administration node. 
-For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
+For procedural instructions, see <a href="/cloudos/moonshot/install/">Install and Configure Your Cloud</a>.
 </p>
 
 <table style="text-align: left; vertical-align: top; min-width:700px;">
@@ -574,7 +574,7 @@ If you plan to customize the connections, you must do that before you complete t
 For details, see <a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>. 
 After that, the Connections dialogs are read-only. Once the install process is triggered, no changes can be made. 
 If you want to make changes, you need to start over by re-installing the HP Cloud OS for Moonshot Administration node. 
-For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
+For procedural instructions, see <a href="/cloudos/moonshot/install/">Install and Configure Your Cloud</a>.
 </p>
 
 Based on your network infrastructure, you must customize the Connections settings in the Connections panel. 
@@ -777,7 +777,7 @@ If you plan to customize the connections, you must do that before you complete t
 For details, see the <a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>. 
 After that, the Edit Connections dialogs are read-only. Once the install process is triggered, no changes can be made. 
 If you want to make changes, you need to start over by re-installing the HP Cloud OS for Moonshot Administration node. 
-For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
+For procedural instructions, see <a href="/cloudos/moonshot/install/">Install and Configure Your Cloud</a>.
 </p>
 
 The following table describes the Edit Connection dialog UI elements:
@@ -865,7 +865,7 @@ this dialog become read-only and this button disappears. </td>
 while the connections are editable. Once the install process is triggered by the 
 <a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>, this button disappears and no changes can be made. 
 If you want to make changes, you need to start over by re-installing the HP Cloud OS for Moonshot Administration node. 
-For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
+For procedural instructions, see <a href="/cloudos/moonshot/install/">Install and Configure Your Cloud</a>.
 </p>
 
 The following table describes the Create Connection dialog UI elements:
@@ -966,7 +966,7 @@ or networking between the Virtual Machine instances and the traffic from the ins
 
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Important:</b> Customizing the public network settings is 
 critical. Any missing or incorrect values will result in you having to re-install the HP Cloud OS for Moonshot Administration node. 
-For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
+For procedural instructions, see <a href="/cloudos/moonshot/install/">Install and Configure Your Cloud</a>.
 </p>
 
 Following are some of the criteria to be considered while making changes to the default settings:
@@ -1092,7 +1092,7 @@ you must do that before you complete the steps on the Complete Install panel. Fo
 the <a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a> topic.
 After that, the Edit Network dialogs are read-only. Once the install process is triggered, no changes can be made. If you want to make changes, 
 you need to start over by re-installing the HP Cloud OS for Moonshot Administration node. 
-For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
+For procedural instructions, see <a href="/cloudos/moonshot/install/">Install and Configure Your Cloud</a>.
 </p>
 
 The following table describes the Edit Network dialog UI elements:
@@ -1206,7 +1206,7 @@ you must do that before you complete the steps on the Complete Install panel. Fo
 the <a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a> topic.
 After that, the Edit Address Ranges dialogs are read-only. Once the install process is triggered, no changes can be made. If you want to make changes, 
 you need to start over by re-installing the HP Cloud OS for Moonshot Administration node. 
-For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
+For procedural instructions, see <a href="/cloudos/moonshot/install/">Install and Configure Your Cloud</a>.
 </p>
 
 The following table describes the Edit Network dialog UI elements:
@@ -1278,7 +1278,7 @@ you must do that before you complete the steps on the Complete Install panel. Fo
 the <a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a> topic.
 After that, the Edit Address Ranges dialogs are read-only. Once the install process is triggered, no changes can be made. If you want to make changes, 
 you need to start over by re-installing the HP Cloud OS for Moonshot Administration node. 
-For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
+For procedural instructions, see <a href="/cloudos/moonshot/install/">Install and Configure Your Cloud</a>.
 </p>
 
 The following table describes the admin network type address range default UI elements: 
@@ -1336,7 +1336,7 @@ you must do that before you complete the steps on the Complete Install panel. Fo
 the <a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a> topic.
 After that, the Edit Address Ranges dialogs are read-only. Once the install process is triggered, no changes can be made. If you want to make changes, 
 you need to start over by re-installing the HP Cloud OS for Moonshot Administration node. 
-For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
+For procedural instructions, see <a href="/cloudos/moonshot/install/">Install and Configure Your Cloud</a>.
 </p>
 
 The following table describes the os_sdn network type address range default UI elements: 
@@ -1393,7 +1393,7 @@ you must do that before you complete the steps on the Complete Install panel. Fo
 the <a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a> topic.
 After that, the Edit Address Ranges dialogs are read-only. Once the install process is triggered, no changes can be made. If you want to make changes, 
 you need to start over by re-installing the HP Cloud OS for Moonshot Administration node. 
-For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
+For procedural instructions, see <a href="/cloudos/moonshot/install/">Install and Configure Your Cloud</a>.
 </p>
 
 The following table describes the public  network type address range default UI elements: 
@@ -1450,7 +1450,7 @@ successful. Clicking <b>Cancel</b> will not trigger the validation step. Identif
 while the networks are editable. Once the install process is triggered by the 
 <a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>, this button disappears and no 
 changes can be made. If you want to make changes, you need to start over by re-installing the HP Cloud OS for Moonshot Administration node. 
-For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
+For procedural instructions, see <a href="/cloudos/moonshot/install/">Install and Configure Your Cloud</a>.
 </p>
 
 The following table describes the Create Network dialog UI elements:
@@ -1588,7 +1588,7 @@ When the install is complete, the Operational Dashboard displays the Cloud tab (
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Caution:</b> Be sure the values for the 
 Prerequisites, Server Types, Connections and Networks are what you need, before you start the install process. Once the install process is triggered, 
 no changes can be made. If you want to make changes, you need to start over by re-installing the HP Cloud OS for Moonshot Administration node. 
-For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
+For procedural instructions, see <a href="/cloudos/moonshot/install/">Install and Configure Your Cloud</a>.
 </p>
 
 ### Complete Install Page

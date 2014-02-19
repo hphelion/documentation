@@ -31,7 +31,7 @@ The Settings tab contains the following panels:
 
 * [About](#about) 
 
-For procedural instructions, see [Install and Configure Your Cloud](/cloudos/install/).
+For procedural instructions, see [Install and Configure Your Cloud](/cloudos/moonshot/install/).
 
 ## User Settings
 

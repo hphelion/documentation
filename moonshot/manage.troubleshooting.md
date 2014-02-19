@@ -177,7 +177,7 @@ This section describes the following known problems and solutions for the Operat
 2.	Before setting up the Admin Node, be sure to power down all participating nodes that were running controller and compute roles.
 3.	After the Admin Node is set up, you must use the PXE boot process to power up the participating nodes.
 
-See [Install &amp; Configure Your Cloud](/cloudos/install) for complete instructions. If the nodes boot to the original operating system that was set up with the earlier Admin Node, the boot process will cause irreparable damage to the Admin Node and the entire process will need to be restarted.
+See [Install &amp; Configure Your Cloud](/cloudos/moonshot/install) for complete instructions. If the nodes boot to the original operating system that was set up with the earlier Admin Node, the boot process will cause irreparable damage to the Admin Node and the entire process will need to be restarted.
 
 ### Problem: Create new router fails
 

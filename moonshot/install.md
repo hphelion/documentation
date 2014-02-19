@@ -44,12 +44,14 @@ After you install and set up the Admin node, you can perform additional steps:
 * [Check the HP Cloud OS License](/cloudos/moonshot/install/license/)
 * [Updates and Extensions](/cloudos/moonshot/install/updates-and-extensions/)
 
+<!--
 Finally, if you do not intend to use the wizard-based Cloud OS installation process that's described in 
 the Create a Cloud topic, and instead decide to apply and configure the install modules yourself (for **advanced** users only), 
 see these topics: 
 
 * [Advanced Cloud Setup](/cloudos/moonshot/install/advanced-cloud-setup/)
 * [Install Modules Reference](/cloudos/moonshot/install/install-modules-reference/)
+--> 
 
 **Note:** Also see the Help topics that are available in the Operational Dashboard and Administration Dashboard.  Website copies are available:
 

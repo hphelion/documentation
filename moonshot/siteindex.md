@@ -29,12 +29,13 @@ PageRefresh();
 
 #### [Prepare: Getting Started with HP Cloud OS for Moonshot](/cloudos/moonshot/prepare/)
 
-* [HP Cloud OS for Moonshot Release Notes](/cloudos/moonshot/prepare/releasenotes/) 
-* [HP Cloud OS for Moonshot Support Matrix](/cloudos/moonshot/prepare/supportmatrix/) 
+* [Release Notes](/cloudos/moonshot/prepare/releasenotes/) 
+* [Support Matrix](/cloudos/moonshot/prepare/supportmatrix/) 
 * [Video Tutorials](/cloudos/moonshot/prepare/videos/) 
 * [FAQs](/cloudos/moonshot/prepare/faqs/)  
 * [Technical Overview](/cloudos/moonshot/prepare/overview/)  
 * [Glossary](/cloudos/moonshot/prepare/glossary/)
+* [How to order and license HP Cloud OS for Moonshot](/cloudos/moonshot/prepare/order-license/)
 
 #### [Install &amp; Configure Your Cloud](/cloudos/moonshot/install/)
 
