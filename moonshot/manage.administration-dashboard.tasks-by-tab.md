@@ -1830,7 +1830,7 @@ To create a resource pool:
 
 <li> <i>Optional</i>: In the <b>Provider Details</b> section, enter a Project ID, User Domain Name, Project Domain Name, User Name, and Password. Enter the password again in <b>Confirm Password</b> to validate.
 <ul>
-<li> If you are using a local (on premise service), such as HP Cloud OS, you do not need an account on that service to create and edit resource pools. </li> 
+<li> If you are using a local (on premise service), such as HP Cloud OS for Moonshot, you do not need an account on that service to create and edit resource pools. </li> 
 <li> If you are using a remote service, such as HP Cloud or Rackspace, you must have an account on that cloud provider's system to create and edit resource pools.  </li> 
 <li> If you create a resource pool that requires credentials, the Administration Dashboard validates them when you create a resource pool, instead of when you first use the resource pool.  </li> 
 </ul>

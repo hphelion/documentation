@@ -52,7 +52,7 @@ provide the customer with choice, confidence and consistency.
 confidently build, operate, and consume IT across private, hybrid, and public clouds, based on a core set of principles. 
 HP delivers customers the industry's only hybrid cloud strategy and solution portfolio with:  
 
-* Choice
+> * Choice
   * In delivery model (private, managed, public, and traditional IT)
   * In platform (Microsoft, VMware, Linux) and support for heterogeneous environments
   * In a global partner ecosystem (independent software vendors, system integrators, outsourcers, and service providers)
@@ -81,7 +81,7 @@ economics of an open source approach. It enables easier deployment, application 
 
 > HP Cloud OS for Moonshot includes Ubuntu 12.04LTS, KVM hypervisor, hardened, curated, and supported OpenStack distribution, a number of value-added services, and miscellaneous software packaged as an ISO for an easy deployment. The key technology components of HP Cloud OS for Moonshot are:
 
-* Internal OpenStack distribution by HP
+> * Internal OpenStack distribution by HP
 * HP installer
 * Automated patch and OpenStack release management capability
 * Standards-based infrastructure and application modeling capability

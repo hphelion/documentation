@@ -21,7 +21,7 @@ PageRefresh();
 
 # HP Cloud OS for Moonshot Video Tutorials
 
-To help you learn about HP Cloud OS, we have provided a set of videos tutorials. Enjoy! These same videos are hosted on the HewlettPackardVideos channel of YouTube.
+To help you learn about HP Cloud OS for Moonshot, we have provided a set of videos tutorials. Enjoy! These same videos are hosted on the HewlettPackardVideos channel of YouTube.
 
 * [HP and OpenStack](#hp-and-openstack)
 
@@ -39,7 +39,7 @@ Here are a few videos that highlight the relationship between HP and OpenStack.
 
 <iframe style="border: 1px solid gray;" width="400" height="225" src="//www.youtube.com/embed/m28Xvif8uwI" frameborder="0" allowfullscreen> </iframe>
 
-HP Converged Cloud delivers choice, confidence, and consistency. Learn how HP Cloud OS, as part of the HP Converged Cloud portfolio, leverages OpenStack to enable workload portability, simplified installation, and enhanced service lifecycle management.
+HP Converged Cloud delivers choice, confidence, and consistency. Learn how HP Cloud OS for Moonshot, as part of the HP Converged Cloud portfolio, leverages OpenStack to enable workload portability, simplified installation, and enhanced service lifecycle management.
 
 
 ### HP Cloud Coffee Talk - HP history with OpenStack
@@ -64,7 +64,7 @@ The following video tutorials walk you through the HP Cloud OS for Moonshot feat
 
 <iframe style="border: 1px solid gray;" width="400" height="225" src="//www.youtube.com/embed/NriyVYHqYQk?rel=0" frameborder="0" allowfullscreen> </iframe>
 
-In this video with HP Product Manager Hari Kannan, we learn about the benefits of HP's Moonshot servers with HP Cloud OS, providing simplified provisioning and management for specific cloud workloads.
+In this video with HP Product Manager Hari Kannan, we learn about the benefits of HP's Moonshot servers with HP Cloud OS for Moonshot, providing simplified provisioning and management for specific cloud workloads.
 
 
 ### Converged Cloud: HP Cloud OS for Moonshot Whiteboard Demo

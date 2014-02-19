@@ -41,7 +41,7 @@ but not the other, referential integrity is broken.
 
 As an example, a user entity may be associated with various resources in the system-projects, templates, key pairs, security groups, 
 and so on. If the user represents an employee who has left the organization, and that user is removed in the Administration Dashboard, 
-the data representing the user is marked for deletion in HP Cloud OS, but it is important that the data not be removed from the 
+the data representing the user is marked for deletion in HP Cloud OS for Moonshot, but it is important that the data not be removed from the 
 database until the associated data can be removed with the Clean-up Utility.
 
 The HP Cloud OS for Moonshot Clean-up Utility addresses referential integrity issues by running a number of tasks that are offered as 

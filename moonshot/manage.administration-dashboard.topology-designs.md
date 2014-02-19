@@ -1017,7 +1017,7 @@ In addition to using the contextual menu outlined below, you can delete using th
 **Concepts:**
 
 When you create a topology design, the properties you set for the nodes become the default configuration for the design. 
-Within HP Cloud OS, this original configuration displays as the Default Profile in the Provisioning > Deployment Profiles area. 
+Within HP Cloud OS for Moonshot, this original configuration displays as the Default Profile in the Provisioning > Deployment Profiles area. 
 Profiles provide a way to override the default configuration by allowing you to set different values for node properties such as 
 flavors, machine images, or keypairs. Profiles create an association to a binding document. Profiles are optional and are not required 
 in order to publish a design. For more information, see [How to Publish or Unpublish a Topology Design](#how-to-publish-or-unpublish-a-topology-design).

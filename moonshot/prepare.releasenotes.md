@@ -24,11 +24,11 @@ PageRefresh();
 
 This topic provides information about the HP Cloud OS for Moonshot 1.0 release.
 
-* [New and Updated in HP Cloud OS for Moonshot N.NN](#features)
-* [Recommendations for HP Cloud OS for Moonshot N.NN](#recommendations)
+* [New in HP Cloud OS for Moonshot 1.0](#features)
+* [Recommendations for HP Cloud OS for Moonshot 1.0](#recommendations)
 * [For Further Information](#for-further-information)
 
-##New and Updated in HP Cloud OS for Moonshot 1.0## {#features}
+##New in HP Cloud OS for Moonshot 1.0## {#features}
 
 ( list )
 
@@ -60,7 +60,7 @@ The following are known issues for HP Cloud OS for Moonshot 1.0.
 
 ##For Further Information## {#for-further-information}
 
-For additional related information on HP Cloud OS:
+For additional related information on HP Cloud OS for Moonshot:
 
 * [HP Cloud OS for Moonshot Documentation web site](/cloudos/moonshot/): Provides the topics listed in this section, including ... ( summarize ) 
 
@@ -76,7 +76,7 @@ and the Administration Dashboard (used to create and manage cloud resources).
 
 When you are ready to install HP Cloud OS for Moonshot, see [Install & Configure Your Cloud](/cloudos/moonshot/install/).
 
-###Legal Notices and Disclaimer for Experimental Software### {#legal-notices-disclaimer}
+###Legal Notices and Disclaimer### {#legal-notices-disclaimer}
 
 See the [HP Cloud OS for Moonshot Open Source and Third-Party Software License Agreements](/cloudos/moonshot/os-3rd-party-license-agreements/).
 

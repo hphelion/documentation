@@ -34,7 +34,7 @@ Before you can start working in the HP Cloud OS for Moonshot Operational Dashboa
 For the simplest deployment, a cloud environment requires a Cloud Administration Node (Admin Node), a Cloud Controller Node, and a set of Compute Node(s). You may need support from your IT
 Administrator to correctly capture information about your environment.
 
-You need to determine the type of cloud you want to create for your organization: private, public, or hybrid. With HP Cloud OS, you can create private or hybrid clouds. You can create public clouds with HP Public Cloud. 
+You need to determine the type of cloud you want to create for your organization: private, public, or hybrid. With HP Cloud OS for Moonshot, you can create private or hybrid clouds. You can create public clouds with HP Public Cloud. 
 See the [Introduction to Cloud Types](/cloudos/moonshot/prepare/cloudtypes/). 
 
 Based on the type of cloud you intend to create, you can determine the requirements for the server, network, and storage infrastructures 
