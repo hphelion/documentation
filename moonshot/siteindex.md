@@ -25,7 +25,7 @@ PageRefresh();
 
 #### [Connect on the HP Cloud Community Forum](/cloudos/moonshot/community/)
 
-#### [HP Cloud OS for Moonshot Open Source and Third-Party Software License Agreements](/cloudos/moonshot/os-3rd-party-license-agreements/)
+#### [Open Source and Third-Party Software License Agreements](/cloudos/moonshot/os-3rd-party-license-agreements/)
 
 #### [Prepare: Getting Started with HP Cloud OS for Moonshot](/cloudos/moonshot/prepare/)
 

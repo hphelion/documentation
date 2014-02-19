@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Cloud OS for Moonshot Open Source and Third-Party Software License Agreements"
+title: "Open Source and Third-Party Software License Agreements"
 permalink: /cloudos/moonshot/os-3rd-party-license-agreements/
 product: moonshot
 
@@ -22,11 +22,11 @@ PageRefresh();
 
 # HP Cloud OS for Moonshot Open Source and Third-Party Software License Agreements
 
-Document Release Date: December 2013 <br />
-Software Release Date: December 2013
+Document Release Date: February 2014 <br />
+Software Release Date: February 2014
 
 * [Legal Notices](#legal-notices)
-* [Disclaimer for Experimental Software](#disclaimer-for-experimental-software)
+* [Disclaimer](#disclaimer)
 * [Open Source Licenses](#open-source-licenses)
   * [ANTLR License](#antlr-license)
   * [ANTLR 2 License](#antlr-2-license)
@@ -81,13 +81,13 @@ commercial license.
 
 ### Copyright Notice
 
-Hewlett-Packard Company Confidential &copy; Copyright 2012-2013 Hewlett-Packard Development Company, L.P.
+Hewlett-Packard Company Confidential &copy; Copyright 2012-2014 Hewlett-Packard Development Company, L.P.
 
 ### Trademark Notices
 
 Adobe &#174; is a trademark of Adobe Systems Incorporated.
 
-## Disclaimer for Experimental Software
+## Disclaimer
 
 ### Warranty
 
@@ -96,8 +96,10 @@ accompanying such products and services. Nothing herein should be construed as c
 warranty. HP shall not be liable for technical or editorial errors or omissions contained herein.
 The information contained herein is subject to change without notice.
 
-HP Cloud OS for Moonshot is experimental and is provided as a courtesy, free of charge, "AS-IS" by Hewlett-Packard 
+<!--
+HP Cloud OS is experimental and is provided as a courtesy, free of charge, "AS-IS" by Hewlett-Packard 
 Company ("HP"). HP shall have no obligation to maintain or support this software. 
+--> 
 
 HP MAKES NO EXPRESS OR IMPLIED WARRANTY OF ANY KIND REGARDING THIS SOFTWARE INCLUDING ANY 
 WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE OR NON-
