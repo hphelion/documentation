@@ -7,18 +7,26 @@ categories: neutron
 tags: networking neutron vpn
 
 ---
-# HP Cloud Networking: Just Another Quick start guide 
+# HP Cloud Networking: Quick start guide 
 
 HP Cloud Networking is a virtual networking service that provides network connectivity and addressing for HP Cloud compute devices. It is based on OpenStack Networking open source software. 
 
-#####A default configuration comes with HP Cloud compute activation and includes:
+
+## Overview ## {#top}
+
+This guide provides the information you will need to get started in setting up a 
+
+<img src="media/HPCS-VPC-VPN-SingleSite-Connection-Layer3-new-novendor.jpg" width="600" alt="Basic VPN setup" />
+
+**NOTE:**  This guide assumes a "left" case with the "right" case being the hardware.  
+
+
+A default configuration comes with HP Cloud compute activation and includes:
 
 * A network 
 * A subnet
 * A router connecting the subnets to the Internet
 * A security group with basic server options
-
-__Use as is or customize__ 
 
 You can use the default network to deploy HP Cloud compute virtual servers, or modify the network configuration through the OpenStack Networking API.  Use the command line or the HP Cloud management console's (MC) easy-to-use interface to customize.
  
@@ -29,18 +37,7 @@ HP Cloud Networking expands networking capabilities, allowing you to perform man
 * Defining security group parameters
 * Allocating and managing public floating IP addresses
 
-
-
-## Overview ## {#top}
-
-This guide provides the information you will need to get started in setting up a VPN that connects your local network to your Virtual Private Cloud (VPC) located in the HP Cloud.  In this guide, you create two instances--one as an example to use and the other as a gateway.
-
-<img src="media/HPCS-VPC-VPN-SingleSite-Connection-Layer3-new-novendor.jpg" width="600" alt="Basic VPN setup" />
-
-**NOTE:**  This guide assumes a "left" case with the "right" case being the hardware.  
-
-
-
+See [Customizing your Configuration](#customize).
 
 ### Audience ### {#audience}
 This guide is designed for those in the following or similar roles:   
@@ -60,24 +57,28 @@ To use this solution effectively, you should be familiar with
 
 ### Key Terms ### {#terms}
 
-__Floating IP Addresses__: On-demand, public IP addresses on a network. With HP Cloud, you can allocate several floating IP addresses and assign them to virtual servers. 
+**Floating IP Addresses**: On-demand, public IP addresses on a network. With HP Cloud, you can allocate several floating IP addresses and assign them to virtual servers. 
 
-__Network__: Allows you to define network connectivity and addressing in the Cloud, providing "networking as a service" between interface devices managed by other HP Public Cloud, such as compute. 
+**Network**: Allows you to define network connectivity and addressing in the Cloud, providing "networking as a service" between interface devices managed by other HP Public Cloud, such as compute. 
 
-__Port__: A connection point for attaching a single device, such as a virtual server's NIC, to a virtual network.  The port describes the associated network configuration, such as the MAC and IP addresses to be used by the attached device.
+**Port**: A connection point for attaching a single device, such as a virtual server's NIC, to a virtual network.  The port describes the associated network configuration, such as the MAC and IP addresses to be used by the attached device.
 
-__Router__: A device that forwards data packets along networks. 
+**Router**: A device that forwards data packets along networks. 
 
-__Security Groups and Security Group Rules__: Security groups and security group rules allow you to specify the type of traffic and direction (inbound/outbound) that is allowed to pass through a port. A security group is a container for security group rules.
+**Security Groups and Security Group Rules**: Security groups and security group rules allow you to specify the type of traffic and direction (inbound/outbound) that is allowed to pass through a port. A security group is a container for security group rules.
 
 When a port is created in HP Cloud Networking it is associated with a security group. If a security group is not specified the port is associated with a default security group. Security group default rules allow inbound traffic from the same subnet and all outbound traffic. You can add rules to this group to modify behavior. 
 
-__Subnet__: Contains IP address blocks that assign IP addresses to virtual servers. In addition, a subnet can have a gateway, a list of DNS name servers, and host routes. Information provided by DHCP is pushed to servers with interfaces associated with the subnet.
+**Subnet**: Contains IP address blocks that assign IP addresses to virtual servers. In addition, a subnet can have a gateway, a list of DNS name servers, and host routes. Information provided by DHCP is pushed to servers with interfaces associated with the subnet.
 
 back to the [top](#top)
 
+### Activate the compute service in HP Cloud ### {#compute}
 
-##Customizing your Configuration##
+If you have not previously created an account and activated the compute service please sign up at [http://hpcloud.com](http://hpcloud.com).  Once you activate the compute service, you need to install the [compute](https://docs.hpcloud.com/api/v13/compute/) and [networking](https://docs.hpcloud.com/api/v13/networking/) clients or the [CLI](http://docs.hpcloud.com/cli/unix/network). Make sure you activate a compute instance in HP Cloud version 13.5 to access the networking and VPN capabilities.
+
+
+##Customizing your Configuration## {#customize}
 
 You can use the default network or customize the default network using either the HP Cloud Networking API or the HP Cloud Management Console. Customizing a network enables you to manage the networks your virtual servers connect to.
 
@@ -89,9 +90,6 @@ HP Cloud Networking expands networking capabilities, allowing you to perform man
 - Configuring security group parameters that define the firewall rules for virtual servers
 - Allocating and managing public floating IP addresses
 - Viewing network and router details
-
-## Quick start guide ## {#quickstart}
-
 
 In this guide we use these parameters:
 
@@ -106,9 +104,6 @@ $VM_GATEWAY = address of the VPN VM gateway (e.g., 10.2.0.21)
 
 For more details on the Nova and Neutron commands please see the [HP Cloud Networking](https://docs.hpcloud.com/api/v13/networking/) and [Compute](https://docs.hpcloud.com/api/v13/compute/) API specifications.
 
-### Activate the compute service in HP Cloud ### {#compute}
-
-If you have not previously created an account and activated the compute service please sign up at [http://hpcloud.com](http://hpcloud.com).  Once you activate the compute service, you need to install the [compute](https://docs.hpcloud.com/api/v13/compute/) and [networking](https://docs.hpcloud.com/api/v13/networking/) clients or the [CLI](http://docs.hpcloud.com/cli/unix/network). Make sure you activate a compute instance in HP Cloud version 13.5 to access the networking and VPN capabilities.
 
 You might need to modify the default network or create additional networks.  This page gives you some how-to's to use the [Horizon Cloud Console](#console) or [HP Cloud CLI for Windows PowerShell](#powershell) to perform the following tasks:  
 
@@ -142,7 +137,7 @@ You might need to modify the default network or create additional networks.  Thi
 
 ##Before you begin## {#Overview}
 
-Before you can enable or disable networks, you must:
+Before you can enable networks, you must:
 
 * [Sign up for an HP Cloud compute account](https://account.hpcloud.com/signup)
 * Activate compute service on your account
@@ -153,13 +148,14 @@ Before you can enable or disable networks, you must:
 You can use the Horizon Cloud Console to perform the following tasks:
 
 - [Enable a network](#Enabling)
-- [Disable a network](#Disabling)
-- [Delete a network](#Deleting)
+- [Create a port]
+- [Create a floating IP address]
+- [Create a router]
+- [Create a security group]
+- [Create a security group rule
 - [Specify an IP address](#SpecifyIP)
-- [Rename a network](#RenameNet)
-- [Edit a sub-net](#EditSub)
-- [Rename a port](#RenamePort)
 - [Assign a router to a network](#AssignRouter)
+
 
 All of the procedures in this section require that you access the Networks or Routers tab in the Project section of the Horizon Cloud Console, <a name="NetworkTab">as shown</a>:
 
