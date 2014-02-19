@@ -14,10 +14,7 @@ Welcome! HP Moonshot hardware servers are designed and tailored for specific wor
 complex IT demands right from cloud based applications to Social Media, Big Data and Mobility. Building on this requirement, <nobr><b>HP Cloud OS for Moonshot</b></nobr> software 
 enables you to efficiently create and run cloud environments using Moonshot servers. 
 
-<!-- <img src="media/moonshot-server-hardware.jpg" title="Moonshot server" /> --> 
-
-This HP Cloud OS for Moonshot section of the documentation site builds on the [HP Cloud OS documentation](/cloudos/) by providing topics that are customized 
-specifically for Moonshot customers. Read the following categorized topics to learn about HP Cloud OS for Moonshot:
+Read the following categorized topics to learn about HP Cloud OS for Moonshot:
 
 1. <a href="/cloudos/moonshot/prepare/">Prepare</a> &mdash; Topics to help you get started: video tutorials &amp; more
 2. <a href="/cloudos/moonshot/install/">Install</a> &mdash; Instructions to install &amp; configure your cloud
@@ -35,11 +32,11 @@ specifically for Moonshot customers. Read the following categorized topics to le
 </tr>
 </table>
 
-
-
 ## HP Moonshot System
 
 For related information, see the [HP Moonshot System](http://www.hp.com/go/moonshot) topics on hp.com.
+
+<img src="media/cloudos-moonshot-system.png" title="HP Moonshot System" />
 
 <!-- Note: Cloud OS blue = #1796D3 --> 
 
