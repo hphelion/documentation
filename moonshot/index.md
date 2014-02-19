@@ -34,9 +34,8 @@ Read the following categorized topics to learn about HP Cloud OS for Moonshot:
 
 ## HP Moonshot System
 
-For related information, see the [HP Moonshot System](http://www.hp.com/go/moonshot) topics on hp.com.
-
-<img src="media/cloudos-moonshot-system.png" title="HP Moonshot System" />
+For related information, see the <a href="http://www.hp.com/go/moonshot" target="moonshot-system">HP Moonshot System</a> topics on hp.com. 
+<a href="http://www.hp.com/go/moonshot" target="moonshot-system"><img src="media/cloudos-moonshot-system.png" align="left" title="HP Moonshot System" /></a>
 
 <!-- Note: Cloud OS blue = #1796D3 --> 
 
