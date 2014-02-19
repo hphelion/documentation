@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Cloud OS for Moonshot Support Matrix"
+title: "HP Cloud OS for Moonshot: Platform and Software Support Matrix"
 permalink: /cloudos/moonshot/prepare/supportmatrix/
 product: moonshot
 
@@ -19,190 +19,232 @@ PageRefresh();
 
 <p style="font-size: small;"> <a href="/cloudos/moonshot/prepare/releasenotes">&#9664; PREV</a> | <a href="/cloudos/moonshot/">&#9650; UP</a> | NEXT &#9654; </p>
 
-# HP Cloud OS for Moonshot Support Matrix
+# HP Cloud OS for Moonshot: Supported Hardware and Software
 
-This document provides an overview of the HP Cloud OS for Moonshot supported hardware and software. 
+This document is an overview of the supported hardware and software for the HP Cloud OS for Moonshot Version 1.0, including information for setting up your hardware and software. For the performance and stability of the HP Cloud OS for Moonshot environment, it is important for you to meet the minimum recommendations for memory, processors, and disk space for each of the components.
 
-* [Server Infrastructure](#server-infrastructure)
+In the following sections, we list the minimum recommendations for memory, processors and disk space for each component when you are creating an HP Cloud OS for Moonshot environment. 
 
-  * [Prerequisites](#prerequisites)
+**Note:** Be sure to reference the appropriate platform support matrix for each component product before you install.
 
-  * [Minimum Recommendations](#minimum-recommendations)
 
-  * [Supported Deployment Scenarios](#supported-deployment-scenarios)
+* [Server Infrastructure](#server)
+* [Hypervisor recommendations](#hypervisor)
+* [HP Cloud for Moonshot node requirements](#nodereq)
+* [Moonshot chassis firmware version](#firmware)
+* [Moonshot cartridges supported](#cartridges)
+* [Operating systems supported ](#ossupp)
+* [Workloads supported](#workloads)
+* [Supported deployment scenario](#deployment)
+* [Software requirements](#software)
 
-* [Software Requirements](#software-requirements)
+## Server infrastructure {#server}
+We recommend your server contains the following:
 
-## Server Infrastructure
+* Quad Core Processor with a minimum 76 GB of RAM
+* Hard disk drive with a minimum of 500 GB of space
 
-For the performance and stability of the HP Cloud OS for Moonshot environment, it is very important to meet the minimum recommendations for memory, 
-processors, and disk space for each of the components in the table below. Before installation, please reference the appropriate platform support matrix for each component product.
+## Hypervisor recommendations {#hypervisor}
+<table style="text-align: left; vertical-align: top; min-width: 400px;">
 
-### Prerequisites
+<tr style="background-color: #C8C8C8;">
+<th>Hypervisor</th>
+<th>Version</th>
+</tr>
+<tr style="background-color: white; color: black;">
+<td>KVM</td>
+<td>qemu-kvm1.0 and above</td>
+</tr>		  
+<tr style="background-color: white; color: black;">
+<td>VMWare</td>
+<td>ESXi 5.1 and above</td>
+</tr>
+</table>
 
-Ubuntu Server 12.04 LTS installation media + security updates.
-
-### Minimum Recommendations
-
+## HP Cloud for Moonshot node requirements {#nodereq}
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
 
 <tr style="background-color: #C8C8C8;">
 <th>Node Type</th>
-<th>Virtual / Physical Node</th>
+<th>Virtual?</th>
 <th>CPU Cores</th>
 <th>Memory</th>
 <th>Internal Storage</th>
 <th>NICs</th>
 <th>OS (included as part of ISO)</th>
+<th>Virtualized Platforms Supported</th>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> Admin Node </td>
-<td> Virtual Only </td>
-<td> 4 * </td>
-<td> 16 GB * </td>
-<td> 20 GB </td>
+<td>Admin Node</td>
+<td>Yes</td>
+<td> 4 </td>
+<td> 12 GB </td>
+<td> 40 GB </td>
 <td> 2 </td>
 <td> Ubuntu Server 12.04 LTS (64-bit) </td>
+<td>VMWare ESXi 5.1 and above and KVM qemu-kvm-1.0 and above</td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> Controller Node </td>
-<td> Virtual and Physical </td>
+<td>Controller Node</td>
+<td>Yes</td>
 <td> 4 </td>
 <td> 32 GB </td>
 <td> 60 GB </td>
-<td> 1 ** </td>
+<td> 3 </td>
 <td> Ubuntu Server 12.04 LTS (64-bit) </td>
-</tr>		
+<td>VMWare ESXi 5.1 and above and KVM qemu-kvm-1.0 and above</td>
+</tr>
 
 <tr style="background-color: white; color: black;">
-<td> Compute Node </td>
-<td> Physical Only </td>
-<td> 4 *** </td>
+<td>Baremetal Host</td>
+<td>Yes</td>
+<td> 4 </td>
 <td> 32 GB </td>
 <td> 60 GB </td>
-<td> 1 </td>
-<td> Ubuntu Server running KVM hypervisor 12.04 LTS (64-bit) </td>
-</tr>			
-
-<tr style="background-color: white; color: black;">
-<td> Swift Controller (Ring, Proxy, Dispersion) </td>
-<td> Virtual or Physical </td>
-<td> 8 </td>
-<td> 12 GB </td>
-<td> 20 GB </td>
 <td> 3 </td>
 <td> Ubuntu Server 12.04 LTS (64-bit) </td>
-</tr>	   
-
-<tr style="background-color: white; color: black;">
-<td> Storage Node </td>
-<td> Virtual or Physical </td>
-<td> 8 </td>
-<td> 12 GB </td>
-<td> 60 GB </td>
-<td> 3 </td>
-<td> Ubuntu Server 12.04 LTS (64-bit) </td>
-</tr>	   
-
-</table>
-
-\* For the Admin Node, the CPU and memory should be dedicated to this VM and not shared with other virtual machines on the same KVM host.
-
-\*\* External Internet connection required for public or hybrid cloud.
-
-\*\*\* Intel or AMD hardware virtualization support required. The CPU cores and memory requirements must be sized based 
-on the VM instances hosted by the compute node.
-
-
-### Supported Deployment Scenarios
-
-The diagrams in this section illustrate the deployment scenarios supported in HP Cloud OS for Moonshot.
-
-##### Diagram 1: Single Region. All controllers in a single virtual machine. Compute node is bare metal.
-
-<img src="media/cloudos-single-region1.jpg" title="HP Cloud OS for Moonshot Single Region. All controllers in a single virtual machine. Compute node is bare metal." />
-
-##### Diagram 2: Multi-region. All controllers in virtual machines.
-
-<img src="media/cloudos-multi-region2.jpg" title="HP Cloud OS for Moonshot Multi-region. All controllers in virtual machines." />
-
-##### Diagram 3: Single region. Controllers are in separate virtual machines.
-
-<img src="media/cloudos-single-region-controllers-vm3.jpg" title="HP Cloud OS for Moonshot Single region. Controllers are in separate virtual machines." />
-
-##### Diagram 4: Single region. All controllers in a single bare metal server. 
-
-<img src="media/cloudos-single-region-controllers-baremetal4.jpg" title="HP Cloud OS for Moonshot Single region. All controllers in a single bare metal server." />
-
-##### Diagram 5: Supported Swift (Object Store) deployment scenario  
-
-<img src="media/cloudos-swift-storage5.jpg" title="HP Cloud OS for Moonshot Swift storage for all deployment scenarios." />
-
-## Hardware Requirements
-
-<table style="text-align: left; vertical-align: top; min-width: 600px;">
-
-<tr style="background-color: #C8C8C8;">
-<th> HP </th>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> ProLiant DL360p Gen8 </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> ProLiant DL380p Gen7 </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> BladeSystem c7000 - ProLiant BL490c Gen6 </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> BladeSystem c7000 - ProLiant BL490c Gen7 </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> BladeSystem c7000 - ProLiant BL460c Gen8 </td>
-</tr>
-
-<tr style="background-color: #C8C8C8;">
-<th> Dell </th>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Dell R620CTL </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> M100E - PowerEdge M620 </td>
-</tr>
-
-<tr style="background-color: #C8C8C8;">
-<th> IBM </th>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> IBM x3550 M4 CTL </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> BladeCenter S -  IBM Blade Center HS23 </td>
-</tr>
+<td>VMWare ESXi 5.1 and above and KVM qemu-kvm-1.0 and above</td>
+</tr>	
 
 </table>
 
 
-## Software Requirements 
+## Moonshot chassis firmware version {#firmware}
+<table style="text-align: left; vertical-align: top; min-width: 400px;">
 
-Refer to [Install &amp; Configure Your Cloud](/cloudos/moonshot/install/) for a complete list of installation prerequisites and requirements, plus step-by-step instructions.
+<tr style="background-color: #C8C8C8;">
+<th>Software / Firmware</th>
+<th>Version</th>
+</tr>
+<tr style="background-color: white; color: black;">
+<td>m300 BIOS</td>
+<td>H02 2013.11.13</td>
+</tr>		  
+<tr style="background-color: white; color: black;">
+<td>ProLiant Moonshot Cartridge BIOS</td>
+<td>H01 2013.11.15</td>
+</tr>
+<tr style="background-color: white; color: black;">
+<td>iLO CM</td>
+<td>1.11</td></tr>
+<tr style="background-color: white; color: black;">
+<td>Satellite FW</td>
+<td>2013.10.18</td>
+</tr>
+<tr style="background-color: white; color: black;">
+<td>Carbondale 8</td>
+<td>4.3</td>
+</tr>
+<tr style="background-color: white; color: black;">
+<td>Switch FastPath FW</td>
+<td>2.0.0.13</td>
+</tr>
+<tr style="background-color: white; color: black;">
+<td>CMU</td>
+<td>7.2</td>
+</tr>
+<tr style="background-color: white; color: black;">
+<td>Moonshot Windows Deployment Packs</td>
+<td>2013.12.1</td>
+</tr>
+</table>
+
+## Moonshot cartridges supported {#cartridges}
+<table style="text-align: left; vertical-align: top; min-width: 400px;">
+
+<tr style="background-color: #C8C8C8;">
+<th>Cartridge Type</th>
+<th>CPU Cores</th>
+<th>Memory</th>
+<th>Internal Storage</th>
+</tr>
+<tr style="background-color: white; color: black;">
+<td>HP ProLiant Moonshot Server Cartridge</td>
+<td>2</td>
+<td>8 GB</td>
+<td>500 GB or 1 TB</td>
+</tr>		  
+<tr style="background-color: white; color: black;">
+<td>HP ProLiant m300 Server Cartridge</td>
+<td>2</td>
+<td>32 GB (4x8 GB)</td>
+<td>240 GB, 500 GB or 1 TB</td>
+</tr>
+</table>
+
+**Note:** You must have an IPMI driver version 2.0 or above and an external internet connection if you are using a public or hybrid cloud.
+
+## Operating systems supported {#ossupp}
+<table style="text-align: left; vertical-align: top; min-width: 400px;">
+
+<tr style="background-color: #C8C8C8;">
+<th>Cartridge Type</th>
+<th>OS / Version Supported</th>
+</tr>
+<tr style="background-color: white; color: black;">
+<td>HP ProLiant Moonshot Server Cartridge</td>
+<td>Ubuntu 12.04 LTS <b>OR</b> Redhat Enterprise Linux 6.4</td>
+</tr>		  
+<tr style="background-color: white; color: black;">
+<td>HP ProLiant m300 Server Cartridge</td>
+<td>Ubuntu 13.10 <b>OR</b> Redhat Enterprise Linux 6.5</td>
+</tr>
+</table>
+
+
+## Workloads supported {#workloads}
+<table style="text-align: left; vertical-align: top; min-width: 400px;">
+
+<tr style="background-color: #C8C8C8;">
+<th>Cartridge Type</th>
+<th>Top Workloads</th>
+<th>Relative Performance to 2P Xeon</th>
+</tr>
+<tr style="background-color: white; color: black;">
+<td>HP ProLiant Moonshot Server Cartridge</td>
+<td>Static web</td>
+<td>Apache 1.7 <br />
+NGINX 1.5
+</td>
+</tr>		  
+
+<TR style="background-color: white; color: black;">
+<TD rowspan="4">HP ProLiant m300 Server Cartridge</TD>
+<TD>Static web</TD>
+<TD>Apache-1.0 and NGINX -1.0</TD>
+</TR>
+
+<TR>
+<TD>Caching/dynamic web</td>
+<td>MemcacheD – 1.2</TD>
+</TR>
+<TR>
+<TD>NoSQL</TD>
+<td>Cassandra/MongoDB – 5.0</td>
+</TR>
+<TR>
+<TD>Analytics</TD>
+<td>Hadoop HiBench – 4.3</td>
+</TR>
+</table>
+
+
+## Supported deployment scenario {#deployment}
+The HP Cloud OS for Moonshot deployment includes single admin, controller and compute host. 
+
+<img src="media/moonshot-deployment.png"></img>
+
+
+## Software Requirements {#software}
+
+Refer to the [HP Cloud OS for Moonshot Installation Guide](/cloudos/moonshot/install/) for a complete list of installation prerequisites and requirements, plus step-by-step instructions.
 
 <table style="text-align: left; vertical-align: top; min-width: 600px;">
 
 <tr style="background-color: #C8C8C8;">
-<th> HP Cloud OS for Moonshot Platforms </th>
+<th> HP Cloud OS 1.0 Platforms </th>
 <th> Supported Versions </th>
 </tr>
 
@@ -258,17 +300,17 @@ Refer to [Install &amp; Configure Your Cloud](/cloudos/moonshot/install/) for a 
 
 <tr style="background-color: white; color: black;">
 <td style="padding-left: 40px;"> Internet Explorer </td>
-<td> 10 </td>
+<td> 9.0 or higher </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td style="padding-left: 40px;"> Firefox </td>
-<td> 25 and above </td>
+<td> 17 </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td style="padding-left: 40px;"> Chrome </td>
-<td> 30 and above </td>
+<td> 26 </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -277,7 +319,7 @@ Refer to [Install &amp; Configure Your Cloud](/cloudos/moonshot/install/) for a 
 
 <tr style="background-color: white; color: black;">
 <td style="padding-left: 40px;"> OpenStack release </td>
-<td> Grizzly 2013.1.4 </td>
+<td> Grizzly 2013.1.3 </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -285,120 +327,98 @@ Refer to [Install &amp; Configure Your Cloud](/cloudos/moonshot/install/) for a 
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td style="padding-left: 40px; font-weight: bold;"> Cinder </td>
-<td> Grizzly 2013.1.4 </td>
+<td style="padding-left: 40px;"> Cinder </td>
+<td> Grizzly 2013.1.3 </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td style="padding-left: 60px;"> Cinder plugin: LVM-iSCSI </td>
-<td> Grizzly 2013.1.4 </td>
+<td style="padding-left: 40px;"> Glance </td>
+<td> Grizzly 2013.1.3 </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td style="padding-left: 40px; font-weight: bold;"> Glance </td>
-<td> Grizzly 2013.1.4 </td>
+<td style="padding-left: 60px;"> Plugin: Filesystem Persistence </td>
+<td> Grizzly 2013.1.3 </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td style="padding-left: 60px;"> Glance plugin: Filesystem Persistence </td>
-<td> Grizzly 2013.1.4 </td>
+<td style="padding-left: 40px;"> Keystone </td>
+<td> Grizzly 2013.1.3 </td>
+</tr>
+
+
+<tr style="background-color: white; color: black;">
+<td style="padding-left: 40px;"> Nova </td>
+<td> Grizzly 2013.1.3 </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td style="padding-left: 40px; font-weight: bold;"> Keystone </td>
-<td> Grizzly 2013.1.4 </td>
+<td style="padding-left: 60px;"> Plug-in: Baremetal </td>
+<td> Grizzly 2013.1.3 </td>
+</tr>
+<tr style="background-color: white; color: black;">
+<td style="padding-left: 40px;"> Quantum (Neutron) </td>
+<td> Grizzly 2013.1.3 </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td style="padding-left: 60px;"> Keystone plugin: Database Store </td>
-<td> Grizzly 2013.1.4 </td>
+<td style="padding-left: 60px;"> Plugin: Open vSwitch </td>
+<td> Grizzly 2013.1.3 </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td style="padding-left: 40px; font-weight: bold;"> Nova </td>
-<td> Grizzly 2013.1.4 </td>
+<td style="padding-left: 40px;"> Horizon </td>
+<td> Grizzly 2013.1.3 </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td style="padding-left: 60px;"> Nova plugin: KVM </td>
-<td> Grizzly 2013.1.4 </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td style="padding-left: 40px; font-weight: bold;"> Quantum (Neutron) </td>
-<td> Grizzly 2013.1.4 </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td style="padding-left: 60px;"> Quantum (Neutron) plugin: Open vSwitch </td>
-<td> Grizzly 2013.1.4 </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td style="padding-left: 40px; font-weight: bold;"> Horizon </td>
-<td> Grizzly 2013.1.4 </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td style="padding-left: 60px;"> Python </td>
+<td style="padding-left: 40px;"> Python </td>
 <td> 2.6, 2.7 </td>
 </tr>
 
-<tr style="background-color: white; color: black;">
-<td style="padding-left: 40px; font-weight: bold;"> Swift </td>
-<td> Grizzly 2013.1.4 </td>
-</tr>
 
 <tr style="background-color: white; color: black;">
 <td style="font-weight: bold; background-color: #F8F8F8;" colspan="2"> Base </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td style="padding-left: 40px; font-weight: bold;"> Graffiti </td>
-<td> HP Cloud OS for Moonshot 1.20 </td>
+<td style="padding-left: 40px;"> Graffiti </td>
+<td> HP Cloud OS for Moonshot 1.0 </td>
 </tr>
 
+
 <tr style="background-color: white; color: black;">
-<td style="padding-left: 40px; font-weight: bold;"> Eve </td>
-<td> HP Cloud OS for Moonshot 1.20 </td>
+<td style="padding-left: 40px;"> Eve </td>
+<td> HP Cloud OS for Moonshot 1.0 </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td style="padding-left: 60px;"> Plug-in: CouchDB 1.2.0 Persistence <br /> Plug-in: MongoDB 2.2 Persistence </td>
-<td> HP Cloud OS for Moonshot 1.20 </td>
+<td> HP Cloud OS for Moonshot 1.0 </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td style="padding-left: 40px; font-weight: bold;"> Focus </td>
-<td> HP Cloud OS for Moonshot 1.20 </td>
+<td style="padding-left: 40px;"> Focus </td>
+<td> HP Cloud OS for Moonshot 1.0 </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td style="padding-left: 60px;"> Plug-in: FileSystem Persistence </td>
-<td> HP Cloud OS for Moonshot 1.20 </td>
+<td> HP Cloud OS for Moonshot 1.0 </td>
 </tr>
-
-<!--
 <tr style="background-color: white; color: black;">
-<td style="padding-left: 40px; font-weight:bold;"> HP Cloud OS for Moonshot Administration Dashboard </td>
-<td> HP Cloud OS for Moonshot 1.20 </td>
+<td style="padding-left: 40px;"> Skyline </td>
+<td> HP Cloud OS for Moonshot 1.0 </td>
 </tr>
--->
 
 <tr style="background-color: white; color: black;">
 <td style="font-weight: bold; background-color: #F8F8F8;" colspan="2"> Deployment </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td style="padding-left: 40px;"> HP Cloud OS for Moonshot Operational Dashboard </td>
-<td> HP Cloud OS for Moonshot 1.20 </td>
+<td style="padding-left: 40px;"> Cosmos </td>
+<td> HP Cloud OS for Moonshot 1.0 </td>
 </tr>
-
-<tr style="background-color: white; color: black;">
-<td style="padding-left: 40px;"> HP Cloud OS for Moonshot Installation Dashboard </td>
-<td> HP Cloud OS for Moonshot 1.20 </td>
-</tr>
-
 <tr style="background-color: white; color: black;">
 <td style="padding-left: 40px;"> Crowbar </td>
 <td> 1.4 </td>
@@ -414,17 +434,17 @@ Refer to [Install &amp; Configure Your Cloud](/cloudos/moonshot/install/) for a 
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td style="font-weight: bold; background-color: #F8F8F8;" colspan="2"> Supported Hypervisors for hosting Admin node </td>
+<td style="font-weight: bold; background-color: #F8F8F8;" colspan="2"> Supported Hypervisors for hosting nodes </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td style="padding-left: 40px;"> KVM <br/> QEMU <br/> ESXi (Admin node only) </td>
-<td> Ubuntu 12.04 LTS (64-bit) <br/> Ubuntu 12.04 LTS (64-bit) </td>
+<td style="padding-left: 40px;"> KVM </td>
+<td> Ubuntu 12.04 LTS (64-bit) </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td style="font-weight: bold; background-color: #F8F8F8;"> Cloud Providers </td>
-<td> HP Cloud Compute Service v12.12 </td>
+<td style="padding-left: 40px;"> VMWare ESX </td>
+<td> ESXi 5.1 or above </td>
 </tr>
 
 </table>
