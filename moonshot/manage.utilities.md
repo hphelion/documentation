@@ -92,8 +92,7 @@ Nagios is used to run the HP Cloud OS for Moonshot Clean-up Utility.
 Note: In addition to the Clean-up Utility, other services that reside on the Cloud Controller and Compute Controller 
 can be monitored using Nagios. 
 
-1.	Access the Nagios dashboard (http://192.168.124.10/nagios3/). **Note:** In the current release, the dashboards use pre-defined login credentials. These are not published in the web-hosted documentation. To get the pre-defined login credentials, refer to the readme file included in the same ZIP that contained the HP Cloud OS for Moonshot ISO. 
-If you have not already done so, see the ZIP on the <a href="https://cloudos.hpwsportal.com" target="codn">HP Cloud OS for Moonshot Distribution Network</a>. 
+1.	Access the Nagios dashboard (https://192.168.124.10/nagios3/).  Login with the admin username and password that you defined after you launched the HP Cloud OS for Moonshot ISO.
 
 2.	Click the Services link in the left panel of the Nagios web interface to see the cloud service checks and the other cloud services. 
 
