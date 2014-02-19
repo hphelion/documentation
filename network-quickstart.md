@@ -7,7 +7,7 @@ categories: neutron
 tags: networking neutron vpn
 
 ---
-# HP Cloud Networking: The Quick start guide 
+# HP Cloud Networking: Our Quick start guide 
 
 HP Cloud Networking is a virtual networking service that provides network connectivity and addressing for HP Cloud compute devices. It is based on OpenStack Networking open source software. 
 
