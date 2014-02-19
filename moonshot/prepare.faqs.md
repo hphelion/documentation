@@ -66,10 +66,13 @@ HP delivers customers the industry's only hybrid cloud strategy and solution por
 ## What is OpenStack?
 
 OpenStack is a cloud computing project aimed at providing an Infrastructure as a Service (IaaS). It is free and open-source software released under the terms of the Apache License. The project is managed by the OpenStack 
-Foundation, a non-profit corporate entity established in September 2012 to promote OpenStack software and its community. The technology consists of a series of interrelated projects that control pools of processing, storage, and networking 
-resources throughout a datacenter, all managed through a dashboard that gives administrators control while empowering its users to provision resources through a web interface.
+Foundation, a non-profit corporate entity established in September 2012 to promote OpenStack software and its community. 
+
+The technology consists of a series of interrelated projects that control pools of processing, storage, and networking resources throughout a datacenter, all managed through a dashboard that gives administrators control while empowering its users to provision resources through a web interface.
 
 ## What is HP Moonshot?
+
+HP Moonshot is the industry's first software-defined server where each cartridge is optimized to support specific classes of workloads.
 
 HP Moonshot delivers significant advantages over traditional cloud infrastructure hardware, meeting the business needs of the "New Style of IT." These benefits include:
 
@@ -80,8 +83,6 @@ HP Moonshot delivers significant advantages over traditional cloud infrastructur
 
 \* Based on HP internal analysis of HP Moonshot with ProLiant Moonshot Server Cartridges. <br /> 
 \*\* Based on HP internal estimates of total cost to operate HP Moonshot with ProLiant Moonshot Server Cartridges as compared to traditional servers.
-
-HP Moonshot is the industry's first software-defined server where each cartridge is optimized to support specific classes of workloads.
 
 ## What is HP Cloud OS for Moonshot?
 
