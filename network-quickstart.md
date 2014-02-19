@@ -7,7 +7,7 @@ categories: neutron
 tags: networking neutron vpn
 
 ---
-# HP Cloud Networking:  Quick start guide 
+# HP Cloud Networking: A Quick start guide 
 
 HP Cloud Networking is a virtual networking service that provides network connectivity and addressing for HP Cloud compute devices. It is based on OpenStack Networking open source software. 
 
@@ -107,7 +107,6 @@ $VM_GATEWAY = address of the VPN VM gateway (e.g., 10.2.0.21)
 For more details on the Nova and Neutron commands please see the [HP Cloud Networking](https://docs.hpcloud.com/api/v13/networking/) and [Compute](https://docs.hpcloud.com/api/v13/compute/) API specifications.
 
 ### Activate the compute service in HP Cloud ### {#compute}
-
 
 If you have not previously created an account and activated the compute service please sign up at [http://hpcloud.com](http://hpcloud.com).  Once you activate the compute service, you need to install the [compute](https://docs.hpcloud.com/api/v13/compute/) and [networking](https://docs.hpcloud.com/api/v13/networking/) clients or the [CLI](http://docs.hpcloud.com/cli/unix/network). Make sure you activate a compute instance in HP Cloud version 13.5 to access the networking and VPN capabilities.
 
