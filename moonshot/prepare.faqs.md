@@ -94,11 +94,10 @@ You can think of HP Cloud OS for Moonshot as a distribution of OpenStack that pr
 HP Cloud OS for Moonshot is targeted to meet the needs of enterprises who want to leverage OpenStack for rapid innovation, and the beneficial 
 economics of an open source approach. It enables easier deployment, application portability, and streamlined OpenStack patching and updates, among other features.   
 
-HP Cloud OS for Moonshot includes Ubuntu 12.04LTS, KVM hypervisor, hardened, curated, and supported OpenStack distribution, a number of value-added services, and miscellaneous software packaged as an ISO for an easy deployment. 
 The technology components of HP Cloud OS for Moonshot include:
 
 * OpenStack distribution by HP
-* HP installer to launch the product ISO
+* Operational and Administration dashboards based on Horizon, with additional HP functionality provided
 * Automated patch and OpenStack release management capability
 * Standards-based infrastructure and application modeling capability
 * Cloud platform monitoring
@@ -138,7 +137,7 @@ For enterprises who want to leverage OpenStack for rapid innovation and the bene
 
 HP Cloud OS for Moonshot provides the foundation for the HP Cloud common architecture enabling enterprise customers to accelerate hybrid delivery &amp; accelerate business outcomes.
 
-## Where can I order and license HP Cloud OS for Moonshot?
+## How do I order and license HP Cloud OS for Moonshot?
 
 For information, see [How to order and license HP Cloud OS for Moonshot](/cloudos/moonshot/prepare/order-license/).
 
