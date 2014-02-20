@@ -40,8 +40,8 @@ underlying [REST](#REST) API and JSON/XML formatting of the [request abstraction
 :    The Admin Node is a virtual machine that helps in the creation of your cloud, and the installation of all associated software components. The Admin Node 
 manages all other nodes. It assigns IP addresses to the nodes; PXE boots the nodes; configures the nodes; and provides the nodes the necessary software for their roles.
 		 
-###Administration Dashboard###
-:    The HP Cloud OS for Moonshot Administration Dashboard enables administrators to manage their cloud infrastructure. Tasks include launching instances, 
+###Administration Dashboard### {#Administration-Dashboard}
+:    The HP Cloud OS Administration Dashboard enables administrators to manage their cloud infrastructure. Tasks include launching instances, 
 uploading images, creating resource pools, and using designer tools to create topologies. See also [Operational Dashboard](#Operational-Dashboard), which is 
 used for the initial cloud installation, setup, configuration, and creation, before starting the Administration Dashboard. 
 		 
@@ -70,8 +70,12 @@ that their identity has been authenticated when making subsequent requests.
 ###Barclamp###
 :    Also known as an install module, defines the capability of a service or role to apply to individual hosts or a set of hosts. To deploy a barclamp, a proposal is created.
 
-###Baremetal Host###
-:    Refers to the machine that runs the nova-compute and nova-baremetal-deploy-helper services. The host functions like a hypervisor by providing power management and imaging services.
+###Baremetal Node###
+:    Also known as a Baremetal Host, refers to a physical machine that runs the nova-compute and nova-baremetal-deploy-helper services. The Baremetal Node is controlled by the compute host, and functions like a hypervisor by providing power management and imaging services.
+
+###Baseboard Management Controller (BMC)###
+:    The Baseboard Management Controller (BMC) is the intelligence in the Intelligent Platform Management Interface (IPMI) architecture. BMC is a specialized microcontroller 
+embedded on the motherboard of a server. The BMC manages the interface between system management software and platform hardware.
 
 ###Block storage###
 :     Information stored in raw form, with no consideration as to the type of information.
@@ -98,12 +102,16 @@ management effort or service provider interaction.
 
 ###Cloud Controller###
 :    A node that hosts software which controls your Infrastructure as Service (IaaS) cloud computing platform. Contains those services that are considered single services for a cloud environment, such as Keystone, Glance, Graffiti, Eve, and Focus, and define the boundaries of the cloud environment from an identity standpoint. 
-See also [Compute Region Controller](#Compute-Region-Controller), [Network Controller](#Network-Controller), and [Storage Controller](#Storage-Controller). 
+*See also* [Compute Region Controller](#Compute-Region-Controller), [Network Controller](#Network-Controller), and [Storage Controller](#Storage-Controller). 
+
+###Cloud OS Distribution Network (CODN)###
+:    A catalog-based Cloud OS service that allows off-the-shelf content (like workloads, images, and patches) to be imported into your deployed cloud. To access CODN, see the 
+Updates & Extensions panel in the HP Cloud OS Operational Dashboard or HP Cloud OS Administration Dashboard. You can import content from the CODN portal or from a local folder.
 
 ###Compute Node###
-:     Hosts the Cloud virtual machine instances using any supported hypervisor with OpenStack. In the current release, HP Cloud OS for Moonshot supports KVM (qemu-kvm) and VMware (ESXi) as hypervisors. The compute node hosts OpenStack services called Nova-compute and Neutron l2 agent. Multiple Compute Region Nodes can be created to expand cloud capacity.
+:     Hosts the Cloud virtual machine instances using any supported hypervisor with OpenStack. In the current release, HP Cloud OS supports KVM as hypervisor. The compute node hosts OpenStack services called Nova-compute and Neutron l2 agent. Multiple Compute Region Nodes can be created to expand cloud capacity.
 
-###Compute Region Controller###
+###Compute Region Controller### {#Compute-Region-Controller}
 :    Responsible for scheduling a launch of instances across compute nodes. You can have multiple compute regions in your cloud.  A compute region is 
 a pool of compute resources that can be consumed through a service API by consumers of the cloud, such as Nova. The scheduling is based on varied flavors 
 of instances and available resources on the compute nodes. In a single compute region deployment model, this can coexist with cloud controller services.
@@ -117,6 +125,9 @@ of instances and available resources on the compute nodes. In a single compute r
 ###Deprovisioning###
 :     Deallocating a cloud resource. See [Provisioning](#Provisioning).
 
+###Domain###
+:    A security grouping that provides context for the definition of projects, users, and roles. A domain is constructed by installing and naming a Keystone service. Keystone provides user authentication and tracks projects in a domain.
+
 ## E
 
 ###EC2###
@@ -128,7 +139,7 @@ of instances and available resources on the compute nodes. In a single compute r
 ## F
 
 ###Flavor### {#Flavor}
-:     A combination of disk space, memory (RAM), and usable CPU.
+:     The compute, memory, and storage capacity of Baremetal instances.
 
 ###Floating IP address###
 :     An on-demand, allocatable public IP address on a network. You can allocate a number of floating IP addresses up to the quota limit, and then assign them to server [instances](#Instance).
@@ -140,7 +151,7 @@ of instances and available resources on the compute nodes. In a single compute r
 
 ## G
 
-###Grafitti###
+###Graffiti###
 :     The HP Cloud OS Resource Pool Registry and Capability Tagging Service, providing a dictionary of the "capabilities" of all the resources in a cloud environment; a searchable directory to find cloud resources based on their capabilities; the mechanism for dynamic binding, allowing you to describe requirements rather than concrete bindings; and the base concepts of requirements and capabilities within TOSCA.
 
 ## H
@@ -153,16 +164,27 @@ portability, such as cloud bursting for load balancing between clouds.
 ## I
 
 ###Image### {#Image}
-:     1) An installable release package of a program, application, or software system.  2) A copy of a virtual server including the operating system information, system state, and application configurations.
+:    1) An installable release package of a program, application, or software system.  2) A copy of a virtual server including the operating system information, system state, and application configurations.
 
 ###Instance### {#Instance}
-:     A virtual machine or server in the cloud environment.
+:    A Baremetal instance that runs inside the cloud.
+
+<!--
+###Intelligent Platform Management Interface (IPMI)###
+:    A standardized computer system interface used by system administrators for out-of-band management of computer systems and monitoring of their operation. It is a way to manage a computer that may be powered off or otherwise unresponsive by using a network connection to the hardware rather than to an operating system or login shell.
+
+###IPMI Network###
+:    The network that connects the Baremetal host to the Intelligent Platform Management Interface (IPMI) of the Moonshot chassis.
+
+###IPMI/BMC Network###
+:    A defined network that the Intelligent Platform Management Interface (IPMI) tool calls to assign an IP address to the Baseboard Management Controller (BMC). 
+--> 
 
 ## J
 
 ###Job###
-:     A job is created when the user submits a desired topology to the HP Cloud OS Eve service API, and requests provisioning based on the topology. Eve creates the job, for which the 
-Eden Service API -frameworkthen publishes status updates. Once the provisioning is finished, the job is marked as completed.
+:     A job is created when the user submits a desired topology to the HP Cloud OS Eve service API, and requests provisioning based on the 
+topology. Eve creates the job, for which the Eden Service API framework then publishes status updates. Once the provisioning is finished, the job is marked as completed.
 
 ## K
 
@@ -187,11 +209,19 @@ provides transparency for the provider and the consumer of the utilized service.
 
 ## N
 
-###Network Controller### {#NetworkController}
-:     Contains Neutron's server, l3 agent and DHCP services. It is a single service in a cloud and can co-exist with cloud controller services.
+###Network Controller### {#Network-Controller}
+:     A node that manages the networks in the cloud. Contains Neutron's server, l3 agent and DHCP services. It is a single service in a cloud and can co-exist with cloud controller services.
 
 ###Node###
 :     A computing resource in a network. In other publications, sometimes called a machine.
+
+<!-- 
+###Nova Flat Network###
+:    The private network used for PXE booting the Moonshot cartridges, and enabling communication between the Moonshot cartridges, Baremetal host, and the cloud Network Controller.
+-->
+
+###Nova service###
+:    An OpenStack service to provide a cloud computing fabric controller, the main part of an Infrastructure as a Service (IaaS) system. Individuals and organizations can use Nova to host and manage their own cloud computing systems.
 
 ## O
 
@@ -202,24 +232,39 @@ as needed, automatically, without requiring human interaction with each service 
 ###OpenStack###
 :     An open-source cloud computing operating system.
 
-###Operational Dashboard###
-:    The HP Cloud OS for Moonshot Operational Dashboard is used to install, set up, configure, and stand up a cloud environment See also [Administration Dashboard](#Administration-Dashboard), which is 
+###Operational Dashboard### {#Operational-Dashboard}
+:    The HP Cloud OS Operational Dashboard is used to install, set up, configure, and stand up a cloud environment See also [Administration Dashboard](#Administration-Dashboard), which is 
 used to manage the cloud that you created. 
 
 ## P
+
+###Preboot Execution Environment (PXE) Booting### {#pxe}
+:    PXE is one of the components of Intel's Wired for Management (WfM) specification. It allows a machine to boot from a server on a network prior to booting the operating system on the local hard drive. For more, start on this <a href="http://en.wikipedia.org/wiki/Preboot_Execution_Environment" target="pxe">Wikipedia.org page</a>. 
 
 ###Private cloud###
 :     In a private cloud, the cloud infrastructure is provisioned for exclusive use by a single organization comprising multiple consumers, 
 such as business units.  The private cloud may be owned, managed and operated by the organization, a third party. or some combination, 
 and it may exist on or off the owner's premises.
 
-###Provisioning###
+###Project###
+:    A grouping that allows users within each group to view and use the same set of resources.
+
+###Proposal###
+:    A special configuration for an install module, which is also known as a barclamp. It includes Barclamp-specific settings, and a list of Baremetal hosts to which the proposal should be applied.
+
+###Provisioning### {#Provisioning}
 :    Allocating, auditing, and monitoring cloud resources for those who accesses and utilizes them. 
 
 ###Public cloud###
 :     In a public cloud,the cloud infrastructure is provisioned for open use by the general public.  It may be owned, managed and operated 
 by a business, academic, or government organization, or some combination.  It exists on the premises of the cloud provider.
 
+###Public network###
+:    Used for connecting devices that are external to the cloud infrastructure.
+
+###PXE###
+
+:    *See* [Preboot Execution Environment](#pxe).
 
 ## Q
 
@@ -229,6 +274,9 @@ by a business, academic, or government organization, or some combination.  It ex
 :     Rapid elasticity means capabilities can be provisioned and released, in some cases automatically, to scale rapidly outward and inward 
 commensurate with demand.  To the consumer, these capabilities available for provisioning often appear to be unlimited and can be 
 appropriated in any quantity at any time.
+
+###Region###
+:    A set of services, preferably across multiple hosts, to offer private cloud resources of compute and networking to self-service users of your cloud. A region provides a defined set of resources, such as topology templates, infrastructure designs, and services governed by a single HP Cloud OS Keystone identity service.
 
 ###Resource pooling###
 :     Resource pooling means the provider's computing resources are pooled to server multiple consumers using a 
@@ -244,19 +292,23 @@ country, state, or data center.  Examples of resources include storage, processi
 :     A coding layer that provides programming language-specific access to the underlying core code base REST API HTTP calls.  
 For example, instead of including a call to the REST API by using HTTP **verb** (GET), path (/flavors), format (?format=json), 
 and the other HTTP attributes, using the request layer you can simplify the call to `list_flavors()` (the specific call depends on the 
-details of your specific request layer syntax).  The request layer handles all HTTP request and response parsing and exception handling.  
-Also known as the **request layer**.
+details of your specific request layer syntax).  The request layer handles all HTTP request and response parsing and exception handling. Also known as the **request layer**.
 
 ###Role### {#Role}
 :     A personality that a user assumes when performing a specific set of operations. A role includes a set of rights and privileges. A user assuming that role inherits 
 those rights and privileges.  A token that is issued to a user includes the list of roles that user can assume. Services that are being called by that user determine 
 how they interpret the set of roles a user has and which operations or resources each roles grants access to.
 
+###Router IP###
+:    IP Address of the device that passes network traffic between two different IP addresses as well as subnets.
 
 ## S
 
 ###Server### {#Server}
 :     A compute instance that is created from a [flavor](#Flavor) combined with an [image](#Image).
+
+###Storage Controller### {#Storage-Controller}
+:    A node that enables the block storage service. Contains Cinder services that provide block storage and volume connectivity to launched instances. It is a single service in a cloud and can co-exist with Cloud Controller services. Block Storage is not supported currently.
 
 
 ## T
@@ -270,6 +322,11 @@ how they interpret the set of roles a user has and which operations or resources
 
 ###Token### {#Token}
 :    An arbitrary bit of text that is used to access resources. Each token has a scope which describes which resources are accessible with it. 
+
+
+###Topology and Orchestration Specification for Cloud Applications (TOSCA). 
+:    A framework used to build cloud topologies. For more, see the <a href="http://docs.oasis-open.org/tosca/TOSCA/v1.0/os/TOSCA-v1.0-os.html" target="tosca">TOSCA Specification</a>.
+
 
 ## U
 
