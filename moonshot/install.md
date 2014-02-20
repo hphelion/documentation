@@ -41,7 +41,7 @@ After you install and set up the Admin node, you can perform additional steps:
 * [Create a Cloud](/cloudos/moonshot/install/create-cloud/) 
 * [Create Compute Regions](/cloudos/moonshot/install/create-compute-regions/) 
 * [Enter or Update your License Key](/cloudos/moonshot/install/license/)
-* [Customize User Settings](/cloudos/moonshot/install/customize-user-settings)
+* [Customize User Settings](/cloudos/moonshot/install/customize-user-settings/)
 * [View Updates and Extensions](/cloudos/moonshot/install/updates-and-extensions/)
 * [Launch Administration Dashboard for Post-Deployment Tasks](/cloudos/moonshot/install/launch-admin-dashboard/)
 
