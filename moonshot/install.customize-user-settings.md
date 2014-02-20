@@ -22,7 +22,7 @@ PageRefresh();
 
 # Customize User Settings
 
-It's optional, but if desired you can customize the following user settings to suit your requirements. To change the settings, do the following:
+You can optionally customize the following user settings to suit your requirements.  
 
 1. In the Operational Dashboard, click the <b>Settings</b> link. It's near the upper right corner of the top banner.
 
@@ -32,7 +32,7 @@ It's optional, but if desired you can customize the following user settings to s
 
 4. From the <b>Language</b> drop-down list, select the appropriate language. For example: English.
 
-5.From the <b>Timezone</b> drop-down list, select the timezone. For example: UTC (Coordinated Universal Time).
+5. From the <b>Timezone</b> drop-down list, select the timezone. For example: UTC (Coordinated Universal Time).
 
 6. In the <b>Table Page Size</b> box, enter a number. For example, 20, meaning a maximum of 20 line items will be displayed at a given time.
 
@@ -44,9 +44,7 @@ when you need to troubleshoot, or save disk space with less detailed log files w
 
 ## Next Step
 
-Having completed the installation steps and created your cloud, you should now launch the Administration Dashboard to perform the initial set of 
-follow-up tasks for your cloud. The steps are designed to familiarize you with the Administration Dashboard, and also verify that your deployed cloud is 
-operating properly. See [Launch Administration Dashboard for Post-Deployment Tasks](/cloudos/moonshot/install/launch-admin-dashboard/). 
+Read the next topic, [View Updates and Extensions](/cloudos/moonshot/install/updates-and-extensions].  
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
