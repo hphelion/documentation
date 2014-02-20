@@ -17,6 +17,7 @@ PageRefresh();
 </script>
 
 
+
 <p style="font-size: small;"> <a href="/cloudos/moonshot/prepare/releasenotes">&#9664; PREV</a> | <a href="/cloudos/moonshot/">&#9650; UP</a> | NEXT &#9654; </p>
 
 # HP Cloud OS for Moonshot: Supported Hardware and Software
@@ -26,6 +27,7 @@ This document is an overview of the supported hardware and software for the HP C
 In the following sections, we list the minimum recommendations for memory, processors and disk space for each component when you are creating an HP Cloud OS for Moonshot environment. 
 
 **Note:** Be sure to reference the appropriate platform support matrix for each component product before you install.
+
 
 
 * [Server infrastructure](#server)
@@ -111,6 +113,7 @@ We recommend your server contains the following:
 </table>
 
 
+
 ## Moonshot chassis firmware version {#firmware}
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
 
@@ -194,6 +197,7 @@ We recommend your server contains the following:
 </table>
 
 
+
 ## Workloads supported {#workloads}
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
 
@@ -229,10 +233,12 @@ We recommend your server contains the following:
 </table>
 
 
+
 ## Supported deployment scenario {#deployment}
 The HP Cloud OS for Moonshot deployment includes one Admin node, one Controller node, and one Baremetal host. The following diagram depicts... 
 
 <img src="media/moonshot-deployment.png"></img>
+
 
 
 ## Software Requirements {#software}
@@ -345,6 +351,7 @@ Refer to the [HP Cloud OS for Moonshot Installation Guide](/cloudos/moonshot/ins
 </tr>
 
 
+
 <tr style="background-color: white; color: black;">
 <td style="padding-left: 40px;"> Nova </td>
 <td> Grizzly 2013.1.3 </td>
@@ -375,6 +382,7 @@ Refer to the [HP Cloud OS for Moonshot Installation Guide](/cloudos/moonshot/ins
 </tr>
 
 
+
 <tr style="background-color: white; color: black;">
 <td style="font-weight: bold; background-color: #F8F8F8;" colspan="2"> Base </td>
 </tr>
@@ -383,6 +391,7 @@ Refer to the [HP Cloud OS for Moonshot Installation Guide](/cloudos/moonshot/ins
 <td style="padding-left: 40px;"> Graffiti </td>
 <td> HP Cloud OS for Moonshot 1.0 </td>
 </tr>
+
 
 
 <tr style="background-color: white; color: black;">

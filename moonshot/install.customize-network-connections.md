@@ -28,7 +28,7 @@ This topic describes the steps to customize the network connections. These steps
 After that, the connections dialogs are read only. Once the install process is triggered, no changes can be made. If you want to make changes, 
 you need to start over by re-installing the Admin Node.  
 
-Based on the network infrastructure suggested in the "Plan the Infrastructure for a Cloud" section of [Before You Install](/cloudos/moonshot/install/before-you-install), 
+Based on the network infrastructure suggested in the "Plan the Infrastructure for a Cloud" section of [Important Tasks Before You Install](/cloudos/moonshot/install/before-you-install), 
 you must customize the Connections settings in the Connections view.
 
 After the enumeration of ports is consistent across all servers in the cloud, the Connections view defines those ports into a set of logical connections (interfaces) that will be used to eventually

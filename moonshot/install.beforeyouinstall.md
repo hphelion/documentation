@@ -20,7 +20,7 @@ PageRefresh();
 
 <p style="font-size: small;"> <a href="/cloudos/moonshot/install/overview/">&#9664; PREV</a> | <a href="/cloudos/moonshot/install/">&#9650; UP</a> | <a href="/cloudos/moonshot/install/admin-node-prerequisites/">NEXT &#9654;</a> </p>
 
-# Before You Install: Planning Tasks
+# Important Tasks Before You Install
 
 Before you can start working in the HP Cloud OS for Moonshot Operational Dashboard, you must:
 

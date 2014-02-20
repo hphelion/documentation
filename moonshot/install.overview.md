@@ -157,7 +157,7 @@ This node hosts OpenStack services called Nova-compute and Neutron l2 agent. Mul
 
 ## Next Step
 
-Proceed to the next topic, [Before You Install](/cloudos/moonshot/install/before-you-install/). 
+Proceed to the next topic, [Important Tasks Before You Install](/cloudos/moonshot/install/before-you-install/). 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
