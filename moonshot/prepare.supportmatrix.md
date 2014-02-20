@@ -28,7 +28,7 @@ In the following sections, we list the minimum recommendations for memory, proce
 **Note:** Be sure to reference the appropriate platform support matrix for each component product before you install.
 
 
-* [Server Infrastructure](#server)
+* [Server infrastructure](#server)
 * [Hypervisor recommendations](#hypervisor)
 * [HP Cloud for Moonshot node requirements](#nodereq)
 * [Moonshot chassis firmware version](#firmware)
@@ -41,7 +41,7 @@ In the following sections, we list the minimum recommendations for memory, proce
 ## Server infrastructure {#server}
 We recommend your server contains the following:
 
-* Quad Core Processor with a minimum 76 GB of RAM
+* Quad Core Processor
 * Hard disk drive with a minimum of 500 GB of space
 
 ## Hypervisor recommendations {#hypervisor}
@@ -83,7 +83,7 @@ We recommend your server contains the following:
 <td> 40 GB </td>
 <td> 2 </td>
 <td> Ubuntu Server 12.04 LTS (64-bit) </td>
-<td>VMWare ESXi 5.1 and above and KVM qemu-kvm-1.0 and above</td>
+<td>VMWare ESXi 5.1 and above <br /> KVM qemu-kvm-1.0 and above</td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -94,7 +94,7 @@ We recommend your server contains the following:
 <td> 60 GB </td>
 <td> 3 </td>
 <td> Ubuntu Server 12.04 LTS (64-bit) </td>
-<td>VMWare ESXi 5.1 and above and KVM qemu-kvm-1.0 and above</td>
+<td>VMWare ESXi 5.1 and above <br /> KVM qemu-kvm-1.0 and above</td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -105,7 +105,7 @@ We recommend your server contains the following:
 <td> 60 GB </td>
 <td> 3 </td>
 <td> Ubuntu Server 12.04 LTS (64-bit) </td>
-<td>VMWare ESXi 5.1 and above and KVM qemu-kvm-1.0 and above</td>
+<td>VMWare ESXi 5.1 and above <br /> KVM qemu-kvm-1.0 and above</td>
 </tr>	
 
 </table>
@@ -200,39 +200,37 @@ We recommend your server contains the following:
 <tr style="background-color: #C8C8C8;">
 <th>Cartridge Type</th>
 <th>Top Workloads</th>
-<th>Relative Performance to 2P Xeon</th>
+
 </tr>
 <tr style="background-color: white; color: black;">
 <td>HP ProLiant Moonshot Server Cartridge</td>
 <td>Static web</td>
-<td>Apache 1.7 <br />
-NGINX 1.5
-</td>
+
 </tr>		  
 
 <TR style="background-color: white; color: black;">
 <TD rowspan="4">HP ProLiant m300 Server Cartridge</TD>
 <TD>Static web</TD>
-<TD>Apache-1.0 and NGINX -1.0</TD>
+
 </TR>
 
 <TR>
 <TD>Caching/dynamic web</td>
-<td>MemcacheD – 1.2</TD>
+
 </TR>
 <TR>
 <TD>NoSQL</TD>
-<td>Cassandra/MongoDB – 5.0</td>
+
 </TR>
 <TR>
 <TD>Analytics</TD>
-<td>Hadoop HiBench – 4.3</td>
+
 </TR>
 </table>
 
 
 ## Supported deployment scenario {#deployment}
-The HP Cloud OS for Moonshot deployment includes single admin, controller and compute host. 
+The HP Cloud OS for Moonshot deployment includes one Admin node, one Controller node, and one Baremetal host. The following diagram depicts... 
 
 <img src="media/moonshot-deployment.png"></img>
 
@@ -300,7 +298,7 @@ Refer to the [HP Cloud OS for Moonshot Installation Guide](/cloudos/moonshot/ins
 
 <tr style="background-color: white; color: black;">
 <td style="padding-left: 40px;"> Internet Explorer </td>
-<td> 9.0 or higher </td>
+<td> 11.0 or higher </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
