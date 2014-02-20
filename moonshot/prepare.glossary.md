@@ -228,7 +228,7 @@ as needed, automatically, without requiring human interaction with each service 
 ###OpenStack###
 :     An open-source cloud computing operating system.
 
-###Operational Dashboard### {#Operational-Dashboard)
+###Operational Dashboard### {#Operational-Dashboard}
 :    The HP Cloud OS for Moonshot Operational Dashboard is used to install, set up, configure, and stand up a cloud environment See also [Administration Dashboard](#Administration-Dashboard), which is 
 used to manage the cloud that you created. 
 
