@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Check the HP Cloud OS for Moonshot License"
+title: "Enter or Update your License Key"
 permalink: /cloudos/moonshot/install/license/
 product: moonshot
 
@@ -20,16 +20,25 @@ PageRefresh();
 
 <p style="font-size: small;"> <a href="/cloudos/moonshot/install/launch-admin-dashboard/">&#9664; PREV</a> | <a href="/cloudos/moonshot/install/">&#9650; UP</a> | <a href="/cloudos/moonshot/install/hot-fixes/">NEXT &#9654;</a> </p>
 
-# Check the HP Cloud OS for Moonshot License
+# Enter or Update your License Key
 
 This topic describes the steps to review and update your HP Cloud OS for Moonshot license. 
 
 ## Introduction
 
-The HP Cloud OS for Moonshot Operational Dashboard and Administration Dashboard require a common, date-based HP Cloud OS for Moonshot license. From the time you first launch the Operational Dashboard, you have (by default) 90 days of use.  After 90 
-days, you may still open the Operational Dashboard and Administration Dashboard. However, until you renew the license, you cannot use any of the features such as managing updates or extensions to your deployed cloud. 
+The HP Cloud OS for Moonshot Operational Dashboard, and Administration Dashboard, require a common, date-based HP Cloud OS for Moonshot license.
 
-## Check Your License
+When you purchase HP Cloud OS for Moonshot, there are SKUs for one-year to three-year licenses. 
+
+If you have not already done so, you can order these in the same way you order other HP Server products (hardware or software) directly through HP or through an HP channel partner. After ordering, you will receive via email or printed letter a certificate that you will redeem at HP.com. When you go to HP.com, you will register for 
+support and receive a license key. You will be directed to the HP Software Depot website, where you can download the software.
+
+After completing the installation, follow the instructions in this topic to enter your license key in the HP Cloud OS for Moonshot 
+Operational Dashboard. 
+
+When your license expires, you will receive an informational message to purchase a new license key.  
+
+## Manage Your License
 
 After you have completed the Admin node installation in the Operational Dashboard:
 

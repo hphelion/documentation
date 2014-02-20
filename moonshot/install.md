@@ -30,9 +30,8 @@ a proper deployment of your cloud.
 Install and set up the Admin node:
 
 * [Installation Overview](/cloudos/moonshot/install/overview/)
-* [Before You Install](/cloudos/moonshot/install/before-you-install/)
+* [Before You Install: Planning Tasks](/cloudos/moonshot/install/before-you-install/)
 * [Set Admin Node Prerequisites (Required)](/cloudos/moonshot/install/admin-node-prerequisites/)
-* [Customize Server Types (Optional)](/cloudos/moonshot/install/customize-server-types/)
 * [Customize Network Connections (Optional)](/cloudos/moonshot/install/customize-network-connections/)
 * [Customize Network Settings (Required)](/cloudos/moonshot/install/customize-network-settings/)
 * [Complete Admin Node Installation (Required)](/cloudos/moonshot/install/complete-admin-node-installation/)
@@ -40,9 +39,11 @@ Install and set up the Admin node:
 After you install and set up the Admin node, you can perform additional steps:
 
 * [Create a Cloud](/cloudos/moonshot/install/create-cloud/) 
-* [Launch Administration Dashboard](/cloudos/moonshot/install/launch-admin-dashboard/)
-* [Check the HP Cloud OS License](/cloudos/moonshot/install/license/)
-* [Updates and Extensions](/cloudos/moonshot/install/updates-and-extensions/)
+* [Create Compute Regions](/cloudos/moonshot/install/create-compute-regions/) 
+* [Enter or Update your License Key](/cloudos/moonshot/install/license/)
+* [Customize User Settings](/cloudos/moonshot/install/customize-user-settings)
+* [View Updates and Extensions](/cloudos/moonshot/install/updates-and-extensions/)
+* [Launch Administration Dashboard for Post-Deployment Tasks](/cloudos/moonshot/install/launch-admin-dashboard/)
 
 <!--
 Finally, if you do not intend to use the wizard-based Cloud OS installation process that's described in 
@@ -53,7 +54,7 @@ see these topics:
 * [Install Modules Reference](/cloudos/moonshot/install/install-modules-reference/)
 --> 
 
-**Note:** Also see the Help topics that are available in the Operational Dashboard and Administration Dashboard.  Website copies are available:
+**Note:** Also see the Operational Dashboard and Administration Dashboard Help topics:
 
 * [HP Cloud OS for Moonshot Operational Dashboard Help](/cloudos/moonshot/manage/operational-dashboard/)
 * [HP Cloud OS for Moonshot Administration Dashboard Help](/cloudos/moonshot/manage/administration-dashboard/)

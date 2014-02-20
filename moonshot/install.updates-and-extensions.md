@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Updates and Extensions"
+title: "View Updates and Extensions"
 permalink: /cloudos/moonshot/install/updates-and-extensions/
 product: moonshot
 
@@ -18,11 +18,17 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> <a href="/cloudos/moonshot/install/hot-fixes/">&#9664; PREV</a> | <a href="/cloudos/moonshot/install/">&#9650; UP</a> | <a href="/cloudos/moonshot/install/advanced-cloud-setup/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/cloudos/moonshot/install/customize-user-settings/">&#9664; PREV</a> | <a href="/cloudos/moonshot/install/">&#9650; UP</a> | <a href="/cloudos/moonshot/install/advanced-cloud-setup/">NEXT &#9654;</a> </p>
 
-# Updates and Extensions
+# View Updates and Extensions
 
-This topic explains how to obtain patches and other relevant functionality from the HP Cloud OS for Moonshot Distribution Network (CODN).
+This topic explains how to obtain patches and other relevant functionality from the HP Cloud OS Distribution Network (CODN).
+
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Note:</b> The same <b>Updates and Extensions</b> 
+functionality is available in the HP Cloud OS for Moonshot Administration Dashboard.  For introductory information, you can read this topic, which is 
+presented in the Operational Dashboard context. However you can perform the steps later, if you want, in the Administration Dashboard. In most cases, 
+you will not need to take any action on this Updates and Extensions page in the Operational Dashboard, which is focused primarily on the initial 
+installation and configuration process.  <br /> <br /> See the [Next Step](#next-step) section to proceed to the topic that covers launching the Administration Dashboard and performing post-deployment tasks.</p>
 
 * [Configure and Download Steps](#configure-and-download-steps)
 * [Next Step](#next-step)
@@ -37,17 +43,22 @@ This topic explains how to obtain patches and other relevant functionality from 
 
 ## Configure and Download Steps
 
-1. From the Cloud tab in the Operational Dashboard, click the **Updates and Extensions** panel. If you are accessing this page for the first time, there is no data to display in the table.  **Note:** The Operational Dashboard displays a warning message indicating that your credentials are not configured or there is no active session with the CODN. A session may timeout after 20 minutes.
+1. From the Cloud tab in the Operational Dashboard, click the **Updates and Extensions** panel. If you are accessing this page for the first time, 
+there is no data to display in the table.  **Note:** The Operational Dashboard displays a warning message indicating that your credentials are not 
+configured or there is no active session with the CODN. A session may timeout after 20 minutes.
 
 2. Click the **Configure** button.
 
 3. On the Configure dialog, if you are using it for the first time, sign up for the CODN.
 
-4. After registering or logging in, you are returned to the Updates and Extensions panel. The Operational Dashboard presents the available downloads that are relevant to your HP Cloud OS for Moonshot environment.
+4. After registering or logging in, you are returned to the Updates and Extensions panel. The Operational Dashboard presents the available downloads 
+that are relevant to your HP Cloud OS for Moonshot environment.
 
 5. Click the **Download** button that is located next to an item you want to acquire.  
 
-6. Before installing an install module's hot fix, such as one labeled (for example) "Keystone Token Expiration Hotfix", verify that the install module you're about to update does exist for your cloud. To do this, access the HP Cloud OS for Moonshot Installation Dashboard. In Mozilla Firefox or Google Chrome, open https://192.168.124.10:3000. 
+6. Before installing an install module's hot fix, such as one labeled (for example) "Keystone Token Expiration Hotfix", verify that the install module 
+you're about to update does exist for your cloud. To do this, access the HP Cloud OS for Moonshot Installation Dashboard. In Mozilla Firefox or Google 
+Chrome, open https://192.168.124.10:3000. 
 
 7. In the Installation Dashboard, open the proposal for the hot fix by clicking the **Edit** button next to the listed item.   
 
@@ -55,10 +66,12 @@ This topic explains how to obtain patches and other relevant functionality from 
 
 9. To check on the progress of the installation, click **More > View Progress**.  
 
-10. Verify the patch installation. Once the job is in its completed state, reopen the patched proposal in the Installation Dashboard.  Click **Edit**. For example, you should see the name of the hot fix, such as 
-"Token-Expiration Hotfix Enabled." To apply the hot fix in your cloud, set its attribute Boolean value to **true**, click **Apply** and then **Save**.
+10. Verify the patch installation. Once the job is in its completed state, reopen the patched proposal in the Installation Dashboard.  
+Click **Edit**. For example, you should see the name of the hot fix, such as "Token-Expiration Hotfix Enabled." To apply the hot fix in your cloud, 
+set its attribute Boolean value to **true**, click **Apply** and then **Save**.
 
-New patches may be available periodically. Be sure to revisit the Updates and Extensions panel on a regular basis. 
+New patches may be available periodically. When you use the Administration Dashboard, be sure to revisit the Updates and Extensions panel on 
+a regular basis. 
 
 <!--
 ## Modify the CODN Runtime Configuration
@@ -247,7 +260,10 @@ If the service does not restart, check the codn.conf file for syntax errors.
 
 ## Next Step
 
-If you have not already done so, proceed to [Launch the Administration Dashboard](/cloudos/moonshot/install/launch-admin-dashboard).
+Having completed the installation steps, created your cloud, licensed the dashboards, and at least viewed Updated and Extensions and the CODN, 
+you should now launch the Administration Dashboard to perform a set of post-deployment tasks. The steps that we'll described are designed to familiarize 
+you with the Administration Dashboard, and also verify that your deployed cloud is operating properly. 
+See [Launch Administration Dashboard for Post-Deployment Tasks](/cloudos/moonshot/install/launch-admin-dashboard/). 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
