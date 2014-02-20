@@ -27,12 +27,24 @@ PageRefresh();
 ## A
 
 ###Abstraction layer### {#AbstractionLayer}
-:     A coding layer that provides an intermediary between a programmer and a more complex underlying base code set.  The abstraction layer simplifies the complexities of the 
+:    A coding layer that provides an intermediary between a programmer and a more complex underlying base code set.  The abstraction layer simplifies the complexities of the 
 underlying [REST](#REST) API and JSON/XML formatting of the [request abstraction](#RequestAbstraction) layer code. 
 
 ###ACL###
 :    Access control list; a list of permissions attached to an object.
 
+###Admin Network###
+:    Used for administrative functions such as Crowbar node installation, TFTP booting, DHCP assignments, KVM, system logs, backups, and other monitoring. 
+
+###Admin Node###
+:    The Admin Node is a virtual machine that helps in the creation of your cloud, and the installation of all associated software components. The Admin Node 
+manages all other nodes. It assigns IP addresses to the nodes; PXE boots the nodes; configures the nodes; and provides the nodes the necessary software for their roles.
+		 
+###Administration Dashboard###
+:    The HP Cloud OS for Moonshot Administration Dashboard enables administrators to manage their cloud infrastructure. Tasks include launching instances, 
+uploading images, creating resource pools, and using designer tools to create topologies. See also [Operational Dashboard](#Operational-Dashboard), which is 
+used for the initial cloud installation, setup, configuration, and creation, before starting the Administration Dashboard. 
+		 
 ###Allocation###
 :    Provisioning cloud resources.
 
@@ -54,6 +66,12 @@ that their identity has been authenticated when making subsequent requests.
 :     String which must be used for subsequent requests to other services.
 
 ## B
+
+###Barclamp###
+:    Also known as an install module, defines the capability of a service or role to apply to individual hosts or a set of hosts. To deploy a barclamp, a proposal is created.
+
+###Baremetal Host###
+:    Refers to the machine that runs the nova-compute and nova-baremetal-deploy-helper services. The host functions like a hypervisor by providing power management and imaging services.
 
 ###Block storage###
 :     Information stored in raw form, with no consideration as to the type of information.
@@ -77,6 +95,18 @@ and workstations.
 configurable computing resources.  These resources include networks, servers, storage, applications and services. 
 An advantage of cloud computing is that the resources can be provisioned or released rapidly, with minimal 
 management effort or service provider interaction.
+
+###Cloud Controller###
+:    A node that hosts software which controls your Infrastructure as Service (IaaS) cloud computing platform. Contains those services that are considered single services for a cloud environment, such as Keystone, Glance, Graffiti, Eve, and Focus, and define the boundaries of the cloud environment from an identity standpoint. 
+See also [Compute Region Controller](#Compute-Region-Controller), [Network Controller](#Network-Controller), and [Storage Controller](#Storage-Controller). 
+
+###Compute Node###
+:     Hosts the Cloud virtual machine instances using any supported hypervisor with OpenStack. In the current release, HP Cloud OS for Moonshot supports KVM (qemu-kvm) and VMware (ESXi) as hypervisors. The compute node hosts OpenStack services called Nova-compute and Neutron l2 agent. Multiple Compute Region Nodes can be created to expand cloud capacity.
+
+###Compute Region Controller###
+:    Responsible for scheduling a launch of instances across compute nodes. You can have multiple compute regions in your cloud.  A compute region is 
+a pool of compute resources that can be consumed through a service API by consumers of the cloud, such as Nova. The scheduling is based on varied flavors 
+of instances and available resources on the compute nodes. In a single compute region deployment model, this can coexist with cloud controller services.
 
 ###Credentials###
 :     Data that belongs to, is owned by, and generally only known by a user, which that user can present to prove their identity.
@@ -157,6 +187,9 @@ provides transparency for the provider and the consumer of the utilized service.
 
 ## N
 
+###Network Controller### {#NetworkController}
+:     Contains Neutron's server, l3 agent and DHCP services. It is a single service in a cloud and can co-exist with cloud controller services.
+
 ###Node###
 :     A computing resource in a network. In other publications, sometimes called a machine.
 
@@ -169,6 +202,9 @@ as needed, automatically, without requiring human interaction with each service 
 ###OpenStack###
 :     An open-source cloud computing operating system.
 
+###Operational Dashboard###
+:    The HP Cloud OS for Moonshot Operational Dashboard is used to install, set up, configure, and stand up a cloud environment See also [Administration Dashboard](#Administration-Dashboard), which is 
+used to manage the cloud that you created. 
 
 ## P
 
