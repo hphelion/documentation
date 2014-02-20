@@ -18,7 +18,7 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> <a href="/cloudos/moonshot/install/customize-server-types/">&#9664; PREV</a> | <a href="/cloudos/moonshot/install/">&#9650; UP</a> | <a href="/cloudos/moonshot/install/customize-network-settings/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/cloudos/moonshot/install/admin-node-prerequisites/">&#9664; PREV</a> | <a href="/cloudos/moonshot/install/">&#9650; UP</a> | <a href="/cloudos/moonshot/install/customize-network-settings/">NEXT &#9654;</a> </p>
 
 # Customize Network Connections (Optional)
 

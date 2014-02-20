@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Before You Install: Planning Tasks"
+title: "Important Tasks Before You Install"
 permalink: /cloudos/moonshot/install/before-you-install/
 product: moonshot
 

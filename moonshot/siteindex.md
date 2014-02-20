@@ -40,16 +40,17 @@ PageRefresh();
 #### [Install &amp; Configure Your Cloud](/cloudos/moonshot/install/)
 
 * [Installation Overview](/cloudos/moonshot/install/overview/)
-* [Before You Install](/cloudos/moonshot/install/before-you-install/)
+* [Important Tasks Before You Install](/cloudos/moonshot/install/before-you-install/)
 * [Set Admin Node Prerequisites (Required)](/cloudos/moonshot/install/admin-node-prerequisites/)
-* [Customize Server Types (Optional)](/cloudos/moonshot/install/customize-server-types/)
 * [Customize Network Connections (Optional)](/cloudos/moonshot/install/customize-network-connections/)
 * [Customize Network Settings (Required)](/cloudos/moonshot/install/customize-network-settings/)
 * [Complete Admin Node Installation (Required)](/cloudos/moonshot/install/complete-admin-node-installation/)
 * [Create a Cloud](/cloudos/moonshot/install/create-cloud/) 
-* [Launch Administration Dashboard](/cloudos/moonshot/install/launch-admin-dashboard/)
-* [Check the HP Cloud OS for Moonshot License](/cloudos/moonshot/install/license/)
-* [Updates and Extensions](/cloudos/moonshot/install/updates-and-extensions/)
+* [Create Compute Regions](/cloudos/moonshot/install/create-compute-regions/) 
+* [Enter or Update your License Key](/cloudos/moonshot/install/license/)
+* [Customize User Settings](/cloudos/moonshot/install/customize-user-settings)
+* [View Updates and Extensions](/cloudos/moonshot/install/updates-and-extensions/)
+* [Launch Administration Dashboard for Post-Deployment Tasks](/cloudos/moonshot/install/launch-admin-dashboard/)
 
 #### [Manage your Cloud](/cloudos/moonshot/manage/)
 
