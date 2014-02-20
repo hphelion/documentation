@@ -40,7 +40,7 @@ underlying [REST](#REST) API and JSON/XML formatting of the [request abstraction
 :    The Admin Node is a virtual machine that helps in the creation of your cloud, and the installation of all associated software components. The Admin Node 
 manages all other nodes. It assigns IP addresses to the nodes; PXE boots the nodes; configures the nodes; and provides the nodes the necessary software for their roles.
 		 
-###Administration Dashboard###
+###Administration Dashboard### {#Administration-Dashboard}
 :    The HP Cloud OS for Moonshot Administration Dashboard enables administrators to manage their cloud infrastructure. Tasks include launching instances, 
 uploading images, creating resource pools, and using designer tools to create topologies. See also [Operational Dashboard](#Operational-Dashboard), which is 
 used for the initial cloud installation, setup, configuration, and creation, before starting the Administration Dashboard. 
@@ -70,10 +70,8 @@ that their identity has been authenticated when making subsequent requests.
 ###Barclamp###
 :    Also known as an install module, defines the capability of a service or role to apply to individual hosts or a set of hosts. To deploy a barclamp, a proposal is created.
 
-###Baremetal Host###
-:    Also known as a Baremetal Node, refers to the machine that runs the nova-compute and nova-baremetal-deploy-helper services. The host functions like a hypervisor by providing power management and imaging services.
-
-Baremetal node refers to the physical machines which are controlled by the compute host. 
+###Baremetal Node###
+:    Also known as a Baremetal Host, refers to a physical machine that runs the nova-compute and nova-baremetal-deploy-helper services. The Baremetal Node is controlled by the compute host, and functions like a hypervisor by providing power management and imaging services.
 
 ###Baseboard Management Controller (BMC)###
 :    The Baseboard Management Controller (BMC) is the intelligence in the Intelligent Platform Management Interface (IPMI) architecture. BMC is a specialized microcontroller 
@@ -113,7 +111,7 @@ Updates & Extensions panel in the HP Cloud OS for Moonshot Operational Dashboard
 ###Compute Node###
 :     Hosts the Cloud virtual machine instances using any supported hypervisor with OpenStack. In the current release, HP Cloud OS for Moonshot supports KVM (qemu-kvm) and VMware (ESXi) as hypervisors. The compute node hosts OpenStack services called Nova-compute and Neutron l2 agent. Multiple Compute Region Nodes can be created to expand cloud capacity.
 
-###Compute Region Controller###
+###Compute Region Controller### {#Compute-Region-Controller}
 :    Responsible for scheduling a launch of instances across compute nodes. You can have multiple compute regions in your cloud.  A compute region is 
 a pool of compute resources that can be consumed through a service API by consumers of the cloud, such as Nova. The scheduling is based on varied flavors 
 of instances and available resources on the compute nodes. In a single compute region deployment model, this can coexist with cloud controller services.
@@ -168,17 +166,17 @@ portability, such as cloud bursting for load balancing between clouds.
 ###Image### {#Image}
 :    1) An installable release package of a program, application, or software system.  2) A copy of a virtual server including the operating system information, system state, and application configurations.
 
-###IPMI Network###
-:    The network that connects the Baremetal host to the Intelligent Platform Management Interface (IPMI) of the Moonshot chassis.
-
-###IPMI/BMC Network###
-:    A defined network that the Intelligent Platform Management Interface (IPMI) tool calls to assign an IP address to the Baseboard Management Controller (BMC). 
-
 ###Instance### {#Instance}
 :    A Baremetal instance that runs inside the cloud.
 
 ###Intelligent Platform Management Interface (IPMI)###
 :    A standardized computer system interface used by system administrators for out-of-band management of computer systems and monitoring of their operation. It is a way to manage a computer that may be powered off or otherwise unresponsive by using a network connection to the hardware rather than to an operating system or login shell.
+
+###IPMI Network###
+:    The network that connects the Baremetal host to the Intelligent Platform Management Interface (IPMI) of the Moonshot chassis.
+
+###IPMI/BMC Network###
+:    A defined network that the Intelligent Platform Management Interface (IPMI) tool calls to assign an IP address to the Baseboard Management Controller (BMC). 
 
 ## J
 
@@ -230,7 +228,7 @@ as needed, automatically, without requiring human interaction with each service 
 ###OpenStack###
 :     An open-source cloud computing operating system.
 
-###Operational Dashboard###
+###Operational Dashboard### {#Operational-Dashboard)
 :    The HP Cloud OS for Moonshot Operational Dashboard is used to install, set up, configure, and stand up a cloud environment See also [Administration Dashboard](#Administration-Dashboard), which is 
 used to manage the cloud that you created. 
 
@@ -250,7 +248,7 @@ and it may exist on or off the owner's premises.
 ###Proposal###
 :    A special configuration for an install module, which is also known as a barclamp. It includes Barclamp-specific settings, and a list of Baremetal hosts to which the proposal should be applied.
 
-###Provisioning###
+###Provisioning### {#Provisioning}
 :    Allocating, auditing, and monitoring cloud resources for those who accesses and utilizes them. 
 
 ###Public cloud###
@@ -290,8 +288,7 @@ country, state, or data center.  Examples of resources include storage, processi
 :     A coding layer that provides programming language-specific access to the underlying core code base REST API HTTP calls.  
 For example, instead of including a call to the REST API by using HTTP **verb** (GET), path (/flavors), format (?format=json), 
 and the other HTTP attributes, using the request layer you can simplify the call to `list_flavors()` (the specific call depends on the 
-details of your specific request layer syntax).  The request layer handles all HTTP request and response parsing and exception handling.  
-Also known as the **request layer**.
+details of your specific request layer syntax).  The request layer handles all HTTP request and response parsing and exception handling. Also known as the **request layer**.
 
 ###Role### {#Role}
 :     A personality that a user assumes when performing a specific set of operations. A role includes a set of rights and privileges. A user assuming that role inherits 
@@ -306,7 +303,7 @@ how they interpret the set of roles a user has and which operations or resources
 ###Server### {#Server}
 :     A compute instance that is created from a [flavor](#Flavor) combined with an [image](#Image).
 
-###Storage Controller###
+###Storage Controller### {#Storage-Controller}
 :    A node that enables the block storage service. Contains Cinder services that provide block storage and volume connectivity to launched instances. It is a single service in a cloud and can co-exist with Cloud Controller services. Block Storage is not supported currently.
 
 
