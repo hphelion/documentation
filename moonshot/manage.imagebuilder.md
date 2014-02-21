@@ -78,7 +78,7 @@ To create a disk image using the Disk Image Builder tool, follow the steps below
 
         To create a PXE image, use the following command:
 
-        `ramdisk-image-create -a amd64 –o pxe deploy`
+        <pre>ramdisk-image-create -a amd64 –o pxe deploy</pre>
 
 
         This creates two files: &lt;pxe>.initramfs and &lt;pxe>.kernel
