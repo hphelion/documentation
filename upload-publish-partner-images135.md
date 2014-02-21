@@ -218,8 +218,8 @@ You must ensure that all uploaded images meet the following requirements:
     * be configured to use DHCP for its primary network interface.
     * not have a MAC address tied to its primary network interface; an instance booted in the HP Cloud gets a random MAC address assigned by the HP Cloud infrastructure.
     * be self-contained; it should not be a multi-part image, e.g., one that references a separate ramdisk/kernel.
-* An image should:
     * be in the `qcow2` format
+* An image should:
     * support the x86_64 architecture; the HP Cloud supports the i686 architecture, but it is not as efficient.
 
 #### Linux requirements #### {#publishLinuxReqs}
