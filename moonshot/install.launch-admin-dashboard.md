@@ -321,7 +321,7 @@ The Single Chassis View also displays the Events log panel on the right.
 
 Example:
  
-<img src="media/moonshot-single-chassis-view-example.png" style="max-width:100%; max-height:100%;" title="Moonshot Single Chassis View example" />
+<img src="media/moonshot-single-chassis-view-example.png" height="95%" title="Moonshot Single Chassis View example" />
 
 ( Integrating the rest of the content from 2/21 to 2/23. )
 
