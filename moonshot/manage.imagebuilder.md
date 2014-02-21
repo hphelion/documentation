@@ -1,13 +1,27 @@
 ---
 layout: default
-title: "HP Cloud APIs"
-permalink:  /cloudos/moonshot/manage/image-builder/
+title: "HP Cloud OS for Moonshot: Building Images"
+permalink: /cloudos/moonshot/manage/image-builder/
+product: moonshot
 
 ---
 
-# HP Cloud OS for Moonshot: Image Builder # {#moon-image-builder}
+<script>
 
-Disk Image Builder is used to create customized images suitable to your environment. This document helps you use Disk Image Builder to create images for the HP Cloud OS for Moonshot.
+function PageRefresh {
+onLoad="window.refresh"
+}
+
+PageRefresh();
+
+</script>
+
+
+<p style="font-size: small;"> <a href="/cloudos/moonshot/prepare/releasenotes">&#9664; PREV</a> | <a href="/cloudos/moonshot/">&#9650; UP</a> | NEXT &#9654; </p>
+
+# HP Cloud OS for Moonshot: Building Images # {#moon-image-builder}
+
+Disk Image Builder is a tool used to create customized images suitable to your environment. This document helps you use Disk Image Builder to create images for the HP Cloud OS for Moonshot.
 
 * [Supported operating systems](#image-builder-os)
 * [About Disk Image Builder](#disk-image-builder)
