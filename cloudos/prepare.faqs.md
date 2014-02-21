@@ -149,7 +149,9 @@ Technology Preview section, provide your information, and download the ZIP packa
 In the current release, the dashboards use pre-defined login credentials. These are not published in the web-hosted documentation. After you download the ISO from the <a href="https://cloudos.hpwsportal.com" target="new"> HP Cloud OS Distribution Network</a>, look for the 
 readme file in the same ZIP that contains the ISO. The readme identifies the login credentials.
 
-<p style="font-size: small;">The OpenStack&#174; Word Mark is either a registered trademark/service mark or trademark/service mark of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.</p>
-
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
+
+<p style="font-size: small; border-top: dotted 1px #cccccc;">The OpenStack&#174; Word Mark is either a registered trademark/service mark or trademark/service mark of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.</p>
+
 
