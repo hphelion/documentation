@@ -230,7 +230,7 @@ We recommend your server contains the following:
 
 
 ## Supported deployment scenario {#deployment}
-A HP Cloud OS for Moonshot deployment includes one Admin node, one Controller node, and one Baremetal host. The following diagram depicts a simplified deployment scenario. 
+An HP Cloud OS for Moonshot deployment includes one Admin node, one Controller node, and one Baremetal host. The following diagram depicts a simplified deployment scenario. 
 
 <img src="media/moonshot-deployment.png"></img>
 
