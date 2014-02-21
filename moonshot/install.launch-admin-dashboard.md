@@ -96,7 +96,7 @@ The Administration Dashboard displays the <b>Kernel Image</b> drop-down list and
 
 </ol>
 
-Next, perform the steps in the following AKI, ARI, and QCOW2 sections.
+Next, perform the steps in the following AKI, ARI, and QCOW2-QEMU sections.
 
 ### To create an Amazon Kernel Image (AKI)
 
@@ -180,7 +180,7 @@ Next, perform the steps in the following AKI, ARI, and QCOW2 sections.
 
 
 
-### To create QCOW2
+### To create a QCOW2-QEMU Image
 
 <ol>
 
@@ -226,15 +226,19 @@ Next, perform the steps in the following AKI, ARI, and QCOW2 sections.
 
 ## Use a Provided Flavor
 
-Flavors are machine configurations that describe the amount of memory, number of CPUs, and ephemeral disk space available. The moment you register a chassis, a flavor is created by default. You can use the default flavor or create a flavor of your choice.
+Flavors are machine configurations that describe the amount of memory, number of CPUs, and ephemeral disk space available. When you register a chassis, a flavor is created by default. 
 
-The Administration Dashboard presents the following pre-defined flavors for HP Moonshot environments:
+The Administration Dashboard presents the following pre-defined flavors for HP Moonshot environments, depending on the chassis type:
 
-( list ) 
+* hp_moonshot_server
 
-Integrating more content Friday 2/21...
+* hp_moonshot_m300
 
+* hp_moonshot_m700
 
+As part of this initial post-deployment process, you do not need to create new flavors to verify the your cloud is operating properly.
+
+When you want to create new flavors, or edit existing ones, start in this topic of the Administration Dashboard Help: [How to Access Flavors and Flavor Extra Specs](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#how-to-access-flavors-and-flavor-extra-specs).
 
 ## Manage Moonshot Chassis
 
