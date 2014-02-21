@@ -37,7 +37,7 @@ The following operating systems are supported for image building:
 * Ubuntu version 12.04 LTS and above
 
 ## About Disk Image Builder ## {#disk-image-builder}
-Disk Image Builder is the tool that can be used for building and customizing images for Nova-Baremetal deployment. It helps in building disk images and PXE images for use with HP Cloud OS for Moonshot. The disk images are a thin version of images created compared to other disk image building tools.
+Disk Image Builder is the tool that can be used for building and customizing images for Nova-Baremetal deployment. It helps in building disk images and PXE images for use with HP Cloud OS for Moonshot. The disk images are a thin version of images created compared to other disk image building tools.
 
 Disk Image Builder creates images based on different elements defined in its element directory. These scripts are bundled in a specific pattern which provides the core functionality of creating cloud images. It provides elements to create a basic Virtual Machine of either Ubuntu or Fedora. We can also create our own Virtual Machine images by including/writing new elements and putting them under the elements directory. One such example is a LAMP image which provides a cloud image of LAMP server to use in OpenStack.
 
@@ -49,7 +49,7 @@ Before you attempt to build an image, make sure you have:
 * 4 GB physical RAM.
 * Enough space in /tmp to hold two uncompressed cloud images. One uncompressed image is up to 800 MB in size.
 * (Optional) Proxy settings for internet connectivity.
-* qemu-utils and git-core package- Vlan, busybox, open-iscsi, python-lxml, python-libvirt, libvirt, qemu-system installed on the server.
+* qemu-utils and git-core package, VLAN, busybox, open-iscsi, python-lxml, python-libvirt, libvirt, qemu-system installed on the server.
 
 ## Creating a disk image ## {#disk-image-create}
 To create a disk image using the Disk Image Builder tool, follow the steps below:
@@ -70,7 +70,7 @@ To create a disk image using the Disk Image Builder tool, follow the steps below
 
         To create a basic Ubuntu VM image with the associated kernel and ramdisk image, use the following command:
 
-        <pre>disk-image-create vm base -o base -a amd64 ubuntu baremetal</pre>
+        <pre>disk-image-create -o base -a amd64 vm base ubuntu baremetal</pre>
 
         This creates a disk image file named base.qcow2 
 
@@ -78,19 +78,21 @@ To create a disk image using the Disk Image Builder tool, follow the steps below
 
         To create a PXE image, use the following command:
 
-        <pre>ramdisk-image-create -a amd64 –o pxe deploy</pre>
+        <pre>ramdisk-image-create -a amd64 &ndash; pxe deploy</pre>
 
 
-        This creates two files: &lt;pxe>.initramfs and &lt;pxe>.kernel
+        This creates two files: pxe.initramfs and pxe.kernel
 
     - **RHEL image**
 
-        To create a RHEL image with associated kernel and ramdisk images, use the following command:
+        To create a RHEL VM image with associated kernel and ramdisk images, use the following command:
 
-        <pre>disk-image-create –o &lt;image_prefix> –a amd64 –u base rhel baremetal</pre>
+        <pre>disk-image-create &ndash;o &lt;image_prefix> &ndash;a amd64 &ndash;u base rhel baremetal</pre>
+
+        <p>This creates three files: &lt;image_prefix>.qcow2, &lt;image_prefix>.vmlinux, and &lt;image_prefix>.kernel</p>
 
 ### Using your disk image with OpenStack ### {#image-builder-openstack}
-Now that you have created your disk image, you can add it to Glance and manage it with OpenStack.
+Now that you have created your image, you can add it to Glance and manage it with OpenStack.
 
 1. Copy the image file base.qcow2, and associated kernel and ramdisk images, to the OpenStack controller node using the following commands:
 
@@ -117,7 +119,7 @@ Now that you have created your disk image, you can add it to Glance and manage i
 
     <pre>ssh -i demokey.pem &lt;IP_of_demo_vm1></pre>
 
-You can now access your image from the HP Cloud OS for Moonshot Administration dashboard. From there, you can manage your image.
+You can now access your VM image from the HP Cloud OS for Moonshot Administration dashboard. From there, you can manage your VM.
 
 ## Creating an image for a specific workload ## {#image-specific-workload}
 You might want to create an image for a specific workload, such as an internet server. To do this, you must have an element with appropriate hooks written for that specific workload. The rest of this section shows you how to create Ubuntu and RHEL images for specific workloads, and their associated elements.
@@ -131,7 +133,7 @@ To create an Ubuntu image for a specific workload, you first need to create the 
 
 1. From a command prompt, create a directory structure of **elements/nginx** using following command:
 
-    <pre>mkdir –p ~/elements/nginx</pre>
+    <pre>mkdir &ndash;p ~/elements/nginx</pre>
      
     **Note:** The tilde (~) represents your home directory.
 
@@ -154,12 +156,12 @@ To create an Ubuntu image for a specific workload, you first need to create the 
     set -eux
     install-packages nginx</pre>
 
-#### Creating an Ubuntu image using nginx
-To use your new nginx element to create an Ubuntu image that is pre-installed with associated kernel and ramdisk images, use the following command:
+#### Creating an image using nginx with Ubuntu
+To use your new nginx element with Ubuntu to create a VM image that is pre-installed with associated kernel and ramdisk images, use the following command:
 
-<pre>disk-image-create vm base -o base -a amd64 baremetal nginx</pre>
+<pre>disk-image-create -o base -a amd64 vm base baremetal nginx</pre>
 
-This creates a disk image file named base.qcow2. You can now publish this disk image to HP Cloud OS Distributed Network.
+This creates a VM image file named base.qcow2. You can now publish this disk image to HP Cloud OS Distributed Network.
 
 ### Creating a RHEL image for a specific workload ### {#rhel-image}
 To create a RHEL image for a specific workload, you first need to create the mongodb element.
@@ -167,7 +169,7 @@ To create a RHEL image for a specific workload, you first need to create the mon
 #### Creating a mongodb element
 1. From a command prompt, create the directory structure **elements/mongodb** using following command:
 
-    <pre>mkdir –p ~/elements/mongodb</pre>
+    <pre>mkdir &ndash;p ~/elements/mongodb</pre>
 
     **Note:** The tilde (~) represents the path to your home directory.
 
@@ -175,7 +177,7 @@ To create a RHEL image for a specific workload, you first need to create the mon
 
     `cd ~/elements/mongodb`
 
-3. From here, create another directory named **pre-install.d**, which will contain the pre-installation hooks to setup yum repositories for yum:
+3. From here, create another directory named **pre-install.d**, which will contain the pre-installation hooks to setup yum repositories:
 
     `mkdir pre-install.d`
 
@@ -224,8 +226,8 @@ To create a RHEL image for a specific workload, you first need to create the mon
     set -eux
     rm -Rf /etc/yum.repos.d/mongodb.repo</pre>
 
-#### Creating a RHEL image using mongodb
-To use your new mongodb element to create a RHEL image that is pre-installed with associated kernel and ramdisk images, use the following command:
+#### Creating an image using mongodb with RHEL
+To use your new mongodb element with RHEL to create an image that is pre-installed with associated kernel and ramdisk images, use the following command:
 
 <pre>disk-image-create –o &lt;image_prefix> –a amd64 –u base rhel baremetal mongodb</pre>
 

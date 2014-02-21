@@ -28,9 +28,9 @@ In the following sections, we list the recommendations for memory, processors an
 **Note:** Be sure to reference the appropriate platform support matrix for each component product before you install.
 
 
-* [Server infrastructure](#server)
-* [Hypervisor recommendations](#hypervisor)
-* [HP Cloud OS for Moonshot node requirements](#nodereq)
+* [Server infrastructure for HP Cloud OS for Moonshot](#server)
+* [Hypervisor recommendations for HP Cloud OS for Moonshot](#hypervisor)
+* [Node requirements for HP Cloud OS for Moonshot](#nodereq)
 * [Moonshot chassis firmware version](#firmware)
 * [Moonshot cartridges supported](#cartridges)
 * [Operating systems supported ](#ossupp)
@@ -38,13 +38,13 @@ In the following sections, we list the recommendations for memory, processors an
 * [Supported deployment scenario](#deployment)
 * [Software requirements](#software)
 
-## Server infrastructure {#server}
+## Server infrastructure for HP Cloud OS for Moonshot {#server}
 We recommend your server contains the following:
 
 * Quad Core Processor
 * Hard disk drive with a minimum of 500 GB of space
 
-## Hypervisor recommendations {#hypervisor}
+## Hypervisor recommendations for HP Cloud OS for Moonshot {#hypervisor}
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
 
 <tr style="background-color: #C8C8C8;">
@@ -61,7 +61,7 @@ We recommend your server contains the following:
 </tr>
 </table>
 
-## HP Cloud OS for Moonshot node requirements {#nodereq}
+## Node requirements for HP Cloud OS for Moonshot {#nodereq}
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
 
 <tr style="background-color: #C8C8C8;">
@@ -168,7 +168,7 @@ We recommend your server contains the following:
 </tr>		  
 <tr style="background-color: white; color: black;">
 <td>HP ProLiant m300 Server Cartridge</td>
-<td>2</td>
+<td>8</td>
 <td>32 GB (4x8 GB)</td>
 <td>240 GB, 500 GB or 1 TB</td>
 </tr>
