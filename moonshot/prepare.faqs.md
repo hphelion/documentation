@@ -24,8 +24,8 @@ PageRefresh();
 Welcome! You've got questions, we have the answers.
 
 * [What is the HP POV on cloud solutions?](#what-is-the-hp-pov-on-cloud-solutions)
-* [How does HP Cloud OS for Moonshot help solve the challenges faced by enterprises?](#how-does-hp-cloud-os-for-moonshot-help-solve-the-challenges-faced-by-enterprises)
-* [What is OpenStack?](#what-is-openstack)
+* [What is HP Cloud?](#what-is-hp-cloud)
+* [How does HP help solve the challenges faced by enterprises?](#how-does-hp-help-solve-the-challenges-faced-by-enterprises)* [What is OpenStack?](#what-is-openstack)
 * [What is HP Moonshot?](#what-is-hp-moonshot)
 * [What is HP Cloud OS for Moonshot?](#what-is-hp-cloud-os-for-moonshot)
 * [What are the key advantages of HP Cloud OS for Moonshot?](#what-are-the-key-advantages-of-hp-cloud-os-for-moonshot)
@@ -42,11 +42,18 @@ consume IT services across private, managed and public clouds. HP allows the ent
 speed innovation, and lower costs. HP delivers the industry's only hybrid cloud strategy and solution portfolio that 
 provide the customer with choice, confidence and consistency.
 
-## How does HP Cloud OS for Moonshot help solve the challenges faced by enterprises?
+## What is HP Cloud?
 
-HP Cloud OS for Moonshot provides enterprises with the essential foundation of technologies and services to 
+HP Cloud delivers the essential foundation of technologies and services to enable our customers to confidently build, operate, and 
+consume IT services across private, managed and public clouds. HP Cloud allows the Enterprise customer to become more agile, 
+speed innovation, and lower costs. HP delivers the industry's only hybrid cloud strategy and solution portfolio that 
+provide the customer with choice, confidence and consistency.
+
+## How does HP help solve the challenges faced by enterprises?
+
+The HP Cloud offerings provide enterprises with the essential foundation of technologies and services to 
 confidently build, operate, and consume IT across private, hybrid, and public clouds, based on a core set of principles. 
-HP delivers customers the industry's only hybrid cloud strategy and solution portfolio with:  
+HP delivers customers the industry's only hybrid cloud strategy and solution portfolio with: 
 
 * Choice
   * In delivery model (private, managed, public, and traditional IT)
