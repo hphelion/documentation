@@ -25,10 +25,10 @@ PageRefresh();
 This topic explains how to obtain patches and other relevant functionality from the HP Cloud OS Distribution Network (CODN).
 
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:600px;"> <b>Note:</b> The same <b>Updates and Extensions</b> 
-functionality is available in the HP Cloud OS for Moonshot Administration Dashboard.  For introductory information, you can read this topic, which is 
+functionality is available in the Administration Dashboard, which is the new dashboard that you will use.  For introductory information, you can read this topic. It is 
 presented in the Operational Dashboard context. However you can perform the steps later, if you want, in the Administration Dashboard. In most cases, 
-you will not need to take any action on this Updates and Extensions page in the Operational Dashboard, which is focused primarily on the initial 
-installation and configuration process. </p>
+you will not need to take any action (at this point) on this Updates and Extensions page of the Operational Dashboard.
+</p>
 
 * [Configure and Download Steps](#configure-and-download-steps)
 * [Next Step](#next-step)
@@ -261,7 +261,7 @@ If the service does not restart, check the codn.conf file for syntax errors.
 ## Next Step
 
 Having completed the installation steps, created your cloud, licensed the dashboards, and at least viewed Updated and Extensions and the CODN, 
-you should now launch the Administration Dashboard to perform a set of post-deployment tasks. The steps that we'll described are designed to familiarize 
+you should now launch the Administration Dashboard to perform a set of post-deployment tasks. The steps that we'll describe are designed to familiarize 
 you with the Administration Dashboard, and also verify that your deployed cloud is operating properly. 
 See [Launch Administration Dashboard for Post-Deployment Tasks](/cloudos/moonshot/install/launch-admin-dashboard/). 
 

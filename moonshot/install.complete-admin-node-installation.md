@@ -24,7 +24,7 @@ PageRefresh();
 
 This topic describes the steps to complete the Admin Node installation. These steps are required. 
 
-> **Caution:** Be sure the values for the Prerequisites, Server Types, Connections and Networks are what you need, before you follow the steps in this topic. Once the install process is triggered, the settings in preceding steps cannot be changed. If you want to make changes, you need to start over by re-installing the Admin Node.  
+> **Caution:** Be sure the values for the Prerequisites, Networks Connections, and Network Settings are what you need, before you follow the steps in this topic. Once the install process is triggered, the settings in preceding steps cannot be changed. If you want to make changes, you need to start over by re-installing the Admin Node.  
 
 To complete the Admin Node installation:
 

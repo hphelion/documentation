@@ -1586,7 +1586,7 @@ See <a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#edi
 When the install is complete, the Operational Dashboard displays the Cloud tab (see the <a href="/cloudos/moonshot/manage/operational-dashboard/cloud-tab/">Cloud Tab</a> section of this topic), after the user clicks the **Continue...** button.
 
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Caution:</b> Be sure the values for the 
-Prerequisites, Server Types, Connections and Networks are what you need, before you start the install process. Once the install process is triggered, 
+Prerequisites, Networks Connections, and Network Settings are what you need, before you start the install process. Once the install process is triggered, 
 no changes can be made. If you want to make changes, you need to start over by re-installing the HP Cloud OS for Moonshot Administration node. 
 For procedural instructions, see <a href="/cloudos/moonshot/install/">Install and Configure Your Cloud</a>.
 </p>

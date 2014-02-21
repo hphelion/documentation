@@ -44,9 +44,7 @@ when you need to troubleshoot, or save disk space with less detailed log files w
 
 ## Next Step
 
-Read the next topic, [View Updates and Extensions](/cloudos/moonshot/install/updates-and-extensions].  
+Read the next topic, [View Updates and Extensions](/cloudos/moonshot/install/updates-and-extensions).  
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-
-<!-- To request access to the HP Cloud OS for Moonshot Sandbox, see http://www.hp.com/go/cloudos. --> 
 
