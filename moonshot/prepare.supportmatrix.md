@@ -30,7 +30,7 @@ In the following sections, we list the recommendations for memory, processors an
 
 * [Server infrastructure](#server)
 * [Hypervisor recommendations](#hypervisor)
-* [HP Cloud for Moonshot node requirements](#nodereq)
+* [HP Cloud OS for Moonshot node requirements](#nodereq)
 * [Moonshot chassis firmware version](#firmware)
 * [Moonshot cartridges supported](#cartridges)
 * [Operating systems supported ](#ossupp)
@@ -61,7 +61,7 @@ We recommend your server contains the following:
 </tr>
 </table>
 
-## HP Cloud for Moonshot node requirements {#nodereq}
+## HP Cloud OS for Moonshot node requirements {#nodereq}
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
 
 <tr style="background-color: #C8C8C8;">
@@ -230,7 +230,7 @@ We recommend your server contains the following:
 
 
 ## Supported deployment scenario {#deployment}
-The HP Cloud OS for Moonshot deployment includes one Admin node, one Controller node, and one Baremetal host. The following diagram depicts... 
+A HP Cloud OS for Moonshot deployment includes one Admin node, one Controller node, and one Baremetal host. The following diagram depicts a simplified deployment scenario. 
 
 <img src="media/moonshot-deployment.png"></img>
 
@@ -247,7 +247,7 @@ Refer to the [HP Cloud OS for Moonshot Installation Guide](/cloudos/moonshot/ins
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td style="font-weight: bold; background-color: #F8F8F8;" colspan="2"> Admin and Controller Node </td>
+<td style="font-weight: bold; background-color: #F8F8F8;" colspan="2"> Admin and Controller Nodes </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -432,9 +432,11 @@ Refer to the [HP Cloud OS for Moonshot Installation Guide](/cloudos/moonshot/ins
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td style="font-weight: bold; background-color: #F8F8F8;" colspan="2"> Supported Hypervisors for hosting nodes </td>
+<td style="font-weight: bold; background-color: #F8F8F8;" colspan="2"> Baremetal Host </td>
 </tr>
-
+<tr style="background-color: white; color: black;">
+<td style="font-weight: bold; background-color: #F8F8F8;" colspan="2"> Supported Hypervisors </td>
+</tr>
 <tr style="background-color: white; color: black;">
 <td style="padding-left: 40px;"> KVM </td>
 <td> Ubuntu 12.04 LTS (64-bit) </td>
