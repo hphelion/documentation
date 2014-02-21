@@ -47,9 +47,9 @@ This topic describes a set of baseline post-deployment tasks that you should per
 
 You can access the Administration Dashboard in one of two ways:
 
-* Open a Google Chrome or Firefox browser. Enter the URL of your Cloud Controller node's public IP address. Login with the Admin account's username and password that you specified previously, in the Operational Dashboard, on the <b>Create Cloud</b> > <b>Attributes</b> dialog. 
+* Open a Google Chrome or Firefox browser. Enter the URL of your Cloud Controller node's public IP address. Login with the Admin account's username and password that you specified previously in the Operational Dashboard on the <b>Create Cloud</b> > <b>Attributes</b> dialog. 
 
-* Or, within the Operational Dashboard, click <b>Manage Clouds</b> > <b>More</b> > <b>Launch Dashboard</b> for the cloud you created.
+* Or, from within the Operational Dashboard, click <b>Manage Clouds</b> > <b>More</b> > <b>Launch Dashboard</b> for the cloud you created.
 
 
 ## Create a Keypair
@@ -87,10 +87,10 @@ An image is required to install an Operating System in an instance. To upload cl
 <li> Click any of the tabs: <b>Cloud</b>, <b>Region</b>, or <b>Project</b>.  The selected tab displays options in the left panel. </li>
 
 <li> If you selected the <b>Project</b> tab, select <b>Infrastructure</b> > <b>Images</b>.  If you started on the <b>Cloud</b> or <b>Region</b> tab, click <b>Images</b>.
-
-<p><b>Note</b>: You must create image types such as QCOW2 and AMI with the associated Amazon Kernel Image (AKI) and Amazon RAMdisk Image (ARI). 
+<br /> <br />
+<b>Note</b>: You must create image types such as QCOW2 and AMI with the associated Amazon Kernel Image (AKI) and Amazon RAMdisk Image (ARI). 
 Recommendation: create the images in the following sequence: Amazon Kernel Image (AKI), Amazon RAMdisk Image (ARI) and QCOW2. 
-The Administration Dashboard displays the <b>Kernel Image</b> drop-down list and <b>RAM Disk Image</b> drop-down list when the selected format is QCOW2 or AMI. </p>
+The Administration Dashboard displays the <b>Kernel Image</b> drop-down list and <b>RAM Disk Image</b> drop-down list when the selected format is QCOW2 or AMI.
 
 </li>
 
@@ -158,7 +158,7 @@ Next, perform the steps in the following AKI, ARI, and QCOW2-QEMU sections.
 
 <ul>
 <li>Select <b>Image File</b> from the drop-down-list.  
-<li>Click <b>Choose File</b> to browse to the <b>ARI</b> image.
+<li>Click <b>Choose File</b> to browse to the ARI image.
 <li>Select the ARI Image to upload.
 </ul>
 
@@ -199,7 +199,7 @@ Next, perform the steps in the following AKI, ARI, and QCOW2-QEMU sections.
 
 <ul>
 <li>Select <b>Image File</b> from the drop-down-list.  
-<li>Click <b>Choose File</b> to browse to the <b>QCOW2-QEMU</b> image.
+<li>Click <b>Choose File</b> to browse to the QCOW2-QEMU image.
 <li>Select the QCOW2-QEMU Image to upload.
 </ul>
 
@@ -271,20 +271,93 @@ Later, when you want to create new flavors, or edit existing ones, start in this
 
 ## Manage Moonshot Chassis
 
-Integrating content Friday 2/21...
+This section defines the process to add HP Moonshot servers to your cloud. 
 
+Note: This function can be performed by the Cloud Administrator or any member who is part of the Cloud group.
+
+1. In the Administration Dashboard, select the <b>Cloud</b> tab.  The tab displays options in the left panel.
+
+2. From the left panel, select <b>Moonshot Management</b> to display the <b>Datacenter View</b>. This option enables two views: 
+ * Datacenter View  
+ * Single Chassis View. 
+ 
+By default, Datacenter View is the active view.
+
+### Datacenter View
+
+The Datacenter View displays the Add, Edit, and Delete options at the top, and the Events Log panel on the right.
+
+The Datacenter View also displays a search option to allow you to search for a specific cartridge.
+
+To view the chassis details, toggle between two views in the Datacenter:
+
+* Grid view: <img src="media/moonshot-datacenter-grid-view.png" title="Moonshot Datacenter grid view" />
+
+* Table view: <img src="media/moonshot-datacenter-table-view.png" title="Moonshot Datacenter table view" />
+
+Double click the Chassis graphic to display the <b>Single Chassis View</b>.
+
+<b>Note</b>: Different chassis views can only be seen if the chassis displays in the Datacenter.
+
+#### Table View
+
+( Integrating the rest of the content from 2/21 to 2/23. )
+
+#### Add a Chassis
+
+( Integrating the rest of the content from 2/21 to 2/23. )
+
+### Single Chassis View
+
+The Single Chassis View displays the detailed information about the selected Chassis in two sections:
+
+* Chassis Snapshot
+
+* Table
+
+The Single Chassis View also displays the Events log panel on the right. 
+
+Example:
+
+<img src="moonshot-single-chassis-view-example.png" title="Moonshot Single Chassis View example" />
+
+( Integrating the rest of the content from 2/21 to 2/23. )
 
 
 ## Launch an Instance from an Image
 
-Integrating content Friday 2/21...
+The next post-install step is to launch an instance from an image.  This task is important to verify that network connectivity is present and working, and that your 
+cloud is operational. 
 
+Here are the steps:
+
+1. In the Administration Dashboard, select the <b>Project</b> tab.  
+
+2. The tab displays options in the left panel. From the left panel, click <b>Infrastructure</b> and then select <b>Images</b>.  The Images page is displayed.
+
+3. Click <b>Launch</b> next to the image (<b>TBS: which one or which type?  example?</b>) listed in the table.
+
+4. A Launch Instance dialog box displays with four tabs: Details, Access & Security, Networking, and Post-Creation. By default, Details is the active tab.
+
+5. On the <b>Details</b> tab:
+ * From the <b>Image</b> drop-down list, select the image.
+ * From the <b>Availability Zone</b>, select the zone.
+ * In the <b>Instance Name</b> box, enter a name for the instance.
+ * From the <b>Flavor</b> drop-down list, select the flavor.  In this case, it should be hp_moonshot_server or hp_moonshot_m300, depending on your cartridge server type.
+ * In the <b>Instance Count</b> box, enter 1, or more than 1 if you intend to launch multiple instances.  Recommendation: for this initial post-install process, enter 1.
+ 
+6. On the Access & Security tab, from the Keypair drop-down list, select a value from the list.
+
+7. On the Networking tab, no networks will be listed in the Selected Networks section. You should select the <b>private network</b> from the <b>Available networks</b> section.
+
+8. Click <b>Launch</b>.
+
+The view changes to <b>Project</b> > <b>Infrastructure</b> > <b>Instances</b>.
 
 ## Next Step
 
-
-
-For more details about the Administration Dashboard, see the [HP Cloud OS for Moonshot Administration Dashboard Help](/cloudos/moonshot/manage/administration-dashboard/).
+At this point, you're done with the installation & configuration steps (including post-install).  You can now proceed to the [Manage](/cloudos/moonshot/manage/) section of this documentation site. It includes information about utilities, troubleshooting, Disk Image Builder, and the backup process. Also included from the Manage page is the [HP Cloud OS for Moonshot Administration Dashboard Help](/cloudos/moonshot/manage/administration-dashboard/), where you can get more 
+information about the dashboard's features, roles, and tasks.
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
