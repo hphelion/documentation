@@ -242,7 +242,7 @@ The Administration Dashboard presents the following pre-defined flavors for HP M
 <tr style="background-color: white; color: black;">
 <td> hp_moonshot_server </td>
 <td> HP ProLiant Moonshot Server Cartridge </td>
-<td> CPUs: 2. <br /> CPU Architecture: x86_64. <br /> RAM MBs: 8192. <br /> Root Disk GBs:  <b>TBS</b> </td>
+<td> CPUs: 2. <br /> CPU Architecture: x86_64. <br /> RAM MBs: 8192. <br /> Root Disk GBs: 450. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -261,13 +261,15 @@ If you're curious, to see how the flavors are defined already:
 
 2. Click <b>Flavors</b> to open the Flavors window.
 
-3. Find the flavor you want to view (in this case, hp_moonshot_server or hp_moonshot_m300), and click Edit Flavor to open the Edit Flavor dialog box.
+3. Find the flavor you want to view (in this case, hp_moonshot_server or hp_moonshot_m300, depending on your cartridge server type), and click 
+<b>Edit Flavor</b> to open the Edit Flavor dialog box.
 
 4. Recommendation: For now, keep the pre-defined values.
 
 5. Click <b>Cancel</b>.
 
-Later, when you want to create new flavors, or edit existing ones, start in this topic of the Administration Dashboard Help: [How to Access Flavors and Flavor Extra Specs](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#how-to-access-flavors-and-flavor-extra-specs).
+Later, when you want to create new flavors, or edit existing ones, start in this topic of the Administration Dashboard 
+Help: [How to Access Flavors and Flavor Extra Specs](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#how-to-access-flavors-and-flavor-extra-specs).
 
 ## Manage Moonshot Chassis
 
@@ -319,7 +321,7 @@ The Single Chassis View also displays the Events log panel on the right.
 
 Example:
 
-<img src="moonshot-single-chassis-view-example.png" title="Moonshot Single Chassis View example" />
+<img src="media/moonshot-single-chassis-view-example.png" title="Moonshot Single Chassis View example" />
 
 ( Integrating the rest of the content from 2/21 to 2/23. )
 
