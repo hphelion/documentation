@@ -41,7 +41,7 @@ Disk Image Builder is the tool that can be used for building and customizing ima
 
 Disk Image Builder creates images based on different elements defined in its element directory. These scripts are bundled in a specific pattern which provides the core functionality of creating cloud images. It provides elements to create a basic Virtual Machine of either Ubuntu or Fedora. We can also create our own Virtual Machine images by including/writing new elements and putting them under the elements directory. One such example is a LAMP image which provides a cloud image of LAMP server to use in OpenStack.
 
-Disk Image Builder creates images of format QCOW2, by default. This image format can be added to Glance and used with OpenStack using the `glance-create` command. 
+Disk Image Builder creates images of format QCOW2, by default. This image format can be added to Glance and used with OpenStack using the `glance-create` command.
 
 ### Prerequisites ### {#disk-image-prereq}
 Before you attempt to build an image, make sure you have:
