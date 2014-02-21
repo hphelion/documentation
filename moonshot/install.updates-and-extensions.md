@@ -18,7 +18,8 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> <a href="/cloudos/moonshot/install/customize-user-settings/">&#9664; PREV</a> | <a href="/cloudos/moonshot/install/">&#9650; UP</a> | <a href="/cloudos/moonshot/install/advanced-cloud-setup/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/cloudos/moonshot/install/customize-user-settings/">&#9664; PREV</a> | 
+<a href="/cloudos/moonshot/install/">&#9650; UP</a> | <a href="/cloudos/moonshot/install/launch-admin-dashboard/">NEXT &#9654;</a> </p>
 
 # View Updates and Extensions
 

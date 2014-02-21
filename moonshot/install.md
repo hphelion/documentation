@@ -46,7 +46,7 @@ After you install and set up the Admin node, you can perform additional steps:
 * [Launch Administration Dashboard for Post-Deployment Tasks](/cloudos/moonshot/install/launch-admin-dashboard/)
 
 <!--
-Finally, if you do not intend to use the wizard-based Cloud OS installation process that's described in 
+Finally, if you do not intend to use the wizard-based Cloud OS for Moonshot installation process that's described in 
 the Create a Cloud topic, and instead decide to apply and configure the install modules yourself (for **advanced** users only), 
 see these topics: 
 

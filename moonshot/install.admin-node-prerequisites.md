@@ -25,7 +25,7 @@ PageRefresh();
 
 Your first step in the HP Cloud OS for Moonshot Operational Dashboard is to configure the Admin Node prerequisites. See the sections in this topic:
 
-* [Enable Admin Node Internet Access](#enable-admin-node-internet-access) &mdash; Set up Internet access on the Admin Node. You will need Internet access for downloading hot fixes using the Hot Fixes panel of the Cloud tab. For details, see the [Install Hot Fixes](/cloudos/moonshot/install/hot-fixes/) topic.
+* [Enable Admin Node Internet Access](#enable-admin-node-internet-access) &mdash; Set up Internet access on the Admin Node. You will need Internet access for downloading updated and extensions. For details, see [View Updates and Extensions](/cloudos/moonshot/install/updates-extensions/).
 
 * [Set the External DNS Server](#set-the-external-dns-server) &mdash;  Add the IP address of the external DNS server that your Cloud OS environment is using to access named websites within your cloud.
 
@@ -49,13 +49,13 @@ You cannot change:
 
 To enable the Admin Node Internet Access:
 
-1. On the Operational Dashboard, select the Environment tab > Prerequisites.
+1. On the Operational Dashboard, select the <b>Environment</b> tab > <b>Prerequisites</b>.
 
 2. For the Cloud Administration Node Internet Access, click **Edit Prerequisite**.
 
 3. Set the Network Interface to the network interface on the Admin Node that has been configured for internet access, for example, eth1.
 
-4. Leave the default Network Configuration checked as DHCP. If you have a static IP address allocated for the node, uncheck DHCP and fill in the appropriate information.
+4. Leave the default Network Configuration checked as <b>DHCP</b>. If you have a static IP address allocated for the node, uncheck DHCP and fill in the appropriate information.
 
 5. Set the HTTP Proxy Information applicable for your environment. If you are on a network that has a proxy, you must fill in this Proxy information.
 
@@ -87,7 +87,7 @@ When this prerequisite completes, a timestamp will be displayed in the Last Upda
 
 To set the external DNS server:
 
-1. On the Operational Dashboard, select the Environment tab > Prerequisites.
+1. On the Operational Dashboard, select the <b>Environment</b> tab > <b>Prerequisites</b>.
 
 2. For the External DNS Server, click **Edit Prerequisite**.
 
@@ -102,7 +102,7 @@ When this prerequisite completes, a timestamp will be displayed in the Last Upda
 
 To set the time for the Admin Node:
 
-1. On the Operational Dashboard, select the Environment tab > Prerequisites.
+1. On the Operational Dashboard, select the <b>Environment</b> tab > <b>Prerequisites</b>.
 
 2. For the Cloud Administration Node Time Settings, click **Edit Prerequisite**.
 
@@ -121,7 +121,7 @@ When this prerequisite completes, a timestamp will be displayed in the Last Upda
 
 To set the email notification:
 
-1. On the Operational Dashboard, select the Environment tab > Prerequisites.
+1. On the Operational Dashboard, select the <b>Environment</b> tab > <b>Prerequisites</b>.
 
 2. For the email notification settings, click **Edit Prerequisites**.
 
