@@ -70,13 +70,13 @@ HP delivers customers the industry's only hybrid cloud strategy and solution por
  
 ## What is HP Cloud OS?
 
-HP Cloud OS is an open and extensible cloud technology platform based on OpenStack that is available through cloud products and services in the HP Cloud portfolio, or as a public beta preview edition. You can think of it as an "internal" distribution 
-of OpenStack that provides the technology foundation for the Cloud common architecture across private, public, and hybrid cloud delivery. HP Cloud OS is targeted to meet the needs of enterprises who want to leverage OpenStack for rapid innovation, and the beneficial 
+HP Cloud OS is an open and extensible cloud technology platform based on OpenStack&#174; technology that is available through cloud products and services in the HP Cloud portfolio, or as a public beta preview edition. You can think of it as a distribution 
+of OpenStack technology that provides the foundation for the Cloud common architecture across private, public, and hybrid cloud delivery. HP Cloud OS is targeted to meet the needs of enterprises who want to leverage OpenStack technology for rapid innovation, and the beneficial 
 economics of an open source approach. It enables easier deployment, application portability, and streamlined OpenStack patching and updates, among other features.   
 
 HP Cloud OS includes Ubuntu 12.04LTS, KVM hypervisor, hardened, curated, and supported OpenStack distribution, a number of value-added services, and miscellaneous software packaged as an ISO for an easy deployment. The key technology components of HP Cloud OS are:
 
-* Internal OpenStack distribution by HP
+* OpenStack distribution
 * HP installer
 * Automated patch and OpenStack release management capability
 * Standards-based infrastructure and application modeling capability
@@ -84,7 +84,7 @@ HP Cloud OS includes Ubuntu 12.04LTS, KVM hypervisor, hardened, curated, and sup
 
 ## What is OpenStack?
 
-OpenStack is a cloud computing project aimed at providing an Infrastructure as a Service (IaaS). It is free and open-source software released under the terms of the Apache License. The project is managed by the OpenStack 
+OpenStack is a cloud computing project aimed at providing a cloud operating system, including Infrastructure as a Service (IaaS). It is free and open source software released under the terms of the Apache 2.0 License. The project is managed by the OpenStack 
 Foundation, a non-profit corporate entity established in September 2012 to promote OpenStack software and its community. The technology consists of a series of interrelated projects that control pools of processing, storage, and networking 
 resources throughout a datacenter, all managed through a dashboard that gives administrators control while empowering its users to provision resources through a web interface.
   
@@ -98,20 +98,19 @@ HP Cloud is based on a common architecture. This enables HP to provide its custo
 
 ## What does HP Cloud OS support?
 
-OpenStack components supported by HP Cloud OS includes all major components of OpenStack: Nova, Keystone, Quantum (Neutron), Glance, Cinder, Horizon, and Swift. 
+OpenStack components supported by HP Cloud OS includes all major components of OpenStack: Nova, Keystone, Neutron, Glance, Cinder, Horizon, and Swift. 
 
 Linux distribution support includes HP Cloud OS supported on Ubuntu 12.04 LTS Linux. 
 
-Guest OS support for HP Cloud OS includes guest VMs running Ubuntu 12.04 LTS as well as Windows 2008 R2 and Windows 2012 R1. While Red Hat Enterprise Linux and SUSE Linux Enterprise Server are not yet officially supported, HP has conducted tests 
-and has found no issues running RHEL or SLES as a guest OS on HP Cloud OS. 
+Guest OS support for HP Cloud OS includes guest VMs running Ubuntu 12.04 LTS.
 
 ## How does HP Cloud OS help customers?
 
-For enterprises who want to leverage OpenStack for rapid innovation and the beneficial economics of an open source approach, HP Cloud OS delivers enterprise-grade OpenStack.  The key benefits are:
+For enterprises that want to leverage OpenStack technology for rapid innovation and the beneficial economics of an open source approach, HP Cloud OS delivers enterprise-grade OpenStack technology.  The key benefits are:
 
 * Simplified delivery
   * Simple, accelerated installation and configuration process
-  * Centralize management of your cloud environments
+  * Centralized management of your cloud environments
   * Automated-live content distribution (upgrades, patches, content)
 
 * Enhanced service lifecycle
@@ -151,4 +150,8 @@ In the current release, the dashboards use pre-defined login credentials. These 
 readme file in the same ZIP that contains the ISO. The readme identifies the login credentials.
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
+
+<p style="font-size: small; border-top: dotted 1px #cccccc;">The OpenStack&#174; Word Mark is either a registered trademark/service mark or trademark/service mark of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.</p>
+
 
