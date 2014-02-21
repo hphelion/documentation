@@ -71,8 +71,8 @@ We recommend your server contains the following:
 <th>Memory</th>
 <th>Internal Storage</th>
 <th>NICs</th>
-<th>OS (included as part of ISO)</th>
-<th>Virtualized Platforms Supported</th>
+<th><span style='display:block; width:150px;'>OS <br />(incl. as part of ISO)</span></th>
+<th><span style='display:block; width:180px;'>Virtualized Platforms Supported</span></th>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -214,15 +214,15 @@ We recommend your server contains the following:
 
 </TR>
 
-<TR>
+<TR style="background-color: white; color: black;">
 <TD>Caching/dynamic web</td>
 
 </TR>
-<TR>
+<TR style="background-color: white; color: black;">
 <TD>NoSQL</TD>
 
 </TR>
-<TR>
+<TR style="background-color: white; color: black;">
 <TD>Analytics</TD>
 
 </TR>
@@ -235,7 +235,7 @@ An HP Cloud OS for Moonshot deployment includes one Admin node, one Controller n
 <img src="media/moonshot-deployment.png"></img>
 
 
-## Software Requirements {#software}
+## Software requirements {#software}
 
 Refer to the [HP Cloud OS for Moonshot Installation Guide](/cloudos/moonshot/install/) for a complete list of installation prerequisites and requirements, plus step-by-step instructions.
 
