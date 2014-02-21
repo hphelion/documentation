@@ -34,7 +34,7 @@ This topic describes a set of baseline post-deployment tasks that you should per
 
 * [Upload Cloud Images](#upload-cloud-images)
 
-* [Use a Provided Flavor](#use-a-provided-flavor)
+* [View the Provided Flavor](#view-the-provided-flavor)
 
 * [Manage your Moonshot Chassis](#manage-your-moonshot-chassis)
 
@@ -224,21 +224,50 @@ Next, perform the steps in the following AKI, ARI, and QCOW2-QEMU sections.
 </ol>
 
 
-## Use a Provided Flavor
+## View the Provided Flavor
 
 Flavors are machine configurations that describe the amount of memory, number of CPUs, and ephemeral disk space available. When you register a chassis, a flavor is created by default. 
 
-The Administration Dashboard presents the following pre-defined flavors for HP Moonshot environments, depending on the chassis type:
+The Administration Dashboard presents the following pre-defined flavors for HP Moonshot environments, depending on the server cartridge type.
 
-* hp_moonshot_server
+<table style="text-align: left; vertical-align: top; min-width:700px;">
 
-* hp_moonshot_m300
+<tr style="background-color: #C8C8C8;">
+<tr>
+<th>Flavor name</th>
+<th>Server Cartridge Type</th>
+<th>Configuration</th>
+<tr>
 
-* hp_moonshot_m700
+<tr style="background-color: white; color: black;">
+<td> hp_moonshot_server </td>
+<td> HP ProLiant Moonshot Server Cartridge </td>
+<td> CPUs: 2. <br /> CPU Architecture: x86_64. <br /> RAM MBs: 8192. <br /> Root Disk GBs:  <b>TBS</b> </td>
+</tr>
 
-As part of this initial post-deployment process, you do not need to create new flavors to verify the your cloud is operating properly.
+<tr style="background-color: white; color: black;">
+<td> hp_moonshot_m300 </td>
+<td> HP ProLiant m300 Server Cartridge </td>
+<td> CPUs: 8. <br /> CPU Architecture: x86_64. <br /> RAM MBs: 32768. <br /> Root Disk GBs:  <b>TBS</b> </td>
+</tr>
 
-When you want to create new flavors, or edit existing ones, start in this topic of the Administration Dashboard Help: [How to Access Flavors and Flavor Extra Specs](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#how-to-access-flavors-and-flavor-extra-specs).
+</table>
+
+As part of your initial post-deployment steps, you do not need to create new flavors to verify that your cloud is operating properly.
+
+If you're curious, to see how the flavors are defined already:
+
+1. On the <b>Region</b> tab, select a <b>Current Compute Region</b>.
+
+2. Click <b>Flavors</b> to open the Flavors window.
+
+3. Find the flavor you want to view (in this case, hp_moonshot_server or hp_moonshot_m300), and click Edit Flavor to open the Edit Flavor dialog box.
+
+4. Recommendation: For now, keep the pre-defined values.
+
+5. Click <b>Cancel</b>.
+
+Later, when you want to create new flavors, or edit existing ones, start in this topic of the Administration Dashboard Help: [How to Access Flavors and Flavor Extra Specs](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#how-to-access-flavors-and-flavor-extra-specs).
 
 ## Manage Moonshot Chassis
 

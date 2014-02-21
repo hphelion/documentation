@@ -1454,12 +1454,27 @@ To create a flavor:
 
 2. Click <b>Flavors</b> to open the Flavors window.
 
-3. Click <b>Create Flavor</b> to open the Create Flavor dialog box.
+3. Click <b>Create Flavor</b> to open the Create Flavor dialog box.  <b>Note</b>: All fields are required. 
 
-4. All fields are required. All fields are integer values except for the <b>Name</b> field.
+4. In the <b>Name</b> box, enter the name that you want to assign to the Baremetal flavor.
 
-5. Click <b>Create Flavor</b>. The list redisplays with the new flavor listed alphabetically and a system-assigned <b>Flavor ID</b>.
+5. In the <b>CPUs</b> box, enter the required number.
 
+6. In the <b>RAM MB</b> box, specify the RAM corresponding to the cartridge.
+
+7. In the <b>Root Disk GB</b> box, enter the required space.
+
+8. From the <b>CPU Architecture</b> drop-down list, select the architecture.
+
+9. The <b>ID</b> box displays <b>auto</b> by default.
+
+10. From the <b>Kernel Image</b> drop-down list, select the PXE kernel image.
+
+11. From the <b>RAM Disk Image</b> drop-down list, select the PXE RAMdisk image.
+
+12. Click <b>Create Flavor</b> to create a new the flavor.
+
+A message is displayed on successful creation. The list redisplays with the new flavor listed alphabetically and a system-assigned <b>Flavor ID</b>.
 
 #### How to Edit a Flavor
 
