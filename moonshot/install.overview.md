@@ -57,21 +57,19 @@ neutral, open source cloud architecture.
 
 At a high level, here are the steps to setup and install the Admin node:
 
-<img src="media/cloudos-install-process.png" title="HP Cloud OS for Moonshot installation process" /> 
+<img src="media/cloudos-moonshot-install-process.png" title="HP Cloud OS for Moonshot installation process" /> 
 
-The steps shown above feature an automated process in the HP Cloud OS for Moonshot Operational Dashboard, where you can accept defaults or enter values that are specific to your requirements (such as your network settings). Using 
+The steps shown above feature an automated process in the HP Cloud OS for Moonshot Operational Dashboard, where you can accept defaults or enter values that are specific to your requirements (such as your network connections). Using 
 this automated approach, HP Cloud OS for Moonshot handles all of the installation details for you, installing the OpenStack services and the HP Cloud OS for Moonshot value-added services.
 
 Taking a broader view, this next diagram illustrates those steps in a larger context. 
-Notice how once you've installed and set up the Admin node, you have a choice between two paths: wizard-based (in the Operational Dashboard), **or** advanced steps (in the Installation Dashboard).
+Notice how once you've installed and set up the Admin node, you perform steps first in the Operational Dashboard to create your cloud and perform associated tasks, then you launch the next dashboard, the Administration Dashboard, to perform 
+a number of post-installation tasks. 
 
-<img src="media/cloudos-create-cloud-paths.png" title="HP Cloud OS for Moonshot - choosing between two create cloud paths" /> 
+<img src="media/cloudos-moonshot-install-process-expanded.png" title="HP Cloud OS for Moonshot - an expanded view of the install process" /> 
 
-What this means: When you create a cloud using the process defined in [Create a Cloud](/cloudos/moonshot/install/create-cloud/), a number of OpenStack and HP Cloud OS for Moonshot 
-install modules are automatically configured and deployed for you. In most cases, the automated deployment of install modules will suffice. 
-However, should you need to customize values in the install modules that are not exposed in the Create Cloud Attributes tab, 
-this advanced section, along with [Install Modules Reference](/cloudos/moonshot/install/install-modules-reference/), are provided to assist 
-you in the process of customizing and deploying the individual install modules.  
+The post-installation tasks are designed to familiarize you, during your initial session, with the Administration Dashboard, which you'll use from that point forward to manage your clouds and the Moonshot server cartridges that 
+participate in the cloud.  The post-installation tasks are also designed to help you verify that your recently deployed cloud environment is functioning properly.
 
 ## Components of the HP Cloud OS for Moonshot Environment
 
