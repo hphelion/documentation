@@ -49,7 +49,7 @@ Before you attempt to build an image, make sure you have:
 * 4 GB physical RAM.
 * Enough space in /tmp to hold two uncompressed cloud images. One uncompressed image is up to 800 MB in size.
 * (Optional) Proxy settings for internet connectivity.
-* qemu-utils and git-core package, VLAN, busybox, open-iscsi, python-lxml, python-libvirt, libvirt, qemu-system installed on the server.
+* qemu-utils and git-core package, VLAN, busybox, open-iscsi, python-lxml, python-libvirt, libvirt, qemu-system installed on the server.
 
 ## Creating a disk image ## {#disk-image-create}
 To create a disk image using the Disk Image Builder tool, follow the steps below:
