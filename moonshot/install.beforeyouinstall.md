@@ -25,232 +25,329 @@ PageRefresh();
 Before you can start working in the HP Cloud OS for Moonshot Operational Dashboard, you must:
 
 * [Plan the Infrastructure for a Cloud](#plan-the-infrastructure-for-a-cloud)
+
 * [Set up the Admin Node](#set-up-the-admin-node)
+
 * [Boot the Admin Node Using the HP Cloud OS for Moonshot ISO](#boot-the-admin-node-using-the-hp-cloud-os-for-moonshot-iso)
+
 * [Launch the Operational Dashboard](#launch-the-operational-dashboard)
 
 ## Plan the Infrastructure for a Cloud
 
-For the simplest deployment, a cloud environment requires a Cloud Administration Node (Admin Node), a Cloud Controller Node, and a set of Compute Node(s). You may need support from your IT
-Administrator to correctly capture information about your environment.
+This section defines the minimum infrastructure requirements to make the cloud environment up and running. You will need support from your IT administrator to correctly capture information about your environment.
 
-You need to determine the type of cloud you want to create for your organization: private, public, or hybrid. With HP Cloud OS for Moonshot, you can create private or hybrid clouds. You can create public clouds with HP Public Cloud. 
-See the [Introduction to Cloud Types](/cloudos/moonshot/prepare/cloudtypes/). 
-
-Based on the type of cloud you intend to create, you can determine the requirements for the server, network, and storage infrastructures 
-that are described and illustrated in the following sections:
+* [Deployment Architecture](#deployment-architecture)
 
 * [Server Infrastructure](#server-infrastructure)
+
 * [Network Infrastructure](#network-infrastructure)
-* [Storage Infrastructure](#storage-infrastructure)
+
+### Deployment Architecture
+
+A simple cloud environment would include:
+
+* A Cloud Administration Node (Admin Node)
+
+* A Controller Node 
+
+* A Baremetal Host
+
+The following diagram depicts a simplified deployment scenario. 
+
+<img src="media/moonshot-deployment.png"></img>
+
+See the sections below for more information.
 
 ### Server Infrastructure
 
-The following table identifies server requirements for your cloud environment.
+The following sections identify the server requirements for your cloud environment, in terms of memory, processors, and disk space for each component.
+This information is repeated from the [Support Matrix](/cloudos/moonshot/prepare/supportmatrix/) as a convenience to the reader.
 
-<table style="text-align: left; vertical-align: top; width:700px;">
+* [General recommendation](#general)
+* [Hypervisor recommendations for HP Cloud OS for Moonshot](#hypervisor)
+* [Node requirements for HP Cloud OS for Moonshot](#nodereq)
+* [Moonshot chassis firmware version](#firmware)
+* [Moonshot cartridges supported](#cartridges)
+* [Operating systems supported ](#ossupp)
+* [Workloads supported](#workloads)
+* [Supported deployment scenario](#deployment)
+* [Software requirements](#software)
+
+#### General recommendation {#general}
+
+We recommend that your server contains the following:
+
+* Quad Core Processor
+
+* Hard disk drive with a minimum of 500 GB of space
+
+#### Hypervisor recommendations {#hypervisor}
+
+<table style="text-align: left; vertical-align: top; min-width: 400px;">
+
+<tr style="background-color: #C8C8C8;">
+<th>Hypervisor</th>
+<th>Version</th>
+</tr>
+<tr style="background-color: white; color: black;">
+<td>KVM</td>
+<td>qemu-kvm1.0 and above</td>
+</tr>		  
+<tr style="background-color: white; color: black;">
+<td>VMWare</td>
+<td>ESXi 5.1 and above</td>
+</tr>
+</table>
+
+### Node requirements {#nodereq}
+
+<table style="text-align: left; vertical-align: top; min-width: 400px;">
 
 <tr style="background-color: #C8C8C8;">
 <th>Node Type</th>
-<th>Virtual/Physical Node</th>
+<th>Virtual?</th>
 <th>CPU Cores</th>
 <th>Memory</th>
 <th>Internal Storage</th>
 <th>NICs</th>
-<th> <nobr>  OS (included as part of ISO)  </nobr></th>
+<th><span style='display:block; width:150px;'>OS <br />(incl. as part of ISO)</span></th>
+<th><span style='display:block; width:180px;'>Virtualized Platforms Supported</span></th>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> Admin Node </td>
-<td> Virtual Only </td>
-<td> 4 * </td>
-<td> 16 GB * </td>
-<td> 20 GB </td>
+<td>Admin Node</td>
+<td>Yes</td>
+<td> 4 </td>
+<td> 12 GB </td>
+<td> 40 GB </td>
 <td> 2 </td>
-<td> <nobr> Ubuntu Server 12.04 LTS (64-bit) </nobr> </td>
+<td> Ubuntu Server 12.04 LTS (64-bit) </td>
+<td>VMWare ESXi 5.1 and above <br /> KVM qemu-kvm-1.0 and above</td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td>Controller Node</td>
+<td>Yes</td>
+<td> 4 </td>
+<td> 32 GB </td>
+<td> 60 GB </td>
+<td> 3 </td>
+<td> Ubuntu Server 12.04 LTS (64-bit) </td>
+<td>VMWare ESXi 5.1 and above <br /> KVM qemu-kvm-1.0 and above</td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td>Baremetal Host</td>
+<td>Yes</td>
+<td> 4 </td>
+<td> 32 GB </td>
+<td> 60 GB </td>
+<td> 3 </td>
+<td> Ubuntu Server 12.04 LTS (64-bit) </td>
+<td>VMWare ESXi 5.1 and above <br /> KVM qemu-kvm-1.0 and above</td>
+</tr>	
+
+</table>
+
+
+
+#### Moonshot chassis firmware version {#firmware}
+
+<table style="text-align: left; vertical-align: top; min-width: 400px;">
+
+<tr style="background-color: #C8C8C8;">
+<th>Software / Firmware</th>
+<th>Version</th>
+</tr>
+<tr style="background-color: white; color: black;">
+<td>m300 BIOS</td>
+<td>H02 2013.11.13</td>
+</tr>		  
+<tr style="background-color: white; color: black;">
+<td>ProLiant Moonshot Cartridge BIOS</td>
+<td>H01 2013.11.15</td>
+</tr>
+<tr style="background-color: white; color: black;">
+<td>iLO CM</td>
+<td>1.11</td></tr>
+<tr style="background-color: white; color: black;">
+<td>Satellite FW</td>
+<td>2013.10.18</td>
+</tr>
+<tr style="background-color: white; color: black;">
+<td>Carbondale 8</td>
+<td>4.3</td>
+</tr>
+<tr style="background-color: white; color: black;">
+<td>Switch FastPath FW</td>
+<td>2.0.0.13</td>
+</tr>
+<tr style="background-color: white; color: black;">
+<td>CMU</td>
+<td>7.2</td>
+</tr>
+<tr style="background-color: white; color: black;">
+<td>Moonshot Windows Deployment Packs</td>
+<td>2013.12.1</td>
+</tr>
+</table>
+
+#### Moonshot cartridges supported {#cartridges}
+
+<table style="text-align: left; vertical-align: top; min-width: 400px;">
+
+<tr style="background-color: #C8C8C8;">
+<th>Cartridge Type</th>
+<th>CPU Cores</th>
+<th>Memory</th>
+<th>Internal Storage</th>
+</tr>
+<tr style="background-color: white; color: black;">
+<td>HP ProLiant Moonshot Server Cartridge</td>
+<td>2</td>
+<td>8 GB</td>
+<td>500 GB or 1 TB</td>
+</tr>		  
+<tr style="background-color: white; color: black;">
+<td>HP ProLiant m300 Server Cartridge</td>
+<td>8</td>
+<td>32 GB (4x8 GB)</td>
+<td>240 GB, 500 GB or 1 TB</td>
+</tr>
+</table>
+
+**Note:** You must have an IPMI driver version 2.0 or above, and an external Internet connection, if you are using a public or hybrid cloud.
+
+#### Operating systems supported {#ossupp}
+
+<table style="text-align: left; vertical-align: top; min-width: 400px;">
+
+<tr style="background-color: #C8C8C8;">
+<th>Cartridge Type</th>
+<th>OS / Version Supported</th>
+</tr>
+<tr style="background-color: white; color: black;">
+<td>HP ProLiant Moonshot Server Cartridge</td>
+<td>Ubuntu 12.04 LTS <b>OR</b> Redhat Enterprise Linux 6.4</td>
+</tr>		  
+<tr style="background-color: white; color: black;">
+<td>HP ProLiant m300 Server Cartridge</td>
+<td>Ubuntu 13.10 <b>OR</b> Redhat Enterprise Linux 6.5</td>
+</tr>
+</table>
+
+
+
+#### Workloads supported {#workloads}
+<table style="text-align: left; vertical-align: top; min-width: 400px;">
+
+<tr style="background-color: #C8C8C8;">
+<th>Cartridge Type</th>
+<th>Top Workloads</th>
+
+</tr>
+<tr style="background-color: white; color: black;">
+<td>HP ProLiant Moonshot Server Cartridge</td>
+<td>Static web</td>
+
+</tr>		  
+
+<TR style="background-color: white; color: black;">
+<TD rowspan="4">HP ProLiant m300 Server Cartridge</TD>
+<TD>Static web</TD>
+
+</TR>
+
+<TR style="background-color: white; color: black;">
+<TD>Caching/dynamic web</td>
+
+</TR>
+<TR style="background-color: white; color: black;">
+<TD>NoSQL</TD>
+
+</TR>
+<TR style="background-color: white; color: black;">
+<TD>Analytics</TD>
+
+</TR>
+</table>
+
+
+
+### Network Infrastructure
+
+The following networks are utilized in the HP Cloud OS for Moonshot infrastructure:
+
+* <b>Admin Network</b>: Provides connectivity between the Admin node, the Controller node and the Baremetal host. The Admin node provides DHCP and PXE services on this network.
+
+* <b>Nova_Flat Network</b>: Utilized for connectivity between the Controller and Baremetal hosts and the Moonshot cartridges. The Controller node provides 
+DHCP and PXE services for this network. Workloads are provisioned to the Moonshot cartridges using this network.
+
+* <b>IPMI Network</b>: This network is utilized for communication between the Baremetal host and the Moonshot Chassis Manager. This includes chassis and 
+cartridge discovery, power control of cartridges and nodes, and monitoring of the health of the Moonshot systems
+
+* <b>Public/External Network</b>: This network provides public access to the HP Cloud OS for Moonshot Administration Dashboard and external access to 
+the internet for the Admin node and Controller node.
+
+<b>Notes</b>:
+
+* The Admin node and the Controller node utilize internet access to obtain updates and workload content from HP. If Internet access is not feasible from your 
+datacenter, then it is possible for updates and workloads to be downloaded locally and then uploaded to your cloud environment.
+
+* The Controller node will require a static IP address on the Public network. Please consult with your network administrator to obtain the required static 
+IP address.
+
+#### Network Configuration
+
+HP Cloud OS for Moonshot will have the following Network Configuration:
+
+* Admin Node: 2 NICs - Admin Network and Public Network
+
+* Controller Node: 3 NICs - Admin Network, PXE/Data Network, and Public Network
+
+* Baremetal Host: 3 NICs - Admin Network , PXE/Data Network, and IPMI Network
+
+Again referring to this simplified deployment scenario: 
+
+<img src="media/moonshot-deployment.png"></img>
+
+<table style="text-align: left; vertical-align: top; min-width:700px;">
+
+<tr style="background-color: #C8C8C8;">
+<tr>
+<th> </th>
+<th>eth0</th>
+<th>eth1</th>
+<th>eth2</th>
+<tr>
+
+<tr style="background-color: white; color: black;">
+<td> Admin Node </td>
+<td> Admin network </td>
+<td> Public network </td>
+<td>  </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Controller Node </td>
-<td> Virtual and Physical </td>
-<td> 4 </td>
-<td> 32 GB </td>
-<td> 60 GB </td>
-<td> 1 ** </td>
-<td> Ubuntu Server 12.04 LTS (64-bit) </td>
-</tr>		
+<td> Admin network </td>
+<td> PXE / data network </td>
+<td> Public network </td>
+</tr>
 
 <tr style="background-color: white; color: black;">
-<td> Compute Node </td>
-<td> Physical Only </td>
-<td> 4 *** </td>
-<td> 32 GB </td>
-<td> 60 GB </td>
-<td> 1 </td>
-<td> Ubuntu Server running KVM hypervisor 12.04 LTS (64-bit) </td>
-</tr>			
-
-<tr style="background-color: white; color: black;">
-<td> Swift Controller (Ring, Proxy, Dispersion) </td>
-<td> Virtual or Physical </td>
-<td> 8 </td>
-<td> 12 GB </td>
-<td> 20 GB </td>
-<td> 3 </td>
-<td> Ubuntu Server 12.04 LTS (64-bit) </td>
-</tr>	   
-
-<tr style="background-color: white; color: black;">
-<td> Storage Node </td>
-<td> Virtual or Physical </td>
-<td> 8 </td>
-<td> 12 GB </td>
-<td> 60 GB </td>
-<td> 3 </td>
-<td> Ubuntu Server 12.04 LTS (64-bit) </td>
-</tr>	   
+<td> Baremetal Host </td>
+<td> Admin network </td>
+<td> PXE / data network </td>
+<td> IPMI network / Public network </td>
+</tr>
 
 </table>
 
-\* For the Admin Node, the CPU and memory should be dedicated to this VM and not shared with other virtual machines on the same KVM host.
-
-\*\* External Internet connection required for public or hybrid cloud.
-
-\*\*\* Intel or AMD hardware virtualization support required. The CPU cores and memory requirements must be sized based 
-on the VM instances hosted by the compute node.
-
-### Network Infrastructure
-
-To plan the Cloud Environment's network infrastructure, see the following sections:
-
-* [Switch Configuration](#switch-configuration)
-* [Network Configuration](#network-configuration)
-
-#### Switch Configuration
-
-Your environment must provide physical switches and wiring for 3 to 4 networks, depending on the cloud configuration. 
-Or the environment must support the 802.1Q specification (VLAN tagging/trunking) for tagged networks.
-
-#### Network Configuration
-
-The following table identifies network requirements for your cloud environment.
-
-<table style="text-align: left; vertical-align: top; width:700px;">
-
-<tr style="background-color: #C8C8C8;">
-<th> Network </th>
-<th> Speed </th>
-<th> <nobr> Tagged * </nobr> </th>
-<th> Required </th>
-<th> Notes </th>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> admin Network </td>
-<td> 1 Gb </td>
-<td> N </td>
-<td> Y </td>
-<td> Used for administrative functions, such as managed node installation, TFTP booting, DHCP assignments, system logs, backups, and other monitoring tasks. This also carries
-cinder-volume traffic. Must be an Isolated Private Network. </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> bmc Network * </td>
-<td> 1 Gb </td>
-<td> N </td>
-<td> N </td>
-<td> Baseboard Management Controller LAN for Intelligent Platform Management Interface (IPMI) traffic. For test purposes only. </td>
-</tr>	
-
-<tr style="background-color: white; color: black;">
-<td> bmc_vlan Network </td>
-<td> 1 Gb </td>
-<td> Y (100) </td>
-<td> N </td>
-<td> Baseboard Management Controller VLAN (IPMI traffic VLAN). For test purposes only. </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> os_sdn Network </td>
-<td> 1 Gb </td>
-<td> Y (700) or N.  Default is N (not tagged). </td>
-<td> Y </td>
-<td> OpenStack Software-Defined-Network. This network is for data traffic between the Virtual Machine instances, and the traffic from the instances to the Controller Node. Must be an
-isolated Private Network. </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> public Network </td>
-<td> 1 Gb </td>
-<td> Y (300) or N.  Default is N (not tagged). </td>
-<td> Y </td>
-<td> Public or corporate network that is attached to your cloud infrastructure. 
-Must provide a pool of IP addresses for the Cloud Controller node for floating IP assignments. 
-Size of the pool depends on the number of Virtual Machine instances. This network handles traffic 
-to the outside world for the instances. </td>
-</tr>
-
-</table> 
-
-\* Default configuration of network tagging to combine logical networks onto a single physical network. Recommended practice is to use a separate Network for each type of network instead of
-VLAN. See [Customize Network Settings (Required)](/cloudos/moonshot/install/customize-network-settings) for instructions on customizing the os_sdn, public and admin networks.
-
-
-### Storage Infrastructure
-
-The following table identifies storage requirements for your cloud environment.
-
-<table style="text-align: left; vertical-align: top; width:700px;">
-
-<tr style="background-color: #C8C8C8;">
-<th> Node Type </th>
-<th> Internal Storage </th>
-<th> Partition Scheme </th>
-<th> File System Mounts </th>
-<th> Notes </th>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Admin node </td>
-<td> <nobr> >= 20 GB </nobr> </td>
-<td>  </td>
-<td>  </td>
-<td> </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Controller node </td>
-<td> >= 60 GB </td>
-<td> Block storage </td>
-<td> <nobr> /tmp: >= 200 GB </nobr> <br />
-/var/lib/glance/images: >= 300 GB <br /> <br />
-LVM Volume Group: >= 2 TB, **or** <br />
-/var/lib/cinder/volumes: >= 2 TB </td>
-<td> <nobr> The controller node hosts the Image </nobr> and Volume Management services, which require block storage, either Direct Attached Storage or SAN or iSCSI. 
-The sizing depends on two factors: Size and number of images, and Size and number of volumes, attached to the VM instances.
-
-**Tip:** Infrastructure services like RabbitMQ, PostgreSQL and CouchDB require their repositories to be on high-performance storage. </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Compute node(s) </td>
-<td> >= 60 GB </td>
-<td> Block storage </td>
-<td> /tmp: >= 150 GB <br/>
-/var/lib/nova/instances: >= 300 GB </td>
-<td> The compute node(s) need storage space for on-instance, ephemeral disks. The sizing is based on the flavor chosen for the launched instances. </td>
-</tr>
-
-</table> 
-
-This illustration shows how the storage space is used by the VM instances in a cloud's infrastructure:
-
-<img src="media/cloudos-compute-node.png" title="Storage space used by VM instances in a cloud's infrastructure" />
 
 ## Set Up the Admin Node
 
-You are recommended to only install the Admin Node on a virtual machine. 
-Here are general guidelines for creating a virtual machine in an existing or new hypervisor infrastructure:
+Install the Admin Node on a virtual machine. Here are general guidelines for creating a virtual machine in an existing or new hypervisor infrastructure:
 
 1. Configure the hypervisor host's network. The host must provide connectivity to the virtual machine Admin Node on an isolated private network 
 to all the bare-metal nodes' port eth0. And the virtual machine Admin Node must also have connectivity to a routable network for Internet access.
@@ -268,6 +365,7 @@ The following configuration must be reviewed during this step:
 
 4. Configure the virtual machine Admin Node to point to the ISO as a CD/DVD drive or install media ISO image. 
 
+
 ## Boot the Admin Node Using the HP Cloud OS for Moonshot ISO
 
 To boot the Admin Node using the ISO:
@@ -278,7 +376,7 @@ To boot the Admin Node using the ISO:
 
 3. (Optional) Power DOWN the Admin Node VM, edit it to disconnect the ISO CD, then Power UP the VM.
 
-The Operational Dashboard has been successfully installed on the Admin Node.
+At this point, the Operational Dashboard has been successfully installed on the Admin Node.
 
 ## Launch the Operational Dashboard
 
@@ -286,7 +384,7 @@ After you boot from the HP Cloud OS for Moonshot ISO, you are ready to launch th
 
 To launch the Operational Dashboard:
 
-1. From the virtual machine Admin Node, open a Mozilla Firefox or Google Chrome browser that has the IP addresses <code> 192.*;10.*;localhost </code>  
+1. From the virtual machine Admin Node, open a Mozilla Firefox or Google Chrome browser that has the IP addresses <code> 192.*;10.*;localhost;127.0.* </code>  
 set as proxy exceptions.
 
 2. In the browser, enter **http://192.168.124.10:9000** to launch the Operational Dashboard user interface. 

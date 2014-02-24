@@ -24,50 +24,53 @@ PageRefresh();
 
 Welcome! This topic presents an overview of the installation steps.  
 
-An HP Cloud OS for Moonshot infrastructure requires planning and preparation by IT Administrators to set up,
-configure, and install a specific network, storage, and hardware infrastructure. 
-
-These installation topics provide the means to plan, install, configure, and create an HP Cloud OS for Moonshot infrastructure.
-
-The HP Cloud OS for Moonshot installation deploys the HP Cloud OS for Moonshot Operational Dashboard (used to set up,
-configure, and install an HP cloud infrastructure) and the HP Cloud OS for Moonshot Administration Dashboard
-(used to create and manage cloud resources).
+An HP Cloud OS for Moonshot infrastructure requires advance planning and preparation by IT network administrators. The HP Cloud OS for Moonshot installation 
+deploys the HP Cloud OS for Moonshot Operational Dashboard (used to set up, configure, and install an HP cloud infrastructure) and the HP Cloud OS for 
+Moonshot Administration Dashboard (used to create and manage cloud resources).
 
 * [HP Cloud OS for Moonshot Environment](#hp-cloud-os-for-moonshot-environment)
+
 * [Preview of the Installation Steps](#preview-of-the-installation-steps)
+
 * [Components of the HP Cloud OS for Moonshot Environment](#components-of-the-hp-cloud-os-for-moonshot-environment)
+
+* [Overall Installation and Configuration Checklist](#overall-installation-and-configuration-checklist)
+
 * [Next Step](#next-step)
 
 ## HP Cloud OS for Moonshot Environment
 
-The HP Cloud OS for Moonshot environment consists of an installer, services and controllers that provide:
-Simplified service delivery with automated-live content distribution and easier installation and
-configuration processes. This allows manually intensive operational processes to be reduced from
-hundreds of steps over multiple packages to a simple, automated process.
+The HP Cloud OS for Moonshot environment provides you with: 
 
-Optimized cloud workload across cloud providers with model once and provision anywhere
-capability combined with repeatable, consistent workload placement across diverse cloud
-deployment models. This allows your customers to optimally align workloads with resources and
-improve resource utilization.
+* Optimized cloud workloads across cloud providers, with model-once and provision-anywhere capability.  These features are combined with repeatable, consistent 
+workload placement across diverse cloud deployment models. This functionality allows you and your customers to optimally align workloads with resources, and to  
+improve resource utilization. 
 
-Flexible and open architecture powered by OpenStack, gives you an industry leading, vendor
-neutral, open source cloud architecture.
+* A flexible and open architecture powered by OpenStack technology, giving you an industry leading, vendor neutral, open source cloud architecture. 
+
+The HP Cloud OS for Moonshot environment also include an installer, services, and controllers that provide simplified service delivery with automated, live 
+content distribution, and an easier installation and configuration processes. This functionality allows manually intensive operational processes to be 
+reduced from hundreds of steps over multiple packages to a simple, automated process.
 
 ## Preview of the Installation Steps
+
+Installing and configuring Cloud OS for Moonshot is a multi-step process. Throughout the process you will be prompted to either enter required information 
+or accept the default information.
 
 At a high level, here are the steps to setup and install the Admin node:
 
 <img src="media/cloudos-moonshot-install-process.png" title="HP Cloud OS for Moonshot installation process" /> 
 
-The steps shown above feature an automated process in the HP Cloud OS for Moonshot Operational Dashboard, where you can accept defaults or enter values that are specific to your requirements (such as your network connections). Using 
-this automated approach, HP Cloud OS for Moonshot handles all of the installation details for you, installing the OpenStack services and the HP Cloud OS for Moonshot value-added services.
+The steps shown above feature an automated process in the HP Cloud OS for Moonshot Operational Dashboard. HP Cloud OS for Moonshot handles all of the 
+installation details for you, installing the OpenStack services and the HP Cloud OS for Moonshot value-added services.
 
 Taking a broader view, this next diagram illustrates those steps in a larger context:
 
 <img src="media/cloudos-moonshot-install-process-expanded.png" title="HP Cloud OS for Moonshot - an expanded view of the install process" /> 
 
-Notice how once you've installed and set up the Admin node, you perform steps first in the Operational Dashboard to create your cloud and perform associated tasks, then you launch the next dashboard, the Administration Dashboard, to perform 
-a number of post-installation tasks. 
+Notice how once you've installed and set up the Admin node, you perform steps first in the Operational Dashboard to create your cloud and perform associated 
+tasks. Then from the Operational Dashboard, you will launch the separate Administration Dashboard to perform a number of post-installation tasks. And from that 
+point forward, you will use the Administration Dashboard to manage your cloud environment, including the Moonshot server cartridges.
 
 <img src="media/cloudos-moonshot-post-install-tasks.png" title="HP Cloud OS for Moonshot post-install tasks" /> 
 
@@ -80,14 +83,6 @@ The following diagram illustrates the HP Cloud OS for Moonshot environment.
 
 <img src="media/cloudos-moonshot-environment2.png" title="HP Cloud OS for Moonshot environment" /> 
 
-### HP Cloud OS for Moonshot Administration Node
-
-The HP Cloud OS for Moonshot Administration Node (Admin Node) hosts the Operational Dashboard that deploys
-private and hybrid-only cloud infrastructure environments by network booting the managed bare-metal
-servers, which are the Controller and Compute nodes. Using Chef Server and recipes,
-the services are installed on the managed bare-metal servers. **Note:** In this and subsequent HP Cloud OS for Moonshot topics, 
-we refer to these managed bare-metal servers more simply as "managed nodes."
-
 ### Services
 
 Cloud Infrastructure consists of individual services installed and integrated together across one or
@@ -95,66 +90,90 @@ more nodes to form a cloud environment. These are composite services that are in
 together into a single cloud solution. Services are exposed or published as RESTful APIs.
 The list of services that can be deployed for HP Cloud OS for Moonshot are:
 
-* Keystone (Identity Management Service)&mdash; An OpenStack service to provide identity (domain,
+* <b>Keystone</b> &mdash; An OpenStack service to provide identity (domain,
 project and users) management, access token, and service catalog functionality.
 
-* Glance (Image Repository Service)&mdash; An OpenStack service to provide for discovering,
+* <b>Glance</b> &mdash; An OpenStack service to provide for discovering,
 registering, and retrieving virtual machine images.
 
-* Nova (Compute Controller and Compute Node Service)&mdash; An OpenStack service to provide a
+* <b>Nova</b> &mdash; An OpenStack service to provide a
 compute fabric controller.
 
-* Cinder (Volume Connectivity Service)&mdash; An OpenStack service to provide volume management.
+* <b>Cinder</b> &mdash; An OpenStack service to provide volume management.
 
-* Neutron (Network Connectivity Service)&mdash; An OpenStack service to create and provision virtual networks.
+* <b>Neutron</b> &mdash; An OpenStack service to create and provision virtual networks.
 
-* Swift (OpenStack Object Store) &mdash; An OpenStack service to store and retrieve lots of data in virtual containers.  
+* <b>Swift</b> &mdash; An OpenStack service to store and retrieve lots of data in virtual containers.  
 
-* Graffiti (Resource Pool Registry and Capability Tagging Service) &mdash; An HP Cloud OS for Moonshot service to support
+* <b>Apollo</b> &mdash; An HP Cloud OS for Moonshot service that provides HP Moonshot Chassis and Server Management. In addition, it helps to discover HP Moonshot Servers and allocates them for the provisioning.
+
+* <b>Graffiti</b> &mdash; An HP Cloud OS for Moonshot resource pool registry and capability tagging service. Designed to support
 diverse functions: discovering, registering, and retrieving resource pool definitions for compute, network, and volume resources; 
 a dictionary of the cloud's capabilities; a searchable directory to find cloud resources based on their capabilities; and 
 dynamic binding, describing the requirements instead of static binding.  
 
-* Eve (Topology Provisioning Service)&mdash; An HP Cloud OS for Moonshot service to provide for provisioning lifecycle
+* <b>Eve</b> &mdash; An HP Cloud OS for Moonshot service to provide for provisioning lifecycle
 of a TOSCA-based infrastructure topology design of the compute, network, and volume resources
 in a defined resource pool. Also provides security and management.
 
-* Focus (Topology Document Repository Service)&mdash; An HP Cloud OS for Moonshot service to provide for
-discovering, registering, versioning, and retrieving of document types necessary to describe
+* <b>Focus</b> &mdash; An HP Cloud OS for Moonshot service to provide for discovering, registering, versioning, and retrieving of document types necessary to describe
 TOSCA-based infrastructure topologies.
 
-### Controller and Compute Nodes
+### Administration Node
 
-While each service can be individually deployed, HP Cloud OS for Moonshot groups these services into distinct
-groups for ease of architectural description.
+The HP Cloud OS for Moonshot Administration Node (Admin Node) hosts the Operational Dashboard that deploys private and hybrid-only cloud infrastructure environments by network booting the managed Baremetal
+servers, which are the Controller and Baremetal host. 
 
-**Cloud Controller:** This contains those services that are considered single services for a cloud
-environment, such as Keystone, Glance, Graffiti, Eve, and Focus, and define the boundaries of the
+### Controllers
+
+While each service can be individually deployed, HP Cloud OS for Moonshot groups these services into distinct groups for ease of architectural description.
+
+**Cloud Controller:** This contains those services that are considered single services for a cloud environment, such as Keystone, Glance, Graffiti, Eve, and Focus, and define the boundaries of the
 cloud environment from an identity standpoint.
 
-**Storage Controller:** This contains Cinder services that provide block storage and volume
-connectivity to launched instances. It is a single service in a cloud and can co-exist with Cloud
-Controller services.
+**Network Controller:** This contains Neutron's server, l3 agent and DHCP services. It is a single service in a cloud and can co-exist with cloud controller services.
 
-**Network Controller:** This contains Neutron's server, l3 agent and DHCP services. It is a single
-service in a cloud and can co-exist with cloud controller services.
+**Compute Region Controller:** A Resource Region is known as a Compute Region. This is a pool of compute resources that can be consumed through a service API by consumers of the cloud,
+such as Nova. This is responsible for the launch of instances across baremetal hosts. The scheduling is based on varied flavors of instances and available resources on the compute nodes.
+In a single compute region deployment model, this can coexist with cloud controller services.  <b>Notes</b>: An HP cloud can consist of more than one region. For example, you can separate the regions based on the workload such as between a development/test team and a production deployment. A
+development/test team region's compute requirements can use commodity and less expensive hardware. Whereas a production deployment region's compute requirements need a set of compute
+resources that are backed up with heavy compute and fault-tolerant resources. HP recommends that you define and use multiple compute regions. In this scenario, the Compute Region Controller is its own node.
 
-**Compute Region Controller:** A Resource Region is known as a Compute Region. This is a pool
-of compute resources that can be consumed through a service API by consumers of the cloud,
-such as Nova. This is responsible for scheduling a launch of instances across compute nodes. The
-scheduling is based on varied flavors of instances and available resources on the compute nodes.
-In a single compute region deployment model, this can coexist with cloud controller services.
+### Baremetal Host
 
-An HP cloud can consist of more than one region. For example, you can separate the regions based
-on the workload such as between a development/test team and a production deployment. A
-development/test team region's compute requirements can use commodity and less expensive
-hardware. Whereas a production deployment region's compute requirements need a set of compute
-resources that are backed up with heavy compute and fault-tolerant resources.
+The Baremetal Host hosts the cloud instances using a baremetal driver for the OpenStack Nova compute service. Within the OpenStack framework, the baremetal driver has the same role as the drivers for other hypervisors (libvirt, xen, etc.), and yet it is presently unique in that the hardware is not virtualized - 
+there is no hypervisor between the tenants and the physical hardware that includes Moonshot cartridges.
 
-> **Note:** HP recommends that you define and use multiple compute regions. In this scenario, the Compute Region Controller is its own node.
+## Overall Installation and Configuration Checklist
 
-**Compute Node:** A compute node hosts the Cloud virtual machine instances using any supported hypervisor with OpenStack. In the current release, Cloud OS supports KVM as the hypervisor.
-This node hosts OpenStack services called Nova-compute and Neutron l2 agent. Multiple Compute Region Nodes can be created to expand cloud capacity. 
+Assuming a typical configuration, the overall setup process involves the following steps. The total time to complete the setup once HW is installed, configured 
+and the hypervisor is ready is 4 to 6 hours. Approximate execution times, once the installation from the HP Cloud OS for Moonshot ISO has begun, are listed here for reference. Your time may vary.
+
+* Collect the required information for the network configuration
+
+* Setup the Moonshot chassis, cartridges and configure the internal switches
+
+* Configure the server hardware and the physical networking as required
+
+* Setup a server with either VMware ESXi or Linux KVM as a hypervisor
+
+* Configure the networking within the hypervisor to support the required networking configuration
+
+* Create three virtual machines to host the Admin, Controller and Compute VMs
+
+* Create a VM to use as an access node for installation of the HP Cloud OS for Moonshot software ISO
+
+* Install and configure the Admin node (60 minutes)
+
+* Add (discover and allocate) the Controller and Compute VMs (30 minutes)
+
+* Create a cloud and compute region (60 minutes)
+
+* Add and discover the Moonshot chassis (15 min)
+
+* Download and import the desired workload(s) (30 to 60 minutes - depending on download time)
+
+* Provision a workload (30 minutes)
 
 ## Next Step
 
