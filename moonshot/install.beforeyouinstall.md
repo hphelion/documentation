@@ -282,7 +282,7 @@ The following networks are utilized in the HP Cloud OS for Moonshot infrastructu
 DHCP and PXE services for this network. Workloads are provisioned to the Moonshot cartridges using this network.
 
 * <b>IPMI Network</b>: Utilized for communication between the Baremetal host and the Moonshot Chassis Manager. This includes chassis and 
-cartridge discovery, power control of cartridges and nodes, and monitoring of the health of the Moonshot systems
+cartridge discovery, power control of cartridges and nodes, and monitoring of the health of the Moonshot systems.
 
 * <b>Public Network</b>: Provides public access to the HP Cloud OS for Moonshot Administration Dashboard and external access to 
 the internet for the Admin node and Controller node.
@@ -303,13 +303,15 @@ Again referring to this simplified deployment scenario:
 \* <b>Note</b>: You can add multiple Baremetal Hosts with the same type of network connectivity shown in the diagram.
 
 
-HP Cloud OS for Moonshot will have the following network configuration:
+As shown in the diagram, HP Cloud OS for Moonshot will have the following network configuration:
 
 * <b>Admin Node</b>: 2 NICs - Admin Network and Public Network
 
 * <b>Controller Node</b>: 3 NICs - Admin Network, Nova_Flat Network, and Public Network
 
 * <b>Baremetal Host</b>: 3 NICs - Admin Network , Nova_Flat Network, and IPMI Network
+
+The NICs per node/host NIC are as follows:
 
 <table style="text-align: left; vertical-align: top; min-width:700px;">
 
