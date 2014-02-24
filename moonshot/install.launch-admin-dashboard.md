@@ -399,7 +399,7 @@ It also displays the complete state of the chassis.
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td style="min-width:150px;"> <img src="media/cos4ms-maintence-mode-icon.png" /> </td>
+<td style="min-width:150px;"> <img src="media/cos4ms-maintenance-mode-icon.png" /> </td>
 <td> Displays the maintenance mode state. </td>
 </tr>
 
@@ -409,7 +409,7 @@ It also displays the complete state of the chassis.
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td style="min-width:150px;"> <img src="media/cos4ms-power-status.png" /> </td>
+<td style="min-width:150px;"> <img src="media/cos4ms-power-status-icon.png" /> </td>
 <td> Displays the power supply status. </td>
 </tr>
 
