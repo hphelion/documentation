@@ -308,7 +308,7 @@ This is a key task during your post-install of HP Cloud OS for Moonshot: adding 
 1.	Click the <b>+ Add</b> icon to display the Enter Chassis Details dialog box.
 
 2.	In the <b>Display Name</b> box, enter the display name for the chassis. The name should have a minimum of 4 characters. 
-The name should start with an alphabet and may be followed by numbers or an underscore (_). **Note:** Do not specify a Name that contains pecial characters or spaces.
+The name should start with an alphabet and may be followed by numbers or an underscore (_). **Note:** Do not specify a Name that contains special characters or spaces.
 
 3.	In the <b>Chassis Manager IP Address</b> box, enter the IP address of your Moonshot Chassis.
 
@@ -324,15 +324,15 @@ The name should start with an alphabet and may be followed by numbers or an unde
  * Failed - When the discovery process fails
  * Optimal- When the chassis is discovered and is in good state
  
-Once the operation is successful, the Moonshot Chassis is graphically represented on the screen. The information is displayed regarding the cartridges, nodes, and the state of the chassis.
+Once the operation is successful, the Moonshot Chassis is graphically represented on the screen. The information is displayed regarding the cartridges, nodes, and the state of the chassis. 
 
 ### Single Chassis View
 
 The Single Chassis View displays the detailed information about the selected Chassis in two sections:
 
-* Chassis Snapshot
+* Chassis Snapshot section
 
-* Table
+* Table section
 
 Example of the main screen:
  
@@ -342,6 +342,146 @@ The Single Chassis View also displays the Events log panel, to the right of the 
 
 <img src="media/moonshot-single-chassis-view-example2.png" title="Moonshot Single Chassis View events log example" />
 
+#### Chassis Snapshot section
+
+The Chassis Snapshot visually represents the chassis with all the cartridges and nodes along with power states of the cartridges.
+
+**Note:** A chassis has different cartridges in it, and each cartridge can serve one or more node(s).
+
+The following table displays a list of icons and their description. These icons are displayed next to the chassis on the right panel. 
+It also displays the complete state of the chassis.
+
+<table style="text-align: left; vertical-align: top; min-width:700px;">
+
+<tr style="background-color: #C8C8C8;">
+<th>Icon</th>
+<th>Description</th>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td style="min-width:150px;"> <img src="media/cos4ms-uuid-icon.png" /> </td>
+<td> Displays the chassis UUID. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td style="min-width:150px;"> <img src="media/cos4ms-name-icon.png" /> </td>
+<td> Displays the chassis name. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td style="min-width:150px;"> <img src="media/cos4ms-ip-address-icon.png" /> </td>
+<td> Displays the Chassis Manager IP address. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td style="min-width:150px;"> <img src="media/cos4ms-fw-version-icon.png" /> </td>
+<td> Displays the firmware version. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td style="min-width:150px;"> <img src="media/cos4ms-number-cartridges-icon.png" /> </td>
+<td> Displays the number of cartridges discovered. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td style="min-width:150px;"> <img src="media/cos4ms-available-nodes-icon.png" /> </td>
+<td> Displays the number of available nodes for provisioning. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td style="min-width:150px;"> <img src="media/cos4ms-health-icon.png" /> </td>
+<td> Displays overall health of the chassis. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td style="min-width:150px;"> <img src="media/cos4ms-last-sync-icon.png" /> </td>
+<td> Displays the Last Sync-Up Time. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td style="min-width:150px;"> <img src="media/cos4ms-maintence-mode-icon.png" /> </td>
+<td> Displays the maintenance mode state. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td style="min-width:150px;"> <img src="media/cos4ms-fan-status-icon.png" /> </td>
+<td> Displays the fan status. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td style="min-width:150px;"> <img src="media/cos4ms-power-status.png" /> </td>
+<td> Displays the power supply status. </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td style="min-width:150px;"> <img src="media/cos4ms-temperature-status-icon.png" /> </td>
+<td> Displays the temperature status. </td>
+</tr>
+
+</table> 
+
+Also, you can click the following icon to force a refresh of the Chassis status.
+
+<img src="media/cos4ms-refresh-icon.png" />
+
+**Note:** The Force Refresh option will take a minute to complete. During this time you cannot perform any action on the cartridge and the nodes.
+
+#### Table Views section
+
+The Table views section displays the details of all the cartridges and the nodes in a tabular form. The table displays two views - 
+Cartridges View and the Nodes View. By default, the Cartridges View is the active view. 
+
+##### Cartridges View
+
+In the table displayed below the Chassis Snapshot, click the <b>Cartridges</b> tab to display the following details about the cartridge:
+
+* Cartridge Name
+* ID
+* Serial #
+* Nodes
+* Product ID
+* Type
+* System ROM Version
+* Health 
+* Maintenance Mode
+
+##### Nodes View 
+
+In the table displayed below the Chassis Snapshot, click <b>Nodes</b> tab to display the following details about the nodes:
+
+* Node ID
+* CPU Cores
+* Memory(in MB)
+* Min Disk (in MB)
+* MAC List
+* Power Status
+* Instance UUID
+
+The Node View displays two new tabs: Workload and Configuration. 
+
+To view the workload and configuration details of a particular node:
+
+* Select a node from the table for which you want to view the workload or configuration details.
+* Click the Workload Tab to view the workload details of the selected node.
+* Click the Configuration Tab to view the configuration details of selected node.
+
+##### Notes about the Table Views
+
+1. Selecting or de-selecting a cartridge or a node in the Cartridges or Nodes table is a toggle function. 
+
+2. You can select multiple cartridges or nodes by selecting the particular rows one-by-one, in the Cartridges or Nodes table.
+
+3. Selecting a cartridge in the Cartridges table has two effects:
+ * It also selects that cartridge on the Chassis in the Snapshot section.
+ * It selects all its nodes in the adjacent Nodes table.
+ 
+4. In the Nodes table, if all the nodes of a particular cartridge are selected, then the last node's selection also selects the parent cartridge in the Cartridges table and on the Chassis in the Snapshot section.
+
+5. Items 3 and 4 also apply to the selection of multiple cartridges and nodes. 
+
+6. The following icon selects all the cartridge/nodes in the table.  <img src="media/cos4ms-select-all-icon.png" />
+
+7. The following icon selects all the cartridge/nodes in the table.  <img src="media/cos4ms-deselect-all-icon.png" />
 
 
 ## Launch an Instance from an Image
