@@ -352,50 +352,51 @@ In addition to the information presented already in this topic, please review th
 
 ### Operation Dashboard Checklist
 
-* For your Public network: 
- * On the <b>Edit Network</b> dialog, you will need to specify your Subnet, Netmask, and Router IP values.
- * On the <b>Edit Network Ranges</b> dialog, you will need to specify your Node Type, IPV4 Start Address, and IPV4 End Address values.
+* In <b>Environment</b> > <b>Prerequisites</b>, the dialogs will prompt for your external DNS IP details.
 
-* For your IPMI network: 
- * On the <b>Edit Network</b> dialog, you will need to specify your Subnet, Netmask, and Router IP values.
- * On the <b>Edit Network Ranges</b> dialog, you will need to specify your Node Type, IPV4 Start Address, and IPV4 End Address values.
-
-* For your Nova_Flat network: 
- * On the <b>Edit Network</b> dialog, you will need to specify your Subnet, Netmask, and Router (mandatory) IP values.
- *On the <b>Edit Network Ranges</b> dialog, you will need to specify your Node Type, IPV4 Start Address, and IPV4 End Address values.
-
-* <b>Note</b>: You will be able to skip the Edit options for the Admin Node.
-
-* The <b>Prerequisites</b> dialogs will prompt for your external DNS IP details.
-
-* Also in the <b>Prerequisites</b> dialogs, under <b>Edit Prerequisites</b> > <b>Admin Node Internet Access</b> > <b>Network</b>, 
-you will need to specify your:
+* In <b>Edit Prerequisites</b> > <b>Admin Node Internet Access</b> > <b>Network</b>, you will need to specify your:
  * NIC details for the public interface
  * Http Proxy information:
   * Host
   * Port-8080
   * Non-Proxy Hosts:  10.*|192.*|127.0.*|localhost
 
-* In the <b>Create Cloud </b>dialog, you will only need to enter a <b>Name</b> for your cloud. You can use default values for other options; however, plan ahead 
+* In <b>Environment</b> > <b>Networks</b>, for your <b>Public</b> network: 
+ * On the <b>Edit Network</b> dialog, you will need to specify your Subnet, Netmask, and Router IP values.
+ * On the <b>Edit Network Ranges</b> dialog, you will need to specify your Node Type, IPV4 Start Address, and IPV4 End Address values.
+
+* In <b>Environment</b> > <b>Networks</b>, for your <b>IPMI</b> network: 
+ * On the <b>Edit Network</b> dialog, you will need to specify your Subnet, Netmask, and Router IP values.
+ * On the <b>Edit Network Ranges</b> dialog, you will need to specify your Node Type, IPV4 Start Address, and IPV4 End Address values.
+
+* In <b>Environment</b> > <b>Networks</b>, for your <b>Nova_Flat</b> network: 
+ * On the <b>Edit Network</b> dialog, you will need to specify your Subnet, Netmask, and Router (mandatory) IP values.
+ * On the <b>Edit Network Ranges</b> dialog, you will need to specify your Node Type, IPV4 Start Address, and IPV4 End Address values.
+
+* <b>Note</b>: You will be able to skip the Edit options for the Admin Node. 
+ 
+* In <b>Cloud</b> > <b>Manage Clouds</b> > <b>Create Cloud</b>, you will only need to enter a <b>Name</b> for your cloud. You can use default values for other options; however, plan ahead 
 to specify new, non-default passwords for the Admin user, Arch user, and Trash user. 
 
-* In the <b>Create Region </b>dialog, you will need to enter a <b>Name</b> for your region.  Recommended: create multiple regions.  On each Create Region dialog, 
-on the Controller & Compute Nodes tab, you will need to enter the number of nodes that participate in the region. 
+* In In <b>Cloud</b> > <b>Manage Clouds</b> > <b>Create Compute Region </b>dialog, you will need to enter a <b>Name</b> for your region. 
+Recommended: create multiple regions.  On each Create Compute Region dialog, on the Controller & Compute Nodes tab, you will need to enter the number of nodes that participate in the region. 
 
 ### Administration Dashboard Checklist
 
-* On the Create Keypair dialog, you will just need to enter the Keypair name. 
+* In <b>Project</b> > <b>Access and Security</b> > <b>Create Keypair</b>, you will just need to enter the Keypair name. 
 
-* <b>Note</b>: you will not need to define flavors to complete the post-install steps.  As explained later in [Launch Administration Dashboard for Post-Deployment Tasks](/cloudos/moonshot/install/launch-admin-dashboard), 
+* <b>Note</b>: You will not need to define flavors to complete the post-install steps.  As explained later in 
+[Launch Administration Dashboard for Post-Deployment Tasks](/cloudos/moonshot/install/launch-admin-dashboard), 
 a flavor will be generated automatically for you based on your Moonshot server cartridge type:  hp_moonshot_server (for an 
 HP ProLiant Moonshot Server Cartridge) and hp_moonshot_m300 (for an HP ProLiant m300 Server Cartridge). 
 
-* In the Create Images dialogs, you will need to create images, and the associated Kernel and RAM disk images. You will not need to specify the 
-Description, Minimum Disk, and Minimum RAM values. 
+* In <b>Project</b> > <b>Infrastructure</b> > <b>Images</b>, you will need to create images, and the associated Kernel and RAM disk images. You will not need 
+to specify the Description, Minimum Disk, and Minimum RAM values. 
 
-* In the Moonshot Management dialog, you will need to specify the chassis display name, Chassis Manager IP, Chassis Manager password, and Managing Host Name.  
+* In <b>Project</b> > <b>Moonshot Management</b>, you will need to specify the chassis display name, Chassis Manager IP, Chassis Manager password, and Managing Host Name.  
 
-* In the Launch Instance dialog, you will need to specify the image, instance name, networking, and (pre-defined) flavor. 
+* In <b>Project</b> > <b>Infrastructure</b> > <b>Images</b> > <b>Launch</b> > Launch Instance dialog, you will need to specify the image, instance name, 
+networking, and (pre-defined) flavor. 
 
 ## Next Step
 

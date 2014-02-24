@@ -81,6 +81,7 @@ If you were to delete the compute region, the node's state would become Not Allo
 Delete Node to delete it. 
 --> 
 
+<!-- 
 ## Complete Storage Configuration
 
 ### Block Storage
@@ -144,6 +145,7 @@ dd if=/dev/zero of=/dev/sdb seek=$seek bs=1M <br />
 
 In addition, you will need to login to the Swift storage nodes from the remote console.  For the credentials, go to the 
 <a href="https://cloudos.hpwsportal.com" target="new"> HP Cloud OS for Moonshot Catalog</a> portal, and see the topic about the dashboard credentials.
+-->
 
 ## Create Cloud
 
@@ -151,13 +153,14 @@ You are now ready to create your cloud.
 
 To create a cloud:
 
-1. In the Operational Dashboard, select the Cloud tab > Manage Clouds.
+1. In the Operational Dashboard, select the <b>Cloud</b> tab > <b>Manage Clouds</b>.
 
-2. Click Create Cloud to open the Create Cloud dialog.
+2. Click <b>Create Cloud</b> to open the Create Cloud dialog.
 
-3. Specify a Cloud Name. This will be the Domain name that is used to initialize Keystone and will be displayed in the Administration Dashboard. **Note:** A cloud name must contain only letters and numbers. It cannot contain spaces or special characters.
+3. Specify a <b>Cloud Name</b>. This will be the Domain name that is used to initialize Keystone and will be displayed in the Administration Dashboard. 
+**Note:** A cloud name must contain only letters and numbers. It cannot contain spaces or special characters.
 
-4. Select the Controllers tab and specify which node will have the Cloud Controller, Network Controller, and Storage Controller respective services. You install all these core controller services on different nodes or on the same Cloud Controller.
+4. Select the <b>Controllers</b> tab and specify which node will have the Cloud Controller, Network Controller, and Storage Controller respective services. You install all these core controller services on different nodes or on the same Cloud Controller.
 
 5. Select the Attributes tab to specify property values required to create a Cloud.
 

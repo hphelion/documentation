@@ -22,8 +22,7 @@ PageRefresh();
 
 # Create Compute Regions
 
-When the Create Cloud step is complete, the cloud's state displays Active. You can now create
-one or more compute regions. This is the last step in the process of creating a cloud.
+When the Create Cloud step is complete, the cloud's state displays Active. You can now create one or more compute regions. This is the last step in the process of creating a cloud.
 When the compute region is created, you have created an active cloud.
 
 The simplest cloud has one compute region with one Compute Controller that manages all the compute nodes. After creating an active cloud, you can go back and add more compute regions as your cloud
@@ -38,7 +37,7 @@ dedicated endpoints with a full Nova installation including its own message queu
 
 To create a compute region:
 
-1. In the Operational Dashboard, select the Cloud tab > Manage Clouds.
+1. In the Operational Dashboard, select the <b>Cloud</b> tab > <b>Manage Clouds</b>.
 
 2. For the cloud just created, click **Create Compute Region** to open the Create Compute Region dialog.
 

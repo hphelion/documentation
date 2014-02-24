@@ -495,9 +495,10 @@ Here are the steps:
 
 2. The tab displays options in the left panel. From the left panel, click <b>Infrastructure</b> and then select <b>Images</b>.  The Images page is displayed.
 
-3. Click <b>Launch</b> next to the image (<b>TBS: which one or which type?  example?</b>) listed in the table.
+3. Click <b>Launch</b> next to the image listed in the table.
 
-4. A Launch Instance dialog box displays with four tabs: Details, Access & Security, Networking, and Post-Creation. By default, Details is the active tab.
+4. A Launch Instance dialog box displays with four tabs: <b>Detail</b>s, <b>Access & Security</b>, <b>Networking</b>, and <b>Post-Creation</b>. 
+By default, Details is the active tab.
 
 5. On the <b>Details</b> tab:
  * From the <b>Image</b> drop-down list, select the image.
@@ -506,9 +507,9 @@ Here are the steps:
  * From the <b>Flavor</b> drop-down list, select the flavor.  In this case, it should be hp_moonshot_server or hp_moonshot_m300, depending on your cartridge server type.
  * In the <b>Instance Count</b> box, enter 1, or more than 1 if you intend to launch multiple instances.  Recommendation: for this initial post-install process, enter 1.
  
-6. On the Access & Security tab, from the Keypair drop-down list, select a value from the list.
+6. On the <b>Access & Security</b> tab, from the Keypair drop-down list, select a value from the list.
 
-7. On the Networking tab, no networks will be listed in the Selected Networks section. You should select the <b>private network</b> from the <b>Available networks</b> section.
+7. On the <b>Networking</b> tab, no networks will be listed in the Selected Networks section. You should select the <b>private network</b> from the <b>Available networks</b> section.
 
 8. Click <b>Launch</b>.
 
