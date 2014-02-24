@@ -42,11 +42,11 @@ PageRefresh();
 * [Installation Overview](/cloudos/moonshot/install/overview/)
 * [Important Tasks Before You Install](/cloudos/moonshot/install/before-you-install/)
 * [Install and Set Up the Admin Node](/cloudos/moonshot/install/install-setup-admin-node/)
-* [Set Admin Node Prerequisites (Required)](/cloudos/moonshot/install/admin-node-prerequisites/)
-* [Customize Network Connections (Optional)](/cloudos/moonshot/install/customize-network-connections/)
-* [Customize Network Settings (Required)](/cloudos/moonshot/install/customize-network-settings/)
+* [Set Admin Node Prerequisites](/cloudos/moonshot/install/admin-node-prerequisites/)
+* [Customize Connections](/cloudos/moonshot/install/customize-connections/)
+* [Customize Networks](/cloudos/moonshot/install/customize-networks/)
 * [Complete Admin Node Installation (Required)](/cloudos/moonshot/install/complete-admin-node-installation/)
-* [Create a Cloud](/cloudos/moonshot/install/create-cloud/) 
+* [Manage Nodes and Create a Cloud](/cloudos/moonshot/install/create-cloud/) 
 * [Create Compute Regions](/cloudos/moonshot/install/create-compute-regions/) 
 * [Enter or Update your License Key](/cloudos/moonshot/install/license/)
 * [Customize User Settings](/cloudos/moonshot/install/customize-user-settings)
@@ -69,6 +69,7 @@ PageRefresh();
   * [Topology Designs](/cloudos/moonshot/manage/administration-dashboard/topology-designs/)
   * [Administration Dashboard Tasks by Role](/cloudos/moonshot/manage/administration-dashboard/tasks-by-role/)
   * [Administration Dashboard Tasks by Tab](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/)
+* [HP Cloud OS for Moonshot Image Builder](/cloudos/moonshot/manage/image-builder/) 
 
 #### [Develop](/cloudos/moonshot/develop/)
 

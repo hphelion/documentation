@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Set Admin Node Prerequisites (Required)"
+title: "Set Admin Node Prerequisites"
 permalink: /cloudos/moonshot/install/admin-node-prerequisites/
 product: moonshot
 
@@ -18,10 +18,11 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> <a href="/cloudos/moonshot/install/before-you-install/">&#9664; PREV</a> | <a href="/cloudos/moonshot/install/">&#9650; UP</a> | <a href="/cloudos/moonshot/install/customize-network-connections/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/cloudos/moonshot/install/install-setup-admin-node/">&#9664; PREV</a> | <a href="/cloudos/moonshot/install/">&#9650; 
+UP</a> | <a href="/cloudos/moonshot/install/customize-connections/">NEXT &#9654;</a> </p>
 
 
-# Set Admin Node Prerequisites (Required)
+# Set Admin Node Prerequisites
 
 Your first step in the HP Cloud OS for Moonshot Operational Dashboard is to configure the Admin Node prerequisites. See the sections in this topic:
 
@@ -33,17 +34,16 @@ Your first step in the HP Cloud OS for Moonshot Operational Dashboard is to conf
 
 * [Set the Email Notification](#set-the-email-notification) &mdash; Configure your cloud to send email notifications when the Cloud and Compute Region operation completes since this takes some time. By enabling and setting this prerequisite, you can be alerted by e-mail when each operation completes.
 
-**Note:** In the current release, after you complete the Admin Node installation, you cannot go back to modify the prerequisite settings. Set the values carefully! 
-
-<!--
-...., you may continue to use the Operational Dashboard to modify the following prerequisite values:  
+**Note:** In the current release, after you complete the Admin Node installation, you may continue to use the Operational Dashboard to modify the following 
+prerequisite values: 
+ 
 * Cloud Admin Node Time settings 
 * Email Notification settings
-You cannot change:
+
+However, after you complete the Admin Node installation, you cannot subsequently change:
+
 * Admin Node Internet Access settings
 * External DNS Server settings
---> 
-
 
 ## Enable Admin Node Internet Access
 
@@ -59,26 +59,19 @@ To enable the Admin Node Internet Access:
 
 5. Set the HTTP Proxy Information applicable for your environment. If you are on a network that has a proxy, you must fill in this Proxy information.
 
-**Caution:** Specifying incorrect proxy host settings might cause some features to not work correctly later, after the installation, when you use the HP Cloud OS for Moonshot Administration Dashboard.
+ **Caution:** Specifying incorrect proxy host settings might cause some features to not work correctly later, after the installation, when you use the HP Cloud OS for Moonshot Administration Dashboard.
 
- a. Specify the Host's IP address
+ a. Specify the Host's IP address - get this value from your system administrator or from the settings in your web browser.
  
-> Get this value from your system administrator or from the settings in your web browser.
+ b. Specify the Port - get this value from your system administrator or from the settings in your web browser.
  
- b. Specify the Port
-
-> Get this value from your system administrator or from the settings in your web browser.
- 
- c. Specify the Non-Proxy Hosts' IP addresses
-	 
-> Specify addresses that **should not** use proxy servers (for the Controller/Compute Nodes' admin and os_sdn networks, IP range). 
-Each network needs to be separated by a pipe bar "|". For example: 10.\*|192.\*|localhost.
+ c. Specify the Non-Proxy Hosts' IP addresses - specify addresses that **should not** use proxy servers, for the Controller/Baremetal Host and admin networks. Each network needs to be separated by a pipe bar "|". For example: 10.\*|192.\*|127.*|localhost.
  
  d. If necessary, specify the optional Username and Password.
  
-> After completing the steps above, click **Update Prerequisite**.
+6. After completing the steps above, click **Update Prerequisite**.
 
-> Now click **Complete Prerequisite** to complete this setup for the Cloud Administration Node Internet Access entry.
+7. Now click **Complete Prerequisite** to complete this setup for the Cloud Administration Node Internet Access entry.
 
 When this prerequisite completes, a timestamp will be displayed in the Last Updated column.
 
@@ -141,12 +134,11 @@ When this prerequisite completes, a timestamp will be displayed in the Last Upda
 
 ## Prerequisite Troubleshooting
 
-If any of the prerequisite steps fail to complete, an error message displays.  If this happens, see the "Admin Node Internet Access 
-Prerequisites fail to complete" section of the [Troubleshooting](/cloudos/moonshot/manage/troubleshooting/) topic. 
+If any of the prerequisite steps fail to complete, an error message displays.  If this happens, see the [Troubleshooting](/cloudos/moonshot/manage/troubleshooting/) topic. 
 
 ## Next Step
 
-Proceed to the next topic, [Customize Server Types](/cloudos/moonshot/install/customize-server-types/). 
+Proceed to the next topic, [Customize Connections](/cloudos/moonshot/install/customize-connections/). 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Customize Network Connections (Optional)"
-permalink: /cloudos/moonshot/install/customize-network-connections/
+title: "Customize Connections"
+permalink: /cloudos/moonshot/install/customize-connections/
 product: moonshot
 
 ---
@@ -18,24 +18,22 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> <a href="/cloudos/moonshot/install/admin-node-prerequisites/">&#9664; PREV</a> | <a href="/cloudos/moonshot/install/">&#9650; UP</a> | <a href="/cloudos/moonshot/install/customize-network-settings/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/cloudos/moonshot/install/admin-node-prerequisites/">&#9664; PREV</a> | <a href="/cloudos/moonshot/install/">&#9650; 
+UP</a> | <a href="/cloudos/moonshot/install/customize-networks/">NEXT &#9654;</a> </p>
 
-# Customize Network Connections (Optional)
+# Customize Connections
 
-This topic describes the steps to customize the network connections. These steps are optional. 
+This topic describes the steps to customize the connections. These steps are optional. 
 
-**Caution:** If you plan to customize the connections, you must do it before you complete the steps described in [Complete Admin Node Installation (Required)](/cloudos/moonshot/install/complete-admin-node-installation). 
-After that, the connections dialogs are read only. Once the install process is triggered, no changes can be made. If you want to make changes, 
-you need to start over by re-installing the Admin Node.  
+The <b>Environment</b> > <b>Connections</b> panel is where you can define a connection set. You define a network mode (single, dual, team) along with a list of logical connection interfaces (intf0, intf1, intf2) with each one being bound to a port, defined by bandwidth and port number. The <b>default network settings</b> for the participating hosts/nodes should be <b>eth0</b> connected to a private network, <b>eth1</b> connected to a public network, and <b>eth2</b> connected to a second private network. 
 
-Based on the network infrastructure suggested in the "Plan the Infrastructure for a Cloud" section of [Important Tasks Before You Install](/cloudos/moonshot/install/before-you-install), 
-you must customize the Connections settings in the Connections view.
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"><b>Caution:</b> If you plan to customize the connections, you must do it before you complete the steps described in <a href="/cloudos/moonshot/install/complete-admin-node-installation/">Complete the Admin Node Installation</a>. After that, the connections dialogs are read only. Once the install process is triggered, no changes can be made. If you want to make changes, you need to start over by re-installing the Admin Node.  </p> 
 
-After the enumeration of ports is consistent across all servers in the cloud, the Connections view defines those ports into a set of logical connections (interfaces) that will be used to eventually
-define the networks.
+Based on the network infrastructure suggested in the "Plan the Infrastructure for a Cloud" section of [Important Tasks Before You Install](/cloudos/moonshot/install/before-you-install), you must customize the Connections settings in the Connections view.
 
-The connections are defined based on the Network Modes along with a list of logical interfaces and the corresponding physical interfaces' ports and bandwidth. For each logical connection (intf0, intf1,
-intf2) the network type is identified (admin, os_sdn, public). The `os_sdn` value stands for OpenStack Software-Defined-Network.
+After the enumeration of ports is consistent across all servers in the cloud, the Connections view defines those ports into a set of logical connections (interfaces) that will be used to eventually define the networks.
+
+The connections are defined based on the Network Modes along with a list of logical interfaces and the corresponding physical interfaces' ports and bandwidth. For each logical connection (intf0, intf1, intf2) the network type is identified, such as admin, nova_flat, ipmi, or public.  
 
 ## Examples of Network Modes
 
@@ -47,23 +45,21 @@ intf2) the network type is identified (admin, os_sdn, public). The `os_sdn` valu
 
 ## Examples of Logical Interface Values
 
-* `intf0 (admin, bmc_vlan)`
+* intf0 (admin, bmc_vlan)
 
-* `intf1 (os_sdn)`
+* intf1 (os_sdn, nova_flat)
 
-* `intf2 (public)`
+* intf2 (public, ipmi)
 
 ## Examples of Physical Interface Values
 
-* `1Gb (preferred) on 1st port`
+* 1Gb (preferred) on 1st port
 
-* `1Gb (preferred) on 2nd port`
+* 1Gb (preferred) on 2nd port
 
-* `1Gb (preferred) on 3rd port`
+* 1Gb (preferred) on 3rd port
 
-In this Dual mode example, `1Gb (preferred) on 2nd port` means a one gigabit network for port 2, as enumerated by default from the server's BIOS or as overridden in the Server Types panel.
-The "preferred" tag suggests that if the NIC/port does not support 1Gb, Cloud OS falls back to the next maximum speed supported by the NIC or port. However, if there is no preferred tag, it
-means the port has to support 1Gb; otherwise the deployment may fail.
+In this Dual mode example, <b>1Gb (preferred) on 2nd port</b> means a one gigabit network for port 2, as enumerated by default from the server's BIOS or as overridden in the Server Types panel. The "preferred" tag suggests that if the NIC/port does not support 1Gb, HP Cloud OS for Moonshot falls back to the next maximum speed supported by the NIC or port. However, if there is no preferred tag, it means the port has to support 1Gb; otherwise the deployment may fail.
 
 ## Criteria for Changes to Default Connection Values
 
@@ -73,17 +69,17 @@ Here is the criteria to be considered if you make changes to the default connect
 
 In Dual mode, the default settings assume that all the nodes have their interfaces wired as follows.
 
-* `eth0` - admin network
+* eth0 - admin network
 
-* `eth1` - os_sdn network
+* eth1 - nova_flat network
 
-* `eth2` - public/external network
+* eth2 - public/ipmi network
 
 > **IMPORTANT:** In such a scenario, keep the default values intact.
 
 In Dual mode, if the wiring of networks between the nodes are non-contiguous and/or not in sequence, you need to change the default mapping:
 
-* Example 1: For all the nodes, `eth0 - admin`, `eth1 - public`, `eth2 - private` &mdash; the Connections table must be customized to look like the following:
+* Example 1: For all the nodes, eth0 - admin, eth1 - public, eth2 - ipmi &mdash; the Connections table must be customized to look like the following:
 
     intf0 - 1Gb (preferred) on 1st port
 	
@@ -91,7 +87,7 @@ In Dual mode, if the wiring of networks between the nodes are non-contiguous and
 	
     intf2 - 1Gb (preferred) on 2nd port
 
-* Example 2: For all the nodes, `eth0 - admin`, `eth2 - os_sdn`, `eth4 - public/external` &mdash; the Connections table must be customized to look like the following:
+* Example 2: For all the nodes, eth0 - admin, eth2 - nova_flat, eth4 - public/ipmi &mdash; the Connections table must be customized to look like the following:
 
     intf0 - 1Gb (preferred) on 1st port
 	
@@ -101,8 +97,8 @@ In Dual mode, if the wiring of networks between the nodes are non-contiguous and
 	
 ### Single Mode Example
 
-In Single mode, keep the defaults. It is assumed that the `eth0` port is configured on the switch to support tagged VLANs, 
-as discussed in the next topic, [Customize Network Settings (Required)](/cloudos/moonshot/install/customize-network-settings/).
+In Single mode, keep the defaults. It is assumed that the eth0 port is configured on the switch to support tagged VLANs, 
+as discussed in the next topic, [Customize Networks](/cloudos/moonshot/install/customize-networks/).
 
 > **Note:** Interface mapping must be identical on all the nodes.
 
@@ -113,7 +109,7 @@ In Team mode, configure the virtual connections to use both trunks. For example:
 * Map eth0, eth2, and eth4 to trunk 1.
 * Map eth1, eth3, and eth5 to trunk 2.
 
-Note that in this example, the eth0 and eth1 interfaces belongs to same VLAN; the same is true for the eth2 and eth3 pair, and the eth4 and eth5 pair. When the Admin Node allocates the bare-metal node, Cloud OS should create a teaming NIC using the NIC pairs.
+Note that in this example, the eth0 and eth1 interfaces belongs to same VLAN; the same is true for the eth2 and eth3 pair, and the eth4 and eth5 pair. When the Admin Node allocates the baremetal node, HP Cloud OS for Moonshot should create a teaming NIC using the NIC pairs.
 
 Here's a partial example of how the Team mode configuration could look on this Connections dialog:
 
@@ -132,13 +128,13 @@ Here's a partial example of how the Team mode configuration could look on this C
 </tr>
 
 <tr>
-<td>intf1 (os_sdn)</td>
+<td>intf1 (nova_flat)</td>
 <td>1Gb on 1st port, 1Gb on 2nd port</td>
 <td>6</td>
 </tr>
 
 <tr>
-<td>intf2 (public)</td>
+<td>intf2 (public, ipmi)</td>
 <td>1Gb on 1st port, 1Gb on 2nd port</td>
 <td>6</td>
 </tr>
@@ -205,25 +201,21 @@ way out and overwrites the src hw address with the unique hw address of one of t
 
 If you need to edit the connections:
 
-1. From the Environment tab > Connection, edit the Network Mode you want to customize.  Most likely, this would be Dual or Team.
+1. From the <b>Environment</b> tab > <b>Connections</b>, edit the Network Mode you want to customize.  Most likely, this would be Dual or Team.
 
-2. The Edit Connection dialog presents the Physical Interface values in a succinct format, such as ?1g1. The value contains (up to) four characters, and follows these conventions: 
+2. The Edit Connection dialog presents the Physical Interface values in a succinct format, such as <b>?1g1</b>. The value contains (up to) four characters, and follows these conventions: 
+ * <b>1st character</b>: the allowable value is a question mark (?) or blank.  The question mark indicates a preferred connection, meaning the  available bandwidth supported by the Network Interface card (NIC). If not specified (blank), HP Cloud OS for Moonshot configures the physical interface to the value specified by the next character.
+ * <b>2nd character</b>: the allowable value may be 1, 10, or 100. It is a numerical value to indicate the network bandwidth.
+ * <b>3rd character</b>: the value may be g, m, or k. It is the bandwidth unit. g represents gigabits; m represents megabits; k represents kilobits.
+ * <b>4th character</b>: the value may be a number between 1 and 16.  It is a numerical value to specify the port or NIC number.
 
-    * 1st character: the allowable value is a question mark (?) or blank.  The question mark indicates a preferred connection, meaning the  available bandwidth supported by the Network Interface card (NIC). If not specified (blank), Cloud OS configures the physical interface to the value specified by the next character.
+3. To add settings, click <b>Add Details</b> to add a new blank row, and add the logical interface, physical interface, and optional interface mode.
 
-    * 2nd character: the allowable value may be 1, 10, or 100. It is a numerical value to indicate the network bandwidth.
-
-    * 3rd character: the value may be g, m, or k. It is the bandwidth unit. g represents gigabits; m represents megabits; k represents kilobits.
-
-    * 4th character: the value may be a number between 1 and 16.  It is a numerical value to specify the port or NIC number.
-
-3. To add settings, click Add Details to add a new blank row, and add the logical interface, physical interface and optional interface mode.
-
-4. To delete settings, click one or more checkboxes next to the existing settings and click Delete Details.
+4. To delete settings, click one or more checkboxes next to the existing settings and click <b>Delete Details</b>.
 
 ## Next Step
 
-Proceed to the [Customize Network Settings (Required)](/cloudos/moonshot/install/customize-network-settings/) topic.
+Proceed to the [Customize Networks](/cloudos/moonshot/install/customize-networks/) topic.
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

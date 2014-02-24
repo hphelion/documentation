@@ -26,7 +26,7 @@ This topic explains how to install the Admin Node, which launches the Operationa
 
 * [Set Up the Admin Node](#set-up-the-admin-node)
 
-* [Boot the Admin Node Using the Cloud OS ISO](#boot-the-admin-node-using-the-cloud-iso)
+* [Boot the Admin Node Using the Cloud OS ISO](#boot-the-admin-node-using-the-cloud-os-for-moonshot-iso)
 
 * [Launch the Operational Dashboard](#launch-the-operational-dashboard)
 
@@ -44,6 +44,9 @@ infrastructure:
 3. Download the HP Cloud OS for Moonshot ISO to the host's local file system or data store. 
 
 4. Configure the Virtual Machine (VM) Admin Node to point to the HP Cloud OS for Moonshot ISO as a CD/DVD drive or install media ISO image. 
+
+
+
 
 ## Boot the Admin Node Using the HP Cloud OS for Moonshot ISO
 
@@ -74,6 +77,7 @@ The Admin Node is booted using HP Cloud OS for Moonshot *.iso.  Follow these ste
 11.	(Optional) Power DOWN the Admin Node Virtual Machine, edit it to disconnect the ISO CD, then Power UP the Virtual Machine.
 
 At this point, HP Cloud OS for Moonshot is installed on the Admin Node. 
+
 
 
 ## Launch the Operational Dashboard
