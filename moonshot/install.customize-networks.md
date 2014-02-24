@@ -25,7 +25,7 @@ UP</a> | <a href="/cloudos/moonshot/install/complete-admin-node-installation/">N
 
 This topic describes the steps to customize the network settings. These steps are required. 
 
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"><b>Caution:</b> You must customize the network settings before performing the steps in [Complete the Admin Node Installation](/cloudos/moonshot/install/complete-admin-node-installation/). After that, the network settings in the Operational Dashboard are read only. Once the install process is triggered, no changes can be made. If you want to make changes, you need to start over by re-installing the Admin Node. </p>
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"><b>Caution:</b> You must customize the network settings before performing the steps in <a href="/cloudos/moonshot/install/complete-admin-node-installation/">Complete the Admin Node Installation</a>. After that, the network settings in the Operational Dashboard are read only. Once the install process is triggered, no changes can be made. If you want to make changes, you need to start over by re-installing the Admin Node. </p>
 
 * [Introduction](#introduction)
 
