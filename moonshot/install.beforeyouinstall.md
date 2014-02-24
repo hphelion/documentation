@@ -294,8 +294,7 @@ the internet for the Admin node and Controller node.
 * The Admin node and the Controller node utilize internet access to obtain updates and workload content from HP. If Internet access is not feasible from your 
 datacenter, then it is possible for updates and workloads to be downloaded locally and then uploaded to your cloud environment.
 
-* The Controller node will require a static IP address on the Public network. Please consult with your network administrator to obtain the required static 
-IP address.
+* The Controller node will require a static IP address on the External (public) network. Please consult with your network administrator to obtain the required static IP address.
 
 #### Network Configuration
 
@@ -333,7 +332,7 @@ HP Cloud OS for Moonshot will have the following network configuration:
 <tr style="background-color: white; color: black;">
 <td> Controller Node </td>
 <td> Management Network </td>
-<td> PXE / Data Network </td>
+<td> PXE/Data Network </td>
 <td> </td> 
 <td> External Network </td>
 </tr>
@@ -341,8 +340,8 @@ HP Cloud OS for Moonshot will have the following network configuration:
 <tr style="background-color: white; color: black;">
 <td> Baremetal Host </td>
 <td> Management Network </td>
-<td> PXE / Data Network </td>
-<td> IPMI Network / External Network </td>
+<td> PXE/Data Network </td>
+<td> IPMI Network </td>
 <td> </td> 
 </tr>
 
@@ -369,7 +368,6 @@ The following configuration must be reviewed during this step:
 
 4. Configure the virtual machine Admin Node to point to the ISO as a CD/DVD drive or install media ISO image. 
 
-
 ## Boot the Admin Node Using the HP Cloud OS for Moonshot ISO
 
 To boot the Admin Node using the ISO:
@@ -388,8 +386,9 @@ After you boot from the HP Cloud OS for Moonshot ISO, you are ready to launch th
 
 To launch the Operational Dashboard:
 
-1. From the virtual machine Admin Node, open a Mozilla Firefox or Google Chrome browser that has the IP addresses <code> 192.*;10.*;localhost;127.0.* </code>  
-set as proxy exceptions.
+1. From the virtual machine Admin Node, open a Mozilla Firefox or Google Chrome browser that has the following IP addresses set as proxy exceptions:
+  
+  192.*;10.*;localhost;127.0.*
 
 2. In the browser, enter **http://192.168.124.10:9000** to launch the Operational Dashboard user interface. 
 IMPORTANT: Use Google Chrome or Mozilla Firefox.
