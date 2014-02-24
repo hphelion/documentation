@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Set Admin Node Prerequisites (Required)"
+title: "Set Admin Node Prerequisites"
 permalink: /cloudos/moonshot/install/admin-node-prerequisites/
 product: moonshot
 
@@ -19,10 +19,10 @@ PageRefresh();
 
 
 <p style="font-size: small;"> <a href="/cloudos/moonshot/install/install-setup-admin-node/">&#9664; PREV</a> | <a href="/cloudos/moonshot/install/">&#9650; 
-UP</a> | <a href="/cloudos/moonshot/install/customize-networks/">NEXT &#9654;</a> </p>
+UP</a> | <a href="/cloudos/moonshot/install/customize-connections/">NEXT &#9654;</a> </p>
 
 
-# Set Admin Node Prerequisites (Required)
+# Set Admin Node Prerequisites
 
 Your first step in the HP Cloud OS for Moonshot Operational Dashboard is to configure the Admin Node prerequisites. See the sections in this topic:
 
@@ -145,7 +145,7 @@ If any of the prerequisite steps fail to complete, an error message displays.  I
 
 ## Next Step
 
-Proceed to the next topic, [Customize Networks (Required)](/cloudos/moonshot/install/customize-networks/). 
+Proceed to the next topic, [Customize Connections (Optional)](/cloudos/moonshot/install/customize-connections/). 
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

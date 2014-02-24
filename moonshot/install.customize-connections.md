@@ -18,7 +18,8 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> <a href="/cloudos/moonshot/install/admin-node-prerequisites/">&#9664; PREV</a> | <a href="/cloudos/moonshot/install/">&#9650; UP</a> | <a href="/cloudos/moonshot/install/customize-networks/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/cloudos/moonshot/install/admin-node-prerequisites/">&#9664; PREV</a> | <a href="/cloudos/moonshot/install/">&#9650; 
+UP</a> | <a href="/cloudos/moonshot/install/customize-networks/">NEXT &#9654;</a> </p>
 
 # Customize Connections (Optional)
 
@@ -102,7 +103,7 @@ In Dual mode, if the wiring of networks between the nodes are non-contiguous and
 ### Single Mode Example
 
 In Single mode, keep the defaults. It is assumed that the `eth0` port is configured on the switch to support tagged VLANs, 
-as discussed in the next topic, [Customize Networks (Required)](/cloudos/moonshot/install/customize-networks/).
+as discussed in the next topic, [Customize Network Settings (Required)](/cloudos/moonshot/install/customize-networks/).
 
 > **Note:** Interface mapping must be identical on all the nodes.
 
@@ -223,7 +224,7 @@ If you need to edit the connections:
 
 ## Next Step
 
-Proceed to the [Customize Networks (Required)](/cloudos/moonshot/install/customize-networks/) topic.
+Proceed to the [Customize Network Settings (Required)](/cloudos/moonshot/install/customize-networks/) topic.
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

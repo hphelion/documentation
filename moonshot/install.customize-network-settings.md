@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Customize Network Settings (Required)"
-permalink: /cloudos/moonshot/install/customize-network-settings/
+title: "Customize Networks (Required)"
+permalink: /cloudos/moonshot/install/customize-networks/
 product: moonshot
 
 ---
@@ -18,9 +18,9 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> <a href="/cloudos/moonshot/install/customize-network-connections/">&#9664; PREV</a> | <a href="/cloudos/moonshot/install/">&#9650; UP</a> | <a href="/cloudos/moonshot/install/complete-admin-node-installation/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/cloudos/moonshot/install/customize-connections/">&#9664; PREV</a> | <a href="/cloudos/moonshot/install/">&#9650; UP</a> | <a href="/cloudos/moonshot/install/complete-admin-node-installation/">NEXT &#9654;</a> </p>
 
-# Customize Network Settings (Required)
+# Customize Networks (Required)
 
 This topic describes the steps to customize the network settings. These steps are required. 
 

@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Customize Network Settings (Required)"
-permalink: /cloudos/moonshot/install/customize-network-settings/
+title: "Customize Networks (Required)"
+permalink: /cloudos/moonshot/install/customize-networks/
 product: moonshot
 
 ---
@@ -18,7 +18,7 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> <a href="/cloudos/moonshot/install/admin-node-prerequisites/">&#9664; PREV</a> | <a href="/cloudos/moonshot/install/">&#9650; 
+<p style="font-size: small;"> <a href="/cloudos/moonshot/install/customize-connections/">&#9664; PREV</a> | <a href="/cloudos/moonshot/install/">&#9650; 
 UP</a> | <a href="/cloudos/moonshot/install/complete-admin-node-installation/">NEXT &#9654;</a> </p>
 
 # Customize Networks (Required)
@@ -61,57 +61,6 @@ addresses are correct. Clicking Cancel will not trigger the validation step.
 not know if you have any errors. However, the Complete Install step will run a validation check and cannot be completed until the errors (if any) are fixed. If there is an address range error,
 the validation check will show the network type and possibly the address value. If not, open the Edit Address Ranges dialog for the specified network and click Update Address
 Ranges to identify the incorrect address.  
-
-<!-- Not for Moonshot 
-## Customize the Admin Network
-
-**Note:** HP recommends that you keep the default values because this network type is considered
-to be an isolated, private network. If you wish to customize the Admin network, the Operational Dashboard would not be accessible 
-on the current IP address, post Complete Install. You may have to set the browser client's network configuration to be on the same network as the 
-customized Admin network to continue accessing it. The Complete Install process in the Operational Dashboard will suggest the required changes. 
-
-### Edit the Admin Network
-
-To edit the admin network:
-
-1. On the Operational Dashboard, select the Environment tab > Networks.
-
-2. Click **Edit Network** for the Network Type admin.
-
-3. Select the Network tab and review the settings. Modify these settings based on your required private network settings.
-
-4. Select the VLAN tab and review the settings. Modify these settings based on your required private network settings.
-
-5. Select the Router tab and review the settings. Modify these settings, based on your required private network settings. 
-**Note:** It is recommended to provide a non-routable private network for the admin network. 
-
-6. Click **Update Network** to save your changes.
-
-### Edit the Admin Address Ranges
-
-To edit the admin address ranges:
-
-1. In the admin Edit Network drop-down list, select **Edit Address Ranges** to open the Edit Address Ranges dialog.
-
-2. The Network Type and Subnet values are pre-populated by default with the correct settings.
-
-3. Review the default configurations for each Node Type, IPV4 Start Addr, IPV4 End Addr.
-Following are the default Node Types and address ranges:
-
- a. **admin**: IP range for the Admin Node &mdash; 192.168.124.10 to 192.168.124.11
-
- b. **dhcp**: Temporary IP address assignment for the PXE booted nodes &mdash; 192.168.124.21 to 192.168.124.80
-
- c. **host**: Permanent admin network IP address assignment for the participating nodes &mdash; 192.168.124.81 to 192.168.124.160
-
- d. **switch**: This is for test purposes only.
-
-4. Click **Update Address Ranges** to save your changes and to validate that the IP address is correct.
-
-**Note:** If you enter invalid address ranges, you will get a validation error, which identifies the incorrect address (start or end) for the corresponding network type. You must fix all
-errors in the Edit Address Ranges dialog and click Update Address Ranges to validate the addresses are correct.
-
--->
 
 ## Customize the Public Network
 
