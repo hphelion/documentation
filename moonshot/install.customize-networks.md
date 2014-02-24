@@ -27,11 +27,11 @@ This topic describes the steps to customize the network settings. These steps ar
 
 * [Introduction](#introduction)
 
-* [Customize the Admin Network](#customize-the-admin-network)
-
-* [Customize the OS-SDN Network](#customize-the-os_sdn-network)
-
 * [Customize the Public Network](#customize-the-public-network)
+
+* [Customize the Nova_Flat Network](#customize-the-nova-flat-network)
+
+* [Customize the IPMI Network](#customize-the-ipmi-network)
 
 * [Next Step](#next-step)
 
