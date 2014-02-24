@@ -58,7 +58,7 @@ To create a disk image using the Disk Image Builder tool, follow the steps below
 
     `git clone https://github.com/openstack/diskimage-builder.git`
 
-    This creates a directory structure of /root/diskimage-builder, complete with its binary files, library file, elements, etc.
+    This creates a directory structure of /root/diskimage-builder, complete with its binary files, library file, elements, etc.
 
 2. Edit your **~/.profile** file to add the directory structure /root/diskimage-builder/bin to the path in your shell:
 

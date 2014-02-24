@@ -22,4 +22,6 @@ Refer to these documentation resources:
 * [HP Cloud OS for Moonshot Operational Dashboard Help](/cloudos/moonshot/manage/operational-dashboard/) &mdash; This document is a copy of the Help that's available in the HP Cloud OS for Moonshot Operational Dashboard.  
 
 * [HP Cloud OS for Moonshot Administration Dashboard Help](/cloudos/moonshot/manage/administration-dashboard/) &mdash; This document is a copy of the Help that's available in the HP Cloud OS for Moonshot Administration Dashboard.
+
+* [HP Cloud OS for Moonshot Image Builder](/cloudos/moonshot/manage/image-builder/) &mdash; This document shows you how to use Disk Image Builder to create images for the HP Cloud OS for Moonshot.
  
