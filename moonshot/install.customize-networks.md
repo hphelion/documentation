@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Customize Networks (Required)"
+title: "Customize Networks"
 permalink: /cloudos/moonshot/install/customize-networks/
 product: moonshot
 
@@ -21,9 +21,11 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/cloudos/moonshot/install/customize-connections/">&#9664; PREV</a> | <a href="/cloudos/moonshot/install/">&#9650; 
 UP</a> | <a href="/cloudos/moonshot/install/complete-admin-node-installation/">NEXT &#9654;</a> </p>
 
-# Customize Networks (Required)
+# Customize Networks
 
 This topic describes the steps to customize the network settings. These steps are required. 
+
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"><b>Caution:</b> You must customize the network settings before performing the steps in [Complete the Admin Node Installation](/cloudos/moonshot/install/complete-admin-node-installation/). After that, the network settings in the Operational Dashboard are read only. Once the install process is triggered, no changes can be made. If you want to make changes, you need to start over by re-installing the Admin Node. </p>
 
 * [Introduction](#introduction)
 
@@ -37,35 +39,21 @@ This topic describes the steps to customize the network settings. These steps ar
 
 ## Introduction
 
-Based on the network infrastructure suggested in the "Plan the Infrastructure for a Cloud" section of 
-[Important Tasks Before You Install](/cloudos/moonshot/install/before-you-install), you must customize the network settings. Here are some of the
-criteria to be considered while making changes to the default settings:
+Based on the network infrastructure suggested in the "Plan the Infrastructure for a Cloud" section of [Important Tasks Before You Install](/cloudos/moonshot/install/before-you-install), you must customize the network settings. Here are some of the criteria to be considered while making changes to the default settings:
 
-* For a production deployment, and to reduce the complexities of configuring the switches, it is strongly recommended that you provide separate wired 
-networks for public and admin. This requires you to specify your own range of IP addresses and other settings.
+* For a production deployment, and to reduce the complexities of configuring the switches, it is strongly recommended that you provide separate wired networks for public and admin. This requires you to specify your own range of IP addresses and other settings.
 
 * Get the details of your public network range from your Network Administrator. You must use a dedicated assigned IP address range when configuring the cloud's public network.          
 
-**Caution:** You must customize the network settings before performing the steps in [Complete the Admin Node Installation](/cloudos/moonshot/install/complete-admin-node-installation/). After that, the network settings in the 
-Operational Dashboard are read only. Once the install process is triggered, no changes can be made. If you want to make changes, you need to start 
-over by re-installing the Admin Node.
+* Some networks and address ranges for those networks are provided by default. You can modify or delete the IP address ranges as well as add new ones. You must use valid ranges that fall within the subnet as defined by the subnet address and mask specified in the network details.
 
-* Some networks and address ranges for those networks are provided by default. You can modify or delete the IP address ranges as well as add new ones. You must use valid ranges that fall
-within the subnet as defined by the subnet address and mask specified in the network details.
+* If you edit the network IP address ranges and enter invalid ranges, you will get a validation error when you click Update Address Ranges in the Edit Address Ranges dialog. The validation error shows the invalid address (start or end) and the corresponding network type. You must fix all errors in the Edit Address Ranges dialog and click Update Address Ranges to validate the addresses are correct. Clicking Cancel will not trigger the validation step.
 
-* If you edit the network IP address ranges and enter invalid ranges, you will get a validation error when you click Update Address Ranges in the Edit Address Ranges dialog. The validation
-error shows the invalid address (start or end) and the corresponding network type. You must fix all errors in the Edit Address Ranges dialog and click Update Address Ranges to validate the
-addresses are correct. Clicking Cancel will not trigger the validation step.
-
-* **Caution:** Validation of the address ranges only occurs when you open the Edit Address Ranges dialog for each network and click Update Address Ranges. Otherwise,you will
-not know if you have any errors. However, the Complete Install step will run a validation check and cannot be completed until the errors (if any) are fixed. If there is an address range error,
-the validation check will show the network type and possibly the address value. If not, open the Edit Address Ranges dialog for the specified network and click Update Address
-Ranges to identify the incorrect address.  
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"><b>Caution:</b> Validation of the address ranges only occurs when you open the Edit Address Ranges dialog for each network and click Update Address Ranges. Otherwise,you will not know if you have any errors. However, the Complete Install step will run a validation check and cannot be completed until the errors (if any) are fixed. If there is an address range error, the validation check will show the network type and possibly the address value. If not, open the Edit Address Ranges dialog for the specified network and click Update Address Ranges to identify the incorrect address.  </p>
 
 ## Customize the Public Network
 
-To provide external access, make sure you specify  a contiguous IP address range in the &lt;External/Public IP Address Range>. 
-On successful deployment of a Cloud, only the Controller Node gets the external IP address. Therefore, a small range of this IP pool is sufficient. Get the range from your IT administrator.
+To provide external access, make sure you specify  a contiguous IP address range in the &lt;External/Public IP Address Range>. On successful deployment of a Cloud, only the Controller Node gets the external IP address. Therefore, a small range of this IP pool is sufficient. Get the range from your IT administrator.
 
 
 ### Edit the Public Network
@@ -83,8 +71,7 @@ To edit the public network:
   * In the VLAN Tab, VLAN Enabled = False.
   * VLANID= 300
 
-4. In the <b>Router</b> Tab, in the <b>Router</b> box, enter the <b>Gateway IP</b> address of your Public IP address range. 
- The Router Preference default is sufficient. 
+4. In the <b>Router</b> Tab, in the <b>Router</b> box, enter the <b>Gateway IP</b> address of your Public IP address range. The Router Preference default is sufficient. 
  
 
 ### Edit the Public Address Ranges
@@ -102,13 +89,11 @@ of address range options, based upon your public network. Get the range from you
  
  b. Set IPV4 Start Addr to the start of the &lt;External/Public IP Address Range> described above.
 
- c. Set IPV4 End Addr to the end of the &lt;External/Public IP Address Range>. 
- Note: Provide the IP address range corresponding to the network address.
+ c. Set IPV4 End Addr to the end of the &lt;External/Public IP Address Range>. <b>Note</b>: Provide the IP address range corresponding to the network address.
 
 4. Click **Update Address Ranges** to save your changes to validate that the IP address is correct.
 
-**Note:** If you enter invalid address ranges, you will get a validation error, which identifies the incorrect address (start or end) for the corresponding network type. You must fix all
-errors in the <b>Edit Address Ranges</b> dialog and click <b>Update Address Ranges</b> to validate the addresses are correct.
+**Note:** If you enter invalid address ranges, you will get a validation error, which identifies the incorrect address (start or end) for the corresponding network type. You must fix all errors in the <b>Edit Address Ranges</b> dialog and click <b>Update Address Ranges</b> to validate the addresses are correct.
 
 
 ## Customize the Nova_Flat Network
@@ -130,7 +115,7 @@ To edit the Nova_Flat network:
   * In the VLAN Tab, VLAN Enabled = False.
   * VLANID= 172
 
-4. In the <b>Router</b> Tab, in the <b>Router</b> box, if you updated the Subnet on the Network tab, the router needs to be modified here accordingly. The Router Preference default is sufficient. 
+4. In the <b>Router</b> Tab, in the <b>Router</b> box, if you updated the Subnet and/or Netmask on the Network tab, the router needs to be modified here accordingly. The Router Preference default is sufficient. 
 
 5. Click <b>Update Network</b> to save your changes.
 
@@ -153,10 +138,7 @@ To edit the Nova_Flat address ranges:
 
 5.	Click <b>Update Address Ranges</b> to save your changes.
 
-**Note:** If you enter invalid address ranges, you will get a validation error, which identifies the incorrect address (start or end) for the corresponding network type. You must fix all
-errors in the Edit Address Ranges dialog and click <b>Update Address Ranges</b> to validate the addresses are correct.
-
-
+**Note:** If you enter invalid address ranges, you will get a validation error, which identifies the incorrect address (start or end) for the corresponding network type. You must fix all errors in the Edit Address Ranges dialog and click <b>Update Address Ranges</b> to validate the addresses are correct.
 
 
 ## Customize the IPMI Network
@@ -178,7 +160,7 @@ To edit the IPMI network:
   * In the VLAN Tab, VLAN Enabled = False.
   * VLANID= 172
 
-4. In the <b>Router</b> Tab, in the <b>Router</b> box, if you updated the Subnet on the Network tab, the router needs to be modified here accordingly. The Router Preference default is sufficient. 
+4. In the <b>Router</b> Tab, in the <b>Router</b> box, if you updated the Subnet and/or Netmask on the Network tab, the router needs to be modified here accordingly. The Router Preference default is sufficient. 
 
 5. Click <b>Update Network</b> to save your changes.
 
@@ -209,7 +191,7 @@ errors in the Edit Address Ranges dialog and click <b>Update Address Ranges</b> 
 
 ## Next Step
 
-Proceed to the next topic, [Complete Admin Node Installation (Required)](/cloudos/moonshot/install/complete-admin-node-installation/).
+Proceed to the next topic, [Complete Admin Node Installation](/cloudos/moonshot/install/complete-admin-node-installation/).
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

@@ -670,7 +670,7 @@ The dialog opens to the Details tab. Some fields are automatically populated fro
 <ul>
 <li> <b>Instance Source</b>: Specify whether you are using an image or snapshot.  </li>
 <li> <b>Image</b>: Select from the list of images that have been uploaded to the system.  </li>
-<li> <b>Instance Name</b>: The name of the host you are creating (Required). 
+<li> <b>Instance Name</b>: The name of the host you are creating (required). 
 <br /> <br /> 
 <b>Note:</b> At this point, you can go ahead and launch the instance, using the defaults for the remaining options. </li>
 <li> <b>Flavor</b>: Indicates the size of the node. When you select a flavor here, the <b>Flavor Details</b> table on the right changes to 

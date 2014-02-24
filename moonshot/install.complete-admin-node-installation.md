@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Complete Admin Node Installation (Required)"
+title: "Complete Admin Node Installation"
 permalink: /cloudos/moonshot/install/complete-admin-node-installation/
 product: moonshot
 
@@ -20,7 +20,7 @@ PageRefresh();
 
 <p style="font-size: small;"> <a href="/cloudos/moonshot/install/customize-networks/">&#9664; PREV</a> | <a href="/cloudos/moonshot/install/">&#9650; UP</a> | <a href="/cloudos/moonshot/install/create-cloud/">NEXT &#9654;</a> </p>
 
-# Complete Admin Node Installation (Required)
+# Complete Admin Node Installation
 
 This topic describes the steps to complete the Admin Node installation. These steps are required. 
 
@@ -36,7 +36,7 @@ To complete the Admin Node installation:
  special characters. In the current release, it must end in .com, .org, .net, .edu, .mil, .gov, or .local. <!-- It may end in any valid web domain type, such as (but not limited to) 
 .com, .org, .net, .edu, .mil, .gov. -->
 
- b. **Network Mode:** Select the displayed option, Dual, Single, or Teaming. For related details, see [Customize Networks (Required)](/cloudos/moonshot/install/customize-networks). 
+ b. **Network Mode:** Select the displayed option, Dual, Single, or Teaming. For related details, see [Customize Networks](/cloudos/moonshot/install/customize-networks). 
  <!-- 
  The DUAL / SINGLE option is based on your network infrastructure and previously 
  selected choices. If you have separate wired networks for admin, os_sdn and public, you want DUAL. The recommended practice is to use DUAL. 

@@ -145,7 +145,7 @@ If any of the prerequisite steps fail to complete, an error message displays.  I
 
 ## Next Step
 
-Proceed to the next topic, [Customize Connections (Optional)](/cloudos/moonshot/install/customize-connections/). 
+Proceed to the next topic, [Customize Connections](/cloudos/moonshot/install/customize-connections/). 
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
