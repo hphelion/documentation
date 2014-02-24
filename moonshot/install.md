@@ -30,6 +30,7 @@ Install and set up the Admin node:
 
 * [Installation Overview](/cloudos/moonshot/install/overview/)
 * [Important Tasks Before You Install](/cloudos/moonshot/install/before-you-install/)
+* [Install and Set Up the Admin Node](/cloudos/moonshot/install/install-setup-admin-node/)
 * [Set Admin Node Prerequisites (Required)](/cloudos/moonshot/install/admin-node-prerequisites/)
 * [Customize Network Connections (Optional)](/cloudos/moonshot/install/customize-network-connections/)
 * [Customize Network Settings (Required)](/cloudos/moonshot/install/customize-network-settings/)

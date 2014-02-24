@@ -18,7 +18,7 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> <a href="/cloudos/moonshot/install/overview/">&#9664; PREV</a> | <a href="/cloudos/moonshot/install/">&#9650; UP</a> | <a href="/cloudos/moonshot/install/admin-node-prerequisites/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/cloudos/moonshot/install/overview/">&#9664; PREV</a> | <a href="/cloudos/moonshot/install/">&#9650; UP</a> | <a href="/cloudos/moonshot/install/install-setup-admin-node/">NEXT &#9654;</a> </p>
 
 # Important Tasks Before You Install
 
@@ -27,12 +27,6 @@ Before you can start working in the HP Cloud OS for Moonshot Operational Dashboa
 * [Plan the Infrastructure for a Cloud](#plan-the-infrastructure-for-a-cloud)
 
 * [Review the Checklist of Values You'll Need in Advance](#review-checklist)
-
-* [Set up the Admin Node](#set-up-the-admin-node)
-
-* [Boot the Admin Node Using the HP Cloud OS for Moonshot ISO](#boot-the-admin-node-using-the-hp-cloud-os-for-moonshot-iso)
-
-* [Launch the Operational Dashboard](#launch-the-operational-dashboard)
 
 ## Plan the Infrastructure for a Cloud
 
@@ -55,8 +49,6 @@ A simple cloud environment would include:
 * A Baremetal Host
 
 The following diagram depicts a simplified deployment scenario. 
-
-<p style="color:red; font-weight:bold;">INTERNAL NOTE: Trying to resolve conflicting info between the latest diagram and networking info to which the team previously agreed.</p> 
 
 <img src="media/moonshot-deployment2.png"></img>
 
@@ -356,125 +348,56 @@ HP Cloud OS for Moonshot will have the following network configuration:
 
 In addition to the information presented already in this topic, please review the following checklist before starting the installation. You'll need to specify the following types of information during the installation and configuration process. 
 
-In the Operational Dashboard:
+### Operation Dashboard Checklist
 
-<ol>
+* For your Public network: 
+ * On the <b>Edit Network</b> dialog, you will need to specify your Subnet, Netmask, and Router IP values.
+ * On the <b>Edit Network Ranges</b> dialog, you will need to specify your Node Type, IPV4 Start Address, and IPV4 End Address values.
 
-<li> For your external (public) network: 
+* For your IPMI network: 
+ * On the <b>Edit Network</b> dialog, you will need to specify your Subnet, Netmask, and Router IP values.
+ * On the <b>Edit Network Ranges</b> dialog, you will need to specify your Node Type, IPV4 Start Address, and IPV4 End Address values.
 
-<ul>
-<li> On the <b>Edit Network</b> dialog, you will need to specify your Subnet, Netmask, and Router IP values.
-<li> On the <b>Edit Network Ranges</b> dialog, you will need to specify your Node Type, IPV4 Start Address, and IPV4 End Address values.
-</ul>  </li>
+* For your Nova_Flat network: 
+ * On the <b>Edit Network</b> dialog, you will need to specify your Subnet, Netmask, and Router (mandatory) IP values.
+ *On the <b>Edit Network Ranges</b> dialog, you will need to specify your Node Type, IPV4 Start Address, and IPV4 End Address values.
 
-<li> For your IPMI network: 
+* <b>Note</b>: You will be able to skip the Edit options for the Admin Node.
 
-<ul>
-<ul>
-<li> On the <b>Edit Network</b> dialog, you will need to specify your Subnet, Netmask, and Router IP values.
-<li> On the <b>Edit Network Ranges</b> dialog, you will need to specify your Node Type, IPV4 Start Address, and IPV4 End Address values.
-</ul>  </li>
+* The <b>Prerequisites</b> dialogs will prompt for your external DNS IP details.
 
-<li> For your PXE/Data (Nova_Flat) network: 
+* Also in the <b>Prerequisites</b> dialogs, under <b>Edit Prerequisites</b> > <b>Admin Node Internet Access</b> > <b>Network</b>, 
+you will need to specify your:
+ * NIC details for the public interface
+ * Http Proxy information:
+  * Host
+  * Port-8080
+  * Non-Proxy Hosts:  10.*|192.*|127.0.*|localhost
 
-<ul>
-<li> On the <b>Edit Network</b> dialog, you will need to specify your Subnet, Netmask, and Router (mandatory) IP values.
-<li> On the <b>Edit Network Ranges</b> dialog, you will need to specify your Node Type, IPV4 Start Address, and IPV4 End Address values.
-</ul>  </li>
+* In the <b>Create Cloud </b>dialog, you will only need to enter a <b>Name</b> for your cloud. You can use default values for other options; however, plan ahead 
+to specify new, non-default passwords for the Admin user, Arch user, and Trash user. 
 
-<li> <b>Note</b>: You will be able to skip the Edit options for the Admin Node. </li>
+* In the <b>Create Region </b>dialog, you will need to enter a <b>Name</b> for your region.  Recommended: create multiple regions.  On each Create Region dialog, 
+on the Controller & Compute Nodes tab, you will need to enter the number of nodes that participate in the region. 
 
-<li> The <b>Prerequisites</b> dialogs will prompt for your external DNS IP details.
+### Administration Dashboard Checklist
 
-<li> Also in the <b>Prerequisites</b> dialogs, under <b>Edit Prerequisites</b> > <b>Admin Node Internet Access</b> > <b>Network</b>, you will need to specify your:
+* On the Create Keypair dialog, you will just need to enter the Keypair name. 
 
-<ul>
-<li> NIC details for the public interface
-<li> Http Proxy information:
-<ul>
-<li>Host
-<li>Port-8080
-<li>Non-Proxy Hosts:  10.*|192.*|127.0.*|localhost
-</ul>
-</ul>  </li>
-
-<li> In the <b>Create Cloud </b>dialog, you will only need to enter a <b>Name</b> for your cloud. You can use default values for other options; however, plan ahead 
-to specify new, non-default passwords for the Admin user, Arch user, and Trash user.  </li> 
-
-<li> In the <b>Create Region </b>dialog, you will need to enter a <b>Name</b> for your region.  Recommended: create multiple regions.  On each Create Region dialog, 
-on the Controller & Compute Nodes tab, you will need to enter the number of nodes that participate in the region. </li> 
-
-</ol>
-
-Then in the Administration Dashboard:
-
-<ol>
-
-<li> On the Create Keypair dialog, you will just need to enter the Keypair name.  </li> 
-
-<li> <b>Note</b>: you will not need to define flavors to complete the post-install steps.  As explained later in [Launch Administration Dashboard for Post-Deployment Tasks](/cloudos/moonshot/install/launch-admin-dashboard), 
+* <b>Note</b>: you will not need to define flavors to complete the post-install steps.  As explained later in [Launch Administration Dashboard for Post-Deployment Tasks](/cloudos/moonshot/install/launch-admin-dashboard), 
 a flavor will be generated automatically for you based on your Moonshot server cartridge type:  hp_moonshot_server (for an 
-HP ProLiant Moonshot Server Cartridge) and hp_moonshot_m300 (for an HP ProLiant m300 Server Cartridge). </li> 
+HP ProLiant Moonshot Server Cartridge) and hp_moonshot_m300 (for an HP ProLiant m300 Server Cartridge). 
 
-<li> In the Create Images dialogs, you will need to create images, and the associated Kernel and RAM disk images. You will not need to specify the 
-Description, Minimum Disk, and Minimum RAM values. </li> 
+* In the Create Images dialogs, you will need to create images, and the associated Kernel and RAM disk images. You will not need to specify the 
+Description, Minimum Disk, and Minimum RAM values. 
 
-<li> In the Moonshot Management dialog, you will need to specify the chassis display name, Chassis Manager IP, Chassis Manager password, and Managing Host Name. </li> 
+* In the Moonshot Management dialog, you will need to specify the chassis display name, Chassis Manager IP, Chassis Manager password, and Managing Host Name.  
 
-<li> In the Launch Instance dialog, you will need to specify the image, instance name, networking, and (pre-defined) flavor. </li> 
-
-</ol> 
-
-## Set Up the Admin Node
-
-Install the Admin Node on a virtual machine. Here are general guidelines for creating a virtual machine in an existing or new hypervisor infrastructure:
-
-1. Configure the hypervisor host's network. The host must provide connectivity to the virtual machine Admin Node on an isolated private network 
-to all the bare-metal nodes' port eth0. And the virtual machine Admin Node must also have connectivity to a routable network for Internet access.
-
-2. Create a virtual machine Admin Node with the hardware configuration suggested in the previous section, [Plan the Infrastructure for a Cloud](#plan-the-infrastructure-for-a-cloud). 
-The following configuration must be reviewed during this step:
-
- a. Ensure the virtual machine Admin Node's primary NIC is bridged or connected to the admin network and the second NIC is bridged or connected to a routable network for Internet access.
-
- b. For the disk configuration, the default Disk bus type/controller uses proprietary technology. Ensure you set that to the IDE/SCSI type.
- 
- c. If your hypervisor is KVM, ensure the virt type is set to KVM.
- 
-3. Download the HP Cloud OS for Moonshot ISO to the host's local file system or data store.
-
-4. Configure the virtual machine Admin Node to point to the ISO as a CD/DVD drive or install media ISO image. 
-
-## Boot the Admin Node Using the HP Cloud OS for Moonshot ISO
-
-To boot the Admin Node using the ISO:
-
-1. Power ON the virtual machine Admin Node and open up its console.
-
-2. In the console window, you can view the boot up process. Once completed, a login prompt displays.
-
-3. (Optional) Power DOWN the Admin Node VM, edit it to disconnect the ISO CD, then Power UP the VM.
-
-At this point, the Operational Dashboard has been successfully installed on the Admin Node.
-
-## Launch the Operational Dashboard
-
-After you boot from the HP Cloud OS for Moonshot ISO, you are ready to launch the Operational Dashboard to set up the Admin Node.
-
-To launch the Operational Dashboard:
-
-1. From the virtual machine Admin Node, open a Mozilla Firefox or Google Chrome browser that has the following IP addresses set as proxy exceptions:
-  
-  192.*;10.*;localhost;127.0.*
-
-2. In the browser, enter **http://192.168.124.10:9000** to launch the Operational Dashboard user interface. 
-IMPORTANT: Use Google Chrome or Mozilla Firefox.
-
-3. On the Environment tab, review the types of prerequisites, servers, connections, and networks in your environment.
+* In the Launch Instance dialog, you will need to specify the image, instance name, networking, and (pre-defined) flavor. 
 
 ## Next Step
 
-Proceed to the next topic, [Set the Admin Node Prerequisites](/cloudos/moonshot/install/admin-node-prerequisites/), to begin the process of setting up and installing the Admin node.  
+Proceed to the next topic, [Install and Set Up the Admin Node](/cloudos/moonshot/install/install-setup-admin-node/).
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

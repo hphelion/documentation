@@ -137,7 +137,8 @@ In a single compute region deployment model, this can coexist with cloud control
 
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> An HP cloud can consist of more than one region. For example, you can separate the regions based on the workload such as between a development/test team and a production deployment. A
 development/test team region's compute requirements can use commodity and less expensive hardware. Whereas a production deployment region's compute requirements need a set of compute
-resources that are backed up with heavy compute and fault-tolerant resources. HP recommends that you define and use multiple compute regions. In this scenario, the Compute Region Controller is its own node.
+resources that are backed up with heavy compute and fault-tolerant resources. HP recommends that you define and use multiple compute regions. 
+In this scenario, the Compute Region Controller is its own node.</p>
 
 ### Baremetal Host
 
