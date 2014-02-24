@@ -69,7 +69,7 @@ Taking a broader view, this next diagram illustrates those steps in a larger con
 Notice how once you've installed and set up the Admin node, you perform steps first in the Operational Dashboard to create your cloud and perform associated tasks, then you launch the next dashboard, the Administration Dashboard, to perform 
 a number of post-installation tasks. 
 
-<img src="media/cloudos-moonshot-post-install-process.png" title="HP Cloud OS for Moonshot post-install tasks" /> 
+<img src="media/cloudos-moonshot-post-install-tasks.png" title="HP Cloud OS for Moonshot post-install tasks" /> 
 
 The post-installation tasks are designed to familiarize you, during your initial session, with the Administration Dashboard, which you'll use from that point forward to manage your clouds and the Moonshot server cartridges that 
 participate in the cloud.  The post-installation tasks are also designed to help you verify that your recently deployed cloud environment is functioning properly.
