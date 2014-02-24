@@ -32,9 +32,9 @@ Moonshot Administration Dashboard (used to create and manage cloud resources).
 
 * [Preview of the Installation Steps](#preview-of-the-installation-steps)
 
-* [Components of the HP Cloud OS for Moonshot Environment](#components-of-the-hp-cloud-os-for-moonshot-environment)
+* [Overall Installation Process and Approximate Time](#overall-installation-process-and-approximate-time)
 
-* [Overall Installation and Configuration Checklist](#overall-installation-and-configuration-checklist)
+* [Components of the HP Cloud OS for Moonshot Environment](#components-of-the-hp-cloud-os-for-moonshot-environment)
 
 * [Next Step](#next-step)
 
@@ -74,6 +74,37 @@ point forward, you will use the Administration Dashboard to manage your cloud en
 
 The documented post-installation tasks are designed to familiarize you with the Administration Dashboard, which you'll use from that point forward to manage your cloud. 
 The tasks are also designed to help you verify that your recently deployed cloud environment is functioning properly.
+
+
+## Overall Installation Process and Approximate Time
+
+Assuming a typical configuration, the overall setup process involves the following steps. The total time to complete the setup once HW is installed, configured and the hypervisor is ready is four to six hours. In this list, approximate execution times are shown here for reference, once the installation from the HP Cloud OS for Moonshot ISO has begun. 
+
+* Collect the required information for the network configuration
+
+* Setup the Moonshot chassis, cartridges and configure the internal switches
+
+* Configure the server hardware and the physical networking as required
+
+* Setup a server with either VMware ESXi or Linux KVM as a hypervisor
+
+* Configure the networking within the hypervisor to support the required networking configuration
+
+* Create three virtual machines to host the Admin, Controller and Compute VMs
+
+* Create a VM to use as an access node for installation of the HP Cloud OS for Moonshot software ISO
+
+* Install and configure the Admin node (60 minutes)
+
+* Add (discover and allocate) the Controller and Compute VMs (30 minutes)
+
+* Create a cloud and compute region (60 minutes)
+
+* Add and discover the Moonshot chassis (15 min)
+
+* Download and import the desired workload(s) (30 to 60 minutes - depending on download time)
+
+* Provision a workload (30 minutes)
 
 ## Components of the HP Cloud OS for Moonshot Environment
 
@@ -144,36 +175,6 @@ In this scenario, the Compute Region Controller is its own node.</p>
 
 The Baremetal Host hosts the cloud instances using a baremetal driver for the OpenStack Nova compute service. Within the OpenStack framework, the baremetal driver has the same role as the drivers for other hypervisors (libvirt, xen, etc.), and yet it is presently unique in that the hardware is not virtualized - 
 there is no hypervisor between the tenants and the physical hardware that includes Moonshot cartridges.
-
-## Overall Installation and Configuration Checklist
-
-Assuming a typical configuration, the overall setup process involves the following steps. The total time to complete the setup once HW is installed, configured and the hypervisor is ready is four to six hours. In this list, approximate execution times are shown here for reference, once the installation from the HP Cloud OS for Moonshot ISO has begun. 
-
-* Collect the required information for the network configuration
-
-* Setup the Moonshot chassis, cartridges and configure the internal switches
-
-* Configure the server hardware and the physical networking as required
-
-* Setup a server with either VMware ESXi or Linux KVM as a hypervisor
-
-* Configure the networking within the hypervisor to support the required networking configuration
-
-* Create three virtual machines to host the Admin, Controller and Compute VMs
-
-* Create a VM to use as an access node for installation of the HP Cloud OS for Moonshot software ISO
-
-* Install and configure the Admin node (60 minutes)
-
-* Add (discover and allocate) the Controller and Compute VMs (30 minutes)
-
-* Create a cloud and compute region (60 minutes)
-
-* Add and discover the Moonshot chassis (15 min)
-
-* Download and import the desired workload(s) (30 to 60 minutes - depending on download time)
-
-* Provision a workload (30 minutes)
 
 ## Next Step
 
