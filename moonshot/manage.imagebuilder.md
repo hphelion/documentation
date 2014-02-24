@@ -54,13 +54,13 @@ Before you attempt to build an image, make sure you have:
 ## Creating a disk image ## {#disk-image-create}
 To create a disk image using the Disk Image Builder tool, follow the steps below:
 
-1. As a root user, clone the git repository of Disk Image Builder to the server:
+1. As a root user, clone the git repository of a Disk Image Builder to the server:
 
-    `git clone https://github.com/openstack/diskimage-builder.git`
+    `git clone https://github.com/openstack/diskimage-builder.git`
 
     This creates a directory structure of /root/diskimage-builder, complete with its binary files, library file, elements, etc.
 
-2. Edit your **~/.profile** file to add the directory structure /root/diskimage-builder/bin to the path in your shell:
+2. Edit your **~/.profile** file to add the directory structure /root/diskimage-builder/bin to the path in your shell:
 
     `PATH="$HOME/bin:$PATH:/root/diskimage-builder/bin"`
 
@@ -72,7 +72,7 @@ To create a disk image using the Disk Image Builder tool, follow the steps below
 
         <pre>disk-image-create -o base -a amd64 vm base ubuntu baremetal</pre>
 
-        This creates a disk image file named base.qcow2 
+        This creates a disk image file named base.qcow2
 
     - **PXE image**
 
