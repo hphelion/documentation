@@ -248,7 +248,7 @@ The Administration Dashboard presents the following pre-defined flavors for HP M
 <tr style="background-color: white; color: black;">
 <td> hp_moonshot_m300 </td>
 <td> HP ProLiant m300 Server Cartridge </td>
-<td> CPUs: 8. <br /> CPU Architecture: x86_64. <br /> RAM MBs: 32768. <br /> Root Disk GBs:  <b>TBS</b> </td>
+<td> CPUs: 8. <br /> CPU Architecture: x86_64. <br /> RAM MBs: 32768. <br /> Root Disk GBs: 450. </td>
 </tr>
 
 </table>
@@ -287,27 +287,44 @@ By default, Datacenter View is the active view.
 
 ### Datacenter View
 
-The Datacenter View displays the Add, Edit, and Delete options at the top, and the Events Log panel on the right.
+Before we discuss adding a Moonshot chassis to the cloud, let's take a quick look at the Datacenter user interface. 
 
-The Datacenter View also displays a search option to allow you to search for a specific cartridge.
+The Datacenter View displays the Add, Edit, and Delete options at the top, and the Events Log panel on the right.  The Datacenter View also displays a search option to allow you to search for a specific cartridge.
 
-To view the chassis details, toggle between two views in the Datacenter:
+During your first visit to this screen, there might not be any chassis to display. After you add a chassis (explained in the next section), you can then toggle between two views in the Datacenter:
 
 * Grid view: <img src="media/moonshot-datacenter-grid-view.png" title="Moonshot Datacenter grid view" />
 
 * Table view: <img src="media/moonshot-datacenter-table-view.png" title="Moonshot Datacenter table view" />
 
-Double click the Chassis graphic to display the <b>Single Chassis View</b>.
+Later, to display the <b>Single Chassis View</b>, you can double click a Chassis graphic. For example, after a chassis has been added:
 
-<b>Note</b>: Different chassis views can only be seen if the chassis displays in the Datacenter.
-
-#### Table View
-
-( Integrating the rest of the content from 2/21 to 2/23. )
+<img src="media/cloudos-moonshot-datacenter-view1.png" title="Datacenter view after adding a chassis" />
 
 #### Add a Chassis
 
-( Integrating the rest of the content from 2/21 to 2/23. )
+This is a key task during your post-install of HP Cloud OS for Moonshot: adding one or more chassis (one at a time) to the cloud. 
+
+1.	Click the <b>+ Add</b> icon to display the Enter Chassis Details dialog box.
+
+2.	In the <b>Display Name</b> box, enter the display name for the chassis. The name should have a minimum of 4 characters. 
+The name should start with an alphabet and may be followed by numbers or an underscore (_). **Note:** Do not specify a Name that contains pecial characters or spaces.
+
+3.	In the <b>Chassis Manager IP Address</b> box, enter the IP address of your Moonshot Chassis.
+
+4.	In the <b>Chassis Manager User Name</b> box, enter the user name.
+
+5.	In the <b>Chassis Manager Password</b> box, enter the password. 
+
+6.	In the <b>Managing Hostname</b> box, enter the fully-qualified domain name of the Baremetal host that will manage the chassis. For example: hostname.cloudos.local
+
+7.	Click Add to add the Moonshot Chassis to the cloud. After clicking Add, watch for one or more of the following states:
+ * Discovering - When the chassis is being discovered
+ * Warning - When one or more of the cartridges are not in good condition
+ * Failed - When the discovery process fails
+ * Optimal- When the chassis is discovered and is in good state
+ 
+Once the operation is successful, the Moonshot Chassis is graphically represented on the screen. The information is displayed regarding the cartridges, nodes, and the state of the chassis.
 
 ### Single Chassis View
 
@@ -317,13 +334,14 @@ The Single Chassis View displays the detailed information about the selected Cha
 
 * Table
 
-The Single Chassis View also displays the Events log panel on the right. 
-
-Example:
+Example of the main screen:
  
-<img src="media/moonshot-single-chassis-view-example.png" height="95%" title="Moonshot Single Chassis View example" />
+<img src="media/moonshot-single-chassis-view-example1.png" title="Moonshot Single Chassis View main screen example" />
 
-( Integrating the rest of the content from 2/21 to 2/23. )
+The Single Chassis View also displays the Events log panel, to the right of the main screen.  For example:
+
+<img src="media/moonshot-single-chassis-view-example2.png" title="Moonshot Single Chassis View events log example" />
+
 
 
 ## Launch an Instance from an Image
