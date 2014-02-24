@@ -71,14 +71,14 @@ a number of post-installation tasks.
 
 <img src="media/cloudos-moonshot-post-install-tasks.png" title="HP Cloud OS for Moonshot post-install tasks" /> 
 
-The post-installation tasks are designed to familiarize you, during your initial session, with the Administration Dashboard, which you'll use from that point forward to manage your clouds and the Moonshot server cartridges that 
-participate in the cloud.  The post-installation tasks are also designed to help you verify that your recently deployed cloud environment is functioning properly.
+The documented post-installation tasks are designed to familiarize you with the Administration Dashboard, which you'll use from that point forward to manage your cloud. 
+The tasks are also designed to help you verify that your recently deployed cloud environment is functioning properly.
 
 ## Components of the HP Cloud OS for Moonshot Environment
 
 The following diagram illustrates the HP Cloud OS for Moonshot environment.
 
-<img src="media/cloudos-environment.png" title="HP Cloud OS for Moonshot environment" /> 
+<img src="media/cloudos-moonshot-environment.png" title="HP Cloud OS for Moonshot environment" /> 
 
 ### HP Cloud OS for Moonshot Administration Node
 
