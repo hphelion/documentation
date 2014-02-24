@@ -43,8 +43,7 @@ Moonshot Administration Dashboard (used to create and manage cloud resources).
 The HP Cloud OS for Moonshot environment provides you with: 
 
 * Optimized cloud workloads across cloud providers, with model-once and provision-anywhere capability.  These features are combined with repeatable, consistent 
-workload placement across diverse cloud deployment models. This functionality allows you and your customers to optimally align workloads with resources, and to  
-improve resource utilization. 
+workload placement across diverse cloud deployment models. This functionality allows you and your customers to optimally align workloads with resources, and to improve resource utilization. 
 
 * A flexible and open architecture powered by OpenStack technology, giving you an industry leading, vendor neutral, open source cloud architecture. 
 
@@ -68,8 +67,7 @@ Taking a broader view, this next diagram illustrates those steps in a larger con
 
 <img src="media/cloudos-moonshot-install-process-expanded.png" title="HP Cloud OS for Moonshot - an expanded view of the install process" /> 
 
-Notice how once you've installed and set up the Admin node, you perform steps first in the Operational Dashboard to create your cloud and perform associated 
-tasks. Then from the Operational Dashboard, you will launch the separate Administration Dashboard to perform a number of post-installation tasks. And from that 
+Notice how once you've installed and set up the Admin node, you perform steps first in the Operational Dashboard to create your cloud and perform associated tasks. Then from the Operational Dashboard, you will launch the separate Administration Dashboard to perform a number of post-installation tasks. And from that 
 point forward, you will use the Administration Dashboard to manage your cloud environment, including the Moonshot server cartridges.
 
 <img src="media/cloudos-moonshot-post-install-tasks.png" title="HP Cloud OS for Moonshot post-install tasks" /> 
@@ -135,7 +133,9 @@ cloud environment from an identity standpoint.
 
 **Compute Region Controller:** A Resource Region is known as a Compute Region. This is a pool of compute resources that can be consumed through a service API by consumers of the cloud,
 such as Nova. This is responsible for the launch of instances across baremetal hosts. The scheduling is based on varied flavors of instances and available resources on the compute nodes.
-In a single compute region deployment model, this can coexist with cloud controller services.  <b>Notes</b>: An HP cloud can consist of more than one region. For example, you can separate the regions based on the workload such as between a development/test team and a production deployment. A
+In a single compute region deployment model, this can coexist with cloud controller services.  
+
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> An HP cloud can consist of more than one region. For example, you can separate the regions based on the workload such as between a development/test team and a production deployment. A
 development/test team region's compute requirements can use commodity and less expensive hardware. Whereas a production deployment region's compute requirements need a set of compute
 resources that are backed up with heavy compute and fault-tolerant resources. HP recommends that you define and use multiple compute regions. In this scenario, the Compute Region Controller is its own node.
 
@@ -146,8 +146,7 @@ there is no hypervisor between the tenants and the physical hardware that includ
 
 ## Overall Installation and Configuration Checklist
 
-Assuming a typical configuration, the overall setup process involves the following steps. The total time to complete the setup once HW is installed, configured 
-and the hypervisor is ready is 4 to 6 hours. Approximate execution times, once the installation from the HP Cloud OS for Moonshot ISO has begun, are listed here for reference. Your time may vary.
+Assuming a typical configuration, the overall setup process involves the following steps. The total time to complete the setup once HW is installed, configured and the hypervisor is ready is four to six hours. In this list, approximate execution times are shown here for reference, once the installation from the HP Cloud OS for Moonshot ISO has begun. 
 
 * Collect the required information for the network configuration
 

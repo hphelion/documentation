@@ -83,7 +83,7 @@ We recommend that your server contains the following:
 
 #### Hypervisor recommendations {#hypervisor}
 
-<table style="text-align: left; vertical-align: top; min-width: 400px;">
+<table style="text-align: left; vertical-align: top; min-width: 700px;">
 
 <tr style="background-color: #C8C8C8;">
 <th>Hypervisor</th>
@@ -101,7 +101,7 @@ We recommend that your server contains the following:
 
 ### Node requirements {#nodereq}
 
-<table style="text-align: left; vertical-align: top; min-width: 400px;">
+<table style="text-align: left; vertical-align: top; min-width: 700px;">
 
 <tr style="background-color: #C8C8C8;">
 <th>Node Type</th>
@@ -153,7 +153,7 @@ We recommend that your server contains the following:
 
 #### Moonshot chassis firmware version {#firmware}
 
-<table style="text-align: left; vertical-align: top; min-width: 400px;">
+<table style="text-align: left; vertical-align: top; min-width: 700px;">
 
 <tr style="background-color: #C8C8C8;">
 <th>Software / Firmware</th>
@@ -194,7 +194,7 @@ We recommend that your server contains the following:
 
 #### Moonshot cartridges supported {#cartridges}
 
-<table style="text-align: left; vertical-align: top; min-width: 400px;">
+<table style="text-align: left; vertical-align: top; min-width: 700px;">
 
 <tr style="background-color: #C8C8C8;">
 <th>Cartridge Type</th>
@@ -220,7 +220,7 @@ We recommend that your server contains the following:
 
 #### Operating systems supported {#ossupp}
 
-<table style="text-align: left; vertical-align: top; min-width: 400px;">
+<table style="text-align: left; vertical-align: top; min-width: 700px;">
 
 <tr style="background-color: #C8C8C8;">
 <th>Cartridge Type</th>
@@ -239,7 +239,7 @@ We recommend that your server contains the following:
 
 
 #### Workloads supported {#workloads}
-<table style="text-align: left; vertical-align: top; min-width: 400px;">
+<table style="text-align: left; vertical-align: top; min-width: 700px;">
 
 <tr style="background-color: #C8C8C8;">
 <th>Cartridge Type</th>
@@ -278,15 +278,15 @@ We recommend that your server contains the following:
 
 The following networks are utilized in the HP Cloud OS for Moonshot infrastructure:
 
-* <b>Admin Network</b>: Provides connectivity between the Admin node, the Controller node and the Baremetal host. The Admin node provides DHCP and PXE services on this network.
+* <b>Management Network</b>: Also known as the "Admin network," provides connectivity between the Admin node, the Controller node and the Baremetal host. The Admin node provides DHCP and PXE services on this network.
 
-* <b>Nova_Flat Network</b>: Utilized for connectivity between the Controller and Baremetal hosts and the Moonshot cartridges. The Controller node provides 
+* <b>PXE/Data Network</b>: Also known as the "Nova_Flat network," this network is utilized for connectivity between the Controller and Baremetal hosts and the Moonshot cartridges. The Controller node provides 
 DHCP and PXE services for this network. Workloads are provisioned to the Moonshot cartridges using this network.
 
 * <b>IPMI Network</b>: This network is utilized for communication between the Baremetal host and the Moonshot Chassis Manager. This includes chassis and 
 cartridge discovery, power control of cartridges and nodes, and monitoring of the health of the Moonshot systems
 
-* <b>Public/External Network</b>: This network provides public access to the HP Cloud OS for Moonshot Administration Dashboard and external access to 
+* <b>External Network</b>: Also known as the "Public network," this network provides public access to the HP Cloud OS for Moonshot Administration Dashboard and external access to 
 the internet for the Admin node and Controller node.
 
 <b>Notes</b>:
@@ -299,47 +299,51 @@ IP address.
 
 #### Network Configuration
 
-HP Cloud OS for Moonshot will have the following Network Configuration:
-
-* Admin Node: 2 NICs - Admin Network and Public Network
-
-* Controller Node: 3 NICs - Admin Network, PXE/Data Network, and Public Network
-
-* Baremetal Host: 3 NICs - Admin Network , PXE/Data Network, and IPMI Network
-
 Again referring to this simplified deployment scenario: 
 
 <img src="media/moonshot-deployment.png"></img>
+
+HP Cloud OS for Moonshot will have the following network configuration:
+
+* <b>Admin Node</b>: 2 NICs - Management Network and External Network
+
+* <b>Controller Node</b>: 3 NICs - Management Network, PXE/Data Network, and External Network
+
+* <b>Baremetal Host</b>: 3 NICs - Management Network , PXE/Data Network, and IPMI Network
 
 <table style="text-align: left; vertical-align: top; min-width:700px;">
 
 <tr style="background-color: #C8C8C8;">
 <tr>
 <th> </th>
-<th>eth0</th>
-<th>eth1</th>
-<th>eth2</th>
+<th> eth0 </th>
+<th> eth1 </th>
+<th> eth2 </th>
+<th> eth3 </th>
 <tr>
 
 <tr style="background-color: white; color: black;">
 <td> Admin Node </td>
-<td> Admin network </td>
-<td> Public network </td>
-<td>  </td>
+<td> Management Network </td>
+<td> </td>
+<td> </td>
+<td> External Network </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Controller Node </td>
-<td> Admin network </td>
-<td> PXE / data network </td>
-<td> Public network </td>
+<td> Management Network </td>
+<td> PXE / Data Network </td>
+<td> </td> 
+<td> External Network </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Baremetal Host </td>
-<td> Admin network </td>
-<td> PXE / data network </td>
-<td> IPMI network / Public network </td>
+<td> Management Network </td>
+<td> PXE / Data Network </td>
+<td> IPMI Network / External Network </td>
+<td> </td> 
 </tr>
 
 </table>
