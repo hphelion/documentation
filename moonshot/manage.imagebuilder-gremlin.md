@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Cloud OS for Moonshot: Building Images"
-permalink: /cloudos/moonshot/manage/image-builder/
+permalink: /cloudos/moonshot/manage/image-builder-gremlin/
 product: moonshot
 
 ---
