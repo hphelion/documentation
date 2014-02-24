@@ -78,7 +78,7 @@ The tasks are also designed to help you verify that your recently deployed cloud
 
 The following diagram illustrates the HP Cloud OS for Moonshot environment.
 
-<img src="media/cloudos-moonshot-environment.png" title="HP Cloud OS for Moonshot environment" /> 
+<img src="media/cloudos-moonshot-environment2.png" title="HP Cloud OS for Moonshot environment" /> 
 
 ### HP Cloud OS for Moonshot Administration Node
 
