@@ -38,7 +38,7 @@ Install and set up the Admin node:
 
 After you install and set up the Admin node, you can perform additional steps:
 
-* [Create a Cloud](/cloudos/moonshot/install/create-cloud/) 
+* [Manage Nodes and Create a Cloud](/cloudos/moonshot/install/create-cloud/) 
 * [Create Compute Regions](/cloudos/moonshot/install/create-compute-regions/) 
 * [Enter or Update your License Key](/cloudos/moonshot/install/license/)
 * [Customize User Settings](/cloudos/moonshot/install/customize-user-settings/)
@@ -47,7 +47,7 @@ After you install and set up the Admin node, you can perform additional steps:
 
 <!--
 Finally, if you do not intend to use the wizard-based Cloud OS for Moonshot installation process that's described in 
-the Create a Cloud topic, and instead decide to apply and configure the install modules yourself (for **advanced** users only), 
+the Manage Nodes and Create a Cloud topic, and instead decide to apply and configure the install modules yourself (for **advanced** users only), 
 see these topics: 
 
 * [Advanced Cloud Setup](/cloudos/moonshot/install/advanced-cloud-setup/)

@@ -61,24 +61,17 @@ To enable the Admin Node Internet Access:
 
  **Caution:** Specifying incorrect proxy host settings might cause some features to not work correctly later, after the installation, when you use the HP Cloud OS for Moonshot Administration Dashboard.
 
- a. Specify the Host's IP address
+ a. Specify the Host's IP address - get this value from your system administrator or from the settings in your web browser.
  
-> Get this value from your system administrator or from the settings in your web browser.
+ b. Specify the Port - get this value from your system administrator or from the settings in your web browser.
  
- b. Specify the Port
-
-> Get this value from your system administrator or from the settings in your web browser.
- 
- c. Specify the Non-Proxy Hosts' IP addresses
-	 
-> Specify addresses that **should not** use proxy servers, for the Controller/Baremetal Host and admin networks. 
-Each network needs to be separated by a pipe bar "|". For example: 10.\*|192.\*|127.*|localhost.
+ c. Specify the Non-Proxy Hosts' IP addresses - specify addresses that **should not** use proxy servers, for the Controller/Baremetal Host and admin networks. Each network needs to be separated by a pipe bar "|". For example: 10.\*|192.\*|127.*|localhost.
  
  d. If necessary, specify the optional Username and Password.
  
-> After completing the steps above, click **Update Prerequisite**.
+6. After completing the steps above, click **Update Prerequisite**.
 
-> Now click **Complete Prerequisite** to complete this setup for the Cloud Administration Node Internet Access entry.
+7. Now click **Complete Prerequisite** to complete this setup for the Cloud Administration Node Internet Access entry.
 
 When this prerequisite completes, a timestamp will be displayed in the Last Updated column.
 
@@ -146,7 +139,6 @@ If any of the prerequisite steps fail to complete, an error message displays.  I
 ## Next Step
 
 Proceed to the next topic, [Customize Connections](/cloudos/moonshot/install/customize-connections/). 
-
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Create a Cloud"
+title: "Manage Nodes and Create a Cloud"
 permalink: /cloudos/moonshot/install/create-cloud/
 product: moonshot
 
@@ -20,35 +20,24 @@ PageRefresh();
 
 <p style="font-size: small;"> <a href="/cloudos/moonshot/install/complete-admin-node-installation/">&#9664; PREV</a> | <a href="/cloudos/moonshot/install/">&#9650; UP</a> | <a href="/cloudos/moonshot/install/create-compute-regions/">NEXT &#9654;</a> </p>
 
-# Create a Cloud
+# Manage Nodes and Create a Cloud
 
-Now that the Admin Node is installed, it's time to create your cloud. 
+Now that the Admin Node is installed, it's time to manage the nodes, and then create a cloud. 
 
-This topic explains how to set up a cloud with a Cloud Controller node (Cloud, Network, Storage, and Compute Controllers) 
-and the separate Compute node(s). Optional: This topic also explains how to setup a Swift Controller node (Ring-compute, Proxy,  and Dispersion) and the separate Swift Storage Node(s).
+<!-- Optional: This topic also explains how to setup a Swift Controller node (Ring-compute, Proxy,  and Dispersion) and the separate Swift Storage Node(s). -->
 
-* [Manage Controller and Compute Nodes](#manage-controller-and-compute-nodes)
+* [Manage Cloud Controller and Baremetal Host](#manage-cloud-controller-and-baremetal-host)
+<!-- * [Complete Storage Configuration](#complete-storage-configuration) --> 
 
-* [Complete Storage Configuration](#complete-storage-configuration)
+* [Create a Cloud](#create-a-cloud)
 
-* [Create Cloud](#create-cloud)
+## Manage Cloud Controller and Baremetal Host
 
-## Manage Controller and Compute Nodes
+Before starting this process, ensure that the boot order on all nodes is configured to boot from the network first.  This only occurs once as the PXE service will not try to network boot a node again if it has already done so.
 
-Before you begin, make sure:
+1. Power ON the Controller and Baremetal Host.
 
-* You have remote console access to all the virtual and bare-metal servers. This is required to power on the servers to trigger Network (PXE) boot, monitor operating system installation, and if need be provide additional firmware drivers when prompted.
-
-* The Network and Storage Infrastructures are set up correctly. For the post-install of the operating system, a few steps are required to configure and mount the folder on an additional storage resource.
-
-* (Optional) The Swift infrastructure is set up correctly. For the post-install of the operating system, a few steps are required to zero out the first and last megabyte of the disk.
-
-**Note:** Ensure that the boot order on all nodes is configured to boot from the network first (this only occurs once as the PXE service will not try to network boot a node again if it has already
-done so).
-
-1. Power ON the Controller and Compute nodes.
-
-2. In the HP Cloud OS for Moonshot Operational Dashboard, select the Cloud tab > Manage Nodes. Once the Controller and Compute Nodes have booted, each node displays in the table, indicating the Alias Name set to the node's MAC address (of the NIC associated
+2. In the Operational Dashboard, select the <b>Cloud</b> tab > <b>Manage Nodes</b>. Once the Controller and Compute Nodes have booted, each node displays in the table, indicating the Alias Name set to the node's MAC address (of the NIC associated
 with the Administration Network). Each node will be in the Not Allocated state.
 
 3. For a node, click More > Edit Node to rename the MAC address in the Alias column to a more meaningful name such as controllercompute, cloudcontroller, compute1, compute2. **Note:** The node name can only be letters (capitalization is allowed) and numbers with no spaces. The node table then displays with the new alias names.
@@ -71,15 +60,6 @@ When the nodes are ready for cloud deployment, their status ends with Allocated.
 If a dialog box displays prompting you to load missing firmware, provide the appropriate drive.
 
 **Tip:** In the case where a node results in status = Off, select the More > Reboot Node action for the node.
-
-<!-- US1896, removed from UI
-Note: To de-allocate a Compute or Controller node from your Admin Node, click the Delete
-Node option from the drop-down menu on the Manage Node dialog. This action sets the
-identified node to a de-allocated state.
-**Note**: If a node is part of a compute region, its state is Deployed, and you cannot perform the Delete Node action on it. 
-If you were to delete the compute region, the node's state would become Not Allocated; then if desired, you could use 
-Delete Node to delete it. 
---> 
 
 <!-- 
 ## Complete Storage Configuration
@@ -147,9 +127,7 @@ In addition, you will need to login to the Swift storage nodes from the remote c
 <a href="https://cloudos.hpwsportal.com" target="new"> HP Cloud OS for Moonshot Catalog</a> portal, and see the topic about the dashboard credentials.
 -->
 
-## Create Cloud
-
-You are now ready to create your cloud. 
+## Create a Cloud
 
 To create a cloud:
 

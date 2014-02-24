@@ -46,7 +46,7 @@ PageRefresh();
 * [Customize Connections](/cloudos/moonshot/install/customize-connections/)
 * [Customize Networks](/cloudos/moonshot/install/customize-networks/)
 * [Complete Admin Node Installation (Required)](/cloudos/moonshot/install/complete-admin-node-installation/)
-* [Create a Cloud](/cloudos/moonshot/install/create-cloud/) 
+* [Manage Nodes and Create a Cloud](/cloudos/moonshot/install/create-cloud/) 
 * [Create Compute Regions](/cloudos/moonshot/install/create-compute-regions/) 
 * [Enter or Update your License Key](/cloudos/moonshot/install/license/)
 * [Customize User Settings](/cloudos/moonshot/install/customize-user-settings)

@@ -40,7 +40,7 @@ Cloud infrastructure services are delivered as "install modules," which are also
 
 Install modules are a mechanism to install and configure a service on the Controller and Compute Nodes. 
 
-When you create a cloud using the process defined in [Create a Cloud](/cloudos/moonshot/install/create-cloud/), a number of OpenStack and HP Cloud OS for Moonshot 
+When you create a cloud using the process defined in [Manage Nodes and Create a Cloud](/cloudos/moonshot/install/create-cloud/), a number of OpenStack and HP Cloud OS for Moonshot 
 install modules are automatically configured and deployed for you. In most cases, the automated deployment of install modules will suffice. 
 **Exception:** the Swift install module must be installed manually following the general steps in this topic. 
 
