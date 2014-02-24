@@ -181,12 +181,9 @@ To edit the Nova_Flat network:
   * In the VLAN Tab, VLAN Enabled = False.
   * VLANID= 172
 
-4. In the <b>Router</b> Tab, in the <b>Router</b> box, enter the <b>Gateway IP</b> address of your router.  
- The Router Preference default is sufficient. 
+4. In the <b>Router</b> Tab, in the <b>Router</b> box, if you updated the Subnet on the Network tab, the router needs to be modified here accordingly. The Router Preference default is sufficient. 
 
-5. Select the <b>Router</b> tab and review the settings. Do not make any changes.
-
-6. Click <b>Update Network</b> to save your changes.
+5. Click <b>Update Network</b> to save your changes.
 
 ### Edit the Nova_Flat Address Ranges
 
@@ -215,7 +212,7 @@ errors in the Edit Address Ranges dialog and click <b>Update Address Ranges</b> 
 
 ## Customize the IPMI Network
 
-The IPMI networl is used for communication between the Baremetal host and the Moonshot Chassis Manager. This includes chassis and cartridge discovery, power control of cartridges and nodes, and monitoring of the health of the Moonshot systems.
+The IPMI network is used for communication between the Baremetal host and the Moonshot Chassis Manager. This includes chassis and cartridge discovery, power control of cartridges and nodes, and monitoring of the health of the Moonshot systems.
 
 ### Edit the IPMI Network
 
@@ -232,12 +229,10 @@ To edit the IPMI network:
   * In the VLAN Tab, VLAN Enabled = False.
   * VLANID= 172
 
-4. In the <b>Router</b> Tab, in the <b>Router</b> box, enter the <b>Gateway IP</b> address of your router.  
- The Router Preference default is sufficient. 
+4. In the <b>Router</b> Tab, in the <b>Router</b> box, if you updated the Subnet on the Network tab, the router needs to be modified here accordingly. The Router Preference default is sufficient. 
 
-5. Select the <b>Router</b> tab and review the settings. Do not make any changes.
+5. Click <b>Update Network</b> to save your changes.
 
-6. Click <b>Update Network</b> to save your changes.
 
 ### Edit the IPMI Address Ranges
 

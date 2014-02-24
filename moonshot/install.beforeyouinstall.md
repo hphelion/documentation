@@ -324,21 +324,21 @@ The NICs per node/host NIC are as follows:
 <tr>
 
 <tr style="background-color: white; color: black;">
-<td> Admin Node </td>
+<td> <b>Admin Node</b> </td>
 <td> Admin Network </td>
 <td> Public Network</td>
 <td> </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> Controller Node </td>
+<td> <b>Controller Node</b> </td>
 <td> Admin Network </td>
 <td> Nova_Flat Network </td>
 <td> Public Network</td> 
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> Baremetal Host </td>
+<td> <b>Baremetal Host</b> </td>
 <td> Admin Network </td>
 <td> Nova_Flat Network </td>
 <td> IPMI Network </td>
