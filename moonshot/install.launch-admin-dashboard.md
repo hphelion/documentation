@@ -271,7 +271,7 @@ If you're curious, to see how the flavors are defined already:
 Later, when you want to create new flavors, or edit existing ones, start in this topic of the Administration Dashboard 
 Help: [How to Access Flavors and Flavor Extra Specs](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#how-to-access-flavors-and-flavor-extra-specs).
 
-## Manage Moonshot Chassis
+## Manage your Moonshot Chassis
 
 This section defines the process to add HP Moonshot servers to your cloud. 
 

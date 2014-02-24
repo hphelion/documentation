@@ -62,11 +62,14 @@ At a high level, here are the steps to setup and install the Admin node:
 The steps shown above feature an automated process in the HP Cloud OS for Moonshot Operational Dashboard, where you can accept defaults or enter values that are specific to your requirements (such as your network connections). Using 
 this automated approach, HP Cloud OS for Moonshot handles all of the installation details for you, installing the OpenStack services and the HP Cloud OS for Moonshot value-added services.
 
-Taking a broader view, this next diagram illustrates those steps in a larger context. 
+Taking a broader view, this next diagram illustrates those steps in a larger context:
+
+<img src="media/cloudos-moonshot-install-process-expanded.png" title="HP Cloud OS for Moonshot - an expanded view of the install process" /> 
+
 Notice how once you've installed and set up the Admin node, you perform steps first in the Operational Dashboard to create your cloud and perform associated tasks, then you launch the next dashboard, the Administration Dashboard, to perform 
 a number of post-installation tasks. 
 
-<img src="media/cloudos-moonshot-install-process-expanded.png" title="HP Cloud OS for Moonshot - an expanded view of the install process" /> 
+<img src="media/cloudos-moonshot-post-install-process.png" title="HP Cloud OS for Moonshot post-install tasks" /> 
 
 The post-installation tasks are designed to familiarize you, during your initial session, with the Administration Dashboard, which you'll use from that point forward to manage your clouds and the Moonshot server cartridges that 
 participate in the cloud.  The post-installation tasks are also designed to help you verify that your recently deployed cloud environment is functioning properly.
@@ -103,7 +106,7 @@ compute fabric controller.
 
 * Cinder (Volume Connectivity Service)&mdash; An OpenStack service to provide volume management.
 
-* Quantum (Neutron) (Network Connectivity Service)&mdash; An OpenStack service to create and provision virtual networks.
+* Neutron (Network Connectivity Service)&mdash; An OpenStack service to create and provision virtual networks.
 
 * Swift (OpenStack Object Store) &mdash; An OpenStack service to store and retrieve lots of data in virtual containers.  
 
