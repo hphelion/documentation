@@ -17,7 +17,7 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> <a href="/cloudos/moonshot/prepare/releasenotes">&#9664; PREV</a> | <a href="/cloudos/moonshot/">&#9650; UP</a> | NEXT &#9654; </p>
+<p style="font-size: small;"> <a href="/cloudos/moonshot/prepare/releasenotes">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage">&#9650; UP</a> | NEXT &#9654; </p>
 
 # HP Cloud OS for Moonshot: Building Images # {#moon-image-builder}
 
@@ -49,7 +49,7 @@ Before you attempt to build an image, make sure you have:
 * 4 GB physical RAM.
 * Enough space in /tmp to hold two uncompressed cloud images. One uncompressed image is up to 800 MB in size.
 * (Optional) Proxy settings for internet connectivity.
-* qemu-utils and git-core package, VLAN, busybox, open-iscsi, python-lxml, python-libvirt, libvirt, qemu-system installed on the server.
+* qemu-utils and git-core package, VLAN, busybox, open-iscsi, python-lxml, python-libvirt, libvirt, qemu-system installed on the server.
 
 ## Creating a disk image ## {#disk-image-create}
 To create a disk image using the Disk Image Builder tool, follow the steps below:
@@ -229,7 +229,7 @@ To create a RHEL image for a specific workload, you first need to create the mon
 #### Creating an image using mongodb with RHEL
 To use your new mongodb element with RHEL to create an image that is pre-installed with associated kernel and ramdisk images, use the following command:
 
-<pre>disk-image-create &ndash;o &lt;image_prefix> &ndash;a amd64 &ndash;u base rhel baremetal mongodb</pre>
+<pre>disk-image-create &ndash;o &lt;image_prefix> &ndash;a amd64&ndash;u base rhel baremetal mongodb</pre>
 
 This creates a disk image file named base.qcow2. You can now publish this disk image to the HP Cloud OS Distributed Network.
 

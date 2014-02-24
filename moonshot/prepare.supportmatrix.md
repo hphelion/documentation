@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Cloud OS for Moonshot: Supported Hardware and Software"
+title: "HP Cloud OS for Moonshot: Support Matrix"
 permalink: /cloudos/moonshot/prepare/supportmatrix/
 product: moonshot
 
@@ -17,9 +17,9 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> <a href="/cloudos/moonshot/prepare/releasenotes">&#9664; PREV</a> | <a href="/cloudos/moonshot/">&#9650; UP</a> | NEXT &#9654; </p>
+<p style="font-size: small;"> <a href="/cloudos/moonshot/prepare/releasenotes">&#9664; PREV</a> | <a href="/cloudos/moonshot/prepare">&#9650; UP</a> | NEXT &#9654; </p>
 
-# HP Cloud OS for Moonshot: Supported Hardware and Software
+# HP Cloud OS for Moonshot: Support Matrix
 
 This document is an overview of the supported hardware and software for the HP Cloud OS for Moonshot Version 1.0, including information for setting up your hardware and software. For the performance and stability of your HP Cloud OS for Moonshot environment, you must meet the minimum recommendations.
 
@@ -43,6 +43,7 @@ We recommend your server contains the following:
 
 * Quad Core Processor
 * Hard disk drive with a minimum of 500 GB of space
+* Three (3) ethernet ports
 
 ## Hypervisor recommendations for HP Cloud OS for Moonshot {#hypervisor}
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
