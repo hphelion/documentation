@@ -44,5 +44,3 @@ In this case, <b>1Gb (preferred) on 2nd port</b> means a one gigabit network for
 Proceed to the [Customize Networks](/cloudos/moonshot/install/customize-networks/) topic.
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-
-
