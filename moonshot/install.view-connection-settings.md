@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "View Connection Settings"
-permalink: /cloudos/moonshot/install/customize-connections/
+permalink: /cloudos/moonshot/install/view-connection-settings/
 product: moonshot
 
 ---

@@ -19,7 +19,7 @@ PageRefresh();
 
 
 <p style="font-size: small;"> <a href="/cloudos/moonshot/install/install-setup-admin-node/">&#9664; PREV</a> | <a href="/cloudos/moonshot/install/">&#9650; 
-UP</a> | <a href="/cloudos/moonshot/install/customize-connections/">NEXT &#9654;</a> </p>
+UP</a> | <a href="/cloudos/moonshot/install/view-connection-settings/">NEXT &#9654;</a> </p>
 
 
 # Set Admin Node Prerequisites
@@ -138,7 +138,7 @@ If any of the prerequisite steps fail to complete, an error message displays.  I
 
 ## Next Step
 
-Proceed to the next topic, [Customize Connections](/cloudos/moonshot/install/customize-connections/). 
+Proceed to the next topic, [View Connection Settings](/cloudos/moonshot/install/view-connection-settings/). 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
