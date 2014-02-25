@@ -9,16 +9,17 @@ tags: networking neutron vpn
 ---
 # HP Cloud Networking: Quick start guide 
 
-HP Cloud Networking is a virtual networking service that provides network connectivity and addressing for HP Cloud compute devices. It is based on OpenStack Networking open source software. 
-
+HP Cloud Networking is a virtual networking service that provides network connectivity and IP addressing for HP Cloud compute devices. It is based on OpenStack Networking open source software. 
 
 ## Overview ## {#top}
 
-This guide provides the information you will need to get started in setting up a 
+The Compute API has a virtual server abstraction to describe computing resources. Similarly, the Networking API has virtual network, subnet, and port abstractions to describe networking resources.
 
-<img src="media/HPCS-VPC-VPN-SingleSite-Connection-Layer3-new-novendor.jpg" width="600" alt="Basic VPN setup" />
+You can configure rich network topologies by creating and configuring networks and subnets, and then instructing other OpenStack services like Compute to attach virtual devices to ports on these networks.
 
-**NOTE:**  This guide assumes a "left" case with the "right" case being the hardware.  
+In particular, Networking supports each tenant having multiple private networks, and allows tenants to choose their own IP addressing scheme (even if those IP addresses overlap with those that other tenants use). 
+
+The Networking service Offers flexibility for the cloud administrator to customize network offerings, such as building multi-tiered web applications and enabling migration of applications to the cloud without changing IP addresses.
 
 
 A default configuration comes with HP Cloud compute activation and includes:
@@ -37,6 +38,14 @@ HP Cloud Networking expands networking capabilities, allowing you to perform man
 * Defining security group parameters
 * Allocating and managing public floating IP addresses
 
+
+This guide provides the information you will need to get started in setting up a network, such as the example shown in the following image.
+
+<img src="media/HPCS-VPC-VPN-SingleSite-Connection-Layer3-new-novendor.jpg" width="600" alt="Basic VPN setup" />
+
+Here, the left case is the HP Public Cloud environment and the right case is your local systems.
+
+
 See [Customizing your Configuration](#customize).
 
 ### Audience ### {#audience}
@@ -44,7 +53,7 @@ This guide is designed for those in the following or similar roles:
 
 - Networking Engineers    
 - Networking Administrators
-* Cloud Administrators
+- Cloud Administrators
 
 To use this solution effectively, you should be familiar with   
 
@@ -57,9 +66,11 @@ To use this solution effectively, you should be familiar with
 
 ### Key Terms ### {#terms}
 
-**Floating IP Addresses**: On-demand, public IP addresses on a network. With HP Cloud, you can allocate several floating IP addresses and assign them to virtual servers. 
+**Network**: An isolated L2 segment, analogous to VLAN in the physical networking world. A network allows you to define network connectivity and addressing in the Cloud, providing "networking as a service" between interface devices managed by other HP Public Cloud, such as compute. 
 
-**Network**: Allows you to define network connectivity and addressing in the Cloud, providing "networking as a service" between interface devices managed by other HP Public Cloud, such as compute. 
+**Subnet**: A block of v4 or v6 IP addresses and associated configuration state.
+
+Contains IP address blocks that assign IP addresses to virtual servers. In addition, a subnet can have a gateway, a list of DNS name servers, and host routes. Information provided by DHCP is pushed to servers with interfaces associated with the subnet.
 
 **Port**: A connection point for attaching a single device, such as a virtual server's NIC, to a virtual network.  The port describes the associated network configuration, such as the MAC and IP addresses to be used by the attached device.
 
@@ -69,147 +80,64 @@ To use this solution effectively, you should be familiar with
 
 When a port is created in HP Cloud Networking it is associated with a security group. If a security group is not specified the port is associated with a default security group. Security group default rules allow inbound traffic from the same subnet and all outbound traffic. You can add rules to this group to modify behavior. 
 
-**Subnet**: Contains IP address blocks that assign IP addresses to virtual servers. In addition, a subnet can have a gateway, a list of DNS name servers, and host routes. Information provided by DHCP is pushed to servers with interfaces associated with the subnet.
-
 back to the [top](#top)
 
 ### Activate the compute service in HP Cloud ### {#compute}
 
-If you have not previously created an account and activated the compute service please sign up at [http://hpcloud.com](http://hpcloud.com).  Once you activate the compute service, you need to install the [compute](https://docs.hpcloud.com/api/v13/compute/) and [networking](https://docs.hpcloud.com/api/v13/networking/) clients or the [CLI](http://docs.hpcloud.com/cli/unix/network). Make sure you activate a compute instance in HP Cloud version 13.5 to access the networking and VPN capabilities.
+If you have not previously created an account and activated the compute service please sign up at [http://hpcloud.com](http://hpcloud.com).  
 
 
-##Customizing your Configuration## {#customize}
+##Customizing your Network## {#customize}
+
+After activating the Compute 13.5 region, the default network that is set up for you looks like the diagram below. You are given a default router with the external network (labeled "Ext-Net") attached to it so it can be reached from the Internet. A default network is then created and is attached to the router.
+
+You are also given a default subnet on your network. The subnet will serve as your DHCP server and it has a CIDR of 10.0.0.0/24 which is the pool of fixed private IPs that your instances will be assigned. Your subnet will default to using HP's internal DNS which uses DNSMASQ.
 
 You can use the default network or customize the default network using either the HP Cloud Networking API or the HP Cloud Management Console. Customizing a network enables you to manage the networks your virtual servers connect to.
 
 HP Cloud Networking expands networking capabilities, allowing you to perform many tasks, including:
 
+- Viewing network and router details
 - Creating and deleting a network
 - Managing a subnet
 - Adding and deleting an interface to a router
-- Configuring security group parameters that define the firewall rules for virtual servers
-- Allocating and managing public floating IP addresses
-- Viewing network and router details
-
-In this guide we use these parameters:
-
-$EXT_NET = Ext-Net   
-$CIDR = 10.2.0.0/24 (example range)   
-$NETWORK_ID = the id of the created network   
-$SUBNET_ID = the id of the created subnet   
-$TENANT_ID = the id of the tenant   
-$PORT_ID1 = id of port 1 (vm-gateway)     
-$PORT_ID2 = id of port 2 (vm-test)    
-$VM_GATEWAY = address of the VPN VM gateway (e.g., 10.2.0.21)   
-
-For more details on the Nova and Neutron commands please see the [HP Cloud Networking](https://docs.hpcloud.com/api/v13/networking/) and [Compute](https://docs.hpcloud.com/api/v13/compute/) API specifications.
-
 
 You might need to modify the default network or create additional networks.  This page gives you some how-to's to use the [Horizon Cloud Console](#console) or [HP Cloud CLI for Windows PowerShell](#powershell) to perform the following tasks:  
 
-**Horizon Cloud Console**
-<!-- Taken from list under network quota default -->
+- Create a network
+- Create a subnet
+- Create a port
+- Create a router
+- Assign a router to a network
 
-- [Enable a network](#Enabling)
-- [Specify an IP address](#SpecifyIP)
-- [Assign a router to a network](#AssignRouter)
-- [Create a port]
-- [Create a floating IP address]
-* [Create a router]
-* [Create a security group]
-* [Create a security group rule
- 
-**HP Cloud CLI for Windows PowerShell**
 
-- [Enable a network](#Enabling)
-- [Specify an IP address](#SpecifyIP)
-- [Assign a router to a network](#AssignRouterCLI)
 
-###HP Cloud Networking Quota Default:###
 
-* 5 Networks
-* 5 Subnets
-* 70 Ports
-* 45 Floating IP addresses
-* 1 Router
-* 10 Security Groups
-* 50 Security Group Rules
-
-##Before you begin## {#Overview}
-
-Before you can enable networks, you must:
-
-* [Sign up for an HP Cloud compute account](https://account.hpcloud.com/signup)
-* Activate compute service on your account
-* [Create a network](/mc/compute/networks/create-network/#Creating)
 
 ## Using the Horizon Cloud Console ## {#console}
 
 You can use the Horizon Cloud Console to perform the following tasks:
 
-- [Enable a network](#Enabling)
-- [Create a port]
-- [Create a floating IP address]
-- [Create a router]
-- [Create a security group]
-- [Create a security group rule
-- [Specify an IP address](#SpecifyIP)
+- [Create a network](#Enabling)
+- [Create a subnet](#CreateSubUI)
+- [Create a port](#CreatePortUI)
+- [Create a router](#AssignRouterUI)
 - [Assign a router to a network](#AssignRouter)
 
-
-All of the procedures in this section require that you access the Networks or Routers tab in the Project section of the Horizon Cloud Console, <a name="NetworkTab">as shown</a>:
+All of the procedures in this section require that you access the Networks or Routers tab in the Project section of the HP Public Cloud Console, <a name="NetworkTab">as shown</a>:
 
    <br><img src="media/network-tab.png"  alt="" />
 
-## How to enable a network {#Enabling}
+## Using the Network Topology tab ## {#NetworkTop}
 
-By default, when you [create a network](/mc/compute/networks/create-network#Creating), that network is created in an enabled admin state.  
+The Network Topology tab represents your network layout.
 
-If you have at some point [disabled](#Disabling) a network, you can enable it.
-
-1. Login to the [Horizon Console](https://horizon.hpcloud.com/).
-
-2. Select the [Networks tab](#NetworkTab) under the Project section.
-
-3. On the Networks screen, locate the network which you want to enable.
-
-4. In the Actions column, click **Edit Network** for your the network. 
-
-5. In the Edit Network screen, select the **Admin State** option and click **Save Changes**:
-	<br><img src="media/network-enable.png"  alt="" />
+   <br><img src="media/compute-network-topology_crop.png"  alt="" />
 
 
-##How to disable a network## {#Disabling}
+## Creating a network {#CreateNetworkUI}
 
-By default, when you [create a network](/mc/compute/networks/create-network#Creating/), that network is created in an enabled admin state.  You can disable a network, as needed.
-
-1. Login to the [Horizon Console](https://horizon.hpcloud.com/).
-
-2. Select the [Networks tab](#NetworkTab) under the Project section.
-
-3. On the Networks screen, locate the network which you want to disable.
-
-4. In the Actions column, click **Edit Network** for your the network. 
-
-5. In the Edit Network screen, clear the **Admin State** option and click **Save Changes**:
-	<br><img src="media/network-disable.png"  alt="" />
-
-
-## How to delete a network ## {#Deleting}
-
-1. Login to the [Horizon Console](https://horizon.hpcloud.com/).
-
-2. Select the [Networks tab](#NetworkTab) under the Project section.
-
-3. On the Networks screen, locate the network which you want to delete.
-
-4. In the Actions column, click **More** -> **Delete Network** for your the network. 
-	<br><img src="media/network-delete.png"  alt="" />
-
-5. In the confirmation dialog, click **Delete Network**.
-
-
-## How to specify an IP address ### {#SpecifyIP}
+In order to associate an instance with a network, the network much exist. To create a network, use the following steps:
 
 1. Login to the [Horizon Console](https://horizon.hpcloud.com/).
 
@@ -218,60 +146,51 @@ By default, when you [create a network](/mc/compute/networks/create-network#Crea
 3. Click **Create Network**. 
 	<br><img src="media/network-create.png"  alt="" />
 
-4. On the **Network** tab, enter a name for the network.  
+4. On the **Network** tab, enter a name for the network  and leave the **Admin State** selected.  
 	<br><img src="media/network-fields.png"  alt="" />
 
-5. Enter the following values, as appropriate:
+5. Click **Next** to configure a subnet for the network. Proceed with the following section.
+
+
+## Create a subnet ## {#CreateSubUI}
+
+1. On the **Subnet** tab, enter the subnet name
 	<br><img src="media/network-fields-2.png"  alt="" />
 
-6. Enter the following values, as appropriate:
-	<br><img src="media/network-fields-3.png"  alt="" />
+2. In the **Network Address** field enter a network address in Classless Inter-Domain Routing (CIDR) format: 192.168.0.0/24.
 
-7. Click **Create**.
+3. In the **IP Version** field, select IPv4 or IPv6, as appropriate.
 
+4. Leave the **Gateway IP** field blank to use the default value of the network address; for example, 192.168.0.1 for 192.168.0.0/24.
 
-### How to rename a network ### {#RenameNet}
+5. Clear the **Disable Gateway** box to use the default gaetway. 
+ 
+6. Click **Next**. 
 
-1. Login to the [Horizon Console](https://horizon.hpcloud.com/).
-
-2. Select the [Networks tab](#NetworkTab) under the Project section.
-
-3. On the Networks screen, locate the network which you want to rename.
-
-4. In the Actions column, click **Edit Network** for your the network. 
-
-5. In the Edit Network screen, enter a new name and click **Save Changes**
-	<br><img src="media/network-edit.png"  alt="" />
-
-###How to rename a sub-net### {#EditSub}
-
-1. Login to the [Horizon Console](https://horizon.hpcloud.com/).
-
-2. Select the [Networks tab](#NetworkTab) under the Project section.
-
-3. On the Networks screen, click the network associated with the subnet you want to rename.
-
-4. In the Actions column, click **Edit Subnet** for your the subnet you are changing. 
-
-5. In the Edit Subnet screen, enter a new name and click **Save**
-	<br><img src="media/network-subnet-edit.png"  alt="" />
+7. On the **Subnet** tab, enter the subnet name
+	<br><img src="media/network-fields-2.png"  alt="" />
 
 
-###How to rename a port### {#RenamePort}
+9. The **Networks** screen displays your network name and associated subnets.
 
-1. Login to the [Horizon Console](https://horizon.hpcloud.com/).
+    <img src="media/CreateaSubnetImage2.png" width="580" alt="" />
+
+10. To see a graphic display of your network setup, click "Network Topology" under "Manage Network" in the left-hand navigation.  
+
+    <img src="media/CreateaSubnetImage3.png" width="580" alt="" />
+
+## Create a port ## {#CreatePortUI}
+
+1. Login to the [HP Public Cloud Console](https://horizon.hpcloud.com/).
 
 2. Select the [Networks tab](#NetworkTab) under the Project section.
 
-3. On the Networks screen, click the network associated with the port you want to rename.
-
-4. In the Actions column, click **Edit Port** for your the port you are changing. 
-
-5. In the Edit Port screen, enter a new name and click **Save**
-	<br><img src="media/network-port-edit.png"  alt="" />
+## Create a router ## {#SpecifyIP}
 
 
-###How to assign a router to an external network### {#AssignRouter}
+
+
+###How to assign a router to an external network### {#AssignRouterUI}
 
 1. Login to the [Horizon Console](https://horizon.hpcloud.com/).
 
@@ -292,158 +211,89 @@ When you enable the compute service, a router is enabled by default.  If you hav
 <img src="media/disable-router.jpg" width="580" alt="" />
  
 
-##Disabling a router## {#Disabling}
-
-When you enable the compute service, a router is enabled by default.  To disable the router, in the `Manage` column, select the `Options` button for the router you wish to disable and click the `Disable` item:
-
 <img src="media/enable-router.jpg" width="580" alt="" />
 
 -->
 
+## Using the Cloud 13.5 CLI ## {#CLI}
 
-## Using the Windows PowerShell ## {#powershell}
+Once you [activate](#compute) the compute service, you need to install the [compute](https://docs.hpcloud.com/api/v13/compute/) and [networking](https://docs.hpcloud.com/api/v13/networking/) clients or the [CLI](http://docs.hpcloud.com/cli/unix/network). Make sure you activate a compute instance in HP Cloud version 13.5 to access the networking and VPN capabilities.
 
-The HP Cloud environment command-line interface (CLI) software for Windows PowerShell allows Windows users to manage their HP Cloud services from the command line.
+These instructions use the HP Cloud v13.5 CLI on an Ubuntu server instance. You may, of course, choose to use another instance type and still use these directions as a general guide for setting up your VPN.
 
-For the full reference of supported HP Cloud CLI commands for Windows PowerShell, see [HP Cloud Environment CLI Software for Windows PowerShell Command Line Reference](docs.hpcloud.com/cli/windows/2/reference/). 
+- [Create a network and subnet](#CreateNetworkCLI) 
+- [Create a port](#CreatePortCLI)
+- [Create a router and attach the router to a network](#CreateRouterCLI)
+-  [Attach the router to the subnet](#AttachRouterCLI)
 
-### How to delete a network ### {#DeleteCLI}
+For the full reference of supported HP Cloud CLI commands, see . 
 
-1. On the 13.5 instance, launch a Windows PowerShell window.  
+In this guide we use these parameters:
 
-	Select the shell appropriate to your system, either the 64-bit or 32-bit version. 
+$EXT_NET = Ext-Net   
+$CIDR = 10.2.0.0/24 (example range)   
+$NETWORK_ID = the id of the created network   
+$SUBNET_ID = the id of the created subnet   
+$TENANT_ID = the id of the tenant   
+$PORT_ID1 = id of port 1 (vm-gateway)     
+$PORT_ID2 = id of port 2 (vm-test)    
+$VM_GATEWAY = address of the VPN VM gateway (e.g., 10.2.0.21)   
 
-2. Enter the HP Cloud environment CLI by entering:
+For more details on the Nova and Neutron commands please see the [HP Cloud Networking](https://docs.hpcloud.com/api/v13/networking/) and [Compute](https://docs.hpcloud.com/api/v13/compute/) API specifications.
 
-	`PS C:> cd HPCS:`
+###Create a new Ubuntu server instance ####
+ 
+Set up a new Ubuntu server instance&mdash;separate from your other VPC gateway machines and using the command line. Test the setup of this new server.
 
-3. Create a new network by executing the following command, using the appropriate values:
+1. Install Python-NovaClient and Python-NeutronClient on this server. See the [Knowledge Base](https://community.hpcloud.com/article/cloud-135-cli-installation-instructions) for instructions.
+2. Verify that you can access the Nova and Neutron APIs for your tenant from this Python Client by running the `nova list` and `neutron port-list` commands.
+
+### Set up the private network ### {#gtwy}
+
+
+#### Create a network and subnet #### {#CreateNetworkCLI}
+**Note**: Skip this step if you are using the network and subnet provided with your service activation.
+
+In the example we use **vpn_network** for the name of the network.
+
+    neutron net-create vpn_network
+    neutron subnet-create $NETWORK_ID $CIDR 
+
+
+#### Create ports #### {#CreatePortCLI}
+
+Create two ports and disable the port security on the VPN gateway port. Use this new gateway machine in the SRX-VPC set up for the VPN connection.  
+
+**NOTE:** disabling port security will disable the use of all security groups on the port.
 	
-	remove-network
+    neutron port-create $NETWORK_ID --port_security_enabled False --name $PORT_ID1
+    neutron port-create $NETWORK_ID --name $PORT_ID2
 
-	remove-network -id -all
+Ports can be viewed with **neutron port-list** command.
 
-	Where
-	
-		id - The ID of the network to delete.
-
-		all - Removes all networks in the current availability-zone associated with your project.
-
-	The following example deletes a network with the specified ID
-
-		remove-network -id 12857174-99cf-40e9-999e-fb0fa2e84898  
-
-Deletes the Network with the id of 12857174-99cf-40e9-999e-fb0fa2e84898
-
-### How to rename a network ### {#RenameNetCLI}
-
-You can change the name of a network, as needed.
-
-1. On the 13.5 instance, launch a Windows PowerShell window.  
-
-	Select the shell appropriate to your system, either the 64-bit or 32-bit version. 
-
-2. Enter the HP Cloud environment CLI by entering:
-
-	`PS C:> cd HPCS:`
-
-3. Change the network name by executing the following command, using the appropriate values:
-	
-	update-network -id networkIP Identity -n Name
-
-	Where
-
-	id - The network ID.
-
-	n - The new name for the network.
-
-	The following example renames the specified network to Network1:
-
-		update-Network -id 12857174-99cf-40e9-999e-fb0fa2e84898 -n "Network1" 
-
-### How to edit a sub-net### {#EditSubCLI}
-
-You can modify a sub-net to rename the sub-net or change the the external gateway assigned to the sub-net.
-
-1. On the 13.5 instance, launch a Windows PowerShell window.  
-
-	Select the shell appropriate to your system, either the 64-bit or 32-bit version. 
-
-2. Enter the HP Cloud environment CLI by entering:
-
-	`PS C:> cd HPCS:`
-
-3. Modify the sub-net by executing the following command, using the appropriate values:
-	
-	update-subnet -id SubnetIdentifier -egw ExternalGatewayNetworkIPAddress - n Name
-
-	Where
-
-		id - The sub-net ID.
-
-		egw - The external gateway network ID to assign.
-
-		n - The new name for the sub-net.
-
-	The following example reassigns the subnet to the designated external network and renames the sub-net to "NewSubnetName":
-
-	update-Subnet -id 12857174-99cf-40e9-999e-fb0fa2e84898 -egw 129.15.124.12 -n "NewSubnetName" 
+    neutron port-list 	
+    +--------------------------------------+------+-------------------+-------------------------------------------------------------------------------------+
+    | id                                   | name | mac_address       | fixed_ips                                                                           |
+    +--------------------------------------+------+-------------------+-------------------------------------------------------------------------------------+
+    | baf13412-2641-4183-9533-de8f5b91444c |      | fa:16:3e:f6:ec:c7 | {"subnet_id": "15a09f6c-87a5-4d14-b2cf-03d97cd4b456", "ip_address": "10.2.0.21"}  |
+    | f7a08fe4-e79e-4b67-bbb8-a5002455a493 |      | fa:16:3e:97:e0:fc | {"subnet_id": "15a09f6c-87a5-4d14-b2cf-03d97cd4b456", "ip_address": "10.2.0.33"} |
+    +--------------------------------------+------+-------------------+-------------------------------------------------------------------------------------+
 
 
-### How to rename a port### {#RenamePortCLI}
+#### Create the router and attach it to the external network #### {#CreateRouterCLI}   
 
-By default, when a port is created, the port is automatically assigned a name and ID. For example, when you create a subnet, a port is created for that subnet. 
+**Note**: Skip this step if you are using the router provided with your service activation.
 
-You can change the name of a port, as needed.
+Create the router **vpn_router** and set its gateway to be the external network.
 
-1. On the 13.5 instance, launch a Windows PowerShell window.  
+	neutron router-create vpn_router
+	neutron router-gateway-set vpn_router $EXT_NET
 
-	Select the shell appropriate to your system, either the 64-bit or 32-bit version. 
+#### Attach the router to the subnet #### {#AttachRouterCLI} 
 
-2. Enter the HP Cloud environment CLI by entering:
+**Note**: Skip this step if you are using the default configuration provided with your service activation.
 
-	`PS C:> cd HPCS:`
-
-3. Change the port name by executing the following command, using the appropriate values:
-	
-	update-port  -id port -did name
-
-	Where
-
-	id - The port ID.
-
-	did - The new name for the port.
-
-	The following example renames the specified port to port1:
-
-	update-Port -id 12857174-99cf-40e9-999e-fb0fa2e84898 -did "port1" 
-
-### How to assign a router to a network ### {#AssignRouterCLI}
-
-You can assign a router to an external network, as needed.
-
-1. On the 13.5 instance, launch a Windows PowerShell window.  
-
-	Select the shell appropriate to your system, either the 64-bit or 32-bit version. 
-
-2. Enter the HP Cloud environment CLI by entering:
-
-	`PS C:> cd HPCS:`
-
-3. Assign the external network by executing the following command, using the appropriate values:
-	
-	update-router  -id RouterID -nid Name
-
-	Where
-
-	id - The router ID.
-
-	nid - The new name for the router.
-
-	The following example renames the specified router to router1:
-
-	update-Port -id 12857174-99cf-40e9-999e-fb0fa2e84898 -nid "router1" 
-
+    neutron router-interface-add vpn_router $SUBNET_ID  
 
 
 ##For further information## {#ForFurtherInformation}
