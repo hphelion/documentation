@@ -24,19 +24,19 @@ This document describes how to backup and restore HP Cloud OS for Moonshot, spec
 
 * Administration Node
 
-    The HP Cloud OS for Moonshot Administration Node (Admin Node) hosts the Operational Dashboard that deploys private Cloud Infrastructure environments by network booting the managed virtual servers , which are typically Controller Node and Baremetal Hosts. 
+    The HP Cloud OS for Moonshot Administration Node (Admin Node) hosts the Operational Dashboard that deploys private Cloud Infrastructure environments by network booting the managed virtual servers, which are typically Controller Node and Baremetal Hosts. 
 
 * Controller Node
 
     While each service can be individually deployed, HP Cloud OS for Moonshot groups these services into distinct sets for ease of architectural description: 
 
-    - Cloud Controller: This contains those services that are considered single services for a cloud environment such as Keystone, Glance, Eden, Nova , Eve, and Focus, and defines the boundaries of the cloud environment from an identity standpoint. 
-    - Network Controller: It is a single service in a cloud and co-exists with cloud controller services. 
-    - Compute Region Controller: It is a pool of compute resources that can be consumed through a service API by consumers of the cloud, such as Nova. This is responsible for scheduling the launch of instances across Baremetal hosts. The scheduling is based on varied flavors of instances and available resources on the Baremetal hosts.
+    - Cloud Controller - contains those services that are considered single services for a cloud environment, such as Keystone, Glance, Eden, Nova, Eve, and Focus. Also defines the boundaries of the cloud environment from an identity standpoint. 
+    - Network Controller - is a single service in a cloud and co-exists with cloud controller services. 
+    - Compute Region Controller - is a pool of compute resources that can be consumed through a service API by consumers of the cloud, such as Nova. This is responsible for scheduling the launch of instances across Baremetal hosts. The scheduling is based on varied flavors of instances and available resources on the Baremetal hosts.
 
 * Baremetal Host
 
-    It hosts the cloud instances using Baremetal driver for OpenStack Nova compute service. Within the OpenStack framework, Baremetal driver has the same role as the drivers for other hypervisors (libvirt, xen, etc.), and yet it is presently unique in that the hardware is not virtualized - there is no hypervisor between the tenants and the physical hardware which includes Moonshot cartridges
+    The Baremetal Host hosts the cloud instances using the Baremetal driver for OpenStack Nova compute service. Within the OpenStack framework, the Baremetal driver has the same role as the drivers for other hypervisors (libvirt, xen, etc.), and yet it is presently unique because the hardware is not virtualized; there is no hypervisor between the tenants and the physical hardware which includes Moonshot cartridges.
 
 ## Backing up and restoring the HP Cloud OS for Moonshot Management Host {#backup-restore-moonshot}
 
@@ -62,7 +62,7 @@ If you choose to design and implement a file-based solution, you will encounter 
 **Note:** We recommend you use any enterprise backup/restore solution that supports hot backup. We do not recommend that you implement a cold backup policy because it involves downtime of the private cloud environment.
 
 ### Recommended backup schedule {#rec-backup-sched}
-The following table shows are backup frequency recommendations for HP Cloud OS for Moonshot Management Host.
+The following table shows our backup frequency recommendations for HP Cloud OS for Moonshot Management Host.
 
 <table>
 <th>Component</th>
@@ -136,7 +136,7 @@ In this section, we have example backup/restore steps using:
 
 ### XSIBackup tool {#xsi-backup}
 
-XSIBackup is an opensource application that uses VMWare's ESXi built-in command line options to create full backup solutions by cloning the system. For detailed information about this tool, see the [XSIBackup documentation](#http://33hops.com/xsibackup-vmware-esxi-backup.html)
+XSIBackup is an opensource application that uses VMWare's ESXi built-in command line options to create full backup solutions by cloning the system. For detailed information about this tool, see the [XSIBackup documentation](http://33hops.com/xsibackup-vmware-esxi-backup.html)
 
 Use the following basic steps to backup an HP Cloud OS for Moonshot Management Host running on VMware's hypervisor (ESXi):
 
@@ -144,7 +144,7 @@ Use the following basic steps to backup an HP Cloud OS for Moonshot Management H
 2. Enable an SSH login to the hypervisor.
 3. Login to the hypervisor and copy the XSIBackup script file to the newly added datastore.
 4. Execute the command:
-    `xsibackup “backup-point=/vmfs/volumes/bkup “backup-type=custom “backup-vms=Admin,Ctrl,Bm`
+    <pre>xsibackup “backup-point=/vmfs/volumes/bkup “backup-type=custom “backup-vms=Admin,Ctrl,Bm</pre>
 
     - backup-point - indicates the datastore to backup the files
     - backup-type - custom is used here to enable a custom selection of VM
