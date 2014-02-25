@@ -808,9 +808,9 @@ The solution for this problem is to:
 
 1. Win SCP to the Admin Node.
 2. Upload the image to /tmp/.
-3. Change the permission of the file to 777 (chmod 777 /tmp/&amp;image.name>).
+3. Change the permission of the file to 777 (chmod 777 /tmp/&lt;image.name>).
 4. Move the file to the folder <code>tftpboot</code>.
-5. Create the image pointing to this URL (http://&lt;admin.node.ip>:8091/&amp;image.name>).
+5. Create the image pointing to this URL (http://&lt;admin.node.ip>:8091/&lt;image.name>).
 
 
 ### Problem: Unable to launch more instances
