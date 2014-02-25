@@ -82,11 +82,6 @@ When a port is created in HP Cloud Networking it is associated with a security g
 
 back to the [top](#top)
 
-### Activate the compute service in HP Cloud ### {#compute}
-
-If you have not previously created an account and activated the compute service please sign up at [http://hpcloud.com](http://hpcloud.com).  
-
-
 ##Customizing your Network## {#customize}
 
 After activating the Compute 13.5 region, the default network that is set up for you looks like the diagram below. You are given a default router with the external network (labeled "Ext-Net") attached to it so it can be reached from the Internet. A default network is then created and is attached to the router.
@@ -110,11 +105,12 @@ You might need to modify the default network or create additional networks.  Thi
 - Create a router
 - Assign a router to a network
 
+### Activate the compute service in HP Cloud ### {#compute}
+
+If you have not previously created an account and activated the compute service please sign up at [http://hpcloud.com](http://hpcloud.com).  
 
 
-
-
-## Using the Horizon Cloud Console ## {#console}
+### Using the Horizon Cloud Console ### {#console}
 
 You can use the Horizon Cloud Console to perform the following tasks:
 
@@ -128,14 +124,14 @@ All of the procedures in this section require that you access the Networks or Ro
 
    <br><img src="media/network-tab.png"  alt="" />
 
-## Using the Network Topology tab ## {#NetworkTop}
+#### Using the Network Topology tab #### {#NetworkTop}
 
 The Network Topology tab represents your network layout.
 
    <br><img src="media/compute-network-topology_crop.png"  alt="" />
 
 
-## Creating a network {#CreateNetworkUI}
+#### Creating a network #### {#CreateNetworkUI}
 
 In order to associate an instance with a network, the network much exist. To create a network, use the following steps:
 
@@ -152,7 +148,7 @@ In order to associate an instance with a network, the network much exist. To cre
 5. Click **Next** to configure a subnet for the network. Proceed with the following section.
 
 
-## Create a subnet ## {#CreateSubUI}
+#### Create a subnet #### {#CreateSubUI}
 
 1. On the **Subnet** tab, enter the subnet name
 	<br><img src="media/network-fields-2.png"  alt="" />
@@ -179,18 +175,18 @@ In order to associate an instance with a network, the network much exist. To cre
 
     <img src="media/CreateaSubnetImage3.png" width="580" alt="" />
 
-## Create a port ## {#CreatePortUI}
+#### Create a port #### {#CreatePortUI}
 
 1. Login to the [HP Public Cloud Console](https://horizon.hpcloud.com/).
 
 2. Select the [Networks tab](#NetworkTab) under the Project section.
 
-## Create a router ## {#SpecifyIP}
+#### Create a router #### {#SpecifyIP}
 
 
 
 
-###How to assign a router to an external network### {#AssignRouterUI}
+#### Assign a router to an external network #### {#AssignRouterUI}
 
 1. Login to the [Horizon Console](https://horizon.hpcloud.com/).
 
@@ -203,19 +199,7 @@ In order to associate an instance with a network, the network much exist. To cre
 5. In the Set Gateway screen, select a network from the **External Network** list and click **Set Gateway**
 	<br><img src="media/network-gateway.png"  alt="" />
 
-<!--Can users enable/disable routers in 13.5?
-##Enabling a router## {#Enabling}
-
-When you enable the compute service, a router is enabled by default.  If you have [disabled](#Disabling) the router, to enable it, in the `Manage` column, select the `Options` button for the router you wish to disable and click the `Disable` item:
-
-<img src="media/disable-router.jpg" width="580" alt="" />
- 
-
-<img src="media/enable-router.jpg" width="580" alt="" />
-
--->
-
-## Using the Cloud 13.5 CLI ## {#CLI}
+### Using the Cloud 13.5 CLI ### {#CLI}
 
 Once you [activate](#compute) the compute service, you need to install the [compute](https://docs.hpcloud.com/api/v13/compute/) and [networking](https://docs.hpcloud.com/api/v13/networking/) clients or the [CLI](http://docs.hpcloud.com/cli/unix/network). Make sure you activate a compute instance in HP Cloud version 13.5 to access the networking and VPN capabilities.
 
@@ -241,14 +225,12 @@ $VM_GATEWAY = address of the VPN VM gateway (e.g., 10.2.0.21)
 
 For more details on the Nova and Neutron commands please see the [HP Cloud Networking](https://docs.hpcloud.com/api/v13/networking/) and [Compute](https://docs.hpcloud.com/api/v13/compute/) API specifications.
 
-###Create a new Ubuntu server instance ####
+#### Create a new Ubuntu server instance ####
  
 Set up a new Ubuntu server instance&mdash;separate from your other VPC gateway machines and using the command line. Test the setup of this new server.
 
 1. Install Python-NovaClient and Python-NeutronClient on this server. See the [Knowledge Base](https://community.hpcloud.com/article/cloud-135-cli-installation-instructions) for instructions.
 2. Verify that you can access the Nova and Neutron APIs for your tenant from this Python Client by running the `nova list` and `neutron port-list` commands.
-
-### Set up the private network ### {#gtwy}
 
 
 #### Create a network and subnet #### {#CreateNetworkCLI}
