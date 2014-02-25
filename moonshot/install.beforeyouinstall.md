@@ -50,7 +50,7 @@ A simple cloud environment would include:
 
 The following diagram depicts a simplified deployment scenario. 
 
-<img src="media/moonshot-deployment2.png"></img>
+<img src="media/moonshot-deployment3.png"></img>
 
 \* <b>Note</b>: You can add multiple Baremetal Hosts with the same type of network connectivity shown in the diagram.
 
@@ -298,7 +298,7 @@ datacenter, then it is possible for updates and workloads to be downloaded local
 
 Again referring to this simplified deployment scenario: 
 
-<img src="media/moonshot-deployment2.png"></img>
+<img src="media/moonshot-deployment3.png"></img>
 
 \* <b>Note</b>: You can add multiple Baremetal Hosts with the same type of network connectivity shown in the diagram.
 
