@@ -1,50 +1,45 @@
 ---
 layout: default
 title: "HP Cloud Networking:  Network setup quick start guide"
-permalink: /compute/network/
+permalink: /compute/network-quick-start/
 product: compute
 categories: neutron
 tags: networking neutron vpn
 
 ---
-# HP Cloud Networking: Quick start guide 
+# HP Cloud Networking: Quick start guide ## {#top}
 
 HP Cloud Networking is a virtual networking service that provides network connectivity and IP addressing for HP Cloud compute devices. It is based on OpenStack Networking open source software. 
 
-## Overview ## {#top}
+This guide covers the following:
 
-The Compute API has a virtual server abstraction to describe computing resources. Similarly, the Networking API has virtual network, subnet, and port abstractions to describe networking resources.
+- [Overview](#overview)
+- [Viewing your network in the HP Public Cloud Console](#NetworkTopo)
+- [Customizing your network](#customize)
+- [For further information](#ForFurtherInformation)
 
-You can configure rich network topologies by creating and configuring networks and subnets, and then instructing other OpenStack services like Compute to attach virtual devices to ports on these networks.
+## Overview ## {#overview}
+
+This guide provides the information you will need to get started in setting up a network, such as the example shown in the following image.
+
+<img src="media/HPCS-VPC-VPN-SingleSite-Connection-Layer3-new-novendor.jpg" width="600" alt="Basic VPN setup" />
+
+Here, the left side of the image represents the HP Public Cloud environment and the right side is your local system.
+
+You can configure rich network topologies by creating and configuring networks and subnets, and then instructing other services like Compute to attach virtual devices to ports on these networks.
 
 In particular, Networking supports each tenant having multiple private networks, and allows tenants to choose their own IP addressing scheme (even if those IP addresses overlap with those that other tenants use). 
 
-The Networking service Offers flexibility for the cloud administrator to customize network offerings, such as building multi-tiered web applications and enabling migration of applications to the cloud without changing IP addresses.
+The Networking service offers flexibility for the cloud administrator to customize network offerings, such as building multi-tiered web applications and enabling migration of applications to the cloud without changing IP addresses.
 
-
-A default configuration comes with HP Cloud compute activation and includes:
+HP Public Cloud compute activation comes with a default configuration that includes:
 
 * A network 
 * A subnet
 * A router connecting the subnets to the Internet
 * A security group with basic server options
 
-You can use the default network to deploy HP Cloud compute virtual servers, or modify the network configuration through the OpenStack Networking API.  Use the command line or the HP Cloud management console's (MC) easy-to-use interface to customize.
- 
-HP Cloud Networking expands networking capabilities, allowing you to perform many tasks, including:
-
-* Defining and configuring virtual networks
-* Specifying IP subnets for those networks
-* Defining security group parameters
-* Allocating and managing public floating IP addresses
-
-
-This guide provides the information you will need to get started in setting up a network, such as the example shown in the following image.
-
-<img src="media/HPCS-VPC-VPN-SingleSite-Connection-Layer3-new-novendor.jpg" width="600" alt="Basic VPN setup" />
-
-Here, the left case is the HP Public Cloud environment and the right case is your local systems.
-
+You can use the default network to deploy HP Public Cloud compute virtual servers, or modify the network configuration using the HP Public Console or the HP Cloud 13.5 CLI.
 
 See [Customizing your Configuration](#customize).
 
@@ -82,11 +77,22 @@ When a port is created in HP Cloud Networking it is associated with a security g
 
 back to the [top](#top)
 
-##Customizing your Network## {#customize}
+### Viewing your network in the HP Public Cloud Console ### {#NetworkTopo}
 
-After activating the Compute 13.5 region, the default network that is set up for you looks like the diagram below. You are given a default router with the external network (labeled "Ext-Net") attached to it so it can be reached from the Internet. A default network is then created and is attached to the router.
+The Network Topology tab is a physical representation of your network configuration.
 
-You are also given a default subnet on your network. The subnet will serve as your DHCP server and it has a CIDR of 10.0.0.0/24 which is the pool of fixed private IPs that your instances will be assigned. Your subnet will default to using HP's internal DNS which uses DNSMASQ.
+After activating the Compute 13.5 region, HP Public Cloud creates a default network that looks like the following diagram. 
+
+   <br><img src="media/compute-network-topology-crop.png"  alt="" />
+
+A default router (labeled Router 1) is created and attached to the external network (labeled "Ext-Net") so it can be reached from the Internet. A default network (labeled Network1) is also created and attached to the router.
+
+The default configuration contains a subnet that serves as your DHCP server. The subnet has a CIDR of 10.0.0.0/24, which is the pool of fixed private IPs that are assigned to your instances. 
+
+Any instance you create can be attached to your network, using a port automatically created using an fixed private IP from your subnet.
+
+
+##Customizing your network## {#customize}
 
 You can use the default network or customize the default network using either the HP Cloud Networking API or the HP Cloud Management Console. Customizing a network enables you to manage the networks your virtual servers connect to.
 
@@ -97,18 +103,15 @@ HP Cloud Networking expands networking capabilities, allowing you to perform man
 - Managing a subnet
 - Adding and deleting an interface to a router
 
-You might need to modify the default network or create additional networks.  This page gives you some how-to's to use the [Horizon Cloud Console](#console) or [HP Cloud CLI for Windows PowerShell](#powershell) to perform the following tasks:  
+You might need to modify the default network or create additional networks.  This page gives you some how-to's to use the [Horizon Cloud Console](#console) or [HP Cloud CLI for Windows PowerShell](#powershell) to create and configure networks, routers, and ports.  
 
-- Create a network
-- Create a subnet
-- Create a port
-- Create a router
-- Assign a router to a network
+**Note:** You can also use the [HP Cloud v13.5 Compute Service API](https://docs.hpcloud.com/api/v13/compute/) and [HP Cloud v13.5 Networking API](https://docs.hpcloud.com/api/v13/networking/) to configure your network. 
 
 ### Activate the compute service in HP Cloud ### {#compute}
 
 If you have not previously created an account and activated the compute service please sign up at [http://hpcloud.com](http://hpcloud.com).  
 
+Make sure you activate a compute instance in HP Cloud version 13.5 to access the networking and VPN capabilities.
 
 ### Using the Horizon Cloud Console ### {#console}
 
@@ -123,12 +126,6 @@ You can use the Horizon Cloud Console to perform the following tasks:
 All of the procedures in this section require that you access the Networks or Routers tab in the Project section of the HP Public Cloud Console, <a name="NetworkTab">as shown</a>:
 
    <br><img src="media/network-tab.png"  alt="" />
-
-#### Using the Network Topology tab #### {#NetworkTop}
-
-The Network Topology tab represents your network layout.
-
-   <br><img src="media/compute-network-topology_crop.png"  alt="" />
 
 
 #### Creating a network #### {#CreateNetworkUI}
@@ -201,7 +198,7 @@ In order to associate an instance with a network, the network much exist. To cre
 
 ### Using the Cloud 13.5 CLI ### {#CLI}
 
-Once you [activate](#compute) the compute service, you need to install the [compute](https://docs.hpcloud.com/api/v13/compute/) and [networking](https://docs.hpcloud.com/api/v13/networking/) clients or the [CLI](http://docs.hpcloud.com/cli/unix/network). Make sure you activate a compute instance in HP Cloud version 13.5 to access the networking and VPN capabilities.
+Once you [activate](#compute) the compute service, you need to install the [HP Cloud 13.5 CLI](http://docs.hpcloud.com/cli/nova). 
 
 These instructions use the HP Cloud v13.5 CLI on an Ubuntu server instance. You may, of course, choose to use another instance type and still use these directions as a general guide for setting up your VPN.
 
