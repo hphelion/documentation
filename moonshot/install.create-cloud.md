@@ -37,95 +37,27 @@ Before starting this process, ensure that the boot order on all nodes is configu
 
 1. Power ON the Controller and Baremetal Host.
 
-2. In the Operational Dashboard, select the <b>Cloud</b> tab > <b>Manage Nodes</b>. Once the Controller and Compute Nodes have booted, each node displays in the table, indicating the Alias Name set to the node's MAC address (of the NIC associated
-with the Administration Network). Each node will be in the Not Allocated state.
+2. In the Operational Dashboard, select the <b>Cloud</b> tab > <b>Manage Nodes</b>. 
 
-3. For a node, click More > Edit Node to rename the MAC address in the Alias column to a more meaningful name such as controllercompute, cloudcontroller, compute1, compute2. **Note:** The node name can only be letters (capitalization is allowed) and numbers with no spaces. The node table then displays with the new alias names.
+3. Once the Cloud Controller and the Baremetal Host finish booting up, the nodes display in the table with their alias names set to their MAC address 
+(address of the NIC associated with the Admin network). Each node will be in a <b>Not Allocated</b> state.
 
-4. For a node, click More > Allocate Nodes. The node allocation process completes the setup and configuration of the nodes so that OpenStack services can be deployed to them.
+4. Select <b>Edit Node</b> for each node to rename the MAC address in the Alias column to a more meaningful name such as cloudcontroller, compute1, compute2. **Note:** The node name can only be letters (capitalization is allowed) and numbers with no spaces. The node table then displays with the new alias names.
 
-As the Controller and Compute Nodes are being allocated, they progress through these different states: 
+5.	Click <b>More</b> against each node to display a drop-down list.
 
-* Not Allocated
-* Hardware Installed
-* Installing
-* Installed
-* Readying
-* Finalizing
-* Allocated
- 
-When the nodes are ready for cloud deployment, their status ends with Allocated. 
+6.	Select <b>Allocate Node</b>.  This installs the OS and completes the setup and configuration of nodes so that services can be deployed. The nodes go through different states like Not Allocated, Hardware, Installed, Installing, Installed, Readying and Finalizing, before displaying the Allocated state. **Note: It may take around 12+ minutes for each node to get allocated.
 
-**Tip:** Access the bare-metal node's remote console to monitor the operating system installation. Some of your hardware requires non-free firmware files to operate. The firmware can be loaded from removable media, such as a USB stick or CD/DVD. 
-If a dialog box displays prompting you to load missing firmware, provide the appropriate drive.
+7. (Optional) Click <b>Alias</b> to view the details of the nodes.
 
-**Tip:** In the case where a node results in status = Off, select the More > Reboot Node action for the node.
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Tips:</b> Access the baremetal node's remote console to monitor the operating system installation. Some of your hardware may require non-free firmware files to operate. The firmware can be loaded from removable media, such as a USB stick or CD/DVD. If a dialog box displays prompting you to load missing firmware, provide the appropriate drive. In the case where a node results in a status = Off, select the <b>More</b> > <b>Reboot Node</b> action for the node.  If you want to set the node to the Not Allocated state, select <b>More</b> > <b>Reset Node</b> action for the node. </p>
 
-<!-- 
-## Complete Storage Configuration
+To search for a particular node:
 
-### Block Storage
+* In the Nodes page, in the Filter textbox, enter the search criteria.
 
-Cinder requirements:
+* The search results are displayed in the table.
 
-At this point, based on your previously determined [Storage Infrastructure](/cloudos/moonshot/install/before-you-install#storage-infrastructure) layout, you can configure the additional storage on the nodes.
-
-The default root partitioning scheme is to reserve the first 255 MB for the boot partition, and then allocate the entire rest 
-of the disk to the LVM partition, with the Ubuntu OS calculating how much goes to swap space and how goes to the root file system.
-
-For details, see the Ubuntu configuration documentation:
-
-<a href="https://help.ubuntu.com/lts/installation-guide/i386/preseed-contents.html" title="Ubuntu topic opens in new tab or window" target="ubuntu"> Contents of the Ubuntu Preconfiguration File </a> <br />
-
-<a href="https://help.ubuntu.com/community/DiskSpace" title="Ubuntu topic opens in new tab or window" target="ubuntu2"> Ubuntu Disk Space - community discussion </a>
-
-### Object Storage
-
-Swift requirements:
-
-On each storage node, Swift needs a dedicated disk that is independent of the OS disk. This dedicated disk must have the first and last 
-megabyte of the disk zeroed out; this is required even for new disks. 
-
-If you have not already done so, execute the following steps to zero out the disks.  
-
-To show the start and end megabyte, you can use the following on each Swift storage node:
-
-Show start and end:
-
-<pre>
-dd if=/dev/sdb bs=1M count=1 | hd <br/>
-<nobr>size=$(fdisk -l  /dev/sdb | grep Disk | grep bytes | cut -f 5 -d" ") &amp;&amp; echo $size</nobr> <br />
-skip=$(python -c "print ($size / (1024*1024)) - 1") &amp;&amp; echo $skip <br />
-dd if=/dev/sdb bs=1M skip=$skip count=1 2>/dev/null | hd
-</pre>	
-
-In the start and end data, look for a display of all zeros, similar to this example:
-
-<pre>
-<nobr>00000000  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|</nobr> <br />
-* <br />
-1+0 records in <br />
-1+0 records out
-</pre>	
-
-If the results show something like the following, the disk is not zeroed:
-
-<pre>
-<nobr>000fbe00  a2 a0 d0 eb e5 b9 33 44  87 c0 68 b6 b7 26 99 c7  |......3D..h..&amp;..|</nobr>
-</pre>	
-
-To zero out the first and last meg, use this:
-
-<pre>
-dd if=/dev/zero of=/dev/sdb bs=1M count=1 <br />
-<nobr>size=$(fdisk -l  /dev/sdb | grep Disk | grep bytes | cut -f 5 -d" ") && echo $size <br />
-seek=$(python -c "print ($size / (1024*1024)) - 1") &amp;&amp; echo $seek</nobr> <br />
-dd if=/dev/zero of=/dev/sdb seek=$seek bs=1M <br />
-</pre>	
-
-In addition, you will need to login to the Swift storage nodes from the remote console.  For the credentials, go to the 
-<a href="https://cloudos.hpwsportal.com" target="new"> HP Cloud OS for Moonshot Catalog</a> portal, and see the topic about the dashboard credentials.
--->
 
 ## Create a Cloud
 
@@ -140,42 +72,24 @@ To create a cloud:
 
 4. Select the <b>Controllers</b> tab and specify which node will have the Cloud Controller, Network Controller, and Storage Controller respective services. You install all these core controller services on different nodes or on the same Cloud Controller.
 
-5. Select the Attributes tab to specify property values required to create a Cloud.
-
-* Keystone Signing &mdash; Set the Keystone Signing method based upon the authentication
-scheme: UUID or PKI.  PKI (the default setting) is a large token that contains token information such as the user ID
-and user roles. UUID is the alternative 32-character token choice.
-
-* Networking mode &mdash; Specify gre (default setting). Local and Flat are not supported.
-
-* Local Volume File Name &mdash; Name of the file to be created on the target node's file system
-and used with `losetup` when creating the logical volume group.  
-
-* Maximum Volume File Size (GB) &mdash; Specify the maximum size of the file created on the
-target node's file system to represent the size of the cinder volume. If the file size is too big
-for the file system, the size of the file will be capped at 90% of the free space in that file
-system (at the time of creation). Best practice is to adjust the size to a value appropriate for
-the file-system associated with the Local Volume File.
-
-* Admin User Password &mdash; Admin user's password for a granted administrator role on an
-Admin project in the Administration Dashboard.
-
-* Arch User Password &mdash; Architect user's password for a granted architect role on an Admin
-project in the Administration Dashboard.
-
-* Trash User Password &mdash; Trash user's password for a granted user's role on a trash project
-in the Administration Dashboard.
-
+5. Select the Attributes tab to specify property values required to create a Cloud.  The following attributes are displayed. Retain the default values.
+ * Cloud Type &mdash; By default Physical is displayed. **Note:** Physical implies that Baremetal provisioning is supported.
+ * Keystone Signing &mdash; Set the Keystone Signing method based upon the authentication scheme: UUID or PKI.  PKI (the default setting) is a large token that contains token information such as the user ID and user roles. UUID is the alternative 32-character token choice.
+ * DHCP &mdash; By default it is True. If you do not want to use DHCP, change the DHCP Boolean to False.
+ * Networking mode &mdash; Only Flat is supported.
+ * Provider Network Name &mdash; Specify a network name; by default flat_network1 is displayed.
+ * NIC Connected to provider network &mdash; Set it to the NIC of your nova_flat network. For example: eth1.
+ * Local Volume File Name &mdash; This is the name of the file to be created on the target node's file system and used with losetup when creating the logical volume group. No need to change the default value.
+ * Maximum Volume File Size (GB) &mdash; Specify the maximum size of the file created on the target node's file system to represent the size of the cinder volume. If the file size is too big for the file system, the size of the file will be capped at 90% of the free space in that file system (at the time of creation). Best practice is to adjust the size to a value appropriate for the file-system associated with the Local Volume File. No need to change the default value.
+ * Admin User Password &mdash; Admin user's password for a granted administrator role on an Admin project in the Administration Dashboard.
+ * Arch User Password &mdash; Architect user's password for a granted architect role on an Admin project in the Administration Dashboard.
+ * Trash User Password &mdash; Trash user's password for a granted user's role on a trash project in the Administration Dashboard.
+  
 **Remember the passwords** &mdash; You will use them to log into the HP Cloud OS for Moonshot Administration Dashboard.
 
-When you're ready, click **Create Cloud**. The cloud will go through a series of steps to create an active cloud, showing the percent (%) completed.
+When you're ready, click **Create Cloud**. The cloud will go through a series of steps to create an active cloud, showing the percent (%) completed. When creating a cloud or a compute region, all of the nodes involved are first checked to ensure they can be resolved on the network. This verification process can take (up to) approximately five minutes.  During this time, the progress percentage will remain at 1%. If any of the nodes fail to resolve during the verification process, the cloud or region creation will fail. 
 
-> **Note:** When creating a cloud or a compute region, all of the nodes involved are first checked to ensure they can be resolved on the network. This verification process can take (up to) approximately five minutes.  During this time, the progress percentage will remain at 1%. If any of the nodes fail to resolve during the verification process, the cloud or region creation will fail. 
-
-<!-- If this happens, check that you correctly entered the nodes' network settings in a prior step. 
-If that's the cause of the Create Cloud failure, you will need to start over with the Admin Node installation process.  
---> 
-
+The overall process from the time you click <b>Create Cloud</b> takes around twenty minutes to complete.
 
 ## Next Step
 
