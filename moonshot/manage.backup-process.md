@@ -14,205 +14,193 @@ onLoad="window.refresh"
 
 PageRefresh();
 
-</script>
+</script><p style="font-size: small;"><a href="/cloudos/moonshot/prepare/releasenotes">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage">&#9650; UP</a> | NEXT &#9654;
 
-
-<p style="font-size: small;"> <a href="/cloudos/moonshot/prepare/releasenotes">&#9664; PREV</a> | <a href="/cloudos/moonshot/">&#9650; UP</a> | NEXT &#9654; </p>
- 
 # HP Cloud OS for Moonshot: Backing Up Your Cloud # {#moon-image-builder}
-The three key components of HP Cloud OS for Moonshot are the Admin Node, the Controller Node, and the Baremetal Host. Since these key functional components vary from node to node, an HP Cloud OS for Moonshot would need to be backed up in different ways with intricate backup/restore policy designs. 
 
-However, a simpler approach is to take the backup at the system level rather than at the file level. Being virtualized guests, a system-level backup is easier to implement and the same policy can be applied across all of your HP Cloud OS for Moonshot components.
+HP Cloud OS for Moonshot is an enterprise ready product used to manage a Moonshot Chassis, discover Moonshot Servers from the managed Moonshot Chassis, and provision the given workload based on Moonshot Servers capabilities such as static web, online gaming, and such. It also enables the Cloud Administrator to set up multiple project sharing across the discovered Moonshot Servers.
 
-This document describes how to back up and restore your HP Cloud OS for Moonshot running an ESXi hypervisor and a KVM hypervisor.
+This document describes how to backup and restore HP Cloud OS for Moonshot, specifically the steps for backing up and recovering the components of HP Cloud OS for Moonshot Management Host:
 
-## Backing up and restoring VMWare guest ##
+* Administration Node
 
-If you are running your HP Cloud OS for Moonshoton VMWare's ESXi Hypervisor, you can use multiple tools for backing up the your nodes, such as:
+    The HP Cloud OS for Moonshot Administration Node (Admin Node) hosts the Operational Dashboard that deploys private Cloud Infrastructure environments by network booting the managed virtual servers , which are typically Controller Node and Baremetal Hosts. 
 
-* VMware vSphere Data Protection Advanced
-* Veeam Backup & Replication
-* XSIBackup
+* Controller Node
 
-This section describes how to create a backup of your HP Cloud OS for Moonshot  that is running on VMWare's ESXi Hypervisor using XSIBackup.
+    While each service can be individually deployed, HP Cloud OS for Moonshot groups these services into distinct sets for ease of architectural description: 
 
-**Note:** You can find more information on the [XSIBackup man page](http://33hops.com/xsibackup-help-man-page.html).
+    - Cloud Controller: This contains those services that are considered single services for a cloud environment such as Keystone, Glance, Eden, Nova , Eve, and Focus, and defines the boundaries of the cloud environment from an identity standpoint. 
+    - Network Controller: It is a single service in a cloud and co-exists with cloud controller services. 
+    - Compute Region Controller: It is a pool of compute resources that can be consumed through a service API by consumers of the cloud, such as Nova. This is responsible for scheduling the launch of instances across Baremetal hosts. The scheduling is based on varied flavors of instances and available resources on the Baremetal hosts.
 
-* [Backing up your cloud with XSIBackup](#cloud-xsibackup)
+* Baremetal Host
 
-### Using XSIBackup ### {#cloud-xsibackup}
+    It hosts the cloud instances using Baremetal driver for OpenStack Nova compute service. Within the OpenStack framework, Baremetal driver has the same role as the drivers for other hypervisors (libvirt, xen, etc.), and yet it is presently unique in that the hardware is not virtualized - there is no hypervisor between the tenants and the physical hardware which includes Moonshot cartridges
 
-XSIBackup uses the ESXi built-in command line options to create fully unattended backup solutions. This means that you can create a backup schema that will, for example backup all your running virtual machines each night. You can choose to carry out a ‘hot backup’ or a ‘cold backup’.
+## Backing up and restoring the HP Cloud OS for Moonshot Management Host {#backup-restore-moonshot}
 
-Usage
+We recommend designing and implementing a virtual machine-based backup policy, which enables IT Administrators or Backup Administrators to design a simple backup policy in comparison to using file-based solutions. 
 
-xsibackup --backup-point=/vmfs/volumes/backup --backup-type=custom --backup-vms=AdminVM,CtrlVM,bmVM --mail-from=email.sender@yourdomain.com --mail-to=email.recipient@anotherdomain.com --smtp-srv=smtp.cloudos.local --smtp-port=25 --smtp-usr=username --smtp-pwd=password
+If you choose to design and implement a file-based solution, you will encounter some technical difficulties:
 
-Options: 
---backup-point 
+* Each node has different variable data, such as
+    - Configuration files
+    - Database
+    - Log files
 
-Full path to the backup mount point in the local server where it will typically be under /vmfs/volumes, i.e. /vmfs/volumes/backup. 
+* The Controller node and Baremetal host require a synchronized backup of to maintain their states.
+* The Admin node can be occasionally backed up.
 
---backup-how (hot | cold) 
+* The Controller node and Baremetal host require backups on a regular basis.
+* The complexity involved in performing file-based backup for each node.
 
-Hot backup is the default method, which takes a backup while the VM is on. You can chose to make a cold backup and the VM will be cleanly shutdown before backup and switched on right after the backup is taken.
+* Restoring the environment involves additional, manual steps to recover the Management Host.
 
---backup-type (custom | all | running) 
+* The MAC address of the systems must be saved so that the restoration occurs seamlessly during a file-based restore. This is required in case you need to recreate the environment because it was lost due to corruption or other reasons.
 
-Custom: if this method is chosen then a list of the VMs to backup must be passed to the --backup-vms option. 
+**Note:** We recommend you use any enterprise backup/restore solution that supports hot backup. We do not recommend that you implement a cold backup policy because it involves downtime of the private cloud environment.
 
-All: backup -all- VMS. 
+### Recommended backup schedule {#rec-backup-sched}
+The following table shows are backup frequency recommendations for HP Cloud OS for Moonshot Management Host.
 
-Running:  backup only running virtual machines. They will be cleanly shutdown and backed up then switched on again. --backup-vms List of virtual machines to backup as a colon separated list, i.e.: 
+<table>
+<th>Component</th>
+<th>Backup schedule</th>
+<th>Notes</th>
+<tr>
+<td>Admin Node</td>
+<td>Monthly</td>
+<td>Perform a full backup operation after a successful cloud deployment.</td>
+<tr/>
+<tr>
+<td>Controller Node and Baremetal Host</td>
+<td>Nightly</td>
+<td>Backup of Controller Node and Baremetal Host must occur at the same time to preserve the system state.</td>
+<tr/>
 
---backup-vms=VM1,VM2,VM3
+</table>
 
-Only needed if "custom" is selected as the --backup-type. 
-Please do remember to double quote this string if there are any VMs with spaces in their names. 
 
---mail-from 
+#### Backup strategy {#backup-strategy}
+The following are considerations you should understand and discuss before performing a Management Host backup:
 
-E-mail address from where the HTML e-mail report will be sent. 
+1.	Perform a full backup of HP Cloud OS for Moonshot Management host as soon as the cloud and region are active.
+2.	Perform a nightly back of the Controller Node and Baremetal Host at the same time.
+3.	Trigger a backup before any scheduled maintenance. Ensure you follow a power ON/OFF sequence. See the [Powering on/off the Management Host](#poweroffon).
+4.	Trigger a backup before applying hot-fixes and patches through the Cloud OS Delivery Network (CODN).
+5.	Perform a backup before you plan an upgrade.
 
---mail-to 
+#### Restore strategy {#restore-strategy}
+The following are considerations you should take into account before performing a Management Host restore.
 
-E-mail address to which the HTML e-mail report will be sent.
+1. Before performing any restoration, power off all nodes of HP Cloud OS for Moonshot Management host.
+2. Use latest backup files and maintain the existing naming convention (Virtual Machine names).
+3. If there is a node failure, remove the datastore files of the corrupt node and then perform a restore.
+4. If your services are corrupted and the Admin node fails, restore only the Admin node.
+5. If both your Baremetal host or Controller node fail, restore them both.
 
---subject
+#### Powering on/off the Management host {#poweroffon}
+It is highly recommended you follow the steps for powering off the HP Cloud OS for Moonshot Management host after a successful cloud deployment.
 
-You can set your own subject
+1. Power off the Baremetal Host.
+2. Once the Baremetal host is off, power off the Controller Node.
+3. Once Controller node is off, power off the Admin Node.
+4. Then, power off the hypervisor power (if required).
 
---smtp-srv 
+Once you have successfully completed the powering off steps, power on the HP Cloud OS for Moonshot Management host in this order:
 
-SMTP server that we will use to send the HTML e-mail report. 
+1. Power on the hypervisor.
+2. Power on the Admin node.
+3. Open the HP Cloud OS for Moonshot Administration Dashboard in a browser.
+4. Navigate to Cloud -> Manage Nodes.
 
---smtp-port 
+    Notice that the state of the nodes is set to OFF.
 
-SMTP server port. 
+5. Power on the Controller node.
+6. Wait until the state of the Controller node changes to Deployed, then power on the Baremetal host.
+7. Wait until the state of the Baremetal host changes to Deployed.
 
---smtp-usr 
+Your HP Cloud OS for Moonshot Management host is now up and running.
 
-SMTP username we will use in the plain text SMTP authentication. Please note this is the only authentication method supported by esxbackup as of now. 
 
---smtp-pwd 
+## Example tools for backup and restore {#example-backup-tools}
 
-SMTP password used for authentication against the SMTP server.
+There are many enterprise solutions that perform virtual machine based backup and restore operations. You can implement any such solution, but remember our [backup](#backup-strategy) and [restore](#restore-strategy) strategies. 
 
-CRON SETUP 
-To accomplish this, you need to do the following: 
+In this section, we have example backup/restore steps using:
 
-1.	Edit /etc/rc.local.d/local.sh, the system's startup script to get the cron service pid and to kill the process before writing anything to the crontab. 
+*  XSIBackup, when the guest system was running a VMware ESXi.
 
-2.	Edit /etc/rc.local.d/local.sh, the system's startup script to inject the cron line you will need into the ESXi 5.1 root's crontab located at /var/spool/cron/crontabs/root 
+* VZdump/VZrestore, when the guest system was running a Ubuntu 12.04 LTS system.
 
-3.	Start the cron service again. 
-To accomplish, this do the following: 
-root# vi /etc/rc.local.d/local.sh 
-At the end of the file right before the "exit 0" statement write the following: 
-/BIN/KILL $(CAT /VAR/RUN/CROND.PID) 	#Gets the cron service pid and simply kills it. 
+### XSIBackup tool {#xsi-backup}
 
-4.	The next line writes a typical cron line to the crontab, in this example we execute "xsibackup" passing it some arguments to backup all running virtual machines to /vmfs/volumes/backup 
+XSIBackup is an opensource application that uses VMWare's ESXi built-in command line options to create full backup solutions by cloning the system. For detailed information about this tool, see the [XSIBackup documentation](#http://33hops.com/xsibackup-vmware-esxi-backup.html)
 
-//BIN/ECHO "5 0 * * * /VMFS/VOLUMES/DATASTORE1/XSIBACKUP --BACKUP-POINT=/VMFS/VOLUMES/BACKUP --BACKUP-TYPE=RUNNING --MAIL-FROM=FROMUSER@YOURDOMAIN.COM --MAIL-TO=RECIPIENT@YOURDOMAIN.COM --SMTP-SRV=SMTP.YOURSERVER.COM --SMTP-PORT=25 --SMTP-USR=YOURUSERNAME --SMTP-PWD=YOURPASSWORD
-5.	Finally, we start the cron service again
-/USR/LIB/VMWARE/BUSYBOX/BIN/BUSYBOX CROND
+Use the following basic steps to backup an HP Cloud OS for Moonshot Management Host running on VMware's hypervisor (ESXi):
 
-Restore
+1. Add another datastore (bkup) to the guest that is hosting HP Cloud OS for Moonshot.
+2. Enable an SSH login to the hypervisor.
+3. Login to the hypervisor and copy the XSIBackup script file to the newly added datastore.
+4. Execute the command:
+    `xsibackup “backup-point=/vmfs/volumes/bkup “backup-type=custom “backup-vms=Admin,Ctrl,Bm`
 
-In the event of failure, replace the failed VM’s folder with the files backed up by XSIBackup. 
+    - backup-point - indicates the datastore to backup the files
+    - backup-type - custom is used here to enable a custom selection of VM
+    - backup-vms	 - provides the virtual names that need to be backed up
 
-## Backing up and restoring KVM ##
+Use the following steps to restore your Management host in the event of node failure:
 
-Like other hypervisors, KVM also has different tools and methods to backup running virtualized machines. Some of them are:
+1. Follow the [recommended power off sequence](#poweroffon).
+2. Login to the vSphere client.
+3. Delete the virtual machine that is corrupt.
+4. Copy the virtual machine from "bkp" datastore to the running datastore.
+5. Browse the copied datastore and navigate to the newly copied VM folder.
+6. Open the folder, and then right-click on <vm_name>.vmtx file and select "Add to Inventory".
+7. Follow the [recommended power on sequence](#poweroffon).
 
-•	vzdump
-•	Livebackup
-•	Writing scripts to backup
-•	LVM Snapshots
+### VZdump tool {#vzdump-backup}
 
-This section describes in detail the process to use vzdump & vzrestore utilities provided in Ubuntu for backup of HP Cloud OS for Moonshot.
+The VZdump utility is a useful tool for performing backup/restore operations on virtual machines hosted on KVM hypervisors.
 
-### Using vzdump
+As a pre-requisite, you need to determine the IDs of the virtual machines of the HP Cloud OS for Moonshot Management host. You can do this with the `virsh list-all` command:
 
-Vzdump is a utility to make consistent snapshots of running VMs. It basically creates a tar archive of the VM private area and configuration files. It supports OpenVZ and QEMUServer virtualized machines.
+    <pre>root@blrcdl11:~# virsh list
 
-Usage
+    Id Name State
+    ------------------------------------------------
+    33 Admin_node running
+    34 Controller running
+    35	Compute running
+    root@blrcdl11:~#</pre>
 
+Use the following basic steps to backup an HP Cloud OS for Moonshot Management Host running on a KVM hypervisor.
 
-VZDUMP  OPTIONS [--ALL | <VMID>]
+1. Log in as root to the guest system hosting the KVM hypervisor.
+2. Create a mount point "/bkup" which has a mounted partition that is not part of the logical group that hosts the virtual machine images.
+3. Identify the IDs of the virtual machines you need to backup.
+4. Run the following command
 
---exclude VMID		
+     ` vzdump --compress --dumpdir /bkup/<date> --snapshot <VMID>`
 
-Exclude VMID (assumes --all)
+    - compress - stores the snapshot in a tar.gz format
+    - dumpdir - the location to store the snapshot file of the virtual machine
+    - snapshot - takes an LVM snapshot when the system is in a running state
+    - <VMID> - provides the ID of the virtual machine ID that needs to be backed up
 
---exclude-path REGEX	
+Use the following steps to restore your Management host in the event of node failure:
 
-Exclude certain files/directories. You can use this option more than once to specify multiple exclude paths
+1. Follow the [recommended power off sequence](#poweroffon).
+2. Log in to the console of the guest hosting the KVM hypervisor.
+3. Destroy the corrupt/problematic virtual machine with this command:
 
---stdexcludes	
-	
-Exclude temporary files and logs
+    `virsh destroy <vm_name>`
+4. Restore the virtual machine by running the following command:
 
---compress		
+    `vzdump --restore <path_to_archive> <VMID>`
 
-Compress dump file (gzip)
+    - <path_to_archive> - the complete path to the latest .tar.gz file
+    - <VMID> - the virtual machine ID
 
---storage STORAGE_ID
-	
-Store resulting files to STORAGE_ID (PVE only)
-
---script	
-		
-Execute hook script
-
---dumpdir DIR	
-	
-Store resulting files in DIR
-
---maxfiles N	
-	
-Maximum number of backup files per VM.
-
---tmpdir DIR	
-	
-Store temporary files in DIR. --suspend and –stop use this directory to store a copy of the VM.
-
---mailto EMAIL	
-
-Send notification mail to EMAIL. You can use this option more than once to specify multiple receivers.
-
---stop		
-	
-Stop/Start VM if running
-
---suspend		
-
-Suspend/Resume VM when running
-
---snapshot		
-
-Use LVM snapshot when running
-
---size MB		
-
-LVM snapshot size (default 1024)
-
---bwlimit KBPS	
-
-Limit I/O bandwidth; KBytes per second
-
---lockwait MINUTES	
-
-Maximum waiting  time for the global lock. vzdump uses a global lock file to ensure that only one instance is running (running several instances put too much load on a server). The default is 180 minutes (3 hours).
-
---stopwait MINUTES 
-   
- Maximum time to wait until a VM is stopped.
-
-Vzrestore 
-
-This utility is used to restore OpenVZ vzdump archives to virtual machine
-
-Usage
-
-	VZRESTORE <ARCHIVE> <VMID>
+6. Follow the [recommended power on sequence](#poweroffon).
