@@ -378,7 +378,7 @@ In addition to the information presented already in this topic, please review th
 * In <b>Cloud</b> > <b>Manage Clouds</b> > <b>Create Cloud</b>, you will only need to enter a <b>Name</b> for your cloud. You can use default values for other options; however, plan ahead 
 to specify new, non-default passwords for the Admin user, Arch user, and Trash user. 
 
-* In In <b>Cloud</b> > <b>Manage Clouds</b> > <b>Create Compute Region </b>dialog, you will need to enter a <b>Name</b> for your region. 
+* In <b>Cloud</b> > <b>Manage Clouds</b> > <b>Create Compute Region </b>dialog, you will need to enter a <b>Name</b> for your region. 
 Recommended: create multiple regions.  On each Create Compute Region dialog, on the Controller & Compute Nodes tab, you will need to enter the number of nodes that participate in the region. 
 
 ### Administration Dashboard Checklist
