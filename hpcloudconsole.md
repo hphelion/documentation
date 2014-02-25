@@ -354,7 +354,7 @@ Use HP Cloud Monitoring to ascertain system health and track resource metrics. H
      
 3. Click "+Create Endpoint." **Note** Record the password for the generated endpoint in the pop-up display. It cannot be retrieved later."
 
-     <img src="media/Monitoring3CreateEndpoint" width="580" alt="" />   
+     <img src="media/Monitoring3CreateEndpoint" width="580" alt="" />    
      
 4. Click the Endpoint ID in the "Endpoints" screen to display the endpoint ID, the URI, the Queue, and the User Name.
 
