@@ -346,14 +346,9 @@ Use HP Cloud Monitoring to ascertain system health and track resource metrics. Y
 * Alarm expression (**alarm expression is built off long strings - right now we don't have an alarm expression, so we can't get information. Need to decide how to address this in this document or developer team needs to remove that from console. Is that even possible practically or can we deviate from Horizon in our presentation of console?**
 
 
-* Message subscription to the latest system information
-* Alarms that send notifications when a threshold has been passed (**can user set this up with instructions we provide in separate doc?**)
-* Metric posts that send metrics to HP Monitoring
-* Metric queries that query all the metrics HP Monitoring collects and receives.
+After completing these tasks in the console, you receive machine-readable JSON output. (**create supplemental doc we can link to from here on alternatives for reading output?? Get Eric's input.**)
 
-After completing these tasks in the console, you receive JSON output, 
-
-
+####Create endpoints####
 
 1. Click "Manage Services" in the left-hand bar on the [HP Cloud Console landing page](https://horizon.hpcloud.com/landing), then "Activate" in the "Monitoring" row under the region you are setting up.
 
@@ -371,6 +366,48 @@ After completing these tasks in the console, you receive JSON output,
 
      <img src="media/Monitoring5EndpointDisplaybox.png" width="580" alt="" />
 
+
+####Create subscriptions to endpoints####
+
+1. Click "Subscriptions" under "Manage Monitoring" in the left-hand bar.
+
+2. Click "+Create Subscription" in the upper-right corner of the "Subscriptions" page.
+
+3. Select an Enpoint ID to subscribe to from the drop-down menu in the "Create Subscription" box.
+
+4. Select the Namespace of the metrics to receive from the drop-down menu in the same box.
+
+5. Select an Instance from the drop-down menu in the same box.
+
+6. Click "Create Subscription" in the lower-right of the "Create Subscription" box.
+
+
+####Create notification addresses for subscriptions####
+
+1. Click "Notifications" under "Monitoring" in the left-hand bar.
+
+2. Click "+Create Notification Address" in the upper-right of the "Notifications" page.
+
+3. Enter a Notification Address Name in the "Create Notification Address" box.
+
+4. Select "Email" or "SMS" from the "Type" drop-down menu.
+
+5. Enter an address in the "Address" box. For SMS, use the E.164 for international telephone numbers, which requires a "+" followed by the country code, then the regional number. Currently, only US phone numbers are supported. 
+
+6. Click "Create Notification Address."
+
+
+####Create Alarm Name####
+
+**Do we even go through the motions of explaining on this one??? Either way, we need to say that either they can't set it up or point to a supplement doc that explains how they can get monitoring functionality manually along with how to set up reading JSON**
+
+1. Click "Alarms" under "Manage Monitoring" in the left-hand bar.
+
+2. Click "+Create Alarm" in the upper-right hand of the "Alarms" page.
+
+3. Enter Alarm name in "Create Alarm" box.
+
+4. **So next step, "Expression" is moot at this point since we don't have an alarm expression? Or is this something that could be covered as supplemental information in a doc we'd link to from here?**
      
 
 ###Organize and manage HP Cloud Access## {#Identity}
