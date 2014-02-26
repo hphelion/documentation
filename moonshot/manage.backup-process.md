@@ -14,7 +14,10 @@ onLoad="window.refresh"
 
 PageRefresh();
 
-</script><p style="font-size: small;"><a href="/cloudos/moonshot/prepare/releasenotes">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage">&#9650; UP</a> | NEXT &#9654;
+</script>
+
+
+<p style="font-size: small;"> <a href="/cloudos/moonshot/prepare/releasenotes">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage">&#9650; UP</a> | NEXT &#9654; </p>
 
 # HP Cloud OS for Moonshot: Backing Up Your Cloud # {#moon-image-builder}
 
@@ -143,11 +146,14 @@ Use the following basic steps to backup an HP Cloud OS for Moonshot Management H
 4. Execute the command:
     <pre>xsibackup "backup-point=/vmfs/volumes/bkup "backup-type=custom "backup-vms=Admin,Ctrl,Bm</pre>
 
-    **Note:**
-
-    * `backup-point` - indicates the datastore to backup the files
-    * `backup-type` - custom is used here to enable a custom selection of VM
-    * `backup-vms` - provides the virtual names that need to be backed up
+<ul style="margin-left:20px;">
+<li>backup-point<br />
+Indicates the datastore to backup the files</li>
+<li>backup-type<br />
+Custom is used here to enable a custom selection of VM</li>
+<li>backup-vms<br />
+Provides the virtual names that need to be backed up</li>
+</ul>
 
 Use the following steps to restore your Management host in the event of node failure:
 
@@ -183,27 +189,32 @@ Use the following basic steps to backup an HP Cloud OS for Moonshot Management H
 
      ` vzdump --compress --dumpdir /bkup/<date> --snapshot <VMID>`
 
-    **Note:**
- 
-    * `compress` - stores the snapshot in a tar.gz format
-    * `dumpdir` - the location to store the snapshot file of the virtual machine
-    * `snapshot` - takes an LVM snapshot when the system is in a running state
-    * `<VMID>` - provides the ID of the virtual machine ID that needs to be backed up
+<ul style="margin-left:20px;">
+<li>compress<br />
+Stores the snapshot in a tar.gz format</li>
+<li>dumpdir<br />
+The location to store the snapshot file of the virtual machine selection of VM</li>
+<li>snapshot<br />
+Takes an LVM snapshot when the system is in a running state</li>
+<li>&lt;VMID&gt;<br />
+Provides the ID of the virtual machine ID that needs to be backed up
+</ul>
 
 Use the following steps to restore your Management host in the event of node failure:
+<ol>
+<li>Follow the <a href="#poweroffon">recommended power off sequence</a>.</li>
+<li>Log in to the console of the guest hosting the KVM hypervisor.</li>
+<li>Destroy the corrupt/problematic virtual machine with this command:
+<pre>virsh destroy &lt;vm_name&gt; </pre></li>
+<li>Restore the virtual machine by running the following command:
+<pre>vzdump --restore &lt;path_to_archive&gt; &lt;VMID&gt;</pre>
 
-1. Follow the [recommended power off sequence](#poweroffon).
-2. Log in to the console of the guest hosting the KVM hypervisor.
-3. Destroy the corrupt/problematic virtual machine with this command:
-
-    `virsh destroy <vm_name>`
-4. Restore the virtual machine by running the following command:
-
-    `vzdump --restore <path_to_archive> <VMID>`
-
-    **Note:**
-
-    * `<path_to_archive>` - the complete path to the latest .tar.gz file
-    * `<VMID>` - the virtual machine ID
-
-6. Follow the [recommended power on sequence](#poweroffon).
+<ul style="margin-left:0px;">
+<li>&lt;path_to_archive&gt;<br />
+The complete path to the latest .tar.gz file</li>
+<li>&lt;VMID&gt;<br />
+The virtual machine ID</li>
+</ul>
+</li>
+<li>Follow the <a href="#poweroffon">recommended power on sequence</a>.</li>
+</ol>
