@@ -25,5 +25,5 @@ Refer to these documentation resources:
 
 * [HP Cloud OS for Moonshot Image Builder](/cloudos/moonshot/manage/image-builder/) &mdash; This document shows you how to use Disk Image Builder to create images for the HP Cloud OS for Moonshot.
 
-* [HP Cloud OS for Moonshot Image Builder](/cloudos/moonshot/manage/backup-process/) &mdash; This document describes how to backup and restore the components of the HP Cloud OS for Moonshot Management Host.
+* [HP Cloud OS for Moonshot Backup and Restore](/cloudos/moonshot/manage/backup-process/) &mdash; This document describes how to backup and restore the components of the HP Cloud OS for Moonshot Management Host.
  
