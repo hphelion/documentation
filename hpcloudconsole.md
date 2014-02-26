@@ -343,7 +343,7 @@ Use HP Cloud Monitoring to ascertain system health and track resource metrics. Y
 * Subscriptions to endpoints
 * Notification addresses for subscriptions
 * Alarm name, which identifies the notification method
-* Alarm Expression, which, if true, triggers a notfication
+* Alarm expression (**alarm expression is built off long strings - right now we don't have an alarm expression, so we can't get information. Need to decide how to address this in this document or developer team needs to remove that from console. Is that even possible practically or can we deviate from Horizon in our presentation of console?**
 
 
 * Message subscription to the latest system information
@@ -351,7 +351,7 @@ Use HP Cloud Monitoring to ascertain system health and track resource metrics. Y
 * Metric posts that send metrics to HP Monitoring
 * Metric queries that query all the metrics HP Monitoring collects and receives.
 
-
+After completing these tasks in the console, you receive JSON output, 
 
 
 
@@ -365,16 +365,13 @@ Use HP Cloud Monitoring to ascertain system health and track resource metrics. Y
      
 3. Click "+Create Endpoint." **Note** Record the password for the generated endpoint in the pop-up display. It cannot be retrieved later."
 
-     <img src="media/Monitoring3CreateEndpoint" width="580" alt="" />    
+     <img src="media/Monitoring3CreateEndpoint.png" width="580" alt="" />    
      
 4. Click the Endpoint ID in the "Endpoints" screen to display the endpoint ID, the URI, the Queue, and the User Name.
 
-     <img src="media/Monitoring5EndpointDisplaybox" width="580" alt="" />
+     <img src="media/Monitoring5EndpointDisplaybox.png" width="580" alt="" />
 
      
-     
-
-
 
 ###Organize and manage HP Cloud Access## {#Identity}
 
