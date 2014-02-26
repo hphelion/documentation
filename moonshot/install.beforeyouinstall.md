@@ -73,11 +73,13 @@ This information is repeated from the [Support Matrix](/cloudos/moonshot/prepare
 
 #### General recommendation {#general}
 
-We recommend that your server contains the following:
+**Important:** The HP Cloud OS for Moonshot management components **must** be installed on a Proliant server with a support contract covering Ubuntu.
+
+We recommend your Proliant server contains the following:
 
 * Quad Core Processor
-
 * Hard disk drive with a minimum of 500 GB of space
+* Three (3) ethernet ports
 
 #### Hypervisor recommendations {#hypervisor}
 
