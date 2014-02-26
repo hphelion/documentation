@@ -177,7 +177,7 @@ As a pre-requisite, you need to determine the IDs of the virtual machines of the
     ----------------------------------
     33 Admin_node running
     34 Controller running
-    35	Compute running
+    35 Compute running
     root@blrcdl11:~#
 
 Use the following basic steps to backup an HP Cloud OS for Moonshot Management Host running on a KVM hypervisor.
