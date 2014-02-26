@@ -67,17 +67,17 @@ If you choose to design and implement a file-based solution, you will encounter 
 ### Recommended backup schedule {#rec-backup-sched}
 The following table shows our backup frequency recommendations for HP Cloud OS for Moonshot Management Host.
 
-<table>
-<th>Component</th>
-<th>Backup schedule</th>
-<th>Notes</th>
-<tr>
+<table style="text-align: left; vertical-align: top; min-width: 400px;">
+<th style="background-color: #C8C8C8;">Component</th>
+<th style="background-color: #C8C8C8;">Backup schedule</th>
+<th style="background-color: #C8C8C8;">Notes</th>
+<tr style="background-color: white; color: black;">
 <td>Admin Node</td>
 <td>Monthly</td>
 <td>Perform a full backup operation after a successful cloud deployment.</td>
 <tr/>
-<tr>
-<td>Controller Node and Baremetal Host</td>
+<tr style="background-color: white; color: black;">
+<td>Controller Node<br />Baremetal Host</td>
 <td>Nightly</td>
 <td>Backup of Controller Node and Baremetal Host must occur at the same time to preserve the system state.</td>
 <tr/>
@@ -104,22 +104,22 @@ The following are considerations you should take into account before performing 
 5. If both your Baremetal host or Controller node fail, restore them both.
 
 #### Powering on/off the Management host {#poweroffon}
-It is highly recommended you follow the steps for powering off the HP Cloud OS for Moonshot Management host after a successful cloud deployment.
+It is highly recommended you follow the steps for **powering off** the HP Cloud OS for Moonshot Management host after a successful cloud deployment.
 
 1. Power off the Baremetal Host.
 2. Once the Baremetal host is off, power off the Controller Node.
 3. Once Controller node is off, power off the Admin Node.
 4. Then, power off the hypervisor power (if required).
 
-Once you have successfully completed the powering off steps, power on the HP Cloud OS for Moonshot Management host in this order:
+Once you have successfully completed the powering off steps, **power on** the HP Cloud OS for Moonshot Management host in this order:
 
 1. Power on the hypervisor.
 2. Power on the Admin node.
 3. Open the HP Cloud OS for Moonshot Administration Dashboard in a browser.
-4. Navigate to Cloud -> Manage Nodes. Notice that the state of the nodes is set to OFF.
+4. Navigate to **Cloud -> Manage Nodes**. Notice that the state of the nodes is set to OFF.
 5. Power on the Controller node.
-6. Wait until the state of the Controller node changes to Deployed, then power on the Baremetal host.
-7. Wait until the state of the Baremetal host changes to Deployed.
+6. Wait until the state of the Controller node changes to **Deployed**, then power on the Baremetal host.
+7. Wait until the state of the Baremetal host changes to **Deployed**.
 
 Your HP Cloud OS for Moonshot Management host is now up and running.
 
@@ -140,7 +140,7 @@ XSIBackup is an opensource application that uses VMWare's ESXi built-in command 
 
 Use the following basic steps to backup an HP Cloud OS for Moonshot Management Host running on VMware's hypervisor (ESXi):
 
-1. Add another datastore (bkup) to the guest that is hosting HP Cloud OS for Moonshot.
+1. Add another datastore, named **bkup**, to the guest that is hosting HP Cloud OS for Moonshot.
 2. Enable an SSH login to the hypervisor.
 3. Login to the hypervisor and copy the XSIBackup script file to the newly added datastore.
 4. Execute the command:
@@ -160,9 +160,9 @@ Use the following steps to restore your Management host in the event of node fai
 1. Follow the [recommended power off sequence](#poweroffon).
 2. Login to the vSphere client.
 3. Delete the virtual machine that is corrupt.
-4. Copy the virtual machine from "bkp" datastore to the running datastore.
+4. Copy the virtual machine from **bkp"** datastore to the running datastore.
 5. Browse the copied datastore and navigate to the newly copied VM folder.
-6. Open the folder, and then right-click on <vm_name>.vmtx file and select "Add to Inventory".
+6. Open the folder, and then right-click on **&lt;vm_name&gt;.vmtx** file and select **Add to Inventory**.
 7. Follow the [recommended power on sequence](#poweroffon).
 
 ### VZdump tool {#vzdump-backup}
@@ -183,7 +183,7 @@ As a pre-requisite, you need to determine the IDs of the virtual machines of the
 Use the following basic steps to backup an HP Cloud OS for Moonshot Management Host running on a KVM hypervisor.
 
 1. Log in as root to the guest system hosting the KVM hypervisor.
-2. Create a mount point "/bkup" which has a mounted partition that is not part of the logical group that hosts the virtual machine images.
+2. Create a mount point **/bkup** which has a mounted partition that is not part of the logical group that hosts the virtual machine images.
 3. Identify the IDs of the virtual machines you need to backup.
 4. Run the following command
 
