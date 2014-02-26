@@ -17,7 +17,7 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> <a href="/cloudos/moonshot/prepare/releasenotes">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage">&#9650; UP</a> | NEXT &#9654; </p>
+<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/image-builder">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage">&#9650; UP</a> | NEXT &#9654; </p>
 
 # HP Cloud OS for Moonshot: Backing Up Your Cloud # {#moon-image-builder}
 
@@ -160,7 +160,7 @@ Use the following steps to restore your Management host in the event of node fai
 1. Follow the [recommended power off sequence](#poweroffon).
 2. Login to the vSphere client.
 3. Delete the virtual machine that is corrupt.
-4. Copy the virtual machine from **bkp"** datastore to the running datastore.
+4. Copy the virtual machine from **bkp** datastore to the running datastore.
 5. Browse the copied datastore and navigate to the newly copied VM folder.
 6. Open the folder, and then right-click on **&lt;vm_name&gt;.vmtx** file and select **Add to Inventory**.
 7. Follow the [recommended power on sequence](#poweroffon).
