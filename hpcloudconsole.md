@@ -337,12 +337,23 @@ Security group rules have three parts:
     
 ###Monitoring### {#Monitoring}
 
-Use HP Cloud Monitoring to ascertain system health and track resource metrics. HP Cloud Monitoring provides:
+Use HP Cloud Monitoring to ascertain system health and track resource metrics. You can use the HP Public Cloud Console to create:
+
+* Endpoints that specify metrics to be gathered
+* Subscriptions to endpoints
+* Notification addresses for subscriptions
+* Alarm name, which identifies the notification method
+* Alarm Expression, which, if true, triggers a notfication
+
 
 * Message subscription to the latest system information
-* Alarms that send notifications when a threshold has been passed
+* Alarms that send notifications when a threshold has been passed (**can user set this up with instructions we provide in separate doc?)
 * Metric posts that send metrics to HP Monitoring
 * Metric queries that query all the metrics HP Monitoring collects and receives.
+
+
+
+
 
 1. Click "Manage Services" in the left-hand bar on the [HP Cloud Console landing page](https://horizon.hpcloud.com/landing), then "Activate" in the "Monitoring" row under the region you are setting up.
 
