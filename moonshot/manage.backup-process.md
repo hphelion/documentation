@@ -113,10 +113,7 @@ Once you have successfully completed the powering off steps, power on the HP Clo
 1. Power on the hypervisor.
 2. Power on the Admin node.
 3. Open the HP Cloud OS for Moonshot Administration Dashboard in a browser.
-4. Navigate to Cloud -> Manage Nodes.
-
-    Notice that the state of the nodes is set to OFF.
-
+4. Navigate to Cloud -> Manage Nodes. Notice that the state of the nodes is set to OFF.
 5. Power on the Controller node.
 6. Wait until the state of the Controller node changes to Deployed, then power on the Baremetal host.
 7. Wait until the state of the Baremetal host changes to Deployed.
@@ -144,11 +141,13 @@ Use the following basic steps to backup an HP Cloud OS for Moonshot Management H
 2. Enable an SSH login to the hypervisor.
 3. Login to the hypervisor and copy the XSIBackup script file to the newly added datastore.
 4. Execute the command:
-    <pre>xsibackup “backup-point=/vmfs/volumes/bkup “backup-type=custom “backup-vms=Admin,Ctrl,Bm</pre>
+    <pre>xsibackup "backup-point=/vmfs/volumes/bkup "backup-type=custom "backup-vms=Admin,Ctrl,Bm</pre>
 
-    - backup-point - indicates the datastore to backup the files
-    - backup-type - custom is used here to enable a custom selection of VM
-    - backup-vms	 - provides the virtual names that need to be backed up
+    **Note:**
+
+    * `backup-point` - indicates the datastore to backup the files
+    * `backup-type` - custom is used here to enable a custom selection of VM
+    * `backup-vms` - provides the virtual names that need to be backed up
 
 Use the following steps to restore your Management host in the event of node failure:
 
@@ -166,14 +165,14 @@ The VZdump utility is a useful tool for performing backup/restore operations on 
 
 As a pre-requisite, you need to determine the IDs of the virtual machines of the HP Cloud OS for Moonshot Management host. You can do this with the `virsh list-all` command:
 
-    <pre>root@blrcdl11:~# virsh list
+    root@blrcdl11:~# virsh list
 
     Id Name State
-    ------------------------------------------------
+    ----------------------------------
     33 Admin_node running
     34 Controller running
     35	Compute running
-    root@blrcdl11:~#</pre>
+    root@blrcdl11:~#
 
 Use the following basic steps to backup an HP Cloud OS for Moonshot Management Host running on a KVM hypervisor.
 
@@ -184,10 +183,12 @@ Use the following basic steps to backup an HP Cloud OS for Moonshot Management H
 
      ` vzdump --compress --dumpdir /bkup/<date> --snapshot <VMID>`
 
-    - compress - stores the snapshot in a tar.gz format
-    - dumpdir - the location to store the snapshot file of the virtual machine
-    - snapshot - takes an LVM snapshot when the system is in a running state
-    - <VMID> - provides the ID of the virtual machine ID that needs to be backed up
+    **Note:**
+ 
+    * `compress` - stores the snapshot in a tar.gz format
+    * `dumpdir` - the location to store the snapshot file of the virtual machine
+    * `snapshot` - takes an LVM snapshot when the system is in a running state
+    * `<VMID>` - provides the ID of the virtual machine ID that needs to be backed up
 
 Use the following steps to restore your Management host in the event of node failure:
 
@@ -200,7 +201,9 @@ Use the following steps to restore your Management host in the event of node fai
 
     `vzdump --restore <path_to_archive> <VMID>`
 
-    - <path_to_archive> - the complete path to the latest .tar.gz file
-    - <VMID> - the virtual machine ID
+    **Note:**
+
+    * `<path_to_archive>` - the complete path to the latest .tar.gz file
+    * `<VMID>` - the virtual machine ID
 
 6. Follow the [recommended power on sequence](#poweroffon).
