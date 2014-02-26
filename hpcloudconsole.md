@@ -347,7 +347,7 @@ Use HP Cloud Monitoring to ascertain system health and track resource metrics. Y
 
 
 * Message subscription to the latest system information
-* Alarms that send notifications when a threshold has been passed (**can user set this up with instructions we provide in separate doc?)
+* Alarms that send notifications when a threshold has been passed (**can user set this up with instructions we provide in separate doc?**)
 * Metric posts that send metrics to HP Monitoring
 * Metric queries that query all the metrics HP Monitoring collects and receives.
 
