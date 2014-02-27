@@ -5,7 +5,7 @@ permalink: /cli/unix/block-storage/
 product: unix-cli
 
 ---
-# Unix CLI Block Storage Examples v12.12
+# Unix CLI Block Storage Examples for v12.12
 
 ___________________
 
