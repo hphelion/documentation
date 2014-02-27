@@ -5,7 +5,7 @@ permalink: /cli/unix/cdn/
 product: unix-cli
 
 ---
-# UNIX CLI CDN Examples
+# UNIX CLI CDN Examples for v12.12
 
 ___________________
 
