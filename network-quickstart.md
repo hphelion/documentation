@@ -77,15 +77,15 @@ When a port is created in HP Cloud Networking it is associated with a security g
 
 back to the [top](#top)
 
-### Viewing your network in the HP Public Cloud Console ### {#NetworkTopo}
+## Viewing your network in the HP Public Cloud Console ## {#NetworkTopo}
 
 The Network Topology tab is a physical representation of your network configuration.
 
 After activating the Compute 13.5 region, HP Public Cloud creates a default network that looks like the following diagram. 
 
-   <br><img src="media/compute-network-topology-crop.png"  alt="" />
+   <br><img src="media/compute-network-topology-def-crop.png"  alt="" />
 
-A default router (labeled Router 1) is created and attached to the external network (labeled "Ext-Net") so it can be reached from the Internet. A default network (labeled Network1) is also created and attached to the router.
+A default router (here, labeled Router 1) is created and attached to the external network (labeled "Ext-Net") so it can be reached from the Internet. A default network (labeled Network1) is also created and attached to the router.
 
 The default configuration contains a subnet that serves as your DHCP server. The subnet has a CIDR of 10.0.0.0/24, which is the pool of fixed private IPs that are assigned to your instances. 
 
@@ -127,10 +127,12 @@ All of the procedures in this section require that you access the Networks or Ro
 
    <br><img src="media/network-tab.png"  alt="" />
 
-
+<!--
 #### Creating a network #### {#CreateNetworkUI}
 
-In order to associate an instance with a network, the network much exist. To create a network, use the following steps:
+In order to associate an instance with a network, the network much exist. HP Public Cloud creates a default network when you activate a service. However, if you want to define 
+
+To create a network, use the following steps:
 
 1. Login to the [Horizon Console](https://horizon.hpcloud.com/).
 
@@ -143,9 +145,11 @@ In order to associate an instance with a network, the network much exist. To cre
 	<br><img src="media/network-fields.png"  alt="" />
 
 5. Click **Next** to configure a subnet for the network. Proceed with the following section.
-
+-->
 
 #### Create a subnet #### {#CreateSubUI}
+
+HP Public Cloud creates a default network when you activate a service. However, if you want to define the 
 
 1. On the **Subnet** tab, enter the subnet name
 	<br><img src="media/network-fields-2.png"  alt="" />
@@ -174,12 +178,19 @@ In order to associate an instance with a network, the network much exist. To cre
 
 #### Create a port #### {#CreatePortUI}
 
+When you create a network, ports are automatically created. You can edit the ports  
+
 1. Login to the [HP Public Cloud Console](https://horizon.hpcloud.com/).
+
+2. Select the appropriate project and availability zone.
 
 2. Select the [Networks tab](#NetworkTab) under the Project section.
 
 #### Create a router #### {#SpecifyIP}
 
+1. Login to the [HP Public Cloud Console](https://horizon.hpcloud.com/).
+
+2. Select the [Networks tab](#NetworkTab) under the Project section.
 
 
 
@@ -195,6 +206,10 @@ In order to associate an instance with a network, the network much exist. To cre
 
 5. In the Set Gateway screen, select a network from the **External Network** list and click **Set Gateway**
 	<br><img src="media/network-gateway.png"  alt="" />
+
+
+   <br><img src="media/compute-network-topology-new-crop.png"  alt="" />
+
 
 ### Using the Cloud 13.5 CLI ### {#CLI}
 
