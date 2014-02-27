@@ -407,6 +407,8 @@ After completing these tasks in the console, you receive machine-readable JSON o
 
 6. Click "Create Notification Address."
 
+    <img src="media/Notification2.png" width="580" alt="" />
+
 
 ####Create Alarm Name####
 
