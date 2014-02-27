@@ -361,7 +361,7 @@ After completing these tasks in the console, you receive machine-readable JSON o
 
     <img src="media/Monitoring2.png" width="580" alt="" />    
      
-3. Click "+Create Endpoint." **Note** Record the password for the generated endpoint in the pop-up display. It cannot be retrieved later."
+3. Click "+Create Endpoint." **Note** Record the password for the generated endpoint in the pop-up display. It cannot be retrieved later.
 
     <img src="media/Monitoring3CreateEndpoint.png" width="580" alt="" />    
      
@@ -396,6 +396,8 @@ After completing these tasks in the console, you receive machine-readable JSON o
 1. Click "Notifications" under "Monitoring" in the left-hand bar.
 
 2. Click "+Create Notification Address" in the upper-right of the "Notifications" page.
+
+    <img src="media/Notification1.png" width="580" alt="" />
 
 3. Enter a Notification Address Name in the "Create Notification Address" box.
 
