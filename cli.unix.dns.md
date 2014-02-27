@@ -5,7 +5,7 @@ permalink: /cli/unix/dns/
 product: unix-cli
 
 ---
-# UNIX CLI DNS Examples
+# UNIX CLI DNS Examples for v12.12
 
 ___________________
 

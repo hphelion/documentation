@@ -5,7 +5,7 @@ permalink: /cli/unix/lbaas/
 product: unix-cli
 
 ---
-# UNIX CLI Load Balancer as a Service (LBaaS) Examples
+# UNIX CLI Load Balancer as a Service (LBaaS) Examples for v12.12
 
 ___________________
 
