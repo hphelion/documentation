@@ -350,21 +350,23 @@ After completing these tasks in the console, you receive machine-readable JSON o
 
 ####Create endpoints####
 
+
 1. Click "Manage Services" in the left-hand bar on the [HP Cloud Console landing page](https://horizon.hpcloud.com/landing), then "Activate" in the "Monitoring" row under the region you are setting up.
 
-     <img src="media/Monitoring1.png" width="580" alt="" />
+    <img src="media/Monitoring1.png" width="580" alt="" />
+
 
 2. Once activated, click "Monitoring" under the "Actions" heading on the [landing page](https://horizon.hpcloud.com/landing) to begin.
 
-     <img src="media/Monitoring2.png" width="580" alt="" />    
+    <img src="media/Monitoring2.png" width="580" alt="" />    
      
 3. Click "+Create Endpoint." **Note** Record the password for the generated endpoint in the pop-up display. It cannot be retrieved later."
 
-     <img src="media/Monitoring3CreateEndpoint.png" width="580" alt="" />    
+    <img src="media/Monitoring3CreateEndpoint.png" width="580" alt="" />    
      
 4. Click the Endpoint ID in the "Endpoints" screen to display the endpoint ID, the URI, the Queue, and the User Name.
 
-     <img src="media/Monitoring5EndpointDisplaybox.png" width="580" alt="" />
+    <img src="media/Monitoring5EndpointDisplaybox.png" width="580" alt="" />
 
 
 ####Create subscriptions to endpoints####
