@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Cloud OS for Moonshot: Backing Up Your Cloud"
+title: "HP Cloud OS for Moonshot: Backup and Restore"
 permalink: /cloudos/moonshot/manage/backup-process/
 product: moonshot
 
@@ -19,7 +19,7 @@ PageRefresh();
 
 <p style="font-size: small;"> <a href="/cloudos/moonshot/manage/image-builder">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage">&#9650; UP</a> | NEXT &#9654; </p>
 
-# HP Cloud OS for Moonshot: Backing Up Your Cloud # {#moon-image-builder}
+# HP Cloud OS for Moonshot: Backup and Restore # {#moon-image-builder}
 
 HP Cloud OS for Moonshot is an enterprise ready product used to manage a Moonshot Chassis, discover Moonshot Servers from the managed Moonshot Chassis, and provision the given workload based on Moonshot Servers capabilities such as static web, online gaming, and such. It also enables the Cloud Administrator to set up multiple project sharing across the discovered Moonshot Servers.
 
@@ -144,7 +144,7 @@ Use the following basic steps to backup an HP Cloud OS for Moonshot Management H
 2. Enable an SSH login to the hypervisor.
 3. Login to the hypervisor and copy the XSIBackup script file to the newly added datastore.
 4. Execute the command:
-    <pre>xsibackup "backup-point=/vmfs/volumes/bkup "backup-type=custom "backup-vms=Admin,Ctrl,Bm</pre>
+    <pre>xsibackup --backup-point=/vmfs/volumes/bkup --backup-type=custom --backup-vms=Admin,Ctrl,Bm</pre>
 
 <ul style="margin-left:20px;">
 <li>backup-point<br />
