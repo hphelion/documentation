@@ -46,6 +46,7 @@ You can use the default network to deploy HP Public Cloud compute instances (vir
 ###Create a network### {#Createanetwork}
 
 1. Login to HP Public Cloud with your username and password.
+
 2. On the HP Public Cloud console interface, click "Project," on the left-side bar then "Networks" under "Manage Networks."
 
     <img src="media/CreateaNetworkImage1.png" width="580" alt="" />
@@ -373,6 +374,10 @@ After completing these tasks in the console, you receive machine-readable JSON o
 
 1. Click "Subscriptions" under "Manage Monitoring" in the left-hand bar.
 
+4. Click "Edit Rules" next to the new security group under "Actions" in the right-hand navigation to add security group rules. 
+
+    <img src="media/CreateSubscription.png" width="580" alt="" />
+
 2. Click "+Create Subscription" in the upper-right corner of the "Subscriptions" page.
 
 3. Select an Enpoint ID to subscribe to from the drop-down menu in the "Create Subscription" box.
@@ -382,6 +387,8 @@ After completing these tasks in the console, you receive machine-readable JSON o
 5. Select an Instance from the drop-down menu in the same box.
 
 6. Click "Create Subscription" in the lower-right of the "Create Subscription" box.
+
+    <img src="media/SubscriptionSelect.png" width="580" alt="" />
 
 
 ####Create notification addresses for subscriptions####
