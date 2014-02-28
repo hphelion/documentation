@@ -5,7 +5,7 @@ permalink: /cli/unix/install/
 product: unix-cli
 
 ---
-# HP Cloud UNIX CLI Installation
+# HP Cloud UNIX CLI Installation for v12.12
 
 Before you can begin working with the UNIX CLI, you have to install the package (of course!).  The instructions below work for Ubuntu, MacOS X, and CentOS installations.  Take a look at the [HP Cloud Unix CLI - Release Notes](/cli/unix/release-notes) for the latest features.
 
@@ -56,3 +56,15 @@ Its recommended that you uninstall a previous version prior to upgrading. To uni
 
         gem uninstall hpcloud
 
+
+##Related topics
+
+* [Account Configuration](/cli/unix/configuration)
+* [Advanced Account Management](/cli/unix/account-management)
+* [Compute Examples](/cli/unix/compute)
+* [Object Storage Examples](/cli/unix/object-storage)
+* [CDN Examples](/cli/unix/cdn)
+* [Block Storage Examples](/cli/unix/block-storage)
+* [Volume Management](/block-storage/volume)
+* [DNS Examples](/cli/unix/dns)
+* [CLI Reference](/cli/unix/reference)

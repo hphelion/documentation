@@ -5,7 +5,7 @@ permalink: /cli/unix/compute/
 product: unix-cli
 
 ---
-# UNIX CLI Compute Examples
+# UNIX CLI Compute Examples for v12.12
 
 <iframe src="http://player.vimeo.com/video/37689112?title=0&amp;byline=0&amp;portrait=0" width="580" height="420" frameborder="0"> </iframe>
 
@@ -358,3 +358,16 @@ To remove or release an existing address:
 
     $ hpcloud addresses:remove "11.11.11.11"
     Removed address '11.11.11.11'.
+
+
+##Related topics
+
+* [Installation](/cli/unix/install)
+* [Account Configuration](/cli/unix/configuration)
+* [Advanced Account Management](/cli/unix/account-management)
+* [Object Storage Examples](/cli/unix/object-storage)
+* [CDN Examples](/cli/unix/cdn)
+* [Block Storage Examples](/cli/unix/block-storage)
+* [Volume Management](/block-storage/volume)
+* [DNS Examples](/cli/unix/dns)
+* [CLI Reference](/cli/unix/reference)

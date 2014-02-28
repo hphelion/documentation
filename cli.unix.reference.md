@@ -5,6 +5,31 @@ permalink: /cli/unix/reference/
 product: unix-cli
 
 ---
+<<<<<<< HEAD
+=======
+#HP Cloud UNIX CLI References for v12.12
+
+_________________________________________
+
+###Important Notice###
+
+On November 4, 2013, the UNIX CLI was moved into its End-of-Life (EOL) Cycle process toward final deprecation. Please be aware that this does not mean that the UNIX CLI is "going away", but simply that HP Cloud is relinquishing its ownership of this CLI and, instead, making it available on the [HPCloud Github](https://github.com/hpcloud/unix_cli) repository. We encourage our existing customers to eventually consider migrating to the OpenStackClient (Unified) CLIs. As such, during this 6-month transition timeframe, HP Cloud will be dedicating engineering efforts around the OpenStackClient CLI as the primary Unified CLI of choice for development around your OpenStack cloud services.
+
+We wanted to ensure you were aware of the changes that may affect you during this 6-month transition time:
+
++ The UNIX CLI has moved to the HP Cloud Github repository
+
+  + In order to encourage development by the community, HP Cloud is sharing it with the community as open source, hosted on [https://github.com/hpcloud/unix_cli](https://github.com/hpcloud/unix_cli). 
+  + However, [links to 12.12 and 13.5 UNIX CLI downloads](/cli/unix/#downloads), and all documentation, are still currently available on docs.hpcloud.com, as usual.
++ Bugs will be addressed
+
+  + Although the CLI has moved into the open source community, showstoppers and significant defects will be examined and addressed by the HP Cloud SDK/CLI team on a case-by-case basis.
+
+HP Cloud has contributed the Unix CLI back to the open source community, and you can get support, access the documentation, and download the source code [here](https://github.com/hpcloud/unix_cli).
+
+_________________________________________
+
+>>>>>>> 49c5d761eeaa24c4465d1b6b32304309ff0d3668
 Below you can find a full reference of supported UNIX command-line interface (CLI) commands. The commands are alphabetized.  You can also use the <font face="Courier">hpcloud help [<em>command</em>]</font> tool (where <em>command</em> is the name of the command on which you want help, for example <font face="Courier">account:setup</font>) to display usage, description, and option information from the command line.
 
 Many of the commands support a `--debug` option to print verbose trace.  This trace may help you diagnose problems if the CLI is having difficulty communicating with the servers.
@@ -6441,3 +6466,14 @@ List the volumes on server `myServer` for availability zone `az-2.region-a.geo-1
     hpcloud volumes:server myServer -z az-2.region-a.geo-1
 
 
+##Related topics
+
+* [Installation](/cli/unix/install)
+* [Account Configuration](/cli/unix/configuration)
+* [Advanced Account Management](/cli/unix/account-management)
+* [Compute Examples](/cli/unix/compute)
+* [Object Storage Examples](/cli/unix/object-storage)
+* [CDN Examples](/cli/unix/cdn)
+* [Block Storage Examples](/cli/unix/block-storage)
+* [Volume Management](/block-storage/volume)
+* [DNS Examples](/cli/unix/dns)

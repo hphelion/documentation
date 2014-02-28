@@ -6,7 +6,7 @@ product: unix-cli
 categories: cli linux compute servers configure personality
 tags: cli linux compute personality
 ---
-#UNIX CLI: Creating servers with custom Personality#
+#UNIX CLI: Creating servers with custom Personality v12.12#
 
 
 You can use the Unix command-line interface (CLI) to create custom pre-configured servers with the [`servers:add`](/cli/unix/reference#servers:add) personality option.  The argument to the `--personality` option is a directory that contains the files you want to add to the newly created server.  The files should be stored in the directory as if the directory was the root file system of the server.  For example if you had a directory:

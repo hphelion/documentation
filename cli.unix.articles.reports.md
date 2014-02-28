@@ -6,7 +6,7 @@ product: unix-cli
 categories: cli linux object store compute reports
 tags: cli linux object store compute reports
 ---
-#UNIX CLI: Generating custom reports#
+#UNIX CLI: Generating custom reports v12.12#
 
 You can use the Unix command-line interface (CLI) for automating custom report generation.  Nearly all CLI reports support the `-c` (columns) and `-d` (delimiter) options which allow you to create your own reports and to pipe (`|`) these reports to other commands or import the report data into programs such as Excel.
 

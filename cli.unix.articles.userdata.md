@@ -6,7 +6,7 @@ product: unix-cli
 categories: cli linux compute servers configure user data
 tags: cli linux compute user data
 ---
-#UNIX CLI: Creating servers with custom user data#
+#UNIX CLI: Creating servers with custom user data v12.12#
 
 
 You can use the Unix command-line interface (CLI) to create custom pre-configured servers with the [`servers:add`](/cli/unix/reference#servers:add) user data option.  The argument to the `--userdata` option is a file name that contains the configuration.  The format of the configuration data is described in the [CloudInit](https://help.ubuntu.com/community/CloudInit) site.

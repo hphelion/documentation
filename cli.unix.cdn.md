@@ -5,7 +5,7 @@ permalink: /cli/unix/cdn/
 product: unix-cli
 
 ---
-# UNIX CLI CDN Examples
+# UNIX CLI CDN Examples for v12.12
 
 This page gives you a few examples of how to perform various CDN tasks using the HP Cloud service.  This page discusses the following tasks:
 
@@ -61,3 +61,16 @@ To remove an existing CDN-enabled container:
 
     $ hpcloud cdn:containers:remove demorama2
     Removed container 'demorama2' from the CDN.
+
+
+##Related topics
+
+* [Installation](/cli/unix/install)
+* [Account Configuration](/cli/unix/configuration)
+* [Advanced Account Management](/cli/unix/account-management)
+* [Compute Examples](/cli/unix/compute)
+* [Object Storage Examples](/cli/unix/object-storage)
+* [Block Storage Examples](/cli/unix/block-storage)
+* [Volume Management](/block-storage/volume)
+* [DNS Examples](/cli/unix/dns)
+* [CLI Reference](/cli/unix/reference)

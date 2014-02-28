@@ -5,7 +5,7 @@ permalink: /cli/unix/dns/
 product: unix-cli
 
 ---
-# UNIX CLI DNS Examples
+# UNIX CLI DNS Examples for v12.12
 
 This page gives you a few examples of how to perform various DNS tasks using the HP Cloud service.
 
@@ -55,3 +55,14 @@ To remove a DNS domain:
     Removed dns 'cliadd4.com.'.
 
 
+##Related topics
+
+* [Installation](/cli/unix/install)
+* [Account Configuration](/cli/unix/configuration)
+* [Advanced Account Management](/cli/unix/account-management)
+* [Compute Examples](/cli/unix/compute)
+* [Object Storage Examples](/cli/unix/object-storage)
+* [CDN Examples](/cli/unix/cdn)
+* [Block Storage Examples](/cli/unix/block-storage)
+* [Volume Management](/block-storage/volume)
+* [CLI Reference](/cli/unix/reference)
