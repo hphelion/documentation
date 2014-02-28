@@ -407,8 +407,6 @@ After completing these tasks, you receive the metrics in JSON format at the loca
 
 ####Create Alarm Name####
 
-**Do we even go through the motions of explaining on this one??? Either way, we need to say that either they can't set it up or point to a supplement doc that explains how they can get monitoring functionality manually along with how to set up reading JSON**
-
 1. Click "Alarms" under "Manage Monitoring" in the left-hand bar.
 
 2. Click "+Create Alarm" in the upper-right hand of the "Alarms" page.
