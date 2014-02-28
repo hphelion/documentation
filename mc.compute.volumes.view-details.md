@@ -24,8 +24,8 @@ This page describes the volume details screen of the [management console](/mc/) 
 
 Before you can begin viewing the details of a volume, you must:
 
-* [Sign up for an HP Cloud compute account](https://horizon.hpcloud.com/register)
-* [Activate compute service on your account](https://horizon.hpcloud.com/landing/)
+* [Sign up for an HP Cloud compute account](https://account.hpcloud.com/signup)
+* Activate compute services on your account
 * [Launch the volume screen](/mc/compute/volumes/manage/)
 
 

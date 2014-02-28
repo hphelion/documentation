@@ -29,46 +29,59 @@ done
 AVAILABLE=$(cat ${AVAIL_FILE})
 
 #
+# Start the main index
+#
+INDEX="${SERVERS_DIR}/index.html"
+echo "<title>Docs QA Server</title>" >${INDEX}
+echo "<h1>Docs QA Server</h1>" >>${INDEX}
+
+#
 # Assign ports to anyone in need
 #
 USER=ubuntu
 HOST=15.185.109.123
 DEST=/var/www/
 DOCS=/var/www/docs
-DIR="$(basename $1)"
-cd "${SERVERS_DIR}/${DIR}"
-if [ -f port ]
-then
-  PORT=$(cat port)
-  echo "**** ${DIR} active ${PORT} ****"
-else
-  echo "**** ${DIR} active needs port ****"
-  read PORT ROL <<<"$AVAILABLE"
-  AVAILABLE=${ROL}
-  echo ${PORT} >port
-fi
-cd _site
-rsync --del -av . ${USER}@${HOST}:${DOCS}/${PORT}
-
-#
-# Start the main index
-#
-INDEX="${SERVERS_DIR}/index.html"
-echo "<title>Docs QA Server</title>" >${INDEX}
-echo "<h1>Docs QA Server</h1>" >>${INDEX}
-cd "${SERVERS_DIR}"
 for DIR
 in *
 do
-  if [ -f "${DIR}/port" ]
+  cd "${SERVERS_DIR}"
+  if [ -f "${DIR}" ]
   then
-    PORT=$(cat "${DIR}/port")
-    echo "**** ${DIR} active ${PORT} ****"
+    continue
+  fi
+  if [ -f "${DIR}/active" ]
+  then
+    cd "${DIR}"
+    if [ -f port ]
+    then
+      PORT=$(cat port)
+      echo "**** ${DIR} active ${PORT} ****"
+    else
+      echo "**** ${DIR} active needs port ****"
+      read PORT ROL <<<"$AVAILABLE"
+      AVAILABLE=${ROL}
+      echo ${PORT} >port
+    fi
+    cd _site
+    rsync --del -av . ${USER}@${HOST}:${DOCS}/${PORT}
     echo "<li><a href='http://${HOST}:${PORT}/'>${DIR}</a>" >>${INDEX}
+  else
+    if [ -f "${DIR}/port" ]
+    then
+      cd "${DIR}"
+      PORT=$(cat port)
+      echo "**** ${DIR} not active ${PORT} ****"
+      rm -rf *
+      rsync --del -av . ${USER}@${HOST}:${DOCS}/${PORT}
+      cd ..
+      rm -rf "${DIR}"
+    else
+      echo "**** ${DIR} not active ****"
+    fi
   fi
 done
 rcp ${INDEX} ${USER}@${HOST}:${DEST}
-
 echo '***********************************************'
 echo "http://${HOST}/"
 echo '***********************************************'

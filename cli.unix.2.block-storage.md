@@ -5,22 +5,7 @@ permalink: /cli/unix/2/block-storage/
 product: unix-cli
 
 ---
-# Unix CLI v13.5 Block Storage Examples
-
-If you are using v12.12, click [here](https://docs.hpcloud.com/cli/unix/block-storage) for documentation.
-___________________
-
-###Important Notice###
-
-On November 4, 2013, the UNIX CLI was moved into its End-of-Life Cycle process toward final deprecation. During this 6-month transition time:
-
-* New and existing customers are encouraged to migrate to the OpenStackClient (Unified) CLIs or the OpenStack command-line clients for each respective service
-* No new feature requests will be honored
-* Bug reports will be accepted
-
-HP Cloud has contributed the Unix CLI back to the open source community, and you can get support, access the documentation, and download the source code [here](https://github.com/hpcloud/unix_cli).
-
-_________________________________________
+# Unix CLI Block Storage Examples
 
 This page discusses the tasks below and shows some examples of how to perform them using HP Cloud:
 

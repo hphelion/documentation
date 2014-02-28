@@ -48,7 +48,7 @@ To connect to the HP Cloud Block Storage Service, follow these steps:
 
 **Note**: You must use the `:hp_access_key` parameter rather than the now-deprecated  `:hp_account_id` parameter you might have used in previous Ruby Fog versions.
 
-You can find the values the access key, secret key, through the [HP Public Cloud Console](https://horizon.hpcloud.com). Click the project menu and select *Account Info*.
+You can find the values the access key, secret key, and other values by clicking the [`API Keys`](https://console.hpcloud.com/account/api_keys) button in the [Console Dashboard](https://console.hpcloud.com/dashboard).
 
 ##Using the Model Abstraction## {#ModelLayer}
 

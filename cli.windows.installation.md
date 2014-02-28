@@ -5,7 +5,7 @@ permalink: /cli/windows/installation/
 product: win-cli
 
 ---
-# HP Cloud Environment CLI Software for Windows PowerShell Installation #
+# HP Cloud Environment CLI Software for Windows PowerShell Installation
 
 To get the HP Cloud Environment CLI Software for Windows PowerShell installed and running properly you must complete the following tasks:
 
@@ -84,9 +84,8 @@ Always use the `powershell.exe` appropriate for your OS. From the Windows comman
 
 ##Supply your Credentials## {#SupplyyourCredentials}
 
-The first time that you run the shell you must supply the access key, secret key, and tenant ID assigned during the registration process; You can find the values for these variables through the [HP Public Cloud Console](https://horizon.hpcloud.com). Click the project menu and select *Manage Access Keys* and *Account Info*.  You can also define the availability zone during the initial setup.**
+The first time that you run the shell you must supply the access key, secret key, and tenant ID that was assigned to you during the registration process; you can [find these in the system console](https://console.hpcloud.com/account/api_keys) by selecting `API Keys` on the dashboard or account page.  
 
-**Note: During a new configuration, 
 <img src="media/api_keys-2.jpg" width="580" height="471" alt="" />
 
 The shell detects that this is your first time logging in and prompts you for these items. 
