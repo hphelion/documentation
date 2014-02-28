@@ -338,34 +338,33 @@ Security group rules have three parts:
     
 ###Monitoring### {#Monitoring}
 
-Use HP Cloud Monitoring to ascertain system health and track resource metrics. You can use the HP Public Cloud Console to create:
+Use HP Cloud Monitoring to ascertain system health and track resource metrics. Create the following in the HP Public Cloud Console to define the metrics you want to gather, where you want them sent, and configure an alarm that sends them:
 
-* Endpoints that specify metrics to be gathered
-* Subscriptions to endpoints
-* Notification addresses for subscriptions
-* Alarm name, which identifies the notification method
-* Alarm expression (**alarm expression is built off long strings - right now we don't have an alarm expression, so we can't get information. Need to decide how to address this in this document or developer team needs to remove that from console. Is that even possible practically or can we deviate from Horizon in our presentation of console?**
+* An endpoint that specifies the metrics to gather
+* Subscriptions that specify which metrics to stream to an endpoint
+* Notification addresses to receive email and SMS alarm messages
+* Alarms to define cnonditions that trigger end-user notification  
 
+After completing these tasks, you receive the metrics in JSON format at the locations you specified when an alarm is triggered. The JSON-format metrics are streamed over an [AMQP](http://www.amqp.org/about/what) socket.
 
-After completing these tasks in the console, you receive machine-readable JSON output. (**create supplemental doc we can link to from here on alternatives for reading output?? Get Eric's input.**)
+####To begin:####
+1. Click "Manage Services" in the lef-hand bar on the [HP Cloud Console landing page](https://horizon.hpcloud.com/landing), then "Activate" in the "Monitoring" row under the region you are setting up.
 
-####Create endpoints####
-
-
-1. Click "Manage Services" in the left-hand bar on the [HP Cloud Console landing page](https://horizon.hpcloud.com/landing), then "Activate" in the "Monitoring" row under the region you are setting up.
-
-    <img src="media/Monitoring1.png" width="580" alt="" />
-
+<img src="media/Monitoring1.png" width="580" alt="" /> 
 
 2. Once activated, click "Monitoring" under the "Actions" heading on the [landing page](https://horizon.hpcloud.com/landing) to begin.
 
     <img src="media/Monitoring2.png" width="580" alt="" />    
+
+
+####Create endpoints####
+
      
-3. Click "+Create Endpoint." **Note** Record the password for the generated endpoint in the pop-up display. It cannot be retrieved later.
+1. Click "+Create Endpoint." **Note** Record the password for the generated endpoint in the pop-up display. It cannot be retrieved later. If you lose the password, click the "Reset Password" button under "Actions" on the "Endpoints" page.
 
     <img src="media/Monitoring3CreateEndpoint.png" width="580" alt="" />    
      
-4. Click the Endpoint ID in the "Endpoints" screen to display the endpoint ID, the URI, the Queue, and the User Name.
+2. Click the Endpoint ID in the "Endpoints" screen to display the endpoint ID, the URI, the Queue, and the User Name.
 
     <img src="media/Monitoring5EndpointDisplaybox.png" width="580" alt="" />
 
@@ -373,10 +372,6 @@ After completing these tasks in the console, you receive machine-readable JSON o
 ####Create subscriptions to endpoints####
 
 1. Click "Subscriptions" under "Manage Monitoring" in the left-hand bar.
-
-4. Click "Edit Rules" next to the new security group under "Actions" in the right-hand navigation to add security group rules. 
-
-    <img src="media/CreateSubscription.png" width="580" alt="" />
 
 2. Click "+Create Subscription" in the upper-right corner of the "Subscriptions" page.
 
