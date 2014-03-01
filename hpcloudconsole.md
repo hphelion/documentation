@@ -364,7 +364,7 @@ After completing these tasks, you receive the metrics in JSON format at the loca
 
     <img src="media/Monitoring3CreateEndpoint.png" width="580" alt="" />    
      
-2. Click the Endpoint ID in the "Endpoints" screen to display the endpoint ID, the URI, the Queue, and the User Name.
+2. Click the endpoint ID in the "Endpoints" screen to display the endpoint ID, the URI, the queue, and the user name.
 
     <img src="media/Monitoring5EndpointDisplaybox.png" width="580" alt="" />
 
@@ -375,11 +375,11 @@ After completing these tasks, you receive the metrics in JSON format at the loca
 
 2. Click "+Create Subscription" in the upper-right corner of the "Subscriptions" page.
 
-3. Select an Endpoint ID to subscribe to from the drop-down menu in the "Create Subscription" box.
+3. Select an endpoint ID to subscribe to from the drop-down menu in the "Create Subscription" box.
 
-4. Select the Namespace of the metrics to receive from the drop-down menu in the same box.
+4. Select the namespace of the metrics to receive from the drop-down menu.
 
-5. Select an instance from the drop-down menu in the same box.
+5. Select an instance from the drop-down menu.
 
 6. Click "Create Subscription" in the lower-right of the "Create Subscription" box.
 
