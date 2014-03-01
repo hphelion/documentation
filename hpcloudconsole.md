@@ -345,7 +345,7 @@ Use HP Cloud Monitoring to ascertain system health and track resource metrics. C
 * Notification addresses to receive email and/or SMS alarm messages
 * Alarms to define conditions that trigger end-user notification  
 
-After completing these tasks, you receive the metrics in JSON format at the locations you specified when an alarm is triggered. The JSON-format metrics are streamed over an [AMQP](http://www.amqp.org/about/what) socket. Select the tool of your choice to create graphic representations of the metrics.
+After completing these tasks, you receive the metrics in JSON format at the locations you specified when an alarm is triggered. The metrics are streamed over an [AMQP](http://www.amqp.org/about/what) socket. Select the tool of your choice to create graphical representations of the metrics.
 
 ####Begin:####
 1. Click "Manage Services" in the left-hand bar on the [HP Cloud Console landing page](https://horizon.hpcloud.com/landing), then "Activate" in the "Monitoring" row under the region you are setting up.
@@ -360,7 +360,7 @@ After completing these tasks, you receive the metrics in JSON format at the loca
 ####Create endpoints####
 
      
-1. Click "+Create Endpoint." You can create only one, total. **Note** Record the password for the generated endpoint in the pop-up display. It cannot be retrieved later. If you lose the password, click the "Reset Password" button under "Actions" on the "Endpoints" page.
+1. Click "+Create Endpoint." You can create only one, total. **Note**: Record the password for the generated endpoint in the pop-up display. It cannot be retrieved later. If you lose the password, click the "Reset Password" button under "Actions" on the "Endpoints" page.
 
     <img src="media/Monitoring3CreateEndpoint.png" width="580" alt="" />    
      
@@ -394,7 +394,7 @@ After completing these tasks, you receive the metrics in JSON format at the loca
 
     <img src="media/Notification1.png" width="580" alt="" />
 
-3. Enter a Notification Address Name in the "Create Notification Address" box.
+3. Enter a notification address name in the "Create Notification Address" box.
 
 4. Select "Email" or "SMS" from the "Type" drop-down menu.
 
