@@ -342,13 +342,13 @@ Use HP Cloud Monitoring to ascertain system health and track resource metrics. C
 
 * An endpoint that specifies the metrics to gather
 * Subscriptions that specify which metrics to stream to an endpoint
-* Notification addresses to receive email and SMS alarm messages
-* Alarms to define cnonditions that trigger end-user notification  
+* Notification addresses to receive email and/or SMS alarm messages
+* Alarms to define conditions that trigger end-user notification  
 
 After completing these tasks, you receive the metrics in JSON format at the locations you specified when an alarm is triggered. The JSON-format metrics are streamed over an [AMQP](http://www.amqp.org/about/what) socket.
 
-####To begin:####
-1. Click "Manage Services" in the lef-hand bar on the [HP Cloud Console landing page](https://horizon.hpcloud.com/landing), then "Activate" in the "Monitoring" row under the region you are setting up.
+####Begin:####
+1. Click "Manage Services" in the left-hand bar on the [HP Cloud Console landing page](https://horizon.hpcloud.com/landing), then "Activate" in the "Monitoring" row under the region you are setting up.
 
 <img src="media/Monitoring1.png" width="580" alt="" /> 
 
@@ -360,7 +360,7 @@ After completing these tasks, you receive the metrics in JSON format at the loca
 ####Create endpoints####
 
      
-1. Click "+Create Endpoint." **Note** Record the password for the generated endpoint in the pop-up display. It cannot be retrieved later. If you lose the password, click the "Reset Password" button under "Actions" on the "Endpoints" page.
+1. Click "+Create Endpoint." You can create only one, total. **Note** Record the password for the generated endpoint in the pop-up display. It cannot be retrieved later. If you lose the password, click the "Reset Password" button under "Actions" on the "Endpoints" page.
 
     <img src="media/Monitoring3CreateEndpoint.png" width="580" alt="" />    
      
@@ -375,11 +375,11 @@ After completing these tasks, you receive the metrics in JSON format at the loca
 
 2. Click "+Create Subscription" in the upper-right corner of the "Subscriptions" page.
 
-3. Select an Enpoint ID to subscribe to from the drop-down menu in the "Create Subscription" box.
+3. Select an Endpoint ID to subscribe to from the drop-down menu in the "Create Subscription" box.
 
 4. Select the Namespace of the metrics to receive from the drop-down menu in the same box.
 
-5. Select an Instance from the drop-down menu in the same box.
+5. Select an instance from the drop-down menu in the same box.
 
 6. Click "Create Subscription" in the lower-right of the "Create Subscription" box.
 
@@ -398,22 +398,41 @@ After completing these tasks, you receive the metrics in JSON format at the loca
 
 4. Select "Email" or "SMS" from the "Type" drop-down menu.
 
-5. Enter an address in the "Address" box. For SMS, use the E.164 for international telephone numbers, which requires a "+" followed by the country code, then the regional number. Currently, only US phone numbers are supported. 
+5. Enter an address in the "Address" box. For SMS, use the E.164 for international telephone numbers, which requires a "+" followed by the country code, then the regional number. **Note**: Currently, only US phone numbers are supported. 
 
 6. Click "Create Notification Address."
 
     <img src="media/Notification2.png" width="580" alt="" />
 
+7. Click "Verify Address" under "Actions" in the row for the address you just created.
 
-####Create Alarm Name####
+    <img src="media/Notification3.png" width="580" alt="" />
+
+8. Enter the Verification Code you received at your specified notification address from the monitoring service in the "Verify Notification Address." 
+
+9. Click "Verify Address."
+
+    <img src="media/Notification4.png" width="580" alt="" />
+
+10. Click "Create Notification Method" under "Actions" on the "Notifications" page.
+
+    <img src="media/Notification5.png" width="580" alt="" />
+
+
+11. Enter a notification method name in the "Name" box, a type, and an email address, and click "Create Notification Method."
+
+
+####Create alarm name####
 
 1. Click "Alarms" under "Manage Monitoring" in the left-hand bar.
 
 2. Click "+Create Alarm" in the upper-right hand of the "Alarms" page.
 
+    <img src="media/Alarms1" width="580" alt="" />
+
 3. Enter Alarm name in "Create Alarm" box.
 
-4. **So next step, "Expression" is moot at this point since we don't have an alarm expression? Or is this something that could be covered as supplemental information in a doc we'd link to from here?**
+4. Enter an Alarm Expression as indicated under "Description" in the "Create Alarm" box.  [Click](http://docs.hpcloud.com/api/v13/monitoring/#AlarmExpressions-jumplink-span) to see the "Alarm Expressions" section for setup information or use the link in the interface. When the expression you set is true, it triggers a notification.
      
 
 ###Organize and manage HP Cloud Access## {#Identity}
