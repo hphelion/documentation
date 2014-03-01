@@ -345,7 +345,7 @@ Use HP Cloud Monitoring to ascertain system health and track resource metrics. C
 * Notification addresses to receive email and/or SMS alarm messages
 * Alarms to define conditions that trigger end-user notification  
 
-After completing these tasks, you receive the metrics in JSON format at the locations you specified when an alarm is triggered. The JSON-format metrics are streamed over an [AMQP](http://www.amqp.org/about/what) socket.
+After completing these tasks, you receive the metrics in JSON format at the locations you specified when an alarm is triggered. The JSON-format metrics are streamed over an [AMQP](http://www.amqp.org/about/what) socket. Select the tool of your choice to create graphic representations of the metrics.
 
 ####Begin:####
 1. Click "Manage Services" in the left-hand bar on the [HP Cloud Console landing page](https://horizon.hpcloud.com/landing), then "Activate" in the "Monitoring" row under the region you are setting up.
@@ -428,11 +428,17 @@ After completing these tasks, you receive the metrics in JSON format at the loca
 
 2. Click "+Create Alarm" in the upper-right hand of the "Alarms" page.
 
-    <img src="media/Alarms1" width="580" alt="" />
+    <img src="media/Alarms1/png" width="580" alt="" />
 
-3. Enter Alarm name in "Create Alarm" box.
+3. Enter alarm name in "Create Alarm" box.
 
-4. Enter an Alarm Expression as indicated under "Description" in the "Create Alarm" box.  [Click](http://docs.hpcloud.com/api/v13/monitoring/#AlarmExpressions-jumplink-span) to see the "Alarm Expressions" section for setup information or use the link in the interface. When the expression you set is true, it triggers a notification.
+4. Enter an alarm expression as indicated under "Description" in the "Create Alarm" box.  [Click](http://docs.hpcloud.com/api/v13/monitoring/#AlarmExpressions-jumplink-span) to see the "Alarm Expressions" section for setup information or use the link in the interface. When the expression you set is true, it triggers a notification.
+
+5. Select an alarm action name and click "Create Alarm."
+
+   
+    <img src="media/Alarms2.png" width="580" alt="" />
+
      
 
 ###Organize and manage HP Cloud Access## {#Identity}
