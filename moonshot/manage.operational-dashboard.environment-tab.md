@@ -205,7 +205,7 @@ Specifying incorrect proxy host settings might cause some features to not work c
 <tr style="background-color: white; color: black;">
 <td> <b>Non-Proxy Hosts</b> </td>
 <td> Specify addresses that should not use proxy servers (for Controller/Compute Nodes' admin and os_sdn networks, IP range). 
-Each network needs to be separated by a bar "|". For example: <code>10.*|192.*|localhost</code>. </td>
+Each network needs to be separated by a bar "|". For example: <code>10.*|192.*|127.0.*|localhost</code>. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">

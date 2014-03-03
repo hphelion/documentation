@@ -281,8 +281,8 @@ To create a standalone load balancer:
 
 <li> Download two debian packages, <code> haproxy-vm </code> and <code> loadbalancer-api </code> to the provisioned load balancer instance.
 <ul>
-<li> <code> wget http://&lt;admin node's public ip address>:8091/ubuntu_dvd/extra/files/loadbalancer/haproxy-vm_1.20.0000_all.deb </code> </li> 
-<li> <code> wget http://&lt;admin node's public ip address>:8091/ubuntu_dvd/extra/files/loadbalancer/loadbalancer-api_1.20.0000_all.deb </code> </li> 
+<li> <code> wget https://&lt;admin node's public ip address>:8091/ubuntu_dvd/extra/files/loadbalancer/haproxy-vm_1.20.0000_all.deb </code> </li> 
+<li> <code> wget https://&lt;admin node's public ip address>:8091/ubuntu_dvd/extra/files/loadbalancer/loadbalancer-api_1.20.0000_all.deb </code> </li> 
 </ul>
 
 <p>This step requires knowledge of the public IP address for the admin node. Use the ipconfig command to determine the IP address.</p> 
@@ -295,8 +295,8 @@ To create a standalone load balancer:
 
 <li> Modify /etc/bash.bashrc by adding the following two lines. HP recommends that you use IP addresses, because DNS is not always available.
 <ul>
-<li> <code> export http_proxy=http://&lt;proxy server ip address>:8080/  </code> </li>
-<li> <code> export https_proxy=http://&lt;proxy server ip address>:8080/ </code> </li>
+<li> <code> export http_proxy=https://&lt;proxy server ip address>:8080/  </code> </li>
+<li> <code> export https_proxy=https://&lt;proxy server ip address>:8080/ </code> </li>
 </ul>
 </li>
 

@@ -29,11 +29,11 @@ HP Cloud OS for Moonshot features an interactive REST API environment: the HP Cl
 properties by reading the well-organized reference details. Submit each request using the provided forms and immediately 
 view the server response. The app is installed on your Cloud Controller. The documentation app's URLs per service are:
 
-* Eve: http://my_server:21051/?token=&lt;keystone-token-value>
+* Eve: https://my_server:21051/?token=&lt;keystone-token-value>
 
-* Focus: http://my_server:21061/?token=&lt;keystone-token-value>
+* Focus: https://my_server:21061/?token=&lt;keystone-token-value>
 
-* Graffiti: http://my_server:21071/?token=&lt;keystone-token-value>
+* Graffiti: https://my_server:21071/?token=&lt;keystone-token-value>
 
 On your cloud, replace &lt;my_server> with the your Cloud Controller node's IP or DNS value. 
 See the next topic for the steps to generate or copy the Keystone v2 token used in REST calls.

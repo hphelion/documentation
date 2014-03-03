@@ -375,7 +375,7 @@ In addition to the information presented already in this topic, please review th
  * On the <b>Edit Network</b> dialog, you will need to specify your Subnet, Netmask, and Router (mandatory) IP values.
  * On the <b>Edit Network Ranges</b> dialog, you will need to specify your Node Type, IPV4 Start Address, and IPV4 End Address values.
 
-* <b>Note</b>: You will be able to skip the Edit options for the Admin Node. 
+* <b>Note</b>: You will be able to skip the Edit options for the Admin Network. 
  
 * In <b>Cloud</b> > <b>Manage Clouds</b> > <b>Create Cloud</b>, you will only need to enter a <b>Name</b> for your cloud. You can use default values for other options; however, plan ahead 
 to specify new, non-default passwords for the Admin user, Arch user, and Trash user. 

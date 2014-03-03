@@ -769,7 +769,7 @@ Will be necessary to check why the problem is happening; normally will be relate
 Check if the controller node can access the image server, for that SSH to the server and execute this command:
 
 <pre>
-curl -O http://server.ip/image.file
+curl -O https://server.ip/image.file
 </pre>
 
 If the curl didn't worked this mean the server can't access the image, probably a proxy issue or no connectivity. Fix that and try again.
@@ -810,7 +810,7 @@ The solution for this problem is to:
 2. Upload the image to /tmp/.
 3. Change the permission of the file to 777 (chmod 777 /tmp/&lt;image.name>).
 4. Move the file to the folder <code>tftpboot</code>.
-5. Create the image pointing to this URL (http://&lt;admin.node.ip>:8091/&lt;image.name>).
+5. Create the image pointing to this URL (https://&lt;admin.node.ip>:8091/&lt;image.name>).
 
 
 ### Problem: Unable to launch more instances

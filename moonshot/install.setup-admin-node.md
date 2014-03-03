@@ -35,11 +35,12 @@ This topic explains how to install the Admin Node, which launches the Operationa
 You can install the Admin Node only on a virtual machine. Use the following steps to create a virtual machine in an existing or a new hypervisor 
 infrastructure:
  
-1.	Configure the hypervisor host's networking as shown in the Deployment Architecture. The host must provide connectivity to the Admin Node (virtual machine) on an isolated private network and also to all the bare-metal nodes' port eth0. The Admin Node must also have connectivity to a routable network for Internet access. 
+1.	Configure the hypervisor host's networking as shown in the Deployment Architecture. The host must provide connectivity to the Admin Node (virtual machine) on an isolated private network and also to all the nodes' port eth0. The Admin Node must also have connectivity to a routable network for Internet access. 
 
 2.	Create a virtual machine (Admin Node) with the hardware configuration suggested in Cloud Infrastructure section. The following configuration must be reviewed during this step: 
  * Ensure the Admin Node's primary NIC is bridged or connected to the admin network and the second NIC is bridged or connected to a routable network for internet access. 
- * On a KVM based VM, for the disk configuration, ensure you set it to the IDE/SCSI type as this is the supported type.  **Note:** If your hypervisor is KVM, ensure the virt type is set to KVM. 
+ * On a KVM based VM, for the disk configuration, ensure you set it to the IDE/SCSI type as this is the supported type.  
+ <!-- **Note:** If your hypervisor is KVM, ensure the virt type is set to KVM. --> 
 
 3. Download the HP Cloud OS for Moonshot ISO to the host's local file system or data store. 
 
@@ -88,7 +89,7 @@ To launch the Operational Dashboard:
   
   192.*;10.*;localhost;127.0.*
 
-2. In the browser, enter **http://192.168.124.10:9000** to launch the Operational Dashboard user interface. 
+2. In the browser, enter **https://192.168.124.10:9000** to launch the Operational Dashboard user interface. 
 IMPORTANT: Use Google Chrome or Mozilla Firefox.
 
 3. On the Environment tab, review the types of prerequisites, servers, connections, and networks in your environment.

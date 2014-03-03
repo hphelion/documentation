@@ -17,6 +17,7 @@ PageRefresh();
 </script>
 
 
+
 <p style="font-size: small;"> <a href="/cloudos/moonshot/manage/image-builder">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage">&#9650; UP</a> | NEXT &#9654; </p>
 
 # HP Cloud OS for Moonshot: Backup and Restore # {#moon-image-builder}
@@ -27,9 +28,11 @@ This document describes how to backup and restore HP Cloud OS for Moonshot, spec
 
 * Administration Node
 
+
     The HP Cloud OS for Moonshot Administration Node (Admin Node) hosts the Operational Dashboard that deploys private Cloud Infrastructure environments by network booting the managed virtual servers, which are typically Controller Node and Baremetal Hosts. 
 
 * Controller Node
+
 
     While each service can be individually deployed, HP Cloud OS for Moonshot groups these services into distinct sets for ease of architectural description: 
 
@@ -64,6 +67,7 @@ If you choose to design and implement a file-based solution, you will encounter 
 
 **Note:** We recommend you use any enterprise backup/restore solution that supports hot backup. We do not recommend that you implement a cold backup policy because it involves downtime of the private cloud environment.
 
+
 ### Recommended backup schedule {#rec-backup-sched}
 The following table shows our backup frequency recommendations for HP Cloud OS for Moonshot Management Host.
 
@@ -83,6 +87,7 @@ The following table shows our backup frequency recommendations for HP Cloud OS f
 <tr/>
 
 </table>
+
 
 
 #### Backup strategy {#backup-strategy}
@@ -122,6 +127,7 @@ Once you have successfully completed the powering off steps, **power on** the HP
 7. Wait until the state of the Baremetal host changes to **Deployed**.
 
 Your HP Cloud OS for Moonshot Management host is now up and running.
+
 
 
 ## Example tools for backup and restore {#example-backup-tools}

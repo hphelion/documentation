@@ -205,6 +205,10 @@ Next, perform the steps in the following AKI, ARI, and QCOW2-QEMU sections.
 
 </li>
 
+<li> From the <b>Kernel Image</b> drop-down list, select the corresponding kernel image.
+
+<li> From the <b>RAM Disk Image</b> drop-down list, select the corresponding RAM disk image.
+
 <li> The <b>CPU Architecture</b> drop-down list displays <b>x86_64</b> by default. The HP Moonshot hardware supports the above specification.
 
 <li>In the <b>Minimum Disk</b> box,  specify a minimum size required to boot the image. If no input is entered, the minimum value defaults to 0.
@@ -215,9 +219,7 @@ Next, perform the steps in the following AKI, ARI, and QCOW2-QEMU sections.
 
 <li> Click the checkbox next to <b>Protected</b>.  This makes the image read-only.
 
-<li> From the <b>Kernel Image</b> drop-down list, select the corresponding kernel image.
 
-<li> From the <b>RAM Disk Image</b> drop-down list, select the corresponding RAM disk image.
 
 <li> Click <b>Create Image</b>.  A message is displayed on successful creation. The image displays in the <b>Images</b> page of the Cloud Tab.
 
@@ -502,7 +504,7 @@ By default, Details is the active tab.
 
 5. On the <b>Details</b> tab:
  * From the <b>Image</b> drop-down list, select the image.
- * From the <b>Availability Zone</b>, select the zone.
+ <!-- * From the <b>Availability Zone</b>, select the zone. --> 
  * In the <b>Instance Name</b> box, enter a name for the instance.
  * From the <b>Flavor</b> drop-down list, select the flavor.  In this case, it should be hp_moonshot_server or hp_moonshot_m300, depending on your cartridge server type.
  * In the <b>Instance Count</b> box, enter 1, or more than 1 if you intend to launch multiple instances.  Recommendation: for this initial post-install process, enter 1.

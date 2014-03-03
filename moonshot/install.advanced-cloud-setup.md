@@ -54,7 +54,7 @@ order specified in the [Apply Cloud Controller Install Modules](#apply-cloud-con
 
 To perform these tasks, you'll use a separate UI: the HP Cloud OS for Moonshot Installation Dashboard.  Its URL is:
 
-http://192.168.124.10:3000
+https://192.168.124.10:3000
 
 You should open the Installation Dashboard in Mozilla Firefox or Google Chrome.  
 
@@ -234,7 +234,7 @@ The best practice, though, is to create and apply the Nova proposal after all th
 
 To apply the install modules in Mozilla Firefox or Google Chrome:
 
-1. Open the HP Cloud OS for Moonshot Installation Dashboard at http://192.168.124.10:3000.
+1. Open the HP Cloud OS for Moonshot Installation Dashboard at https://192.168.124.10:3000.
 
 2. Select Barclamps > Cloud Infrastructure. The Cloud Infrastructure page displays all the install modules that are specific to the cloud infrastructure.
 
