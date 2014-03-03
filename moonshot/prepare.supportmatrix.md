@@ -300,18 +300,18 @@ Refer to the [HP Cloud OS for Moonshot Installation Guide](/cloudos/moonshot/ins
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td style="padding-left: 40px;"> Internet Explorer </td>
-<td> 11.0 or higher </td>
+<td style="padding-left: 40px;"> Microsoft Internet Explorer </td>
+<td> 11.0 and above </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td style="padding-left: 40px;"> Firefox </td>
-<td> 17 </td>
+<td style="padding-left: 40px;"> Mozilla Firefox </td>
+<td> 27 and above </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td style="padding-left: 40px;"> Chrome </td>
-<td> 26 </td>
+<td style="padding-left: 40px;"> Google Chrome </td>
+<td> 30 and above </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
