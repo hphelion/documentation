@@ -7,11 +7,9 @@ product: compute
 ---
 # HP Cloud Compute API#
 
-Surf on over to our [Compute API Reference](/api/compute) for lots of details on the HP compute service.  
+Surf on over to our [Compute API Reference](/api/compute) for lots of details on the HP compute service.  For a detailed overview of how to interact with the Compute REST API using cURL:
 
-<!-- For a detailed overview of how to interact with the Compute REST API using cURL:
-
-<iframe src="http://player.vimeo.com/video/37391923?title=0&amp;byline=0&amp;portrait=0" width="640" height="464" frameborder="0"> </iframe> -->
+<iframe src="http://player.vimeo.com/video/37391923?title=0&amp;byline=0&amp;portrait=0" width="640" height="464" frameborder="0"> </iframe>
 
 **Note**: For security purposes, when you create a server, it is automatically assigned a floating, non-removable IP address.
 

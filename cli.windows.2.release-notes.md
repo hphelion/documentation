@@ -1,13 +1,13 @@
 ---
 layout: default
 title: "Release Notes for the HP Cloud Environment CLI Software for Windows PowerShell"
-permalink: /cli/windows/2/release-notes/
-product: win-2-cli
+permalink: /cli/windows/release-notes/
+product: win-cli
 
 ---
 # Release Notes for the HP Cloud Environment CLI Software for Windows PowerShell
 
-These are the release notes for the HP Cloud environment CLI software for Windows PowerShell.  The current release number for the [HP Cloud environment CLI software for Windows PowerShell](/cli/windows) is version 1.3.5.7, released on 11/15/2013.  These release notes contain the following information:
+These are the release notes for the HP Cloud environment CLI software for Windows PowerShell.  The current release number for the [HP Cloud environment CLI software for Windows PowerShell](/cli/windows) is version 1.3.3.9, released on 4/22/2013.  These release notes contain the following information:
 
 * [Release 1.3.3.9 Features](#v1339)
 * [Release 1.3.1.9 Features](#v1319)
@@ -16,19 +16,7 @@ These are the release notes for the HP Cloud environment CLI software for Window
 * [Release 1.2.0.6 Features](#v1206)
 * [Release 1.2.0.1 Features](#v1201)
 
-[Please download the latest version of the HP Cloud environment CLI software for Windows PowerShell (Version 1.3.5.7)](/file/WinCLI-1.3.5.7.zip)!
-
-<!--##Release 1.3.5.7 Features## {#v1357}
-
-This release was made available on 11/15/2013 and contains the following new features:
-
-* List
-
-##Known Issues##
-
-* List
--->
-
+[Please download the latest version of the HP Cloud environment CLI software for Windows PowerShell (Version 1.3.3.9)](/file/WinCLI-1.3.3.9.zip)!
 
 ##Release 1.3.3.9 Features## {#v1339}
 

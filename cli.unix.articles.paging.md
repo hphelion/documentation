@@ -6,21 +6,7 @@ product: unix-cli
 categories: cli linux unix
 tags: report paging
 ---
-#UNIX CLI: Modifying report paging#
-
-___________________
-
-###Important Notice###
-
-On November 4, 2013, the UNIX CLI was moved into its End-of-Life Cycle process toward final deprecation. During this 6-month transition time:
-
-* New and existing customers are encouraged to migrate to the OpenStackClient (Unified) CLIs or the OpenStack command-line clients for each respective service
-* No new feature requests will be honored
-* Bug reports will be accepted
-
-HP Cloud has contributed the Unix CLI back to the open source community, and you can get support, access the documentation, and download the source code [here](https://github.com/hpcloud/unix_cli).
-
-_________________________________________
+#UNIX CLI: Modifying report paging v12.12#
 
 You can use the two command-line interface (CLI) configuration settings `report_page_length` and `storage_page_length` to change the way your reports are generated:
 
@@ -40,8 +26,3 @@ To change the number of records for a particular read to a value other than the 
 Setting `storage_page_open` to a very small value creates more read calls to the server, and slows down report generation. 
 
 In general, we suggest you leave these values set to their defaults.
-
-
-##For more information## {#articles}
-
-For more tips and How-tos on using your UNIX command-line interface (CLI), see [UNIX CLI: Articles on to use the UNIX CLI](/cli/unix/articles/).

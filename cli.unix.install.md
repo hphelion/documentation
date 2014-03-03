@@ -5,22 +5,7 @@ permalink: /cli/unix/install/
 product: unix-cli
 
 ---
-# HP Cloud UNIX CLI Installation
-
-___________________
-
-###Important Notice###
-
-On November 4, 2013, the UNIX CLI was moved into its End-of-Life Cycle process toward final deprecation. During this 6-month transition time:
-
-* New and existing customers are encouraged to migrate to the OpenStackClient (Unified) CLIs or the OpenStack command-line clients for each respective service
-* No new feature requests will be honored
-* Bug reports will be accepted
-
-HP Cloud has contributed the Unix CLI back to the open source community, and you can get support, access the documentation, and download the source code [here](https://github.com/hpcloud/unix_cli).
-
-_________________________________________
-
+# HP Cloud UNIX CLI Installation for v12.12
 
 Before you can begin working with the UNIX CLI, you have to install the package (of course!).  The instructions below work for Ubuntu, MacOS X, and CentOS installations.  Take a look at the [HP Cloud Unix CLI - Release Notes](/cli/unix/release-notes) for the latest features.
 
@@ -57,7 +42,7 @@ To install the UNIX CLI software, follow these steps:
 
         hpcloud account:setup
 
-You can find the values for these variables on through the [HP Public Cloud Console](https://horizon.hpcloud.com). Click the project menu and select *Manage Access Keys* and *Roles and API Endpoints*.  
+You can find the values you need for your setup by clicking the [`API Keys`](https://console.hpcloud.com/account/api_keys) button in the [Console Dashboard](https://console.hpcloud.com/dashboard).  
 
 <img src="media/api_keys-2.jpg" width="580" height="471" alt="" />
 
@@ -71,3 +56,15 @@ Its recommended that you uninstall a previous version prior to upgrading. To uni
 
         gem uninstall hpcloud
 
+
+##Related topics
+
+* [Account Configuration](/cli/unix/configuration)
+* [Advanced Account Management](/cli/unix/account-management)
+* [Compute Examples](/cli/unix/compute)
+* [Object Storage Examples](/cli/unix/object-storage)
+* [CDN Examples](/cli/unix/cdn)
+* [Block Storage Examples](/cli/unix/block-storage)
+* [Volume Management](/block-storage/volume)
+* [DNS Examples](/cli/unix/dns)
+* [CLI Reference](/cli/unix/reference)

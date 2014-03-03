@@ -5,21 +5,7 @@ permalink: /cli/unix/block-storage/
 product: unix-cli
 
 ---
-# Unix CLI Block Storage Examples
-
-___________________
-
-###Important Notice###
-
-On November 4, 2013, the UNIX CLI was moved into its End-of-Life Cycle process toward final deprecation. During this 6-month transition time:
-
-* New and existing customers are encouraged to migrate to the OpenStackClient (Unified) CLIs or the OpenStack command-line clients for each respective service
-* No new feature requests will be honored
-* Bug reports will be accepted
-
-HP Cloud has contributed the Unix CLI back to the open source community, and you can get support, access the documentation, and download the source code [here](https://github.com/hpcloud/unix_cli).
-
-_________________________________________
+# Unix CLI Block Storage Examples for v12.12
 
 This page gives you a few examples of how to perform various block storage tasks using the HP Cloud service.  This page discusses the following tasks:
 
@@ -97,3 +83,16 @@ To remove the kweller volume:
     Removed volume 'kweller'.
 
 For complete information on all the UNIX CLI block storage commands (and all the other UNIX CLI HP Cloud service commands), please take a look at the [HP Cloud UNIX CLI Reference](/cli/unix/reference).
+
+
+##Related topics
+
+* [Installation](/cli/unix/install)
+* [Account Configuration](/cli/unix/configuration)
+* [Advanced Account Management](/cli/unix/account-management)
+* [Compute Examples](/cli/unix/compute)
+* [Object Storage Examples](/cli/unix/object-storage)
+* [CDN Examples](/cli/unix/cdn)
+* [Volume Management](/block-storage/volume)
+* [DNS Examples](/cli/unix/dns)
+* [CLI Reference](/cli/unix/reference)

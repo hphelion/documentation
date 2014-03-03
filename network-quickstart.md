@@ -126,7 +126,7 @@ In order to associate an instance with a network, the network much exist. HP Pub
 
 However, if you want to define the IP addresses for your network and instances, you can create a new network using the [HP Public Cloud Console](#CreateNetworkUI) or [HP Cloud 13.5 CLI](CreateNetworkCLI).
 
-#### Using the HP Public Cloud Console #### {#CreateNetworkUI}
+#### Using the HP Public Cloud Console to create a network and subnet#### {#CreateNetworkUI}
 
 To create a network and subnet, use the following steps:
 
@@ -168,7 +168,9 @@ To see a graphic display of your network setup, click **Network Topology** under
 
    <br><img src="media/compute-network-topology-create-crop.png"  alt="" />
 
-#### Create a network and subnet #### {#CreateNetworkCLI}
+#### Using the CLI to create a network and subnet #### {#CreateNetworkCLI}
+
+Once you [activate](#compute) the compute service, in order to use the HP Cloud 13.5 CLI to configure the network, you need to [install the CLI](http://docs.hpcloud.com/cli/nova). 
 
 To create a network and subnet, use the following steps:
 
@@ -215,6 +217,75 @@ To see a graphic display of your network setup, login to the [Horizon Console](h
    <br><img src="media/compute-network-topology-create-crop.png"  alt="" />
 
 
+### Connecting to a network ### {#ConnectNetwork}
+
+After the new network and subnet are created, you need to connect the network to the router. A router and network connect through an *interface* from the router to the network.
+
+#### Using the HP Public Cloud to connect to a network #### {#ConnectNetworkUI}
+
+To connect a network to a router, use the following steps:
+
+1. Login to the [Horizon Console](https://horizon.hpcloud.com/).
+
+2. Select the [Routers tab](#NetworkTab) under the Project section.
+
+3. Click the router name on the **Routers** tab.
+
+4. Click "Add Interface" on the far-right of the "Router Overview" tab. 
+
+    <img src="media/compute-network-associate-router.png" width="580" alt="" />
+
+5. In the **Subnet** list, select the network you want to connect with. 
+
+6. Optionally, enter an IP address in the **IP Address** field or allow a default IP address to be assigned.  
+
+	**Notes:**
+	- The default interface IP address is the external gateway for the subnet, and is usually the best choice unless you are setting up a more complicated connection. 
+	- If you specify an IP address, the address must belong to the subnet in the drop-down menu. 
+
+7. Click **Add Interface**. The router and network are now connected, similar to the following image:
+
+    <img src="media/compute-network-assoc-router.png" width="580" alt="" />
+
+
+#### Using the CLI to connect to a network #### {#ConnectNetworkUI}
+
+To connect a network to a router, use the following steps:
+
+1. Launch a command line window or UNIX shell on a system configured to access the availability zone where you want to create the new network.
+
+2. Execute the `neutron router-interface` command to create the network:
+
+	neutron router-interface-add ROUTER_ID SUBNET_ID
+
+	Where
+
+		ROUTER_ID - The name or ID of the router.
+
+		SUBNET_ID - The name or ID of the subnet.
+
+
+### Create a new server instance ###
+
+After the network is configured, you can create a server instance and attach the instance to the new network.
+
+
+#### Using the HP Public Cloud Console to create an instance ####
+
+
+
+#### Using the CLI to create an instance ####
+
+**Note:** These instructions use the HP Cloud v13.5 CLI on an Ubuntu server instance. You may, of course, choose to use another instance type and still use these directions as a general guide for setting up your VPN.
+ 
+Set up a new Ubuntu server instance&mdash;separate from your other VPC gateway machines and using the command line. Test the setup of this new server.
+
+1. Install Python-NovaClient and Python-NeutronClient on this server. See the [Knowledge Base](https://community.hpcloud.com/article/cloud-135-cli-installation-instructions) for instructions.
+2. Verify that you can access the Nova and Neutron APIs for your tenant from this Python Client by running the `nova list` and `neutron port-list` commands.
+
+
+
+
 <!--
 #### Create a port #### {#CreatePortUI}
 
@@ -226,9 +297,6 @@ When you create a network, ports are automatically created. You can edit the por
 
 2. Select the [Networks tab](#NetworkTab) under the Project section.
 
--->
-
-<!-- Cannot create router without deleting -->
 
 #### Create a router #### {#SpecifyIP}
 
@@ -253,84 +321,11 @@ When you create a network, ports are automatically created. You can edit the por
 
    <br><img src="media/compute-network-topology-new-crop.png"  alt="" />
 
-
-### Using the Cloud 13.5 CLI ### {#CLI}
-
-Once you [activate](#compute) the compute service, you need to install the [HP Cloud 13.5 CLI](http://docs.hpcloud.com/cli/nova). 
-
-These instructions use the HP Cloud v13.5 CLI on an Ubuntu server instance. You may, of course, choose to use another instance type and still use these directions as a general guide for setting up your VPN.
-
-- [Create a network and subnet](#CreateNetworkCLI) 
-- [Create a port](#CreatePortCLI)
-- [Create a router and attach the router to a network](#CreateRouterCLI)
--  [Attach the router to the subnet](#AttachRouterCLI)
-
-For the full reference of supported HP Cloud CLI commands, see . 
-
-In this guide we use these parameters:
-
-$EXT_NET = Ext-Net   
-$CIDR = 10.2.0.0/24 (example range)   
-$NETWORK_ID = the id of the created network   
-$SUBNET_ID = the id of the created subnet   
-$TENANT_ID = the id of the tenant   
-$PORT_ID1 = id of port 1 (vm-gateway)     
-$PORT_ID2 = id of port 2 (vm-test)    
-$VM_GATEWAY = address of the VPN VM gateway (e.g., 10.2.0.21)   
-
-For more details on the Nova and Neutron commands please see the [HP Cloud Networking](https://docs.hpcloud.com/api/v13/networking/) and [Compute](https://docs.hpcloud.com/api/v13/compute/) API specifications.
-
-#### Create a new Ubuntu server instance ####
- 
-Set up a new Ubuntu server instance&mdash;separate from your other VPC gateway machines and using the command line. Test the setup of this new server.
-
-1. Install Python-NovaClient and Python-NeutronClient on this server. See the [Knowledge Base](https://community.hpcloud.com/article/cloud-135-cli-installation-instructions) for instructions.
-2. Verify that you can access the Nova and Neutron APIs for your tenant from this Python Client by running the `nova list` and `neutron port-list` commands.
+-->
 
 
-#### Create a network and subnet #### {#CreateNetworkCLI}
-**Note**: Skip this step if you are using the network and subnet provided with your service activation.
-
-In the example we use **vpn_network** for the name of the network.
-
-    neutron net-create vpn_network
-    neutron subnet-create $NETWORK_ID $CIDR 
 
 
-#### Create ports #### {#CreatePortCLI}
-
-Create two ports and disable the port security on the VPN gateway port. Use this new gateway machine in the SRX-VPC set up for the VPN connection.  
-
-**NOTE:** disabling port security will disable the use of all security groups on the port.
-	
-    neutron port-create $NETWORK_ID --port_security_enabled False --name $PORT_ID1
-    neutron port-create $NETWORK_ID --name $PORT_ID2
-
-Ports can be viewed with **neutron port-list** command.
-
-    neutron port-list 	
-    +--------------------------------------+------+-------------------+-------------------------------------------------------------------------------------+
-    | id                                   | name | mac_address       | fixed_ips                                                                           |
-    +--------------------------------------+------+-------------------+-------------------------------------------------------------------------------------+
-    | baf13412-2641-4183-9533-de8f5b91444c |      | fa:16:3e:f6:ec:c7 | {"subnet_id": "15a09f6c-87a5-4d14-b2cf-03d97cd4b456", "ip_address": "10.2.0.21"}  |
-    | f7a08fe4-e79e-4b67-bbb8-a5002455a493 |      | fa:16:3e:97:e0:fc | {"subnet_id": "15a09f6c-87a5-4d14-b2cf-03d97cd4b456", "ip_address": "10.2.0.33"} |
-    +--------------------------------------+------+-------------------+-------------------------------------------------------------------------------------+
-
-
-#### Create the router and attach it to the external network #### {#CreateRouterCLI}   
-
-**Note**: Skip this step if you are using the router provided with your service activation.
-
-Create the router **vpn_router** and set its gateway to be the external network.
-
-	neutron router-create vpn_router
-	neutron router-gateway-set vpn_router $EXT_NET
-
-#### Attach the router to the subnet #### {#AttachRouterCLI} 
-
-**Note**: Skip this step if you are using the default configuration provided with your service activation.
-
-    neutron router-interface-add vpn_router $SUBNET_ID  
 
 
 ##For further information## {#ForFurtherInformation}

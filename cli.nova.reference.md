@@ -19,7 +19,7 @@ Add a floating IP address to a server
 ###Syntax
 `nova add-floating-ip <server> <address>`
 
-**servernova remove-security-group <server> <secgroup>
+**server**
 :  Name or ID of a server
 
 **address**
@@ -30,10 +30,10 @@ Add the floating IP address 15.185.105.97 to instance ID 694541:
 
     nova add-floating-ip 694541 15.185.105.97
 
-##add-secgroup## {#add-secgroup}
+##add-security-group## {#add-security-group}
 Adds a security group to an instance
 ###Syntax
-`nova add-secgroup <server> <secgroup>`
+`nova add-security-group <server> <secgroup>`
 
 **server**
 :  Name or ID of a server
@@ -44,7 +44,7 @@ Adds a security group to an instance
 ###Example
 Add the security group `default' to instance ID 694541:
 
-    nova add-secgroup 694541 default
+    nova add-security-group 694541 default
 
 
 ##backup-create## {#backup-create}
@@ -681,10 +681,10 @@ Remove floating IP value `15.185.105.97` from server `694541`:
     nova remove-floating-ip 694541 15.185.105.97
 
 
-##remove-secgroup## {#remove-secgroup}
+##remove-security-group## {#remove-security-group}
 Removes a security group from an instance
 ###Syntax
-`nova remove-secgroup <server> <secgroup>`
+`nova remove-security-group <server> <secgroup>`
 
 **server**
 :  Name or ID of the server.
@@ -695,7 +695,7 @@ Removes a security group from an instance
 ###Example
 Remove security group default from server `703829`:
 
-     nova remove-secgroup 703829 default
+     nova remove-security-group 703829 default
 
 
 ##rename## {#rename}

@@ -5,23 +5,9 @@ permalink: /cli/unix/object-storage/
 product: unix-cli
 
 ---
-# Unix CLI Object Storage Examples
+# Unix CLI Object Storage Examples for v12.12
 
-___________________
-
-###Important Notice###
-
-On November 4, 2013, the UNIX CLI was moved into its End-of-Life Cycle process toward final deprecation. During this 6-month transition time:
-
-* New and existing customers are encouraged to migrate to the OpenStackClient (Unified) CLIs or the OpenStack command-line clients for each respective service
-* No new feature requests will be honored
-* Bug reports will be accepted
-
-HP Cloud has contributed the Unix CLI back to the open source community, and you can get support, access the documentation, and download the source code [here](https://github.com/hpcloud/unix_cli).
-
-_________________________________________
-
-<!-- <iframe src="http://player.vimeo.com/video/32534203?title=0&amp;byline=0&amp;portrait=0" width="580" height="420" frameborder="0"> </iframe> -->
+<iframe src="http://player.vimeo.com/video/32534203?title=0&amp;byline=0&amp;portrait=0" width="580" height="420" frameborder="0"> </iframe>
 
 This page gives you a few examples of how to perform various object storage tasks using the HP Public Cloud.  This page discusses the following tasks:
 
@@ -285,3 +271,16 @@ Once the account is set up, use the `migrate` command and specify the source acc
     Copied chewy.htm => :disney
 
 Another article on [Object Store Migration](/cli/unix/articles/migration).
+
+
+##Related topics
+
+* [Installation](/cli/unix/install)
+* [Account Configuration](/cli/unix/configuration)
+* [Advanced Account Management](/cli/unix/account-management)
+* [Compute Examples](/cli/unix/compute)
+* [CDN Examples](/cli/unix/cdn)
+* [Block Storage Examples](/cli/unix/block-storage)
+* [Volume Management](/block-storage/volume)
+* [DNS Examples](/cli/unix/dns)
+* [CLI Reference](/cli/unix/reference)

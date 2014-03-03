@@ -5,7 +5,7 @@ permalink: /cli/nova/install/
 product: nova-cli
 
 ---
-# HP Cloud v12.12 Python Novaclient CLI Installation#
+# HP Cloud Python Novaclient CLI Installation#
 
 Before you can begin working with the Novaclient CLI software, you have to install the package (of course!).  The instructions below work for Ubuntu, MacOS X, and CentOS installations. <!-- Take a look at the [HP Cloud Python Novaclient CLI - Release Notes](/cli/nova/release-notes) for the latest features.-->
 
@@ -25,9 +25,9 @@ This page provides you with the installation information for the following opera
 
 ##Installation Prerequisites## {#Installation}
 
-To install the Python Novaclient CLI on CentOS, you must first download and install [the dependency software (in TAR format)](https://pypi.python.org/packages/source/P/PrettyTable/prettytable-0.5.tar.gz)--follow the instructions in the `setup.py` file included with the package.  (We also assume that you have Python already installed!)
+To install the Python Novaclient CLI on CentOS, you must first download and install [the dependency software (in TAR format)](https://docs.hpcloud.com/file/nova-stuff.tar)--follow the instructions in the `setup.py` file included with the package.  (We also assume that you have Python already installed!)
 
-**Note**: We recommend installing the NovaClient on your local system so you always have it available, rather than installing it on an instance which you may want tceo terminate later.
+**Note**: We recommend installing the NovaClient on your local system so you always have it available, rather than installing it on an instance which you may want to terminate later.
 
 ##Ubuntu Installation## {#Ubuntu}
 
@@ -70,7 +70,7 @@ The installation procedure in this section is valid for Ubuntu versions 11.04, 1
         export NOVA_VERSION=1.1
         export NOVA_REGION_NAME=az-1.region-a.geo-1
         
-    Where the `USERNAME`, `PASSWORD`, and `TENANT_NAME` values are those you use to access the HP Cloud Management Console.  You can find the values for these variables on through the [HP Public Cloud Console](https://horizon.hpcloud.com). Click the project menu and select *Manage Access Keys* and *Account Info*.
+    Where the `USERNAME`, `PASSWORD`, and `TENANT_NAME` values are those you use to access the HP Cloud Management Console.  (You can find the values for these variable on your [API Keys](https://console.hpcloud.com/account/api_keys) page in the services console.)
 
     **Note**: The `NOVA_REGION_NAME` variable in this example is set to communicate with instances in the AZ1 availablilty zone.  To use other availability zones, insert AZ2 or AZ3 as the variable instead: `az-2.region-a.geo-1` or `az-3.region-a.geo-1`.
 
@@ -97,7 +97,7 @@ CentOS has both Python 2.6.6 and Python-Setuptools 0.1.10 installed by default. 
         
 3. Unpack the TAR file:
 
-        tar -zxvf python-novaclient_2.6.8-17.tar.gz
+        tar -zxvf python-novaclient_2.6.8-1hp17.tar.gz
         
 4. Change directory to the build directory:
 
@@ -113,7 +113,7 @@ CentOS has both Python 2.6.6 and Python-Setuptools 0.1.10 installed by default. 
         
 7. Download the `python-prettytables` package:
 
-        wget https://pypi.python.org/packages/source/P/PrettyTable/prettytable-0.5.tar.gz --no-check-certificate
+        wget https://docs.hpcloud.com/file/nova-stuff.tar --no-check-certificate
         
 8. Unpack the TAR file:
 
@@ -146,7 +146,7 @@ CentOS has both Python 2.6.6 and Python-Setuptools 0.1.10 installed by default. 
         export NOVA_VERSION=1.1
         export NOVA_REGION_NAME=az-1.region-a.geo-1
         
-Where the `USERNAME`, `PASSWORD`, and `TENANT_NAME` values are the ones you use to access the HP Public Cloud console.  You can find the values for these variables on through the [HP Public Cloud Console](https://horizon.hpcloud.com). Click the project menu and select *Manage Access Keys* and *Account Info*.
+Where the `USERNAME`, `PASSWORD`, and `TENANT_NAME` values are the ones you use to access the HP Public Cloud console.  (You can find the values for these variable on your [API Keys](https://console.hpcloud.com/account/api_keys) page in the services console.)
 
 **Note**: The `NOVA_REGION_NAME` variable in this example is set to communicate with instances in the AZ1 availablilty zone.  To use other availability zones, insert AZ2 or AZ3 as the variable instead: `az-2.region-a.geo-1` or `az-3.region-a.geo-1`.
 
@@ -158,7 +158,7 @@ Where the `USERNAME`, `PASSWORD`, and `TENANT_NAME` values are the ones you use 
         
 You can now access your `nova` commands.  For a full list of commands, surf on over to our [CLI Reference page](/cli/nova/reference).
 
-<!-- For information on how to install on versions of Ubuntu prior to Release 6.2, please check ou the [Linux Installation knowledge base article](https://community.hpcloud.com/article/python-novaclient-linux-installation).-->
+For information on how to install on versions of Ubuntu prior to Release 6.2, please check ou the [Linux Installation knowledge base article](https://community.hpcloud.com/article/python-novaclient-linux-installation).
 
 <!--##Fedora Installation## {#Fedora}
 
@@ -382,7 +382,7 @@ To configure variables for the Python NovaClient, follow these steps:
         NOVA_PASSWORD     | Your Password
         NOVA_VERSION      | 1.1
     
-   **Note**: You can find the values for these variables on through the [HP Public Cloud Console](https://horizon.hpcloud.com).
+   **Note**: You can retrieve the value for your tenant name from the `[API Keys](https://console.hpcloud.com/account/api_keys)` in the [Management Console](https://console.hpcloud.com).
 
 8. In the `Environment Variables` dialog click `OK`.
 

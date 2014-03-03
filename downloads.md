@@ -22,18 +22,14 @@ Here's what we have for you:
 ##Command-line Interface (CLI) Packages##
 
 ###UNIX CLI### {#UNIXCLIInstall}
-* [Openstack Unified CLI Download and Documentation](https://wiki.openstack.org/wiki/OpenStackClient)
-* [HP Unix CLI Installation package, Version 1.9.1](/file/hpcloud-1.9.1.gem) (Available for download until May 5th, 2014)
+* [Installation package, Version 1.9.1](/file/hpcloud-1.9.1.gem)
 * [Overview page](/cli/unix)
 * [Release Notes](/cli/unix/release-notes)
 
 ###Windows CLI### {#WinCLIInstall}
-* [Installation package, Version 1.3.3.9](/file/WinCLI-1.3.3.9.zip)  (for software version 12.12)
-* [Installation package, Version 1.3.5.7](/file/WinCLI-1.3.5.7.zip)  (for software version 13.5)
+* [Installation package, Version 1.3.3.9](/file/WinCLI-1.3.3.9.zip)
 * [Overview page](/cli/windows)
 * [Release Notes](/cli/windows/release-notes)
-
-**Note**: See the [HP Cloud version 13.5 overview(/version-overview/) page for information on software versions.
 
 ###Python NovaClient### {#PythonNovaClient}
 * [Installation package, Version 2.6.8-17](/file/python-novaclient_2.6.8-17.tar.gz)
@@ -42,12 +38,9 @@ Here's what we have for you:
 ##Language Bindings##
 
 ###Ruby Fog Bindings### {#RubyFogBindingsInstall}
-
-We have moved all our Ruby Fog bindings to the Fog Community; please continue to use them and contribute back as well!
-
-* [Installation page](http://rubygems.org/gems/fog)
-* [Overview page](https://github.com/fog/fog/blob/master/lib/fog/hp/README.md) 
-* [Ruby Fog Community Documentation](http://fog.io/)
+* [Installation package, Version 0.0.20](/file/hpfog-0.0.20.gem)
+* [Overview page](/bindings/fog) 
+* [Release Notes](/bindings/fog/release-notes)
 
 ###Java/Clojure jclouds Bindings### {#jcloudsBindingsInstall}
 * [Installation page](http://www.jclouds.org/documentation/userguide/installation-guide) (This is the [jclouds.org](http://www.jclouds.org) installation page)
