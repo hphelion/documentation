@@ -36,7 +36,7 @@ HP Public Cloud compute activation comes with a default configuration that inclu
 
 * A network 
 * A subnet
-* A router connecting the subnets to the Internet
+* A router for connecting the subnets to the Internet
 * A security group with basic server options
 
 You can use the default network to deploy HP Public Cloud compute virtual servers, or modify the network configuration using the HP Public Console or the HP Cloud 13.5 CLI.
@@ -99,9 +99,16 @@ You can use the default network or customize the default network using either th
 HP Cloud Networking expands networking capabilities, allowing you to perform many tasks, including:
 
 - Viewing network and router details
-- Creating and deleting a network
-- Managing a subnet
-- Adding and deleting an interface to a router
+- [Creating a network](#Enabling)
+- [Creating a subnet](#CreateSubUI)
+- [Creating a port](#CreatePortUI)
+- [Creating a router](#AssignRouterUI)
+- [Assigning a router to a network](#AssignRouter)
+
+All of the procedures in this section require that you access the Networks or Routers tab in the Project section of the HP Public Cloud Console, <a name="NetworkTab">as shown</a>:
+
+   <br><img src="media/network-tab.png"  alt="" />
+
 
 You might need to modify the default network or create additional networks.  This page gives you some how-to's to use the [Horizon Cloud Console](#console) or [HP Cloud CLI for Windows PowerShell](#powershell) to create and configure networks, routers, and ports.  
 
@@ -113,26 +120,15 @@ If you have not previously created an account and activated the compute service 
 
 Make sure you activate a compute instance in HP Cloud version 13.5 to access the networking and VPN capabilities.
 
-### Using the Horizon Cloud Console ### {#console}
+### Creating a network ### {#CreateNetwork}
 
-You can use the Horizon Cloud Console to perform the following tasks:
+In order to associate an instance with a network, the network much exist. HP Public Cloud creates a default network when you activate a service. You can skip this step if you are using the network and subnet provided with your service activation.
 
-- [Create a network](#Enabling)
-- [Create a subnet](#CreateSubUI)
-- [Create a port](#CreatePortUI)
-- [Create a router](#AssignRouterUI)
-- [Assign a router to a network](#AssignRouter)
+However, if you want to define the IP addresses for your network and instances, you can create a new network using the [HP Public Cloud Console](#CreateNetworkUI) or [HP Cloud 13.5 CLI](CreateNetworkCLI).
 
-All of the procedures in this section require that you access the Networks or Routers tab in the Project section of the HP Public Cloud Console, <a name="NetworkTab">as shown</a>:
+#### Using the HP Public Cloud Console #### {#CreateNetworkUI}
 
-   <br><img src="media/network-tab.png"  alt="" />
-
-<!--
-#### Creating a network #### {#CreateNetworkUI}
-
-In order to associate an instance with a network, the network much exist. HP Public Cloud creates a default network when you activate a service. However, if you want to define 
-
-To create a network, use the following steps:
+To create a network and subnet, use the following steps:
 
 1. Login to the [Horizon Console](https://horizon.hpcloud.com/).
 
@@ -144,38 +140,82 @@ To create a network, use the following steps:
 4. On the **Network** tab, enter a name for the network  and leave the **Admin State** selected.  
 	<br><img src="media/network-fields.png"  alt="" />
 
-5. Click **Next** to configure a subnet for the network. Proceed with the following section.
--->
+5. Click **Next** to configure a subnet for the network. 
 
-#### Create a subnet #### {#CreateSubUI}
-
-HP Public Cloud creates a default network when you activate a service. However, if you want to define the 
-
-1. On the **Subnet** tab, enter the subnet name
+6. On the **Subnet** tab, enter the subnet name
 	<br><img src="media/network-fields-2.png"  alt="" />
 
-2. In the **Network Address** field enter a network address in Classless Inter-Domain Routing (CIDR) format: 192.168.0.0/24.
+7. In the **Network Address** field enter a network address in Classless Inter-Domain Routing (CIDR) format: 192.168.0.0/24.
 
-3. In the **IP Version** field, select IPv4 or IPv6, as appropriate.
+8. In the **IP Version** field, select IPv4 or IPv6, as appropriate.
 
-4. Leave the **Gateway IP** field blank to use the default value of the network address; for example, 192.168.0.1 for 192.168.0.0/24.
+9. Leave the **Gateway IP** field blank to use the default value for the gateway IP address; for example, 192.168.0.1 for 192.168.0.0/24.
 
-5. Clear the **Disable Gateway** box to use the default gaetway. 
- 
 6. Click **Next**. 
 
-7. On the **Subnet** tab, enter the subnet name
-	<br><img src="media/network-fields-2.png"  alt="" />
+10. On the **Subnet Details** tab, select Enable DHCP to.
+	<br><img src="media/network-fields-3.png"  alt="" />
+
+11. To create an allocation pool, enter the starting and ending IP addresses you want for your subnet in the text entry fields, in the format `192.168.1.10,192.168.1.120`.  
+
+12. To create a DNS Nameserver, enter the `IP Address` you want for your subnet in the text entry field.
+
+13. To create host routes, enter the `Destination CIDR` and `Next Hop` you want for your subnet in the text entry fields.  
+
+14. Click **Create**. 
+
+To see a graphic display of your network setup, click **Network Topology** under **Manage Network** in the left-hand navigation.  
+
+   <br><img src="media/compute-network-topology-create-crop.png"  alt="" />
+
+#### Create a network and subnet #### {#CreateNetworkCLI}
+
+To create a network and subnet, use the following steps:
+
+1. Launch a command line window or UNIX shell on a system configured to access the availability zone where you want to create the new network.
+
+2. Execute the `neutron net-create` command to create the network:
+
+    neutron net-create vpn_network
+
+	Where `vpn_network` is the name of the network.
+
+3. Execute the `neutron subnet-create` command to create the subnet:
+
+    neutron subnet-create ext-net  --allocation-pool start=FLOATING_IP_START,end=FLOATING_IP_END --gateway=EXTERNAL_INTERFACE_GATEWAY --enable_dhcp=False EXTERNAL_INTERFACE_CIDR 
+
+	Where:
+
+		NETWORK - Enter the network id or name this subnet belongs to. 
+		
+		CIDR - Enter the network address in Classless Inter-Domain Routing (CIDR) format to assign to the subnet, for example: 192.168.0.0/24.
+		
+		tenant-id - The tenent ID 
+		
+		name - Enter a name to assign to the subnet.
+        
+		gateway - Enter a private IP address to use as the gateway address.
+        
+		no-gateway 
+		
+		allocation-pool -  Enter the starting and ending IP addresses for your subnet in the format: start=IP_ADDR,end=IP_ADDR.
+		
+		host-route - Create a route table by entering destination CIDR and a Next Hop address you want for your subnet, use the format: `destination=CIDR,nexthop=IP_ADDR`
+		
+		dns-nameserver - Specify a DNS nameserver.
+		
+		disable-dhcp - Enter `FALSE` to enable DHCP or `TRUE` to disable DHCP.
+
+	The following example creates a subnet called `subnet1` with network address (10.0.0.0/24). The subnet is associated with the `vpn_network` network. DHCP is active and will use an IP address from the specified pool of addresses. 
+
+		neutron subnet-create netw1 10.0.0.0/24 --name subnet1 --enable_dhcp=false --allocation-pool start=192.168.0.32,end=192.168.0.63
+
+To see a graphic display of your network setup, login to the [Horizon Console](https://horizon.hpcloud.com/). Click **Network Topology** under **Manage Network** in the left-hand navigation.  
+
+   <br><img src="media/compute-network-topology-create-crop.png"  alt="" />
 
 
-9. The **Networks** screen displays your network name and associated subnets.
-
-    <img src="media/CreateaSubnetImage2.png" width="580" alt="" />
-
-10. To see a graphic display of your network setup, click "Network Topology" under "Manage Network" in the left-hand navigation.  
-
-    <img src="media/CreateaSubnetImage3.png" width="580" alt="" />
-
+<!--
 #### Create a port #### {#CreatePortUI}
 
 When you create a network, ports are automatically created. You can edit the ports  
@@ -186,6 +226,10 @@ When you create a network, ports are automatically created. You can edit the por
 
 2. Select the [Networks tab](#NetworkTab) under the Project section.
 
+-->
+
+<!-- Cannot create router without deleting -->
+
 #### Create a router #### {#SpecifyIP}
 
 1. Login to the [HP Public Cloud Console](https://horizon.hpcloud.com/).
@@ -193,12 +237,11 @@ When you create a network, ports are automatically created. You can edit the por
 2. Select the [Networks tab](#NetworkTab) under the Project section.
 
 
-
 #### Assign a router to an external network #### {#AssignRouterUI}
 
 1. Login to the [Horizon Console](https://horizon.hpcloud.com/).
 
-2. Select the [Routers tab](#NetworkTab) under the Project section.
+2. Select the [Routers tab](#RouterTab) under the Project section.
 
 3. On the Routers screen, locate the network which you want to rename.
 
