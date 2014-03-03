@@ -5,7 +5,7 @@ permalink: /cli/windows/help/
 product: win-cli
 
 ---
-# Windows CLI : Getting Help
+# Windows CLI : Getting Help #
 
 After module registration is complete you can view a list of available cmdlets and get detailed examples of their usage with a few commands.
 

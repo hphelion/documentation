@@ -38,8 +38,13 @@ So go ahead and jump right in and and start using the service yourself, you shou
 
 <!-- To help you get started with the service, we've got some introductory getting started material at our [Introduction to the HP Cloud Identity Service page](https://community.hpcloud.com/article/identity-service-introduction), and we've also provided you with a use case for [Migrating to the HP Cloud Identity Service](https://community.hpcloud.com/article/identity-service-change-guide).  And of course, if you want to jump right and start using the service yourself, you should go to the [Manage Console](https://console.hpcloud.com).  If you have any questions, try our [Forums](https://community.hpcloud.com) where you can learn from our own internal experts as well as other users in the HP Public Cloud community.-->
 
+HP Cloud currently offers two versions of our cloud&mdash;v12.12 and the latest v13.5. See the [Version Overview](/version-overview) page for a description of what's new in v13.5.
+
 ## API
-Do you need low level, raw REST API access to HP Identity Services?  Take a look at our [Identity Service API page](/api/identity) for both OpenStack and EC2 compatibility details.
+Do you need low level, raw REST API access to HP Identity Services?  Take a look at our Compute API page for the version of HP Cloud you are using: 
+
+* [**Identity Service API page for v13.5**](/api/v13/identity)
+* [**Identity Service API page for v12.12**](/api/identity)
 
 ## Bindings
 If you are looking for an easier to use, language-specific way of using HP Identity Services, check out our [Bindings section](/bindings).

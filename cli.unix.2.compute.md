@@ -5,7 +5,29 @@ permalink: /cli/unix/2/compute/
 product: unix-cli
 
 ---
-# UNIX CLI Compute Examples
+# UNIX CLI v13.5 Compute Examples
+
+If you are using v12.12, click [here](https://docs.hpcloud.com/cli/unix/compute) for documentation.
+___________________
+
+###Important Notice###
+
+On November 4, 2013, the UNIX CLI was moved into its End-of-Life (EOL) Cycle process toward final deprecation. Please be aware that this does not mean that the UNIX CLI is "going away", but simply that HP Cloud is relinquishing its ownership of this CLI and, instead, making it available on the [HPCloud Github](https://github.com/hpcloud/unix_cli) repository. We encourage existing customers to consider migrating to the OpenStackClient (Unified) CLIs. As such, during this 6-month transition timeframe, HP Cloud will be dedicating engineering efforts around the OpenStackClient CLI as the primary Unified CLI of choice for development around your OpenStack cloud services.
+
+We wanted to ensure you were aware of the changes that may affect you during this 6-month transition time:
+
++ The UNIX CLI has moved to the HP Cloud Github repository
+
+  + In order to encourage development by the community, HP Cloud is sharing it with the community as open source, hosted on [https://github.com/hpcloud/unix_cli](https://github.com/hpcloud/unix_cli).
+ 
+  + However, [links to 12.12 and 13.5 UNIX CLI downloads](#downloads), and all documentation, are still currently available on docs.hpcloud.com, as usual.
+
++ Bugs will be addressed
+
+  + Although the CLI has moved into the open source community, showstoppers and significant defects will be examined and addressed by the HP Cloud SDK/CLI team on a case-by-case basis.
+
+HP Cloud has contributed the Unix CLI back to the open source community, and you can get support, access the documentation, and download the source code [here](https://github.com/hpcloud/unix_cli).
+_________________________________________
 
 This page addresses perfoming compute tasks using HP Cloud with examples for the following command types:
 
@@ -142,7 +164,7 @@ To add a new key pair and save it to a file, run:
     $ hpcloud keypairs:add mykeypair2 --output
     Created key pair 'mykeypair2' and saved it in a file at '/home/terry/.hpcloud/keypairs/mykeypair2.pem'.
 
-For additional information, see [Accessing Servers with Managed Key Pairs](/cli/unix/articles/managedkeypairs/).
+For additional information, see [Accessing Servers with Managed Key Pairs](/cli/unix/articles/managedkeypairs).
 
 To add a new key pair by importing public key data, run:
 

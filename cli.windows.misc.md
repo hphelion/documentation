@@ -7,7 +7,8 @@ product: win-cli
 ---
 # Windows CLI: misc-features
 
-#HP-Cloud Object Storage Powershell Tutorial: Changing Response Formats
+#HP-Cloud Object Storage Powershell Tutorial: Changing Response Formats # 
+
 ##Changing Response Formats
 
 Each command that you issue through the Provider or through a cmdlet will write out the response returned from the server in an easy to understand, human readable format. For a command line tool, this is the behavior one would expect. The CLI can also reformat each response

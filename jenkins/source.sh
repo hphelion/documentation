@@ -5,10 +5,12 @@
 export TERM=xterm-256color
 source "$HOME/.rvm/scripts/rvm"
 rvm use ruby-1.9.2@docs
+CD=$(pwd)
 
 SERVERS_DIR=$(pwd)/servers
 mkdir -p ${SERVERS_DIR} 2>/dev/null || true
-git branch -r | grep -v HEAD | while read BRAN
+for BRAN
+in "$1"
 do
   BRANCH=$(echo ${BRAN} | sed -s 's,origin/,,')
   if [ "${BRANCH}" == "HEAD" ]
@@ -45,6 +47,7 @@ do
   cd documentation
   git checkout "${BRANCH}"
   git pull origin "${BRANCH}"
+  cp -f _config.yml "${DIR}/_config.yml"
   cd "${DIR}/content"
   rm -rf apihome
   git clone git@git.hpcloud.net:DevExDocs/apihome.git
@@ -59,6 +62,8 @@ do
   git checkout _layouts/page.html
   cd ${SERVERS_DIR}
   touch "${DIR}/active"
+  cd "$CD"
+  ./jenkins/sync.sh "$DIR"
 done
   
 exit 0

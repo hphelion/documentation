@@ -5,7 +5,7 @@ permalink: /cli/windows/commands/
 product: win-cli
 
 ---
-# HP Cloud Environment CLI Software for Windows PowerShell Non-Service Specific Commands
+# HP Cloud Environment CLI Software for Windows PowerShell Non-Service Specific Commands #
 
 The HP Cloud environment CLI software for Windows PowerShell commands (also sometimes called "cmdlets") allow you to access and control the HP Cloud services from your Windows command line.  There are commands that are specific to each type of service you are accessing--[compute](/cli/windows/compute), [object storage](/cli/windows/containers-and-folders), [CDN](/cli/windows/reference#CDN), and so on--as well as other commands that are not reliant on a particular service, or work across multiple different service types. 
 

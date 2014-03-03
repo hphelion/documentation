@@ -28,6 +28,19 @@ For your edification and delectation, we have FAQs in the following areas:
 
 ## UNIX CLI## {#UnixCLI}
 
+___________________
+
+###Important Notice###
+
+On November 4, 2013, the UNIX CLI was moved into its End-of-Life Cycle process toward final deprecation. During this 6-month transition time:
+
+* New and existing customers are encouraged to migrate to the OpenStackClient (Unified) CLIs or the OpenStack command-line clients for each respective service
+* No new feature requests will be honored
+* Bug reports will be accepted
+
+HP Cloud has contributed the Unix CLI back to the open source community, and you can get support, access the documentation, and download the source code [here](https://github.com/hpcloud/unix_cli).
+
+_________________________________________
 
 
 The questions we address in the UNIX CLI section of this FAQ are:
@@ -52,7 +65,7 @@ The questions we address in the UNIX CLI section of this FAQ are:
 
 
 
-Please surf on over to the [installation page](/cli/unix/install) for full installation information.
+Please surf on over to the [installation page](/cli/unix/2/install) for full installation information.
 
 
 
@@ -118,12 +131,7 @@ To uninstall the UNIX CLI, all you have to do is run the uninstall command:
 
 
 
-Plenty of places!  You might consider starting with the [Ruby Fog documentation](/bindings/fog) itself.  If what you're looking for isn't there, you can also try [our community forums](https://community.hpcloud.com/).  If you're still baffled, you can [open a support case](https://console.hpcloud.com/cases), or click the "Chat Now" icon in the upper-right corner of this page to chat with our support folks.  And of course, feel free to browse [our entire site](https://www.hpcloud.com/)!
-
-
-
-<!--I need the HTML for launching a support chat window-->
-
+Plenty of places!  You might consider starting with the [UNIX CLI documentation](/cli/unix) itself.  If what you're looking for isn't there, you can also try [our community forums](https://community.hpcloud.com/).  
 
 
 ##Ruby Fog Bindings## {#RubyFogBindings}
@@ -196,7 +204,7 @@ To uninstall Ruby Fog, all you have to do is run the uninstall command:
 
 
 
-Plenty of places!  You might consider starting with the [Ruby Fog documentation](/bindings/fog) itself.  If what you're looking for isn't there, you can also try [our community forums](https://community.hpcloud.com/).  If you're still baffled, you can [open a support case](https://console.hpcloud.com/cases), or click the "Chat Now" icon in the upper-right corner of this page to chat with our support folks.  And of course, feel free to browse [our entire site](https://www.hpcloud.com/)!
+Plenty of places!  You might consider starting with the [Ruby Fog documentation](/bindings/fog) itself.  If what you're looking for isn't there, you can also try [our community forums](https://community.hpcloud.com/). 
 
 
 

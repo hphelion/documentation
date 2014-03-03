@@ -7,6 +7,20 @@ product: unix-cli
 ---
 # UNIX CLI DNS Examples for v12.12
 
+___________________
+
+###Important Notice###
+
+On November 4, 2013, the UNIX CLI was moved into its End-of-Life Cycle process toward final deprecation. During this 6-month transition time:
+
+* New and existing customers are encouraged to migrate to the OpenStackClient (Unified) CLIs or the OpenStack command-line clients for each respective service
+* No new feature requests will be honored
+* Bug reports will be accepted
+
+HP Cloud has contributed the Unix CLI back to the open source community, and you can get support, access the documentation, and download the source code [here](https://github.com/hpcloud/unix_cli).
+
+_________________________________________
+
 This page gives you a few examples of how to perform various DNS tasks using the HP Cloud service.
 
 Remember that you can get detailed help for any command or task with the following command:
