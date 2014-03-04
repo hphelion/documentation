@@ -32,7 +32,7 @@ In particular, Networking supports each tenant having multiple private networks,
 
 The Networking service offers flexibility for the cloud administrator to customize network offerings, such as building multi-tiered web applications and enabling migration of applications to the cloud without changing IP addresses.
 
-HP Public Cloud compute activation comes with a default configuration that includes:
+HP Public Cloud compute activation comes with a default configuration that includes: {#default}
 
 * A network 
 * A subnet
@@ -77,7 +77,38 @@ When a port is created in HP Cloud Networking it is associated with a security g
 
 back to the [top](#top)
 
-## Viewing your network in the HP Public Cloud Console ## {#NetworkTopo}
+##Customizing your network## {#customize}
+
+You can use the default network or customize the default network using either the HP Public Cloud CLI or the HP Public Cloud Console. 
+
+When you first activate the compute service, a [default](#default) configuration is created that should provide enough capacity for typical needs. However, you can create a new network, allowing you to assign a specific IP address to the network and subnet. 
+
+- [Viewing network and router details](#NetworkTopo)
+- [Creating a network and subnet](#Enabling)
+- [Connecting to a network](#AssignRouter)
+
+HP Cloud Networking expands networking capabilities, allowing you to perform many tasks, including:
+
+creating a router
+creating one or more networks
+configure subnets 
+
+
+All of the procedures in this section require that you access the Networks or Routers tab in the Project section of the HP Public Cloud Console, <a name="NetworkTab">as shown</a>:
+
+   <br><img src="media/network-tab.png"  alt="" />
+
+You might need to modify the default network or create additional networks.  This page gives you some how-to's to use the [Horizon Cloud Console](#console) or [HP Cloud CLI for Windows PowerShell](#powershell) to create and configure networks, routers, and ports.  
+
+**Note:** You can also use the [HP Cloud v13.5 Compute Service API](https://docs.hpcloud.com/api/v13/compute/) and [HP Cloud v13.5 Networking API](https://docs.hpcloud.com/api/v13/networking/) to configure your network. 
+
+### Activate the compute service in HP Cloud ### {#compute}
+
+If you have not previously created an account and activated the compute service please sign up at [http://hpcloud.com](http://hpcloud.com).  
+
+Make sure you activate a compute instance in HP Cloud version 13.5 to access the networking and VPN capabilities.
+
+### Viewing your network in the HP Public Cloud Console ### {#NetworkTopo}
 
 The Network Topology tab is a physical representation of your network configuration.
 
@@ -90,35 +121,6 @@ A default router (here, labeled Router 1) is created and attached to the externa
 The default configuration contains a subnet that serves as your DHCP server. The subnet has a CIDR of 10.0.0.0/24, which is the pool of fixed private IPs that are assigned to your instances. 
 
 Any instance you create can be attached to your network, using a port automatically created using an fixed private IP from your subnet.
-
-
-##Customizing your network## {#customize}
-
-You can use the default network or customize the default network using either the HP Cloud Networking API or the HP Cloud Management Console. Customizing a network enables you to manage the networks your virtual servers connect to.
-
-HP Cloud Networking expands networking capabilities, allowing you to perform many tasks, including:
-
-- Viewing network and router details
-- [Creating a network](#Enabling)
-- [Creating a subnet](#CreateSubUI)
-- [Creating a port](#CreatePortUI)
-- [Creating a router](#AssignRouterUI)
-- [Assigning a router to a network](#AssignRouter)
-
-All of the procedures in this section require that you access the Networks or Routers tab in the Project section of the HP Public Cloud Console, <a name="NetworkTab">as shown</a>:
-
-   <br><img src="media/network-tab.png"  alt="" />
-
-
-You might need to modify the default network or create additional networks.  This page gives you some how-to's to use the [Horizon Cloud Console](#console) or [HP Cloud CLI for Windows PowerShell](#powershell) to create and configure networks, routers, and ports.  
-
-**Note:** You can also use the [HP Cloud v13.5 Compute Service API](https://docs.hpcloud.com/api/v13/compute/) and [HP Cloud v13.5 Networking API](https://docs.hpcloud.com/api/v13/networking/) to configure your network. 
-
-### Activate the compute service in HP Cloud ### {#compute}
-
-If you have not previously created an account and activated the compute service please sign up at [http://hpcloud.com](http://hpcloud.com).  
-
-Make sure you activate a compute instance in HP Cloud version 13.5 to access the networking and VPN capabilities.
 
 ### Creating a network ### {#CreateNetwork}
 
@@ -164,7 +166,7 @@ To create a network and subnet, use the following steps:
 
 14. Click **Create**. 
 
-To see a graphic display of your network setup, click **Network Topology** under **Manage Network** in the left-hand navigation.  
+To see a graphic display of your network setup, click **Network Topology** under **Manage Network** in the left-hand navigation.{#ConnectNetwork}  
 
    <br><img src="media/compute-network-topology-create-crop.png"  alt="" />
 
@@ -231,7 +233,7 @@ To connect a network to a router, use the following steps:
 
 3. Click the router name on the **Routers** tab.
 
-4. Click "Add Interface" on the far-right of the "Router Overview" tab. 
+4. Click **Add Interface** on the far-right of the **Router Overview** tab. 
 
     <img src="media/compute-network-associate-router.png" width="580" alt="" />
 
@@ -265,10 +267,68 @@ To connect a network to a router, use the following steps:
 		SUBNET_ID - The name or ID of the subnet.
 
 
-### Create a new server instance ###
+### Create a new server instance ### {#CreateServer}
 
 After the network is configured, you can create a server instance and attach the instance to the new network.
 
+**Note:** Before creating an instance, you must create a security key pair.
+
+####Create an instance#### {#CreateServerUI}
+
+An instance is a virtual server.
+
+1. Login to the [Horizon Console](https://horizon.hpcloud.com/).
+
+2. Click "Instances" under "Manage Compute" under the Project section..
+
+3. Click **Launch Instance** in the upper right-hand navigation of the screen. 
+
+    <img src="media/CreateaninstanceImage1.png" width="580" alt="" />
+
+3. Select an availability zone for the instance. Or, leave the default choice of the "Any Availability Zone" (AZ), which arbitrarily assigns an AZ for an instance.
+
+	Selecting an AZ for an instance can segregate AZs for your own organizational purposes; e.g., you could select AZ1 for your data center, and set the remaining two up later for other discrete functions. 
+
+	**Note**: The default choice locating an instance in any AZ offers high availability, ensuring a high level of operational performance. 
+
+4. Enter a name in the **Instance Name** field.
+
+5. Select the hardware configuration (flavor) you want to emulate from the **Flavor** list. 
+	
+	A flavor determines how much disk space and RAM is allocated for the instance. When you select a flavor, the "Flavor Details" box displays the specifications for that flavor.
+
+    **Note** The "Project Limits" box under "Flavor Details" graphically displays quotas allowed and usage of Instances, VCPUs, and Total RAM after you select a flavor.
+
+    <img src="media/CreateanInstanceImage2.png" width="580" alt="" />
+
+6. Enter the number of instances you want to create in the  **Instance Count** list.
+
+7. Select a type of image from the **Instance Boot Source** list. To select an HP Cloud default image, select **Boot from Image**.  
+
+    <img src="media/CreateanInstanceImage3.png" width="580" alt="" />
+
+8. Select a specific image from the image list. The name of the list reflects the type of image you selected.
+
+    <img src="media/CreateanInstanceImage4.png" width="580" alt="" />
+
+9. Click the **Access & Security** tab in the upper navigation of  the screen. 
+
+9. Click the "Networking" tab in the upper navigation of  "Launch Instance" and click the "+" next to the network you want to launch an instance from.  You can also drag and drop the network from which you want to launch the instance from the "Available Networks" box to the "Selected Networks" box.
+
+    **Note** If you click "Launch" before clicking the "Networking" tab, an error message displays; however, you can still select the network desired from the "Available Network" box to the "Selected Networks" box.
+
+10. Click "Launch."
+
+    <img src="media/CreateanInstanceImage5.png" width="580" alt="" />
+
+
+#### Using the HP Public Cloud to connect to a network #### {#ConnectNetworkUI}
+
+To connect a network to a router, use the following steps:
+
+1. Login to the [Horizon Console](https://horizon.hpcloud.com/).
+
+2. Select the [Routers tab](#NetworkTab) under the Project section.
 
 #### Using the HP Public Cloud Console to create an instance ####
 
