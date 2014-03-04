@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Cloud OS for Moonshot Release Notes"
+title: "HP Cloud OS for Moonshot 1.0 Release Notes"
 permalink: /cloudos/moonshot/prepare/releasenotes/
 product: moonshot
 
@@ -20,7 +20,7 @@ PageRefresh();
 
 <p style="font-size: small;"> <a href="/cloudos/moonshot/">&#9664; PREV | <a href="/cloudos/moonshot/">&#9650; UP</a> | <a href="/cloudos/moonshot/prepare/supportmatrix/">NEXT &#9654;</a> </p>
 
-# HP Cloud OS for Moonshot Release Notes
+# HP Cloud OS for Moonshot 1.0 Release Notes
 
 This topic contains the following information about the HP Cloud OS for Moonshot 1.0 release:
 
@@ -62,11 +62,11 @@ HP recommends the following best practices for HP Cloud OS for Moonshot 1.0.
 
 **Provisioning**
 
-* For increased reliability, we recommend you allocate an adequate IP address range for the nova_flat network based on the number of instances planned for the given Cloud. For example, if the environment is going to have 40 instances, at least 120 IP addresses need to be defined in the DHCP allocation range. 
+For increased reliability, we recommend you allocate an adequate IP address range for the nova_flat network based on the number of instances planned for the given Cloud. For example, if the environment is going to have 40 instances, at least 120 IP addresses need to be defined in the DHCP allocation range. 
 
 **Installation**
 
-* To enable maximum reliability in the Cloud environment, do not select the controller nodes when performing *Create Compute Region* action for Moonshot/Standard.
+To enable maximum reliability in the Cloud environment, do not select the controller nodes when performing *Create Compute Region* action for Moonshot/Standard.
 
 
 ###Known issues and workarounds in the 1.0 release### {#known-issues}
@@ -75,11 +75,11 @@ The following are the known issues for HP Cloud OS for Moonshot 1.0.
 
 ####Installation####
 
-* Once a region is created, you cannot reduce its size.
+Once a region is created, you cannot reduce its size.
 
 ####Provisioning####
 
-* After you de-provision a bulk node, the topology sometimes continues to display the "PROCESSING" state for a lengthy period of time. You can resolve this issue by increasing the timeout value of the IPMI driver: 
+After you de-provision a bulk node, the topology sometimes continues to display the "PROCESSING" state in the Administration Dashboard for a lengthy period of time. You can resolve this issue by increasing the timeout value of the IPMI driver: 
    
 1. Edit
  `/usr/share/pyshared/nova/virt/baremetal/MoonshotIPMI.py’`
@@ -96,11 +96,11 @@ The following are the known issues for HP Cloud OS for Moonshot 1.0.
 	
 4. Restart Nova compute
 
-* Under some circumstances, after launching a workload profile and then using Terminate Workload to deprovision, the workload/topology continues to list the state as "Processing".  In the **Deployed Workloads** tab, selecting **Delete Workload** resolves the issue.
+Under some circumstances, after launching a workload profile in the Administration Dashboard, and then using Terminate Workload to deprovision, the workload/topology continues to list the state as "Processing".  In the **Deployed Workloads** tab, selecting **Delete Workload** resolves the issue.
 
 ####Installation####
 
-* Create Region fails due to a GET_SERVER_CERTIFICATEverification failure. To resolve this issue, follow this process:
+Create Region fails due to a GET_SERVER_CERTIFICATEverification failure. To resolve this issue, follow this process:
 
 1. In the Admin Node, edit the following file in the given path:
 
@@ -135,8 +135,8 @@ For additional related information on HP Cloud OS:
 * [HP Cloud OS for Moonshot Utilities](/cloudos/manage/utilities/): Describes the HP Cloud OS for Moonshot utilities.
 * [HP Cloud OS for Moonshot Troubleshooting](/cloudos/manage/troubleshooting/): Advice to resolve issues you may encounter with HP Cloud OS for Moonshot.
 * [HP Cloud OS for Moonshot Open Source and Third-Party Software License Agreements](/cloudos/os-3rd-party-license-agreements/): License information regarding the HP Cloud OS for Moonshot product. This topic includes legal notices and the disclaimer for experimental software.
-* HP Cloud OS for Moonshot Operational Dashboard Help: From the Dashboard's top banner, the Help link opens topics about its user interface dialogs and options, including how to create your cloud. A [web-hosted copy](/cloudos/manage/operational-dashboard/) of the Help is available. 
-* HP Cloud OS for Moonshot Administration Dashboard Help: From the Dashboard's top banner, the Help link opens topics about its user interface dialogs and options, including how to view, allocate, and manage all virtual resources within a cloud. A [web-hosted copy](/cloudos/manage/administration-dashboard/) of the Help is available. 
+* [HP Cloud OS for Moonshot Operational Dashboard Help](/cloudos/manage/operational-dashboard/): Contains topics about the Operational Dashboard user interface dialogs and options.
+* [HP Cloud OS for Moonshot Administration Dashboard Help]/cloudos/manage/administration-dashboard/): Contains topics about the Administration Dashboard user interface dialogs and options.
 * HP Cloud OS for Moonshot Release Notes (this topic): Information about the product features, recommendations and known issues.
 
 ###Installation Notes### {#installation-notes}
@@ -149,7 +149,7 @@ and the Administration Dashboard (used to create and manage cloud resources).
 
 When you are ready to install HP Cloud OS for Moonshot, see [Install & Configure Your Cloud](/cloudos/moonshot/install/).
 
-###Legal Notices and Disclaimer for Experimental Software### {#legal-notices-disclaimer}
+###Legal Notices and Disclaimer### {#legal-notices-disclaimer}
 
 See the [HP Cloud OS for Moonshot Open Source and Third-Party Software License Agreements](/cloudos/moonshot/os-3rd-party-license-agreements/).
 
