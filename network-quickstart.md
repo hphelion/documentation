@@ -271,7 +271,7 @@ To connect a network to a router, use the following steps:
 
 After the network is configured, you can create a server instance and attach the instance to the new network.
 
-**Note:** Before creating an instance, you must create a security key pair.
+**Note:** Before creating an instance, you must create a security [key pair](/mc/compute/key-pairs/).
 
 ####Create an instance#### {#CreateServerUI}
 
@@ -311,13 +311,15 @@ An instance is a virtual server.
 
     <img src="media/CreateanInstanceImage4.png" width="580" alt="" />
 
-9. Click the **Access & Security** tab in the upper navigation of  the screen. 
+9. Click the **Access & Security** tab in the upper navigation of the screen.
 
-9. Click the "Networking" tab in the upper navigation of  "Launch Instance" and click the "+" next to the network you want to launch an instance from.  You can also drag and drop the network from which you want to launch the instance from the "Available Networks" box to the "Selected Networks" box.
+10. Select the appropriate key pair from the **Key Pair** list.
 
-    **Note** If you click "Launch" before clicking the "Networking" tab, an error message displays; however, you can still select the network desired from the "Available Network" box to the "Selected Networks" box.
+11. Click the **Networking** tab in the upper navigation of the screen. 
 
-10. Click "Launch."
+12. Click the **+** next to the network in the **Available networks** list that you want to attach the instance to, or drag and drop the network to the **Selected Networks** box.
+
+13. Click "Launch."
 
     <img src="media/CreateanInstanceImage5.png" width="580" alt="" />
 
