@@ -82,7 +82,7 @@ Once a region is created, you cannot reduce its size.
 After you de-provision a bulk node, the topology sometimes continues to display the "PROCESSING" state in the Administration Dashboard for a lengthy period of time. You can resolve this issue by increasing the timeout value of the IPMI driver: 
    
 1. Edit
- `/usr/share/pyshared/nova/virt/baremetal/MoonshotIPMI.py’`
+ `/usr/share/pyshared/nova/virt/baremetal/MoonshotIPMI.py'`
 
 2. Go to line 225 and change:
 
@@ -106,13 +106,13 @@ Create Region fails due to a GET_SERVER_CERTIFICATEverification failure. To reso
 
  `/opt/dell/chef/cookbooks/hp_cos_apollo_100/recipes/server.rb`
 	 
-2. Go to line 245 and change:
+2. Go to line 245 and add the -k switch.  Change this:
 
- Command `" curl  #(keystone_protocol……………….`
+ Command `" curl  #(keystone_protocol...`
  
- to
+ to:
 	
- Command `" curl  -k #(keystone_protocol……………………..`
+ Command `" curl  -k #(keystone_protocol...`
     
 4. Execute this command:
 
