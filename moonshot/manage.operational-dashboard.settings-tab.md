@@ -33,7 +33,7 @@ The Settings tab contains the following panels:
 
 For procedural instructions, see [Install and Configure Your Cloud](/cloudos/moonshot/install/).
 
-## User Settings
+## User Settings {#user-settings}
 
 This topic provides details about the User Settings panel. The following table describes the User Settings UI elements:
 
@@ -68,7 +68,7 @@ This topic provides details about the User Settings panel. The following table d
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
-## License
+## License {#license}
 
 This topic provides details about the License panel.
 
@@ -84,7 +84,7 @@ On the License page, you can view the number of days remaining on your current H
 <tr style="background-color: white; color: black;">
 <td style="font-weight:bold;"> <nobr> Number of days remaining </nobr> on current license </td>
 <td> The number of days currently remaining on the HP Cloud OS for Moonshot license. This field will show zero (0) when the license is expired. 
-If the license is expired, you cannot use the HP Cloud OS for Moonshot dashboards until you renew the license. </td> 
+If the license has expired, you can still open the Operational and Administration Dashboards; however, you cannot use any of the remaining modifiable features until you renew the license. </td> 
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -104,15 +104,15 @@ about 20 minutes elapses before the new license is activated.</p>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td style="font-weight:bold;"> Log level </td>
-<td> Defaults to Info. The five levels used for message logging are, in order of gravity: Critical, Error, Warning, Info, and Debug. </td>
+<td style="font-weight:bold;"> Save button </td>
+<td> After entering a valid license key, click <b>Save</b> to update the HP Cloud OS for Moonshot license. </td>
 </tr>
 
 </table>
 
-## About
+## About {#about}
 
-The About panel displays the version of the Operational Dashboard and the HP Cloud OS for Moonshot build, and the copyrights.
+The About panel displays the version of the Operational Dashboard, the version of the HP Cloud OS for Moonshot build, and the copyright information.
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
