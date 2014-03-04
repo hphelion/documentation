@@ -110,7 +110,7 @@ Assuming a typical configuration, the overall setup process involves the followi
 
 The following diagram illustrates the HP Cloud OS for Moonshot environment.
 
-<img src="media/cloudos-moonshot-environment2.png" title="HP Cloud OS for Moonshot environment" /> 
+<img src="media/cloudos-moonshot-environment3.png" title="HP Cloud OS for Moonshot environment" /> 
 
 ### Services
 
@@ -132,7 +132,9 @@ compute fabric controller.
 
 * <b>Neutron</b> &mdash; An OpenStack service to create and provision virtual networks.
 
+<!--
 * <b>Swift</b> &mdash; An OpenStack service to store and retrieve lots of data in virtual containers.  
+-->
 
 * <b>Apollo</b> &mdash; An HP Cloud OS for Moonshot service that provides HP Moonshot Chassis and Server Management. In addition, it helps to discover HP Moonshot Servers and allocates them for the provisioning.
 
@@ -166,15 +168,16 @@ cloud environment from an identity standpoint.
 such as Nova. This is responsible for the launch of instances across baremetal hosts. The scheduling is based on varied flavors of instances and available resources on the compute nodes.
 In a single compute region deployment model, this can coexist with cloud controller services.  
 
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> An HP cloud can consist of more than one region. For example, you can separate the regions based on the workload such as between a development/test team and a production deployment. A
-development/test team region's compute requirements can use commodity and less expensive hardware. Whereas a production deployment region's compute requirements need a set of compute
-resources that are backed up with heavy compute and fault-tolerant resources. HP recommends that you define and use multiple compute regions. 
-In this scenario, the Compute Region Controller is its own node.</p>
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> An HP cloud can consist of more than one region. 
+For example, you can separate the regions based on the workload such as between a development/test team and a production deployment. A
+development/test team region's compute requirements could use non-redundant machines that also have less memory, while the region for production could 
+provide machines with much more memory, backed up with heavy compute and fault-tolerant resources. HP recommends that you define and use multiple 
+compute regions. In this scenario, the Compute Region Controller is its own node.</p>
 
 ### Baremetal Host
 
 The Baremetal Host hosts the cloud instances using a baremetal driver for the OpenStack Nova compute service. Within the OpenStack framework, the baremetal driver has the same role as the drivers for other hypervisors (libvirt, xen, etc.), and yet it is presently unique in that the hardware is not virtualized - 
-there is no hypervisor between the tenants and the physical hardware that includes Moonshot cartridges.
+there is no hypervisor between the workloads and the physical hardware that includes Moonshot cartridges.
 
 ## Next Step
 

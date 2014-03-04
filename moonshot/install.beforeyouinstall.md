@@ -30,7 +30,7 @@ Before you can start working in the HP Cloud OS for Moonshot Operational Dashboa
 
 ## Plan the Infrastructure for a Cloud
 
-This section defines the minimum infrastructure requirements to make the cloud environment up and running. You will need support from your IT administrator to correctly capture information about your environment.
+This section defines the minimum infrastructure requirements to standup a cloud. You will need support from your IT administrator to correctly capture information about your environment.
 
 * [Deployment Architecture](#deployment-architecture)
 
@@ -80,6 +80,7 @@ We recommend your Proliant server contains the following:
 * Quad Core Processor
 * Hard disk drive with a minimum of 500 GB of space
 * Three (3) Ethernet ports
+* Memory with 4 GB for HP ProLiant Moonshot Server Cartridge, and 32 GB for HP ProLiant m300 Server Cartridge (4x8 GB)
 
 #### Hypervisor recommendations {#hypervisor}
 
@@ -157,7 +158,7 @@ We recommend your Proliant server contains the following:
 
 <tr style="background-color: #C8C8C8;">
 <th>Software / Firmware</th>
-<th>Version</th>
+<th>Version (or higher)</th>
 </tr>
 <tr style="background-color: white; color: black;">
 <td>m300 BIOS</td>
@@ -216,7 +217,7 @@ We recommend your Proliant server contains the following:
 </tr>
 </table>
 
-**Note:** You must have an IPMI driver version 2.0 or above, and an external Internet connection, if you are using a public or hybrid cloud.
+**Note:** You must have an IPMI driver version 2.0 or higher, and an external Internet connection, if you are using a public or hybrid cloud.
 
 #### Operating systems supported {#ossupp}
 
@@ -224,7 +225,7 @@ We recommend your Proliant server contains the following:
 
 <tr style="background-color: #C8C8C8;">
 <th>Cartridge Type</th>
-<th>OS / Version Supported</th>
+<th>OS / Version Supported (or higher)</th>
 </tr>
 <tr style="background-color: white; color: black;">
 <td>HP ProLiant Moonshot Server Cartridge</td>
@@ -361,7 +362,7 @@ In addition to the information presented already in this topic, please review th
  * Http Proxy information:
   * Host
   * Port-8080
-  * Non-Proxy Hosts:  10.*|192.*|127.0.*|localhost
+  * Non-Proxy Hosts:  10.\*|192.\*|127.0.\*|localhost
 
 * In <b>Environment</b> > <b>Networks</b>, for your <b>Public</b> network: 
  * On the <b>Edit Network</b> dialog, you will need to specify your Subnet, Netmask, and Router IP values.

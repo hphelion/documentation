@@ -85,9 +85,9 @@ At this point, HP Cloud OS for Moonshot is installed on the Admin Node.
 
 To launch the Operational Dashboard:
 
-1. From the virtual machine Admin Node, open a Mozilla Firefox or Google Chrome browser that has the following IP addresses set as proxy exceptions:
+1. Open a Mozilla Firefox or Google Chrome browser that has the following IP addresses set as proxy exceptions:
   
-  192.*;10.*;localhost;127.0.*
+  192.\*;10.\*;localhost;127.0.\*
 
 2. In the browser, enter **https://192.168.124.10:9000** to launch the Operational Dashboard user interface. 
 IMPORTANT: Use Google Chrome or Mozilla Firefox.
