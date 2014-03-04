@@ -22,1509 +22,958 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/cloudos/moonshot/manage/utilities/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage/">&#9650; UP</a> | <a href="/cloudos/moonshot/manage/operational-dashboard">NEXT &#9654;</a> </p>
 
 # HP Cloud OS for Moonshot Troubleshooting
+HP Cloud OS for Moonshot is an OpenStack-based cloud platform to manage HP Moonshot servers. Different usage scenarios might lead to abnormal system behavior or known issues. This topic describes all the known issues that you might encounter. To help you troubleshoot these issues, we have provided possible resolutions.
 
-This topic describes known problems and solutions for the following areas:
+For easy reference, we categorized the known issues and solutions as follows:
 
-* [Troubleshooting Cloud OS ISO](#troubleshooting-cloud-os-iso)
-
- * [Problem: ISO Error Running on a VM Hosted on a KVM Hypervisor](#problem-iso-error-running-on-a-vm-hosted-on-a-kvm-hypervisor)
-
-* [Troubleshooting Cloud OS Operational Dashboard](#troubleshooting-cloud-os-operational-dashboard)
-
- * [Problem: Admin Node displays the "not ready" (grey) state](#problem-admin-node-displays-the-not-ready-grey-state)
- * [Problem: Create new router fails](#problem-create-new-router-fails)
- * [Problem: When creating a new PXE node, the PXE boot fails with a TFTP timeout error](#problem-when-creating-a-new-pxe-node-the-pxe-boot-fails-with-a-tftp-timeout-error)
- * [Problem: Manage Nodes not updating the status](#problem-manage-nodes-not-updating-the-status)
- * [Problem: Create cloud or compute region fails](#problem-create-cloud-or-compute-region-fails)
- * [Problem: Admin Node Internet Access Prerequisites fail to complete](#problem-admin-node-internet-access-prerequisites-fail-to-complete)
- * [Problem: Instance not getting IP from a private network](#problem-instance-not-getting-ip-from-a-private-network)
- * [Problem: Admin node redirects to License page](#problem-admin-node-redirects-to-license-page)
- * [Problem: Fiber-Channel errors when booting node](#problem-fiber-channel-errors-when-booting-node)
- * [Problem: Error in the log during Deploy Cloud](#problem-error-in-the-log-during-deploy-cloud)
- * [Problem: Services not started after controller node is rebooted](#problem-services-not-started-after-controller-node-is-rebooted)
- * [Problem: Yellow screen with exception is thrown when using the Cloud OS solution](#problem-yellow-screen-with-exception-is-thrown-when-using-the-cloud-os-solution)
- * [Problem: After restart Cloud OS not working anymore](#problem-after-restart-cloud-os-not-working-anymore)
- * [Problem: Compute node not listed in the user-interface](#problem-compute-node-not-listed-in-the-user-interface)
- * [Problem: The time zone in the controller node is incorrect](#problem-the-time-zone-in-the-controller-node-is-incorrect)
- * [Problem: Compute node fails to install OS (kernel error)](#problem-compute-node-fails-to-install-os-kernel-error)
- * [Problem: Problem creating images using remote location](#problem-problem-creating-images-using-remote-location)
- * [Problem: Problem creating image using image file](#problem-problem-creating-image-using-image-file)
- * [Problem: Unable to launch more instances](#problem-unable-to-launch-more-instances)
- * [Problem: Default route disappears from controller node](#problem-default-route-disappears-from-controller-node)
- * [Problem: Not possible to log in the dashboard (license has expired)](#problem-not-possible-to-log-in-the-dashboard-license-has-expired)
- * [Problem: Create Cloud failed](#create-cloud-failed)
- * [Problem: Find why Launch Topology Fails](#find-why-launch-topology-fails)
- * [Problem: Unauthorized exceptions when navigating in the dashboard](#problem-unauthorized-exceptions-when-navigating-in-the-dashboard)
- * [Problem: Location of the log files](#problem-location-of-the-log-files)
- * [Problem: Launch topology fails and Instance is created but with Error status](#problem-launch-topology-fails-and-instance-is-created-but-with-error-status)
- * [Problem: Complete Node Internet Access prerequisite hang and fail after some time](#problem-complete-node-internet-access-prerequisite-hang-and-fail-after-some-time)
- * [Problem: Incorrect Manage Node status prevents use of the node](#problem-incorrect-manage-node-status-prevents-use-of-the-node)
-
-* [Troubleshooting Cloud OS Administration Dashboard](#troubleshooting-cloud-os-administration-dashboard)
-
- * [Problem: Console Connect timeout issue in the Administration Dashboard](#problem-console-connect-timeout-issue-in-the-administration-dashboard)
- * [Problem: Default Ubuntu cloud image and CirrOS images only show one active network even if multiple networks are specified](#problem-default-ubuntu-cloud-image-and-cirros-images-only-show-one-active-network-even-if-multiple-networks-are-specified)
- * [Problem: Instance resize feature does not work when there is only a single compute node](#problem-instance-resize-feature-does-not-work-when-there-is-only-a-single-compute-node)
-
-* [Troubleshooting Cloud OS Installation](#troubleshooting-cloud-os-installation)
-
- * [Problem: Cloud Infrastructure install module proposal fails](#problem-cloud-infrastructure-install-module-proposal-fails)
- * [Problem: Cloud Controller node or Compute Region node displays the "not ready" (grey) state](#problem-cloud-controller-node-or-compute-region-node-displays-the-not-ready-grey-state)
- * [Problem: Stopping services before Cloud OS completes processing jobs can cause a job failure](#problem-stopping-services-before-cloud-os-completes-processing-jobs-can-cause-a-job-failure)
- * [Problem: Configure Cinder to use RAW multipath devices](#problem-configure-cinder-to-use-raw-multipath-devices)
- * [Problem: Red screen when installing OS on bare metal nodes](#problem-red-screen-when-installing-os-on-bare-metal-nodes)
-
-
-## Troubleshooting Cloud OS ISO
-
-This section describes the following known problems and solutions for the Cloud OS ISO:
-
-#### Problem: ISO Error Running on a VM Hosted on a KVM Hypervisor
-
-<table style="text-align: left; vertical-align: top; width:700px;">
-
-<tr style="background-color: white; color: black;">
-<td> Symptoms </td>
-<td> The HP Cloud OS for Moonshot ISO shows an error when running on a virtual machine (VM) hosted on a KVM hypervisor. </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Primary software component </td>
-<td> ISO </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Failure message </td>
-<td> No root file system, no root file system is defined </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Probable cause </td>
-<td> This error is due to the format of the virtual disk configured for the VM. </td>
-</tr>
-
-</table>
-
-##### Solution
-
-Before booting the VM with the HP Cloud OS for Moonshot ISO media, ensure that the virtual disk format is IDE or SCSI.
-
-
-
-## Troubleshooting Cloud OS Operational Dashboard
-
-This section describes the following known problems and solutions for the Operational Dashboard:
-
-* [Problem: Admin Node displays the "not ready" (grey) state](#problem-admin-node-displays-the-not-ready-grey-state)
-* [Problem: Create new router fails](#problem-create-new-router-fails)
-* [Problem: When creating a new PXE node, the PXE boot fails with a TFTP timeout error](#problem-when-creating-a-new-pxe-node-the-pxe-boot-fails-with-a-tftp-timeout-error)
-* [Problem: Manage Nodes not updating the status](#problem-manage-nodes-not-updating-the-status)
-* [Problem: Create cloud or compute region fails](#problem-create-cloud-or-compute-region-fails)
-* [Problem: Admin Node Internet Access Prerequisites fail to complete](#problem-admin-node-internet-access-prerequisites-fail-to-complete)
-* [Problem: Instance not getting IP from a private network](#problem-instance-not-getting-ip-from-a-private-network)
-* [Problem: Admin node redirects to License page](#problem-admin-node-redirects-to-license-page)
-* [Problem: Fiber-Channel errors when booting node](#problem-fiber-channel-errors-when-booting-node)
-* [Problem: Error in the log during Deploy Cloud](#problem-error-in-the-log-during-deploy-cloud)
-* [Problem: Services not started after controller node is rebooted](#problem-services-not-started-after-controller-node-is-rebooted)
-* [Problem: Yellow screen with exception is thrown when using the Cloud OS solution](#problem-yellow-screen-with-exception-is-thrown-when-using-the-cloud-os-solution)
-* [Problem: After restart Cloud OS not working anymore](#problem-after-restart-cloud-os-not-working-anymore)
-* [Problem: Compute node not listed in the user-interface](#problem-compute-node-not-listed-in-the-user-interface)
-* [Problem: The time zone in the controller node is incorrect](#problem-the-time-zone-in-the-controller-node-is-incorrect)
-* [Problem: Compute node fails to install OS (kernel error)](#problem-compute-node-fails-to-install-os-kernel-error)
-* [Problem: Problem creating images using remote location](#problem-problem-creating-images-using-remote-location)
-* [Problem: Problem creating image using image file](#problem-problem-creating-image-using-image-file)
-* [Problem: Unable to launch more instances](#problem-unable-to-launch-more-instances)
-* [Problem: Default route disappears from controller node](#problem-default-route-disappears-from-controller-node)
-* [Problem: Not possible to log in the dashboard (license has expired)](#problem-not-possible-to-log-in-the-dashboard-license-has-expired)
-* [Problem: Create Cloud failed](#create-cloud-failed)
-* [Problem: Find why Launch Topology Fails](#find-why-launch-topology-fails)
-* [Problem: Unauthorized exceptions when navigating in the dashboard](#problem-unauthorized-exceptions-when-navigating-in-the-dashboard)
-* [Problem: Location of the log files](#problem-location-of-the-log-files)
-* [Problem: Launch topology fails and Instance is created but with Error status](#problem-launch-topology-fails-and-instance-is-created-but-with-error-status)
-* [Problem: Complete Node Internet Access prerequisite hang and fail after some time](#problem-complete-node-internet-access-prerequisite-hang-and-fail-after-some-time)
-* [Problem: Incorrect Manage Node status prevents use of the node](#problem-incorrect-manage-node-status-prevents-use-of-the-node)
-
-
-### Problem: Admin Node displays the "not ready" (grey) state
-
-<table style="text-align: left; vertical-align: top; width:700px;">
-
-<tr style="background-color: white; color: black;">
-<td> Symptoms </td>
-<td> You may not be able to PXE boot any new node. This problem occurs when you re-install Cloud OS on machines that have been used with a Cloud OS environment earlier. </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Primary software component </td>
-<td> Admin Node  </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Failure message </td>
-<td>    </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Probable cause </td>
-<td> You changed the date on the Admin Node or you brought up a previously allocated node to the Admin Node.  </td>
-</tr>
-
-</table>
-
-##### Solution
-
-1.	Create a new Admin Node.
-2.	Before setting up the Admin Node, be sure to power down all participating nodes that were running controller and compute roles.
-3.	After the Admin Node is set up, you must use the PXE boot process to power up the participating nodes.
-
-See [Install &amp; Configure Your Cloud](/cloudos/moonshot/install) for complete instructions. If the nodes boot to the original operating system that was set up with the earlier Admin Node, the boot process will cause irreparable damage to the Admin Node and the entire process will need to be restarted.
-
-### Problem: Create new router fails
-
-<table style="text-align: left; vertical-align: top; width:700px;">
-
-<tr style="background-color: white; color: black;">
-<td> Symptoms </td>
-<td> The operation to create a new router fails if using designer or manually creating a new router and adding the interfaces.   </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Primary software component </td>
-<td> Operational Dashboard  </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Failure message </td>
-<td> Failed to add interface to router &lt;router-name> </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Probable cause </td>
-<td> The environment already has a router configured connecting the same networks. Only one router connecting the same networks is allowed.  </td>
-</tr>
-
-</table>
-
-##### Solution
-
-Provision with the already existing router instead of creating a new one. 
-
-
-### Problem: When creating a new PXE node, the PXE boot fails with a TFTP timeout error
-
-<table style="text-align: left; vertical-align: top; width:700px;">
-
-<tr style="background-color: white; color: black;">
-<td> Symptoms </td>
-<td> In the Operational Dashboard, the Admin Node takes a long time to reboot. </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Primary software component </td>
-<td> Admin Node  </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Failure message </td>
-<td>    </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Probable cause </td>
-<td> This occurs in a few cases after the Admin Node is rebooted. </td>
-</tr>
-
-</table>
-
-##### Solution
-
-<ol>
-
-<li> Log in to the Admin Node and run the following commands:
-
-<pre>
-sudo bluepill tftpd stop
-sudo bluepill tftpd start
-</pre>  
-
+<ul>
+<li>Operation Dashboard: Cloud Infrastructure Readiness
 </li>
-
-<li> After these commands have run, PXE boot the nodes.
-
-</ol>
-
-
-
-### Problem: Manage Nodes not updating the status
-
-<table style="text-align: left; vertical-align: top; width:700px;">
-
-<tr style="background-color: white; color: black;">
-<td> Symptoms </td>
-<td> The status of the Manage Nodes page is not updated after any operation.  </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Primary software component </td>
-<td> Admin Node </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Failure message </td>
-<td>  N/A  </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Probable cause </td>
-<td> The manage node page fails to update the status of the nodes.  </td>
-</tr>
-
-</table>
-
-##### Solution
-
-Navigate to other menus and back to the Manage Nodes tab to force an update of the status.
-
-
-
-
-### Problem: Create cloud or compute region fails
-
-
-
-<table style="text-align: left; vertical-align: top; width:700px;">
-
-<tr style="background-color: white; color: black;">
-<td> Symptoms </td>
-<td> The operation to create a cloud or a compute region fails without reason.  </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Primary software component </td>
-<td> Admin Node  </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Failure message </td>
-<td> Failed  </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Probable cause </td>
-<td> One or more of the nodes used wasn't ready to be used or in bad state. </td>
-</tr>
-
-</table>
-
-##### Solution
-
-1.	Check if the used nodes are in a good status, using SSH check:
-
- * Node not with problem or hanged in PXE boot (PXE-MOF: Exiting Emulex PXE ROM), in this case reboot the node and do again a PXE boot.
- * Chef-client running in the node, if no errors happen re-try the operation otherwise reboot the node and do again a PXE boot. 
- 
-2.	If everything is correctly check the logs for more information.
-
-<pre>
-/var/log/cosmos/cosmos.log
-/var/log/apache2/error.log
-</pre> 
-
-
-
-
-### Problem: Admin Node Internet Access Prerequisites fail to complete
-
-
-
-<table style="text-align: left; vertical-align: top; width:700px;">
-
-<tr style="background-color: white; color: black;">
-<td> Symptoms </td>
-<td> For the Cloud Administration Node Internet Access prerequisite, after completing the Complete Prerequisite action, a failure message displays.   </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Primary software component </td>
-<td> Operational Dashboard  </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Failure message </td>
-<td> Failed completing the Prerequisite  </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Probable cause </td>
-<td> The selected interface does not exist in your environment. For example, if you have a system with two NICs, (eth0 and eth1), selecting eth2 will cause the prerequisite to fail.
-On the Admin Node, view the log files for details:
-
-<pre>
-/var/log/cosmos/cosmos.log
-/var/log/apache2/error.log
-</pre>
-
-</td>
-</tr>
-
-</table>
-
-##### Solution
-
-* Verify a public network is configured in the Admin Node.
-* Redo the steps for Cloud Administration Node Internet Access prerequisite - see "Set Admin Node Prerequisites" in the HP Cloud OS for Moonshot Installation and Configuration Dashboard.
-* Correct the proxy entries and/or specify a different proxy host and/or port.
-
-You must do pre-work before starting cloud deployment. If there are any incorrect details, the entire operation needs to be re-done. 
-
-The pre-work includes:
-
-* Identifying the NIC card sequence for Admin, OS_SDN and Public interfaces on all participating machines. 
-* Identifying the private IP range for hosts and guest VMs.
-* Identifying the Public IP range for hosts and guestVMs
-
-
-
-### Problem: Instance not getting IP from a private network
-
-
-
-<table style="text-align: left; vertical-align: top; width:700px;">
-
-<tr style="background-color: white; color: black;">
-<td> Symptoms </td>
-<td>  After a new private network is created the new launched instances are not getting IP from this specific network.  </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Primary software component </td>
-<td> Operational Dashboard  </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Failure message </td>
-<td>  N/A  </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Probable cause </td>
-<td>   </td>
-</tr>
-
-</table>
-
-##### Solution
-
-Restart the network services on network controller executing the command below in the in the respective node.
-
-<pre>
-cd /etc/init.d/
-for i in $( ls quantum-* ); do sudo service $i restart; done
-</pre>
-
-
-### Problem: Admin node redirects to License page
-
-
-
-<table style="text-align: left; vertical-align: top; width:700px;">
-
-<tr style="background-color: white; color: black;">
-<td> Symptoms </td>
-<td> All operations executed in the Admin Node redirect the user to the license page. </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Primary software component </td>
-<td> Admin Node </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Failure message </td>
-<td> N/A </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Probable cause </td>
-<td> The license is expired. </td>
-</tr>
-
-</table>
-
-##### Solution
-
-The license is expired. Contact HP Support to renew your license. 
-
-
-
-### Problem: Fiber-Channel errors when booting node
-
-<table style="text-align: left; vertical-align: top; width:700px;">
-
-<tr style="background-color: white; color: black;">
-<td> Symptoms </td>
-<td> After node is allocated Fiber-Channel (FC) error can appear during the boot of the operational system. </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Primary software component </td>
-<td> Admin Node </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Failure message </td>
-<td> Blocked FC remote port timeout: removing rport </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Probable cause </td>
-<td> The blade FC connection is not configured and because of that a timeout happened and the port will be removed from in the OS level. See screen capture. </td>
-</tr>
-
-</table>
-
-<img src="media/cloudos-fiber-channel-errors.png" title="Fiber channel errors" /> 
-
-
-##### Solution
-
-This problem can be ignored and shouldn't case future problem. IF any side-effect happen, contact HP Support.
-
-
-
-### Problem: Error in the log during Deploy Cloud
-
-<table style="text-align: left; vertical-align: top; width:700px;">
-
-<tr style="background-color: white; color: black;">
-<td> Symptoms </td>
-<td> Compute node not been listed in the user-interface (UI) after PXE boot and installation completed with success.   </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Primary software component </td>
-<td> Admin Node  </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Failure message </td>
-<td> Crowbar configuration has errors. Please fix and rerun install. </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Probable cause </td>
-<td> That's a known message in the logs and won't cause any problem during the use of the solution.  </td>
-</tr>
-
-</table>
-
-##### Solution 
-
-You can ignore this error message. If any other problem happens during the deployment of the cloud, please contact HP Support.
-
-
-### Problem: Services not started after controller node is rebooted
-
-<table style="text-align: left; vertical-align: top; width:700px;">
-
-<tr style="background-color: white; color: black;">
-<td> Symptoms </td>
-<td> After reboot the controller node, some of the services are not started, this mean they are stopped when they shouldn't be.   </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Primary software component </td>
-<td> Controller Node  </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Failure message </td>
-<td> N/A  </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Probable cause </td>
-<td> This is normally a timing issue caused by the hardware that was used, a possible reason for this problem is that the server is with a lower configuration than the minimum required.  </td>
-</tr>
-
-</table>
-
-
-##### Solution
-
-Connect to the controller node using SSH and check if the services are started using the commands bellow, if any service is stopped just start manually.
-
-<pre>
-for job in $( ls /etc/init.d/nova-* ); do service ${job##*/} status; done
-for job in $( ls /etc/init.d/cinder-* ); do service ${job##*/} status; done
-for job in $( ls /etc/init.d/quantum-* ); do service ${job##*/} status; done
-</pre>
-
-
-
-### Problem: Yellow screen with exception is thrown when using the Cloud OS solution
-
-<table style="text-align: left; vertical-align: top; width:700px;">
-
-<tr style="background-color: white; color: black;">
-<td> Symptoms </td>
-<td> Yellow exception may occur when using and navigating in the dashboards.   </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Primary software component </td>
-<td> Installation, Administration and Operational Dashboards</td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Failure message </td>
-<td> Value Error at XYZ </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Probable cause </td>
-<td> It wasn't possible to get specific information or the information was wrong. See examples in the screen capture. </td>
-</tr>
-
-</table>
-
-<img src="media/cloudos-yellow-screen.png" title="Example yellow screen" /> 
-
-#### Solution
-
-Refresh your browser. If the problem persist, please contact HP Support.
-
-
-
-### Problem: After restart Cloud OS not working anymore
-
-<table style="text-align: left; vertical-align: top; width:700px;">
-
-<tr style="background-color: white; color: black;">
-<td> Symptoms </td>
-<td> After restart all the nodes, the solution doesn't seem to be working as before, services not working as expected. </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Primary software component </td>
-<td> Admin Node </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Failure message </td>
-<td> General problems using the solution </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Probable cause </td>
-<td> Sometimes after a restart the services don't start automatically or in a good state. </td>
-</tr>
-
-</table>
-
-#### Solution
- 
-Check if all services are running fine in the controller node, first declare all the system variables and after that execute:
-
-* <code>keystone user-list</code> (list of all user should return)
-* <code>glance index</code> (list of images should return)
-* <code>cinder list</code> (list of volumes should return, if any created)
-* <code>quantum agent-list</code> (list of the agents should return with "happy" status)
-* <code>nova-manage service list</code> (list of services should return with "happy" status)
-
-
-### Problem: Compute node not listed in the user-interface
-
-<table style="text-align: left; vertical-align: top; width:700px;">
-
-<tr style="background-color: white; color: black;">
-<td> Symptoms </td>
-<td> Compute node is not listed in the user-interface (UI) after PXE boot and installation completed with success. </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Primary software component </td>
-<td> Admin Node </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> N/A </td>
-<td>    </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Probable cause </td>
-<td> Cloud OS network with more than one DHCP server running.  </td>
-</tr>
-
-</table>
-
-#### Solution 
-
-If the installation completed without problem and the node is not been listed, probably the node booted using another DHCP server, and this caused the problem. The Cloud OS network should be isolated.
-
-
-
-### Problem: The time zone in the controller node is incorrect
-
-
-
-
-<table style="text-align: left; vertical-align: top; width:700px;">
-
-<tr style="background-color: white; color: black;">
-<td> Symptoms </td>
-<td> The time zone in the controller node by default will be different than the one in the admin node.   </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Primary software component </td>
-<td> Controller Node </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Failure message </td>
-<td>  N/A </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Probable cause </td>
-<td> This behavior is by design.  </td>
-</tr>
-
-</table>
-
-#### Solution 
-
-Change the time-zone to the one you need/want in the Controller Node using the command:
-
-<pre>
-pkg-reconfigure tzdata.
-</pre>
-
-
-### Problem: Compute node fails to install OS (kernel error)
-
-<table style="text-align: left; vertical-align: top; width:700px;">
-
-<tr style="background-color: white; color: black;">
-<td> Symptoms </td>
-<td> After reboot the controller node, some of the services are not started, this mean they are stopped when shouldn't be. </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Primary software component </td>
-<td> Admin Node </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Failure message </td>
-<td> N/A  </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Probable cause </td>
-<td> Server configuration (hardware) not supported by the OS.  </td>
-</tr>
-
-</table>
-
-#### Solution 
-
-Will be necessary to check why the problem is happening; normally will be related with the hardware used. The easy way is to search in the Internet why the specific error happened and try again.
-
-
-
-
-### Problem: Problem creating images using remote location
-
-
-
-<table style="text-align: left; vertical-align: top; width:700px;">
-
-<tr style="background-color: white; color: black;">
-<td> Symptoms </td>
-<td> Creating an image using the remote location option, pointing to an external server not working. </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Primary software component </td>
-<td> Operational Dashboard  </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Failure message </td>
-<td> Connection was reset </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Probable cause </td>
-<td> Connectivity problem between the server with the image and the controller node. </td>
-</tr>
-
-</table>
-
-#### Solution 
-
-Check if the controller node can access the image server, for that SSH to the server and execute this command:
-
-<pre>
-curl -O https://server.ip/image.file
-</pre>
-
-If the curl didn't worked this mean the server can't access the image, probably a proxy issue or no connectivity. Fix that and try again.
-
-
-### Problem: Problem creating image using image file
-
-<table style="text-align: left; vertical-align: top; width:700px;">
-
-<tr style="background-color: white; color: black;">
-<td> Symptoms </td>
-<td> Creating an image using the image file option, pointing to a file that is located in your local system not working. </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Primary software component </td>
-<td> Operational Dashboard </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Failure message </td>
-<td> Connection was reset </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Probable cause </td>
-<td> The image is bigger than the supported for this specific operation. </td>
-</tr>
-
-</table>
-
-#### Solution
-
-Images bigger than 1.5 GB cannot be uploaded using the Image File option (image located in the user's computer). 
-The solution for this problem is to:
-
-1. Win SCP to the Admin Node.
-2. Upload the image to /tmp/.
-3. Change the permission of the file to 777 (chmod 777 /tmp/&lt;image.name>).
-4. Move the file to the folder <code>tftpboot</code>.
-5. Create the image pointing to this URL (https://&lt;admin.node.ip>:8091/&lt;image.name>).
-
-
-### Problem: Unable to launch more instances
-
-<table style="text-align: left; vertical-align: top; width:700px;">
-
-<tr style="background-color: white; color: black;">
-<td> Symptoms </td>
-<td> Launch new instances stopped to work after some instances was created without any problem. </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Primary software component </td>
-<td> Operational Dashboard </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Failure message </td>
-<td> Quota exceeded for instances: Requested 1, but already used 1 of 1 instances", "code": 413  </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Probable cause </td>
-<td> The limit of instances for the specific project was reached. </td>
-</tr>
-
-</table>
-
-#### Solution 
-
-To change the project limits,  access the dashboard's Domain > Projects > Select a Project > Properties > Limits tab; update the necessary values. For network and storage quota, you need to change it through command line options, such as:
-
-<pre>
-cinder quota-update; quantum -quota-update
-</pre>
-
-
-### Problem: Default route disappears from controller node
-
-
-
-<table style="text-align: left; vertical-align: top; width:700px;">
-
-<tr style="background-color: white; color: black;">
-<td> Symptoms </td>
-<td> The default route disappears from the controller node after reboot. </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Primary software component </td>
-<td> Operational Dashboard  </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Failure message </td>
-<td> N/A </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Probable cause </td>
-<td> This behavior is by design. </td>
-</tr>
-
-</table>
-
-#### Solution 
-
-Nothing needs to be done. The default route should be re-added automatically after 20 minutes or less after the reboot of the node. Also is possible to manually start the process connecting to the controller node and executing the command <code>chef-client</code>.
-
-
-### Problem: Not possible to log in the dashboard (license has expired)
-
-<table style="text-align: left; vertical-align: top; width:700px;">
-
-<tr style="background-color: white; color: black;">
-<td> Symptoms </td>
-<td> Trying to open/log in any of the dashboards will be blocked.   </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Primary software component </td>
-<td> Admin Node  </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Failure message </td>
-<td>  The HP Cloud OS for Moonshot license has expired  </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Probable cause </td>
-<td>  The license being used expired. </td>
-</tr>
-
-</table>
-
-#### Solution 
-
-This means your license expired; to solve the problem, contact HP Support to renew your license, then add the new license in the 
-Admin Node (Settings > License).
-
-
-
-### Problem: Create Cloud failed
-
-<table style="text-align: left; vertical-align: top; width:700px;">
-
-<tr style="background-color: white; color: black;">
-<td> Symptoms </td>
-<td>  The operation to create cloud failed without any useful information to find what happened.  </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Primary software component </td>
-<td> Admin Node </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Failure message </td>
-<td> N/A </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Probable cause </td>
-<td> Check the logs for indications of a possible cause.  </td>
-</tr>
-
-</table>
-
-#### Solution
- 
-Check the logs below for more information, the logs may help to point what was the cause of the error.
-
-<pre>
-/opt/dell/crowbar_framework/log/production.log
-/opt/dell/crowbar_framework/log/* (for more information)
-/var/log/barclamps/*
-</pre>
-
-
-
-### Problem: Find why Launch Topology Fails
-
-<table style="text-align: left; vertical-align: top; width:700px;">
-
-<tr style="background-color: white; color: black;">
-<td> Symptoms </td>
-<td> The operation to create cloud failed without any useful information to find what happened. </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Primary software component </td>
-<td> Admin Node </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Failure message </td>
-<td> N/A  </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Probable cause </td>
-<td> Check the logs for indications of a possible cause. </td>
-</tr>
-
-</table>
-
-####Solution 
-
-Click in the topology that failed to see the details of the error, if the message doesn't explain why the provisioning fail check the 
-Cloud OS logs in the controller node located at:
-
-<pre>
-/var/log/eve-requestworker/eve-requestworker.log
-/var/log/eve-api/eve-api.log
-</pre>
-
-
-### Problem: Unauthorized exceptions when navigating in the dashboard
-
-<table style="text-align: left; vertical-align: top; width:700px;">
-
-<tr style="background-color: white; color: black;">
-<td> Symptoms </td>
-<td> While navigating through the Operational Dashboard menus, you may see an Unauthorized error, and no items will be rendered in the user interface. </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Primary software component </td>
-<td> Operational Dashboard  </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Failure message </td>
-<td> Unauthorized (HTTP 401) </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Probable cause </td>
-<td> Session expired but the user did not log out from the Operational Dashboard. </td>
-</tr>
-
-</table>
-
-#### Solution
-
-Navigate to another item in the menu of the Operational Dashboard, If the problem persist, logout and login again. 
-
-
-
-### Problem: Location of the log files
-
-<table style="text-align: left; vertical-align: top; width:700px;">
-
-<tr style="background-color: white; color: black;">
-<td> Symptoms </td>
-<td> Sometimes will be necessary to check the logs or collect the logs for further investigation and the logs are not all in the same place. </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Primary software component </td>
-<td>   </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Failure message </td>
-<td>    </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Probable cause </td>
-<td> Sometimes only with the logs will be possible to figure out what is the problem or what happened. </td>
-</tr>
-
-</table>
-
-#### Solution
-
-* Admin Node Logs:
-
-<pre>
-  /var/log/cosmos/cosmos.log
-  /var/log/apache2/error.log
-</pre>
-
-* Deploy Cloud Logs:
-
-<pre>
-  /var/log/install*.log
-  /var/log/install*.err
-</pre>
-
-* Controller Node Logs:
-
-<pre>
-  /var/log/cosmos/cosmos.log
-  /var/log/apache2/error.log
-</pre>
-
-* Deploying Admin Node:
-
-<pre>
-  /opt/dell/crowbar_framework/log/production.log
-  /opt/dell/crowbar_framework/log/* 
-  /var/log/barclamps/* 
-</pre>
-
-* Launch Topology Logs:
-
-<pre>
-  /var/log/eve-api/eve-api.log
-  /var/log/eve-requestworker/eve-requestworker.log
-  /var/log/focus-api/focus-api.log
-  /var/log/graffiti-api/graffiti.log
-</pre>
-
-
-
-### Problem: Launch topology fails and Instance is created but with Error status
-
-<table style="text-align: left; vertical-align: top; width:700px;">
-
-<tr style="background-color: white; color: black;">
-<td> Symptoms </td>
-<td> Launching a topology fails but all the components in the design (router, network,..) will be created with success and the instance have an Error status.  </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Primary software component </td>
-<td> Operational Dashboard </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Failure message </td>
-<td> N/A </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Probable cause </td>
-<td> This problem happen normally when Cloud OS services had any problem executing the operation, normally happens in environments with I18N. </td>
-</tr>
-
-</table>
-
-#### Solution
-
-Cleanup all the items created by the topology that was launched and failed (e.g.: router, network, groups, instance…) and restart in the controller node the Cloud OS services mentioned below:
-
-<pre>
-service eve-requestworker restart
-service eve-api restart
-</pre>
-
-
-
-
-### Problem: Complete Node Internet Access prerequisite hang and fail after some time
-
-<table style="text-align: left; vertical-align: top; width:700px;">
-
-<tr style="background-color: white; color: black;">
-<td> Symptoms </td>
-<td> "Complete the Cloud Administration Node Internet Access" prerequisite hangs for a long time, and fail in the end.  </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Primary software component </td>
-<td> Admin Node </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Failure message </td>
-<td> Unable to access the Internet. Check network and proxy settings  </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Probable cause </td>
-<td> The Admin Node server can't access the Internet using the proxy information that was used to configure the prerequisite. </td>
-</tr>
-
-</table>
-
-#### Solution
-
-1.	Check if the proxy details in is really correct, if not fix and try again.
-2.	Check if the Admin Node really has access to the proxy server, if not fix and try again.
-3.	The last option is to remove the proxy information and complete the prerequisite without the proxy information.
-
-
-
-### Problem: Incorrect Manage Node status prevents use of the node
-
-<table style="text-align: left; vertical-align: top; width:700px;">
-
-<tr style="background-color: white; color: black;">
-<td> Symptoms </td>
-<td> After some operations the manage node status remains incorrect, for example Resetting. Because of that the node is no longer usable. </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Primary software component </td>
-<td> Admin Node </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Failure message </td>
-<td> N/A </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Probable cause </td>
-<td> The node entered in an invalid state for an unknown reason, and its status is no longer updated. </td>
-</tr>
-
-</table>
-
-#### Solution: 
-
-If the node is not been used at the moment, shut down the node, power on again, and make it PXE boot again. This should fix the status and set the node to "Not Allocated," allowing the user to use the node again.
-
-
-
-## Troubleshooting Cloud OS Administration Dashboard
-
-
-This section describes the following known problems and solutions for the Administration Dashboard:
-
-* [Problem: Console Connect timeout issue in the Administration Dashboard](#problem-console-connect-timeout-issue-in-the-administration-dashboard)
-* [Problem: Default Ubuntu cloud image and CirrOS images only show one active network even if multiple networks are specified](#problem-default-ubuntu-cloud-image-and-cirros-images-only-show-one-active-network-even-if-multiple-networks-are-specified)
-* [Problem: Instance resize feature does not work when there is only a single compute node](#problem-instance-resize-feature-does-not-work-when-there-is-only-a-single-compute-node)
-
-
-### Problem: Console Connect timeout issue in the Administration Dashboard
-
-
-<table style="text-align: left; vertical-align: top; width:700px;">
-
-<tr style="background-color: white; color: black;">
-<td> Symptoms </td>
-<td> In the Administration Dashboard, if you click the provisioned instance, and use Internet Explorer to open the Console, a Console Connect timeout issue occurs. </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Primary software component </td>
-<td> Browser used for the Console in Administration Dashboard. </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Failure message </td>
-<td> Console Connect timeout </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Probable cause </td>
-<td> Microsoft Internet Explorer browser is not supported. </td>
-</tr>
-
-</table>
-
-#### Solution
-
-Only use Google Chrome 14 or Mozilla Firefox 6 to open the Console.
-
-
-
-### Problem: Default Ubuntu cloud image and CirrOS images only show one active network even if multiple networks are specified
-
-<table style="text-align: left; vertical-align: top; width:700px;">
-
-<tr style="background-color: white; color: black;">
-<td> Symptoms </td>
-<td> The default Ubuntu cloud image and CirrOS images have only one active NIC in their network configuration. If you specify multiple VNICs (networks) when creating a VM, only the first interface is used. </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Primary software component </td>
-<td> Administration Dashboard  </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Failure message </td>
-<td>    </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Probable cause </td>
-<td> Default number of networks for the Ubuntu cloud image and CirrOS images is one. </td>
-</tr>
-
-</table>
-
-#### Solution
-
-There are two ways to get the second NIC up and running.
-
+<li>Operation Dashboard: Cloud and Region
+</li>
+<li>Administration Dashboard: Moonshot Management</li>
+<li>Administration Dashboard: Instance Provisioning &gt; Elemental</li>
+<li>Administration Dashboard: Topology Designer</li>
+<li>Administration Dashboard: Instance Provisioning &gt; Topology-based </li>
+<li>Administration Dashboard: Workloads</li>
+<li>Log/Configuration Files and Location</li>
+</ul>
+
+If you need further assistance, feel free to contact HP Customer Support.
+
+## Operational Dashboard: Cloud Infrastructure Readiness
+#### New node fails to PXE boot because of TFTP boot timeout error
+<table>
+<tr>
+<td>Software Component</td>
+<td>Operational Dashboard</td></tr>
+<tr>
+<td>System Behavior</td>
+<td>Dashboard will not be able to list nodes which you created even after waiting for sufficient time (usually more than 5 minutes). Also, console of your virtual machine will display TFTP error messages.</td></tr>
+<tr>
+<td>Probable Cause</td>
+<td>It occurs because of discrepancy between boot time of Admin node and failed node. &nbsp;</td></tr>
+<tr>
+<td>Possible Resolution</td>
+<td>
+The following action performed in order may resolve the issue:<br>
+<br>
 <ol>
-
-<li>Bring up eth1 manually. 
-<p>Place the entry for the eth1 in /etc/network/interfaces file to make it persistent across reboots.</p>
-<p>Sample eth1 entry:</p>
-<pre>
-auto eth1
-iface eth1 inet dhcp 
-dhclient eth1 
-</pre>
-<p> (The last command above will query for the DHCP ip for eth1.) </p> </li>
-
-<li>Create a custom image with 2 active NICs. 
-
-<p>To do this, specify both eth0 and eth1 in the ./etc/network/interfaces file while creating an image.</p>  </li>
-
-</ol>
-
-
-
-### Problem: Instance resize feature does not work when there is only a single compute node
-
-
-<table style="text-align: left; vertical-align: top; width:700px;">
-
-<tr style="background-color: white; color: black;">
-<td> Symptoms </td>
-<td> In a cloud with only a single compute node, if you click More in the Instances tab of the Administration Dashboard and try to resize the instance to a different flavor, the operation will fail. </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Primary software component </td>
-<td> Browser used for the Console in Administration Dashboard. </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Failure message </td>
-<td> N/A </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Probable cause </td>
-<td> Instance resize only works with multiple compute nodes. </td>
-</tr>
-
+<li>Login to Admin node and run the following commands:
+<ol style="list-style-type:lower-latin;">
+<li>sudo bluepill tftpd stop</li>
+<li>sudo bluepill tftpd start</li></ol></li>
+<li>PXE boot node</li></ol></td></tr>
 </table>
 
-#### Solution
-
-Use this feature only if your HP Cloud OS for Moonshot environment includes multiple compute nodes.
-
-
-
-
-## Troubleshooting Cloud OS Installation
-
-
-This section describes the following known problems and solutions for the Installation Dashboard:
-
-* [Problem: Cloud Infrastructure install module proposal fails](#problem-cloud-infrastructure-install-module-proposal-fails)
-* [Problem: Cloud Controller node or Compute Region node displays the "not ready" (grey) state](#problem-cloud-controller-node-or-compute-region-node-displays-the-not-ready-grey-state)
-* [Problem: Stopping services before Cloud OS completes processing jobs can cause a job failure](#problem-stopping-services-before-cloud-os-completes-processing-jobs-can-cause-a-job-failure)
-* [Problem: Configure Cinder to use RAW multipath devices](#problem-configure-cinder-to-use-raw-multipath-devices)
-* [Problem: Red screen when installing OS on bare metal nodes](#problem-red-screen-when-installing-os-on-bare-metal-nodes)
-
-
-### Problem: Cloud Infrastructure install module proposal fails
-
-<table style="text-align: left; vertical-align: top; width:700px;">
-
-<tr style="background-color: white; color: black;">
-<td> Symptoms </td>
-<td> An error message displays and the status turns red if a proposal fails. </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Primary software component </td>
-<td> Installation Dashboard </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Failure message </td>
-<td> Failed to apply the proposal to: &lt;Cloud Controller Node name> </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Probable cause </td>
-<td> There are a number of possible causes. See the solution section. </td>
-</tr>
-
+#### Manage Nodes Panel shows the discovered cloud nodes in ‘Off’ state
+<table>
+<tr>
+<td>Software Component</td>
+<td>Operational Dashboard</td></tr>
+<tr>
+<td>System Behavior</td>
+<td>Manage Nodes section of Cloud tab displays state of discovered node(s) in ‘Off’ state.</td></tr>
+<tr>
+<td>Probable Cause</td>
+<td>Chef client’s status freeze causes UI to be stuck at ‘Off’ state</td></tr>
+<tr>
+<td>Possible Resolution</td>
+<td>
+Do the following:<br>
+<ol>
+<li>Ensure that you have chosen correct NIC interface and it is connected to public network</li>
+<li>Re-apply the pre-requisites from Operational Dashboard.</li></ol>
+For more information, check /var/log/cosmos/cosmos.log<br>
+and /var/log/apache2/error.log logs (Admin Node).</td></tr>
 </table>
 
-#### Solution
-
-Try applying the proposal again. If that fails:
-
-* Deactivate the proposal.
-* Delete the proposal and create it again.
-* SSH in to the Admin Node using the credentials: crowbar/crowbar.
-* Review the log files /opt/dell/crowbar_framework/log/production.log and &lt;MacAddressHostname>.chef.log.
-* Review the log file /var/log/apache2/error.log.
-* Review the folder /var/tmp/cosmos and verify the installer settings.
-
-
-### Problem: Cloud Controller node or Compute Region node displays the "not ready" (grey) state
-
-<table style="text-align: left; vertical-align: top; width:700px;">
-
-<tr style="background-color: white; color: black;">
-<td> Symptoms </td>
-<td>  Installation Dashboard is unable to monitor the Cloud Controller Node or the Compute Region Node. </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Primary software component </td>
-<td> Installation Dashboard </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Failure message </td>
-<td>    </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Probable cause </td>
-<td> The Cloud Controller Node or the Compute Region Node has not updated the live status to the Admin Node.  </td>
-</tr>
-
+#### Allocated node stuck at ‘installing/installed’ state for more than 10 minutes
+<table>
+<tr>
+<td>Software Component</td>
+<td>Operational Dashboard</td></tr>
+<tr>
+<td>System Behavior</td>
+<td>Manage Nodes section of Cloud Tab displays state of allocated node in ‘Installing/Installed’ for unusually long period.</td></tr>
+<tr>
+<td>Probable Cause</td>
+<td>Time synchronisation issues</td></tr>
+<tr>
+<td>Possible Resolution</td>
+<td>Try resetting the node.</td></tr>
 </table>
 
-#### Solution
-
-Log in to the suspect node through SSH and run <code>sudo chef-client</code>. This will force the node to update its status with Chef.
-
-
-
-### Problem: Stopping services before Cloud OS completes processing jobs can cause a job failure
-
-<table style="text-align: left; vertical-align: top; width:700px;">
-
-<tr style="background-color: white; color: black;">
-<td> Symptoms </td>
-<td> Jobs may fail if services (such as Eve, Peer, and Focus) are stopped before Cloud OS completes provisioning or deprovisioning the jobs. </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Primary software component </td>
-<td>   </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Failure message </td>
-<td>   </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Probable cause </td>
-<td> The state of the job may vary in this situation. The job might fail with an error message or be stuck in processing with no error message. In some cases, the job may even resume once the service has restarted. Make sure all the processing jobs are completed or canceled before stopping any Cloud OS services. </td>
-</tr>
-
+#### Updating the Internet Access Prerequisites fails sometimes
+<table>
+<tr>
+<td>Software Component</td>
+<td>Operational Dashboard</td></tr>
+<tr>
+<td>System Behavior</td>
+<td>Dashboard displays message ‘Failed to complete the prerequisites’</td></tr>
+<tr>
+<td>Probable Cause</td>
+<td>You might have selected wrong NIC interface, which does not exist or does not support internet connectivity.</td></tr>
+<tr>
+<td>Possible Resolution</td>
+<td>
+Do the following:<br>
+<ol>
+<li>Ensure that you have chosen correct NIC interface and it is connected to the public network.</li>
+<li>Re-apply the pre-requisite from the Operational Dashboard.</li></ol>
+<br>
+Check the below log files(on Admin node) &nbsp;for more information /var/log/cosmos/cosmos.log<br>
+/var/log/apache2/error.log</td></tr>
 </table>
 
-#### Solution
-
-Wait for the job processing to complete or manually terminate those jobs, before re-applying the install modules or restarting the upstart services manually in the Installation Dashboard.
-
-
-### Problem: Configure Cinder to use RAW multipath devices
-
-<table style="text-align: left; vertical-align: top; width:700px;">
-
-<tr style="background-color: white; color: black;">
-<td> Symptoms </td>
-<td> The administrator wants to configure Cinder to use a multipath device. </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Primary software component </td>
-<td> Installation </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Failure message </td>
-<td> N/A </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Probable cause </td>
-<td> By default Cinder doesn't come configured for multipath.</td>
-</tr>
-
+## Operational Dashboard: Cloud and Region
+#### Installation/Configuration of Cloud Administrator node fails sometimes (“Complete Install” fails)
+<table>
+<tr>
+<td>Software Component</td>
+<td>Operational Dashboard</td></tr>
+<tr>
+<td>System Behavior</td>
+<td>Install log will display error with specific details for the reason of failure.</td></tr>
+<tr>
+<td>Probable Cause</td>
+<td>Installation of Cloud Administrator node involves installing various components like Chef, NTP etc which sometimes does not get well because of timing issues. </td></tr>
+<tr>
+<td>Possible Resolution</td>
+<td>Re-create Admin Node and start fresh installation of cloud Administrator Node.</td></tr>
 </table>
 
-#### Solution 
-
-Ensure you get the multipath storage configured, for that use the below commands:
-
-<pre>
-apt-get install multipath-tools
-cp /home/crowbar/multipath.conf /etc
-/lib/udev/scsi_id -g -u -d /dev/sdb
-<nobr>sed \-i 's/36001438005df087b0000600003d40000/Replace with value from line #3/' /etc/multipath.conf</nobr>
-cat /etc/multipath.conf
-reboot
-</pre>
-
-<pre>
-pvcreate /dev/mapper/iaasc
-vgcreate nova_instances /dev/mapper/iaasc
-lvcreate -L999G -n logical_nova1 nova_instances
-mke2fs -t ext4 /dev/nova_instances/logical_nova1
-mount -t ext4 /dev/nova_instances/logical_nova1 /var/lib/nova/instances/
-chown nova:nova /var/lib/nova/instances/
-restart nova-compute
-<nobr>sed -i '$ a /dev/nova_instances/logical_nova1 /var/lib/nova/instances 0 2' /etc/fstab</nobr>
-</pre>
-
-After that, follow the instruction below post reboot:
-
-<pre>
-pvcreate --metadatasize 1020 /dev/mapper/iaasc
-vgextend cinder-volumes /dev/mapper/iaasc
-vgreduce cinder-volumes  /dev/loop0
-</pre>
-
-
-
-### Problem: Red screen when installing OS on bare metal nodes
-
-<table style="text-align: left; vertical-align: top; width:700px;">
-
-<tr style="background-color: white; color: black;">
-<td> Symptoms </td>
-<td> During the installation process the partition could not be created. </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Primary software component </td>
-<td> Installation </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Failure message </td>
-<td> No root file system is defined </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Probable cause </td>
-<td> The iLO lost the virtual drive connection. See the example screen capture.</td>
-</tr>
-
+#### Create Cloud / Create Region fails
+<table>
+<tr>
+<td>Software Component</td>
+<td>Operational Dashboard</td></tr>
+<tr>
+<td>System Behavior</td>
+<td>Dashboard shows status of cloud as “Failed” in Manage Clouds section of Cloud tab.</td></tr>
+<tr>
+<td>Probable Cause</td>
+<td>Creation of cloud or region implicitly installs various cloud components in background via barclamps. Any failure of installation of barclamp will cause this behavior.</td></tr>
+<tr>
+<td>Possible Resolution</td>
+<td>
+Do the following:<br>
+<br>
+<ol>
+<li>Change log level to info. To do so, edit /etc/chef/client.rb and change “log_level&nbsp;:error” to “log_level&nbsp;:info”. Do the same for all compute and controller nodes.</li>
+<li>bluepill chef-client restart</li>
+<li>In the server (admin node), &nbsp;edit /etc/chef/server.rb and change “log_level:error” to “log_level&nbsp;:info” and reboot </li>
+<li>Go to the crowbar UI (https://&lt;Admin node IP&gt;:3000) and re-apply the barclamp(s) that has failed </li>
+<li>Check /opt/dell/crowbar_framework/log/&lt;node&gt;.log as it may help in identifying the error. </li>
+<li>Remove failed cloud or region and re-create.</li></ol>
+<br>
+Ensure the attributes like Network, Server Type selection are correct for the creation of Cloud or Region.</td></tr>
 </table>
 
-<img src="media/cloudos-red-screen.png" title="Example red screen" /> 
+## Administration Dashboard: Moonshot Management
 
-#### Solution 
+#### Internal server error from Skyline (Moonshot Management) with no additional information on exact error
+<table>
+<tr>
+<td>Software Component</td>
+<td>Administration Dashboard</td></tr>
+<tr>
+<td>System Behavior</td>
+<td>Dashboard displays message ‘HTTP 500 Internal Server Error’</td></tr>
+<tr>
+<td>Probable Cause</td>
+<td>Apollo service unreachable or is busy in other tasks</td></tr>
+<tr>
+<td>Possible Resolution</td>
+<td>
+Check the following logs on controller node for exact detail<br>
+<ol>
+<li>/var/log/skyline/skyline.log</li>
+<li>/var/log/apollo/apollo.log</li></ol></td></tr>
+</table>
 
-Reboot the server, check if the iLO is still mapped correctly and re-execute the operation.
+#### Not Authorized error from Skyline (Moonshot Management)
+<table>
+<tr>
+<td>Software Component</td>
+<td>Administration Dashboard</td></tr>
+<tr>
+<td>System Behavior</td>
+<td>Dashboard displays message ‘HTTP 401 Not Authorized’</td></tr>
+<tr>
+<td>Probable Cause</td>
+<td>The user does not have the permission or the X-Auth token expired due to re-login with same credentials in another session</td></tr>
+<tr>
+<td>Possible Resolution</td>
+<td>
+Check the following logs on controller node for exact details<br>
+<ol>
+<li>/var/log/skyline/skyline.log</li>
+<li>/var/log/apollo/apollo.log</li></ol>
+If this is because of Auth token expiry then signout and re-login to Skyline to renew the token</td></tr>
+</table>
 
+#### Moonshot chassis discovery takes a long time or fails sometimes
+<table>
+<tr>
+<td>Software Component</td>
+<td>Administration Dashboard</td></tr>
+<tr>
+<td>System Behavior/ Message</td>
+<td>Dashboard shows chassis discovery always in progress</td></tr>
+<tr>
+<td>Probable Cause</td>
+<td>Apollo service unreachable or Chassis is unreachable at the given IP address</td></tr>
+<tr>
+<td>Possible Resolution</td>
+<td>Check /var/log/apollo/apollo.log on both controller and compute node for exact details </td></tr>
+</table>
 
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+#### Chassis refresh status is shown as “Failed” in the Datacenter table view
+<table>
+<tr>
+<td>Software Component</td>
+<td>Administration Dashboard</td></tr>
+<tr>
+<td>System Behavior/ Message</td>
+<td>Icon view shows optimal status, table view shows refresh status as failed</td></tr>
+<tr>
+<td>Probable Cause</td>
+<td>Chassis is unreachable</td></tr>
+<tr>
+<td>Possible Resolution</td>
+<td>
+<ol>
+<li>Double click on the chassis and proceed to Single Chassis view and click on Force Refresh button at the top right corner of the chassis view frame</li>
+<li>After the force refresh completes, return back to the Datacenter view to see the updated status</li></ol></td></tr>
+</table>
 
+#### If an existing chassis displays failed to connect message
+<table>
+<tr>
+<td>Software Component</td>
+<td>Administration Dashboard</td></tr>
+<tr>
+<td>System Behavior/ Message</td>
+<td>“Failed to connect to chassis”</td></tr>
+<tr>
+<td>Probable Cause</td>
+<td>Password and other details may have changed</td></tr>
+<tr>
+<td>Possible Resolution</td>
+<td>Edit Chassis details and provide correct information</td></tr>
+</table>
+
+#### Deleting chassis failed with a message stating unable to delete
+<table>
+<tr>
+<td>Software Component</td>
+<td>Administration Dashboard</td></tr>
+<tr>
+<td>System Behavior/ Message</td>
+<td>“Unable to delete, Cartridges not in maintenance mode/Active instances exist” or “Unable to delete, Chassis not in maintenance mode”</td></tr>
+<tr>
+<td>Probable Cause</td>
+<td>
+To successfully delete a chassis, it should be put in Maintenance Mode in the Single Chassis view and there should not be any active instance on the nodes in the chassis. <br>
+<br>
+The deletion of a chassis is also allowed when the chassis discovery fails when adding the &nbsp;chassis for the first time</td></tr>
+<tr>
+<td>Possible Resolution</td>
+<td>Set the chassis to maintenance mode and retry delete. Ensure no active instances are running</td></tr>
+</table>
+
+#### After the single chassis view page loads, any immediate action throws internal server error
+<table>
+<tr>
+<td>Software Component</td>
+<td>Administration Dashboard</td></tr>
+<tr>
+<td>System Behavior/ Message</td>
+<td>HTTP 500 Internal Server Error</td></tr>
+<tr>
+<td>Probable Cause</td>
+<td>Apollo service is busy in fetching event logs</td></tr>
+<tr>
+<td>Possible Resolution</td>
+<td>Wait for a while, until the event logs have been fetched or stopped loading and then retry</td></tr>
+</table>
+
+#### Cartridge shows “Error” text on Single Chassis view image
+<table>
+<tr>
+<td>Software Component</td>
+<td>Administration Dashboard</td></tr>
+<tr>
+<td>System Behavior/ Message</td>
+<td>Error is displayed on cartridge instead of cartridge ID and corresponding table entry is empty</td></tr>
+<tr>
+<td>Probable Cause</td>
+<td>Erroneous data from Moonshot Chassis Manager</td></tr>
+<tr>
+<td>Possible Resolution</td>
+<td>
+<ul>
+<li>Wait for the discovery polling interval, or</li>
+<li>Initiate a Force Refresh</li></ul></td></tr>
+</table>
+
+#### Single Chassis view has a greyed out image
+<table>
+<tr>
+<td>Software Component</td>
+<td>Administration Dashboard</td></tr>
+<tr>
+<td>System Behavior/ Message</td>
+<td>Single chassis view image is greyed out and no actions are possible</td></tr>
+<tr>
+<td>Probable Cause</td>
+<td>Chassis is in the process of discovering cartridges or discovery has failed</td></tr>
+<tr>
+<td>Possible Resolution</td>
+<td>
+<ul>
+<li>Wait for the discovery polling interval, or</li>
+<li>Initiate a Force Refresh </li>
+<li>If not resolved check the errors in /var/log/apollo.log</li></ul></td></tr>
+</table>
+
+#### The disk size of a node is always shown as a lesser value than the actual disk size on the node
+<table>
+<tr>
+<td>Software Component</td>
+<td>Administration Dashboard</td></tr>
+<tr>
+<td>System Behavior/ Message</td>
+<td>Disk size information is conflicting</td></tr>
+<tr>
+<td>Probable Cause</td>
+<td>Since the disk size information is not available from the Moonshot Chassis, only the minimum disk size supported by the node in a cartridge is configured in &nbsp;HP Cloud OS for Moonshot</td></tr>
+<tr>
+<td>Possible Resolution</td>
+<td>None</td></tr>
+</table>
+
+#### Error when setting a chassis in maintenance mode
+<table>
+<tr>
+<td>Software Component</td>
+<td>Administration Dashboard</td></tr>
+<tr>
+<td>System Behavior/ Message</td>
+<td>“Failed to update maintenance mode for one or more cartridges”</td></tr>
+<tr>
+<td>Probable Cause</td>
+<td>Chassis unreachable or no nodes are registered</td></tr>
+<tr>
+<td>Possible Resolution</td>
+<td>Ensure all the cartridges/nodes discovered by Apollo are registered to nova bm database</td></tr>
+</table>
+
+#### Failure in Chassis Deletion
+<table>
+<tr>
+<td>Software Component</td>
+<td>Chassis Deletion</td></tr>
+<tr>
+<td>System Behavior/ Message</td>
+<td>“Unable to delete chassis”</td></tr>
+<tr>
+<td>Probable Cause</td>
+<td>
+Maintenance mode not set and active instances running are the obvious causes for failure in deletion of chassis. <br>
+<br>
+Apart from the above two, deletion could fail because Discovery thread is not running for the chassis. It might have stopped because of some other intervening process </td></tr>
+<tr>
+<td>Possible Resolution</td>
+<td>Restart Apollo agent service and delete the chassis</td></tr>
+</table>
+
+#### Added chassis is invisible in the Datacenter view (IE, Firefox)
+<table>
+<tr>
+<td>Software Component</td>
+<td>Administration Dashboard</td></tr>
+<tr>
+<td>System Behavior/ Message</td>
+<td>Chassis for which discovery failed, does not show up in the Datacenter view with failed status</td></tr>
+<tr>
+<td>Probable Cause</td>
+<td>Discovery of chassis failed</td></tr>
+<tr>
+<td>Possible Resolution</td>
+<td>
+<ol>
+<li>Close the browser and open it again to see the chassis in Datacenter view</li></ol>
+If option 1 does not work, please follow option 2.<br>
+2. Please use Chrome to see the failed chassis in Datacenter view and use Edit option to re-discover it.</td></tr>
+</table>
+
+## Administration Dashboard: Instance Provisioning &#9658; Elemental
+
+#### Provisioning fails when using custom flavors
+<table>
+<tr>
+<td>Software Component</td>
+<td>Administration Dashboard</td></tr>
+<tr>
+<td>System Behavior/ Message</td>
+<td>Nova-compute log errors out : “Given size (10240) exceeds max allowable size (0)”</td></tr>
+<tr>
+<td>Probable Cause</td>
+<td>
+Provisioning will fail when the root_mb in the flavor exactly matches the node’s disk size. There is a OpenStack community defect on this<br>
+<a href="https://bugs.launchpad.net/nova/+bug/1171562">https://bugs.launchpad.net/nova/+bug/1171562</a></td></tr>
+<tr>
+<td>Possible Resolution</td>
+<td>Make the root_mb size in the flavor less than the node’s disk size </td></tr>
+</table>
+
+#### While provision, error is displayed in nova-scheduler.log
+<table>
+<tr>
+<td>Software Component</td>
+<td>Administration Dashboard</td></tr>
+<tr>
+<td>System Behavior/ Message</td>
+<td>“Setting instance to Error state”</td></tr>
+<tr>
+<td>Probable Cause</td>
+<td>A baremetal node matching the flavor specs is not present or node is set to maintenance mode</td></tr>
+<tr>
+<td>Possible Resolution</td>
+<td>
+<ol>
+<li>Make sure the baremetal nodes are NOT set to maintenance mode.</li>
+<li>Make sure that you have a baremetal node in backend matching the product_id mentioned in the flavor</li></ol></td></tr>
+</table>
+
+#### Unable to provision instances due to no DHCP server found
+<table>
+<tr>
+<td>Software Component</td>
+<td>Administration Dashboard</td></tr>
+<tr>
+<td>System Behavior/ Message</td>
+<td>Error in nova-compute log on the compute node: “no dhcp-server found”</td></tr>
+<tr>
+<td>Probable Cause</td>
+<td>Quantum-dhcp –agent may not be running in the controller or the controller is not able to reach baremetal host via nova_flat network</td></tr>
+<tr>
+<td>Possible Resolution</td>
+<td>
+<ol>
+<li>Verify that the flat network is in promiscuous mode.</li>
+<li>Verify quantum-dhcp-agent is in running state in the controller node. </li>
+<li>Verify the controller node is able to reach the baremetal host via the nova_flat network</li></ol></td></tr>
+</table>
+
+#### Nodes registered are shown in “nova baremetal-node-list” but not in “nova hypervisor-list” (provisioning will fail in this case)
+<table>
+<tr>
+<td>Software Component</td>
+<td>Administration Dashboard</td></tr>
+<tr>
+<td>System Behavior/ Message</td>
+<td>UI behavior shows instance in error state immediately after launch</td></tr>
+<tr>
+<td>Probable Cause</td>
+<td>Nova-compute service may be down or there might be sync issues between nova-services</td></tr>
+<tr>
+<td>Possible Resolution</td>
+<td>
+<ol>
+<li>Make sure that nova-compute is up by executing the following command on controller node “nova-manage service list”</li>
+<li>If nova-compute shows as XXX, restart the nova-compute service on the baremetal host</li></ol></td></tr>
+</table>
+
+#### Instance de-provisioning fails with “Unable to establish IPMI v2 / RMCP+ session” error in nova-compute.log
+<table>
+<tr>
+<td>Software Component</td>
+<td>Administration Dashboard</td></tr>
+<tr>
+<td>System Behavior/ Message</td>
+<td>“Insufficient resources for session Error: Unable to establish IPMI v2 / RMCP+ session Unable to get Chassis Power Status”</td></tr>
+<tr>
+<td>Probable Cause</td>
+<td>This is because the number of simultaneous IPMI sessions on the chassis that hosts the nodes selected for provisioning&nbsp; is exhausted</td></tr>
+<tr>
+<td>Possible Resolution</td>
+<td>Clicking “delete topology” couple of times would be able to do the cleanup. If that does not work then the chassis should be reset using the chassis manager CLI “RESET CM”</td></tr>
+</table>
+
+#### Instance provisioning fails due to failed cartridge
+<table>
+<tr>
+<td>Software Component</td>
+<td>Administration Dashboard</td></tr>
+<tr>
+<td>System Behavior/ Message</td>
+<td>UI behavior shows instance in error state immediately after launch</td></tr>
+<tr>
+<td>Probable Cause</td>
+<td>
+The current “apollo” service design takes 30minutes to import the refreshed data into the HP Cloud OS Moonshot environment. <br>
+<br>
+Before the Cloud Administrator &nbsp;realizes about a failed cartridge, the scheduler might select the cartridge which is in failed state and this &nbsp;might lead to failure of the instance provisioning</td></tr>
+<tr>
+<td>Possible Resolution</td>
+<td>
+Cloud Admin should do a Force Refresh in Moonshot Chassis Management page before assigning a cartridge for provisioning, get the failed cartridge list and then put them into the maintenance mode. <br>
+<br>
+The nova-scheduler does not select a cartridge which is in maintenance mode</td></tr>
+</table>
+
+#### User cannot connect to instance via SSH even if instance is active and is in running state
+<table>
+<tr>
+<td>Software Component</td>
+<td>Administration Dashboard</td></tr>
+<tr>
+<td>System Behavior/ Message</td>
+<td>“ssh: connect to host &lt;IP Addres&gt; port 22: No route to host”</td></tr>
+<tr>
+<td>Probable Cause</td>
+<td>The instance’s networking is not completely configured after boot</td></tr>
+<tr>
+<td>Possible Resolution</td>
+<td>Wait for a few minutes and retry</td></tr>
+</table>
+
+#### Unable to ping or SSH to an instance
+<table>
+<tr>
+<td>Software Component</td>
+<td>Administration Dashboard</td></tr>
+<tr>
+<td>System Behavior</td>
+<td>Request times out</td></tr>
+<tr>
+<td>Probable Cause</td>
+<td>Network issues may prevent access to cloud instances or there can be a routing problem</td></tr>
+<tr>
+<td>Possible Resolution</td>
+<td>
+<ol>
+<li>Check if the Baremetal instances are able to forward packets from the public interface to the bridged interface.</li></ol>
+sysctl -A | grep ip_forward<br>
+net.ipv4.ip_forward should be set to 1<br>
+<ol start="2">
+<li>Check if you can communicate with the OpenStack Compute nodes from the client and any routing to these instances have the correct entries</li></ol></td></tr>
+</table>
+
+#### Provisioning fails due to issues with default quota
+<table>
+<tr>
+<td>Software Component</td>
+<td>Administration Dashboard</td></tr>
+<tr>
+<td>System Behavior/ Message</td>
+<td>“Error” status reported in “Instances” page immediately after launching the instance</td></tr>
+<tr>
+<td>Probable Cause</td>
+<td>Insufficient quota limits – CPU, instances or RAM</td></tr>
+<tr>
+<td>Possible Resolution</td>
+<td>Check the Projects tab -&gt; Overview page, if any of the dialog shows indication of insufficient quota, change the quota values as desired &nbsp;from Cloud Tab -&gt; Projects -&gt; Modify Limits option and retry provisioning.</td></tr>
+</table>
+
+#### Instance is in spawning state for a long time
+<table>
+<tr>
+<td>Software Component</td>
+<td>Operational Dashboard</td></tr>
+<tr>
+<td>System Behavior/ Message</td>
+<td>“Status” on “Instances” page will continue to be in “Spawning/Error” and does not change to “Active”</td></tr>
+<tr>
+<td>Probable Cause</td>
+<td>Network connectivity issues, Instance reboot fails due to some issues with the image etc.</td></tr>
+<tr>
+<td>Possible Resolution</td>
+<td>
+<ol>
+<li>Ensure that the Baremetal host has sufficient resources to launch and is registered &nbsp;with compute nodes</li>
+<li>Check the /var/log/nova/nova-compute.log (on compute node) for cause of failure.</li>
+<li>The following specifications need to be there for provisioning:</li></ol>
+<ul>
+<li>2013-10-18 18:17:09,225.225 4466 INFO nova.compute.manager [-] Updating bandwidth usage cache</li>
+<li>2013-10-18 18:22:52,753.753 4466 AUDIT nova.compute.resource_tracker [-] Auditing locally available compute resources</li>
+<li>2013-10-18 18:22:52,787.787 4466 AUDIT nova.compute.resource_tracker [-] Free ram (MB): 2048</li>
+<li>2013-10-18 18:22:52,787.787 4466 AUDIT nova.compute.resource_tracker [-] Free disk (GB): 10</li>
+<li>2013-10-18 18:22:52,787.787 4466 AUDIT nova.compute.resource_tracker [-] Free VCPUS: 1</li></ul>
+<br>
+If a &quot;No valid host found&quot; error occurs while provisioning, ensure that the Baremetal Host is registered correctly by nova baremetal-node-list</td></tr>
+</table>
+
+#### De-provisioning leads to deleting state but does not delete the instance
+<table>
+<tr>
+<td>Software Component</td>
+<td>Administration Dashboard</td></tr>
+<tr>
+<td>System Behavior/ Message</td>
+<td>Message N/A. Dashboard shows instance deletion in progress always</td></tr>
+<tr>
+<td>Probable Cause</td>
+<td>When instance is terminated in spawning state, terminate request is orphaned and instance status is hung at deletion.</td></tr>
+<tr>
+<td>Possible Resolution</td>
+<td>
+<ol>
+<li>Stop the nova services running in Baremetal Host and delete the instance, or</li>
+<li>Restart nova-compute in compute node and refresh skyline</li></ol></td></tr>
+</table>
+
+#### Unable to access Shell in a box
+<table>
+<tr>
+<td>Software Component</td>
+<td>Administration Dashboard</td></tr>
+<tr>
+<td>System Behavior/ Message</td>
+<td>“Web Page Cannot be Found” message in browser</td></tr>
+<tr>
+<td>Probable Cause</td>
+<td>System where the Administration Dashboard is running may not be in the Admin network</td></tr>
+<tr>
+<td>Possible Resolution</td>
+<td>Ensure that the connectivity to the Admin network and the server name for the interface are pointing to the admin node</td></tr>
+</table>
+
+#### Unable to view Shell in a box, shows warning screen or grey screen
+<table>
+<tr>
+<td>Software Component</td>
+<td>Administration Dashboard</td></tr>
+<tr>
+<td>System Behavior/ Message</td>
+<td>Message - “Unable to load the console” or grey screen</td></tr>
+<tr>
+<td>Probable Cause</td>
+<td>SSL verification exceptions during first time access of shell in a box console</td></tr>
+<tr>
+<td>Possible Resolution</td>
+<td>Open the &nbsp;link ‘Click to view only console’ in a New Tab and allow the necessary SSL verification exceptions and refresh Skyline</td></tr>
+</table>
+
+## Administration Dashboard: Topology Designer
+
+#### Unable to view topology designer, shows certificate warning screen or grey screen
+<table>
+<tr>
+<td>Software Component</td>
+<td>Administration Dashboard</td></tr>
+<tr>
+<td>System Behavior/ Message</td>
+<td>The browser shows SSL verification screen or grey screen</td></tr>
+<tr>
+<td>Probable Cause</td>
+<td>SSL verification exceptions during the first access of the topology designer UI</td></tr>
+<tr>
+<td>Possible Resolution</td>
+<td>
+In Mozilla Firefox, right click on the warning screen section and select <br>
+This Frame -&gt; Open Frame in New Tab and allow the necessary SSL verification exceptions and refresh Administration Dashboard<br>
+<br>
+For Internet Explorer, go to url:<br>
+https://&lt;controller-node-public-ip&gt;:21081/<br>
+Accept the SSL warning and proceed. The page will show “Web page cannot be found” screen. Enter the skyline IP in the same browser tab and Topology Designer will now load within the Administration Dashboard</td></tr>
+</table>
+
+#### Designer does not list the resource pool when cloud profile is other than ‘HP Cloud OS Grizzly Baremetal’
+<table>
+<tr>
+<td>Software Component</td>
+<td>Administration Dashboard</td></tr>
+<tr>
+<td>System Behavior/ Message</td>
+<td>Topology designer UI does not list all the resource pools that exists</td></tr>
+<tr>
+<td>Probable Cause</td>
+<td>Resource pools that are not displayed might have been created with the profile other than those specific for HP Cloud OS for Moonshot</td></tr>
+<tr>
+<td>Possible Resolution</td>
+<td>Make sure the required resource pool has ‘HP Cloud OS Grizzly Baremetal’ as it’s cloud profile</td></tr>
+</table>
+
+## Administration Dashboard: Instance Provisioning &#9658; Topology-based
+
+#### Skyline Running Topologies reports internal server error
+<table>
+<tr>
+<td>Software Component</td>
+<td>Administration Dashboard</td></tr>
+<tr>
+<td>System Behavior/ Message</td>
+<td>Skyline error message “Internal server error”</td></tr>
+<tr>
+<td>Probable Cause</td>
+<td>Timeout issues between eve and other services or wrong HTTP Proxy Settings (non-proxy hosts) is configured</td></tr>
+<tr>
+<td>Possible Resolution</td>
+<td>Ensure that the non-proxy host 127.* is set in Prerequisites page of Operational Dashboard. Once “Complete Install” is done, the user cannot update prerequisites. Hence, if not set correctly the user will have to re-apply the hp-cos-eve-barclamp with 127.* in non-proxy hosts.</td></tr>
+</table>
+
+## Administration Dashboard: Workloads
+
+#### Download of workload from Skyline’s Updates and Extension panel fails
+<table>
+<tr>
+<td>Software Component</td>
+<td>Administration Dashboard</td></tr>
+<tr>
+<td>System Behavior</td>
+<td>Dashboard displays message ‘Unable to connect to server’</td></tr>
+<tr>
+<td>Probable Cause</td>
+<td>CODN can only handle certain number of download activities simultaneously. </td></tr>
+<tr>
+<td>Possible Resolution</td>
+<td>Wait for some time and retry. For details, check log file at /var/log/codn/codn.log on controller node.</td></tr>
+</table>
+
+#### Publishing workload from Updates and Extension panel does not show up in workload dashboard
+<table>
+<tr>
+<td>Software Component</td>
+<td>Administration Dashboard</td></tr>
+<tr>
+<td>System Behavior</td>
+<td>Newly added workload is not visible in dashboard</td></tr>
+<tr>
+<td>Probable Cause</td>
+<td>CODN fails to upload one of the components (i.e. image or topology etc) in cloud.</td></tr>
+<tr>
+<td>Possible Resolution</td>
+<td>
+Check the CODN log located at /var/log/codn/codn.log on controller node. <br>
+<br>
+If CODN fails to upload a component because a component with the same name ALREADY exists then check manifest file in the respective workload folder under /var/cache/codn/import on the controller node. Specifically, check whether duplicate policy (check_for_duplicates property) for the component is configured as desired. Set this attribute to “false” to allow duplicates.<br>
+<br></td></tr>
+</table>
+
+#### Launching CCUE designer shows gray screen or throws warning
+<table>
+<tr>
+<td>Software Component</td>
+<td>Administration Dashboard</td></tr>
+<tr>
+<td>System Behavior</td>
+<td>Dashboard shows gray screen or warning</td></tr>
+<tr>
+<td>Probable Cause</td>
+<td>SSL verification exceptions during the first time access of the designer UI</td></tr>
+<tr>
+<td>Possible Resolution</td>
+<td>
+In Mozilla Firefox, right click on the warning screen section and select <br>
+This Frame -&gt; Open Frame in New Tab and allow the necessary SSL verification exceptions and refresh Administration Dashboard<br>
+<br>
+For Internet Explorer, go to url:<br>
+https://&lt;controller-node-public-ip&gt;:21081/<br>
+Accept the SSL warning and proceed. The page will show “Web page cannot be found” screen. Enter the skyline IP in the same browser tab and Topology designer will now load within the Administration Dashboard</td></tr>
+</table>
+
+#### Launch profile fails
+<table>
+<tr>
+<td>Software Component</td>
+<td>Administration Dashboard</td></tr>
+<tr>
+<td>System Behavior</td>
+<td>Dashboard displays a message ‘Failed to launch Profile’</td></tr>
+<tr>
+<td>Probable Cause</td>
+<td>eve is not configured with correct proxy setting</td></tr>
+<tr>
+<td>Possible Resolution</td>
+<td>Ensure that the non-proxy host 127.* is set in Prerequisites page of Operational Dashboard. Once “Complete Install” is done, the user cannot update prerequisites. Hence, if not set correctly the user will have to re-apply the hp-cos-eve-barclamp with 127.* in non-proxy hosts.</td></tr>
+</table>
+
+#### Creation of profile does not pick nova flavor for a given server in CCUE designer
+<table>
+<tr>
+<td>Software Component</td>
+<td>Administration Dashboard</td></tr>
+<tr>
+<td>System Behavior</td>
+<td>Property editor of server element in CCUE designer does not pick any flavor automatically.</td></tr>
+<tr>
+<td>Probable Cause</td>
+<td>
+It can happen if there is no auto-flavor created in system which meets server requirement of specified workload. <br>
+e.g., If you import a workload that’s not supported by the cartridges present in the cloud.<br>
+<br></td></tr>
+<tr>
+<td>Possible Resolution</td>
+<td>
+Check support matrix as well as HP Moonshot server requirements of your workload. If your cloud has appropriate Moonshot server (i.e. cartridges) then check Apollo log /var/log/apollo/apollo.log on controller node.<br>
+<br></td></tr>
+</table>
+
+## Log/Configuration Files and Location
+<table>
+<tr>
+<td>Topic</td>
+<td>Log configuration</td>
+<td>Log file location</td></tr>
+<tr>
+<td>Workload content download &amp; publish [Skyline-&gt; Update and Extensions]</td>
+<td>
+/etc/codn/codn.log<br>
+&nbsp;(Cloud Controller)<br>
+<br>
+To configure the log level, change the INFO to one of allowed values: DEBUG, ERROR, WARNING &amp; CRITICAL<br>
+<br>
+logging = {<br>
+ &nbsp; &nbsp;'loggers': {<br>
+ &nbsp; &nbsp; &nbsp; &nbsp;'root': {'level': 'INFO', 'handlers': ['console']},<br>
+ &nbsp; &nbsp; &nbsp; &nbsp;'codn': {'level': 'INFO', 'handlers': ['file']},<br>
+ &nbsp; &nbsp; ….<br>
+<br></td>
+<td>
+/var/log/codn/codn.log<br>
+&nbsp;(Cloud Controller)</td></tr>
+<tr>
+<td>
+Workload service &nbsp;[Skyline -&gt; Provisioning -&gt; Workload]<br>
+<br></td>
+<td>
+/etc/skyline/platform_settings.py<br>
+&nbsp;(Cloud Controller)<br>
+<br>
+To configure the log level, change the INFO to one of allowed values defined in LOG_LEVELS in the same file<br>
+<br>
+LOGGING = {<br>
+…. &nbsp; <br>
+ &nbsp; &nbsp; &nbsp; &nbsp;'cloudos_file': {<br>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'level': 'INFO',<br>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'class': 'logging.handlers.RotatingFileHandler',<br>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'filename': '/var/log/skyline/skyline.log',<br>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'</td>
+<td>
+/var/log/skyline/skyline.log<br>
+&nbsp;(Cloud Controller)</td></tr>
+<tr>
+<td>Provision [Eve]</td>
+<td>
+ /etc/eve-api/eve.yml<br>
+/etc/eve-requestworker/eve.yml<br>
+&nbsp;(Cloud Controller)<br>
+<br>
+To configure the log level, change the INFO to one of allowed values defined as follows<br>
+<br>
+logging:<br>
+ &nbsp; &nbsp;# The default level of all loggers. Can be OFF, ERROR, WARN, INFO, DEBUG, TRACE, or ALL.<br>
+ &nbsp; &nbsp;level: INFO<br>
+<br></td>
+<td>
+/var/log/eve-api/eve-api.log<br>
+/var/log/eve-requestworker/eve-requestworker.log<br>
+(Cloud Controller)</td></tr>
+<tr>
+<td>Resource pool &amp; Flavor selection [Graffiti]</td>
+<td>
+/etc/graffiti-api/graffiti-api.yml<br>
+&nbsp;(Cloud Controller)<br>
+To configure the log level, change the INFO to one of allowed values defined as follows<br>
+<br>
+logging:<br>
+ &nbsp; &nbsp;# The default level of all loggers. Can be OFF, ERROR, WARN, INFO, DEBUG, TRACE, or ALL.<br>
+ &nbsp; &nbsp;level: INFO<br>
+<br></td>
+<td>
+/var/log/graffitia-api/graffiti-api.log<br>
+(Cloud Controller)</td></tr>
+<tr>
+<td>Workload Deployment profile guide &amp; Deployment profile persistence [Focus]</td>
+<td>
+/etc/focus-api/focus.yml<br>
+&nbsp;(Cloud Controller)<br>
+<br>
+To configure the log level, change the INFO to one of allowed values defined as follows<br>
+<br>
+logging:<br>
+ &nbsp; &nbsp;# The default level of all loggers. Can be OFF, ERROR, WARN, INFO, DEBUG, TRACE, or ALL.<br>
+ &nbsp; &nbsp;level: INFO<br>
+<br></td>
+<td>
+/var/log/focus-api/focus-api.log<br>
+(Cloud Controller)</td></tr>
+<tr>
+<td>Moonshot Management &amp; Automatic default Flavor creation [ Apollo]</td>
+<td>
+/etc/apollo/logging.conf<br>
+&nbsp;(Baremetal Compute Host)<br>
+<br>
+To configure the log level, change the INFO to one of allowed values : DEBUG, ERROR, WARNING &amp; CRITICAL<br>
+<br>
+[logger_root]<br>
+level = INFO<br>
+handlers = discoveryfile<br>
+<br></td>
+<td>
+/var/log/apollo/apollo.log<br>
+&nbsp;(Baremetal Compute Host)<br>
+<br></td></tr>
+<tr>
+<td>Moonshot capability publish &nbsp;[ Nova-compute]</td>
+<td>
+/etc/nova/logging.conf<br>
+&nbsp;(Baremetal Compute Host)<br>
+<br>
+To configure the log level, change the INFO to one of allowed values : DEBUG, ERROR, WARNING &amp; CRITICAL<br>
+<br>
+[logger_root]<br>
+level = INFO<br>
+…<br>
+<br>
+NOTE: update the same log level for the other loggers in this file, (loggers starts with [logger_xxx]<br>
+<br>
+/etc/nova/nova.conf<br>
+Under [DEFAULT] section , add following line<br>
+debug=True<br>
+<br></td>
+<td>
+/var/log/nova/nova-scheduler.log<br>
+/var/log/nova/nova-compute.log<br>
+&nbsp;(Baremetal Compute Host)<br>
+<br></td></tr>
+<tr>
+<td>Image [glance]</td>
+<td>
+/etc/glance/glance-api.conf<br>
+&nbsp;(Cloud Controller)<br>
+<br>
+Under [DEFAULT] section , set following line<br>
+debug=True<br>
+<br>
+NOTE: Follow the same procedure for other glance modules as well. The log location will vary accordingly.<br>
+<br></td>
+<td>
+/var/log/glance/api.log<br>
+(Cloud Controller)</td></tr>
+<tr>
+<td>Network [Quantum]</td>
+<td>
+/etc/quantum/quantum.conf<br>
+&nbsp;(Cloud Controller)<br>
+<br>
+Under [DEFAULT] section , set following line<br>
+debug=True<br>
+<br></td>
+<td>
+/var/log/quantum/server.log<br>
+(Cloud Controller)</td></tr>
+</table>
+<br>
+<br>
+<div id="FOOTER">
+<p>Page |  </p>
+<p>© Copyright  Hewlett-Packard Development Company&nbsp;&nbsp;&nbsp;&nbsp;</p>
+</div>
+</body>
+</html>
