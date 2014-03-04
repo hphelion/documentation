@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Cloud OS for Moonshot for Moonshot Release Notes"
+title: "HP Cloud OS for Moonshot Release Notes"
 permalink: /cloudos/moonshot/prepare/releasenotes/
 product: moonshot
 
@@ -22,49 +22,122 @@ PageRefresh();
 
 # HP Cloud OS for Moonshot Release Notes
 
-This topic provides information about the HP Cloud OS for Moonshot 1.0 release.
+This topic contains the following information about the HP Cloud OS for Moonshot 1.0 release:
 
-* [New in HP Cloud OS for Moonshot 1.0](#features)
+* [Features in HP Cloud OS for Moonshot 1.0](#features)
 * [Recommendations for HP Cloud OS for Moonshot 1.0](#recommendations)
 * [For Further Information](#for-further-information)
 
-##New in HP Cloud OS for Moonshot 1.0## {#features}
+##Features in HP Cloud OS for Moonshot 1.0## {#features}
 
-( list )
+**Optimized Workloads** &mdash; HP Cloud OS for Moonshot provides optimized Cloud Workloads across cloud providers, with model-once and provision-anywhere capability. These features are combined with repeatable, consistent workload placements across diverse cloud deployment models. This functionality allows you and your customers to optimally align workloads with resources and improve resource utilization.
+
+**Flexible and Open Architecture** &mdash; Powered by OpenStack&#174; technology, HP Cloud OS for Moonshot provides you a flexible, industry leading, vendor neutral and open source cloud architecture.
+
+**Moonshot Management** &mdash; The Single Pane of Glass (SPOG) view with the Chassis Manager enhances your user experience by catering to three important aspects of Moonshot Management:
+	
+* Displaying an overall perspective of the datacenter, hosted servers and health of chassis in the Datacenter View
+* Providing detailed information of individual chassis host and health status in the Single Chassis View
+* Managing Server with options such as Power On/Off and Maintenance Mode
+
+**Workload Management** &mdash; Enables you to deploy a composite service comprising of different applications and workloads in a user friendly manner. You can browse through HP's catalog of pre-tested and pre-crafted workloads download and publish them to the cloud,then launch them to get a running application infrastructure. You can do this without having to worry about the underlying technical details.
+
 
 ##Recommendations for HP Cloud OS for Moonshot 1.0## {#recommendations}
 
-This section describes the HP recommendations for best performance, utility, and functionality with this software release. 
-We have also provided information about some limitations and known issues for reference purposes.   
+This section describes the HP recommendations for best performance, utility, and functionality with this software version. 
+We have also provided information about some limitations and known issues for reference purposes. This section contains:
 
-* [Best Practices](#best-practices) for optimal functionality and performance
-* [Known Issues](#known-issues) and suggested operational alternatives with HP Cloud OS for Moonshot N.NN
-* [OpenStack Community Issues](#openstack-community-issues)
+* [Recommendations for best functionality, performance and reliability](#best-practices) 
+* [Known issues and workarounds in the 1.0 release](#known-issues) 
 
-###Best Practices### {#best-practices} 
+###Recommendations ### {#best-practices} 
 
 HP recommends the following best practices for HP Cloud OS for Moonshot 1.0.
 
-( create subsections and describe )
+**Workloads**
+	
+ * For best functionality, access your Operational Dashboard and Baremetal instance console through Admin Network.
+ * For best results, create your images using Disk Image Builder.
 
-###Known Issues### {#known-issues}
+**Provisioning**
 
-The following are known issues for HP Cloud OS for Moonshot 1.0.
+* For increased reliability, we recommend you allocate an adequate IP address range for the nova_flat network based on the number of instances planned for the given Cloud. For example, if the environment is going to have 40 instances, at least 120 IP addresses need to be defined in the DHCP allocation range. 
+
+**Installation**
+
+* To enable maximum reliability in the Cloud environment, do not select the controller nodes when performing *Create Compute Region* action for Moonshot/Standard.
+
+
+###Known issues and workarounds in the 1.0 release### {#known-issues}
+
+The following are the known issues for HP Cloud OS for Moonshot 1.0.
 
 ####Installation####
 
-( describe ) 
+* Once a region is created, you cannot reduce its size.
 
-( create other subsections and describe ) 
+####Provisioning####
 
+* After you de-provision a bulk node, the topology sometimes continues to display the "PROCESSING" state for a lengthy period of time. You can resolve this issue by increasing the timeout value of the IPMI driver: 
+   
+1. Edit
+ `/usr/share/pyshared/nova/virt/baremetal/MoonshotIPMI.py’`
+
+2. Go to line 225 and change:
+
+ `timer.start(interval=1.0).wait()`
+ 
+ to:
+         
+ ` timer.start (interval=30.0).wait()`
+	
+3. Save and Exit.
+	
+4. Restart Nova compute
+
+* Under some circumstances, after launching a workload profile and then using Terminate Workload to deprovision, the workload/topology continues to list the state as "Processing".  In the **Deployed Workloads** tab, selecting **Delete Workload** resolves the issue.
+
+####Installation####
+
+* Create Region fails due to a GET_SERVER_CERTIFICATEverification failure. To resolve this issue, follow this process:
+
+1. In the Admin Node, edit the following file in the given path:
+
+ `/opt/dell/chef/cookbooks/hp_cos_apollo_100/recipes/server.rb`
+	 
+2. Go to line 245 and change:
+
+ Command `" curl  #(keystone_protocol……………….`
+ 
+ to
+	
+ Command `" curl  -k #(keystone_protocol……………………..`
+    
+4. Execute this command:
+
+ `knife cookbook upload knife cookbook upload -o /opt/dell/chef/cookbooks/ -V -k /etc/chef/webui.pem -u chef-webui`
+	
+5. Remove the Cloud and recreate.
+
+####General####
+
+* Edit Network option is enabled in the Networks page in the Administration Dashboard. There is no impact on the functionality if the default network settings are retained. 
+* Edit Extra Specs option is enabled for Flavors. This allows you to change the extra specs of the default flavor which will fail the instance. There is no impact on the functionality if the default settings are retained.
+* When you display the nodes table using Moonshot Management, the disk sizes for all discovered nodes appear to be 500 GB.
 
 ##For Further Information## {#for-further-information}
 
-For additional related information on HP Cloud OS for Moonshot:
+For additional related information on HP Cloud OS:
 
-* [HP Cloud OS for Moonshot Documentation web site](/cloudos/moonshot/): Provides the topics listed in this section, including ... ( summarize ) 
-
-* ( list each document, summarize, and provide the link ) 
+* [HP Cloud OS for Moonshot Documentation web site](/cloudos/moonshot/): Provides the topics listed in this section, including Installation and Configuration and more.
+* [HP Cloud OS for Moonshot Platform and Software Support Matrix](/cloudos/prepare/supportmatrix/): Information about platform support requirements for the HP Cloud OS for Moonshot core functions, including requirements for component products.
+* [HP Cloud OS for Moonshot Utilities](/cloudos/manage/utilities/): Describes the HP Cloud OS for Moonshot utilities.
+* [HP Cloud OS for Moonshot Troubleshooting](/cloudos/manage/troubleshooting/): Advice to resolve issues you may encounter with HP Cloud OS for Moonshot.
+* [HP Cloud OS for Moonshot Open Source and Third-Party Software License Agreements](/cloudos/os-3rd-party-license-agreements/): License information regarding the HP Cloud OS for Moonshot product. This topic includes legal notices and the disclaimer for experimental software.
+* HP Cloud OS for Moonshot Operational Dashboard Help: From the Dashboard's top banner, the Help link opens topics about its user interface dialogs and options, including how to create your cloud. A [web-hosted copy](/cloudos/manage/operational-dashboard/) of the Help is available. 
+* HP Cloud OS for Moonshot Administration Dashboard Help: From the Dashboard's top banner, the Help link opens topics about its user interface dialogs and options, including how to view, allocate, and manage all virtual resources within a cloud. A [web-hosted copy](/cloudos/manage/administration-dashboard/) of the Help is available. 
+* HP Cloud OS for Moonshot Release Notes (this topic): Information about the product features, recommendations and known issues.
 
 ###Installation Notes### {#installation-notes}
 
@@ -76,7 +149,7 @@ and the Administration Dashboard (used to create and manage cloud resources).
 
 When you are ready to install HP Cloud OS for Moonshot, see [Install & Configure Your Cloud](/cloudos/moonshot/install/).
 
-###Legal Notices and Disclaimer### {#legal-notices-disclaimer}
+###Legal Notices and Disclaimer for Experimental Software### {#legal-notices-disclaimer}
 
 See the [HP Cloud OS for Moonshot Open Source and Third-Party Software License Agreements](/cloudos/moonshot/os-3rd-party-license-agreements/).
 
