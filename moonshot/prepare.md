@@ -21,7 +21,9 @@ If you're new to HP Cloud OS for Moonshot, see these topics and the video tutori
 
 * [Video Tutorials](/cloudos/moonshot/prepare/videos/) - These videos are perfect for anyone who prefers tutorial-style explanations of new functionality.
 
+<!--
 * [Technical Overview](/cloudos/moonshot/prepare/overview/) - helpful information to read before you install &amp; configure HP Cloud OS for Moonshot, and create your cloud.
+-->
 
 * [Glossary](/cloudos/moonshot/prepare/glossary/) - definitions of terms used in the HP Cloud OS for Moonshot components, user interfaces, and documentation.
 
