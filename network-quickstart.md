@@ -98,11 +98,24 @@ All of the procedures in this section require that you access the Networks or Ro
 
    <br><img src="media/network-tab.png"  alt="" />
 
-You might need to modify the default network or create additional networks.  This page gives you some how-to's to use the [Horizon Cloud Console](#console) or [HP Cloud CLI for Windows PowerShell](#powershell) to create and configure networks, routers, and ports.  
+You might need to modify the default network or create additional networks.  This page gives you some how-to's to use the Horizon Cloud Console or HP Cloud 13.5 CLI to create and configure networks, routers, and ports.  
 
 **Note:** You can also use the [HP Cloud v13.5 Compute Service API](https://docs.hpcloud.com/api/v13/compute/) and [HP Cloud v13.5 Networking API](https://docs.hpcloud.com/api/v13/networking/) to configure your network. 
 
-### Activate the compute service in HP Cloud ### {#compute}
+
+### Before you begin ####
+
+Before you can conigure a network, make sure you have activated the [compute service](#compute) and [installed the HP Cloud 13.5 CLI](#installcli), if you prefer to use the CLI.
+
+#### Install the CLI #### {#installcli}
+
+Before you can use the CLI:
+
+1. Install Python-NovaClient and Python-NeutronClient on this server. See the [Knowledge Base](https://community.hpcloud.com/article/cloud-135-cli-installation-instructions) for instructions.
+
+2. Verify that you can access the Nova and Neutron APIs for your tenant from this Python Client by running the `nova list` and `neutron port-list` commands.
+
+#### Activate the compute service in HP Cloud #### {#compute}
 
 If you have not previously created an account and activated the compute service please sign up at [http://hpcloud.com](http://hpcloud.com).  
 
@@ -269,11 +282,11 @@ To connect a network to a router, use the following steps:
 
 ### Create a new server instance ### {#CreateServer}
 
-After the network is configured, you can create a server instance and attach the instance to the new network.
+After the network is configured, you can create a server instance and attach the instance to the new network. You can use the [HP Public Cloud Console](#CreateServerUI) or the [HP Cloud 13.5 CLI](#CreateServerCLI)
 
 **Note:** Before creating an instance, you must create a security [key pair](/mc/compute/key-pairs/).
 
-####Create an instance#### {#CreateServerUI}
+#### Using the HP Public CLoud Console to create an instance#### {#CreateServerUI}
 
 An instance is a virtual server.
 
@@ -323,72 +336,66 @@ An instance is a virtual server.
 
     <img src="media/CreateanInstanceImage5.png" width="580" alt="" />
 
+#### Using the HP Cloud 13.5 CLI to create an instance #### {#CreateServerCLI}
 
-#### Using the HP Public Cloud to connect to a network #### {#ConnectNetworkUI}
+You can use the HP Cloud 13.5 CLI (Python Novaclient) commands to create an instance.
 
-To connect a network to a router, use the following steps:
-
-1. Login to the [Horizon Console](https://horizon.hpcloud.com/).
-
-2. Select the [Routers tab](#NetworkTab) under the Project section.
-
-#### Using the HP Public Cloud Console to create an instance ####
+	**Important**: You must have the Python Novaclient installed on the instance before using the CLI commands. For more information, see [HP Cloud Python Novaclient CLI Installation](https://docs.hpcloud.com/cli/nova/install).
 
 
+To create an instance or your network, use the following steps:
 
-#### Using the CLI to create an instance ####
+1. Launch a command line window or UNIX shell on a system configured to access the availability zone where you want to create the new network.
 
-**Note:** These instructions use the HP Cloud v13.5 CLI on an Ubuntu server instance. You may, of course, choose to use another instance type and still use these directions as a general guide for setting up your VPN.
- 
-Set up a new Ubuntu server instance&mdash;separate from your other VPC gateway machines and using the command line. Test the setup of this new server.
+2. Execute the `nova boot` command:
 
-1. Install Python-NovaClient and Python-NeutronClient on this server. See the [Knowledge Base](https://community.hpcloud.com/article/cloud-135-cli-installation-instructions) for instructions.
-2. Verify that you can access the Nova and Neutron APIs for your tenant from this Python Client by running the `nova list` and `neutron port-list` commands.
+		nova boot
+		usage: nova boot [--flavor ] [--image ]
+		[--meta ] [--file ]
+		[--key-name ] [--user_data ]
+		[--availability_zone ]
+		[--security_groups ]
+		[--block_device_mapping ]
+		[--nic ]
+		[--config-drive ]
+    	
+	**Note**: Only `--flavor`, `--image`, and name are required.
 
+	Where:
 
+		--flavor (required) - The ID number for the flavor to use for the new instance. Use the nova flavor-list command to view a list of flavors and IDs. 
+	
+		--image (required) - The ID number for the boot image to use. Use the nova image-list command to view a list of images and IDs. 
 
+		--meta (optional) - Metadata to associate with the instance for use with the metadata service.
 
-<!--
-#### Create a port #### {#CreatePortUI}
+		--file (optional) - File(s) from the local server to store on the new instance. You may store up to 5 files.
 
-When you create a network, ports are automatically created. You can edit the ports  
+		--key_name (optional) - The name of the key pair that should be used. The key pair must already exist. 
+	
+		--user_data (optional) - User data file to pass into the metadata server.
 
-1. Login to the [HP Public Cloud Console](https://horizon.hpcloud.com/).
+		--availability_zone (optional) -- The availability zone for instance placement.
 
-2. Select the appropriate project and availability zone.
+		--security_groups (optional) - The name of the security group to use. 
+	
+		--block_device_mapping (optional) - A definition of any block devices to attach to the instance. For onformaton, see [Block mapping](#blockmapping). 
 
-2. Select the [Networks tab](#NetworkTab) under the Project section.
+		--nic (optional) - Create a network interface card (NIC) on the server. Specify the option multiple times to create multiple NICs. Use either the UUID or IPv4 fixed address for the NIC.
 
+			- nic net-id:UUID to attach the NIC using the UUID (optional) 
+			- nic v4-fixed-ip:IPv4_fixed_address for NIC (optional). port-id: attach NIC to port with this UUID (optional)
 
-#### Create a router #### {#SpecifyIP}
+		--config-drive (optional) - Enables configuration drive.
 
-1. Login to the [HP Public Cloud Console](https://horizon.hpcloud.com/).
+		--name (required) - The name for the instance.
 
-2. Select the [Networks tab](#NetworkTab) under the Project section.
+	The following example is a Novaclient command to create an XSmall Ubuntu 12.04 instance.  The following example boots from image 75845 on a selected network.
 
+	    nova boot --flavor "100" --image "75845" --key_name "az1" --security_groups "default" -block_device_mapping vda=50357:::0 --nic network-id=UUID1 TEST_SERVER
 
-#### Assign a router to an external network #### {#AssignRouterUI}
-
-1. Login to the [Horizon Console](https://horizon.hpcloud.com/).
-
-2. Select the [Routers tab](#RouterTab) under the Project section.
-
-3. On the Routers screen, locate the network which you want to rename.
-
-4. In the Actions column, click **Set Gateway** for your the network. 
-
-5. In the Set Gateway screen, select a network from the **External Network** list and click **Set Gateway**
-	<br><img src="media/network-gateway.png"  alt="" />
-
-
-   <br><img src="media/compute-network-topology-new-crop.png"  alt="" />
-
--->
-
-
-
-
-
+	The output displays, similar to the following:
+    <br><img src="media/Python_Create_Instance.png"  alt="" />
 
 ##For further information## {#ForFurtherInformation}
 
