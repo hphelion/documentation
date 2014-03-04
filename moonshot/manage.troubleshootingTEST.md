@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Cloud OS for Moonshot Troubleshooting"
-permalink: /cloudos/moonshot/manage/troubleshooting/
+permalink: /cloudos/moonshot/manage/troubleshooting2/
 product: moonshot
 
 ---
