@@ -70,6 +70,7 @@ PageRefresh();
   * [Administration Dashboard Tasks by Role](/cloudos/moonshot/manage/administration-dashboard/tasks-by-role/)
   * [Administration Dashboard Tasks by Tab](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/)
 * [HP Cloud OS for Moonshot Image Builder](/cloudos/moonshot/manage/image-builder/) 
+* [HP Cloud OS for Moonshot Backup and Restore](/cloudos/moonshot/manage/backup-process/) 
 
 #### [Develop](/cloudos/moonshot/develop/)
 

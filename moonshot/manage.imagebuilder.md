@@ -18,7 +18,7 @@ PageRefresh();
 
 
 
-<p style="font-size: small;"> <a href="/cloudos/moonshot/prepare/releasenotes">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage">&#9650; UP</a> | NEXT &#9654; </p>
+<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/administration-dashboard">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage">&#9650; UP</a> | <a href="/cloudos/moonshot/manage/backup-process">NEXT &#9654;</a> </p>
 
 # HP Cloud OS for Moonshot: Building Images # {#moon-image-builder}
 
