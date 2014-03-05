@@ -96,7 +96,7 @@ configure subnets
 
 All of the procedures in this section require that you access the Networks or Routers tab in the Project section of the HP Public Cloud Console, <a name="NetworkTab">as shown</a>:
 
-   <br><img src="media/network-tab.png"  alt="" />
+   <br><img src="media/network-tab-crop.png"  alt="" />
 
 You might need to modify the default network or create additional networks.  This page gives you some how-to's to use the Horizon Cloud Console or HP Cloud 13.5 CLI to create and configure networks, routers, and ports.  
 
