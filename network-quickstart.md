@@ -22,7 +22,7 @@ This guide covers the following:
 
 This guide provides the information you will need to get started in setting up a network, such as the example shown in the following image.
 
-<img src="media/HPCS-VPC-VPN-SingleSite-Connection-Layer3-new-novendor.jpg" width="600" alt="Basic VPN setup" />
+<img src="media/HPCS-VPC-VPN-SingleSite-Connection-Layer3-new-novendor-crop.jpg" width="600" alt="Basic VPN setup" />
 
 Here, the left side of the image represents the HP Public Cloud environment and the right side is your local system.
 
