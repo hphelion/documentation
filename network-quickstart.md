@@ -41,6 +41,8 @@ HP Public Cloud compute activation comes with a default configuration that inclu
 
 You can use the default network to deploy HP Public Cloud compute virtual servers, or modify the network configuration using the HP Public Console or the HP Cloud 13.5 CLI.
 
+**Note:** The default security group allows all traffic to and from the network. For information on security groups in version 13.5, please see the knowledge base article [Managing Your Security Groups](https://community.hpcloud.com/article/managing-your-security-groups-135) for details.
+
 See [Customizing your Configuration](#customize).
 
 ### Audience ### {#audience}
@@ -296,7 +298,7 @@ An instance is a virtual server.
 
 3. Click **Launch Instance** in the upper right-hand navigation of the screen. 
 
-    <img src="media/CreateaninstanceImage1.png" width="580" alt="" />
+    <img src="media/compute-networking-launch-instance.png" width="580" alt="" />
 
 3. Select an availability zone for the instance. Or, leave the default choice of the "Any Availability Zone" (AZ), which arbitrarily assigns an AZ for an instance.
 
@@ -312,29 +314,31 @@ An instance is a virtual server.
 
     **Note** The "Project Limits" box under "Flavor Details" graphically displays quotas allowed and usage of Instances, VCPUs, and Total RAM after you select a flavor.
 
-    <img src="media/CreateanInstanceImage2.png" width="580" alt="" />
+    <img src="media/compute-networking-details-limits.png"  alt="" />
 
 6. Enter the number of instances you want to create in the  **Instance Count** list.
 
 7. Select a type of image from the **Instance Boot Source** list. To select an HP Cloud default image, select **Boot from Image**.  
 
-    <img src="media/CreateanInstanceImage3.png" width="580" alt="" />
+    <img src="media/compute-networking-instance-source.png" alt="" />
 
 8. Select a specific image from the image list. The name of the list reflects the type of image you selected.
 
-    <img src="media/CreateanInstanceImage4.png" width="580" alt="" />
+    <img src="media/compute-network-boot-source.png" alt="" />
 
 9. Click the **Access & Security** tab in the upper navigation of the screen.
+
+    <img src="media/compute-networking-launch-instance-security.png" alt="" />
 
 10. Select the appropriate key pair from the **Key Pair** list.
 
 11. Click the **Networking** tab in the upper navigation of the screen. 
 
+    <img src="media/compute-networking-launch-instance-net.png" alt="" />
+
 12. Click the **+** next to the network in the **Available networks** list that you want to attach the instance to, or drag and drop the network to the **Selected Networks** box.
 
-13. Click "Launch."
-
-    <img src="media/CreateanInstanceImage5.png" width="580" alt="" />
+13. Click **Launch**.
 
 #### Using the HP Cloud 13.5 CLI to create an instance #### {#CreateServerCLI}
 
