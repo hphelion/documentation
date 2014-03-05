@@ -52,7 +52,7 @@ The following diagram depicts a simplified deployment scenario.
 
 <img src="media/moonshot-deployment.png"></img>
 
-\* <b>Note</b>: You can add multiple Baremetal Hosts with the same type of network connectivity shown in the diagram.
+<b>Note</b>: You can add multiple Baremetal Hosts with the same type of network connectivity shown in the diagram.
 
 See the sections below for more information.
 
@@ -65,11 +65,13 @@ This information is repeated from the [Support Matrix](/cloudos/moonshot/prepare
 * [Hypervisor recommendations for HP Cloud OS for Moonshot](#hypervisor)
 * [Node requirements for HP Cloud OS for Moonshot](#nodereq)
 * [Moonshot chassis firmware version](#firmware)
-* [Moonshot cartridges supported](#cartridges)
-* [Operating systems supported ](#ossupp)
-* [Workloads supported](#workloads)
 * [Supported deployment scenario](#deployment)
 * [Software requirements](#software)
+
+Refer to the [Support Matrix](/cloudos/moonshot/prepare/supportmatrix/) for details about the supported 
+[Moonshot cartridges](/cloudos/moonshot/prepare/supportmatrix/#cartridges), 
+[operating systems](/cloudos/moonshot/prepare/supportmatrix/#ossupp), 
+and [workloads](/cloudos/moonshot/prepare/supportmatrix/#workloads).
 
 #### General recommendation {#general}
 
@@ -193,6 +195,7 @@ We recommend your Proliant server contains the following:
 </tr>
 </table>
 
+<!-- 
 #### Moonshot cartridges supported {#cartridges}
 
 <table style="text-align: left; vertical-align: top; min-width: 700px;">
@@ -219,6 +222,10 @@ We recommend your Proliant server contains the following:
 
 **Note:** You must have an IPMI driver version 2.0 or higher, and an external Internet connection, if you are using a public or hybrid cloud.
 
+-->
+
+<!--
+
 #### Operating systems supported {#ossupp}
 
 <table style="text-align: left; vertical-align: top; min-width: 700px;">
@@ -237,7 +244,9 @@ We recommend your Proliant server contains the following:
 </tr>
 </table>
 
+--> 
 
+<!--
 
 #### Workloads supported {#workloads}
 <table style="text-align: left; vertical-align: top; min-width: 700px;">
@@ -273,6 +282,7 @@ We recommend your Proliant server contains the following:
 </TR>
 </table>
 
+--> 
 
 
 ### Network Infrastructure
