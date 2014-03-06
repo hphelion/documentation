@@ -49,7 +49,7 @@ Before you attempt to build an image, make sure you have:
 
 * 4 GB physical RAM.
 * Enough space in /tmp to hold two uncompressed cloud images. One uncompressed image is up to 800 MB in size.
-* (Optional) Proxy settings for internet connectivity.
+* (Optional) Proxy settings for Internet connectivity.
 * qemu-utils and git-core package, VLAN, busybox, open-iscsi, python-lxml, python-libvirt, libvirt, qemu-system installed on the server.
 
 ## Creating a disk image ## {#disk-image-create}
@@ -123,7 +123,7 @@ Now that you have created your image, you can add it to Glance and manage it wit
 You can now access your VM image from the HP Cloud OS for Moonshot Administration dashboard. From there, you can manage your VM.
 
 ## Creating an image for a specific workload ## {#image-specific-workload}
-You might want to create an image for a specific workload, such as an internet server. To do this, you must have an element with appropriate hooks written for that specific workload. The rest of this section shows you how to create Ubuntu and RHEL images for specific workloads, and their associated elements.
+You might want to create an image for a specific workload, such as an Internet server. To do this, you must have an element with appropriate hooks written for that specific workload. The rest of this section shows you how to create Ubuntu and RHEL images for specific workloads, and their associated elements.
 
 **Note:** For detailed instructions on how to write elements, refer to the [OpenStack Disk Image Builder documentation](https://github.com/openstack/diskimage-builder).
 

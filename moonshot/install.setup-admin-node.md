@@ -38,7 +38,7 @@ infrastructure:
 1.	Configure the hypervisor host's networking as shown in the Deployment Architecture. The host must provide connectivity to the Admin Node (virtual machine) on an isolated private network and also to all the nodes' port eth0. The Admin Node must also have connectivity to a routable network for Internet access. 
 
 2.	Create a virtual machine (Admin Node) with the hardware configuration suggested in Cloud Infrastructure section. The following configuration must be reviewed during this step: 
- * Ensure the Admin Node's primary NIC is bridged or connected to the admin network and the second NIC is bridged or connected to a routable network for internet access. 
+ * Ensure the Admin Node's primary NIC is bridged or connected to the admin network and the second NIC is bridged or connected to a routable network for Internet access. 
  * On a KVM based VM, for the disk configuration, ensure you set it to the IDE/SCSI type as this is the supported type.  
  <!-- **Note:** If your hypervisor is KVM, ensure the virt type is set to KVM. --> 
 

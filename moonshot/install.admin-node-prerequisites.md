@@ -53,7 +53,7 @@ To enable the Admin Node Internet Access:
 
 2. For the Cloud Administration Node Internet Access, click **Edit Prerequisite**.
 
-3. Set the Network Interface to the network interface on the Admin Node that has been configured for internet access, for example, eth1.
+3. Set the Network Interface to the network interface on the Admin Node that has been configured for Internet access, for example, eth1.
 
 4. Leave the default Network Configuration checked as <b>DHCP</b>. If you have a static IP address allocated for the node, uncheck DHCP and fill in the appropriate information.
 

@@ -19,6 +19,7 @@ PageRefresh();
 </script>
 
 
+
 <p style="font-size: small;"> <a href="/cloudos/moonshot/manage/operational-dashboard/how-opdash-works/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage/operational-dashboard/">&#9650; UP</a> | <a href="/cloudos/moonshot/manage/operational-dashboard/cloud-tab/">NEXT &#9654;</a> </p>
 
 # Operational Dashboard: Environment Tab
@@ -28,6 +29,7 @@ On these panels, you set up your cloud environment and complete the HP Cloud OS 
 For the installation process, you must complete each panel in the order they are displayed. 
 
 * [Connections](#connections)
+
 
 * [Prerequisites](#prerequisites)
 
@@ -84,6 +86,7 @@ If you do not define the following prerequisites, your cloud will not work at al
 * **External DNS Server** &mdash; Configure to add the IP address of the external DNS server your Cloud OS environment is using to access named websites within your cloud.
 
 **Optionally**, you can use the **Email Notification Settings** to configure sending email notifications when the Cloud and Compute Region operations complete because this takes some time. By enabling and setting this prerequisite, you can be alerted by e-mail when each operation completes.
+
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
@@ -370,6 +373,7 @@ The following information provides details about the Networks panel:
 * [Edit Address Range dialog](#edit-address-range)
 
 
+
 ### Networks Panel Overview {#networks-panel-overview}
 
 On the Networks panel, you define the networks for each logical connection (intf0, intf1, intf2,...). A network is defined for each connection such as the admin network, public network, nova_flat network, and the IPMI network. These  network definitions are used for various purposes in the cloud:
@@ -380,6 +384,7 @@ On the Networks panel, you define the networks for each logical connection (intf
 * **public** &mdash; Public or corporate network that is attached to your cloud infrastructure. Must provide a pool of IP addresses for the Cloud Controller node for floating IP assignments. Size of the pool depends on the number of Virtual Machine instances. This network handles traffic to the outside world for the instances.
 
 
+
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Important:</b> Customizing the public network settings is 
 critical. Any missing or incorrect values will result in you having to re-install the HP Cloud OS for Moonshot Administration node. 
 For procedural instructions, see <a href="/cloudos/moonshot/install/">Install and Configure Your Cloud</a>.
@@ -388,6 +393,7 @@ For procedural instructions, see <a href="/cloudos/moonshot/install/">Install an
 The following table describes the networks in the HP Cloud OS for Moonshot environment:
 
 <table style="text-align: left; vertical-align: top; min-width:700px;">
+
 
 
 <tr style="background-color: #C8C8C8;">
@@ -488,6 +494,7 @@ for the specified network and click <b>Update Address Ranges</b> to identify the
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 **END DOES THIS SECTION STILL APPLY?**
+
 
 
 ### Networks Page {#networks-page}
@@ -867,6 +874,7 @@ The Router Preference determines the router order. </td>
 </table>
 
 
+
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 **END DO WE NEED THIS SECTION Q**
@@ -937,6 +945,7 @@ See <a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#edi
 </tr>
 
 
+
 <tr style="background-color: white; color: black;">
 <td> <b>Install Started</b> column </td>
 <td> The timestamp that the HP Cloud OS for Moonshot Administration node install is started. </td>
@@ -988,6 +997,7 @@ See the <a href="/cloudos/moonshot/manage/operational-dashboard/cloud-tab">Cloud
 </table>
 
 
+
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 
@@ -1034,6 +1044,7 @@ See <a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#edi
 </tr>
 		
 </table>
+
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

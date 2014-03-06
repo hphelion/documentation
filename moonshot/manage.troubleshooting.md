@@ -97,7 +97,7 @@ For more information, check the <b>/var/log/cosmos/cosmos.log</b> and <b>/var/lo
 <td>Reset the node.</td></tr>
 </table>
 
-#### Updating the internet access prerequisites sometimes fails
+#### Updating the Internet access prerequisites sometimes fails
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Operational Dashboard</th>
@@ -107,7 +107,7 @@ For more information, check the <b>/var/log/cosmos/cosmos.log</b> and <b>/var/lo
 <td>Dashboard displays the <b>Failed to complete the prerequisites</b> message.</td></tr>
 <tr style="background-color: white; color: black;">
 <td>Probable Cause</td>
-<td>You might have selected the wrong NIC interface; it might not exist or does not support internet connectivity.</td></tr>
+<td>You might have selected the wrong NIC interface; it might not exist or does not support Internet connectivity.</td></tr>
 <tr style="background-color: white; color: black;">
 <td>Possible Resolution</td>
 <td>

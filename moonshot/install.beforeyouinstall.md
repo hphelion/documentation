@@ -82,11 +82,11 @@ DHCP and PXE services for this network. Workloads are provisioned to the Moonsho
 cartridge discovery, power control of cartridges and nodes, and monitoring of the health of the Moonshot systems.
 
 * <b>Public Network</b>: Provides public access to the HP Cloud OS for Moonshot Administration Dashboard and external access to 
-the internet for the Admin node and Controller node.
+the Internet for the Admin node and Controller node.
 
 <b>Notes</b>:
 
-* The Admin node and the Controller node utilize internet access to obtain updates and workload content from HP. If Internet access is not feasible from your 
+* The Admin node and the Controller node utilize Internet access to obtain updates and workload content from HP. If Internet access is not feasible from your 
 datacenter, then it is possible for updates and workloads to be downloaded locally and then uploaded to your cloud environment.
 
 * The Controller node will require a static IP address on the Public network. Please consult with your network administrator to obtain the required static IP address.
