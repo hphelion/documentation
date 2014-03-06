@@ -31,6 +31,7 @@ In the following sections, we list the recommendations for memory, processors an
 * [Server infrastructure for HP Cloud OS for Moonshot](#server)
 * [Hypervisor recommendations for HP Cloud OS for Moonshot](#hypervisor)
 * [Node requirements for HP Cloud OS for Moonshot](#nodereq)
+* [Bulk server provisioning node requirements for HP Cloud OS for Moonshot](#nodereq-bulk)
 * [Moonshot chassis firmware version](#firmware)
 * [Moonshot cartridges supported](#cartridges)
 * [Operating systems supported ](#ossupp)
@@ -114,7 +115,7 @@ We recommend your Proliant server contains the following:
 </table>
 
 
-## Bulk server provisioning node requirements for HP Cloud OS for Moonshot {#nodereq}
+## Bulk server provisioning node requirements for HP Cloud OS for Moonshot {#nodereq-bulk}
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
 
 <tr style="background-color: #C8C8C8;">
@@ -163,7 +164,7 @@ We recommend your Proliant server contains the following:
 
 </table>
 
-**Important:** The Baremetal host’s internal storage space depends on the number of nodes planned to be provisioned and the size of the images being used to provision. To calculate your internal storage needs, use the following equation:
+**Important:** The Baremetal host's internal storage space depends on the number of nodes planned to be provisioned and the size of the images being used to provision. To calculate your internal storage needs, use the following equation:
 
     Baremetal internal storage = X * N + N * 110MB + 100GB
 
