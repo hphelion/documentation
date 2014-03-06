@@ -28,7 +28,7 @@ Here, the left side of the image represents the HP Public Cloud environment and 
 
 You can configure rich network topologies by creating and configuring networks and subnets, and then instructing other services like Compute to attach virtual devices to ports on these networks.
 
-In particular, Networking supports each tenant having multiple private networks, and allows tenants to choose their own IP addressing scheme (even if those IP addresses overlap with those that other tenants use). 
+Networking supports a tenant having multiple private networks, and allows tenants to choose their own IP addressing scheme (even if those IP addresses overlap with those that other tenants use). 
 
 The Networking service offers flexibility for the cloud administrator to customize network offerings, such as building multi-tiered web applications and enabling migration of applications to the cloud without changing IP addresses.
 
@@ -39,11 +39,9 @@ HP Public Cloud compute activation comes with a default configuration that inclu
 * A router for connecting the subnets to the Internet
 * A security group with basic server options
 
-You can use the default network to deploy HP Public Cloud compute virtual servers, or modify the network configuration using the HP Public Console or the HP Cloud 13.5 CLI.
+You can use the default network to deploy HP Public Cloud virtual server instances, or modify the network configuration using the HP Public Console or the HP Cloud 13.5 CLI.
 
 **Note:** The default security group allows all traffic to and from the network. For information on security groups in version 13.5, please see the knowledge base article [Managing Your Security Groups](https://community.hpcloud.com/article/managing-your-security-groups-135) for details.
-
-See [Customizing your Configuration](#customize).
 
 ### Audience ### {#audience}
 This guide is designed for those in the following or similar roles:   
@@ -81,7 +79,7 @@ back to the [top](#top)
 
 ##Customizing your network## {#customize}
 
-You can use the default network or customize the default network using either the HP Public Cloud CLI or the HP Public Cloud Console. 
+You customize the default network using either the HP Public Cloud 13.5 CLI or the HP Public Cloud Console. 
 
 When you first activate the compute service, a [default](#default) configuration is created that should provide enough capacity for typical needs. However, you can create a new network, allowing you to assign a specific IP address to the network and subnet. 
 
@@ -91,16 +89,14 @@ When you first activate the compute service, a [default](#default) configuration
 
 HP Cloud Networking expands networking capabilities, allowing you to perform many tasks, including:
 
-creating a router
-creating one or more networks
-configure subnets 
-
+- creating a router
+- creating one or more networks
+- configuring subnets 
 
 All of the procedures in this section require that you access the Networks or Routers tab in the Project section of the HP Public Cloud Console, <a name="NetworkTab">as shown</a>:
 
    <br><img src="media/network-tab-crop.png"  alt="" />
 
-You might need to modify the default network or create additional networks.  This page gives you some how-to's to use the Horizon Cloud Console or HP Cloud 13.5 CLI to create and configure networks, routers, and ports.  
 
 **Note:** You can also use the [HP Cloud v13.5 Compute Service API](https://docs.hpcloud.com/api/v13/compute/) and [HP Cloud v13.5 Networking API](https://docs.hpcloud.com/api/v13/networking/) to configure your network. 
 
@@ -109,7 +105,7 @@ You might need to modify the default network or create additional networks.  Thi
 
 Before you can conigure a network, make sure you have activated the [compute service](#compute) and [installed the HP Cloud 13.5 CLI](#installcli), if you prefer to use the CLI.
 
-#### Install the CLI #### {#installcli}
+#### Installing the CLI #### {#installcli}
 
 Before you can use the CLI:
 
@@ -117,7 +113,7 @@ Before you can use the CLI:
 
 2. Verify that you can access the Nova and Neutron APIs for your tenant from this Python Client by running the `nova list` and `neutron port-list` commands.
 
-#### Activate the compute service in HP Cloud #### {#compute}
+#### Activating the compute service in HP Cloud #### {#compute}
 
 If you have not previously created an account and activated the compute service please sign up at [http://hpcloud.com](http://hpcloud.com).  
 
@@ -147,7 +143,7 @@ However, if you want to define the IP addresses for your network and instances, 
 
 To create a network and subnet, use the following steps:
 
-1. Login to the [Horizon Console](https://horizon.hpcloud.com/).
+1. Login to the [HP Public Cloud Console](https://horizon.hpcloud.com/).
 
 2. Select the [Networks tab](#NetworkTab) under the Project section.
 
@@ -162,24 +158,26 @@ To create a network and subnet, use the following steps:
 6. On the **Subnet** tab, enter the subnet name
 	<br><img src="media/network-fields-2.png"  alt="" />
 
-7. In the **Network Address** field enter a network address in Classless Inter-Domain Routing (CIDR) format: 192.168.0.0/24.
+7. In the **Network Address** field enter a network address range for the subnet in Classless Inter-Domain Routing (CIDR) format, for example: 192.168.0.0/24.
 
 8. In the **IP Version** field, select IPv4 or IPv6, as appropriate.
 
 9. Leave the **Gateway IP** field blank to use the default value for the gateway IP address; for example, 192.168.0.1 for 192.168.0.0/24.
 
-6. Click **Next**. 
+10. To disable the network gateway for this network, select  **Disable Gateway**. You will not be able to connect this network to the router if the gateway is disabled. 
 
-10. On the **Subnet Details** tab, select Enable DHCP to.
+11. Click **Next**. 
+
+11. On the **Subnet Details** tab, DHCP is enabled by default. If you do not want to use the DCHP server on this subnet, clear the **Enable DHCP** option.
 	<br><img src="media/network-fields-3.png"  alt="" />
 
-11. To create an allocation pool, enter the starting and ending IP addresses you want for your subnet in the text entry fields, in the format `192.168.1.10,192.168.1.120`.  
+12. To create an allocation pool, enter the starting and ending IP addresses you want for your subnet in the text entry fields, in the format IP_ADDR,IP_ADDR. For example: `192.168.1.10,192.168.1.120`.  
 
-12. To create a DNS Nameserver, enter the `IP Address` you want for your subnet in the text entry field.
+13. To create a DNS Nameserver, enter the `IP Address` you want for your subnet in the text entry field.
 
-13. To create host routes, enter the `Destination CIDR` and `Next Hop` you want for your subnet in the text entry fields.  
+14. To create host routes, enter the `Destination CIDR` and `Next Hop` you want for your subnet in the text entry fields.  
 
-14. Click **Create**. 
+15. Click **Create**. 
 
 To see a graphic display of your network setup, click **Network Topology** under **Manage Network** in the left-hand navigation.{#ConnectNetwork}  
 
@@ -199,23 +197,29 @@ To create a network and subnet, use the following steps:
 
 	Where `vpn_network` is the name of the network.
 
+	A table with information on the new network appears.
+
+	<img src="media/compute-networking-create-neutron.png"  alt="" />
+
 3. Execute the `neutron subnet-create` command to create the subnet:
 
-    neutron subnet-create ext-net  --allocation-pool start=FLOATING_IP_START,end=FLOATING_IP_END --gateway=EXTERNAL_INTERFACE_GATEWAY --enable_dhcp=False EXTERNAL_INTERFACE_CIDR 
+    neutron subnet-create <NETWORK> <CIDR>  --allocation-pool start=FLOATING_IP_START,end=FLOATING_IP_END --gateway=EXTERNAL_INTERFACE_GATEWAY --disable_dhcp 
 
 	Where:
 
-		NETWORK - Enter the network id or name this subnet belongs to. 
+		NETWORK - Enter the network id or the name this subnet belongs to. 
 		
-		CIDR - Enter the network address in Classless Inter-Domain Routing (CIDR) format to assign to the subnet, for example: 192.168.0.0/24.
+		CIDR - Enter a network address range for the subnet in Classless Inter-Domain Routing (CIDR) format, for example: 192.168.0.0/24.
 		
+	Optional arguments
+
 		tenant-id - The tenent ID 
 		
 		name - Enter a name to assign to the subnet.
         
 		gateway - Enter a private IP address to use as the gateway address.
         
-		no-gateway 
+		no-gateway - Use this parameter to disable the network gateway for this network. You will not be able to connect this network to the router if the gateway is disabled
 		
 		allocation-pool -  Enter the starting and ending IP addresses for your subnet in the format: start=IP_ADDR,end=IP_ADDR.
 		
@@ -225,9 +229,14 @@ To create a network and subnet, use the following steps:
 		
 		disable-dhcp - Enter `FALSE` to enable DHCP or `TRUE` to disable DHCP.
 
-	The following example creates a subnet called `subnet1` with network address (10.0.0.0/24). The subnet is associated with the `vpn_network` network. DHCP is active and will use an IP address from the specified pool of addresses. 
+	The following example creates a subnet called `subnet1` with network address (192.166.0.0/24). The subnet is associated with the `vpn_network` network. DHCP is active and will use an IP address from the specified pool of addresses. 
 
-		neutron subnet-create netw1 10.0.0.0/24 --name subnet1 --enable_dhcp=false --allocation-pool start=192.168.0.32,end=192.168.0.63
+		neutron subnet-create vpn_network 192.166.0.0.0/24 --name subnet1 --allocation-pool start=192.166.0.32,end=192.166.0.63
+
+	A table with information on the new network appears.
+
+	<img src="media/compute-networking-create-sub-neutron.png"  alt="" />
+
 
 To see a graphic display of your network setup, login to the [Horizon Console](https://horizon.hpcloud.com/). Click **Network Topology** under **Manage Network** in the left-hand navigation.  
 
@@ -236,13 +245,13 @@ To see a graphic display of your network setup, login to the [Horizon Console](h
 
 ### Connecting to a network ### {#ConnectNetwork}
 
-After the new network and subnet are created, you need to connect the network to the router. A router and network connect through an *interface* from the router to the network.
+After the new network and subnet are created, you can connect the network to the router. A router and network connect through an *interface* from the router to the network.
 
 #### Using the HP Public Cloud to connect to a network #### {#ConnectNetworkUI}
 
 To connect a network to a router, use the following steps:
 
-1. Login to the [Horizon Console](https://horizon.hpcloud.com/).
+1. Login to the [HP Public Cloud Console](https://horizon.hpcloud.com/).
 
 2. Select the [Routers tab](#NetworkTab) under the Project section.
 
@@ -254,9 +263,10 @@ To connect a network to a router, use the following steps:
 
 5. In the **Subnet** list, select the network you want to connect with. 
 
-6. Optionally, enter an IP address in the **IP Address** field or allow a default IP address to be assigned.  
+6. Optionally, specify an IP address in the **IP Address** field or allow a default IP address to be assigned.  
 
 	**Notes:**
+
 	- The default interface IP address is the external gateway for the subnet, and is usually the best choice unless you are setting up a more complicated connection. 
 	- If you specify an IP address, the address must belong to the subnet in the drop-down menu. 
 
@@ -288,27 +298,27 @@ After the network is configured, you can create a server instance and attach the
 
 **Note:** Before creating an instance, you must create a security [key pair](/mc/compute/key-pairs/).
 
-#### Using the HP Public CLoud Console to create an instance#### {#CreateServerUI}
+#### Using the HP Public Cloud Console to create an instance#### {#CreateServerUI}
 
 An instance is a virtual server.
 
-1. Login to the [Horizon Console](https://horizon.hpcloud.com/).
+1. Login to the [HP Public Cloud Console](https://horizon.hpcloud.com/).
 
-2. Click "Instances" under "Manage Compute" under the Project section..
+2. Click "Instances" under "Manage Compute" under the Project section.
 
 3. Click **Launch Instance** in the upper right-hand navigation of the screen. 
 
     <img src="media/compute-networking-launch-instance.png" width="580" alt="" />
 
-3. Select an availability zone for the instance. Or, leave the default choice of the "Any Availability Zone" (AZ), which arbitrarily assigns an AZ for an instance.
+4. Select an availability zone for the instance. Or, leave the default choice of the "Any Availability Zone" (AZ), which arbitrarily assigns an AZ for an instance.
 
-	Selecting an AZ for an instance can segregate AZs for your own organizational purposes; e.g., you could select AZ1 for your data center, and set the remaining two up later for other discrete functions. 
+	You can use availability zones for your own organizational purposes; e.g., you could select AZ1 for your data center, and set the remaining two up later for other discrete functions. 
 
 	**Note**: The default choice locating an instance in any AZ offers high availability, ensuring a high level of operational performance. 
 
-4. Enter a name in the **Instance Name** field.
+5. Enter a name in the **Instance Name** field.
 
-5. Select the hardware configuration (flavor) you want to emulate from the **Flavor** list. 
+6. Select the flavor (hardware configuration) for the instance from the **Flavor** list. 
 	
 	A flavor determines how much disk space and RAM is allocated for the instance. When you select a flavor, the "Flavor Details" box displays the specifications for that flavor.
 
@@ -316,35 +326,35 @@ An instance is a virtual server.
 
     <img src="media/compute-networking-details-limits.png"  alt="" />
 
-6. Enter the number of instances you want to create in the  **Instance Count** list.
+7. Enter the number of instances you want to create in the  **Instance Count** list.
 
-7. Select a type of image from the **Instance Boot Source** list. To select an HP Cloud default image, select **Boot from Image**.  
+8. Select a type of image from the **Instance Boot Source** list. To select an HP Cloud default image, select **Boot from Image**.  
 
     <img src="media/compute-networking-instance-source.png" alt="" />
 
-8. Select a specific image from the image list. The name of the list reflects the type of image you selected.
+9. Select a specific boot source from the image list. The name of the list reflects the type of source you selected.
 
     <img src="media/compute-network-boot-source.png" alt="" />
 
-9. Click the **Access & Security** tab in the upper navigation of the screen.
+10. Click the **Access & Security** tab in the upper navigation of the screen.
 
     <img src="media/compute-networking-launch-instance-security.png" alt="" />
 
-10. Select the appropriate key pair from the **Key Pair** list.
+11. Select the appropriate key pair from the **Key Pair** list.
 
-11. Click the **Networking** tab in the upper navigation of the screen. 
+12. Click the **Networking** tab in the upper navigation of the screen. 
 
     <img src="media/compute-networking-launch-instance-net.png" alt="" />
 
-12. Click the **+** next to the network in the **Available networks** list that you want to attach the instance to, or drag and drop the network to the **Selected Networks** box.
+13. Click the **+** next to the network in the **Available networks** list that you want to attach the instance to, or drag and drop the network to the **Selected Networks** box.
 
-13. Click **Launch**.
+14. Click **Launch**.
 
 #### Using the HP Cloud 13.5 CLI to create an instance #### {#CreateServerCLI}
 
 You can use the HP Cloud 13.5 CLI (Python Novaclient) commands to create an instance.
 
-	**Important**: You must have the Python Novaclient installed on the instance before using the CLI commands. For more information, see [HP Cloud Python Novaclient CLI Installation](https://docs.hpcloud.com/cli/nova/install).
+**Important**: You must have the Python Novaclient installed on the instance before using the CLI commands. For more information, see [HP Cloud Python Novaclient CLI Installation](https://docs.hpcloud.com/cli/nova/install).
 
 
 To create an instance or your network, use the following steps:
