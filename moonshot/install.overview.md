@@ -168,11 +168,10 @@ cloud environment from an identity standpoint.
 such as Nova. This is responsible for the launch of instances across baremetal hosts. The scheduling is based on varied flavors of instances and available resources on the compute nodes.
 In a single compute region deployment model, this can coexist with cloud controller services.  
 
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> An HP cloud can consist of more than one region. 
-For example, you can separate the regions based on the workload such as between a development/test team and a production deployment. A
-development/test team region's compute requirements could use non-redundant machines that also have less memory, while the region for production could 
-provide machines with much more memory, backed up with heavy compute and fault-tolerant resources. HP recommends that you define and use multiple 
-compute regions. In this scenario, the Compute Region Controller is its own node.</p>
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> HP recommends that you define and use multiple 
+compute regions. For example, you could separate the regions based on different workloads and requirements between development and production. A 
+development team's compute region could provide non-redundant machines with less RAM; the compute region for production could have machines with 
+much more RAM, backed up with heavy compute and fault-tolerant resources. In this scenario, the Compute Region Controller is its own node.</p>
 
 ### Baremetal Host
 
