@@ -229,7 +229,7 @@ To create a network and subnet, use the following steps:
 		
 		disable-dhcp - Enter `FALSE` to enable DHCP or `TRUE` to disable DHCP.
 
-	The following example creates a subnet called `subnet1` with network address (192.166.0.0/24). The subnet is associated with the `vpn_network` network. DHCP is active and will use an IP address from the specified pool of addresses. 
+	The following example creates a subnet called `subnet1` with network address (192.166.0.0/24). The subnet is associated with the `vpn_network` network. DHCP is active and will use an IP address from the specified address pool. 
 
 		neutron subnet-create vpn_network 192.166.0.0.0/24 --name subnet1 --allocation-pool start=192.166.0.32,end=192.166.0.63
 
