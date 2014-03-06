@@ -47,8 +47,6 @@ infrastructure:
 4. Configure the Virtual Machine (VM) Admin Node to point to the HP Cloud OS for Moonshot ISO as a CD/DVD drive or install media ISO image. 
 
 
-
-
 ## Boot the Admin Node Using the HP Cloud OS for Moonshot ISO
 
 The Admin Node is booted using HP Cloud OS for Moonshot *.iso.  Follow these steps:
@@ -61,36 +59,38 @@ The Admin Node is booted using HP Cloud OS for Moonshot *.iso.  Follow these ste
 
 4.	To view the boot process, select the Console Tab of the Virtual Machine.
 
-5.	In the Full Name of the new user box, enter the name. This is the name that will be used while sending emails or will be used at any other place where the full user name is displayed. 
+5.	In the <b>Full Name</b> of the new user box, enter the name. This is the name that will be used while sending emails or will be used at any other place where the full user name is displayed. 
 
-6.	In the Username for your account box, enter a user name. This is the name with which you can log into your Admin Node. **Note:** The user name should start with a lowercase alphabet and can include numbers also.  
+6.	In the <b>Username</b> for your account box, enter a user name. This is the name with which you can log into your Admin Node. **Note:** The user name should start with a lowercase alphabet and can include numbers also.  
 
-7.	In the Password box, enter the password. **Note:** The password should be a mix of letters, numbers and special characters and should be changed at regular intervals.
+7.	In the <b>Password</b> box, enter the password. **Note:** The password should be a mix of letters, numbers and special characters and should be changed at regular intervals.
 
 8.	Verify your password.
 
-9. The Admin Node Login screen is displayed once the installation completes.
-
-9.	Enter your username and password.
+9. The Admin Node Login screen is displayed once the installation completes. Enter your username and password.
 
 10.	Click CTRL+ALT to regain the control of your cursor.  **Note:** This step is specific to VMware and might not be necessary in your client. 
 
-11.	(Optional) Power DOWN the Admin Node Virtual Machine, edit it to disconnect the ISO CD, then Power UP the Virtual Machine.
+11.	Power DOWN the Admin Node Virtual Machine.
+
+12. Edit the Virtual Machine's settings so that it will not boot from the ISO again. Example:
+
+ <img src="media/cos4ms-do-not-boot-again-from-iso.jpg" title="Do not boot from ISO again" />
+
+13. Power up the Virtual Machine again.
 
 At this point, HP Cloud OS for Moonshot is installed on the Admin Node. 
-
 
 
 ## Launch the Operational Dashboard
 
 To launch the Operational Dashboard:
 
-1. Open a Mozilla Firefox or Google Chrome browser that has the following IP addresses set as proxy exceptions:
+1. On a	Windows client, first make sure that the Mozilla Firefox or Google Chrome browser has the following IP addresses set as proxy exceptions:
   
-  192.\*;10.\*;localhost;127.0.\*
+ 192.\*;10.\*;localhost;127.0.\*
 
-2. In the browser, enter **https://192.168.124.10:9000** to launch the Operational Dashboard user interface. 
-IMPORTANT: Use Google Chrome or Mozilla Firefox.
+2. In the browser, enter **https://192.168.124.10:9000** to launch the Operational Dashboard user interface, which is running on the Admin node.
 
 3. On the Environment tab, review the types of prerequisites, servers, connections, and networks in your environment.
 
