@@ -114,6 +114,61 @@ We recommend your Proliant server contains the following:
 </table>
 
 
+## Bulk server provisioning node requirements for HP Cloud OS for Moonshot {#nodereq}
+<table style="text-align: left; vertical-align: top; min-width: 400px;">
+
+<tr style="background-color: #C8C8C8;">
+<th>Node Type</th>
+<th>Virtual?</th>
+<th>CPU Cores</th>
+<th>Memory</th>
+<th>Internal Storage</th>
+<th>NICs</th>
+<th><span style='display:block; width:150px;'>OS <br />(incl. as part of ISO)</span></th>
+<th><span style='display:block; width:180px;'>Virtualized Platforms Supported</span></th>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td>Admin Node</td>
+<td>Yes</td>
+<td> 4 </td>
+<td> 12 GB </td>
+<td> 40 GB </td>
+<td> 2 </td>
+<td> Ubuntu Server 12.04 LTS (64-bit) </td>
+<td>VMWare ESXi 5.1 and above <br /> KVM qemu-kvm-1.0 and above</td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td>Controller Node</td>
+<td>Yes</td>
+<td> 24 </td>
+<td> 32 GB </td>
+<td> 80 GB </td>
+<td> 3 </td>
+<td> Ubuntu Server 12.04 LTS (64-bit) </td>
+<td>VMWare ESXi 5.1 and above <br /> KVM qemu-kvm-1.0 and above</td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td>Baremetal Host <b>**</b></td>
+<td>Yes</td>
+<td> 16 </td>
+<td> 32 GB </td>
+<td> 150 GB </td>
+<td> 3 </td>
+<td> Ubuntu Server 12.04 LTS (64-bit) </td>
+<td>VMWare ESXi 5.1 and above <br /> KVM qemu-kvm-1.0 and above</td>
+</tr>	
+
+</table>
+
+**Important:** The Baremetal host’s internal storage space depends on the number of nodes planned to be provisioned and the size of the images being used to provision. To calculate your internal storage needs, use the following equation:
+
+    Baremetal internal storage = X * N + N * 110MB + 100GB
+
+Where <b>X</b> is the average image size in gigabytes, and <b>N</b> is the expected number of additional nodes.
+
 ## Moonshot chassis firmware version {#firmware}
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
 
