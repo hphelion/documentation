@@ -47,6 +47,7 @@ We recommend your Proliant server contains the following:
 * Quad Core Processor
 * Hard disk drive with a minimum of 500 GB of space
 * Three (3) ethernet ports
+* Memory with 4 GB for HP ProLiant Moonshot Server Cartridge, and 32 GB for HP ProLiant m300 Server Cartridge (4x8 GB)
 
 ## Hypervisor recommendations for HP Cloud OS for Moonshot {#hypervisor}
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
@@ -179,34 +180,34 @@ Where <b>X</b> is the average image size in gigabytes, and <b>N</b> is the expec
 </tr>
 <tr style="background-color: white; color: black;">
 <td>m300 BIOS</td>
-<td>H02 2013.11.13</td>
+<td>H02 2013.11.13 and above</td>
 </tr>		  
 <tr style="background-color: white; color: black;">
 <td>ProLiant Moonshot Cartridge BIOS</td>
-<td>H01 2013.11.15</td>
+<td>H01 2013.11.15 and above</td>
 </tr>
 <tr style="background-color: white; color: black;">
 <td>iLO CM</td>
-<td>1.11</td></tr>
+<td>1.11 and above</td></tr>
 <tr style="background-color: white; color: black;">
 <td>Satellite FW</td>
-<td>2013.10.18</td>
+<td>2013.10.18 and above</td>
 </tr>
 <tr style="background-color: white; color: black;">
 <td>Carbondale 8</td>
-<td>4.3</td>
+<td>4.3 and above</td>
 </tr>
 <tr style="background-color: white; color: black;">
 <td>Switch FastPath FW</td>
-<td>2.0.0.13</td>
+<td>2.0.0.13 and above</td>
 </tr>
 <tr style="background-color: white; color: black;">
 <td>CMU</td>
-<td>7.2</td>
+<td>7.2 and above</td>
 </tr>
 <tr style="background-color: white; color: black;">
 <td>Moonshot Windows Deployment Packs</td>
-<td>2013.12.1</td>
+<td>2013.12.1 and above</td>
 </tr>
 </table>
 
