@@ -37,6 +37,8 @@ This topic describes the steps to customize the network settings. These steps ar
 
 * [Next Step](#next-step)
 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"><b>Note:</b>  You do not have to customize the Admin Network. </p>
+
 ## Introduction
 
 Based on the network infrastructure suggested in the "Plan the Infrastructure for a Cloud" section of [Important Tasks Before You Install](/cloudos/moonshot/install/before-you-install), you must customize the network settings. Here are some of the criteria to be considered while making changes to the default settings:
@@ -65,15 +67,14 @@ To edit the public network:
 2. Click **Edit Network** for the public Network Type.
 
 3. Click each tab: Network, VLAN, and Router, one by one, to perform the following actions:
- * In the <b>Network</b> Tab, specify the <b>Subnet</b> and <b>Netmask</b> of your dedicated public IP address range. Do not change any other value. 
- The following values are set by default and need not be changed:
-  * Bridge Enabled = False. 
-  * In the VLAN Tab, VLAN Enabled = False.
-  * VLANID= 300
-
-4. In the <b>Router</b> Tab, in the <b>Router</b> box, enter the <b>Gateway IP</b> address of your Public IP address range. The Router Preference default is sufficient. 
+ * On the <b>Network</b> tab, specify the <b>Subnet</b> and <b>Netmask</b> of your dedicated public IP address range. Do not change:
+   * Bridge Enabled = False
+ * On the <b>VLAN</b> tab, do not change:
+   * VLAN Enabled = False
+   * VLANID = 300
+ * On the <b>Router</b> tab, in the <b>Router</b> box, enter the <b>Gateway IP</b> address of your Public IP address range. 
+   * The Router Preference default is sufficient. 
  
-
 ### Edit the Public Address Ranges
 
 To edit the public address ranges:
@@ -109,15 +110,14 @@ To edit the Nova_Flat network:
 2. Click Edit Network for the Nova_Flat network type.
 
 3. Click each tab: Network, VLAN, and Router, one by one, to perform the following actions:
- * In the <b>Network</b> Tab, specify the <b>Subnet</b> and <b>Netmask</b> of your dedicated public IP address range. Do not change any other value. 
- The following values are set by default and need not be changed:
-  * Bridge Enabled = False. 
-  * In the VLAN Tab, VLAN Enabled = False.
-  * VLANID= 172
+ * On the <b>Network</b> tab, specify the <b>Subnet</b> and <b>Netmask</b> of your dedicated public IP address range. Do not change:
+   * Bridge Enabled = False
+ * On the <b>VLAN</b> tab, do not change:
+   * VLAN Enabled = False
+   * VLANID = 172
+ * On the <b>Router</b> tab, in the <b>Router</b> box, if you updated the Subnet and/or Netmask on the Network tab, the router needs to be modified here accordingly. The Router Preference default is sufficient. 
 
-4. In the <b>Router</b> Tab, in the <b>Router</b> box, if you updated the Subnet and/or Netmask on the Network tab, the router needs to be modified here accordingly. The Router Preference default is sufficient. 
-
-5. Click <b>Update Network</b> to save your changes.
+4. Click <b>Update Network</b> to save your changes.
 
 ### Edit the Nova_Flat Address Ranges
 
@@ -154,15 +154,14 @@ To edit the IPMI network:
 2. Click Edit Network for the IPMI network type.
 
 3. Click each tab: Network, VLAN, and Router, one by one, to perform the following actions:
- * In the <b>Network</b> Tab, specify the <b>Subnet</b> and <b>Netmask</b> of your dedicated public IP address range. Do not change any other value. 
- The following values are set by default and need not be changed:
-  * Bridge Enabled = False. 
-  * In the VLAN Tab, VLAN Enabled = False.
-  * VLANID= 172
+ * On the <b>Network</b> tab, specify the <b>Subnet</b> and <b>Netmask</b> of your dedicated public IP address range. Do not change:
+   * Bridge Enabled = False
+ * On the <b>VLAN</b> tab, do not change:
+   * VLAN Enabled = False
+   * VLANID = 172
+ * On the <b>Router</b> tab, in the <b>Router</b> box, if you updated the Subnet and/or Netmask on the Network tab, the router needs to be modified here accordingly. The Router Preference default is sufficient. 
 
-4. In the <b>Router</b> Tab, in the <b>Router</b> box, if you updated the Subnet and/or Netmask on the Network tab, the router needs to be modified here accordingly. The Router Preference default is sufficient. 
-
-5. Click <b>Update Network</b> to save your changes.
+4. Click <b>Update Network</b> to save your changes.
 
 
 ### Edit the IPMI Address Ranges
