@@ -93,14 +93,7 @@ datacenter, then it is possible for updates and workloads to be downloaded local
 
 #### Network Configuration
 
-Again referring to this simplified deployment scenario: 
-
-<img src="media/moonshot-deployment.png"></img>
-
-\* <b>Note</b>: You can add multiple Baremetal Hosts with the same type of network connectivity shown in the diagram.
-
-
-As shown in the diagram, HP Cloud OS for Moonshot will have the following network configuration:
+As shown in the deployment scenario diagram, HP Cloud OS for Moonshot will have the following network configuration:
 
 * <b>Admin Node</b>: 2 NICs - Admin Network and Public Network
 
