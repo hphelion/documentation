@@ -68,12 +68,12 @@ To edit the public network:
 
 3. Click each tab: Network, VLAN, and Router, one by one, to perform the following actions:
  * On the <b>Network</b> tab, specify the <b>Subnet</b> and <b>Netmask</b> of your dedicated public IP address range. Do not change:
-   * Bridge Enabled = False
+    * Bridge Enabled = False
  * On the <b>VLAN</b> tab, do not change:
-   * VLAN Enabled = False
-   * VLANID = 300
+    * VLAN Enabled = False
+    * VLANID = 300
  * On the <b>Router</b> tab, in the <b>Router</b> box, enter the <b>Gateway IP</b> address of your Public IP address range. 
-   * The Router Preference default is sufficient. 
+    * The Router Preference default is sufficient. 
  
 ### Edit the Public Address Ranges
 
@@ -111,10 +111,10 @@ To edit the Nova_Flat network:
 
 3. Click each tab: Network, VLAN, and Router, one by one, to perform the following actions:
  * On the <b>Network</b> tab, specify the <b>Subnet</b> and <b>Netmask</b> of your dedicated public IP address range. Do not change:
-   * Bridge Enabled = False
+    * Bridge Enabled = False
  * On the <b>VLAN</b> tab, do not change:
-   * VLAN Enabled = False
-   * VLANID = 172
+    * VLAN Enabled = False
+    * VLANID = 172
  * On the <b>Router</b> tab, in the <b>Router</b> box, if you updated the Subnet and/or Netmask on the Network tab, the router needs to be modified here accordingly. The Router Preference default is sufficient. 
 
 4. Click <b>Update Network</b> to save your changes.
@@ -155,10 +155,10 @@ To edit the IPMI network:
 
 3. Click each tab: Network, VLAN, and Router, one by one, to perform the following actions:
  * On the <b>Network</b> tab, specify the <b>Subnet</b> and <b>Netmask</b> of your dedicated public IP address range. Do not change:
-   * Bridge Enabled = False
+    * Bridge Enabled = False
  * On the <b>VLAN</b> tab, do not change:
-   * VLAN Enabled = False
-   * VLANID = 172
+    * VLAN Enabled = False
+    * VLANID = 172
  * On the <b>Router</b> tab, in the <b>Router</b> box, if you updated the Subnet and/or Netmask on the Network tab, the router needs to be modified here accordingly. The Router Preference default is sufficient. 
 
 4. Click <b>Update Network</b> to save your changes.

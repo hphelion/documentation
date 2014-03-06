@@ -147,9 +147,9 @@ In addition to the information presented already in this topic, please review th
 * In <b>Edit Prerequisites</b> > <b>Admin Node Internet Access</b> > <b>Network</b>, you will need to specify your:
  * NIC details for the public interface
  * Http Proxy information:
-  * Host
-  * Port-8080
-  * Non-Proxy Hosts:  10.\*|192.\*|127.0.\*|localhost
+   * Host
+   * Port-8080
+   * Non-Proxy Hosts:  10.\*|192.\*|127.0.\*|localhost
 
 * In <b>Environment</b> > <b>Networks</b>, for your <b>Public</b> network: 
  * On the <b>Edit Network</b> dialog, you will need to specify your Subnet, Netmask, and Router IP values.
