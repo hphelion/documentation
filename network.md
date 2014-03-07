@@ -9,14 +9,7 @@ tags: networking neutron
 ---
 # HP Cloud Networking
 
-HP Cloud Networking is a virtual networking service that provides network connectivity and addressing for HP Cloud compute devices. It is based on OpenStack Networking open source software. Key terms include:
-
-- **Floating IP Addresses** - On-demand, public IP addresses on a network. With HP Cloud, you can allocate several floating IP addresses and assign them to virtual servers. 
-- **Network** - Allows you to define network connectivity and addressing in the Cloud, providing "networking as a service" between interface devices managed by other HP Public Cloud, such as compute. 
-- **Port** - A connection point for attaching a single device, such as a virtual server's NIC, to a virtual network.  The port describes the associated network configuration, such as the MAC and IP addresses to be used by the attached device.
-- **Router** - A device that forwards data packets along networks. 
-- **Subnet** - Contains IP address blocks that assign IP addresses to virtual servers. In addition, a subnet can have a gateway, a list of DNS name servers, and host routes. Information provided by DHCP is pushed to servers with interfaces associated with the subnet.
-
+HP Cloud Networking is a virtual networking service that provides network connectivity and addressing for HP Cloud compute devices. It is based on OpenStack Networking open source software. 
 
 A default configuration comes with HP Cloud compute activation that includes a network, subnet,and  router connecting the subnets to the Internet.
 
@@ -27,17 +20,14 @@ You can use the default network to deploy HP Cloud compute virtual servers, or m
 * Defining security group parameters
 * Allocating and managing public floating IP addresses
 
+## HP Public Cloud Console ##
 
-###API###
+## API ##
  
-You can use a low level, raw REST API to access HP Cloud compute. For more information on using the HP Cloud Networking API, see [HP Cloud Networking API Specifications](https://docs.hpcloud.com/api/v13/networking).
+You can use a low level, raw REST API to access HP Public Cloud Networking. For more information on using the HP Cloud Networking API, see [HP Cloud Networking API Specifications](https://docs.hpcloud.com/api/v13/networking).
 
 
-###Bindings###
-
-You can use any of several language bindings to access HP Cloud compute. For more information on using the HP Cloud Networking API, see [HP Cloud binding support](http://docs.hpcloud.com/bindings/).
-
-###CLI###
+## CLI ##
 
 You can use any of several command-line interface software to access HP Cloud compute. For more information on using the HP Cloud Networking API, see [HP Cloud CLI](http://docs.hpcloud.com/cli/).
 
@@ -46,6 +36,7 @@ You can use any of several command-line interface software to access HP Cloud co
 
 Check out the following pages for more information on using HP Cloud Networking services:
 
+- [HP Public Cloud Networking: Quick Start Guide](/compute/network-quick-start/)
 - [Getting Started with Networking 13.5](/compute.networking.getting-started)
 - [HP Cloud Networking Overview](/networking/)
 - [Known Issues and Best Practices in Compute and Networking in 13.5](https://community.hpcloud.com/article/known-issues-and-best-practices-compute-and-networking-135)
