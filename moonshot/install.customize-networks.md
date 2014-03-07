@@ -62,18 +62,28 @@ To provide external access, make sure you specify  a contiguous IP address range
 
 To edit the public network:
 
-1. On the Operational Dashboard, select the Environment tab > Networks.
+<ol>
+<li>On the Operational Dashboard, select the <b>Environment</b> tab > <b>Networks</b>. </li>
+<li>Click <b>Edit Network</b> for the public Network Type. </li>
+<li>Click each tab: Network, VLAN, and Router, one by one, to perform the following actions:
 
-2. Click **Edit Network** for the public Network Type.
+<ul>
 
-3. Click each tab: Network, VLAN, and Router, one by one, to perform the following actions:
- * On the <b>Network</b> tab, specify the <b>Subnet</b> and <b>Netmask</b> of your dedicated public IP address range. Do not change:
-    * Bridge Enabled = False
- * On the <b>VLAN</b> tab, do not change:
-    * VLAN Enabled = False
-    * VLANID = 300
- * On the <b>Router</b> tab, in the <b>Router</b> box, enter the <b>Gateway IP</b> address of your Public IP address range. 
-    * The Router Preference default is sufficient. 
+<li>On the <b>Network</b> tab, specify the <b>Subnet</b> and <b>Netmask</b> of your dedicated public IP address range. Do not change:
+<ul>
+<li>Bridge Enabled = False
+</ul>
+
+<li>On the <b>VLAN</b> tab, do not change:
+<ul>
+<li>VLAN Enabled = False
+<li>VLANID = 300
+</ul>
+
+<li>On the <b>Router</b> tab, in the <b>Router</b> box, enter the <b>Gateway IP</b> address of your Public IP address range. 
+The Router Preference default is sufficient. 
+</ul> </li>
+</ol>
  
 ### Edit the Public Address Ranges
 
@@ -105,19 +115,34 @@ The Nova_Flat network is used for connectivity between the Controller and Bareme
 
 To edit the Nova_Flat network:
 
-1. On the Operational Dashboard, select the Environment tab > Networks.
+<ol>
 
-2. Click Edit Network for the Nova_Flat network type.
+<li>On the Operational Dashboard, select the <b>Environment</b> tab > <b>Networks</b>. </li>
 
-3. Click each tab: Network, VLAN, and Router, one by one, to perform the following actions:
- * On the <b>Network</b> tab, specify the <b>Subnet</b> and <b>Netmask</b> of your dedicated public IP address range. Do not change:
-    * Bridge Enabled = False
- * On the <b>VLAN</b> tab, do not change:
-    * VLAN Enabled = False
-    * VLANID = 172
- * On the <b>Router</b> tab, in the <b>Router</b> box, if you updated the Subnet and/or Netmask on the Network tab, the router needs to be modified here accordingly. The Router Preference default is sufficient. 
+<li>Click <b>Edit Network</b> for the public Network Type. </li>
 
-4. Click <b>Update Network</b> to save your changes.
+<li>Click each tab: Network, VLAN, and Router, one by one, to perform the following actions:
+
+<ul>
+
+<li>On the <b>Network</b> tab, specify the <b>Subnet</b> and <b>Netmask</b> of your dedicated public IP address range. Do not change:
+<ul>
+<li>Bridge Enabled = False
+</ul>
+
+<li>On the <b>VLAN</b> tab, do not change:
+<ul>
+<li>VLAN Enabled = False
+<li>VLANID = 172
+</ul>
+
+<li>On the <b>Router</b> tab, in the <b>Router</b> box, enter the <b>Gateway IP</b> address of your Public IP address range. 
+The Router Preference default is sufficient. 
+</ul> </li>
+
+<li>  Click <b>Update Network</b> to save your changes. </li>
+
+</ol>
 
 ### Edit the Nova_Flat Address Ranges
 
@@ -149,19 +174,34 @@ The IPMI network is used for communication between the Baremetal host and the Mo
 
 To edit the IPMI network:
 
-1. On the Operational Dashboard, select the Environment tab > Networks.
+<ol>
 
-2. Click Edit Network for the IPMI network type.
+<li>On the Operational Dashboard, select the <b>Environment</b> tab > <b>Networks</b>. </li>
 
-3. Click each tab: Network, VLAN, and Router, one by one, to perform the following actions:
- * On the <b>Network</b> tab, specify the <b>Subnet</b> and <b>Netmask</b> of your dedicated public IP address range. Do not change:
-    * Bridge Enabled = False
- * On the <b>VLAN</b> tab, do not change:
-    * VLAN Enabled = False
-    * VLANID = 172
- * On the <b>Router</b> tab, in the <b>Router</b> box, if you updated the Subnet and/or Netmask on the Network tab, the router needs to be modified here accordingly. The Router Preference default is sufficient. 
+<li>Click <b>Edit Network</b> for the public Network Type. </li>
 
-4. Click <b>Update Network</b> to save your changes.
+<li>Click each tab: Network, VLAN, and Router, one by one, to perform the following actions:
+
+<ul>
+
+<li>On the <b>Network</b> tab, specify the <b>Subnet</b> and <b>Netmask</b> of your dedicated public IP address range. Do not change:
+<ul>
+<li>Bridge Enabled = False
+</ul>
+
+<li>On the <b>VLAN</b> tab, do not change:
+<ul>
+<li>VLAN Enabled = False
+<li>VLANID = 172
+</ul>
+
+<li>On the <b>Router</b> tab, in the <b>Router</b> box, enter the <b>Gateway IP</b> address of your Public IP address range. 
+The Router Preference default is sufficient. 
+</ul> </li>
+
+<li>  Click <b>Update Network</b> to save your changes. </li>
+
+</ol>
 
 
 ### Edit the IPMI Address Ranges
