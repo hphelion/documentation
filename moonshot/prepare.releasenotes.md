@@ -87,16 +87,13 @@ The following are the known issues for HP Cloud OS for Moonshot 1.0.
 * Create Region fails due to a GET_SERVER_CERTIFICATE verification failure. To resolve this issue, follow this process:
 
  1. In the Admin Node, edit the following file in the given path:
-  
-  `/opt/dell/chef/cookbooks/hp_cos_apollo_100/recipes/server.rb`
+ `/opt/dell/chef/cookbooks/hp_cos_apollo_100/recipes/server.rb`
 	 
  2. Go to line 245 and add the -k switch.  Change this command:
- 
-  `" curl  #(keystone_protocol...` to `" curl  -k #(keystone_protocol...`
+ `" curl  #(keystone_protocol...`  to  `" curl  -k #(keystone_protocol...`
     
  3. Execute this command:
- 
-  `knife cookbook upload knife cookbook upload -o /opt/dell/chef/cookbooks/ -V -k /etc/chef/webui.pem -u chef-webui`
+ `knife cookbook upload knife cookbook upload -o /opt/dell/chef/cookbooks/ -V -k /etc/chef/webui.pem -u chef-webui`
 	
  4. Remove the Cloud and create it again.
 
@@ -105,16 +102,14 @@ The following are the known issues for HP Cloud OS for Moonshot 1.0.
 * After you de-provision a bulk node, the topology sometimes continues to display the "PROCESSING" state in the Administration Dashboard for a lengthy period of time. You can resolve this issue by increasing the timeout value of the IPMI driver: 
    
  1. Edit this file:
- 
-  `/usr/share/pyshared/nova/virt/baremetal/MoonshotIPMI.py`
+ `/usr/share/pyshared/nova/virt/baremetal/MoonshotIPMI.py`
 
- 2. Go to line 225 and change `timer.start(interval=1.0).wait()` to `timer.start(interval=30.0).wait()`
+ 2. Go to line 225 and change `timer.start(interval=1.0).wait()`  to  `timer.start(interval=30.0).wait()`
 	
  3. <b>Save</b> and <b>Exit</b>
 	
  4. Execute the command:
- 
-  `restart Nova-compute`
+ `restart Nova-compute`
 
 * Under some circumstances, after launching a workload profile in the Administration Dashboard, and then using <b>Terminate Workload</b> to deprovision, the workload/topology continues to list the state as "Processing".  In the <b>Deployed Workloads</b> tab, selecting <b>Delete Workload</b> resolves the issue.
 
