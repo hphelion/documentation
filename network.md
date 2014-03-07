@@ -17,8 +17,6 @@ You can use the default network to deploy HP Cloud compute virtual servers, or m
 
 * Defining and configuring virtual networks
 * Specifying IP subnets for those networks
-* Defining security group parameters
-* Allocating and managing public floating IP addresses
 
 ## HP Public Cloud Console ##
 
@@ -26,7 +24,7 @@ You can use the HP Public Cloud Console to access HP Public Cloud Networking.
 
 You can view a visual depiction of your network in the console. From the Network Topology screen, you can access information about any aspect of your network and configure the network, as needed. 
 
-	<br><img src="media/compute-networking-topography.png"  alt="" />
+<br><img src="media/compute-networking-topography.png"  alt="" />
 
 ## API ##
  
