@@ -139,9 +139,9 @@ For additional related information on HP Cloud OS for Moonshot:
 
 * [Troubleshooting](/cloudos/moonshot/manage/troubleshooting/): Advice to resolve issues you may encounter with HP Cloud OS for Moonshot.
 
-* [Disk Image Builder](/cloudos/moonshot/manage/image-builder/): Shows you how to use Disk Image Builder to create images for the HP Cloud OS for Moonshot.
+* [Building Images](/cloudos/moonshot/manage/image-builder/): Shows you how to use Disk Image Builder to create images for the HP Cloud OS for Moonshot.
 
-* [HP Cloud OS for Moonshot Backup and Restore](/cloudos/moonshot/manage/backup-process/): Describes how to backup and restore HP Cloud OS for Moonshot.
+* [Backup and Restore](/cloudos/moonshot/manage/backup-process/): Describes how to backup and restore HP Cloud OS for Moonshot.
 
 
 ###Legal Notices and Disclaimer### {#legal-notices-disclaimer}
