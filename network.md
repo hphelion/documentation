@@ -22,6 +22,12 @@ You can use the default network to deploy HP Cloud compute virtual servers, or m
 
 ## HP Public Cloud Console ##
 
+You can use the HP Public Cloud Console to access HP Public Cloud Networking. 
+
+You can view a visual depiction of your network in the console. From the Network Topology screen, you can access information about any aspect of your network and configure the network, as needed. 
+
+	<br><img src="media/compute-networking-topography.png"  alt="" />
+
 ## API ##
  
 You can use a low level, raw REST API to access HP Public Cloud Networking. For more information on using the HP Cloud Networking API, see [HP Cloud Networking API Specifications](https://docs.hpcloud.com/api/v13/networking).
