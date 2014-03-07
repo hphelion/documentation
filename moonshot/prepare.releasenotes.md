@@ -54,7 +54,7 @@ We have also provided information about some limitations and known issues for re
 
 * [Recommendations for best functionality, performance and reliability](#best-practices)
  
-* [Known issues in 1.0 release](#known-issues) 
+* [Known issues in the 1.0 release](#known-issues) 
 
 ###Recommendations for best functionality, performance and reliability### {#best-practices} 
 
@@ -63,7 +63,8 @@ HP recommends the following best practices for HP Cloud OS for Moonshot 1.0.
 **Workloads**
 	
  * For best functionality, access your Operational Dashboard and Baremetal instance console through the Admin Network.
- * For best results, create your images using the Disk Image Builder.
+ 
+ * For best results, create your images using the Disk Image Builder.  See the [Building Images](/cloudos/moonshot/manage/image-builder/) topic. 
 
 **Provisioning**
 
@@ -75,7 +76,7 @@ To enable maximum reliability in the Cloud environment, do not select the contro
 
 
 
-###Known issues in 1.0 release### {#known-issues}
+###Known issues in the 1.0 release### {#known-issues}
 
 The following are the known issues for HP Cloud OS for Moonshot 1.0.
 
@@ -107,7 +108,7 @@ The following are the known issues for HP Cloud OS for Moonshot 1.0.
 	
  3. <b>Save</b> and <b>Exit</b>
 	
- 4. Execute the command: 
+ 4. Execute the command:
  `restart Nova-compute`
 
 * Under some circumstances, after launching a workload profile in the Administration Dashboard, and then using <b>Terminate Workload</b> to deprovision, the workload/topology continues to list the state as "Processing".  In the <b>Deployed Workloads</b> tab, selecting <b>Delete Workload</b> resolves the issue.
@@ -126,23 +127,23 @@ For additional related information on HP Cloud OS for Moonshot:
 
 * [HP Cloud OS for Moonshot documentation web site](/cloudos/moonshot/): Provides the topics listed below, plus FAQs, video tutorials, and more.
 
-* [Install & Configure Your Cloud](/cloudos/install): A set of sequential, connected topics that walk you through the installation and configuration process.
+* [Install & Configure Your Cloud](/cloudos/moonshot/install): A set of sequential, connected topics that walk you through the installation and configuration process.
 
-* [Support Matrix](/cloudos/prepare/supportmatrix/): Information about platform support requirements for the HP Cloud OS for Moonshot core functions, including requirements for component products.
+* [Support Matrix](/cloudos/moonshot/prepare/supportmatrix/): Information about platform support requirements for the HP Cloud OS for Moonshot core functions, including requirements for component products.
 
-* [Operational Dashboard Help](/cloudos/manage/operational-dashboard/): Contains topics about the Operational Dashboard user interface dialogs and options.
+* [Operational Dashboard Help](/cloudos/moonshot/manage/operational-dashboard/): Contains topics about the Operational Dashboard user interface dialogs and options.
 
-* [Administration Dashboard Help](/cloudos/manage/administration-dashboard/): Contains topics about the Administration Dashboard user interface dialogs and options.
+* [Administration Dashboard Help](/cloudos/moonshot/manage/administration-dashboard/): Contains topics about the Administration Dashboard user interface dialogs and options.
 
-* [Utilities](/cloudos/manage/utilities/): Describes the HP Cloud OS for Moonshot utilities.
+* [Utilities](/cloudos/moonshot/manage/utilities/): Describes the HP Cloud OS for Moonshot utilities.
 
-* [Troubleshooting](/cloudos/manage/troubleshooting/): Advice to resolve issues you may encounter with HP Cloud OS for Moonshot.
+* [Troubleshooting](/cloudos/moonshot/manage/troubleshooting/): Advice to resolve issues you may encounter with HP Cloud OS for Moonshot.
 
 * [Disk Image Builder](/cloudos/moonshot/manage/image-builder/): Shows you how to use Disk Image Builder to create images for the HP Cloud OS for Moonshot.
 
 * [HP Cloud OS for Moonshot Backup and Restore](/cloudos/moonshot/manage/backup-process/): Describes how to backup and restore HP Cloud OS for Moonshot.
 
-* [Open Source and Third-Party Software License Agreements](/cloudos/os-3rd-party-license-agreements/): License information regarding the HP Cloud OS for Moonshot product. This topic includes legal notices and the disclaimer for experimental software.
+* [Open Source and Third-Party Software License Agreements](/cloudos/moonshot/os-3rd-party-license-agreements/): License information regarding the HP Cloud OS for Moonshot product. This topic includes legal notices and the disclaimer for experimental software.
 
 
 ###Legal Notices and Disclaimer### {#legal-notices-disclaimer}
