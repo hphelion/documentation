@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Cloud OS for Moonshot 1.0 Release Notes"
+title: "HP Cloud OS for Moonshot for Moonshot Release Notes"
 permalink: /cloudos/moonshot/prepare/releasenotes/
 product: moonshot
 
@@ -26,7 +26,7 @@ This topic contains the following information about the HP Cloud OS for Moonshot
 
 * [Features in HP Cloud OS for Moonshot 1.0](#features)
 * [Recommendations for HP Cloud OS for Moonshot 1.0](#recommendations)
-* [For Further Information](#for-further-information)
+* [For further information](#for-further-information)
 
 ##Features in HP Cloud OS for Moonshot 1.0## {#features}
 
@@ -49,7 +49,7 @@ This section describes the HP recommendations for best performance, utility, and
 We have also provided information about some limitations and known issues for reference purposes. This section contains:
 
 * [Recommendations for best functionality, performance and reliability](#best-practices) 
-* [Known issues and workarounds in the 1.0 release](#known-issues) 
+* [Known issues in 1.0 release](#known-issues) 
 
 ###Recommendations ### {#best-practices} 
 
@@ -62,73 +62,58 @@ HP recommends the following best practices for HP Cloud OS for Moonshot 1.0.
 
 **Provisioning**
 
-For increased reliability, we recommend you allocate an adequate IP address range for the nova_flat network based on the number of instances planned for the given Cloud. For example, if the environment is going to have 40 instances, at least 120 IP addresses need to be defined in the DHCP allocation range. 
+* For increased reliability, we recommend you allocate an adequate IP address range for the nova_flat network based on the number of instances planned for the given Cloud. For example, if the environment is going to have 40 instances, at least 120 IP addresses need to be defined in the DHCP allocation range. 
 
 **Installation**
 
-To enable maximum reliability in the Cloud environment, do not select the controller nodes when performing *Create Compute Region* action for Moonshot/Standard.
+To enable maximum reliability in the Cloud environment, do not select the controller nodes when performing `Create Compute Region` action for Moonshot/Standard server. 
 
 
-###Known issues and workarounds in the 1.0 release### {#known-issues}
+
+###Known issues in 1.0 release### {#known-issues}
 
 The following are the known issues for HP Cloud OS for Moonshot 1.0.
 
 ####Installation####
 
-Once a region is created, you cannot reduce its size.
+* The region size can only be extended.
+* Create Region fails due to a GET_SERVER_CERTIFICATE verification failure. To resolve this issue, follow this process:
+
+ 1. In the Admin Node, edit the following file in the given path:
+      `/opt/dell/chef/cookbooks/hp_cos_apollo_100/recipes/server.rb`
+	 
+ 2. Go to line 245 and add the -k switch.  Change this:
+     Command `" curl  #(keystone_protocol...` to `" curl  -k #(keystone_protocol...`
+    
+ 4. Execute this command:
+ `knife cookbook upload knife cookbook upload -o /opt/dell/chef/cookbooks/ -V -k /etc/chef/webui.pem -u chef-webui`
+	
+ 5. Remove the Cloud and create it again.
 
 ####Provisioning####
 
-After you de-provision a bulk node, the topology sometimes continues to display the "PROCESSING" state in the Administration Dashboard for a lengthy period of time. You can resolve this issue by increasing the timeout value of the IPMI driver: 
+* After you de-provision a bulk node, the topology sometimes continues to display the "PROCESSING" state in the Administration Dashboard for a lengthy period of time. You can resolve this issue by increasing the timeout value of the IPMI driver: 
    
-1. Edit
+ 1. Edit
  `/usr/share/pyshared/nova/virt/baremetal/MoonshotIPMI.py'`
 
-2. Go to line 225 and change:
-
- `timer.start(interval=1.0).wait()`
- 
- to:
-         
- ` timer.start (interval=30.0).wait()`
+ 2. Go to line 225 and change `timer.start(interval=1.0).wait()` to ` timer.start (interval=30.0).wait()`
 	
-3. Save and Exit.
+ 3. Save and Exit.
 	
-4. Restart Nova compute
+ 4. Execute the command `restart Nova-compute`.
 
-Under some circumstances, after launching a workload profile in the Administration Dashboard, and then using Terminate Workload to deprovision, the workload/topology continues to list the state as "Processing".  In the **Deployed Workloads** tab, selecting **Delete Workload** resolves the issue.
-
-####Installation####
-
-Create Region fails due to a GET_SERVER_CERTIFICATEverification failure. To resolve this issue, follow this process:
-
-1. In the Admin Node, edit the following file in the given path:
-
- `/opt/dell/chef/cookbooks/hp_cos_apollo_100/recipes/server.rb`
-	 
-2. Go to line 245 and add the -k switch.  Change this:
-
- Command `" curl  #(keystone_protocol...`
- 
- to:
-	
- Command `" curl  -k #(keystone_protocol...`
-    
-4. Execute this command:
-
- `knife cookbook upload knife cookbook upload -o /opt/dell/chef/cookbooks/ -V -k /etc/chef/webui.pem -u chef-webui`
-	
-5. Remove the Cloud and recreate.
+* Under some circumstances, after launching a workload profile in the Administration Dashboard, and then using Terminate Workload to deprovision, the workload/topology continues to list the state as "Processing".  In the `Deployed Workloads` tab, selecting `Delete Workload` resolves the issue.
 
 ####General####
 
-* Edit Network option is enabled in the Networks page in the Administration Dashboard. There is no impact on the functionality if the default network settings are retained. 
-* Edit Extra Specs option is enabled for Flavors. This allows you to change the extra specs of the default flavor which will fail the instance. There is no impact on the functionality if the default settings are retained.
+* Edit Network option is enabled in the Networks page in the Administration Dashboard. There is no impact on the functionality if you retain the default network settings. 
+* Edit Extra Specs option is enabled for Flavors. This allows you to change the extra specs of the default flavor which will fail the instance. There is no impact on the functionality if you retain the default settings.
 * When you display the nodes table using Moonshot Management, the disk sizes for all discovered nodes appear to be 500 GB.
 
-##For Further Information## {#for-further-information}
+##For further information## {#for-further-information}
 
-For additional related information on HP Cloud OS:
+For additional related information on HP Cloud OS for Moonshot:
 
 * [HP Cloud OS for Moonshot Documentation web site](/cloudos/moonshot/): Provides the topics listed in this section, including Installation and Configuration and more.
 * [HP Cloud OS for Moonshot Platform and Software Support Matrix](/cloudos/prepare/supportmatrix/): Information about platform support requirements for the HP Cloud OS for Moonshot core functions, including requirements for component products.
@@ -138,16 +123,6 @@ For additional related information on HP Cloud OS:
 * [HP Cloud OS for Moonshot Operational Dashboard Help](/cloudos/manage/operational-dashboard/): Contains topics about the Operational Dashboard user interface dialogs and options.
 * [HP Cloud OS for Moonshot Administration Dashboard Help]/cloudos/manage/administration-dashboard/): Contains topics about the Administration Dashboard user interface dialogs and options.
 * HP Cloud OS for Moonshot Release Notes (this topic): Information about the product features, recommendations and known issues.
-
-###Installation Notes### {#installation-notes}
-
-Before installing the HP Cloud OS for Moonshot release, read the [HP Cloud OS for Moonshot Support Matrix](/cloudos/moonshot/prepare/supportmatrix/) 
-to ensure that your installation environment meets the minimum requirements.
-
-The HP Cloud OS for Moonshot installation deploys the Operational Dashboard (used to set up, configure, and install an HP cloud infrastructure) 
-and the Administration Dashboard (used to create and manage cloud resources). 
-
-When you are ready to install HP Cloud OS for Moonshot, see [Install & Configure Your Cloud](/cloudos/moonshot/install/).
 
 ###Legal Notices and Disclaimer### {#legal-notices-disclaimer}
 
