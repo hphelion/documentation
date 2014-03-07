@@ -25,7 +25,9 @@ PageRefresh();
 This topic contains the following information about the HP Cloud OS for Moonshot 1.0 release:
 
 * [Features in HP Cloud OS for Moonshot 1.0](#features)
+
 * [Recommendations for HP Cloud OS for Moonshot 1.0](#recommendations)
+
 * [For further information](#for-further-information)
 
 ##Features in HP Cloud OS for Moonshot 1.0## {#features}
@@ -37,10 +39,12 @@ This topic contains the following information about the HP Cloud OS for Moonshot
 **Moonshot Management** &mdash; The Single Pane of Glass (SPOG) view with the Chassis Manager enhances your user experience by catering to three important aspects of Moonshot Management:
 	
 * Displaying an overall perspective of the datacenter, hosted servers and health of chassis in the Datacenter View
+
 * Providing detailed information of individual chassis host and health status in the Single Chassis View
+
 * Managing Server with options such as Power On/Off and Maintenance Mode
 
-**Workload Management** &mdash; Enables you to deploy a composite service comprising of different applications and workloads in a user friendly manner. You can browse through HP's catalog of pre-tested and pre-crafted workloads download and publish them to the cloud,then launch them to get a running application infrastructure. You can do this without having to worry about the underlying technical details.
+**Workload Management** &mdash; Enables you to deploy a composite service comprising of different applications and workloads in a user friendly manner. You can browse through HP's catalog of pre-tested and pre-crafted workloads download and publish them to the cloud, then launch them to get a running application infrastructure. You can do this without having to worry about the underlying technical details.
 
 
 ##Recommendations for HP Cloud OS for Moonshot 1.0## {#recommendations}
@@ -48,17 +52,18 @@ This topic contains the following information about the HP Cloud OS for Moonshot
 This section describes the HP recommendations for best performance, utility, and functionality with this software version. 
 We have also provided information about some limitations and known issues for reference purposes. This section contains:
 
-* [Recommendations for best functionality, performance and reliability](#best-practices) 
+* [Recommendations for best functionality, performance and reliability](#best-practices)
+ 
 * [Known issues in 1.0 release](#known-issues) 
 
-###Recommendations ### {#best-practices} 
+###Recommendations for best functionality, performance and reliability### {#best-practices} 
 
 HP recommends the following best practices for HP Cloud OS for Moonshot 1.0.
 
 **Workloads**
 	
- * For best functionality, access your Operational Dashboard and Baremetal instance console through Admin Network.
- * For best results, create your images using Disk Image Builder.
+ * For best functionality, access your Operational Dashboard and Baremetal instance console through the Admin Network.
+ * For best results, create your images using the Disk Image Builder.
 
 **Provisioning**
 
@@ -66,7 +71,7 @@ HP recommends the following best practices for HP Cloud OS for Moonshot 1.0.
 
 **Installation**
 
-To enable maximum reliability in the Cloud environment, do not select the controller nodes when performing `Create Compute Region` action for Moonshot/Standard server. 
+To enable maximum reliability in the Cloud environment, do not select the controller nodes when performing the <b>Create Compute Region</b> action for the Moonshot/Standard server. 
 
 
 
@@ -77,6 +82,7 @@ The following are the known issues for HP Cloud OS for Moonshot 1.0.
 ####Installation####
 
 * The region size can only be extended.
+
 * Create Region fails due to a GET_SERVER_CERTIFICATE verification failure. To resolve this issue, follow this process:
 
  1. In the Admin Node, edit the following file in the given path:
