@@ -82,47 +82,62 @@ The following are the known issues for HP Cloud OS for Moonshot 1.0.
  1. In the Admin Node, edit the following file in the given path:
       `/opt/dell/chef/cookbooks/hp_cos_apollo_100/recipes/server.rb`
 	 
- 2. Go to line 245 and add the -k switch.  Change this:
-     Command `" curl  #(keystone_protocol...` to `" curl  -k #(keystone_protocol...`
+ 2. Go to line 245 and add the -k switch.  Change this command:
+  `" curl  #(keystone_protocol...` to `" curl  -k #(keystone_protocol...`
     
- 4. Execute this command:
+ 3. Execute this command:
  `knife cookbook upload knife cookbook upload -o /opt/dell/chef/cookbooks/ -V -k /etc/chef/webui.pem -u chef-webui`
 	
- 5. Remove the Cloud and create it again.
+ 4. Remove the Cloud and create it again.
 
 ####Provisioning####
 
 * After you de-provision a bulk node, the topology sometimes continues to display the "PROCESSING" state in the Administration Dashboard for a lengthy period of time. You can resolve this issue by increasing the timeout value of the IPMI driver: 
    
- 1. Edit
- `/usr/share/pyshared/nova/virt/baremetal/MoonshotIPMI.py'`
+ 1. Edit this file:
+ `/usr/share/pyshared/nova/virt/baremetal/MoonshotIPMI.py`
 
- 2. Go to line 225 and change `timer.start(interval=1.0).wait()` to ` timer.start (interval=30.0).wait()`
+ 2. Go to line 225 and change `timer.start(interval=1.0).wait()` to `timer.start(interval=30.0).wait()`
 	
- 3. Save and Exit.
+ 3. <b>Save</b> and <b>Exit</b>
 	
- 4. Execute the command `restart Nova-compute`.
+ 4. Execute the command: 
+ `restart Nova-compute`
 
-* Under some circumstances, after launching a workload profile in the Administration Dashboard, and then using Terminate Workload to deprovision, the workload/topology continues to list the state as "Processing".  In the `Deployed Workloads` tab, selecting `Delete Workload` resolves the issue.
+* Under some circumstances, after launching a workload profile in the Administration Dashboard, and then using <b>Terminate Workload</b> to deprovision, the workload/topology continues to list the state as "Processing".  In the <b>Deployed Workloads</b> tab, selecting <b>Delete Workload</b> resolves the issue.
 
 ####General####
 
 * Edit Network option is enabled in the Networks page in the Administration Dashboard. There is no impact on the functionality if you retain the default network settings. 
+
 * Edit Extra Specs option is enabled for Flavors. This allows you to change the extra specs of the default flavor which will fail the instance. There is no impact on the functionality if you retain the default settings.
+
 * When you display the nodes table using Moonshot Management, the disk sizes for all discovered nodes appear to be 500 GB.
 
 ##For further information## {#for-further-information}
 
 For additional related information on HP Cloud OS for Moonshot:
 
-* [HP Cloud OS for Moonshot Documentation web site](/cloudos/moonshot/): Provides the topics listed in this section, including Installation and Configuration and more.
-* [HP Cloud OS for Moonshot Platform and Software Support Matrix](/cloudos/prepare/supportmatrix/): Information about platform support requirements for the HP Cloud OS for Moonshot core functions, including requirements for component products.
-* [HP Cloud OS for Moonshot Utilities](/cloudos/manage/utilities/): Describes the HP Cloud OS for Moonshot utilities.
-* [HP Cloud OS for Moonshot Troubleshooting](/cloudos/manage/troubleshooting/): Advice to resolve issues you may encounter with HP Cloud OS for Moonshot.
-* [HP Cloud OS for Moonshot Open Source and Third-Party Software License Agreements](/cloudos/os-3rd-party-license-agreements/): License information regarding the HP Cloud OS for Moonshot product. This topic includes legal notices and the disclaimer for experimental software.
-* [HP Cloud OS for Moonshot Operational Dashboard Help](/cloudos/manage/operational-dashboard/): Contains topics about the Operational Dashboard user interface dialogs and options.
-* [HP Cloud OS for Moonshot Administration Dashboard Help]/cloudos/manage/administration-dashboard/): Contains topics about the Administration Dashboard user interface dialogs and options.
-* HP Cloud OS for Moonshot Release Notes (this topic): Information about the product features, recommendations and known issues.
+* [HP Cloud OS for Moonshot documentation web site](/cloudos/moonshot/): Provides the topics listed below, plus FAQs, video tutorials, and more.
+
+* [Install & Configure Your Cloud](/cloudos/install): A set of sequential, connected topics that walk you through the installation and configuration process.
+
+* [Support Matrix](/cloudos/prepare/supportmatrix/): Information about platform support requirements for the HP Cloud OS for Moonshot core functions, including requirements for component products.
+
+* [Operational Dashboard Help](/cloudos/manage/operational-dashboard/): Contains topics about the Operational Dashboard user interface dialogs and options.
+
+* [Administration Dashboard Help](/cloudos/manage/administration-dashboard/): Contains topics about the Administration Dashboard user interface dialogs and options.
+
+* [Utilities](/cloudos/manage/utilities/): Describes the HP Cloud OS for Moonshot utilities.
+
+* [Troubleshooting](/cloudos/manage/troubleshooting/): Advice to resolve issues you may encounter with HP Cloud OS for Moonshot.
+
+* [Disk Image Builder](/cloudos/moonshot/manage/image-builder/): Shows you how to use Disk Image Builder to create images for the HP Cloud OS for Moonshot.
+
+* [HP Cloud OS for Moonshot Backup and Restore](/cloudos/moonshot/manage/backup-process/): Describes how to backup and restore HP Cloud OS for Moonshot.
+
+* [Open Source and Third-Party Software License Agreements](/cloudos/os-3rd-party-license-agreements/): License information regarding the HP Cloud OS for Moonshot product. This topic includes legal notices and the disclaimer for experimental software.
+
 
 ###Legal Notices and Disclaimer### {#legal-notices-disclaimer}
 
