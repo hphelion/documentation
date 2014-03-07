@@ -22,15 +22,13 @@ This guide covers the following:
 
 This guide provides the information you will need to get started in setting up a network, such as the example shown in the following image.
 
-<img src="media/HPCS-VPC-VPN-SingleSite-Connection-Layer3-new-novendor-crop.jpg" width="600" alt="Basic VPN setup" />
-
 Here, the left side of the image represents the HP Public Cloud environment and the right side is your local system.
 
-You can configure rich network topologies by creating and configuring networks and subnets, and then instructing other services like Compute to attach virtual devices to ports on these networks.
+<img src="media/HPCS-VPC-VPN-SingleSite-Connection-Layer3-new-novendor-crop.jpg" width="600" alt="Basic VPN setup" />
 
-Networking supports a tenant having multiple private networks, and allows tenants to choose their own IP addressing scheme (even if those IP addresses overlap with those that other tenants use). 
+The Networking service offers flexibility for the cloud administrator to configure rich network topologies by creating and configuring networks and subnets, and then instructing other services like Compute to attach virtual devices to ports on these networks.
 
-The Networking service offers flexibility for the cloud administrator to customize network offerings, such as building multi-tiered web applications and enabling migration of applications to the cloud without changing IP addresses.
+The Networking service supports a tenant having multiple private networks, and allows tenants to choose their own IP addressing scheme (even if those IP addresses overlap with those that other tenants use), enabling the migration of applications to the cloud without changing IP addresses.
 
 HP Public Cloud compute activation comes with a default configuration that includes: {#default}
 
@@ -39,7 +37,7 @@ HP Public Cloud compute activation comes with a default configuration that inclu
 * A router for connecting the subnets to the Internet
 * A security group with basic server options
 
-You can use the default network to deploy HP Public Cloud virtual server instances, or modify the network configuration using the HP Public Console or the HP Cloud 13.5 CLI.
+You can use the default network to deploy HP Public Cloud virtual server instances, or [modify the network configuration](#customize) using the HP Public Console or the HP Cloud 13.5 CLI.
 
 **Note:** The default security group allows all traffic to and from the network. For information on security groups in version 13.5, please see the knowledge base article [Managing Your Security Groups](https://community.hpcloud.com/article/managing-your-security-groups-135) for details.
 
@@ -50,14 +48,15 @@ This guide is designed for those in the following or similar roles:
 - Networking Administrators
 - Cloud Administrators
 
-To use this solution effectively, you should be familiar with   
+To use this solution effectively, you should be familiar with:   
 
-- Local network configuration in HP Cloud     
+- Network configuration     
 - HP Cloud Compute and Networking services 
-- OpenStack Nova and Neutron CLI and API   
-- Virtual Private Networks (VPN)    
-- strongSwan or other IPsec-based software solutions   
-    
+- OpenStack Nova and Neutron CLI    
+        
+All of the procedures in this section require that you access the Networks or Routers tab in the Project section of the HP Public Cloud Console, <a name="NetworkTab">as shown</a>:
+
+   <br><img src="media/network-tab-crop.png"  alt="" />
 
 ### Key Terms ### {#terms}
 
@@ -75,28 +74,25 @@ Contains IP address blocks that assign IP addresses to virtual servers. In addit
 
 When a port is created in HP Cloud Networking it is associated with a security group. If a security group is not specified the port is associated with a default security group. Security group default rules allow inbound traffic from the same subnet and all outbound traffic. You can add rules to this group to modify behavior. 
 
-back to the [top](#top)
-
 ##Customizing your network## {#customize}
 
 You customize the default network using either the HP Public Cloud 13.5 CLI or the HP Public Cloud Console. 
 
-When you first activate the compute service, a [default](#default) configuration is created that should provide enough capacity for typical needs. However, you can create a new network, allowing you to assign a specific IP address to the network and subnet. 
+When you first activate the compute service, a [default](#default) configuration is created that should provide enough capacity for typical needs. However, you can create a new network, allowing you to assign a specific IP address to the network and subnet.
+
+This document introduces you to the HP Networking Service and provide steps to get you up and running with a network configuration, performing the following tasks: 
 
 - [Viewing network and router details](#NetworkTopo)
 - [Creating a network and subnet](#Enabling)
 - [Connecting to a network](#AssignRouter)
 
-HP Cloud Networking expands networking capabilities, allowing you to perform many tasks, including:
+HP Cloud Networking allows you to perform many tasks beyond those described here including:
 
 - creating a router
 - creating one or more networks
 - configuring subnets 
 
-All of the procedures in this section require that you access the Networks or Routers tab in the Project section of the HP Public Cloud Console, <a name="NetworkTab">as shown</a>:
-
-   <br><img src="media/network-tab-crop.png"  alt="" />
-
+For more information on networking capabilities, see: 
 
 **Note:** You can also use the [HP Cloud v13.5 Compute Service API](https://docs.hpcloud.com/api/v13/compute/) and [HP Cloud v13.5 Networking API](https://docs.hpcloud.com/api/v13/networking/) to configure your network. 
 
@@ -148,15 +144,15 @@ To create a network and subnet, use the following steps:
 2. Select the [Networks tab](#NetworkTab) under the Project section.
 
 3. Click **Create Network**. 
-	<br><img src="media/network-create.png"  alt="" />
+	<br><img src="media/compute-network-new-network-create.png"  alt="" />
 
 4. On the **Network** tab, enter a name for the network  and leave the **Admin State** selected.  
-	<br><img src="media/network-fields.png"  alt="" />
+	<br><img src="media/compute-network-new-network.png"  alt="" />
 
 5. Click **Next** to configure a subnet for the network. 
 
 6. On the **Subnet** tab, enter the subnet name
-	<br><img src="media/network-fields-2.png"  alt="" />
+	<br><img src="media/compute-network-new-network-sub.png"  alt="" />
 
 7. In the **Network Address** field enter a network address range for the subnet in Classless Inter-Domain Routing (CIDR) format, for example: 192.168.0.0/24.
 
@@ -169,7 +165,7 @@ To create a network and subnet, use the following steps:
 11. Click **Next**. 
 
 11. On the **Subnet Details** tab, DHCP is enabled by default. If you do not want to use the DCHP server on this subnet, clear the **Enable DHCP** option.
-	<br><img src="media/network-fields-3.png"  alt="" />
+	<br><img src="media/compute-network-new-network-sub-det.png"  alt="" />
 
 12. To create an allocation pool, enter the starting and ending IP addresses you want for your subnet in the text entry fields, in the format IP_ADDR,IP_ADDR. For example: `192.168.1.10,192.168.1.120`.  
 
@@ -311,6 +307,8 @@ An instance is a virtual server.
     <img src="media/compute-networking-launch-instance.png" width="580" alt="" />
 
 4. Select an availability zone for the instance. Or, leave the default choice of the "Any Availability Zone" (AZ), which arbitrarily assigns an AZ for an instance.
+
+    <img src="media/compute-networking-launch-instance-details.png" width="580" alt="" />
 
 	You can use availability zones for your own organizational purposes; e.g., you could select AZ1 for your data center, and set the remaining two up later for other discrete functions. 
 
