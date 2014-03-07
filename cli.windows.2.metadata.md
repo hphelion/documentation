@@ -1,8 +1,8 @@
 ---
 layout: default
 title: "Windows CLI: Working with Meta-Data"
-permalink: /cli/windows/metadata/
-product: win-cli
+permalink: /cli/windows/2/metadata/
+product: win-2-cli
 
 ---
 # Windows CLI: Working with Meta-Data

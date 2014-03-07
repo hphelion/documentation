@@ -1,22 +1,26 @@
 ---
 layout: default
-title: "HP Extended Python Novaclient"
+title: "HP Cloud Python Novaclient"
 permalink: /cli/nova/
 product: nova-cli
 
 ---
-#HP Cloud Extended Python Novaclient#
+#Work with HP Cloud using the Cloud 13.5 CLI#
 
-The HP Cloud Python Novaclient is an extension to the OpenStack Python Novaclient that enables interaction with HP Cloud Compute and Block Storage.  
-<!--[Download the Debian package](https://docs.hpcloud.com/file/python-novaclient_2.6.8-17.deb) and, if you are using either the Fedora or CenOS package, [their dependency](https://docs.hpcloud.com/file/nova-stuff.tar).-->
+You can interact with HP Cloud using the native Openstack Command-Line Interface (CLI) tools.
+ 
+HP Cloud is based on Openstack, and the latest Openstack CLIs and libraries are compatible with our HP Cloud version 13.5. We recommend using a recent version of the python-novaclient, python-cinderclient, python-neutronclient, and python-swiftclient from github.com.
+ 
+For those of you using HP Cloud version 12.12, you need to download the HP Cloud Python Novaclient that is an extension to the Openstack Python Novaclient enabling interaction with HP Cloud compute and block storage. 
+ 
+If you want to work with **version 13.5**, check out these links:
+ 
+* [Installation](https://community.hpcloud.com/article/cloud-135-cli-installation-instructions)
+* [**Download** Openstack command-line clients](http://docs.openstack.org/user-guide/content/install_clients.html)
 
-For more information, surf on over to the appropriate page:
+If you want to work with **version 12.12**, check out these links:
 
 * [Installation](/cli/nova/install)
 * [Python Novaclient CLI Reference](/cli/nova/reference)
+* [**Download** the Python Novaclient package](/file/python-novaclient_2.6.8-17.tar.gz)
 
-[**Download** the Python Novaclient package](/file/python-novaclient_2.6.8-17.tar.gz).
-
-<!-- Need some more details?  Check out:
-
-<iframe src="https://player.vimeo.com/video/44132952?title=0&amp;byline=0&amp;portrait=0" width="580" height="420" frameborder="0"> </iframe> -->

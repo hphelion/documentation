@@ -21,8 +21,8 @@ This page covers how to create and delete a subnet using the networks screen of 
 
 Before you can create or delete a subnet of an existing network, you must:
 
-* [Sign up for an HP Cloud compute account](https://account.hpcloud.com/signup)
-* Activate compute service on your account
+* [Sign up for an HP Cloud compute account](https://horizon.hpcloud.com/register)
+* [Activate compute service on your account](https://horizon.hpcloud.com/landing/)
 * [Create a network](/mc/compute/networks/create-network#Creating/)
 
 
@@ -128,7 +128,7 @@ This launches the subnet details screen.  In the subnet details screen, click th
 
 ##Deleting a subnet## {#Deleting}
 
-By default, when you [create a network](/mc/compute/networks/create-network/), that network is created with no subnets. If you used the subnet creation screen [create a subnet](/mc/compute/networks/create-subnet#Creating) to create a subnet that you now want to delete, click the subnet you want to delete:
+By default, when you [create a network](/mc/compute/networks/create-network/), that network is created with no subnets. If you used the subnet creation screen [create a subnet](#Creating) to create a subnet that you now want to delete, click the subnet you want to delete:
 
 <img src="media/compute-networks07.jpg" width="580" alt="" />
 

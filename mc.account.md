@@ -9,8 +9,8 @@ product: mc-account
 
 This page provides you with an overview of the management console (MC) account and services dashboard, which allows you to display and manage your account and services information.  This page covers the following topics:
 
-* [Account and services dashboard overview](Overview)
-* [Navigating to the other account and services screens](Navigating)
+* [Account and services dashboard overview](#Overview)
+* [Navigating to the other account and services screens](#Navigating)
 * [For further information](#ForFurtherInformation)
 
 ##Account and services dashboard overview## {#Overview}
@@ -56,7 +56,7 @@ From the account and services dashboard, you can perform any of the following ta
 
 ##For further information## {#ForFurtherInformation}
 
-* A good place to help you get going managing your account is with our [account and services management use cases](/mc/account/using/)
+* A good place to help you get going managing your account is with our [account and services management use cases](/mc/compute/using/)
 * Use the MC [site map](/mc/sitemap) for a full list of all available MC documentation pages
 * For basic information about our HP Cloud compute services, take a look at the [HP Cloud compute overview](/compute/) page
 * If you'd rather use the HP Cloud CLI features, go choose your topic of interest from our [HP CLoud CLI](/cli) pages

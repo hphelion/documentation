@@ -5,7 +5,7 @@ permalink: /cli/windows/containers-and-folders/
 product: win-cli
 
 ---
-# HP Cloud Environment CLI Software for Windows PowerShell Object Storage Examples
+# HP Cloud Environment CLI Software for Windows PowerShell Object Storage Examples #
 
 One of the key features of the HP Cloud environment CLI software for Windows PowerShell Object Storage is that it provides a way to store and retrieve objects in a highly redundant cluster of publicly accessible physical machines hosted in HP data centers.  This page provides examples for how to use Object Storage via the Windows PowerShell CLI.  (See the [HP Cloud Object Storage Overview](/object-storage) for overview information on Object Storage.)
 
@@ -18,7 +18,7 @@ One of the key features of the HP Cloud environment CLI software for Windows Pow
 
 ##Interacting with the Storage Service## {#InteractingwiththeStorageService}
 
-<iframe src="http://player.vimeo.com/video/33349560?title=0&amp;byline=0&amp;portrait=0" width="580" height="420" frameborder="0"> </iframe>
+<!-- <iframe src="http://player.vimeo.com/video/33349560?title=0&amp;byline=0&amp;portrait=0" width="580" height="420" frameborder="0"> </iframe> -->
 
 In addition to the video tutorial, which shows you how the basics of our object storage PowerShell environment, this page contains the following examples:
 

@@ -411,7 +411,7 @@ To create an instance or your network, use the following steps:
 
 ##For further information## {#ForFurtherInformation}
 
-* For information about the router details screen, take a look at the [Viewing router details](/mc/compute/networks/view-router/) page
+* For information about the HP Cloud Networking, take a look at the [HP Cloud Networking Overview](/compute/network-guide) page
 For the full reference of supported HP Cloud CLI commands for Windows PowerShell, see [HP Cloud Environment CLI Software for Windows PowerShell Command Line Reference](docs.hpcloud.com/cli/windows/2/reference/)
 * For basic information about our HP Cloud compute services, take a look at the [HP Cloud compute overview](/compute/) page
 * Use the MC [site map](/mc/sitemap) for a full list of all available MC documentation pages
