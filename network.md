@@ -17,6 +17,7 @@ You can use the default network to deploy HP Cloud compute virtual servers, or m
 
 * Defining and configuring virtual networks
 * Specifying IP subnets for those networks
+* 
 
 ## HP Public Cloud Console ##
 
