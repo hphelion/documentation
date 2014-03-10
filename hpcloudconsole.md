@@ -46,6 +46,7 @@ You can use the default network to deploy HP Public Cloud compute instances (vir
 ###Create a network### {#Createanetwork}
 
 1. Login to HP Public Cloud with your username and password.
+
 2. On the HP Public Cloud console interface, click "Project," on the left-side bar then "Networks" under "Manage Networks."
 
     <img src="media/CreateaNetworkImage1.png" width="580" alt="" />
@@ -135,6 +136,7 @@ You are now ready to use the options under "Manage Compute" under "Project" in t
 * [Create an instance](#Instance)
 * [Create and attach a volume](#Volumes)
 * [Images and Snapshots](#Imagesandsnapshots)
+* [Monitoring](#Monitoring)
 * [Access and Security](#Accessandsecurity)
 
 
@@ -332,6 +334,112 @@ Security group rules have three parts:
 12. Click "Access & Security" in the left-hand bar to display your security groups.
 
     <img src="media/ASSecurityGroupsdisplay.png" width="580" alt="" />
+    
+    
+###Monitoring### {#Monitoring}
+
+Use HP Cloud Monitoring to ascertain system health and track resource metrics. Create the following in the HP Public Cloud Console to define the metrics you want to gather, where you want them sent, and configure an alarm that sends them:
+
+* An endpoint that specifies the metrics to gather
+* Subscriptions that specify which metrics to stream to an endpoint
+* Notification addresses to receive email and/or SMS alarm messages
+* Alarms to define conditions that trigger end-user notification  
+
+After completing these tasks, you receive the metrics in JSON format at the locations you specified when an alarm is triggered. The metrics are streamed over an [AMQP](http://www.amqp.org/about/what) socket. Select the tool of your choice to create graphical representations of the metrics.
+
+####Begin:####
+1. Click "Manage Services" in the left-hand bar on the [HP Cloud Console landing page](https://horizon.hpcloud.com/landing), then "Activate" in the "Monitoring" row under the region you are setting up.
+
+<img src="media/Monitoring1.png" width="580" alt="" /> 
+
+2. Once activated, click "Monitoring" under the "Actions" heading on the [landing page](https://horizon.hpcloud.com/landing) to begin.
+
+    <img src="media/Monitoring2.png" width="580" alt="" />    
+
+
+####Create endpoints####
+
+     
+1. Click "+Create Endpoint." You can create only one, total. **Note**: Record the password for the generated endpoint in the pop-up display. It cannot be retrieved later. If you lose the password, click the "Reset Password" button under "Actions" on the "Endpoints" page.
+
+    <img src="media/Monitoring3CreateEndpoint.png" width="580" alt="" />    
+     
+2. Click the endpoint ID in the "Endpoints" screen to display the endpoint ID, the URI, the queue, and the user name.
+
+    <img src="media/Monitoring5EndpointDisplaybox.png" width="580" alt="" />
+
+
+####Create subscriptions to endpoints####
+
+1. Click "Subscriptions" under "Manage Monitoring" in the left-hand bar.
+
+2. Click "+Create Subscription" in the upper-right corner of the "Subscriptions" page.
+
+3. Select an endpoint ID to subscribe to from the drop-down menu in the "Create Subscription" box.
+
+4. Select the namespace of the metrics to receive from the drop-down menu.
+
+5. Select an instance from the drop-down menu.
+
+6. Click "Create Subscription" in the lower-right of the "Create Subscription" box.
+
+    <img src="media/SubscriptionSelect.png" width="580" alt="" />
+
+
+####Create notification addresses for subscriptions####
+
+1. Click "Notifications" under "Monitoring" in the left-hand bar.
+
+2. Click "+Create Notification Address" in the upper-right of the "Notifications" page.
+
+    <img src="media/Notification1.png" width="580" alt="" />
+
+3. Enter a notification address name in the "Create Notification Address" box.
+
+4. Select "Email" or "SMS" from the "Type" drop-down menu.
+
+5. Enter an address in the "Address" box. For SMS, use the E.164 for international telephone numbers, which requires a "+" followed by the country code, then the regional number. **Note**: Currently, only US phone numbers are supported. 
+
+6. Click "Create Notification Address."
+
+    <img src="media/Notification2.png" width="580" alt="" />
+
+7. Click "Verify Address" under "Actions" in the row for the address you just created.
+
+    <img src="media/Notification3.png" width="580" alt="" />
+
+8. Enter the Verification Code you received at your specified notification address from the monitoring service in the "Verify Notification Address." 
+
+9. Click "Verify Address."
+
+    <img src="media/Notification4.png" width="580" alt="" />
+
+10. Click "Create Notification Method" under "Actions" on the "Notifications" page.
+
+    <img src="media/Notification5.png" width="580" alt="" />
+
+
+11. Enter a notification method name in the "Name" box, a type, and an email address, and click "Create Notification Method."
+
+
+####Create alarm name####
+
+1. Click "Alarms" under "Manage Monitoring" in the left-hand bar.
+
+2. Click "+Create Alarm" in the upper-right hand of the "Alarms" page.
+
+    <img src="media/Alarms1/png" width="580" alt="" />
+
+3. Enter alarm name in "Create Alarm" box.
+
+4. Enter an alarm expression as indicated under "Description" in the "Create Alarm" box.  [Click](http://docs.hpcloud.com/api/v13/monitoring/#AlarmExpressions-jumplink-span) to see the "Alarm Expressions" section for setup information or use the link in the interface. When the expression you set is true, it triggers a notification.
+
+5. Select an alarm action name and click "Create Alarm."
+
+   
+    <img src="media/Alarms2.png" width="580" alt="" />
+
+     
 
 ###Organize and manage HP Cloud Access## {#Identity}
 
@@ -348,6 +456,7 @@ Click  "Identity" in the left-hand interface to display links:
 * Groups - When you create a domain, two default groups are created: Users and Domain Administrators. Domain Administrators can add individuals to a group and create new groups, which may contain multiple users. 
 
 * Roles - A role is a user or group  capability within a  service that determines access rights. Roles include  Compute Admin, Network Admin, Object Storage Admin, and others.  Domain owners can  assign roles to individuals or groups. A role may be associated with multiple users and multiple groups.
+
 
 ##For further information## {#Forfurtherinformation}
 
