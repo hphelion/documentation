@@ -15,9 +15,10 @@ A default configuration comes with HP Cloud compute activation that includes a n
 
 You can use the default network to deploy HP Cloud compute virtual servers, or modify the default network to expand networking capabilities, including:
 
+* Viewing network topography and details on network objects
 * Defining and configuring virtual networks
 * Specifying IP subnets for those networks
-* 
+* Attaching instances to specific networks
 
 ## HP Public Cloud Console ##
 
