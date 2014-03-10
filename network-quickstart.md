@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Cloud Networking:  Network setup quick start guide"
+title: "HP Cloud Networking: Quick start guide"
 permalink: /compute/network-quick-start/
 product: compute
 categories: neutron
