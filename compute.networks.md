@@ -45,7 +45,7 @@ For more specific questions, use the [Knowledge Base](https://community.hpcloud.
 
 ##Customizing your Configuration## {#customize}
 
-You can use the default network or customize the default network using either the HP Cloud Networking API or the HP Cloud Management Console. Customizing a network enables you to manage the networks your virtual servers connect to.
+You can customize the default network using either the HP Cloud Networking API or the HP Cloud Management Console. Customizing a network enables you to create and manage the networks your virtual servers connect to.
 
 HP Cloud Networking expands networking capabilities, allowing you to perform many tasks, including:
 
@@ -57,15 +57,28 @@ HP Cloud Networking expands networking capabilities, allowing you to perform man
 - Configuring security group parameters that define the firewall rules for virtual servers
 - Allocating and managing public floating IP addresses
 
+You can expand your network up to the following per-domain maximums:
+
+* 5 Networks
+* 5 Subnets
+* 70 Ports
+* 45 Floating IP addresses
+* 1 Router
+* 10 Security Groups
+* 50 Security Group Rules
 
 For more information on modifying the default network and creating additional networks, see either [HP Cloud Networking: Quick start guide](/compute/network-quick-start/) or [Getting Started Guide](https://community.hpcloud.com/article/getting-started-guide) in the HP Public Cloud community.
 
-###Using the console### {#console}
+## Accessing the HP Public Cloud Networking Service ##
 
-You can use the HP Public Cloud console to access HP Cloud compute. For more information on using the HP Public Cloud console, see [Getting Started with HP Public Cloud Console](http://docs.hpcloud.com/hpcloudconsole).
+There are a  number of tools that you can use to access and manage the HP Cloud Networking Service.
+
+###Using the console to access Networking### {#console}
+
+You can use the HP Public Cloud console to access HP Cloud Networking Service. For more information on using the HP Public Cloud console, see [Getting Started with HP Public Cloud Console](http://docs.hpcloud.com/hpcloudconsole).
 
 
-###Using the API### {#API}
+###Using the API to access Networking### {#API}
  
 You can use a low level, raw REST API to access HP Cloud compute. For more information on using the HP Cloud Networking API, see [HP Cloud Networking API Specifications](https://docs.hpcloud.com/api/v13/networking).
 
@@ -78,7 +91,7 @@ You can use any of several language bindings to access HP Cloud compute. For mor
 
 You can use any of several command-line interface software to access HP Cloud compute. For more information on using the HP Cloud Networking API, see [HP Cloud CLI](http://docs.hpcloud.com/cli/).
 
-##Using VPN## {#vpn}
+##Using VPN with the Networking Service## {#vpn}
 
 With HP Cloud Networking you can set up an IPsec, or site-to-site, VPN connecting your external network directly to your HP cloud virtual network.
 
@@ -86,13 +99,22 @@ For VPN site-to-site connectivity, you will need to modify either the provided d
 
 For more information on using VPN with HP Cloud Networking, see [HP Cloud Networking: VPN setup quick start guide](http://docs.hpcloud.com/compute/vpn-quickstart).
 
-##Using Security Groups## {#security}
+##Using Security Groups with the Networking Service## {#security}
 
 Security Groups are a feature of HP Cloud Networking and are fully supported by the Networking API. 
 
 You can associate a security group to a port or range of ports. You can use the API, CLI or HP Public Cloud Console to add or modify security group rules to the specified group.
 
-##Using Regions and Availability Zones## {#az}
+Security groups define conditions such as which ports, protocols, and IP addresses the remote virtual machine can open. HP Cloud Networking provides the security group rules, which are the conditions and restrictions under which the security group operates, for example, the protocols and ports for that group. Default rules allow:
+
+	- All inbound traffic from the same subnet 
+	- All outbound traffic
+	- Inbound ssh (TCP Port 22) from any source
+	- Inbound ping (ICMP) from any source 
+
+**NOTE:** HP Cloud Networking supports adding a rule to all protocols. If you accidentally delete the "default all egress traffic rule," you can add the rule back using the MC.
+
+##Using Regions and Availability Zones with the Networking Service## {#az}
 
 HP Cloud Networking regional capabilities include: 
 
