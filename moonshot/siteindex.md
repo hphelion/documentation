@@ -17,6 +17,7 @@ PageRefresh();
 </script>
 
 
+
 <p style="font-size: small;"> <a href="/cloudos/moonshot/">&#9664; PREV</a> | <a href="/cloudos/moonshot/">&#9650; UP</a> | NEXT &#9654; </p>
 
 # HP Cloud OS for Moonshot Site Index
@@ -69,8 +70,9 @@ PageRefresh();
   * [Topology Designs](/cloudos/moonshot/manage/administration-dashboard/topology-designs/)
   * [Administration Dashboard Tasks by Role](/cloudos/moonshot/manage/administration-dashboard/tasks-by-role/)
   * [Administration Dashboard Tasks by Tab](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/)
-* [HP Cloud OS for Moonshot Image Builder](/cloudos/moonshot/manage/image-builder/) 
+* [HP Cloud OS for Moonshot: Building Images](/cloudos/moonshot/manage/image-builder/) 
 * [HP Cloud OS for Moonshot Backup and Restore](/cloudos/moonshot/manage/backup-process/) 
+
 
 #### [Develop](/cloudos/moonshot/develop/)
 

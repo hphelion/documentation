@@ -22,7 +22,7 @@ PageRefresh();
 
 # Enter or Update your License Key
 
-The HP Cloud OS for Moonshot dashboards require a common, date-based HP Cloud OS for Moonshot license. When you purchase HP Cloud OS for Moonshot, there are SKUs for one-year to three-year licenses. 
+The HP Cloud OS for Moonshot dashboards require a common, date-based HP Cloud OS for Moonshot license. When you purchase HP Cloud OS for Moonshot, there are two SKUs, for a one-year or three-year license. 
 
 If you have not already done so, you can order these in the same way you order other HP Server products (hardware or software) directly through HP or through an HP channel partner. After ordering, you will receive via email or printed letter a certificate that you will redeem at HP.com. When you go to HP.com, you will register for 
 support and receive a license key. You will be directed to the HP Software Depot website, where you can download the software.
