@@ -42,7 +42,7 @@ manages all other nodes. It assigns IP addresses to the nodes; PXE boots the nod
 		 
 ###Administration Dashboard### {#Administration-Dashboard}
 :    The HP Cloud OS for Moonshot Administration Dashboard enables administrators to manage their cloud infrastructure. Tasks include launching instances, 
-uploading images, creating resource pools, and using designer tools to create topologies. See also [Operational Dashboard](#Operational-Dashboard), which is 
+uploading images, creating resource pools, and using designer tools to create topologies. Hosted (preferably) on the Controller node. See also [Operational Dashboard](#Operational-Dashboard), which is 
 used for the initial cloud installation, setup, configuration, and creation, before starting the Administration Dashboard. 
 		 
 ###Allocation###
@@ -70,8 +70,11 @@ that their identity has been authenticated when making subsequent requests.
 ###Barclamp###
 :    Also known as an install module, defines the capability of a service or role to apply to individual hosts or a set of hosts. To deploy a barclamp, a proposal is created.
 
+###Baremetal Host###
+:    Refers to the machine which runs the nova-compute and nova-baremetal-deploy-helper services. This functions like a hypervisor by providing power management and imaging services.
+
 ###Baremetal Node###
-:    Also known as a Baremetal Host, refers to a physical machine that runs the nova-compute and nova-baremetal-deploy-helper services. The Baremetal Node is controlled by the compute host, and functions like a hypervisor by providing power management and imaging services.
+:    Refers to the physical machines that are controlled by the Baremetal host.
 
 ###Baseboard Management Controller (BMC)###
 :    The Baseboard Management Controller (BMC) is the intelligence in the Intelligent Platform Management Interface (IPMI) architecture. BMC is a specialized microcontroller 
@@ -138,6 +141,9 @@ of instances and available resources on the compute nodes. In a single compute r
 
 ## F
 
+###Flat networking###
+:     Flat networking uses Ethernet adapters configured as bridges to allow the network traffic to transit between the various baremetal nodes. This setup can be done with a single adapter on the Baremetal host. This option does not require a switch that does VLAN tagging.
+
 ###Flavor### {#Flavor}
 :     The compute, memory, and storage capacity of Baremetal instances.
 
@@ -147,6 +153,9 @@ of instances and available resources on the compute nodes. In a single compute r
 
 ###Focus###
 :     An HP Cloud OS for Moonshot repository for topology templates and profiles that are used for provisioning.
+
+###FQDN###
+:    Acronym for Fully Qualified Domain Name. 
 
 
 ## G
@@ -214,7 +223,7 @@ provides transparency for the provider and the consumer of the utilized service.
 :     A computing resource in a network. In other publications, sometimes called a machine.
 
 ###Nova Flat Network###
-:    The private network used for PXE booting the Moonshot cartridges, and enabling communication between the Moonshot cartridges, Baremetal host, and the cloud Network Controller.
+:    The private network used for PXE booting the Moonshot cartridges, and enabling communication between the Moonshot cartridges, Baremetal host, and the cloud Network Controller. Flat Networking uses Ethernet adapters configured as bridges to allow the network traffic to transit between the various baremetal nodes. This setup can be done with a single adapter on the Baremetal host. This option does not require a switch that does VLAN tagging.
 
 ###Nova service###
 :    An OpenStack service to provide a cloud computing fabric controller, the main part of an Infrastructure as a Service (IaaS) system. Individuals and organizations can use Nova to host and manage their own cloud computing systems.
@@ -309,7 +318,6 @@ how they interpret the set of roles a user has and which operations or resources
 
 ## T
 
-
 ###Tenant### {#Tenant}
 :    A collection of HP service subscriptions and/or resources (Compute, Object Storage, etc).
 
@@ -320,7 +328,7 @@ how they interpret the set of roles a user has and which operations or resources
 :    An arbitrary bit of text that is used to access resources. Each token has a scope which describes which resources are accessible with it. 
 
 
-###Topology and Orchestration Specification for Cloud Applications (TOSCA). 
+###Topology and Orchestration Specification for Cloud Applications (TOSCA)### 
 :    A framework used to build cloud topologies. For more, see the <a href="http://docs.oasis-open.org/tosca/TOSCA/v1.0/os/TOSCA-v1.0-os.html" target="tosca">TOSCA Specification</a>.
 
 
@@ -328,6 +336,9 @@ how they interpret the set of roles a user has and which operations or resources
 
 
 ## V
+
+###VLAN###
+:     Virtual Local Area Network associated with the network type.
 
 ###Volume (bootable)### {#VolumeBootable}
 :     A bootable server, previously saved by a user.
