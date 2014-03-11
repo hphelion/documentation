@@ -184,7 +184,7 @@ To create a network and subnet, use the following steps:
 
 3. Execute the `neutron subnet-create` command to create the subnet:
 
-    neutron subnet-create <NETWORK> <CIDR>  --allocation-pool start=FLOATING_IP_START,end=FLOATING_IP_END --gateway=EXTERNAL_INTERFACE_GATEWAY --disable_dhcp 
+    `neutron subnet-create <NETWORK> <CIDR>  --allocation-pool start=FLOATING_IP_START,end=FLOATING_IP_END --gateway=EXTERNAL_INTERFACE_GATEWAY --disable_dhcp `
 
 	Where:
 
