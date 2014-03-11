@@ -45,14 +45,17 @@ To use this solution effectively, you should be familiar with:
 - HP Cloud Compute and Networking services 
 - OpenStack Nova and Neutron CLI    
         
-All of the procedures in this section require that you access the Networks or Routers tab in the Project section of the HP Public Cloud Console, <a name="NetworkTab">as shown</a>:
-
-   <br><img src="media/network-tab-crop.png"  alt="" />
-
 
 ## Before you begin ### {#begin}
 
 Before you can begin working with a network, make sure you have activated the [compute service](#compute) and [installed the HP Cloud 13.5 CLI](#installcli), if you prefer to use the CLI.
+
+#### Activating the compute service in HP Cloud (optional) #### {#compute}
+
+If you have not previously created an account and activated the compute service please sign up at [http://hpcloud.com](http://hpcloud.com).  
+
+Make sure you activate a compute instance in HP Cloud version 13.5 to access the networking and VPN capabilities.
+
 
 #### Installing the CLI #### {#installcli}
 
@@ -62,11 +65,6 @@ Before you can use the CLI:
 
 2. Verify that you can access the Nova and Neutron APIs for your tenant from this Python Client by running the `nova list` and `neutron port-list` commands.
 
-#### Activating the compute service in HP Cloud #### {#compute}
-
-If you have not previously created an account and activated the compute service please sign up at [http://hpcloud.com](http://hpcloud.com).  
-
-Make sure you activate a compute instance in HP Cloud version 13.5 to access the networking and VPN capabilities.
 
 ## Viewing your network in the HP Public Cloud Console ## {#NetworkTopo}
 
