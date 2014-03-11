@@ -35,21 +35,22 @@ In the following sections, we list the recommendations for memory, processors an
 * [Node requirements for HP Cloud OS for Moonshot](#nodereq)
 * [Bulk server provisioning node requirements for HP Cloud OS for Moonshot](#nodereq-bulk)
 * [Moonshot chassis firmware version](#firmware)
-* [Moonshot cartridges supported](#cartridges)
 * [Operating systems supported ](#ossupp)
-* [Workloads supported](#workloads)
 * [Supported deployment scenario](#deployment)
-* [Software requirements](#software)
+* [Included software](#software)
+
+
 
 ## Server infrastructure for HP Cloud OS for Moonshot {#server}
-**Important:** The HP Cloud OS for Moonshot management components **must** be installed on a Proliant server with a support contract covering Ubuntu.
 
 We recommend your Proliant server contains the following:
 
 * Quad Core Processor
 * Hard disk drive with a minimum of 500 GB of space
 * Three (3) ethernet ports
-* Memory with 4 GB for HP ProLiant Moonshot Server Cartridge, and 32 GB for HP ProLiant m300 Server Cartridge (4x8 GB)
+* 72 GB of memory
+
+**Note:** For information on cartridges and workloads, consult the [server website](http://h17007.www1.hp.com/us/en/enterprise/servers/products/moonshot/index.aspx#tab=TAB2)
 
 ## Hypervisor recommendations for HP Cloud OS for Moonshot {#hypervisor}
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
@@ -96,60 +97,10 @@ We recommend your Proliant server contains the following:
 <tr style="background-color: white; color: black;">
 <td>Controller Node</td>
 <td>Yes</td>
-<td> 4 </td>
-<td> 32 GB </td>
-<td> 60 GB </td>
-<td> 3 </td>
-<td> Ubuntu Server 12.04 LTS (64-bit) </td>
-<td>VMWare ESXi 5.1 and above <br /> KVM qemu-kvm-1.0 and above</td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td>Baremetal Host</td>
-<td>Yes</td>
-<td> 4 </td>
-<td> 32 GB </td>
-<td> 60 GB </td>
-<td> 3 </td>
-<td> Ubuntu Server 12.04 LTS (64-bit) </td>
-<td>VMWare ESXi 5.1 and above <br /> KVM qemu-kvm-1.0 and above</td>
-</tr>	
-
-</table>
-
-
-
-## Bulk server provisioning node requirements for HP Cloud OS for Moonshot {#nodereq-bulk}
-<table style="text-align: left; vertical-align: top; min-width: 400px;">
-
-<tr style="background-color: #C8C8C8;">
-<th>Node Type</th>
-<th>Virtual?</th>
-<th>CPU Cores</th>
-<th>Memory</th>
-<th>Internal Storage</th>
-<th>NICs</th>
-<th><span style='display:block; width:150px;'>OS <br />(incl. as part of ISO)</span></th>
-<th><span style='display:block; width:180px;'>Virtualized Platforms Supported</span></th>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td>Admin Node</td>
-<td>Yes</td>
-<td> 4 </td>
-<td> 12 GB </td>
-<td> 40 GB </td>
-<td> 2 </td>
-<td> Ubuntu Server 12.04 LTS (64-bit) </td>
-<td>VMWare ESXi 5.1 and above <br /> KVM qemu-kvm-1.0 and above</td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td>Controller Node</td>
-<td>Yes</td>
-<td> 24 </td>
-<td> 32 GB </td>
-<td> 80 GB </td>
+<td> 4  <br /> (24 for Bulk provisioning)</td>
+<td> 32 GB
+</td>
+<td> 60 GB <br />(80 GM for bulk provisioning)</td>
 <td> 3 </td>
 <td> Ubuntu Server 12.04 LTS (64-bit) </td>
 <td>VMWare ESXi 5.1 and above <br /> KVM qemu-kvm-1.0 and above</td>
@@ -158,15 +109,16 @@ We recommend your Proliant server contains the following:
 <tr style="background-color: white; color: black;">
 <td>Baremetal Host <b>**</b></td>
 <td>Yes</td>
-<td> 16 </td>
+<td> 4 <br />(16 for bulk provisioning)</td>
 <td> 32 GB </td>
-<td> 150 GB </td>
+<td> 60 GB <br />(150 GB for bulk provisioning) </td>
 <td> 3 </td>
 <td> Ubuntu Server 12.04 LTS (64-bit) </td>
 <td>VMWare ESXi 5.1 and above <br /> KVM qemu-kvm-1.0 and above</td>
 </tr>	
 
 </table>
+
 
 **Important:** The Baremetal host's internal storage space depends on the number of nodes planned to be provisioned and the size of the images being used to provision. To calculate your internal storage needs, use the following equation:
 
@@ -214,30 +166,6 @@ Where <b>X</b> is the average image size in gigabytes, and <b>N</b> is the expec
 </tr>
 </table>
 
-## Moonshot cartridges supported {#cartridges}
-<table style="text-align: left; vertical-align: top; min-width: 400px;">
-
-<tr style="background-color: #C8C8C8;">
-<th>Cartridge Type</th>
-<th>CPU Cores</th>
-<th>Memory</th>
-<th>Internal Storage</th>
-</tr>
-<tr style="background-color: white; color: black;">
-<td>HP ProLiant Moonshot Server Cartridge</td>
-<td>2</td>
-<td>8 GB</td>
-<td>500 GB or 1 TB</td>
-</tr>		  
-<tr style="background-color: white; color: black;">
-<td>HP ProLiant m300 Server Cartridge</td>
-<td>8</td>
-<td>32 GB (4x8 GB)</td>
-<td>240 GB, 500 GB or 1 TB</td>
-</tr>
-</table>
-
-**Note:** You must have an IPMI driver version 2.0 or above and an external Internet connection if you are using a public or hybrid cloud.
 
 ## Operating systems supported {#ossupp}
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
@@ -258,42 +186,6 @@ Where <b>X</b> is the average image size in gigabytes, and <b>N</b> is the expec
 
 
 
-## Workloads supported {#workloads}
-<table style="text-align: left; vertical-align: top; min-width: 400px;">
-
-<tr style="background-color: #C8C8C8;">
-<th>Cartridge Type</th>
-<th>Top Workloads</th>
-
-</tr>
-<tr style="background-color: white; color: black;">
-<td>HP ProLiant Moonshot Server Cartridge</td>
-<td>Static web</td>
-
-</tr>		  
-
-<TR style="background-color: white; color: black;">
-<TD rowspan="4">HP ProLiant m300 Server Cartridge</TD>
-<TD>Static web</TD>
-
-</TR>
-
-<TR style="background-color: white; color: black;">
-<TD>Caching/dynamic web</td>
-
-</TR>
-<TR style="background-color: white; color: black;">
-<TD>NoSQL</TD>
-
-</TR>
-<TR style="background-color: white; color: black;">
-<TD>Analytics</TD>
-
-</TR>
-</table>
-
-
-
 ## Supported deployment scenario {#deployment}
 An HP Cloud OS for Moonshot deployment includes one Admin node, one Controller node, and one Baremetal host. The following diagram depicts a simplified deployment scenario. 
 
@@ -301,7 +193,7 @@ An HP Cloud OS for Moonshot deployment includes one Admin node, one Controller n
 
 
 
-## Software requirements {#software}
+## Included software {#software}
 
 Refer to the [HP Cloud OS for Moonshot Installation Guide](/cloudos/moonshot/install/) for a complete list of installation prerequisites and requirements, plus step-by-step instructions.
 
@@ -500,21 +392,7 @@ Refer to the [HP Cloud OS for Moonshot Installation Guide](/cloudos/moonshot/ins
 <td> 2.7.1 and above </td>
 </tr>
 
-<tr style="background-color: white; color: black;">
-<td style="font-weight: bold; background-color: #F8F8F8;" colspan="2"> Baremetal Host </td>
-</tr>
-<tr style="background-color: white; color: black;">
-<td style="font-weight: bold; background-color: #F8F8F8;" colspan="2"> Supported Hypervisors </td>
-</tr>
-<tr style="background-color: white; color: black;">
-<td style="padding-left: 40px;"> KVM </td>
-<td> Ubuntu 12.04 LTS (64-bit) </td>
-</tr>
 
-<tr style="background-color: white; color: black;">
-<td style="padding-left: 40px;"> VMWare ESX </td>
-<td> ESXi 5.1 or above </td>
-</tr>
 
 </table>
 

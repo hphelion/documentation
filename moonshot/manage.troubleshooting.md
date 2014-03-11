@@ -61,7 +61,7 @@ If you need further assistance, feel free to contact [HP Customer Support](https
 <li>PXE boot your node.</li></ol></td></tr>
 </table>
 
-#### Discovered cloud nodes shown as 'Off' in Manage Nodes section
+#### Discovered nodes shown as 'Off' in Manage Nodes section
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Operational Dashboard</th>
@@ -97,7 +97,7 @@ For more information, check the <b>/var/log/cosmos/cosmos.log</b> and <b>/var/lo
 <td>Reset the node.</td></tr>
 </table>
 
-#### Updating the Internet access prerequisites sometimes fails
+#### Updating the internet access prerequisites sometimes fails
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Operational Dashboard</th>
@@ -107,7 +107,7 @@ For more information, check the <b>/var/log/cosmos/cosmos.log</b> and <b>/var/lo
 <td>Dashboard displays the <b>Failed to complete the prerequisites</b> message.</td></tr>
 <tr style="background-color: white; color: black;">
 <td>Probable Cause</td>
-<td>You might have selected the wrong NIC interface; it might not exist or does not support Internet connectivity.</td></tr>
+<td>You might have selected the wrong NIC interface; it might not exist or does not support internet connectivity.</td></tr>
 <tr style="background-color: white; color: black;">
 <td>Possible Resolution</td>
 <td>
@@ -119,20 +119,20 @@ For more information, check the <b>/var/log/cosmos/cosmos.log</b> and <b>/var/lo
 
 ## Operational Dashboard: Cloud and Region {#opdash-cloud-region}
 
-#### Installation/configuration of the Cloud Administrator node sometimes fails
+#### Installation/configuration of the Admin node sometimes fails
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Operational Dashboard</th>
 </tr>
 <tr style="background-color: white; color: black;">
 <td>System Behavior/Message</td>
-<td>After completion of the Complete Install steps, the Cloud Administrator node installation fails and the install log displays an error containing the specific details as to why the failure occurred.</td></tr>
+<td>After completing the Complete Install steps, the Admin node installation fails and the install log displays an error containing the specific details as to why the failure occurred.</td></tr>
 <tr style="background-color: white; color: black;">
 <td>Probable Cause</td>
-<td>There can be timing issues when installing the Cloud Admininstrator node because the process involves installing various components like Chef, NTP, etc. </td></tr>
+<td>There can be timing issues when installing the Admin node because the process involves installing various components like Chef, NTP, etc. </td></tr>
 <tr style="background-color: white; color: black;">
 <td>Possible Resolution</td>
-<td>Recreate the Admin node and start a fresh installation of the Cloud Administrator node.</td></tr>
+<td>Recreate the Admin node restart the installation process.</td></tr>
 </table>
 
 #### Create cloud or create region fails
@@ -447,44 +447,45 @@ Provisioning fails when the <b>root_mb</b> in the flavor exactly matches the nod
 <td>Possible Resolution</td>
 <td>
 <ol>
-<li>Verify that the flat network is in promiscuous mode.</li>s
+<li>Verify that the flat network is in promiscuous mode.</li>
 <li>Verify that the quantum-dhcp-agent is running in the controller node. </li>
 <li>Verify the controller node is able to reach the Baremetal host using the nova_flat network.</li></ol></td></tr>
 </table>
 
-#### Nodes registered are shown in "nova baremetal-node-list" but not in "nova hypervisor-list" (provisioning will fail in this case)
+#### Provisioning fails because nodes registered are shown in "nova baremetal-node-list" but not in "nova hypervisor-list"
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Administration Dashboard</th>
 </tr>
 <tr style="background-color: white; color: black;">
 <td>System Behavior/Message</td>
-<td>UI behavior shows instance in error state immediately after launch</td></tr>
+<td>The UI shows an instance in an error state immediately after launching.</td></tr>
 <tr style="background-color: white; color: black;">
 <td>Probable Cause</td>
-<td>Nova-compute service may be down or there might be sync issues between nova-services</td></tr>
+<td>nova-compute service might be down or there might be sync issues between nova services.</td></tr>
 <tr style="background-color: white; color: black;">
 <td>Possible Resolution</td>
 <td>
 <ol>
-<li>Make sure that nova-compute is up by executing the following command on controller node "nova-manage service list"</li>
-<li>If nova-compute shows as XXX, restart the nova-compute service on the baremetal host</li></ol></td></tr>
+<li>Make sure that nova-compute is running using the following command on the controller node:
+<pre>nova-manage service list</pre>
+<li>If nova-compute shows as <b>XXX</b>, restart the nova-compute service on the Baremetal host.</li></ol></td></tr>
 </table>
 
-#### Instance de-provisioning fails with "Unable to establish IPMI v2 / RMCP+ session" error in nova-compute.log
+#### Instance de-provisioning fails with error in nova-compute.log
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Administration Dashboard</th>
 </tr>
 <tr style="background-color: white; color: black;">
 <td>System Behavior/Message</td>
-<td>"Insufficient resources for session Error: Unable to establish IPMI v2 / RMCP+ session Unable to get Chassis Power Status"</td></tr>
+<td>De-provisioning fails and nova-compute.log captures this error message: <b>Insufficient resources for session Error: Unable to establish IPMI v2 / RMCP+ session Unable to get Chassis Power Status</b>.</td></tr>
 <tr style="background-color: white; color: black;">
 <td>Probable Cause</td>
-<td>This is because the number of simultaneous IPMI sessions on the chassis that hosts the nodes selected for provisioning&nbsp; is exhausted</td></tr>
+<td>The number of simultaneous IPMI sessions on the chassis that hosts the nodes selected for provisioning are exhausted.</td></tr>
 <tr style="background-color: white; color: black;">
 <td>Possible Resolution</td>
-<td>Clicking "delete topology" couple of times would be able to do the cleanup. If that does not work then the chassis should be reset using the chassis manager CLI "RESET CM"</td></tr>
+<td>Clicking <b>delete topology</b> a few times will clean up the locked sessions. If that does not work, then the chassis should be reset using the <code>RESET CM</code> command with the chassis manager CLI.</td></tr>
 </table>
 
 #### Instance provisioning fails due to failed cartridge
@@ -494,19 +495,16 @@ Provisioning fails when the <b>root_mb</b> in the flavor exactly matches the nod
 </tr>
 <tr style="background-color: white; color: black;">
 <td>System Behavior/Message</td>
-<td>UI behavior shows instance in error state immediately after launch</td></tr>
+<td>The UI shows an instance in an error state immediately after launching.</td></tr>
 <tr style="background-color: white; color: black;">
 <td>Probable Cause</td>
 <td>
-The current "apollo" service design takes 30minutes to import the refreshed data into the HP Cloud OS Moonshot environment. <br>
-<br>
-Before the Cloud Administrator &nbsp;realizes about a failed cartridge, the scheduler might select the cartridge which is in failed state and this &nbsp;might lead to failure of the instance provisioning</td></tr>
+The current apollo service design takes 30 minutes to import the refreshed data into the HP Cloud OS for Moonshot environment. Before the Cloud Administrator realizes there is a failed cartridge, the scheduler might select the cartridge which is in a failed state, which could cause the instance provisioning to fail.</td></tr>
 <tr style="background-color: white; color: black;">
 <td>Possible Resolution</td>
 <td>
-Cloud Admin should do a Force Refresh in Moonshot Chassis Management page before assigning a cartridge for provisioning, get the failed cartridge list and then put them into the maintenance mode. <br>
-<br>
-The nova-scheduler does not select a cartridge which is in maintenance mode</td></tr>
+<ol><li>The Cloud Administrator should force a refresh from the Moonshot Chassis Management page before assigning a cartridge for provisioning.</li>
+<li>Then, put any failed cartridges into maintenance mode since the nova-scheduler will not select a cartridge that is in this mode.</li></ol></td></tr>
 </table>
 
 #### User cannot connect to instance via SSH even if instance is active and is in running state
@@ -516,13 +514,13 @@ The nova-scheduler does not select a cartridge which is in maintenance mode</td>
 </tr>
 <tr style="background-color: white; color: black;">
 <td>System Behavior/Message</td>
-<td>"ssh: connect to host &lt;IP Addres&gt; port 22: No route to host"</td></tr>
+<td>Trying to connect to an active, running instance using SSH results in an error message: <b>ssh: connect to host &lt;IP Addres&gt; port 22: No route to host</b>.</td></tr>
 <tr style="background-color: white; color: black;">
 <td>Probable Cause</td>
-<td>The instance's networking is not completely configured after boot</td></tr>
+<td>The instance's networking is not completely configured after booting.</td></tr>
 <tr style="background-color: white; color: black;">
 <td>Possible Resolution</td>
-<td>Wait for a few minutes and retry</td></tr>
+<td>Wait for a few minutes and try to connect again.</td></tr>
 </table>
 
 #### Unable to ping or SSH to an instance
@@ -532,35 +530,36 @@ The nova-scheduler does not select a cartridge which is in maintenance mode</td>
 </tr>
 <tr style="background-color: white; color: black;">
 <td>System Behavior/Message</td>
-<td>Request times out</td></tr>
+<td>Request times out when trying to ping or SSH to an instance.</td></tr>
 <tr style="background-color: white; color: black;">
 <td>Probable Cause</td>
-<td>Network issues may prevent access to cloud instances or there can be a routing problem</td></tr>
+<td>Network issues might prevent access to cloud instances or there can be a routing problem.</td></tr>
 <tr style="background-color: white; color: black;">
 <td>Possible Resolution</td>
 <td>
 <ol>
-<li>Check if the Baremetal instances are able to forward packets from the public interface to the bridged interface.</li></ol>
-sysctl -A | grep ip_forward<br>
-net.ipv4.ip_forward should be set to 1<br>
-<ol start="2">
-<li>Check if you can communicate with the OpenStack Compute nodes from the client and any routing to these instances have the correct entries</li></ol></td></tr>
+<li>Check to see if the Baremetal instances can forward packets from the public interface to the bridged interface.</li>
+<pre>sysctl -A | grep ip_forward</pre>
+<p><code>net.ipv4.ip_forward</code> should be set to <b>1</b>.</p>
+<li>Ensure you can communicate with the OpenStack Compute nodes from the client, and that any routing to these instances have the correct entries.</li></ol></td></tr>
 </table>
 
-#### Provisioning fails due to issues with default quota
+#### Provisioning fails with an "Error" status in the Instances page
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Administration Dashboard</th>
 </tr>
 <tr style="background-color: white; color: black;">
 <td>System Behavior/Message</td>
-<td>"Error" status reported in "Instances" page immediately after launching the instance</td></tr>
+<td>An <b>Error</b> status is reported in the Instances page immediately after launching the instance.</td></tr>
 <tr style="background-color: white; color: black;">
 <td>Probable Cause</td>
-<td>Insufficient quota limits – CPU, instances or RAM</td></tr>
+<td>Insufficient quota limits are set for the CPU, instances or RAM.</td></tr>
 <tr style="background-color: white; color: black;">
 <td>Possible Resolution</td>
-<td>Check the Projects tab -&gt; Overview page, if any of the dialog shows indication of insufficient quota, change the quota values as desired &nbsp;from Cloud Tab -&gt; Projects -&gt; Modify Limits option and retry provisioning.</td></tr>
+<td><ol><li>In the Projects tab &gt; Overview page, look for any indication of insufficient quotas.</li>
+<li>Change the quota values using the Cloud tab &gt; Projects &gt; Modify Limits option.</li>
+<li>Retry provisioning.</li></ol></td></tr>
 </table>
 
 #### Instance is in spawning state for a long time
@@ -571,25 +570,25 @@ net.ipv4.ip_forward should be set to 1<br>
 </tr>
 <tr style="background-color: white; color: black;">
 <td>System Behavior/Message</td>
-<td>"Status" on "Instances" page will continue to be in "Spawning/Error" and does not change to "Active"</td></tr>
+<td>The instance's status on the Instances page stays in <b>Spawning/Error</b> and does not change to <b>Active</b>.</td></tr>
 <tr style="background-color: white; color: black;">
 <td>Probable Cause</td>
-<td>Network connectivity issues, Instance reboot fails due to some issues with the image etc.</td></tr>
+<td>Network connectivity issues or the instance reboot fails due to some issues with the image, etc.</td></tr>
 <tr style="background-color: white; color: black;">
 <td>Possible Resolution</td>
 <td>
 <ol>
-<li>Ensure that the Baremetal host has sufficient resources to launch and is registered &nbsp;with compute nodes</li>
-<li>Check the /var/log/nova/nova-compute.log (on compute node) for cause of failure.</li>
-<li>The following specifications need to be there for provisioning:</li></ol>
+<li>Ensure the Baremetal host has sufficient resources to launch and is registered with the compute nodes.</li>
+<li>Check the /var/log/nova/nova-compute.log on the compute node for cause of failure.</li>
+<li>Ensure the following specifications are there because they are necessary for provisioning:</li>
 <ul>
 <li>2013-10-18 18:17:09,225.225 4466 INFO nova.compute.manager [-] Updating bandwidth usage cache</li>
 <li>2013-10-18 18:22:52,753.753 4466 AUDIT nova.compute.resource_tracker [-] Auditing locally available compute resources</li>
 <li>2013-10-18 18:22:52,787.787 4466 AUDIT nova.compute.resource_tracker [-] Free ram (MB): 2048</li>
 <li>2013-10-18 18:22:52,787.787 4466 AUDIT nova.compute.resource_tracker [-] Free disk (GB): 10</li>
 <li>2013-10-18 18:22:52,787.787 4466 AUDIT nova.compute.resource_tracker [-] Free VCPUS: 1</li></ul>
-<br>
-If a &quot;No valid host found&quot; error occurs while provisioning, ensure that the Baremetal Host is registered correctly by nova baremetal-node-list</td></tr>
+<li>
+If a <b>No valid host found</b> error occurs while provisioning, ensure that the Baremetal Host is registered correctly by nova baremetal-node-list.</li></ol></td></tr>
 </table>
 
 #### De-provisioning leads to deleting state but does not delete the instance
@@ -599,88 +598,98 @@ If a &quot;No valid host found&quot; error occurs while provisioning, ensure tha
 </tr>
 <tr style="background-color: white; color: black;">
 <td>System Behavior/Message</td>
-<td>Message N/A. Dashboard shows instance deletion in progress always</td></tr>
+<td>When de-provisioning, the Admin Dashboard shows instance deletion in progress, continually, and does not display an error message.</td></tr>
 <tr style="background-color: white; color: black;">
 <td>Probable Cause</td>
-<td>When instance is terminated in spawning state, terminate request is orphaned and instance status is hung at deletion.</td></tr>
+<td>When an instance is terminated in the spawning state, the terminate request is orphaned and the instance status is hung at deletion.</td></tr>
 <tr style="background-color: white; color: black;">
 <td>Possible Resolution</td>
 <td>
 <ol>
-<li>Stop the nova services running in Baremetal Host and delete the instance, or</li>
-<li>Restart nova-compute in compute node and refresh skyline</li></ol></td></tr>
+<li>Stop the nova services running in the Baremetal Host and delete the instance, or</li>
+<li>Restart nova-compute in the compute node.</li>
+<li>Refresh Skyline.</li></ol></td></tr>
 </table>
 
-#### Unable to access Shell in a box
+#### Unable to access shellinabox
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Administration Dashboard</th>
 </tr>
 <tr style="background-color: white; color: black;">
 <td>System Behavior/Message</td>
-<td>"Web Page Cannot be Found" message in browser</td></tr>
+<td>When accessing shellinabox, the <b>Web Page Cannot be Found</b> error message displays in the browser.</td></tr>
 <tr style="background-color: white; color: black;">
 <td>Probable Cause</td>
-<td>System where the Administration Dashboard is running may not be in the Admin network</td></tr>
+<td>The system where the Admin Dashboard is running might not be in the Admin network.</td></tr>
 <tr style="background-color: white; color: black;">
 <td>Possible Resolution</td>
-<td>Ensure that the connectivity to the Admin network and the server name for the interface are pointing to the admin node</td></tr>
+<td>Ensure that the connectivity to the Admin network and the server name for the interface are pointing to the Admin node.</td></tr>
 </table>
 
-#### Unable to view Shell in a box, shows warning screen or grey screen
+#### Unable to view shellinabox and warning screen or grey screen displays
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Administration Dashboard</th>
 </tr>
 <tr style="background-color: white; color: black;">
 <td>System Behavior/Message</td>
-<td>Message - "Unable to load the console" or grey screen</td></tr>
+<td>When viewing shellinabox, the <b>Unable to load the console</b> error message displays or screen turns grey.</td></tr>
 <tr style="background-color: white; color: black;">
 <td>Probable Cause</td>
-<td>SSL verification exceptions during first time access of shell in a box console</td></tr>
+<td>SSL verification exceptions during the first time you access shellinabox console.</td></tr>
 <tr style="background-color: white; color: black;">
 <td>Possible Resolution</td>
-<td>Open the &nbsp;link 'Click to view only console' in a New Tab and allow the necessary SSL verification exceptions and refresh Skyline</td></tr>
+<td>
+<ol>
+<li>Open the link <b>Click to view only console in a New Tab</b>.</li>
+<li>Allow the necessary SSL verification exceptions.</li>
+<li>Refresh Skyline.</li></ol></td></tr>
 </table>
 
 ## Administration Dashboard: Topology Designer {#admindash-topology}
 
-#### Unable to view topology designer, shows certificate warning screen or grey screen
+#### Unable to view Topology Designer and SSL verification or grey screen displays
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Administration Dashboard</th>
 </tr>
 <tr style="background-color: white; color: black;">
 <td>System Behavior/Message</td>
-<td>The browser shows SSL verification screen or grey screen</td></tr>
+<td>When viewing Topology Designer, the browser displays an SSL verification or a grey screen.</td></tr>
 <tr style="background-color: white; color: black;">
 <td>Probable Cause</td>
-<td>SSL verification exceptions during the first access of the topology designer UI</td></tr>
+<td>SSL verification exceptions during the first time you access Topology Designer UI.</td></tr>
 <tr style="background-color: white; color: black;">
 <td>Possible Resolution</td>
 <td>
-In Mozilla Firefox, right click on the warning screen section and select <br>
-This Frame -&gt; Open Frame in New Tab and allow the necessary SSL verification exceptions and refresh Administration Dashboard<br>
-<br>
-For Internet Explorer, go to url:<br>
-https://&lt;controller-node-public-ip&gt;:21081/<br>
-Accept the SSL warning and proceed. The page will show "Web page cannot be found" screen. Enter the skyline IP in the same browser tab and Topology Designer will now load within the Administration Dashboard</td></tr>
+In Mozilla Firefox:
+<ol>
+<li>Right-click the SSL verification screen and select <b>This Frame &gt; Open Frame in New Tab</b>.</li>
+<li>Allow the necessary SSL verification exceptions.</li>
+<li>Refresh the Administration Dashboard</li>
+</ol>
+For Internet Explorer:
+<ol>
+<li>Navigate to <b>https://&lt;controller-node-public-ip&gt;:21081/</b>.</li>
+<li>Accept the SSL warning and proceed. The page that loads displays <b>Web page cannot be found</b>.</li>
+ <li>Enter the Skyline IP in the same tab. Topology Designer now loads within the Administration Dashboard.</li></ol></td></tr>
 </table>
 
-#### Designer does not list the resource pool when cloud profile is other than 'HP Cloud OS Grizzly Baremetal'
+#### Topology Designer does not list the resource pool unless cloud profile is "HP Cloud OS Grizzly Baremetal"
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Administration Dashboard</th>
 </tr>
 <tr style="background-color: white; color: black;">
 <td>System Behavior/Message</td>
-<td>Topology designer UI does not list all the resource pools that exists</td></tr>
+<td>Topology Designer does not list all the resource pools that exist.</td></tr>
 <tr style="background-color: white; color: black;">
 <td>Probable Cause</td>
-<td>Resource pools that are not displayed might have been created with the profile other than those specific for HP Cloud OS for Moonshot</td></tr>
+<td>Resource pools that are not displayed might have been created with a profile other than those specific for HP Cloud OS for Moonshot.</td></tr>
 <tr style="background-color: white; color: black;">
 <td>Possible Resolution</td>
-<td>Make sure the required resource pool has 'HP Cloud OS Grizzly Baremetal' as it's cloud profile</td></tr>
+<td>Make sure the required resource pools have <b>HP Cloud OS Grizzly Baremetal</b> as their cloud profile.</td></tr>
 </table>
 
 ## Administration Dashboard: Instance Provisioning &#9658; Topology-based {#admindash-instance-topology}
@@ -692,51 +701,52 @@ Accept the SSL warning and proceed. The page will show "Web page cannot be found
 </tr>
 <tr style="background-color: white; color: black;">
 <td>System Behavior/Message</td>
-<td>Skyline error message "Internal server error"</td></tr>
+<td>Using Skyline Running Topologies results in <b>Internal server error</b> error message.</td></tr>
 <tr style="background-color: white; color: black;">
 <td>Probable Cause</td>
-<td>Timeout issues between eve and other services or wrong HTTP Proxy Settings (non-proxy hosts) is configured</td></tr>
+<td>Timeout issues between eve and other services or wrong HTTP Proxy Settings (non-proxy hosts) are configured.</td></tr>
 <tr style="background-color: white; color: black;">
 <td>Possible Resolution</td>
-<td>Ensure that the non-proxy host 127.* is set in Prerequisites page of Operational Dashboard. Once "Complete Install" is done, the user cannot update prerequisites. Hence, if not set correctly the user will have to re-apply the hp-cos-eve-barclamp with 127.* in non-proxy hosts.</td></tr>
+<td>Ensure that the non-proxy host 127.* is set in the Prerequisites page of the Operational Dashboard.
+<p><b>Note:</b> Once the <b>Complete Install</b> steps are completed, you cannot update the prerequisites. So, if the settings are incorrect, you must reapply the hp-cos-eve-barclamp with 127.* in the non-proxy hosts.</p></td></tr>
 </table>
 
 ## Administration Dashboard: Workloads {#admindash-workloads}
 
-#### Download of workload from Skyline's Updates and Extension panel fails
+#### Downloading workload from Skyline's Updates and Extension panel fails
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Administration Dashboard</th>
 </tr>
 <tr style="background-color: white; color: black;">
 <td>System Behavior/Message</td>
-<td>Dashboard displays message 'Unable to connect to server'</td></tr>
+<td>When using Updates and Extensions to download a workload, the Dashboard displays <b>Unable to connect to server</b> error message.</td></tr>
 <tr style="background-color: white; color: black;">
 <td>Probable Cause</td>
-<td>CODN can only handle certain number of download activities simultaneously. </td></tr>
+<td>CODN can only handle a certain number of download activities simultaneously. </td></tr>
 <tr style="background-color: white; color: black;">
 <td>Possible Resolution</td>
-<td>Wait for some time and retry. For details, check log file at /var/log/codn/codn.log on controller node.</td></tr>
+<td>Wait for awhile and retry the download. For details, check the log file <b>/var/log/codn/codn.log</b> on the controller node.</td></tr>
 </table>
 
-#### Publishing workload from Updates and Extension panel does not show up in workload dashboard
+#### Publishing workload from Updates and Extension panel does not show up in dashboard
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Administration Dashboard</th>
 </tr>
 <tr style="background-color: white; color: black;">
 <td>System Behavior/Message</td>
-<td>Newly added workload is not visible in dashboard</td></tr>
+<td>When using Updates and Extensions to publish a workload, the newly-added workload is not visible in the dashboard.</td></tr>
 <tr style="background-color: white; color: black;">
 <td>Probable Cause</td>
-<td>CODN fails to upload one of the components (i.e. image or topology etc) in cloud.</td></tr>
+<td>CODN fails to upload one of the components, such as image or topology,  in the cloud.</td></tr>
 <tr style="background-color: white; color: black;">
 <td>Possible Resolution</td>
 <td>
-Check the CODN log located at /var/log/codn/codn.log on controller node. <br>
-<br>
-If CODN fails to upload a component because a component with the same name ALREADY exists then check manifest file in the respective workload folder under /var/cache/codn/import on the controller node. Specifically, check whether duplicate policy (check_for_duplicates property) for the component is configured as desired. Set this attribute to "false" to allow duplicates.<br>
-<br></td></tr>
+Check the CODN log file <b>/var/log/codn/codn.log</b> on the controller node.
+<p>
+If CODN fails to upload a component because a component with the same name ALREADY exists, then check the manifest file in the respective workload folder under <b>/var/cache/codn/import</b> on the controller node. Specifically, check whether the <code>check_for_duplicates</code> property for the component is configured as it should be. Set this attribute to <b>false</b> to allow duplicates.</p>
+</td></tr>
 </table>
 
 #### Launching CCUE designer shows gray screen or throws warning
@@ -753,28 +763,37 @@ If CODN fails to upload a component because a component with the same name ALREA
 <tr style="background-color: white; color: black;">
 <td>Possible Resolution</td>
 <td>
-In Mozilla Firefox, right click on the warning screen section and select <br>
-This Frame -&gt; Open Frame in New Tab and allow the necessary SSL verification exceptions and refresh Administration Dashboard<br>
-<br>
-For Internet Explorer, go to url:<br>
-https://&lt;controller-node-public-ip&gt;:21081/<br>
-Accept the SSL warning and proceed. The page will show "Web page cannot be found" screen. Enter the skyline IP in the same browser tab and Topology designer will now load within the Administration Dashboard</td></tr>
+
+<ol>
+<li>Right-click the SSL verification screen and select <b>This Frame &gt; Open Frame in New Tab</b>.</li>
+<li>Allow the necessary SSL verification exceptions.</li>
+<li>Refresh the Administration Dashboard</li>
+</ol>
+For Internet Explorer:
+<ol>
+<li>Navigate to <b>https://&lt;controller-node-public-ip&gt;:21081/</b>.</li>
+<li>Accept the SSL warning and proceed. The page that loads displays <b>Web page cannot be found</b>.</li>
+ <li>Enter the Skyline IP in the same tab. Topology Designer now loads within the Administration Dashboard.</li></ol>
+</td></tr>
 </table>
 
-#### Launch profile fails
+#### Launch profile fails with error message
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Administration Dashboard</th>
 </tr>
 <tr style="background-color: white; color: black;">
 <td>System Behavior/Message</td>
-<td>Dashboard displays a message 'Failed to launch Profile'</td></tr>
+<td>When launching a profile, the dashboard displays <b>Failed to launch Profile</b> error message.</td></tr>
 <tr style="background-color: white; color: black;">
 <td>Probable Cause</td>
 <td>eve is not configured with correct proxy setting</td></tr>
 <tr style="background-color: white; color: black;">
 <td>Possible Resolution</td>
-<td>Ensure that the non-proxy host 127.* is set in Prerequisites page of Operational Dashboard. Once "Complete Install" is done, the user cannot update prerequisites. Hence, if not set correctly the user will have to re-apply the hp-cos-eve-barclamp with 127.* in non-proxy hosts.</td></tr>
+<td>
+Ensure that the non-proxy host 127.* is set in the Prerequisites page of the Operational Dashboard.
+<p><b>Note:</b> Once the <b>Complete Install</b> steps are completed, you cannot update the prerequisites. So, if the settings are incorrect, you must reapply the hp-cos-eve-barclamp with 127.* in the non-proxy hosts.</p>
+</td></tr>
 </table>
 
 #### Creation of profile does not pick nova flavor for a given server in CCUE designer
@@ -784,177 +803,150 @@ Accept the SSL warning and proceed. The page will show "Web page cannot be found
 </tr>
 <tr style="background-color: white; color: black;">
 <td>System Behavior/Message</td>
-<td>Property editor of server element in CCUE designer does not pick any flavor automatically.</td></tr>
+<td>The Property editor of the server element in CCUE designer does not pick any flavor automatically.</td></tr>
 <tr style="background-color: white; color: black;">
 <td>Probable Cause</td>
 <td>
-It can happen if there is no auto-flavor created in system which meets server requirement of specified workload. <br>
-e.g., If you import a workload that's not supported by the cartridges present in the cloud.<br>
-<br></td></tr>
+This can happen if there is no auto-flavor created in system which meets  the server requirement of specified workload. For example, if you import a workload that is not supported by the cartridges present in the cloud.</td></tr>
 <tr style="background-color: white; color: black;">
 <td>Possible Resolution</td>
 <td>
-Check support matrix as well as HP Moonshot server requirements of your workload. If your cloud has appropriate Moonshot server (i.e. cartridges) then check Apollo log /var/log/apollo/apollo.log on controller node.<br>
+Check the <a xref="">Support Matrix</a> as well as the HP Cloud OS for Moonshot server requirements of your workload. If your cloud has the appropriate Moonshot server (i.e. cartridges), then check the Apollo log <b>/var/log/apollo/apollo.log</b> on controller node.<br>
 <br></td></tr>
 </table>
 
 ## Log/Configuration Files and Location {#log-config-files}
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
 <tr style="background-color: #C8C8C8;">
-<th>Topic</th>
+<th><span style='display:block; width:180px;'>Topic</span></th>
 <th>Log configuration</th>
 <th>Log file location</th></tr>
 <tr style="background-color: white; color: black;">
-<td>Workload content download &amp; publish [Skyline-&gt; Update and Extensions]</td>
+<td>Workload content download &amp; publish (Skyline&gt; Update and Extensions)</td>
 <td>
-/etc/codn/codn.log<br>
-&nbsp;(Cloud Controller)<br>
-<br>
-To configure the log level, change the INFO to one of allowed values: DEBUG, ERROR, WARNING &amp; CRITICAL<br>
-<br>
-logging = {<br>
- &nbsp; &nbsp;'loggers': {<br>
- &nbsp; &nbsp; &nbsp; &nbsp;'root': {'level': 'INFO', 'handlers': ['console']},<br>
- &nbsp; &nbsp; &nbsp; &nbsp;'codn': {'level': 'INFO', 'handlers': ['file']},<br>
- &nbsp; &nbsp; ….<br>
-<br></td>
+/etc/codn/codn.log (Cloud Controller)<br /><br />
+
+To configure the log level, change the INFO to one of allowed values of DEBUG, ERROR, WARNING and CRITICAL:
+
+<pre>logging = {
+ &nbsp; &nbsp;'loggers': {
+ &nbsp; &nbsp; &nbsp; &nbsp;'root': {'level': 'INFO', 'handlers': ['console']},
+ &nbsp; &nbsp; &nbsp; &nbsp;'codn': {'level': 'INFO', 'handlers': ['file']},
+ &nbsp; &nbsp; ….</pre></td>
 <td>
-/var/log/codn/codn.log<br>
-&nbsp;(Cloud Controller)</td></tr>
+/var/log/codn/codn.log (Cloud Controller)</td></tr>
+
 <tr style="background-color: white; color: black;">
 <td>
-Workload service &nbsp;[Skyline -&gt; Provisioning -&gt; Workload]<br>
-<br></td>
+Workload service (Skyline &gt; Provisioning &gt; Workload</td>
 <td>
-/etc/skyline/platform_settings.py<br>
-&nbsp;(Cloud Controller)<br>
-<br>
-To configure the log level, change the INFO to one of allowed values defined in LOG_LEVELS in the same file<br>
-<br>
-LOGGING = {<br>
-…. &nbsp; <br>
- &nbsp; &nbsp; &nbsp; &nbsp;'cloudos_file': {<br>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'level': 'INFO',<br>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'class': 'logging.handlers.RotatingFileHandler',<br>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'filename': '/var/log/skyline/skyline.log',<br>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'</td>
+/etc/skyline/platform_settings.py (Cloud Controller)<br /><br />
+
+To configure the log level, change the INFO to one of allowed values defined in LOG_LEVELS in the same file:
+
+<pre>LOGGING = {
+…. &nbsp; 
+ &nbsp; &nbsp; &nbsp; &nbsp;'cloudos_file': {
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'level': 'INFO',
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'class': 'logging.handlers.RotatingFileHandler',
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'filename': '/var/log/skyline/skyline.log',
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'</pre></td>
 <td>
-/var/log/skyline/skyline.log<br>
-&nbsp;(Cloud Controller)</td></tr>
+/var/log/skyline/skyline.log (Cloud Controller)</td></tr>
+
 <tr style="background-color: white; color: black;">
-<td>Provision [Eve]</td>
+<td>Provision (Eve)</td>
 <td>
- /etc/eve-api/eve.yml<br>
-/etc/eve-requestworker/eve.yml<br>
-&nbsp;(Cloud Controller)<br>
+ /etc/eve-api/eve.yml and /etc/eve-requestworker/eve.yml (Cloud Controller)<br /><br />
 <br>
-To configure the log level, change the INFO to one of allowed values defined as follows<br>
-<br>
-logging:<br>
- &nbsp; &nbsp;# The default level of all loggers. Can be OFF, ERROR, WARN, INFO, DEBUG, TRACE, or ALL.<br>
- &nbsp; &nbsp;level: INFO<br>
-<br></td>
+To configure the log level, change the INFO to one of allowed values defined as follows:
+<pre>
+logging:
+ &nbsp; &nbsp;# The default level of all loggers. Can be OFF, ERROR, WARN, INFO, DEBUG, TRACE, or ALL.
+ &nbsp; &nbsp;level: INFO</pre></td>
 <td>
-/var/log/eve-api/eve-api.log<br>
-/var/log/eve-requestworker/eve-requestworker.log<br>
-(Cloud Controller)</td></tr>
+/var/log/eve-api/eve-api.log and /var/log/eve-requestworker/eve-requestworker.log (Cloud Controller)</td></tr>
+
 <tr style="background-color: white; color: black;">
-<td>Resource pool &amp; Flavor selection [Graffiti]</td>
+<td>Resource pool &amp; Flavor selection (Graffiti)</td>
 <td>
-/etc/graffiti-api/graffiti-api.yml<br>
-&nbsp;(Cloud Controller)<br>
-To configure the log level, change the INFO to one of allowed values defined as follows<br>
-<br>
-logging:<br>
- &nbsp; &nbsp;# The default level of all loggers. Can be OFF, ERROR, WARN, INFO, DEBUG, TRACE, or ALL.<br>
- &nbsp; &nbsp;level: INFO<br>
-<br></td>
+/etc/graffiti-api/graffiti-api.yml (Cloud Controller)<br /><br />
+To configure the log level, change the INFO to one of allowed values defined as follows:
+<pre>
+logging:
+ &nbsp; &nbsp;# The default level of all loggers. Can be OFF, ERROR, WARN, INFO, DEBUG, TRACE, or ALL.
+ &nbsp; &nbsp;level: INFO
+</pre></td>
 <td>
-/var/log/graffitia-api/graffiti-api.log<br>
-(Cloud Controller)</td></tr>
+/var/log/graffitia-api/graffiti-api.log (Cloud Controller)</td></tr>
+
 <tr style="background-color: white; color: black;">
-<td>Workload Deployment profile guide &amp; Deployment profile persistence [Focus]</td>
+<td>Workload Deployment profile guide and Deployment profile persistence (Focus)</td>
 <td>
-/etc/focus-api/focus.yml<br>
-&nbsp;(Cloud Controller)<br>
-<br>
-To configure the log level, change the INFO to one of allowed values defined as follows<br>
-<br>
-logging:<br>
- &nbsp; &nbsp;# The default level of all loggers. Can be OFF, ERROR, WARN, INFO, DEBUG, TRACE, or ALL.<br>
- &nbsp; &nbsp;level: INFO<br>
-<br></td>
+/etc/focus-api/focus.yml (Cloud Controller)<br /><br />
+
+To configure the log level, change the INFO to one of allowed values defined as follows:
+<pre>
+logging:
+ &nbsp; &nbsp;# The default level of all loggers. Can be OFF, ERROR, WARN, INFO, DEBUG, TRACE, or ALL.
+ &nbsp; &nbsp;level: INFO</pre></td>
 <td>
-/var/log/focus-api/focus-api.log<br>
-(Cloud Controller)</td></tr>
+/var/log/focus-api/focus-api.log (Cloud Controller)</td></tr>
+
 <tr style="background-color: white; color: black;">
-<td>Moonshot Management &amp; Automatic default Flavor creation [ Apollo]</td>
+<td>Moonshot Management and Automatic default Flavor creation (Apollo)</td>
 <td>
-/etc/apollo/logging.conf<br>
-&nbsp;(Baremetal Compute Host)<br>
-<br>
-To configure the log level, change the INFO to one of allowed values : DEBUG, ERROR, WARNING &amp; CRITICAL<br>
-<br>
-[logger_root]<br>
-level = INFO<br>
-handlers = discoveryfile<br>
-<br></td>
+/etc/apollo/logging.conf (Baremetal Compute Host)<br /><br />
+
+To configure the log level, change the INFO to one of allowed values of DEBUG, ERROR, WARNING and CRITICAL:
+<pre>
+[logger_root]
+level = INFO
+handlers = discoveryfile
+</pre></td>
 <td>
-/var/log/apollo/apollo.log<br>
-&nbsp;(Baremetal Compute Host)<br>
-<br></td></tr>
+/var/log/apollo/apollo.log (Baremetal Compute Host)</td></tr>
+
 <tr style="background-color: white; color: black;">
-<td>Moonshot capability publish &nbsp;[ Nova-compute]</td>
+<td>Moonshot capability publish (Nova-compute)</td>
 <td>
-/etc/nova/logging.conf<br>
-&nbsp;(Baremetal Compute Host)<br>
-<br>
-To configure the log level, change the INFO to one of allowed values : DEBUG, ERROR, WARNING &amp; CRITICAL<br>
-<br>
-[logger_root]<br>
-level = INFO<br>
-…<br>
-<br>
-NOTE: update the same log level for the other loggers in this file, (loggers starts with [logger_xxx]<br>
-<br>
-/etc/nova/nova.conf<br>
-Under [DEFAULT] section , add following line<br>
-debug=True<br>
-<br></td>
+/etc/nova/logging.conf (Baremetal Compute Host)<br /><br />
+To configure the log level, change the INFO to one of allowed values of DEBUG, ERROR, WARNING and CRITICAL:
+<pre>
+[logger_root]
+level = INFO
+…</pre>
+<b>Note: </b>Update the same log level for the other loggers in this file. (Loggers starts with <code>[logger_xxx]</code>.)
+In /etc/nova/nova.conf, under DEFAULT section, add following line:
+<pre>debug=True</pre>
+</td>
 <td>
-/var/log/nova/nova-scheduler.log<br>
-/var/log/nova/nova-compute.log<br>
-&nbsp;(Baremetal Compute Host)<br>
-<br></td></tr>
+/var/log/nova/nova-scheduler.log and /var/log/nova/nova-compute.log (Baremetal Compute Host)</td></tr>
+
 <tr style="background-color: white; color: black;">
-<td>Image [glance]</td>
+<td>Image (glance)</td>
 <td>
-/etc/glance/glance-api.conf<br>
-&nbsp;(Cloud Controller)<br>
-<br>
-Under [DEFAULT] section , set following line<br>
-debug=True<br>
-<br>
-NOTE: Follow the same procedure for other glance modules as well. The log location will vary accordingly.<br>
-<br></td>
+/etc/glance/glance-api.conf (Cloud Controller)<br /><br />
+
+Under DEFAULT section, set following line:
+<pre>debug=True</pre>
+
+<b>Note:</b> Follow the same procedure for other glance modules as well. The log location will vary accordingly.</td>
 <td>
-/var/log/glance/api.log<br>
-(Cloud Controller)</td></tr>
+/var/log/glance/api.log (Cloud Controller)</td></tr>
+
 <tr style="background-color: white; color: black;">
-<td>Network [Quantum]</td>
+<td>Network (Quantum)</td>
 <td>
-/etc/quantum/quantum.conf<br>
-&nbsp;(Cloud Controller)<br>
-<br>
-Under [DEFAULT] section , set following line<br>
-debug=True<br>
-<br></td>
+/etc/quantum/quantum.conf (Cloud Controller)
+<br /><br />
+
+Under DEFAULT section, set following line:
+<pre>debug=True</pre>
+</td>
 <td>
-/var/log/quantum/server.log<br>
-(Cloud Controller)</td></tr>
+/var/log/quantum/server.log (Cloud Controller)</td></tr>
 </table>
-<br>
-<br>
 
 </body>
 </html>
