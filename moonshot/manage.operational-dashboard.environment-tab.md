@@ -40,8 +40,8 @@ For procedural instructions, see [Install and configure your cloud](/cloudos/moo
 The Connections view is where you define a connection set. You define a network mode (single,dual,team) along with a list of logical connection interfaces (intf0,intf1,intf2) with each one being bound to a port, defined by bandwidth and port number. The default network settings for the participating hosts/nodes should be
 
 * eth0 connected to a private network
-* eth1 connected to a public network
-* eth2 connected to a second private network
+* eth1 connected to a public network
+* eth2 connected to a second private network
 
 **Note:** You are not required to make any changes in this option.
 
