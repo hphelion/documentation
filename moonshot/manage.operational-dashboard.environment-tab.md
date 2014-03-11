@@ -22,26 +22,26 @@ PageRefresh();
 
 <p style="font-size: small;"> <a href="/cloudos/moonshot/manage/operational-dashboard/how-opdash-works/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage/operational-dashboard/">&#9650; UP</a> | <a href="/cloudos/moonshot/manage/operational-dashboard/cloud-tab/">NEXT &#9654;</a> </p>
 
-# Operational Dashboard: Environment Tab
+# Operational Dashboard: Environment tab
 
 The Environment tab contains the following panels on which you begin the installation process on the Operational Dashboard. 
 On these panels, you set up your cloud environment and complete the HP Cloud OS for Moonshot Administration node installation. 
 For the installation process, you must complete each panel in the order they are displayed. 
 
 * [Connections](#connections)
-
-
 * [Prerequisites](#prerequisites)
-
 * [Networks](#networks)
+* [Complete install](#complete-install)
 
-* [Complete Install](#complete-install)
-
-For procedural instructions, see [Install and Configure Your Cloud](/cloudos/moonshot/install/).
+For procedural instructions, see [Install and configure your cloud](/cloudos/moonshot/install/).
 
 ## Connections {#connections}
 
-The Connections view is where you define a connection set. You define a network mode (single,dual,team) along with a list of logical connection interfaces (intf0,intf1,intf2) with each one being bound to a port, defined by bandwidth and port number. The default network settings for the participating hosts/nodes should be: eth0 connected to a private network, eth1 connected to a public network, and eth2 connected to a second private network.
+The Connections view is where you define a connection set. You define a network mode (single,dual,team) along with a list of logical connection interfaces (intf0,intf1,intf2) with each one being bound to a port, defined by bandwidth and port number. The default network settings for the participating hosts/nodes should be
+
+* eth0 connected to a private network
+* eth1 connected to a public network
+* eth2 connected to a second private network
 
 **Note:** You are not required to make any changes in this option.
 
@@ -51,21 +51,21 @@ The following information provides details about the Prerequisites panel:
 
 **Concepts:**
 
-[Prerequisites Overview](#prerequisites-overview)
+[Prerequisites overview](#prerequisites-overview)
 
-**UI Description:**
+**UI description:**
 
-* [Prerequisites Page](#prerequisites-page)
+* [Prerequisites page](#prerequisites-page)
 
-* [Cloud Administration Node Internet Access Prerequisite Dialog](#cloud-administration-node-internet-access-prerequisite-dialog)
+* [Cloud Administration Node Internet Access Prerequisite dialog](#cloud-administration-node-internet-access-prerequisite-dialog)
 
-* [Cloud Administration Node Time Settings Prerequisite Dialog](#cloud-administration-node-time-settings-prerequisite-dialog)
+* [Cloud Administration Node Time Settings Prerequisite dialog](#cloud-administration-node-time-settings-prerequisite-dialog)
 
-* [External DNS Server Prerequisite Dialog](#external-dns-server-prerequisite-dialog)
+* [External DNS Server Prerequisite dialog](#external-dns-server-prerequisite-dialog)
 
-* [Email Notification Settings Dialog](#email-notification-settings-prerequisite-dialog)
+* [Email Notification Settings dialog](#email-notification-settings-prerequisite-dialog)
 
-### Prerequisites Overview
+### Prerequisites overview
 
 The first step on the Operational Dashboard is to configure the HP Cloud OS for Moonshot Administration node prerequisites.
 
@@ -92,7 +92,7 @@ If you do not define the following prerequisites, your cloud will not work at al
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 	
-### Prerequisites Page
+### Prerequisites page
 
 **To access**: Select the **Environment** tab > **Prerequisites**.
 
@@ -101,7 +101,7 @@ The following table describes the Prerequisites page UI elements:
 <table style="text-align: left; vertical-align: top; min-width:700px;">
 
 <tr style="background-color: #C8C8C8;">
-<th>UI Elements</th>
+<th>UI element</th>
 <th>Description</th>
 </tr>
 
@@ -138,7 +138,7 @@ The following table describes the Prerequisites page UI elements:
 
 
 
-### Cloud Administration Node Internet Access Prerequisite Dialog
+### Cloud Administration Node Internet Access Prerequisite dialog
 
 **To access**: Select the **Environment** tab > **Prerequisites**> click **Edit Prerequisite** for the Cloud Administration Node Internet Access Prerequisite.
 
@@ -155,7 +155,7 @@ The following table describes the Cloud Administration Node Internet Access Prer
 <table style="text-align: left; vertical-align: top; min-width:700px;">
 
 <tr style="background-color: #C8C8C8;">
-<th>UI Elements</th>
+<th>UI element</th>
 <th>Description</th>
 </tr>
 
@@ -213,9 +213,8 @@ Specifying incorrect proxy host settings might cause some features to not work c
 
 <tr style="background-color: white; color: black;">
 <td> <b>Non-Proxy Hosts</b> </td>
-<td> Specify addresses that **should not** use proxy servers (for Controller/Baremetal Host and admin networks, IP range). 
-Each network needs to be separated by a bar ( | ). For example: <code>10.*|192.*|127.0*|localhost</code>. </td>
-</tr>
+<td> Specify addresses that <b>should not</b> use proxy servers (for Controller/Baremetal Host and admin networks, IP range). 
+Each network must be separated by a bar ( | ), such as: <code>10.*|192.*|127.0*|localhost</code>
 
 <tr style="background-color: white; color: black;">
 <td> <nobr> <b>Username</b> (Optional) </nobr> </td>
@@ -240,7 +239,7 @@ Also, specifying incorrect proxy host settings might cause failures when attempt
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
-### Cloud Administration Node Time Settings Prerequisite Dialog
+### Cloud Administration Node Time Settings Prerequisite dialog
 
 **To access**: Select the **Environment** tab > **Prerequisites**> click **Edit Prerequisite** for the Cloud Administration Node Time Settings Prerequisite.
 
@@ -249,7 +248,7 @@ The following table describes the Cloud Administration Node Time Settings Prereq
 <table style="text-align: left; vertical-align: top; min-width:700px;">
 
 <tr style="background-color: #C8C8C8;">
-<th>UI Elements</th>
+<th>UI element</th>
 <th>Description</th>
 </tr>
 
@@ -277,7 +276,7 @@ The following table describes the Cloud Administration Node Time Settings Prereq
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
-### External DNS Server Prerequisite Dialog
+### External DNS Server Prerequisite dialog
 
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Caution:</b> 
 If you want to set the External DNS Server Prerequisite, you must configure it before you complete the steps on the 
@@ -294,7 +293,7 @@ The following table describes the External DNS Server Prerequisite dialog UI ele
 <table style="text-align: left; vertical-align: top; min-width:700px;">
 
 <tr style="background-color: #C8C8C8;">
-<th>UI Elements</th>
+<th>UI element</th>
 <th>Description</th>
 </tr>
 
@@ -312,7 +311,7 @@ The following table describes the External DNS Server Prerequisite dialog UI ele
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
-### Email Notification Settings Prerequisite Dialog
+### Email Notification Settings Prerequisite dialog
 
 **To access**: Select the **Environment** tab > **Prerequisites**> click **Edit Prerequisite** for the Email Notification Settings Prerequisite.
 
@@ -321,7 +320,7 @@ The following table describes the Email Notification Settings Prerequisite dialo
 <table style="text-align: left; vertical-align: top; min-width:700px;">
 
 <tr style="background-color: #C8C8C8;">
-<th>UI Elements</th>
+<th>UI element</th>
 <th>Description</th>
 </tr>
 
@@ -360,9 +359,9 @@ The following information provides details about the Networks panel:
 
 **Concepts:**
 
-[Networks Panel Overview](#networks-panel-overview)
+[Networks Panel overview](#networks-panel-overview)
 
-**UI Descriptions:**
+**UI descriptions:**
 
 * [Networks panel](#networks-panel-overview)
 
@@ -374,7 +373,7 @@ The following information provides details about the Networks panel:
 
 
 
-### Networks Panel Overview {#networks-panel-overview}
+### Networks Panel overview {#networks-panel-overview}
 
 On the Networks panel, you define the networks for each logical connection (intf0, intf1, intf2,...). A network is defined for each connection such as the admin network, public network, nova_flat network, and the IPMI network. These  network definitions are used for various purposes in the cloud:
 
@@ -399,11 +398,11 @@ The following table describes the networks in the HP Cloud OS for Moonshot envir
 <tr style="background-color: #C8C8C8;">
 
 <th>Node</th>
-<th>Network Type</th>
+<th>Network type</th>
 <th>Interface</th>
-<th>IP Assignment Mode</th>
-<th>IP Address Provider</th>
-<th>Network Range specified in this Option</th>
+<th>IP assignment mode</th>
+<th>IP address provider</th>
+<th>Network range specified in this option</th>
 </tr>
 <tr style="background-color: white; color: black;"><td rowspan="2"><b>Admin</b></td>
 <td>Management/isolated</td>
@@ -472,17 +471,7 @@ If DHCP-enabled Baremetal IPMI network option is "False", then the range is stat
 </table>
 
 
-**LISA: DOES THIS SECTION STILL APPLY?**
 
-Following are some of the criteria to be considered while making changes to the default settings:
-
-* The default settings "Dual" assume you have a separate physical network for each interface; the admin, os_sdn, and public network across the Cloud OS Administration node and all managed nodes.
-
-* For a production type of deployment and to reduce the complexities of configuring the switches, it is strongly recommended that you provide separate wired networks for public, os_sdn and admin. This requires you to specify your own range of IP addresses and other settings.
-
-* Some networks and address ranges for those networks are provided by default. You can modify or delete the IP address ranges as well as add new ones. You must use valid ranges that fall within the subnet as defined by the subnet address and mask specified in the network details.
-
-* If you edit the network IP address ranges and enter invalid ranges, you will get a validation error when you click **Update Address Ranges** in the Edit Address Ranges dialog. The validation error shows the invalid address (start or end) and the corresponding network type. You must fix all errors in the Edit Address Ranges dialog and click <b>Update Address Ranges</b> to validate the addresses are correct. Clicking Cancel will not trigger the validation step.
 
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Caution:</b> The address ranges validation only occurs when you 
 open the Edit Address Ranges dialog for each network and click <b>Update Address Ranges</b>. Otherwise,you will not know if you have any errors. 
@@ -492,12 +481,8 @@ for the specified network and click <b>Update Address Ranges</b> to identify the
 <a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>.
 </p>
 
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-**END DOES THIS SECTION STILL APPLY?**
 
-
-
-### Networks Page {#networks-page}
+### Networks page {#networks-page}
 
 **To access**: Select the **Environment** tab > **Networks**.
 
@@ -506,7 +491,7 @@ The following table describes the Networks page UI elements:
 <table style="text-align: left; vertical-align: top; min-width:700px;">
 
 <tr style="background-color: #C8C8C8;">
-<th> UI Elements </th>
+<th> UI element </th>
 <th> Description </th>
 </tr>
 
@@ -580,7 +565,7 @@ The following table describes the Networks page UI elements:
 
 
 
-### Edit Network Dialog {#edit-network}
+### Edit Network dialog {#edit-network}
 
 **To access**: Select the **Environment** tab > **Networks** > click **Edit Network** for the network you want to customize.
 
@@ -597,7 +582,7 @@ The following table describes the Edit Network dialog UI elements. You will noti
 <table style="text-align: left; vertical-align: top; min-width:700px;">
 
 <tr style="background-color: #C8C8C8;">
-<th> UI Elements </th>
+<th> UI element </th>
 <th> Description </th>
 </tr>
 
@@ -658,7 +643,7 @@ CIDR notation value used to distinguish the network and host portions of an IP a
 <p>(<i>Recommended</i>) Leave set to <b>False</b> (the default value) if the networks (particularly public) exist on separate physical interfaces. This means that the Network Mode will be set to <b>dual</b> by default on the 
 <a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#confirm-complete-install-dialog">Confirm Complete Install dialog</a>. </p>
 
-<p>Set to <b>True</b> if the networks (particularly os_sdn and public) co-exist on the same physical network. 
+<p>Set to <b>True</b> if the networks (particularly public) co-exist on the same physical network. 
 This means that the Network Mode will be set to <b>single</b> by default on the 
 <a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#confirm-complete-install-dialog">Confirm Complete Install dialog</a>. </p>
 
@@ -673,8 +658,6 @@ This means that the Network Mode will be set to <b>single</b> by default on the
 <tr style="background-color: white; color: black;">
 <td><b>Router</b> </td>
 <td> Device's IP Address that passes network traffic between different IP networks.
-<br /> 
-<p>Note: For the admin network, it is recommended to provide a non-routable private network for the admin network.</p>
 </td>
 </tr>
 
@@ -685,7 +668,7 @@ This means that the Network Mode will be set to <b>single</b> by default on the
 
 <tr style="background-color: white; color: black;">
 <td><b>Update Network</b></td>
-<td>When clickede, this button saves the edited settings for all three tabs. </td>
+<td>When clicked, this button saves the edited settings for all three tabs. </td>
 </tr>
 				
 </table>
@@ -694,7 +677,7 @@ This means that the Network Mode will be set to <b>single</b> by default on the
 
 
 
-### Edit Address Ranges Dialog {#edit-address-range}
+### Edit Address Ranges dialog {#edit-address-range}
 
 **To access**: Select the **Environment** tab > **Networks** > click the down arrow and select **Edit Address Ranges** for the nova_flat, IPMI, or public network type to view or edit the IP address ranges.
 
@@ -711,7 +694,7 @@ The following table describes the Edit Network dialog UI elements:
 <table style="text-align: left; vertical-align: top; min-width:700px;">
 
 <tr style="background-color: #C8C8C8;">
-<th> UI Elements </th>
+<th> UI element</th>
 <th> Description </th>
 </tr>
 
@@ -761,123 +744,7 @@ successful. Clicking <b>Cancel</b> will not trigger the validation step. Identif
 				
 </table>
 
-**LISA: DO WE NEED THIS SECTION; NOT IN PDF**
-### Create Network Dialog
 
-**To access**: Select the **Environment** tab > **Networks** > click **Create Network**.
-
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Caution:</b> The <b>Create Network</b> button only displays 
-while the networks are editable. Once the install process is triggered by the 
-<a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>, this button disappears and no 
-changes can be made. If you want to make changes, you need to start over by re-installing the HP Cloud OS for Moonshot Administration node. 
-For procedural instructions, see <a href="/cloudos/moonshot/install/">Install and Configure Your Cloud</a>.
-</p>
-
-The following table describes the Create Network dialog UI elements:
-
-<table style="text-align: left; vertical-align: top; min-width:700px;">
-
-<tr style="background-color: #C8C8C8;">
-<th> UI Elements </th>
-<th> Description </th>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td colspan="2"><b>Network Tab</b></td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> <b>Type</b> </td>
-<td> Enter the network type. </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td><b>Logical Interface</b> </td>
-<td> Select one of these values associated with the network type:
-<ul>
-<li>bmc
-<li>intf0
-<li>intf1
-<li>intf2
-</ul>
-</td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td><b>Subnet</b> </td>
-<td>
-   <p>IP address associated with the network type.</p>
-</td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td><b>Netmask</b> </td>
-<td> Enter the 32-bit number used to distinguish the network and host portions of an IP address. </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> <b>Bridge Enabled</b> </td>
-<td> Select True or False.
-<ul>
-<li> <b>False</b> (Recommended) &mdash; Do not add a bridge interface on top of the interface for the corresponding network.
-<li> <b>True</b> &mdash; Add a bridge interface on top of the interface for the corresponding network.
-</ul>
-</td>
-</tr>
-
-<tr style="background-color: #f8f8f8;">
-<td colspan="2"><b>VLAN Tab</b> </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td><b>VLAN ID</b> </td>
-<td> Enter the Virtual Local Area Network ID number associated with the network type. </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td><b>VLAN Enabled</b> </td>
-<td> Select True or False. 
-<ul>
-<li> <b>False</b> (Recommended) &mdash; Keep this default value if the networks  (particularly os_sdn and public) co-exist on 
-<b>separate</b> physical interfaces; if so, VLAN Enabled must be set to False. This means that the Network Mode will be set to <b>dual</b> by default on the 
-<a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#confirm-complete-install-dialog">Complete Install dialog</a>. </li>
-<li> <b>True</b> &mdash; Set to True if the networks (particularly os_sdn and public) co-exist on the same physical network; 
-if so, VLAN Enabled must be set to True. This means that the Network Mode will be set to <b>single</b> by default on the 
-<a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#confirm-complete-install-dialog">Complete Install dialog</a>. </li>
-</ul>
-</td>
-</tr>
-
-<tr style="background-color: #f8f8f8;">
-<td colspan="2"><b>Router Tab</b>
-</td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td><b>Router</b> </td>
-<td> Enter the device's IP Address that passes network traffic between different IP networks. </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> <nobr> <b>Router Preference</b> </nobr> </td>
-<td> Enter a numerical router preference. For example, assume there is more than one network defined in the deployment (admin, public, and os_sdn). 
-Each network requires a set of IP address configurations, including a router. When a node gets more than three networks and three routers defined, 
-the packets going out of the node outside of these networks need to know which router IP address has to route the traffic. 
-The Router Preference determines the router order. </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> <b>Create Network</b> button </td>
-<td> Click to save the settings. </td>
-</tr>
-				
-</table>
-
-
-
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-
-**END DO WE NEED THIS SECTION Q**
 
 ## Complete Install {#complete-install}
 
@@ -885,15 +752,15 @@ The following information provides details about the Complete Install panel.
 
 **Concepts:**
 
-* [Complete Install Overview](#complete-install-overview)
+* [Complete Install overview](#complete-install-overview)
 
-**UI Descriptions:**
+**UI descriptions:**
 
-* [Complete Install Page](#complete-install-page)
+* [Complete Install page](#complete-install-page)
  
-* [Confirm Complete Install Dialog](#confirm-complete-install-dialog)
+* [Confirm Complete Install dialog](#confirm-complete-install-dialog)
 
-### Complete Install Overview
+### Complete Install overview
 
 On the Complete Install panel, you complete the HP Cloud OS for Moonshot Administration node installation, which installs underlying components on the Administration node.
 
@@ -906,7 +773,7 @@ network and click <b>Update Address Ranges</b> to identify the incorrect address
 See <a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#edit-address-range">Edit Address Ranges Dialog</a>.
 </p>
 
-When the install is complete, the Operational Dashboard displays the Cloud tab (see the <a href="/cloudos/moonshot/manage/operational-dashboard/cloud-tab/">Cloud Tab</a> section of this topic), after the user clicks the **Continue...** button.
+When the install is complete, the Operational Dashboard displays the Cloud tab (see the <a href="/cloudos/moonshot/manage/operational-dashboard/cloud-tab/">Cloud Tab</a> section of this topic) after you click the **Continue...** button.
 
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Caution:</b> Be sure the values for the 
 Prerequisites, Networks Connections, and Network Settings are what you need, before you start the install process. Once the install process is triggered, 
@@ -914,7 +781,7 @@ no changes can be made. If you want to make changes, you need to start over by r
 For procedural instructions, see <a href="/cloudos/moonshot/install/">Install and Configure Your Cloud</a>.
 </p>
 
-### Complete Install Page
+### Complete Install page
 **To access**: Select the **Environment** tab > **Complete Install**.
 
 The following table describes the Complete Install page UI elements:
@@ -922,7 +789,7 @@ The following table describes the Complete Install page UI elements:
 <table style="text-align: left; vertical-align: top; min-width:700px;">
 
 <tr style="background-color: #C8C8C8;">
-<th> UI Elements </th>
+<th> UI element </th>
 <th> Description </th>
 </tr>
 
@@ -1002,7 +869,7 @@ See the <a href="/cloudos/moonshot/manage/operational-dashboard/cloud-tab">Cloud
 
 
 
-### Confirm Complete Install Dialog
+### Confirm Complete Install dialog
 
 **To access**: Select the **Environment** tab > **Complete Install** and click **Complete Install**.
 
@@ -1011,7 +878,7 @@ The following table describes the Confirm Complete Install UI elements:
 <table style="text-align: left; vertical-align: top; min-width:700px;">
 
 <tr style="background-color: #C8C8C8;">
-<th> UI Elements </th>
+<th> UI element </th>
 <th> Description </th>
 </tr>
 
@@ -1023,7 +890,7 @@ special characters. In the current release, it must end in .com, .org, .net, .ed
 
 <tr style="background-color: white; color: black;">
 <td> <b>Network Mode</b>  </td>
-<td> From the droop-down list, select <b>dual</b>.<br /> <br />
+<td> From the drop-down list, select <b>dual</b>.<br /> <br />
 <p><b>Note:</b>Dual network mode needs two Ethernet cards and allows you to completely separate traffic to/from the admin network and to/from the public network.</p>
 </td>
 </tr>

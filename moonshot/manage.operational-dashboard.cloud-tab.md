@@ -21,7 +21,7 @@ PageRefresh();
 
 <p style="font-size: small;"> <a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage/operational-dashboard/">&#9650; UP</a> | <a href="/cloudos/moonshot/manage/operational-dashboard/settings-tab/">NEXT &#9654;</a> </p>
 
-# Operational Dashboard: Cloud Tab
+# Operational Dashboard: Cloud tab
 
 The Cloud tab contains the following panels on which you complete the installation process to create a cloud, and 
 download install modules and plugins. For the installation process, you must complete the Manage Nodes and Manage Clouds panels in the order 
@@ -31,12 +31,12 @@ they are displayed.
   
 * [Manage Clouds](#manage-clouds)
     
-* [Updates and Extensions](#updates-and-extensions) 
+* [Updates and extensions](#updates-and-extensions) 
 
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:600px; border: 1px dotted #000000;"> <b>Note:</b> The Cloud tab does not appear until you have 
 completed all the installation steps on the <a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab">Environment tab</a>.</p>
 
-For procedural instructions, see [Install and Configure Your Cloud](/cloudos/moonshot/install/).
+For procedural instructions, see [Install and configure your cloud](/cloudos/moonshot/install/).
 
 ## Manage Nodes
 
@@ -44,33 +44,33 @@ The following information provides details about the Manage Nodes panel.
 
 **Concepts:**
 
-* [Manage Nodes Overview](#manage-nodes-overview)
+* [Manage Nodes overview](#manage-nodes-overview)
 
-**UI Descriptions:**
+**UI descriptions:**
 
-* [Manage Nodes Page](#manage-nodes-page)
+* [Manage Nodes page](#manage-nodes-page)
 
-* [Edit Node Dialog](#edit-node-dialog)
+* [Edit Node dialog](#edit-node-dialog)
 
-* [Manage Nodes Details Page](#manage-nodes-details-page) 
+* [Manage Nodes Details page](#manage-nodes-details-page) 
 
 
-### Manage Nodes Overview
+### Manage Nodes overview
 
 The Manage Nodes panel lists all of the nodes that have been discovered through the PXE-boot process. Nodes that are Allocated can be 
 subsequently used as part of a Cloud installation. Nodes can be edited so that they have meaningful names or descriptions. Clicking on a node's 
 ID gives more information about that node, including its role in a cloud deployment.
 
-Before you begin, ensure that all Cloud Prerequisites are fulfilled.
+Before you begin, ensure that all HP Cloud OS for Moonshot prerequisites are fulfilled.
 
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px; border: 1px dotted #000000;"> <b>Note:</b> Ensure that the boot order on all nodes is configured to 
 boot from the network first (this only occurs once as the PXE service will not try to network boot a node again if it has already done so).</p>
 
-For procedural instructions on setting up and configuring your nodes, see [Install and Configure Your Cloud](/cloudos/moonshot/install).
+For procedural instructions on setting up and configuring your nodes, see [Install and configure your cloud](/cloudos/moonshot/install).
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
-### Manage Nodes Page
+### Manage Nodes page
 
 **To access**: Select the **Cloud** tab > **Manage Nodes**.
 
@@ -79,7 +79,7 @@ The following table describes the Manage Nodes page UI elements:
 <table style="text-align: left; vertical-align: top; min-width:700px;">
 
 <tr style="background-color: #C8C8C8;">
-<th>UI Elements</th>
+<th>UI element</th>
 <th>Description</th>
 </tr>
 
@@ -156,7 +156,7 @@ A node that is in the Deployed state cannot be reset. When a node is reset, it i
 
 
 
-### Edit Node Dialog
+### Edit Node dialog
 
 **To access**: Select the **Cloud** tab > **Manage Nodes** > **Edit Node** for the node you want to edit.
 
@@ -165,7 +165,7 @@ The following table describes the Edit Nodes dialog UI elements:
 <table style="text-align: left; vertical-align: top; min-width:700px;">
 
 <tr style="background-color: #C8C8C8;">
-<th>UI Elements</th>
+<th>UI element</th>
 <th>Description</th>
 </tr>
 
@@ -195,7 +195,7 @@ and numbers with no spaces or special characters. </p>
 
 
 
-### Manage Nodes Details Page
+### Manage Nodes Details page
 
 **To access**: Select the **Cloud** tab > **Manage Nodes** and click the node name link.
 
@@ -204,7 +204,7 @@ This page displays all the values used for the selected node. The following tabl
 <table style="text-align: left; vertical-align: top; min-width:700px;">
 
 <tr style="background-color: #C8C8C8;">
-<th>UI Elements</th>
+<th>UI element</th>
 <th>Description</th>
 </tr>
 
@@ -291,21 +291,21 @@ The following information provides details about the Manage Clouds panel.
 
 **Concepts:**
 
-* [Manage Clouds Overview](#manage-clouds-overview)
+* [Manage Clouds overview](#manage-clouds-overview)
 
-**UI Descriptions:**
+**UI descriptions:**
 
-* [Manage Clouds Page](#manage-clouds-page)
+* [Manage Clouds page](#manage-clouds-page)
     
-* [Create Cloud Dialog](#create-cloud-dialog)
+* [Create Cloud dialog](#create-cloud-dialog)
 
-* [Create Region Dialog](#create-region-dialog)
+* [Create Region dialog](#create-region-dialog)
 	
-* [Manage Clouds Details Page](#manage-clouds-details-page)
+* [Manage Clouds Details page](#manage-clouds-details-page)
 
 
 
-### Manage Clouds Overview
+### Manage Clouds overview
 
 The Manage Clouds panel lists all the clouds and compute regions available in the current environment and lets you manage clouds and their associated services. The simplest cloud has one Compute Region with one Compute Controller that manages the Baremetal host. 
 
@@ -313,7 +313,7 @@ The Manage Clouds panel lists all the clouds and compute regions available in th
 nodes &mdash; managed nodes cannot be shared between regions.</p> 
 
 
-### Manage Clouds Page {#manage-clouds-page}
+### Manage Clouds page {#manage-clouds-page}
 
 **To access**: Select the **Cloud** tab > **Manage Clouds** and click the cloud name link.
 
@@ -322,7 +322,7 @@ The following table describes the Manage Clouds page UI elements:
 <table style="text-align: left; vertical-align: top; min-width:700px;">
 
 <tr style="background-color: #C8C8C8;">
-<th>UI Elements</th>
+<th>UI element</th>
 <th>Description</th>
 </tr>
 
@@ -375,7 +375,7 @@ depending upon the context of the cloud and the compute regions.</p>
 
 </table> 
   
-### Create Cloud Dialog {#create-cloud-dialog}
+### Create Cloud dialog {#create-cloud-dialog}
 
 **To access**: Select the **Cloud** tab > **Manage Clouds** and click **Create Cloud**.
 
@@ -384,7 +384,7 @@ The following table describes the Create Cloud dialog UI elements:
 <table style="text-align: left; vertical-align: top; min-width:700px;">
 
 <tr style="background-color: #C8C8C8;">
-<th>UI Elements</th>
+<th>UI element</th>
 <th>Description</th>
 </tr>
 
@@ -498,7 +498,7 @@ showing the % completed on the <a href="/cloudos/moonshot/manage/operational-das
 </table> 
   
 
-### Create Region Dialog {#create-region-dialog}
+### Create Region dialog {#create-region-dialog}
 
 **To access**: Select the **Cloud** tab > **Manage Clouds** and click **Create Compute Region** for the corresponding cloud.
 
@@ -510,7 +510,7 @@ The following table describes the Create Region dialog UI elements:
 <table style="text-align: left; vertical-align: top; min-width:700px;">
 
 <tr style="background-color: #C8C8C8;">
-<th>UI Elements</th>
+<th>UI element</th>
 <th>Description</th>
 </tr>
 
@@ -560,7 +560,7 @@ You can now add additional compute regions. The added compute regions appear on 
 
 </table>  
 
-### Manage Clouds Details Page
+### Manage Clouds Details page
 
 **To access**: Select the **Cloud** tab > **Manage Clouds** and click the cloud name link.
 
@@ -571,7 +571,7 @@ The following table describes the Manage Clouds Details page UI elements:
 <table style="text-align: left; vertical-align: top; min-width:700px;">
 
 <tr style="background-color: #C8C8C8;">
-<th>UI Elements</th>
+<th>UI element</th>
 <th>Description</th>
 </tr>
 
@@ -669,26 +669,26 @@ The following table describes the Manage Clouds Details page UI elements:
 
 The following information provides details about the Updates and Extensions panel.
 
-**Concepts::**
+**Concepts:**
 
-* [Updates and Extensions Overview](#updates-and-extensions-overview) 
+* [Updates and Extensions overview](#updates-and-extensions-overview) 
 
 **UI Descriptions:**
 
-* [Updates and Extensions Page](#updates-and-extensions-page) 
+* [Updates and Extensions page](#updates-and-extensions-page) 
 
-* [Configure Dialog](#configure-dialog) 
+* [Configure dialog](#configure-dialog) 
 
-* [Import Dialog](#import-dialog) 
+* [Import dialog](#import-dialog) 
 
 
-### Updates and Extensions Overview
+### Updates and Extensions overview
 
 The updates and extensions feature allows you to connect to, list, and retrieve hot fixes and updates from the HP Cloud OS for Moonshot Distribution Network (CODN) and apply them to your HP Cloud OS for Moonshot environment. You can also import hot fixes and updates from a file system to the HP Cloud OS for Moonshot environment and install them. In this topic, such hot fixes and updates are referred to as *content packages*. After a package is installed, you can view product and package details.
 
 The Update and Extensions page will be blank for the first-time user. You need to configure your credentials for the CODN to view the updates.
 
-### Updates and Extensions Page
+### Updates and Extensions page
 
 **To access**: Select the **Cloud** tab > **Updates and Extensions**.
 
@@ -697,7 +697,7 @@ The following table describes the Updates and Extensions page UI elements:
 <table style="text-align: left; vertical-align: top; min-width:700px;">
 
 <tr style="background-color: #C8C8C8;">
-<th>UI Elements</th>
+<th>UI element</th>
 <th>Description</th>
 </tr>
 
@@ -767,7 +767,7 @@ The following table describes the Updates and Extensions page UI elements:
 </table> 
 
 
-### Configure Dialog
+### Configure dialog
 
 **To access**: Select the **Cloud** tab > **Updates and Extensions**, and then the **Configure** button on the Updates and Extensions page.
 
@@ -776,7 +776,7 @@ The following table describes the Configure dialog UI elements:
 <table style="text-align: left; vertical-align: top; min-width:700px;">
 
 <tr style="background-color: #C8C8C8;">
-<th>UI Elements</th>
+<th>UI element</th>
 <th>Description</th>
 </tr>
 
@@ -797,7 +797,7 @@ The following table describes the Configure dialog UI elements:
 
 </table> 
 
-### Import Package Dialog
+### Import Package dialog
 
 **To access**: Select the **Cloud** tab, > **Updates and Extensions**, and then click the **Import** button on the Updates and Extensions page.
 
@@ -806,7 +806,7 @@ The following table describes the Import Package dialog UI elements:
 <table style="text-align: left; vertical-align: top; min-width:700px;">
 
 <tr style="background-color: #C8C8C8;">
-<th>UI Elements</th>
+<th>UI element</th>
 <th>Description</th>
 </tr>
 

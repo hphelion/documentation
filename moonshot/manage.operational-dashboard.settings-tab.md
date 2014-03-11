@@ -21,26 +21,26 @@ PageRefresh();
 
 <p style="font-size: small;"> <a href="/cloudos/moonshot/manage/operational-dashboard/cloud-tab/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage/operational-dashboard/">&#9650; UP</a> | <a href="/cloudos/moonshot/manage/administration-dashboard/">NEXT &#9654;</a> </p>
 
-# Operational Dashboard: Settings Tab
+# Operational Dashboard: Settings tab
 
 The Settings tab contains the following panels:
 
-* [User Settings](#user-settings)
+* [User settings](#user-settings)
 
 * [License](#license)
 
 * [About](#about) 
 
-For procedural instructions, see [Install and Configure Your Cloud](/cloudos/moonshot/install/).
+For procedural instructions, see [Install and configure your cloud](/cloudos/moonshot/install/).
 
-## User Settings {#user-settings}
+## User settings {#user-settings}
 
 This topic provides details about the User Settings panel. The following table describes the User Settings UI elements:
 
 <table style="text-align: left; vertical-align: top; min-width:600px;">
 
 <tr style="background-color: #C8C8C8;">
-<th> UI Elements </th>
+<th> UI element </th>
 <th> Description </th>
 </tr>
 
@@ -77,7 +77,7 @@ On the License page, you can view the number of days remaining on your current H
 <table style="text-align: left; vertical-align: top; min-width:700px;">
 
 <tr style="background-color: #C8C8C8;">
-<th> UI Elements </th>
+<th> UI element </th>
 <th> Description </th>
 </tr>
 
