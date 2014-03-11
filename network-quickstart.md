@@ -68,8 +68,8 @@ When you first activate the compute service, a [default](#default) configuration
 This document introduces you to the HP Networking Service and provide steps to get you up and running with a network configuration, performing the following tasks: 
 
 - [Viewing network and router details](#NetworkTopo)
-- [Creating a network and subnet](#Enabling)
-- [Connecting to a network](#AssignRouter)
+- [Creating a network and subnet](#CreateNetwork)
+- [Connecting to a network](#Connect)
 
 HP Cloud Networking allows you to perform many tasks beyond those described here including:
 
@@ -267,7 +267,7 @@ The HP Cloud environment command-line interface (CLI) software for Windows Power
 
 		new-subnet -n testSubnet -nid bd1c30f7-71f1-455e-b91e-8d03da7f5224 -ipv 4 -c "10.0.6.0/24" -a "10.0.6.20", "10.0.6.22" , "10.0.6.26", "10.0.6.29" 
 
-### Connecting to a network ### {#ConnectNetwork}
+### Connecting to a network ### {#Connect}
 
 After the new network and subnet are created, you can connect the network to the router. A router and network connect through an *interface* from the router to the network.
 
