@@ -55,7 +55,7 @@ If you choose to design and implement a file-based solution, you will encounter 
     - Database
     - Log files
 
-* The Controller node and Baremetal host require a synchronized backup of to maintain their states.
+* The Controller node and Baremetal host require a synchronized backup to maintain their states.
 * The Admin node can be occasionally backed up.
 
 * The Controller node and Baremetal host require backups on a regular basis.
