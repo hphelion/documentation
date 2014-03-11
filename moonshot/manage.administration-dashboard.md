@@ -19,15 +19,17 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage/">&#9650; UP</a> | <a href="/cloudos/moonshot/manage/administration-dashboard/before-you-begin/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage/">&#9650; UP</a> | NEXT &#9654; </p>
 
 # HP Cloud OS for Moonshot Administration Dashboard Help
 
 Welcome to the HP Cloud OS for Moonshot Administration Dashboard Help, which provides information about its user interface dialogs and options.
 
+The <a href="http://docs.hpcloud.com/cloudos/moonshot/pdf/HP-Cloud-OS-Administration-Dashboard-Help.pdf">Administration Dashboard Help</a> is available in PDF format at this time.  
+
+**INTERNAL REVIEWERS:** The PDF will reside on the server when we release. For now, please refer to the emailed attachment from John.
+
 <!--
-* Coming soon in the format of other HP Cloud OS for Moonshot topics on this documentation site. For now, please see <a href="http://docs.hpcloud.com/cloudos/administration-dashboard/index.htm">this copy on the website</a>. 
--->
 
 * [Before You Begin with the Administration Dashboard Help](/cloudos/moonshot/manage/administration-dashboard/before-you-begin/)
 
@@ -41,6 +43,5 @@ Welcome to the HP Cloud OS for Moonshot Administration Dashboard Help, which pro
 
 * [Administration Dashboard Tasks by Tab](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/)
 
-
-
+--> 
 
