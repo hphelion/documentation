@@ -30,17 +30,6 @@ The Networking service offers flexibility for the cloud administrator to configu
 
 The Networking service supports a tenant having multiple private networks, and allows tenants to choose their own IP addressing scheme (even if those IP addresses overlap with those that other tenants use), enabling the migration of applications to the cloud without changing IP addresses.
 
-HP Public Cloud compute activation comes with a default configuration that includes: {#default}
-
-* A network 
-* A subnet
-* A router for connecting the subnets to the Internet
-* A security group with basic server options
-
-You can use the default network to deploy HP Public Cloud virtual server instances, or [modify the network configuration](#customize) using the HP Public Console or the HP Cloud 13.5 CLI.
-
-**Note:** The default security group allows all traffic to and from the network. For information on security groups in version 13.5, please see the knowledge base article [Managing Your Security Groups](https://community.hpcloud.com/article/managing-your-security-groups-135) for details.
-
 ### Audience ### {#audience}
 This guide is designed for those in the following or similar roles:   
 
@@ -57,6 +46,20 @@ To use this solution effectively, you should be familiar with:
 All of the procedures in this section require that you access the Networks or Routers tab in the Project section of the HP Public Cloud Console, <a name="NetworkTab">as shown</a>:
 
    <br><img src="media/network-tab-crop.png"  alt="" />
+
+
+## Using the Default Network ## {#default}
+
+HP Public Cloud compute activation comes with a default configuration that includes: 
+
+* A network 
+* A subnet
+* A router for connecting the subnets to the Internet
+* A security group with basic server options
+
+You can use the default network to [deploy HP Public Cloud virtual server instances](#CreateServer), or [modify the network configuration](#customize) using the HP Public Console or the HP Cloud 13.5 CLI.
+
+**Note:** The default security group allows all traffic to and from the network. For information on security groups in version 13.5, please see the knowledge base article [Managing Your Security Groups](https://community.hpcloud.com/article/managing-your-security-groups-135) for details.
 
 
 ##Customizing your network## {#customize}
