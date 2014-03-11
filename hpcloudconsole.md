@@ -428,7 +428,7 @@ After completing these tasks, you receive the metrics in JSON format at the loca
 
 2. Click "+Create Alarm" in the upper-right hand of the "Alarms" page.
 
-    <img src="media/Alarms1/png" width="580" alt="" />
+    <img src="media/Alarms1.png" width="580" alt="" />
 
 3. Enter alarm name in "Create Alarm" box.
 
