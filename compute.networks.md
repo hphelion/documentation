@@ -15,12 +15,6 @@ You can use the default network to deploy HP Cloud compute virtual servers, or m
 
 You can now define and configure your own virtual network topology, including control of IP address ranges.
 
-
-
-## Accessing the HP Public Cloud Networking Service ##
-
-There are a  number of tools that you can use to access and manage the HP Cloud Networking Service.
-
 ###Using the console to access Networking### {#console}
 
 You can use the HP Public Cloud console to access HP Cloud Networking Service. For more information on using the HP Public Cloud console, see [Getting Started with HP Public Cloud Console](/hpcloudconsole).
