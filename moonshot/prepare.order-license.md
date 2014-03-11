@@ -12,7 +12,7 @@ product: moonshot
 
 # How to order and license HP Cloud OS for Moonshot
 
-There are a set of HP Cloud OS for Moonshot SKUs for one-year to three-year licenses. If you have not already done so, you can order these in the same 
+There are two HP Cloud OS for Moonshot SKUs, for a one-year or three-year license. If you have not already done so, you can order the license in the same 
 way you order other HP Server products (hardware or software) directly through HP or through an HP channel partner.
 
 After ordering, you will receive via email or printed letter a certificate that you will redeem at HP.com. When you go to HP.com, you will register for 
