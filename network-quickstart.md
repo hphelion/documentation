@@ -68,6 +68,21 @@ If you have not previously created an account and activated the compute service 
 
 Make sure you activate a compute instance in HP Cloud version 13.5 to access the networking and VPN capabilities.
 
+## Viewing your network in the HP Public Cloud Console ## {#NetworkTopo}
+
+The Network Topology tab is a physical representation of your network configuration.
+
+After activating the Compute 13.5 region, HP Public Cloud creates a default network that looks like the following diagram. 
+
+   <br><img src="media/compute-network-topology-def-crop.png"  alt="" />
+
+A default router (here, labeled Router 1) is created and attached to the external network (labeled "Ext-Net") so it can be reached from the Internet. A default network (labeled Network1) is also created and attached to the router.
+
+The default configuration contains a subnet that serves as your DHCP server. The subnet has a CIDR of 10.0.0.0/24, which is the pool of fixed private IPs that are assigned to your instances. 
+
+Any instance you create can be attached to your network, using a port automatically created using an fixed private IP from your subnet.
+
+
 
 ## Using the Default Network ## {#default}
 
@@ -105,21 +120,6 @@ For more information on networking capabilities, see:
 
 **Note:** You can also use the [HP Cloud v13.5 Compute Service API](https://docs.hpcloud.com/api/v13/compute/) and [HP Cloud v13.5 Networking API](https://docs.hpcloud.com/api/v13/networking/) to configure your network. 
 
-
-
-### Viewing your network in the HP Public Cloud Console ### {#NetworkTopo}
-
-The Network Topology tab is a physical representation of your network configuration.
-
-After activating the Compute 13.5 region, HP Public Cloud creates a default network that looks like the following diagram. 
-
-   <br><img src="media/compute-network-topology-def-crop.png"  alt="" />
-
-A default router (here, labeled Router 1) is created and attached to the external network (labeled "Ext-Net") so it can be reached from the Internet. A default network (labeled Network1) is also created and attached to the router.
-
-The default configuration contains a subnet that serves as your DHCP server. The subnet has a CIDR of 10.0.0.0/24, which is the pool of fixed private IPs that are assigned to your instances. 
-
-Any instance you create can be attached to your network, using a port automatically created using an fixed private IP from your subnet.
 
 ### Creating a network ### {#CreateNetwork}
 
