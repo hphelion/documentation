@@ -27,7 +27,7 @@ Welcome to the HP Cloud OS for Moonshot Administration Dashboard Help, which pro
 
 The <a href="http://docs.hpcloud.com/cloudos/moonshot/pdf/HP-Cloud-OS-for-Moonshot-Administration-Dashboard-Help.pdf" target="pdf">Administration Dashboard Help</a> is available in PDF format at this time.  
 
-**INTERNAL REVIEWERS:** The PDF will reside on the server when we release. For now, please refer to the emailed attachment from John.
+**INTERNAL REVIEWERS:** The PDF resides on the live server but is not (yet) linked from any HTML pages on the live site. We'll push this HTML page (with internal note removed) along with all the 1.0 documentation to the live site when we ship. 
 
 <!--
 
