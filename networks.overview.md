@@ -9,7 +9,7 @@ product: compute
 
 Leveraging [OpenStack Networking](http://www.openstack.org/software/openstack-networking/), HP Cloud Networking is a virtual networking service that provides network connectivity and addressing for HP Cloud compute devices. 
 
-In the 13.5 release, HP Cloud compute and networking services are separate entities, integrating services and providing new features. 
+In the 13.5 release, HP Public Cloud compute and networking services are separate entities, integrating services and providing new features. 
 
 You can use the default network to deploy HP Cloud compute virtual servers, or modify the default network to expand networking capabilities.
 

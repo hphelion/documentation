@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Cloud Networking: Quick start guide"
-permalink: /compute/network-quick-start
+permalink: /compute/network-quick-start/
 product: compute
 categories: neutron
 tags: networking neutron vpn
@@ -58,21 +58,6 @@ All of the procedures in this section require that you access the Networks or Ro
 
    <br><img src="media/network-tab-crop.png"  alt="" />
 
-### Key Terms ### {#terms}
-
-**Network**: An isolated L2 segment, analogous to VLAN in the physical networking world. A network allows you to define network connectivity and addressing in the Cloud, providing "networking as a service" between interface devices managed by other HP Public Cloud, such as compute. 
-
-**Subnet**: A block of v4 or v6 IP addresses and associated configuration state.
-
-Contains IP address blocks that assign IP addresses to virtual servers. In addition, a subnet can have a gateway, a list of DNS name servers, and host routes. Information provided by DHCP is pushed to servers with interfaces associated with the subnet.
-
-**Port**: A connection point for attaching a single device, such as a virtual server's NIC, to a virtual network.  The port describes the associated network configuration, such as the MAC and IP addresses to be used by the attached device.
-
-**Router**: A device that forwards data packets along networks. 
-
-**Security Groups and Security Group Rules**: Security groups and security group rules allow you to specify the type of traffic and direction (inbound/outbound) that is allowed to pass through a port. A security group is a container for security group rules.
-
-When a port is created in HP Cloud Networking it is associated with a security group. If a security group is not specified the port is associated with a default security group. Security group default rules allow inbound traffic from the same subnet and all outbound traffic. You can add rules to this group to modify behavior. 
 
 ##Customizing your network## {#customize}
 
@@ -238,6 +223,49 @@ To see a graphic display of your network setup, login to the [Horizon Console](h
 
    <br><img src="media/compute-network-topology-create-crop.png"  alt="" />
 
+#### Using Windows PowerShell to create a network and subnet #### {#powershell}
+
+The HP Cloud environment command-line interface (CLI) software for Windows PowerShell allows Windows users to manage their HP Cloud services from the command line.
+
+1. On the 13.5 instance, launch a Windows PowerShell window.  
+
+	Select the shell appropriate to your system, either the 64-bit or 32-bit version. 
+
+2. Enter the HP Cloud environment CLI by entering:
+
+	`PS C:> cd HPCS:`
+
+3. Create a new network by executing the following command, using the appropriate values:
+
+	`new-network -n Name - asu AdminStateUp`
+
+	Where:
+
+		n - The name of new Network.
+
+		asu - Determines if the `AdminStateUp` flag is true or false.
+
+	The following example creates a new network named `testNet1` with AdminStateUp set to `true`.
+	
+		new-network "testNet1" -asu 
+
+4. Create a new subnet by executing the following command, using the appropriate values:
+
+	`new-subnet -nid NetworkID -ipv IPVersion -c CIDRValue -a AllocationPools`
+
+	Where:
+
+		nid - Subnet name.
+
+		ipv - Sets the IP Version
+
+		c - CIDR value.
+
+		a - Lists Allocation Pools, separating them by commas.
+
+	The following example creates a new subnet called `testSubnet`.
+
+		new-subnet -n testSubnet -nid bd1c30f7-71f1-455e-b91e-8d03da7f5224 -ipv 4 -c "10.0.6.0/24" -a "10.0.6.20", "10.0.6.22" , "10.0.6.26", "10.0.6.29" 
 
 ### Connecting to a network ### {#ConnectNetwork}
 
