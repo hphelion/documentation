@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Cloud Networking Overview"
-permalink: /compute/networks/
+permalink: /compute/networks
 product: compute
 
 ---
@@ -14,6 +14,10 @@ In the 13.5 release, HP Cloud compute and networking services are separate entit
 You can use the default network to deploy HP Cloud compute virtual servers, or modify the default network to expand networking capabilities.
 
 You can now define and configure your own virtual network topology, including control of IP address ranges.
+
+To get up and running quickly with your network, see [HP Cloud Networking: Quick start guide](/compute/network-quick-start).
+
+For more detailed information on the HP Public Cloud Networking Service, see [Getting Started with HP Cloud Networking](/compute/network/getting-started).
 
 ## Using the console to access Networking ## {#console}
 
@@ -38,7 +42,6 @@ You can use any of several command-line interface software to access HP Cloud co
 
 Check out the following pages for more information on using HP Cloud Networking services:
 
-- [Getting Started with HP Cloud Networking](/compute/network/getting-started)
 - [Known Issues and Best Practices in Compute and Networking in 13.5](https://community.hpcloud.com/article/known-issues-and-best-practices-compute-and-networking-135)
 - [Getting Started with Compute 13.5](https://community.hpcloud.com/article/getting-started-compute-135)
 - [OpenStack networking wiki](https://wiki.openstack.org/wiki/Quantum)
