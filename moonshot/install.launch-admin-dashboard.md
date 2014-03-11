@@ -348,7 +348,7 @@ The Single Chassis View also displays the Events log panel, to the right of the 
 
 The Chassis Snapshot visually represents the chassis with all the cartridges and nodes along with power states of the cartridges.
 
-**Note:** A chassis has different cartridges in it, and each cartridge can serve one or more node(s).
+**Note:** A chassis has one or more cartridges, and each cartridge can include one or more nodes.
 
 The following table displays a list of icons and their description. These icons are displayed next to the chassis on the right panel. 
 It also displays the complete state of the chassis.
@@ -481,10 +481,11 @@ To view the workload and configuration details of a particular node:
 
 5. Items 3 and 4 also apply to the selection of multiple cartridges and nodes. 
 
-6. The following icon selects all the cartridge/nodes in the table.  <img src="media/cos4ms-select-all-icon.png" />
+6. The following icon indicates you have selected all the cartridge/nodes in the table.  <img src="media/cos4ms-select-all-icon.png" />   
 
-7. The following icon selects all the cartridge/nodes in the table.  <img src="media/cos4ms-deselect-all-icon.png" />
-
+<!--
+7. The following icon indicates you have deselected all the cartridge/nodes in the table.  <img src="media/cos4ms-deselect-all-icon.png" />
+--> 
 
 ## Launch an Instance from an Image
 
