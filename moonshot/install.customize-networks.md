@@ -79,7 +79,9 @@ To edit the public network:
 </ul>
 
 <li>On the <b>Router</b> tab, in the <b>Router</b> box, enter the <b>Gateway IP</b> address of your Public IP address range. 
-The Router Preference default is sufficient. 
+The Router Preference default value is 5 and is sufficient.
+<p><b>Note:</b> The Router Preference value indicates the number of hops to reach the destination; the lesser the value, the higher the priority of the network.</p>
+
 </ul> </li>
 </ol>
  
@@ -134,8 +136,7 @@ To edit the Nova_Flat network:
 <li>VLANID = 172
 </ul>
 
-<li>On the <b>Router</b> tab, in the <b>Router</b> box, enter the <b>Gateway IP</b> address of your Public IP address range. 
-The Router Preference default is sufficient. 
+<li>On the <b>Router</b> tab, in the <b>Router</b> box, enter the <b>Gateway IP</b> address of your Public IP address range. The Router Preference default value is 10 and is sufficient.
 </ul> </li>
 
 <li>  Click <b>Update Network</b> to save your changes. </li>
@@ -193,8 +194,7 @@ To edit the IPMI network:
 <li>VLANID = 172
 </ul>
 
-<li>On the <b>Router</b> tab, in the <b>Router</b> box, enter the <b>Gateway IP</b> address of your Public IP address range. 
-The Router Preference default is sufficient. 
+<li>On the <b>Router</b> tab, you do not need to specify the <b>Gateway IP</b> address in the <b>Router</b> box, and the Router Preference default value is sufficient. 
 </ul> </li>
 
 <li>  Click <b>Update Network</b> to save your changes. </li>

@@ -61,13 +61,10 @@ Refer to the [Support Matrix](/cloudos/moonshot/prepare/supportmatrix/) for deta
 * [Server infrastructure for HP Cloud OS for Moonshot](/cloudos/moonshot/prepare/supportmatrix/#server)
 * [Hypervisor recommendations for HP Cloud OS for Moonshot](/cloudos/moonshot/prepare/supportmatrix/#hypervisor)
 * [Node requirements for HP Cloud OS for Moonshot](/cloudos/moonshot/prepare/supportmatrix/#nodereq)
-* [Bulk server provisioning node requirements for HP Cloud OS for Moonshot](/cloudos/moonshot/prepare/supportmatrix/#nodereq-bulk)
 * [Moonshot chassis firmware version](/cloudos/moonshot/prepare/supportmatrix/#firmware)
-* [Moonshot cartridges supported](/cloudos/moonshot/prepare/supportmatrix/#cartridges)
 * [Operating systems supported ](/cloudos/moonshot/prepare/supportmatrix/#ossupp)
-* [Workloads supported](/cloudos/moonshot/prepare/supportmatrix/#workloads)
 * [Supported deployment scenario](/cloudos/moonshot/prepare/supportmatrix/#deployment)
-* [Software requirements](/cloudos/moonshot/prepare/supportmatrix/#software)
+* [Included software](/cloudos/moonshot/prepare/supportmatrix/#software)
 
 ### Network Infrastructure
 

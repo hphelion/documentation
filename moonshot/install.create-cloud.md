@@ -33,7 +33,9 @@ Now that the Admin Node is installed, it's time to manage the nodes, and then cr
 
 ## Manage Cloud Controller and Baremetal Host
 
-Before starting this process, ensure that the boot order on all nodes (virtual machines) is configured to boot from the network first.  This only occurs once as the PXE service will not try to network boot a node again if it has already done so.
+Before you starting managing the Cloud Controller and Baremetal Host, ensure that the boot order on all nodes (virtual machines) is configured to boot from the network first.
+
+>**Note:** When creating virtual machines on a hypervisor, you have to set the first boot option to PXE boot since there is no operating system installed on  the VMs. After the OS is installed these VMs will not search for a PXE boot even if they fail to boot from hard disk.
 
 1. Power ON the Controller and Baremetal Host.
 
@@ -50,8 +52,9 @@ Before starting this process, ensure that the boot order on all nodes (virtual m
 
 7. (Optional) Click <b>Alias</b> to view the details of the nodes.
 
+<!--
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Tips:</b> Access the baremetal node's remote console to monitor the operating system installation. Some of your hardware may require non-free firmware files to operate. The firmware can be loaded from removable media, such as a USB stick or CD/DVD. If a dialog box displays prompting you to load missing firmware, provide the appropriate drive. In the case where a node results in a status = Off, select the <b>More</b> > <b>Reboot Node</b> action for the node.  If you want to set the node to the Not Allocated state, select <b>More</b> > <b>Reset Node</b> action for the node. </p>
-
+-->
 To search for a particular node:
 
 * In the Nodes page, in the Filter textbox, enter the search criteria.
