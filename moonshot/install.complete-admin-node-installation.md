@@ -34,7 +34,7 @@ To complete the Admin Node installation:
 
 2. On the confirmation page, specify the following information.
 
- a. **Domain Name:** Enter the top-level domain name for your cloud. By default, it is set to cloudos.local. The name you provide must consist of lowercase characters with no numbers or special characters. It may end in any valid web domain type, such as (but not limited to) .com, .org, .net, .edu, .mil, .gov. 
+ a. **Domain Name:** Enter the top-level domain name for your cloud. By default, it is set to <b>cloudos.local</b>. The name you provide must consist of lowercase characters with no numbers or special characters. It may end in any valid web domain type, such as (but not limited to) .com, .org, .net, .edu, .mil, .gov. 
 
  b. **Network Mode:** The Network Mode is <b>Dual</b> by default. Dual network mode needs two Ethernet cards and allows you to completely separate traffic to/from the admin network and to/from public network.
  

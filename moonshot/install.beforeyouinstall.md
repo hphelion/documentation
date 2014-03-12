@@ -147,9 +147,9 @@ In addition to the information presented already in this topic, please review th
 * In <b>Edit Prerequisites</b> > <b>Admin Node Internet Access</b> > <b>Network</b>, you will need to specify your:
  * NIC details for the public interface
  * Http Proxy information:
-   * Host
-   * Port-8080
-   * Non-Proxy Hosts:  10.\*|192.\*|127.0.\*|localhost
+  * Host
+  * Port-8080
+  * Non-Proxy Hosts:  10.\*|192.\*|127.0.\*|localhost
 
 * In <b>Environment</b> > <b>Networks</b>, for your <b>Public</b> network: 
  * On the <b>Edit Network</b> dialog, you will need to specify your Subnet, Netmask, and Router IP values.
@@ -164,12 +164,17 @@ In addition to the information presented already in this topic, please review th
  * On the <b>Edit Network Ranges</b> dialog, you will need to specify your Node Type, IPV4 Start Address, and IPV4 End Address values.
 
 * <b>Note</b>: You will be able to skip the Edit options for the Admin Network. 
+
+* In <b>Environment</b> > <b>Complete Install</b>, you will be asked to enter the top-level domain name for your cloud. 
+The name you'll provide must consist of lowercase characters with no numbers or special characters. 
+It may end in any valid web domain type, such as (but not limited to) .com, .org, .net, .edu, .mil, .gov. 
  
 * In <b>Cloud</b> > <b>Manage Clouds</b> > <b>Create Cloud</b>, you will only need to enter a <b>Name</b> for your cloud. You can use default values for other options; however, plan ahead 
 to specify new, non-default passwords for the Admin user, Arch user, and Trash user. 
 
 * In <b>Cloud</b> > <b>Manage Clouds</b> > <b>Create Compute Region </b>dialog, you will need to enter a <b>Name</b> for your region. 
 Recommended: create multiple regions.  On each Create Compute Region dialog, on the Controller & Compute Nodes tab, you will need to enter the number of nodes that participate in the region. 
+
 
 ### Administration Dashboard Checklist
 

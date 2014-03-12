@@ -67,7 +67,7 @@ To create a cloud:
 
 2. Click <b>Create Cloud</b> to open the Create Cloud dialog.
 
-3. Specify a <b>Cloud Name</b>. This will be the Domain name that is used to initialize Keystone and will be displayed in the Administration Dashboard. 
+3. Specify a <b>Cloud Name</b>. This will be the name that is used to initialize Keystone and will be displayed in the Administration Dashboard. 
 **Note:** A cloud name must contain only letters and numbers. It cannot contain spaces or special characters.
 
 4. Select the <b>Controllers</b> tab and specify which node will have the Cloud Controller, Network Controller, and Storage Controller respective services. You install all these core controller services on different nodes or on the same Cloud Controller.
