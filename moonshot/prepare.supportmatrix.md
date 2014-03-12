@@ -41,16 +41,18 @@ In the following sections, we list the recommendations for memory, processors an
 
 
 
+
+
 ## Server infrastructure for HP Cloud OS for Moonshot {#server}
 
 We recommend your Proliant server contains the following:
 
 * Quad Core Processor
 * Hard disk drive with a minimum of 500 GB of space
-* Three (3) ethernet ports
+* Three (3) Ethernet ports
 * 72 GB of memory
 
-**Note:** For information on cartridges and workloads, consult the [server website](http://h17007.www1.hp.com/us/en/enterprise/servers/products/moonshot/index.aspx#tab=TAB2)
+**Note:** For information on cartridges and workloads, consult the [server website](http://h17007.www1.hp.com/us/en/enterprise/servers/products/moonshot/index.aspx#tab=TAB2).
 
 ## Hypervisor recommendations for HP Cloud OS for Moonshot {#hypervisor}
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
@@ -120,6 +122,7 @@ We recommend your Proliant server contains the following:
 </table>
 
 
+
 **Important:** The Baremetal host's internal storage space depends on the number of nodes planned to be provisioned and the size of the images being used to provision. To calculate your internal storage needs, use the following equation:
 
     Baremetal internal storage = X * N + N * 110MB + 100GB
@@ -165,6 +168,7 @@ Where <b>X</b> is the average image size in gigabytes, and <b>N</b> is the expec
 <td>2013.12.1 and above</td>
 </tr>
 </table>
+
 
 
 ## Operating systems supported {#ossupp}
