@@ -19,24 +19,24 @@ PageRefresh();
 
 <p style="font-size: small;"> <a href="/cloudos/moonshot/manage/utilities/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage/">&#9650; UP</a> | <a href="/cloudos/moonshot/manage/operational-dashboard">NEXT &#9654;</a> </p>
 
-# HP Cloud OS for Moonshot Troubleshooting
+# HP Cloud OS for Moonshot troubleshooting
 HP Cloud OS for Moonshot is an OpenStack-based cloud platform to manage HP Moonshot servers. Different usage scenarios might lead to abnormal system behavior or known issues. This topic describes all the known issues that you might encounter. To help you troubleshoot these issues, we have provided possible resolutions.
 
 For easy reference, we categorized the known issues and solutions as follows:
 
 
-* [Operation Dashboard: Cloud Infrastructure Readiness](#opdash-cloud-ready)
-* [Operation Dashboard: Cloud and Region](#opdash-cloud-region)
-* [Administration Dashboard: Moonshot Management](#admindash-moon-manage)
-* [Administration Dashboard: Instance Provisioning &gt; Elemental](#admindash-instance-element)
+* [Operation Dashboard: Cloud infrastructure readiness](#opdash-cloud-ready)
+* [Operation Dashboard: Cloud and region](#opdash-cloud-region)
+* [Administration Dashboard: Moonshot management](#admindash-moon-manage)
+* [Administration Dashboard: Instance provisioning &gt; elemental](#admindash-instance-element)
 * [Administration Dashboard: Topology Designer](#admindash-topology)
-* [Administration Dashboard: Instance Provisioning &gt; Topology-based](#admindash-instance-topology)
+* [Administration Dashboard: Instance provisioning &gt; topology-based](#admindash-instance-topology)
 * [Administration Dashboard: Workloads](#admindash-workloads)
-* [Log/Configuration Files and Location](#log-config-files)
+* [Log/configuration files and location](#log-config-files)
 
 If you need further assistance, feel free to contact [HP Customer Support](https://www.hpcloud.com/contact_us).
 
-## Operational Dashboard: Cloud Infrastructure Readiness {#opdash-cloud-ready}
+## Operational Dashboard: Cloud infrastructure readiness {#opdash-cloud-ready}
 
 #### New node fails to PXE boot because of TFTP boot timeout error
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
@@ -78,7 +78,7 @@ If you need further assistance, feel free to contact [HP Customer Support](https
 
 <ol>
 <li>Ensure that you have chosen the correct NIC interface and it is connected to the public network.</li>
-<li>Re-apply the Operational Dashboard prerequisites.</li></ol>
+<li>Restart the node.</li></ol>
 For more information, check the <b>/var/log/cosmos/cosmos.log</b> and <b>/var/log/apache2/error.log</b> files on the Admin Node.</td></tr>
 </table>
 
@@ -87,6 +87,7 @@ For more information, check the <b>/var/log/cosmos/cosmos.log</b> and <b>/var/lo
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Operational Dashboard</th>
 </tr>
+<tr style="background-color: white; color: black;">
 <td>System Behavior/Message</td>
 <td>Manage Nodes section of the Cloud tab displays the state of the allocated node as 'Installing/Installed' for  an unusually long period of time.</td></tr>
 <tr style="background-color: white; color: black;">
@@ -116,6 +117,29 @@ For more information, check the <b>/var/log/cosmos/cosmos.log</b> and <b>/var/lo
 <li>Re-apply the Operational Dashboard prerequisites.</li></ol>
 For more information, check the <b>/var/log/cosmos/cosmos.log</b> and <b>/var/log/apache2/error.log</b> files on the Admin Node.</td></tr>
 </table>
+
+#### Launch Dashboard fails
+<table style="text-align: left; vertical-align: top; min-width: 400px;">
+<tr style="background-color: #C8C8C8;">
+<th colspan="2">Software Component: Operational Dashboard</th>
+</tr>
+<tr style="background-color: white; color: black;">
+<td>System Behavior/Message</td>
+<td>Dashboard fails to launch</td></tr>
+<tr style="background-color: white; color: black;">
+<td>Probable Cause</td>
+<td>The browser does not have correct proxy exceptions or there are no proxy exceptions set.</td></tr>
+<tr style="background-color: white; color: black;">
+<td>Possible Resolution</td>
+<td>Ensure your browser has the following set as proxy exceptions:
+<pre>10.*
+192.*
+127.0*
+localhost
+</pre></td></tr>
+</table>
+
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 ## Operational Dashboard: Cloud and Region {#opdash-cloud-region}
 
@@ -151,7 +175,7 @@ For more information, check the <b>/var/log/cosmos/cosmos.log</b> and <b>/var/lo
 <td>
 
 <ol>
-<li>Change log level to <b>info</b> for all compute and controller nodes. To do so, edit <b>/etc/chef/client.rb</b> and change <code>log_level:error</code> to <code>log_level:info</code>.</li>
+<li>Change log level to <b>info</b> for all Baremetal hosts and controller nodes. To do so, edit <b>/etc/chef/client.rb</b> and change <code>log_level:error</code> to <code>log_level:info</code>.</li>
 <li>Run <code>bluepill chef-client restart</code>.</li>
 <li>In the admin node, edit <b>/etc/chef/server.rb</b> and change <code>log_level:error</code> to <code>log_level:info</code> and reboot the server.</li>
 <li>Go to the crowbar UI (https://&lt;Admin node IP&gt;:3000) and re-apply the barclamp(s) that failed.</li>
@@ -161,9 +185,11 @@ For more information, check the <b>/var/log/cosmos/cosmos.log</b> and <b>/var/lo
 <b>Note:</b> Ensure the attributes like Network and Server Type selection are correct for the creation of Cloud or Region.</td></tr>
 </table>
 
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
 ## Administration Dashboard: Moonshot Management {#admindash-moon-manage}
 
-#### Internal server error from Skyline (Moonshot Management) with no additional information on exact error
+#### Internal server error from Moonshot Management with no additional information on exact error
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Administration Dashboard</th>
@@ -183,7 +209,7 @@ Check the following logs on the Controller node for exact details:<br>
 <li>/var/log/apollo/apollo.log</li></ul></td></tr>
 </table>
 
-#### "Not Authorized" error message from Skyline (Moonshot Management)
+#### "Not Authorized" error message from Moonshot Management
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Administration Dashboard</th>
@@ -201,7 +227,7 @@ Check the following logs on the Controller node for exact details:<br>
 <ul>
 <li>/var/log/skyline/skyline.log</li>
 <li>/var/log/apollo/apollo.log</li></ul>
-If this is because the X-Auth token expired, then sign out and log in again to Skyline to renew the token.</td></tr>
+If this is because the X-Auth token expired, then sign out and log in again to the Administration Dashboard to renew the token.</td></tr>
 </table>
 
 #### Moonshot chassis discovery takes a long time or sometimes fails
@@ -217,7 +243,7 @@ If this is because the X-Auth token expired, then sign out and log in again to S
 <td>Apollo service is unreachable or the chassis is unreachable at the given IP address.</td></tr>
 <tr style="background-color: white; color: black;">
 <td>Possible Resolution</td>
-<td>Check <b>/var/log/apollo/apollo.log</b> on both the Controller and Compute nodes for exact details.</td></tr>
+<td>Check <b>/var/log/apollo/apollo.log</b> on both the Controller nodes and Baremetal hosts for exact details.</td></tr>
 </table>
 
 #### Chassis refresh status is shown as "Failed" in the Datacenter table view
@@ -394,6 +420,8 @@ Most common causes are that the chassis is not set to Maintenance Mode or it has
 Close IE or Firefox and reopen to see the chassis in the Datacenter view. If this does not work, use  the Edit option in Chrome to rediscover the failed chassis and see it in the Datacenter view.</td></tr>
 </table>
 
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
 ## Administration Dashboard: Instance Provisioning &#9658; Elemental {#admindash-instance-element}
 
 #### Provisioning fails when using custom flavors
@@ -423,13 +451,13 @@ Provisioning fails when the <b>root_mb</b> in the flavor exactly matches the nod
 <td>nova-scheduler.log displays an error message: <b>Setting instance to Error state</b>.</td></tr>
 <tr style="background-color: white; color: black;">
 <td>Probable Cause</td>
-<td>There is no Baremetal node that matches the flavor specifications or a Baremetal node is set to maintenance mode.</td></tr>
+<td>There is no Baremetal host that matches the flavor specifications or a Baremetal host is set to maintenance mode.</td></tr>
 <tr style="background-color: white; color: black;">
 <td>Possible Resolution</td>
 <td>
 <ul>
-<li>Ensure the Baremetal nodes are <b>NOT</b> set to maintenance mode.</li>
-<li>Make sure you have a Baremetal node in the backend matching the product_id mentioned in the flavor.</li></ul></td></tr>
+<li>Ensure the Baremetal hosts are <b>NOT</b> set to maintenance mode.</li>
+<li>Make sure you have a Baremetal host in the backend matching the product_id mentioned in the flavor.</li></ul></td></tr>
 </table>
 
 #### Unable to provision instances due to no DHCP server found
@@ -439,7 +467,7 @@ Provisioning fails when the <b>root_mb</b> in the flavor exactly matches the nod
 </tr>
 <tr style="background-color: white; color: black;">
 <td>System Behavior/Message</td>
-<td>Error message displayed in in nova-compute log on the compute node: <b>No dhcp-server found</b>.</td></tr>
+<td>Error message displayed in in nova-compute log on the Baremetal host: <b>No dhcp-server found</b>.</td></tr>
 <tr style="background-color: white; color: black;">
 <td>Probable Cause</td>
 <td>The quantum-dhcp-agent might not be running in the controller or the controller is not able to reach the Baremetal host using the nova_flat network.</td></tr>
@@ -541,7 +569,7 @@ The current apollo service design takes 30 minutes to import the refreshed data 
 <li>Check to see if the Baremetal instances can forward packets from the public interface to the bridged interface.</li>
 <pre>sysctl -A | grep ip_forward</pre>
 <p><code>net.ipv4.ip_forward</code> should be set to <b>1</b>.</p>
-<li>Ensure you can communicate with the OpenStack Compute nodes from the client, and that any routing to these instances have the correct entries.</li></ol></td></tr>
+<li>Ensure you can communicate with the OpenStack Baremetal hosts from the client, and that any routing to these instances have the correct entries.</li></ol></td></tr>
 </table>
 
 #### Provisioning fails with an "Error" status in the Instances page
@@ -578,17 +606,17 @@ The current apollo service design takes 30 minutes to import the refreshed data 
 <td>Possible Resolution</td>
 <td>
 <ol>
-<li>Ensure the Baremetal host has sufficient resources to launch and is registered with the compute nodes.</li>
-<li>Check the /var/log/nova/nova-compute.log on the compute node for cause of failure.</li>
+<li>Ensure the Baremetal host has sufficient resources to launch and is registered with the nova baremetal-node-list.</li>
+<li>Check the /var/log/nova/nova-compute.log on the Baremetal host for cause of failure.</li>
 <li>Ensure the following specifications are there because they are necessary for provisioning:</li>
 <ul>
 <li>2013-10-18 18:17:09,225.225 4466 INFO nova.compute.manager [-] Updating bandwidth usage cache</li>
-<li>2013-10-18 18:22:52,753.753 4466 AUDIT nova.compute.resource_tracker [-] Auditing locally available compute resources</li>
+<li>2013-10-18 18:22:52,753.753 4466 AUDIT nova.compute.resource_tracker [-] Auditing locally available Baremetal resources</li>
 <li>2013-10-18 18:22:52,787.787 4466 AUDIT nova.compute.resource_tracker [-] Free ram (MB): 2048</li>
 <li>2013-10-18 18:22:52,787.787 4466 AUDIT nova.compute.resource_tracker [-] Free disk (GB): 10</li>
 <li>2013-10-18 18:22:52,787.787 4466 AUDIT nova.compute.resource_tracker [-] Free VCPUS: 1</li></ul>
 <li>
-If a <b>No valid host found</b> error occurs while provisioning, ensure that the Baremetal Host is registered correctly by nova baremetal-node-list.</li></ol></td></tr>
+If a <b>No valid host found</b> error occurs while provisioning, ensure that the Baremetal host is registered correctly by nova baremetal-node-list.</li></ol></td></tr>
 </table>
 
 #### De-provisioning leads to deleting state but does not delete the instance
@@ -606,9 +634,9 @@ If a <b>No valid host found</b> error occurs while provisioning, ensure that the
 <td>Possible Resolution</td>
 <td>
 <ol>
-<li>Stop the nova services running in the Baremetal Host and delete the instance, or</li>
-<li>Restart nova-compute in the compute node.</li>
-<li>Refresh Skyline.</li></ol></td></tr>
+<li>Stop the nova services running in the Baremetal host and delete the instance, or</li>
+<li>Restart nova-compute in the Baremetal host.</li>
+<li>Refresh the Administration Dashboard.</li></ol></td></tr>
 </table>
 
 #### Unable to access shellinabox
@@ -644,8 +672,10 @@ If a <b>No valid host found</b> error occurs while provisioning, ensure that the
 <ol>
 <li>Open the link <b>Click to view only console in a New Tab</b>.</li>
 <li>Allow the necessary SSL verification exceptions.</li>
-<li>Refresh Skyline.</li></ol></td></tr>
+<li>Refresh the Administration Dashboard.</li></ol></td></tr>
 </table>
+
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 ## Administration Dashboard: Topology Designer {#admindash-topology}
 
@@ -673,7 +703,7 @@ For Internet Explorer:
 <ol>
 <li>Navigate to <b>https://&lt;controller-node-public-ip&gt;:21081/</b>.</li>
 <li>Accept the SSL warning and proceed. The page that loads displays <b>Web page cannot be found</b>.</li>
- <li>Enter the Skyline IP in the same tab. Topology Designer now loads within the Administration Dashboard.</li></ol></td></tr>
+ <li>Enter the Administration Dashboard IP in the same tab. Topology Designer now loads within the Administration Dashboard.</li></ol></td></tr>
 </table>
 
 #### Topology Designer does not list the resource pool unless cloud profile is "HP Cloud OS Grizzly Baremetal"
@@ -692,16 +722,18 @@ For Internet Explorer:
 <td>Make sure the required resource pools have <b>HP Cloud OS Grizzly Baremetal</b> as their cloud profile.</td></tr>
 </table>
 
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
 ## Administration Dashboard: Instance Provisioning &#9658; Topology-based {#admindash-instance-topology}
 
-#### Skyline Running Topologies reports internal server error
+#### Running Topologies reports internal server error
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Administration Dashboard</th>
 </tr>
 <tr style="background-color: white; color: black;">
 <td>System Behavior/Message</td>
-<td>Using Skyline Running Topologies results in <b>Internal server error</b> error message.</td></tr>
+<td>Using Administration Dashboard to run topology reports results in <b>Internal server error</b> error message.</td></tr>
 <tr style="background-color: white; color: black;">
 <td>Probable Cause</td>
 <td>Timeout issues between eve and other services or wrong HTTP Proxy Settings (non-proxy hosts) are configured.</td></tr>
@@ -711,9 +743,11 @@ For Internet Explorer:
 <p><b>Note:</b> Once the <b>Complete Install</b> steps are completed, you cannot update the prerequisites. So, if the settings are incorrect, you must reapply the hp-cos-eve-barclamp with 127.* in the non-proxy hosts.</p></td></tr>
 </table>
 
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
 ## Administration Dashboard: Workloads {#admindash-workloads}
 
-#### Downloading workload from Skyline's Updates and Extension panel fails
+#### Downloading workload from Updates and Extension panel fails
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Administration Dashboard</th>
@@ -723,7 +757,7 @@ For Internet Explorer:
 <td>When using Updates and Extensions to download a workload, the Dashboard displays <b>Unable to connect to server</b> error message.</td></tr>
 <tr style="background-color: white; color: black;">
 <td>Probable Cause</td>
-<td>CODN can only handle a certain number of download activities simultaneously. </td></tr>
+<td>Cloud OS Distribution Network (CODN) can only handle a certain number of download activities simultaneously. </td></tr>
 <tr style="background-color: white; color: black;">
 <td>Possible Resolution</td>
 <td>Wait for awhile and retry the download. For details, check the log file <b>/var/log/codn/codn.log</b> on the controller node.</td></tr>
@@ -749,14 +783,14 @@ If CODN fails to upload a component because a component with the same name ALREA
 </td></tr>
 </table>
 
-#### Launching CCUE designer shows gray screen or throws warning
+#### Launching Topology Designer shows grey screen or throws warning
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Administration Dashboard</th>
 </tr>
 <tr style="background-color: white; color: black;">
 <td>System Behavior/Message</td>
-<td>Dashboard shows gray screen or warning</td></tr>
+<td>Dashboard shows grey screen or warning</td></tr>
 <tr style="background-color: white; color: black;">
 <td>Probable Cause</td>
 <td>SSL verification exceptions during the first time access of the designer UI</td></tr>
@@ -773,7 +807,7 @@ For Internet Explorer:
 <ol>
 <li>Navigate to <b>https://&lt;controller-node-public-ip&gt;:21081/</b>.</li>
 <li>Accept the SSL warning and proceed. The page that loads displays <b>Web page cannot be found</b>.</li>
- <li>Enter the Skyline IP in the same tab. Topology Designer now loads within the Administration Dashboard.</li></ol>
+ <li>Enter the Administration Dashboard IP in the same tab. Topology Designer now loads within the Administration Dashboard.</li></ol>
 </td></tr>
 </table>
 
@@ -815,6 +849,8 @@ Check the <a xref="">Support Matrix</a> as well as the HP Cloud OS for Moonshot 
 <br></td></tr>
 </table>
 
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
 ## Log/Configuration Files and Location {#log-config-files}
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
 <tr style="background-color: #C8C8C8;">
@@ -822,7 +858,7 @@ Check the <a xref="">Support Matrix</a> as well as the HP Cloud OS for Moonshot 
 <th>Log configuration</th>
 <th>Log file location</th></tr>
 <tr style="background-color: white; color: black;">
-<td>Workload content download &amp; publish (Skyline&gt; Update and Extensions)</td>
+<td>Workload content download &amp; publish (Administration Dashboard &gt; Update and Extensions)</td>
 <td>
 /etc/codn/codn.log (Cloud Controller)<br /><br />
 
@@ -838,7 +874,7 @@ To configure the log level, change the INFO to one of allowed values of DEBUG, E
 
 <tr style="background-color: white; color: black;">
 <td>
-Workload service (Skyline &gt; Provisioning &gt; Workload</td>
+Workload service (Administration Dashboard &gt; Provisioning &gt; Workload</td>
 <td>
 /etc/skyline/platform_settings.py (Cloud Controller)<br /><br />
 
@@ -896,7 +932,7 @@ logging:
 <tr style="background-color: white; color: black;">
 <td>Moonshot Management and Automatic default Flavor creation (Apollo)</td>
 <td>
-/etc/apollo/logging.conf (Baremetal Compute Host)<br /><br />
+/etc/apollo/logging.conf (Baremetal host)<br /><br />
 
 To configure the log level, change the INFO to one of allowed values of DEBUG, ERROR, WARNING and CRITICAL:
 <pre>
@@ -905,12 +941,12 @@ level = INFO
 handlers = discoveryfile
 </pre></td>
 <td>
-/var/log/apollo/apollo.log (Baremetal Compute Host)</td></tr>
+/var/log/apollo/apollo.log (Baremetal host)</td></tr>
 
 <tr style="background-color: white; color: black;">
-<td>Moonshot capability publish (Nova-compute)</td>
+<td>Moonshot capability publish (nova-compute)</td>
 <td>
-/etc/nova/logging.conf (Baremetal Compute Host)<br /><br />
+/etc/nova/logging.conf (Baremetal host)<br /><br />
 To configure the log level, change the INFO to one of allowed values of DEBUG, ERROR, WARNING and CRITICAL:
 <pre>
 [logger_root]
@@ -921,7 +957,7 @@ In /etc/nova/nova.conf, under DEFAULT section, add following line:
 <pre>debug=True</pre>
 </td>
 <td>
-/var/log/nova/nova-scheduler.log and /var/log/nova/nova-compute.log (Baremetal Compute Host)</td></tr>
+/var/log/nova/nova-scheduler.log and /var/log/nova/nova-compute.log (Baremetal host)</td></tr>
 
 <tr style="background-color: white; color: black;">
 <td>Image (glance)</td>

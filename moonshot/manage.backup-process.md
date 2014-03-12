@@ -102,7 +102,7 @@ The following are considerations you should understand and discuss before perfor
 #### Restore strategy {#restore-strategy}
 The following are considerations you should take into account before performing a Management Host restore.
 
-1. Before performing any restoration, power off all nodes of HP Cloud OS for Moonshot Management host.
+1. Before performing any restoration, power off the HP Cloud OS for Moonshot Management host (Admin and Controller nodes and Baremetal host).
 2. Use latest backup files and maintain the existing naming convention (Virtual Machine names).
 3. If there is a node failure, remove the datastore files of the corrupt node and then perform a restore.
 4. If your services are corrupted and the Admin node fails, restore only the Admin node.

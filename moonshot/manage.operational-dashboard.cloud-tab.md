@@ -362,13 +362,13 @@ It cannot contain spaces or special characters.</p>
 <ul>
 <li><b>Launch Dashboard</b> &mdash; Opens the Administration Dashboard login on a new tab in the browser. 
 You can login with the Admin account and password you specified on the Create Cloud > Attributes dialog. The default login/password are: <b>Admin</b> and <b>secretword</b>.
-<li><b>Extend Compute Region</b> &mdash; Opens the Extend Compute Region Dialog.
-<li><b>Reduce Compute Region</b> &mdash; Opens the Reduce Compute Region Dialog.
-<li><b>Remove Compute Region</b> &mdash; Opens the Remove Compute Region Dialog.
-<li><b>Remove Cloud</b> &mdash; Opens the Remove Cloud Dialog.
+<li><b>Extend Compute Region</b> &mdash; Opens the Extend Compute Region dialog.
+<li><b>Reduce Compute Region</b> &mdash; Opens the Reduce Compute Region dialog; displays only if the compute region is extended.
+
+<li><b>Remove Cloud</b> &mdash; Opens the Remove Cloud dialog.
 </ul>
 <br />
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> Some of the above actions might not always available, 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> Some of the above actions might not always be available, 
 depending upon the context of the cloud and the compute regions.</p>
 </td>
 </tr>
@@ -390,7 +390,7 @@ The following table describes the Create Cloud dialog UI elements:
 
 <tr style="background-color: white; color: black;">
 <td style="min-width:150px;"> <b>Cloud Name</b>  </td>
-<td> Type the name of the cloud. This is the Domain name that is used to initialize Keystone and will be displayed in the Administration Dashboard.
+<td> Type the name of the cloud. This is the name that is used to initialize Keystone and will be displayed in the Administration Dashboard.
 <br /> <br/>
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> A cloud name must contain only letters and numbers. 
 It cannot contain spaces or special characters.</p>
@@ -449,6 +449,11 @@ and DHCP services. It is a single service in a cloud and can co-exist with the c
 <li><b>UUID</b> &mdash; alternative 32-character token choice.
 </ul>
 </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> <b>DHCP enabled on Baremetal IPMI Network</b> </td>
+<td>By default, is True. You can change this to False if you do not have DHCP running on your IPMI network. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -549,7 +554,7 @@ The following table describes the Create Region dialog UI elements:
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> <b>Create Region Name</b> </td>
+<td> <b>Create Compute Region</b> </td>
 <td> Click to begin creating the Compute Region.
 <br /> <br />
 On the Manage Clouds page, the compute region will go through a series of steps to create an active compute region, 
@@ -616,9 +621,11 @@ The following table describes the Manage Clouds Details page UI elements:
 <li> <b>Keystone Signing</b> &mdash;Specified <code>keystone.signing</code> method: <code>PKI</code> (default) or <code>UUID</code>. </li>
 <li><b>Cloud Type</b> &mdash; Physical</li>
 <li> <b>Networking Mode</b> &mdash; Specified networking mode: <code>flat</code> (default). </li>
+<li><b>Local Volume File Name</b> &mdash; /var/lib/cinder/volume.raw</li>
 <li><b>DHCP enabled on Baremeta IPMI-enabled network</b> &mdash; True by default.</li>
 <li> <b>Maximum Volume File Size (GB)</b> &mdash; Number specified for the maximum volume allowed in gigabytes. </li>
 <li><b>Provider Network Name</b> &mdash; flat_network1 by default.</li>
+<li><b>NIC Connected to Provider Network</b> &mdash; eth1</li>
 </ul>
 </td>
 </tr>
@@ -684,7 +691,7 @@ The following information provides details about the Updates and Extensions pane
 
 ### Updates and Extensions overview
 
-The updates and extensions feature allows you to connect to, list, and retrieve hot fixes and updates from the HP Cloud OS for Moonshot Distribution Network (CODN) and apply them to your HP Cloud OS for Moonshot environment. You can also import hot fixes and updates from a file system to the HP Cloud OS for Moonshot environment and install them. In this topic, such hot fixes and updates are referred to as *content packages*. After a package is installed, you can view product and package details.
+The updates and extensions feature allows you to connect to, list, and retrieve hot fixes and updates from the HP Cloud OS Distribution Network (CODN) and apply them to your HP Cloud OS for Moonshot environment. You can also import hot fixes and updates from a file system to the HP Cloud OS for Moonshot environment and install them. In this topic, such hot fixes and updates are referred to as *content packages*. After a package is installed, you can view product and package details.
 
 The Update and Extensions page will be blank for the first-time user. You need to configure your credentials for the CODN to view the updates.
 

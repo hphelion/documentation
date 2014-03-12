@@ -37,7 +37,7 @@ For procedural instructions, see [Install and configure your cloud](/cloudos/moo
 
 ## Connections {#connections}
 
-The Connections view is where you define a connection set. You define a network mode (single,dual,team) along with a list of logical connection interfaces (intf0,intf1,intf2) with each one being bound to a port, defined by bandwidth and port number. The default network settings for the participating hosts/nodes should be
+The Connections view is where you define a connection set. You define a network mode (single, dual, team) along with a list of logical connection interfaces (intf0, intf1, intf2) with each one being bound to a port, defined by bandwidth and port number. The default network settings for the participating hosts/nodes should be
 
 * eth0 connected to a private network
 * eth1 connected to a public network
@@ -213,8 +213,8 @@ Specifying incorrect proxy host settings might cause some features to not work c
 
 <tr style="background-color: white; color: black;">
 <td> <b>Non-Proxy Hosts</b> </td>
-<td> Specify addresses that <b>should not</b> use proxy servers (for Controller/Baremetal Host and admin networks, IP range). 
-Each network must be separated by a bar ( | ), such as: <code>10.*|192.*|127.0*|localhost</code>
+<td>  
+Enter <code>10.*|192.*|127.0*|localhost</code> as this specifies addresses that <b>should not</b> use proxy servers (for Controller/Baremetal Host and admin networks, IP range).
 
 <tr style="background-color: white; color: black;">
 <td> <nobr> <b>Username</b> (Optional) </nobr> </td>
@@ -377,10 +377,10 @@ The following information provides details about the Networks panel:
 
 On the Networks panel, you define the networks for each logical connection (intf0, intf1, intf2,...). A network is defined for each connection such as the admin network, public network, nova_flat network, and the IPMI network. These  network definitions are used for various purposes in the cloud:
 
-* **admin** &mdash; Networking between the nodes and the Admin Node. Used for administrative functions, such as managed node installation, TFTP booting, DHCP assignments, system logs, backups, and other monitoring tasks. Also carries cinder-volume traffic. Must be an isolated private network.
+* **admin** &mdash; Networking between the nodes and the Admin Node, and used for administrative functions, such as managed node installation, TFTP booting, DHCP assignments, system logs, backups, and other monitoring tasks. The Admin network also carries cinder-volume traffic and must be an isolated private network.
 * **nova_flat** &mdash; Flat networking uses ethernet adapters configured as bridges to allow the network traffic to transit between the various nodes. You can use a single adapter on the physical host, or you can use multiple adapters. This option does not require a switch that does VLAN tagging.
 * **IPMI** &mdash; Connects the Baremetal host to the IPMI interface of the Moonshot chassis.
-* **public** &mdash; Public or corporate network that is attached to your cloud infrastructure. Must provide a pool of IP addresses for the Cloud Controller node for floating IP assignments. Size of the pool depends on the number of Virtual Machine instances. This network handles traffic to the outside world for the instances.
+* **public** &mdash; Public or corporate network that is attached to your cloud infrastructure, and must provide a pool of IP addresses for the Cloud Controller node for floating IP assignments. The size of the pool depends on the number of Virtual Machine instances. This network handles traffic to the outside world for the instances.
 
 
 
@@ -435,7 +435,7 @@ The following table describes the networks in the HP Cloud OS for Moonshot envir
 <td>HP Cloud OS for Moonshot prerequisites</td></tr>
 </tr>
 <tr style="background-color: white; color: black;">
-<td rowspan="4"><b>Baremetal Host</b></td>
+<td rowspan="3"><b>Baremetal Host</b></td>
 <td>Management/isolated</td>
 <td>eth0</td>
 <td>DHCP</td>
@@ -453,15 +453,15 @@ The following table describes the networks in the HP Cloud OS for Moonshot envir
 If DHCP-enabled Baremetal IPMI network option is "False", then the range is statically assigned by the Admin node.
 </td>
 <td>For static, range is defined in HP Cloud OS for Moonshot prerequisites page</td></tr>
-<tr><td>nova_flat</td>
+
+<tr style="background-color: white; color: black;">
+<td rowspan="2"><b>Cartridge</b></td>
+<td>nova_flat</td>
 <td>eth0</td>
 <td>DHCP</td>
 <td>IP is assigned by the DHCP service running on Controller node</td>
 <td>nova_flat networks' DHCP IP range</td></tr>
-</tr>
-<tr style="background-color: white; color: black;">
-<td><b>Cartridge</b></td>
-<td>Public</td>
+<tr><td>Public</td>
 <td>eth1</td>
 <td>DHCP</td>
 <td>IP is assigned by the DHCP service running on external/public network</td>
@@ -828,20 +828,6 @@ See <a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#edi
 <td> The mode specified in the Complete Install dialog. </td>
 </tr>
 
-<tr style="background-color: white; color: black;">
-<td> <b>IPMI/BMC Network Status</b> column </td>
-<td> The IPMI/BMC Network status specified in the Complete Install dialog. </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> <b>IPMI Username</b> column </td>
-<td> IPMI username, if one was specified in the Complete Install dialog. </td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> <b>IPMI Password</b> column </td>
-<td> IPMI password, if one was specified in the Complete Install dialog. </td>
-</tr>
 
 <tr style="background-color: white; color: black;">
 <td> <b>Show Install Log</b> column </td>
