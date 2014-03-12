@@ -24,8 +24,6 @@ PageRefresh();
 
 This topic describes the steps to complete the Admin Node installation. These steps are required. 
 
-> **Caution:**  Once the install process is triggered, the settings in preceding steps cannot be changed. If you want to make changes, you need to start over by re-installing the Admin Node.  
-
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"><b>Caution:</b> Be sure the values for the Prerequisites, Connections, and Networks are what you need, before you follow the steps in this topic. Once you click Complete Install, the dialogs are read only. If you want to make changes, you need to start over by re-installing the Admin Node.  </p> 
 
 To complete the Admin Node installation:

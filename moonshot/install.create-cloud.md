@@ -33,7 +33,7 @@ Now that the Admin Node is installed, it's time to manage the nodes, and then cr
 
 ## Manage Cloud Controller and Baremetal Host
 
-Before starting this process, ensure that the boot order on all nodes is configured to boot from the network first.  This only occurs once as the PXE service will not try to network boot a node again if it has already done so.
+Before starting this process, ensure that the boot order on all nodes (virtual machines) is configured to boot from the network first.  This only occurs once as the PXE service will not try to network boot a node again if it has already done so.
 
 1. Power ON the Controller and Baremetal Host.
 
@@ -46,7 +46,7 @@ Before starting this process, ensure that the boot order on all nodes is configu
 
 5.	Click <b>More</b> against each node to display a drop-down list.
 
-6.	Select <b>Allocate Node</b>.  This installs the OS and completes the setup and configuration of nodes so that services can be deployed. The nodes go through different states like Not Allocated, Hardware, Installed, Installing, Installed, Readying and Finalizing, before displaying the Allocated state. **Note: It may take around 12+ minutes for each node to get allocated.
+6.	Select <b>Allocate Node</b>.  This installs the OS and completes the setup and configuration of nodes so that services can be deployed. The nodes go through different states like Not Allocated, Hardware, Installing, Installed, Readying and Finalizing, before displaying the Allocated state. **Note: It may take around 12+ minutes for each node to get allocated.
 
 7. (Optional) Click <b>Alias</b> to view the details of the nodes.
 
