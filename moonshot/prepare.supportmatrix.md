@@ -33,8 +33,7 @@ In the following sections, we list the recommendations for memory, processors an
 * [Server infrastructure for HP Cloud OS for Moonshot](#server)
 * [Hypervisor recommendations for HP Cloud OS for Moonshot](#hypervisor)
 * [Node requirements for HP Cloud OS for Moonshot](#nodereq)
-* [Bulk server provisioning node requirements for HP Cloud OS for Moonshot](#nodereq-bulk)
-* [Moonshot chassis firmware version](#firmware)
+* [Moonshot chassis firmware](#firmware)
 * [Operating systems supported ](#ossupp)
 * [Supported deployment scenario](#deployment)
 * [Included software](#software)
@@ -129,7 +128,7 @@ We recommend your Proliant server contains the following:
 
 Where <b>X</b> is the average image size in gigabytes, and <b>N</b> is the expected number of additional nodes.
 
-## Moonshot chassis firmware version {#firmware}
+## Moonshot chassis firmware {#firmware}
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
 
 <tr style="background-color: #C8C8C8;">
@@ -159,14 +158,8 @@ Where <b>X</b> is the average image size in gigabytes, and <b>N</b> is the expec
 <td>Switch FastPath FW</td>
 <td>2.0.0.13 and above</td>
 </tr>
-<tr style="background-color: white; color: black;">
-<td>CMU</td>
-<td>7.2 and above</td>
-</tr>
-<tr style="background-color: white; color: black;">
-<td>Moonshot Windows Deployment Packs</td>
-<td>2013.12.1 and above</td>
-</tr>
+
+
 </table>
 
 
