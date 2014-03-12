@@ -174,7 +174,7 @@ In addition to the information presented already in this topic, please review th
 
 <li> In <b>Environment</b> > <b>Networks</b>, for your <b>Nova_Flat</b> network: 
 <ul>
-<li>On the <b>Edit Network</b> dialog, you will need to specify your Subnet, Netmask, and Router IP values.
+<li>On the <b>Edit Network</b> dialog, you will need to specify your Subnet, Netmask, and Router (mandatory) IP values.
 <li>On the <b>Edit Network Ranges</b> dialog, you will need to specify your Node Type, IPV4 Start Address, and IPV4 End Address values.
 </ul>
 </li>
@@ -199,10 +199,9 @@ Recommended: create multiple regions.  On each Create Compute Region dialog, on 
 
 <li> In <b>Project</b> > <b>Access and Security</b> > <b>Create Keypair</b>, you will just need to enter the Keypair name. </li> 
 
-<li> <b>Note</b>: You will not need to define flavors to complete the post-install steps.  As explained later in 
-[Launch Administration Dashboard for Post-Deployment Tasks](/cloudos/moonshot/install/launch-admin-dashboard), 
-a flavor will be generated automatically for you based on your Moonshot server cartridge type:  hp_moonshot_server (for an 
-HP ProLiant Moonshot Server Cartridge) and hp_moonshot_m300 (for an HP ProLiant m300 Server Cartridge). </li> 
+<li> <b>Note</b>: You will not need to define flavors to complete the post-install steps.  As explained later in <a href="/cloudos/moonshot/install/launch-admin-dashboard/">Launch Administration Dashboard for Post-Deployment Tasks</a>, 
+a flavor will be generated automatically for you based on your Moonshot server cartridge type:  hp_moonshot_server (for an HP ProLiant Moonshot Server Cartridge) 
+and hp_moonshot_m300 (for an HP ProLiant m300 Server Cartridge). </li> 
 
 <li> In <b>Project</b> > <b>Infrastructure</b> > <b>Images</b>, you will need to create images, and the associated Kernel and RAM disk images. You will not need 
 to specify the Description, Minimum Disk, and Minimum RAM values. </li> 

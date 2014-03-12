@@ -65,7 +65,8 @@ To enable the Admin Node Internet Access:
  
  b. Specify the Port - get this value from your system administrator or from the settings in your web browser.
  
- c. Specify the Non-Proxy Hosts' IP addresses - specify addresses that **should not** use proxy servers, for the Controller/Baremetal Host and admin networks. Each network needs to be separated by a pipe bar "|". For example: 10.\*|192.\*|127.0.\*|localhost.
+ c. Specify the Non-Proxy Hosts' IP addresses - that is, specify addresses that **should not** use proxy servers, for the Controller/Baremetal Host and admin networks. Each network needs to be separated by a pipe bar "|". For example: 10.\*|192.\*|127.0.\*|localhost.
+ 
  d. If necessary, specify the optional Username and Password.
  
 6. After completing the steps above, click **Update Prerequisite**.
