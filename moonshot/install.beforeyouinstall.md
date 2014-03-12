@@ -142,56 +142,77 @@ In addition to the information presented already in this topic, please review th
 
 ### Operation Dashboard Checklist
 
-* In <b>Environment</b> > <b>Prerequisites</b>, the dialogs will prompt for your external DNS IP details.
+<ul>
 
-* In <b>Edit Prerequisites</b> > <b>Admin Node Internet Access</b> > <b>Network</b>, you will need to specify your:
- * NIC details for the public interface
- * Http Proxy information:
-  * Host
-  * Port-8080
-  * Non-Proxy Hosts:  10.\*|192.\*|127.0.\*|localhost
+<li> In <b>Environment</b> > <b>Prerequisites</b>, the dialogs will prompt for your external DNS IP details.
 
-* In <b>Environment</b> > <b>Networks</b>, for your <b>Public</b> network: 
- * On the <b>Edit Network</b> dialog, you will need to specify your Subnet, Netmask, and Router IP values.
- * On the <b>Edit Network Ranges</b> dialog, you will need to specify your Node Type, IPV4 Start Address, and IPV4 End Address values.
+<li> In <b>Edit Prerequisites</b> > <b>Admin Node Internet Access</b> > <b>Network</b>, you will need to specify your:
 
-* In <b>Environment</b> > <b>Networks</b>, for your <b>IPMI</b> network: 
- * On the <b>Edit Network</b> dialog, you will need to specify your Subnet, Netmask, and Router IP values.
- * On the <b>Edit Network Ranges</b> dialog, you will need to specify your Node Type, IPV4 Start Address, and IPV4 End Address values.
+<ul>
+<li>NIC details for the public interface
+<li>Http Proxy information:
+<ul>
+<li>Host
+<li>Port-8080
+<li>Non-Proxy Hosts:  10.\*|192.\*|127.0.\*|localhost
+</ul>
+</ul>  </li> 
 
-* In <b>Environment</b> > <b>Networks</b>, for your <b>Nova_Flat</b> network: 
- * On the <b>Edit Network</b> dialog, you will need to specify your Subnet, Netmask, and Router (mandatory) IP values.
- * On the <b>Edit Network Ranges</b> dialog, you will need to specify your Node Type, IPV4 Start Address, and IPV4 End Address values.
+<li> In <b>Environment</b> > <b>Networks</b>, for your <b>Public</b> network: 
+<ul>
+<li>On the <b>Edit Network</b> dialog, you will need to specify your Subnet, Netmask, and Router IP values.
+<li>On the <b>Edit Network Ranges</b> dialog, you will need to specify your Node Type, IPV4 Start Address, and IPV4 End Address values.
+</ul>
+</li>
 
-* <b>Note</b>: You will be able to skip the Edit options for the Admin Network. 
+<li> In <b>Environment</b> > <b>Networks</b>, for your <b>IPMI</b> network: 
+<ul>
+<li>On the <b>Edit Network</b> dialog, you will need to specify your Subnet, Netmask, and Router IP values.
+<li>On the <b>Edit Network Ranges</b> dialog, you will need to specify your Node Type, IPV4 Start Address, and IPV4 End Address values.
+</ul>
+</li>
 
-* In <b>Environment</b> > <b>Complete Install</b>, you will be asked to enter the top-level domain name for your cloud. 
+<li> In <b>Environment</b> > <b>Networks</b>, for your <b>Nova_Flat</b> network: 
+<ul>
+<li>On the <b>Edit Network</b> dialog, you will need to specify your Subnet, Netmask, and Router IP values.
+<li>On the <b>Edit Network Ranges</b> dialog, you will need to specify your Node Type, IPV4 Start Address, and IPV4 End Address values.
+</ul>
+</li>
+
+<li> <b>Note</b>: You will be able to skip the Edit options for the Admin Network. </li>
+
+<li> In <b>Environment</b> > <b>Complete Install</b>, you will be asked to enter the top-level domain name for your cloud. 
 The name you'll provide must consist of lowercase characters with no numbers or special characters. 
-It may end in any valid web domain type, such as (but not limited to) .com, .org, .net, .edu, .mil, .gov. 
+It may end in any valid web domain type, such as (but not limited to) .com, .org, .net, .edu, .mil, .gov. </li> 
  
-* In <b>Cloud</b> > <b>Manage Clouds</b> > <b>Create Cloud</b>, you will only need to enter a <b>Name</b> for your cloud. You can use default values for other options; however, plan ahead 
-to specify new, non-default passwords for the Admin user, Arch user, and Trash user. 
+<li> In <b>Cloud</b> > <b>Manage Clouds</b> > <b>Create Cloud</b>, you will only need to enter a <b>Name</b> for your cloud. You can use default values for other options; however, plan ahead 
+to specify new, non-default passwords for the Admin user, Arch user, and Trash user.  </li> 
 
-* In <b>Cloud</b> > <b>Manage Clouds</b> > <b>Create Compute Region </b>dialog, you will need to enter a <b>Name</b> for your region. 
-Recommended: create multiple regions.  On each Create Compute Region dialog, on the Controller & Compute Nodes tab, you will need to enter the number of nodes that participate in the region. 
+<li> In <b>Cloud</b> > <b>Manage Clouds</b> > <b>Create Compute Region </b>dialog, you will need to enter a <b>Name</b> for your region. 
+Recommended: create multiple regions.  On each Create Compute Region dialog, on the Controller & Compute Nodes tab, you will need to enter the number of nodes that participate in the region. </li>  
 
+</ul>
 
 ### Administration Dashboard Checklist
 
-* In <b>Project</b> > <b>Access and Security</b> > <b>Create Keypair</b>, you will just need to enter the Keypair name. 
+<ul>
 
-* <b>Note</b>: You will not need to define flavors to complete the post-install steps.  As explained later in 
+<li> In <b>Project</b> > <b>Access and Security</b> > <b>Create Keypair</b>, you will just need to enter the Keypair name. </li> 
+
+<li> <b>Note</b>: You will not need to define flavors to complete the post-install steps.  As explained later in 
 [Launch Administration Dashboard for Post-Deployment Tasks](/cloudos/moonshot/install/launch-admin-dashboard), 
 a flavor will be generated automatically for you based on your Moonshot server cartridge type:  hp_moonshot_server (for an 
-HP ProLiant Moonshot Server Cartridge) and hp_moonshot_m300 (for an HP ProLiant m300 Server Cartridge). 
+HP ProLiant Moonshot Server Cartridge) and hp_moonshot_m300 (for an HP ProLiant m300 Server Cartridge). </li> 
 
-* In <b>Project</b> > <b>Infrastructure</b> > <b>Images</b>, you will need to create images, and the associated Kernel and RAM disk images. You will not need 
-to specify the Description, Minimum Disk, and Minimum RAM values. 
+<li> In <b>Project</b> > <b>Infrastructure</b> > <b>Images</b>, you will need to create images, and the associated Kernel and RAM disk images. You will not need 
+to specify the Description, Minimum Disk, and Minimum RAM values. </li> 
 
-* In <b>Project</b> > <b>Moonshot Management</b>, you will need to specify the chassis display name, Chassis Manager IP, Chassis Manager password, and Managing Host Name.  
+<li> In <b>Project</b> > <b>Moonshot Management</b>, you will need to specify the chassis display name, Chassis Manager IP, Chassis Manager password, and Managing Host Name. </li>   
 
-* In <b>Project</b> > <b>Infrastructure</b> > <b>Images</b> > <b>Launch</b> > Launch Instance dialog, you will need to specify the image, instance name, 
-networking, and (pre-defined) flavor. 
+<li> In <b>Project</b> > <b>Infrastructure</b> > <b>Images</b> > <b>Launch</b> > Launch Instance dialog, you will need to specify the image, instance name, 
+networking, and (pre-defined) flavor. </li> 
+
+</ul>
 
 ## Next Step
 

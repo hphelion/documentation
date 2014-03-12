@@ -49,7 +49,7 @@ This topic contains the following information about the HP Cloud OS for Moonshot
 
 ##Recommendations for HP Cloud OS for Moonshot 1.0## {#recommendations}
 
-This section describes the HP recommendations for best performance, utility, and functionality with this software version. 
+This section describes the HP recommendations for best performance, functionality, and usability with this software version. 
 We have also provided information about some limitations and known issues for reference purposes. This section contains:
 
 * [Recommendations for best functionality, performance and reliability](#best-practices)
@@ -93,7 +93,7 @@ The following are the known issues for HP Cloud OS for Moonshot 1.0.
  `" curl  #(keystone_protocol...`  to  `" curl  -k #(keystone_protocol...`
     
  3. Execute this command:
- `knife cookbook upload knife cookbook upload -o /opt/dell/chef/cookbooks/ -V -k /etc/chef/webui.pem -u chef-webui`
+ `- knife cookbook upload hp_cos_apollo_100 -o /opt/dell/chef/cookbooks/ -V -k /etc/chef/webui.pem -u chef-webui`
 	
  4. Remove the Cloud and create it again.
 
