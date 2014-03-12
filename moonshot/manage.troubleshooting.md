@@ -175,7 +175,7 @@ localhost
 <td>
 
 <ol>
-<li>Change log level to <b>info</b> for all Baremetal hosts and controller nodes. To do so, edit <b>/etc/chef/client.rb</b> and change <code>log_level:error</code> to <code>log_level:info</code>.</li>
+<li>Change log level to <b>info</b> for all Baremetal hosts and Controller nodes. To do so, edit <b>/etc/chef/client.rb</b> and change <code>log_level:error</code> to <code>log_level:info</code>.</li>
 <li>Run <code>bluepill chef-client restart</code>.</li>
 <li>In the admin node, edit <b>/etc/chef/server.rb</b> and change <code>log_level:error</code> to <code>log_level:info</code> and reboot the server.</li>
 <li>Go to the crowbar UI (https://&lt;Admin node IP&gt;:3000) and re-apply the barclamp(s) that failed.</li>
@@ -470,14 +470,14 @@ Provisioning fails when the <b>root_mb</b> in the flavor exactly matches the nod
 <td>Error message displayed in in nova-compute log on the Baremetal host: <b>No dhcp-server found</b>.</td></tr>
 <tr style="background-color: white; color: black;">
 <td>Probable Cause</td>
-<td>The quantum-dhcp-agent might not be running in the controller or the controller is not able to reach the Baremetal host using the nova_flat network.</td></tr>
+<td>The quantum-dhcp-agent might not be running in the Controller node or the Controller node is not able to reach the Baremetal host using the nova_flat network.</td></tr>
 <tr style="background-color: white; color: black;">
 <td>Possible Resolution</td>
 <td>
 <ol>
 <li>Verify that the flat network is in promiscuous mode.</li>
-<li>Verify that the quantum-dhcp-agent is running in the controller node. </li>
-<li>Verify the controller node is able to reach the Baremetal host using the nova_flat network.</li></ol></td></tr>
+<li>Verify that the quantum-dhcp-agent is running in the Controller node. </li>
+<li>Verify the Controller node is able to reach the Baremetal host using the nova_flat network.</li></ol></td></tr>
 </table>
 
 #### Provisioning fails because nodes registered are shown in "nova baremetal-node-list" but not in "nova hypervisor-list"
@@ -495,7 +495,7 @@ Provisioning fails when the <b>root_mb</b> in the flavor exactly matches the nod
 <td>Possible Resolution</td>
 <td>
 <ol>
-<li>Make sure that nova-compute is running using the following command on the controller node:
+<li>Make sure that nova-compute is running using the following command on the Controller node:
 <pre>nova-manage service list</pre>
 <li>If nova-compute shows as <b>XXX</b>, restart the nova-compute service on the Baremetal host.</li></ol></td></tr>
 </table>
@@ -760,7 +760,7 @@ For Internet Explorer:
 <td>Cloud OS Distribution Network (CODN) can only handle a certain number of download activities simultaneously. </td></tr>
 <tr style="background-color: white; color: black;">
 <td>Possible Resolution</td>
-<td>Wait for awhile and retry the download. For details, check the log file <b>/var/log/codn/codn.log</b> on the controller node.</td></tr>
+<td>Wait for awhile and retry the download. For details, check the log file <b>/var/log/codn/codn.log</b> on the Controller node.</td></tr>
 </table>
 
 #### Publishing workload from Updates and Extension panel does not show up in dashboard
@@ -777,9 +777,9 @@ For Internet Explorer:
 <tr style="background-color: white; color: black;">
 <td>Possible Resolution</td>
 <td>
-Check the CODN log file <b>/var/log/codn/codn.log</b> on the controller node.
+Check the CODN log file <b>/var/log/codn/codn.log</b> on the Controller node.
 <p>
-If CODN fails to upload a component because a component with the same name ALREADY exists, then check the manifest file in the respective workload folder under <b>/var/cache/codn/import</b> on the controller node. Specifically, check whether the <code>check_for_duplicates</code> property for the component is configured as it should be. Set this attribute to <b>false</b> to allow duplicates.</p>
+If CODN fails to upload a component because a component with the same name ALREADY exists, then check the manifest file in the respective workload folder under <b>/var/cache/codn/import</b> on the Controller node. Specifically, check whether the <code>check_for_duplicates</code> property for the component is configured as it should be. Set this attribute to <b>false</b> to allow duplicates.</p>
 </td></tr>
 </table>
 
@@ -845,7 +845,7 @@ This can happen if there is no auto-flavor created in system which meets  the se
 <tr style="background-color: white; color: black;">
 <td>Possible Resolution</td>
 <td>
-Check the <a xref="">Support Matrix</a> as well as the HP Cloud OS for Moonshot server requirements of your workload. If your cloud has the appropriate Moonshot server (i.e. cartridges), then check the Apollo log <b>/var/log/apollo/apollo.log</b> on controller node.<br>
+Check the <a xref="">Support Matrix</a> as well as the HP Cloud OS for Moonshot server requirements of your workload. If your cloud has the appropriate Moonshot server (i.e. cartridges), then check the Apollo log <b>/var/log/apollo/apollo.log</b> on Controller node.<br>
 <br></td></tr>
 </table>
 
@@ -860,7 +860,7 @@ Check the <a xref="">Support Matrix</a> as well as the HP Cloud OS for Moonshot 
 <tr style="background-color: white; color: black;">
 <td>Workload content download &amp; publish (Administration Dashboard &gt; Update and Extensions)</td>
 <td>
-/etc/codn/codn.log (Cloud Controller)<br /><br />
+/etc/codn/codn.log (Controller node)<br /><br />
 
 To configure the log level, change the INFO to one of allowed values of DEBUG, ERROR, WARNING and CRITICAL:
 
@@ -870,13 +870,13 @@ To configure the log level, change the INFO to one of allowed values of DEBUG, E
  &nbsp; &nbsp; &nbsp; &nbsp;'codn': {'level': 'INFO', 'handlers': ['file']},
  &nbsp; &nbsp; ….</pre></td>
 <td>
-/var/log/codn/codn.log (Cloud Controller)</td></tr>
+/var/log/codn/codn.log (Controller node)</td></tr>
 
 <tr style="background-color: white; color: black;">
 <td>
 Workload service (Administration Dashboard &gt; Provisioning &gt; Workload</td>
 <td>
-/etc/skyline/platform_settings.py (Cloud Controller)<br /><br />
+/etc/skyline/platform_settings.py (Controller node)<br /><br />
 
 To configure the log level, change the INFO to one of allowed values defined in LOG_LEVELS in the same file:
 
@@ -888,12 +888,12 @@ To configure the log level, change the INFO to one of allowed values defined in 
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'filename': '/var/log/skyline/skyline.log',
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'</pre></td>
 <td>
-/var/log/skyline/skyline.log (Cloud Controller)</td></tr>
+/var/log/skyline/skyline.log (Controller node)</td></tr>
 
 <tr style="background-color: white; color: black;">
 <td>Provision (Eve)</td>
 <td>
- /etc/eve-api/eve.yml and /etc/eve-requestworker/eve.yml (Cloud Controller)<br /><br />
+ /etc/eve-api/eve.yml and /etc/eve-requestworker/eve.yml (Controller node)<br /><br />
 <br>
 To configure the log level, change the INFO to one of allowed values defined as follows:
 <pre>
@@ -901,12 +901,12 @@ logging:
  &nbsp; &nbsp;# The default level of all loggers. Can be OFF, ERROR, WARN, INFO, DEBUG, TRACE, or ALL.
  &nbsp; &nbsp;level: INFO</pre></td>
 <td>
-/var/log/eve-api/eve-api.log and /var/log/eve-requestworker/eve-requestworker.log (Cloud Controller)</td></tr>
+/var/log/eve-api/eve-api.log and /var/log/eve-requestworker/eve-requestworker.log (Controller node)</td></tr>
 
 <tr style="background-color: white; color: black;">
 <td>Resource pool &amp; Flavor selection (Graffiti)</td>
 <td>
-/etc/graffiti-api/graffiti-api.yml (Cloud Controller)<br /><br />
+/etc/graffiti-api/graffiti-api.yml (Controller node)<br /><br />
 To configure the log level, change the INFO to one of allowed values defined as follows:
 <pre>
 logging:
@@ -914,12 +914,12 @@ logging:
  &nbsp; &nbsp;level: INFO
 </pre></td>
 <td>
-/var/log/graffitia-api/graffiti-api.log (Cloud Controller)</td></tr>
+/var/log/graffitia-api/graffiti-api.log (Controller node)</td></tr>
 
 <tr style="background-color: white; color: black;">
 <td>Workload Deployment profile guide and Deployment profile persistence (Focus)</td>
 <td>
-/etc/focus-api/focus.yml (Cloud Controller)<br /><br />
+/etc/focus-api/focus.yml (Controller node)<br /><br />
 
 To configure the log level, change the INFO to one of allowed values defined as follows:
 <pre>
@@ -927,7 +927,7 @@ logging:
  &nbsp; &nbsp;# The default level of all loggers. Can be OFF, ERROR, WARN, INFO, DEBUG, TRACE, or ALL.
  &nbsp; &nbsp;level: INFO</pre></td>
 <td>
-/var/log/focus-api/focus-api.log (Cloud Controller)</td></tr>
+/var/log/focus-api/focus-api.log (Controller node)</td></tr>
 
 <tr style="background-color: white; color: black;">
 <td>Moonshot Management and Automatic default Flavor creation (Apollo)</td>
@@ -962,26 +962,26 @@ In /etc/nova/nova.conf, under DEFAULT section, add following line:
 <tr style="background-color: white; color: black;">
 <td>Image (glance)</td>
 <td>
-/etc/glance/glance-api.conf (Cloud Controller)<br /><br />
+/etc/glance/glance-api.conf (Controller node)<br /><br />
 
 Under DEFAULT section, set following line:
 <pre>debug=True</pre>
 
 <b>Note:</b> Follow the same procedure for other glance modules as well. The log location will vary accordingly.</td>
 <td>
-/var/log/glance/api.log (Cloud Controller)</td></tr>
+/var/log/glance/api.log (Controller node)</td></tr>
 
 <tr style="background-color: white; color: black;">
 <td>Network (Quantum)</td>
 <td>
-/etc/quantum/quantum.conf (Cloud Controller)
+/etc/quantum/quantum.conf (Controller node)
 <br /><br />
 
 Under DEFAULT section, set following line:
 <pre>debug=True</pre>
 </td>
 <td>
-/var/log/quantum/server.log (Cloud Controller)</td></tr>
+/var/log/quantum/server.log (Controller node)</td></tr>
 </table>
 
 </body>

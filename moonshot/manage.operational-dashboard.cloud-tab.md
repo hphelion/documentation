@@ -545,11 +545,8 @@ The following table describes the Create Region dialog UI elements:
 
 <tr style="background-color: white; color: black;">
 <td> <b>Attributes</b> tab </td>
-<td> Use to specify property values required to create a Compute Region. For the Hypervisor attribute:
-<ul>
-<li>Use <code>kvm</code> (the default) if the compute nodes are Baremetal servers.
-<li>Use <code>qemu</code> if the compute nodes are VMs.
-</ul>
+<td> 
+Use to specify property values required to create a Compute Region. From the Compute Host Type, select Moonshot Servers.
 </td>
 </tr>
 
