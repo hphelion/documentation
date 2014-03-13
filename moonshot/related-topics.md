@@ -43,8 +43,6 @@ Specifically, you might find these HP Moonshot System references helpful:
 
 * [Operating System Deployment on HP ProLiant Moonshot Server Cartridges User Guide](www.hp.com/support/moonshot_os_deployment_en)
 
-* Moonshot SW download: http://h20564.www.hp.com/go/moonshot/1500chassis-software-download
-
 
 ## OpenStack links
 The current HP Cloud OS for Moonshot release includes OpenStack Grizzly 2013.1.4. You can find documentation for OpenStack on the [OpenStack documentation web site](http://docs.openstack.org/).
