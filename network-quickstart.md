@@ -70,7 +70,7 @@ Before you can use the CLI:
 
 The Network Topology tab is a physical representation of your network configuration.
 
-After activating the Compute 13.5 region, HP Public Cloud creates a default network that looks like the following diagram. 
+After activating the Compute 13.5 region, HP Public Cloud creates a default network that looks like the following diagram. Login to the [HP Public Cloud Console](https://horizon.hpcloud.com/) and select the Network Topology tab under the Project section.
 
    <br><img src="media/compute-network-topology-def-crop.png"  alt="" />
 
