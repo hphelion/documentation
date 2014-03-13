@@ -45,7 +45,7 @@ Specifically, you might find these HP Moonshot System references helpful:
 
 
 ## OpenStack links
-The current HP Cloud OS for Moonshot release includes OpenStack Grizzly 2013.1.4. You can find documentation for OpenStack on the [OpenStack documentation web site](http://docs.openstack.org/).
+The current HP Cloud OS for Moonshot release includes OpenStack Grizzly 2013.1.4. You can find information for OpenStack technologies on the [OpenStack documentation web site](http://docs.openstack.org/).
 
 Specifically, you might find these OpenStack documents helpful:
 
