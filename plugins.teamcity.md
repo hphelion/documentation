@@ -3,9 +3,8 @@ layout: default
 title: "HP Cloud Networking: Quick start guide"
 permalink: /compute/teamcity/
 product: compute
-categories: neutron
-tags: networking neutron vpn
 
+---
 
 HP TeamCity Plugin for HP Cloud
 =============================
