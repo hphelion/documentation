@@ -82,8 +82,8 @@ PageRefresh();
  
 #### [Related Topics](/cloudos/related-topics/)
  
-* [HP Moonshot System documentation links](/cloudos/related-topics/#related-moonshot) 
-* [OpenStack documentation links](/cloudos/related-topics/#related-openstack) 
+* [HP Moonshot System documentation links](/cloudos/moonshot/related-topics/#related-moonshot) 
+* [OpenStack documentation links](/cloudos/moonshot/related-topics/#related-openstack) 
 
  
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
