@@ -33,6 +33,7 @@ The Networking service offers flexibility for the cloud administrator to configu
 The Networking service supports a tenant having multiple private networks, and allows tenants to choose their own IP addressing scheme (even if those IP addresses overlap with those that other tenants use), enabling the migration of applications to the cloud without changing IP addresses.
 
 ### Audience ### {#audience}
+
 This guide is designed for those in the following or similar roles:   
 
 - Networking Engineers    
@@ -450,8 +451,6 @@ To create an instance or your network, use the following steps:
 
 ##For further information## {#ForFurtherInformation}
 
-* For information about the HP Cloud Networking, take a look at the [HP Cloud Networking Overview](/compute/network-guide) page
-For the full reference of supported HP Cloud CLI commands for Windows PowerShell, see [HP Cloud Environment CLI Software for Windows PowerShell Command Line Reference](docs.hpcloud.com/cli/windows/2/reference/)
+* For information about the HP Cloud Networking, take a look at the [HP Cloud Networking Overview](/compute/networks/overview/) page
 * For basic information about our HP Cloud compute services, take a look at the [HP Cloud compute overview](/compute/) page
-* Use the MC [site map](/mc/sitemap) for a full list of all available MC documentation pages
 * For information about the Open Stack networking features, surf on over to [their networking wiki](https://wiki.openstack.org/wiki/Quantum)
