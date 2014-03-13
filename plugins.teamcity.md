@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Cloud Networking: Quick start guide"
-permalink: /plugins/teamcity/
+permalink: /compute/teamcity/
 product: compute
 categories: neutron
 tags: networking neutron vpn
@@ -44,7 +44,7 @@ In addition, note the following:
 - Update “/etc/hosts” and add server`s name, if necessary.
 
 
-## Installing the HP TeamCity Plugin**
+## Installing the HP TeamCity Plugin ##
 
 To install the plugin:
 
