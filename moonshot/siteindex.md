@@ -59,17 +59,21 @@ PageRefresh();
 * [HP Cloud OS for Moonshot Utilities](/cloudos/moonshot/manage/utilities/)
 * [HP Cloud OS for Moonshot Troubleshooting](/cloudos/moonshot/manage/troubleshooting/) 
 * [HP Cloud OS for Moonshot Operational Dashboard Help](/cloudos/moonshot/manage/operational-dashboard/) 
+<!--
   * [How the Operational Dashboard Works](/cloudos/moonshot/manage/operational-dashboard/how-opdash-works)
   * [Operational Dashboard: Environment Tab](/cloudos/moonshot/manage/operational-dashboard/environment-tab)
   * [Operational Dashboard: Cloud Tab](/cloudos/moonshot/manage/operational-dashboard/cloud-tab)
   * [Operational Dashboard: Settings Tab](/cloudos/moonshot/manage/operational-dashboard/settings-tab)
+-->   
 * [HP Cloud OS for Moonshot Administration Dashboard Help](/cloudos/moonshot/manage/administration-dashboard/)  
+<!--  wait until we have HTML topics for Admin Dash Help, then unhide this list with new topic names:
   * [Before You Begin with the Administration Dashboard Help](/cloudos/moonshot/manage/administration-dashboard/before-you-begin/)
   * [Welcome to the HP Cloud OS for Moonshot Administration Dashboard](/cloudos/moonshot/manage/administration-dashboard/welcome/)
   * [Getting Started with the Administration Dashboard](/cloudos/moonshot/manage/administration-dashboard/getting-started/)
   * [Topology Designs](/cloudos/moonshot/manage/administration-dashboard/topology-designs/)
   * [Administration Dashboard Tasks by Role](/cloudos/moonshot/manage/administration-dashboard/tasks-by-role/)
-  * [Administration Dashboard Tasks by Tab](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/)
+  * [Administration Dashboard Tasks by Tab](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/)  
+-->   
 * [HP Cloud OS for Moonshot: Building Images](/cloudos/moonshot/manage/image-builder/) 
 * [HP Cloud OS for Moonshot Backup and Restore](/cloudos/moonshot/manage/backup-process/) 
 

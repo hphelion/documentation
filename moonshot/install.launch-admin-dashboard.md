@@ -7,6 +7,7 @@ product: moonshot
 ---
 
 
+
 <script>
 
 function PageRefresh {
@@ -16,6 +17,7 @@ onLoad="window.refresh"
 PageRefresh();
 
 </script>
+
 
 
 <p style="font-size: small;"> <a href="/cloudos/moonshot/install/updates-and-extensions/">&#9664; PREV</a> | <a href="/cloudos/moonshot/install/">&#9650; UP</a> | NEXT &#9654; </p>
@@ -43,6 +45,7 @@ This topic describes a set of baseline post-deployment tasks that you should per
 * [Next Steps](#next-steps)
 
 
+
 ## How to Access the Administration Dashboard
 
 You can access the Administration Dashboard in one of two ways:
@@ -50,6 +53,7 @@ You can access the Administration Dashboard in one of two ways:
 * Open a Google Chrome or Firefox browser. Enter the URL of your Cloud Controller node's public IP address. Login with the Admin account's username and password that you specified previously in the Operational Dashboard on the <b>Create Cloud</b> > <b>Attributes</b> dialog. 
 
 * Or, from within the Operational Dashboard, click <b>Manage Clouds</b> > <b>More</b> > <b>Launch Dashboard</b> for the cloud you created.
+
 
 
 ## Create a Keypair
@@ -76,6 +80,7 @@ To create a keypair, do the following:
  * It is very important to store the key in a safe location.
 
 7. From the left panel, select the <b>Access and Security</b> option again. The keypair is displayed on the page.
+
 
 
 ## Upload Cloud Images
@@ -224,6 +229,7 @@ Next, perform the steps in the following AKI, ARI, and QCOW2-QEMU sections.
 <li> Click <b>Create Image</b>.  A message is displayed on successful creation. The image displays in the <b>Images</b> page of the Cloud Tab.
 
 </ol>
+
 
 
 ## Manage your Moonshot Chassis
@@ -441,6 +447,7 @@ To view the workload and configuration details of a particular node:
 --> 
 
 
+
 ## View the Provided Flavor
 
 Flavors are machine configurations that describe the amount of memory, number of CPUs, and ephemeral disk space available. When you register a chassis, a flavor is created by default. 
@@ -485,8 +492,8 @@ If you're curious, to see how the flavors are defined already:
 
 5. Click <b>Cancel</b>.
 
-Later, when you want to create new flavors, or edit existing ones, start in this topic of the Administration Dashboard 
-Help: [How to Access Flavors and Flavor Extra Specs](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#how-to-access-flavors-and-flavor-extra-specs).
+Later, when you want to create new flavors, or edit existing ones, see the [Administration Dashboard Help](/cloudos/moonshot/manage/administration-dashboard/) PDF and its section covering How to Access Flavors and Flavor Extra Specs.
+<!-- (/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#how-to-access-flavors-and-flavor-extra-specs) -->
 
 ## Launch an Instance from an Image
 
