@@ -206,8 +206,8 @@ navigation:
     url: /cloudos/moonshot/develop/
   - text: Community Forum
     url: /cloudos/moonshot/community/		
-  - text: OpenStack Links
-    url: /cloudos/moonshot/openstack/	
+  - text: Related Topics
+    url: /cloudos/moonshot/related-topics/	
   - text: Site Index
     url: /cloudos/moonshot/siteindex/	
 
