@@ -1,4 +1,13 @@
-HP Team City Plugin for HP Cloud
+---
+layout: default
+title: "HP Cloud Networking: Quick start guide"
+permalink: /plugins/teamcity/
+product: compute
+categories: neutron
+tags: networking neutron vpn
+
+
+HP TeamCity Plugin for HP Cloud
 =============================
 
 HP has developed an HP Cloud plug in for TeamCity CI/CD server. The plugin provides implementation of TeamCity’s Cloud API and allows creation of virtual build agent on-demand in HP Cloud. 
