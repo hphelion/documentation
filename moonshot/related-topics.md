@@ -23,7 +23,7 @@ PageRefresh();
 
 HP Cloud OS for Moonshot is based on (and adds value to) the OpenStack technology and uses the HP Moonshot System  hardware. This topic provides you links to pertinent HP Moonshot System and OpenStack documentation.
 
-## HP Moonshot System links ##
+## HP Moonshot System links ## {#related-moonshot}
 You can find HP Moonshot System documentation in the [HP Enterprise Information Library](http://www.hp.com/go/enterprise/docs). Under Products and Solutions, select **HP Moonshot System** to see product documentation, such as:
 
 * HP Moonshot 1500 Chassis and Chassis Management Module
@@ -44,7 +44,7 @@ Specifically, you might find these HP Moonshot System references helpful:
 * [Operating System Deployment on HP ProLiant Moonshot Server Cartridges User Guide](www.hp.com/support/moonshot_os_deployment_en)
 
 
-## OpenStack links
+## OpenStack links ## {#related-moonstack}
 The current HP Cloud OS for Moonshot release includes OpenStack Grizzly 2013.1.4. You can find information for OpenStack technologies on the [OpenStack documentation web site](http://docs.openstack.org/).
 
 Specifically, you might find these OpenStack documents helpful:

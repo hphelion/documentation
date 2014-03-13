@@ -80,14 +80,11 @@ PageRefresh();
  
 <!-- * [Value-Added Services](/cloudos/moonshot/api/services/)   -->
  
-#### [OpenStack Links](/cloudos/openstack/)
+#### [Related Topics](/cloudos/related-topics/)
  
-* [OpenStack documentation home page](http://docs.openstack.org/)
-* [OpenStack Glossary](http://docs.openstack.org/glossary/content/glossary.html)
-* [OpenStack End User Guide](http://docs.openstack.org/user-guide/content/index.html)
-* [OpenStack Cloud Administrator Guide](http://docs.openstack.org/trunk/openstack-compute/admin/content/index.html)
-* [OpenStack Networking Administration Guide](http://docs.openstack.org/trunk/openstack-network/admin/content/index.html)
-* [OpenStack Operations Guide](http://docs.openstack.org/trunk/openstack-ops/content/index.html)
+* [HP Moonshot System documentation links](/cloudos/related-topics/#related-moonshot) 
+* [OpenStack documentation links](/cloudos/related-topics/#related-openstack) 
+
  
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
  
