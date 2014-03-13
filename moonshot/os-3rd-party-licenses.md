@@ -22,8 +22,8 @@ PageRefresh();
 
 # HP Cloud OS for Moonshot Open Source and Third-Party Software License Agreements
 
-Document Release Date: February 2014 <br />
-Software Release Date: February 2014
+Document Release Date: March 2014 <br />
+Software Release Date: March 2014
 
 * [Legal Notices](#legal-notices)
 * [Disclaimer](#disclaimer)
@@ -95,11 +95,6 @@ The only warranties for HP products and services are set forth in the express wa
 accompanying such products and services. Nothing herein should be construed as constituting an additional 
 warranty. HP shall not be liable for technical or editorial errors or omissions contained herein.
 The information contained herein is subject to change without notice.
-
-<!--
-HP Cloud OS is experimental and is provided as a courtesy, free of charge, "AS-IS" by Hewlett-Packard 
-Company ("HP"). HP shall have no obligation to maintain or support this software. 
---> 
 
 HP MAKES NO EXPRESS OR IMPLIED WARRANTY OF ANY KIND REGARDING THIS SOFTWARE INCLUDING ANY 
 WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE OR NON-
@@ -243,6 +238,7 @@ HP acknowledges the redistribution of the following open source components that 
 * swagger- jaxrs_2.9.1, Version 1.2.1
 * tomcat, Version 7.0.26
 * woodstox-core, Version 4.1.4
+* wstx-asl 3.2.6
 * xalan, Version 2.7.0
 * xerces-j2, Version 2.6.2, 2.8.0
 * xerces-j2-xml-apis, Version 1.3.02, 1.3.03
@@ -995,12 +991,12 @@ COMMON DEVELOPMENT AND DISTRIBUTION LICENSE (CDDL) Version 1.1
 
 HP acknowledges the redistribution of the following open source components that are provided under this license:
 
-* glassfish-jaxb-api, Version 2.2.5.20120218, 2.2, 2.2.1.1
+* glassfish-jaxb-api, Version 2.2.9, 2.2.5.20120218, 2.2, 2.2.1.1
 * jersey-apache-client4, Version 1.17
 * jersey-client, Version 1.17
-* jersey-core, Version 1.15
-* jersey-server, Version 1.15
-* jersey-servlet, Version 1.15
+* jersey-core, Version 1.17.1
+* jersey-server, Version 1.17.1
+* jersey-servlet, Version 1.17.1
 
 1) Definitions.
 
@@ -2515,10 +2511,10 @@ http://www.gnu.org/philosophy/why-not-lgpl.html.
 HP acknowledges the redistribution of the following open source components that are provided under this license:
 
 * c3p0, Version 0.9.1
-* hibernate-c3p0, Version 3.6.3
+* hibernate-c3p0, Version 4.1.7
 * hibernate-commons-annotations, Version 4.0.1
-* hibernate-entitymanager, Version 3.6.10
-* hibernate3, Version 3.6.10.Final
+* hibernate-entitymanager, Version 4.1.7
+* hibernate3, Version 4.1.8.Final
 * jboss-logging, Version 3.1.0.GA
 * jboss-transaction-1.1-api.spec, Version 1.0.0.Final
 * nscd, Version 2.15
@@ -3173,7 +3169,7 @@ POSSIBILITY OF SUCH DAMAGE.
 
 HP acknowledges the redistribution of the following open source component that are provided under this license:
 
-* amqp-client, Version 2.8.1
+* amqp-client, Version 3.0.4
 * rabbitmq-server, Version 2.7.1
 
 MOZILLA PUBLIC LICENSE <br />
