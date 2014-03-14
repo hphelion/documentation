@@ -26,7 +26,7 @@ UP</a> | <a href="/cloudos/moonshot/install/view-connection-settings/">NEXT &#96
 
 Your first step in the HP Cloud OS for Moonshot Operational Dashboard is to configure the Admin Node prerequisites. See the sections in this topic:
 
-* [Enable Admin Node Internet Access](#enable-admin-node-internet-access) &mdash; Set up Internet access on the Admin Node. You will need Internet access for downloading updated and extensions. For details, see [View Updates and Extensions](/cloudos/moonshot/install/updates-extensions/).
+* [Enable Admin Node Internet Access](#enable-admin-node-internet-access) &mdash; Set up Internet access on the Admin Node. You will need Internet access for downloading updated and extensions. For details, see [View Updates and Extensions](/cloudos/moonshot/install/updates-and-extensions/).
 
 * [Set the External DNS Server](#set-the-external-dns-server) &mdash;  Add the IP address of the external DNS server that your Cloud OS environment is using to access named websites within your cloud.
 
