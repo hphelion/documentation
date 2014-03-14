@@ -18,7 +18,9 @@ Refer to these documentation resources:
 
 * [HP Cloud OS for Moonshot Utilities](/cloudos/moonshot/manage/utilities/) &mdash; Describes the HP Cloud OS for Moonshot utilities.
 
+<!--
 * [HP Cloud OS for Moonshot Troubleshooting](/cloudos/moonshot/manage/troubleshooting/) &mdash; Provides tips to help you troubleshoot issues you may encounter with HP Cloud OS for Moonshot.
+-->
 
 * [HP Cloud OS for Moonshot Operational Dashboard Help](/cloudos/moonshot/manage/operational-dashboard/) &mdash; Describes the Operational Dashboard user interface dialogs and options.
 

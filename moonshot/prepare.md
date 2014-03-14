@@ -6,14 +6,20 @@ product: moonshot
 
 ---
 
-
+<!--
 <p style="font-size: small;"> &#9664; PREV | <a href="/cloudos/moonshot/">&#9650; UP</a> | <a href="/cloudos/moonshot/prepare/releasenotes/">NEXT &#9654;</a> </p>
+--> 
+
+<p style="font-size: small;"> &#9664; PREV | <a href="/cloudos/moonshot/">&#9650; UP</a> | <a href="/cloudos/moonshot/prepare/supportmatrix/">NEXT &#9654;</a> </p>
+
 
 # Prepare: Get Started with HP Cloud OS for Moonshot
 
 If you're new to HP Cloud OS for Moonshot, see these topics and the video tutorials to learn about the product's functionality.
 
+<!--
 * [Release Notes](/cloudos/moonshot/prepare/releasenotes/) - describes new features and recommendations.  Read this document first. 
+--> 
 
 * [Support Matrix](/cloudos/moonshot/prepare/supportmatrix/) - provides an overview of the HP Cloud OS for Moonshot supported hardware and software.
 
