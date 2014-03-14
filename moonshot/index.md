@@ -38,8 +38,8 @@ For related information, see the <a href="http://www.hp.com/go/moonshot" target=
 <a href="http://www.hp.com/go/moonshot" target="moonshot-system"><img src="media/cloudos-moonshot-system.png" align="left" title="HP Moonshot System" /></a>
 
 <!-- Note: Cloud OS blue = #1796D3 --> 
-
-<p style="font-size: x-small; text-align:right;"> 
+<!-- Give this next item separation space so link to content above isn't accidentally clicked by user --> 
+<p style="font-size: x-small; text-align:right; margin-top:18px;"> 
 <a href="/cloudos/moonshot/os-3rd-party-license-agreements/" target="os3p">HP Cloud OS for Moonshot Open Source and Third-Party Software License Agreements &#187;</a> 
 </p>
 
