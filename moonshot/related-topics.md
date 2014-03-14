@@ -24,7 +24,7 @@ PageRefresh();
 HP Cloud OS for Moonshot is based on (and adds value to) the OpenStack technology and uses the HP Moonshot System  hardware. This topic provides you links to pertinent HP Moonshot System and OpenStack documentation.
 
 ## HP Moonshot System links ## {#related-moonshot}
-You can find HP Moonshot System documentation in the [HP Enterprise Information Library](http://www.hp.com/go/enterprise/docs). Under Products and Solutions, select **HP Moonshot System** to see product documentation, such as:
+<p>You can find HP Moonshot System documentation in the <a href="http://www.hp.com/go/enterprise/docs">HP Enterprise Information Library</a>. Under Products and Solutions, select <b>HP Moonshot System</b> to see product documentation, such as:</p>
 
 * HP Moonshot 1500 Chassis and Chassis Management Module
 * HP Moonshot Component Pack
@@ -35,31 +35,33 @@ You can find HP Moonshot System documentation in the [HP Enterprise Information 
 
 Specifically, you might find these HP Moonshot System references helpful:
 
-* [HP Moonshot iLO Chassis Management CLI User Guide](http://www.hp.com/support/Moonshot_iLO_CM_FW_UG_en)
+<ul>
+<li><a href="http://www.hp.com/support/Moonshot_iLO_CM_FW_UG_en" target="_blank">HP Moonshot iLO Chassis Management CLI User Guide</li>
 
-* [HP Moonshot iLO Chassis Management Release Notes](http://www.hp.com/support/Moonshot_iLO_CM_FW_RN_en)
+<li><a href="http://www.hp.com/support/Moonshot_iLO_CM_FW_RN_en">HP Moonshot iLO Chassis Management Release Notes</li>
 
-* [HP Moonshot iLO Chassis Management IPMI User Guide](www.hp.com/support/ilo_cm_ipmi_ug_en)
+<li><a href="http://www.hp.com/support/ilo_cm_ipmi_ug_en">HP Moonshot iLO Chassis Management IPMI User Guide</li>
 
-* [Operating System Deployment on HP ProLiant Moonshot Server Cartridges User Guide](www.hp.com/support/moonshot_os_deployment_en)
-
+<li><a href="http://www.hp.com/support/moonshot_os_deployment_en">Operating System Deployment on HP ProLiant Moonshot Server Cartridges User Guide</li>
+</ul>
 
 ## OpenStack links ## {#related-openstack}
-The current HP Cloud OS for Moonshot release includes OpenStack Grizzly 2013.1.4. You can find information for OpenStack technologies on the [OpenStack documentation web site](http://docs.openstack.org/).
+<p>The current HP Cloud OS for Moonshot release includes OpenStack Grizzly 2013.1.4. You can find information for OpenStack technologies on the <a href="http://docs.openstack.org">OpenStack documentation web site</a>.</p>
 
 Specifically, you might find these OpenStack documents helpful:
 
-* [OpenStack Glossary](http://docs.openstack.org/glossary/content/glossary.html)
+<ul>
+<li><a href="http://docs.openstack.org/glossary/content/glossary.html">OpenStack Glossary</a></li>
 
-* [OpenStack End User Guide](http://docs.openstack.org/user-guide/content/index.html)
+<li><a href="http://docs.openstack.org/user-guide/content/index.html">OpenStack End User Guide</li>
 
-* [OpenStack Cloud Administrator Guide](http://docs.openstack.org/trunk/openstack-compute/admin/content/index.html)
+<li><a href="http://docs.openstack.org/trunk/openstack-compute/admin/content/index.html">OpenStack Cloud Administrator Guide</li>
 
-* [OpenStack Networking Administration Guide](http://docs.openstack.org/trunk/openstack-network/admin/content/index.html)
+<li><a href="http://docs.openstack.org/trunk/openstack-network/admin/content/index.html">OpenStack Networking Administration Guide</li>
 
-* [OpenStack Operations Guide](http://docs.openstack.org/trunk/openstack-ops/content/index.html)
+<li><a href="http://docs.openstack.org/trunk/openstack-ops/content/index.html">OpenStack Operations Guide</li>
 
-
+</ul>
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
