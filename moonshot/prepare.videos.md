@@ -17,7 +17,7 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> <a href="/cloudos/moonshot/prepare/faqs/">&#9664; PREV | <a href="/cloudos/moonshot/prepare/">&#9650; UP</a> | <a href="/cloudos/moonshot/prepare/overview/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/cloudos/moonshot/prepare/faqs/">&#9664; PREV | <a href="/cloudos/moonshot/prepare/">&#9650; UP</a> | <a href="/cloudos/moonshot/prepare/glossary/">NEXT &#9654;</a> </p>
 
 # HP Cloud OS for Moonshot Video Tutorials
 

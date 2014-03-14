@@ -23,7 +23,7 @@ PageRefresh();
 
 Welcome! You've got questions, we have the answers.
 
-* [What is the HP POV on cloud solutions?](#what-is-the-hp-pov-on-cloud-solutions)
+* [What is the HP point of view on cloud solutions?](#what-is-the-hp-pov-on-cloud-solutions)
 * [What is HP Cloud?](#what-is-hp-cloud)
 * [How does HP help solve the challenges faced by enterprises?](#how-does-hp-help-solve-the-challenges-faced-by-enterprises)* [What is OpenStack?](#what-is-openstack)
 * [What is HP Moonshot?](#what-is-hp-moonshot)
@@ -33,7 +33,7 @@ Welcome! You've got questions, we have the answers.
 * [How does HP Cloud OS for Moonshot help customers?](#how-does-hp-cloud-os-for-moonshot-help-customers) 
 * [How do I order and license HP Cloud OS for Moonshot?](#how-do-i-order-and-license-hp-cloud-os-for-moonshot)
 
-## What is the HP POV on cloud solutions?
+## What is the HP point of view on cloud solutions?
 
 HP believes organizations need to implement a hybrid delivery strategy that leverages the right mix of cloud and traditional IT, to optimize application creation &amp; delivery, and to optimize service creation &amp; delivery.
 
