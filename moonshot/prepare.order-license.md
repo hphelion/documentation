@@ -19,8 +19,8 @@ After ordering, you will receive via email or printed letter a certificate that 
 support and receive a license key. You will be directed to the HP Software Depot website, where you can download the software.
 
 You can then download and install the software. After completing the installation, you can enter your license key in the HP Cloud OS for Moonshot 
-Operational Dashboard. The licensing steps are documented in [Check the HP Cloud OS for Moonshot License](/cloudos/moonshot/install/license/).  However, keep 
-in mind that the installation process is comprised of sequential steps.  You'll need to start on this page: [Install & Configure Your Cloud](/cloudos/moonshot/install).
+Operational Dashboard. The licensing steps are documented in [Enter or Update your License Key](/cloudos/moonshot/install/license/).  However, keep 
+in mind that the installation process is comprised of sequential steps.  You'll need to start on this page: [Install & Configure Your Cloud](/cloudos/moonshot/install/).
 
 When your license expires, you will receive an informational message to purchase a new license key. 
 
