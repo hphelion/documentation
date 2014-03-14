@@ -33,7 +33,7 @@ HP Cloud OS for Moonshot is based on (and adds value to) the OpenStack technolog
 * HP ProLiant Moonshot Server
 * HP iLO Chassis Management Firmware
 
-Specifically, you might find these HP Moonshot System documents helpful:
+Specifically, you might find these HP Moonshot System documents (PDF) helpful:
 
 <ul>
 <li><a href="http://www.hp.com/support/Moonshot_iLO_CM_FW_UG_en" target="_blank">HP Moonshot iLO Chassis Management CLI User Guide</a></li>
@@ -57,7 +57,10 @@ Specifically, you might find these OpenStack references helpful:
 
 <li><a href="http://docs.openstack.org/trunk/openstack-compute/admin/content/index.html" target="_blank">OpenStack Cloud Administrator Guide</a></li>
 
-<li><a href="http://docs.openstack.org/trunk/openstack-network/admin/content/index.html" target="_blank">OpenStack Networking Administration Guide</a></li>
+<li><a href="http://docs.openstack.org/admin-guide-cloud/content/ch_introduction-to-openstack-compute.html" target="_blank">OpenStack Compute</a></li>
+
+
+<li><a href="http://docs.openstack.org/admin-guide-cloud/content/ch_networking.html" target="_blank">OpenStack Networking</a></li>
 
 <li><a href="http://docs.openstack.org/trunk/openstack-ops/content/index.html" target="_blank">OpenStack Operations Guide</a></li>
 
