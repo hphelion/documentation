@@ -120,7 +120,7 @@ Now that you have created your image, you can add it to Glance and manage it wit
 
     <pre>ssh -i demokey.pem &lt;IP_of_demo_vm1></pre>
 
-You can now access and manage your VM image from the HP Cloud OS for Moonshot Administration Dashboard. For detailed instructions, see the Manage Images topic of the [Administration Dashboard help (PDF)](http://docs.hpcloud.com/cloudos/moonshot/pdf/HP-Cloud-OS-for-Moonshot-Administration-Dashboard-Help.pdf).
+You can now access and manage your VM image from the HP Cloud OS for Moonshot Administration Dashboard. For detailed instructions, see the <b>Manage Images</b> topic of the [Administration Dashboard help (PDF)](http://docs.hpcloud.com/cloudos/moonshot/pdf/HP-Cloud-OS-for-Moonshot-Administration-Dashboard-Help.pdf).
 
 ## Creating an image for a specific workload ## {#image-specific-workload}
 You might want to create an image for a specific workload, such as an Internet server. To do this, you must have an element with appropriate hooks written for that specific workload. The rest of this section shows you how to create Ubuntu and RHEL images for specific workloads, and their associated elements.
@@ -162,7 +162,7 @@ To use your new nginx element with Ubuntu to create a VM image that is pre-insta
 
 <pre>disk-image-create -o base -a amd64 vm base baremetal nginx</pre>
 
-This creates a VM image file named base.qcow2. You can now upload and work with this image in HP Cloud OS for Moonshot. For detailed instructions, see the Manage Images topic of the [Administration Dashboard help (PDF)](http://docs.hpcloud.com/cloudos/moonshot/pdf/HP-Cloud-OS-for-Moonshot-Administration-Dashboard-Help.pdf).
+This creates a VM image file named base.qcow2. You can now upload and work with this image in HP Cloud OS for Moonshot. For detailed instructions, see the <b>Manage Images</b> topic of the [Administration Dashboard help (PDF)](http://docs.hpcloud.com/cloudos/moonshot/pdf/HP-Cloud-OS-for-Moonshot-Administration-Dashboard-Help.pdf).
 
 ### Creating a RHEL image for a specific workload ### {#rhel-image}
 To create a RHEL image for a specific workload, you first need to create the mongodb element.
@@ -232,5 +232,5 @@ To use your new mongodb element with RHEL to create an image that is pre-install
 
 <pre>disk-image-create &ndash;o &lt;image_prefix> &ndash;a amd64&ndash;u base rhel baremetal mongodb</pre>
 
-This creates a disk image file named base.qcow2. You can now upload and work with this image in HP Cloud OS for Moonshot. For detailed instructions, see the Manage Images topic of the [Administration Dashboard help (PDF)](http://docs.hpcloud.com/cloudos/moonshot/pdf/HP-Cloud-OS-for-Moonshot-Administration-Dashboard-Help.pdf).
+This creates a disk image file named base.qcow2. You can now upload and work with this image in HP Cloud OS for Moonshot. For detailed instructions, see the <b>Manage Images</b> topic of the [Administration Dashboard help (PDF)](http://docs.hpcloud.com/cloudos/moonshot/pdf/HP-Cloud-OS-for-Moonshot-Administration-Dashboard-Help.pdf).
 
