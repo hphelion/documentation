@@ -204,6 +204,8 @@ navigation:
     url: /cloudos/moonshot/manage/
   - text: Develop
     url: /cloudos/moonshot/develop/
+  - text: Troubleshooting
+    url: /cloudos/moonshot/manage/troubleshooting
   - text: Community Forum
     url: /cloudos/moonshot/community/		
   - text: Related Topics
