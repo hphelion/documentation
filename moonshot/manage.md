@@ -8,7 +8,7 @@ product: moonshot
 
 
 
-<p style="font-size: small;"> &#9664; PREV</a> | <a href="/cloudos/">&#9650; UP</a> | <a href="/cloudos/moonshot/manage/utilities/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> &#9664; PREV</a> | <a href="/cloudos/moonshot/">&#9650; UP</a> | <a href="/cloudos/moonshot/manage/utilities/">NEXT &#9654;</a> </p>
 
 # Manage your Cloud
 
