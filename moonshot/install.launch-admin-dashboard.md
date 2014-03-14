@@ -526,7 +526,7 @@ By default, Details is the active tab.
 
 The view changes to <b>Project</b> > <b>Infrastructure</b> > <b>Instances</b>.
 
-## Next Step
+## Next Steps
 
 At this point, you're done with the installation & configuration steps (including post-install).  You can now proceed to the [Manage](/cloudos/moonshot/manage/) section of this documentation site. It includes information about utilities, troubleshooting, Disk Image Builder, and the backup process. Also included from the Manage page is the [HP Cloud OS for Moonshot Administration Dashboard Help](/cloudos/moonshot/manage/administration-dashboard/), where you can get more 
 information about the dashboard's features, roles, and tasks.
