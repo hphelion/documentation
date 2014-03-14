@@ -49,7 +49,7 @@ To create a compute region:
 <li> From the Number of Nodes drop-down list, select the nodes.
 </ul>
 
-<br /> <br /> Or click to select the checkbox against each node.
+<br /> Or click to select the checkbox against each node.
 <br /> <br /> <b>Note:</b> The Cloud Controller and the Compute Controller can be in the same machine.
 
 </li>
