@@ -111,7 +111,7 @@ The following are the known issues for HP Cloud OS for Moonshot 1.0.
 
 ####General####
 
-* Due to an issue, the <b>Edit Network</b> option appears enabled in the Networks page of the Administration Dashboard. There is no impact on the functionality if you retain the default settings. 
+* Although the <b>Edit Network</b> option appears enabled in the Networks page of the Administration Dashboard, you can ignore it. There is no impact on the networking functionality when you retain the default settings. 
 
 * The <b>Edit Extra Specs</b> option appears enabled for Flavors and allows you to change the extra specs of the default flavor; doing so will result in a failure for the instance. To ensure smooth functioning of the instance, retain the default settings.
 
