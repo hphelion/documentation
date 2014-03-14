@@ -107,11 +107,11 @@ OF THIS SOFTWARE.
 
 HP acknowledges the redistribution of the following open source components under the licenses shown below.
 
-<!--
-**Note:** To address source code availability requirements for code licensed under MPL, CDDL, LGPL v2.1 & v3, GPL v2 & v3, a ZIP containing that source code 
-can be obtained <a href="https://cloudos.hpwsportal.com/opensource/open-source-files-licensed-for-use-with-HP-Cloud-OS-and-HP-Cloud-OS-for-Moonshot.zip"> at 
-this HP location </a>. Right-click, then Save As... (**Caution:** The ZIP file is approximately 2 GB).
--->
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> 
+To address source code availability requirements for code licensed under MPL, CDDL, LGPL v2.1 & v3, GPL v2 & v3, 
+you can obtain a ZIP containing that source code (the required subset) 
+<a href="https://cloudos.hpwsportal.com/opensource/required-subset-open-source-files-licensed-for-use-by-HP-Cloud-OS-and-HP-Cloud-OS-for-Moonshot.zip"> 
+at this HP location</a>. Right-click, then Save... the ZIP file to your client. <b>Caution</b>: The ZIP file is approximately 2 GB.</p>
 
 ### ANTLR License
 
