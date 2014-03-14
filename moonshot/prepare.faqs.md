@@ -25,7 +25,8 @@ Welcome! You've got questions, we have the answers.
 
 * [What is the HP point of view on cloud solutions?](#what-is-the-hp-pov-on-cloud-solutions)
 * [What is HP Cloud?](#what-is-hp-cloud)
-* [How does HP help solve the challenges faced by enterprises?](#how-does-hp-help-solve-the-challenges-faced-by-enterprises)* [What is OpenStack?](#what-is-openstack)
+* [How does HP help solve the challenges faced by enterprises?](#how-does-hp-help-solve-the-challenges-faced-by-enterprises)
+* [What is OpenStack?](#what-is-openstack)
 * [What is HP Moonshot?](#what-is-hp-moonshot)
 * [What is HP Cloud OS for Moonshot?](#what-is-hp-cloud-os-for-moonshot)
 * [What are the key advantages of HP Cloud OS for Moonshot?](#what-are-the-key-advantages-of-hp-cloud-os-for-moonshot)
@@ -74,14 +75,14 @@ HP delivers customers the industry's only hybrid cloud strategy and solution por
   
 ## What is OpenStack?
 
-OpenStack is a cloud computing project aimed at providing an Infrastructure as a Service (IaaS). It is free and open-source software released under the terms of the Apache License. The project is managed by the OpenStack 
+[OpenStack](/cloudos/moonshot/related-topics/#related-openstack) is a cloud computing project aimed at providing an Infrastructure as a Service (IaaS). It is free and open-source software released under the terms of the Apache License. The project is managed by the OpenStack 
 Foundation, a non-profit corporate entity established in September 2012 to promote OpenStack software and its community. 
 
 The technology consists of a series of interrelated projects that control pools of processing, storage, and networking resources throughout a datacenter, all managed through a dashboard that gives administrators control while empowering its users to provision resources through a web interface.
 
 ## What is HP Moonshot?
 
-HP Moonshot is the industry's first software-defined server where each cartridge is optimized to support specific classes of workloads.
+[HP Moonshot](/cloudos/moonshot/related-topics/#related-moonshot) is the industry's first software-defined server where each cartridge is optimized to support specific classes of workloads.
 
 HP Moonshot delivers significant advantages over traditional cloud infrastructure hardware, meeting the business needs of the "New Style of IT." These benefits include:
 

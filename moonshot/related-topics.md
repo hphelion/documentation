@@ -17,7 +17,7 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> &#9664; PREV | <a href="/cloudos/moonshot/">&#9650; UP</a> | <a href="/cloudos/moonshot/install/siteindex/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"><a href="/cloudos/moonshot/"> &#9664; PREV</a> | <a href="/cloudos/moonshot/">&#9650; UP</a> | <a href="/cloudos/moonshot/install/siteindex/">NEXT &#9654;</a> </p>
 
 # Related Topics
 
@@ -44,7 +44,7 @@ Specifically, you might find these HP Moonshot System references helpful:
 * [Operating System Deployment on HP ProLiant Moonshot Server Cartridges User Guide](www.hp.com/support/moonshot_os_deployment_en)
 
 
-## OpenStack links ## {#related-moonstack}
+## OpenStack links ## {#related-openstack}
 The current HP Cloud OS for Moonshot release includes OpenStack Grizzly 2013.1.4. You can find information for OpenStack technologies on the [OpenStack documentation web site](http://docs.openstack.org/).
 
 Specifically, you might find these OpenStack documents helpful:
