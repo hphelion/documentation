@@ -18,7 +18,7 @@ PageRefresh();
 
 
 
-<p style="font-size: small;"> <a href="/cloudos/moonshot/prepare/releasenotes">&#9664; PREV</a> | <a href="/cloudos/moonshot/prepare">&#9650; UP</a> | NEXT &#9654; </p>
+<p style="font-size: small;"> <a href="/cloudos/moonshot/prepare/releasenotes">&#9664; PREV</a> | <a href="/cloudos/moonshot/prepare">&#9650; UP</a> | <a href="/cloudos/moonshot/prepare/faqs">&#9650; NEXT &#9654; </p>
 
 # HP Cloud OS for Moonshot: Support Matrix
 

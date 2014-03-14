@@ -122,6 +122,8 @@ They are:
 
 ## What does HP Cloud OS for Moonshot support?
 
+There are hardware and software recommendations and requirements for HP Coud OS for Moonshot. For performance and stability, you must meet the minimum recommendations.
+
 For complete details, see the [Support Matrix](/cloudos/moonshot/prepare/supportmatrix/).
 
 ## How does HP Cloud OS for Moonshot help customers?
