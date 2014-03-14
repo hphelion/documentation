@@ -32,6 +32,8 @@ Welcome! You've got questions, we have the answers.
 * [What does HP Cloud OS for Moonshot support?](#what-does-hp-cloud-os-for-moonshot-support)
 * [How does HP Cloud OS for Moonshot help customers?](#how-does-hp-cloud-os-for-moonshot-help-customers) 
 * [How do I order and license HP Cloud OS for Moonshot?](#how-do-i-order-and-license-hp-cloud-os-for-moonshot)
+* [Is there a list of all HP Cloud OS for Moonshot topics?](#is-there-a-list-of-all-hp-cloud-os-for-moonshot-topics)
+* [Where can I find more information about HP Moonshot and OpenStack?](#where-can-i-find-more-information-about-hp-moonshot-and-openstack)
 
 ## What is the HP point of view on cloud solutions?
 
@@ -149,6 +151,14 @@ HP Cloud OS for Moonshot provides the foundation for the HP Cloud common archite
 ## How do I order and license HP Cloud OS for Moonshot?
 
 For information, see [How to order and license HP Cloud OS for Moonshot](/cloudos/moonshot/prepare/order-license/).
+
+## Is there a list of all HP Cloud OS for Moonshot topics?
+
+See the <a href="/cloudos/moonshot/siteindex/">Site Index</a>, which links to all the topics.
+
+## Where can I find more information about HP Moonshot and OpenStack?
+
+See the [Related Topics](/cloudos/moonshot/related-topics/) page, which provides links to HP Moonshot and OpenStack documentation.
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
