@@ -44,27 +44,27 @@ This topic contains the following information about the HP Cloud OS for Moonshot
 
 * Managing Server with options such as Power On/Off and Maintenance Mode
 
-**Workload Management** &mdash; Enables you to deploy a composite service comprising of different applications and workloads in a user friendly manner. You can browse through HP's catalog of pre-tested and pre-crafted workloads download and publish them to the cloud, then launch them to get a running application infrastructure. You can do this without having to worry about the underlying technical details.
+**Workload Management** &mdash; Enables you to deploy a composite service comprising of different applications and workloads in a user friendly manner. You can browse through HP's catalog of pre-tested and pre-crafted workloads download and publish them to the cloud,then launch them to get a running application infrastructure. You can do this without having to worry about the underlying technical details.
 
 
 ##Recommendations for HP Cloud OS for Moonshot 1.0## {#recommendations}
 
-This section describes the HP recommendations for best performance, functionality, and usability with this software version. 
+This section describes the HP recommendations for best performance, utility, and functionality with this software version. 
 We have also provided information about some limitations and known issues for reference purposes. This section contains:
 
-* [Recommendations for best functionality, performance and reliability](#best-practices)
- 
-* [Known issues in the 1.0 release](#known-issues) 
+* [Recommendations for best functionality, performance and reliability](#best-practices) 
 
-###Recommendations for best functionality, performance and reliability### {#best-practices} 
+* [Known issues in 1.0 release](#known-issues) 
+
+###Recommendations ### {#best-practices} 
 
 HP recommends the following best practices for HP Cloud OS for Moonshot 1.0.
 
 **Workloads**
 	
- * For best functionality, access your Operational Dashboard and Baremetal instance console through the Admin Network.
- 
- * For best results, create your images using the Disk Image Builder.  See the [Building Images](/cloudos/moonshot/manage/image-builder/) topic. 
+ * For best functionality, access your Operational Dashboard and Baremetal instance console through Admin Network.
+
+ * For best results, create your images using Disk Image Builder.
 
 **Provisioning**
 
@@ -72,77 +72,74 @@ HP recommends the following best practices for HP Cloud OS for Moonshot 1.0.
 
 **Installation**
 
-To enable maximum reliability in the Cloud environment, do not select the controller nodes when performing the <b>Create Compute Region</b> action for the Moonshot/Standard server. 
+* To enable maximum reliability in the Cloud environment, do not select the controller nodes when performing <b>Create Compute Region</b> action for a Moonshot/Standard server. 
 
-
-
-###Known issues in the 1.0 release### {#known-issues}
+###Known issues in 1.0 release### {#known-issues}
 
 The following are the known issues for HP Cloud OS for Moonshot 1.0.
 
 ####Installation####
 
-* The region size can only be extended.
+* The <b>Create Compute Region</b> command may fail due to a GET_SERVER_CERTIFICATE verification failure. To resolve this issue, follow this process:
 
-* Create Region fails due to a GET_SERVER_CERTIFICATE verification failure. To resolve this issue, follow this process:
-
- 1. In the Admin Node, edit the following file in the given path:
- `/opt/dell/chef/cookbooks/hp_cos_apollo_100/recipes/server.rb`
+ 1. In the Admin Node, edit the following file: /opt/dell/chef/cookbooks/hp_cos_apollo_100/recipes/server.rb
 	 
  2. Go to line 245 and add the -k switch.  Change this command:
- `" curl  #(keystone_protocol...`  to  `" curl  -k #(keystone_protocol...`
+ `" curl  #(keystone_protocol...` to `" curl  -k #(keystone_protocol...`
     
  3. Execute this command:
- `- knife cookbook upload hp_cos_apollo_100 -o /opt/dell/chef/cookbooks/ -V -k /etc/chef/webui.pem -u chef-webui`
+ `knife cookbook upload knife cookbook upload -o /opt/dell/chef/cookbooks/ -V -k /etc/chef/webui.pem -u chef-webui`
 	
  4. Remove the Cloud and create it again.
 
+* The region size can only be extended.  To reduce the region, remove the cloud and create it again.
+
 ####Provisioning####
 
-* After you de-provision a bulk node, the topology sometimes continues to display the "PROCESSING" state in the Administration Dashboard for a lengthy period of time. You can resolve this issue by increasing the timeout value of the IPMI driver: 
+* After you de-provision a bulk node topology, the topology sometimes continues to display the "PROCESSING" state in the Administration Dashboard for a lengthy period of time. You can resolve this issue by increasing the timeout value of the IPMI driver: 
    
- 1. Edit this file:
- `/usr/share/pyshared/nova/virt/baremetal/MoonshotIPMI.py`
+ 1. Edit this file:  /usr/share/pyshared/nova/virt/baremetal/MoonshotIPMI.py
 
- 2. Go to line 225 and change `timer.start(interval=1.0).wait()`  to  `timer.start(interval=30.0).wait()`
+ 2. Go to line 225 and change `timer.start(interval=1.0).wait()` to ` timer.start(interval=30.0).wait()`
 	
- 3. <b>Save</b> and <b>Exit</b>
+ 3. Save the updated file, and exit your text editor.
 	
- 4. Execute the command:
+ 4. Execute the command: 
  `restart Nova-compute`
 
 * Under some circumstances, after launching a workload profile in the Administration Dashboard, and then using <b>Terminate Workload</b> to deprovision, the workload/topology continues to list the state as "Processing".  In the <b>Deployed Workloads</b> tab, selecting <b>Delete Workload</b> resolves the issue.
 
 ####General####
 
-* Edit Network option is enabled in the Networks page in the Administration Dashboard. There is no impact on the functionality if you retain the default network settings. 
+* Due to an issue, the <b>Edit Network</b> option appears enabled in the Networks page of the Administration Dashboard. There is no impact on the functionality if you retain the default settings. 
 
-* Edit Extra Specs option is enabled for Flavors. This allows you to change the extra specs of the default flavor which will fail the instance. There is no impact on the functionality if you retain the default settings.
+* The <b>Edit Extra Specs</b> option appears enabled for Flavors and allows you to change the extra specs of the default flavor; doing so will result in a failure for the instance. To ensure smooth functioning of the instance, retain the default settings.
 
-* When you display the nodes table using Moonshot Management, the disk sizes for all discovered nodes appear to be 500 GB.
+* When you display the nodes table using Moonshot Management, the disk size for all discovered nodes appears to be 500 GB. This issue occurs due to the inability to gather the storage information through the IPMI commands.
 
 ##For further information## {#for-further-information}
 
-For additional related information on HP Cloud OS for Moonshot:
+For additional information on HP Cloud OS for Moonshot:
 
-* [HP Cloud OS for Moonshot documentation web site](/cloudos/moonshot/): Provides the topics listed below, plus FAQs, video tutorials, and more.
+* [HP Cloud OS for Moonshot Documentation web site](/cloudos/moonshot/): Provides the topics listed below, plus FAQs, video tutorials, and more.
 
-* [Install & Configure Your Cloud](/cloudos/moonshot/install): A set of sequential, connected topics that walk you through the installation and configuration process.
+* [Support Matrix](/cloudos/prepare/supportmatrix/): Information about platform support requirements for the HP Cloud OS for Moonshot core functions, including requirements for component products.
 
-* [Support Matrix](/cloudos/moonshot/prepare/supportmatrix/): Information about platform support requirements for the HP Cloud OS for Moonshot core functions, including requirements for component products.
+* [Install & Configure Your Cloud](/cloudos/moonshot/install/): A set of sequential, connected topics that walk you through the installation and configuration process.
 
-* [Operational Dashboard Help](/cloudos/moonshot/manage/operational-dashboard/): Contains topics about the Operational Dashboard user interface dialogs and options.
+* [Operational Dashboard Help](/cloudos/manage/operational-dashboard/): Contains topics about the Operational Dashboard user interface dialogs and options.
 
-* [Administration Dashboard Help](/cloudos/moonshot/manage/administration-dashboard/): Contains topics about the Administration Dashboard user interface dialogs and options.
+* [Administration Dashboard Help](/cloudos/manage/administration-dashboard/): Contains topics about the Administration Dashboard user interface dialogs and options.
 
-* [Utilities](/cloudos/moonshot/manage/utilities/): Describes the HP Cloud OS for Moonshot utilities.
+* [Utilities](/cloudos/manage/utilities/): Describes the HP Cloud OS for Moonshot utilities.
 
-* [Troubleshooting](/cloudos/moonshot/manage/troubleshooting/): Advice to resolve issues you may encounter with HP Cloud OS for Moonshot.
+* [Troubleshooting](/cloudos/manage/troubleshooting/): Advice to resolve issues you may encounter with HP Cloud OS for Moonshot.
 
-* [Building Images](/cloudos/moonshot/manage/image-builder/): Shows you how to use Disk Image Builder to create images for the HP Cloud OS for Moonshot.
+* [Building Images](/cloudos/moonshot/manage/image-builder/): Shows how to use the Disk Image Builder to create images for HP Cloud OS for Moonshot.
 
 * [Backup and Restore](/cloudos/moonshot/manage/backup-process/): Describes how to backup and restore HP Cloud OS for Moonshot.
 
+* [Related Topics](/cloudos/moonshot/related-topics/): Links to pertinent HP Moonshot System and OpenStack documentation.
 
 ###Legal Notices and Disclaimer### {#legal-notices-disclaimer}
 
