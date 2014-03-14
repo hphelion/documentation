@@ -123,17 +123,17 @@ For additional information on HP Cloud OS for Moonshot:
 
 * [HP Cloud OS for Moonshot Documentation web site](/cloudos/moonshot/): Provides the topics listed below, plus FAQs, video tutorials, and more.
 
-* [Support Matrix](/cloudos/prepare/supportmatrix/): Information about platform support requirements for the HP Cloud OS for Moonshot core functions, including requirements for component products.
+* [Support Matrix](/cloudos/moonshot/prepare/supportmatrix/): Information about platform support requirements for the HP Cloud OS for Moonshot core functions, including requirements for component products.
 
 * [Install & Configure Your Cloud](/cloudos/moonshot/install/): A set of sequential, connected topics that walk you through the installation and configuration process.
 
-* [Operational Dashboard Help](/cloudos/manage/operational-dashboard/): Contains topics about the Operational Dashboard user interface dialogs and options.
+* [Operational Dashboard Help](/cloudos/moonshot/manage/operational-dashboard/): Contains topics about the Operational Dashboard user interface dialogs and options.
 
-* [Administration Dashboard Help](/cloudos/manage/administration-dashboard/): Contains topics about the Administration Dashboard user interface dialogs and options.
+* [Administration Dashboard Help](/cloudos/moonshot/manage/administration-dashboard/): Contains topics about the Administration Dashboard user interface dialogs and options.
 
-* [Utilities](/cloudos/manage/utilities/): Describes the HP Cloud OS for Moonshot utilities.
+* [Utilities](/cloudos/moonshot/manage/utilities/): Describes the HP Cloud OS for Moonshot utilities.
 
-* [Troubleshooting](/cloudos/manage/troubleshooting/): Advice to resolve issues you may encounter with HP Cloud OS for Moonshot.
+* [Troubleshooting](/cloudos/moonshot/manage/troubleshooting/): Advice to resolve issues you may encounter with HP Cloud OS for Moonshot.
 
 * [Building Images](/cloudos/moonshot/manage/image-builder/): Shows how to use the Disk Image Builder to create images for HP Cloud OS for Moonshot.
 
