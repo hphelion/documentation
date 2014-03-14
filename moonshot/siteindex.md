@@ -30,7 +30,7 @@ PageRefresh();
 
 #### [Prepare: Getting Started with HP Cloud OS for Moonshot](/cloudos/moonshot/prepare/)
 
-* [Release Notes](/cloudos/moonshot/prepare/releasenotes/) 
+<!-- * [Release Notes](/cloudos/moonshot/prepare/releasenotes/) --> <!-- temporarily commented out until signoff --> 
 * [Support Matrix](/cloudos/moonshot/prepare/supportmatrix/) 
 * [Video Tutorials](/cloudos/moonshot/prepare/videos/) 
 * [FAQs](/cloudos/moonshot/prepare/faqs/)  
@@ -57,7 +57,7 @@ PageRefresh();
 #### [Manage your Cloud](/cloudos/moonshot/manage/)
 
 * [HP Cloud OS for Moonshot Utilities](/cloudos/moonshot/manage/utilities/)
-* [HP Cloud OS for Moonshot Troubleshooting](/cloudos/moonshot/manage/troubleshooting/) 
+<!-- * [HP Cloud OS for Moonshot Troubleshooting](/cloudos/moonshot/manage/troubleshooting/) -->  <!-- temporarily commented out until signoff --> 
 * [HP Cloud OS for Moonshot Operational Dashboard Help](/cloudos/moonshot/manage/operational-dashboard/) 
 <!--
   * [How the Operational Dashboard Works](/cloudos/moonshot/manage/operational-dashboard/how-opdash-works)
@@ -81,8 +81,6 @@ PageRefresh();
 #### [Develop](/cloudos/moonshot/develop/)
 
 * [API Quick Start](/cloudos/moonshot/develop/quickstart-intro/)
- 
-<!-- * [Value-Added Services](/cloudos/moonshot/api/services/)   -->
  
 #### [Related Topics](/cloudos/related-topics/)
  
