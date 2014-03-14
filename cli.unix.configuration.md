@@ -5,7 +5,7 @@ permalink: /cli/unix/configuration/
 product: unix-cli
 
 ---
-# Unix CLI: Account Configuration
+# Unix CLI: Account Configuration for v12.12
 
 ___________________
 
@@ -138,3 +138,16 @@ The current usable availability zones for the block storage service (`block_avai
 * `az-1.region-a.geo-1`
 * `az-2.region-a.geo-1`
 * `az-3.region-a.geo-1`
+
+
+##Related topics
+
+* [Installation](/cli/unix/install)
+* [Advanced Account Management](/cli/unix/account-management)
+* [Compute Examples](/cli/unix/compute)
+* [Object Storage Examples](/cli/unix/object-storage)
+* [CDN Examples](/cli/unix/cdn)
+* [Block Storage Examples](/cli/unix/block-storage)
+* [Volume Management](/block-storage/volume)
+* [DNS Examples](/cli/unix/dns)
+* [CLI Reference](/cli/unix/reference)

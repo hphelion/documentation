@@ -6,7 +6,7 @@ product: unix-cli
 categories: cli linux
 tags: cli linux
 ---
-#UNIX CLI: Generating verbose debugging output#
+#UNIX CLI: Generating verbose debugging output v12.12#
 
 ___________________
 

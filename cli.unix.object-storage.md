@@ -5,7 +5,7 @@ permalink: /cli/unix/object-storage/
 product: unix-cli
 
 ---
-# Unix CLI Object Storage Examples
+# Unix CLI Object Storage Examples for v12.12
 
 ___________________
 
@@ -285,3 +285,16 @@ Once the account is set up, use the `migrate` command and specify the source acc
     Copied chewy.htm => :disney
 
 Another article on [Object Store Migration](/cli/unix/articles/migration).
+
+
+##Related topics
+
+* [Installation](/cli/unix/install)
+* [Account Configuration](/cli/unix/configuration)
+* [Advanced Account Management](/cli/unix/account-management)
+* [Compute Examples](/cli/unix/compute)
+* [CDN Examples](/cli/unix/cdn)
+* [Block Storage Examples](/cli/unix/block-storage)
+* [Volume Management](/block-storage/volume)
+* [DNS Examples](/cli/unix/dns)
+* [CLI Reference](/cli/unix/reference)
