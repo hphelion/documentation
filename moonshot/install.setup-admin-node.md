@@ -26,7 +26,7 @@ This topic explains how to install the Admin Node, which launches the Operationa
 
 * [Set Up the Admin Node](#set-up-the-admin-node)
 
-* [Boot the Admin Node Using the Cloud OS ISO](#boot-the-admin-node-using-the-cloud-os-for-moonshot-iso)
+* [Boot the Admin Node Using the Cloud OS ISO](#boot-the-admin-node-using-the-hp-cloud-os-for-moonshot-iso)
 
 * [Launch the Operational Dashboard](#launch-the-operational-dashboard)
 
