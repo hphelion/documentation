@@ -55,7 +55,7 @@ Before you can begin working with a network, make sure you have activated the [c
 
 If you have not previously created an account and activated the compute service please sign up at [http://hpcloud.com](http://hpcloud.com).  
 
-Make sure you activate a compute instance in HP Cloud version 13.5 to access the networking and VPN capabilities.
+Make sure you activate a compute instance in HP Cloud version 13.5 to access the networking capabilities.
 
 #### Assigning access permission #### {#access}
 
