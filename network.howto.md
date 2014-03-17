@@ -43,10 +43,10 @@ You can use the Horizon Cloud Console to perform the following tasks:
 - [Specify an IP address for a network](#IPUI)
 - [Connect a network to the router](#ConnectRouter)
 - [Disconnect a network from the router](#DisconnectRouter)
-- [Enable or disable a port](#Disableport)
+- [Enable or disable a port](#EnablePort)
 - [Rename a network object](#RenameNet)
 
-All of the procedures in this section require that you access the Networks or Routers tab in the Project section of the Horizon Cloud Console, <a name="NetworkTab">as shown</a>:
+All of the procedures in this section require that you access the Networks or Routers tab in the Project section of the Horizon Cloud Console, <a name="NetworkTab"></a>as shown:
    <br><img src="media/network-tab-crop.png"  alt="" />
 
 ### How to create a network ### {#Creating}
@@ -108,7 +108,7 @@ You can delete a network, as needed. Before deleting a network, you must [disabl
 
 ## How to enable or disable a network {#Enabling}
 
-By default, when you [create a network](/mc/compute/networks/create-network#Creating), that network is created in an enabled admin state.  
+By default, when you [create a network](#Creating), that network is created in an enabled admin state.  
 
 You can to disable a port or enable a port as follows:
 
@@ -227,7 +227,7 @@ You need to install and use the CLI on a a system configured to access the proje
 - [Edit a sub-net](#EditSubCLI)
 - [Rename a port](#RenamePortCLI)
 
-For the full reference of supported HP Cloud CLI commands for Windows PowerShell, see [HP Cloud Environment CLI Software for Windows PowerShell Command Line Reference](docs.hpcloud.com/cli/windows/2/reference/). 
+For the full reference of supported HP Cloud CLI commands for Windows PowerShell, see [HP Cloud Environment CLI Software for Windows PowerShell Command Line Reference](/cli/windows/2/reference/). 
 
 ### How to create a network ### {#CreatingCLI}
 
@@ -266,7 +266,7 @@ For the full reference of supported HP Cloud CLI commands for Windows PowerShell
 
 3. Delete a network by executing the following command, using the appropriate values:
 
-	remove-network -id -all
+	`remove-network -id -all`
 
 	Where
 	
@@ -292,7 +292,7 @@ You can change the name of a network, as needed.
 
 3. Change the network name by executing the following command, using the appropriate values:
 	
-	update-network -id -n 
+	`update-network -id -n` 
 
 	Where
 
@@ -398,7 +398,7 @@ To change the name of a network:
 
 	The following example renames the network to Network1.
 
-		update-Network -id 12857174-99cf-40e9 -n "Network1" 
+		update-network -id 12857174-99cf-40e9 -n "Network1" 
 
 	
 ### How to edit a sub-net### {#EditSubCLI}
@@ -411,7 +411,7 @@ You can modify a sub-net to rename the sub-net or change the the external gatewa
 
 2. Enter the HP Cloud environment CLI by entering:
 
-	`PS C:> cd HPCS:`
+	`cd HPCS:`
 
 3. Modify the sub-net by executing the following command, using the appropriate values:
 	
@@ -442,7 +442,7 @@ You can change the name of a port, as needed.
 
 2. Enter the HP Cloud environment CLI by entering:
 
-	`PS C:> cd HPCS:`
+	`cd HPCS:`
 
 3. Change the port name by executing the following command, using the appropriate values:
 	
@@ -461,7 +461,6 @@ You can change the name of a port, as needed.
 ##For further information## {#ForFurtherInformation}
 
 * For information about the router details screen, take a look at the [Viewing router details](/mc/compute/networks/view-router/) page
-For the full reference of supported HP Cloud CLI commands for Windows PowerShell, see [HP Cloud Environment CLI Software for Windows PowerShell Command Line Reference](docs.hpcloud.com/cli/windows/2/reference/)
 * For basic information about our HP Cloud compute services, take a look at the [HP Cloud compute overview](/compute/) page
-* Use the MC [site map](/mc/sitemap) for a full list of all available MC documentation pages
+* Use the [documentation site map](/mc/sitemap) for a full list of all available MC documentation pages
 * For information about the Open Stack networking features, surf on over to [their networking wiki](https://wiki.openstack.org/wiki/Quantum)
