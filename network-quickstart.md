@@ -49,7 +49,7 @@ To use this solution effectively, you should be familiar with:
 
 ## Before you begin ### {#begin}
 
-Before you can begin working with a network, make sure you have activated the [compute service](#compute),  [installed the HP Cloud 13.5 CLI](#installcli), if you prefer to use the CLI, and have sufficient access permissions.
+Before you can begin working with a network, make sure you have activated the [compute service](#compute),  [installed the HP Cloud 13.5 CLI](#installcli) (if you prefer to use the CLI), and have sufficient access permissions.
 
 #### Activating the compute service in HP Cloud (optional) #### {#compute}
 
@@ -61,7 +61,7 @@ Make sure you activate a compute instance in HP Cloud version 13.5 to access the
 
 The user who will be working with the network must have the proper user access to the Compute and Networking services. Specifically, the user needs to have Compute Admin and Network Admin permission. 
 
-For information on users, groups, and roles, see Managing Account Users https://community.hpcloud.com/article/managing-account-users  
+For information on users, groups, and roles, see [Managing Account Users](https://community.hpcloud.com/article/managing-account-users).  
 
 
 #### Installing the CLI #### {#installcli}

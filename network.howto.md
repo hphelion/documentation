@@ -11,22 +11,27 @@ product: compute
 
 You might need to modify the default network or create additional networks.  This page gives you some how-to's to use the [Horizon Cloud Console](#console) or [HP Cloud CLI for Windows PowerShell](#powershell) to perform the following tasks:  
 
-- Create a network
-- Enable a network
-- Disable a network
-- Delete a network
-- Rename a network
-- Assign a router to a network
-- Edit a sub-net
-- Specify an IP address
-- Rename a port
-- Enable or disable a port
+- Creating and deleting networks
+- Enabling and disabling networks
+- Specifying an IP address for a network
+- Attaching a network to the router
+- Renaming a network
+- Enabling or disabling a port
+- Editing a sub-net
+- Renaming network objects
 
 ## Before you begin ## {#Overview}
 
 If you have not previously created an account and activated the compute service please sign up at [http://hpcloud.com](http://hpcloud.com).  
 
-Make sure you activate a compute instance in HP Cloud version 13.5 to access the networking and VPN capabilities.
+If you prefer to use the [HP Cloud CLI for Windows PowerShell](/cli/windows/2/installation/) make sure the CLI is installed and you have sufficient access permissions.
+
+#### Assigning access permission to services #### {#access}
+
+The user who will be working with the network must have the proper user access to the Compute and Networking services. Specifically, the user needs to have Compute Admin and Network Admin permission. 
+
+For information on users, groups, and roles, see [Managing Account Users](https://community.hpcloud.com/article/managing-account-users).
+
 
 ## Using the Horizon Cloud Console ## {#console}
 
@@ -35,6 +40,7 @@ You can use the Horizon Cloud Console to perform the following tasks:
 - [Create a network](#Creating)
 - [Delete a network](#Deleting)
 - [Enable or disable a network](#Enabling)
+- [Specify an IP address for a network](#IPUI)
 - [Connect a network to the router](#ConnectRouter)
 - [Disconnect a network from the router](#DisconnectRouter)
 - [Enable or disable a port](#Disableport)
@@ -120,11 +126,20 @@ You can to disable a port or enable a port as follows:
 	<br><img src="media/network-enable.png"  alt="" />
 
 
+### How to specify a specific IP address ### {#IPUI}
+
+The Networking service you to choose your own IP addressing scheme, even if your IP addresses overlap with other tenants. 
+
+The only time you can specify an address for a network is when you create the network. After the network is created, you cannot change the IP address. 
+
+See [How to create a network](#Creating).
+
+
 ### How to connect a network to the router ### {#ConnectRouter}
 
-A network connects to the router through an *interface*. 
+A network connects to the router through an *interface*. You must create an interface between the network and router to connect to the network and any instances on that network.
 
-You connect the router to a network or disconnect from a network as follows:
+You connect the network to the router as follows:
 
 1. Login to the [Horizon Console](https://horizon.hpcloud.com/).
 
@@ -179,7 +194,6 @@ To enable or disable a port:
 
 6. Click **Save Changes**.
 
-
 ### How to rename objects ### {#RenameNet}
 
 You can change the name of many of the items on the Network screens, as follows:
@@ -200,27 +214,63 @@ You can change the name of many of the items on the Network screens, as follows:
 
 The HP Cloud environment command-line interface (CLI) software for Windows PowerShell allows Windows users to manage their HP Cloud services from the command line.
 
+To use the [HP Cloud CLI for Windows PowerShell](/cli/windows/2/installation/) make sure the CLI is installed and you have sufficient access permissions.
+
+You need to install and use the CLI on a a system configured to access the project associated with the network you want to work with. The installation instructions show how to configure the CLI to interact with a specific project.   
+
+- [Create a network](#CreatingCLI)
+- [Delete a network](#DeleteCLI)
+- [Specify an IP address for a network](#IPCLI)
+- [Connect a network to the router](#ConnectRouterCLI)
+- [Disconnect a network from the router](#DisconnectRouterCLI)
+- [Rename a network](#RenameNetCLI)
+- [Edit a sub-net](#EditSubCLI)
+- [Rename a port](#RenamePortCLI)
+
 For the full reference of supported HP Cloud CLI commands for Windows PowerShell, see [HP Cloud Environment CLI Software for Windows PowerShell Command Line Reference](docs.hpcloud.com/cli/windows/2/reference/). 
 
-### How to delete a network ### {#DeleteCLI}
+### How to create a network ### {#CreatingCLI}
 
-1. On the 13.5 instance, launch a Windows PowerShell window.  
+1. On a system configured to access the project, launch a Windows PowerShell window.  
 
 	Select the shell appropriate to your system, either the 64-bit or 32-bit version. 
 
 2. Enter the HP Cloud environment CLI by entering:
 
-	`PS C:> cd HPCS:`
+	`cd HPCS:`
 
 3. Create a new network by executing the following command, using the appropriate values:
 	
-	remove-network
+	`new-network -n - asu` 
+
+	Where
+	
+		n - The name to assign to the new network.
+
+		asu - Create the network in the active state (Admin status up).
+
+	The following example creates a network called Newtwork1.
+
+		new-network -n Network1 -asu 
+
+
+### How to delete a network ### {#DeleteCLI}
+
+1. On a system configured to access the project, launch a Windows PowerShell window.  
+
+	Select the shell appropriate to your system, either the 64-bit or 32-bit version. 
+
+2. Enter the HP Cloud environment CLI by entering:
+
+	`cd HPCS:`
+
+3. Delete a network by executing the following command, using the appropriate values:
 
 	remove-network -id -all
 
 	Where
 	
-		id - The ID of the network to delete.
+		id - The numeric ID of the network to delete. Do not use the network name. 
 
 		all - Removes all networks in the current availability-zone associated with your project.
 
@@ -228,27 +278,25 @@ For the full reference of supported HP Cloud CLI commands for Windows PowerShell
 
 		remove-network -id 12857174-99cf-40e9-999e-fb0fa2e84898  
 
-Deletes the Network with the id of 12857174-99cf-40e9-999e-fb0fa2e84898
-
 ### How to rename a network ### {#RenameNetCLI}
 
 You can change the name of a network, as needed.
 
-1. On the 13.5 instance, launch a Windows PowerShell window.  
+1. On a system configured to access the project, launch a Windows PowerShell window.  
 
 	Select the shell appropriate to your system, either the 64-bit or 32-bit version. 
 
 2. Enter the HP Cloud environment CLI by entering:
 
-	`PS C:> cd HPCS:`
+	`cd HPCS:`
 
 3. Change the network name by executing the following command, using the appropriate values:
 	
-	update-network -id networkIP Identity -n Name
+	update-network -id -n 
 
 	Where
 
-	id - The network ID.
+	id - The numeric ID of the network to rename. Do not use the network name.
 
 	n - The new name for the network.
 
@@ -256,11 +304,108 @@ You can change the name of a network, as needed.
 
 		update-Network -id 12857174-99cf-40e9-999e-fb0fa2e84898 -n "Network1" 
 
+
+### How to specify a specific IP address ### {#IPCLI}
+
+The Networking service you to choose your own IP addressing scheme, even if your IP addresses overlap with other tenants. 
+
+The only time you can specify an address for a network is when you create the network. After the network is created, you cannot change the IP address. 
+
+See [How to create a network](#CreatingCLI). 
+
+
+### How to connect a network to the router ### {#ConnectRouterCLI}
+
+A network connects to the router through an *interface*. You must create an interface between the network and router to connect to the network and any instances on that network.
+
+You connect the network to the router as follows:
+
+1. On a system configured to access the project, launch a Windows PowerShell window.  
+
+	Select the shell appropriate to your system, either the 64-bit or 32-bit version. 
+
+2. Enter the HP Cloud environment CLI by entering:
+
+	`cd HPCS:`
+
+3. Create an interface between the router and a network, using the appropriate values:
+	
+	`new-routerinterface`
+
+	Where
+
+		rid - The numeric ID of the router. Do not use the router name.
+
+		sid - The numeric ID of the subnet. Do not use the router name.
+
+		pid - The numeric ID of the port. Do not use the router name.
+
+	The following example creates an interface between the router and the specified port on a network.
+
+		new-routerinterface -rid bd1c30f7-71f1 -pid c9e32588-5b69 -sid 7yuu9886-5b69-4100
+
+
+### How to disconnect a network from the router ### {#DisconnectRouterCLI}
+
+A network connects to the router through an *interface*. 
+
+You disconnect a network as follows:
+
+1. On a system configured to access the project, launch a Windows PowerShell window.  
+
+	Select the shell appropriate to your system, either the 64-bit or 32-bit version. 
+
+2. Enter the HP Cloud environment CLI by entering:
+
+	`cd HPCS:`
+
+
+3. Delete the interface between the router and a network, using the appropriate values:
+	
+	`remove-routerinterface`
+
+	Where
+
+		id - The numeric ID of the router. Do not use the router name.
+
+	The following example deletes the interface on the router.
+
+		remove-routerinterface -id bd1c30f7-71f1 
+
+### How to rename a network ### {#EditNetCLI}
+
+You define the name of a network when you create the network. If, at a later time, you can change the name, as needed.
+
+To change the name of a network:
+
+1. On a system configured to access the project, launch a Windows PowerShell window.  
+
+	Select the shell appropriate to your system, either the 64-bit or 32-bit version. 
+
+2. Enter the HP Cloud environment CLI by entering:
+
+	`cd HPCS:`
+
+3. Rename the network using the appropriate values:
+	
+	`update-network -id -n`
+
+	Where
+
+		id - The numeric ID of the router. Do not use the router name.
+
+		n - The new name for the network.
+
+	The following example renames the network to Network1.
+
+		update-Network -id 12857174-99cf-40e9 -n "Network1" 
+
+	
 ### How to edit a sub-net### {#EditSubCLI}
 
 You can modify a sub-net to rename the sub-net or change the the external gateway assigned to the sub-net.
 
-1. On the 13.5 instance, launch a Windows PowerShell window.  
+1. On a system configured to access the project, launch a Windows PowerShell window.  
 
 	Select the shell appropriate to your system, either the 64-bit or 32-bit version. 
 
@@ -270,11 +415,11 @@ You can modify a sub-net to rename the sub-net or change the the external gatewa
 
 3. Modify the sub-net by executing the following command, using the appropriate values:
 	
-	update-subnet -id SubnetIdentifier -egw ExternalGatewayNetworkIPAddress - n Name
+	update-subnet -id  -egw - n 
 
 	Where
 
-		id - The sub-net ID.
+		id - The numeric ID of the subnet to modify. Do not use the subnet name.
 
 		egw - The external gateway network ID to assign.
 
@@ -291,7 +436,7 @@ By default, when a port is created, the port is automatically assigned a name an
 
 You can change the name of a port, as needed.
 
-1. On the 13.5 instance, launch a Windows PowerShell window.  
+1. On a system configured to access the project, launch a Windows PowerShell window.  
 
 	Select the shell appropriate to your system, either the 64-bit or 32-bit version. 
 
@@ -301,45 +446,17 @@ You can change the name of a port, as needed.
 
 3. Change the port name by executing the following command, using the appropriate values:
 	
-	update-port  -id port -did name
+	update-port  -id -did 
 
 	Where
 
-	id - The port ID.
+		id - The numeric ID of the port to rename. Do not use the port name.
 
-	did - The new name for the port.
+		did - The new name for the port.
 
 	The following example renames the specified port to port1:
 
 	update-Port -id 12857174-99cf-40e9-999e-fb0fa2e84898 -did "port1" 
-
-### How to assign a router to a network ### {#AssignRouterCLI}
-
-You can assign a router to an external network, as needed.
-
-1. On the 13.5 instance, launch a Windows PowerShell window.  
-
-	Select the shell appropriate to your system, either the 64-bit or 32-bit version. 
-
-2. Enter the HP Cloud environment CLI by entering:
-
-	`PS C:> cd HPCS:`
-
-3. Assign the external network by executing the following command, using the appropriate values:
-	
-	update-router  -id RouterID -nid Name
-
-	Where
-
-	id - The router ID.
-
-	nid - The new name for the router.
-
-	The following example renames the specified router to router1:
-
-	update-Port -id 12857174-99cf-40e9-999e-fb0fa2e84898 -nid "router1" 
-
-
 
 ##For further information## {#ForFurtherInformation}
 
