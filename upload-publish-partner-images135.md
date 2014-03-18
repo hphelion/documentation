@@ -36,7 +36,7 @@ All HP Cloud users have access to both types of public images. When you create a
 * Private images
 * Bootable volumes
 
-This document explains how to upload images and make them public within the **Partner Images**, described in the following sections:
+This document explains how to upload images and make them public within **Partner Images**, described in the following sections:
 
 * [Getting started](#publishGetStarted)
 * [Creating an image from a snapshot](#publishWindowsSnap)
@@ -626,9 +626,12 @@ Possible HTTP return codes are listed in HP Cloud Image API documentation. The m
 
 For additional information on uploading an image and making it publicly available, see:
 
-* [HP Cloud Image Service API documentation](https://docs.hpcloud.com/api/v13/image/)* [Openstack's documentation](http://docs.openstack.org/user-guide/content/ch_cli.html)* [Cloud 13.5 CLI Installation Instructions](https://community.hpcloud.com/article/cloud-135-cli-installation-instructions)
+* [HP Cloud Image Service API documentation](https://docs.hpcloud.com/api/v13/image/)
+* [Openstack's documentation](http://docs.openstack.org/user-guide/content/ch_cli.html)
+* [Cloud 13.5 CLI Installation Instructions](https://community.hpcloud.com/article/cloud-135-cli-installation-instructions)
 * [Manage images using the Glance client](http://docs.openstack.org/user-guide/content/cli_manage_images.html)
-* [glance command reference](http://docs.openstack.org/user-guide/content/glanceclient_commands.html)* [Technical support knowledge base](https://community.hpcloud.com)
+* [glance command reference](http://docs.openstack.org/user-guide/content/glanceclient_commands.html)
+* [Technical support knowledge base](https://community.hpcloud.com)
 
 ## Contacting support ## {#contactSupport}
 If you need further assistance, you can contact support in any of these ways:
