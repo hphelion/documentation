@@ -29,7 +29,7 @@ We have two types of public images:
 * HP Cloud-created public images 
 * Partner-created public images
 
-All HP Cloud users have access to both types of public images. When you create a server, your image options are:
+All HP Cloud users have access to both types of public images. When you create a Windows or Linux server, your image options are:
 
 * Public images
 * Partner images
