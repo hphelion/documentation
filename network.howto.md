@@ -37,7 +37,7 @@ For information on users, groups, and roles, see [Managing Account Users](https:
 
 You can use the Horizon Cloud Console to perform the following tasks:
 
-- [Create a network](#Creating)
+- [Create a network and subnet](#Creating)
 - [Delete a network](#Deleting)
 - [Enable or disable a network](#Enabling)
 - [Specify an IP address for a network](#IPUI)
@@ -46,10 +46,10 @@ You can use the Horizon Cloud Console to perform the following tasks:
 - [Enable or disable a port](#EnablePort)
 - [Rename a network object](#RenameNet)
 
-All of the procedures in this section require that you access the Networks or Routers tab in the Project section of the Horizon Cloud Console, <a name="NetworkTab"></a>as shown:
+All of the procedures in this section require that you [be able to access](#access) the Networks or Routers tab in the Project section of the Horizon Cloud Console, <a name="NetworkTab"></a>as shown:
    <br><img src="media/network-tab-crop.png"  alt="" />
 
-### How to create a network ### {#Creating}
+### How to create a network and subnet ### {#Creating}
 
 To create a network and subnet, use the following steps:
 
@@ -60,21 +60,20 @@ To create a network and subnet, use the following steps:
 3. Click **Create Network**. 
 	<br><img src="media/compute-network-new-network-create.png"  alt="" />
 
-4. On the **Network** tab, enter a name for the network  and leave the **Admin State** selected.  
+4. On the **Network** tab, enter a name for the network.
 	<br><img src="media/compute-network-new-network.png"  alt="" />
 
-5. Click **Next** to configure a subnet for the network. 
+6. Leave the **Admin State** selected to launch the network in the enabled state or clear the field to disable the new network.  
 
-6. On the **Subnet** tab, enter the subnet name
+6. Click **Next** to configure a subnet for the network. 
+
+7. On the **Subnet** tab, 
+	- Enter the subnet name.
+	- Enter a network address range for the subnet in Classless Inter-Domain Routing (CIDR) format in the **Network Address** field,  for example: 192.168.0.0/24.
+	- Select IPv4 or IPv6, as appropriate, in the **IP Version** field.
+	- Enter a gateway IP address from the subnet or leave the **Gateway IP** field blank to use the default value for the gateway IP address; for example, 192.168.0.1 for 192.168.0.0/24.
+	- Leave **Disable Gateway** clear to enable the network gateway for this network, or select  **Disable Gateway** to disable the network. You will not be able to connect this network to the router if the gateway is disabled. 
 	<br><img src="media/compute-network-new-network-sub.png"  alt="" />
-
-7. In the **Network Address** field enter a network address range for the subnet in Classless Inter-Domain Routing (CIDR) format, for example: 192.168.0.0/24.
-
-8. In the **IP Version** field, select IPv4 or IPv6, as appropriate.
-
-9. Leave the **Gateway IP** field blank to use the default value for the gateway IP address; for example, 192.168.0.1 for 192.168.0.0/24.
-
-10. To disable the network gateway for this network, select  **Disable Gateway**. You will not be able to connect this network to the router if the gateway is disabled. 
 
 11. Click **Next**. 
 
