@@ -26,6 +26,8 @@ This page covers the following topics:
 * [Using Regions and Availability Zones](#az)
 * [For further information](#info)
 
+For more details on how to work with your network, see [HP Cloud Networking: Quick start guide](/compute/network-quick-start) or [How To's with HP Cloud Networking version 13.5](/compute/networks/howto/).
+
 ##Using the Default Network Configuration## {#default}
 
 HP Cloud's default configuration of a network, subnet, router, and security group comes with HP Cloud compute services activation and is ready to deploy virtual servers.
