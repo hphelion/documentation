@@ -60,33 +60,31 @@ To create a network and subnet, use the following steps:
 3. Click **Create Network**. 
 	<br><img src="media/compute-network-new-network-create.png"  alt="" />
 
-4. On the **Network** tab, enter a name for the network.
+4. On the **Network** tab, 
 	<br><img src="media/compute-network-new-network.png"  alt="" />
-
-6. Leave the **Admin State** selected to launch the network in the enabled state or clear the field to disable the new network.  
+	- Enter a name for the network.
+	- Leave the **Admin State** selected to launch the network in the enabled state or clear the field to disable the new network.  
 
 6. Click **Next** to configure a subnet for the network. 
 
-7. On the **Subnet** tab, 
+7. On the **Subnet** tab: 
+	<br><img src="media/compute-network-new-network-sub.png"  alt="" />
 	- Enter the subnet name.
 	- Enter a network address range for the subnet in Classless Inter-Domain Routing (CIDR) format in the **Network Address** field,  for example: 192.168.0.0/24.
 	- Select IPv4 or IPv6, as appropriate, in the **IP Version** field.
 	- Enter a gateway IP address from the subnet or leave the **Gateway IP** field blank to use the default value for the gateway IP address; for example, 192.168.0.1 for 192.168.0.0/24.
 	- Leave **Disable Gateway** clear to enable the network gateway for this network, or select  **Disable Gateway** to disable the network. You will not be able to connect this network to the router if the gateway is disabled. 
-	<br><img src="media/compute-network-new-network-sub.png"  alt="" />
+ 
+8. Click **Next**. 
 
-11. Click **Next**. 
-
-11. On the **Subnet Details** tab, DHCP is enabled by default. If you do not want to use the DCHP server on this subnet, clear the **Enable DHCP** option.
+9. On the **Subnet Details** tab:
 	<br><img src="media/compute-network-new-network-sub-det.png"  alt="" />
+	- Clear the **Enable DHCP** option, as needed, to not want to use the DCHP server on this subnet  DHCP is enabled by default. 
+	- Optionally, enter the starting and ending IP addresses you want for your subnet in the **Allocation Pools** field, in the format IP_ADDR,IP_ADDR. For example: `192.168.1.10,192.168.1.120`.  
+	- Optionally, enter the `IP Address` you want for your subnet in the **DNS Name Servers** field.
+	- Optionally, enter the `Destination CIDR` and `Next Hop` for your subnet in the **Host Routes** field to create host routes.  
 
-12. To create an allocation pool, enter the starting and ending IP addresses you want for your subnet in the text entry fields, in the format IP_ADDR,IP_ADDR. For example: `192.168.1.10,192.168.1.120`.  
-
-13. To create a DNS Nameserver, enter the `IP Address` you want for your subnet in the text entry field.
-
-14. To create host routes, enter the `Destination CIDR` and `Next Hop` you want for your subnet in the text entry fields.  
-
-15. Click **Create**. 
+10. Click **Create**. 
 
 
 ### How to delete a network ### {#Deleting}
