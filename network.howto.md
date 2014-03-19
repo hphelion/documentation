@@ -70,7 +70,7 @@ To create a network and subnet, use the following steps:
 7. On the **Subnet** tab: 
 	<br><img src="media/compute-network-new-network-sub.png"  alt="" />
 	- Enter the subnet name.
-	- Enter a network address range for the subnet in Classless Inter-Domain Routing (CIDR) format in the **Network Address** field,  for example: 192.168.0.0/24.
+	- Enter a network address range for the subnet in CIDR (Classless Inter-Domain Routing) format in the **Network Address** field,  for example: 192.168.0.0/24.
 	- Select IPv4 or IPv6, as appropriate, in the **IP Version** field.
 	- Enter a gateway IP address from the subnet or leave the **Gateway IP** field blank to use the default value for the gateway IP address; for example, 192.168.0.1 for 192.168.0.0/24.
 	- Leave **Disable Gateway** clear to enable the network gateway for this network, or select  **Disable Gateway** to disable the network. You will not be able to connect this network to the router if the gateway is disabled. 
@@ -79,9 +79,12 @@ To create a network and subnet, use the following steps:
 
 9. On the **Subnet Details** tab:
 	<br><img src="media/compute-network-new-network-sub-det.png"  alt="" />
-	- Clear the **Enable DHCP** option, as needed, to not want to use the DCHP server on this subnet  DHCP is enabled by default. 
-	- Optionally, enter the starting and ending IP addresses you want for your subnet in the **Allocation Pools** field, in the format IP_ADDR,IP_ADDR. For example: `192.168.1.10,192.168.1.120`.  
-	- Optionally, enter the `IP Address` you want for your subnet in the **DNS Name Servers** field.
+	- Clear the **Enable DHCP** option, as needed, to not use the network as a DCHP. DHCP is enabled by default.
+		If enabled, the subnet will serve as your DHCP server. Instances associated with the subnet will be assigned an IP address from this pool. . 
+	- Optionally, enter the starting and ending IP addresses you want for your DHCP allocation pool in the **Allocation Pools** field, in the format IP_ADDR,IP_ADDR. For example: `192.168.1.10,192.168.1.120`.
+		By deafult, the server has an application pool starting with 10.0.0.0/24.  
+	- Optionally, enter the `IP Address` of your subnet in the **DNS Name Servers** field.
+		If blank, your subnet will default to using HP's internal DNS which uses DNSMASQ.
 	- Optionally, enter the `Destination CIDR` and `Next Hop` for your subnet in the **Host Routes** field to create host routes.  
 
 10. Click **Create**. 
@@ -97,17 +100,17 @@ You can delete a network, as needed. Before deleting a network, you must [disabl
 
 3. On the Networks screen, locate the network which you want to delete.
 
-4. In the Actions column, click **More** -> **Delete Network** for your the network. 
+4. In the Actions column, click **More** > **Delete Network** for your the network. 
 	<br><img src="media/network-delete.png"  alt="" />
 
 5. In the confirmation dialog, click **Delete Network**.
 
 
-## How to enable or disable a network {#Enabling}
+### How to enable or disable a network ### {#Enabling}
 
 By default, when you [create a network](#Creating), that network is created in an enabled admin state.  
 
-You can to disable a port or enable a port as follows:
+You can to disable a port or enable a network as follows:
 
 1. Login to the [Horizon Console](https://horizon.hpcloud.com/).
 
@@ -122,10 +125,11 @@ You can to disable a port or enable a port as follows:
 	- clear the **Admin State** option to disable the network
 	<br><img src="media/network-enable.png"  alt="" />
 
+6. Click **Save Changes**.
 
 ### How to specify a specific IP address ### {#IPUI}
 
-The Networking service you to choose your own IP addressing scheme, even if your IP addresses overlap with other tenants. 
+The Networking service allows you to choose your own IP addressing scheme, even if your IP addresses overlap with other projects. 
 
 The only time you can specify an address for a network is when you create the network. After the network is created, you cannot change the IP address. 
 
@@ -134,7 +138,7 @@ See [How to create a network](#Creating).
 
 ### How to connect a network to the router ### {#ConnectRouter}
 
-A network connects to the router through an *interface*. You must create an interface between the network and router to connect to the network and any instances on that network.
+A network connects to the router through an *interface*. You must create an interface between the network and router to remotely connect to the network and any instances on that network through the router.
 
 You connect the network to the router as follows:
 
@@ -156,7 +160,7 @@ You connect the network to the router as follows:
 
 A network connects to the router through an *interface*. 
 
-You disconnect a network as follows:
+You disconnect a network by removing the interface, as follows:
 
 1. Login to the [Horizon Console](https://horizon.hpcloud.com/).
 
@@ -179,7 +183,7 @@ To enable or disable a port:
 
 2. Select the [Networks tab](#NetworkTab) under the Project section.
 
-3. On the Networks screen, click the network associated with the port you want to rename.
+3. On the Networks screen, click the network associated with the port you want to modify.
 
 4. In the Actions column, click **Edit Port** for your the port you are changing. 
 
@@ -201,7 +205,7 @@ You can change the name of many of the items on the Network screens, as follows:
 
 3. Locate the object which you want to rename.
 
-4. In the Actions column, click the Edit button for the object. 
+4. In the Actions column, click the **Edit** button for the object you are modifying. 
 
 5. In the edit screen, if the name field is available, enter a new name and click the save button. If the name field is not available, you cannot change the name. 
 	
@@ -213,7 +217,9 @@ The HP Cloud environment command-line interface (CLI) software for Windows Power
 
 To use the [HP Cloud CLI for Windows PowerShell](/cli/windows/2/installation/) make sure the CLI is installed and you have sufficient access permissions.
 
-You need to install and use the CLI on a a system configured to access the project associated with the network you want to work with. The installation instructions show how to configure the CLI to interact with a specific project.   
+You need to install and use the CLI on a system configured to access the project associated with the network you want to work with. The installation instructions show how to configure the CLI to interact with a specific project. 
+
+You can use the Windows PowerShell CLI to perform the following tasks:  
 
 - [Create a network](#CreatingCLI)
 - [Delete a network](#DeleteCLI)
@@ -244,7 +250,7 @@ For the full reference of supported HP Cloud CLI commands for Windows PowerShell
 	
 		n - The name to assign to the new network.
 
-		asu - Create the network in the active state (Admin status up).
+		asu - Creates the network in the active state (Admin status up).
 
 	The following example creates a network called Newtwork1.
 
@@ -275,36 +281,10 @@ For the full reference of supported HP Cloud CLI commands for Windows PowerShell
 
 		remove-network -id 12857174-99cf-40e9-999e-fb0fa2e84898  
 
-### How to rename a network ### {#RenameNetCLI}
-
-You can change the name of a network, as needed.
-
-1. On a system configured to access the project, launch a Windows PowerShell window.  
-
-	Select the shell appropriate to your system, either the 64-bit or 32-bit version. 
-
-2. Enter the HP Cloud environment CLI by entering:
-
-	`cd HPCS:`
-
-3. Change the network name by executing the following command, using the appropriate values:
-	
-	`update-network -id -n` 
-
-	Where
-
-	id - The numeric ID of the network to rename. Do not use the network name.
-
-	n - The new name for the network.
-
-	The following example renames the specified network to Network1:
-
-		update-Network -id 12857174-99cf-40e9-999e-fb0fa2e84898 -n "Network1" 
-
 
 ### How to specify a specific IP address ### {#IPCLI}
 
-The Networking service you to choose your own IP addressing scheme, even if your IP addresses overlap with other tenants. 
+The Networking service allows you to choose your own IP addressing scheme, even if your IP addresses overlap with other tenants. 
 
 The only time you can specify an address for a network is when you create the network. After the network is created, you cannot change the IP address. 
 
@@ -313,7 +293,7 @@ See [How to create a network](#CreatingCLI).
 
 ### How to connect a network to the router ### {#ConnectRouterCLI}
 
-A network connects to the router through an *interface*. You must create an interface between the network and router to connect to the network and any instances on that network.
+A network connects to the router through an *interface*. You must create an interface between the network and router to remotely connect to the network and any instances on that network through the router.
 
 You connect the network to the router as follows:
 
@@ -365,9 +345,11 @@ You disconnect a network as follows:
 
 		id - The numeric ID of the router. Do not use the router name.
 
+		sid - The numeric ID of the subnet. Do not use the router name.
+
 	The following example deletes the interface on the router.
 
-		remove-routerinterface -id bd1c30f7-71f1 
+		remove-routerinterface -rid bd1c30f7-71f1 -sid 7yuu9886-5b69-4100 
 
 ### How to rename a network ### {#EditNetCLI}
 
@@ -457,7 +439,8 @@ You can change the name of a port, as needed.
 
 ##For further information## {#ForFurtherInformation}
 
-* For information about the router details screen, take a look at the [Viewing router details](/mc/compute/networks/view-router/) page
-* For basic information about our HP Cloud compute services, take a look at the [HP Cloud compute overview](/compute/) page
+* For information about the router details screen, take a look at the [Viewing router details](/mc/compute/networks/view-router/) page.
+* For basic information about our HP Cloud compute services, take a look at the [HP Cloud compute overview](/compute/) page.
+* For a list of issues and workarounds for working with the Networking service, see [Known Issues and Workarounds with the Networking Service](/compute/known-issues/).
 * Use the [documentation site map](/mc/sitemap) for a full list of all available MC documentation pages
 * For information about the Open Stack networking features, surf on over to [their networking wiki](https://wiki.openstack.org/wiki/Quantum)

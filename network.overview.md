@@ -42,6 +42,6 @@ You can use any of several command-line interface software to access HP Cloud co
 
 Check out the following pages for more information on using HP Cloud Networking services:
 
-- [Known Issues and Best Practices in Compute and Networking in 13.5](https://community.hpcloud.com/article/known-issues-and-best-practices-compute-and-networking-135)
-- [Getting Started with Compute 13.5](https://community.hpcloud.com/article/getting-started-compute-135)
-- [OpenStack networking wiki](https://wiki.openstack.org/wiki/Quantum)
+- For a list of issues and workarounds for working with the Networking service, see [Known Issues and Workarounds with the Networking Service](/compute/known-issues/).
+- For more information on the HP Cloud Compute service, see[Getting Started with Compute 13.5](https://community.hpcloud.com/article/getting-started-compute-135).
+- For more information on OpenStack networking, see [OpenStack networking wiki](https://wiki.openstack.org/wiki/Quantum).

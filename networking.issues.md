@@ -1,14 +1,18 @@
 ---
 layout: default
 title: "How To's with the Networking Service"
-permalink: /compute/using/
+permalink: /compute/known-issues/
 product: compute
 
 ---
-# How To's with the Networking Service
+# Known Issues and Workarounds with the Networking Service
 
-##Known Issues and Workarounds## {#KnownIssuesandWorkarounds}
-###Port Configuration:###
+<!-- Taken from the doc known as the Network Guide ("HP Cloud Networking overview) /compute.network-guide.md -->
+
+The following are some known issues and best practices you should observe when using the HP Cloud Networking service:
+
+##Port Configuration:##
+
 **Background**
 
 The HP Cloud compute service attaches virtual servers to the network via HP Cloud Networking ports, which are created in one of the two following ways:
@@ -41,7 +45,7 @@ If you allow compute to create the ports instead of going through Networking, co
 3. Only make changes through the compute service for ports that are assigned to servers.
 
 
-###Security Groups: 
+## Security Groups ## 
  
 **Background**
 
@@ -56,3 +60,7 @@ If you configure security groups via Networking, compute may not display the ful
 1. Use **either** the compute **or** networking service to configure security groups, but do not use both.   Using the OpenStack Networking API provides additional functionality in the form of outbound rules, which the compute API cannot display. 
 
 Note: Security Groups are a feature of  HP Cloud Networking and are fully supported by the Networking API. A limited set of Security Group features are also accessible via the compute API for convenience and backwards compatibility. To directly access the API's broader functionality, HP recommends working only through the OpenStack Networking API and does not recommend mixing compute and OpenStack Networking API calls for security group configuration.
+
+## For more information ##
+
+For known issues and best practices when interacting with our Compute and Networking services, see [Known Issues and Best Practices in Compute and Networking in 13.5](https://community.hpcloud.com/article/known-issues-and-best-practices-compute-and-networking-135).
