@@ -497,7 +497,7 @@ Create a new key pair to use with instances, using the `publickeyfile.pub` publi
 
     $ nova keypair-add --pub_key publickeyfile.pub testkeypair
     
-	$
+		$
 
 ##keypair-delete## {#keypair-delete}
 Delete a key pair (designatedby its ID).
