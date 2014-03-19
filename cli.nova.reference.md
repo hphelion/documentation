@@ -491,13 +491,12 @@ Create a new key pair to use with instances:
     Leengz7PUvlAXXXXXXXXXXJAubvosddCo4169kq6q7S6yFiZ6DISAQ439YdnpwIY
     VqMxwy6hceSuoo4WgvECQQC1eZgEGoRqrOK7XEfc3zDrJa6iXILmhUQhIQEXgxyB
     c5S1JbVjp8HwF+imbEz5rSxjqOSniY1aFbYWQmzW/cqM
-    -----END RSA PRIVATE KEY-----
+    -----END RSA PRIVATE KEY----
 
 Create a new key pair to use with instances, using the `publickeyfile.pub` public SSH key.
 
     $ nova keypair-add --pub_key publickeyfile.pub testkeypair
-    
-		$
+    $
 
 ##keypair-delete## {#keypair-delete}
 Delete a key pair (designatedby its ID).
