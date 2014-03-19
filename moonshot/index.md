@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Cloud OS for Moonshot Documentation Home"
+title: "HP Cloud OS for Moonshot"
 permalink: /cloudos/moonshot/
 product: moonshot
 
@@ -8,11 +8,10 @@ product: moonshot
 
 # HP Cloud OS for Moonshot Documentation 
 
-<!-- hello world --> 
-
-Welcome! HP Moonshot hardware servers are designed and tailored for specific workloads to deliver optimum performance. These support a wide range of 
-complex IT demands right from cloud based applications to Social Media, Big Data and Mobility. Building on this requirement, <nobr><b>HP Cloud OS for Moonshot</b></nobr> software 
-enables you to efficiently create and run cloud environments using Moonshot servers. 
+Welcome! HP Moonshot hardware servers are designed and tailored for specific workloads to deliver optimum performance. 
+These support a wide range of complex IT demands, from cloud based applications to Social Media, Big Data and Mobility. 
+Building on this requirement, <b><nobr>HP Cloud OS for Moonshot</nobr></b> software enables you to efficiently create 
+and run cloud environments using Moonshot servers.
 
 Read the following categorized topics to learn about HP Cloud OS for Moonshot:
 
@@ -34,16 +33,15 @@ Read the following categorized topics to learn about HP Cloud OS for Moonshot:
 
 ## HP Moonshot System
 
-For related information, see the <a href="http://www.hp.com/go/moonshot" target="moonshot-system">HP Moonshot System</a> topics on hp.com. 
-<a href="http://www.hp.com/go/moonshot" target="moonshot-system"><img src="media/cloudos-moonshot-system.png" align="left" title="HP Moonshot System" /></a>
+For related information, see the <a href="http://www.hp.com/go/moonshot" target="moonshot">HP Moonshot System</a> topics on hp.com.
 
-<!-- Note: Cloud OS blue = #1796D3 --> 
-<!-- Give this next item separation space so link to content above isn't accidentally clicked by user --> 
+<img src="media/cloudos-moonshot-system.png" />
 
-<!-- Commented out for now until GA, per legal counsel:
-<p></p>
-<p style="font-size: x-small; text-align: right;"> 
-<a href="/cloudos/moonshot/os-3rd-party-license-agreements/" target="os3p">HP Cloud OS for Moonshot Open Source and Third-Party Software License Agreements &#187;</a> 
-</p>
---> 
+<!--
+<p style="font-size: small; text-align:right;"> <a href="/cloudos/moonshot/os-3rd-party-license-agreements/" target="os3p">HP Cloud OS Open Source and Third-Party Software License Agreements &#187;</a> </p>
+-->
+
+
+
+
 
