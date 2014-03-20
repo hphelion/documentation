@@ -32,7 +32,7 @@ This topic contains the following information about the HP Cloud OS for Moonshot
 
 ##Features in HP Cloud OS for Moonshot 1.0## {#features}
 
-**Optimized Workloads** &mdash; HP Cloud OS for Moonshot provides optimized Cloud Workloads across cloud providers, with model-once and provision-anywhere capability. These features are combined with repeatable, consistent workload placements across diverse cloud deployment models. This functionality allows you and your customers to optimally align workloads with resources and improve resource utilization.
+**Optimized for Workloads** &mdash; HP Cloud OS for Moonshot is optimized to deliver and manage workloads on your HP Moonshot environment. It provides simple workload modeling with repeatable, consistent workload placement. This functionality allows you to optimally align workloads with your moonshot resources for optimal resource utilization.
 
 **Flexible and Open Architecture** &mdash; Powered by OpenStack&#174; technology, HP Cloud OS for Moonshot provides you a flexible, industry leading, vendor neutral and open source cloud architecture.
 
@@ -113,7 +113,7 @@ The following are the known issues for HP Cloud OS for Moonshot 1.0.
 
 * Although the <b>Edit Network</b> option appears enabled in the Networks page of the Administration Dashboard, you can ignore it. There is no impact on the networking functionality when you retain the default settings. 
 
-* The <b>Edit Extra Specs</b> option appears enabled for Flavors and allows you to change the extra specs of the default flavor; doing so will result in a failure for the instance. To ensure smooth functioning of the instance, retain the default settings.
+* The <b>Edit Extra Specs</b> option appears enabled for Flavors. To ensure smooth functioning of the instance, retain the default settings. 
 
 * When you display the nodes table using Moonshot Management, the disk size for all discovered nodes appears to be 500 GB. This issue occurs due to the inability to gather the storage information through the IPMI commands.
 
