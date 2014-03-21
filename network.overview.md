@@ -35,7 +35,7 @@ You can use any of several language bindings to access HP Cloud compute. For mor
 
 ## Using the CLI ## {#cli}
 
-You can use any of several command-line interface software to access HP Cloud compute. For more information on using the HP Cloud Networking API, see [HP Cloud CLI](/cli/).
+You can use any of several command-line interface software packages to access HP Cloud compute. For more information on using the HP Cloud Networking API, see [HP Cloud CLI](/cli/).
 
 
 ##For further information## {#info} 

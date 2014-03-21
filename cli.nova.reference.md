@@ -496,7 +496,7 @@ Create a new key pair to use with instances:
 Create a new key pair to use with instances, using the `publickeyfile.pub` public SSH key.
 
     $ nova keypair-add --pub_key publickeyfile.pub testkeypair
-     $
+      $
 
 ##keypair-delete## {#keypair-delete}
 Delete a key pair (designatedby its ID).
@@ -1073,7 +1073,7 @@ Display the details for volume `76677`:
 ##volume-snapshot-create## {#volume-snapshot-create}
 Add a new snapshot.
 ###Syntax
-`nova volume-snapshot-create [--force <True|False>] [--display_name <display_name>] [--display_description <display_description>] <volume_id>`
+`	 [--display_name <display_name>] [--display_description <display_description>] <volume_id>`
                                    
 **volume_id**
 :  ID of the volume to snapshot
