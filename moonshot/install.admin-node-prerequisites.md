@@ -22,7 +22,7 @@ PageRefresh();
 UP</a> | <a href="/cloudos/moonshot/install/view-connection-settings/">NEXT &#9654;</a> </p>
 
 
-# Set Admin Node Prerequisites
+# Set Admin Node Prerequisites #
 
 Your first step in the HP Cloud OS for Moonshot Operational Dashboard is to configure the Admin Node prerequisites. See the sections in this topic:
 
