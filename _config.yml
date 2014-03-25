@@ -191,9 +191,7 @@ navigation:
   - text: Related Topics
     url: /cloudos/moonshot/related-topics/	
   - text: Site Index
-    url: /cloudos/moonshot/siteindex/	
-  - text: Spank's Documents
-    url: /cloudos/moonshot/spank/
+    url: /cloudos/moonshot/siteindex/
 
 apinavigation:
 - text: Site home page
