@@ -72,19 +72,24 @@ If you choose to design and implement a file-based solution, you will encounter 
 The following table shows our backup frequency recommendations for HP Cloud OS for Moonshot Management Host.
 
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
-<th style="background-color: #C8C8C8;">Component</th>
-<th style="background-color: #C8C8C8;">Backup schedule</th>
-<th style="background-color: #C8C8C8;">Notes</th>
+
+<tr style="background-color: #C8C8C8;">
+<th>Component</th>
+<th>Backup schedule</th>
+<th>Notes</th>
+</tr>
+
 <tr style="background-color: white; color: black;">
 <td>Admin Node</td>
 <td>Monthly</td>
 <td>Perform a full backup operation after a successful cloud deployment.</td>
-<tr/>
+</tr>
+
 <tr style="background-color: white; color: black;">
 <td>Controller Node<br />Baremetal Host</td>
 <td>Nightly</td>
 <td>Backup of Controller Node and Baremetal Host must occur at the same time to preserve the system state.</td>
-<tr/>
+</tr>
 
 </table>
 
@@ -142,7 +147,7 @@ In this section, we have example backup/restore steps using:
 
 ### XSIBackup tool {#xsi-backup}
 
-XSIBackup is an opensource application that uses VMWare's ESXi built-in command line options to create full backup solutions by cloning the system. For detailed information about this tool, see the [XSIBackup documentation](http://33hops.com/xsibackup-vmware-esxi-backup.html)
+XSIBackup is an open source application that uses VMWare's ESXi built-in command line options to create full backup solutions by cloning the system. For detailed information about this tool, see the [XSIBackup documentation](http://33hops.com/xsibackup-vmware-esxi-backup.html)
 
 Use the following basic steps to backup an HP Cloud OS for Moonshot Management Host running on VMware's hypervisor (ESXi):
 
@@ -224,3 +229,6 @@ The virtual machine ID</li>
 </li>
 <li>Follow the <a href="#poweroffon">recommended power on sequence</a>.</li>
 </ol>
+
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
