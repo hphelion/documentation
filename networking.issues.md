@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To's with the Networking Service"
-permalink: /compute/known-issues/
+permalink: /compute/network/known-issues/
 product: compute
 
 ---
