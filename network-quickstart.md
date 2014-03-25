@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Cloud Networking: Quick start guide"
-permalink: /compute/network-quick-start/
+permalink: /compute/network/quick-start/
 product: compute
 categories: neutron
 tags: networking neutron vpn

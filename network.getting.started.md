@@ -134,7 +134,7 @@ HP Cloud Networking regional capabilities include:
 
 Check out the following pages for more information on using HP Cloud Networking services:
 
-- [Known Issues and Best Practices in Compute and Networking in 13.5](https://community.hpcloud.com/article/known-issues-and-best-practices-compute-and-networking-135)
+- [Known Issues and Workarounds with the Networking Service](/compute/network/known-issues/)
 - [Getting Started with Compute 13.5](https://community.hpcloud.com/article/getting-started-compute-135)
 - [Management console: Networks screen](http://docs.hpcloud.com/mc/compute/networks/)
 - [OpenStack networking wiki](https://wiki.openstack.org/wiki/Quantum)

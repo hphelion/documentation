@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "How To's with the Compute Service"
-permalink: /compute/networks/howto/
+title: "How To's with the Network Service"
+permalink: /compute/network/howto/
 product: compute
 
 ---
@@ -441,6 +441,6 @@ You can change the name of a port, as needed.
 
 * For information about the router details screen, take a look at the [Viewing router details](/mc/compute/networks/view-router/) page.
 * For basic information about our HP Cloud compute services, take a look at the [HP Cloud compute overview](/compute/) page.
-* For a list of issues and workarounds for working with the Networking service, see [Known Issues and Workarounds with the Networking Service](/compute/known-issues/).
+* For a list of issues and workarounds for working with the Networking service, see [Known Issues and Workarounds with the Networking Service](/compute/network/known-issues/).
 * Use the [documentation site map](/mc/sitemap) for a full list of all available MC documentation pages
 * For information about the Open Stack networking features, surf on over to [their networking wiki](https://wiki.openstack.org/wiki/Quantum)
