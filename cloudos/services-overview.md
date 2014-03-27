@@ -113,3 +113,7 @@ The administration environment is made up of dashboards and tools:
 
 
 ## For more information ##
+Also see the Help topics that are available in the Operational Dashboard and Administration Dashboard.  Website copies are available:
+
+* [HP Cloud OS Operational Dashboard Help](/cloudos/manage/operational-dashboard/)
+* [HP Cloud OS Administration Dashboard Help](/cloudos/manage/administration-dashboard/)
