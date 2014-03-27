@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How To's with the Networking Service"
+title: "Known Issues and Workarounds with the Networking Service"
 permalink: /compute/network/known-issues/
 product: compute
 
