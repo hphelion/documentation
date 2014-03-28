@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "How To's with the Network Service HP Cloud OS  Volume Operations Service"
+title: "How To's with the Network Service HP Cloud OS  Volume Service"
 permalink: /cloudos/api/services/volume/howto/
 product: compute
 
 ---
-# How To's with the HP Cloud OS Volume Operations Service #
+# How To's with the HP Cloud OS Volume Service #
 
 <!-- Taken from http://wiki.hpcloud.net/display/core/Core+Edition+Use+cases#CoreEditionUsecases-OverCloud -->
 

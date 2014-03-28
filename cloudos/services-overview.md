@@ -30,39 +30,46 @@ The Execution Environment has 2 layers. Kernel and Base Layer
 The Kernel Layer acts like an Operating System Kernel across a Data Center for Cloud which acts as an OS for Cloud. The Kernel Layer is based on the OpenStack infrastructure set of services. The following services from OpenStack are used.
 
 
-**Compute**. This service manage the various hypervisors and virtual machines. Also known as *Nova*.
+**Compute Operations**. This service manage the various hypervisors and virtual machines. Also known as *Nova*.
 
 - Overview – Link to API (https://docs.hpcloud.com/api/v13/compute/)
 - Getting started with the Cloud OS Compute service
 - [How To's with the HP Cloud OS Compute Service](/cloudos/api/services/compute/howto/)
 
 
-**Networking**. Allows you to provision and create virtual networks. Also known as *Neutron* or *Quantam*.
+**Networking Operations**. Allows you to provision and create virtual networks. Also known as *Neutron* or *Quantam*.
 
 - Overview – Link to API (https://docs.hpcloud.com/api/v13/networking/)
 - Getting started with the Cloud OS Networking service
 - [How To's with the HP Cloud OS Network Service](/cloudos/api/services/networking/howto/)
 
 
-**Volume Management**. Taking your storage and attaching it to your virtual environment and cloud. Also known as *Cinder*.
+**Volume Operations**. Taking your storage and attaching it to your virtual environment and cloud. Also known as *Cinder*.
 
 - Overview – Link to API (https://docs.hpcloud.com/api/v13/????/)
 - Getting started with the Cloud OS Volume Management service
 - [How To's with the HP Cloud OS Volume Management Service](/cloudos/api/services/volume/howto/)
 
 
-**Image Management**. Glance allows you to maintain images which you can use to bootstrap VM’s across the cloud and then manage them. Also known as *Glance*.
+**Image Operations**. Glance allows you to maintain images which you can use to bootstrap VM’s across the cloud and then manage them. Also known as *Glance*.
 
 - Overview – Link to API (https://docs.hpcloud.com/api/v13/image/)
 - Getting started with the Cloud OS Image Management service
 - [How To's with the HP Cloud OS Image Management Service](/cloudos/api/services/imaging/howto/)
 
 
-**Identity management**. Allows for group and multi-tenant creation.  Also known as *Keystone*.
+**Identity Operations**. Allows for group and multi-tenant creation.  Also known as *Keystone*.
 
 - Overview – Link to API (https://docs.hpcloud.com/api/v13/identity/)
 - Getting started with the Cloud OS Identity Management service
 - [How To's with the HP Cloud OS Identity Management Service](/cloudos/api/services/identity/howto/)
+
+**Object Operations**. Allows for group and multi-tenant creation.  Also known as *Swift*.
+
+- Overview – Link to API (https://docs.hpcloud.com/api/v13/identity/)
+- Getting started with the Cloud OS Identity Management service
+- [How To's with the HP Cloud OS Identity Management Service](/cloudos/api/services/identity/howto/)
+
 
 ### Base layer ###
 
