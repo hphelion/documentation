@@ -1,13 +1,13 @@
 ---
 layout: default
-title: "Getting Started with HP Cloud Networking"
-permalink: /compute/network/getting-started
+title: "Getting Started with HP Cloud OS Compute Service"
+permalink: /cloudos/api/services/compute/getting-started
 product: compute
 
 ---
-# Getting Started with HP Cloud Networking #
+# Getting Started with HP Cloud OS Compute Service #
 
-<!-- modeled after HP Cloud version 13.5 overview; text from networking guide (compute.network-guide.md) -->
+<!-- modeled after HP Cloud Networking Getting Started (network.getting.started.md) -->
 
 Leveraging [OpenStack Networking](http://www.openstack.org/software/openstack-networking/), HP Cloud Networking is a virtual networking service that provides network connectivity and addressing for HP Cloud compute devices. 
 

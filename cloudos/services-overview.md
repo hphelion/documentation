@@ -14,12 +14,13 @@ Administrative Environment and Execution Environment. The two environments used 
 See the following links:
 
 [Administrative Environment](#admin)
+
 [Execution Environment](#execution)
 
 The following diagram illustrates a conceptual depiction of the administrative and execution environment.
 
-<img src="media/cloud-os-sketch.png" alt="" />
-
+<img src="media/cloud-os-diagram.png" alt="" />
+<!-- Image from CloudCoreProductPlan.pdf http://wiki.hpcloud.net/display/core/Cloud+OS+Core+Product+Management -->
 
 ## Execution Environment ## {#execution}
 
