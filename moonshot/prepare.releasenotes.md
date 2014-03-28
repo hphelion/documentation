@@ -109,12 +109,12 @@ The following are the known issues for HP Cloud OS for Moonshot 1.0.
 
 ####General####
 
-* Although the `Edit Network` option appears enabled in the Networks page of the Administration Dashboard, you can ignore it. There is no impact on the networking functionality when you retain the default settings. 
+* Although the <b>Edit Network</b> option appears enabled in the Networks page of the Administration Dashboard, you can ignore it. There is no impact on the networking functionality when you retain the default settings. 
 
-* The `Edit Extra Specs` option appears enabled for Flavors. To ensure smooth functioning of the instance, retain the default settings. 
+* The <b>Edit Extra Specs</b> option appears enabled for Flavors. To ensure smooth functioning of the instance, retain the default settings. 
 
 * When you display the nodes table in the <b>Nodes View</b> using Moonshot Management, the disk size for all discovered nodes is shown to be 500 GB, regardless of physical disk capacity. 
-<!-- I'm still of the optinion that we should delete this item; there is no workaround, and what good does it do to tell the customer about it? -Doug -->
+<!-- I'm still of the opinion that we should delete this item; there is no workaround, and what good does it do to tell the customer about it? -Doug -->
 
 ##For further information## {#for-further-information}
 

@@ -16,11 +16,8 @@ PageRefresh();
 
 </script>
 
-<!--
-<p style="font-size: small;"> <a href="/cloudos/moonshot/prepare/releasenotes/">&#9664; PREV</a> | <a href="/cloudos/moonshot/prepare">&#9650; UP</a> | <a href="/cloudos/moonshot/prepare/faqs">NEXT &#9654; </a></p>
--->
 
-<p style="font-size: small;"> <a href="/cloudos/moonshot/prepare/">&#9664; PREV</a> | <a href="/cloudos/moonshot/prepare">&#9650; UP</a> | <a href="/cloudos/moonshot/prepare/faqs">NEXT &#9654; </a></p>
+<p style="font-size: small;"> <a href="/cloudos/moonshot/prepare/releasenotes/">&#9664; PREV</a> | <a href="/cloudos/moonshot/prepare">&#9650; UP</a> | <a href="/cloudos/moonshot/prepare/faqs">NEXT &#9654; </a></p>
 
 # HP Cloud OS for Moonshot: Support Matrix
 
@@ -28,9 +25,7 @@ This document is an overview of the supported hardware and software for the HP C
 
 In the following sections, we list the recommendations for memory, processors and disk space for each component when you are creating an HP Cloud OS for Moonshot environment. 
 
-**Note:** Be sure to reference the appropriate platform support matrix for each component product before you install.
-
-
+**Note:** Before you install, be sure to reference the appropriate platform support matrix for each component product.
 
 * [Server infrastructure for HP Cloud OS for Moonshot](#server)
 * [Hypervisor recommendations for HP Cloud OS for Moonshot](#hypervisor)
