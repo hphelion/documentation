@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "How To's with the Network Service HP Cloud OS  Compute Service"
+title: "How To's with the Network Service HP Cloud OS  Networking Service"
 permalink: /cloudos/api/services/networking/howto/
 product: compute
 
 ---
-# How To's with the HP Cloud OS Network Service #
+# How To's with the HP Cloud OS Networking Service #
 
 <!-- Taken from http://wiki.hpcloud.net/display/core/Core+Edition+Use+cases#CoreEditionUsecases-OverCloud -->
 
