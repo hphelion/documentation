@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Cloud OS for Moonshot: Administration Dashboard"
-permalink: /cloudos/moonshot/manage/administration-dashboard/
+permalink: /cloudos/moonshot/manage/administration-dashboard/new/
 product: moonshot
 
 ---
