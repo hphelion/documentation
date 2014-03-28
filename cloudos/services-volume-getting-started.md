@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Getting Started with HP Cloud OS Volume Service"
-permalink: /cloudos/api/services/volume/getting-started
+permalink: /cloudos/api/services/volume/getting-started/
 product: compute
 
 ---

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Getting Started with HP Cloud OS Compute Service"
-permalink: /cloudos/api/services/compute/getting-started
+permalink: /cloudos/api/services/compute/getting-started/
 product: compute
 
 ---

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Getting Started with HP Cloud OS Image Service"
-permalink: /cloudos/api/services/imaging/getting-started
+permalink: /cloudos/api/services/imaging/getting-started/
 product: compute
 
 ---

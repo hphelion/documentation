@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Getting Started with HP Cloud OS Identity Service"
-permalink: /cloudos/api/services/identity/getting-started
+permalink: /cloudos/api/services/identity/getting-started/
 product: compute
 
 ---
