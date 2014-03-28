@@ -20,7 +20,7 @@ A variety of flavors and images are provided by HP Cloud compute that can be use
 
 ###Using the API to access Networking### {#API}
  
-You can use a low-level, raw REST API access to HP Cloud OS Compute See the [Compute API page](/api/v13/compute).
+You can use a low-level, raw REST API access to HP Cloud OS Compute See the [HP Cloud OS Compute Service API page](/api/v13/compute).
 
 ###Using the CLI### {#cli}
 
@@ -31,11 +31,8 @@ You can use any of several command-line interface software to access HP Cloud OS
 You can use any of several language bindings to access HP Cloud OS Compute. See [HP Cloud binding support](/bindings/).
 
 
-##For further information## {#info} 
+## For more information ##
+Also see the Help topics that are available in the Operational Dashboard and Administration Dashboard.  Website copies are available:
 
-Check out the following pages for more information on using HP Cloud Networking services:
-
-- [Known Issues and Workarounds with the Networking Service](/compute/network/known-issues/)
-- [Getting Started with Compute 13.5](https://community.hpcloud.com/article/getting-started-compute-135)
-- [Management console: Networks screen](http://docs.hpcloud.com/mc/compute/networks/)
-- [OpenStack networking wiki](https://wiki.openstack.org/wiki/Quantum)
+* [HP Cloud OS Operational Dashboard Help](/cloudos/manage/operational-dashboard/)
+* [HP Cloud OS Administration Dashboard Help](/cloudos/manage/administration-dashboard/)
