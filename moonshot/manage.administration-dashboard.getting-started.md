@@ -1,15 +1,14 @@
 ---
 layout: default
-title: "Getting Started with the Administration Dashboard"
+title: "HP Cloud OS for Moonshot: Administration Dashboard"
 permalink: /cloudos/moonshot/manage/administration-dashboard/getting-started/
 product: moonshot
 
 ---
 
+<script>
 
-<script> 
-
-function PageRefresh { 
+function PageRefresh {
 onLoad="window.refresh"
 }
 
@@ -17,186 +16,195 @@ PageRefresh();
 
 </script>
 
+<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage">&#9650; UP</a> | NEXT &#9654;</p>
 
-<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/administration-dashboard/welcome/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage/administration-dashboard/">&#9650; UP</a> | <a href="/cloudos/moonshot/manage/administration-dashboard/topology-designs/">NEXT &#9654;</a> </p>
+# The Administration Dashboard #
 
-# Getting Started with the Administration Dashboard
+The HP Cloud OS for Moonshot Administration Dashboard is the interface which is used to manage the cloud once the cloud environment is created in the Operational Dashboard.
 
-**Concepts:**
+The Administration Dashboard can be accessed by different user roles to perform the tasks assigned to that role. Apart from the basic functionalities, such as creating projects, users, roles, resource pools, topology templates etc.; HP Cloud OS for Moonshot provides two major features to enhance your cloud experience.
 
-When you start the Administration Dashboard for the first time, it includes one user (the Admin user), and one project (the AdminProject). 
-To validate that the dashboard works, and to get started using it, users must work through a series of tasks.
+* **Moonshot Management**
 
-The highest-level user in the dashboard (the Admin user) begins the process of getting started by performing role-specific tasks. 
-Then the next role down in the privilege hierarchy (a cloud administrator) must perform role-specific tasks. The process of getting 
-started continues down the privilege hierarchy to project users.
+* **Workload Service**
 
-Generally, the privilege hierarchy gives each role all the rights of the roles beneath it. For example, a project administrator 
-can perform all the tasks of a project user, plus some additional tasks. Occasionally, the HP Cloud OS for Moonshot Administration Dashboard Help 
-provides guidance for best practices that supplement the privilege hierarchy.
 
-**Tasks:**
+&#9654; **Moonshot Management**
 
-To get started with the Administration Dashboard, the Admin user must begin with:
+Management of IT resources in a cloud that is scalable and dynamic in nature is quite challenging. To have a simplified and enhanced cloud management experience, HP Cloud OS for Moonshot provides a Single Pane of Glass (SPOG) view with the Chassis Manager.
 
-* [Getting Started for the Admin User](#getting-started-for-the-admin-user)
+Chassis Manager caters to three important requirements of a Cloud Administrator.
+ 
+* Displays  an overall perspective of the datacenter, hosted servers and health of chassis in the Datacenter View.
+* Provides detailed information of individual chassis host and its health status in the Single Chassis View.
+* Server management with the Power On/Off actions and Maintenance action
 
-Other role-specific tasks:
+**Datacenter View**
+ 
+It provides an overview of the hosted chassis in a datacenter. In this view, Cloud Administrator is able to add/delete chassis which then goes on to discover all cartridges and nodes of a chassis. At a glance, the user is able to comprehend the datacenter health and view critical events that need immediate attention.
 
-* [Getting Started for Cloud Administrators](#getting-started-for-cloud-administrators) 
+**Single Chassis View** 
 
-* [Getting Started for Cloud Architects](#getting-started-for-cloud-architects)
+It provides in-depth information of a selected chassis. In this view, the user is able to grasp the overall structure and health of the contained cartridges and nodes.
 
-* [Getting Started for Project Administrators](#getting-started-for-project-administrators)
+A drill-down to individual cartridges or nodes provides detailed information in terms of configuration, power status, health status, workload information etc. 
+Event information at individual chassis level helps to monitor chassis events.
+The user is also able to perform power Off/On operations on individual cartridges and nodes.
+For more details on working with Moonshot Chassis, refer to the Moonshot Management section.
 
-* [Getting Started for Project Users](#getting-started-for-project-users)
+&#9654;**Workload Service**
 
+In Cloud Enterprise IT, a typical goal is to deploy a composite service which comprises of different application components catering to different aspects of a service. Each application will have its own computing pattern defining its specific workload and hence needs specialized deployment of infrastructure elements i.e.  Compute, Storage and Network. Workload service aims to facilitate end user in deployment of a composite service comprising of different applications and hence different workloads in user friendly manner. For details on creating and provisioning a workload, refer to the Workloads section
 
+## How to access the Administration Dashboard ##
+Before you access the Administration Dashboard, ensure that the Cloud Environment is up and running.
 
+You can access the HP Cloud OS for Moonshot Administration Dashboard in either of the following ways:
 
-## Getting Started for the Admin User
+* In your browser window, type the public IP address of your Cloud Controller Node in the following format https://<Public IP Address>
 
-**Concepts:**
+   OR
 
-The Admin user creates projects and creates users for projects. An Admin user can view domains and services, and delete protected images.
+* From the Operational Dashboard, click **Manage Clouds**->**More**->**Launch Dashboard**
 
-**Tasks:**
+The Administration Dashboard menu bar displays three different tabs- **Cloud**, **Region** and **Project**.  Each active tab displays options in the left panel. You can view tabs and options only if you have the required privileges. 
 
-For each task, the link goes to a section in the Tasks by Tabs topic.    
+The dashboard also displays the currently logged in user, License Validity, Settings link, Help link and the Sign Out option on the top right corner of the screen.
 
-* [How to Create a Project](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#how-to-create-a-project)
+## **Cloud Tab** ##
+The tab displays different options in the left panel. The following table describes each of the option.
 
-* [How to Create a User](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#how-to-create-a-user)
+<table style="text-align: left; vertical-align: top; width:700px;">
 
-* [How to See All Domains](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#how-to-see-all-domains)
+<tr style="background-color: lightgrey; color: black;">
 
-* [How to See All Services](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#how-to-see-all-services)
+  <td><b>Panel Option</b></td> <td><b>Description</b></td></tr>
 
-When you are done, tell a cloud administrator to perform [Getting Started for Cloud Administrators](#getting-started-for-cloud-administrators). 
+<tr style="background-color: white; color: black;">
+<td>Services</td> <td>Allows you to view information related to cloud services.</td></tr>
 
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<tr style="background-color: white; color: black;">
+<td>Domains</td> <td>Allows you to view domain information.</td></tr>
 
+<tr style="background-color: white; color: black;">
+<td>Projects</td> <td>Allows you to manage projects, add users and add roles using this option.</td></tr>
 
+<tr style="background-color: white; color: black;">
+<td>Users</td> <td>Allows you to create new users and modify and delete existing users.</td></tr>
 
+<tr style="background-color: white; color: black;">
+<td>Roles</td> <td>Allows you to create a new role and displays a list of existing cloud roles. You can also delete an existing role.</td></tr>
 
-## Getting Started for Cloud Administrators
+<tr style="background-color: white; color: black;">
+<td>Images</td> <td>Allows you to create, view, modify, launch and delete all from which instances can be launched.</td></tr>
 
-**Concepts:**
+<tr style="background-color: white; color: black;">
+<td>Moonshot Management </td> <td>Allows you to manage Moonshot Chassis and Moonshot servers. It also enables you to discover and allocate Moonshot Servers for provisioning.</td></tr></table>
 
-Cloud administrators possess all administrator rights associated with the cloud and all HP Cloud OS for Moonshot services, 
-including the ability to make resources available to users. As a best practice, only cloud administrators create an external network or add subnets to an external network.
+## **Region Tab** ##
 
-**Tasks:**
+The Region tab displays the following option to work with in the compute region. 
+<table style="text-align: left; vertical-align: top; width:700px;">
 
-* [How to Import, Create, or Delete a Keypair](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#how-to-import-create-or-delete-a-keypair)
+<tr style="background-color: lightgrey; color: black;">
 
-* [How to Create an External Network](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#how-to-create-an-external-network)
+  <td><b>Panel Option</b></td> <td><b>Description</b></td></tr>
+<tr style="background-color: white; color: black;">
 
-* [How to Create a Subnet](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#how-to-create-a-subnet)
+<td>Overview</td> <td>Allows you to view the detailed usage summary of a region. By default, it is displayed for the current month.</td></tr>
 
-* [How to Access All Images](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#how-to-access-all-images)
+<tr style="background-color: white; color: black;">
+<td>Info</td> <td>Displays the details of the Compute Services and Default Quotas.</td></tr>
 
-* [How to Change a Project's Compute or Storage Limits](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#how-to-change-a-projects-compute-or-storage-limits)
+<tr style="background-color: white; color: black;">
+<td>Instances</td> <td>Displays the list of instances.</td></tr>
 
-* [Resource Pools](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#resource-pools)
+<tr style="background-color: white; color: black;">
+<td>Images</td> <td>This option allows you to create, view, modify, launch and delete images. </td></tr>
 
-* [How to See an Overview of Usage](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#how-to-see-an-overview-of-usage)
+<tr style="background-color: white; color: black;">
+<td>Networks</td> <td>This tab provides a way to view networks details.</td></tr>
+</td>
 
+</tr><tr style="background-color: white; color: black;">
+<td>Flavors</td> <td>Displays the list of flavors in the region. You can create, modify, delete flavors and also view extra specifications of the selected flavor.</td></tr></table>
 
-However, some organizations might also use cloud administrators to create profiles and topology designs. See:
+## **Project Tab** ##
+This tab allows you to use the following options. 
+<table style="text-align: left; vertical-align: top; width:700px;">
 
-* [How to Create a Deployment Profile](/cloudos/moonshot/manage/administration-dashboard/topology-designs/#how-to-create-a-deployment-profile) 
+<tr style="background-color: lightgrey; color: black;">
 
-* [How to Create a Topology Design](/cloudos/moonshot/manage/administration-dashboard/topology-designs/#how-to-create-a-topology-design)
+  <td><b>Panel Option</b></td> <td><b>Description</b></td></tr>
+<tr style="background-color: lightgrey; color: black;">
+<td><b>Overview</b></td> <td></td></tr>
 
+<tr style="background-color: white; color: black;">
+<td>Overview</td> <td>Allows you to view the detailed usage summary of a region.</td></tr>
 
-When you are done, tell a cloud architect to perform [Getting Started for Cloud Architects](#getting-started-for-cloud-architects). 
+<tr style="background-color: lightgrey; color: black;">
+<td><b>Provisioning</b></td> <td></td></tr>
 
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<tr style="background-color: white; color: black;">
+<td>Workloads</td> <td>Displays Workload services. These services aim to facilitate you in deployment of a composite service comprising of different applications and hence different workloads.</td></tr>
 
+<tr style="background-color: white; color: black;">
+<td>Running Topologies </td> <td>Displays a list of topologies that have been provisioned from deployment profiles.</td></tr>
 
+<td>Deployment Profiles</td> <td>Displays a list of published topology designs. These profiles can be provisioned.</td></tr>
 
+<tr style="background-color: white; color: black;">
+<td>Topology Designs</td> <td>Displays a list of topology designs. A topology design is used for straightforward IaaS deployments, and allows you to design in a free-form layout where connection relationships implicitly define the service fulfillment lifecycle.</td></tr>
 
+<tr style="background-color: white; color: black;">
+<td>Resource Pools</td> <td>Records that define the access to a specific cloud provider, resources that are made available by the provider and services associated with the resources.</td></tr>
 
-## Getting Started for Cloud Architects
+<tr style="background-color: lightgrey; color: black;">
+<td><b>Infrastructure</b></td> <td></td></tr>
 
-**Concepts:**
+<tr style="background-color: white; color: black;">
+<td>Instances</td> <td>Displays the list of running instances.</td></tr>
 
-Cloud architects create images, topology designs, and deployment profiles.
+<tr style="background-color: white; color: black;">
+<td>Images </td> <td>Displays all the images (QCOW2 format) that can be launched to create new instances.</td></tr>
 
-**Tasks:**
+<tr style="background-color: white; color: black;">
+<td>Networks </td> <td>You can view the network details using this option.</td></tr>
+<tr style="background-color: lightgrey; color: black;">
+<td><b>Access and Security</b></td> <td></td></tr>
 
-* [How to Import, Create, or Delete a Keypair](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#how-to-import-create-or-delete-a-keypair)
+<tr style="background-color: white; color: black;">
+<td>Access & Security </td> <td>This option allows you create and manage Keypairs, view API Endpoints and view Authentication Token.</td></tr>
 
-* [How to Access All Images](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#how-to-access-all-images) 
+<tr style="background-color: lightgrey; color: black;">
+<td><b>Updates and Extensions</b></td> <td></td></tr>
 
-* [How to Create a Deployment Profile](/cloudos/moonshot/manage/administration-dashboard/topology-designs/#how-to-create-a-deployment-profile)
+<tr style="background-color: white; color: black;">
+<td>Updates and Extensions </td> <td>This option allows you to download content files from HP Cloud OS Delivery Network (CODN) and use it in your cloud environment.</td></tr></table>
 
-* [How to Create a Topology Design](/cloudos/moonshot/manage/administration-dashboard/topology-designs/#how-to-create-a-topology-design)
+## **Settings Link** ##
 
-When you are done, tell a project administrator to perform [Getting Started for Project Administrators](#getting-started-for-project-administrators).
+The Settings link is visible with all its options to the Admin User and Cloud Administrator. The Site option is not visible to other users. It displays the following options:
 
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<table style="text-align: left; vertical-align: top; width:700px;">
 
+<tr style="background-color: lightgrey; color: black;">
 
-## Getting Started for Project Administrators
+  <td><b>Panel Option</b></td> <td><b>Description</b></td></tr>
+<tr style="background-color: ligtgrey; color: black;">
 
-**Concepts:**
+<tr style="background-color: white; color: black;">
+<td>Site </td> <td>Allows you to change the site settings as per your requirements.</td></tr>
 
-Project administrators have rights to modify and delete project resources and content. Project administrators can also see 
-and manage project resources that are created by project users. See [Project User Tasks](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#.
+<tr style="background-color: white; color: black;">
+<td>User </td> <td>Allows you to select various user settings such as language, time zone and items per page.</td></tr>
 
-**Tasks:**
+<tr style="background-color: white; color: black;">
+<td>Password </td> <td>Allows you to change your password.</td></tr>
 
-* [How to Import, Create, or Delete a Keypair](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#how-to-import-create-or-delete-a-keypair)
+<tr style="background-color: white; color: black;">
+<td>About </td> <td>Allows you to view version and copyright information.</td></tr></table>
 
-* [Images and Snapshots](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#images-and-snapshots)
+## Help ##
 
-* [How to Launch an Instance](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#how-to-launch-an-instance)
-
-* [How to Create a Private Network](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#how-to-create-a-private-network-project-tab)
-
-* [How to Create a Subnet](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#how-to-create-a-subnet)
-
-* [Routers](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#routers)
-
-* [Security Groups and Rules](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#security-groups-and-rules)
-
-* [How to Create a Deployment Profile](/cloudos/moonshot/manage/administration-dashboard/topology-designs/#how-to-create-a-deployment-profile)
-
-* [How to Create a Topology Design](/cloudos/moonshot/manage/administration-dashboard/topology-designs/#how-to-create-a-topology-design)
-
-Some organizations might also use project administrators to create resource pools. 
-See [How to Create a Resource Pool](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#how-to-create-a-resource-pool).
-
-When you are done, tell your project users that they can start working in the HP Cloud OS for Moonshot Administration Dashboard. 
-See [Getting Started for Project Users](#getting-started-for-project-users).
-
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-
-
-## Getting Started for Project Users
-
-**Concepts:**
-
-Project users own only the content and resources they create. Project users can modify or delete the content and resources they own. 
-Project users' main goal when using the dashboard is to provision topologies.
-
-**Tasks:**
-
-* [How to Import, Create, or Delete a Keypair](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#how-to-import-create-or-delete-a-keypair)
-
-* [Running Topologies](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#running-topologies)
-
-* [How to Launch a Topology](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#how-to-launch-a-topology)
-
-* [How to Create a Deployment Profile](/cloudos/moonshot/manage/administration-dashboard/topology-designs/#how-to-create-a-deployment-profile)
-
-* [How to Create a Topology Design](/cloudos/moonshot/manage/administration-dashboard/topology-designs/#how-to-create-a-topology-design)
-
-* [How to Launch a Deployment Profile](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#how-to-launch-a-deployment-profile)
-
-* [How to Create or Delete a Security Group](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/#how-to-create-or-delete-a-security-group) 
-
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-
+This option takes you to the Help documentation page of Administration Dashboard.

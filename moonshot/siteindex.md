@@ -30,7 +30,7 @@ PageRefresh();
 
 #### [Prepare: Getting Started with HP Cloud OS for Moonshot](/cloudos/moonshot/prepare/)
 
-<!-- * [Release Notes](/cloudos/moonshot/prepare/releasenotes/) --> <!-- temporarily commented out until signoff --> 
+* [Release Notes](/cloudos/moonshot/prepare/releasenotes/)
 * [Support Matrix](/cloudos/moonshot/prepare/supportmatrix/) 
 * [Video Tutorials](/cloudos/moonshot/prepare/videos/) 
 * [FAQs](/cloudos/moonshot/prepare/faqs/)  
@@ -57,14 +57,12 @@ PageRefresh();
 #### [Manage your Cloud](/cloudos/moonshot/manage/)
 
 * [HP Cloud OS for Moonshot Utilities](/cloudos/moonshot/manage/utilities/)
-<!-- * [HP Cloud OS for Moonshot Troubleshooting](/cloudos/moonshot/manage/troubleshooting/) -->  <!-- temporarily commented out until signoff --> 
+* [HP Cloud OS for Moonshot Troubleshooting](/cloudos/moonshot/manage/troubleshooting/)
 * [HP Cloud OS for Moonshot Operational Dashboard Help](/cloudos/moonshot/manage/operational-dashboard/) 
-<!--
   * [How the Operational Dashboard Works](/cloudos/moonshot/manage/operational-dashboard/how-opdash-works)
   * [Operational Dashboard: Environment Tab](/cloudos/moonshot/manage/operational-dashboard/environment-tab)
   * [Operational Dashboard: Cloud Tab](/cloudos/moonshot/manage/operational-dashboard/cloud-tab)
   * [Operational Dashboard: Settings Tab](/cloudos/moonshot/manage/operational-dashboard/settings-tab)
--->   
 * [HP Cloud OS for Moonshot Administration Dashboard Help](/cloudos/moonshot/manage/administration-dashboard/)  
 <!--  wait until we have HTML topics for Admin Dash Help, then unhide this list with new topic names:
   * [Before You Begin with the Administration Dashboard Help](/cloudos/moonshot/manage/administration-dashboard/before-you-begin/)

@@ -18,7 +18,7 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> <a href="/cloudos/moonshot/">&#9664; PREV | <a href="/cloudos/moonshot/">&#9650; UP</a> | <a href="/cloudos/moonshot/prepare/supportmatrix/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/cloudos/moonshot/prepare/">&#9664; PREV | <a href="/cloudos/moonshot/">&#9650; UP</a> | <a href="/cloudos/moonshot/prepare/supportmatrix/">NEXT &#9654;</a> </p>
 
 # HP Cloud OS for Moonshot 1.0 Release Notes
 
@@ -32,7 +32,7 @@ This topic contains the following information about the HP Cloud OS for Moonshot
 
 ##Features in HP Cloud OS for Moonshot 1.0## {#features}
 
-**Optimized Workloads** &mdash; HP Cloud OS for Moonshot provides optimized Cloud Workloads across cloud providers, with model-once and provision-anywhere capability. These features are combined with repeatable, consistent workload placements across diverse cloud deployment models. This functionality allows you and your customers to optimally align workloads with resources and improve resource utilization.
+**Optimized for Workloads** &mdash; HP Cloud OS for Moonshot is optimized to deliver and manage workloads on your HP Moonshot environment. It provides simple workload modeling with repeatable, consistent workload placement. This functionality allows you to optimally align workloads with your Moonshot resources for optimal resource utilization.
 
 **Flexible and Open Architecture** &mdash; Powered by OpenStack&#174; technology, HP Cloud OS for Moonshot provides you a flexible, industry leading, vendor neutral and open source cloud architecture.
 
@@ -80,12 +80,11 @@ The following are the known issues for HP Cloud OS for Moonshot 1.0.
 
 ####Installation####
 
-* The <b>Create Compute Region</b> command may fail due to a GET_SERVER_CERTIFICATE verification failure. To resolve this issue, follow this process:
+* The `Create Compute Region` command may fail due to a GET_SERVER_CERTIFICATE verification failure. To resolve this issue, follow this process:
 
- 1. In the Admin Node, edit the following file: /opt/dell/chef/cookbooks/hp_cos_apollo_100/recipes/server.rb
+ 1. In the Admin Node, edit the `/opt/dell/chef/cookbooks/hp_cos_apollo_100/recipes/server.rb` file.
 	 
- 2. Go to line 245 and add the -k switch.  Change this command:
- `" curl  #(keystone_protocol...` to `" curl  -k #(keystone_protocol...`
+ 2. Go to line 245 and add the -k switch.  Change the command `" curl  #(keystone_protocol...` to `" curl  -k #(keystone_protocol...`
     
  3. Execute this command:
  `knife cookbook upload knife cookbook upload -o /opt/dell/chef/cookbooks/ -V -k /etc/chef/webui.pem -u chef-webui`
@@ -96,16 +95,15 @@ The following are the known issues for HP Cloud OS for Moonshot 1.0.
 
 ####Provisioning####
 
-* After you de-provision a bulk node topology, the topology sometimes continues to display the "PROCESSING" state in the Administration Dashboard for a lengthy period of time. You can resolve this issue by increasing the timeout value of the IPMI driver: 
+* After you de-provision a bulk node topology, the topology sometimes continues to display the `PROCESSING` state in the Administration Dashboard for a lengthy period of time. You can resolve this issue by increasing the timeout value of the IPMI driver: 
    
- 1. Edit this file:  /usr/share/pyshared/nova/virt/baremetal/MoonshotIPMI.py
+ 1. Edit the file `/usr/share/pyshared/nova/virt/baremetal/MoonshotIPMI.py`
 
- 2. Go to line 225 and change `timer.start(interval=1.0).wait()` to ` timer.start(interval=30.0).wait()`
+ 2. Go to line 225 and change `timer.start(interval=1.0).wait()` to `timer.start(interval=30.0).wait()`
 	
- 3. Save the updated file, and exit your text editor.
+ 3. Save the updated file and exit your text editor.
 	
- 4. Execute the command: 
- `restart Nova-compute`
+ 4. Execute the command `restart Nova-compute`
 
 * Under some circumstances, after launching a workload profile in the Administration Dashboard, and then using <b>Terminate Workload</b> to deprovision, the workload/topology continues to list the state as "Processing".  In the <b>Deployed Workloads</b> tab, selecting <b>Delete Workload</b> resolves the issue.
 
@@ -113,9 +111,10 @@ The following are the known issues for HP Cloud OS for Moonshot 1.0.
 
 * Although the <b>Edit Network</b> option appears enabled in the Networks page of the Administration Dashboard, you can ignore it. There is no impact on the networking functionality when you retain the default settings. 
 
-* The <b>Edit Extra Specs</b> option appears enabled for Flavors and allows you to change the extra specs of the default flavor; doing so will result in a failure for the instance. To ensure smooth functioning of the instance, retain the default settings.
+* The <b>Edit Extra Specs</b> option appears enabled for Flavors. To ensure smooth functioning of the instance, retain the default settings. 
 
-* When you display the nodes table using Moonshot Management, the disk size for all discovered nodes appears to be 500 GB. This issue occurs due to the inability to gather the storage information through the IPMI commands.
+* When you display the nodes table in the <b>Nodes View</b> using Moonshot Management, the disk size for all discovered nodes is shown to be 500 GB, regardless of physical disk capacity. 
+<!-- I'm still of the opinion that we should delete this item; there is no workaround, and what good does it do to tell the customer about it? -Doug -->
 
 ##For further information## {#for-further-information}
 

@@ -19,7 +19,7 @@ Add a floating IP address to a server
 ###Syntax
 `nova add-floating-ip <server> <address>`
 
-**servernova remove-security-group <server> <secgroup>
+**server**
 :  Name or ID of a server
 
 **address**

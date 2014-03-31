@@ -32,7 +32,7 @@ Before you transition to version 13.5, we recommend:
 
 To transition the data for an ephemeral instance:
 
-1. Create a 13.5 instance using either the command-line interface (CLI) for [UNIX](/cli/unix/compute/) or [the Windows PowerShell](/cli/windows/compute/), or the [management console](/mc/compute/) interface
+1. Create a 13.5 instance using either the command-line interface (CLI) for [UNIX](/cli/unix/compute/) or [the Windows PowerShell](/cli/windows/compute/), or the [HP Public Cloud Console](/hpcloudconsole/) interface
 2. Copy the data from your version 12.12 instance to your new 13.5 instance, using the tool transfer program of your choice (for example, SCP or FTP)
 
 For information on moving data:
@@ -60,7 +60,7 @@ For information on moving data:
 
 To transition the data for block volumes:
 
-1. Create a 13.5 block volume using either the command-line interface (CLI) for [UNIX](/cli/unix/block-storage/) or [the Windows PowerShell](/cli/windows/block-storage/), or the [management console](/mc/) interface
+1. Create a 13.5 block volume using either the command-line interface (CLI) for [UNIX](/cli/unix/block-storage/) or [the Windows PowerShell](/cli/windows/block-storage/), or the [HP Public Cloud Console](/hpcloudconsole/) interface
 2. Attach the volume from Step 1 to an ephemeral instance in your version 13.5 environment; see the [knowledge base article](https://community.hpcloud.com/article/managing-your-block-storage-135) for more details
 3. Copy the data from your version 12.12 instance attached volume to your new version 13.5 instance, using the tool transfer program of your choice (for example, SCP or FTP)
 
