@@ -20,10 +20,10 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/cloudos/moonshot/manage/utilities/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage/">&#9650; UP</a> | <a href="/cloudos/moonshot/manage/operational-dashboard">NEXT &#9654;</a> </p>
 
 # HP Cloud OS for Moonshot troubleshooting
+
 HP Cloud OS for Moonshot is an OpenStack-based cloud platform to manage HP Moonshot servers. Different usage scenarios might lead to abnormal system behavior or known issues. This topic describes all the known issues that you might encounter. To help you troubleshoot these issues, we have provided possible resolutions.
 
 For easy reference, we categorized the known issues and solutions as follows:
-
 
 * [Operation Dashboard: Cloud infrastructure readiness](#opdash-cloud-ready)
 * [Operation Dashboard: Cloud and region](#opdash-cloud-region)
@@ -39,6 +39,7 @@ If you need further assistance, feel free to contact [HP Customer Support](https
 ## Operational Dashboard: Cloud infrastructure readiness {#opdash-cloud-ready}
 
 #### New node fails to PXE boot because of TFTP boot timeout error
+
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Operational Dashboard</th>
@@ -62,6 +63,7 @@ If you need further assistance, feel free to contact [HP Customer Support](https
 </table>
 
 #### Discovered nodes shown as 'Off' in Manage Nodes section
+
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Operational Dashboard</th>
@@ -75,7 +77,6 @@ If you need further assistance, feel free to contact [HP Customer Support](https
 <tr style="background-color: white; color: black;">
 <td>Possible Resolution</td>
 <td>
-
 <ol>
 <li>Ensure that you have chosen the correct NIC interface and it is connected to the public network.</li>
 <li>Restart the node.</li></ol>
@@ -83,6 +84,7 @@ For more information, check the <b>/var/log/cosmos/cosmos.log</b> and <b>/var/lo
 </table>
 
 #### Allocated node stuck at 'Installing/Installed' state for more than 10 minutes
+
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Operational Dashboard</th>
@@ -92,13 +94,14 @@ For more information, check the <b>/var/log/cosmos/cosmos.log</b> and <b>/var/lo
 <td>Manage Nodes section of the Cloud tab displays the state of the allocated node as 'Installing/Installed' for  an unusually long period of time.</td></tr>
 <tr style="background-color: white; color: black;">
 <td>Probable Cause</td>
-<td>Time synchronisation issues.</td></tr>
+<td>Time synchronization issues.</td></tr>
 <tr style="background-color: white; color: black;">
 <td>Possible Resolution</td>
 <td>Reset the node.</td></tr>
 </table>
 
 #### Updating the internet access prerequisites sometimes fails
+
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Operational Dashboard</th>
@@ -119,6 +122,7 @@ For more information, check the <b>/var/log/cosmos/cosmos.log</b> and <b>/var/lo
 </table>
 
 #### Launch Dashboard fails
+
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Operational Dashboard</th>
@@ -144,6 +148,7 @@ localhost
 ## Operational Dashboard: Cloud and Region {#opdash-cloud-region}
 
 #### Installation/configuration of the Admin node sometimes fails
+
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Operational Dashboard</th>
@@ -160,6 +165,7 @@ localhost
 </table>
 
 #### Create cloud or create region fails
+
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Operational Dashboard</th>
@@ -210,6 +216,7 @@ Check the following logs on the Controller node for exact details:<br>
 </table>
 
 #### "Not Authorized" error message from Moonshot Management
+
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Administration Dashboard</th>
@@ -231,6 +238,7 @@ If this is because the X-Auth token expired, then sign out and log in again to t
 </table>
 
 #### Moonshot chassis discovery takes a long time or sometimes fails
+
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Administration Dashboard</th>
@@ -247,6 +255,7 @@ If this is because the X-Auth token expired, then sign out and log in again to t
 </table>
 
 #### Chassis refresh status is shown as "Failed" in the Datacenter table view
+
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Administration Dashboard</th>
@@ -268,6 +277,7 @@ If this is because the X-Auth token expired, then sign out and log in again to t
 </table>
 
 #### An existing chassis displays "Failed to connect to chassis" message
+
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Administration Dashboard</th>
@@ -284,6 +294,7 @@ If this is because the X-Auth token expired, then sign out and log in again to t
 </table>
 
 #### Deleting chassis failed with "Unable to delete" message
+
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Administration Dashboard</th>
@@ -305,6 +316,7 @@ To successfully delete a chassis, it must be in Maintenance Mode in the Single C
 </table>
 
 #### After the Single Chassis view page loads, any immediate action throws internal server error
+
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Administration Dashboard</th>
@@ -321,6 +333,7 @@ To successfully delete a chassis, it must be in Maintenance Mode in the Single C
 </table>
 
 #### Single Chassis view displays "Error" instead of cartridge ID 
+
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Administration Dashboard</th>
@@ -338,6 +351,7 @@ Wait for the discovery polling interval or force a refresh.</td></tr>
 </table>
 
 #### Single Chassis view not enabled
+
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Administration Dashboard</th>
@@ -355,6 +369,7 @@ Wait for the discovery polling interval or force a refresh.</td></tr>
 </table>
 
 #### Node disk size displayed is less than actual value
+
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Administration Dashboard</th>
@@ -371,6 +386,7 @@ Wait for the discovery polling interval or force a refresh.</td></tr>
 </table>
 
 #### Error message when setting a chassis to maintenance mode
+
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Administration Dashboard</th>
@@ -387,6 +403,7 @@ Wait for the discovery polling interval or force a refresh.</td></tr>
 </table>
 
 #### Chassis cannot be deleted error message
+
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Chassis Deletion</th>
@@ -404,6 +421,7 @@ Most common causes are that the chassis is not set to Maintenance Mode or it has
 </table>
 
 #### Added chassis is not in Datacenter view (IE, Firefox)
+
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Administration Dashboard</th>
@@ -425,6 +443,7 @@ Close IE or Firefox and reopen to see the chassis in the Datacenter view. If thi
 ## Administration Dashboard: Instance Provisioning &#9658; Elemental {#admindash-instance-element}
 
 #### Provisioning fails when using custom flavors
+
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Administration Dashboard</th>
@@ -442,6 +461,7 @@ Provisioning fails when the <b>root_mb</b> in the flavor exactly matches the nod
 </table>
 
 #### While provision, error is displayed in nova-scheduler.log
+
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Administration Dashboard</th>
@@ -461,13 +481,14 @@ Provisioning fails when the <b>root_mb</b> in the flavor exactly matches the nod
 </table>
 
 #### Unable to provision instances due to no DHCP server found
+
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Administration Dashboard</th>
 </tr>
 <tr style="background-color: white; color: black;">
 <td>System Behavior/Message</td>
-<td>Error message displayed in in nova-compute log on the Baremetal host: <b>No dhcp-server found</b>.</td></tr>
+<td>Error message displayed in nova-compute log on the Baremetal host: <b>No dhcp-server found</b>.</td></tr>
 <tr style="background-color: white; color: black;">
 <td>Probable Cause</td>
 <td>The quantum-dhcp-agent might not be running in the Controller node or the Controller node is not able to reach the Baremetal host using the nova_flat network.</td></tr>
@@ -481,6 +502,7 @@ Provisioning fails when the <b>root_mb</b> in the flavor exactly matches the nod
 </table>
 
 #### Provisioning fails because nodes registered are shown in "nova baremetal-node-list" but not in "nova hypervisor-list"
+
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Administration Dashboard</th>
@@ -501,6 +523,7 @@ Provisioning fails when the <b>root_mb</b> in the flavor exactly matches the nod
 </table>
 
 #### Instance de-provisioning fails with error in nova-compute.log
+
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Administration Dashboard</th>
@@ -517,6 +540,7 @@ Provisioning fails when the <b>root_mb</b> in the flavor exactly matches the nod
 </table>
 
 #### Instance provisioning fails due to failed cartridge
+
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Administration Dashboard</th>
@@ -536,13 +560,14 @@ The current apollo service design takes 30 minutes to import the refreshed data 
 </table>
 
 #### User cannot connect to instance via SSH even if instance is active and is in running state
+
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Administration Dashboard</th>
 </tr>
 <tr style="background-color: white; color: black;">
 <td>System Behavior/Message</td>
-<td>Trying to connect to an active, running instance using SSH results in an error message: <b>ssh: connect to host &lt;IP Addres&gt; port 22: No route to host</b>.</td></tr>
+<td>Trying to connect to an active, running instance using SSH results in an error message: <b>ssh: connect to host &lt;IP Address&gt; port 22: No route to host</b>.</td></tr>
 <tr style="background-color: white; color: black;">
 <td>Probable Cause</td>
 <td>The instance's networking is not completely configured after booting.</td></tr>
@@ -552,6 +577,7 @@ The current apollo service design takes 30 minutes to import the refreshed data 
 </table>
 
 #### Unable to ping or SSH to an instance
+
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Administration Dashboard</th>
@@ -573,6 +599,7 @@ The current apollo service design takes 30 minutes to import the refreshed data 
 </table>
 
 #### Provisioning fails with an "Error" status in the Instances page
+
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Administration Dashboard</th>
@@ -591,6 +618,7 @@ The current apollo service design takes 30 minutes to import the refreshed data 
 </table>
 
 #### Instance is in spawning state for a long time
+
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
 <tr style="background-color: white; color: black;">
 <tr style="background-color: #C8C8C8;">
@@ -620,6 +648,7 @@ If a <b>No valid host found</b> error occurs while provisioning, ensure that the
 </table>
 
 #### De-provisioning leads to deleting state but does not delete the instance
+
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Administration Dashboard</th>
@@ -640,6 +669,7 @@ If a <b>No valid host found</b> error occurs while provisioning, ensure that the
 </table>
 
 #### Unable to access shellinabox
+
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Administration Dashboard</th>
@@ -656,6 +686,7 @@ If a <b>No valid host found</b> error occurs while provisioning, ensure that the
 </table>
 
 #### Unable to view shellinabox and warning screen or grey screen displays
+
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Administration Dashboard</th>
@@ -680,6 +711,7 @@ If a <b>No valid host found</b> error occurs while provisioning, ensure that the
 ## Administration Dashboard: Topology Designer {#admindash-topology}
 
 #### Unable to view Topology Designer and SSL verification or grey screen displays
+
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Administration Dashboard</th>
@@ -707,6 +739,7 @@ For Internet Explorer:
 </table>
 
 #### Topology Designer does not list the resource pool unless cloud profile is "HP Cloud OS Grizzly Baremetal"
+
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Administration Dashboard</th>
@@ -727,6 +760,7 @@ For Internet Explorer:
 ## Administration Dashboard: Instance Provisioning &#9658; Topology-based {#admindash-instance-topology}
 
 #### Running Topologies reports internal server error
+
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Administration Dashboard</th>
@@ -748,6 +782,7 @@ For Internet Explorer:
 ## Administration Dashboard: Workloads {#admindash-workloads}
 
 #### Downloading workload from Updates and Extension panel fails
+
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Administration Dashboard</th>
@@ -764,6 +799,7 @@ For Internet Explorer:
 </table>
 
 #### Publishing workload from Updates and Extension panel does not show up in dashboard
+
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Administration Dashboard</th>
@@ -784,6 +820,7 @@ If CODN fails to upload a component because a component with the same name ALREA
 </table>
 
 #### Launching Topology Designer shows grey screen or throws warning
+
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Administration Dashboard</th>
@@ -812,6 +849,7 @@ For Internet Explorer:
 </table>
 
 #### Launch profile fails with error message
+
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Administration Dashboard</th>
@@ -831,6 +869,7 @@ Ensure that the non-proxy host 127.* is set in the Prerequisites page of the Ope
 </table>
 
 #### Creation of profile does not pick nova flavor for a given server in CCUE designer
+
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Administration Dashboard</th>
@@ -852,6 +891,7 @@ Check the <a xref="">Support Matrix</a> as well as the HP Cloud OS for Moonshot 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 ## Log/Configuration Files and Location {#log-config-files}
+
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
 <tr style="background-color: #C8C8C8;">
 <th><span style='display:block; width:180px;'>Topic</span></th>
@@ -914,7 +954,7 @@ logging:
  &nbsp; &nbsp;level: INFO
 </pre></td>
 <td>
-/var/log/graffitia-api/graffiti-api.log (Controller node)</td></tr>
+/var/log/graffiti-api/graffiti-api.log (Controller node)</td></tr>
 
 <tr style="background-color: white; color: black;">
 <td>Workload Deployment profile guide and Deployment profile persistence (Focus)</td>
@@ -984,5 +1024,6 @@ Under DEFAULT section, set following line:
 /var/log/quantum/server.log (Controller node)</td></tr>
 </table>
 
-</body>
-</html>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
+<!-- do not put html file closing tags like /body and /html in a Markdown file - not necessary. --> 
