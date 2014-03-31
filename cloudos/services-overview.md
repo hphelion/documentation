@@ -7,15 +7,16 @@ product: compute
 ---
 # HP Cloud OS Services Overview #
 
-HP Cloud OS is broken down into 2 areas:
+HP Cloud OS 1.0 is built upon the OpenStack architecture. 
 
-Administrative Environment and Execution Environment. The two environments used together allow customers to stand up, manage and get self-service usage from a cloud.
+HP Cloud OS is a foundation technology used for HP’s Converged Cloud Architecture. HP Cloud OS is broken down into a set of services and architecture that act like an Operating System, such as a data center operating system.
 
-See the following links:
+Conceptually, HP Cloud OS is comprised of two primary environments, the Administrative Environment and the Execution Environment. 
 
-[Administrative Environment](#admin)
+The two environments work together to allow users to set up and manage a self-service cloud deployment.
 
-[Execution Environment](#execution)
+- Administrative Environment - The [Administrative Environment](#admin) contains dashboards and tools that enable users to manage the cloud.
+- Execution Environment - The [Execution Environment](#execution) contains services, systems, and subsystems that emulate an operating system. The environment executes the cloud on top of your infrastructure, including your servers, networks, and storage.
 
 The following diagram illustrates a conceptual depiction of the administrative and execution environment.
 
@@ -24,10 +25,13 @@ The following diagram illustrates a conceptual depiction of the administrative a
 
 ## Execution Environment ## {#execution}
 
-The Execution Environment has 2 layers. Kernel and Base Layer
+The Execution Environment contains a [Kernel Layer](#kernel) and a [Base Layer](#base).
 
+- Kernel Layer - The HP Cloud OS [Kernel Layer](#kernel), which is similar to an operating system's kernel layer, across the cloud.
+- Base Layer - The HP Cloud OS [Base Layer](#base), which is comprised of advanced services that sit above the kernel, is like subsystem services in an operating system.
+ 
 
-### Kernel Layer ###
+### Kernel Layer ### {#kernel}
 The Kernel Layer acts like an Operating System Kernel across a Data Center for Cloud which acts as an OS for Cloud. The Kernel Layer is based on the OpenStack infrastructure set of services. The following services from OpenStack are used.
 
 
@@ -68,11 +72,11 @@ The Kernel Layer acts like an Operating System Kernel across a Data Center for C
 **Object Operations**. Allows for group and multi-tenant creation.  Also known as *Swift*.
 
 - Overview – Link to API (https://docs.hpcloud.com/api/v13/identity/)
-- Getting started with the [Cloud OS Identity Management service](/cloudos/api/services/object/getting-started)
+- [Getting started with the Cloud OS Object Management service](/cloudos/api/services/object/getting-started)
 - [How To's with the HP Cloud OS Identity Management Service](/cloudos/api/services/identity/howto/)
 
 
-### Base layer ###
+### Base layer ### {#base}
 
 The Base Layer contains those advance services above the kernel which provide services to the kernel or essentially perform like a subsystem.
 
