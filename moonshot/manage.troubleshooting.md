@@ -26,21 +26,28 @@ HP Cloud OS for Moonshot is an OpenStack-based cloud platform to manage HP Moons
 For easy reference, we categorized the known issues and solutions as follows:
 
 * [Operation Dashboard: Cloud infrastructure readiness](#opdash-cloud-ready)
+
 * [Operation Dashboard: Cloud and region](#opdash-cloud-region)
+
 * [Administration Dashboard: Moonshot management](#admindash-moon-manage)
+
 * [Administration Dashboard: Instance provisioning &gt; elemental](#admindash-instance-element)
+
 * [Administration Dashboard: Topology Designer](#admindash-topology)
+
 * [Administration Dashboard: Instance provisioning &gt; topology-based](#admindash-instance-topology)
+
 * [Administration Dashboard: Workloads](#admindash-workloads)
+
 * [Log/configuration files and location](#log-config-files)
 
-If you need further assistance, feel free to contact [HP Customer Support](https://www.hpcloud.com/contact_us).
+If you need further assistance, contact [HP Customer Support](https://www.hpcloud.com/contact_us).
 
 ## Operational Dashboard: Cloud infrastructure readiness {#opdash-cloud-ready}
 
 #### New node fails to PXE boot because of TFTP boot timeout error
 
-<table style="text-align: left; vertical-align: top; min-width: 500px;">
+<table style="text-align: left; vertical-align: top; min-width: 700px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Operational Dashboard</th>
 </tr>
@@ -64,7 +71,7 @@ If you need further assistance, feel free to contact [HP Customer Support](https
 
 #### Discovered nodes shown as 'Off' in Manage Nodes section
 
-<table style="text-align: left; vertical-align: top; min-width: 600px;">
+<table style="text-align: left; vertical-align: top; min-width: 700px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Operational Dashboard</th>
 </tr>
@@ -85,7 +92,7 @@ For more information, check the <b>/var/log/cosmos/cosmos.log</b> and <b>/var/lo
 
 #### Allocated node stuck at 'Installing/Installed' state for more than 10 minutes
 
-<table style="text-align: left; vertical-align: top; min-width: 600px;">
+<table style="text-align: left; vertical-align: top; min-width: 700px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Operational Dashboard</th>
 </tr>
@@ -102,7 +109,7 @@ For more information, check the <b>/var/log/cosmos/cosmos.log</b> and <b>/var/lo
 
 #### Updating the internet access prerequisites sometimes fails
 
-<table style="text-align: left; vertical-align: top; min-width: 600px;">
+<table style="text-align: left; vertical-align: top; min-width: 700px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Operational Dashboard</th>
 </tr>
@@ -123,7 +130,7 @@ For more information, check the <b>/var/log/cosmos/cosmos.log</b> and <b>/var/lo
 
 #### Launch Dashboard fails
 
-<table style="text-align: left; vertical-align: top; min-width: 600px;">
+<table style="text-align: left; vertical-align: top; min-width: 700px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Operational Dashboard</th>
 </tr>
@@ -149,7 +156,7 @@ localhost
 
 #### Installation/configuration of the Admin node sometimes fails
 
-<table style="text-align: left; vertical-align: top; min-width: 600px;">
+<table style="text-align: left; vertical-align: top; min-width: 700px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Operational Dashboard</th>
 </tr>
@@ -166,7 +173,7 @@ localhost
 
 #### Create cloud or create region fails
 
-<table style="text-align: left; vertical-align: top; min-width: 600px;">
+<table style="text-align: left; vertical-align: top; min-width: 700px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Operational Dashboard</th>
 </tr>
@@ -196,7 +203,7 @@ localhost
 ## Administration Dashboard: Moonshot Management {#admindash-moon-manage}
 
 #### Internal server error from Moonshot Management with no additional information on exact error
-<table style="text-align: left; vertical-align: top; min-width: 600px;">
+<table style="text-align: left; vertical-align: top; min-width: 700px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Administration Dashboard</th>
 </tr>
@@ -217,7 +224,7 @@ Check the following logs on the Controller node for exact details:<br>
 
 #### "Not Authorized" error message from Moonshot Management
 
-<table style="text-align: left; vertical-align: top; min-width: 600px;">
+<table style="text-align: left; vertical-align: top; min-width: 700px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Administration Dashboard</th>
 </tr>
@@ -239,7 +246,7 @@ If this is because the X-Auth token expired, then sign out and log in again to t
 
 #### Moonshot chassis discovery takes a long time or sometimes fails
 
-<table style="text-align: left; vertical-align: top; min-width: 600px;">
+<table style="text-align: left; vertical-align: top; min-width: 700px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Administration Dashboard</th>
 </tr>
@@ -256,7 +263,7 @@ If this is because the X-Auth token expired, then sign out and log in again to t
 
 #### Chassis refresh status is shown as "Failed" in the Datacenter table view
 
-<table style="text-align: left; vertical-align: top; min-width: 600px;">
+<table style="text-align: left; vertical-align: top; min-width: 700px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Administration Dashboard</th>
 </tr>
@@ -278,7 +285,7 @@ If this is because the X-Auth token expired, then sign out and log in again to t
 
 #### An existing chassis displays "Failed to connect to chassis" message
 
-<table style="text-align: left; vertical-align: top; min-width: 600px;">
+<table style="text-align: left; vertical-align: top; min-width: 700px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Administration Dashboard</th>
 </tr>
@@ -295,7 +302,7 @@ If this is because the X-Auth token expired, then sign out and log in again to t
 
 #### Deleting chassis failed with "Unable to delete" message
 
-<table style="text-align: left; vertical-align: top; min-width: 600px;">
+<table style="text-align: left; vertical-align: top; min-width: 700px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Administration Dashboard</th>
 </tr>
@@ -317,7 +324,7 @@ To successfully delete a chassis, it must be in Maintenance Mode in the Single C
 
 #### After the Single Chassis view page loads, any immediate action throws internal server error
 
-<table style="text-align: left; vertical-align: top; min-width: 600px;">
+<table style="text-align: left; vertical-align: top; min-width: 700px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Administration Dashboard</th>
 </tr>
@@ -334,7 +341,7 @@ To successfully delete a chassis, it must be in Maintenance Mode in the Single C
 
 #### Single Chassis view displays "Error" instead of cartridge ID 
 
-<table style="text-align: left; vertical-align: top; min-width: 600px;">
+<table style="text-align: left; vertical-align: top; min-width: 700px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Administration Dashboard</th>
 </tr>
@@ -352,7 +359,7 @@ Wait for the discovery polling interval or force a refresh.</td></tr>
 
 #### Single Chassis view not enabled
 
-<table style="text-align: left; vertical-align: top; min-width: 600px;">
+<table style="text-align: left; vertical-align: top; min-width: 700px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Administration Dashboard</th>
 </tr>
@@ -370,7 +377,7 @@ Wait for the discovery polling interval or force a refresh.</td></tr>
 
 #### Node disk size displayed is less than actual value
 
-<table style="text-align: left; vertical-align: top; min-width: 600px;">
+<table style="text-align: left; vertical-align: top; min-width: 700px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Administration Dashboard</th>
 </tr>
@@ -387,7 +394,7 @@ Wait for the discovery polling interval or force a refresh.</td></tr>
 
 #### Error message when setting a chassis to maintenance mode
 
-<table style="text-align: left; vertical-align: top; min-width: 600px;">
+<table style="text-align: left; vertical-align: top; min-width: 700px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Administration Dashboard</th>
 </tr>
@@ -404,7 +411,7 @@ Wait for the discovery polling interval or force a refresh.</td></tr>
 
 #### Chassis cannot be deleted error message
 
-<table style="text-align: left; vertical-align: top; min-width: 600px;">
+<table style="text-align: left; vertical-align: top; min-width: 700px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Chassis Deletion</th>
 </tr>
@@ -422,7 +429,7 @@ Most common causes are that the chassis is not set to Maintenance Mode or it has
 
 #### Added chassis is not in Datacenter view (IE, Firefox)
 
-<table style="text-align: left; vertical-align: top; min-width: 600px;">
+<table style="text-align: left; vertical-align: top; min-width: 700px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Administration Dashboard</th>
 </tr>
@@ -444,7 +451,7 @@ Close IE or Firefox and reopen to see the chassis in the Datacenter view. If thi
 
 #### Provisioning fails when using custom flavors
 
-<table style="text-align: left; vertical-align: top; min-width: 600px;">
+<table style="text-align: left; vertical-align: top; min-width: 700px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Administration Dashboard</th>
 </tr>
@@ -462,7 +469,7 @@ Provisioning fails when the <b>root_mb</b> in the flavor exactly matches the nod
 
 #### While provision, error is displayed in nova-scheduler.log
 
-<table style="text-align: left; vertical-align: top; min-width: 600px;">
+<table style="text-align: left; vertical-align: top; min-width: 700px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Administration Dashboard</th>
 </tr>
@@ -482,7 +489,7 @@ Provisioning fails when the <b>root_mb</b> in the flavor exactly matches the nod
 
 #### Unable to provision instances due to no DHCP server found
 
-<table style="text-align: left; vertical-align: top; min-width: 600px;">
+<table style="text-align: left; vertical-align: top; min-width: 700px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Administration Dashboard</th>
 </tr>
@@ -503,7 +510,7 @@ Provisioning fails when the <b>root_mb</b> in the flavor exactly matches the nod
 
 #### Provisioning fails because nodes registered are shown in "nova baremetal-node-list" but not in "nova hypervisor-list"
 
-<table style="text-align: left; vertical-align: top; min-width: 600px;">
+<table style="text-align: left; vertical-align: top; min-width: 700px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Administration Dashboard</th>
 </tr>
@@ -524,7 +531,7 @@ Provisioning fails when the <b>root_mb</b> in the flavor exactly matches the nod
 
 #### Instance de-provisioning fails with error in nova-compute.log
 
-<table style="text-align: left; vertical-align: top; min-width: 600px;">
+<table style="text-align: left; vertical-align: top; min-width: 700px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Administration Dashboard</th>
 </tr>
@@ -541,7 +548,7 @@ Provisioning fails when the <b>root_mb</b> in the flavor exactly matches the nod
 
 #### Instance provisioning fails due to failed cartridge
 
-<table style="text-align: left; vertical-align: top; min-width: 600px;">
+<table style="text-align: left; vertical-align: top; min-width: 700px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Administration Dashboard</th>
 </tr>
@@ -561,7 +568,7 @@ The current apollo service design takes 30 minutes to import the refreshed data 
 
 #### User cannot connect to instance via SSH even if instance is active and is in running state
 
-<table style="text-align: left; vertical-align: top; min-width: 600px;">
+<table style="text-align: left; vertical-align: top; min-width: 700px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Administration Dashboard</th>
 </tr>
@@ -578,7 +585,7 @@ The current apollo service design takes 30 minutes to import the refreshed data 
 
 #### Unable to ping or SSH to an instance
 
-<table style="text-align: left; vertical-align: top; min-width: 600px;">
+<table style="text-align: left; vertical-align: top; min-width: 700px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Administration Dashboard</th>
 </tr>
@@ -600,7 +607,7 @@ The current apollo service design takes 30 minutes to import the refreshed data 
 
 #### Provisioning fails with an "Error" status in the Instances page
 
-<table style="text-align: left; vertical-align: top; min-width: 600px;">
+<table style="text-align: left; vertical-align: top; min-width: 700px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Administration Dashboard</th>
 </tr>
@@ -619,7 +626,7 @@ The current apollo service design takes 30 minutes to import the refreshed data 
 
 #### Instance is in spawning state for a long time
 
-<table style="text-align: left; vertical-align: top; min-width: 600px;">
+<table style="text-align: left; vertical-align: top; min-width: 700px;">
 <tr style="background-color: white; color: black;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Operational Dashboard</th>
@@ -649,7 +656,7 @@ If a <b>No valid host found</b> error occurs while provisioning, ensure that the
 
 #### De-provisioning leads to deleting state but does not delete the instance
 
-<table style="text-align: left; vertical-align: top; min-width: 600px;">
+<table style="text-align: left; vertical-align: top; min-width: 700px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Administration Dashboard</th>
 </tr>
@@ -670,7 +677,7 @@ If a <b>No valid host found</b> error occurs while provisioning, ensure that the
 
 #### Unable to access shellinabox
 
-<table style="text-align: left; vertical-align: top; min-width: 600px;">
+<table style="text-align: left; vertical-align: top; min-width: 700px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Administration Dashboard</th>
 </tr>
@@ -687,7 +694,7 @@ If a <b>No valid host found</b> error occurs while provisioning, ensure that the
 
 #### Unable to view shellinabox and warning screen or grey screen displays
 
-<table style="text-align: left; vertical-align: top; min-width: 600px;">
+<table style="text-align: left; vertical-align: top; min-width: 700px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Administration Dashboard</th>
 </tr>
@@ -712,7 +719,7 @@ If a <b>No valid host found</b> error occurs while provisioning, ensure that the
 
 #### Unable to view Topology Designer and SSL verification or grey screen displays
 
-<table style="text-align: left; vertical-align: top; min-width: 600px;">
+<table style="text-align: left; vertical-align: top; min-width: 700px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Administration Dashboard</th>
 </tr>
@@ -740,7 +747,7 @@ For Internet Explorer:
 
 #### Topology Designer does not list the resource pool unless cloud profile is "HP Cloud OS Grizzly Baremetal"
 
-<table style="text-align: left; vertical-align: top; min-width: 600px;">
+<table style="text-align: left; vertical-align: top; min-width: 700px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Administration Dashboard</th>
 </tr>
@@ -761,7 +768,7 @@ For Internet Explorer:
 
 #### Running Topologies reports internal server error
 
-<table style="text-align: left; vertical-align: top; min-width: 600px;">
+<table style="text-align: left; vertical-align: top; min-width: 700px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Administration Dashboard</th>
 </tr>
@@ -783,7 +790,7 @@ For Internet Explorer:
 
 #### Downloading workload from Updates and Extension panel fails
 
-<table style="text-align: left; vertical-align: top; min-width: 600px;">
+<table style="text-align: left; vertical-align: top; min-width: 700px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Administration Dashboard</th>
 </tr>
@@ -800,7 +807,7 @@ For Internet Explorer:
 
 #### Publishing workload from Updates and Extension panel does not show up in dashboard
 
-<table style="text-align: left; vertical-align: top; min-width: 600px;">
+<table style="text-align: left; vertical-align: top; min-width: 700px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Administration Dashboard</th>
 </tr>
@@ -821,7 +828,7 @@ If CODN fails to upload a component because a component with the same name ALREA
 
 #### Launching Topology Designer shows grey screen or throws warning
 
-<table style="text-align: left; vertical-align: top; min-width: 600px;">
+<table style="text-align: left; vertical-align: top; min-width: 700px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Administration Dashboard</th>
 </tr>
@@ -850,7 +857,7 @@ For Internet Explorer:
 
 #### Launch profile fails with error message
 
-<table style="text-align: left; vertical-align: top; min-width: 600px;">
+<table style="text-align: left; vertical-align: top; min-width: 700px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Administration Dashboard</th>
 </tr>
@@ -870,7 +877,7 @@ Ensure that the non-proxy host 127.* is set in the Prerequisites page of the Ope
 
 #### Creation of profile does not pick nova flavor for a given server in CCUE designer
 
-<table style="text-align: left; vertical-align: top; min-width: 600px;">
+<table style="text-align: left; vertical-align: top; min-width: 700px;">
 <tr style="background-color: #C8C8C8;">
 <th colspan="2">Software Component: Administration Dashboard</th>
 </tr>
@@ -892,7 +899,7 @@ Check the <a xref="">Support Matrix</a> as well as the HP Cloud OS for Moonshot 
 
 ## Log/Configuration Files and Location {#log-config-files}
 
-<table style="text-align: left; vertical-align: top; min-width: 600px;">
+<table style="text-align: left; vertical-align: top; min-width: 700px;">
 <tr style="background-color: #C8C8C8;">
 <th><span style='display:block; width:180px;'>Topic</span></th>
 <th>Log configuration</th>
