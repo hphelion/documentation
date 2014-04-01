@@ -31,7 +31,7 @@ After completing the installation, follow the instructions in this topic to ente
 
 When your license expires, you will receive an informational message to purchase a new license key.  
 
-## Manage Your License
+## Manage Your LicenseS
 
 After you have completed the Admin node installation in the Operational Dashboard:
 
