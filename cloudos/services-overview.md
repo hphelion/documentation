@@ -7,9 +7,9 @@ product: compute
 ---
 # HP Cloud OS Services Overview #
 
-HP Cloud OS 1.0 is built upon the OpenStack architecture. 
+HP Cloud OS 1.0 is built upon the OpenStack technology. 
 
-HP Cloud OS is a foundation technology used for HP’s Converged Cloud Architecture. HP Cloud OS is broken down into a set of services and architecture that act like an Operating System, such as a data center operating system.
+HP Cloud OS is a foundation technology used for HP’s Converged Cloud Architecture. HP Cloud OS is broken down into a set of services and architecture that act like a datacenter-level operating system (DCOS).
 
 Conceptually, HP Cloud OS is comprised of two primary environments, the Administrative Environment and the Execution Environment. 
 
@@ -101,7 +101,7 @@ HP Public is a resource pool registry, which allows you to tap into any OpenStac
 provisioning service allowing you to create templates and provision those templates for infrastructure. This allows to take advantage of the orchestration feature in HP Cloud OS and OpenStack. Eve can be used across multiple clouds
 
 - Overview – Link to API?
-- Getting started with the Eve service
+- [Getting started with the Eve service](/cloudos/api/services/eve/getting-started/)
 - Eve service use cases/solutions/how to use/examples
 
 **Focus** Managing templates, binding documents, versioning. An internal service to manage the documents and templates. Versioning and document relationship is also a function provided by Focus.
