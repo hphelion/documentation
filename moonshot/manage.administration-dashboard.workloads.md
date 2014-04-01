@@ -18,7 +18,7 @@ PageRefresh();
 
 <p style="font-size: small;"> <a href="/cloudos/moonshot/manage/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage">&#9650; UP</a> | NEXT &#9654;</p>
 
-### Workloads ###
+# Workloads
 
 Workloads functionality in HP Cloud OS for Moonshot aims to facilitate the end user in deployment of a composite service comprising of different applications and hence different workloads in an easy to use manner. 
 The end user can browse through HP's catalog listing of pre-tested and pre-crafted workloads, download and publish them to the cloud and launch them to get a running application infrastructure without worrying about the intricate and in-depth understanding of technical details like topology, OpenStack nova flavor, Moonshot Cartridge specification etc. The end user can also define personalized workloads by following a simplified folder structure and can import the same to the cloud.
@@ -36,20 +36,22 @@ This section includes the following topics:
 * <a href="#Understanding Workload Lifecycle">Understanding Workload Lifecycle</a>
 * <a href="#Managing Workload Lifecycle Using Administration Dashboard">Managing Workload Lifecycle Using Administration Dashboard</a>
 
-#### Understanding Workload Entities ####<a name="Understanding Workload Entities"></a>
+## Understanding Workload Entities 
+
+
 Some of the important entities that help to make up Workloads based provisioning are:
 
 <img src="media/cos4ms-workload-prov.png"/>
 
 
-#### Relationship between Workload Entities ###<a name="Relationship between Workload Entities"></a>
+## Relationship between Workload Entities 
 
 A workload entity is an abstract representation of a service which maps to a given infrastructure blue-print (technically termed as topology). The same workload can be realized by different cloud resources present in the system which can be uniquely represented as deployment profiles. 
 For Example: Let us assume that a single server group based workload requirement is, to serve static web hosting. As we know that both Scott_1 and Borman can serve static web hosting, it is thus possible to have two different deployment profiles; where one maps to nova flavor compute resource of Borman while the other maps to Scott_1.  Also, a given deployment profile can be launched multiple times for same or different user. Considering this, there is an inherent relationship amongst workloads, topology, deployment profiles and deployed workloads which has been illustrated below:
 
 <img src="media/cos4ms-relationship-between-workload-entities.png"/>
 
-####Cloud Personalities####<a name="Cloud Personalities"></a>
+## Cloud Personalities
 
 Lifecycle of a Workload is a multi-phase activity and needs different actors to collaborate together to make a simplified realization of a given application infrastructure by the end user. The list below elaborates on the actors along with their roles and responsibilities in entire workload lifecycle.
 
@@ -57,7 +59,7 @@ Lifecycle of a Workload is a multi-phase activity and needs different actors to 
 
 All the above players contribute towards realizing the lifecycle of a Workload and play relevant role in each stage of its workflow.
 
-#### Understanding Workload Content ####<a name="Understanding Workload Content"></a>
+## Understanding Workload Content
 
 Each workload is represented as a CSU file, which is inherently a data container to store various elements of workload (like images, topology design etc.) in compressed format as shown in the diagram below:
 
@@ -69,8 +71,7 @@ HP Cloud OS for Moonshot provides the functionality to import the CSU file and c
 2.	Content Structure of CSU File
 3.	Manifest file
 
-
-Entire section illustrates the content using a sample Apache workload which allows you to deploy single Apache server on a Moonshot cartridge. 
+The following sections illustrate the content using a sample Apache workload which allows you to deploy single Apache server on a Moonshot cartridge. 
  	
 
 &#9654;**Elements of Workload**
@@ -81,7 +82,7 @@ A workload typically comprises of images, topology, manifest file etc. Every wor
 
 <tr style="background-color: lightgrey; color: black;">
 
- <td><b>Category</b></td> <td><b>Type</b></td><td><b>Description</b></td></tr>
+<td><b>Category</b></td> <td><b>Type</b></td><td><b>Description</b></td></tr>
 
 <tr style="background-color: white; color: black;">
 <td>
@@ -117,7 +118,8 @@ As mentioned above, a workload CSU file is an archived version of different cont
 
 A manifest file is a JSON file which contains specification of elements of a workload.
 
-#### Understanding Workload Lifecycle ####<a name="Understanding Workload Lifecycle"></a>
+## Understanding Workload Lifecycle 
+
 The following figure illustrates the lifecycle of workload entities and the workflow required when the content is being imported from remote folder using CODN:
 
 <img src="media/cos4ms-understanding-workload-lifecycle.png"/>
@@ -153,9 +155,9 @@ A workload can have multiple deployment profiles. When a workload is downloaded 
 
 Once the Workloads are deployed, Project Administrators / Users can use the workload content to create / edit deployment profile and launch profile as per project requirements.
 
-#### Managing Workload Lifecycle using Administration Dashboard ####<a name="Managing Workload Lifecycle using Administration Dashboard"></a>
+## Managing Workload Lifecycle using Administration Dashboard 
 
-Workload workflow using Administration Dashboard can be depicted in the following sequence of steps:
+The workload's flow using the Administration Dashboard can be depicted in the following sequence of steps:
 
 <img src="media/cos4ms-managing-workload-lifecycle.png"/>
 
@@ -209,7 +211,7 @@ Cloud Administrator has to ensure the following prerequisites before provisionin
     Go to Reference UI and replace the token value with the Authentication token.
     To access your authentication token, click **Projects** Tab and then **Access and Security** to display the Access and Security page. Click **Authentication Token** to display your authentication token.
 
-***Automated Creation of Nova Flavors***
+**Automated Creation of Nova Flavors**
 
   Cloud discovers the cartridges and creates flavors automatically. There is a polling cycle of five minutes to check for new registered cartridges for flavor creation .To validate that the flavor associated to content has been automatically created, do the following:
 
@@ -223,7 +225,7 @@ The page displays with the list of flavors.</br>
 
  4.	Click **View Extra Specs** to view the extra specifications of the flavor.
 
-#### Populating Cloud with Workload  ####
+## Populating Cloud with Workload
 
 Cloud Administrator can populate the Cloud with workload by either importing it using local folder (if the .csu file corresponding to workload is available) or by using remote HP Cloud OS Enterprise portal. 
 
@@ -242,12 +244,13 @@ Populating cloud with workload involves following phases:
 
 Once you have imported the workload or you have logged in to the remote folder, content is available for you to publish it to your local cloud.
 
-***Import Using Local Folder***
+**Import Using Local Folder**
  
    You can import a workload from your local folder.  Once the import process is successful, the document displays in the Updates and Extensions page.  To import an update that is stored on your local system, do the following:
 
 1.	On the Administration Dashboard, click **Project** Tab to select it.<br>
 The Project tab is activated and the options are displayed in the left panel.</br>
+
 2.	From the options in the left panel, click **Updates and Extensions** and then select **Updates and Extensions** to display the Updates and Extensions page with the list of updates.
 
 3.	Click **Import** displayed on the top right corner of the page.<br>
@@ -259,7 +262,7 @@ The file displays in the Import dialog box.</br>
 5.	Click **Import**.<br>
 The file is imported to your local cloud and displayed in the Updates and Extensions page.</br>
 
-***Login to CODN Remote Portal***
+**Login to CODN Remote Portal**
 
 To import an update from CODN remote portal, do the following:
 
@@ -275,7 +278,7 @@ The Project Tab is activated and the options are displayed in the left panel.</b
 5.	Click **OK** to save the details.
 The updates are displayed in the Updates and Extensions page. 
 
-***Download***
+**Download**
 
 To download the Workload content that has been imported, do the following:
 
@@ -287,7 +290,7 @@ The Project tab is activated and the options are displayed in the left panel.</b
 3.	Click **Download** against the workload that you want to download.<br>
 The workload is downloaded to your local system in the form of a .csu file which is a zip file and the Publish option is displayed.</br>
 
-***Publish***
+**Publish**
 
 Once the content is downloaded, you can publish it using the Publish option. The Publish option unzips the .csu file and stores it in the relevant repositories. This enables the Workloads to be used in different projects depending on the scope defined while publishing the content. 
 Do the following:
@@ -309,7 +312,7 @@ It displays the following four options:</br>
 
 <tr style="background-color: lightgrey; color: black;">
 
- <td><b>Scope</b></td> <td><b>Description</b></td></tr>
+<td><b>Scope</b></td> <td><b>Description</b></td></tr>
 
 <tr style="background-color: white; color: black;">
 <td>Private, Project</td><td>Allows you access while working in this project.</td></tr>
@@ -418,7 +421,7 @@ The profile that you created displays in the table in Deployment Profile Details
 
 Once the Deployment Profile is created, it results in provisioning of physical infrastructure and creation of a deployed workload. Once the Workloads are deployed, Project Administrators and Project users can use the workload content to Launch Profile and Edit Profile as per project requirements. Provisioning a Workload involves the following tasks:
 
-***Launch a Profile***
+**Launch a Profile**
 
 To launch the profile, do the following:
 
@@ -446,7 +449,7 @@ A success message is displayed.</br>
 Once the launch is successful, the profile is visible in the Deployed Workload.
 
 
-***View Running Topologies***
+**View Running Topologies**
 
 To view the progress of the launch of deployment profiles, do the following:
 
@@ -458,7 +461,7 @@ The tab displays with options in the left panel.</br>
 3.	From the left panel, click **Provisioning** and then select **Running Topologies** to display the Running Topologies page with a list of topologies in the provisioning state. <br>Once it is successfully provisioned and instances associated with it are running, the deployed workload status is counted as successful.</br>
 
 
-***Edit a Profile***
+**Edit a Profile**
 
 To edit a deployment profile, do the following:
 
@@ -479,12 +482,6 @@ The profile displays in the Profile Tab of the Workload Topology Designer.
 
 7.	Click **Save** to save the details.
 
-
-
-
-
-
-
-
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 
