@@ -7,7 +7,7 @@ product: compute
 ---
 # Getting Started with HP Cloud OS Focus Service #
 
-<!-- modeled after HP Cloud Networking Getting Started (network.getting.started.md) -->
+<!-- modeled after HP Cloud Networking Getting Started (network.getting.started.md); text from docs.hpcloud.com/cloudos/prepare/overview/ -->
 
 The HP Cloud OS Focus service serves as the Topology Design Registry and Repository Service. Focus provides for persistent store and management of TOSCA-based templates. Focus allows you to:
 

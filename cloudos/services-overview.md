@@ -94,7 +94,7 @@ Eden also provides scalability and manageability around services and a way to co
 HP Public is a resource pool registry, which allows you to tap into any OpenStack cloud. This allows for a hybrid cloud approach for sharing resources. Example: using HP Public Cloud Services in conjunction with your internal private cloud services.
 
 - Overview – Link to API?
-- Getting started with the Peer service
+- [Getting started with the Peer service](/cloudos/api/services/peer/getting-started/)
 - Peer service use cases/solutions/how to use/examples
 
 **Eve**. Provisioning, templates, build around templates
@@ -107,7 +107,7 @@ provisioning service allowing you to create templates and provision those templa
 **Focus** Managing templates, binding documents, versioning. An internal service to manage the documents and templates. Versioning and document relationship is also a function provided by Focus.
 
 - Overview – Link to API?
-- Getting started with the Focus service
+- [Getting started with the Focus service](/cloudos/api/services/peer/getting-started/)
 - Use cases/solutions/how to use/examples
 
 
