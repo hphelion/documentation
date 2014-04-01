@@ -21,7 +21,7 @@ PageRefresh();
 ### Workloads ###
 
 Workloads functionality in HP Cloud OS for Moonshot aims to facilitate the end user in deployment of a composite service comprising of different applications and hence different workloads in an easy to use manner. 
-The end user can browse through HP’s catalog listing of pre-tested and pre-crafted workloads, download and publish them to the cloud and launch them to get a running application infrastructure without worrying about the intricate and in-depth understanding of technical details like topology, OpenStack nova flavor, Moonshot Cartridge specification etc. The end user can also define personalized workloads by following a simplified folder structure and can import the same to the cloud.
+The end user can browse through HP's catalog listing of pre-tested and pre-crafted workloads, download and publish them to the cloud and launch them to get a running application infrastructure without worrying about the intricate and in-depth understanding of technical details like topology, OpenStack nova flavor, Moonshot Cartridge specification etc. The end user can also define personalized workloads by following a simplified folder structure and can import the same to the cloud.
 
 This section includes the following topics:
 
@@ -135,7 +135,7 @@ Content Creator is responsible for creating the deployable content that is uploa
 
 **Phase 2: Upload Content**
 
-Content Publisher bundles the workload files as a .csu file and uploads it on a centralized portal. It is later published to HP Cloud’s Public catalog after necessary approvals. It is then available for importing into the cloud environment using HP Cloud OS for Moonshot Administration Dashboard. Access to the catalog is based on username and password credentials. 
+Content Publisher bundles the workload files as a .csu file and uploads it on a centralized portal. It is later published to HP Cloud's Public catalog after necessary approvals. It is then available for importing into the cloud environment using HP Cloud OS for Moonshot Administration Dashboard. Access to the catalog is based on username and password credentials. 
 
 **Phase 3: Download / Import to Cloud**
 
@@ -193,7 +193,7 @@ Cloud Administrator has to ensure the following prerequisites before provisionin
 	
 ***Graffiti Factory Data***
 
- Cloud Administrator must publish graffiti factory data before importing any workload in the Cloud. This can be done either by using CODN to import graffiti content from local folder or HP CloudOS Enterprise portal. Refer to the section on Importing Workload to initialize cloud with graffiti factory data.One can validate if the content from CODN portal or local import is being downloaded or not. To validate the content download, do the following:
+ Cloud Administrator must publish graffiti factory data before importing any workload in the Cloud. This can be done either by using CODN to import graffiti content from local folder or HP Cloud OS Enterprise portal. Refer to the section on Importing Workload to initialize cloud with graffiti factory data.  One can validate if the content from CODN portal or local import is being downloaded or not. To validate the content download, do the following:
 
   1. On the Administration Dashboard, click Cloud Tab to select it.<br>
    Cloud tab is activated and the options are displayed in the left panel. By default, all the services are displayed in the right pane.
@@ -407,7 +407,7 @@ The keypair value has to be injected at the time of profile creation. All other 
 
 11.	Click **Save** to save the profile.
 
-12.	Click the close icon displayedon the top right corner to close the Topology Designer page.<br>
+12.	Click the close icon displayed on the top right corner to close the Topology Designer page.<br>
 The deployment profile is displayed in the Workloads page.</br>
 
 13.	Click **Workloads** option again to view the Dashboard and the click the Workload for which you created the deployment profile.<br>
