@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "Unix Command Line Interface: Generating custom reports"
+title: "UNIX CLI for HP Cloud: Generating custom reports"
 permalink: /cli/unix/articles/reports
 product: unix-cli
 categories: cli linux object store compute reports
 tags: cli linux object store compute reports
 ---
-#UNIX CLI: Generating custom reports v12.12#
+#UNIX CLI for HP Cloud: Generating custom reports v12.12#
 
 ___________________
 
@@ -22,7 +22,7 @@ HP Cloud has contributed the Unix CLI back to the open source community, and you
 
 _________________________________________
 
-You can use the Unix command-line interface (CLI) for automating custom report generation.  Nearly all CLI reports support the `-c` (columns) and `-d` (delimiter) options which allow you to create your own reports and to pipe (`|`) these reports to other commands or import the report data into programs such as Excel.
+You can use the UNIX CLI for HP Cloud for automating custom report generation.  Nearly all CLI reports support the `-c` (columns) and `-d` (delimiter) options which allow you to create your own reports and to pipe (`|`) these reports to other commands or import the report data into programs such as Excel.
 
 The `-c` option allows you to specify the columns in report and the order in which they appear.  For example, if you want a report that only contained the public IP address, name, and ID of your servers:
 
@@ -53,4 +53,5 @@ You can pipe the output of this command to another command:
 
 ##For more information## {#articles}
 
-For more tips and How-tos on using your UNIX command-line interface (CLI), see [UNIX CLI: Articles on to use the UNIX CLI](/cli/unix/articles/).
+For more tips and How-tos on using your UNIX CLI for HP Cloud, see [UNIX CLI for HP Cloud: Articles on to use the UNIX CLI for HP Cloud](/cli/unix/articles/).
+
