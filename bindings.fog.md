@@ -5,7 +5,7 @@ permalink: /bindings/fog/
 product: fog
 
 ---
-# HP Cloud Extensions to Ruby Fog Binding #
+# Ruby Fog Bindings for HP Cloud: Extensions #
 
 ##Important Notice##
 
