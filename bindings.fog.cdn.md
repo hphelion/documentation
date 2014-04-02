@@ -5,7 +5,7 @@ permalink: /bindings/fog/cdn/
 product: fog
 
 ---
-# Ruby Fog Bindings CDN Examples
+# Ruby Fog Bindings for HP Cloud CDN Examples
 
 
 ##Important Notice##
