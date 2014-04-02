@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "Unix Command Line Interface: Object Store Migration"
+title: "UNIX CLI for HP Cloud: Object Store Migration"
 permalink: /cli/unix/articles/migration/
 product: unix-cli
 categories: cli linux object store migration
 tags: cli linux object store migration aws rackspace google
 ---
-#UNIX CLI: Performing UNIX object storage migration v12.12#
+#UNIX CLI for HP Cloud: Performing UNIX object storage migration v12.12#
 
 ___________________
 
@@ -22,7 +22,7 @@ HP Cloud has contributed the Unix CLI back to the open source community, and you
 
 _________________________________________
 
-You can use the Unix CLI to migrate object store data from other cloud storage providers to your HP Cloud object storage containers.  You can copy objects individually, or perform a recursive copy of multiple files.
+You can use the Unix CLI for HP Cloud to migrate object store data from other cloud storage providers to your HP Cloud object storage containers.  You can copy objects individually, or perform a recursive copy of multiple files.
 
 You can perform object migration from the AWS, Google, and Rackspace services.  You may be able to migrate objects from other providers but that functionality is not currently supported.
 
@@ -36,7 +36,7 @@ First you need to [download and install the latest Unix CLI client](/cli/unix/in
 
 **Note**: You can use this account only to perform migrations.  
 
-To create a UNIX CLI account to be used to migrate objects from the account `sharkey` on the Rackspace server:
+To create a UNIX CLI for HP Cloud account to be used to migrate objects from the account `sharkey` on the Rackspace server:
 
     $ hpcloud account:setup -p rackspace sharkey
     ****** Setup your Rackspace sharkey account ******
@@ -73,4 +73,5 @@ You can ignore the deprecation message.  The last part of the object name is dis
 
 ##For more information## {#articles}
 
-For more tips and How-tos on using your UNIX command-line interface (CLI), see [UNIX CLI: Articles on to use the UNIX CLI](/cli/unix/articles/).
+For more tips and How-tos on using your UNIX CLI for HP Cloud, see [UNIX CLI for HP Cloud: Articles on to use the UNIX CLI for HP Cloud](/cli/unix/articles/).
+
