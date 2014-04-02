@@ -17,6 +17,11 @@ You can use the default network to deploy HP Cloud OS compute virtual servers, o
 
 You can now define and configure your own virtual network topology, including control of IP address ranges.
 
+###Using the Administration Dashboard### {#dashboard}
+
+You can use the Administration Dashbord to access HP Cloud OS Networking service. See [Administration Dashboard Tasks by Tab](/cloudos/manage/administration-dashboard/tasks-by-tab/).
+
+
 ###Using the API to access Networking### {#API}
  
 You can use a low-level, raw REST API access to HP Cloud OS Networking. See the [HP Cloud OS Networking Service API page](/api/v13/networking).

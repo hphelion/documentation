@@ -25,17 +25,17 @@ Graffiti allows users to:
 - Verify that the provisioning was successful in the cloud
 
 
-###Using the API to access Focus### {#API}
+###Using the Administration Dashboard### {#dashboard}
+
+You can use the Administration Dashbord to access HP Cloud OS Peer service. See [Administration Dashboard Tasks by Tab](/cloudos/manage/administration-dashboard/tasks-by-tab/).
+
+###Using the API to access Peer### {#API}
  
 You can use a low-level, raw REST API access to HP Cloud OS Peer service. See .
 
 ###Using the CLI### {#cli}
 
 You can use any of several command-line interface software to access HP Cloud OS Peer service. See .
-
-###Using language bindings### {#bindings}
-
-You can use any of several language bindings to access HP Cloud OS Peer service. See .
 
 
 ## For more information ##

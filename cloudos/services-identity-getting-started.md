@@ -26,8 +26,12 @@ Based on Keystone, the OpenStack Identity Service, the HP Cloud Identity Service
 - Role -- A personality that a user assumes when performing a specific set of operations. A role includes a set of rights and privileges. A user assuming that role inherits those rights and privileges. A token that is issued to a user includes the list of roles that user can assume. Services that are being called by that user determine how they interpret the set of roles a user has and which operations or resources each roles grants access to.
 
 
+###Using the Administration Dashboard### {#dashboard}
 
-###Using the API to access Networking### {#API}
+You can use the Administration Dashbord to access HP Cloud OS Identity service. See [Administration Dashboard Tasks by Tab](/cloudos/manage/administration-dashboard/tasks-by-tab/).
+
+
+###Using the API to access Identity### {#API}
  
 You can use a low-level, raw REST API access to HP Cloud OS Identity. See the [HP Cloud OS Identity Service API page](/api/v13/identity).
 

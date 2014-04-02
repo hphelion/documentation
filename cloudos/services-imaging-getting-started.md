@@ -41,6 +41,11 @@ Key terms include:
 
 - Custom Image Properties -- HP Cloud OS Image Service allows a set of custom, free-form image properties stored with the image metadata. 
 
+###Using the Administration Dashboard### {#dashboard}
+
+You can use the Administration Dashbord to access HP Cloud OS Imaging service. See [Administration Dashboard Tasks by Tab](/cloudos/manage/administration-dashboard/tasks-by-tab/).
+
+
 ###Using the API to access Imaging### {#API}
  
 You can use a low-level, raw REST API access to HP Cloud OS Imaging service. See the [HP Cloud OS Image Service API page](/api/v13/image).
