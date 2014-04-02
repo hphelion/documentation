@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "UNIX CLI Network Examples"
+title: "UNIX CLI for HP Cloud Network Examples"
 permalink: /cli/unix/network/
 product: unix-cli
 
 ---
-# UNIX CLI Network Examples
+# UNIX CLI for HP Cloud Network Examples
 ___________________
 
 ###Important Notice###
