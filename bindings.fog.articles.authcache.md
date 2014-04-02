@@ -6,7 +6,7 @@ product: fog
 categories: fog
 tags: fog authentication caching
 ---
-#HP Ruby Fog binding: Using authentication caching#
+#Ruby Fog bindings for HP Cloud: Using authentication caching#
 
 
 ##Important Notice##
