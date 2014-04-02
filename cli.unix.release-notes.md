@@ -5,7 +5,7 @@ permalink: /cli/unix/release-notes/
 product: unix-cli
 
 ---
-# NIX CLI for HP Clouds Release Notes
+# UNIX CLI for HP Clouds Release Notes
 
 ###Important Notice###
 
