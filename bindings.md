@@ -14,8 +14,8 @@ We created this set of bindings and have them available as open source.  While n
 ###Java/Clojure
 HP offers the Java/Clojure supported [jclouds multi-cloud binding](/bindings/jclouds).
 
-###HP Cloud PHP Bindings
-The [HP Cloud PHP Bindings](http://hpcloud.github.com/HPCloud-PHP/) on our GitHub account supports Object Storage and CDN.  We use this on our own Drupal-based sites, like the one you're reading right now.
+###PHP Bindings for HP Cloud
+The [PHP Bindings for HP Cloud](http://hpcloud.github.com/HPCloud-PHP/) on our GitHub account supports Object Storage and CDN.  We use this on our own Drupal-based sites, like the one you're reading right now.
 
 ###Drupal Module
 OK, so technically this isn't a binding but it's some open source that we use ourselves that we're making available to the public.  Take a look at our [HPCloud drupal module](http://drupal.org/project/hpcloud), which lets you use Object Storage and CDN to offload files (typically images) from your Drupal site to our services.
