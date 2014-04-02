@@ -14,8 +14,8 @@ We created this set of bindings and have them available as open source.  While n
 ###Java/Clojure
 HP offers the Java/Clojure supported [jclouds multi-cloud binding](/bindings/jclouds).
 
-###PHP
-The [HPCloud-PHP bindings](http://hpcloud.github.com/HPCloud-PHP/) on our GitHub account supports Object Storage and CDN.  We use this on our own Drupal-based sites, like the one you're reading right now.
+###HP Cloud PHP Bindings
+The [HP Cloud PHP Bindings](http://hpcloud.github.com/HPCloud-PHP/) on our GitHub account supports Object Storage and CDN.  We use this on our own Drupal-based sites, like the one you're reading right now.
 
 ###Drupal Module
 OK, so technically this isn't a binding but it's some open source that we use ourselves that we're making available to the public.  Take a look at our [HPCloud drupal module](http://drupal.org/project/hpcloud), which lets you use Object Storage and CDN to offload files (typically images) from your Drupal site to our services.
@@ -26,6 +26,6 @@ For our friends on the Microsoft platform, [we have a .NET open source binding o
 ###Javascript (node.js)
 The [HP Cloud Javascript bindings](http://hpcloud.github.io/hpcloud-js/) support our identity services and object storage functionality. We use this in our own applications.
 
-###Ruby Fog
+###Ruby Fog bindings for HP Cloud
 HP Cloud has contributed our extensions of Ruby Fog back to the open source Ruby Fog community. Please [check here to download the bindings](http://rubygems.org/gems/fog), see [new enhancements](https://github.com/fog/fog/blob/master/lib/fog/hp/README.md), and contribute back yourself!
 
