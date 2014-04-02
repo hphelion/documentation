@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "Unix Command Line Interface: Accessing Servers with Managed Key Pairs"
+title: "UNIX CLI for HP Cloud: Accessing Servers with Managed Key Pairs"
 permalink: /cli/unix/articles/managedkeypairs
 product: unix-cli
 categories: cli linux compute servers keypairs
 tags: cli linux compute servers keypairs
 ---
-#UNIX CLI: Accessing Servers with Managed Keypairs v12.12#
+#UNIX CLI for HP Cloud: Accessing Servers with Managed Keypairs v12.12#
 
 ___________________
 
@@ -22,7 +22,7 @@ HP Cloud has contributed the Unix CLI back to the open source community, and you
 
 _________________________________________
 
-Accessing Linux instances with the Unix CLI is easier than ever with managed key pairs.  When you add a new key with the `-o` option, it is saved in your home directory under `~/.hpcloud/keypairs/`.  When you create a server with that key pair, the CLI saves that information.  See the following examples for some details:
+Accessing Linux instances with the Unix CLI for HP Cloud is easier than ever with managed key pairs.  When you add a new key with the `-o` option, it is saved in your home directory under `~/.hpcloud/keypairs/`.  When you create a server with that key pair, the CLI saves that information.  See the following examples for some details:
 
 * [Creating a key pair using the -o flag](#CreatingaNewKeyPair)
 * [Creating a server using that new key pair](#CreatingaServer)
@@ -55,4 +55,4 @@ So to create a server named `Smeagol` with the ID `721935` and the key pair with
 
 ##For more information## {#articles}
 
-For more tips and How-tos on using your UNIX command-line interface (CLI), see [UNIX CLI: Articles on to use the UNIX CLI](/cli/unix/articles/).
+For more tips and How-tos on using your UNIX CLI for HP Cloud, see [UNIX CLI for HP Cloud: Articles on to use the UNIX CLI for HP Cloud](/cli/unix/articles/).
