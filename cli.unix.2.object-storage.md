@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "Unix CLI Object Storage Examples"
+title: "Unix CLI for HP Cloud Object Storage Examples"
 permalink: /cli/unix/2/object-storage/
 product: unix-cli
 
 ---
-# Unix CLI v13.5 Object Storage Examples
+# Unix CLI for HP Cloud v13.5 Object Storage Examples
 
 If you are using v12.12, click [here](https://docs.hpcloud.com/cli/unix/object-storage) for documentation.
 ___________________
