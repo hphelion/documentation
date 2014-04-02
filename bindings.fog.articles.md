@@ -6,7 +6,7 @@ product: fog
 categories: fog
 tags: fog authentication howto
 ---
-#HP Ruby Fog: Articles on how to use our Ruby Fog bindings#
+#Ruby Fog bindings for HP Cloud: Articles on how to use our Ruby Fog bindings#
 
 ##Important Notice##
 
