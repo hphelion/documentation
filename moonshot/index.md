@@ -9,7 +9,7 @@ product: moonshot
 # HP Cloud OS for Moonshot Documentation 
 
 Welcome! HP Moonshot hardware servers are designed and tailored for specific workloads to deliver optimum performance. 
-These support a wide range of complex IT demands, right from cloud-based applications to Social Media, Big Data and Mobility. 
+These support a wide range of complex IT demands, from cloud-based applications to Social Media, Big Data and Mobility. 
 Building on this requirement, <b><nobr>HP Cloud OS for Moonshot</nobr></b> software enables you to efficiently create 
 and run cloud environments using Moonshot servers.
 
@@ -39,7 +39,6 @@ For related information, see the <a href="http://www.hp.com/go/moonshot" target=
 
 <p style="font-size: small; text-align:right;"> <a href="/cloudos/moonshot/os-3rd-party-license-agreements/" target="os3p">HP Cloud OS Open Source and Third-Party Software License Agreements &#187;</a> </p>
 
-
-
+<!-- ready to go --> 
 
 
