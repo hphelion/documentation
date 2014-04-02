@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "UNIX CLI DNS Examples"
+title: "UNIX CLI for HP CLoud DNS Examples"
 permalink: /cli/unix/dns/
 product: unix-cli
 
 ---
-# UNIX CLI DNS Examples for v12.12
+# UNIX CLI for HP Cloud DNS Examples for v12.12
 
 ___________________
 
