@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "UNIX CLI: Command Line Reference"
+title: "UNIX CLI for HP Cloud: Command Line Reference"
 permalink: /cli/unix/2/reference/
 product: unix-cli
 
 ---
 
-#UNIX CLI 13.5 Reference
+#UNIX CLI for HP Cloud 13.5 Reference
 
 If you are using v12.12, click [here](https://docs.hpcloud.com/cli/unix/reference) for documentation.
 ___________________
@@ -30,7 +30,7 @@ We wanted to ensure you were aware of the changes that may affect you during thi
 HP Cloud has contributed the Unix CLI back to the open source community, and you can get support, access the documentation, and download the source code [here](https://github.com/hpcloud/unix_cli).
 _________________________________________
 
-Below you can find a full reference of supported UNIX command-line interface (CLI) commands. The commands are alphabetized.  You can also use the <font face="Courier">hpcloud help [<em>command</em>]</font> tool (where <em>command</em> is the name of the command on which you want help, for example <font face="Courier">account:setup</font>) to display usage, description, and option information from the command line.
+Below you can find a full reference of supported UNIX CLI (command-line interface) for HP Cloud commands. The commands are alphabetized.  You can also use the <font face="Courier">hpcloud help [<em>command</em>]</font> tool (where <em>command</em> is the name of the command on which you want help, for example <font face="Courier">account:setup</font>) to display usage, description, and option information from the command line.
 
 Many of the commands support a `--debug` option to print verbose trace.  This trace may help you diagnose problems if the CLI is having difficulty communicating with the servers.
 
