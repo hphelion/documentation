@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "Unix Command Line Interface: Bash Command Completion"
+title: "UNIX CLI for HP Cloud: Bash Command Completion"
 permalink: /cli/unix/articles/complete
 product: unix-cli
 categories: cli linux bash
 tags: cli linux bash
 ---
-#UNIX CLI: Using bash shell command completion v12.12#
+#UNIX CLI for HP Cloud: Using bash shell command completion v12.12#
 
 ___________________
 
@@ -22,7 +22,7 @@ HP Cloud has contributed the Unix CLI back to the open source community, and you
 
 _________________________________________
 
-The Unix CLI supports bash shell command completion.  This page covers the following topics:
+The Unix CLI for HP Cloud supports bash shell command completion.  This page covers the following topics:
 
 * [Enabling bash cmmand completion](#Enabling)
 * [Using bash command completion](#Using)
@@ -88,4 +88,4 @@ The gem uninstall does not uninstall the bash completion file, so if you uninsta
 
 ##For more information## {#articles}
 
-For more tips and How-tos on using your UNIX command-line interface (CLI), see [UNIX CLI: Articles on to use the UNIX CLI](/cli/unix/articles/).
+For more tips and How-tos on using your UNIX CLI for HP Cloud, see [UNIX CLI for HP Cloud: Articles on to use the UNIX CLI for HP Cloud](/cli/unix/articles/).
