@@ -27,12 +27,7 @@ This release was made available on 4/22/2013 and contains the following new feat
 * Support for file uploads for files greater than 1 gigbyte in size has been added.
 * The `Connect-Server` cmdlet now works with non-Windows instances in conjunction with *putty.exe*.
 * The `Set-Zone` cmdlet shows more details about the newly selected zone including containers in that zone and the available services.
-* New argument for `Get-Zones` cmdlet. Adding –v will return more details about each zone including containers in that zone and available services. Example: `get-zones -v`.
-
 * New argument for `Get-Zones` cmdlet. Adding -v will return more details about each zone including containers in that zone and available services.
-
-- New argument for `Get-Zones` cmdlet. Adding -v will return more details about each zone including containers in that zone and available services.
-
 
 ##Known Issues##
 
