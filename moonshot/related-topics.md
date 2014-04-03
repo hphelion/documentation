@@ -72,8 +72,7 @@ Specifically, you might find these OpenStack references helpful.  (Links open in
 
 ## HP Cloud OS for Moonshot documents in PDF format {#related-pdfs}
 
-PDF copies of selected HP Cloud OS for Moonshot topics are available in this area of the <a href="http://h20565.www2.hp.com/portal/site/hpsc/public/psi/manualsResults/?sp4ts.oid=6878463" target="pdf">HP.com website</a>.  
-(Link opens in a new browser tab or window.)
+PDF copies of selected HP Cloud OS for Moonshot topics are available in this area of the <a href="http://h20565.www2.hp.com/portal/site/hpsc/public/psi/manualsResults/?sp4ts.oid=6878463" target="_blank">HP.com website</a>. (Link opens in a new browser tab or window.)
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
