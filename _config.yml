@@ -173,7 +173,7 @@ navigation:
     url: /cloudos/community/		
   - text: OpenStack Links
     url: /cloudos/openstack/	
-  - text: Site Index
+  - text: Site Map
     url: /cloudos/siteindex/	
   moonshot:
   - text: HP Cloud OS for Moonshot Home
