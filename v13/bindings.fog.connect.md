@@ -5,7 +5,7 @@ permalink: /v13/bindings/fog/connect/
 product: fog
 
 ---
-#Ruby Fog Bindings: Connecting to the HP Public Cloud
+#Ruby Fog Bindings for HP Cloud: Connecting to the HP Public Cloud
 
 This page gives you details on how to connect to the HP Public Cloud and contains the following sections:
 
