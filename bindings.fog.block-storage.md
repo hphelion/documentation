@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "HP Cloud Ruby Fog Block Storage Examples"
+title: "Ruby Fog Bindings for HP Cloud Block Storage Examples"
 permalink: /bindings/fog/block-storage/
 product: fog
 
 ---
-#Ruby Fog Bindings Block Storage Examples
+#Ruby Fog Bindings for HP Cloud Block Storage Examples
 
 ##Important Notice##
 
