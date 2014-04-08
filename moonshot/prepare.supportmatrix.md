@@ -174,7 +174,8 @@ Where <b>X</b> is the average image size in gigabytes, and <b>N</b> is the expec
 <td>
 - Ubuntu 13.10<br>
 - Redhat Enterprise Linux 6.5<br>
-- Windows 2012 and Windows 2012 R2</td>
+- Windows 2012 <br>
+- Windows 2012 R2</td>
 </tr>
 <tr style="background-color: white; color: black;">
 <td>HP ProLiant m700 Server Cartridge</td>
