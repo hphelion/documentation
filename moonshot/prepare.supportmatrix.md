@@ -36,9 +36,6 @@ In the following sections, we list the recommendations for memory, processors an
 * [Included software](#software)
 
 
-
-
-
 ## Server infrastructure for HP Cloud OS for Moonshot {#server}
 
 We recommend your Proliant server contains the following:
@@ -174,7 +171,14 @@ Where <b>X</b> is the average image size in gigabytes, and <b>N</b> is the expec
 </tr>		  
 <tr style="background-color: white; color: black;">
 <td>HP ProLiant m300 Server Cartridge</td>
-<td>Ubuntu 13.10 <b>OR</b> Redhat Enterprise Linux 6.5</td>
+<td>
+- Ubuntu 13.10<br>
+- Redhat Enterprise Linux 6.5<br>
+- Windows 2012 and Windows 2012 R2</td>
+</tr>
+<tr style="background-color: white; color: black;">
+<td>HP ProLiant m700 Server Cartridge</td>
+<td>Windows 7 Enterprise with SP1 (x64)</td>
 </tr>
 </table>
 
