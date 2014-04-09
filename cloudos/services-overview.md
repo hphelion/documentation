@@ -75,6 +75,11 @@ The Kernel Layer acts like an Operating System Kernel across a Data Center for C
 - [Getting started with the Cloud OS Object Management service](/cloudos/api/services/object/getting-started)
 - [How To's with the HP Cloud OS Identity Management Service](/cloudos/api/services/identity/howto/)
 
+**Telemetry and Reporting**. Allows .  Also known as *Ceilometer*.
+
+- Overview – Link to API (https://docs.hpcloud.com/api/v13/identity/)
+- [Getting started with the Cloud OS Telemetry and Reporting service](/cloudos/api/services/reporting/getting-started)
+- [How To's with the HP Cloud OS Telemetry and Reporting Service](/cloudos/api/services/reporting/howto/)
 
 ### Base layer ### {#base}
 
