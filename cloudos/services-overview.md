@@ -37,14 +37,14 @@ The Kernel Layer acts like an Operating System Kernel across a Data Center for C
 
 **Compute Operations**. This service manage the various hypervisors and virtual machines. Also known as *Nova*.
 
-- [Overview of the Compute service](/cloudos/api/services/object/overview)
-- [Getting started with the Compute service](/cloudos/api/services/object/getting-started)
+- [Overview of the Compute service](/cloudos/api/services/compute/overview)
+- [Getting started with the Compute service](/cloudos/api/services/compute/getting-started)
 - [How To's with the Compute service](/cloudos/api/services/compute/howto/)
 
 
 **Networking Operations**. Allows you to provision and create virtual networks. Also known as *Neutron* or *Quantam*.
 
-- [Overview of the Networking service](/cloudos/api/services/object/overview)
+- [Overview of the Networking service](/cloudos/api/services/networking/overview)
 - [Getting started with the Networking service](/cloudos/api/services/networking/getting-started)
 - [How To's with the Networking Service](/cloudos/api/services/networking/howto/)
 
@@ -73,7 +73,7 @@ The Kernel Layer acts like an Operating System Kernel across a Data Center for C
 
 - [Overview of the Object Opertations service](/cloudos/api/services/object/overview)
 - [Getting started with the Cloud OS Object Management service](/cloudos/api/services/object/getting-started)
-- [How To's with the Identity Management service](/cloudos/api/services/identity/howto/)
+- [How To's with the Object Operations service](/cloudos/api/services/object/howto/)
 
 **Telemetry and Reporting**. Allows .  Also known as *Ceilometer*.
 
