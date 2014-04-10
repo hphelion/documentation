@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Getting Started with HP Cloud OS Focus Service"
-permalink: /cloudos/api/services/focus/getting-started/
+permalink: /cloudos/services/focus/getting-started/
 product: compute
 
 ---

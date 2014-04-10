@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To's with the HP Cloud OS  Compute Service"
-permalink: /cloudos/api/services/compute/howto/
+permalink: /cloudos/services/compute/howto/
 product: compute
 
 ---

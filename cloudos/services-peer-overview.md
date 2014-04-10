@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Cloud OS Peer Service Overview"
-permalink: /cloudos/api/services/peer/overview/
+permalink: /cloudos/services/peer/overview/
 product: compute
 
 ---

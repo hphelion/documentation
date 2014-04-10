@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Cloud OS Focus Service Overview"
-permalink: /cloudos/api/services/focus/overview/
+permalink: /cloudos/services/focus/overview/
 product: compute
 
 ---

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Getting Started with HP Cloud OS Telemetry and Reporting Service"
-permalink: /cloudos/api/services/reporting/getting-started/
+permalink: /cloudos/services/reporting/getting-started/
 product: compute
 
 ---

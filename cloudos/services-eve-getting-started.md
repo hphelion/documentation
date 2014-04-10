@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Getting Started with HP Cloud OS Eve Service"
-permalink: /cloudos/api/services/eve/getting-started/
+permalink: /cloudos/services/eve/getting-started/
 product: compute
 
 ---

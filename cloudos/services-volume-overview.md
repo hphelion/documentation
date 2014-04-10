@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Cloud OS Volume Service Overview"
-permalink: /cloudos/api/services/volume/overview/
+permalink: /cloudos/services/volume/overview/
 product: compute
 
 ---

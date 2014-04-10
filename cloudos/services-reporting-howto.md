@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To's with the HP Cloud OS Telemetry and Reporting Service"
-permalink: /cloudos/api/services/reporting/howto/
+permalink: /cloudos/services/reporting/howto/
 product: compute
 
 ---

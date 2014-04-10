@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Cloud OS Eve Service Overview"
-permalink: /cloudos/api/services/eve/overview/
+permalink: /cloudos/services/eve/overview/
 product: compute
 
 ---

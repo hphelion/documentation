@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To's with the Network Service HP Cloud OS  Volume Service"
-permalink: /cloudos/api/services/volume/howto/
+permalink: /cloudos/services/volume/howto/
 product: compute
 
 ---

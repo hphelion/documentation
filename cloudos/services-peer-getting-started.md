@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Getting Started with HP Cloud OS Peer Service"
-permalink: /cloudos/api/services/peer/getting-started/
+permalink: /cloudos/services/peer/getting-started/
 product: compute
 
 ---

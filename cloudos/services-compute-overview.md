@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Cloud OS Compute Service Overview"
-permalink: /cloudos/api/services/compute/overview/
+permalink: /cloudos/services/compute/overview/
 product: compute
 
 ---

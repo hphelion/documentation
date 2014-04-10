@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Getting Started with HP Cloud OS Object Storage Service"
-permalink: /cloudos/api/services/object/getting-started/
+permalink: /cloudos/services/object/getting-started/
 product: compute
 
 ---

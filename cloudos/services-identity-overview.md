@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Cloud OS Identity Service Overview"
-permalink: /cloudos/api/services/identity/overview/
+permalink: /cloudos/services/identity/overview/
 product: compute
 
 ---

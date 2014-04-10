@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To's with the Network Service HP Cloud OS  Imaging Service"
-permalink: /cloudos/api/services/imaging/howto/
+permalink: /cloudos/services/imaging/howto/
 product: compute
 
 ---

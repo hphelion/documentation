@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To's with the Identity Service HP Cloud OS  Identity Service"
-permalink: /cloudos/api/services/identity/howto/
+permalink: /cloudos/services/identity/howto/
 product: compute
 
 ---
