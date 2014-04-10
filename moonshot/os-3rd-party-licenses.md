@@ -109,7 +109,7 @@ HP acknowledges the redistribution of the following open source components under
 
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> 
 To address source code availability requirements for code licensed under MPL, CDDL, LGPL v2.1 & v3, GPL v2 & v3, 
-you can obtain a ZIP containing that source code (the required subset) <a href="https://cloudos.hpwsportal.com"> 
+you can obtain a ZIP containing that source code (the required subset) <a href="https://cloudos.hpwsportal.com" target="_blank"> 
 at the HP Cloud OS portal</a>. On the site, sign up, login, then follow the Open Source link. The ZIP file is approximately 2 GB.</p>
 
 ### ANTLR License
