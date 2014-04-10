@@ -66,18 +66,18 @@ To create a disk image using the Disk Image Builder tool, follow the steps below
 2. Edit your **~/.profile** file to add the directory structure /root/diskimage-builder/bin to the path in your shell:
 
     `PATH="$HOME/bin:$PATH:/root/diskimage-builder/bin"`
-3. If boot from hard disk drive support is needed, continue the following steps else skip to step XXXX 
+
+3. If boot from hard disk drive support is needed, continue the following steps else skip to step 7. 
 
 4.	Clone the git repository of TripleO Image Elements to the server:
 
-    `git clone https://github.com/openstack/tripleo-image-elements.git`
+    <pre>git clone https://github.com/openstack/tripleo-image-elements.git`</pre>
 
 5.	Apply necessary patches needed for boot from hard disk drive support
 
 	<pre>cd /root/tripleo-image-elements
 
-	git fetch https://review.openstack.org/openstack/tripleo-image-elements refs/
-changes/89/79289/12 && git cherry-pick FETCH_HEAD
+	git fetch https://review.openstack.org/openstack/tripleo-image-elements refs/changes/89/79289/12 && git cherry-pick FETCH_HEAD
 
 	cd /root/diskimage-builder
 
@@ -89,7 +89,7 @@ changes/89/79289/12 && git cherry-pick FETCH_HEAD
 
 6.	Set ELEMENTS_PATH for DIB so that it can use elements from tripleo-image-elements.
 
-    `export ELEMENTS_PATH=/root/tripleo-image-elements/elements`
+    <pre>export ELEMENTS_PATH=/root/tripleo-image-elements/elements</pre>
 
 7. Create a disk image in one of the following ways:
 
@@ -188,7 +188,7 @@ To create an Ubuntu image for a specific workload, you first need to create the 
 
 5. Using an editor, such as vi, add the following lines to the 15-nginx file:
 	
-    <pre>!/bin/bash
+    <pre>#!/bin/bash
     set -eux
     install-packages nginx</pre>
 
@@ -225,7 +225,7 @@ To create a RHEL image for a specific workload, you first need to create the mon
 
 5. Using an editor, such as vi, add the following lines to the 10-mongodb file:
  
-    <pre>!/bin/bash
+    <pre>#!/bin/bash
     set -eux
     echo "[mongodb]" &gt; /etc/yum.repos.d/mongodb.repo
     echo "name=mongodb_repo" &gt;&gt; /etc/yum.repos.d/mongodb.repo
@@ -244,7 +244,7 @@ To create a RHEL image for a specific workload, you first need to create the mon
 
 8. Using your editor, add the following lines to the 10-mongodb file:
 
-    <pre>!/bin/bash
+    <pre>#!/bin/bash
     set -eux
     install-packages mongo-10gen mongo-10gen-server</pre>
 
@@ -259,7 +259,7 @@ To create a RHEL image for a specific workload, you first need to create the mon
 
 11. Using an editor, add the following lines to the 10-mongodb file:
 
-    <pre>!/bin/bash
+    <pre>#!/bin/bash
     set -eux
     rm -Rf /etc/yum.repos.d/mongodb.repo</pre>
 
@@ -306,7 +306,7 @@ The following are the tool prerequisites for creating a Windows Image:
 
   * The HP Moonshot Windows Deployment Pack (HP MWDP) for HP ProLiant m700 server cartridge, if deploying an m700 cartridge.
 
-        Download HP MWDP from **http://www.hp.com/go/moonshot/1500chassis-software-download**
+        Download HP MWDP from **http://www.hp.com/support/moonshot/1500chassis-software-download**
 
 * A Machine running Windows OS
 
@@ -378,9 +378,8 @@ This bundle is specifically designed for the ProLiant m700 server cartridge and 
 
 	 For the purpose of explanation, C:\WinImage is used as the working folder. On a Windows Machine, create a working folder. Once the folder is created, use the following commands to make it your working folder. For example:
 
-    ` mkdir C:\WinImage`
-
-    `cd C:\WinImage`
+    <pre>mkdir C:\WinImage
+    cd C:\WinImage</pre>
 
 2.	**Extract HP MWDP**
 
@@ -390,7 +389,7 @@ This bundle is specifically designed for the ProLiant m700 server cartridge and 
 	
 	Extract HP MWDP and copy the drivers folder to the working folder. Execute the following command to check the folder content:
 
-	`C:\WinImage>dir drivers`
+	<pre>C:\WinImage>dir drivers</pre>
 
  	It should display the following drivers which is used later to enable  support to different devices present on the Moonshot cartridges. 
     
@@ -402,17 +401,17 @@ This bundle is specifically designed for the ProLiant m700 server cartridge and 
 
 	Copy `install.win` from the source folder on your Windows media to the working directory. Execute the following command to check the folder content: 
 
-	`C:\WinImage>dir`
+	<pre>C:\WinImage>dir</pre>
 	 
 	Windows Server 2012 media is used for the purpose of explanation.
 
-3.	**Identify the SKU from `install.wim`**
+4.	**Identify the SKU from `install.wim`**
 
     Windows Server 2012 and Windows Server 2012 R2 contain 4 different Windows SKUs. SKUs are defined in the `install.wim` file by an index number.
 
 	Open an elevated command prompt to the working folder and execute the following command:
 
-	`C:\WinImage>dism /get-imageinfo /imagefile:install.wim`
+	<pre>C:\WinImage>dism /get-imageinfo /imagefile:install.wim</pre>
 
 	The command displays Index for SKUs.
 
@@ -424,42 +423,47 @@ This bundle is specifically designed for the ProLiant m700 server cartridge and 
 
 	Use the following commands:
 
-   * Create a VHD Disk image where the OS image is laid out
+       * Create a VHD Disk image where the OS image is laid out
 
 	    <pre>C:\WinImage>diskpart
        DISKPART> create vdisk file="C:\WinImage\WinImageDisk.vhd" maximum=15360</pre> 
 
-   * Once the virtual disk file is created, mount the VHD
+    For the purpose of explanation, the size of VHD 
+    disk Image is taken as 15GB
 
-        `DISKPART> attach vdisk`
 
-  * Create a partition on this disk
+       * Once the virtual disk file is created, mount the VHD
 
-        `DISKPART> create partition primary`
+        <pre>DISKPART> attach vdisk</pre>
 
-   * Mark the partition as active
+       * Create a partition on this disk
 
-        `DISKPART> active`
+        <pre> DISKPART> create partition primary</pre>
 
-    * Format this partition with NTFS file system
+       * Mark the partition as active
 
-        `DISKPART> format`
+        <pre> DISKPART> active</pre>
 
-  * Assign a drive letter to this newly created partition
+       * Format this partition with NTFS file system
 
-        `DISKPART> assign letter=g`
+        <pre>DISKPART> format</pre>
+
+       * Assign a drive letter to this newly created partition
+
+        <pre>DISKPART> assign letter=g</pre>
+
+		For the pupose of explanation, the partition on the VHD is assigned drive letter G.
   
-  * Exit the process
+       * Exit the process
 
-         `DISKPART> exit`
+         <pre>DISKPART> exit</pre>
 
-    For the purpose of explanation, the size of VHD disk Image is 15GB and the partition on the VHD is assigned drive letter G.
-
+    
 6.	**Extract desired SKU**
 
 	Execute the following command to extract files from `install.win` on the newly created NTFS file system:
 
-    `C:\WinImage>dism /apply-image /imagefile:install.wim /index:4 /ApplyDir:G:\`
+    <pre>C:\WinImage>dism /apply-image /imagefile:install.wim /index:4 /ApplyDir:G:\</pre>
 
 7.	**Update the extracted files on G:\ with drivers**
 
@@ -467,11 +471,11 @@ This bundle is specifically designed for the ProLiant m700 server cartridge and 
 
 	Use the following command to inject the chipset drivers to the VHD image:
 
-	`C:\WinImage>Dism /image:G:\ /Add-Driver /driver:drivers\chipset /ForceUnsigned /recurse`
+	<pre>C:\WinImage>Dism /image:G:\ /Add-Driver /driver:drivers\chipset /ForceUnsigned /recurse</pre>
 
 	The Ethernet drivers are different for different Windows version. We are using Windows Server 2012 here.The drivers are available at drivers\ethernet\ws2012. Use the following command to inject Ethernet drivers:
 
-	`C:\WinImage>dism /image:G:\ /Add-Driver /driver:drivers\ethernet\ws2012 /ForceUnsigned /recurse`
+	<pre>C:\WinImage>dism /image:G:\ /Add-Driver /driver:drivers\ethernet\ws2012 /ForceUnsigned /recurse</pre>
 
 	If you want to inject additional drivers, use the above command again.
 
@@ -479,73 +483,68 @@ This bundle is specifically designed for the ProLiant m700 server cartridge and 
 
 	Create unattend.xml file for use with the image. This enables remote desktop, user account creation and necessary operations at the first boot. The remote desktop is disabled by default on Windows deployment. 
 
-	To begin, unattend.xml templates packaged with HP MWDP can be used to start the process. Once the template is customized, copy it under G:\ using the following command.
+	To begin, unattend.xml templates packaged with HP MWDP can be used as a base and should be enhanced/customized. Once the template is customized, copy it under G:\ using the following command.
 
-	`C:\WinImage>copy drivers\ImageUnattend_WS2012.xml g:\unattend.xml`
+	<pre>C:\WinImage>copy drivers\ImageUnattend_WS2012.xml g:\unattend.xml</pre>
        
 9.	**Make VHD Bootable**
 
 	To make VHD bootable, bcd-store is created and configured. Use bcdedit.exe and bcdboot.exe utility present on Windows OS.
  
 	<pre>C:\WinImage>bcdboot G:\windows /s G:
-
-	C:\WinImage> bcdedit /store G:\boot\BCD /set {bootmgr} device locate
-		
+	C:\WinImage> bcdedit /store G:\boot\BCD /set {bootmgr} device locate		
 	C:\WinImage> bcdedit /store G:\boot\BCD /set {default} device locate
-
 	C:\WinImage> bcdedit /store G:\boot\BCD /set {default} osdevice locate</pre>
 
-	**Verify the created BCD-Store**
-
-	`C:\WinImage>bcdedit /store G:\boot\BCD`
+	<pre>C:\WinImage>bcdedit /store G:\boot\BCD</pre>
 
 	Execute the following mandatory commands  when creating images for use with Moonshot cartridges. 
 
 	Enable boot ems for default boot option:
 
-	`C:\WinImage>bcdedit /store G:\boot\BCD /set {default} bootems on`
+	<pre>C:\WinImage>bcdedit /store G:\boot\BCD /set {default} bootems on</pre>
 	
 	Enable ems for default boot option:
 
-	`C:\WinImage>bcdedit /store G:\boot\BCD /set {default} ems on`
+	<pre>C:\WinImage>bcdedit /store G:\boot\BCD /set {default} ems on</pre>
 
 	Enable novga for default boot option:
 
-	`C:\WinImage>bcdedit /store G:\boot\BCD /set {default} novga on`
+	<pre>C:\WinImage>bcdedit /store G:\boot\BCD /set {default} novga on</pre>
 	
 	Enable boot ems for bootmgr boot option:
 
-	`C:\WinImage>bcdedit /store G:\boot\BCD /set {bootmgr} bootems on`
+	<pre>C:\WinImage>bcdedit /store G:\boot\BCD /set {bootmgr} bootems on</pre>
 	
 	Enable debugging on serial port:
 
-	`C:\WinImage>bcdedit /store G:\boot\BCD /dbgsettings serial debugport:1 baudrate:115200`
+	<pre>C:\WinImage>bcdedit /store G:\boot\BCD /dbgsettings serial debugport:1 baudrate:115200</pre>
 	
 	Verify the created BCD-Store
 
-	`C:\WinImage>bcdedit /store G:\boot\BCD`
+	<pre>C:\WinImage>bcdedit /store G:\boot\BCD</pre>
 
 	View Debugger Settings
 
-	`C:\WinImage>bcdedit /store G:\boot\BCD /enum {dbgsettings} /v`
+	<pre>C:\WinImage>bcdedit /store G:\boot\BCD /enum {dbgsettings} /v</pre>
 
 10.	**Disconnect the VHD Image.**
 
 	* Now disconnect the Image to use with openstack:
 
-	    `C:\WinImage>diskpart`
+	    <pre>C:\WinImage>diskpart</pre>
 
     * Select the virtual disk 
 
-		`DISKPART> select vdisk file C:\WinImage\WinImageDisk.vhd`
+		<pre>DISKPART> select vdisk file C:\WinImage\WinImageDisk.vhd</pre>
 
     * Detach the virtual disk
 
-        `DISKPART> detach vdisk`
+        <pre>DISKPART> detach vdisk</pre>
 
     * Exit
 
-        `DISKPART> exit`
+        <pre>DISKPART> exit</pre>
 
 	Once the image is detached, it can be tested and verified with Virtual Machines. The image can be used with openstack for deployment on Baremetal servers after uccessful verification.
 
