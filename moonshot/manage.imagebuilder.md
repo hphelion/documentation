@@ -175,7 +175,7 @@ Now that you have created your image, you can add it to Glance and manage it wit
 
 You might want to create an image for a specific workload, such as an Internet server. To do this, you must have an element with appropriate hooks written for that specific workload. The rest of this section shows you how to create Ubuntu and RHEL images for specific workloads, and their associated elements.
 
-**Note:** For detailed instructions on how to write elements, refer to the [OpenStack Disk Image Builder documentation](https://github.com/openstack/diskimage-builder).
+**Note:** For detailed instructions on how to write elements, refer to the <a href="https://github.com/openstack/diskimage-builder" target="_blank">OpenStack Disk Image Builder documentation</a>.
 
 
 #### Creating an Ubuntu image for a specific workload {#ubuntu-image}
