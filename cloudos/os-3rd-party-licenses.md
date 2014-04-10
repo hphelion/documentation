@@ -80,7 +80,7 @@ commercial license.
 
 ### Copyright Notice
 
-Hewlett-Packard Company Confidential &copy; Copyright 2012-2013 Hewlett-Packard Development Company, L.P.
+Hewlett-Packard Company Confidential &copy; Copyright 2012-2014 Hewlett-Packard Development Company, L.P.
 
 ### Trademark Notices
 
