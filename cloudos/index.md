@@ -32,7 +32,7 @@ After downloading the kit, dive into these categorized topics to learn about HP 
 </table>
 
 
-<p style="font-size: small; text-align:right;"> <a href="/cloudos/os-3rd-party-license-agreements/" target="os3p">HP Cloud OS Open Source and Third-Party Software License Agreements &#187;</a> </p>
+<p style="font-size: small; text-align:right;"> <a href="/cloudos/os-3rd-party-license-agreements/">HP Cloud OS Open Source and Third-Party Software License Agreements &#187;</a> </p>
 
 <!-- Note: Cloud OS blue = #1796D3 --> 
 
