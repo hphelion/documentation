@@ -428,8 +428,7 @@ This bundle is specifically designed for the ProLiant m700 server cartridge and 
 	    <pre>C:\WinImage>diskpart
        DISKPART> create vdisk file="C:\WinImage\WinImageDisk.vhd" maximum=15360</pre> 
 
-    For the purpose of explanation, the size of VHD 
-    disk Image is taken as 15GB
+       For the purpose of explanation, the size of VHD disk Image is taken as 15GB
 
 
        * Once the virtual disk file is created, mount the VHD
@@ -500,31 +499,31 @@ This bundle is specifically designed for the ProLiant m700 server cartridge and 
 
 	Execute the following mandatory commands  when creating images for use with Moonshot cartridges. 
 
-	Enable boot ems for default boot option:
+	* Enable boot ems for default boot option:
 
 	<pre>C:\WinImage>bcdedit /store G:\boot\BCD /set {default} bootems on</pre>
 	
-	Enable ems for default boot option:
+	* Enable ems for default boot option:
 
 	<pre>C:\WinImage>bcdedit /store G:\boot\BCD /set {default} ems on</pre>
 
-	Enable novga for default boot option:
+	* Enable novga for default boot option:
 
 	<pre>C:\WinImage>bcdedit /store G:\boot\BCD /set {default} novga on</pre>
 	
-	Enable boot ems for bootmgr boot option:
+	* Enable boot ems for bootmgr boot option:
 
 	<pre>C:\WinImage>bcdedit /store G:\boot\BCD /set {bootmgr} bootems on</pre>
 	
-	Enable debugging on serial port:
+	* Enable debugging on serial port:
 
 	<pre>C:\WinImage>bcdedit /store G:\boot\BCD /dbgsettings serial debugport:1 baudrate:115200</pre>
 	
-	Verify the created BCD-Store
+	* Verify the created BCD-Store
 
 	<pre>C:\WinImage>bcdedit /store G:\boot\BCD</pre>
 
-	View Debugger Settings
+	* View Debugger Settings
 
 	<pre>C:\WinImage>bcdedit /store G:\boot\BCD /enum {dbgsettings} /v</pre>
 
