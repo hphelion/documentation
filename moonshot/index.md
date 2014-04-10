@@ -37,7 +37,7 @@ For related information, see the <a href="http://www.hp.com/go/moonshot" target=
 
 <img src="media/cloudos-moonshot-system.png" />
 
-<p style="font-size: small; text-align:right;"> <a href="/cloudos/moonshot/os-3rd-party-license-agreements/" target="os3p">HP Cloud OS Open Source and Third-Party Software License Agreements &#187;</a> </p>
+<p style="font-size: small; text-align:right;"> <a href="/cloudos/moonshot/os-3rd-party-license-agreements/">HP Cloud OS for Moonshot Open Source and Third-Party Software License Agreements &#187;</a> </p>
 
 <!-- ready to go --> 
 
