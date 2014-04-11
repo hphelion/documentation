@@ -340,7 +340,8 @@ The following are the tool prerequisites for creating a Windows Image:
 
   * The HP Moonshot Windows Deployment Pack (HP MWDP) for HP ProLiant m700 server cartridge, if deploying an m700 cartridge.
 
-        Download HP MWDP from **http://www.hp.com/support/moonshot/1500chassis-software-download**
+   		Download HP MWDP from [http://www.hp.com/go/moonshot/1500chassis-software-download](http://www.hp.com/go/moonshot/1500chassis-software-download)
+
 
 * A Machine running Windows OS
 
@@ -389,7 +390,7 @@ This bundle is designed specifically for the ProLiant m300 server cartridge and 
 </td></tr>
 
 <tr style="background-color: white; color: black;">
-<td><b>Scripts</b></td> <td>Scripts used for customizing boot.win and install.win files from the Windows Server 2012 media or Windows Server 2012 R2.</td></tr>
+<td><b>Scripts</b></td> <td>Scripts used for customizing boot.wim and install.wim files from the Windows Server 2012 media or Windows Server 2012 R2.</td></tr>
 
 <tr style="background-color: white; color: black;">
 <td><b>Unattend</b></td> <td>Unattend files used for automating Windows Server 2012, or 2012 R2 installation. The unattend files are OS specific.
@@ -409,7 +410,7 @@ This bundle is specifically designed for the ProLiant m700 server cartridge and 
 <br>Ethernet — Folder containing NIC drivers for Windows deployment on the ProLiant m700 server cartridge</td></tr></br>
 
 <tr style="background-color: white; color: black;">
-<td><b>Scripts</b></td> <td>Scripts used for customizing boot.win and install.win files from the Windows 7 Enterprise with SP1 media.</td></tr>
+<td><b>Scripts</b></td> <td>Scripts used for customizing boot.wim and install.wim files from the Windows 7 Enterprise with SP1 media.</td></tr>
 
 <tr style="background-color: white; color: black;">
 <td><b>Unattend</b></td> <td>Unattend files used for automating Windows 7 Enterprise with SP1 (x64) installation. The unattend files are OS specific.
@@ -447,7 +448,7 @@ This bundle is specifically designed for the ProLiant m700 server cartridge and 
 
 3.	**Copy `install.wim` to working directory**
 
-	Copy `install.win` from the source folder on your Windows media to the working directory. Execute the following command to check the folder content: 
+	Copy `install.wim` from the source folder on your Windows media to the working directory. Execute the following command to check the folder content: 
 
 	<pre>C:\WinImage> dir</pre>
 	 
@@ -465,50 +466,50 @@ This bundle is specifically designed for the ProLiant m700 server cartridge and 
 
 	Make a note of the Index for the desired SKU. For the purpose of explanation, Index 4 is used.
 
-	The Windows 7 Enterprise with SP1 `install.win` file only contains a single Windows SKU.
+	The Windows 7 Enterprise with SP1 `install.wim` file only contains a single Windows SKU.
 
 5.	**Create a VHD disk**
 
 	Use the following commands:
 
-       * Create a VHD Disk image where the OS image is laid out
+       * Create a VHD Disk image where the OS image is laid out:
 
 	    <pre>C:\WinImage> diskpart
        DISKPART> create vdisk file="C:\WinImage\WinImageDisk.vhd" maximum=15360</pre> 
 
-       For the purpose of explanation, the size of VHD disk Image is taken as 15GB
+       For the purpose of explanation, the size of VHD disk Image is taken as 15GB.
 
 
-       * Once the virtual disk file is created, mount the VHD
+       * Once the virtual disk file is created, mount the VHD:
 
         <pre>DISKPART> attach vdisk</pre>
 
-       * Create a partition on this disk
+       * Create a partition on this disk:
 
         <pre> DISKPART> create partition primary</pre>
 
-       * Mark the partition as active
+       * Mark the partition as active:
 
         <pre> DISKPART> active</pre>
 
-       * Format this partition with NTFS file system
+       * Format this partition with NTFS file system:
 
         <pre>DISKPART> format</pre>
 
-       * Assign a drive letter to this newly created partition
+       * Assign a drive letter to this newly created partition:
 
         <pre>DISKPART> assign letter=g</pre>
 
 		For the purpose of explanation, the partition on the VHD is assigned drive letter G.
   
-       * Exit the process
+       * Exit the process:
 
          <pre>DISKPART> exit</pre>
 
     
 6.	**Extract desired SKU**
 
-	Execute the following command to extract files from `install.win` on the newly created NTFS file system:
+	Execute the following command to extract files from `install.wim` on the newly created NTFS file system:
 
     <pre>C:\WinImage> dism /apply-image /imagefile:install.wim /index:4 /ApplyDir:G:\</pre>
 
@@ -567,29 +568,29 @@ This bundle is specifically designed for the ProLiant m700 server cartridge and 
 
 	<pre>C:\WinImage> bcdedit /store G:\boot\BCD /dbgsettings serial debugport:1 baudrate:115200</pre>
 	
-	* Verify the created BCD-Store
+	* Verify the created BCD-Store:
 
 	<pre>C:\WinImage> bcdedit /store G:\boot\BCD</pre>
 
-	* View Debugger Settings
+	* View Debugger Settings:
 
 	<pre>C:\WinImage> bcdedit /store G:\boot\BCD /enum {dbgsettings} /v</pre>
 
-10.	**Disconnect the VHD Image.**
+10.	**Disconnect the VHD Image**
 
 	* Now disconnect the Image to use with openstack:
 
 	    <pre>C:\WinImage> diskpart</pre>
 
-    * Select the virtual disk 
+    * Select the virtual disk: 
 
 		<pre>DISKPART> select vdisk file C:\WinImage\WinImageDisk.vhd</pre>
 
-    * Detach the virtual disk
+    * Detach the virtual disk:
 
         <pre>DISKPART> detach vdisk</pre>
 
-    * Exit
+    * Exit:
 
         <pre>DISKPART> exit</pre>
 
