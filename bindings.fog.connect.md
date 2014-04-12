@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "Connecting to the HP Cloud Service"
+title: "Ruby Fog Bindings for HP Cloud Connecting to the HP Cloud Service"
 permalink: /bindings/fog/connect/
 product: fog
 
 ---
-#Ruby Fog Bindings: Connecting to the HP Cloud Service
+#Ruby Fog Bindings for HP Cloud: Connecting to the HP Cloud Service
 
 ##Important Notice##
 

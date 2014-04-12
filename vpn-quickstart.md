@@ -464,7 +464,7 @@ back to the [top](#top)
 
 ## For further information ## {#refs}
 
-- [UNIX CLI Network Examples](http://docs.hpcloud.com/cli/unix/network)
+- [UNIX CLI for HP Cloud Network Examples](http://docs.hpcloud.com/cli/unix/network)
 - [HP Cloud Networking API Specifications](https://docs.hpcloud.com/api/v13/networking/)
 - [HP Cloud Compute Service API Reference](https://docs.hpcloud.com/api/v13/compute/)
 - [strongSwan wiki FAQ](http://wiki.strongswan.org/projects/strongswan/wiki/FAQ)

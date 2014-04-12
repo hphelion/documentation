@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Ruby Fog Binding: Using authentication caching"
+title: "Ruby Fog Bindings for HP Cloud: Using authentication caching"
 permalink: /bindings/fog/articles/authcache
 product: fog
 categories: fog
