@@ -16,6 +16,7 @@ Tasks are described as being performed by a user or administrator.
 The following Identity service tasks are usually performed by someone with the *user* role.
 
 ### Change Password 
+
 ### Manage Default Tenant/Project Association
 ### List Tenants/Projects
 
