@@ -137,7 +137,15 @@ To create a disk image using the Disk Image Builder tool, follow the steps below
         `disk-image-create -o base -a amd64 base ubuntu baremetal localboot serial-console`
 
         This creates a disk image file named base.qcow2
+ 
 
+   - **RHEL image with boot from hard disk drive support**
+	
+        To create a basic RHEL image capable of booting from hard disk drive support with associated kernel and ramdisk, use the following command:
+    
+        `disk-image-create -o base -a amd64 base rhel baremetal localboot serial-console`
+
+        This creates a disk image file named base.qcow2
 
 #### Using your disk image with OpenStack {#image-builder-openstack}
 
@@ -340,7 +348,7 @@ The following are the tool prerequisites for creating a Windows Image:
 
   * The HP Moonshot Windows Deployment Pack (HP MWDP) for HP ProLiant m700 server cartridge, if deploying an m700 cartridge.
 
-   		Download HP MWDP from [http://www.hp.com/go/moonshot/1500chassis-software-download](http://www.hp.com/go/moonshot/1500chassis-software-download)
+   		Download HP MWDP from [ http://www.hp.com/support/moonshot/1500chassis-software-download]( http://www.hp.com/support/moonshot/1500chassis-software-download)
 
 
 * A Machine running Windows OS
