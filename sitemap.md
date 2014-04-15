@@ -6,7 +6,7 @@ permalink: /sitemap/
 ---
 # HP Cloud Service Documentation Site Map#
 
-Having a bit of trouble navigating our site, and so you're looking for a single list of what we cover?  You've come to the right place!
+Having a bit of trouble navigating our site, and so you're looking for a single list of what we cover?  You've come to the right place.
 
 [Getting Started with HP Cloud](/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Documentation Site Overview](/site-overview)<br>
