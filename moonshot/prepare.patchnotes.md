@@ -36,8 +36,7 @@ This topic contains the following information about the HP Cloud OS for Moonshot
 ##Features in HP Cloud OS for Moonshot Patch 1.01.0000## {#features}
 
 
-**Hard Disk Drive Boot (HDD)** &mdash; With this release, user has an option to select boot method based on node persistent boot configuration. If the node is set to boot persistently from PXE, all subsequent boots after provisioning are from PXE. Similarly, if the node is set to boot persistently from HDD, all subsequent boots after provisioning are from HDD.    
-
+**Hard Disk Drive Boot (HDD)** &mdash; With this release, the user has an option to select the boot method based on the node persistent boot configuration. If the node is set to boot persistently from PXE, all subsequent boots after provisioning are from PXE. Similarly, if the node is set to boot persistently from HDD, all subsequent boots after provisioning are from HDD.    
 
 **To ensure successful HDD boot process, the following is recommended:**
 
@@ -47,7 +46,7 @@ This topic contains the following information about the HP Cloud OS for Moonshot
 
 Once the patch is applied successfully on HP Cloud OS for Moonshot, it enables the following:
 
-1.	 If the boot configuration of the nodes in the chassis is set to HDD, the instances boot from HDD. The instances continue to boot successfully even if there is a downtime in the Baremetal host.
+1. If the boot configuration of the nodes in the chassis is set to HDD, the instances boot from HDD. The instances continue to boot successfully even if there is a downtime in the Baremetal host.
 
 2. If the boot configuration of the nodes in the chassis is set to PXE, the instances boot from PXE. When there is a downtime in the Baremetal host, the instances try PXE booting first but are unable to and fall back on HDD. The instances boot successfully from HDD.
 
@@ -56,7 +55,7 @@ Once the patch is applied successfully on HP Cloud OS for Moonshot, it enables t
 
 **Windows Support** &mdash; This patch release of HP Cloud OS for Moonshot offers an additional feature to support the deployment of Microsoft Windows (Windows 2012, Windows 2012 R2) on m300 cartridge and Windows 7 Enterprise SP1(x64) on m700 cartridges.<br> 
 
-Prior to the patch installation, upgrade the firmware of the chassis manager of the HP ProLiant  m300 and m700 cartridges.
+Prior to the patch installation, upgrade the firmware of the chassis manager of the HP ProLiant m300 and m700 cartridges.
 
 Windows images should be created using the instructions as mentioned in the Section Two - Creating Windows Images as described in [Building Images](/cloudos/moonshot/manage/image-builder/) document.
 
@@ -100,7 +99,7 @@ Bulk provisioning issue has been resolved and is successful now.
 
 * Refined Cloud Resource Pool creation for moonshot release.
 
-* Apollo now assigns individual shellinabox port for all the nodes of m700 cartridge. 
+* Apollo now assigns an individual shellinabox port for all the nodes of m700 cartridge. 
 
 
 ## Procedure to apply HP Cloud OS for Moonshot Patch 1.01.0000 {#apply-patch}
@@ -122,7 +121,5 @@ For additional related information on HP Cloud OS for Moonshot:
 * [HP Cloud OS for Moonshot documentation web site](/cloudos/moonshot/): Provides the topics listed below, plus FAQs, video tutorials, and more.
 
 * [Building Images](/cloudos/moonshot/manage/image-builder/): Provides the steps to build the images for Linux and Windows.
-
-
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
