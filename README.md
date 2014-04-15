@@ -4,11 +4,11 @@ This repository contains the documentation on using HP Cloud product and service
  * http://docs.hpcloud.com/
  * http://docs.qa1-stackato.cx.hpcloud.net/
  * http://15.185.109.123/
- 
+
 ## Jenkins
 
 The Jenkins job to push the documentation can be found here:
 
-http://keg.dev.uswest.hpcloud.net:8082/view/docs
+http://devexbuild.infra.aw1.hpcloud.net:8080/view/docs/
 
 There are several jobs in Jenkins and a jenkins directory of scripts to support those jobs.  It is best to look at Jenkins and the scripts to understand the jobs.

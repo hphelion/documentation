@@ -4,7 +4,7 @@ title: "HP Cloud Release Notes"
 permalink: /release-notes/
 
 ---
-# HP Public Cloud Release Notes
+# HP Public Cloud Release Notes #
 
 This page contains the following information on our software package:
 
