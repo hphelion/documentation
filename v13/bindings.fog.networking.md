@@ -7,7 +7,7 @@ product: fog
 ---
 #Ruby Fog for HP Cloud Bindings Networking Examples
 
-The HP Public Cloud provides networking support using two abstractions - [a model layer](#ModelLayer) and [a request layer](#RequestLayer). Both layers are detailed below.  The code samples on this page can be executed from within a Ruby console (IRB):
+The HP Public Cloud provides networking support using two abstractions - [a model layer](#ModelLayer) and [a request layer](#RequestLayer). Both layers are detailed below.  The code samples on this page can be executed from within a Ruby console (IRB): 
 
         irb
 
