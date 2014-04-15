@@ -204,7 +204,7 @@ Your uploaded images must adhere to the following:
 * Images for any licensed OS require a valid OS license.
     * If you build your own image of a licensed OS, you must ensure that you provide a valid license to image users.
     * If you use an HP Cloud supplied licensed OS to create your own image from a snapshot, then the HP Cloud provided license is included.
-* If you make any third-party software programs available through your image, you must comply with all third-party license requirements for such use. HP does not control and is not responsible for any of these programs or their content. If you are required to agree to terms and conditions set by a third party for usage of such third-party software programs, you are responsible for compliance with these requirements. 
+* If you make any third-party software programs available through your image, you must comply with all third-party license requirements for such use. HP does not control and is not responsible for any of these programs or their content. If you are required to agree to terms and conditions set by a third party for usage of such third-party software programs, you are responsible for compliance with these requirements.
 
 #### Common requirements #### {#publishCommonReqs}
 You must ensure that all uploaded images meet the following requirements:
@@ -356,9 +356,6 @@ Boot an HP-provided instance and note the instance ID.</li>
 <p><img src="media/glance-snapshot-details.png" width="580" alt="" /></p>
 </li>
 
-<li>If you no longer need the instance from which the snapshot was taken, delete it:
-<p><code>nova delete &lt;instance_id&gt;</code></p>
-</li>
 <li>Remove the snapshot image properties:
 <p><b>For Windows snapshots</b> you need to ensure you leave the following properties on the snapshot: <code>com.hp__1__license_os</code> and <code>hp_image_license</code> by forming your command like this:</p>
 <p><code>glance image-update {image_id} --purge-props --property com.hp__1__license_os={id} --property hp_image_license={id}</code></p>
@@ -366,6 +363,9 @@ Boot an HP-provided instance and note the instance ID.</li>
 <p><code>glance image-update {image_id} --purge-props</code></p>
 </p>
 <p><img src="media/glance-snapshot-details-purged.png" width="580" alt="" /></p>
+</li>
+<li>Your instance from which the snapshot was taken will need to be deleted as it's had it's final sysprep performed on it and you will not be able to retrieve the Administrator password for it, preventing you from connecting to it again:
+<p><code>nova delete &lt;instance_id&gt;</code></p>
 </li>
 </ol>
 
