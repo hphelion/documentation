@@ -17,9 +17,9 @@ product: moonshot
 
 If you're new to HP Cloud OS for Moonshot, see these topics and the video tutorials to learn about the product's functionality.
 
-* [Patch Notes](/cloudos/moonshot/prepare/patchnotes/) - summarizes the features and fixes provided by the HP Cloud OS for Moonshot 1.01.0000 patch release. This document is a supplement to the Release Notes (next document).
+* [Patch Notes 1.01.0000](/cloudos/moonshot/prepare/patchnotes/) - summarizes the features and fixes provided by the HP Cloud OS for Moonshot 1.01.0000 patch release. This document is a update to the 1.0 Release Notes (next document).
 
-* [Release Notes](/cloudos/moonshot/prepare/releasenotes/) - describes new features and recommendations.
+* [Release Notes 1.0](/cloudos/moonshot/prepare/releasenotes/) - describes new features and recommendations in the HP Cloud OS for Moonshot 1.0 release.
 
 * [Support Matrix](/cloudos/moonshot/prepare/supportmatrix/) - provides an overview of the HP Cloud OS for Moonshot supported hardware and software.
 

@@ -18,7 +18,7 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> <a href="/cloudos/moonshot/prepare/">&#9664; PREV | <a href="/cloudos/moonshot/">&#9650; UP</a> | <a href="/cloudos/moonshot/prepare/supportmatrix/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/cloudos/moonshot/prepare/patchnotes/">&#9664; PREV | <a href="/cloudos/moonshot/prepare/">&#9650; UP</a> | <a href="/cloudos/moonshot/prepare/supportmatrix/">NEXT &#9654;</a> </p>
 
 # HP Cloud OS for Moonshot 1.0 Release Notes
 
@@ -29,6 +29,8 @@ This topic contains the following information about the HP Cloud OS for Moonshot
 * [Recommendations for HP Cloud OS for Moonshot 1.0](#recommendations)
 
 * [For further information](#for-further-information)
+
+**Important!**  Also see the [Patch Notes](/cloudos/moonshot/prepare/patchnotes/) document, which provide updates to the information in this Release Notes document. The Patch Notes describe the HP Cloud OS for Moonshot 1.01.0000 patch release's features and fixes to prior issues. After installing HP Cloud OS for Moonshot 1.0, you can apply the 1.01.0000 patch to your cloud environment.
 
 ##Features in HP Cloud OS for Moonshot 1.0## {#features}
 

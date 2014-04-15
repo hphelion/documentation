@@ -18,10 +18,9 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> <a href="/cloudos/moonshot/">&#9664; PREV | <a href="/cloudos/moonshot/">&#9650; UP</a> | <a href="/cloudos/moonshot/prepare/supportmatrix/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/cloudos/moonshot/prepare/">&#9664; PREV | <a href="/cloudos/moonshot/prepare/">&#9650; UP</a> | <a href="/cloudos/moonshot/prepare/releasenotes/">NEXT &#9654;</a> </p>
 
-# HP Cloud OS for Moonshot Patch 1.01.0000 
-
+# HP Cloud OS for Moonshot 1.01.0000 Patch Notes 
 
 This topic contains the following information about the HP Cloud OS for Moonshot patch release:
 
@@ -33,7 +32,9 @@ This topic contains the following information about the HP Cloud OS for Moonshot
 
 * [For further information](#for-further-information)
 
-##Features in HP Cloud OS for Moonshot Patch 1.01.0000## {#features}
+These Patch Notes include updates to information presented in the HP Cloud OS for Moonshot 1.0 [Release Notes](/cloudos/moonshot/prepare/releasenotes).
+
+## Features in HP Cloud OS for Moonshot Patch 1.01.0000 {#features}
 
 
 **Hard Disk Drive Boot (HDD)** &mdash; With this release, the user has an option to select the boot method based on the node persistent boot configuration. If the node is set to boot persistently from PXE, all subsequent boots after provisioning are from PXE. Similarly, if the node is set to boot persistently from HDD, all subsequent boots after provisioning are from HDD.    
@@ -60,7 +61,7 @@ Prior to the patch installation, upgrade the firmware of the chassis manager of 
 Windows images should be created using the instructions as mentioned in the Section Two - Creating Windows Images as described in [Building Images](/cloudos/moonshot/manage/image-builder/) document.
 
 
-##Recommendations for HP Cloud OS for Moonshot## {#recommendations}
+## Recommendations for HP Cloud OS for Moonshot {#recommendations}
 
 This section describes the HP recommendations for best performance, functionality, and usability with this software version. 
 We have also provided information about the resolved issues for reference purposes. This section contains:
@@ -69,57 +70,63 @@ We have also provided information about the resolved issues for reference purpos
  
 * [Resolved issues](#resolved-issues) 
 
-###Recommendations for best functionality, performance and reliability### {#best-practices} 
+### Recommendations for best functionality, performance and reliability {#best-practices} 
 
 HP recommends the following best practices for HP Cloud OS for Moonshot.
 
-####Image Building####
+#### Image Building
 
- For best results, perform the steps mention in [Building Images](/cloudos/moonshot/manage/image-builder/) to build the image used for provisioning the instance.
+For best results, perform the steps mention in [Building Images](/cloudos/moonshot/manage/image-builder/) to build the image used for provisioning the instance.
 
-#### Configuration####
+#### Configuration
 
 For successful local boot, the boot option should be set to Hard Disk Drive for all the nodes of the chassis that are managed by HP Cloud OS for Moonshot.
  
-###Resolved issues ### {#resolved-issues}
+### Resolved issues {#resolved-issues}
 
 The following issues are resolved in this patch release.
 
-####Installation####
+#### Installation
 
-Create Region fails due to a GET_SERVER_CERTIFICATE verification failure is resolved.
+In 1.0, Create Region failed due to a GET_SERVER_CERTIFICATE verification issue. The 1.01.0000 patch fixes this issue.
 
-####Provisioning####
+#### Provisioning
 
-Bulk provisioning issue has been resolved and is successful now. 
+In 1.0, there was a bulk provisioning issue.  The 1.01.0000 patch fixes this issue.
 
-####General####
+#### General
 
-* Edit Network option is disabled in the Networks page in the Administration Dashboard.
+* In 1.0, the Edit Network option was disabled in the Networks page in the Administration Dashboard. The 1.01.0000 patch fixes this issue.
 
-* Refined Cloud Resource Pool creation for moonshot release.
+* In 1.0, there was an issue with the Refined Cloud Resource Pool creation process. The 1.01.0000 patch fixes this issue.
 
-* Apollo now assigns an individual shellinabox port for all the nodes of m700 cartridge. 
+* Starting with the 1.01.0000 patch, the Apollo service now assigns an individual shellinabox port for all the nodes of an m700 cartridge. 
 
 
-## Procedure to apply HP Cloud OS for Moonshot Patch 1.01.0000 {#apply-patch}
+## Procedure to apply the HP Cloud OS for Moonshot Patch 1.01.0000 {#apply-patch}
 
 Perform the following steps to apply the patch 1.01.0000:
 
-1. Launch the Cloud OS for Moonshot Operational Dashboard.  Login with the credentials. 
+1. Launch the Cloud OS for Moonshot Operational Dashboard.  
+
+2. Login with the credentials. 
+
 3. Select  **Updates and Extension.**  The patch COSMOS_1_01_patch is listed here.
+
 4. Click **Download** to download COS4MS_1_01_patch. Once the patch is successfully downloaded, you can install it.
+
 5. Click **Install**.  When the installation is completed the status changes to installed.
 
-Therefore, you have successfully installed the patch.
+At that point, you will have successfully installed the patch.
 
 
 ##For further information## {#for-further-information}
 
-For additional related information on HP Cloud OS for Moonshot:
+For additional related information on HP Cloud OS for Moonshot, see:
 
 * [HP Cloud OS for Moonshot documentation web site](/cloudos/moonshot/): Provides the topics listed below, plus FAQs, video tutorials, and more.
 
 * [Building Images](/cloudos/moonshot/manage/image-builder/): Provides the steps to build the images for Linux and Windows.
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
