@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Ruby Fog for HP CLoud Networking Examples"
+title: "Ruby Fog for HP Cloud Networking Examples"
 permalink: /v13/bindings/fog/networking/
 product: fog
 
