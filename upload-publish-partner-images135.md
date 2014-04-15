@@ -214,7 +214,7 @@ You must ensure that all uploaded images meet the following requirements:
     * have [supporting documentation](#publishDocReqs).
     * support the VirtIO disk driver and network driver.
     * be configured to use DHCP for its primary network interface.
-    * not have a MAC address tied to its primary network interface; an instance booted in the HP Cloud gets a random MAC address assigned by the HP Cloud infrastructure.
+    * not have a MAC address tied to its primary network interface; an instance booted in the HP Cloud gets a random MAC address assigned by the HP Cloud infrastructure.
     * be self-contained; it should not be a multi-part image, e.g., one that references a separate ramdisk/kernel.
     * be in the `qcow2` format
 * An image should:
@@ -364,7 +364,7 @@ Boot an HP-provided instance and note the instance ID.</li>
 </p>
 <p><img src="media/glance-snapshot-details-purged.png" width="580" alt="" /></p>
 </li>
-<li>Your instance from which the snapshot was taken will need to be deleted as it's had it's final sysprep performed on it and you will not be able to retrieve the Administrator password for it, preventing you from connecting to it again:
+<li><p>Your instance from which the snapshot was taken will need to be deleted as it's had it's final sysprep performed on it and you will not be able to retrieve the Administrator password for it, preventing you from connecting to it again:</p>
 <p><code>nova delete &lt;instance_id&gt;</code></p>
 </li>
 </ol>
