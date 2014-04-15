@@ -10,7 +10,7 @@ product: moonshot
 <p style="font-size: small;"> &#9664; PREV | <a href="/cloudos/moonshot/">&#9650; UP</a> | <a href="/cloudos/moonshot/prepare/releasenotes/">NEXT &#9654;</a> </p>
 --> 
 
-<p style="font-size: small;"> &#9664; PREV | <a href="/cloudos/moonshot/">&#9650; UP</a> | <a href="/cloudos/moonshot/prepare/supportmatrix/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> &#9664; PREV | <a href="/cloudos/moonshot/">&#9650; UP</a> | <a href="/cloudos/moonshot/prepare/patchnotes/">NEXT &#9654;</a> </p>
 
 
 # Prepare: Get Started with HP Cloud OS for Moonshot
