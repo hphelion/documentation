@@ -6,7 +6,7 @@ product: image
 
 ---
 
-# HP Cloud 13.5: How to Upload a Partner Image and Make it Public # {#publishPartnerImage} 
+# HP Cloud 13.5: How to Upload a Partner Image and Make it Public # {#publishPartnerImage}
 This document describes how to use the HP Cloud Image API to upload images and make them available for public use in HP Cloud 13.5. It is not intended to be an exhaustive description of [managing images using the Glance client](http://docs.openstack.org/user-guide-admin/content/cli_manage_images.html). For additional detail, see the [glance command reference](http://docs.openstack.org/user-guide-admin/content/glanceclient_commands.html) and the [HP Cloud Image Service API specification](https://docs.hpcloud.com/api/v13/image/).
 
 **Note:** As an image owner, it is your responsibility to ensure you have rights to use any software included in the image. HP is not responsible or liable for any unauthorized use of software by the owner of an image.
@@ -318,11 +318,11 @@ The HP Cloud management console uses custom properties to categorize and display
 See the [Glance client](#publishGlanceCreate) and [curl](#publishCurlUpload) sections for the instructions to set these attributes and properties.
 
 ## Creating an image from a snapshot ## {#publishWindowsSnap}
-One way to create an image is to customize an HP Cloud-provided licensed, public image. There are several ways you can do this; however, the steps below describe one method for customizing an HP Cloud-provided licensed image. For more detailed information or to see alternative methods, see [Creating a snapshot of an instance](https://community.hpcloud.com/article/creating-snapshot-instance).
+One way to create an image is to customize an HP Cloud-provided licensed, public image. There are several ways you can do this; however, the steps below describe one method for customizing an HP Cloud-provided licensed image. For more detailed information or to see alternative methods, see [Creating a snapshot of an instance](https://community.hpcloud.com/article/creating-snapshot-instance-135).
 
 <ol>
 <li>
-Boot an HP-provided instance and note the instance UUID.</li>
+Boot an HP-provided instance and note the instance ID.</li>
 <li>Customize the instance by installing software, completing operating system customization, and any additional preparation steps.</li>
 <li>Once you're ready, prepare your instance to be snapshot by following these steps for your operating system:
 <ul>
@@ -340,12 +340,12 @@ Boot an HP-provided instance and note the instance UUID.</li>
 
 <li>Verify that the instance is shut down:
 
-<p><code>nova show &lt;instance uuid&gt;</code></p>
+<p><code>nova show &lt;instance_id&gt;</code></p>
 
 </li>
 <li>Create the snapshot: 
 <p>
-<code>nova image-create &lt;instance uuid&gt; &lt;my snapshot name&gt;</code>
+<code>nova image-create &lt;instance_id&gt; &lt;my snapshot name&gt;</code>
 </p>
 
 <p><b>Note:</b> Only the root disk is included with the snapshot; the ephemeral storage will be lost.</p>
@@ -357,13 +357,13 @@ Boot an HP-provided instance and note the instance UUID.</li>
 </li>
 
 <li>If you no longer need the instance from which the snapshot was taken, delete it:
-<p><code>nova delete &lt;instance uuid&gt;</code></p>
+<p><code>nova delete &lt;instance_id&gt;</code></p>
 </li>
 <li>Remove the snapshot image properties:
 <p><b>For Windows snapshots</b> you need to ensure you leave the following properties on the snapshot: <code>com.hp__1__license_os</code> and <code>hp_image_license</code> by forming your command like this:</p>
-<p><code>glance image-update {image_uuid} --purge-props --property com.hp__1__license_os={id} --property hp_image_license={id}</code></p>
+<p><code>glance image-update {image_id} --purge-props --property com.hp__1__license_os={id} --property hp_image_license={id}</code></p>
 <p><b>For Linux snapshots</b> you should use this command:
-<p><code>glance image-update {image_uuid} --purge-props</code></p>
+<p><code>glance image-update {image_id} --purge-props</code></p>
 </p>
 <p><img src="media/glance-snapshot-details-purged.png" width="580" alt="" /></p>
 </li>
@@ -638,4 +638,3 @@ If you need further assistance, you can contact support in any of these ways:
 * [Open a support case](https://account.hpcloud.com/cases)
 * [Email support@hpcloud.com](mailto:support@hpcloud.com)
 * Call at 1-855-61CLOUD (1-855-612-5683) in the U.S. or +1-678-745-9010 internationally.
-
