@@ -6,15 +6,15 @@ product: image
 
 ---
 
-# HP Cloud 13.5: How to Upload a Partner Image and Make it Public # {#publishPartnerImage}
+# HP Cloud 13.5: How to Upload a Partner Image and Make it Public # {#publishPartnerImage} 
 This document describes how to use the HP Cloud Image API to upload images and make them available for public use in HP Cloud 13.5. It is not intended to be an exhaustive description of [managing images using the Glance client](http://docs.openstack.org/user-guide-admin/content/cli_manage_images.html). For additional detail, see the [glance command reference](http://docs.openstack.org/user-guide-admin/content/glanceclient_commands.html) and the [HP Cloud Image Service API specification](https://docs.hpcloud.com/api/v13/image/).
 
 **Note:** As an image owner, it is your responsibility to ensure you have rights to use any software included in the image. HP is not responsible or liable for any unauthorized use of software by the owner of an image.
 
 **Important:** The following regions support uploading an image and making it publicly available:
 
-* Region A West 13.5 (region-a.geo-1)
-* Region B East 13.5 (region-b.geo-1)
+* Region A - West 13.5 (region-a.geo-1)
+* Region B - East 13.5 (region-b.geo-1)
 
 All other regions do not support the Image API.
 
@@ -36,7 +36,7 @@ All HP Cloud users have access to both types of public images. When you create a
 * Private images
 * Bootable volumes
 
-This document explains how to upload images and make them public within the **Partner Images**, described in the following sections:
+This document explains how to upload images and make them public within **Partner Images**, described in the following sections:
 
 * [Getting started](#publishGetStarted)
 * [Creating an image from a snapshot](#publishWindowsSnap)
@@ -59,7 +59,7 @@ Making an image public refers to setting the `is_public` metadata of an image wh
 
 **Note:** An image whose `is_public` metadata field is `False` is referred to as a private image. Private images are only visible to and accessible by their owners.
 
-In brief, to upload an image and make it public, you must 
+In brief, to upload an image and make it public, you must: 
 
 1. Install the OpenStack Glance command line tool (or an appropriate API interaction tool like curl).
 2. Configure the tool to interact with the HP Cloud Image Service.
@@ -132,13 +132,13 @@ To configure your environment variables using bash, complete the following steps
 <pre>
     $ vi .glancerc</pre>
 </li>
-<li>Add the required variables and their values, for example, where the management console user name is <code>me@example.com</code> and the password is <code>Pa$$w0rd</code>:
+<li>Add the required variables and their values:
 
 <pre>
     # Account specific
-    export OS_USERNAME=me@example.com  
-    export OS_TENANT_NAME=me@example.com  
-    export OS_PASSWORD=Pa$$w0rd  
+    export OS_USERNAME={username}  
+    export OS_TENANT_NAME={project_name}  
+    export OS_PASSWORD={password}  
     # Not-account specific (same for all users)  
     export OS_AUTH_URL=https://region-b.geo-1.identity.hpcloudsvc.com:35357/v2.0  
     export OS_AUTH_STRATEGY=keystone  
@@ -162,10 +162,8 @@ Before you can manage your images using curl, you must acquire a token using you
 <ol><li>Run the following command:
 
 <pre>
-    $ curl -XPOST -H "Content-Type: application/json" -d"{\"auth\":{\"tenantName\": 
-    \"$OS_TENANT_NAME\", \"passwordCredentials\": {\"username\": \"$OS_USERNAME\",
-    \"password\": \"$OS_PASSWORD\"}}}" $OS_AUTH_URL/tokens
-</pre>`
+    $ curl -X POST -H "Content-Type: application/json" -d "{\"auth\":{\"tenantName\": \"$OS_TENANT_NAME\", \"passwordCredentials\": {\"username\": \"$OS_USERNAME\", \"password\": \"$OS_PASSWORD\"}}}" $OS_AUTH_URL/tokens
+</pre>
 
 **Important:** Be careful using the double quotes (") and escaped double quotes (\") in the command above.
 
@@ -176,7 +174,7 @@ The curl command should return output, such as:
       "token": {  
         "expires": "2013-05-24T22:03:30.036Z",   
         "id": "HPAuth10_a73d39f83b98359a7a0951f51a393aaeafdc00fcbcd31c300384917",  
-        "tenant": {  
+        "tenant": {  
            "id": "12345678",   
            "name": "jane.smith@example.com"  
            }  
@@ -326,21 +324,18 @@ One way to create an image is to customize an HP Cloud-provided licensed, public
 <li>
 Boot an HP-provided instance and note the instance UUID.</li>
 <li>Customize the instance by installing software, completing operating system customization, and any additional preparation steps.</li>
-<li>Shut down the instance.
+<li>Once you're ready, prepare your instance to be snapshot by following these steps for your operating system:
 <ul>
 <li><b>For a Windows instance</b> sysprep and shutdown the image as an Administrator from the command prompt.
-<p><b>Note:</b> Steps d and e only apply to Windows 2008 R2 SP1. For all other Windows flavors, skip these two steps.</p>
 <ol type=a>
 <li>cd c:\windows\setup\hpcloud</li>
 <li>sdelete -z c</li>
 <li>startsysprep</li>
-<li>FirstNetwork.reg</li>
-<li>Shutdown the instance.</li>
+<p><b>Note:</b> After sysprep is done your instance will shut down.</p>
 </ol></li>
 <li><b>For a Linux instance</b> shutdown the instance as root.
 </li>
 </ul>
-
 </li>
 
 <li>Verify that the instance is shut down:
@@ -365,18 +360,22 @@ Boot an HP-provided instance and note the instance UUID.</li>
 <p><code>nova delete &lt;instance uuid&gt;</code></p>
 </li>
 <li>Remove the snapshot image properties:
-<p><code>glance image-update &lt;image_uuid or image_name&gt; --purge-props</code></p>
-<p><b>Important:</b> When you purged all properties, the license property <code>hp_image_license</code> is not removed.</p>
+<p><b>For Windows snapshots</b> you need to ensure you leave the following properties on the snapshot: <code>com.hp__1__license_os</code> and <code>hp_image_license</code> by forming your command like this:</p>
+<p><code>glance image-update {image_uuid} --purge-props --property com.hp__1__license_os={id} --property hp_image_license={id}</code></p>
+<p><b>For Linux snapshots</b> you should use this command:
+<p><code>glance image-update {image_uuid} --purge-props</code></p>
+</p>
 <p><img src="media/glance-snapshot-details-purged.png" width="580" alt="" /></p>
 </li>
-
 </ol>
 
 You are now ready to:
 
-* Add the required properties.</li>
-* Test your image while is still private.</li>
+* [Add the required properties.](#publishReqsDisplay)
+* Test your image while it is still private.
 * Make the image publicly available.
+
+<p><b>Important:</b> If you don't [add the required properties](#publishReqsDisplay) to your snapshot file then it may not function properly.</p>
 
 ## Uploading and managing images ## {#publishManageGlance}
 Using the `glance` command is the preferred method for interacting with the HP Cloud Image API. In this section, we describe the basic `glance` commands to use for uploading and managing your images. If the Glance client is not available for your platform, see the alternate instructions in each section for using curl commands. 
@@ -394,7 +393,6 @@ Before using the Glance client (or curl), ensure you have configured your enviro
 There is also a section on the most [common HTTP errors](#publishGlanceErrors) that might occur when using the Glance client tool. 
 
 **Important:** For more information, see Openstack's documentation on [managing images using the Glance client](http://docs.openstack.org/user-guide-admin/content/cli_manage_images.html) and the [glance command reference](http://docs.openstack.org/user-guide-admin/content/glanceclient_commands.html).
-
 
 ### Listing images ### {#publishGlanceList}
 To see a list of available images, follow the instructions below.
@@ -626,9 +624,12 @@ Possible HTTP return codes are listed in HP Cloud Image API documentation. The m
 
 For additional information on uploading an image and making it publicly available, see:
 
-* [HP Cloud Image Service API documentation](https://docs.hpcloud.com/api/v13/image/)* [Openstack's documentation](http://docs.openstack.org/user-guide/content/ch_cli.html)* [Cloud 13.5 CLI Installation Instructions](https://community.hpcloud.com/article/cloud-135-cli-installation-instructions)
+* [HP Cloud Image Service API documentation](https://docs.hpcloud.com/api/v13/image/)
+* [Openstack's documentation](http://docs.openstack.org/user-guide/content/ch_cli.html)
+* [Cloud 13.5 CLI Installation Instructions](https://community.hpcloud.com/article/cloud-135-cli-installation-instructions)
 * [Manage images using the Glance client](http://docs.openstack.org/user-guide/content/cli_manage_images.html)
-* [glance command reference](http://docs.openstack.org/user-guide/content/glanceclient_commands.html)* [Technical support knowledge base](https://community.hpcloud.com)
+* [glance command reference](http://docs.openstack.org/user-guide/content/glanceclient_commands.html)
+* [Technical support knowledge base](https://community.hpcloud.com)
 
 ## Contacting support ## {#contactSupport}
 If you need further assistance, you can contact support in any of these ways:
@@ -637,4 +638,3 @@ If you need further assistance, you can contact support in any of these ways:
 * [Open a support case](https://account.hpcloud.com/cases)
 * [Email support@hpcloud.com](mailto:support@hpcloud.com)
 * Call at 1-855-61CLOUD (1-855-612-5683) in the U.S. or +1-678-745-9010 internationally.
-
