@@ -6,7 +6,7 @@ product: image
 
 ---
 
-# HP Cloud 13.5: How to Upload a Partner Image and Make it Public # {#publishPartnerImage} 
+# HP Cloud 13.5: How to Upload a Partner Image and Make it Public # {#publishPartnerImage}
 This document describes how to use the HP Cloud Image API to upload images and make them available for public use in HP Cloud 13.5. It is not intended to be an exhaustive description of [managing images using the Glance client](http://docs.openstack.org/user-guide-admin/content/cli_manage_images.html). For additional detail, see the [glance command reference](http://docs.openstack.org/user-guide-admin/content/glanceclient_commands.html) and the [HP Cloud Image Service API specification](https://docs.hpcloud.com/api/v13/image/).
 
 **Note:** As an image owner, it is your responsibility to ensure you have rights to use any software included in the image. HP is not responsible or liable for any unauthorized use of software by the owner of an image.

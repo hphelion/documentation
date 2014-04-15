@@ -1073,7 +1073,7 @@ Display the details for volume `76677`:
 ##volume-snapshot-create## {#volume-snapshot-create}
 Add a new snapshot.
 ###Syntax
-`nova volume-snapshot-create [--force <True|False>] [--display_name <display_name>] [--display_description <display_description>] <volume_id>`
+`	 [--display_name <display_name>] [--display_description <display_description>] <volume_id>`
                                    
 **volume_id**
 :  ID of the volume to snapshot

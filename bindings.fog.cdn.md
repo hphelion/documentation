@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Cloud Fog Binding CDN Examples"
+title: "Ruby Fog Bindings for HP Cloud CDN Examples"
 permalink: /bindings/fog/cdn/
 product: fog
 
