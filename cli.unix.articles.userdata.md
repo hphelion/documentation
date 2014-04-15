@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "Unix Command Line Interface: Creating Servers with Custom User Data"
+title: "UNIX CLI for HP Cloud: Creating Servers with Custom User Data"
 permalink: /cli/unix/articles/userdata
 product: unix-cli
 categories: cli linux compute servers configure user data
 tags: cli linux compute user data
 ---
-#UNIX CLI: Creating servers with custom user data v12.12#
+#UNIX CLI for HP Cloud: Creating servers with custom user data v12.12#
 
 ___________________
 
@@ -22,7 +22,7 @@ HP Cloud has contributed the Unix CLI back to the open source community, and you
 
 _________________________________________
 
-You can use the Unix command-line interface (CLI) to create custom pre-configured servers with the [`servers:add`](/cli/unix/reference#servers:add) user data option.  The argument to the `--userdata` option is a file name that contains the configuration.  The format of the configuration data is described in the [CloudInit](https://help.ubuntu.com/community/CloudInit) site.
+You can use the UNIX CLI for HP Cloud to create custom pre-configured servers with the [`servers:add`](/cli/unix/reference#servers:add) user data option.  The argument to the `--userdata` option is a file name that contains the configuration.  The format of the configuration data is described in the [CloudInit](https://help.ubuntu.com/community/CloudInit) site.
 
 The simplest example of this is to pass in a shell script to run when the server is booted.  The shell script must start with the file format "magic number" hash bang and the shell to run, for example `#!/bin/sh`.  To create a server with a custom "message of the day" (defined in the `/etc/motd` file) and Unix CLI installed, an example script is:
 
@@ -86,4 +86,5 @@ If there is any problem with the user data, information about the improper data 
     
 ##For more information## {#articles}
 
-For more tips and How-tos on using your UNIX command-line interface (CLI), see [UNIX CLI: Articles on to use the UNIX CLI](/cli/unix/articles/).
+For more tips and How-tos on using your UNIX CLI for HP Cloud, see [UNIX CLI for HP Cloud: Articles on to use the UNIX CLI for HP Cloud](/cli/unix/articles/).
+

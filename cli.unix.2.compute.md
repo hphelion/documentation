@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "UNIX CLI Compute Examples"
+title: "UNIX CLI for HP Cloud Compute Examples"
 permalink: /cli/unix/2/compute/
 product: unix-cli
 
 ---
-# UNIX CLI v13.5 Compute Examples
+# UNIX CLI for HP Cloud v13.5 Compute Examples
 
 If you are using v12.12, click [here](https://docs.hpcloud.com/cli/unix/compute) for documentation.
 ___________________

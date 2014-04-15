@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "UNIX CLI: Advanced Account Management"
+title: "UNIX CLI for HP Cloud: Advanced Account Management"
 permalink: /cli/unix/account-management/
 product: unix-cli
 
 ---
-#UNIX CLI: Advanced Account Management v12.12
+#UNIX CLI for HP Cloud: Advanced Account Management v12.12
 
 ___________________
 

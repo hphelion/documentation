@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "Unix CLI: Account Configuration"
+title: "UNIX CLI for HP Cloud: Account Configuration"
 permalink: /cli/unix/configuration/
 product: unix-cli
 
 ---
-# Unix CLI: Account Configuration for v12.12
+# UNIX CLI for HP Cloud: Account Configuration for v12.12
 
 ___________________
 
@@ -21,7 +21,7 @@ HP Cloud has contributed the Unix CLI back to the open source community, and you
 
 _________________________________________
 
-This page discusses how to set up an accounts and using the HP Cloud Unix Command Line Interface.
+This page discusses how to set up an accounts and using the UNIX CLI for HP Cloud.
 
 * [Account Setup](#AccountSetup)
 * [Account Edit](#EditAccount)

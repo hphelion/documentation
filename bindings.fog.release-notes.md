@@ -5,7 +5,7 @@ permalink: /bindings/fog/release-notes/
 product: fog
 
 ---
-# Release Notes for the HP Cloud Ruby Fog Binding
+# Release Notes for the Ruby Fog Bindings for HP Cloud
 
 ##Important Notice##
 

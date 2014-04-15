@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "Unix CLI: Account Configuration"
+title: "Unix CLI for HP Cloud: Account Configuration"
 permalink: /cli/unix/2/configuration/
 product: unix-cli
 
 ---
-# Unix CLI v13.5: Account Configuration
+# Unix CLI for HP Cloud v13.5: Account Configuration
 
 If you are using v12.12, click [here](https://docs.hpcloud.com/cli/unix/configuration) for documentation.
 ___________________

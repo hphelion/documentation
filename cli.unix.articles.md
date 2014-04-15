@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "UNIX CLI: Articles on how to use the UNIX CLI"
+title: "UNIX CLI for HP Cloud: Articles on how to use the UNIX CLI"
 permalink: /cli/unix/articles/
 product: unix-cli
 
 ---
-#UNIX CLI: Articles on to use the UNIX CLI v12.12
+#UNIX CLI for HP Cloud: Articles on to use the UNIX CLI v12.12
 ___________________
 
 ###Important Notice###
@@ -20,7 +20,7 @@ HP Cloud has contributed the Unix CLI back to the open source community, and you
 
 _________________________________________
 
-In addition to the pages of examples we have for the compute, object storage, and other HP Cloud services, we wanted to give you a few additional tips and How-tos to make using your UNIX command-line interface (CLI) access even easier. Take a look at one of the "How to" articles listed below to find out more!
+In addition to the pages of examples we have for the compute, object storage, and other HP Cloud services, we wanted to give you a few additional tips and How-tos to make using your UNIX CLI for HP Cloud access even easier. Take a look at one of the "How to" articles listed below to find out more!
 
 * [Using bash shell command completion](/cli/unix/articles/complete)<br>
 * [Generating verbose debugging output](/cli/unix/articles/debugging)<br>

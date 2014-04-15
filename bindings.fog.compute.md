@@ -7,7 +7,7 @@ product: fog
 ---
 
 
-#Ruby Fog Bindings Compute Examples  
+#Ruby Fog Bindings for HP Cloud Compute Examples  
 
 ##Important Notice##
 

@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "HP Cloud UNIX CLI Installation"
+title: "UNIX CLI for HP Cloud Installation"
 permalink: /cli/unix/2/install/
 product: unix-cli
 
 ---
-# UNIX CLI v13.5 Installation
+# UNIX CLI for HP CLoud v13.5 Installation
 
 If you are using v12.12, click [here](https://docs.hpcloud.com/cli/unix/install) for documentation.
 ___________________
