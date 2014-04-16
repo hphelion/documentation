@@ -3,7 +3,6 @@ layout: default
 title: "HP Cloud 13.5: Upload and Make Public a Partner Image"
 permalink: /upload-publish-partner-images135/
 product: image
-
 ---
 
 # HP Cloud 13.5: How to Upload a Partner Image and Make it Public # {#publishPartnerImage}
@@ -204,7 +203,7 @@ Your uploaded images must adhere to the following:
 * Images for any licensed OS require a valid OS license.
     * If you build your own image of a licensed OS, you must ensure that you provide a valid license to image users.
     * If you use an HP Cloud supplied licensed OS to create your own image from a snapshot, then the HP Cloud provided license is included.
-* If you make any third-party software programs available through your image, you must comply with all third-party license requirements for such use. HP does not control and is not responsible for any of these programs or their content. If you are required to agree to terms and conditions set by a third party for usage of such third-party software programs, you are responsible for compliance with these requirements. 
+* If you make any third-party software programs available through your image, you must comply with all third-party license requirements for such use. HP does not control and is not responsible for any of these programs or their content. If you are required to agree to terms and conditions set by a third party for usage of such third-party software programs, you are responsible for compliance with these requirements.
 
 #### Common requirements #### {#publishCommonReqs}
 You must ensure that all uploaded images meet the following requirements:
@@ -214,7 +213,7 @@ You must ensure that all uploaded images meet the following requirements:
     * have [supporting documentation](#publishDocReqs).
     * support the VirtIO disk driver and network driver.
     * be configured to use DHCP for its primary network interface.
-    * not have a MAC address tied to its primary network interface; an instance booted in the HP Cloud gets a random MAC address assigned by the HP Cloud infrastructure.
+    * not have a MAC address tied to its primary network interface; an instance booted in the HP Cloud gets a random MAC address assigned by the HP Cloud infrastructure.
     * be self-contained; it should not be a multi-part image, e.g., one that references a separate ramdisk/kernel.
     * be in the `qcow2` format
 * An image should:
@@ -318,11 +317,11 @@ The HP Cloud management console uses custom properties to categorize and display
 See the [Glance client](#publishGlanceCreate) and [curl](#publishCurlUpload) sections for the instructions to set these attributes and properties.
 
 ## Creating an image from a snapshot ## {#publishWindowsSnap}
-One way to create an image is to customize an HP Cloud-provided licensed, public image. There are several ways you can do this; however, the steps below describe one method for customizing an HP Cloud-provided licensed image. For more detailed information or to see alternative methods, see [Creating a snapshot of an instance](https://community.hpcloud.com/article/creating-snapshot-instance).
+One way to create an image is to customize an HP Cloud-provided licensed, public image. There are several ways you can do this; however, the steps below describe one method for customizing an HP Cloud-provided licensed image. For more detailed information or to see alternative methods, see [Creating a snapshot of an instance](https://community.hpcloud.com/article/creating-snapshot-instance-135).
 
 <ol>
 <li>
-Boot an HP-provided instance and note the instance UUID.</li>
+Boot an HP-provided instance and note the instance ID.</li>
 <li>Customize the instance by installing software, completing operating system customization, and any additional preparation steps.</li>
 <li>Once you're ready, prepare your instance to be snapshot by following these steps for your operating system:
 <ul>
@@ -340,12 +339,12 @@ Boot an HP-provided instance and note the instance UUID.</li>
 
 <li>Verify that the instance is shut down:
 
-<p><code>nova show &lt;instance uuid&gt;</code></p>
+<p><code>nova show &lt;instance_id&gt;</code></p>
 
 </li>
 <li>Create the snapshot: 
 <p>
-<code>nova image-create &lt;instance uuid&gt; &lt;my snapshot name&gt;</code>
+<code>nova image-create &lt;instance_id&gt; &lt;my snapshot name&gt;</code>
 </p>
 
 <p><b>Note:</b> Only the root disk is included with the snapshot; the ephemeral storage will be lost.</p>
@@ -356,16 +355,16 @@ Boot an HP-provided instance and note the instance UUID.</li>
 <p><img src="media/glance-snapshot-details.png" width="580" alt="" /></p>
 </li>
 
-<li>If you no longer need the instance from which the snapshot was taken, delete it:
-<p><code>nova delete &lt;instance uuid&gt;</code></p>
-</li>
 <li>Remove the snapshot image properties:
 <p><b>For Windows snapshots</b> you need to ensure you leave the following properties on the snapshot: <code>com.hp__1__license_os</code> and <code>hp_image_license</code> by forming your command like this:</p>
-<p><code>glance image-update {image_uuid} --purge-props --property com.hp__1__license_os={id} --property hp_image_license={id}</code></p>
+<p><code>glance image-update {image_id} --purge-props --property com.hp__1__license_os={id} --property hp_image_license={id}</code></p>
 <p><b>For Linux snapshots</b> you should use this command:
-<p><code>glance image-update {image_uuid} --purge-props</code></p>
+<p><code>glance image-update {image_id} --purge-props</code></p>
 </p>
 <p><img src="media/glance-snapshot-details-purged.png" width="580" alt="" /></p>
+</li>
+<li><p>Your instance from which the snapshot was taken will need to be deleted as it's had it's final sysprep performed on it and you will not be able to retrieve the Administrator password for it, preventing you from connecting to it again:</p>
+<p><code>nova delete &lt;instance_id&gt;</code></p>
 </li>
 </ol>
 
@@ -638,4 +637,3 @@ If you need further assistance, you can contact support in any of these ways:
 * [Open a support case](https://account.hpcloud.com/cases)
 * [Email support@hpcloud.com](mailto:support@hpcloud.com)
 * Call at 1-855-61CLOUD (1-855-612-5683) in the U.S. or +1-678-745-9010 internationally.
-
