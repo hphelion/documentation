@@ -30,6 +30,10 @@ services from HP:
 
 This topic describes the HP Cloud OS value-add services.
 
+## Eden Service
+
+Will add info here ... this is just a PLACEHOLDER.  
+
 ## Eve Service
 
 Will add info here ... this is just a PLACEHOLDER.  
