@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Connect on the HP Cloud Community Forum"
-permalink: /cloudos/community/
+permalink: /cloudos/forum/
 product: cloudos
 
 ---

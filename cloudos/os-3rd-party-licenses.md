@@ -80,7 +80,7 @@ commercial license.
 
 ### Copyright Notice
 
-Hewlett-Packard Company Confidential &copy; Copyright 2012-2013 Hewlett-Packard Development Company, L.P.
+Hewlett-Packard Company Confidential &copy; Copyright 2012-2014 Hewlett-Packard Development Company, L.P.
 
 ### Trademark Notices
 
@@ -108,6 +108,11 @@ OF THIS SOFTWARE.
 ## Open Source Licenses
 
 HP acknowledges the redistribution of the following open source components under the licenses shown below.
+
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> 
+To address source code availability requirements for code licensed under MPL, CDDL, LGPL v2.1 & v3, GPL v2 & v3, 
+you can obtain a ZIP containing that source code (the required subset) <a href="https://cloudos.hpwsportal.com" target="_blank"> 
+at the HP Cloud OS portal</a>. On the site, sign up, login, then follow the Open Source Licenses link. The ZIP file is approximately 2 GB.</p>
 
 ### ANTLR License
 
@@ -240,6 +245,7 @@ HP acknowledges the redistribution of the following open source components that 
 * swagger- jaxrs_2.9.1, Version 1.2.1
 * tomcat, Version 7.0.26
 * woodstox-core, Version 4.1.4
+* wstx-asl 3.2.6
 * xalan, Version 2.7.0
 * xerces-j2, Version 2.6.2, 2.8.0
 * xerces-j2-xml-apis, Version 1.3.02, 1.3.03
@@ -992,12 +998,12 @@ COMMON DEVELOPMENT AND DISTRIBUTION LICENSE (CDDL) Version 1.1
 
 HP acknowledges the redistribution of the following open source components that are provided under this license:
 
-* glassfish-jaxb-api, Version 2.2.5.20120218, 2.2, 2.2.1.1
+* glassfish-jaxb-api, Version 2.2.9, 2.2.5.20120218, 2.2, 2.2.1.1
 * jersey-apache-client4, Version 1.17
 * jersey-client, Version 1.17
-* jersey-core, Version 1.15
-* jersey-server, Version 1.15
-* jersey-servlet, Version 1.15
+* jersey-core, Version 1.17.1
+* jersey-server, Version 1.17.1
+* jersey-servlet, Version 1.17.1
 
 1) Definitions.
 
@@ -2512,10 +2518,10 @@ http://www.gnu.org/philosophy/why-not-lgpl.html.
 HP acknowledges the redistribution of the following open source components that are provided under this license:
 
 * c3p0, Version 0.9.1
-* hibernate-c3p0, Version 3.6.3
+* hibernate-c3p0, Version 4.1.7
 * hibernate-commons-annotations, Version 4.0.1
-* hibernate-entitymanager, Version 3.6.10
-* hibernate3, Version 3.6.10.Final
+* hibernate-entitymanager, Version 4.1.7
+* hibernate3, Version 4.1.8.Final
 * jboss-logging, Version 3.1.0.GA
 * jboss-transaction-1.1-api.spec, Version 1.0.0.Final
 * nscd, Version 2.15
@@ -3170,7 +3176,7 @@ POSSIBILITY OF SUCH DAMAGE.
 
 HP acknowledges the redistribution of the following open source component that are provided under this license:
 
-* amqp-client, Version 2.8.1
+* amqp-client, Version 3.0.4
 * rabbitmq-server, Version 2.7.1
 
 MOZILLA PUBLIC LICENSE <br />
