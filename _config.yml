@@ -192,6 +192,25 @@ navigation:
     url: /cloudos/moonshot/related-topics/	
   - text: Site Index
     url: /cloudos/moonshot/siteindex/
+  community:
+  - text: HP Cloud OS Community Doc Home
+    url: /cloudos/community/
+  - text: FAQs
+    url: /cloudos/community/faqs/ 		
+  - text: Technical Overview
+    url: /cloudos/community/technical-overview/  	
+  - text: Install & Config
+    url: /cloudos/community/install/	
+  - text: Services Overview
+    url: /cloudos/community/services-overview/			
+  - text: Reference Architecture
+    url: /cloudos/community/reference-architecture/	
+  - text: Related Topics
+    url: /cloudos/community/related-topics/		
+  - text: Glossary
+    url: /cloudos/community/glossary/			
+  - text: Site Index
+    url: /cloudos/community/site-index/
 
 apinavigation:
 - text: Site home page
