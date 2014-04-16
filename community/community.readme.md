@@ -1,14 +1,14 @@
 ---
 layout: default
 title: "Read me"
-permalink: /cloudos/core/readme/
-product: core
+permalink: /cloudos/community/readme/
+product: community
 ---
 
 I love git.
 
 
-<p style="font-size: small;"> <a href="/cloudos/core/">&#9664; PREV</a> | <a href="/cloudos/core/">&#9650; UP</a> | <a href="/cloudos/core/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/cloudos/community/">&#9664; PREV</a> | <a href="/cloudos/community/">&#9650; UP</a> | <a href="/cloudos/community/">NEXT &#9654;</a> </p>
 
 # Core Read me - test file
 
