@@ -374,7 +374,7 @@ You are now ready to:
 * Test your image while it is still private.
 * Make the image publicly available.
 
-<p><b>Important:</b> If you don't [add the required properties](#publishReqsDisplay) to your snapshot file then it may not function properly.</p>
+<p><b>Important:</b> If you don't add the required properties to your snapshot file then it may not function properly.</p>
 
 ## Uploading and managing images ## {#publishManageGlance}
 Using the `glance` command is the preferred method for interacting with the HP Cloud Image API. In this section, we describe the basic `glance` commands to use for uploading and managing your images. If the Glance client is not available for your platform, see the alternate instructions in each section for using curl commands. 
