@@ -9,7 +9,8 @@ product: compute
 
 <!-- modeled after HP Cloud Networking Getting Started (network.getting.started.md) -->
 
-- Eve is the HP Cloud OS infrastructure topology provisioning service. Eve allows you to:
+Eve is the HP Cloud OS infrastructure topology provisioning service. Eve allows you to:
+
 - Provision TOSCA-based infrastructure topology designs (composite, hybrid, and distributed).
 - Separate topology creation and resource pool binding, for simpler, reusable topologies.
 - Integrate via a plug-in model with Cloud API's (e.g., OpenStack Nova) for orchestrating provisioning.
@@ -22,6 +23,7 @@ This additional functionality in Eve allows you to:
 - Retrieve the list of provisioning jobs
 - Retrieve information about a specific provisioning job
 
+TOSCA is a standard way to describe the topology of applications along with dependent environments, services and artifacts inside a single service template. TOSCA standard enables each customer to deploy and manage topologies against the capabilities offered by any cloud provider, regardless of the customer's infrastructure or service model. 
 
 ###Using the API to access Eve### {#API}
  
