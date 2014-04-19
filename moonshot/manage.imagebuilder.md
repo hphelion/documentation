@@ -96,7 +96,7 @@ To create a disk image using the Disk Image Builder tool, follow the steps below
 
 5.	Apply necessary patches needed for boot from hard disk drive support
 
-    <pre style="min-width:800px;">
+    <pre style="min-width:900px;">
     cd /root/tripleo-image-elements
      
 	git fetch https://review.openstack.org/openstack/tripleo-image-elements refs/changes/89/79289/12 && git cherry-pick FETCH_HEAD
@@ -153,10 +153,9 @@ To create a disk image using the Disk Image Builder tool, follow the steps below
 	
         To create a basic RHEL image capable of booting from hard disk drive support with associated kernel and ramdisk, use the following command:
     
-        <pre>disk-image-create -o base -a amd64 base rhel baremetal localboot serial-console</pre>
-
+        `disk-image-create -o base -a amd64 base rhel baremetal localboot serial-console`
+       
         This creates a disk image file named base.qcow2
-
 
 #### Using your disk image with OpenStack {#image-builder-openstack}
 
@@ -164,7 +163,7 @@ Now that you have created your image, you can add it to Glance and manage it wit
 
 1. Copy the image file base.qcow2, and associated kernel and ramdisk images, to the OpenStack controller node using the following commands:
 
-    <pre style="min-width:800px;">
+    <pre style="min-width:900px;">
     KERNEL_ID=`glance image-create --name="demo_image-kernel" --public --disk-format=aki &lt; base.vmlinuz | awk '/ id / { print $4 }'
     
     INITRD_ID=`glance image-create --name="demo_image-ramdisk" --public --disk-format=ari &lt; base.initrd | awk '/ id / { print $4 }'
@@ -172,13 +171,13 @@ Now that you have created your image, you can add it to Glance and manage it wit
 
 2. Use the `glance image-create` command to add the image to the Glance repository:
    
-    <pre style="min-width:800px;">
+    <pre style="min-width:900px;">
 	glance image-create --name="demo_image" --disk-format=qcow2 --property kernel_id=${KERNEL_ID} --property ramdisk_id=${INITRD_ID} &lt; base.qcow2
 	</pre>
 
 3. Verify that your image was added:
 
-    `glance image-list`
+    <pre>glance image-list</pre>
 
 3. From the UI or command line, create a key-pair:
 
@@ -186,7 +185,7 @@ Now that you have created your image, you can add it to Glance and manage it wit
 
 4. Create a VM using `demo_image` and `demokey`:
 
-    <pre>nova boot --image demo_image flavor m1.medium -key_name demokey.pem demo_vm1</pre>
+    <pre style="min-width:700px;">nova boot --image demo_image flavor m1.medium -key_name demokey.pem demo_vm1</pre>
 
 5. Once the VM is booted and gets an IP assigned, SSH to it using the key as follows:
 
@@ -272,13 +271,15 @@ To create a RHEL image for a specific workload, you first need to create the mon
 
 5. Using an editor, such as vi, add the following lines to the 10-mongodb file:
  
-    <pre>#!/bin/bash
+    <pre style="min-width:900px;">
+    #!/bin/bash
     set -eux
     echo "[mongodb]" &gt; /etc/yum.repos.d/mongodb.repo
     echo "name=mongodb_repo" &gt;&gt; /etc/yum.repos.d/mongodb.repo
     echo "baseurl=http://downloads-distro.mongodb.org/repo/redhat/os/x86_64/" &gt;&gt; /etc/yum.repos.d/mongodb.repo
     echo "enabled=1" &gt;&gt; /etc/yum.repos.d/mongodb.repo
-    echo "gpgcheck=0" &gt;&gt; /etc/yum.repos.d/mongodb.repo</pre>
+    echo "gpgcheck=0" &gt;&gt; /etc/yum.repos.d/mongodb.repo
+	</pre>
 
 6. While still in ~/elements/mongodb, create another directory named **install.d**, which will contain the installation hooks:
 
