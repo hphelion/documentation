@@ -151,11 +151,8 @@ To create a disk image using the Disk Image Builder tool, follow the steps below
 
    - **RHEL image with boot from hard disk drive support**
    
-        To create a basic RHEL image capable of booting from hard disk drive support with associated kernel and ramdisk, use the following command:
-        
-        <pre>disk-image-create -o base -a amd64 base rhel baremetal localboot serial-console</pre>
-       
-        This creates a disk image file named base.qcow2
+   Hello.
+   
 
 #### Using your disk image with OpenStack {#image-builder-openstack}
 
@@ -171,7 +168,7 @@ Now that you have created your image, you can add it to Glance and manage it wit
 
 2. Use the `glance image-create` command to add the image to the Glance repository:
    
-    <pre style="min-width:925px;">
+    <pre style="min-width:1000px;">
 	glance image-create --name="demo_image" --disk-format=qcow2 --property kernel_id=${KERNEL_ID} --property ramdisk_id=${INITRD_ID} &lt; base.qcow2
 	</pre>
 
