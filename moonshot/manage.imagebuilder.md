@@ -33,9 +33,13 @@ HP Cloud OS for Moonshot supports both Linux and Windows images.  This document 
 ## Section One - Creating Linux Images {#section-one}
 
 * [Supported operating systems](#image-builder-os)
+
 * [About Disk Image Builder](#disk-image-builder)
+
 * [Creating a disk image](#disk-image-create)
+
 * [Using your disk image with OpenStack](#image-builder-openstack)
+
 * [Creating an image for a specific workload](#image-specific-workload)
 
 
@@ -44,6 +48,7 @@ HP Cloud OS for Moonshot supports both Linux and Windows images.  This document 
 The following operating systems are supported for image building:
 
 * Red Hat Enterprise Linux version 6.4 and above
+
 * Ubuntu version 12.04 LTS and above
 
 
@@ -61,8 +66,11 @@ Disk Image Builder creates images of format QCOW2, by default. This image format
 Before you attempt to build an image, make sure you have:
 
 * 4 GB physical RAM.
+
 * Enough space in /tmp to hold two uncompressed cloud images. One uncompressed image is up to 800 MB in size.
+
 * (Optional) Proxy settings for Internet connectivity.
+
 * qemu-utils and git-core package, VLAN, busybox, open-iscsi, python-lxml, python-libvirt, libvirt, qemu-system installed on the server.
 
 
@@ -88,17 +96,19 @@ To create a disk image using the Disk Image Builder tool, follow the steps below
 
 5.	Apply necessary patches needed for boot from hard disk drive support
 
-	<pre>cd /root/tripleo-image-elements
-
+    <pre style="min-width:800px;">
+    cd /root/tripleo-image-elements
+     
 	git fetch https://review.openstack.org/openstack/tripleo-image-elements refs/changes/89/79289/12 && git cherry-pick FETCH_HEAD
-
+     
 	cd /root/diskimage-builder
-
+      
 	git fetch https://review.openstack.org/openstack/diskimage-builder refs/changes/73/79873/6 && git cherry-pick FETCH_HEAD
-
+     
 	git fetch https://review.openstack.org/openstack/diskimage-builder refs/changes/73/84973/1 && git cherry-pick FETCH_HEAD
-
-	cd /root</pre>
+    
+	cd /root
+    </pre>
 
 6.	Set ELEMENTS_PATH for DIB so that it can use elements from tripleo-image-elements.
 
@@ -143,9 +153,10 @@ To create a disk image using the Disk Image Builder tool, follow the steps below
 	
         To create a basic RHEL image capable of booting from hard disk drive support with associated kernel and ramdisk, use the following command:
     
-        `disk-image-create -o base -a amd64 base rhel baremetal localboot serial-console`
+        <pre>disk-image-create -o base -a amd64 base rhel baremetal localboot serial-console</pre>
 
         This creates a disk image file named base.qcow2
+
 
 #### Using your disk image with OpenStack {#image-builder-openstack}
 
@@ -153,12 +164,17 @@ Now that you have created your image, you can add it to Glance and manage it wit
 
 1. Copy the image file base.qcow2, and associated kernel and ramdisk images, to the OpenStack controller node using the following commands:
 
-    <pre>KERNEL_ID=`glance image-create --name="demo_image-kernel" --public --disk-format=aki &lt; base.vmlinuz | awk '/ id / { print $4 }'
-    INITRD_ID=`glance image-create --name="demo_image-ramdisk" --public --disk-format=ari &lt; base.initrd | awk '/ id / { print $4 }'</pre>
+    <pre style="min-width:800px;">
+    KERNEL_ID=`glance image-create --name="demo_image-kernel" --public --disk-format=aki &lt; base.vmlinuz | awk '/ id / { print $4 }'
+    
+    INITRD_ID=`glance image-create --name="demo_image-ramdisk" --public --disk-format=ari &lt; base.initrd | awk '/ id / { print $4 }'
+	</pre>
 
 2. Use the `glance image-create` command to add the image to the Glance repository:
    
-    <pre>glance image-create --name="demo_image" --disk-format=qcow2 --property kernel_id=${KERNEL_ID} --property ramdisk_id=${INITRD_ID} &lt; base.qcow2</pre>
+    <pre style="min-width:800px;">
+	glance image-create --name="demo_image" --disk-format=qcow2 --property kernel_id=${KERNEL_ID} --property ramdisk_id=${INITRD_ID} &lt; base.qcow2
+	</pre>
 
 3. Verify that your image was added:
 
@@ -201,11 +217,11 @@ To create an Ubuntu image for a specific workload, you first need to create the 
 
 2. Change to this newly created directory:
 
-    `cd ~/elements/nginx`
+    <pre>cd ~/elements/nginx</pre>
 
 3. From here, create another directory named **install.d**, which will contain the installation hooks:
 
-    `mkdir install.d`
+    <pre>mkdir install.d</pre>
 
 4. In install.d, create a file named **15-nginx** and change its execute permissions:
 
@@ -243,11 +259,11 @@ To create a RHEL image for a specific workload, you first need to create the mon
 
 2. Change to this newly created directory:
 
-    `cd ~/elements/mongodb`
+    <pre>cd ~/elements/mongodb</pre>
 
 3. From here, create another directory named **pre-install.d**, which will contain the pre-installation hooks to setup yum repositories:
 
-    `mkdir pre-install.d`
+    <pre>mkdir pre-install.d</pre>
 
 4. In pre-install.d, create a file named **10-mongodb** and change its execute permissions:
 
@@ -266,7 +282,7 @@ To create a RHEL image for a specific workload, you first need to create the mon
 
 6. While still in ~/elements/mongodb, create another directory named **install.d**, which will contain the installation hooks:
 
-    `mkdir install.d`
+    <pre>mkdir install.d</pre>
 
 7. In install.d, create a file named **10-mongodb** and change its execute permissions:
 
@@ -281,7 +297,7 @@ To create a RHEL image for a specific workload, you first need to create the mon
 
 9. While still in ~/elements/mongodb, create another directory named **finalise.d**, which will contain the finalise hooks:
  
-    `mkdir finalise.d`
+    <pre>mkdir finalise.d</pre>
 
 10. In finalise.d, create a file named **10-mongodb** and change its execute permissions:
 
