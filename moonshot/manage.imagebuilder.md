@@ -138,7 +138,7 @@ To create a disk image using the Disk Image Builder tool, follow the steps below
 
         <pre>disk-image-create &ndash;o &lt;image_prefix> &ndash;a amd64 &ndash;u base rhel baremetal</pre>
 
-        <p>This creates three files: &lt;image_prefix>.qcow2, &lt;image_prefix>.vmlinux, and &lt;image_prefix>.kernel</p>
+        This creates three files: &lt;image_prefix>.qcow2, &lt;image_prefix>.vmlinux, and &lt;image_prefix>.kernel.
 
 	- **Ubuntu Image with boot from hard disk drive support**
 	
@@ -146,12 +146,12 @@ To create a disk image using the Disk Image Builder tool, follow the steps below
     
         `disk-image-create -o base -a amd64 base ubuntu baremetal localboot serial-console`
 
-        This creates a disk image file named base.qcow2
+        This creates a disk image file named base.qcow2.
  
 
    - **RHEL image with boot from hard disk drive support**
    
-   Hello.
+       To create a basic RHEL image capable of booting from hard disk drive support with associated kernel and ramdisk, use the following command:
    
 
 #### Using your disk image with OpenStack {#image-builder-openstack}
@@ -541,11 +541,11 @@ This bundle is specifically designed for the ProLiant m700 server cartridge and 
 
 	Use the following command to inject the chipset drivers to the VHD image:
 
-	<pre>C:\WinImage> dism /image:G:\ /Add-Driver /driver:drivers\chipset /ForceUnsigned /recurse</pre>
+	<pre style="min-width:800px;">C:\WinImage> dism /image:G:\ /Add-Driver /driver:drivers\chipset /ForceUnsigned /recurse</pre>
 
 	The Ethernet drivers are different for different Windows version. We are using Windows Server 2012 here.  The drivers are available at drivers\ethernet\ws2012. Use the following command to inject Ethernet drivers:
 
-	<pre>C:\WinImage> dism /image:G:\ /Add-Driver /driver:drivers\ethernet\ws2012 /ForceUnsigned /recurse</pre>
+	<pre style="min-width:800px;">C:\WinImage> dism /image:G:\ /Add-Driver /driver:drivers\ethernet\ws2012 /ForceUnsigned /recurse</pre>
 
 	If you want to inject additional drivers, use the above command again.
 
