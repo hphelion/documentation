@@ -3,7 +3,6 @@ layout: default
 title: "HP Cloud OS for Moonshot for Moonshot Patch Notes"
 permalink: /cloudos/moonshot/prepare/patchnotes/
 product: moonshot
-
 ---
 
 
@@ -17,6 +16,8 @@ PageRefresh();
 
 </script>
 
+<!-- As of 4/18/2014, the team decided to not ship a 1.01.0000 patch. Instead we'll ship a full release, probably 1.10. 
+This topic is not linked from a visible page but material from it probably will be moved to the Release Notes. --> 
 
 <p style="font-size: small;"> <a href="/cloudos/moonshot/prepare/">&#9664; PREV | <a href="/cloudos/moonshot/prepare/">&#9650; UP</a> | <a href="/cloudos/moonshot/prepare/releasenotes/">NEXT &#9654;</a> </p>
 

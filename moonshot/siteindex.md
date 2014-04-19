@@ -34,7 +34,6 @@ PageRefresh();
 * [Support Matrix](/cloudos/moonshot/prepare/supportmatrix/) 
 * [Video Tutorials](/cloudos/moonshot/prepare/videos/) 
 * [FAQs](/cloudos/moonshot/prepare/faqs/)  
-<!-- * [Technical Overview](/cloudos/moonshot/prepare/overview/)  --> 
 * [Glossary](/cloudos/moonshot/prepare/glossary/)
 * [How to order and license HP Cloud OS for Moonshot](/cloudos/moonshot/prepare/order-license/)
 

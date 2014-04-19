@@ -3,7 +3,6 @@ layout: default
 title: "HP Cloud OS for Moonshot for Moonshot Release Notes"
 permalink: /cloudos/moonshot/prepare/releasenotes/
 product: moonshot
-
 ---
 
 
@@ -17,8 +16,14 @@ PageRefresh();
 
 </script>
 
+<!-- Binamra and Vandana: As you update this document for the next release, be sure to change the release number to 1.10 or whatever it becomes. 
+The Release Notes is one of the few topics where we include the release number. 
+In other topics, try to avoid specifying the release number unless absolutely necessary. --> 
 
-<p style="font-size: small;"> <a href="/cloudos/moonshot/prepare/patchnotes/">&#9664; PREV | <a href="/cloudos/moonshot/prepare/">&#9650; UP</a> | <a href="/cloudos/moonshot/prepare/supportmatrix/">NEXT &#9654;</a> </p>
+<!-- Remember to also change the topic's title in moonshot/siteindex.md. -->
+
+
+<p style="font-size: small;"> <a href="/cloudos/moonshot/prepare/">&#9664; PREV | <a href="/cloudos/moonshot/prepare/">&#9650; UP</a> | <a href="/cloudos/moonshot/prepare/supportmatrix/">NEXT &#9654;</a> </p>
 
 # HP Cloud OS for Moonshot 1.0 Release Notes
 
