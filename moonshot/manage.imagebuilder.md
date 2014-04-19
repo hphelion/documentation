@@ -152,9 +152,9 @@ To create a disk image using the Disk Image Builder tool, follow the steps below
    
        To create a basic RHEL image capable of booting from hard disk drive support with associated kernel and ramdisk, use the following command:
 	   
-	   `hello world`
+	   `disk-image-create -o base -a amd64 base rhel baremetal localboot serial-console`
 	   
-	   This is great.
+	   This creates a disk image file named base.qcow2.
    
 
 #### Using your disk image with OpenStack {#image-builder-openstack}
@@ -499,7 +499,7 @@ This bundle is specifically designed for the ProLiant m700 server cartridge and 
 
        * Create a VHD Disk image where the OS image is laid out:
 
-	    <pre>C:\WinImage> diskpart
+	    <pre style="min-width:700px;">C:\WinImage> diskpart
        DISKPART> create vdisk file="C:\WinImage\WinImageDisk.vhd" maximum=15360</pre> 
 
        For the purpose of explanation, the size of VHD disk Image is taken as 15GB.
