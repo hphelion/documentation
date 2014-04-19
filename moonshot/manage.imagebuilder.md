@@ -147,11 +147,14 @@ To create a disk image using the Disk Image Builder tool, follow the steps below
         `disk-image-create -o base -a amd64 base ubuntu baremetal localboot serial-console`
 
         This creates a disk image file named base.qcow2.
- 
 
-   - **RHEL image with boot from hard disk drive support**
+	- **RHEL image with boot from hard disk drive support**
    
        To create a basic RHEL image capable of booting from hard disk drive support with associated kernel and ramdisk, use the following command:
+	   
+	   `hello world`
+	   
+	   This is great.
    
 
 #### Using your disk image with OpenStack {#image-builder-openstack}
@@ -533,7 +536,7 @@ This bundle is specifically designed for the ProLiant m700 server cartridge and 
 
 	Execute the following command to extract files from `install.wim` on the newly created NTFS file system:
 
-    <pre>C:\WinImage> dism /apply-image /imagefile:install.wim /index:4 /ApplyDir:G:\</pre>
+    <pre style="min-width:700px;">C:\WinImage> dism /apply-image /imagefile:install.wim /index:4 /ApplyDir:G:\</pre>
 
 7.	**Update the extracted files on G:\ with drivers**
 
@@ -541,11 +544,11 @@ This bundle is specifically designed for the ProLiant m700 server cartridge and 
 
 	Use the following command to inject the chipset drivers to the VHD image:
 
-	<pre style="min-width:800px;">C:\WinImage> dism /image:G:\ /Add-Driver /driver:drivers\chipset /ForceUnsigned /recurse</pre>
+	<pre style="min-width:700px;">C:\WinImage> dism /image:G:\ /Add-Driver /driver:drivers\chipset /ForceUnsigned /recurse</pre>
 
 	The Ethernet drivers are different for different Windows version. We are using Windows Server 2012 here.  The drivers are available at drivers\ethernet\ws2012. Use the following command to inject Ethernet drivers:
 
-	<pre style="min-width:800px;">C:\WinImage> dism /image:G:\ /Add-Driver /driver:drivers\ethernet\ws2012 /ForceUnsigned /recurse</pre>
+	<pre style="min-width:700px;">C:\WinImage> dism /image:G:\ /Add-Driver /driver:drivers\ethernet\ws2012 /ForceUnsigned /recurse</pre>
 
 	If you want to inject additional drivers, use the above command again.
 
