@@ -637,8 +637,6 @@ If you need further assistance, you can contact support in any of these ways:
 * [Live chat from hpcloud.com](https://account.hpcloud.com/cases#support_chat)
 * [Open a support case](https://account.hpcloud.com/cases)
 * [Email support@hpcloud.com](mailto:support@hpcloud.com)
-<<<<<<< HEAD
 * Call at 1-855-61CLOUD (1-855-612-5683) in the U.S. or +1-678-745-9010 internationally.
-=======
-* Call at 1-855-61CLOUD (1-855-612-5683) in the U.S. or +1-678-745-9010 internationally.
->>>>>>> 457e221a6d46a60db176716d91541b9e842f0572
+
+
