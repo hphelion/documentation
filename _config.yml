@@ -17,9 +17,7 @@ navigation:
     url: /cli/
   - text: FAQ
     url: /faq/
-  - text: Documentation Site Map
-    url: /sitemap/
-- text: Site Overview
+  - text: Site Overview
     url: /site-overview/
   mc:
   - text: Overview
