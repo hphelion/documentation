@@ -21,7 +21,7 @@ PageRefresh();
 
 # HP Cloud OS for Moonshot: Support Matrix
 
-This document is an overview of the supported hardware and software for the HP Cloud OS for Moonshot Version 1.0, including information for setting up your hardware and software. For the performance and stability of your HP Cloud OS for Moonshot environment, you must meet the minimum recommendations.
+This document is an overview of the supported hardware and software for the HP Cloud OS for Moonshot Version 1.10, including information for setting up your hardware and software. For the performance and stability of your HP Cloud OS for Moonshot environment, you must meet the minimum recommendations.
 
 In the following sections, we list the recommendations for memory, processors and disk space for each component when you are creating an HP Cloud OS for Moonshot environment. 
 
@@ -95,7 +95,7 @@ We recommend your Proliant server contains the following:
 <td> 4  <br /> (24 for Bulk provisioning)</td>
 <td> 32 GB
 </td>
-<td> 60 GB <br />(80 GM for bulk provisioning)</td>
+<td> 60 GB <br />(80 GB for bulk provisioning)</td>
 <td> 3 </td>
 <td> Ubuntu Server 12.04 LTS (64-bit) </td>
 <td>VMWare ESXi 5.1 and above <br /> KVM qemu-kvm-1.0 and above</td>
@@ -130,29 +130,40 @@ Where <b>X</b> is the average image size in gigabytes, and <b>N</b> is the expec
 <th>Version</th>
 </tr>
 <tr style="background-color: white; color: black;">
+<td>m700 BIOS</td>
+<td>A34 2013.11.13 </td>
+</tr>
+<tr style="background-color: white; color: black;">
 <td>m300 BIOS</td>
-<td>H02 2013.11.13 and above</td>
+<td>H02 2013.11.13</td>
 </tr>		  
 <tr style="background-color: white; color: black;">
 <td>ProLiant Moonshot Cartridge BIOS</td>
-<td>H01 2013.11.15 and above</td>
+<td>H01 2013.11.15</td>
 </tr>
 <tr style="background-color: white; color: black;">
 <td>iLO CM</td>
-<td>1.11 and above</td></tr>
+<td>1.11 </td></tr>
 <tr style="background-color: white; color: black;">
 <td>Satellite FW</td>
-<td>2013.10.18 and above</td>
+<td>2013.10.18</td>
 </tr>
 <tr style="background-color: white; color: black;">
 <td>Carbondale 8</td>
-<td>4.3 and above</td>
+<td>4.3</td>
 </tr>
 <tr style="background-color: white; color: black;">
 <td>Switch FastPath FW</td>
-<td>2.0.0.13 and above</td>
+<td>2.0.0.13 </td>
 </tr>
-
+<tr style="background-color: white; color: black;">
+<td>CMU</td>
+<td>7.2</td>
+</tr>
+<tr style="background-color: white; color: black;">
+<td>Moonshot Windows Deployment Packs</td>
+<td>2013.12.1</td>
+</tr>
 
 </table>
 
@@ -199,7 +210,7 @@ Refer to the [HP Cloud OS for Moonshot Installation Guide](/cloudos/moonshot/ins
 <table style="text-align: left; vertical-align: top; min-width: 600px;">
 
 <tr style="background-color: #C8C8C8;">
-<th> HP Cloud OS 1.0 Platforms </th>
+<th> HP Cloud OS 1.10 Platforms </th>
 <th> Supported Versions </th>
 </tr>
 
