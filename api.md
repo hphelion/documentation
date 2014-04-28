@@ -36,7 +36,6 @@ There are a number of HP Cloud APIs available for your programming pleasure:
 * [DNS](/api/dns/): API for the HP Cloud Domain Name Service (DNS); enables display and management of DNS records.
 * [Identity](/api/identity/): API for the HP Cloud Identity service v12.12; one-stop authentication for all HP Cloud services.
 * [Object Storage](/api/object-storage/): API for HP Cloud Object Storage service; a way to store and retrieve objects in a highly redundant cluster of publicly accessible physical machines hosted in HP data centers.
-* [Relational Database](/api/dbaas/): API for the HP Cloud Relational Database service; simplifies the creation and management of MySQL database instances.
 
 ##APIs in public beta {#pubbeta}
 
