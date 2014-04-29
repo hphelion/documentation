@@ -20,7 +20,7 @@ PageRefresh();
 
 # Manage Running Topologies #
 
-Topology is the visual representation of networking resources. Once the Infrastructure Topology and Infrastructure Design are created, the topology is ready to be launched.
+Topology is an infrastructure blue print defining compute, network and storage requirement.. Once the Infrastructure Topology and Infrastructure Design are created, the topology is ready to be launched.
 The following tasks can be performed using Running Topologies option in the left panel:
 
 Topology is the visual representation of networking resources. Once the Infrastructure Topology and Infrastructure Design are created, the topology is ready to be launched.

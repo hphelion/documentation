@@ -21,7 +21,7 @@ PageRefresh();
 
 #Manage Images#
 
-Images are stored at the Domain level with a single Glance service and are unaffected by region selection. Only Public images are visible to all users. To *create images, refer to the Cloud Image Builder document for more details*.
+Images are stored at the Domain level with a single Glance service and are unaffected by region selection. Only Public images are visible to all users. To *build images, refer to the [Building Images](/cloudos/moonshot/manage/image-builder/) document for more details*.
 
 You can perform the following tasks:
 

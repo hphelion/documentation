@@ -63,7 +63,7 @@ The following details are displayed for each of the services:
 
 * **Status**: Whether enabled. 
 
-* **Actions**: If a service supports Rest APIs, option to open Rest API displays under Actions column.
+* **Actions**: If a service supports REST APIs, option to open REST API displays under Actions column.
 
 
 ##View Domain Details <a name= "View Domain Details"></a> 

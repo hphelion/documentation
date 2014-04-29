@@ -23,7 +23,7 @@ If you're new to HP Cloud OS for Moonshot, see these topics and the video tutori
 The Release Notes is one of the few topics where we include the release number. 
 In other topics, try to avoid specifying the release number unless absolutely necessary. --> 
 
-* [Release Notes 1.0](/cloudos/moonshot/prepare/releasenotes/) - describes new features and recommendations in the HP Cloud OS for Moonshot 1.0 release.
+* [Release Notes 1.10](/cloudos/moonshot/prepare/releasenotes/) - describes new features and recommendations in the HP Cloud OS for Moonshot 1.0 release.
 
 * [Support Matrix](/cloudos/moonshot/prepare/supportmatrix/) - provides an overview of the HP Cloud OS for Moonshot supported hardware and software.
 

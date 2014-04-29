@@ -20,13 +20,13 @@ PageRefresh();
 
 # Manage Topology Designs #
 
-Use the Topology Designs area of the HP Cloud OS for Moonshot Administration Dashboard to manage service designs, which are the recipes for automating the cloud. A topology design is used for straightforward IaaS deployments, and allows you to design in a free-form layout where connection relationships implicitly define the service fulfillment lifecycle. The provider for Topology Designs is HP Cloud OS for Moonshot. Available components are determined by the version of OpenStack you select within HP Cloud OS for Moonshot, e.g., Diablo, Grizzly. As part of creating a design, you add nodes and set properties in the Editor Tab. Use the Validation Tab at any time to view details about design errors. After creating the design, you can optionally create one or more Profiles based on the design which allows you to override some of the original configuration properties. Profiles create an association to a design document and allow you to set different values such as flavors, machine images and keypairs.
+Use the Topology Designs area of the HP Cloud OS for Moonshot Administration Dashboard to manage service designs, which are the recipes for automating the cloud. A topology design is used for straightforward IaaS deployments, and allows you to design in a free-form layout where connection relationships implicitly define the service fulfillment lifecycle. The provider for Topology Designs is HP Cloud OS for Moonshot. Available components are determined by the version of OpenStack you select within HP Cloud OS for Moonshot, for example: Grizzly. As part of creating a design, you add nodes and set properties in the Editor Tab. Use the Validation Tab at any time to view details about design errors. After creating the design, you can optionally create one or more Profiles based on the design which allows you to override some of the original configuration properties. Profiles create an association to a design document and allow you to set different values such as flavors, machine images and keypairs.
 
 **Note**: 
 
 * Topology Designs can be created by all users but should ideally be created by a Cloud Architect. 
 
-* If the topology design is created by a Project Admin or a Project User, it is suggested that the scope should not be selected as Public, Cloud as the user will be unable save and publish the design.
+* If the topology design is created by a Project Admin or a Project User, it is suggested that the scope should not be selected as Public, Cloud as the user will be unable to save and publish the design.
 
 * Project User cannot edit any topology created by Cloud Architect.
 
@@ -89,11 +89,7 @@ The design is displayed in View only mode and displays the following details.
 
 * Name - The name of the design.
 
-* Last Modified - Date, time, and user who last modified the design.
-
 * Cloud Profile - Represents the supported OpenStack version and capabilities of the cloud to which you are deploying.
-
-* Resource Pool - Indicates the name of the Resource Pool associated with the design
 
 * Validation Status -Indicates the validation status of the Document, Nodes, Relations, and Profiles.
 

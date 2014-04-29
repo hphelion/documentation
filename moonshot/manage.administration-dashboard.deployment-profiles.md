@@ -36,7 +36,7 @@ The tab displays with options in the left panel.</br>
 2.	From the **Current Project** drop-down list in the left panel, select the project.
 
 3.	From the options in the left panel, click **Provisioning** and then select **Deployment Profiles** to open the Deployment Profiles page.<br>
-It displays deployment name, version, based on, scope, and associated project.</br>
+It displays design name, name of the profile, version of the profile, scope, and associated project.</br>
 
 4.	 (Optional) To view the details of a deployment profile, click the Deployment Name to open a window    that offers the following tabs:
  
@@ -54,8 +54,8 @@ The tab displays with options in the left panel.</br>
 
 2.	From the **Current Project** drop-down list in the left panel, select the project.
 
-3.	From the options in the left panel, click **Provisioning** and then select **Deployment Profiles** to open the Deployment Profiles page.<br>
-It displays deployment name, version, based on, scope, and associated project.<br>
+3.	From the options in the left panel, click **Provisioning** and then select **Profiles** name to open the Deployment Profiles page.<br>
+It displays design name, name of the profile, version of the profile, scope, and associated project.<br>
 
 4.	Select the deployment that you want to launch and click **Launch** to open the Launch dialog box.<br>
      

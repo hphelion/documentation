@@ -25,19 +25,18 @@ In other topics, try to avoid specifying the release number unless absolutely ne
 
 <p style="font-size: small;"> <a href="/cloudos/moonshot/prepare/">&#9664; PREV | <a href="/cloudos/moonshot/prepare/">&#9650; UP</a> | <a href="/cloudos/moonshot/prepare/supportmatrix/">NEXT &#9654;</a> </p>
 
-# HP Cloud OS for Moonshot 1.0 Release Notes
+# HP Cloud OS for Moonshot 1.10 Release Notes
 
-This topic contains the following information about the HP Cloud OS for Moonshot 1.0 release:
+This topic contains the following information about the HP Cloud OS for Moonshot 1.01 release:
 
-* [Features in HP Cloud OS for Moonshot 1.0](#features)
+* [Features in HP Cloud OS for Moonshot 1.10](#features)
 
-* [Recommendations for HP Cloud OS for Moonshot 1.0](#recommendations)
+* [Recommendations for HP Cloud OS for Moonshot 1.10](#recommendations)
 
 * [For further information](#for-further-information)
 
-**Important!**  Also see the [Patch Notes](/cloudos/moonshot/prepare/patchnotes/) document, which provide updates to the information in this Release Notes document. The Patch Notes describe the HP Cloud OS for Moonshot 1.01.0000 patch release's features and fixes to prior issues. After installing HP Cloud OS for Moonshot 1.0, you can apply the 1.01.0000 patch to your cloud environment.
 
-##Features in HP Cloud OS for Moonshot 1.0## {#features}
+##Features in HP Cloud OS for Moonshot 1.10## {#features}
 
 **Optimized for Workloads** &mdash; HP Cloud OS for Moonshot is optimized to deliver and manage workloads on your HP Moonshot environment. It provides simple workload modeling with repeatable, consistent workload placement. This functionality allows you to optimally align workloads with your Moonshot resources for optimal resource utilization.
 
@@ -54,18 +53,18 @@ This topic contains the following information about the HP Cloud OS for Moonshot
 **Workload Management** &mdash; Enables you to deploy a composite service comprising of different applications and workloads in a user friendly manner. You can browse through HP's catalog of pre-tested and pre-crafted workloads download and publish them to the cloud,then launch them to get a running application infrastructure. You can do this without having to worry about the underlying technical details.
 
 
-##Recommendations for HP Cloud OS for Moonshot 1.0## {#recommendations}
+##Recommendations for HP Cloud OS for Moonshot 1.10## {#recommendations}
 
 This section describes the HP recommendations for best performance, utility, and functionality with this software version. 
 We have also provided information about some limitations and known issues for reference purposes. This section contains:
 
 * [Recommendations for best functionality, performance and reliability](#best-practices) 
 
-* [Known issues in 1.0 release](#known-issues) 
+* [Known issues in 1.10 release](#known-issues) 
 
 ###Recommendations ### {#best-practices} 
 
-HP recommends the following best practices for HP Cloud OS for Moonshot 1.0.
+HP recommends the following best practices for HP Cloud OS for Moonshot 1.10.
 
 **Workloads**
 	
@@ -81,9 +80,9 @@ HP recommends the following best practices for HP Cloud OS for Moonshot 1.0.
 
 * To enable maximum reliability in the Cloud environment, do not select the controller nodes when performing <b>Create Compute Region</b> action for a Moonshot/Standard server. 
 
-###Known issues in 1.0 release### {#known-issues}
+###Known issues in 1.10 release### {#known-issues}
 
-The following are the known issues for HP Cloud OS for Moonshot 1.0.
+The following are the known issues for HP Cloud OS for Moonshot 1.10.
 
 ####Installation####
 
@@ -116,7 +115,6 @@ The following are the known issues for HP Cloud OS for Moonshot 1.0.
 
 ####General####
 
-* Although the <b>Edit Network</b> option appears enabled in the Networks page of the Administration Dashboard, you can ignore it. There is no impact on the networking functionality when you retain the default settings. 
 
 * The <b>Edit Extra Specs</b> option appears enabled for Flavors. To ensure smooth functioning of the instance, retain the default settings. 
 
