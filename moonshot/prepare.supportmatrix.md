@@ -38,7 +38,7 @@ In the following sections, we list the recommendations for memory, processors an
 
 ## Server infrastructure for HP Cloud OS for Moonshot {#server}
 
-We recommend your Proliant server contains the following:
+We recommend the following components in your Proliant server:
 
 * Quad Core Processor
 * Hard disk drive with a minimum of 500 GB of space
@@ -92,21 +92,21 @@ We recommend your Proliant server contains the following:
 <tr style="background-color: white; color: black;">
 <td>Controller Node</td>
 <td>Yes</td>
-<td> 4  <br /> (24 for Bulk provisioning)</td>
+<td> 32  </td>
 <td> 32 GB
 </td>
-<td> 60 GB <br />(80 GB for bulk provisioning)</td>
+<td> 80 GB <sup>*</sup> </td>
 <td> 3 </td>
 <td> Ubuntu Server 12.04 LTS (64-bit) </td>
 <td>VMWare ESXi 5.1 and above <br /> KVM qemu-kvm-1.0 and above</td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td>Baremetal Host <b>**</b></td>
+<td>Baremetal Host</td>
 <td>Yes</td>
-<td> 4 <br />(16 for bulk provisioning)</td>
+<td> 32 <br</td>
 <td> 32 GB </td>
-<td> 60 GB <br />(150 GB for bulk provisioning) </td>
+<td> 160 <br>GB <sup>**</sup> </td>
 <td> 3 </td>
 <td> Ubuntu Server 12.04 LTS (64-bit) </td>
 <td>VMWare ESXi 5.1 and above <br /> KVM qemu-kvm-1.0 and above</td>
@@ -116,11 +116,13 @@ We recommend your Proliant server contains the following:
 
 
 
-**Important:** The Baremetal host's internal storage space depends on the number of nodes planned to be provisioned and the size of the images being used to provision. To calculate your internal storage needs, use the following equation:
+**Important:** <br> * The disk must be resized depending on the anticipated image repository size. For example: If you import 100 different images then the Baremetal Host Hard Disk Drive (HDD) size must be greater than 100 + image size + 40GB.
 
-    Baremetal internal storage = X * N + N * 110MB + 100GB
+** The disk size depends on the number of nodes planned to be provisioned and the size of the images used to provision. To calculate your internal storage needs, use the following equation:
 
-Where <b>X</b> is the average image size in gigabytes, and <b>N</b> is the expected number of additional nodes.
+   `Hard Disk Drive = X * N + N * 110MB + 40GB`
+
+Where, <br> <b>X</b> is the average image size in gigabytes <br> <b>N</b> is the expected number of additional nodes
 
 ## Moonshot chassis firmware {#firmware}
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
