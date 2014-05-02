@@ -16,7 +16,7 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage">&#9650; UP</a> | NEXT &#9654;</p>
+<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/administration-dashboard/manage-access-and-security/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage/administration-dashboard/working-with-project-tab/">&#9650; UP</a> | <a href= "/cloudos/moonshot/manage/administration-dashboard/before-you-begin/">NEXT &#9654;</p></a>
 
 # Manage Updates and Extensions #
 
@@ -94,7 +94,7 @@ The tab displays with options in the left panel.
 
    * **Size**: of the update.
 
-   * **Provider**: which organization created and is responsible for the update.
+   * **Provider**: the organization that created and is responsible for the update.
 
    * **Type**: the kind of image that downloads.
 
@@ -106,7 +106,7 @@ The tab displays with options in the left panel.
 
 ## Import an Update ##
 
-You can import a workload from your local folder or from HP Cloud OS Enterprise portal.  Once the import process is successful, the document displays in the Updates and Extensions page.  
+You can import a workload from your local folder or from CODN remote portal.  Once the import process is successful, the document displays in the Updates and Extensions page.  
 
 ### Import content from local Folder ###
 

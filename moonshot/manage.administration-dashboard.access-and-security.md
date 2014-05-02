@@ -16,7 +16,7 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage">&#9650; UP</a> | NEXT &#9654;</p>
+<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/administration-dashboard/project-networks/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage/administration-dashboard/working-with-project-tab/">&#9650; UP</a> | <a href=" /cloudos/moonshot/manage/administration-dashboard/manage-updates-extensions/">NEXT &#9654;</p></a>
 
 # Manage Access and Security#
 Use this option to manage and view the following access and security elements:
@@ -75,7 +75,7 @@ A window is displayed with three tabs- **Keypairs**, **API Access** and **Authen
 
 4.	In the **Keypair Name** box, enter the name of the keypair.
 
-5.	Click **Create Keypair**.<br> The credentials are downloaded onto your machine. Depending your browser, the download is either automatic or a dialog box prompts you to download the keypair.</br>
+5.	Click **Create Keypair**.<br> The credentials are downloaded onto your machine. Depending on your browser, the download is either automatic or a dialog box prompts you to download the keypair.</br>
 
     OR
 

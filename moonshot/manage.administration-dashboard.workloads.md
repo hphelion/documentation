@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Cloud OS for Moonshot: Administration Dashboard"
-permalink: /cloudos/moonshot/manage/administration-dashboard/working-with-project-tab/
+permalink: /cloudos/moonshot/manage/administration-dashboard/workloads/
 product: moonshot
 
 ---
@@ -16,7 +16,7 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage">&#9650; UP</a> | NEXT &#9654;</p>
+<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/administration-dashboard/working-with-project-tab/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage/administration-dashboard/working-with-project-tab/">&#9650; UP</a> | <a href= "/cloudos/moonshot/manage/administration-dashboard/running-topologies/"> NEXT &#9654;</p></a>
 
 # Workloads
 
@@ -74,7 +74,7 @@ HP Cloud OS for Moonshot provides the functionality to import the CSU file and c
 The following sections illustrate the content using a sample Apache workload which allows you to deploy single Apache server on a Moonshot cartridge. 
  	
 
-&#9654;**Elements of Workload**
+&#9654;**Elements of a Workload**
 
 A workload typically comprises of images, topology, manifest file etc. Every workload must have the following set of components as described in the table below:
 
@@ -96,7 +96,7 @@ Infrastructure Documents</td><td>Topology</td><td>Defines the blue print of the 
 <tr style="background-color: white; color: black;">
 <td>Application Software specification</td><td>Deployment Profile Guide</td><td>Defines the software aspect of the workload. It primarily contains infrastructure hints in cloud agnostic format so that appropriate cloud resources can be discovered and can be referred in deployment profiles, which are used to deploy (often termed as launch) a given workload.</td></tr>
 <tr style="background-color: white; color: black;">
-<td>Images </td><td>OS image</td> <td>Specifies OS image used in server provisioning. A workload can have number of OS images depending upon the server design mentioned in the topology.</td></tr>
+<td>Images </td><td>OS image</td> <td>Specifies OS image used in server provisioning. A workload can have number of OS images depending upon the server design mentioned in the topology.<br> To create images, refer to the HP Cloud OS for Moonshot: Building Images document for more details</br/></td></tr>
 <tr style="background-color: white; color: black;">
 <td></td><td> Kernel image</td><td>Every Baremetal OS image is associated with a kernel image which is used during PXE boot process.</td></tr>
 
@@ -187,7 +187,7 @@ This process involves uploading content to HP Cloud OS Enterprise portal and ini
 
 &#9654;**Perform Cloud Prerequisites**
 
-Cloud Administrator has to ensure the following prerequisites before provisioning any workload.
+The Cloud Administrator has to perform or verify the following prerequisites before provisioning any workload.
  
 1. Boot option based on node persistent boot configuration
 
@@ -198,13 +198,13 @@ Cloud Administrator has to ensure the following prerequisites before provisionin
 
 ***Boot Option Based on Node Persistent Boot Configuration***
 
-You can select the boot method for a provisioned node based on the node persistent boot configuration. By default, all the nodes in the chassis are set to persistent PXE boot. Therefore the provisioned instances will also boot from PXE. When there is a downtime in the Baremetal host, the instances first try to PXE boot but fails and falls back to HDD (Hard Disk Drive) and boot successfully from HDD.
+You can select the boot method for a provisioned node based on the node persistent boot configuration. By default, all the nodes in the chassis are set to persistent PXE boot. Therefore, the provisioned instances will also boot from PXE. When there is a downtime in the Baremetal host, the instances first try to PXE boot but fail and fall back to HDD (Hard Disk Drive) and boot successfully from HDD.
 
 If the node is set to boot persistently from HDD, all subsequent boots after provisioning will be from HDD. When there is a downtime in Baremetal host, the instances continue to boot successfully from HDD.
 
 To build OS Images, refer steps 3 - 7 defined in Section One – Creating Linux Images [Building Images](/cloudos/moonshot/manage/image-builder/).
 
-You need to run the following commands at the iLO console to set a node persistently boot from PXE or HDD.
+You need to run the following commands at the iLO console to set a node to  boot from PXE or HDDpersistently.
 
  * To set a node to boot from PXE persistently:<br>
 `set node boot PXE C<x>N<y>` <br>
@@ -222,12 +222,12 @@ where x is the cartridge number and y is the node number. For example: C1N1.
 
  The Cloud Administrator must publish the Graffiti factory data before importing any workload into the Cloud. This can be done either by using CODN to import the Graffiti content from a local folder or by using the HP CODN portal. Refer to the section on Importing Workload to initialize cloud with Graffiti factory data.  One can validate if the content from CODN portal or local import is being downloaded or not. To validate the downloaded content, do the following:
 
-  1. On the Administration Dashboard, click Cloud Tab to select it.<br>
+  1. On the Administration Dashboard, click the **Cloud** Tab to select it.<br>
    Cloud tab is activated and the options are displayed in the left panel. By default, all the services are displayed in the right pane.
 
-  2. Click REST API displayed against Graffiti to display a Graffiti Service Details page.
+  2. Click REST API displayed next to Graffiti to display a Graffiti Service Details page.
 
-  3. Go to namespace section and click /1/namespace/list to expand it.
+  3. Go to the **namespace** section and click /1/namespace/list to expand it.
 
   4. Search for the `URN:X-HP:2014-1:CLOUDOS:TYPES:CAPABILITIES:MOONSHOT` in the list of Moonshot namespace.
  
@@ -238,7 +238,7 @@ where x is the cartridge number and y is the node number. For example: C1N1.
 
 **Automated Creation of OpenStack Nova Flavors**
 
-  Cloud discovers the cartridges and creates flavors automatically. There is a polling cycle of five minutes to check for new registered cartridges for flavor creation. To validate that the flavor associated to content has been automatically created, do the following:
+ HP Cloud OS for Moonshot discovers the cartridges and creates flavors automatically. There is a polling cycle of five minutes to check for new registered cartridges for flavor creation. To validate that the flavor associated to content has been automatically created, do the following:
 
    1. On the Administration Dashboard, click **Region** Tab to select it.<br>
 The Region tab is activated and the options are displayed in the left panel.</br>
@@ -252,7 +252,7 @@ The page displays with the list of flavors.</br>
 
 ## Populating Cloud with Workload {#download}
 
-Cloud Administrator can populate the Cloud with workload by either importing it using local folder (if the .csu file corresponding to workload is available) or by using remote CODN portal. 
+The Cloud Administrator can populate the Cloud with a workload by either importing it using local folder (if the .csu file corresponding to workload is available) or by using remote CODN portal. 
 
 **Note**: Cloud Administrator should have the necessary permissions to access the HP Cloud OS Enterprise portal.
 

@@ -16,7 +16,7 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage">&#9650; UP</a> | NEXT &#9654; </p>
+<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/administration-dashboard/region-networks/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage/administration-dashboard/working-with-region-tab/">&#9650; UP</a> | <a href= "/cloudos/moonshot/manage/administration-dashboard/before-you-begin/"> NEXT &#9654; </p></a>
 
 
 
@@ -89,7 +89,7 @@ Click **Cancel** to abort and go to the previous screen.
 
 ##Edit a Region Flavor##<a name= "Edit a Region Flavor"></a>
 
-You cannot edit a system generated flavor. 
+You cannot edit a system-generated flavor. 
 
 To edit a user created flavor:
 
@@ -110,7 +110,7 @@ Click **Cancel** to abort and go to the previous screen
 
 ##Delete a Region Flavor##<a name= "Delete a Region Flavor"></a>
 
-Use this option to delete a region flavor. You cannot delete a system generated flavor. A flavor cannot be deleted if it is in use.
+Use this option to delete a region flavor. You cannot delete a system-generated flavor. A flavor cannot be deleted if it is in use.
 
 To delete a flavor:
 
@@ -186,7 +186,7 @@ The Flavors page displays with a table of flavors.
 3.	Click **More** drop-down list against the flavor that you want to edit and click **View Extra Specs**.<br>
 The Extra Specs page is displayed with the different items.
 
-4.	Select check box  against the item which you want to edit.
+4.	Select check box  against the item that you want to edit.
 
 5.	Click **Edit** to display the Edit Flavor Extra Spec dialog box.
 

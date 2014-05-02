@@ -16,7 +16,7 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage">&#9650; UP</a> | NEXT &#9654;</p>
+<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/administration-dashboard/deployment-profiles/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage/administration-dashboard/working-with-project-tab/">&#9650; UP</a> | <a href="/cloudos/moonshot/manage/administration-dashboard/resource-pools/">NEXT &#9654;</p></a>
 
 # Manage Topology Designs #
 
@@ -111,7 +111,7 @@ The tab displays with options in the left panel.
 6.	In the **Description** box, enter the details about the design for example-size, operating system etc.
 
 7.	Click **Next**. 
-The General   appears selected and the Resource Pool & Scope option gets highlighted.
+The General checkbox appears selected and the Resource Pool & Scope option is highlighted.
 
 8.	From the **Cloud Profile** drop-down list, select *HP Cloud OS Grizzly Baremetal*.<br>It represents the supported OpenStack version and capabilities of the cloud to which you are deploying. Your selection here determines which node types are available during design layout in the Editor and which Resource Pools are available for selection.</br>
 

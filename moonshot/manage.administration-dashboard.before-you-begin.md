@@ -19,24 +19,23 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/administration-dashboard/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage/administration-dashboard/">&#9650; UP</a> | <a href="/cloudos/moonshot/manage/administration-dashboard/welcome/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/operational-dashboard/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage/">&#9650; UP</a> | <a href="/cloudos/moonshot/manage/administration-dashboard/welcome/">NEXT &#9654;</a> </p>
 
-# Before You Begin with the Administration Dashboard Help
 
-Before you begin with the HP Cloud OS for Moonshot Administration Dashboard Help, take a few minutes to understand how the help content is organized. 
-You can find information in this suggested order:
+# Before you Begin with Administration Dashboard Help #
 
-* Conceptual introduction and prerequisites. See [Welcome to the HP Cloud OS for Moonshot Administration Dashboard](/cloudos/moonshot/manage/administration-dashboard/welcome/). 
+Before you begin with the HP Cloud OS for Moonshot Administration Dashboard Help, take a few minutes to understand how the help content is organized. You can find information in this suggested order:
 
-* A Getting Started topic that provides instructions for how to begin using the dashboard. You can read about responsibilities for each user role, 
-and follow links to step-by-step instructions for performing tasks. See [Getting Started with the Administration Dashboard](/cloudos/moonshot/manage/administration-dashboard/getting-started/). 
+* Conceptual introduction and prerequisites. See Welcome to the HP Cloud OS for Moonshot Administration Dashboard.
 
-* Step-by-step instructions for working with deployment profiles and topology designs. See [Topology Designs](/cloudos/moonshot/manage/administration-dashboard/topology-designs/).
+* A Getting Started topic that provides instructions for how to begin using the dashboard. You can read about responsibilities for each user role, and follow links to step-by-step instructions for performing tasks. See [Getting Started with the Administration Dashboard](http://cloudos/moonshot/manage/admin-dashboard/getting-started/).
 
-* A topic that lists all tasks for each role. Use this section to learn which tasks each role can and should perform in the dashboard. 
-(This is a comprehensive list, unlike Getting Started.) See [Administration Dashboard Tasks by Role](/cloudos/moonshot/manage/administration-dashboard/tasks-by-role/).
+* A topic that lists all tasks for each role. Use this section to learn which tasks each role can and should perform in the dashboard. (This is a comprehensive list, unlike Getting Started.) See [Administration Dashboard User Roles and Tasks](/cloudos/moonshot/manage/admin-dashboard/user-roles-and-tasks/).
 
-* A topic that provides step-by-step instructions for tasks. This section's organization is based on the user interface tabs and windows. 
-See [Administration Dashboard Tasks by Tab](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/).
+* A topic that provides step-by-step instructions for Cloud Tab tasks. This section is organized based on the user interface tabs and windows. See [Working with Cloud Tab](/cloud/moonshot/manage/admin-dashboard/cloud-tab-tasks/). (Moonshot document topics).
 
-Also, for your convenience, troubleshooting tips are organized and presented in the [Troubleshooting](/cloudos/moonshot/manage/troubleshooting/) topic.
+* A topic that provides step-by-step instructions for Region Tab tasks. This section is organized based on the user interface tabs and windows. See [Working with Region Tab](/cloud/moonshot/manage/admin-dashboard/region-tab-tasks).
+
+* A topic that provides step-by-step instructions for Project Tab tasks. This section is organized based on the user interface tabs and windows. See [Working with Project Tab](/cloud/moonshot/manage/admin-dashboard/project-tab-tasks/).
+ 
+* A topic that provides step-by-step instructions for Settings Link. This section is organized based on the user interface tabs and windows. See [Working with Settings Link](/cloudos/moonshot/manage/admin-dashboard/settings-link/).

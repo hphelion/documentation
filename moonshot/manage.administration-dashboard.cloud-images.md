@@ -16,7 +16,7 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage">&#9650; UP</a> | NEXT &#9654; </p>
+<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/administration-dashboard/cloud-users/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage/administration-dashboard/working-with-cloud-tab/">&#9650; UP</a> | <a href="/cloudos/moonshot/manage/administration-dashboard/manage-moonshot-chasssis-tab/">NEXT &#9654; </p></a>
 
 
 #Manage Images#
@@ -75,7 +75,7 @@ To create AKI images, perform the following:</p>
   
   * Select **Image** location from the drop-down list. The Image Location box is displayed.
  
-  * In the **Image Location** box, enter the HTTP URL to load the AKI image from.<br>
+  * In the **Image Location** box, enter the HTTP URL from which to load the AKI image.<br>
    OR
  
   * Select **Image File** from the drop-down-list.
@@ -112,14 +112,14 @@ To create QCOW2, perform the following:
  
  * From the **Image Source** drop-down list, perform either of the following:
   
-  * Select Image location from the drop-down list. The Image Location box is displayed.
+  * Select Image Location from the drop-down list. The Image Location box is displayed.
   
-  * In the Image Location box, enter the HTTP URL to load the QCOW2 image from.<br>
+  * In the **Image Location** box, enter the HTTP URL from which to load the QCOW2 image.<br>
 OR<br>
   
   * Select Image File from the drop-down-list. The Choose File option is displayed.
  
-  * Click Choose File to browse the QCOW2 image.
+  * Click **Choose File** to browse the QCOW2 image.
   
   * Select the QCOW2 Image to upload.
 
@@ -137,12 +137,13 @@ OR<br>
 
 * From the **RAM Disk Image** drop-down list, select the corresponding RAM disk image.
 
-* Click **Create Image**. A message is displayed on successful creation. The image displays in the table in the Images page.<br>
+* Click **Create Image**. <br>A message is displayed on successful creation. The image displays in the table in the Images page.<br>
 OR <br>
 Click **Cancel** to abort and go to the previous screen.
 
-**Note**: Do not navigate from the page while the image is being created.
-It is suggested to use different names while creating images.
+**Note**:<br>
+  * Do not navigate from the page while the image is being created.<br>
+  * It is suggested to use different names while creating images.
 
 ##Edit a Cloud Image##<a name= "Edit a Cloud Image"></a>
 
