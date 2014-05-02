@@ -16,7 +16,7 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage">&#9650; UP</a> | NEXT &#9654; </p>
+<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/administration-dashboard/region-instances/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage/administration-dashboard/working-with-region-tab/">&#9650; UP</a> | <a href= "/cloudos/moonshot/manage/administration-dashboard/region-networks/"> NEXT &#9654; </p></a>
 
 
 #Manage Images#
@@ -73,7 +73,7 @@ QCOW2 or AMI.
  * Select **Image Location** from the drop-down list.<br>
 The Image Location box is displayed.
 
- * In the **Image Location** box, enter the HTTP URL to load the AKI image from.<br>
+ * In the **Image Location** box, enter the HTTP URL from which to load the AKI image.<br>
 OR<br>
 
  * Select **Image File** from the drop-down-list. <br>
@@ -102,7 +102,53 @@ This makes the image as read-only.
 OR<br>
 Click **Cancel** to abort and go to the previous screen.
 
-**To create QCOW2****:**
+
+**To create ARI images**:
+
+* Click **Create Image** to open a Create an Image dialog box.
+
+* In the **Name** box, enter a name for the image.
+
+* (Optional) In the **Description** box, enter description for the image.
+
+* From the **Format** drop-down list, select the format as *ARI*.
+
+* From the **Image Source** drop-down list, do either of the following:
+
+ * Select **Image Location** from the drop-down list.<br>
+The Image Location box is displayed.
+
+ * In the **Image Location** box, enter the HTTP URL from which to load the ARI image.<br>
+OR<br>
+
+ * Select **Image File** from the drop-down-list. <br>
+The Choose File option is displayed.
+
+ * Click **Choose File** to browse the ARI image.
+ 
+* Select the **ARI Image** to upload.
+
+* The **CPU Architecture** drop-down list displays *x86_64* by default.<br>
+The moonshot hardware supports the above specification.
+
+* In the **Minimum Disk** box, specify a minimum size required to boot image.<br>
+If no input is entered, the minimum value defaults to 0.
+
+* In the **Minimum Ram** box, specify a minimum size required to boot image.<br>
+If no input is entered, the minimum value defaults to 0.
+
+* Select check box  against **Public** to select it.<br>
+This will make the image visible to all users.
+
+* Select check box against **Protected** to select it.<br>
+This makes the image as read-only.
+
+* Click **Create Image**.<br> A message is displayed on successful creation. The image displays in the table in the Images page.<br>
+OR<br>
+Click **Cancel** to abort and go to the previous screen.
+
+
+**To create QCOW2 images****:**
 
 * Click **Create Imag**e to open a Create an Image dialog box.
 
@@ -114,7 +160,7 @@ Click **Cancel** to abort and go to the previous screen.
  * Select **Image Location** from the drop-down list.<br>
 The Image Location box is displayed.
  
- * In the **Image Location** box, enter the HTTP URL to load the QCOW2 image from.<br>
+ * In the **Image Location** box, enter the HTTP URL from which to load the QCOW2 image.<br>
 OR<br>
  
  * Select **Image File** from the drop-down-list.<br>

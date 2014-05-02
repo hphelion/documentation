@@ -16,7 +16,7 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage">&#9650; UP</a> | NEXT &#9654; </p>
+<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/administration-dashboard/working-with-region-tab/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage/administration-dashboard/working-with-region-tab/">&#9650; UP</a> | <a href="/cloudos/moonshot/manage/administration-dashboard/region-images/">NEXT &#9654; </p></a>
 
 
 
@@ -107,7 +107,7 @@ To terminate a single instance, click **More** against the instance to display a
 
 ##Force Delete an Instance##<a name= "Force Delete an Instance"></a>
 
-Use this option to delete an instance which is in an unresponsive state.
+Use this option to delete an instance that is in an unresponsive state.
 
 1.	Click the **Region** Tab to select it.
 

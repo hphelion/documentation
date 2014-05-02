@@ -16,7 +16,7 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage">&#9650; UP</a> | NEXT &#9654; </p>
+<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/administration-dashboard/working-with-cloud-tab/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage/administration-dashboard/working-with-cloud-tab/">&#9650; UP</a> | <a href="/cloudos/moonshot/manage/administration-dashboard/cloud-users/"> <NEXT &#9654; </p></a>
 
 #Manage Projects#
 
@@ -94,7 +94,7 @@ To create a project:
  
  * In the **RAM (MB)**, **Keypairs**, **CPU Cores**, **Instances**, **Metadata Items** boxes, default values are displayed. You can make the changes as required.
  
-1. Click **Create** **Project**. A message is displayed on successful project creation. The project is displayed with a system generated project ID.<br>
+1. Click **Create** **Project**. A message is displayed on successful project creation. The project is displayed with a system-generated project ID.<br>
 OR<br>
 Click **Cancel** to abort and go to the previous screen.
 
@@ -174,7 +174,7 @@ To add a user to the project from the Available Users column, click add to add t
 OR<br>
 Click **Cancel** to abort and go to the previous screen.
 
-##Delete a Cloud## <a name= "Delete a Cloud"></a>
+##Delete a Cloud Project## <a name= "Delete a Cloud"></a>
 
 To delete a project:
 
@@ -182,7 +182,7 @@ To delete a project:
 
 2.  From the options in the left panel, select **Projects** to display the Projects page with a list of projects.
 
-3. Click **More** drop-down list against the project which you want to delete. A confirmation dialog box is displayed.
+3. Click **More** drop-down list against the project that you want to delete. A confirmation dialog box is displayed.
 
 4. Select **Delete Project**.
 

@@ -16,7 +16,8 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage">&#9650; UP</a> | NEXT &#9654;</p>
+<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/administration-dashboard/getting-started/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage/administration-dashboard/before-you-begin/">&#9650; UP</a> | <a href="/cloudos/moonshot/manage/administration-dashboard/working-with-cloud-tab/">
+NEXT &#9654;</p></a>
 
 # User Roles and Their Tasks  #
 

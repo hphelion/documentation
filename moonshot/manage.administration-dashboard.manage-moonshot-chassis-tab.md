@@ -16,7 +16,8 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage">&#9650; UP</a> | NEXT &#9654; </p>
+<p style="font-size: small;"> <a href=/cloudos/moonshot/manage/administration-dashboard/cloud-images/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage/administration-dashboard/working-with-cloud-tab/">&#9650; UP</a> | <a href="/cloudos/moonshot/manage/administration-dashboard/before-you-begin/">
+NEXT &#9654; </p></a>
 
 
 #Manage Moonshot Chassis#
@@ -107,7 +108,7 @@ Once the operation is successful, the Moonshot Chassis is graphically represente
 You can only edit the password of the chassis.
 
 1. In the Datacenter View, select the chassis to edit.<br>
-The Edit option does not get activated until you select the chassis in the Grid or Table view.
+The Edit option is not activated until you select the chassis in the Grid or Table view.
 
 2. Click edit to display the Edit Chassis Details dialog box.
 
@@ -122,7 +123,7 @@ Click **Cancel** to abort and go to the previous screen.
 You can delete a chassis if it is in maintenance mode and no active instances are running on it. A chassis can also be deleted if the discovery fails when the chassis is being added for the first time.
 
 1. In the Datacenter View, select the chassis to delete.
-The Delete option does not get activated until you select the chassis in the Grid or Table view.
+The Delete option is not activated until you select the chassis in the Grid or Table view.
 
 1. Click delete to display a confirmation box.
 
@@ -142,7 +143,7 @@ The following table displays a list of icons and their description. These icons 
  * Click refresh to view the refreshed Chassis data.<br>
 The Force Refresh option takes a minute to complete. During this time you will be unable to perform any action on the cartridge or the nodes.
 
-**Note**: By default, the chassis data gets refreshed every 30 minutes.
+**Note**: By default, the chassis data is refreshed every 30 minutes.
 
 ###Table View####
 

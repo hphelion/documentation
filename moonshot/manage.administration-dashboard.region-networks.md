@@ -17,12 +17,12 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage">&#9650; UP</a> | NEXT &#9654; </p>
+<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/administration-dashboard/region-images/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage/administration-dashboard/working-with-region-tab/">&#9650; UP</a> | <a href= " /cloudos/moonshot/manage/administration-dashboard/region-flavors/"> NEXT &#9654; </p></a>
 
 
 
 
-#Manage Networks
+#View Networks
 
 Networks option displays the networks available in the region. You can view and edit networks. 
 
@@ -42,25 +42,3 @@ To view the list of available networks:
  * Make the required changes.
 
   * Click **Save Changes** to save the changes.
-
-
-##Edit a Network##
-
-Use this option to edit the name of your network. 
-
-To edit a network:
-
-1.	Click the **Region** Tab to select it.
-
-2.	From the options in the left panel, select **Networks** to display Networks page with a list of networks.
-
-3.	Click **Edit Network** against the network that you want to edit.
-Edit Network dialog box is displayed.
-
-4.	Make the required changes.
-
-5.	Click **Save Changes** to save the changes.<br>
-OR<br>
-Click **Cancel** to cancel the process.
-
-**Note**: You must be logged in as a Cloud Administrator to edit the network. Although the other options are editable, modifying any properties except the name of the network is not recommended.
