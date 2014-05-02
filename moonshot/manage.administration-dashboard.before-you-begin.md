@@ -35,7 +35,7 @@ Before you begin with the HP Cloud OS for Moonshot Administration Dashboard Help
 
 * A topic that provides step-by-step instructions for Cloud Tab tasks. This section is organized based on the user interface tabs and windows. See [Working with Cloud Tab](/cloudos/moonshot/manage/administration-dashboard/working-with-cloud-tab/). (Moonshot document topics).
 
-* A topic that provides step-by-step instructions for Region Tab tasks. This section is organized based on the user interface tabs and windows. See [Working with Region Tab](/cloudos/moonshot/manage/administration-dashboard/working-with-region-tab//).
+* A topic that provides step-by-step instructions for Region Tab tasks. This section is organized based on the user interface tabs and windows. See [Working with Region Tab](/cloudos/moonshot/manage/administration-dashboard/working-with-region-tab/).
 
 * A topic that provides step-by-step instructions for Project Tab tasks. This section is organized based on the user interface tabs and windows. See [Working with Project Tab](/cloudos/moonshot/manage/administration-dashboard/working-with-project-tab/).
  

@@ -36,13 +36,13 @@ You can perform the following task:
 
 * <a href="#Region Info">Region Info</a>
 
-* [Manage Region Instances](http://cloudos/moonshot/manage/administration-dashboard/region-instances/)
+* [Manage Region Instances](/cloudos/moonshot/manage/administration-dashboard/region-instances/)
 
-* [Manage Images](http://cloudos/moonshot/manage/administration-dashboard/region-images/) 
+* [Manage Images](/cloudos/moonshot/manage/administration-dashboard/region-images/) 
 
-* [Manage Networks](http://cloudos/moonshot/manage/administration-dashboard/region-networks/)
+* [Manage Networks](/cloudos/moonshot/manage/administration-dashboard/region-networks/)
 
-* [Manage Flavors](http://cloudos/moonshot/manage/administration-dashboard/region-flavors/)
+* [Manage Flavors](/cloudos/moonshot/manage/administration-dashboard/region-flavors/)
 
 ##Region Overview <a name= "Region Overview"></a>
 

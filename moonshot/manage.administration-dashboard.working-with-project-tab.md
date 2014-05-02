@@ -40,26 +40,26 @@ To view the details of a project, do the following:
 
 The Provisioning option in the left panel of the Project Tab helps you to perform the following tasks:
 
-* [Manage Workloads](http://cloudos/administration-dashboard/workloads/)
+* [Manage Workloads](/cloudos/administration-dashboard/workloads/)
 
-* [Manage Running Topologies](http://cloudos/administration-dashboard/running-topologies/)
+* [Manage Running Topologies](/cloudos/administration-dashboard/running-topologies/)
 
-* [Manage Deployment Profiles](http://cloudos/administration-dashboard/deployment-profiles/)
+* [Manage Deployment Profiles](/cloudos/administration-dashboard/deployment-profiles/)
 
-* [Manage Topology Design](http://cloudos/administration-dashboard/topology-designs/)
+* [Manage Topology Design](/cloudos/administration-dashboard/topology-designs/)
 
-* [Manage Resource Pools](http://cloudos/administration-dashboard/resource-pools/)
+* [Manage Resource Pools](/cloudos/administration-dashboard/resource-pools/)
 
 ## Manage Infrastructure ##
 
 Once the instance is created, the required infrastructure can be defined using this option.
 The following tasks can be performed using the option:
 
-* [Manage Project Instances](http://cloudos/administration-dashboard/project-instances/)
+* [Manage Project Instances](/cloudos/administration-dashboard/project-instances/)
 
-* [Manage Project Images](http://cloudos/administration-dashboard/project-images/)
+* [Manage Project Images](/cloudos/administration-dashboard/project-images/)
 
-* [Manage Networks](http://cloudos/administration-dashboard/project-networks/)
+* [Manage Networks](/cloudos/administration-dashboard/project-networks/)
 
 ## [Manage Access and Security](http://cloudos/administration-dashboard/access-and-security/)
  

@@ -34,13 +34,13 @@ You can perform the following task:
 
 *  <a href="#View Domain Details">View Domain Details</a>
 
-*  [Manage Projects](http://cloudos/moonshot/manage/administration-dashboard/cloud-projects/)
+*  [Manage Projects](/cloudos/moonshot/manage/administration-dashboard/cloud-projects/)
 
-*  [Manage Users](http://cloudos/moonshot/manage/administration-dashboard/cloud-users)
+*  [Manage Users](/cloudos/moonshot/manage/administration-dashboard/cloud-users/)
 
-*  [Manage Roles](http://cloudos/moonshot/manage/administration-dashboard/cloud-roles)
+*  [Manage Roles](/cloudos/moonshot/manage/administration-dashboard/cloud-roles/)
 
-*  [Manage Images](http://cloudos/moonshot/manage/administration-dashboard/cloud-images)
+*  [Manage Images](/cloudos/moonshot/manage/administration-dashboard/cloud-images/)
 
 
 ## View Cloud Services <a name= "View Cloud Services"></a>
