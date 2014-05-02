@@ -16,7 +16,7 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/administration-dashboard/before-you-begin/">&#9664; PREV</a> | <a href=""/cloudos/moonshot/manage/administration-dashboard/before-you-begin/">&#9650; UP</a> | <a href= "/cloudos/moonshot/manage/administration-dashboard/workloads/">NEXT &#9654;</p></a>
+<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/administration-dashboard/before-you-begin/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage/administration-dashboard/before-you-begin/">&#9650; UP</a> | <a href= "/cloudos/moonshot/manage/administration-dashboard/workloads/">NEXT &#9654;</p></a>
 
 # Working with Project Tab #
 
@@ -61,9 +61,9 @@ The following tasks can be performed using the option:
 
 * [Manage Networks](/cloudos/administration-dashboard/project-networks/)
 
-## [Manage Access and Security](http://cloudos/administration-dashboard/access-and-security/)
+## Manage Access and Security
  
-The following tasks can be performed using Access and Security option in the left panel:
+The following tasks can be performed using [access and security](/cloudos/administration-dashboard/access-and-security/) option in the left panel:
 
 * View Keypair List
 
@@ -78,9 +78,9 @@ The following tasks can be performed using Access and Security option in the lef
 * Access Authentication Token
 
 
-## [Manage Updates and Extensions](http://cloudos/administration-dashboard/updates-extensions/)
+## Manage Updates and Extensions
 
-The updates and extensions feature allows you to connect to, list, and retrieve hot fixes and updates from the HP Cloud OS Delivery Network and apply them to your Cloud environment. These hot fixes and updates are referred to as content packages. After a package is imported and installed, you can view product and package details. 
+The [updates and extensions](/cloudos/administration-dashboard/updates-extensions/) feature allows you to connect to, list, and retrieve hot fixes and updates from the HP Cloud OS Delivery Network and apply them to your Cloud environment. These hot fixes and updates are referred to as content packages. After a package is imported and installed, you can view product and package details. 
 
 The Update and Extensions page will be blank for the first time user. You need to configure your credentials for HP Cloud OS Delivery Network to view the updates.
 
