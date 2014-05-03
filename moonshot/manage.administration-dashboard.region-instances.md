@@ -68,7 +68,7 @@ An Edit Instance dialog box is displayed. You can only edit the name of the inst
 OR <br>
 Click **Cancel** to abort and go to the previous screen.
 
-##Soft Reboot an Instance##<a name= "Soft Reboot an Instance"></a>
+##Soft Reboot an Instance<a name= "Soft Reboot an Instance"></a>
 
 Soft reboot can be used to stop the instance and reboot it. This function is similar to the Restart option in Microsoft Windows.
 

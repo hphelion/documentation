@@ -17,7 +17,7 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/administration-dashboard/region-images/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage/administration-dashboard/working-with-region-tab/">&#9650; UP</a> | <a href= " /cloudos/moonshot/manage/administration-dashboard/region-flavors/"> NEXT &#9654; </p></a>
+<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/administration-dashboard/region-images/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage/administration-dashboard/working-with-region-tab/">&#9650; UP</a> | <a href= "/cloudos/moonshot/manage/administration-dashboard/region-flavors/"> NEXT &#9654; </p></a>
 
 
 

@@ -16,7 +16,7 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/administration-dashboard/workloads/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage/administration-dashboard/working-with-project-tab/">&#9650; UP</a> | <a href= /cloudos/moonshot/manage/administration-dashboard/deployment-profiles/">NEXT &#9654;</p></a>
+<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/administration-dashboard/workloads/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage/administration-dashboard/working-with-project-tab/">&#9650; UP</a> | <a href= "/cloudos/moonshot/manage/administration-dashboard/deployment-profiles/">NEXT &#9654;</p></a>
 
 # Manage Running Topologies #
 

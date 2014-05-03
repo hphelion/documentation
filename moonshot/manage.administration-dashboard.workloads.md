@@ -142,7 +142,7 @@ Content Publisher bundles the workload files as a .csu file and uploads it on a 
 
 **Phase 3: Download / Import to Cloud**
 
-Workload Management is primarily the task of Cloud Administrator. While the Cloud Administrator downloads/imports [Download/Import Workload](#download) the workload content and publishes it for user consumption, he also creates / edits and launches deployment profiles. Other roles can only manipulate the workload content that has been downloaded as per the project requirements.
+Workload Management is primarily the task of Cloud Administrator. While the Cloud Administrator downloads/imports (refer <a href="#Download">Download/Import</a>) the workload content and publishes it for user consumption, he also creates / edits and launches deployment profiles. Other roles can only manipulate the workload content that has been downloaded as per the project requirements.
 
 **Phase 4: Publish to Cloud**
 
@@ -203,7 +203,7 @@ You can select the boot method for a provisioned node based on the node persiste
 
 If the node is set to boot persistently from HDD, all subsequent boots after provisioning will be from HDD. When there is a downtime in Baremetal host, the instances continue to boot successfully from HDD.
 
-To build OS Images, refer steps 3 - 7 defined in Section One – Creating Linux Images [Building Images](/cloudos/moonshot/manage/image-builder/).
+To build OS Images, refer steps 3 - 7 defined in Section One - Creating Linux Images [Building Images](/cloudos/moonshot/manage/image-builder/).
 
 You need to run the following commands at the iLO console to set a node to  persistently boot from PXE or HDD.
 
@@ -251,7 +251,7 @@ The page displays with the list of flavors.</br>
 
  4.	Click **View Extra Specs** to view the extra specifications of the flavor.
 
-## Populating Cloud with Workload {#download}
+## Populating Cloud with Workload 
 
 The Cloud Administrator can populate the Cloud with a workload by either importing it using local folder (if the .csu file corresponding to workload is available) or by using remote CODN portal. 
 
@@ -304,7 +304,7 @@ The Project Tab is activated and the options are displayed in the left panel.</b
 5.	Click **OK** to save the details.
 The updates are displayed in the Updates and Extensions page. 
 
-**Download**
+**Download** <a name= "Download"></a> 
 
 To download the Workload content that has been imported, do the following:
 
