@@ -138,7 +138,8 @@ The Chassis Snapshot visually represents the chassis with all the cartridges alo
 
 The following table displays a list of icons and their description. These icons are displayed next to the Chassis Snapshot on the right. It also displays the complete state of the chassis in terms of the following: <br>
 
-<img src="media/cos4m-table.png/">
+<img src="media/cos4ms-table.png"/>
+
  
  * Click refresh to view the refreshed Chassis data.<br>
 The Force Refresh option takes a minute to complete. During this time you will be unable to perform any action on the cartridge or the nodes.
