@@ -64,14 +64,14 @@ Based on the cloud type selected, the options in the Compute Region field change
 
 	Scope refers to the permissions and privileges for the resource pool. The Scope displays different options:
 
-	* **Private, cloud** — Allows you the access while working in any project. This resource pool can only be viewed by the user who created it, from any project of which the user is a member, and also by some admin users.
+	* **Private, cloud** - Allows you the access while working in any project. This resource pool can only be viewed by the user who created it, from any project of which the user is a member, and also by some admin users.
 
 
-	* **Private, project** — Allows you access while working in this project. This resource pool can only be viewed in the project in which it was created by the user who created it and also by some admin users.
+	* **Private, project** - Allows you access while working in this project. This resource pool can only be viewed in the project in which it was created by the user who created it and also by some admin users.
 	
-	* **Public, cloud** — Allows access for all users. This resource pool can be viewed by anyone in the cloud, in any project.
+	* **Public, cloud** -  Allows access for all users. This resource pool can be viewed by anyone in the cloud, in any project.
 
-	* **Public, project** — Allows you and other project members access. This resource pool can be viewed by members of the project in the project in which it was created, and by some admin users.
+	* **Public, project** - Allows you and other project members access. This resource pool can be viewed by members of the project in the project in which it was created, and by some admin users.
 	
 	The Type, Version, Region ID, and Provider URL fields are prepopulated based on the Cloud Type and Compute Region that you selected.
 
@@ -144,3 +144,5 @@ Confirm Delete Resource dialog box is displayed.</br>
      OR
  
      Click **Cancel** to abort and go to the previous screen.
+
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

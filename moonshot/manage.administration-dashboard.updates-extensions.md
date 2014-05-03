@@ -102,7 +102,7 @@ The tab displays with options in the left panel.
 
    * **Actions**: tasks you can perform on the update.
 
-4.	(Optional) Click a Name to open an Overview page with details of the update name, version, targets where it is installed.
+4. (Optional) Click a Name to open an Overview page with details of the update name, version, targets where it is installed.
 
 ### Import an Update ###
 

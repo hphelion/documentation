@@ -116,7 +116,7 @@ We recommend the following components in your Proliant server:
 
 
 
-**Important:** <br> * The disk must be resized depending on the anticipated image repository size. For example: If you import 100 different images then the size of the Hard Disk Drive (HDD) of the  Baremetal Host must be greater than 100 + image size + 40GB.
+**Important:** <br> * The disk must be resized depending on the anticipated image repository size. For example: If you import 100 different images then the size of the Hard Disk Drive (HDD) of the Controller Node must be greater than 100 + image size + 40GB.
 
 ** The disk size depends on the number of nodes planned to be provisioned and the size of the images used to provision. To calculate your internal storage needs, use the following equation:
 

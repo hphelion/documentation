@@ -46,7 +46,7 @@ The Provisioning option in the left panel of the Project Tab helps you to perfor
 
 * [Manage Deployment Profiles](/cloudos/moonshot/manage/administration-dashboard/deployment-profiles/)
 
-* [Manage Topology Design](/cloudos/moonshot/mamage/administration-dashboard/topology-designs/)
+* [Manage Topology Design](/cloudos/moonshot/manage/administration-dashboard/topology-designs/)
 
 * [Manage Resource Pools](/cloudos/moonshot/manage/administration-dashboard/resource-pools/)
 

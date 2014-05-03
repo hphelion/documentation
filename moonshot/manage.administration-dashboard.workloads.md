@@ -127,7 +127,7 @@ The following figure illustrates the lifecycle of workload entities and the work
 
 Each lifecycle phase depicted above, and the various tasks that its respective owner / cloud personality plays, is briefly explained in the following sections. 
 
-**Note**: The next section “Managing Workload Lifecycle using Administrator Dashboard” illustrates Workload workflow in detail.
+**Note**: The next section "Managing Workload Lifecycle using Administrator Dashboard" illustrates Workload workflow in detail.
 
 **Phase 1: Create Content**
 
@@ -216,7 +216,7 @@ You need to run the following commands at the iLO console to set a node to  pers
 where x is the cartridge number and y is the node number. For example: C1N1.
 
 
-**Note:** For Windows provisioning, the instances always boot from HDD irrespective of the boot option set for the node instance. To create Windows disk images, refer to Section Two – Creating Windows Images from [Building Images](/cloudos/moonshot/manage/image-builder/).
+**Note:** For Windows provisioning, the instances always boot from HDD irrespective of the boot option set for the node instance. To create Windows disk images, refer to Section Two -  Creating Windows Images from [Building Images](/cloudos/moonshot/manage/image-builder/).
 	
 
 ***Graffiti Factory Data***
@@ -351,7 +351,7 @@ It displays the following four options:</br>
 <td>Public, Cloud</td><td>This document can be viewed by anyone in the cloud in any project.</td></table>
 
 
-4. Click **Publish** to start the installation process.<br>
+4. lick **Publish** to start the installation process.<br>
 A success message is displayed. Once the installation completes, the workload will display in the Workloads page.</br>
 
 5.	(Optional) Click **View Progress** to view the installation progress.

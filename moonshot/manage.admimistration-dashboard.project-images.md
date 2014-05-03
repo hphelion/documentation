@@ -38,7 +38,7 @@ An instance is launched based on an image. The following tasks can be performed 
 
 * <a href="#Launch an Image">Launch an Image</a>
 
-*To create images, refer to the Cloud Image Builder document for more details.*
+*To build images, refer to the Cloud Image Builder document for more details.*
 
 ## View Image List <a name="View Image List"></a>
 

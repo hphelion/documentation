@@ -84,14 +84,14 @@ To view the design details, do the following:
 3.	From the options in the left panel, click **Provisioning** and then select **Topology Designs** to display list of existing designs and their status in the Browse Designs page.
 
 4.	Select a design from the list of Deployment Templates.<br>The design details are displayed in the right panel of the Overview Tab along with the graphical representation of the design.</br>
+<p>
+The design is displayed in View only mode and displays the following details.</p>
 
-The design is displayed in View only mode and displays the following details.
+   * Name - The name of the design.
 
-* Name - The name of the design.
+   * Cloud Profile - Represents the supported OpenStack version and capabilities of the cloud to which you are deploying.
 
-* Cloud Profile - Represents the supported OpenStack version and capabilities of the cloud to which you are deploying.
-
-* Validation Status -Indicates the validation status of the Document, Nodes, Relations, and Profiles.
+   * Validation Status -Indicates the validation status of the Document, Nodes, Relations, and Profiles.
 
 * Structure Overview - Shows the number of nodes and connections.
 
@@ -585,7 +585,7 @@ The Validation page displays with following details.
  
  * type of component
 
-6.	 Click error to go to the source of the issue and correct it.
+6. Click error to go to the source of the issue and correct it.
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

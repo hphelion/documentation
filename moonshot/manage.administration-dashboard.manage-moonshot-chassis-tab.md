@@ -16,7 +16,7 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> <a href=/cloudos/moonshot/manage/administration-dashboard/cloud-images/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage/administration-dashboard/working-with-cloud-tab/">&#9650; UP</a> | <a href="/cloudos/moonshot/manage/administration-dashboard/before-you-begin/">
+<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/administration-dashboard/cloud-images/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage/administration-dashboard/working-with-cloud-tab/">&#9650; UP</a> | <a href="/cloudos/moonshot/manage/administration-dashboard/before-you-begin/">
 NEXT &#9654; </p></a>
 
 
@@ -99,7 +99,7 @@ For example: *hostname.cloudos.local*
 7.	Click **Add** to add the Moonshot Chassis to the Cloud.<br>
 The chassis can be in any of the following states:<br> 
 
-<img src= "media/cos4m-state-of-chassis.png">
+<img src= "media/cos4ms-state-of-chassis.png">
  
 Once the operation is successful, the Moonshot Chassis is graphically represented on the screen.
 
@@ -310,7 +310,7 @@ OR<br>
  * Click magnifier.<br>
 The search results are displayed in the table.
 
-4.	(Optional) Click eraser to clear the search criteria.
+4. (Optional) Click eraser to clear the search criteria.
 
 **Note**: 
 

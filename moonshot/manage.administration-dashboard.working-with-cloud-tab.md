@@ -42,6 +42,9 @@ You can perform the following task:
 
 *  [Manage Images](/cloudos/moonshot/manage/administration-dashboard/cloud-images/)
 
+* [Manage Moonshot Chassis](/cloudos/moonshot/manage/administration-dashboard/manage-moonshot-chasssis-tab/)
+ 
+
 
 ## View Cloud Services <a name= "View Cloud Services"></a>
 
