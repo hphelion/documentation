@@ -148,7 +148,7 @@ OR<br>
 Click **Cancel** to abort and go to the previous screen.
 
 
-**To create QCOW2 images****:**
+**To create QCOW2 images :**
 
 * Click **Create Imag**e to open a Create an Image dialog box.
 
@@ -196,7 +196,7 @@ Click **Cancel** to abort and go to the previous screen.
 
 **Note**: Do not navigate from the page while the image is being created.
 
-##Edit a Region Image##<a name= "Edit a Region Image"></a>
+##Edit a Region Image<a name= "Edit a Region Image"></a>
 
 To edit an image:
 
@@ -223,14 +223,15 @@ The images are deleted and removed from the image list.
 
 To launch an image in the Administration Dashboard:
 
-1. Click the **Region** Tab to select it.
 
-1. From the options in the left panel, select **Images** to display the Images page.
+1.  Click the **Region** Tab to select it.
 
-1. Select **Launch** against the image listed in the table.<br>
+2.  From the options in the left panel, select **Images** to display the Images page.
+
+3.  Select **Launch** against the image listed in the table.<br>
 A Launch Instance dialog box displays with four tabs: **Details** Tab, **Access & Security** Tab, **Networking** Tab, and **Post-Creation** Tab. By default, Details is the active tab.
 
-1. On the **Details** Tab, perform the following:
+4. On the **Details** Tab, perform the following:
  
  * From the **Instance Source** drop-down list, select the image.
  
