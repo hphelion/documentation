@@ -40,7 +40,7 @@ You can perform the following task:
 
 * [Manage Images](/cloudos/moonshot/manage/administration-dashboard/region-images/) 
 
-* [Manage Networks](/cloudos/moonshot/manage/administration-dashboard/region-networks/)
+* [Manage Networks](/cloudos/moonshot/manage/administration-dashboard/region-images/)
 
 * [Manage Flavors](/cloudos/moonshot/manage/administration-dashboard/region-flavors/)
 

@@ -93,7 +93,7 @@ The role of the Cloud Architect involves working with creating topology designs 
 
 * [Manage Deployment Profiles](/cloudos/moonshot/manage/administration-dashboard/deployment-profiles/)
 
-* [Manage Resource Pools](/cloudos/moonshot/manage/administration-dashboard/resource-pool/)
+* [Manage Resource Pools](/cloudos/moonshot/manage/administration-dashboard/resource-pools/)
 
 * [Manage Instances](/cloudos/moonshot/manage/administration-dashboard/project-instances/)
 
@@ -123,7 +123,7 @@ Project Administrators maintain projects and performs the following tasks:
 
 * [Manage Images](/cloudos/moonshot/manage/administration-dashboard/project-images/)
 
-* [Manage Networks](/cloudos/moonshot/manage/administration-dashboard/project-networks/)
+* [Manage Network](/cloudos/moonshot/manage/administration-dashboard/project-networks/)
 
 * [Working with Access and Security](/cloudos/moonshot/manage/administration-dashboard/manage-access-and-security/)
 
@@ -150,7 +150,7 @@ Project Users perform the following tasks:
 
 * [View Project Images](/cloudos/moonshot/manage/administration-dashboard/project-images/)
 
-* [Manage Networks](/cloudos/moonshot/manage/administration-dashboard/project-networks/)
+* [Manage Network](/cloudos/moonshot/manage/administration-dashboard/project-networks/)
 
 * [Using Deployed Workloads](/cloudos/moonshot/manage/administration-dashboard/workloads/)
 

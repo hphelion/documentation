@@ -61,9 +61,10 @@ The following tasks can be performed using the option:
 
 * [Manage Networks](/cloudos/moonshot/manage/administration-dashboard/project-networks/)
 
+
 ## Manage Access and Security
  
-The following tasks can be performed using [access and security](/cloudos/moonshot/manage/administration-dashboard/access-and-security/) option in the left panel:
+The following tasks can be performed using [access and security](/cloudos/moonshot/manage/administration-dashboard/manage-access-and-security/) option in the left panel:
 
 * View Keypair List
 
@@ -80,7 +81,7 @@ The following tasks can be performed using [access and security](/cloudos/moonsh
 
 ## Manage Updates and Extensions
 
-The [updates and extensions](/cloudos/moonshot/manage/administration-dashboard/updates-extensions/) feature allows you to connect to, list, and retrieve hot fixes and updates from the HP Cloud OS Delivery Network and apply them to your Cloud environment. These hot fixes and updates are referred to as content packages. After a package is imported and installed, you can view product and package details. 
+The [updates and extensions](/cloudos/moonshot/manage/administration-dashboard/manage-updates-extensions/) feature allows you to connect to, list, and retrieve hot fixes and updates from the HP Cloud OS Delivery Network and apply them to your Cloud environment. These hot fixes and updates are referred to as content packages. After a package is imported and installed, you can view product and package details. 
 
 The Update and Extensions page will be blank for the first time user. You need to configure your credentials for HP Cloud OS Delivery Network to view the updates.
 
