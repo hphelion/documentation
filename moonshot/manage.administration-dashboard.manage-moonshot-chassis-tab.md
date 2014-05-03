@@ -97,10 +97,11 @@ The name should have a minimum of 4 characters. The name should start with an al
 For example: *hostname.cloudos.local*
 
 7.	Click **Add** to add the Moonshot Chassis to the Cloud.<br>
-The chassis can be in any of the following states:<br> 
+The chassis can be in any of the following states: 
 
-<img src= "media/cos4ms-state-of-chassis.png">
- 
+<img src= "media/cos4ms-state-of-chassis.png"/>
+
+
 Once the operation is successful, the Moonshot Chassis is graphically represented on the screen.
 
 ###Edit Chassis###
@@ -138,7 +139,7 @@ The Chassis Snapshot visually represents the chassis with all the cartridges alo
 
 The following table displays a list of icons and their description. These icons are displayed next to the Chassis Snapshot on the right. It also displays the complete state of the chassis in terms of the following: <br>
 
-<img src= "media/cos4m-table.png">
+<img src= "media/cos4m-table.png/">
  
  * Click refresh to view the refreshed Chassis data.<br>
 The Force Refresh option takes a minute to complete. During this time you will be unable to perform any action on the cartridge or the nodes.
