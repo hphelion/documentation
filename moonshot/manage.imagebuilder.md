@@ -191,7 +191,7 @@ Now that you have created your image, you can add it to Glance and manage it wit
 
     <pre>ssh -i demokey.pem &lt;IP_of_demo_vm1></pre>
 
-<p>You can now access and manage your VM image from the HP Cloud OS for Moonshot Administration Dashboard. For detailed instructions, see the <b>Manage Images</b> topic of the <a href="http://docs.hpcloud.com/cloudos/moonshot/pdf/HP-Cloud-OS-for-Moonshot-Administration-Dashboard-Help.pdf" target="_blank">Administration Dashboard help (PDF)</a>.</p>
+<p>You can now access and manage your VM image from the HP Cloud OS for Moonshot Administration Dashboard. For detailed instructions, see the [Manage Images](/cloudos/moonshot/manage/administration-dashboard/tasks-by-role/).</p>
 
 
 ### Creating an image for a specific workload {#image-specific-workload}

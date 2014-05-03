@@ -36,7 +36,7 @@ You can perform the following task:
 
 *  [Manage Projects](/cloudos/moonshot/manage/administration-dashboard/cloud-projects/)
 
-* [Manage Users](permalink: /cloudos/moonshot/manage/administration-dashboard/cloud-users/)
+* [Manage Users](/cloudos/moonshot/manage/administration-dashboard/cloud-users/)
 
 * [Manage Roles](/cloudos/moonshot/manage/administration-dashboard/cloud-roles/)
 
