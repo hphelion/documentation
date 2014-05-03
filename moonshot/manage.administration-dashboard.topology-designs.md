@@ -46,7 +46,7 @@ The Topology Designer allows you to perform different tasks using the following:
 
 * <a href="#Validations Tab">Validation</a>
 
-## Browse Designs ##<a name="Browse Designs Page"></a>
+## Browse Designs <a name="Browse Designs Page"></a>
 
 The Browse Designs page displays the list of existing topology designs and their status. You can perform the following tasks in the Browse Designs page: 
 
@@ -160,7 +160,7 @@ The General checkbox appears selected and the Resource Pool & Scope option is hi
    Click **Cancel** to abort and go to the previous screen.
 
 
-## Overview Tab in Topology Designer ##<a name= "Overview Tab"></a>
+## Overview Tab in Topology Designer <a name= "Overview Tab"></a>
 
 The Overview Tab opens with the selected design details at the top and a graphical representation of the topology design at the bottom of the page.
 
@@ -257,7 +257,7 @@ Rules regarding saving, validation, and publishing:
 
 Publishing status can be viewed in Browse Designs and can be changed in the Overview or the Editor Tabs.
 
-### To publish a design: ###
+#### To publish a design: ####
 
 1.	Click the **Project** Tab to select it.<br>
 The tab displays with options in the left panel.
@@ -311,7 +311,7 @@ The design must be valid and you must specify a Resource Pool before exporting.
 
 6.	Click **Save** to save the design.
 
-##  Editor ##<a name="Editor Tab"></a>
+##  Editor <a name="Editor Tab"></a>
 
 The Editor Tab within Topology Designs helps you to create and edit a design in a free-form component layout.
 
@@ -420,7 +420,7 @@ Once the design is created and saved, you can modify the properties of the compo
 
 3.	Click **Yes** to confirm.<br>The item is removed from the layout.</br>
 
-## Profiles ## <a name="Profiles Tab"></a>
+## Profiles  <a name="Profiles Tab"></a>
 
 When a topology design is created, the properties set for the nodes become the 
 default configuration for the design. This configuration displays as the Default Profile in the Provisioning > Deployment Profiles option. Profiles provide a way to override the default configuration by allowing you to set different values for node properties such as flavors, machine images, or keypairs. They create an association to a binding document. Profiles are optional and are not required in order to publish a design.
@@ -517,7 +517,7 @@ A confirmation dialog box displays.
 8.	Click Yes.
 The profile is deleted.
 
-## Revisions ##<a name="Revisions Tab"></a>
+## Revisions <a name="Revisions Tab"></a>
 The system tracks design revisions sequentially in the **Revisions** Tab. Every time a design is edited and saved, the revisions list is updated. You can revert to an earlier version of the design, if required.
 
 To revert to a previous design version, do the following:
@@ -543,7 +543,7 @@ A list of design revisions are displayed with the Revision number and Date & Tim
 9.	Click **Yes** to confirm.
 A new version is created (a copy of the selected version) with updated details.
 
-## Validation ##<a name="Validations Tab"></a>
+## Validation <a name="Validations Tab"></a>
 
 Validation is a continuing process during design creation, configuration and editing. Topology Designs provide a validation log to view all design detail issues in one place.  While creating design in Editor Tab and Profiles in Profiles Tab, an error count is displayed in case of errors. The validation process checks that a Profile contains all the required configuration properties, for example the image is selected etc.
 

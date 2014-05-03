@@ -70,38 +70,38 @@ After the cloud is created, the Cloud Administrators can focus on day-to-day clo
 
 * [Region Tab Tasks](/cloudos/moonshot/manage/administration-dashboard/working-with-region-tab/)
 
-* [Manage Updates and Extensions](/cloudos/moonshot/manage/administration-dashboard/updates-extensions/)
+* [Manage Updates and Extensions](/cloudos/moonshot/manage/administration-dashboard/manage-updates-extensions/)
 
-* [Manage Workloads](/cloudos/administration-dashboard/workloads/)
+* [Manage Workloads](/cloudos/moonshot/manage/administration-dashboard/workloads/)
 
-* [Manage Resource Pools](/cloudos/administration-dashboard/resource-pool/)
+* [Manage Resource Pools](/cloudos/moonshot/manage/administration-dashboard/resource-pools/)
 
-* [Working with Access and Security](/cloudos/administration-dashboard/access-and-security/)
+* [Working with Access and Security](/cloudos/moonshot/manage/administration-dashboard/manage-access-and-security/)
 
-* [Administration Dashboard Settings](/cloudos/administration-dashboard/settings-tab/)
+* [Administration Dashboard Settings](/cloudos/moonshot/manage/administration-dashboard/setting-tab/)
 
 
 ## Cloud Architect Tasks ##
 
 The role of the Cloud Architect involves working with creating topology designs and deployment profiles. Once the cloud and projects are created by the Cloud Administrator, Cloud Architects can focus on day-to-day cloud architect tasks. Cloud architects are mostly concerned with creating topology designs and deployment profiles. They have the privileges to perform the following tasks:
 
-* [Working with Topology Designer](/cloudos/administration-dashboard/topology-designs/)
+* [Working with Topology Designer](/cloudos/moonshot/manage/administration-dashboard/topology-designs/)
 
-* [Project Overview](/cloudos/administration-dashboard/working-with-cloud-tab/)
+* [Project Overview](/cloudos/moonshot/manage/administration-dashboard/working-with-cloud-tab/)
 
-* [Manage Running Topologies](/cloudos/administration-dashboard/running-topologies/)
+* [Manage Running Topologies](/cloudos/moonshot/manage/administration-dashboard/running-topologies/)
 
-* [Manage Deployment Profiles](/cloudos/administration-dashboard/deployment-profiles/)
+* [Manage Deployment Profiles](/cloudos/moonshot/manage/administration-dashboard/deployment-profiles/)
 
-* [Manage Resource Pools](/cloudos/administration-dashboard/resource-pool/)
+* [Manage Resource Pools](/cloudos/moonshot/manage/administration-dashboard/resource-pool/)
 
-* [Manage Instances](/cloudos/administration-dashboard/project-instances/)
+* [Manage Instances](/cloudos/moonshot/manage/administration-dashboard/project-instances/)
 
-* [Manage Images](/cloudos/administration-dashboard/project-images/)
+* [Manage Images](/cloudos/moonshot/manage/administration-dashboard/project-images/)
 
-* [Manage Updates and Extensions](/cloudos/administration-dashboard/updates-extensions/)
+* [Manage Updates and Extensions](/cloudos/moonshot/manage/administration-dashboard/updates-extensions/)
 
-* [Using Deployed Workloads](/cloudos/administration-dashboard/workloads/)
+* [Using Deployed Workloads](/cloudos/moonshot/manage/administration-dashboard/workloads/)
 
 
 ## Project Administrator Tasks ##
@@ -109,54 +109,54 @@ The role of the Cloud Architect involves working with creating topology designs 
 The Project Administrators focus on their day-to-day tasks of monitoring and maintaining project resources and content. Project administrators have all the rights of project users, as well the rights to modify or delete project resources and content. Project Administrators can work on all the projects of which they are the members and perform all project related tasks.
 Project Administrators maintain projects and performs the following tasks:
 
-* [Working with Topology Designer](/cloudos/administration-dashboard/topology-designs/)
+* [Working with Topology Designer](/cloudos/moonshot/manage/administration-dashboard/topology-designs/)
 
-* [Project Overview](/cloudos/administration-dashboard/working-with-project-tab/)
+* [Project Overview](/cloudos/moonshot/manage/administration-dashboard/working-with-project-tab/)
 
-* [Manage Running Topologies](/cloudos/administration-dashboard/running-topologies/)
+* [Manage Running Topologies](/cloudos/moonshot/manage/administration-dashboard/running-topologies/)
 
-* [Manage Deployment Profiles](/cloudos/administration-dashboard/deployment-profiles/)
+* [Manage Deployment Profiles](/cloudos/moonshot/manage/administration-dashboard/deployment-profiles/)
 
-* [Manage Resource Pools](/cloudos/administration-dashboard/resource-pools/)
+* [Manage Resource Pools](/cloudos/moonshot/manage/administration-dashboard/resource-pools/)
 
-* [Manage Instances](/cloudos/administration-dashboard/project-instances/)
+* [Manage Instances](/cloudos/moonshot/manage/administration-dashboard/project-instances/)
 
-* [Manage Images](/cloudos/administration-dashboard/project-images/)
+* [Manage Images](/cloudos/moonshot/manage/administration-dashboard/project-images/)
 
-* [Manage Networks](/cloudos/administration-dashboard/project-networks/)
+* [Manage Networks](/cloudos/moonshot/manage/administration-dashboard/project-networks/)
 
-* [Working with Access and Security](/cloudos/administration-dashboard/access-and-security/)
+* [Working with Access and Security](/cloudos/moonshot/manage/administration-dashboard/access-and-security/)
 
-* [Using Deployed Workloads](/cloudos/administration-dashboard/workloads/)
+* [Using Deployed Workloads](/cloudos/moonshot/manage/administration-dashboard/workloads/)
 
-* [Administration Dashboard Settings](/cloudos/administration-dashboard/settings-tab/)
+* [Administration Dashboard Settings](/cloudos/moonshot/manage/administration-dashboard/settings-tab/)
 
 ## Project User Tasks ##
 
 The Project Users work on the project tasks. They create topology designs and deployment profiles, and work with the different Project tab options.
 Project Users perform the following tasks:
 
-* [Working with Topology Designer](/cloudos/administration-dashboard/topology-designs/)
+* [Working with Topology Designer](/cloudos/moonshot/manage/administration-dashboard/topology-designs/)
 
-* [Viewing Project Overview](/cloudos/administration-dashboard/working-with-project-tab/)
+* [Viewing Project Overview](/cloudos/moonshot/manage/administration-dashboard/working-with-project-tab/)
 
-* [Manage Running Topologies](/cloudos/administration-dashboard/running-topologies/)
+* [Manage Running Topologies](/cloudos/moonshot/manage/administration-dashboard/running-topologies/)
 
-* [Manage Deployment Profiles](/cloudos/administration-dashboard/deployment-profiles/)
+* [Manage Deployment Profiles](/cloudos/moonshot/manage/administration-dashboard/deployment-profiles/)
 
-* [Manage Resource Pools](/cloudos/administration-dashboard/resource-pools/)
+* [Manage Resource Pools](/cloudos/moonshot/manage/administration-dashboard/resource-pools/)
 
-* [Working with Project Instances](/cloudos/administration-dashboard/project-instances/)
+* [Working with Project Instances](/cloudos/moonshot/manage/administration-dashboard/project-instances/)
 
-* [View Project Images](/cloudos/administration-dashboard/project-images/)
+* [View Project Images](/cloudos/moonshot/manage/administration-dashboard/project-images/)
 
-* [Manage Networks](/cloudos/administration-dashboard/project-networks/)
+* [Manage Networks](/cloudos/moonshot/manage/administration-dashboard/project-networks/)
 
-* [Using Deployed Workloads](/cloudos/administration-dashboard/workloads/)
+* [Using Deployed Workloads](/cloudos/moonshot/manage/administration-dashboard/workloads/)
 
-* [Working with Access and Security](/cloudos/administration-dashboard/access-and-security/)
+* [Working with Access and Security](/cloudos/moonshot/manage/administration-dashboard/access-and-security/)
 
-* [Administration Dashboard Settings](/cloudos/administration-dashboard/settings-tab/)
+* [Administration Dashboard Settings](/cloudos/moonshot/manage/administration-dashboard/settings-tab/)
 
 
 

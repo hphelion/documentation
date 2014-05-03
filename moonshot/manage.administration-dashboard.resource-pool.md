@@ -29,7 +29,7 @@ Resource pools are used to access various cloud providers. A resource pool consi
 * <a href="#Delete Resource Pool">Delete Resource Pool</a>
 
 
-## Create Resource Pool ##<a name="Create Resource Pool"></a>
+## Create Resource Pool <a name="Create Resource Pool"></a>
 
 Use this option to create resource pool definitions which can be used while topology provisioning.
 
@@ -87,7 +87,7 @@ A message is displayed on successful creation.</br>
     Click **Cancel** to abort and go to the previous screen.
 
 
-## Edit Resource Pool ##<a name="Edit Resource Pool"></a>
+## Edit Resource Pool <a name="Edit Resource Pool"></a>
 
 This option allows you to update resource pool definitions that will be used during topology provisioning. You can:
 
@@ -121,7 +121,7 @@ A message is displayed on success.<br>
 
     Click **Cancel** to abort and go to the previous screen.
 
-## Delete Resource Pool/Pools ##<a name="Delete Resource Pool"></a>
+## Delete Resource Pool/Pools <a name="Delete Resource Pool"></a>
 
 Use this option to delete a resource pool. Use the option cautiously as the process cannot be undone. 
 

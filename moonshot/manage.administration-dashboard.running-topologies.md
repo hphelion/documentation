@@ -35,7 +35,7 @@ The following tasks can be performed using Running Topologies option in the left
 
 * <a href="#Delete Topology">Delete Topology</a>
 
-## View Topology List ##<a name="View Topology List"></a>
+## View Topology List <a name="View Topology List"></a>
 
 To view the existing topologies, do the following:
 
@@ -56,7 +56,7 @@ The XML version of the document is displayed.
 
   * (Optional) Click **Export** to download the design document to your local system.
 
-## Launch Topology ##<a name="Launch Topology"></a>
+## Launch Topology <a name="Launch Topology"></a>
 
 Use this option to launch the latest version of the topology document. 
 
@@ -71,7 +71,7 @@ The tab displays with options in the left panel.
 
 4.	Click **Launch Topology** to display a launch dialog box.
 
-## Terminate Topology ##<a name="Terminate Topology"></a>
+## Terminate Topology<a name="Terminate Topology"></a>
 
 When the topology is terminated, the Administration Dashboard stops the instance.
 
@@ -89,7 +89,7 @@ The tab displays with options in the left panel.
 4.	Click Terminate Topology.
 The topology state changes to inactive.
 
-##Delete Topology##<a name="Delete Topology"></a>
+##Delete Topology<a name="Delete Topology"></a>
 
 When a topology is deleted, the Administration Dashboard stops the instance and permanently removes it. This action cannot be undone.
 

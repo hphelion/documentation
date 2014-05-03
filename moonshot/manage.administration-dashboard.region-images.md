@@ -42,7 +42,7 @@ To view the list of available image:
 
 3.	Click **Image Name** to view the image details and specifications.
 
-##Create a Region Image##<a name= "Create a Region Image"></a>
+##Create a Region Image<a name= "Create a Region Image"></a>
 
 To create a region image:
 
@@ -209,7 +209,7 @@ The Edit Image dialog box is displayed.
 OR<br>
 Click **Cancel** to abort and go to the previous screen.
 
-##Delete a Region Image##<a name= "Delete a Region Image"></a>
+##Delete a Region Image<a name= "Delete a Region Image"></a>
 
 To delete a region image:
 
@@ -219,7 +219,7 @@ A message is displayed to ask your confirmation. The image is deleted once your 
 * To delete a group of images, select check box to select the image/images that you want to delete and click **Delete Images**.<br>
 The images are deleted and removed from the image list.
 
-##Launch a Region Image##<a name= "Launch a Region Image"></a>
+##Launch a Region Image<a name= "Launch a Region Image"></a>
 
 To launch an image in the Administration Dashboard:
 

@@ -24,7 +24,7 @@ Use this option to view  networks.
 
 
 
-##View Network List## <a name= "View Network List"></a>
+##View Network List <a name= "View Network List"></a>
 
 Use this option to view the existing networks. 
 

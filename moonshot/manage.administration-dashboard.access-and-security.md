@@ -42,7 +42,7 @@ The following tasks can be performed using Access and Security option in the lef
 * <a href="#Access Authentication Token">Access Authentication Token</a>
 
 
-## View Keypair List ##<a name="View Keypair List"></a>
+## View Keypair List<a name="View Keypair List"></a>
 
 To view the list of keypairs, do the following:
 
@@ -59,7 +59,7 @@ The tab displays with options in the left panel.
 
 4.	Click **Authentication Token** Tab to activate it.<br>The window displays the details of the Authentication Token.The Administration Dashboard manages your authentication token. The Administration Dashboard retrieves your token from the Keystone service when you successfully log in to the dashboard. You can access your authentication token in the Administration Dashboard for accessing the Baremetal host outside the dashboard.</br>
 
-## Create Keypairs ##<a name="Create Keypairs"></a>
+## Create Keypairs <a name="Create Keypairs"></a>
 
 Keypairs are SSH security keys that are used to launch secure, provisioned cloud instances, images or topologies. The keypair is injected into the launched instance. Each project user needs to create a keypair(s) for use. Project Administrator cannot create it on behalf of the user.
 
@@ -82,7 +82,7 @@ A window is displayed with three tabs- **Keypairs**, **API Access** and **Authen
     Click **Cancel** to abort and go to the previous screen.
 
 
-## Delete Keypairs ##<a name="Delete Keypairs"></a>
+## Delete Keypairs <a name="Delete Keypairs"></a>
 
 To delete a keypair, do the following:
 
@@ -98,7 +98,7 @@ To delete a keypair, do the following:
 
     Click **Cancel** to abort and go to the previous screen.
 
-## Import Keypairs ##<a name="Import Keypairs"></a>
+## Import Keypairs <a name="Import Keypairs"></a>
 
 To import a project keypair, do the following:
 
@@ -138,7 +138,7 @@ To delete multiple keypairs with a single command, do the following:
 
     Click Cancel to abort and go to the previous screen.
 
-## Download API Access ##<a name="Download API Access"></a>
+## Download API Access <a name="Download API Access"></a>
 
 To download the API Access, do the following:
 
@@ -150,7 +150,7 @@ To download the API Access, do the following:
 
 4.	(Optional) Click **Download OpenStack RC File** to download the file.
 
-## Access Authentication Token ##<a name="Access Authentication Token"></a>
+## Access Authentication Token <a name="Access Authentication Token"></a>
 
 The Administration Dashboard manages your authentication token. The Administration Dashboard retrieves your token from the Keystone service when you successfully log in to the Administration Dashboard. You can use this authentication token to access outside services. For example: if you want to use API service endpoints, you will need this token to access it. 
 
@@ -163,3 +163,4 @@ By default, Keypairs is the active tab.</br>
 
 3.	Click **Authentication Token** Tab to activate it.<br>The Authentication Token page is displayed with the details of the authentication token.</br>
 
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

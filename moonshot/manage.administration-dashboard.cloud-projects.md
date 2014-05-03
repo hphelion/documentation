@@ -16,7 +16,7 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/administration-dashboard/working-with-cloud-tab/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage/administration-dashboard/working-with-cloud-tab/">&#9650; UP</a> | <a href="/cloudos/moonshot/manage/administration-dashboard/cloud-users/"> <NEXT &#9654; </p></a>
+<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/administration-dashboard/working-with-cloud-tab/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage/administration-dashboard/working-with-cloud-tab/">&#9650; UP</a> | <a href="/cloudos/moonshot/manage/administration-dashboard/cloud-users/"> NEXT &#9654; </p></a>
 
 #Manage Projects#
 
@@ -50,7 +50,7 @@ To view the list of projects:
 
 4. Click  **Project Name** to display an Overview screen with detailed project information. <br>It displays the information related to project name, ID, default users and their roles etc.
 
-##Create a Cloud Project ##<a name= "Create a Cloud Project"></a>
+##Create a Cloud Project <a name= "Create a Cloud Project"></a>
 
 Use this option to create a new project, associate users to it, integrate applications and tools to it and define limits for it.
 
@@ -98,7 +98,7 @@ To create a project:
 OR<br>
 Click **Cancel** to abort and go to the previous screen.
 
-##Modify a Cloud Project##<a name= "Modify a Cloud Project"></a>
+##Modify a Cloud Project<a name= "Modify a Cloud Project"></a>
 Use this option to make the changes to the project details.
 
 To modify project details:
@@ -117,7 +117,7 @@ To modify project details:
 OR<br>
 Click **Cancel** to abort and go back to the previous screen.
 
-##View Cloud Project Usage Summary##<a name= "View Cloud Project Usage Summary"></a>
+##View Cloud Project Usage Summary<a name= "View Cloud Project Usage Summary"></a>
 
 Use this option to view the usage summary in a project. The usage summary gives the details of the resources being used in a particular project.
 
@@ -135,7 +135,7 @@ Use this option to view the usage summary in a project. The usage summary gives 
 
 7. Click **Download CSV Summary** to view a text file in Microsoft Excel with the details of the usage summary.
 
-##Modify Compute Limits ##<a name= "Modify Compute Limits"></a>
+##Modify Compute Limits <a name= "Modify Compute Limits"></a>
 
 This option allows you to edit the compute limits that are defined in your project. 
 
@@ -155,7 +155,7 @@ To modify compute limits:
 OR<br>
 Click **Cancel** to abort and go to the previous screen.
 
-##Add or Remove a Project User## <a name= "Add or Remove a Project User"></a>
+##Add or Remove a Project User <a name= "Add or Remove a Project User"></a>
 
 You can add a new user to the project or remove an existing user from the project.
 
@@ -174,7 +174,7 @@ To add a user to the project from the Available Users column, click add to add t
 OR<br>
 Click **Cancel** to abort and go to the previous screen.
 
-##Delete a Cloud Project## <a name= "Delete a Cloud"></a>
+##Delete a Cloud Project <a name= "Delete a Cloud"></a>
 
 To delete a project:
 
@@ -190,7 +190,7 @@ To delete a project:
 Or <br>
 Click **Cancel** to abort and go to the previous screen.
 
-##Restore a Cloud Project## <a name= "Restore a Cloud Project"></a>
+##Restore a Cloud Project <a name= "Restore a Cloud Project"></a>
 
 To restore a deleted project:
 

@@ -45,7 +45,7 @@ To view the list of cloud images:
 
 3. Click **Image Name** to view the image details and specifications.
 
-##Create a Cloud Image##<a name= "Create a Cloud Image"></a>
+##Create a Cloud Image<a name= "Create a Cloud Image"></a>
 
 To create cloud images:
 
@@ -53,8 +53,8 @@ To create cloud images:
 
 2. Select Images, from the options in the left panel, select Images to open the Images page.
 
-<p>**Note**: It is mandatory to create image types such as *QCOW2* and *AMI* with associated *Amazon Kernel Image (AKI)* and *Amazon RAMdisk Image (ARI)*. It is suggested to create the images in the following sequence:* Amazon Kernel Image (AKI)*, Amazon RAMdisk Image (ARI)**, and *QCOW2*.
-<br><p>
+**Note**: It is mandatory to create image types such as *QCOW2* and *AMI* with associated *Amazon Kernel Image (AKI)* and *Amazon RAMdisk Image (ARI)*. It is suggested to create the images in the following sequence:* Amazon Kernel Image (AKI)*, Amazon RAMdisk Image (ARI)**, and *QCOW2*.
+<br>
 The **Kernel Image** drop-down list and **RAM Disk Image** drop-down list is displayed when the selected format is QCOW2 or AMI.</p>
 <p>
 To create AKI images, perform the following:</p>
@@ -100,6 +100,7 @@ To create AKI images, perform the following:</p>
 OR<br>
 Click **Cancel** to abort and go to the previous screen.
 <br>
+
 **Note**: ARI and AKI images are only listed in the Region Tab. Cloud and Project Tabs display images from which an instance can be launched such as QCOW2, AMI etc.</br>
 
 To create QCOW2, perform the following:
@@ -142,10 +143,11 @@ OR <br>
 Click **Cancel** to abort and go to the previous screen.
 
 **Note**:<br>
-  * Do not navigate from the page while the image is being created.<br>
-  * It is suggested to use different names while creating images.
 
-##Edit a Cloud Image##<a name= "Edit a Cloud Image"></a>
+- Do not navigate from the page while the image is being created.<br>
+- It is suggested to use different names while creating images.
+
+##Edit a Cloud Image<a name= "Edit a Cloud Image"></a>
 
 To edit an image:
 
@@ -161,7 +163,7 @@ To edit an image:
 OR <br>
 Click **Cancel** to abort and go to the previous screen.
 
-##Delete a Cloud Image##<a name= "Delete a Cloud Image"></a>
+##Delete a Cloud Image<a name= "Delete a Cloud Image"></a>
 
 To delete a cloud:
 
@@ -174,7 +176,7 @@ A message is displayed to ask your confirmation. The image is deleted once your 
 
 To delete a group of images, click to select the image/images that you want to delete and click check box **Delete Images**. The images are deleted and removed from the image list.
 
-##Launch a Cloud Image##<a name= "Launch a Cloud Image"></a>
+##Launch a Cloud Image<a name= "Launch a Cloud Image"></a>
 
 To launch an image in the Administration Dashboard:
 

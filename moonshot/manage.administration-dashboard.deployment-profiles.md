@@ -26,7 +26,7 @@ This option allows you to work with the Deployment Profiles. You can perform the
 
 * <a href="#Launch Deployment Profile">Launch Deployment Profile</a>
 
-## View Deployment Profile List ##<a name="View Deployment Profile List"></a>
+## View Deployment Profile List <a name="View Deployment Profile List"></a>
 
 To view the list of deployment profiles, do the following:
 
@@ -45,7 +45,7 @@ It displays design name, name of the profile, version of the profile, scope, and
  * **Contents**: - displays the deployment profile content.
 
 
-## Launch Deployment Profile ##<a name="Launch Deployment Profile"></a>
+## Launch Deployment Profile <a name="Launch Deployment Profile"></a>
 
 To launch a deployment profile, do the following:
 

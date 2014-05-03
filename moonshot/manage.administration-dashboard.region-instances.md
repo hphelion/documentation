@@ -51,7 +51,7 @@ A page is displayed to enter a password. Enter the Chassis Manager password for 
 
 **Note**: You cannot login to the instance with this console; it only displays the boot process of the instance. To login, you need to open a separate SSH session using the IP assigned to the instance.
 
-##Edit a Region Instance##<a name= "Edit a Region Instances"></a>
+##Edit a Region Instance<a name= "Edit a Region Instances"></a>
 
 Once a region instance is created, you can only edit the name of the instance. Use this option to edit the instance.
 
@@ -88,7 +88,7 @@ OR<br>
 Click **Cancel** to abort and go to the previous screen.
 
 
-##Terminate Region Instance(s)##<a name= "Terminate Region Instance(s)"></a>
+##Terminate Region Instance(s)<a name= "Terminate Region Instance(s)"></a>
 
 1.	Click the **Region** Tab to select it.
 
@@ -105,7 +105,7 @@ To terminate a single instance, click **More** against the instance to display a
 1. Select **Terminate Instance** to terminate it.
 
 
-##Force Delete an Instance##<a name= "Force Delete an Instance"></a>
+##Force Delete an Instance<a name= "Force Delete an Instance"></a>
 
 Use this option to delete an instance that is in an unresponsive state.
 
@@ -117,7 +117,7 @@ The page displays a list of instances Click **More** against the instance to dis
 3.	Click **Force Delete Instance**.<br>
 The selected instance is deleted after getting a confirmation from you.
 
-##View Console##<a name= "View Console"></a>
+##View Console<a name= "View Console"></a>
 
 To view the console details:
 

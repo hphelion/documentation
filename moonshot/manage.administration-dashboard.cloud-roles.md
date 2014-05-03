@@ -44,7 +44,7 @@ To view the list of roles:
 
 3. Click **Role Name** to view all the related details of the selected role.
 
-##Create a Cloud Role##<a name= "Create a Cloud Role"></a>
+##Create a Cloud Role<a name= "Create a Cloud Role"></a>
 
 To create a cloud role:
 
@@ -60,7 +60,7 @@ To create a cloud role:
 OR <br>
 Click **Cancel** to abort and go to the previous screen.
 
-##Edit a Cloud Role##<a name= "Edit a Cloud Role"></a>
+##Edit a Cloud Role<a name= "Edit a Cloud Role"></a>
 
 Use this option to modify the role. You can only edit the role name.
 
@@ -78,7 +78,7 @@ To edit a cloud role:
 OR<br>
 Click **Cancel** to abort and go to the previous screen.
 
-##Delete a Cloud Role##<a name= "Delete a Cloud Role"></a>
+##Delete a Cloud Role<a name= "Delete a Cloud Role"></a>
 
 To delete a cloud role:
 

@@ -33,7 +33,6 @@ You can perform the following task:
 
 * <a href= "#About HP Cloud OS for Moonshot Administration Dashboard">About HP Cloud OS for Moonshot Administration Dashboard</a>
 
-* <a href= #"Help">Help</a>
 
 
 ##Customize Site Settings <a name= "Customize Site Settings"></a>

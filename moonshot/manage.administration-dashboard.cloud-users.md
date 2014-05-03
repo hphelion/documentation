@@ -50,7 +50,7 @@ To view the list of different cloud users:
 
 3. Click  **User Name** to view the user details.
 
-##Create a Cloud User##<a name= "Create a Cloud User"></a>
+##Create a Cloud User<a name= "Create a Cloud User"></a>
 
 Use this option to create a cloud user and set general attributes for the user. You can also assign a project specific and cloud specific role to the user through this option.
 
@@ -87,7 +87,7 @@ To create a cloud user:
 OR<br>
 Click **Cancel** to abort and go to the previous screen.
 
-##Edit a Cloud User##<a name= "Edit a Cloud User"></a>
+##Edit a Cloud User<a name= "Edit a Cloud User"></a>
 
 Use this option to edit the attributes of a cloud user. You can modify the User and Cloud related information here and for modifying the project related attributes refer to Modify Users section. 
 To modify the user details:
@@ -114,10 +114,10 @@ To disable the cloud user from logging in:
 
 3. Click **More** drop-down list against the user whom you want to disable and select **Disable User** from the drop-down list. The user is disabled and the Enabled field status changes to **False**. 
 
-##Enable a Cloud User## <a name= "Enable a Cloud User"></a>
+##Enable a Cloud User <a name= "Enable a Cloud User"></a>
 * To enable the user again, select **Enable User** from the **More** drop-down list against the user. The Enabled field status changes to **True**.
 
-##Delete a Cloud User##<a name= "Delete a Cloud User"></a>
+##Delete a Cloud User<a name= "Delete a Cloud User"></a>
 
 The delete option marks the user for deletion:
 
@@ -133,7 +133,7 @@ The delete option marks the user for deletion:
 OR <br>
 Click **Cancel** to abort and go to the previous screen.
 
-##Restore a Cloud User##<a name= "Restore a Cloud User"></a>
+##Restore a Cloud User<a name= "Restore a Cloud User"></a>
 
 To restore a deleted user:
 

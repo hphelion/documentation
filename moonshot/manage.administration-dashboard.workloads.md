@@ -34,9 +34,10 @@ This section includes the following topics:
 * <a href="#Understanding Workload Content">Understanding Workload Content</a>
 
 * <a href="#Understanding Workload Lifecycle">Understanding Workload Lifecycle</a>
+
 * <a href="#Managing Workload Lifecycle Using Administration Dashboard">Managing Workload Lifecycle Using Administration Dashboard</a>
 
-## Understanding Workload Entities 
+## Understanding Workload Entities <a name= "Understanding Workload Entities"></a>
 
 
 Some of the important entities that help to make up Workloads based provisioning are:
@@ -44,14 +45,14 @@ Some of the important entities that help to make up Workloads based provisioning
 <img src="media/cos4ms-workload-prov.png"/>
 
 
-## Relationship between Workload Entities 
+## Relationship between Workload Entities <a name= "Relationship between Workload Entities"></a>
 
 A workload entity is an abstract representation of a service which maps to a given infrastructure blue print (technically termed as topology). The same workload can be realized by different cloud resources present in the system which can be uniquely represented as deployment profiles. 
 For Example: Let us assume that a single server group based workload requirement is, to serve static web hosting. As we know that both m300 and HP ProLiant Moonshot Server can serve static web hosting, it is thus possible to have two different deployment profiles; where one maps to Nova flavor compute resource of HP ProLiant Moonshot Server while the other maps to m300.  Also, a given deployment profile can be launched multiple times for same or different user. Considering this, there is an inherent relationship among workloads, topology, deployment profiles and deployed workloads which has been illustrated below:
 
 <img src="media/cos4ms-relationship-between-workload-entities.png"/>
 
-## Cloud Personalities
+## Cloud Personalities <a name= "Cloud Personalities"></a>
 
 Lifecycle of a Workload is a multi-phase activity and needs different actors to collaborate together to make a simplified realization of a given application infrastructure by the end user. The list below elaborates on the actors along with their roles and responsibilities in entire workload lifecycle.
 
@@ -59,7 +60,7 @@ Lifecycle of a Workload is a multi-phase activity and needs different actors to 
 
 All the above players contribute towards realizing the lifecycle of a Workload and play relevant role in each stage of its workflow.
 
-## Understanding Workload Content
+## Understanding Workload Content <a name= "Understanding Workload Content"></a>
 
 Each workload is represented as a CSU file, which is inherently a data container to store various elements of workload (like images, topology design etc.) in compressed format as shown in the diagram below:
 
@@ -118,7 +119,7 @@ As mentioned above, a workload CSU file is an archived version of different cont
 
 A manifest file is a JSON file which contains specification of elements of a workload.
 
-## Understanding Workload Lifecycle 
+## Understanding Workload Lifecycle <a name= "Understanding Workload Lifecycle"></a>
 
 The following figure illustrates the lifecycle of workload entities and the workflow required when the content is being imported from remote folder using CODN:
 
@@ -155,7 +156,7 @@ A workload can have multiple deployment profiles. When a workload is downloaded 
 
 Once the Workloads are deployed and the instances are provisioned (depending on the topology specifications), Project Administrators / Users can use the workload content to create / edit deployment profile and launch profile as per project requirements.
 
-## Managing Workload Lifecycle using Administration Dashboard 
+## Managing Workload Lifecycle using Administration Dashboard  <a name= "Managing Workload Lifecycle using Administration Dashboard"></a>
 
 The workload's flow using the Administration Dashboard can be depicted in the following sequence of steps:
 
@@ -204,7 +205,7 @@ If the node is set to boot persistently from HDD, all subsequent boots after pro
 
 To build OS Images, refer steps 3 - 7 defined in Section One – Creating Linux Images [Building Images](/cloudos/moonshot/manage/image-builder/).
 
-You need to run the following commands at the iLO console to set a node to  boot from PXE or HDDpersistently.
+You need to run the following commands at the iLO console to set a node to  persistently boot from PXE or HDD.
 
  * To set a node to boot from PXE persistently:<br>
 `set node boot PXE C<x>N<y>` <br>
