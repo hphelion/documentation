@@ -16,7 +16,7 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> <a href="cloudos/moonshot/manage/administration-dashboard/before-you-begin/">&#9664; PREV</a> | <a href="cloudos/moonshot/manage/administration-dashboard/before-you-begin/">&#9650; UP</a> | <a href= "/cloudos/moonshot/manage/image-builder">NEXT &#9654; </p></a>
+<p style="font-size: small;"> <a href="cloudos/moonshot/manage/administration-dashboard/before-you-begin/">&#9664; PREV</a> | <a href="cloudos/moonshot/manage/administration-dashboard/before-you-begin/">&#9650; UP</a> | <a href= "/cloudos/moonshot/manage/image-builder/">NEXT &#9654; </p></a>
 
 
 # Setting Tab #
@@ -61,15 +61,15 @@ Use log level to capture more detailed log files when you need to troubleshoot, 
 
 The different Log levels are as follows:
 
-* **Debug**— Writes the most detailed log file messages.
+* **Debug**: Writes the most detailed log file messages.
 
-* **Info**— writes informational, warning, error, and critical messages to the log file.
+* **Info**: Writes informational, warning, error, and critical messages to the log file.
 
-* **Warning**— writes warning, error, and critical messages to the log file. Informational messages are not written.
+* **Warning**: Writes warning, error, and critical messages to the log file. Informational messages are not written.
  
-* **Error**— Writes error and critical messages to the log file. Informational and warning messages are not written.
+* **Error**:  Writes error and critical messages to the log file. Informational and warning messages are not written.
 
-* **Critical**— Writes only critical messages to the log file. Informational, error, and warning messages are not written.
+* **Critical**: Writes only critical messages to the log file. Informational, error, and warning messages are not written.
 
 The default log level is Info. To change the default, select a log level from the drop down list.
 
