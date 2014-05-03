@@ -34,7 +34,7 @@ You can perform the following tasks:
 
 * <a href="#Add or Remove a Project User">Add or Remove a Project User</a> 
 
-* <a href="#Delete a Cloud">Delete a Cloud</a> 
+* <a href="#Delete a Cloud Project">Delete a Cloud Project</a> 
 
 * <a href="#Restore a Cloud Project">Restore a Cloud Project</a>
 
@@ -70,7 +70,7 @@ To create a project:
 
  *  By default **Enabled** is selected. This means that the project content is available to all the users assigned to it.
 
-1. Click to activate the **Project Members** Tab. <br>Available Users and Project Members are displayed.<br> Perform the following:
+5. Click to activate the **Project Members** Tab. <br>Available Users and Project Members are displayed.<br> Perform the following:
 
  * From **Available Users**, enter the name of the project.
 
@@ -82,19 +82,19 @@ To create a project:
 
  * Select the role. The user is assigned to the selected role in the project.
 
- * (Optional) Click minus against the project member to remove from the project. <p>
- **Note**: This is an optional step at the initial stage of project creation as no users are displayed, once you create the users, they will be visible in the list of Available Users.</p>
+ * (Optional) Click minus against the project member to remove from the project. <br>
+ **Note**: This is an optional step at the initial stage of project creation as no users are displayed, once you create the users, they will be visible in the list of Available Users.
 
-1. (Optional) In the Integration Tab, perform the following:
+6. (Optional) In the Integration Tab, perform the following:
  
  * (Optional) Click check box to select it, if no default Resource Pool exists and you want to create one. The Resource Pool is created as part of the project creation. A default resource pool is created for each region in the domain.
 
-1. In the **Compute Limits** Tab, you can set the default limits for the compute resources in the project for example: total CPUS’s, total instances that can be created, Keypairs etc. Perform the following:
+7. In the **Compute Limits** Tab, you can set the default limits for the compute resources in the project for example: total CPUS’s, total instances that can be created, Keypairs etc. Perform the following:
  * (From the **Region** drop-down list, select the region. By default the current region is displayed.
  
  * In the **RAM (MB)**, **Keypairs**, **CPU Cores**, **Instances**, **Metadata Items** boxes, default values are displayed. You can make the changes as required.
  
-1. Click **Create** **Project**. A message is displayed on successful project creation. The project is displayed with a system-generated project ID.<br>
+8. Click **Create** **Project**. A message is displayed on successful project creation. The project is displayed with a system-generated project ID.<br>
 OR<br>
 Click **Cancel** to abort and go to the previous screen.
 
@@ -166,7 +166,8 @@ To add or remove a project user:
 2. From the options in the left panel, select **Projects** to display the Projects page with a list of projects.
 
 3. Click **Modify** **Users** against the project for which you want to make changes. The Edit Project dialog box is displayed with three tabs: **Project Info**, **Project Members**, and **Compute Limits**. By default, Project Members is the active tab and displays two columns: Available Users and Project Members.
-To add a user to the project from the Available Users column, click add to add the user to the Project Members column.
+
+4. To add a user to the project from the Available Users column, click add to add the user to the Project Members column.
 
 5. To remove the user, click minus against the user in the Project Members column to remove the user.
 
@@ -174,7 +175,7 @@ To add a user to the project from the Available Users column, click add to add t
 OR<br>
 Click **Cancel** to abort and go to the previous screen.
 
-##Delete a Cloud Project <a name= "Delete a Cloud"></a>
+##Delete a Cloud Project <a name= "Delete a Cloud Project"></a>
 
 To delete a project:
 
