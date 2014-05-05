@@ -99,7 +99,7 @@ The tab displays with options in the left panel.
    * **Type**: the kind of image that downloads.
 
    * **Status**: the state of the update in the catalog. This state is independent of your local system. For example, you may successfully download an update, but the update later becomes suspended in the catalog. You can continue to publish and use the update on your local system.
-
+   
    * **Actions**: tasks you can perform on the update.
 
 4. (Optional) Click a Name to open an Overview page with details of the update name, version, targets where it is installed.
