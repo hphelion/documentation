@@ -579,11 +579,8 @@ The design details are displayed in the Overview Tab
 5.	Click the **Validation** Tab to activate it.<br>
 The Validation page displays with following details.
  * the icon representing the component
-
  * the name of the component
-
  * a brief description of the error/errors
- 
  * type of component
 
 6.	Click error to go to the source of the issue and correct it.
