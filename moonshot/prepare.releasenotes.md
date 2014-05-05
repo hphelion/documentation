@@ -114,7 +114,7 @@ The following are the known issues for HP Cloud OS for Moonshot 1.10.
 
 * Under some circumstances, after launching a workload profile in the Administration Dashboard, and then using <b>Terminate Workload</b> to deprovision, the workload/topology continues to list the state as "Processing".  In the <b>Deployed Workloads</b> tab, selecting <b>Delete Workload</b> resolves the issue.
 
-* For instances provisioned using Windows Images created using the [Image Builder](/cloudos/moonshot/manage/image-builder/) document, the disk size of the instance is the same as the disk size specified during image creation process. You need to login using the credentials provided as part of unattend file during Image creation instead of using the Openstack Keypair.
+* For instances provisioned using Windows images created using the [Image Builder](/cloudos/moonshot/manage/image-builder/) document, the disk size of the instance is the same as the disk size specified during image creation process. You need to login using the credentials provided as part of unattend file during image creation instead of using the OpenStack keypair.
 
 
 ####General####
