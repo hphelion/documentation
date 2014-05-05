@@ -43,7 +43,7 @@ documents. The Administration Dashboard is associated with a single cloud.
 
 You can use the Administration Dashboard to view, allocate, and manage all  resources within a cloud. 
 
-## Administration Dashboard Look and Feel{#administration-dashboard-look-and-feel}
+## Administration Dashboard Look and Feel {#administration-dashboard-look-and-feel}
 
 **Concepts:**
 

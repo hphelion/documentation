@@ -72,7 +72,7 @@ To create a cloud user:
 
 5.  In the User Tab, perform the following:
  
- * In the **User Name** box, enter the name of the user.From** Primary Project** drop-down list, select the project to which you want to add the user.
+ * In the **User Name** box, enter the name of the user.From **Primary Project** drop-down list, select the project to which you want to add the user.
  
  * From **Project Role** drop-down list, select the role to that you want to assign to the user.<br>
  **Note**: The role defined in the Project Tab is specific to the selected project.
@@ -102,7 +102,7 @@ To modify the user details:
 OR<br>
 Click **Cancel** to abort and go to the previous screen.
 
-##Disable a Cloud User##<a name= "Disable a Cloud User"></a>
+##Disable a Cloud User <a name= "Disable a Cloud User"></a>
 
 To disable the cloud user from logging in:
 

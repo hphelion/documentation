@@ -62,7 +62,7 @@ Before you access the Administration Dashboard, ensure that the Cloud Environmen
 
 You can access the HP Cloud OS for Moonshot Administration Dashboard in either of the following ways:
 
-* In your browser window, type the public IP address of your Cloud Controller Node in the following format https://<Public IP Address>
+* In your browser window, type the public IP address of your Cloud Controller Node. Login with the Admin account and password you specified on the **Create Cloud**->**Attributes** dialog in the HP Cloud OS for Moonshot Operational Dashboard.
 
    OR
 
