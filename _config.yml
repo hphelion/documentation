@@ -192,25 +192,19 @@ navigation:
     url: /cloudos/moonshot/related-topics/	
   - text: Site Index
     url: /cloudos/moonshot/siteindex/
-  community:
-  - text: HP Helion Cloud OS Community Doc Home
+  community: 
+  - text: HP Helion OpenStack Community Doc Home
     url: /cloudos/community/
-  - text: FAQs
+  - text: Release Notes
+    url: /cloudos/community/release-notes/  	
+  - text: FAQ
     url: /cloudos/community/faqs/ 		
-  - text: Technical Overview
-    url: /cloudos/community/technical-overview/  	
-  - text: Install & Config
-    url: /cloudos/community/install/	
-  - text: Services Overview
-    url: /cloudos/community/services-overview/			
-  - text: Reference Architecture
-    url: /cloudos/community/reference-architecture/	
+  - text: Installation & Configuration
+    url: /cloudos/community/install-virtual/		
   - text: Related Topics
-    url: /cloudos/community/related-topics/		
-  - text: Glossary
-    url: /cloudos/community/glossary/			
+    url: /cloudos/community/related-links/		
   - text: Site Index
-    url: /cloudos/community/site-index/
+    url: /cloudos/community/siteindex/
 
 apinavigation:
 - text: Site home page
