@@ -188,7 +188,7 @@ To launch an image in the Administration Dashboard:
 
 4. On the **Details** Tab, perform the following:
    
-* From the **Instance Source** drop-down list, select the image.
+ * From the **Instance Source** drop-down list, select the image.
   
  * From the **Image** drop-down list, select the value. 
   
