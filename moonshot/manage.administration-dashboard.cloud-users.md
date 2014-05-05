@@ -67,7 +67,6 @@ To create a cloud user:
    * (Optional) In the **Email** box, enter the email-ID for the user.
    * In the Password box, enter the password.
    * In the **Confirm Password** box, re-enter the password to verify it.
-
 5. In the Project Tab, perform the following:
   
   *  From **Primary Project** drop-down list, select the project to which you want to add the user.
