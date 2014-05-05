@@ -76,6 +76,9 @@ HP recommends the following best practices for HP Cloud OS for Moonshot 1.10.
 
 * For increased reliability, we recommend you allocate an adequate IP address range for the nova_flat network based on the number of instances planned for the given Cloud. For example, if the environment is going to have 40 instances, at least 120 IP addresses need to be defined in the DHCP allocation range. 
 
+* To enable best functionality, the image should be used as the flavor for Windows Images which are created using [Image Builder](/cloudos/moonshot/manage/image-builder/) document.
+
+
 **Installation**
 
 * To enable maximum reliability in the Cloud environment, do not select the controller nodes when performing <b>Create Compute Region</b> action for a Moonshot/Standard server. 
@@ -93,7 +96,7 @@ The following are the known issues for HP Cloud OS for Moonshot 1.10.
  2. Go to line 245 and add the -k switch.  Change the command `" curl  #(keystone_protocol...` to `" curl  -k #(keystone_protocol...`
     
  3. Execute this command:
- `knife cookbook upload knife cookbook upload -o /opt/dell/chef/cookbooks/ -V -k /etc/chef/webui.pem -u chef-webui`
+ `knife cookbook upload -o /opt/dell/chef/cookbooks/ -V -k /etc/chef/webui.pem -u chef-webui`
 	
  4. Remove the Cloud and create it again.
 
@@ -113,6 +116,7 @@ The following are the known issues for HP Cloud OS for Moonshot 1.10.
 
 * Under some circumstances, after launching a workload profile in the Administration Dashboard, and then using <b>Terminate Workload</b> to deprovision, the workload/topology continues to list the state as "Processing".  In the <b>Deployed Workloads</b> tab, selecting <b>Delete Workload</b> resolves the issue.
 
+
 ####General####
 
 
@@ -120,6 +124,8 @@ The following are the known issues for HP Cloud OS for Moonshot 1.10.
 
 * When you display the nodes table in the <b>Nodes View</b> using Moonshot Management, the disk size for all discovered nodes is shown to be 500 GB, regardless of physical disk capacity. 
 <!-- I'm still of the opinion that we should delete this item; there is no workaround, and what good does it do to tell the customer about it? -Doug -->
+
+* When Windows Images are created using the instructions in the Image Builder document then instance may not adhere to selected flavor. Also, the credentials will not be injected into Windows Instances
 
 ##For further information## {#for-further-information}
 
