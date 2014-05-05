@@ -62,25 +62,18 @@ To create a project:
 
 3. Click **Create Project** displayed on the top right in the right pane.<br> Create Project dialog box is displayed with four different tabs: **Project Info**, **Project Members**, **Integrations**, and **Compute Limits**. By default, Project Info is the active tab.
 
-4.  Perform the following in the Project Info Tab: 
-   * In the **Name** box, enter the name of the project.
+4. Perform the following in the Project Info Tab: 
+    * In the **Name** box, enter the name of the project.
+    * In the **Description** box, enter the description of the project.
+    * By default **Enabled** is selected. This means that the project content is available to all the users assigned to it.
 
-   *  In the **Description** box, enter the description of the project.
-
-   *  By default **Enabled** is selected. This means that the project content is available to all the users assigned to it.
-
-5.   Click to activate the **Project Members** Tab. <br>Available Users and Project Members are displayed.<br> Perform the following:
-  * From **Available Users**, enter the name of the project.
-
-  * Click add against the user to add the user to the **Project Members** column. <br>This adds the user to the project.
-
-  * To add a role to the user, in the *Project*
-
-  * *Members* column, click drop-down arrow to display the role list.
-
- * Select the role. The user is assigned to the selected role in the project.
-
- * (Optional) Click minus against the project member to remove from the project. <br>
+5. Click to activate the **Project Members** Tab. <br>Available Users and Project Members are displayed.<br> Perform the following:
+   * From **Available Users**, enter the name of the project.
+   * Click add against the user to add the user to the **Project Members** column. <br>This  adds the user to the project.
+   * To add a role to the user, in the *Project*
+   * *Members* column, click drop-down arrow to display the role list.
+   * Select the role. The user is assigned to the selected role in the project.
+   * (Optional) Click minus against the project member to remove from the project. <br>
  **Note**: This is an optional step at the initial stage of project creation as no users are displayed, once you create the users, they will be visible in the list of Available Users.
 
 6. (Optional) In the Integration Tab, perform the following:
