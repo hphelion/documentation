@@ -199,19 +199,17 @@ To launch an image in the Administration Dashboard:
   * In the Instance Count box, enter 1 or more than 1.<br>
 The flavor details are displayed on the right side of the dialog box.</br>
 
-
-
-5. On the Access and Security Tab, perform the following:
+5.  On the Access and Security Tab, perform the following:
   
  * From the **Keypair** drop-down list, select value from the list.
 
 
-6. On the **Networking** Tab, no networks are listed in the **Selected Networks** section.
+6.  On the **Networking** Tab, no networks are listed in the **Selected Networks** section.
   
  * Select the network from the **Available Networks** section.
 
 
-7. Click **Launch**. <br>You are taken to the Instances page with the progress bar displaying the completion progress.
+7.  Click **Launch**. <br>You are taken to the Instances page with the progress bar displaying the completion progress.
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
