@@ -241,7 +241,7 @@ where x is the cartridge number and y is the node number. For example: C1N1.
 
  HP Cloud OS for Moonshot discovers the cartridges and creates flavors automatically. There is a polling cycle of five minutes to check for new registered cartridges for flavor creation. To validate that the flavor associated to content has been automatically created, do the following:
 
-   1. On the Administration Dashboard, click **Region** Tab to select it.<br>
+ 1. On the Administration Dashboard, click **Region** Tab to select it.<br>
 The Region tab is activated and the options are displayed in the left panel.</br>
 
  2.	Select **Flavors** to display the Flavors page.<br>
@@ -351,7 +351,7 @@ It displays the following four options:</br>
 <td>Public, Cloud</td><td>This document can be viewed by anyone in the cloud in any project.</td></table>
 
 
-4. lick **Publish** to start the installation process.<br>
+4. Click **Publish** to start the installation process.<br>
 A success message is displayed. Once the installation completes, the workload will display in the Workloads page.</br>
 
 5.	(Optional) Click **View Progress** to view the installation progress.

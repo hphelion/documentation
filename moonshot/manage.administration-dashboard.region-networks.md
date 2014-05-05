@@ -1,4 +1,3 @@
-
 ---
 layout: default
 title: "HP Cloud OS for Moonshot: Administration Dashboard"
