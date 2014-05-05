@@ -224,11 +224,11 @@ The images are deleted and removed from the image list.
 To launch an image in the Administration Dashboard:
 
 
-1.  Click the **Region** Tab to select it.
+1. Click the **Region** Tab to select it.
 
-2.  From the options in the left panel, select **Images** to display the Images page.
+2. From the options in the left panel, select **Images** to display the Images page.
 
-3.  Select **Launch** against the image listed in the table.<br>
+3. Select **Launch** against the image listed in the table.<br>
 A Launch Instance dialog box displays with four tabs: **Details** Tab, **Access & Security** Tab, **Networking** Tab, and **Post-Creation** Tab. By default, Details is the active tab.
 
 4. On the **Details** Tab, perform the following:
@@ -249,7 +249,7 @@ The flavor details are displayed on the right side of the dialog box.
  
  * From the **Keypair** drop-down list, select value from the list.
 
-6.	On the **Networking** Tab, no networks are listed in the **Selected Networks** section.
+6. On the **Networking** Tab, no networks are listed in the **Selected Networks** section.
  
  * Select the private network from the **Available networks** section.
  
