@@ -16,7 +16,7 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/administration-dashboard/before-you-begin/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage">&#9650; UP</a> | <a href="//cloudos/moonshot/manage/administration-dashboard/tasks-by-role/">NEXT &#9654;</p></a>
+<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/administration-dashboard/before-you-begin/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage">&#9650; UP</a> | <a href="/cloudos/moonshot/manage/administration-dashboard/tasks-by-role/">NEXT &#9654;</p></a>
 
 # The Administration Dashboard #
 

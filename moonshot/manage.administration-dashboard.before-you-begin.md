@@ -19,14 +19,14 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/operational-dashboard/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage/">&#9650; UP</a> | <a href="/cloudos/moonshot/manage/administration-dashboard/welcome/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/administration-dashboard/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage/">&#9650; UP</a> | <a href="/cloudos/moonshot/manage/administration-dashboard/welcome/">NEXT &#9654;</a> </p>
 
 
 # Before you Begin with Administration Dashboard Help #
 
 Before you begin with the HP Cloud OS for Moonshot Administration Dashboard Help, take a few minutes to understand how the help content is organized. You can find information in this suggested order:
 
-* Conceptual introduction and prerequisites. See Welcome to the HP Cloud OS for Moonshot Administration Dashboard.
+* Conceptual introduction and prerequisites. See [Welcome to the HP Cloud OS for Moonshot Administration Dashboard](/cloudos/moonshot/manage/administration-dashboard/welcome/).
 
 * A Getting Started topic that provides instructions for how to begin using the dashboard. You can read about responsibilities for each user role, and follow links to step-by-step instructions for performing tasks. See [Getting Started with the Administration Dashboard](/cloudos/moonshot/manage/administration-dashboard/getting-started/).
 

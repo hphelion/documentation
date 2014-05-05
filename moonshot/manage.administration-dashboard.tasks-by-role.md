@@ -52,7 +52,7 @@ The following section describes the Administration Dashboard tasks for each of t
 
 The Admin user has the privileges to create projects and users for the projects. Admin user can view domains and services, and delete protected images. Generally, the Admin user works on the AdminProject and performs the below mentioned tasks:
 
-* [Change Settings](/cloudos/moonshot/manage/administration-dashboard/working-with-cloud-tab/)
+* [Change Settings](/cloudos/moonshot/manage/administration-dashboard/setting-tab/)
 
 * [Create Projects](/cloudos/moonshot/manage/administration-dashboard/working-with-cloud-tab/)
 
@@ -87,7 +87,7 @@ The role of the Cloud Architect involves working with creating topology designs 
 
 * [Working with Topology Designer](/cloudos/moonshot/manage/administration-dashboard/topology-designs/)
 
-* [Project Overview](/cloudos/moonshot/manage/administration-dashboard/working-with-cloud-tab/)
+* [Project Overview](/cloudos/moonshot/manage/administration-dashboard/working-with-project-tab/)
 
 * [Manage Running Topologies](/cloudos/moonshot/manage/administration-dashboard/running-topologies/)
 
