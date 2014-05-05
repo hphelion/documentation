@@ -21,11 +21,11 @@ PageRefresh();
 # Manage Access and Security#
 Use this option to manage and view the following access and security elements:
 
-* Keypairs — Keypairs are SSH security keys that provide authentication and allow you to exchange traffic securely within the instance.
+* **Keypairs** &mdash; Keypairs are SSH security keys that provide authentication and allow you to exchange traffic securely within the instance.
 
-* API Access
+* **API Access**
 
-* Authentication Token
+* **Authentication Token**
 
 The following tasks can be performed using Access and Security option in the left panel:
 
