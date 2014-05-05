@@ -76,8 +76,6 @@ HP recommends the following best practices for HP Cloud OS for Moonshot 1.10.
 
 * For increased reliability, we recommend you allocate an adequate IP address range for the nova_flat network based on the number of instances planned for the given Cloud. For example, if the environment is going to have 40 instances, at least 120 IP addresses need to be defined in the DHCP allocation range. 
 
-* To enable best functionality, the image should be used as the flavor for Windows Images which are created using [Image Builder](/cloudos/moonshot/manage/image-builder/) document.
-
 
 **Installation**
 
@@ -116,13 +114,16 @@ The following are the known issues for HP Cloud OS for Moonshot 1.10.
 
 * Under some circumstances, after launching a workload profile in the Administration Dashboard, and then using <b>Terminate Workload</b> to deprovision, the workload/topology continues to list the state as "Processing".  In the <b>Deployed Workloads</b> tab, selecting <b>Delete Workload</b> resolves the issue.
 
+* For instances provisioned using Windows Images created using the [Image Builder](/cloudos/moonshot/manage/image-builder/) document, the disk size of the instance is the same as the disk size specified during the image creation process. You need to login using the credentials provided as the part of unattend file during Image creation process instead of using the Openstack Keypair.
+
 
 ####General####
 
 
 * The <b>Edit Extra Specs</b> option appears enabled for Flavors. To ensure smooth functioning of the instance, retain the default settings. 
 
-* When you display the nodes table in the <b>Nodes View</b> using Moonshot Management, the disk size for all discovered nodes is shown to be 500 GB, regardless of physical disk capacity. 
+* When you display the nodes table in the <b>Nodes View</b> using Moonshot Management, the disk size for all discovered nodes is shown to be 500 GB, regardless of the physical disk capacity.
+
 <!-- I'm still of the opinion that we should delete this item; there is no workaround, and what good does it do to tell the customer about it? -Doug -->
 
 ##For further information## {#for-further-information}
