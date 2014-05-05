@@ -327,7 +327,7 @@ You can perform the following tasks in the Editor Tab.
 
 **Create a new design**
 
-•	From **Browse Designs**, click **Create**.<br>A blank canvas displays in the **Editor** tab. For more information, refer to Create Topology Design.</br>
+From **Browse Designs**, click **Create**.<br>A blank canvas displays in the **Editor** tab. For more information, refer to Create Topology Design.</br>
 
 
 **Use Editor Controls**
@@ -335,6 +335,7 @@ You can perform the following tasks in the Editor Tab.
 When you open the editor, the following controls are available in the left toolbar:
 
 <img src="media/cos4ms-editor-controls.png"/>
+
 
 **Design Topology Layouts**
 
@@ -585,7 +586,7 @@ The Validation page displays with following details.
  
  * type of component
 
-6. Click error to go to the source of the issue and correct it.
+6.	Click error to go to the source of the issue and correct it.
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
