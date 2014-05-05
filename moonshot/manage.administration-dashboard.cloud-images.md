@@ -187,16 +187,11 @@ To launch an image in the Administration Dashboard:
 3. Select **Launch** against the image listed in the table. A Launch Instance dialog box displays with four tabs: **Details** Tab, **Access & Security** Tab, **Networking** Tab and **Post-Creation** Tab. By default, Details is the active tab.
 
 4. On the **Details** Tab, perform the following:
-   
- * From the **Instance Source** drop-down list, select the image.
-  
+  * From the **Instance Source** drop-down list, select the image.
  * From the **Image** drop-down list, select the value. 
-  
  * In the **Instance Name** box, enter a name for the instance.
-   
  * From the **Flavor** drop-down list, select the Baremetal flavor. <br>This is default flavor that is created.
-  
-  * In the Instance Count box, enter 1 or more than 1.<br>
+ * In the Instance Count box, enter 1 or more than 1.<br>
 The flavor details are displayed on the right side of the dialog box.</br>
 
 5.  On the Access and Security Tab, perform the following:
