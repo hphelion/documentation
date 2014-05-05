@@ -334,7 +334,7 @@ From **Browse Designs**, click **Create**.<br>A blank canvas displays in the **E
 
 When you open the editor, the following controls are available in the left toolbar:
 
-<img src="media/cos4ms-editor-controls.png"/>
+<img src="media/cos4ms-editor-controls.PNG"/>
 
 
 **Design Topology Layouts**
