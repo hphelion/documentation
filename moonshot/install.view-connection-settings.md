@@ -23,7 +23,7 @@ UP</a> | <a href="/cloudos/moonshot/install/customize-networks/">NEXT &#9654;</a
 
 # View Connection Settings
 
-The <b>Environment</b> > <b>Connections</b> panel is informational only. The values are read only. With HP Cloud OS for Moonshot environments, the values are already defined for you:
+The <b>Environment</b> > <b>Connections</b> panel is informational only. The values are read only. With HP Helion Cloud OS for Moonshot environments, the values are already defined for you:
 
 * Network mode: dual.  Dual mode means that all the connections have their own interfaces, where VLAN and bridge are off.
 
@@ -37,7 +37,7 @@ The <b>Environment</b> > <b>Connections</b> panel is informational only. The val
  * 1Gb (preferred) on 2nd port
  * 1Gb (preferred) on 3rd port
  
-In this case, <b>1Gb (preferred) on 2nd port</b> means a one gigabit network for port 2, as enumerated by default from the server's BIOS or as overridden in the Server Types panel. The "preferred" tag suggests that if the NIC/port does not support 1Gb, HP Cloud OS for Moonshot falls back to the next maximum speed supported by the NIC or port. 
+In this case, <b>1Gb (preferred) on 2nd port</b> means a one gigabit network for port 2, as enumerated by default from the server's BIOS or as overridden in the Server Types panel. The "preferred" tag suggests that if the NIC/port does not support 1Gb, HP Helion Cloud OS for Moonshot falls back to the next maximum speed supported by the NIC or port. 
 
 ## Next Step
 

@@ -1,26 +1,26 @@
 ---
 layout: default
-title: "HP Cloud Networking:  VPN multi-site configuration guide"
+title: "HP Helion Cloud Networking:  VPN multi-site configuration guide"
 permalink: /compute/vpn-multisite/
 product: compute
 categories: neutron
 tags: networking neutron vpn
 
 ---
-# HP Cloud Networking:  VPN multi-site configuration guide {#top}
+# HP Helion Cloud Networking:  VPN multi-site configuration guide {#top}
 
-Once you have set up your initial VPN connection, you can extend your network to your different private sites. This guide provides you the basic steps to configure a VPN Virtual Machine (instance) and establish a secure connection between private sites to your HP Cloud VPN.
+Once you have set up your initial VPN connection, you can extend your network to your different private sites. This guide provides you the basic steps to configure a VPN Virtual Machine (instance) and establish a secure connection between private sites to your HP Helion Cloud VPN.
 
-For this procedure, we assume that you have an active HP Cloud account with a VPN instance set up (see the [VPN Quick Start Guide](http://docs.hpcloud.com/compute/vpn-quickstart) to set up the initial VPN instance).
+For this procedure, we assume that you have an active HP Helion Cloud account with a VPN instance set up (see the [VPN Quick Start Guide](http://docs.hpcloud.com/compute/vpn-quickstart) to set up the initial VPN instance).
 
-While you can set up your compute instance and VPN using any Linux OS, for the purpose of this guide, we use an Ubuntu instance and strongSwan IPsec. This configuration has been tested, but you can use this guide as a basis for connecting your sites to your HP Cloud VPN.
+While you can set up your compute instance and VPN using any Linux OS, for the purpose of this guide, we use an Ubuntu instance and strongSwan IPsec. This configuration has been tested, but you can use this guide as a basis for connecting your sites to your HP Helion Cloud VPN.
 
 This guide covers the following:
 
 - [Collect network and security information](#netsecinfo)
 - [Define IPsec and IKE proposals](#defineipsecike)
 - [Configure the VPN for the IKE and IPsec proposals](#configvpn)
-- [Establish a connection with your HP Cloud VPN](#connect)
+- [Establish a connection with your HP Helion Cloud VPN](#connect)
 - [Troubleshoot and verify connections](#trouble)
 - [For further information](#info)
 
@@ -355,7 +355,7 @@ The *ipsec.conf* file can hold multiple connection sections. Because we have thr
 
 back to the [top](#top)
 
-##Establish a connection with your HP Cloud VPN## {#connect}
+##Establish a connection with your HP Helion Cloud VPN## {#connect}
 
 You can establish a connection with the remote router in two ways:
 

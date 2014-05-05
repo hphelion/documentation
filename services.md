@@ -1,19 +1,19 @@
 ---
 layout: default
-title: "HP Cloud services"
+title: "HP Helion Cloud services"
 permalink: /services/
 
 ---
-# HP Cloud services
+# HP Helion Cloud services
 
-There are a number of HP Cloud services available for you: 
+There are a number of HP Helion Cloud services available for you: 
 
 * [Block storage](/block-storage/): Allows you to enable additional volumes to Compute instances.
-* [CDN](/cdn/): Content inside HP Cloud Object Storage can easily be cached on servers in metropolitan areas all over the world to speed client access to them by removing much of the network latency.
+* [CDN](/cdn/): Content inside HP Helion Cloud Object Storage can easily be cached on servers in metropolitan areas all over the world to speed client access to them by removing much of the network latency.
 * [Compute](/compute/): A method for you to instantiate virtual servers on publicly accessible physical machines hosted in HP data centers.
 * [DNS](/dns/): A managed domain name service that features anycast routing hosted by HP.
-* [Identity service](/identity/): One-stop authentication for all HP Cloud Service offerings.
-* [Monitoring](/maas/): Allows you to monitor  the health and other metrics of your resources in HP Cloud.
+* [Identity service](/identity/): One-stop authentication for all HP Helion Cloud Service offerings.
+* [Monitoring](/maas/): Allows you to monitor  the health and other metrics of your resources in HP Helion Cloud.
 * [Object storage](/object-storage/): A way to store and retrieve objects in a highly redundant cluster of publicly accessible physical machines hosted in HP data centers. 
 * [Relational Database](/dbaas/): Provides you with a simplified method for creation and management of MySQL database instances.
 

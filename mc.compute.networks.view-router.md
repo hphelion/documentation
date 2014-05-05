@@ -21,7 +21,7 @@ This page covers how to view router details using the networks screen of the man
 
 Before you can view the details of an existing network, you must:
 
-* [Sign up for an HP Cloud compute account](https://horizon.hpcloud.com/register)
+* [Sign up for an HP Helion Cloud compute account](https://horizon.hpcloud.com/register)
 * [Activate compute service on your account](https://horizon.hpcloud.com/landing/)
 * [Create a network](/mc/compute/networks/create-network#Creating/)
 * Create a router by [creating a project](/mc/account/projects#Creating) in the [account and services](/mc/account/) dashboard
@@ -70,7 +70,7 @@ The router details screen provides you access to the following functions:
 
 ##For further information## {#ForFurtherInformation}
 
-* For basic information about our HP Cloud compute services, take a look at the [HP Cloud compute overview](/compute/) page
+* For basic information about our HP Helion Cloud compute services, take a look at the [HP Helion Cloud compute overview](/compute/) page
 * Go to the [managing routers](/mc/compute/networks/manage-routers) for information on how to manage your routers
 * Use the MC [site map](/mc/sitemap) for a full list of all available MC documentation pages
 * For information about the Open Stack networking features, surf on over to [their networking wiki](https://wiki.openstack.org/wiki/Quantum)

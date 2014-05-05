@@ -1,8 +1,8 @@
 ---
 layout: default
-title: "HP Cloud Console Getting Started"
+title: "HP Helion Cloud Console Getting Started"
 permalink: /hpcloudconsole/
-product: HP Cloud Console
+product: HP Helion Cloud Console
 
 ---
 
@@ -183,7 +183,7 @@ An instance is a virtual server.
 
 6. Enter the number of instances you want to create under "Instance Count."
 
-7. Select the "Instance Boot Source" source from the drop-down menu. To select an HP Cloud default image, select "Boot from Image" from the drop-down.  
+7. Select the "Instance Boot Source" source from the drop-down menu. To select an HP Helion Cloud default image, select "Boot from Image" from the drop-down.  
 
     <img src="media/CreateanInstanceImage3.png" width="580" alt="" />
 
@@ -253,7 +253,7 @@ While this document does not cover creating snapshots, click "Images and Snapsho
 ###Access and Security### {#Accessandsecurity}
 Security groups and security group rules allow you to specify the type of traffic and direction (inbound/outbound) that are allowed to pass through a project's network port(s). When you create a project in HP Helion Public Cloud, you must also create security group rules to define access types through its ports, designating security group members depending on their job functions and access needs. 
 
-When a port is created in HP Cloud Networking it is associated, unless you specify otherwise, with a default security group that allows inbound traffic from the same subnet and all outbound traffic. You can add security group rules to the default security group to modify access or create a new security group to contain the rules you need.
+When a port is created in HP Helion Cloud Networking it is associated, unless you specify otherwise, with a default security group that allows inbound traffic from the same subnet and all outbound traffic. You can add security group rules to the default security group to modify access or create a new security group to contain the rules you need.
 
 Security group rules have three parts:  
 
@@ -338,7 +338,7 @@ Security group rules have three parts:
     
 ###Monitoring### {#Monitoring}
 
-Use HP Cloud Monitoring to ascertain system health and track resource metrics. Create the following in the HP Helion Public Cloud Console to define the metrics you want to gather, where you want them sent, and configure an alarm that sends them:
+Use HP Helion Cloud Monitoring to ascertain system health and track resource metrics. Create the following in the HP Helion Public Cloud Console to define the metrics you want to gather, where you want them sent, and configure an alarm that sends them:
 
 * An endpoint that specifies the metrics to gather
 * Subscriptions that specify which metrics to stream to an endpoint
@@ -348,7 +348,7 @@ Use HP Cloud Monitoring to ascertain system health and track resource metrics. C
 After completing these tasks, you receive the metrics in JSON format at the locations you specified when an alarm is triggered. The metrics are streamed over an [AMQP](http://www.amqp.org/about/what) socket. Select the tool of your choice to create graphical representations of the metrics.
 
 ####Begin:####
-1. Click "Manage Services" in the left-hand bar on the [HP Cloud Console landing page](https://horizon.hpcloud.com/landing), then "Activate" in the "Monitoring" row under the region you are setting up.
+1. Click "Manage Services" in the left-hand bar on the [HP Helion Cloud Console landing page](https://horizon.hpcloud.com/landing), then "Activate" in the "Monitoring" row under the region you are setting up.
 
 <img src="media/Monitoring1.png" width="580" alt="" /> 
 
@@ -441,7 +441,7 @@ After completing these tasks, you receive the metrics in JSON format at the loca
 
      
 
-###Organize and manage HP Cloud Access## {#Identity}
+###Organize and manage HP Helion Cloud Access## {#Identity}
 
 Click  "Identity" in the left-hand interface to display links:
 
@@ -461,7 +461,7 @@ Click  "Identity" in the left-hand interface to display links:
 ##For further information## {#Forfurtherinformation}
 
 *For the latest updates to the current HP Helion Public Cloud Console release, see [What's new with HP Helion Public Cloud Console](/whats_new_with_HP_Cloud_Console/)..
-* For basic information about our HP Cloud compute services, take a look at the [HP Cloud compute overview](/compute/) page
-* If you'd rather use the HP Cloud Command Line Interface (CLI) features, choose your topic of interest from our [HP CLoud CLI](/cli) pages.
+* For basic information about our HP Helion Cloud compute services, take a look at the [HP Helion Cloud compute overview](/compute/) page
+* If you'd rather use the HP Helion Cloud Command Line Interface (CLI) features, choose your topic of interest from our [HP Helion Cloud CLI](/cli) pages.
 
 

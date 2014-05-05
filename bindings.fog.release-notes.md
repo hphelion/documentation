@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "Release Notes for the HP Cloud Ruby Fog Binding"
+title: "Release Notes for the HP Helion Cloud Ruby Fog Binding"
 permalink: /bindings/fog/release-notes/
 product: fog
 
 ---
-# Release Notes for the Ruby Fog Bindings for HP Cloud
+# Release Notes for the Ruby Fog Bindings for HP Helion Cloud
 
 ##Important Notice##
 
@@ -18,15 +18,15 @@ Read our [blog post](http://www.hpcloud.com/blog/releasing-ruby-bindings-wild) t
 _______________
 
 
-You can find the release notes for the [latest](#latest) and all [previous](#previous) HP Cloud Ruby Fog bindings releases here. To install and use HP Cloud Ruby bindings for Fog, please install the [latest release](http://fog.io) of Fog.
+You can find the release notes for the [latest](#latest) and all [previous](#previous) HP Helion Cloud Ruby Fog bindings releases here. To install and use HP Helion Cloud Ruby bindings for Fog, please install the [latest release](http://fog.io) of Fog.
 
 ##Latest Release## {#latest}
-The HP Cloud Ruby Fog bindings has been feature-merged with upstream [Fog](http://fog.io) version 1.18.0. Note that the downloadable 'hpfog' gem versions has been **deprecated**. All further updates and issues will be maintained at the main [Fog repository](https://github.com/fog/fog).
+The HP Helion Cloud Ruby Fog bindings has been feature-merged with upstream [Fog](http://fog.io) version 1.18.0. Note that the downloadable 'hpfog' gem versions has been **deprecated**. All further updates and issues will be maintained at the main [Fog repository](https://github.com/fog/fog).
 
 This release was made available on 10/31/2013 and contains the following new features:
 
 * Feature merge with upstream Fog
-* Deprecated 'hpfog' gem and released HP Cloud Ruby Bindings as part of Fog release v1.18.0
+* Deprecated 'hpfog' gem and released HP Helion Cloud Ruby Bindings as part of Fog release v1.18.0
 
 ###Known Issues###
 
@@ -34,7 +34,7 @@ None in this release.
 
 ##Previous Releases## {#previous}
 
-For release notes on previous HP Cloud Ruby Fog bindings:
+For release notes on previous HP Helion Cloud Ruby Fog bindings:
 
 * [Release 0.0.22 Information](#v0022)
 * [Release 0.0.21 Information](#v0021)
@@ -80,7 +80,7 @@ This release was made available on 03/15/2013 and contains the following new fea
 * Support for `user_data` when creating servers using the compute service added
 * Support for one and two way container synchronization in object storage service added
 
-This version of the HP Cloud Ruby Fog bindings has been feature-merged with [Fog version 1.10.0](http://github.com/fog/fog).
+This version of the HP Helion Cloud Ruby Fog bindings has been feature-merged with [Fog version 1.10.0](http://github.com/fog/fog).
 
 ###Known Issues###
 

@@ -6,7 +6,7 @@ permalink: /glossary/
 ---
 # Glossary of HP Helion Public Cloud Terms
 
-Sometimes it's a little easy to become lost in the weeds of the cloud nomenclature; for such times, we've created this glossary to help you through.  While this glossary concentrates primarily on terms that are more specific to the HP Cloud environment, we have tried to include a salad of general cloud computing terms to help you along.  If you need additional definitions, we suggest going on over to the [Open Stack Glossary](http://cloudglossary.com/) and checking there.
+Sometimes it's a little easy to become lost in the weeds of the cloud nomenclature; for such times, we've created this glossary to help you through.  While this glossary concentrates primarily on terms that are more specific to the HP Helion Cloud environment, we have tried to include a salad of general cloud computing terms to help you along.  If you need additional definitions, we suggest going on over to the [Open Stack Glossary](http://cloudglossary.com/) and checking there.
 
 For a quick search of the [Knowledge Base](https://community.hpcloud.com/knowledge-base), just click on the blue highlighted term!  
 
@@ -60,7 +60,7 @@ For a quick search of the [Knowledge Base](https://community.hpcloud.com/knowled
 ## C ##
 
 ###[CDN](https://community.hpcloud.com/search/knowledge/CDN) ### {#CDN}
-:    Content delivery network; an HP Cloud service that provides distributed caching of object storage objects on geographically dispersed caching servers. Copies of the object are stored at a location more convenient to the end user system, allowing for better performance.
+:    Content delivery network; an HP Helion Cloud service that provides distributed caching of object storage objects on geographically dispersed caching servers. Copies of the object are stored at a location more convenient to the end user system, allowing for better performance.
 
 ###[CDN-enabled](https://community.hpcloud.com/search/knowledge/CDN+enabled) ### {#CDN-enabled}
 :    A container that has been enabled for a content delivery network.
@@ -72,7 +72,7 @@ For a quick search of the [Knowledge Base](https://community.hpcloud.com/knowled
 :    HP's cloud computing platform, designed to provision and manage large networks of virtual machines. 
 
 ###[Cloud Compute Unit (CCU)](https://community.hpcloud.com/search/knowledge/CCU) ### {#CloudCompute}
-:    An HP Cloud Compute Unit (CCU) is a unit of CPU capacity that describes the amount of compute power that a virtual core has available to it. Thus 6.5 CCUs are roughly equivalent to the minimum power of one logical core (a hardware hyper-thread) of an Intel® 2012 Xeon® 2.60 GHz CPU.
+:    An HP Helion Cloud Compute Unit (CCU) is a unit of CPU capacity that describes the amount of compute power that a virtual core has available to it. Thus 6.5 CCUs are roughly equivalent to the minimum power of one logical core (a hardware hyper-thread) of an Intel® 2012 Xeon® 2.60 GHz CPU.
 
 ###[CodePlex](https://community.hpcloud.com/search/knowledge/CodePlex) ### {#CodePlex}
 :    An open source project-hosting web site maintained by MicroSoft.
@@ -158,7 +158,7 @@ For a quick search of the [Knowledge Base](https://community.hpcloud.com/knowled
 ## J ##
 
 ###[jclouds](https://community.hpcloud.com/search/knowledge/jclouds) ### {#jclouds}
-:    An open source library that provides java and clojure functionality in the HP cloud environment. 
+:    An open source library that provides java and clojure functionality in the HP Helion Cloud environment. 
 
 ## K ##
 
@@ -173,7 +173,7 @@ For a quick search of the [Knowledge Base](https://community.hpcloud.com/knowled
 ## M ##
 
 ###[Management Console](https://community.hpcloud.com/search/knowledge/management+console) ### {#ManagementConsole}
-:    The primary access location for the HP cloud interface.  The console consists of a main dashboard panel, along with compute, storage, and account panels.
+:    The primary access location for the HP Helion Cloud interface.  The console consists of a main dashboard panel, along with compute, storage, and account panels.
 
 ###[Maven](https://community.hpcloud.com/search/knowledge/Maven) ### {#Maven}
 :    An open source software project management and comprehension tool. (Also: [Apache Maven](#ApacheMaven) )

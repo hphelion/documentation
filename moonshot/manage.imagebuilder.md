@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Cloud OS for Moonshot: Building Images"
+title: "HP Helion Cloud OS for Moonshot: Building Images"
 permalink: /cloudos/moonshot/manage/image-builder/
 product: moonshot
 
@@ -20,9 +20,9 @@ PageRefresh();
 
 <p style="font-size: small;"> <a href="/cloudos/moonshot/manage/administration-dashboard">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage">&#9650; UP</a> | <a href="/cloudos/moonshot/manage/backup-process">NEXT &#9654;</a> </p>
 
-# HP Cloud OS for Moonshot: Building Images # {#moon-image-builder}
+# HP Helion Cloud OS for Moonshot: Building Images # {#moon-image-builder}
 
-You might have a need to create customized images suitable to your environment; Disk Image Builder is a tool that can help you do just that. This document shows you how to use Disk Image Builder to create images for the HP Cloud OS for Moonshot.
+You might have a need to create customized images suitable to your environment; Disk Image Builder is a tool that can help you do just that. This document shows you how to use Disk Image Builder to create images for the HP Helion Cloud OS for Moonshot.
 
 * [Supported operating systems](#image-builder-os)
 * [About Disk Image Builder](#disk-image-builder)
@@ -38,7 +38,7 @@ The following operating systems are supported for image building:
 * Ubuntu version 12.04 LTS and above
 
 ## About Disk Image Builder ## {#disk-image-builder}
-Disk Image Builder is the tool that can be used for building and customizing images for Nova-Baremetal deployment. It helps in building disk images and PXE images for use with HP Cloud OS for Moonshot. The disk images are a thin version of images created compared to other disk image building tools.
+Disk Image Builder is the tool that can be used for building and customizing images for Nova-Baremetal deployment. It helps in building disk images and PXE images for use with HP Helion Cloud OS for Moonshot. The disk images are a thin version of images created compared to other disk image building tools.
 
 Disk Image Builder creates images based on different elements defined in its element directory. These scripts are bundled in a specific pattern which provides the core functionality of creating cloud images. It provides elements to create a basic Virtual Machine of either Ubuntu or Fedora. We can also create our own Virtual Machine images by including/writing new elements and putting them under the elements directory. One such example is a LAMP image which provides a cloud image of LAMP server to use in OpenStack.
 
@@ -120,7 +120,7 @@ Now that you have created your image, you can add it to Glance and manage it wit
 
     <pre>ssh -i demokey.pem &lt;IP_of_demo_vm1></pre>
 
-<p>You can now access and manage your VM image from the HP Cloud OS for Moonshot Administration Dashboard. For detailed instructions, see the <b>Manage Images</b> topic of the <a href="http://docs.hpcloud.com/cloudos/moonshot/pdf/HP-Cloud-OS-for-Moonshot-Administration-Dashboard-Help.pdf" target="_blank">Administration Dashboard help (PDF)</a>.</p>
+<p>You can now access and manage your VM image from the HP Helion Cloud OS for Moonshot Administration Dashboard. For detailed instructions, see the <b>Manage Images</b> topic of the <a href="http://docs.hpcloud.com/cloudos/moonshot/pdf/HP-Cloud-OS-for-Moonshot-Administration-Dashboard-Help.pdf" target="_blank">Administration Dashboard help (PDF)</a>.</p>
 
 ## Creating an image for a specific workload ## {#image-specific-workload}
 You might want to create an image for a specific workload, such as an Internet server. To do this, you must have an element with appropriate hooks written for that specific workload. The rest of this section shows you how to create Ubuntu and RHEL images for specific workloads, and their associated elements.
@@ -163,7 +163,7 @@ To use your new nginx element with Ubuntu to create a VM image that is pre-insta
 <pre>disk-image-create -o base -a amd64 vm base baremetal nginx</pre>
 
 
-<p>This creates a VM image file named base.qcow2. You can now upload and work with this image in HP Cloud OS for Moonshot. For detailed instructions, see the <b>Manage Images</b> topic of the <a href="http://docs.hpcloud.com/cloudos/moonshot/pdf/HP-Cloud-OS-for-Moonshot-Administration-Dashboard-Help.pdf" target="_blank">Administration Dashboard help (PDF)</a>.</p>
+<p>This creates a VM image file named base.qcow2. You can now upload and work with this image in HP Helion Cloud OS for Moonshot. For detailed instructions, see the <b>Manage Images</b> topic of the <a href="http://docs.hpcloud.com/cloudos/moonshot/pdf/HP-Cloud-OS-for-Moonshot-Administration-Dashboard-Help.pdf" target="_blank">Administration Dashboard help (PDF)</a>.</p>
 
 ### Creating a RHEL image for a specific workload ### {#rhel-image}
 To create a RHEL image for a specific workload, you first need to create the mongodb element.
@@ -233,5 +233,5 @@ To use your new mongodb element with RHEL to create an image that is pre-install
 
 <pre>disk-image-create &ndash;o &lt;image_prefix> &ndash;a amd64&ndash;u base rhel baremetal mongodb</pre>
 
-<p>This creates a disk image file named base.qcow2. You can now upload and work with this image in HP Cloud OS for Moonshot. For detailed instructions, see the <b>Manage Images</b> topic of the <a href="http://docs.hpcloud.com/cloudos/moonshot/pdf/HP-Cloud-OS-for-Moonshot-Administration-Dashboard-Help.pdf" target="_blank">Administration Dashboard help (PDF)</a>.</p>
+<p>This creates a disk image file named base.qcow2. You can now upload and work with this image in HP Helion Cloud OS for Moonshot. For detailed instructions, see the <b>Manage Images</b> topic of the <a href="http://docs.hpcloud.com/cloudos/moonshot/pdf/HP-Cloud-OS-for-Moonshot-Administration-Dashboard-Help.pdf" target="_blank">Administration Dashboard help (PDF)</a>.</p>
 

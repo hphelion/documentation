@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Cloud OS for Moonshot: Administration Dashboard"
+title: "HP Helion Cloud OS for Moonshot: Administration Dashboard"
 permalink: /cloudos/moonshot/manage/administration-dashboard/getting-started/
 product: moonshot
 
@@ -20,9 +20,9 @@ PageRefresh();
 
 # The Administration Dashboard #
 
-The HP Cloud OS for Moonshot Administration Dashboard is the interface which is used to manage the cloud once the cloud environment is created in the Operational Dashboard.
+The HP Helion Cloud OS for Moonshot Administration Dashboard is the interface which is used to manage the cloud once the cloud environment is created in the Operational Dashboard.
 
-The Administration Dashboard can be accessed by different user roles to perform the tasks assigned to that role. Apart from the basic functionalities, such as creating projects, users, roles, resource pools, topology templates etc.; HP Cloud OS for Moonshot provides two major features to enhance your cloud experience.
+The Administration Dashboard can be accessed by different user roles to perform the tasks assigned to that role. Apart from the basic functionalities, such as creating projects, users, roles, resource pools, topology templates etc.; HP Helion Cloud OS for Moonshot provides two major features to enhance your cloud experience.
 
 * **Moonshot Management**
 
@@ -31,7 +31,7 @@ The Administration Dashboard can be accessed by different user roles to perform 
 
 &#9654; **Moonshot Management**
 
-Management of IT resources in a cloud that is scalable and dynamic in nature is quite challenging. To have a simplified and enhanced cloud management experience, HP Cloud OS for Moonshot provides a Single Pane of Glass (SPOG) view with the Chassis Manager.
+Management of IT resources in a cloud that is scalable and dynamic in nature is quite challenging. To have a simplified and enhanced cloud management experience, HP Helion Cloud OS for Moonshot provides a Single Pane of Glass (SPOG) view with the Chassis Manager.
 
 Chassis Manager caters to three important requirements of a Cloud Administrator.
  
@@ -59,7 +59,7 @@ In Cloud Enterprise IT, a typical goal is to deploy a composite service which co
 ## How to access the Administration Dashboard ##
 Before you access the Administration Dashboard, ensure that the Cloud Environment is up and running.
 
-You can access the HP Cloud OS for Moonshot Administration Dashboard in either of the following ways:
+You can access the HP Helion Cloud OS for Moonshot Administration Dashboard in either of the following ways:
 
 * In your browser window, type the public IP address of your Cloud Controller Node in the following format https://<Public IP Address>
 
@@ -180,7 +180,7 @@ This tab allows you to use the following options.
 <td><b>Updates and Extensions</b></td> <td></td></tr>
 
 <tr style="background-color: white; color: black;">
-<td>Updates and Extensions </td> <td>This option allows you to download content files from HP Cloud OS Delivery Network (CODN) and use it in your cloud environment.</td></tr></table>
+<td>Updates and Extensions </td> <td>This option allows you to download content files from HP Helion Cloud OS Delivery Network (CODN) and use it in your cloud environment.</td></tr></table>
 
 ## **Settings Link** ##
 

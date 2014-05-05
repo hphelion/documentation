@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "Unix CLI for HP Cloud Block Storage Examples"
+title: "Unix CLI for HP Helion Cloud Block Storage Examples"
 permalink: /cli/unix/2/block-storage/
 product: unix-cli
 
 ---
-# Unix CLI for HP Cloud v13.5 Block Storage Examples
+# Unix CLI for HP Helion Cloud v13.5 Block Storage Examples
 
 If you are using v12.12, click [here](https://docs.hpcloud.com/cli/unix/block-storage) for documentation.
 ___________________
@@ -18,11 +18,11 @@ On November 4, 2013, the UNIX CLI was moved into its End-of-Life Cycle process t
 * No new feature requests will be honored
 * Bug reports will be accepted
 
-HP Cloud has contributed the Unix CLI back to the open source community, and you can get support, access the documentation, and download the source code [here](https://github.com/hpcloud/unix_cli).
+HP Helion Cloud has contributed the Unix CLI back to the open source community, and you can get support, access the documentation, and download the source code [here](https://github.com/hpcloud/unix_cli).
 
 _________________________________________
 
-This page discusses the tasks below and shows some examples of how to perform them using HP Cloud:
+This page discusses the tasks below and shows some examples of how to perform them using HP Helion Cloud:
 
 * [Adding Volumes](#AddingVolumes)
 * [Listing Available Volumes](#ListingAvailableVolumes)
@@ -99,4 +99,4 @@ To remove volume `kweller`, run:
     $ hpcloud volumes:remove kweller
     Removed volume 'kweller'.
 
-For complete information on all the UNIX CLI for HP Cloud block storage commands (and all the other UNIX CLI for HP Cloud service commands), please see [UNIX CLI for HP Cloud Reference](/cli/unix/2/reference) page.
+For complete information on all the UNIX CLI for HP Helion Cloud block storage commands (and all the other UNIX CLI for HP Helion Cloud service commands), please see [UNIX CLI for HP Helion Cloud Reference](/cli/unix/2/reference) page.

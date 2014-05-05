@@ -20,7 +20,7 @@ Create network with a subnet (DHCP port)
 Add subnet to existing network (DHCP port)
 Create router
 
-This page covers how to create and delete a port using the networks screen of the Horizon-based HP Cloud Management Console.  This page covers the following topics:
+This page covers how to create and delete a port using the networks screen of the Horizon-based HP Helion Cloud Management Console.  This page covers the following topics:
 
 * [Before you begin](#Overview)
 * [Renaming a port](#Rename)
@@ -33,7 +33,7 @@ This page covers how to create and delete a port using the networks screen of th
 
 Before you perform any network management on your routers, you must:
 
-* [Sign up for an HP Cloud compute account](https://horizon.hpcloud.com/register)
+* [Sign up for an HP Helion Cloud compute account](https://horizon.hpcloud.com/register)
 * [Activate compute service on your account](https://horizon.hpcloud.com/landing/)
 * [Create a network](/mc/compute/networks/create-network/) that has an associated subnet.
 
@@ -42,11 +42,11 @@ Before you perform any network management on your routers, you must:
 
 ## Rename a port ## {#Rename}
 
-When you create a subnet, a port is automatically created and assigned an ID. On the HP Cloud Management Console **Network Overview** page, the ID appears as the name for the port. You can assign a more meaningful name for the port, if needed.
+When you create a subnet, a port is automatically created and assigned an ID. On the HP Helion Cloud Management Console **Network Overview** page, the ID appears as the name for the port. You can assign a more meaningful name for the port, if needed.
 
 To rename a port:
 
-1. Log in to the [HP Cloud Management Console](https://horizon.hpcloud.com/).
+1. Log in to the [HP Helion Cloud Management Console](https://horizon.hpcloud.com/).
 
 2. Select the appropriate project and region under the **Project/Region Scope** section.
 
@@ -74,7 +74,7 @@ Ports are enabled by default. However, if a port has been diabled, you can enabl
 
 To enable a port:
 
-1. Log in to the [HP Cloud Management Console](https://horizon.hpcloud.com/).
+1. Log in to the [HP Helion Cloud Management Console](https://horizon.hpcloud.com/).
 
 2. Select the appropriate project and region under the **Project/Region Scope** section.
 
@@ -105,7 +105,7 @@ Ports are enabled by default. However, you can disable a port. You disable a por
 
 To disable a port:
 
-1. Log in to the [HP Cloud Management Console](https://horizon.hpcloud.com/).
+1. Log in to the [HP Helion Cloud Management Console](https://horizon.hpcloud.com/).
 
 2. Select the appropriate project and region under the **Project/Region Scope** section.
 
@@ -133,6 +133,6 @@ To disable a port:
 ##For further information## {#ForFurtherInformation}
 
 * For information about the Networks screen, take a look at the [Networks screen](/mc/compute/networks/view-router/) page
-* For basic information about our HP Cloud compute services, take a look at the [HP Cloud compute overview](/compute/) page
+* For basic information about our HP Helion Cloud compute services, take a look at the [HP Helion Cloud compute overview](/compute/) page
 * Use the MC [site map](/mc/sitemap) for a full list of all available MC documentation pages
 * For information about the Open Stack networking features, surf on over to [their networking wiki](https://wiki.openstack.org/wiki/Quantum)

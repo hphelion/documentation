@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Cloud OS for Moonshot: Administration Dashboard"
+title: "HP Helion Cloud OS for Moonshot: Administration Dashboard"
 permalink: /cloudos/moonshot/manage/administration-dashboard/topology-designs/
 product: moonshot
 
@@ -20,7 +20,7 @@ PageRefresh();
 
 # Manage Topology Designs #
 
-Use the Topology Designs area of the HP Cloud OS for Moonshot Administration Dashboard to manage service designs, which are the recipes for automating the cloud. A topology design is used for straightforward IaaS deployments, and allows you to design in a free-form layout where connection relationships implicitly define the service fulfillment lifecycle. The provider for Topology Designs is HP Cloud OS for Moonshot. Available components are determined by the version of OpenStack you select within HP Cloud OS for Moonshot, e.g., Diablo, Grizzly. As part of creating a design, you add nodes and set properties in the Editor Tab. Use the Validation Tab at any time to view details about design errors. After creating the design, you can optionally create one or more Profiles based on the design which allows you to override some of the original configuration properties. Profiles create an association to a design document and allow you to set different values such as flavors, machine images and keypairs.
+Use the Topology Designs area of the HP Helion Cloud OS for Moonshot Administration Dashboard to manage service designs, which are the recipes for automating the cloud. A topology design is used for straightforward IaaS deployments, and allows you to design in a free-form layout where connection relationships implicitly define the service fulfillment lifecycle. The provider for Topology Designs is HP Helion Cloud OS for Moonshot. Available components are determined by the version of OpenStack you select within HP Helion Cloud OS for Moonshot, e.g., Diablo, Grizzly. As part of creating a design, you add nodes and set properties in the Editor Tab. Use the Validation Tab at any time to view details about design errors. After creating the design, you can optionally create one or more Profiles based on the design which allows you to override some of the original configuration properties. Profiles create an association to a design document and allow you to set different values such as flavors, machine images and keypairs.
 
 **Note**: 
 
@@ -117,7 +117,7 @@ The tab displays with options in the left panel.
 7.	Click **Next**. 
 The General   appears selected and the Resource Pool & Scope option gets highlighted.
 
-8.	From the **Cloud Profile** drop-down list, select *HP Cloud OS Grizzly Baremetal*.<br>It represents the supported OpenStack version and capabilities of the cloud to which you are deploying. Your selection here determines which node types are available during design layout in the Editor and which Resource Pools are available for selection.</br>
+8.	From the **Cloud Profile** drop-down list, select *HP Helion Cloud OS Grizzly Baremetal*.<br>It represents the supported OpenStack version and capabilities of the cloud to which you are deploying. Your selection here determines which node types are available during design layout in the Editor and which Resource Pools are available for selection.</br>
 
 9.	(Optional) Select a **Resource Pool**, which is a pool of resources associated with the selected Cloud Profile. 
 
@@ -300,7 +300,7 @@ A confirmation box is displayed.
 
 ### Export a Design ###
 
-The export process takes all the topology files, including the design in XML format, and creates a content archive (.zip) file. Exporting is used for data backup within the same HP Cloud OS instance.
+The export process takes all the topology files, including the design in XML format, and creates a content archive (.zip) file. Exporting is used for data backup within the same HP Helion Cloud OS instance.
 The design must be valid and you must specify a Resource Pool before exporting.
 
 1.	Click the **Project** Tab to select it.<br>The tab displays with options in the left panel.</br>

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Cloud OS for Moonshot: Administration Dashboard"
+title: "HP Helion Cloud OS for Moonshot: Administration Dashboard"
 permalink: /cloudos/moonshot/manage/administration-dashboard/working-with-cloud-tab/
 product: moonshot
 
@@ -24,7 +24,7 @@ Only the Cloud Administrator can view the Cloud Tab.
 
 To work with the Cloud Tab:
 
-* Login to the HP Cloud OS for Moonshot Administration Dashboard with the Cloud Administrator credentials. <br>The Administration Dashboard is displayed with a menu bar at the top displaying three tabs: **Project**, **Region**, and **Cloud**.
+* Login to the HP Helion Cloud OS for Moonshot Administration Dashboard with the Cloud Administrator credentials. <br>The Administration Dashboard is displayed with a menu bar at the top displaying three tabs: **Project**, **Region**, and **Cloud**.
 
 * Click **Cloud** Tab to activate it. The screen displays current cloud name and the options in the left panel.
 

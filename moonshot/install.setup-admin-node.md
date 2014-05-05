@@ -42,14 +42,14 @@ infrastructure:
  * On a KVM based VM, for the disk configuration, ensure you set it to the IDE/SCSI type as this is the supported type.  
  <!-- **Note:** If your hypervisor is KVM, ensure the virt type is set to KVM. --> 
 
-3. Download the HP Cloud OS for Moonshot ISO to the host's local file system or data store. 
+3. Download the HP Helion Cloud OS for Moonshot ISO to the host's local file system or data store. 
 
-4. Configure the Virtual Machine (VM) Admin Node to point to the HP Cloud OS for Moonshot ISO as a CD/DVD drive or install media ISO image. 
+4. Configure the Virtual Machine (VM) Admin Node to point to the HP Helion Cloud OS for Moonshot ISO as a CD/DVD drive or install media ISO image. 
 
 
-## Boot the Admin Node Using the HP Cloud OS for Moonshot ISO
+## Boot the Admin Node Using the HP Helion Cloud OS for Moonshot ISO
 
-The Admin Node is booted using HP Cloud OS for Moonshot *.iso.  Follow these steps:
+The Admin Node is booted using HP Helion Cloud OS for Moonshot *.iso.  Follow these steps:
 
 1.	Ensure that ISO image is located in the host's local file system or data store.
 
@@ -79,7 +79,7 @@ The Admin Node is booted using HP Cloud OS for Moonshot *.iso.  Follow these ste
 
 13. Power up the Virtual Machine again.
 
-At this point, HP Cloud OS for Moonshot is installed on the Admin Node. 
+At this point, HP Helion Cloud OS for Moonshot is installed on the Admin Node. 
 
 
 ## Launch the Operational Dashboard

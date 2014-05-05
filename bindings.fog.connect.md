@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "Ruby Fog Bindings for HP Cloud Connecting to the HP Cloud Service"
+title: "Ruby Fog Bindings for HP Helion Cloud Connecting to the HP Helion Cloud Service"
 permalink: /bindings/fog/connect/
 product: fog
 
 ---
-#Ruby Fog Bindings for HP Cloud: Connecting to the HP Cloud Service
+#Ruby Fog Bindings for HP Helion Cloud: Connecting to the HP Helion Cloud Service
 
 ##Important Notice##
 
@@ -17,7 +17,7 @@ Read our [blog post](http://www.hpcloud.com/blog/releasing-ruby-bindings-wild) t
 
 _______________
 
-This page gives you details on how to connect to the HP Cloud service and contains the following sections:
+This page gives you details on how to connect to the HP Helion Cloud service and contains the following sections:
 
 * [Initial Connection](#InitialConnection)
 * [Supplying Your Credentials](#SupplyingyourCredentials)
@@ -28,7 +28,7 @@ This page gives you details on how to connect to the HP Cloud service and contai
 
 ##Initial Connection## {#InitialConnection}
 
-To connect to the HP Cloud Service, follow these steps:
+To connect to the HP Helion Cloud Service, follow these steps:
 
 1. Enter IRB
 
@@ -43,7 +43,7 @@ To connect to the HP Cloud Service, follow these steps:
     
         irb -r 'rubygems'
 
-3. Establish a connection to the desired HP Cloud service
+3. Establish a connection to the desired HP Helion Cloud service
 
         conn = Fog::<SERVICE-NAME>.new(
                :provider      => "HP",
@@ -130,7 +130,7 @@ The current usable availability zones for the block storage service:
 
 ##Optional Parameters## {#OptionalParameters}
 
-This section describes the optional parameters that you can use when connecting to any of the HP Cloud services.  The examples below show the Compute service, but these optional parameters work with all of the HP Cloud services.
+This section describes the optional parameters that you can use when connecting to any of the HP Helion Cloud services.  The examples below show the Compute service, but these optional parameters work with all of the HP Helion Cloud services.
 
 The `user_agent` parameter allows you to specify a string to pass as a `user_agent` header for the connection.  You can use this to track the caller of the operations.  You can set the `user_agent` parameter as follows:
 

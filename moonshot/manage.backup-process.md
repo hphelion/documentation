@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Cloud OS for Moonshot: Backup and Restore"
+title: "HP Helion Cloud OS for Moonshot: Backup and Restore"
 permalink: /cloudos/moonshot/manage/backup-process/
 product: moonshot
 
@@ -20,21 +20,21 @@ PageRefresh();
 
 <p style="font-size: small;"> <a href="/cloudos/moonshot/manage/image-builder">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage">&#9650; UP</a> | NEXT &#9654; </p>
 
-# HP Cloud OS for Moonshot: Backup and Restore # {#moon-image-builder}
+# HP Helion Cloud OS for Moonshot: Backup and Restore # {#moon-image-builder}
 
-HP Cloud OS for Moonshot is an enterprise ready product used to manage a Moonshot Chassis, discover Moonshot Servers from the managed Moonshot Chassis, and provision the given workload based on Moonshot Servers capabilities such as static web, online gaming, and such. It also enables the Cloud Administrator to set up multiple project sharing across the discovered Moonshot Servers.
+HP Helion Cloud OS for Moonshot is an enterprise ready product used to manage a Moonshot Chassis, discover Moonshot Servers from the managed Moonshot Chassis, and provision the given workload based on Moonshot Servers capabilities such as static web, online gaming, and such. It also enables the Cloud Administrator to set up multiple project sharing across the discovered Moonshot Servers.
 
-This document describes how to backup and restore HP Cloud OS for Moonshot, specifically the steps for backing up and recovering the components of HP Cloud OS for Moonshot Management Host:
+This document describes how to backup and restore HP Helion Cloud OS for Moonshot, specifically the steps for backing up and recovering the components of HP Helion Cloud OS for Moonshot Management Host:
 
 * Administration Node
 
 
-    The HP Cloud OS for Moonshot Administration Node (Admin Node) hosts the Operational Dashboard that deploys private Cloud Infrastructure environments by network booting the managed virtual servers, which are typically Controller Node and Baremetal Hosts. 
+    The HP Helion Cloud OS for Moonshot Administration Node (Admin Node) hosts the Operational Dashboard that deploys private Cloud Infrastructure environments by network booting the managed virtual servers, which are typically Controller Node and Baremetal Hosts. 
 
 * Controller Node
 
 
-    While each service can be individually deployed, HP Cloud OS for Moonshot groups these services into distinct sets for ease of architectural description: 
+    While each service can be individually deployed, HP Helion Cloud OS for Moonshot groups these services into distinct sets for ease of architectural description: 
 
     - Cloud Controller - contains those services that are considered single services for a cloud environment, such as Keystone, Glance, Eden, Nova, Eve, and Focus. Also defines the boundaries of the cloud environment from an identity standpoint. 
     - Network Controller - is a single service in a cloud and co-exists with cloud controller services. 
@@ -44,7 +44,7 @@ This document describes how to backup and restore HP Cloud OS for Moonshot, spec
 
     The Baremetal Host hosts the cloud instances using the Baremetal driver for OpenStack Nova compute service. Within the OpenStack framework, the Baremetal driver has the same role as the drivers for other hypervisors (libvirt, xen, etc.), and yet it is presently unique because the hardware is not virtualized; there is no hypervisor between the tenants and the physical hardware which includes Moonshot cartridges.
 
-## Backing up and restoring the HP Cloud OS for Moonshot Management Host {#backup-restore-moonshot}
+## Backing up and restoring the HP Helion Cloud OS for Moonshot Management Host {#backup-restore-moonshot}
 
 We recommend designing and implementing a virtual machine-based backup policy, which enables IT Administrators or Backup Administrators to design a simple backup policy in comparison to using file-based solutions. 
 
@@ -69,7 +69,7 @@ If you choose to design and implement a file-based solution, you will encounter 
 
 
 ### Recommended backup schedule {#rec-backup-sched}
-The following table shows our backup frequency recommendations for HP Cloud OS for Moonshot Management Host.
+The following table shows our backup frequency recommendations for HP Helion Cloud OS for Moonshot Management Host.
 
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
 
@@ -98,7 +98,7 @@ The following table shows our backup frequency recommendations for HP Cloud OS f
 #### Backup strategy {#backup-strategy}
 The following are considerations you should understand and discuss before performing a Management Host backup:
 
-1.	Perform a full backup of HP Cloud OS for Moonshot Management host as soon as the cloud and region are active.
+1.	Perform a full backup of HP Helion Cloud OS for Moonshot Management host as soon as the cloud and region are active.
 2.	Perform a nightly back of the Controller Node and Baremetal Host at the same time.
 3.	Trigger a backup before any scheduled maintenance. Ensure you follow a power ON/OFF sequence. See the [Powering on/off the Management Host](#poweroffon).
 4.	Trigger a backup before applying hot-fixes and patches through the Cloud OS Delivery Network (CODN).
@@ -107,31 +107,31 @@ The following are considerations you should understand and discuss before perfor
 #### Restore strategy {#restore-strategy}
 The following are considerations you should take into account before performing a Management Host restore.
 
-1. Before performing any restoration, power off the HP Cloud OS for Moonshot Management host (Admin and Controller nodes and Baremetal host).
+1. Before performing any restoration, power off the HP Helion Cloud OS for Moonshot Management host (Admin and Controller nodes and Baremetal host).
 2. Use latest backup files and maintain the existing naming convention (Virtual Machine names).
 3. If there is a node failure, remove the datastore files of the corrupt node and then perform a restore.
 4. If your services are corrupted and the Admin node fails, restore only the Admin node.
 5. If both your Baremetal host or Controller node fail, restore them both.
 
 #### Powering on/off the Management host {#poweroffon}
-It is highly recommended you follow the steps for **powering off** the HP Cloud OS for Moonshot Management host after a successful cloud deployment.
+It is highly recommended you follow the steps for **powering off** the HP Helion Cloud OS for Moonshot Management host after a successful cloud deployment.
 
 1. Power off the Baremetal Host.
 2. Once the Baremetal host is off, power off the Controller Node.
 3. Once Controller node is off, power off the Admin Node.
 4. Then, power off the hypervisor power (if required).
 
-Once you have successfully completed the powering off steps, **power on** the HP Cloud OS for Moonshot Management host in this order:
+Once you have successfully completed the powering off steps, **power on** the HP Helion Cloud OS for Moonshot Management host in this order:
 
 1. Power on the hypervisor.
 2. Power on the Admin node.
-3. Open the HP Cloud OS for Moonshot Administration Dashboard in a browser.
+3. Open the HP Helion Cloud OS for Moonshot Administration Dashboard in a browser.
 4. Navigate to **Cloud -> Manage Nodes**. Notice that the state of the nodes is set to OFF.
 5. Power on the Controller node.
 6. Wait until the state of the Controller node changes to **Deployed**, then power on the Baremetal host.
 7. Wait until the state of the Baremetal host changes to **Deployed**.
 
-Your HP Cloud OS for Moonshot Management host is now up and running.
+Your HP Helion Cloud OS for Moonshot Management host is now up and running.
 
 
 
@@ -149,9 +149,9 @@ In this section, we have example backup/restore steps using:
 
 XSIBackup is an open source application that uses VMWare's ESXi built-in command line options to create full backup solutions by cloning the system. For detailed information about this tool, see the [XSIBackup documentation](http://33hops.com/xsibackup-vmware-esxi-backup.html)
 
-Use the following basic steps to backup an HP Cloud OS for Moonshot Management Host running on VMware's hypervisor (ESXi):
+Use the following basic steps to backup an HP Helion Cloud OS for Moonshot Management Host running on VMware's hypervisor (ESXi):
 
-1. Add another datastore, named **bkup**, to the guest that is hosting HP Cloud OS for Moonshot.
+1. Add another datastore, named **bkup**, to the guest that is hosting HP Helion Cloud OS for Moonshot.
 2. Enable an SSH login to the hypervisor.
 3. Login to the hypervisor and copy the XSIBackup script file to the newly added datastore.
 4. Execute the command:
@@ -180,7 +180,7 @@ Use the following steps to restore your Management host in the event of node fai
 
 The VZdump utility is a useful tool for performing backup/restore operations on virtual machines hosted on KVM hypervisors.
 
-As a pre-requisite, you need to determine the IDs of the virtual machines of the HP Cloud OS for Moonshot Management host. You can do this with the `virsh list-all` command:
+As a pre-requisite, you need to determine the IDs of the virtual machines of the HP Helion Cloud OS for Moonshot Management host. You can do this with the `virsh list-all` command:
 
     root@blrcdl11:~# virsh list
 
@@ -191,7 +191,7 @@ As a pre-requisite, you need to determine the IDs of the virtual machines of the
     35 Compute running
     root@blrcdl11:~#
 
-Use the following basic steps to backup an HP Cloud OS for Moonshot Management Host running on a KVM hypervisor.
+Use the following basic steps to backup an HP Helion Cloud OS for Moonshot Management Host running on a KVM hypervisor.
 
 1. Log in as root to the guest system hosting the KVM hypervisor.
 2. Create a mount point **/bkup** which has a mounted partition that is not part of the logical group that hosts the virtual machine images.

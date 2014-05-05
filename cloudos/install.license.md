@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Check the HP Cloud OS License"
+title: "Check the HP Helion Cloud OS License"
 permalink: /cloudos/install/license/
 product: cloudos
 
@@ -19,13 +19,13 @@ PageRefresh();
 
 <p style="font-size: small;"> <a href="/cloudos/install/launch-admin-dashboard/">&#9664; PREV</a> | <a href="/cloudos/install/">&#9650; UP</a> | <a href="/cloudos/install/hot-fixes/">NEXT &#9654;</a> </p>
 
-# Check the HP Cloud OS License
+# Check the HP Helion Cloud OS License
 
-This topic describes the steps to review and update your HP Cloud OS license. 
+This topic describes the steps to review and update your HP Helion Cloud OS license. 
 
 ## Introduction
 
-The HP Cloud OS Operational Dashboard and Administration Dashboard require a common, date-based HP Cloud OS license. From the time you first launch the Operational Dashboard, you have (by default) 90 days of use.  After 90 
+The HP Helion Cloud OS Operational Dashboard and Administration Dashboard require a common, date-based HP Helion Cloud OS license. From the time you first launch the Operational Dashboard, you have (by default) 90 days of use.  After 90 
 days, you may still open the Operational Dashboard and Administration Dashboard. However, until you renew the license, you cannot use any of the features such as managing updates or extensions to your deployed cloud. 
 
 ## Check Your License
@@ -57,5 +57,5 @@ to [Install Hot Fixes](/cloudos/install/hot-fixes/) and perform [Updates and Ext
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
-<!-- To request access to the HP Cloud OS Sandbox, see http://www.hp.com/go/cloudos. --> 
+<!-- To request access to the HP Helion Cloud OS Sandbox, see http://www.hp.com/go/cloudos. --> 
 

@@ -21,7 +21,7 @@ PageRefresh();
 
 # Related Topics
 
-HP Cloud OS for Moonshot is based on (and adds value to) the OpenStack technology and uses the HP Moonshot System  hardware. This topic provides you links to pertinent HP Moonshot System and OpenStack documentation.
+HP Helion Cloud OS for Moonshot is based on (and adds value to) the OpenStack technology and uses the HP Moonshot System  hardware. This topic provides you links to pertinent HP Moonshot System and OpenStack documentation.
 
 ## HP Moonshot System links ## {#related-moonshot}
 <p>You can find HP Moonshot System documentation in the <a href="http://www.hp.com/go/enterprise/docs" target="_blank">HP Enterprise Information Library</a>. Under Products and Solutions, select <b>HP Moonshot System</b> to see product documentation, such as:</p>
@@ -46,7 +46,7 @@ Specifically, you might find these HP Moonshot System documents (PDF) helpful:
 </ul>
 
 ## OpenStack links ## {#related-openstack}
-<p>The current HP Cloud OS for Moonshot release includes OpenStack Grizzly 2013.1.4. You can find information for OpenStack technologies on the <a href="http://docs.openstack.org" target="_blank">OpenStack documentation web site</a>.</p>
+<p>The current HP Helion Cloud OS for Moonshot release includes OpenStack Grizzly 2013.1.4. You can find information for OpenStack technologies on the <a href="http://docs.openstack.org" target="_blank">OpenStack documentation web site</a>.</p>
 
 Specifically, you might find these OpenStack references helpful:
 

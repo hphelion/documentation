@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Cloud OS Support Matrix for Hardware and Software"
+title: "HP Helion Cloud OS Support Matrix for Hardware and Software"
 permalink: /cloudos/prepare/supportmatrix/
 product: cloudos
 
@@ -19,9 +19,9 @@ PageRefresh();
 
 <p style="font-size: small;"> <a href="/cloudos/prepare/releasenotes">&#9664; PREV</a> | <a href="/cloudos/prepare/">&#9650; UP</a> | <a href="/cloudos/prepare/faqs/">NEXT &#9654;</a> </p>
 
-# HP Cloud OS Support Matrix for Hardware and Software
+# HP Helion Cloud OS Support Matrix for Hardware and Software
 
-This document provides an overview of the supported hardware and software for the HP Cloud OS Sandbox Version 1.20, including information for hardware and software setup. 
+This document provides an overview of the supported hardware and software for the HP Helion Cloud OS Sandbox Version 1.20, including information for hardware and software setup. 
 
 * [Server Infrastructure](#server-infrastructure)
 
@@ -35,7 +35,7 @@ This document provides an overview of the supported hardware and software for th
 
 ## Server Infrastructure
 
-For the performance and stability of the HP Cloud OS environment, it is very important to meet the minimum recommendations for memory, processors, and disk space for each of the components in the table below. 
+For the performance and stability of the HP Helion Cloud OS environment, it is very important to meet the minimum recommendations for memory, processors, and disk space for each of the components in the table below. 
 Before installation, please reference the appropriate platform support matrix for each component product.
 
 ### Prerequisites
@@ -118,27 +118,27 @@ on the VM instances hosted by the compute node.
 
 ### Supported Deployment Scenarios
 
-The diagrams in this section illustrate the deployment scenarios supported in HP Cloud OS 1.20.
+The diagrams in this section illustrate the deployment scenarios supported in HP Helion Cloud OS 1.20.
 
 ##### Diagram 1: Single Region. All controllers in a single virtual machine. Compute node is bare metal.
 
-<img src="media/cloudos-single-region1.jpg" title="HP Cloud OS Single Region. All controllers in a single virtual machine. Compute node is bare metal." />
+<img src="media/cloudos-single-region1.jpg" title="HP Helion Cloud OS Single Region. All controllers in a single virtual machine. Compute node is bare metal." />
 
 ##### Diagram 2: Multi-region. All controllers in virtual machines.
 
-<img src="media/cloudos-multi-region2.jpg" title="HP Cloud OS Multi-region. All controllers in virtual machines." />
+<img src="media/cloudos-multi-region2.jpg" title="HP Helion Cloud OS Multi-region. All controllers in virtual machines." />
 
 ##### Diagram 3: Single region. Controllers are in separate virtual machines.
 
-<img src="media/cloudos-single-region-controllers-vm3.jpg" title="HP Cloud OS Single region. Controllers are in separate virtual machines." />
+<img src="media/cloudos-single-region-controllers-vm3.jpg" title="HP Helion Cloud OS Single region. Controllers are in separate virtual machines." />
 
 ##### Diagram 4: Single region. All controllers in a single bare metal server. 
 
-<img src="media/cloudos-single-region-controllers-baremetal4.jpg" title="HP Cloud OS Single region. All controllers in a single bare metal server." />
+<img src="media/cloudos-single-region-controllers-baremetal4.jpg" title="HP Helion Cloud OS Single region. All controllers in a single bare metal server." />
 
 ##### Diagram 5: Supported Swift (Object Store) deployment scenario  
 
-<img src="media/cloudos-swift-storage5.jpg" title="HP Cloud OS Swift storage for all deployment scenarios." />
+<img src="media/cloudos-swift-storage5.jpg" title="HP Helion Cloud OS Swift storage for all deployment scenarios." />
 
 ## Hardware Requirements
 
@@ -202,7 +202,7 @@ Refer to [Install &amp; Configure Your Cloud](/cloudos/install/) for a complete 
 <table style="text-align: left; vertical-align: top;">
 
 <tr style="background-color: #C8C8C8;">
-<th> HP Cloud OS Platforms </th>
+<th> HP Helion Cloud OS Platforms </th>
 <th> Supported Versions </th>
 </tr>
 
@@ -355,33 +355,33 @@ Refer to [Install &amp; Configure Your Cloud](/cloudos/install/) for a complete 
 
 <tr style="background-color: white; color: black;">
 <td style="padding-left: 40px; font-weight: bold;"> Graffiti </td>
-<td> HP Cloud OS 1.20 </td>
+<td> HP Helion Cloud OS 1.20 </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td style="padding-left: 40px; font-weight: bold;"> Eve </td>
-<td> HP Cloud OS 1.20 </td>
+<td> HP Helion Cloud OS 1.20 </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td style="padding-left: 60px;"> Plug-in: CouchDB 1.2.0 Persistence <br /> Plug-in: MongoDB 2.2 Persistence </td>
-<td> HP Cloud OS 1.20 </td>
+<td> HP Helion Cloud OS 1.20 </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td style="padding-left: 40px; font-weight: bold;"> Focus </td>
-<td> HP Cloud OS 1.20 </td>
+<td> HP Helion Cloud OS 1.20 </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td style="padding-left: 60px;"> Plug-in: FileSystem Persistence </td>
-<td> HP Cloud OS 1.20 </td>
+<td> HP Helion Cloud OS 1.20 </td>
 </tr>
 
 <!--
 <tr style="background-color: white; color: black;">
-<td style="padding-left: 40px; font-weight:bold;"> HP Cloud OS Administration Dashboard </td>
-<td> HP Cloud OS 1.20 </td>
+<td style="padding-left: 40px; font-weight:bold;"> HP Helion Cloud OS Administration Dashboard </td>
+<td> HP Helion Cloud OS 1.20 </td>
 </tr>
 -->
 
@@ -390,13 +390,13 @@ Refer to [Install &amp; Configure Your Cloud](/cloudos/install/) for a complete 
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td style="padding-left: 40px;"> HP Cloud OS Operational Dashboard </td>
-<td> HP Cloud OS 1.20 </td>
+<td style="padding-left: 40px;"> HP Helion Cloud OS Operational Dashboard </td>
+<td> HP Helion Cloud OS 1.20 </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td style="padding-left: 40px;"> HP Cloud OS Installation Dashboard </td>
-<td> HP Cloud OS 1.20 </td>
+<td style="padding-left: 40px;"> HP Helion Cloud OS Installation Dashboard </td>
+<td> HP Helion Cloud OS 1.20 </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -425,7 +425,7 @@ Refer to [Install &amp; Configure Your Cloud](/cloudos/install/) for a complete 
 
 <tr style="background-color: white; color: black;">
 <td style="font-weight: bold; background-color: #F8F8F8;"> Cloud Providers </td>
-<td> HP Cloud Compute Service v12.12 </td>
+<td> HP Helion Cloud Compute Service v12.12 </td>
 </tr>
 
 </table>

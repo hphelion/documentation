@@ -887,7 +887,7 @@ will be ignored. </td>
 <tr style="background-color: white; color: black;">
 <td> Domain Name </td> 
 <td> Cloud name (copied from the cloud installation pages) </td>
-<td> A user-editable name for the Domain field on the HP Cloud OS for Moonshot Administration Dashboard login screen. </td>
+<td> A user-editable name for the Domain field on the HP Helion Cloud OS for Moonshot Administration Dashboard login screen. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -1147,7 +1147,7 @@ virtual machines. Select kvm if nova-compute nodes are bare-metal. </td>
 
 <tr>
 <th style="background-color: #C8C8C8;"> Description </th> 
-<td colspan="2" style="background-color: white;"> Installs the self-service HP Cloud OS for Moonshot Administration Dashboard. </td>
+<td colspan="2" style="background-color: white;"> Installs the self-service HP Helion Cloud OS for Moonshot Administration Dashboard. </td>
 </tr>
 
 <tr>
@@ -1283,7 +1283,7 @@ Used in swift.conf cluster_hash. See the <a href="http://swiftstack.com/openstac
 <tr style="background-color: white; color: black;">
 <td> Cluster Admin Password </td> 
 <td> &lt;password> </td>
-<td> The password for the administrative user for Swift in the swauth method. **Note:** Not used - HP Cloud OS for Moonshot defaults to Keystone authentication. </td>
+<td> The password for the administrative user for Swift in the swauth method. **Note:** Not used - HP Helion Cloud OS for Moonshot defaults to Keystone authentication. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -1453,7 +1453,7 @@ clocks are accurate to each other within 1 millisecond. No ratelimit should be h
 <tr style="background-color: white; color: black;">
 <td> Max sleep time seconds </td> 
 <td> 60 </td>
-<td> HP Cloud OS for Moonshot immediately returns a 498 response if the necessary sleep time ever exceeds the given max_sleep_time_seconds.</td>
+<td> HP Helion Cloud OS for Moonshot immediately returns a 498 response if the necessary sleep time ever exceeds the given max_sleep_time_seconds.</td>
 </tr>
 
 <tr style="background-color: white; color: black;">

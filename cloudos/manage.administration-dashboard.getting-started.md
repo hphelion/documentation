@@ -32,7 +32,7 @@ Then the next role down in the privilege hierarchy (a cloud administrator) must 
 started continues down the privilege hierarchy to project users.
 
 Generally, the privilege hierarchy gives each role all the rights of the roles beneath it. For example, a project administrator 
-can perform all the tasks of a project user, plus some additional tasks. Occasionally, the HP Cloud OS Administration Dashboard Help 
+can perform all the tasks of a project user, plus some additional tasks. Occasionally, the HP Helion Cloud OS Administration Dashboard Help 
 provides guidance for best practices that supplement the privilege hierarchy.
 
 **Tasks:**
@@ -83,7 +83,7 @@ When you are done, tell a cloud administrator to perform [Getting Started for Cl
 
 **Concepts:**
 
-Cloud administrators possess all administrator rights associated with the cloud and all HP Cloud OS services, 
+Cloud administrators possess all administrator rights associated with the cloud and all HP Helion Cloud OS services, 
 including the ability to make resources available to users. As a best practice, only cloud administrators create an external network or add subnets to an external network.
 
 **Tasks:**
@@ -169,7 +169,7 @@ and manage project resources that are created by project users. See [Project Use
 Some organizations might also use project administrators to create resource pools. 
 See [How to Create a Resource Pool](/cloudos/manage/administration-dashboard/tasks-by-tab/#how-to-create-a-resource-pool).
 
-When you are done, tell your project users that they can start working in the HP Cloud OS Administration Dashboard. 
+When you are done, tell your project users that they can start working in the HP Helion Cloud OS Administration Dashboard. 
 See [Getting Started for Project Users](#getting-started-for-project-users).
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

@@ -25,7 +25,7 @@ This topic describes the steps to import and apply hot fixes to your deployed cl
 
 If you have already downloaded a content package to your client's local filesystem, and you need to add its functionality to your cloud:
 
-1. From the HP Cloud OS Operational Dashboard, select Cloud tab > Hot Fixes.
+1. From the HP Helion Cloud OS Operational Dashboard, select Cloud tab > Hot Fixes.
 
 2. Click **Import Package** and browse to the .csu file that contains the content package.
 

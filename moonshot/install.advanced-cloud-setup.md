@@ -22,7 +22,7 @@ PageRefresh();
 
 # Advanced Cloud Setup
 
-This topic explains how to perform an advanced cloud setup, as an **alternative** to the wizard-based Create Cloud steps in the HP Cloud OS for Moonshot Operational Dashboard.
+This topic explains how to perform an advanced cloud setup, as an **alternative** to the wizard-based Create Cloud steps in the HP Helion Cloud OS for Moonshot Operational Dashboard.
 
 * [Introduction](#introduction)
 * [Install Module Overview](#install-module-overview)
@@ -40,7 +40,7 @@ Cloud infrastructure services are delivered as "install modules," which are also
 
 Install modules are a mechanism to install and configure a service on the Controller and Compute Nodes. 
 
-When you create a cloud using the process defined in [Manage Nodes and Create a Cloud](/cloudos/moonshot/install/create-cloud/), a number of OpenStack and HP Cloud OS for Moonshot 
+When you create a cloud using the process defined in [Manage Nodes and Create a Cloud](/cloudos/moonshot/install/create-cloud/), a number of OpenStack and HP Helion Cloud OS for Moonshot 
 install modules are automatically configured and deployed for you. In most cases, the automated deployment of install modules will suffice. 
 **Exception:** the Swift install module must be installed manually following the general steps in this topic. 
 
@@ -52,7 +52,7 @@ are provided to assist you in the process of customizing and deploying the indiv
 If you use the advanced option described in this topic, all install modules will need to be applied manually and in the 
 order specified in the [Apply Cloud Controller Install Modules](#apply-cloud-controller-install-modules) section.
 
-To perform these tasks, you'll use a separate UI: the HP Cloud OS for Moonshot Installation Dashboard.  Its URL is:
+To perform these tasks, you'll use a separate UI: the HP Helion Cloud OS for Moonshot Installation Dashboard.  Its URL is:
 
 https://192.168.124.10:3000
 
@@ -129,14 +129,14 @@ example, the same node could be associated with both the controller and the comp
 ## Steps to Apply Install Modules
 
 After you have allocated the managed nodes, you can complete the cloud creation process by manually applying 
-install modules that are available in the HP Cloud OS for Moonshot Installation Dashboard.  As noted previously, to access this UI, open it in 
+install modules that are available in the HP Helion Cloud OS for Moonshot Installation Dashboard.  As noted previously, to access this UI, open it in 
 Mozilla Firefox or Google Chrome:
 
 https://192.168.124.10:3000
  
 ### Apply Cloud Controller Install Modules
 
-The Cloud Controller install modules have dependencies and must be applied in the order that they are listed in the HP Cloud OS for Moonshot Installation Dashboard.
+The Cloud Controller install modules have dependencies and must be applied in the order that they are listed in the HP Helion Cloud OS for Moonshot Installation Dashboard.
 
 > **Important:** Each install module must be successfully applied, one at a time, and in a Ready state before you apply the next install module 
 in the list.
@@ -203,17 +203,17 @@ The following table lists the install modules **in the order they must be applie
 
 <tr style="background-color: white; color: black;">
 <td> <nobr> Hp Cos Graffiti 100 </nobr> </td>
-<td> Provides the HP Cloud OS for Moonshot Resource Pool Registry and Capability Tagging Service. </td>
+<td> Provides the HP Helion Cloud OS for Moonshot Resource Pool Registry and Capability Tagging Service. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Hp Cos Focus 100 </td>
-<td> Provides the HP Cloud OS for Moonshot topology document repository. </td>
+<td> Provides the HP Helion Cloud OS for Moonshot topology document repository. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> Hp Cos Eve 100 </td>
-<td> Provides the HP Cloud OS for Moonshot topology provisioning service for the cloud infrastructure. </td>
+<td> Provides the HP Helion Cloud OS for Moonshot topology provisioning service for the cloud infrastructure. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -228,13 +228,13 @@ The following table lists the install modules **in the order they must be applie
 
 </table>
 
-\* **Important:** In the HP Cloud OS for Moonshot Installation Dashboard, the Nova install module will appear alphabetically in the list of install modules. 
+\* **Important:** In the HP Helion Cloud OS for Moonshot Installation Dashboard, the Nova install module will appear alphabetically in the list of install modules. 
 
 The best practice, though, is to create and apply the Nova proposal after all the others have been applied. First follow the instructions below, then see [Apply the Nova Install Module](#apply-the-nova-install-module) in this topic.
 
 To apply the install modules in Mozilla Firefox or Google Chrome:
 
-1. Open the HP Cloud OS for Moonshot Installation Dashboard at https://192.168.124.10:3000.
+1. Open the HP Helion Cloud OS for Moonshot Installation Dashboard at https://192.168.124.10:3000.
 
 2. Select Barclamps > Cloud Infrastructure. The Cloud Infrastructure page displays all the install modules that are specific to the cloud infrastructure.
 
@@ -270,7 +270,7 @@ To apply the install modules in Mozilla Firefox or Google Chrome:
 
 After creating the cloud and defining your compute region(s), you can deploy Swift in your cloud (if you elected to setup Swift) by following these steps:
 
-1. Launch the HP Cloud OS for Moonshot Installation Dashboard. Its URL is https://192.168.124.10:3000. 
+1. Launch the HP Helion Cloud OS for Moonshot Installation Dashboard. Its URL is https://192.168.124.10:3000. 
 
 2. The Swift install module is pre-installed with a default proposal created (without assigned nodes).
 

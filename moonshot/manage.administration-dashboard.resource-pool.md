@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Cloud OS for Moonshot: Administration Dashboard"
+title: "HP Helion Cloud OS for Moonshot: Administration Dashboard"
 permalink: /cloudos/moonshot/manage/administration-dashboard/resource-pools/
 product: moonshot
 
@@ -44,15 +44,15 @@ The tab displays with options in the left panel.</br>
 
 4.	Click **Create Resource Pool** to display the Create Resource Pool dialog box.
 
-5.	From the **Cloud Type** drop-down list, select the HP Cloud OS-OpenStack Grizzly.<br>
+5.	From the **Cloud Type** drop-down list, select the HP Helion Cloud OS-OpenStack Grizzly.<br>
 Based on the cloud type selected, the options in the Compute Region field change.</br>
 
 	**Note**:
 	
 	   * If the Cloud Type is selected as Custom, Provider Details are required.
 	   	
-	   * If the Cloud Type is selected as HP Cloud OS Grizzly, Provider Details are not required.	
-	   * If the Cloud Type is selected as HP Cloud OS Diablo, Provider Details are required.	
+	   * If the Cloud Type is selected as HP Helion Cloud OS Grizzly, Provider Details are not required.	
+	   * If the Cloud Type is selected as HP Helion Cloud OS Diablo, Provider Details are required.	
 	   * If the Cloud Type is selected as OpenStack Grizzly, Provider Details are required.
 
 6.  From the **Compute Region** drop-down list, select the region from the options displayed.
@@ -75,7 +75,7 @@ Based on the cloud type selected, the options in the Compute Region field change
 	
 	The Type, Version, Region ID, and Provider URL fields are prepopulated based on the Cloud Type and Compute Region that you selected.
 
-8.	From the **Cloud Profile** drop-down list, select HP Cloud OS Grizzly Baremetal.
+8.	From the **Cloud Profile** drop-down list, select HP Helion Cloud OS Grizzly Baremetal.
 
     **Note**: As the Cloud Type is selected as HP OpenStack Grizzly, Provider Details are not required.
 
@@ -95,7 +95,7 @@ This option allows you to update resource pool definitions that will be used dur
 
 * Update the OpenStack server domain URL
 
-* Modify different provider credentials when the resource is an HP Cloud
+* Modify different provider credentials when the resource is an HP Helion Cloud
 
 * Modify values that were not accurate when you originally entered them.
 

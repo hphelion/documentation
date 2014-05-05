@@ -24,7 +24,7 @@ This page describes the volume details screen of the [management console](/mc/) 
 
 Before you can begin viewing the details of a volume, you must:
 
-* [Sign up for an HP Cloud compute account](https://horizon.hpcloud.com/register)
+* [Sign up for an HP Helion Cloud compute account](https://horizon.hpcloud.com/register)
 * [Activate compute service on your account](https://horizon.hpcloud.com/landing/)
 * [Launch the volume screen](/mc/compute/volumes/manage/)
 
@@ -145,5 +145,5 @@ In the snapshot details screen, you can edit the name or description of the snap
 ##For further information## {#ForFurtherInformation}
 
 * See the [compute server screen overview](/mc/compute/servers)
-* For basic information about our HP Cloud compute services, take a look at the [HP Cloud compute overview](/compute/) page
+* For basic information about our HP Helion Cloud compute services, take a look at the [HP Helion Cloud compute overview](/compute/) page
 * Use the MC [site map](/mc/sitemap) for a full list of all available MC documentation pages.

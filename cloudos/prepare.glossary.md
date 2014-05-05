@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Cloud OS Glossary"
+title: "HP Helion Cloud OS Glossary"
 permalink: /cloudos/prepare/glossary/
 product: cloudos
 
@@ -19,7 +19,7 @@ PageRefresh();
 
 <p style="font-size: small;"> <a href="/cloudos/prepare/cloudtypes/">&#9664; PREV | <a href="/cloudos/prepare/">&#9650; UP</a> | NEXT &#9654; </p>
 
-# HP Cloud OS Glossary
+# HP Helion Cloud OS Glossary
 
 [A](#a) | [B](#b) | [C](#c) | [D](#d) | [E](#e) | [F](#f) | [G](#g) | [H](#h) | [I](#i) | [J](#j) | [K](#k) | [L](#l) | [M](#m) | 
 [N](#n) | [O](#o) | [P](#p) | [Q](#q) | [R](#r) | [S](#s) | [T](#t) | [U](#u) | [V](#v) | [W](#w) | [X](#x) | [Y](#y) | [Z](#z)
@@ -41,7 +41,7 @@ underlying [REST](#REST) API and JSON/XML formatting of the [request abstraction
 manages all other nodes. It assigns IP addresses to the nodes; PXE boots the nodes; configures the nodes; and provides the nodes the necessary software for their roles.
 		 
 ###Administration Dashboard### {#Administration-Dashboard}
-:    The HP Cloud OS Administration Dashboard enables administrators to manage their cloud infrastructure. Tasks include launching instances, 
+:    The HP Helion Cloud OS Administration Dashboard enables administrators to manage their cloud infrastructure. Tasks include launching instances, 
 uploading images, creating resource pools, and using designer tools to create topologies. See also [Operational Dashboard](#Operational-Dashboard), which is 
 used for the initial cloud installation, setup, configuration, and creation, before starting the Administration Dashboard. 
 		 
@@ -106,10 +106,10 @@ management effort or service provider interaction.
 
 ###Cloud OS Distribution Network (CODN)###
 :    A catalog-based Cloud OS service that allows off-the-shelf content (like workloads, images, and patches) to be imported into your deployed cloud. To access CODN, see the 
-Updates & Extensions panel in the HP Cloud OS Operational Dashboard or HP Cloud OS Administration Dashboard. You can import content from the CODN portal or from a local folder.
+Updates & Extensions panel in the HP Helion Cloud OS Operational Dashboard or HP Helion Cloud OS Administration Dashboard. You can import content from the CODN portal or from a local folder.
 
 ###Compute Node###
-:     Hosts the Cloud virtual machine instances using any supported hypervisor with OpenStack. In the current release, HP Cloud OS supports KVM as hypervisor. The compute node hosts OpenStack services called Nova-compute and Neutron l2 agent. Multiple Compute Region Nodes can be created to expand cloud capacity.
+:     Hosts the Cloud virtual machine instances using any supported hypervisor with OpenStack. In the current release, HP Helion Cloud OS supports KVM as hypervisor. The compute node hosts OpenStack services called Nova-compute and Neutron l2 agent. Multiple Compute Region Nodes can be created to expand cloud capacity.
 
 ###Compute Region Controller### {#Compute-Region-Controller}
 :    Responsible for scheduling a launch of instances across compute nodes. You can have multiple compute regions in your cloud.  A compute region is 
@@ -134,7 +134,7 @@ of instances and available resources on the compute nodes. In a single compute r
 :     Elastic compute cloud; Amazon's cloud computing platform.
 
 ###Eve###
-:     An HP Cloud OS composite provisioning service that uses a topology design and profile to create VMs, volumes, and network segments as described in the topology. Eve uses Graffiti service for determining resource pool existence, traits, and User identity mapping.
+:     An HP Helion Cloud OS composite provisioning service that uses a topology design and profile to create VMs, volumes, and network segments as described in the topology. Eve uses Graffiti service for determining resource pool existence, traits, and User identity mapping.
 
 ## F
 
@@ -146,13 +146,13 @@ of instances and available resources on the compute nodes. In a single compute r
 
 
 ###Focus###
-:     An HP Cloud OS repository for topology templates and profiles that are used for provisioning.
+:     An HP Helion Cloud OS repository for topology templates and profiles that are used for provisioning.
 
 
 ## G
 
 ###Graffiti###
-:     The HP Cloud OS Resource Pool Registry and Capability Tagging Service, providing a dictionary of the "capabilities" of all the resources in a cloud environment; a searchable directory to find cloud resources based on their capabilities; the mechanism for dynamic binding, allowing you to describe requirements rather than concrete bindings; and the base concepts of requirements and capabilities within TOSCA.
+:     The HP Helion Cloud OS Resource Pool Registry and Capability Tagging Service, providing a dictionary of the "capabilities" of all the resources in a cloud environment; a searchable directory to find cloud resources based on their capabilities; the mechanism for dynamic binding, allowing you to describe requirements rather than concrete bindings; and the base concepts of requirements and capabilities within TOSCA.
 
 ## H
 
@@ -183,7 +183,7 @@ portability, such as cloud bursting for load balancing between clouds.
 ## J
 
 ###Job###
-:     A job is created when the user submits a desired topology to the HP Cloud OS Eve service API, and requests provisioning based on the 
+:     A job is created when the user submits a desired topology to the HP Helion Cloud OS Eve service API, and requests provisioning based on the 
 topology. Eve creates the job, for which the Eden Service API framework then publishes status updates. Once the provisioning is finished, the job is marked as completed.
 
 ## K
@@ -233,7 +233,7 @@ as needed, automatically, without requiring human interaction with each service 
 :     An open-source cloud computing operating system.
 
 ###Operational Dashboard### {#Operational-Dashboard}
-:    The HP Cloud OS Operational Dashboard is used to install, set up, configure, and stand up a cloud environment See also [Administration Dashboard](#Administration-Dashboard), which is 
+:    The HP Helion Cloud OS Operational Dashboard is used to install, set up, configure, and stand up a cloud environment See also [Administration Dashboard](#Administration-Dashboard), which is 
 used to manage the cloud that you created. 
 
 ## P
@@ -276,7 +276,7 @@ commensurate with demand.  To the consumer, these capabilities available for pro
 appropriated in any quantity at any time.
 
 ###Region###
-:    A set of services, preferably across multiple hosts, to offer private cloud resources of compute and networking to self-service users of your cloud. A region provides a defined set of resources, such as topology templates, infrastructure designs, and services governed by a single HP Cloud OS Keystone identity service.
+:    A set of services, preferably across multiple hosts, to offer private cloud resources of compute and networking to self-service users of your cloud. A region provides a defined set of resources, such as topology templates, infrastructure designs, and services governed by a single HP Helion Cloud OS Keystone identity service.
 
 ###Resource pooling###
 :     Resource pooling means the provider's computing resources are pooled to server multiple consumers using a 

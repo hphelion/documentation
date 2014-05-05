@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Cloud OS for Moonshot: Administration Dashboard"
+title: "HP Helion Cloud OS for Moonshot: Administration Dashboard"
 permalink: /cloudos/moonshot/manage/administration-dashboard/manage-updates-extensions/
 product: moonshot
 
@@ -20,9 +20,9 @@ PageRefresh();
 
 # Manage Updates and Extensions #
 
-The updates and extensions feature allows you to connect to, list, and retrieve hot fixes and updates from the HP Cloud OS Delivery Network and apply them to your Cloud environment. These hot fixes and updates are referred to as content packages. After a package is imported and installed, you can view product and package details. 
+The updates and extensions feature allows you to connect to, list, and retrieve hot fixes and updates from the HP Helion Cloud OS Delivery Network and apply them to your Cloud environment. These hot fixes and updates are referred to as content packages. After a package is imported and installed, you can view product and package details. 
 
-The Update and Extensions page will be blank for the first time user. You need to configure your credentials for HP Cloud OS Delivery Network to view the updates.
+The Update and Extensions page will be blank for the first time user. You need to configure your credentials for HP Helion Cloud OS Delivery Network to view the updates.
 
 You can perform the following tasks:
 
@@ -36,11 +36,11 @@ You can perform the following tasks:
 
 ## Configure Credentials ##<a name="Configure Credentials"></a>
 
-You cannot access the updates from the HP Cloud OS Delivery Network (CODN) unless you are a registered user. To Sign up to the Cloud OS Delivery Network, do the following:
+You cannot access the updates from the HP Helion Cloud OS Delivery Network (CODN) unless you are a registered user. To Sign up to the Cloud OS Delivery Network, do the following:
 
 ### Signup Now ###<a name="View Updates List"></a>
 
-To Sign up to the HP Cloud OS Delivery Network, do the following:
+To Sign up to the HP Helion Cloud OS Delivery Network, do the following:
 
 1.	Click the **Project** Tab to select it
 The Project tab is activated and the options are displayed in the left panel.
@@ -54,7 +54,7 @@ The Project tab is activated and the options are displayed in the left panel.
 5.	If you have a CODN account, go to STEP 6 else do the following:
 
     * Click **Signup Now** displayed at the bottom of the page.<br>
-It displays the HP Cloud OS Delivery Network Page. Do the following:</br> 
+It displays the HP Helion Cloud OS Delivery Network Page. Do the following:</br> 
     
     * Click **Sign In** displayed at the top of the page to open the HP Web ID dialog box.
 
@@ -66,9 +66,9 @@ It displays the HP Cloud OS Delivery Network Page. Do the following:</br>
 
 	* Click **Submit**.<br>The credentials are authenticated and the account is created.</br> 
 
-6.	In the **User Name** box, enter the email ID that you used while setting up your account in HP Cloud OS for Moonshot Distribution Network. 
+6.	In the **User Name** box, enter the email ID that you used while setting up your account in HP Helion Cloud OS for Moonshot Distribution Network. 
 
-7.	In the **Password** box, enter the password that you used for your account in the HP Cloud OS Delivery Network.
+7.	In the **Password** box, enter the password that you used for your account in the HP Helion Cloud OS Delivery Network.
 
 8.	Click **OK** to save the details.<br>The Updates and Extensions page is displayed with the list of available patches.</br>
 
@@ -106,7 +106,7 @@ The tab displays with options in the left panel.
 
 ## Import an Update ##
 
-You can import a workload from your local folder or from HP Cloud OS Enterprise portal.  Once the import process is successful, the document displays in the Updates and Extensions page.  
+You can import a workload from your local folder or from HP Helion Cloud OS Enterprise portal.  Once the import process is successful, the document displays in the Updates and Extensions page.  
 
 ### Import content from local Folder ###
 
@@ -169,7 +169,7 @@ The updates are displayed in the Updates and Extensions page.
 
 ## Publish an Update or Extension ##<a name="Publish an Update or Extension"></a>
 
-Once you download an update, you can publish it. The Publish option is displayed once the download is complete. A download can consist of one or more pieces that must be distributed to multiple HP Cloud OS repositories. Publish routes the download contents to their appropriate repositories.
+Once you download an update, you can publish it. The Publish option is displayed once the download is complete. A download can consist of one or more pieces that must be distributed to multiple HP Helion Cloud OS repositories. Publish routes the download contents to their appropriate repositories.
 
 To publish an update, do the following:
 

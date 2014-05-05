@@ -26,8 +26,8 @@ You can use the dashboard's designer to create and manage topology designs for s
 Your topology designs become the recipes for automating the cloud. The designer allows you to design in a free-form 
 layout where connection relationships implicitly define the service fulfillment lifecycle.
 
-HP Cloud OS is the provider for your designs. Available components are determined by the OpenStack version (for example Diablo, Grizzly) you 
-select within HP Cloud OS. As part of creating a design, you add nodes and connectors and set properties in the <b>Editor</b> tab. Use the <b>Validation</b> 
+HP Helion Cloud OS is the provider for your designs. Available components are determined by the OpenStack version (for example Diablo, Grizzly) you 
+select within HP Helion Cloud OS. As part of creating a design, you add nodes and connectors and set properties in the <b>Editor</b> tab. Use the <b>Validation</b> 
 tab at any time to view details about design errors.
 
 After creating the design, you can optionally create one or more <b>Profiles</b> based on that design which allows you to override some 
@@ -78,7 +78,7 @@ Tasks are organized by the following tabs:
 <li> <b>Edit</b> - the design properties.
 <li> <b>Save as</b> - make a copy of a design.
 <li> <b>Publish/Unpublish</b> - published designs can be used to provision.
-<li> <b>Export</b> - export the design to another HP Cloud OS instance.
+<li> <b>Export</b> - export the design to another HP Helion Cloud OS instance.
 <li> <b>Delete</b>
 </ul>
 </td> 
@@ -276,7 +276,7 @@ To add nodes and connectors to the design, see [How to Lay Out a Topology Design
 
 ### How to Import a Topology Design
 
-The import process imports archives of topology designs and their supported artifacts within the same HP Cloud OS instance.
+The import process imports archives of topology designs and their supported artifacts within the same HP Helion Cloud OS instance.
 
 To import a topology design:
 
@@ -428,7 +428,7 @@ To delete a topology design:
 ### How to Export a Topology Design
 
 The export process takes all the topology files, including the design in XML format, and creates a content archive (.zip) file. 
-Exporting is used for data backup within the same HP Cloud OS instance. 
+Exporting is used for data backup within the same HP Helion Cloud OS instance. 
 
 #### Configuring a topology design for export
 
@@ -609,7 +609,7 @@ a tool tip displays. Possible node options are shown in this table:  <br /> <br 
 
 <tr style="background-color: white; color: black;">
 <td style="min-width:50px;"> <img src="media/cloudos_icon_router.png" /> </td>
-<td style="min-width:150px;"> Router (available only with HP Cloud OS Grizzly Cloud Profile)  </td> 
+<td style="min-width:150px;"> Router (available only with HP Helion Cloud OS Grizzly Cloud Profile)  </td> 
 <td> A logical representation of a network router.  </td> 
 </tr>
 
@@ -655,8 +655,8 @@ Properties set here become the default configuration for the design.
 
 * An asterisk (*) in the table indicates the field is required.
 
-* Check the <b>Modifiable</b> box to indicate the property can be modified by a user of other HP Cloud provisioning software that is using Topology Designs 
-from HP Cloud OS.
+* Check the <b>Modifiable</b> box to indicate the property can be modified by a user of other HP Helion Cloud provisioning software that is using Topology Designs 
+from HP Helion Cloud OS.
 
 <table style="text-align: left; vertical-align: top; min-width:700px;">
 
@@ -742,14 +742,14 @@ Replace this name, if needed, to meet your business needs. </td>
 
 <tr style="background-color: white; color: black;">
 <td style="min-width:150px;"> Network * </td> 
-<td> Available private networks defined in HP Cloud OS. </td> 
+<td> Available private networks defined in HP Helion Cloud OS. </td> 
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td style="min-width:150px;"> Select a Subnet * </td> 
 <td> Select:
 <ul>
-<li> <b>Existing subnet</b> - subnets defined in HP Cloud OS </li>
+<li> <b>Existing subnet</b> - subnets defined in HP Helion Cloud OS </li>
 <li> <b>Create a subnet</b> - if selected, you are prompted to enter the following fields:
 </ul>
 
@@ -808,7 +808,7 @@ Replace this name, if needed, to meet your business needs. </td>
 <td> Router * </td>
 <td> Select:
 <ul>
-<li> Existing Router - routers that are defined in HP Cloud OS.
+<li> Existing Router - routers that are defined in HP Helion Cloud OS.
 <li> Create new router - Enter the Router Name.
 </ul>
 </td>
@@ -901,8 +901,8 @@ Options:
 
 <tr>
 <td> <b>Volume Type </b> <br />(Modifiable)</td>
-<td> Available values from HP Cloud OS that identify the storage backend driver capabilities such as SATA or SSD retrieved from the Eve API. 
-Eve is an HP Cloud OS infrastructure topology design provisioner for OpenStack-based IaaS.  </td>
+<td> Available values from HP Helion Cloud OS that identify the storage backend driver capabilities such as SATA or SSD retrieved from the Eve API. 
+Eve is an HP Helion Cloud OS infrastructure topology design provisioner for OpenStack-based IaaS.  </td>
 </tr>
 
 </td>
@@ -1017,7 +1017,7 @@ In addition to using the contextual menu outlined below, you can delete using th
 **Concepts:**
 
 When you create a topology design, the properties you set for the nodes become the default configuration for the design. 
-Within HP Cloud OS, this original configuration displays as the Default Profile in the Provisioning > Deployment Profiles area. 
+Within HP Helion Cloud OS, this original configuration displays as the Default Profile in the Provisioning > Deployment Profiles area. 
 Profiles provide a way to override the default configuration by allowing you to set different values for node properties such as 
 flavors, machine images, or keypairs. Profiles create an association to a binding document. Profiles are optional and are not required 
 in order to publish a design. For more information, see [How to Publish or Unpublish a Topology Design](#how-to-publish-or-unpublish-a-topology-design).

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Cloud OS Value-Add Services"
+title: "HP Helion Cloud OS Value-Add Services"
 permalink: /cloudos/api/services/
 product: cloudos
 
@@ -17,7 +17,7 @@ PageRefresh();
 </script>
 
 
-# HP Cloud OS Value-Add Services
+# HP Helion Cloud OS Value-Add Services
 
 OpenStack provides important services for cloud Computing, including Nova, Keystone, Glance, and Cinder.  Complementing the OpenStack services are a number of value-add 
 services from HP:
@@ -28,7 +28,7 @@ services from HP:
 
 * [Graffiti Service](#graffiti-service)
 
-This topic describes the HP Cloud OS value-add services.
+This topic describes the HP Helion Cloud OS value-add services.
 
 ## Eden Service
 

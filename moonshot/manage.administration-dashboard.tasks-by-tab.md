@@ -131,11 +131,11 @@ An example of a cloud resource is resource pool definitions that you can use to 
 
 #### How to Use the REST API Action
 
-The HP Cloud OS for Moonshot API Documentation application is a tool for describing, producing, and visualizing RESTful web services. 
+The HP Helion Cloud OS for Moonshot API Documentation application is a tool for describing, producing, and visualizing RESTful web services. 
 Its purpose is to enable client and documentation systems to update at the same pace as the server. The documentation of methods, 
 parameters, and models are tightly integrated into the service code, allowing APIs to stay in sync.
 
-If a service supports the HP Cloud OS for Moonshot API Documentation application, you see REST API under the <b>Actions</b> column.
+If a service supports the HP Helion Cloud OS for Moonshot API Documentation application, you see REST API under the <b>Actions</b> column.
 
 Click <b>REST API</b> to start the documentation application for a service.
 
@@ -219,7 +219,7 @@ To create a project:
 </li>
 
 <li> <i>Optional</i>: On the <b>Integrations</b> tab, select <b>Create Default Resource Pool</b> if you need to create a resource pool for your compute regions. 
-You select this option if your HP Cloud OS for Moonshot Operational Dashboard administrator used the advanced method to create compute regions. The advanced option 
+You select this option if your HP Helion Cloud OS for Moonshot Operational Dashboard administrator used the advanced method to create compute regions. The advanced option 
 does not automatically create resource pools. In most cases, you can leave the default (not selected) for Create Default Resource Pool. Operational Dashboard 
 administrators usually create compute regions that automatically contain a resource pool. 
 <br /> <br/> <p> <b>Note</b>: You can create a resource pool later. See <a href="#how-to-create-a-resource-pool">How to Create a Resource Pool</a>.</p>
@@ -1813,17 +1813,17 @@ To create a resource pool:
 
 <li> Click <b>Create Resource Pool</b> to open the Create Resource Pool dialog box. </li> 
 
-<li> Select a <b>Cloud Type</b> to create a resource pool when you are using local (on premise services) or HP Cloud services. 
+<li> Select a <b>Cloud Type</b> to create a resource pool when you are using local (on premise services) or HP Helion Cloud services. 
 
 <ul>
 <li> <b>Custom</b>: All provider details are required.
-<li> <b>HP Cloud OS for Moonshot - OpenStack (Grizzly)</b>: The dashboard provides values for the HP Cloud OS for Moonshot Administration Dashboard environment. Provider details are not required.
-<li> <b>HP Cloud - OpenStack (Diablo)</b>: The dashboard provides values for the HP Cloud Services environment. You must enter <b>Provider Details</b>, which are required.
+<li> <b>HP Helion Cloud OS for Moonshot - OpenStack (Grizzly)</b>: The dashboard provides values for the HP Helion Cloud OS for Moonshot Administration Dashboard environment. Provider details are not required.
+<li> <b>HP Helion Cloud - OpenStack (Diablo)</b>: The dashboard provides values for the HP Helion Cloud Services environment. You must enter <b>Provider Details</b>, which are required.
 <li> <b>Custom - OpenStack (Grizzly)</b>: Provides maximum flexibility when you are creating a resource pool. <b>Details</b> and <b>Provider Details</b> are required.
 </ul>
 </li> 
 
-<li> Select a Compute Region to create a resource pool when you are using local (on premise) services or HP Cloud services. If you do not select a Compute Region, you must enter information in the remaining fields. </li> 
+<li> Select a Compute Region to create a resource pool when you are using local (on premise) services or HP Helion Cloud services. If you do not select a Compute Region, you must enter information in the remaining fields. </li> 
 
 <li> In the <b>Details</b> section:
 <ul>
@@ -1838,15 +1838,15 @@ To create a resource pool:
 
 <li> Select a <b>Cloud Profile</b> to represent the current supported OpenStack version and capabilities of the cloud to which you are deploying.
  <br /> 
-<p> <b>HP Cloud OS for Moonshot Grizzly</b> </p>
-<p> <b>HP Cloud Service</b> </p>
+<p> <b>HP Helion Cloud OS for Moonshot Grizzly</b> </p>
+<p> <b>HP Helion Cloud Service</b> </p>
 <p> <b>Note:</b> The dashboard automatically enters Type, Version, Region ID and Provider URL based upon the cloud type and compute region you selected. </p>
 </li> 
 
 <li> <i>Optional</i>: In the <b>Provider Details</b> section, enter a Project ID, User Domain Name, Project Domain Name, User Name, and Password. Enter the password again in <b>Confirm Password</b> to validate.
 <ul>
-<li> If you are using a local (on premise service), such as HP Cloud OS for Moonshot, you do not need an account on that service to create and edit resource pools. </li> 
-<li> If you are using a remote service, such as HP Cloud or Rackspace, you must have an account on that cloud provider's system to create and edit resource pools.  </li> 
+<li> If you are using a local (on premise service), such as HP Helion Cloud OS for Moonshot, you do not need an account on that service to create and edit resource pools. </li> 
+<li> If you are using a remote service, such as HP Helion Cloud or Rackspace, you must have an account on that cloud provider's system to create and edit resource pools.  </li> 
 <li> If you create a resource pool that requires credentials, the Administration Dashboard validates them when you create a resource pool, instead of when you first use the resource pool.  </li> 
 </ul>
 </li> 
@@ -1865,11 +1865,11 @@ Use the <b>Edit Resource Pool</b> view to update resource pool definitions that 
   
 * Update the OpenStack server domain URL.
   
-* Modify different provider credentials when the resource is an HP Cloud.
+* Modify different provider credentials when the resource is an HP Helion Cloud.
   
 * Modify values that were not accurate when you originally entered them.
 
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Note:</b> If you change your HP Cloud password, 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Note:</b> If you change your HP Helion Cloud password, 
 you must also change your password in the <b>Edit Resource Pool</b> view.
 </p>
 
@@ -3300,7 +3300,7 @@ To access your authentication token:
 
 **Concepts:**
 
-The Updates and Extensions window provides a convenient place for users who have permission to access the HP Cloud OS for Moonshot Distribution Network (CODN). 
+The Updates and Extensions window provides a convenient place for users who have permission to access the HP Helion Cloud OS for Moonshot Distribution Network (CODN). 
 Use the Updates and Extensions window to access catalog updates and content. Updates include software versions and security patches. 
 Content includes material such as images and topology templates.
 
@@ -3309,7 +3309,7 @@ HP offers to help maintain your cloud.
 
 To learn whether you have permission to use CODN, see [Administration Dashboard Tasks by Role](/cloudos/moonshot/manage/administration-dashboard/tasks-by-role/).
 
-You must configure the HP Cloud OS for Moonshot Administration Dashboard to access an HP Cloud OS for Moonshot Distribution Network account before you can use the 
+You must configure the HP Helion Cloud OS for Moonshot Administration Dashboard to access an HP Helion Cloud OS for Moonshot Distribution Network account before you can use the 
 Updates and Extensions window. See the Tasks sections, below.
 
 The Updates and Extensions window provides the standard Administration Dashboard filter capability, and you can click on the column headings 
@@ -3437,7 +3437,7 @@ experience other download problems, see the <a href="/cloudos/moonshot/manage/tr
 
 You can publish an update after you download it. If you have not yet downloaded the update, you do not see Publish.
 
-A download can consist of one or more pieces that must be distributed to multiple HP Cloud OS for Moonshot repositories. Publish routes the download contents to 
+A download can consist of one or more pieces that must be distributed to multiple HP Helion Cloud OS for Moonshot repositories. Publish routes the download contents to 
 their appropriate repositories.
 
 To publish an update:
@@ -3467,7 +3467,7 @@ All users see the <b>Settings</b> link on every Administration Dashboard window.
 
 * [How to Change Your Password](#how-to-change-your-password)
 
-* [About the HP Cloud OS for Moonshot Administration Dashboard](#about-the-hp-cloud-os-for-moonshot-administration-dashboard)
+* [About the HP Helion Cloud OS for Moonshot Administration Dashboard](#about-the-hp-cloud-os-for-moonshot-administration-dashboard)
 
 
 ### How to Change User Settings
@@ -3500,7 +3500,7 @@ To change your Administration Dashboard password:
  * <b>Confirm new password</b>: Enter your new password again to confirm your entry.
  * Click <b>Change</b>.
 
-### About the HP Cloud OS for Moonshot Administration Dashboard  
+### About the HP Helion Cloud OS for Moonshot Administration Dashboard  
 
 To view version information about the Administration Dashboard:
 

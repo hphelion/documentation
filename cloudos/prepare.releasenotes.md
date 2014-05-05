@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Cloud OS Release Notes"
+title: "HP Helion Cloud OS Release Notes"
 permalink: /cloudos/prepare/releasenotes/
 product: cloudos
 
@@ -19,15 +19,15 @@ PageRefresh();
 
 <p style="font-size: small;"> <a href="/cloudos/prepare/">&#9664; PREV | <a href="/cloudos/prepare/">&#9650; UP</a> | <a href="/cloudos/prepare/supportmatrix/">NEXT &#9654;</a> </p>
 
-# HP Cloud OS Release Notes
+# HP Helion Cloud OS Release Notes
 
-This topic provides information about the HP Cloud OS 1.20 Sandbox release.
+This topic provides information about the HP Helion Cloud OS 1.20 Sandbox release.
 
-* [New and Updated in HP Cloud OS 1.20](#120features)
-* [Recommendations for HP Cloud OS 1.20](#120recommendations)
+* [New and Updated in HP Helion Cloud OS 1.20](#120features)
+* [Recommendations for HP Helion Cloud OS 1.20](#120recommendations)
 * [For Further Information](#for-further-information)
 
-##New and Updated in HP Cloud OS 1.20## {#120features}
+##New and Updated in HP Helion Cloud OS 1.20## {#120features}
 
 **Simplified service delivery** &mdash; A simplified administration tool for the installation and management of an OpenStack infrastructure as a 
 service cloud provides easier installation and configuration processes. The tool reduces manually intensive operational processes from hundreds 
@@ -41,33 +41,33 @@ by using automated deployment of applications on heterogeneous, hybrid cloud ser
 * **Focus**:  Enables you to manage lifecycles of multi-tier infrastructure topology models
 * **Swift**:  Allows you to store large amounts of data efficiently, safely, and cheaply
 
-**Important enhancements and updates** &mdash; This release of the HP Cloud OS software provides the following new and improved functionality:
+**Important enhancements and updates** &mdash; This release of the HP Helion Cloud OS software provides the following new and improved functionality:
 
 * Lifecycle actions are now available against the running VMs
 * New topology designer with deployment profiles
 * UI enhancements to help with navigation
-* New HP Cloud OS Distribution Network capability for updates and patching
+* New HP Helion Cloud OS Distribution Network capability for updates and patching
 * Latest OpenStack and security updates
 * New support for multi-region compute within a single cloud environment
-* Enhanced HP Cloud OS deployment model options for a Sandbox environment
+* Enhanced HP Helion Cloud OS deployment model options for a Sandbox environment
 * Various additional enhancements and software updates
-* Web-hosted HP Cloud OS documentation 
+* Web-hosted HP Helion Cloud OS documentation 
 
 <!-- Example:
 **Larger compute instances for big data and high-performance computing** -  New larger instance types allow you to run big data, analytics, and high performance computing (HPC) workloads in the public cloud.  You can access instances with up to 120 GB of RAM and up to 16 virtual cores. The new instance types allow even greater flexibility to choose the virtual machine size that best fits your application's compute resource needs.
 -->
 
-##Recommendations for HP Cloud OS 1.20## {#120recommendations}
+##Recommendations for HP Helion Cloud OS 1.20## {#120recommendations}
 
 This section describes the HP recommendations for best performance, utility, and functionality with this software release. We have also provided information about some limitations and known issues for reference purposes.   
 
 * [Best Practices](#best-practices) for optimal functionality and performance
-* [Known Issues](#known-issues) and suggested operational alternatives with HP Cloud OS 1.20
+* [Known Issues](#known-issues) and suggested operational alternatives with HP Helion Cloud OS 1.20
 * [OpenStack Community Issues](#openstack-community-issues)
 
 ###Best Practices### {#best-practices} 
 
-HP recommends the following best practices for HP Cloud OS 1.20.
+HP recommends the following best practices for HP Helion Cloud OS 1.20.
 
 ####OpenStack####
 
@@ -92,7 +92,7 @@ In this scenario, be sure to de-provision Topology B, prior to de-provisioning T
 
 ###Known Issues### {#known-issues}
 
-The following are known issues for HP Cloud OS 1.20.
+The following are known issues for HP Helion Cloud OS 1.20.
 
 ####Installation####
 
@@ -107,7 +107,7 @@ you can ensure the deletion of the volume with the following process:
     1. Stop the service using the volume with the command sequence:
         `service tgt stop`<br /> 
         `lvremove /dev/cinder-volumes/volume-078cd44b-7b39-4867-a1e9-78bb758ae0a7`<br /> <br /> 
-    Where `078cd44b-7b39-4867-a1e9-78bb758ae0a7` is the volume ID, which you can find in the HP Cloud OS Administration Dashboard's Volumes tab.
+    Where `078cd44b-7b39-4867-a1e9-78bb758ae0a7` is the volume ID, which you can find in the HP Helion Cloud OS Administration Dashboard's Volumes tab.
 
     2. Remove the volume using the Cinder API or CLI: <br /> 
         `service tgt start` <br /> 
@@ -117,7 +117,7 @@ you can ensure the deletion of the volume with the following process:
     `dmsetup remove --force -c /dev/cinder-volumes/volume-078cd44b-7b39-4867-a1e9-78bb758ae0a7`<br />
     `lsof /dev/cinder-volumes/volume-078cd44b-7b39-4867-a1e9-78bb758ae0a7`
 
-* In the HP Cloud OS Administration Dashboard, if you experience a `Connection was reset` timeout error while creating an image of size 1.5 GB or larger, you can clear the situation with the following process:
+* In the HP Helion Cloud OS Administration Dashboard, if you experience a `Connection was reset` timeout error while creating an image of size 1.5 GB or larger, you can clear the situation with the following process:
 
     1. Open a WinSCP session to the Admin node.
     2. Upload the image file to the /tmp/ directory.
@@ -128,13 +128,13 @@ you can ensure the deletion of the volume with the following process:
 
 ####Provisioning####
 
-* When you use Eve to provision a new subnet, in some cases the IP address space may overlap with an existing network, which can create an IP conflict with other machines on the existing network.  If you encounter this issue, you can create the subnet manually using the HP Cloud OS Administration Dashboard. Specify the exact IP range and reference the range in the topology binding.
+* When you use Eve to provision a new subnet, in some cases the IP address space may overlap with an existing network, which can create an IP conflict with other machines on the existing network.  If you encounter this issue, you can create the subnet manually using the HP Helion Cloud OS Administration Dashboard. Specify the exact IP range and reference the range in the topology binding.
 * Under some networking conditions, Web proxy server connection problems can cause a provision or de-provision issue. To resolve this issue, execute your provision or de-provision task again.
-* In this HP Cloud OS Sandbox release, job progress status reporting has not yet been implemented.
+* In this HP Helion Cloud OS Sandbox release, job progress status reporting has not yet been implemented.
 * When you use shared networks across a project, you may see the error message:<br /><nobr>`[com.hp.iaasc.eve.networksegment.openstack.NetworkSegmentServiceOpenStackQuantum:createPort:112]`</nobr><br /><nobr>`{"statusCode": 403, "message": "Tenant is forbidden to create port on the subnet(s): PrivSub ", "details": ""}`</nobr><br />`{"statusCode": 403, "message": "Tenant is forbidden to create port on the subnet(s): PrivSub ", "details": ""} at`.<br /> <nobr>Currently, Quantum prevents users from creating ports on the shared private network.</nobr> 
-* When you are running on a virtual machine hosted on a KVM hypervisor, you may see the message: `No root file system, no root file system is defined`.  Verify that the virtual disk format is either IDE or SCSI before booting the VM with the HP Cloud OS Sandbox ISO media.
-* If a volume group provisioning tasks fails and does not delete the created volume group, use the Terminate Topology or Delete Topology actions in the HP Cloud OS Administration Dashboard to remove the dangling provisioned resources.
-* If there are more than eight concurrent topology provisioning requests submitted to HP Cloud OS at exactly the same time, you may see the error: `Cannot get a connection, pool error`.  To get the requests successfully submitted, follow this process:
+* When you are running on a virtual machine hosted on a KVM hypervisor, you may see the message: `No root file system, no root file system is defined`.  Verify that the virtual disk format is either IDE or SCSI before booting the VM with the HP Helion Cloud OS Sandbox ISO media.
+* If a volume group provisioning tasks fails and does not delete the created volume group, use the Terminate Topology or Delete Topology actions in the HP Helion Cloud OS Administration Dashboard to remove the dangling provisioned resources.
+* If there are more than eight concurrent topology provisioning requests submitted to HP Helion Cloud OS at exactly the same time, you may see the error: `Cannot get a connection, pool error`.  To get the requests successfully submitted, follow this process:
     1. Log into the Admin node using the crowbar credentials. (See the Note below this list.)
     2. Add the line:<br /><nobr>`url: jdbc:postgresql://[ipaddress]/iaascdb:maxWaitForConnection: 1m`</nobr><br />to the file:<br /><nobr>`/opt/dell/chef/cookbooks/hp_cos_eve_100/templates/default/eve-requestworker.yml.erb`</nobr>
     3. To get the new configuration values pushed to the respective nodes, execute the command:<br /><nobr>`knife cookbook upload hp_cos_eve_100 -o /opt/dell/chef/cookbooks/ -V -k /etc/chef/webui.pem -u chef-webui`</nobr>
@@ -143,12 +143,12 @@ you can ensure the deletion of the volume with the following process:
         `restart eve-api`<br />
         `restart eve-requestworker`   
 
-**Note:** In the current release, the dashboards use pre-defined login credentials. These are not published in the web-hosted documentation. To get the pre-defined login credentials, refer to the readme file included in the same ZIP that contained the HP Cloud OS Sandbox ISO. 
-If you have not already done so, see the ZIP on the <a href="https://cloudos.hpwsportal.com" target="codn">HP Cloud OS Distribution Network</a>. 
+**Note:** In the current release, the dashboards use pre-defined login credentials. These are not published in the web-hosted documentation. To get the pre-defined login credentials, refer to the readme file included in the same ZIP that contained the HP Helion Cloud OS Sandbox ISO. 
+If you have not already done so, see the ZIP on the <a href="https://cloudos.hpwsportal.com" target="codn">HP Helion Cloud OS Distribution Network</a>. 
 		
 ###Resolved Issues in Version 1.20## {#v120resolved}
 
-The following issues have been resolved in HP Cloud OS 1.20.
+The following issues have been resolved in HP Helion Cloud OS 1.20.
 
 ####Cloud Utilities####
 
@@ -165,7 +165,7 @@ You can now successfully delete a compute region.
 
 ###OpenStack Community Issues### {#openstack-community-issues}
 
-The following two sections identify the known and resolved OpenStack community issues in HP Cloud OS 1.20.
+The following two sections identify the known and resolved OpenStack community issues in HP Helion Cloud OS 1.20.
 
 ####Known OpenStack Issues####
 
@@ -181,40 +181,40 @@ The following two sections identify the known and resolved OpenStack community i
 
 ####Resolved OpenStack Issues####
 
-* When you provision from the HP Cloud OS Administration Dashboard and the space available is inadequate to create the volume, the dashboard still shows volume creations as successful – although it has failed in the background. Community issue [1188039](https://bugs.launchpad.net/cinder/+bug/1188039).
+* When you provision from the HP Helion Cloud OS Administration Dashboard and the space available is inadequate to create the volume, the dashboard still shows volume creations as successful – although it has failed in the background. Community issue [1188039](https://bugs.launchpad.net/cinder/+bug/1188039).
 * A security group is used to grant accessibility to an instance, such as ping (ICMP) and SSH (TCP), by enabling the associated ports. The default security group provided for each project is pre-filled with two rules that are incorrectly specified.  Remove the provided rules. Add new rules as appropriate.
 
 ##For Further Information## {#for-further-information}
 
-For additional related information on HP Cloud OS:
+For additional related information on HP Helion Cloud OS:
 
-* [HP Cloud OS Documentation web site](/cloudos/): Provides the topics listed in this section, including a technical overview, video tutorials, FAQs, installation and configuration steps, and more.
-* [HP Cloud OS Platform and Software Support Matrix](/cloudos/prepare/supportmatrix/): Information about platform support requirements for the HP Cloud OS core functions, including requirements for component products.
-* [HP Cloud OS FAQs](/cloudos/prepare/faqs/): Answers to frequently asked questions, including where you can download the HP Cloud OS ISO package.
-* [HP Cloud OS Video Tutorials](/cloudos/prepare/videos/): Videos from a range of HP experts to help you learn about HP Cloud OS and OpenStack.
-* [HP Cloud OS Technical Overview](/cloudos/prepare/overview/): Introduces the HP Cloud OS architecture, its components and services, and the HP Cloud OS relationship with OpenStack.
-* [Install &amp; Configure Your Cloud](/cloudos/install): A set of sequential topics that explain how to install and configure your cloud with HP Cloud OS.
-* [HP Cloud OS Utilities](/cloudos/manage/utilities/): Describes the HP Cloud OS utilities.
-* [HP Cloud OS Troubleshooting](/cloudos/manage/troubleshooting/): Advice to resolve issues you may encounter with HP Cloud OS.
-* [HP Cloud OS Open Source and Third-Party Software License Agreements](/cloudos/os-3rd-party-license-agreements/): License information regarding the HP Cloud OS product. This topic includes legal notices and the disclaimer for experimental software.
-* HP Cloud OS Operational Dashboard Help: From the dashboard's top banner, the Help link opens topics about its user interface dialogs and options, including how to create your cloud. A [web-hosted copy](/cloudos/manage/operational-dashboard/) of the Help is available. 
-* HP Cloud OS Administration Dashboard Help: From the dashboard's top banner, the Help link opens topics about its user interface dialogs and options, including how to view, allocate, and manage all virtual resources within a cloud. A [web-hosted copy](/cloudos/manage/administration-dashboard/) of the Help is available. 
-* HP Cloud OS Release Notes (this topic): Information about the release's new features, recommendations, known issues, and resolved limitations.
+* [HP Helion Cloud OS Documentation web site](/cloudos/): Provides the topics listed in this section, including a technical overview, video tutorials, FAQs, installation and configuration steps, and more.
+* [HP Helion Cloud OS Platform and Software Support Matrix](/cloudos/prepare/supportmatrix/): Information about platform support requirements for the HP Helion Cloud OS core functions, including requirements for component products.
+* [HP Helion Cloud OS FAQs](/cloudos/prepare/faqs/): Answers to frequently asked questions, including where you can download the HP Helion Cloud OS ISO package.
+* [HP Helion Cloud OS Video Tutorials](/cloudos/prepare/videos/): Videos from a range of HP experts to help you learn about HP Helion Cloud OS and OpenStack.
+* [HP Helion Cloud OS Technical Overview](/cloudos/prepare/overview/): Introduces the HP Helion Cloud OS architecture, its components and services, and the HP Helion Cloud OS relationship with OpenStack.
+* [Install &amp; Configure Your Cloud](/cloudos/install): A set of sequential topics that explain how to install and configure your cloud with HP Helion Cloud OS.
+* [HP Helion Cloud OS Utilities](/cloudos/manage/utilities/): Describes the HP Helion Cloud OS utilities.
+* [HP Helion Cloud OS Troubleshooting](/cloudos/manage/troubleshooting/): Advice to resolve issues you may encounter with HP Helion Cloud OS.
+* [HP Helion Cloud OS Open Source and Third-Party Software License Agreements](/cloudos/os-3rd-party-license-agreements/): License information regarding the HP Helion Cloud OS product. This topic includes legal notices and the disclaimer for experimental software.
+* HP Helion Cloud OS Operational Dashboard Help: From the dashboard's top banner, the Help link opens topics about its user interface dialogs and options, including how to create your cloud. A [web-hosted copy](/cloudos/manage/operational-dashboard/) of the Help is available. 
+* HP Helion Cloud OS Administration Dashboard Help: From the dashboard's top banner, the Help link opens topics about its user interface dialogs and options, including how to view, allocate, and manage all virtual resources within a cloud. A [web-hosted copy](/cloudos/manage/administration-dashboard/) of the Help is available. 
+* HP Helion Cloud OS Release Notes (this topic): Information about the release's new features, recommendations, known issues, and resolved limitations.
 
-**Note:** In the current release, the dashboards use pre-defined login credentials. These are not published in the web-hosted documentation. To get the pre-defined login credentials, refer to the readme file included in the same ZIP that contained the HP Cloud OS Sandbox ISO. 
-If you have not already done so, see the ZIP on the <a href="https://cloudos.hpwsportal.com" target="codn">HP Cloud OS Distribution Network</a>. 
+**Note:** In the current release, the dashboards use pre-defined login credentials. These are not published in the web-hosted documentation. To get the pre-defined login credentials, refer to the readme file included in the same ZIP that contained the HP Helion Cloud OS Sandbox ISO. 
+If you have not already done so, see the ZIP on the <a href="https://cloudos.hpwsportal.com" target="codn">HP Helion Cloud OS Distribution Network</a>. 
 
 ###Installation Notes### {#installation-notes}
 
-Before installing the HP Cloud OS Sandbox release, read the [HP Cloud OS Platform and Software Support Matrix](/cloudos/prepare/supportmatrix/) to ensure that your installation environment meets the minimum requirements.
+Before installing the HP Helion Cloud OS Sandbox release, read the [HP Helion Cloud OS Platform and Software Support Matrix](/cloudos/prepare/supportmatrix/) to ensure that your installation environment meets the minimum requirements.
 
-The HP Cloud OS Sandbox installation deploys the HP Cloud OS Operational Dashboard (used to set up, configure, and install an HP cloud infrastructure) and the HP Cloud OS Administration Dashboard (used to create and manage cloud resources). 
+The HP Helion Cloud OS Sandbox installation deploys the HP Helion Cloud OS Operational Dashboard (used to set up, configure, and install an HP Helion Cloud infrastructure) and the HP Helion Cloud OS Administration Dashboard (used to create and manage cloud resources). 
 
-When you are ready to install the HP Cloud OS Sandbox, see the Install category of the [HP Cloud OS documentation](http://docs.hpcloud.com/cloudos/install/).
+When you are ready to install the HP Helion Cloud OS Sandbox, see the Install category of the [HP Helion Cloud OS documentation](http://docs.hpcloud.com/cloudos/install/).
 
 ###Legal Notices and Disclaimer for Experimental Software### {#legal-notices-disclaimer}
 
-See the [HP Cloud OS Open Source and Third-Party Software License Agreements](/cloudos/os-3rd-party-license-agreements/).
+See the [HP Helion Cloud OS Open Source and Third-Party Software License Agreements](/cloudos/os-3rd-party-license-agreements/).
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

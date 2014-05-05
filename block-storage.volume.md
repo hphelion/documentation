@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "HP Cloud UNIX CLI Volume Management"
+title: "HP Helion Cloud UNIX CLI Volume Management"
 permalink: /block-storage/volume/
 product: block-storage
 
 ---
-# HP Cloud UNIX CLI Volume Management#
+# HP Helion Cloud UNIX CLI Volume Management#
 
 ___________________
 
@@ -17,7 +17,7 @@ On November 4, 2013, the UNIX CLI was moved into its End-of-Life Cycle process t
 * No new feature requests will be honored
 * Bug reports will be accepted
 
-HP Cloud has contributed the Unix CLI back to the open source community, and you can get support, access the documentation, and download the source code [here](https://github.com/hpcloud/unix_cli).
+HP Helion Cloud has contributed the Unix CLI back to the open source community, and you can get support, access the documentation, and download the source code [here](https://github.com/hpcloud/unix_cli).
 
 _________________________________________
 

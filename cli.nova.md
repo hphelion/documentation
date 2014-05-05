@@ -1,17 +1,17 @@
 ---
 layout: default
-title: "HP Cloud Python Novaclient"
+title: "HP Helion Cloud Python Novaclient"
 permalink: /cli/nova/
 product: nova-cli
 
 ---
-#Work with HP Cloud using the Cloud 13.5 CLI#
+#Work with HP Helion Cloud using the Cloud 13.5 CLI#
 
-You can interact with HP Cloud using the native Openstack Command-Line Interface (CLI) tools.
+You can interact with HP Helion Cloud using the native Openstack Command-Line Interface (CLI) tools.
  
-HP Cloud is based on Openstack, and the latest Openstack CLIs and libraries are compatible with our HP Cloud version 13.5. We recommend using a recent version of the python-novaclient, python-cinderclient, python-neutronclient, and python-swiftclient from github.com.
+HP Helion Cloud is based on Openstack, and the latest Openstack CLIs and libraries are compatible with our HP Helion Cloud version 13.5. We recommend using a recent version of the python-novaclient, python-cinderclient, python-neutronclient, and python-swiftclient from github.com.
  
-For those of you using HP Cloud version 12.12, you need to download the HP Cloud Python Novaclient that is an extension to the Openstack Python Novaclient enabling interaction with HP Cloud compute and block storage. 
+For those of you using HP Helion Cloud version 12.12, you need to download the HP Helion Cloud Python Novaclient that is an extension to the Openstack Python Novaclient enabling interaction with HP Helion Cloud compute and block storage. 
  
 If you want to work with **version 13.5**, check out these links:
  

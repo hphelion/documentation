@@ -25,7 +25,7 @@ Swift is the OpenStack object/blob storage service for cloud computing. You can 
 
 **Important**: Swift is an optional service. However, if you want to use it in your cloud, you must manually setup Swift as described 
 in this topic **before performing** the steps in [Complete Admin Node Installation](/cloudos/install/complete-admin-node-installation). 
-After that, the network settings in the HP Cloud OS Operational Dashboard are read only. Once the install process is triggered, 
+After that, the network settings in the HP Helion Cloud OS Operational Dashboard are read only. Once the install process is triggered, 
 no changes can be made. If you want to make changes, you need to start over by re-installing the Admin Node.
 
 * [Swift Requirements](#swift-requirements)
@@ -118,7 +118,7 @@ Keep all the other default values.
 After creating the cloud and defining your compute regions (see this later topic, [Create a Cloud](/cloudos/install/create-cloud), 
 you can deploy Swift in your cloud by following these steps:
 
-1. Launch the HP Cloud OS Installation Dashboard. Its URL is http://192.168.124.10:3000.  **Note:** In the current release, the dashboards use pre-defined login credentials. These are not published in the web-hosted documentation. To get the pre-defined login credentials, refer to the readme file included in the same ZIP that contained the HP Cloud OS ISO. If you have not already done so, see the ZIP on the <a href="https://cloudos.hpwsportal.com" target="codn">HP Cloud OS Distribution Network</a>. 
+1. Launch the HP Helion Cloud OS Installation Dashboard. Its URL is http://192.168.124.10:3000.  **Note:** In the current release, the dashboards use pre-defined login credentials. These are not published in the web-hosted documentation. To get the pre-defined login credentials, refer to the readme file included in the same ZIP that contained the HP Helion Cloud OS ISO. If you have not already done so, see the ZIP on the <a href="https://cloudos.hpwsportal.com" target="codn">HP Helion Cloud OS Distribution Network</a>. 
 
 2. The Swift install module is pre-installed with a default proposal created (without assigned nodes).
 

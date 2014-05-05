@@ -25,7 +25,7 @@ PageRefresh();
 # Operational Dashboard: Environment tab
 
 The Environment tab contains the following panels on which you begin the installation process on the Operational Dashboard. 
-On these panels, you set up your cloud environment and complete the HP Cloud OS for Moonshot Administration node installation. 
+On these panels, you set up your cloud environment and complete the HP Helion Cloud OS for Moonshot Administration node installation. 
 For the installation process, you must complete each panel in the order they are displayed. 
 
 * [Connections](#connections)
@@ -67,19 +67,19 @@ The following information provides details about the Prerequisites panel:
 
 ### Prerequisites overview
 
-The first step on the Operational Dashboard is to configure the HP Cloud OS for Moonshot Administration node prerequisites.
+The first step on the Operational Dashboard is to configure the HP Helion Cloud OS for Moonshot Administration node prerequisites.
 
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Caution:</b> 
 You must complete configuration of the Cloud Administration Node Internet Access and External DNS Server prerequisites before you complete the steps on the Complete Install panel. 
 For details, see <a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>. 
 After that, the Edit Prerequisite dialogs for those settings are read-only. Once the install process is triggered, no changes can be made. 
-If you want to make changes to the Cloud Administration Node Internet Access and External DNS Server prerequisites, you will need to start over by re-installing the HP Cloud OS for Moonshot Administration node. 
+If you want to make changes to the Cloud Administration Node Internet Access and External DNS Server prerequisites, you will need to start over by re-installing the HP Helion Cloud OS for Moonshot Administration node. 
 For procedural instructions, see <a href="/cloudos/moonshot/install/">Install and Configure Your Cloud</a>.
 </p>
 
 If you do not define the following prerequisites, your cloud will not work at all or will not work properly:
 
-* **Cloud Administration Node Internet Access** &mdash; Configure to set up Internet access on the HP Cloud OS for Moonshot Administration node. You will need Internet access for downloading hot fixes and updates using the [Updates and Extensions](/cloudos/moonshot/manage/operational-dashboard/cloud-tab/#updates-and-extensions) panel.
+* **Cloud Administration Node Internet Access** &mdash; Configure to set up Internet access on the HP Helion Cloud OS for Moonshot Administration node. You will need Internet access for downloading hot fixes and updates using the [Updates and Extensions](/cloudos/moonshot/manage/operational-dashboard/cloud-tab/#updates-and-extensions) panel.
 
 * **Cloud Administration Node Time Settings** &mdash; Configure to reflect the current time to ensure that the Cloud is created successfully.
 
@@ -107,7 +107,7 @@ The following table describes the Prerequisites page UI elements:
 
 <tr style="background-color: white; color: black;">
 <td> <nobr> <b>Prerequisite Description</b> column </nobr> </td>
-<td> HP Cloud OS for Moonshot Administration node prerequisite settings:
+<td> HP Helion Cloud OS for Moonshot Administration node prerequisite settings:
 <ul>
 <li>Cloud Administration Node Internet Access</li>
 <li>Cloud Administration Node Time Settings</li><li>External DNS Server</li>
@@ -146,7 +146,7 @@ The following table describes the Prerequisites page UI elements:
 If you want to set the Administration Node Internet Access Prerequisite, you must configure it before you complete the steps on the 
 Complete Install panel. For details, see the <a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a> topic.
 After that, the Administration Node Internet Access Prerequisite dialogs are read-only. Once the install process is triggered, 
-no changes can be made. If you want to make changes, you need to start over by re-installing the HP Cloud OS for Moonshot Administration node. 
+no changes can be made. If you want to make changes, you need to start over by re-installing the HP Helion Cloud OS for Moonshot Administration node. 
 For procedural instructions, see <a href="/cloudos/moonshot/install/">Install and Configure Your Cloud</a>.
 </p>
 
@@ -161,7 +161,7 @@ The following table describes the Cloud Administration Node Internet Access Prer
 
 <tr style="background-color: white; color: black;">
 <td> <b>Network Interface</b> </td>
-<td> Select the network interface on the HP Cloud OS for Moonshot Administration node that has been configured for Internet access. <b>Note:</b> Interface <code>eth0</code> is not used for Internet access.
+<td> Select the network interface on the HP Helion Cloud OS for Moonshot Administration node that has been configured for Internet access. <b>Note:</b> Interface <code>eth0</code> is not used for Internet access.
 </td>
 </tr>
 
@@ -282,7 +282,7 @@ The following table describes the Cloud Administration Node Time Settings Prereq
 If you want to set the External DNS Server Prerequisite, you must configure it before you complete the steps on the 
 Complete Install panel. For details, see the <a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a> topic.
 After that, the External DNS Server Prerequisite dialogs are read-only. Once the install process is triggered, 
-no changes can be made. If you want to make changes, you need to start over by re-installing the HP Cloud OS for Moonshot Administration node. 
+no changes can be made. If you want to make changes, you need to start over by re-installing the HP Helion Cloud OS for Moonshot Administration node. 
 For procedural instructions, see <a href="/cloudos/moonshot/install/">Install and Configure Your Cloud</a>.
 </p>
 
@@ -299,7 +299,7 @@ The following table describes the External DNS Server Prerequisite dialog UI ele
 
 <tr style="background-color: white; color: black;">
 <td> <b>External DNS Server IP Address</b> </td>
-<td> Type the IP address of the external DNS server used by your HP Cloud OS for Moonshot environment to be able to access named websites within your cloud. </td>
+<td> Type the IP address of the external DNS server used by your HP Helion Cloud OS for Moonshot environment to be able to access named websites within your cloud. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -385,11 +385,11 @@ On the Networks panel, you define the networks for each logical connection (intf
 
 
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Important:</b> Customizing the public network settings is 
-critical. Any missing or incorrect values will result in you having to re-install the HP Cloud OS for Moonshot Administration node. 
+critical. Any missing or incorrect values will result in you having to re-install the HP Helion Cloud OS for Moonshot Administration node. 
 For procedural instructions, see <a href="/cloudos/moonshot/install/">Install and Configure Your Cloud</a>.
 </p>
 
-The following table describes the networks in the HP Cloud OS for Moonshot environment:
+The following table describes the networks in the HP Helion Cloud OS for Moonshot environment:
 
 <table style="text-align: left; vertical-align: top; min-width:700px;">
 
@@ -409,12 +409,12 @@ The following table describes the networks in the HP Cloud OS for Moonshot envir
 <td>eth0</td>
 <td>DHCP</td>
 <td>DHCP service running on Admin node</td>
-<td>HP Cloud OS for Moonshot prerequisites</td>
+<td>HP Helion Cloud OS for Moonshot prerequisites</td>
 <tr><td>Public</td>
 <td>eth1</td>
 <td>Static or DHCP</td>
 <td>For dynamic, DHCP service is from public network</td>
-<td>HP Cloud OS for Moonshot prerequisites</td></tr>
+<td>HP Helion Cloud OS for Moonshot prerequisites</td></tr>
 </tr>
 <tr style="background-color: white; color: black;">
 <td rowspan="3"><b>Controller</b></td>
@@ -422,17 +422,17 @@ The following table describes the networks in the HP Cloud OS for Moonshot envir
 <td>eth0</td>
 <td>DHCP</td>
 <td>DHCP service running on Admin node</td>
-<td>HP Cloud OS for Moonshot prerequisites</td>
+<td>HP Helion Cloud OS for Moonshot prerequisites</td>
 <tr><td>nova_flat</td>
 <td>eth1</td>
 <td>Static</td>
 <td>Static assignment by Admin node</td>
-<td>HP Cloud OS for Moonshot prerequisites</td></tr>
+<td>HP Helion Cloud OS for Moonshot prerequisites</td></tr>
 <tr><td>Public</td>
 <td>eth2</td>
 <td>Static</td>
 <td>Static assignment by Admin node</td>
-<td>HP Cloud OS for Moonshot prerequisites</td></tr>
+<td>HP Helion Cloud OS for Moonshot prerequisites</td></tr>
 </tr>
 <tr style="background-color: white; color: black;">
 <td rowspan="3"><b>Baremetal Host</b></td>
@@ -440,19 +440,19 @@ The following table describes the networks in the HP Cloud OS for Moonshot envir
 <td>eth0</td>
 <td>DHCP</td>
 <td>DHCP service running on Admin node</td>
-<td>HP Cloud OS for Moonshot prerequisites</td>
+<td>HP Helion Cloud OS for Moonshot prerequisites</td>
 <tr><td>nova_flat</td>
 <td>eth1</td>
 <td>Static</td>
 <td>Static assignment by Admin node</td>
-<td>HP Cloud OS for Moonshot prerequisites</td></tr>
+<td>HP Helion Cloud OS for Moonshot prerequisites</td></tr>
 <tr><td>IPMI</td>
 <td>eth2</td>
 <td>DHCP/static</td>
 <td>If DHCP-enabled Baremetal IPMI network option is "True" while creating cloud, then the DHCP server on IPMI network will assign IP. <br /><br />
 If DHCP-enabled Baremetal IPMI network option is "False", then the range is statically assigned by the Admin node.
 </td>
-<td>For static, range is defined in HP Cloud OS for Moonshot prerequisites page</td></tr>
+<td>For static, range is defined in HP Helion Cloud OS for Moonshot prerequisites page</td></tr>
 
 <tr style="background-color: white; color: black;">
 <td rowspan="2"><b>Cartridge</b></td>
@@ -573,7 +573,7 @@ The following table describes the Networks page UI elements:
 you must do that before you complete the steps on the Complete Install panel. For details, see 
 the <a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a> topic.
 After that, the Edit Network dialogs are read-only. Once the install process is triggered, no changes can be made. If you want to make changes, 
-you need to start over by re-installing the HP Cloud OS for Moonshot Administration node. 
+you need to start over by re-installing the HP Helion Cloud OS for Moonshot Administration node. 
 For procedural instructions, see <a href="/cloudos/moonshot/install/">Install and Configure Your Cloud</a>.
 </p>
 
@@ -685,7 +685,7 @@ This means that the Network Mode will be set to <b>single</b> by default on the
 you must do that before you complete the steps on the Complete Install panel. For details, see 
 the <a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a> topic.
 After that, the Edit Address Ranges dialogs are read-only. Once the install process is triggered, no changes can be made. If you want to make changes, 
-you need to start over by re-installing the HP Cloud OS for Moonshot Administration node. 
+you need to start over by re-installing the HP Helion Cloud OS for Moonshot Administration node. 
 For procedural instructions, see <a href="/cloudos/moonshot/install/">Install and Configure Your Cloud</a>.
 </p>
 
@@ -762,7 +762,7 @@ The following information provides details about the Complete Install panel.
 
 ### Complete Install overview
 
-On the Complete Install panel, you complete the HP Cloud OS for Moonshot Administration node installation, which installs underlying components on the Administration node.
+On the Complete Install panel, you complete the HP Helion Cloud OS for Moonshot Administration node installation, which installs underlying components on the Administration node.
 
 You specify the install settings on the Confirm Complete Install Dialog and then finish the install process on the Complete Install Page.
 
@@ -777,7 +777,7 @@ When the install is complete, the Operational Dashboard displays the Cloud tab (
 
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Caution:</b> Be sure the values for the 
 Prerequisites, Networks Connections, and Network Settings are what you need, before you start the install process. Once the install process is triggered, 
-no changes can be made. If you want to make changes, you need to start over by re-installing the HP Cloud OS for Moonshot Administration node. 
+no changes can be made. If you want to make changes, you need to start over by re-installing the HP Helion Cloud OS for Moonshot Administration node. 
 For procedural instructions, see <a href="/cloudos/moonshot/install/">Install and Configure Your Cloud</a>.
 </p>
 
@@ -796,7 +796,7 @@ The following table describes the Complete Install page UI elements:
 <tr style="background-color: white; color: black;">
 <td> <nobr> <b>Complete Install</b> button </nobr> </td> </td>
 <td> Click to open the Complete Install dialog, where you will then specify configuration information to complete the 
-HP Cloud OS for Moonshot Administration node installation. After the HP Cloud OS for Moonshot Administration node is installed, this button is replaced by the Continue... button. <br />
+HP Helion Cloud OS for Moonshot Administration node installation. After the HP Helion Cloud OS for Moonshot Administration node is installed, this button is replaced by the Continue... button. <br />
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> The Complete Install step runs a validation check 
 of the network IP address ranges. If there is an error, this step cannot be completed until the error is fixed. 
 The validation check shows the network type and possibly the address value. You must open the Edit Address Ranges dialog for the specified 
@@ -815,12 +815,12 @@ See <a href="/cloudos/moonshot/manage/operational-dashboard/environment-tab/#edi
 
 <tr style="background-color: white; color: black;">
 <td> <b>Install Started</b> column </td>
-<td> The timestamp that the HP Cloud OS for Moonshot Administration node install is started. </td>
+<td> The timestamp that the HP Helion Cloud OS for Moonshot Administration node install is started. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td><b>Install Complete</b> column </td>
-<td> The timestamp that the HP Cloud OS for Moonshot Administration node install is completed. </td>
+<td> The timestamp that the HP Helion Cloud OS for Moonshot Administration node install is completed. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -842,8 +842,8 @@ This button then becomes a Refresh button. </td>
 
 <tr style="background-color: white; color: black;">
 <td> <b>Continue...</b> button </td>
-<td> Replaces the Complete Install button after the HP Cloud OS for Moonshot Administration node install is complete. 
-Click to add the Cloud tab. The HP Cloud OS for Moonshot Administration node is now ready to be configured to set up a cloud. 
+<td> Replaces the Complete Install button after the HP Helion Cloud OS for Moonshot Administration node install is complete. 
+Click to add the Cloud tab. The HP Helion Cloud OS for Moonshot Administration node is now ready to be configured to set up a cloud. 
 See the <a href="/cloudos/moonshot/manage/operational-dashboard/cloud-tab">Cloud Tab</a> topic for descriptions of the panels that set up a cloud.</td>
 </tr>
 				
@@ -885,7 +885,7 @@ special characters. In the current release, it must end in .com, .org, .net, .ed
 
 <tr style="background-color: white; color: black;">
 <td> <nobr> <b>Complete Install</b> </nobr> </td>
-<td> Click to install the required software on the HP Cloud OS for Moonshot Administration node. This may take several minutes. <br /> 
+<td> Click to install the required software on the HP Helion Cloud OS for Moonshot Administration node. This may take several minutes. <br /> 
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> The Complete Install step runs a validation check 
 of the network IP address ranges. If there is an error, this step cannot be completed until the error is fixed. 
 The validation check shows the network type and possibly the address value. You must open the Edit Address Ranges dialog for the specified 

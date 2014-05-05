@@ -1,20 +1,20 @@
 ---
 layout: default
-title: "HP Cloud Environment CLI Software for Windows PowerShell Object Storage Examples"
+title: "HP Helion Cloud Environment CLI Software for Windows PowerShell Object Storage Examples"
 permalink: /cli/windows/containers-and-folders/
 product: win-cli
 
 ---
-# HP Cloud Environment CLI Software for Windows PowerShell Object Storage Examples #
+# HP Helion Cloud Environment CLI Software for Windows PowerShell Object Storage Examples #
 
-One of the key features of the HP Cloud environment CLI software for Windows PowerShell Object Storage is that it provides a way to store and retrieve objects in a highly redundant cluster of publicly accessible physical machines hosted in HP data centers.  This page provides examples for how to use Object Storage via the Windows PowerShell CLI.  (See the [HP Cloud Object Storage Overview](/object-storage) for overview information on Object Storage.)
+One of the key features of the HP Helion Cloud environment CLI software for Windows PowerShell Object Storage is that it provides a way to store and retrieve objects in a highly redundant cluster of publicly accessible physical machines hosted in HP data centers.  This page provides examples for how to use Object Storage via the Windows PowerShell CLI.  (See the [HP Helion Cloud Object Storage Overview](/object-storage) for overview information on Object Storage.)
 
 **Note:** When referencing an argument, like a container name, that has a space, use quotes to access that resource. For example:
      
      PS: HPCS:\> cd "my container:"
      PS: HPCS:\> new-container -name "my new container"
 
-**Note**: The HP Cloud environment CLI software for Windows PowerShell supports the [standard Windows wildcard](http://msdn.microsoft.com/en-us/library/windows/desktop/aa717088(v=vs.85).aspx) characters asterix (`*`), question mark (`?`), and range brackets (`[]`) for the `ls, copy` and `delete` object storage commands.
+**Note**: The HP Helion Cloud environment CLI software for Windows PowerShell supports the [standard Windows wildcard](http://msdn.microsoft.com/en-us/library/windows/desktop/aa717088(v=vs.85).aspx) characters asterix (`*`), question mark (`?`), and range brackets (`[]`) for the `ls, copy` and `delete` object storage commands.
 
 ##Interacting with the Storage Service## {#InteractingwiththeStorageService}
 
@@ -1089,7 +1089,7 @@ The `Get-Notes` command gives you the ability to view release notes for the curr
 
 ##Migrating Your Files From Another Storage System## {#MigratingYourFiles}
 
-The Migrate-Drive command gives you the ability to migrate your data from a non-HP Cloud storage system such as Amazon S3, Dropbox, or Microsoft Skydrive into the HP Cloud system easily and quickly.  This example uses Amazon S3 buckets.  To move the TLPRoot and TLPTest2 Buckets in S3 and the TLPTest2 Bucket contained MikeConfig.txt and NewHelp.text files to the HP Cloud system:
+The Migrate-Drive command gives you the ability to migrate your data from a non-HP Helion Cloud storage system such as Amazon S3, Dropbox, or Microsoft Skydrive into the HP Helion Cloud system easily and quickly.  This example uses Amazon S3 buckets.  To move the TLPRoot and TLPTest2 Buckets in S3 and the TLPTest2 Bucket contained MikeConfig.txt and NewHelp.text files to the HP Helion Cloud system:
 
     ------------------------------------------------------------------------------------------------------
     Welcome to the HP-Cloud Object Storage Powershell Environment.

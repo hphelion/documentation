@@ -21,7 +21,7 @@ PageRefresh();
 
 # Updates and Extensions
 
-This topic explains how to obtain patches and other relevant functionality from the HP Cloud OS Distribution Network (CODN).
+This topic explains how to obtain patches and other relevant functionality from the HP Helion Cloud OS Distribution Network (CODN).
 
 * [Configure and Download Steps](#configure-and-download-steps)
 * [Next Step](#next-step)
@@ -42,11 +42,11 @@ This topic explains how to obtain patches and other relevant functionality from 
 
 3. On the Configure dialog, if you are using it for the first time, sign up for the CODN.
 
-4. After registering or logging in, you are returned to the Updates and Extensions panel. The Operational Dashboard presents the available downloads that are relevant to your HP Cloud OS environment.
+4. After registering or logging in, you are returned to the Updates and Extensions panel. The Operational Dashboard presents the available downloads that are relevant to your HP Helion Cloud OS environment.
 
 5. Click the **Download** button that is located next to an item you want to acquire.  
 
-6. Before installing an install module's hot fix, such as one labeled (for example) "Keystone Token Expiration Hotfix", verify that the install module you're about to update does exist for your cloud. To do this, access the HP Cloud OS Installation Dashboard. In Mozilla Firefox or Google Chrome, open http://192.168.124.10:3000. **Note:** In the current release, the dashboards use pre-defined login credentials. These are not published in the web-hosted documentation. To get the pre-defined login credentials, refer to the readme file included in the same ZIP that contained the HP Cloud OS ISO. If you have not already done so, see the ZIP on the <a href="https://cloudos.hpwsportal.com" target="codn">HP Cloud OS Distribution Network</a>. 
+6. Before installing an install module's hot fix, such as one labeled (for example) "Keystone Token Expiration Hotfix", verify that the install module you're about to update does exist for your cloud. To do this, access the HP Helion Cloud OS Installation Dashboard. In Mozilla Firefox or Google Chrome, open http://192.168.124.10:3000. **Note:** In the current release, the dashboards use pre-defined login credentials. These are not published in the web-hosted documentation. To get the pre-defined login credentials, refer to the readme file included in the same ZIP that contained the HP Helion Cloud OS ISO. If you have not already done so, see the ZIP on the <a href="https://cloudos.hpwsportal.com" target="codn">HP Helion Cloud OS Distribution Network</a>. 
 
 7. In the Installation Dashboard, open the proposal for the hot fix by clicking the **Edit** button next to the listed item.   
 
@@ -62,8 +62,8 @@ New patches may be available periodically. Be sure to revisit the Updates and Ex
 <!--
 ## Modify the CODN Runtime Configuration
 
-CODN is a web service that provides catalog integration and content download services for the HP Cloud OS Operational Dashboard and 
-HP Cloud OS Administration Dashboard. 
+CODN is a web service that provides catalog integration and content download services for the HP Helion Cloud OS Operational Dashboard and 
+HP Helion Cloud OS Administration Dashboard. 
 
 On your cloud controller node, the CODN configuration file is here:
 

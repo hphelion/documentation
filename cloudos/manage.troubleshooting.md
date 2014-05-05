@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Cloud OS Troubleshooting"
+title: "HP Helion Cloud OS Troubleshooting"
 permalink: /cloudos/manage/troubleshooting/
 product: cloudos
 
@@ -20,7 +20,7 @@ PageRefresh();
 
 <p style="font-size: small;"> <a href="/cloudos/manage/utilities/">&#9664; PREV</a> | <a href="/cloudos/manage/">&#9650; UP</a> | NEXT &#9654; </p>
 
-# HP Cloud OS Troubleshooting
+# HP Helion Cloud OS Troubleshooting
 
 This topic describes known problems and solutions for the following areas:
 
@@ -88,7 +88,7 @@ This section describes the following known problems and solutions for the Cloud 
 
 <tr style="background-color: white; color: black;">
 <td> Symptoms </td>
-<td> The HP Cloud OS ISO shows an error when running on a virtual machine (VM) hosted on a KVM hypervisor. </td>
+<td> The HP Helion Cloud OS ISO shows an error when running on a virtual machine (VM) hosted on a KVM hypervisor. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -110,7 +110,7 @@ This section describes the following known problems and solutions for the Cloud 
 
 ##### Solution
 
-Before booting the VM with the HP Cloud OS ISO media, ensure that the virtual disk format is IDE or SCSI.
+Before booting the VM with the HP Helion Cloud OS ISO media, ensure that the virtual disk format is IDE or SCSI.
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a> 
 
@@ -376,7 +376,7 @@ On the Admin node, view the log files for details:
 ##### Solution
 
 * Verify that a public network is configured in the Admin node.
-* Redo the steps for Cloud Administration node internet access prerequisite - see "Set Admin Node Prerequisites" in the HP Cloud OS Installation and Configuration Dashboard.
+* Redo the steps for Cloud Administration node internet access prerequisite - see "Set Admin Node Prerequisites" in the HP Helion Cloud OS Installation and Configuration Dashboard.
 * Correct the proxy entries and/or specify a different proxy host and/or port.
 
 You must do pre-work before starting cloud deployment. If there are any incorrect details, the entire operation must be re-done. 
@@ -899,7 +899,7 @@ You do not need to do anything. The default route should automatically be re-add
 
 <tr style="background-color: white; color: black;">
 <td> Failure message </td>
-<td>  The HP Cloud OS license has expired  </td>
+<td>  The HP Helion Cloud OS license has expired  </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -1319,7 +1319,7 @@ dhclient eth1
 
 #### Solution
 
-Use this feature only if your HP Cloud OS environment includes multiple Compute nodes.
+Use this feature only if your HP Helion Cloud OS environment includes multiple Compute nodes.
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a> 

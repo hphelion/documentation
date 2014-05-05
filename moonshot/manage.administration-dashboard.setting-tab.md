@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Cloud OS for Moonshot: Administration Dashboard"
+title: "HP Helion Cloud OS for Moonshot: Administration Dashboard"
 permalink: /cloudos/moonshot/manage/administration-dashboard/Setting-tab/
 product: moonshot
 
@@ -21,7 +21,7 @@ PageRefresh();
 
 # Setting Tab #
 
-On the top right corner of the Administration Dashboard window, the **Settings** link is displayed. The link is available to all users. The Settings link helps you to modify dashboard settings for all users of your site, change password and gives details about the HP Cloud OS for Moonshot Administration Dashboard.
+On the top right corner of the Administration Dashboard window, the **Settings** link is displayed. The link is available to all users. The Settings link helps you to modify dashboard settings for all users of your site, change password and gives details about the HP Helion Cloud OS for Moonshot Administration Dashboard.
 
 You can perform the following task:
 
@@ -31,7 +31,7 @@ You can perform the following task:
 
 * <a href= "#Change Password"> Change Password</a>
 
-* <a href= "#About HP Cloud OS for Moonshot Administration Dashboard">About HP Cloud OS for Moonshot Administration Dashboard</a>
+* <a href= "#About HP Helion Cloud OS for Moonshot Administration Dashboard">About HP Helion Cloud OS for Moonshot Administration Dashboard</a>
 
 * <a href= #"Help">Help</a>
 
@@ -88,7 +88,7 @@ Certain functional areas are set to generate informational messages. Log level d
 
 ###Change Proxy Settings
 
-Cloud Administrators can change proxy information from the default values that were entered in the Admin Node. You use a proxy when you upload or create images, and when you provision to HP Cloud Services.
+Cloud Administrators can change proxy information from the default values that were entered in the Admin Node. You use a proxy when you upload or create images, and when you provision to HP Helion Cloud Services.
 
 You might need to change your proxy information if your default server fails or if you prefer to use a different proxy server. You can change the following proxy information:
 
@@ -137,13 +137,13 @@ To change your password, do the following:
 
 6. Click **Change** to save the changes.
 
-##About HP Cloud OS for Moonshot Administration Dashboard <a name="About HP Cloud OS for Moonshot Administration Dashboard"></a>
+##About HP Helion Cloud OS for Moonshot Administration Dashboard <a name="About HP Helion Cloud OS for Moonshot Administration Dashboard"></a>
 
-This option gives detailed information about the HP Cloud OS for Moonshot Administration Dashboard.
+This option gives detailed information about the HP Helion Cloud OS for Moonshot Administration Dashboard.
 
 1. Click the **Settings** link on the upper right corner of the Administration Dashboard window. The Settings page is displayed with options in the left panel.
 
-2. Click **About** to display the About HP Cloud OS for Moonshot Administration Dashboard window. It displays the product version number.
+2. Click **About** to display the About HP Helion Cloud OS for Moonshot Administration Dashboard window. It displays the product version number.
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

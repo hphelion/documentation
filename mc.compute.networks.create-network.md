@@ -19,7 +19,7 @@ This page covers how to create and delete a network using the [networks screen](
 
 Before you can begin creating or deleting a network, you must:
 
-* [Sign up for an HP Cloud compute account](https://horizon.hpcloud.com/register)
+* [Sign up for an HP Helion Cloud compute account](https://horizon.hpcloud.com/register)
 * [Activate compute service on your account](https://horizon.hpcloud.com/landing/)
 
 **Note**: By default, when you create a project (in the [account and services](/mc/account/) dashboard), your project is provisioned with a network (username-network), a subnet (username-subnet), and a router (username-router) that is automatically connected to the internet, allowing you to perform tasks such as spinning up servers without accessing the MC networks capability.  The networks screens allow you to control the networks behaviors beyond this default.
@@ -68,7 +68,7 @@ Select the button `Yes, delete this network`.  Your network is deleted and no lo
 ##For further information## {#ForFurtherInformation}
 
 * For information about the network details screen, take a look at the [Viewing network details](/mc/compute/networks/view-network/) page
-* For basic information about our HP Cloud compute services, take a look at the [HP Cloud compute overview](/compute/) page
+* For basic information about our HP Helion Cloud compute services, take a look at the [HP Helion Cloud compute overview](/compute/) page
 * Use the MC [site map](/mc/sitemap) for a full list of all available MC documentation pages
 * For information about the Open Stack networking features, surf on over to [their networking wiki](https://wiki.openstack.org/wiki/Quantum)
 

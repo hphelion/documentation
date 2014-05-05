@@ -23,7 +23,7 @@ PageRefresh();
 
 # View Updates and Extensions
 
-This topic explains how to obtain patches and other relevant functionality from the HP Cloud OS Distribution Network (CODN).
+This topic explains how to obtain patches and other relevant functionality from the HP Helion Cloud OS Distribution Network (CODN).
 
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:600px;"> <b>Note:</b> The same <b>Updates and Extensions</b> 
 functionality is available in the Administration Dashboard, which is the new dashboard that you will use.  For introductory information, you can read this topic. It is 
@@ -53,12 +53,12 @@ configured or there is no active session with the CODN. A session may timeout af
 3. On the Configure dialog, if you are using it for the first time, sign up for the CODN.
 
 4. After registering or logging in, you are returned to the Updates and Extensions panel. The Operational Dashboard presents the available downloads 
-that are relevant to your HP Cloud OS for Moonshot environment.
+that are relevant to your HP Helion Cloud OS for Moonshot environment.
 
 5. Click the **Download** button that is located next to an item you want to acquire.  
 
 6. Before installing an install module's hot fix, such as one labeled (for example) "Keystone Token Expiration Hotfix", verify that the install module 
-you're about to update does exist for your cloud. To do this, access the HP Cloud OS for Moonshot Installation Dashboard. In Mozilla Firefox or Google 
+you're about to update does exist for your cloud. To do this, access the HP Helion Cloud OS for Moonshot Installation Dashboard. In Mozilla Firefox or Google 
 Chrome, open https://192.168.124.10:3000. 
 
 7. In the Installation Dashboard, open the proposal for the hot fix by clicking the **Edit** button next to the listed item.   
@@ -77,8 +77,8 @@ a regular basis.
 <!--
 ## Modify the CODN Runtime Configuration
 
-CODN is a web service that provides catalog integration and content download services for the HP Cloud OS for Moonshot Operational Dashboard and 
-HP Cloud OS for Moonshot Administration Dashboard. 
+CODN is a web service that provides catalog integration and content download services for the HP Helion Cloud OS for Moonshot Operational Dashboard and 
+HP Helion Cloud OS for Moonshot Administration Dashboard. 
 
 On your cloud controller node, the CODN configuration file is here:
 

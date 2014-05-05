@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Cloud OS for Moonshot Site Index"
+title: "HP Helion Cloud OS for Moonshot Site Index"
 permalink: /cloudos/moonshot/siteindex/
 product: moonshot
 
@@ -20,15 +20,15 @@ PageRefresh();
 
 <p style="font-size: small;"> <a href="/cloudos/moonshot/">&#9664; PREV</a> | <a href="/cloudos/moonshot/">&#9650; UP</a> | NEXT &#9654; </p>
 
-# HP Cloud OS for Moonshot Site Index
+# HP Helion Cloud OS for Moonshot Site Index
 
-#### [HP Cloud OS for Moonshot Home](/cloudos/moonshot/)
+#### [HP Helion Cloud OS for Moonshot Home](/cloudos/moonshot/)
 
-#### [Connect on the HP Cloud Community Forum](/cloudos/moonshot/community/)
+#### [Connect on the HP Helion Cloud Community Forum](/cloudos/moonshot/community/)
 
 #### [Open Source and Third-Party Software License Agreements](/cloudos/moonshot/os-3rd-party-license-agreements/)
 
-#### [Prepare: Getting Started with HP Cloud OS for Moonshot](/cloudos/moonshot/prepare/)
+#### [Prepare: Getting Started with HP Helion Cloud OS for Moonshot](/cloudos/moonshot/prepare/)
 
 * [Release Notes](/cloudos/moonshot/prepare/releasenotes/)
 * [Support Matrix](/cloudos/moonshot/prepare/supportmatrix/) 
@@ -36,7 +36,7 @@ PageRefresh();
 * [FAQs](/cloudos/moonshot/prepare/faqs/)  
 <!-- * [Technical Overview](/cloudos/moonshot/prepare/overview/)  --> 
 * [Glossary](/cloudos/moonshot/prepare/glossary/)
-* [How to order and license HP Cloud OS for Moonshot](/cloudos/moonshot/prepare/order-license/)
+* [How to order and license HP Helion Cloud OS for Moonshot](/cloudos/moonshot/prepare/order-license/)
 
 #### [Install &amp; Configure Your Cloud](/cloudos/moonshot/install/)
 
@@ -56,24 +56,24 @@ PageRefresh();
 
 #### [Manage your Cloud](/cloudos/moonshot/manage/)
 
-* [HP Cloud OS for Moonshot Utilities](/cloudos/moonshot/manage/utilities/)
-* [HP Cloud OS for Moonshot Troubleshooting](/cloudos/moonshot/manage/troubleshooting/)
-* [HP Cloud OS for Moonshot Operational Dashboard Help](/cloudos/moonshot/manage/operational-dashboard/) 
+* [HP Helion Cloud OS for Moonshot Utilities](/cloudos/moonshot/manage/utilities/)
+* [HP Helion Cloud OS for Moonshot Troubleshooting](/cloudos/moonshot/manage/troubleshooting/)
+* [HP Helion Cloud OS for Moonshot Operational Dashboard Help](/cloudos/moonshot/manage/operational-dashboard/) 
   * [How the Operational Dashboard Works](/cloudos/moonshot/manage/operational-dashboard/how-opdash-works)
   * [Operational Dashboard: Environment Tab](/cloudos/moonshot/manage/operational-dashboard/environment-tab)
   * [Operational Dashboard: Cloud Tab](/cloudos/moonshot/manage/operational-dashboard/cloud-tab)
   * [Operational Dashboard: Settings Tab](/cloudos/moonshot/manage/operational-dashboard/settings-tab)
-* [HP Cloud OS for Moonshot Administration Dashboard Help](/cloudos/moonshot/manage/administration-dashboard/)  
+* [HP Helion Cloud OS for Moonshot Administration Dashboard Help](/cloudos/moonshot/manage/administration-dashboard/)  
 <!--  wait until we have HTML topics for Admin Dash Help, then unhide this list with new topic names:
   * [Before You Begin with the Administration Dashboard Help](/cloudos/moonshot/manage/administration-dashboard/before-you-begin/)
-  * [Welcome to the HP Cloud OS for Moonshot Administration Dashboard](/cloudos/moonshot/manage/administration-dashboard/welcome/)
+  * [Welcome to the HP Helion Cloud OS for Moonshot Administration Dashboard](/cloudos/moonshot/manage/administration-dashboard/welcome/)
   * [Getting Started with the Administration Dashboard](/cloudos/moonshot/manage/administration-dashboard/getting-started/)
   * [Topology Designs](/cloudos/moonshot/manage/administration-dashboard/topology-designs/)
   * [Administration Dashboard Tasks by Role](/cloudos/moonshot/manage/administration-dashboard/tasks-by-role/)
   * [Administration Dashboard Tasks by Tab](/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/)  
 -->   
-* [HP Cloud OS for Moonshot: Building Images](/cloudos/moonshot/manage/image-builder/) 
-* [HP Cloud OS for Moonshot Backup and Restore](/cloudos/moonshot/manage/backup-process/) 
+* [HP Helion Cloud OS for Moonshot: Building Images](/cloudos/moonshot/manage/image-builder/) 
+* [HP Helion Cloud OS for Moonshot Backup and Restore](/cloudos/moonshot/manage/backup-process/) 
 
 
 #### [Develop](/cloudos/moonshot/develop/)

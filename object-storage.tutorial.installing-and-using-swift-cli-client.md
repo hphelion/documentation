@@ -8,7 +8,7 @@ product:
 ---
 # Installing And Using The Swift CLI Client
 
-This article describes the steps you'll need to follow in order to download files from and upload files to your HP Cloud object storage containers from your *nix command-line.
+This article describes the steps you'll need to follow in order to download files from and upload files to your HP Helion Cloud object storage containers from your *nix command-line.
 
 Specifically, it describes how to do the following:
 
@@ -18,7 +18,7 @@ Specifically, it describes how to do the following:
 1. Use the swift client to upload files to a container
 1. Simply calls to the swift client with bash scripts
 
-This article assumes that you already have an HP Cloud account set up and that you have already created a container.
+This article assumes that you already have an HP Helion Cloud account set up and that you have already created a container.
 
 ## (1) Install the command-line swift client from OpenStack.
 
@@ -71,7 +71,7 @@ Feel free to take a look at help info for the swift command line utility:
   
 ## (2) Try listing the names of your containers.
 
-This will require having a few of your HP Cloud account credentials, which you can access from your HP Cloud Management Console (in the console at https://console.hpcloud.com, go to *Account --> API Keys*):
+This will require having a few of your HP Helion Cloud account credentials, which you can access from your HP Helion Cloud Management Console (in the console at https://console.hpcloud.com, go to *Account --> API Keys*):
 
 - the Endpoint URL for the Identity services
 - your username (this will be the email associated with your HPCS account)

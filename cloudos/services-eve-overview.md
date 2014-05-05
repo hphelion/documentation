@@ -1,15 +1,15 @@
 ---
 layout: default
-title: "HP Cloud OS Eve Service Overview"
+title: "HP Helion Cloud OS Eve Service Overview"
 permalink: /cloudos/services/eve/overview/
 product: compute
 
 ---
-# HP Cloud OS Eve Service Overview #
+# HP Helion Cloud OS Eve Service Overview #
 
-<!-- modeled after HP Cloud Networking Getting Started (network.getting.started.md) -->
+<!-- modeled after HP Helion Cloud Networking Getting Started (network.getting.started.md) -->
 
-Eve is the HP Cloud OS infrastructure topology provisioning service. Eve allows you to:
+Eve is the HP Helion Cloud OS infrastructure topology provisioning service. Eve allows you to:
 
 - Provision TOSCA-based infrastructure topology designs (composite, hybrid, and distributed).
 - Separate topology creation and resource pool binding, for simpler, reusable topologies.
@@ -27,19 +27,19 @@ TOSCA is a standard way to describe the topology of applications along with depe
 
 ###Using the API to access Eve### {#API}
  
-You can use a low-level, raw REST API access to HP Cloud OS Eve service. See .
+You can use a low-level, raw REST API access to HP Helion Cloud OS Eve service. See .
 
 ###Using the CLI### {#cli}
 
-You can use any of several command-line interface software to access HP Cloud OS Eve service. See .
+You can use any of several command-line interface software to access HP Helion Cloud OS Eve service. See .
 
 ###Using language bindings### {#bindings}
 
-You can use any of several language bindings to access HP Cloud OS Eve service. See .
+You can use any of several language bindings to access HP Helion Cloud OS Eve service. See .
 
 
 ## For more information ##
 Also see the Help topics that are available in the Operational Dashboard and Administration Dashboard.  Website copies are available:
 
-* [HP Cloud OS Operational Dashboard Help](/cloudos/manage/operational-dashboard/)
-* [HP Cloud OS Administration Dashboard Help](/cloudos/manage/administration-dashboard/)
+* [HP Helion Cloud OS Operational Dashboard Help](/cloudos/manage/operational-dashboard/)
+* [HP Helion Cloud OS Administration Dashboard Help](/cloudos/manage/administration-dashboard/)

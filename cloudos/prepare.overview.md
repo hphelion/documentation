@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Cloud OS Technical Overview"
+title: "HP Helion Cloud OS Technical Overview"
 permalink: /cloudos/prepare/overview/
 product: cloudos
 
@@ -21,15 +21,15 @@ PageRefresh();
 
 
 
-# HP Cloud OS Technical Overview
+# HP Helion Cloud OS Technical Overview
 
-Welcome! This technical overview introduces you to the HP Cloud OS architecture, its components and services, and the HP Cloud OS relationship with OpenStack.
+Welcome! This technical overview introduces you to the HP Helion Cloud OS architecture, its components and services, and the HP Helion Cloud OS relationship with OpenStack.
 
 * [Why is Cloud Computing Important?](#why-is-cloud-computing-important)
 
-* [What is HP Cloud OS?](#what-is-hp-cloud-os)
+* [What is HP Helion Cloud OS?](#what-is-hp-cloud-os)
 
-* [Understanding the HP Cloud OS Architecture](#understanding-the-hp-cloud-os-architecture)
+* [Understanding the HP Helion Cloud OS Architecture](#understanding-the-hp-cloud-os-architecture)
 
 * [Execution Environment](#execution-environment)
 
@@ -48,17 +48,17 @@ lock-in, workload portability, and skill set gaps.
 
 HP believes organizations need to implement a hybrid delivery strategy that leverages the right mix of cloud and traditional IT to optimize application and service creation and delivery.
 
-## What is HP Cloud OS?
+## What is HP Helion Cloud OS?
 
-HP Cloud OS is an enterprise-grade cloud technology that is open and extensible. Based on OpenStack, the fastest-growing open-source cloud community, Cloud OS provides a number of value-added services that complement and enhance OpenStack. 
+HP Helion Cloud OS is an enterprise-grade cloud technology that is open and extensible. Based on OpenStack, the fastest-growing open-source cloud community, Cloud OS provides a number of value-added services that complement and enhance OpenStack. 
 
 Cloud OS also provides the foundation for a common cloud architecture across private, public, and hybrid cloud delivery.
 
-## Understanding the HP Cloud OS Architecture
+## Understanding the HP Helion Cloud OS Architecture
 
 Cloud OS is organized into a set of services and an architecture that acts like a "datacenter-level" operating system focused on cloud computing. 
 
-Let's look at the components. HP Cloud OS provides two important environments:
+Let's look at the components. HP Helion Cloud OS provides two important environments:
 
 * An **Administrative environment**, which is used to manage the cloud.
 
@@ -76,9 +76,9 @@ We'll start in the execution environment.
 
 The execution environment is broken into two components:
 
-* The HP Cloud OS **kernel** layer, which is similar to an operating system's kernel layer, across the cloud 
+* The HP Helion Cloud OS **kernel** layer, which is similar to an operating system's kernel layer, across the cloud 
 
-* The HP Cloud OS **base** layer, which is comprised of advanced services that sit above the kernel, like subsystem services in an operating system.
+* The HP Helion Cloud OS **base** layer, which is comprised of advanced services that sit above the kernel, like subsystem services in an operating system.
 
 These execution components works together to create a cloud environment for a customer that's installable, manageable and usable by the users of that cloud.
 
@@ -87,7 +87,7 @@ These execution components works together to create a cloud environment for a cu
 The kernel layer is based on the OpenStack infrastructure set of services.  All of Cloud OS is OpenStack powered.  If we look at the kernel and the services that comprise it, 
 we utilize services from OpenStack such as:
 
-* **Keystone** &mdash; the OpenStack identity management service.  The Keystone service allows users and groups and multi-tenancy to be built into all the services that are based on HP Cloud OS.  
+* **Keystone** &mdash; the OpenStack identity management service.  The Keystone service allows users and groups and multi-tenancy to be built into all the services that are based on HP Helion Cloud OS.  
 
 * **Glance** &mdash; the OpenStack image library service; Glance allows you to have a set of images that you can use to bootstrap virtual machines across the cloud, 
 and manage all those images.
@@ -104,7 +104,7 @@ to the virtual environment within the cloud.
 safely, and cheaply.
 
 * **Horizon** &mdash; the OpenStack dashboard, which provides a web based user interface to OpenStack services including Nova, Swift, Keystone, and so on.  
-HP Cloud OS has provided an enhanced version with two UI dashboards, as described later in this topic.
+HP Helion Cloud OS has provided an enhanced version with two UI dashboards, as described later in this topic.
 
 Along with these services that make up the kernel layer of Cloud OS, we also have a set of plugins that attach to your infrastructure environment. 
 We provide plugins in the following ways. 
@@ -117,8 +117,8 @@ We provide plugins in the following ways.
 
 ### Base Layer
 
-On top of the kernel layer is the base layer, where we've created HP Cloud OS value-added services to provide advanced, additional functionality that goes beyond the basic infrastructure service. 
-The value-added services from HP Cloud OS are:
+On top of the kernel layer is the base layer, where we've created HP Helion Cloud OS value-added services to provide advanced, additional functionality that goes beyond the basic infrastructure service. 
+The value-added services from HP Helion Cloud OS are:
 
 * Eve
 
@@ -128,7 +128,7 @@ The value-added services from HP Cloud OS are:
 
 #### Eve Service
 
-Eve is the HP Cloud OS infrastructure topology provisioning service.  Eve allows you to:
+Eve is the HP Helion Cloud OS infrastructure topology provisioning service.  Eve allows you to:
 
 * Provision TOSCA-based infrastructure topology designs (composite, hybrid, and distributed).
 
@@ -147,7 +147,7 @@ additional functionality in Eve allows you to:
 
 #### Graffiti Service
 
-Graffiti is the HP Cloud OS Resource Pool Registry and Capability Tagging Service, providing:
+Graffiti is the HP Helion Cloud OS Resource Pool Registry and Capability Tagging Service, providing:
 
 * A dictionary of the "capabilities" of all the resources in a cloud environment
 
@@ -188,7 +188,7 @@ Graffiti supports the base concepts of requirements and capabilities within the 
  
 #### Focus Service
 
-The HP Cloud OS Focus service serves as the Topology Design Registry and Repository Service. Focus provides for persistent store and management of TOSCA-based templates. Focus allows you to:
+The HP Helion Cloud OS Focus service serves as the Topology Design Registry and Repository Service. Focus provides for persistent store and management of TOSCA-based templates. Focus allows you to:
 
 Focus allows you to:
 
@@ -205,7 +205,7 @@ Focus allows you to:
 ## Administrative Environment 
 
 The Administrative environment allows operational specialists at your company to control the architecture of your cloud, 
-and to perform lifecycle management of that architecture.  HP Cloud OS provides dashboards and tools to accomplish those goals:
+and to perform lifecycle management of that architecture.  HP Helion Cloud OS provides dashboards and tools to accomplish those goals:
 
 * Operational Dashboard
 
@@ -215,7 +215,7 @@ and to perform lifecycle management of that architecture.  HP Cloud OS provides 
 
 ### Operational Dashboard
 
-HP Cloud OS provides the Operational Dashboard. It is used to complete the HP Cloud OS installation process after the Admin Node has been booted with the HP Cloud OS *.iso package.  
+HP Helion Cloud OS provides the Operational Dashboard. It is used to complete the HP Helion Cloud OS installation process after the Admin Node has been booted with the HP Helion Cloud OS *.iso package.  
 
 On the Operational Dashboard, you set up your cloud environment, complete the Admin Node installation and configuration, and create a cloud.
 
@@ -232,29 +232,29 @@ In terms of sequencing, you'll you can use the Administration Dashboard to view,
 
 ### Administration Dashboard
 
-The HP Cloud OS Administration Dashboard enables self-service usage of the cloud. Any authorized user can use the Administrative Dashboard to interact with the cloud and build the user's own virtual resources in the cloud.  The HP Cloud OS 
+The HP Helion Cloud OS Administration Dashboard enables self-service usage of the cloud. Any authorized user can use the Administrative Dashboard to interact with the cloud and build the user's own virtual resources in the cloud.  The HP Helion Cloud OS 
 Administration Dashboard is based on the OpenStack "Horizon" technology; it looks and acts similar to Horizon, but at HP we have added new capabilities, 
 and new user interface workflow features to provide a more streamlined experience with clouds.
 
-The HP Cloud OS Administration Dashboard provides a simplified means of creating and managing HP Cloud OS resources, infrastructure topology designs, and infrastructure design documents.
+The HP Helion Cloud OS Administration Dashboard provides a simplified means of creating and managing HP Helion Cloud OS resources, infrastructure topology designs, and infrastructure design documents.
 
 The Administration Dashboard also provides the ability to provision a composite topology described by the topology designs and infrastructure design documents. Cloud OS launches infrastructure design documents to create virtual infrastructure in the cloud. The Administration Dashboard is associated with a single cloud.  
 
 ### Install and Upgrade Mechanism
 
 As indicated in the conceptual diagram that started this technical overview, the Operational Dashboard sits on top of an install and upgrade 
-component.  It allows HP Cloud OS and its customers to perform tasks such as upgrading the software version of the cloud, patch components with fixes, and 
+component.  It allows HP Helion Cloud OS and its customers to perform tasks such as upgrading the software version of the cloud, patch components with fixes, and 
 add/modify additional plugins that customers can choose based on their infrastructure needs, and how they want to differentiate their cloud.  
 
 Essentially, the whole install / upgrade mechanism allows us to manage the entire architecture of the cloud. 
 
 ## Summary
 
-The HP Cloud OS architecture ensures that any product based on it will get a fundamental set of capabilities that are guaranteed 
+The HP Helion Cloud OS architecture ensures that any product based on it will get a fundamental set of capabilities that are guaranteed 
 across the implemented products. For example in a hybrid delivery mechanism, being able to use another cloud's resources 
-(as if they were your own) will be consistent across all products that use HP Cloud OS.  
+(as if they were your own) will be consistent across all products that use HP Helion Cloud OS.  
 
-HP Cloud OS provides the ability to produce a topology model for a multi-tier infrastructure.  This model can then be mapped to a physical 
+HP Helion Cloud OS provides the ability to produce a topology model for a multi-tier infrastructure.  This model can then be mapped to a physical 
 resource pool at deployment time by creating a deployment profile.  Multiple deployment profiles can be associated with a single topology 
 model enabling a "model-once deploy-anywhere" repeatable process, standardizing the deployment of workload infrastructure across a hybrid cloud.  
 The deployment profiles allow addressing capability and configuration differences that could exist between the different physical resource pools 

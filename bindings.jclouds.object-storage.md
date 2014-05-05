@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "HP Cloud jclouds Binding Object Storage Examples"
+title: "HP Helion Cloud jclouds Binding Object Storage Examples"
 permalink: /bindings/jclouds/object-storage/
 product: jclouds
 
 ---
-# HP Cloud jclouds Binding Object Storage Examples
+# HP Helion Cloud jclouds Binding Object Storage Examples
 
 This page provides you with examples of how to use the jclouds binding to perform object storage tasks.  
 

@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "How To's with the Identity Service HP Cloud OS  Identity Service"
+title: "How To's with the Identity Service HP Helion Cloud OS  Identity Service"
 permalink: /cloudos/services/identity/howto/
 product: compute
 
 ---
-# How To's with the HP Cloud OS Identity Service #
+# How To's with the HP Helion Cloud OS Identity Service #
 
 <!-- Taken from http://wiki.hpcloud.net/display/core/Core+Edition+Use+cases#CoreEditionUsecases-OverCloud -->
 
@@ -51,5 +51,5 @@ The following Identity service tasks are usually performed by someone with the *
 
 Also see the Help topics that are available in the Operational Dashboard and Administration Dashboard.  Website copies are available:
 
-* [HP Cloud OS Operational Dashboard Help](/cloudos/manage/operational-dashboard/)
-* [HP Cloud OS Administration Dashboard Help](/cloudos/manage/administration-dashboard/)
+* [HP Helion Cloud OS Operational Dashboard Help](/cloudos/manage/operational-dashboard/)
+* [HP Helion Cloud OS Administration Dashboard Help](/cloudos/manage/administration-dashboard/)

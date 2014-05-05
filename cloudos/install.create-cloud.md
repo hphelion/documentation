@@ -31,13 +31,13 @@ As indicated in the [Installation Overview](/cloudos/install/overview#preview-of
 * You can follow the wizard-based steps presented in this topic (recommended)
 * Or you can perform the [Advanced Cloud Setup](/cloudos/install/advanced-cloud-setup) to apply and configure the install modules yourself.
 
-When you create a cloud using the process defined in this topic, a number of OpenStack and HP Cloud OS 
+When you create a cloud using the process defined in this topic, a number of OpenStack and HP Helion Cloud OS 
 install modules are automatically configured and deployed for you. In most cases, the automated deployment of install modules will suffice. 
 However, should you need to customize values in the install modules that are not exposed in the Create Cloud Attributes tab, 
 this advanced section, along with [Install Modules Reference](/cloudos/install/install-modules-reference/), are provided to assist 
 you in the process of customizing and deploying the individual install modules. 
 
-If you elected to use the wizard-based steps described in this topic (recommended), read on. You'll continue to use the HP Cloud OS Operational Dashboard to execute these steps. Follow these procedures in order.
+If you elected to use the wizard-based steps described in this topic (recommended), read on. You'll continue to use the HP Helion Cloud OS Operational Dashboard to execute these steps. Follow these procedures in order.
 
 * [Manage Controller and Compute Nodes](#manage-controller-and-compute-nodes)
 
@@ -62,7 +62,7 @@ done so).
 
 1. Power ON the Controller and Compute nodes.
 
-2. In the HP Cloud OS Operational Dashboard, select the Cloud tab > Manage Nodes. Once the Controller and Compute Nodes have booted, each node displays in the table, indicating the Alias Name set to the node's MAC address (of the NIC associated
+2. In the HP Helion Cloud OS Operational Dashboard, select the Cloud tab > Manage Nodes. Once the Controller and Compute Nodes have booted, each node displays in the table, indicating the Alias Name set to the node's MAC address (of the NIC associated
 with the Administration Network). Each node will be in the Not Allocated state.
 
 3. For a node, click More > Edit Node to rename the MAC address in the Alias column to a more meaningful name such as controllercompute, cloudcontroller, compute1, compute2. **Note:** The node name can only be letters (capitalization is allowed) and numbers with no spaces. The node table then displays with the new alias names.
@@ -157,7 +157,7 @@ dd if=/dev/zero of=/dev/sdb seek=$seek bs=1M <br />
 </pre>	
 
 In addition, you will need to login to the Swift storage nodes from the remote console.  For the credentials, go to the 
-<a href="https://cloudos.hpwsportal.com" target="new"> HP Cloud OS Catalog</a> portal, and see the topic about the dashboard credentials.
+<a href="https://cloudos.hpwsportal.com" target="new"> HP Helion Cloud OS Catalog</a> portal, and see the topic about the dashboard credentials.
 
 ## Create Cloud
 
@@ -199,7 +199,7 @@ project in the Administration Dashboard.
 * Trash User Password &mdash; Trash user's password for a granted user's role on a trash project
 in the Administration Dashboard.
 
-**Remember the passwords** &mdash; You will use them to log into the HP Cloud OS Administration Dashboard.
+**Remember the passwords** &mdash; You will use them to log into the HP Helion Cloud OS Administration Dashboard.
 
 When you're ready, click **Create Cloud**. The cloud will go through a series of steps to create an active cloud, showing the percent (%) completed.
 
@@ -275,7 +275,7 @@ For information about applying install modules, including Swift, see two topics:
 * [Advanced Cloud Setup](/cloudos/install/advanced-cloud-setup/)
 * [Install Modules Reference](/cloudos/install/install-modules-reference)
 
-When you're ready, manage your cloud environment by launching the HP Cloud OS Administration Dashboard.  To get there, click More > Launch Dashboard for the cloud you created.  For more, see [Launch the Administration Dashboard](/cloudos/install/launch-admin-dashboard/).
+When you're ready, manage your cloud environment by launching the HP Helion Cloud OS Administration Dashboard.  To get there, click More > Launch Dashboard for the cloud you created.  For more, see [Launch the Administration Dashboard](/cloudos/install/launch-admin-dashboard/).
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Cloud OS for Moonshot: Administration Dashboard"
+title: "HP Helion Cloud OS for Moonshot: Administration Dashboard"
 permalink: /cloudos/moonshot/manage/administration-dashboard/tasks-by-role/
 product: moonshot
 
@@ -20,7 +20,7 @@ PageRefresh();
 
 # User Roles and Their Tasks  #
 
-The HP Cloud OS for Moonshot Administration Dashboard can be accessed by different users. Each user role is customized and has different privileges attached to it. The Administration Dashboard displays differently for each user role.  Different user roles and their privileges are defined in the table below:
+The HP Helion Cloud OS for Moonshot Administration Dashboard can be accessed by different users. Each user role is customized and has different privileges attached to it. The Administration Dashboard displays differently for each user role.  Different user roles and their privileges are defined in the table below:
 
 <table style="text-align: left; vertical-align: top; width:700px;">
 
@@ -29,7 +29,7 @@ The HP Cloud OS for Moonshot Administration Dashboard can be accessed by differe
  <td><b>S.No</b></td> <td><b>Role</b></td><td><b>Working Tab</b></td><td><b>Privileges</td></tr>
 
 <tr style="background-color: white; color: black;">
-<td>1</td> <td>Cloud Administrator or Cloud Admin</td><td>All Tabs (Cloud, Region, Project)</td><td>Cloud Administrator has all the privileges associated with the cloud and HP Cloud OS for Moonshot services including the assigning projects and resources to the users. Cloud Administrators have global permissions across cloud including all regions and projects. Cloud Administrators are members of every project by design.</td></tr>
+<td>1</td> <td>Cloud Administrator or Cloud Admin</td><td>All Tabs (Cloud, Region, Project)</td><td>Cloud Administrator has all the privileges associated with the cloud and HP Helion Cloud OS for Moonshot services including the assigning projects and resources to the users. Cloud Administrators have global permissions across cloud including all regions and projects. Cloud Administrators are members of every project by design.</td></tr>
 
 <tr style="background-color: white; color: black;">
 <td>2</td><td>Administrator or Admin User</td><td>All Tabs (Cloud, Region, Project)</td><td>Admin role is best suited to create projects, and create users and assign the users to project. The Admin role can view domains and services, and delete protected images.</td><tr>

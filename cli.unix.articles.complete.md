@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "UNIX CLI for HP Cloud: Bash Command Completion"
+title: "UNIX CLI for HP Helion Cloud: Bash Command Completion"
 permalink: /cli/unix/articles/complete
 product: unix-cli
 categories: cli linux bash
 tags: cli linux bash
 ---
-#UNIX CLI for HP Cloud: Using bash shell command completion v12.12#
+#UNIX CLI for HP Helion Cloud: Using bash shell command completion v12.12#
 
 ___________________
 
@@ -18,11 +18,11 @@ On November 4, 2013, the UNIX CLI was moved into its End-of-Life Cycle process t
 * No new feature requests will be honored
 * Bug reports will be accepted
 
-HP Cloud has contributed the Unix CLI back to the open source community, and you can get support, access the documentation, and download the source code [here](https://github.com/hpcloud/unix_cli).
+HP Helion Cloud has contributed the Unix CLI back to the open source community, and you can get support, access the documentation, and download the source code [here](https://github.com/hpcloud/unix_cli).
 
 _________________________________________
 
-The Unix CLI for HP Cloud supports bash shell command completion.  This page covers the following topics:
+The Unix CLI for HP Helion Cloud supports bash shell command completion.  This page covers the following topics:
 
 * [Enabling bash cmmand completion](#Enabling)
 * [Using bash command completion](#Using)
@@ -88,4 +88,4 @@ The gem uninstall does not uninstall the bash completion file, so if you uninsta
 
 ##For more information## {#articles}
 
-For more tips and How-tos on using your UNIX CLI for HP Cloud, see [UNIX CLI for HP Cloud: Articles on to use the UNIX CLI for HP Cloud](/cli/unix/articles/).
+For more tips and How-tos on using your UNIX CLI for HP Helion Cloud, see [UNIX CLI for HP Helion Cloud: Articles on to use the UNIX CLI for HP Helion Cloud](/cli/unix/articles/).

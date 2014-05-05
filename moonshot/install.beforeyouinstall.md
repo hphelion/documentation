@@ -22,7 +22,7 @@ PageRefresh();
 
 # Important Tasks Before You Install
 
-Before you can start working in the HP Cloud OS for Moonshot Operational Dashboard, you must:
+Before you can start working in the HP Helion Cloud OS for Moonshot Operational Dashboard, you must:
 
 * [Plan the Infrastructure for a Cloud](#plan-the-infrastructure-for-a-cloud)
 
@@ -58,9 +58,9 @@ The following diagram depicts a simplified deployment scenario.
 
 Refer to the [Support Matrix](/cloudos/moonshot/prepare/supportmatrix/) for details about the following:
 
-* [Server infrastructure for HP Cloud OS for Moonshot](/cloudos/moonshot/prepare/supportmatrix/#server)
-* [Hypervisor recommendations for HP Cloud OS for Moonshot](/cloudos/moonshot/prepare/supportmatrix/#hypervisor)
-* [Node requirements for HP Cloud OS for Moonshot](/cloudos/moonshot/prepare/supportmatrix/#nodereq)
+* [Server infrastructure for HP Helion Cloud OS for Moonshot](/cloudos/moonshot/prepare/supportmatrix/#server)
+* [Hypervisor recommendations for HP Helion Cloud OS for Moonshot](/cloudos/moonshot/prepare/supportmatrix/#hypervisor)
+* [Node requirements for HP Helion Cloud OS for Moonshot](/cloudos/moonshot/prepare/supportmatrix/#nodereq)
 * [Moonshot chassis firmware version](/cloudos/moonshot/prepare/supportmatrix/#firmware)
 * [Operating systems supported ](/cloudos/moonshot/prepare/supportmatrix/#ossupp)
 * [Supported deployment scenario](/cloudos/moonshot/prepare/supportmatrix/#deployment)
@@ -68,7 +68,7 @@ Refer to the [Support Matrix](/cloudos/moonshot/prepare/supportmatrix/) for deta
 
 ### Network Infrastructure
 
-The following networks are utilized in the HP Cloud OS for Moonshot infrastructure:
+The following networks are utilized in the HP Helion Cloud OS for Moonshot infrastructure:
 
 * <b>Admin Network</b>: Provides connectivity between the Admin node, the Controller node and the Baremetal host. The Admin node provides DHCP and PXE services on this network.
 
@@ -78,7 +78,7 @@ DHCP and PXE services for this network. Workloads are provisioned to the Moonsho
 * <b>IPMI Network</b>: Utilized for communication between the Baremetal host and the Moonshot Chassis Manager. This includes chassis and 
 cartridge discovery, power control of cartridges and nodes, and monitoring of the health of the Moonshot systems.
 
-* <b>Public Network</b>: Provides public access to the HP Cloud OS for Moonshot Administration Dashboard and external access to 
+* <b>Public Network</b>: Provides public access to the HP Helion Cloud OS for Moonshot Administration Dashboard and external access to 
 the Internet for the Admin node and Controller node.
 
 <b>Notes</b>:
@@ -90,7 +90,7 @@ datacenter, then it is possible for updates and workloads to be downloaded local
 
 #### Network Configuration
 
-As shown in the deployment scenario diagram, HP Cloud OS for Moonshot will have the following network configuration:
+As shown in the deployment scenario diagram, HP Helion Cloud OS for Moonshot will have the following network configuration:
 
 * <b>Admin Node</b>: 2 NICs - Admin Network and Public Network
 

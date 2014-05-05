@@ -69,8 +69,8 @@ A:	HP will inform you of status via updates along the way. You will be notified 
 
 ####Q:	How does Bulk Import work?{#howworks}
 
-A:	The bulk import service works with your existing HP Cloud account. If you don’t have an account, [create one here](http://www.hpcloud.com/free-trial).
-1.	Use the Management Console to contact your HP Cloud support technician. He or she will get the process started for you. 
+A:	The bulk import service works with your existing HP Helion Cloud account. If you don’t have an account, [create one here](http://www.hpcloud.com/free-trial).
+1.	Use the Management Console to contact your HP Helion Cloud support technician. He or she will get the process started for you. 
 
 2.	Sign a legal consent form.
 
@@ -78,9 +78,9 @@ A:	The bulk import service works with your existing HP Cloud account. If you don
 
 4.	Copy the data to your device. Unless you want your data to be stored and retrieved encrypted, you should not encrypt your data, as HP will not decrypt it for you.
 
-5.	Download the HP Cloud Bulk Import client script and run the script on your data to prepare your account for bulk import.
+5.	Download the HP Helion Cloud Bulk Import client script and run the script on your data to prepare your account for bulk import.
 
-6.	You support contact will review all the logistics with respect to shipping your device to an HP Cloud data center. When we receive your data, we’ll hook up your device to a workstation that has a direct Gigabit link to our Cloud storage infrastructure. Once your data is copied, we’ll ship your device back to you or destroy it based on your directions.
+6.	You support contact will review all the logistics with respect to shipping your device to an HP Helion Cloud data center. When we receive your data, we’ll hook up your device to a workstation that has a direct Gigabit link to our Cloud storage infrastructure. Once your data is copied, we’ll ship your device back to you or destroy it based on your directions.
 
 ####Q:	How much does Bulk Import cost?{#cost}
 
@@ -91,9 +91,9 @@ A:	Normally there is an $80 per device charge for Bulk Import; however we are cu
 A:	For object storage (i.e., Swift) bulk imports the client import script makes the following changes:
 
 Objects that are greater than 1GB in size are split into segments of 1GB on upload.  To store these segments the client script creates a <target container>_segments container in the user account.
-It adds the HP Cloud bulk import user (HPCS_Bulk_Import_Export) to the container read and write ACLs for the <target container> and <target container>_segments containers.
+It adds the HP Helion Cloud bulk import user (HPCS_Bulk_Import_Export) to the container read and write ACLs for the <target container> and <target container>_segments containers.
 
-On completion of the Swift bulk import job, the `<target container>_segments` container needs to be removed if empty.  In addition, the HP Cloud bulk import user needs to be removed from the container read and write ACLs.  This can be done by running the client import script and selecting the “clean-up” option (option 2).
+On completion of the Swift bulk import job, the `<target container>_segments` container needs to be removed if empty.  In addition, the HP Helion Cloud bulk import user needs to be removed from the container read and write ACLs.  This can be done by running the client import script and selecting the “clean-up” option (option 2).
 
 
 

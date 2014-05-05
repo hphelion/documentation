@@ -1,13 +1,13 @@
 ---
 layout: default
-title: "HP Cloud Python Novaclient CLI Installation"
+title: "HP Helion Cloud Python Novaclient CLI Installation"
 permalink: /cli/nova/install/
 product: nova-cli
 
 ---
-# HP Cloud v12.12 Python Novaclient CLI Installation#
+# HP Helion Cloud v12.12 Python Novaclient CLI Installation#
 
-Before you can begin working with the Novaclient CLI software, you have to install the package.  The instructions below work for Ubuntu, CentOS and Windows installations.<!-- Take a look at the [HP Cloud Python Novaclient CLI - Release Notes](/cli/nova/release-notes) for the latest features.-->
+Before you can begin working with the Novaclient CLI software, you have to install the package.  The instructions below work for Ubuntu, CentOS and Windows installations.<!-- Take a look at the [HP Helion Cloud Python Novaclient CLI - Release Notes](/cli/nova/release-notes) for the latest features.-->
 
 This page provides you with the installation information for the following operating systems:
 
@@ -70,7 +70,7 @@ The installation procedure in this section is valid for Ubuntu versions 11.04, 1
         export NOVA_VERSION=1.1
         export NOVA_REGION_NAME=az-1.region-a.geo-1
         
-    Where the `USERNAME`, `PASSWORD`, and `TENANT_NAME` values are those you use to access the HP Cloud Management Console.  You can find the values for these variables on through the [HP Helion Public Cloud Console](https://horizon.hpcloud.com). Click the project menu and select *Manage Access Keys* and *Account Info*.
+    Where the `USERNAME`, `PASSWORD`, and `TENANT_NAME` values are those you use to access the HP Helion Cloud Management Console.  You can find the values for these variables on through the [HP Helion Public Cloud Console](https://horizon.hpcloud.com). Click the project menu and select *Manage Access Keys* and *Account Info*.
 
     **Note**: The `NOVA_REGION_NAME` variable in this example is set to communicate with instances in the AZ1 availablilty zone.  To use other availability zones, insert AZ2 or AZ3 as the variable instead: `az-2.region-a.geo-1` or `az-3.region-a.geo-1`.
 
@@ -227,7 +227,7 @@ Fedora has both Python 2.6.6 and Python-Setuptools 0.1.10 installed by default. 
         export NOVA_VERSION=1.1
         export NOVA_REGION_NAME=az-1.region-a.geo-1
         
-Where the `USERNAME`, `PASSWORD`, and `TENANT_NAME` values are the ones you use to access the HP Cloud console.  (You can find the values for these variable on your [API Keys](https://console.hpcloud.com/account/api_keys) page in the services console.)
+Where the `USERNAME`, `PASSWORD`, and `TENANT_NAME` values are the ones you use to access the HP Helion Cloud console.  (You can find the values for these variable on your [API Keys](https://console.hpcloud.com/account/api_keys) page in the services console.)
 
 **Note**: The `NOVA_REGION_NAME` variable in this example is set to communicate with instances in the AZ1 availablilty zone.  To use other availability zones, insert AZ2 or AZ3 as the variable instead: `az-2.region-a.geo-1` or `az-3.region-a.geo-1`.
 
@@ -335,7 +335,7 @@ To install the Python Setup tools, follow these steps:
 
 ###Installing the HP Python-Novaclient Software### {#InstallHPPythonNovaClient}
 
-To install the HP Cloud Python-Novaclient on your system, follow these steps:
+To install the HP Helion Cloud Python-Novaclient on your system, follow these steps:
 
 1. Download [the Python NovaClient v2.6.8-17 package](/file/python-novaclient_2.6.8-1hp17.zip) from our web site.
    

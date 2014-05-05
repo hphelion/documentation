@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "HP Cloud jclouds Bindings Compute Examples"
+title: "HP Helion Cloud jclouds Bindings Compute Examples"
 permalink: /bindings/jclouds/compute/
 product: jclouds
 
 ---
-# HP Cloud jclouds Bindings Compute Examples
+# HP Helion Cloud jclouds Bindings Compute Examples
 
 This page provides you with examples of how to use the jclouds bindings to perform compute tasks.  The library provides you with two different APIs that you can use: the Provider-Specific API, and the Compute Service Portable API, which allows you the freedom to use portable abstractions or cloud-specific features.
 
@@ -17,7 +17,7 @@ This page provides you with examples of how to use the jclouds bindings to perfo
 
 ### Connecting to the service
 
-Instantiate the context with the HP Cloud Compute provider:
+Instantiate the context with the HP Helion Cloud Compute provider:
 
         ComputeServiceContext ctx = ContextBuilder.newBuilder("hpcloud-compute")
             .credentials(user, apiKey)
@@ -212,4 +212,4 @@ Terminating images in a group:
 
         cs.destroyNodesMatching(inGroup("myGroup"));
 
-See the [HP Cloud Java/Clojure jclouds Binding](/bindings/jclouds) page for further information on the jclouds bindings.
+See the [HP Helion Cloud Java/Clojure jclouds Binding](/bindings/jclouds) page for further information on the jclouds bindings.

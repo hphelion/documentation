@@ -27,7 +27,7 @@ Let's walk through ...
 
 ## Next Step
 
-As noted earlier, see the HP Cloud OS API Documentation app that's installed on your controller node. It provides reference documentation about each call and includes a "Try it out!" interactive feature 
+As noted earlier, see the HP Helion Cloud OS API Documentation app that's installed on your controller node. It provides reference documentation about each call and includes a "Try it out!" interactive feature 
 to submit calls and view the response. The URLs per service are:
 
 * Eve: http://my_server:21051/?token=&lt;keystone-token-value>

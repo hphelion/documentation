@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Cloud OS for Moonshot for Moonshot Release Notes"
+title: "HP Helion Cloud OS for Moonshot for Moonshot Release Notes"
 permalink: /cloudos/moonshot/prepare/releasenotes/
 product: moonshot
 
@@ -20,21 +20,21 @@ PageRefresh();
 
 <p style="font-size: small;"> <a href="/cloudos/moonshot/prepare/">&#9664; PREV | <a href="/cloudos/moonshot/">&#9650; UP</a> | <a href="/cloudos/moonshot/prepare/supportmatrix/">NEXT &#9654;</a> </p>
 
-# HP Cloud OS for Moonshot 1.0 Release Notes
+# HP Helion Cloud OS for Moonshot 1.0 Release Notes
 
-This topic contains the following information about the HP Cloud OS for Moonshot 1.0 release:
+This topic contains the following information about the HP Helion Cloud OS for Moonshot 1.0 release:
 
-* [Features in HP Cloud OS for Moonshot 1.0](#features)
+* [Features in HP Helion Cloud OS for Moonshot 1.0](#features)
 
-* [Recommendations for HP Cloud OS for Moonshot 1.0](#recommendations)
+* [Recommendations for HP Helion Cloud OS for Moonshot 1.0](#recommendations)
 
 * [For further information](#for-further-information)
 
-##Features in HP Cloud OS for Moonshot 1.0## {#features}
+##Features in HP Helion Cloud OS for Moonshot 1.0## {#features}
 
-**Optimized for Workloads** &mdash; HP Cloud OS for Moonshot is optimized to deliver and manage workloads on your HP Moonshot environment. It provides simple workload modeling with repeatable, consistent workload placement. This functionality allows you to optimally align workloads with your Moonshot resources for optimal resource utilization.
+**Optimized for Workloads** &mdash; HP Helion Cloud OS for Moonshot is optimized to deliver and manage workloads on your HP Moonshot environment. It provides simple workload modeling with repeatable, consistent workload placement. This functionality allows you to optimally align workloads with your Moonshot resources for optimal resource utilization.
 
-**Flexible and Open Architecture** &mdash; Powered by OpenStack&#174; technology, HP Cloud OS for Moonshot provides you a flexible, industry leading, vendor neutral and open source cloud architecture.
+**Flexible and Open Architecture** &mdash; Powered by OpenStack&#174; technology, HP Helion Cloud OS for Moonshot provides you a flexible, industry leading, vendor neutral and open source cloud architecture.
 
 **Moonshot Management** &mdash; The Single Pane of Glass (SPOG) view with the Chassis Manager enhances your user experience by catering to three important aspects of Moonshot Management:
 	
@@ -47,7 +47,7 @@ This topic contains the following information about the HP Cloud OS for Moonshot
 **Workload Management** &mdash; Enables you to deploy a composite service comprising of different applications and workloads in a user friendly manner. You can browse through HP's catalog of pre-tested and pre-crafted workloads download and publish them to the cloud,then launch them to get a running application infrastructure. You can do this without having to worry about the underlying technical details.
 
 
-##Recommendations for HP Cloud OS for Moonshot 1.0## {#recommendations}
+##Recommendations for HP Helion Cloud OS for Moonshot 1.0## {#recommendations}
 
 This section describes the HP recommendations for best performance, utility, and functionality with this software version. 
 We have also provided information about some limitations and known issues for reference purposes. This section contains:
@@ -58,7 +58,7 @@ We have also provided information about some limitations and known issues for re
 
 ###Recommendations ### {#best-practices} 
 
-HP recommends the following best practices for HP Cloud OS for Moonshot 1.0.
+HP recommends the following best practices for HP Helion Cloud OS for Moonshot 1.0.
 
 **Workloads**
 	
@@ -76,7 +76,7 @@ HP recommends the following best practices for HP Cloud OS for Moonshot 1.0.
 
 ###Known issues in 1.0 release### {#known-issues}
 
-The following are the known issues for HP Cloud OS for Moonshot 1.0.
+The following are the known issues for HP Helion Cloud OS for Moonshot 1.0.
 
 ####Installation####
 
@@ -118,11 +118,11 @@ The following are the known issues for HP Cloud OS for Moonshot 1.0.
 
 ##For further information## {#for-further-information}
 
-For additional information on HP Cloud OS for Moonshot:
+For additional information on HP Helion Cloud OS for Moonshot:
 
-* [HP Cloud OS for Moonshot Documentation web site](/cloudos/moonshot/): Provides the topics listed below, plus FAQs, video tutorials, and more.
+* [HP Helion Cloud OS for Moonshot Documentation web site](/cloudos/moonshot/): Provides the topics listed below, plus FAQs, video tutorials, and more.
 
-* [Support Matrix](/cloudos/moonshot/prepare/supportmatrix/): Information about platform support requirements for the HP Cloud OS for Moonshot core functions, including requirements for component products.
+* [Support Matrix](/cloudos/moonshot/prepare/supportmatrix/): Information about platform support requirements for the HP Helion Cloud OS for Moonshot core functions, including requirements for component products.
 
 * [Install & Configure Your Cloud](/cloudos/moonshot/install/): A set of sequential, connected topics that walk you through the installation and configuration process.
 
@@ -130,19 +130,19 @@ For additional information on HP Cloud OS for Moonshot:
 
 * [Administration Dashboard Help](/cloudos/moonshot/manage/administration-dashboard/): Contains topics about the Administration Dashboard user interface dialogs and options.
 
-* [Utilities](/cloudos/moonshot/manage/utilities/): Describes the HP Cloud OS for Moonshot utilities.
+* [Utilities](/cloudos/moonshot/manage/utilities/): Describes the HP Helion Cloud OS for Moonshot utilities.
 
-* [Troubleshooting](/cloudos/moonshot/manage/troubleshooting/): Advice to resolve issues you may encounter with HP Cloud OS for Moonshot.
+* [Troubleshooting](/cloudos/moonshot/manage/troubleshooting/): Advice to resolve issues you may encounter with HP Helion Cloud OS for Moonshot.
 
-* [Building Images](/cloudos/moonshot/manage/image-builder/): Shows how to use the Disk Image Builder to create images for HP Cloud OS for Moonshot.
+* [Building Images](/cloudos/moonshot/manage/image-builder/): Shows how to use the Disk Image Builder to create images for HP Helion Cloud OS for Moonshot.
 
-* [Backup and Restore](/cloudos/moonshot/manage/backup-process/): Describes how to backup and restore HP Cloud OS for Moonshot.
+* [Backup and Restore](/cloudos/moonshot/manage/backup-process/): Describes how to backup and restore HP Helion Cloud OS for Moonshot.
 
 * [Related Topics](/cloudos/moonshot/related-topics/): Links to pertinent HP Moonshot System and OpenStack documentation.
 
 ###Legal Notices and Disclaimer### {#legal-notices-disclaimer}
 
-See the [HP Cloud OS for Moonshot Open Source and Third-Party Software License Agreements](/cloudos/moonshot/os-3rd-party-license-agreements/).
+See the [HP Helion Cloud OS for Moonshot Open Source and Third-Party Software License Agreements](/cloudos/moonshot/os-3rd-party-license-agreements/).
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "HP Cloud Compute EC2 Compatibility Method List"
+title: "HP Helion Cloud Compute EC2 Compatibility Method List"
 permalink: /ec2-compatibility-method-list/
 product: compute
 
 ---
-# HP Cloud Compute EC2 Compatibility Method List
+# HP Helion Cloud Compute EC2 Compatibility Method List
 
 The full set of compatible EC2 methods, by function, are as follows:
 

@@ -1,30 +1,30 @@
 ---
 layout: default
-title: "HP Cloud version 13.5 overview"
+title: "HP Helion Cloud version 13.5 overview"
 permalink: /version-overview/
 
 ---
-# HP Cloud version 13.5 overview
+# HP Helion Cloud version 13.5 overview
 HP Helion Public Cloud is based on the open source cloud computing platform OpenStack core code base, releasing regular updates on the current tested and approved OpenStack versions.  One of the most significant changes is the addition of our new best-in-class software defined networking (SDN) for virtual private clouds. This new networking service provides enhanced network functionality and the ability to fine-tune and define your own virtual network.
 
 In addition, you now have larger and more powerful instance types (sizes) to choose from--four times the size of the largest instances offered by most public clouds. And, our large, xlarge, and 2xlarge sizes are also offered in high memory versions. (See the [chart below](#sizes) for all available instance types.)
 
 Putting all of this together, along with bulk data import capability, means that it's much simpler to move applications to the public cloud and to create applications for the public cloud. 
 
-Since HP Cloud Compute version 13.5 is based on the latest code from the OpenStack community there are now separate Networking and Block Storage services with API endpoints independent from the HP Cloud Compute API.  In addition, the Image Management API is now exposed to users.  While you can continue to execute basic networking, block storage and image management commands through the HP Cloud Compute API, these newly exposed interfaces provide you even more control and allow you access to new advanced features. 
+Since HP Helion Cloud Compute version 13.5 is based on the latest code from the OpenStack community there are now separate Networking and Block Storage services with API endpoints independent from the HP Helion Cloud Compute API.  In addition, the Image Management API is now exposed to users.  While you can continue to execute basic networking, block storage and image management commands through the HP Helion Cloud Compute API, these newly exposed interfaces provide you even more control and allow you access to new advanced features. 
 
 Finally, the new versions of these services will now be closely tracking upstream OpenStack. This means that HP Helion Public Cloud will be releasing regular updates based on the latest tested and approved code submitted to OpenStack trunk, you'll always be working with the latest OpenStack code.
 
 The sections below explain each piece of our service.
 
-- [HP Cloud Compute](#Compute)
+- [HP Helion Cloud Compute](#Compute)
 - [Region-wide resources](#AZ)
 - [Software Defined Networking](#Network)
 - [Block Storage](#BlockSt)
 - [Bulk data import](#BulkImp)
 
-## HP Cloud Compute ## {#Compute}
-Based on the OpenStack Nova project, the HP Cloud Compute service provides on-demand computing giving you the ability to provision and manage large clusters of instances (virtual machines). With the new version you have more flexibility to select the type of instance that meets the needs of your application without having to pay for additional resources.
+## HP Helion Cloud Compute ## {#Compute}
+Based on the OpenStack Nova project, the HP Helion Cloud Compute service provides on-demand computing giving you the ability to provision and manage large clusters of instances (virtual machines). With the new version you have more flexibility to select the type of instance that meets the needs of your application without having to pay for additional resources.
 
 
 ###Instance types available### {#sizes}
@@ -52,7 +52,7 @@ Based on the OpenStack Nova project, the HP Cloud Compute service provides on-de
 
 **New sizes/configurations
 
-**Note:** An HP Cloud Compute Unit (CCU) is a unit of CPU capacity that describes the amount of compute power that a virtual core has available to it. Thus 6.5 CCUs are roughly equivalent to the minimum power of one logical core (a hardware hyper-thread) of an Intel&reg; 2012 Xeon&reg; 2.60 GHz CPU.
+**Note:** An HP Helion Cloud Compute Unit (CCU) is a unit of CPU capacity that describes the amount of compute power that a virtual core has available to it. Thus 6.5 CCUs are roughly equivalent to the minimum power of one logical core (a hardware hyper-thread) of an Intel&reg; 2012 Xeon&reg; 2.60 GHz CPU.
 
 ## Region-wide resources ## {#AZ}
 Each region--US East and US West--consists of three physically isolated availability zones in which you can create instances and/or block storage volumes. You can use resources spread across multiple availability zones to create an application with high availability.  When you work in a region, the following objects are region wide:
@@ -84,7 +84,7 @@ If you don't specify an availability zone the compute or storage service automat
 **Important:** Volumes can only be attached to servers created in the same availability zone.
 
 ## Software Defined Networking ## {#Network}
-HP Cloud v13.5 builds on the OpenStack Neutron service complemented with Software Defined Networking (SDN) technology from HP Networking to offer more robust and flexible networking capabilities to rapidly customize your network as needed. Then, you can simply connect it with your existing on-premise datacenter via a VPN tunnel. Spinning up a compute instance automatically configures
+HP Helion Cloud v13.5 builds on the OpenStack Neutron service complemented with Software Defined Networking (SDN) technology from HP Networking to offer more robust and flexible networking capabilities to rapidly customize your network as needed. Then, you can simply connect it with your existing on-premise datacenter via a VPN tunnel. Spinning up a compute instance automatically configures
 
 - A default network 
 - A subnet
@@ -109,7 +109,7 @@ You also have the ability to set communication rules (security group rules) for 
 - Map floating IP addresses to any Availability Zone in a region
 
 ## Block Storage ## {#BlockSt}
-Block storage has always been available in the HP Cloud Compute service, but now HP Cloud provides it as a separate but integrated service based on OpenStack Cinder.  Block storage provides persistent, manageable volumes along with the ability to take a snapshot of a volume.   Bootable volumes can be created from images in the Image Management service and these bootable volumes can be used to create persistent instances.  The physical implementation of our storage solution is based on technology developed in HP labs and provides enterprise class volume availability.
+Block storage has always been available in the HP Helion Cloud Compute service, but now HP Helion Cloud provides it as a separate but integrated service based on OpenStack Cinder.  Block storage provides persistent, manageable volumes along with the ability to take a snapshot of a volume.   Bootable volumes can be created from images in the Image Management service and these bootable volumes can be used to create persistent instances.  The physical implementation of our storage solution is based on technology developed in HP labs and provides enterprise class volume availability.
 
 ## Bulk data import ## {#BulkImp}
-Bulk import means we load your data into HP Cloud Block Storage or HP Cloud Object Storage--just send a hard drive directly to the HP data centers where we rapidly transfer your data to the cloud. Get apps with big data sets to the HP Cloud quickly and easily.
+Bulk import means we load your data into HP Helion Cloud Block Storage or HP Helion Cloud Object Storage--just send a hard drive directly to the HP data centers where we rapidly transfer your data to the cloud. Get apps with big data sets to the HP Helion Cloud quickly and easily.

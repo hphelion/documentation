@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Cloud OS for Moonshot: Administration Dashboard"
+title: "HP Helion Cloud OS for Moonshot: Administration Dashboard"
 permalink: /cloudos/moonshot/manage/administration-dashboard/working-with-project-tab/
 product: moonshot
 
@@ -22,7 +22,7 @@ PageRefresh();
 
 The Project Tab displays all the options in the left panel for the all users. The users can perform project specific tasks related to the selected project.
 
-* Login to the HP Cloud OS for Moonshot Administration Dashboard with your credentials.<br>The Administration Dashboard is displayed with a menu bar at the top displaying three tabs: **Project**, **Region** and **Cloud**.</br>
+* Login to the HP Helion Cloud OS for Moonshot Administration Dashboard with your credentials.<br>The Administration Dashboard is displayed with a menu bar at the top displaying three tabs: **Project**, **Region** and **Cloud**.</br>
 
 * Click **Project** Tab to activate it.<br>
 The screen is displayed with the options in the left panel.</br>
@@ -80,9 +80,9 @@ The following tasks can be performed using Access and Security option in the lef
 
 ## [Manage Updates and Extensions](http://cloudos/administration-dashboard/updates-extensions/)
 
-The updates and extensions feature allows you to connect to, list, and retrieve hot fixes and updates from the HP Cloud OS Delivery Network and apply them to your Cloud environment. These hot fixes and updates are referred to as content packages. After a package is imported and installed, you can view product and package details. 
+The updates and extensions feature allows you to connect to, list, and retrieve hot fixes and updates from the HP Helion Cloud OS Delivery Network and apply them to your Cloud environment. These hot fixes and updates are referred to as content packages. After a package is imported and installed, you can view product and package details. 
 
-The Update and Extensions page will be blank for the first time user. You need to configure your credentials for HP Cloud OS Delivery Network to view the updates.
+The Update and Extensions page will be blank for the first time user. You need to configure your credentials for HP Helion Cloud OS Delivery Network to view the updates.
 
 You can perform the following tasks:
 

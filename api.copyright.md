@@ -1,11 +1,11 @@
 ---
 layout: page
-title: "Copyright for HP Cloud APIs"
+title: "Copyright for HP Helion Cloud APIs"
 permalink: /api/copyright/
 
 ---
 
-# Copyright for HP Cloud APIs
+# Copyright for HP Helion Cloud APIs
 
 ## Identity  ## {#identity}
 

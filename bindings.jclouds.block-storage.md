@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "HP Cloud jclouds Binding Block Storage Examples"
+title: "HP Helion Cloud jclouds Binding Block Storage Examples"
 permalink: /bindings/jclouds/block-storage/
 published: true
 product: jclouds
 
 ---
-# HP Cloud jclouds Binding Block Storage Examples
+# HP Helion Cloud jclouds Binding Block Storage Examples
 
 This page provides you with examples of how to use the jclouds binding to perform Block Storage tasks.  This page discusses the following tasks:
 
@@ -21,7 +21,7 @@ This page provides you with examples of how to use the jclouds binding to perfor
 
 <h2 id="ConnectingtotheService">Connecting to the Service</h2>
 
-Instantiate the ComputeServiceContext with the HP Cloud Compute provider:  
+Instantiate the ComputeServiceContext with the HP Helion Cloud Compute provider:  
 
       String identity = "<tenantName>:<accessKeyID>";  
       String credentials = "<secretKey>";  
@@ -106,4 +106,4 @@ Delete a snapshot:
       Boolean deleted = volumeApi.deleteSnapshot("<snapshotID>");  
 
 
-See the [HP Cloud jclouds Java/Clojure Bindings](/bindings/jclouds) page for further information on the jclouds binding.
+See the [HP Helion Cloud jclouds Java/Clojure Bindings](/bindings/jclouds) page for further information on the jclouds binding.

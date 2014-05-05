@@ -21,11 +21,11 @@ PageRefresh();
 
 # Cloud OS Development with REST APIs
 
-Welcome! These topics describe the HP Cloud OS REST APIs for the value-added services. 
+Welcome! These topics describe the HP Helion Cloud OS REST APIs for the value-added services. 
 
 ## Introduction
 
-HP Cloud OS features an interactive REST API environment: the HP Cloud OS API Documentation app. Learn the syntax and 
+HP Helion Cloud OS features an interactive REST API environment: the HP Helion Cloud OS API Documentation app. Learn the syntax and 
 properties by reading the well-organized reference details. Submit each request using the provided forms and immediately 
 view the server response. The app is installed on your Cloud Controller. The documentation app's URLs per service are:
 
@@ -41,11 +41,11 @@ See the next topic for the steps to generate or copy the Keystone v2 token used 
 
 ## Read the API Quick Start topic
 
-For information about the HP Cloud OS REST API, start with the [API Quick Start - Introduction](/cloudos/develop/quickstart-intro/).
+For information about the HP Helion Cloud OS REST API, start with the [API Quick Start - Introduction](/cloudos/develop/quickstart-intro/).
 
 <!-- Add this topic later:
 ## Read the Value-Added Services topic
-Read the [Value-Added Services](/cloudos/api/services/) topic to learn more about Eve, Focus, and Graffiti from HP Cloud OS.
+Read the [Value-Added Services](/cloudos/api/services/) topic to learn more about Eve, Focus, and Graffiti from HP Helion Cloud OS.
 --> 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Cloud OS for Moonshot: Administration Dashboard"
+title: "HP Helion Cloud OS for Moonshot: Administration Dashboard"
 permalink: /cloudos/moonshot/manage/administration-dashboard/working-with-project-tab/
 product: moonshot
 
@@ -20,7 +20,7 @@ PageRefresh();
 
 # Workloads
 
-Workloads functionality in HP Cloud OS for Moonshot aims to facilitate the end user in deployment of a composite service comprising of different applications and hence different workloads in an easy to use manner. 
+Workloads functionality in HP Helion Cloud OS for Moonshot aims to facilitate the end user in deployment of a composite service comprising of different applications and hence different workloads in an easy to use manner. 
 The end user can browse through HP's catalog listing of pre-tested and pre-crafted workloads, download and publish them to the cloud and launch them to get a running application infrastructure without worrying about the intricate and in-depth understanding of technical details like topology, OpenStack nova flavor, Moonshot Cartridge specification etc. The end user can also define personalized workloads by following a simplified folder structure and can import the same to the cloud.
 
 This section includes the following topics:
@@ -65,7 +65,7 @@ Each workload is represented as a CSU file, which is inherently a data container
 
 <img src="media/cos4ms-workload-content.png"/>
 
-HP Cloud OS for Moonshot provides the functionality to import the CSU file and create a workload (a cloud entity) which can be managed by the Administration Dashboard. This section explains in detail the following:
+HP Helion Cloud OS for Moonshot provides the functionality to import the CSU file and create a workload (a cloud entity) which can be managed by the Administration Dashboard. This section explains in detail the following:
 
 1.	Elements of a Workload 
 2.	Content Structure of CSU File
@@ -137,7 +137,7 @@ Content Creator is responsible for creating the deployable content that is uploa
 
 **Phase 2: Upload Content**
 
-Content Publisher bundles the workload files as a .csu file and uploads it on a centralized portal. It is later published to HP Cloud's Public catalog after necessary approvals. It is then available for importing into the cloud environment using HP Cloud OS for Moonshot Administration Dashboard. Access to the catalog is based on username and password credentials. 
+Content Publisher bundles the workload files as a .csu file and uploads it on a centralized portal. It is later published to HP Helion Cloud's Public catalog after necessary approvals. It is then available for importing into the cloud environment using HP Helion Cloud OS for Moonshot Administration Dashboard. Access to the catalog is based on username and password credentials. 
 
 **Phase 3: Download / Import to Cloud**
 
@@ -181,9 +181,9 @@ Creation of workload is a manual process. This necessitates the need of assembli
 
 Currently, you can use CCUE designer to generate infrastructure documents and export its content as an XML file. CSU and Deployment Profile Guide can be generated using normal text editor. Content of the deployment profile needs to be customized as per desired topology. 
 
-&#9654;**Publish Workload to HP Cloud OS Enterprise Portal**
+&#9654;**Publish Workload to HP Helion Cloud OS Enterprise Portal**
 
-This process involves uploading content to HP Cloud OS Enterprise portal and initialization of the HP content approval process. Once content is approved by the appropriate authorities, it is published to HP Cloud Public catalog. The Cloud Administrator can now import, download and publish the workload in the Cloud environment using the Administration Dashboard. Refer to Updates and Extensions section for details.
+This process involves uploading content to HP Helion Cloud OS Enterprise portal and initialization of the HP content approval process. Once content is approved by the appropriate authorities, it is published to HP Helion Cloud Public catalog. The Cloud Administrator can now import, download and publish the workload in the Cloud environment using the Administration Dashboard. Refer to Updates and Extensions section for details.
 
 &#9654;**Perform Cloud Prerequisites**
 
@@ -195,7 +195,7 @@ Cloud Administrator has to ensure the following prerequisites before provisionin
 	
 ***Graffiti Factory Data***
 
- Cloud Administrator must publish graffiti factory data before importing any workload in the Cloud. This can be done either by using CODN to import graffiti content from local folder or HP Cloud OS Enterprise portal. Refer to the section on Importing Workload to initialize cloud with graffiti factory data.  One can validate if the content from CODN portal or local import is being downloaded or not. To validate the content download, do the following:
+ Cloud Administrator must publish graffiti factory data before importing any workload in the Cloud. This can be done either by using CODN to import graffiti content from local folder or HP Helion Cloud OS Enterprise portal. Refer to the section on Importing Workload to initialize cloud with graffiti factory data.  One can validate if the content from CODN portal or local import is being downloaded or not. To validate the content download, do the following:
 
   1. On the Administration Dashboard, click Cloud Tab to select it.<br>
    Cloud tab is activated and the options are displayed in the left panel. By default, all the services are displayed in the right pane.
@@ -227,9 +227,9 @@ The page displays with the list of flavors.</br>
 
 ## Populating Cloud with Workload
 
-Cloud Administrator can populate the Cloud with workload by either importing it using local folder (if the .csu file corresponding to workload is available) or by using remote HP Cloud OS Enterprise portal. 
+Cloud Administrator can populate the Cloud with workload by either importing it using local folder (if the .csu file corresponding to workload is available) or by using remote HP Helion Cloud OS Enterprise portal. 
 
-**Note**: Cloud Administrator should have the necessary permissions to access the HP Cloud OS Enterprise portal.
+**Note**: Cloud Administrator should have the necessary permissions to access the HP Helion Cloud OS Enterprise portal.
 
 Populating cloud with workload involves following phases:
 
@@ -355,7 +355,7 @@ The Dashboard page is divided into two views: **Tree View** in the left and **De
 
         CODN-Local- If the content is being published using local import folder
 
-        CODN-Remote- If the content is being published using remote HP Cloud OS Portal.
+        CODN-Remote- If the content is being published using remote HP Helion Cloud OS Portal.
 
  * The middle section of the right panel displays a graphical representation of the top ten workload topologies based on the highest number of successfully deployed workloads
 

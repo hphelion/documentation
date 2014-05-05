@@ -2,7 +2,7 @@
 layout: default
 title: "What’s New with the HP Helion Public Cloud Console"
 permalink: /whats_new_with_HP_Cloud_Console/
-product: HP Cloud Console
+product: HP Helion Cloud Console
 ---
 
 # What's new with the HP Helion Public Cloud Console #
@@ -22,7 +22,7 @@ The HP Helion Public Cloud Console now includes the following features:
 
 ##Enhanced identity management## {#Enhancedidentitymanagement}
 
-Particularly attractive for administrators in the enterprise, HP Cloud provides more flexibility and options for managing roles, domains, users and groups in the new OpenStack Horizon-based HP Helion Public Cloud Console. Specifically, roles can now be assigned to groups of users, or domain administrators can be defined for managing domains and respective users. In addition, you can assign roles around the latest platform services.   
+Particularly attractive for administrators in the enterprise, HP Helion Cloud provides more flexibility and options for managing roles, domains, users and groups in the new OpenStack Horizon-based HP Helion Public Cloud Console. Specifically, roles can now be assigned to groups of users, or domain administrators can be defined for managing domains and respective users. In addition, you can assign roles around the latest platform services.   
 
 ##Network topology visualization## {#Networktopologyvisualization}
 
@@ -30,7 +30,7 @@ The new Horizon-based HP Helion Public Cloud Console inherits network topology i
 
 ##Cross-region object replication## {#Crossregionobjectreplication}
 
-With the OpenStack Storage infrastructure as its foundation, HP Cloud Object Store (previously known as "Object Storage") allows you to store and retrieve objects in a highly redundant cluster of publicly accessible physical machines hosted in HP data centers. In a new enhancement, you can now setup and control object storage container synchronization across multiple regions with Object Store in the HP Helion Public Cloud Console. When you activate synchronization between two containers in different regions, you can store objects in and access objects from both simultaneously.  
+With the OpenStack Storage infrastructure as its foundation, HP Helion Cloud Object Store (previously known as "Object Storage") allows you to store and retrieve objects in a highly redundant cluster of publicly accessible physical machines hosted in HP data centers. In a new enhancement, you can now setup and control object storage container synchronization across multiple regions with Object Store in the HP Helion Public Cloud Console. When you activate synchronization between two containers in different regions, you can store objects in and access objects from both simultaneously.  
 
 ##More object storage uses## {#Moreobjectstorageuses}
 

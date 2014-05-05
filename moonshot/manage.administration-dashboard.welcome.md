@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Welcome to the HP Cloud OS for Moonshot Administration Dashboard"
+title: "Welcome to the HP Helion Cloud OS for Moonshot Administration Dashboard"
 permalink: /cloudos/moonshot/manage/administration-dashboard/welcome/
 product: moonshot
 
@@ -21,7 +21,7 @@ PageRefresh();
 
 <p style="font-size: small;"> <a href="/cloudos/moonshot/manage/administration-dashboard/before-you-begin/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage/administration-dashboard/">&#9650; UP</a> | <a href="/cloudos/moonshot/manage/administration-dashboard/getting-started/">NEXT &#9654;</a> </p>
 
-# Welcome to the HP Cloud OS for Moonshot Administration Dashboard
+# Welcome to the HP Helion Cloud OS for Moonshot Administration Dashboard
 
 **Concepts:**
 
@@ -37,7 +37,7 @@ PageRefresh();
 
 ## Why You Use the Administration Dashboard
 
-You can use the Administration Dashboard as a simplified means of creating and managing HP Cloud OS for Moonshot resources, topology designs, and deployment profiles.
+You can use the Administration Dashboard as a simplified means of creating and managing HP Helion Cloud OS for Moonshot resources, topology designs, and deployment profiles.
 
 The Administration Dashboard also provides the ability to provision a composite topology described by the topology templates and infrastructure design 
 documents. The Administration Dashboard is associated with a single cloud. 
@@ -67,10 +67,10 @@ Roles define the type of access a user is granted within the cloud.
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Caution:</b> 
 Although the Admin user has extensive permission rights, the user role is nontraditional and very limited in function. 
 Due to a defect located in the Keystone identity service, the Admin user should only create projects and create users. 
-If an Admin user attempts other tasks, the HP Cloud OS for Moonshot Administration Dashboard returns unpredictable functionality. 
+If an Admin user attempts other tasks, the HP Helion Cloud OS for Moonshot Administration Dashboard returns unpredictable functionality. 
 In particular, an Admin user should not remove users from projects. </p>
 
-**Cloud Administrator:** All administrator rights associated with the cloud and all HP Cloud OS for Moonshot services, including the ability to make resources available to users. Has global permission across the cloud, including all regions and projects.
+**Cloud Administrator:** All administrator rights associated with the cloud and all HP Helion Cloud OS for Moonshot services, including the ability to make resources available to users. Has global permission across the cloud, including all regions and projects.
 
 **Cloud Architect:** Creates topology designs, deployment profiles, and load balancers.
 
@@ -108,7 +108,7 @@ General rules about visibility in the Administration Dashboard include:
 
 #### Settings Tab
 
-Every HP Cloud OS for Moonshot Administration Dashboard user can see the Settings tab.
+Every HP Helion Cloud OS for Moonshot Administration Dashboard user can see the Settings tab.
 
 Every window in the Administration Dashboard provides a link to this tab.
 
@@ -141,7 +141,7 @@ Every window in the Administration Dashboard provides a link to this tab.
 
 #### Project Tab
 
-Every HP Cloud OS for Moonshot Administration Dashboard user can see the Project tab.
+Every HP Helion Cloud OS for Moonshot Administration Dashboard user can see the Project tab.
 
 <table style="text-align: left; vertical-align: top; min-width:600px;">
 
@@ -260,7 +260,7 @@ You can access the token for use outside the dashboard. </td>
 
 <tr style="background-color: white; color: black;">
 <td>  Updates and Extensions </td>
-<td> Access the HP Cloud OS for Moonshot Distribution Network to update and upgrade your cloud while it continues to run. </td> 
+<td> Access the HP Helion Cloud OS for Moonshot Distribution Network to update and upgrade your cloud while it continues to run. </td> 
 </tr>
 
 </table>
@@ -380,9 +380,9 @@ Allows you to work with the images (create, launch and delete).
 
 ## Prerequisites to Accessing the Administration Dashboard
 
-Before you can access the HP Cloud OS for Moonshot Administration Dashboard, someone in your organization must use the HP Cloud OS for Moonshot Operational Dashboard 
+Before you can access the HP Helion Cloud OS for Moonshot Administration Dashboard, someone in your organization must use the HP Helion Cloud OS for Moonshot Operational Dashboard 
 to install, set up, configure, and stand up a cloud environment. Use Operational Dashboard to set up and install an Admin node, create a cloud, 
-define compute regions, and apply updates and extensions to your cloud. See the [HP Cloud OS for Moonshot Operational Dashboard Help](/cloudos/moonshot/manage/operational-dashboard/).
+define compute regions, and apply updates and extensions to your cloud. See the [HP Helion Cloud OS for Moonshot Operational Dashboard Help](/cloudos/moonshot/manage/operational-dashboard/).
 
 For instructions on how to use an advanced method of installing a cloud, see [Install and Configure Your Clouds](/cloudos/moonshot/install).
 
@@ -394,7 +394,7 @@ Mozilla Firefox to access the Administration Dashboard.</p>
 You can access the Administration Dashboard in one of two ways:
 
 * Open a browser and type the URL using the public IP address of the Cloud Controller node: Login with the Admin account and password you 
-specified on the Create Cloud > Attributes dialog in the HP Cloud OS for Moonshot Operational Dashboard.
+specified on the Create Cloud > Attributes dialog in the HP Helion Cloud OS for Moonshot Operational Dashboard.
 
 * Within the Operational Dashboard, Manage Clouds > More > Launch Dashboard for the cloud you created.
 

@@ -1,15 +1,15 @@
 ---
 layout: default
-title: "HP Cloud OS Identity Service Overview"
+title: "HP Helion Cloud OS Identity Service Overview"
 permalink: /cloudos/services/identity/overview/
 product: compute
 
 ---
-# HP Cloud OS Identity Service Overview #
+# HP Helion Cloud OS Identity Service Overview #
 
-<!-- modeled after HP Cloud Networking Getting Started (network.getting.started.md) -->
+<!-- modeled after HP Helion Cloud Networking Getting Started (network.getting.started.md) -->
 
-Based on Keystone, the OpenStack Identity Service, the HP Cloud Identity Service provides one-stop authentication for all HP Helion Public Cloud offerings. Key terms include:
+Based on Keystone, the OpenStack Identity Service, the HP Helion Cloud Identity Service provides one-stop authentication for all HP Helion Public Cloud offerings. Key terms include:
 
 - User -- A digital representation of a person, system, or service who uses HP Helion Public Cloud. The Identity Service validates that incoming requests are being made by the user who claims to be making the call. Users have a login and may be assigned tokens to access resources. Users can scope their authentication to a tenant which then limits where and how their tokens can be used to interact with services. Users are associated with tenants based on roles assigned to them with that tenant.
 
@@ -28,24 +28,24 @@ Based on Keystone, the OpenStack Identity Service, the HP Cloud Identity Service
 
 ###Using the Administration Dashboard### {#dashboard}
 
-You can use the Administration Dashbord to access HP Cloud OS Identity service. See [Administration Dashboard Tasks by Tab](/cloudos/manage/administration-dashboard/tasks-by-tab/).
+You can use the Administration Dashbord to access HP Helion Cloud OS Identity service. See [Administration Dashboard Tasks by Tab](/cloudos/manage/administration-dashboard/tasks-by-tab/).
 
 
 ###Using the API to access Identity### {#API}
  
-You can use a low-level, raw REST API access to HP Cloud OS Identity. See the [HP Cloud OS Identity Service API page](/api/v13/identity).
+You can use a low-level, raw REST API access to HP Helion Cloud OS Identity. See the [HP Helion Cloud OS Identity Service API page](/api/v13/identity).
 
 ###Using the CLI### {#cli}
 
-You can use any of several command-line interface software to access HP Cloud OS Identity. See [HP Cloud OS CLI](/cli/).
+You can use any of several command-line interface software to access HP Helion Cloud OS Identity. See [HP Helion Cloud OS CLI](/cli/).
 
 ###Using language bindings### {#bindings}
 
-You can use any of several language bindings to access HP Cloud OS Identity. See [HP Cloud binding support](/bindings/).
+You can use any of several language bindings to access HP Helion Cloud OS Identity. See [HP Helion Cloud binding support](/bindings/).
 
 
 ## For more information ##
 Also see the Help topics that are available in the Operational Dashboard and Administration Dashboard.  Website copies are available:
 
-* [HP Cloud OS Operational Dashboard Help](/cloudos/manage/operational-dashboard/)
-* [HP Cloud OS Administration Dashboard Help](/cloudos/manage/administration-dashboard/)
+* [HP Helion Cloud OS Operational Dashboard Help](/cloudos/manage/operational-dashboard/)
+* [HP Helion Cloud OS Administration Dashboard Help](/cloudos/manage/administration-dashboard/)

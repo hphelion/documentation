@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Cloud OS for Moonshot: Support Matrix"
+title: "HP Helion Cloud OS for Moonshot: Support Matrix"
 permalink: /cloudos/moonshot/prepare/supportmatrix/
 product: moonshot
 
@@ -19,17 +19,17 @@ PageRefresh();
 
 <p style="font-size: small;"> <a href="/cloudos/moonshot/prepare/releasenotes/">&#9664; PREV</a> | <a href="/cloudos/moonshot/prepare">&#9650; UP</a> | <a href="/cloudos/moonshot/prepare/faqs">NEXT &#9654; </a></p>
 
-# HP Cloud OS for Moonshot: Support Matrix
+# HP Helion Cloud OS for Moonshot: Support Matrix
 
-This document is an overview of the supported hardware and software for the HP Cloud OS for Moonshot Version 1.0, including information for setting up your hardware and software. For the performance and stability of your HP Cloud OS for Moonshot environment, you must meet the minimum recommendations.
+This document is an overview of the supported hardware and software for the HP Helion Cloud OS for Moonshot Version 1.0, including information for setting up your hardware and software. For the performance and stability of your HP Helion Cloud OS for Moonshot environment, you must meet the minimum recommendations.
 
-In the following sections, we list the recommendations for memory, processors and disk space for each component when you are creating an HP Cloud OS for Moonshot environment. 
+In the following sections, we list the recommendations for memory, processors and disk space for each component when you are creating an HP Helion Cloud OS for Moonshot environment. 
 
 **Note:** Before you install, be sure to reference the appropriate platform support matrix for each component product.
 
-* [Server infrastructure for HP Cloud OS for Moonshot](#server)
-* [Hypervisor recommendations for HP Cloud OS for Moonshot](#hypervisor)
-* [Node requirements for HP Cloud OS for Moonshot](#nodereq)
+* [Server infrastructure for HP Helion Cloud OS for Moonshot](#server)
+* [Hypervisor recommendations for HP Helion Cloud OS for Moonshot](#hypervisor)
+* [Node requirements for HP Helion Cloud OS for Moonshot](#nodereq)
 * [Moonshot chassis firmware](#firmware)
 * [Operating systems supported ](#ossupp)
 * [Supported deployment scenario](#deployment)
@@ -39,7 +39,7 @@ In the following sections, we list the recommendations for memory, processors an
 
 
 
-## Server infrastructure for HP Cloud OS for Moonshot {#server}
+## Server infrastructure for HP Helion Cloud OS for Moonshot {#server}
 
 We recommend your Proliant server contains the following:
 
@@ -50,7 +50,7 @@ We recommend your Proliant server contains the following:
 
 **Note:** For information on cartridges and workloads, consult the [server website](http://h17007.www1.hp.com/us/en/enterprise/servers/products/moonshot/index.aspx#tab=TAB2).
 
-## Hypervisor recommendations for HP Cloud OS for Moonshot {#hypervisor}
+## Hypervisor recommendations for HP Helion Cloud OS for Moonshot {#hypervisor}
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
 
 <tr style="background-color: #C8C8C8;">
@@ -67,7 +67,7 @@ We recommend your Proliant server contains the following:
 </tr>
 </table>
 
-## Node requirements for HP Cloud OS for Moonshot {#nodereq}
+## Node requirements for HP Helion Cloud OS for Moonshot {#nodereq}
 <table style="text-align: left; vertical-align: top; min-width: 400px;">
 
 <tr style="background-color: #C8C8C8;">
@@ -181,7 +181,7 @@ Where <b>X</b> is the average image size in gigabytes, and <b>N</b> is the expec
 
 
 ## Supported deployment scenario {#deployment}
-An HP Cloud OS for Moonshot deployment includes one Admin node, one Controller node, and one Baremetal host. The following diagram depicts a simplified deployment scenario. 
+An HP Helion Cloud OS for Moonshot deployment includes one Admin node, one Controller node, and one Baremetal host. The following diagram depicts a simplified deployment scenario. 
 
 <img src="media/moonshot-deployment.png"></img>
 
@@ -189,12 +189,12 @@ An HP Cloud OS for Moonshot deployment includes one Admin node, one Controller n
 
 ## Included software {#software}
 
-Refer to the [HP Cloud OS for Moonshot Installation Guide](/cloudos/moonshot/install/) for a complete list of installation prerequisites and requirements, plus step-by-step instructions.
+Refer to the [HP Helion Cloud OS for Moonshot Installation Guide](/cloudos/moonshot/install/) for a complete list of installation prerequisites and requirements, plus step-by-step instructions.
 
 <table style="text-align: left; vertical-align: top; min-width: 600px;">
 
 <tr style="background-color: #C8C8C8;">
-<th> HP Cloud OS 1.0 Platforms </th>
+<th> HP Helion Cloud OS 1.0 Platforms </th>
 <th> Supported Versions </th>
 </tr>
 
@@ -335,33 +335,33 @@ Refer to the [HP Cloud OS for Moonshot Installation Guide](/cloudos/moonshot/ins
 
 <tr style="background-color: white; color: black;">
 <td style="padding-left: 40px;"> Graffiti </td>
-<td> HP Cloud OS for Moonshot 1.0 </td>
+<td> HP Helion Cloud OS for Moonshot 1.0 </td>
 </tr>
 
 
 
 <tr style="background-color: white; color: black;">
 <td style="padding-left: 40px;"> Eve </td>
-<td> HP Cloud OS for Moonshot 1.0 </td>
+<td> HP Helion Cloud OS for Moonshot 1.0 </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td style="padding-left: 60px;"> Plug-in: CouchDB 1.2.0 Persistence <br /> Plug-in: MongoDB 2.2 Persistence </td>
-<td> HP Cloud OS for Moonshot 1.0 </td>
+<td> HP Helion Cloud OS for Moonshot 1.0 </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td style="padding-left: 40px;"> Focus </td>
-<td> HP Cloud OS for Moonshot 1.0 </td>
+<td> HP Helion Cloud OS for Moonshot 1.0 </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td style="padding-left: 60px;"> Plug-in: FileSystem Persistence </td>
-<td> HP Cloud OS for Moonshot 1.0 </td>
+<td> HP Helion Cloud OS for Moonshot 1.0 </td>
 </tr>
 <tr style="background-color: white; color: black;">
 <td style="padding-left: 40px;"> Skyline </td>
-<td> HP Cloud OS for Moonshot 1.0 </td>
+<td> HP Helion Cloud OS for Moonshot 1.0 </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -370,7 +370,7 @@ Refer to the [HP Cloud OS for Moonshot Installation Guide](/cloudos/moonshot/ins
 
 <tr style="background-color: white; color: black;">
 <td style="padding-left: 40px;"> Cosmos </td>
-<td> HP Cloud OS for Moonshot 1.0 </td>
+<td> HP Helion Cloud OS for Moonshot 1.0 </td>
 </tr>
 <tr style="background-color: white; color: black;">
 <td style="padding-left: 40px;"> Crowbar </td>

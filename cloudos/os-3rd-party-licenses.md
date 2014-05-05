@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Cloud OS Open Source and Third-Party Software License Agreements"
+title: "HP Helion Cloud OS Open Source and Third-Party Software License Agreements"
 permalink: /cloudos/os-3rd-party-license-agreements/
 product: cloudos
 
@@ -19,7 +19,7 @@ PageRefresh();
 
 <p style="font-size: small;"> <a href="/cloudos/">&#9664; PREV | <a href="/cloudos/">&#9650; UP</a> | NEXT &#9654; </p>
 
-# HP Cloud OS Open Source and Third-Party Software License Agreements
+# HP Helion Cloud OS Open Source and Third-Party Software License Agreements
 
 Document Release Date: December 2013 <br />
 Software Release Date: December 2013
@@ -95,7 +95,7 @@ accompanying such products and services. Nothing herein should be construed as c
 warranty. HP shall not be liable for technical or editorial errors or omissions contained herein.
 The information contained herein is subject to change without notice.
 
-HP Cloud OS is experimental and is provided as a courtesy, free of charge, "AS-IS" by Hewlett-Packard 
+HP Helion Cloud OS is experimental and is provided as a courtesy, free of charge, "AS-IS" by Hewlett-Packard 
 Company ("HP"). HP shall have no obligation to maintain or support this software. 
 
 HP MAKES NO EXPRESS OR IMPLIED WARRANTY OF ANY KIND REGARDING THIS SOFTWARE INCLUDING ANY 
@@ -112,7 +112,7 @@ HP acknowledges the redistribution of the following open source components under
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> 
 To address source code availability requirements for code licensed under MPL, CDDL, LGPL v2.1 & v3, GPL v2 & v3, 
 you can obtain a ZIP containing that source code (the required subset) <a href="https://cloudos.hpwsportal.com" target="_blank"> 
-at the HP Cloud OS portal</a>. On the site, sign up, login, then follow the Open Source Licenses link. The ZIP file is approximately 2 GB.</p>
+at the HP Helion Cloud OS portal</a>. On the site, sign up, login, then follow the Open Source Licenses link. The ZIP file is approximately 2 GB.</p>
 
 ### ANTLR License
 
@@ -4208,5 +4208,5 @@ Also see GNU Lesser General Public License (LGPL) Version 2.1.
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
-<p style="font-size: small;"> <a href="/cloudos/"> &#171; Return to HP Cloud OS home </a> </p>
+<p style="font-size: small;"> <a href="/cloudos/"> &#171; Return to HP Helion Cloud OS home </a> </p>
 

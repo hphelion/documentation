@@ -544,11 +544,11 @@ You can now create one or more compute regions. This is the last step in the ins
 When the compute region is created, you have created an active cloud.
 
 After successfully creating a cloud and compute region, you can manage your cloud environment by launching the 
-HP Cloud OS Administration Dashboard.
+HP Helion Cloud OS Administration Dashboard.
 
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px; border: 1px dotted #000000;"> <b>Note:</b> Successfully creating a compute region 
 automatically creates a default resource pool for that region, which is configured and visible 
-in the Administration Dashboard. For details, see the <a href="/cloudos/manage/administration-dashboard/">HP Cloud OS Administration Dashboard Help</a>. </p>
+in the Administration Dashboard. For details, see the <a href="/cloudos/manage/administration-dashboard/">HP Helion Cloud OS Administration Dashboard Help</a>. </p>
 
 The following table describes the Compute Region dialog UI elements:
 
@@ -675,7 +675,7 @@ You can also view the compute nodes that are currently in the compute region on 
 To access: Select the Cloud tab > Manage Clouds and then click **More** > **Reduce Compute Region** for the corresponding cloud.
 
 The Reduce Compute Region dialog is used to remove compute nodes from an existing compute region. 
-When a node is successfully removed from a compute region, its previous context is lost, including its alias name and any HP Cloud OS software 
+When a node is successfully removed from a compute region, its previous context is lost, including its alias name and any HP Helion Cloud OS software 
 that had been previously installed on it. To use such a node again, re-set its alias and re-allocate it. Once in the Allocated state, 
 the node can be associated with a cloud.
 
@@ -744,7 +744,7 @@ their aliases and reallocate them. Once in the Allocated state, they can be asso
 <li>If the compute controller is co-located with the cloud controller, the compute region cannot be removed.</li>
 <li>You reset a node's alias in the Edit Node Dialog, and re-allocate it in the Manage Nodes Page.</li>
 <li>You can remove the last compute region from the cloud, in which case, it becomes a hybrid-only cloud. This is useful when provisioning 
-should be done in a public cloud, such as HP Cloud.</li>
+should be done in a public cloud, such as HP Helion Cloud.</li>
 </ul>
 </div> <br />
 
@@ -800,7 +800,7 @@ To access: Select the Cloud tab > Manage Clouds and then click **More** > **Remo
 
 The Remove Cloud dialog is used to remove an existing cloud. This action sets all cloud, network, storage, and compute controller nodes, 
 and all compute nodes that comprise the cloud to the Not Allocated state. In the Not Allocated state, the previous context of the nodes is lost, 
-including their alias names and any HP Cloud OS software that had been previously installed on them. To use such nodes again, reset their aliases 
+including their alias names and any HP Helion Cloud OS software that had been previously installed on them. To use such nodes again, reset their aliases 
 and reallocate them. Once in the Allocated state, they can be associated with a cloud. 
 
 Note: You reset a node's alias in the Edit Node Dialog, and re-allocate it in the Manage Nodes Page.
@@ -955,7 +955,7 @@ The following information provides details about the Hot Fixes panel.
 
 ### Hot Fixes Overview
 
-The hot fixes feature allows you to apply software hot fixes and updates to your HP Cloud OS environment after such hot fix or update files, 
+The hot fixes feature allows you to apply software hot fixes and updates to your HP Helion Cloud OS environment after such hot fix or update files, 
 having the .csu extension, have been downloaded to the local file system. In this help, such hot fixes and updates are referred to as content packages.
 
 ### Hot Fixes Page
@@ -1000,7 +1000,7 @@ the <a href="/cloudos/manage/operational-dashboard/cloud-tab/#package-details-pa
 
 <tr style="background-color: white; color: black;">
 <td style="min-width:150px;"> <b>Imported</b> column  </td>
-<td> The date and time at which the content package was imported to the HP Cloud OS Administration node. </td>
+<td> The date and time at which the content package was imported to the HP Helion Cloud OS Administration node. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -1035,8 +1035,8 @@ contain the string in any column. The filter function is not case sensitive. </t
 When the installation process completes, a Success message will appear in the upper right side of the interface.
 <br /> <br/>
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> Upon successful completion of the installation process, 
-the content package has been properly installed on the HP Cloud OS Administration node, but not yet enabled. Such enabling is performed 
-in the HP Cloud OS Installation Dashboard. For information on how to enable and disable content packages, 
+the content package has been properly installed on the HP Helion Cloud OS Administration node, but not yet enabled. Such enabling is performed 
+in the HP Helion Cloud OS Installation Dashboard. For information on how to enable and disable content packages, 
 refer to the <a href="/cloudos/install/updates-and-extensions">Updates and Extensions</a> topic, which is part of 
 <a href="/cloudos/install/">Install and Configure Your Cloud</a>.</p>
 </td>
@@ -1168,7 +1168,7 @@ Note that such package files have a .csu extension.  </td>
 <tr style="background-color: white; color: black;">
 <td> <b>Import</b> button   </td>
 <td> Click after choosing a valid content package (.csu) file using the <b>Choose File</b> button to import the file to the 
-HP Cloud OS Administration node. If no file has been chosen, "No file chosen" will appear next to the <b>Choose File</b> button.  </td>
+HP Helion Cloud OS Administration node. If no file has been chosen, "No file chosen" will appear next to the <b>Choose File</b> button.  </td>
 </tr>
 
 </table> 
@@ -1194,8 +1194,8 @@ The following information provides details about the Updates and Extensions pane
 
 ### Updates and Extensions Overview
 
-The updates and extensions feature allows you to connect to, list, and retrieve hot fixes and updates from the HP Cloud OS Distribution Network (CODN) 
-and apply them to your HP Cloud OS environment. In this topic, such hot fixes and updates are referred to as *content packages*.
+The updates and extensions feature allows you to connect to, list, and retrieve hot fixes and updates from the HP Helion Cloud OS Distribution Network (CODN) 
+and apply them to your HP Helion Cloud OS environment. In this topic, such hot fixes and updates are referred to as *content packages*.
 
 ### Updates and Extensions Page
 
@@ -1293,17 +1293,17 @@ The following table describes the Configure dialog UI elements:
 
 <tr style="background-color: white; color: black;">
 <td style="min-width:150px;"> <b>User Name</b>  </td>
-<td> Enter the email address that you entered when you set up your account to access the HP Cloud OS Distribution Network (CODN). </td>
+<td> Enter the email address that you entered when you set up your account to access the HP Helion Cloud OS Distribution Network (CODN). </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> <b>Password</b>  </td>
-<td> Enter the password that you entered when you set up your account to access the HP Cloud OS Distribution Network. </td>
+<td> Enter the password that you entered when you set up your account to access the HP Helion Cloud OS Distribution Network. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td style="min-width:150px;"> <b>Sign up now</b> link  </td>
-<td> Click to go to the "Create Account" page of the HP Cloud OS Distribution Network web site, where you can sign up for an account to access the network. </td>
+<td> Click to go to the "Create Account" page of the HP Helion Cloud OS Distribution Network web site, where you can sign up for an account to access the network. </td>
 </tr>
 
 </table> 

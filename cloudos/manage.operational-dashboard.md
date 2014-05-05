@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Cloud OS Operational Dashboard Help"
+title: "HP Helion Cloud OS Operational Dashboard Help"
 permalink: /cloudos/manage/operational-dashboard/
 product: cloudos
 
@@ -22,9 +22,9 @@ PageRefresh();
 
 <p style="font-size: small;"> <a href="/cloudos/manage/troubleshooting/">&#9664; PREV</a> | <a href="/cloudos/manage/">&#9650; UP</a> | <a href="/cloudos/manage/operational-dashboard/how-opdash-works/">NEXT &#9654;</a> </p>
 
-# HP Cloud OS Operational Dashboard Help
+# HP Helion Cloud OS Operational Dashboard Help
 
-Welcome to the HP Cloud OS Operational Dashboard Help, which provides information about its user interface dialogs and options.
+Welcome to the HP Helion Cloud OS Operational Dashboard Help, which provides information about its user interface dialogs and options.
 
 * [How the Operational Dashboard Works](/cloudos/manage/operational-dashboard/how-opdash-works)
 

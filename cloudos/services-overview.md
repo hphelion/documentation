@@ -1,17 +1,17 @@
 ---
 layout: default
-title: "HP Cloud OS Services Overview"
+title: "HP Helion Cloud OS Services Overview"
 permalink: /cloudos/services/overview/
 product: compute
 
 ---
-# HP Cloud OS Services Overview #
+# HP Helion Cloud OS Services Overview #
 
-HP Cloud OS 1.0 is built upon the OpenStack technology. 
+HP Helion Cloud OS 1.0 is built upon the OpenStack technology. 
 
-HP Cloud OS is a foundation technology used for HP’s Converged Cloud Architecture. HP Cloud OS is broken down into a set of services and architecture that act like a datacenter-level operating system (DCOS).
+HP Helion Cloud OS is a foundation technology used for HP’s Converged Cloud Architecture. HP Helion Cloud OS is broken down into a set of services and architecture that act like a datacenter-level operating system (DCOS).
 
-Conceptually, HP Cloud OS is comprised of two primary environments, the Administrative Environment and the Execution Environment. 
+Conceptually, HP Helion Cloud OS is comprised of two primary environments, the Administrative Environment and the Execution Environment. 
 
 The two environments work together to allow users to set up and manage a self-service cloud deployment.
 
@@ -27,8 +27,8 @@ The following diagram illustrates a conceptual depiction of the administrative a
 
 The Execution Environment contains a [Kernel Layer](#kernel) and a [Base Layer](#base).
 
-- Kernel Layer - The HP Cloud OS [Kernel Layer](#kernel), which is similar to an operating system's kernel layer, across the cloud.
-- Base Layer - The HP Cloud OS [Base Layer](#base), which is comprised of advanced services that sit above the kernel, is like subsystem services in an operating system.
+- Kernel Layer - The HP Helion Cloud OS [Kernel Layer](#kernel), which is similar to an operating system's kernel layer, across the cloud.
+- Base Layer - The HP Helion Cloud OS [Base Layer](#base), which is comprised of advanced services that sit above the kernel, is like subsystem services in an operating system.
  
 
 ### Kernel Layer ### {#kernel}
@@ -53,14 +53,14 @@ The Kernel Layer acts like an Operating System Kernel across a Data Center for C
 
 - [Overview of the Volume Operations Service](/cloudos/services/volume/overview)
 - [Getting started with the Cloud OS Volume Management service](/cloudos/services/volume/getting-started)
-- [How To's with the HP Cloud OS Volume Management service](/cloudos/services/volume/howto/)
+- [How To's with the HP Helion Cloud OS Volume Management service](/cloudos/services/volume/howto/)
 
 
 **Image Operations**. Glance allows you to maintain images which you can use to bootstrap VM’s across the cloud and then manage them. Also known as *Glance*.
 
 - [Overview of the Image service](/cloudos/services/imaging/overview)
 - [Getting started with the Cloud OS Image Management service](/cloudos/services/imaging/getting-started)
-- [How To's with the HP Cloud OS Image Management Service](/cloudos/services/imaging/howto/)
+- [How To's with the HP Helion Cloud OS Image Management Service](/cloudos/services/imaging/howto/)
 
 
 **Identity Management**. Allows for group and multi-tenant creation.  Also known as *Keystone*.
@@ -87,7 +87,7 @@ The Base Layer contains those advance services above the kernel which provide se
 
 **Eden**. Scalabilty manageability, control. 
 
-A framework which is used to build all the HP Cloud OS services. It provides common functionality across all service. 
+A framework which is used to build all the HP Helion Cloud OS services. It provides common functionality across all service. 
 
 Eden also provides scalability and manageability around services and a way to control and understand how those services are performing
 
@@ -103,7 +103,7 @@ HP Public is a resource pool registry, which allows you to tap into any OpenStac
 - Peer service use cases/solutions/how to use/examples
 
 **Eve**. Provisioning, templates, build around templates
-provisioning service allowing you to create templates and provision those templates for infrastructure. This allows to take advantage of the orchestration feature in HP Cloud OS and OpenStack. Eve can be used across multiple clouds
+provisioning service allowing you to create templates and provision those templates for infrastructure. This allows to take advantage of the orchestration feature in HP Helion Cloud OS and OpenStack. Eve can be used across multiple clouds
 
 - [Overview of the Eve service](/cloudos/services/eve/overview)
 - [Getting started with the Eve service](/cloudos/services/eve/getting-started/)
@@ -126,11 +126,11 @@ The administration environment is made up of dashboards and tools:
 
 **Cosmos**. A dashboard for operational resources allowing you to change the architecture of the cloud. You can scale the cloud in or out. You can also use it to change plugins. Cosmos is also based on OpenStack Horizon.
 
-**Install/Upgrade System**. A system which allows us to create the cloud and the various services related to HP Cloud OS. It can also changes the plugins and update everything inside the cloud including patching and update
+**Install/Upgrade System**. A system which allows us to create the cloud and the various services related to HP Helion Cloud OS. It can also changes the plugins and update everything inside the cloud including patching and update
 
 
 ## For more information ##
 Also see the Help topics that are available in the Operational Dashboard and Administration Dashboard.  Website copies are available:
 
-* [HP Cloud OS Operational Dashboard Help](/cloudos/manage/operational-dashboard/)
-* [HP Cloud OS Administration Dashboard Help](/cloudos/manage/administration-dashboard/)
+* [HP Helion Cloud OS Operational Dashboard Help](/cloudos/manage/operational-dashboard/)
+* [HP Helion Cloud OS Administration Dashboard Help](/cloudos/manage/administration-dashboard/)

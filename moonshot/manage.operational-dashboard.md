@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Cloud OS for Moonshot Operational Dashboard Help"
+title: "HP Helion Cloud OS for Moonshot Operational Dashboard Help"
 permalink: /cloudos/moonshot/manage/operational-dashboard/
 product: moonshot
 
@@ -20,9 +20,9 @@ PageRefresh();
 
 <p style="font-size: small;"> <a href="/cloudos/moonshot/manage/troubleshooting/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage/">&#9650; UP</a> | <a href="/cloudos/moonshot/manage/operational-dashboard/how-opdash-works/">NEXT &#9654;</a> </p>
 
-# HP Cloud OS for Moonshot Operational Dashboard help
+# HP Helion Cloud OS for Moonshot Operational Dashboard help
 
-Welcome to the HP Cloud OS for Moonshot Operational Dashboard Help, which provides information about its user interface dialogs and options. You can use the Operational Dashboard to manage your cloud environment, complete the installation and configuration of nodes, and create a cloud.
+Welcome to the HP Helion Cloud OS for Moonshot Operational Dashboard Help, which provides information about its user interface dialogs and options. You can use the Operational Dashboard to manage your cloud environment, complete the installation and configuration of nodes, and create a cloud.
 
 For more details on the Installation process, see the [Installation and Configuration Guide](/cloudos/moonshot/install/).
 

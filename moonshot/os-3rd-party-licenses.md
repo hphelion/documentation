@@ -20,7 +20,7 @@ PageRefresh();
 
 <p style="font-size: small;"> <a href="/cloudos/moonshot/">&#9664; PREV | <a href="/cloudos/moonshot/">&#9650; UP</a> | NEXT &#9654; </p>
 
-# HP Cloud OS for Moonshot Open Source and Third-Party Software License Agreements
+# HP Helion Cloud OS for Moonshot Open Source and Third-Party Software License Agreements
 
 Document Release Date: March 2014 <br />
 Software Release Date: March 2014
@@ -110,7 +110,7 @@ HP acknowledges the redistribution of the following open source components under
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> 
 To address source code availability requirements for code licensed under MPL, CDDL, LGPL v2.1 & v3, GPL v2 & v3, 
 you can obtain a ZIP containing that source code (the required subset) <a href="https://cloudos.hpwsportal.com"> 
-at the HP Cloud OS portal</a>. On the site, sign up, login, then follow the Open Source link. The ZIP file is approximately 2 GB.</p>
+at the HP Helion Cloud OS portal</a>. On the site, sign up, login, then follow the Open Source link. The ZIP file is approximately 2 GB.</p>
 
 ### ANTLR License
 
@@ -4206,5 +4206,5 @@ Also see GNU Lesser General Public License (LGPL) Version 2.1.
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
-<p style="font-size: small;"> <a href="/cloudos/moonshot/"> &#171; Return to HP Cloud OS for Moonshot home </a> </p>
+<p style="font-size: small;"> <a href="/cloudos/moonshot/"> &#171; Return to HP Helion Cloud OS for Moonshot home </a> </p>
 

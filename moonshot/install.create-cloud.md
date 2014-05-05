@@ -88,7 +88,7 @@ To create a cloud:
  * Arch User Password &mdash; Architect user's password for a granted architect role on an Admin project in the Administration Dashboard.
  * Trash User Password &mdash; Trash user's password for a granted user's role on a trash project in the Administration Dashboard.
   
-**Remember the passwords** &mdash; You will use them to log into the HP Cloud OS for Moonshot Administration Dashboard.
+**Remember the passwords** &mdash; You will use them to log into the HP Helion Cloud OS for Moonshot Administration Dashboard.
 
 When you're ready, click **Create Cloud**. The cloud will go through a series of steps to create an active cloud, showing the percent (%) completed. When creating a cloud or a compute region, all of the nodes involved are first checked to ensure they can be resolved on the network. This verification process can take (up to) approximately five minutes.  During this time, the progress percentage will remain at 1%. If any of the nodes fail to resolve during the verification process, the cloud or region creation will fail. 
 

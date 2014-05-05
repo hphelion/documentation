@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Cloud OS for Moonshot Administration Dashboard Help"
+title: "HP Helion Cloud OS for Moonshot Administration Dashboard Help"
 permalink: /cloudos/moonshot/manage/administration-dashboard/
 product: moonshot
 
@@ -21,9 +21,9 @@ PageRefresh();
 
 <p style="font-size: small;"> <a href="/cloudos/moonshot/manage/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage/">&#9650; UP</a> | NEXT &#9654; </p>
 
-# HP Cloud OS for Moonshot Administration Dashboard Help
+# HP Helion Cloud OS for Moonshot Administration Dashboard Help
 
-Welcome to the HP Cloud OS for Moonshot Administration Dashboard Help, which provides information about its user interface dialogs, options, roles, and tasks.
+Welcome to the HP Helion Cloud OS for Moonshot Administration Dashboard Help, which provides information about its user interface dialogs, options, roles, and tasks.
 
 The <a href="http://docs.hpcloud.com/cloudos/moonshot/pdf/HP-Cloud-OS-for-Moonshot-Administration-Dashboard-Help.pdf" target="pdf">Administration Dashboard Help</a> is available in PDF format at this time.  
 
@@ -34,7 +34,7 @@ The <a href="http://docs.hpcloud.com/cloudos/moonshot/pdf/HP-Cloud-OS-for-Moonsh
 <!--
 * [Before You Begin with the Administration Dashboard Help](/cloudos/moonshot/manage/administration-dashboard/before-you-begin/)
 
-* [Welcome to the HP Cloud OS for Moonshot Administration Dashboard](/cloudos/moonshot/manage/administration-dashboard/welcome/)
+* [Welcome to the HP Helion Cloud OS for Moonshot Administration Dashboard](/cloudos/moonshot/manage/administration-dashboard/welcome/)
 
 * [Getting Started with the Administration Dashboard](/cloudos/moonshot/manage/administration-dashboard/getting-started/)
 

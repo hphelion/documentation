@@ -21,7 +21,7 @@ PageRefresh();
 
 # Install &amp; Configure Your Cloud
 
-Welcome! The following topics explain how to install &amp; configure your cloud with HP Cloud OS for Moonshot. 
+Welcome! The following topics explain how to install &amp; configure your cloud with HP Helion Cloud OS for Moonshot. 
 
 It's important to read the topics and perform the described steps in order. While some steps are optional, 
 the sequence that you'll follow in the Operational Dashboard is significant, to ensure a proper deployment of your cloud. 
@@ -56,8 +56,8 @@ see these topics:
 
 **Note:** Also see the Operational Dashboard and Administration Dashboard Help topics:
 
-* [HP Cloud OS for Moonshot Operational Dashboard Help](/cloudos/moonshot/manage/operational-dashboard/)
-* [HP Cloud OS for Moonshot Administration Dashboard Help](/cloudos/moonshot/manage/administration-dashboard/)
+* [HP Helion Cloud OS for Moonshot Operational Dashboard Help](/cloudos/moonshot/manage/operational-dashboard/)
+* [HP Helion Cloud OS for Moonshot Administration Dashboard Help](/cloudos/moonshot/manage/administration-dashboard/)
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

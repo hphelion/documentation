@@ -61,7 +61,7 @@ The Manage Nodes panel lists all of the nodes that have been discovered through 
 subsequently used as part of a Cloud installation. Nodes can be edited so that they have meaningful names or descriptions. Clicking on a node's 
 ID gives more information about that node, including its role in a cloud deployment.
 
-Before you begin, ensure that all HP Cloud OS for Moonshot prerequisites are fulfilled.
+Before you begin, ensure that all HP Helion Cloud OS for Moonshot prerequisites are fulfilled.
 
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px; border: 1px dotted #000000;"> <b>Note:</b> Ensure that the boot order on all nodes is configured to 
 boot from the network first (this only occurs once as the PXE service will not try to network boot a node again if it has already done so).</p>
@@ -508,7 +508,7 @@ showing the % completed on the <a href="/cloudos/moonshot/manage/operational-das
 **To access**: Select the **Cloud** tab > **Manage Clouds** and click **Create Compute Region** for the corresponding cloud.
 
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px; border: 1px dotted #000000;"> <b>Note:</b> Successfully creating a region automatically creates a default resource pool for that region, which is configured and visible 
-in the Administration Dashboard. For details, see the <a href="/cloudos/moonshot/manage/administration-dashboard/">HP Cloud OS for Moonshot Administration Dashboard Help</a>. </p>
+in the Administration Dashboard. For details, see the <a href="/cloudos/moonshot/manage/administration-dashboard/">HP Helion Cloud OS for Moonshot Administration Dashboard Help</a>. </p>
 
 The following table describes the Create Region dialog UI elements:
 
@@ -688,7 +688,7 @@ The following information provides details about the Updates and Extensions pane
 
 ### Updates and Extensions overview
 
-The updates and extensions feature allows you to connect to, list, and retrieve hot fixes and updates from the HP Cloud OS Distribution Network (CODN) and apply them to your HP Cloud OS for Moonshot environment. You can also import hot fixes and updates from a file system to the HP Cloud OS for Moonshot environment and install them. In this topic, such hot fixes and updates are referred to as *content packages*. After a package is installed, you can view product and package details.
+The updates and extensions feature allows you to connect to, list, and retrieve hot fixes and updates from the HP Helion Cloud OS Distribution Network (CODN) and apply them to your HP Helion Cloud OS for Moonshot environment. You can also import hot fixes and updates from a file system to the HP Helion Cloud OS for Moonshot environment and install them. In this topic, such hot fixes and updates are referred to as *content packages*. After a package is installed, you can view product and package details.
 
 The Update and Extensions page will be blank for the first-time user. You need to configure your credentials for the CODN to view the updates.
 
@@ -824,7 +824,7 @@ Note that such package files have a .csu extension.  </td>
 <tr style="background-color: white; color: black;">
 <td> <b>Import</b> button   </td>
 <td> Click after choosing a valid content package (.csu) file using the <b>Choose File</b> button to import the file to the 
-HP Cloud OS for Moonshot Administration node. If no file has been chosen, "No file chosen" will appear next to the <b>Choose File</b> button.  </td>
+HP Helion Cloud OS for Moonshot Administration node. If no file has been chosen, "No file chosen" will appear next to the <b>Choose File</b> button.  </td>
 </tr>
 
 </table> 

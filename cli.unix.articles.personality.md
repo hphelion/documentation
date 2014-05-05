@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "UNIX CLI for HP Cloud: Creating Servers with Personality"
+title: "UNIX CLI for HP Helion Cloud: Creating Servers with Personality"
 permalink: /cli/unix/articles/personality
 product: unix-cli
 categories: cli linux compute servers configure personality
@@ -18,11 +18,11 @@ On November 4, 2013, the UNIX CLI was moved into its End-of-Life Cycle process t
 * No new feature requests will be honored
 * Bug reports will be accepted
 
-HP Cloud has contributed the Unix CLI back to the open source community, and you can get support, access the documentation, and download the source code [here](https://github.com/hpcloud/unix_cli).
+HP Helion Cloud has contributed the Unix CLI back to the open source community, and you can get support, access the documentation, and download the source code [here](https://github.com/hpcloud/unix_cli).
 
 _________________________________________
 
-You can use the UNIX CLI for HP Cloud to create custom pre-configured servers with the [`servers:add`](/cli/unix/reference#servers:add) personality option.  The argument to the `--personality` option is a directory that contains the files you want to add to the newly created server.  The files should be stored in the directory as if the directory was the root file system of the server.  For example if you had a directory:
+You can use the UNIX CLI for HP Helion Cloud to create custom pre-configured servers with the [`servers:add`](/cli/unix/reference#servers:add) personality option.  The argument to the `--personality` option is a directory that contains the files you want to add to the newly created server.  The files should be stored in the directory as if the directory was the root file system of the server.  For example if you had a directory:
 
     terry@brat:~$ find rootdir/ -type f
     rootdir/etc/apache2/sites-available/100www
@@ -39,4 +39,4 @@ There are limits to the number and size of the files that can be used with.  Use
 
 ##For more information## {#articles}
 
-For more tips and How-tos on using your UNIX CLI for HP Cloud, see [UNIX CLI for HP Cloud: Articles on to use the UNIX CLI for HP Cloud](/cli/unix/articles/).
+For more tips and How-tos on using your UNIX CLI for HP Helion Cloud, see [UNIX CLI for HP Helion Cloud: Articles on to use the UNIX CLI for HP Helion Cloud](/cli/unix/articles/).

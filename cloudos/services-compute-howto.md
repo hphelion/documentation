@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "How To's with the HP Cloud OS  Compute Service"
+title: "How To's with the HP Helion Cloud OS  Compute Service"
 permalink: /cloudos/services/compute/howto/
 product: compute
 
 ---
-# How To's with the Network Service HP Cloud OS  Compute Service #
+# How To's with the Network Service HP Helion Cloud OS  Compute Service #
 
 <!-- Taken from http://wiki.hpcloud.net/display/core/Core+Edition+Use+cases#CoreEditionUsecases-OverCloud -->
 
@@ -119,5 +119,5 @@ When you suspend an instance, its VM state is stored on disk, all memory is writ
 
 Also see the Help topics that are available in the Operational Dashboard and Administration Dashboard.  Website copies are available:
 
-* [HP Cloud OS Operational Dashboard Help](/cloudos/manage/operational-dashboard/)
-* [HP Cloud OS Administration Dashboard Help](/cloudos/manage/administration-dashboard/)
+* [HP Helion Cloud OS Operational Dashboard Help](/cloudos/manage/operational-dashboard/)
+* [HP Helion Cloud OS Administration Dashboard Help](/cloudos/manage/administration-dashboard/)

@@ -73,7 +73,7 @@ This topic provides details about the User Settings panel. The following table d
 
 This topic provides details about the License panel.
 
-On the License page, you can view the number of days remaining on your current HP Cloud OS license, and update the license if necessary. The following table describes the License UI elements:
+On the License page, you can view the number of days remaining on your current HP Helion Cloud OS license, and update the license if necessary. The following table describes the License UI elements:
 
 <table style="text-align: left; vertical-align: top; min-width:700px;">
 
@@ -84,20 +84,20 @@ On the License page, you can view the number of days remaining on your current H
 
 <tr style="background-color: white; color: black;">
 <td style="font-weight:bold;"> <nobr> Number of days remaining </nobr> on current license </td>
-<td> The number of days currently remaining on the HP Cloud OS license. This field will show zero (0) when the license is expired. 
-If the license is expired, you cannot use the HP Cloud OS dashboards until you renew the license. </td> 
+<td> The number of days currently remaining on the HP Helion Cloud OS license. This field will show zero (0) when the license is expired. 
+If the license is expired, you cannot use the HP Helion Cloud OS dashboards until you renew the license. </td> 
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td style="font-weight:bold;"> Instance ID </td>
-<td> A unique alphanumeric string that identifies the particular installation of HP Cloud OS to which the license applies. 
+<td> A unique alphanumeric string that identifies the particular installation of HP Helion Cloud OS to which the license applies. 
 You must provide this identifier to HP Support in order to obtain a valid license key, and the license key will be valid only 
-for the HP Cloud OS installation having this Instance ID.  </td>
+for the HP Helion Cloud OS installation having this Instance ID.  </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td style="font-weight:bold;"> License key </td>
-<td> Enter a valid license key into this field and click the </b>Save button to update the HP Cloud OS license. 
+<td> Enter a valid license key into this field and click the </b>Save button to update the HP Helion Cloud OS license. 
 Contact your HP Support representative to obtain a valid license key. <br /> <br />
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> After you click the <b>Save</b> button, 
 about 20 minutes elapses before the new license is activated.</p>
@@ -113,7 +113,7 @@ about 20 minutes elapses before the new license is activated.</p>
 
 ## About
 
-The About panel displays the version of the Operational Dashboard and the HP Cloud OS build, and the copyrights.
+The About panel displays the version of the Operational Dashboard and the HP Helion Cloud OS build, and the copyrights.
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

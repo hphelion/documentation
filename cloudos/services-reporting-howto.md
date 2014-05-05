@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "How To's with the HP Cloud OS Telemetry and Reporting Service"
+title: "How To's with the HP Helion Cloud OS Telemetry and Reporting Service"
 permalink: /cloudos/services/reporting/howto/
 product: compute
 
 ---
-# How To's with the HP Cloud OS Telemetry and Reporting (Ceilometer) Service #
+# How To's with the HP Helion Cloud OS Telemetry and Reporting (Ceilometer) Service #
 
 Collection
 
@@ -65,5 +65,5 @@ The reporting actions for Ceilometer are accessible via the Ceilometer API.
 
 Also see the Help topics that are available in the Operational Dashboard and Administration Dashboard.  Website copies are available:
 
-* [HP Cloud OS Operational Dashboard Help](/cloudos/manage/operational-dashboard/)
-* [HP Cloud OS Administration Dashboard Help](/cloudos/manage/administration-dashboard/)
+* [HP Helion Cloud OS Operational Dashboard Help](/cloudos/manage/operational-dashboard/)
+* [HP Helion Cloud OS Administration Dashboard Help](/cloudos/manage/administration-dashboard/)

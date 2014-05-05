@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Cloud OS for Moonshot Troubleshooting"
+title: "HP Helion Cloud OS for Moonshot Troubleshooting"
 permalink: /cloudos/moonshot/manage/troubleshooting/
 product: moonshot
 
@@ -19,9 +19,9 @@ PageRefresh();
 
 <p style="font-size: small;"> <a href="/cloudos/moonshot/manage/utilities/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage/">&#9650; UP</a> | <a href="/cloudos/moonshot/manage/operational-dashboard">NEXT &#9654;</a> </p>
 
-# HP Cloud OS for Moonshot troubleshooting
+# HP Helion Cloud OS for Moonshot troubleshooting
 
-HP Cloud OS for Moonshot is an OpenStack-based cloud platform to manage HP Moonshot servers. Different usage scenarios might lead to abnormal system behavior or known issues. This topic describes all the known issues that you might encounter. To help you troubleshoot these issues, we have provided possible resolutions.
+HP Helion Cloud OS for Moonshot is an OpenStack-based cloud platform to manage HP Moonshot servers. Different usage scenarios might lead to abnormal system behavior or known issues. This topic describes all the known issues that you might encounter. To help you troubleshoot these issues, we have provided possible resolutions.
 
 For easy reference, we categorized the known issues and solutions as follows:
 
@@ -386,7 +386,7 @@ Wait for the discovery polling interval or force a refresh.</td></tr>
 <td>Disk size information is conflicting; value displayed is less than actual disk size.</td></tr>
 <tr style="background-color: white; color: black;">
 <td>Probable Cause</td>
-<td>Since the disk size information is not available from the Moonshot Chassis, only the minimum disk size supported by the node in a cartridge is configured in HP Cloud OS for Moonshot.</td></tr>
+<td>Since the disk size information is not available from the Moonshot Chassis, only the minimum disk size supported by the node in a cartridge is configured in HP Helion Cloud OS for Moonshot.</td></tr>
 <tr style="background-color: white; color: black;">
 <td>Possible Resolution</td>
 <td>None</td></tr>
@@ -558,7 +558,7 @@ Provisioning fails when the <b>root_mb</b> in the flavor exactly matches the nod
 <tr style="background-color: white; color: black;">
 <td>Probable Cause</td>
 <td>
-The current apollo service design takes 30 minutes to import the refreshed data into the HP Cloud OS for Moonshot environment. Before the Cloud Administrator realizes there is a failed cartridge, the scheduler might select the cartridge which is in a failed state, which could cause the instance provisioning to fail.</td></tr>
+The current apollo service design takes 30 minutes to import the refreshed data into the HP Helion Cloud OS for Moonshot environment. Before the Cloud Administrator realizes there is a failed cartridge, the scheduler might select the cartridge which is in a failed state, which could cause the instance provisioning to fail.</td></tr>
 <tr style="background-color: white; color: black;">
 <td>Possible Resolution</td>
 <td>
@@ -745,7 +745,7 @@ For Internet Explorer:
  <li>Enter the Administration Dashboard IP in the same tab. Topology Designer now loads within the Administration Dashboard.</li></ol></td></tr>
 </table>
 
-#### Topology Designer does not list the resource pool unless cloud profile is "HP Cloud OS Grizzly Baremetal"
+#### Topology Designer does not list the resource pool unless cloud profile is "HP Helion Cloud OS Grizzly Baremetal"
 
 <table style="text-align: left; vertical-align: top; min-width: 700px;">
 <tr style="background-color: #C8C8C8;">
@@ -756,10 +756,10 @@ For Internet Explorer:
 <td>Topology Designer does not list all the resource pools that exist.</td></tr>
 <tr style="background-color: white; color: black;">
 <td>Probable Cause</td>
-<td>Resource pools that are not displayed might have been created with a profile other than those specific for HP Cloud OS for Moonshot.</td></tr>
+<td>Resource pools that are not displayed might have been created with a profile other than those specific for HP Helion Cloud OS for Moonshot.</td></tr>
 <tr style="background-color: white; color: black;">
 <td>Possible Resolution</td>
-<td>Make sure the required resource pools have <b>HP Cloud OS Grizzly Baremetal</b> as their cloud profile.</td></tr>
+<td>Make sure the required resource pools have <b>HP Helion Cloud OS Grizzly Baremetal</b> as their cloud profile.</td></tr>
 </table>
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
@@ -891,7 +891,7 @@ This can happen if there is no auto-flavor created in system which meets  the se
 <tr style="background-color: white; color: black;">
 <td>Possible Resolution</td>
 <td>
-Check the <a xref="">Support Matrix</a> as well as the HP Cloud OS for Moonshot server requirements of your workload. If your cloud has the appropriate Moonshot server (i.e. cartridges), then check the Apollo log <b>/var/log/apollo/apollo.log</b> on Controller node.<br>
+Check the <a xref="">Support Matrix</a> as well as the HP Helion Cloud OS for Moonshot server requirements of your workload. If your cloud has the appropriate Moonshot server (i.e. cartridges), then check the Apollo log <b>/var/log/apollo/apollo.log</b> on Controller node.<br>
 <br></td></tr>
 </table>
 

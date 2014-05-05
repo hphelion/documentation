@@ -20,10 +20,10 @@ PageRefresh();
 
 # Install &amp; Configure Your Cloud
 
-Welcome! The following topics explain how to install &amp; configure your cloud with the HP Cloud OS platform. 
+Welcome! The following topics explain how to install &amp; configure your cloud with the HP Helion Cloud OS platform. 
 
 It's important to read the topics and perform the described steps in order. While some steps are optional, 
-the sequence that you'll follow in the HP Cloud OS Operational Dashboard user interface is significant, to ensure 
+the sequence that you'll follow in the HP Helion Cloud OS Operational Dashboard user interface is significant, to ensure 
 a proper deployment of your cloud. 
 
 Install and set up the Admin node:
@@ -40,7 +40,7 @@ After you install and set up the Admin node, you can perform additional steps:
 
 * [Create a Cloud](/cloudos/install/create-cloud/) 
 * [Launch Administration Dashboard](/cloudos/install/launch-admin-dashboard/)
-* [Check the HP Cloud OS License](/cloudos/install/license/)
+* [Check the HP Helion Cloud OS License](/cloudos/install/license/)
 * [Install Hot Fixes](/cloudos/install/hot-fixes/)
 * [Updates and Extensions](/cloudos/install/updates-and-extensions/)
 
@@ -53,8 +53,8 @@ see these topics:
 
 **Note:** Also see the Help topics that are available in the Operational Dashboard and Administration Dashboard.  Website copies are available:
 
-* [HP Cloud OS Operational Dashboard Help](/cloudos/manage/operational-dashboard/)
-* [HP Cloud OS Administration Dashboard Help](/cloudos/manage/administration-dashboard/)
+* [HP Helion Cloud OS Operational Dashboard Help](/cloudos/manage/operational-dashboard/)
+* [HP Helion Cloud OS Administration Dashboard Help](/cloudos/manage/administration-dashboard/)
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

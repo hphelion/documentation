@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Cloud OS for Moonshot: Administration Dashboard"
+title: "HP Helion Cloud OS for Moonshot: Administration Dashboard"
 permalink: /cloudos/moonshot/manage/administration-dashboard/working-with-region-tab/
 product: moonshot
 
@@ -23,7 +23,7 @@ PageRefresh();
 
 The Region Tab displays all the options in the left panel for the Cloud Administrators.
 
-* Login to the HP Cloud OS for Moonshot Administration Dashboard with the Cloud Administrator credentials.
+* Login to the HP Helion Cloud OS for Moonshot Administration Dashboard with the Cloud Administrator credentials.
 The Administration Dashboard is displayed with a menu bar at the top displaying three tabs:
 **Project**, **Region**, and **Cloud**.
 

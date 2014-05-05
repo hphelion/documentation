@@ -13,7 +13,7 @@ The management console (MC) compute dashboard networks screen allows you to view
 * [Networks screen functions](#Functions)
 * [For further information](#ForFurtherInformation)
 
-**Note**: HP Cloud networks features are based on the OpenStack networking functionality; for more information, you might look at [their wiki](https://wiki.openstack.org/wiki/Quantum).
+**Note**: HP Helion Cloud networks features are based on the OpenStack networking functionality; for more information, you might look at [their wiki](https://wiki.openstack.org/wiki/Quantum).
 
 
 ##Networks screen overview## {#Overview}
@@ -50,5 +50,5 @@ From the networks screen you can perform any of the following functions:
 
 ##For further information## {#ForFurtherInformation}
 
-* For basic information about our HP Cloud compute services, take a look at the [HP Cloud compute overview](/compute/) page
+* For basic information about our HP Helion Cloud compute services, take a look at the [HP Helion Cloud compute overview](/compute/) page
 * Use the MC [site map](/mc/sitemap) for a full list of all available MC documentation pages---

@@ -24,7 +24,7 @@ UP</a> | <a href="/cloudos/moonshot/install/view-connection-settings/">NEXT &#96
 
 # Set Admin Node Prerequisites #
 
-Your first step in the HP Cloud OS for Moonshot Operational Dashboard is to configure the Admin Node prerequisites. See the sections in this topic:
+Your first step in the HP Helion Cloud OS for Moonshot Operational Dashboard is to configure the Admin Node prerequisites. See the sections in this topic:
 
 * [Enable Admin Node Internet Access](#enable-admin-node-internet-access) &mdash; Set up Internet access on the Admin Node. You will need Internet access for downloading updated and extensions. For details, see [View Updates and Extensions](/cloudos/moonshot/install/updates-and-extensions/).
 
@@ -59,7 +59,7 @@ To enable the Admin Node Internet Access:
 
 5. Set the HTTP Proxy Information applicable for your environment. If you are on a network that has a proxy, you must fill in this Proxy information.
 
- **Caution:** Specifying incorrect proxy host settings might cause some features to not work correctly later, after the installation, when you use the HP Cloud OS for Moonshot Administration Dashboard.
+ **Caution:** Specifying incorrect proxy host settings might cause some features to not work correctly later, after the installation, when you use the HP Helion Cloud OS for Moonshot Administration Dashboard.
 
  a. Specify the Host's IP address - get this value from your system administrator or from the settings in your web browser.
  

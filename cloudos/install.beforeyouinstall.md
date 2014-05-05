@@ -21,11 +21,11 @@ PageRefresh();
 
 # Before You Install
 
-Before you can start working in the HP Cloud OS Operational Dashboard, you must:
+Before you can start working in the HP Helion Cloud OS Operational Dashboard, you must:
 
 * [Plan the Infrastructure for a Cloud](#plan-the-infrastructure-for-a-cloud)
 * [Set up the Admin Node](#set-up-the-admin-node)
-* [Boot the Admin Node Using the HP Cloud OS ISO](#boot-the-admin-node-using-the-hp-cloud-os-iso)
+* [Boot the Admin Node Using the HP Helion Cloud OS ISO](#boot-the-admin-node-using-the-hp-cloud-os-iso)
 * [Launch the Operational Dashboard](#launch-the-operational-dashboard)
 
 ## Plan the Infrastructure for a Cloud
@@ -33,7 +33,7 @@ Before you can start working in the HP Cloud OS Operational Dashboard, you must:
 For the simplest deployment, a cloud environment requires a Cloud Administration Node (Admin Node), a Cloud Controller Node, and a set of Compute Node(s). You may need support from your IT
 Administrator to correctly capture information about your environment.
 
-You need to determine the type of cloud you want to create for your organization: private, public, or hybrid. With HP Cloud OS, you can create private or hybrid clouds. You can create public clouds with HP Helion Public Cloud. 
+You need to determine the type of cloud you want to create for your organization: private, public, or hybrid. With HP Helion Cloud OS, you can create private or hybrid clouds. You can create public clouds with HP Helion Public Cloud. 
 See the [Introduction to Cloud Types](/cloudos/prepare/cloudtypes/). 
 
 Based on the type of cloud you intend to create, you can determine the requirements for the server, network, and storage infrastructures 
@@ -263,11 +263,11 @@ The following configuration must be reviewed during this step:
  
  c. If your hypervisor is KVM, ensure the virt type is set to KVM.
  
-3. Download the HP Cloud OS ISO to the host's local file system or data store.
+3. Download the HP Helion Cloud OS ISO to the host's local file system or data store.
 
 4. Configure the virtual machine Admin Node to point to the ISO as a CD/DVD drive or install media ISO image. 
 
-## Boot the Admin Node Using the HP Cloud OS ISO
+## Boot the Admin Node Using the HP Helion Cloud OS ISO
 
 To boot the Admin Node using the ISO:
 
@@ -281,7 +281,7 @@ The Operational Dashboard has been successfully installed on the Admin Node.
 
 ## Launch the Operational Dashboard
 
-After you boot from the HP Cloud OS ISO, you are ready to launch the Operational Dashboard to set up the Admin Node.
+After you boot from the HP Helion Cloud OS ISO, you are ready to launch the Operational Dashboard to set up the Admin Node.
 
 To launch the Operational Dashboard:
 

@@ -264,7 +264,7 @@ Later, to display the <b>Single Chassis View</b>, you can double click a Chassis
 
 #### Add a Chassis
 
-This is a key task during your post-install of HP Cloud OS for Moonshot: adding one or more chassis (one at a time) to the cloud. 
+This is a key task during your post-install of HP Helion Cloud OS for Moonshot: adding one or more chassis (one at a time) to the cloud. 
 
 1.	Click the <b>+ Add</b> icon to display the Enter Chassis Details dialog box.
 
@@ -528,7 +528,7 @@ The view changes to <b>Project</b> > <b>Infrastructure</b> > <b>Instances</b>.
 
 ## Next Steps
 
-At this point, you're done with the installation & configuration steps (including post-install).  You can now proceed to the [Manage](/cloudos/moonshot/manage/) section of this documentation site. It includes information about utilities, troubleshooting, Disk Image Builder, and the backup process. Also included from the Manage page is the [HP Cloud OS for Moonshot Administration Dashboard Help](/cloudos/moonshot/manage/administration-dashboard/), where you can get more 
+At this point, you're done with the installation & configuration steps (including post-install).  You can now proceed to the [Manage](/cloudos/moonshot/manage/) section of this documentation site. It includes information about utilities, troubleshooting, Disk Image Builder, and the backup process. Also included from the Manage page is the [HP Helion Cloud OS for Moonshot Administration Dashboard Help](/cloudos/moonshot/manage/administration-dashboard/), where you can get more 
 information about the dashboard's features, roles, and tasks.
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

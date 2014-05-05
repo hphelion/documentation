@@ -21,19 +21,19 @@ PageRefresh();
 
 # API Quick Start - Introduction
 
-For developers, HP Cloud OS includes a REST API that allows you to interact programmatically with your cloud.  
+For developers, HP Helion Cloud OS includes a REST API that allows you to interact programmatically with your cloud.  
 
-This API Quick Start topic is designed to help you learn the API by introducing the HP Cloud OS services and walking through several use cases.  
+This API Quick Start topic is designed to help you learn the API by introducing the HP Helion Cloud OS services and walking through several use cases.  
 
-On your Cloud Controller node, we have provided the HP Cloud OS API Documentation app. It's a framework for describing, producing, consuming, and 
+On your Cloud Controller node, we have provided the HP Helion Cloud OS API Documentation app. It's a framework for describing, producing, consuming, and 
 visualizing the API. The app includes comprehensive reference API documentation and an interactive environment where you can try each 
 request and view the response from your server. 
 
 * [Prerequisites](#prerequisites)
 
-* [What are the HP Cloud OS Services?](#what-are-the-hp-cloud-os-services)
+* [What are the HP Helion Cloud OS Services?](#what-are-the-hp-cloud-os-services)
 
-* [What is the HP Cloud OS API Documentation app?](#what-is-the-hp-cloud-os-api-documentation-app)
+* [What is the HP Helion Cloud OS API Documentation app?](#what-is-the-hp-cloud-os-api-documentation-app)
 
 * [API Documentation Ports per Service](#api-documentation-ports-per-service)
 
@@ -47,9 +47,9 @@ Also refer to the [OpenStack API documentation](http://docs.openstack.org).
 
 This topic assumes that you have already:
 
-* Installed and set up HP Cloud OS, following the instructions in [Install &amp; Configure Your Cloud](/cloudos/install/).
+* Installed and set up HP Helion Cloud OS, following the instructions in [Install &amp; Configure Your Cloud](/cloudos/install/).
 
-* Used the HP Cloud OS Operational Dashboard to define the OS image and related components for your cloud.
+* Used the HP Helion Cloud OS Operational Dashboard to define the OS image and related components for your cloud.
 
 * Launched an OS image on your cloud instance.
 
@@ -63,9 +63,9 @@ resources, as well as the ability to provision a composite topology described by
             
 For details about the user interface dialogs, click Help from the top banner of the dashboards, or see on this site:
 
-* <a href="/cloudos/manage/operational-dashboard/">HP Cloud OS Operational Dashboard Help</a> &mdash; This document is a copy of the Help that's available in the HP Cloud OS Operational Dashboard.  
+* <a href="/cloudos/manage/operational-dashboard/">HP Helion Cloud OS Operational Dashboard Help</a> &mdash; This document is a copy of the Help that's available in the HP Helion Cloud OS Operational Dashboard.  
 
-* <a href="/cloudos/manage/administration-dashboard/">HP Cloud OS Administration Dashboard Help</a> &mdash; This document is a copy of the Help that's available in the HP Cloud OS Administration Dashboard. 
+* <a href="/cloudos/manage/administration-dashboard/">HP Helion Cloud OS Administration Dashboard Help</a> &mdash; This document is a copy of the Help that's available in the HP Helion Cloud OS Administration Dashboard. 
          
 To submit REST API calls, you will need your OpenStack Keystone v2 authentication credentials so you can generate security tokens. 
 The steps are described in the [API Security Tokens](#api-security-tokens) section of this topic.
@@ -76,9 +76,9 @@ identify the properties you must modify in the REST calls, including some that a
 In call payloads, we recommend that you set the scope to the default <code>user-project</code> level, 
 to prevent unintended impacts on other projects.
 
-## What are the HP Cloud OS Services?
+## What are the HP Helion Cloud OS Services?
 
-HP Cloud OS provides the following services:
+HP Helion Cloud OS provides the following services:
 
 * Eve - topology provisioning service
 
@@ -86,13 +86,13 @@ HP Cloud OS provides the following services:
 
 * Graffiti - resource pool registry and capability tagging service
 
-Here's a summary about the HP Cloud OS services:
+Here's a summary about the HP Helion Cloud OS services:
 
 <table style="text-align: left; vertical-align: top;">
 
 <tr style="background-color: #C8C8C8;">
 <th> Service </th>
-<th> Its Role in HP Cloud OS </th>
+<th> Its Role in HP Helion Cloud OS </th>
 <th> Good to know... </th>
 </tr>
 
@@ -167,13 +167,13 @@ Graffiti encapsulates a collection of descriptions about available resource pool
 
 </table>
 
-## What is the HP Cloud OS API Documentation app?
+## What is the HP Helion Cloud OS API Documentation app?
 
-The HP Cloud OS API Documentation app is a tool for describing, producing, and visualizing RESTful web services. 
+The HP Helion Cloud OS API Documentation app is a tool for describing, producing, and visualizing RESTful web services. 
 The goal is to enable client and documentation systems to update at the same pace as the server. 
 The documentation of methods, parameters, and models are tightly integrated into the server code, allowing APIs to stay in sync.
 
-The app is defined in JSON files and is presented in a web interface. Here's an example of the app for the HP Cloud OS Focus service.
+The app is defined in JSON files and is presented in a web interface. Here's an example of the app for the HP Helion Cloud OS Focus service.
 
 <img src="media/cloudos-rest-doc-focus-example1.png" />
 
@@ -189,7 +189,7 @@ The app provides developers who are learning a new REST API quick and easy acces
 
 * Interactive "Try it out!" dialogs that let you submit calls to your server, see the results, and figure out how you need to construct your REST URIs and any payloads.
 
-For example, in the HP Cloud OS API Documentation app for Focus, having entered a known ID of a document, we can retrieve it from the 
+For example, in the HP Helion Cloud OS API Documentation app for Focus, having entered a known ID of a document, we can retrieve it from the 
 repository with this <code> GET /1/document_list/1672048591 </code> call, using the "Try it out!" button:
 
 <img src="media/cloudos-try-it-out1.png" />
@@ -198,12 +198,12 @@ After clicking "Try it out!", the app displays the response. In this case, the s
 
 <img src="media/cloudos-try-it-out2.png" />
 
-The HP Cloud OS API Documentation includes other handy features, as you'll see when we walk through the use cases.
+The HP Helion Cloud OS API Documentation includes other handy features, as you'll see when we walk through the use cases.
 
 ## API Documentation Ports per Service
 
-Your HP Cloud OS instance comes installed with the HP Cloud OS API Documentation. Each service reserves a unique port number in the URL. 
-Using a Google Chrome or Mozilla Firefox browser, you can open the HP Cloud OS API Documentation as follows. 
+Your HP Helion Cloud OS instance comes installed with the HP Helion Cloud OS API Documentation. Each service reserves a unique port number in the URL. 
+Using a Google Chrome or Mozilla Firefox browser, you can open the HP Helion Cloud OS API Documentation as follows. 
 Just replace "my_server" with the DNS hostname or IP address of your Cloud Controller node:
 
 * Eve: http://my_server:21051/?token=&lt;keystone-token-value>
@@ -214,15 +214,15 @@ Just replace "my_server" with the DNS hostname or IP address of your Cloud Contr
 
 ## API Security Tokens
 
-Before you can submit REST calls to your HP Cloud OS instance, or use the interactive features of the HP Cloud OS API Documentation app, 
+Before you can submit REST calls to your HP Helion Cloud OS instance, or use the interactive features of the HP Helion Cloud OS API Documentation app, 
 you must generate a v2 security token from Keystone, which is an OpenStack service. If you skip this step, or if you have an expired token, 
 you will receive a 401 error message in the response. 
 
 <img src="media/cloudos-unauthorized-example.png" /> 
 
-### Getting the Security Token from the HP Cloud OS Administration Dashboard
+### Getting the Security Token from the HP Helion Cloud OS Administration Dashboard
 
-The easiest, "non-programmatic" way to get the security token is via the HP Cloud OS Administration Dashboard. Login and click Project > Access and Security > Access and Security > Authentication Token. The UI displays the current security token returned from Keystone. 
+The easiest, "non-programmatic" way to get the security token is via the HP Helion Cloud OS Administration Dashboard. Login and click Project > Access and Security > Access and Security > Authentication Token. The UI displays the current security token returned from Keystone. 
 
 Copy the token's value and proceed to the next section of this topic.
 
@@ -258,7 +258,7 @@ Based on the information provided, Keystone will verify the roles and, if valid,
 
 </pre>
 
-> **Note:** In the current release, the Admin account uses a pre-defined password. However the password is not published in the web-hosted documentation. To get the credentials, refer to the readme file included in the same ZIP that contained the HP Cloud OS ISO. If you have not already done so, see the ZIP on the <a href="https://cloudos.hpwsportal.com" target="codn">HP Cloud OS Distribution Network</a>. 
+> **Note:** In the current release, the Admin account uses a pre-defined password. However the password is not published in the web-hosted documentation. To get the credentials, refer to the readme file included in the same ZIP that contained the HP Helion Cloud OS ISO. If you have not already done so, see the ZIP on the <a href="https://cloudos.hpwsportal.com" target="codn">HP Helion Cloud OS Distribution Network</a>. 
 
 You can include the returned token's value on the <code> ?/token=&lt;value> </code> query parameter with each REST call. 
 

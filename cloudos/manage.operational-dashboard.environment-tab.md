@@ -25,7 +25,7 @@ PageRefresh();
 # Operational Dashboard: Environment Tab
 
 The Environment tab contains the following panels on which you begin the installation process on the Operational Dashboard. 
-On these panels, you set up your cloud environment and complete the HP Cloud OS Administration node installation. 
+On these panels, you set up your cloud environment and complete the HP Helion Cloud OS Administration node installation. 
 For the installation process, you must complete each panel in the order they are displayed. 
 
 * [Prerequisites](#prerequisites)
@@ -62,17 +62,17 @@ The following information provides details about the Prerequisites panel:
 
 ### Prerequisites Overview
 
-The first step on the Operational Dashboard is to configure the HP Cloud OS Administration node prerequisites.
+The first step on the Operational Dashboard is to configure the HP Helion Cloud OS Administration node prerequisites.
 
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Caution:</b> 
 Any prerequisites you want to configure, must be done before you complete the steps on the Complete Install panel. 
 For details, see <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>. 
 After that, the Edit Prerequisite dialogs are read-only. Once the install process is triggered, no changes can be made. 
-If you want to make changes, you need to start over by re-installing the HP Cloud OS Administration node. 
+If you want to make changes, you need to start over by re-installing the HP Helion Cloud OS Administration node. 
 For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
 </p>
 
-* **Cloud Administration Node Internet Access** &mdash; Configure to set up Internet access on the HP Cloud OS Administration node. You will need Internet access for downloading hot fixes and updates using the [Hot Fixes](/cloudos/manage/operational-dashboard/cloud-tab/#hot-fixes) panel, 
+* **Cloud Administration Node Internet Access** &mdash; Configure to set up Internet access on the HP Helion Cloud OS Administration node. You will need Internet access for downloading hot fixes and updates using the [Hot Fixes](/cloudos/manage/operational-dashboard/cloud-tab/#hot-fixes) panel, 
 or the [Updates and Extensions](/cloudos/manage/operational-dashboard/cloud-tab/#updates-and-extensions) panel.
 
 * **(Optional) External DNS Server** &mdash; Configure to add the IP address of the external DNS server your Cloud OS environment is using to access named websites within your cloud.
@@ -97,7 +97,7 @@ The following table describes the Prerequisites page UI elements:
 
 <tr style="background-color: white; color: black;">
 <td> <nobr> Prerequisite Description column </nobr> </td>
-<td> HP Cloud OS Administration node prerequisite settings:
+<td> HP Helion Cloud OS Administration node prerequisite settings:
 <ul>
 <li>Cloud Administration Node Internet Access</li>
 <li>External DNS Server</li>
@@ -136,7 +136,7 @@ To access: Select the Environment tab > Prerequisites> click <b>Edit Prerequisit
 If you want to set the Administration Node Internet Access Prerequisite, you must configure it before you complete the steps on the 
 Complete Install panel. For details, see the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a> topic.
 After that, the Administration Node Internet Access Prerequisite dialogs are read-only. Once the install process is triggered, 
-no changes can be made. If you want to make changes, you need to start over by re-installing the HP Cloud OS Administration node. 
+no changes can be made. If you want to make changes, you need to start over by re-installing the HP Helion Cloud OS Administration node. 
 For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
 </p>
 
@@ -151,7 +151,7 @@ The following table describes the Cloud Administration Node Internet Access Prer
 
 <tr style="background-color: white; color: black;">
 <td> Network Interface </td>
-<td> Select the network interface on the HP Cloud OS Administration node that has been configured for Internet access. <b>Note:</b> Interface <code>eth0</code> is not used for Internet access.
+<td> Select the network interface on the HP Helion Cloud OS Administration node that has been configured for Internet access. <b>Note:</b> Interface <code>eth0</code> is not used for Internet access.
 </td>
 </tr>
 
@@ -241,7 +241,7 @@ complete successfully, an error message displays on the Prerequisites page. For 
 If you want to set the External DNS Server Prerequisite, you must configure it before you complete the steps on the 
 Complete Install panel. For details, see the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a> topic.
 After that, the External DNS Server Prerequisite dialogs are read-only. Once the install process is triggered, 
-no changes can be made. If you want to make changes, you need to start over by re-installing the HP Cloud OS Administration node. 
+no changes can be made. If you want to make changes, you need to start over by re-installing the HP Helion Cloud OS Administration node. 
 For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
 </p>
 
@@ -277,7 +277,7 @@ The following table describes the External DNS Server Prerequisite dialog UI ele
 If you want to set the Administration Node Time Settings Prerequisite, you must configure it before you complete the steps on the 
 Complete Install panel. For details, see the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a> topic.
 After that, the Administration Node Time Settings Prerequisite dialogs are read-only. Once the install process is triggered, 
-no changes can be made. If you want to make changes, you need to start over by re-installing the HP Cloud OS Administration node. 
+no changes can be made. If you want to make changes, you need to start over by re-installing the HP Helion Cloud OS Administration node. 
 For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
 </p>
 
@@ -323,7 +323,7 @@ The following table describes the Cloud Administration Node Time Settings Prereq
 If you want to set the Email Notification Settings Prerequisite, you must configure it before you complete the steps on the 
 Complete Install panel. For details, see the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a> topic.
 After that, the Email Notification Settings Prerequisite dialogs are read-only. Once the install process is triggered, 
-no changes can be made. If you want to make changes, you need to start over by re-installing the HP Cloud OS Administration node. 
+no changes can be made. If you want to make changes, you need to start over by re-installing the HP Helion Cloud OS Administration node. 
 For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
 </p>
 
@@ -383,7 +383,7 @@ The following information provides details about the Server Types panel:
 you must do that before you complete the steps on the Complete Install panel. For details, see 
 the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a> topic.
 After that, the Server Types dialogs are read-only. Once the install process is triggered, 
-no changes can be made. If you want to make changes, you need to start over by re-installing the HP Cloud OS Administration node. 
+no changes can be made. If you want to make changes, you need to start over by re-installing the HP Helion Cloud OS Administration node. 
 For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
 </p>
 
@@ -458,7 +458,7 @@ add new servers or edit or delete existing servers.</p>
 
 <tr style="background-color: white; color: black;">
 <td> <nobr> Drop-down arrow > </nobr> Delete Server Definition </td>
-<td> Select to delete the server type from the HP Cloud OS Administration node. You are prompted to confirm the deletion. <br /> <br />
+<td> Select to delete the server type from the HP Helion Cloud OS Administration node. You are prompted to confirm the deletion. <br /> <br />
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> The Delete Server Definition menu item only displays while 
 the servers can be added or edited.  Once you do the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>, 
 this menu item disappears and you cannot add new servers or edit or delete existing servers.
@@ -475,7 +475,7 @@ To access: Select the Environment tab > Server Types > click <b>Edit Server Defi
 you must do that before you complete the steps on the Complete Install panel. For details, see 
 the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a> topic.
 After that, the Edit Server Definition dialogs are read-only. Once the install process is triggered, 
-no changes can be made. If you want to make changes, you need to start over by re-installing the HP Cloud OS Administration node. 
+no changes can be made. If you want to make changes, you need to start over by re-installing the HP Helion Cloud OS Administration node. 
 For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
 </p>
 
@@ -527,7 +527,7 @@ To access: Select the Environment tab > Server Types > click <b>Create Server De
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Caution:</b> The <b>Create Server Definition</b> button only displays while the servers are editable. 
 Once the install process is triggered by the 
 <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>, this button disappears and no 
-changes can be made. If you want to make changes, you need to start over by re-installing the HP Cloud OS Administration node. 
+changes can be made. If you want to make changes, you need to start over by re-installing the HP Helion Cloud OS Administration node. 
 For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
 </p>
 
@@ -593,7 +593,7 @@ The following information provides details about the Connections panel:
 If you plan to customize the connections, you must do that before you complete the steps on the Complete Install panel.  
 For details, see <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>. 
 After that, the Connections dialogs are read-only. Once the install process is triggered, no changes can be made. 
-If you want to make changes, you need to start over by re-installing the HP Cloud OS Administration node. 
+If you want to make changes, you need to start over by re-installing the HP Helion Cloud OS Administration node. 
 For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
 </p>
 
@@ -628,7 +628,7 @@ Examples of Physical Interface values:
 </pre>
 
 In this Dual mode example, "1Gb (preferred) on 2nd port" means a one gigabit network for port 2, as enumerated by default from the 
-server's BIOS or as overridden in the Server Types panel. The "preferred" tag suggests that if the NIC/port does not support 1Gb, HP Cloud 
+server's BIOS or as overridden in the Server Types panel. The "preferred" tag suggests that if the NIC/port does not support 1Gb, HP Helion Cloud 
 OS falls back to the next maximum speed supported by the NIC or port. However, if there is no preferred tag, it means the port has to 
 support 1Gb; otherwise the deployment might not succeed.
 
@@ -673,7 +673,7 @@ In Team mode, configure virtual connections to use both trunks. For example:
 * Map eth1, eth3, and eth5 to trunk 2.
 
 Note that in this example, the eth0 and eth1 interfaces belongs to same VLAN; the same is true for the eth2 and eth3 pair, and the eth4 and eth5 pair. 
-When the HP Cloud OS Administration node allocates the bare-metal server, Cloud OS should create a teaming NIC using the NIC pairs.
+When the HP Helion Cloud OS Administration node allocates the bare-metal server, Cloud OS should create a teaming NIC using the NIC pairs.
 
 Here's a partial example of how the Team mode configuration could look on this Connections dialog:
 
@@ -796,7 +796,7 @@ To access: Select the Environment tab > Connections > click **Edit Connection** 
 If you plan to customize the connections, you must do that before you complete the steps on the Complete Install panel.  
 For details, see the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>. 
 After that, the Edit Connections dialogs are read-only. Once the install process is triggered, no changes can be made. 
-If you want to make changes, you need to start over by re-installing the HP Cloud OS Administration node. 
+If you want to make changes, you need to start over by re-installing the HP Helion Cloud OS Administration node. 
 For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
 </p>
 
@@ -884,7 +884,7 @@ To access: Select the Environment tab > Connections > click **Create Connection*
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Caution:</b> The Create Connection button only displays 
 while the connections are editable. Once the install process is triggered by the 
 <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>, this button disappears and no changes can be made. 
-If you want to make changes, you need to start over by re-installing the HP Cloud OS Administration node. 
+If you want to make changes, you need to start over by re-installing the HP Helion Cloud OS Administration node. 
 For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
 </p>
 
@@ -985,7 +985,7 @@ the Cloud OS Administration node (using the admin network), the public or corpor
 or networking between the Virtual Machine instances and the traffic from the instances to the Cloud Controller Node (using the os_sdn network).
 
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Important:</b> Customizing the public network settings is 
-critical. Any missing or incorrect values will result in you having to re-install the HP Cloud OS Administration node. 
+critical. Any missing or incorrect values will result in you having to re-install the HP Helion Cloud OS Administration node. 
 For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
 </p>
 
@@ -1111,7 +1111,7 @@ To access: Select the Environment tab > Networks > click **Edit Network** for th
 you must do that before you complete the steps on the Complete Install panel. For details, see 
 the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a> topic.
 After that, the Edit Network dialogs are read-only. Once the install process is triggered, no changes can be made. If you want to make changes, 
-you need to start over by re-installing the HP Cloud OS Administration node. 
+you need to start over by re-installing the HP Helion Cloud OS Administration node. 
 For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
 </p>
 
@@ -1225,7 +1225,7 @@ To access: Select the Environment tab > Networks > click the down arrow and sele
 you must do that before you complete the steps on the Complete Install panel. For details, see 
 the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a> topic.
 After that, the Edit Address Ranges dialogs are read-only. Once the install process is triggered, no changes can be made. If you want to make changes, 
-you need to start over by re-installing the HP Cloud OS Administration node. 
+you need to start over by re-installing the HP Helion Cloud OS Administration node. 
 For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
 </p>
 
@@ -1297,7 +1297,7 @@ To access: Select the Environment tab > Networks > click the down arrow and sele
 you must do that before you complete the steps on the Complete Install panel. For details, see 
 the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a> topic.
 After that, the Edit Address Ranges dialogs are read-only. Once the install process is triggered, no changes can be made. If you want to make changes, 
-you need to start over by re-installing the HP Cloud OS Administration node. 
+you need to start over by re-installing the HP Helion Cloud OS Administration node. 
 For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
 </p>
 
@@ -1323,7 +1323,7 @@ The following table describes the admin network type address range default UI el
 <tr style="background-color: white; color: black;">
 <td><b>Node Types</b> and address ranges </td>
 <td> 
-<b>admin:</b> IP range for the HP Cloud OS Administration node &mdash; 192.168.124.10 to 192.168.124.11 <br /> <br />
+<b>admin:</b> IP range for the HP Helion Cloud OS Administration node &mdash; 192.168.124.10 to 192.168.124.11 <br /> <br />
 
 <b>dhcp:</b> Temporary IP address assignment for the PXE booted nodes &mdash; 192.168.124.21 to 192.168.124.80  <br /> <br />
 
@@ -1355,7 +1355,7 @@ To access: Select the Environment tab > Networks > click the down arrow and sele
 you must do that before you complete the steps on the Complete Install panel. For details, see 
 the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a> topic.
 After that, the Edit Address Ranges dialogs are read-only. Once the install process is triggered, no changes can be made. If you want to make changes, 
-you need to start over by re-installing the HP Cloud OS Administration node. 
+you need to start over by re-installing the HP Helion Cloud OS Administration node. 
 For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
 </p>
 
@@ -1412,7 +1412,7 @@ To access: Select the Environment tab > Networks > click the down arrow and sele
 you must do that before you complete the steps on the Complete Install panel. For details, see 
 the <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a> topic.
 After that, the Edit Address Ranges dialogs are read-only. Once the install process is triggered, no changes can be made. If you want to make changes, 
-you need to start over by re-installing the HP Cloud OS Administration node. 
+you need to start over by re-installing the HP Helion Cloud OS Administration node. 
 For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
 </p>
 
@@ -1469,7 +1469,7 @@ To access: Select the Environment tab > Networks > click <b>Create Network</b>.
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Caution:</b> The <b>Create Network</b> button only displays 
 while the networks are editable. Once the install process is triggered by the 
 <a href="/cloudos/manage/operational-dashboard/environment-tab/#complete-install">Complete Install</a>, this button disappears and no 
-changes can be made. If you want to make changes, you need to start over by re-installing the HP Cloud OS Administration node. 
+changes can be made. If you want to make changes, you need to start over by re-installing the HP Helion Cloud OS Administration node. 
 For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
 </p>
 
@@ -1592,7 +1592,7 @@ The following information provides details about the Complete Install panel.
 
 ### Complete Install Overview
 
-On the Complete Install panel, you complete the HP Cloud OS Administration node installation, which installs underlying components on the Administration node.
+On the Complete Install panel, you complete the HP Helion Cloud OS Administration node installation, which installs underlying components on the Administration node.
 
 You specify the install settings on the Confirm Complete Install Dialog and then finish the install process on the Complete Install Page.
 
@@ -1607,7 +1607,7 @@ When the install is complete, the Operational Dashboard displays the Cloud tab (
 
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000; min-width:700px;"> <b>Caution:</b> Be sure the values for the 
 Prerequisites, Server Types, Connections and Networks are what you need, before you start the install process. Once the install process is triggered, 
-no changes can be made. If you want to make changes, you need to start over by re-installing the HP Cloud OS Administration node. 
+no changes can be made. If you want to make changes, you need to start over by re-installing the HP Helion Cloud OS Administration node. 
 For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
 </p>
 
@@ -1627,7 +1627,7 @@ The following table describes the Complete Install page UI elements:
 <tr style="background-color: white; color: black;">
 <td> <nobr> <b>Complete Install</b> button </nobr> </td> </td>
 <td> Click to open the Confirm Complete Install dialog, where you will then specify configuration information to complete the 
-HP Cloud OS Administration node installation. After the HP Cloud OS Administration node is installed, this button is replaced by the Continue... button. <br />
+HP Helion Cloud OS Administration node installation. After the HP Helion Cloud OS Administration node is installed, this button is replaced by the Continue... button. <br />
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> The Complete Install step runs a validation check 
 of the network IP address ranges. If there is an error, this step cannot be completed until the error is fixed. 
 The validation check shows the network type and possibly the address value. You must open the Edit Address Ranges dialog for the specified 
@@ -1639,12 +1639,12 @@ See <a href="/cloudos/manage/operational-dashboard/environment-tab/#edit-address
 
 <tr style="background-color: white; color: black;">
 <td> <b>Install Launched</b> column </td>
-<td> The timestamp that the HP Cloud OS Administration node install is started. </td>
+<td> The timestamp that the HP Helion Cloud OS Administration node install is started. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td><b>Install Complete</b> column </td>
-<td> The timestamp that the HP Cloud OS Administration node install is completed. </td>
+<td> The timestamp that the HP Helion Cloud OS Administration node install is completed. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -1680,8 +1680,8 @@ This button then becomes a Refresh button. </td>
 
 <tr style="background-color: white; color: black;">
 <td> <b>Continue...</b> button </td>
-<td> Replaces the Complete Install button after the HP Cloud OS Administration node install is complete. 
-Click to add the Cloud tab. The HP Cloud OS Administration node is now ready to be configured to set up a cloud. 
+<td> Replaces the Complete Install button after the HP Helion Cloud OS Administration node install is complete. 
+Click to add the Cloud tab. The HP Helion Cloud OS Administration node is now ready to be configured to set up a cloud. 
 See the <a href="/cloudos/manage/operational-dashboard/cloud-tab">Cloud Tab</a> topic for descriptions of the panels that set up a cloud.</td>
 </tr>
 				
@@ -1737,7 +1737,7 @@ special characters. In the current release, it must end in .com, .org, .net, .ed
 
 <tr style="background-color: white; color: black;">
 <td> <nobr> <b>Complete Install</b> </nobr> </td>
-<td> Click to install the required software on the HP Cloud OS Administration node. This may take several minutes. <br /> 
+<td> Click to install the required software on the HP Helion Cloud OS Administration node. This may take several minutes. <br /> 
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> The Complete Install step runs a validation check 
 of the network IP address ranges. If there is an error, this step cannot be completed until the error is fixed. 
 The validation check shows the network type and possibly the address value. You must open the Edit Address Ranges dialog for the specified 

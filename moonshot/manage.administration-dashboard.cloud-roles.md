@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Cloud OS for Moonshot: Administration Dashboard"
+title: "HP Helion Cloud OS for Moonshot: Administration Dashboard"
 permalink: /cloudos/moonshot/manage/administration-dashboard/cloud-roles/
 product: moonshot
 
@@ -23,7 +23,7 @@ PageRefresh();
 
 Each role has different privileges assigned to it. Based on the privileges, the users can access the project resources.
 
-HP Cloud OS for Moonshot has defined several roles/personas that represent users with different responsibilities within the cloud. These roles manage resources within the cloud within their respective realms.
+HP Helion Cloud OS for Moonshot has defined several roles/personas that represent users with different responsibilities within the cloud. These roles manage resources within the cloud within their respective realms.
 
 You can perform the following tasks:
 

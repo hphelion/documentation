@@ -159,7 +159,7 @@ navigation:
   - text: Object Storage Examples
     url: /bindings/jclouds/object-storage/
   cloudos:
-  - text: HP Cloud OS Home
+  - text: HP Helion Cloud OS Home
     url: /cloudos/
   - text: Prepare
     url: /cloudos/prepare/  	
@@ -176,7 +176,7 @@ navigation:
   - text: Site Index
     url: /cloudos/siteindex/	
   moonshot:
-  - text: HP Cloud OS for Moonshot Home
+  - text: HP Helion Cloud OS for Moonshot Home
     url: /cloudos/moonshot/
   - text: Prepare
     url: /cloudos/moonshot/prepare/  	
@@ -193,7 +193,7 @@ navigation:
   - text: Site Index
     url: /cloudos/moonshot/siteindex/
   community:
-  - text: HP Cloud OS Community Doc Home
+  - text: HP Helion Cloud OS Community Doc Home
     url: /cloudos/community/
   - text: FAQs
     url: /cloudos/community/faqs/ 		
