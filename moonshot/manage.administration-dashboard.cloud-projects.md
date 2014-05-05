@@ -86,16 +86,13 @@ To create a project:
  **Note**: This is an optional step at the initial stage of project creation as no users are displayed, once you create the users, they will be visible in the list of Available Users.
 
 6.  (Optional) In the Integration Tab, perform the following:
+  * (Optional) Click check box to select it, if no default Resource Pool exists and you want to create one. The Resource Pool is created as part of the project creation. A default resource pool is created for each region in the domain.
  
- * (Optional) Click check box to select it, if no default Resource Pool exists and you want to create one. The Resource Pool is created as part of the project creation. A default resource pool is created for each region in the domain.
- 
-
-7.  In the **Compute Limits** Tab, you can set the default limits for the compute resources in the project for example: total CPUS’s, total instances that can be created, Keypairs etc. Perform the following:
+7.  In the **Compute Limits** Tab, you can set the default limits for the compute resources in the project for example: total CPUS's, total instances that can be created, Keypairs etc. <br>Perform the following:
  * (From the **Region** drop-down list, select the region. By default the current region is displayed.
+  * In the **RAM (MB)**, **Keypairs**, **CPU Cores**, **Instances**, **Metadata Items** boxes, default values are displayed. You can make the changes as required.
  
- * In the **RAM (MB)**, **Keypairs**, **CPU Cores**, **Instances**, **Metadata Items** boxes, default values are displayed. You can make the changes as required.
- 
-8.   Click **Create** **Project**. A message is displayed on successful project creation. The project is displayed with a system-generated project ID.<br>
+8.  Click **Create** **Project**. A message is displayed on successful project creation. The project is displayed with a system-generated project ID.<br>
 OR<br>
 Click **Cancel** to abort and go to the previous screen.
 
