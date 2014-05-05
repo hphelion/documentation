@@ -60,7 +60,7 @@ By default, Overview is the active tab and displays the region details and regio
  * Click **Submit**.<br>
 The usage summary of the selected period is displayed.
 
-3. Click **Download CSV Summary** to view a text file in Microsoft Excel with the details of the region usage summary.
+3.	Click **Download CSV Summary** to view a text file in Microsoft Excel with the details of the region usage summary.
 
 ##Region Info <a name= "Region Info"></a>
 
