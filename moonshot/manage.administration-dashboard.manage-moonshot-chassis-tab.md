@@ -307,7 +307,6 @@ Events log is displayed on the right panel of Datacenter View page. The Panel di
 The search results are displayed in the table.<br>
 OR<br>
  * In the **Filter** box, enter the text to base your search on.
- 
  * Click magnifier.<br>
 The search results are displayed in the table.
 

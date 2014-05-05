@@ -53,42 +53,33 @@ To view the list of different cloud users:
 Use this option to create a cloud user and set general attributes for the user. You can also assign a project specific and cloud specific role to the user through this option.
 
 To create a cloud user:
-<ol>
-<li>
-Click **Cloud** Tab to select it.</li>
 
-<li> From the options in the left panel, select **Users** to display the Users page.</li>
 
-<li>Click **Create User** displayed on the top right corner in the right pane. Create User dialog box is displayed with three different tabs: **User**, **Project**, and **Cloud**. By default, User is the active tab.</li>
 
-<li> In the User Tab, perform the following:</li>
- <ul>
-<li>
- In the **User Name** box, enter the name of the user.</li>
- 
-<li>(Optional) In the **Email** box, enter the email-ID for the user.</li>
- 
-<li>In the Password box, enter the password.
- 
-<li>In the **Confirm Password** box, re-enter the password to verify it.</li></ul>
+1. Click **Cloud** Tab to select it.
 
-<li>In the User Tab, perform the following:</li>
- <ul>
-<li>
-In the **User Name** box, enter the name of the user.From **Primary Project** drop-down list, select the project to which you want to add the user.</li>
- 
-<li>From **Project Role** drop-down list, select the role to that you want to assign to the user.</li>
+2. From the options in the left panel, select **Users** to display the Users page.
+
+3. Click **Create User** displayed on the top right corner in the right pane. Create User dialog box is displayed with three different tabs: **User**, **Project**, and **Cloud**. By default, User is the active tab.
+
+4. In the User Tab, perform the following:
+   * In the **User Name** box, enter the name of the user.
+   * (Optional) In the **Email** box, enter the email-ID for the user.
+   * In the Password box, enter the password.
+   * In the **Confirm Password** box, re-enter the password to verify it.
+
+5. In the Project Tab, perform the following:
+   *  From **Primary Project** drop-down list, select the project to which you want to add the user.
+   *  From **Project Role** drop-down list, select the role to that you want to assign to the user.
 <br>
- **Note**: The role defined in the Project Tab is specific to the selected project.
-</ul>
-<li> (Optional) In the Cloud Tab, perform the following:
- <br>From the **Cloud Role** drop-down list, select the cloud role for the user.
+ **Note**: The role defined in the Project Tab is specific to the selected project. </br>
 
+6. (Optional) In the Cloud Tab, perform the following:
+  * From the **Cloud Role** drop-down list, select the cloud role for the user.
 
-<li> Click **Create User** to create the user. A message is displayed on successful creation.</<br>
-OR<br>
-Click **Cancel** to abort and go to the previous screen.</li><ol>
+7. Click **Create User** to create the user. A message is displayed on successful creation.
 
+ 
 ##Edit a Cloud User<a name= "Edit a Cloud User"></a>
 
 Use this option to edit the attributes of a cloud user. You can modify the User and Cloud related information here and for modifying the project related attributes refer to Modify Users section. 

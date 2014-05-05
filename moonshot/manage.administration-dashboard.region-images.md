@@ -224,34 +224,27 @@ The images are deleted and removed from the image list.
 To launch an image in the Administration Dashboard:
 
 
-1.  Click the **Region** Tab to select it.
+1. Click the **Region** Tab to select it.
 
-2.  From the options in the left panel, select **Images** to display the Images page.
+2. From the options in the left panel, select **Images** to display the Images page.
 
-3.  Select **Launch** against the image listed in the table.<br>
+3. Select **Launch** against the image listed in the table.<br>
 A Launch Instance dialog box displays with four tabs: **Details** Tab, **Access & Security** Tab, **Networking** Tab, and **Post-Creation** Tab. By default, Details is the active tab.
 
 4. On the **Details** Tab, perform the following:
- 
- * From the **Instance Source** drop-down list, select the image.
- 
- * From the **Image** drop-down list, select the value.
- 
- * In the **Instance Name** box, enter a name for the instance.
- 
- * From the **Flavor** drop-down list, select the Baremetal flavor.<br>
+  * From the **Instance Source** drop-down list, select the image.
+  * From the **Image** drop-down list, select the value.
+  * In the **Instance Name** box, enter a name for the instance.
+  * From the **Flavor** drop-down list, select the Baremetal flavor.<br>
 This is default flavor that is created.
- 
- * In the **Instance Count** box, enter *1* or more than 1.<br>
+  * In the **Instance Count** box, enter *1* or more than 1.<br>
 The flavor details are displayed on the right side of the dialog box.
 
 5. On the **Access & Security** Tab, do the following:
- 
- * From the **Keypair** drop-down list, select value from the list.
+  * From the **Keypair** drop-down list, select value from the list.
 
-6.	On the **Networking** Tab, no networks are listed in the **Selected Networks** section.
- 
- * Select the private network from the **Available networks** section.
+6. On the **Networking** Tab, no networks are listed in the **Selected Networks** section.
+  * Select the private network from the **Available networks** section.
  
 7.	Click **Launch**.<br>
 The image is displayed in the table on the Image page with **Active** status.
