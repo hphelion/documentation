@@ -125,8 +125,6 @@ The following are the known issues for HP Cloud OS for Moonshot 1.10.
 * When you display the nodes table in the <b>Nodes View</b> using Moonshot Management, the disk size for all discovered nodes is shown to be 500 GB, regardless of physical disk capacity. 
 <!-- I'm still of the opinion that we should delete this item; there is no workaround, and what good does it do to tell the customer about it? -Doug -->
 
-* When Windows Images are created using the instructions in the Image Builder document then instance may not adhere to selected flavor. Also, the credentials will not be injected into Windows Instances
-
 ##For further information## {#for-further-information}
 
 For additional information on HP Cloud OS for Moonshot:
