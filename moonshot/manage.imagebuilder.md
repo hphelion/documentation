@@ -240,7 +240,7 @@ To use your new nginx element with Ubuntu to create a VM image that is pre-insta
 
 <pre>disk-image-create -o base -a amd64 vm base baremetal nginx</pre>
 
-<p>This creates a VM image file named base.qcow2. You can now upload and work with this image in HP Cloud OS for Moonshot. For detailed instructions, see the <b>Manage Images</b> topic of the [Manage Images](/cloudos/moonshot/manage/administration-dashboard/cloud-images/).
+<br>This creates a VM image file named base.qcow2. You can now upload and work with this image in HP Cloud OS for Moonshot. For detailed instructions, see the <b>Manage Images</b> topic of the [Manage Images](/cloudos/moonshot/manage/administration-dashboard/cloud-images/).
 
 
 #### Creating a RHEL image for a specific workload {#rhel-image}
@@ -318,7 +318,7 @@ To use your new mongodb element with RHEL to create an image that is pre-install
 
 <pre>disk-image-create &ndash;o &lt;image_prefix> &ndash;a amd64&ndash;u base rhel baremetal mongodb</pre>
 
-<p>This creates a disk image file named base.qcow2. You can now upload and work with this image in HP Cloud OS for Moonshot. For detailed instructions, see the <b>Manage Images</b> topic of the [Manage Images](/cloudos/moonshot/manage/administration-dashboard/cloud-images/).
+<br>This creates a disk image file named base.qcow2. You can now upload and work with this image in HP Cloud OS for Moonshot. For detailed instructions, see the <b>Manage Images</b> topic of the [Manage Images](/cloudos/moonshot/manage/administration-dashboard/cloud-images/).
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
