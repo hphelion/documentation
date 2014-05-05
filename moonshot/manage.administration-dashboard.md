@@ -25,11 +25,11 @@ PageRefresh();
 
 Welcome to the HP Cloud OS for Moonshot Administration Dashboard Help, which provides information about its user interface dialogs, options, roles, and tasks.
 
-* [Before You Begin with the Administration Dashboard Help](/cloudos/moonshot/manage/administration-dashboard/before-you-begin/)
+* [Before you begin with the Administration Dashboard Help](/cloudos/moonshot/manage/administration-dashboard/before-you-begin/)
 
 * [Welcome to the HP Cloud OS for Moonshot Administration Dashboard](/cloudos/moonshot/manage/administration-dashboard/welcome/)
 
-* [Getting Started with the Administration Dashboard](/cloudos/moonshot/manage/administration-dashboard/getting-started/)
+* [Getting started with the Administration Dashboard](/cloudos/moonshot/manage/administration-dashboard/getting-started/)
 
 * [Working with Cloud Tab](/cloudos/moonshot/manage/administration-dashboard/working-with-cloud-tab/)
 

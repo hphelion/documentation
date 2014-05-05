@@ -32,7 +32,7 @@ You can perform the following task:
 
 * <a href="#View Cloud Services">View Cloud Services</a>
 
-*  <a href="#View Domain Details">View Domain Details</a>
+* <a href="#View Domain Details">View Domain Details</a>
 
 *  [Manage Projects](/cloudos/moonshot/manage/administration-dashboard/cloud-projects/)
 
