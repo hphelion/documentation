@@ -199,7 +199,7 @@ To launch an image in the Administration Dashboard:
   * In the Instance Count box, enter 1 or more than 1.<br><p>
 The flavor details are displayed on the right side of the dialog box.</br></p>
 
-1. On the Access and Security Tab, perform the following:
+5. On the Access and Security Tab, perform the following:
   
  * From the **Keypair** drop-down list, select value from the list.
 
