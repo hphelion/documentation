@@ -15,7 +15,7 @@ This guide covers the following:
 
 - [Overview](#overview)
 - [Before you begin](#begin)
-- [Viewing your network in the HP Public Cloud Console](#NetworkTopo)
+- [Viewing your network in the HP Helion Public Cloud Console](#NetworkTopo)
 - [Using the Default Network](#default)
 - [Customizing your network](#customize)
 - [For further information](#ForFurtherInformation)
@@ -24,7 +24,7 @@ This guide covers the following:
 
 This guide provides the information you will need to get started in setting up a network, such as the example shown in the following image.
 
-Here, the left side of the image represents the HP Public Cloud environment and the right side is your local system.
+Here, the left side of the image represents the HP Helion Public Cloud environment and the right side is your local system.
 
 <img src="media/HPCS-VPC-VPN-SingleSite-Connection-Layer3-new-novendor-crop.jpg" width="600" alt="Basic VPN setup" />
 
@@ -73,11 +73,11 @@ Before you can use the CLI:
 2. Verify that you can access the Nova and Neutron APIs for your tenant from this Python Client by running a `nova list` and `neutron port-list` commands.
 
 
-## Viewing your network in the HP Public Cloud Console ## {#NetworkTopo}
+## Viewing your network in the HP Helion Public Cloud Console ## {#NetworkTopo}
 
 The Network Topology tab is a physical representation of your network configuration.
 
-After activating the Compute 13.5 region, HP Public Cloud creates a default network that looks similar to the following diagram. Login to the [HP Public Cloud Console](https://horizon.hpcloud.com/) and select the Network Topology tab under the Project section.
+After activating the Compute 13.5 region, HP Helion Public Cloud creates a default network that looks similar to the following diagram. Login to the [HP Helion Public Cloud Console](https://horizon.hpcloud.com/) and select the Network Topology tab under the Project section.
 
    <br><img src="media/compute-network-topology-def-crop.png"  alt="" />
 
@@ -90,21 +90,21 @@ Any instance you create can be attached to your network, using a port automatica
 
 ## Using the Default Network ## {#default}
 
-HP Public Cloud compute activation comes with a default configuration that includes: 
+HP Helion Public Cloud compute activation comes with a default configuration that includes: 
 
 * A network 
 * A subnet
 * A router for connecting the subnets to the Internet
 * A security group with basic server options
 
-You can [deploy HP Public Cloud virtual server instances](#CreateServer) on the default network or [modify the network configuration](#customize) using the HP Public Console or the HP Cloud 13.5 CLI before deploying servers.
+You can [deploy HP Helion Public Cloud virtual server instances](#CreateServer) on the default network or [modify the network configuration](#customize) using the HP Public Console or the HP Cloud 13.5 CLI before deploying servers.
 
 **Note:** The default security group allows all traffic to and from the network. For information on security groups in version 13.5, please see the knowledge base article [Managing Your Security Groups](https://community.hpcloud.com/article/managing-your-security-groups-135) for details.
 
 
 ##Customizing your network## {#customize}
 
-You can customize the default network using either the HP Public Cloud Console HP Public Cloud 13.5 CLI or the . 
+You can customize the default network using either the HP Helion Public Cloud Console HP Helion Public Cloud 13.5 CLI or the . 
 
 When you first activate the compute service, a [default](#default) configuration is created that should provide enough capacity for typical needs. However, you can create a new network, allowing you to assign a specific IP address to the network and subnet.
 
@@ -129,15 +129,15 @@ For more information on networking capabilities, see [Getting Started with HP Cl
 
 ### Creating a network ### {#CreateNetwork}
 
-In order to associate an instance with a network, the network much exist. HP Public Cloud creates a default network when you activate a service. You can skip this step if you are using the network and subnet provided with your service activation.
+In order to associate an instance with a network, the network much exist. HP Helion Public Cloud creates a default network when you activate a service. You can skip this step if you are using the network and subnet provided with your service activation.
 
-However, if you want to define the IP addresses for your network and instances, you can create a new network using the [HP Public Cloud Console](#CreateNetworkUI) or [HP Cloud 13.5 CLI](#CreateNetworkCLI).
+However, if you want to define the IP addresses for your network and instances, you can create a new network using the [HP Helion Public Cloud Console](#CreateNetworkUI) or [HP Cloud 13.5 CLI](#CreateNetworkCLI).
 
-#### Using the HP Public Cloud Console to create a network and subnet#### {#CreateNetworkUI}
+#### Using the HP Helion Public Cloud Console to create a network and subnet#### {#CreateNetworkUI}
 
 To create a network and subnet, use the following steps:
 
-1. Login to the [HP Public Cloud Console](https://horizon.hpcloud.com/).
+1. Login to the [HP Helion Public Cloud Console](https://horizon.hpcloud.com/).
 
 2. Select the [Networks tab](#NetworkTab) under the Project section.
 
@@ -243,11 +243,11 @@ To see a graphic display of your network setup, login to the [Horizon Console](h
 
 After the new network and subnet are created, you can connect the network to the router. A router and network connect through an *interface* from the router to the network.
 
-#### Using the HP Public Cloud to connect to a network #### {#ConnectNetworkUI}
+#### Using the HP Helion Public Cloud to connect to a network #### {#ConnectNetworkUI}
 
 To connect a network to a router, use the following steps:
 
-1. Login to the [HP Public Cloud Console](https://horizon.hpcloud.com/).
+1. Login to the [HP Helion Public Cloud Console](https://horizon.hpcloud.com/).
 
 2. Select the [Routers tab](#NetworkTab) under the Project section.
 
@@ -292,15 +292,15 @@ To connect a network to a router, use the following steps:
 
 ### Create a new server instance ### {#CreateServer}
 
-After the network is configured, you can create a server instance and attach the instance to the new network. You can use the [HP Public Cloud Console](#CreateServerUI) or the [HP Cloud 13.5 CLI](#CreateServerCLI)
+After the network is configured, you can create a server instance and attach the instance to the new network. You can use the [HP Helion Public Cloud Console](#CreateServerUI) or the [HP Cloud 13.5 CLI](#CreateServerCLI)
 
 **Note:** Before creating an instance, you must create a security [key pair](https://community.hpcloud.com/article/managing-your-key-pairs-135).
 
-#### Using the HP Public Cloud Console to create an instance#### {#CreateServerUI}
+#### Using the HP Helion Public Cloud Console to create an instance#### {#CreateServerUI}
 
 An instance is a virtual server.
 
-1. Login to the [HP Public Cloud Console](https://horizon.hpcloud.com/).
+1. Login to the [HP Helion Public Cloud Console](https://horizon.hpcloud.com/).
 
 2. Click "Instances" under "Manage Compute" under the Project section.
 

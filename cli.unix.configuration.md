@@ -43,7 +43,7 @@ The first thing you should do is set up an account.   To configure a new account
 
    $ hpcloud account:setup
 
-During a new configuration, you must supply the access key, secret key, and tenant ID that were assigned to you during the registration process; You can find the values for these variables through the [HP Public Cloud Console](https://horizon.hpcloud.com). Click the project menu and select *Manage Access Keys* and *Account Info*. You can also define the availability zone during the initial setup.
+During a new configuration, you must supply the access key, secret key, and tenant ID that were assigned to you during the registration process; You can find the values for these variables through the [HP Helion Public Cloud Console](https://horizon.hpcloud.com). Click the project menu and select *Manage Access Keys* and *Account Info*. You can also define the availability zone during the initial setup.
 
 ## Edit Account ## {#EditAccount}
 Executing the `account:edit` command with no arguments prompts the user in the same manner as the `account:setup` command, but for editing purposes. Current values are shown by default. Hit return to accept the current settings at each prompt.

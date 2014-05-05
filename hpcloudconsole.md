@@ -7,12 +7,12 @@ product: HP Cloud Console
 ---
 
 
-# Getting Started with HP Public Cloud Console
-Welcome to HP Public Cloud Console Horizon! HP Public Cloud wants you up and running quickly so this Getting Started guide walks you through network setup and connection (if not going with the default configuration setup when you activate compute services), instance and volume creation, security options, identity parameters, and management tools that facilitate your organization's use of HP Public Cloud. **This page takes you through the interface in the chronological order needed to get up and running, rather than the order displayed in the console**. 
+# Getting Started with HP Helion Public Cloud Console
+Welcome to HP Helion Public Cloud Console Horizon! HP Helion Public Cloud wants you up and running quickly so this Getting Started guide walks you through network setup and connection (if not going with the default configuration setup when you activate compute services), instance and volume creation, security options, identity parameters, and management tools that facilitate your organization's use of HP Helion Public Cloud. **This page takes you through the interface in the chronological order needed to get up and running, rather than the order displayed in the console**. 
 
-After initial setup, revisit the interface to monitor usage, modify, add, and delete networks, instances, volumes, roles, groups, and more. For the latest updates to the current HP Public Cloud Console release, see [What's new with HP Public Cloud Console](/whats_new_with_HP_Cloud_Console/). 
+After initial setup, revisit the interface to monitor usage, modify, add, and delete networks, instances, volumes, roles, groups, and more. For the latest updates to the current HP Helion Public Cloud Console release, see [What's new with HP Helion Public Cloud Console](/whats_new_with_HP_Cloud_Console/). 
 
-For information on moving from the HP Classic Console to HP Public Cloud Console see [Feature Mapping: HP Classic Console to the HP Public Cloud Console](/hpcloudconsolefeaturemap). 
+For information on moving from the HP Classic Console to HP Helion Public Cloud Console see [Feature Mapping: HP Classic Console to the HP Helion Public Cloud Console](/hpcloudconsolefeaturemap). 
 
 
 <img src="media/landingpage.png" width="580" alt="" />
@@ -21,7 +21,7 @@ For information on moving from the HP Classic Console to HP Public Cloud Console
 This page contains the following sections:
 
 * [Creating and connecting a network](#Createandconnect)
-* [Managing HP Public Cloud](#ManageHPPublicCloud)
+* [Managing HP Helion Public Cloud](#ManageHPPublicCloud)
 * [For further information](#Forfurtherinformation)
 
 
@@ -34,20 +34,20 @@ This section includes how to:
 * [Create a router](#Createarouter)
 * [Connect your network](#Connectyournetwork)
 
-**Note**: A default configuration comes with HP Public Cloud compute activation and includes:
+**Note**: A default configuration comes with HP Helion Public Cloud compute activation and includes:
 
 * A network 
 * A subnet
 * A router connecting the subnets to the Internet
 * A security group with basic server options, both SSH and Ping rules
 
-You can use the default network to deploy HP Public Cloud compute instances (virtual servers), or create a network configuration through the HP Public Cloud Console with the following instructions.
+You can use the default network to deploy HP Helion Public Cloud compute instances (virtual servers), or create a network configuration through the HP Helion Public Cloud Console with the following instructions.
 
 ###Create a network### {#Createanetwork}
 
-1. Login to HP Public Cloud with your username and password.
+1. Login to HP Helion Public Cloud with your username and password.
 
-2. On the HP Public Cloud console interface, click "Project," on the left-side bar then "Networks" under "Manage Networks."
+2. On the HP Helion Public Cloud console interface, click "Project," on the left-side bar then "Networks" under "Manage Networks."
 
     <img src="media/CreateaNetworkImage1.png" width="580" alt="" />
 
@@ -128,7 +128,7 @@ You can use the default network to deploy HP Public Cloud compute instances (vir
 
 6. Click "Networks" in the left-hand bar, select the check box next to the network you want to delete, and click "Delete Networks" in the upper right-hand navigation. 
 
-##Managing HP Public Cloud## {#ManageHPPublicCloud}
+##Managing HP Helion Public Cloud## {#ManageHPPublicCloud}
 
 You are now ready to use the options under "Manage Compute" under "Project" in the left-hand navigation. This section includes:
 
@@ -150,13 +150,13 @@ Select "Overview" under "Manage Compute," to display your usage summary and quot
 * Floating IPs
 * Security Groups
 
-As you use HP Public Cloud, click on the "Overview" options any time to query current usage as well as usage during specific time frames.
+As you use HP Helion Public Cloud, click on the "Overview" options any time to query current usage as well as usage during specific time frames.
 
 ####Create an instance#### {#Instance}
 
 An instance is a virtual server.
 
-**Note**: HP Public Cloud provides a list of images from which you can boot an instance.  While you can also boot from an HP Public Cloud instance you have launched using "Images and Snapshots," it is unnecessary to get up and running and beyond the scope of this document.   
+**Note**: HP Helion Public Cloud provides a list of images from which you can boot an instance.  While you can also boot from an HP Helion Public Cloud instance you have launched using "Images and Snapshots," it is unnecessary to get up and running and beyond the scope of this document.   
 
 1. Click "Instances" under "Manage Compute" in the left-hand navigation.
 
@@ -187,7 +187,7 @@ An instance is a virtual server.
 
     <img src="media/CreateanInstanceImage3.png" width="580" alt="" />
 
-8. Click the "Select Image" drop down under "Image Name." Select one of the images HP Public Cloud provides.
+8. Click the "Select Image" drop down under "Image Name." Select one of the images HP Helion Public Cloud provides.
 
     <img src="media/CreateanInstanceImage4.png" width="580" alt="" />
 
@@ -203,7 +203,7 @@ An instance is a virtual server.
 
 A volume is a block storage device you attach to an instance.
 
-**Note**: HP Public Cloud provides a list of images from which you can boot an instance or volume.  While you can also boot from an HP Public Cloud instance you have launched using "Images and Snapshots," it is unnecessary to get up and running in HP Public Cloud and beyond the scope of this document.  
+**Note**: HP Helion Public Cloud provides a list of images from which you can boot an instance or volume.  While you can also boot from an HP Helion Public Cloud instance you have launched using "Images and Snapshots," it is unnecessary to get up and running in HP Helion Public Cloud and beyond the scope of this document.  
  
 1. In the left-hand navigation, click "Volumes" under "Manage Compute."
 
@@ -223,7 +223,7 @@ A volume is a block storage device you attach to an instance.
 
     <img src="media/VolumeImage3.png" width="580" alt="" />
 
-7. Select an AZ. HP Public Cloud recommends the pre-filled "Any Availability Zone."
+7. Select an AZ. HP Helion Public Cloud recommends the pre-filled "Any Availability Zone."
 
 8. Click "Create Volume."
 
@@ -246,12 +246,12 @@ A volume is a block storage device you attach to an instance.
 
 **Functionality Overview**
 
-**Important**: HP Public Cloud provides a list of images from which you can boot an instance.  While you can also boot from an HP Public Cloud instance you have launched and customized using "Images and Snapshots," it is unnecessary to get up and running in the Cloud and beyond the scope of this document. 
+**Important**: HP Helion Public Cloud provides a list of images from which you can boot an instance.  While you can also boot from an HP Helion Public Cloud instance you have launched and customized using "Images and Snapshots," it is unnecessary to get up and running in the Cloud and beyond the scope of this document. 
 
 While this document does not cover creating snapshots, click "Images and Snapshots" in the left-hand bar to view available server and volume images and their details. For more details, click the image name on the "Images" page. Images listed under "Public" are available to anyone. "Project" images are for your specific project only.
 
 ###Access and Security### {#Accessandsecurity}
-Security groups and security group rules allow you to specify the type of traffic and direction (inbound/outbound) that are allowed to pass through a project's network port(s). When you create a project in HP Public Cloud, you must also create security group rules to define access types through its ports, designating security group members depending on their job functions and access needs. 
+Security groups and security group rules allow you to specify the type of traffic and direction (inbound/outbound) that are allowed to pass through a project's network port(s). When you create a project in HP Helion Public Cloud, you must also create security group rules to define access types through its ports, designating security group members depending on their job functions and access needs. 
 
 When a port is created in HP Cloud Networking it is associated, unless you specify otherwise, with a default security group that allows inbound traffic from the same subnet and all outbound traffic. You can add security group rules to the default security group to modify access or create a new security group to contain the rules you need.
 
@@ -338,7 +338,7 @@ Security group rules have three parts:
     
 ###Monitoring### {#Monitoring}
 
-Use HP Cloud Monitoring to ascertain system health and track resource metrics. Create the following in the HP Public Cloud Console to define the metrics you want to gather, where you want them sent, and configure an alarm that sends them:
+Use HP Cloud Monitoring to ascertain system health and track resource metrics. Create the following in the HP Helion Public Cloud Console to define the metrics you want to gather, where you want them sent, and configure an alarm that sends them:
 
 * An endpoint that specifies the metrics to gather
 * Subscriptions that specify which metrics to stream to an endpoint
@@ -445,11 +445,11 @@ After completing these tasks, you receive the metrics in JSON format at the loca
 
 Click  "Identity" in the left-hand interface to display links:
 
-* Domain - The domain is your primary work space in HP Public Cloud.  An individual or company can be the domain owner and enables a project with the necessary services and permissions. The first user created in a domain is considered the domain owner and placed in both the "Users" and "Domain Administrators" groups. 
+* Domain - The domain is your primary work space in HP Helion Public Cloud.  An individual or company can be the domain owner and enables a project with the necessary services and permissions. The first user created in a domain is considered the domain owner and placed in both the "Users" and "Domain Administrators" groups. 
 
     A domain has one owner and may have multiple users, groups and roles. A domain owner can allow users of another domain access to its projects.
 
-* Projects - A project is a collection of HP Public Cloud services, e.g., compute, storage, etc. within a domain  A project is defined by selecting services to be activated and a set of users to interact with the services. A project may contain multiple services, such as compute or object storage. Services can exist multiple times within the same project as long as they have different service endpoints, distinguished by their geography and region.
+* Projects - A project is a collection of HP Helion Public Cloud services, e.g., compute, storage, etc. within a domain  A project is defined by selecting services to be activated and a set of users to interact with the services. A project may contain multiple services, such as compute or object storage. Services can exist multiple times within the same project as long as they have different service endpoints, distinguished by their geography and region.
 
 * Users - Users are defined individually and can be assigned to groups and granted roles either directly or through inclusion in groups.  A user may have multiple roles.
 
@@ -460,7 +460,7 @@ Click  "Identity" in the left-hand interface to display links:
 
 ##For further information## {#Forfurtherinformation}
 
-*For the latest updates to the current HP Public Cloud Console release, see [What's new with HP Public Cloud Console](/whats_new_with_HP_Cloud_Console/)..
+*For the latest updates to the current HP Helion Public Cloud Console release, see [What's new with HP Helion Public Cloud Console](/whats_new_with_HP_Cloud_Console/)..
 * For basic information about our HP Cloud compute services, take a look at the [HP Cloud compute overview](/compute/) page
 * If you'd rather use the HP Cloud Command Line Interface (CLI) features, choose your topic of interest from our [HP CLoud CLI](/cli) pages.
 

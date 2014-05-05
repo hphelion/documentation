@@ -17,7 +17,7 @@ You can now define and configure your own virtual network topology, including co
 
 ###Using the console to access Networking### {#console}
 
-You can use the HP Public Cloud console to access HP Cloud Networking Service. For more information on using the HP Public Cloud console, see [Getting Started with HP Public Cloud Console](/hpcloudconsole).
+You can use the HP Helion Public Cloud console to access HP Cloud Networking Service. For more information on using the HP Helion Public Cloud console, see [Getting Started with HP Helion Public Cloud Console](/hpcloudconsole).
 
 
 ###Using the API to access Networking### {#API}

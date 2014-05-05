@@ -41,7 +41,7 @@ You can use the default network without modification. You can also configure oth
 
 For a high level understanding of the default Network topology in Compute 13.5, see [Understanding Network Topology in 13.5](https://community.hpcloud.com/article/understanding-network-topology-135). 
 
-For more specific questions, use the [Knowledge Base](https://community.hpcloud.com/search/knowledge/network	) or [Forums](https://community.hpcloud.com/search/forum/network) where you can learn from our own internal experts as well as other users in the HP Public Cloud community.
+For more specific questions, use the [Knowledge Base](https://community.hpcloud.com/search/knowledge/network	) or [Forums](https://community.hpcloud.com/search/forum/network) where you can learn from our own internal experts as well as other users in the HP Helion Public Cloud community.
 
 
 ##Customizing your Configuration## {#customize}
@@ -70,15 +70,15 @@ You can expand your network up to the following per-domain maximums:
 * 10 Security Groups
 * 50 Security Group Rules
 
-For more information on modifying the default network and creating additional networks, see either [HP Cloud Networking: Quick start guide](/compute/network-quick-start/) or [Getting Started Guide](https://community.hpcloud.com/article/getting-started-guide) in the HP Public Cloud community.
+For more information on modifying the default network and creating additional networks, see either [HP Cloud Networking: Quick start guide](/compute/network-quick-start/) or [Getting Started Guide](https://community.hpcloud.com/article/getting-started-guide) in the HP Helion Public Cloud community.
 
-## Accessing the HP Public Cloud Networking Service ##
+## Accessing the HP Helion Public Cloud Networking Service ##
 
 There are a  number of tools that you can use to access and manage the HP Cloud Networking Service.
 
 ###Using the console to access Networking### {#console}
 
-You can use the HP Public Cloud console to access HP Cloud Networking Service. For more information on using the HP Public Cloud console, see [Getting Started with HP Public Cloud Console](/hpcloudconsole).
+You can use the HP Helion Public Cloud console to access HP Cloud Networking Service. For more information on using the HP Helion Public Cloud console, see [Getting Started with HP Helion Public Cloud Console](/hpcloudconsole).
 
 
 ###Using the API to access Networking### {#API}
@@ -114,7 +114,7 @@ Default rules allow:
 	- Inbound ssh (TCP Port 22) from any source
 	- Inbound ping (ICMP) from any source 
 
-You can use the API, CLI or HP Public Cloud Console to add or modify security group rules.
+You can use the API, CLI or HP Helion Public Cloud Console to add or modify security group rules.
 
 
 ##Using Regions and Availability Zones with the Networking Service## {#az}

@@ -84,7 +84,7 @@ Always use the `powershell.exe` appropriate for your OS. From the Windows comman
 
 ##Supply your Credentials## {#SupplyyourCredentials}
 
-The first time that you run the shell you must supply the access key, secret key, and tenant ID assigned during the registration process; You can find the values for these variables through the [HP Public Cloud Console](https://horizon.hpcloud.com). Click the project menu and select *Manage Access Keys* and *Account Info*.  You can also define the availability zone during the initial setup.**
+The first time that you run the shell you must supply the access key, secret key, and tenant ID assigned during the registration process; You can find the values for these variables through the [HP Helion Public Cloud Console](https://horizon.hpcloud.com). Click the project menu and select *Manage Access Keys* and *Account Info*.  You can also define the availability zone during the initial setup.**
 
 **Note: During a new configuration, 
 <img src="media/api_keys-2.jpg" width="580" height="471" alt="" />
@@ -114,7 +114,7 @@ You only need to enter these credentials the first time you run the shell.  Afte
 
 ##Navigate to the Command Line## {#NavigatetotheCommandLine}
 
-To issue HP Cloud environment CLI Windows PowerShell commands (also sometimes called *cmdlets*), you need to first navigate to a container or the HP Public Cloud provider, which you can do by issuing the following command:
+To issue HP Cloud environment CLI Windows PowerShell commands (also sometimes called *cmdlets*), you need to first navigate to a container or the HP Helion Public Cloud provider, which you can do by issuing the following command:
 
     cd HPCS:
 

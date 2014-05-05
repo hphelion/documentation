@@ -17,7 +17,7 @@ There are a number of HP Cloud services available for you:
 * [Object storage](/object-storage/): A way to store and retrieve objects in a highly redundant cluster of publicly accessible physical machines hosted in HP data centers. 
 * [Relational Database](/dbaas/): Provides you with a simplified method for creation and management of MySQL database instances.
 
-The following HP Public Cloud are now in private beta; follow the links to sign up and begin trying them out!
+The following HP Helion Public Cloud are now in private beta; follow the links to sign up and begin trying them out!
 
 * [Application Platform as a Service (aPaaS)](/apaas/) - An application platform for development, deployment, and management of cloud applications hosted by HP.<br>
   **Note**: This service requires activation while in private beta; please [request access on our sign-up page](https://apaas.hpcloud.com/shared/free-private-beta/signup).  Service use is free of charge during the private beta period.

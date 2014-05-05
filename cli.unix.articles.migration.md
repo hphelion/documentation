@@ -32,7 +32,7 @@ You can perform object migration from the AWS, Google, and Rackspace services.  
 
 ##Getting started migrating your data## {#GettingStarted}
 
-First you need to [download and install the latest Unix CLI client](/cli/unix/install) and set up your HP Public Cloud account as the default.  Next, create a UNIX CLI account with the credentials of the source from which you wish to migrate objects.  Use the `-p` option of the [`account:setup`](/cli/unix/reference#account:setup) to specify an alternate provider.  If you use the `-p` option with AWS, Google or Rackspace, you are prompted to enter the provider-appropriate credentials, and the `account:setup` command attempts to verify the account.  
+First you need to [download and install the latest Unix CLI client](/cli/unix/install) and set up your HP Helion Public Cloud account as the default.  Next, create a UNIX CLI account with the credentials of the source from which you wish to migrate objects.  Use the `-p` option of the [`account:setup`](/cli/unix/reference#account:setup) to specify an alternate provider.  If you use the `-p` option with AWS, Google or Rackspace, you are prompted to enter the provider-appropriate credentials, and the `account:setup` command attempts to verify the account.  
 
 **Note**: You can use this account only to perform migrations.  
 
@@ -55,9 +55,9 @@ You can use simple commands such as `list` with this account:
 
 ##Performing a migration## {#Performing}
 
-Once you have set up an account, you can use the [`migrate`] (/cli/unix/reference#migrate) command to recursively copy data from the source account into your HP Public Cloud account.  
+Once you have set up an account, you can use the [`migrate`] (/cli/unix/reference#migrate) command to recursively copy data from the source account into your HP Helion Public Cloud account.  
 
-To move files from the `tuna` container in the Rackspace `sharkey` account to the `tarpon` container in your HP Public Cloud account:
+To move files from the `tuna` container in the Rackspace `sharkey` account to the `tarpon` container in your HP Helion Public Cloud account:
 
     $ hpcloud migrate sharkey :tuna :tarpon
     Excon requests with a block are deprecated, pass :response_block instead

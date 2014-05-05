@@ -9,9 +9,9 @@ product: compute
 
 <!-- modeled after HP Cloud Networking Getting Started (network.getting.started.md) -->
 
-Based on Keystone, the OpenStack Identity Service, the HP Cloud Identity Service provides one-stop authentication for all HP Public Cloud offerings. Key terms include:
+Based on Keystone, the OpenStack Identity Service, the HP Cloud Identity Service provides one-stop authentication for all HP Helion Public Cloud offerings. Key terms include:
 
-- User -- A digital representation of a person, system, or service who uses HP Public Cloud. The Identity Service validates that incoming requests are being made by the user who claims to be making the call. Users have a login and may be assigned tokens to access resources. Users can scope their authentication to a tenant which then limits where and how their tokens can be used to interact with services. Users are associated with tenants based on roles assigned to them with that tenant.
+- User -- A digital representation of a person, system, or service who uses HP Helion Public Cloud. The Identity Service validates that incoming requests are being made by the user who claims to be making the call. Users have a login and may be assigned tokens to access resources. Users can scope their authentication to a tenant which then limits where and how their tokens can be used to interact with services. Users are associated with tenants based on roles assigned to them with that tenant.
 
 - Credentials -- Data that belongs to, is owned by, and generally only known by a user that the user can present to prove they are who they are (since nobody else should know that data).
 

@@ -96,7 +96,7 @@ Eden also provides scalability and manageability around services and a way to co
 - Eden service use cases/solutions/how to use/examples
 
 **Peer** A resource pool registry; Allows you to interact with other clouds.
-HP Public is a resource pool registry, which allows you to tap into any OpenStack cloud. This allows for a hybrid cloud approach for sharing resources. Example: using HP Public Cloud Services in conjunction with your internal private cloud services.
+HP Public is a resource pool registry, which allows you to tap into any OpenStack cloud. This allows for a hybrid cloud approach for sharing resources. Example: using HP Helion Public Cloud Services in conjunction with your internal private cloud services.
 
 - [Overview of the Peer service](/cloudos/services/peer/overview)
 - [Getting started with the Peer service](/cloudos/services/peer/getting-started/)

@@ -7,7 +7,7 @@ product: object-storage
 ---
 # HP Cloud Object Storage  API
 
-Surf on over to our [Object Storage API Reference](/api/object-storage) for lots of details on the HP Public Cloud object storage service.  
+Surf on over to our [Object Storage API Reference](/api/object-storage) for lots of details on the HP Helion Public Cloud object storage service.  
 
 <!-- For a detailed overview of how to interact with the Object Storage REST API using cURL:
 

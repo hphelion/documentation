@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Public Cloud CLI"
+title: "HP Helion Public Cloud CLI"
 permalink: /cli/
 
 ---

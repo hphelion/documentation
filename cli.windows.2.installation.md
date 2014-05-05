@@ -84,7 +84,7 @@ Always use the `powershell.exe` appropriate for your OS. From the Windows comman
 
 ##Supply your Credentials## {#SupplyyourCredentials}
 
-The first time that you run the shell you must supply the access key, secret key, and tenant ID that was assigned to you during the registration process. You can find the values for these variables through the [HP Public Cloud Console](https://horizon.hpcloud.com). Click the project menu and select *Roles and API Endpoints*.
+The first time that you run the shell you must supply the access key, secret key, and tenant ID that was assigned to you during the registration process. You can find the values for these variables through the [HP Helion Public Cloud Console](https://horizon.hpcloud.com). Click the project menu and select *Roles and API Endpoints*.
 
 <img src="media/api_keys-2.jpg" width="580" height="471" alt="" />
 

@@ -9,7 +9,7 @@ product: compute
 
 Leveraging [OpenStack Networking](http://www.openstack.org/software/openstack-networking/), HP Cloud Networking is a virtual networking service that provides network connectivity and addressing for HP Cloud compute devices. 
 
-In the 13.5 release, HP Public Cloud compute and networking services are separate entities, integrating services and providing new features. 
+In the 13.5 release, HP Helion Public Cloud compute and networking services are separate entities, integrating services and providing new features. 
 
 You can use the default network to deploy HP Cloud compute virtual servers, or modify the default network to expand networking capabilities.
 
@@ -17,11 +17,11 @@ You can now define and configure your own virtual network topology, including co
 
 To get up and running quickly with your network, see [HP Cloud Networking: Quick start guide](/compute/network-quick-start).
 
-For more detailed information on the HP Public Cloud Networking Service, see [Getting Started with HP Cloud Networking](/compute/network/getting-started).
+For more detailed information on the HP Helion Public Cloud Networking Service, see [Getting Started with HP Cloud Networking](/compute/network/getting-started).
 
 ## Using the console to access Networking ## {#console}
 
-You can use the HP Public Cloud console to access HP Cloud Networking Service. For more information on using the HP Public Cloud console, see [Getting Started with HP Public Cloud Console](/hpcloudconsole).
+You can use the HP Helion Public Cloud console to access HP Cloud Networking Service. For more information on using the HP Helion Public Cloud console, see [Getting Started with HP Helion Public Cloud Console](/hpcloudconsole).
 
 
 ## Using the API to access Networking ## {#API}

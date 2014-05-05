@@ -4,7 +4,7 @@ title: "HP Cloud Release Notes"
 permalink: /release-notes/
 
 ---
-# HP Public Cloud Release Notes #
+# HP Helion Public Cloud Release Notes #
 
 This page contains the following information on our software package:
 
@@ -17,7 +17,7 @@ This page contains the following information on our software package:
 
 ##New and updated in version 13.5## {#v135features}
 
-**New look and feel for the Management Console** - Based on the [OpenStack Horizon project](http://docs.openstack.org/developer/horizon/), the new HP Public Cloud Console interface and user experience is significantly improved from the original classic management console.  This new user interface provides you with project dashboards that display group-related services for easier availability and service management.  Documentation is  provided in-line and embedded throughout the console on many forms, reducing your clicks and improving your console experience. Although workflows may look different, you can still manage your standard functions through the console, including initializing instances, creating volumes, launching images and snapshots, and creating security groups and key pairs.  See [Getting Started with HP Public Cloud Console](/hpcloudconsole) for more information.
+**New look and feel for the Management Console** - Based on the [OpenStack Horizon project](http://docs.openstack.org/developer/horizon/), the new HP Helion Public Cloud Console interface and user experience is significantly improved from the original classic management console.  This new user interface provides you with project dashboards that display group-related services for easier availability and service management.  Documentation is  provided in-line and embedded throughout the console on many forms, reducing your clicks and improving your console experience. Although workflows may look different, you can still manage your standard functions through the console, including initializing instances, creating volumes, launching images and snapshots, and creating security groups and key pairs.  See [Getting Started with HP Helion Public Cloud Console](/hpcloudconsole) for more information.
 
 **Larger compute instances for big data and high-performance computing** -  New larger instance types allow you to run big data, analytics, and high performance computing (HPC) workloads in the public cloud.  You can access instances with up to 120 GB of RAM and up to 16 virtual cores. The new instance types allow even greater flexibility to choose the virtual machine size that best fits your application's compute resource needs.
 
@@ -25,9 +25,9 @@ This page contains the following information on our software package:
 
 **Networking topology visualization** - The new [Horizon-based public cloud console](/hpcloudconsole) inherits network topology infographics.  In addition to visualizing network relationships, you can perform dynamic network management, interactively creating networks and routers, and launching instances through a 2-D visualization scene.
 
-**Faster data upload to the Cloud** - A new bulk import service reduces the time to market for applications requiring existing data by allowing you to quickly and easily load your data into HP Public Cloud block storage or object storage. The new service bypasses the process of transferring large amounts of information over the Internet and allows you to provide hard drives directly to HP's data centers where your data can be rapidly transferred.
+**Faster data upload to the Cloud** - A new bulk import service reduces the time to market for applications requiring existing data by allowing you to quickly and easily load your data into HP Helion Public Cloud block storage or object storage. The new service bypasses the process of transferring large amounts of information over the Internet and allows you to provide hard drives directly to HP's data centers where your data can be rapidly transferred.
 
-**More object storage options** - HP Public Cloud Console users can now setup and control object storage container synchronization across multiple regions. Cross-region replication contributes to a more achievable business continuity plan for disaster recovery options which are often at the forefront of most enterprise organizations priorities.  Public Cloud Console users also have the ability to store duplicate versions of content within these storage containers, to restore from unintended failures or deletions, or for the purpose of data archiving, among others. 
+**More object storage options** - HP Helion Public Cloud Console users can now setup and control object storage container synchronization across multiple regions. Cross-region replication contributes to a more achievable business continuity plan for disaster recovery options which are often at the forefront of most enterprise organizations priorities.  Public Cloud Console users also have the ability to store duplicate versions of content within these storage containers, to restore from unintended failures or deletions, or for the purpose of data archiving, among others. 
 
 **Larger file size transfers via the CLI** - You can now use the Windows CLI to transfer files up to 700MB for downloads and 5GB for uploads, a significant increase in the file size ceiling for transfers via the Windows CLI.
 
@@ -87,7 +87,7 @@ The following are our best-practices recommendations for versions 13.5.
 ####Command-line Interface####
 
 * For best performance when transferring large files (greater than 700MB for downloads and 1GB for uploads), use either the [classic management console](/mc/) or the [UNIX CLI](/cli/unix/) utilities.
-* For easiest password reset, use the [HP Public Cloud Console](/hpcloudconsole) interface or the [classic management console](/mc/) or the [UNIX CLI](/cli/unix/) utilities.
+* For easiest password reset, use the [HP Helion Public Cloud Console](/hpcloudconsole) interface or the [classic management console](/mc/) or the [UNIX CLI](/cli/unix/) utilities.
 * Use the [classic management console](/mc/) to display the `Flavors Details` information rather than the Windows CLI.
 * To create a snapshot for an instance booted from a block volume, follow these steps for best results:<br>
     - Shut down the instance
@@ -108,7 +108,7 @@ The following are our best-practices recommendations for versions 13.5.
 
 ###Known issues### {#Issues}
 
-The following are the known issues for Version 13.5 of the HP Public Cloud software.
+The following are the known issues for Version 13.5 of the HP Helion Public Cloud software.
 
 
 ####Cloud Block Storage####
@@ -118,31 +118,31 @@ The following are the known issues for Version 13.5 of the HP Public Cloud softw
 ####Command-line Interface####
 
 * After successfully launching an instance if you find `ssh` not functioning properly, just relaunch the instance.
-* Sometimes under certain circumstances in the Windows CLI, the `ls` command displays some fields as blank.  To view the contents of these fields, display the information using the [HP Public Cloud Console](/hpcloudconsole) interface or the [classic management console](/mc/) or the [UNIX CLI](/cli/unix/) utilities. The fields are:
+* Sometimes under certain circumstances in the Windows CLI, the `ls` command displays some fields as blank.  To view the contents of these fields, display the information using the [HP Helion Public Cloud Console](/hpcloudconsole) interface or the [classic management console](/mc/) or the [UNIX CLI](/cli/unix/) utilities. The fields are:
     - The `Attached To` and `Server Attached To` fields are may display as blank after you attach a server to a volume using the `[Attach-Volume](/cli/windows/reference#Attach-Volume)` command
     - The `Ext Gateway` field may display as blank after you execute the `[Update-Router](/cli/windows/reference#Update-Router)` command
     - The `Assigned Network Addresses` field may display as blank after you execute the `[New-Server](/cli/windows/reference#New-Server)` command<br>
     
 
-####HP Public Cloud Console####
+####HP Helion Public Cloud Console####
 
-* If you use the Identity service role-based access control (RBAC) at the panel level in the [HP Public Cloud Console](/hpcloudconsole), you may see action and service options that exceed your permission levels.  You can access these features through the CLI or the the [classic management console](/mc/).
-* If you encounter a quota issue when performing network tasks while using the [HP Public Cloud Console](/hpcloudconsole), use the [classic management console](/mc/).
+* If you use the Identity service role-based access control (RBAC) at the panel level in the [HP Helion Public Cloud Console](/hpcloudconsole), you may see action and service options that exceed your permission levels.  You can access these features through the CLI or the the [classic management console](/mc/).
+* If you encounter a quota issue when performing network tasks while using the [HP Helion Public Cloud Console](/hpcloudconsole), use the [classic management console](/mc/).
 
 
 <!--##Resolved Issues in Version 13.5## {#v135resolved}
 
 
-The following are resolved issues in version 13.5 of the HP Public Cloud software:
+The following are resolved issues in version 13.5 of the HP Helion Public Cloud software:
 
 * items
 -->
 
 ##For further information## {#SeeAlso}
 
-Additional related information about HP Public Cloud can be found in the following links. Please note that HP Public Cloud 12.12 support will be discontinued when the product is fully deprecated on June 1, 2014
+Additional related information about HP Helion Public Cloud can be found in the following links. Please note that HP Helion Public Cloud 12.12 support will be discontinued when the product is fully deprecated on June 1, 2014
 
-* [Getting Started with HP Public Cloud Console](/hpcloudconsole) for detailed console information.
+* [Getting Started with HP Helion Public Cloud Console](/hpcloudconsole) for detailed console information.
 * [HP Cloud version 13.5 overview](/version-overview/) for an overview of the 13.5 release set.
 * [HP Cloud Service APIs (v13.5)](/api/v13/) for an overview of the 13.5 API specifications.
 * [migration overview page](/migration-overview/) for information on migrating from version 12.12 to 13.5.

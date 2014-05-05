@@ -46,7 +46,7 @@ To change the availability zone of the compute service from its current setting 
 
     $ hpcloud account:edit account2 compute_availability_zone=az-2.region-a.geo-1
 
-To display the active availability zones for your services, You can find the values for these variables through the [HP Public Cloud Console](https://horizon.hpcloud.com). Click the project menu and select *Roles and API Endpoints*.  
+To display the active availability zones for your services, You can find the values for these variables through the [HP Helion Public Cloud Console](https://horizon.hpcloud.com). Click the project menu and select *Roles and API Endpoints*.  
 
 ## Updating Account Credentials ## {#ModifyingAccountCredentials}
 

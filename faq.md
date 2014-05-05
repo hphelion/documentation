@@ -1,10 +1,10 @@
 ---
 layout: default
-title: "HP Public Cloud FAQ"
+title: "HP Helion Public Cloud FAQ"
 permalink: /faq/
 
 ---
-# HP Public Cloud FAQ
+# HP Helion Public Cloud FAQ
 
 What is a web site without an FAQ or two?  Well, a pain in the neck to use, honestly; that's why we've tried to provide you with a comprehensive one here.  If you have any suggestions on additions or improvements to our little effort here, please let us know on the forums!
 

@@ -34,7 +34,7 @@ about your environment. After you have captured the requisite information about 
 (Admin Node), you will be able to start deploying the services that make up your cloud.
 
 If you are interested in creating a public cloud, start in the 
-<a href="http://docs.hpcloud.com" target="hpcs"> HP Public Cloud Overview.</a>  This page opens in a new browser tab or window.
+<a href="http://docs.hpcloud.com" target="hpcs"> HP Helion Public Cloud Overview.</a>  This page opens in a new browser tab or window.
 
 ## Cloud Environment Types
 

@@ -6,7 +6,7 @@ permalink: /noblecode/
 ---
 #HP Noble Code App Contest: Getting Started
 
-Welcome! We're looking forward to seeing what you code for good in the HP Noble Code App contest. Here you'll find a collection of information to help you develop in the HP Public Cloud. As the contest progresses we will be adding information, tips, and scripts to help you on your way, so check back.
+Welcome! We're looking forward to seeing what you code for good in the HP Noble Code App contest. Here you'll find a collection of information to help you develop in the HP Helion Public Cloud. As the contest progresses we will be adding information, tips, and scripts to help you on your way, so check back.
 
 Some links to get you started:
 
@@ -16,7 +16,7 @@ Some links to get you started:
 * [LBaaS](http://docs.hpcloud.com/lbaas)
 * [Marketplace](https://marketplace.hpcloud.com/)
 
-If you need to check on your account you will need to use the [Classic Console](https://account.hpcloud.com/login), but for all your programming we recommend using the new Horizon Console. This new console uses the OpenStack Horizon dashboard module and will be the HP Public Cloud console going forward. Let us know what you think.
+If you need to check on your account you will need to use the [Classic Console](https://account.hpcloud.com/login), but for all your programming we recommend using the new Horizon Console. This new console uses the OpenStack Horizon dashboard module and will be the HP Helion Public Cloud console going forward. Let us know what you think.
 
 * [Management Console](https://horizon.hpcloud.com/)
 

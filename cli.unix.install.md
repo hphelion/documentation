@@ -57,7 +57,7 @@ To install the UNIX CLI for HP Cloud software, follow these steps:
 
         hpcloud account:setup
 
-You can find the values for these variables on through the [HP Public Cloud Console](https://horizon.hpcloud.com). Click the project menu and select *Manage Access Keys* and *Roles and API Endpoints*.  
+You can find the values for these variables on through the [HP Helion Public Cloud Console](https://horizon.hpcloud.com). Click the project menu and select *Manage Access Keys* and *Roles and API Endpoints*.  
 
 <img src="media/api_keys-2.jpg" width="580" height="471" alt="" />
 

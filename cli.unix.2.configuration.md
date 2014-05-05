@@ -47,7 +47,7 @@ Get detailed help for any command/task by running:
 
 ## Account Setup ## {#AccountSetup}
 
-**Note: During a new configuration, you must supply the access key, secret key, and tenant ID assigned during the registration process; You can find the values for these variables through the [HP Public Cloud Console](https://horizon.hpcloud.com). Click the project menu and select *Manage Access Keys* and *Account Info*.  You can also define the availability zone during the initial setup.**
+**Note: During a new configuration, you must supply the access key, secret key, and tenant ID assigned during the registration process; You can find the values for these variables through the [HP Helion Public Cloud Console](https://horizon.hpcloud.com). Click the project menu and select *Manage Access Keys* and *Account Info*.  You can also define the availability zone during the initial setup.**
 
 To begin account setup, run:
 

@@ -14,7 +14,7 @@ This overview outlines the tasks you will need to perform, based upon the operat
 
 The tasks require software tools such as the UNIX CLI for HP Cloud, the Pythons Novaclient CLI, or the HP Cloud Compute Service API. Before deciding which tools to use, make sure the tools are installed and configured on the local system and your instances, as required. 
 
-**Note**: Some of the links in this document contain information on using the Horizon-based HP Public Cloud Console to interact with your instances. HP Public Cloud Console is an alternative method for performing these tasks. The procedures in this document for using the classic management console are correct and should be followed at this time.
+**Note**: Some of the links in this document contain information on using the Horizon-based HP Helion Public Cloud Console to interact with your instances. HP Helion Public Cloud Console is an alternative method for performing these tasks. The procedures in this document for using the classic management console are correct and should be followed at this time.
 
 If you have any questions or concerns about which files to copy, [contact our Support team](#support).
 

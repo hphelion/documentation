@@ -7,10 +7,10 @@ product: jclouds
 ---
 # HP Cloud jclouds Java/Clojure Bindings
 
-HP has developed an HP Cloud Compute jclouds provider for the [jclouds](http://www.jclouds.org) library.  By using this HP Cloud language binding, Java/Clojure developers can write applications that interact with HP Public Cloud without having to deal with the underlying REST API or XML document formats.
+HP has developed an HP Cloud Compute jclouds provider for the [jclouds](http://www.jclouds.org) library.  By using this HP Cloud language binding, Java/Clojure developers can write applications that interact with HP Helion Public Cloud without having to deal with the underlying REST API or XML document formats.
 <!--add a link to a zip file; jeremy will provide the link, similar to how it is on the -->
 
-The HP Cloud Compute jclouds provider extends the functionality of the jclouds OpenStack Nova API provider and provides metadata specific to HP Public Cloud. 
+The HP Cloud Compute jclouds provider extends the functionality of the jclouds OpenStack Nova API provider and provides metadata specific to HP Helion Public Cloud. 
 <!--Please refer to the jclouds documentation on how to access the [BlobStore API](http://www.jclouds.org/documentation/userguide/blobstore-guide) abstraction, as well as gaining access to the provider's API specific context.-->
 
 [**Download** the jClouds bindings package](http://jclouds.apache.org/start/install/); go to the **Download source** tab for the latest version.

@@ -53,7 +53,7 @@ All of the procedures in this section require that you [be able to access](#acce
 
 To create a network and subnet, use the following steps:
 
-1. Login to the [HP Public Cloud Console](https://horizon.hpcloud.com/).
+1. Login to the [HP Helion Public Cloud Console](https://horizon.hpcloud.com/).
 
 2. Select the [Networks tab](#NetworkTab) under the Project section.
 
