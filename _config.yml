@@ -217,7 +217,7 @@ navigation:
   - text: Release Notes
     url: /helion/community/release-notes/  	
   - text: FAQ
-    url: /helion/community/faqs/ 		
+    url: /helion/community/faq/ 		
   - text: Installation & Configuration
     url: /helion/community/install-virtual/		
   - text: Related Topics
