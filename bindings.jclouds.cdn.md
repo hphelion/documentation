@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion Public Cloud jclouds Binding CDN Examples"
+title: "HP Helion Public Cloud: jclouds Binding CDN Examples"
 permalink: /bindings/jclouds/cdn/
 product: jclouds
 
