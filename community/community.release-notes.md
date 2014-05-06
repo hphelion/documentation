@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack® Community Release Notes"
-permalink: /cloudos/community/release-notes/
+permalink: /helion/community/release-notes/
 product: community
 
 ---
