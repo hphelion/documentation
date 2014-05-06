@@ -22,7 +22,7 @@ This topic contains the following information about the HP Helion OpenStack Comm
 
 ##Features in HP Helion OpenStack Community## {#features}
 
-**Pure OpenStack technology** &mdash; Based on the "Icehouse" release, the Community edition employs the OpenStack community standards with no mix of proprietary or non-OpenStack tools, and leverages the latest community innovations with close-to-trunk releases to ensure you are always using the most up-to-date code. Released under open source license for true open source value proposition.
+**Pure OpenStack technology** &mdash; Based on the Icehouse release, the Community edition employs the OpenStack community standards with no mix of proprietary or non-OpenStack tools, and leverages the latest community innovations with close-to-trunk releases to ensure you are always using the most up-to-date code. Released under open source license for true open source value proposition.
 
 **Speeds cloud service delivery** &mdash; Ideal launch pad for your small-scale open cloud environment or proof-of-concept cloud services, with simple, fast creation of cloud environments and applications to speed business value.
 
