@@ -226,8 +226,7 @@ Creating an image of an active server produces a state 'snapshot' of the server 
 
 To perform a quick-connect to an existing server instance: 
 
-<1--DOUG rework-->
-**Note**: This currently works with Windows Instances only. In order for the `connect-server` command to work, your keypair *.pem* file needs to be in the appropriate location. The default location is `C:\Users\*username*\Documents\HP\`.
+**Note**: In order for the `connect-server` command to work, your keypair *.pem* file needs to be in the appropriate location. The default location is `C:\Users\*username*\Documents\HP\`.
 
     PS HPCS:\\>  Connect-Server 2111
 
