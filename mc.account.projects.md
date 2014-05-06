@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "Management console: Managing projects"
+title: "Management Console: Managing Projects"
 permalink: /mc/account/projects/
 product: mc-account
 
 ---
-# Management console: Managing projects
+# Management Console: Managing Projects
 
 This page provides describes to use the management console (MC) to manage your projects with the manage projects screen.  This page covers the following topics:
 

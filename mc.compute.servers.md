@@ -7,7 +7,7 @@ product: mc-compute
 ---
 # Management console: Servers screen
 
-The management console (MC) compute dashboard server screen is the default screen you see when you click the `Manage` button in the [compute dashboard](/mc/compute/).  The MC server screen allows you to create new servers, display your server inventory, view the console log, and perform other server-related compute functions.  This page covers the following topics about the MC compute server screen:
+The management console (MC) Compute dashboard server screen is the default screen you see when you click the `Manage` button in the [compute dashboard](/mc/compute/).  The MC server screen allows you to create new servers, display your server inventory, view the console log, and perform other server-related Compute functions.  This page covers the following topics about the MC Compute server screen:
 
 * [Servers screen overview](#Overview)
 * [For further information](#ForFurtherInformation)
@@ -34,5 +34,5 @@ Clicking the `+ Create Server` button to launch the [new server screen](/mc/comp
 
 ##For further information## {#ForFurtherInformation}
 
-* For basic information about our HP Helion Public Cloud compute services, take a look at the [HP Helion Public Cloud compute overview](/compute/) page
+* For basic information about our HP Helion Public Cloud Compute services, take a look at the [HP Helion Public Cloud Compute overview](/compute/) page
 * Use the MC [site map](/mc/sitemap) for a full list of all available MC documentation pages

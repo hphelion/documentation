@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "HP Helion Public Cloud Fog Binding Object Storage Examples"
+title: "HP Helion Public Cloud: Fog Binding Object Storage Examples"
 permalink: /bindings/fog/object-storage/
 product: fog
 
 ---
-#Ruby Fog Bindings for HP Helion Public Cloud: Object Storage Examples
+#HP Helion Public Cloud: Fog Bindings Object Storage Examples
 
 
 ##Important Notice##

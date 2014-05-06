@@ -1,13 +1,13 @@
 ---
 layout: default
-title: "HP Helion Public Cloud Environment CLI Software for Windows PowerShell Compute Examples"
+title: "HP Helion Public Cloud CLI Software for Windows PowerShell Compute Examples"
 permalink: /cli/windows/2/compute/
 product: win-2-cli
 
 ---
-# HP Helion Public Cloud Environment CLI Software for Windows PowerShell Compute Examples
+# HP Helion Public Cloud CLI Software for Windows PowerShell Compute Examples
 
-This page provides you some examples of how to use the various commands (sometimes called "cmdlets") for HP Helion Public Cloud environment CLI software for Windows PowerShell implementation of Compute.
+This page provides you some examples of how to use the various commands (sometimes called "cmdlets") for HP Helion Public Cloud CLI software for Windows PowerShell implementation of Compute.
 
 * [Navigation](#Navigation)
 * [Availability Zone Color Management](#ColorManagement)
@@ -226,8 +226,7 @@ Creating an image of an active server produces a state 'snapshot' of the server 
 
 To perform a quick-connect to an existing server instance: 
 
-<1--DOUG rework-->
-**Note**: This currently works with Windows Instances only. In order for the `connect-server` command to work, your keypair *.pem* file needs to be in the appropriate location. The default location is `C:\Users\*username*\Documents\HP\`.
+**Note**: In order for the `connect-server` command to work, your keypair *.pem* file needs to be in the appropriate location. The default location is `C:\Users\*username*\Documents\HP\`.
 
     PS HPCS:\\>  Connect-Server 2111
 
@@ -282,6 +281,7 @@ For Windows Instances only, if you change your Windows password manually via [RD
     PS HPCS:\> reset-password -id 1234 -p "Thisisalongpassword!"
 
 This resets the password for server `1234` to  `Thisisalongpassword!`.
+
  
 ##Floating IP Management## {#IPManagement}
 

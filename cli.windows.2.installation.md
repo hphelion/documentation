@@ -1,36 +1,37 @@
 ---
 layout: default
-title: "HP Helion Public Cloud Environment CLI Software for Windows PowerShell Installation"
+title: "HP Helion Public Cloud CLI Software for Windows PowerShell Installation"
 permalink: /cli/windows/2/installation/
 product: win-2-cli
 
 ---
-# HP Helion Public Cloud Environment CLI Software for Windows PowerShell Installation
+# HP Helion Public Cloud CLI Software for Windows PowerShell Installation
 
-To get the HP Helion Public Cloud Environment CLI Software for Windows PowerShell installed and running properly you must complete the following tasks:
+To get the HP Helion Public Cloud CLI Software for Windows PowerShell installed and running properly you must complete the following tasks:
 
-*  [Installation Prerequisites](#InstallationPrerequisites)
+*  [Installation prerequisites](#InstallationPrerequisites)
 *  [Run the installer package](#RuntheInstallerPackage)
 *  [Choose the appropriate Windows PowerShell executable](#ChooseExecutable)
 *  [Supply your credentials](#SupplyyourCredentials)
 *  [Navigate to the command line](#NavigatetotheCommandLine)
 *  [Load the shell and register the module](#LoadtheShellandModuleRegistration)
+*  [#Upgrade to a new version](#Upgrading)
 
 This page also describes how to [upgrade to a new version](#Upgrading) of the Windows CLI software.
 
-[Please download the latest version of the HP Helion Public Cloud environment CLI software package for Windows PowerShell here (Version 1.3.5.7)](/file/WinCLI-1.3.5.7.zip)! 
+[Please download the latest version of the HP Helion Public Cloud CLI software package for Windows PowerShell here (Version 1.3.5.7)](/file/WinCLI-1.3.5.7.zip)! 
 
-##Installation Prerequisites## {#InstallationPrerequisites}
+##Installation prerequisites## {#InstallationPrerequisites}
 
-The following are prerequisites for installing and running the HP Helion Public Cloud Environment CLI Software for Windows PowerShell.
+The following are prerequisites for installing and running the HP Helion Public Cloud CLI Software for Windows PowerShell.
 
-###Install the Microsoft .NET Framework
+###Install the Microsoft .NET framework
 
 This product requires the full (not client profile) 4.0 or higher version of the Microsoft .NET Framework to install properly which can be downloaded [at the Microsoft web site](http://www.microsoft.com/net/).
 
-###Set the Required Execution Policy### {#SettingtheRequiredExecutionPolicy}
+###Set the required execution policy### {#SettingtheRequiredExecutionPolicy}
 
-To use the HP Helion Public Cloud Environment CLI Software for Windows PowerShell, you must make sure that your Powershell environment is capable of executing 3rd party modules. 
+To use the HP Helion Public Cloud CLI Software for Windows PowerShell, you must make sure that your Powershell environment is capable of executing 3rd party modules. 
 
 **Note**: If you are performing a re-installation of the software package, you can skip this step.  This step is applicable only for a fresh installation.
 
@@ -50,9 +51,9 @@ Open a PowerShell window as the administrator and issue the command `set-executi
 Close the Powershell window and reopen as administrator for the policy changes to take effect.
 
  
-##Run the Installer Package## {#RunningtheInstallerPackage}
+##Run the installer package## {#RuntheInstallerPackage}
 
-Download the latest HP Helion Public Cloud environment CLI software package for Windows PowerShell.  (See the [Release Notes](/cli/windows/release-notes) for details on the current release.) 
+Download the latest HP Helion Public Cloud CLI software package for Windows PowerShell.  (See the [Release Notes](/cli/windows/release-notes) for details on the current release.) 
 
 Launching the Windows installer package loads the following wizard.
 
@@ -77,12 +78,12 @@ The installation now proceeds on your system.
 <img src="media/wincli_install05.png" width="580" height="475" alt="" />
 
 
-##Choose the Appropriate Windows PowerShell Executable## {#ChooseExecutable}
+##Choose the appropriate Windows PowerShell Executable## {#ChooseExecutable}
 
 Always use the `powershell.exe` appropriate for your OS. From the Windows command line, for 64-bit systems, use `\SysWOW64\powershell.exe`; for 32-bit systems, use `\System32\powershell.exe`.  From the Windows `Start` menu, make sure you select the appropriate PowerShell program.
 
 
-##Supply your Credentials## {#SupplyyourCredentials}
+##Supply your credentials## {#SupplyyourCredentials}
 
 The first time that you run the shell you must supply the access key, secret key, and tenant ID that was assigned to you during the registration process. You can find the values for these variables through the [HP Helion Public Cloud Console](https://horizon.hpcloud.com). Click the project menu and select *Roles and API Endpoints*.
 
@@ -111,18 +112,18 @@ You only need to enter these credentials the first time you run the shell.  Afte
 <!--<img src="media/PromptCred.jpg" width="580" height="228" alt="" />-->
 
 
-##Navigate to the Command Line## {#NavigatetotheCommandLine}
+##Navigate to the command line## {#NavigatetotheCommandLine}
 
-To issue HP Helion Public Cloud environment CLI Windows PowerShell commands (also sometimes called *cmdlets*), you need to first navigate to a container or the HP Helion Public Cloud Services (HPCS) provider, which you can do by issuing the following command:
+To issue HP Helion Public Cloud CLI Windows PowerShell commands (also sometimes called *cmdlets*), you need to first navigate to a container or the HP Helion Public Cloud Services (HPCS) provider, which you can do by issuing the following command:
 
     cd HPCS:
 
-##Loading the Shell and Module Registration## {#LoadingtheShellandModuleRegistration}
+##Load the shell and module registration## {#LoadingtheShellandModuleRegistration}
 
 If you have installed the software through the installer package, registration happens automatically through a supplied Powershell Profile. If the profile was not used, you must move to 
 the install folder specified while in the setup wizard. From there you can register the module with Import-Module .\Climanifest.psd1. Note that this only last for the duration of the Powershell session and it's recommended to add this command to your Profile for best results.
 
-##Upgrading to a New Version## {#Upgrading}
+##Upgrade to a new version## {#Upgrading}
 
 When you upgrade to a new version of the HP Helion Public Cloud environment CLI software for Windows PowerShell, you must first de-install the previous version of the software.  You can do this using the Windows `Add/Remove Programs` or `Programs and Features` utility (depending on the version of Windows you're using).  Search through the listing of programs for "HPCS-Powershell" and uninstall it.  
 

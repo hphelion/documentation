@@ -5,7 +5,7 @@ permalink: /cli/nova/
 product: nova-cli
 
 ---
-#Work with HP Helion Public Cloud using the Cloud 13.5 CLI#
+#Work with HP Helion Public Cloud using the 13.5 CLI#
 
 You can interact with HP Helion Public Cloud using the native Openstack Command-Line Interface (CLI) tools.
  

@@ -1,20 +1,20 @@
 ---
 layout: default
-title: "HP Helion Public Cloud Environment CLI Software for Windows PowerShell Object Storage Examples"
+title: "HP Helion Public Cloud CLI Software for Windows PowerShell Object Storage Examples"
 permalink: /cli/windows/2/containers-and-folders/
 product: win-2-cli
 
 ---
-# HP Helion Public Cloud Environment CLI Software for Windows PowerShell Object Storage Examples
+# HP Helion Public Cloud CLI Software for Windows PowerShell: Object Storage Examples
 
-One of the key features of the HP Helion Public Cloud environment CLI software for Windows PowerShell Object Storage is that it provides a way to store and retrieve objects in a highly redundant cluster of publicly accessible physical machines hosted in HP data centers.  This page provides examples for how to use Object Storage via the Windows PowerShell CLI.  (See the [HP Helion Public Cloud Object Storage Overview](/object-storage) for overview information on Object Storage.)
+One of the key features of the HP Helion Public Cloud CLI software for Windows PowerShell Object Storage is that it provides a way to store and retrieve objects in a highly redundant cluster of publicly accessible physical machines hosted in HP data centers.  This page provides examples for how to use Object Storage via the Windows PowerShell CLI.  (See the [HP Helion Public Cloud Object Storage Overview](/object-storage) for overview information on Object Storage.)
 
 **Note:** When referencing an argument, like a container name, that has a space, use quotes to access that resource. For example:
      
      PS: HPCS:\> cd "my container:"
      PS: HPCS:\> new-container -name "my new container"
 
-**Note**: The HP Helion Public Cloud environment CLI software for Windows PowerShell supports the [standard Windows wildcard](http://msdn.microsoft.com/en-us/library/windows/desktop/aa717088(v=vs.85).aspx) characters asterix (`*`), question mark (`?`), and range brackets (`[]`) for the `ls, copy` and `delete` object storage commands.
+**Note**: The HP Helion Public Cloud CLI software for Windows PowerShell supports the [standard Windows wildcard](http://msdn.microsoft.com/en-us/library/windows/desktop/aa717088(v=vs.85).aspx) characters asterix (`*`), question mark (`?`), and range brackets (`[]`) for the `ls, copy` and `delete` object storage commands.
 
 ##Interacting with the Storage Service## {#InteractingwiththeStorageService}
 

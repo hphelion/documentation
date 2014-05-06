@@ -5,7 +5,7 @@ permalink: /whats_new_with_HP_Cloud_Console/
 product: HP Helion Public Cloud Console
 ---
 
-# What's new with the HP Helion Public Cloud Console #
+# What's New with the HP Helion Public Cloud Console #
 
 The HP Helion Public Cloud Console now includes the following features:
 

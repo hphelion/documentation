@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "HP Helion Public Cloud Extensions to Ruby Fog Binding"
+title: "HP Helion Public Cloud: Extensions to Ruby Fog Binding"
 permalink: /bindings/fog/
 product: fog
 
 ---
-# Ruby Fog Bindings for HP Helion Public Cloud: Extensions #
+# HP Helion Public Cloud: Extensions to Ruby Fog Bindings #
 
 ##Important Notice##
 

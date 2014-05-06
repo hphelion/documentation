@@ -1,14 +1,14 @@
 ---
 layout: default
-title: "HP Helion Public Cloud Environment CLI Software for Windows PowerShell Command Line Reference"
+title: "HP Helion Public Cloud CLI Software for Windows PowerShell Command Line Reference"
 permalink: /cli/windows/2/reference/
 product: win-2-cli
 
 ---
 <!-- Removed all html tags -->
-# HP Helion Public Cloud Environment CLI Software for Windows PowerShell Command Line Reference
+# HP Helion Public Cloud CLI Software for Windows PowerShell Command Line Reference
 
-Below you can find a full reference of supported HP Helion Public Cloud environment CLI software for Windows PowerShell commands (sometimes called "cmdlets").  The commands are broken up into separate sections by functional area:
+Below you can find a full reference of supported HP Helion Public Cloud CLI software for Windows PowerShell commands (sometimes called "cmdlets").  The commands are broken up into separate sections by functional area:
 
 * [Non-service-specific](#Nonservicespecific)
 * [Compute](#Compute)
@@ -16,7 +16,7 @@ Below you can find a full reference of supported HP Helion Public Cloud environm
 * [CDN](#CDN)
 * [Block Storage](#BlockStorage)
 
-**Note**: The HP Helion Public Cloud environment CLI software for Windows PowerShell cmdlets are not case specific; in other words, `Get-Catalog` and `get-catalog` function identically. When referencing an argument, like a container name, that has a space, use quotes to access that resource. For example:
+**Note**: The HP Helion Public Cloud CLI software for Windows PowerShell cmdlets are not case specific; in other words, `Get-Catalog` and `get-catalog` function identically. When referencing an argument, like a container name, that has a space, use quotes to access that resource. For example:
      
      PS: HPCS:\> cd "my container:"
      PS: HPCS:\> new-container -name "my new container"

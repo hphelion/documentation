@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "HP Helion Public Cloud jclouds Binding Object Storage Examples"
+title: "HP Helion Public Cloud: jclouds Binding Object Storage Examples"
 permalink: /bindings/jclouds/object-storage/
 product: jclouds
 
 ---
-# HP Helion Public Cloud jclouds Binding Object Storage Examples
+# HP Helion Public Cloud: jclouds Binding Object Storage Examples
 
 This page provides you with examples of how to use the jclouds binding to perform object storage tasks.  
 
@@ -13,7 +13,7 @@ This page provides you with examples of how to use the jclouds binding to perfor
 
         <This_is_a_variable>  
 
-##Preparing to Use the jclouds BlobStore API## {#PreparingtoUsethejcloudsBlobStoreAPI}  
+##Preparing to use the jclouds BlobStore API## {#PreparingtoUsethejcloudsBlobStoreAPI}  
 
 Before you can execute the object storage commands, you need to perform the following steps: 
 
@@ -62,12 +62,12 @@ Deleting an existing directory/container:
         # Note: directory needs to be empty before it can be deleted!
         blobStore.deleteContainer(<container>);
 
-##Using the Provider-Specific API## {#UsingtheProviderSpecificAPI}
+##Using the provider-specific API## {#UsingtheProviderSpecificAPI}
 
         HPCloudObjectStorageClient hpcloudClient =
                 HPCloudObjectStorageClient.class.cast(context.getProviderSpecificContext().getApi());
 
-##Using the Object Storage CLI with the Provider-Specific API## {#UsingObjectStoragewiththeProviderSpecificAPI}
+##Using the object storage CLI with the provider-specific API## {#UsingObjectStoragewiththeProviderSpecificAPI}
 
 
 Listing all directories/containers for the given account:
