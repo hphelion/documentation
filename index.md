@@ -9,37 +9,50 @@ permalink: /
 
 # Welcome to HP Helion Documentation
 
-HP Cloud provides public, private, and managed cloud solutions to get you moving on your cloud journey. For the times when you need to do something come here for all of our documentation resources and references. You can find help for the following:
+HP Helion provides public, private, and managed cloud solutions to get you moving on your cloud journey. Whichever HP Helion product you are using, we have all the documentation resources and references for you right here. 
 
 <div style=" text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table width="560px" border="0" cellpadding="2" cellspacing="2" style="background-color: #ffffff;">
+
 <tr valign="top">
-<td style="border-width : 0px;"><p style=" text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><span style=" background-color: transparent; text-decoration: none;"><a href="//cloudos/community/">HP Helion OpenStack&reg; Community</a></span></p>
+<td style="border-width : 0px;"><p style=" text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><span style=" background-color: transparent; text-decoration: none;"><a href="/helion/community/">HP Helion OpenStack&reg; Community</a></span></p>
 </td>
-<td>this is a description</td>
+<td>Pure and free-to-license distribution of OpenStack technology coupled with a Linux operating system that speeds deployment and simplifies the management of small scale open cloud environments. </td>
 </tr>
 
 <tr valign="top">
 <td style="border-width : 0px;"><p style=" text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><span style=" background-color: transparent; text-decoration: none;"><a href="/pc-overview/">HP Helion Public Cloud</a></span></p>
 </td>
-<td>this is a description</td>
+<td>Provides a transparent, enterprise-grade public cloud based on OpenStack technology with on-demand, pay-as-you-go cloud services for computing and storage infrastructure as well as platform services.
+</td>
 </tr>
 
 <tr valign="top">
 <td style="border-width : 0px;"><p style=" text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><span style=" background-color: transparent; text-decoration: none;"><a href="/cloudos/">HP Cloud OS</a></span></p>
 </td>
-<td>this is a description</td>
+<td>Provides technology for rapid innovation and the beneficial economics of an open source approach. 
+</td>
 </tr>
 
 <tr valign="top">
 <td style="border-width : 0px;"><p style=" text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><span style=" background-color: transparent; text-decoration: none;"><a href="/cloudos/moonshot/">Cloud OS for Moonshot</a></span></p>
 </td>
-<td>this is a description</td>
+<td>Enables you to efficiently create and run cloud environments using Moonshot servers to support a wide range of complex IT demands, from cloud-based applications to social media, big data and mobility.
+</td>
 </tr>
 
 <tr valign="top">
-<td style="border-width : 0px;"><p style=" text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><span style=" background-color: transparent; text-decoration: none;"><a href="http://www.hp.com/go/cloudsystem/docs">HP CloudSystem</a></span></p>
+<td style="border-width : 0px;"><p style=" text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><span style=" background-color: transparent; text-decoration: none;"><a href="http://www.hp.com/go/cloudsystem/docs">HP CloudSystem Foundation</a></span></p>
 </td>
-<td>this is a description</td>
+<td>Integrates hardware and software to deliver core Infrastructure as a Service provisioning and lifecycle management of compute, network and storage resources.
+</td>
 </tr>
+
+<tr valign="top">
+<td style="border-width : 0px;"><p style=" text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><span style=" background-color: transparent; text-decoration: none;"><a href="http://www.hp.com/go/cloudsystem/docs">HP CloudSystem Enterprise</a></span></p>
+</td>
+<td>Expands on CloudSystem Foundation to integrate servers, storage, networking, security, and management to automate the lifecycle for hybrid service delivery.
+</td>
+</tr>
+
 </table>
 </div>

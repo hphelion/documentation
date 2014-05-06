@@ -5,7 +5,7 @@ permalink: /cli/windows/2/containers-and-folders/
 product: win-2-cli
 
 ---
-# HP Helion Public Cloud CLI Software for Windows PowerShell Object Storage Examples
+# HP Helion Public Cloud CLI Software for Windows PowerShell: Object Storage Examples
 
 One of the key features of the HP Helion Public Cloud CLI software for Windows PowerShell Object Storage is that it provides a way to store and retrieve objects in a highly redundant cluster of publicly accessible physical machines hosted in HP data centers.  This page provides examples for how to use Object Storage via the Windows PowerShell CLI.  (See the [HP Helion Public Cloud Object Storage Overview](/object-storage) for overview information on Object Storage.)
 
