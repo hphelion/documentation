@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack Community Site Index"
-permalink: /cloudos/community/siteindex/
+permalink: /helion/community/siteindex/
 product: community
 
 ---
@@ -21,21 +21,21 @@ PageRefresh();
 
 # HP Helion OpenStack&reg; Community Site Index
 
-#### [HP Helion OpenStack Community Documentation Home](/cloudos/community)
+#### [HP Helion OpenStack Community Documentation Home](/helion/community)
 
-<!-- #### [HP Helion OpenStack Community Edition Open Source and Third-Party Software License Agreements](/cloudos/community/community-3rd-party-license-agreements/) -->
+<!-- #### [HP Helion OpenStack Community Edition Open Source and Third-Party Software License Agreements](/helion/community/community-3rd-party-license-agreements/) -->
 
-#### [Getting started with HP Helion OpenStack Community](/cloudos/community/)
+#### [Getting started with HP Helion OpenStack Community](/helion/community/)
 
-* [Release notes](/cloudos/community/release-notes/) 
-* [FAQ](/cloudos/community/faqs/)  
-* [Related topics](/cloudos/community/related-links/)
+* [Release notes](/helion/community/release-notes/) 
+* [FAQ](/helion/community/faqs/)  
+* [Related topics](/helion/community/related-links/)
 
-#### [Install &amp; configure your HP Helion OpenStack Community  cloud](/cloudos/community/install/)
+#### [Install &amp; configure your HP Helion OpenStack Community  cloud](/helion/community/install/)
 
 
 
-#### [OpenStack reference](/cloudos/openstack/)
+#### [OpenStack reference](/helion/openstack/)
  
 * [OpenStack documentation home page](http://docs.openstack.org/)
 * [OpenStack Glossary](http://docs.openstack.org/glossary/content/glossary.html)
