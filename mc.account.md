@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "Management console account and services dashboard"
+title: "Management Console Account and Services Dashboard"
 permalink: /mc/account/
 product: mc-account
 
 ---
-# Management console account and services dashboard
+# Management Console Account and Services Dashboard
 
 This page provides you with an overview of the management console (MC) account and services dashboard, which allows you to display and manage your account and services information.  This page covers the following topics:
 
