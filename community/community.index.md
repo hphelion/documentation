@@ -30,7 +30,7 @@ Use the following links to get started with HP Helion OpenStack Community editio
 
 * [Release notes](/helion/community/release-notes/)
 * [Installation and configuration](/helion/community/install-virtual/) 
-* [FAQ](/helion/community/faqs/)
+* [FAQ](/helion/community/faq/)
 * [Related topics](/helion/community/related-links/)
 * [Documentation site index](/helion/siteindex/)
 
