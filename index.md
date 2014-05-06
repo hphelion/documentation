@@ -12,8 +12,9 @@ permalink: /
 HP Helion provides public, private, and managed cloud solutions to get you moving on your cloud journey. Whichever HP Helion product you are using, we have all the documentation resources and references for you right here. 
 
 <div style=" text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table width="560px" border="0" cellpadding="2" cellspacing="2" style="background-color: #ffffff;">
+
 <tr valign="top">
-<td style="border-width : 0px;"><p style=" text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><span style=" background-color: transparent; text-decoration: none;"><a href="/cloudos/community/">HP Helion OpenStack&reg; Community</a></span></p>
+<td style="border-width : 0px;"><p style=" text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><span style=" background-color: transparent; text-decoration: none;"><a href="/helion/community/">HP Helion OpenStack&reg; Community</a></span></p>
 </td>
 <td>Pure and free-to-license distribution of OpenStack technology coupled with a Linux operating system that speeds deployment and simplifies the management of small scale open cloud environments. </td>
 </tr>
