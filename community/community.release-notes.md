@@ -10,7 +10,7 @@ product: community
 <!--**Product Name:** HP Helion OpenStack&reg; Community
 **OpenStack&reg; release name:** Icehouse-->
 
-Thanks for installing the HP Helion OpenStack Community edition! This initial "cloud-in-a-box" virtual deployment allows you to evaluate the Community edition and Icehouse release of OpenStack.  Frequent updates will be available—approximately every 6 weeks—to remain as close to the OpenStack trunk release as possible.  The Community edition is the foundational technology for the HP Helion portfolio of products, allowing HP Helion products to quickly leverage OpenStack capabilities.
+Thanks for installing the HP Helion OpenStack Community edition! This initial "cloud-in-a-box" virtual deployment allows you to evaluate the Community edition and Icehouse release of OpenStack.  Frequent updates will be available&mdash;approximately every 6 weeks&mdash;to remain as close to the OpenStack trunk release as possible.  The Community edition is the foundational technology for the HP Helion portfolio of products, allowing HP Helion products to quickly leverage OpenStack capabilities.
 
 This topic contains the following information about the HP Helion OpenStack Community edition release:
 
@@ -135,7 +135,7 @@ See the [HP Helion OpenStack Community Open Source and Third-Party Software Lice
 
 Linux&reg; is the registered trademark of Linus Torvalds in the U.S. and other countries.
 
-The OpenStack word mark and the Square O Design, together or apart, are trademarks or registered trademarks of OpenStack Foundation in the United States and other countries, and are used with the OpenStack Foundation’s permission.
+The OpenStack word mark and the Square O Design, together or apart, are trademarks or registered trademarks of OpenStack Foundation in the United States and other countries, and are used with the OpenStack Foundation's permission.
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
