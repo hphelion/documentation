@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "HP Helion Public Cloud application PaaS overview"
+title: "HP Helion Public Cloud aPaaS overview"
 permalink: /apaas/
 product: apaas 
 
 ---
-# HP Helion Public Cloud application platform as a service (aPaaS) overview
+# HP Helion Public Cloud application Platform as a Service (aPaaS) overview
 
 The HP Helion Public Cloud application platform as a service (aPaaS) is an application platform for development, deployment, and management of cloud applications using any language on any stack. HP Helion Public Cloud aPaaS allows you to develop, deploy, and scale applications in the cloud while ensuring security. 
 
