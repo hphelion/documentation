@@ -148,7 +148,7 @@ This section will show you how to deploy and configure the undercloud and overcl
 
         root@hLinux:~# bash -x ~root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh
 
-     This script waits, if necessary, for the seed to complete its initialization. Then, it will create, image, and start the VMs for the undercloud and overcloud, as well as create a test guest VM in the overcloud. This will take about 10 minutes and includes pauses while services and VMs are set up in the background.
+     This script waits, if necessary, for the seed to complete its initialization. Then, it will create, image, and start the VMs for the undercloud and overcloud, as well as create a test guest VM in the overcloud. This takes about 10 minutes and includes two pauses while services and VMs are set up in the background.
 
 4. If the deployment completes successfully, you will see a message similar to the following:
 
@@ -173,9 +173,9 @@ From within the seed VM, you should be able to connect to the test guest VM crea
 
 1. Set up your environment to access the overcloud, and list the running instances:
 
-        root@hLinux:~# . ~root/tripleo/tripleo-overcloud-passwords
+        root@hLinux:~# source ~root/tripleo/tripleo-overcloud-passwords
         root@hLinux:~# TE_DATAFILE=tripleo/testenv.json
-        root@hLinux:~# . ~root/tripleo/tripleo-incubator/overcloudrc-user
+        root@hLinux:~# source ~root/tripleo/tripleo-incubator/overcloudrc-user
         root@hLinux:~# nova list
 
     Ensure you note the IP address of the demo VM from the output of 'nova list' command. 
@@ -194,9 +194,9 @@ From the physical system you are running the install on, you should be able to c
 
 1. From within the seed VM, set your environment to access the undercloud, then list the overcloud instances and find the IP address of the overcloud controller node:
 
-        root@hLinux:~# . ~root/tripleo/tripleo-undercloud-passwords
+        root@hLinux:~# source ~root/tripleo/tripleo-undercloud-passwords
         root@hLinux:~# TE_DATAFILE=tripleo/testenv.json
-        root@hLinux:~# . ~root/tripleo/tripleo-incubator/undercloudrc
+        root@hLinux:~# source ~root/tripleo/tripleo-incubator/undercloudrc
         root@hLinux:~# nova list
 
     Ensure you note the IP address of the 'overcloud-controller' node in the output from 'nova list' command. 
