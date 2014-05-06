@@ -1,13 +1,11 @@
 ---
 layout: default
-title: "Windows CLI: misc-features"
+title: "HP Helion Public Cloud CLI Software for Windows PowerShell: misc-features"
 permalink: /cli/windows/misc/
 product: win-cli
 
 ---
-# Windows CLI: misc-features
-
-#HP-Cloud Object Storage Powershell Tutorial: Changing Response Formats # 
+# HP Helion Public Cloud CLI Software for Windows PowerShell: misc-features
 
 ##Changing Response Formats
 
