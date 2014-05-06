@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack Community FAQ"
-permalink: /helion/community/faqs/
+permalink: /helion/community/faq/
 product: community
 
 ---
@@ -150,12 +150,15 @@ You will receive:
 
 ####Where can I find more information? #### {#MoreInfo}
 
+* [HP Helion home landing page](https://hp.com/helion/openstack)
+* [Technical content home page](https://docs.hpcloud.com/helion/community/) 
+* [Support Forum](https://ask.openstack.org (tag your questions with “HPHelion”)
 * [HP Cloud sales portal](http://intranet.hp.com/panhp/HPCloud)   
 * [HP Hybrid Cloud Management](http://www.hp.com/go/cloudmanagement) 
 
 ####How can I report issues and participate in HP Helion OpenStack Community edition related discussions? #### {#reportissues}
 
-TBD: Raj to provide by EOD Monday  
+We are hosting the support discussion forum for the Community edition at [https://ask.openstack.org](https://ask.openstack.org).  Developers in the community are very familiar with this forum and already participate in OpenStack-related discussions there. Please tag your questions with “HPHelion” to get our attention for any questions and issues you raise.  
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
