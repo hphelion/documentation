@@ -116,7 +116,7 @@ You can download the tar file from the following (temporary) URL:
 To begin the installation, log in to your system as root and unpack the tar file into root's home directory:
 
     $ sudo su - 
-    # tar zxvf <pathname-of-.tar.gz-file>
+     # tar zxvf <pathname-of-.tar.gz-file>
 
 This will create and populate a `tripleo/` directory within root's home directory.
 
