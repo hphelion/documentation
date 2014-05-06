@@ -8,7 +8,7 @@ navigation:
   - text: HP Helion Documentation
     url: /
   - text: Community
-    url: /cloudos/community/
+    url: /helion/community/
   - text: Public Cloud
     url: /pc-overview/
   - text: Cloud OS
