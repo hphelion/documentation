@@ -17,8 +17,8 @@ This page describes how to create a new server from an image using the [networks
 
 Before you can begin whatever, you must:
 
-* [Sign up for an HP Helion Public Cloud compute account](https://horizon.hpcloud.com/register)
-* [Activate compute service on your account](https://horizon.hpcloud.com/landing/)
+* [Sign up for an HP Helion Public Cloud Compute account](https://horizon.hpcloud.com/register)
+* [Activate Compute service on your account](https://horizon.hpcloud.com/landing/)
 * Create a server image  <!-- need to link this eventually to the [images](/mc/compute/images/create/) page--when I create it, anyway. :) -->
 
 
@@ -29,5 +29,5 @@ info
 
 ##For further information## {#ForFurtherInformation}
 
-* For basic information about our HP Helion Public Cloud compute services, take a look at the [HP Helion Public Cloud compute overview](/compute/) page
+* For basic information about our HP Helion Public Cloud Compute services, take a look at the [HP Helion Public Cloud Compute overview](/compute/) page
 * Use the MC [site map](/mc/sitemap) for a full list of all available MC documentation pages.

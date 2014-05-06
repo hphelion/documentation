@@ -1,13 +1,13 @@
 ---
 layout: default
-title: "HP Helion Public Cloud Environment CLI Software for Windows PowerShell Compute Examples"
+title: "HP Helion Public Cloud CLI Software for Windows PowerShell Compute Examples"
 permalink: /cli/windows/compute/
 product: win-cli
 
 ---
-# HP Helion Public Cloud Environment CLI Software for Windows PowerShell Compute Examples #
+# HP Helion Public Cloud CLI Software for Windows PowerShell Compute Examples #
 
-This page provides you some examples of how to use the various commands (sometimes called "cmdlets") for HP Helion Public Cloud environment CLI software for Windows PowerShell implementation of Compute.
+This page provides you some examples of how to use the various commands (sometimes called "cmdlets") for HP Helion Public Cloud CLI software for Windows PowerShell implementation of Compute.
 
 * [Navigation](#Navigation)
 * [Availability Zone Color Management](#ColorManagement)

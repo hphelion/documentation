@@ -96,7 +96,7 @@ In the `Inventory` pane of the `Servers` screen of the [management console](/mc)
 
 <img src="media/terminate-instance-1212.png" width="580" alt="" />
 
-You instance is terminated.  You can also terminate the instance from the [server details](/mc/compute/servers/view-details/) screen of the MC.  To access the server details screen, just click on the server name (in the above example, `DougTestServert`) in the `Inventory` pane of the servers screen in the MC:
+You instance is terminated.  You can also terminate the instance from the [server details](/mc/compute/servers/view-details/) screen of the MC.  To access the server details screen, just click on the server name (in the above example, `DougTestServer`) in the `Inventory` pane of the servers screen in the MC:
 
 <img src="media/terminate-server-serv-screen-1212.png" width="580" alt="" />
 

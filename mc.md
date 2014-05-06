@@ -7,34 +7,34 @@ product: mc
 ---
 # Management console overview
 
-HP Helion Public Cloud consists of a bunch of useful services--compute, object storage, block storage, and [many others](/services/)--and the entrance to those services is through the management console (MC).  This page provides you with an overview of the console, along with pointers to other good information to get you going.
+HP Helion Public Cloud consists of a bunch of useful services--Compute, Object Storage, Block Storage, and [many others](/services/)--and the entrance to those services is through the management console (MC).  This page provides you with an overview of the console, along with pointers to other good information to get you going.
 
 * [Management console overview](#Overview)
 * [Navigating the services](#NavigatingtheService) 
 * [Account management](#AccountManagement)
 * [For further information](#FurtherInformation)
 
-**Note**:  The compute functionality available through the MC discussed in these pages is only for the US East region; this functionality is not available for the US West region. 
+**Note**:  The Compute functionality available through the MC discussed in these pages is only for the US East region; this functionality is not available for the US West region. 
 
 
 ##Management console overview## {#Overview}
 
-The main dashboard for the MC displays all your active available services by default.  If you have activated  [compute](/compute/) for example, your dashboard may look something like this:
+The main dashboard for the MC displays all your active available services by default.  If you have activated  [Compute](/compute/) for example, your dashboard may look something like this:
 
 <img src="media/main-dash.png" width="580" alt="" />
 
-Each service is in its own pane on the dashboard; compute services in the compute pane, object storage in the object storage pane, and so on. 
+Each service is in its own pane on the dashboard; Compute services in the Compute pane, object storage in the object storage pane, and so on. 
 
 **Note**:  If you haven't activated a service, it is not displayed on the main default dashboard.
 
 
 ##Navigating the services## {#NavigatingtheService}
 
-You can navigate to your preferred service in one of two easy ways.  First, you can simply choose your service (and availability zone) from the top-level menu bar.  For example, if you want to go to the compute dashboard, in the `Services` menu select the `Compute` service you want:
+You can navigate to your preferred service in one of two easy ways.  First, you can simply choose your service (and availability zone) from the top-level menu bar.  For example, if you want to go to the Compute dashboard, in the `Services` menu select the `Compute` service you want:
 
 <img src="media/main-dash-compute-menu-detail.png"  alt="" />
 
-You can also navigate by clicking the appropriate button in the service pane.  For example, if you want to navigate to the compute dashboard for the US East region compute instance, in the compute pane click the `US East` button:
+You can also navigate by clicking the appropriate button in the service pane.  For example, if you want to navigate to the Compute dashboard for the US East region Compute instance, in the Compute pane click the `US East` button:
 
 <img src="media/main-dash-compute-us-east.png" alt="" />
 
