@@ -120,10 +120,10 @@ The following are the known issues for HP Helion OpenStack Community edition:
 
 For additional information on HP Helion OpenStack Community, OpenStack and TripleO:
 
-* [HP Helion OpenStack Community Documentation web site](/cloudos/community/): Provides the topics listed below.
-* [FAQ](/cloudos/community/faqs/): Contains some frequently asked questions about the HP Helion OpenStack Community edition release
-* [Installation and configuration](/cloudos/community/install-virtual/): A set tasks that walk you through the installation and configuration process.
-* [Related Topics](/cloudos/community/related-links/): Links to pertinent HP Helion OpenStack Community and OpenStack documentation.
+* [HP Helion OpenStack Community Documentation web site](/helion/community/): Provides the topics listed below.
+* [FAQ](/helion/community/faqs/): Contains some frequently asked questions about the HP Helion OpenStack Community edition release
+* [Installation and configuration](/helion/community/install-virtual/): A set tasks that walk you through the installation and configuration process.
+* [Related Topics](/helion/community/related-links/): Links to pertinent HP Helion OpenStack Community and OpenStack documentation.
 * [OpenStack documentation home page](http://docs.openstack.org/)
 * [TripleO documentation](https://wiki.openstack.org/wiki/TripleO)
 * [Community support forum](LINK) hosted by [StackOverflow](http://stackoverflow.com)
@@ -131,7 +131,7 @@ For additional information on HP Helion OpenStack Community, OpenStack and Tripl
 
 ###Legal Notices and Disclaimer### {#legal-notices-disclaimer}
 
-See the [HP Helion OpenStack Community Open Source and Third-Party Software License Agreements](/cloudos/community/community-3rd-party-license-agreements/).
+See the [HP Helion OpenStack Community Open Source and Third-Party Software License Agreements](/helion/community/community-3rd-party-license-agreements/).
 
 Linux&reg; is the registered trademark of Linus Torvalds in the U.S. and other countries.
 
