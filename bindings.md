@@ -1,10 +1,10 @@
 ---
 layout: default
-title: "Bindings"
+title: "HP Helion Public Cloud: Binding Support"
 permalink: /bindings/
 
 ---
-# HP Helion Public Cloud binding support
+# HP Helion Public Cloud Binding Support
 
 One of the advantages of being active with OpenStack is that there is a healthy community of developers working on language bindings.  HP augments those in strategic areas and recommends others for your general use.  Take a gander at the choices you have at your disposal below.  Don't see what you need?  Don't be shy. [Get involved and create something for submittal back to OpenStack](http://openstack.org/community/).
 
