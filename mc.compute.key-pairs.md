@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "Management Console: Key pairs screen"
+title: "Management Console: Key Pairs Screen"
 permalink: /mc/compute/key-pairs/
 product: mc-compute
 
 ---
-# Management Console: Key pairs screen
+# Management Console: Key Pairs Screen
 
 The management console (MC) compute dashboard volumes screen allows you to view and manipulate compute key pairs.  This page covers the following topics:
 

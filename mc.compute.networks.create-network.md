@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "Management console: Creating and deleting a network"
+title: "Management Console: Creating and Deleting a Network"
 permalink: /mc/compute/networks/create-network/
 product: mc-compute
 
 ---
-# Management console: Creating and deleting a network
+# Management Console: Creating and Deleting a Network
 
 This page covers how to create and delete a network using the [networks screen](/mc/compute/networks/) of the [management console](/mc/) (MC).  This page covers the following topics:
 
