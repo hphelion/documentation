@@ -10,9 +10,11 @@ product: community
 <!--**Product Name:** HP Helion OpenStack&reg; Community
 **OpenStack&reg; release name:** Icehouse-->
 
-Thanks for installing the HP Helion OpenStack Community edition! This initial "cloud-in-a-box" virtual deployment allows you to evaluate the Community edition and Icehouse release of OpenStack.  Frequent updates will be available&mdash;approximately every 6 weeks&mdash;to remain as close to the OpenStack trunk release as possible.  The Community edition is the foundational technology for the HP Helion portfolio of products, allowing HP Helion products to quickly leverage OpenStack capabilities.
+<!--Thanks for installing the HP Helion OpenStack Community edition! This initial "cloud-in-a-box" virtual deployment allows you to evaluate the Community edition and Icehouse release of OpenStack.  Frequent updates will be available&mdash;approximately every 6 weeks&mdash;to remain as close to the OpenStack trunk release as possible.  The Community edition is the foundational technology for the HP Helion portfolio of products, allowing HP Helion products to quickly leverage OpenStack capabilities.-->
 
-This topic contains the following information about the HP Helion OpenStack Community edition release:
+Thanks for installing the HP Helion OpenStack Community edition! This initial "cloud-in-a-box" virtual deployment targeted towards the enterprises and cloud administrators interested in evaluating, developing and deploying a private cloud based on OpenStack. It’s a pure, free-to-license OpenStack distribution that speeds up deployment and simplifies the management of a small scale, open cloud environments and infrastructure services.
+
+This release note contains the following information about the HP Helion OpenStack Community edition release:
 
 * [Features in HP Helion OpenStack Community](#features)
 * [Supported services](#supported-services)
@@ -22,11 +24,11 @@ This topic contains the following information about the HP Helion OpenStack Comm
 
 ##Features in HP Helion OpenStack Community## {#features}
 
-**Pure OpenStack technology** &mdash; Based on the Icehouse release, the Community edition employs the OpenStack community standards with no mix of proprietary or non-OpenStack tools, and leverages the latest community innovations with close-to-trunk releases to ensure you are always using the most up-to-date code. Released under open source license for true open source value proposition.
+**Pure OpenStack technology** &mdash; One of the first OpenStack distributions based on the Icehouse release, the Community edition contains no mix of proprietary or non-OpenStack tools.  This edition allows you to experience a virtual cloud-in-a-box deployment based on [OpenStack TripleO](https://wiki.openstack.org/wiki/TripleO) and evaluate the Icehouse release of OpenStack technology.
 
 **Speeds cloud service delivery** &mdash; Ideal launch pad for your small-scale open cloud environment or proof-of-concept cloud services, with simple, fast creation of cloud environments and applications to speed business value.
 
-**Free to license and download** &mdash; Uses the [OpenStack TripleO utility](https://wiki.openstack.org/wiki/TripleO) to give you a simplified installation and update experience. You can easily deploy a small-scale private cloud of up to 30 nodes in production and develop on OpenStack.
+**Close-to-trunk release** &mdash; Allows your lab or small-scale production environment to continue to benefit from the very latest capabilities of OpenStack technology.
 
 **Integrated Linux&reg; host OS** &mdash; Provides for better speed, support, and control across the full solution stack (for compute and controller node hypervisors).
 
