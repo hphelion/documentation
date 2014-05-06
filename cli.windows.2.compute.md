@@ -222,9 +222,10 @@ Creating an image of an active server produces a state 'snapshot' of the server 
 
 **Note for Windows Images**: For instances created from snapshots of Windows images, the Administrator password matches the Administrator password of the server the snapshot was taken from, even if you changed it from the original password.
 
-### Quick-Connect to an instance ### {#QuickConnectWin}
+### Quick-Connect to an Instance ### {#QuickConnectWin}
 
-To perform a quick-connect to an existing server instance: 
+To perform a quick-connect to an existing server instance:
+
 **Note**: In order for the `connect-server` command to work, your keypair *.pem* file needs to be in the appropriate location. The default location is `C:\Users\*username*\Documents\HP\`.
 
     PS HPCS:\\>  Connect-Server 2111
