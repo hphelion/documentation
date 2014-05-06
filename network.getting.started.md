@@ -9,11 +9,11 @@ product: compute
 
 <!-- modeled after HP Helion Public Cloud version 13.5 overview; text from networking guide (compute.network-guide.md) -->
 
-Leveraging [OpenStack Networking](http://www.openstack.org/software/openstack-networking/), HP Helion Public Cloud Networking is a virtual networking service that provides network connectivity and addressing for HP Helion Public Cloud compute devices. 
+Leveraging [OpenStack Networking](http://www.openstack.org/software/openstack-networking/), HP Helion Public Cloud Networking is a virtual networking service that provides network connectivity and addressing for HP Helion Public Cloud Compute devices. 
 
-In the 13.5 release, HP Helion Public Cloud compute and networking services are separate entities, integrating services and providing new features. 
+In the 13.5 release, Compute and Networking services are separate entities, integrating services and providing new features. 
 
-You can use the default network to deploy HP Helion Public Cloud compute virtual servers, or modify the default network to expand networking capabilities.
+You can use the default network to deploy Compute virtual servers, or modify the default network to expand networking capabilities.
 
 You can now define and configure your own virtual network topology, including control of IP address ranges.
 
@@ -30,7 +30,7 @@ For more details on how to work with your network, see [HP Helion Public Cloud N
 
 ##Using the Default Network Configuration## {#default}
 
-A default configuration comes with HP Helion Public Cloud compute activation and includes:
+A default configuration comes with Compute activation and includes:
 
 * A network 
 * A subnet
@@ -50,7 +50,7 @@ You can customize the default network using the [HP Helion Public Cloud Manageme
 
 Customizing a network enables you to create and manage the networks your virtual servers connect to.
 
-HP Helion Public Cloud Networking expands networking capabilities, allowing you to perform many tasks, including:
+The Networking service expands networking capabilities, allowing you to perform many tasks, including:
 
 - Viewing network and router details
 - Creating and deleting a network
@@ -72,40 +72,40 @@ You can expand your network up to the following per-domain maximums:
 
 For more information on modifying the default network and creating additional networks, see either [HP Helion Public Cloud Networking: Quick start guide](/compute/network-quick-start/) or [Getting Started Guide](https://community.hpcloud.com/article/getting-started-guide) in the HP Helion Public Cloud community.
 
-## Accessing the HP Helion Public Cloud Networking Service ##
+## Accessing the Networking service ##
 
-There are a  number of tools that you can use to access and manage the HP Helion Public Cloud Networking Service.
+There are a  number of tools that you can use to access and manage the Networking service.
 
 ###Using the console to access Networking### {#console}
 
-You can use the HP Helion Public Cloud console to access HP Helion Public Cloud Networking Service. For more information on using the HP Helion Public Cloud console, see [Getting Started with HP Helion Public Cloud Console](/hpcloudconsole).
+You can use the HP Helion Public Cloud console to access the Networking service. For more information on using the console, see [Getting Started with HP Helion Public Cloud Console](/hpcloudconsole).
 
 
 ###Using the API to access Networking### {#API}
  
-You can use a low level, raw REST API to access HP Helion Public Cloud compute. For more information on using the HP Helion Public Cloud Networking API, see [HP Helion Public Cloud Networking API Specifications](/api/v13/networking).
+You can use a low level, raw REST API to access Compute services. For more information on using the Networking API, see [HP Helion Public Cloud Networking API Specifications](/api/v13/networking).
 
 ###Using the CLI### {#cli}
 
-You can use any of several command-line interface software to access HP Helion Public Cloud compute. For more information on using the HP Helion Public Cloud Networking API, see [HP Helion Public Cloud CLI](/cli/).
+You can use any of several command-line interface software to access Compute services. For more information on using the Networking CLI, see [HP Helion Public Cloud CLI](/cli/).
 
 ###Using language bindings### {#bindings}
 
-You can use any of several language bindings to access HP Helion Public Cloud compute. For more information on using the HP Helion Public Cloud Networking API, see [HP Helion Public Cloud binding support](/bindings/).
+You can use any of several language bindings to access Compute services. For more information on using the Networking bindings, see [HP Helion Public Cloud binding support](/bindings/).
 
-##Using VPN with the Networking Service## {#vpn}
+##Using VPN with the Networking service## {#vpn}
 
-With HP Helion Public Cloud Networking you can set up an IPsec, or site-to-site, VPN connecting your external network directly to your HP Helion Public Cloud virtual network.
+With the Networking service you can set up an IPsec, or site-to-site, VPN connecting your external network directly to your HP Helion Public Cloud virtual network.
 
 For VPN site-to-site connectivity, you will need to modify either the provided default network configuration or create your own network, subnet, router and ports.
 
-For more information on using VPN with HP Helion Public Cloud Networking, see [HP Helion Public Cloud Networking: VPN setup quick start guide](/compute/vpn-quickstart).
+For more information on using VPN with Networking, see [HP Helion Public Cloud Networking: VPN setup quick start guide](/compute/vpn-quickstart).
 
-##Using Security Groups with the Networking Service## {#security}
+##Using Security Groups with the Networking service## {#security}
 
 Security Groups are a feature of HP Helion Public Cloud Networking and are fully supported by the Networking API. 
 
-Security groups define conditions such as which ports, protocols, and IP addresses the remote virtual machine can open. HP Helion Public Cloud Networking provides the security group rules, which are the conditions and restrictions under which the security group operates, for example, the protocols and ports for that group.
+Security groups define conditions such as which ports, protocols, and IP addresses the remote virtual machine can open. The Networking service provides the security group rules, which are the conditions and restrictions under which the security group operates, for example, the protocols and ports for that group.
 
 Default rules allow:
 
@@ -117,9 +117,9 @@ Default rules allow:
 You can use the API, CLI or HP Helion Public Cloud Console to add or modify security group rules.
 
 
-##Using Regions and Availability Zones with the Networking Service## {#az}
+##Using Regions and Availability Zones with the Networking service## {#az}
 
-HP Helion Public Cloud Networking regional capabilities include: 
+The Networking service's regional capabilities include: 
 
 * A single API endpoint per region
 
