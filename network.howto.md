@@ -5,11 +5,11 @@ permalink: /compute/network/howto/
 product: compute
 
 ---
-# How To's with HP Helion Cloud Networking version 13.5
+# How To's with HP Helion Public Cloud Networking version 13.5
 
 <!-- Modeled after How To's with the Compute Service (https://docs.hpcloud.com/compute/using/) Some text from network guide. -->
 
-You might need to modify the default network or create additional networks.  This page gives you some how-to's to use the [Horizon Cloud Console](#console) or [HP Helion Cloud CLI for Windows PowerShell](#powershell) to perform the following tasks:  
+You might need to modify the default network or create additional networks.  This page gives you some how-to's to use the [Horizon Cloud Console](#console) or [HP Helion Public Cloud CLI for Windows PowerShell](#powershell) to perform the following tasks:  
 
 - Creating and deleting networks
 - Enabling and disabling networks
@@ -24,7 +24,7 @@ You might need to modify the default network or create additional networks.  Thi
 
 If you have not previously created an account and activated the compute service please sign up at [http://hpcloud.com](http://hpcloud.com).  
 
-If you prefer to use the [HP Helion Cloud CLI for Windows PowerShell](/cli/windows/2/installation/) make sure the CLI is installed and you have sufficient access permissions.
+If you prefer to use the [HP Helion Public Cloud CLI for Windows PowerShell](/cli/windows/2/installation/) make sure the CLI is installed and you have sufficient access permissions.
 
 #### Assigning access permission to services #### {#access}
 
@@ -213,9 +213,9 @@ You can change the name of many of the items on the Network screens, as follows:
 
 ## Using the Windows PowerShell ## {#powershell}
 
-The HP Helion Cloud environment command-line interface (CLI) software for Windows PowerShell allows Windows users to manage their HP Helion Cloud services from the command line.
+The HP Helion Public Cloud environment command-line interface (CLI) software for Windows PowerShell allows Windows users to manage their HP Helion Public Cloud services from the command line.
 
-To use the [HP Helion Cloud CLI for Windows PowerShell](/cli/windows/2/installation/) make sure the CLI is installed and you have sufficient access permissions.
+To use the [HP Helion Public Cloud CLI for Windows PowerShell](/cli/windows/2/installation/) make sure the CLI is installed and you have sufficient access permissions.
 
 You need to install and use the CLI on a system configured to access the project associated with the network you want to work with. The installation instructions show how to configure the CLI to interact with a specific project. 
 
@@ -230,7 +230,7 @@ You can use the Windows PowerShell CLI to perform the following tasks:
 - [Edit a sub-net](#EditSubCLI)
 - [Rename a port](#RenamePortCLI)
 
-For the full reference of supported HP Helion Cloud CLI commands for Windows PowerShell, see [HP Helion Cloud Environment CLI Software for Windows PowerShell Command Line Reference](/cli/windows/2/reference/). 
+For the full reference of supported HP Helion Public Cloud CLI commands for Windows PowerShell, see [HP Helion Public Cloud Environment CLI Software for Windows PowerShell Command Line Reference](/cli/windows/2/reference/). 
 
 ### How to create a network ### {#CreatingCLI}
 
@@ -238,7 +238,7 @@ For the full reference of supported HP Helion Cloud CLI commands for Windows Pow
 
 	Select the shell appropriate to your system, either the 64-bit or 32-bit version. 
 
-2. Enter the HP Helion Cloud environment CLI by entering:
+2. Enter the HP Helion Public Cloud environment CLI by entering:
 
 	`cd HPCS:`
 
@@ -263,7 +263,7 @@ For the full reference of supported HP Helion Cloud CLI commands for Windows Pow
 
 	Select the shell appropriate to your system, either the 64-bit or 32-bit version. 
 
-2. Enter the HP Helion Cloud environment CLI by entering:
+2. Enter the HP Helion Public Cloud environment CLI by entering:
 
 	`cd HPCS:`
 
@@ -301,7 +301,7 @@ You connect the network to the router as follows:
 
 	Select the shell appropriate to your system, either the 64-bit or 32-bit version. 
 
-2. Enter the HP Helion Cloud environment CLI by entering:
+2. Enter the HP Helion Public Cloud environment CLI by entering:
 
 	`cd HPCS:`
 
@@ -332,7 +332,7 @@ You disconnect a network as follows:
 
 	Select the shell appropriate to your system, either the 64-bit or 32-bit version. 
 
-2. Enter the HP Helion Cloud environment CLI by entering:
+2. Enter the HP Helion Public Cloud environment CLI by entering:
 
 	`cd HPCS:`
 
@@ -361,7 +361,7 @@ To change the name of a network:
 
 	Select the shell appropriate to your system, either the 64-bit or 32-bit version. 
 
-2. Enter the HP Helion Cloud environment CLI by entering:
+2. Enter the HP Helion Public Cloud environment CLI by entering:
 
 	`cd HPCS:`
 
@@ -388,7 +388,7 @@ You can modify a sub-net to rename the sub-net or change the the external gatewa
 
 	Select the shell appropriate to your system, either the 64-bit or 32-bit version. 
 
-2. Enter the HP Helion Cloud environment CLI by entering:
+2. Enter the HP Helion Public Cloud environment CLI by entering:
 
 	`cd HPCS:`
 
@@ -419,7 +419,7 @@ You can change the name of a port, as needed.
 
 	Select the shell appropriate to your system, either the 64-bit or 32-bit version. 
 
-2. Enter the HP Helion Cloud environment CLI by entering:
+2. Enter the HP Helion Public Cloud environment CLI by entering:
 
 	`cd HPCS:`
 
@@ -440,7 +440,7 @@ You can change the name of a port, as needed.
 ##For further information## {#ForFurtherInformation}
 
 * For information about the router details screen, take a look at the [Viewing router details](/mc/compute/networks/view-router/) page.
-* For basic information about our HP Helion Cloud compute services, take a look at the [HP Helion Cloud compute overview](/compute/) page.
+* For basic information about our HP Helion Public Cloud compute services, take a look at the [HP Helion Public Cloud compute overview](/compute/) page.
 * For a list of issues and workarounds for working with the Networking service, see [Known Issues and Workarounds with the Networking Service](/compute/network/known-issues/).
 * Use the [documentation site map](/mc/sitemap) for a full list of all available MC documentation pages
 * For information about the Open Stack networking features, surf on over to [their networking wiki](https://wiki.openstack.org/wiki/Quantum)

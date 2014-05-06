@@ -1,13 +1,13 @@
 ---
 layout: default
-title: "Release Notes for the HP Helion Cloud Environment CLI Software for Windows PowerShell"
+title: "Release Notes for the HP Helion Public Cloud Environment CLI Software for Windows PowerShell"
 permalink: /cli/windows/release-notes/
 product: win-cli
 
 ---
-# Release Notes for the HP Helion Cloud Environment CLI Software for Windows PowerShell #
+# Release Notes for the HP Helion Public Cloud Environment CLI Software for Windows PowerShell #
 
-These are the release notes for the HP Helion Cloud environment CLI software for Windows PowerShell.  The current release number for the [HP Helion Cloud environment CLI software for Windows PowerShell](/cli/windows) is version 1.3.3.9, released on 4/22/2013.  These release notes contain the following information:
+These are the release notes for the HP Helion Public Cloud environment CLI software for Windows PowerShell.  The current release number for the [HP Helion Public Cloud environment CLI software for Windows PowerShell](/cli/windows) is version 1.3.3.9, released on 4/22/2013.  These release notes contain the following information:
 
 * [Release 1.3.3.9 Features](#v1339)
 * [Release 1.3.1.9 Features](#v1319)
@@ -16,7 +16,7 @@ These are the release notes for the HP Helion Cloud environment CLI software for
 * [Release 1.2.0.6 Features](#v1206)
 * [Release 1.2.0.1 Features](#v1201)
 
-[Please download the latest version of the HP Helion Cloud environment CLI software for Windows PowerShell (Version 1.3.3.9)](/file/WinCLI-1.3.3.9.zip)!
+[Please download the latest version of the HP Helion Public Cloud environment CLI software for Windows PowerShell (Version 1.3.3.9)](/file/WinCLI-1.3.3.9.zip)!
 
 ##Release 1.3.3.9 Features## {#v1339}
 
@@ -92,7 +92,7 @@ None this release.
 ###New Features###
 
 * *Nova compute*: Full access to the OpenStack Nova compute infrastructure via the Windows command line, allowing you to manage and manipulate servers, flavors, images, keypairs, security groups, and so on.
-* *CDN*: Support through the CLI for the HP Helion Cloud content delivery network (CDN), providing you with distributed caching of object storage objects on geographically dispersed caching servers. Copies of the object are stored at a location more convenient to the end user system, allowing for better performance.
+* *CDN*: Support through the CLI for the HP Helion Public Cloud content delivery network (CDN), providing you with distributed caching of object storage objects on geographically dispersed caching servers. Copies of the object are stored at a location more convenient to the end user system, allowing for better performance.
 
 ###Known Issues###
 

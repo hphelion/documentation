@@ -34,5 +34,5 @@ Clicking the `+ Create Server` button to launch the [new server screen](/mc/comp
 
 ##For further information## {#ForFurtherInformation}
 
-* For basic information about our HP Helion Cloud compute services, take a look at the [HP Helion Cloud compute overview](/compute/) page
+* For basic information about our HP Helion Public Cloud compute services, take a look at the [HP Helion Public Cloud compute overview](/compute/) page
 * Use the MC [site map](/mc/sitemap) for a full list of all available MC documentation pages

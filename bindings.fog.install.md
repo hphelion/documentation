@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "HP Helion Cloud Ruby Fog Binding Installation"
+title: "HP Helion Public Cloud Ruby Fog Binding Installation"
 permalink: /bindings/fog/install/
 product: fog
 
 ---
-# Ruby Fog Bindings for HP Helion Cloud Installation
+# Ruby Fog Bindings for HP Helion Public Cloud Installation
 
 ##Important Notice##
 
@@ -19,4 +19,4 @@ Visit the Fog site for the following installation information and documentation:
 
 * [Installation page](http://rubygems.org/gems/fog)
 * [Overview page](https://github.com/fog/fog/blob/master/lib/fog/hp/README.md) 
-* [HP Helion Cloud Example Documentation](https://github.com/fog/fog/blob/master/lib/fog/hp/examples/getting_started_examples.md)
+* [HP Helion Public Cloud Example Documentation](https://github.com/fog/fog/blob/master/lib/fog/hp/examples/getting_started_examples.md)

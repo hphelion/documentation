@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "UNIX CLI for HP Helion Cloud Network Examples"
+title: "UNIX CLI for HP Helion Public Cloud Network Examples"
 permalink: /cli/unix/network/
 product: unix-cli
 
 ---
-# UNIX CLI for HP Helion Cloud Network Examples
+# UNIX CLI for HP Helion Public Cloud Network Examples
 ___________________
 
 ###Important Notice###
@@ -16,11 +16,11 @@ On November 4, 2013, the UNIX CLI was moved into its End-of-Life Cycle process t
 * No new feature requests will be honored
 * Bug reports will be accepted
 
-HP Helion Cloud has contributed the Unix CLI back to the open source community, and you can get support, access the documentation, and download the source code [here](https://github.com/hpcloud/unix_cli).
+HP Helion Public Cloud has contributed the Unix CLI back to the open source community, and you can get support, access the documentation, and download the source code [here](https://github.com/hpcloud/unix_cli).
 
 _________________________________________
 
-This page gives you a few examples of how to perform various network tasks using the HP Helion Cloud service.  This page discusses the following tasks:
+This page gives you a few examples of how to perform various network tasks using the HP Helion Public Cloud service.  This page discusses the following tasks:
 
 * [Network Commands (version 13.5 and later)](#NetworkCommands)
 * [Subnet Commands (version 13.5 and later)](#SubnetCommands)

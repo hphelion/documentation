@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "UNIX CLI for HP Helion Cloud Block Storage Examples"
+title: "UNIX CLI for HP Helion Public Cloud Block Storage Examples"
 permalink: /cli/unix/block-storage/
 product: unix-cli
 
 ---
-# UNIX CLI for HP Helion Cloud Block Storage Examples for v12.12
+# UNIX CLI for HP Helion Public Cloud Block Storage Examples for v12.12
 
 ___________________
 
@@ -17,11 +17,11 @@ On November 4, 2013, the UNIX CLI was moved into its End-of-Life Cycle process t
 * No new feature requests will be honored
 * Bug reports will be accepted
 
-HP Helion Cloud has contributed the Unix CLI back to the open source community, and you can get support, access the documentation, and download the source code [here](https://github.com/hpcloud/unix_cli).
+HP Helion Public Cloud has contributed the Unix CLI back to the open source community, and you can get support, access the documentation, and download the source code [here](https://github.com/hpcloud/unix_cli).
 
 _________________________________________
 
-This page gives you a few examples of how to perform various block storage tasks using the HP Helion Cloud service.  This page discusses the following tasks:
+This page gives you a few examples of how to perform various block storage tasks using the HP Helion Public Cloud service.  This page discusses the following tasks:
 
 * [Adding Volumes](#AddingVolumes)
 * [Listing Available Volumes](#ListingAvailableVolumes)
@@ -96,7 +96,7 @@ To remove the kweller volume:
     $ hpcloud volumes:remove kweller
     Removed volume 'kweller'.
 
-For complete information on all the UNIX CLI for HP Helion Cloud block storage commands (and all the other UNIX CLI for HP Helion Cloud service commands), please take a look at the [UNIX CLI for HP Helion Cloud Reference](/cli/unix/reference).
+For complete information on all the UNIX CLI for HP Helion Public Cloud block storage commands (and all the other UNIX CLI for HP Helion Public Cloud service commands), please take a look at the [UNIX CLI for HP Helion Public Cloud Reference](/cli/unix/reference).
 
 
 ##Related topics

@@ -1,17 +1,17 @@
 ---
 layout: default
-title: "HP Helion Cloud Identity Service Overview"
+title: "HP Helion Public Cloud Identity Service Overview"
 permalink: /identity/
 product: identity
 
 ---
-# HP Helion Cloud Identity Service Overview
+# HP Helion Public Cloud Identity Service Overview
 
 <!--This is a comment. Comments are not displayed in the browser-->
 
 <img src="media/identity_service_overview_0.png" width="580" height="436" alt="" />
 
-Based on [Keystone, the OpenStack Identity Service](http://keystone.openstack.org/), the HP Helion Cloud Identity Service provides one-stop authentication for all HP Helion Public Cloud offerings.  Key terms include:
+Based on [Keystone, the OpenStack Identity Service](http://keystone.openstack.org/), the HP Helion Public Cloud Identity Service provides one-stop authentication for all HP Helion Public Cloud offerings.  Key terms include:
 
 [**User**](/glossary#User)
 :  A digital representation of a person, system, or service who uses HP Helion Public Cloud. The Identity Service validates that incoming requests are being made by the user who claims to be making the call. Users have a login and may be assigned tokens to access resources. Users can scope their authentication to a tenant which then limits where and how their tokens can be used to interact with services. Users are associated with tenants based on roles assigned to them with that tenant.
@@ -36,7 +36,7 @@ Based on [Keystone, the OpenStack Identity Service](http://keystone.openstack.or
 
 So go ahead and jump right in and and start using the service yourself, you should go to the [Manage Console](https://console.hpcloud.com).  If you have any questions, try our [Forums](https://community.hpcloud.com) where you can learn from our own internal experts as well as other users in the HP Helion Public Cloud community.
 
-<!-- To help you get started with the service, we've got some introductory getting started material at our [Introduction to the HP Helion Cloud Identity Service page](https://community.hpcloud.com/article/identity-service-introduction), and we've also provided you with a use case for [Migrating to the HP Helion Cloud Identity Service](https://community.hpcloud.com/article/identity-service-change-guide).  And of course, if you want to jump right and start using the service yourself, you should go to the [Manage Console](https://console.hpcloud.com).  If you have any questions, try our [Forums](https://community.hpcloud.com) where you can learn from our own internal experts as well as other users in the HP Helion Public Cloud community.-->
+<!-- To help you get started with the service, we've got some introductory getting started material at our [Introduction to the HP Helion Public Cloud Identity Service page](https://community.hpcloud.com/article/identity-service-introduction), and we've also provided you with a use case for [Migrating to the HP Helion Public Cloud Identity Service](https://community.hpcloud.com/article/identity-service-change-guide).  And of course, if you want to jump right and start using the service yourself, you should go to the [Manage Console](https://console.hpcloud.com).  If you have any questions, try our [Forums](https://community.hpcloud.com) where you can learn from our own internal experts as well as other users in the HP Helion Public Cloud community.-->
 
 HP Helion Public Cloud currently offers two versions of our cloud&mdash;v12.12 and the latest v13.5. See the [Version Overview](/version-overview) page for a description of what's new in v13.5.
 

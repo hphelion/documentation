@@ -10,7 +10,7 @@ Welcome! We're looking forward to seeing what you code for good in the HP Noble 
 
 Some links to get you started:
 
-* [HP Helion Cloud Compute Overview](http://docs.hpcloud.com/compute/)
+* [HP Helion Public Cloud Compute Overview](http://docs.hpcloud.com/compute/)
 * [Knowledge Base 13.5](https://community.hpcloud.com/knowledge-base-categories/compute-v135)
 * [Knowledge Base Getting Started with Compute 13.5](https://community.hpcloud.com/article/getting-started-compute-135)
 * [LBaaS](http://docs.hpcloud.com/lbaas)

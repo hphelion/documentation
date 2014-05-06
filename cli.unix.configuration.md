@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "UNIX CLI for HP Helion Cloud: Account Configuration"
+title: "UNIX CLI for HP Helion Public Cloud: Account Configuration"
 permalink: /cli/unix/configuration/
 product: unix-cli
 
 ---
-# UNIX CLI for HP Helion Cloud: Account Configuration for v12.12
+# UNIX CLI for HP Helion Public Cloud: Account Configuration for v12.12
 
 ___________________
 
@@ -17,11 +17,11 @@ On November 4, 2013, the UNIX CLI was moved into its End-of-Life Cycle process t
 * No new feature requests will be honored
 * Bug reports will be accepted
 
-HP Helion Cloud has contributed the Unix CLI back to the open source community, and you can get support, access the documentation, and download the source code [here](https://github.com/hpcloud/unix_cli).
+HP Helion Public Cloud has contributed the Unix CLI back to the open source community, and you can get support, access the documentation, and download the source code [here](https://github.com/hpcloud/unix_cli).
 
 _________________________________________
 
-This page discusses how to set up an accounts and using the UNIX CLI for HP Helion Cloud.
+This page discusses how to set up an accounts and using the UNIX CLI for HP Helion Public Cloud.
 
 * [Account Setup](#AccountSetup)
 * [Account Edit](#EditAccount)

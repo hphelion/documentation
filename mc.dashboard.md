@@ -41,7 +41,7 @@ You can manage your activity by clicking the button of the compute instance you 
 
 <img src="media/servers-main.jpg" width="580" alt="" />
 
-For additional information about the compute functions available through the MC, surf on over to the [MC compute page](/mc/compute).  For an overview of HP Helion Cloud's compute features, please see the [HP Helion Cloud compute overview](/compute) page.
+For additional information about the compute functions available through the MC, surf on over to the [MC compute page](/mc/compute).  For an overview of HP Helion Public Cloud's compute features, please see the [HP Helion Public Cloud compute overview](/compute) page.
 
 
 <!-- ##Object storage pane## {#object-storage}
@@ -58,7 +58,7 @@ This user has two containers in the `US West` region: `Nova-stuff` (which contai
 
 For additional information about the compute functions available through the MC, surf on over to the [MC object storage page](/mc/object-storage). 
 
-For an overview of HP Helion Cloud's object storage features, please see the [HP Helion Cloud object storage overview](/object-storage/) page. -->
+For an overview of HP Helion Public Cloud's object storage features, please see the [HP Helion Public Cloud object storage overview](/object-storage/) page. -->
 
 ##Activity stream pane## {#activitystream}
 

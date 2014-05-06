@@ -1,14 +1,14 @@
 ---
 layout: default
-title: "Connecting to the HP Helion Cloud Service"
+title: "Connecting to the HP Helion Public Cloud Service"
 permalink: /bindings/jclouds/connecting/
 published: false
 product: jclouds
 
 ---
-# Connecting to the HP Helion Cloud Service
+# Connecting to the HP Helion Public Cloud Service
 
-This page gives you details on how to connect to the HP Helion Cloud service.
+This page gives you details on how to connect to the HP Helion Public Cloud service.
 
 <b>Note</b>: In examples, text in angle brackets indicates a variable:
 
@@ -16,7 +16,7 @@ This page gives you details on how to connect to the HP Helion Cloud service.
 
 <h2 id="ConnectingtotheService">Connecting to the Service</h2>
 
-Instantiate the context with the HP Helion Cloud compute provider:
+Instantiate the context with the HP Helion Public Cloud compute provider:
 
       String identity = "<tenantName>:<accessKey>";  
       String credentials = "<secretKey>";  

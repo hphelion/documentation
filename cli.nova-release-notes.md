@@ -1,18 +1,18 @@
 ---
 layout: default
-title: "Release Notes for the HP Helion Cloud Environment CLI Software for Python NovaClient"
+title: "Release Notes for the HP Helion Public Cloud Environment CLI Software for Python NovaClient"
 permalink: /cli/nova/release-notes/
 product: nova-cli
 
 ---
-# Release Notes for the HP Helion Cloud Environment CLI Software for Python NovaClient
+# Release Notes for the HP Helion Public Cloud Environment CLI Software for Python NovaClient
 
-These are the release notes for the HP Helion Cloud environment CLI software for Python NovaClient.  The current release number for the [HP Helion Cloud environment CLI software for Python NovaClient](/cli/windows) is version 2.6.8-17, released on 4/15/2013.  These release notes contain the following information:
+These are the release notes for the HP Helion Public Cloud environment CLI software for Python NovaClient.  The current release number for the [HP Helion Public Cloud environment CLI software for Python NovaClient](/cli/windows) is version 2.6.8-17, released on 4/15/2013.  These release notes contain the following information:
 
 * [Release 2.6.8-17 Features](#v268-17)
 
 
-[Please download the latest version of the HP Helion Cloud environment CLI software for Python NovaClient (Version 2.6.8-17)](/file/package)! 
+[Please download the latest version of the HP Helion Public Cloud environment CLI software for Python NovaClient (Version 2.6.8-17)](/file/package)! 
 
 ##Release 2.6.8-17 Features## {#v268-17}
 

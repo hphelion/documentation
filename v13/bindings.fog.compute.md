@@ -1,13 +1,13 @@
 ---
 layout: default
-title: "Ruby Fog Binding for HP Helion Cloud Compute v2.0 Examples"
+title: "Ruby Fog Binding for HP Helion Public Cloud Compute v2.0 Examples"
 permalink: /v13/bindings/fog/compute/
 product: fog
 
 ---
-#Ruby Fog Bindings for HP Helion Cloud v2.0 Compute Examples 
+#Ruby Fog Bindings for HP Helion Public Cloud v2.0 Compute Examples 
 
-The HP Helion Cloud services provides compute support using two abstractions - [a model layer](#ModelLayer) and [a request layer](#RequestLayer). Both layers are detailed below.  The code samples on this page can be executed from within a Ruby console (IRB):
+The HP Helion Public Cloud services provides compute support using two abstractions - [a model layer](#ModelLayer) and [a request layer](#RequestLayer). Both layers are detailed below.  The code samples on this page can be executed from within a Ruby console (IRB):
 
         irb
 
@@ -38,7 +38,7 @@ This page discusses the following topics:
 
 ##Connecting to the Service## {#ConnectingtotheService}
 
-For information on connecting to the service, please see the [Connecting to the HP Helion Cloud Service](/bindings/fog/connect) page.
+For information on connecting to the service, please see the [Connecting to the HP Helion Public Cloud Service](/bindings/fog/connect) page.
 
 ##Server Operations (Model Layer)## {#ModelServerOperations}
 

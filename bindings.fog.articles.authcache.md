@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "Ruby Fog Bindings for HP Helion Cloud: Using authentication caching"
+title: "Ruby Fog Bindings for HP Helion Public Cloud: Using authentication caching"
 permalink: /bindings/fog/articles/authcache
 product: fog
 categories: fog
 tags: fog authentication caching
 ---
-#Ruby Fog bindings for HP Helion Cloud: Using authentication caching#
+#Ruby Fog bindings for HP Helion Public Cloud: Using authentication caching#
 
 
 ##Important Notice##

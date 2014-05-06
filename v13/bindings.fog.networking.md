@@ -1,12 +1,12 @@
 <<<<<<< HEAD
 ---
 layout: default
-title: "Ruby Fog for HP Helion Cloud Networking Examples"
+title: "Ruby Fog for HP Helion Public Cloud Networking Examples"
 permalink: /v13/bindings/fog/networking/
 product: fog
 
 ---
-#Ruby Fog for HP Helion Cloud Bindings Networking Examples
+#Ruby Fog for HP Helion Public Cloud Bindings Networking Examples
 
 The HP Helion Public Cloud provides networking support using two abstractions - [a model layer](#ModelLayer) and [a request layer](#RequestLayer). Both layers are detailed below.  The code samples on this page can be executed from within a Ruby console (IRB):  
 
@@ -452,7 +452,7 @@ For information on connecting to the service, please see the [Connecting to the 
 =======
 ---
 layout: default
-title: "HP Helion Cloud Ruby Fog Networking Examples"
+title: "HP Helion Public Cloud Ruby Fog Networking Examples"
 permalink: /v13/bindings/fog/networking/
 product: fog
 

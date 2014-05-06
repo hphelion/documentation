@@ -1,15 +1,15 @@
 ---
 layout: default
-title: "HP Helion Cloud Networking Guide"
+title: "HP Helion Public Cloud Networking Guide"
 permalink: /compute/network-guide/
 product: compute
 categories: neutron
 tags: networking neutron
 
 ---
-# HP Helion Cloud Networking Overview
+# HP Helion Public Cloud Networking Overview
 
-HP Helion Cloud Networking is a virtual networking service that provides network connectivity and addressing for HP Helion Cloud compute devices. It is based on OpenStack Networking open source software. 
+HP Helion Public Cloud Networking is a virtual networking service that provides network connectivity and addressing for HP Helion Public Cloud compute devices. It is based on OpenStack Networking open source software. 
 
 This guide covers:
 
@@ -19,7 +19,7 @@ This guide covers:
 * [Known Issues and Workarounds](#KnownIssuesandWorkarounds)
 
 
-#####A default configuration comes with HP Helion Cloud compute activation and includes:
+#####A default configuration comes with HP Helion Public Cloud compute activation and includes:
 
 * A network 
 * A subnet
@@ -28,9 +28,9 @@ This guide covers:
 
 __Use as is or customize__ 
 
-You can use the default network to deploy HP Helion Cloud compute virtual servers, or modify the network configuration through the OpenStack Networking API.  Use the command line or the HP Helion Public Cloud management console's (MC) easy-to-use interface to customize.
+You can use the default network to deploy HP Helion Public Cloud compute virtual servers, or modify the network configuration through the OpenStack Networking API.  Use the command line or the HP Helion Public Cloud management console's (MC) easy-to-use interface to customize.
  
-HP Helion Cloud Networking expands networking capabilities, allowing you to perform many tasks, including:
+HP Helion Public Cloud Networking expands networking capabilities, allowing you to perform many tasks, including:
 
 * Defining and configuring virtual networks
 * Specifying IP subnets for those networks
@@ -41,7 +41,7 @@ HP Helion Cloud Networking expands networking capabilities, allowing you to perf
 
 ##Terms and Provisions## {#TermsandProvisions} 
 
-__Floating IP Addresses__: On-demand, public IP addresses on a network. With HP Helion Cloud, you can allocate several floating IP addresses and assign them to virtual servers. 
+__Floating IP Addresses__: On-demand, public IP addresses on a network. With HP Helion Public Cloud, you can allocate several floating IP addresses and assign them to virtual servers. 
 
 __Network__: Allows you to define network connectivity and addressing in the Cloud, providing "networking as a service" between interface devices managed by other HP Helion Public Cloud, such as compute. 
 
@@ -51,12 +51,12 @@ __Router__: A device that forwards data packets along networks.
 
 __Security Groups and Security Group Rules__: Security groups and security group rules allow you to specify the type of traffic and direction (inbound/outbound) that is allowed to pass through a port. A security group is a container for security group rules.
 
-When a port is created in HP Helion Cloud Networking it is associated with a security group. If a security group is not specified the port is associated with a default security group. Security group default rules allow inbound traffic from the same subnet and all outbound traffic. You can add rules to this group to modify behavior. 
+When a port is created in HP Helion Public Cloud Networking it is associated with a security group. If a security group is not specified the port is associated with a default security group. Security group default rules allow inbound traffic from the same subnet and all outbound traffic. You can add rules to this group to modify behavior. 
 
 __Subnet__: Contains IP address blocks that assign IP addresses to virtual servers. In addition, a subnet can have a gateway, a list of DNS name servers, and host routes. Information provided by DHCP is pushed to servers with interfaces associated with the subnet.
 
 
-###HP Helion Cloud Networking Quota Default:###
+###HP Helion Public Cloud Networking Quota Default:###
 
 * 5 Networks
 * 5 Subnets
@@ -68,15 +68,15 @@ __Subnet__: Contains IP address blocks that assign IP addresses to virtual serve
 
 
 ##Functionality and Features## {#FunctionalityandFeatures} 
-In the 13.5 release, HP Helion Cloud compute and networking services are separate entities, integrating services and providing new features. You can now define and configure your own virtual network topology, including control of IP address ranges.
+In the 13.5 release, HP Helion Public Cloud compute and networking services are separate entities, integrating services and providing new features. You can now define and configure your own virtual network topology, including control of IP address ranges.
 
-HP Helion Cloud's default configuration of a network, subnet, router, and security group comes with HP Helion Cloud compute services activation and is ready to deploy virtual servers.
+HP Helion Public Cloud's default configuration of a network, subnet, router, and security group comes with HP Helion Public Cloud compute services activation and is ready to deploy virtual servers.
 
 You can use the default network without modification. You can also configure other network topologies and attach virtual devices to ports on these networks. You can create multiple private networks and choose your own IP addressing scheme, enabling complex networking such as building multi-tiered web applications and application migration to the Cloud without changing IP addresses.
 
 
 
-__HP Helion Cloud Networking Features__
+__HP Helion Public Cloud Networking Features__
 
 * If you choose to modify the default network, you can create and manage the networks your virtual servers connect to.
 
@@ -92,18 +92,18 @@ __HP Helion Cloud Networking Features__
 
 * You can configure your virtual server as a Virtual Private Network (VPN) gateway to your networks.
 
-* The OpenStack Networking API provides the default security group, which defines conditions such as which ports, protocols, and IP addresses the remote virtual machine can open. HP Helion Cloud Networking provides the security group rules, which are the conditions and restrictions under which the security group operates, e.g., the protocols and ports for that group. Default rules allow:
+* The OpenStack Networking API provides the default security group, which defines conditions such as which ports, protocols, and IP addresses the remote virtual machine can open. HP Helion Public Cloud Networking provides the security group rules, which are the conditions and restrictions under which the security group operates, e.g., the protocols and ports for that group. Default rules allow:
 
 	- All inbound traffic from the same subnet 
 	- All outbound traffic
 	- Inbound ssh (TCP Port 22) from any source
 	- Inbound ping (ICMP) from any source 
 
-NOTE: HP Helion Cloud Networking supports adding a rule to all protocols. If you accidentally delete the "default all egress traffic rule," you can add the rule back using the MC.
+NOTE: HP Helion Public Cloud Networking supports adding a rule to all protocols. If you accidentally delete the "default all egress traffic rule," you can add the rule back using the MC.
 
 __Regions and Availability Zones__
 
-HP Helion Cloud Networking regional capabilities include: 
+HP Helion Public Cloud Networking regional capabilities include: 
 
 * A single API endpoint per region
 
@@ -115,7 +115,7 @@ HP Helion Cloud Networking regional capabilities include:
 
 ##Customizing your Configuration## {#CustomizingyourConfiguration}
 
-Optionally, modify the default network and create additional networks to exact specifications through the OpenStack Networking API. Customize the configuration either on the command line or through the HP Helion Cloud MC to: 
+Optionally, modify the default network and create additional networks to exact specifications through the OpenStack Networking API. Customize the configuration either on the command line or through the HP Helion Public Cloud MC to: 
  
 * Define and configure your own private virtual networks
 
@@ -142,7 +142,7 @@ __Use the command line to__:
 
 Setup networking parameters from the command line on Unix, MacOS, or Windows.
  
-The Unix Command Line Interface is a tool which allows Unix or Mac users to manage HP Helion Cloud from the command line or through automated scripts. You do not need to understand the underlying REST API or XML document format to use the Unix CLI. 
+The Unix Command Line Interface is a tool which allows Unix or Mac users to manage HP Helion Public Cloud from the command line or through automated scripts. You do not need to understand the underlying REST API or XML document format to use the Unix CLI. 
 
 [Click here](https://docs.hpcloud.com/cli/) for more information on using the command line, including:
 
@@ -158,7 +158,7 @@ The Unix Command Line Interface is a tool which allows Unix or Mac users to mana
 ###Port Configuration:###
 **Background**
 
-The HP Helion Cloud compute service attaches virtual servers to the network via HP Helion Cloud Networking ports, which are created in one of the two following ways:
+The HP Helion Public Cloud compute service attaches virtual servers to the network via HP Helion Public Cloud Networking ports, which are created in one of the two following ways:
 
 1. You can create ports in Networking and pass them to compute. 
 
@@ -192,7 +192,7 @@ If you allow compute to create the ports instead of going through Networking, co
  
 **Background**
 
-The compute service provides only a subset of the HP Helion Cloud Networking security group functionality.  For example, compute does not support egress rules. 
+The compute service provides only a subset of the HP Helion Public Cloud Networking security group functionality.  For example, compute does not support egress rules. 
 
 **Issue**
 
@@ -202,4 +202,4 @@ If you configure security groups via Networking, compute may not display the ful
 
 1. Use **either** the compute **or** networking service to configure security groups, but do not use both.   Using the OpenStack Networking API provides additional functionality in the form of outbound rules, which the compute API cannot display. 
 
-Note: Security Groups are a feature of  HP Helion Cloud Networking and are fully supported by the Networking API. A limited set of Security Group features are also accessible via the compute API for convenience and backwards compatibility. To directly access the API's broader functionality, HP recommends working only through the OpenStack Networking API and does not recommend mixing compute and OpenStack Networking API calls for security group configuration.
+Note: Security Groups are a feature of  HP Helion Public Cloud Networking and are fully supported by the Networking API. A limited set of Security Group features are also accessible via the compute API for convenience and backwards compatibility. To directly access the API's broader functionality, HP recommends working only through the OpenStack Networking API and does not recommend mixing compute and OpenStack Networking API calls for security group configuration.

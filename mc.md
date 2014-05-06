@@ -7,7 +7,7 @@ product: mc
 ---
 # Management console overview
 
-HP Helion Cloud consists of a bunch of useful services--compute, object storage, block storage, and [many others](/services/)--and the entrance to those services is through the management console (MC).  This page provides you with an overview of the console, along with pointers to other good information to get you going.
+HP Helion Public Cloud consists of a bunch of useful services--compute, object storage, block storage, and [many others](/services/)--and the entrance to those services is through the management console (MC).  This page provides you with an overview of the console, along with pointers to other good information to get you going.
 
 * [Management console overview](#Overview)
 * [Navigating the services](#NavigatingtheService) 
@@ -59,10 +59,10 @@ For more information on using the MC for account and services management, take a
 
 Need more information on the MC?  Take a look at the following pages:
 
-* [Getting started with HP Helion Cloud services](https://docs.hpcloud.com), our top-level technical documentation page
+* [Getting started with HP Helion Public Cloud services](https://docs.hpcloud.com), our top-level technical documentation page
 * [Technical documentation site map](/sitemap/) for a full list of all of our technical documentation pages
 * [Management console site map](/mc/sitemap/), a map of all the pages specific to our MC
-* [Getting started with HP Helion Cloud](https://community.hpcloud.com/article/getting-started-guide) in our [Knowledge Base](https://community.hpcloud.com/)
-* [Learn about and explore the HP Helion Cloud](https://www.hpcloud.com/learn)
+* [Getting started with HP Helion Public Cloud](https://community.hpcloud.com/article/getting-started-guide) in our [Knowledge Base](https://community.hpcloud.com/)
+* [Learn about and explore the HP Helion Public Cloud](https://www.hpcloud.com/learn)
 
 Or you can just click the link to your topic of interest in the navigation bar to the right at the top of this page on the right-hand side!

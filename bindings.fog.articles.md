@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "Ruby Fog Bindings for HP Helion Cloud: Using authentication caching"
+title: "Ruby Fog Bindings for HP Helion Public Cloud: Using authentication caching"
 permalink: /bindings/fog/articles/
 product: fog
 categories: fog
 tags: fog authentication howto
 ---
-#Ruby Fog Bindings for HP Helion Cloud: Articles on how to use our Ruby Fog bindings#
+#Ruby Fog Bindings for HP Helion Public Cloud: Articles on how to use our Ruby Fog bindings#
 
 ##Important Notice##
 
@@ -18,6 +18,6 @@ Read our [blog post](http://www.hpcloud.com/blog/releasing-ruby-bindings-wild) t
 
 =======
 
-In addition to the pages of examples we have for the compute, object storage, and other HP Helion Cloud services, we wanted to give you a few additional tips and How-tos to make using your Ruby Fog bindings for HP Helion Cloud even easier. Take a look at one of the "How to" articles listed below to find out more!
+In addition to the pages of examples we have for the compute, object storage, and other HP Helion Public Cloud services, we wanted to give you a few additional tips and How-tos to make using your Ruby Fog bindings for HP Helion Public Cloud even easier. Take a look at one of the "How to" articles listed below to find out more!
 
 * [Using authentication caching](/bindings/fog/articles/authcache)

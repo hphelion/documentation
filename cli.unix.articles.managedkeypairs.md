@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "UNIX CLI for HP Helion Cloud: Accessing Servers with Managed Key Pairs"
+title: "UNIX CLI for HP Helion Public Cloud: Accessing Servers with Managed Key Pairs"
 permalink: /cli/unix/articles/managedkeypairs
 product: unix-cli
 categories: cli linux compute servers keypairs
 tags: cli linux compute servers keypairs
 ---
-#UNIX CLI for HP Helion Cloud: Accessing Servers with Managed Keypairs v12.12#
+#UNIX CLI for HP Helion Public Cloud: Accessing Servers with Managed Keypairs v12.12#
 
 ___________________
 
@@ -18,11 +18,11 @@ On November 4, 2013, the UNIX CLI was moved into its End-of-Life Cycle process t
 * No new feature requests will be honored
 * Bug reports will be accepted
 
-HP Helion Cloud has contributed the Unix CLI back to the open source community, and you can get support, access the documentation, and download the source code [here](https://github.com/hpcloud/unix_cli).
+HP Helion Public Cloud has contributed the Unix CLI back to the open source community, and you can get support, access the documentation, and download the source code [here](https://github.com/hpcloud/unix_cli).
 
 _________________________________________
 
-Accessing Linux instances with the Unix CLI for HP Helion Cloud is easier than ever with managed key pairs.  When you add a new key with the `-o` option, it is saved in your home directory under `~/.hpcloud/keypairs/`.  When you create a server with that key pair, the CLI saves that information.  See the following examples for some details:
+Accessing Linux instances with the Unix CLI for HP Helion Public Cloud is easier than ever with managed key pairs.  When you add a new key with the `-o` option, it is saved in your home directory under `~/.hpcloud/keypairs/`.  When you create a server with that key pair, the CLI saves that information.  See the following examples for some details:
 
 * [Creating a key pair using the -o flag](#CreatingaNewKeyPair)
 * [Creating a server using that new key pair](#CreatingaServer)
@@ -55,4 +55,4 @@ So to create a server named `Smeagol` with the ID `721935` and the key pair with
 
 ##For more information## {#articles}
 
-For more tips and How-tos on using your UNIX CLI for HP Helion Cloud, see [UNIX CLI for HP Helion Cloud: Articles on to use the UNIX CLI for HP Helion Cloud](/cli/unix/articles/).
+For more tips and How-tos on using your UNIX CLI for HP Helion Public Cloud, see [UNIX CLI for HP Helion Public Cloud: Articles on to use the UNIX CLI for HP Helion Public Cloud](/cli/unix/articles/).

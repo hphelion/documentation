@@ -38,7 +38,7 @@ On November 4, 2013, the UNIX CLI was moved into its End-of-Life Cycle process t
 * No new feature requests will be honored
 * Bug reports will be accepted
 
-HP Helion Cloud has contributed the Unix CLI back to the open source community, and you can get support, access the documentation, and download the source code [here](https://github.com/hpcloud/unix_cli).
+HP Helion Public Cloud has contributed the Unix CLI back to the open source community, and you can get support, access the documentation, and download the source code [here](https://github.com/hpcloud/unix_cli).
 
 _________________________________________
 
@@ -47,21 +47,21 @@ The questions we address in the UNIX CLI section of this FAQ are:
 
 
 
-* [How do I install or upgrade HP Helion Cloud Unix CLI?](#HowdoIinstallHPCloudUnixCLI)
+* [How do I install or upgrade HP Helion Public Cloud Unix CLI?](#HowdoIinstallHPCloudUnixCLI)
 
-* [How do I get help with HP Helion Cloud Unix CLI?](#HowdoIgethelpwithHPCloudUnixCLI)
+* [How do I get help with HP Helion Public Cloud Unix CLI?](#HowdoIgethelpwithHPCloudUnixCLI)
 
 * [How do I diagnose a problem with the CLI?](#HowdoIDebugHPCloudUnixCLI)
 
-* [How do I install HP Helion Cloud Unix CLI without RVM?](#HowdoIinstallHPCloudUnixCLIwithoutRVM)
+* [How do I install HP Helion Public Cloud Unix CLI without RVM?](#HowdoIinstallHPCloudUnixCLIwithoutRVM)
 
-* [How do I uninstall HP Helion Cloud Unix CLI?](#HowdoIuninstallHPCloudUnixCLI)
+* [How do I uninstall HP Helion Public Cloud Unix CLI?](#HowdoIuninstallHPCloudUnixCLI)
 
 * [What if these FAQs didn't answer my questions?](#WhereelsecanIgoformoreinformationUnixCLI)
 
 
 
-### How do I install or upgrade HP Helion Cloud Unix CLI?### {#HowdoIinstallHPCloudUnixCLI}
+### How do I install or upgrade HP Helion Public Cloud Unix CLI?### {#HowdoIinstallHPCloudUnixCLI}
 
 
 
@@ -69,7 +69,7 @@ Please surf on over to the [installation page](/cli/unix/2/install) for full ins
 
 
 
-### How do I get help with HP Helion Cloud Unix CLI?### {#HowdoIgethelpwithHPCloudUnixCLI}
+### How do I get help with HP Helion Public Cloud Unix CLI?### {#HowdoIgethelpwithHPCloudUnixCLI}
 
 
 
@@ -97,17 +97,17 @@ Where `command` is the command for which you want help.  If you want to check wh
 
 
 
-### How do I diagnose problems with the HP Helion Cloud Unix CLI?### {#HowdoIDebugHPCloudUnixCLI}
+### How do I diagnose problems with the HP Helion Public Cloud Unix CLI?### {#HowdoIDebugHPCloudUnixCLI}
 
  
 
-There is an article that covers how to run the HP Helion Cloud Unix CLI with [verbose debugging output](/cli/unix/articles/debugging).
+There is an article that covers how to run the HP Helion Public Cloud Unix CLI with [verbose debugging output](/cli/unix/articles/debugging).
 
  
 
  
 
-### How do I install HP Helion Cloud Unix CLI without RVM?### {#HowdoIinstallHPCloudUnixCLIwithoutRVM}
+### How do I install HP Helion Public Cloud Unix CLI without RVM?### {#HowdoIinstallHPCloudUnixCLIwithoutRVM}
 
 
 
@@ -115,7 +115,7 @@ If you choose not to use RVM, you must install the [gem](/glossary#gem) as a sup
 
 
 
-### How do I uninstall HP Helion Cloud Unix CLI?### {#HowdoIuninstallHPCloudUnixCLI}
+### How do I uninstall HP Helion Public Cloud Unix CLI?### {#HowdoIuninstallHPCloudUnixCLI}
 
 
 
@@ -142,19 +142,19 @@ The questions we address in the Ruby Fog bindings section of this FAQ are:
 
 
 
-* [How do I install HP Helion Cloud Ruby Fog?](#HowdoIinstallHPCloudRubyFog)
+* [How do I install HP Helion Public Cloud Ruby Fog?](#HowdoIinstallHPCloudRubyFog)
 
-* [How do I install HP Helion Cloud Ruby Fog without RVM?](#HowdoIinstallHPCloudRubyFogwithoutRVM)
+* [How do I install HP Helion Public Cloud Ruby Fog without RVM?](#HowdoIinstallHPCloudRubyFogwithoutRVM)
 
-* [How do I upgrade HP Helion Cloud Ruby Fog?](#HowdoIupgradeHPCloudRubyFog)
+* [How do I upgrade HP Helion Public Cloud Ruby Fog?](#HowdoIupgradeHPCloudRubyFog)
 
-* [How do I uninstall HP Helion Cloud Ruby Fog?](#HowdoIuninstallHPCloudRubyFog)
+* [How do I uninstall HP Helion Public Cloud Ruby Fog?](#HowdoIuninstallHPCloudRubyFog)
 
 * [What if these FAQs didn't answer my questions?](#WhereelsecanIgoformoreinformationRubyFog)
 
 
 
-### How do I install HP Helion Cloud Ruby Fog?### {#HowdoIinstallHPCloudRubyFog}
+### How do I install HP Helion Public Cloud Ruby Fog?### {#HowdoIinstallHPCloudRubyFog}
 
 
 
@@ -162,11 +162,11 @@ Please surf on over to the [installation page](/bindings/fog/install) for full i
 
 
 
-### How do I install HP Helion Cloud Ruby Fog without RVM?### {#HowdoIinstallHPCloudRubyFogwithoutRVM}
+### How do I install HP Helion Public Cloud Ruby Fog without RVM?### {#HowdoIinstallHPCloudRubyFogwithoutRVM}
 
 
 
-If you choose not to use RVM, you must install all required dependencies before you install the HP Helion Cloud Ruby Fog [gem](/glossary#gem).
+If you choose not to use RVM, you must install all required dependencies before you install the HP Helion Public Cloud Ruby Fog [gem](/glossary#gem).
 
 
 
@@ -174,11 +174,11 @@ If you choose not to use RVM, you must install all required dependencies before 
 
 
 
-### How do I upgrade HP Helion Cloud Ruby Fog?### {#HowdoIupgradeHPCloudRubyFog}
+### How do I upgrade HP Helion Public Cloud Ruby Fog?### {#HowdoIupgradeHPCloudRubyFog}
 
 
 
-To upgrade HP Helion Cloud Ruby Fog, you first must uninstall the gem and then install the new gem:
+To upgrade HP Helion Public Cloud Ruby Fog, you first must uninstall the gem and then install the new gem:
 
 
 
@@ -188,7 +188,7 @@ To upgrade HP Helion Cloud Ruby Fog, you first must uninstall the gem and then i
 
 
 
-### How do I uninstall HP Helion Cloud Ruby Fog?### {#HowdoIuninstallHPCloudRubyFog}
+### How do I uninstall HP Helion Public Cloud Ruby Fog?### {#HowdoIuninstallHPCloudRubyFog}
 
 
 

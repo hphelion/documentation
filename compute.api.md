@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "HP Helion Cloud Compute API"
+title: "HP Helion Public Cloud Compute API"
 permalink: /compute/api/
 product: compute
 
 ---
-# HP Helion Cloud Compute API#
+# HP Helion Public Cloud Compute API#
 
 Surf on over to our [Compute API Reference](/api/compute) for lots of details on the HP compute service.  
 
@@ -16,6 +16,6 @@ Surf on over to our [Compute API Reference](/api/compute) for lots of details on
 **Note**: For security purposes, when you create a server, it is automatically assigned a floating, non-removable IP address.
 
 ### EC2 Compatibility
-In addition to the OpenStack Compute API, HP Helion Cloud Compute also offers EC2 compatibility.  Note that the authentication mechanism for the EC2 API differs from that of the OpenStack Compute API.  Both sets of keys can be found on the [Manage Console](https://console.hpcloud.com/account/api_keys).  Authentication specifics for the OpenStack Compute API can be found in the documents referenced above.  For EC2 API authentication, [see Amazon's documentation on the subject](http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/index.html?using-query-api.html#query-authentication).
+In addition to the OpenStack Compute API, HP Helion Public Cloud Compute also offers EC2 compatibility.  Note that the authentication mechanism for the EC2 API differs from that of the OpenStack Compute API.  Both sets of keys can be found on the [Manage Console](https://console.hpcloud.com/account/api_keys).  Authentication specifics for the OpenStack Compute API can be found in the documents referenced above.  For EC2 API authentication, [see Amazon's documentation on the subject](http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/index.html?using-query-api.html#query-authentication).
 
 Want details?  Take a look at our [EC2 Compatibility Method List](/ec2-compatibility-method-list).

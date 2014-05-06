@@ -21,7 +21,7 @@ This page contains the following information on our software package:
 
 **Larger compute instances for big data and high-performance computing** -  New larger instance types allow you to run big data, analytics, and high performance computing (HPC) workloads in the public cloud.  You can access instances with up to 120 GB of RAM and up to 16 virtual cores. The new instance types allow even greater flexibility to choose the virtual machine size that best fits your application's compute resource needs.
 
-**New virtual private cloud (VPC) networking capabilities** - The new VPC functionality provides the ability to deploy your workloads with even greater security within the public cloud for hybrid delivery or public cloud only by enabling you to create  isolated virtual networks within the HP Helion Cloud compute service. UsingSoftware Defined Networking (SDN), VPC  allows you to create a wide variety of network configurations specific to your individual workloads needs with a variety of public Internet accessibility options. You can also connect your public cloud network to your on-premise network, enabling true hybrid delivery through private and public infrastructures with a secure VPN connection performing as a single integrated system.
+**New virtual private cloud (VPC) networking capabilities** - The new VPC functionality provides the ability to deploy your workloads with even greater security within the public cloud for hybrid delivery or public cloud only by enabling you to create  isolated virtual networks within the HP Helion Public Cloud compute service. UsingSoftware Defined Networking (SDN), VPC  allows you to create a wide variety of network configurations specific to your individual workloads needs with a variety of public Internet accessibility options. You can also connect your public cloud network to your on-premise network, enabling true hybrid delivery through private and public infrastructures with a secure VPN connection performing as a single integrated system.
 
 **Networking topology visualization** - The new [Horizon-based public cloud console](/hpcloudconsole) inherits network topology infographics.  In addition to visualizing network relationships, you can perform dynamic network management, interactively creating networks and routers, and launching instances through a 2-D visualization scene.
 
@@ -31,11 +31,11 @@ This page contains the following information on our software package:
 
 **Larger file size transfers via the CLI** - You can now use the Windows CLI to transfer files up to 700MB for downloads and 5GB for uploads, a significant increase in the file size ceiling for transfers via the Windows CLI.
 
-**Enhanced identity management** - Particularly attractive for administrators in the enterprise, this release provides more flexibility and options when managing roles, domains, users and groups in the new Horizon-based public cloud console. Specifically, roles can now be assigned to groups of users, or domain administrators can be defined for managing domains and respective users.   In addition, you can assign roles around the latest platform services, such as the new HP Helion Cloud [Relational Database](/dbaas/) service.
+**Enhanced identity management** - Particularly attractive for administrators in the enterprise, this release provides more flexibility and options when managing roles, domains, users and groups in the new Horizon-based public cloud console. Specifically, roles can now be assigned to groups of users, or domain administrators can be defined for managing domains and respective users.   In addition, you can assign roles around the latest platform services, such as the new HP Helion Public Cloud [Relational Database](/dbaas/) service.
 
 As a domain admin, you can manage each user's projects, roles, and groups.  You can manage the membership of each group, and manage the user assignment within each role. 
 
-**Hybrid cloud focus** - In response to significant feedback received from our rapidly growing open source developer community, and the notably modest usage of the AWS EC2 API in the open HP Helion Cloud environment, support for the AWS EC2 API and Eucalyptus API have been discontinued at this time.
+**Hybrid cloud focus** - In response to significant feedback received from our rapidly growing open source developer community, and the notably modest usage of the AWS EC2 API in the open HP Helion Public Cloud environment, support for the AWS EC2 API and Eucalyptus API have been discontinued at this time.
 
 **Jclouds support** - Jclouds support is provided for the Keystone version 2 (and earlier) API.
 
@@ -144,11 +144,11 @@ Additional related information about HP Helion Public Cloud can be found in the 
 
 * [Getting Started with HP Helion Public Cloud Console](/hpcloudconsole) for detailed console information.
 * [HP Helion Public Cloud version 13.5 overview](/version-overview/) for an overview of the 13.5 release set.
-* [HP Helion Cloud Service APIs (v13.5)](/api/v13/) for an overview of the 13.5 API specifications.
+* [HP Helion Public Cloud Service APIs (v13.5)](/api/v13/) for an overview of the 13.5 API specifications.
 * [migration overview page](/migration-overview/) for information on migrating from version 12.12 to 13.5.
 * [Getting Started with Compute 13.5](https://community.hpcloud.com/article/getting-started-compute-135) for information on how to get started with the compute service in version 13.5.
-* The [Getting Started Guide](https://community.hpcloud.com/article/getting-started-guide/) is a great resource for getting yourself up and running with the various HP Helion Cloud services in general.
-* [HP Helion Cloud web site](https://www.hpcloud.com/#) for a discussion of our various products and services. 
+* The [Getting Started Guide](https://community.hpcloud.com/article/getting-started-guide/) is a great resource for getting yourself up and running with the various HP Helion Public Cloud services in general.
+* [HP Helion Public Cloud web site](https://www.hpcloud.com/#) for a discussion of our various products and services. 
 * Our [support page](https://www.hpcloud.com/support) provides support information.
 
 While these release notes contain information information for the software package as a whole, we also have release notes for individual products and services:

@@ -1,17 +1,17 @@
 ---
 layout: default
-title: "HP Helion Cloud Relational Database Overview"
+title: "HP Helion Public Cloud Relational Database Overview"
 permalink: /dbaas/
 product: dbaas
 
 ---
-# HP Helion Cloud Relational Database Overview
+# HP Helion Public Cloud Relational Database Overview
 
-HP Helion Cloud Relational Database for MySQL simplifies the creation and management of MySQL database instances. The service automates administration tasks such as deployment, configuration, and patching so you can focus on adding more value to your applications and business.
+HP Helion Public Cloud Relational Database for MySQL simplifies the creation and management of MySQL database instances. The service automates administration tasks such as deployment, configuration, and patching so you can focus on adding more value to your applications and business.
 
 
 ## API ##
-Do you need low level, raw REST API access to HP Helion Cloud Relational Database? Take a look at our [Relational Database API for v13.5 page](/api/v13/dbaas/) for details.
+Do you need low level, raw REST API access to HP Helion Public Cloud Relational Database? Take a look at our [Relational Database API for v13.5 page](/api/v13/dbaas/) for details.
 
 [Archived API for v12.12](/api/dbaas/)
 

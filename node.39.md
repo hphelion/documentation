@@ -1,18 +1,18 @@
 ---
 layout: default
-title: "Migrating to the new HP Helion Cloud Identity Service"
+title: "Migrating to the new HP Helion Public Cloud Identity Service"
 permalink: /node/39
 product: identity
 
 ---
-# Migrating to the new HP Helion Cloud Identity Service
+# Migrating to the new HP Helion Public Cloud Identity Service
 
 <!--This is a comment. Comments are not displayed in the browser-->
 
 
-With the introduction of the HP Helion Cloud Identity Service, the days of having to keep track of different sets of access keys for each individual service and not being able to access anyone else’s service except your own will be over.  A much more sophisticated mechanism for managing access to services will become available and this document spells out how you will be impacted by this significant, but welcome change.
+With the introduction of the HP Helion Public Cloud Identity Service, the days of having to keep track of different sets of access keys for each individual service and not being able to access anyone else’s service except your own will be over.  A much more sophisticated mechanism for managing access to services will become available and this document spells out how you will be impacted by this significant, but welcome change.
 
-Before going any further, though, we highly recommend that you read Introducing the HP Helion Cloud Identity Service for an overview of how this new service works (an explanation of the new terminology, etc.).  The remainder of this document will focus on how steps that existing private beta customers will need to take in order to keep your use of HP Helion Public Cloud functional to take advantage of this new authentication and access management approach.
+Before going any further, though, we highly recommend that you read Introducing the HP Helion Public Cloud Identity Service for an overview of how this new service works (an explanation of the new terminology, etc.).  The remainder of this document will focus on how steps that existing private beta customers will need to take in order to keep your use of HP Helion Public Cloud functional to take advantage of this new authentication and access management approach.
 
 ## How Am I Impacted?
 
@@ -27,11 +27,11 @@ With a change to something as fundamental as how authentication works, all custo
 
 There will be some disruption to HP Helion Public Cloud during the upgrade.  Specifics about the timing of the upgrade will be posted in the [HP Helion Public Cloud Console](https://manage.hpcloud.com) at least three days prior to the upgrade.
 
-### HP Helion Cloud Object Storage
+### HP Helion Public Cloud Object Storage
 * The service will be shutdown and unavailable during the upgrade.
 * If you use the Object Storage API, you should use this time to change your endpoint as described below or upgrade to a new version of the CLI or language binding.
 
-### HP Helion Cloud Compute
+### HP Helion Public Cloud Compute
 * Running compute instances will continue to operate normally.
 * You will be unable to use the Management Console or the Compute API to manage any instances until the upgrade is complete (e.g., you will not be able to create new instances, terminate existing instances or query the state of your instances).
 * If you use the Compute API, use this time to change your endpoint as described below or upgrade to a new version of the CLI or language binding.
@@ -58,7 +58,7 @@ This enables you to simply change endpoint, X-Auth-Key, and X-Auth-User and the 
 It should be noted that this backward compatibility is provided as a convenience to help ease migration to the full blown Identity Service.  HP Helion Public Cloud highly recommends you begin using the v2.0 endpoint and its operations as soon as possible as the v1.0 endpoint is deprecated.  The v1.0 endpoint will be removed at some point in the future.
 
 ## Account Specifiers in Object Storage Paths
-In HP Helion Cloud Object Storage, the first part of the path is referred to as the account. For example, this path refers to an object pic.gif, in container pictures in account AUTH_86ca9388-b3df-4016-ad3b-ca05a917455c:
+In HP Helion Public Cloud Object Storage, the first part of the path is referred to as the account. For example, this path refers to an object pic.gif, in container pictures in account AUTH_86ca9388-b3df-4016-ad3b-ca05a917455c:
 
         /v1.0/AUTH_86ca9388-b3df-4016-ad3b-ca05a917455c/pictures/pic.gif
 
@@ -112,7 +112,7 @@ Here is an example of using the Nova command:
         % nova …
 
 ## Euca2ools and EC2™ compatibility
-The Identity Service is compatible with euca2ools and EC2 compatibly for HP Helion Cloud Compute by setting environment variables in a way similar to the Object Storage backward compatibility described above.  To use euca200ls, you set your environment variables as follows:
+The Identity Service is compatible with euca2ools and EC2 compatibly for HP Helion Public Cloud Compute by setting environment variables in a way similar to the Object Storage backward compatibility described above.  To use euca200ls, you set your environment variables as follows:
 
 * EC2-URL – set to:
     * Compute endpoint (from the publicURL field in the Service Catalog)

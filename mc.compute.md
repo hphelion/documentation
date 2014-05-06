@@ -46,5 +46,5 @@ The full list screens available for your compute management pleasure:
 * A good place to help you get going is with our [compute services use cases](/mc/compute/using/)
 * For specific functionality--for example, adding [volumes](/mc/compute/volumes)--use the navigation bar at the top of this page; that takes you to whatever section of the MC compute documentation you might be needing
 * Use the MC [site map](/mc/sitemap) for a full list of all available MC documentation pages
-* For basic information about our HP Helion Cloud compute services, take a look at the [HP Helion Cloud compute overview](/compute/) page
-* If you'd rather use the HP Helion Cloud CLI features, go choose your topic of interest from our [HP Helion Cloud CLI](/cli) pages
+* For basic information about our HP Helion Public Cloud compute services, take a look at the [HP Helion Public Cloud compute overview](/compute/) page
+* If you'd rather use the HP Helion Public Cloud CLI features, go choose your topic of interest from our [HP Helion Public Cloud CLI](/cli) pages

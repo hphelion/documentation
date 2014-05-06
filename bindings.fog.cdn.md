@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "Ruby Fog Bindings for HP Helion Cloud CDN Examples"
+title: "Ruby Fog Bindings for HP Helion Public Cloud CDN Examples"
 permalink: /bindings/fog/cdn/
 product: fog
 
 ---
-# Ruby Fog Bindings for HP Helion Cloud CDN Examples
+# Ruby Fog Bindings for HP Helion Public Cloud CDN Examples
 
 
 ##Important Notice##
@@ -18,7 +18,7 @@ Read our [blog post](http://www.hpcloud.com/blog/releasing-ruby-bindings-wild) t
 
 _______________
 
-The HP Helion Cloud services provides CDN support via the request layer abstraction.  In the request abstraction, you can CDN-enable a container, get a list of the CDN-enabled containers, list the metadata for a CDN-enabled container, update the metadata for a CDN-enabled container, and CDN-disable a container.
+The HP Helion Public Cloud services provides CDN support via the request layer abstraction.  In the request abstraction, you can CDN-enable a container, get a list of the CDN-enabled containers, list the metadata for a CDN-enabled container, update the metadata for a CDN-enabled container, and CDN-disable a container.
 
 The examples on this page can be executed from within a Ruby console (IRB):
 
@@ -38,7 +38,7 @@ This page discusses the following topics:
 
 ##Connecting to the Service## {#ConnectingtotheService}
 
-For information on connecting to the service, please see the [Connecting to the HP Helion Cloud Service](/bindings/fog/connect) page.
+For information on connecting to the service, please see the [Connecting to the HP Helion Public Cloud Service](/bindings/fog/connect) page.
 
 ##CDN-Enabling an Existing Container## {#CDN-EnablinganExistingContainer}
 

@@ -58,5 +58,5 @@ From the account and services dashboard, you can perform any of the following ta
 
 * A good place to help you get going managing your account is with our [account and services management use cases](/mc/compute/using/)
 * Use the MC [site map](/mc/sitemap) for a full list of all available MC documentation pages
-* For basic information about our HP Helion Cloud compute services, take a look at the [HP Helion Cloud compute overview](/compute/) page
-* If you'd rather use the HP Helion Cloud CLI features, go choose your topic of interest from our [HP Helion Cloud CLI](/cli) pages
+* For basic information about our HP Helion Public Cloud compute services, take a look at the [HP Helion Public Cloud compute overview](/compute/) page
+* If you'd rather use the HP Helion Public Cloud CLI features, go choose your topic of interest from our [HP Helion Public Cloud CLI](/cli) pages

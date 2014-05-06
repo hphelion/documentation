@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "UNIX CLI for HP Helion Cloud: Generating custom reports"
+title: "UNIX CLI for HP Helion Public Cloud: Generating custom reports"
 permalink: /cli/unix/articles/reports
 product: unix-cli
 categories: cli linux object store compute reports
 tags: cli linux object store compute reports
 ---
-#UNIX CLI for HP Helion Cloud: Generating custom reports v12.12#
+#UNIX CLI for HP Helion Public Cloud: Generating custom reports v12.12#
 
 ___________________
 
@@ -18,11 +18,11 @@ On November 4, 2013, the UNIX CLI was moved into its End-of-Life Cycle process t
 * No new feature requests will be honored
 * Bug reports will be accepted
 
-HP Helion Cloud has contributed the Unix CLI back to the open source community, and you can get support, access the documentation, and download the source code [here](https://github.com/hpcloud/unix_cli).
+HP Helion Public Cloud has contributed the Unix CLI back to the open source community, and you can get support, access the documentation, and download the source code [here](https://github.com/hpcloud/unix_cli).
 
 _________________________________________
 
-You can use the UNIX CLI for HP Helion Cloud for automating custom report generation.  Nearly all CLI reports support the `-c` (columns) and `-d` (delimiter) options which allow you to create your own reports and to pipe (`|`) these reports to other commands or import the report data into programs such as Excel.
+You can use the UNIX CLI for HP Helion Public Cloud for automating custom report generation.  Nearly all CLI reports support the `-c` (columns) and `-d` (delimiter) options which allow you to create your own reports and to pipe (`|`) these reports to other commands or import the report data into programs such as Excel.
 
 The `-c` option allows you to specify the columns in report and the order in which they appear.  For example, if you want a report that only contained the public IP address, name, and ID of your servers:
 
@@ -53,5 +53,5 @@ You can pipe the output of this command to another command:
 
 ##For more information## {#articles}
 
-For more tips and How-tos on using your UNIX CLI for HP Helion Cloud, see [UNIX CLI for HP Helion Cloud: Articles on to use the UNIX CLI for HP Helion Cloud](/cli/unix/articles/).
+For more tips and How-tos on using your UNIX CLI for HP Helion Public Cloud, see [UNIX CLI for HP Helion Public Cloud: Articles on to use the UNIX CLI for HP Helion Public Cloud](/cli/unix/articles/).
 

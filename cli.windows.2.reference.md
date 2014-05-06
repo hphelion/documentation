@@ -1,14 +1,14 @@
 ---
 layout: default
-title: "HP Helion Cloud Environment CLI Software for Windows PowerShell Command Line Reference"
+title: "HP Helion Public Cloud Environment CLI Software for Windows PowerShell Command Line Reference"
 permalink: /cli/windows/2/reference/
 product: win-2-cli
 
 ---
 <!-- Removed all html tags -->
-# HP Helion Cloud Environment CLI Software for Windows PowerShell Command Line Reference
+# HP Helion Public Cloud Environment CLI Software for Windows PowerShell Command Line Reference
 
-Below you can find a full reference of supported HP Helion Cloud environment CLI software for Windows PowerShell commands (sometimes called "cmdlets").  The commands are broken up into separate sections by functional area:
+Below you can find a full reference of supported HP Helion Public Cloud environment CLI software for Windows PowerShell commands (sometimes called "cmdlets").  The commands are broken up into separate sections by functional area:
 
 * [Non-service-specific](#Nonservicespecific)
 * [Compute](#Compute)
@@ -16,7 +16,7 @@ Below you can find a full reference of supported HP Helion Cloud environment CLI
 * [CDN](#CDN)
 * [Block Storage](#BlockStorage)
 
-**Note**: The HP Helion Cloud environment CLI software for Windows PowerShell cmdlets are not case specific; in other words, `Get-Catalog` and `get-catalog` function identically. When referencing an argument, like a container name, that has a space, use quotes to access that resource. For example:
+**Note**: The HP Helion Public Cloud environment CLI software for Windows PowerShell cmdlets are not case specific; in other words, `Get-Catalog` and `get-catalog` function identically. When referencing an argument, like a container name, that has a space, use quotes to access that resource. For example:
      
      PS: HPCS:\> cd "my container:"
      PS: HPCS:\> new-container -name "my new container"
@@ -27,7 +27,7 @@ Below you can find a full reference of supported HP Helion Cloud environment CLI
 
 #Non-service-specific# {#Nonservicespecific}
 
-Following is the complete list of HP Helion Cloud Windows CLI commands that are not applicable to a specific service (compute, object storage, etc.).   To issue these commands, you need to navigate to a container or the HP Helion Cloud Services (HPCS) provider, issuing the following command:
+Following is the complete list of HP Helion Public Cloud Windows CLI commands that are not applicable to a specific service (compute, object storage, etc.).   To issue these commands, you need to navigate to a container or the HP Helion Public Cloud Services (HPCS) provider, issuing the following command:
 
     cd HPCS:
 
@@ -302,7 +302,7 @@ Sets the availability zone to "az-2-region-a.geo-1".
 
 #Compute CLI Commands# {#Compute}
 
-Following is the complete list of HP Helion Cloud Windows Compute CLI commands.
+Following is the complete list of HP Helion Public Cloud Windows Compute CLI commands.
 
 ##Add-Rule## {#Add-Rule}
 Creates a new security group rule and assigns it to an existing security group.
@@ -405,7 +405,7 @@ Displays the password for the server instance `123456`.
 ##Ls## {#ls}
 Lists the currently-available servers, flavors, images, networking, and security group and their associated information.  The information listed is dependent on the directory in which you execute the command.  For example, if you are in the directory "\Servers", the server information is listed.
 
-**Note**: The HP Helion Cloud environment CLI software for Windows PowerShell supports the [standard Windows wildcard](http://msdn.microsoft.com/en-us/library/windows/desktop/aa717088(v=vs.85).aspx) characters asterix (`*`), question mark (`?`), and range brackets (`[]`).
+**Note**: The HP Helion Public Cloud environment CLI software for Windows PowerShell supports the [standard Windows wildcard](http://msdn.microsoft.com/en-us/library/windows/desktop/aa717088(v=vs.85).aspx) characters asterix (`*`), question mark (`?`), and range brackets (`[]`).
 
 ### Syntax###
 ls 
@@ -1157,7 +1157,7 @@ Reassigns the Subnet(12857174-99cf-40e9-999e-fb0fa2e84898) to the designated Ext
 
 #Object Storage CLI Commands# {#ObjectStorage}
 
-Following is the complete list of HP Helion Cloud Windows Object Storage CLI commands.
+Following is the complete list of HP Helion Public Cloud Windows Object Storage CLI commands.
 
 ##Cd## {#Cd}
 Allows you to traverse through a directory structure (along both ascendant and descendant axis). 
@@ -1354,7 +1354,7 @@ Migrates existing stores of data from external sources like S3, Dropbo
 : Access key ID.
 
 **b**
-: Comma-deliniated bucket names to be copied to the HP Helion Cloud system.
+: Comma-deliniated bucket names to be copied to the HP Helion Public Cloud system.
 
 
 ###Examples###

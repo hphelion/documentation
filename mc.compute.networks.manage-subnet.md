@@ -21,7 +21,7 @@ This page covers how to create and delete a subnet using the networks screen of 
 
 Before you can create or delete a subnet of an existing network, you must:
 
-* [Sign up for an HP Helion Cloud compute account](https://horizon.hpcloud.com/register)
+* [Sign up for an HP Helion Public Cloud compute account](https://horizon.hpcloud.com/register)
 * [Activate compute service on your account](https://horizon.hpcloud.com/landing/)
 * [Create a network](/mc/compute/networks/create-network#Creating/)
 
@@ -152,6 +152,6 @@ Just click the subnet name for the subnet you want to delete, and then follow th
 ##For further information## {#ForFurtherInformation}
 
 * For information about the subnet details screen, take a look at the [Viewing subnet details](/mc/compute/networks/view-subnet/) page
-* For basic information about our HP Helion Cloud compute services, take a look at the [HP Helion Cloud compute overview](/compute/) page
+* For basic information about our HP Helion Public Cloud compute services, take a look at the [HP Helion Public Cloud compute overview](/compute/) page
 * Use the MC [site map](/mc/sitemap) for a full list of all available MC documentation pages
 * For information about the Open Stack networking features, surf on over to [their networking wiki](https://wiki.openstack.org/wiki/Quantum)

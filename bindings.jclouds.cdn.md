@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "HP Helion Cloud jclouds Binding CDN Examples"
+title: "HP Helion Public Cloud jclouds Binding CDN Examples"
 permalink: /bindings/jclouds/cdn/
 product: jclouds
 
 ---
-# HP Helion Cloud jclouds Binding CDN Examples
+# HP Helion Public Cloud jclouds Binding CDN Examples
 
 This page provides you with examples of how to use the jclouds bindings to perform CDN tasks.  
 
@@ -22,7 +22,7 @@ Instantiate the context with the hpcloud-objectstorage provider:
         BlobStoreContext context = 
                 new BlobStoreContextFactory().createContext("hpcloud-objectstorage", <user>, <password>);
 
-When you need access to HP Helion Cloud-specific features, use the provider-specific context:
+When you need access to HP Helion Public Cloud-specific features, use the provider-specific context:
 
         HPCloudObjectStorageClient hpcloudClient =
                 HPCloudObjectStorageClient.class.cast(context.getProviderSpecificContext().getApi());

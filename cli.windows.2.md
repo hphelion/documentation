@@ -1,13 +1,13 @@
 ---
 layout: default
-title: "HP Helion Cloud Environment CLI Software for Windows PowerShell"
+title: "HP Helion Public Cloud Environment CLI Software for Windows PowerShell"
 permalink: /cli/windows/2/
 product: win-2-cli
 
 ---
-# HP Helion Cloud Environment CLI Software for Windows PowerShell
+# HP Helion Public Cloud Environment CLI Software for Windows PowerShell
 
-The HP Helion Cloud environment command-line interface (CLI) software for Windows PowerShell is a tool which allows Windows users to manage their HP Helion Cloud services from the command line.
+The HP Helion Public Cloud environment command-line interface (CLI) software for Windows PowerShell is a tool which allows Windows users to manage their HP Helion Public Cloud services from the command line.
 
 Surf to the appropriate page to learn how to install the software, use the various features, and see how to go about getting help.  <!--The [tutorials](/cli/windows/tutorials) page contains a video tutorial for the Object Storage functionality; full tutorials for Compute and CDN are coming soon.  -->
 
@@ -22,4 +22,4 @@ For a full list of all the commands available, start with the [command line refe
 + [Getting Help](/cli/windows/2/help)
 + [Release Notes](/cli/windows/2/release-notes)
 
-[**Download** the HP Helion Cloud environment command-line interface (CLI) software for Windows PowerShell](/file/WinCLI-1.3.5.7.zip). 
+[**Download** the HP Helion Public Cloud environment command-line interface (CLI) software for Windows PowerShell](/file/WinCLI-1.3.5.7.zip). 

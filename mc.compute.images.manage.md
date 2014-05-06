@@ -20,7 +20,7 @@ This page describes how to create and delete images using the [images screen](/m
 
 Before you can begin creating or deleting an image, you must:
 
-* [Sign up for an HP Helion Cloud compute account](https://horizon.hpcloud.com/register)
+* [Sign up for an HP Helion Public Cloud compute account](https://horizon.hpcloud.com/register)
 * [Activate compute service on your account](https://horizon.hpcloud.com/landing/)
 
 
@@ -73,7 +73,7 @@ The custom image details screen displays the name, ID, status (active or inactiv
 
 ##For further information## {#ForFurtherInformation}
 
-* For basic information about our HP Helion Cloud compute services, take a look at the [HP Helion Cloud compute overview](/compute/) page
+* For basic information about our HP Helion Public Cloud compute services, take a look at the [HP Helion Public Cloud compute overview](/compute/) page
 * Use the MC [site map](/mc/sitemap) for a full list of all available MC documentation pages
 * For information about the Open Stack networking features, surf on over to  [their wiki](https://wiki.openstack.org/wiki/Quantum)
 
