@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Ruby Fog Bindings for HP Helion Public Cloud CDN Examples"
+title: "Ruby Fog Bindings for HP Helion Public Cloud: CDN Examples"
 permalink: /bindings/fog/cdn/
 product: fog
 
