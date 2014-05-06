@@ -121,7 +121,7 @@ The following are the known issues for HP Helion OpenStack Community edition:
 For additional information on HP Helion OpenStack Community, OpenStack and TripleO:
 
 * [HP Helion OpenStack Community Documentation web site](/helion/community/): Provides the topics listed below.
-* [FAQ](/helion/community/faqs/): Contains some frequently asked questions about the HP Helion OpenStack Community edition release
+* [FAQ](/helion/community/faq/): Contains some frequently asked questions about the HP Helion OpenStack Community edition release
 * [Installation and configuration](/helion/community/install-virtual/): A set tasks that walk you through the installation and configuration process.
 * [Related Topics](/helion/community/related-links/): Links to pertinent HP Helion OpenStack Community and OpenStack documentation.
 * [OpenStack documentation home page](http://docs.openstack.org/)
