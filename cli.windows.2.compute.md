@@ -282,6 +282,7 @@ For Windows Instances only, if you change your Windows password manually via [RD
     PS HPCS:\> reset-password -id 1234 -p "Thisisalongpassword!"
 
 This resets the password for server `1234` to  `Thisisalongpassword!`.
+
  
 ##Floating IP Management## {#IPManagement}
 

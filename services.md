@@ -4,7 +4,7 @@ title: "HP Helion Public Cloud services"
 permalink: /services/
 
 ---
-# HP Helion Public Cloud services
+# HP Helion Public Cloud Services
 
 There are a number of HP Helion Public Cloud services available for you: 
 

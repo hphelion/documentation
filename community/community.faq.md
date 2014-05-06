@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack Community FAQ"
-permalink: /cloudos/community/faqs/
+permalink: /helion/community/faqs/
 product: community
 
 ---

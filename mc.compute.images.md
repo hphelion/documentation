@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "Management console: Images screen"
+title: "Management Console: Images Screen"
 permalink: /mc/compute/images/
 product: mc-compute
 
 ---
-# Management console: Images screen
+# Management Console: Images Screen
 
 The management console (MC) compute dashboard images screen allows you to view and manipulate compute instance images.  This page covers the following topics:
 

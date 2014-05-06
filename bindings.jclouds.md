@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "HP Helion Public Cloud jclouds Java/Clojure Bindings"
+title: "HP Helion Public Cloud: jclouds Java/Clojure Bindings"
 permalink: /bindings/jclouds/
 product: jclouds
 
 ---
-# HP Helion Public Cloud jclouds Java/Clojure Bindings
+# HP Helion Public Cloud: jclouds Java/Clojure Bindings
 
 HP has developed an HP Helion Public Cloud Compute jclouds provider for the [jclouds](http://www.jclouds.org) library.  By using this HP Helion Public Cloud language binding, Java/Clojure developers can write applications that interact with HP Helion Public Cloud without having to deal with the underlying REST API or XML document formats.
 <!--add a link to a zip file; jeremy will provide the link, similar to how it is on the -->

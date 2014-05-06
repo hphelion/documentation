@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack Community Documentation Home"
-permalink: /cloudos/community/
+permalink: /helion/community/
 product: community
 
 ---
@@ -22,23 +22,23 @@ This page covers the following topics:
 
 ## Available Services ## {#services}
 
-HP Helion OpenStack Community Edition consists of many services based on the different OpenStack projects to provide the functionality you need. Visit the [HP OpenStack Community Edition Services Overview page](/cloudos/community/services/overview/) for a complete list of services. -->
+HP Helion OpenStack Community Edition consists of many services based on the different OpenStack projects to provide the functionality you need. Visit the [HP OpenStack Community Edition Services Overview page](/helion/community/services/overview/) for a complete list of services. -->
 
 ## Starting to work with HP Helion OpenStack Community ## {#start}
 
 Use the following links to get started with HP Helion OpenStack Community edition:
 
-* [Release notes](/cloudos/community/release-notes/)
-* [Installation and configuration](/cloudos/community/install-virtual/) 
-* [FAQ](/cloudos/community/faqs/)
-* [Related topics](/cloudos/community/related-links/)
-* [Documentation site index](/cloudos/siteindex/)
+* [Release notes](/helion/community/release-notes/)
+* [Installation and configuration](/helion/community/install-virtual/) 
+* [FAQ](/helion/community/faqs/)
+* [Related topics](/helion/community/related-links/)
+* [Documentation site index](/helion/siteindex/)
 
 
-<!--* [Technical overview](/cloudos/community/technical-overview/)
-* [Reference architecture](/cloudos/community/reference-architecture/)
-* [Support matrix](/cloudos/community/support-matrix/)
-* [Glossary](/cloudos/community/glossary/) 
+<!--* [Technical overview](/helion/community/technical-overview/)
+* [Reference architecture](/helion/community/reference-architecture/)
+* [Support matrix](/helion/community/support-matrix/)
+* [Glossary](/helion/community/glossary/) 
 
 ## REST API information ## {#api}
 
@@ -48,7 +48,7 @@ For detailed REST API information, see the [OpenStack API Complete Reference](ht
 
 There's a lot of information out there to help you get going with your cloud. We recommend you take a look at the list below:
 
-* The documentation [site index](/cloudos/siteindex/) gives you a full list of the technical content pages available on the site.
+* The documentation [site index](/helion/siteindex/) gives you a full list of the technical content pages available on the site.
 
 * For detailed REST API information, see the [OpenStack API Complete Reference](http://api.openstack.org/api-ref.html).
 
@@ -59,7 +59,7 @@ There's a lot of information out there to help you get going with your cloud. We
 * Visit our [Community support forum--NEED LINK](LINK) hosted by [StackOverflow](http://stackoverflow.com)
 
 
-<!--* See [HP Helion OpenStack Community Edition Glossary](/cloudos/community/glossary/) for definitions of important terms.-->
+<!--* See [HP Helion OpenStack Community Edition Glossary](/helion/community/glossary/) for definitions of important terms.-->
 If you have a question, feel free to [post something over on our forums](https://connect.hpcloud.com/). We'd love to help.
 
 

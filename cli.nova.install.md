@@ -11,25 +11,25 @@ Before you can begin working with the Novaclient CLI software, you have to insta
 
 This page provides you with the installation information for the following operating systems:
 
-* [Installation Prerequisites](#Installation)
-* [Ubuntu Installation](#Ubuntu)
-* [CentOS Installation](#CentOS)
-* [Windows Installation](#Windows)
+* [Installation prerequisites](#Installation)
+* [Ubuntu installation](#Ubuntu)
+* [CentOS installation](#CentOS)
+* [Windows installation](#Windows)
 
 <!--* [Fedora Installation](#Fedora)-->
 
 [You can download the latest version of the Python Novaclient CLI software here (Version 2.6.8-17)](/file/python-novaclient_2.6.8-17.tar.gz)!
 
-**Note**: These instructions are valid for version 12.12 of the software *only*.  For instructions on installing on version 13.5 of the software, please see the [Command-Line Interface (CLI) Tool Installation Instructions](https://community.hpcloud.com/article/cloud-135-cli-installation-instructions) page.
+**Note**: These instructions are valid for version 12.12 of the software *only*.  For instructions on installing on version 13.5 of the software, please see the [Command-Line Interface (CLI) Tool installation instructions](https://community.hpcloud.com/article/cloud-135-cli-installation-instructions) page.
 
 
-##Installation Prerequisites## {#Installation}
+##Installation prerequisites## {#Installation}
 
 To install the Python Novaclient CLI on CentOS, you must first download and install [the dependency software (in TAR format)](https://pypi.python.org/packages/source/P/PrettyTable/prettytable-0.5.tar.gz)--follow the instructions in the `setup.py` file included with the package.  (We also assume that you have Python already installed!)
 
 **Note**: We recommend installing the NovaClient on your local system so you always have it available, rather than installing it on an instance which you may want tceo terminate later.
 
-##Ubuntu Installation## {#Ubuntu}
+##Ubuntu installation## {#Ubuntu}
 
 The installation procedure in this section is valid for Ubuntu versions 11.04, 11.10, 12.04, and 12.10.  To install the Python NovaClient software on your Ubuntu system, follow these steps while logged in as the root user:
 
@@ -244,12 +244,12 @@ You can now access your `nova` commands.  For a full list of commands, surf on o
 
 To install the Python Novaclient on your system, for full functionality with your HP Helion Public Cloud packages, follow these steps:
 
-* [Installing the Python 2.7 Software](#InstallPython)
-* [Installing the Python Setup Tools](#InstallSetupTools)
-* [Installing the HP Python-Novaclient Software](#InstallHPPythonNovaClient)
-* [Configuring the Python NovaClient Variables](#ConfiguringVariables)
+* [Installing the Python 2.7 software](#InstallPython)
+* [Installing the Python setup tools](#InstallSetupTools)
+* [Installing the HP Python-Novaclient software](#InstallHPPythonNovaClient)
+* [Configuring the Python NovaClient variables](#ConfiguringVariables)
 
-###Installing the Python  2.7 Software### {InstallPython}
+###Installing the Python  2.7 Software### {#InstallPython}
 
 To install the public Python software on your Windows system, follow these steps:
 
@@ -333,7 +333,7 @@ To install the Python Setup tools, follow these steps:
 
 10. In the `Environment Variables` dialog click `OK`.
 
-###Installing the HP Python-Novaclient Software### {#InstallHPPythonNovaClient}
+###Installing the HP Python-Novaclient software### {#InstallHPPythonNovaClient}
 
 To install the HP Helion Public Cloud Python-Novaclient on your system, follow these steps:
 
