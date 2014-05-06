@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack Community Site Index"
-permalink: /cloudos/community/siteindex/
+permalink: /helion/community/siteindex/
 product: community
 
 ---
