@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion Public Cloud Overview"
-permalink: /pc-overview
+permalink: /pc-overview/
 
 ---
 <!-- <iframe src="https://player.vimeo.com/video/38064508?title=0&amp;byline=0&amp;portrait=0" width="580" height="420" frameborder="0"> </iframe> -->

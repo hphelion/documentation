@@ -16,7 +16,7 @@ navigation:
   - text: Cloud OS for Moonshot
     url: /cloudos/moonshot/
   - text: CloudSystem
-    url: h17007.www1.hp.com/us/en/enterprise/servers/solutions/info-library/index.aspx?cat=hp_converged_management&subcat=cloudsystem#.U2lMyFdWjrQ
+    url: http://www.hp.com/go/cloudsystem/docs
   public:
   - text: Services Overview
     url: /
