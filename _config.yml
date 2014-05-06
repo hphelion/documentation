@@ -32,6 +32,8 @@ navigation:
     url: /faq/
   - text: Site Overview
     url: /site-overview/
+  - text: HP Helion Documentation
+    url: /
   mc:
   - text: Overview
     url: /mc/
@@ -187,7 +189,9 @@ navigation:
   - text: OpenStack Links
     url: /cloudos/openstack/	
   - text: Site Index
-    url: /cloudos/siteindex/	
+    url: /cloudos/siteindex/
+  - text: HP Helion Documentation
+    url: /
   moonshot:
   - text: HP Cloud OS for Moonshot Home
     url: /cloudos/moonshot/
@@ -205,6 +209,8 @@ navigation:
     url: /cloudos/moonshot/related-topics/	
   - text: Site Index
     url: /cloudos/moonshot/siteindex/
+  - text: HP Helion Documentation
+    url: /
   community: 
   - text: HP Helion OpenStack Community Doc Home
     url: /cloudos/community/
@@ -218,6 +224,8 @@ navigation:
     url: /cloudos/community/related-links/		
   - text: Site Index
     url: /cloudos/community/siteindex/
+  - text: HP Helion Documentation
+    url: /
 
 apinavigation:
 - text: Site home page
