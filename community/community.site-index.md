@@ -28,7 +28,7 @@ PageRefresh();
 #### [Getting started with HP Helion OpenStack Community](/helion/community/)
 
 * [Release notes](/helion/community/release-notes/) 
-* [FAQ](/helion/community/faqs/)  
+* [FAQ](/helion/community/faq/)  
 * [Related topics](/helion/community/related-links/)
 
 #### [Install &amp; configure your HP Helion OpenStack Community  cloud](/helion/community/install/)
