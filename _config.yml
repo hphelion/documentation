@@ -5,6 +5,19 @@ relative_permalinks: false
 
 navigation:
   main:
+  - text: HP Helion Documentation
+    url: /
+  - text: Community
+    url: /cloudos/community/
+  - text: Public Cloud
+    url: /pc-overview/
+  - text: Cloud OS
+    url: /cloudos/
+  - text: Cloud OS for Moonshot
+    url: /cloudos/moonshot/
+  - text: CloudSystem
+    url: h17007.www1.hp.com/us/en/enterprise/servers/solutions/info-library/index.aspx?cat=hp_converged_management&subcat=cloudsystem#.U2lMyFdWjrQ
+  public:
   - text: Services Overview
     url: /
   - text: Available Services
