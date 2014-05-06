@@ -44,7 +44,7 @@ If you're distro's package-manager doesn't have a repository for installing the 
     python setup.py build
     sudo python setup.py install
   
-Again, this is NOT RECOMMENDED due to this revision's problems with it's implementation of 2-way SSL encryption.  However, if you're willing to troubleshoot the implementation, I'm sure the OpenStack project would very much appreciate the contribution.
+Again, this is NOT RECOMMENDED due to this revision's problems with its implementation of 2-way SSL encryption.  However, if you're willing to troubleshoot the implementation, I'm sure the OpenStack project would very much appreciate the contribution.
   
 My suggestion, if you're on a non-debian distro, is to directly download and install the version installed by the Ubuntu 12.04 package manager:
 

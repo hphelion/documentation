@@ -49,11 +49,11 @@ To use this solution effectively, you should be familiar with:
 
 ## Before you begin ### {#begin}
 
-Before you can begin working with a network, make sure you have activated the [compute service](#compute),  [installed the HP Helion Public Cloud 13.5 CLI](#installcli) (if you prefer to use the CLI), and have sufficient access permissions.
+Before you can begin working with a network, make sure you have activated the [Compute service](#compute),  [installed the HP Helion Public Cloud 13.5 CLI](#installcli) (if you prefer to use the CLI), and have sufficient access permissions.
 
-#### Activating the compute service in HP Helion Public Cloud (optional) #### {#compute}
+#### Activating the Compute service in HP Helion Public Cloud (optional) #### {#compute}
 
-If you have not previously created an account and activated the compute service please sign up at [http://hpcloud.com](http://hpcloud.com).  
+If you have not previously created an account and activated the Compute service please sign up at [http://hpcloud.com](http://hpcloud.com).  
 
 Make sure you activate a compute instance in HP Helion Public Cloud version 13.5 to access the networking capabilities.
 
@@ -97,7 +97,7 @@ HP Helion Public Cloud compute activation comes with a default configuration tha
 * A router for connecting the subnets to the Internet
 * A security group with basic server options
 
-You can [deploy HP Helion Public Cloud virtual server instances](#CreateServer) on the default network or [modify the network configuration](#customize) using the HP Public Console or the HP Helion Public Cloud 13.5 CLI before deploying servers.
+You can [deploy HP Helion Public Cloud virtual server instances](#CreateServer) on the default network or [modify the network configuration](#customize) using the HP Helion Public Cloud Console or the HP Helion Public Cloud 13.5 CLI before deploying servers.
 
 **Note:** The default security group allows all traffic to and from the network. For information on security groups in version 13.5, please see the knowledge base article [Managing Your Security Groups](https://community.hpcloud.com/article/managing-your-security-groups-135) for details.
 
@@ -106,7 +106,7 @@ You can [deploy HP Helion Public Cloud virtual server instances](#CreateServer) 
 
 You can customize the default network using either the HP Helion Public Cloud Console HP Helion Public Cloud 13.5 CLI or the . 
 
-When you first activate the compute service, a [default](#default) configuration is created that should provide enough capacity for typical needs. However, you can create a new network, allowing you to assign a specific IP address to the network and subnet.
+When you first activate the Compute service, a [default](#default) configuration is created that should provide enough capacity for typical needs. However, you can create a new network, allowing you to assign a specific IP address to the network and subnet.
 
 You can use the HP Helion Public Cloud Management Console, the HP Helion Public Cloud Networking API, the HP Helion Public Cloud CLI, or our language bindings. 
 
@@ -179,7 +179,7 @@ To see a graphic display of your network setup, click **Network Topology** under
 
 #### Using the CLI to create a network and subnet #### {#CreateNetworkCLI}
 
-Once you [activate](#compute) the compute service, in order to use the HP Helion Public Cloud 13.5 CLI to configure the network, you need to [install the CLI](http://docs.hpcloud.com/cli/nova). 
+Once you [activate](#compute) the Compute service, in order to use the HP Helion Public Cloud 13.5 CLI to configure the network, you need to [install the CLI](http://docs.hpcloud.com/cli/nova). 
 
 To create a network and subnet, use the following steps:
 
@@ -415,5 +415,5 @@ To create an instance or your network, use the following steps:
 ##For further information## {#ForFurtherInformation}
 
 * For information about the HP Helion Public Cloud Networking, take a look at the [HP Helion Public Cloud Networking Overview](/compute/networks/overview/) page
-* For basic information about our HP Helion Public Cloud compute services, take a look at the [HP Helion Public Cloud compute overview](/compute/) page
+* For basic information about our HP Helion Public Cloud Compute services, take a look at the [HP Helion Public Cloud Compute overview](/compute/) page
 * For information about the Open Stack networking features, surf on over to [their networking wiki](https://wiki.openstack.org/wiki/Quantum)

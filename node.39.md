@@ -127,5 +127,5 @@ For example:
         export EC2_ACCESS_KEY=87135022548315:2MYBW5CYD2U55VLWDTF8
         export EC2_SECRET_KEY=s9VQhwCK49TOPnEp+80ypRD7AK7rs8qgWp0zYCyE
 
-Similar to the statements made in the Object Storage compatibility section  HP Helion Public Cloud highly recommends you begin using the OpenStack Compute API and associated client libraries as soon as possible, as the EC2 compatible API is deprecated and will be removed at some point in the future.
+Similar to the statements made in the Object Storage compatibility section,  HP Helion Public Cloud highly recommends you begin using the OpenStack Compute API and associated client libraries as soon as possible, as the EC2 compatible API is deprecated and will be removed at some point in the future.
 

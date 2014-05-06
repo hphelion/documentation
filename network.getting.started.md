@@ -87,11 +87,11 @@ You can use a low level, raw REST API to access HP Helion Public Cloud compute. 
 
 ###Using the CLI### {#cli}
 
-You can use any of several command-line interface software to access HP Helion Public Cloud compute. For more information on using the HP Helion Public Cloud Networking API, see [HP Helion Public Cloud CLI](/cli/).
+You can use any of several command-line interface software to access HP Helion Public Cloud compute. For more information on using the HP Helion Public Cloud Compute CLI, see [HP Helion Public Cloud CLI](/cli/).
 
 ###Using language bindings### {#bindings}
 
-You can use any of several language bindings to access HP Helion Public Cloud compute. For more information on using the HP Helion Public Cloud Networking API, see [HP Helion Public Cloud binding support](/bindings/).
+You can use any of several language bindings to access HP Helion Public Cloud compute. For more information on using the HP Helion Public Cloud compute bindings, see [HP Helion Public Cloud binding support](/bindings/).
 
 ##Using VPN with the Networking Service## {#vpn}
 

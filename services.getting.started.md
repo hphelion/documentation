@@ -9,13 +9,13 @@ product: compute
 
 <!-- modeled after HP Helion Public Cloud Networking Getting Started (network.getting.started.md) -->
 
-Leveraging OpenStack Compute, HP Helion Public Cloud compute provides a way to instantiate virtual servers on publicly accessible physical machines hosted in HP data centers. Key terms include:
+Leveraging OpenStack Compute, HP Helion Public Cloud Compute  provides a way to instantiate virtual servers on publicly accessible physical machines hosted in HP data centers. Key terms include:
 
 - Flavor - A unique combination of disk space, memory capacity, and CPU
 - Image - A collection of files used as a base installation, typically an operating system such as Ubuntu 10.10 or something similar.
 - Server - An instance created out of a Flavor + an Image
 
-A variety of flavors and images are provided by HP Helion Public Cloud compute that can be used to create a wide mix of servers.
+A variety of flavors and images are provided by HP Helion Public Cloud Compute  that can be used to create a wide mix of servers.
 
 
 ###Using the API to access Networking### {#API}

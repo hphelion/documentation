@@ -11,7 +11,7 @@ Welcome to the HP Helion Public Cloud website!  We don't know about you, but whe
 ##Quicklinks
 Rather than force you to read this whole page to find the info you need, here are a few links that maybe can help you out quickly:
 
-* [Site Map](/sitemap): This is a full map of all the documentation pages on the site.  Go here if your looking for information on something specific, such as Ruby Fog Bindings, the Identity Service API, and other similar topics.
+* [Site Map](/sitemap): This is a full map of all the documentation pages on the site.  Go here if you are looking for information on something specific, such as Ruby Fog Bindings, the Identity Service API, and other similar topics.
 * [Knowledge Base](https://community.hpcloud.com/knowledge-base): A collection of searchable information about HP Helion Public Cloud. (This link is also in the navigation sidebar over on the right-hand side of every page.)
 * [Forums](https://community.hpcloud.com/): Where users get together and discuss issues with each other and some members of the HP Helion Public Cloud team. (This link is also in the navigation sidebar over on the right-hand side of every page.)
 * [Console](https://horizon.hpcloud.com/): A link straight to the main HP Helion Public Cloud console.  Click on it and go!
