@@ -213,17 +213,17 @@ navigation:
     url: /
   community: 
   - text: HP Helion OpenStack Community Doc Home
-    url: /cloudos/community/
+    url: /helion/community/
   - text: Release Notes
-    url: /cloudos/community/release-notes/  	
+    url: /helion/community/release-notes/  	
   - text: FAQ
-    url: /cloudos/community/faqs/ 		
+    url: /helion/community/faqs/ 		
   - text: Installation & Configuration
-    url: /cloudos/community/install-virtual/		
+    url: /helion/community/install-virtual/		
   - text: Related Topics
-    url: /cloudos/community/related-links/		
+    url: /helion/community/related-links/		
   - text: Site Index
-    url: /cloudos/community/siteindex/
+    url: /helion/community/siteindex/
   - text: HP Helion Documentation
     url: /
 
