@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Ruby Fog Bindings for HP Helion Public Cloud: Compute Examples"
+title: "Ruby Fog Bindings for HP Helion Public Cloud Compute Examples"
 permalink: /bindings/fog/compute/
 product: fog
 
