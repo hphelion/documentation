@@ -24,7 +24,7 @@ Rather than force you to read this whole page to find the info you need, here ar
 You may have already noticed that the site has multiple methods for navigating; we've included these so that you can choose the method that works best for you:
 
 * The [Site Map](/sitemap) itself, as mentioned above, contains a full map of all the documentation pages on the website.
-* Next to the HP Helion Clouds logo at the top of the page, there are three navigation pull-down menus and two quick links:
+* Next to the HP Helion Public Cloud logo at the top of the page, there are three navigation pull-down menus and two quick links:
     - [**Products**](https://www.hpcloud.com/): Links to all the HP Helion Public Cloud products ([Compute](https://www.hpcloud.com/products/cloud-compute), [Object Storage](https://www.hpcloud.com/products/object-storage), [CDN](https://www.hpcloud.com/products/CDN), [Block Storage](https://www.hpcloud.com/products/block-storage), [Relational Database](https://www.hpcloud.com/products/RDB), [Identity Service](https://www.hpcloud.com/content/hp-cloud-identity-service))
     - [**Documentation**](https://docs.hpcloud.com/): This here stuff you're currently reading; all the documentation available for the HP Helion Cloud software ([Compute](/compute), [Object Storage](/object-storage), [CDN](/cdn), [Block Storage](/block-storage), [Identity Service](/identity), [API](/api), [CLI](/cli), [Bindings](/bindings))
     - [**Community**](https://community.hpcloud.com/):  Links to HP Helion Public Cloud community resources ([Forum](https://community.hpcloud.com/forum), [Knowledge Base](https://community.hpcloud.com/knowledge-base), [System Status](https://community.hpcloud.com/status))

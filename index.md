@@ -20,7 +20,7 @@ This page covers the following topics:
 
 ## Available Services ## {#Services}
 
-HP Helion Cloud consists of many services based on the different OpenStack projects to provide the functionality you need. Visit the [Available Services](/services/) page for a complete list of services.
+HP Helion Public Cloud consists of many services based on the different OpenStack projects to provide the functionality you need. Visit the [Available Services](/services/) page for a complete list of services.
 
 ## Starting to work with HP Helion Public Cloud ## {#Starting}
 

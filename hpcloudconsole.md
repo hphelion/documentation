@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion Cloud Console Getting Started"
+title: "HP Helion Public Cloud Console Getting Started"
 permalink: /hpcloudconsole/
 product: HP Helion Cloud Console
 
@@ -8,7 +8,7 @@ product: HP Helion Cloud Console
 
 
 # Getting Started with HP Helion Public Cloud Console
-Welcome to HP Helion Public Cloud Console Horizon! HP Helion Public Cloud wants you up and running quickly so this Getting Started guide walks you through network setup and connection (if not going with the default configuration setup when you activate compute services), instance and volume creation, security options, identity parameters, and management tools that facilitate your organization's use of HP Helion Public Cloud. **This page takes you through the interface in the chronological order needed to get up and running, rather than the order displayed in the console**. 
+Welcome to HP Helion Public Cloud Horizon Console! We want you up and running quickly, so this Getting Started guide walks you through network setup and connection (if not going with the default configuration setup when you activate compute services), instance and volume creation, security options, identity parameters, and management tools that facilitate your organization's use of HP Helion Public Cloud. **This page takes you through the interface in the chronological order needed to get up and running, rather than the order displayed in the console**. 
 
 After initial setup, revisit the interface to monitor usage, modify, add, and delete networks, instances, volumes, roles, groups, and more. For the latest updates to the current HP Helion Public Cloud Console release, see [What's new with HP Helion Public Cloud Console](/whats_new_with_HP_Cloud_Console/). 
 
@@ -348,7 +348,7 @@ Use HP Helion Cloud Monitoring to ascertain system health and track resource met
 After completing these tasks, you receive the metrics in JSON format at the locations you specified when an alarm is triggered. The metrics are streamed over an [AMQP](http://www.amqp.org/about/what) socket. Select the tool of your choice to create graphical representations of the metrics.
 
 ####Begin:####
-1. Click "Manage Services" in the left-hand bar on the [HP Helion Cloud Console landing page](https://horizon.hpcloud.com/landing), then "Activate" in the "Monitoring" row under the region you are setting up.
+1. Click "Manage Services" in the left-hand bar on the [HP Helion Public Cloud Console landing page](https://horizon.hpcloud.com/landing), then "Activate" in the "Monitoring" row under the region you are setting up.
 
 <img src="media/Monitoring1.png" width="580" alt="" /> 
 
@@ -441,7 +441,7 @@ After completing these tasks, you receive the metrics in JSON format at the loca
 
      
 
-###Organize and manage HP Helion Cloud Access## {#Identity}
+###Organize and manage HP Helion Public Cloud access## {#Identity}
 
 Click  "Identity" in the left-hand interface to display links:
 

@@ -1,14 +1,14 @@
 ---
 layout: default
-title: "HP Helion Cloud Service Documentation Site Map"
+title: "HP Helion Public Cloud Documentation Site Map"
 permalink: /sitemap/
 
 ---
-# HP Helion Cloud Service Documentation Site Map#
+# HP Helion Public Cloud Documentation Site Map#
 
 Having a bit of trouble navigating our site, and so you're looking for a single list of what we cover?  You've come to the right place.
 
-[Getting Started with HP Helion Cloud](/)<br>
+[Getting Started with HP Helion Public Cloud](/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Documentation Site Overview](/site-overview)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;HP Helion Public Cloud Console -- 13.5<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Getting Started with HP Helion Public Cloud Console](/hpcloudconsole/)<br>
@@ -23,31 +23,31 @@ Having a bit of trouble navigating our site, and so you're looking for a single 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Self-transition reference](/migration-overview-reference/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Assisted transition overview](/migration-details/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Assisted transition reference](/migration-details-reference/)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[HP Helion Cloud FAQ](/faq)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[HP Helion Public Cloud FAQ](/faq)<br>
 [HP Helion Cloud Available Services](/services/)<br> 
-&nbsp;&nbsp;&nbsp;&nbsp;[Compute Services Overview](/compute)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[HP Helion Cloud Compute Services Overview](/compute)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Using the Compute Service](/compute/using/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Compute Services API](/api/v13/compute/)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Identity Service Overview](/identity/)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[HP Helion Cloud Identity Service Overview](/identity/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Identity Service API](/api/v13/identity/)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Networking Service Overview](/compute/network/overview/)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[HP Helion Cloud Networking Service Overview](/compute/network/overview/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Network setup quick start guide](/compute/network/quick-start/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Networking Service API](/api/v13/networking/)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Object Storage Overview](/object-storage/)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[HP Helion Cloud Object Storage Overview](/object-storage/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Object Storage API](/api/object-storage/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[HP Helion Cloud Block Storage Overview](/block-storage/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Block Storage API](/api/v13/block-storage/)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Content Delivery Network (CDN) Overview](/cdn/)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[HP Helion Cloud Content Delivery Network (CDN) Overview](/cdn/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[CDN API](/cdn/api/)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Relational Database (RDB) Overview](/rdb)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[HP Helion Cloud Relational Database (RDB) Overview](/rdb)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[RDB API](/api/v13/dbaas/)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Load Balancer as a Service (LBaaS) Overview](/lbaas)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[HP Helion Cloud Load Balancer as a Service (LBaaS) Overview](/lbaas)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[LBaaS API](/api/lbaas)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Domain Name Service (DNS) Overview](/dns)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[HP Helion Cloud Domain Name Service (DNS) Overview](/dns)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[DNS API](/api/dns)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Monitoring as a Service (MaaS) Overview](/maas)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[HP Helion Cloud Monitoring as a Service (MaaS) Overview](/maas)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[MaaS API](/api/v13/monitoring)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Application Platform as a Service (aPaaS) Overview](/apaas)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[HP Helion Cloud Application Platform as a Service (aPaaS) Overview](/apaas)<br>
 [HP Helion Cloud Bindings](/bindings)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Ruby Fog for HP Helion Cloud Overview](/bindings/fog)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Installation](/bindings/fog/install)<br>
@@ -67,7 +67,7 @@ Having a bit of trouble navigating our site, and so you're looking for a single 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Block Storage Examples](/bindings/jclouds/block-storage)<br>
 [HP Helion Cloud CLI Documentation](/cli)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[UNIX CLI for HP Helion Cloud Overview](/cli/unix)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**UNIX CLI for HP Helion Cloud v13.5**<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**UNIX CLI for HP Helion Public Cloud v13.5**<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Installation](/cli/unix/2/install)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Account Configuration](/cli/unix/2/configuration)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Advanced Account Management](/cli/unix/2/account-management)<br>
@@ -79,7 +79,7 @@ Having a bit of trouble navigating our site, and so you're looking for a single 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[DNS Examples](/cli/unix/2/dns)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[CLI Reference](/cli/unix/2/reference)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Release Notes](/cli/unix/release-notes)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**UNIX CLI for HP Helion Cloud v12.12**<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**UNIX CLI for HP Helion Public Cloud v12.12**<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Installation](/cli/unix/install)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Account Configuration](/cli/unix/configuration)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Managing Multiple Accounts](/cli/unix/account-management)<br>

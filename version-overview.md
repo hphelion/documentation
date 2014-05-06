@@ -1,10 +1,10 @@
 ---
 layout: default
-title: "HP Helion Cloud version 13.5 overview"
+title: "HP Helion Public Cloud version 13.5 overview"
 permalink: /version-overview/
 
 ---
-# HP Helion Cloud version 13.5 overview
+# HP Helion Public Cloud version 13.5 overview
 HP Helion Public Cloud is based on the open source cloud computing platform OpenStack core code base, releasing regular updates on the current tested and approved OpenStack versions.  One of the most significant changes is the addition of our new best-in-class software defined networking (SDN) for virtual private clouds. This new networking service provides enhanced network functionality and the ability to fine-tune and define your own virtual network.
 
 In addition, you now have larger and more powerful instance types (sizes) to choose from--four times the size of the largest instances offered by most public clouds. And, our large, xlarge, and 2xlarge sizes are also offered in high memory versions. (See the [chart below](#sizes) for all available instance types.)
@@ -84,7 +84,7 @@ If you don't specify an availability zone the compute or storage service automat
 **Important:** Volumes can only be attached to servers created in the same availability zone.
 
 ## Software Defined Networking ## {#Network}
-HP Helion Cloud v13.5 builds on the OpenStack Neutron service complemented with Software Defined Networking (SDN) technology from HP Networking to offer more robust and flexible networking capabilities to rapidly customize your network as needed. Then, you can simply connect it with your existing on-premise datacenter via a VPN tunnel. Spinning up a compute instance automatically configures
+HP Helion Public Cloud v13.5 builds on the OpenStack Neutron service complemented with Software Defined Networking (SDN) technology from HP Networking to offer more robust and flexible networking capabilities to rapidly customize your network as needed. Then, you can simply connect it with your existing on-premise datacenter via a VPN tunnel. Spinning up a compute instance automatically configures
 
 - A default network 
 - A subnet
@@ -109,7 +109,7 @@ You also have the ability to set communication rules (security group rules) for 
 - Map floating IP addresses to any Availability Zone in a region
 
 ## Block Storage ## {#BlockSt}
-Block storage has always been available in the HP Helion Cloud Compute service, but now HP Helion Cloud provides it as a separate but integrated service based on OpenStack Cinder.  Block storage provides persistent, manageable volumes along with the ability to take a snapshot of a volume.   Bootable volumes can be created from images in the Image Management service and these bootable volumes can be used to create persistent instances.  The physical implementation of our storage solution is based on technology developed in HP labs and provides enterprise class volume availability.
+Block storage has always been available in the HP Helion Cloud Compute service, but now HP Helion Public Cloud provides it as a separate but integrated service based on OpenStack Cinder.  Block storage provides persistent, manageable volumes along with the ability to take a snapshot of a volume.   Bootable volumes can be created from images in the Image Management service and these bootable volumes can be used to create persistent instances.  The physical implementation of our storage solution is based on technology developed in HP labs and provides enterprise class volume availability.
 
 ## Bulk data import ## {#BulkImp}
 Bulk import means we load your data into HP Helion Cloud Block Storage or HP Helion Cloud Object Storage--just send a hard drive directly to the HP data centers where we rapidly transfer your data to the cloud. Get apps with big data sets to the HP Helion Cloud quickly and easily.

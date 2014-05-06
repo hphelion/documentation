@@ -33,7 +33,7 @@ Here's what we have for you:
 * [Overview page](/cli/windows)
 * [Release Notes](/cli/windows/release-notes)
 
-**Note**: See the [HP Helion Cloud version 13.5 overview(/version-overview/) page for information on software versions.
+**Note**: See the [HP Helion Cloud version 13.5 overview](/version-overview/) page for information on software versions.
 
 ###Python NovaClient### {#PythonNovaClient}
 * [Installation package, Version 2.6.8-17](/file/python-novaclient_2.6.8-17.tar.gz)

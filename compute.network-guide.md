@@ -28,7 +28,7 @@ This guide covers:
 
 __Use as is or customize__ 
 
-You can use the default network to deploy HP Helion Cloud compute virtual servers, or modify the network configuration through the OpenStack Networking API.  Use the command line or the HP Helion Cloud management console's (MC) easy-to-use interface to customize.
+You can use the default network to deploy HP Helion Cloud compute virtual servers, or modify the network configuration through the OpenStack Networking API.  Use the command line or the HP Helion Public Cloud management console's (MC) easy-to-use interface to customize.
  
 HP Helion Cloud Networking expands networking capabilities, allowing you to perform many tasks, including:
 
@@ -88,7 +88,7 @@ __HP Helion Cloud Networking Features__
   
 * A virtual server to which you assign a floating IP address has access to and from the Internet.
 
-NOTE: The virtual server can send outbound traffic to the Internet. A virtual server can also receive incoming information in response to  previously initiated outbound communications without a floating IP.To receive other inbound traffic, you must assign a floating IP address to the server.
+**NOTE:** The virtual server can send outbound traffic to the Internet. A virtual server can also receive incoming information in response to  previously initiated outbound communications without a floating IP.To receive other inbound traffic, you must assign a floating IP address to the server.
 
 * You can configure your virtual server as a Virtual Private Network (VPN) gateway to your networks.
 
