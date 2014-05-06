@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack Community Documentation Home"
-permalink: /cloudos/community/
+permalink: /helion/community/
 product: community
 
 ---
