@@ -17,8 +17,8 @@ This page describes the server details screen of the [management console](/mc/) 
 
 Before you can begin creating or deleting a server, you must:
 
-* [Sign up for an HP Helion Public Cloud compute account](https://horizon.hpcloud.com/register)
-* [Activate compute service on your account](https://horizon.hpcloud.com/landing/)
+* [Sign up for an HP Helion Public Cloud Compute account](https://horizon.hpcloud.com/register)
+* [Activate Compute service on your account](https://horizon.hpcloud.com/landing/)
 * Create a key pair
 * Create an image or bootable volume (optional)
 
@@ -57,6 +57,6 @@ You can use the server details screen to [connect to](/mc/compute/servers/manage
 
 ##For further information## {#ForFurtherInformation}
 
-* See the [compute server screen overview](/mc/compute/servers)
-* For basic information about our HP Helion Public Cloud compute services, take a look at the [HP Helion Public Cloud compute overview](/compute/) page
+* See the [Compute server screen overview](/mc/compute/servers)
+* For basic information about our HP Helion Public Cloud Compute services, take a look at the [HP Helion Public Cloud Compute overview](/compute/) page
 * Use the MC [site map](/mc/sitemap) for a full list of all available MC documentation pages.
