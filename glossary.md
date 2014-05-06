@@ -6,7 +6,7 @@ permalink: /glossary/
 ---
 # Glossary of HP Helion Public Cloud Terms
 
-Sometimes it's a little easy to become lost in the weeds of the cloud nomenclature; for such times, we've created this glossary to help you through.  While this glossary concentrates primarily on terms that are more specific to the HP Helion Cloud environment, we have tried to include a salad of general cloud computing terms to help you along.  If you need additional definitions, we suggest going on over to the [Open Stack Glossary](http://cloudglossary.com/) and checking there.
+Sometimes it's a little easy to become lost in the weeds of the cloud nomenclature; for such times, we've created this glossary to help you through.  While this glossary concentrates primarily on terms that are more specific to the HP Helion Public Cloud environment, we have tried to include a salad of general cloud computing terms to help you along.  If you need additional definitions, we suggest going on over to the [Open Stack Glossary](http://cloudglossary.com/) and checking there.
 
 For a quick search of the [Knowledge Base](https://community.hpcloud.com/knowledge-base), just click on the blue highlighted term!  
 
@@ -173,7 +173,7 @@ For a quick search of the [Knowledge Base](https://community.hpcloud.com/knowled
 ## M ##
 
 ###[Management Console](https://community.hpcloud.com/search/knowledge/management+console) ### {#ManagementConsole}
-:    The primary access location for the HP Helion Cloud interface.  The console consists of a main dashboard panel, along with compute, storage, and account panels.
+:    The primary access location for the HP Helion Public Cloud interface.  The console consists of a main dashboard panel, along with compute, storage, and account panels.
 
 ###[Maven](https://community.hpcloud.com/search/knowledge/Maven) ### {#Maven}
 :    An open source software project management and comprehension tool. (Also: [Apache Maven](#ApacheMaven) )

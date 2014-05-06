@@ -16,7 +16,7 @@ As of January 29, 2014, you can only manage your 13.5 services and update your a
 This page contains the following sections:
 
 * [Logins and transition information for HP Classic Console and HP Helion Public Cloud Console](#Logins)
-* [Find Classic Console Features in the HP Public Public Cloud](#Findfeatures)
+* [Find Classic Console Features in the HP Helion Public Cloud](#Findfeatures)
 * [Using HP Helion Public Cloud Console](#Usinghpcc)
 * [Feature mapping details](#featuremappingdetails)
 
@@ -29,15 +29,15 @@ This page contains the following sections:
 
 [Login to HP Helion Public Cloud Console](https://horizon.hpcloud.com/)
 
-[HP Helion Cloud version 13.5 overview](http://docs.hpcloud.com/version-overview?jumpid=em_R11646_us/en/b_to_b/hpcs/email_13.5_Console/hpcs_overview/20131218&elq=31433aa6c52548059ccea9f4ddbff345&elqCampaignId=)
+[HP Helion Public Cloud version 13.5 overview](http://docs.hpcloud.com/version-overview?jumpid=em_R11646_us/en/b_to_b/hpcs/email_13.5_Console/hpcs_overview/20131218&elq=31433aa6c52548059ccea9f4ddbff345&elqCampaignId=)
 
-[HP Helion Cloud Services 12.12 to 13.5 transition overview](https://docs.hpcloud.com/migration-overview/?jumpid=em_R11646_us/en/b_to_b/hpcs/email_13.5_Console/hpcs_migration-overview/20131218&elq=31433aa6c52548059ccea9f4ddbff345&elqCampaignId=)
+[HP Helion Public Cloud Services 12.12 to 13.5 transition overview](https://docs.hpcloud.com/migration-overview/?jumpid=em_R11646_us/en/b_to_b/hpcs/email_13.5_Console/hpcs_migration-overview/20131218&elq=31433aa6c52548059ccea9f4ddbff345&elqCampaignId=)
 
 [Getting Started with HP Helion Public Cloud Console](/hpcloudconsole)
 
 
 
-##Find Classic Console Features in the HP Public Public Cloud## {#Findfeatures}
+##Find Classic Console Features in the HP Helion Public Cloud## {#Findfeatures}
 
 [Account Cancelation](https://horizon.hpcloud.com/settings/account_info) 
 

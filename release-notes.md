@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion Cloud Release Notes"
+title: "HP Helion Public Cloud Release Notes"
 permalink: /release-notes/
 
 ---
@@ -143,7 +143,7 @@ The following are resolved issues in version 13.5 of the HP Helion Public Cloud 
 Additional related information about HP Helion Public Cloud can be found in the following links. Please note that HP Helion Public Cloud 12.12 support will be discontinued when the product is fully deprecated on June 1, 2014
 
 * [Getting Started with HP Helion Public Cloud Console](/hpcloudconsole) for detailed console information.
-* [HP Helion Cloud version 13.5 overview](/version-overview/) for an overview of the 13.5 release set.
+* [HP Helion Public Cloud version 13.5 overview](/version-overview/) for an overview of the 13.5 release set.
 * [HP Helion Cloud Service APIs (v13.5)](/api/v13/) for an overview of the 13.5 API specifications.
 * [migration overview page](/migration-overview/) for information on migrating from version 12.12 to 13.5.
 * [Getting Started with Compute 13.5](https://community.hpcloud.com/article/getting-started-compute-135) for information on how to get started with the compute service in version 13.5.

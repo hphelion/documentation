@@ -6,7 +6,7 @@ permalink: /api/
 ---
 # HP Helion Cloud APIs
 
-We offer a number of HP Helion Cloud APIs both for HP Helion Cloud version 13.5 and version 12.12. In addition, we have some public beta and private beta APIs that you can put to use, so please give them a try.
+We offer a number of HP Helion Cloud APIs both for HP Helion Public Cloud version 13.5 and version 12.12. In addition, we have some public beta and private beta APIs that you can put to use, so please give them a try.
 
 * [APIs for version 13.5](#api135)
 * [APIs for version 12.12](#api1212)
@@ -39,7 +39,7 @@ There are a number of HP Helion Cloud APIs available for your programming pleasu
 
 ##APIs in public beta {#pubbeta}
 
-* [Monitoring v1.1](/api/v13/monitoring/): API for the HP Helion Cloud Monitoring  v13.5; facilitates monitoring of the health and other metrics for the resources in HP Helion Cloud.
+* [Monitoring v1.1](/api/v13/monitoring/): API for the HP Helion Cloud Monitoring  v13.5; facilitates monitoring of the health and other metrics for the resources in HP Helion Public Cloud.
 
 ##APIs in private beta {#privbeta}
 

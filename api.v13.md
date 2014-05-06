@@ -20,7 +20,7 @@ There are a number of HP Helion Cloud APIs available for your programming pleasu
 
 You can also avail yourself of one of the following APIs now in private beta; follow the links to sign up and begin trying them out!
 
-* [Monitoring v1.1](/api/v13/monitoring/): API for the HP Helion Cloud Monitoring service; facilitates monitoring of the health and other metrics for the resources in HP Helion Cloud.<br>
+* [Monitoring v1.1](/api/v13/monitoring/): API for the HP Helion Cloud Monitoring service; facilitates monitoring of the health and other metrics for the resources in HP Helion Public Cloud.<br>
   
 
 ## Copyright
