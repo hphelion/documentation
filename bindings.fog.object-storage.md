@@ -5,7 +5,7 @@ permalink: /bindings/fog/object-storage/
 product: fog
 
 ---
-#Ruby Fog Bindings for HP Helion Public Cloud: Object Storage Examples
+#HP Helion Public Cloud: Fog Bindings Object Storage Examples
 
 
 ##Important Notice##

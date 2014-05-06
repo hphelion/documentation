@@ -5,7 +5,7 @@ permalink: /bindings/fog/release-notes/
 product: fog
 
 ---
-# Release Notes for the Ruby Fog Bindings for HP Helion Public Cloud
+# Release Notes for the HP Helion Public Cloud: Ruby Fog Bindings 
 
 ##Important Notice##
 
@@ -26,7 +26,7 @@ The HP Helion Public Cloud Ruby Fog bindings has been feature-merged with upstre
 This release was made available on 10/31/2013 and contains the following new features:
 
 * Feature merge with upstream Fog
-* Deprecated 'hpfog' gem and released HP Helion Public Cloud Ruby Bindings as part of Fog release v1.18.0
+* Deprecated 'hpfog' gem and released HP Helion Public Cloud Ruby bindings as part of Fog release v1.18.0
 
 ###Known Issues###
 
