@@ -31,7 +31,7 @@ PageRefresh();
 * [FAQ](/helion/community/faq/)  
 * [Related topics](/helion/community/related-links/)
 
-#### [Install &amp; configure your HP Helion OpenStack Community  cloud](/helion/community/install/)
+#### [Install &amp; configure your HP Helion OpenStack Community  cloud](/helion/community/install-virtual/)
 
 
 
