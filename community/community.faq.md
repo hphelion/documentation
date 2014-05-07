@@ -32,7 +32,7 @@ Welcome! You've got questions. We have the answers.
 * [Does it include an operating system (OS)?](#includeOS)
 * [Does the distribution include non-OpenStack tools?](#nonopenstack)
 * [Does this distro include the OpenStack Icehouse release?](#icehouse) 
-* [Is the HP Helion OpenStack Community upgradeable?](#upgrade)
+* [Is HP Helion OpenStack Community upgradeable?](#upgrade)
 * [Can HP Helion OpenStack Community be run on non-HP hardware?](#nonhphardware)
 
 ##Support and additional resources  
