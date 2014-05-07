@@ -80,7 +80,7 @@ PageRefresh();
 
 * [API Quick Start](/cloudos/moonshot/develop/quickstart-intro/)
  
-#### [Related Topics](/cloudos/related-topics/)
+#### [Related Topics](/cloudos/moonshot/related-topics/)
  
 * [HP Moonshot System documentation links](/cloudos/moonshot/related-topics/#related-moonshot) 
 * [OpenStack documentation links](/cloudos/moonshot/related-topics/#related-openstack) 
