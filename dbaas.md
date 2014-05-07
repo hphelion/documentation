@@ -2,7 +2,7 @@
 layout: default
 title: "HP Helion Public Cloud Relational Database Overview"
 permalink: /dbaas/
-product: dbaas
+product: public-cloud 
 
 ---
 # HP Helion Public Cloud Relational Database Overview

@@ -2,7 +2,7 @@
 layout: default
 title: "HP Helion Public Cloud aPaaS overview"
 permalink: /apaas/
-product: apaas 
+product: public-cloud 
 
 ---
 # HP Helion Public Cloud application Platform as a Service (aPaaS) Overview

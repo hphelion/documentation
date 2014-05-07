@@ -2,7 +2,7 @@
 layout: default
 title: "HP Helion Public Cloud Block Storage Overview"
 permalink: /block-storage/
-product: block-storage
+product: public-cloud 
 
 ---
 # HP Helion Public Cloud Block Storage Overview

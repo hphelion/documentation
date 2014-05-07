@@ -2,7 +2,7 @@
 layout: default
 title: "HP Helion Public Cloud Compute Overview"
 permalink: /compute/
-product: compute
+product: public-cloud 
 
 ---
 # HP Helion Public Cloud Compute Overview

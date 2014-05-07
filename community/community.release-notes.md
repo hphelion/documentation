@@ -12,7 +12,7 @@ product: community
 
 <!--Thanks for installing the HP Helion OpenStack Community edition! This initial "cloud-in-a-box" virtual deployment allows you to evaluate the Community edition and Icehouse release of OpenStack.  Frequent updates will be available&mdash;approximately every 6 weeks&mdash;to remain as close to the OpenStack trunk release as possible.  The Community edition is the foundational technology for the HP Helion portfolio of products, allowing HP Helion products to quickly leverage OpenStack capabilities.-->
 
-Thanks for installing the HP Helion OpenStack Community edition! This initial "cloud-in-a-box" virtual deployment targeted towards the enterprises and cloud administrators interested in evaluating, developing and deploying a private cloud based on OpenStack. It’s a pure, free-to-license OpenStack distribution that speeds up deployment and simplifies the management of a small scale, open cloud environments and infrastructure services.
+Thanks for installing the HP Helion OpenStack Community edition! This initial "cloud-in-a-box" virtual deployment targeted towards the enterprises and cloud administrators interested in evaluating, developing and deploying a private cloud based on OpenStack. It's a pure, free-to-license OpenStack distribution that speeds up deployment and simplifies the management of a small scale, open cloud environments and infrastructure services.
 
 This release note contains the following information about the HP Helion OpenStack Community edition release:
 
@@ -122,11 +122,11 @@ For additional information on HP Helion OpenStack Community, OpenStack and Tripl
 
 * [HP Helion OpenStack Community Documentation web site](/helion/community/): Provides the topics listed below.
 * [FAQ](/helion/community/faq/): Contains some frequently asked questions about the HP Helion OpenStack Community edition release
-* [Installation and configuration](/helion/community/install-virtual/): A set tasks that walk you through the installation and configuration process.
+* [Installation and configuration](/helion/community/install-virtual/): A set of tasks that walk you through the installation and configuration process.
 * [Related Topics](/helion/community/related-links/): Links to pertinent HP Helion OpenStack Community and OpenStack documentation.
 * [OpenStack documentation home page](http://docs.openstack.org/)
 * [TripleO documentation](https://wiki.openstack.org/wiki/TripleO)
-* [Community support forum](LINK) hosted by [StackOverflow](http://stackoverflow.com)
+* [HP Helion OpenStack Support Forum](https://ask.openstack.org) (Tag your questions with HPHelion)
 
 
 ###Legal Notices and Disclaimer### {#legal-notices-disclaimer}

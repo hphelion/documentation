@@ -2,7 +2,7 @@
 layout: default
 title: "HP Helion Public Cloud Object Storage Overview"
 permalink: /object-storage/
-product: object-storage
+product: public-cloud 
 
 ---
 # HP Helion Public Cloud Object Storage Overview
