@@ -150,10 +150,9 @@ You will receive:
 
 ####Where can I find more information? #### {#MoreInfo}
 
-* [HP Helion home landing page](https://hp.com/helion/openstack)
-* [Technical content home page](https://docs.hpcloud.com/helion/community/) 
-* [Support Forum](https://ask.openstack.org (tag your questions with “HPHelion”)
-* [HP Cloud sales portal](http://intranet.hp.com/panhp/HPCloud)   
+* [HP Helion OpenStack Portal](https://hp.com/helion/openstack)
+* [HP Helion OpenStack Community](https://docs.hpcloud.com/helion/community/) 
+* [HP Helion OpenStack Support Forum](https://ask.openstack.org (tag your questions with “HPHelion”)
 * [HP Hybrid Cloud Management](http://www.hp.com/go/cloudmanagement) 
 
 ####How can I report issues and participate in HP Helion OpenStack Community edition related discussions? #### {#reportissues}
