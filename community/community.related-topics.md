@@ -14,7 +14,7 @@ product: community
 # HP Helion OpenStack&reg; Community Related Documentation
 
 
-HP Helion OpenStack Community edition is based on the OpenStack&reg; technology and an HP configured Linux operating system.  
+HP Helion OpenStack Community edition is based on OpenStack&reg; technology and an HP configured Linux operating system.  
 
 For more information, refer to the OpenStack documentation site: 
 

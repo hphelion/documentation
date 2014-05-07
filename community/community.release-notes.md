@@ -12,7 +12,7 @@ product: community
 
 <!--Thanks for installing the HP Helion OpenStack Community edition! This initial "cloud-in-a-box" virtual deployment allows you to evaluate the Community edition and Icehouse release of OpenStack.  Frequent updates will be available&mdash;approximately every 6 weeks&mdash;to remain as close to the OpenStack trunk release as possible.  The Community edition is the foundational technology for the HP Helion portfolio of products, allowing HP Helion products to quickly leverage OpenStack capabilities.-->
 
-Thanks for installing the HP Helion OpenStack Community edition! This initial "cloud-in-a-box" virtual deployment targeted towards the enterprises and cloud administrators interested in evaluating, developing and deploying a private cloud based on OpenStack. It's a pure, free-to-license OpenStack distribution that speeds up deployment and simplifies the management of a small scale, open cloud environments and infrastructure services.
+Thanks for installing the HP Helion OpenStack Community edition! This initial "cloud-in-a-box" virtual deployment targeted towards the enterprises and cloud administrators interested in evaluating, developing and deploying a private cloud based on OpenStack Cloud Software. It's a pure, free-to-license OpenStack distribution that speeds up deployment and simplifies the management of a small scale, open cloud environments and infrastructure services.
 
 This release note contains the following information about the HP Helion OpenStack Community edition release:
 
@@ -118,7 +118,7 @@ The following are the known issues for HP Helion OpenStack Community edition:
 
 ##For further information## {#for-further-information}
 
-For additional information on HP Helion OpenStack Community, OpenStack and TripleO:
+For additional information on HP Helion OpenStack Community, OpenStack Cloud Software and TripleO:
 
 * [HP Helion OpenStack Community Documentation web site](/helion/community/): Provides the topics listed below.
 * [FAQ](/helion/community/faq/): Contains some frequently asked questions about the HP Helion OpenStack Community edition release
@@ -131,11 +131,12 @@ For additional information on HP Helion OpenStack Community, OpenStack and Tripl
 
 ###Legal Notices and Disclaimer### {#legal-notices-disclaimer}
 
-See the [HP Helion OpenStack Community Open Source and Third-Party Software License Agreements](/helion/community/community-3rd-party-license-agreements/).
+<!--See the [HP Helion OpenStack Community Open Source and Third-Party Software License Agreements](/helion/community/community-3rd-party-license-agreements/).-->
 
 Linux&reg; is the registered trademark of Linus Torvalds in the U.S. and other countries.
 
 The OpenStack word mark and the Square O Design, together or apart, are trademarks or registered trademarks of OpenStack Foundation in the United States and other countries, and are used with the OpenStack Foundation's permission.
 
+The OpenStack Word Mark is either a registered trademark/service mark or trademark/service mark of the OpenStack Foundation, in the United States and other countries and is used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

@@ -31,11 +31,11 @@ PageRefresh();
 * [FAQ](/helion/community/faq/)  
 * [Related topics](/helion/community/related-links/)
 
-#### [Install &amp; configure your HP Helion OpenStack Community  cloud](/helion/community/install/)
+#### [Install &amp; configure your HP Helion OpenStack Community  cloud](/helion/community/install-virtual/)
 
 
 
-#### [OpenStack reference](/helion/openstack/)
+#### [OpenStack reference](http://docs.openstack.org/)
  
 * [OpenStack documentation home page](http://docs.openstack.org/)
 * [OpenStack Glossary](http://docs.openstack.org/glossary/content/glossary.html)

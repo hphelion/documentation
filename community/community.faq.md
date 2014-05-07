@@ -6,7 +6,7 @@ product: community
 
 ---
 
-<p style="font-size: small;"> <a href="/cloudos/community/">&#9664; PREV</a> | <a href="/cloudos/community/">&#9650; UP</a> | <a href="/cloudos/community/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/helion/community/">&#9664; PREV</a> | <a href="/helion/community/">&#9650; UP</a> | <a href="/helion/community/">NEXT &#9654;</a> </p>
 
 <h1>HP Helion OpenStack&#174; Community FAQ</h1> 
 
@@ -38,26 +38,26 @@ Welcome! You've got questions. We have the answers.
 
 ##Support and additional resources  
 
-* [Are HP support services included with HP HP Helion OpenStack Community?](#supportservices)
+* [Are HP support services included with HP Helion OpenStack Community?](#supportservices)
 * [What support options are available?](#supportoptions)
 * [Where can customers find more information?](#MoreInfo)
 * [How can customers report issues and participate in HP Helion OpenStack Community edition related discussions?](#reportissues) 
 
 ####What is HP Helion OpenStack Community? And how does it tie into the overall HP Helion portfolio? #### {#whatcommunity}
 
-HP Helion OpenStack Community is the first OpenStack distribution from HP. It is a free-to-license and download OpenStack distribution from HP. This will be shipped frequently to stay close to the trunk (once every 6 weeks). 
+The HP Helion OpenStack Community edition is the first OpenStack distribution from HP. It is a free-to-license and download OpenStack distribution from HP. This will be shipped frequently to stay close to the trunk (once every six weeks). 
 
 It will be the foundational technology for all HP Helion portfolio of products in the future, allowing HP Helion products to quickly leverage the OpenStack capabilities.
 
 ####What does this distro enable customers to do? #### {#distroenable}
 
-Customers have consistently given us feedback to release a distribution of OpenStack technology, fully tested, hardened and supported by HP. Customers can deploy a cloud-in-a-box with this preview version.  
+Customers have consistently given us feedback to release a distribution of OpenStack technology, fully tested, hardened and supported by HP. Customers can deploy a cloud-in-a-box with this preview version. 
 
 The final version of this free distribution will enable customers to evaluate, deploy small-scale private cloud in production (up to 30 nodes) and develop on the OpenStack platform. They will be able to do this faster and easier with our simplified installer and updater. 
 
 ####How does HP Helion OpenStack Community compare to other OpenStack distributions on the market? #### {#howcompare}
 
-HP Helion OpenStack Community is one of the first distributions in the market, based on just released Icehouse release of OpenStack from the community. It is pure OpenStack with no proprietary technology or add-ins from HP. For example, TripleO is used for deployment which is the official OpenStack project for deployment.  
+HP Helion OpenStack Community is one of the first distributions in the market, based on just released Icehouse release of OpenStack from the community. It is pure OpenStack with no proprietary technology or add-ins from HP. For example, TripleO is used for deployment which is the official OpenStack project for deployment. 
  
 ####Is there a cost associated with this distribution? #### {#distrocost} 
 
@@ -65,19 +65,19 @@ It is free to download. An optional support package that customers can choose to
 
 ####What is TripleO? #### {#TripleO}
 
-OpenStack on OpenStack (or TripleO) is the OpenStack Project's official project for deployment of OpenStack code. It builds on the core resource-provisioning strengths of OpenStack technology, to enable cloud administrators to deploy and maintain bare metal installations of OpenStack code using the same APIs that they are familiar with for deploying workloads on an OpenStack cloud. Template based deployment engine (OpenStack Heat) allows for rigorous testing and reliable, repeatable deployments of known configurations.   
+OpenStack on OpenStack (or TripleO) is the OpenStack Project's official project for deployment of OpenStack code. It builds on the core resource-provisioning strengths of OpenStack technology, to enable cloud administrators to deploy and maintain bare metal installations of OpenStack code using the same APIs that they are familiar with for deploying workloads on an OpenStack cloud. Template based deployment engine (OpenStack Heat) allows for rigorous testing and reliable, repeatable deployments of known configurations. 
  
-####What is available on the preview version announced on May 7th? #### {#preview}
+####What is available in the preview version announced on May 7th? #### {#preview}
 
-On May 7th, we announced a preview of HP Helion OpenStack Community edition that allows our customers to deploy an OpenStack cloud-in-a-box, experience TripleO based deployment and evaluate the Icehouse release of OpenStack. 
+On May 7th, we announced a preview of HP Helion OpenStack Community edition that allows our customers to deploy an OpenStack cloud-in-a-box, experience TripleO based deployment and evaluate the Icehouse release of OpenStack.  
 
 ####When can we expect support for bare metal deployment? #### {#baremetal}
 
-We are committed to shipping every 6 weeks and this is our first release based on Icehouse which was just released. We are currently testing and hardening our distribution to support bare-metal deployment for a small scale private cloud deployment. We expect this to be available in our next release.  
+We are committed to shipping every six weeks and this is our first release based on Icehouse which was just released. We are currently testing and hardening our distribution to support bare-metal deployment for a small scale private cloud deployment. We expect this to be available in our next release.   
 
 ####When and where will HP Helion OpenStack Community be released? #### {#release}
 
-HP Helion OpenStack Community preview was made available May 7th worldwide. It will be followed by a full release with support for bare-metal deployments (up to 30 compute nodes) and future releases once every 6 weeks to stay close to the trunk.  
+HP Helion OpenStack Community preview was made available May 7th worldwide. It will be followed by a full release with support for bare-metal deployments (up to 30 compute nodes) and future releases once every 6 weeks to stay close to the trunk.   
 
 ####Is the release localized for non-English speaking markets? #### {#localized}
 
@@ -105,13 +105,13 @@ HP provides automated, live distribution of updates.
 
 ####Does it include an operating system (OS)? #### {#includeOS}
 
-Yes. It includes an integrated Linux® host OS hardened and tested for this distribution.
+Yes. It includes an integrated Linux&#174; host OS hardened and tested for this distribution.
 
 ####Does the distribution include non-OpenStack tools? #### {#nonopenstack}
 
 No. HP Helion OpenStack Community is a pure distro that leverages OpenStack community standards with no mix of proprietary or non-OpenStack tools.
 
-###Does this distro include the OpenStack Icehouse release? #### {#icehouse}
+###Does this distribution include the OpenStack Icehouse release? #### {#icehouse}
 
 Yes, and HP is one of the first vendors to release a supported, productized distro based on Icehouse.
  
@@ -121,8 +121,8 @@ Yes. Clients who begin with the free HP Helion OpenStack Community can migrate t
 
 ####Can HP Helion OpenStack Community be run on non-HP hardware? #### {#nonhphardware}
 
-Yes. The advantage of open source is clients can avoid vendor lock-in. Standards-based APIs are portable across OpenStack-based public, private, and managed clouds, so they can easily move workloads to any cloud. HP is agnostic about which hardware vendor is used. 
- 
+Yes. The advantage of open source is clients can avoid vendor lock-in. Standards-based APIs are portable across OpenStack-based public, private, and managed clouds, so they can easily move workloads to any cloud. HP is agnostic about which hardware vendor is used.  
+
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 ##Support and additional resources  
@@ -133,8 +133,8 @@ No. An optional paid support contract from HP is available for purchase (coming 
 
 ####What support options are available? #### {#supportoptions}
 
-HP Helion OpenStack Community will be covered by Foundation Care Operations support at additional cost and will be available in the future.  Customers interact with experts in HP’s Global Cloud Center of Expertise as single source of support and accountability. 
- 
+HP Helion OpenStack Community will be covered by Foundation Care Operations support at additional cost and will be available in the future.  Customers interact with experts in HP’s Global Cloud Center of Expertise as single source of support and accountability.  
+ 	
 * Access to HP OpenStack technical experts, tools and best practices 
 * HP Helion OpenStack Community edition software support
 * Installation advisory support
@@ -144,11 +144,11 @@ HP Helion OpenStack Community will be covered by Foundation Care Operations supp
 
 * [HP Helion OpenStack Community Portal](http://www8.hp.com/us/en/cloud/hphelion-openstack-community.html)
 * [HP Helion OpenStack Community Documentation](https://docs.hpcloud.com/helion/community) 
-* [HP Helion OpenStack Support Forum](https://ask.openstack.org/en/questions/scope:all/sort:activity-desc/tags:hphelion) (Tag your questions with HPHelion)
+* [HP Helion OpenStack Support Forum](https://ask.openstack.org/en/questions/scope:all/sort:activity-desc/tags:hphelion) (Tag your questions with 'HPHelion')
 
 ####How can I report issues and participate in HP Helion OpenStack Community edition related discussions? #### {#reportissues}
 
-We are hosting the support discussion forum for the Community edition at [https://ask.openstack.org](https://ask.openstack.org).  Developers in the community are very familiar with this forum and already participate in OpenStack-related discussions there. Please tag your questions with HPHelion to get our attention for any questions and issues you raise.  
+We are hosting the support discussion forum for the Community edition at [https://ask.openstack.org](https://ask.openstack.org).  Developers in the community are very familiar with this forum and already participate in OpenStack-related discussions there. Please tag your questions with 'HPHelion' to get our attention for any questions and issues you raise.  
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
@@ -201,7 +201,7 @@ HP OpenStack is a hardened product set that speeds deployment and simplifies man
   </tr>
   <tr>
     <td width=50%><p>*Includes integrated HP Linux host OS for better speed, support and control across full solution stack</p> 
-	<p>*Workloads transferable to HP Helion OpenStack Communtity</p> </td>
+	<p>*Workloads transferable to HP Helion OpenStack Community</p> </td>
     <td valign=top><p>Perfect for evaluation and small scale deployments (optimized for up to 30 nodes and 600 VMs)</td>
   </tr>
  <tr>

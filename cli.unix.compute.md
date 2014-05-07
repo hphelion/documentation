@@ -33,7 +33,8 @@ This page gives you a few examples of how to perform various compute tasks using
 * [Security Group Rule Commands](#SecurityGroupRuleCommands)
 * [Addresses or Floating IP Commands](#AddressesorFloatingIPCommands)
 
-You can also find some good how-tos for the compute service on the [Using the Compute Service](/compute/using/) page.
+<!-- Hiding until we can find this page
+You can also find some good how-tos for the compute service on the [Using the Compute Service](/compute/using/) page. -->
 
 Remember that you can get detailed help for any command or task with the following command:
 
@@ -248,7 +249,8 @@ In the following example, `winserv` is the name of the server, `large` is the fl
     Make sure the security group has port 3389 open
     You may wish to change the password when you log in
 
-An example of how to connect via a Windows RDP client is located [here](/compute/using#WindowsRDP).  You can use the `servers:console` command to extract the password if it is still available on the console.
+<!-- Hiding until we can find this page
+An example of how to connect via a Windows RDP client is located [here](/compute/using#WindowsRDP).  You can use the `servers:console` command to extract the password if it is still available on the console.-->
 
 ##Key Pair Commands## {#KeypairCommands}
 

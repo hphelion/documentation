@@ -414,6 +414,6 @@ To create an instance or your network, use the following steps:
 
 ##For further information## {#ForFurtherInformation}
 
-* For information about the HP Helion Public Cloud Networking, take a look at the [HP Helion Public Cloud Networking Overview](/compute/networks/overview/) page
+* For information about the HP Helion Public Cloud Networking, take a look at the [HP Helion Public Cloud Networking Overview](/compute/network/overview/) page
 * For basic information about our HP Helion Public Cloud Compute services, take a look at the [HP Helion Public Cloud Compute overview](/compute/) page
 * For information about the Open Stack networking features, surf on over to [their networking wiki](https://wiki.openstack.org/wiki/Quantum)

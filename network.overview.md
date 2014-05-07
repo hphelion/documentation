@@ -15,7 +15,7 @@ You can use the default network to deploy HP Helion Public Cloud compute virtual
 
 You can now define and configure your own virtual network topology, including control of IP address ranges.
 
-To get up and running quickly with your network, see [HP Helion Public Cloud Networking: Quick start guide](/compute/network-quick-start).
+To get up and running quickly with your network, see [HP Helion Public Cloud Networking: Quick start guide](/compute/network/quick-start).
 
 For more detailed information on the HP Helion Public Cloud Networking Service, see [Getting Started with HP Helion Public Cloud Networking](/compute/network/getting-started).
 
