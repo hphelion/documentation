@@ -203,7 +203,7 @@ HP OpenStack is a hardened product set that speeds deployment and simplifies man
   </tr>
   <tr>
     <td width=50%><p>*Includes integrated HP Linux host OS for better speed, support and control across full solution stack</p> 
-	<p>*Workloads transferable to HP Helion OpenStack Communtity</p> </td>
+	<p>*Workloads transferable to HP Helion OpenStack Community</p> </td>
     <td valign=top><p>Perfect for evaluation and small scale deployments (optimized for up to 30 nodes and 600 VMs)</td>
   </tr>
  <tr>

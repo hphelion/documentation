@@ -188,7 +188,7 @@ From within the seed VM, you should be able to connect to the test guest VM crea
 
 3. Verify you can ssh into the VM:
 
-        root@hLinux:~# ssh ubuntu@<ip of demo vm>
+        root@hLinux:~# ssh root@<ip of demo vm>
 
 ### Connecting to Horizon console ### {#connectconsole}
 
