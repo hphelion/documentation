@@ -2,6 +2,7 @@
 layout: default
 title: "HP Helion Public Cloud: Binding Support"
 permalink: /bindings/
+product: public-cloud
 
 ---
 # HP Helion Public Cloud Binding Support

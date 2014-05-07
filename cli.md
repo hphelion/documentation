@@ -2,6 +2,7 @@
 layout: default
 title: "HP Helion Public Cloud CLI"
 permalink: /cli/
+product: public-cloud
 
 ---
 # HP Helion Public Cloud CLI

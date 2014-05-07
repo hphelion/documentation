@@ -2,6 +2,7 @@
 layout: default
 title: "HP Helion Public Cloud Activity Stream"
 permalink: /activity-stream/
+product: public-cloud
 
 ---
 # HP Helion Public Cloud Activity Stream

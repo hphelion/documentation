@@ -2,6 +2,7 @@
 layout: default
 title: "HP Helion Public Cloud Documentation Site Map"
 permalink: /sitemap/
+product: public-cloud
 
 ---
 # HP Helion Public Cloud Documentation Site Map#

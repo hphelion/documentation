@@ -2,6 +2,7 @@
 layout: default
 title: "HP Helion Public Cloud Release Notes"
 permalink: /release-notes/
+product: public-cloud
 
 ---
 # HP Helion Public Cloud Release Notes #

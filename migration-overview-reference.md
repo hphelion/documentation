@@ -2,6 +2,7 @@
 layout: default
 title: "HP Helion Public Cloud Version 12.12 to HP Helion Public Cloud Version 13.5: Data Transition Guide"
 permalink: /migration-overview-reference/
+product: public-cloud
 
 ---
 #HP Helion Public Cloud Compute Version 12.12 to HP Helion Public Cloud Compute Version 13.5: Data Transition Guide#

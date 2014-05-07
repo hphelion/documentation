@@ -2,6 +2,7 @@
 layout: default
 title: "HP Helion Public Cloud services"
 permalink: /services/
+product: public-cloud
 
 ---
 # HP Helion Public Cloud Services

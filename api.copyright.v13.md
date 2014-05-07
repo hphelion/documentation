@@ -2,6 +2,7 @@
 layout: page
 title: "Copyright for HP Helion Public Cloud APIs (v13.5)"
 permalink: /api/v13/copyright/
+product: public-cloud
 
 ---
 

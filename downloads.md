@@ -2,6 +2,7 @@
 layout: default
 title: "HP Helion Public Cloud Software Downloads"
 permalink: /downloads/
+product: public-cloud
 
 ---
 # HP Helion Public Cloud Software Downloads# 

@@ -2,6 +2,7 @@
 layout: default
 title: "HP Helion Public Cloud Best Practices"
 permalink: /best-practices/
+product: public-cloud
 
 ---
 # HP Helion Public Cloud best practices
