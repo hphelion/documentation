@@ -17,7 +17,7 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"><a href="/cloudos/moonshot/"> &#9664; PREV</a> | <a href="/cloudos/moonshot/">&#9650; UP</a> | <a href="/cloudos/moonshot/install/siteindex/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"><a href="/cloudos/moonshot/"> &#9664; PREV</a> | <a href="/cloudos/moonshot/">&#9650; UP</a> | <a href="/cloudos/moonshot/siteindex/">NEXT &#9654;</a> </p>
 
 # Related Topics
 
