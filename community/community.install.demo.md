@@ -82,7 +82,7 @@ Your system must meet the following requirements:
      
     **Note:** If they are missing, the installation script attempts to install these packages; however, we suggest you install them beforehand.
 
-      `$ sudo apt-get install -y libvirt-bin openvswitch-switch python-libvert qemu-system-x86 qemu-kvm openssh-server`
+      `$ sudo apt-get install -y libvirt-bin openvswitch-switch python-libvirt qemu-system-x86 qemu-kvm openssh-server`
 
 * After you install the `libvirt` packages, you must reboot or restart `libvirt`:
 
