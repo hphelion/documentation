@@ -118,7 +118,7 @@ The following are the known issues for HP Helion OpenStack Community edition:
 
 ##For further information## {#for-further-information}
 
-For additional information on HP Helion OpenStack Community, OpenStack and TripleO:
+For additional information on HP Helion OpenStack Community, OpenStack Cloud Software and TripleO:
 
 * [HP Helion OpenStack Community Documentation web site](/helion/community/): Provides the topics listed below.
 * [FAQ](/helion/community/faq/): Contains some frequently asked questions about the HP Helion OpenStack Community edition release
