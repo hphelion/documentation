@@ -21,7 +21,7 @@ Welcome! You've got questions. We have the answers.
 * [Is there a cost associated with this distribution?](#distrocost)
 * [What is TripleO?](#TripleO)
 * [What is available on the preview version announced on May 7th?](#preview)
-* [When can customers expect support for bare-metal deployment?](#baremetal)
+* [When can customers expect support for bare metal deployment?](#baremetal)
 * [When and where will HP Helion OpenStack Community be released?](#release)
 * [Is the release localized for non-English speaking markets?](#localized) 
 * [What is the price for HP Helion OpenStack Community?](#whatprice)
