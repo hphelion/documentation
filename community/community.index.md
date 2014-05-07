@@ -32,7 +32,7 @@ Use the following links to get started with HP Helion OpenStack Community editio
 * [Installation and configuration](/helion/community/install-virtual/) 
 * [FAQ](/helion/community/faq/)
 * [Related topics](/helion/community/related-links/)
-* [Documentation site index](/helion/siteindex/)
+* [Documentation site index](/helion/community/siteindex/)
 
 
 <!--* [Technical overview](/helion/community/technical-overview/)
@@ -48,7 +48,7 @@ For detailed REST API information, see the [OpenStack API Complete Reference](ht
 
 There's a lot of information out there to help you get going with your cloud. We recommend you take a look at the list below:
 
-* The documentation [site index](/helion/siteindex/) gives you a full list of the technical content pages available on the site.
+* The documentation [site index](/helion/community/siteindex/) gives you a full list of the technical content pages available on the site.
 
 * For detailed REST API information, see the [OpenStack API Complete Reference](http://api.openstack.org/api-ref.html).
 
