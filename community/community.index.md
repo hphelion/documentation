@@ -56,7 +56,7 @@ There's a lot of information out there to help you get going with your cloud. We
 
 * For information on the OpenStack on OpenStack deployment project, see the [TripleO documentation](https://wiki.openstack.org/wiki/TripleO)
 
-* Visit our [HP Helion OpenStack Community support forum--NEED LINK](LINK) hosted by [StackOverflow](http://stackoverflow.com)
+* Visit our [HP Helion OpenStack Support Forum](https://ask.openstack.org) (Tag your questions with HPHelion)
 
 
 <!--* See [HP Helion OpenStack Community Edition Glossary](/helion/community/glossary/) for definitions of important terms.-->
