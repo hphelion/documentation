@@ -38,7 +38,7 @@ Welcome! You've got questions. We have the answers.
 
 ##Support and additional resources  
 
-* [Are HP support services included with HP HP Helion OpenStack Community?](#supportservices)
+* [Are HP support services included with HP Helion OpenStack Community?](#supportservices)
 * [What support options are available?](#supportoptions)
 * [Where can I find more information?](#MoreInfo)
 * [How can I report issues and participate in HP Helion OpenStack Community edition related discussions?](#reportissues) 
@@ -150,10 +150,8 @@ You will receive:
 
 ####Where can I find more information? #### {#MoreInfo}
 
-* [HP Helion OpenStack Portal](https://hp.com/helion/openstack)
 * [HP Helion OpenStack Community](https://docs.hpcloud.com/helion/community/) 
-* [HP Helion OpenStack Support Forum](https://ask.openstack.org) (Tag your questions with HPHelion)
-* [HP Hybrid Cloud Management](http://www.hp.com/go/cloudmanagement) 
+* [HP Helion OpenStack Support Forum](https://ask.openstack.org/en/questions/scope:all/sort:activity-desc/tags:hphelion/page:1/) (Tag your questions with HPHelion)
 
 ####How can I report issues and participate in HP Helion OpenStack Community edition related discussions? #### {#reportissues}
 
