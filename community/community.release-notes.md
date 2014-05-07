@@ -126,7 +126,7 @@ For additional information on HP Helion OpenStack Community, OpenStack and Tripl
 * [Related Topics](/helion/community/related-links/): Links to pertinent HP Helion OpenStack Community and OpenStack documentation.
 * [OpenStack documentation home page](http://docs.openstack.org/)
 * [TripleO documentation](https://wiki.openstack.org/wiki/TripleO)
-* [Community support forum](LINK) hosted by [StackOverflow](http://stackoverflow.com)
+* [HP Helion OpenStack Support Forum](https://ask.openstack.org) (Tag your questions with HPHelion)
 
 
 ###Legal Notices and Disclaimer### {#legal-notices-disclaimer}
