@@ -2,7 +2,7 @@
 layout: default
 title: "HP Helion Public Cloud Monitoring Overview"
 permalink: /maas/
-product: maas
+product: public-cloud 
 
 ---
 # HP Helion Public Cloud Monitoring Overview #

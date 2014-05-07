@@ -2,7 +2,7 @@
 layout: default
 title: "HP Helion Public Cloud LBaaS Overview"
 permalink: /lbaas/
-product: lbaas
+product: public-cloud 
 
 ---
 # HP Helion Public Cloud Load Balancing as a Service (LBaaS) Overview

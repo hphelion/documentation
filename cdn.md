@@ -2,7 +2,7 @@
 layout: default
 title: "HP Helion Public Cloud CDN"
 permalink: /cdn/
-product: cdn
+product: public-cloud 
 
 ---
 # HP Helion Public Cloud CDN

@@ -2,7 +2,7 @@
 layout: default
 title: "HP Helion Public Cloud DNS Overview"
 permalink: /dns/
-product: dns
+product: public-cloud 
 
 ---
 # HP Helion Public Cloud Domain Name Service (DNS) Overview
