@@ -20,11 +20,11 @@ A variety of flavors and images are provided by HP Helion Public Cloud Compute  
 
 ###Using the API to access Networking### {#API}
  
-You can use a low-level, raw REST API access to HP Helion Public Cloud OS Compute See the [Compute API page](/api/v13/compute).
+You can use a low-level, raw REST API access to HP Helion Public Cloud OS Compute. See [Compute API page](/api/v13/compute).
 
 ###Using the CLI### {#cli}
 
-You can use any of several command-line interface software to access HP Helion Public Cloud OS compute. See [HP Helion Public Cloud OS CLI](/cli/).
+You can use any of several command-line interface software to access HP Helion Public Cloud OS Compute. See [HP Helion Public Cloud OS CLI](/cli/).
 
 ###Using language bindings### {#bindings}
 

@@ -79,12 +79,12 @@ Using the API, you can also specify the availability zone when you create an ins
 
 For example: `$ nova boot ... --availability-zone az1 ...`
 
-If you don't specify an availability zone the compute or storage service automatically assigns one. So, if you do require redundancy for your virtual machines or volumes make sure to specify different availability zones for each.
+If you don't specify an availability zone, the Compute or Storage service automatically assigns one. So, if you do require redundancy for your virtual machines or volumes make sure to specify different availability zones for each.
 
 **Important:** Volumes can only be attached to servers created in the same availability zone.
 
 ## Software Defined Networking ## {#Network}
-HP Helion Public Cloud v13.5 builds on the OpenStack Neutron service complemented with Software Defined Networking (SDN) technology from HP Networking to offer more robust and flexible networking capabilities to rapidly customize your network as needed. Then, you can simply connect it with your existing on-premise datacenter via a VPN tunnel. Spinning up a compute instance automatically configures
+HP Helion Public Cloud v13.5 builds on the OpenStack Neutron service complemented with Software Defined Networking (SDN) technology from HP Networking to offer more robust and flexible networking capabilities to rapidly customize your network as needed. Then, you can simply connect it with your existing on-premise datacenter via a VPN tunnel. Spinning up a Compute service instance automatically configures
 
 - A default network 
 - A subnet

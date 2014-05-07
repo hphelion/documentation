@@ -13,7 +13,7 @@ Once you have set up your initial VPN connection, you can extend your network to
 
 For this procedure, we assume that you have an active HP Helion Public Cloud account with a VPN instance set up (see the [VPN Quick Start Guide](http://docs.hpcloud.com/compute/vpn-quickstart) to set up the initial VPN instance).
 
-While you can set up your compute instance and VPN using any Linux OS, for the purpose of this guide, we use an Ubuntu instance and strongSwan IPsec. This configuration has been tested, but you can use this guide as a basis for connecting your sites to your HP Helion Public Cloud VPN.
+While you can set up your Compute service instance and VPN using any Linux OS, for the purpose of this guide, we use an Ubuntu instance and strongSwan IPsec. This configuration has been tested, but you can use this guide as a basis for connecting your sites to your HP Helion Public Cloud VPN.
 
 This guide covers the following:
 

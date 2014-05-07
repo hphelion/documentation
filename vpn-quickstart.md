@@ -91,10 +91,10 @@ All commands in this guide use command line interfaces.
 
 The following steps walk you through the process:
 
-- [Activate the compute service in HP Helion Public Cloud](#compute)  
+- [Activate the Compute service in HP Helion Public Cloud](#compute)  
 - [Set up the private network](#gtwy)
 - [Create ports](#port)   
-- [Create compute instances](#instances)
+- [Create Compute service instances](#instances)
 - [Associate floating IPs](#floatip)  
 - [Enable UFW](#enableufw)
 - [Install strongSwan](#installss)
@@ -118,9 +118,9 @@ $VM_GATEWAY = address of the VPN VM gateway (e.g., 10.2.0.21)
 
 For more details on the Nova and Neutron commands please see the [HP Helion Public Cloud Networking](https://docs.hpcloud.com/api/v13/networking/) and [Compute](https://docs.hpcloud.com/api/v13/compute/) API specifications.
 
-### Activate the compute service in HP Helion Public Cloud ### {#compute}
+### Activate the Compute  service in HP Helion Public Cloud ### {#compute}
 
-If you have not previously created an account and activated the compute service please sign up at [http://hpcloud.com](http://hpcloud.com).  Once you activate the compute service, you need to install the [compute](https://docs.hpcloud.com/api/v13/compute/) and [networking](https://docs.hpcloud.com/api/v13/networking/) clients or the [CLI](http://docs.hpcloud.com/cli/unix/network). Make sure you activate a compute instance in HP Helion Public Cloud version 13.5 to access the networking and VPN capabilities.
+If you have not previously created an account and activated the Compute  service please sign up at [http://hpcloud.com](http://hpcloud.com).  Once you activate the Compute  service, you need to install the [compute](https://docs.hpcloud.com/api/v13/compute/) and [networking](https://docs.hpcloud.com/api/v13/networking/) clients or the [CLI](http://docs.hpcloud.com/cli/unix/network). Make sure you activate a Compute service instance in HP Helion Public Cloud version 13.5 to access the networking and VPN capabilities.
 
 ##Create a new Ubuntu server instance
 
@@ -173,7 +173,7 @@ Ports can be viewed with **neutron port-list** command.
     +--------------------------------------+------+-------------------+-------------------------------------------------------------------------------------+
 
 
-### Create compute instances ### {#instances}
+### Create Compute service instances ### {#instances}
 You need to create two instances (VMs) to test and run your VPN.
 
 #### Create a keypair to allow ssh to the instance
@@ -192,9 +192,9 @@ The above command creates a new keypair called **ipsec_vpn_gateway**.  View all 
     +--------------------+-------------------------------------------------+
 
 
-#### Select your compute image
+#### Select your Compute service image
 
-To boot a compute instance you will need to know which [operating system and size of image](https://docs.hpcloud.com/api/v13/compute/) you would like to use.  For the purpose of this guide, we use a small image using Ubuntu. Select the type of image you want and then assess the amount of bandwidth you need and select the appropriately sized flavor.
+To boot a Compute service instance you will need to know which [operating system and size of image](https://docs.hpcloud.com/api/v13/compute/) you would like to use.  For the purpose of this guide, we use a small image using Ubuntu. Select the type of image you want and then assess the amount of bandwidth you need and select the appropriately sized flavor.
 
 #### Boot the gateway instance and test instance
 
