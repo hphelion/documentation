@@ -21,7 +21,7 @@ The following topics explain how to install and configure HP Helion OpenStack Co
 
    * [Hardware requirements](#hardware-requirements)
 
-   * [System preparation](#system-preparation)
+   * [System requirements](#system-requirements)
 
 * [Installing your preview edition](#install)
 
@@ -39,12 +39,14 @@ The following topics explain how to install and configure HP Helion OpenStack Co
 
    * [Connecting remotely to Horizon console](#remoteconnect)
 
-* [Troubleshooting](#troubleshooting)
+* [Issues and troubleshooting](#troubleshooting)
 
 ## Overview
 
 <p>HP Helion OpenStack Community is installed using <a href ="https://wiki.openstack.org/wiki/TripleO">TripleO</a>
-which uses three linked installation phases to deploy a complete OpenStack cloud. In this preview installation, TripleO simulates the deployment of OpenStack by creating and configuring a set of VMs that play the roles that baremetal machines would in a real deployment, as shown in the <a href="javascript:window.open('/content/documentation/media/community.install.deployment.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack Community deployment diagram</a>.</p>
+which uses three linked installation phases to deploy a complete OpenStack cloud. 
+
+In this preview installation, TripleO simulates the deployment of OpenStack by creating and configuring a set of virtual machines (VMs) that play the roles that baremetal machines would in a real deployment, as shown in the <a href="javascript:window.open('/content/documentation/media/community.install.deployment.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack Community deployment diagram</a>.</p>
 
 * Seed &mdash; The seed VM is started as a VM from a specific seed VM image. It contains a number of self-contained OpenStack components that are used to deploy the undercloud. The seed deploys the undercloud by using Nova baremetal to deploy a specific undercloud machine image.
 
@@ -66,7 +68,7 @@ TripleO creates several large VMs as part of the preview deployment process, so 
 
 * At least 16 GB of RAM
 * At least 200 GB of available disk space
-* Virtualization support that is **enabled** in the BIOS
+* Virtualization support **enabled** in the BIOS
 
 ### System requirements
 
@@ -74,7 +76,7 @@ Your system must meet the following requirements:
 
 * You must have an Ubuntu 13.10 or 14.04 host operating system installed. Other host operating systems might work but have not been tested. Also, this system will **not** currently install within a virtual machine.
 
-* The system should be running openssh server and the firewall configuration must allow access to the ssh ports.
+* The system must be running openssh server and the firewall configuration must allow access to the ssh ports.
 
 * Network devices are named `eth0`, `eth1`, and so on because this is what the installation process is expecting. Naming schemes such as `em1`, `em2`, or any other `biosdevname` will **not** work.
 
@@ -109,7 +111,7 @@ The HP Helion OpenStack Community edition preview is provided as a compressed ta
 
 You can register and download the package from the following URL:
 
-    https://cloudos.hpwsportal.com/
+<a href"https://helion.hpwsportal.com/">https://helion.hpwsportal.com/</a>
 
 **Note:** This install file is around 4GB and will not fit on a memory stick formatted as FAT32. If you are planning to store the installation files on removable media, use something like NTFS.
 
@@ -228,7 +230,7 @@ For remote system installations where you cannot open a browser on the remote sy
 
 3. Use the user names and passwords obtained in [Connecting to the Horizon console](#connectconsole) to access the console.
 
-## Issues and troubleshooting
+## Issues and troubleshooting {#troubleshooting}
 
 * The package `qemu-kvm` is required, but not installed automatically by the scripts. To correct this:
 
