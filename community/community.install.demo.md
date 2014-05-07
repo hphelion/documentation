@@ -107,11 +107,11 @@ Your system must meet the following requirements:
 
 The HP Helion OpenStack Community edition preview is provided as a compressed tar file. This is a large file because it contains all of the machine images required for the seed VM, the undercloud, the overcloud, and a guest VM image.
 
-You can download the tar file from the following (temporary) URL:
+You can register and download the package from the following URL:
 
-    http://tripz400.emea.hpqcorp.net/ce_demo/demo_20140502_1.tar.gz
+    https://cloudos.hpwsportal.com/
 
-**Note:** This tarball file is around 4GB and will not fit on a memory stick formatted as FAT32. If you are planning to store the installation files on removable media, use something like NTFS.
+**Note:** This install file is around 4GB and will not fit on a memory stick formatted as FAT32. If you are planning to store the installation files on removable media, use something like NTFS.
 
 To begin the installation, log in to your system as root and unpack the tar file into root's home directory:
 
