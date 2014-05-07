@@ -157,7 +157,7 @@ You will receive:
 
 ####How can I report issues and participate in HP Helion OpenStack Community edition related discussions? #### {#reportissues}
 
-We are hosting the support discussion forum for the Community edition at [https://ask.openstack.org](https://ask.openstack.org).  Developers in the community are very familiar with this forum and already participate in OpenStack-related discussions there. Please tag your questions with “HPHelion” to get our attention for any questions and issues you raise.  
+We are hosting the support discussion forum for the Community edition at [https://ask.openstack.org](https://ask.openstack.org).  Developers in the community are very familiar with this forum and already participate in OpenStack-related discussions there. Please tag your questions with HPHelion to get our attention for any questions and issues you raise.  
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
