@@ -2,6 +2,7 @@
 layout: default
 title: "HP Helion Public Cloud Services: Assisted Transition from Version 12.12 to 13.5"
 permalink: /migration-details/
+product: public-cloud
 
 ---
 # HP Helion Public Cloud Services version 12.12 to 13.5 assisted transition

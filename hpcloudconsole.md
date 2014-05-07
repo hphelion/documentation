@@ -2,7 +2,7 @@
 layout: default
 title: "HP Helion Public Cloud Console: Getting Started"
 permalink: /hpcloudconsole/
-product: HP Helion Public Cloud Console
+product: public-cloud
 
 ---
 

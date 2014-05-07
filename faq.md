@@ -2,6 +2,7 @@
 layout: default
 title: "HP Helion Public Cloud FAQ"
 permalink: /faq/
+product: public-cloud
 
 ---
 # HP Helion Public Cloud FAQ

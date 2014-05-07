@@ -2,7 +2,7 @@
 layout: default
 title: "Feature Mapping: HP Classic Console to the HP Helion Public Cloud Console"
 permalink: /hpcloudconsolefeaturemap/
-product: HP Helion Public Cloud Console
+product: public-cloud
 
 ---
 
