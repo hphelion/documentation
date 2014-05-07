@@ -30,8 +30,6 @@ This release note contains the following information about the HP Helion OpenSta
 
 **Close-to-trunk release** &mdash; Allows your lab or small-scale production environment to continue to benefit from the very latest capabilities of OpenStack technology.
 
-**Integrated Linux&reg; host OS** &mdash; Provides for better speed, support, and control across the full solution stack (for compute and controller node hypervisors).
-
 
 ##Supported services ## {#supported-services}
 
