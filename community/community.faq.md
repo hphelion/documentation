@@ -21,7 +21,7 @@ Welcome! You've got questions. We have the answers.
 * [Is there a cost associated with this distribution?](#distrocost)
 * [What is TripleO?](#TripleO)
 * [What is available on the preview version announced on May 7th?](#preview)
-* [When can we expect support for bare-metal deployment?](#baremetal)
+* [When can customers expect support for bare-metal deployment?](#baremetal)
 * [When and where will HP Helion OpenStack Community be released?](#release)
 * [Is the release localized for non-English speaking markets?](#localized) 
 * [What is the price for HP Helion OpenStack Community?](#whatprice)
@@ -34,7 +34,6 @@ Welcome! You've got questions. We have the answers.
 * [Does this distro include the OpenStack Icehouse release?](#icehouse) 
 * [Is the HP Helion OpenStack Community upgradeable?](#upgrade)
 * [Can HP Helion OpenStack Community be run on non-HP hardware?](#nonhphardware)
-* [Is HP Helion OpenStack Community integrated with other HP Helion products and solutions?](#integrated) 
 
 ##Support and additional resources  
 
@@ -71,7 +70,7 @@ OpenStack on OpenStack (or TripleO) is the OpenStack Project's official project 
 
 On May 7th, we announced a preview of HP Helion OpenStack Community edition that allows our customers to deploy an OpenStack cloud-in-a-box, experience TripleO based deployment and evaluate the Icehouse release of OpenStack.  
 
-####When can we expect support for bare metal deployment? #### {#baremetal}
+####When can customers expect support for bare metal deployment? #### {#baremetal}
 
 We are committed to shipping every six weeks and this is our first release based on Icehouse which was just released. We are currently testing and hardening our distribution to support bare-metal deployment for a small scale private cloud deployment. We expect this to be available in our next release.   
 
