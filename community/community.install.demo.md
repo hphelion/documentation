@@ -111,7 +111,7 @@ The HP Helion OpenStack Community edition preview is provided as a compressed ta
 
 You can register and download the package from the following URL:
 
-<a href"https://helion.hpwsportal.com/">https://helion.hpwsportal.com/</a>
+[https://helion.hpwsportal.com/](https://helion.hpwsportal.com/)
 
 **Note:** This install file is around 4GB and will not fit on a memory stick formatted as FAT32. If you are planning to store the installation files on removable media, use something like NTFS.
 
