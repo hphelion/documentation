@@ -45,9 +45,9 @@ Welcome! You've got questions. We have the answers.
 
 ####What is HP Helion OpenStack Community? And how does it tie into the overall HP Helion portfolio? #### {#whatcommunity}
 
-The HP Helion OpenStack Community is the first OpenStack distribution from HP. It is a free-to-license and download OpenStack distribution from HP. This will be shipped frequently to stay close to the trunk (once every six weeks). 
+The HP Helion OpenStack Community edition is the first OpenStack distribution from HP. It is a free-to-license and download OpenStack distribution from HP. This will be shipped frequently to stay close to the trunk (once every six weeks). 
 
-It will be the foundational technology for all HP Helion portfolio of products in the future, allowing HP Helion products to quickly leverage the OpenStack capabilities.
+HP Helion OpenStack Community is the foundation upon which the HP Helion portfolio of products will be built, allowing HP Helion products to quickly leverage the OpenStack capabilities.
 
 ####What does this distro enable me to do? #### {#distroenable}
 
@@ -69,7 +69,7 @@ It is free to download. Optionally, it comes with a support license that you can
 
 OpenStack on OpenStack (or TripleO) is OpenStack's official deployment of OpenStack project. It builds on the core resource-provisioning strengths of OpenStack, to enable cloud administrators to deploy and maintain bare metal installations of OpenStack. Using the same APIs that they are familiar with for deploying workloads on an OpenStack cloud. Template based deployment engine (OpenStack Heat) allows for rigorous testing and reliable, repeatable deployments of known configurations. 
  
-####What is available on the preview version announced on May 7th? #### {#preview}
+####What is available in the preview version announced on May 7th? #### {#preview}
 
 On May 7th, we are announcing a preview of HP Helion OpenStack Community edition that allows you to deploy an OpenStack cloud-in-a-box, experience TripleO based deployment and evaluate Icehouse release of OpenStack. 
 
@@ -113,7 +113,7 @@ Yes. It includes an integrated HP Linux; host OS hardened and tested for this di
 
 No. HP Helion OpenStack Community is a pure distro that leverages OpenStack community standards with no mix of proprietary or non-OpenStack tools.
 
-###Does this distro include the OpenStack Icehouse release? #### {#icehouse}
+###Does this distribution include the OpenStack Icehouse release? #### {#icehouse}
 
 Yes, and HP is one of the first vendors to release a supported, productized distro based on Icehouse.
  
@@ -125,7 +125,7 @@ Yes. Clients who begin with the free HP Helion OpenStack Community can migrate t
 
 Yes. The advantage of open source is clients can avoid vendor lock-in. Standards-based APIs are portable across OpenStack-based public, private, and managed clouds, so they can easily move workloads to any cloud. HP is agnostic about which hardware vendor is used. 
 
-####Is HP Helion OpenStack Community integrated with other HP Helion products and solutions? #### {#integrated}
+####Can HP Helion OpenStack Community be integrated with other HP Helion products and solutions? #### {#integrated}
 
 Yes. These products will reference "Powered by HP OpenStack." 
 
