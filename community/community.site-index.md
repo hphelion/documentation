@@ -35,7 +35,7 @@ PageRefresh();
 
 
 
-#### [OpenStack reference](/helion/openstack/)
+#### [OpenStack reference](http://docs.openstack.org/)
  
 * [OpenStack documentation home page](http://docs.openstack.org/)
 * [OpenStack Glossary](http://docs.openstack.org/glossary/content/glossary.html)
