@@ -27,7 +27,8 @@ Having a bit of trouble navigating our site, and so you're looking for a single 
 &nbsp;&nbsp;&nbsp;&nbsp;[HP Helion Public Cloud FAQ](/faq)<br>
 [HP Helion Public Cloud Available Services](/services/)<br> 
 &nbsp;&nbsp;&nbsp;&nbsp;[HP Helion Public Cloud Compute Services Overview](/compute)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Using the Compute Service](/compute/using/)<br>
+<!-- Hiding until we can find the file
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Using the Compute Service](/compute/using/)<br> -->
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Compute Services API](/api/v13/compute/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[HP Helion Public Cloud Identity Service Overview](/identity/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Identity Service API](/api/v13/identity/)<br>

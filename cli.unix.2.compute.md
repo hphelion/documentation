@@ -39,8 +39,8 @@ This page addresses perfoming compute tasks using HP Helion Public Cloud with ex
 Get detailed help for any command or task by running:
 
     $ hpcloud help <TASK>
-
-See the following for compute service how-tos [Using the compute service](/compute/using/) page.  
+<!-- Hiding until we can find this page
+See the following for compute service how-tos [Using the compute service](/compute/using/) page.  -->
 
 
 See the following articles for advanced compute features:
@@ -322,4 +322,5 @@ In the following example, `winserv` is the name of the server, `large` is the fl
     
 **Note**: The output for this command is the Windows Administrator password. To connect to the instance via the public IP and RDP, use  `username` Administrator and the presented password for `password`.
 
-See [the How To page](/compute/using#WindowsRDP) for an example of how to connect via a Windows RDP client.  You can use the `servers:console` command to extract the password if it is still available on the console.
+<!-- Hiding until we can find this page
+See [the How To page](/compute/using#WindowsRDP) for an example of how to connect via a Windows RDP client.  You can use the `servers:console` command to extract the password if it is still available on the console. -->
