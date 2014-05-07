@@ -131,7 +131,7 @@ For additional information on HP Helion OpenStack Community, OpenStack and Tripl
 
 ###Legal Notices and Disclaimer### {#legal-notices-disclaimer}
 
-See the [HP Helion OpenStack Community Open Source and Third-Party Software License Agreements](/helion/community/community-3rd-party-license-agreements/).
+<!--See the [HP Helion OpenStack Community Open Source and Third-Party Software License Agreements](/helion/community/community-3rd-party-license-agreements/).-->
 
 Linux&reg; is the registered trademark of Linus Torvalds in the U.S. and other countries.
 
