@@ -31,7 +31,7 @@ This release note contains the following information about the HP Helion OpenSta
 **Close-to-trunk release** &mdash; Allows your lab or small-scale production environment to continue to benefit from the very latest capabilities of OpenStack technology.
 
 
-##Supported services ## {#supported-services}
+##Supported services ## {#supported-services} 
 
 This release of the Community edition is shipped with the following services support:
 
