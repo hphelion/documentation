@@ -334,7 +334,8 @@ From **Browse Designs**, click **Create**.<br>A blank canvas displays in the **E
 
 When you open the editor, the following controls are available in the left toolbar:
 
-<img src="media/cos4ms-editor-controls.png"/>
+<img src="media/cos4ms-editor-controls.PNG"/>
+
 
 
 **Design Topology Layouts**
@@ -579,11 +580,8 @@ The design details are displayed in the Overview Tab
 5.	Click the **Validation** Tab to activate it.<br>
 The Validation page displays with following details.
  * the icon representing the component
-
  * the name of the component
-
  * a brief description of the error/errors
- 
  * type of component
 
 6.	Click error to go to the source of the issue and correct it.

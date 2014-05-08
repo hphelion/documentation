@@ -74,12 +74,12 @@ HP recommends the following best practices for HP Cloud OS for Moonshot 1.10.
 
 **Provisioning**
 
-* For increased reliability, we recommend you allocate an adequate IP address range for the nova_flat network based on the number of instances planned for the given Cloud. For example, if the environment is going to have 40 instances, at least 120 IP addresses need to be defined in the DHCP allocation range. 
+* For increased reliability, we recommend you allocate an adequate IP address range for the `nova_flat` network based on the number of instances planned for the given Cloud. For example, if the environment is going to have 40 instances, at least 120 IP addresses need to be defined in the DHCP allocation range. 
 
 
 **Installation**
 
-* To enable maximum reliability in the Cloud environment, do not select the controller nodes when performing <b>Create Compute Region</b> action for a Moonshot/Standard server. 
+* To enable maximum reliability in the Cloud environment, do not select the controller nodes when performing a `Create Compute Region` action for a Moonshot (Standard) server. 
 
 ###Known issues in 1.10 release### {#known-issues}
 
@@ -87,7 +87,7 @@ The following are the known issues for HP Cloud OS for Moonshot 1.10.
 
 ####Installation####
 
-* The `Create Compute Region` command may fail due to a GET_SERVER_CERTIFICATE verification failure. To resolve this issue, follow this process:
+* The `Create Compute Region` command may fail due to a `GET_SERVER_CERTIFICATE` verification failure. To resolve this issue, follow this process:
 
  1. In the Admin Node, edit the `/opt/dell/chef/cookbooks/hp_cos_apollo_100/recipes/server.rb` file.
 	 
@@ -96,7 +96,7 @@ The following are the known issues for HP Cloud OS for Moonshot 1.10.
  3. Execute this command:
  `knife cookbook upload -o /opt/dell/chef/cookbooks/ -V -k /etc/chef/webui.pem -u chef-webui`
 	
- 4. Remove the Cloud and create it again.
+ 4. Remove and recreate the Cloud.
 
 * The region size can only be extended.  To reduce the region, remove the cloud and create it again.
 
@@ -108,21 +108,23 @@ The following are the known issues for HP Cloud OS for Moonshot 1.10.
 
  2. Go to line 225 and change `timer.start(interval=1.0).wait()` to `timer.start(interval=30.0).wait()`
 	
- 3. Save the updated file and exit your text editor.
+ 3. Save the updated file and exit your text editor
 	
  4. Execute the command `restart Nova-compute`
 
-* Under some circumstances, after launching a workload profile in the Administration Dashboard, and then using <b>Terminate Workload</b> to deprovision, the workload/topology continues to list the state as "Processing".  In the <b>Deployed Workloads</b> tab, selecting <b>Delete Workload</b> resolves the issue.
+* Under some circumstances, after launching a workload profile in the Administration Dashboard, and then using the `Terminate Workload` action to deprovision, the workload topology continues to list the state as `Processing`.  To resolve this issue, in the `Deployed Workloads`tab select `Delete Workload`.
 
 * For instances provisioned using Windows images created using the [Image Builder](/cloudos/moonshot/manage/image-builder/) document, the disk size of the instance is the same as the disk size specified during image creation process. You need to login using credentials provided as part of unattend file during image creation instead of OpenStack keypair.
+
+<!--This needs to be rewritten; it's not very clear-->
 
 
 ####General####
 
 
-* The <b>Edit Extra Specs</b> option appears enabled for Flavors. To ensure smooth functioning of the instance, retain the default settings. 
+* The `Edit Extra Specs` option appears enabled for Flavors. To ensure smooth functioning of the instance, retain the default settings. 
 
-* When you display the nodes table in the <b>Nodes View</b> using Moonshot Management, the disk size for all discovered nodes is shown to be 500 GB, regardless of the physical disk capacity.
+* When you display the nodes table in the `Nodes View` using Moonshot Management, the disk size for all discovered nodes is shown to be 500 GB, regardless of the physical disk capacity.
 
 <!-- I'm still of the opinion that we should delete this item; there is no workaround, and what good does it do to tell the customer about it? -Doug -->
 
