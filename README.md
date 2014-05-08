@@ -3,7 +3,7 @@ This repository contains the documentation on using HP Cloud product and service
 
  * http://docs.hpcloud.com/
  * http://docs.qa1-stackato.cx.hpcloud.net/
- * http://15.185.109.123/
+ * http://devexbuild.infra.aw1.hpcloud.net/
 
 ## Jenkins
 
