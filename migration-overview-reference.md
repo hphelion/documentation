@@ -6,7 +6,7 @@ permalink: /migration-overview-reference/
 ---
 #HP Cloud Compute Version 12.12 to HP Cloud Compute Version 13.5: Data Transition Guide#
 
-This page provides you with information to help you transition an HP Cloud Compute version 12.12 instance to an HP Cloud Compute version 13.5 instance. 
+This page provides information to help you transition an HP Cloud Compute version 12.12 instance to an HP Cloud Compute version 13.5 instance. 
 
 In general, the process for transitioning to 13.5 involves creating a new 13.5 instance, configuring that instance, and copying any required data files to that new instance.  
 

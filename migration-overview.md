@@ -6,7 +6,7 @@ permalink: /migration-overview/
 ---
 # HP Cloud Services 12.12 to 13.5 transition overview
 
-This page provides you with information to help you transition from version 12.12 to 13.5 of the HP Cloud services.  This overview covers the following topics and tasks:
+This page provides you with information to help you transition from version 12.12 to 13.5 of the HP Cloud services.  This overview covers the following topics and tasks: 
 
 * [Before you begin](#BeforeYouBegin)
 * [Transitioning data for ephemeral instances](#Ephemeral)
