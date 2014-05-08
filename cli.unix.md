@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "Unix Command Line Interface"
+title: "UNIX CLI for HP Cloud"
 permalink: /cli/unix/
 product: unix-cli
 
 ---
-# Unix Command Line Interface v13.5
+# UNIX CLI for HP Cloud v13.5
 
 ___________________
 
@@ -27,7 +27,7 @@ HP Cloud has contributed the Unix CLI back to the open source community, and you
 
 _________________________________________
 
-The Unix Command Line Interface is a tool which allows Unix or Mac users to manage their HP Cloud from the command line or automated through scripts.  There is no need to understand the underlying REST API or XML document format to use the Unix CLI.  There are two versions of the Unix CLI: the 2.0 version for HP Cloud version 13.5 and the 1.9 version for HP Cloud version 12.12. We recommend that you move to version v13.5, but during the transition you can still find the documentation for v12.12 here.
+The UNIX CLI for HP Cloud is a tool which allows Unix or Mac users to manage their HP Cloud from the command line or automated through scripts.  There is no need to understand the underlying REST API or XML document format to use the CLI.  There are two versions of the CLI: the 2.0 version for HP Cloud version 13.5 and the 1.9 version for HP Cloud version 12.12. We recommend that you move to version v13.5, but during the transition you can still find the documentation for v12.12 here.
 
 Access the following documentation and resources:
 
@@ -36,7 +36,7 @@ Access the following documentation and resources:
 * [Download the software](#downloads)
 * [For more information](#articles)
 
-##Version 13.5 (Unix CLI 2.0) documentation {#135}
+##Version 13.5 (Unix CLI for HP CLoud 2.0) documentation {#135}
 
 * [Installation](/cli/unix/2/install)
 * [Account Configuration](/cli/unix/2/configuration)
@@ -50,7 +50,7 @@ Access the following documentation and resources:
 * [CLI Reference](/cli/unix/2/reference)
 * [Release Notes](/cli/unix/release-notes)
 
-##Version 12.12 (Unix CLI 1.9) documentation {#1212}
+##Version 12.12 (Unix CLI for HP Cloud 1.9) documentation {#1212}
 
 * [Installation](/cli/unix/install)
 * [Account Configuration](/cli/unix/configuration)
@@ -64,18 +64,18 @@ Access the following documentation and resources:
 * [CLI Reference](/cli/unix/reference)
 * [Release Notes](/cli/unix/release-notes)
 
-For some release-by-release information, take a look at [the UNIX CLI release notes](/cli/unix/release-notes)!
+For some release-by-release information, take a look at [the UNIX CLI for HP Cloud release notes](/cli/unix/release-notes)!
 
 ##Download the software## {#downloads}
 
-Download the HP Cloud environment command-line interface (CLI) software for UNIX CLI for the HP Cloud version you are using:
+Download the UNIX CLI for HP Cloud software for the HP Cloud version you are using:
 
-+ [**HP Cloud version 13.5** environment CLI software for UNIX CLI](http://rubygems.org/gems/hpcloud)
-+ [**HP Cloud version 12.12** environment CLI software for UNIX CLI](/file/hpcloud.gem)
++ [**HP Cloud version 13.5** environment CLI software for UNIX CLI for HP Cloud](http://rubygems.org/gems/hpcloud)
++ [**HP Cloud version 12.12** environment CLI software for UNIX CLI for HP Cloud](/file/hpcloud.gem)
 
 ##For more information## {#articles}
 
-For additional tips and How-tos on using your UNIX command-line interface (CLI), see [UNIX CLI: Articles on to use the UNIX CLI](/cli/unix/articles/):
+For more tips and How-tos on using your UNIX CLI for HP Cloud, see [UNIX CLI for HP Cloud: Articles on to use the UNIX CLI for HP Cloud](/cli/unix/articles/).
 
 * [Using bash command completion](/cli/unix/articles/complete)
 * [Generating verbose debugging output](/cli/unix/articles/debugging)

@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "HP Cloud UNIX CLI Installation"
+title: "UNIX CLI for HP Cloud Installation"
 permalink: /cli/unix/install/
 product: unix-cli
 
 ---
-# HP Cloud UNIX CLI Installation for v12.12
+# UNIX CLI for HP Cloud Installation for v12.12
 
 ___________________
 
@@ -22,15 +22,15 @@ HP Cloud has contributed the Unix CLI back to the open source community, and you
 _________________________________________
 
 
-Before you can begin working with the UNIX CLI, you have to install the package (of course!).  The instructions below work for Ubuntu, MacOS X, and CentOS installations.  Take a look at the [HP Cloud Unix CLI - Release Notes](/cli/unix/release-notes) for the latest features.
+Before you can begin working with the UNIX CLI for HP Cloud, you have to install the package (of course!).  The instructions below work for Ubuntu, MacOS X, and CentOS installations.  Take a look at the [UNIX CLI for HP Cloud - Release Notes](/cli/unix/release-notes) for the latest features.
 
-[You can download the latest version of the UNIX CLI software here (Version 1.9.1)](/file/hpcloud-1.9.1.gem)!
+[You can download the latest version of the UNIX CLI for HP Cloud software here (Version 1.9.1)](/file/hpcloud-1.9.1.gem)!
 
-To install the UNIX CLI software, follow these steps:
+To install the UNIX CLI for HP Cloud software, follow these steps:
 
-1. Start by [installing](/bindings/fog/install) the [HP Cloud Ruby Fog Binding](/bindings/fog) software on which the HP Cloud Unix CLI depends.
+1. Start by [installing](/bindings/fog/install) the [Ruby Fog Bindings for HP Cloud](/bindings/fog) software on which the UNIX CLI for HP Cloud depends.
 
-2. Download and install the HPCloud Unix CLI gem using curl:
+2. Download and install the UNIX CLI for HP Cloud gem using curl:
 
         curl -sL https://docs.hpcloud.com/file/hpcloud-1.9.1.gem >hpcloud.gem
         sudo gem install hpcloud.gem

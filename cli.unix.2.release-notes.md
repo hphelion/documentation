@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "Release Notes for the HP Cloud Services UNIX CLI"
+title: "UNIX CLI for HP Cloud Release Notes"
 permalink: /cli/unix/2/release-notes/
 product: unix-cli
 
 ---
-#UNIX CLI v13.5 Release Notes
+#UNIX CLI for HP Cloud v13.5 Release Notes
 
 If you are using v12.12, click [here](https://docs.hpcloud.com/cli/unix/release-notes) for documentation.
 
@@ -17,7 +17,7 @@ On November 4, 2013, the UNIX CLI was moved into its End-of-Life (EOL) Cycle pro
 
 We wanted to ensure you were aware of the changes that may affect you during this 6-month transition time:
 
-+ The UNIX CLI has moved to the HP Cloud Github repository
++ The UNIX CLI for HP Cloud has moved to the HP Cloud Github repository
 
   + In order to encourage development by the community, HP Cloud is sharing it with the community as open source, hosted on [https://github.com/hpcloud/unix_cli](https://github.com/hpcloud/unix_cli).
  
@@ -29,7 +29,7 @@ We wanted to ensure you were aware of the changes that may affect you during thi
 
 HP Cloud has contributed the Unix CLI back to the open source community, and you can get support, access the documentation, and download the source code [here](https://github.com/hpcloud/unix_cli).
 ________________________________________
-These are the release notes for the HP Cloud services UNIX CLI.  The current release number for the [UNIX CLI software](/cli/unix) is version 2.0.0, released on 09/17/13.
+These are the release notes for the UNIX CLI for HP Cloud.  The current release number for the [UNIX CLI software](/cli/unix) is version 2.0.0, released on 09/17/13.
 
 * [Release 2.0.0 Features](#v2_0_0)
 * [Release 1.9.0 Features](#v1_9_0)
@@ -159,7 +159,7 @@ This release was made available on 12/6/2012 and contains the following new feat
 * Command `volumes:add` added to provide support for bootable volume creation
 * Command `servers:add` added to provide support for creating a server from a bootable volume
 
-**Note**: This release of the UNIX CLI requires the [Ruby Fog v0.0.18](https://docs.hpcloud.com/bindings/fog/install) binding.
+**Note**: This release of the UNIX CLI for HP Cloud requires the [Ruby Fog v0.0.18](https://docs.hpcloud.com/bindings/fog/install) binding.
 
 ###Known Issues###
 

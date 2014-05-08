@@ -5,7 +5,7 @@ permalink: /bindings/fog/install/
 product: fog
 
 ---
-# HP Cloud Ruby Fog Binding Installation
+# Ruby Fog Bindings for HP Cloud Installation
 
 ##Important Notice##
 

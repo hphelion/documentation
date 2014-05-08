@@ -6,7 +6,7 @@ permalink: /sitemap/
 ---
 # HP Cloud Service Documentation Site Map#
 
-Having a bit of trouble navigating our site, and so you're looking for a single list of what we cover?  You've come to the right place!
+Having a bit of trouble navigating our site, and so you're looking for a single list of what we cover?  You've come to the right place.
 
 [Getting Started with HP Cloud](/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Documentation Site Overview](/site-overview)<br>
@@ -26,10 +26,13 @@ Having a bit of trouble navigating our site, and so you're looking for a single 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[HP Cloud FAQ](/faq)<br>
 [HP Cloud Available Services](/services/)<br> 
 &nbsp;&nbsp;&nbsp;&nbsp;[Compute Services Overview](/compute)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Compute Services API](/api/v13/compute/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Using the Compute Service](/compute/using/)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Compute Services API](/api/v13/compute/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Identity Service Overview](/identity/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Identity Service API](/api/v13/identity/)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Networking Service Overview](/compute/network/overview/)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Network setup quick start guide](/compute/network/quick-start/)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Networking Service API](/api/v13/networking/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Object Storage Overview](/object-storage/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Object Storage API](/api/object-storage/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[HP Cloud Block Storage Overview](/block-storage/)<br>
@@ -46,7 +49,7 @@ Having a bit of trouble navigating our site, and so you're looking for a single 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[MaaS API](/api/v13/monitoring)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Application Platform as a Service (aPaaS) Overview](/apaas)<br>
 [HP Cloud Bindings](/bindings)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Ruby Fog Overview](/bindings/fog)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Ruby Fog for HP Cloud Overview](/bindings/fog)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Installation](/bindings/fog/install)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Connecting to the Service](/bindings/fog/connect)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Compute Examples](/bindings/fog/compute)<br>
@@ -63,8 +66,8 @@ Having a bit of trouble navigating our site, and so you're looking for a single 
 <!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[CDN Examples](/bindings/jclouds/cdn)<br>-->
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Block Storage Examples](/bindings/jclouds/block-storage)<br>
 [HP Cloud CLI Documentation](/cli)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;[UNIX CLI Overview](/cli/unix)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UNIX CLI for v13.5<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[UNIX CLI for HP Cloud Overview](/cli/unix)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**UNIX CLI for HP Cloud v13.5**<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Installation](/cli/unix/2/install)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Account Configuration](/cli/unix/2/configuration)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Advanced Account Management](/cli/unix/2/account-management)<br>
@@ -76,7 +79,7 @@ Having a bit of trouble navigating our site, and so you're looking for a single 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[DNS Examples](/cli/unix/2/dns)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[CLI Reference](/cli/unix/2/reference)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Release Notes](/cli/unix/release-notes)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UNIX CLI for v12.12<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**UNIX CLI for HP Cloud v12.12**<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Installation](/cli/unix/install)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Account Configuration](/cli/unix/configuration)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Managing Multiple Accounts](/cli/unix/account-management)<br>
@@ -87,7 +90,7 @@ Having a bit of trouble navigating our site, and so you're looking for a single 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Block Storage Examples](/cli/unix/block-storage)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Volume Management Examples](/block-storage/volume)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[DNS Examples](/cli/unix/dns)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Using the UNIX CLI](/cli/unix/articles/)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Using the UNIX CLI for HP CLoud](/cli/unix/articles/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Using Bash Command Completion](/cli/unix/articles/complete)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Generating Verbose Debugging Output](/cli/unix/articles/debugging)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Accessing Servers with Managed Key Pairs](/cli/unix/articles/managedkeypairs)<br>

@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "Unix Command Line Interface: Verbose debugging output"
+title: "UNIX CLI for HP Cloud: Verbose debugging output"
 permalink: /cli/unix/articles/debugging
 product: unix-cli
 categories: cli linux
 tags: cli linux
 ---
-#UNIX CLI: Generating verbose debugging output v12.12#
+#UNIX CLI for HP Cloud: Generating verbose debugging output v12.12#
 
 ___________________
 
@@ -22,7 +22,7 @@ HP Cloud has contributed the Unix CLI back to the open source community, and you
 
 _________________________________________
 
-Almost every command in the UNIX command-line interface (CLI) contains an option that allows you to display verbose debugging information.  The debugging log includes a trace of the HTTP requests made with both requests and responses as well as a stack trace if an exception is generated.  The verbose mode assists you in debugging problems if the standard error messages are not enough. 
+Almost every command in the UNIX CLI for HP Cloud contains an option that allows you to display verbose debugging information.  The debugging log includes a trace of the HTTP requests made with both requests and responses as well as a stack trace if an exception is generated.  The verbose mode assists you in debugging problems if the standard error messages are not enough. 
 
 Here is the `list` command without verbose debugging enabled:
 
@@ -49,4 +49,4 @@ For additional information, take a look at the [CLI Reference page](/cli/unix/re
 
 ##For more information## {#articles}
 
-For more tips and How-tos on using your UNIX command-line interface (CLI), see [UNIX CLI: Articles on to use the UNIX CLI](/cli/unix/articles/).
+For more tips and How-tos on using your UNIX CLI for HP Cloud, see [UNIX CLI for HP Cloud: Articles on to use the UNIX CLI for HP Cloud](/cli/unix/articles/).

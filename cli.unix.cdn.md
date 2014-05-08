@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "UNIX CLI CDN Examples"
+title: "UNIX CLI for HP Cloud CDN Examples"
 permalink: /cli/unix/cdn/
 product: unix-cli
 
 ---
-# UNIX CLI CDN Examples for v12.12
+# UNIX CLI for HP Cloud CDN Examples for v12.12
 
 ___________________
 

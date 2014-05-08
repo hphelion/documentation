@@ -1,13 +1,13 @@
 ---
 layout: default
-title: "HP Cloud Fog Binding Compute Examples"
+title: "Ruby Fog Bindings for HP Cloud Compute Examples"
 permalink: /bindings/fog/compute/
 product: fog
 
 ---
 
 
-#Ruby Fog Bindings Compute Examples  
+#Ruby Fog Bindings for HP Cloud Compute Examples  
 
 ##Important Notice##
 

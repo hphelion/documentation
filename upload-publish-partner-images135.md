@@ -3,18 +3,18 @@ layout: default
 title: "HP Cloud 13.5: Upload and Make Public a Partner Image"
 permalink: /upload-publish-partner-images135/
 product: image
-
 ---
 
 # HP Cloud 13.5: How to Upload a Partner Image and Make it Public # {#publishPartnerImage}
+
 This document describes how to use the HP Cloud Image API to upload images and make them available for public use in HP Cloud 13.5. It is not intended to be an exhaustive description of [managing images using the Glance client](http://docs.openstack.org/user-guide-admin/content/cli_manage_images.html). For additional detail, see the [glance command reference](http://docs.openstack.org/user-guide-admin/content/glanceclient_commands.html) and the [HP Cloud Image Service API specification](https://docs.hpcloud.com/api/v13/image/).
 
 **Note:** As an image owner, it is your responsibility to ensure you have rights to use any software included in the image. HP is not responsible or liable for any unauthorized use of software by the owner of an image.
 
 **Important:** The following regions support uploading an image and making it publicly available:
 
-* Region A West 13.5 (region-a.geo-1)
-* Region B East 13.5 (region-b.geo-1)
+* Region A - West 13.5 (region-a.geo-1)
+* Region B - East 13.5 (region-b.geo-1)
 
 All other regions do not support the Image API.
 
@@ -59,7 +59,7 @@ Making an image public refers to setting the `is_public` metadata of an image wh
 
 **Note:** An image whose `is_public` metadata field is `False` is referred to as a private image. Private images are only visible to and accessible by their owners.
 
-In brief, to upload an image and make it public, you must 
+In brief, to upload an image and make it public, you must: 
 
 1. Install the OpenStack Glance command line tool (or an appropriate API interaction tool like curl).
 2. Configure the tool to interact with the HP Cloud Image Service.
@@ -132,13 +132,13 @@ To configure your environment variables using bash, complete the following steps
 <pre>
     $ vi .glancerc</pre>
 </li>
-<li>Add the required variables and their values, for example, where the management console user name is <code>me@example.com</code> and the password is <code>Pa$$w0rd</code>:
+<li>Add the required variables and their values:
 
 <pre>
     # Account specific
-    export OS_USERNAME=me@example.com  
-    export OS_TENANT_NAME=me@example.com  
-    export OS_PASSWORD=Pa$$w0rd  
+    export OS_USERNAME={username}  
+    export OS_TENANT_NAME={project_name}  
+    export OS_PASSWORD={password}  
     # Not-account specific (same for all users)  
     export OS_AUTH_URL=https://region-b.geo-1.identity.hpcloudsvc.com:35357/v2.0  
     export OS_AUTH_STRATEGY=keystone  
@@ -162,10 +162,8 @@ Before you can manage your images using curl, you must acquire a token using you
 <ol><li>Run the following command:
 
 <pre>
-    $ curl -XPOST -H "Content-Type: application/json" -d"{\"auth\":{\"tenantName\": 
-    \"$OS_TENANT_NAME\", \"passwordCredentials\": {\"username\": \"$OS_USERNAME\",
-    \"password\": \"$OS_PASSWORD\"}}}" $OS_AUTH_URL/tokens
-</pre>`
+    $ curl -X POST -H "Content-Type: application/json" -d "{\"auth\":{\"tenantName\": \"$OS_TENANT_NAME\", \"passwordCredentials\": {\"username\": \"$OS_USERNAME\", \"password\": \"$OS_PASSWORD\"}}}" $OS_AUTH_URL/tokens
+</pre>
 
 **Important:** Be careful using the double quotes (") and escaped double quotes (\") in the command above.
 
@@ -176,7 +174,7 @@ The curl command should return output, such as:
       "token": {  
         "expires": "2013-05-24T22:03:30.036Z",   
         "id": "HPAuth10_a73d39f83b98359a7a0951f51a393aaeafdc00fcbcd31c300384917",  
-        "tenant": {  
+        "tenant": {  
            "id": "12345678",   
            "name": "jane.smith@example.com"  
            }  
@@ -206,7 +204,7 @@ Your uploaded images must adhere to the following:
 * Images for any licensed OS require a valid OS license.
     * If you build your own image of a licensed OS, you must ensure that you provide a valid license to image users.
     * If you use an HP Cloud supplied licensed OS to create your own image from a snapshot, then the HP Cloud provided license is included.
-* If you make any third-party software programs available through your image, you must comply with all third-party license requirements for such use. HP does not control and is not responsible for any of these programs or their content. If you are required to agree to terms and conditions set by a third party for usage of such third-party software programs, you are responsible for compliance with these requirements. 
+* If you make any third-party software programs available through your image, you must comply with all third-party license requirements for such use. HP does not control and is not responsible for any of these programs or their content. If you are required to agree to terms and conditions set by a third party for usage of such third-party software programs, you are responsible for compliance with these requirements.
 
 #### Common requirements #### {#publishCommonReqs}
 You must ensure that all uploaded images meet the following requirements:
@@ -216,7 +214,7 @@ You must ensure that all uploaded images meet the following requirements:
     * have [supporting documentation](#publishDocReqs).
     * support the VirtIO disk driver and network driver.
     * be configured to use DHCP for its primary network interface.
-    * not have a MAC address tied to its primary network interface; an instance booted in the HP Cloud gets a random MAC address assigned by the HP Cloud infrastructure.
+    * not have a MAC address tied to its primary network interface; an instance booted in the HP Cloud gets a random MAC address assigned by the HP Cloud infrastructure.
     * be self-contained; it should not be a multi-part image, e.g., one that references a separate ramdisk/kernel.
     * be in the `qcow2` format
 * An image should:
@@ -320,37 +318,34 @@ The HP Cloud management console uses custom properties to categorize and display
 See the [Glance client](#publishGlanceCreate) and [curl](#publishCurlUpload) sections for the instructions to set these attributes and properties.
 
 ## Creating an image from a snapshot ## {#publishWindowsSnap}
-One way to create an image is to customize an HP Cloud-provided licensed, public image. There are several ways you can do this; however, the steps below describe one method for customizing an HP Cloud-provided licensed image. For more detailed information or to see alternative methods, see [Creating a snapshot of an instance](https://community.hpcloud.com/article/creating-snapshot-instance).
+One way to create an image is to customize an HP Cloud-provided licensed, public image. There are several ways you can do this; however, the steps below describe one method for customizing an HP Cloud-provided licensed image. For more detailed information or to see alternative methods, see [Creating a snapshot of an instance](https://community.hpcloud.com/article/creating-snapshot-instance-135).
 
 <ol>
 <li>
-Boot an HP-provided instance and note the instance UUID.</li>
+Boot an HP-provided instance and note the instance ID.</li>
 <li>Customize the instance by installing software, completing operating system customization, and any additional preparation steps.</li>
-<li>Shut down the instance.
+<li>Once you're ready, prepare your instance to be snapshot by following these steps for your operating system:
 <ul>
 <li><b>For a Windows instance</b> sysprep and shutdown the image as an Administrator from the command prompt.
-<p><b>Note:</b> Steps d and e only apply to Windows 2008 R2 SP1. For all other Windows flavors, skip these two steps.</p>
 <ol type=a>
 <li>cd c:\windows\setup\hpcloud</li>
 <li>sdelete -z c</li>
 <li>startsysprep</li>
-<li>FirstNetwork.reg</li>
-<li>Shutdown the instance.</li>
+<p><b>Note:</b> After sysprep is done your instance will shut down.</p>
 </ol></li>
 <li><b>For a Linux instance</b> shutdown the instance as root.
 </li>
 </ul>
-
 </li>
 
 <li>Verify that the instance is shut down:
 
-<p><code>nova show &lt;instance uuid&gt;</code></p>
+<p><code>nova show &lt;instance_id&gt;</code></p>
 
 </li>
 <li>Create the snapshot: 
 <p>
-<code>nova image-create &lt;instance uuid&gt; &lt;my snapshot name&gt;</code>
+<code>nova image-create &lt;instance_id&gt; &lt;my snapshot name&gt;</code>
 </p>
 
 <p><b>Note:</b> Only the root disk is included with the snapshot; the ephemeral storage will be lost.</p>
@@ -361,22 +356,26 @@ Boot an HP-provided instance and note the instance UUID.</li>
 <p><img src="media/glance-snapshot-details.png" width="580" alt="" /></p>
 </li>
 
-<li>If you no longer need the instance from which the snapshot was taken, delete it:
-<p><code>nova delete &lt;instance uuid&gt;</code></p>
-</li>
 <li>Remove the snapshot image properties:
-<p><code>glance image-update &lt;image_uuid or image_name&gt; --purge-props</code></p>
-<p><b>Important:</b> When you purged all properties, the license property <code>hp_image_license</code> is not removed.</p>
+<p><b>For Windows snapshots</b> you need to ensure you leave the following properties on the snapshot: <code>com.hp__1__license_os</code> and <code>hp_image_license</code> by forming your command like this:</p>
+<p><code>glance image-update {image_id} --purge-props --property com.hp__1__license_os={id} --property hp_image_license={id}</code></p>
+<p><b>For Linux snapshots</b> you should use this command:
+<p><code>glance image-update {image_id} --purge-props</code></p>
+</p>
 <p><img src="media/glance-snapshot-details-purged.png" width="580" alt="" /></p>
 </li>
-
+<li><p>Your instance from which the snapshot was taken will need to be deleted as it's had it's final sysprep performed on it and you will not be able to retrieve the Administrator password for it, preventing you from connecting to it again:</p>
+<p><code>nova delete &lt;instance_id&gt;</code></p>
+</li>
 </ol>
 
 You are now ready to:
 
-* Add the required properties.</li>
-* Test your image while is still private.</li>
+* [Add the required properties.](#publishReqsDisplay)
+* Test your image while it is still private.
 * Make the image publicly available.
+
+<p><b>Important:</b> If you don't add the required properties to your snapshot file then it may not function properly.</p>
 
 ## Uploading and managing images ## {#publishManageGlance}
 Using the `glance` command is the preferred method for interacting with the HP Cloud Image API. In this section, we describe the basic `glance` commands to use for uploading and managing your images. If the Glance client is not available for your platform, see the alternate instructions in each section for using curl commands. 
@@ -394,7 +393,6 @@ Before using the Glance client (or curl), ensure you have configured your enviro
 There is also a section on the most [common HTTP errors](#publishGlanceErrors) that might occur when using the Glance client tool. 
 
 **Important:** For more information, see Openstack's documentation on [managing images using the Glance client](http://docs.openstack.org/user-guide-admin/content/cli_manage_images.html) and the [glance command reference](http://docs.openstack.org/user-guide-admin/content/glanceclient_commands.html).
-
 
 ### Listing images ### {#publishGlanceList}
 To see a list of available images, follow the instructions below.
@@ -639,5 +637,8 @@ If you need further assistance, you can contact support in any of these ways:
 * [Live chat from hpcloud.com](https://account.hpcloud.com/cases#support_chat)
 * [Open a support case](https://account.hpcloud.com/cases)
 * [Email support@hpcloud.com](mailto:support@hpcloud.com)
+<<<<<<< HEAD
 * Call at 1-855-61CLOUD (1-855-612-5683) in the U.S. or +1-678-745-9010 internationally.
-
+=======
+* Call at 1-855-61CLOUD (1-855-612-5683) in the U.S. or +1-678-745-9010 internationally.
+>>>>>>> 457e221a6d46a60db176716d91541b9e842f0572

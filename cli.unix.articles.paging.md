@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "Unix Command Line Interface: Modifying Report Paging"
+title: "UNIX CLI for HP Cloud: Modifying Report Paging"
 permalink: /cli/unix/articles/paging
 product: unix-cli
 categories: cli linux unix
 tags: report paging
 ---
-#UNIX CLI: Modifying report paging v12.12#
+#UNIX CLI for HP Cloud: Modifying report paging v12.12#
 
 ___________________
 
@@ -44,4 +44,4 @@ In general, we suggest you leave these values set to their defaults.
 
 ##For more information## {#articles}
 
-For more tips and How-tos on using your UNIX command-line interface (CLI), see [UNIX CLI: Articles on to use the UNIX CLI](/cli/unix/articles/).
+For more tips and How-tos on using your UNIX CLI for HP Cloud, see [UNIX CLI for HP Cloud: Articles on to use the UNIX CLI for HP Cloud](/cli/unix/articles/).
