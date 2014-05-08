@@ -19,7 +19,7 @@ Add a floating IP address to a server
 ###Syntax
 `nova add-floating-ip <server> <address>`
 
-**servernova remove-security-group <server> <secgroup>
+**server**
 :  Name or ID of a server
 
 **address**
@@ -491,26 +491,12 @@ Create a new key pair to use with instances:
     Leengz7PUvlAXXXXXXXXXXJAubvosddCo4169kq6q7S6yFiZ6DISAQ439YdnpwIY
     VqMxwy6hceSuoo4WgvECQQC1eZgEGoRqrOK7XEfc3zDrJa6iXILmhUQhIQEXgxyB
     c5S1JbVjp8HwF+imbEz5rSxjqOSniY1aFbYWQmzW/cqM
-    -----END RSA PRIVATE KEY-----
+    -----END RSA PRIVATE KEY----
 
 Create a new key pair to use with instances, using the `publickeyfile.pub` public SSH key.
 
     $ nova keypair-add --pub_key publickeyfile.pub testkeypair
-    -----BEGIN RSA PRIVATE KEY-----
-    MIICXQIBAAKBgQC4H2v8lZAgikx/1hYX/cfoDT7Z9JbxVyTYS31urEZMa07qh8MT
-    76VudZbWkZZ8nw38nQEqVChhhxUXLUdUbzWboIytx/JJETbiEF9sfUj9nQe4I81C
-    dll0cTYSREUmwmbZgXXXXXXSIiT0uTRia6E2SL6m3PVaURThkqz+G9EjswIDAQAB
-    AoGBAIgt9Vij5i2rHFmQplaoRSrEYTAjT2DA62durh8lG/l5hKzCLO6Z2OmR3zZk
-    B8G0gkvMdAgypos7tcWmn5M7jZGDvlTjQNC7rizN6mOvLJ8haGFI6xiq898uVzi+
-    K+syLjxvVO1lzcaIV/3abhMlXXXXXX9+Ve01gLELzlu11ReBAkEA5lHeAgh4cwjR
-    pZz/j+gs48SjdEebVK6fplftUedyqfD9F9chlAPXPr6oOhPGEqhu6YzT6hCYhA1K
-    gC6u5TsR2wJBAMym7dj7Exj3uf3h5OmS7yeqwELJX4aqe2CSei5hX0PjFnG0TMTz
-    Llw0HSmXGIv0N/gpNDRP4ylGbOGXXXXXXXXCQBxeKQIHGQ7SH0BOvgtzhVPofFlu
-    GGuttmw+mDRmVXEpBYNSNAiPEIvh38aHePYDWOXbOp6xvJdHK83t8gy54dECQBVH
-    Leengz7PUvlAXXXXXXXXXXJAubvosddCo4169kq6q7S6yFiZ6DISAQ439YdnpwIY
-    VqMxwy6hceSuoo4WgvECQQC1eZgEGoRqrOK7XEfc3zDrJa6iXILmhUQhIQEXgxyB
-    c5S1JbVjp8HwF+imbEz5rSxjqOSniY1aFbYWQmzW/cqM
-    -----END RSA PRIVATE KEY-----
+      $
 
 ##keypair-delete## {#keypair-delete}
 Delete a key pair (designatedby its ID).
