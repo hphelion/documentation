@@ -16,7 +16,7 @@ Thanks for installing the HP Helion OpenStack Community edition! This initial "c
 
 This release note contains the following information about the HP Helion OpenStack Community edition release:
 
-* [Features in HP Helion OpenStack Community edition](#features)
+* [Features in HP Helion OpenStack Community edition](#features) 
 * [Supported services](#supported-services)
 * [Recommendations for HP Helion OpenStack Community](#recommendations)
 * [For further information](#for-further-information) 
