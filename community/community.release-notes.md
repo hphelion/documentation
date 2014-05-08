@@ -52,7 +52,9 @@ This release of the Community edition is shipped with the following services sup
 
 
 <!--
-## Prerequisites
+
+
+## Prerequisites 
 
 Note: This section commented out; appears to be a duplicate--and out of date--version of the same information in the install page
 
