@@ -20,7 +20,7 @@ For more information, refer to the OpenStack documentation site:
 
 * [OpenStack documentation home page](http://docs.openstack.org/)
 
-* [TripleO documentation](https://wiki.openstack.org/wiki/TripleO/)
+* [TripleO documentation](https://wiki.openstack.org/wiki/TripleO)
 
 * [OpenStack Glossary](http://docs.openstack.org/glossary/content/glossary.html)
 
