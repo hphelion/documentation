@@ -16,7 +16,7 @@ Thanks for installing the HP Helion OpenStack Community edition! This initial "c
 
 This release note contains the following information about the HP Helion OpenStack Community edition release:
 
-* [Features in HP Helion OpenStack Community edition](#features) 
+* [Features in HP Helion OpenStack Community](#features) 
 * [Supported services](#supported-services)
 * [Recommendations for HP Helion OpenStack Community](#recommendations)
 * [For further information](#for-further-information) 
@@ -141,7 +141,7 @@ For additional information on HP Helion OpenStack Community, OpenStack Cloud Sof
 * [Related Topics](/helion/community/related-links/): Links to pertinent HP Helion OpenStack Community and OpenStack documentation.
 * [OpenStack documentation home page](http://docs.openstack.org/)
 * [TripleO documentation](https://wiki.openstack.org/wiki/TripleO)
-* [HP Helion OpenStack Support Forum](https://ask.openstack.org) (Tag your questions with HPHelion)
+* [HP Helion OpenStack Support Forum](https://ask.openstack.org/en/questions/scope:all/sort:activity-desc/tags:hphelion/page:1/) (Tag your questions with HPHelion)
 
 
 ###Legal Notices and Disclaimer### {#legal-notices-disclaimer}
