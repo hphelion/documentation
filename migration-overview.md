@@ -1,12 +1,13 @@
 ---
 layout: default
-title: "HP Cloud Services: Overview of Transitioning from Version 12.12 to 13.5"
+title: "HP Helion Public Cloud Services: Overview of Transitioning from Version 12.12 to 13.5"
 permalink: /migration-overview/
+product: public-cloud
 
 ---
-# HP Cloud Services 12.12 to 13.5 transition overview
+# HP Helion Public Cloud Services 12.12 to 13.5 transition overview
 
-This page provides you with information to help you transition from version 12.12 to 13.5 of the HP Cloud services.  This overview covers the following topics and tasks:
+This page provides you with information to help you transition from version 12.12 to 13.5 of the HP Helion Public Cloud services.  This overview covers the following topics and tasks:
 
 * [Before you begin](#BeforeYouBegin)
 * [Transitioning data for ephemeral instances](#Ephemeral)
@@ -32,7 +33,7 @@ Before you transition to version 13.5, we recommend:
 
 To transition the data for an ephemeral instance:
 
-1. Create a 13.5 instance using either the command-line interface (CLI) for [UNIX](/cli/unix/compute/) or [the Windows PowerShell](/cli/windows/compute/), or the [HP Public Cloud Console](/hpcloudconsole/) interface
+1. Create a 13.5 instance using either the command-line interface (CLI) for [UNIX](/cli/unix/compute/) or [the Windows PowerShell](/cli/windows/compute/), or the [HP Helion Public Cloud Console](/hpcloudconsole/) interface
 2. Copy the data from your version 12.12 instance to your new 13.5 instance, using the tool transfer program of your choice (for example, SCP or FTP)
 
 For information on moving data:
@@ -60,7 +61,7 @@ For information on moving data:
 
 To transition the data for block volumes:
 
-1. Create a 13.5 block volume using either the command-line interface (CLI) for [UNIX](/cli/unix/block-storage/) or [the Windows PowerShell](/cli/windows/block-storage/), or the [HP Public Cloud Console](/hpcloudconsole/) interface
+1. Create a 13.5 block volume using either the command-line interface (CLI) for [UNIX](/cli/unix/block-storage/) or [the Windows PowerShell](/cli/windows/block-storage/), or the [HP Helion Public Cloud Console](/hpcloudconsole/) interface
 2. Attach the volume from Step 1 to an ephemeral instance in your version 13.5 environment; see the [knowledge base article](https://community.hpcloud.com/article/managing-your-block-storage-135) for more details
 3. Copy the data from your version 12.12 instance attached volume to your new version 13.5 instance, using the tool transfer program of your choice (for example, SCP or FTP)
 
@@ -83,7 +84,7 @@ The process for transitioning key pairs varies according to your platform.  Chec
 
 ##Managing security group creation## {#SecurityGroups}
 
-Managing security groups has changed significantly between versions 12.12 (and earlier) and version 13.5 of the HP Cloud software.  For information on security groups in version 13.5, please see the knowledge base article [Managing Your Security Groups](https://community.hpcloud.com/article/managing-your-security-groups-135) for details.
+Managing security groups has changed significantly between versions 12.12 (and earlier) and version 13.5 of the HP Helion Public Cloud software.  For information on security groups in version 13.5, please see the knowledge base article [Managing Your Security Groups](https://community.hpcloud.com/article/managing-your-security-groups-135) for details.
 
 
 ## Note on ongoing CLI support ## {#CLIdeprecation}
@@ -94,14 +95,14 @@ On November 4, 2013, the UNIX CLI moved into its End-of-Life Cycle process towar
 * No new feature requests will be honored
 * Bug reports will be accepted
 
-HP Cloud has contributed the Unix CLI back to the open source community, and you can get support, access the documentation, and download the source code [here](https://github.com/hpcloud/unix_cli).
+HP Helion Public Cloud has contributed the Unix CLI back to the open source community, and you can get support, access the documentation, and download the source code [here](https://github.com/hpcloud/unix_cli).
 
 ## For further information ## {#MoreInfo}
 
 For more information on transitioning to version 13.5, as well as general information about version 13.5:
 
 * For greater detail on performing a self-transition, see the [self-transition reference page](/migration-overview-reference/)
-* Our [release notes for version 13.5](/release-notes/) of the HP Cloud software
+* Our [release notes for version 13.5](/release-notes/) of the HP Helion Public Cloud software
 * The [version overview](/version-overview/) provides a look at the different software versions available
 * The [version 13.5 API specs](/api/v13/)
 * The [technical support knowledge base](https://community.hpcloud.com/knowledge-base)

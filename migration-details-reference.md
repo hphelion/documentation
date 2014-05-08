@@ -1,18 +1,19 @@
 ---
 layout: default
-title: "HP Cloud: Assisted Data Transition Guide from Version 12.12 to 13.5"
+title: "HP Helion Public Cloud: Assisted Data Transition Guide from Version 12.12 to 13.5"
 permalink: /migration-details-reference/
+product: public-cloud
 
 ---
 
-# HP Cloud version 12.12 to 13.5: Assisted Data Transition Guide #
+# HP Helion Public Cloud version 12.12 to 13.5: Assisted Data Transition Guide #
 
-If you need assistance transitioning your data from HP Cloud version 12.12 to 13.5, this page provides you with detailed information about the tasks you need to complete before the data transition. Review this document and [contact support](#ContactingSupport) with any questions.
+If you need assistance transitioning your data from HP Helion Public Cloud version 12.12 to 13.5, this page provides you with detailed information about the tasks you need to complete before the data transition. Review this document and [contact support](#ContactingSupport) with any questions.
 
-If you plan on performing the transition without support services, the [Data Transition Guide](/migration-overview) document contains details on how to migrate your data yourself from HP Cloud version 12.12 to 13.5.
+If you plan on performing the transition without support services, the [Data Transition Guide](/migration-overview) document contains details on how to migrate your data yourself from HP Helion Public Cloud version 12.12 to 13.5.
 
 **Note:**
-Some of the links in this document contain information on using the Horizon-based HP Cloud Console to interact with your instances. HP Cloud Console is an alternative method for performing these tasks. The procedures in this document for using the classic management console are correct and should be followed at this time.
+Some of the links in this document contain information on using the Horizon-based HP Helion Public Cloud Console to interact with your instances. HP Helion Public Cloud Console is an alternative method for performing these tasks. The procedures in this document for using the classic management console are correct and should be followed at this time.
 
 ## Before you begin ## {#TransitionOverview}
 For assistance with transitioning your data from version 12.12 to 13.5, there are a few preliminary tasks you must complete first:
@@ -25,11 +26,11 @@ For assistance with transitioning your data from version 12.12 to 13.5, there ar
 
 Once you have completed these tasks, you must [contact support](#ContactingSupport) to assist you with the rest of your transition. After HP Support has finished helping you transition, you must complete the [post-transition configuration steps for any Windows instances](#PostTransWindows).
 
-## Understand what's new for HP Cloud version 13.5 ## {#VersionDiffs}
-HP Cloud version 13.5 is based on the latest version of OpenStack (Havana), which expands functionality and enhances the current capabilities of the existing services. The sections below give a brief overview of what's new for version 13.5.
+## Understand what's new for HP Helion Public Cloud version 13.5 ## {#VersionDiffs}
+HP Helion Public Cloud version 13.5 is based on the latest version of OpenStack (Havana), which expands functionality and enhances the current capabilities of the existing services. The sections below give a brief overview of what's new for version 13.5.
 
-### HP Cloud Compute ### {#hpCloudCompute}   
-Based on the OpenStack Nova project, [HP Cloud Compute](https://community.hpcloud.com/article/getting-started-compute-135) provides on-demand computing giving you the ability to provision and manage large clusters of instances (virtual machines). With the new version you have more flexibility to select the type of instance that meets the needs of your application without having to pay for additional resources.
+### HP Helion Public Cloud Compute ### {#hpCloudCompute}   
+Based on the OpenStack Nova project, [HP Helion Public Cloud Compute](https://community.hpcloud.com/article/getting-started-compute-135) provides on-demand computing giving you the ability to provision and manage large clusters of instances (virtual machines). With the new version you have more flexibility to select the type of instance that meets the needs of your application without having to pay for additional resources.
 
 In addition, you now have larger and more powerful instance types (sizes) to choose from--four times the size of the largest instances offered by most public clouds. And, our large, xlarge, and 2xlarge sizes are also offered in high-memory versions.
 
@@ -49,7 +50,7 @@ If you don't specify an availability zone the compute or storage service automat
 **Important:** Volumes can only be attached to instances created in the same availability zone.
 
 ### Software defined networking ### {#SDN}
-HP Cloud v13.5 builds on the OpenStack Neutron service complemented with Software Defined Networking (SDN) technology from [HP Networking ](/api/v13/networking/) to offer more robust and flexible networking capabilities to rapidly customize your network as needed. Then, you can simply connect it with your existing on-premise datacenter via a VPN tunnel. Spinning up a compute instance automatically configures
+HP Helion Public Cloud v13.5 builds on the OpenStack Neutron service complemented with Software Defined Networking (SDN) technology from [HP Networking ](/api/v13/networking/) to offer more robust and flexible networking capabilities to rapidly customize your network as needed. Then, you can simply connect it with your existing on-premise datacenter via a VPN tunnel. Spinning up a compute instance automatically configures
 
 - A default network 
 - A subnet
@@ -58,11 +59,11 @@ HP Cloud v13.5 builds on the OpenStack Neutron service complemented with Softwar
 
 ### Block storage ### {#BlockStorage}
 
-[Block storage](https://community.hpcloud.com/article/managing-your-block-storage-135) has always been available in the HP Cloud Compute service, but now HP Cloud provides it as a separate but integrated service based on OpenStack Cinder. Block storage provides persistent, manageable volumes along with the ability to take a snapshot of a volume. Bootable volumes can be created from images in the Image Management service and these bootable volumes can be used to create persistent instances.
+[Block storage](https://community.hpcloud.com/article/managing-your-block-storage-135) has always been available in the HP Helion Public Cloud Compute service, but now HP Helion Public Cloud provides it as a separate but integrated service based on OpenStack Cinder. Block storage provides persistent, manageable volumes along with the ability to take a snapshot of a volume. Bootable volumes can be created from images in the Image Management service and these bootable volumes can be used to create persistent instances.
 
 ### Bulk data import ### {#BulkDataImport}
 
-Bulk import means we load your data into HP Cloud Block Storage or HP Cloud Object Storage--just send a hard drive directly to the HP data centers where we rapidly transfer your data to the cloud. Get apps with big data sets to the HP Cloud quickly and easily.
+Bulk import means we load your data into HP Helion Public Cloud Block Storage or HP Helion Public Cloud Object Storage--just send a hard drive directly to the HP data centers where we rapidly transfer your data to the cloud. Get apps with big data sets to the HP Helion Public Cloud quickly and easily.
 
 ### For more information ### {#MoreVersionDiffInfo}
 For more information on transitioning your services, and to better understand the differences between versions 12.12 and 13.5, see:
@@ -87,7 +88,7 @@ Using an instance snapshot can make a transition easier, but might not be suitab
 **Important!** If you have questions about which process is best for your situation, [contact your support engineer](#ContactingSupport). If you do not need to keep your existing data, you should simply [create a new 13.5 instance](https://community.hpcloud.com/article/creating-your-first-instance-135).
 
 ## Reviewing key transition information ## {#TransitionInfo}
-Before you attempt an assisted transition from HP Cloud version 12.12 to 13.5, review the following critical pieces of information.
+Before you attempt an assisted transition from HP Helion Public Cloud version 12.12 to 13.5, review the following critical pieces of information.
 
 ##### Unnecessary data and files #####
 
@@ -231,7 +232,7 @@ Once you have this information, contact support:
 
 ## Post-transition configuration for Windows images ## {#PostTransWindows}
 
-After customer support has assisted with your Windows image transition from HP Cloud version 12.12 to 13.5, you will not be able to connect to the KMS host to receive the required license activation, and you might not be able to connect to your volume using a remote desktop connection. To ensure your Windows 12.12 image is usable in 13.5, you **must** change your remote desktop firewall exceptions and modify the KMS host. 
+After customer support has assisted with your Windows image transition from HP Helion Public Cloud version 12.12 to 13.5, you will not be able to connect to the KMS host to receive the required license activation, and you might not be able to connect to your volume using a remote desktop connection. To ensure your Windows 12.12 image is usable in 13.5, you **must** change your remote desktop firewall exceptions and modify the KMS host. 
 
 ### Changing Remote Desktop Firewall exception ###
 
@@ -239,11 +240,11 @@ Once you boot an instance based on a transitioned Windows volume, you might not 
 
 You can easily fix this by logging into your instance and re-enabling the Remote Desktop exception in the Windows Firewall settings.
 
-1. Log in to the instance from either the Horizon-based HP Cloud Management Console or through a [VNC connection](https://community.hpcloud.com/article/using-vnc-console-access-your-instance-135) using your Web Browser.
+1. Log in to the instance from either the Horizon-based HP Helion Public Cloud Management Console or through a [VNC connection](https://community.hpcloud.com/article/using-vnc-console-access-your-instance-135) using your Web Browser.
 
     **Note:** You will **NOT** be able to complete this step using the classic management console.
 	
-    **Using the Horizon-based HP Cloud Management Console:**
+    **Using the Horizon-based HP Helion Public Cloud Management Console:**
 
     a. Locate your Windows instance on the Instances screen.
 
@@ -315,8 +316,8 @@ You must reactivate your license for your KMS client within 180 days; however, b
 
 For more information on data transitioning, as well as general information about version 13.5:
 
-* The [Data Transition Guide](/migration-overview) page contains details on how to migrate your data yourself from version 12.12 to 13.5 of the HP Cloud
+* The [Data Transition Guide](/migration-overview) page contains details on how to migrate your data yourself from version 12.12 to 13.5 of the HP Helion Public Cloud
 * [Known issues and best practices](https://community.hpcloud.com/article/known-issues-and-best-practices-compute-and-networking-135) in version 13.5
-* Our [release notes for version 13.5](/release-notes/) of the HP Cloud software
+* Our [release notes for version 13.5](/release-notes/) of the HP Helion Public Cloud software
 * The [version 13.5 overview](/version-overview/) provides a look at the different software versions available
 * The [technical support knowledge base](https://community.hpcloud.com/knowledge-base)

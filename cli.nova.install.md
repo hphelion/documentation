@@ -1,35 +1,35 @@
 ---
 layout: default
-title: "HP Cloud Python Novaclient CLI Installation"
+title: "HP Helion Public Cloud Python Novaclient CLI Installation"
 permalink: /cli/nova/install/
 product: nova-cli
 
 ---
-# HP Cloud v12.12 Python Novaclient CLI Installation#
+# HP Helion Public Cloud v12.12 Python Novaclient CLI Installation#
 
-Before you can begin working with the Novaclient CLI software, you have to install the package.  The instructions below work for Ubuntu, CentOS and Windows installations.<!-- Take a look at the [HP Cloud Python Novaclient CLI - Release Notes](/cli/nova/release-notes) for the latest features.-->
+Before you can begin working with the Novaclient CLI software, you have to install the package.  The instructions below work for Ubuntu, CentOS and Windows installations.<!-- Take a look at the [HP Helion Public Cloud Python Novaclient CLI - Release Notes](/cli/nova/release-notes) for the latest features.-->
 
 This page provides you with the installation information for the following operating systems:
 
-* [Installation Prerequisites](#Installation)
-* [Ubuntu Installation](#Ubuntu)
-* [CentOS Installation](#CentOS)
-* [Windows Installation](#Windows)
+* [Installation prerequisites](#Installation)
+* [Ubuntu installation](#Ubuntu)
+* [CentOS installation](#CentOS)
+* [Windows installation](#Windows)
 
 <!--* [Fedora Installation](#Fedora)-->
 
 [You can download the latest version of the Python Novaclient CLI software here (Version 2.6.8-17)](/file/python-novaclient_2.6.8-17.tar.gz)!
 
-**Note**: These instructions are valid for version 12.12 of the software *only*.  For instructions on installing on version 13.5 of the software, please see the [Cloud 13.5 CLI Installation Instructions](https://community.hpcloud.com/article/cloud-135-cli-installation-instructions) page.
+**Note**: These instructions are valid for version 12.12 of the software *only*.  For instructions on installing on version 13.5 of the software, please see the [Command-Line Interface (CLI) Tool installation instructions](https://community.hpcloud.com/article/cloud-135-cli-installation-instructions) page.
 
 
-##Installation Prerequisites## {#Installation}
+##Installation prerequisites## {#Installation}
 
 To install the Python Novaclient CLI on CentOS, you must first download and install [the dependency software (in TAR format)](https://pypi.python.org/packages/source/P/PrettyTable/prettytable-0.5.tar.gz)--follow the instructions in the `setup.py` file included with the package.  (We also assume that you have Python already installed!)
 
 **Note**: We recommend installing the NovaClient on your local system so you always have it available, rather than installing it on an instance which you may want tceo terminate later.
 
-##Ubuntu Installation## {#Ubuntu}
+##Ubuntu installation## {#Ubuntu}
 
 The installation procedure in this section is valid for Ubuntu versions 11.04, 11.10, 12.04, and 12.10.  To install the Python NovaClient software on your Ubuntu system, follow these steps while logged in as the root user:
 
@@ -70,7 +70,7 @@ The installation procedure in this section is valid for Ubuntu versions 11.04, 1
         export NOVA_VERSION=1.1
         export NOVA_REGION_NAME=az-1.region-a.geo-1
         
-    Where the `USERNAME`, `PASSWORD`, and `TENANT_NAME` values are those you use to access the HP Cloud Management Console.  You can find the values for these variables on through the [HP Public Cloud Console](https://horizon.hpcloud.com). Click the project menu and select *Manage Access Keys* and *Account Info*.
+    Where the `USERNAME`, `PASSWORD`, and `TENANT_NAME` values are those you use to access the HP Helion Public Cloud Management Console.  You can find the values for these variables on through the [HP Helion Public Cloud Console](https://horizon.hpcloud.com). Click the project menu and select *Manage Access Keys* and *Account Info*.
 
     **Note**: The `NOVA_REGION_NAME` variable in this example is set to communicate with instances in the AZ1 availablilty zone.  To use other availability zones, insert AZ2 or AZ3 as the variable instead: `az-2.region-a.geo-1` or `az-3.region-a.geo-1`.
 
@@ -146,7 +146,7 @@ CentOS has both Python 2.6.6 and Python-Setuptools 0.1.10 installed by default. 
         export NOVA_VERSION=1.1
         export NOVA_REGION_NAME=az-1.region-a.geo-1
         
-Where the `USERNAME`, `PASSWORD`, and `TENANT_NAME` values are the ones you use to access the HP Public Cloud console.  You can find the values for these variables on through the [HP Public Cloud Console](https://horizon.hpcloud.com). Click the project menu and select *Manage Access Keys* and *Account Info*.
+Where the `USERNAME`, `PASSWORD`, and `TENANT_NAME` values are the ones you use to access the HP Helion Public Cloud console.  You can find the values for these variables on through the [HP Helion Public Cloud Console](https://horizon.hpcloud.com). Click the project menu and select *Manage Access Keys* and *Account Info*.
 
 **Note**: The `NOVA_REGION_NAME` variable in this example is set to communicate with instances in the AZ1 availablilty zone.  To use other availability zones, insert AZ2 or AZ3 as the variable instead: `az-2.region-a.geo-1` or `az-3.region-a.geo-1`.
 
@@ -227,7 +227,7 @@ Fedora has both Python 2.6.6 and Python-Setuptools 0.1.10 installed by default. 
         export NOVA_VERSION=1.1
         export NOVA_REGION_NAME=az-1.region-a.geo-1
         
-Where the `USERNAME`, `PASSWORD`, and `TENANT_NAME` values are the ones you use to access the HP Cloud console.  (You can find the values for these variable on your [API Keys](https://console.hpcloud.com/account/api_keys) page in the services console.)
+Where the `USERNAME`, `PASSWORD`, and `TENANT_NAME` values are the ones you use to access the HP Helion Public Cloud console.  (You can find the values for these variable on your [API Keys](https://console.hpcloud.com/account/api_keys) page in the services console.)
 
 **Note**: The `NOVA_REGION_NAME` variable in this example is set to communicate with instances in the AZ1 availablilty zone.  To use other availability zones, insert AZ2 or AZ3 as the variable instead: `az-2.region-a.geo-1` or `az-3.region-a.geo-1`.
 
@@ -242,14 +242,14 @@ You can now access your `nova` commands.  For a full list of commands, surf on o
 
 ##Windows Installation## {#Windows}
 
-To install the Python Novaclient on your system, for full functionality with your HP Public Cloud packages, follow these steps:
+To install the Python Novaclient on your system, for full functionality with your HP Helion Public Cloud packages, follow these steps:
 
-* [Installing the Python 2.7 Software](#InstallPython)
-* [Installing the Python Setup Tools](#InstallSetupTools)
-* [Installing the HP Python-Novaclient Software](#InstallHPPythonNovaClient)
-* [Configuring the Python NovaClient Variables](#ConfiguringVariables)
+* [Installing the Python 2.7 software](#InstallPython)
+* [Installing the Python setup tools](#InstallSetupTools)
+* [Installing the HP Python-Novaclient software](#InstallHPPythonNovaClient)
+* [Configuring the Python NovaClient variables](#ConfiguringVariables)
 
-###Installing the Python  2.7 Software### {InstallPython}
+###Installing the Python  2.7 Software### {#InstallPython}
 
 To install the public Python software on your Windows system, follow these steps:
 
@@ -333,9 +333,9 @@ To install the Python Setup tools, follow these steps:
 
 10. In the `Environment Variables` dialog click `OK`.
 
-###Installing the HP Python-Novaclient Software### {#InstallHPPythonNovaClient}
+###Installing the HP Python-Novaclient software### {#InstallHPPythonNovaClient}
 
-To install the HP Cloud Python-Novaclient on your system, follow these steps:
+To install the HP Helion Public Cloud Python-Novaclient on your system, follow these steps:
 
 1. Download [the Python NovaClient v2.6.8-17 package](/file/python-novaclient_2.6.8-1hp17.zip) from our web site.
    
@@ -382,7 +382,7 @@ To configure variables for the Python NovaClient, follow these steps:
         NOVA_PASSWORD     | Your Password
         NOVA_VERSION      | 1.1
     
-   **Note**: You can find the values for these variables on through the [HP Public Cloud Console](https://horizon.hpcloud.com).
+   **Note**: You can find the values for these variables on through the [HP Helion Public Cloud Console](https://horizon.hpcloud.com).
 
 8. In the `Environment Variables` dialog click `OK`.
 

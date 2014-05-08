@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "HP Cloud management console documentation site map"
+title: "HP Helion Public Cloud management console documentation site map"
 permalink: /mc/sitemap/
 product: mc
 
 ---
-# HP Cloud management console documentation site map#
+# HP Helion Public Cloud management console documentation site map#
 
 Having a bit of trouble navigating our site, and so you're looking for a single list of what we cover?  You've come to the right place!
 

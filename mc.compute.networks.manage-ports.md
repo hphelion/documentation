@@ -34,7 +34,7 @@ This page covers how to create and delete a port using the networks screen of th
 
 Before you perform any network management on your routers, you must:
 
-* [Sign up for an HP Cloud compute account](https://account.hpcloud.com/signup)
+* [Sign up for an HP Helion Public Cloud compute account](https://account.hpcloud.com/signup)
 * [Activate compute service on your account](https://community.hpcloud.com/article/getting-started-compute-135#actservice)
 * [Create a network](/mc/compute/networks/create-network/)
 
@@ -47,7 +47,7 @@ Before you perform any network management on your routers, you must:
 
 	Select the shell appropriate to your system, either the 64-bit or 32-bit version. 
 
-2. Enter the HP Cloud environment CLI by entering:
+2. Enter the HP Helion Public Cloud environment CLI by entering:
 
 	`PS C:> cd HPCS:`
 
@@ -75,6 +75,6 @@ Before you perform any network management on your routers, you must:
 ##For further information## {#ForFurtherInformation}
 
 * For information about the router details screen, take a look at the [Viewing router details](/mc/compute/networks/view-router/) page
-* For basic information about our HP Cloud compute services, take a look at the [HP Cloud compute overview](/compute/) page
+* For basic information about our HP Helion Public Cloud compute services, take a look at the [HP Helion Public Cloud compute overview](/compute/) page
 * Use the MC [site map](/mc/sitemap) for a full list of all available MC documentation pages
 * For information about the Open Stack networking features, surf on over to [their networking wiki](https://wiki.openstack.org/wiki/Quantum)

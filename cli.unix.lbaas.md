@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "UNIX CLI for HP Cloud LBaaS Examples"
+title: "UNIX CLI for HP Helion Public Cloud LBaaS Examples"
 permalink: /cli/unix/lbaas/
 product: unix-cli
 
 ---
-# UNIX CLI for HP Cloud Load Balancer as a Service (LBaaS) Examples
+# UNIX CLI for HP Helion Public Cloud Load Balancer as a Service (LBaaS) Examples
 
 ___________________
 
@@ -17,11 +17,11 @@ On November 4, 2013, the UNIX CLI was moved into its End-of-Life Cycle process t
 * No new feature requests will be honored
 * Bug reports will be accepted
 
-HP Cloud has contributed the Unix CLI back to the open source community, and you can get support, access the documentation, and download the source code [here](https://github.com/hpcloud/unix_cli).
+HP Helion Public Cloud has contributed the Unix CLI back to the open source community, and you can get support, access the documentation, and download the source code [here](https://github.com/hpcloud/unix_cli).
 
 _________________________________________
 
-This page gives you a few examples of how to perform various load balancer tasks using the UNIX CLI for HP Cloud.
+This page gives you a few examples of how to perform various load balancer tasks using the UNIX CLI for HP Helion Public Cloud.
 
 Remember that you can get detailed help for any command or task with the following command:
 

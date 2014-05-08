@@ -31,8 +31,8 @@ AVAILABLE=$(cat ${AVAIL_FILE})
 #
 # Assign ports to anyone in need
 #
-USER=ubuntu
-HOST=15.185.109.123
+USER=jenkins
+HOST=15.184.32.138
 DEST=/var/www/
 DOCS=/var/www/docs
 DIR="$(basename $1)"

@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "UNIX CLI for HP Cloud: Account Configuration"
+title: "UNIX CLI for HP Helion Public Cloud: Account Configuration"
 permalink: /cli/unix/configuration/
 product: unix-cli
 
 ---
-# UNIX CLI for HP Cloud: Account Configuration for v12.12
+# UNIX CLI for HP Helion Public Cloud: Account Configuration for v12.12
 
 ___________________
 
@@ -17,11 +17,11 @@ On November 4, 2013, the UNIX CLI was moved into its End-of-Life Cycle process t
 * No new feature requests will be honored
 * Bug reports will be accepted
 
-HP Cloud has contributed the Unix CLI back to the open source community, and you can get support, access the documentation, and download the source code [here](https://github.com/hpcloud/unix_cli).
+HP Helion Public Cloud has contributed the Unix CLI back to the open source community, and you can get support, access the documentation, and download the source code [here](https://github.com/hpcloud/unix_cli).
 
 _________________________________________
 
-This page discusses how to set up an accounts and using the UNIX CLI for HP Cloud.
+This page discusses how to set up an accounts and using the UNIX CLI for HP Helion Public Cloud.
 
 * [Account Setup](#AccountSetup)
 * [Account Edit](#EditAccount)
@@ -43,7 +43,7 @@ The first thing you should do is set up an account.   To configure a new account
 
    $ hpcloud account:setup
 
-During a new configuration, you must supply the access key, secret key, and tenant ID that were assigned to you during the registration process; You can find the values for these variables through the [HP Public Cloud Console](https://horizon.hpcloud.com). Click the project menu and select *Manage Access Keys* and *Account Info*. You can also define the availability zone during the initial setup.
+During a new configuration, you must supply the access key, secret key, and tenant ID that were assigned to you during the registration process; You can find the values for these variables through the [HP Helion Public Cloud Console](https://horizon.hpcloud.com). Click the project menu and select *Manage Access Keys* and *Account Info*. You can also define the availability zone during the initial setup.
 
 ## Edit Account ## {#EditAccount}
 Executing the `account:edit` command with no arguments prompts the user in the same manner as the `account:setup` command, but for editing purposes. Current values are shown by default. Hit return to accept the current settings at each prompt.

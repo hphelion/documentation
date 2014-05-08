@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "Management console: Images screen"
+title: "Management Console: Images Screen"
 permalink: /mc/compute/images/
 product: mc-compute
 
 ---
-# Management console: Images screen
+# Management Console: Images Screen
 
 The management console (MC) compute dashboard images screen allows you to view and manipulate compute instance images.  This page covers the following topics:
 
@@ -33,5 +33,5 @@ From the images screen you can:
 
 ##For further information## {#ForFurtherInformation}
 
-* For basic information about our HP Cloud compute services, take a look at the [HP Cloud compute overview](/compute/) page
+* For basic information about our HP Helion Public Cloud compute services, take a look at the [HP Helion Public Cloud compute overview](/compute/) page
 * Use the MC [site map](/mc/sitemap) for a full list of all available MC documentation pages

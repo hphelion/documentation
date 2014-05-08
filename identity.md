@@ -1,20 +1,20 @@
 ---
 layout: default
-title: "HP Cloud Identity Service Overview"
+title: "HP Helion Public Cloud Identity Service Overview"
 permalink: /identity/
-product: identity
+product: public-cloud 
 
 ---
-# HP Cloud Identity Service Overview
+# HP Helion Public Cloud Identity Service Overview
 
 <!--This is a comment. Comments are not displayed in the browser-->
 
 <img src="media/identity_service_overview_0.png" width="580" height="436" alt="" />
 
-Based on [Keystone, the OpenStack Identity Service](http://keystone.openstack.org/), the HP Cloud Identity Service provides one-stop authentication for all HP Public Cloud offerings.  Key terms include:
+Based on [Keystone, the OpenStack Identity Service](http://keystone.openstack.org/), the HP Helion Public Cloud Identity Service provides one-stop authentication for all HP Helion Public Cloud offerings.  Key terms include:
 
 [**User**](/glossary#User)
-:  A digital representation of a person, system, or service who uses HP Public Cloud. The Identity Service validates that incoming requests are being made by the user who claims to be making the call. Users have a login and may be assigned tokens to access resources. Users can scope their authentication to a tenant which then limits where and how their tokens can be used to interact with services. Users are associated with tenants based on roles assigned to them with that tenant.
+:  A digital representation of a person, system, or service who uses HP Helion Public Cloud. The Identity Service validates that incoming requests are being made by the user who claims to be making the call. Users have a login and may be assigned tokens to access resources. Users can scope their authentication to a tenant which then limits where and how their tokens can be used to interact with services. Users are associated with tenants based on roles assigned to them with that tenant.
 
 [**Credentials**](/glossary#Credentials)
 : Data that belongs to, is owned by, and generally only known by a user that the user can present to prove they are who they are (since nobody else should know that data).
@@ -34,14 +34,14 @@ Based on [Keystone, the OpenStack Identity Service](http://keystone.openstack.or
 [**Role**](/glossary#Role)
 : A personality that a user assumes when performing a specific set of operations. A role includes a set of rights and privileges. A user assuming that role inherits those rights and privileges.  A token that is issued to a user includes the list of roles that user can assume. Services that are being called by that user determine how they interpret the set of roles a user has and which operations or resources each roles grants access to.
 
-So go ahead and jump right in and and start using the service yourself, you should go to the [Manage Console](https://console.hpcloud.com).  If you have any questions, try our [Forums](https://community.hpcloud.com) where you can learn from our own internal experts as well as other users in the HP Public Cloud community.
+So go ahead and jump right in and and start using the service yourself, you should go to the [Manage Console](https://console.hpcloud.com).  If you have any questions, try our [Forums](https://community.hpcloud.com) where you can learn from our own internal experts as well as other users in the HP Helion Public Cloud community.
 
-<!-- To help you get started with the service, we've got some introductory getting started material at our [Introduction to the HP Cloud Identity Service page](https://community.hpcloud.com/article/identity-service-introduction), and we've also provided you with a use case for [Migrating to the HP Cloud Identity Service](https://community.hpcloud.com/article/identity-service-change-guide).  And of course, if you want to jump right and start using the service yourself, you should go to the [Manage Console](https://console.hpcloud.com).  If you have any questions, try our [Forums](https://community.hpcloud.com) where you can learn from our own internal experts as well as other users in the HP Public Cloud community.-->
+<!-- To help you get started with the service, we've got some introductory getting started material at our [Introduction to the HP Helion Public Cloud Identity Service page](https://community.hpcloud.com/article/identity-service-introduction), and we've also provided you with a use case for [Migrating to the HP Helion Public Cloud Identity Service](https://community.hpcloud.com/article/identity-service-change-guide).  And of course, if you want to jump right and start using the service yourself, you should go to the [Manage Console](https://console.hpcloud.com).  If you have any questions, try our [Forums](https://community.hpcloud.com) where you can learn from our own internal experts as well as other users in the HP Helion Public Cloud community.-->
 
-HP Cloud currently offers two versions of our cloud&mdash;v12.12 and the latest v13.5. See the [Version Overview](/version-overview) page for a description of what's new in v13.5.
+HP Helion Public Cloud currently offers two versions of our cloud&mdash;v12.12 and the latest v13.5. See the [Version Overview](/version-overview) page for a description of what's new in v13.5.
 
 ## API
-Do you need low level, raw REST API access to HP Identity Services?  Take a look at our Compute API page for the version of HP Cloud you are using: 
+Do you need low level, raw REST API access to HP Identity Services?  Take a look at our Compute API page for the version of HP Helion Public Cloud you are using: 
 
 * [**Identity Service API page for v13.5**](/api/v13/identity)
 * [**Identity Service API page for v12.12**](/api/identity)

@@ -1,16 +1,16 @@
 ---
 layout: default
-title: "HP Cloud Networking:  VPN setup quick start guide"
+title: "HP Helion Public Cloud Networking:  VPN setup quick start guide"
 permalink: /compute/vpn-quickstart/
 product: compute
 categories: neutron
 tags: networking neutron vpn
 
 ---
-# HP Cloud Networking:  VPN setup quick start guide 
+# HP Helion Public Cloud Networking:  VPN setup quick start guide 
 
 
-With HP Cloud Networking you can set up an IPsec, or site-to-site, VPN connecting your external network directly to your HP cloud virtual network. This guide provides the basic instructions for setting this up with your network using strongSwan. For more complex configuration, please refer to the [strongSwan documentation](http://wiki.strongswan.org/projects/strongswan/wiki/UserDocumentation).
+With HP Helion Public Cloud Networking you can set up an IPsec, or site-to-site, VPN connecting your external network directly to your HP Helion Public Cloud virtual network. This guide provides the basic instructions for setting this up with your network using strongSwan. For more complex configuration, please refer to the [strongSwan documentation](http://wiki.strongswan.org/projects/strongswan/wiki/UserDocumentation).
 
 **Note:** These instructions use an Ubuntu server instance. You may, of course, choose to use another instance type and still use these directions as a general guide for setting up your VPN.
 
@@ -27,22 +27,22 @@ This guide covers the following:
 
 ## Overview ## {#top}
 
-HP Cloud Networking, based on OpenStack Networking, gives you a broad new spectrum of functionality to define and configure virtual networks.
+HP Helion Public Cloud Networking, based on OpenStack Networking, gives you a broad new spectrum of functionality to define and configure virtual networks.
 
-A default network configuration comes with HP Cloud Compute Service activation. Your network is ready to deploy HP Cloud Compute virtual machines (instances) without further configuration required. The default configuration includes:
+A default network configuration comes with HP Helion Public Cloud Compute Service activation. Your network is ready to deploy HP Helion Public Cloud Compute virtual machines (instances) without further configuration required. The default configuration includes:
 
 - A network   
 - A subnet   
 - A router connecting the subnet to the Internet   
 - A security group with basic server options   
 
-The guide provides instructions for creating an IPsec VPN (also known as a site-to-site VPN) from your external network directly into your HP Cloud virtual network.
+The guide provides instructions for creating an IPsec VPN (also known as a site-to-site VPN) from your external network directly into your HP Helion Public Cloud virtual network.
 
 **Note:** This guide uses strongSwan for the IPsec functionality.
 
 A site-to-site VPN allows multiple fixed locations to establish secure connections with each other over a public network such as the Internet. Site-to-site VPN extends a defined network, making computer resources from one network available to other networks.
 
-For VPN site-to-site connectivity, you will need to modify either the provided default network configuration or create your own network, subnet, router and ports using the OpenStack Networking API.  The customization can be done on either the command line or through the HP Cloud Management Console.  
+For VPN site-to-site connectivity, you will need to modify either the provided default network configuration or create your own network, subnet, router and ports using the OpenStack Networking API.  The customization can be done on either the command line or through the HP Helion Public Cloud Management Console.  
 
 Before starting, ensure that you have adequate permissions to accomplish each of the following steps.  
 
@@ -58,8 +58,8 @@ This guide is designed for those in the following or similar roles:
 
 To use this solution effectively, you should be familiar with   
 
-- Local network configuration in HP Cloud     
-- HP Cloud Compute and Networking services 
+- Local network configuration in HP Helion Public Cloud     
+- HP Helion Public Cloud Compute and Networking services 
 - OpenStack Nova and Neutron CLI and API   
 - Virtual Private Networks (VPN)    
 - strongSwan or other IPsec-based software solutions   
@@ -79,7 +79,7 @@ back to the [top](#top)
 
 ## Quick start guide ## {#quickstart}
 
-This guide provides the information you will need to get started in setting up a VPN that connects your local network to your Virtual Private Cloud (VPC) located in the HP Cloud.  In this guide, you create two instances--one as an example to use and the other as a gateway.
+This guide provides the information you will need to get started in setting up a VPN that connects your local network to your Virtual Private Cloud (VPC) located in the HP Helion Public Cloud.  In this guide, you create two instances--one as an example to use and the other as a gateway.
 
 <img src="media/HPCS-VPC-VPN-SingleSite-Connection-Layer3-new-novendor.jpg" width="600" alt="Basic VPN setup" />
 
@@ -91,10 +91,10 @@ All commands in this guide use command line interfaces.
 
 The following steps walk you through the process:
 
-- [Activate the compute service in HP Cloud](#compute)  
+- [Activate the Compute service in HP Helion Public Cloud](#compute)  
 - [Set up the private network](#gtwy)
 - [Create ports](#port)   
-- [Create compute instances](#instances)
+- [Create Compute service instances](#instances)
 - [Associate floating IPs](#floatip)  
 - [Enable UFW](#enableufw)
 - [Install strongSwan](#installss)
@@ -116,11 +116,11 @@ $PORT_ID1 = id of port 1 (vm-gateway)
 $PORT_ID2 = id of port 2 (vm-test)    
 $VM_GATEWAY = address of the VPN VM gateway (e.g., 10.2.0.21)   
 
-For more details on the Nova and Neutron commands please see the [HP Cloud Networking](https://docs.hpcloud.com/api/v13/networking/) and [Compute](https://docs.hpcloud.com/api/v13/compute/) API specifications.
+For more details on the Nova and Neutron commands please see the [HP Helion Public Cloud Networking](https://docs.hpcloud.com/api/v13/networking/) and [Compute](https://docs.hpcloud.com/api/v13/compute/) API specifications.
 
-### Activate the compute service in HP Cloud ### {#compute}
+### Activate the Compute  service in HP Helion Public Cloud ### {#compute}
 
-If you have not previously created an account and activated the compute service please sign up at [http://hpcloud.com](http://hpcloud.com).  Once you activate the compute service, you need to install the [compute](https://docs.hpcloud.com/api/v13/compute/) and [networking](https://docs.hpcloud.com/api/v13/networking/) clients or the [CLI](http://docs.hpcloud.com/cli/unix/network). Make sure you activate a compute instance in HP Cloud version 13.5 to access the networking and VPN capabilities.
+If you have not previously created an account and activated the Compute  service please sign up at [http://hpcloud.com](http://hpcloud.com).  Once you activate the Compute  service, you need to install the [compute](https://docs.hpcloud.com/api/v13/compute/) and [networking](https://docs.hpcloud.com/api/v13/networking/) clients or the [CLI](http://docs.hpcloud.com/cli/unix/network). Make sure you activate a Compute service instance in HP Helion Public Cloud version 13.5 to access the networking and VPN capabilities.
 
 ##Create a new Ubuntu server instance
 
@@ -173,7 +173,7 @@ Ports can be viewed with **neutron port-list** command.
     +--------------------------------------+------+-------------------+-------------------------------------------------------------------------------------+
 
 
-### Create compute instances ### {#instances}
+### Create Compute service instances ### {#instances}
 You need to create two instances (VMs) to test and run your VPN.
 
 #### Create a keypair to allow ssh to the instance
@@ -192,9 +192,9 @@ The above command creates a new keypair called **ipsec_vpn_gateway**.  View all 
     +--------------------+-------------------------------------------------+
 
 
-#### Select your compute image
+#### Select your Compute service image
 
-To boot a compute instance you will need to know which [operating system and size of image](https://docs.hpcloud.com/api/v13/compute/) you would like to use.  For the purpose of this guide, we use a small image using Ubuntu. Select the type of image you want and then assess the amount of bandwidth you need and select the appropriately sized flavor.
+To boot a Compute service instance you will need to know which [operating system and size of image](https://docs.hpcloud.com/api/v13/compute/) you would like to use.  For the purpose of this guide, we use a small image using Ubuntu. Select the type of image you want and then assess the amount of bandwidth you need and select the appropriately sized flavor.
 
 #### Boot the gateway instance and test instance
 
@@ -464,9 +464,9 @@ back to the [top](#top)
 
 ## For further information ## {#refs}
 
-- [UNIX CLI for HP Cloud Network Examples](http://docs.hpcloud.com/cli/unix/network)
-- [HP Cloud Networking API Specifications](https://docs.hpcloud.com/api/v13/networking/)
-- [HP Cloud Compute Service API Reference](https://docs.hpcloud.com/api/v13/compute/)
+- [UNIX CLI for HP Helion Public Cloud Network Examples](http://docs.hpcloud.com/cli/unix/network)
+- [HP Helion Public Cloud Networking API Specifications](https://docs.hpcloud.com/api/v13/networking/)
+- [HP Helion Public Cloud Compute Service API Reference](https://docs.hpcloud.com/api/v13/compute/)
 - [strongSwan wiki FAQ](http://wiki.strongswan.org/projects/strongswan/wiki/FAQ)
 - [strongSwan User Documentation](http://wiki.strongswan.org/projects/strongswan/wiki/UserDocumentation "strongSwan User Documentation")
 - [strongSwan ipsec.conf reference](http://wiki.strongswan.org/projects/strongswan/wiki/IpsecConf)

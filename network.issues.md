@@ -7,15 +7,15 @@ product: compute
 ---
 # Known Issues and Workarounds with the Networking Service
 
-<!-- Taken from the doc known as the Network Guide ("HP Cloud Networking overview) /compute.network-guide.md -->
+<!-- Taken from the doc known as the Network Guide ("HP Helion Public Cloud Networking overview) /compute.network-guide.md -->
 
-The following are some known issues and best practices you should observe when using the HP Cloud Networking service:
+The following are some known issues and best practices you should observe when using the HP Helion Public Cloud Networking service:
 
 ##Port Configuration:##
 
 **Background**
 
-The HP Cloud compute service attaches virtual servers to the network via HP Cloud Networking ports, which are created in one of the two following ways:
+The HP Helion Public Cloud compute service attaches virtual servers to the network via HP Helion Public Cloud Networking ports, which are created in one of the two following ways:
 
 1. You can create ports in Networking and pass them to compute. 
 
@@ -49,7 +49,7 @@ If you allow compute to create the ports instead of going through Networking, co
  
 **Background**
 
-The compute service provides only a subset of the HP Cloud Networking security group functionality.  For example, compute does not support egress rules. 
+The compute service provides only a subset of the HP Helion Public Cloud Networking security group functionality.  For example, compute does not support egress rules. 
 
 **Issue**
 
@@ -59,7 +59,7 @@ If you configure security groups via Networking, compute may not display the ful
 
 1. Use **either** the compute **or** networking service to configure security groups, but do not use both.   Using the OpenStack Networking API provides additional functionality in the form of outbound rules, which the compute API cannot display. 
 
-Note: Security Groups are a feature of  HP Cloud Networking and are fully supported by the Networking API. A limited set of Security Group features are also accessible via the compute API for convenience and backwards compatibility. To directly access the API's broader functionality, HP recommends working only through the OpenStack Networking API and does not recommend mixing compute and OpenStack Networking API calls for security group configuration.
+Note: Security Groups are a feature of  HP Helion Public Cloud Networking and are fully supported by the Networking API. A limited set of Security Group features are also accessible via the compute API for convenience and backwards compatibility. To directly access the API's broader functionality, HP recommends working only through the OpenStack Networking API and does not recommend mixing compute and OpenStack Networking API calls for security group configuration.
 
 ## Working with Nova and Neutron in 1.1 ##
 

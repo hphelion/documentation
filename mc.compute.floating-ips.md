@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "Management console: Floating IPs screen"
+title: "Management Console: Floating IPs Screen"
 permalink: /mc/compute/floating-ips/
 product: mc-compute
 
 ---
-# Management console: Floating IPs screen
+# Management Console: Floating IPs Screen
 
 The management console (MC) compute dashboard volumes screen allows you to view and manipulate compute floating IPs.  This page covers the following topics:
 
@@ -26,5 +26,5 @@ From this screen you can perform the following tasks:
 
 ##For further information## {#ForFurtherInformation}
 
-* For basic information about our HP Cloud compute services, take a look at the [HP Cloud compute overview](/compute/) page
+* For basic information about our HP Helion Public Cloud compute services, take a look at the [HP Helion Public Cloud compute overview](/compute/) page
 * Use the MC [site map](/mc/sitemap) for a full list of all available MC documentation pages

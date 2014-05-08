@@ -1,20 +1,21 @@
 ---
 layout: default
-title: "HP Cloud Version 12.12 to HP Cloud Version 13.5: Data Transition Guide"
+title: "HP Helion Public Cloud Version 12.12 to HP Helion Public Cloud Version 13.5: Data Transition Guide"
 permalink: /migration-overview-reference/
+product: public-cloud
 
 ---
-#HP Cloud Compute Version 12.12 to HP Cloud Compute Version 13.5: Data Transition Guide#
+#HP Helion Public Cloud Compute Version 12.12 to HP Helion Public Cloud Compute Version 13.5: Data Transition Guide#
 
-This page provides you with information to help you transition an HP Cloud Compute version 12.12 instance to an HP Cloud Compute version 13.5 instance. 
+This page provides you with information to help you transition an HP Helion Public Cloud Compute version 12.12 instance to an HP Helion Public Cloud Compute version 13.5 instance. 
 
 In general, the process for transitioning to 13.5 involves creating a new 13.5 instance, configuring that instance, and copying any required data files to that new instance.  
 
 This overview outlines the tasks you will need to perform, based upon the operating system on your local system and the operating systems used by your cloud instance(s). 
 
-The tasks require software tools such as the UNIX CLI for HP Cloud, the Pythons Novaclient CLI, or the HP Cloud Compute Service API. Before deciding which tools to use, make sure the tools are installed and configured on the local system and your instances, as required. 
+The tasks require software tools such as the UNIX CLI for HP Helion Public Cloud, the Pythons Novaclient CLI, or the HP Helion Public Cloud Compute Service API. Before deciding which tools to use, make sure the tools are installed and configured on the local system and your instances, as required. 
 
-**Note**: Some of the links in this document contain information on using the Horizon-based HP Public Cloud Console to interact with your instances. HP Public Cloud Console is an alternative method for performing these tasks. The procedures in this document for using the classic management console are correct and should be followed at this time.
+**Note**: Some of the links in this document contain information on using the Horizon-based HP Helion Public Cloud Console to interact with your instances. HP Helion Public Cloud Console is an alternative method for performing these tasks. The procedures in this document for using the classic management console are correct and should be followed at this time.
 
 If you have any questions or concerns about which files to copy, [contact our Support team](#support).
 
@@ -29,7 +30,7 @@ In order to transition version 12.12 to version 13.5, you will need to perform t
 
 3. [Configure security groups to use with the 13.5 instance](#securitygroup).
 
-4. [Create the HP Cloud Compute version 13.5 instance](#createinstance).
+4. [Create the HP Helion Public Cloud Compute version 13.5 instance](#createinstance).
 
 5. [Connect to the 13.5 instance from a local system](#connect).
 
@@ -37,7 +38,7 @@ In order to transition version 12.12 to version 13.5, you will need to perform t
 
 7. [Create and attach 13.5 block volumes to the 13.5 instance and copy data, as needed](#transdata).
 
-8. [Review information on ongoing UNIX CLI for HP Cloud support](#CLIdeprecation)
+8. [Review information on ongoing UNIX CLI for HP Helion Public Cloud support](#CLIdeprecation)
 
 9. [Review further information](#furtherinfo).
 
@@ -47,8 +48,8 @@ Within each of these general tasks, there are procedures for different operating
 
 Before you begin transitioning to a 13.5 instance, there are a few preliminary tasks you must complete.
 
-### Understanding what's new for HP Cloud Compute version 13.5 ### {#VersionDiffs}
-HP Cloud Compute version 13.5 is based on the latest version of OpenStack (Havana), which expands functionality and enhances the current capabilities of the existing services. The sections below give a brief overview of what's new for version 13.5.
+### Understanding what's new for HP Helion Public Cloud Compute version 13.5 ### {#VersionDiffs}
+HP Helion Public Cloud Compute version 13.5 is based on the latest version of OpenStack (Havana), which expands functionality and enhances the current capabilities of the existing services. The sections below give a brief overview of what's new for version 13.5.
 
 #### Region-wide resources #### {#RegionWideResources}
 
@@ -59,7 +60,7 @@ Each region--US East and US West--consists of three physically isolated availabi
 	
 #### Block storage #### {#BlockStorage}
 
-Block storage has always been available in the HP Cloud Compute service, but now it is a separate, but integrated, service, providing persistent, manageable volumes along with the ability to take a snapshot of a volume. Bootable volumes can be created from images in the Image Management service and these bootable volumes can be used to create persistent instances.
+Block storage has always been available in the HP Helion Public Cloud Compute service, but now it is a separate, but integrated, service, providing persistent, manageable volumes along with the ability to take a snapshot of a volume. Bootable volumes can be created from images in the Image Management service and these bootable volumes can be used to create persistent instances.
 
 #### For more information #### {#MoreVersionDiffInfo}
 For more information on migrating your services, and to better understand the differences between versions 12.12 and 13.5, see [Review further information](#furtherinfo).
@@ -72,7 +73,7 @@ Log into the 12.12 instance using a tool such as PuTTY, an SSH client, or Remote
 
 ##Section 1: Generating a key pair## {#keypair}
 
-Before you create your first HP Cloud Compute version 13.5 instance, you must generate a key pair for that instance. You can create a new key pair or use an existing version 12.12 public key to generate a new key pair. The new key pair can be used with any subsequent 13.5 instances you create. 
+Before you create your first HP Helion Public Cloud Compute version 13.5 instance, you must generate a key pair for that instance. You can create a new key pair or use an existing version 12.12 public key to generate a new key pair. The new key pair can be used with any subsequent 13.5 instances you create. 
 
 A key pair is a cryptographic tool that uses two mathematically related keys. One key can be used to encrypt a message that can only be decrypted using the other key. 
 
@@ -82,7 +83,7 @@ You create both keys at the same time using any of the following methods:
 	
 - [Using the classic management console](#keypairconsole) 
 - [Using the API](#keypairapi) 
-- [Using the UNIX CLI for HP Cloud](#keypairunix)
+- [Using the UNIX CLI for HP Helion Public Cloud](#keypairunix)
 - [Using the Python Novaclient CLI](#keypairnova)
 - [Using an existing public key](#keypairown)
 
@@ -90,7 +91,7 @@ You create both keys at the same time using any of the following methods:
 
 Key pairs are specific to a region, either US East or US West. Key pairs created in the US West or US East region can be used in any availability zone in that region.
 
-In HP Cloud Compute version 12.12, key pairs could be used only in a specific availability zone in the US West region. 
+In HP Helion Public Cloud Compute version 12.12, key pairs could be used only in a specific availability zone in the US West region. 
 
 
 ###Generating a Key Pair using the classic management console### {#keypairconsole}
@@ -186,17 +187,17 @@ To generate the key pair using the API:
 
 2. Copy the private key into a text editor and save the file in the PEM format on the local system. Note the location where you save the file for later use. </p>
 
-For more information on this API call, see [HP Cloud Compute Service API Reference](https://docs.hpcloud.com/api/v13/compute/#createKeypair).
+For more information on this API call, see [HP Helion Public Cloud Compute Service API Reference](https://docs.hpcloud.com/api/v13/compute/#createKeypair).
 
 
-###Generating a Key Pair using the UNIX CLI for HP Cloud### {#keypairunix}
+###Generating a Key Pair using the UNIX CLI for HP Helion Public Cloud### {#keypairunix}
 
-There are two methods you can use to generate a key pair using the UNIX CLI for HP Cloud. 
+There are two methods you can use to generate a key pair using the UNIX CLI for HP Helion Public Cloud. 
 
 - Create your key pair using the `-o` flag to save the key pair file in the `~/.hpcloud/keypairs` folder. The CLI does not display the key pair on the screen. Saving to a file allows you to use the auto-connect feature after you create an instance with that key pair. 
 - Create a key pair without the `-o` flag to have the key pair display on screen. You will need to manually save the key pair in a text file in the PEM format.
 
-**Tip**: For the full list of UNIX CLI for HP Cloud commands, see the [UNIX CLI for HP Cloud Release Notes](http://docs.hpcloud.com/cli/unix).
+**Tip**: For the full list of UNIX CLI for HP Helion Public Cloud commands, see the [UNIX CLI for HP Helion Public Cloud Release Notes](http://docs.hpcloud.com/cli/unix).
 
 To generate a key pair in UNIX:
 
@@ -230,7 +231,7 @@ To generate a key pair in UNIX:
 
 To generate a key pair using the Python Novaclient commands.
 
-	**Important**: You must have the Python Novaclient installed on the instance before using the CLI commands. For more information, see [HP Cloud Python Novaclient CLI Installation](https://docs.hpcloud.com/cli/nova/install).
+	**Important**: You must have the Python Novaclient installed on the instance before using the CLI commands. For more information, see [HP Helion Public Cloud Python Novaclient CLI Installation](https://docs.hpcloud.com/cli/nova/install).
 
 1. Launch a command line window or UNIX shell on a system configured to access the availability zone where you want to create the key pair. The nova environment variables determine the region and availability zone you can access.
 
@@ -293,7 +294,7 @@ Security group rules specify the traffic that is allowed into (ingress) and out 
 
 For example, in order to use FTP to access an instance, the security group associated with that instance must be configured to allow access port 22.
 
-**Note**: In HP Cloud Compute version 13.5, you can specify both individual ingress and egress rules. 
+**Note**: In HP Helion Public Cloud Compute version 13.5, you can specify both individual ingress and egress rules. 
 
 <p id="securitygroupdefault">The system includes one default security group, containing four rules, which appears similar to the following in the classic management console:</p>
 <img src="media/sec_group_defafult.png"  alt="" />
@@ -446,14 +447,14 @@ To create a security zone and add rules:
     	group_id (optional) - xsd:int - Traffic from all servers associated with the security group specified by `group_id` will be accepted. Either `cidr` or `group_id` must be specified.
 
 
-For information on using the API to create and configure security groups, see the [HP Cloud Compute Service API Reference: Security Groups](https://docs.hpcloud.com/api/v13/compute/#4.1.12SecurityGroups).
+For information on using the API to create and configure security groups, see the [HP Helion Public Cloud Compute Service API Reference: Security Groups](https://docs.hpcloud.com/api/v13/compute/#4.1.12SecurityGroups).
 
 
 ###Controlling traffic using Python Novaclient commands### {#securitygrouppyth}
 
 You can use Python Novaclient commands to add, delete, and modify security groups. 
 
-**Important**: You must have the Python Novaclient installed on the instance before using the CLI commands. For more information, see [HP Cloud Python Novaclient CLI Installation](https://docs.hpcloud.com/cli/nova/install).
+**Important**: You must have the Python Novaclient installed on the instance before using the CLI commands. For more information, see [HP Helion Public Cloud Python Novaclient CLI Installation](https://docs.hpcloud.com/cli/nova/install).
 
 ####Creating a security group#### {#securitygrouppythcreate}
 
@@ -540,7 +541,7 @@ The OpenStack Storage infrastructure provides two classes of storage: *ephemeral
 
 Ephemeral instance storage, or On-instance, exists only for the life of an instance. An ephemeral instance persists across reboots of the local system, but when an instance is terminated the associated data is also deleted.  
 
-Persistent instance storage, or HP Cloud Block Storage, exists beyond the life of an instance. If you terminate the instance, any data stored on associated volumes is retained.
+Persistent instance storage, or HP Helion Public Cloud Block Storage, exists beyond the life of an instance. If you terminate the instance, any data stored on associated volumes is retained.
 
 For more information on the available storage options, see [What cloud storage is right for you?](http://www.hpcloud.com/sites/default/files/Right-storage-for-you.pdf)
 
@@ -549,18 +550,18 @@ Use one of the following sections to create an ephemeral or persistent instance:
 - [Create an ephemeral instance](#createephinstance)
 - [Create a persistent instance](#createpersinstance)
 
-After you create the HP Cloud Compute version 13.5 instance, you can copy the data from your HP Cloud Compute version 12.12 instance to your new 13.5 instance.
+After you create the HP Helion Public Cloud Compute version 13.5 instance, you can copy the data from your HP Helion Public Cloud Compute version 12.12 instance to your new 13.5 instance.
 
 ###Creating an ephemeral instance### {#createephinstance}
 
 The process for creating an ephemeral instance involves selecting an *image*, which defines the type of operating system, and a *flavor*, which defines the hardware configuration (disk space and memory capacity). Images can be provided by HP or based on other instances to which you have access. Flavors are defined by HP.
 
-You can use HP Cloud Compute to create on-instance (ephemeral) storage by using either the classic management console or by using Python Novaclient commands.
+You can use HP Helion Public Cloud Compute to create on-instance (ephemeral) storage by using either the classic management console or by using Python Novaclient commands.
 
 - [Using the classic management console](#createephinstanceconsole)
 - [Using Python Novaclient](#createephinstancepyth)
 
-**Note:** HP Cloud Compute version 13.5 does not assign a public IP address automatically. To connect with the instance, you must assign a *floating* public IP address to the instance. A floating IP address is the same as the public IP in HP Cloud Compute version 12.12. The following procedures contain steps to assign the floating IP to the new instance.
+**Note:** HP Helion Public Cloud Compute version 13.5 does not assign a public IP address automatically. To connect with the instance, you must assign a *floating* public IP address to the instance. A floating IP address is the same as the public IP in HP Helion Public Cloud Compute version 12.12. The following procedures contain steps to assign the floating IP to the new instance.
 
 For more information on floating IP addresses, see [Managing Your Floating IPs](https://community.hpcloud.com/article/managing-your-floating-ips-135). 
 
@@ -614,7 +615,7 @@ After you assign the floating IP address, you can [connect to the instance](#con
 
 To create an ephemeral instance using Python Novaclient commands:
 
-	**Important**: You must have the Python Novaclient installed on the instance before using the CLI commands. For more information, see [HP Cloud Python Novaclient CLI Installation](https://docs.hpcloud.com/cli/nova/install).
+	**Important**: You must have the Python Novaclient installed on the instance before using the CLI commands. For more information, see [HP Helion Public Cloud Python Novaclient CLI Installation](https://docs.hpcloud.com/cli/nova/install).
 
 1. Launch a command line window or UNIX shell on a system configured to access the availability zone where you want to create the new instance. The nova environment variables determine the region and availability zone you can access.
 
@@ -672,7 +673,7 @@ To create an ephemeral instance using Python Novaclient commands:
 
 	`nova floating-ip-create`
 
-	HP Cloud Compute version 13.5 does not assign a public IP address automatically. To connect with the instance, you must assign a *floating* public IP address to the instance. 
+	HP Helion Public Cloud Compute version 13.5 does not assign a public IP address automatically. To connect with the instance, you must assign a *floating* public IP address to the instance. 
 	<br><img src="media/floating_ip_create.png"  alt="" />
 
 4. Use the following command to attach the floating IP to an instance:
@@ -711,12 +712,12 @@ The following example attaches a volume with ID 50357 to a device named `vda`. T
 
 The process for creating a persistent instance involves creating a bootable storage volume then creating a server to host that volume. A bootable volume defines the amount of memory (size), the operating system, and an availability zone.   
 
-Use either of the following tools to create a persistent HP Cloud Block Storage version 13.5 instance.
+Use either of the following tools to create a persistent HP Helion Public Cloud Block Storage version 13.5 instance.
 
 - [Using the classic management console](#createperinstanceconsole)
 - [Using Python Novaclient commands](#createperinstancepyth)	
 
-**Note:** HP Cloud Compute version 13.5 does not assign a public IP address automatically. To connect with the instance, you must assign a floating public IP address to the instance. The following procedures contain steps to assign the floating IP to the new instance.
+**Note:** HP Helion Public Cloud Compute version 13.5 does not assign a public IP address automatically. To connect with the instance, you must assign a floating public IP address to the instance. The following procedures contain steps to assign the floating IP to the new instance.
 
 For more information on floating IP addresses, see [Managing Your Floating IPs](https://community.hpcloud.com/article/managing-your-floating-ips-135). 
 
@@ -802,7 +803,7 @@ After you assign the floating IP address, you can [connect to the instance](#con
 
 To create a persistent instance using Python Novaclient commands:
 
-	**Important**: You must have the Python Novaclient installed on the instance before using the CLI commands. For more information, see [HP Cloud Python Novaclient CLI Installation](https://docs.hpcloud.com/cli/nova/install).
+	**Important**: You must have the Python Novaclient installed on the instance before using the CLI commands. For more information, see [HP Helion Public Cloud Python Novaclient CLI Installation](https://docs.hpcloud.com/cli/nova/install).
 
 1. Launch a command line window or UNIX shell on a system configured to access the availability zone where you want to create the new instance. The nova environment variables determine the region and availability zone you can access.
 
@@ -872,7 +873,7 @@ To create a persistent instance using Python Novaclient commands:
 
 8. Use the following command to allocate a floating IP address that you can attach to the instance.
 
-	HP Cloud Compute version 13.5 does not assign a public IP address automatically. To connect with the instance, the instance requires a floating IP address.
+	HP Helion Public Cloud Compute version 13.5 does not assign a public IP address automatically. To connect with the instance, the instance requires a floating IP address.
 
 	`nova floating-ip-create`
 
@@ -895,7 +896,7 @@ After you assign the floating IP address, you can [connect to the instance](#con
 
 After you have created your 13.5 instance, you need to connect to the instance in order to work with the instance. For example, you must connect to the instance to copy data to the instance.
 
-**Note:** When you connect to an HP Cloud Compute version 13.5 instance, you must use the floating IP address you created for the instance. If you do not know the floating IP, you can find the address using the classic management console on the Server Details page for your server. 
+**Note:** When you connect to an HP Helion Public Cloud Compute version 13.5 instance, you must use the floating IP address you created for the instance. If you do not know the floating IP, you can find the address using the classic management console on the Server Details page for your server. 
 	
 Use one of the following methods to connect to the new instance, based on the operating system you are connecting from.
 
@@ -980,7 +981,7 @@ To connect to an instance using PuTTY:
 
 	For more information, see: [Getting prompted for a password when accessing your instance for the first time](https://community.hpcloud.com/article/getting-prompted-password-when-accessing-your-instance-first-time-135).
 
-After logging in, a system window displays, which indicates you are connected to the HP Cloud Instance.
+After logging in, a system window displays, which indicates you are connected to the HP Helion Public Cloud Instance.
 
 
 ####Connecting from a Linux system using Terminal####  {#connectlinuxterm}
@@ -1154,7 +1155,7 @@ To copy files to your 13.5 instance:
 
 2. In the instance, launch an WinSCP client.
 
-3. Use WinSCP to log into the HP Cloud version 12.12 instance using the fields on the **Session** page:
+3. Use WinSCP to log into the HP Helion Public Cloud version 12.12 instance using the fields on the **Session** page:
 	- File Protocol. Select SFTP.
     - Host name. Enter the public IP address of the 12.12 instance.
     - Port number. Enter the port number for your instance or use the default, port 22.
@@ -1279,9 +1280,9 @@ To create a block volume and attach the volume to the instance:
 11. When the volume is available, you can copy the data from your version 12.12 instance attached volume to your new version 13.5 instance, as described in [Copy data from the 12.12 instance to the 13.5 instance](#copydata).
 
 
-###Creating and attaching a block volume using the UNIX CLI for HP Cloud tool### {#transdataunix}
+###Creating and attaching a block volume using the UNIX CLI for HP Helion Public Cloud tool### {#transdataunix}
 
-You can use the UNIX CLI for HP Cloud to create and attach a block volume on the 13.5 instance. Then, copy the data on the 12.12 instance to the new 13.5 instance.
+You can use the UNIX CLI for HP Helion Public Cloud to create and attach a block volume on the 13.5 instance. Then, copy the data on the 12.12 instance to the new 13.5 instance.
 
 To create a block volume and attach the volume to the instance:
 
@@ -1325,7 +1326,7 @@ To create a block volume and attach the volume to the instance:
 
 ###Creating and attaching a block volume using Windows PowerShell### {#transdatawin}
 
-You can use the HP Cloud environment CLI in Windows PowerShell to create and attach a block volume on the 13.5 instance. Then, copy the data on the 12.12 instance to the new 13.5 instance.
+You can use the HP Helion Public Cloud environment CLI in Windows PowerShell to create and attach a block volume on the 13.5 instance. Then, copy the data on the 12.12 instance to the new 13.5 instance.
 
 To create a block volume and attach the volume to the instance:
 
@@ -1333,7 +1334,7 @@ To create a block volume and attach the volume to the instance:
 
 	Select the shell appropriate to your system, either the 64-bit or 32-bit version. 
 
-2. Enter the HP Cloud environment CLI by entering:
+2. Enter the HP Helion Public Cloud environment CLI by entering:
 
 	`PS C:> cd HPCS:`
 
@@ -1386,7 +1387,7 @@ On November 4, 2013, the UNIX CLI moved into its End-of-Life Cycle process towar
 * No new feature requests will be honored
 * Bug reports will be accepted
 
-HP Cloud has contributed the Unix CLI back to the open source community, and you can get support, access the documentation, and download the source code [here](https://github.com/hpcloud/unix_cli).
+HP Helion Public Cloud has contributed the Unix CLI back to the open source community, and you can get support, access the documentation, and download the source code [here](https://github.com/hpcloud/unix_cli).
 
 ##Contacting Support## {#support}
 
@@ -1401,7 +1402,7 @@ If you have any questions or concerns about which files to copy, contact our Sup
 
 For more information on version 13.5:
 
-<li>Our <a href="/release-notes/">release notes for version 13.5</a> of the HP Cloud software</li>
+<li>Our <a href="/release-notes/">release notes for version 13.5</a> of the HP Helion Public Cloud software</li>
 <li>The <a href="/version-overview/">version 13.5 overview</a> provides a look at the different software versions available</li>
 <li>The <a href="https://community.hpcloud.com/knowledge-base">technical support knowledge base</a></li>
 

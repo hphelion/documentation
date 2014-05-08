@@ -1,15 +1,15 @@
 ---
 layout: default
-title: "Ruby Fog Bindings for HP Cloud Block Storage Examples"
+title: "Ruby Fog Bindings for HP Helion Public Cloud Block Storage Examples"
 permalink: /bindings/fog/block-storage/
 product: fog
 
 ---
-#Ruby Fog Bindings for HP Cloud Block Storage Examples
+#Ruby Fog Bindings for HP Helion Public Cloud Block Storage Examples
 
 ##Important Notice##
 
-Over the past two years, we have been a leading contributor of the Ruby Fog binding and have contributed to features that span Folsom to Havana. On November 4, 2013, the HP Public Cloud extensions for Ruby Fog Bindings became a part of the standard Fog download available from the main [Fog repository](https://github.com/fog/fog).  This 'hpfog' gem contribution means you no longer need a special download to work with our cloud. We are working on transitioning all of our current documentation to the Ruby Fog community to be directly available in the Fog GitHub repository.
+Over the past two years, we have been a leading contributor of the Ruby Fog binding and have contributed to features that span Folsom to Havana. On November 4, 2013, the HP Helion Public Cloud extensions for Ruby Fog Bindings became a part of the standard Fog download available from the main [Fog repository](https://github.com/fog/fog).  This 'hpfog' gem contribution means you no longer need a special download to work with our cloud. We are working on transitioning all of our current documentation to the Ruby Fog community to be directly available in the Fog GitHub repository.
  
 The Ruby Fog community has 100s of [active contributors](https://github.com/fog/fog/graphs/contributors) and we are looking forward to the further enhancements and features that are generated from this healthy community; a community that encourages collaboration and support.
  
@@ -17,7 +17,7 @@ Read our [blog post](http://www.hpcloud.com/blog/releasing-ruby-bindings-wild) t
 
 _______________
 
-HP Cloud block storage provides support for volumes and snapshots. A volume can store boot images, user data or both. They provide customers with persistent and flexible permanent storage. You can think of it as list of USB devices, that can be plugged in anywhere at will. Volumes can be attached to server instances and mounted. 
+HP Helion Public Cloud Block Storage provides support for volumes and snapshots. A volume can store boot images, user data or both. They provide customers with persistent and flexible permanent storage. You can think of it as list of USB devices, that can be plugged in anywhere at will. Volumes can be attached to server instances and mounted. 
 
 Snapshots are saved volume images at specific moments in time. You can take a snapshot of a volume and then use that snapshot to create a new volume.
 
@@ -35,7 +35,7 @@ This page discusses the following tasks:
 
 ##Connecting to the Service## {#ConnectingtotheService}
 
-To connect to the HP Cloud Block Storage Service, follow these steps:
+To connect to the HP Helion Public Cloud Block Storage Service, follow these steps:
 
 1. Enter IRB
 
@@ -45,7 +45,7 @@ To connect to the HP Cloud Block Storage Service, follow these steps:
 
         require 'fog'
 
-3. Establish a connection to the HP Cloud BlockStorage service
+3. Establish a connection to the HP Helion Public Cloud BlockStorage service
 
         conn = Fog::HP::BlockStorage.new(
                :hp_access_key  => "<your_ACCESS_KEY>",
@@ -58,7 +58,7 @@ To connect to the HP Cloud Block Storage Service, follow these steps:
 
 **Note**: You must use the `:hp_access_key` parameter rather than the now-deprecated  `:hp_account_id` parameter you might have used in previous Ruby Fog versions.
 
-You can find the values the access key, secret key, through the [HP Public Cloud Console](https://horizon.hpcloud.com). Click the project menu and select *Account Info*.
+You can find the values the access key, secret key, through the [HP Helion Public Cloud Console](https://horizon.hpcloud.com). Click the project menu and select *Account Info*.
 
 ##Using the Model Abstraction## {#ModelLayer}
 
