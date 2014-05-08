@@ -16,7 +16,7 @@ Thanks for installing the HP Helion OpenStack Community edition! This initial "c
 
 This release note contains the following information about the HP Helion OpenStack Community edition release:
 
-* [Features in HP Helion OpenStack Community](#features) 
+* [Features in HP Helion OpenStack Community edition](#features) 
 * [Supported services](#supported-services)
 * [Recommendations for HP Helion OpenStack Community](#recommendations)
 * [For further information](#for-further-information) 
@@ -34,7 +34,7 @@ This release note contains the following information about the HP Helion OpenSta
 ##Supported services ## {#supported-services} 
 
 This release of the Community edition is shipped with the following services support:
-<!--
+
 <table style="text-align: left; vertical-align: top;">
  <tr style="background-color: #C8C8C8; text-align: left; vertical-align: top;">
  <th>OpenStack-powered capabilities<th>OpenStack version<th>API supported<th>API version<tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
@@ -46,10 +46,10 @@ This release of the Community edition is shipped with the following services sup
  <td>Identity (Keystone)<td>ICEHOUSE<td>Full support<td>v2.0 and v3.0<tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
  <td>Dashboard (Horizon)<td>ICEHOUSE<td>Full support<td>N/A
 </table>
--->
 
+<!--
 <table style="text-align: left; vertical-align: top;"><tr style="background-color: #C8C8C8; text-align: left; vertical-align: top;"><th>OpenStack-powered capabilities<th>OpenStack version<th>API supported<th>API version<tr style="background-color: white; color: black; text-align: left; vertical-align: top;"><td>Compute (Nova)<td>ICEHOUSE<td>Full support<td>v2.0<tr style="background-color: white; color: black; text-align: left; vertical-align: top;"><td>Object Storage (Swift)<td>ICEHOUSE<td>Full support<td>v1.0<tr style="background-color: white; color: black; text-align: left; vertical-align: top;"><td>Block Storage (Cinder)<td>ICEHOUSE<td>Full support<td>v1.0 and v2.0<tr style="background-color: white; color: black; text-align: left; vertical-align: top;"><td>Networking (Neutron)<td>ICEHOUSE<td>Full support<td>v2.0<tr style="background-color: white; color: black; text-align: left; vertical-align: top;"><td>Image Service (Glance)<td>ICEHOUSE<td>Full support<td>v1.0 and v2.0<tr style="background-color: white; color: black; text-align: left; vertical-align: top;"><td>Identity (Keystone)<td>ICEHOUSE<td>Full support<td>v2.0 and v3.0<tr style="background-color: white; color: black; text-align: left; vertical-align: top;"><td>Dashboard (Horizon)<td>ICEHOUSE<td>Full support<td>N/A</table>
-
+-->
 
 <!--
 
