@@ -6,7 +6,7 @@ product: win-2-cli
 
 ---
 # HP Helion Public Cloud CLI Software for Windows PowerShell Compute Examples
-
+ 
 This page provides you some examples of how to use the various commands (sometimes called "cmdlets") for HP Helion Public Cloud CLI software for Windows PowerShell implementation of Compute.
 
 * [Navigation](#Navigation)
@@ -176,7 +176,9 @@ To create a new server:
 Where the new server has name `TestSever`, image identifier `2111`, flavor identifier`100`, security group name `Security_group1`, name-value pair `Namevalue1 | value1`, and keypair `KeyName`.  
 
 <!--DOUG: rewrite-->
-**Note for Windows Images**: When the Windows CLI detects you are creating a Windows server, it looks for the keypair *.pem* file in a specific location. The default location for the .pem file is `C:\Users\*username*\Documents\HP\`. When the new-server operation has completed, the output is the Administrator password to be used with an RDP client. Please make note of it. For assistance on connecting to a Windows Instance, see [How to Access a Windows Instance via the Remote Desktop](/compute/using#WindowsRDP) or use the [quick connect feature](#QuickConnect).
+**Note for Windows Images**: When the Windows CLI detects you are creating a Windows server, it looks for the keypair *.pem* file in a specific location. The default location for the .pem file is `C:\Users\*username*\Documents\HP\`. When the new-server operation has completed, the output is the Administrator password to be used with an RDP client. Please make note of it. 
+<!-- Hiding; referenced file missing
+For assistance on connecting to a Windows Instance, see [How to Access a Windows Instance via the Remote Desktop](/compute/using#WindowsRDP) or use the [quick connect feature](#QuickConnect). -->
 
 For a full description of the options available with the **New-Server** command, please see the [New-Server](/cli/windows/reference#New-Server) section of the [Windows CLI Reference](/cli/windows/reference) page. 
 

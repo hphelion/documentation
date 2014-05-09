@@ -19,7 +19,7 @@ PageRefresh();
 
 <p style="font-size: small;"> <a href="/cloudos/install/complete-admin-node-installation/">&#9664; PREV</a> | <a href="/cloudos/install/">&#9650; UP</a> | <a href="/cloudos/install/launch-admin-dashboard/">NEXT &#9654;</a> </p>
 
-# Create a Cloud
+# 	
 
 Now that the Admin Node is installed, it's time to create your cloud. 
 
@@ -106,9 +106,9 @@ At this point, based on your previously determined [Storage Infrastructure](/clo
 The default root partitioning scheme is to reserve the first 255 MB for the boot partition, and then allocate the entire rest 
 of the disk to the LVM partition, with the Ubuntu OS calculating how much goes to swap space and how goes to the root file system.
 
+<!-- Changed link to main install page; need new link -->
 For details, see the Ubuntu configuration documentation:
-
-<a href="https://help.ubuntu.com/lts/installation-guide/i386/preseed-contents.html" title="Ubuntu topic opens in new tab or window" target="ubuntu"> Contents of the Ubuntu Preconfiguration File </a> <br />
+<a href="https://help.ubuntu.com/12.04/installation-guide/i386/preseed-contents.html" title="Ubuntu topic opens in new tab or window" target="ubuntu"> Contents of the Preconfiguration File </a> <br />
 
 <a href="https://help.ubuntu.com/community/DiskSpace" title="Ubuntu topic opens in new tab or window" target="ubuntu2"> Ubuntu Disk Space - community discussion </a>
 
