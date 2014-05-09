@@ -26,7 +26,7 @@ This page covers the following topics:
 * [Using Regions and Availability Zones](#az)
 * [For further information](#info)
 
-For more details on how to work with your network, see [HP Helion Public Cloud Networking: Quick start guide](/compute/network-quick-start) or [How To's with HP Helion Public Cloud Networking version 13.5](/compute/network/howto/).
+For more details on how to work with your network, see [HP Helion Public Cloud Networking: Quick start guide](/compute/network/quick-start/) or [How To's with HP Helion Public Cloud Networking version 13.5](/compute/network/howto/).
 
 ##Using the Default Network Configuration## {#default}
 
@@ -70,7 +70,7 @@ You can expand your network up to the following per-domain maximums:
 * 10 Security Groups 
 * 50 Security Group Rules
 
-For more information on modifying the default network and creating additional networks, see either [HP Helion Public Cloud Networking: Quick start guide](/compute/network-quick-start/) or [Getting Started Guide](https://community.hpcloud.com/article/getting-started-guide) in the HP Helion Public Cloud community.
+For more information on modifying the default network and creating additional networks, see either [HP Helion Public Cloud Networking: Quick start guide](/compute/network/quick-start/) or [Getting Started Guide](https://community.hpcloud.com/article/getting-started-guide) in the HP Helion Public Cloud community.
 
 ## Accessing the Networking service ##
 
