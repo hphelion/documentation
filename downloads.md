@@ -51,7 +51,7 @@ We have moved all our Ruby Fog bindings to the Fog Community; please continue to
 * [Ruby Fog Community Documentation](http://fog.io/)
 
 ###Java/Clojure jclouds Bindings### {#jcloudsBindingsInstall}
-* [Installation page](http://www.jclouds.org/documentation/userguide/installation-guide) (This is the [jclouds.org](http://www.jclouds.org) installation page)
+* [Installation page](http://jclouds.apache.org/start/install/) (This is the [jclouds.org](http://www.jclouds.org) installation page)
 * [Overview page](/bindings/jclouds)
 <!-- * [Release Notes](bindings/jclouds/release-notes)-->
 
