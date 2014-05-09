@@ -17,7 +17,7 @@ The HP Helion Public Cloud Compute jclouds provider extends the functionality of
 
 ##Installation ## {#Installation}
 
-For installation, please [surf on over to the jclouds.org](http://jclouds.apache.org/start/install/) page and follow the instructions.
+For installation, please [go to the jclouds.org](http://jclouds.apache.org/start/install/) page and follow the instructions.
 
 <!--Please refer to the official jclouds [Installation Guide](http://www.jclouds.org/documentation/userguide/installation-guide) for information on how to install jclouds.-->
 
@@ -50,7 +50,7 @@ Coordinating dependency management is a key component of Java development.  A co
                 </dependency>
             </dependencies>
 
-For jclouds-specific requirements, please see the jclouds user guide for [Using jclouds with Apache Maven](http://www.jclouds.org/documentation/userguide/using-maven).
+For jclouds-specific requirements, please see the jclouds user guide for [Using jclouds with Apache Maven](http://jclouds.apache.org/start/install/).
 
 ##Usage ## {#Usage}
 
@@ -62,4 +62,4 @@ The jclouds library is well documented on the community web site, but for specif
 * [Block Storage Examples](/bindings/jclouds/block-storage)
 
 ##Having trouble? ## {#HavingTrouble}
-See the [release notes](http://www.jclouds.org/documentation/releasenotes/) for further information, or you can [get help over at the Forums](https://community.hpcloud.com).
+See the [release notes](http://jclouds.apache.org/releasenotes/) for further information, or you can [get help over at the Forums](https://community.hpcloud.com).
