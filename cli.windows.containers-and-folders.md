@@ -1142,5 +1142,7 @@ The Migrate-Drive command gives you the ability to migrate your data from a non-
 <!--<img src="media/MigrateS3All.jpg" width="580" height="444" alt="" />-->
 
 The `-sk` option is your API secret key, and the `-ak` option is your access key.
+<! -- Hide this link; will get updated link from Stephen Spector
+For additional information on this command, see Travis' [Migrating your files with the Windows CLI](https://blog.hpcloud.com/migrating-your-files-windows-cli) blog post.  -->
 
-For additional information on this command, see Travis' [Migrating your files with the Windows CLI](https://blog.hpcloud.com/migrating-your-files-windows-cli) blog post.  For a full description of the options available with the **Migrate-Drive** command, please see the [Migrate-Drive](/cli/windows/reference#Migrate-Drive) section of the [Windows CLI Reference](/cli/windows/reference) page.
+For a full description of the options available with the **Migrate-Drive** command, please see the [Migrate-Drive](/cli/windows/reference#Migrate-Drive) section of the [Windows CLI Reference](/cli/windows/reference) page.
