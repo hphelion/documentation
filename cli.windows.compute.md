@@ -226,9 +226,7 @@ Creating an image of an active server produces a state 'snapshot' of the server 
 
 ### Quick-Connect to an instance ### {#QuickConnectWin}
 
-
-To perform a quick-connect to an existing server instance:
-
+To perform a quick-connect to an existing server instance: 
 **Note**: In order for the `connect-server` command to work, your keypair *.pem* file needs to be in the appropriate location. The default location is `C:\Users\*username*\Documents\HP\`.
 
     PS HPCS:\\>  Connect-Server 2111
@@ -280,8 +278,6 @@ To use the `Get-Password` command, all of the following must be true:
 ###Reset-password### {#ResetPassword}
 
 For Windows Instances only, if you change your Windows password manually via [RDP](http://msdn.microsoft.com/en-us/library/windows/desktop/aa383015(v=vs.85).aspx), you need to manually sync the password with the Windows CLI with the [Reset-Password cmdlet](/cli/windows/reference#reset-password) for the `connect-server` command to work. If you use the `get-password` cmdlet to fetch your original de-crypted Administrator password, and it's available, it will overwrite the password sync.
-
->>>>>>> master
 
     PS HPCS:\> reset-password -id 1234 -p "Thisisalongpassword!"
 
