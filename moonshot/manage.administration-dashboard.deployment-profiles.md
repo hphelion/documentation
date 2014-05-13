@@ -16,7 +16,7 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage">&#9650; UP</a> | NEXT &#9654;</p>
+<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/administration-dashboard/running-topologies/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage/administration-dashboard/working-with-project-tab/">&#9650; UP</a> |<a href="/cloudos/moonshot/manage/administration-dashboard/topology-designs/"> NEXT &#9654;</p></a>
 
 # Manage Deployment Profiles #
 
@@ -26,7 +26,7 @@ This option allows you to work with the Deployment Profiles. You can perform the
 
 * <a href="#Launch Deployment Profile">Launch Deployment Profile</a>
 
-## View Deployment Profile List ##<a name="View Deployment Profile List"></a>
+## View Deployment Profile List <a name="View Deployment Profile List"></a>
 
 To view the list of deployment profiles, do the following:
 
@@ -36,7 +36,7 @@ The tab displays with options in the left panel.</br>
 2.	From the **Current Project** drop-down list in the left panel, select the project.
 
 3.	From the options in the left panel, click **Provisioning** and then select **Deployment Profiles** to open the Deployment Profiles page.<br>
-It displays deployment name, version, based on, scope, and associated project.</br>
+It displays design name, name of the profile, version of the profile, scope, and associated project.</br>
 
 4.	 (Optional) To view the details of a deployment profile, click the Deployment Name to open a window    that offers the following tabs:
  
@@ -45,7 +45,7 @@ It displays deployment name, version, based on, scope, and associated project.</
  * **Contents**: - displays the deployment profile content.
 
 
-## Launch Deployment Profile ##<a name="Launch Deployment Profile"></a>
+## Launch Deployment Profile <a name="Launch Deployment Profile"></a>
 
 To launch a deployment profile, do the following:
 
@@ -54,8 +54,8 @@ The tab displays with options in the left panel.</br>
 
 2.	From the **Current Project** drop-down list in the left panel, select the project.
 
-3.	From the options in the left panel, click **Provisioning** and then select **Deployment Profiles** to open the Deployment Profiles page.<br>
-It displays deployment name, version, based on, scope, and associated project.<br>
+3.	From the options in the left panel, click **Provisioning** and then select **Profiles** name to open the Deployment Profiles page.<br>
+It displays design name, name of the profile, version of the profile, scope, and associated project.<br>
 
 4.	Select the deployment that you want to launch and click **Launch** to open the Launch dialog box.<br>
      

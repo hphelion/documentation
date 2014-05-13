@@ -1,13 +1,12 @@
 ---
 layout: default
-title: "Windows CLI: misc-features"
+title: "HP Helion Public Cloud CLI Software for Windows PowerShell: Misc-features"
 permalink: /cli/windows/2/misc/
 product: win-2-cli
 
 ---
-# Windows CLI: misc-features
+# HP Helion Public Cloud CLI Software for Windows PowerShell: Misc-features
 
-#HP-Cloud Object Storage Powershell Tutorial: Changing Response Formats
 ##Changing Response Formats
 
 Each command that you issue through the Provider or through a cmdlet will write out the response returned from the server in an easy to understand, human readable format. For a command line tool, this is the behavior one would expect. The CLI can also reformat each response

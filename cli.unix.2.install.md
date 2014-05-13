@@ -1,36 +1,36 @@
 ---
 layout: default
-title: "UNIX CLI for HP Cloud Installation"
+title: "UNIX CLI for HP Helion Public Cloud Installation"
 permalink: /cli/unix/2/install/
 product: unix-cli
 
 ---
-# UNIX CLI for HP CLoud v13.5 Installation
+# UNIX CLI for HP Helion Public Cloud v13.5 Installation
 
 If you are using v12.12, click [here](https://docs.hpcloud.com/cli/unix/install) for documentation.
 ___________________
 
 ###Important Notice###
 
-On November 4, 2013, the UNIX CLI was moved into its End-of-Life (EOL) Cycle process toward final deprecation. Please be aware that this does not mean that the UNIX CLI is "going away", but simply that HP Cloud is relinquishing its ownership of this CLI and, instead, making it available on the [HPCloud Github](https://github.com/hpcloud/unix_cli) repository. We encourage existing customers to consider migrating to the OpenStackClient (Unified) CLIs. As such, during this 6-month transition timeframe, HP Cloud will be dedicating engineering efforts around the OpenStackClient CLI as the primary Unified CLI of choice for development around your OpenStack cloud services.
+On November 4, 2013, the UNIX CLI was moved into its End-of-Life (EOL) Cycle process toward final deprecation. Please be aware that this does not mean that the UNIX CLI is "going away", but simply that HP Helion Public Cloud is relinquishing its ownership of this CLI and, instead, making it available on the [HPCloud Github](https://github.com/hpcloud/unix_cli) repository. We encourage existing customers to consider migrating to the OpenStackClient (Unified) CLIs. As such, during this 6-month transition timeframe, HP Helion Public Cloud will be dedicating engineering efforts around the OpenStackClient CLI as the primary Unified CLI of choice for development around your OpenStack cloud services.
 
 We wanted to ensure you were aware of the changes that may affect you during this 6-month transition time:
 
-+ The UNIX CLI has moved to the HP Cloud Github repository
++ The UNIX CLI has moved to the HP Helion Public Cloud Github repository
 
-  + In order to encourage development by the community, HP Cloud is sharing it with the community as open source, hosted on [https://github.com/hpcloud/unix_cli](https://github.com/hpcloud/unix_cli).
+  + In order to encourage development by the community, HP Helion Public Cloud is sharing it with the community as open source, hosted on [https://github.com/hpcloud/unix_cli](https://github.com/hpcloud/unix_cli).
  
   + However, [links to 12.12 and 13.5 UNIX CLI downloads](#downloads), and all documentation, are still currently available on docs.hpcloud.com, as usual.
 
 + Bugs will be addressed.
  
-  + Although the CLI has moved into the open source community, showstoppers and significant defects will be examined and addressed by the HP Cloud SDK/CLI team on a case-by-case basis.
+  + Although the CLI has moved into the open source community, showstoppers and significant defects will be examined and addressed by the HP Helion Public Cloud SDK/CLI team on a case-by-case basis.
 
-HP Cloud has contributed the Unix CLI back to the open source community, and you can get support, access the documentation, and download the source code [here](https://github.com/hpcloud/unix_cli).
+HP Helion Public Cloud has contributed the Unix CLI back to the open source community, and you can get support, access the documentation, and download the source code [here](https://github.com/hpcloud/unix_cli).
 
 _________________________________________
 
-Before you can begin working with the UNIX CLI, you have to install the package (of course!).  The instructions below work for Ubuntu, MacOS X, and CentOS installations.  Take a look at the [HP Cloud Unix CLI - Release Notes](/cli/unix/release-notes) for the latest features.
+Before you can begin working with the UNIX CLI, you have to install the package (of course!).  The instructions below work for Ubuntu, MacOS X, and CentOS installations.  Take a look at the [HP Helion Public Cloud Unix CLI - Release Notes](/cli/unix/release-notes) for the latest features.
 
 To install the UNIX CLI software, follow these steps:
 
@@ -60,7 +60,7 @@ To install the UNIX CLI software, follow these steps:
 
         hpcloud account:setup
 
-You can find the values for these variables through the [HP Public Cloud Console](https://horizon.hpcloud.com). Click the project menu and select *Manage Access Keys* and *Account Info*.  
+You can find the values for these variables through the [HP Helion Public Cloud Console](https://horizon.hpcloud.com). Click the project menu and select *Manage Access Keys* and *Account Info*.  
 
 <img src="media/api_keys-2.jpg" width="580" height="471" alt="" />
 

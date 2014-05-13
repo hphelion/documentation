@@ -1,13 +1,13 @@
 ---
 layout: default
-title: "Connecting to the HP Public Cloud"
+title: "Connecting to the HP Helion Public Cloud"
 permalink: /v13/bindings/fog/connect/
 product: fog
 
 ---
-#Ruby Fog Bindings for HP Cloud: Connecting to the HP Public Cloud
+#Ruby Fog Bindings for HP Helion Public Cloud: Connecting to the HP Helion Public Cloud
 
-This page gives you details on how to connect to the HP Public Cloud and contains the following sections:
+This page gives you details on how to connect to the HP Helion Public Cloud and contains the following sections:
 
 * [Initial Connection](#InitialConnection)
 * [Supplying Your Credentials](#SupplyingyourCredentials)
@@ -16,7 +16,7 @@ This page gives you details on how to connect to the HP Public Cloud and contain
 
 ##Initial Connection## {#InitialConnection}
 
-To connect to the HP Public Cloud, follow these steps:
+To connect to the HP Helion Public Cloud, follow these steps:
 
 1. Enter IRB
 
@@ -48,7 +48,7 @@ Where `SERVICE-NAME` can be [Compute](/bindings/fog/compute), [Storage](/binding
 
 **Note**: You must use the `:hp_access_key` parameter rather than the now-deprecated  `:hp_account_id` parameter you might have used in previous Ruby Fog versions.
 
-You can find the values the access key, secret key, and other values through the [HP Public Cloud Console](https://horizon.hpcloud.com). Click the project menu and select *Roles and API Endpoints*.
+You can find the values the access key, secret key, and other values through the [HP Helion Public Cloud Console](https://horizon.hpcloud.com). Click the project menu and select *Roles and API Endpoints*.
 
 
 ##Availability Zones## {#AvailabilityZones}
@@ -77,7 +77,7 @@ The current usable availability zones for the block storage service:
 
 ##Optional Parameters## {#OptionalParameters}
 
-This section describes the optional parameters that you can use when connecting to any of the services.  The examples below show the Compute service, but these optional parameters work with all of the available HP Public cloud services.
+This section describes the optional parameters that you can use when connecting to any of the services.  The examples below show the Compute service, but these optional parameters work with all of the available HP Helion Public Cloud services.
 
 The `user_agent` parameter allows you to specify a string to pass as a `user_agent` header for the connection.  You can use this to track the caller of the operations.  You can set the `user_agent` parameter as follows:
 

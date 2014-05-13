@@ -1,13 +1,13 @@
 ---
 layout: default
-title: "HP Cloud DNS Overview"
+title: "HP Helion Public Cloud DNS Overview"
 permalink: /dns/
-product: dns
+product: public-cloud 
 
 ---
-# HP Cloud Domain Name Service (DNS) Overview
+# HP Helion Public Cloud Domain Name Service (DNS) Overview
 
-The HP Cloud Domain Name service (DNS) provides you with a managed domain name service that features anycast routing hosted by HP Public Cloud.  
+The HP Helion Public Cloud Domain Name service (DNS) provides you with a managed domain name service that features anycast routing hosted by HP Helion Public Cloud.  
 
 ## API
-Do you need low level, raw REST API access to HP Cloud DNS?  Take a look at the [DNS API page](/api/dns/).
+Do you need low level, raw REST API access to HP Helion Public Cloud DNS?  Take a look at the [DNS API page](/api/dns/).

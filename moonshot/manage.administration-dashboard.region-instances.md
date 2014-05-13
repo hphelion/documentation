@@ -16,7 +16,7 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage">&#9650; UP</a> | NEXT &#9654; </p>
+<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/administration-dashboard/working-with-region-tab/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage/administration-dashboard/working-with-region-tab/">&#9650; UP</a> | <a href="/cloudos/moonshot/manage/administration-dashboard/region-images/">NEXT &#9654; </p></a>
 
 
 
@@ -51,7 +51,7 @@ A page is displayed to enter a password. Enter the Chassis Manager password for 
 
 **Note**: You cannot login to the instance with this console; it only displays the boot process of the instance. To login, you need to open a separate SSH session using the IP assigned to the instance.
 
-##Edit a Region Instance##<a name= "Edit a Region Instances"></a>
+##Edit a Region Instance<a name= "Edit a Region Instances"></a>
 
 Once a region instance is created, you can only edit the name of the instance. Use this option to edit the instance.
 
@@ -68,7 +68,7 @@ An Edit Instance dialog box is displayed. You can only edit the name of the inst
 OR <br>
 Click **Cancel** to abort and go to the previous screen.
 
-##Soft Reboot an Instance##<a name= "Soft Reboot an Instance"></a>
+##Soft Reboot an Instance<a name= "Soft Reboot an Instance"></a>
 
 Soft reboot can be used to stop the instance and reboot it. This function is similar to the Restart option in Microsoft Windows.
 
@@ -88,7 +88,7 @@ OR<br>
 Click **Cancel** to abort and go to the previous screen.
 
 
-##Terminate Region Instance(s)##<a name= "Terminate Region Instance(s)"></a>
+##Terminate Region Instance(s)<a name= "Terminate Region Instance(s)"></a>
 
 1.	Click the **Region** Tab to select it.
 
@@ -105,9 +105,9 @@ To terminate a single instance, click **More** against the instance to display a
 1. Select **Terminate Instance** to terminate it.
 
 
-##Force Delete an Instance##<a name= "Force Delete an Instance"></a>
+##Force Delete an Instance<a name= "Force Delete an Instance"></a>
 
-Use this option to delete an instance which is in an unresponsive state.
+Use this option to delete an instance that is in an unresponsive state.
 
 1.	Click the **Region** Tab to select it.
 
@@ -117,7 +117,7 @@ The page displays a list of instances Click **More** against the instance to dis
 3.	Click **Force Delete Instance**.<br>
 The selected instance is deleted after getting a confirmation from you.
 
-##View Console##<a name= "View Console"></a>
+##View Console<a name= "View Console"></a>
 
 To view the console details:
 

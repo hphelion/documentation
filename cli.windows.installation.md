@@ -1,13 +1,13 @@
 ---
 layout: default
-title: "HP Cloud Environment CLI Software for Windows PowerShell Installation"
+title: "HP Helion Public Cloud CLI Software for Windows PowerShell Installation"
 permalink: /cli/windows/installation/
 product: win-cli
 
 ---
-# HP Cloud Environment CLI Software for Windows PowerShell Installation #
+# HP Helion Public Cloud CLI Software for Windows PowerShell Installation #
 
-To get the HP Cloud Environment CLI Software for Windows PowerShell installed and running properly you must complete the following tasks:
+To get the HP Helion Public Cloud CLI Software for Windows PowerShell installed and running properly you must complete the following tasks:
 
 *  [Installation Prerequisites](#InstallationPrerequisites)
 *  [Run the installer package](#RuntheInstallerPackage)
@@ -18,11 +18,11 @@ To get the HP Cloud Environment CLI Software for Windows PowerShell installed an
 
 This page also describes how to [upgrade to a new version](#Upgrading) of the Windows CLI software.
 
-[Please download the latest version of the HP Cloud environment CLI software package for Windows PowerShell here (Version 1.3.3.9)](/file/WinCLI-1.3.3.9.zip)! 
+[Please download the latest version of the HP Helion Public Cloud CLI software package for Windows PowerShell here (Version 1.3.3.9)](/file/WinCLI-1.3.3.9.zip)! 
 
 ##Installation Prerequisites## {#InstallationPrerequisites}
 
-The following are prerequisites for installing and running the HP Cloud Environment CLI Software for Windows PowerShell.
+The following are prerequisites for installing and running the HP Helion Public Cloud CLI Software for Windows PowerShell.
 
 ###Install the Microsoft .NET Framework
 
@@ -30,7 +30,7 @@ This product requires the full (not client profile) 4.0 or higher version of the
 
 ###Set the Required Execution Policy### {#SettingtheRequiredExecutionPolicy}
 
-To use the HP Cloud Environment CLI Software for Windows PowerShell, you must make sure that your Powershell environment is capable of executing 3rd party modules. 
+To use the HP Helion Public Cloud CLI Software for Windows PowerShell, you must make sure that your Powershell environment is capable of executing 3rd party modules. 
 
 **Note**: If you are performing a re-installation of the software package, you can skip this step.  This step is applicable only for a fresh installation.
 
@@ -52,7 +52,7 @@ Close the Powershell window and reopen as administrator for the policy changes t
  
 ##Run the Installer Package## {#RunningtheInstallerPackage}
 
-Download the latest HP Cloud environment CLI software package for Windows PowerShell.  (See the [Release Notes](/cli/windows/release-notes) for details on the current release.) 
+Download the latest HP Helion Public Cloud CLI software package for Windows PowerShell.  (See the [Release Notes](/cli/windows/release-notes) for details on the current release.) 
 
 Launching the Windows installer package loads the following wizard.
 
@@ -84,7 +84,7 @@ Always use the `powershell.exe` appropriate for your OS. From the Windows comman
 
 ##Supply your Credentials## {#SupplyyourCredentials}
 
-The first time that you run the shell you must supply the access key, secret key, and tenant ID assigned during the registration process; You can find the values for these variables through the [HP Public Cloud Console](https://horizon.hpcloud.com). Click the project menu and select *Manage Access Keys* and *Account Info*.  You can also define the availability zone during the initial setup.**
+The first time that you run the shell you must supply the access key, secret key, and tenant ID assigned during the registration process; You can find the values for these variables through the [HP Helion Public Cloud Console](https://horizon.hpcloud.com). Click the project menu and select *Manage Access Keys* and *Account Info*.  You can also define the availability zone during the initial setup.**
 
 **Note: During a new configuration, 
 <img src="media/api_keys-2.jpg" width="580" height="471" alt="" />
@@ -92,7 +92,7 @@ The first time that you run the shell you must supply the access key, secret key
 The shell detects that this is your first time logging in and prompts you for these items. 
 
     ===============================================================
-    Welcome to the HP Cloud Powershell Environment.
+    Welcome to the HP Helion Public Cloud Powershell Environment.
     ===============================================================
     
        --> Registering Providers. . .
@@ -114,7 +114,7 @@ You only need to enter these credentials the first time you run the shell.  Afte
 
 ##Navigate to the Command Line## {#NavigatetotheCommandLine}
 
-To issue HP Cloud environment CLI Windows PowerShell commands (also sometimes called *cmdlets*), you need to first navigate to a container or the HP Public Cloud provider, which you can do by issuing the following command:
+To issue HP Helion Public Cloud CLI Windows PowerShell commands (also sometimes called *cmdlets*), you need to first navigate to a container or the HP Helion Public Cloud provider, which you can do by issuing the following command:
 
     cd HPCS:
 
@@ -125,6 +125,6 @@ the install folder specified while in the setup wizard. From there you can regis
 
 ##Upgrading to a New Version## {#Upgrading}
 
-When you upgrade to a new version of the HP Cloud environment CLI software for Windows PowerShell, you must first de-install the previous version of the software.  You can do this using the Windows `Add/Remove Programs` or `Programs and Features` utility (depending on the version of Windows you're using).  Search through the listing of programs for "HPCS-Powershell" and uninstall it.  
+When you upgrade to a new version of the HP Helion Public Cloud environment CLI software for Windows PowerShell, you must first de-install the previous version of the software.  You can do this using the Windows `Add/Remove Programs` or `Programs and Features` utility (depending on the version of Windows you're using).  Search through the listing of programs for "HPCS-Powershell" and uninstall it.  
 
 Once you have unistalled the previous revision, simply follow the instructions above to install the latest version, and you're be good to go!

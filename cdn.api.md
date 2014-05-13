@@ -1,13 +1,13 @@
 ---
 layout: default
-title: "HP Cloud CDN API"
+title: "HP Helion Public Cloud CDN API"
 permalink: /cdn/api/
 product: cdn
 
 ---
-# HP Cloud CDN API
+# HP Helion Public Cloud CDN API
 
-Surf on over to our [CDN API Reference](/api/CDN) for lots of details on the HP Cloud CDN service.  
+Surf on over to our [CDN API Reference](/api/CDN) for lots of details on the HP Helion Public Cloud CDN service.  
 
 <!-- For a detailed overview of how to interact with the CDN REST API using cURL:
 

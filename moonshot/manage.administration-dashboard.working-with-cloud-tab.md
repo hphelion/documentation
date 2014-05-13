@@ -16,7 +16,7 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage">&#9650; UP</a> | NEXT &#9654; </p>
+<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/administration-dashboard/tasks-by-role/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage/administration-dashboard/tasks-by-role/">&#9650; UP</a> | <a href="/cloudos/moonshot/manage/administration-dashboard/cloud-projects/">NEXT &#9654; </p></a>
 
 # Cloud Tab #
 
@@ -32,15 +32,18 @@ You can perform the following task:
 
 * <a href="#View Cloud Services">View Cloud Services</a>
 
-*  <a href="#View Domain Details">View Domain Details</a>
+* <a href="#View Domain Details">View Domain Details</a>
 
-*  [Manage Projects](http://cloudos/moonshot/manage/administration-dashboard/cloud-projects/)
+*  [Manage Projects](/cloudos/moonshot/manage/administration-dashboard/cloud-projects/)
 
-*  [Manage Users](http://cloudos/moonshot/manage/administration-dashboard/cloud-users)
+* [Manage Users](/cloudos/moonshot/manage/administration-dashboard/cloud-users/)
 
-*  [Manage Roles](http://cloudos/moonshot/manage/administration-dashboard/cloud-roles)
+* [Manage Roles](/cloudos/moonshot/manage/administration-dashboard/cloud-roles/)
 
-*  [Manage Images](http://cloudos/moonshot/manage/administration-dashboard/cloud-images)
+*  [Manage Images](/cloudos/moonshot/manage/administration-dashboard/cloud-images/)
+
+* [Manage Moonshot Chassis](/cloudos/moonshot/manage/administration-dashboard/manage-moonshot-chasssis-tab/)
+ 
 
 
 ## View Cloud Services <a name= "View Cloud Services"></a>
@@ -63,7 +66,7 @@ The following details are displayed for each of the services:
 
 * **Status**: Whether enabled. 
 
-* **Actions**: If a service supports Rest APIs, option to open Rest API displays under Actions column.
+* **Actions**: If a service supports REST APIs, option to open REST API displays under Actions column.
 
 
 ##View Domain Details <a name= "View Domain Details"></a> 

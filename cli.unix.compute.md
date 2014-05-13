@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "UNIX CLI for HP Cloud Compute Examples"
+title: "UNIX CLI for HP Helion Public Cloud Compute Examples"
 permalink: /cli/unix/compute/
 product: unix-cli
 
 ---
-# UNIX CLI for HP Cloud Compute Examples for v12.12
+# UNIX CLI for HP Helion Public Cloud Compute Examples for v12.12
 
 ___________________
 
@@ -17,13 +17,13 @@ On November 4, 2013, the UNIX CLI was moved into its End-of-Life Cycle process t
 * No new feature requests will be honored
 * Bug reports will be accepted
 
-HP Cloud has contributed the Unix CLI back to the open source community, and you can get support, access the documentation, and download the source code [here](https://github.com/hpcloud/unix_cli).
+HP Helion Public Cloud has contributed the Unix CLI back to the open source community, and you can get support, access the documentation, and download the source code [here](https://github.com/hpcloud/unix_cli).
 
 _________________________________________
 
 <!-- <iframe src="http://player.vimeo.com/video/37689112?title=0&amp;byline=0&amp;portrait=0" width="580" height="420" frameborder="0"> </iframe> -->
 
-This page gives you a few examples of how to perform various compute tasks using the HP Cloud service.  This page discusses the following tasks:
+This page gives you a few examples of how to perform various compute tasks using the HP Helion Public Cloud service.  This page discusses the following tasks:
 
 * [Flavor Commands](#FlavorCommands)
 * [Image Commands](#ImageCommands)
@@ -33,7 +33,8 @@ This page gives you a few examples of how to perform various compute tasks using
 * [Security Group Rule Commands](#SecurityGroupRuleCommands)
 * [Addresses or Floating IP Commands](#AddressesorFloatingIPCommands)
 
-You can also find some good how-tos for the compute service on the [Using the Compute Service](/compute/using/) page.
+<!-- Hiding until we can find this page
+You can also find some good how-tos for the compute service on the [Using the Compute Service](/compute/using/) page. -->
 
 Remember that you can get detailed help for any command or task with the following command:
 
@@ -248,7 +249,8 @@ In the following example, `winserv` is the name of the server, `large` is the fl
     Make sure the security group has port 3389 open
     You may wish to change the password when you log in
 
-An example of how to connect via a Windows RDP client is located [here](/compute/using#WindowsRDP).  You can use the `servers:console` command to extract the password if it is still available on the console.
+<!-- Hiding until we can find this page
+An example of how to connect via a Windows RDP client is located [here](/compute/using#WindowsRDP).  You can use the `servers:console` command to extract the password if it is still available on the console.-->
 
 ##Key Pair Commands## {#KeypairCommands}
 

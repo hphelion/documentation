@@ -16,7 +16,8 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage">&#9650; UP</a> | NEXT &#9654; </p>
+<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/administration-dashboard/cloud-images/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage/administration-dashboard/working-with-cloud-tab/">&#9650; UP</a> | <a href="/cloudos/moonshot/manage/administration-dashboard/before-you-begin/">
+NEXT &#9654; </p></a>
 
 
 #Manage Moonshot Chassis#
@@ -96,10 +97,10 @@ The name should have a minimum of 4 characters. The name should start with an al
 For example: *hostname.cloudos.local*
 
 7.	Click **Add** to add the Moonshot Chassis to the Cloud.<br>
-The chassis can be in any of the following states:<br> 
+The chassis can be in any of the following states: 
 
-<img src= "media/cos4m-state-of-chassis.png">
- 
+<img src="media/cos4ms-state-of-chassis.png"/>
+
 Once the operation is successful, the Moonshot Chassis is graphically represented on the screen.
 
 ###Edit Chassis###
@@ -107,7 +108,7 @@ Once the operation is successful, the Moonshot Chassis is graphically represente
 You can only edit the password of the chassis.
 
 1. In the Datacenter View, select the chassis to edit.<br>
-The Edit option does not get activated until you select the chassis in the Grid or Table view.
+The Edit option is not activated until you select the chassis in the Grid or Table view.
 
 2. Click edit to display the Edit Chassis Details dialog box.
 
@@ -122,7 +123,7 @@ Click **Cancel** to abort and go to the previous screen.
 You can delete a chassis if it is in maintenance mode and no active instances are running on it. A chassis can also be deleted if the discovery fails when the chassis is being added for the first time.
 
 1. In the Datacenter View, select the chassis to delete.
-The Delete option does not get activated until you select the chassis in the Grid or Table view.
+The Delete option is not activated until you select the chassis in the Grid or Table view.
 
 1. Click delete to display a confirmation box.
 
@@ -137,12 +138,13 @@ The Chassis Snapshot visually represents the chassis with all the cartridges alo
 
 The following table displays a list of icons and their description. These icons are displayed next to the Chassis Snapshot on the right. It also displays the complete state of the chassis in terms of the following: <br>
 
-<img src= "media/cos4m-table.png">
+<img src="media/cos4ms-table.png"/>
+
  
  * Click refresh to view the refreshed Chassis data.<br>
 The Force Refresh option takes a minute to complete. During this time you will be unable to perform any action on the cartridge or the nodes.
 
-**Note**: By default, the chassis data gets refreshed every 30 minutes.
+**Note**: By default, the chassis data is refreshed every 30 minutes.
 
 ###Table View####
 
@@ -305,11 +307,10 @@ Events log is displayed on the right panel of Datacenter View page. The Panel di
 The search results are displayed in the table.<br>
 OR<br>
  * In the **Filter** box, enter the text to base your search on.
- 
  * Click magnifier.<br>
 The search results are displayed in the table.
 
-4.	(Optional) Click eraser to clear the search criteria.
+4. (Optional) Click eraser to clear the search criteria.
 
 **Note**: 
 

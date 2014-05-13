@@ -5,8 +5,21 @@ relative_permalinks: false
 
 navigation:
   main:
-  - text: Services Overview
+  - text: HP Helion Documentation
     url: /
+  - text: Community
+    url: /helion/community/
+  - text: Public Cloud
+    url: /pc-overview/
+  - text: Cloud OS
+    url: /cloudos/
+  - text: Cloud OS for Moonshot
+    url: /cloudos/moonshot/
+  - text: CloudSystem
+    url: http://www.hp.com/go/cloudsystem/docs
+  public-cloud:
+  - text: HP Helion Public Cloud Documentation
+    url: /pc-overview/
   - text: Available Services
     url: /services/
   - text: Language Bindings
@@ -19,6 +32,8 @@ navigation:
     url: /faq/
   - text: Site Overview
     url: /site-overview/
+  - text: HP Helion Documentation
+    url: /
   mc:
   - text: Overview
     url: /mc/
@@ -45,6 +60,12 @@ navigation:
     url: /mc/compute/key-pairs/
   - text: Console Pages Site Map
     url: /mc/sitemap/
+
+  Having trouble finding the info you need? Try one of the following helpful links:</p>
+  - text: Knowledge Base
+    url: https://community.hpcloud.com/knowledge-base
+  - text: Forums
+    url: https://community.hpcloud.com/forum
   mc-object-storage:
   - text: Console Overview
     url: /mc/
@@ -174,7 +195,9 @@ navigation:
   - text: OpenStack Links
     url: /cloudos/openstack/	
   - text: Site Index
-    url: /cloudos/siteindex/	
+    url: /cloudos/siteindex/
+  - text: HP Helion Documentation
+    url: /
   moonshot:
   - text: HP Cloud OS for Moonshot Home
     url: /cloudos/moonshot/
@@ -192,25 +215,23 @@ navigation:
     url: /cloudos/moonshot/related-topics/	
   - text: Site Index
     url: /cloudos/moonshot/siteindex/
-  community:
-  - text: HP Cloud OS Community Doc Home
-    url: /cloudos/community/
-  - text: FAQs
-    url: /cloudos/community/faqs/ 		
-  - text: Technical Overview
-    url: /cloudos/community/technical-overview/  	
-  - text: Install & Config
-    url: /cloudos/community/install/	
-  - text: Services Overview
-    url: /cloudos/community/services-overview/			
-  - text: Reference Architecture
-    url: /cloudos/community/reference-architecture/	
+  - text: HP Helion Documentation
+    url: /
+  community: 
+  - text: HP Helion OpenStack Community Doc Home
+    url: /helion/community/
+  - text: Release Notes
+    url: /helion/community/release-notes/  	
+  - text: FAQ
+    url: /helion/community/faq/ 		
+  - text: Installation & Configuration
+    url: /helion/community/install-virtual/		
   - text: Related Topics
-    url: /cloudos/community/related-topics/		
-  - text: Glossary
-    url: /cloudos/community/glossary/			
+    url: /helion/community/related-links/		
   - text: Site Index
-    url: /cloudos/community/site-index/
+    url: /helion/community/siteindex/
+  - text: HP Helion Documentation
+    url: /
 
 apinavigation:
 - text: Site home page
@@ -239,6 +260,3 @@ apinavigation:
   url: https://apaas-docs.hpcloud.com
 - text: Messaging
   url: /api/msgaas/
-  
-
-  

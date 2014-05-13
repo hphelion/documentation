@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "Management console account and services dashboard"
+title: "Management Console Account and Services Dashboard"
 permalink: /mc/account/
 product: mc-account
 
 ---
-# Management console account and services dashboard
+# Management Console Account and Services Dashboard
 
 This page provides you with an overview of the management console (MC) account and services dashboard, which allows you to display and manage your account and services information.  This page covers the following topics:
 
@@ -58,5 +58,5 @@ From the account and services dashboard, you can perform any of the following ta
 
 * A good place to help you get going managing your account is with our [account and services management use cases](/mc/compute/using/)
 * Use the MC [site map](/mc/sitemap) for a full list of all available MC documentation pages
-* For basic information about our HP Cloud compute services, take a look at the [HP Cloud compute overview](/compute/) page
-* If you'd rather use the HP Cloud CLI features, go choose your topic of interest from our [HP CLoud CLI](/cli) pages
+* For basic information about our HP Helion Public Cloud compute services, take a look at the [HP Helion Public Cloud compute overview](/compute/) page
+* If you'd rather use the HP Helion Public Cloud CLI features, go choose your topic of interest from our [HP Helion Public Cloud CLI](/cli) pages

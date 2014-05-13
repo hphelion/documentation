@@ -1,29 +1,29 @@
 ---
 layout: default
-title: "UNIX CLI for HP Cloud: Command Line Reference"
+title: "UNIX CLI for HP Helion Public Cloud: Command Line Reference"
 permalink: /cli/unix/reference/
 product: unix-cli
 
 ---
-# UNIX CLI for HP Cloud References for v12.12
+# UNIX CLI for HP Helion Public Cloud References for v12.12
 
 _________________________________________
 
 ###Important Notice###
 
-On November 4, 2013, the UNIX CLI was moved into its End-of-Life (EOL) Cycle process toward final deprecation. Please be aware that this does not mean that the UNIX CLI is "going away", but simply that HP Cloud is relinquishing its ownership of this CLI and, instead, making it available on the [HPCloud Github](https://github.com/hpcloud/unix_cli) repository. We encourage our existing customers to eventually consider migrating to the OpenStackClient (Unified) CLIs. As such, during this 6-month transition timeframe, HP Cloud will be dedicating engineering efforts around the OpenStackClient CLI as the primary Unified CLI of choice for development around your OpenStack cloud services.
+On November 4, 2013, the UNIX CLI was moved into its End-of-Life (EOL) Cycle process toward final deprecation. Please be aware that this does not mean that the UNIX CLI is "going away", but simply that HP Helion Public Cloud is relinquishing its ownership of this CLI and, instead, making it available on the [HPCloud Github](https://github.com/hpcloud/unix_cli) repository. We encourage our existing customers to eventually consider migrating to the OpenStackClient (Unified) CLIs. As such, during this 6-month transition timeframe, HP Helion Public Cloud will be dedicating engineering efforts around the OpenStackClient CLI as the primary Unified CLI of choice for development around your OpenStack cloud services.
 
 We wanted to ensure you were aware of the changes that may affect you during this 6-month transition time:
 
-+ The UNIX CLI has moved to the HP Cloud Github repository
++ The UNIX CLI has moved to the HP Helion Public Cloud Github repository
 
-  + In order to encourage development by the community, HP Cloud is sharing it with the community as open source, hosted on [https://github.com/hpcloud/unix_cli](https://github.com/hpcloud/unix_cli). 
+  + In order to encourage development by the community, HP Helion Public Cloud is sharing it with the community as open source, hosted on [https://github.com/hpcloud/unix_cli](https://github.com/hpcloud/unix_cli). 
   + However, [links to 12.12 and 13.5 UNIX CLI downloads](/cli/unix/#downloads), and all documentation, are still currently available on docs.hpcloud.com, as usual.
 + Bugs will be addressed
 
-  + Although the CLI has moved into the open source community, showstoppers and significant defects will be examined and addressed by the HP Cloud SDK/CLI team on a case-by-case basis.
+  + Although the CLI has moved into the open source community, showstoppers and significant defects will be examined and addressed by the HP Helion Public Cloud SDK/CLI team on a case-by-case basis.
 
-HP Cloud has contributed the Unix CLI back to the open source community, and you can get support, access the documentation, and download the source code [here](https://github.com/hpcloud/unix_cli).
+HP Helion Public Cloud has contributed the Unix CLI back to the open source community, and you can get support, access the documentation, and download the source code [here](https://github.com/hpcloud/unix_cli).
 
 _________________________________________
 
@@ -116,7 +116,7 @@ Create or edit your account credentials.
 ###Description
 Create or edit your account credentials. If you do not specify an account name on the command line, the default account is updated.  If you do not specify name value pairs, you are prompted to input the account values.
 
-You  need your Access Key Id, Secret Key and Tenant Id from the HP Cloud web site to set up your account. Optionally, you can specify your own endpoint to access, but in most cases we recommend you use the default.
+You  need your Access Key Id, Secret Key and Tenant Id from the HP Helion Public Cloud web site to set up your account. Optionally, you can specify your own endpoint to access, but in most cases we recommend you use the default.
 
 Availability zones typically have the format `az-1.region-a.geo-1` or `region-a.geo-1`, depending on the service.  See your account API keys page to see your list of activated availability zones: https://console.hpcloud.com/account/api_keys
 
@@ -207,7 +207,7 @@ Create or edit your account credentials.
 ###Description
 Create or edit your account credentials. If you do not specify an account name on the command line, the default account is updated.  If you do not specify name value pairs, you are prompted to input the account values.
 
-You  need your Access Key Id, Secret Key and Tenant Id from the HP Cloud web site to set up your account. Optionally, you can specify your own endpoint to access, but in most cases we recommend you use the default.
+You  need your Access Key Id, Secret Key and Tenant Id from the HP Helion Public Cloud web site to set up your account. Optionally, you can specify your own endpoint to access, but in most cases we recommend you use the default.
 
 Availability zones typically have the format `az-1.region-a.geo-1` or `region-a.geo-1`, depending on the service.  See your account API keys page to see your list of activated availability zones: https://console.hpcloud.com/account/api_keys
 
@@ -817,10 +817,10 @@ Installs the bash completion file.
 `hpcloud complete`
 
 ###Description
-Installs the HP Cloud bash completion file.  If you run this command as the root user, the file is installed in a system-wide directory (if one is available).  Otherwise, the file is installed  in the `~/.bash_completion.d/` directory.  The `~/.bash_completion.d/` directory is not run by default; you must run the completion script explicitly.
+Installs the HP Helion Public Cloud bash completion file.  If you run this command as the root user, the file is installed in a system-wide directory (if one is available).  Otherwise, the file is installed  in the `~/.bash_completion.d/` directory.  The `~/.bash_completion.d/` directory is not run by default; you must run the completion script explicitly.
 
 ###Examples
-Installs the HP Cloud bash completion file.
+Installs the HP Helion Public Cloud bash completion file.
 
     hpcloud complete
 
@@ -1660,10 +1660,10 @@ Delete image `my-image` for availability zone `az-2.region-a.geo-1:
 `images:rm, images:delete, images:del`
 
 ##info## {#info}
-Display info about the HP Cloud UNIX CLI.
+Display info about the HP Helion Public Cloud UNIX CLI.
 
 ###Syntax
-`hpcloud info``Display info about the HP Cloud UNIX CLI.`
+`hpcloud info``Display info about the HP Helion Public Cloud UNIX CLI.`
 ##keypairs## {#keypairs}
 List the available keypairs.
 
@@ -2052,7 +2052,7 @@ Migrate files from a provider described by the source account.
 
 
 ###Description
-Migrates files from the deisgnated provider to the HP Cloud destination. This command works similarly to `copy` except the first argument is the source account (for example, `AWS`).  The source objects may be containers, objects, or regular expressions.
+Migrates files from the deisgnated provider to the HP Helion Public Cloud destination. This command works similarly to `copy` except the first argument is the source account (for example, `AWS`).  The source objects may be containers, objects, or regular expressions.
 
 ###Examples
 Migrate objects from the AWS `:aws_tainer` container to the `:hp_tainer` container:
@@ -3337,7 +3337,7 @@ Create or edit your account credentials.
 ###Description
 Create or edit your account credentials. If you do not specify an account name on the command line, the default account is updated.  If you do not specify name value pairs, you are prompted to input the account values.
 
-You  need your Access Key Id, Secret Key and Tenant Id from the HP Cloud web site to set up your account. Optionally, you can specify your own endpoint to access, but in most cases we recommend you use the default.
+You  need your Access Key Id, Secret Key and Tenant Id from the HP Helion Public Cloud web site to set up your account. Optionally, you can specify your own endpoint to access, but in most cases we recommend you use the default.
 
 Availability zones typically have the format `az-1.region-a.geo-1` or `region-a.geo-1`, depending on the service.  See your account API keys page to see your list of activated availability zones: https://console.hpcloud.com/account/api_keys
 
@@ -3428,7 +3428,7 @@ Create or edit your account credentials.
 ###Description
 Create or edit your account credentials. If you do not specify an account name on the command line, the default account is updated.  If you do not specify name value pairs, you are prompted to input the account values.
 
-You  need your Access Key Id, Secret Key and Tenant Id from the HP Cloud web site to set up your account. Optionally, you can specify your own endpoint to access, but in most cases we recommend you use the default.
+You  need your Access Key Id, Secret Key and Tenant Id from the HP Helion Public Cloud web site to set up your account. Optionally, you can specify your own endpoint to access, but in most cases we recommend you use the default.
 
 Availability zones typically have the format `az-1.region-a.geo-1` or `region-a.geo-1`, depending on the service.  See your account API keys page to see your list of activated availability zones: https://console.hpcloud.com/account/api_keys
 
@@ -4038,10 +4038,10 @@ Installs the bash completion file.
 `hpcloud complete`
 
 ###Description
-Installs the HP Cloud bash completion file.  If you run this command as the root user, the file is installed in a system-wide directory (if one is available).  Otherwise, the file is installed  in the `~/.bash_completion.d/` directory.  The `~/.bash_completion.d/` directory is not run by default; you must run the completion script explicitly.
+Installs the HP Helion Public Cloud bash completion file.  If you run this command as the root user, the file is installed in a system-wide directory (if one is available).  Otherwise, the file is installed  in the `~/.bash_completion.d/` directory.  The `~/.bash_completion.d/` directory is not run by default; you must run the completion script explicitly.
 
 ###Examples
-Installs the HP Cloud bash completion file.
+Installs the HP Helion Public Cloud bash completion file.
 
     hpcloud complete
 
@@ -4881,10 +4881,10 @@ Delete image `my-image` for availability zone `az-2.region-a.geo-1:
 `images:rm, images:delete, images:del`
 
 ##info## {#info}
-Display info about the HP Cloud UNIX CLI.
+Display info about the HP Helion Public Cloud UNIX CLI.
 
 ###Syntax
-`hpcloud info``Display info about the HP Cloud UNIX CLI.`
+`hpcloud info``Display info about the HP Helion Public Cloud UNIX CLI.`
 ##keypairs## {#keypairs}
 List the available keypairs.
 
@@ -5273,7 +5273,7 @@ Migrate files from a provider described by the source account.
 
 
 ###Description
-Migrates files from the deisgnated provider to the HP Cloud destination. This command works similarly to `copy` except the first argument is the source account (for example, `AWS`).  The source objects may be containers, objects, or regular expressions.
+Migrates files from the deisgnated provider to the HP Helion Public Cloud destination. This command works similarly to `copy` except the first argument is the source account (for example, `AWS`).  The source objects may be containers, objects, or regular expressions.
 
 ###Examples
 Migrate objects from the AWS `:aws_tainer` container to the `:hp_tainer` container:

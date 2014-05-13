@@ -7,14 +7,14 @@ product: mc-compute
 ---
 # Management console: Volumes screen
 
-The management console (MC) compute dashboard volumes screen allows you to view and manipulate compute volumes.  This page covers the following topics:
+The management console (MC) Compute dashboard volumes screen allows you to view and manipulate Compute volumes.  This page covers the following topics:
 
 * [Volumes screen overview](#Overview)
 * [For further information](#ForFurtherInformation)
 
 ##Volumes screen overview## {#Overview}
 
-The volumes screen displays your compute instance volume information for the availability zone (AZ) you have selected.
+The volumes screen displays your Compute instance volume information for the availability zone (AZ) you have selected.
 
 <img src="media/volumes-main.jpg" width="580" alt="" />
 
@@ -35,5 +35,5 @@ From this screen you can:
 
 ##For further information## {#ForFurtherInformation}
 
-* For basic information about our HP Cloud compute services, take a look at the [HP Cloud compute overview](/compute/) page
+* For basic information about our HP Helion Public Cloud Compute services, take a look at the [HP Helion Public Cloud Compute overview](/compute/) page
 * Use the MC [site map](/mc/sitemap) for a full list of all available MC documentation pages

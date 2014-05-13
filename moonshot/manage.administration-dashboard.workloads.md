@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Cloud OS for Moonshot: Administration Dashboard"
-permalink: /cloudos/moonshot/manage/administration-dashboard/working-with-project-tab/
+permalink: /cloudos/moonshot/manage/administration-dashboard/workloads/
 product: moonshot
 
 ---
@@ -16,12 +16,12 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage">&#9650; UP</a> | NEXT &#9654;</p>
+<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/administration-dashboard/working-with-project-tab/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage/administration-dashboard/working-with-project-tab/">&#9650; UP</a> | <a href= "/cloudos/moonshot/manage/administration-dashboard/running-topologies/"> NEXT &#9654;</p></a>
 
 # Workloads
 
 Workloads functionality in HP Cloud OS for Moonshot aims to facilitate the end user in deployment of a composite service comprising of different applications and hence different workloads in an easy to use manner. 
-The end user can browse through HP's catalog listing of pre-tested and pre-crafted workloads, download and publish them to the cloud and launch them to get a running application infrastructure without worrying about the intricate and in-depth understanding of technical details like topology, OpenStack nova flavor, Moonshot Cartridge specification etc. The end user can also define personalized workloads by following a simplified folder structure and can import the same to the cloud.
+The end user can browse through HP's catalog listing of pre-tested and pre-crafted workloads, download and publish them to the cloud and launch them to get a running application infrastructure without worrying about the intricate and in-depth understanding of technical details like topology, OpenStack Nova flavor, Moonshot Cartridge specification etc. The end user can also define personalized workloads by following a simplified folder structure and can import the same to the cloud.
 
 This section includes the following topics:
 
@@ -34,9 +34,10 @@ This section includes the following topics:
 * <a href="#Understanding Workload Content">Understanding Workload Content</a>
 
 * <a href="#Understanding Workload Lifecycle">Understanding Workload Lifecycle</a>
+
 * <a href="#Managing Workload Lifecycle Using Administration Dashboard">Managing Workload Lifecycle Using Administration Dashboard</a>
 
-## Understanding Workload Entities 
+## Understanding Workload Entities <a name= "Understanding Workload Entities"></a>
 
 
 Some of the important entities that help to make up Workloads based provisioning are:
@@ -44,14 +45,14 @@ Some of the important entities that help to make up Workloads based provisioning
 <img src="media/cos4ms-workload-prov.png"/>
 
 
-## Relationship between Workload Entities 
+## Relationship between Workload Entities <a name= "Relationship between Workload Entities"></a>
 
-A workload entity is an abstract representation of a service which maps to a given infrastructure blue-print (technically termed as topology). The same workload can be realized by different cloud resources present in the system which can be uniquely represented as deployment profiles. 
-For Example: Let us assume that a single server group based workload requirement is, to serve static web hosting. As we know that both Scott_1 and Borman can serve static web hosting, it is thus possible to have two different deployment profiles; where one maps to nova flavor compute resource of Borman while the other maps to Scott_1.  Also, a given deployment profile can be launched multiple times for same or different user. Considering this, there is an inherent relationship amongst workloads, topology, deployment profiles and deployed workloads which has been illustrated below:
+A workload entity is an abstract representation of a service which maps to a given infrastructure blue print (technically termed as topology). The same workload can be realized by different cloud resources present in the system which can be uniquely represented as deployment profiles. 
+For Example: Let us assume that a single server group based workload requirement is, to serve static web hosting. As we know that both m300 and HP ProLiant Moonshot Server can serve static web hosting, it is thus possible to have two different deployment profiles; where one maps to Nova flavor compute resource of HP ProLiant Moonshot Server while the other maps to m300.  Also, a given deployment profile can be launched multiple times for same or different user. Considering this, there is an inherent relationship among workloads, topology, deployment profiles and deployed workloads which has been illustrated below:
 
 <img src="media/cos4ms-relationship-between-workload-entities.png"/>
 
-## Cloud Personalities
+## Cloud Personalities <a name= "Cloud Personalities"></a>
 
 Lifecycle of a Workload is a multi-phase activity and needs different actors to collaborate together to make a simplified realization of a given application infrastructure by the end user. The list below elaborates on the actors along with their roles and responsibilities in entire workload lifecycle.
 
@@ -59,7 +60,7 @@ Lifecycle of a Workload is a multi-phase activity and needs different actors to 
 
 All the above players contribute towards realizing the lifecycle of a Workload and play relevant role in each stage of its workflow.
 
-## Understanding Workload Content
+## Understanding Workload Content <a name= "Understanding Workload Content"></a>
 
 Each workload is represented as a CSU file, which is inherently a data container to store various elements of workload (like images, topology design etc.) in compressed format as shown in the diagram below:
 
@@ -74,7 +75,7 @@ HP Cloud OS for Moonshot provides the functionality to import the CSU file and c
 The following sections illustrate the content using a sample Apache workload which allows you to deploy single Apache server on a Moonshot cartridge. 
  	
 
-&#9654;**Elements of Workload**
+&#9654;**Elements of a Workload**
 
 A workload typically comprises of images, topology, manifest file etc. Every workload must have the following set of components as described in the table below:
 
@@ -96,7 +97,7 @@ Infrastructure Documents</td><td>Topology</td><td>Defines the blue print of the 
 <tr style="background-color: white; color: black;">
 <td>Application Software specification</td><td>Deployment Profile Guide</td><td>Defines the software aspect of the workload. It primarily contains infrastructure hints in cloud agnostic format so that appropriate cloud resources can be discovered and can be referred in deployment profiles, which are used to deploy (often termed as launch) a given workload.</td></tr>
 <tr style="background-color: white; color: black;">
-<td>Images </td><td>OS image</td> <td>Specifies OS image used in server provisioning. A workload can have number of OS images depending upon the server design mentioned in the topology.</td></tr>
+<td>Images </td><td>OS image</td> <td>Specifies OS image used in server provisioning. A workload can have number of OS images depending upon the server design mentioned in the topology.<br> To create images, refer to the HP Cloud OS for Moonshot: Building Images document for more details</br/></td></tr>
 <tr style="background-color: white; color: black;">
 <td></td><td> Kernel image</td><td>Every Baremetal OS image is associated with a kernel image which is used during PXE boot process.</td></tr>
 
@@ -118,7 +119,7 @@ As mentioned above, a workload CSU file is an archived version of different cont
 
 A manifest file is a JSON file which contains specification of elements of a workload.
 
-## Understanding Workload Lifecycle 
+## Understanding Workload Lifecycle <a name= "Understanding Workload Lifecycle"></a>
 
 The following figure illustrates the lifecycle of workload entities and the workflow required when the content is being imported from remote folder using CODN:
 
@@ -126,7 +127,7 @@ The following figure illustrates the lifecycle of workload entities and the work
 
 Each lifecycle phase depicted above, and the various tasks that its respective owner / cloud personality plays, is briefly explained in the following sections. 
 
-**Note**: The next section “Managing Workload Lifecycle using Administrator Dashboard” illustrates Workload workflow in detail.
+**Note**: The next section "Managing Workload Lifecycle using Administrator Dashboard" illustrates Workload workflow in detail.
 
 **Phase 1: Create Content**
 
@@ -137,25 +138,25 @@ Content Creator is responsible for creating the deployable content that is uploa
 
 **Phase 2: Upload Content**
 
-Content Publisher bundles the workload files as a .csu file and uploads it on a centralized portal. It is later published to HP Cloud's Public catalog after necessary approvals. It is then available for importing into the cloud environment using HP Cloud OS for Moonshot Administration Dashboard. Access to the catalog is based on username and password credentials. 
+Content Publisher bundles the workload files as a .csu file and uploads it on a HP Cloud OS Distribution Network (CODN) portal. It is later published to HP Cloud's Public catalog after necessary approvals. It is then available for importing into the cloud environment using HP Cloud OS for Moonshot Administration Dashboard. Access to the catalog is based on username and password credentials. 
 
 **Phase 3: Download / Import to Cloud**
 
-Workload Management is primarily the task of Cloud Administrator. While the Cloud Administrator downloads the workload content and publishes it for user consumption, he also creates / edits and launches deployment profiles. Other roles can only manipulate the workload content that has been downloaded as per the project requirements.
+Workload Management is primarily the task of Cloud Administrator. While the Cloud Administrator downloads/imports (refer <a href="#Download">Download/Import</a>) the workload content and publishes it for user consumption, he also creates / edits and launches deployment profiles. Other roles can only manipulate the workload content that has been downloaded as per the project requirements.
 
 **Phase 4: Publish to Cloud**
 
-Once the content is downloaded / imported, the Cloud Administrator publishes it to the Cloud thus enabling the Workloads to be used in different projects depending on the scope defined while publishing the content. 
+Once the content is downloaded/imported, the Cloud Administrator publishes it to the Cloud thus enabling the Workloads to be used in different projects depending on the scope defined while publishing the content. When the Workload is published the constituent images and documents are copied to the corresponding repository; for example, images get stored in Glance, topology documents get stored in Focus etc. 
 
-**Phase 5: Create Profile**
+**Phase 5: Create Deployment Profile**
 
-A workload can have multiple deployment profiles. When a workload is downloaded from CODN or is imported from local system, a deployment guide that is part of the setup is also downloaded to your cloud environment. This deployment guide helps in the creation of a deployment profile. Once the deployment profile is created, you can provision the workload.
+A workload can have multiple deployment profiles. When a workload is downloaded from CODN or is imported from local system, a deployment guide that is part of the setup is also downloaded to your cloud environment. This deployment profile guide helps in the creation of a deployment profile. Once the deployment profile is created, you can provision the workload.
 
 **Phase 6: Provision**
 
-Once the Workloads are deployed, Project Administrators / Users can use the workload content to create / edit deployment profile and launch profile as per project requirements.
+Once the Workloads are deployed and the instances are provisioned (depending on the topology specifications), Project Administrators / Users can use the workload content to create / edit deployment profile and launch profile as per project requirements.
 
-## Managing Workload Lifecycle using Administration Dashboard 
+## Managing Workload Lifecycle using Administration Dashboard  <a name= "Managing Workload Lifecycle using Administration Dashboard"></a>
 
 The workload's flow using the Administration Dashboard can be depicted in the following sequence of steps:
 
@@ -181,28 +182,53 @@ Creation of workload is a manual process. This necessitates the need of assembli
 
 Currently, you can use CCUE designer to generate infrastructure documents and export its content as an XML file. CSU and Deployment Profile Guide can be generated using normal text editor. Content of the deployment profile needs to be customized as per desired topology. 
 
-&#9654;**Publish Workload to HP Cloud OS Enterprise Portal**
+&#9654;**Publish Workload to HP Cloud OS Distribution Network Portal**
 
 This process involves uploading content to HP Cloud OS Enterprise portal and initialization of the HP content approval process. Once content is approved by the appropriate authorities, it is published to HP Cloud Public catalog. The Cloud Administrator can now import, download and publish the workload in the Cloud environment using the Administration Dashboard. Refer to Updates and Extensions section for details.
 
 &#9654;**Perform Cloud Prerequisites**
 
-Cloud Administrator has to ensure the following prerequisites before provisioning any workload.
+The Cloud Administrator has to perform or verify the following prerequisites before provisioning any workload.
  
-1.	Publish Graffiti factory data
+1. Boot option based on node persistent boot configuration
 
-2.	Automated creation of nova flavors
+2.	Publish Graffiti factory data
+
+3.	Automated creation of OpenStack Nova flavors
+
+
+***Boot Option Based on Node Persistent Boot Configuration***
+
+You can select the boot method for a provisioned node based on the node persistent boot configuration. By default, all the nodes in the chassis are set to persistent PXE boot. Therefore, the provisioned instances will also boot from PXE. When there is a downtime in the Baremetal host, the instances first try to PXE boot but fail and fall back to HDD (Hard Disk Drive) and boot successfully from HDD.
+
+If the node is set to boot persistently from HDD, all subsequent boots after provisioning will be from HDD. When there is a downtime in Baremetal host, the instances continue to boot successfully from HDD.
+
+To build OS Images, refer steps 3 - 7 defined in Section One - Creating Linux Images [Building Images](/cloudos/moonshot/manage/image-builder/).
+
+You need to run the following commands at the iLO console to set a node to  persistently boot from PXE or HDD.
+
+ * To set a node to boot from PXE persistently:<br>
+`set node boot PXE C<x>N<y>` <br>
+ where x is the cartridge number and y is the node number. For example: C1N1.
+
+ * To set a node to boot from HDD persistently: <br>
+`set node boot HDD C<x>N<y>` <br>
+where x is the cartridge number and y is the node number. For example: C1N1.
+
+
+**Note:** For Windows provisioning, the instances always boot from HDD irrespective of the boot option set for the node instance. To create Windows disk images, refer to Section Two -  Creating Windows Images from [Building Images](/cloudos/moonshot/manage/image-builder/).
 	
+
 ***Graffiti Factory Data***
 
- Cloud Administrator must publish graffiti factory data before importing any workload in the Cloud. This can be done either by using CODN to import graffiti content from local folder or HP Cloud OS Enterprise portal. Refer to the section on Importing Workload to initialize cloud with graffiti factory data.  One can validate if the content from CODN portal or local import is being downloaded or not. To validate the content download, do the following:
+ The Cloud Administrator must publish the Graffiti factory data before importing any workload into the Cloud. This can be done either by using CODN to import the Graffiti content from a local folder or by using the HP CODN portal. Refer to the section on Importing Workload to initialize cloud with Graffiti factory data.  One can validate if the content from CODN portal or local import is being downloaded or not. To validate the downloaded content, do the following:
 
-  1. On the Administration Dashboard, click Cloud Tab to select it.<br>
+  1. On the Administration Dashboard, click the **Cloud** Tab to select it.<br>
    Cloud tab is activated and the options are displayed in the left panel. By default, all the services are displayed in the right pane.
 
-  2. Click Rest API displayed against Graffiti to display a Graffiti Service Details page.
+  2. Click REST API displayed next to Graffiti to display a Graffiti Service Details page.
 
-  3. Go to namespace section and click /1/namespace/list to expand it.
+  3. Go to the **namespace** section and click /1/namespace/list to expand it.
 
   4. Search for the `URN:X-HP:2014-1:CLOUDOS:TYPES:CAPABILITIES:MOONSHOT` in the list of Moonshot namespace.
  
@@ -211,11 +237,11 @@ Cloud Administrator has to ensure the following prerequisites before provisionin
     Go to Reference UI and replace the token value with the Authentication token.
     To access your authentication token, click **Projects** Tab and then **Access and Security** to display the Access and Security page. Click **Authentication Token** to display your authentication token.
 
-**Automated Creation of Nova Flavors**
+**Automated Creation of OpenStack Nova Flavors**
 
-  Cloud discovers the cartridges and creates flavors automatically. There is a polling cycle of five minutes to check for new registered cartridges for flavor creation .To validate that the flavor associated to content has been automatically created, do the following:
+ HP Cloud OS for Moonshot discovers the cartridges and creates flavors automatically. There is a polling cycle of five minutes to check for new registered cartridges for flavor creation. To validate that the flavor associated to content has been automatically created, do the following:
 
-   1. On the Administration Dashboard, click **Region** Tab to select it.<br>
+ 1. On the Administration Dashboard, click **Region** Tab to select it.<br>
 The Region tab is activated and the options are displayed in the left panel.</br>
 
  2.	Select **Flavors** to display the Flavors page.<br>
@@ -225,13 +251,13 @@ The page displays with the list of flavors.</br>
 
  4.	Click **View Extra Specs** to view the extra specifications of the flavor.
 
-## Populating Cloud with Workload
+## Populating Cloud with Workload 
 
-Cloud Administrator can populate the Cloud with workload by either importing it using local folder (if the .csu file corresponding to workload is available) or by using remote HP Cloud OS Enterprise portal. 
+The Cloud Administrator can populate the Cloud with a workload by either importing it using local folder (if the .csu file corresponding to workload is available) or by using remote CODN portal. 
 
 **Note**: Cloud Administrator should have the necessary permissions to access the HP Cloud OS Enterprise portal.
 
-Populating cloud with workload involves following phases:
+Populating cloud with workload involves following steps:
 
 1.	Import  using local folder <br>
     and/or</br> 
@@ -278,7 +304,7 @@ The Project Tab is activated and the options are displayed in the left panel.</b
 5.	Click **OK** to save the details.
 The updates are displayed in the Updates and Extensions page. 
 
-**Download**
+**Download** <a name= "Download"></a> 
 
 To download the Workload content that has been imported, do the following:
 
@@ -332,7 +358,7 @@ A success message is displayed. Once the installation completes, the workload wi
 
 &#9654;**Managing Workload**
 
-Once the Workload content is downloaded, it is displayed in the Workloads page. The Workloads page displays the Workload Dashboard with the details of the Workload content. The Cloud Administrator and Project Administrator can use the Workloads Page to view the workloads and create deployment profiles.
+Once the Workload content is published, it is displayed in the Workloads page. The Workloads page displays the Workload Dashboard with the details of the Workload content. The Cloud Administrator and Project Administrator can use the Workloads Page to view the workloads and create deployment profiles.
 
 To view the Workload Dashboard, do the following:
 
@@ -342,7 +368,7 @@ The Project tab is activated and the options are displayed in the left panel.</b
 
 3.	From the left panel, click **Provisioning** and then select **Workloads**.<br>
 The Workloads page is displayed.
-The Workloads Dashboard displays the details of the total workload topologies, the corresponding deployment profiles and the deployed workloads. The total workloads are the workloads that are downloaded using the Updates and Extensions option or are present on your local system.</br>
+The Workloads Dashboard displays the details of the total workload topologies, the corresponding deployment profiles and the deployed workloads. The total workloads are the workloads that are published using the Updates and Extensions option or are present on your local system.</br>
 
 The Dashboard page is divided into two views: **Tree View** in the left and **Details View** in the right.
 
@@ -353,9 +379,9 @@ The Dashboard page is divided into two views: **Tree View** in the left and **De
  * The top section displays the total number of Workload Topologies, Deployment Profiles, and Deployed Workloads. It also displays the progress in terms of running and not running Workload Topologies, Deployed Profiles and Workloads. 
  * The above information is also represented in a tabular view in the bottom section of the panel. The table also displays the source of the workload. Currently, supported sources are- <br>
 
-        CODN-Local- If the content is being published using local import folder
+        CODN-Local- If the content is published using local import folder
 
-        CODN-Remote- If the content is being published using remote HP Cloud OS Portal.
+        CODN-Remote- If the content is published using remote HP Cloud OS Portal.
 
  * The middle section of the right panel displays a graphical representation of the top ten workload topologies based on the highest number of successfully deployed workloads
 

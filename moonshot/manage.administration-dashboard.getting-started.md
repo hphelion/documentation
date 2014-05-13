@@ -16,13 +16,13 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage">&#9650; UP</a> | NEXT &#9654;</p>
+<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/administration-dashboard/before-you-begin/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage">&#9650; UP</a> | <a href="/cloudos/moonshot/manage/administration-dashboard/tasks-by-role/">NEXT &#9654;</p></a>
 
 # The Administration Dashboard #
 
 The HP Cloud OS for Moonshot Administration Dashboard is the interface which is used to manage the cloud once the cloud environment is created in the Operational Dashboard.
 
-The Administration Dashboard can be accessed by different user roles to perform the tasks assigned to that role. Apart from the basic functionalities, such as creating projects, users, roles, resource pools, topology templates etc.; HP Cloud OS for Moonshot provides two major features to enhance your cloud experience.
+The Administration Dashboard can be accessed by different user roles to perform the tasks assigned to that role. Apart from the basic functionalities, such as creating projects, users, roles, resource pools, topology templates etc.; HP Cloud OS for Moonshot Administrative Dashboard provides two major features to enhance your cloud experience.
 
 * **Moonshot Management**
 
@@ -41,16 +41,17 @@ Chassis Manager caters to three important requirements of a Cloud Administrator.
 
 **Datacenter View**
  
-It provides an overview of the hosted chassis in a datacenter. In this view, Cloud Administrator is able to add/delete chassis which then goes on to discover all cartridges and nodes of a chassis. At a glance, the user is able to comprehend the datacenter health and view critical events that need immediate attention.
+It provides an overview of the managed chassis in a datacenter. In this view, Cloud Administrator is able to add/delete chassis which then goes on to discover all cartridges and nodes in a chassis. At a glance, the user is able to comprehend the datacenter health and view critical events that need immediate attention.
 
 **Single Chassis View** 
 
 It provides in-depth information of a selected chassis. In this view, the user is able to grasp the overall structure and health of the contained cartridges and nodes.
 
-A drill-down to individual cartridges or nodes provides detailed information in terms of configuration, power status, health status, workload information etc. 
+A drill-down to individual cartridge or node provides detailed information in terms of configuration, power status, health status, workload information etc. 
 Event information at individual chassis level helps to monitor chassis events.
 The user is also able to perform power Off/On operations on individual cartridges and nodes.
 For more details on working with Moonshot Chassis, refer to the Moonshot Management section.
+
 
 &#9654;**Workload Service**
 
@@ -61,7 +62,7 @@ Before you access the Administration Dashboard, ensure that the Cloud Environmen
 
 You can access the HP Cloud OS for Moonshot Administration Dashboard in either of the following ways:
 
-* In your browser window, type the public IP address of your Cloud Controller Node in the following format https://<Public IP Address>
+* In your browser window, type the public IP address of your Cloud Controller Node. Login with the Admin account and password you specified on the **Create Cloud**->**Attributes** dialog in the HP Cloud OS for Moonshot Operational Dashboard.
 
    OR
 

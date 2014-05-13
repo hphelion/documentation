@@ -1,12 +1,13 @@
 ---
 layout: default
-title: "HP Public Cloud Software Downloads"
+title: "HP Helion Public Cloud Software Downloads"
 permalink: /downloads/
+product: public-cloud
 
 ---
-# HP Public Cloud Software Downloads# 
+# HP Helion Public Cloud Software Downloads# 
 
-HP Public Cloud has a few software downloads, each of which is on its appropriate page--the Ruby Fog Bindings download is on the Ruby Fog Bindings page, for example.  But to give you quick and easy access, we have also consolidated our list of downloads here on this page.  Find what you're looking for and download away!
+HP Helion Public Cloud has a few software downloads, each of which is on its appropriate page--the Ruby Fog Bindings download is on the Ruby Fog Bindings page, for example.  But to give you quick and easy access, we have also consolidated our list of downloads here on this page.  Find what you're looking for and download away!
 
 Here's what we have for you:
 
@@ -33,7 +34,7 @@ Here's what we have for you:
 * [Overview page](/cli/windows)
 * [Release Notes](/cli/windows/release-notes)
 
-**Note**: See the [HP Cloud version 13.5 overview(/version-overview/) page for information on software versions.
+**Note**: See the [HP Helion Public Cloud version 13.5 overview](/version-overview/) page for information on software versions.
 
 ###Python NovaClient### {#PythonNovaClient}
 * [Installation package, Version 2.6.8-17](/file/python-novaclient_2.6.8-17.tar.gz)
@@ -50,9 +51,9 @@ We have moved all our Ruby Fog bindings to the Fog Community; please continue to
 * [Ruby Fog Community Documentation](http://fog.io/)
 
 ###Java/Clojure jclouds Bindings### {#jcloudsBindingsInstall}
-* [Installation page](http://www.jclouds.org/documentation/userguide/installation-guide) (This is the [jclouds.org](http://www.jclouds.org) installation page)
+* [Installation page](http://jclouds.apache.org/start/install/) (This is the [jclouds.org](http://www.jclouds.org) installation page)
 * [Overview page](/bindings/jclouds)
-<!-- * [Release Notes](bindings/jclouds/release-notes)-->
+<!-- * [Release Notes](bindings/jclouds/release-notes) -->
 
 ###PHP Bindings### {#PHPBindingsInstall} 
 * [Installation page](http://hpcloud.github.com/HPCloud-PHP/) (This is the GitHub repository page for the installation package)

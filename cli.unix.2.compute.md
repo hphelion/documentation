@@ -1,35 +1,35 @@
 ---
 layout: default
-title: "UNIX CLI for HP Cloud Compute Examples"
+title: "UNIX CLI for HP Helion Public Cloud Compute Examples"
 permalink: /cli/unix/2/compute/
 product: unix-cli
 
 ---
-# UNIX CLI for HP Cloud v13.5 Compute Examples
+# UNIX CLI for HP Helion Public Cloud v13.5 Compute Examples
 
 If you are using v12.12, click [here](https://docs.hpcloud.com/cli/unix/compute) for documentation.
 ___________________
 
 ###Important Notice###
 
-On November 4, 2013, the UNIX CLI was moved into its End-of-Life (EOL) Cycle process toward final deprecation. Please be aware that this does not mean that the UNIX CLI is "going away", but simply that HP Cloud is relinquishing its ownership of this CLI and, instead, making it available on the [HPCloud Github](https://github.com/hpcloud/unix_cli) repository. We encourage existing customers to consider migrating to the OpenStackClient (Unified) CLIs. As such, during this 6-month transition timeframe, HP Cloud will be dedicating engineering efforts around the OpenStackClient CLI as the primary Unified CLI of choice for development around your OpenStack cloud services.
+On November 4, 2013, the UNIX CLI was moved into its End-of-Life (EOL) Cycle process toward final deprecation. Please be aware that this does not mean that the UNIX CLI is "going away", but simply that HP Helion Public Cloud is relinquishing its ownership of this CLI and, instead, making it available on the [HPCloud Github](https://github.com/hpcloud/unix_cli) repository. We encourage existing customers to consider migrating to the OpenStackClient (Unified) CLIs. As such, during this 6-month transition timeframe, HP Helion Public Cloud will be dedicating engineering efforts around the OpenStackClient CLI as the primary Unified CLI of choice for development around your OpenStack cloud services.
 
 We wanted to ensure you were aware of the changes that may affect you during this 6-month transition time:
 
-+ The UNIX CLI has moved to the HP Cloud Github repository
++ The UNIX CLI has moved to the HP Helion Public Cloud Github repository
 
-  + In order to encourage development by the community, HP Cloud is sharing it with the community as open source, hosted on [https://github.com/hpcloud/unix_cli](https://github.com/hpcloud/unix_cli).
+  + In order to encourage development by the community, HP Helion Public Cloud is sharing it with the community as open source, hosted on [https://github.com/hpcloud/unix_cli](https://github.com/hpcloud/unix_cli).
  
   + However, [links to 12.12 and 13.5 UNIX CLI downloads](#downloads), and all documentation, are still currently available on docs.hpcloud.com, as usual.
 
 + Bugs will be addressed
 
-  + Although the CLI has moved into the open source community, showstoppers and significant defects will be examined and addressed by the HP Cloud SDK/CLI team on a case-by-case basis.
+  + Although the CLI has moved into the open source community, showstoppers and significant defects will be examined and addressed by the HP Helion Public Cloud SDK/CLI team on a case-by-case basis.
 
-HP Cloud has contributed the Unix CLI back to the open source community, and you can get support, access the documentation, and download the source code [here](https://github.com/hpcloud/unix_cli).
+HP Helion Public Cloud has contributed the Unix CLI back to the open source community, and you can get support, access the documentation, and download the source code [here](https://github.com/hpcloud/unix_cli).
 _________________________________________
 
-This page addresses perfoming compute tasks using HP Cloud with examples for the following command types:
+This page addresses perfoming compute tasks using HP Helion Public Cloud with examples for the following command types:
 
 * [Flavor Commands](#FlavorCommands)
 * [Image Commands](#ImageCommands)
@@ -39,8 +39,8 @@ This page addresses perfoming compute tasks using HP Cloud with examples for the
 Get detailed help for any command or task by running:
 
     $ hpcloud help <TASK>
-
-See the following for compute service how-tos [Using the compute service](/compute/using/) page.  
+<!-- Hiding until we can find this page
+See the following for compute service how-tos [Using the compute service](/compute/using/) page.  -->
 
 
 See the following articles for advanced compute features:
@@ -322,4 +322,5 @@ In the following example, `winserv` is the name of the server, `large` is the fl
     
 **Note**: The output for this command is the Windows Administrator password. To connect to the instance via the public IP and RDP, use  `username` Administrator and the presented password for `password`.
 
-See [the How To page](/compute/using#WindowsRDP) for an example of how to connect via a Windows RDP client.  You can use the `servers:console` command to extract the password if it is still available on the console.
+<!-- Hiding until we can find this page
+See [the How To page](/compute/using#WindowsRDP) for an example of how to connect via a Windows RDP client.  You can use the `servers:console` command to extract the password if it is still available on the console. -->

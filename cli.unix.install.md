@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "UNIX CLI for HP Cloud Installation"
+title: "UNIX CLI for HP Helion Public Cloud Installation"
 permalink: /cli/unix/install/
 product: unix-cli
 
 ---
-# UNIX CLI for HP Cloud Installation for v12.12
+# UNIX CLI for HP Helion Public Cloud Installation for v12.12
 
 ___________________
 
@@ -17,20 +17,20 @@ On November 4, 2013, the UNIX CLI was moved into its End-of-Life Cycle process t
 * No new feature requests will be honored
 * Bug reports will be accepted
 
-HP Cloud has contributed the Unix CLI back to the open source community, and you can get support, access the documentation, and download the source code [here](https://github.com/hpcloud/unix_cli).
+HP Helion Public Cloud has contributed the Unix CLI back to the open source community, and you can get support, access the documentation, and download the source code [here](https://github.com/hpcloud/unix_cli).
 
 _________________________________________
 
 
-Before you can begin working with the UNIX CLI for HP Cloud, you have to install the package (of course!).  The instructions below work for Ubuntu, MacOS X, and CentOS installations.  Take a look at the [UNIX CLI for HP Cloud - Release Notes](/cli/unix/release-notes) for the latest features.
+Before you can begin working with the UNIX CLI for HP Helion Public Cloud, you have to install the package (of course!).  The instructions below work for Ubuntu, MacOS X, and CentOS installations.  Take a look at the [UNIX CLI for HP Helion Public Cloud - Release Notes](/cli/unix/release-notes) for the latest features.
 
-[You can download the latest version of the UNIX CLI for HP Cloud software here (Version 1.9.1)](/file/hpcloud-1.9.1.gem)!
+[You can download the latest version of the UNIX CLI for HP Helion Public Cloud software here (Version 1.9.1)](/file/hpcloud-1.9.1.gem)!
 
-To install the UNIX CLI for HP Cloud software, follow these steps:
+To install the UNIX CLI for HP Helion Public Cloud software, follow these steps:
 
-1. Start by [installing](/bindings/fog/install) the [Ruby Fog Bindings for HP Cloud](/bindings/fog) software on which the UNIX CLI for HP Cloud depends.
+1. Start by [installing](/bindings/fog/install) the [Ruby Fog Bindings for HP Helion Public Cloud](/bindings/fog) software on which the UNIX CLI for HP Helion Public Cloud depends.
 
-2. Download and install the UNIX CLI for HP Cloud gem using curl:
+2. Download and install the UNIX CLI for HP Helion Public Cloud gem using curl:
 
         curl -sL https://docs.hpcloud.com/file/hpcloud-1.9.1.gem >hpcloud.gem
         sudo gem install hpcloud.gem
@@ -57,7 +57,7 @@ To install the UNIX CLI for HP Cloud software, follow these steps:
 
         hpcloud account:setup
 
-You can find the values for these variables on through the [HP Public Cloud Console](https://horizon.hpcloud.com). Click the project menu and select *Manage Access Keys* and *Roles and API Endpoints*.  
+You can find the values for these variables on through the [HP Helion Public Cloud Console](https://horizon.hpcloud.com). Click the project menu and select *Manage Access Keys* and *Roles and API Endpoints*.  
 
 <img src="media/api_keys-2.jpg" width="580" height="471" alt="" />
 

@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "UNIX CLI for HP Cloud: Object Store Migration"
+title: "UNIX CLI for HP Helion Public Cloud: Object Store Migration"
 permalink: /cli/unix/articles/migration/
 product: unix-cli
 categories: cli linux object store migration
 tags: cli linux object store migration aws rackspace google
 ---
-#UNIX CLI for HP Cloud: Performing UNIX object storage migration v12.12#
+#UNIX CLI for HP Helion Public Cloud: Performing UNIX object storage migration v12.12#
 
 ___________________
 
@@ -18,11 +18,11 @@ On November 4, 2013, the UNIX CLI was moved into its End-of-Life Cycle process t
 * No new feature requests will be honored
 * Bug reports will be accepted
 
-HP Cloud has contributed the Unix CLI back to the open source community, and you can get support, access the documentation, and download the source code [here](https://github.com/hpcloud/unix_cli).
+HP Helion Public Cloud has contributed the Unix CLI back to the open source community, and you can get support, access the documentation, and download the source code [here](https://github.com/hpcloud/unix_cli).
 
 _________________________________________
 
-You can use the Unix CLI for HP Cloud to migrate object store data from other cloud storage providers to your HP Cloud object storage containers.  You can copy objects individually, or perform a recursive copy of multiple files.
+You can use the Unix CLI for HP Helion Public Cloud to migrate object store data from other cloud storage providers to your HP Helion Public Cloud object storage containers.  You can copy objects individually, or perform a recursive copy of multiple files.
 
 You can perform object migration from the AWS, Google, and Rackspace services.  You may be able to migrate objects from other providers but that functionality is not currently supported.
 
@@ -32,11 +32,11 @@ You can perform object migration from the AWS, Google, and Rackspace services.  
 
 ##Getting started migrating your data## {#GettingStarted}
 
-First you need to [download and install the latest Unix CLI client](/cli/unix/install) and set up your HP Public Cloud account as the default.  Next, create a UNIX CLI account with the credentials of the source from which you wish to migrate objects.  Use the `-p` option of the [`account:setup`](/cli/unix/reference#account:setup) to specify an alternate provider.  If you use the `-p` option with AWS, Google or Rackspace, you are prompted to enter the provider-appropriate credentials, and the `account:setup` command attempts to verify the account.  
+First you need to [download and install the latest Unix CLI client](/cli/unix/install) and set up your HP Helion Public Cloud account as the default.  Next, create a UNIX CLI account with the credentials of the source from which you wish to migrate objects.  Use the `-p` option of the [`account:setup`](/cli/unix/reference#account:setup) to specify an alternate provider.  If you use the `-p` option with AWS, Google or Rackspace, you are prompted to enter the provider-appropriate credentials, and the `account:setup` command attempts to verify the account.  
 
 **Note**: You can use this account only to perform migrations.  
 
-To create a UNIX CLI for HP Cloud account to be used to migrate objects from the account `sharkey` on the Rackspace server:
+To create a UNIX CLI for HP Helion Public Cloud account to be used to migrate objects from the account `sharkey` on the Rackspace server:
 
     $ hpcloud account:setup -p rackspace sharkey
     ****** Setup your Rackspace sharkey account ******
@@ -55,9 +55,9 @@ You can use simple commands such as `list` with this account:
 
 ##Performing a migration## {#Performing}
 
-Once you have set up an account, you can use the [`migrate`] (/cli/unix/reference#migrate) command to recursively copy data from the source account into your HP Public Cloud account.  
+Once you have set up an account, you can use the [`migrate`] (/cli/unix/reference#migrate) command to recursively copy data from the source account into your HP Helion Public Cloud account.  
 
-To move files from the `tuna` container in the Rackspace `sharkey` account to the `tarpon` container in your HP Public Cloud account:
+To move files from the `tuna` container in the Rackspace `sharkey` account to the `tarpon` container in your HP Helion Public Cloud account:
 
     $ hpcloud migrate sharkey :tuna :tarpon
     Excon requests with a block are deprecated, pass :response_block instead
@@ -73,5 +73,5 @@ You can ignore the deprecation message.  The last part of the object name is dis
 
 ##For more information## {#articles}
 
-For more tips and How-tos on using your UNIX CLI for HP Cloud, see [UNIX CLI for HP Cloud: Articles on to use the UNIX CLI for HP Cloud](/cli/unix/articles/).
+For more tips and How-tos on using your UNIX CLI for HP Helion Public Cloud, see [UNIX CLI for HP Helion Public Cloud: Articles on to use the UNIX CLI for HP Helion Public Cloud](/cli/unix/articles/).
 

@@ -16,17 +16,17 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage">&#9650; UP</a> | NEXT &#9654;</p>
+<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/administration-dashboard/deployment-profiles/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage/administration-dashboard/working-with-project-tab/">&#9650; UP</a> | <a href="/cloudos/moonshot/manage/administration-dashboard/resource-pools/">NEXT &#9654;</p></a>
 
 # Manage Topology Designs #
 
-Use the Topology Designs area of the HP Cloud OS for Moonshot Administration Dashboard to manage service designs, which are the recipes for automating the cloud. A topology design is used for straightforward IaaS deployments, and allows you to design in a free-form layout where connection relationships implicitly define the service fulfillment lifecycle. The provider for Topology Designs is HP Cloud OS for Moonshot. Available components are determined by the version of OpenStack you select within HP Cloud OS for Moonshot, e.g., Diablo, Grizzly. As part of creating a design, you add nodes and set properties in the Editor Tab. Use the Validation Tab at any time to view details about design errors. After creating the design, you can optionally create one or more Profiles based on the design which allows you to override some of the original configuration properties. Profiles create an association to a design document and allow you to set different values such as flavors, machine images and keypairs.
+Use the Topology Designs area of the HP Cloud OS for Moonshot Administration Dashboard to manage service designs, which are the recipes for automating the cloud. A topology design is used for straightforward IaaS deployments, and allows you to design in a free-form layout where connection relationships implicitly define the service fulfillment lifecycle. The provider for Topology Designs is HP Cloud OS for Moonshot. Available components are determined by the version of OpenStack you select within HP Cloud OS for Moonshot, for example: Grizzly. As part of creating a design, you add nodes and set properties in the Editor Tab. Use the Validation Tab at any time to view details about design errors. After creating the design, you can optionally create one or more Profiles based on the design which allows you to override some of the original configuration properties. Profiles create an association to a design document and allow you to set different values such as flavors, machine images and keypairs.
 
 **Note**: 
 
 * Topology Designs can be created by all users but should ideally be created by a Cloud Architect. 
 
-* If the topology design is created by a Project Admin or a Project User, it is suggested that the scope should not be selected as Public, Cloud as the user will be unable save and publish the design.
+* If the topology design is created by a Project Admin or a Project User, it is suggested that the scope should not be selected as Public, Cloud as the user will be unable to save and publish the design.
 
 * Project User cannot edit any topology created by Cloud Architect.
 
@@ -46,7 +46,7 @@ The Topology Designer allows you to perform different tasks using the following:
 
 * <a href="#Validations Tab">Validation</a>
 
-## Browse Designs ##<a name="Browse Designs Page"></a>
+## Browse Designs <a name="Browse Designs Page"></a>
 
 The Browse Designs page displays the list of existing topology designs and their status. You can perform the following tasks in the Browse Designs page: 
 
@@ -84,18 +84,14 @@ To view the design details, do the following:
 3.	From the options in the left panel, click **Provisioning** and then select **Topology Designs** to display list of existing designs and their status in the Browse Designs page.
 
 4.	Select a design from the list of Deployment Templates.<br>The design details are displayed in the right panel of the Overview Tab along with the graphical representation of the design.</br>
+<p>
+The design is displayed in View only mode and displays the following details.</p>
 
-The design is displayed in View only mode and displays the following details.
+   * Name - The name of the design.
 
-* Name - The name of the design.
+   * Cloud Profile - Represents the supported OpenStack version and capabilities of the cloud to which you are deploying.
 
-* Last Modified - Date, time, and user who last modified the design.
-
-* Cloud Profile - Represents the supported OpenStack version and capabilities of the cloud to which you are deploying.
-
-* Resource Pool - Indicates the name of the Resource Pool associated with the design
-
-* Validation Status -Indicates the validation status of the Document, Nodes, Relations, and Profiles.
+   * Validation Status -Indicates the validation status of the Document, Nodes, Relations, and Profiles.
 
 * Structure Overview - Shows the number of nodes and connections.
 
@@ -115,7 +111,7 @@ The tab displays with options in the left panel.
 6.	In the **Description** box, enter the details about the design for example-size, operating system etc.
 
 7.	Click **Next**. 
-The General   appears selected and the Resource Pool & Scope option gets highlighted.
+The General checkbox appears selected and the Resource Pool & Scope option is highlighted.
 
 8.	From the **Cloud Profile** drop-down list, select *HP Cloud OS Grizzly Baremetal*.<br>It represents the supported OpenStack version and capabilities of the cloud to which you are deploying. Your selection here determines which node types are available during design layout in the Editor and which Resource Pools are available for selection.</br>
 
@@ -164,7 +160,7 @@ The General   appears selected and the Resource Pool & Scope option gets highlig
    Click **Cancel** to abort and go to the previous screen.
 
 
-## Overview Tab in Topology Designer ##<a name= "Overview Tab"></a>
+## Overview Tab in Topology Designer <a name= "Overview Tab"></a>
 
 The Overview Tab opens with the selected design details at the top and a graphical representation of the topology design at the bottom of the page.
 
@@ -261,7 +257,7 @@ Rules regarding saving, validation, and publishing:
 
 Publishing status can be viewed in Browse Designs and can be changed in the Overview or the Editor Tabs.
 
-### To publish a design: ###
+#### To publish a design: ####
 
 1.	Click the **Project** Tab to select it.<br>
 The tab displays with options in the left panel.
@@ -315,7 +311,7 @@ The design must be valid and you must specify a Resource Pool before exporting.
 
 6.	Click **Save** to save the design.
 
-##  Editor ##<a name="Editor Tab"></a>
+##  Editor <a name="Editor Tab"></a>
 
 The Editor Tab within Topology Designs helps you to create and edit a design in a free-form component layout.
 
@@ -331,14 +327,16 @@ You can perform the following tasks in the Editor Tab.
 
 **Create a new design**
 
-•	From **Browse Designs**, click **Create**.<br>A blank canvas displays in the **Editor** tab. For more information, refer to Create Topology Design.</br>
+From **Browse Designs**, click **Create**.<br>A blank canvas displays in the **Editor** tab. For more information, refer to Create Topology Design.</br>
 
 
 **Use Editor Controls**
 
 When you open the editor, the following controls are available in the left toolbar:
 
-<img src="media/cos4ms-editor-controls.png"/>
+<img src="media/cos4ms-editor-controls.PNG"/>
+
+
 
 **Design Topology Layouts**
 
@@ -424,7 +422,7 @@ Once the design is created and saved, you can modify the properties of the compo
 
 3.	Click **Yes** to confirm.<br>The item is removed from the layout.</br>
 
-## Profiles ## <a name="Profiles Tab"></a>
+## Profiles  <a name="Profiles Tab"></a>
 
 When a topology design is created, the properties set for the nodes become the 
 default configuration for the design. This configuration displays as the Default Profile in the Provisioning > Deployment Profiles option. Profiles provide a way to override the default configuration by allowing you to set different values for node properties such as flavors, machine images, or keypairs. They create an association to a binding document. Profiles are optional and are not required in order to publish a design.
@@ -521,7 +519,7 @@ A confirmation dialog box displays.
 8.	Click Yes.
 The profile is deleted.
 
-## Revisions ##<a name="Revisions Tab"></a>
+## Revisions <a name="Revisions Tab"></a>
 The system tracks design revisions sequentially in the **Revisions** Tab. Every time a design is edited and saved, the revisions list is updated. You can revert to an earlier version of the design, if required.
 
 To revert to a previous design version, do the following:
@@ -547,7 +545,7 @@ A list of design revisions are displayed with the Revision number and Date & Tim
 9.	Click **Yes** to confirm.
 A new version is created (a copy of the selected version) with updated details.
 
-## Validation ##<a name="Validations Tab"></a>
+## Validation <a name="Validations Tab"></a>
 
 Validation is a continuing process during design creation, configuration and editing. Topology Designs provide a validation log to view all design detail issues in one place.  While creating design in Editor Tab and Profiles in Profiles Tab, an error count is displayed in case of errors. The validation process checks that a Profile contains all the required configuration properties, for example the image is selected etc.
 
@@ -582,14 +580,11 @@ The design details are displayed in the Overview Tab
 5.	Click the **Validation** Tab to activate it.<br>
 The Validation page displays with following details.
  * the icon representing the component
-
  * the name of the component
-
  * a brief description of the error/errors
- 
  * type of component
 
-6.	 Click error to go to the source of the issue and correct it.
+6.	Click error to go to the source of the issue and correct it.
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

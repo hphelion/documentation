@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "UNIX CLI for HP Cloud: Performing Large File Uploads"
+title: "UNIX CLI for HP Helion Public Cloud: Performing Large File Uploads"
 permalink: /cli/unix/articles/large
 product: unix-cli
 categories: cli linux unix
 tags: large file upload download
 ---
-#UNIX CLI for HP Cloud: Performing large file uploads v12.12#
+#UNIX CLI for HP Helion Public Cloud: Performing large file uploads v12.12#
 
 ___________________
 
@@ -18,11 +18,11 @@ On November 4, 2013, the UNIX CLI was moved into its End-of-Life Cycle process t
 * No new feature requests will be honored
 * Bug reports will be accepted
 
-HP Cloud has contributed the Unix CLI back to the open source community, and you can get support, access the documentation, and download the source code [here](https://github.com/hpcloud/unix_cli).
+HP Helion Public Cloud has contributed the Unix CLI back to the open source community, and you can get support, access the documentation, and download the source code [here](https://github.com/hpcloud/unix_cli).
 
 _________________________________________
 
-The UNIX CLI for HP Cloud is the perfect way to upload large files.  This article contains some tuning and recovery tips about uploading large files.
+The UNIX CLI for HP Helion Public Cloud is the perfect way to upload large files.  This article contains some tuning and recovery tips about uploading large files.
 
 If you upload files larger than 5 gigabytes (GB) with the Unix CLI, they are divided into 1 GB segments and a manifest file is created to reassemble the segments.  You can use the manifests file as you would any object and do not remove the segments.
 
@@ -78,4 +78,4 @@ Now retry your upload with the `-r` option:
 
 ##For more information## {#articles}
 
-For more tips and How-tos on using your UNIX CLI for HP Cloud, see [UNIX CLI for HP Cloud: Articles on to use the UNIX CLI for HP Cloud](/cli/unix/articles/).
+For more tips and How-tos on using your UNIX CLI for HP Helion Public Cloud, see [UNIX CLI for HP Helion Public Cloud: Articles on to use the UNIX CLI for HP Helion Public Cloud](/cli/unix/articles/).

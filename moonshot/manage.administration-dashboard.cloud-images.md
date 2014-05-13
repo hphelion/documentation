@@ -16,7 +16,7 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage">&#9650; UP</a> | NEXT &#9654; </p>
+<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/administration-dashboard/cloud-users/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage/administration-dashboard/working-with-cloud-tab/">&#9650; UP</a> | <a href="/cloudos/moonshot/manage/administration-dashboard/manage-moonshot-chasssis-tab/">NEXT &#9654; </p></a>
 
 
 #Manage Images#
@@ -45,7 +45,7 @@ To view the list of cloud images:
 
 3. Click **Image Name** to view the image details and specifications.
 
-##Create a Cloud Image##<a name= "Create a Cloud Image"></a>
+##Create a Cloud Image<a name= "Create a Cloud Image"></a>
 
 To create cloud images:
 
@@ -53,8 +53,8 @@ To create cloud images:
 
 2. Select Images, from the options in the left panel, select Images to open the Images page.
 
-<p>**Note**: It is mandatory to create image types such as *QCOW2* and *AMI* with associated *Amazon Kernel Image (AKI)* and *Amazon RAMdisk Image (ARI)*. It is suggested to create the images in the following sequence:* Amazon Kernel Image (AKI)*, Amazon RAMdisk Image (ARI)**, and *QCOW2*.
-<br><p>
+**Note**: It is mandatory to create image types such as *QCOW2* and *AMI* with associated *Amazon Kernel Image (AKI)* and *Amazon RAMdisk Image (ARI)*. It is suggested to create the images in the following sequence:* Amazon Kernel Image (AKI)*, Amazon RAMdisk Image (ARI)**, and *QCOW2*.
+<br>
 The **Kernel Image** drop-down list and **RAM Disk Image** drop-down list is displayed when the selected format is QCOW2 or AMI.</p>
 <p>
 To create AKI images, perform the following:</p>
@@ -75,7 +75,7 @@ To create AKI images, perform the following:</p>
   
   * Select **Image** location from the drop-down list. The Image Location box is displayed.
  
-  * In the **Image Location** box, enter the HTTP URL to load the AKI image from.<br>
+  * In the **Image Location** box, enter the HTTP URL from which to load the AKI image.<br>
    OR
  
   * Select **Image File** from the drop-down-list.
@@ -100,6 +100,7 @@ To create AKI images, perform the following:</p>
 OR<br>
 Click **Cancel** to abort and go to the previous screen.
 <br>
+
 **Note**: ARI and AKI images are only listed in the Region Tab. Cloud and Project Tabs display images from which an instance can be launched such as QCOW2, AMI etc.</br>
 
 To create QCOW2, perform the following:
@@ -112,14 +113,14 @@ To create QCOW2, perform the following:
  
  * From the **Image Source** drop-down list, perform either of the following:
   
-  * Select Image location from the drop-down list. The Image Location box is displayed.
+  * Select Image Location from the drop-down list. The Image Location box is displayed.
   
-  * In the Image Location box, enter the HTTP URL to load the QCOW2 image from.<br>
+  * In the **Image Location** box, enter the HTTP URL from which to load the QCOW2 image.<br>
 OR<br>
   
   * Select Image File from the drop-down-list. The Choose File option is displayed.
  
-  * Click Choose File to browse the QCOW2 image.
+  * Click **Choose File** to browse the QCOW2 image.
   
   * Select the QCOW2 Image to upload.
 
@@ -137,14 +138,16 @@ OR<br>
 
 * From the **RAM Disk Image** drop-down list, select the corresponding RAM disk image.
 
-* Click **Create Image**. A message is displayed on successful creation. The image displays in the table in the Images page.<br>
+* Click **Create Image**. <br>A message is displayed on successful creation. The image displays in the table in the Images page.<br>
 OR <br>
 Click **Cancel** to abort and go to the previous screen.
 
-**Note**: Do not navigate from the page while the image is being created.
-It is suggested to use different names while creating images.
+**Note**:<br>
 
-##Edit a Cloud Image##<a name= "Edit a Cloud Image"></a>
+- Do not navigate from the page while the image is being created.<br>
+- It is suggested to use different names while creating images.
+
+##Edit a Cloud Image<a name= "Edit a Cloud Image"></a>
 
 To edit an image:
 
@@ -160,7 +163,7 @@ To edit an image:
 OR <br>
 Click **Cancel** to abort and go to the previous screen.
 
-##Delete a Cloud Image##<a name= "Delete a Cloud Image"></a>
+##Delete a Cloud Image<a name= "Delete a Cloud Image"></a>
 
 To delete a cloud:
 
@@ -173,7 +176,7 @@ A message is displayed to ask your confirmation. The image is deleted once your 
 
 To delete a group of images, click to select the image/images that you want to delete and click check box **Delete Images**. The images are deleted and removed from the image list.
 
-##Launch a Cloud Image##<a name= "Launch a Cloud Image"></a>
+##Launch a Cloud Image<a name= "Launch a Cloud Image"></a>
 
 To launch an image in the Administration Dashboard:
 
@@ -184,27 +187,20 @@ To launch an image in the Administration Dashboard:
 3. Select **Launch** against the image listed in the table. A Launch Instance dialog box displays with four tabs: **Details** Tab, **Access & Security** Tab, **Networking** Tab and **Post-Creation** Tab. By default, Details is the active tab.
 
 4. On the **Details** Tab, perform the following:
-   
-* From the **Instance Source** drop-down list, select the image.
-  
+  * From the **Instance Source** drop-down list, select the image.
  * From the **Image** drop-down list, select the value. 
-  
  * In the **Instance Name** box, enter a name for the instance.
-   
  * From the **Flavor** drop-down list, select the Baremetal flavor. <br>This is default flavor that is created.
-  
-  * In the Instance Count box, enter 1 or more than 1.<br><p>
-The flavor details are displayed on the right side of the dialog box.</br></p>
+ * In the Instance Count box, enter 1 or more than 1.<br>
+The flavor details are displayed on the right side of the dialog box.</br>
 
-1. On the Access and Security Tab, perform the following:
-  
- * From the **Keypair** drop-down list, select value from the list.
+5.  On the Access and Security Tab, perform the following:
+   * From the **Keypair** drop-down list, select value from the list.
 
-6. On the **Networking** Tab, no networks are listed in the **Selected Networks** section.
-  
- * Select the network from the **Available Networks** section.
+6.  On the **Networking** Tab, no networks are listed in the **Selected Networks** section.
+   * Select the network from the **Available Networks** section.
 
-7. Click **Launch**. <br>You are taken to the Instances page with the progress bar displaying the completion progress.
+7.  Click **Launch**. <br>You are taken to the Instances page with the progress bar displaying the completion progress.
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

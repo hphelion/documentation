@@ -65,7 +65,7 @@ Creates a backup of a Volume.
 : ID of the volume to back up.
 
 ###Example
-Creates a backup of volume 68453 to a container named `my-backup-container` in your HP Cloud Object Storage account:
+Creates a backup of volume 68453 to a container named `my-backup-container` in your HP Helion Public Cloud Object Storage account:
 
     nova backup-create --container my-backup-container 68453
 
@@ -1073,7 +1073,7 @@ Display the details for volume `76677`:
 ##volume-snapshot-create## {#volume-snapshot-create}
 Add a new snapshot.
 ###Syntax
-`nova volume-snapshot-create [--force <True|False>] [--display_name <display_name>] [--display_description <display_description>] <volume_id>`
+`	 [--display_name <display_name>] [--display_description <display_description>] <volume_id>`
                                    
 **volume_id**
 :  ID of the volume to snapshot

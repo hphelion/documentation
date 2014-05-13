@@ -16,12 +16,12 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage">&#9650; UP</a> | NEXT &#9654; </p>
+<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/administration-dashboard/region-instances/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage/administration-dashboard/working-with-region-tab/">&#9650; UP</a> | <a href= "/cloudos/moonshot/manage/administration-dashboard/region-networks/"> NEXT &#9654; </p></a>
 
 
 #Manage Images#
 
-Images are stored at the Domain level with a single Glance service and are unaffected by region selection. Only Public images are visible to all users. To *create images, refer to the Cloud Image Builder document for more details*.
+Images are stored at the Domain level with a single Glance service and are unaffected by region selection. Only Public images are visible to all users. To *build images, refer to the [Building Images](/cloudos/moonshot/manage/image-builder/) document for more details*.
 
 You can perform the following tasks:
 
@@ -42,7 +42,7 @@ To view the list of available image:
 
 3.	Click **Image Name** to view the image details and specifications.
 
-##Create a Region Image##<a name= "Create a Region Image"></a>
+##Create a Region Image<a name= "Create a Region Image"></a>
 
 To create a region image:
 
@@ -73,7 +73,7 @@ QCOW2 or AMI.
  * Select **Image Location** from the drop-down list.<br>
 The Image Location box is displayed.
 
- * In the **Image Location** box, enter the HTTP URL to load the AKI image from.<br>
+ * In the **Image Location** box, enter the HTTP URL from which to load the AKI image.<br>
 OR<br>
 
  * Select **Image File** from the drop-down-list. <br>
@@ -102,7 +102,53 @@ This makes the image as read-only.
 OR<br>
 Click **Cancel** to abort and go to the previous screen.
 
-**To create QCOW2****:**
+
+**To create ARI images**:
+
+* Click **Create Image** to open a Create an Image dialog box.
+
+* In the **Name** box, enter a name for the image.
+
+* (Optional) In the **Description** box, enter description for the image.
+
+* From the **Format** drop-down list, select the format as *ARI*.
+
+* From the **Image Source** drop-down list, do either of the following:
+
+ * Select **Image Location** from the drop-down list.<br>
+The Image Location box is displayed.
+
+ * In the **Image Location** box, enter the HTTP URL from which to load the ARI image.<br>
+OR<br>
+
+ * Select **Image File** from the drop-down-list. <br>
+The Choose File option is displayed.
+
+ * Click **Choose File** to browse the ARI image.
+ 
+* Select the **ARI Image** to upload.
+
+* The **CPU Architecture** drop-down list displays *x86_64* by default.<br>
+The moonshot hardware supports the above specification.
+
+* In the **Minimum Disk** box, specify a minimum size required to boot image.<br>
+If no input is entered, the minimum value defaults to 0.
+
+* In the **Minimum Ram** box, specify a minimum size required to boot image.<br>
+If no input is entered, the minimum value defaults to 0.
+
+* Select check box  against **Public** to select it.<br>
+This will make the image visible to all users.
+
+* Select check box against **Protected** to select it.<br>
+This makes the image as read-only.
+
+* Click **Create Image**.<br> A message is displayed on successful creation. The image displays in the table in the Images page.<br>
+OR<br>
+Click **Cancel** to abort and go to the previous screen.
+
+
+**To create QCOW2 images :**
 
 * Click **Create Imag**e to open a Create an Image dialog box.
 
@@ -114,7 +160,7 @@ Click **Cancel** to abort and go to the previous screen.
  * Select **Image Location** from the drop-down list.<br>
 The Image Location box is displayed.
  
- * In the **Image Location** box, enter the HTTP URL to load the QCOW2 image from.<br>
+ * In the **Image Location** box, enter the HTTP URL from which to load the QCOW2 image.<br>
 OR<br>
  
  * Select **Image File** from the drop-down-list.<br>
@@ -150,7 +196,7 @@ Click **Cancel** to abort and go to the previous screen.
 
 **Note**: Do not navigate from the page while the image is being created.
 
-##Edit a Region Image##<a name= "Edit a Region Image"></a>
+##Edit a Region Image<a name= "Edit a Region Image"></a>
 
 To edit an image:
 
@@ -163,7 +209,7 @@ The Edit Image dialog box is displayed.
 OR<br>
 Click **Cancel** to abort and go to the previous screen.
 
-##Delete a Region Image##<a name= "Delete a Region Image"></a>
+##Delete a Region Image<a name= "Delete a Region Image"></a>
 
 To delete a region image:
 
@@ -173,38 +219,32 @@ A message is displayed to ask your confirmation. The image is deleted once your 
 * To delete a group of images, select check box to select the image/images that you want to delete and click **Delete Images**.<br>
 The images are deleted and removed from the image list.
 
-##Launch a Region Image##<a name= "Launch a Region Image"></a>
+##Launch a Region Image<a name= "Launch a Region Image"></a>
 
 To launch an image in the Administration Dashboard:
 
+
 1. Click the **Region** Tab to select it.
 
-1. From the options in the left panel, select **Images** to display the Images page.
+2. From the options in the left panel, select **Images** to display the Images page.
 
-1. Select **Launch** against the image listed in the table.<br>
+3. Select **Launch** against the image listed in the table.<br>
 A Launch Instance dialog box displays with four tabs: **Details** Tab, **Access & Security** Tab, **Networking** Tab, and **Post-Creation** Tab. By default, Details is the active tab.
 
-1. On the **Details** Tab, perform the following:
- 
- * From the **Instance Source** drop-down list, select the image.
- 
- * From the **Image** drop-down list, select the value.
- 
- * In the **Instance Name** box, enter a name for the instance.
- 
- * From the **Flavor** drop-down list, select the Baremetal flavor.<br>
+4. On the **Details** Tab, perform the following:
+  * From the **Instance Source** drop-down list, select the image.
+  * From the **Image** drop-down list, select the value.
+  * In the **Instance Name** box, enter a name for the instance.
+  * From the **Flavor** drop-down list, select the Baremetal flavor.<br>
 This is default flavor that is created.
- 
- * In the **Instance Count** box, enter *1* or more than 1.<br>
+  * In the **Instance Count** box, enter *1* or more than 1.<br>
 The flavor details are displayed on the right side of the dialog box.
 
 5. On the **Access & Security** Tab, do the following:
- 
- * From the **Keypair** drop-down list, select value from the list.
+  * From the **Keypair** drop-down list, select value from the list.
 
-6.	On the **Networking** Tab, no networks are listed in the **Selected Networks** section.
- 
- * Select the private network from the **Available networks** section.
+6. On the **Networking** Tab, no networks are listed in the **Selected Networks** section.
+  * Select the private network from the **Available networks** section.
  
 7.	Click **Launch**.<br>
 The image is displayed in the table on the Image page with **Active** status.

@@ -22,7 +22,7 @@ This page covers how to view network details using the networks screen of the ma
 
 Before you can view the details of an existing network, you must:
 
-* [Sign up for an HP Cloud compute account](https://horizon.hpcloud.com/register)
+* [Sign up for an HP Helion Public Cloud compute account](https://horizon.hpcloud.com/register)
 * [Activate compute service on your account](https://horizon.hpcloud.com/landing/)
 * [Create a network](https://horizon.hpcloud.com/project/networks/)
 
@@ -84,6 +84,6 @@ The network details screen provides you access to the following functions:
 
 ##For further information## {#ForFurtherInformation}
 
-* For basic information about our HP Cloud compute services, take a look at the [HP Cloud compute overview](/compute/) page
+* For basic information about our HP Helion Public Cloud compute services, take a look at the [HP Helion Public Cloud compute overview](/compute/) page
 * Use the MC [site map](/mc/sitemap) for a full list of all available MC documentation pages
 * For information about the Open Stack networking features, surf on over to [their networking wiki](https://wiki.openstack.org/wiki/Quantum)

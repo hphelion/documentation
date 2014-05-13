@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "UNIX CLI for HP Cloud CDN Examples"
+title: "UNIX CLI for HP Helion Public Cloud CDN Examples"
 permalink: /cli/unix/cdn/
 product: unix-cli
 
 ---
-# UNIX CLI for HP Cloud CDN Examples for v12.12
+# UNIX CLI for HP Helion Public Cloud CDN Examples for v12.12
 
 ___________________
 
@@ -17,11 +17,11 @@ On November 4, 2013, the UNIX CLI was moved into its End-of-Life Cycle process t
 * No new feature requests will be honored
 * Bug reports will be accepted
 
-HP Cloud has contributed the Unix CLI back to the open source community, and you can get support, access the documentation, and download the source code [here](https://github.com/hpcloud/unix_cli).
+HP Helion Public Cloud has contributed the Unix CLI back to the open source community, and you can get support, access the documentation, and download the source code [here](https://github.com/hpcloud/unix_cli).
 
 _________________________________________
 
-This page gives you a few examples of how to perform various CDN tasks using the HP Cloud service.  This page discusses the following tasks:
+This page gives you a few examples of how to perform various CDN tasks using the HP Helion Public Cloud service.  This page discusses the following tasks:
 
 * [Listing Containers](#ListingContainers)
 * [Adding Containers](#AddingContainers)

@@ -17,7 +17,7 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"><a href="/cloudos/moonshot/"> &#9664; PREV</a> | <a href="/cloudos/moonshot/">&#9650; UP</a> | <a href="/cloudos/moonshot/install/siteindex/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"><a href="/cloudos/moonshot/"> &#9664; PREV</a> | <a href="/cloudos/moonshot/">&#9650; UP</a> | <a href="/cloudos/moonshot/siteindex/">NEXT &#9654;</a> </p>
 
 # Related Topics
 
@@ -67,4 +67,3 @@ Specifically, you might find these OpenStack references helpful:
 </ul>
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-

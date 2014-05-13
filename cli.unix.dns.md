@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "UNIX CLI for HP CLoud DNS Examples"
+title: "UNIX CLI for HP Helion Public Cloud DNS Examples"
 permalink: /cli/unix/dns/
 product: unix-cli
 
 ---
-# UNIX CLI for HP Cloud DNS Examples for v12.12
+# UNIX CLI for HP Helion Public Cloud DNS Examples for v12.12
 
 ___________________
 
@@ -17,11 +17,11 @@ On November 4, 2013, the UNIX CLI was moved into its End-of-Life Cycle process t
 * No new feature requests will be honored
 * Bug reports will be accepted
 
-HP Cloud has contributed the Unix CLI back to the open source community, and you can get support, access the documentation, and download the source code [here](https://github.com/hpcloud/unix_cli).
+HP Helion Public Cloud has contributed the Unix CLI back to the open source community, and you can get support, access the documentation, and download the source code [here](https://github.com/hpcloud/unix_cli).
 
 _________________________________________
 
-This page gives you a few examples of how to perform various DNS tasks using the HP Cloud service.
+This page gives you a few examples of how to perform various DNS tasks using the HP Helion Public Cloud service.
 
 Remember that you can get detailed help for any command or task with the following command:
 

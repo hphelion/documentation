@@ -16,7 +16,7 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage">&#9650; UP</a> | NEXT &#9654; </p>
+<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/administration-dashboard/before-you-begin/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage/administration-dashboard/before-you-begin/">&#9650; UP</a> | <a href="/cloudos/moonshot/manage/administration-dashboard/region-instances/"> NEXT &#9654; </p></a>
 
 
 #Working with Region Tab#
@@ -36,13 +36,13 @@ You can perform the following task:
 
 * <a href="#Region Info">Region Info</a>
 
-* [Manage Region Instances](http://cloudos/moonshot/manage/administration-dashboard/region-instances/)
+* [Manage Region Instances](/cloudos/moonshot/manage/administration-dashboard/region-instances/)
 
-* [Manage Images](http://cloudos/moonshot/manage/administration-dashboard/region-images/) 
+* [Manage Images](/cloudos/moonshot/manage/administration-dashboard/region-images/) 
 
-* [Manage Networks](http://cloudos/moonshot/manage/administration-dashboard/region-networks/)
+* [Manage Networks](/cloudos/moonshot/manage/administration-dashboard/region-networks/)
 
-* [Manage Flavors](http://cloudos/moonshot/manage/administration-dashboard/region-flavors/)
+* [Manage Flavors](/cloudos/moonshot/manage/administration-dashboard/region-flavors/)
 
 ##Region Overview <a name= "Region Overview"></a>
 
@@ -59,6 +59,8 @@ By default, Overview is the active tab and displays the region details and regio
 
  * Click **Submit**.<br>
 The usage summary of the selected period is displayed.
+
+	
 
 3.	Click **Download CSV Summary** to view a text file in Microsoft Excel with the details of the region usage summary.
 

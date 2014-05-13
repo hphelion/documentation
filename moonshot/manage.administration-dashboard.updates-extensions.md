@@ -16,7 +16,7 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage">&#9650; UP</a> | NEXT &#9654;</p>
+<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/administration-dashboard/manage-access-and-security/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage/administration-dashboard/working-with-project-tab/">&#9650; UP</a> | <a href= "/cloudos/moonshot/manage/administration-dashboard/before-you-begin/">NEXT &#9654;</p></a>
 
 # Manage Updates and Extensions #
 
@@ -34,11 +34,11 @@ You can perform the following tasks:
 
 * <a href="#Publish an Update">Publish an Update</a>
 
-## Configure Credentials ##<a name="Configure Credentials"></a>
+## Configure Credentials <a name="Configure Credentials"></a>
 
 You cannot access the updates from the HP Cloud OS Delivery Network (CODN) unless you are a registered user. To Sign up to the Cloud OS Delivery Network, do the following:
 
-### Signup Now ###<a name="View Updates List"></a>
+### Signup Now 
 
 To Sign up to the HP Cloud OS Delivery Network, do the following:
 
@@ -77,7 +77,7 @@ It displays the HP Cloud OS Delivery Network Page. Do the following:</br>
 	Click **Cancel** to abort and go to the previous screen.
 
 
-## View the Updates List ##
+## View the Updates List <a name="View Updates List"></a>
 
 To view the updates list, do the following:
 
@@ -87,28 +87,21 @@ The tab displays with options in the left panel.
 2.	From the **Current Project** drop-down list in the left panel, select the project.
 
 3.	From the options in the left panel, click **Updates and Extensions** and then select **Updates and Extensions** to display the Updates and Extensions page with the list of updates. The following information is displayed:
-
    * **Name**: of the update.
-
    * **Version**: of the update. Information for each version is listed on a separate line.
-
    * **Size**: of the update.
-
-   * **Provider**: which organization created and is responsible for the update.
-
+   * **Provider**: the organization that created and is responsible for the update.
    * **Type**: the kind of image that downloads.
-
    * **Status**: the state of the update in the catalog. This state is independent of your local system. For example, you may successfully download an update, but the update later becomes suspended in the catalog. You can continue to publish and use the update on your local system.
-
    * **Actions**: tasks you can perform on the update.
 
-4.	(Optional) Click a Name to open an Overview page with details of the update name, version, targets where it is installed.
+4. (Optional) Click a Name to open an Overview page with details of the update name, version, targets where it is installed.
 
-## Import an Update ##
+### Import an Update ###
 
-You can import a workload from your local folder or from HP Cloud OS Enterprise portal.  Once the import process is successful, the document displays in the Updates and Extensions page.  
+You can import a workload from your local folder or from CODN remote portal.  Once the import process is successful, the document displays in the Updates and Extensions page.  
 
-### Import content from local Folder ###
+#### Import content from local Folder ####
 
 To import an update that is stored on your local system, do the following:
 
@@ -125,7 +118,7 @@ The Project tab is activated and the options are displayed in the left panel
 
 6.	Click **Import**.<br>The file is imported to your local cloud and displayed in the Updates and Extensions page.</br>
 
-### Login to CODN Remote Portal ###
+#### Login to CODN Remote Portal ####
 
 To import an update from CODN remote portal, do the following:
 
@@ -143,7 +136,7 @@ The Project Tab is activated and the options are displayed in the left panel.
 6.	Click **OK** to save the details.
 The updates are displayed in the Updates and Extensions page.
 
-## Download Updates or Extensions ##<a name="Download Updates or Extensions"></a>
+## Download Updates or Extensions <a name="Download Updates or Extensions"></a>
 
 To download the packages, do the following:
 
@@ -167,7 +160,7 @@ The updates are displayed in the Updates and Extensions page.
 
 **Note**: Ensure that you have enough disk space before you start the download process as these need large disk space.
 
-## Publish an Update or Extension ##<a name="Publish an Update or Extension"></a>
+## Publish an Update or Extension <a name="Publish an Update or Extension"></a>
 
 Once you download an update, you can publish it. The Publish option is displayed once the download is complete. A download can consist of one or more pieces that must be distributed to multiple HP Cloud OS repositories. Publish routes the download contents to their appropriate repositories.
 

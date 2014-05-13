@@ -16,7 +16,7 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage">&#9650; UP</a> | NEXT &#9654;</p>
+<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/administration-dashboard/resource-pools/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage/administration-dashboard/working-with-project-tab/">&#9650; UP</a> | <a href = "/cloudos/moonshot/manage/administration-dashboard/project-images/">NEXT &#9654;</p></a>
 
 # Manage Project Instances #
 
@@ -33,7 +33,7 @@ Once the instances are created, they are displayed under the Instance option. Th
 * <a href="#Force Delete an Instance">Force Delete an Instance</a>
 
 
-## View Instance Details ##<a name="View Instance Details"></a>
+## View Instance Details <a name="View Instance Details"></a>
 
 Use this option to view the list of Project Instances.
 
@@ -49,7 +49,7 @@ The **Overview** Tab displays the specifications, IP addresses and metadata of t
 
 **Note**: The page displays two tabs: Overview and Console for the Cloud Administrator. Console Tab displays the Instance UI after accepting a valid password. 
 
-## Edit a Project Instance ##<a name="Edit Project Instance"></a>
+## Edit a Project Instance<a name="Edit Project Instance"></a>
 
 Once the instance is created, you can only edit its name.
 
@@ -75,7 +75,7 @@ An Edit instance dialog box is displayed.</br>
 
     Click **Cancel** to abort and go to the previous screen.
 
-## Launch an Instance ##<a name="Launch an Instance"></a>
+## Launch an Instance <a name="Launch an Instance"></a>
 
 1.	Click the **Project** Tab to select it.<br>
 The tab displays with options in the left panel.</br>
@@ -93,7 +93,7 @@ The tab displays with options in the left panel.</br>
 7.	In the **Instance Name** dialog box, enter the name for the instance.
 
 8.	From the **Flavor** drop-down list select the flavor.<br>
-By default, the auto generated flavor is displayed.</br>
+By default, the auto-generated flavor is displayed.</br>
 
 9.	In the **Instance Count** box, enter the number of instances required.
 
@@ -112,7 +112,7 @@ The network is displayed in the Selected Networks box.</br>
     
     Click **Cancel** to abort and go to the previous screen.
 
-## Terminate an Instance(s) ##<a name="Terminate an Instance"></a>
+## Terminate an Instance(s) <a name="Terminate an Instance"></a>
 
 1.	Click the **Project** Tab to select it.<br>
 The tab displays with options in the left panel.</br>
@@ -126,9 +126,9 @@ The tab displays with options in the left panel.</br>
 5.	Click **Terminate Instances**.<br>
 The instances are deleted after getting a confirmation from you.</br>
 
-## Force Delete an Instance ##<a name="Force Delete an Instance"></a>
+## Force Delete an Instance <a name="Force Delete an Instance"></a>
 
-Use this option to delete an instance which is in unresponsive state.
+Use this option to delete an instance that is in unresponsive state.
 
 1.	Click the **Project** Tab to select it.<br>
 The tab displays with options in the left panel.</br>

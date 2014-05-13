@@ -1,14 +1,14 @@
 ---
 layout: default
-title: "HP Cloud Services Windows PowerShell Tutorials"
+title: "HP Helion Public Cloud Services Windows PowerShell Tutorials"
 permalink: /cli/windows/2/tutorials/
 published: false
 product: win-2-cli
 
 ---
-# HP Cloud Services Windows PowerShell Tutorials
+# HP Helion Public Cloud Services Windows PowerShell Tutorials
 
-Windows Powershell has long been a widely used system administration tool, so it was a natural place to integrate with HP Cloud Services Object Storage and Compute.  In the tutorials below, you will learn all the different ways that you can interact with the Windows PowerShell Command Line Interface (CLI).
+Windows Powershell has long been a widely used system administration tool, so it was a natural place to integrate with HP Helion Public Cloud Services Object Storage and Compute.  In the tutorials below, you will learn all the different ways that you can interact with the Windows PowerShell Command Line Interface (CLI).
 
 
 ## Object Storage Tutorial

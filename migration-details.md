@@ -1,12 +1,13 @@
 ---
 layout: default
-title: "HP Cloud Services: Assisted Transition from Version 12.12 to 13.5"
+title: "HP Helion Public Cloud Services: Assisted Transition from Version 12.12 to 13.5"
 permalink: /migration-details/
+product: public-cloud
 
 ---
-# HP Cloud Services version 12.12 to 13.5 assisted transition
+# HP Helion Public Cloud Services version 12.12 to 13.5 assisted transition
 
-This page provides with the key details you need to perform an assisted transition--using the HP Cloud support team--from version 12.12 to 13.5 of the HP Cloud software services.  If you plan on performing the migration yourself without support services, surf over to the [transition overview](/migration-overview) page for details.
+This page provides with the key details you need to perform an assisted transition--using the HP Helion Public Cloud support team--from version 12.12 to 13.5 of the HP Helion Public Cloud software services.  If you plan on performing the migration yourself without support services, surf over to the [transition overview](/migration-overview) page for details.
 
 This page covers the following topics and tasks:
 
@@ -28,7 +29,7 @@ Before you transition to version 13.5, we recommend:
 
 ###Key transition information###
 
-Before attempted an assisted transition from version 12.12 to 13.5 of the HP Cloud software, be sure to keep the following critical pieces of information in mind:
+Before attempted an assisted transition from version 12.12 to 13.5 of the HP Helion Public Cloud software, be sure to keep the following critical pieces of information in mind:
 
 * Review the [For further information](#MoreInfo) section at the bottom of this page to better understand the differences between the version 12.12 and 13.5 Compute environments
 * IP addresses change between the two environments; if you have any DNS entries that point to your current configuration, you must plan to change them after your transition
@@ -96,7 +97,7 @@ In the `Inventory` pane of the `Servers` screen of the [management console](/mc)
 
 <img src="media/terminate-instance-1212.png" width="580" alt="" />
 
-You instance is terminated.  You can also terminate the instance from the [server details](/mc/compute/servers/view-details/) screen of the MC.  To access the server details screen, just click on the server name (in the above example, `DougTestServert`) in the `Inventory` pane of the servers screen in the MC:
+You instance is terminated.  You can also terminate the instance from the [server details](/mc/compute/servers/view-details/) screen of the MC.  To access the server details screen, just click on the server name (in the above example, `DougTestServer`) in the `Inventory` pane of the servers screen in the MC:
 
 <img src="media/terminate-server-serv-screen-1212.png" width="580" alt="" />
 
@@ -117,8 +118,8 @@ Now that you have completed your preliminary transition steps, you need to [cont
 
 For more information on migrating your services, as well as general information about version 13.5:
 
-* The [migration overview](/migration-overview) page contains details on how to perform a self-migration from version 12.12 to 13.5 of the HP Cloud software
-* Our [release notes for version 13.5](/release-notes/) of the HP Cloud software
+* The [migration overview](/migration-overview) page contains details on how to perform a self-migration from version 12.12 to 13.5 of the HP Helion Public Cloud software
+* Our [release notes for version 13.5](/release-notes/) of the HP Helion Public Cloud software
 * The [version overview](/version-overview/) provides a look at the different software versions available
 * The [technical support knowledge base](https://community.hpcloud.com)
 * [UNIX command-line interface migration information](/cli/unix/articles/migration/)

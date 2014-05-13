@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Cloud OS Community Edition Glossary"
+title: "HP OpenStack Community Edition Glossary"
 permalink: /cloudos/community/glossary/
 product: community
 
@@ -19,12 +19,12 @@ PageRefresh();
 
 <p style="font-size: small;"> <a href="/cloudos/community/">&#9664; PREV | <a href="/cloudos/community/">&#9650; UP</a> | <a href="/cloudos/community/">NEXT &#9654; </a></p>
 
-# HP Cloud OS Community Edition Glossary
+# HP OpenStack&reg; Community Edition Glossary
 
 [A](#a) | [B](#b) | [C](#c) | [D](#d) | [E](#e) | [F](#f) | [G](#g) | [H](#h) | [I](#i) | [J](#j) | [K](#k) | [L](#l) | [M](#m) | 
 [N](#n) | [O](#o) | [P](#p) | [Q](#q) | [R](#r) | [S](#s) | [T](#t) | [U](#u) | [V](#v) | [W](#w) | [X](#x) | [Y](#y) | [Z](#z)
 
-**Reviewers:** Some terms will be removed or reworded for the Community Edition. Most of these terms were defined in the Cloud OS and Cloud OS glossaries. We have added new terms such as Seed Cloud, Under Cloud, and Over Cloud.
+**Reviewers:** Some terms in this glossary may be removed or reworded for the Community Edition. Most of these terms were defined for the HP Cloud OS 1.20 Sandbox release (Dec-2013) and the HP Cloud OS for Moonshot 1.0 release (Feb/Mar-2014). We have added new terms such as Seed Cloud, Undercloud, and Overcloud. If you think of additional terms, please contact Lisa Marino. Thanks!
 
 ## A
 
@@ -42,7 +42,7 @@ underlying [REST](#REST) API and JSON/XML formatting of the [request abstraction
 :    The Admin Node is a virtual machine that helps in the creation of your cloud, and the installation of all associated software components. The Admin Node 
 manages all other nodes. It assigns IP addresses to the nodes; PXE boots the nodes; configures the nodes; and provides the nodes the necessary software for their roles.
 
-<!--		 
+<!-- JS: Not in Core and probably not in Enterprise:
 ###Administration Dashboard### {#Administration-Dashboard}
 :    The HP Cloud OS Administration Dashboard enables administrators to manage their cloud infrastructure. Tasks include launching instances, 
 uploading images, creating resource pools, and using designer tools to create topologies. Hosted (preferably) on the Controller node. See also [Operational Dashboard](#Operational-Dashboard), which is 
@@ -71,7 +71,7 @@ that their identity has been authenticated when making subsequent requests.
 
 ## B
 
-<!--
+<!-- JS: replaced by TripleO install framework:
 ###Barclamp###
 :    Also known as an install module, defines the capability of a service or role to apply to individual hosts or a set of hosts. To deploy a barclamp, a proposal is created.
 --> 
@@ -99,6 +99,9 @@ and workstations.
 
 
 ## C
+
+###Cinder###
+:     The OpenStack Volume Connectivity Service, which provides volume management in cloud environments.
 
 ###CLI###
 :     Command-line interface.
@@ -143,7 +146,7 @@ of instances and available resources on the compute nodes. In a single compute r
 :     Elastic compute cloud; Amazon's cloud computing platform.
 
 ###Eve###
-:     An HP Cloud OS composite provisioning service that uses a topology design and profile to create VMs, volumes, and network segments as described in the topology. Eve uses Graffiti service for determining resource pool existence, traits, and User identity mapping.
+:     An HP Cloud OS composite provisioning service that uses a topology design and profile to create VMs, volumes, and network segments as described in the topology. Eve uses the Graffiti service to determine the resource pool existence, traits, and user identity mapping.
 
 ## F
 
@@ -158,13 +161,17 @@ of instances and available resources on the compute nodes. In a single compute r
 
 
 ###Focus###
-:     An HP Cloud OS repository for topology templates and profiles that are used for provisioning.
+:     The HP Cloud OS Topology Document Repository Service, which is used to discover, register, version, and retrieve the document types needed to describe TOSCA-based infrastructure 
+topologies while provisioning a cloud. See [TOSCA](#TOSCA). 
 
 ###FQDN###
 :    Acronym for Fully Qualified Domain Name. 
 
 
 ## G
+
+###Glance###
+:     The OpenStack Image Repository Service, which is used to discover, register, and retrieve Virtual Machine (VM) images.
 
 ###Graffiti###
 :     The HP Cloud OS Resource Pool Registry and Capability Tagging Service, providing a dictionary of the "capabilities" of all the resources in a cloud environment; a searchable directory to find cloud resources based on their capabilities; the mechanism for dynamic binding, allowing you to describe requirements rather than concrete bindings; and the base concepts of requirements and capabilities within TOSCA.
@@ -204,6 +211,9 @@ topology. Eve creates the job, for which the Eden Service API framework then pub
 ###Key pair###
 :     A pair of key values used for verification purposes; generally one key value is private, and the other public (i.e. user-owned).
 
+###Keystone###
+:     The OpenStack Identity Management Service that performs identity management (domains, projects and users), generates access tokens, and provides service catalog functionality.
+
 ## L
 
 ## M
@@ -225,13 +235,16 @@ provides transparency for the provider and the consumer of the utilized service.
 ###Network Controller### {#Network-Controller}
 :     A node that manages the networks in the cloud. Contains Neutron's server, l3 agent and DHCP services. It is a single service in a cloud and can co-exist with cloud controller services.
 
+###Neutron### {#Neutron}
+:     The OpenStack Network Connectivity Service, which is used to create and provision virtual networks.
+
 ###Node###
 :     A computing resource in a network. In other publications, sometimes called a machine.
 
 ###Nova Flat Network###
 :    The private network used for PXE booting the Moonshot cartridges, and enabling communication between the Moonshot cartridges, Baremetal host, and the cloud Network Controller. Flat Networking uses Ethernet adapters configured as bridges to allow the network traffic to transit between the various baremetal nodes. This setup can be done with a single adapter on the Baremetal host. This option does not require a switch that does VLAN tagging.
 
-###Nova service###
+###Nova###
 :    An OpenStack service to provide a cloud computing fabric controller, the main part of an Infrastructure as a Service (IaaS) system. Individuals and organizations can use Nova to host and manage their own cloud computing systems.
 
 ## O
@@ -243,16 +256,17 @@ as needed, automatically, without requiring human interaction with each service 
 ###OpenStack###
 :     An open-source cloud computing operating system.
 
-<!--
+<!-- JS: Not in Core, I think. 
 ###Operational Dashboard### {#Operational-Dashboard}
 :    The HP Cloud OS Operational Dashboard is used to install, set up, configure, and stand up a cloud environment See also [Administration Dashboard](#Administration-Dashboard), which is 
 used to manage the cloud that you created. 
 -->
 
+###Overcloud### {#Overcloud}
+:     Images that are deployed onto physical servers by the Undercloud. Overcloud images have specialized roles: Management, Swift, and Compute. See also [Seed Cloud](#Seed-Cloud) and 
+[Undercloud](#Undercloud).
 
-###Over Cloud images### {#Over-Cloud}
-:		Images that are deployed onto physical servers by the Under Cloud. Over Cloud images have specialized roles: Management, Swift, and Compute. 
-See the <a href="media/cloudos-community-architecture.jpg" target="_blank">Cloud OS Community Architecture diagram</a>.
+:     <a href="javascript:window.open('/content/documentation/media/cloudos-community-architecture.jpg','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Cloud OS Community Edition architecture diagram (opens in a new window)</a>
 
 ## P
 
@@ -285,6 +299,9 @@ by a business, academic, or government organization, or some combination.  It ex
 :    *See* [Preboot Execution Environment](#pxe).
 
 ## Q
+
+###Quantum###
+:     See [Neutron](#Neutron).
 
 ## R
 
@@ -322,9 +339,10 @@ how they interpret the set of roles a user has and which operations or resources
 
 ## S
 
-###Seed Cloud Image### {#Seed-Cloud}
-:		A bootable image that is deployed into a VM.  See also Under Cloud and Over Cloud. 
-See the <a href="media/cloudos-community-architecture.jpg" target="_blank">Cloud OS Community Architecture diagram</a>.
+###Seed Cloud### {#Seed-Cloud}
+:     A bootable image that is deployed into a Virtual Machine (VM).  See also [Undercloud](#Undercloud) and [Overcloud](#Overcloud). 
+
+:     <a href="javascript:window.open('/content/documentation/media/cloudos-community-architecture.jpg','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Cloud OS Community Edition architecture diagram (opens in a new window)</a>
 
 ###Server### {#Server}
 :     A compute instance that is created from a [flavor](#Flavor) combined with an [image](#Image).
@@ -332,6 +350,9 @@ See the <a href="media/cloudos-community-architecture.jpg" target="_blank">Cloud
 ###Storage Controller### {#Storage-Controller}
 :    A node that enables the block storage service. Contains Cinder services that provide block storage and volume connectivity to launched instances. It is a single service in a cloud and can co-exist with Cloud Controller services. Block Storage is not supported currently.
 
+###Swift###
+
+:     The OpenStack Object Store service, which is used in cloud environments to store and retrieve large amounts of data in virtual containers.  
 
 ## T
 
@@ -345,15 +366,16 @@ See the <a href="media/cloudos-community-architecture.jpg" target="_blank">Cloud
 :    An arbitrary bit of text that is used to access resources. Each token has a scope which describes which resources are accessible with it. 
 
 
-###Topology and Orchestration Specification for Cloud Applications (TOSCA)### 
+###Topology and Orchestration Specification for Cloud Applications (TOSCA)### {#TOSCA}
 :    A framework used to build cloud topologies. For more, see the <a href="http://docs.oasis-open.org/tosca/TOSCA/v1.0/os/TOSCA-v1.0-os.html" target="tosca">TOSCA Specification</a>.
 
 
 ## U
 
-###Under Cloud image### {#Under-Cloud}
-:	  An image that is deployed by the Seed cloud onto a single physical server to create the Under Cloud. 
-See the <a href="media/cloudos-community-architecture.jpg" target="_blank">Cloud OS Community Architecture diagram</a>.
+###Undercloud### {#Undercloud}
+:     An image that is deployed by the Seed Cloud onto a single physical server to create the Undercloud. See also [Seed Cloud](#Seed-Cloud) and [Overcloud](#Overcloud).
+
+:     <a href="javascript:window.open('/content/documentation/media/cloudos-community-architecture.jpg','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Cloud OS Community Edition architecture diagram (opens in a new window)</a>
 
 
 ## V

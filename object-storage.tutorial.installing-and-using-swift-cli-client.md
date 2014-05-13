@@ -8,19 +8,19 @@ product:
 ---
 # Installing And Using The Swift CLI Client
 
-This article describes the steps you'll need to follow in order to download files from and upload files to your HP Cloud object storage containers from your *nix command-line.
+This article describes the steps you'll need to follow in order to download files from and upload files to your HP Helion Public Cloud object storage containers from your *nix command-line.
 
 Specifically, it describes how to do the following:
 
-1. Install the command-line swift client
-1. Use the swift client to list containers and list container contents
-1. Use the swift client to download the contents of a container
-1. Use the swift client to upload files to a container
-1. Simply calls to the swift client with bash scripts
+1. Install the command-line Swift client
+1. Use the Swift client to list containers and list container contents
+1. Use the Swift client to download the contents of a container
+1. Use the Swift client to upload files to a container
+1. Simply calls to the Swift client with bash scripts
 
-This article assumes that you already have an HP Cloud account set up and that you have already created a container.
+This article assumes that you already have an HP Helion Public Cloud account set up and that you have already created a container.
 
-## (1) Install the command-line swift client from OpenStack.
+## (1) Install the command-line Swift client from OpenStack.
 
 ### 1a: Install the python-setuptools package on your machine.
 
@@ -31,7 +31,7 @@ On Ubuntu, you can do this with:
   
 If you're distro's package-manager doesn't have a repository for installing the python-setuptools package, you can install them by following the instructions on the setuptools package homepage: http://pypi.python.org/pypi/setuptools
 
-### 1b: Install the OpenStack's python keystone client for authentication
+### 1b: Install the OpenStack's Python keystone client for authentication
 
 On Ubuntu, you can just do it with:
 
@@ -44,7 +44,7 @@ If you're distro's package-manager doesn't have a repository for installing the 
     python setup.py build
     sudo python setup.py install
   
-Again, this is NOT RECOMMENDED due to this revision's problems with it's implementation of 2-way SSL encryption.  However, if you're willing to troubleshoot the implementation, I'm sure the OpenStack project would very much appreciate the contribution.
+Again, this is NOT RECOMMENDED due to this revision's problems with its implementation of 2-way SSL encryption.  However, if you're willing to troubleshoot the implementation, I'm sure the OpenStack project would very much appreciate the contribution.
   
 My suggestion, if you're on a non-debian distro, is to directly download and install the version installed by the Ubuntu 12.04 package manager:
 
@@ -63,15 +63,15 @@ My suggestion, if you're on a non-debian distro, is to directly download and ins
     python setup.py build
     sudo python setup.py install
 
-One way to tell whether or not you've successfully installed the swift client is to ask "which swift".  If you get back a file path to the executable, then you'll know you have your swift client installed.
+One way to tell whether or not you've successfully installed the Swift client is to ask "which swift".  If you get back a file path to the executable, then you'll know you have your Swift client installed.
 
-Feel free to take a look at help info for the swift command line utility:
+Feel free to take a look at help info for the Swift command line utility:
 
     swift --help
   
 ## (2) Try listing the names of your containers.
 
-This will require having a few of your HP Cloud account credentials, which you can access from your HP Cloud Management Console (in the console at https://console.hpcloud.com, go to *Account --> API Keys*):
+This will require having a few of your HP Helion Public Cloud account credentials, which you can access from your HP Helion Public Cloud Management Console (in the console at https://console.hpcloud.com, go to *Account --> API Keys*):
 
 - the Endpoint URL for the Identity services
 - your username (this will be the email associated with your HPCS account)
@@ -87,11 +87,11 @@ An example with more realistic looking parameters might look like this:
 
     swift -A https://region-a.geo-1.identity.hpcloudsvc.com:35357/v2.0/ -V 2.0 --os-username=my_email@example.com --key=my_password --os-storage-url=https://region-a.geo-1.objects.hpcloudsvc.com/v1.0/13632180903902 --os-tenant-id=my_tenant_id list
 
-I can use the swift "list" command to also list the contents of a specific container by simply specifying a container name at the end of the swift "list" subcommand.  Suppose I have a container called "my_first_container".  Then I would enter the following to list that container's filenames:
+I can use the Swift "list" command to also list the contents of a specific container by simply specifying a container name at the end of the swift "list" subcommand.  Suppose I have a container called "my_first_container".  Then I would enter the following to list that container's filenames:
 
     swift -A https://region-a.geo-1.identity.hpcloudsvc.com:35357/v2.0/ -V 2.0 --os-username=my_email@example.com --key=my_password --os-storage-url=https://region-a.geo-1.objects.hpcloudsvc.com/v1.0/13632180903902 --os-tenant-id=my_tenant_id list my_container
 
-You may see the following message, when you run a swift client command:
+You may see the following message, when you run a Swift client command:
 
     No handlers could be found for logger "keystoneclient.v2_0.client"
 
@@ -103,7 +103,7 @@ However, if you see an error message that says that you're not authorized (and y
 
 In order to do this, you will need the same parameters you needed above in the example give for listing your account's Object Storage containers.
 
-The swift utility will allow you to download files from a container to your current directory with a command in the following format (again, with placeholders in all caps):
+The Swift utility will allow you to download files from a container to your current directory with a command in the following format (again, with placeholders in all caps):
 
     swift -A IDENTITY_SERVICE_ENDPOINT_URL -V 2.0 --os-username=YOUR_EMAIL@EXAMPLE.COM --key=YOUR_PASSWORD --os-storage-url=YOUR_OBJECT_STORAGE_ENDPOINT_URL --os-tenant-id=YOUR_TENANT_ID download CONTAINER_NAME
 
@@ -119,7 +119,7 @@ To upload files to a container, you'll need all of the same parameters, but with
 
 ## (5) Advanced, more convenient usage
 
-Of course, with so many parameters (mostly for identification and authentication purposes) it can be a bit of a headache to have to enter an entire swift command everytime.  In my case, I typically want to pull a copy of a production site's assets down to a local development environment for website projects.
+Of course, with so many parameters (mostly for identification and authentication purposes) it can be a bit of a headache to have to enter an entire Swift command everytime.  In my case, I typically want to pull a copy of a production site's assets down to a local development environment for website projects.
 
 To speed this up, I usually create a bash script for each project, with these parameters set up:
 
@@ -131,15 +131,15 @@ Of course, you don't want to leave your password lying around in a bash script. 
 
     #!/bin/bash
     
-    read -sp "Please enter the password for your HP Public Cloud account
+    read -sp "Please enter the password for your HP Helion Public Cloud account
     Password:" PASS
 
     swift -A https://region-a.geo-1.identity.hpcloudsvc.com:35357/v2.0/ -V 2.0 --os-username=my_email@example.com --key=$PASS --os-storage-url=https://region-a.geo-1.objects.hpcloudsvc.com/v1.0/13632180903902 --os-tenant-id=my_tenant_id download my_container
 
-Here, the "read" command in the script promts the user for input, with the message "Please enter the password for your HP Public Cloud account", with the "Password:" phrase on the next-line, followed by an input cursor.
+Here, the "read" command in the script promts the user for input, with the message "Please enter the password for your HP Helion Public Cloud account", with the "Password:" phrase on the next-line, followed by an input cursor.
 
     ~$ ./my_bash_script.sh
-    Please enter the password for your HP Public Cloud account
+    Please enter the password for your HP Helion Public Cloud account
     Password:
     
     No handlers could be found for logger "keystoneclient.v2_0.client"

@@ -16,7 +16,7 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage">&#9650; UP</a> | NEXT &#9654; </p>
+<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/administration-dashboard/working-with-cloud-tab/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage/administration-dashboard/working-with-cloud-tab/">&#9650; UP</a> | <a href="/cloudos/moonshot/manage/administration-dashboard/cloud-users/"> NEXT &#9654; </p></a>
 
 #Manage Projects#
 
@@ -34,7 +34,7 @@ You can perform the following tasks:
 
 * <a href="#Add or Remove a Project User">Add or Remove a Project User</a> 
 
-* <a href="#Delete a Cloud">Delete a Cloud</a> 
+* <a href="#Delete a Cloud Project">Delete a Cloud Project</a> 
 
 * <a href="#Restore a Cloud Project">Restore a Cloud Project</a>
 
@@ -50,7 +50,7 @@ To view the list of projects:
 
 4. Click  **Project Name** to display an Overview screen with detailed project information. <br>It displays the information related to project name, ID, default users and their roles etc.
 
-##Create a Cloud Project ##<a name= "Create a Cloud Project"></a>
+##Create a Cloud Project <a name= "Create a Cloud Project"></a>
 
 Use this option to create a new project, associate users to it, integrate applications and tools to it and define limits for it.
 
@@ -62,43 +62,32 @@ To create a project:
 
 3. Click **Create Project** displayed on the top right in the right pane.<br> Create Project dialog box is displayed with four different tabs: **Project Info**, **Project Members**, **Integrations**, and **Compute Limits**. By default, Project Info is the active tab.
 
-4. Perform the following in the Project Info Tab:
+4. Perform the following in the Project Info Tab: 
+    * In the **Name** box, enter the name of the project.
+    * In the **Description** box, enter the description of the project.
+    * By default **Enabled** is selected. This means that the project content is available to all the users assigned to it.
 
- *  In the **Name** box, enter the name of the project.
+5. Click to activate the **Project Members** Tab. <br>Available Users and Project Members are displayed.<br> Perform the following:
+   * From **Available Users**, enter the name of the project.
+   * Click add against the user to add the user to the **Project Members** column. <br>This  adds the user to the project.
+   * To add a role to the user, in the *Project*
+   * *Members* column, click drop-down arrow to display the role list.
+   * Select the role. The user is assigned to the selected role in the project.
+   * (Optional) Click minus against the project member to remove from the project. <br>
+ **Note**: This is an optional step at the initial stage of project creation as no users are displayed, once you create the users, they will be visible in the list of Available Users.
 
- *  In the **Description** box, enter the description of the project.
-
- *  By default **Enabled** is selected. This means that the project content is available to all the users assigned to it.
-
-1. Click to activate the **Project Members** Tab. <br>Available Users and Project Members are displayed.<br> Perform the following:
-
- * From **Available Users**, enter the name of the project.
-
- * Click add against the user to add the user to the **Project Members** column. <br>This adds the user to the project.
-
- * To add a role to the user, in the *Project*
-
- * *Members* column, click drop-down arrow to display the role list.
-
- * Select the role. The user is assigned to the selected role in the project.
-
- * (Optional) Click minus against the project member to remove from the project. <p>
- **Note**: This is an optional step at the initial stage of project creation as no users are displayed, once you create the users, they will be visible in the list of Available Users.</p>
-
-1. (Optional) In the Integration Tab, perform the following:
+6. (Optional) In the Integration Tab, perform the following:
+  * (Optional) Click check box to select it, if no default Resource Pool exists and you want to create one. The Resource Pool is created as part of the project creation. A default resource pool is created for each region in the domain.
  
- * (Optional) Click check box to select it, if no default Resource Pool exists and you want to create one. The Resource Pool is created as part of the project creation. A default resource pool is created for each region in the domain.
-
-1. In the **Compute Limits** Tab, you can set the default limits for the compute resources in the project for example: total CPUS’s, total instances that can be created, Keypairs etc. Perform the following:
+7. In the **Compute Limits** Tab, you can set the default limits for the compute resources in the project for example: total CPUS's, total instances that can be created, Keypairs etc. <br>Perform the following:
  * (From the **Region** drop-down list, select the region. By default the current region is displayed.
+  * In the **RAM (MB)**, **Keypairs**, **CPU Cores**, **Instances**, **Metadata Items** boxes, default values are displayed. You can make the changes as required.
  
- * In the **RAM (MB)**, **Keypairs**, **CPU Cores**, **Instances**, **Metadata Items** boxes, default values are displayed. You can make the changes as required.
- 
-1. Click **Create** **Project**. A message is displayed on successful project creation. The project is displayed with a system generated project ID.<br>
+8. Click **Create** **Project**. A message is displayed on successful project creation. The project is displayed with a system-generated project ID.<br>
 OR<br>
 Click **Cancel** to abort and go to the previous screen.
 
-##Modify a Cloud Project##<a name= "Modify a Cloud Project"></a>
+##Modify a Cloud Project<a name= "Modify a Cloud Project"></a>
 Use this option to make the changes to the project details.
 
 To modify project details:
@@ -117,7 +106,7 @@ To modify project details:
 OR<br>
 Click **Cancel** to abort and go back to the previous screen.
 
-##View Cloud Project Usage Summary##<a name= "View Cloud Project Usage Summary"></a>
+##View Cloud Project Usage Summary<a name= "View Cloud Project Usage Summary"></a>
 
 Use this option to view the usage summary in a project. The usage summary gives the details of the resources being used in a particular project.
 
@@ -135,7 +124,7 @@ Use this option to view the usage summary in a project. The usage summary gives 
 
 7. Click **Download CSV Summary** to view a text file in Microsoft Excel with the details of the usage summary.
 
-##Modify Compute Limits ##<a name= "Modify Compute Limits"></a>
+##Modify Compute Limits <a name= "Modify Compute Limits"></a>
 
 This option allows you to edit the compute limits that are defined in your project. 
 
@@ -155,7 +144,7 @@ To modify compute limits:
 OR<br>
 Click **Cancel** to abort and go to the previous screen.
 
-##Add or Remove a Project User## <a name= "Add or Remove a Project User"></a>
+##Add or Remove a Project User <a name= "Add or Remove a Project User"></a>
 
 You can add a new user to the project or remove an existing user from the project.
 
@@ -166,7 +155,8 @@ To add or remove a project user:
 2. From the options in the left panel, select **Projects** to display the Projects page with a list of projects.
 
 3. Click **Modify** **Users** against the project for which you want to make changes. The Edit Project dialog box is displayed with three tabs: **Project Info**, **Project Members**, and **Compute Limits**. By default, Project Members is the active tab and displays two columns: Available Users and Project Members.
-To add a user to the project from the Available Users column, click add to add the user to the Project Members column.
+
+4. To add a user to the project from the Available Users column, click add to add the user to the Project Members column.
 
 5. To remove the user, click minus against the user in the Project Members column to remove the user.
 
@@ -174,7 +164,7 @@ To add a user to the project from the Available Users column, click add to add t
 OR<br>
 Click **Cancel** to abort and go to the previous screen.
 
-##Delete a Cloud## <a name= "Delete a Cloud"></a>
+##Delete a Cloud Project <a name= "Delete a Cloud Project"></a>
 
 To delete a project:
 
@@ -182,7 +172,7 @@ To delete a project:
 
 2.  From the options in the left panel, select **Projects** to display the Projects page with a list of projects.
 
-3. Click **More** drop-down list against the project which you want to delete. A confirmation dialog box is displayed.
+3. Click **More** drop-down list against the project that you want to delete. A confirmation dialog box is displayed.
 
 4. Select **Delete Project**.
 
@@ -190,7 +180,7 @@ To delete a project:
 Or <br>
 Click **Cancel** to abort and go to the previous screen.
 
-##Restore a Cloud Project## <a name= "Restore a Cloud Project"></a>
+##Restore a Cloud Project <a name= "Restore a Cloud Project"></a>
 
 To restore a deleted project:
 

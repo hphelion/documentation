@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "UNIX CLI for HP Cloud: Modifying Report Paging"
+title: "UNIX CLI for HP Helion Public Cloud: Modifying Report Paging"
 permalink: /cli/unix/articles/paging
 product: unix-cli
 categories: cli linux unix
 tags: report paging
 ---
-#UNIX CLI for HP Cloud: Modifying report paging v12.12#
+#UNIX CLI for HP Helion Public Cloud: Modifying report paging v12.12#
 
 ___________________
 
@@ -18,7 +18,7 @@ On November 4, 2013, the UNIX CLI was moved into its End-of-Life Cycle process t
 * No new feature requests will be honored
 * Bug reports will be accepted
 
-HP Cloud has contributed the Unix CLI back to the open source community, and you can get support, access the documentation, and download the source code [here](https://github.com/hpcloud/unix_cli).
+HP Helion Public Cloud has contributed the Unix CLI back to the open source community, and you can get support, access the documentation, and download the source code [here](https://github.com/hpcloud/unix_cli).
 
 _________________________________________
 
@@ -44,4 +44,4 @@ In general, we suggest you leave these values set to their defaults.
 
 ##For more information## {#articles}
 
-For more tips and How-tos on using your UNIX CLI for HP Cloud, see [UNIX CLI for HP Cloud: Articles on to use the UNIX CLI for HP Cloud](/cli/unix/articles/).
+For more tips and How-tos on using your UNIX CLI for HP Helion Public Cloud, see [UNIX CLI for HP Helion Public Cloud: Articles on to use the UNIX CLI for HP Helion Public Cloud](/cli/unix/articles/).

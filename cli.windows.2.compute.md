@@ -1,13 +1,13 @@
 ---
 layout: default
-title: "HP Cloud Environment CLI Software for Windows PowerShell Compute Examples"
+title: "HP Helion Public Cloud CLI Software for Windows PowerShell Compute Examples"
 permalink: /cli/windows/2/compute/
 product: win-2-cli
 
 ---
-# HP Cloud Environment CLI Software for Windows PowerShell Compute Examples
-
-This page provides you some examples of how to use the various commands (sometimes called "cmdlets") for HP Cloud environment CLI software for Windows PowerShell implementation of Compute.
+# HP Helion Public Cloud CLI Software for Windows PowerShell Compute Examples
+ 
+This page provides you some examples of how to use the various commands (sometimes called "cmdlets") for HP Helion Public Cloud CLI software for Windows PowerShell implementation of Compute.
 
 * [Navigation](#Navigation)
 * [Availability Zone Color Management](#ColorManagement)
@@ -22,7 +22,7 @@ For complete details on the commands--syntax, descriptions, and so forth--take a
 
 ##Navigation## {#Navigation}
 
-To execute commands in Windows PowerShell, first open a Windows PowerShell window; under the Start menu, it is typically under `All Programs > Accessories > Windows PowerShell`.  Select the shell appropriate to your system, either the 64-bit or 32-bit version.  Enter the HP Cloud Services CLI by entering:
+To execute commands in Windows PowerShell, first open a Windows PowerShell window; under the Start menu, it is typically under `All Programs > Accessories > Windows PowerShell`.  Select the shell appropriate to your system, either the 64-bit or 32-bit version.  Enter the HP Helion Public Cloud Services CLI by entering:
 
     PS C:\> cd HPCS:
 
@@ -176,7 +176,9 @@ To create a new server:
 Where the new server has name `TestSever`, image identifier `2111`, flavor identifier`100`, security group name `Security_group1`, name-value pair `Namevalue1 | value1`, and keypair `KeyName`.  
 
 <!--DOUG: rewrite-->
-**Note for Windows Images**: When the Windows CLI detects you are creating a Windows server, it looks for the keypair *.pem* file in a specific location. The default location for the .pem file is `C:\Users\*username*\Documents\HP\`. When the new-server operation has completed, the output is the Administrator password to be used with an RDP client. Please make note of it. For assistance on connecting to a Windows Instance, see [How to Access a Windows Instance via the Remote Desktop](/compute/using#WindowsRDP) or use the [quick connect feature](#QuickConnect).
+**Note for Windows Images**: When the Windows CLI detects you are creating a Windows server, it looks for the keypair *.pem* file in a specific location. The default location for the .pem file is `C:\Users\*username*\Documents\HP\`. When the new-server operation has completed, the output is the Administrator password to be used with an RDP client. Please make note of it. 
+<!-- Hiding; referenced file missing
+For assistance on connecting to a Windows Instance, see [How to Access a Windows Instance via the Remote Desktop](/compute/using#WindowsRDP) or use the [quick connect feature](#QuickConnect). -->
 
 For a full description of the options available with the **New-Server** command, please see the [New-Server](/cli/windows/reference#New-Server) section of the [Windows CLI Reference](/cli/windows/reference) page. 
 
@@ -281,6 +283,7 @@ For Windows Instances only, if you change your Windows password manually via [RD
     PS HPCS:\> reset-password -id 1234 -p "Thisisalongpassword!"
 
 This resets the password for server `1234` to  `Thisisalongpassword!`.
+
  
 ##Floating IP Management## {#IPManagement}
 

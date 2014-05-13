@@ -1,5 +1,5 @@
-
 ---
+
 layout: default
 title: "HP Cloud OS for Moonshot: Administration Dashboard"
 permalink: /cloudos/moonshot/manage/administration-dashboard/cloud-users/
@@ -17,9 +17,7 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage">&#9650; UP</a> | NEXT &#9654; </p>
-
-
+<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/administration-dashboard/cloud-projects/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage/administration-dashboard/working-with-cloud-tab/">&#9650; UP</a> |<a href="/cloudos/moonshot/manage/administration-dashboard/cloud-roles/"> NEXT &#9654;</a> </p>
 
 
 #Manage Users
@@ -50,11 +48,13 @@ To view the list of different cloud users:
 
 3. Click  **User Name** to view the user details.
 
-##Create a Cloud User##<a name= "Create a Cloud User"></a>
+##Create a Cloud User<a name= "Create a Cloud User"></a>
 
 Use this option to create a cloud user and set general attributes for the user. You can also assign a project specific and cloud specific role to the user through this option.
 
 To create a cloud user:
+
+
 
 1. Click **Cloud** Tab to select it.
 
@@ -63,31 +63,24 @@ To create a cloud user:
 3. Click **Create User** displayed on the top right corner in the right pane. Create User dialog box is displayed with three different tabs: **User**, **Project**, and **Cloud**. By default, User is the active tab.
 
 4. In the User Tab, perform the following:
- 
- * In the **User Name** box, enter the name of the user.
- 
- * (Optional) In the **Email** box, enter the email-ID for the user.
- 
- * In the Password box, enter the password.
- 
- * In the **Confirm Password** box, re-enter the password to verify it.
+   * In the **User Name** box, enter the name of the user.
+   * (Optional) In the **Email** box, enter the email-ID for the user.
+   * In the Password box, enter the password.
+   * In the **Confirm Password** box, re-enter the password to verify it.
 
-5.  In the User Tab, perform the following:
+5. In the Project Tab, perform the following:
+   *  From **Primary Project** drop-down list, select the project to which you want to add the user.
+   *  From **Project Role** drop-down list, select the role to that you want to assign to the user.
+<br>
+ **Note**: The role defined in the Project Tab is specific to the selected project. </br>
+
+6. (Optional) In the Cloud Tab, perform the following:
+  * From the **Cloud Role** drop-down list, select the cloud role for the user.
+
+7. Click **Create User** to create the user. A message is displayed on successful creation.
+
  
- * In the **User Name** box, enter the name of the user.From** Primary Project** drop-down list, select the project to which you want to add the user.
- 
- * From **Project Role** drop-down list, select the role to that you want to assign to the user.<br>
- **Note**: The role defined in the Project Tab is specific to the selected project.
-
-
-1. (Optional) In the Cloud Tab, perform the following:
- * From the **Cloud Role** drop-down list, select the cloud role for the user.
-
-7. Click **Create User** to create the user. A message is displayed on successful creation.<br>
-OR<br>
-Click **Cancel** to abort and go to the previous screen.
-
-##Edit a Cloud User##<a name= "Edit a Cloud User"></a>
+##Edit a Cloud User<a name= "Edit a Cloud User"></a>
 
 Use this option to edit the attributes of a cloud user. You can modify the User and Cloud related information here and for modifying the project related attributes refer to Modify Users section. 
 To modify the user details:
@@ -104,7 +97,7 @@ To modify the user details:
 OR<br>
 Click **Cancel** to abort and go to the previous screen.
 
-##Disable a Cloud User##<a name= "Disable a Cloud User"></a>
+##Disable a Cloud User <a name= "Disable a Cloud User"></a>
 
 To disable the cloud user from logging in:
 
@@ -114,10 +107,10 @@ To disable the cloud user from logging in:
 
 3. Click **More** drop-down list against the user whom you want to disable and select **Disable User** from the drop-down list. The user is disabled and the Enabled field status changes to **False**. 
 
-##Enable a Cloud User## <a name= "Enable a Cloud User"></a>
+##Enable a Cloud User <a name= "Enable a Cloud User"></a>
 * To enable the user again, select **Enable User** from the **More** drop-down list against the user. The Enabled field status changes to **True**.
 
-##Delete a Cloud User##<a name= "Delete a Cloud User"></a>
+##Delete a Cloud User<a name= "Delete a Cloud User"></a>
 
 The delete option marks the user for deletion:
 
@@ -133,7 +126,7 @@ The delete option marks the user for deletion:
 OR <br>
 Click **Cancel** to abort and go to the previous screen.
 
-##Restore a Cloud User##<a name= "Restore a Cloud User"></a>
+##Restore a Cloud User<a name= "Restore a Cloud User"></a>
 
 To restore a deleted user:
 

@@ -1,13 +1,13 @@
 ---
 layout: default
-title: "Release Notes for the HP Cloud Java/Cloture jclouds Binding"
+title: "Release Notes for the HP Helion Public Cloud Java/Cloture jclouds Binding"
 permalink: /bindings/jclouds/release-notes/
 product: jclouds
 
 ---
-# Release Notes for the HP Cloud Ruby Fog Binding
+# Release Notes for the HP Helion Public Cloud Ruby Fog Binding
 
-These are the release notes for the HP Cloud Java/Cloture jclouds bindings.  The current release number for the [HP Cloud Java/Cloture jclouds software bindings](/bindings) is version 0.0.20, released on Mar. 15th, 2013.  These release notes contain the following information:
+These are the release notes for the HP Helion Public Cloud Java/Cloture jclouds bindings.  The current release number for the [HP Helion Public Cloud Java/Cloture jclouds software bindings](/bindings) is version 0.0.20, released on Mar. 15th, 2013.  These release notes contain the following information:
 
 * [Release 0.0.20 Information](#v0020)
 
@@ -22,7 +22,7 @@ This release was made available on 03/15/2013 and contains the following new fea
 * Support for `user_data` when creating servers using the compute service added
 * Support for one and two way container synchronization in object storage service added
 
-This version of the HP Cloud Ruby Fog bindings has been feature-merged with [Fog version 1.10.0](http://github.com/fog/fog).
+This version of the HP Helion Public Cloud Ruby Fog bindings has been feature-merged with [Fog version 1.10.0](http://github.com/fog/fog).
 
 ###Known Issues###
 

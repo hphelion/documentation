@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "UNIX CLI for HP Cloud: Advanced Account Management"
+title: "UNIX CLI for HP Helion Public Cloud: Advanced Account Management"
 permalink: /cli/unix/2/account-management/
 product: unix-cli
 
 ---
-#UNIX CLI for HP Cloud v13.5: Advanced Account Management
+#UNIX CLI for HP Helion Public Cloud v13.5: Advanced Account Management
 
 If you are using v12.12, click [here](https://docs.hpcloud.com/cli/unix/account-management) for documentation.
 ___________________
@@ -18,7 +18,7 @@ On November 4, 2013, the UNIX CLI was moved into its End-of-Life Cycle process t
 * No new feature requests will be honored
 * Bug reports will be accepted
 
-HP Cloud has contributed the Unix CLI back to the open source community, and you can get support, access the documentation, and download the source code [here](https://github.com/hpcloud/unix_cli).
+HP Helion Public Cloud has contributed the Unix CLI back to the open source community, and you can get support, access the documentation, and download the source code [here](https://github.com/hpcloud/unix_cli).
 
 _________________________________________
 
@@ -109,7 +109,7 @@ To change the availability zone of the compute service from its current setting 
 
     $ hpcloud account:edit account2 'compute=az-2.region-a.geo-1'
 
-To display the active availability zones for your services, through the [HP Public Cloud Console](https://horizon.hpcloud.com). Click the project menu and select *Roles and API Endpoints*. 
+To display the active availability zones for your services, through the [HP Helion Public Cloud Console](https://horizon.hpcloud.com). Click the project menu and select *Roles and API Endpoints*. 
 
 ## Updating Account Credentials ## {#ModifyingAccountCredentials}
 

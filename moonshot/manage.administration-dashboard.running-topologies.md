@@ -16,11 +16,11 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage">&#9650; UP</a> | NEXT &#9654;</p>
+<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/administration-dashboard/workloads/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage/administration-dashboard/working-with-project-tab/">&#9650; UP</a> | <a href= "/cloudos/moonshot/manage/administration-dashboard/deployment-profiles/">NEXT &#9654;</p></a>
 
 # Manage Running Topologies #
 
-Topology is the visual representation of networking resources. Once the Infrastructure Topology and Infrastructure Design are created, the topology is ready to be launched.
+Topology is an infrastructure blue print defining compute, network and storage requirement. Once the Infrastructure Topology and Infrastructure Design are created, the topology is ready to be launched.
 The following tasks can be performed using Running Topologies option in the left panel:
 
 Topology is the visual representation of networking resources. Once the Infrastructure Topology and Infrastructure Design are created, the topology is ready to be launched.
@@ -35,7 +35,7 @@ The following tasks can be performed using Running Topologies option in the left
 
 * <a href="#Delete Topology">Delete Topology</a>
 
-## View Topology List ##<a name="View Topology List"></a>
+## View Topology List <a name="View Topology List"></a>
 
 To view the existing topologies, do the following:
 
@@ -56,7 +56,7 @@ The XML version of the document is displayed.
 
   * (Optional) Click **Export** to download the design document to your local system.
 
-## Launch Topology ##<a name="Launch Topology"></a>
+## Launch Topology <a name="Launch Topology"></a>
 
 Use this option to launch the latest version of the topology document. 
 
@@ -71,7 +71,7 @@ The tab displays with options in the left panel.
 
 4.	Click **Launch Topology** to display a launch dialog box.
 
-## Terminate Topology ##<a name="Terminate Topology"></a>
+## Terminate Topology<a name="Terminate Topology"></a>
 
 When the topology is terminated, the Administration Dashboard stops the instance.
 
@@ -89,7 +89,7 @@ The tab displays with options in the left panel.
 4.	Click Terminate Topology.
 The topology state changes to inactive.
 
-##Delete Topology##<a name="Delete Topology"></a>
+##Delete Topology<a name="Delete Topology"></a>
 
 When a topology is deleted, the Administration Dashboard stops the instance and permanently removes it. This action cannot be undone.
 

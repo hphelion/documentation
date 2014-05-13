@@ -16,7 +16,7 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage">&#9650; UP</a> | NEXT &#9654;</p>
+<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/administration-dashboard/project-instances/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage/administration-dashboard/working-with-project-tab/">&#9650; UP</a> |<a href="/cloudos/moonshot/manage/administration-dashboard/project-networks/">NEXT &#9654;</p></a>
 
 # Manage Project Images #
 
@@ -38,9 +38,9 @@ An instance is launched based on an image. The following tasks can be performed 
 
 * <a href="#Launch an Image">Launch an Image</a>
 
-*To create images, refer to the Cloud Image Builder document for more details.*
+*To build images, refer to the Cloud Image Builder document for more details.*
 
-## View Image List ##<a name="View Image List"></a>
+## View Image List <a name="View Image List"></a>
 
 To view different images that are present in the given project, do the following:
 
@@ -59,7 +59,7 @@ The tab displays with options in the left panel.</br>
  
 4.	Click **Image Name** to view the image details and specifications.
 
-## Create a Project Image ##<a name="Create an Image"></a>
+## Create a Project Image <a name="Create an Image"></a>
 
 To create a project image, do the following:
 
@@ -102,7 +102,7 @@ The tab displays options in the left panel.</br>
   * Select **Image Location** from the drop-down list.<br>
 The Image Location box is displayed.</br>
 
-   * In the **Image Location** box, enter the HTTP URL to load the AKI image from.
+   * In the **Image Location** box, enter the HTTP URL from which to load the AKI image.
 
         OR
 
@@ -142,7 +142,7 @@ If no input is entered, the minimum value defaults to 0.</br>
   
   * Select Image location from the drop-down list.<br>The Image Location box is displayed.</br>
   
-  * In the **Image Location** box, enter the HTTP URL to load the ARI image from.
+  * In the **Image Location** box, enter the HTTP URL from which to load the ARI image.
 
     OR 
   * Select Image File from the drop-down-list.<br> The Choose File option is displayed.</br>
@@ -183,7 +183,7 @@ If no input is entered, the minimum value defaults to 0.</br>
   
   * Select Image location from the drop-down list.<br> The Image Location box is displayed.</br>
   
-  * In the **Image Location** box, enter the HTTP URL to load the QCOW2 image from.
+  * In the **Image Location** box, enter the HTTP URL from which to load the QCOW2 image.
   
     OR 
 
@@ -219,7 +219,7 @@ If no input is entered, the minimum value defaults to 0.</br>
 **Note:** Do not navigate from the page while the image is being created.
 
 
-## Edit a Project Image ##<a name="Edit an Image"></a>
+## Edit a Project Image<a name="Edit an Image"></a>
 
 To edit an image, do the following:
 
@@ -251,7 +251,7 @@ To edit an image, do the following:
 4.	Click **More** drop-down list displayed against the image that you wish to delete and select **Delete Image**.<br>A message is displayed to ask your confirmation. The image is deleted once you give your confirmation.</br>
 
 
-## Launch a Project Image ##<a name="Launch an Image"></a>
+## Launch a Project Image <a name="Launch an Image"></a>
 
 To launch an image in the Administration Dashboard, do the following:
 

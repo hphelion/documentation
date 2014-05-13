@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "Management console: Creating and deleting images"
+title: "Management Console: Creating and Deleting Images"
 permalink: /mc/compute/images/create/
 product: mc-compute
 
 ---
-# Management console: Creating and deleting images
+# Management Console: Creating and Deleting images
 
 This page describes how to create and delete images using the [images screen](/mc/compute/images/) of the [management console](/mc/) (MC).  This page covers the following topics:
 
@@ -19,7 +19,7 @@ This page describes how to create and delete images using the [images screen](/m
 
 Before you can begin creating or deleting an image, you must:
 
-* [Sign up for an HP Cloud compute account](https://horizon.hpcloud.com/register)
+* [Sign up for an HP Helion Public Cloud compute account](https://horizon.hpcloud.com/register)
 * [Activate compute service on your account](https://horizon.hpcloud.com/landing/)
 
 ##Creating an image ## {#Creating}
@@ -51,7 +51,7 @@ Your image is deleted.
 
 ##For further information## {#ForFurtherInformation}
 
-* For basic information about our HP Cloud compute services, take a look at the [HP Cloud compute overview](/compute/) page
+* For basic information about our HP Helion Public Cloud compute services, take a look at the [HP Helion Public Cloud compute overview](/compute/) page
 * Use the MC [site map](/mc/sitemap) for a full list of all available MC documentation pages
 * For information about the Open Stack networking ("Quantum") features, surf on over to  [their Quantum wiki](https://wiki.openstack.org/wiki/Quantum)
 

@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "Management Console: Key pairs screen"
+title: "Management Console: Key Pairs Screen"
 permalink: /mc/compute/key-pairs/
 product: mc-compute
 
 ---
-# Management Console: Key pairs screen
+# Management Console: Key Pairs Screen
 
 The management console (MC) compute dashboard volumes screen allows you to view and manipulate compute key pairs.  This page covers the following topics:
 
@@ -24,5 +24,5 @@ From this screen you can:
 
 ##For further information## {#ForFurtherInformation}
 
-* For basic information about our HP Cloud compute services, take a look at the [HP Cloud compute overview](/compute/) page
+* For basic information about our HP Helion Public Cloud compute services, take a look at the [HP Helion Public Cloud compute overview](/compute/) page
 * Use the MC [site map](/mc/sitemap) for a full list of all available MC documentation pages

@@ -1,28 +1,28 @@
 ---
 layout: default
-title: "HP Cloud Environment CLI Software for Windows PowerShell Compute Examples"
+title: "HP Helion Public Cloud CLI Software for Windows PowerShell Compute Examples"
 permalink: /cli/windows/compute/
 product: win-cli
 
 ---
-# HP Cloud Environment CLI Software for Windows PowerShell Compute Examples #
-
-This page provides you some examples of how to use the various commands (sometimes called "cmdlets") for HP Cloud environment CLI software for Windows PowerShell implementation of Compute.
+# HP Helion Public Cloud CLI Software for Windows PowerShell Compute Examples #
+ 
+This page provides you some examples of how to use the various commands (sometimes called "cmdlets") for HP Helion Public Cloud CLI software for Windows PowerShell implementation of Compute.
 
 * [Navigation](#Navigation)
-* [Availability Zone Color Management](#ColorManagement)
-* [Key Management](#KeyManagement)
-* [Security Groups](#SecurityGroups)
-* [Basic Server Operations](#BasicServerOperations)
-* [Advanced Server Operations](#AdvancedServerOperations)
-* [Password Management](#PasswordManagement)
-* [Floating IP Management](#IPManagement)
+* [Availability zone color management](#ColorManagement)
+* [Key management](#KeyManagement)
+* [Security groups](#SecurityGroups)
+* [Basic server operations](#BasicServerOperations)
+* [Advanced server operations](#AdvancedServerOperations)
+* [Password management](#PasswordManagement)
+* [Floating IP management](#IPManagement)
 
 For complete details on the commands--syntax, descriptions, and so forth--take a look at the [CLI Reference](/cli/windows/reference) page.
 
 ##Navigation## {#Navigation}
 
-To execute commands in Windows PowerShell, open a Windows PowerShell window; under the Start menu, it is typically under `All Programs > Accessories > Windows PowerShell`.  Select the shell appropriate to your system, either the 64-bit or 32-bit version.  Enter the HP Public Cloud CLI by entering:
+To execute commands in Windows PowerShell, open a Windows PowerShell window; under the Start menu, it is typically under `All Programs > Accessories > Windows PowerShell`.  Select the shell appropriate to your system, either the 64-bit or 32-bit version.  Enter the HP Helion Public Cloud CLI by entering:
 
     PS C:\> cd HPCS:
 
@@ -65,7 +65,7 @@ An `ls` command shows further nested objects available.
      PS: HPCS:\> cd "my container:"
      PS: HPCS:\> new-container "my new container"
 
-##Availability Zone Color Management## {#ColorManagement}
+##Availability zone color management## {#ColorManagement}
 
 Each availability zone is assigned a color to make it easier for you to recognize which zone you are in.  For example, if availability zone 1 is assigned cyan, whenever you are in that zone, all the command-line text is cyan.  To see what colors are assigned to each zone, use the `get-zones` command:
 
@@ -102,7 +102,7 @@ After you change the zone color, when you navigate to the zone you see something
 
 <img src="media/wincli_color_change.png" width="580" height="299" alt="" />
 
-##Key Mangement## {#KeyManagement}
+##Key mangement## {#KeyManagement}
 
 To create a new keypair:
 
@@ -122,7 +122,7 @@ To remove an existing keypair:
 
     PS HPCS:\\> Remove-keypair "MyKey"
 
-##Security Groups## {#SecurityGroups}
+##Security groups## {#SecurityGroups}
 
 To list the currently-available security groups:
 
@@ -167,7 +167,7 @@ To delete an existing security group rule:
 
     PS HPCS:\\> Remove-SecurityGroup -id "3244"
 
-##Basic Server Operations## {#BasicServerOperations}
+##Basic server operations## {#BasicServerOperations}
 
 To create a new server:
 
@@ -176,7 +176,9 @@ To create a new server:
 Where the new server has name `TestSever`, image identifier `2111`, flavor identifier`100`, security group name `Security_group1`, name-value pair `Namevalue1 | value1`, and keypair `KeyName`.  
 
 <!--DOUG: rewrite-->
-**Note for Windows Images**: When the Windows CLI detects you are creating a Windows server, it looks for the keypair *.pem* file in a specific location. The default location for the .pem file is `C:\Users\*username*\Documents\HP\`. When the new-server operation has completed, the output is the Administrator password to be used with an RDP client. Please make note of it. For assistance on connecting to a Windows Instance, see [How to Access a Windows Instance via the Remote Desktop](/compute/using#WindowsRDP) or use the [quick connect feature](#QuickConnect).
+**Note for Windows Images**: When the Windows CLI detects you are creating a Windows server, it looks for the keypair *.pem* file in a specific location. The default location for the .pem file is `C:\Users\*username*\Documents\HP\`. When the new-server operation has completed, the output is the Administrator password to be used with an RDP client. Please make note of it. 
+<!-- Hiding; referenced file missing
+For assistance on connecting to a Windows Instance, see [How to Access a Windows Instance via the Remote Desktop](/compute/using#WindowsRDP) or use the [quick connect feature](#QuickConnect). -->
 
 For a full description of the options available with the **New-Server** command, please see the [New-Server](/cli/windows/reference#New-Server) section of the [Windows CLI Reference](/cli/windows/reference) page. 
 
@@ -207,9 +209,9 @@ To delete an existing server:
 
  **Note**: You have to use the server ID, rather than the server name.  To determine the server ID, use the `ls` command as shown above.
 
-##Advanced Server Operations## {#AdvancedServerOperations}
+##Advanced server pperations## {#AdvancedServerOperations}
 
-### Create an Image of a Server## {#CreateanImageofaServer}
+### Create an image of a server## {#CreateanImageofaServer}
 
 To create an image from an existing server:
 
@@ -222,7 +224,8 @@ Creating an image of an active server produces a state 'snapshot' of the server 
 
 **Note for Windows Images**: For instances created from snapshots of Windows images, the Administrator password matches the Administrator password of the server the snapshot was taken from, even if you changed it from the original password.
 
-### Quick-Connect to an Instance ### {#QuickConnectWin}
+### Quick-Connect to an instance ### {#QuickConnectWin}
+
 
 To perform a quick-connect to an existing server instance:
 
@@ -236,7 +239,7 @@ This connects you to the server with the ID `2111`.  You can also connect to a s
     PS HPCS:\Servers> cd 2111
     PS HPCS:\Servers\2111> Connect-Server
 
-### Quick-Connect to a Non-Windows Instance ### {#QuickConnectNonWin}
+### Quick-Connect to a non-Windows instance ### {#QuickConnectNonWin}
 
 To connect to a non-Windows instance, such as Linux, follow these steps:
 
@@ -251,9 +254,9 @@ To connect to a non-Windows instance, such as Linux, follow these steps:
 
 **Note:** If you use the same keypair name for another instance, you do not need to convert the key from .pem to .ppk again.
 
-##Password Management## {#PasswordManagement}
+##Password management## {#PasswordManagement}
 
-###Get-Password### {#GetPassword}
+###Get-password### {#GetPassword}
 
 To retrieve your password for your Windows instance:
 
@@ -274,15 +277,17 @@ To use the `Get-Password` command, all of the following must be true:
 * The listing of the EventLog for the server (`PS HPCS:\Servers\server_id\EventLog\`), must display the encrypted key
 * The server has never rebooted after initial creation.
 
-###Reset-Password### {#ResetPassword}
+###Reset-password### {#ResetPassword}
 
 For Windows Instances only, if you change your Windows password manually via [RDP](http://msdn.microsoft.com/en-us/library/windows/desktop/aa383015(v=vs.85).aspx), you need to manually sync the password with the Windows CLI with the [Reset-Password cmdlet](/cli/windows/reference#reset-password) for the `connect-server` command to work. If you use the `get-password` cmdlet to fetch your original de-crypted Administrator password, and it's available, it will overwrite the password sync.
+
+>>>>>>> master
 
     PS HPCS:\> reset-password -id 1234 -p "Thisisalongpassword!"
 
 This resets the password for server `1234` to  `Thisisalongpassword!`.
  
-##Floating IP Management## {#IPManagement}
+##Floating IP management## {#IPManagement}
 
 Requests a new Floating IP and adds to your IP pool for assignment availability to a server:
 
