@@ -1405,4 +1405,8 @@ For more information on version 13.5:
 <li>Our <a href="/release-notes/">release notes for version 13.5</a> of the HP Helion Public Cloud software</li>
 <li>The <a href="/version-overview/">version 13.5 overview</a> provides a look at the different software versions available</li>
 <li>The <a href="https://community.hpcloud.com/knowledge-base">technical support knowledge base</a></li>
+<<<<<<< HEAD
 
+=======
+
+>>>>>>> master

@@ -7,9 +7,13 @@ product: public-cloud
 ---
 # HP Helion Public Cloud Block Storage Overview
 
-Need more storage for your HP Helion Public Cloud Compute instances?  HP Block Storage is the way to go. With HP Helion Public Cloud version 13.5 block storage is provided as a separate but integrated service based on OpenStack Cinder.
+The HP Cloud Block Storage service provides additional storage for your HP Cloud Compute instances. HP Block Storage protects your data in the event an instance fails.
 
-Once created, you can easily disconnect Block Storage volumes from one instance and attach them to another.  You can also create Snapshots to easily copy a volume before making significant changes to it.  Custom volumes ranging in sizes from 1 GB to 2 TB can be created using a variety of file system types.
+Block Storage allows you to connect storage volumes to running instances, providing additional storage for your applications. You can detach a storage volume from one instance and attach the volume to another instance. You can create multiple copies of a volume to attach to multiple instances.  
+
+If configured as a bootable volume, you can create an instance with that volume and shutdown the instance and boot it up at a later time, while preserving all your data.
+
+You can take Snapshots to easily copy a volume before making significant changes to it.  Custom volumes ranging in sizes from 1 GB to 2 TB can be created using a variety of file system types.
 
 
 ## API

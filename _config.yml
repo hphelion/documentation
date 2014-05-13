@@ -33,7 +33,7 @@ navigation:
   - text: Site Overview
     url: /site-overview/
   - text: HP Helion Documentation
-    url: /
+    url: / 
   Having trouble finding the info you need? Try one of the following helpful links:
   - text: Knowledge Base
     url: https://community.hpcloud.com/knowledge-base
