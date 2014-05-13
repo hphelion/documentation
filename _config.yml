@@ -60,6 +60,12 @@ navigation:
     url: /mc/compute/key-pairs/
   - text: Console Pages Site Map
     url: /mc/sitemap/
+
+  Having trouble finding the info you need? Try one of the following helpful links:</p>
+  - text: Knowledge Base
+    url: https://community.hpcloud.com/knowledge-base
+  - text: Forums
+    url: https://community.hpcloud.com/forum
   mc-object-storage:
   - text: Console Overview
     url: /mc/
