@@ -47,6 +47,10 @@ When working with the Compute service, you can perform a number of tasks with yo
 
 Use the Compute service to create a new virtual machine.
 
+1. Launch the HP Helion OpenStack&#174; interface.
+2. On the Project dashboard, click **Compute** > **Instance**.
+3. 
+
 #### Launching a virtual machine that boots from a Volume ####
 
 Use the Compute service to create a bootable virtual machine associated with a bootable volume. 
