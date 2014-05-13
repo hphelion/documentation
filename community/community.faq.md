@@ -132,7 +132,7 @@ No. An optional paid support contract from HP is available for purchase (coming 
 
 ####What support options are available? #### {#supportoptions}
 
-HP Helion OpenStack Community will be covered by Foundation Care Operations support at additional cost and will be available in the future.  Customers interact with experts in HP’s Global Cloud Center of Expertise as single source of support and accountability.  
+HP Helion OpenStack Community will be covered by Foundation Care Operations support at additional cost and will be available in the future.  Customers interact with experts in HP&#8217s Global Cloud Center of Expertise as single source of support and accountability.  
  	
 * Access to HP OpenStack technical experts, tools and best practices 
 * HP Helion OpenStack Community edition software support
