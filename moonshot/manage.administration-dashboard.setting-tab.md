@@ -16,14 +16,14 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/administration-dashboard/before-you-begin/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage/administration-dashboard/before-you-begin/">&#9650; UP</a> | <a href= "/cloudos/moonshot/manage/image-builder/">NEXT &#9654; </p></a> 
+<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/administration-dashboard/before-you-begin/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage/administration-dashboard/before-you-begin/">&#9650; UP</a> | <a href= "/cloudos/moonshot/manage/image-builder/">NEXT &#9654; </p> </a> 
 
 
 # Setting Tab #
 
 On the top right corner of the Administration Dashboard window, the **Settings** link is displayed. The link is available to all users. The Settings link helps you to modify dashboard settings for all users of your site, change password and gives details about the HP Cloud OS for Moonshot Administration Dashboard.
 
-You can perform the following task:
+You can perform the following tasks:
 
 * <a href="#Customize Site Settings">Customize Site Settings</a>
 
