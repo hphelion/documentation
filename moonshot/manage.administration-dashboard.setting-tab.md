@@ -23,7 +23,7 @@ PageRefresh();
 
 On the top right corner of the Administration Dashboard window, the **Settings** link is displayed. The link is available to all users. The Settings link helps you to modify dashboard settings for all users of your site, change password and gives details about the HP Cloud OS for Moonshot Administration Dashboard.
 
-You can perform the following task:
+You can perform the following tasks:
 
 * <a href="#Customize Site Settings">Customize Site Settings</a>
 
