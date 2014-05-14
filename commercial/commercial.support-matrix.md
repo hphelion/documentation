@@ -12,11 +12,11 @@ product: commercial
 
 
 
-# HP Helion OpenStack Edition: Support Matrix
+# HP Helion OpenStack Enterprise Edition: Support Matrix
 
-This document provides an overview of the supported hardware and software for the HP Helion OpenStack Edition, including information for hardware and software setup. 
+This document provides an overview of the supported hardware and software for the HP Helion OpenStack Enterprise Edition, including information for hardware and software setup.
 
-* [Server Infrastructure](#server-infrastructure)
+* [Server infrastructure](#server-infrastructure)
 
   * [Hardware requirements](#hardware-requirements)
 
@@ -24,19 +24,20 @@ This document provides an overview of the supported hardware and software for th
 
   * [Usable capacity](#usable-capacity)
 
+* [Storage requirements](#storage-requirement)
+
 * [Physical network architecture](#physical-network-architecture)
 
 * [Network configuration](#network-configuration)
 
-
 * [Software requirements](#software-requirements)
 
-## Server Infrastructure
+## Server infrastructure
 
-For the performance and stability of the HP Helion OpenStack Edition environment, it is very important to meet the minimum recommendations for memory, processors, and disk space for each of the components in the table below. 
+For the performance and stability of the HP Helion OpenStack Edition environment, it is very important to meet the minimum recommendations for memory, processors, and disk space for each of the components defined in the table below. 
 Before installation, please reference the appropriate platform support matrix for each component product.
 
-### Hardware Requirements
+### Hardware requirements
 
 REVIEWERS: Gavin recommends suppressing this section - "There should be no list of specific hardware types at this point. I’ve no idea what we want to formally support, but we’ve not tested any of the set listed."
 
@@ -93,9 +94,6 @@ All servers must be capable of hosting VMs. At a minimum, they must also have 32
 </tr>
 
 </table>
-
-
-
 
 
 ### Hardware requirements for specific server roles
@@ -261,7 +259,6 @@ on the VM instances hosted by the compute node.
 The following table maps the minimum server configuration into usable capacity of the overcloud.
 
 
-
 <table style="text-align: left; vertical-align: top;">
 
 <tr style="background-color: #C8C8C8; text-align: left; vertical-align: top;">
@@ -294,6 +291,50 @@ or
 <p>Note: These are the maximum figures assuming the storage is used exclusively for that type of object.</p>  </td>
 </tr>			
 </table>
+
+## Storage requirements
+
+The following table provides the storage requirements for the HP StoreVirtual (VSA). LHN OS 11.5 supports the following platforms:
+
+<table style="text-align: left; vertical-align: top; width:700px;">
+
+<tr style="background-color: lightgrey; color: black;">
+<th colspan="5"> LHN OS 11.5 </th>
+
+<tr style="background-color: white; color: black;">
+<th colspan="2">hLinux</th><th colspan="2">Ubuntu</th><th colspan="2">ESX</th></tr>
+
+<tr style="background-color: white; color: black;">
+<th>Package </th> <th>Version#</th> <th>Package</th><th>Version#</th><th>Version</th></tr>
+
+<tr style="background-color: white; color: black;">
+<td> qemu-kvm</td><td>1.7.0+dfsg-9</td><td>qemu-common</td><td>1.0+noroms-0ubuntu14.13</td><td>5.1.2, 5.5. ie., patched/approved versions of 5.1, 5.5</td></tr>
+
+<tr style="background-color: white; color: black;">
+
+<td>qemu-utils</td>	<td>1.7.0+dfsg-9</td> <td>qemu-kvm</td>	<td>1.0+noroms-0ubuntu14.13</td><td></td></tr>
+
+<tr style="background-color: white; color: black;">
+
+<td>virsh</td> <td>1.2.1</td><td>qemu-utils</td> <td>	1.0+noroms-0ubuntu14.13</td><td></td></tr>
+
+<tr style="background-color: white; color: black;">
+<td>virt-install</td> <td>0.600.4</td>	<td>virsh</td>	<td>0.9.8</td><td></td></tr>
+
+<tr style="background-color: white; color: black;">
+
+<td></td><td></td><td>virt-install</td> <td>0.600.1</td><td></td>	
+
+</table>
+
+\* Cisco Fabric Manager is not supported as of now.
+
+\* HP 3Par - Operating system Version 3.1.3 or higher with HP 3PAR Web Services API enabled and one CPG.
+
+\* Brocade FOS 6.4.3 or later is supported but FOS 7.0.2 or later is recommended.
+
+----VSA 11.5 GA will only support ESX & HyperV flavors via public portal.
+VSA KVM support is being qualified with Ubuntu and hLinux but will NOT be published for general consumption till September when they complete qualification with other distros including SUSE and Red Hat----
 
 ## Physical network architecture
 This table provides an overview of the physical network configuration requirements you must meet, with the following assumptions:
@@ -396,7 +437,7 @@ For detailed information, see the [Reference architecture](/cloudos/commercial/r
 
 REVIEWERS: IS THIS NEEDED???
 
-The following table identifies network requirements for the HP Helion OpenStack Edition environment.
+The following table identifies network requirements for the HP Helion OpenStack Enterprise Edition environment.
 
 <table style="text-align: left; vertical-align: top; width:700px;">
 
@@ -427,7 +468,27 @@ The following table identifies network requirements for the HP Helion OpenStack 
 
 ## Software requirements
 
-QUESTION: Are there any sw requirements?
+Ubuntu 12.04.04 LTS – with these package versions from the 12.04.04 distro:
+
+<table style="text-align: left; vertical-align: top; width:700px;">
+
+<tr style="background-color: lightgrey; color: black;">
+<th>Package</th><th>Version#</th>
+
+<tr style="background-color: white; color: black;">
+<td>qemu-common</td><td>1.0+noroms-0ubuntu14.13</td></tr>
+
+<tr style="background-color: white; color: black;">
+<td>qemu-kvm</td><td>1.0+noroms-0ubuntu14.13</td></tr>
+
+<tr style="background-color: white; color: black;">
+<td>emu-utils</td><td>1.0+noroms-0ubuntu14.13</td></tr>
+
+<tr style="background-color: white; color: black;">
+<td>virsh</td><td>0.9.8</td></tr>
+
+<tr style="background-color: white; color: black;">
+<td>virt-install</td> <td>0.600.1</td></tr></table>
 
 
 
