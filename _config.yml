@@ -236,7 +236,7 @@ apinavigation:
   url: /api/identity/
 - text: Object Storage
   url: /api/object-storage/
-- text: Compute
+- text: Compute Service
   url: /api/compute/
 - text: Block Storage
   url: /api/block-storage/
