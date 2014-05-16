@@ -30,28 +30,205 @@ Based on the OpenStack Nova project, the HP Helion Public Cloud Compute service 
 
 ###Instance types available### {#sizes}
 
-| Size     | API Name            | RAM (GB) | # of Cores | Total HP CCUs | Disk Size |
-| -------- | ------------------- | -------- | ---------- | ------------- | --------- |
-| XS*      | standard.xsmall     | 1        | 1          | 1             | 20GB      |
-| S        | standard.small      | 2        | 2          | 2             | 40GB      |
-| M        | standard.medium     | 4        | 2          | 4             | 80GB      |
-| L        | standard.large      | 8        | 4          | 8             | 160GB     |
-| XL       | standard.xlarge     | 15       | 4          | 15            | 300GB     |
-| 2XL      | standard.2xlarge    | 30       | 8          | 30            | 570GB     |
-| 4XL      | standard.4xlarge**  | 60       | 8          | 60            | 1100GB    |
-| 8XL      | standard.8xlarge**  | 120      | 16         | 120           | 2200GB    |
 
-**High memory versions**
+<div style=" text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table width="100%" border="1" cellpadding="2" cellspacing="2" style="background-color: #ffffff;">
+<th valign="top">
+<td style="border-width : 0px;">Size<br />
+</td> 
+<td style="border-width : 0px;">API Name <br />
+</td>
+<td style="border-width : 0px;">RAM (GB)<br />
+</td>
+<td style="border-width : 0px;"># of Cores<br />
+</td>
+<td style="border-width : 0px;">Total HP CCUs<br />
+</td>
+<td style="border-width : 0px;">Disk Size<br />
+</td>
+</th>
+<tr valign="top">
+<td style="border-width : 0px;">XS&#42;<br />
+</td>
+<td style="border-width : 0px;">standard.xsmall <br />
+</td>
+<td style="border-width : 0px;">1<br />
+</td>
+<td style="border-width : 0px;">1<br />
+</td>
+<td style="border-width : 0px;">1<br />
+</td>
+<td style="border-width : 0px;">20GB<br />
+</td>
+</tr>
+<tr valign="top">
+<td style="border-width : 0px;">S<br />
+</td>
+<td style="border-width : 0px;">standard.small <br />
+</td>
+<td style="border-width : 0px;">2<br />
+</td>
+<td style="border-width : 0px;">2<br />
+</td>
+<td style="border-width : 0px;">2<br />
+</td>
+<td style="border-width : 0px;">40GB<br />
+</td>
+</tr>
+<tr valign="top">
+<td style="border-width : 0px;">M<br />
+</td>
+<td style="border-width : 0px;">standard.medium<br />
+</td>
+<td style="border-width : 0px;">4<br />
+</td>
+<td style="border-width : 0px;">2<br />
+</td>
+<td style="border-width : 0px;">2<br />
+</td>
+<td style="border-width : 0px;">80GB<br />
+</td>
+</tr>
+<tr valign="top">
+<td style="border-width : 0px;">L<br />
+</td>
+<td style="border-width : 0px;">standard.large<br />
+</td>
+<td style="border-width : 0px;">8<br />
+</td>
+<td style="border-width : 0px;">4<br />
+</td>
+<td style="border-width : 0px;">8<br />
+</td>
+<td style="border-width : 0px;">160GB<br />
+</td>
+</tr>
+<tr valign="top">
+<td style="border-width : 0px;">XL<br />
+</td>
+<td style="border-width : 0px;">standard.xlarge<br />
+</td>
+<td style="border-width : 0px;">15<br />
+</td>
+<td style="border-width : 0px;">4<br />
+</td>
+<td style="border-width : 0px;">15<br />
+</td>
+<td style="border-width : 0px;">300GB<br />
+</td>
+</tr>
+<tr valign="top">
+<td style="border-width : 0px;">2XL<br />
+</td>
+<td style="border-width : 0px;">standard.2xlarge<br />
+</td>
+<td style="border-width : 0px;">30<br />
+</td>
+<td style="border-width : 0px;">8<br />
+</td>
+<td style="border-width : 0px;">30<br />
+</td>
+<td style="border-width : 0px;">570GB<br />
+</td>
+</tr>
+<tr valign="top">
+<td style="border-width : 0px;">4XL<br />
+</td>
+<td style="border-width : 0px;">standard.4xlarge&#42;&#42;<br />
+</td>
+<td style="border-width : 0px;">60<br />
+</td>
+<td style="border-width : 0px;">8<br />
+</td>
+<td style="border-width : 0px;">60<br />
+</td>
+<td style="border-width : 0px;">1100GB<br />
+</td>
+</tr>
+<tr valign="top">
+<td style="border-width : 0px;">8XL<br />
+</td>
+<td style="border-width : 0px;">standard.8xlarge&#42;<br />
+</td>
+<td style="border-width : 0px;">120<br />
+</td>
+<td style="border-width : 0px;">16<br />
+</td>
+<td style="border-width : 0px;">120<br />
+</td>
+<td style="border-width : 0px;">2200GB<br />
+</td>
+</tr>
+</table>
+</div>
+<p>
+<b>High memory versions</b></p>
 
-| Size        | API Name         | RAM (GB) | # of Cores | Total HP CCUs | Disk Size |
-| ----------- | ---------------- | -------- | ---------- | ------------- | --------- |
-| High Mem-L  | highmem.large**  | 16       | 4          | 8             | 160GB     |     
-| High Mem-XL | highmem.xlarge** | 30       | 4          | 15            | 300GB     |
-| High Mem-2XL| highmem.2xlarge**| 60       | 8          | 30            | 570GB     |
 
-*Running an extra small (XS) Windows instance requires a 30GB local disk. In order to run an XS Windows instance you must create a bootable block storage volume and run your Windows instance from this.
+<div style=" text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table width="100%" border="1" cellpadding="2" cellspacing="2" style="background-color: #ffffff;">
+<th valign="top">
+<td style="border-width : 0px;">Size<br />
+</td>
+<td style="border-width : 0px;">API Name<br />
+</td>
+<td style="border-width : 0px;">RAM (GB)<br />
+</td>
+<td style="border-width : 0px;"># of Cores<br />
+</td>
+<td style="border-width : 0px;">Total HP CCUs<br />
+</td>
+<td style="border-width : 0px;">Disk Size<br />
+</td>
+</th>
+<tr valign="top">
+<td style="border-width : 0px;">High Mem-L <br />
+</td>
+<td style="border-width : 0px;">highmem.large&#42;&#42;<br />
+</td>
+<td style="border-width : 0px;">16<br />
+</td>
+<td style="border-width : 0px;">4<br />
+</td>
+<td style="border-width : 0px;">8<br />
+</td>
+<td style="border-width : 0px;">160GB<br />
+</td>
+</tr>
+<tr valign="top">
+<td style="border-width : 0px;">High Mem-XL<br />
+</td>
+<td style="border-width : 0px;">highmem.xlarge&#42;&#42;<br />
+</td>
+<td style="border-width : 0px;">30<br />
+</td>
+<td style="border-width : 0px;">4<br />
+</td>
+<td style="border-width : 0px;">15<br />
+</td>
+<td style="border-width : 0px;">300GB<br />
+</td>
+</tr>
+<tr valign="top">
+<td style="border-width : 0px;">High Mem-2XL<br />
+</td>
+<td style="border-width : 0px;">highmem.2xlarge&#42;<br />
+</td>
+<td style="border-width : 0px;">60<br />
+</td>
+<td style="border-width : 0px;">8<br />
+</td>
+<td style="border-width : 0px;">30<br />
+</td>
+<td style="border-width : 0px;">570GB<br />
+</td>
+</tr>
+</table>
+</div>
 
-**New sizes/configurations
+<p>
+<b>&#42;</b>Running an extra small (XS) Windows instance requires a 30GB local disk. In order to run an XS Windows instance you must create a bootable block storage volume and run your Windows instance from this.
+</p>
+<p>
+<b>&#42;&#42;</b>New sizes/configurations</p>
 
 **Note:** An HP Helion Public Cloud Compute Unit (CCU) is a unit of CPU capacity that describes the amount of compute power that a virtual core has available to it. Thus 6.5 CCUs are roughly equivalent to the minimum power of one logical core (a hardware hyper-thread) of an Intel&reg; 2012 Xeon&reg; 2.60 GHz CPU.
 
