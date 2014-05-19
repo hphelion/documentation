@@ -17,7 +17,7 @@ navigation:
     url: /cloudos/moonshot/
   - text: CloudSystem
     url: http://www.hp.com/go/cloudsystem/docs
-  <p>public-cloud:
+  public-cloud:
   - text: HP Helion Public Cloud Documentation
     url: /pc-overview/
   - text: Available Services
