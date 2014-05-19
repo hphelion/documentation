@@ -16,6 +16,29 @@ echo ' Checking for embarassing strings...'
 IFS='%'
 
 
+#Search yml files for HTML codes
+cat ./jenkins/badYAMLstrings.txt |
+
+while read BAD
+do
+
+  #Do a recursive grep for all yml files for the badstring and assign result to RESULT
+     RESULT=`grep -r --include="*.yml" --exclude-dir=jenkins "${BAD}" ./`
+
+
+     #If RESULT is not empty, then write the bad string and the result to stout, and write 1 to the file checktmp
+     if [ -z "$RESULT" ]
+          then
+          EXIT=""
+     else
+          echo ""
+          echo "===$BAD============================="
+          echo "$RESULT"
+          echo "1" > checktmp
+     fi
+
+done  
+
 #Read badstrings and pipe into loop
 cat ./jenkins/badstrings.txt |
 while read BAD
