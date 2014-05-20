@@ -10,9 +10,8 @@ git pull
 #Delete any tempfiles left over from the last run and write introduction
 rm checktmp > /dev/null 2>&1  
 
-BRANCH=`git rev-parse --abbrev-ref HEAD`
 
-echo  Checking the $BRANCH branch for embarassing strings...    
+echo  Checking the $GIT_BRANCH branch for embarassing strings...    
 
 
 #Set Internal Field Separator to % (to preserve white space at the beginning and end of badstrings)
