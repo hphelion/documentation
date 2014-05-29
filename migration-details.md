@@ -18,7 +18,6 @@ This page covers the following topics and tasks:
 * [Contacting support](#ContactingSupport)
 * [For further information](#MoreInfo)
 
-
 ## Before you begin ## {#BeforeYouBegin}
 
 Before you transition to version 13.5, we recommend:
@@ -29,19 +28,23 @@ Before you transition to version 13.5, we recommend:
 
 ###Key transition information###
 
-Before attempted an assisted transition from version 12.12 to 13.5 of the HP Helion Public Cloud software, be sure to keep the following critical pieces of information in mind:
+Before attempting an assisted transition from version 12.12 to 13.5 of the HP Helion Public Cloud, be sure to keep the following critical pieces of information in mind:
 
-* Review the [For further information](#MoreInfo) section at the bottom of this page to better understand the differences between the version 12.12 and 13.5 Compute environments
-* IP addresses change between the two environments; if you have any DNS entries that point to your current configuration, you must plan to change them after your transition
-* Instances are offline and volumes unavailable during the transition process outlined on this page
-* For each instance image, you need to determine if you want to move a snapshot of the root partition of that instance to version 13.5, or if you prefer to just create a new instance.
-
+* Review the [For further information](#MoreInfo) section at the bottom of this page to better understand the differences between the version 12.12 and 13.5 Compute environments.
+* Ensure you have activated the Compute 13.5 environment.
+* IP addresses cannot be migrated. There are separate IP address pools in the two environments; if you have any DNS entries that point to your current configuration, you must plan to change them after your transition.
+* Block Storage volumes can be moved from the 12.12 environment to the US West 13.5 environment. They will appear in the same Availability Zone in 13.5 as they did in 12.12; so if you have a volume in US West 12.12 AZ-1, it will be moved to US West 13.5 AZ-1.
+* Block Storage volumes cannot be moved to the US East 13.5 environment; you will need to manually transfer that data using rsync or sFTP.
+* Block Storage volumes will need to be in Available status in order to be moved.
+* Once moved, the volumes will no longer be unavailable in the 12.12 environment.
+* Persistent instances, because they use volumes for their root partitions,  will need to be terminated so the volumes can be migrated.
+* Instance snapshots can be copied from the 12.12 environment to the 13.5 environment. For each Compute instance, you need to determine if you want to move a snapshot of the root partition of that instance to version 13.5, or if you prefer to just create a new instance.
 
 ## Taking a snapshot of an ephemeral instance ## {#Snapshot}
 
 The first step in preparing your data for migration to version 13.5 is to use the [Images screen](/mc/compute/images/) of the [Management Console](/mc/) (MC) to take a snapshot of your instance.  
 
-Using an image snapshot can make migration easier, but but may not be suitable for all transitions.  An instance snapshot includes only the root partition; ephemeral or additional disk space is not stored in a snapshot.  If you use ephemeral storage, you must [manually transition this data](/migration-overview#Ephemeral/).  
+Using an image snapshot can make migration easier, but may not be suitable for all transitions.  An instance snapshot includes only the root partition; ephemeral or additional disk space is not stored in a snapshot.  If you use ephemeral storage, you must [manually transition this data](/migration-overview#Ephemeral/).  
 
 If you have questions on which process is best for your situation, contact your support engineer to determine what method is best for you rather than performing [self-migration](/migration-overview) using tools such as rsync, SCP, and other similar tools.
 
@@ -61,10 +64,9 @@ This launches the `Image Details` screen for your image, which contains the `ID`
 
 <img src="media/images-details-screen-1212.png" width="580" alt="" />
 
-
 ## Preparing a volume for migration ## {#PrepVolume}
 
-The next step in transitioning your data to version 13.5 is to prepare your volume (and associated data) for migration.  When you migrate a block volume, it must be available; that is, not attached to an instance or running as an instance.  You also need to be aware that when you migrate a volume, it must be available, and all snapshots and volumes created from those snapshots are migrated as well.
+The next step in transitioning your data to version 13.5 is to prepare your volume (and associated data) for migration.  When you migrate a block volume, **it must be available**; that is, not attached to an instance or running as an instance.  You also need to be aware that when you migrate a volume all snapshots and volumes created from those snapshots are migrated as well.
 
 ###Detaching a block volume### {#DetachingBlock}
 
@@ -88,7 +90,6 @@ Support must migrate all assets associate associated with the volumes (such as v
 
 See the [Managing volumes](/mc/compute/volumes/manage/) page for details on using the MC for creating and deleting a volume and bootable volumes, attaching and detaching volumes, managing volume snapshots, and viewing volume details.
 
-
 ##Terminating a persistent instance created from a block volume ## {#TerminatingPersistent}
 
 You can't detach a volume that is running an instance; you must first terminate the instance to make the volume available.  To terminate an instance:
@@ -97,22 +98,20 @@ In the `Inventory` pane of the `Servers` screen of the [management console](/mc)
 
 <img src="media/terminate-instance-1212.png" width="580" alt="" />
 
-You instance is terminated.  You can also terminate the instance from the [server details](/mc/compute/servers/view-details/) screen of the MC.  To access the server details screen, just click on the server name (in the above example, `DougTestServer`) in the `Inventory` pane of the servers screen in the MC:
+Your instance is terminated.  You can also terminate the instance from the [server details](/mc/compute/servers/view-details/) screen of the MC.  To access the server details screen, just click on the server name (in the above example, `DougTestServer`) in the `Inventory` pane of the servers screen in the MC:
 
 <img src="media/terminate-server-serv-screen-1212.png" width="580" alt="" />
 
 **Note**: When you terminate a persistent instance that was created from a bootable volume, any ephemeral storage that is being used is lost and the public IP is released for use. 
 
-
 ## Contacting support ## {#ContactingSupport}
 
 Now that you have completed your preliminary transition steps, you need to [contact our Support team](https://www.hpcloud.com/contact_us):
 
-* [live chat from hpcloud.com](https://horizon.hpcloud.com/settings/cases/)
-* [open a support case](https://horizon.hpcloud.com/settings/cases/)
-* [email support@hpcloud.com](mailto:support@hpcloud.com)
-* call at 1-855-61CLOUD (1-855-612-5683) in the U.S. or +1-678-745-9010 internationally.
-
+* [Live Chat from hpcloud.com](http://www.hpcloud.com/)
+* [Open a Support Case](https://horizon.hpcloud.com/settings/cases/)
+* [Email support@hpcloud.com](mailto:support@hpcloud.com)
+* Call at 1-855-61CLOUD (1-855-612-5683) in the U.S. or +1-678-745-9010 Internationally.
 
 ## For further information ## {#MoreInfo}
 
@@ -121,5 +120,5 @@ For more information on migrating your services, as well as general information 
 * The [migration overview](/migration-overview) page contains details on how to perform a self-migration from version 12.12 to 13.5 of the HP Helion Public Cloud software
 * Our [release notes for version 13.5](/release-notes/) of the HP Helion Public Cloud software
 * The [version overview](/version-overview/) provides a look at the different software versions available
-* The [technical support knowledge base](https://community.hpcloud.com)
+* The [technical support knowledge base](https://community.hpcloud.com/knowledge-base)
 * [UNIX command-line interface migration information](/cli/unix/articles/migration/)
