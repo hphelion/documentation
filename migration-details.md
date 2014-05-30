@@ -117,7 +117,6 @@ Now that you have completed your preliminary transition steps, you need to [cont
 
 For more information on migrating your services, as well as general information about version 13.5:
 
-* The [migration overview](/migration-overview) page contains details on how to perform a self-migration from version 12.12 to 13.5 of the HP Helion Public Cloud software
 * Our [release notes for version 13.5](/release-notes/) of the HP Helion Public Cloud software
 * The [version overview](/version-overview/) provides a look at the different software versions available
 * The [technical support knowledge base](https://community.hpcloud.com/knowledge-base)
