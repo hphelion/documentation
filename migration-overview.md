@@ -94,7 +94,6 @@ HP Helion Public Cloud has contributed the Unix CLI back to the open source comm
 
 For more information on transitioning to version 13.5, as well as general information about version 13.5:
 
-* For greater detail on performing a self-transition, see the [self-transition reference page](/migration-overview-reference/)
 * Our [release notes for version 13.5](/release-notes/) of the HP Helion Public Cloud software
 * The [version overview](/version-overview/) provides a look at the different software versions available
 * The [version 13.5 API specs](/api/v13/)
