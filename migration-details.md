@@ -117,6 +117,7 @@ Now that you have completed your preliminary transition steps, you need to [cont
 
 For more information on migrating your services, as well as general information about version 13.5:
 
+* For greater detail on performing an assisted-transition, see the [assisted-transition reference page](/migration-details-reference/)
 * Our [release notes for version 13.5](/release-notes/) of the HP Helion Public Cloud software
 * The [version overview](/version-overview/) provides a look at the different software versions available
 * The [technical support knowledge base](https://community.hpcloud.com/knowledge-base)
