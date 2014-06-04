@@ -30,7 +30,7 @@ navigation:
     url: /cli/
   - text: FAQ
     url: /faq/
-  - text: Site Overview
+  - text: Site Overview 
     url: /site-overview/
   - text: HP Helion Documentation
     url: / 
@@ -66,11 +66,6 @@ navigation:
   - text: Console Pages Site Map
     url: /mc/sitemap/
 
-  Having trouble finding the info you need? Try one of the following helpful links:</p>
-  - text: Knowledge Base
-    url: https://community.hpcloud.com/knowledge-base
-  - text: Forums
-    url: https://community.hpcloud.com/forum
   mc-object-storage:
   - text: Console Overview
     url: /mc/
@@ -247,7 +242,7 @@ apinavigation:
   url: /api/identity/
 - text: Object Storage
   url: /api/object-storage/
-- text: Compute
+- text: Compute Service
   url: /api/compute/
 - text: Block Storage
   url: /api/block-storage/
