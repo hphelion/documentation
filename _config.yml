@@ -3,7 +3,7 @@ markdown: md2html
 exclude: [README.md, Makefile, stackato-one.yml, stackato-two.yml, jenkins]
 relative_permalinks: false
 
-navigation:
+navigation: 
   main:
   - text: HP Helion Documentation
     url: /
