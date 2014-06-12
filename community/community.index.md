@@ -7,7 +7,7 @@ product: community
 ---
 # HP Helion OpenStack&reg; Community Documentation Home
 
-Welcome! The HP Helion OpenStack Community edition is OpenStack&reg; technology coupled with an HP configured Linux operating system designed for administrators and developers who want to quickly stand up an OpenStack cloud. The Community edition is a pure and free-to-license distribution that speeds deployment and simplifies the management of small scale open cloud environments and infrastructure services. It supports up to 30 physical nodes and 600 virtual nodes making it ideal for small-scale and proof of concept deployments.
+Welcome! The HP Helion OpenStack Community edition is OpenStack&reg; technology coupled with coupled with a version of Linux&reg; provided by HP designed for administrators and developers who want to quickly stand up an OpenStack cloud. The Community edition is a pure and free-to-license distribution that speeds deployment and simplifies the management of small scale open cloud environments and infrastructure services. It supports up to 30 physical nodes and 600 virtual nodes making it ideal for small-scale and proof of concept deployments.
 <!-- Next 2 graphs, text from Jim Gardner email 4/24
 HP Helion OpenStack Community Edition is a pure and free-to-license distribution that speeds deployment and simplifies the management of small scale open cloud environments and infrastructure services. 
 
@@ -29,15 +29,14 @@ HP Helion OpenStack Community Edition consists of many services based on the dif
 Use the following links to get started with HP Helion OpenStack Community edition:
 
 * [Release notes](/helion/community/release-notes/)
-* [Installation and configuration](/helion/community/install-virtual/) 
+* [Installation overview](/helion/community/install-overview/) 
+* [Hardware and software requirements](/helion/community/hwsw-requirements/)
 * [FAQ](/helion/community/faq/)
 * [Related topics](/helion/community/related-links/)
 * [Documentation site index](/helion/community/siteindex/)
 
-
-<!--* [Technical overview](/helion/community/technical-overview/)
-* [Reference architecture](/helion/community/reference-architecture/)
-* [Support matrix](/helion/community/support-matrix/)
+<!--*
+* [Technical overview](/helion/community/technical-overview/)
 * [Glossary](/helion/community/glossary/) 
 
 ## REST API information ## {#api}
