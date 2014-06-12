@@ -131,7 +131,12 @@ HP recommends the following best practices for this software version.
     - Delete the KVM VMs and their storage volumes with the `virsh` command.
     - Delete the file `/tmp/seed_options`.
     - Uninstall any packages that you no longer require.
- 
+
+* For optimum VM operation and to avoid generating inaccurate error codes, we recommend you not reboot the overcloud controller but rather restart the applicable services by executing the following commands:
+    - sudo service nova-compute restart
+    - sudo service nova-scheduler restart
+    - sudo service nova-conductor restart
+    - sudo service neutron-openvswitch-agent restart
 
 ###Known issues in this release### {#known-issues}
 
@@ -141,24 +146,13 @@ The following are the known issues for HP Helion OpenStack Community edition:
 
 * If you determine that your VM seed has not started correctly when you executed the `hp_ced_start_seed` script, run the script a second time to ensure you start the seed.
 * VM installations do not currently persist across reboots.  When you reboot your system, be sure to start a new VM installation.
-
-<!--* To restart the services on the overcloud nodes without putting the VMs into an ERROR state, we recommend you execute the following commands rather than rebooting the overcloud controller:
+* If after an overcloud controller reboot you determine the VMs are in an ERROR state, execute the following commands to restart the services and remove the error:
   
 		$ sudo service nova-compute restart
 		$ sudo service nova-scheduler restart
 		$ sudo service nova-conductor restart
 		$ sudo service neutron-openvswitch-agent restart
 
-Original wording:
-* After an overcloud controller reboot, all VMs go to the ERROR state.
-You can work around this by logging onto all overcloud compute nodes and
-restarting the nova-compute, nova-scheduler, nova-conductor and neutron-openvswitch services on each overcloud compute node.
-  
-		$ sudo service nova-compute restart
-		$ sudo service nova-scheduler restart
-		$ sudo service nova-conductor restart
-		$ sudo service neutron-openvswitch-agent restart
--->
 
 ##For further information## {#for-further-information}
 

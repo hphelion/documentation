@@ -68,7 +68,7 @@ TripleO creates several large VMs as part of this virtual deployment process, so
     * Ubuntu 13.10
     * Ubuntu 14.04
 
-     **Note:** The virtual installation does not support Ubuntu 12.04, Debian (stable or testing), any version of CentOS, or any version of Linux.
+     **Note:** The virtual installation does not support Ubuntu 12.04, Debian (stable or testing), any version of CentOS, or any version of hLinux, a Debian-derivative.
 
 ### Software requirements
 The following Debian/Ubuntu packages are required:
