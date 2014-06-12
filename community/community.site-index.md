@@ -33,7 +33,11 @@ PageRefresh();
 
 #### [Install &amp; configure your HP Helion OpenStack Community  cloud](/helion/community/install-overview/)
 
-####[HP Helion OpenStack® Community FAQ](/helion/community/faq/)
+* [Hardware and software requirements](#/helion/community/hwsw-requirements/)
+* [Virtual installation](#/helion/community/install-virtual/)
+* [Baremetal installation](#/helion/community/install/)
+
+####[HP Helion OpenStack Community FAQ](/helion/community/faq/)
 
 #### [OpenStack reference](http://docs.openstack.org/)
  

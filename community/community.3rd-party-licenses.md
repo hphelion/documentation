@@ -19,10 +19,10 @@ PageRefresh();
 
 <p style="font-size: small;"> <a href="/helion/community//">&#9664; PREV | <a href="/helion/community//">&#9650; UP</a> | NEXT &#9654; </p>
 
-# HP NAME OpenStack&reg; Community edition Open Source and Third-Party Software License Agreements
+# HP Helion OpenStack&reg; Community edition Open Source and Third-Party Software License Agreements
 
-Document Release Date: May 2014 <br />
-Software Release Date: May 2014
+Document Release Date: June 2014 <br />
+Software Release Date: June 2014
 
 * [Legal Notices](#legal-notices)
 * [Disclaimer for Experimental Software](#disclaimer-for-experimental-software)

@@ -20,9 +20,6 @@ Welcome! You've got questions. We have the answers.
 * [How does HP Helion OpenStack Community compare to other OpenStack distributions on the market?](#howcompare)
 * [Is there a cost associated with this distribution?](#distrocost)
 * [What is TripleO?](#TripleO)
-* [What is a seed?](#Whatisseed)
-* [What is an undercloud?](#Whatisundercloud)
-* [What is an overcloud?](#Whatisovercloud)
 * [What is available on the preview version announced on May 7th?](#preview)
 * [When and where will HP Helion OpenStack Community be released?](#release)
 * [Is the release localized for non-English speaking markets?](#localized) 
@@ -63,24 +60,6 @@ It is free to download. An optional support package will be available to purchas
 ####What is TripleO? #### {#TripleO}
 
 OpenStack on OpenStack (or TripleO) is OpenStack's official project for deployment of OpenStack systems. It builds on the core resource-provisioning strengths of OpenStack technology, to enable cloud administrators to deploy and maintain baremetal installations of OpenStack using the same APIs that they are familiar with for deploying workloads on an OpenStack cloud. A template based deployment engine (using OpenStack Heat) allows for rigorous testing and reliable, repeatable deployments of known configurations. 
- 
-####What is a seed? #### {#Whatisseed}
-
-The seed machine is a single node that is effectively just an installer. Its only purpose is to create the undercloud.  This is the equivalent of a customer's workstation, laptop, or maybe staff-shell (if the customer has ever used it). It uses nova, glance and heat to install the undercloud.
-
-This is not a full OpenStack installation, it is a cut-down installation providing only the software required in order to enable the installation of the undercloud onto physical systems in the data center.
-
-####What is an undercloud? #### {#Whatisundercloud}
-
-The undercloud is what customers would use to administrate and maintain the hardware.  It installs physical machines using nova and the baremetal or ironic driver (in the same way that it was installed from the seed). It then uses heat to deploy and configure the resulting booted systems, which is analogous to the use of Chef in HP Public Cloud.  The only purpose of the undercloud is to administer the physical machines in the data center for the purpose of making them run an OpenStack cloud.
-
-This is not a full OpenStack installation, it is a cut-down installation providing only the software required in order to enable the installation of the overcloud onto physical systems in the data center.
-
-####What is an overcloud? #### {#Whatisovercloud}
-
-This is the HP Public Cloud.  This is the OpenStack installation that customers will interact with in the same way they interact with the HP Public Cloud.  This is where the web interface will be housed, and the cloud in which all instances will be created/objects stored/volumes created etc.
-
-This is a full and feature-rich OpenStack installation.
 
 ####What is available in the current version? {#preview}
 
