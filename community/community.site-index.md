@@ -17,7 +17,7 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> <a href="/cloudos/">&#9664; PREV</a> | <a href="/cloudos/">&#9650; UP</a> | NEXT &#9654; </p>
+<p style="font-size: small;"> <a href="/helion/">&#9664; PREV</a> | <a href="/helion/">&#9650; UP</a> | NEXT &#9654; </p>
 
 # HP Helion OpenStack&reg; Community Site Index
 
@@ -31,9 +31,9 @@ PageRefresh();
 * [FAQ](/helion/community/faq/)  
 * [Related topics](/helion/community/related-links/)
 
-#### [Install &amp; configure your HP Helion OpenStack Community  cloud](/helion/community/install-virtual/)
+#### [Install &amp; configure your HP Helion OpenStack Community  cloud](/helion/community/install-overview/)
 
-
+####[HP Helion OpenStack® Community FAQ](/helion/community/faq/)
 
 #### [OpenStack reference](http://docs.openstack.org/)
  
@@ -44,5 +44,7 @@ PageRefresh();
 * [OpenStack Networking Administration Guide](http://docs.openstack.org/trunk/openstack-network/admin/content/index.html)
 * [OpenStack Operations Guide](http://docs.openstack.org/trunk/openstack-ops/content/index.html)
  
+#### [Open Source and Third-Party Software License Agreements](/helion/community/community-3rd-party-license-agreements/)
+
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
  
