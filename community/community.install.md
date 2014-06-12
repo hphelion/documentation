@@ -10,7 +10,7 @@ product: community
 <p style="font-size: small;"> <a href="/helion/community/install-overview/">&#9664; PREV</a> | <a href="/helion/community/install-overview/">&#9650; UP</a> | <a href="/helion/community/install-virtual/">NEXT &#9654;</a> </p>
 
 # HP Helion OpenStack Community Baremetal Installation and Configuration
-This page explain how to install and configure HP Helion OpenStack Community baremetal multi-node deployment &mdash; ideal for a small-scale, private cloud. This installation deploys to a minimum of 5 baremetal servers, to which you can add **up to 30 compute nodes**:
+This page explains how to install and configure HP Helion OpenStack Community baremetal multi-node deployment &mdash; ideal for a small-scale, private cloud. This installation deploys to a minimum of 5 baremetal servers, to which you can add **up to 30 compute nodes**:
 
 * 1 undercloud
 * 1 overcloud controller
@@ -175,7 +175,7 @@ Once you have ensured you meet all the hardware requirements and have completed 
 
    * [Starting the seed and building your cloud](#startseed)
 
-**IMPORTANT:** During the installation process, **DO NOT RESTART** the system running the installer OR seed VM. Restarting this system disrupts the baremetal bridge networking configuration and disables both the undercloud and overcloud. If the system is inadvertently restarted, you must complete the installation process again.
+**IMPORTANT:** During the installation process, **DO NOT RESTART** the system running the installer and seed VM. Restarting this system disrupts the baremetal bridge networking configuration and disables both the undercloud and overcloud. If the system is inadvertently restarted, you must complete the installation process again.
 
 ### Downloading and unpacking installation file ## {#getinstall}
 
@@ -186,9 +186,9 @@ The HP Helion OpenStack Community baremetal installation is provided as a compre
 
     `sudo su -`
 
-2. Register and log in to the CODN site, then download the HP Helion OpenStack Community baremetal package from this site:
+2. Register and then log in to download the HP Helion OpenStack Community baremetal package from this site:
 
-    [https://helion.hpwsportal.com/](https://helion.hpwsportal.com/)
+    [HP Helion OpenStack Community Multi-node Baremetal Installation Package](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221216%22%7D/Show)
 
 3. Create a directory named `work`:
 

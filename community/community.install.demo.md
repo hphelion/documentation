@@ -122,7 +122,7 @@ The virtual installation of HP Helion OpenStack Community for a single server is
 
 You can register and download the package from the following URL:
 
-[https://helion.hpwsportal.com/](https://helion.hpwsportal.com/)
+[HP Helion OpenStack Community Virtual Installation Package](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221000%22%7D/Show)
 
 **Note:** This install file is around 4GB and does not fit on a memory stick formatted as FAT32. If you are planning to store the installation files on removable media, use something like NTFS.
 
