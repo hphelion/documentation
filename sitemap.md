@@ -21,7 +21,6 @@ Having a bit of trouble navigating our site, and so you're looking for a single 
 &nbsp;&nbsp;&nbsp;&nbsp;[Software release notes](/release-notes/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Version overview](/version-overview)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Version 12.12 to 13.5 transition overview](/migration-overview/)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Self-transition reference](/migration-overview-reference/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Assisted transition overview](/migration-details/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Assisted transition reference](/migration-details-reference/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[HP Helion Public Cloud FAQ](/faq)<br>

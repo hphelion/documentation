@@ -5,9 +5,10 @@ permalink: /site-overview/
 product: public-cloud
 
 ---
-# HP Helion Public Cloud Website Overview
 
-Welcome to the HP Helion Public Cloud website!  We don't know about you, but whenever we go to a new site we're always thinking, "Yeah, okay; where the heck *is* everything?"  That's the question this page is designed to answer; it contains an overview of the site as a whole, as well as some details on other web pages on the site where you can get the information you need.  So ride along with us now:
+# HP Helion Public Cloud Website Overview 
+
+Welcome to the HP Helion Public Cloud website! We don't know about you, but whenever we go to a new site we're always thinking, "Yeah, okay; where the heck *is* everything?"  That's the question this page is designed to answer; it contains an overview of the site as a whole, as well as some details on other web pages on the site where you can get the information you need.  So ride along with us now:
 
 ##Quicklinks
 Rather than force you to read this whole page to find the info you need, here are a few links that maybe can help you out quickly:
