@@ -9,12 +9,37 @@ git pull
 
 #Delete any tempfiles left over from the last run and write introduction
 rm checktmp > /dev/null 2>&1  
-echo ' Checking for embarassing strings...'    
+
+
+echo  Checking the $GIT_BRANCH branch for embarassing strings...    
 
 
 #Set Internal Field Separator to % (to preserve white space at the beginning and end of badstrings)
 IFS='%'
 
+
+#Search yml files for HTML codes
+cat ./jenkins/badYAMLstrings.txt |
+
+while read BAD
+do
+
+  #Do a recursive grep for all yml files for the badstring and assign result to RESULT
+     RESULT=`grep -r --include="*.yml" --exclude-dir=jenkins "${BAD}" ./`
+
+
+     #If RESULT is not empty, then write the bad string and the result to stout, and write 1 to the file checktmp
+     if [ -z "$RESULT" ]
+          then
+          EXIT=""
+     else
+          echo ""
+          echo "===$BAD============================="
+          echo "$RESULT"
+          echo "1" > checktmp
+     fi
+
+done  
 
 #Read badstrings and pipe into loop
 cat ./jenkins/badstrings.txt |
