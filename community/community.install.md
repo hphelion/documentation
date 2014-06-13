@@ -87,8 +87,6 @@ To install a HP Helion OpenStack Community baremetal multi-node configuration, y
       * Ubuntu 13.10
       * Ubuntu 14.04
 
-            **Note:** The baremetal installation does not support Ubuntu 12.04, Debian (stable or testing), any version of CentOS, or any version of hLinux, a Debian-derivative.
-
     **Important:** This system might be reconfigured during the installation process so a dedicated system is recommended. Reconfiguration might include installing additional software packages, and changes to the network or virtualisation configuration.
 
 ### Network configuration

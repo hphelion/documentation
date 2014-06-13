@@ -248,16 +248,14 @@ The [multi-node baremetal installation of HP Helion OpenStack Community](/helion
       * Ubuntu 13.10
       * Ubuntu 14.04
 
-            **Note:** The baremetal installation does not support Ubuntu 12.04, Debian (stable or testing), any version of CentOS, or any version of hLinux, a Debian-derivative.
-
-    **Important:** This system might be reconfigured during the installation process so a dedicated system is recommended. Reconfiguration might include installing additional software packages, and changes to the network or virtualisation configuration.
-
     * If they are not already installed, the following required Debian/Ubuntu packages are added to the system; however, we recommend you install them beforehand.
 
      * qemu
      * openvswitch
      * libvirt
      * python-libvirt
+
+    **Important:** This system might be reconfigured during the installation process so a dedicated system is recommended. Reconfiguration might include installing additional software packages, and changes to the network or virtualisation configuration.
 
 * You must also satisfy these network configuration requirements:
 
@@ -279,8 +277,6 @@ For the [virtual installation](/helion/community/install-virtual/) you must use 
 
     * Ubuntu 13.10
     * Ubuntu 14.04
-
-     **Note:** The virtual installation does not support Ubuntu 12.04, Debian (stable or testing), any version of CentOS, or any version of hLinux, a Debian-derivative.
 
 * If they are not already installed, the following required Debian/Ubuntu packages are added to the system:
 
