@@ -41,7 +41,7 @@ Welcome! You've got questions. We have the answers.
 
 ####What is HP Helion OpenStack Community? And how does it tie into the overall HP Helion portfolio? #### {#whatcommunity}
 
-HP Helion OpenStack Community edition is the first OpenStack distribution from HP. It is a free to download and will be kept updated frequently to stay current with OpenStack developments. It will be a foundational technology for all HP Helion products in the future.
+HP Helion OpenStack Community edition is the first OpenStack distribution from HP. It is free to download and will be kept updated frequently to stay current with OpenStack developments. It will be a foundational technology for all HP Helion products in the future.
 
 ####What does this distro enable customers to do? #### {#distroenable}
 
