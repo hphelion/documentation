@@ -100,7 +100,7 @@ Lists the Metadata entries assigned to the supplied resource.
  `get-metadata  [*SourcePath*  | -sp *SourcePath* | -s *server-ID* | -cn "*container-name*"]`
 
 ###Description
-You can list metadata assigned to Servers, Storage Objects, Containers, and CDN Containers.  Many resources can have zero to many custom meta-data entries assigned to them. *Get-Metadata* generates a list of key value pairs attached to the resource; you may use these for whatever purpose you like. (For details on how to add meta-data elements, see the [Set-Metadata](#setmetadata) cmdlet.)
+You can list metadata assigned to Servers, Storage Objects, and Containers.  Many resources can have zero to many custom meta-data entries assigned to them. *Get-Metadata* generates a list of key value pairs attached to the resource; you may use these for whatever purpose you like. (For details on how to add meta-data elements, see the [Set-Metadata](#setmetadata) cmdlet.)
 
 ### Options
 
