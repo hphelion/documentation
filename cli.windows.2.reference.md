@@ -15,6 +15,7 @@ Below you can find a full reference of supported HP Helion Public Cloud CLI soft
 * [Object Storage](#ObjectStorage)
 * [Block Storage](#BlockStorage)
 <!-- * [CDN](#CDN) -->
+
 **Note**: The HP Helion Public Cloud CLI software for Windows PowerShell cmdlets are not case specific; in other words, `Get-Catalog` and `get-catalog` function identically. When referencing an argument, like a container name, that has a space, use quotes to access that resource. For example:
      
      PS: HPCS:\> cd "my container:"
