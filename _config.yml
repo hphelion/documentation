@@ -1,7 +1,9 @@
 url: http://docs.hpcloud.com/
 markdown: md2html
 exclude: [README.md, Makefile, stackato-one.yml, stackato-two.yml, jenkins]
+<<<<<<< HEAD
 include: [devplatform/stackato/images]
+
 relative_permalinks: false
 
 navigation: 
@@ -31,7 +33,7 @@ navigation:
     url: /cli/
   - text: FAQ
     url: /faq/
-  - text: Site Overview
+  - text: Site Overview 
     url: /site-overview/
   - text: HP Helion Documentation
     url: / 
@@ -218,50 +220,31 @@ navigation:
     url: /helion/community/
   - text: Release Notes
     url: /helion/community/release-notes/  	
-  - text: Hardware and Software Requirements
-    url: /helion/community/hwsw-requirements/
-  - text: Installation Overview
-    url: /helion/community/install-overview/ 
-  - text: Baremetal Installation & Configuration
-    url: /helion/community/install/	
-  - text: Virtual Installation & Configuration
-    url: /helion/community/install-virtual/
   - text: FAQ
-    url: /helion/community/faq/ 
+    url: /helion/community/faq/ 		
+  - text: Installation & Configuration
+    url: /helion/community/install-virtual/		
   - text: Related Topics
     url: /helion/community/related-links/		
   - text: Site Index
     url: /helion/community/siteindex/
-  - text: Open Source and Third-Party Software License Agreements
-    url: /helion/community/community-3rd-party-license-agreements/
   - text: HP Helion Documentation
     url: /
-  commercial: 
-  - text: HP Helion OpenStack Doc Home
-    url: /helion/commercial/
+  devplatform: 
+  - text: HP Helion Development Platform Community Doc Home
+    url: /helion/devplatform/
+  - text: Development Platform Installation & Configuration
+    url: /helion/devplatform/community/install-dev-platform/
+  - text: Application Lifecycle Service Installationa & Configuration
+    url: /helion/devplatform/community/install-als/
+  - text: ALS Documentation
+    url: /als/v1/
   - text: Release Notes
-    url: /helion/commercial/release-notes/ 
-  - text: FAQ
-    url: /helion/commercial/faq/  
-  - text: Technical Overview
-    url: /helion/commercial/technical-overview/ 		
-  - text: Installation & Configuration
-    url: /helion/commercial/install-beta/	
-  - text: Support Matrix
-    url: /helion/commercial/support-matrix-beta/ 	
-  - text: Services Overview
-    url: /helion/commercial/services/overview/	
-  - text: Reference Architecture
-    url: /helion/commercial/reference-architecture/  	
+    url: /helion/devplatform/community/release-notes/     
   - text: Related Topics
-    url: /helion/commercial/related-links/	
-  - text: Glossary
-    url: /helion/commercial/glossary/ 		
-  - text: Site Index
-    url: /helion/commercial/siteindex/
-  - text: HP Helion Documentation
+    url: /helion/devplatform/community/related-topics/
+  - text: HP Helion Documentation Home
     url: /
-
 apinavigation:
 - text: Site home page
   url: /
@@ -271,7 +254,7 @@ apinavigation:
   url: /api/identity/
 - text: Object Storage
   url: /api/object-storage/
-- text: Compute
+- text: Compute Service
   url: /api/compute/
 - text: Block Storage
   url: /api/block-storage/
@@ -285,7 +268,7 @@ apinavigation:
   url: /api/dns/
 - text: Monitoring
   url: /api/monitoring/
-- text: Application Platform
+- text: ALS Documentation
   url: https://apaas-docs.hpcloud.com
 - text: Messaging
   url: /api/msgaas/

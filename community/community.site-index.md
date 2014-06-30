@@ -23,8 +23,6 @@ PageRefresh();
 
 #### [HP Helion OpenStack Community Documentation Home](/helion/community)
 
-<!-- #### [HP Helion OpenStack Community Edition Open Source and Third-Party Software License Agreements](/helion/community/community-3rd-party-license-agreements/) -->
-
 #### [Getting started with HP Helion OpenStack Community](/helion/community/)
 
 * [Release notes](/helion/community/release-notes/) 
@@ -49,6 +47,8 @@ PageRefresh();
 * [OpenStack Operations Guide](http://docs.openstack.org/trunk/openstack-ops/content/index.html)
  
 #### [Open Source and Third-Party Software License Agreements](/helion/community/community-3rd-party-license-agreements/)
+
+#### [End User License Agreement](/helion/community/eula/)
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
  
