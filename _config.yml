@@ -232,6 +232,8 @@ navigation:
     url: /helion/community/siteindex/
   - text: Open Source and Third-Party Software License Agreements
     url: /helion/community/community-3rd-party-license-agreements/
+  - text: End User License Agreement
+    url: /helion/community/eula/
   - text: HP Helion Documentation
     url: /
   commercial: 
