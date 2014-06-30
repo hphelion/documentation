@@ -5,7 +5,7 @@ permalink: /helion/devplatform/community/install-dev-platform/
 product: devplatform
 
 ---
-
+<!-- -->
 <p style="font-size: small;"> <a href="/helion/devplatform/community/release-notes/">&#9664; PREV</a> | <a href="/helion/devplatform/">&#9650; UP</a> | <a href="/helion/devplatform/community/related-topics/">NEXT &#9654;</a> </p>
 
 # HP Helion Development Platform: Installation and configuration 
@@ -148,7 +148,7 @@ The installation of HP Helion Development Platform for the HP Helion OpenStack C
 
 Register and download the package from the following URL:
 
-[HP Helion Development Platform](https://helion.hpwsportal.com/#/Product/{"productId":"1251"}/Show)
+[HP Helion Development Platform](https://helion.hpwsportal.com/#/Product/{"productId":"1245"}/Show)
 
 **Note**: This install file is over 4GB and does not fit on a memory stick formatted as FAT32. If you are planning to store the installation files on removable media use a formatting that supports large files, like NTFS.
 
