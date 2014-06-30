@@ -5,7 +5,7 @@ permalink: /helion/devplatform/community/install-dev-platform/
 product: devplatform
 
 ---
-<!-- -->
+ 
 <p style="font-size: small;"> <a href="/helion/devplatform/community/release-notes/">&#9664; PREV</a> | <a href="/helion/devplatform/">&#9650; UP</a> | <a href="/helion/devplatform/community/related-topics/">NEXT &#9654;</a> </p>
 
 # HP Helion Development Platform: Installation and configuration 
