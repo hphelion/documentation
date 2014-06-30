@@ -13,8 +13,8 @@ Below you can find a full reference of supported HP Helion Public Cloud CLI soft
 * [Non-service-specific](#Nonservicespecific)
 * [Compute](#Compute)
 * [Object Storage](#ObjectStorage)
-* [CDN](#CDN)
 * [Block Storage](#BlockStorage)
+<!-- * [CDN](#CDN) -->
 
 **Note**: The HP Helion Public Cloud CLI software for Windows PowerShell cmdlets are not case specific; in other words, `Get-Catalog` and `get-catalog` function identically. When referencing an argument, like a container name, that has a space, use quotes to access that resource. For example:
      
@@ -97,10 +97,10 @@ Displays the settings for the session.  The above example shows all currently-co
 Lists the Metadata entries assigned to the supplied resource.  
 
 ###Syntax
- `get-metadata  [*SourcePath*  | -sp *SourcePath* | -s *server-ID* | -cn "*container-name*" | -cdn "*cdn-container-name*"]`
+ `get-metadata  [*SourcePath*  | -sp *SourcePath* | -s *server-ID* | -cn "*container-name*"]`
 
 ###Description
-You can list metadata assigned to Servers, Storage Objects, Containers, and CDN Containers.  Many resources can have zero to many custom meta-data entries assigned to them. *Get-Metadata* generates a list of key value pairs attached to the resource; you may use these for whatever purpose you like. (For details on how to add meta-data elements, see the [Set-Metadata](#setmetadata) cmdlet.)
+You can list metadata assigned to Servers, Storage Objects, and Containers.  Many resources can have zero to many custom meta-data entries assigned to them. *Get-Metadata* generates a list of key value pairs attached to the resource; you may use these for whatever purpose you like. (For details on how to add meta-data elements, see the [Set-Metadata](#setmetadata) cmdlet.)
 
 ### Options
 
@@ -113,8 +113,6 @@ You can list metadata assigned to Servers, Storage Objects, Containers, and CDN 
 **cn**
 : Container name.
 
-**cdn**
-: CDN container name.
 
 ###Examples###
 EXAMPLE 1
@@ -135,11 +133,6 @@ EXAMPLE 3
 
 Lists all metadata entries for the container "Marketing".
 
-EXAMPLE 4
-
-    PS yourcontainer:\> get-metadata -cdn "Marketing"
-
-Lists all metadata entries for the CDN container "Marketing".
 
 ##get-notes## {#getnotes}
 Displays the release notes for the current version. You can filter the release notes to a specific version or show all previous release notes.
@@ -254,16 +247,13 @@ Sets the session credentials for the access key to `12345678901234:1234567890123
 Allows you to add meta-data elements to an existing resource. Storage objects can have zero to many custom meta-data entries assigned to them.  This is essentially a list of key value pairs attached to the object that you may use for whatever you would like. Delimit the name value pairs (NVPs) with the pipe symbol | and enclose them in quotes. You can delimit multiple NVPs with commas.
 
 ### Syntax###
- set-metadata  [*SourcePath* | -sp *SourcePath* | -s *server-ID* | -cdn "*cdn-container-name*"] -md ["*name*" {"*name2*" . . .}]
+ set-metadata  [*SourcePath* | -sp *SourcePath* | -s *server-ID* ] -md ["*name*" {"*name2*" . . .}]
 
 **sp**
 :  Path to the remote storage object. You can express paths as fully qualified (absolute) or relative to the current location in the store. 
 
 **s**
 : Server ID.
-
-**cdn**
-: CDN container name.
 
 **md**
 : Pipe-delimited set of key value pairs seperated by commas.
@@ -281,11 +271,6 @@ EXAMPLE 2
 
 Applies the KVPs "Author|Tom" and "Editor|Sam" to the server with the ID=1345.
 
-EXAMPLE 3
-
-    PS yourcontainer:\> set-metadata -cdn "Marketing" -md "Author|Tom", "Editor|Sam"
-
-Applies the KVPs "Author|Tom" and "Editor|Sam" to the CDN-enabled container "Marketing".
 
 ##Set-Zone## {#setzone}
 Sets the availability zone; all subsequently-issued commands will apply to the assigned availability zone.
@@ -1381,10 +1366,8 @@ Creates a new container named marketing.
 After confirmation, deletes a container entirely. If any files exist within the container, they are deleted as well.
 
 ### Syntax###
- remove-container  *Name* { -cdn }
+ remove-container  *Name* 
 
-**cdn**
-:  Removes any associated CDN entry when the container is removed.
 
 ###Examples###
 EXAMPLE
@@ -1466,6 +1449,7 @@ EXAMPLE
 
 Allows you to access resources hosted within the Marketing Container over the public Internet.
 
+<!-- Removed per DXCLI-83
 #CDN CLI  Commands# {#CDN}
 
 ##Get-CDN## {#Get-CDN}
@@ -1506,6 +1490,7 @@ EXAMPLE
     remove-cdn -n "TestContainer"
 
 Removes a CDN entry from container "TestContainer".
+-->
 
 #Block Storage CLI Commands# {#BlockStorage}
 

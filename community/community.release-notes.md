@@ -10,30 +10,39 @@ product: community
 <!--**Product Name:** HP Helion OpenStack&reg; Community
 **OpenStack&reg; release name:** Icehouse-->
 
-<!--Thanks for installing the HP Helion OpenStack Community edition! This initial "cloud-in-a-box" virtual deployment allows you to evaluate the Community edition and Icehouse release of OpenStack.  Frequent updates will be available&mdash;approximately every 6 weeks&mdash;to remain as close to the OpenStack trunk release as possible.  The Community edition is the foundational technology for the HP Helion portfolio of products, allowing HP Helion products to quickly leverage OpenStack capabilities.-->
+<!--Thanks for installing the HP Helion OpenStack Community edition! The initial "cloud-in-a-box" virtual deployment allows you to evaluate the Community edition and Icehouse release of OpenStack.  Frequent updates will be available&mdash;approximately every 6 weeks&mdash;to remain as close to the OpenStack trunk release as possible.  The Community edition is the foundational technology for the HP Helion portfolio of products, allowing HP Helion products to quickly leverage OpenStack capabilities.-->
 
-Thanks for installing the HP Helion OpenStack Community edition! This initial "cloud-in-a-box" virtual deployment targeted towards the enterprises and cloud administrators interested in evaluating, developing and deploying a private cloud based on OpenStack Cloud Software. It's a pure, free-to-license OpenStack distribution that speeds up deployment and simplifies the management of a small scale, open cloud environments and infrastructure services.
+Thanks for your interest in HP Helion OpenStack Community! This release note contains the following information about this release:
 
-This release note contains the following information about the HP Helion OpenStack Community edition release:
-
+* [Available product versions](#versions)
 * [Features in HP Helion OpenStack Community edition](#features) 
 * [Supported services](#supported-services)
 * [Recommendations for HP Helion OpenStack Community](#recommendations)
 * [For further information](#for-further-information) 
 
 
+##Available product versions## {#versions}
+
+This release of the HP Helion OpenStack Community edition has different versions of the product available:
+
+* *A virtual deployment of HP Helion OpenStack Community*. Released in early May, 2014, this preview edition provides a "cloud-in-a-box" virtual deployment targeted towards enterprises and cloud administrators interested in evaluating, developing and deploying a private cloud based on OpenStack Cloud Software. It's a pure, free and downloadable OpenStack distribution that speeds up deployment and simplifies the management of small-scale, open cloud environments and infrastructure services. 
+* *A bare-metal deployment of HP Helion OpenStack Community*. Released in June, 2014, this edition installs in a physical environment. The baremetal installation allows you to build an OpenStack cloud spanning multiple physical nodes. During installation, this edition sets up the undercloud and overcloud on 2 separate physical nodes, it sets up 2 physical Swift nodes, and up to 30 physical compute nodes. 
+
+These release notes cover both versions.
+
+
 ##Features in HP Helion OpenStack Community## {#features}
 
-**Pure OpenStack technology** &mdash; One of the first OpenStack distributions based on the Icehouse release, the Community edition contains no mix of proprietary or non-OpenStack tools.  This edition allows you to experience a virtual cloud-in-a-box deployment based on [OpenStack TripleO](https://wiki.openstack.org/wiki/TripleO) and evaluate the Icehouse release of OpenStack technology.
+**Pure OpenStack technology** &mdash; One of the first OpenStack distributions based on the Icehouse release, <!--, the Community edition contains no mix of proprietary or non-OpenStack tools.  This -->this edition allows you to experience a virtual cloud-in-a-box deployment based on [OpenStack TripleO](https://wiki.openstack.org/wiki/TripleO) and evaluate the Icehouse release of OpenStack technology.
 
-**Speeds cloud service delivery** &mdash; Ideal launch pad for your small-scale open cloud environment or proof-of-concept cloud services, with simple, fast creation of cloud environments and applications to speed business value.
+**Speeds cloud service delivery** &mdash; Outstanding launch pad for your small-scale open cloud environment or proof-of-concept cloud services, with simple, fast creation of cloud environments and applications to speed business value.
 
 **Close-to-trunk release** &mdash; Allows your lab or small-scale production environment to continue to benefit from the very latest capabilities of OpenStack technology.
 
 
 ##Supported services ## {#supported-services} 
 
-This release of the Community edition is shipped with the following services support:
+This release of the Community edition is shipped with the following supported services:
 
 <table style="text-align: left; vertical-align: top;">
  <tr style="background-color: #C8C8C8; text-align: left; vertical-align: top;">
@@ -45,6 +54,8 @@ This release of the Community edition is shipped with the following services sup
  <td>Image Service (Glance)<td>ICEHOUSE<td>Full support<td>v1.0 and v2.0<tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
  <td>Identity (Keystone)<td>ICEHOUSE<td>Full support<td>v2.0 and v3.0<tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
  <td>Dashboard (Horizon)<td>ICEHOUSE<td>Full support<td>N/A
+<tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
+ <td>Orchestration (Heat)<td>ICEHOUSE<td>Full support<td>N/A
 </table>
 
 <!--
@@ -77,8 +88,8 @@ The [OpenStack TripleO utility](https://wiki.openstack.org/wiki/TripleO) creates
 
 ### Software system preparation ## {softwareprep}
 
-* You must have an Ubuntu 13.10 or 14.04 host operating system installed. Other host operating systems might work but have not been tested. Also, this system will not currently install into a virtual machine.
-**Note:** To avoid an install error, where the seed cloud works, but the undercloud and overcloud will not, you must use Ubuntu 13.10 Server **OR** install openssh-server on and Ubuntu 13.10 desktop version and disable all firewalls (ufw). * The host must allow root ssh login.
+* You must have an Ubuntu 13.10 or 14.04 host operating system installed. Other host operating systems might work but have not been tested. Also, this system does not currently install into a virtual machine.
+**Note:** To avoid an install error, where the seed cloud works, but the undercloud and overcloud does not, you must use Ubuntu 13.10 Server **OR** install openssh-server on and Ubuntu 13.10 desktop version and disable all firewalls (ufw). * The host must allow root ssh login.
 * The following packages must be installed:
 $ sudo apt-get install -y libvirt-bin openvswitch-switch openvswitch-common python-libvirt qemu-system-x86 qemu-kvm
 * If you have just installed the libvirt packages, you must reboot or restart libvirt:
@@ -95,9 +106,9 @@ $ sudo su -
 
 ##Recommendations for HP Helion OpenStack Community## {#recommendations}
 
-This section describes the HP recommendations for best performance, utility, and functionality with this software version. We have also provided information about some known issues for reference purposes. This section contains:
+This section describes the HP recommendations for optimizing performance, utility, and functionality with this software version. We have also provided information about some known issues for reference purposes. This section contains:
 
-* [Recommendations for best functionality, performance and reliability](#best-practices) 
+* [Recommendations for optimizing functionality, performance and reliability](#best-practices) 
 * [Known issues in this release](#known-issues) 
 
 ###Recommendations ### {#best-practices} 
@@ -112,14 +123,20 @@ HP recommends the following best practices for this software version.
 
 **Operations**
 
-* For best results when issuing Neutron commands from inside the seed VM, we recommend you set the `LANG` environment variable to `C`.  Add the following line to the appropriate user configuration file:
+* When issuing Neutron commands from inside the seed VM, we recommend you set the `LANG` environment variable to `C`.  Add the following line to the appropriate user configuration file:
 
         export LANG=C
         
-* For best performance on your system, to clean up any VMs using excess space, execute the following commands:
-    - Delete the KVM VMs and their storage volumes with the `virish` command.
+* We recommend cleaning up any VMs using excess space, by executing the following commands:
+    - Delete the KVM VMs and their storage volumes with the `virsh` command.
     - Delete the file `/tmp/seed_options`.
     - Uninstall any packages that you no longer require.
+
+* For optimum VM operation and to avoid generating inaccurate error codes, we recommend you not reboot the overcloud controller but rather restart the applicable services by executing the following commands:
+    - sudo service nova-compute restart
+    - sudo service nova-scheduler restart
+    - sudo service nova-conductor restart
+    - sudo service neutron-openvswitch-agent restart
 
 ###Known issues in this release### {#known-issues}
 
@@ -129,6 +146,12 @@ The following are the known issues for HP Helion OpenStack Community edition:
 
 * If you determine that your VM seed has not started correctly when you executed the `hp_ced_start_seed` script, run the script a second time to ensure you start the seed.
 * VM installations do not currently persist across reboots.  When you reboot your system, be sure to start a new VM installation.
+* If after an overcloud controller reboot you determine the VMs are in an ERROR state, execute the following commands to restart the services and remove the error:
+  
+		$ sudo service nova-compute restart
+		$ sudo service nova-scheduler restart
+		$ sudo service nova-conductor restart
+		$ sudo service neutron-openvswitch-agent restart
 
 
 ##For further information## {#for-further-information}
