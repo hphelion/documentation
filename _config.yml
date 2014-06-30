@@ -1,7 +1,6 @@
 url: http://docs.hpcloud.com/
 markdown: md2html
 exclude: [README.md, Makefile, stackato-one.yml, stackato-two.yml, jenkins]
-<<<<<<< HEAD
 include: [devplatform/stackato/images]
 
 relative_permalinks: false
