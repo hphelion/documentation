@@ -23,7 +23,7 @@ Use the following links to get started with HP Helion Development Platform:
 * [Release notes](/helion/devplatform/community/release-notes/)
 * [Related topics](/helion/devplatform/community/related-topics/)
 * [Open source license and software license agreements](/dev.hpcloud.com/helion/License/)
-* [End User License Agreement (EULA)](dev.hpcloud.com/helion/EULA/)
+* [End User License Agreement (EULA)](/dev.hpcloud.com/helion/EULA/)
 * [Documentation site index](/helion/devplatform/community/siteindex/)
 
 
