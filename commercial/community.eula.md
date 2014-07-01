@@ -7,7 +7,7 @@ product: community
 ---
 # End User License Agreement
 
-1. Applicability. This end user license agreement (the "Agreement") governs the use of HP Helion OpenStack® Community (“Software”), unless it is subject to a separate agreement between you and Hewlett-Packard Company and its subsidiaries ("HP"). By downloading, copying, or using the Software, you agree to this Agreement.   
+1. Applicability. This end user license agreement (the "Agreement") governs the use of HP Helion OpenStack&reg; Community (“Software”), unless it is subject to a separate agreement between you and Hewlett-Packard Company and its subsidiaries ("HP"). By downloading, copying, or using the Software, you agree to this Agreement.   
 
 2. Terms. This Agreement includes supporting material accompanying the Software or referenced by HP, which may be software license information, additional license authorizations, software specifications, published warranties, supplier terms, open source software licenses and similar content ("Supporting Material"). 
 
