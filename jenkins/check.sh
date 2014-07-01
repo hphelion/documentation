@@ -48,7 +48,7 @@ do
 
      #Do a recursive grep on all md files for the badstring and assign result to RESULT
      RESULT=`grep -r --include="*.md" --exclude-dir=jenkins "${BAD}" ./`
-	 BADCHAR=`grep -r --color='auto' -P -n "[\x80-\xFF]"  ./`
+	 BADCHAR=`grep -r --color='auto' -P -n "[\x80-\xFF]"  ./*.md`
 
      #If RESULT is not empty, then write the bad string and the result to stout, and write 1 to the file checktmp
      if [ -z "$RESULT" ]
