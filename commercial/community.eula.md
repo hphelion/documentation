@@ -52,6 +52,6 @@ product: community
 14. Australian Consumers. If you acquired the software as a consumer within the meaning of the 'Australian Consumer Law' under the Australian Competition and Consumer Act 2010 (Cth) then despite any other provision of this Agreement, the terms at this URL apply: http://www.hp.com/go/SWLicensing.
 
 
-HP End User License Agreement - HP Helion OpenStack Community  
+HP End-User License Agreement - HP Helion OpenStack Community  
 
 &copy; 2014 Hewlett-Packard Development Company, L.P.		2
