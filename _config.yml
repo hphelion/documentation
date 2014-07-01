@@ -2,7 +2,6 @@ url: http://docs.hpcloud.com/
 markdown: md2html
 exclude: [README.md, Makefile, stackato-one.yml, stackato-two.yml, jenkins]
 include: [devplatform/stackato/images]
-
 relative_permalinks: false
 
 navigation: 
@@ -62,8 +61,7 @@ navigation:
     url: /mc/compute/key-pairs/
   - text: Console Pages Site Map
     url: /mc/sitemap/
-
-  mc-object-storage:
+ mc-object-storage:
   - text: Console Overview
     url: /mc/
   - text: Object Storage Dashboard
@@ -229,7 +227,36 @@ navigation:
     url: /helion/community/siteindex/
   - text: HP Helion Documentation
     url: /
-  devplatform: 
+  commercial: 
+  - text: HP Helion OpenStack Doc Home
+    url: /helion/openstack/
+  - text: Release Notes
+    url: /helion/openstack/release-notes/ 
+  - text: FAQ
+    url: /helion/openstack/faq/  
+  - text: Technical Overview
+    url: /helion/openstack/technical-overview/ 
+  - text: Services Overview
+    url: /helion/openstack/services/overview/
+  - text: Support Matrix
+    url: /helion/openstack/support-matrix-beta/ 		
+  - text: Installation & Configuration Overview
+    url: /helion/openstack/install-beta-overview/	
+  - text: Installation Prerequisites
+    url: /helion/openstack/install-beta/prereqs/
+  - text: Installation for KVM Hypervisor
+    url: /helion/openstack/install-beta/kvm/		
+  - text: Installation for ESX Hypervisor
+    url: /helion/openstack/install-beta/esx/		
+  - text: Related Topics
+    url: /helion/openstack/related-links/	
+  - text: Glossary
+    url: /helion/openstack/glossary/ 		
+  - text: Site Index
+    url: /helion/openstack/siteindex/
+  - text: HP Helion Documentation
+    url: / 
+ devplatform: 
   - text: HP Helion Development Platform Community Doc Home
     url: /helion/devplatform/
   - text: Development Platform Installation & Configuration
