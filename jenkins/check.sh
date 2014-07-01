@@ -11,7 +11,7 @@ git pull
 rm checktmp > /dev/null 2>&1  
 
 
-echo  Checking the $GIT_BRANCH branch for embarassing strings...    
+echo  Checking the $GIT_BRANCH branch for embarrassing strings...    
 
 
 #Set Internal Field Separator to % (to preserve white space at the beginning and end of badstrings)
@@ -74,7 +74,7 @@ BADCHAR=`grep -r --include="*.md" --color='auto'  -P -n "[\x80-\xFF]" ./ |grep -
           EXIT=""
      else
           echo ""
-          echo "===These files contain non-UTF8 characters================="
+          echo "===These files contain non-UTF8 characters (format filename:linenumber: line with bad character================="
           echo "$BADCHAR"
           echo "1" > checktmp
      fi
