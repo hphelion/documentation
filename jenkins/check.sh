@@ -67,7 +67,7 @@ do
 done  
 
 
-BADCHAR=`grep -r --color='auto' include="*.md" --exclude-dir=jenkins -P -n "[\x80-\xFF]" ./ |grep -vF '\`'`
+BADCHAR=`grep -r --include="*.md" --color='auto'  -P -n "[\x80-\xFF]" ./ |grep -vF '\`'`
 	      #If BADCHAR is not empty, then write the bad string and the result to stout, and write 1 to the file checktmp
      if [ -z "$BADCHAR" ]
           then
