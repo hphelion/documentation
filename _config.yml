@@ -8,16 +8,20 @@ navigation:
   main:
   - text: HP Helion Documentation
     url: /
-  - text: Community
+  - text: HP Helion OpenStack
+    url: /helion/openstack/
+  - text: HP Helion OpenStack Community 
     url: /helion/community/
-  - text: Public Cloud
+  - text: HP Helion Development Platform 
+    url: /helion/devplatform/
+  - text: HP Helion Public Cloud
     url: /pc-overview/
-  - text: Cloud OS
-    url: /cloudos/
-  - text: Cloud OS for Moonshot
+  - text: HP Cloud OS for Moonshot
     url: /cloudos/moonshot/
-  - text: CloudSystem
+  - text: HP CloudSystem
     url: http://www.hp.com/go/cloudsystem/docs
+  - text: HP Cloud OS (Deprecated)
+    url: /cloudos/
   public-cloud:
   - text: HP Helion Public Cloud Documentation
     url: /pc-overview/
@@ -61,7 +65,7 @@ navigation:
     url: /mc/compute/key-pairs/
   - text: Console Pages Site Map
     url: /mc/sitemap/
- mc-object-storage:
+  mc-object-storage:
   - text: Console Overview
     url: /mc/
   - text: Object Storage Dashboard
@@ -256,12 +260,12 @@ navigation:
     url: /helion/openstack/siteindex/
   - text: HP Helion Documentation
     url: / 
- devplatform: 
-  - text: HP Helion Development Platform Community Doc Home
+  devplatform: 
+  - text: HP Helion Development Platform Doc Home
     url: /helion/devplatform/
   - text: Development Platform Installation & Configuration
     url: /helion/devplatform/community/install-dev-platform/
-  - text: Application Lifecycle Service Installationa & Configuration
+  - text: Application Lifecycle Service Installation & Configuration
     url: /helion/devplatform/community/install-als/
   - text: ALS Documentation
     url: /als/v1/
@@ -271,30 +275,30 @@ navigation:
     url: /helion/devplatform/community/related-topics/
   - text: HP Helion Documentation Home
     url: /
-apinavigation:
-- text: Site home page
-  url: /
-- text: API Overview
-  url: /api/
-- text: Identity Service
-  url: /api/identity/
-- text: Object Storage
-  url: /api/object-storage/
-- text: Compute Service
-  url: /api/compute/
-- text: Block Storage
-  url: /api/block-storage/
-- text: CDN
-  url: /api/CDN/
-- text: RDB for MySQL
-  url: /api/dbaas/
-- text: Load Balancer
-  url: /api/lbaas/
-- text: DNS
-  url: /api/dns/
-- text: Monitoring
-  url: /api/monitoring/
-- text: ALS Documentation
-  url: https://apaas-docs.hpcloud.com
-- text: Messaging
-  url: /api/msgaas/
+  apinavigation:
+  - text: Site home page
+    url: /
+  - text: API Overview
+    url: /api/
+  - text: Identity Service
+    url: /api/identity/
+  - text: Object Storage
+    url: /api/object-storage/
+  - text: Compute Service
+    url: /api/compute/
+  - text: Block Storage
+    url: /api/block-storage/
+  - text: CDN
+    url: /api/CDN/
+  - text: RDB for MySQL
+    url: /api/dbaas/
+  - text: Load Balancer
+    url: /api/lbaas/
+  - text: DNS
+    url: /api/dns/
+  - text: Monitoring
+    url: /api/monitoring/
+  - text: ALS Documentation
+    url: https://apaas-docs.hpcloud.com
+  - text: Messaging
+    url: /api/msgaas/
