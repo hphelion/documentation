@@ -25,8 +25,6 @@ PageRefresh();
 
 #### [Release Notes](/helion/openstack/release-notes/) 
 
-#### [Open Source and Third-Party Software License Agreements](/helion/openstack/3rd-party-license-agreements/)
-
 #### [Getting started with HP Helion OpenStack](/helion/openstack/)
 
 * [Support matrix](/helion/openstack/support-matrix-beta/) 
