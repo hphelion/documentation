@@ -7,7 +7,7 @@ product: community
 ---
 # End User License Agreement
 
-1. 	Applicability. This end user license agreement (the "Agreement") governs the use of HP Helion OpenStack&reg; Community (“Software”), unless it is subject to a separate agreement between you and Hewlett-Packard Company and its subsidiaries ("HP"). By downloading, copying, or using the Software, you agree to this Agreement.   
+1. 	Applicability. This end user license agreement (the "Agreement") governs the use of HP Helion OpenStack&reg; Community ("Software"), unless it is subject to a separate agreement between you and Hewlett-Packard Company and its subsidiaries ("HP"). By downloading, copying, or using the Software, you agree to this Agreement.   
 
 2. 	Terms. This Agreement includes supporting material accompanying the Software or referenced by HP, which may be software license information, additional license authorizations, software specifications, published warranties, supplier terms, open source software licenses and similar content ("Supporting Material"). 
 
@@ -34,7 +34,7 @@ product: community
 
 
 
-9.  Support.   HP is not required to provide you with technical support.  Any technical support HP does provide to you shall be at HP’s sole discretion and is provided “As Is” except to the extent any additional support is provided in Supporting Material or in a separate support agreement between you and HP.
+9.  Support.   HP is not required to provide you with technical support.  Any technical support HP does provide to you shall be at HP’s sole discretion and is provided "As Is" except to the extent any additional support is provided in Supporting Material or in a separate support agreement between you and HP.
 
 10. 	Disclaimer of Warranties.  HP does not warrant that the operation of Software will be uninterrupted or error-free, or that Software will operate in hardware and software combinations other than as authorized by HP in Supporting Material.  THE SOFTWARE AND ALL RELATED COMPONENTS ARE PROVIDED "AS IS." TO THE FULL EXTENT PERMITTED BY LAW, HP AND ITS SUPPLIERS MAKE NO OTHER WARRANTIES, CONDITIONS, REPRESENTATIONS OR UNDERTAKINGS, EXPRESS OR IMPLIED, STATUTORY, LEGAL OR OTHERWISE, INCLUDING BUT NOT LIMITED TO WARRANTIES OF QUALITY, MERCHANTABILITY, TITLE, FITNESS FOR A PARTICULAR PURPOSE OR NON-INFRINGEMENT, AND ANY OTHER WARRANTIES ARISING OUT OF COURSE OF DEALING, USAGE OR TRADE. 
 
