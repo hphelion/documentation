@@ -2,23 +2,26 @@ url: http://docs.hpcloud.com/
 markdown: md2html
 exclude: [README.md, Makefile, stackato-one.yml, stackato-two.yml, jenkins]
 include: [devplatform/stackato/images]
-
 relative_permalinks: false
 
 navigation: 
   main:
   - text: HP Helion Documentation
     url: /
-  - text: Community
+  - text: HP Helion OpenStack
+    url: /helion/openstack/
+  - text: HP Helion OpenStack Community 
     url: /helion/community/
-  - text: Public Cloud
+  - text: HP Helion Development Platform 
+    url: /helion/devplatform/
+  - text: HP Helion Public Cloud
     url: /pc-overview/
-  - text: Cloud OS
-    url: /cloudos/
-  - text: Cloud OS for Moonshot
+  - text: HP Cloud OS for Moonshot
     url: /cloudos/moonshot/
-  - text: CloudSystem
+  - text: HP CloudSystem
     url: http://www.hp.com/go/cloudsystem/docs
+  - text: HP Cloud OS (Deprecated)
+    url: /cloudos/
   public-cloud:
   - text: HP Helion Public Cloud Documentation
     url: /pc-overview/
@@ -62,7 +65,6 @@ navigation:
     url: /mc/compute/key-pairs/
   - text: Console Pages Site Map
     url: /mc/sitemap/
-
   mc-object-storage:
   - text: Console Overview
     url: /mc/
@@ -229,12 +231,41 @@ navigation:
     url: /helion/community/siteindex/
   - text: HP Helion Documentation
     url: /
+  commercial: 
+  - text: HP Helion OpenStack Doc Home
+    url: /helion/openstack/
+  - text: Release Notes
+    url: /helion/openstack/release-notes/ 
+  - text: FAQ
+    url: /helion/openstack/faq/  
+  - text: Technical Overview
+    url: /helion/openstack/technical-overview/ 
+  - text: Services Overview
+    url: /helion/openstack/services/overview/
+  - text: Support Matrix
+    url: /helion/openstack/support-matrix-beta/ 		
+  - text: Installation & Configuration Overview
+    url: /helion/openstack/install-beta-overview/	
+  - text: Installation Prerequisites
+    url: /helion/openstack/install-beta/prereqs/
+  - text: Installation for KVM Hypervisor
+    url: /helion/openstack/install-beta/kvm/		
+  - text: Installation for ESX Hypervisor
+    url: /helion/openstack/install-beta/esx/		
+  - text: Related Topics
+    url: /helion/openstack/related-links/	
+  - text: Glossary
+    url: /helion/openstack/glossary/ 		
+  - text: Site Index
+    url: /helion/openstack/siteindex/
+  - text: HP Helion Documentation
+    url: / 
   devplatform: 
-  - text: HP Helion Development Platform Community Doc Home
+  - text: HP Helion Development Platform Doc Home
     url: /helion/devplatform/
   - text: Development Platform Installation & Configuration
     url: /helion/devplatform/community/install-dev-platform/
-  - text: Application Lifecycle Service Installationa & Configuration
+  - text: Application Lifecycle Service Installation & Configuration
     url: /helion/devplatform/community/install-als/
   - text: ALS Documentation
     url: /als/v1/
@@ -244,30 +275,30 @@ navigation:
     url: /helion/devplatform/community/related-topics/
   - text: HP Helion Documentation Home
     url: /
-apinavigation:
-- text: Site home page
-  url: /
-- text: API Overview
-  url: /api/
-- text: Identity Service
-  url: /api/identity/
-- text: Object Storage
-  url: /api/object-storage/
-- text: Compute Service
-  url: /api/compute/
-- text: Block Storage
-  url: /api/block-storage/
-- text: CDN
-  url: /api/CDN/
-- text: RDB for MySQL
-  url: /api/dbaas/
-- text: Load Balancer
-  url: /api/lbaas/
-- text: DNS
-  url: /api/dns/
-- text: Monitoring
-  url: /api/monitoring/
-- text: ALS Documentation
-  url: https://apaas-docs.hpcloud.com
-- text: Messaging
-  url: /api/msgaas/
+  apinavigation:
+  - text: Site home page
+    url: /
+  - text: API Overview
+    url: /api/
+  - text: Identity Service
+    url: /api/identity/
+  - text: Object Storage
+    url: /api/object-storage/
+  - text: Compute Service
+    url: /api/compute/
+  - text: Block Storage
+    url: /api/block-storage/
+  - text: CDN
+    url: /api/CDN/
+  - text: RDB for MySQL
+    url: /api/dbaas/
+  - text: Load Balancer
+    url: /api/lbaas/
+  - text: DNS
+    url: /api/dns/
+  - text: Monitoring
+    url: /api/monitoring/
+  - text: ALS Documentation
+    url: https://apaas-docs.hpcloud.com
+  - text: Messaging
+    url: /api/msgaas/
