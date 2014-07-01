@@ -3,7 +3,7 @@
 
 #Get the most recent version of the master branch
 env | grep GIT
-git checkout master
+git checkout $GIT_BRANCH
 git pull
 
 
