@@ -96,9 +96,6 @@ commercial license.
 
 Hewlett-Packard Company Confidential &copy; Copyright 2012-2014 Hewlett-Packard Development Company, L.P.
 
-### Trademark Notices
-
-Adobe &#174; is a trademark of Adobe Systems Incorporated.
 
 ## Disclaimer for Experimental Software
 
@@ -109,7 +106,7 @@ accompanying such products and services. Nothing herein should be construed as c
 warranty. HP shall not be liable for technical or editorial errors or omissions contained herein.
 The information contained herein is subject to change without notice.
 
-HP Cloud OS is experimental and is provided as a courtesy, free of charge, "AS-IS" by Hewlett-Packard 
+HP Helion OpenStack is experimental and is provided as a courtesy, free of charge, "AS-IS" by Hewlett-Packard 
 Company ("HP"). HP shall have no obligation to maintain or support this software. 
 
 HP MAKES NO EXPRESS OR IMPLIED WARRANTY OF ANY KIND REGARDING THIS SOFTWARE INCLUDING ANY 
@@ -121,12 +118,12 @@ OF THIS SOFTWARE.
 
 ## Open Source Licenses
 
-HP acknowledges the redistribution of the following open source components under the licenses shown below.
+This notice is provided with respect to the following component(s) which may be included with the product.  Additional copyright information and license texts may be found with the code you download or otherwise made available to you by HP.
 
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> 
 To address source code availability requirements for code licensed under MPL, CDDL, LGPL v2.1 & v3, GPL v2 & v3, 
 you can obtain a ZIP containing that source code (the required subset) <a href="https://cloudos.hpwsportal.com" target="_blank"> 
-at the HP Cloud OS portal</a>. On the site, sign up, login, then follow the Open Source Licenses link. The ZIP file is approximately 2 GB.</p>
+at the HP Helion OpenStack portal</a>. On the site, sign up, login, then follow the Open Source Licenses link. The ZIP file is approximately 2 GB.</p>
 
 ### Academic Free License
 
@@ -1833,10 +1830,7 @@ FOR A PARTICULAR PURPOSE.
 
 This notice is provided with respect to the following components which may be included with the product.
 
-* centos-kernel, Version 6.2
-* centos-subset, Version 5.7
 * java-1.7.0-openJDK, Version 1.7.0
-* ubuntu-standard, Version 12.04.lts
 
 GNU GENERAL PUBLIC LICENSE <br />
 Version 2, June 1991
@@ -3384,11 +3378,11 @@ Hewlett-Packard Company Confidential ? Copyright 2013-2014 Hewlett-Packard Devel
 
 License
 The only warranties for HP products and services are set forth in the express warranty statements accompanying such products and services. Nothing herein should be construed as constituting an additional warranty. This document is provided with the HP VCN SDN Application package.
-HP VCN SDN Application uses open source components. Many open source license agreements require user documentation to contain notification that the open source software is included in the product. HP Networking acknowledges that the open source components listed in the document found in “legal/HP-VCN-OPENSOURCE-LIST.pdf” may be used in this product. Below are the license agreements for the open source components that may be used in this product.
+HP VCN SDN Application uses open source components. Many open source license agreements require user documentation to contain notification that the open source software is included in the product. HP Networking acknowledges that the open source components listed in the document found in ï¿½legal/HP-VCN-OPENSOURCE-LIST.pdfï¿½ may be used in this product. Below are the license agreements for the open source components that may be used in this product.
 To obtain the open source software and associated license agreements, send email to the following address: HPN-Open-Source-Query@lists.hp.com
 
 Open Source Licenses
-HP acknowledges the redistribution of the following open source components under the licenses shown below.
+This notice is provided with respect to the following component(s) which may be included with the product.
 
 License, Package Name, Version, Usage:
 * Apache-2.0, httpcomponents-core, 1.0.8, As-is
@@ -3401,8 +3395,8 @@ REFERENCE LICENSE TEXT: http://www.apache.org/licenses/LICENSE-2.0.html
 1. You must include a copy of the Apache license with your distribution.
 2. If you make modifications, you must include a prominent notice in the relevant file(s) stating that you changed the file(s).
 3. If you make modifications to the Apache-licensed code and you distribute the Apache-licensed code in source code form, you must retain all copyright, patent, trademark and attribution notices from the Apache source code.
-4. If you make modifications and the Apache-licensed code includes a “NOTICE” text file as part of its distribution, then you must include with your distribution a readable copy of the attribution notices contained within the NOTICE file. You must do so in one of the following places: (i) a NOTICE text file in the HP product; (ii) within the source code or documentation; or (iii) within a display generated by the HP product, if and wherever third party notices normally appear.
-5. If you send any correspondence to the copyright owner, you must include the following statement on such correspondence: “This correspondence and any accompanying materials are not Contributions".
+4. If you make modifications and the Apache-licensed code includes a ï¿½NOTICEï¿½ text file as part of its distribution, then you must include with your distribution a readable copy of the attribution notices contained within the NOTICE file. You must do so in one of the following places: (i) a NOTICE text file in the HP product; (ii) within the source code or documentation; or (iii) within a display generated by the HP product, if and wherever third party notices normally appear.
+5. If you send any correspondence to the copyright owner, you must include the following statement on such correspondence: ï¿½This correspondence and any accompanying materials are not Contributions".
 6. You may only use the trade names, trademarks, service marks or product names of the licensor to describe the origin of the Apache-licensed code or to copy the content of the NOTICE file. You may not use the trade names, trademarks, service marks or product names in any other manner.
 7. You are not required to provide the Apache-licensed source code with your distribution.
 
@@ -3422,7 +3416,7 @@ APPROVAL CONDITIONS:
 3. Unless a request has been received from the licensor, you must keep intact all copyright notices and provide, reasonable to means or medium you are using: (i) the name of the original author if supplied; and/or (ii) if the original author and/or licensor designate another party or parties for attribution in the copyright notice, terms of service or by other reasonable means, the name of such party or parties; the title of the work if supplied; and, to the extent reasonably practicable, the Uniform Resource Identifier, if any, that licensor specifies to be associated with the work, unless such URI does not refer to the copyright notice or licensing information for the work.
 4. You are not required to make the Creative Commons-licensed source code available with your distribution.
 
-LICENSE TYPE: GNU GENERAL PUBLIC LICENSE, VERSION 2 (“GPLv2”)
+LICENSE TYPE: GNU GENERAL PUBLIC LICENSE, VERSION 2 (ï¿½GPLv2ï¿½)
 REFERENCE LICENSE TEXT: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 APPROVAL CONDITIONS:
 1. If you distribute unmodified copies of the source code of the GPLv2-licensed code, you must:
@@ -9836,7 +9830,7 @@ OF THE POSSIBILITY OF SUCH DAMAGE.
    limitations under the License.
    
 ### q-1 License
-Copyright 2009–2014 Kristopher Michael Kowal. All rights reserved.
+Copyright 2009ï¿½2014 Kristopher Michael Kowal. All rights reserved.
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to
 deal in the Software without restriction, including without limitation the
@@ -11006,6 +11000,7 @@ As a special exception, the copyright holders of this library give you permissio
    See the License for the specific language governing permissions and
    limitations under the License.
 
+The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.
   
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
