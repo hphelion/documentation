@@ -48,7 +48,7 @@ do
 
      #Do a recursive grep on all md files for the badstring and assign result to RESULT
      RESULT=`grep -r --include="*.md" --exclude-dir=jenkins "${BAD}" ./`
-	 BADCHAR=`grep -r --color='auto' -P -n "[\x80-\xFF]"  ./*.md |grep -vF '\`'`
+	
 
      #If RESULT is not empty, then write the bad string and the result to stout, and write 1 to the file checktmp
      if [ -z "$RESULT" ]
@@ -61,7 +61,13 @@ do
           echo "1" > checktmp
      fi
 	 
+	  
 	 
+
+done  
+
+
+BADCHAR=`grep -r --color='auto' include="*.md" --exclude-dir=jenkins -P -n "[\x80-\xFF]" ./ |grep -vF '\`'`
 	      #If BADCHAR is not empty, then write the bad string and the result to stout, and write 1 to the file checktmp
      if [ -z "$BADCHAR" ]
           then
@@ -72,10 +78,6 @@ do
           echo "$BADCHAR"
           echo "1" > checktmp
      fi
-	 
-
-done  
-
 
 #Read chcktemp and assign content to EXIT (indicating that at least one error was found)
 EXIT=`cat checktmp` > /dev/null 2>&1
