@@ -6,6 +6,7 @@ product: commercial
 
 ---
 
+
 <script> 
 
 function PageRefresh { 
@@ -301,7 +302,7 @@ enhancing this system and expect to make other tools available as they are compl
 
 <h3 id="aop-alliance-license">AOP Alliance License</h3>
 
-<p>HP acknowledges the redistribution of the following open source component that are provided under this license:</p>
+<p>This notice is provided with respect to the following component(s) which may be included with the product.</p>
 
 <ul><li>aopalliance, Version 1</li>
 </ul><p>The AOP Alliance project is a joint open-source project between several software engineering people who are 
@@ -621,7 +622,7 @@ limitations under the License.</p>
 
 <h3 id="asm-license">ASM License</h3>
 
-<p>HP acknowledges the redistribution of the following open source component that are provided under this license:</p>
+<p>This notice is provided with respect to the following component(s) which may be included with the product.</p>
 
 <ul><li>asm, Version 3.3.1</li>
 </ul><p>Copyright © 2000-2011 INRIA, France Telecom <br />
@@ -823,7 +824,7 @@ Creative Commons Notice</p>
 
 <h3 id="common-development-and-distribution-license-cddl-version-10">Common Development and Distribution License (CDDL) Version 1.0</h3>
 
-<p>HP acknowledges the redistribution of the following open source component that are provided under this license:</p>
+<p>This notice is provided with respect to the following component(s) which may be included with the product.</p>
 
 <ul><li>glassfish-stax-api, Version 1.0.2</li>
 <li>jsr250-api, Version 1.0</li>
@@ -3505,7 +3506,7 @@ THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
 
 <h3 id="json-license">JSON License</h3>
 
-<p>HP acknowledges the redistribution of the following open source component that are provided under this license:</p>
+<p>This notice is provided with respect to the following component(s) which may be included with the product.</p>
 
 <ul><li>json, Version 20090211</li>
 </ul><p>Copyright © 2002 JSON.org</p>
@@ -3528,7 +3529,7 @@ THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
 
 <h3 id="jsr-305-license">JSR-305 License</h3>
 
-<p>HP acknowledges the redistribution of the following open source component that are provided under this license:</p>
+<p>This notice is provided with respect to the following component(s) which may be included with the product.</p>
 
 <ul><li>libjsr305-java, Version 2.0.1</li>
 </ul><p>Copyright © 2007-2009, JSR305 expert group <br /> 
@@ -3622,7 +3623,7 @@ THE SOFTWARE.</p>
 
 <h3 id="mozilla-public-license-version-11">Mozilla Public License Version 1.1</h3>
 
-<p>HP acknowledges the redistribution of the following open source component that are provided under this license:</p>
+<p>This notice is provided with respect to the following component(s) which may be included with the product.</p>
 
 <ul><li>amqp-client, Version 3.0.4</li>
 <li>rabbitmq-server, Version 2.7.1</li>
@@ -4698,7 +4699,7 @@ THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
 
 <h3 id="qosch-license">QOS.ch License</h3>
 
-<p>HP acknowledges the redistribution of the following open source component that are provided under this license:</p>
+<p>This notice is provided with respect to the following component(s) which may be included with the product.</p>
 
 <ul><li>slf4j, Version 1.7.2</li>
 <li>sl4j-log4j12, Version 1.6.4</li>
@@ -4837,7 +4838,7 @@ Agency (DARPA) and Air Force Research Laboratory, Air Force</p>
 
 <h3 id="tatsuhiro-tsuijikawa-license">Tatsuhiro Tsuijikawa License</h3>
 
-<p>HP acknowledges the redistribution of the following open source component that are provided under this license:</p>
+<p>This notice is provided with respect to the following component(s) which may be included with the product.</p>
 
 <ul><li>argparse4j, Version 0.2.2</li>
 </ul><pre>
@@ -4928,7 +4929,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
 
 <h3 id="xom-license">XOM License</h3>
 
-<p>HP acknowledges the redistribution of the following open source component that are provided under this license:</p>
+<p>This notice is provided with respect to the following component(s) which may be included with the product.</p>
 
 <ul><li>xom, Version 1.2.5</li>
 </ul><p>XOM is Copyright 2002-2005 Elliotte Rusty Harold.</p>
@@ -10691,7 +10692,7 @@ limitations under the License.</p></li>
 
 
 <pre><code>
-(insert legal preamble HERE)
+
 
 The following open source licenses are listed in their entirety at the bottom of this document:
   * Apache-2.0
@@ -10712,9 +10713,9 @@ The following open source packages in this product are governed by the following
 
 %%% Within package acpi (version 1.7):
 
-FILE "acpi-1.7/debian/copyright":
+"acpi-1.7/debian/copyright":
 
-[BEGIN FILE=acpi-1.7/debian/copyright]
+[acpi-1.7/debian/copyright]
 This package was debianized by Grahame Bowland (grahame@azale.net) on
 Thu,  6 Sep 2001 22:26:15 +0800.
 
@@ -10735,14 +10736,14 @@ It was downloaded from http://sourceforge.net/projects/acpiclient/
 
 On Debian GNU/Linux systems, the text of the GPL can be found in
 /usr/share/common-licenses/GPL.
-[END FILE=acpi-1.7/debian/copyright]
+[acpi-1.7/debian/copyright]
 
 
 %%% Within package acpid (version 2.0.22):
 
-FILE "acpid-2.0.22/debian/copyright":
+"acpid-2.0.22/debian/copyright":
 
-[BEGIN FILE=acpid-2.0.22/debian/copyright]
+[acpid-2.0.22/debian/copyright]
 This is the Debian GNU/Linux prepackaged version of acpid.
 It was packaged by Cajus Pollmeier (cajus@debian.org)
 from sources obtained from http://acpid.sourceforge.net.
@@ -10762,14 +10763,14 @@ acpid is distributed under the terms of the GNU General Public License,
 version 2 or later. On Debian GNU/Linux system you can find a copy of this
 license in `/usr/share/common-licenses/GPL-2'.
 
-[END FILE=acpid-2.0.22/debian/copyright]
+[acpid-2.0.22/debian/copyright]
 
 
 %%% Within package acpi-support (version 0.141):
 
-FILE "acpi-support-0.141/debian/copyright":
+"acpi-support-0.141/debian/copyright":
 
-[BEGIN FILE=acpi-support-0.141/debian/copyright]
+[acpi-support-0.141/debian/copyright]
 This package written and debianised for Ubuntu by Thom May
 (thom@canonical.com) based on work by Matthew Garrett
 (mjg59@srcf.ucam.org). It was downloaded from
@@ -10794,14 +10795,14 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA.
 
 On Debian systems, a copy of the GNU General Public License is available in
 /usr/share/common-licenses/GPL-2 as part of the base-files package.
-[END FILE=acpi-support-0.141/debian/copyright]
+[acpi-support-0.141/debian/copyright]
 
 
 %%% Within package astroid (version 1.1.1):
 
-FILE "astroid-1.1.1/debian/copyright":
+"astroid-1.1.1/debian/copyright":
 
-[BEGIN FILE=astroid-1.1.1/debian/copyright]
+[astroid-1.1.1/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: astroid
 Source: http://www.astroid.org/
@@ -10866,14 +10867,14 @@ License: LGPL-2.1+
 Files: test/data/SSL1/Connection1.py
 Copyright: Copyright (c) 1999-2004 Ng Pheng Siong. All rights reserved.
 Note: this information has been gathered from upsteam repository
-[END FILE=astroid-1.1.1/debian/copyright]
+[astroid-1.1.1/debian/copyright]
 
 
 %%% Within package bc (version 1.06.95):
 
-FILE "bc-1.06.95/debian/copyright":
+"bc-1.06.95/debian/copyright":
 
-[BEGIN FILE=bc-1.06.95/debian/copyright]
+[bc-1.06.95/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: bc
 Source: ftp://ftp.gnu.org/gnu/bc/
@@ -11005,14 +11006,14 @@ License: GPL-2.0+
  .
  On Debian systems, the complete text of the GNU General
  Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
-[END FILE=bc-1.06.95/debian/copyright]
+[bc-1.06.95/debian/copyright]
 
 
 %%% Within package beautifulsoup (version 3.2.1):
 
-FILE "beautifulsoup-3.2.1/debian/copyright":
+"beautifulsoup-3.2.1/debian/copyright":
 
-[BEGIN FILE=beautifulsoup-3.2.1/debian/copyright]
+[beautifulsoup-3.2.1/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: Beautiful Soup
 Upstream-Contact: Leonard Richardson (leonardr@segfault.org)
@@ -11050,14 +11051,14 @@ License: bsdish
  CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
  OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE, DAMMIT.
-[END FILE=beautifulsoup-3.2.1/debian/copyright]
+[beautifulsoup-3.2.1/debian/copyright]
 
 
 %%% Within package binfmt-support (version 2.1.4):
 
-FILE "binfmt-support-2.1.4/debian/copyright":
+"binfmt-support-2.1.4/debian/copyright":
 
-[BEGIN FILE=binfmt-support-2.1.4/debian/copyright]
+[binfmt-support-2.1.4/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: binfmt-support
 Upstream-Contact: Colin Watson (cjwatson@debian.org)
@@ -11079,14 +11080,14 @@ License: GPL-3+
  the Debian GNU/Linux distribution in file /usr/share/common-licenses/GPL-3;
  if not, write to the Free Software Foundation, Inc., 51 Franklin St,
  Fifth Floor, Boston, MA  02110-1301  USA
-[END FILE=binfmt-support-2.1.4/debian/copyright]
+[binfmt-support-2.1.4/debian/copyright]
 
 
 %%% Within package blt (version 2.4z):
 
-FILE "blt-2.4z/debian/copyright":
+"blt-2.4z/debian/copyright":
 
-[BEGIN FILE=blt-2.4z/debian/copyright]
+[blt-2.4z/debian/copyright]
 This package was debianized by Gordon Russell (g.russell@dcs.napier.ac.uk) on
 Thu, 12 Mar 1998 11:19:54 +0000.
 
@@ -11111,14 +11112,14 @@ Copyright:
  data or profits, whether in an action of contract, negligence or other
  tortuous action, arising out of or in connection with the use or performance
  of this software.  
-[END FILE=blt-2.4z/debian/copyright]
+[blt-2.4z/debian/copyright]
 
 
 %%% Within package btrfs-tools (version 3.14.1):
 
-FILE "btrfs-tools-3.14.1/debian/copyright":
+"btrfs-tools-3.14.1/debian/copyright":
 
-[BEGIN FILE=btrfs-tools-3.14.1/debian/copyright]
+[btrfs-tools-3.14.1/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: btrfs-progs
 Upstream-Contact: linux-btrfs@vger.kernel.org
@@ -11161,14 +11162,14 @@ License: GPL-2+
  .
  The complete text of the GNU General Public License
  can be found in /usr/share/common-licenses/GPL-2 file.
-[END FILE=btrfs-tools-3.14.1/debian/copyright]
+[btrfs-tools-3.14.1/debian/copyright]
 
 
 %%% Within package ca-certificates-java (version 20140324):
 
-FILE "ca-certificates-java-20140324/debian/copyright":
+"ca-certificates-java-20140324/debian/copyright":
 
-[BEGIN FILE=ca-certificates-java-20140324/debian/copyright]
+[ca-certificates-java-20140324/debian/copyright]
 This package was debianized by Matthias Klose (doko@ubuntu.com)
 on Mon, 02 Jun 2008 14:52:46 +0000.
 
@@ -11187,14 +11188,14 @@ License:
 The Debian package is (C) 2008, Canonical Ltd and (C) 2011, Torsten Werner
 (twerner@debian.org) and is licensed under the GPL, see
 `/usr/share/common-licenses/GPL'.
-[END FILE=ca-certificates-java-20140324/debian/copyright]
+[ca-certificates-java-20140324/debian/copyright]
 
 
 %%% Within package cherrypy3 (version 3.3.0):
 
-FILE "cherrypy3-3.3.0/debian/copyright":
+"cherrypy3-3.3.0/debian/copyright":
 
-[BEGIN FILE=cherrypy3-3.3.0/debian/copyright]
+[cherrypy3-3.3.0/debian/copyright]
 This package was debianized by Gustavo Noronha Silva (kov@debian.org) on
 Thu, 10 Mar 2005 09:32:58 -0300.
 
@@ -11222,11 +11223,11 @@ License:
 
 This package is licensed under the BSD license which can be found,
 on Debian systems, at /usr/share/common-licenses/BSD.
-[END FILE=cherrypy3-3.3.0/debian/copyright]
+[cherrypy3-3.3.0/debian/copyright]
 
-FILE "cherrypy3-3.3.0/cherrypy/LICENSE.txt":
+"cherrypy3-3.3.0/cherrypy/LICENSE.txt":
 
-[BEGIN FILE=cherrypy3-3.3.0/cherrypy/LICENSE.txt]
+[cherrypy3-3.3.0/cherrypy/LICENSE.txt]
 Copyright (c) 2004-2011, CherryPy Team (team@cherrypy.org)
 
 All rights reserved.
@@ -11277,14 +11278,14 @@ OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-[END FILE=cherrypy3-3.3.0/cherrypy/LICENSE.txt]
+[cherrypy3-3.3.0/cherrypy/LICENSE.txt]
 
 
 %%% Within package console-setup (version 1.108):
 
-FILE "console-setup-1.108/debian/bdf2psf.copyright":
+"console-setup-1.108/debian/bdf2psf.copyright":
 
-[BEGIN FILE=console-setup-1.108/debian/bdf2psf.copyright]
+[console-setup-1.108/debian/bdf2psf.copyright]
 Everything in this binary package is
 
 Copyright (C) 2006,2009,2010,2011 Anton Zinoviev (zinoviev@debian.org)
@@ -11312,11 +11313,11 @@ The source package of this binary package is console-setup.  The
 source package contains files that have different copyright from the
 cited here but these files are not related to the contents of bdf2psf
 in any way.
-[END FILE=console-setup-1.108/debian/bdf2psf.copyright]
+[console-setup-1.108/debian/bdf2psf.copyright]
 
-FILE "console-setup-1.108/copyright.fonts":
+"console-setup-1.108/copyright.fonts":
 
-[BEGIN FILE=console-setup-1.108/copyright.fonts]
+[console-setup-1.108/copyright.fonts]
 All console fonts are public domain by nature.  The copiright terms of
 the source BDF-fonts in the directory Fonts/bdf of the source package
 follow.
@@ -11647,11 +11648,11 @@ Associates.
 == The *-IL2.bdf fonts were automaticaly reencoded from ISO 8859-2 to
    ISO 10646-1 by the trbdf utility.
 
-[END FILE=console-setup-1.108/copyright.fonts]
+[console-setup-1.108/copyright.fonts]
 
-FILE "console-setup-1.108/COPYRIGHT":
+"console-setup-1.108/COPYRIGHT":
 
-[BEGIN FILE=console-setup-1.108/COPYRIGHT]
+[console-setup-1.108/COPYRIGHT]
 This copyright file applies both to the source package console-setup
 and the binary Debian packages built from it.
 
@@ -11738,11 +11739,11 @@ In the source package of console-setup the complete text of the GNU
 General Public License, version 2 can be found in the file GPL-2.  On
 Debian GNU/Linux systems, the complete text of the GNU General Public
 License can be found in /usr/share/common-licenses/GPL-2.
-[END FILE=console-setup-1.108/COPYRIGHT]
+[console-setup-1.108/COPYRIGHT]
 
-FILE "console-setup-1.108/copyright.xkb":
+"console-setup-1.108/copyright.xkb":
 
-[BEGIN FILE=console-setup-1.108/copyright.xkb]
+[console-setup-1.108/copyright.xkb]
 Upstream Maintainer of XKeyboardConfig: 
   Sergey V. Udaltsov (svu@gnome.org)
 
@@ -11943,12 +11944,12 @@ is left intact and the author of the modification summarizes
 the changes in this header.
 
 This file is distributed without any expressed or implied warranty.
-[END FILE=console-setup-1.108/copyright.xkb]
+[console-setup-1.108/copyright.xkb]
 
-FILE "console-setup-1.108/Fonts/copyright":
+"console-setup-1.108/Fonts/copyright":
 
-[BEGIN FILE=console-setup-1.108/Fonts/copyright]
-FIXME: THIS FILE IS NOT UPDATED
+[console-setup-1.108/Fonts/copyright]
+FIXME: THIS IS NOT UPDATED
 
 All console fonts are public domain by nature.  The copiright of the
 source BDF-fonts they are produced from follows.
@@ -12026,14 +12027,14 @@ All of my works you find here are freeware. You may freely copy, use, quote,
 modify or redistribute them as long as you properly attribute my contribution
 and have given a quick thought about whether Roman might perhaps be interested
 to read what you did with his stuff. Horizontal rules don't apply.
-[END FILE=console-setup-1.108/Fonts/copyright]
+[console-setup-1.108/Fonts/copyright]
 
 
 %%% Within package corosync (version 1.4.6):
 
-FILE "corosync-1.4.6/debian/copyright":
+"corosync-1.4.6/debian/copyright":
 
-[BEGIN FILE=corosync-1.4.6/debian/copyright]
+[corosync-1.4.6/debian/copyright]
 This is the Ubuntu / Debian GNU/Linux prepackaged version of corosync.
 
 Mainly packaged by Fabio M. Di Nitto (fabbione@ubuntu.com).
@@ -12139,11 +12140,11 @@ License:
          */
 
 
-[END FILE=corosync-1.4.6/debian/copyright]
+[corosync-1.4.6/debian/copyright]
 
-FILE "corosync-1.4.6/LICENSE":
+"corosync-1.4.6/LICENSE":
 
-[BEGIN FILE=corosync-1.4.6/LICENSE]
+[corosync-1.4.6/LICENSE]
 ***
 All cryptographic software in this package is subject to the following legal
 notice:
@@ -12229,14 +12230,14 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see (http://www.gnu.org/licenses/).
-[END FILE=corosync-1.4.6/LICENSE]
+[corosync-1.4.6/LICENSE]
 
 
 %%% Within package crash (version 7.0.7):
 
-FILE "crash-7.0.7/debian/copyright":
+"crash-7.0.7/debian/copyright":
 
-[BEGIN FILE=crash-7.0.7/debian/copyright]
+[crash-7.0.7/debian/copyright]
 This package was debianized by Josh Huber (huber@mclx.com) on Tue, 10 Oct 2000
 18:00:20 -0400, the package is maintained by Troy Heber (troy.heber@hp.com) and
 Micha Anderson (micah@debian.org).
@@ -12256,14 +12257,14 @@ Copyright (C) 1999, 2000, 2001, 2002  Mission Critical Linux, Inc.
 
 On Debian GNU/Linux systems, the complete text of the GNU General
 Public License can be found in `/usr/share/common-licenses/GPL'.
-[END FILE=crash-7.0.7/debian/copyright]
+[crash-7.0.7/debian/copyright]
 
 
 %%% Within package cryptsetup (version 1.6.4):
 
-FILE "cryptsetup-1.6.4/debian/copyright":
+"cryptsetup-1.6.4/debian/copyright":
 
-[BEGIN FILE=cryptsetup-1.6.4/debian/copyright]
+[cryptsetup-1.6.4/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Contact: Milan Broz (mbroz@redhat.com)
 Source: http://code.google.com/p/cryptsetup
@@ -12323,14 +12324,14 @@ License: GPL-2+
  .
  On Debian systems, the complete text of the GNU General Public
  License v2 can be found in `/usr/share/common-licenses/GPL-2'.
-[END FILE=cryptsetup-1.6.4/debian/copyright]
+[cryptsetup-1.6.4/debian/copyright]
 
 
 %%% Within package cups (version 1.7.3):
 
-FILE "cups-1.7.3/debian/copyright":
+"cups-1.7.3/debian/copyright":
 
-[BEGIN FILE=cups-1.7.3/debian/copyright]
+[cups-1.7.3/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: CUPS
 Upstream-Contact: Michael Sweet (msweet@apple.com)
@@ -12408,11 +12409,11 @@ License: LGPL-2 with exceptions
  /usr/share/common-licenses/LGPL-2 on Debian systems.
  .
  The same exceptions as above apply.
-[END FILE=cups-1.7.3/debian/copyright]
+[cups-1.7.3/debian/copyright]
 
-FILE "cups-1.7.3/vcnet/regex/COPYRIGHT":
+"cups-1.7.3/vcnet/regex/COPYRIGHT":
 
-[BEGIN FILE=cups-1.7.3/vcnet/regex/COPYRIGHT]
+[cups-1.7.3/vcnet/regex/COPYRIGHT]
 Copyright 1992, 1993, 1994, 1997 Henry Spencer.  All rights reserved.
 This software is not subject to any license of the American Telephone
 and Telegraph Company or of the Regents of the University of California.
@@ -12433,14 +12434,14 @@ to the following restrictions:
    ever read sources, credits must appear in the documentation.
 
 4. This notice may not be removed or altered.
-[END FILE=cups-1.7.3/vcnet/regex/COPYRIGHT]
+[cups-1.7.3/vcnet/regex/COPYRIGHT]
 
 
 %%% Within package debhelper (version 9.20140613):
 
-FILE "debhelper-9.20140613/debian/copyright":
+"debhelper-9.20140613/debian/copyright":
 
-[BEGIN FILE=debhelper-9.20140613/debian/copyright]
+[debhelper-9.20140613/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 
 Files: *
@@ -12536,14 +12537,14 @@ License: GPL-3+
  The full text of the GPL version 3 is distributed in
  /usr/share/common-licenses/GPL-3 on Debian systems.
 
-[END FILE=debhelper-9.20140613/debian/copyright]
+[debhelper-9.20140613/debian/copyright]
 
 
 %%% Within package debootstrap (version 1.0.60+hLinux1):
 
-FILE "debootstrap-1.0.60+hLinux1/debian/copyright":
+"debootstrap-1.0.60+hLinux1/debian/copyright":
 
-[BEGIN FILE=debootstrap-1.0.60+hLinux1/debian/copyright]
+[debootstrap-1.0.60+hLinux1/debian/copyright]
 This package was debianized by Anthony Towns (ajt@debian.org) on
 Tue, 30 Jan 2001 10:54:45 +1000.
 
@@ -12574,14 +12575,14 @@ Copyright (c) 2001-2005 Anthony Towns
    TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
    SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-[END FILE=debootstrap-1.0.60+hLinux1/debian/copyright]
+[debootstrap-1.0.60+hLinux1/debian/copyright]
 
 
 %%% Within package dictionaries-common (version 1.23.8):
 
-FILE "dictionaries-common-1.23.8/debian/copyright":
+"dictionaries-common-1.23.8/debian/copyright":
 
-[BEGIN FILE=dictionaries-common-1.23.8/debian/copyright]
+[dictionaries-common-1.23.8/debian/copyright]
 -*- coding: utf-8 -*-
 
 dictionaries-common is a Debian native package. It contains modified
@@ -12618,14 +12619,14 @@ be available in any recent Debian system as /usr/share/common-licenses/GPL-2
 and /usr/share/common-licenses/GPL-3. If not, see (http://www.gnu.org/licenses/).
 
 The sources for this package can be found on any Debian mirror.
-[END FILE=dictionaries-common-1.23.8/debian/copyright]
+[dictionaries-common-1.23.8/debian/copyright]
 
 
 %%% Within package discover (version 2.1.2):
 
-FILE "discover-2.1.2/debian/copyright":
+"discover-2.1.2/debian/copyright":
 
-[BEGIN FILE=discover-2.1.2/debian/copyright]
+[discover-2.1.2/debian/copyright]
 This package was debianized by Joseph Carter (knghtbrd@progenylinux.com) on
 Mon,  2 Oct 2000 10:48:43 -0500
 
@@ -12655,11 +12656,11 @@ License:
 On Debian systems, the complete text of the GNU General
 Public License can be found in `/usr/share/common-licenses/GPL'.
 
-[END FILE=discover-2.1.2/debian/copyright]
+[discover-2.1.2/debian/copyright]
 
-FILE "discover-2.1.2/LICENSE":
+"discover-2.1.2/LICENSE":
 
-[BEGIN FILE=discover-2.1.2/LICENSE]
+[discover-2.1.2/LICENSE]
 Except where otherwise noted, the following copyright notice
 and license terms apply to Discover:
 
@@ -12683,14 +12684,14 @@ THE COPYRIGHT HOLDER(S) BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 DEALINGS IN THE SOFTWARE.
-[END FILE=discover-2.1.2/LICENSE]
+[discover-2.1.2/LICENSE]
 
 
 %%% Within package discover-data (version 2.2013.01.11):
 
-FILE "discover-data-2.2013.01.11/debian/copyright":
+"discover-data-2.2013.01.11/debian/copyright":
 
-[BEGIN FILE=discover-data-2.2013.01.11/debian/copyright]
+[discover-data-2.2013.01.11/debian/copyright]
 Package: discover-data
 Debian package author: Branden Robinson
 
@@ -12755,14 +12756,14 @@ FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 DEALINGS IN THE SOFTWARE.
 
 $Progeny$
-[END FILE=discover-data-2.2013.01.11/debian/copyright]
+[discover-data-2.2013.01.11/debian/copyright]
 
 
 %%% Within package distlib (version 0.1.9):
 
-FILE "distlib-0.1.9/debian/copyright":
+"distlib-0.1.9/debian/copyright":
 
-[BEGIN FILE=distlib-0.1.9/debian/copyright]
+[distlib-0.1.9/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: distlib
 Source: https://pypi.python.org/packages/source/d/distlib/
@@ -13014,14 +13015,14 @@ License: BSD-3-Clause
  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING 
  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS 
  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-[END FILE=distlib-0.1.9/debian/copyright]
+[distlib-0.1.9/debian/copyright]
 
 
 %%% Within package distro-info (version 0.13):
 
-FILE "distro-info-0.13/debian/copyright":
+"distro-info-0.13/debian/copyright":
 
-[BEGIN FILE=distro-info-0.13/debian/copyright]
+[distro-info-0.13/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: distro-info
 Upstream-Contact: Benjamin Drung (bdrung@debian.org)
@@ -13047,14 +13048,14 @@ License: ISC
  LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
  OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
  PERFORMANCE OF THIS SOFTWARE.
-[END FILE=distro-info-0.13/debian/copyright]
+[distro-info-0.13/debian/copyright]
 
 
 %%% Within package distro-info-data (version 0.21):
 
-FILE "distro-info-data-0.21/debian/copyright":
+"distro-info-data-0.21/debian/copyright":
 
-[BEGIN FILE=distro-info-data-0.21/debian/copyright]
+[distro-info-data-0.21/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: distro-info-data
 Upstream-Contact: Benjamin Drung (bdrung@debian.org)
@@ -13073,14 +13074,14 @@ License: ISC
  LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
  OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
  PERFORMANCE OF THIS SOFTWARE.
-[END FILE=distro-info-data-0.21/debian/copyright]
+[distro-info-data-0.21/debian/copyright]
 
 
 %%% Within package dosfstools (version 3.0.26):
 
-FILE "dosfstools-3.0.26/debian/copyright":
+"dosfstools-3.0.26/debian/copyright":
 
-[BEGIN FILE=dosfstools-3.0.26/debian/copyright]
+[dosfstools-3.0.26/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: dosfstools
 Upstream-Contact: Daniel Baumann (mail@daniel-baumann.ch)
@@ -13112,14 +13113,14 @@ License: GPL-3+
  .
  The complete text of the GNU General Public License
  can be found in /usr/share/common-licenses/GPL-3 file.
-[END FILE=dosfstools-3.0.26/debian/copyright]
+[dosfstools-3.0.26/debian/copyright]
 
 
 %%% Within package egenix-mx-base (version 3.2.7):
 
-FILE "egenix-mx-base-3.2.7/debian/copyright":
+"egenix-mx-base-3.2.7/debian/copyright":
 
-[BEGIN FILE=egenix-mx-base-3.2.7/debian/copyright]
+[egenix-mx-base-3.2.7/debian/copyright]
 The upstream source was found on the following address:
 
     http://www.egenix.com/products/python/mxBase/
@@ -13249,11 +13250,11 @@ ________________________________________________________________________
 	      Pastor-Loeh-Str. 48
 	      D-40764 Langenfeld
 	      Germany
-[END FILE=egenix-mx-base-3.2.7/debian/copyright]
+[egenix-mx-base-3.2.7/debian/copyright]
 
-FILE "egenix-mx-base-3.2.7/mx/LICENSE":
+"egenix-mx-base-3.2.7/mx/LICENSE":
 
-[BEGIN FILE=egenix-mx-base-3.2.7/mx/LICENSE]
+[egenix-mx-base-3.2.7/mx/LICENSE]
 =============================================================================
 eGenix.com mx Extension Series for Python
 -----------------------------------------------------------------------------
@@ -13270,14 +13271,14 @@ CEO
 eGenix.com GmbH
 Langenfeld
 Germany
-[END FILE=egenix-mx-base-3.2.7/mx/LICENSE]
+[egenix-mx-base-3.2.7/mx/LICENSE]
 
 
 %%% Within package eject (version 2.1.5+deb1+cvs20081104):
 
-FILE "eject-2.1.5+deb1+cvs20081104/debian/copyright":
+"eject-2.1.5+deb1+cvs20081104/debian/copyright":
 
-[BEGIN FILE=eject-2.1.5+deb1+cvs20081104/debian/copyright]
+[eject-2.1.5+deb1+cvs20081104/debian/copyright]
 The original source code for this package was downloaded from
 http://www.ibiblio.org/pub/Linux/utils/disk-management
 
@@ -13316,14 +13317,14 @@ dmcrypt-get-device.c:
 
 On Debian systems the full text of the GNU General Public Licence,
 version 2, can be found at /usr/share/common-licenses/GPL-2.
-[END FILE=eject-2.1.5+deb1+cvs20081104/debian/copyright]
+[eject-2.1.5+deb1+cvs20081104/debian/copyright]
 
 
 %%% Within package elfutils (version 0.159):
 
-FILE "elfutils-0.159/debian/copyright":
+"elfutils-0.159/debian/copyright":
 
-[BEGIN FILE=elfutils-0.159/debian/copyright]
+[elfutils-0.159/debian/copyright]
 This package was debianized by Kurt Roeckx (kurt@roeckx.be) on
 Sun, 21 May 2006 15:03:01 +0000.
 
@@ -13434,14 +13435,14 @@ The other files are covered by the following license:
 On Debian GNU/Linux systems, the complete text of the GNU General Public
 License version 2 can be found in `/usr/share/common-licenses/GPL-2'.
 
-[END FILE=elfutils-0.159/debian/copyright]
+[elfutils-0.159/debian/copyright]
 
 
 %%% Within package emacsen-common (version 2.0.8):
 
-FILE "emacsen-common-2.0.8/debian/copyright":
+"emacsen-common-2.0.8/debian/copyright":
 
-[BEGIN FILE=emacsen-common-2.0.8/debian/copyright]
+[emacsen-common-2.0.8/debian/copyright]
 This package was created by Rob Browning (rlb@defaultvalue.org) on Sun,
 18 Jan 1998 13:36:35 -0600
 
@@ -13450,14 +13451,14 @@ code borrowed from the previous Debian emacs 19 package.  Unless
 otherwise noted, the contents are Copyright Robert Browning, 1998-2012
 and all of the code is covered under the terms of the GPL.  See the
 file /usr/share/common-licenses/GPL for more information.
-[END FILE=emacsen-common-2.0.8/debian/copyright]
+[emacsen-common-2.0.8/debian/copyright]
 
 
 %%% Within package fakeroot (version 1.20):
 
-FILE "fakeroot-1.20/debian/copyright":
+"fakeroot-1.20/debian/copyright":
 
-[BEGIN FILE=fakeroot-1.20/debian/copyright]
+[fakeroot-1.20/debian/copyright]
 fakeroot contains code under the following copyrights and license:
 
   Copyright Ⓒ 1997, 1998, 1999, 2000, 2001  joost witteveen
@@ -13487,14 +13488,14 @@ On Debian systems, the GNU GPL can be found at
 and the Artistic license can be found at
 /usr/share/common-licenses/Artistic
 
-[END FILE=fakeroot-1.20/debian/copyright]
+[fakeroot-1.20/debian/copyright]
 
 
 %%% Within package feedparser (version 5.1.3):
 
-FILE "feedparser-5.1.3/debian/copyright":
+"feedparser-5.1.3/debian/copyright":
 
-[BEGIN FILE=feedparser-5.1.3/debian/copyright]
+[feedparser-5.1.3/debian/copyright]
 This package was debianized by Joe Wreschnig (piman@debian.org) on
 Tue, 20 Dec 2005 23:49:02 -0600.
 
@@ -13526,11 +13527,11 @@ INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
 CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
 ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 POSSIBILITY OF SUCH DAMAGE.
-[END FILE=feedparser-5.1.3/debian/copyright]
+[feedparser-5.1.3/debian/copyright]
 
-FILE "feedparser-5.1.3/docs/license.rst":
+"feedparser-5.1.3/docs/license.rst":
 
-[BEGIN FILE=feedparser-5.1.3/docs/license.rst]
+[feedparser-5.1.3/docs/license.rst]
 .. _license:
 
 Documentation license
@@ -13559,14 +13560,14 @@ LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
 ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 DOCUMENTATION, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-[END FILE=feedparser-5.1.3/docs/license.rst]
+[feedparser-5.1.3/docs/license.rst]
 
 
 %%% Within package fping (version 3.10):
 
-FILE "fping-3.10/debian/copyright":
+"fping-3.10/debian/copyright":
 
-[BEGIN FILE=fping-3.10/debian/copyright]
+[fping-3.10/debian/copyright]
 This package was split from netstd by Herbert Xu herbert@debian.org on
 Sat, 30 Oct 1999 16:39:06 +1000.
 
@@ -13600,14 +13601,14 @@ specific prior written permission.
 THIS SOFTWARE IS PROVIDED ``AS IS'' AND WITHOUT ANY EXPRESS OR IMPLIED
 WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF
 MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE.
-[END FILE=fping-3.10/debian/copyright]
+[fping-3.10/debian/copyright]
 
 
 %%% Within package gawk (version 4.1.1+dfsg):
 
-FILE "gawk-4.1.1+dfsg/debian/copyright":
+"gawk-4.1.1+dfsg/debian/copyright":
 
-[BEGIN FILE=gawk-4.1.1+dfsg/debian/copyright]
+[gawk-4.1.1+dfsg/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Contact: bug-gawk@gnu.org
 Source: http://ftp.gnu.org/gnu/gawk/
@@ -13639,14 +13640,14 @@ License: GPL-3+
  .
  On Debian systems, the full text of the GNU General Public License
  version 3 can be found in the file `/usr/share/common-licenses/GPL-3'.
-[END FILE=gawk-4.1.1+dfsg/debian/copyright]
+[gawk-4.1.1+dfsg/debian/copyright]
 
 
 %%% Within package gdisk (version 0.8.8):
 
-FILE "gdisk-0.8.8/debian/copyright":
+"gdisk-0.8.8/debian/copyright":
 
-[BEGIN FILE=gdisk-0.8.8/debian/copyright]
+[gdisk-0.8.8/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: gptfdisk
 Source: http://sourceforge.net/projects/gptfdisk/
@@ -13680,14 +13681,14 @@ License: LGPL-2.0+
  .
  On Debian systems, the complete text of the GNU Lesser General
  Public License can be found in "/usr/share/common-licenses/LGPL-2".
-[END FILE=gdisk-0.8.8/debian/copyright]
+[gdisk-0.8.8/debian/copyright]
 
 
 %%% Within package geoip-database (version 20140610):
 
-FILE "geoip-database-20140610/debian/copyright":
+"geoip-database-20140610/debian/copyright":
 
-[BEGIN FILE=geoip-database-20140610/debian/copyright]
+[geoip-database-20140610/debian/copyright]
 This package was created on Tue, 18 Jan 2011 22:22:30 +0100 from
 Patrick Matthäi (pmatthaei@debian.org).
 
@@ -13735,14 +13736,14 @@ Public License can be found in `/usr/share/common-licenses/LGPL-2'.
 
 The Debian packaging is © 2011, Patrick Matthäi (pmatthaei@debian.org)
 and is licensed under the LGPL-2.
-[END FILE=geoip-database-20140610/debian/copyright]
+[geoip-database-20140610/debian/copyright]
 
 
 %%% Within package gfs2-utils (version 3.1.3):
 
-FILE "gfs2-utils-3.1.3/debian/copyright":
+"gfs2-utils-3.1.3/debian/copyright":
 
-[BEGIN FILE=gfs2-utils-3.1.3/debian/copyright]
+[gfs2-utils-3.1.3/debian/copyright]
 Format: http://dep.debian.net/deps/dep5
 Upstream-Name: gfs2-utils
 Source: http://sources.redhat.com/cluster/wiki/
@@ -13779,11 +13780,11 @@ License: GPL-2+
  .
  On Debian systems, the complete text of the GNU General
  Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
-[END FILE=gfs2-utils-3.1.3/debian/copyright]
+[gfs2-utils-3.1.3/debian/copyright]
 
-FILE "gfs2-utils-3.1.3/doc/README.licence":
+"gfs2-utils-3.1.3/doc/README.licence":
 
-[BEGIN FILE=gfs2-utils-3.1.3/doc/README.licence]
+[gfs2-utils-3.1.3/doc/README.licence]
 The Red Hat Cluster is a collection of free software built on top of different
 libraries and applications.
 
@@ -13817,14 +13818,14 @@ and COPYING.libraries.
 
 If missing, write to the Free Software Foundation, Inc., 51 Franklin St,
 Fifth Floor, Boston, MA 02110-1301 USA.
-[END FILE=gfs2-utils-3.1.3/doc/README.licence]
+[gfs2-utils-3.1.3/doc/README.licence]
 
 
 %%% Within package glibc (version 2.19):
 
-FILE "glibc-2.19/debian/copyright":
+"glibc-2.19/debian/copyright":
 
-[BEGIN FILE=glibc-2.19/debian/copyright]
+[glibc-2.19/debian/copyright]
 This is the Debian prepackaged version of the GNU C Library version 2.19.
 
 It was put together by the GNU Libc Maintainers (debian-glibc@lists.debian.org)
@@ -14091,11 +14092,11 @@ from (git://sourceware.org/git/glibc.git)
     
       If these license terms cause you a real problem, contact the author.  */
 
-[END FILE=glibc-2.19/debian/copyright]
+[glibc-2.19/debian/copyright]
 
-FILE "glibc-2.19/LICENSES":
+"glibc-2.19/LICENSES":
 
-[BEGIN FILE=glibc-2.19/LICENSES]
+[glibc-2.19/LICENSES]
 This file contains the copying permission notices for various files in the
 GNU C Library distribution that have copyright owners other than the Free
 Software Foundation.  These notices all require that a copy of the notice
@@ -14565,11 +14566,11 @@ Copyright 2001 by Stephen L. Moshier (moshier@na-net.ornl.gov)
  You should have received a copy of the GNU Lesser General Public
  License along with this library; if not, see
  (http://www.gnu.org/licenses/).  */
-[END FILE=glibc-2.19/LICENSES]
+[glibc-2.19/LICENSES]
 
-FILE "glibc-2.19/posix/rxspencer/COPYRIGHT":
+"glibc-2.19/posix/rxspencer/COPYRIGHT":
 
-[BEGIN FILE=glibc-2.19/posix/rxspencer/COPYRIGHT]
+[glibc-2.19/posix/rxspencer/COPYRIGHT]
 Copyright 1992, 1993, 1994, 1997 Henry Spencer.  All rights reserved.
 This software is not subject to any license of the American Telephone
 and Telegraph Company or of the Regents of the University of California.
@@ -14590,11 +14591,11 @@ to the following restrictions:
    ever read sources, credits must appear in the documentation.
 
 4. This notice may not be removed or altered.
-[END FILE=glibc-2.19/posix/rxspencer/COPYRIGHT]
+[glibc-2.19/posix/rxspencer/COPYRIGHT]
 
-FILE "glibc-2.19/scripts/update-copyrights":
+"glibc-2.19/scripts/update-copyrights":
 
-[BEGIN FILE=glibc-2.19/scripts/update-copyrights]
+[glibc-2.19/scripts/update-copyrights]
 #! /bin/sh
 # Update copyright year lists.
 # Copyright (C) 2012-2014 Free Software Foundation, Inc.
@@ -14672,14 +14673,14 @@ for f in $files; do
       ;;
   esac
 done
-[END FILE=glibc-2.19/scripts/update-copyrights]
+[glibc-2.19/scripts/update-copyrights]
 
 
 %%% Within package grub2 (version 2.02~beta2):
 
-FILE "grub2-2.02~beta2/debian/copyright":
+"grub2-2.02~beta2/debian/copyright":
 
-[BEGIN FILE=grub2-2.02~beta2/debian/copyright]
+[grub2-2.02~beta2/debian/copyright]
 Name: GNU GRUB
 Source: http://www.gnu.org/software/grub/
 
@@ -15054,14 +15055,14 @@ License: Expat
  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  THE SOFTWARE.
-[END FILE=grub2-2.02~beta2/debian/copyright]
+[grub2-2.02~beta2/debian/copyright]
 
 
 %%% Within package hdparm (version 9.43):
 
-FILE "hdparm-9.43/debian/copyright":
+"hdparm-9.43/debian/copyright":
 
-[BEGIN FILE=hdparm-9.43/debian/copyright]
+[hdparm-9.43/debian/copyright]
 This package was debianized by Christopher L Cheney (ccheney@debian.org) on
 Wed, 21 Nov 2001 15:51:14 -0600.
 
@@ -15081,14 +15082,14 @@ as either binary or source, or both.
 
 The only condition is that my name and copyright notice
 remain in the source code as-is.
-[END FILE=hdparm-9.43/debian/copyright]
+[hdparm-9.43/debian/copyright]
 
 
 %%% Within package heimdal (version 1.6~rc2+dfsg):
 
-FILE "heimdal-1.6~rc2+dfsg/debian/copyright":
+"heimdal-1.6~rc2+dfsg/debian/copyright":
 
-[BEGIN FILE=heimdal-1.6~rc2+dfsg/debian/copyright]
+[heimdal-1.6~rc2+dfsg/debian/copyright]
 This package was debianized by Brian May (bam@snoopy.apana.org.au) on
 Wed,  8 Dec 1999 11:54:13 +1100.
 
@@ -15275,11 +15276,11 @@ rfc3492.txt contains the following license:
    modify, and distribute it, provided that redistributed derivative
    works do not contain misleading author or version information.
    Derivative works need not be licensed under similar terms.
-[END FILE=heimdal-1.6~rc2+dfsg/debian/copyright]
+[heimdal-1.6~rc2+dfsg/debian/copyright]
 
-FILE "heimdal-1.6~rc2+dfsg/doc/copyright.texi":
+"heimdal-1.6~rc2+dfsg/doc/copyright.texi":
 
-[BEGIN FILE=heimdal-1.6~rc2+dfsg/doc/copyright.texi]
+[heimdal-1.6~rc2+dfsg/doc/copyright.texi]
 
 @macro copynext{} 
 @vskip 20pt plus 1fil
@@ -15798,20 +15799,20 @@ POSSIBILITY OF SUCH DAMAGE.
 @end verbatim
 
 @copyrightend
-[END FILE=heimdal-1.6~rc2+dfsg/doc/copyright.texi]
+[heimdal-1.6~rc2+dfsg/doc/copyright.texi]
 
-FILE "heimdal-1.6~rc2+dfsg/lib/hcrypto/libtommath/LICENSE":
+"heimdal-1.6~rc2+dfsg/lib/hcrypto/libtommath/LICENSE":
 
-[BEGIN FILE=heimdal-1.6~rc2+dfsg/lib/hcrypto/libtommath/LICENSE]
+[heimdal-1.6~rc2+dfsg/lib/hcrypto/libtommath/LICENSE]
 LibTomMath is hereby released into the Public Domain.  
 
 -- Tom St Denis
 
-[END FILE=heimdal-1.6~rc2+dfsg/lib/hcrypto/libtommath/LICENSE]
+[heimdal-1.6~rc2+dfsg/lib/hcrypto/libtommath/LICENSE]
 
-FILE "heimdal-1.6~rc2+dfsg/lib/libedit/COPYING":
+"heimdal-1.6~rc2+dfsg/lib/libedit/COPYING":
 
-[BEGIN FILE=heimdal-1.6~rc2+dfsg/lib/libedit/COPYING]
+[heimdal-1.6~rc2+dfsg/lib/libedit/COPYING]
 Copyright (c) 1992, 1993
  The Regents of the University of California.  All rights reserved.
 
@@ -15842,11 +15843,11 @@ LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
 OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
 SUCH DAMAGE.
 
-[END FILE=heimdal-1.6~rc2+dfsg/lib/libedit/COPYING]
+[heimdal-1.6~rc2+dfsg/lib/libedit/COPYING]
 
-FILE "heimdal-1.6~rc2+dfsg/LICENSE":
+"heimdal-1.6~rc2+dfsg/LICENSE":
 
-[BEGIN FILE=heimdal-1.6~rc2+dfsg/LICENSE]
+[heimdal-1.6~rc2+dfsg/LICENSE]
 Copyright (c) 1995 - 2011 Kungliga Tekniska Högskolan
 (Royal Institute of Technology, Stockholm, Sweden). 
 All rights reserved. 
@@ -15880,11 +15881,11 @@ SUCH DAMAGE.
 
 
 Please see info documentation for the complete list of licenses.
-[END FILE=heimdal-1.6~rc2+dfsg/LICENSE]
+[heimdal-1.6~rc2+dfsg/LICENSE]
 
-FILE "heimdal-1.6~rc2+dfsg/packages/windows/installer/lang/license-en-us.rtf":
+"heimdal-1.6~rc2+dfsg/packages/windows/installer/lang/license-en-us.rtf":
 
-[BEGIN FILE=heimdal-1.6~rc2+dfsg/packages/windows/installer/lang/license-en-us.rtf]
+[heimdal-1.6~rc2+dfsg/packages/windows/installer/lang/license-en-us.rtf]
 {\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
 
 {\*\generator Msftedit 5.41.21.2509;}\viewkind4\uc1\pard\sa200\sl276\slmult1\qc\lang9\ul\b\f0\fs22 License Agreement\par
@@ -15913,14 +15914,14 @@ Redistribution and use in source and binary forms, with or without modification,
 
 }
 
- [END FILE=heimdal-1.6~rc2+dfsg/packages/windows/installer/lang/license-en-us.rtf]
+ [heimdal-1.6~rc2+dfsg/packages/windows/installer/lang/license-en-us.rtf]
 
 
 %%% Within package hfsplus (version 1.0.4):
 
-FILE "hfsplus-1.0.4/debian/copyright":
+"hfsplus-1.0.4/debian/copyright":
 
-[BEGIN FILE=hfsplus-1.0.4/debian/copyright]
+[hfsplus-1.0.4/debian/copyright]
 This package was debianized by Jens Schmalzing (jensen@debian.org) on
 Sun, 11 Mar 2001 22:02:06 +0100.
 
@@ -15932,14 +15933,14 @@ Copyright:
 
 hfsplus is covered under the terms of the GPL.  See the file
 /usr/share/common-licenses/GPL for more information.
-[END FILE=hfsplus-1.0.4/debian/copyright]
+[hfsplus-1.0.4/debian/copyright]
 
 
 %%% Within package hivex (version 1.3.10):
 
-FILE "hivex-1.3.10/debian/copyright":
+"hivex-1.3.10/debian/copyright":
 
-[BEGIN FILE=hivex-1.3.10/debian/copyright]
+[hivex-1.3.10/debian/copyright]
 This work was packaged for Debian by:
 
     Hilko Bengen (bengen@debian.org)
@@ -16003,14 +16004,14 @@ version 2 can be found in "/usr/share/common-licenses/GPL-2".
 
 On Debian systems, the complete text of the GNU General Public License
 version 3 can be found in "/usr/share/common-licenses/GPL-3".
-[END FILE=hivex-1.3.10/debian/copyright]
+[hivex-1.3.10/debian/copyright]
 
 
 %%% Within package html5lib (version 0.999):
 
-FILE "html5lib-0.999/debian/copyright":
+"html5lib-0.999/debian/copyright":
 
-[BEGIN FILE=html5lib-0.999/debian/copyright]
+[html5lib-0.999/debian/copyright]
 This package was debianized by Bernd Zeimetz (bernd@bzed.de) on
 Sun, 11 Mar 2007 21:29:42 +0100
 
@@ -16057,14 +16058,14 @@ The Debian packaging is Copyright (C) 2007-2009, Bernd Zeimetz
 (bzed@debian.org), Copyright (c) 2013 Olivier Berger
 (obergix@debian.org), and is licensed under the same license as
 html5lib, see above.
-[END FILE=html5lib-0.999/debian/copyright]
+[html5lib-0.999/debian/copyright]
 
 
 %%% Within package icu (version 52.1):
 
-FILE "icu-52.1/debian/copyright":
+"icu-52.1/debian/copyright":
 
-[BEGIN FILE=icu-52.1/debian/copyright]
+[icu-52.1/debian/copyright]
 This package was debianized by Jay Berkenbilt (qjb@debian.org) on
 August 5, 2005.
 
@@ -16212,11 +16213,11 @@ copyright notice:
    BUT NOT LIMITED TO ANY WARRANTY THAT THE USE OF THE INFORMATION
    HEREIN WILL NOT INFRINGE ANY RIGHTS OR ANY IMPLIED WARRANTIES OF
    MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.
-[END FILE=icu-52.1/debian/copyright]
+[icu-52.1/debian/copyright]
 
-FILE "icu-52.1/license.html":
+"icu-52.1/license.html":
 
-[BEGIN FILE=icu-52.1/license.html]
+[icu-52.1/license.html]
 (!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
    "http://www.w3.org/TR/html4/loose.dtd")
 (html)
@@ -16561,14 +16562,14 @@ Database(/a) section 7.(p)
 
 (/body)
 (/html)
-[END FILE=icu-52.1/license.html]
+[icu-52.1/license.html]
 
 
 %%% Within package installation-report (version 2.55):
 
-FILE "installation-report-2.55/debian/copyright":
+"installation-report-2.55/debian/copyright":
 
-[BEGIN FILE=installation-report-2.55/debian/copyright]
+[installation-report-2.55/debian/copyright]
 The Debian bug reporter is copyright 2003-2005 by 
 Petter Reinholdtsen (pere@debian.org), Joey Hess (joeyh@debian-org), and
 the debian-installer team.
@@ -16588,14 +16589,14 @@ For the script usb-list:
   This software may be used and distributed according to the terms of
   the GNU General Public License (GPL), version 2, or at your option
   any later version.
-[END FILE=installation-report-2.55/debian/copyright]
+[installation-report-2.55/debian/copyright]
 
 
 %%% Within package intltool-debian (version 0.35.0+20060710.1):
 
-FILE "intltool-debian-0.35.0+20060710.1/debian/copyright":
+"intltool-debian-0.35.0+20060710.1/debian/copyright":
 
-[BEGIN FILE=intltool-debian-0.35.0+20060710.1/debian/copyright]
+[intltool-debian-0.35.0+20060710.1/debian/copyright]
 intltool-debian is a derived version of intltool, which is
   Copyright (C) 2000-2003 Free Software Foundation.
   Copyright (C) 2000, 2001 Eazel, Inc
@@ -16612,14 +16613,14 @@ This program is released under the terms and conditions of the GNU
 General Public License (GPL).  On Debian GNU/Linux systems, the complete
 text of the GNU General Public License may be found in
 `/usr/share/common-licenses/GPL'.
-[END FILE=intltool-debian-0.35.0+20060710.1/debian/copyright]
+[intltool-debian-0.35.0+20060710.1/debian/copyright]
 
 
 %%% Within package irker (version 2.11+dfsg):
 
-FILE "irker-2.11+dfsg/debian/copyright":
+"irker-2.11+dfsg/debian/copyright":
 
-[BEGIN FILE=irker-2.11+dfsg/debian/copyright]
+[irker-2.11+dfsg/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: irker
 Upstream-Contact: Eric S. Raymond (esr@thyrsus.com)
@@ -16660,14 +16661,14 @@ License: BSD
  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-[END FILE=irker-2.11+dfsg/debian/copyright]
+[irker-2.11+dfsg/debian/copyright]
 
 
 %%% Within package ispell (version 3.3.02):
 
-FILE "ispell-3.3.02/debian/copyright":
+"ispell-3.3.02/debian/copyright":
 
-[BEGIN FILE=ispell-3.3.02/debian/copyright]
+[ispell-3.3.02/debian/copyright]
 Author: Geoff Kuenning (geoff@cs.hmc.edu)
 Download: http://www.lasr.cs.ucla.edu/geoff/ispell.html
 
@@ -16747,14 +16748,14 @@ License: BSD
  LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
  OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-[END FILE=ispell-3.3.02/debian/copyright]
+[ispell-3.3.02/debian/copyright]
 
 
 %%% Within package java-common (version 0.52):
 
-FILE "java-common-0.52/debian/copyright":
+"java-common-0.52/debian/copyright":
 
-[BEGIN FILE=java-common-0.52/debian/copyright]
+[java-common-0.52/debian/copyright]
 It is a Debian original work.
 
 Current maintainers:
@@ -16790,14 +16791,14 @@ License:
 On Debian systems, the complete text of the GNU General
 Public License can be found in `/usr/share/common-licenses/GPL-2'.
 
-[END FILE=java-common-0.52/debian/copyright]
+[java-common-0.52/debian/copyright]
 
 
 %%% Within package javascript-common (version 11):
 
-FILE "javascript-common-11/debian/copyright":
+"javascript-common-11/debian/copyright":
 
-[BEGIN FILE=javascript-common-11/debian/copyright]
+[javascript-common-11/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Author: Marcelo Jorge Vieira (metal@alucinados.com)
 
@@ -16820,14 +16821,14 @@ License: GPL-2+
  .
  On Debian systems, the complete text of the GNU General Public License
  can be found in /usr/share/common-licenses/GPL-2 file.
-[END FILE=javascript-common-11/debian/copyright]
+[javascript-common-11/debian/copyright]
 
 
 %%% Within package jfsutils (version 1.1.15):
 
-FILE "jfsutils-1.1.15/debian/copyright":
+"jfsutils-1.1.15/debian/copyright":
 
-[BEGIN FILE=jfsutils-1.1.15/debian/copyright]
+[jfsutils-1.1.15/debian/copyright]
 This package was debianized by Christopher L Cheney (ccheney@debian.org) on
 Mon, 18 Jun 2001 20:00:00 -0500.
 
@@ -16856,14 +16857,14 @@ You are free to distribute this software under the terms of the
 GNU General Public License.  On Debian systems, the complete text
 of the GNU General Public License can be found in
 /usr/share/common-licenses/GPL file.
-[END FILE=jfsutils-1.1.15/debian/copyright]
+[jfsutils-1.1.15/debian/copyright]
 
 
 %%% Within package jinja2 (version 2.7.3):
 
-FILE "jinja2-2.7.3/debian/copyright":
+"jinja2-2.7.3/debian/copyright":
 
-[BEGIN FILE=jinja2-2.7.3/debian/copyright]
+[jinja2-2.7.3/debian/copyright]
 This package was debianized by Piotr Ożarowski (piotr@debian.org) on
 Mon, 14 Jul 2008 23:45:03 +0200.
 
@@ -16937,11 +16938,11 @@ can be found in `/usr/share/common-licenses/GPL'.
 
 The Debian packaging is © 2008-2011, Piotr Ożarowski (piotr@debian.org) and
 is licensed under the same license as Jinja2.
-[END FILE=jinja2-2.7.3/debian/copyright]
+[jinja2-2.7.3/debian/copyright]
 
-FILE "jinja2-2.7.3/docs/_themes/LICENSE":
+"jinja2-2.7.3/docs/_themes/LICENSE":
 
-[BEGIN FILE=jinja2-2.7.3/docs/_themes/LICENSE]
+[jinja2-2.7.3/docs/_themes/LICENSE]
 Copyright (c) 2010 by Armin Ronacher.
 
 Some rights reserved.
@@ -16979,14 +16980,14 @@ INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
 CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
 ARISING IN ANY WAY OUT OF THE USE OF THIS THEME, EVEN IF ADVISED OF THE
 POSSIBILITY OF SUCH DAMAGE.
-[END FILE=jinja2-2.7.3/docs/_themes/LICENSE]
+[jinja2-2.7.3/docs/_themes/LICENSE]
 
 
 %%% Within package jquery-goodies (version 10):
 
-FILE "jquery-goodies-10/debian/copyright":
+"jquery-goodies-10/debian/copyright":
 
-[BEGIN FILE=jquery-goodies-10/debian/copyright]
+[jquery-goodies-10/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 
 Files: galleriffic/*
@@ -17170,14 +17171,14 @@ License: BSD
   LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
   OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
   SUCH DAMAGE.
-[END FILE=jquery-goodies-10/debian/copyright]
+[jquery-goodies-10/debian/copyright]
 
 
 %%% Within package kexec-tools (version 2.0.4):
 
-FILE "kexec-tools-2.0.4/debian/copyright":
+"kexec-tools-2.0.4/debian/copyright":
 
-[BEGIN FILE=kexec-tools-2.0.4/debian/copyright]
+[kexec-tools-2.0.4/debian/copyright]
 This package was debianized by Khalid Aziz (khalid@debian.org) on
 Wed, 27 Jul 2005 10:55:17 -0600.
 
@@ -17214,14 +17215,14 @@ License:
 
  Full text of the license can be found under /usr/share/common-licenses/GPL-2
 
-[END FILE=kexec-tools-2.0.4/debian/copyright]
+[kexec-tools-2.0.4/debian/copyright]
 
 
 %%% Within package kombu (version 3.0.15):
 
-FILE "kombu-3.0.15/debian/copyright":
+"kombu-3.0.15/debian/copyright":
 
-[BEGIN FILE=kombu-3.0.15/debian/copyright]
+[kombu-3.0.15/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: kombu
 Upstream-Contact: Ask Solem (askh@opera.com)
@@ -17327,14 +17328,14 @@ License: PSF-2
  8. By copying, installing or otherwise using Python, Licensee
  agrees to be bound by the terms and conditions of this License
  Agreement.
-[END FILE=kombu-3.0.15/debian/copyright]
+[kombu-3.0.15/debian/copyright]
 
 
 %%% Within package laptop-detect (version 0.13.7):
 
-FILE "laptop-detect-0.13.7/debian/copyright":
+"laptop-detect-0.13.7/debian/copyright":
 
-[BEGIN FILE=laptop-detect-0.13.7/debian/copyright]
+[laptop-detect-0.13.7/debian/copyright]
 Upstream Author: Thom May (thom@canonical.com)
 
 Copyright 2004-2007 Thom May (thom@canonical.com)
@@ -17342,14 +17343,14 @@ Copyright 2006-2008 Otavio Salvador (otavio@ossystems.com.br)
 
 This software is licensed under the BSD license. For further
 information please see /usr/share/common-licenses/BSD.
-[END FILE=laptop-detect-0.13.7/debian/copyright]
+[laptop-detect-0.13.7/debian/copyright]
 
 
 %%% Within package lcms2 (version 2.6):
 
-FILE "lcms2-2.6/debian/copyright":
+"lcms2-2.6/debian/copyright":
 
-[BEGIN FILE=lcms2-2.6/debian/copyright]
+[lcms2-2.6/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: Little CMS
 Source: http://www.littlecms.com/
@@ -17394,14 +17395,14 @@ License: GPL-2+
  .
  On Debian systems, the complete text of the GNU General
  Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
-[END FILE=lcms2-2.6/debian/copyright]
+[lcms2-2.6/debian/copyright]
 
 
 %%% Within package ldb (version 1.1.17):
 
-FILE "ldb-1.1.17/debian/copyright":
+"ldb-1.1.17/debian/copyright":
 
-[BEGIN FILE=ldb-1.1.17/debian/copyright]
+[ldb-1.1.17/debian/copyright]
 Upstream-Name: ldb
 Source: http://ldb.samba.org/
 
@@ -17581,11 +17582,11 @@ Copyright: 2007-2010 Jelmer Vernooij (jelmer@samba.org)
 License: LGPL-3+
  The text of the license is available on Debian systems in the
  /usr/share/common-licenses/LGPL-3 file.
-[END FILE=ldb-1.1.17/debian/copyright]
+[ldb-1.1.17/debian/copyright]
 
-FILE "ldb-1.1.17/lib/popt/COPYING":
+"ldb-1.1.17/lib/popt/COPYING":
 
-[BEGIN FILE=ldb-1.1.17/lib/popt/COPYING]
+[ldb-1.1.17/lib/popt/COPYING]
 Copyright (c) 1998  Red Hat Software
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -17608,14 +17609,14 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 Except as contained in this notice, the name of the X Consortium shall not be
 used in advertising or otherwise to promote the sale, use or other dealings
 in this Software without prior written authorization from the X Consortium.
-[END FILE=ldb-1.1.17/lib/popt/COPYING]
+[ldb-1.1.17/lib/popt/COPYING]
 
 
 %%% Within package libalgorithm-diff-perl (version 1.19.02):
 
-FILE "libalgorithm-diff-perl-1.19.02/debian/copyright":
+"libalgorithm-diff-perl-1.19.02/debian/copyright":
 
-[BEGIN FILE=libalgorithm-diff-perl-1.19.02/debian/copyright]
+[libalgorithm-diff-perl-1.19.02/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: Algorithm-Diff
 Upstream-Contact: This version released by Tye McQueen (http://perlmonks.org/?node=tye).
@@ -17654,14 +17655,14 @@ License: GPL-1+
  On Debian GNU/Linux systems, the complete text of version 1 of the
  General Public License can be found in `/usr/share/common-licenses/GPL-1'.
 
-[END FILE=libalgorithm-diff-perl-1.19.02/debian/copyright]
+[libalgorithm-diff-perl-1.19.02/debian/copyright]
 
 
 %%% Within package libalgorithm-diff-xs-perl (version 0.04):
 
-FILE "libalgorithm-diff-xs-perl-0.04/debian/copyright":
+"libalgorithm-diff-xs-perl-0.04/debian/copyright":
 
-[BEGIN FILE=libalgorithm-diff-xs-perl-0.04/debian/copyright]
+[libalgorithm-diff-xs-perl-0.04/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: Algorithm-Diff-XS
 Upstream-Contact: Audrey Tang (cpan@audreyt.org)
@@ -17705,14 +17706,14 @@ License: GPL-1+
  .
  On Debian systems, the complete text of version 1 of the GNU General
  Public License can be found in `/usr/share/common-licenses/GPL-1'.
-[END FILE=libalgorithm-diff-xs-perl-0.04/debian/copyright]
+[libalgorithm-diff-xs-perl-0.04/debian/copyright]
 
 
 %%% Within package libalgorithm-merge-perl (version 0.08):
 
-FILE "libalgorithm-merge-perl-0.08/debian/copyright":
+"libalgorithm-merge-perl-0.08/debian/copyright":
 
-[BEGIN FILE=libalgorithm-merge-perl-0.08/debian/copyright]
+[libalgorithm-merge-perl-0.08/debian/copyright]
 Format-Specification: http://svn.debian.org/wsvn/dep/web/deps/dep5.mdwn?op=file&rev=135
 Maintainer: James G. Smith (jsmith@cpan.org)
 Source: http://search.cpan.org/dist/Algorithm-Merge/
@@ -17742,14 +17743,14 @@ License: GPL-1+
  .
  On Debian GNU/Linux systems, the complete text of version 1 of the
  General Public License can be found in `/usr/share/common-licenses/GPL-1'.
-[END FILE=libalgorithm-merge-perl-0.08/debian/copyright]
+[libalgorithm-merge-perl-0.08/debian/copyright]
 
 
 %%% Within package libcroco (version 0.6.8):
 
-FILE "libcroco-0.6.8/debian/copyright":
+"libcroco-0.6.8/debian/copyright":
 
-[BEGIN FILE=libcroco-0.6.8/debian/copyright]
+[libcroco-0.6.8/debian/copyright]
 This package was debianized by Sebastien Bacher (seb128@debian.org) on
 Mon, 12 Apr 2004 12:23:20 +0200.
 
@@ -17782,14 +17783,14 @@ License:
 On Debian systems, the complete text of the GNU Lesser General
 Public License can be found in `/usr/share/common-licenses/LGPL'.
 
-[END FILE=libcroco-0.6.8/debian/copyright]
+[libcroco-0.6.8/debian/copyright]
 
 
 %%% Within package libcrypt-passwdmd5-perl (version 1.3):
 
-FILE "libcrypt-passwdmd5-perl-1.3/debian/copyright":
+"libcrypt-passwdmd5-perl-1.3/debian/copyright":
 
-[BEGIN FILE=libcrypt-passwdmd5-perl-1.3/debian/copyright]
+[libcrypt-passwdmd5-perl-1.3/debian/copyright]
 This is Debian GNU/Linux's prepackaged version of Crypt::PasswdMD5
 (renamed to be libcrypt-passwdmd5-perl), a Perl module for
 interoperable MD5-based crypt().
@@ -17840,14 +17841,14 @@ Copyright (C) 2004-2006, Florian Ernst (florian@debian.org)
 Copyright (C) 2006-2008, Bart Martens (bartm@knars.be)
 and is licensed under the GPL, see `/usr/share/common-licenses/GPL'.
 
-[END FILE=libcrypt-passwdmd5-perl-1.3/debian/copyright]
+[libcrypt-passwdmd5-perl-1.3/debian/copyright]
 
 
 %%% Within package libdbd-mysql-perl (version 4.027):
 
-FILE "libdbd-mysql-perl-4.027/debian/copyright":
+"libdbd-mysql-perl-4.027/debian/copyright":
 
-[BEGIN FILE=libdbd-mysql-perl-4.027/debian/copyright]
+[libdbd-mysql-perl-4.027/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: DBD-mysql
 Upstream-Contact: Patrick Galbraith (patg@mysql.com)
@@ -17920,14 +17921,14 @@ License: GPL-2+
  .
  On Debian systems, the complete text of version 2 of the GNU General
  Public License can be found in `/usr/share/common-licenses/GPL-2'.
-[END FILE=libdbd-mysql-perl-4.027/debian/copyright]
+[libdbd-mysql-perl-4.027/debian/copyright]
 
 
 %%% Within package libdbi (version 0.9.0):
 
-FILE "libdbi-0.9.0/debian/copyright":
+"libdbi-0.9.0/debian/copyright":
 
-[BEGIN FILE=libdbi-0.9.0/debian/copyright]
+[libdbi-0.9.0/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: libdbi
 Upstream-Contact: Markus Hoenicka (markus@mhoenicka.de)
@@ -17978,11 +17979,11 @@ License: GFDL-1.1+
  .
  On Debian systems, the complete text of the GNU Free Documentation License
  (GFDL) may be found in /usr/share/common-licenses/GFDL-1.2.
-[END FILE=libdbi-0.9.0/debian/copyright]
+[libdbi-0.9.0/debian/copyright]
 
-FILE "libdbi-0.9.0/doc/driver-guide/copying-fdl.html":
+"libdbi-0.9.0/doc/driver-guide/copying-fdl.html":
 
-[BEGIN FILE=libdbi-0.9.0/doc/driver-guide/copying-fdl.html]
+[libdbi-0.9.0/doc/driver-guide/copying-fdl.html]
 (!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd")
 (HTML
 )(HEAD
@@ -18551,11 +18552,11 @@ VALIGN="top"
 )(/DIV
 )(/BODY
 )(/HTML
-)[END FILE=libdbi-0.9.0/doc/driver-guide/copying-fdl.html]
+)[libdbi-0.9.0/doc/driver-guide/copying-fdl.html]
 
-FILE "libdbi-0.9.0/doc/include/copying-fdl.sgml":
+"libdbi-0.9.0/doc/include/copying-fdl.sgml":
 
-[BEGIN FILE=libdbi-0.9.0/doc/include/copying-fdl.sgml]
+[libdbi-0.9.0/doc/include/copying-fdl.sgml]
 (appendix id="copying-FDL")
 (title)GNU Free Documentation License(/title)
 (!-- - GNU Project - Free Software Foundation (FSF) --)
@@ -18998,11 +18999,11 @@ sgml-validate-command: "nsgmls -s referenz.sgml"
 ispell-skip-sgml: t
 End:
 --)
-[END FILE=libdbi-0.9.0/doc/include/copying-fdl.sgml]
+[libdbi-0.9.0/doc/include/copying-fdl.sgml]
 
-FILE "libdbi-0.9.0/doc/programmers-guide/copying-fdl.html":
+"libdbi-0.9.0/doc/programmers-guide/copying-fdl.html":
 
-[BEGIN FILE=libdbi-0.9.0/doc/programmers-guide/copying-fdl.html]
+[libdbi-0.9.0/doc/programmers-guide/copying-fdl.html]
 (!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd")
 (HTML
 )(HEAD
@@ -19571,14 +19572,14 @@ VALIGN="top"
 )(/DIV
 )(/BODY
 )(/HTML
-)[END FILE=libdbi-0.9.0/doc/programmers-guide/copying-fdl.html]
+)[libdbi-0.9.0/doc/programmers-guide/copying-fdl.html]
 
 
 %%% Within package libdbi-perl (version 1.631):
 
-FILE "libdbi-perl-1.631/debian/copyright":
+"libdbi-perl-1.631/debian/copyright":
 
-[BEGIN FILE=libdbi-perl-1.631/debian/copyright]
+[libdbi-perl-1.631/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: DBI
 Upstream-Contact: Tim Bunce (Tim.Bunce@pobox.com)
@@ -19711,14 +19712,14 @@ License: GPL-1+
  .
  On Debian systems, the complete text of version 1 of the GNU General
  Public License can be found in `/usr/share/common-licenses/GPL-1'.
-[END FILE=libdbi-perl-1.631/debian/copyright]
+[libdbi-perl-1.631/debian/copyright]
 
 
 %%% Within package libfile-fcntllock-perl (version 0.20):
 
-FILE "libfile-fcntllock-perl-0.20/debian/copyright":
+"libfile-fcntllock-perl-0.20/debian/copyright":
 
-[BEGIN FILE=libfile-fcntllock-perl-0.20/debian/copyright]
+[libfile-fcntllock-perl-0.20/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: File-FcntlLock
 Upstream-Contact: Jens Thoms Toerring (jt@toerring.de)
@@ -19747,14 +19748,14 @@ License: GPL-1+
  .
  On Debian systems, the complete text of version 1 of the GNU General
  Public License can be found in `/usr/share/common-licenses/GPL-1'.
-[END FILE=libfile-fcntllock-perl-0.20/debian/copyright]
+[libfile-fcntllock-perl-0.20/debian/copyright]
 
 
 %%% Within package libguestfs (version 1.26.3):
 
-FILE "libguestfs-1.26.3/debian/copyright":
+"libguestfs-1.26.3/debian/copyright":
 
-[BEGIN FILE=libguestfs-1.26.3/debian/copyright]
+[libguestfs-1.26.3/debian/copyright]
 This package was debianized by Hilko Bengen, based on work done by
 Richard Jones (rjones@redhat.com).
 
@@ -19789,11 +19790,11 @@ in"/usr/share/common-licenses/GPL-2",
 "/usr/share/common-licenses/LGPL-2", and
 "/usr/share/common-licenses/GPL-3", respectively.
 
-[END FILE=libguestfs-1.26.3/debian/copyright]
+[libguestfs-1.26.3/debian/copyright]
 
-FILE "libguestfs-1.26.3/sparsify/copying.ml":
+"libguestfs-1.26.3/sparsify/copying.ml":
 
-[BEGIN FILE=libguestfs-1.26.3/sparsify/copying.ml]
+[libguestfs-1.26.3/sparsify/copying.ml]
 (* virt-sparsify
  * Copyright (C) 2011-2014 Red Hat Inc.
  *
@@ -20074,14 +20075,14 @@ You can ignore this warning or change it to a hard failure using the
     print_newline ();
     wrap (s_"Sparsify operation completed with no errors.  Before deleting the old disk, carefully check that the target disk boots and works correctly.\n");
   )
-[END FILE=libguestfs-1.26.3/sparsify/copying.ml]
+[libguestfs-1.26.3/sparsify/copying.ml]
 
 
 %%% Within package libhtml-template-perl (version 2.95):
 
-FILE "libhtml-template-perl-2.95/debian/copyright":
+"libhtml-template-perl-2.95/debian/copyright":
 
-[BEGIN FILE=libhtml-template-perl-2.95/debian/copyright]
+[libhtml-template-perl-2.95/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Contact: Sam Tregar (sam@tregar.com)
 Source: https://metacpan.org/release/HTML-Template/
@@ -20129,11 +20130,11 @@ License: GPL-1+
  .
  On Debian systems, the complete text of version 1 of the GNU General
  Public License can be found in `/usr/share/common-licenses/GPL-1'.
-[END FILE=libhtml-template-perl-2.95/debian/copyright]
+[libhtml-template-perl-2.95/debian/copyright]
 
-FILE "libhtml-template-perl-2.95/LICENSE":
+"libhtml-template-perl-2.95/LICENSE":
 
-[BEGIN FILE=libhtml-template-perl-2.95/LICENSE]
+[libhtml-template-perl-2.95/LICENSE]
 This software is copyright (c) 2012 by Michael Peters.
 
 This is free software; you can redistribute it and/or modify it under
@@ -20513,14 +20514,14 @@ MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE.
 
 The End
 
-[END FILE=libhtml-template-perl-2.95/LICENSE]
+[libhtml-template-perl-2.95/LICENSE]
 
 
 %%% Within package libio-socket-ip-perl (version 0.29):
 
-FILE "libio-socket-ip-perl-0.29/debian/copyright":
+"libio-socket-ip-perl-0.29/debian/copyright":
 
-[BEGIN FILE=libio-socket-ip-perl-0.29/debian/copyright]
+[libio-socket-ip-perl-0.29/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: IO-Socket-IP
 Upstream-Contact: Paul Evans (leonerd@leonerd.org.uk)
@@ -20553,11 +20554,11 @@ License: GPL-1+
  .
  On Debian systems, the complete text of version 1 of the GNU General
  Public License can be found in `/usr/share/common-licenses/GPL-1'.
-[END FILE=libio-socket-ip-perl-0.29/debian/copyright]
+[libio-socket-ip-perl-0.29/debian/copyright]
 
-FILE "libio-socket-ip-perl-0.29/LICENSE":
+"libio-socket-ip-perl-0.29/LICENSE":
 
-[BEGIN FILE=libio-socket-ip-perl-0.29/LICENSE]
+[libio-socket-ip-perl-0.29/LICENSE]
 This software is copyright (c) 2014 by Paul Evans (leonerd@leonerd.org.uk).
 
 This is free software; you can redistribute it and/or modify it under
@@ -20937,14 +20938,14 @@ MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE.
 
 The End
 
-[END FILE=libio-socket-ip-perl-0.29/LICENSE]
+[libio-socket-ip-perl-0.29/LICENSE]
 
 
 %%% Within package libio-socket-ssl-perl (version 1.992):
 
-FILE "libio-socket-ssl-perl-1.992/debian/copyright":
+"libio-socket-ssl-perl-1.992/debian/copyright":
 
-[BEGIN FILE=libio-socket-ssl-perl-1.992/debian/copyright]
+[libio-socket-ssl-perl-1.992/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: IO-Socket-SSL
 Upstream-Contact: Steffen Ullrich (Steffen_Ullrich@genua.de)
@@ -20987,14 +20988,14 @@ License: GPL-1+
  .
  On Debian systems, the complete text of version 1 of the GNU General
  Public License can be found in `/usr/share/common-licenses/GPL-1'.
-[END FILE=libio-socket-ssl-perl-1.992/debian/copyright]
+[libio-socket-ssl-perl-1.992/debian/copyright]
 
 
 %%% Within package libjs-jquery-hotkeys (version 0~20130707+git2d51e3a9+dfsg):
 
-FILE "libjs-jquery-hotkeys-0~20130707+git2d51e3a9+dfsg/debian/copyright":
+"libjs-jquery-hotkeys-0~20130707+git2d51e3a9+dfsg/debian/copyright":
 
-[BEGIN FILE=libjs-jquery-hotkeys-0~20130707+git2d51e3a9+dfsg/debian/copyright]
+[libjs-jquery-hotkeys-0~20130707+git2d51e3a9+dfsg/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: jquery.hotkeys
 Source: git://github.com/tzuryby/jquery.hotkeys.git
@@ -21049,14 +21050,14 @@ License: MIT-or-GPL-2
  .
  On Debian systems, the complete text of the GNU General Public License v2
  (GPL) can be found in /usr/share/common-licenses/GPL-2.
- [END FILE=libjs-jquery-hotkeys-0~20130707+git2d51e3a9+dfsg/debian/copyright]
+ [libjs-jquery-hotkeys-0~20130707+git2d51e3a9+dfsg/debian/copyright]
 
 
 %%% Within package libjs-jquery-isonscreen (version 1.2.0):
 
-FILE "libjs-jquery-isonscreen-1.2.0/debian/copyright":
+"libjs-jquery-isonscreen-1.2.0/debian/copyright":
 
-[BEGIN FILE=libjs-jquery-isonscreen-1.2.0/debian/copyright]
+[libjs-jquery-isonscreen-1.2.0/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: isOnScreen
 Source: http://archive.plugins.jquery.com/project/isOnScreen
@@ -21107,14 +21108,14 @@ License: MIT-or-GPL
  .
  On Debian systems, the complete text of the GNU General Public License v2
  (GPL) can be found in /usr/share/common-licenses/GPL-2.
-[END FILE=libjs-jquery-isonscreen-1.2.0/debian/copyright]
+[libjs-jquery-isonscreen-1.2.0/debian/copyright]
 
 
 %%% Within package libnet-libidn-perl (version 0.12.ds):
 
-FILE "libnet-libidn-perl-0.12.ds/debian/copyright":
+"libnet-libidn-perl-0.12.ds/debian/copyright":
 
-[BEGIN FILE=libnet-libidn-perl-0.12.ds/debian/copyright]
+[libnet-libidn-perl-0.12.ds/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: Net-LibIDN
 Upstream-Contact: Thomas Jacob, http://internet24.de
@@ -21146,14 +21147,14 @@ License: GPL-1+
  .
  On Debian systems, the complete text of version 1 of the GNU General
  Public License can be found in `/usr/share/common-licenses/GPL-1'.
-[END FILE=libnet-libidn-perl-0.12.ds/debian/copyright]
+[libnet-libidn-perl-0.12.ds/debian/copyright]
 
 
 %%% Within package libnet-snmp-perl (version 6.0.1):
 
-FILE "libnet-snmp-perl-6.0.1/debian/copyright":
+"libnet-snmp-perl-6.0.1/debian/copyright":
 
-[BEGIN FILE=libnet-snmp-perl-6.0.1/debian/copyright]
+[libnet-snmp-perl-6.0.1/debian/copyright]
 This is the Debian GNU/Linux version of the Net::SNMP Perl module.
 It has been downloaded from the CPAN archive:
 http://www.cpan.org/modules/by-module/Net/
@@ -21180,11 +21181,11 @@ This package has been through multiple maintainers (for a list see
 Current Debian specific changes are copyright (c) 2003
 Stephen Zander (gibreel@debian.org).
 Copyright (c) 2004 Jochen Friedrich (jochen@scram.de)
-[END FILE=libnet-snmp-perl-6.0.1/debian/copyright]
+[libnet-snmp-perl-6.0.1/debian/copyright]
 
-FILE "libnet-snmp-perl-6.0.1/LICENSE":
+"libnet-snmp-perl-6.0.1/LICENSE":
 
-[BEGIN FILE=libnet-snmp-perl-6.0.1/LICENSE]
+[libnet-snmp-perl-6.0.1/LICENSE]
 This software is copyright (c) 2010 by David M. Town (dtown@cpan.org).
 
 This is free software; you can redistribute it and/or modify it under
@@ -21562,14 +21563,14 @@ MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE.
 
 The End
 
-[END FILE=libnet-snmp-perl-6.0.1/LICENSE]
+[libnet-snmp-perl-6.0.1/LICENSE]
 
 
 %%% Within package libnet-ssleay-perl (version 1.64):
 
-FILE "libnet-ssleay-perl-1.64/debian/copyright":
+"libnet-ssleay-perl-1.64/debian/copyright":
 
-[BEGIN FILE=libnet-ssleay-perl-1.64/debian/copyright]
+[libnet-ssleay-perl-1.64/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: Net-SSLeay
 Upstream-Contact: Florian Ragwitz (rafl@debian.org)
@@ -21764,14 +21765,14 @@ License: GPL-1+
  .
  On Debian systems, the complete text of version 1 of the GNU General
  Public License can be found in `/usr/share/common-licenses/GPL-1'.
-[END FILE=libnet-ssleay-perl-1.64/debian/copyright]
+[libnet-ssleay-perl-1.64/debian/copyright]
 
 
 %%% Within package libnet-telnet-perl (version 3.04):
 
-FILE "libnet-telnet-perl-3.04/debian/copyright":
+"libnet-telnet-perl-3.04/debian/copyright":
 
-[BEGIN FILE=libnet-telnet-perl-3.04/debian/copyright]
+[libnet-telnet-perl-3.04/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Source: https://metacpan.org/release/Net-Telnet
 Upstream-Contact: Jay Rogers (jay@rgrs.com)
@@ -21803,14 +21804,14 @@ License: GPL-1+
  .
  On Debian systems, the complete text of version 1 of the GNU General
  Public License can be found in `/usr/share/common-licenses/GPL-1'.
-[END FILE=libnet-telnet-perl-3.04/debian/copyright]
+[libnet-telnet-perl-3.04/debian/copyright]
 
 
 %%% Within package libpaper (version 1.1.24+nmu3):
 
-FILE "libpaper-1.1.24+nmu3/debian/copyright":
+"libpaper-1.1.24+nmu3/debian/copyright":
 
-[BEGIN FILE=libpaper-1.1.24+nmu3/debian/copyright]
+[libpaper-1.1.24+nmu3/debian/copyright]
 Copyright (C) 1995, 1996, Yves Arrouye (yves@debian.org)
               2000, 2001, Adrian Bunk  (bunk@fs.tum.de)
 
@@ -21824,14 +21825,14 @@ This package and its included files may be redistributed under the
 terms of the GNU General Public License, a copy of which should be
 found in the file GPL of the source package, or in
 /usr/share/common-licenses/GPL in a Debian GNU/Linux system.
-[END FILE=libpaper-1.1.24+nmu3/debian/copyright]
+[libpaper-1.1.24+nmu3/debian/copyright]
 
 
 %%% Within package librabbitmq (version 0.4.1):
 
-FILE "librabbitmq-0.4.1/debian/copyright":
+"librabbitmq-0.4.1/debian/copyright":
 
-[BEGIN FILE=librabbitmq-0.4.1/debian/copyright]
+[librabbitmq-0.4.1/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: librabbitmq-c
 Upstream-Contact: Tony Garnock-Jones (tonygarnockjones@gmail.com)
@@ -21947,11 +21948,11 @@ License: BSD-Kitware-Insight
  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-[END FILE=librabbitmq-0.4.1/debian/copyright]
+[librabbitmq-0.4.1/debian/copyright]
 
-FILE "librabbitmq-0.4.1/cmake/COPYING-CMAKE-SCRIPTS":
+"librabbitmq-0.4.1/cmake/COPYING-CMAKE-SCRIPTS":
 
-[BEGIN FILE=librabbitmq-0.4.1/cmake/COPYING-CMAKE-SCRIPTS]
+[librabbitmq-0.4.1/cmake/COPYING-CMAKE-SCRIPTS]
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
 are met:
@@ -21974,14 +21975,14 @@ DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
 THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-[END FILE=librabbitmq-0.4.1/cmake/COPYING-CMAKE-SCRIPTS]
+[librabbitmq-0.4.1/cmake/COPYING-CMAKE-SCRIPTS]
 
 
 %%% Within package libsigsegv (version 2.10):
 
-FILE "libsigsegv-2.10/debian/copyright":
+"libsigsegv-2.10/debian/copyright":
 
-[BEGIN FILE=libsigsegv-2.10/debian/copyright]
+[libsigsegv-2.10/debian/copyright]
 This package was debianized by Will Newton (will@debian.org) on
 Sat, 14 Sep 2002 01:02:45 +0100.
 
@@ -21993,14 +21994,14 @@ Copyright: Copyright (C) 2002  Bruno Haible (bruno@clisp.org)
 
  Distributed under the terms of the GNU General Public Licence.
    See /usr/share/common-licenses/GPL
-[END FILE=libsigsegv-2.10/debian/copyright]
+[libsigsegv-2.10/debian/copyright]
 
 
 %%% Within package libsys-hostname-long-perl (version 1.4):
 
-FILE "libsys-hostname-long-perl-1.4/debian/copyright":
+"libsys-hostname-long-perl-1.4/debian/copyright":
 
-[BEGIN FILE=libsys-hostname-long-perl-1.4/debian/copyright]
+[libsys-hostname-long-perl-1.4/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: Sys-Hostname-Long
 Upstream-Contact: Scott Penrose (scottp@dd.com.au)
@@ -22032,14 +22033,14 @@ License: GPL-1+
  .
  On Debian systems, the complete text of version 1 of the GNU General
  Public License can be found in `/usr/share/common-licenses/GPL-1'.
-[END FILE=libsys-hostname-long-perl-1.4/debian/copyright]
+[libsys-hostname-long-perl-1.4/debian/copyright]
 
 
 %%% Within package libterm-readkey-perl (version 2.32):
 
-FILE "libterm-readkey-perl-2.32/debian/copyright":
+"libterm-readkey-perl-2.32/debian/copyright":
 
-[BEGIN FILE=libterm-readkey-perl-2.32/debian/copyright]
+[libterm-readkey-perl-2.32/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Source: https://metacpan.org/release/TermReadKey
 Upstream-Contact: Jonathan Stowe (jns@gellyfish.co.uk)
@@ -22086,14 +22087,14 @@ License: GPL-1+
  .
  On Debian systems, the complete text of version 1 of the GNU General
  Public License can be found in `/usr/share/common-licenses/GPL-1'.
-[END FILE=libterm-readkey-perl-2.32/debian/copyright]
+[libterm-readkey-perl-2.32/debian/copyright]
 
 
 %%% Within package libunistring (version 0.9.3):
 
-FILE "libunistring-0.9.3/debian/copyright":
+"libunistring-0.9.3/debian/copyright":
 
-[BEGIN FILE=libunistring-0.9.3/debian/copyright]
+[libunistring-0.9.3/debian/copyright]
 Format: http://svn.debian.org/wsvn/dep/web/deps/dep5.mdwn?op=file&rev=202
 Upstream-Name: libunistring
 Upstream-Contact: Bruno Haible (bruno@clisp.org)
@@ -22241,14 +22242,14 @@ License: GFDL-1.2+
  On Debian systems the full text of the GNU Free Documentation License
  version 1.2 can be found in the file
  `/usr/share/common-licenses/GFDL-1.2'.
-[END FILE=libunistring-0.9.3/debian/copyright]
+[libunistring-0.9.3/debian/copyright]
 
 
 %%% Within package libwebp (version 0.4.0):
 
-FILE "libwebp-0.4.0/debian/copyright":
+"libwebp-0.4.0/debian/copyright":
 
-[BEGIN FILE=libwebp-0.4.0/debian/copyright]
+[libwebp-0.4.0/debian/copyright]
 This work was packaged for Debian by:
 
     Jeff Breidenbach (jab@debian.org) on Mon, 28 Feb 2011 17:25:17 -0800
@@ -22299,11 +22300,11 @@ The Debian packaging is:
 
 and is licensed under Apache-2.0
 see `/usr/share/common-licenses/Apache-2.0'.
-[END FILE=libwebp-0.4.0/debian/copyright]
+[libwebp-0.4.0/debian/copyright]
 
-FILE "libwebp-0.4.0/COPYING":
+"libwebp-0.4.0/COPYING":
 
-[BEGIN FILE=libwebp-0.4.0/COPYING]
+[libwebp-0.4.0/COPYING]
 Copyright (c) 2010, Google Inc. All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
@@ -22334,14 +22335,14 @@ THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-[END FILE=libwebp-0.4.0/COPYING]
+[libwebp-0.4.0/COPYING]
 
 
 %%% Within package libx86 (version 1.1+ds1):
 
-FILE "libx86-1.1+ds1/debian/copyright":
+"libx86-1.1+ds1/debian/copyright":
 
-[BEGIN FILE=libx86-1.1+ds1/debian/copyright]
+[libx86-1.1+ds1/debian/copyright]
 Format-Specification: http://dep.debian.net/deps/dep5/
 
 Files: debian/*
@@ -22397,11 +22398,11 @@ License: MIT
  OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
  ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  OTHER DEALINGS IN THE SOFTWARE.
-[END FILE=libx86-1.1+ds1/debian/copyright]
+[libx86-1.1+ds1/debian/copyright]
 
-FILE "libx86-1.1+ds1/x86emu/LICENSE":
+"libx86-1.1+ds1/x86emu/LICENSE":
 
-[BEGIN FILE=libx86-1.1+ds1/x86emu/LICENSE]
+[libx86-1.1+ds1/x86emu/LICENSE]
                          License information
                          -------------------
 
@@ -22419,14 +22420,14 @@ If you have any questions about this, please send email to
 x86emu@linuxlabs.com or KendallB@scitechsoft.com for
 clarification.
 
-[END FILE=libx86-1.1+ds1/x86emu/LICENSE]
+[libx86-1.1+ds1/x86emu/LICENSE]
 
 
 %%% Within package libxext (version 1.3.2):
 
-FILE "libxext-1.3.2/debian/copyright":
+"libxext-1.3.2/debian/copyright":
 
-[BEGIN FILE=libxext-1.3.2/debian/copyright]
+[libxext-1.3.2/debian/copyright]
 This package was downloaded from
 http://xorg.freedesktop.org/releases/individual/lib/
 
@@ -22626,14 +22627,14 @@ Graphics, Hewlett-Packard, and the X Consortium make no
 representations about the suitability for any purpose of the
 information in this document.  This documentation is provided ``as is''
 without express or implied warranty.
-[END FILE=libxext-1.3.2/debian/copyright]
+[libxext-1.3.2/debian/copyright]
 
 
 %%% Within package libxmu (version 1.1.2):
 
-FILE "libxmu-1.1.2/debian/copyright":
+"libxmu-1.1.2/debian/copyright":
 
-[BEGIN FILE=libxmu-1.1.2/debian/copyright]
+[libxmu-1.1.2/debian/copyright]
 This package was downloaded from
 http://xorg.freedesktop.org/releases/individual/lib/
 
@@ -22711,14 +22712,14 @@ Except as contained in this notice, the name of the XFree86 Project shall
 not be used in advertising or otherwise to promote the sale, use or other
 dealings in this Software without prior written authorization from the
 XFree86 Project.
-[END FILE=libxmu-1.1.2/debian/copyright]
+[libxmu-1.1.2/debian/copyright]
 
 
 %%% Within package libxrender (version 0.9.8):
 
-FILE "libxrender-0.9.8/debian/copyright":
+"libxrender-0.9.8/debian/copyright":
 
-[BEGIN FILE=libxrender-0.9.8/debian/copyright]
+[libxrender-0.9.8/debian/copyright]
 This package was downloaded from
 http://xorg.freedesktop.org/releases/individual/lib/
 
@@ -22760,14 +22761,14 @@ BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
 WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION
 OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN 
 CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
-[END FILE=libxrender-0.9.8/debian/copyright]
+[libxrender-0.9.8/debian/copyright]
 
 
 %%% Within package libxss (version 1.2.2):
 
-FILE "libxss-1.2.2/debian/copyright":
+"libxss-1.2.2/debian/copyright":
 
-[BEGIN FILE=libxss-1.2.2/debian/copyright]
+[libxss-1.2.2/debian/copyright]
 This package was downloaded from
 http://xorg.freedesktop.org/releases/individual/lib/
 
@@ -22820,14 +22821,14 @@ Except as contained in this notice, the name of the XFree86 Project
 shall not be used in advertising or otherwise to promote the sale, use
 or other dealings in this Software without prior written authorization
 from the XFree86 Project.
-[END FILE=libxss-1.2.2/debian/copyright]
+[libxss-1.2.2/debian/copyright]
 
 
 %%% Within package linux (version 3.14.7):
 
-FILE "linux-3.14.7/debian/copyright":
+"linux-3.14.7/debian/copyright":
 
-[BEGIN FILE=linux-3.14.7/debian/copyright]
+[linux-3.14.7/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: Linux kernel
 Source: http://ftp.kernel.org/pub/linux/kernel/
@@ -22921,11 +22922,11 @@ License: Xen-interface
  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
  DEALINGS IN THE SOFTWARE.
-[END FILE=linux-3.14.7/debian/copyright]
+[linux-3.14.7/debian/copyright]
 
-FILE "linux-3.14.7/Documentation/networking/LICENSE.qla3xxx":
+"linux-3.14.7/Documentation/networking/LICENSE.qla3xxx":
 
-[BEGIN FILE=linux-3.14.7/Documentation/networking/LICENSE.qla3xxx]
+[linux-3.14.7/Documentation/networking/LICENSE.qla3xxx]
 Copyright (c)  2003-2006 QLogic Corporation
 QLogic Linux Networking HBA Driver
 
@@ -22972,11 +22973,11 @@ TRADE SECRET, MASK WORK, OR OTHER PROPRIETARY RIGHT) EMBODIED IN
 ANY OTHER QLOGIC HARDWARE OR SOFTWARE EITHER SOLELY OR IN
 COMBINATION WITH THIS PROGRAM.
 
-[END FILE=linux-3.14.7/Documentation/networking/LICENSE.qla3xxx]
+[linux-3.14.7/Documentation/networking/LICENSE.qla3xxx]
 
-FILE "linux-3.14.7/Documentation/scsi/LICENSE.FlashPoint":
+"linux-3.14.7/Documentation/scsi/LICENSE.FlashPoint":
 
-[BEGIN FILE=linux-3.14.7/Documentation/scsi/LICENSE.FlashPoint]
+[linux-3.14.7/Documentation/scsi/LICENSE.FlashPoint]
                      FlashPoint Driver Developer's Kit
                                 Version 1.0
 
@@ -23037,11 +23038,11 @@ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
 LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
 OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
 SUCH DAMAGE.
-[END FILE=linux-3.14.7/Documentation/scsi/LICENSE.FlashPoint]
+[linux-3.14.7/Documentation/scsi/LICENSE.FlashPoint]
 
-FILE "linux-3.14.7/drivers/atm/nicstarmac.copyright":
+"linux-3.14.7/drivers/atm/nicstarmac.copyright":
 
-[BEGIN FILE=linux-3.14.7/drivers/atm/nicstarmac.copyright]
+[linux-3.14.7/drivers/atm/nicstarmac.copyright]
 /* nicstar.c  v0.22  Jawaid Bazyar (bazyar@hypermall.com)
  * nicstar.c, M. Welsh (matt.welsh@cl.cam.ac.uk)
  *
@@ -23103,11 +23104,11 @@ FILE "linux-3.14.7/drivers/atm/nicstarmac.copyright":
  *
  *
  */
-[END FILE=linux-3.14.7/drivers/atm/nicstarmac.copyright]
+[linux-3.14.7/drivers/atm/nicstarmac.copyright]
 
-FILE "linux-3.14.7/fs/jffs2/LICENCE":
+"linux-3.14.7/fs/jffs2/LICENCE":
 
-[BEGIN FILE=linux-3.14.7/fs/jffs2/LICENCE]
+[linux-3.14.7/fs/jffs2/LICENCE]
 The files in this directory and elsewhere which refer to this LICENCE
 file are part of JFFS2, the Journalling Flash File System v2.
 
@@ -23138,11 +23139,11 @@ of the GNU General Public License.
 This exception does not invalidate any other reasons why a work based on
 this file might be covered by the GNU General Public License.
 
-[END FILE=linux-3.14.7/fs/jffs2/LICENCE]
+[linux-3.14.7/fs/jffs2/LICENCE]
 
-FILE "linux-3.14.7/include/linux/license.h":
+"linux-3.14.7/include/linux/license.h":
 
-[BEGIN FILE=linux-3.14.7/include/linux/license.h]
+[linux-3.14.7/include/linux/license.h]
 #ifndef __LICENSE_H
 #define __LICENSE_H
 
@@ -23157,14 +23158,14 @@ static inline int license_is_gpl_compatible(const char *license)
 }
 
 #endif
-[END FILE=linux-3.14.7/include/linux/license.h]
+[linux-3.14.7/include/linux/license.h]
 
 
 %%% Within package lksctp-tools (version 1.0.16+dfsg):
 
-FILE "lksctp-tools-1.0.16+dfsg/debian/copyright":
+"lksctp-tools-1.0.16+dfsg/debian/copyright":
 
-[BEGIN FILE=lksctp-tools-1.0.16+dfsg/debian/copyright]
+[lksctp-tools-1.0.16+dfsg/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: lksctp-tools
 Source: http://lksctp.sourceforge.net/
@@ -23251,14 +23252,14 @@ License: BSD-3-clause
  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-[END FILE=lksctp-tools-1.0.16+dfsg/debian/copyright]
+[lksctp-tools-1.0.16+dfsg/debian/copyright]
 
 
 %%% Within package logilab-common (version 0.61.0):
 
-FILE "logilab-common-0.61.0/debian/copyright":
+"logilab-common-0.61.0/debian/copyright":
 
-[BEGIN FILE=logilab-common-0.61.0/debian/copyright]
+[logilab-common-0.61.0/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: logilab-common
 Source: http://www.logilab.org/project/logilab-common
@@ -23276,14 +23277,14 @@ Copyright: Copyright (C) 2008-2014, Sandro Tosi (morph@debian.org)
 License: LGPLv2.1+
  On Debian systems, the complete text of the GNU Lesser General Public License
  Version 2.1 may be found in '/usr/share/common-licenses/LGPL-2.1'.
-[END FILE=logilab-common-0.61.0/debian/copyright]
+[logilab-common-0.61.0/debian/copyright]
 
 
 %%% Within package lsscsi (version 0.27):
 
-FILE "lsscsi-0.27/debian/copyright":
+"lsscsi-0.27/debian/copyright":
 
-[BEGIN FILE=lsscsi-0.27/debian/copyright]
+[lsscsi-0.27/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: lsscsi
 Upstream-Contact: Doug Gilbert (dgilbert@interlog.com)
@@ -23336,14 +23337,14 @@ License: GPL-2+
  On Debian systems, the full text of the GNU General Public
  License version 2 can be found in the file
  `/usr/share/common-licenses/GPL-2'.
-[END FILE=lsscsi-0.27/debian/copyright]
+[lsscsi-0.27/debian/copyright]
 
 
 %%% Within package lua5.2 (version 5.2.3):
 
-FILE "lua5.2-5.2.3/debian/copyright":
+"lua5.2-5.2.3/debian/copyright":
 
-[BEGIN FILE=lua5.2-5.2.3/debian/copyright]
+[lua5.2-5.2.3/debian/copyright]
 Format: http://anonscm.debian.org/viewvc/dep/web/deps/dep5.mdwn?view=markup&pathrev=174
 Upstream-Name: Lua team
 Upstream-Contact: team@lua.org
@@ -23370,14 +23371,14 @@ License:
   FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
   DEALINGS IN THE SOFTWARE.
 
-[END FILE=lua5.2-5.2.3/debian/copyright]
+[lua5.2-5.2.3/debian/copyright]
 
 
 %%% Within package lxc (version 1.0.4):
 
-FILE "lxc-1.0.4/debian/copyright":
+"lxc-1.0.4/debian/copyright":
 
-[BEGIN FILE=lxc-1.0.4/debian/copyright]
+[lxc-1.0.4/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: LXC
 Upstream-Contact: lxc-devel@lists.linuxcontainers.org
@@ -23457,14 +23458,14 @@ License: LGPL-2.1+
  .
  The complete text of the GNU Lesser General Public License
  can be found in /usr/share/common-licenses/LGPL-2.1 file.
-[END FILE=lxc-1.0.4/debian/copyright]
+[lxc-1.0.4/debian/copyright]
 
 
 %%% Within package lzo2 (version 2.06):
 
-FILE "lzo2-2.06/debian/copyright":
+"lzo2-2.06/debian/copyright":
 
-[BEGIN FILE=lzo2-2.06/debian/copyright]
+[lzo2-2.06/debian/copyright]
 This package was debianized by Paolo Molaro (lupus@debian.org) on
 13 Feb 1998.  Since 09 Nov 2004 it has been maintained by Peter
 Eisentraut (petere@debian.org).
@@ -23485,14 +23486,14 @@ Copyright:
 
 On Debian systems, the complete text of the GNU GPL version 2 can be found in
 the file /usr/share/common-licenses/GPL-2.
-[END FILE=lzo2-2.06/debian/copyright]
+[lzo2-2.06/debian/copyright]
 
 
 %%% Within package lzop (version 1.03):
 
-FILE "lzop-1.03/debian/copyright":
+"lzop-1.03/debian/copyright":
 
-[BEGIN FILE=lzop-1.03/debian/copyright]
+[lzop-1.03/debian/copyright]
 This package was debianized by Paolo Molaro (lupus@debian.org) on
 Sat, 21 Feb 1998 11:49:27 +0100.  Since Thu, 16 Sep 2004 08:49:07 +0200
 it has been maintainer by Peter Eisentraut (petere@debian.org).
@@ -23513,14 +23514,14 @@ Copyright:
 
 On Debian systems, the complete text of the GNU GPL can be found in the
 file /usr/share/common-licenses/GPL-2.
-[END FILE=lzop-1.03/debian/copyright]
+[lzop-1.03/debian/copyright]
 
 
 %%% Within package m2crypto (version 0.21.1):
 
-FILE "m2crypto-0.21.1/debian/copyright":
+"m2crypto-0.21.1/debian/copyright":
 
-[BEGIN FILE=m2crypto-0.21.1/debian/copyright]
+[m2crypto-0.21.1/debian/copyright]
 This package was debianized by Dima Barsky (dima@debian.org) on
 Sun, 28 Mar 2004 19:42:33 +0100.
 
@@ -23720,11 +23721,11 @@ License: probably same as m2crypto
  (In my understanding from the discussion about demo/x509/proxylib.py, where
   the upstream autor expected contributions to be done under the same terms
   as m2crypto itself -- Charles Plessy)
-[END FILE=m2crypto-0.21.1/debian/copyright]
+[m2crypto-0.21.1/debian/copyright]
 
-FILE "m2crypto-0.21.1/LICENCE":
+"m2crypto-0.21.1/LICENCE":
 
-[BEGIN FILE=m2crypto-0.21.1/LICENCE]
+[m2crypto-0.21.1/LICENCE]
 Copyright (c) 1999-2004 Ng Pheng Siong. All rights reserved.
 
 Portions copyright (c) 2004-2006 Open Source Applications Foundation. 
@@ -23751,14 +23752,14 @@ DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
 THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT 
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE 
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-[END FILE=m2crypto-0.21.1/LICENCE]
+[m2crypto-0.21.1/LICENCE]
 
 
 %%% Within package makedumpfile (version 1.5.6):
 
-FILE "makedumpfile-1.5.6/debian/copyright":
+"makedumpfile-1.5.6/debian/copyright":
 
-[BEGIN FILE=makedumpfile-1.5.6/debian/copyright]
+[makedumpfile-1.5.6/debian/copyright]
 This package was debianized by Ben Collins (ben.collins@canonical.com) on
 Thu, 19 Jun 2008 12:03:09 -0400
 
@@ -23793,14 +23794,14 @@ Copyright on the rest:
 
 On Debian GNU systems, the complete text of the GNU General Public
 License version 2 can be found in `/usr/share/common-licenses/GPL-2'.
-[END FILE=makedumpfile-1.5.6/debian/copyright]
+[makedumpfile-1.5.6/debian/copyright]
 
 
 %%% Within package markupsafe (version 0.23):
 
-FILE "markupsafe-0.23/debian/copyright":
+"markupsafe-0.23/debian/copyright":
 
-[BEGIN FILE=markupsafe-0.23/debian/copyright]
+[markupsafe-0.23/debian/copyright]
 This package was debianized by Piotr Ożarowski (piotr@debian.org) on
 Wed, 23 Jun 2010 21:26:14 +0200.
 
@@ -23843,14 +23844,14 @@ DAMAGE.
 
 The Debian packaging is © 2010, Piotr Ożarowski (piotr@debian.org) and
 is licensed under the same license.
-[END FILE=markupsafe-0.23/debian/copyright]
+[markupsafe-0.23/debian/copyright]
 
 
 %%% Within package mdadm (version 3.3):
 
-FILE "mdadm-3.3/debian/copyright":
+"mdadm-3.3/debian/copyright":
 
-[BEGIN FILE=mdadm-3.3/debian/copyright]
+[mdadm-3.3/debian/copyright]
 This package was debianized by Mario Jou/3en (joussen@debian.org) on
 Wed, 26 Dec 2001 17:07:09 +0100.
 Martin F. Krafft (madduck@debian.org) took over on
@@ -23872,14 +23873,14 @@ the Free Software Foundation; either version 2 of the License, or
 
 On Debian GNU/Linux systems, the complete text of the GNU General
 Public License can be found in '/usr/share/common-licenses/GPL'.
-[END FILE=mdadm-3.3/debian/copyright]
+[mdadm-3.3/debian/copyright]
 
 
 %%% Within package mochikit (version 1.4.2):
 
-FILE "mochikit-1.4.2/debian/copyright":
+"mochikit-1.4.2/debian/copyright":
 
-[BEGIN FILE=mochikit-1.4.2/debian/copyright]
+[mochikit-1.4.2/debian/copyright]
 Author: Bob Ippolito (bob@redivi.com)
 Download: http://www.mochikit.com/download.html
 
@@ -24173,14 +24174,14 @@ License: GPL-3+
  .
  On Debian systems, the complete text of the GNU General Public License
  can be found in /usr/share/common-licenses/GPL-3 file.
-[END FILE=mochikit-1.4.2/debian/copyright]
+[mochikit-1.4.2/debian/copyright]
 
 
 %%% Within package module-assistant (version 0.11.7):
 
-FILE "module-assistant-0.11.7/debian/copyright":
+"module-assistant-0.11.7/debian/copyright":
 
-[BEGIN FILE=module-assistant-0.11.7/debian/copyright]
+[module-assistant-0.11.7/debian/copyright]
 This is modules-assistant, originally written and maintained by
 Eduard Bloch.
 
@@ -24195,11 +24196,11 @@ Copyright: © 2003-2008 Eduard Bloch (blade@debian.org)
 License: GPL-2+
  On Debian systems the full text of the GNU General Public License
  version 2 can be found in the /usr/share/common-licenses/GPL-2 file.
-[END FILE=module-assistant-0.11.7/debian/copyright]
+[module-assistant-0.11.7/debian/copyright]
 
-FILE "module-assistant-0.11.7/templates/debian/copyright":
+"module-assistant-0.11.7/templates/debian/copyright":
 
-[BEGIN FILE=module-assistant-0.11.7/templates/debian/copyright]
+[module-assistant-0.11.7/templates/debian/copyright]
 This package was debianized by Eduard Bloch (blade@debian.org) on
 Sat,  5 Mar 2005 10:01:57 +0100.
 
@@ -24217,14 +24218,14 @@ License:
 module-assistant is released under the GPL (see the COPYING file in the
 distribution for details, or /usr/share/common-licenses/GPL on Debian systems)
 
-[END FILE=module-assistant-0.11.7/templates/debian/copyright]
+[module-assistant-0.11.7/templates/debian/copyright]
 
 
 %%% Within package msgpack-python (version 0.3.0):
 
-FILE "msgpack-python-0.3.0/debian/copyright":
+"msgpack-python-0.3.0/debian/copyright":
 
-[BEGIN FILE=msgpack-python-0.3.0/debian/copyright]
+[msgpack-python-0.3.0/debian/copyright]
 Format: http://dep.debian.net/deps/dep5
 Upstream-Name: msgpack-python
 Source: http://pypi.python.org/packages/source/m/msgpack-python/
@@ -24262,14 +24263,14 @@ License: GPL-2+
  .
  On Debian systems, the complete text of the GNU General
  Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
-[END FILE=msgpack-python-0.3.0/debian/copyright]
+[msgpack-python-0.3.0/debian/copyright]
 
 
 %%% Within package mtools (version 4.0.18):
 
-FILE "mtools-4.0.18/debian/copyright":
+"mtools-4.0.18/debian/copyright":
 
-[BEGIN FILE=mtools-4.0.18/debian/copyright]
+[mtools-4.0.18/debian/copyright]
 This package was originally debianized by Adrian Bunk (bunk@fs.tum.de)
 It has been subsequently taken over by Luis Bustamante
 (luferbu@fluidsignal.com)
@@ -24301,14 +24302,14 @@ Copyright:
 
   The complete text of the GFDL v1.2 can be found in the
   /usr/share/common-licenses/GFDL-1.2 file.
-[END FILE=mtools-4.0.18/debian/copyright]
+[mtools-4.0.18/debian/copyright]
 
 
 %%% Within package nagios-images (version 0.8):
 
-FILE "nagios-images-0.8/debian/copyright":
+"nagios-images-0.8/debian/copyright":
 
-[BEGIN FILE=nagios-images-0.8/debian/copyright]
+[nagios-images-0.8/debian/copyright]
 Format-Specification: http://wiki.debian.org/Proposals/CopyrightFormat?action=recall&rev=196
 Packaged-By: Debian Nagios Maintainer Group (pkg-nagios-devel@lists.alioth.debian.org)
 Packaged-Date: Thu,  6 Oct 2005 19:12:42 +0200
@@ -24339,14 +24340,14 @@ License:
 
 On Debian systems, the complete text of the GNU General
 Public License can be found in `/usr/share/common-licenses/GPL'.
-[END FILE=nagios-images-0.8/debian/copyright]
+[nagios-images-0.8/debian/copyright]
 
 
 %%% Within package netkit-telnet (version 0.17):
 
-FILE "netkit-telnet-0.17/debian/copyright":
+"netkit-telnet-0.17/debian/copyright":
 
-[BEGIN FILE=netkit-telnet-0.17/debian/copyright]
+[netkit-telnet-0.17/debian/copyright]
 This package was split from netstd by Herbert Xu herbert@debian.org on
 Mon, 28 Sep 1998 16:50:43 +1000.
 
@@ -24365,14 +24366,14 @@ Copyright (c) 1983, 1995 Eric P. Allman (setproctitle.[ch])
 The license can be found at /usr/share/common-licenses/BSD.
 
 $Id: copyright,v 1.4 2001/02/18 20:28:33 herbert Exp $
-[END FILE=netkit-telnet-0.17/debian/copyright]
+[netkit-telnet-0.17/debian/copyright]
 
 
 %%% Within package nilfs-tools (version 2.2.0):
 
-FILE "nilfs-tools-2.2.0/debian/copyright":
+"nilfs-tools-2.2.0/debian/copyright":
 
-[BEGIN FILE=nilfs-tools-2.2.0/debian/copyright]
+[nilfs-tools-2.2.0/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: nilfs-utils
 Upstream-Contact: linux-nilfs@vger.kernel.org
@@ -24462,14 +24463,14 @@ License: LGPL-2.1
  .
  The complete text of the GNU Lesser General Public License
  can be found in /usr/share/common-licenses/LGPL-2 file.
-[END FILE=nilfs-tools-2.2.0/debian/copyright]
+[nilfs-tools-2.2.0/debian/copyright]
 
 
 %%% Within package nose (version 1.3.3):
 
-FILE "nose-1.3.3/debian/copyright":
+"nose-1.3.3/debian/copyright":
 
-[BEGIN FILE=nose-1.3.3/debian/copyright]
+[nose-1.3.3/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: nose
 Upstream-Contact: Jason Pellerin
@@ -24533,14 +24534,14 @@ License: Expat
  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  SOFTWARE.
-[END FILE=nose-1.3.3/debian/copyright]
+[nose-1.3.3/debian/copyright]
 
 
 %%% Within package ntdb (version 1.0):
 
-FILE "ntdb-1.0/debian/copyright":
+"ntdb-1.0/debian/copyright":
 
-[BEGIN FILE=ntdb-1.0/debian/copyright]
+[ntdb-1.0/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: ntdb
 Upstream-Contact: Rusty Russell (rusty@samba.org)
@@ -24658,14 +24659,14 @@ License:
  LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
  OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  SUCH DAMAGE.
-[END FILE=ntdb-1.0/debian/copyright]
+[ntdb-1.0/debian/copyright]
 
 
 %%% Within package ntfs-3g (version 2014.2.15AR.1):
 
-FILE "ntfs-3g-2014.2.15AR.1/debian/copyright":
+"ntfs-3g-2014.2.15AR.1/debian/copyright":
 
-[BEGIN FILE=ntfs-3g-2014.2.15AR.1/debian/copyright]
+[ntfs-3g-2014.2.15AR.1/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: NTFS-3G Advanced
 Upstream-Contact: http://www.tuxera.com/forum/
@@ -24717,14 +24718,14 @@ License: LGPL-2+
  .
  The complete text of the GNU Lesser General Public License
  can be found in /usr/share/common-licenses/LGPL-2 file.
-[END FILE=ntfs-3g-2014.2.15AR.1/debian/copyright]
+[ntfs-3g-2014.2.15AR.1/debian/copyright]
 
 
 %%% Within package openais (version 1.1.4):
 
-FILE "openais-1.1.4/debian/copyright":
+"openais-1.1.4/debian/copyright":
 
-[BEGIN FILE=openais-1.1.4/debian/copyright]
+[openais-1.1.4/debian/copyright]
 This is the Ubuntu / Debian GNU/Linux prepackaged version of OpenAIS.
 
 Mainly packaged by Fabio M. Di Nitto (fabbione@ubuntu.com).
@@ -24804,14 +24805,14 @@ LICENCE from exec/crypto.c and .h:
  * Tom St Denis, tomstdenis@iahu.ca, http://libtomcrypt.org
  */
 
-[END FILE=openais-1.1.4/debian/copyright]
+[openais-1.1.4/debian/copyright]
 
 
 %%% Within package openbios-ppc (version 1.1+svn1229):
 
-FILE "openbios-ppc-1.1+svn1229/debian/copyright":
+"openbios-ppc-1.1+svn1229/debian/copyright":
 
-[BEGIN FILE=openbios-ppc-1.1+svn1229/debian/copyright]
+[openbios-ppc-1.1+svn1229/debian/copyright]
 This package was debianized by Aurelien Jarno (aurel32@debian.org) on
 Thu, 08 Jan 2009 21:29:56 +0100.
 
@@ -25067,14 +25068,14 @@ License for fs/grubfs/ufs_fs.h:
   OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
   SUCH DAMAGE.
 
-[END FILE=openbios-ppc-1.1+svn1229/debian/copyright]
+[openbios-ppc-1.1+svn1229/debian/copyright]
 
 
 %%% Within package openbios-sparc (version 1.1+svn1229):
 
-FILE "openbios-sparc-1.1+svn1229/debian/copyright":
+"openbios-sparc-1.1+svn1229/debian/copyright":
 
-[BEGIN FILE=openbios-sparc-1.1+svn1229/debian/copyright]
+[openbios-sparc-1.1+svn1229/debian/copyright]
 This package was debianized by Aurelien Jarno (aurel32@debian.org) on
 Fri, 22 Jun 2007 21:47:57 +0200.
 
@@ -25330,14 +25331,14 @@ License for fs/grubfs/ufs_fs.h:
   OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
   SUCH DAMAGE.
 
-[END FILE=openbios-sparc-1.1+svn1229/debian/copyright]
+[openbios-sparc-1.1+svn1229/debian/copyright]
 
 
 %%% Within package openhackware (version 0.4.1):
 
-FILE "openhackware-0.4.1/debian/copyright":
+"openhackware-0.4.1/debian/copyright":
 
-[BEGIN FILE=openhackware-0.4.1/debian/copyright]
+[openhackware-0.4.1/debian/copyright]
 This package was debianized by Guillem Jover (guillem@debian.org) on
 Mon,  4 Apr 2005 01:57:20 +0300.
 
@@ -25368,14 +25369,14 @@ License:
 
 On Debian systems, the complete text of the GNU General
 Public License can be found in '/usr/share/common-licenses/GPL-2'.
-[END FILE=openhackware-0.4.1/debian/copyright]
+[openhackware-0.4.1/debian/copyright]
 
 
 %%% Within package openipmi (version 2.0.16):
 
-FILE "openipmi-2.0.16/debian/copyright":
+"openipmi-2.0.16/debian/copyright":
 
-[BEGIN FILE=openipmi-2.0.16/debian/copyright]
+[openipmi-2.0.16/debian/copyright]
 This package was debianized by
 Noèl Köthe (noel@debian.org) on Tue, 12 Oct 2004 18:39:24 +0200.
 
@@ -25391,11 +25392,11 @@ License:
 Released under the terms of the GPL and some parts LGPL; see
 /usr/share/common-licenses/GPL and /usr/share/common-licenses/LGPL.
 
-[END FILE=openipmi-2.0.16/debian/copyright]
+[openipmi-2.0.16/debian/copyright]
 
-FILE "openipmi-2.0.16/COPYING.BSD":
+"openipmi-2.0.16/COPYING.BSD":
 
-[BEGIN FILE=openipmi-2.0.16/COPYING.BSD]
+[openipmi-2.0.16/COPYING.BSD]
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are
 met:
@@ -25421,11 +25422,11 @@ HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
 STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING
 IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 POSSIBILITY OF SUCH DAMAGE.
-[END FILE=openipmi-2.0.16/COPYING.BSD]
+[openipmi-2.0.16/COPYING.BSD]
 
-FILE "openipmi-2.0.16/COPYING":
+"openipmi-2.0.16/COPYING":
 
-[BEGIN FILE=openipmi-2.0.16/COPYING]
+[openipmi-2.0.16/COPYING]
 		    GNU GENERAL PUBLIC LICENSE
 		       Version 2, June 1991
 
@@ -25483,7 +25484,7 @@ patent must be licensed for everyone's free use or not licensed at all.
 
   The precise terms and conditions for copying, distribution and
 modification follow.
-
+
 		    GNU GENERAL PUBLIC LICENSE
    TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
 
@@ -25538,7 +25539,7 @@ above, provided that you also meet all of these conditions:
     License.  (Exception: if the Program itself is interactive but
     does not normally print such an announcement, your work based on
     the Program is not required to print an announcement.)
-
+
 These requirements apply to the modified work as a whole.  If
 identifiable sections of that work are not derived from the Program,
 and can be reasonably considered independent and separate works in
@@ -25596,7 +25597,7 @@ access to copy from a designated place, then offering equivalent
 access to copy the source code from the same place counts as
 distribution of the source code, even though third parties are not
 compelled to copy the source along with the object code.
-
+
   4. You may not copy, modify, sublicense, or distribute the Program
 except as expressly provided under this License.  Any attempt
 otherwise to copy, modify, sublicense or distribute the Program is
@@ -25653,7 +25654,7 @@ impose that choice.
 
 This section is intended to make thoroughly clear what is believed to
 be a consequence of the rest of this License.
-
+
   8. If the distribution and/or use of the Program is restricted in
 certain countries either by patents or by copyrighted interfaces, the
 original copyright holder who places the Program under this License
@@ -25706,7 +25707,6 @@ PROGRAMS), EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE
 POSSIBILITY OF SUCH DAMAGES.
 
 		     END OF TERMS AND CONDITIONS
-
 	    How to Apply These Terms to Your New Programs
 
   If you develop a new program, and you want it to be of the greatest
@@ -25766,14 +25766,14 @@ proprietary programs.  If your program is a subroutine library, you may
 consider it more useful to permit linking proprietary applications with the
 library.  If this is what you want to do, use the GNU Library General
 Public License instead of this License.
-[END FILE=openipmi-2.0.16/COPYING]
+[openipmi-2.0.16/COPYING]
 
 
 %%% Within package openjdk-7-7u55 (version 2.4.7):
 
-FILE "openjdk-7-7u55-2.4.7/debian/copyright":
+"openjdk-7-7u55-2.4.7/debian/copyright":
 
-[BEGIN FILE=openjdk-7-7u55-2.4.7/debian/copyright]
+[openjdk-7-7u55-2.4.7/debian/copyright]
 This package was debianized by Matthias Klose (doko@ubuntu.com) on
 Wed, 08 Aug 2007 15:55:39 +0200.
 
@@ -28135,11 +28135,11 @@ JAMVM:
 
 On Debian systems a full copy of the GNU General Public License, GPL, can be
 found in the file /usr/share/common-licenses/GPL-2.
-[END FILE=openjdk-7-7u55-2.4.7/debian/copyright]
+[openjdk-7-7u55-2.4.7/debian/copyright]
 
-FILE "openjdk-7-7u55-2.4.7/debian/copyright.cacao":
+"openjdk-7-7u55-2.4.7/debian/copyright.cacao":
 
-[BEGIN FILE=openjdk-7-7u55-2.4.7/debian/copyright.cacao]
+[openjdk-7-7u55-2.4.7/debian/copyright.cacao]
 
 ===============================================================================
 CACAO
@@ -28496,15 +28496,15 @@ Some of the build files are
 
 # Copyright (C) 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002,
 # 2003, 2004, 2005  Free Software Foundation, Inc.
-[END FILE=openjdk-7-7u55-2.4.7/debian/copyright.cacao]
+[openjdk-7-7u55-2.4.7/debian/copyright.cacao]
 
-FILE "openjdk-7-7u55-2.4.7/generated/java/nio/channels/IllegalBlockingModeException.java":
+"openjdk-7-7u55-2.4.7/generated/java/nio/channels/IllegalBlockingModeException.java":
 
-[BEGIN FILE=openjdk-7-7u55-2.4.7/generated/java/nio/channels/IllegalBlockingModeException.java]
+[openjdk-7-7u55-2.4.7/generated/java/nio/channels/IllegalBlockingModeException.java]
 /*
  * Copyright 2000-2007 Sun Microsystems, Inc.  All Rights Reserved.
  *
- * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
  *
  * This code is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License version 2 only, as
@@ -28552,15 +28552,15 @@ public class IllegalBlockingModeException
     public IllegalBlockingModeException() { }
 
 }
-[END FILE=openjdk-7-7u55-2.4.7/generated/java/nio/channels/IllegalBlockingModeException.java]
+[openjdk-7-7u55-2.4.7/generated/java/nio/channels/IllegalBlockingModeException.java]
 
-FILE "openjdk-7-7u55-2.4.7/generated/java/nio/channels/IllegalChannelGroupException.java":
+"openjdk-7-7u55-2.4.7/generated/java/nio/channels/IllegalChannelGroupException.java":
 
-[BEGIN FILE=openjdk-7-7u55-2.4.7/generated/java/nio/channels/IllegalChannelGroupException.java]
+[openjdk-7-7u55-2.4.7/generated/java/nio/channels/IllegalChannelGroupException.java]
 /*
  * Copyright 2000-2007 Sun Microsystems, Inc.  All Rights Reserved.
  *
- * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
  *
  * This code is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License version 2 only, as
@@ -28608,15 +28608,15 @@ public class IllegalChannelGroupException
     public IllegalChannelGroupException() { }
 
 }
-[END FILE=openjdk-7-7u55-2.4.7/generated/java/nio/channels/IllegalChannelGroupException.java]
+[openjdk-7-7u55-2.4.7/generated/java/nio/channels/IllegalChannelGroupException.java]
 
-FILE "openjdk-7-7u55-2.4.7/generated/java/nio/channels/IllegalSelectorException.java":
+"openjdk-7-7u55-2.4.7/generated/java/nio/channels/IllegalSelectorException.java":
 
-[BEGIN FILE=openjdk-7-7u55-2.4.7/generated/java/nio/channels/IllegalSelectorException.java]
+[openjdk-7-7u55-2.4.7/generated/java/nio/channels/IllegalSelectorException.java]
 /*
  * Copyright 2000-2007 Sun Microsystems, Inc.  All Rights Reserved.
  *
- * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
  *
  * This code is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License version 2 only, as
@@ -28665,14 +28665,14 @@ public class IllegalSelectorException
     public IllegalSelectorException() { }
 
 }
-[END FILE=openjdk-7-7u55-2.4.7/generated/java/nio/channels/IllegalSelectorException.java]
+[openjdk-7-7u55-2.4.7/generated/java/nio/channels/IllegalSelectorException.java]
 
 
 %%% Within package os-prober (version 1.63):
 
-FILE "os-prober-1.63/debian/copyright":
+"os-prober-1.63/debian/copyright":
 
-[BEGIN FILE=os-prober-1.63/debian/copyright]
+[os-prober-1.63/debian/copyright]
 The majority of code in os-prober is Copyright 2004-2011 by Joshua
 Kwan, Joey Hess, Christian Perrier, Colin Watson and Otavio Salvador.
 This is licensed $under the terms of the GNU GPL, either version 2 or,
@@ -28684,14 +28684,14 @@ of "GNU GPL", with the version not specified.
 
 On Debian systems, a copy of the GNU General Public License is available in
 /usr/share/common-licenses/GPL-2.
-[END FILE=os-prober-1.63/debian/copyright]
+[os-prober-1.63/debian/copyright]
 
 
 %%% Within package pastedeploy (version 1.5.2):
 
-FILE "pastedeploy-1.5.2/debian/copyright":
+"pastedeploy-1.5.2/debian/copyright":
 
-[BEGIN FILE=pastedeploy-1.5.2/debian/copyright]
+[pastedeploy-1.5.2/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: PasteDeploy
 Source: https://pypi.python.org/pypi/PasteDeploy
@@ -28723,14 +28723,14 @@ License: Expat
  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  SOFTWARE.
-[END FILE=pastedeploy-1.5.2/debian/copyright]
+[pastedeploy-1.5.2/debian/copyright]
 
 
 %%% Within package pastescript (version 1.7.5):
 
-FILE "pastescript-1.7.5/debian/copyright":
+"pastescript-1.7.5/debian/copyright":
 
-[BEGIN FILE=pastescript-1.7.5/debian/copyright]
+[pastescript-1.7.5/debian/copyright]
 This package was debianized by Piotr Ożarowski (piotr@debian.org) on
 Thu,  4 May 2006 21:00:00 +0200.
 
@@ -28775,14 +28775,14 @@ paste/script/util/subprocess24.py file:
 
 The Debian packaging is © 2006-2009, Piotr Ożarowski (piotr@debian.org) and
 is licensed under the MIT License as well.
-[END FILE=pastescript-1.7.5/debian/copyright]
+[pastescript-1.7.5/debian/copyright]
 
 
 %%% Within package pcsc-lite (version 1.8.11):
 
-FILE "pcsc-lite-1.8.11/debian/copyright":
+"pcsc-lite-1.8.11/debian/copyright":
 
-[BEGIN FILE=pcsc-lite-1.8.11/debian/copyright]
+[pcsc-lite-1.8.11/debian/copyright]
 Format:
 http://anonscm.debian.org/viewvc/dep/web/deps/dep5.mdwn?revision=207
 Upstream-Name: pcsc-lite
@@ -28879,14 +28879,14 @@ Files: debian/*  src/spy/*
 Copyright: 2002-2011, Ludovic Rousseau (ludovic.rousseau@free.fr)
 License: GPL-3+
  /usr/share/common-licenses/GPL-3
-[END FILE=pcsc-lite-1.8.11/debian/copyright]
+[pcsc-lite-1.8.11/debian/copyright]
 
 
 %%% Within package percona-toolkit (version 2.2.8):
 
-FILE "percona-toolkit-2.2.8/debian/copyright":
+"percona-toolkit-2.2.8/debian/copyright":
 
-[BEGIN FILE=percona-toolkit-2.2.8/debian/copyright]
+[percona-toolkit-2.2.8/debian/copyright]
 Format: http://anonscm.debian.org/viewvc/dep/web/deps/dep5.mdwn?revision=174
 Upstream-Name: percona-toolkit
 Source: http://www.percona.com/downloads/percona-toolkit/
@@ -29149,14 +29149,14 @@ License: GPL-2+
  On Debian systems, the complete text of the GNU General
  Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
 
-[END FILE=percona-toolkit-2.2.8/debian/copyright]
+[percona-toolkit-2.2.8/debian/copyright]
 
 
 %%% Within package percona-xtrabackup (version 2.1.8):
 
-FILE "percona-xtrabackup-2.1.8/debian/copyright":
+"percona-xtrabackup-2.1.8/debian/copyright":
 
-[BEGIN FILE=percona-xtrabackup-2.1.8/debian/copyright]
+[percona-xtrabackup-2.1.8/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: Percona XtraBackup
 Upstream-Contact: Stewart Smith (stewart.smith@percona.com)
@@ -30325,11 +30325,11 @@ License: BSD (3 clause)
  LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
  OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  SUCH DAMAGE.
-[END FILE=percona-xtrabackup-2.1.8/debian/copyright]
+[percona-xtrabackup-2.1.8/debian/copyright]
 
-FILE "percona-xtrabackup-2.1.8/utils/debian/copyright":
+"percona-xtrabackup-2.1.8/utils/debian/copyright":
 
-[BEGIN FILE=percona-xtrabackup-2.1.8/utils/debian/copyright]
+[percona-xtrabackup-2.1.8/utils/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: Percona XtraBackup
 Upstream-Contact: Stewart Smith (stewart.smith@percona.com)
@@ -31498,14 +31498,14 @@ License: BSD (3 clause)
  LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
  OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  SUCH DAMAGE.
-[END FILE=percona-xtrabackup-2.1.8/utils/debian/copyright]
+[percona-xtrabackup-2.1.8/utils/debian/copyright]
 
 
 %%% Within package percona-xtradb-cluster-5.5-5.5.33 (version 23.7.6):
 
-FILE "percona-xtradb-cluster-5.5-5.5.33-23.7.6/debian/copyright":
+"percona-xtradb-cluster-5.5-5.5.33-23.7.6/debian/copyright":
 
-[BEGIN FILE=percona-xtradb-cluster-5.5-5.5.33-23.7.6/debian/copyright]
+[percona-xtradb-cluster-5.5-5.5.33-23.7.6/debian/copyright]
 This work was packaged for Debian by:
 
     Ignacio Nin (ignacio.nin@percona.com) on Wed, 7 Dec 2011 16:29:08 -0500
@@ -31592,11 +31592,11 @@ that these licenses also apply to the following files:
 - innotop.html
 - InnoDBParser.pm
 
-[END FILE=percona-xtradb-cluster-5.5-5.5.33-23.7.6/debian/copyright]
+[percona-xtradb-cluster-5.5-5.5.33-23.7.6/debian/copyright]
 
-FILE "percona-xtradb-cluster-5.5-5.5.33-23.7.6/debian/copyright.ps":
+"percona-xtradb-cluster-5.5-5.5.33-23.7.6/debian/copyright.ps":
 
-[BEGIN FILE=percona-xtradb-cluster-5.5-5.5.33-23.7.6/debian/copyright.ps]
+[percona-xtradb-cluster-5.5-5.5.33-23.7.6/debian/copyright.ps]
 This work was packaged for Debian by:
 
     Aleksandr Kuzminsky (aleksandr.kuzminsky@percona.com) on Tue, 11 Jan 2011 07:17:08 -0800
@@ -31683,11 +31683,11 @@ that these licenses also apply to the following files:
 - innotop.html
 - InnoDBParser.pm
 
-[END FILE=percona-xtradb-cluster-5.5-5.5.33-23.7.6/debian/copyright.ps]
+[percona-xtradb-cluster-5.5-5.5.33-23.7.6/debian/copyright.ps]
 
-FILE "percona-xtradb-cluster-5.5-5.5.33-23.7.6/COPYING":
+"percona-xtradb-cluster-5.5-5.5.33-23.7.6/COPYING":
 
-[BEGIN FILE=percona-xtradb-cluster-5.5-5.5.33-23.7.6/COPYING]
+[percona-xtradb-cluster-5.5-5.5.33-23.7.6/COPYING]
 		    GNU GENERAL PUBLIC LICENSE
 		       Version 2, June 1991
 
@@ -32027,11 +32027,11 @@ proprietary programs.  If your program is a subroutine library, you may
 consider it more useful to permit linking proprietary applications with the
 library.  If this is what you want to do, use the GNU Lesser General
 Public License instead of this License.
-[END FILE=percona-xtradb-cluster-5.5-5.5.33-23.7.6/COPYING]
+[percona-xtradb-cluster-5.5-5.5.33-23.7.6/COPYING]
 
-FILE "percona-xtradb-cluster-5.5-5.5.33-23.7.6/COPYING.innodb-deadlock-count-patch":
+"percona-xtradb-cluster-5.5-5.5.33-23.7.6/COPYING.innodb-deadlock-count-patch":
 
-[BEGIN FILE=percona-xtradb-cluster-5.5-5.5.33-23.7.6/COPYING.innodb-deadlock-count-patch]
+[percona-xtradb-cluster-5.5-5.5.33-23.7.6/COPYING.innodb-deadlock-count-patch]
 Portions of this software contain modifications contributed by Eric Bergen.
 These contributions are used with the following license:
 
@@ -32062,11 +32062,11 @@ DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
 THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-[END FILE=percona-xtradb-cluster-5.5-5.5.33-23.7.6/COPYING.innodb-deadlock-count-patch]
+[percona-xtradb-cluster-5.5-5.5.33-23.7.6/COPYING.innodb-deadlock-count-patch]
 
-FILE "percona-xtradb-cluster-5.5-5.5.33-23.7.6/COPYING.show_temp_51":
+"percona-xtradb-cluster-5.5-5.5.33-23.7.6/COPYING.show_temp_51":
 
-[BEGIN FILE=percona-xtradb-cluster-5.5-5.5.33-23.7.6/COPYING.show_temp_51]
+[percona-xtradb-cluster-5.5-5.5.33-23.7.6/COPYING.show_temp_51]
 Portions of this software contain modifications contributed by Venu Anuganti.
 These contributions are used with the following license:
 
@@ -32080,11 +32080,11 @@ Redistribution and use in source and binary forms, with or without modification,
     * Neither the name of the (ORGANIZATION) nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-[END FILE=percona-xtradb-cluster-5.5-5.5.33-23.7.6/COPYING.show_temp_51]
+[percona-xtradb-cluster-5.5-5.5.33-23.7.6/COPYING.show_temp_51]
 
-FILE "percona-xtradb-cluster-5.5-5.5.33-23.7.6/percona-xtradb-cluster-tests/python/iso8601/LICENSE":
+"percona-xtradb-cluster-5.5-5.5.33-23.7.6/percona-xtradb-cluster-tests/python/iso8601/LICENSE":
 
-[BEGIN FILE=percona-xtradb-cluster-5.5-5.5.33-23.7.6/percona-xtradb-cluster-tests/python/iso8601/LICENSE]
+[percona-xtradb-cluster-5.5-5.5.33-23.7.6/percona-xtradb-cluster-tests/python/iso8601/LICENSE]
 Copyright (c) 2007 Michael Twomey
 
 Permission is hereby granted, free of charge, to any person obtaining a
@@ -32105,11 +32105,11 @@ IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
 CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
 TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-[END FILE=percona-xtradb-cluster-5.5-5.5.33-23.7.6/percona-xtradb-cluster-tests/python/iso8601/LICENSE]
+[percona-xtradb-cluster-5.5-5.5.33-23.7.6/percona-xtradb-cluster-tests/python/iso8601/LICENSE]
 
-FILE "percona-xtradb-cluster-5.5-5.5.33-23.7.6/regex/COPYRIGHT":
+"percona-xtradb-cluster-5.5-5.5.33-23.7.6/regex/COPYRIGHT":
 
-[BEGIN FILE=percona-xtradb-cluster-5.5-5.5.33-23.7.6/regex/COPYRIGHT]
+[percona-xtradb-cluster-5.5-5.5.33-23.7.6/regex/COPYRIGHT]
 Copyright 1992, 1993, 1994 Henry Spencer.  All rights reserved.
 This software is not subject to any license of the American Telephone
 and Telegraph Company or of the Regents of the University of California.
@@ -32130,11 +32130,11 @@ to the following restrictions:
    ever read sources, credits must appear in the documentation.
 
 4. This notice may not be removed or altered.
-[END FILE=percona-xtradb-cluster-5.5-5.5.33-23.7.6/regex/COPYRIGHT]
+[percona-xtradb-cluster-5.5-5.5.33-23.7.6/regex/COPYRIGHT]
 
-FILE "percona-xtradb-cluster-5.5-5.5.33-23.7.6/storage/HandlerSocket-Plugin-for-MySQL/COPYING":
+"percona-xtradb-cluster-5.5-5.5.33-23.7.6/storage/HandlerSocket-Plugin-for-MySQL/COPYING":
 
-[BEGIN FILE=percona-xtradb-cluster-5.5-5.5.33-23.7.6/storage/HandlerSocket-Plugin-for-MySQL/COPYING]
+[percona-xtradb-cluster-5.5-5.5.33-23.7.6/storage/HandlerSocket-Plugin-for-MySQL/COPYING]
 -----------------------------------------------------------------------------
 HandlerSocket plugin for MySQL
 
@@ -32165,43 +32165,11 @@ HandlerSocket plugin for MySQL
  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
-[END FILE=percona-xtradb-cluster-5.5-5.5.33-23.7.6/storage/HandlerSocket-Plugin-for-MySQL/COPYING]
+[percona-xtradb-cluster-5.5-5.5.33-23.7.6/storage/HandlerSocket-Plugin-for-MySQL/COPYING]
 
-FILE "percona-xtradb-cluster-5.5-5.5.33-23.7.6/storage/HandlerSocket-Plugin-for-MySQL/handlersocket/COPYRIGHT.txt":
+"percona-xtradb-cluster-5.5-5.5.33-23.7.6/storage/HandlerSocket-Plugin-for-MySQL/handlersocket/COPYRIGHT.txt":
 
-[BEGIN FILE=percona-xtradb-cluster-5.5-5.5.33-23.7.6/storage/HandlerSocket-Plugin-for-MySQL/handlersocket/COPYRIGHT.txt]
-
- Copyright (c) 2010 DeNA Co.,Ltd.
- All rights reserved.
-
- Redistribution and use in source and binary forms, with or without
- modification, are permitted provided that the following conditions are met:
-
-     * Redistributions of source code must retain the above copyright
-       notice, this list of conditions and the following disclaimer.
-     * Redistributions in binary form must reproduce the above copyright
-       notice, this list of conditions and the following disclaimer in the
-       documentation and/or other materials provided with the distribution.
-     * Neither the name of DeNA Co.,Ltd. nor the names of its contributors
-       may be used to endorse or promote products derived from this software
-       without specific prior written permission.
-
- THIS SOFTWARE IS PROVIDED BY DeNA Co.,Ltd. "AS IS" AND ANY EXPRESS OR
- IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
- MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO
- EVENT SHALL DeNA Co.,Ltd. BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
- SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
- PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
- OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
- WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
- OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
- ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
-[END FILE=percona-xtradb-cluster-5.5-5.5.33-23.7.6/storage/HandlerSocket-Plugin-for-MySQL/handlersocket/COPYRIGHT.txt]
-
-FILE "percona-xtradb-cluster-5.5-5.5.33-23.7.6/storage/HandlerSocket-Plugin-for-MySQL/libhsclient/COPYRIGHT.txt":
-
-[BEGIN FILE=percona-xtradb-cluster-5.5-5.5.33-23.7.6/storage/HandlerSocket-Plugin-for-MySQL/libhsclient/COPYRIGHT.txt]
+[percona-xtradb-cluster-5.5-5.5.33-23.7.6/storage/HandlerSocket-Plugin-for-MySQL/handlersocket/COPYRIGHT.txt]
 
  Copyright (c) 2010 DeNA Co.,Ltd.
  All rights reserved.
@@ -32229,11 +32197,11 @@ FILE "percona-xtradb-cluster-5.5-5.5.33-23.7.6/storage/HandlerSocket-Plugin-for-
  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-[END FILE=percona-xtradb-cluster-5.5-5.5.33-23.7.6/storage/HandlerSocket-Plugin-for-MySQL/libhsclient/COPYRIGHT.txt]
+[percona-xtradb-cluster-5.5-5.5.33-23.7.6/storage/HandlerSocket-Plugin-for-MySQL/handlersocket/COPYRIGHT.txt]
 
-FILE "percona-xtradb-cluster-5.5-5.5.33-23.7.6/storage/HandlerSocket-Plugin-for-MySQL/perl-Net-HandlerSocket/COPYRIGHT.txt":
+"percona-xtradb-cluster-5.5-5.5.33-23.7.6/storage/HandlerSocket-Plugin-for-MySQL/libhsclient/COPYRIGHT.txt":
 
-[BEGIN FILE=percona-xtradb-cluster-5.5-5.5.33-23.7.6/storage/HandlerSocket-Plugin-for-MySQL/perl-Net-HandlerSocket/COPYRIGHT.txt]
+[percona-xtradb-cluster-5.5-5.5.33-23.7.6/storage/HandlerSocket-Plugin-for-MySQL/libhsclient/COPYRIGHT.txt]
 
  Copyright (c) 2010 DeNA Co.,Ltd.
  All rights reserved.
@@ -32261,11 +32229,43 @@ FILE "percona-xtradb-cluster-5.5-5.5.33-23.7.6/storage/HandlerSocket-Plugin-for-
  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-[END FILE=percona-xtradb-cluster-5.5-5.5.33-23.7.6/storage/HandlerSocket-Plugin-for-MySQL/perl-Net-HandlerSocket/COPYRIGHT.txt]
+[percona-xtradb-cluster-5.5-5.5.33-23.7.6/storage/HandlerSocket-Plugin-for-MySQL/libhsclient/COPYRIGHT.txt]
 
-FILE "percona-xtradb-cluster-5.5-5.5.33-23.7.6/storage/innobase/COPYING.Google":
+"percona-xtradb-cluster-5.5-5.5.33-23.7.6/storage/HandlerSocket-Plugin-for-MySQL/perl-Net-HandlerSocket/COPYRIGHT.txt":
 
-[BEGIN FILE=percona-xtradb-cluster-5.5-5.5.33-23.7.6/storage/innobase/COPYING.Google]
+[percona-xtradb-cluster-5.5-5.5.33-23.7.6/storage/HandlerSocket-Plugin-for-MySQL/perl-Net-HandlerSocket/COPYRIGHT.txt]
+
+ Copyright (c) 2010 DeNA Co.,Ltd.
+ All rights reserved.
+
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions are met:
+
+     * Redistributions of source code must retain the above copyright
+       notice, this list of conditions and the following disclaimer.
+     * Redistributions in binary form must reproduce the above copyright
+       notice, this list of conditions and the following disclaimer in the
+       documentation and/or other materials provided with the distribution.
+     * Neither the name of DeNA Co.,Ltd. nor the names of its contributors
+       may be used to endorse or promote products derived from this software
+       without specific prior written permission.
+
+ THIS SOFTWARE IS PROVIDED BY DeNA Co.,Ltd. "AS IS" AND ANY EXPRESS OR
+ IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+ MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO
+ EVENT SHALL DeNA Co.,Ltd. BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+ OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+ OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+ ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+[percona-xtradb-cluster-5.5-5.5.33-23.7.6/storage/HandlerSocket-Plugin-for-MySQL/perl-Net-HandlerSocket/COPYRIGHT.txt]
+
+"percona-xtradb-cluster-5.5-5.5.33-23.7.6/storage/innobase/COPYING.Google":
+
+[percona-xtradb-cluster-5.5-5.5.33-23.7.6/storage/innobase/COPYING.Google]
 Portions of this software contain modifications contributed by Google, Inc.
 These contributions are used with the following license:
 
@@ -32296,11 +32296,11 @@ DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
 THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-[END FILE=percona-xtradb-cluster-5.5-5.5.33-23.7.6/storage/innobase/COPYING.Google]
+[percona-xtradb-cluster-5.5-5.5.33-23.7.6/storage/innobase/COPYING.Google]
 
-FILE "percona-xtradb-cluster-5.5-5.5.33-23.7.6/storage/innobase/COPYING.Percona":
+"percona-xtradb-cluster-5.5-5.5.33-23.7.6/storage/innobase/COPYING.Percona":
 
-[BEGIN FILE=percona-xtradb-cluster-5.5-5.5.33-23.7.6/storage/innobase/COPYING.Percona]
+[percona-xtradb-cluster-5.5-5.5.33-23.7.6/storage/innobase/COPYING.Percona]
 Portions of this software contain modifications contributed by Percona, Inc.
 These contributions are used with the following license:
 
@@ -32331,11 +32331,11 @@ DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
 THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-[END FILE=percona-xtradb-cluster-5.5-5.5.33-23.7.6/storage/innobase/COPYING.Percona]
+[percona-xtradb-cluster-5.5-5.5.33-23.7.6/storage/innobase/COPYING.Percona]
 
-FILE "percona-xtradb-cluster-5.5-5.5.33-23.7.6/vio/docs/COPYING.openssl":
+"percona-xtradb-cluster-5.5-5.5.33-23.7.6/vio/docs/COPYING.openssl":
 
-[BEGIN FILE=percona-xtradb-cluster-5.5-5.5.33-23.7.6/vio/docs/COPYING.openssl]
+[percona-xtradb-cluster-5.5-5.5.33-23.7.6/vio/docs/COPYING.openssl]
 
   LICENSE ISSUES
   ==============
@@ -32463,14 +32463,14 @@ FILE "percona-xtradb-cluster-5.5-5.5.33-23.7.6/vio/docs/COPYING.openssl":
  * [including the GNU Public Licence.]
  */
 
-[END FILE=percona-xtradb-cluster-5.5-5.5.33-23.7.6/vio/docs/COPYING.openssl]
+[percona-xtradb-cluster-5.5-5.5.33-23.7.6/vio/docs/COPYING.openssl]
 
 
 %%% Within package percona-xtradb-cluster-5.5-5.5.37 (version 25.10+dfsg):
 
-FILE "percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/build-ps/debian/copyright":
+"percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/build-ps/debian/copyright":
 
-[BEGIN FILE=percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/build-ps/debian/copyright]
+[percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/build-ps/debian/copyright]
 This work was packaged for Debian by:
 
     Ignacio Nin (ignacio.nin@percona.com) on Wed, 7 Dec 2011 16:29:08 -0500
@@ -32557,11 +32557,11 @@ that these licenses also apply to the following files:
 - innotop.html
 - InnoDBParser.pm
 
-[END FILE=percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/build-ps/debian/copyright]
+[percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/build-ps/debian/copyright]
 
-FILE "percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/build-ps/debian/copyright.ps":
+"percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/build-ps/debian/copyright.ps":
 
-[BEGIN FILE=percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/build-ps/debian/copyright.ps]
+[percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/build-ps/debian/copyright.ps]
 Format: http://svn.debian.org/wsvn/dep/web/deps/dep5.mdwn?rev=174
 Upstream-Name: Percona XtraDB Cluster 5.5
 Upstream-Contact: https://bugs.launchpad.net/percona-xtradb-cluster/
@@ -33349,11 +33349,11 @@ License: BSD (3 clause)
  LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
  OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  SUCH DAMAGE.
-[END FILE=percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/build-ps/debian/copyright.ps]
+[percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/build-ps/debian/copyright.ps]
 
-FILE "percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/debian/copyright":
+"percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/debian/copyright":
 
-[BEGIN FILE=percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/debian/copyright]
+[percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: Percona XtraDB Cluster 5.5
 Source: http://launchpad.net/percona-xtradb-cluster
@@ -34193,11 +34193,11 @@ License: BSD (3 clause)
  LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
  OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  SUCH DAMAGE.
-[END FILE=percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/debian/copyright]
+[percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/debian/copyright]
 
-FILE "percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/COPYING":
+"percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/COPYING":
 
-[BEGIN FILE=percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/COPYING]
+[percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/COPYING]
 		    GNU GENERAL PUBLIC LICENSE
 		       Version 2, June 1991
 
@@ -34537,11 +34537,11 @@ proprietary programs.  If your program is a subroutine library, you may
 consider it more useful to permit linking proprietary applications with the
 library.  If this is what you want to do, use the GNU Lesser General
 Public License instead of this License.
-[END FILE=percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/COPYING]
+[percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/COPYING]
 
-FILE "percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/COPYING.innodb-deadlock-count-patch":
+"percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/COPYING.innodb-deadlock-count-patch":
 
-[BEGIN FILE=percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/COPYING.innodb-deadlock-count-patch]
+[percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/COPYING.innodb-deadlock-count-patch]
 Portions of this software contain modifications contributed by Eric Bergen.
 These contributions are used with the following license:
 
@@ -34572,11 +34572,11 @@ DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
 THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-[END FILE=percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/COPYING.innodb-deadlock-count-patch]
+[percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/COPYING.innodb-deadlock-count-patch]
 
-FILE "percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/COPYING.show_temp_51":
+"percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/COPYING.show_temp_51":
 
-[BEGIN FILE=percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/COPYING.show_temp_51]
+[percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/COPYING.show_temp_51]
 Portions of this software contain modifications contributed by Venu Anuganti.
 These contributions are used with the following license:
 
@@ -34590,11 +34590,11 @@ Redistribution and use in source and binary forms, with or without modification,
     * Neither the name of the (ORGANIZATION) nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-[END FILE=percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/COPYING.show_temp_51]
+[percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/COPYING.show_temp_51]
 
-FILE "percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/storage/HandlerSocket-Plugin-for-MySQL/COPYING":
+"percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/storage/HandlerSocket-Plugin-for-MySQL/COPYING":
 
-[BEGIN FILE=percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/storage/HandlerSocket-Plugin-for-MySQL/COPYING]
+[percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/storage/HandlerSocket-Plugin-for-MySQL/COPYING]
 -----------------------------------------------------------------------------
 HandlerSocket plugin for MySQL
 
@@ -34625,43 +34625,11 @@ HandlerSocket plugin for MySQL
  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
-[END FILE=percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/storage/HandlerSocket-Plugin-for-MySQL/COPYING]
+[percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/storage/HandlerSocket-Plugin-for-MySQL/COPYING]
 
-FILE "percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/storage/HandlerSocket-Plugin-for-MySQL/handlersocket/COPYRIGHT.txt":
+"percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/storage/HandlerSocket-Plugin-for-MySQL/handlersocket/COPYRIGHT.txt":
 
-[BEGIN FILE=percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/storage/HandlerSocket-Plugin-for-MySQL/handlersocket/COPYRIGHT.txt]
-
- Copyright (c) 2010 DeNA Co.,Ltd.
- All rights reserved.
-
- Redistribution and use in source and binary forms, with or without
- modification, are permitted provided that the following conditions are met:
-
-     * Redistributions of source code must retain the above copyright
-       notice, this list of conditions and the following disclaimer.
-     * Redistributions in binary form must reproduce the above copyright
-       notice, this list of conditions and the following disclaimer in the
-       documentation and/or other materials provided with the distribution.
-     * Neither the name of DeNA Co.,Ltd. nor the names of its contributors
-       may be used to endorse or promote products derived from this software
-       without specific prior written permission.
-
- THIS SOFTWARE IS PROVIDED BY DeNA Co.,Ltd. "AS IS" AND ANY EXPRESS OR
- IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
- MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO
- EVENT SHALL DeNA Co.,Ltd. BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
- SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
- PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
- OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
- WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
- OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
- ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
-[END FILE=percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/storage/HandlerSocket-Plugin-for-MySQL/handlersocket/COPYRIGHT.txt]
-
-FILE "percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/storage/HandlerSocket-Plugin-for-MySQL/libhsclient/COPYRIGHT.txt":
-
-[BEGIN FILE=percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/storage/HandlerSocket-Plugin-for-MySQL/libhsclient/COPYRIGHT.txt]
+[percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/storage/HandlerSocket-Plugin-for-MySQL/handlersocket/COPYRIGHT.txt]
 
  Copyright (c) 2010 DeNA Co.,Ltd.
  All rights reserved.
@@ -34689,11 +34657,11 @@ FILE "percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/storage/HandlerSocket-Plugin-
  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-[END FILE=percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/storage/HandlerSocket-Plugin-for-MySQL/libhsclient/COPYRIGHT.txt]
+[percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/storage/HandlerSocket-Plugin-for-MySQL/handlersocket/COPYRIGHT.txt]
 
-FILE "percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/storage/HandlerSocket-Plugin-for-MySQL/perl-Net-HandlerSocket/COPYRIGHT.txt":
+"percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/storage/HandlerSocket-Plugin-for-MySQL/libhsclient/COPYRIGHT.txt":
 
-[BEGIN FILE=percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/storage/HandlerSocket-Plugin-for-MySQL/perl-Net-HandlerSocket/COPYRIGHT.txt]
+[percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/storage/HandlerSocket-Plugin-for-MySQL/libhsclient/COPYRIGHT.txt]
 
  Copyright (c) 2010 DeNA Co.,Ltd.
  All rights reserved.
@@ -34721,11 +34689,43 @@ FILE "percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/storage/HandlerSocket-Plugin-
  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-[END FILE=percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/storage/HandlerSocket-Plugin-for-MySQL/perl-Net-HandlerSocket/COPYRIGHT.txt]
+[percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/storage/HandlerSocket-Plugin-for-MySQL/libhsclient/COPYRIGHT.txt]
 
-FILE "percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/storage/innobase/COPYING.Google":
+"percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/storage/HandlerSocket-Plugin-for-MySQL/perl-Net-HandlerSocket/COPYRIGHT.txt":
 
-[BEGIN FILE=percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/storage/innobase/COPYING.Google]
+[percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/storage/HandlerSocket-Plugin-for-MySQL/perl-Net-HandlerSocket/COPYRIGHT.txt]
+
+ Copyright (c) 2010 DeNA Co.,Ltd.
+ All rights reserved.
+
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions are met:
+
+     * Redistributions of source code must retain the above copyright
+       notice, this list of conditions and the following disclaimer.
+     * Redistributions in binary form must reproduce the above copyright
+       notice, this list of conditions and the following disclaimer in the
+       documentation and/or other materials provided with the distribution.
+     * Neither the name of DeNA Co.,Ltd. nor the names of its contributors
+       may be used to endorse or promote products derived from this software
+       without specific prior written permission.
+
+ THIS SOFTWARE IS PROVIDED BY DeNA Co.,Ltd. "AS IS" AND ANY EXPRESS OR
+ IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+ MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO
+ EVENT SHALL DeNA Co.,Ltd. BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+ OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+ OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+ ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+[percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/storage/HandlerSocket-Plugin-for-MySQL/perl-Net-HandlerSocket/COPYRIGHT.txt]
+
+"percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/storage/innobase/COPYING.Google":
+
+[percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/storage/innobase/COPYING.Google]
 Portions of this software contain modifications contributed by Google, Inc.
 These contributions are used with the following license:
 
@@ -34756,11 +34756,11 @@ DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
 THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-[END FILE=percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/storage/innobase/COPYING.Google]
+[percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/storage/innobase/COPYING.Google]
 
-FILE "percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/storage/innobase/COPYING.Percona":
+"percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/storage/innobase/COPYING.Percona":
 
-[BEGIN FILE=percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/storage/innobase/COPYING.Percona]
+[percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/storage/innobase/COPYING.Percona]
 Portions of this software contain modifications contributed by Percona, Inc.
 These contributions are used with the following license:
 
@@ -34791,11 +34791,11 @@ DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
 THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-[END FILE=percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/storage/innobase/COPYING.Percona]
+[percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/storage/innobase/COPYING.Percona]
 
-FILE "percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/vio/docs/COPYING.openssl":
+"percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/vio/docs/COPYING.openssl":
 
-[BEGIN FILE=percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/vio/docs/COPYING.openssl]
+[percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/vio/docs/COPYING.openssl]
 
   LICENSE ISSUES
   ==============
@@ -34923,14 +34923,14 @@ FILE "percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/vio/docs/COPYING.openssl":
  * [including the GNU Public Licence.]
  */
 
-[END FILE=percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/vio/docs/COPYING.openssl]
+[percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/vio/docs/COPYING.openssl]
 
 
 %%% Within package percona-xtradb-cluster-galera-2.x (version 163.wheezy):
 
-FILE "percona-xtradb-cluster-galera-2.x-163.wheezy/debian/copyright":
+"percona-xtradb-cluster-galera-2.x-163.wheezy/debian/copyright":
 
-[BEGIN FILE=percona-xtradb-cluster-galera-2.x-163.wheezy/debian/copyright]
+[percona-xtradb-cluster-galera-2.x-163.wheezy/debian/copyright]
 This work was packaged for Debian by:
 
     Ignacio Nin (ignacio.nin@percona.com) on Tue, 06 Dec 2011 12:19:07 -0500
@@ -34956,11 +34956,11 @@ The Debian packaging is:
     Copyright (C) 2011 Ignacio Nin (ignacio.nin@percona.com)
     and is licensed under the GPL version 3,
     see "/usr/share/common-licenses/GPL-3".
-[END FILE=percona-xtradb-cluster-galera-2.x-163.wheezy/debian/copyright]
+[percona-xtradb-cluster-galera-2.x-163.wheezy/debian/copyright]
 
-FILE "percona-xtradb-cluster-galera-2.x-163.wheezy/asio/LICENSE_1_0.txt":
+"percona-xtradb-cluster-galera-2.x-163.wheezy/asio/LICENSE_1_0.txt":
 
-[BEGIN FILE=percona-xtradb-cluster-galera-2.x-163.wheezy/asio/LICENSE_1_0.txt]
+[percona-xtradb-cluster-galera-2.x-163.wheezy/asio/LICENSE_1_0.txt]
 Boost Software License - Version 1.0 - August 17th, 2003
 
 Permission is hereby granted, free of charge, to any person or organization
@@ -34984,11 +34984,11 @@ SHALL THE COPYRIGHT HOLDERS OR ANYONE DISTRIBUTING THE SOFTWARE BE LIABLE
 FOR ANY DAMAGES OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE,
 ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 DEALINGS IN THE SOFTWARE.
-[END FILE=percona-xtradb-cluster-galera-2.x-163.wheezy/asio/LICENSE_1_0.txt]
+[percona-xtradb-cluster-galera-2.x-163.wheezy/asio/LICENSE_1_0.txt]
 
-FILE "percona-xtradb-cluster-galera-2.x-163.wheezy/COPYING":
+"percona-xtradb-cluster-galera-2.x-163.wheezy/COPYING":
 
-[BEGIN FILE=percona-xtradb-cluster-galera-2.x-163.wheezy/COPYING]
+[percona-xtradb-cluster-galera-2.x-163.wheezy/COPYING]
 Galera replication - implementation of write set replication (wsrep) interface.
 Copyright (C) 2007-2013 Codership Oy (info@codership.com)
 
@@ -35015,14 +35015,14 @@ Following modules have their own, different licenses:
 asio/ 
 see asio/COPYING for details
 
-[END FILE=percona-xtradb-cluster-galera-2.x-163.wheezy/COPYING]
+[percona-xtradb-cluster-galera-2.x-163.wheezy/COPYING]
 
 
 %%% Within package percona-xtradb-cluster-galera-2.x (version 175):
 
-FILE "percona-xtradb-cluster-galera-2.x-175/debian/copyright":
+"percona-xtradb-cluster-galera-2.x-175/debian/copyright":
 
-[BEGIN FILE=percona-xtradb-cluster-galera-2.x-175/debian/copyright]
+[percona-xtradb-cluster-galera-2.x-175/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: Galera for Percona XtraDB Cluster
 Source: http://www.percona.com/downloads/Percona-XtraDB-Cluster
@@ -35084,11 +35084,11 @@ License: GPL-2
  modify this file, you may extend this exception to your version of the
  file, but you are not obligated to do so.  If you do not wish to do
  so, delete this exception statement from your version.
-[END FILE=percona-xtradb-cluster-galera-2.x-175/debian/copyright]
+[percona-xtradb-cluster-galera-2.x-175/debian/copyright]
 
-FILE "percona-xtradb-cluster-galera-2.x-175/COPYING":
+"percona-xtradb-cluster-galera-2.x-175/COPYING":
 
-[BEGIN FILE=percona-xtradb-cluster-galera-2.x-175/COPYING]
+[percona-xtradb-cluster-galera-2.x-175/COPYING]
 Galera replication - implementation of write set replication (wsrep) interface.
 Copyright (C) 2007-2014 Codership Oy (info@codership.com)
 
@@ -35126,14 +35126,14 @@ Following modules have their own, different licenses:
 asio/
 see asio/COPYING for details
 
-[END FILE=percona-xtradb-cluster-galera-2.x-175/COPYING]
+[percona-xtradb-cluster-galera-2.x-175/COPYING]
 
 
 %%% Within package pexpect (version 3.2):
 
-FILE "pexpect-3.2/debian/copyright":
+"pexpect-3.2/debian/copyright":
 
-[BEGIN FILE=pexpect-3.2/debian/copyright]
+[pexpect-3.2/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: pexpect
 Upstream-Contact: Noah Spurrier (noah@noah.org)
@@ -35153,14 +35153,14 @@ License: ISC
  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
-[END FILE=pexpect-3.2/debian/copyright]
+[pexpect-3.2/debian/copyright]
 
 
 %%% Within package pillow (version 2.4.0):
 
-FILE "pillow-2.4.0/debian/copyright":
+"pillow-2.4.0/debian/copyright":
 
-[BEGIN FILE=pillow-2.4.0/debian/copyright]
+[pillow-2.4.0/debian/copyright]
 This package was debianized by Simon Richter (sjr@debian.org) on
 Mon, 21 May 2001 22:20:43 +0200.
 As of 2004-01-05, it is maintained by Matthias Urlichs (smurf@debian.org).
@@ -35194,14 +35194,14 @@ ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
 WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT
 OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
-[END FILE=pillow-2.4.0/debian/copyright]
+[pillow-2.4.0/debian/copyright]
 
 
 %%% Within package po-debconf (version 1.0.16+nmu3):
 
-FILE "po-debconf-1.0.16+nmu3/debian/copyright":
+"po-debconf-1.0.16+nmu3/debian/copyright":
 
-[BEGIN FILE=po-debconf-1.0.16+nmu3/debian/copyright]
+[po-debconf-1.0.16+nmu3/debian/copyright]
 po-debconf is
   Copyright (c) 2002 Denis Barbier (barbier@linuxfr.org)
   Copyright (c) 2002 Martin Quinson (Martin.Quinson@ens-lyon.fr)
@@ -35210,14 +35210,14 @@ This program is released under the terms and conditions of the GNU
 General Public License (GPL).  On Debian GNU/Linux systems, the complete
 text of the GNU General Public License may be found in
 `/usr/share/common-licenses/GPL'.
-[END FILE=po-debconf-1.0.16+nmu3/debian/copyright]
+[po-debconf-1.0.16+nmu3/debian/copyright]
 
 
 %%% Within package postgresql-9.3 (version 9.3.4):
 
-FILE "postgresql-9.3-9.3.4/debian/copyright":
+"postgresql-9.3-9.3.4/debian/copyright":
 
-[BEGIN FILE=postgresql-9.3-9.3.4/debian/copyright]
+[postgresql-9.3-9.3.4/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: PostgreSQL
 Source: ftp://ftp.postgresql.org/pub/source/
@@ -35437,11 +35437,11 @@ License: Tcl
  authors grant the U.S. Government and others acting in its behalf
  permission to use and distribute the software in accordance with the
  terms specified in this license.
-[END FILE=postgresql-9.3-9.3.4/debian/copyright]
+[postgresql-9.3-9.3.4/debian/copyright]
 
-FILE "postgresql-9.3-9.3.4/src/backend/regex/COPYRIGHT":
+"postgresql-9.3-9.3.4/src/backend/regex/COPYRIGHT":
 
-[BEGIN FILE=postgresql-9.3-9.3.4/src/backend/regex/COPYRIGHT]
+[postgresql-9.3-9.3.4/src/backend/regex/COPYRIGHT]
 This regular expression package was originally developed by Henry Spencer.
 It bears the following copyright notice:
 
@@ -35526,14 +35526,14 @@ terms specified in this license.
 
 Subsequent modifications to the code by the PostgreSQL project follow
 the same license terms as the rest of PostgreSQL.
-[END FILE=postgresql-9.3-9.3.4/src/backend/regex/COPYRIGHT]
+[postgresql-9.3-9.3.4/src/backend/regex/COPYRIGHT]
 
 
 %%% Within package psmisc (version 22.21):
 
-FILE "psmisc-22.21/debian/copyright":
+"psmisc-22.21/debian/copyright":
 
-[BEGIN FILE=psmisc-22.21/debian/copyright]
+[psmisc-22.21/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: psmisc
 Upstream-Contact: Craig Small (csmall@enc.com.au)
@@ -35574,14 +35574,14 @@ License: GPL-2+
  License version 2 can be found in the file
  `/usr/share/common-licenses/GPL-2'.
 
-[END FILE=psmisc-22.21/debian/copyright]
+[psmisc-22.21/debian/copyright]
 
 
 %%% Within package pygments (version 1.6+dfsg):
 
-FILE "pygments-1.6+dfsg/debian/copyright":
+"pygments-1.6+dfsg/debian/copyright":
 
-[BEGIN FILE=pygments-1.6+dfsg/debian/copyright]
+[pygments-1.6+dfsg/debian/copyright]
 This package was debianized by Piotr Ożarowski (piotr@debian.org) on
 Tue, 24 Oct 2006 17:54:36 +0200.
 
@@ -35629,14 +35629,14 @@ File with different copyright holders:
 The Debian packaging is © 2006-2009, Piotr Ożarowski (piotr@debian.org) and
 is licensed under the same licence as Pygments.
 
-[END FILE=pygments-1.6+dfsg/debian/copyright]
+[pygments-1.6+dfsg/debian/copyright]
 
 
 %%% Within package pylint (version 1.2.1):
 
-FILE "pylint-1.2.1/debian/copyright":
+"pylint-1.2.1/debian/copyright":
 
-[BEGIN FILE=pylint-1.2.1/debian/copyright]
+[pylint-1.2.1/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: pylint
 Source: http://www.pylint.org/
@@ -35688,14 +35688,14 @@ License: GPL-2+
 
 Files: test/unittest_checker_logging.py
 Copyright: Copyright 2014 Google Inc. All Rights Reserved
-[END FILE=pylint-1.2.1/debian/copyright]
+[pylint-1.2.1/debian/copyright]
 
 
 %%% Within package pyopenssl (version 0.13.1):
 
-FILE "pyopenssl-0.13.1/debian/copyright":
+"pyopenssl-0.13.1/debian/copyright":
 
-[BEGIN FILE=pyopenssl-0.13.1/debian/copyright]
+[pyopenssl-0.13.1/debian/copyright]
 This package was debianized by Martin Sjögren (sjogren@debian.org) on
 Mon,  7 Jan 2002 16:25:58 +0100.
 
@@ -35739,11 +35739,11 @@ File: OpenSSL/crypto/crypto.c
 File: OpenSSL/test/util.py
     Copyright (C) Jean-Paul Calderone
     Copyright (C) Twisted Matrix Laboratories.
-[END FILE=pyopenssl-0.13.1/debian/copyright]
+[pyopenssl-0.13.1/debian/copyright]
 
-FILE "pyopenssl-0.13.1/doc/tools/texinputs/copyright.tex":
+"pyopenssl-0.13.1/doc/tools/texinputs/copyright.tex":
 
-[BEGIN FILE=pyopenssl-0.13.1/doc/tools/texinputs/copyright.tex]
+[pyopenssl-0.13.1/doc/tools/texinputs/copyright.tex]
 \begin{small}
 Copyright \copyright{} 2001 Python Software Foundation.
 All rights reserved.
@@ -35852,14 +35852,14 @@ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT
 OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 \end{small}
-[END FILE=pyopenssl-0.13.1/doc/tools/texinputs/copyright.tex]
+[pyopenssl-0.13.1/doc/tools/texinputs/copyright.tex]
 
 
 %%% Within package python3.4 (version 3.4.1):
 
-FILE "python3.4-3.4.1/debian/copyright":
+"python3.4-3.4.1/debian/copyright":
 
-[BEGIN FILE=python3.4-3.4.1/debian/copyright]
+[python3.4-3.4.1/debian/copyright]
 This package was put together by Klee Dienes (klee@debian.org) from 
 sources from ftp.python.org:/pub/python, based on the Debianization by 
 the previous maintainers Bernd S. Brentrup (bsb@uni-muenster.de) and 
@@ -36888,11 +36888,11 @@ License: Permission to use, copy, modify, and distribute this software and its
   FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT,
   NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION
   WITH THE USE OR PERFORMANCE OF THIS SOFTWARE !
-[END FILE=python3.4-3.4.1/debian/copyright]
+[python3.4-3.4.1/debian/copyright]
 
-FILE "python3.4-3.4.1/Doc/copyright.rst":
+"python3.4-3.4.1/Doc/copyright.rst":
 
-[BEGIN FILE=python3.4-3.4.1/Doc/copyright.rst]
+[python3.4-3.4.1/Doc/copyright.rst]
 *********
 Copyright
 *********
@@ -36912,11 +36912,11 @@ Copyright © 1991-1995 Stichting Mathematisch Centrum. All rights reserved.
 
 See :ref:`history-and-license` for complete license and permissions information.
 
-[END FILE=python3.4-3.4.1/Doc/copyright.rst]
+[python3.4-3.4.1/Doc/copyright.rst]
 
-FILE "python3.4-3.4.1/LICENSE":
+"python3.4-3.4.1/LICENSE":
 
-[BEGIN FILE=python3.4-3.4.1/LICENSE]
+[python3.4-3.4.1/LICENSE]
 A. HISTORY OF THE SOFTWARE
 ==========================
 
@@ -37171,11 +37171,11 @@ FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
 WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT
 OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
-[END FILE=python3.4-3.4.1/LICENSE]
+[python3.4-3.4.1/LICENSE]
 
-FILE "python3.4-3.4.1/Tools/msi/crtlicense.txt":
+"python3.4-3.4.1/Tools/msi/crtlicense.txt":
 
-[BEGIN FILE=python3.4-3.4.1/Tools/msi/crtlicense.txt]
+[python3.4-3.4.1/Tools/msi/crtlicense.txt]
 
 
 Additional Conditions for this Windows binary build
@@ -37220,11 +37220,11 @@ Python interpreter. The redistribution of the Python interpreter and
 libraries is governed by the Python Software License included with this
 file, or by other licenses as marked.
 
-[END FILE=python3.4-3.4.1/Tools/msi/crtlicense.txt]
+[python3.4-3.4.1/Tools/msi/crtlicense.txt]
 
-FILE "python3.4-3.4.1/Tools/pybench/LICENSE":
+"python3.4-3.4.1/Tools/pybench/LICENSE":
 
-[BEGIN FILE=python3.4-3.4.1/Tools/pybench/LICENSE]
+[python3.4-3.4.1/Tools/pybench/LICENSE]
 pybench License
 ---------------
 
@@ -37250,11 +37250,11 @@ INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING
 FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT,
 NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION
 WITH THE USE OR PERFORMANCE OF THIS SOFTWARE !
-[END FILE=python3.4-3.4.1/Tools/pybench/LICENSE]
+[python3.4-3.4.1/Tools/pybench/LICENSE]
 
-FILE "python3.4-3.4.1/Tools/pynche/X/xlicense.txt":
+"python3.4-3.4.1/Tools/pynche/X/xlicense.txt":
 
-[BEGIN FILE=python3.4-3.4.1/Tools/pynche/X/xlicense.txt]
+[python3.4-3.4.1/Tools/pynche/X/xlicense.txt]
 X Window System License - X11R6.4
 
 Copyright (c) 1998 The Open Group
@@ -37284,14 +37284,14 @@ other dealings in this Software without prior written authorization
 from The Open Group.
 
 X Window System is a trademark of The Open Group
-[END FILE=python3.4-3.4.1/Tools/pynche/X/xlicense.txt]
+[python3.4-3.4.1/Tools/pynche/X/xlicense.txt]
 
 
 %%% Within package python-amqp (version 1.4.5):
 
-FILE "python-amqp-1.4.5/debian/copyright":
+"python-amqp-1.4.5/debian/copyright":
 
-[BEGIN FILE=python-amqp-1.4.5/debian/copyright]
+[python-amqp-1.4.5/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: amqp
 Upstream-Contact: Ask Solem (pyamqp@celeryproject.org)
@@ -37323,14 +37323,14 @@ License: LGPL-2.1+
  .
  On Debian systems, the complete text of version 2 of the GNU General
  Public License can be found in `/usr/share/common-licenses/GPL-2'.
-[END FILE=python-amqp-1.4.5/debian/copyright]
+[python-amqp-1.4.5/debian/copyright]
 
 
 %%% Within package python-anyjson (version 0.3.3):
 
-FILE "python-anyjson-0.3.3/debian/copyright":
+"python-anyjson-0.3.3/debian/copyright":
 
-[BEGIN FILE=python-anyjson-0.3.3/debian/copyright]
+[python-anyjson-0.3.3/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: anyjson
 Upstream-Contact: Rune Halvorsen (runefh@gmail.com)
@@ -37370,14 +37370,14 @@ License: BSD-anyjson
  CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
  ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
  POSSIBILITY OF SUCH DAMAGE.
-[END FILE=python-anyjson-0.3.3/debian/copyright]
+[python-anyjson-0.3.3/debian/copyright]
 
 
 %%% Within package python-colorama (version 0.3.1):
 
-FILE "python-colorama-0.3.1/debian/copyright":
+"python-colorama-0.3.1/debian/copyright":
 
-[BEGIN FILE=python-colorama-0.3.1/debian/copyright]
+[python-colorama-0.3.1/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: python-colorama
 Source: http://pypi.python.org/pypi/colorama/
@@ -37427,11 +37427,11 @@ License: GPL-2+
  .
  On Debian systems, the complete text of the GNU General
  Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
-[END FILE=python-colorama-0.3.1/debian/copyright]
+[python-colorama-0.3.1/debian/copyright]
 
-FILE "python-colorama-0.3.1/LICENSE.txt":
+"python-colorama-0.3.1/LICENSE.txt":
 
-[BEGIN FILE=python-colorama-0.3.1/LICENSE.txt]
+[python-colorama-0.3.1/LICENSE.txt]
 Copyright (c) 2010 Jonathan Hartley
 All rights reserved.
 
@@ -37460,14 +37460,14 @@ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-[END FILE=python-colorama-0.3.1/LICENSE.txt]
+[python-colorama-0.3.1/LICENSE.txt]
 
 
 %%% Within package python-coverage (version 3.7.1+dfsg.1):
 
-FILE "python-coverage-3.7.1+dfsg.1/debian/copyright":
+"python-coverage-3.7.1+dfsg.1/debian/copyright":
 
-[BEGIN FILE=python-coverage-3.7.1+dfsg.1/debian/copyright]
+[python-coverage-3.7.1+dfsg.1/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: coverage
 Upstream-Contact: Ned Batchelder (ned@nedbatchelder.com)
@@ -37515,14 +37515,14 @@ License: BSD-2-clause
     TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
     USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
     DAMAGE.
-[END FILE=python-coverage-3.7.1+dfsg.1/debian/copyright]
+[python-coverage-3.7.1+dfsg.1/debian/copyright]
 
 
 %%% Within package python-dateutil (version 1.5+dfsg):
 
-FILE "python-dateutil-1.5+dfsg/debian/copyright":
+"python-dateutil-1.5+dfsg/debian/copyright":
 
-[BEGIN FILE=python-dateutil-1.5+dfsg/debian/copyright]
+[python-dateutil-1.5+dfsg/debian/copyright]
 This package was debianized by Guido Guenther (agx@sigxcpu.org) on
 Wed,  6 Sep 2006 10:33:06 +0200.
 
@@ -37791,14 +37791,14 @@ FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
 WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT
 OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
-[END FILE=python-dateutil-1.5+dfsg/debian/copyright]
+[python-dateutil-1.5+dfsg/debian/copyright]
 
 
 %%% Within package python-decorator (version 3.4.0):
 
-FILE "python-decorator-3.4.0/debian/copyright":
+"python-decorator-3.4.0/debian/copyright":
 
-[BEGIN FILE=python-decorator-3.4.0/debian/copyright]
+[python-decorator-3.4.0/debian/copyright]
 This package was debianized by Oleksandr Moskalenko (malex@debian.org) on
 Fri, 13 Apr 2007 13:10:43 -0600.
 
@@ -37833,14 +37833,14 @@ License:
 
 The Debian packaging is copyright 2007-2010, Oleksandr Moskalenko
 (malex@debian.org) and is licensed under the BSD license as above.
-[END FILE=python-decorator-3.4.0/debian/copyright]
+[python-decorator-3.4.0/debian/copyright]
 
 
 %%% Within package python-docutils (version 0.11):
 
-FILE "python-docutils-0.11/debian/copyright":
+"python-docutils-0.11/debian/copyright":
 
-[BEGIN FILE=python-docutils-0.11/debian/copyright]
+[python-docutils-0.11/debian/copyright]
 This package was debianized by Matthias Klose (doko@debian.org) on
 Sat, 12 Oct 2002 15:05:38 +0200. It was later maintained by Matthias
 Urlichs (smurf@noris.de) and is currently maintained by:
@@ -38321,11 +38321,11 @@ The exceptions to the `Public Domain Dedication`_ above are:
 
   On Debian systems the text of the GNU General Public License version 2
   can be found in /usr/share/common-licenses/GPL-2.
-[END FILE=python-docutils-0.11/debian/copyright]
+[python-docutils-0.11/debian/copyright]
 
-FILE "python-docutils-0.11/COPYING.txt":
+"python-docutils-0.11/COPYING.txt":
 
-[BEGIN FILE=python-docutils-0.11/COPYING.txt]
+[python-docutils-0.11/COPYING.txt]
 ==================
  Copying Docutils
 ==================
@@ -38463,11 +38463,11 @@ licenses_ directory.
 .. _OSI-approved: http://opensource.org/licenses/
 .. _license-list:
 .. _GPL-compatible: http://www.gnu.org/licenses/license-list.html
-[END FILE=python-docutils-0.11/COPYING.txt]
+[python-docutils-0.11/COPYING.txt]
 
-FILE "python-docutils-0.11/licenses/BSD-2-Clause.txt":
+"python-docutils-0.11/licenses/BSD-2-Clause.txt":
 
-[BEGIN FILE=python-docutils-0.11/licenses/BSD-2-Clause.txt]
+[python-docutils-0.11/licenses/BSD-2-Clause.txt]
 2-Clause BSD license / FreeBSD license
 ======================================
 
@@ -38493,11 +38493,11 @@ DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
 THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-[END FILE=python-docutils-0.11/licenses/BSD-2-Clause.txt]
+[python-docutils-0.11/licenses/BSD-2-Clause.txt]
 
-FILE "python-docutils-0.11/licenses/python-2-1-1.txt":
+"python-docutils-0.11/licenses/python-2-1-1.txt":
 
-[BEGIN FILE=python-docutils-0.11/licenses/python-2-1-1.txt]
+[python-docutils-0.11/licenses/python-2-1-1.txt]
 A. HISTORY OF THE SOFTWARE
 ==========================
 
@@ -38730,14 +38730,14 @@ FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
 WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT
 OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
-[END FILE=python-docutils-0.11/licenses/python-2-1-1.txt]
+[python-docutils-0.11/licenses/python-2-1-1.txt]
 
 
 %%% Within package python-librabbitmq (version 1.0.1):
 
-FILE "python-librabbitmq-1.0.1/clib/debian/copyright":
+"python-librabbitmq-1.0.1/clib/debian/copyright":
 
-[BEGIN FILE=python-librabbitmq-1.0.1/clib/debian/copyright]
+[python-librabbitmq-1.0.1/clib/debian/copyright]
 This package was debianized by Tony Garnock-Jones
 (tonygarnockjones@gmail.com) on Tue, 14 Jul 2009 04:42:37 +0100.
 
@@ -38755,11 +38755,11 @@ package.
 
 If you have any questions regarding licensing, please contact us at
 info@rabbitmq.com.
-[END FILE=python-librabbitmq-1.0.1/clib/debian/copyright]
+[python-librabbitmq-1.0.1/clib/debian/copyright]
 
-FILE "python-librabbitmq-1.0.1/debian/copyright":
+"python-librabbitmq-1.0.1/debian/copyright":
 
-[BEGIN FILE=python-librabbitmq-1.0.1/debian/copyright]
+[python-librabbitmq-1.0.1/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: librabbitmq
 Upstream-Contact: Ask Solem (ask@celeryproject.org)
@@ -39251,14 +39251,14 @@ License: MPL-1.1
      the notices in the Source Code files of the Original Code. You should
      use the text of this Exhibit A rather than the text found in the
      Original Code Source Code for Your Modifications.]
-[END FILE=python-librabbitmq-1.0.1/debian/copyright]
+[python-librabbitmq-1.0.1/debian/copyright]
 
 
 %%% Within package python-lockfile (version 0.8):
 
-FILE "python-lockfile-0.8/debian/copyright":
+"python-lockfile-0.8/debian/copyright":
 
-[BEGIN FILE=python-lockfile-0.8/debian/copyright]
+[python-lockfile-0.8/debian/copyright]
 Format-Specification:
     http://wiki.debian.org/Proposals/CopyrightFormat?action=recall&rev=233
 Upstream-Name: lockfile
@@ -39299,14 +39299,14 @@ License: Expat
     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
     IN THE SOFTWARE.
-[END FILE=python-lockfile-0.8/debian/copyright]
+[python-lockfile-0.8/debian/copyright]
 
 
 %%% Within package python-mox (version 0.5.3):
 
-FILE "python-mox-0.5.3/debian/copyright":
+"python-mox-0.5.3/debian/copyright":
 
-[BEGIN FILE=python-mox-0.5.3/debian/copyright]
+[python-mox-0.5.3/debian/copyright]
 This package was debianized by Iustin Pop (iusty@k1024.org) on
 Sun, 29 Jun 2008 21:01:19 +0200.
 
@@ -39343,14 +39343,14 @@ The Debian packaging is:
 
 and is licensed under the GPL version 3,
 see `/usr/share/common-licenses/GPL-3'.
-[END FILE=python-mox-0.5.3/debian/copyright]
+[python-mox-0.5.3/debian/copyright]
 
 
 %%% Within package python-openid (version 2.2.5):
 
-FILE "python-openid-2.2.5/debian/copyright":
+"python-openid-2.2.5/debian/copyright":
 
-[BEGIN FILE=python-openid-2.2.5/debian/copyright]
+[python-openid-2.2.5/debian/copyright]
 Debianization:
 © 2006-2009 Mikhail Gusarov (dottedmag@dottedmag.net)
 © 2008-2009 Sandro Tosi (morph@debian.org)
@@ -39378,14 +39378,14 @@ and limitations under the License.
 
 On Debian systems, the complete text of the Apache license 2.0 can be found in
 /usr/share/common-licenses/Apache-2.0 file.
-[END FILE=python-openid-2.2.5/debian/copyright]
+[python-openid-2.2.5/debian/copyright]
 
 
 %%% Within package python-pam (version 0.4.2):
 
-FILE "python-pam-0.4.2/debian/copyright":
+"python-pam-0.4.2/debian/copyright":
 
-[BEGIN FILE=python-pam-0.4.2/debian/copyright]
+[python-pam-0.4.2/debian/copyright]
 This is the Debian package of a Python PAM module.
 
 This package was put together by Gregor Hoffleit (flight@debian.org),
@@ -39403,14 +39403,14 @@ Copyright:
 
 On Debian GNU/Linux systems, the complete text of the GNU General
 Public License can be found in `/usr/share/common-licenses/GPL-2'.
-[END FILE=python-pam-0.4.2/debian/copyright]
+[python-pam-0.4.2/debian/copyright]
 
 
 %%% Within package python-pip (version 1.5.6):
 
-FILE "python-pip-1.5.6/debian/copyright":
+"python-pip-1.5.6/debian/copyright":
 
-[BEGIN FILE=python-pip-1.5.6/debian/copyright]
+[python-pip-1.5.6/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Source: http://www.pip-installer.org/
 
@@ -39522,14 +39522,14 @@ License: Expat
     LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
     OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
     WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-[END FILE=python-pip-1.5.6/debian/copyright]
+[python-pip-1.5.6/debian/copyright]
 
 
 %%% Within package python-pysqlite2 (version 2.6.3):
 
-FILE "python-pysqlite2-2.6.3/debian/copyright":
+"python-pysqlite2-2.6.3/debian/copyright":
 
-[BEGIN FILE=python-pysqlite2-2.6.3/debian/copyright]
+[python-pysqlite2-2.6.3/debian/copyright]
 This Debian package was created by Joel Rosdahl (joel@debian.org).
 
 The upstream source was found on the following address:
@@ -39563,14 +39563,14 @@ License:
 
         3. This notice may not be removed or altered from any source
            distribution.
-[END FILE=python-pysqlite2-2.6.3/debian/copyright]
+[python-pysqlite2-2.6.3/debian/copyright]
 
 
 %%% Within package python-roman (version 2.0.0):
 
-FILE "python-roman-2.0.0/debian/copyright":
+"python-roman-2.0.0/debian/copyright":
 
-[BEGIN FILE=python-roman-2.0.0/debian/copyright]
+[python-roman-2.0.0/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: roman
 Source: http://pypi.python.org/pypi/roman/
@@ -39859,14 +39859,14 @@ License: Python-2.1.1
  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT
  OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
-[END FILE=python-roman-2.0.0/debian/copyright]
+[python-roman-2.0.0/debian/copyright]
 
 
 %%% Within package python-stdlib-extensions (version 2.7.7):
 
-FILE "python-stdlib-extensions-2.7.7/debian/copyright":
+"python-stdlib-extensions-2.7.7/debian/copyright":
 
-[BEGIN FILE=python-stdlib-extensions-2.7.7/debian/copyright]
+[python-stdlib-extensions-2.7.7/debian/copyright]
 This package was debianized by Matthias Klose (doko@debian.org) on
 Wed,  7 Jun 2006 15:02:31 +0200.
 
@@ -40155,14 +40155,14 @@ FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
 WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT
 OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
-[END FILE=python-stdlib-extensions-2.7.7/debian/copyright]
+[python-stdlib-extensions-2.7.7/debian/copyright]
 
 
 %%% Within package python-virtualenv (version 1.11.6):
 
-FILE "python-virtualenv-1.11.6/debian/copyright":
+"python-virtualenv-1.11.6/debian/copyright":
 
-[BEGIN FILE=python-virtualenv-1.11.6/debian/copyright]
+[python-virtualenv-1.11.6/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: virtualenv
 Source: https://github.com/pypa/virtualenv
@@ -40299,14 +40299,14 @@ License: Zope-2.1
  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-[END FILE=python-virtualenv-1.11.6/debian/copyright]
+[python-virtualenv-1.11.6/debian/copyright]
 
 
 %%% Within package python-xattr (version 0.6.4):
 
-FILE "python-xattr-0.6.4/debian/copyright":
+"python-xattr-0.6.4/debian/copyright":
 
-[BEGIN FILE=python-xattr-0.6.4/debian/copyright]
+[python-xattr-0.6.4/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Source: http://github.com/xattr/xattr
 
@@ -40336,11 +40336,11 @@ License: MIT
  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  THE SOFTWARE.
-[END FILE=python-xattr-0.6.4/debian/copyright]
+[python-xattr-0.6.4/debian/copyright]
 
-FILE "python-xattr-0.6.4/LICENSE.txt":
+"python-xattr-0.6.4/LICENSE.txt":
 
-[BEGIN FILE=python-xattr-0.6.4/LICENSE.txt]
+[python-xattr-0.6.4/LICENSE.txt]
 This is the MIT license.  This software may also be distributed under the same terms as Python (the PSF license).
 
 Copyright (c) 2004 Bob Ippolito.
@@ -40350,14 +40350,14 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-[END FILE=python-xattr-0.6.4/LICENSE.txt]
+[python-xattr-0.6.4/LICENSE.txt]
 
 
 %%% Within package qstat (version 2.11):
 
-FILE "qstat-2.11/debian/copyright":
+"qstat-2.11/debian/copyright":
 
-[BEGIN FILE=qstat-2.11/debian/copyright]
+[qstat-2.11/debian/copyright]
 This is Debian GNU/Linux's prepackaged version of Steve Jankowski
 (steve@activesw.com)'s Qstat, for querying Quake servers.
 Qstat was debianized by Michael Alan Dorman (mdorman@debian.org) on
@@ -40372,14 +40372,14 @@ Qstat is Copyright (C) 1996,1997,1998,1999,2000,2001,2002 Steve Jankowski.
 You are free to distribute this software under the terms of the Artistic
 licence. In Debian systems, the complete text of the Artistic licence can be
 found in the /usr/share/common-licenses/Artistic file.
-[END FILE=qstat-2.11/debian/copyright]
+[qstat-2.11/debian/copyright]
 
 
 %%% Within package radiusclient-ng (version 0.5.6):
 
-FILE "radiusclient-ng-0.5.6/debian/copyright":
+"radiusclient-ng-0.5.6/debian/copyright":
 
-[BEGIN FILE=radiusclient-ng-0.5.6/debian/copyright]
+[radiusclient-ng-0.5.6/debian/copyright]
 This package was debianized by Jan Janak (jan@iptel.org) on
 Mon,  6 Jun 2005 13:49:56 +0200.
 
@@ -40529,14 +40529,14 @@ documentation and/or software.
 On Debian systems, the complete text of the GNU General
 Public License and other common licenses can be found in 
 `/usr/share/common-licenses/GPL'.
-[END FILE=radiusclient-ng-0.5.6/debian/copyright]
+[radiusclient-ng-0.5.6/debian/copyright]
 
 
 %%% Within package redhat-cluster (version 3.1.8):
 
-FILE "redhat-cluster-3.1.8/debian/copyright":
+"redhat-cluster-3.1.8/debian/copyright":
 
-[BEGIN FILE=redhat-cluster-3.1.8/debian/copyright]
+[redhat-cluster-3.1.8/debian/copyright]
 This is the Debian GNU/Linux prepackaged version of the 
 RedHat Cluster Suite version 2.
 
@@ -40743,11 +40743,11 @@ Ryan O'Hara (rohara at redhat.com)
 Stanko Kupcevic (kupcevic at redhat.com)
 Steven Whitehouse (swhiteho at redhat.com)
 Wendy Cheng (wcheng at redhat.com)
-[END FILE=redhat-cluster-3.1.8/debian/copyright]
+[redhat-cluster-3.1.8/debian/copyright]
 
-FILE "redhat-cluster-3.1.8/doc/COPYRIGHT":
+"redhat-cluster-3.1.8/doc/COPYRIGHT":
 
-[BEGIN FILE=redhat-cluster-3.1.8/doc/COPYRIGHT]
+[redhat-cluster-3.1.8/doc/COPYRIGHT]
 Unless specified otherwise in the "exceptions section" below:
 
 Copyright (C) 1997-2003 Sistina Software, Inc.  All rights reserved.
@@ -40889,14 +40889,14 @@ Ryan O'Hara (rohara at redhat.com)
 Stanko Kupcevic (kupcevic at redhat.com)
 Steven Whitehouse (swhiteho at redhat.com)
 Wendy Cheng (wcheng at redhat.com)
-[END FILE=redhat-cluster-3.1.8/doc/COPYRIGHT]
+[redhat-cluster-3.1.8/doc/COPYRIGHT]
 
 
 %%% Within package reiserfsprogs (version 3.6.24):
 
-FILE "reiserfsprogs-3.6.24/debian/copyright":
+"reiserfsprogs-3.6.24/debian/copyright":
 
-[BEGIN FILE=reiserfsprogs-3.6.24/debian/copyright]
+[reiserfsprogs-3.6.24/debian/copyright]
 This package has been taken over by Felix Zielcke (fzielcke@z-51.de) on
 Sun, 08 Feb 2009 14:49:50 +0100
 This package was debianized by Ed Boraas (ed@debian.org) on
@@ -40918,14 +40918,14 @@ License:
 
   Furthermore, licensing clarifications have been provided by the
   upstream authors within /usr/share/doc/reiserfsprogs/README.
-[END FILE=reiserfsprogs-3.6.24/debian/copyright]
+[reiserfsprogs-3.6.24/debian/copyright]
 
 
 %%% Within package samba (version 4.1.9+dfsg):
 
-FILE "samba-4.1.9+dfsg/debian/copyright":
+"samba-4.1.9+dfsg/debian/copyright":
 
-[BEGIN FILE=samba-4.1.9+dfsg/debian/copyright]
+[samba-4.1.9+dfsg/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: samba
 Upstream-Contact: Samba Developers (samba-technical@lists.samba.org)
@@ -41083,11 +41083,11 @@ License:
  in order for you to develop an implementation. If you have access to
  Microsoft programming tools and environments you are free to take
  advantage of them.
-[END FILE=samba-4.1.9+dfsg/debian/copyright]
+[samba-4.1.9+dfsg/debian/copyright]
 
-FILE "samba-4.1.9+dfsg/lib/ccan/time/LICENSE":
+"samba-4.1.9+dfsg/lib/ccan/time/LICENSE":
 
-[BEGIN FILE=samba-4.1.9+dfsg/lib/ccan/time/LICENSE]
+[samba-4.1.9+dfsg/lib/ccan/time/LICENSE]
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
@@ -41105,11 +41105,11 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
-[END FILE=samba-4.1.9+dfsg/lib/ccan/time/LICENSE]
+[samba-4.1.9+dfsg/lib/ccan/time/LICENSE]
 
-FILE "samba-4.1.9+dfsg/lib/dnspython/LICENSE":
+"samba-4.1.9+dfsg/lib/dnspython/LICENSE":
 
-[BEGIN FILE=samba-4.1.9+dfsg/lib/dnspython/LICENSE]
+[samba-4.1.9+dfsg/lib/dnspython/LICENSE]
 Copyright (C) 2001-2003 Nominum, Inc.
 
 Permission to use, copy, modify, and distribute this software and its
@@ -41124,11 +41124,11 @@ ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
 WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT
 OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
-[END FILE=samba-4.1.9+dfsg/lib/dnspython/LICENSE]
+[samba-4.1.9+dfsg/lib/dnspython/LICENSE]
 
-FILE "samba-4.1.9+dfsg/lib/dnspython/util/COPYRIGHT":
+"samba-4.1.9+dfsg/lib/dnspython/util/COPYRIGHT":
 
-[BEGIN FILE=samba-4.1.9+dfsg/lib/dnspython/util/COPYRIGHT]
+[samba-4.1.9+dfsg/lib/dnspython/util/COPYRIGHT]
 Copyright (C) @YEARS@ Nominum, Inc.
 
 Permission to use, copy, modify, and distribute this software and its
@@ -41143,11 +41143,11 @@ ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
 WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT
 OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
-[END FILE=samba-4.1.9+dfsg/lib/dnspython/util/COPYRIGHT]
+[samba-4.1.9+dfsg/lib/dnspython/util/COPYRIGHT]
 
-FILE "samba-4.1.9+dfsg/lib/iniparser/LICENSE":
+"samba-4.1.9+dfsg/lib/iniparser/LICENSE":
 
-[BEGIN FILE=samba-4.1.9+dfsg/lib/iniparser/LICENSE]
+[samba-4.1.9+dfsg/lib/iniparser/LICENSE]
 Copyright (c) 2000 by Nicolas Devillard.
 MIT License
 
@@ -41169,11 +41169,11 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 DEALINGS IN THE SOFTWARE.
 
-[END FILE=samba-4.1.9+dfsg/lib/iniparser/LICENSE]
+[samba-4.1.9+dfsg/lib/iniparser/LICENSE]
 
-FILE "samba-4.1.9+dfsg/lib/popt/COPYING":
+"samba-4.1.9+dfsg/lib/popt/COPYING":
 
-[BEGIN FILE=samba-4.1.9+dfsg/lib/popt/COPYING]
+[samba-4.1.9+dfsg/lib/popt/COPYING]
 Copyright (c) 1998  Red Hat Software
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -41196,11 +41196,11 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 Except as contained in this notice, the name of the X Consortium shall not be
 used in advertising or otherwise to promote the sale, use or other dealings
 in this Software without prior written authorization from the X Consortium.
-[END FILE=samba-4.1.9+dfsg/lib/popt/COPYING]
+[samba-4.1.9+dfsg/lib/popt/COPYING]
 
-FILE "samba-4.1.9+dfsg/lib/subunit/COPYING":
+"samba-4.1.9+dfsg/lib/subunit/COPYING":
 
-[BEGIN FILE=samba-4.1.9+dfsg/lib/subunit/COPYING]
+[samba-4.1.9+dfsg/lib/subunit/COPYING]
 Subunit is licensed under two licenses, the Apache License, Version 2.0 or the
 3-clause BSD License. You may use this project under either of these licenses
 - choose the one that works best for you.
@@ -41237,11 +41237,11 @@ A known list of such code is maintained here:
 * The runtests.py and python/subunit/tests/TestUtil.py module are GPL test
   support modules. There are not installed by Subunit - they are only ever
   used on the build machine.  Copyright 2004 Canonical Limited.
-[END FILE=samba-4.1.9+dfsg/lib/subunit/COPYING]
+[samba-4.1.9+dfsg/lib/subunit/COPYING]
 
-FILE "samba-4.1.9+dfsg/lib/subunit/python/iso8601/LICENSE":
+"samba-4.1.9+dfsg/lib/subunit/python/iso8601/LICENSE":
 
-[BEGIN FILE=samba-4.1.9+dfsg/lib/subunit/python/iso8601/LICENSE]
+[samba-4.1.9+dfsg/lib/subunit/python/iso8601/LICENSE]
 Copyright (c) 2007 Michael Twomey
 
 Permission is hereby granted, free of charge, to any person obtaining a
@@ -41262,11 +41262,11 @@ IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
 CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
 TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-[END FILE=samba-4.1.9+dfsg/lib/subunit/python/iso8601/LICENSE]
+[samba-4.1.9+dfsg/lib/subunit/python/iso8601/LICENSE]
 
-FILE "samba-4.1.9+dfsg/lib/testtools/LICENSE":
+"samba-4.1.9+dfsg/lib/testtools/LICENSE":
 
-[BEGIN FILE=samba-4.1.9+dfsg/lib/testtools/LICENSE]
+[samba-4.1.9+dfsg/lib/testtools/LICENSE]
 Copyright (c) 2008-2011 Jonathan M. Lange (jml@mumak.net) and the testtools
 authors.
 
@@ -41325,11 +41325,11 @@ LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
 PARTICULAR PURPOSE.  THE CODE PROVIDED HEREUNDER IS ON AN "AS IS" BASIS,
 AND THERE IS NO OBLIGATION WHATSOEVER TO PROVIDE MAINTENANCE,
 SUPPORT, UPDATES, ENHANCEMENTS, OR MODIFICATIONS.
-[END FILE=samba-4.1.9+dfsg/lib/testtools/LICENSE]
+[samba-4.1.9+dfsg/lib/testtools/LICENSE]
 
-FILE "samba-4.1.9+dfsg/lib/zlib/contrib/dotzlib/LICENSE_1_0.txt":
+"samba-4.1.9+dfsg/lib/zlib/contrib/dotzlib/LICENSE_1_0.txt":
 
-[BEGIN FILE=samba-4.1.9+dfsg/lib/zlib/contrib/dotzlib/LICENSE_1_0.txt]
+[samba-4.1.9+dfsg/lib/zlib/contrib/dotzlib/LICENSE_1_0.txt]
 Boost Software License - Version 1.0 - August 17th, 2003
 
 
@@ -41374,11 +41374,11 @@ FOR ANY DAMAGES OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE,
 
 ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 
-DEALINGS IN THE SOFTWARE.[END FILE=samba-4.1.9+dfsg/lib/zlib/contrib/dotzlib/LICENSE_1_0.txt]
+DEALINGS IN THE SOFTWARE.[samba-4.1.9+dfsg/lib/zlib/contrib/dotzlib/LICENSE_1_0.txt]
 
-FILE "samba-4.1.9+dfsg/packaging/SGI/legal_notice.html":
+"samba-4.1.9+dfsg/packaging/SGI/legal_notice.html":
 
-[BEGIN FILE=samba-4.1.9+dfsg/packaging/SGI/legal_notice.html]
+[samba-4.1.9+dfsg/packaging/SGI/legal_notice.html]
 (!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN")
 (HTML VERSION="2.0")
 (HEAD)
@@ -41432,20 +41432,20 @@ obligation to address bugs, enhancements, or answer questions.
 
 (/BODY)
 (/HTML)
-[END FILE=samba-4.1.9+dfsg/packaging/SGI/legal_notice.html]
+[samba-4.1.9+dfsg/packaging/SGI/legal_notice.html]
 
-FILE "samba-4.1.9+dfsg/source4/heimdal/lib/hcrypto/libtommath/LICENSE":
+"samba-4.1.9+dfsg/source4/heimdal/lib/hcrypto/libtommath/LICENSE":
 
-[BEGIN FILE=samba-4.1.9+dfsg/source4/heimdal/lib/hcrypto/libtommath/LICENSE]
+[samba-4.1.9+dfsg/source4/heimdal/lib/hcrypto/libtommath/LICENSE]
 LibTomMath is hereby released into the Public Domain.  
 
 -- Tom St Denis
 
-[END FILE=samba-4.1.9+dfsg/source4/heimdal/lib/hcrypto/libtommath/LICENSE]
+[samba-4.1.9+dfsg/source4/heimdal/lib/hcrypto/libtommath/LICENSE]
 
-FILE "samba-4.1.9+dfsg/source4/setup/ad-schema/licence.txt":
+"samba-4.1.9+dfsg/source4/setup/ad-schema/licence.txt":
 
-[BEGIN FILE=samba-4.1.9+dfsg/source4/setup/ad-schema/licence.txt]
+[samba-4.1.9+dfsg/source4/setup/ad-schema/licence.txt]
 NOTE:
 
 The licence on these schema files is not GPL, or a standard Open
@@ -41453,14 +41453,14 @@ Source licence.  Be careful to redistribute these files as part of
 Samba or 'your implementation', but not alone.
 
 See each file for it's licence from Microsoft.
-[END FILE=samba-4.1.9+dfsg/source4/setup/ad-schema/licence.txt]
+[samba-4.1.9+dfsg/source4/setup/ad-schema/licence.txt]
 
 
 %%% Within package scgi (version 1.13):
 
-FILE "scgi-1.13/debian/copyright":
+"scgi-1.13/debian/copyright":
 
-[BEGIN FILE=scgi-1.13/debian/copyright]
+[scgi-1.13/debian/copyright]
 This is the Debian version of the SCGI package.  The original SCGI
 package is copyrighted by the Corporation for National Research
 Initiatives and by others.  The original source was downloaded from
@@ -41557,11 +41557,11 @@ AGREEMENT.
    agrees to be bound by the terms and conditions of this License
    Agreement.
 
-[END FILE=scgi-1.13/debian/copyright]
+[scgi-1.13/debian/copyright]
 
-FILE "scgi-1.13/doc/LICENSE_110.txt":
+"scgi-1.13/doc/LICENSE_110.txt":
 
-[BEGIN FILE=scgi-1.13/doc/LICENSE_110.txt]
+[scgi-1.13/doc/LICENSE_110.txt]
 CNRI OPEN SOURCE LICENSE AGREEMENT
 
 IMPORTANT: PLEASE READ THE FOLLOWING AGREEMENT CAREFULLY.  BY
@@ -41621,14 +41621,14 @@ AGREEMENT.
    agrees to be bound by the terms and conditions of this License
    Agreement.
 
-[END FILE=scgi-1.13/doc/LICENSE_110.txt]
+[scgi-1.13/doc/LICENSE_110.txt]
 
 
 %%% Within package scowl (version 7.1):
 
-FILE "scowl-7.1/debian/copyright":
+"scowl-7.1/debian/copyright":
 
-[BEGIN FILE=scowl-7.1/debian/copyright]
+[scowl-7.1/debian/copyright]
 This package was debianized by David Coe (davidc@debian.org)
 on Sun, 15 Jun 2003.
 
@@ -41874,11 +41874,11 @@ from the Ispell distribution they are under the Ispell copyright:
   LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
   ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
   POSSIBILITY OF SUCH DAMAGE.
-[END FILE=scowl-7.1/debian/copyright]
+[scowl-7.1/debian/copyright]
 
-FILE "scowl-7.1/r/yawl/LICENSE":
+"scowl-7.1/r/yawl/LICENSE":
 
-[BEGIN FILE=scowl-7.1/r/yawl/LICENSE]
+[scowl-7.1/r/yawl/LICENSE]
                                  LICENSE
 
 The YAWL list, word.list, is in the Public Domain. There are no
@@ -41898,14 +41898,14 @@ Please feel free to use the word list and/or source code in your own
 projects.  It is, in fact, the intent of the author that this package
 inspire word game software for the Linux platform. If you use any
 portion of YAWL, please, as a courtesy, give credit to its author.
-[END FILE=scowl-7.1/r/yawl/LICENSE]
+[scowl-7.1/r/yawl/LICENSE]
 
 
 %%% Within package scrub (version 2.5.2):
 
-FILE "scrub-2.5.2/debian/copyright":
+"scrub-2.5.2/debian/copyright":
 
-[BEGIN FILE=scrub-2.5.2/debian/copyright]
+[scrub-2.5.2/debian/copyright]
 This package was debianized by Chris Taylor (ctaylor@debian.org) on
 Sun, 12 Jul 2009 19:10:29 -0700.
 
@@ -41959,14 +41959,14 @@ be found at `/usr/share/common-licenses/GPL-3'
 
 The Debian packaging is © 2009-2013 Chris Taylor (ctaylor@debian.org), and is
 licensed under the GPL version 3.
-[END FILE=scrub-2.5.2/debian/copyright]
+[scrub-2.5.2/debian/copyright]
 
 
 %%% Within package sgml-base (version 1.26+nmu4):
 
-FILE "sgml-base-1.26+nmu4/debian/copyright":
+"sgml-base-1.26+nmu4/debian/copyright":
 
-[BEGIN FILE=sgml-base-1.26+nmu4/debian/copyright]
+[sgml-base-1.26+nmu4/debian/copyright]
 This the Debian package of sgml-base.  It was assembled by Christian
 Schwarz (schwarz@debian.org).  It is currently maintained by Ardo van
 Rangelrooij (ardo@debian.org).
@@ -41989,14 +41989,14 @@ for more details.
 
 On a Debian system a copy of the GNU General Public Licence can be
 found in the file '/usr/share/common-licenses/GPL'.
-[END FILE=sgml-base-1.26+nmu4/debian/copyright]
+[sgml-base-1.26+nmu4/debian/copyright]
 
 
 %%% Within package shared-mime-info (version 1.3):
 
-FILE "shared-mime-info-1.3/debian/copyright":
+"shared-mime-info-1.3/debian/copyright":
 
-[BEGIN FILE=shared-mime-info-1.3/debian/copyright]
+[shared-mime-info-1.3/debian/copyright]
 This package was debianized by Filip Van Raemdonck (mechanix@debian.org) on
 Thu,  4 Jul 2002 20:59:23 +0200.
 
@@ -42024,14 +42024,14 @@ License:
 On Debian systems, the complete text of the GNU General
 Public License can be found in `/usr/share/common-licenses/GPL'.
 
-[END FILE=shared-mime-info-1.3/debian/copyright]
+[shared-mime-info-1.3/debian/copyright]
 
 
 %%% Within package sharutils (version 4.14):
 
-FILE "sharutils-4.14/debian/copyright":
+"sharutils-4.14/debian/copyright":
 
-[BEGIN FILE=sharutils-4.14/debian/copyright]
+[sharutils-4.14/debian/copyright]
 This is the Debian sharutils package. It was first put together by
 Bill Mitchell (mitchell@mdd.comm.mot.com) and it is currently
 maintained by Santiago Vila (sanvila@debian.org).
@@ -42087,11 +42087,11 @@ in the section entitled "GNU Free Documentation License".
 
 On Debian systems, the complete text of the GNU Free Documentation
 License can be found in `/usr/share/common-licenses/GFDL'.
-[END FILE=sharutils-4.14/debian/copyright]
+[sharutils-4.14/debian/copyright]
 
-FILE "sharutils-4.14/libopts/COPYING.mbsd":
+"sharutils-4.14/libopts/COPYING.mbsd":
 
-[BEGIN FILE=sharutils-4.14/libopts/COPYING.mbsd]
+[sharutils-4.14/libopts/COPYING.mbsd]
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are met:
 
@@ -42118,14 +42118,14 @@ HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
 STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING
 IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 POSSIBILITY OF SUCH DAMAGE.
-[END FILE=sharutils-4.14/libopts/COPYING.mbsd]
+[sharutils-4.14/libopts/COPYING.mbsd]
 
 
 %%% Within package slof (version 20131015+dfsg):
 
-FILE "slof-20131015+dfsg/debian/copyright":
+"slof-20131015+dfsg/debian/copyright":
 
-[BEGIN FILE=slof-20131015+dfsg/debian/copyright]
+[slof-20131015+dfsg/debian/copyright]
 This package was debianized by Aurelien Jarno (aurel32@debian.org) on
 Sat, 15 Sep 2012 17:27:41 +0200.
 
@@ -42168,14 +42168,14 @@ License:
   LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
   OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
   SUCH DAMAGE.
-[END FILE=slof-20131015+dfsg/debian/copyright]
+[slof-20131015+dfsg/debian/copyright]
 
 
 %%% Within package smartmontools (version 6.2+svn3841):
 
-FILE "smartmontools-6.2+svn3841/debian/copyright":
+"smartmontools-6.2+svn3841/debian/copyright":
 
-[BEGIN FILE=smartmontools-6.2+svn3841/debian/copyright]
+[smartmontools-6.2+svn3841/debian/copyright]
 This package was debianized by Guido Guenther (agx@debian.org) on
 Tue, 14 Jan 2003 12:58:00 +0000.
 
@@ -42194,14 +42194,14 @@ License:
 You are free to distribute this software under the terms of the GNU General
 Public License Version 2. The full text of this license can be found in the
 file /usr/share/common-licenses/GPL-2
-[END FILE=smartmontools-6.2+svn3841/debian/copyright]
+[smartmontools-6.2+svn3841/debian/copyright]
 
 
 %%% Within package socat (version 1.7.2.4):
 
-FILE "socat-1.7.2.4/debian/copyright":
+"socat-1.7.2.4/debian/copyright":
 
-[BEGIN FILE=socat-1.7.2.4/debian/copyright]
+[socat-1.7.2.4/debian/copyright]
 This work was packaged for Debian by:
     Chris Taylor (ctaylor@debian.org) on Wed, 10 Feb 2010 14:07:57 -0800
 Was taken over on Sun, 21 Jul 2013 16:19:26 +0200 by:
@@ -42267,11 +42267,11 @@ License:
   written prior permission.  M.I.T. makes no representations about the
   suitability of this software for any purpose.  It is provided "as is"
   without express or implied warranty.
-[END FILE=socat-1.7.2.4/debian/copyright]
+[socat-1.7.2.4/debian/copyright]
 
-FILE "socat-1.7.2.4/COPYING":
+"socat-1.7.2.4/COPYING":
 
-[BEGIN FILE=socat-1.7.2.4/COPYING]
+[socat-1.7.2.4/COPYING]
                     GNU GENERAL PUBLIC LICENSE
                        Version 2, June 1991
 
@@ -42611,11 +42611,11 @@ proprietary programs.  If your program is a subroutine library, you may
 consider it more useful to permit linking proprietary applications with the
 library.  If this is what you want to do, use the GNU Lesser General
 Public License instead of this License.
-[END FILE=socat-1.7.2.4/COPYING]
+[socat-1.7.2.4/COPYING]
 
-FILE "socat-1.7.2.4/COPYING.OpenSSL":
+"socat-1.7.2.4/COPYING.OpenSSL":
 
-[BEGIN FILE=socat-1.7.2.4/COPYING.OpenSSL]
+[socat-1.7.2.4/COPYING.OpenSSL]
 
   LICENSE ISSUES
   ==============
@@ -42743,14 +42743,14 @@ FILE "socat-1.7.2.4/COPYING.OpenSSL":
  * [including the GNU Public Licence.]
  */
 
-[END FILE=socat-1.7.2.4/COPYING.OpenSSL]
+[socat-1.7.2.4/COPYING.OpenSSL]
 
 
 %%% Within package strongswan (version 5.1.3):
 
-FILE "strongswan-5.1.3/debian/copyright":
+"strongswan-5.1.3/debian/copyright":
 
-[BEGIN FILE=strongswan-5.1.3/debian/copyright]
+[strongswan-5.1.3/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: strongswan
 Upstream-Contact: http://strongswan.org/
@@ -45120,14 +45120,14 @@ License: BSD-Young
  derivative of this code cannot be changed.  i.e. this code cannot simply be
  copied and put under another distribution licence
  [including the GNU Public Licence.]
-[END FILE=strongswan-5.1.3/debian/copyright]
+[strongswan-5.1.3/debian/copyright]
 
 
 %%% Within package suds (version 0.4.1):
 
-FILE "suds-0.4.1/debian/copyright":
+"suds-0.4.1/debian/copyright":
 
-[BEGIN FILE=suds-0.4.1/debian/copyright]
+[suds-0.4.1/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 
 Files: *
@@ -45155,14 +45155,14 @@ License: LGPL-3+
  .
  The complete text of the GNU Lesser General Public License
  can be found in /usr/share/common-licenses/LGPL-3 file.
-[END FILE=suds-0.4.1/debian/copyright]
+[suds-0.4.1/debian/copyright]
 
 
 %%% Within package supermin (version 5.1.8):
 
-FILE "supermin-5.1.8/debian/copyright":
+"supermin-5.1.8/debian/copyright":
 
-[BEGIN FILE=supermin-5.1.8/debian/copyright]
+[supermin-5.1.8/debian/copyright]
 This work was packaged for Debian by:
 
     Richard Jones (rjones@redhat.com) on Sun, 24 May 2009 20:23:01 +0100.
@@ -45207,14 +45207,14 @@ you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation; either version 2 of the License, or
 (at your option) any later version.
-[END FILE=supermin-5.1.8/debian/copyright]
+[supermin-5.1.8/debian/copyright]
 
 
 %%% Within package talloc (version 2.1.1):
 
-FILE "talloc-2.1.1/debian/copyright":
+"talloc-2.1.1/debian/copyright":
 
-[BEGIN FILE=talloc-2.1.1/debian/copyright]
+[talloc-2.1.1/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: talloc
 Upstream-Contact: Samba Developers (samba-technical@samba.org)
@@ -45326,14 +45326,14 @@ License:
  LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
  OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  SUCH DAMAGE.
-[END FILE=talloc-2.1.1/debian/copyright]
+[talloc-2.1.1/debian/copyright]
 
 
 %%% Within package tcl8.6 (version 8.6.1):
 
-FILE "tcl8.6-8.6.1/debian/copyright":
+"tcl8.6-8.6.1/debian/copyright":
 
-[BEGIN FILE=tcl8.6-8.6.1/debian/copyright]
+[tcl8.6-8.6.1/debian/copyright]
 This package was originally debianized by David Engel (david@debiang.org)
 from sources obtained at http://prdownloads.sourceforge.net/tcl
 
@@ -45486,11 +45486,11 @@ compat/dlfcn.h and unix/tclLoadAix.c:
  *  for any results of using the software, alterations are clearly marked
  *  as such, and this notice is not modified.
 
-[END FILE=tcl8.6-8.6.1/debian/copyright]
+[tcl8.6-8.6.1/debian/copyright]
 
-FILE "tcl8.6-8.6.1/compat/license.terms":
+"tcl8.6-8.6.1/compat/license.terms":
 
-[BEGIN FILE=tcl8.6-8.6.1/compat/license.terms]
+[tcl8.6-8.6.1/compat/license.terms]
 This software is copyrighted by the Regents of the University of
 California, Sun Microsystems, Inc., Scriptics Corporation, ActiveState
 Corporation and other parties.  The following terms apply to all files
@@ -45531,11 +45531,11 @@ Government shall have only "Restricted Rights" as defined in Clause
 authors grant the U.S. Government and others acting in its behalf
 permission to use and distribute the software in accordance with the
 terms specified in this license. 
-[END FILE=tcl8.6-8.6.1/compat/license.terms]
+[tcl8.6-8.6.1/compat/license.terms]
 
-FILE "tcl8.6-8.6.1/compat/zlib/contrib/dotzlib/LICENSE_1_0.txt":
+"tcl8.6-8.6.1/compat/zlib/contrib/dotzlib/LICENSE_1_0.txt":
 
-[BEGIN FILE=tcl8.6-8.6.1/compat/zlib/contrib/dotzlib/LICENSE_1_0.txt]
+[tcl8.6-8.6.1/compat/zlib/contrib/dotzlib/LICENSE_1_0.txt]
 Boost Software License - Version 1.0 - August 17th, 2003
 
 
@@ -45580,11 +45580,11 @@ FOR ANY DAMAGES OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE,
 
 ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 
-DEALINGS IN THE SOFTWARE.[END FILE=tcl8.6-8.6.1/compat/zlib/contrib/dotzlib/LICENSE_1_0.txt]
+DEALINGS IN THE SOFTWARE.[tcl8.6-8.6.1/compat/zlib/contrib/dotzlib/LICENSE_1_0.txt]
 
-FILE "tcl8.6-8.6.1/doc/license.terms":
+"tcl8.6-8.6.1/doc/license.terms":
 
-[BEGIN FILE=tcl8.6-8.6.1/doc/license.terms]
+[tcl8.6-8.6.1/doc/license.terms]
 This software is copyrighted by the Regents of the University of
 California, Sun Microsystems, Inc., Scriptics Corporation, ActiveState
 Corporation and other parties.  The following terms apply to all files
@@ -45625,11 +45625,11 @@ Government shall have only "Restricted Rights" as defined in Clause
 authors grant the U.S. Government and others acting in its behalf
 permission to use and distribute the software in accordance with the
 terms specified in this license. 
-[END FILE=tcl8.6-8.6.1/doc/license.terms]
+[tcl8.6-8.6.1/doc/license.terms]
 
-FILE "tcl8.6-8.6.1/library/license.terms":
+"tcl8.6-8.6.1/library/license.terms":
 
-[BEGIN FILE=tcl8.6-8.6.1/library/license.terms]
+[tcl8.6-8.6.1/library/license.terms]
 This software is copyrighted by the Regents of the University of
 California, Sun Microsystems, Inc., Scriptics Corporation, ActiveState
 Corporation and other parties.  The following terms apply to all files
@@ -45670,11 +45670,11 @@ Government shall have only "Restricted Rights" as defined in Clause
 authors grant the U.S. Government and others acting in its behalf
 permission to use and distribute the software in accordance with the
 terms specified in this license. 
-[END FILE=tcl8.6-8.6.1/library/license.terms]
+[tcl8.6-8.6.1/library/license.terms]
 
-FILE "tcl8.6-8.6.1/license.terms":
+"tcl8.6-8.6.1/license.terms":
 
-[BEGIN FILE=tcl8.6-8.6.1/license.terms]
+[tcl8.6-8.6.1/license.terms]
 This software is copyrighted by the Regents of the University of
 California, Sun Microsystems, Inc., Scriptics Corporation, ActiveState
 Corporation and other parties.  The following terms apply to all files
@@ -45715,11 +45715,11 @@ Government shall have only "Restricted Rights" as defined in Clause
 authors grant the U.S. Government and others acting in its behalf
 permission to use and distribute the software in accordance with the
 terms specified in this license. 
-[END FILE=tcl8.6-8.6.1/license.terms]
+[tcl8.6-8.6.1/license.terms]
 
-FILE "tcl8.6-8.6.1/macosx/license.terms":
+"tcl8.6-8.6.1/macosx/license.terms":
 
-[BEGIN FILE=tcl8.6-8.6.1/macosx/license.terms]
+[tcl8.6-8.6.1/macosx/license.terms]
 This software is copyrighted by the Regents of the University of
 California, Sun Microsystems, Inc., Scriptics Corporation, ActiveState
 Corporation and other parties.  The following terms apply to all files
@@ -45760,11 +45760,11 @@ Government shall have only "Restricted Rights" as defined in Clause
 authors grant the U.S. Government and others acting in its behalf
 permission to use and distribute the software in accordance with the
 terms specified in this license. 
-[END FILE=tcl8.6-8.6.1/macosx/license.terms]
+[tcl8.6-8.6.1/macosx/license.terms]
 
-FILE "tcl8.6-8.6.1/win/license.terms":
+"tcl8.6-8.6.1/win/license.terms":
 
-[BEGIN FILE=tcl8.6-8.6.1/win/license.terms]
+[tcl8.6-8.6.1/win/license.terms]
 This software is copyrighted by the Regents of the University of
 California, Sun Microsystems, Inc., Scriptics Corporation, ActiveState
 Corporation and other parties.  The following terms apply to all files
@@ -45805,14 +45805,14 @@ Government shall have only "Restricted Rights" as defined in Clause
 authors grant the U.S. Government and others acting in its behalf
 permission to use and distribute the software in accordance with the
 terms specified in this license. 
-[END FILE=tcl8.6-8.6.1/win/license.terms]
+[tcl8.6-8.6.1/win/license.terms]
 
 
 %%% Within package tdb (version 1.3.0):
 
-FILE "tdb-1.3.0/debian/copyright":
+"tdb-1.3.0/debian/copyright":
 
-[BEGIN FILE=tdb-1.3.0/debian/copyright]
+[tdb-1.3.0/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: tdb
 Upstream-Contact: Rusty Russell (rusty@samba.org)
@@ -45921,14 +45921,14 @@ License:
  LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
  OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  SUCH DAMAGE.
-[END FILE=tdb-1.3.0/debian/copyright]
+[tdb-1.3.0/debian/copyright]
 
 
 %%% Within package tevent (version 0.9.21):
 
-FILE "tevent-0.9.21/debian/copyright":
+"tevent-0.9.21/debian/copyright":
 
-[BEGIN FILE=tevent-0.9.21/debian/copyright]
+[tevent-0.9.21/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: tevent
 Upstream-Contact: Samba Developers (samba-technical@samba.org)
@@ -46053,14 +46053,14 @@ Copyright: 1996-2000 Free Software Foundation, Inc.
 License: LGPL-3+
  On Debian systems the full text of the GNU Lesser General Public License can
  be found in the `/usr/share/common-licenses/LGPL-3' file.
-[END FILE=tevent-0.9.21/debian/copyright]
+[tevent-0.9.21/debian/copyright]
 
 
 %%% Within package tidy (version 20091223cvs):
 
-FILE "tidy-20091223cvs/debian/copyright":
+"tidy-20091223cvs/debian/copyright":
 
-[BEGIN FILE=tidy-20091223cvs/debian/copyright]
+[tidy-20091223cvs/debian/copyright]
 This package was redebianized by Jason Thomas (jason@debian.org) on
 
 It was downloaded from http://tidy.sourceforge.net/
@@ -46112,14 +46112,14 @@ Copyright:
   as a component for supporting the Hypertext Markup Language in
   commercial products. If you use this source code in a product,
   acknowledgment is not required but would be appreciated.
-[END FILE=tidy-20091223cvs/debian/copyright]
+[tidy-20091223cvs/debian/copyright]
 
 
 %%% Within package tk8.6 (version 8.6.1):
 
-FILE "tk8.6-8.6.1/debian/copyright":
+"tk8.6-8.6.1/debian/copyright":
 
-[BEGIN FILE=tk8.6-8.6.1/debian/copyright]
+[tk8.6-8.6.1/debian/copyright]
 This package was debianized by David Engel (david@debiang.org)
 from sources obtained at http://prdownloads.sourceforge.net/tcl
 
@@ -46200,11 +46200,11 @@ Government shall have only "Restricted Rights" as defined in Clause
 authors grant the U.S. Government and others acting in its behalf
 permission to use and distribute the software in accordance with the
 terms specified in this license.
-[END FILE=tk8.6-8.6.1/debian/copyright]
+[tk8.6-8.6.1/debian/copyright]
 
-FILE "tk8.6-8.6.1/compat/license.terms":
+"tk8.6-8.6.1/compat/license.terms":
 
-[BEGIN FILE=tk8.6-8.6.1/compat/license.terms]
+[tk8.6-8.6.1/compat/license.terms]
 This software is copyrighted by the Regents of the University of
 California, Sun Microsystems, Inc., Scriptics Corporation, ActiveState
 Corporation, Apple Inc. and other parties.  The following terms apply to
@@ -46245,11 +46245,11 @@ Government shall have only "Restricted Rights" as defined in Clause
 authors grant the U.S. Government and others acting in its behalf
 permission to use and distribute the software in accordance with the
 terms specified in this license.
-[END FILE=tk8.6-8.6.1/compat/license.terms]
+[tk8.6-8.6.1/compat/license.terms]
 
-FILE "tk8.6-8.6.1/doc/license.terms":
+"tk8.6-8.6.1/doc/license.terms":
 
-[BEGIN FILE=tk8.6-8.6.1/doc/license.terms]
+[tk8.6-8.6.1/doc/license.terms]
 This software is copyrighted by the Regents of the University of
 California, Sun Microsystems, Inc., Scriptics Corporation, ActiveState
 Corporation, Apple Inc. and other parties.  The following terms apply to
@@ -46290,11 +46290,11 @@ Government shall have only "Restricted Rights" as defined in Clause
 authors grant the U.S. Government and others acting in its behalf
 permission to use and distribute the software in accordance with the
 terms specified in this license.
-[END FILE=tk8.6-8.6.1/doc/license.terms]
+[tk8.6-8.6.1/doc/license.terms]
 
-FILE "tk8.6-8.6.1/library/demos/license.terms":
+"tk8.6-8.6.1/library/demos/license.terms":
 
-[BEGIN FILE=tk8.6-8.6.1/library/demos/license.terms]
+[tk8.6-8.6.1/library/demos/license.terms]
 This software is copyrighted by the Regents of the University of
 California, Sun Microsystems, Inc., Scriptics Corporation, ActiveState
 Corporation, Apple Inc. and other parties.  The following terms apply to
@@ -46335,11 +46335,11 @@ Government shall have only "Restricted Rights" as defined in Clause
 authors grant the U.S. Government and others acting in its behalf
 permission to use and distribute the software in accordance with the
 terms specified in this license.
-[END FILE=tk8.6-8.6.1/library/demos/license.terms]
+[tk8.6-8.6.1/library/demos/license.terms]
 
-FILE "tk8.6-8.6.1/library/license.terms":
+"tk8.6-8.6.1/library/license.terms":
 
-[BEGIN FILE=tk8.6-8.6.1/library/license.terms]
+[tk8.6-8.6.1/library/license.terms]
 This software is copyrighted by the Regents of the University of
 California, Sun Microsystems, Inc., Scriptics Corporation, ActiveState
 Corporation, Apple Inc. and other parties.  The following terms apply to
@@ -46380,11 +46380,11 @@ Government shall have only "Restricted Rights" as defined in Clause
 authors grant the U.S. Government and others acting in its behalf
 permission to use and distribute the software in accordance with the
 terms specified in this license.
-[END FILE=tk8.6-8.6.1/library/license.terms]
+[tk8.6-8.6.1/library/license.terms]
 
-FILE "tk8.6-8.6.1/license.terms":
+"tk8.6-8.6.1/license.terms":
 
-[BEGIN FILE=tk8.6-8.6.1/license.terms]
+[tk8.6-8.6.1/license.terms]
 This software is copyrighted by the Regents of the University of
 California, Sun Microsystems, Inc., Scriptics Corporation, ActiveState
 Corporation, Apple Inc. and other parties.  The following terms apply to
@@ -46425,11 +46425,11 @@ Government shall have only "Restricted Rights" as defined in Clause
 authors grant the U.S. Government and others acting in its behalf
 permission to use and distribute the software in accordance with the
 terms specified in this license.
-[END FILE=tk8.6-8.6.1/license.terms]
+[tk8.6-8.6.1/license.terms]
 
-FILE "tk8.6-8.6.1/macosx/license.terms":
+"tk8.6-8.6.1/macosx/license.terms":
 
-[BEGIN FILE=tk8.6-8.6.1/macosx/license.terms]
+[tk8.6-8.6.1/macosx/license.terms]
 This software is copyrighted by the Regents of the University of
 California, Sun Microsystems, Inc., Scriptics Corporation, ActiveState
 Corporation, Apple Inc. and other parties.  The following terms apply to
@@ -46470,11 +46470,11 @@ Government shall have only "Restricted Rights" as defined in Clause
 authors grant the U.S. Government and others acting in its behalf
 permission to use and distribute the software in accordance with the
 terms specified in this license.
-[END FILE=tk8.6-8.6.1/macosx/license.terms]
+[tk8.6-8.6.1/macosx/license.terms]
 
-FILE "tk8.6-8.6.1/unix/license.terms":
+"tk8.6-8.6.1/unix/license.terms":
 
-[BEGIN FILE=tk8.6-8.6.1/unix/license.terms]
+[tk8.6-8.6.1/unix/license.terms]
 This software is copyrighted by the Regents of the University of
 California, Sun Microsystems, Inc., Scriptics Corporation, ActiveState
 Corporation, Apple Inc. and other parties.  The following terms apply to
@@ -46515,11 +46515,11 @@ Government shall have only "Restricted Rights" as defined in Clause
 authors grant the U.S. Government and others acting in its behalf
 permission to use and distribute the software in accordance with the
 terms specified in this license.
-[END FILE=tk8.6-8.6.1/unix/license.terms]
+[tk8.6-8.6.1/unix/license.terms]
 
-FILE "tk8.6-8.6.1/win/license.terms":
+"tk8.6-8.6.1/win/license.terms":
 
-[BEGIN FILE=tk8.6-8.6.1/win/license.terms]
+[tk8.6-8.6.1/win/license.terms]
 This software is copyrighted by the Regents of the University of
 California, Sun Microsystems, Inc., Scriptics Corporation, ActiveState
 Corporation, Apple Inc. and other parties.  The following terms apply to
@@ -46560,11 +46560,11 @@ Government shall have only "Restricted Rights" as defined in Clause
 authors grant the U.S. Government and others acting in its behalf
 permission to use and distribute the software in accordance with the
 terms specified in this license.
-[END FILE=tk8.6-8.6.1/win/license.terms]
+[tk8.6-8.6.1/win/license.terms]
 
-FILE "tk8.6-8.6.1/xlib/license.terms":
+"tk8.6-8.6.1/xlib/license.terms":
 
-[BEGIN FILE=tk8.6-8.6.1/xlib/license.terms]
+[tk8.6-8.6.1/xlib/license.terms]
 This software is copyrighted by the Regents of the University of
 California, Sun Microsystems, Inc., Scriptics Corporation, ActiveState
 Corporation, Apple Inc. and other parties.  The following terms apply to
@@ -46605,11 +46605,11 @@ Government shall have only "Restricted Rights" as defined in Clause
 authors grant the U.S. Government and others acting in its behalf
 permission to use and distribute the software in accordance with the
 terms specified in this license.
-[END FILE=tk8.6-8.6.1/xlib/license.terms]
+[tk8.6-8.6.1/xlib/license.terms]
 
-FILE "tk8.6-8.6.1/xlib/X11/license.terms":
+"tk8.6-8.6.1/xlib/X11/license.terms":
 
-[BEGIN FILE=tk8.6-8.6.1/xlib/X11/license.terms]
+[tk8.6-8.6.1/xlib/X11/license.terms]
 This software is copyrighted by the Regents of the University of
 California, Sun Microsystems, Inc., Scriptics Corporation, ActiveState
 Corporation, Apple Inc. and other parties.  The following terms apply to
@@ -46650,14 +46650,14 @@ Government shall have only "Restricted Rights" as defined in Clause
 authors grant the U.S. Government and others acting in its behalf
 permission to use and distribute the software in accordance with the
 terms specified in this license.
-[END FILE=tk8.6-8.6.1/xlib/X11/license.terms]
+[tk8.6-8.6.1/xlib/X11/license.terms]
 
 
 %%% Within package twisted (version 13.2.0):
 
-FILE "twisted-13.2.0/debian/copyright":
+"twisted-13.2.0/debian/copyright":
 
-[BEGIN FILE=twisted-13.2.0/debian/copyright]
+[twisted-13.2.0/debian/copyright]
 This package was debianized by Moshe Zadka (moshez@debian.org)
 on Sat, 21 Jul 2001 09:35:33 +0300,
 updated for 2.0 by Matthias Klose (doko@debian.org)
@@ -46765,14 +46765,14 @@ products or services of Licensee, or any third party.
 8. By copying, installing or otherwise using Python 2.3, Licensee
 agrees to be bound by the terms and conditions of this License
 Agreement.
-[END FILE=twisted-13.2.0/debian/copyright]
+[twisted-13.2.0/debian/copyright]
 
 
 %%% Within package unittest2 (version 0.5.1):
 
-FILE "unittest2-0.5.1/debian/copyright":
+"unittest2-0.5.1/debian/copyright":
 
-[BEGIN FILE=unittest2-0.5.1/debian/copyright]
+[unittest2-0.5.1/debian/copyright]
 This work was packaged for Debian by:
 
     Sandro Tosi (morph@debian.org) on Sun, 09 May 2010 18:38:34 +0200
@@ -46819,14 +46819,14 @@ setup.py:
     # Copyright (C) 2010 Michael Foord (fuzzyman@voidspace.org.uk)
     # This software is licensed under the terms of the BSD license.
     # http://www.voidspace.org.uk/python/license.shtml
-[END FILE=unittest2-0.5.1/debian/copyright]
+[unittest2-0.5.1/debian/copyright]
 
 
 %%% Within package usbutils (version 007):
 
-FILE "usbutils-007/debian/copyright":
+"usbutils-007/debian/copyright":
 
-[BEGIN FILE=usbutils-007/debian/copyright]
+[usbutils-007/debian/copyright]
 This package was debianized by Christopher L Cheney (ccheney@debian.org) on
 Wed, 13 Jun 2001 11:20:06 -0500.
 
@@ -46863,14 +46863,14 @@ License:
 On Debian systems, the complete text of the GNU General Public
 License, version 2, can be found in /usr/share/common-licenses/GPL-2.
 
-[END FILE=usbutils-007/debian/copyright]
+[usbutils-007/debian/copyright]
 
 
 %%% Within package utidylib (version 0.2):
 
-FILE "utidylib-0.2/debian/copyright":
+"utidylib-0.2/debian/copyright":
 
-[BEGIN FILE=utidylib-0.2/debian/copyright]
+[utidylib-0.2/debian/copyright]
 This package was originally debianized by Chad Walstrom (chewie@debian.org)
 on Mon, 20 Dec 2004 15:18:53 -0600
 
@@ -46900,14 +46900,14 @@ License:
   LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
   OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
   WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-[END FILE=utidylib-0.2/debian/copyright]
+[utidylib-0.2/debian/copyright]
 
 
 %%% Within package vbetool (version 1.1):
 
-FILE "vbetool-1.1/debian/copyright":
+"vbetool-1.1/debian/copyright":
 
-[BEGIN FILE=vbetool-1.1/debian/copyright]
+[vbetool-1.1/debian/copyright]
 Author: Matthew Garrett (mjg59@srcf.ucam.org)
 Download: http://www.codon.org.uk/~mjg59/vbetool/
 
@@ -46965,14 +46965,14 @@ License: GPL-2+.
 
 On Debian systems, the complete text of the GNU General Public License
 can be found in `/usr/share/common-licenses/GPL-2'.
-[END FILE=vbetool-1.1/debian/copyright]
+[vbetool-1.1/debian/copyright]
 
 
 %%% Within package wheel (version 0.23.0):
 
-FILE "wheel-0.23.0/debian/copyright":
+"wheel-0.23.0/debian/copyright":
 
-[BEGIN FILE=wheel-0.23.0/debian/copyright]
+[wheel-0.23.0/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: wheel
 Source: https://pypi.python.org/pypi/wheel
@@ -47020,14 +47020,14 @@ License: GPL-3
  .
  On Debian-based systems the full text of the GPL, version 3, can be found at
  /usr/share/common-licenses/GPL-3.
-[END FILE=wheel-0.23.0/debian/copyright]
+[wheel-0.23.0/debian/copyright]
 
 
 %%% Within package xauth (version 1.0.7):
 
-FILE "xauth-1.0.7/debian/copyright":
+"xauth-1.0.7/debian/copyright":
 
-[BEGIN FILE=xauth-1.0.7/debian/copyright]
+[xauth-1.0.7/debian/copyright]
 This package was downloaded from
 http://xorg.freedesktop.org/releases/individual/app/
 
@@ -47055,14 +47055,14 @@ in this Software without prior written authorization from The Open Group.
  * *
  * Author:  Jim Fulton, MIT X Consortium
  */
-[END FILE=xauth-1.0.7/debian/copyright]
+[xauth-1.0.7/debian/copyright]
 
 
 %%% Within package xfsprogs (version 3.2.0):
 
-FILE "xfsprogs-3.2.0/debian/copyright":
+"xfsprogs-3.2.0/debian/copyright":
 
-[BEGIN FILE=xfsprogs-3.2.0/debian/copyright]
+[xfsprogs-3.2.0/debian/copyright]
 This package was debianized by Nathan Scott nathans@debian.org on
 Sun, 19 Nov 2000 07:37:09 -0500.
 
@@ -47082,14 +47082,14 @@ of the GNU Lesser General Public License.
 On Debian systems, refer to /usr/share/common-licenses/LGPL-2.1
 for the complete text of the GNU Lesser General Public License.
 
-[END FILE=xfsprogs-3.2.0/debian/copyright]
+[xfsprogs-3.2.0/debian/copyright]
 
 
 %%% Within package xft (version 2.3.1):
 
-FILE "xft-2.3.1/debian/copyright":
+"xft-2.3.1/debian/copyright":
 
-[BEGIN FILE=xft-2.3.1/debian/copyright]
+[xft-2.3.1/debian/copyright]
 This package was downloaded from
 http://xorg.freedesktop.org/releases/individual/lib/
 
@@ -47121,14 +47121,14 @@ CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE,
 DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
 TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
 PERFORMANCE OF THIS SOFTWARE.
-[END FILE=xft-2.3.1/debian/copyright]
+[xft-2.3.1/debian/copyright]
 
 
 %%% Within package xkeyboard-config (version 2.12):
 
-FILE "xkeyboard-config-2.12/debian/copyright":
+"xkeyboard-config-2.12/debian/copyright":
 
-[BEGIN FILE=xkeyboard-config-2.12/debian/copyright]
+[xkeyboard-config-2.12/debian/copyright]
 This package was debianized by Denis Barbier (barbier@debian.org) on
 Tue, 10 Oct 2006 01:16:55 +0200
 
@@ -47335,14 +47335,14 @@ is left intact and the author of the modification summarizes
 the changes in this header.
 
 This file is distributed without any expressed or implied warranty.
-[END FILE=xkeyboard-config-2.12/debian/copyright]
+[xkeyboard-config-2.12/debian/copyright]
 
 
 %%% Within package xml-core (version 0.13+nmu2):
 
-FILE "xml-core-0.13+nmu2/debian/copyright":
+"xml-core-0.13+nmu2/debian/copyright":
 
-[BEGIN FILE=xml-core-0.13+nmu2/debian/copyright]
+[xml-core-0.13+nmu2/debian/copyright]
 This is the Debian package of xml-core.  It is assembled and maintained
 by Ardo van Rangelrooij (ardo@debian.org) and the Debian XML/SGML group.
 
@@ -47375,14 +47375,14 @@ License and warranty:
 
 On a Debian system a copy of the GNU General Public Licence can be
 found in the file '/usr/share/common-licenses/GPL'.
-[END FILE=xml-core-0.13+nmu2/debian/copyright]
+[xml-core-0.13+nmu2/debian/copyright]
 
 
 %%% Within package xorg (version 7.7+7):
 
-FILE "xorg-7.7+7/debian/copyright":
+"xorg-7.7+7/debian/copyright":
 
-[BEGIN FILE=xorg-7.7+7/debian/copyright]
+[xorg-7.7+7/debian/copyright]
 Source Package: xorg
 Debian/Ubuntu package authors: Branden Robinson, Fabio M. Di Nitto, Daniel
                                Stone and others
@@ -47480,14 +47480,14 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
-[END FILE=xorg-7.7+7/debian/copyright]
+[xorg-7.7+7/debian/copyright]
 
 
 %%% Within package zerofree (version 1.0.3):
 
-FILE "zerofree-1.0.3/debian/copyright":
+"zerofree-1.0.3/debian/copyright":
 
-[BEGIN FILE=zerofree-1.0.3/debian/copyright]
+[zerofree-1.0.3/debian/copyright]
 X-Format-Specification: http://wiki.debian.org/Proposals/CopyrightFormat
 X-Debianized-By: Thibaut Paumard (paumard@users.sourceforge.net)
 X-Debianized-Date: Wed, 06 Feb 2008 10:51:16 +0100
@@ -47515,14 +47515,14 @@ X-Comment: On Debian systems, the complete text of the GNU General
 Files: debian/*
 Copyright: © 2008, Thibaut Paumard (paumard@users.sourceforge.net)
 License: GPL-2+
-[END FILE=zerofree-1.0.3/debian/copyright]
+[zerofree-1.0.3/debian/copyright]
 
 
 %%% Within package zfs-fuse (version 0.7.0):
 
-FILE "zfs-fuse-0.7.0/debian/copyright":
+"zfs-fuse-0.7.0/debian/copyright":
 
-[BEGIN FILE=zfs-fuse-0.7.0/debian/copyright]
+[zfs-fuse-0.7.0/debian/copyright]
 This package was debianized by Bryan Donlan (bdonlan@gmail.com) on
 Tue, 17 Apr 2007 16:24:53 -0400. It was later modified by Filip Brcic
 (brcha@gna.org) and Sébastien Delafond (seb@debian.org).
@@ -47943,32 +47943,32 @@ COMMON DEVELOPMENT AND DISTRIBUTION LICENSE (CDDL) Version 1.0
       distribute such responsibility on an equitable basis. Nothing
       herein is intended or shall be deemed to constitute any admission
       of liability.
-[END FILE=zfs-fuse-0.7.0/debian/copyright]
+[zfs-fuse-0.7.0/debian/copyright]
 
-FILE "zfs-fuse-0.7.0/src/lib/libumem/COPYING":
+"zfs-fuse-0.7.0/src/lib/libumem/COPYING":
 
-[BEGIN FILE=zfs-fuse-0.7.0/src/lib/libumem/COPYING]
+[zfs-fuse-0.7.0/src/lib/libumem/COPYING]
 Please see COPYRIGHT and OPENSOLARIS.LICENSE for the copyright
 and license details.
-[END FILE=zfs-fuse-0.7.0/src/lib/libumem/COPYING]
+[zfs-fuse-0.7.0/src/lib/libumem/COPYING]
 
-FILE "zfs-fuse-0.7.0/src/lib/libumem/COPYRIGHT":
+"zfs-fuse-0.7.0/src/lib/libumem/COPYRIGHT":
 
-[BEGIN FILE=zfs-fuse-0.7.0/src/lib/libumem/COPYRIGHT]
+[zfs-fuse-0.7.0/src/lib/libumem/COPYRIGHT]
 The bulk of the library is Copyright 2004 Sun Microsystems, Inc.
 Portions are Copyright 2006-2008 Message Systems, Inc.
 
 The library is distributed under the terms of the CDDL.
 See the file OPENSOLARIS.LICENSE for more information.
 
-[END FILE=zfs-fuse-0.7.0/src/lib/libumem/COPYRIGHT]
+[zfs-fuse-0.7.0/src/lib/libumem/COPYRIGHT]
 
 
 %%% Within package zope.interface (version 4.1.1):
 
-FILE "zope.interface-4.1.1/debian/copyright":
+"zope.interface-4.1.1/debian/copyright":
 
-[BEGIN FILE=zope.interface-4.1.1/debian/copyright]
+[zope.interface-4.1.1/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: zope.interface
 Upstream-Contact: Zope Foundation and Contributors (zope-dev@zope.org)
@@ -48022,15 +48022,15 @@ License: Zope-2.1
  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-[END FILE=zope.interface-4.1.1/debian/copyright]
+[zope.interface-4.1.1/debian/copyright]
 
 
 The following open source licenses are common to most packages listed above:
 
 
-FILE "/usr/share/common-licenses/Apache-2.0":
+"/usr/share/common-licenses/Apache-2.0":
 
-[BEGIN FILE=/usr/share/common-licenses/Apache-2.0]
+[/usr/share/common-licenses/Apache-2.0]
 
                                  Apache License
                            Version 2.0, January 2004
@@ -48233,11 +48233,11 @@ FILE "/usr/share/common-licenses/Apache-2.0":
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
-[END FILE=/usr/share/common-licenses/Apache-2.0]
+[/usr/share/common-licenses/Apache-2.0]
 
-FILE "/usr/share/common-licenses/Artistic":
+"/usr/share/common-licenses/Artistic":
 
-[BEGIN FILE=/usr/share/common-licenses/Artistic]
+[/usr/share/common-licenses/Artistic]
 
 
 
@@ -48369,11 +48369,11 @@ IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED
 WARRANTIES OF MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE.
 
 				The End
-[END FILE=/usr/share/common-licenses/Artistic]
+[/usr/share/common-licenses/Artistic]
 
-FILE "/usr/share/common-licenses/BSD":
+"/usr/share/common-licenses/BSD":
 
-[BEGIN FILE=/usr/share/common-licenses/BSD]
+[/usr/share/common-licenses/BSD]
 Copyright (c) The Regents of the University of California.
 All rights reserved.
 
@@ -48400,11 +48400,11 @@ HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
 LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
 OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
 SUCH DAMAGE.
-[END FILE=/usr/share/common-licenses/BSD]
+[/usr/share/common-licenses/BSD]
 
-FILE "/usr/share/common-licenses/GFDL-1.2":
+"/usr/share/common-licenses/GFDL-1.2":
 
-[BEGIN FILE=/usr/share/common-licenses/GFDL-1.2]
+[/usr/share/common-licenses/GFDL-1.2]
                 GNU Free Documentation License
                   Version 1.2, November 2002
 
@@ -48802,11 +48802,11 @@ If your document contains nontrivial examples of program code, we
 recommend releasing these examples in parallel under your choice of
 free software license, such as the GNU General Public License,
 to permit their use in free software.
-[END FILE=/usr/share/common-licenses/GFDL-1.2]
+[/usr/share/common-licenses/GFDL-1.2]
 
-FILE "/usr/share/common-licenses/GFDL-1.3":
+"/usr/share/common-licenses/GFDL-1.3":
 
-[BEGIN FILE=/usr/share/common-licenses/GFDL-1.3]
+[/usr/share/common-licenses/GFDL-1.3]
 
                 GNU Free Documentation License
                  Version 1.3, 3 November 2008
@@ -49258,11 +49258,11 @@ If your document contains nontrivial examples of program code, we
 recommend releasing these examples in parallel under your choice of
 free software license, such as the GNU General Public License,
 to permit their use in free software.
-[END FILE=/usr/share/common-licenses/GFDL-1.3]
+[/usr/share/common-licenses/GFDL-1.3]
 
-FILE "/usr/share/common-licenses/GPL-1":
+"/usr/share/common-licenses/GPL-1":
 
-[BEGIN FILE=/usr/share/common-licenses/GPL-1]
+[/usr/share/common-licenses/GPL-1]
 
                     GNU GENERAL PUBLIC LICENSE
                      Version 1, February 1989
@@ -49514,11 +49514,11 @@ necessary.  Here a sample; alter the names:
   Ty Coon, President of Vice
 
 That's all there is to it!
-[END FILE=/usr/share/common-licenses/GPL-1]
+[/usr/share/common-licenses/GPL-1]
 
-FILE "/usr/share/common-licenses/GPL-2":
+"/usr/share/common-licenses/GPL-2":
 
-[BEGIN FILE=/usr/share/common-licenses/GPL-2]
+[/usr/share/common-licenses/GPL-2]
                     GNU GENERAL PUBLIC LICENSE
                        Version 2, June 1991
 
@@ -49858,11 +49858,11 @@ proprietary programs.  If your program is a subroutine library, you may
 consider it more useful to permit linking proprietary applications with the
 library.  If this is what you want to do, use the GNU Lesser General
 Public License instead of this License.
-[END FILE=/usr/share/common-licenses/GPL-2]
+[/usr/share/common-licenses/GPL-2]
 
-FILE "/usr/share/common-licenses/GPL-3":
+"/usr/share/common-licenses/GPL-3":
 
-[BEGIN FILE=/usr/share/common-licenses/GPL-3]
+[/usr/share/common-licenses/GPL-3]
                     GNU GENERAL PUBLIC LICENSE
                        Version 3, 29 June 2007
 
@@ -50537,11 +50537,11 @@ may consider it more useful to permit linking proprietary applications with
 the library.  If this is what you want to do, use the GNU Lesser General
 Public License instead of this License.  But first, please read
 (http://www.gnu.org/philosophy/why-not-lgpl.html).
-[END FILE=/usr/share/common-licenses/GPL-3]
+[/usr/share/common-licenses/GPL-3]
 
-FILE "/usr/share/common-licenses/LGPL-2":
+"/usr/share/common-licenses/LGPL-2":
 
-[BEGIN FILE=/usr/share/common-licenses/LGPL-2]
+[/usr/share/common-licenses/LGPL-2]
                   GNU LIBRARY GENERAL PUBLIC LICENSE
                        Version 2, June 1991
 
@@ -51023,11 +51023,11 @@ necessary.  Here is a sample; alter the names:
   Ty Coon, President of Vice
 
 That's all there is to it!
-[END FILE=/usr/share/common-licenses/LGPL-2]
+[/usr/share/common-licenses/LGPL-2]
 
-FILE "/usr/share/common-licenses/LGPL-2.1":
+"/usr/share/common-licenses/LGPL-2.1":
 
-[BEGIN FILE=/usr/share/common-licenses/LGPL-2.1]
+[/usr/share/common-licenses/LGPL-2.1]
                   GNU LESSER GENERAL PUBLIC LICENSE
                        Version 2.1, February 1999
 
@@ -51530,11 +51530,11 @@ necessary.  Here is a sample; alter the names:
   Ty Coon, President of Vice
 
 That's all there is to it!
-[END FILE=/usr/share/common-licenses/LGPL-2.1]
+[/usr/share/common-licenses/LGPL-2.1]
 
-FILE "/usr/share/common-licenses/LGPL-3":
+"/usr/share/common-licenses/LGPL-3":
 
-[BEGIN FILE=/usr/share/common-licenses/LGPL-3]
+[/usr/share/common-licenses/LGPL-3]
                    GNU LESSER GENERAL PUBLIC LICENSE
                        Version 3, 29 June 2007
 
@@ -51700,9 +51700,9 @@ whether future versions of the GNU Lesser General Public License shall
 apply, that proxy's public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
-[END FILE=/usr/share/common-licenses/LGPL-3]
+[/usr/share/common-licenses/LGPL-3]
 </code></pre>
-
+<p>The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.</p>
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 <p style="font-size: small;"> <a href="/helion/"> &#171; Return to HP Helion  home </a> </p>
