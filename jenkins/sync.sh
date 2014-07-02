@@ -3,7 +3,7 @@
 # This script selects a ports and updates the web sites
 #
 
-echo running documentation/jenkins/sync.sh
+echo "running documentation/jenkins/sync.sh"
 SERVERS_DIR=$(pwd)/servers
 mkdir -p ${SERVERS_DIR} || true
 cd "${SERVERS_DIR}"
