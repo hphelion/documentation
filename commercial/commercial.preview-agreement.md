@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack: Preview Agreement"
-permalink: /helion/openstack/preview-agreement/
+permalink: /helion/openstack/eula/
 product: commercial
 
 ---
