@@ -48,7 +48,7 @@ PageRefresh();
  
 #### [Open Source and Third-Party Software License Agreements](/helion/community/community-3rd-party-license-agreements/)
 
-#### [End User License Agreement](/helion/community/eula/)
+#### [End User License Agreement](/helion/community/community.eula/)
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
  
