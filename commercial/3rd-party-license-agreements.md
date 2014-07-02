@@ -5498,10 +5498,6 @@ Disclaimer
   SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
   DAMAGE.
 
-<pre><code>
-sample text
-</code></pre>
-
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 <p style="font-size: small;"> <a href="/helion/"> &#171; Return to HP Helion  home </a> </p>
