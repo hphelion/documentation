@@ -224,7 +224,7 @@ navigation:
   - text: FAQ
     url: /helion/community/faq/ 		
   - text: Installation & Configuration
-    url: /helion/community/install-virtual/		
+    url: /helion/community/install-overview/		
   - text: Related Topics
     url: /helion/community/related-links/	
   - text: End User License Agreement
