@@ -255,7 +255,11 @@ navigation:
   - text: Related Topics
     url: /helion/openstack/related-links/	
   - text: Glossary
-    url: /helion/openstack/glossary/ 		
+    url: /helion/openstack/glossary/ 	
+  - text: Preview Agreement
+    url: /helion/openstack/preview-agreement/
+  - text: Open Source and Third-Party Software License Agreements
+    url: /helion/openstack/3rd-party-license-agreements/	
   - text: Site Index
     url: /helion/openstack/siteindex/
   - text: HP Helion Documentation
