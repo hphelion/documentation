@@ -8,12 +8,13 @@ product: cloudos
 
 # HP Cloud OS Documentation 
 
-Welcome! HP Cloud OS is an enterprise-grade, open and extensible architecture that leverages the power of OpenStack technology, 
-the fastest growing open-source cloud community. 
+HP Cloud OS has been deprecated as of 7 May 2014. If you have HP Cloud OS installed the documentation is still accessible here. 
 
-<p style="border: 1px dotted #1796D3; padding: 4px 4px 4px 4px;"> <b>To get started</b>, download the HP Cloud OS Sandbox 1.20 ISO from the <nobr><a href="https://cloudos.hpwsportal.com" target="codn">HP Cloud OS Distribution Network</a>.</nobr> On the site, see the Technology Preview section and follow the links.</p>
+We encourage to try our new <a href="https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221000%22%7D/Show">HP Helion OpenStack&reg; Community edition</a>. It is  pure and free-to-license distribution of OpenStack technology coupled with a Linux operating system that speeds deployment and simplifies the management of small scale open cloud environments. 
 
-After downloading the kit, dive into these categorized topics to learn about HP Cloud OS:
+Or if you need more functionality, check out our enterprise-grade <a href="https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221247%22%7D/Show">HP Helion OpenStack</a> distribution designed for administrators and developers who want a hardened enterprise-grade product set that speeds deployment and simplifies management of private clouds and infrastructure services for developers, enterprises and service providers..
+
+Dive into these categorized topics to learn about HP Cloud OS:
 
 1. <a href="/cloudos/prepare/">Prepare</a> &mdash; Topics to help you get started: video tutorials &amp; more
 2. <a href="/cloudos/install/">Install</a> &mdash; Instructions to install &amp; configure your cloud
