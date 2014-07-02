@@ -226,7 +226,9 @@ navigation:
   - text: Installation & Configuration
     url: /helion/community/install-virtual/		
   - text: Related Topics
-    url: /helion/community/related-links/		
+    url: /helion/community/related-links/	
+  - text: Preview Agreement
+    url: /helion/community/eula/
   - text: Site Index
     url: /helion/community/siteindex/
   - text: HP Helion Documentation
