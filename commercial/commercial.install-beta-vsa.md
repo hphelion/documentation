@@ -107,7 +107,7 @@ HP Helion Openstack beta edition uses StoreVirtual as a backend to Cinder to rea
 Cinder provides the concept of volume types to represent differentiated storage offerings based on various performance outputs, quality of service and backend devices that are used to realize cloud storage. Essentially, a volume type is mapped to one or more backends of similar capabilities as illustrated in figure below:
 
 
-<a href="javascript:window.open('/content/documentation/media/reference-architecture-StoreVirtual-volume-type-mapping.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Volume tyoe mapping (opens in a new window)</a>
+<a href="javascript:window.open('/content/documentation/media/reference-architecture-StoreVirtual-volume-type-mapping.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Volume type mapping (opens in a new window)</a>
 
 The cloud administrator, you create volume types to specify the storage offerings of the cloud and  configure Cinder with backends which have the ability to serve storage characteristics represented by the volume types. For example, as a cloud admin, you have the following storage capabilities:  
 

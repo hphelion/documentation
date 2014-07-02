@@ -25,8 +25,6 @@ PageRefresh();
 
 #### [Release Notes](/helion/openstack/release-notes/) 
 
-#### [Open Source and Third-Party Software License Agreements](/helion/openstack/3rd-party-license-agreements/)
-
 #### [Getting started with HP Helion OpenStack](/helion/openstack/)
 
 * [Support matrix](/helion/openstack/support-matrix-beta/) 
@@ -52,6 +50,10 @@ PageRefresh();
 * [OpenStack Cloud Administrator Guide](http://docs.openstack.org/trunk/openstack-compute/admin/content/index.html)
 * [OpenStack Networking Administration Guide](http://docs.openstack.org/trunk/openstack-network/admin/content/index.html)
 * [OpenStack Operations Guide](http://docs.openstack.org/trunk/openstack-ops/content/index.html)
+
+#### [Open Source and Third-Party Software License Agreements](/helion/openstack/3rd-party-license-agreements/)
+
+#### [Preview Agreement](/helion/openstack/preview-agreement/)
  
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
  
