@@ -8,551 +8,375 @@ product: devplatform
  
 <p style="font-size: small;"> <a href="/helion/devplatform/community/release-notes/">&#9664; PREV</a> | <a href="/helion/devplatform/">&#9650; UP</a> | <a href="/helion/devplatform/community/related-topics/">NEXT &#9654;</a> </p>
 
-# HP Helion Development Platform: Installation and configuration 
+# HP Helion Development Platform Community Installation and Configuration
 
-This preview edition of HP Helion Development Platform installs two products: Database Service and Application Lifecycle Service(ALS).
+The HP Helion Development Platform currently installs two products: Application Lifecycle Service (ALS) and Database Service.  
 
-Installation of Application Lifecycle Service registers the following  two (2) images in Glance:
+Installing the Application Lifecycle Service registers two images in Glance.  The first image is the 'Installer'. Users wanting to deploy an Application Lifecycle Cluster for their tenant will need to boot an instance of this image using Nova. The second image is the 'Seed'. This contains the control plane for the Application Lifecycle Cluster. The `Installer` boots instances of the `Seed` images as directed by the user during the [Application Lifecycle Service installation process](http://docs.hpcloud.com/helion/devplatform/community/install-als/).
 
-* `Installer` image &#45; You can boot an instance of this image using Nova if you want to deploy the Application Lifecycle cluster in your tenant space. 
-* `Seed`image &#45; This contains the control plane for the Application Lifecycle Cluster. 
+Installing the Database Service will create five virtual machines in the overcloud.  These virtual machines compose the Database Service control plane. The installer also creates two tenant/user pairs: the `trove` tenant creates and owns all resources of the control plane; the `trove-pool` tenant/user will own and manage all compute hosts containing the guest database instances. Finally, the installer registers the Database Service in Keystone. From there, users of HP Helion OpenStack Community Edition can now provision their own guest database instances through the OpenStack Dashboard (Horizon) or the [Trove Python Client](https://community.hpcloud.com/article/python-troveclient-cli-linux-installation).  
 
-The `Installer`image boots the instances of the `Seed`images as specified by you during the [Application Lifecycle Service installation process](/helion/devplatform/community/install-als/).
-
-
-Installation of Database Service  creates five virtual machines(VM) in the overcloud.  These virtual machines compose the control plane for the Database Service.  The Installer also creates two tenant/user pairs: the `trove` tenant creates and owns all resources of the control plane; the `trove-pool` tenant/user  owns and manages all the compute hosts containing the guest database instances. Once the Installer registers Database Service in Keystone, the users of HP Helion Community Edition can provision their own guest database instances either through OpenStack Dashboard (Horizon) or through the [Trove Python Client](http://community.hpcloud.com/article/python-troveclient-cli-linux-installation). 
-
-
-The following topics explain the process to install and configure the HP Helion Development Platform.
+The following topics explain how to install and configure the HP Helion Development Platform.
 
 * [Prerequisites](#prerequisites)
+
 * [Before you begin](#before-you-begin)
+
 * [Installing the HP Helion Development Platform](#installing-the-hp-helion-development-platform)
+
 * [After you install](#after-you-install)
+
 * [Advanced Configuration](#advanced-configuration)
 
+* [Uninstalling the HP Helion Development Platform](#uninstalling-the-hp-helion-development-platform)
 
-## Prerequisites {#prerequisites}
 
-The HP Helion Development Platform installs in the overcloud of the HP Helion Community Edition.  The HP Helion Development Platform has the same prerequisites <!---**WHAT ARE THOSE??**--> as the HP Helion OpenStack Community Edition-Baremetal.
+## Prerequisites<a name="prerequisites"></a>
 
-The system running the installer must have Python 2.7 installed.  Most modern operating systems include this as a part of their base toolset. 
+The HP Helion Development Platform is installed in the overcloud of HP Helion OpenStack Community Edition - Baremetal.  The HP Helion Development Platform has the same prerequisites as HP Helion OpenStack Community Edition - Baremetal.
 
-This document is geared toward a Linux operating system but it does not preclude the installer from running on other operating systems with some minor modifications to the command-line statements.
-
-The installer requires the following packages to be installed. 
+The system running the installer needs to have Python 2.7. Most modern operating systems include this as part of their base toolkit. This document is geared toward a Linux operating system but this does not preclude the installer from running on other operating systems with some minor modifications to the command-line statements herein.
  
-* `python-dev `
-* `libffi-dev` 
-* `libssl-dev` 
+The installer requires the following packages. If they are not found, it will prompt you to install them.
 
-Your are prompted to install them if they are not already installed.
+* python-dev 
+* libffi-dev 
+* libssl-dev 
 
-## Before you begin {#before-you-begin}
+For ALS to install dependencies for deployed applications, you must provide ALS with outbound Internet connectivity. This process is documented in Step 7 of ["Starting the seed and building your cloud"](http://docs.hpcloud.com/helion/community/install/#startseed) in the baremetal installation instructions.  If an HTTP Proxy is required for Internet downloads, follow the instructions in the [Administration Guide](http://docs.hpcloud.com/als/v1/admin/server/configuration/#http-proxy).
 
-Before you start the installation of HP Helion Development Platform, check the following:
+## Before you begin<a name="before-you-begin"></a>
 
-* Credentials and Connectivity
-* SSH Key (Optional)
+Before you install the HP Helion Development Platform ensure that you perform the following checks:
 
 ### Credentials and connectivity
 
-For proper connectivity, do the following:
-
-* Ensure that you have the OpenStack credentials of Admin user to  access the overcloud.
-* Check your access to the endpoints for services in the overcloud. 
-* Run the environment on the system which has `Python OpenStack clients` installed  on it.(e.g. python-novaclient).
+The purpose of this section is to ensure that you have credentials for an admin user in the overcloud and that you have network connectivity to it.
 
 To test that you have the necessary access, perform the following steps:
+
+1. Ensure `python-novaclient` exists. The following should output a version number:
 	
-1. Ensure that `python-novaclient` exists. Run the following command to display a version number:
+		# nova --version
 
-    `# nova --version`
-
-2. If the command <!---**VERSION NUMBER??**--> is not displayed, install `python-novaclient` using:
-
-    `# sudo apt-get install -y python-novaclient`
-
-3. Create a stackrc file using the following command.
-
-    `# vi stackrc`
-
-    Add the following content to the file:
-
-		export OS_USERNAME={your_admin_user}
-		export OS_TENANT_NAME={your_admin_tenant}
-		export OS_PASSWORD={your_admin_password}
-		export OS_AUTH_URL={auth_url_endpoint}
-
-4. Export variables to your local environment using the following command.
+2. If the command cannot be found, install it using:
 	
-	`# source stackrc`
-
-5. Check connectivity and admin role.
-	
-	`# nova credentials`
-
-6. Validate the following message in the output. 
-	
-	`roles            | [{u'name': u'admin'} ...`
-	
-This confirms that you have the Admin role assigned to you,your credentials are valid and you can connect to an overcloud endpoint.
-
-### SSH Keys {#ssh-keys} (optional)
-
-The control plane for Database as a Service (Trove) consists of five VMs.  SSH key provides you the access to VMs to investigate and debug any issue that occurs on these VMs. You can get the SSH key in one of the following ways:
-
-* Allow the installer to create a public/private keypair. <!---**Do we need to tell the user how to proceed with this???**-->
-
-     OR
-
-* Provide the installer with the path and file name of your public key.
-
-If you choose option #1, you can skip Installing the HP Helion Development Platform and ignore the ssh_public_key configuration else follow the steps below.
-
-
-#### Creating your own public/private key
-
-To generate the keypair, perform the following steps:
-
-1. Ensure that the ssh keys are not already present using the following command. 
-
-    `# ls -l ~/.ssh`
+		# sudo apt-get install -y python-novaclient
+		
+3. Create a stackrc file:
  
-    The command should not return the files `id_rsa` or `id_rsa.pub`
+    	# vi stackrc
+    	
+    Add the following content:
+    
+    	export OS_USERNAME={your_admin_user}
+    	export OS_TENANT_NAME={your_admin_tenant}
+    	export OS_PASSWORD={your_admin_password}
+    	export OS_AUTH_URL={auth_url_endpoint}
+    	   
+4. Export variables to your local environment:
+    
+        # source stackrc
 
-2.  Generate the public and private key using the following command.
+5. Check connectivity and admin role:
+    
+        # nova credentials
 
-	`# ssh-keygen -t rsa`
+6. Validate that you see the following in the output: 
+    
+        roles            | [{u'name': u'admin'} ...
+    
+At this point, you have confirmed that you can connect to an overcloud endpoint, your credentials are valid and you have the 'admin' role.
 
-3. Omit the passphrase and accept the defaults by pressing **Enter**.
-	
-4. Validate that the key exists by running the following command.
+### SSH Keys (optional)<a name="ssh-keys"></a>
 
-	`# ls -l ~/.ssh`
-	
-    The following files are displayed as the output on the command line:
-	
-		-rw-------   1 username  group   1766 Nov  8  2012 id_rsa
-		-rw-r--r--   1 username  group    409 Nov  8  2012 id_rsa.pub
-	
-During the installation you specify the public key in the configuration in the following format:
+The Database Service control plane consists of five virtual machines.  If issues arise, it is likely that you will want to gain access to them via SSH in order to do troubleshooting. To make this possible, you will need an SSH public/private key-pair.  There are two approaches for obtaining these: 
 
-   `ssh_public_key=/home/username/.ssh/id_rsa.pub`
-	
-## Installing the HP Helion Development Platform {#installing-the-hp-helion-development-platform}
+1. allow the installer to create a public/private key-pair (automatic) 
+2. provide the installer with the path and file name of your public key
+
+If you choose option #1, you can skip to [Installing the HP Helion Development Platform](#installing-the-hp-helion-development-platform) and ignore the `ssh_public_key` configuration. Otherwise, follow the steps below.
+
+#### Creating your own public/private key<a name="generate-ssh-keys"></a>
+
+To generate the key pair, perform the following steps:
+
+1.  First, ensure that you do not already have ssh keys. The following command should not return the files `id_rsa` nor `id_rsa.pub`. If it does and these are the keys you want to use, skip to step #5. Alternatively, you can produce a new pair in an alternate location but that is outside the scope of this document.
+
+		# ls -l ~/.ssh
+		
+2.  Generate the public and private key, omitting a passphrase and accepting the defaults by pressing Enter:
+
+        # ssh-keygen -t rsa
+    
+3. Validate that the key exists:
+
+        # ls -l ~/.ssh
+    
+4. You should see the following two files shown in the output on the command line:
+    
+        -rw-------   1 username  group   1766 Nov  8  2012 id_rsa
+        -rw-r--r--   1 username  group    409 Nov  8  2012 id_rsa.pub
+    
+5. Later, in the installation you will specify the public key configuration in this manner:
+
+    ssh_public_key=/home/username/.ssh/id_rsa.pub
+
+    
+## Installing the HP Helion Development Platform<a name="installing-the-hp-helion-development-platform"></a>
 
 ### Downloading and unpacking the installation file
 
-The installation of HP Helion Development Platform for the HP Helion OpenStack Community is provided as a single compressed tar file.  This is a large file as it contains all the machine images required for Database Service and Application Lifecycle Service.
+The installation of the HP Helion Development Platform for the HP Helion OpenStack Community is provided as a single compressed tar file.  This is a large file because it contains all of the machine images required for the Database Service and Application Lifecycle Service.
 
-Register and download the package from the following URL:
+You can register and download the package from the following URL:
 
-[HP Helion Development Platform](https://helion.hpwsportal.com/#/Product/{"productId":"1245"}/Show)
+[HP Helion Development Platform](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221245%22%7D/Show)
 
 **Note**: This install file is over 4GB and does not fit on a memory stick formatted as FAT32. If you are planning to store the installation files on removable media use a formatting that supports large files, like NTFS.
 
-To begin the installation, log into your system and unpack the tar file:
+To begin the installation, unpack the tar file:
 
-  `# tar zxvf <pathname-of-.tar.gz-file>`
-	
+    # tar -zxvf hp_helion_devplatform_community.tar.gz.csu
+    
 This creates and populates a `dev-platform-tools` directory.
 
-`# cd dev-platform-tools`
-	
+    # cd dev-platform-tools
+    
+### Preparing to run the installer
 
-### Preparing to run the installation
+Run this command to prepare the installer and ensure prerequisites are met:
 
-Ensure all the prerequisites have been met and run the following command to prepare the installer. 
+    # ./install_installer.sh
+    
+After this command completes, you should see the following output from the command:
 
-`# ./install_installer.sh`
-	
-The following output is displayed.
-
-	*****************************************************************************************************
-	Configure Development Platform Installer at ./etc/dbaas-installer.conf and ./etc/als-installer.conf
-	run `source .env/bin/activate`
-	and then run `devplatform-installer --config-dir ./etc [install|install-dbaas|install-als]`
-	*****************************************************************************************************
-<!--**
-<THE ABOVE APPEAR TO BE THE INSTALLATION COMMANDS.IF THEY ARE COMMANDS, THEN SHOULD'NT WE BE TELLING THE USER TO RUN THESE COMMANDS FOR COMPLETE INSTALLATIONS??>**
--->
+    *****************************************************************************************************
+    Configure Development Platform Installer at ./etc/dbaas-installer.conf and ./etc/als-installer.conf
+    run `source .env/bin/activate`
+    and then run `devplatform-installer --config-dir ./etc [install|install-dbaas|install-als]`
+    *****************************************************************************************************
 
 ### Editing the Database Service configuration
 
 The installation has the following options that can be configured by editing the dbaas-installer.conf file. To edit the file, run the following command:
 
-  `# vi etc/dbaas-installer.conf`
-	
-#### Default Section
+    # vi etc/dbaas-installer.conf
+    
+#### Default Section \[DEFAULT\]
 
-<!---This section allows you to create new tenants, users, images, services and endpoints for the Database Service using your admin credentials:-->
+In this section, you must provide the credentials for an admin user and keystone endpoint for the overcloud. This information is necessary so that the installer can create users for the Database Service and upload Images to Glance. 
 
-In this section, you must provide the credentials for an admin user and keystone endpoint for the overcloud. This information is necessary so that the installer can create users for the Database Service and upload images to Glance.
+|  Configuration    | Description                                           |Default Value  |
+|:------------------|:------------------------------------------------------|:--------------|
+|auth_url           |Keystone Auth URL (http://<host_ip>:/5000/v2)          |None           |
+|target_region_name |Region name given to endpoints in service catalog      |None           |
+|target_username    |Username that will create resources, has admin role    |None           |
+|target_password    |Password associated with username                      |None           |
+|target_tenant_name |Tenant name for which user belongs                     |None           |
 
-<table style="text-align: left; vertical-align: top; width:650px;">
-	
-	<tr style="background-color: lightgrey; color: black;">
-	
-	 <td><b>Configuration</b></td> <td><b> Description </b></td><td><b>Default Value</b></td>
-	
-	<tr style="background-color: white; color: black;">
-	<td>auth_url</td> <td>Keystone Auth URL (http://<host_ip>:/5000/v2)</td><td>None</td></tr>
-	
-	<tr style="background-color: white; color: black;">
-	<td>target_region_name</td> <td>Region name given to endpoints in service catalog</td><td>None</td></tr>
-	
-    <tr style="background-color: white; color: black;">
-	<td>target_username</td> <td>Username that has the admin role and creates resources</td><td>None</td></tr>
-	
-    <tr style="background-color: white; color: black;">
-	<td>target_password</td> <td>Password associated with the username</td><td>None</td></tr> 
+#### Trove Section \[trove\]
 
-     <tr style="background-color: white; color: black;">
-	<td>target_tenant_id</td> <td>Tenant name to which the user belongs</td><td>None</td></tr></table>
+This section contains the minimum configuration needed in order to install the Database Service. **Note**: `ssh_public_key` is required only if chose option #2 for handling [SSH Keys](#ssh-keys).
 
-
-
-#### Trove Section
-
-<!---This section helps you to define the deployment of Database Service.-->
-
-This section contains the minimum configuration needed in order to install the Database Service. 
-
-**Note**: ssh&#95;public_key is required only if you chose option #2 for handling [SSH Keys](#ssh-keys).
-
-
-<table style="text-align: left; vertical-align: top; width:650px;">
-	
-	<tr style="background-color: lightgrey; color: black;">
-	
-	 <td><b>Configuration</b></td> <td><b> Description </b></td><td><b>Default Value</b></td>
-	
-	<tr style="background-color: white; color: black;">
-	<td>ssh_public_key</td> <td>Local path of file containing public key only if you are using pre-generated keys, otherwise remove this configuration</td><td>None</td></tr>
-	
-	<tr style="background-color: white; color: black;">
-	<td>service_password</td> <td>Password for `trove` user which owns the Database Service control plane</td><td>None</td></tr>
-	
-    <tr style="background-color: white; color: black;">
-	<td>pool_password </td> <td>Password for `trove-pool` user who owns the compute hosts for guest Database instances </td><td>None</td></tr></table>
-
+|  Configuration    | Description                                                                 |Default Value       |
+|:------------------|:----------------------------------------------------------------------------|:-------------------|
+|ssh_public_key     |Local path of file containing public key - *only* if you are using [pre-generated keys](#generate-ssh-keys), otherwise remove this configuration|None                |
+|service_password   |Password for `trove` user which owns the Database Service control plane                                             |None                |
+|pool_password      |Password for `trove-pool` user which owns the compute hosts for guest Database Instances|None                |
 
 #### Horizon Section \[horizon\]
 
-In this section, you must provide credentials and location of Horizon in overcloud.  This information is used to patch the stock HP Helion OpenStack Community Edition of Horizon so that it supports the Database Service.
+In this section, you must provide credentials and location of Horizon in overcloud.  This information is used to patch the stock HP Helion OpenStack Community Edition of Horizon so that it better supports the Database Service.
 
-<table style="text-align: left; vertical-align: top; width:650px;">
-	
-	<tr style="background-color: lightgrey; color: black;">
-	
-	 <td><b>Configuration</b></td> <td><b> Description </b></td><td><b>Default Value</b></td>
-	
-	<tr style="background-color: white; color: black;">
-	<td>private_key_path</td> <td>Local path of file containing public key only if you are using pre-generated keys, otherwise remove this configuration</td><td>None</td></tr>   
+|  Configuration    | Description                                                                 |Default Value       |
+|:------------------|:----------------------------------------------------------------------------|:-------------------|
+|private_key_path   |Local path of file containing private key for the overcloud Horizon server. This key can be secure-copied (scp) from the root user on the seed cloud, typically `192.0.2.1`|None                |
+|host_ip            |IP Address of overcloud controller which hosts Horizon. This is typically the same IP in the `auth_url`|None               |
+
 
 ### Editing Application Lifecycle Service Configuration
 
-The installation has the following options that can be configured by editing the als-installer.conf file. To edit the file, run the following command:
+    # vi etc/als-installer.conf
+    
+#### Default Section \[DEFAULT\]
 
- `# vi etc/als-installer.conf`
-	
-#### Default Section
+In this section, you must provide the credentials for an admin user and keystone endpoint for the overcloud. This information is necessary so that the installer can upload Images to Glance. **Note**: If you are also installing Database Service these configurations *must* be identical.
 
-This section allows you to upload new images to Glance using your admin credentials.  If you are also installing Database Service the configurations must be identical.
+|  Configuration     | Description                                          |Default Value      |
+|:-------------------|:-----------------------------------------------------|:------------------|
+|auth_url            |Keystone Auth URL (http://<host_ip>:/5000/v2)         |None               |
+|target_region_name  |Region name given to endpoints in service catalog     |None               |
+|target_username     |Username that will create resources, has admin role   |None               |
+|target_password     |Password associated with username                     |None               |
+|target_tenant_name  |Tenant name for which user belongs                    |None               |
 
-<table style="text-align: left; vertical-align: top; width:650px;">
-	
-	<tr style="background-color: lightgrey; color: black;">
-	
-	 <td><b>Configuration</b></td> <td><b> Description </b></td><td><b>Default Value</b></td>
-	
-	<tr style="background-color: white; color: black;">
-	<td>auth_url</td> <td>Keystone Auth URL (http://<host_ip>:/5000/v2)</td><td>None</td></tr>
-	
-	<tr style="background-color: white; color: black;">
-	<td>target_region_name</td> <td>Region name given to endpoints in service catalog</td><td>None</td></tr>
-	
-    <tr style="background-color: white; color: black;">
-	<td>target_username</td> <td>Username that has the admin role and creates resources</td><td>None</td></tr>
-	
-    <tr style="background-color: white; color: black;">
-	<td>target_password</td> <td>Password associated with the username</td><td>None</td></tr> 
-
-     <tr style="background-color: white; color: black;">
-	<td>target_tenant_id</td> <td>Tenant name to which the user belongs</td><td>None</td></tr></table>
 
 ### Activating the Installer
 
-Ensure that the script and environment to run the installer is activated by executing the following command.
+You need to ensure that the script and environment to run this installer are activated.  To do so, run the following:
 
-`# source .env/bin/activate`
-	
+    # source .env/bin/activate
+    
 ### Running the Installer
 
-Once you edit the configurations, you are ready to run the installer. You can either install both the Database Service and Application Lifecycle Service using a single command or you can install each of them individually.
+You can install both the Database Service and Application Lifecycle Service in one command or install them separately.
+
+Install the Database Service and Application Lifecycle Service by running the following command:
+
+    # devplatform-installer --config-dir ./etc --log-file install.log install
+
+Or install the Database Service by running the following command:
+
+    # devplatform-installer --config-file ./etc/dbaas-installer.conf --log-file install-dbaas.log install-dbaas
+    
+Or install the Application Lifecycle Service by running the following command:
+
+    # devplatform-installer --config-file ./etc/als-installer.conf --log-file install-als.log install-als
+    
+Once the installation is complete, you should see the following output:
+
+    2014-06-17 16:53:19.765       INFO Install Complete
 
 
-* To install the Database Service and Application Lifecycle Service together, run  the following command.
+## After you install<a name="after-you-install"></a>
 
-    `# devplatform-installer --config-dir ./etc --log-file install.log install`
+In order to verify that the installation was successful perform the following steps as an admin user.
 
-* To install the Database Service only, run the following command.
+1. Run this command to get the list of keystone tenants. You should see two (2) tenants created by the installer in the output: `trove` and `trove-pool`. 
 
-	`# devplatform-installer --config-file ./etc/dbaas-installer.conf --log-file install-dbaas.log install-dbaas`
-	
-* To install the Application Lifecycle Service only, run the following command:
+        # keystone tenant-list
+    
+2. Run this command to get the list of compute instances of the control plane. You should see five (5) compute instances: `trove-rmq`, `trove-mysql`, `trove-api`, `trove-tm` and `trove-conductor`
 
-    `# devplatform-installer --config-file ./etc/als-installer.conf --log-file install-als.log install-als`
-	
-Once the installation completes, the following output is displayed:
+        # nova list --all-tenants=1
+    
+3. Run this command to get the list of Application Lifecycle Service images. You should see the two (2) images: `HP Helion Development Platform CE - Application Lifecycle Service Installer` and `HP Helion Development Platform CE - Application Lifecycle Service Seed Node`
 
-	2014-06-17 16:53:19.765       INFO Install Complete
+        # nova image-list
+    
+4. Finally, do not forget your keys.  If you had the installer create the SSH keys, save the private key to a secure place. You will need this key if you ever want to gain access to the Database Service Control Plane. By default, the key can be found here
 
-## After you install {#after-you-install}
+        # ls ${installer-home}/trove-kp
 
-To verify that the install is successful, perform the following steps as an Admin user.
 
-1. Run the following command to get the list of keystone tenants. 
+## Advanced Configuration<a name="advanced-configuration"></a>
 
-	`# keystone tenant-list`
-	
-    The two (2) tenants created by the install in the output- `trove` and `trove-pool` are displayed. 
-
-2. Run the following command to get the list of compute instances of the control plan. 
-
-    `# nova list --all-tenants=1`
-
-    The five (5) compute instances- `rmq`, `mysql`, `api`, `tm` and `conductor`are displayed.
-	
-3. Run the following command to get the list of Application Lifecycle Service images. 
-
-	`# nova image-list`
-
-    The two (2) images- `als-seed` and `als-assembler`are displayed.
-
-4. If you generate ssh key through the installer, save the private key as you need this to log in to the Database Service Control Plane.  By default, the key located at the following location:
-
-    `# ls ${installer-home}/trove-kp`
-
-## Advanced Configuration {#advanced-configuration}
-
-This section helps you to define additional configurations that you can set as per your requirement.These can be changed when your environment does not meet the standard environment setup by the HP Helion Community Edition.  
-
-**Note**: In most cases, you may not need to change these.
-
+This section provides you with additional configurations that may be set. These only need to be changed in cases where your environment does not match the standard environment created by the HP Helion OpenStack Community Edition. In most situations, you will not need to change these.
 
 ### Database Service configuration
 
-#### Trove Section {#
+#### Trove Section \[trove\]
 
-<table style="text-align: left; vertical-align: top; width:650px;">
-	
-	<tr style="background-color: lightgrey; color: black;">
-	
-	 <td><b>Configuration</b></td> <td><b> Description </b></td><td><b>Default Value</b></td>
-	
-	<tr style="background-color: white; color: black;">
-	<td>templates_path </td> <td>Local path of directory containing Heat Templates</td><td>./templates</td></tr>
-	
-	<tr style="background-color: white; color: black;">
-	<td>images_path</td> <td>Local path of directory containing disk images (.qcow2)</td><td>./images</td></tr>
-	
-    <tr style="background-color: white; color: black;">
-	<td>keyname</td> <td>Name of keypair as it is created in Nova</td><td>trove-kp</td></tr>
-	
-    <tr style="background-color: white; color: black;">
-	<td>ssh_private_key_path</td> <td>Local path of directory where private key is placed if ssh_public_key is not provided</td><td>.</td></tr> 
-
-     <tr style="background-color: white; color: black;">
-	<td>stack_name </td> <td>The name Heat gives to Database Service control plane stack</td><td>dbaas</td></tr>
-
-    <tr style="background-color: white; color: black;">
-	<td>stack_rollback</td> <td>If error occurs during or after the stack creation should it be deleted</td><td>True</td></tr>
-	
-    <tr style="background-color: white; color: black;">
-	<td>service_name</td> <td>Name of Service as it exists in Keystone</td><td>trove</td></tr> 
-
-     <tr style="background-color: white; color: black;">
-	<td> <a name="service_tenant"></a></td> <td>Tenant Name that owns the Database Service Control Plane. Installer creates this Tenant</td><td>trove</td></tr>
-
-    <tr style="background-color: white; color: black;">
-	<td>service_user</td> <td>User Name that owns the Database Service Control Plane. Installer creates this User</td><td>trove</td></tr> 
-
-    <tr style="background-color: white; color: black;">
-	<td>quota_instances<a name="service-tenant"></a> </td> <td>Quota for instances the `trove-pool` user can create. Maximum number of Database Service Instances</td><td>35</td></tr>
-
-    <tr style="background-color: white; color: black;">
-	<td>ext_net_id  <a name="service-tenant"></a> </td> <td>Network ID for the network that has external network access. For Helion the network is 'ext-net'</td><td>ID of 'ext-net'</td></tr></table>
-
-#### Cinder Section (Optional)
-
-You can override the entries that were created in the Keystone Service Catalog using this section.Edit this section only if you are sure of the information details.
-
-<table style="text-align: left; vertical-align: top; width:650px;">
-
-     <tr style="background-color: lightgrey; color: black;">
-	
-	 <td><b>Configuration</b></td> <td><b> Description </b></td><td><b>Default Value</b></td>
-	
-	<tr style="background-color: white; color: black;">
-	<td>endpoint </td> <td>Override endpoint for Cinder service </td><td>None</td></tr>
-	
-	<tr style="background-color: white; color: black;">
-	<td>endpoint_type</td> <td>One of the three endpoint types in Keystone service catalog</td><td>publicURL</td></tr>
-	
-    <tr style="background-color: white; color: black;">
-	<td>service_type</td> <td>Service type associated to endpoint in Keystone service catalog</td><td>volume</td></tr>
-	
-    <tr style="background-color: white; color: black;">
-	<td>insecure</td> <td>Whether the connection to Cinder is insecure</td><td>False</td></tr></table> 
+|  Configuration      | Description                                                                                  |Default Value       |
+|:--------------------|:---------------------------------------------------------------------------------------------|:-------------------|
+|templates_path       |Local path of directory containing Heat Templates                                             |./templates         |
+|images_path          |Local path of directory containing disk images (.qcow2)                                       |./images            |
+|keyname              |Name of keypair as it will be created in Nova                                                 |trove-kp            |
+|ssh_private_key_path |Local path of directory where private key will be placed. Used if `ssh_public_key` is not set |.                   |
+|stack_name           |Name Heat gives to Database Service control plane stack                                       |trove               |
+|stack_rollback       |Whether the stack is deleted when an error occurs during or after the stack creation          |True                |
+|service_name         |Name of Service as it will appears in Keystone                                                |trove               |
+|service_tenant       |Tenant Name for owner of the Database Service control plane. Installer will create this Tenant|trove               |
+|service_user         |User Name for the owner of the Database Service control plane. Installer will create this User|trove               |
+|pool_tenant          |Tenant Name for the owner of compute hosts for guest Database Instances. Installer will create this Tenant|trove   |
+|pool_user            |User Name for the owner of the compute hosts for guest Database Instances. Installer will create this User|trove-pool |
+|quota_instances      |Quota of compute instances for the `trove-pool` user. Maximum number of guest Database Instances across all tenants|35|
+|ext_net_id           |Network ID for the network that has external network access. For HP Helion OpenStack Community Edition this network is named 'ext-net'|Network ID for 'ext-net'|
 
 
-#### Keystone Section (Optional)
+#### Cinder Section \[cinder\]
 
-You can override entries that were created in the Keystone Service Catalog using this section. Edit this section only if you are sure of the information details.
-
-<table style="text-align: left; vertical-align: top; width:650px;"> 
-<tr style="background-color: lightgrey; color: black;">
-
-<td><b>Configuration</b></td> <td><b> Description </b></td><td><b>Default Value</b></td>
-	
-	<tr style="background-color: white; color: black;">
-	<td>endpoint </td> <td>Override endpoint for Keystone service </td><td>None</td></tr>
-	
-	<tr style="background-color: white; color: black;">
-	<td>insecure</td> <td>Whether the connection to Keystone is insecure</td><td>False</td></tr></table> 
+|  Configuration      | Description                                                         |Default Value  |
+|:--------------------|:--------------------------------------------------------------------|:--------------|
+|endpoint             |Override endpoint for Cinder service                                 |None           |
+|endpoint_type        |One of the three endpoint types in Keystone service catalog          |publicURL      |
+|service_type         |Service type associated to endpoint in Keystone service catalog      |volume         |
+|insecure             |Whether the connection to Cinder is insecure                         |False          |
 
 
-#### Glance Section (Optional)
+#### Keystone Section \[keystone\]
 
-You can override entries that were created in the Keystone Service Catalog using this section. Edit this section only if you are sure of the information details.
-
-<table style="text-align: left; vertical-align: top; width:650px;">
-	<tr style="background-color: lightgrey; color: black;">
-	
-	 <td><b>Configuration</b></td> <td><b> Description </b></td><td><b>Default Value</b></td>
-	
-	<tr style="background-color: white; color: black;">
-	<td>endpoint </td> <td>Override endpoint for Glance service </td><td>None</td></tr>
-	
-	<tr style="background-color: white; color: black;">
-	<td>endpoint_type</td> <td>One of the three endpoint types in Keystone Service Catalog</td><td>publicURL</td></tr>
-	
-    <tr style="background-color: white; color: black;">
-	<td>service_type</td> <td>Service type associated to endpoint in Glance service catalog</td><td>image</td></tr>
-	
-    <tr style="background-color: white; color: black;">
-	<td>insecure</td> <td>Whether the connection to Glance is insecure</td><td>False</td></tr>
-
-	<tr style="background-color: white; color: black;">
-	<td>protect_images</td> <td>Prevents images from being deleted by non-admin users</td><td>True</td></tr> </table>
+|  Configuration      | Description                                                         |Default Value  |
+|:--------------------|:--------------------------------------------------------------------|:--------------|
+|endpoint             |Override endpoint for Keystone service                               |None           |
+|insecure             |Whether the connection to Keystone is insecure                       |False          |
 
 
+#### Glance Section \[glance\]
 
-#### Heat Section (Optional)
-
-You can override entries that were created in the Keystone Service Catalog using this section. Edit this section only if you are sure of the information details.
-
-<table style="text-align: left; vertical-align: top; width:650px;">
-<tr style="background-color: lightgrey; color: black;">
-	
-	 <td><b>Configuration</b></td> <td><b> Description </b></td><td><b>Default Value</b></td>
-	
-	<tr style="background-color: white; color: black;">
-	<td>endpoint </td> <td>Override endpoint for Heat service </td><td>None</td></tr>
-	
-	<tr style="background-color: white; color: black;">
-	<td>endpoint_type</td> <td>One of the three endpoint types in Keystone service catalog</td><td>publicURL</td></tr>
-	
-    <tr style="background-color: white; color: black;">
-	<td>service_type</td> <td>Service type associated to endpoint in Keystone service catalog</td><td>orchestration</td></tr>
-	
-    <tr style="background-color: white; color: black;">
-	<td>insecure</td> <td>Whether the connection to Heat is insecure</td><td>False</td></tr></table>
+|  Configuration      | Description                                                         |Default Value  |
+|:--------------------|:--------------------------------------------------------------------|:--------------|
+|endpoint             |Override endpoint for Glance service                                 |None           |
+|endpoint_type        |One of the three endpoint types in Keystone service catalog          |publicURL      |
+|service_type         |Service type associated to endpoint in Keystone service catalog      |image          |
+|insecure             |Whether the connection to Glance is insecure                         |False          |
+|protect_images       |Prevents images from being deleted by non-admin users                |True           |
 
 
-#### Neutron Section (Optional)
+#### Heat Section \[heat\]
 
-You can override entries that were created in the Keystone Service Catalog using this section. Edit this section only if you are sure of the information details.
-
-<table style="text-align: left; vertical-align: top; width:650px;">
-<tr style="background-color: lightgrey; color: black;">
-	
-	 <td><b>Configuration</b></td> <td><b> Description </b></td><td><b>Default Value</b></td>
-	
-	<tr style="background-color: white; color: black;">
-	<td>endpoint </td> <td>Override endpoint for Neutron service </td><td>None</td></tr>
-	
-	<tr style="background-color: white; color: black;">
-	<td>endpoint_type</td> <td>One of the three endpoint types in Keystone service catalog</td><td>publicURL</td></tr>
-	
-    <tr style="background-color: white; color: black;">
-	<td>service_type</td> <td>Service type associated to endpoint in Keystone service catalog</td><td>network</td></tr>
-	
-    <tr style="background-color: white; color: black;">
-	<td>insecure</td> <td>Whether the connection to Neutron is insecure</td><td>False</td></tr></table>
+|  Configuration      | Description                                                         |Default Value  |
+|:--------------------|:--------------------------------------------------------------------|:--------------|
+|endpoint             |Override endpoint for Heat service                                   |None           |
+|endpoint_type        |One of the three endpoint types in Keystone service catalog          |publicURL      |
+|service_type         |Service type associated to endpoint in Keystone service catalog      |orchestration  |
+|insecure             |Whether the connection to Heat is insecure                           |False          |
 
 
-#### Swift Section
+#### Neutron Section \[neutron\]
 
-You can override entries that were created in the Keystone Service Catalog using this section. Edit this section only if you are sure of the information details.
+|  Configuration      | Description                                                         |Default Value  |
+|:--------------------|:--------------------------------------------------------------------|:--------------|
+|endpoint             |Override endpoint for Neutron service                                |None           |
+|endpoint_type        |One of the three endpoint types in Keystone service catalog          |publicURL      |
+|service_type         |Service type associated to endpoint in Keystone service catalog      |network        |
+|insecure             |Whether the connection to Neutron is insecure                        |False          |
 
-<table style="text-align: left; vertical-align: top; width:650px;">
-<tr style="background-color: lightgrey; color: black;">
-	
-	 <td><b>Configuration</b></td> <td><b> Description </b></td><td><b>Default Value</b></td>
-	
-	<tr style="background-color: white; color: black;">
-	<td>endpoint </td> <td>Override endpoint for Swift service </td><td>None</td></tr>
-	
-	<tr style="background-color: white; color: black;">
-	<td>endpoint_type</td> <td>One of the three endpoint types in Keystone service catalog</td><td>publicURL</td></tr>
-	
-    <tr style="background-color: white; color: black;">
-	<td>service_type</td> <td>Service type associated to endpoint in Keystone service catalog</td><td>object-store</td></tr></table>
 
-#### Horizon Section
+#### Swift Section \[swift\]
 
-This section helps you provide some**<WHAT DO YOU MEAN BY SOME??>** credentials and location of Horizon in overcloud.  This information is used to patch Horizon so that it better supports the Database Service.
-
-<table style="text-align: left; vertical-align: top; width:650px;">
-<tr style="background-color: lightgrey; color: black;">
-	
-	 <td><b>Configuration</b></td> <td><b> Description </b></td><td><b>Default Value</b></td>
-	
-	<tr style="background-color: white; color: black;">
-	<td>private_key_path  </td> <td>Local path of file containing private key for the overcloud Horizon server. This key can be secure-copied (scp) from the root user on the undercloud controller, typically `192.0.2.1` </td><td>None</td></tr>
-
-<tr style="background-color: white; color: black;">
-	<td>host_ip</td> <td>IP Address of overcloud controller which hosts Horizon. This is usually the same node as the `auth_url`.</td><td>None</td></tr></table>
+|  Configuration      | Description                                                         |Default Value  |
+|:--------------------|:--------------------------------------------------------------------|:--------------|
+|endpoint             |Override endpoint for Swift service                                  |None           |
+|endpoint_type        |One of the three endpoint types in Keystone service catalog          |publicURL      |
+|service_type         |Service type associated to endpoint in Keystone service catalog      |object-store   |
 
 
 ### Application Lifecycle Service configuration
 
-#### Glance Section (Optional)
+#### Glance Section \[glance\]
 
-You can override entries that were created in the Keystone Service Catalog using this section. Edit this section only if you are sure of the information details.
+|  Configuration      | Description                                                         |Default Value  |
+|:--------------------|:--------------------------------------------------------------------|:--------------|
+|endpoint             |Override endpoint for Glance service                                 |None           |
+|endpoint_type        |One of the three endpoint types in Keystone service catalog          |publicURL      |
+|service_type         |Service type associated to endpoint in Keystone service catalog      |image          |
+|insecure             |Whether the connection to Glance is insecure                         |False          |
+|protect_images       |Disallows the image from being deleted                               |True           |
 
 
-<table style="text-align: left; vertical-align: top; width:650px;"><tr style="background-color: lightgrey; color: black;">
+## Uninstalling the HP Helion Development Platform<a name="uninstalling-the-hp-helion-development-platform"></a>
+
+To remove the components installed by the HP Helion Development Platform, follow the steps below. **Note**: This process does not delete any guest Database Instances nor Application Lifecycle Service clusters. It only removes those components that were created by the installer.
+
+### Uninstall the Database Service
+
+1. Due to the numerous components created by the installer, it is advised to use the `uninstall-dbaas` option. Run this command to do so.
+
+		# devplatform-installer --config-file ./etc/dbaas-installer.conf  uninstall-dbaas
 	
-	 <td><b>Configuration</b></td> <td><b> Description </b></td><td><b>Default Value</b></td>
-	
-	<tr style="background-color: white; color: black;">
-	<td>endpoint </td> <td>Override endpoint for Glance service </td><td>None</td></tr>
-	
-	<tr style="background-color: white; color: black;">
-	<td>endpoint_type</td> <td>One of the three endpoint types in Keystone service catalog</td><td>publicURL</td></tr>
-	
-    <tr style="background-color: white; color: black;">
-	<td>service_type</td> <td>Service type associated to endpoint in Keystone service catalog</td><td>object-store</td></tr>
+### Uninstall the Application Lifecycle Service
 
-    <tr style="background-color: white; color: black;">
-	<td>insecure</td> <td>Whether the connection to Glance is insecure</td><td>False</td></tr>
+There are two images installed for the Application Lifecycle Service. There are two steps that need to be performed in order to remove them.
 
-     <tr style="background-color: white; color: black;">
-	<td>protect_images</td> <td>Prevents images from being deleted by non-admin users</td><td>True</td></tr></table>
+1. First, the image needs to be 'unprotected'. This is a feature in Glance that prevents deletion of images. Run the following command to disable protection for that image.
+
+		# glance image-update <image_name_or_id> --is-protected False
+	
+2. Now you can delete the image from Glance.
+
+		# glance image-delete <image_name_or_id>
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
   
