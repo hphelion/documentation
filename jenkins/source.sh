@@ -2,6 +2,8 @@
 #
 # This script prepares the source for a branch
 #
+
+echo 'running documentation/jenkins/source.sh'
 export TERM=xterm-256color
 source "$HOME/.rvm/scripts/rvm"
 rvm use ruby-1.9.2@docs
