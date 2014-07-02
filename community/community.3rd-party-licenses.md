@@ -29,33 +29,66 @@ Software Release Date: July 2014
 * [Legal Notices](#legal-notices)
 * [Disclaimer for Experimental Software](#disclaimer-for-experimental-software)
 * [Open Source Licenses](#open-source-licenses)
-  * [Academic Free License](#afl-license)
-  * [Apache License Version 2.0](#apache-license-version-20)
-  * [Beerware License](#beerware-license)
-  * [BSD-2-Clause License](#bsd2clause-license)
-  * [BSD-3-Clause License](#bsd3clause-license)
-  * [Creative Commons Attribution-ShareAlike 3.0 License](#ccasa30-license)
-  * [GNU General Public License (GPL) Version 2](#gnu-general-public-license-gpl-version-2)
-  * [GNU General Public License (GPL) Version 3](#gnu-general-public-license-gpl-version-3)
-  * [GNU Lesser General Public License (LGPL) Version 2.1](#gnu-lesser-general-public-license-lgpl-version-21)
-  * [GNU Lesser General Public License (LGPL) Version 3.0](#gnu-lesser-general-public-license-lgpl-version-30)
-  * [MarkupSafe License](#markupsafe-license)
-  * [MIT License](#mit-license)
-  * [Mozilla Public License Version 2.0](#mozilla-public-license-version-20)
-  * [Nominum License](#nominum-license)
-  * [OFL-1.1 License](#ofl11-license) 
-  * [Python License](#python-license)
-  * [Repoze License](#repoze-license)
-  * [Zlib License](#zlib-license)
-  * [ZPL-2.0 License](#zpl20-license)
+
+
+## Legal Notices## {#legal-notices}
+
+### Warranty
+
+The only warranties for HP products and services are set forth in the express warranty statements 
+accompanying such products and services. Nothing herein should be construed as constituting an additional 
+warranty. HP shall not be liable for technical or editorial errors or omissions contained herein. 
+The information contained herein is subject to change without notice.
+
+### Restricted Rights Legend
+
+Confidential computer software. Valid license from HP required for possession, use or copying. Consistent 
+with FAR 12.211 and 12.212, Commercial Computer Software, Computer Software Documentation, and 
+Technical Data for Commercial Items are licensed to the U.S. Government under vendor's standard 
+commercial license.
+
+### Copyright Notice
+
+Hewlett-Packard Company Confidential &copy; Copyright 2012-2014 Hewlett-Packard Development Company, L.P.
+
+### Trademark Notices
+
+Adobe &#174; is a trademark of Adobe Systems Incorporated.
+
+## Disclaimer for Experimental Software## {#disclaimer-for-experimental-software}
+
+### Warranty
+
+The only warranties for HP products and services are set forth in the express warranty statements 
+accompanying such products and services. Nothing herein should be construed as constituting an additional 
+warranty. HP shall not be liable for technical or editorial errors or omissions contained herein.
+The information contained herein is subject to change without notice.
+
+HP Cloud OS is experimental and is provided as a courtesy, free of charge, "AS-IS" by Hewlett-Packard 
+Company ("HP"). HP shall have no obligation to maintain or support this software. 
+
+HP MAKES NO EXPRESS OR IMPLIED WARRANTY OF ANY KIND REGARDING THIS SOFTWARE INCLUDING ANY 
+WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE OR NON-
+INFRINGEMENT. HP SHALL NOT BE LIABLE FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL 
+OR CONSEQUENTIAL DAMAGES, WHETHER BASED ON CONTRACT, TORT OR ANY OTHER LEGAL 
+THEORY, IN CONNECTION WITH OR ARISING OUT OF THE FURNISHING, PERFORMANCE OR USE 
+OF THIS SOFTWARE.
+
+## Open Source Licenses## {#open-source-licenses}
+
+HP acknowledges the redistribution of the following open source components under the licenses shown below.
+
+Additional copyright information and license texts may be found with the code you download or otherwise made available to you by HP.
+
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> 
+To address source code availability requirements for code licensed under MPL, CDDL, LGPL v2.1 & v3, GPL v2 & v3, 
+you can obtain a ZIP containing that source code (the required subset) <a href="https://cloudos.hpwsportal.com" target="_blank"> 
+at the HP Cloud OS portal</a>. On the site, sign up, login, then follow the Open Source Licenses link. The ZIP file is approximately 2 GB.</p>
 
 
 ### Academic Free License
 
-
-
 This notice is provided with respect to the following components which may be included with the product.
-
 
 The Academic Free License, v. 2.1:
 
@@ -2910,7 +2943,6 @@ The following open source packages in this product are governed by the following
 
 FILE "acl-2.2.52/debian/copyright":
 
-[BEGIN FILE=acl-2.2.52/debian/copyright]
 This package was debianized by Nathan Scott nathans@debian.org on
 Tue, 26 Feb 2002 13:25:26 +1100
 
@@ -2930,14 +2962,12 @@ Certain components (as annotated in the source) are licensed
 under the terms of the GNU General Public License.
 On Debian systems, the complete text of the GNU General Public
 License can be found in /usr/share/common-licenses/GPL file.
-[END FILE=acl-2.2.52/debian/copyright]
 
 
 %%% Within package adduser (version 3.113+nmu3):
 
 FILE "adduser-3.113+nmu3/debian/copyright":
 
-[BEGIN FILE=adduser-3.113+nmu3/debian/copyright]
 This package was first put together by Ian Murdock
 (imurdock@debian.org) and was maintained by Steve Phillips
 (sjp@cvfn.org) from sources written for the Debian Project by Ian
@@ -2985,14 +3015,12 @@ GPL V2 as well.
 
 On Debian GNU/Linux systems, the complete text of the GNU General
 Public License can be found in `/usr/share/common-licenses/GPL-2'.
-[END FILE=adduser-3.113+nmu3/debian/copyright]
 
 
 %%% Within package alsa-lib (version 1.0.27.2):
 
 FILE "alsa-lib-1.0.27.2/debian/copyright":
 
-[BEGIN FILE=alsa-lib-1.0.27.2/debian/copyright]
 This package was debianized by Wichert Akkerman 7 Jun 1998.
 Masato Taruishi took over on 17 Oct 1999.
 Since September 2002 it has been maintained by the participants in
@@ -3028,14 +3056,12 @@ Copyright (c) 1998 Jarsolav Kysela (perex@suse.cz) and others.
 
 On Debian systems, the complete text of the GNU Lesser General Public License
 can be found in /usr/share/common-licenses/LGPL-2.1.
-[END FILE=alsa-lib-1.0.27.2/debian/copyright]
 
 
 %%% Within package apache2 (version 2.4.9):
 
 FILE "apache2-2.4.9/debian/copyright":
 
-[BEGIN FILE=apache2-2.4.9/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: Apache HTTPD Server
 Source: http://httpd.apache.org/
@@ -3489,11 +3515,9 @@ License: MIT
  IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
  CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-[END FILE=apache2-2.4.9/debian/copyright]
 
 FILE "apache2-2.4.9/LICENSE":
 
-[BEGIN FILE=apache2-2.4.9/LICENSE]
                                  Apache License
                            Version 2.0, January 2004
                         http://www.apache.org/licenses/
@@ -4042,14 +4066,12 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 
 ====================================================================
-[END FILE=apache2-2.4.9/LICENSE]
 
 
 %%% Within package apparmor (version 2.8.0):
 
 FILE "apparmor-2.8.0/debian/copyright":
 
-[BEGIN FILE=apparmor-2.8.0/debian/copyright]
 Format: http://svn.debian.org/wsvn/dep/web/deps/dep5.mdwn?op=file&rev=166
 Upstream-Name: AppArmor
 Upstream-Contact: apparmor@lists.ubuntu.com
@@ -4183,11 +4205,9 @@ License: BSD-3-clause
  3. The name of any author may not be used to endorse or promote
     products derived from this software without their specific prior
     written permission.
-[END FILE=apparmor-2.8.0/debian/copyright]
 
 FILE "apparmor-2.8.0/changehat/pam_apparmor/COPYING":
 
-[BEGIN FILE=apparmor-2.8.0/changehat/pam_apparmor/COPYING]
 The pam_apparmor package is licensed under the same license as Linux-PAM
 (http://www.kernel.org/pub/linux/libs/pam/), quoted below:
 
@@ -4227,14 +4247,12 @@ TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
 USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
 DAMAGE.
 -------------------------------------------------------------------------
-[END FILE=apparmor-2.8.0/changehat/pam_apparmor/COPYING]
 
 
 %%% Within package apr (version 1.5.1):
 
 FILE "apr-1.5.1/debian/copyright":
 
-[BEGIN FILE=apr-1.5.1/debian/copyright]
 This package was debianized by Thom May (thom@debian.org) on
 Wed, 17 Nov 2004 11:27:14 -0800
 
@@ -4376,14 +4394,12 @@ From test/CuTest.c, test/CuTest.h:
  * misrepresented as being the original software.
  * 
  * 3. This notice may not be removed or altered from any source distribution.
-[END FILE=apr-1.5.1/debian/copyright]
 
 
 %%% Within package apr-util (version 1.5.3):
 
 FILE "apr-util-1.5.3/debian/copyright":
 
-[BEGIN FILE=apr-util-1.5.3/debian/copyright]
 This package was debianized by Thom May (thom@debian.org) on
 Wed, 17 Nov 2004 11:27:14 -0800
 
@@ -4580,11 +4596,9 @@ and NOT according to the license contained in the source files.
 
 The statement was downloaded from http://www.ietf.org/ietf-ftp/IPR/RSA-MD-all
 on January 8th, 2012.
-[END FILE=apr-util-1.5.3/debian/copyright]
 
 FILE "apr-util-1.5.3/LICENSE":
 
-[BEGIN FILE=apr-util-1.5.3/LICENSE]
                                  Apache License
                            Version 2.0, January 2004
                         http://www.apache.org/licenses/
@@ -5028,11 +5042,9 @@ For the ldap/apr_ldap_url.c component:
  * is provided ``as is'' without express or implied warranty.
  */
 
-[END FILE=apr-util-1.5.3/LICENSE]
 
 FILE "apr-util-1.5.3/xml/expat/COPYING":
 
-[BEGIN FILE=apr-util-1.5.3/xml/expat/COPYING]
 Copyright (c) 1998, 1999, 2000 Thai Open Source Software Center Ltd
                                and Clark Cooper
 Copyright (c) 2001, 2002 Expat maintainers.
@@ -5055,14 +5067,12 @@ IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
 CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
 TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-[END FILE=apr-util-1.5.3/xml/expat/COPYING]
 
 
 %%% Within package apt (version 1.0.3):
 
 FILE "apt-1.0.3/debian/copyright":
 
-[BEGIN FILE=apt-1.0.3/debian/copyright]
 Apt is copyright 1997, 1998, 1999 Jason Gunthorpe and others.
 Apt is currently developed by APT Development Team (deity@lists.debian.org).
 
@@ -5086,14 +5096,12 @@ See /usr/share/common-licenses/GPL-2, or
 (http://www.gnu.org/copyleft/gpl.txt) for the terms of the latest version
 of the GNU General Public License.
 
-[END FILE=apt-1.0.3/debian/copyright]
 
 
 %%% Within package aptitude (version 0.6.10):
 
 FILE "aptitude-0.6.10/debian/copyright":
 
-[BEGIN FILE=aptitude-0.6.10/debian/copyright]
 Copyright 1999-2005 Daniel Burrows (dburrows@debian.org)
 
 The upstream web site for aptitude is:
@@ -5105,14 +5113,12 @@ Its Git repository is available at:
     git://git.debian.org/git/aptitude/aptitude.git
 
 License: GPL (/usr/share/common-licenses/GPL)
-[END FILE=aptitude-0.6.10/debian/copyright]
 
 
 %%% Within package apt-xapian-index (version 0.46):
 
 FILE "apt-xapian-index-0.46/debian/copyright":
 
-[BEGIN FILE=apt-xapian-index-0.46/debian/copyright]
 apt-xapian-index was packaged by Enrico Zini (enrico@debian.org) on
 Mon Oct 15 13:58:29 BST 2007
 
@@ -5146,14 +5152,12 @@ To Public License, Version 2:
   and/or modify it under the terms of the Do What The Fuck You Want
   To Public License, Version 2, as published by Sam Hocevar. See
   http://sam.zoy.org/wtfpl/COPYING for more details.
-[END FILE=apt-xapian-index-0.46/debian/copyright]
 
 
 %%% Within package arping (version 2.11):
 
 FILE "arping-2.11/debian/copyright":
 
-[BEGIN FILE=arping-2.11/debian/copyright]
 This package was debianized by Lenart Janos (ocsi@debian.org) on
 Sun, 27 May 2001 16:46:46 +0200.
 Re-debianized by Giuseppe Iuculano (giuseppe@iuculano.it) on
@@ -5189,14 +5193,12 @@ Public License can be found in `/usr/share/common-licenses/GPL'.
 
 The Debian packaging is Â© 2008, Giuseppe Iuculano (giuseppe@iuculano.it) and
 is licensed under the GPL, see `/usr/share/common-licenses/GPL'.
-[END FILE=arping-2.11/debian/copyright]
 
 
 %%% Within package attr (version 2.4.47):
 
 FILE "attr-2.4.47/debian/copyright":
 
-[BEGIN FILE=attr-2.4.47/debian/copyright]
 This package was debianized by Nathan Scott nathans@debian.org on
 Sun, 19 Nov 2000 07:37:09 -0500.
 
@@ -5216,14 +5218,12 @@ Certain components (as annotated in the source) are licensed
 under version 2 of the terms of the GNU General Public License.
 On Debian systems, the complete text of the GNU General Public
 License can be found in /usr/share/common-licenses/GPL-2 file.
-[END FILE=attr-2.4.47/debian/copyright]
 
 
 %%% Within package audit (version 2.3.6):
 
 FILE "audit-2.3.6/debian/copyright":
 
-[BEGIN FILE=audit-2.3.6/debian/copyright]
 This package was debianized by Philipp Matthias Hahn (pmhahn@debian.org) on
 Wed, 21 Mar 2007 09:47:19 +0100.
 
@@ -5248,14 +5248,12 @@ On Debian systems, refer to /usr/share/common-licenses/LGPL-2.1
 for the complete text of the GNU Lesser General Public License.
 On Debian systems, the complete text of the GNU General Public
 License can be found in /usr/share/common-licenses/GPL file.
-[END FILE=audit-2.3.6/debian/copyright]
 
 
 %%% Within package augeas (version 1.0.0):
 
 FILE "augeas-1.0.0/debian/copyright":
 
-[BEGIN FILE=augeas-1.0.0/debian/copyright]
 This package was debianized by Nicolas ValcÃ¡rcel (nvalcarcel@ubuntu.com) on
 Wed, 18 Jun 2008 18:57:49 -0500.
 
@@ -5393,14 +5391,12 @@ License version 3 can be found in `/usr/share/common-licenses/GPL-3'
 
 The Debian packaging is (C) 2008, Nicolas ValcÃ¡rcel (nvalcarcel@ubuntu.com) and
 is licensed under the GPL, see `/usr/share/common-licenses/GPL'.
-[END FILE=augeas-1.0.0/debian/copyright]
 
 
 %%% Within package autogen (version 5.18):
 
 FILE "autogen-5.18/debian/copyright":
 
-[BEGIN FILE=autogen-5.18/debian/copyright]
 Author: Bruce Korb
 Download: ftp://ftp.gnu.org/gnu/autogen/
 
@@ -5469,14 +5465,12 @@ License can be found in `/usr/share/common-licenses/GPL-3'.
 
 On Debian GNU/Linux systems, the complete text of the GNU Lesser General
 Public License can be found in `/usr/share/common-licenses/LGPL-3'.
-[END FILE=autogen-5.18/debian/copyright]
 
 
 %%% Within package avahi (version 0.6.31):
 
 FILE "avahi-0.6.31/debian/copyright":
 
-[BEGIN FILE=avahi-0.6.31/debian/copyright]
 This package was debianized by Ross Burton (ross@debian.org) on
 Fri, 19 Aug 2005 11:38:54 +0000.
 
@@ -5582,15 +5576,11 @@ The avahi-compat-libdns_sd public header (avahi-compat-libdns_sd/dns_sd.h) is:
  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-[END FILE=avahi-0.6.31/debian/copyright]
-makeit: WARNING: no base-files-7.3+hLinux1/debian/*copyright file
-
 
 %%% Within package base-files (version 7.3+hLinux1):
 
 FILE "base-files-7.3+hLinux1/licenses/Artistic":
 
-[BEGIN FILE=base-files-7.3+hLinux1/licenses/Artistic]
 
 
 
@@ -5722,11 +5712,9 @@ IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED
 WARRANTIES OF MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE.
 
 				The End
-[END FILE=base-files-7.3+hLinux1/licenses/Artistic]
 
 FILE "base-files-7.3+hLinux1/licenses/BSD":
 
-[BEGIN FILE=base-files-7.3+hLinux1/licenses/BSD]
 Copyright (c) The Regents of the University of California.
 All rights reserved.
 
@@ -5753,14 +5741,12 @@ HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
 LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
 OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
 SUCH DAMAGE.
-[END FILE=base-files-7.3+hLinux1/licenses/BSD]
 
 
 %%% Within package base-passwd (version 3.5.28):
 
 FILE "base-passwd-3.5.28/debian/copyright":
 
-[BEGIN FILE=base-passwd-3.5.28/debian/copyright]
 Format-Specification: http://svn.debian.org/wsvn/dep/web/deps/dep5.mdwn?op=file&rev=135
 Name: base-passwd
 Maintainer: Colin Watson (cjwatson@debian.org)
@@ -5784,14 +5770,12 @@ License: GPL-2
 License: GPL-2
  On Debian and Debian-based systems, a copy of the GNU General Public
  License version 2 is available in /usr/share/common-licenses/GPL-2.
-[END FILE=base-passwd-3.5.28/debian/copyright]
 
 
 %%% Within package bash (version 4.3):
 
 FILE "bash-4.3/debian/copyright":
 
-[BEGIN FILE=bash-4.3/debian/copyright]
 This is Debian GNU/Linux's prepackaged version of the FSF's GNU Bash,
 the Bourne Again SHell.
 
@@ -5907,6 +5891,8 @@ lib/readline/doc/rluser.texi (part of the GNU Readline Library manual)
  Permission is granted to make and distribute verbatim copies of this manual
  provided the copyright notice and this permission notice are preserved 
 </code></pre>
+
+The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
