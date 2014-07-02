@@ -4741,7 +4741,7 @@ the laws of that jurisdiction excluding its conflict-of-law provisions. The
 application of the United Nations Convention on Contracts for the International
 Sale of Goods is expressly excluded. Any use of the Original Work outside the
 scope of this License or after its termination shall be subject to the
-requirements and penalties of the U.S. Copyright Act, 17 U.S.C. Â§ 101 et
+requirements and penalties of the U.S. Copyright Act, 17 U.S.C. paragraph 101 et
 seq., the equivalent laws of other countries, and international treaty. This
 section shall survive the termination of this License.
 
