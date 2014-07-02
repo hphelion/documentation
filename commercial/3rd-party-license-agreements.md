@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack Open Source and Third-Party Software License Agreements"
-permalink: /helion/openstack/3rd-party-license-agreementsFLUBBER/
+permalink: /helion/openstack/3rd-party-license-agreements/
 product: commercial
 
 ---
