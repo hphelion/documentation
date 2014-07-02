@@ -32,7 +32,7 @@ product: community
 
 8. Copyright Notices. You must reproduce copyright notices on the Software and documentation for authorized copies.
 
-9.  Support.   HP is not required to provide you with technical support.  Any technical support HP does provide to you shall be at HP’s sole discretion and is provided “As Is” except to the extent any additional support is provided in Supporting Material or in a separate support agreement between you and HP.
+9.  Support.   HP is not required to provide you with technical support.  Any technical support HP does provide to you shall be at HP’s sole discretion and is provided "As Is" except to the extent any additional support is provided in Supporting Material or in a separate support agreement between you and HP.
 
 10. Disclaimer of Warranties.  HP does not warrant that the operation of Software will be uninterrupted or error-free, or that Software will operate in hardware and software combinations other than as authorized by HP in Supporting Material.  THE SOFTWARE AND ALL RELATED COMPONENTS ARE PROVIDED "AS IS." TO THE FULL EXTENT PERMITTED BY LAW, HP AND ITS SUPPLIERS MAKE NO OTHER WARRANTIES, CONDITIONS, REPRESENTATIONS OR UNDERTAKINGS, EXPRESS OR IMPLIED, STATUTORY, LEGAL OR OTHERWISE, INCLUDING BUT NOT LIMITED TO WARRANTIES OF QUALITY, MERCHANTABILITY, TITLE, FITNESS FOR A PARTICULAR PURPOSE OR NON-INFRINGEMENT, AND ANY OTHER WARRANTIES ARISING OUT OF COURSE OF DEALING, USAGE OR TRADE. 
 
