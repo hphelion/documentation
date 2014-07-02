@@ -10690,8 +10690,7 @@ limitations under the License.</p></li>
 </ol><p>The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.</p>
 
 
-<div style="height:120px;width:120px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">
-
+<pre><code>
 (insert legal preamble HERE)
 
 The following open source licenses are listed in their entirety at the bottom of this document:
@@ -51702,7 +51701,7 @@ apply, that proxy's public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 [END FILE=/usr/share/common-licenses/LGPL-3]
-<div>
+</code></pre>
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
