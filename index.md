@@ -27,16 +27,16 @@ HP Helion provides public, private, and managed cloud solutions to get you movin
 </tr>
 
 <tr valign="top">
-<td style="border-width : 0px;"><p style=" text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><span style=" background-color: transparent; text-decoration: none;"><a href="/pc-overview/">HP Helion Public Cloud</a></span></p>
+<td style="border-width : 0px;"><p style=" text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><span style=" background-color: transparent; text-decoration: none;"><a href="/helion/devplatform/">HP Helion Development Platform</a></span></p>
 </td>
-<td>Provides a transparent, enterprise-grade public cloud based on OpenStack technology with on-demand, pay-as-you-go cloud services for computing and storage infrastructure as well as platform services.
+<td>Based on Cloud Foundry&trade;, this free add-on for HP Helion OpenStack Community empowers developers and IT professionals with an open development platform designed for agility.
 </td>
 </tr>
 
 <tr valign="top">
-<td style="border-width : 0px;"><p style=" text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><span style=" background-color: transparent; text-decoration: none;"><a href="/helion/devplatform/">HP Helion Development Platform</a></span></p>
+<td style="border-width : 0px;"><p style=" text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><span style=" background-color: transparent; text-decoration: none;"><a href="/pc-overview/">HP Helion Public Cloud</a></span></p>
 </td>
-<td>Based on Cloud Foundry&trade;, this free add-on for HP Helion OpenStack Community empowers developers and IT professionals with an open development platform designed for agility.
+<td>Provides a transparent, enterprise-grade public cloud based on OpenStack technology with on-demand, pay-as-you-go cloud services for computing and storage infrastructure as well as platform services.
 </td>
 </tr>
 
