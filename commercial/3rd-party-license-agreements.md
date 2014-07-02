@@ -21,7 +21,7 @@ PageRefresh();
 
 # HP Helion OpenStack&reg; Beta Open Source and Third-Party Software License Agreements
 
-Document Release Date: June 2014 <br />
+Document Release Date: June 2014  <br/>
 Software Release Date: June 2014
 
 * [Legal Notices](#legal-notices)
