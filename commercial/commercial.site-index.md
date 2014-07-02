@@ -53,7 +53,7 @@ PageRefresh();
 
 #### [Open Source and Third-Party Software License Agreements](/helion/openstack/3rd-party-license-agreements/)
 
-#### [Preview Agreement](/helion/openstack/preview-agreement/)
+#### [Preview Agreement](/helion/openstack/eula/)
  
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
  
