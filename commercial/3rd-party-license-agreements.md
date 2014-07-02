@@ -101,7 +101,6 @@ This notice is provided with respect to the following components which may be in
 - javassist v 3.18.0
 - jboss-logging v 3.1.3
 
-
 The Apache Software Foundation uses various licenses to distribute software and 
 documentation, to accept regular contributions from individuals and 
 corporations, and to accept larger grants of existing software products.
