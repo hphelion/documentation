@@ -47,8 +47,8 @@ do
   rm -rf documentation
   git clone git@git.hpcloud.net:DevExDocs/documentation.git
   cd documentation
-  git checkout "${BRANCH}"
-  git pull origin "${BRANCH}"
+  git checkout -b "${BRANCH}" "origin/${BRANCH}"
+  git pull
   cp -f _config.yml "${DIR}/_config.yml"
   cd "${DIR}/content"
   rm -rf apihome
