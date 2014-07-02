@@ -7,7 +7,7 @@ product: commercial
 ---
 <p style="font-size: small;"> <a href="/helion/openstack/install-beta/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/technical-overview/">NEXT &#9654;</a> </p>
 
-<h1>HP Helion OpenStack&#174; FAQ</h1> 
+#HP Helion OpenStack&#174; FAQ#
 
 Welcome! You've got questions. We have the answers.  
 
