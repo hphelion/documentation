@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack Community: End User License Agreement"
-permalink: /helion/community/eula/
+permalink: /helion/community/community.eula/
 product: community
 
 ---
