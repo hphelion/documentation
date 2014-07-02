@@ -179,7 +179,7 @@ navigation:
   - text: Object Storage Examples
     url: /bindings/jclouds/object-storage/
   cloudos:
-  - text: HP Cloud OS Home
+  - text: HP Cloud OS Home  (Deprecated)
     url: /cloudos/
   - text: Prepare
     url: /cloudos/prepare/  	
@@ -257,7 +257,7 @@ navigation:
   - text: Glossary
     url: /helion/openstack/glossary/ 	
   - text: Preview Agreement
-    url: /helion/openstack/preview-agreement/
+    url: /helion/openstack/eula/
   - text: Open Source and Third-Party Software License Agreements
     url: /helion/openstack/3rd-party-license-agreements/	
   - text: Site Index
