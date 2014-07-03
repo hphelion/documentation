@@ -95,7 +95,7 @@ commercial license.</p>
 
 <h3 id="copyright-notice">Copyright Notice</h3>
 
-<p>Hewlett-Packard Company Confidential © Copyright 2012-2014 Hewlett-Packard Development Company, L.P.</p>
+<p>Hewlett-Packard Company Confidential &copy; Copyright 2012-2014 Hewlett-Packard Development Company, L.P.</p>
 
 <h2 id="disclaimer-for-experimental-software">Disclaimer for Experimental Software</h2>
 
@@ -122,7 +122,7 @@ OF THIS SOFTWARE.</p>
 
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> 
 To address source code availability requirements for code licensed under MPL, CDDL, LGPL v2.1 &amp; v3, GPL v2 &amp; v3, 
-you can obtain a ZIP containing that source code (the required subset) <a href="https://cloudos.hpwsportal.com" target="_blank"> 
+you can obtain a ZIP containing that source code (the required subset) <a href="https://helion.hpwsportal.com" target="_blank"> 
 at the HP Helion OpenStack portal</a>. On the site, sign up, login, then follow the Open Source Licenses link. The ZIP file is approximately 2 GB.</p>
 
 <h3 id="academic-free-license">Academic Free License</h3>
