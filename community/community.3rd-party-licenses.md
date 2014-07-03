@@ -72,7 +72,7 @@ OF THIS SOFTWARE.
 
 ## Open Source Licenses## {#open-source-licenses}
 
-HP acknowledges the redistribution of the following open source components under the licenses shown below.
+This notice is provided with respect to the following component(s) which may be included with the product.
 
 Additional copyright information and license texts may be found with the code you download or otherwise made available to you by HP.
 
@@ -676,10 +676,7 @@ Creative Commons may be contacted at http://creativecommons.org/
 
 This notice is provided with respect to the following components which may be included with the product.
 
-* centos-kernel, Version 6.2
-* centos-subset, Version 5.7
 * java-1.7.0-openJDK, Version 1.7.0
-* ubuntu-standard, Version 12.04.lts
 
 GNU GENERAL PUBLIC LICENSE <br />
 Version 2, June 1991
