@@ -26,7 +26,7 @@ This topic provides you links to pertinent documentation.
 
 ### OpenStack Links
 
-HP Helion OpenStack is based on the OpenStack technology and HP Linux. 
+HP Helion OpenStack beta is OpenStack technology coupled with a Linux&reg; operating system. 
 
 For more information, refer to the OpenStack documentation site: 
 
@@ -38,7 +38,7 @@ For more information, refer to the OpenStack documentation site:
 
 * [OpenStack Cloud Administrator Guide](http://docs.openstack.org/trunk/openstack-compute/admin/content/index.html)
 
-* [OpenStack Networking Administration Guide](http://docs.openstack.org/trunk/openstack-network/admin/content/index.html)
+* [OpenStack Administrator Guide for Networking](http://docs.openstack.org/admin-guide-cloud/content/ch_networking.html)
 
 * [OpenStack Operations Guide](http://docs.openstack.org/trunk/openstack-ops/content/index.html)
 
