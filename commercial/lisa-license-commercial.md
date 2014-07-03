@@ -2257,11 +2257,13 @@ necessary.  Here a sample; alter the names:</p>
 <h3 id="gnu-general-public-license-version-2">GNU GENERAL PUBLIC LICENSE Version 2</h3>
 
 <p>June 1991</p>
-
-<ul><li>centos-kernel, Version 6.2</li>
-<li>centos-subset, Version 5.7</li>
+<p>
+<ul><!-- <li>centos-kernel, Version 6.2</li>
+<li>centos-subset, Version 5.7</li> -->
 <li>java-1.7.0-openJDK, Version 1.7.0</li>
-<li><p>ubuntu-standard, Version 12.04.lts</p>
+<!-- <li>ubuntu-standard, Version 12.04.lts </li> -->
+</ul>
+</p>
 
 <p>Copyright (C) 1989, 1991 Free Software Foundation, Inc.,
 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
