@@ -45,7 +45,7 @@ commercial license.</p>
 
 <h3 id="copyright-notice">Copyright Notice</h3>
 
-<p>Hewlett-Packard Company Confidential © Copyright 2012-2014 Hewlett-Packard Development Company, L.P.</p>
+<p>Hewlett-Packard Company Confidential &copy; Copyright 2012-2014 Hewlett-Packard Development Company, L.P.</p>
 
 <h2 id="disclaimer-for-experimental-software">Disclaimer for Experimental Software</h2>
 
@@ -84,17 +84,17 @@ at the HP Helion OpenStack portal</a>. On the site, sign up, login, then follow 
 <p>http://www.apache.org/licenses/LICENSE-1.0</p>
 
 <p>This notice is provided with respect to the following components which may be included with the product.
-* apache-commons-io v 2.4
-* apache-commons-lang v 2.6
-* apache-commons-logging v 1.1.1
-* apache-log4j v 1.2.17
-* cglib v 3
-* geronimo-javax.activation v 1.1
-* guava v 13
-* handjs v 1.0.5
-* jackson v 2.2.2
-* javassist v 3.18.0
-* jboss-logging v 3.1.3</p>
+<ul><li> apache-commons-io v 2.4</li>
+<li> apache-commons-lang v 2.6</li>
+<li> apache-commons-logging v 1.1.1</li>
+<li> apache-log4j v 1.2.17</li>
+<li> cglib v 3</li>
+<li> geronimo-javax.activation v 1.1</li>
+<li> guava v 13</li>
+<li> handjs v 1.0.5</li>
+<li> jackson v 2.2.2</li>
+<li> javassist v 3.18.0</li>
+<li> jboss-logging v 3.1.3</li></ul></p>
 
 <p>The Apache Software Foundation uses various licenses to distribute software and 
 documentation, to accept regular contributions from individuals and 
