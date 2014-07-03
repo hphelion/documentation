@@ -21,11 +21,9 @@ PageRefresh();
 
 # HP Helion OpenStack&reg; Site Index
 
-#### [HP Helion OpenStack Home](/helion/openstack/)
-
 #### [Release Notes](/helion/openstack/release-notes/) 
 
-#### Getting started with HP Helion OpenStack
+#### [Getting started with HP Helion OpenStack](/helion/openstack/)
 
 * [Support matrix](/helion/openstack/support-matrix-beta/) 
 * [FAQs](/helion/openstack/faq/)  
