@@ -51,10 +51,6 @@ commercial license.
 
 Hewlett-Packard Company Confidential &copy; Copyright 2012-2014 Hewlett-Packard Development Company, L.P.
 
-### Trademark Notices
-
-Adobe &#174; is a trademark of Adobe Systems Incorporated.
-
 ## Disclaimer for Experimental Software## {#disclaimer-for-experimental-software}
 
 ### Warranty
@@ -64,7 +60,7 @@ accompanying such products and services. Nothing herein should be construed as c
 warranty. HP shall not be liable for technical or editorial errors or omissions contained herein.
 The information contained herein is subject to change without notice.
 
-HP Cloud OS is experimental and is provided as a courtesy, free of charge, "AS-IS" by Hewlett-Packard 
+HP Helion OpenStack is experimental and is provided as a courtesy, free of charge, "AS-IS" by Hewlett-Packard 
 Company ("HP"). HP shall have no obligation to maintain or support this software. 
 
 HP MAKES NO EXPRESS OR IMPLIED WARRANTY OF ANY KIND REGARDING THIS SOFTWARE INCLUDING ANY 
@@ -76,14 +72,13 @@ OF THIS SOFTWARE.
 
 ## Open Source Licenses## {#open-source-licenses}
 
-HP acknowledges the redistribution of the following open source components under the licenses shown below.
+This notice is provided with respect to the following component(s) which may be included with the product.
 
 Additional copyright information and license texts may be found with the code you download or otherwise made available to you by HP.
 
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> 
-To address source code availability requirements for code licensed under MPL, CDDL, LGPL v2.1 & v3, GPL v2 & v3, 
-you can obtain a ZIP containing that source code (the required subset) <a href="https://cloudos.hpwsportal.com" target="_blank"> 
-at the HP Cloud OS portal</a>. On the site, sign up, login, then follow the Open Source Licenses link. The ZIP file is approximately 2 GB.</p>
+To address source code availability requirements under these open source licenses, you can obtain a ZIP containing that source code (the required subset) <a href="https://helion.hpwsportal.com" target="_blank"> 
+at the HP Helion OpenStack portal</a>. On the site, sign up, login, then follow the Open Source Licenses link. The ZIP file is approximately 2 GB.</p>
 
 
 ### Academic Free License
@@ -681,10 +676,7 @@ Creative Commons may be contacted at http://creativecommons.org/
 
 This notice is provided with respect to the following components which may be included with the product.
 
-* centos-kernel, Version 6.2
-* centos-subset, Version 5.7
 * java-1.7.0-openJDK, Version 1.7.0
-* ubuntu-standard, Version 12.04.lts
 
 GNU GENERAL PUBLIC LICENSE <br />
 Version 2, June 1991
