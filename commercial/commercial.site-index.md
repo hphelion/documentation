@@ -19,13 +19,13 @@ PageRefresh();
 
 <p style="font-size: small;"> <a href="/helion/openstack/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | NEXT &#9654; </p>
 
-# HP Helion OpenStack Site Index
+# HP Helion OpenStack&reg; Site Index
 
 #### [HP Helion OpenStack Home](/helion/openstack/)
 
 #### [Release Notes](/helion/openstack/release-notes/) 
 
-#### [Getting started with HP Helion OpenStack](/helion/openstack/)
+#### Getting started with HP Helion OpenStack
 
 * [Support matrix](/helion/openstack/support-matrix-beta/) 
 * [FAQs](/helion/openstack/faq/)  
@@ -33,7 +33,7 @@ PageRefresh();
 * [Services overview](/helion/openstack/services/overview/)   
 * [Glossary](/helion/openstack/glossary/)
 
-#### [Installing &amp; Configuring Your Cloud](/helion/openstack/install-beta-overview/)
+#### Installing &amp; Configuring Your Cloud
 * [Overview](/helion/openstack/install-beta-overview/) 
 * [Before you begin](/helion/openstack/install-beta/prereqs/) 
 * [Installing and configuring with a KVM hypervisor](/helion/openstack/install-beta/kvm)
