@@ -20,7 +20,7 @@ PageRefresh();
 
 <p style="font-size: small;"> <a href="/helion/openstack/">&#9664; PREV | <a href="/helion/openstack/">&#9650; UP</a> | NEXT &#9654; </p>
 
-<h1 id="hp-helion-openstack-beta-open-source-and-third-party-software-license-agreements">HP Helion OpenStack® Beta Open Source and Third-Party Software License Agreements</h1>
+<h1 id="hp-helion-openstack-beta-open-source-and-third-party-software-license-agreements">HP Helion OpenStack&reg; Beta Open Source and Third-Party Software License Agreements</h1>
 
 <p>Document Release Date: June 2014 <br />
 Software Release Date: June 2014</p>
@@ -118,7 +118,7 @@ OF THIS SOFTWARE.</p>
 
 <h2 id="open-source-licenses">Open Source Licenses</h2>
 
-<p>This notice is provided with respect to the following component(s) which may be included with the product.  Additional copyright information and license texts may be found with the code you download or otherwise made available to you by HP.</p>
+<p>This notice is provided with respect to the following component(s) which may be included with the product. Additional copyright information and license texts may be found with the code you download or otherwise made available to you by HP.</p>
 
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> 
 To address source code availability requirements for code licensed under MPL, CDDL, LGPL v2.1 &amp; v3, GPL v2 &amp; v3, 
@@ -16346,7 +16346,7 @@ PERFORMANCE OF THE DATA FILES OR SOFTWARE.(/p)
  #	  - http://chasen.aist-nara.ac.jp/chasen/distribution.html
  #	  - Its license terms and conditions are shown below.
  #	
- #	---------COPYING.libtabe ---- BEGIN--------------------
+ #	---------COPYING.libtabe ---- --------------------
  #	
  #	/*
  #	 * Copyrighy (c) 1999 TaBE Project.
@@ -16418,10 +16418,10 @@ PERFORMANCE OF THE DATA FILES OR SOFTWARE.(/p)
  #	Copyright 1996 Chih-Hao Tsai @ Beckman Institute, University of Illinois
  #	c-tsai4@uiuc.edu  http://casper.beckman.uiuc.edu/~c-tsai4
  #	
- #	---------------COPYING.libtabe-----END------------------------------------
+ #	---------------COPYING.libtabe-----------------------------------------
  #	
  #	
- #	---------------COPYING.ipadic-----BEGIN------------------------------------
+ #	---------------COPYING.ipadic-----------------------------------------
  #	
  #	Copyright 2000, 2001, 2002, 2003 Nara Institute of Science
  #	and Technology.  All Rights Reserved.
@@ -16494,7 +16494,7 @@ PERFORMANCE OF THE DATA FILES OR SOFTWARE.(/p)
  #	from and not be held liable to the user for any such damages as noted
  #	above as far as the program is concerned.
  #	
- #	---------------COPYING.ipadic-----END------------------------------------
+ #	---------------COPYING.ipadic-----------------------------------------
 (/pre)
 
 (h3)3. Lao Word Break Dictionary Data (laodict.txt)(/h3)
@@ -27322,7 +27322,7 @@ mentioned herein are the property of their respective owners.
 %% This notice is provided with respect to certain files/code which may included in the implementation of AWT within the software: 
 
 ****************************************************** 
-BEGIN  src/solaris/native/sun/awt/HPkeysym.h 
+  src/solaris/native/sun/awt/HPkeysym.h 
 Copyright 1987, 1998  The Open Group 
 
 All Rights Reserved. 
@@ -27374,7 +27374,7 @@ performance, or use of this material.
 
 END  src/solaris/native/sun/awt/HPkeysym.h 
 ****************************************************** 
-BEGIN  src/solaris/native/sun/awt/Xinerama.c 
+  src/solaris/native/sun/awt/Xinerama.c 
 /***************************************************************** 
 Copyright (c) 1991, 1997 Digital Equipment Corporation, Maynard, Massachusetts. 
 Permission is hereby granted, free of charge, to any person obtaining a copy 
@@ -27401,7 +27401,7 @@ Equipment Corporation.
 ******************************************************************/ 
 END  src/solaris/native/sun/awt/Xinerama.c 
 ****************************************************** 
-BEGIN src/solaris/native/sun/awt/Xinerama.h 
+ src/solaris/native/sun/awt/Xinerama.h 
 /* 
 Copyright (C) 1994-2001 The XFree86 Project, Inc. All Rights Reserved. 
 
@@ -27430,9 +27430,9 @@ not be used in advertising or otherwise to promote the sale, use or
 other dealings in this Software without prior written authorization of 
 the copyright holder. 
 */ 
-END src/solaris/native/sun/awt/Xinerama.h 
+ src/solaris/native/sun/awt/Xinerama.h 
 ****************************************************** 
-BEGIN src/solaris/native/sun/awt/Xrandr.h 
+ src/solaris/native/sun/awt/Xrandr.h 
 /* 
  * $XFree86: xc/lib/Xrandr/Xrandr.h,v 1.9 2002/09/29 23:39:44 keithp Exp $ 
  * 
@@ -27460,9 +27460,9 @@ BEGIN src/solaris/native/sun/awt/Xrandr.h
  */ 
 
 
-END src/solaris/native/sun/awt/Xrandr.h 
+ src/solaris/native/sun/awt/Xrandr.h 
 ****************************************************** 
-BEGIN src/solaris/native/sun/awt/extutil.h 
+ src/solaris/native/sun/awt/extutil.h 
 /* 
  * $Xorg: extutil.h,v 1.3 2000/08/18 04:05:45 coskrey Exp $ 
  * 
@@ -27493,9 +27493,9 @@ in this Software without prior written authorization from The Open Group.
  */ 
 /* $XFree86: xc/include/extensions/extutil.h,v 1.5 2001/01/17 17:53:20 dawes Exp $ */ 
 
-END src/solaris/native/sun/awt/extutil.h 
+ src/solaris/native/sun/awt/extutil.h 
 ****************************************************** 
-BEGIN   src/solaris/native/sun/awt/fontconfig.h 
+   src/solaris/native/sun/awt/fontconfig.h 
 /* 
  * $RCSId: xc/lib/fontconfig/fontconfig/fontconfig.h,v 1.30 2002/09/26 00:17:27 
 keithp Exp $ 
@@ -27522,7 +27522,7 @@ keithp Exp $
 
 END   src/solaris/native/sun/awt/fontconfig.h 
 ****************************************************** 
-BEGIN src/solaris/native/sun/awt/list.c 
+ src/solaris/native/sun/awt/list.c 
 AND  src/solaris/native/sun/awt/list.h 
 AND src/solaris/native/sun/awt/multiVis.c 
 AND  src/solaris/native/sun/awt/multiVis.h 
@@ -27555,14 +27555,14 @@ not be used in advertising or otherwise to promote the sale, use or
 other dealings in this Software without prior written authorization 
 from the X Consortium. 
 
-END src/solaris/native/sun/awt/list.c 
+ src/solaris/native/sun/awt/list.c 
 AND  src/solaris/native/sun/awt/list.h 
 AND src/solaris/native/sun/awt/multiVis.c 
 AND  src/solaris/native/sun/awt/multiVis.h 
 AND  src/solaris/native/sun/awt/wsutils.h 
 
 ***************************************************************** 
-BEGIN src/solaris/native/sun/awt/panoramiXext.h 
+ src/solaris/native/sun/awt/panoramiXext.h 
 Copyright (c) 1991, 1997 Digital Equipment Corporation, Maynard, Massachusetts. 
 Permission is hereby granted, free of charge, to any person obtaining a copy 
 of this software and associated documentation files (the "Software"), to deal 
@@ -27586,10 +27586,10 @@ shall not be used in advertising or otherwise to promote the sale, use or other
 dealings in this Software without prior written authorization from Digital 
 Equipment Corporation. 
 
-END src/solaris/native/sun/awt/panoramiXext.h 
+ src/solaris/native/sun/awt/panoramiXext.h 
 ****************************************************** 
 
-BEGIN src/solaris/native/sun/awt/randr.h 
+ src/solaris/native/sun/awt/randr.h 
 
  * 
  * Copyright © 2000, Compaq Computer Corporation, 
@@ -27614,10 +27614,10 @@ BEGIN src/solaris/native/sun/awt/randr.h
  * 
  * Author:  Jim Gettys, HP Labs, Hewlett-Packard, Inc. 
 
-END src/solaris/native/sun/awt/randr.h 
+ src/solaris/native/sun/awt/randr.h 
 ***************************************************** 
 
-BEGIN src/solaris/native/sun/java2d/opengl/J2D_GL/glx.h 
+ src/solaris/native/sun/java2d/opengl/J2D_GL/glx.h 
  * Mesa 3-D graphics library 
  * Version:  4.1 
  * 
@@ -27640,7 +27640,7 @@ BEGIN src/solaris/native/sun/java2d/opengl/J2D_GL/glx.h
  * AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN 
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. 
 
-END src/solaris/native/sun/java2d/opengl/J2D_GL/glx.h 
+ src/solaris/native/sun/java2d/opengl/J2D_GL/glx.h 
 
 
                 The Jscheme Language and Implementation

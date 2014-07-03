@@ -51,10 +51,6 @@ commercial license.
 
 Hewlett-Packard Company Confidential &copy; Copyright 2012-2014 Hewlett-Packard Development Company, L.P.
 
-### Trademark Notices
-
-Adobe &#174; is a trademark of Adobe Systems Incorporated.
-
 ## Disclaimer for Experimental Software## {#disclaimer-for-experimental-software}
 
 ### Warranty
@@ -81,9 +77,8 @@ HP acknowledges the redistribution of the following open source components under
 Additional copyright information and license texts may be found with the code you download or otherwise made available to you by HP.
 
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> 
-To address source code availability requirements for code licensed under MPL, CDDL, LGPL v2.1 & v3, GPL v2 & v3, 
-you can obtain a ZIP containing that source code (the required subset) <a href="https://cloudos.hpwsportal.com" target="_blank"> 
-at the HP Cloud OS portal</a>. On the site, sign up, login, then follow the Open Source Licenses link. The ZIP file is approximately 2 GB.</p>
+To address source code availability requirements under these open source licenses, you can obtain a ZIP containing that source code (the required subset) <a href="https://helion.hpwsportal.com" target="_blank"> 
+at the HP Helion OpenStack portal</a>. On the site, sign up, login, then follow the Open Source Licenses link. The ZIP file is approximately 2 GB.</p>
 
 
 ### Academic Free License
