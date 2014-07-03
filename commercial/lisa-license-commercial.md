@@ -556,9 +556,10 @@ limitations under the License.</p></li>
 </ul><h3 id="creative-commons-public-license">Creative Commons Public License</h3>
 
 <p>This notice is provided with respect to the following components which may be included with the product.
-* jquery.inserta 0.1
-* jquery.serializeobject 0.1
-* Creative Commons Attribution-ShareAlike 3.0</p>
+<ul><li>jquery.inserta 0.1</li>
+<li>jquery.serializeobject 0.1</li>
+<li>Creative Commons Attribution-ShareAlike 3.0</li>
+</li></p>
 
 <p>THE WORK (AS DEFINED BELOW) IS PROVIDED UNDER THE TERMS OF THIS CREATIVE COMMONS PUBLIC LICENSE ("CCPL" OR "LICENSE"). THE WORK IS PROTECTED BY COPYRIGHT AND/OR OTHER APPLICABLE LAW. ANY USE OF THE WORK OTHER THAN AS AUTHORIZED UNDER THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.</p>
 
@@ -611,8 +612,11 @@ f.The rights granted under, and the subject matter referenced, in this License w
 </ol><h3 id="codehaus-public-license-v-1111">Codehaus Public License v 1.1.1.1</h3>
 
 <p>This notice is provided with respect to the following components which may be included with the product.
-* classworlds v 1.1
-* plexus-classworlds 2.5.1</p>
+<ul>
+<li>classworlds v 1.1</li>
+<li>plexus-classworlds 2.5.1</li>
+</ul>
+</p>
 
 <p>Copyright 2002 (C) The Codehaus. All Rights Reserved.</p>
 
@@ -653,7 +657,10 @@ OF THE POSSIBILITY OF SUCH DAMAGE.</p></li>
 </ol><h3 id="common-development-and-distribution-license-cddl-version-10">COMMON DEVELOPMENT AND DISTRIBUTION LICENSE (CDDL) Version 1.0</h3>
 
 <p>This notice is provided with respect to the following components which may be included with the product.
-* jasper-glassfish</p>
+<ul>
+<li>jasper-glassfish</li>
+</ul>
+</p>
 
 <ol><li><p>Definitions.</p>
 
@@ -986,7 +993,10 @@ any resulting litigation.</p>
 <p>Copyright 2005, 2014 jQuery Foundation and other contributors,
 https://jquery.org/
 This notice is provided with respect to the following components which may be included with the product.
-* jQuery</p>
+<ul>
+<li>jQuery</li>
+</ul>
+</p>
 
 <p>This software consists of voluntary contributions made by many
 individuals. For exact contribution history, see the revision history
@@ -1026,8 +1036,11 @@ the terms above.</p>
 <h3 id="the-mit-license">The MIT License</h3>
 
 <p>This notice is provided with respect to the following components which may be included with the product.
-* tween.js r12
-* html5lib 0.999</p>
+<ul>
+<li>tween.js r12</li>
+<li> html5lib 0.999</li>
+</ul>
+</p>
 
 <p>Copyright (c) 2010-2012 Tween.js authors.</p>
 
@@ -1105,7 +1118,9 @@ THE SOFTWARE.</p>
 <h3 id="the-dojo-foundation-license">The Dojo Foundation License</h3>
 
 <p>This notice is provided with respect to the following components which may be included with the product.
-* nodejs-requirejs 2.1.8</p>
+<ul>
+<li>nodejs-requirejs 2.1.8</li>
+</ul></p>
 
 <p>Copyright (c) 2010-2011, The Dojo Foundation</p>
 
@@ -1130,7 +1145,9 @@ THE SOFTWARE.</p>
 <h3 id="the-dojo-foundation-license">The Dojo Foundation License</h3>
 
 <p>This notice is provided with respect to the following components which may be included with the product.
-*nodejs-lodash 1.3.1</p>
+<ul>
+<li>nodejs-lodash 1.3.1</li>
+</ul></p>
 
 <p>Copyright 2012-2014 The Dojo Foundation (http://dojofoundation.org/&gt;
 Based on Underscore.js 1.6.0, copyright 2009-2014 Jeremy Ashkenas,
@@ -1158,7 +1175,9 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
 <h3 id="nicolas-gallagher-and-jonathan-neal">Nicolas Gallagher and Jonathan Neal</h3>
 
 <p>This notice is provided with respect to the following components which may be included with the product.
- * normalize.ss 3.0.1</p>
+<ul>
+<li> normalize.ss 3.0.1</li>
+</ul></p>
 
 <p>Copyright (c) Nicolas Gallagher and Jonathan Neal</p>
 
@@ -1183,7 +1202,10 @@ SOFTWARE.</p>
 <h3 id="adam-draper-license">Adam Draper License</h3>
 
 <p>This notice is provided with respect to the following components which may be included with the product.
-* numeral-js 1.5.2</p>
+<ul>
+<li> numeral-js 1.5.2
+</li>
+</ul></p>
 
 <p>Copyright (c) 2012 Adam Draper</p>
 
@@ -1211,7 +1233,10 @@ OTHER DEALINGS IN THE SOFTWARE.</p>
 <h3 id="kristopher-michael-kowal-license">Kristopher Michael Kowal License</h3>
 
 <p>This notice is provided with respect to the following components which may be included with the product.
-* q 1.0.0</p>
+<ul>
+<li> q 1.0.0
+</li>
+</ul></p>
 
 <p>Copyright 2009?2014 Kristopher Michael Kowal. All rights reserved.
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -1236,7 +1261,9 @@ IN THE SOFTWARE.</p>
 
 <p>Copyright (c) 2012 Barnesandnoble.com, llc, Donavon West, and Domenic Denicola
 This notice is provided with respect to the following components which may be included with the product.
-* setImmediate.js 1.0.1</p>
+<ul>
+<li> setImmediate.js 1.0.1</li>
+</ul></p>
 
 <p>Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -1262,7 +1289,9 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
 <p>Copyright (c) 2004-2013 QOS.ch
 All rights reserved.
 This notice is provided with respect to the following components which may be included with the product.
-* slf4j 1.7.5</p>
+<ul>
+<li> slf4j 1.7.5</li>
+</ul></p>
 
 <p>Permission is hereby granted, free  of charge, to any person obtaining
 a  copy  of this  software  and  associated  documentation files  (the
@@ -1286,7 +1315,9 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
 <h3 id="jeremy-ashkenas-documentcloud-public-license">Jeremy Ashkenas, DocumentCloud Public License</h3>
 
 <p>This notice is provided with respect to the following components which may be included with the product.
-* backbone v 1.0.0</p>
+<ul>
+<li> backbone v 1.0.0</li>
+</ul></p>
 
 <p>Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation
@@ -1312,7 +1343,9 @@ OTHER DEALINGS IN THE SOFTWARE.</p>
 <h3 id="asm-public-license">ASM Public License</h3>
 
 <p>This notice is provided with respect to the following components which may be included with the product.
-* objectweb-asm v 3.1.0</p>
+<ul>
+<li> objectweb-asm v 3.1.0</li>
+</ul></p>
 
 <p>ASM: a very small and fast Java bytecode manipulation framework
 Copyright (c) 2000-2005 INRIA, France Telecom
@@ -1345,8 +1378,10 @@ THE POSSIBILITY OF SUCH DAMAGE.</p>
 <h3 id="public-domain-license">Public Domain License</h3>
 
 <p>This notice is provided with respect to the following components which may be included with the product.
-* libbackport-util-concurrent-java v 3.1
-* plexus-utils 3.0.1.4</p>
+<ul>
+<li> libbackport-util-concurrent-java v 3.1</li>
+<li>  plexus-utils 3.0.1.4</li>
+</ul></p>
 
 <p>The person or persons who have associated work with this document (the "Dedicator" or "Certifier") hereby either (a) certifies that, to the best of his knowledge, the work of authorship identified is in the public domain of the country from which the work is published, or (b) hereby dedicates whatever copyright the dedicators holds in the work of authorship identified below (the "Work") to the public domain. A certifier, morever, dedicates any copyright interest he may have in the associated work, and for these purposes, is described as a "dedicator" below.</p>
 
@@ -1359,7 +1394,9 @@ THE POSSIBILITY OF SUCH DAMAGE.</p>
 <h3 id="onsi-fakhouri-public-license">Onsi Fakhouri Public License</h3>
 
 <p>This notice is provided with respect to the following components which may be included with the product.
-* coccyx v 1</p>
+<ul>
+<li coccyx v 1</li>
+</ul></p>
 
 <p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
 
@@ -1370,7 +1407,9 @@ THE POSSIBILITY OF SUCH DAMAGE.</p>
 <h3 id="creative-commons-compatible-license-cc-by-sa-30">Creative Commons Compatible License CC-BY-SA-3.0</h3>
 
 <p>This notice is provided with respect to the following components which may be included with the product.
-* getparameterbyname    1</p>
+<ul>
+<li getparameterbyname  </li>
+</ul></p>
 
 <p>THE WORK (AS DEFINED BELOW) IS PROVIDED UNDER THE TERMS OF THIS CREATIVE COMMONS PUBLIC LICENSE ("CCPL" OR "LICENSE"). THE WORK IS PROTECTED BY COPYRIGHT AND/OR OTHER APPLICABLE LAW. ANY USE OF THE WORK OTHER THAN AS AUTHORIZED UNDER THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.</p>
 
@@ -1464,7 +1503,9 @@ d.Except as otherwise agreed in writing by the Licensor or as may be otherwise p
 </ol><h3 id="hamcrest-public-license">Hamcrest Public License</h3>
 
 <p>This notice is provided with respect to the following components which may be included with the product.
-* hamcrest v 1.3</p>
+<ul>
+<li> hamcrest v 1.3</li>
+</ul></p>
 
 <p>Copyright (c) (YEAR&gt;, (OWNER&gt;
  All rights reserved.</p>
@@ -1479,7 +1520,10 @@ d.Except as otherwise agreed in writing by the Licensor or as may be otherwise p
 <h3 id="jorik-tangelder-eight-media-public-license">Jorik Tangelder (Eight Media) Public License</h3>
 
 <p>This notice is provided with respect to the following components which may be included with the product.
-* hammerjs v 1.0.5</p>
+<ul>
+<li> hammerjs v 1.0.5</li>
+</ul>
+</p>
 
 <p>Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -2556,9 +2600,12 @@ Public License instead of this License.</p>
 
 <p>29 June 2007
 This notice is provided with respect to the following components which may be included with the product.
-* autoconf, Version 2.68
-* bison, Version 1:2.5.dfsg-2.1
-* python-psycopg2, Version 2.4.5</p>
+<ul>
+<li>autoconf, Version 2.68</li>
+<li> bison, Version 1:2.5.dfsg-2.1</li>
+<li> python-psycopg2, Version 2.4.5</li>
+</ul>
+</p>
 
 <p>Copyright (C) 2007 Free Software Foundation, Inc. (http://fsf.org/&gt;
  Everyone is permitted to copy and distribute verbatim copies
@@ -3227,7 +3274,9 @@ Public License instead of this License.  But first, please read
 <h3 id="gnu-general-public-license-30-with-bison-exception">GNU GENERAL PUBLIC LICENSE 3.0 with bison exception</h3>
 
 <p>This notice is provided with respect to the following components which may be included with the product.
-* percona-server 5.6</p>
+<ul>
+<li>
+ percona-server 5.6</li></ul></p>
 
 <p>License text</p>
 
@@ -3267,14 +3316,17 @@ version 2.2 of Bison</p>
 
 <p>June 1991
 This notice is provided with respect to the following components which may be included with the product.
-* jasper-glassfish
-* check-mk 1.2.2p3 
-* debian-installer 7.5
-* multipath 0.5.0-1
-* percona-toolkit 2.2.7
-* virtinst 0.600.4-3
-* linux-latest 56
-* liblogging 1.0.4</p>
+<ul>
+<li>
+ jasper-glassfish</li>
+<li>check-mk 1.2.2p3 </li>
+<li> debian-installer 7.5</li>
+<li> multipath 0.5.0-1</li>
+<li> percona-toolkit 2.2.7</li>
+<li> virtinst 0.600.4-3</li>
+<li> linux-latest 56</li>
+<li> liblogging 1.0.4</li>
+</ul></p>
 
 <p>Copyright (C) 1991 Free Software Foundation, Inc.
  51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
@@ -3751,14 +3803,16 @@ necessary.  Here is a sample; alter the names:</p>
 
 <p>February 1999
 This notice is provided with respect to the following components which may be included with the product.
-* c3p0, Version 0.9.1
-* hibernate-c3p0, Version 4.1.7
-* hibernate-commons-annotations, Version 4.0.1
-* hibernate-entitymanager, Version 4.1.7
-* hibernate3, Version 4.1.8.Final
-* jboss-logging, Version 3.1.0.GA
-* jboss-transaction-1.1-api.spec, Version 1.0.0.Final
-* nscd, Version 2.15</p>
+<ul>
+<li> c3p0, Version 0.9.1</li>
+<li> hibernate-c3p0, Version 4.1.7</li>
+<li> hibernate-commons-annotations, Version 4.0.1</li>
+<li> hibernate-entitymanager, Version 4.1.7</li>
+<li> hibernate3, Version 4.1.8.Final</li>
+<li> jboss-logging, Version 3.1.0.GA</li>
+<li> jboss-transaction-1.1-api.spec, Version 1.0.0.Final</li>
+<li> nscd, Version 2.15</li>
+</ul></p>
 
 <p>Copyright (C) 1991, 1999 Free Software Foundation, Inc.
  51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
@@ -4256,10 +4310,12 @@ necessary.  Here is a sample; alter the names:</p>
 
 <p>29 June 2007
 This notice is provided with respect to the following components which may be included with the product.
-* percona-xtradb 5.5
-* libnss-ldap, Version 264
-* libpam-ldap, Version 184
-* minicom, Version 2.5-2</p>
+<ul>
+<li>percona-xtradb 5.5</li>
+<li> libnss-ldap, Version 264</li>
+<li> libpam-ldap, Version 184</li>
+<li> minicom, Version 2.5-2</li>
+</ul></p>
 
 <p>Copyright (C) 2007 Free Software Foundation, Inc. (http://fsf.org/&gt;
  Everyone is permitted to copy and distribute verbatim copies
@@ -4419,7 +4475,9 @@ Library.</p></li>
 </ol><h3 id="general-public-license-exception">General Public License exception</h3>
 
 <p>This notice is provided with respect to the following components which may be included with the product.
-* liblogging 1.0.4</p>
+<ul>
+<li> liblogging 1.0.4</li>
+</ul></p>
 
 <p>License Text</p>
 
@@ -4452,7 +4510,9 @@ or obtained by writing to the Free Software Foundation, Inc.,
 <h3 id="artistic-license-v10">Artistic License v1.0</h3>
 
 <p>This notice is provided with respect to the following components which may be included with the product.
-* percona-toolkit 2.2.7</p>
+<ul>
+<li> percona-toolkit 2.2.7</li>
+</ul></p>
 
 <p>License text</p>
 
@@ -4477,8 +4537,10 @@ Place, Suite 330, Boston, MA 02111-1307 USA.</p>
 <h3 id="free-software-foundation-license">Free Software Foundation License</h3>
 
 <p>This notice is provided with respect to the following components which may be included with the product.
-* libxshmfence 1.1
-* hlinux-archive-keyring 2.0.3</p>
+<ul>
+<li>libxshmfence 1.1</li>
+<li> hlinux-archive-keyring 2.0.3</li>
+</ul></p>
 
 <p>License text</p>
 
