@@ -1173,9 +1173,9 @@ THE SOFTWARE.
 This notice is provided with respect to the following components which may be included with the product.
 *nodejs-lodash 1.3.1
 
-Copyright 2012-2014 The Dojo Foundation <http://dojofoundation.org/>
+Copyright 2012-2014 The Dojo Foundation (http://dojofoundation.org/>
 Based on Underscore.js 1.6.0, copyright 2009-2014 Jeremy Ashkenas,
-DocumentCloud and Investigative Reporters & Editors <http://underscorejs.org/>
+DocumentCloud and Investigative Reporters & Editors (http://underscorejs.org/>
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -1498,7 +1498,7 @@ This notice is provided with respect to the following components which may be in
 * hamcrest v 1.3
 
 
-Copyright (c) <YEAR>, <OWNER>
+Copyright (c) (YEAR>, (OWNER>
  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
@@ -1562,7 +1562,7 @@ Contributor(s): Bill Burke, Jason T. Greene.
 
 This notice is provided with respect to the following components which may be included with the product.
  Copyright (C) 2000, 2001, 2002, 2007, 2008 Free Software Foundation, Inc.
-     <http://fsf.org/>
+     (http://fsf.org/>
  Everyone is permitted to copy and distribute verbatim copies
  of this license document, but changing it is not allowed.
 
@@ -2212,8 +2212,8 @@ attach them to the start of each source file to most effectively convey
 the exclusion of warranty; and each file should have at least the
 "copyright" line and a pointer to where the full notice is found.
 
-    <one line to give the program's name and a brief idea of what it does.>
-    Copyright (C) 19yy  <name of author>
+    (one line to give the program's name and a brief idea of what it does.>
+    Copyright (C) 19yy  (name of author>
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -2254,7 +2254,7 @@ necessary.  Here a sample; alter the names:
   program `Gnomovision' (a program to direct compilers to make passes
   at assemblers) written by James Hacker.
 
-  <signature of Ty Coon>, 1 April 1989
+  (signature of Ty Coon>, 1 April 1989
   Ty Coon, President of Vice
 
 That's all there is to it!
@@ -2557,8 +2557,8 @@ to attach them to the start of each source file to most effectively
 convey the exclusion of warranty; and each file should have at least
 the "copyright" line and a pointer to where the full notice is found.
 
-    <one line to give the program's name and a brief idea of what it does.>
-    Copyright (C) <year>  <name of author>
+    (one line to give the program's name and a brief idea of what it does.>
+    Copyright (C) (year>  (name of author>
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -2596,7 +2596,7 @@ necessary.  Here is a sample; alter the names:
   Yoyodyne, Inc., hereby disclaims all copyright interest in the program
   `Gnomovision' (which makes passes at compilers) written by James Hacker.
 
-  <signature of Ty Coon>, 1 April 1989
+  (signature of Ty Coon>, 1 April 1989
   Ty Coon, President of Vice
 
 This General Public License does not permit incorporating your program into
@@ -2613,7 +2613,7 @@ This notice is provided with respect to the following components which may be in
 * python-psycopg2, Version 2.4.5
 
 
- Copyright (C) 2007 Free Software Foundation, Inc. <http://fsf.org/>
+ Copyright (C) 2007 Free Software Foundation, Inc. (http://fsf.org/>
  Everyone is permitted to copy and distribute verbatim copies
  of this license document, but changing it is not allowed.
 
@@ -3243,8 +3243,8 @@ to attach them to the start of each source file to most effectively
 state the exclusion of warranty; and each file should have at least
 the "copyright" line and a pointer to where the full notice is found.
 
-    <one line to give the program's name and a brief idea of what it does.>
-    Copyright (C) <year>  <name of author>
+    (one line to give the program's name and a brief idea of what it does.>
+    Copyright (C) (year>  (name of author>
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -3257,14 +3257,14 @@ the "copyright" line and a pointer to where the full notice is found.
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+    along with this program.  If not, see (http://www.gnu.org/licenses/>.
 
 Also add information on how to contact you by electronic and paper mail.
 
   If the program does terminal interaction, make it output a short
 notice like this when it starts in an interactive mode:
 
-    <program>  Copyright (C) <year>  <name of author>
+    (program>  Copyright (C) (year>  (name of author>
     This program comes with ABSOLUTELY NO WARRANTY; for details type `show w'.
     This is free software, and you are welcome to redistribute it
     under certain conditions; type `show c' for details.
@@ -3276,14 +3276,14 @@ might be different; for a GUI interface, you would use an "about box".
   You should also get your employer (if you work as a programmer) or school,
 if any, to sign a "copyright disclaimer" for the program, if necessary.
 For more information on this, and how to apply and follow the GNU GPL, see
-<http://www.gnu.org/licenses/>.
+(http://www.gnu.org/licenses/>.
 
   The GNU General Public License does not permit incorporating your program
 into proprietary programs.  If your program is a subroutine library, you
 may consider it more useful to permit linking proprietary applications with
 the library.  If this is what you want to do, use the GNU Lesser General
 Public License instead of this License.  But first, please read
-<http://www.gnu.org/philosophy/why-not-lgpl.html>.
+(http://www.gnu.org/philosophy/why-not-lgpl.html>.
 
 ### GNU GENERAL PUBLIC LICENSE 3.0 with bison exception
 This notice is provided with respect to the following components which may be included with the product.
@@ -3308,7 +3308,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with this program. If not, see <http://www.gnu.org/licenses/>.
+along with this program. If not, see (http://www.gnu.org/licenses/>.
 
 As a special exception, you may create a larger work that contains
 part or all of the Bison parser skeleton and distribute that work
@@ -3783,8 +3783,8 @@ safest to attach them to the start of each source file to most effectively
 convey the exclusion of warranty; and each file should have at least the
 "copyright" line and a pointer to where the full notice is found.
 
-    <one line to give the library's name and a brief idea of what it does.>
-    Copyright (C) <year>  <name of author>
+    (one line to give the library's name and a brief idea of what it does.>
+    Copyright (C) (year>  (name of author>
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Library General Public
@@ -3809,7 +3809,7 @@ necessary.  Here is a sample; alter the names:
   Yoyodyne, Inc., hereby disclaims all copyright interest in the
   library `Frob' (a library for tweaking knobs) written by James Random Hacker.
 
-  <signature of Ty Coon>, 1 April 1990
+  (signature of Ty Coon>, 1 April 1990
   Ty Coon, President of Vice
 
 That's all there is to it!
@@ -4296,8 +4296,8 @@ safest to attach them to the start of each source file to most effectively
 convey the exclusion of warranty; and each file should have at least the
 "copyright" line and a pointer to where the full notice is found.
 
-    <one line to give the library's name and a brief idea of what it does.>
-    Copyright (C) <year>  <name of author>
+    (one line to give the library's name and a brief idea of what it does.>
+    Copyright (C) (year>  (name of author>
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -4322,7 +4322,7 @@ necessary.  Here is a sample; alter the names:
   Yoyodyne, Inc., hereby disclaims all copyright interest in the
   library `Frob' (a library for tweaking knobs) written by James Random Hacker.
 
-  <signature of Ty Coon>, 1 April 1990
+  (signature of Ty Coon>, 1 April 1990
   Ty Coon, President of Vice
 
 That's all there is to it!
@@ -4336,7 +4336,7 @@ This notice is provided with respect to the following components which may be in
 * minicom, Version 2.5-2
 
 
- Copyright (C) 2007 Free Software Foundation, Inc. <http://fsf.org/>
+ Copyright (C) 2007 Free Software Foundation, Inc. (http://fsf.org/>
  Everyone is permitted to copy and distribute verbatim copies
  of this license document, but changing it is not allowed.
 
@@ -4780,7 +4780,7 @@ This notice is provided with respect to the following components which may be in
 
 * THE BEER-WARE LICENSE (Revision 42):
 
-<phk@login.dknet.dk> wrote this file.  As long as you retain this notice you can do whatever you want with this stuff. If we meet some day, and you think this stuff is worth it, you can buy me a beer in return.
+(phk@login.dknet.dk> wrote this file.  As long as you retain this notice you can do whatever you want with this stuff. If we meet some day, and you think this stuff is worth it, you can buy me a beer in return.
 Poul-Henning Kamp
 
 ### BSD 2-Clause License
@@ -5492,11 +5492,13 @@ Disclaimer
   OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
   SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
   DAMAGE.
+  
+ 
 
   
   
   
-  <pre><code>
+<pre><code>
 
 The following open source licenses are listed in their entirety at the bottom of this document:
   * Apache-2.0
@@ -5520,13 +5522,13 @@ The following open source packages in this product are governed by the following
 "acpi-1.7/debian/copyright":
 
 [acpi-1.7/debian/copyright]
-This package was debianized by Grahame Bowland <grahame@azale.net> on
+This package was debianized by Grahame Bowland (grahame@azale.net) on
 Thu,  6 Sep 2001 22:26:15 +0800.
 
 It was downloaded from http://sourceforge.net/projects/acpiclient/
 
- * Copyright (C) 2001  Grahame Bowland <grahame@azale.net>
- *               2008  Michael Meskes <meskes@debian.org>
+ * Copyright (C) 2001  Grahame Bowland (grahame@azale.net)
+ *               2008  Michael Meskes (meskes@debian.org)
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -5549,10 +5551,10 @@ On Debian GNU/Linux systems, the text of the GPL can be found in
 
 [acpid-2.0.22/debian/copyright]
 This is the Debian GNU/Linux prepackaged version of acpid.
-It was packaged by Cajus Pollmeier <cajus@debian.org>
+It was packaged by Cajus Pollmeier (cajus@debian.org)
 from sources obtained from http://acpid.sourceforge.net.
 
-Later on it was taken over by Michael Meskes <meskes@debian.org> who switched
+Later on it was taken over by Michael Meskes (meskes@debian.org) who switched
 the package to the latest sources from http://www.tedfelix.com.
 
 Copyright:
@@ -5576,8 +5578,8 @@ license in `/usr/share/common-licenses/GPL-2'.
 
 [acpi-support-0.141/debian/copyright]
 This package written and debianised for Ubuntu by Thom May
-<thom@canonical.com> based on work by Matthew Garrett
-<mjg59@srcf.ucam.org>. It was downloaded from
+(thom@canonical.com) based on work by Matthew Garrett
+(mjg59@srcf.ucam.org). It was downloaded from
 http://archive.ubuntu.com/ubuntu/pool/main/a/acpi-support/
 
 Copyright (C) 2004 Canonical Ltd.
@@ -5612,7 +5614,7 @@ Upstream-Name: astroid
 Source: http://www.astroid.org/
 
 Files: *
-Copyright: 2003-2014 Logilab <python-projects@lists.logilab.org>
+Copyright: 2003-2014 Logilab (python-projects@lists.logilab.org)
 License: LGPL-2.1+
  astroid is free software: you can redistribute it and/or modify it
  under the terms of the GNU Lesser General Public License as published by the
@@ -5625,13 +5627,13 @@ License: LGPL-2.1+
  for more details.
  .
  You should have received a copy of the GNU Lesser General Public License along
- with astroid. If not, see <http://www.gnu.org/licenses/>.
+ with astroid. If not, see (http://www.gnu.org/licenses/).
  .
  On Debian systems, the complete text of the GNU Lesser General Public
  License version 2.1 can be found in "/usr/share/common-licenses/LGPL-2.1".
 
 Files: debian/*
-Copyright: 2014 Sandro Tosi <morph@debian.org>
+Copyright: 2014 Sandro Tosi (morph@debian.org)
 License: LGPL-2.1+
  astroid is free software: you can redistribute it and/or modify it
  under the terms of the GNU Lesser General Public License as published by the
@@ -5644,7 +5646,7 @@ License: LGPL-2.1+
  for more details.
  .
  You should have received a copy of the GNU Lesser General Public License along
- with astroid. If not, see <http://www.gnu.org/licenses/>.
+ with astroid. If not, see (http://www.gnu.org/licenses/).
  .
  On Debian systems, the complete text of the GNU Lesser General Public
  License version 2.1 can be found in "/usr/share/common-licenses/LGPL-2.1".
@@ -5663,7 +5665,7 @@ License: LGPL-2.1+
  for more details.
  .
  You should have received a copy of the GNU Lesser General Public License along
- with astroid. If not, see <http://www.gnu.org/licenses/>.
+ with astroid. If not, see (http://www.gnu.org/licenses/).
  .
  On Debian systems, the complete text of the GNU Lesser General Public
  License version 2.1 can be found in "/usr/share/common-licenses/LGPL-2.1".
@@ -5784,11 +5786,11 @@ License: X11 and public-domain
  FSF changes to this file are in the public domain.
 
 Files: debian/*
-Copyright: Copyright (C) 1997–1999 James Troup <troup@debian.org>
-           Copyright (C) 1999–2004 Dirk Eddelbuettel <edd@debian.org>
-           Copyright (C) 2005–2013 John Hasler <jhasler@debian.org>
-           Copyright (C) 2009      Francois Marier <francois@debian.org>
-           Copyright (C) 2013–2014 Ryan Kavanagh <rak@debian.org>
+Copyright: Copyright (C) 1997–1999 James Troup (troup@debian.org)
+           Copyright (C) 1999–2004 Dirk Eddelbuettel (edd@debian.org)
+           Copyright (C) 2005–2013 John Hasler (jhasler@debian.org)
+           Copyright (C) 2009      Francois Marier (francois@debian.org)
+           Copyright (C) 2013–2014 Ryan Kavanagh (rak@debian.org)
 License: GPL-2.0+
 Comment: Bill Mitchell and Austin Donnelly maintained the package prior
  to James Troup's maintainership. The dates during which they maintained the
@@ -5806,7 +5808,7 @@ License: GPL-2.0+
  GNU General Public License for more details.
  .
  You should have received a copy of the GNU General Public License
- along with this program. If not, see <http://www.gnu.org/licenses/>
+ along with this program. If not, see (http://www.gnu.org/licenses/)
  .
  On Debian systems, the complete text of the GNU General
  Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
@@ -5820,7 +5822,7 @@ License: GPL-2.0+
 [beautifulsoup-3.2.1/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: Beautiful Soup
-Upstream-Contact: Leonard Richardson <leonardr@segfault.org>
+Upstream-Contact: Leonard Richardson (leonardr@segfault.org)
 Source: http://www.crummy.com/software/BeautifulSoup/download/3.x/
 
 Files: *
@@ -5829,8 +5831,8 @@ License: bsdish
 
 Files: debian/*
 Copyright:
- 2005-2009, Decklin Foster <decklin@red-bean.com>
- 2011-2012, Stefano Rivera <stefanor@debian.org>
+ 2005-2009, Decklin Foster (decklin@red-bean.com)
+ 2011-2012, Stefano Rivera (stefanor@debian.org)
 License: bsdish
 
 License: bsdish
@@ -5865,7 +5867,7 @@ License: bsdish
 [binfmt-support-2.1.4/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: binfmt-support
-Upstream-Contact: Colin Watson <cjwatson@debian.org>
+Upstream-Contact: Colin Watson (cjwatson@debian.org)
 
 Files: *
 Copyright: 2000-2011 Colin Watson
@@ -5892,7 +5894,7 @@ License: GPL-3+
 "blt-2.4z/debian/copyright":
 
 [blt-2.4z/debian/copyright]
-This package was debianized by Gordon Russell <g.russell@dcs.napier.ac.uk> on
+This package was debianized by Gordon Russell (g.russell@dcs.napier.ac.uk) on
 Thu, 12 Mar 1998 11:19:54 +0000.
 
 It was downloaded from http://sourceforge.net/projects/blt
@@ -5930,24 +5932,24 @@ Upstream-Contact: linux-btrfs@vger.kernel.org
 Source: http://git.kernel.org/?p=linux/kernel/git/mason/btrfs-progs.git
 
 Files: *
-Copyright: 2007-2012 Oracle <http://www.oracle.com/>
+Copyright: 2007-2012 Oracle (http://www.oracle.com/)
 License: GPL-2+
 
 Files: radix-tree.c
-Copyright: 2007-2009 Oracle <http://www.oracle.com/>
+Copyright: 2007-2009 Oracle (http://www.oracle.com/)
            2001 Momchil Velikov
            2001 Christoph Hellwig
-           2005 SGI, Christoph Lameter <clameter@sgi.com>
+           2005 SGI, Christoph Lameter (clameter@sgi.com)
 License: GPL-2+
 
 Files: radix-tree.h
-Copyright: 2007-2009 Oracle <http://www.oracle.com/>
+Copyright: 2007-2009 Oracle (http://www.oracle.com/)
            2001 Momchil Velikov
            2001 Christoph Hellwig
 License: GPL-2+
 
 Files: debian/*
-Copyright: 2007-2012 Daniel Baumann <daniel.baumann@progress-technologies.net>
+Copyright: 2007-2012 Daniel Baumann (daniel.baumann@progress-technologies.net)
 License: GPL-2+
 
 License: GPL-2+
@@ -5962,7 +5964,7 @@ License: GPL-2+
  GNU General Public License for more details.
  .
  You should have received a copy of the GNU General Public License
- along with this program. If not, see <http://www.gnu.org/licenses/>.
+ along with this program. If not, see (http://www.gnu.org/licenses/).
  .
  The complete text of the GNU General Public License
  can be found in /usr/share/common-licenses/GPL-2 file.
@@ -5974,23 +5976,23 @@ License: GPL-2+
 "ca-certificates-java-20140324/debian/copyright":
 
 [ca-certificates-java-20140324/debian/copyright]
-This package was debianized by Matthias Klose <doko@ubuntu.com>
+This package was debianized by Matthias Klose (doko@ubuntu.com)
 on Mon, 02 Jun 2008 14:52:46 +0000.
 
 Authors:
 
-    Matthias Klose <doko@ubuntu.com>
-    Torsten Werner <twerner@debian.org>
+    Matthias Klose (doko@ubuntu.com)
+    Torsten Werner (twerner@debian.org)
 
 Copyright:
 
     Copyright (C) 2008 Canonical Ltd
-    Copyright (C) 2011 Torsten Werner <twerner@debian.org>
+    Copyright (C) 2011 Torsten Werner (twerner@debian.org)
 
 License:
 
 The Debian package is (C) 2008, Canonical Ltd and (C) 2011, Torsten Werner
-<twerner@debian.org> and is licensed under the GPL, see
+(twerner@debian.org) and is licensed under the GPL, see
 `/usr/share/common-licenses/GPL'.
 [ca-certificates-java-20140324/debian/copyright]
 
@@ -6000,7 +6002,7 @@ The Debian package is (C) 2008, Canonical Ltd and (C) 2011, Torsten Werner
 "cherrypy3-3.3.0/debian/copyright":
 
 [cherrypy3-3.3.0/debian/copyright]
-This package was debianized by Gustavo Noronha Silva <kov@debian.org> on
+This package was debianized by Gustavo Noronha Silva (kov@debian.org) on
 Thu, 10 Mar 2005 09:32:58 -0300.
 
 It was downloaded from http://www.cherrypy.org/
@@ -6010,7 +6012,7 @@ Copyright:
 Copyright (c) 2004-2009, CherryPy Team (team@cherrypy.org)
 
 cherrypy/lib/httpauth.py:
-Copyright (c) 2005, Tiago Cogumbreiro <cogumbreiro@users.sf.net>
+Copyright (c) 2005, Tiago Cogumbreiro (cogumbreiro@users.sf.net)
 
 
 Upstream Authors:   Remi Delon
@@ -6092,7 +6094,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 [console-setup-1.108/debian/bdf2psf.copyright]
 Everything in this binary package is
 
-Copyright (C) 2006,2009,2010,2011 Anton Zinoviev <zinoviev@debian.org>
+Copyright (C) 2006,2009,2010,2011 Anton Zinoviev (zinoviev@debian.org)
 Contains code from the bdftopsf.pl utility (Terminus font suite)
 Copyright (C) 2004 Dimitar Toshkov Zhekov
 
@@ -6160,14 +6162,14 @@ from the Dmitry Bolkhovityanov.
    etl24-unicode.bdf
 
 Public domain.  Donated (in unspecified order) by H. Kagotani
-<kagotani@cs.titech.ac.jp>, BIZNET Poland, Inc., Dmitry
-Yu. Bolkhovityanov <bolkhov@inp.nsk.su>, Thomas Bagli
-<pyramid!pcsbst!tom@uunet.UU.NET>, PCS Computer Systeme - West
-Germany, Takahashi N. <ntakahas@etl.go.jp>, Mark J. Reed
-<mark_reed@sware.com>, P. Peterlin
-<primoz.peterlin@biofiz.mf.uni-lj.si>, Mark Leisher
-<mleisher@crl.nmsu.edu>, Roman Czyborra <czyborra@cs.tu-berlin.de>,
-Kosta Kostis <kosta@live.robin.de> and others.
+(kagotani@cs.titech.ac.jp), BIZNET Poland, Inc., Dmitry
+Yu. Bolkhovityanov (bolkhov@inp.nsk.su), Thomas Bagli
+(pyramid!pcsbst!tom@uunet.UU.NET), PCS Computer Systeme - West
+Germany, Takahashi N. (ntakahas@etl.go.jp), Mark J. Reed
+(mark_reed@sware.com), P. Peterlin
+(primoz.peterlin@biofiz.mf.uni-lj.si), Mark Leisher
+(mleisher@crl.nmsu.edu), Roman Czyborra (czyborra@cs.tu-berlin.de),
+Kosta Kostis (kosta@live.robin.de) and others.
 
 == 8x16-IL2.bdf 8x16c.bdf
 
@@ -6446,7 +6448,7 @@ utility from the unifont suite.  This makes it public domain.
 
 These fonts were automatically generated from console fonts.  Because
 of that they are public domain.  The Goha and GohaClassic fonts are
-donated by Yitna Firdyiwek <ybf2u@virgina.edu> of GohaTibeb
+donated by Yitna Firdyiwek (ybf2u@virgina.edu) of GohaTibeb
 Associates.
 
 == The *-IL2.bdf fonts were automaticaly reencoded from ISO 8859-2 to
@@ -6493,7 +6495,7 @@ precompiled version of the keyboard files, so the terms in the file
 
 The manual pages are distributed according to GNU all-permissive license:
 
-Copyright (C) 2007, 2011 Anton Zinoviev <anton@lml.bas.bg>
+Copyright (C) 2007, 2011 Anton Zinoviev (anton@lml.bas.bg)
 
 Copying and distribution of this file, with or without
 modification, are permitted in any medium without royalty provided
@@ -6503,7 +6505,7 @@ offered as-is, without any warranty.
 The programs 'setupcon' and 'ckbcomp-mini' are distributed according
 to the following license:
 
-Copyright (C) 2011 Anton Zinoviev <anton@lml.bas.bg>
+Copyright (C) 2011 Anton Zinoviev (anton@lml.bas.bg)
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this file (the "Program"), to deal in the Program without
@@ -6549,13 +6551,13 @@ License can be found in /usr/share/common-licenses/GPL-2.
 
 [console-setup-1.108/copyright.xkb]
 Upstream Maintainer of XKeyboardConfig: 
-  Sergey V. Udaltsov <svu@gnome.org>
+  Sergey V. Udaltsov (svu@gnome.org)
 
 This package is distributed under the following licenses:
 Copyright 1996 by Joseph Moss
 Copyright (C) 2002-2007 Free Software Foundation, Inc.
-Copyright (C) Dmitry Golubev <lastguru@mail.ru>, 2003-2004
-Copyright (C) 2004, Gregory Mokhin <mokhin@bog.msu.ru>
+Copyright (C) Dmitry Golubev (lastguru@mail.ru), 2003-2004
+Copyright (C) 2004, Gregory Mokhin (mokhin@bog.msu.ru)
 Copyright (C) 2006 Erdal Ronahî
 
 Permission to use, copy, modify, distribute, and sell this software and its
@@ -6708,7 +6710,7 @@ other dealings in this Software without prior written authorization
 from the X Consortium.
 
 
-Copyright (C) 2004, 2006 Ævar Arnfjörð Bjarmason <avarab@gmail.com>
+Copyright (C) 2004, 2006 Ævar Arnfjörð Bjarmason (avarab@gmail.com)
 
 Permission to use, copy, modify, distribute, and sell this software and its
 documentation for any purpose is hereby granted without fee, provided that
@@ -6733,7 +6735,7 @@ other dealings in this Software without prior written authorization of
 the copyright holder.
 
 
-Copyright (C) 1999, 2000 by Anton Zinoviev <anton@lml.bas.bg>
+Copyright (C) 1999, 2000 by Anton Zinoviev (anton@lml.bas.bg)
 
 This software may be used, modified, copied, distributed, and sold,
 in both source and binary form provided that the above copyright
@@ -6841,7 +6843,7 @@ to read what you did with his stuff. Horizontal rules don't apply.
 [corosync-1.4.6/debian/copyright]
 This is the Ubuntu / Debian GNU/Linux prepackaged version of corosync.
 
-Mainly packaged by Fabio M. Di Nitto <fabbione@ubuntu.com>.
+Mainly packaged by Fabio M. Di Nitto (fabbione@ubuntu.com).
 
 It was downloaded from http://corosync.org
 
@@ -7033,7 +7035,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.
+along with this program.  If not, see (http://www.gnu.org/licenses/).
 [corosync-1.4.6/LICENSE]
 
 
@@ -7042,13 +7044,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 "crash-7.0.7/debian/copyright":
 
 [crash-7.0.7/debian/copyright]
-This package was debianized by Josh Huber <huber@mclx.com> on Tue, 10 Oct 2000
-18:00:20 -0400, the package is maintained by Troy Heber <troy.heber@hp.com> and
-Micha Anderson <micah@debian.org>.
+This package was debianized by Josh Huber (huber@mclx.com) on Tue, 10 Oct 2000
+18:00:20 -0400, the package is maintained by Troy Heber (troy.heber@hp.com) and
+Micha Anderson (micah@debian.org).
 
 It was downloaded from http://people.redhat.com/~anderson/
 
-Upstream Author: Dave Anderson <anderson@mclx.com>
+Upstream Author: Dave Anderson (anderson@mclx.com)
 
 Copyright (C) 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009  Red Hat, Inc.
 Copyright (C) 2004, 2005, 2006  IBM Corporation
@@ -7070,41 +7072,41 @@ Public License can be found in `/usr/share/common-licenses/GPL'.
 
 [cryptsetup-1.6.4/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Upstream-Contact: Milan Broz <mbroz@redhat.com>
+Upstream-Contact: Milan Broz (mbroz@redhat.com)
 Source: http://code.google.com/p/cryptsetup
 
 Files: *
-Copyright: © 2004      Christophe Saout <christophe@saout.de>
-           © 2004-2008 Clemens Fruhwirth <clemens@endorphin.org>
+Copyright: © 2004      Christophe Saout (christophe@saout.de)
+           © 2004-2008 Clemens Fruhwirth (clemens@endorphin.org)
            © 2008-2010 Red Hat, Inc.
-           © 2008-2013 Milan Broz <gmazyland@gmail.com>
+           © 2008-2013 Milan Broz (gmazyland@gmail.com)
 License: GPL-2+
 
 Files: debian/*
-Copyright: © 2004-2005 Wesley W. Terpstra <terpstra@debian.org>
-           © 2005-2006 Michael Gebetsroither <michael.geb@gmx.at>
-           © 2006-2008 David Härdeman <david@hardeman.nu>
-           © 2005-2013 Jonas Meurer <jonas@freesources.org>
+Copyright: © 2004-2005 Wesley W. Terpstra (terpstra@debian.org)
+           © 2005-2006 Michael Gebetsroither (michael.geb@gmx.at)
+           © 2006-2008 David Härdeman (david@hardeman.nu)
+           © 2005-2013 Jonas Meurer (jonas@freesources.org)
 License: GPL-2+
 
 Files: debian/askpass.c debian/passdev.c
-Copyright: © 2008 David Härdeman <david@hardeman.nu>
+Copyright: © 2008 David Härdeman (david@hardeman.nu)
 License: GPL-2+
 
 Files: debian/README.openct
-Copyright: © 2008 Daniel Baumann <baumann@swiss-it.ch>
+Copyright: © 2008 Daniel Baumann (baumann@swiss-it.ch)
 License: GPL-2+
 
 Files: debian/README.opensc
-Copyright: © 2008 Benjamin Kiessling <benjaminkiessling@bttec.org>
+Copyright: © 2008 Benjamin Kiessling (benjaminkiessling@bttec.org)
 License: GPL-2+
 
 Files: debian/README.remote
-Copyright: © 2009 <debian@x.ray.net>
+Copyright: © 2009 (debian@x.ray.net)
 License: GPL-2+
 
 Files: debian/scripts/cryptdisks_start
-Copyright: © 2007 Jon Dowland <jon@alcopop.org>
+Copyright: © 2007 Jon Dowland (jon@alcopop.org)
 License: GPL-2+
 
 Files: debian/scripts/luksformat
@@ -7138,7 +7140,7 @@ License: GPL-2+
 [cups-1.7.3/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: CUPS
-Upstream-Contact: Michael Sweet <msweet@apple.com>
+Upstream-Contact: Michael Sweet (msweet@apple.com)
 Source: ftp://ftp.easysw.com/pub/cups/
 
 Files: *
@@ -7249,11 +7251,11 @@ to the following restrictions:
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 
 Files: *
-Copyright: 1997-2011 Joey Hess <joeyh@debian.org>
+Copyright: 1997-2011 Joey Hess (joeyh@debian.org)
 License: GPL-2+
 
 Files: examples/* autoscripts/*
-Copyright: 1997-2011 Joey Hess <joeyh@debian.org>
+Copyright: 1997-2011 Joey Hess (joeyh@debian.org)
 License: public-domain
  These files are in the public domain.
  .
@@ -7264,53 +7266,53 @@ License: public-domain
  modification, are permitted under any circumstances. No warranty.
 
 Files: dh_perl
-Copyright: Brendan O'Dea <bod@debian.org>
+Copyright: Brendan O'Dea (bod@debian.org)
 License: GPL-2+
 
 Files: dh_installcatalogs
-Copyright: Adam Di Carlo <aph@debian.org>
+Copyright: Adam Di Carlo (aph@debian.org)
 License: GPL-2+
 
 Files: dh_scrollkeeper
-Copyright: Ross Burton <ross@burtonini.com>
+Copyright: Ross Burton (ross@burtonini.com)
 License: GPL-2+
 
 Files: dh_usrlocal
-Copyright: Andrew Stribblehill <ads@debian.org>
+Copyright: Andrew Stribblehill (ads@debian.org)
 License: GPL-2+
 
 Files: dh_installlogcheck
-Copyright: Jon Middleton <jjm@debian.org>
+Copyright: Jon Middleton (jjm@debian.org)
 License: GPL-2+
 
 Files: dh_installudev
-Copyright: Marco d'Itri <md@Linux.IT>
+Copyright: Marco d'Itri (md@Linux.IT)
 License: GPL-2+
 
 Files: dh_lintian
-Copyright: Steve Robbins <smr@debian.org>
+Copyright: Steve Robbins (smr@debian.org)
 License: GPL-2+
 
 Files: dh_md5sums
-Copyright: Charles Briscoe-Smith <cpb4@ukc.ac.uk>
+Copyright: Charles Briscoe-Smith (cpb4@ukc.ac.uk)
 License: GPL-2+
 
 Files: dh_bugfiles
-Copyright: Modestas Vainius <modestas@vainius.eu>
+Copyright: Modestas Vainius (modestas@vainius.eu)
 License: GPL-2+
 
 Files: dh_installinit
-Copyright: 1997-2008 Joey Hess <joeyh@debian.org>
+Copyright: 1997-2008 Joey Hess (joeyh@debian.org)
            2009,2011 Canonical Ltd.
 License: GPL-3+
 
 Files: dh_installgsettings
-Copyright: 2010 Laurent Bigonville <bigon@debian.org>
-           2011 Josselin Mouette <joss@debian.org>
+Copyright: 2010 Laurent Bigonville (bigon@debian.org)
+           2011 Josselin Mouette (joss@debian.org)
 License: GPL-2+
 
 Files: dh_ucf
-Copyright: 2011 Jeroen Schot <schot@A-Eskwadraat.nl>
+Copyright: 2011 Jeroen Schot (schot@A-Eskwadraat.nl)
 License: GPL-2+
 
 Files: Debian/Debhelper/Buildsystem/qmake.pm
@@ -7322,7 +7324,7 @@ Copyright: 2008-2009 Modestas Vainius
 License: GPL-2+
 
 Files: man/po4a/po/fr.po
-Copyright: 2005-2011 Valery Perrin <valery.perrin.debian@free.fr>
+Copyright: 2005-2011 Valery Perrin (valery.perrin.debian@free.fr)
 License: GPL-2+
 
 Files: man/po4a/po/es.po
@@ -7349,10 +7351,10 @@ License: GPL-3+
 "debootstrap-1.0.60+hLinux1/debian/copyright":
 
 [debootstrap-1.0.60+hLinux1/debian/copyright]
-This package was debianized by Anthony Towns <ajt@debian.org> on
+This package was debianized by Anthony Towns (ajt@debian.org) on
 Tue, 30 Jan 2001 10:54:45 +1000.
 
-It was written from scratch for Debian by Anthony Towns <ajt@debian.org>
+It was written from scratch for Debian by Anthony Towns (ajt@debian.org)
 based loosely on the code for constructing base tarballs as part of the
 boot-floppies package.
 
@@ -7393,34 +7395,34 @@ dictionaries-common is a Debian native package. It contains modified
 versions of ispell.el and flyspell.el,
 
 ispell.el:
-  Original author: Ken Stevens <k.stevens@ieee.org>
+  Original author: Ken Stevens (k.stevens@ieee.org)
   Copyright (C) 1994, 1995, 1997-2009 Free Software Foundation, Inc.
 
   ispell.el is released under the terms of the GNU GPL, version 3,
   or at your option, any later version.
 
 flyspell.el:
-  Original author: Manuel Serrano <Manuel.Serrano@sophia.inria.fr>
+  Original author: Manuel Serrano (Manuel.Serrano@sophia.inria.fr)
   Copyright (C) 1998, 2000-2009 Free Software Foundation, Inc.
 
   flyspell.el is released under the terms of the GNU GPL, version 3,
   or at your option, any later version.
 
 debian/patches/* for ispell.el and flyspell.el:
-  Copyright (C) 2004-2009 Agustin Martin <agmartin@debian.org>
+  Copyright (C) 2004-2009 Agustin Martin (agmartin@debian.org)
   Released under the same terms of ispell.el and flyspell.el
 
 Other dictionaries-common stuff:
-  Copyright (C) 1999-2008 Rafael Laboissiere <rafael@debian.org>
-  Copyright (C) 2001-2009 Agustín Martín Domingo <agmartin@debian.org>
-  Copyright (C) 2003-2009 René Engelhard <rene@debian.org>
+  Copyright (C) 1999-2008 Rafael Laboissiere (rafael@debian.org)
+  Copyright (C) 2001-2009 Agustín Martín Domingo (agmartin@debian.org)
+  Copyright (C) 2003-2009 René Engelhard (rene@debian.org)
 
   dictionaries-common is released under the terms of the GNU GPL,
   version 2, or at your option, any later version.
 
 A copy of the GNU General Public License, versions 2 or 3, should
 be available in any recent Debian system as /usr/share/common-licenses/GPL-2
-and /usr/share/common-licenses/GPL-3. If not, see <http://www.gnu.org/licenses/>.
+and /usr/share/common-licenses/GPL-3. If not, see (http://www.gnu.org/licenses/).
 
 The sources for this package can be found on any Debian mirror.
 [dictionaries-common-1.23.8/debian/copyright]
@@ -7431,10 +7433,10 @@ The sources for this package can be found on any Debian mirror.
 "discover-2.1.2/debian/copyright":
 
 [discover-2.1.2/debian/copyright]
-This package was debianized by Joseph Carter <knghtbrd@progenylinux.com> on
+This package was debianized by Joseph Carter (knghtbrd@progenylinux.com) on
 Mon,  2 Oct 2000 10:48:43 -0500
 
-It was downloaded from <URL:http://archive.progeny.com/progeny/discover/>
+It was downloaded from (URL:http://archive.progeny.com/progeny/discover/)
 
 Copyright (C) 2001 Progeny Linux Systems, Inc.
   Authors: MandrakeSoft; Remy Card; David A. Hinds; GeaArt, Inc.;
@@ -7768,7 +7770,7 @@ License: Python License
  OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  
 Files: distlib/_backport/tarfile.py
-Copyright: Copyright (C) 2002 Lars Gustaebel <lars@gustaebel.de>
+Copyright: Copyright (C) 2002 Lars Gustaebel (lars@gustaebel.de)
 LICENSE: BSD
  Permission  is  hereby granted,  free  of charge,  to  any person
  obtaining a  copy of  this software  and associated documentation
@@ -7792,7 +7794,7 @@ LICENSE: BSD
  OTHER DEALINGS IN THE SOFTWARE.
 
 Files: debian/*
-Copyright: 2013 Matthias Klose <doko@debian.org>
+Copyright: 2013 Matthias Klose (doko@debian.org)
 License: BSD-3-Clause
 
 License: BSD-3-Clause
@@ -7829,11 +7831,11 @@ License: BSD-3-Clause
 [distro-info-0.13/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: distro-info
-Upstream-Contact: Benjamin Drung <bdrung@debian.org>
+Upstream-Contact: Benjamin Drung (bdrung@debian.org)
 
 Files: *
-Copyright: 2009-2014, Benjamin Drung <bdrung@debian.org>
-           2010-2011, Stefano Rivera <stefanor@debian.org>
+Copyright: 2009-2014, Benjamin Drung (bdrung@debian.org)
+           2010-2011, Stefano Rivera (stefanor@debian.org)
 License: ISC
 
 Files: shell/*-distro-info.in shell/distro-info-util.sh
@@ -7862,10 +7864,10 @@ License: ISC
 [distro-info-data-0.21/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: distro-info-data
-Upstream-Contact: Benjamin Drung <bdrung@debian.org>
+Upstream-Contact: Benjamin Drung (bdrung@debian.org)
 
 Files: *
-Copyright: 2009-2013, Benjamin Drung <bdrung@debian.org>
+Copyright: 2009-2013, Benjamin Drung (bdrung@debian.org)
 License: ISC
  Permission to use, copy, modify, and/or distribute this software for any
  purpose with or without fee is hereby granted, provided that the above
@@ -7888,17 +7890,17 @@ License: ISC
 [dosfstools-3.0.26/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: dosfstools
-Upstream-Contact: Daniel Baumann <mail@daniel-baumann.ch>
+Upstream-Contact: Daniel Baumann (mail@daniel-baumann.ch)
 Source: http://daniel-baumann.ch/files/software/dosfstools/
 
 Files: *
-Copyright: 1991 Linus Torvalds <torvalds@klaava.helsinki.fi>
-           1992-1993 Remy Card <card@masi.ibp.fr>
-           1993-1994 David Hudson <dave@humbug.demon.co.uk>
-           1999-2005 Roman Hodek <Roman.Hodek@informatik.uni-erlangen.de>
-           1999-2005 Werner Almesberger <werner.almesberger@lrc.di.epfl.ch>
-           1999-2005 Roman Hodek <Roman.Hodek@informatik.uni-erlangen.de>
-           2008-2014 Daniel Baumann <mail@daniel-baumann.ch>
+Copyright: 1991 Linus Torvalds (torvalds@klaava.helsinki.fi)
+           1992-1993 Remy Card (card@masi.ibp.fr)
+           1993-1994 David Hudson (dave@humbug.demon.co.uk)
+           1999-2005 Roman Hodek (Roman.Hodek@informatik.uni-erlangen.de)
+           1999-2005 Werner Almesberger (werner.almesberger@lrc.di.epfl.ch)
+           1999-2005 Roman Hodek (Roman.Hodek@informatik.uni-erlangen.de)
+           2008-2014 Daniel Baumann (mail@daniel-baumann.ch)
 License: GPL-3+
 
 License: GPL-3+
@@ -7913,7 +7915,7 @@ License: GPL-3+
  GNU General Public License for more details.
  .
  You should have received a copy of the GNU General Public License
- along with this program. If not, see <http://www.gnu.org/licenses/>.
+ along with this program. If not, see (http://www.gnu.org/licenses/).
  .
  The complete text of the GNU General Public License
  can be found in /usr/share/common-licenses/GPL-3 file.
@@ -8092,9 +8094,9 @@ http://www.pobox.com/~tranter/eject.html
 http://sourceforge.net/projects/eject
 
 This package was originaly maintained by
-Martin Mitchell <martin@debian.org>, who added the various debian/* files.
+Martin Mitchell (martin@debian.org), who added the various debian/* files.
 
-It is now maintained by Frank Lichtenheld <djpig@debian.org>.
+It is now maintained by Frank Lichtenheld (djpig@debian.org).
 
 eject.c:
   Copyright (C) 1994-2005 Jeff Tranter (tranter@pobox.com)
@@ -8103,7 +8105,7 @@ volname.c:
   Copyright (C) 2000-2005 Jeff Tranter (tranter@pobox.com)
 dmcrypt-get-device.c:
   Copyright (c) 2005 Canonical Ltd.
-  (Author: Martin Pitt <martin.pitt@ubuntu.com>)
+  (Author: Martin Pitt (martin.pitt@ubuntu.com))
 
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -8129,7 +8131,7 @@ version 2, can be found at /usr/share/common-licenses/GPL-2.
 "elfutils-0.159/debian/copyright":
 
 [elfutils-0.159/debian/copyright]
-This package was debianized by Kurt Roeckx <kurt@roeckx.be> on
+This package was debianized by Kurt Roeckx (kurt@roeckx.be) on
 Sun, 21 May 2006 15:03:01 +0000.
 
 It was downloaded from
@@ -8142,11 +8144,11 @@ Copyright Holder:
    Copyright (C) 2000 - 2009 Red Hat, Inc.
 
    Written by:
-   Ulrich Drepper <drepper@redhat.com>
-   Jeff Johnson <jbj@redhat.com>
+   Ulrich Drepper (drepper@redhat.com)
+   Jeff Johnson (jbj@redhat.com)
    Alexander Larsson
-   Jakub Jelinek <jakub@redhat.com>
-   Roland McGrath <roland@redhat.com>
+   Jakub Jelinek (jakub@redhat.com)
+   Roland McGrath (roland@redhat.com)
 
 
 License:
@@ -8196,7 +8198,7 @@ Most of the libraries (lib, libelf, libebl, libdw, libdwfl) have the following l
    license is granted, either expressly or impliedly, by designation as an
    included package.  Should you wish to participate in the Open Invention
    Network licensing program, please visit www.openinventionnetwork.com
-   <http://www.openinventionnetwork.com>.
+   (http://www.openinventionnetwork.com).
 
 The EXCEPTION file contains:
 
@@ -8234,7 +8236,7 @@ The other files are covered by the following license:
    license is granted, either expressly or impliedly, by designation as an
    included package.  Should you wish to participate in the Open Invention
    Network licensing program, please visit www.openinventionnetwork.com
-   <http://www.openinventionnetwork.com>.
+   (http://www.openinventionnetwork.com).
 
 On Debian GNU/Linux systems, the complete text of the GNU General Public
 License version 2 can be found in `/usr/share/common-licenses/GPL-2'.
@@ -8247,7 +8249,7 @@ License version 2 can be found in `/usr/share/common-licenses/GPL-2'.
 "emacsen-common-2.0.8/debian/copyright":
 
 [emacsen-common-2.0.8/debian/copyright]
-This package was created by Rob Browning <rlb@defaultvalue.org> on Sun,
+This package was created by Rob Browning (rlb@defaultvalue.org) on Sun,
 18 Jan 1998 13:36:35 -0600
 
 The source for this package was created by Robert Browning with some
@@ -8300,12 +8302,12 @@ and the Artistic license can be found at
 "feedparser-5.1.3/debian/copyright":
 
 [feedparser-5.1.3/debian/copyright]
-This package was debianized by Joe Wreschnig <piman@debian.org> on
+This package was debianized by Joe Wreschnig (piman@debian.org) on
 Tue, 20 Dec 2005 23:49:02 -0600.
 
 It was downloaded from http://feedparser.org.
 
-Copyright Holder: Mark Pilgrim <mark@diveintomark.org>
+Copyright Holder: Mark Pilgrim (mark@diveintomark.org)
 
 License:
 
@@ -8375,7 +8377,7 @@ DOCUMENTATION, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 This package was split from netstd by Herbert Xu herbert@debian.org on
 Sat, 30 Oct 1999 16:39:06 +1000.
 
-It is maintained by Anibal Monsalve Salazar <anibal@debian.org>.
+It is maintained by Anibal Monsalve Salazar (anibal@debian.org).
 
 netstd was created by Peter Tobias tobias@et-inf.fho-emden.de on
 Wed, 20 Jul 1994 17:23:21 +0200.
@@ -8384,11 +8386,11 @@ It was downloaded from http://www.fping.com/.
 
 Copyright:
 
-Upstream maintainer:  David Schweikert <david@schweikert.ch>
-Previous maintainers: David Papp <david@remote.net>,
+Upstream maintainer:  David Schweikert (david@schweikert.ch)
+Previous maintainers: David Papp (david@remote.net),
 		      RL "Bob" Morgan (morgan@stanford.edu)
-Original author:      Roland Schemers <schemers@stanford.edu>
-IPv6 Support: 	      Jeroen Massar <jeroen@unfix.org / jeroen@ipng.nl>
+Original author:      Roland Schemers (schemers@stanford.edu)
+IPv6 Support: 	      Jeroen Massar (jeroen@unfix.org / jeroen@ipng.nl)
 
 Copyright (c) 1992, 1994, 1997
 Board of Trustees
@@ -8422,10 +8424,10 @@ Copyright: 1986-2014, Free Software Foundation, Inc.
 License: GPL-3+
 
 Files: debian/*
-Copyright: 1995-1997, Chris Fearnley <cjf@netaxs.com>
-           1998-2006, James Troup <james@nocrew.org>
-           2008-2010, Arthur Loiret <aloiret@debian.org>
-           2011-2014, Jeroen Schot <schot@a-eskwadraat.nl>
+Copyright: 1995-1997, Chris Fearnley (cjf@netaxs.com)
+           1998-2006, James Troup (james@nocrew.org)
+           2008-2010, Arthur Loiret (aloiret@debian.org)
+           2011-2014, Jeroen Schot (schot@a-eskwadraat.nl)
 License: GPL-3+
 
 License: GPL-3+
@@ -8440,7 +8442,7 @@ License: GPL-3+
  GNU General Public License for more details.
  .
  You should have received a copy of the GNU General Public License
- along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ along with this program.  If not, see (http://www.gnu.org/licenses/).
  .
  On Debian systems, the full text of the GNU General Public License
  version 3 can be found in the file `/usr/share/common-licenses/GPL-3'.
@@ -8457,11 +8459,11 @@ Upstream-Name: gptfdisk
 Source: http://sourceforge.net/projects/gptfdisk/
 
 Files: *
-Copyright: 2011 Rod Smith <rodsmith@rodsbooks.com>
+Copyright: 2011 Rod Smith (rodsmith@rodsbooks.com)
 License: LGPL-2.0+
 
 Files: debian/*
-Copyright: 2011 Guillaume Delacour <gui@iroqwa.org>
+Copyright: 2011 Guillaume Delacour (gui@iroqwa.org)
 License: LGPL-2.0+
 
 Files: crc32.cc crc32.h
@@ -8481,7 +8483,7 @@ License: LGPL-2.0+
  Lesser General Public License for more details.
  .
  You should have received a copy of the GNU General Public License
- along with this program. If not, see <http://www.gnu.org/licenses/>.
+ along with this program. If not, see (http://www.gnu.org/licenses/).
  .
  On Debian systems, the complete text of the GNU Lesser General
  Public License can be found in "/usr/share/common-licenses/LGPL-2".
@@ -8494,11 +8496,11 @@ License: LGPL-2.0+
 
 [geoip-database-20140610/debian/copyright]
 This package was created on Tue, 18 Jan 2011 22:22:30 +0100 from
-Patrick Matthäi <pmatthaei@debian.org>.
+Patrick Matthäi (pmatthaei@debian.org).
 
 Here you can get the databases: http://geolite.maxmind.com/download/geoip/database/
 
-Upstream Author: T.J. Mather <tjmather@maxmind.com>
+Upstream Author: T.J. Mather (tjmather@maxmind.com)
 
 Copyright: (C) 2007 MaxMind LLC
 
@@ -8538,7 +8540,7 @@ License:
 On Debian GNU/Linux systems, the complete text of the GNU Lesser General
 Public License can be found in `/usr/share/common-licenses/LGPL-2'.
 
-The Debian packaging is © 2011, Patrick Matthäi <pmatthaei@debian.org>
+The Debian packaging is © 2011, Patrick Matthäi (pmatthaei@debian.org)
 and is licensed under the LGPL-2.
 [geoip-database-20140610/debian/copyright]
 
@@ -8553,7 +8555,7 @@ Upstream-Name: gfs2-utils
 Source: http://sources.redhat.com/cluster/wiki/
 
 Files: debian/*
-Copyright: 2011 Andres Rodriguez <andreserl@ubuntu.com>
+Copyright: 2011 Andres Rodriguez (andreserl@ubuntu.com)
            2011 Canonical Ltd.
 License: GPL-2+
 
@@ -8564,7 +8566,7 @@ License: GPL-2+
 
 Files: gfs2/man/gfs2_mount.8:
 Copyright:  Portions 2001-2003 The OpenGFS2 Project
-            Portions 2004 <ben.m.cahill at intel.com>
+            Portions 2004 (ben.m.cahill at intel.com)
             Copyright (C) 2004-2008 Red Hat, Inc.  All rights reserved.
 License: GPL-2+
 
@@ -8580,7 +8582,7 @@ License: GPL-2+
  GNU General Public License for more details.
  .
  You should have received a copy of the GNU General Public License
- along with this program. If not, see <http://www.gnu.org/licenses/>
+ along with this program. If not, see (http://www.gnu.org/licenses/)
  .
  On Debian systems, the complete text of the GNU General
  Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
@@ -8632,8 +8634,8 @@ Fifth Floor, Boston, MA 02110-1301 USA.
 [glibc-2.19/debian/copyright]
 This is the Debian prepackaged version of the GNU C Library version 2.19.
 
-It was put together by the GNU Libc Maintainers <debian-glibc@lists.debian.org>
-from <git://sourceware.org/git/glibc.git>
+It was put together by the GNU Libc Maintainers (debian-glibc@lists.debian.org)
+from (git://sourceware.org/git/glibc.git)
 
 * Most of the GNU C library is under the following copyright:
 
@@ -9149,7 +9151,7 @@ Collected from libdes and modified for SECURE RPC by Martin Kuck 1994
 This file is distributed under the terms of the GNU Lesser General
 Public License, version 2.1 or later - see the file COPYING.LIB for details.
 If you did not receive a copy of the license with this program, please
-see <http://www.gnu.org/licenses/> to obtain a copy.
+see (http://www.gnu.org/licenses/) to obtain a copy.
 
 The libidn code is copyright Simon Josefsson, with portions copyright
 The Internet Society, Tom Tromey and Red Hat, Inc.:
@@ -9169,7 +9171,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
 Lesser General Public License for more details.
 
 You should have received a copy of the GNU Lesser General Public
-License along with GNU Libidn; if not, see <http://www.gnu.org/licenses/>.
+License along with GNU Libidn; if not, see (http://www.gnu.org/licenses/).
 
 The following notice applies to portions of libidn/nfkc.c:
 
@@ -9355,7 +9357,7 @@ Feel free to copy, use and distribute this software provided:
 
 Various long double libm functions are copyright Stephen L. Moshier:
 
-Copyright 2001 by Stephen L. Moshier <moshier@na-net.ornl.gov>
+Copyright 2001 by Stephen L. Moshier (moshier@na-net.ornl.gov)
 
  This library is free software; you can redistribute it and/or
  modify it under the terms of the GNU Lesser General Public
@@ -9369,7 +9371,7 @@ Copyright 2001 by Stephen L. Moshier <moshier@na-net.ornl.gov>
 
  You should have received a copy of the GNU Lesser General Public
  License along with this library; if not, see
- <http://www.gnu.org/licenses/>.  */
+ (http://www.gnu.org/licenses/).  */
 [glibc-2.19/LICENSES]
 
 "glibc-2.19/posix/rxspencer/COPYRIGHT":
@@ -9417,7 +9419,7 @@ to the following restrictions:
 
 # You should have received a copy of the GNU Lesser General Public
 # License along with the GNU C Library; if not, see
-# <http://www.gnu.org/licenses/>.
+# (http://www.gnu.org/licenses/).
 
 # Run this script with the first argument being the location of
 # gnulib's update-copyright script.  Any other arguments are ignored.
@@ -9436,7 +9438,7 @@ export UPDATE_COPYRIGHT_MAX_LINE_LENGTH=79
 update_script=$1
 
 if ! [ -f "$update_script" ]; then
-  echo "error: first argument must point to gnulib update-copyright script" >&2
+  echo "error: first argument must point to gnulib update-copyright script" )&2
   exit 1
 fi
 
@@ -9867,12 +9869,12 @@ License: Expat
 "hdparm-9.43/debian/copyright":
 
 [hdparm-9.43/debian/copyright]
-This package was debianized by Christopher L Cheney <ccheney@debian.org> on
+This package was debianized by Christopher L Cheney (ccheney@debian.org) on
 Wed, 21 Nov 2001 15:51:14 -0600.
 
 It was downloaded from http://www.ibiblio.org/pub/Linux/system/hardware
 
-Upstream Author: Mark S. Lord <mlord@pobox.com>
+Upstream Author: Mark S. Lord (mlord@pobox.com)
 
 Copyright:
 
@@ -9894,7 +9896,7 @@ remain in the source code as-is.
 "heimdal-1.6~rc2+dfsg/debian/copyright":
 
 [heimdal-1.6~rc2+dfsg/debian/copyright]
-This package was debianized by Brian May <bam@snoopy.apana.org.au> on
+This package was debianized by Brian May (bam@snoopy.apana.org.au) on
 Wed,  8 Dec 1999 11:54:13 +1100.
 
 It was downloaded from http://www.pdc.kth.se/heimdal/
@@ -10447,9 +10449,9 @@ rijndael-alg-fst.c
 
 Optimised ANSI C code for the Rijndael cipher (now AES)
 
-@author Vincent Rijmen <vincent.rijmen@esat.kuleuven.ac.be>
-@author Antoon Bosselaers <antoon.bosselaers@esat.kuleuven.ac.be>
-@author Paulo Barreto <paulo.barreto@terra.com.br>
+@author Vincent Rijmen (vincent.rijmen@esat.kuleuven.ac.be)
+@author Antoon Bosselaers (antoon.bosselaers@esat.kuleuven.ac.be)
+@author Paulo Barreto (paulo.barreto@terra.com.br)
 
 This code is hereby placed in the public domain.
 
@@ -10569,7 +10571,7 @@ lib/hcrypto/test_dh.c
 @verbatim
 
 Copyright (c) 2007, Novell, Inc.
-Author: Matthias Koenig <mkoenig@suse.de>
+Author: Matthias Koenig (mkoenig@suse.de)
 
 All rights reserved.
 
@@ -10726,12 +10728,12 @@ Redistribution and use in source and binary forms, with or without modification,
 "hfsplus-1.0.4/debian/copyright":
 
 [hfsplus-1.0.4/debian/copyright]
-This package was debianized by Jens Schmalzing <jensen@debian.org> on
+This package was debianized by Jens Schmalzing (jensen@debian.org) on
 Sun, 11 Mar 2001 22:02:06 +0100.
 
 Upstream URL: http://www.penguinppc.org/historical/hfsplus/hfsplus_1.0.4.src.tar.bz2
 
-Upstream Author: Klaus Halfmann <khalfmann@libra.de>
+Upstream Author: Klaus Halfmann (khalfmann@libra.de)
 
 Copyright:
 
@@ -10747,15 +10749,15 @@ hfsplus is covered under the terms of the GPL.  See the file
 [hivex-1.3.10/debian/copyright]
 This work was packaged for Debian by:
 
-    Hilko Bengen <bengen@debian.org>
+    Hilko Bengen (bengen@debian.org)
 
 It was downloaded from:
 
-    <http://libguestfs.org/>, <git://git.annexia.org/git/hivex.git>
+    (http://libguestfs.org/), (git://git.annexia.org/git/hivex.git)
 
 Upstream Author:
 
-    Richard W.M. Jones <rjones@redhat.com>
+    Richard W.M. Jones (rjones@redhat.com)
 
 Copyright:
 
@@ -10795,7 +10797,7 @@ License (gnulib):
 
 The Debian packaging is:
 
-    Copyright (C) 2010 Hilko Bengen <bengen@debian.org>
+    Copyright (C) 2010 Hilko Bengen (bengen@debian.org)
 
 and is licensed under the GNU General Public License version 2 or
 later.
@@ -10816,7 +10818,7 @@ version 3 can be found in "/usr/share/common-licenses/GPL-3".
 "html5lib-0.999/debian/copyright":
 
 [html5lib-0.999/debian/copyright]
-This package was debianized by Bernd Zeimetz <bernd@bzed.de> on
+This package was debianized by Bernd Zeimetz (bernd@bzed.de) on
 Sun, 11 Mar 2007 21:29:42 +0100
 
 Latest version of upstream sources was downloaded from
@@ -10859,8 +10861,8 @@ SOFTWARE.
 -------------
 
 The Debian packaging is Copyright (C) 2007-2009, Bernd Zeimetz
-<bzed@debian.org>, Copyright (c) 2013 Olivier Berger
-<obergix@debian.org>, and is licensed under the same license as
+(bzed@debian.org), Copyright (c) 2013 Olivier Berger
+(obergix@debian.org), and is licensed under the same license as
 html5lib, see above.
 [html5lib-0.999/debian/copyright]
 
@@ -10870,7 +10872,7 @@ html5lib, see above.
 "icu-52.1/debian/copyright":
 
 [icu-52.1/debian/copyright]
-This package was debianized by Jay Berkenbilt <qjb@debian.org> on
+This package was debianized by Jay Berkenbilt (qjb@debian.org) on
 August 5, 2005.
 
 The original source was downloaded from
@@ -11022,26 +11024,26 @@ copyright notice:
 "icu-52.1/license.html":
 
 [icu-52.1/license.html]
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-   "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-<title>ICU License - ICU 1.8.1 and later</title>
-</head>
+(!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd")
+(html)
+(head)
+(meta http-equiv="Content-Type" content="text/html;charset=UTF-8")
+(title)ICU License - ICU 1.8.1 and later(/title)
+(/head)
 
-<body BGCOLOR="#ffffff">
-<h2>ICU License - ICU 1.8.1 and later</h2>
+(body BGCOLOR="#ffffff")
+(h2)ICU License - ICU 1.8.1 and later(/h2)
 
-<p>COPYRIGHT AND PERMISSION NOTICE</p>
+(p)COPYRIGHT AND PERMISSION NOTICE(/p)
 
-<p>
+(p)
 Copyright (c) 1995-2013 International Business Machines Corporation and others
-</p>
-<p>
+(/p)
+(p)
 All rights reserved.
-</p>
-<p>
+(/p)
+(p)
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"),
 to deal in the Software without restriction, including without limitation
@@ -11051,8 +11053,8 @@ to whom the Software is furnished to do so, provided that the above
 copyright notice(s) and this permission notice appear in all copies
 of the Software and that both the above copyright notice(s) and this
 permission notice appear in supporting documentation.
-</p>
-<p>
+(/p)
+(p)
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
 INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
 PARTICULAR PURPOSE AND NONINFRINGEMENT OF THIRD PARTY RIGHTS. IN NO EVENT SHALL
@@ -11061,65 +11063,65 @@ OR ANY SPECIAL INDIRECT OR CONSEQUENTIAL DAMAGES, OR ANY DAMAGES WHATSOEVER
 RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT,
 NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE
 USE OR PERFORMANCE OF THIS SOFTWARE.
-</p>
-<p>
+(/p)
+(p)
 Except as contained in this notice, the name of a copyright holder shall not be
 used in advertising or otherwise to promote the sale, use or other dealings in
 this Software without prior written authorization of the copyright holder.
-</p>
+(/p)
 
-<hr style="color:gray;background-color:gray">
-<p><small>
+(hr style="color:gray;background-color:gray")
+(p)(small)
 All trademarks and registered trademarks mentioned herein are the property of their respective owners.
-</small></p>
+(/small)(/p)
 
-<hr style="height:3px;color:black;background-color:black">
+(hr style="height:3px;color:black;background-color:black")
 
-<h2>Third-Party Software Licenses</h2>
+(h2)Third-Party Software Licenses(/h2)
 This section contains third-party software notices and/or additional terms for licensed
 third-party software components included within ICU libraries.
 
-<h3>1. Unicode Data Files and Software</h3>
+(h3)1. Unicode Data Files and Software(/h3)
 
-<h3 align="center"><a name="Exhibit1">EXHIBIT 1</a><br>
-UNICODE, INC. LICENSE AGREEMENT - DATA FILES AND SOFTWARE</h3>
-<blockquote>
-<p>Unicode Data Files include all data files under the directories 
-<a href="http://www.unicode.org/Public/">http://www.unicode.org/Public/</a>, 
-<a href="http://www.unicode.org/reports/">http://www.unicode.org/reports/</a>, 
+(h3 align="center")(a name="Exhibit1")EXHIBIT 1(/a)(br)
+UNICODE, INC. LICENSE AGREEMENT - DATA FILES AND SOFTWARE(/h3)
+(blockquote)
+(p)Unicode Data Files include all data files under the directories 
+(a href="http://www.unicode.org/Public/")http://www.unicode.org/Public/(/a), 
+(a href="http://www.unicode.org/reports/")http://www.unicode.org/reports/(/a), 
 and
-<a title="http://www.unicode.org/cldr/data/" onClick="return top.js.OpenExtLink(window,event,this)" target="_blank" href="http://www.unicode.org/cldr/data/">
-http://www.unicode.org/cldr/data/</a>. Unicode Data Files do not include PDF online code charts under the directory  <a href="http://www.unicode.org/Public/">http://www.unicode.org/Public/</a>. Software includes any source code 
-published in the Unicode Standard or under the directories <a href="http://www.unicode.org/Public/">http://www.unicode.org/Public/</a>,
-<a href="http://www.unicode.org/reports/">http://www.unicode.org/reports/</a>, 
+(a title="http://www.unicode.org/cldr/data/" onClick="return top.js.OpenExtLink(window,event,this)" target="_blank" href="http://www.unicode.org/cldr/data/")
+http://www.unicode.org/cldr/data/(/a). Unicode Data Files do not include PDF online code charts under the directory  (a href="http://www.unicode.org/Public/")http://www.unicode.org/Public/(/a). Software includes any source code 
+published in the Unicode Standard or under the directories (a href="http://www.unicode.org/Public/")http://www.unicode.org/Public/(/a),
+(a href="http://www.unicode.org/reports/")http://www.unicode.org/reports/(/a), 
 and
-<a title="http://www.unicode.org/cldr/data/" onClick="return top.js.OpenExtLink(window,event,this)" target="_blank" href="http://www.unicode.org/cldr/data/">
-http://www.unicode.org/cldr/data/</a>.</p>
+(a title="http://www.unicode.org/cldr/data/" onClick="return top.js.OpenExtLink(window,event,this)" target="_blank" href="http://www.unicode.org/cldr/data/")
+http://www.unicode.org/cldr/data/(/a).(/p)
 
-<p>NOTICE TO USER: Carefully read the following legal agreement. BY DOWNLOADING, INSTALLING, COPYING OR OTHERWISE USING UNICODE INC.'S DATA FILES ("DATA FILES"), AND/OR SOFTWARE ("SOFTWARE"), YOU UNEQUIVOCALLY ACCEPT, AND AGREE TO BE BOUND BY, ALL OF THE TERMS AND CONDITIONS OF THIS AGREEMENT. IF YOU DO NOT AGREE, DO NOT DOWNLOAD, INSTALL, COPY, DISTRIBUTE OR USE THE DATA FILES OR SOFTWARE.</p>
-<p>COPYRIGHT AND PERMISSION NOTICE</p>
+(p)NOTICE TO USER: Carefully read the following legal agreement. BY DOWNLOADING, INSTALLING, COPYING OR OTHERWISE USING UNICODE INC.'S DATA FILES ("DATA FILES"), AND/OR SOFTWARE ("SOFTWARE"), YOU UNEQUIVOCALLY ACCEPT, AND AGREE TO BE BOUND BY, ALL OF THE TERMS AND CONDITIONS OF THIS AGREEMENT. IF YOU DO NOT AGREE, DO NOT DOWNLOAD, INSTALL, COPY, DISTRIBUTE OR USE THE DATA FILES OR SOFTWARE.(/p)
+(p)COPYRIGHT AND PERMISSION NOTICE(/p)
 
-<p>Copyright © 1991-2013 Unicode, Inc. All rights reserved. Distributed under the Terms of Use in 
-<a href="http://www.unicode.org/copyright.html">http://www.unicode.org/copyright.html</a>.</p>
+(p)Copyright © 1991-2013 Unicode, Inc. All rights reserved. Distributed under the Terms of Use in 
+(a href="http://www.unicode.org/copyright.html")http://www.unicode.org/copyright.html(/a).(/p)
 
-<p>Permission is hereby granted, free of charge, to any person obtaining a copy of the Unicode data files and 
+(p)Permission is hereby granted, free of charge, to any person obtaining a copy of the Unicode data files and 
 any associated documentation (the "Data Files") or Unicode software and any associated documentation (the "Software") to deal in the Data Files or Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, and/or sell copies of the Data Files or Software, and to permit persons to whom the Data Files or Software are furnished to do so, provided that (a) the above copyright notice(s) and this permission notice appear 
-with all copies of the Data Files or Software, (b) both the above copyright notice(s) and this permission notice appear in associated documentation, and (c) there is clear notice in each modified Data File or in the Software as well as in the documentation associated with the Data File(s) or Software that the data or software has been modified.</p>
+with all copies of the Data Files or Software, (b) both the above copyright notice(s) and this permission notice appear in associated documentation, and (c) there is clear notice in each modified Data File or in the Software as well as in the documentation associated with the Data File(s) or Software that the data or software has been modified.(/p)
 
-<p>THE DATA FILES AND SOFTWARE ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT OF THIRD PARTY RIGHTS. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR HOLDERS INCLUDED IN THIS NOTICE BE LIABLE FOR ANY CLAIM, OR ANY SPECIAL INDIRECT OR CONSEQUENTIAL DAMAGES, OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
-PERFORMANCE OF THE DATA FILES OR SOFTWARE.</p>
+(p)THE DATA FILES AND SOFTWARE ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT OF THIRD PARTY RIGHTS. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR HOLDERS INCLUDED IN THIS NOTICE BE LIABLE FOR ANY CLAIM, OR ANY SPECIAL INDIRECT OR CONSEQUENTIAL DAMAGES, OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+PERFORMANCE OF THE DATA FILES OR SOFTWARE.(/p)
 
-<p>Except as contained in this notice, the name of a copyright holder shall not be used in advertising or otherwise to promote the sale, use or other dealings in these Data Files or Software without prior written authorization of the copyright holder.</p>
+(p)Except as contained in this notice, the name of a copyright holder shall not be used in advertising or otherwise to promote the sale, use or other dealings in these Data Files or Software without prior written authorization of the copyright holder.(/p)
 
-            <hr width="80%">
+            (hr width="80%")
 
-<p>Unicode and the Unicode logo are trademarks of Unicode, Inc. in the United States and other countries. All third party trademarks referenced herein are the property of their respective owners.</p>
+(p)Unicode and the Unicode logo are trademarks of Unicode, Inc. in the United States and other countries. All third party trademarks referenced herein are the property of their respective owners.(/p)
 
 
-</blockquote>
+(/blockquote)
 
-<h3>2. Chinese/Japanese Word Break Dictionary Data (cjdict.txt)</h3>
-<pre>
+(h3)2. Chinese/Japanese Word Break Dictionary Data (cjdict.txt)(/h3)
+(pre)
  #    The Google Chrome software developed by Google is licensed under the BSD license. Other software included in this distribution is provided under other licenses, as set forth below.
  #	
  #	The BSD License
@@ -11299,10 +11301,10 @@ PERFORMANCE OF THE DATA FILES OR SOFTWARE.</p>
  #	above as far as the program is concerned.
  #	
  #	---------------COPYING.ipadic-----END------------------------------------
-</pre>
+(/pre)
 
-<h3>3. Lao Word Break Dictionary Data (laodict.txt)</h3>
-<pre>
+(h3)3. Lao Word Break Dictionary Data (laodict.txt)(/h3)
+(pre)
  #	Copyright (c) 2013 International Business Machines Corporation
  #	and others. All Rights Reserved.
  #
@@ -11336,15 +11338,15 @@ PERFORMANCE OF THE DATA FILES OR SOFTWARE.</p>
  #	(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  #	SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  #	--------------------------------------------------------------------------------
-</pre>
+(/pre)
 
-<h3>4. Time Zone Database</h3>
-<p>ICU uses the public domain data and code derived from <a href="http://www.iana.org/time-zones">
-Time Zone Database</a> for its time zone support. The ownership of the TZ database is explained
-in <a href="http://tools.ietf.org/html/rfc6557">BCP 175: Procedure for Maintaining the Time Zone
-Database</a> section 7.<p>
+(h3)4. Time Zone Database(/h3)
+(p)ICU uses the public domain data and code derived from (a href="http://www.iana.org/time-zones")
+Time Zone Database(/a) for its time zone support. The ownership of the TZ database is explained
+in (a href="http://tools.ietf.org/html/rfc6557")BCP 175: Procedure for Maintaining the Time Zone
+Database(/a) section 7.(p)
 
-<pre>
+(pre)
 7.  Database Ownership
 
    The TZ database itself is not an IETF Contribution or an IETF
@@ -11361,11 +11363,11 @@ Database</a> section 7.<p>
    database or code waives all rights to future claims in that
    contribution or in the TZ Database.
 
-</pre>
+(/pre)
 
 
-</body>
-</html>
+(/body)
+(/html)
 [icu-52.1/license.html]
 
 
@@ -11375,7 +11377,7 @@ Database</a> section 7.<p>
 
 [installation-report-2.55/debian/copyright]
 The Debian bug reporter is copyright 2003-2005 by 
-Petter Reinholdtsen <pere@debian.org>, Joey Hess <joeyh@debian-org>, and
+Petter Reinholdtsen (pere@debian.org), Joey Hess (joeyh@debian-org), and
 the debian-installer team.
 
 This program is free software; you can redistribute it and/or modify it
@@ -11387,9 +11389,9 @@ On Debian systems, a copy of the GPL is in /usr/share/common-licenses/GPL-2
 For the script usb-list:
   Original version: http://article.gmane.org/gmane.linux.usb.general/16828
   Adapted for Debian Installer by Frans Pop.
-  Copyright: 2009 Greg Kroah-Hartman <greg@kroah.com>
-             2009 Randy Dunlap <rdunlap@xenotime.net>
-             2009 Frans Pop <elendil@planet.nl>
+  Copyright: 2009 Greg Kroah-Hartman (greg@kroah.com)
+             2009 Randy Dunlap (rdunlap@xenotime.net)
+             2009 Frans Pop (elendil@planet.nl)
   This software may be used and distributed according to the terms of
   the GNU General Public License (GPL), version 2, or at your option
   any later version.
@@ -11405,13 +11407,13 @@ intltool-debian is a derived version of intltool, which is
   Copyright (C) 2000-2003 Free Software Foundation.
   Copyright (C) 2000, 2001 Eazel, Inc
 Intltool maintainers:
-Rodney Dawes <dobey@novell.com>
-Danilo Šegan <danilo@gnome.org>
+Rodney Dawes (dobey@novell.com)
+Danilo Šegan (danilo@gnome.org)
 
 Older intltool maintainers:
-Kenneth Christiansen <kenneth@gnu.org>
-Darin Adler <darin@bentspoon.com>
-Maciej Stachowiak <mjs@noisehavoc.org>
+Kenneth Christiansen (kenneth@gnu.org)
+Darin Adler (darin@bentspoon.com)
+Maciej Stachowiak (mjs@noisehavoc.org)
 
 This program is released under the terms and conditions of the GNU
 General Public License (GPL).  On Debian GNU/Linux systems, the complete
@@ -11427,15 +11429,15 @@ text of the GNU General Public License may be found in
 [irker-2.11+dfsg/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: irker
-Upstream-Contact: Eric S. Raymond <esr@thyrsus.com>
+Upstream-Contact: Eric S. Raymond (esr@thyrsus.com)
 Source: http://www.catb.org/esr/irker/
 
 Files: *
-Copyright: 2012-2014 Eric S. Raymond <esr@thyrsus.com>
+Copyright: 2012-2014 Eric S. Raymond (esr@thyrsus.com)
 License: BSD
 
 Files: debian/*
-Copyright: 2012-2014 Daniel Baumann <mail@daniel-baumann.ch>
+Copyright: 2012-2014 Daniel Baumann (mail@daniel-baumann.ch)
 License: BSD
 
 License: BSD
@@ -11473,14 +11475,14 @@ License: BSD
 "ispell-3.3.02/debian/copyright":
 
 [ispell-3.3.02/debian/copyright]
-Author: Geoff Kuenning <geoff@cs.hmc.edu>
+Author: Geoff Kuenning (geoff@cs.hmc.edu)
 Download: http://www.lasr.cs.ucla.edu/geoff/ispell.html
 
 Files: *
 Copyright:
  (C) 1983 Pace Willisson
- (C) 1987, 1988, 1990-1995  Geoff Kuennin <geoff@cs.hmc.edu>, Claremont, CA.
- (C) 1999, 2001, 2002, 2005 Geoff Kuennin <geoff@cs.hmc.edu>, Claremont, CA.
+ (C) 1987, 1988, 1990-1995  Geoff Kuennin (geoff@cs.hmc.edu), Claremont, CA.
+ (C) 1999, 2001, 2002, 2005 Geoff Kuennin (geoff@cs.hmc.edu), Claremont, CA.
 License: BSD
  Redistribution and use in source and binary forms, with or without
  modification, are permitted provided that the following conditions
@@ -11517,22 +11519,22 @@ License: BSD
 
 Files: debian/*
 Copyright:
- (C) 1995 Kenneth MacDonald <K.MacDonald@ed.ac.uk>
- (C) 1997 Fabrizio Polacco <fpolacco@debian.org>
- (C) 1997 Martin Mitchell <martin@debian.org>
- (C) 1998 Stefan Bjornelund <stefanb@debian.org>
- (C) 1999 Vincent Renardias <vincent@waw.com>
- (C) 1999 Mark Brown <broonie@debian.org>
- (C) 1999-2004 David Coe <davidc@debian.org>
- (C) 2001, 2002, 2009 Agustin Martin Domingo <agmartin@debian.org>
- (C) 2002 Tollef Fog Heen <tfheen@debian.org>
- (C) 2006 Steinar H. Gunderson <sesse@debian.org>
- (C) 2006 Roland Rosenfeld <roland@debian.org>
- (C) 2006 Martin Michlmayr <tbm@cyrius.com>
- (C) 2007 Thijs Kinkhorst <thijs@debian.org>
- (C) 2009 Daniel Baumann <daniel@debian.org>
- (C) 2009 David Paleino <dapal@debian.org>
- (C) 2011 Robert Luberda <robert@debian.org>
+ (C) 1995 Kenneth MacDonald (K.MacDonald@ed.ac.uk)
+ (C) 1997 Fabrizio Polacco (fpolacco@debian.org)
+ (C) 1997 Martin Mitchell (martin@debian.org)
+ (C) 1998 Stefan Bjornelund (stefanb@debian.org)
+ (C) 1999 Vincent Renardias (vincent@waw.com)
+ (C) 1999 Mark Brown (broonie@debian.org)
+ (C) 1999-2004 David Coe (davidc@debian.org)
+ (C) 2001, 2002, 2009 Agustin Martin Domingo (agmartin@debian.org)
+ (C) 2002 Tollef Fog Heen (tfheen@debian.org)
+ (C) 2006 Steinar H. Gunderson (sesse@debian.org)
+ (C) 2006 Roland Rosenfeld (roland@debian.org)
+ (C) 2006 Martin Michlmayr (tbm@cyrius.com)
+ (C) 2007 Thijs Kinkhorst (thijs@debian.org)
+ (C) 2009 Daniel Baumann (daniel@debian.org)
+ (C) 2009 David Paleino (dapal@debian.org)
+ (C) 2011 Robert Luberda (robert@debian.org)
 License: BSD
  Permission is hereby granted, free of charge, to any person obtaining
  a copy of this software and associated documentation files (the
@@ -11563,16 +11565,16 @@ License: BSD
 It is a Debian original work.
 
 Current maintainers:
-	Michael Koch <konqueror@gmx.de>
-	Matthias Klose <doko@debian.org>
-	Torsten Werner <twerner@debian.org>
-	Niels Thykier <niels@thykier.net>
+	Michael Koch (konqueror@gmx.de)
+	Matthias Klose (doko@debian.org)
+	Torsten Werner (twerner@debian.org)
+	Niels Thykier (niels@thykier.net)
 
 Previous maintainers:
-	Ola Lundqvist <opal@debian.org>
-	Stephane Bortzmeyer <bortzmeyer@debian.org>
-	Stefan Gybas <sgybas@debian.org>
-	Arnaud Vandyck <avdyk@debian.org>
+	Ola Lundqvist (opal@debian.org)
+	Stephane Bortzmeyer (bortzmeyer@debian.org)
+	Stefan Gybas (sgybas@debian.org)
+	Arnaud Vandyck (avdyk@debian.org)
 
 Copyright (C) 1999-2010 by current and previous maintainers for Debian
 
@@ -11604,10 +11606,10 @@ Public License can be found in `/usr/share/common-licenses/GPL-2'.
 
 [javascript-common-11/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Author: Marcelo Jorge Vieira <metal@alucinados.com>
+Author: Marcelo Jorge Vieira (metal@alucinados.com)
 
 Files: *
-Copyright: (C) 2008 Marcelo Jorge Vieira <metal@alucinados.com>
+Copyright: (C) 2008 Marcelo Jorge Vieira (metal@alucinados.com)
 License: GPL-2+
  This program is free software; you can redistribute it and/or
  modify it under the terms of the GNU General Public License
@@ -11633,25 +11635,25 @@ License: GPL-2+
 "jfsutils-1.1.15/debian/copyright":
 
 [jfsutils-1.1.15/debian/copyright]
-This package was debianized by Christopher L Cheney <ccheney@debian.org> on
+This package was debianized by Christopher L Cheney (ccheney@debian.org) on
 Mon, 18 Jun 2001 20:00:00 -0500.
 
 It was downloaded from http://oss.software.ibm.com/developer/opensource/jfs/project/pub/
 
 Upstream Authors:
 
-Barry Arndt <barndt@us.ibm.com>
-Steve Best <sbest@us.ibm.com>
-William Braswell <wlverine@nac.net>
-Christoph Hellwig <hch@infradead.org>
-Dave Kleikamp <shaggy@austin.ibm.com>
-Ross A. Knepper <rak@nightmoose.net>
-Jim Nance <jlnance@intrex.net>
-Joe Nuspl <nuspl@polyserve.com>
-Hiten Pandya <hmp@dragonflybsd.org>
-Terence Rokop <rokopt@polyserve.com>
-Jan Van Sweevelt <jan-vansweevelt@freegates.be>
-Karl Rister <krister@tamu.edu>
+Barry Arndt (barndt@us.ibm.com)
+Steve Best (sbest@us.ibm.com)
+William Braswell (wlverine@nac.net)
+Christoph Hellwig (hch@infradead.org)
+Dave Kleikamp (shaggy@austin.ibm.com)
+Ross A. Knepper (rak@nightmoose.net)
+Jim Nance (jlnance@intrex.net)
+Joe Nuspl (nuspl@polyserve.com)
+Hiten Pandya (hmp@dragonflybsd.org)
+Terence Rokop (rokopt@polyserve.com)
+Jan Van Sweevelt (jan-vansweevelt@freegates.be)
+Karl Rister (krister@tamu.edu)
 
 Copyright: 
 
@@ -11669,7 +11671,7 @@ of the GNU General Public License can be found in
 "jinja2-2.7.3/debian/copyright":
 
 [jinja2-2.7.3/debian/copyright]
-This package was debianized by Piotr Ożarowski <piotr@debian.org> on
+This package was debianized by Piotr Ożarowski (piotr@debian.org) on
 Mon, 14 Jul 2008 23:45:03 +0200.
 
 It was downloaded from http://pypi.python.org/pypi/Jinja2
@@ -11740,7 +11742,7 @@ can be found in `/usr/share/common-licenses/GPL'.
 
   ---------------------------------------------------------------
 
-The Debian packaging is © 2008-2011, Piotr Ożarowski <piotr@debian.org> and
+The Debian packaging is © 2008-2011, Piotr Ożarowski (piotr@debian.org) and
 is licensed under the same license as Jinja2.
 [jinja2-2.7.3/debian/copyright]
 
@@ -11849,11 +11851,11 @@ Copyright: (c) 2009 Trent Foley (http://trentacular.com)
 License: MIT
 
 Files: form/*
-Copyright: (c) 2011 Mike Alsup <malsup@gmail.com>
+Copyright: (c) 2011 Mike Alsup (malsup@gmail.com)
 License: MIT or GPL-2
 
 Files: tipsy/*
-Copyright:(c) 2008-2009 Jason Frame <jason@onehackoranother.com>
+Copyright:(c) 2008-2009 Jason Frame (jason@onehackoranother.com)
 License: MIT
 
 Files: fancybox/*
@@ -11871,8 +11873,8 @@ License: MIT or GPL
 
 Files: tablesorter/*
 Copyright:
- (c) 2007 Christian Bach <christian@tablesorter.com>
- (c) 2008 Brian Ghidinelli <brian@vfive.com>
+ (c) 2007 Christian Bach (christian@tablesorter.com)
+ (c) 2008 Brian Ghidinelli (brian@vfive.com)
 License: MIT or GPL
 
 Files: treetable/*
@@ -11884,11 +11886,11 @@ Copyright: (c) 2008 Brandon Aaron (http://brandonaaron.net)
 License: MIT or GPL
 
 Files: countdown/*
-Copyright: 2008 Keith Wood <kbwood@iinet.com.au>
+Copyright: 2008 Keith Wood (kbwood@iinet.com.au)
 License: MIT or GPL-2
 
 Files: resize/*
-Copyright: 2012 Ben Alman <cowboy@rj3.net>
+Copyright: 2012 Ben Alman (cowboy@rj3.net)
 Homepage: http://benalman.com/projects/jquery-resize-plugin/
 License: MIT or GPL-2
 
@@ -11907,7 +11909,7 @@ Homepage: http://tutorialzine.com/2012/02/enhance-your-website-fullscreen-api/
 License: MIT
 
 Files: debian/*
-Copyright: (c) 2009-2011 Marcelo Jorge Vieira <metal@debian.org>
+Copyright: (c) 2009-2011 Marcelo Jorge Vieira (metal@debian.org)
 License: MIT or GPL-2+ or BSD or Apache-2.0
 
 License: GPL
@@ -11983,7 +11985,7 @@ License: BSD
 "kexec-tools-2.0.4/debian/copyright":
 
 [kexec-tools-2.0.4/debian/copyright]
-This package was debianized by Khalid Aziz <khalid@debian.org> on
+This package was debianized by Khalid Aziz (khalid@debian.org) on
 Wed, 27 Jul 2005 10:55:17 -0600.
 
 It was originally downloaded from: http://www.xmission.com/~ebiederm/files/kexec/
@@ -11992,12 +11994,12 @@ Versions 20070330 and newer were downloaded from: http://kernel.org/pub/linux/ut
 Copyright: 2003-2012 Various
 
 Upstream Authors: 
-Eric Biederman <ebiederm@xmission.com>
+Eric Biederman (ebiederm@xmission.com)
 Albert Herranz
-Jesse Barnes <jbarnes@sgi.com>
-Khalid Aziz <khalid.aziz@hp.com>
-Hariprasad Nellitheertha <hari@in.ibm.com>
-Tim Deegan <tjd21@cl.cam.ac.uk>
+Jesse Barnes (jbarnes@sgi.com)
+Khalid Aziz (khalid.aziz@hp.com)
+Hariprasad Nellitheertha (hari@in.ibm.com)
+Tim Deegan (tjd21@cl.cam.ac.uk)
 And others...
 
 Currently maintained by
@@ -12029,7 +12031,7 @@ License:
 [kombu-3.0.15/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: kombu
-Upstream-Contact: Ask Solem <askh@opera.com>
+Upstream-Contact: Ask Solem (askh@opera.com)
 Source: http://pypi.python.org/pypi/kombu/
 
 Files: *
@@ -12057,7 +12059,7 @@ Copyright: 2010-2011, David Clymer
 License: BSD-solem
 
 Files: debian/*
-Copyright: 2012, Michael Fladischer <FladischerMichael@fladi.at>
+Copyright: 2012, Michael Fladischer (FladischerMichael@fladi.at)
 License: BSD-solem
 
 License: BSD-solem
@@ -12140,10 +12142,10 @@ License: PSF-2
 "laptop-detect-0.13.7/debian/copyright":
 
 [laptop-detect-0.13.7/debian/copyright]
-Upstream Author: Thom May <thom@canonical.com>
+Upstream Author: Thom May (thom@canonical.com)
 
-Copyright 2004-2007 Thom May <thom@canonical.com>
-Copyright 2006-2008 Otavio Salvador <otavio@ossystems.com.br>
+Copyright 2004-2007 Thom May (thom@canonical.com)
+Copyright 2006-2008 Otavio Salvador (otavio@ossystems.com.br)
 
 This software is licensed under the BSD license. For further
 information please see /usr/share/common-licenses/BSD.
@@ -12160,7 +12162,7 @@ Upstream-Name: Little CMS
 Source: http://www.littlecms.com/
 
 Files: *
-Copyright: 1998-2014 Marti Maria Saguer <marti.maria@littlecms.com>
+Copyright: 1998-2014 Marti Maria Saguer (marti.maria@littlecms.com)
 License: MIT
  Permission is hereby granted, free of charge, to any person obtaining a copy
  of this software and associated documentation files (the "Software"), to deal
@@ -12181,8 +12183,8 @@ License: MIT
  SOFTWARE.
 
 Files: debian/*
-Copyright: 2011 Oleksandr Moskalenko <malex@debian.org>
-           2013 Thomas Weber <tweber@debian.org>
+Copyright: 2011 Oleksandr Moskalenko (malex@debian.org)
+           2013 Thomas Weber (tweber@debian.org)
 License: GPL-2+
  This package is free software; you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -12195,7 +12197,7 @@ License: GPL-2+
  GNU General Public License for more details.
  .
  You should have received a copy of the GNU General Public License
- along with this program. If not, see <http://www.gnu.org/licenses/>
+ along with this program. If not, see (http://www.gnu.org/licenses/)
  .
  On Debian systems, the complete text of the GNU General
  Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
@@ -12212,14 +12214,14 @@ Source: http://ldb.samba.org/
 
 Files: *
 Copyright:
- 2004-2010 Andrew Tridgell <tridge@samba.org>
- 2004-2010 Simo Sorce <idra@samba.org>
- 2005-2010 Andrew Bartlett <abartlet@samba.org>
- 2005,2006 Tim Potter <tpot@samba.org>
- 2007-2010 Jelmer Vernooij <jelmer@samba.org>
+ 2004-2010 Andrew Tridgell (tridge@samba.org)
+ 2004-2010 Simo Sorce (idra@samba.org)
+ 2005-2010 Andrew Bartlett (abartlet@samba.org)
+ 2005,2006 Tim Potter (tpot@samba.org)
+ 2007-2010 Jelmer Vernooij (jelmer@samba.org)
  2009-2010 Matthias Dieter Wallnöfer
- 2005-2006 Brad Hards <bradh@frogmouth.net>
- 2006 Martin Kuehl <mkhl@samba.org>
+ 2005-2006 Brad Hards (bradh@frogmouth.net)
+ 2006 Martin Kuehl (mkhl@samba.org)
  2004 Stefan Metzmacher
  2004-2005 Derrell Lipman
 License: LGPL-3+
@@ -12234,7 +12236,7 @@ License: LGPL-3+
 
 Files: tools/*
 Copyright:
- 2004-2010 Andrew Tridgell <tridge@samba.org>
+ 2004-2010 Andrew Tridgell (tridge@samba.org)
  2004 Stefan Metzmacher
  2009 Matthieu Patou
 License: GPL-3+
@@ -12382,7 +12384,7 @@ License:
  TO PROVIDE MAINTENANCE, SUPPORT, UPDATES, ENHANCEMENTS, OR MODIFICATIONS.
 
 Files: debian/*
-Copyright: 2007-2010 Jelmer Vernooij <jelmer@samba.org>
+Copyright: 2007-2010 Jelmer Vernooij (jelmer@samba.org)
 License: LGPL-3+
  The text of the license is available on Debian systems in the
  /usr/share/common-licenses/LGPL-3 file.
@@ -12427,20 +12429,20 @@ Upstream-Contact: This version released by Tye McQueen (http://perlmonks.org/?no
 Source: http://search.cpan.org/~tyemq/Algorithm-Diff/
 
 Files: *
-Copyright: 2000-2004, Ned Konz <perl@bike-nomad.com>
+Copyright: 2000-2004, Ned Konz (perl@bike-nomad.com)
 License: Artistic or GPL-1+
 
 Files: cdiff.pl diff.pl diffnw.pl
-Copyright: 1998, M-J. Dominus <mjd-perl-diff@plover.com>
+Copyright: 1998, M-J. Dominus (mjd-perl-diff@plover.com)
 License: Artistic or GPL-1+
 
 Files: debian/*
-Copyright: 2000, 2001, 2002, 2003, Michael Alan Dorman <mdorman@debian.org>
- 2004, 2005, Florian Weimer <fw@deneb.enyo.de>
- 2008, gregor herrmann <gregoa@debian.org>
- 2009, Jonathan Yu <jawnsy@cpan.org>
- 2010, Salvatore Bonaccorso <carnil@debian.org>
- 2012, Xavier Guimard <x.guimard@free.fr>
+Copyright: 2000, 2001, 2002, 2003, Michael Alan Dorman (mdorman@debian.org)
+ 2004, 2005, Florian Weimer (fw@deneb.enyo.de)
+ 2008, gregor herrmann (gregoa@debian.org)
+ 2009, Jonathan Yu (jawnsy@cpan.org)
+ 2010, Salvatore Bonaccorso (carnil@debian.org)
+ 2012, Xavier Guimard (x.guimard@free.fr)
 License: Artistic or GPL-1+
 
 License: Artistic
@@ -12469,30 +12471,30 @@ License: GPL-1+
 [libalgorithm-diff-xs-perl-0.04/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: Algorithm-Diff-XS
-Upstream-Contact: Audrey Tang <cpan@audreyt.org>
+Upstream-Contact: Audrey Tang (cpan@audreyt.org)
 Source: https://metacpan.org/release/Algorithm-Diff-XS
 
 Files: *
-Copyright: 2008, Audrey Tang <cpan@audreyt.org>
- 2003, Joe Schaefer <joe+cpan@sunstarsys.com>
+Copyright: 2008, Audrey Tang (cpan@audreyt.org)
+ 2003, Joe Schaefer (joe+cpan@sunstarsys.com)
 License: Artistic or GPL-1+
 
 Files: ppport.h
-Copyright: 2004-2009, Marcus Holland-Moritz <mhx-cpan@gmx.net>
- 2001, Paul Marquess <pmqs@cpan.org> (Version 2.x)
- 1999, Kenneth Albanowski <kjahds@kjahds.com> (Version 1.x)
+Copyright: 2004-2009, Marcus Holland-Moritz (mhx-cpan@gmx.net)
+ 2001, Paul Marquess (pmqs@cpan.org) (Version 2.x)
+ 1999, Kenneth Albanowski (kjahds@kjahds.com) (Version 1.x)
 License: Artistic or GPL-1+
 
 Files: inc/Module/*
-Copyright: 2002-2009, Adam Kennedy <adamk@cpan.org>
- 2002-2009, Audrey Tang <autrijus@autrijus.org>
- 2002-2009, Brian Ingerson <ingy@cpan.org>
+Copyright: 2002-2009, Adam Kennedy (adamk@cpan.org)
+ 2002-2009, Audrey Tang (autrijus@autrijus.org)
+ 2002-2009, Brian Ingerson (ingy@cpan.org)
 License: Artistic or GPL-1+
 
 Files: debian/*
-Copyright: 2009, Jonathan Yu <jawnsy@cpan.org>
- 2011, Steve McIntyre <steve.mcintyre@linaro.org>
- 2011, gregor herrmann <gregoa@debian.org>
+Copyright: 2009, Jonathan Yu (jawnsy@cpan.org)
+ 2011, Steve McIntyre (steve.mcintyre@linaro.org)
+ 2011, gregor herrmann (gregoa@debian.org)
 License: Artistic or GPL-1+
 
 License: Artistic
@@ -12519,7 +12521,7 @@ License: GPL-1+
 
 [libalgorithm-merge-perl-0.08/debian/copyright]
 Format-Specification: http://svn.debian.org/wsvn/dep/web/deps/dep5.mdwn?op=file&rev=135
-Maintainer: James G. Smith <jsmith@cpan.org>
+Maintainer: James G. Smith (jsmith@cpan.org)
 Source: http://search.cpan.org/dist/Algorithm-Merge/
 Name: Algorithm-Merge
 
@@ -12528,8 +12530,8 @@ Copyright: 2003, 2007 Texas A&M University
 License: Artistic or GPL-1+
 
 Files: debian/*
-Copyright: 2009, Jonathan Yu <frequency@cpan.org>
- 2010, Salvatore Bonaccorso <salvatore.bonaccorso@gmail.com>
+Copyright: 2009, Jonathan Yu (frequency@cpan.org)
+ 2010, Salvatore Bonaccorso (salvatore.bonaccorso@gmail.com)
 License: Artistic or GPL-1+
 
 License: Artistic
@@ -12555,18 +12557,18 @@ License: GPL-1+
 "libcroco-0.6.8/debian/copyright":
 
 [libcroco-0.6.8/debian/copyright]
-This package was debianized by Sebastien Bacher <seb128@debian.org> on
+This package was debianized by Sebastien Bacher (seb128@debian.org) on
 Mon, 12 Apr 2004 12:23:20 +0200.
 
 It was downloaded from http://download.gnome.org/sources/libcroco
 
 Upstream Authors:
-    Dodji Seketeli <dodji@gnome.org>
-    Gael Chamoulaud <strider@gnome.org>
-    Rob BUIS <rwlbuis@xs4all.nl>
+    Dodji Seketeli (dodji@gnome.org)
+    Gael Chamoulaud (strider@gnome.org)
+    Rob BUIS (rwlbuis@xs4all.nl)
 
 Copyright:
-    Copyright (C) 2002-2004 Dodji Seketeli <dodji@gnome.org>
+    Copyright (C) 2002-2004 Dodji Seketeli (dodji@gnome.org)
 
 License:
 
@@ -12599,23 +12601,23 @@ This is Debian GNU/Linux's prepackaged version of Crypt::PasswdMD5
 (renamed to be libcrypt-passwdmd5-perl), a Perl module for
 interoperable MD5-based crypt().
 
-Bart Bunting <bart@debian.org> assembled this package.  The
+Bart Bunting (bart@debian.org) assembled this package.  The
 library is available from the Comprehensive Perl Archive Network
-(CPAN). Visit <URL:http://www.perl.com/CPAN/> to find a CPAN site near
+(CPAN). Visit (URL:http://www.perl.com/CPAN/) to find a CPAN site near
 you.
-This package was maintained by Florian Ernst <florian@debian.org>.
+This package was maintained by Florian Ernst (florian@debian.org).
 
 The only change for the Debian package was the addition of the debian/
 files.
 
-Upstream author: Luis E. Muñoz <luismunoz@cpan.org>
+Upstream author: Luis E. Muñoz (luismunoz@cpan.org)
 
-Copyright: (C) 1998-2005 Luis E. Muñoz <luismunoz@cpan.org>
+Copyright: (C) 1998-2005 Luis E. Muñoz (luismunoz@cpan.org)
 
 License:
 
     "THE BEER-WARE LICENSE" (Revision 42):
-    <phk@login.dknet.dk> wrote this file.  As long as you retain this notice you
+    (phk@login.dknet.dk) wrote this file.  As long as you retain this notice you
     can do whatever you want with this stuff. If we meet some day, and you think
     this stuff is worth it, you can buy me a beer in return.   Poul-Henning Kamp
 
@@ -12640,9 +12642,9 @@ On Debian systems, the complete text of the Artistic License
 can be found in `/usr/share/common-licenses/Artistic'.
 
 The Debian packaging is
-Copyright (C) 2001, Bart Bunting <bart@urnet.com.au>
-Copyright (C) 2004-2006, Florian Ernst <florian@debian.org>
-Copyright (C) 2006-2008, Bart Martens <bartm@knars.be>
+Copyright (C) 2001, Bart Bunting (bart@urnet.com.au)
+Copyright (C) 2004-2006, Florian Ernst (florian@debian.org)
+Copyright (C) 2006-2008, Bart Martens (bartm@knars.be)
 and is licensed under the GPL, see `/usr/share/common-licenses/GPL'.
 
 [libcrypt-passwdmd5-perl-1.3/debian/copyright]
@@ -12655,7 +12657,7 @@ and is licensed under the GPL, see `/usr/share/common-licenses/GPL'.
 [libdbd-mysql-perl-4.027/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: DBD-mysql
-Upstream-Contact: Patrick Galbraith <patg@mysql.com>
+Upstream-Contact: Patrick Galbraith (patg@mysql.com)
 Source: https://metacpan.org/release/DBD-mysql
 
 Files: *
@@ -12686,19 +12688,19 @@ Copyright: 2004-2014, Patrick Galbraith
 License: Artistic or GPL-1+
 
 Files: debian/*
-Copyright: 1997-1999, Ben Gertzfield <che@debian.org>
- 1997, Christian Schwarz <schwarz@debian.org>
- 1997, Scott Hanson <shanson@debian.org>
- 1999-2007, Raphael Hertzog <hertzog@debian.org>
- 2000, Guillaume Morin <gemorin@debian.org>
- 2006-2014, gregor herrmann <gregoa@debian.org>
- 2008, Roberto C. Sanchez <roberto@connexer.com>
- 2009, Gunnar Wolf <gwolf@debian.org>
- 2009, Tim Retout <diocles@debian.org>
- 2009-2010, Krzysztof Krzyżaniak (eloy) <eloy@debian.org>
- 2010-2011, Ansgar Burchardt <ansgar@debian.org>
- 2011, Nicholas Bamber <nicholas@periapt.co.uk>
- 2012-2013, Xavier Guimard <x.guimard@free.fr>
+Copyright: 1997-1999, Ben Gertzfield (che@debian.org)
+ 1997, Christian Schwarz (schwarz@debian.org)
+ 1997, Scott Hanson (shanson@debian.org)
+ 1999-2007, Raphael Hertzog (hertzog@debian.org)
+ 2000, Guillaume Morin (gemorin@debian.org)
+ 2006-2014, gregor herrmann (gregoa@debian.org)
+ 2008, Roberto C. Sanchez (roberto@connexer.com)
+ 2009, Gunnar Wolf (gwolf@debian.org)
+ 2009, Tim Retout (diocles@debian.org)
+ 2009-2010, Krzysztof Krzyżaniak (eloy) (eloy@debian.org)
+ 2010-2011, Ansgar Burchardt (ansgar@debian.org)
+ 2011, Nicholas Bamber (nicholas@periapt.co.uk)
+ 2012-2013, Xavier Guimard (x.guimard@free.fr)
 License: Artistic or GPL-1+
 
 License: Artistic
@@ -12735,13 +12737,13 @@ License: GPL-2+
 [libdbi-0.9.0/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: libdbi
-Upstream-Contact: Markus Hoenicka <markus@mhoenicka.de>
+Upstream-Contact: Markus Hoenicka (markus@mhoenicka.de)
 Source: http://libdbi.sourceforge.net/download.html
 
 Files: *
-Copyright: (c) 2001-2005, David Parker <david@neongoat.com>
-  (c) 2001-2004, Mark Tobenkin <mark@brentwoodradio.com>
-  (c) 2001-2007, Markus Hoenicka <markus@mhoenicka.de>
+Copyright: (c) 2001-2005, David Parker (david@neongoat.com)
+  (c) 2001-2004, Mark Tobenkin (mark@brentwoodradio.com)
+  (c) 2001-2007, Markus Hoenicka (markus@mhoenicka.de)
 License: LGPL-2.1+
 
 Files: src/atoll.c
@@ -12754,17 +12756,17 @@ License: GPL-2+
 Comment: ripped from gcc (libiberty/vasprintf.c).
 
 Files: doc/*
-Copyright: (c) 2001-2013, Neon Goat Productions <david@neongoat.com>
-  (c) 2001-2013, Markus Hoenicka <markus@mhoenicka.de>
-  (c) 2001-2013, David A. Parker <david@neongoat.com>
+Copyright: (c) 2001-2013, Neon Goat Productions (david@neongoat.com)
+  (c) 2001-2013, Markus Hoenicka (markus@mhoenicka.de)
+  (c) 2001-2013, David A. Parker (david@neongoat.com)
 License: GFDL-1.1+
 
 Files: debian/*
-Copyright: (C) 2005-2007 David Nebauer <david@nebauer.org>
-  (C) 2001-2005, David A. Parker <david@neongoat.com>
-  (C) 2007-2012, Thomas Goirand <thomas@goirand.fr>
-  (C) 2014-      Prach Pongpanich <prachpub@gmail.com>
-  (C) 2014-      Laszlo Boszormenyi (GCS) <gcs@debian.org>
+Copyright: (C) 2005-2007 David Nebauer (david@nebauer.org)
+  (C) 2001-2005, David A. Parker (david@neongoat.com)
+  (C) 2007-2012, Thomas Goirand (thomas@goirand.fr)
+  (C) 2014-      Prach Pongpanich (prachpub@gmail.com)
+  (C) 2014-      Laszlo Boszormenyi (GCS) (gcs@debian.org)
 License: LGPL-2.1+
 
 License: LGPL-2.1+
@@ -12788,126 +12790,126 @@ License: GFDL-1.1+
 "libdbi-0.9.0/doc/driver-guide/copying-fdl.html":
 
 [libdbi-0.9.0/doc/driver-guide/copying-fdl.html]
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<HTML
-><HEAD
-><TITLE
->GNU Free Documentation License</TITLE
-><META
+(!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd")
+(HTML
+)(HEAD
+)(TITLE
+)GNU Free Documentation License(/TITLE
+)(META
 NAME="GENERATOR"
-CONTENT="Modular DocBook HTML Stylesheet Version 1.79"><LINK
+CONTENT="Modular DocBook HTML Stylesheet Version 1.79")(LINK
 REL="HOME"
 TITLE="Database Independent Abstraction Layer for C"
-HREF="index.html"><LINK
+HREF="index.html")(LINK
 REL="PREVIOUS"
 TITLE="DBD Helper Functions"
-HREF="helperfuncs.html"></HEAD
-><BODY
+HREF="helperfuncs.html")(/HEAD
+)(BODY
 CLASS="APPENDIX"
 BGCOLOR="#FFFFFF"
 TEXT="#000000"
 LINK="#0000FF"
 VLINK="#840084"
 ALINK="#0000FF"
-><DIV
+)(DIV
 CLASS="NAVHEADER"
-><TABLE
+)(TABLE
 SUMMARY="Header navigation table"
 WIDTH="100%"
 BORDER="0"
 CELLPADDING="0"
 CELLSPACING="0"
-><TR
-><TH
+)(TR
+)(TH
 COLSPAN="3"
 ALIGN="center"
->Database Independent Abstraction Layer for C: libdbi Driver Author's Guide</TH
-></TR
-><TR
-><TD
+)Database Independent Abstraction Layer for C: libdbi Driver Author's Guide(/TH
+)(/TR
+)(TR
+)(TD
 WIDTH="10%"
 ALIGN="left"
 VALIGN="bottom"
-><A
+)(A
 HREF="helperfuncs.html"
 ACCESSKEY="P"
->Prev</A
-></TD
-><TD
+)Prev(/A
+)(/TD
+)(TD
 WIDTH="80%"
 ALIGN="center"
 VALIGN="bottom"
-></TD
-><TD
+)(/TD
+)(TD
 WIDTH="10%"
 ALIGN="right"
 VALIGN="bottom"
->&nbsp;</TD
-></TR
-></TABLE
-><HR
+)&nbsp;(/TD
+)(/TR
+)(/TABLE
+)(HR
 ALIGN="LEFT"
-WIDTH="100%"></DIV
-><DIV
+WIDTH="100%")(/DIV
+)(DIV
 CLASS="APPENDIX"
-><H1
-><A
+)(H1
+)(A
 NAME="COPYING-FDL"
-></A
->Appendix A. GNU Free Documentation License</H1
-><P
->Version 1.1, March 2000</P
-><A
+)(/A
+)Appendix A. GNU Free Documentation License(/H1
+)(P
+)Version 1.1, March 2000(/P
+)(A
 NAME="AEN1075"
-></A
-><BLOCKQUOTE
+)(/A
+)(BLOCKQUOTE
 CLASS="BLOCKQUOTE"
-><P
->Copyright (C) 2000  Free Software Foundation, Inc.
+)(P
+)Copyright (C) 2000  Free Software Foundation, Inc.
 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 Everyone is permitted to copy and distribute verbatim copies
-of this license document, but changing it is not allowed.</P
-></BLOCKQUOTE
-><P
->0. PREAMBLE</P
-><P
->The purpose of this License is to make a manual, textbook,
+of this license document, but changing it is not allowed.(/P
+)(/BLOCKQUOTE
+)(P
+)0. PREAMBLE(/P
+)(P
+)The purpose of this License is to make a manual, textbook,
     or other written document "free" in the sense of freedom: to
     assure everyone the effective freedom to copy and redistribute it,
     with or without modifying it, either commercially or
     noncommercially.  Secondarily, this License preserves for the
     author and publisher a way to get credit for their work, while not
     being considered responsible for modifications made by
-    others.</P
-><P
->This License is a kind of "copyleft", which means that
+    others.(/P
+)(P
+)This License is a kind of "copyleft", which means that
     derivative works of the document must themselves be free in the
     same sense.  It complements the GNU General Public License, which
-    is a copyleft license designed for free software.</P
-><P
->We have designed this License in order to use it for manuals
+    is a copyleft license designed for free software.(/P
+)(P
+)We have designed this License in order to use it for manuals
     for free software, because free software needs free documentation:
     a free program should come with manuals providing the same
     freedoms that the software does.  But this License is not limited
     to software manuals; it can be used for any textual work,
     regardless of subject matter or whether it is published as a
     printed book.  We recommend this License principally for works
-    whose purpose is instruction or reference.</P
-><P
->1. APPLICABILITY AND DEFINITIONS</P
-><P
->This License applies to any manual or other work that
+    whose purpose is instruction or reference.(/P
+)(P
+)1. APPLICABILITY AND DEFINITIONS(/P
+)(P
+)This License applies to any manual or other work that
     contains a notice placed by the copyright holder saying it can be
     distributed under the terms of this License.  The "Document",
     below, refers to any such manual or work.  Any member of the
-    public is a licensee, and is addressed as "you".</P
-><P
->A "Modified Version" of the Document means any work
+    public is a licensee, and is addressed as "you".(/P
+)(P
+)A "Modified Version" of the Document means any work
     containing the Document or a portion of it, either copied
     verbatim, or with modifications and/or translated into another
-    language.</P
-><P
->A "Secondary Section" is a named appendix or a front-matter
+    language.(/P
+)(P
+)A "Secondary Section" is a named appendix or a front-matter
     section of the Document that deals exclusively with the
     relationship of the publishers or authors of the Document to the
     Document's overall subject (or to related matters) and contains
@@ -12917,19 +12919,19 @@ of this license document, but changing it is not allowed.</P
     The relationship could be a matter of historical connection with
     the subject or with related matters, or of legal, commercial,
     philosophical, ethical or political position regarding
-    them.</P
-><P
->The "Invariant Sections" are certain Secondary Sections
+    them.(/P
+)(P
+)The "Invariant Sections" are certain Secondary Sections
     whose titles are designated, as being those of Invariant Sections,
     in the notice that says that the Document is released under this
-    License.</P
-><P
->The "Cover Texts" are certain short passages of text that
+    License.(/P
+)(P
+)The "Cover Texts" are certain short passages of text that
     are listed, as Front-Cover Texts or Back-Cover Texts, in the
     notice that says that the Document is released under this
-    License.</P
-><P
->A "Transparent" copy of the Document means a
+    License.(/P
+)(P
+)A "Transparent" copy of the Document means a
     machine-readable copy, represented in a format whose specification
     is available to the general public, whose contents can be viewed
     and edited directly and straightforwardly with generic text
@@ -12940,9 +12942,9 @@ of this license document, but changing it is not allowed.</P
     formatters.  A copy made in an otherwise Transparent file format
     whose markup has been designed to thwart or discourage subsequent
     modification by readers is not Transparent.  A copy that is not
-    "Transparent" is called "Opaque".</P
-><P
->Examples of suitable formats for Transparent copies include
+    "Transparent" is called "Opaque".(/P
+)(P
+)Examples of suitable formats for Transparent copies include
     plain ASCII without markup, Texinfo input format, LaTeX input
     format, SGML or XML using a publicly available DTD, and
     standard-conforming simple HTML designed for human modification.
@@ -12950,19 +12952,19 @@ of this license document, but changing it is not allowed.</P
     can be read and edited only by proprietary word processors, SGML
     or XML for which the DTD and/or processing tools are not generally
     available, and the machine-generated HTML produced by some word
-    processors for output purposes only.</P
-><P
->The "Title Page" means, for a printed book, the title page
+    processors for output purposes only.(/P
+)(P
+)The "Title Page" means, for a printed book, the title page
     itself, plus such following pages as are needed to hold, legibly,
     the material this License requires to appear in the title page.
     For works in formats which do not have any title page as such,
     "Title Page" means the text near the most prominent appearance of
     the work's title, preceding the beginning of the body of the
-    text.</P
-><P
->2. VERBATIM COPYING</P
-><P
->You may copy and distribute the Document in any medium,
+    text.(/P
+)(P
+)2. VERBATIM COPYING(/P
+)(P
+)You may copy and distribute the Document in any medium,
     either commercially or noncommercially, provided that this
     License, the copyright notices, and the license notice saying this
     License applies to the Document are reproduced in all copies, and
@@ -12971,14 +12973,14 @@ of this license document, but changing it is not allowed.</P
     control the reading or further copying of the copies you make or
     distribute.  However, you may accept compensation in exchange for
     copies.  If you distribute a large enough number of copies you
-    must also follow the conditions in section 3.</P
-><P
->You may also lend copies, under the same conditions stated
-    above, and you may publicly display copies.</P
-><P
->3. COPYING IN QUANTITY</P
-><P
->If you publish printed copies of the Document numbering more
+    must also follow the conditions in section 3.(/P
+)(P
+)You may also lend copies, under the same conditions stated
+    above, and you may publicly display copies.(/P
+)(P
+)3. COPYING IN QUANTITY(/P
+)(P
+)If you publish printed copies of the Document numbering more
     than 100, and the Document's license notice requires Cover Texts,
     you must enclose the copies in covers that carry, clearly and
     legibly, all these Cover Texts: Front-Cover Texts on the front
@@ -12989,14 +12991,14 @@ of this license document, but changing it is not allowed.</P
     other material on the covers in addition.  Copying with changes
     limited to the covers, as long as they preserve the title of the
     Document and satisfy these conditions, can be treated as verbatim
-    copying in other respects.</P
-><P
->If the required texts for either cover are too voluminous to
+    copying in other respects.(/P
+)(P
+)If the required texts for either cover are too voluminous to
     fit legibly, you should put the first ones listed (as many as fit
     reasonably) on the actual cover, and continue the rest onto
-    adjacent pages.</P
-><P
->If you publish or distribute Opaque copies of the Document
+    adjacent pages.(/P
+)(P
+)If you publish or distribute Opaque copies of the Document
     numbering more than 100, you must either include a
     machine-readable Transparent copy along with each Opaque copy, or
     state in or with each Opaque copy a publicly-accessible
@@ -13009,145 +13011,145 @@ of this license document, but changing it is not allowed.</P
     this Transparent copy will remain thus accessible at the stated
     location until at least one year after the last time you
     distribute an Opaque copy (directly or through your agents or
-    retailers) of that edition to the public.</P
-><P
->It is requested, but not required, that you contact the
+    retailers) of that edition to the public.(/P
+)(P
+)It is requested, but not required, that you contact the
     authors of the Document well before redistributing any large
     number of copies, to give them a chance to provide you with an
-    updated version of the Document.</P
-><P
->4. MODIFICATIONS</P
-><P
->You may copy and distribute a Modified Version of the
+    updated version of the Document.(/P
+)(P
+)4. MODIFICATIONS(/P
+)(P
+)You may copy and distribute a Modified Version of the
     Document under the conditions of sections 2 and 3 above, provided
     that you release the Modified Version under precisely this
     License, with the Modified Version filling the role of the
     Document, thus licensing distribution and modification of the
     Modified Version to whoever possesses a copy of it.  In addition,
-    you must do these things in the Modified Version:</P
-><P
-></P
-><OL
+    you must do these things in the Modified Version:(/P
+)(P
+)(/P
+)(OL
 TYPE="A"
-><LI
-><P
->Use in the Title Page
+)(LI
+)(P
+)Use in the Title Page
       (and on the covers, if any) a title distinct from that of the
       Document, and from those of previous versions (which should, if
       there were any, be listed in the History section of the
       Document).  You may use the same title as a previous version if
-      the original publisher of that version gives permission.</P
-></LI
-><LI
-><P
->List on the Title Page,
+      the original publisher of that version gives permission.(/P
+)(/LI
+)(LI
+)(P
+)List on the Title Page,
       as authors, one or more persons or entities responsible for
       authorship of the modifications in the Modified Version,
       together with at least five of the principal authors of the
       Document (all of its principal authors, if it has less than
-      five).</P
-></LI
-><LI
-><P
->State on the Title page
+      five).(/P
+)(/LI
+)(LI
+)(P
+)State on the Title page
       the name of the publisher of the Modified Version, as the
-      publisher.</P
-></LI
-><LI
-><P
->Preserve all the
-      copyright notices of the Document.</P
-></LI
-><LI
-><P
->Add an appropriate
+      publisher.(/P
+)(/LI
+)(LI
+)(P
+)Preserve all the
+      copyright notices of the Document.(/P
+)(/LI
+)(LI
+)(P
+)Add an appropriate
       copyright notice for your modifications adjacent to the other
-      copyright notices.</P
-></LI
-><LI
-><P
->Include, immediately
+      copyright notices.(/P
+)(/LI
+)(LI
+)(P
+)Include, immediately
       after the copyright notices, a license notice giving the public
       permission to use the Modified Version under the terms of this
-      License, in the form shown in the Addendum below.</P
-></LI
-><LI
-><P
->Preserve in that license
+      License, in the form shown in the Addendum below.(/P
+)(/LI
+)(LI
+)(P
+)Preserve in that license
       notice the full lists of Invariant Sections and required Cover
-      Texts given in the Document's license notice.</P
-></LI
-><LI
-><P
->Include an unaltered
-      copy of this License.</P
-></LI
-><LI
-><P
->Preserve the section
+      Texts given in the Document's license notice.(/P
+)(/LI
+)(LI
+)(P
+)Include an unaltered
+      copy of this License.(/P
+)(/LI
+)(LI
+)(P
+)Preserve the section
       entitled "History", and its title, and add to it an item stating
       at least the title, year, new authors, and publisher of the
       Modified Version as given on the Title Page.  If there is no
       section entitled "History" in the Document, create one stating
       the title, year, authors, and publisher of the Document as given
       on its Title Page, then add an item describing the Modified
-      Version as stated in the previous sentence.</P
-></LI
-><LI
-><P
->Preserve the network
+      Version as stated in the previous sentence.(/P
+)(/LI
+)(LI
+)(P
+)Preserve the network
       location, if any, given in the Document for public access to a
       Transparent copy of the Document, and likewise the network
       locations given in the Document for previous versions it was
       based on.  These may be placed in the "History" section.  You
       may omit a network location for a work that was published at
       least four years before the Document itself, or if the original
-      publisher of the version it refers to gives permission.</P
-></LI
-><LI
-><P
->In any section entitled
+      publisher of the version it refers to gives permission.(/P
+)(/LI
+)(LI
+)(P
+)In any section entitled
       "Acknowledgements" or "Dedications", preserve the section's
       title, and preserve in the section all the substance and tone of
       each of the contributor acknowledgements and/or dedications
-      given therein.</P
-></LI
-><LI
-><P
->Preserve all the
+      given therein.(/P
+)(/LI
+)(LI
+)(P
+)Preserve all the
       Invariant Sections of the Document, unaltered in their text and
       in their titles.  Section numbers or the equivalent are not
-      considered part of the section titles.</P
-></LI
-><LI
-><P
->Delete any section
+      considered part of the section titles.(/P
+)(/LI
+)(LI
+)(P
+)Delete any section
       entitled "Endorsements".  Such a section may not be included in
-      the Modified Version.</P
-></LI
-><LI
-><P
->Do not retitle any
+      the Modified Version.(/P
+)(/LI
+)(LI
+)(P
+)Do not retitle any
       existing section as "Endorsements" or to conflict in title with
-      any Invariant Section.</P
-></LI
-></OL
-><P
->If the Modified Version includes new front-matter sections
+      any Invariant Section.(/P
+)(/LI
+)(/OL
+)(P
+)If the Modified Version includes new front-matter sections
     or appendices that qualify as Secondary Sections and contain no
     material copied from the Document, you may at your option
     designate some or all of these sections as invariant.  To do this,
     add their titles to the list of Invariant Sections in the Modified
     Version's license notice.  These titles must be distinct from any
-    other section titles.</P
-><P
->You may add a section entitled "Endorsements", provided it
+    other section titles.(/P
+)(P
+)You may add a section entitled "Endorsements", provided it
     contains nothing but endorsements of your Modified Version by
     various parties--for example, statements of peer review or that
     the text has been approved by an organization as the authoritative
-    definition of a standard.</P
-><P
->You may add a passage of up to five words as a Front-Cover
+    definition of a standard.(/P
+)(P
+)You may add a passage of up to five words as a Front-Cover
     Text, and a passage of up to 25 words as a Back-Cover Text, to the
     end of the list of Cover Texts in the Modified Version.  Only one
     passage of Front-Cover Text and one of Back-Cover Text may be
@@ -13156,22 +13158,22 @@ TYPE="A"
     previously added by you or by arrangement made by the same entity
     you are acting on behalf of, you may not add another; but you may
     replace the old one, on explicit permission from the previous
-    publisher that added the old one.</P
-><P
->The author(s) and publisher(s) of the Document do not by
+    publisher that added the old one.(/P
+)(P
+)The author(s) and publisher(s) of the Document do not by
     this License give permission to use their names for publicity for
-    or to assert or imply endorsement of any Modified Version.</P
-><P
->5. COMBINING DOCUMENTS</P
-><P
->You may combine the Document with other documents released
+    or to assert or imply endorsement of any Modified Version.(/P
+)(P
+)5. COMBINING DOCUMENTS(/P
+)(P
+)You may combine the Document with other documents released
     under this License, under the terms defined in section 4 above for
     modified versions, provided that you include in the combination
     all of the Invariant Sections of all of the original documents,
     unmodified, and list them all as Invariant Sections of your
-    combined work in its license notice.</P
-><P
->The combined work need only contain one copy of this
+    combined work in its license notice.(/P
+)(P
+)The combined work need only contain one copy of this
     License, and multiple identical Invariant Sections may be replaced
     with a single copy.  If there are multiple Invariant Sections with
     the same name but different contents, make the title of each such
@@ -13179,32 +13181,32 @@ TYPE="A"
     name of the original author or publisher of that section if known,
     or else a unique number.  Make the same adjustment to the section
     titles in the list of Invariant Sections in the license notice of
-    the combined work.</P
-><P
->In the combination, you must combine any sections entitled
+    the combined work.(/P
+)(P
+)In the combination, you must combine any sections entitled
     "History" in the various original documents, forming one section
     entitled "History"; likewise combine any sections entitled
     "Acknowledgements", and any sections entitled "Dedications".  You
-    must delete all sections entitled "Endorsements."</P
-><P
->6. COLLECTIONS OF DOCUMENTS</P
-><P
->You may make a collection consisting of the Document and
+    must delete all sections entitled "Endorsements."(/P
+)(P
+)6. COLLECTIONS OF DOCUMENTS(/P
+)(P
+)You may make a collection consisting of the Document and
     other documents released under this License, and replace the
     individual copies of this License in the various documents with a
     single copy that is included in the collection, provided that you
     follow the rules of this License for verbatim copying of each of
-    the documents in all other respects.</P
-><P
->You may extract a single document from such a collection,
+    the documents in all other respects.(/P
+)(P
+)You may extract a single document from such a collection,
     and distribute it individually under this License, provided you
     insert a copy of this License into the extracted document, and
     follow this License in all other respects regarding verbatim
-    copying of that document.</P
-><P
->7. AGGREGATION WITH INDEPENDENT WORKS</P
-><P
->A compilation of the Document or its derivatives with other
+    copying of that document.(/P
+)(P
+)7. AGGREGATION WITH INDEPENDENT WORKS(/P
+)(P
+)A compilation of the Document or its derivatives with other
     separate and independent documents or works, in or on a volume of
     a storage or distribution medium, does not as a whole count as a
     Modified Version of the Document, provided no compilation
@@ -13212,18 +13214,18 @@ TYPE="A"
     called an "aggregate", and this License does not apply to the
     other self-contained works thus compiled with the Document, on
     account of their being thus compiled, if they are not themselves
-    derivative works of the Document.</P
-><P
->If the Cover Text requirement of section 3 is applicable to
+    derivative works of the Document.(/P
+)(P
+)If the Cover Text requirement of section 3 is applicable to
     these copies of the Document, then if the Document is less than
     one quarter of the entire aggregate, the Document's Cover Texts
     may be placed on covers that surround only the Document within the
     aggregate.  Otherwise they must appear on covers around the whole
-    aggregate.</P
-><P
->8. TRANSLATION</P
-><P
->Translation is considered a kind of modification, so you may
+    aggregate.(/P
+)(P
+)8. TRANSLATION(/P
+)(P
+)Translation is considered a kind of modification, so you may
     distribute translations of the Document under the terms of section
     4.  Replacing Invariant Sections with translations requires
     special permission from their copyright holders, but you may
@@ -13233,32 +13235,32 @@ TYPE="A"
     include the original English version of this License.  In case of
     a disagreement between the translation and the original English
     version of this License, the original English version will
-    prevail.</P
-><P
->9. TERMINATION</P
-><P
->You may not copy, modify, sublicense, or distribute the
+    prevail.(/P
+)(P
+)9. TERMINATION(/P
+)(P
+)You may not copy, modify, sublicense, or distribute the
     Document except as expressly provided for under this License.  Any
     other attempt to copy, modify, sublicense or distribute the
     Document is void, and will automatically terminate your rights
     under this License.  However, parties who have received copies, or
     rights, from you under this License will not have their licenses
     terminated so long as such parties remain in full
-    compliance.</P
-><P
->10. FUTURE REVISIONS OF THIS LICENSE</P
-><P
->The Free Software Foundation may publish new, revised
+    compliance.(/P
+)(P
+)10. FUTURE REVISIONS OF THIS LICENSE(/P
+)(P
+)The Free Software Foundation may publish new, revised
     versions of the GNU Free Documentation License from time to time.
     Such new versions will be similar in spirit to the present
     version, but may differ in detail to address new problems or
-    concerns.  See <A
+    concerns.  See (A
 HREF="http://www.gnu.org/copyleft/"
 TARGET="_top"
->http://www.gnu.org/copyleft/</A
->.</P
-><P
->Each version of the License is given a distinguishing
+)http://www.gnu.org/copyleft/(/A
+).(/P
+)(P
+)Each version of the License is given a distinguishing
     version number.  If the Document specifies that a particular
     numbered version of this License "or any later version" applies to
     it, you have the option of following the terms and conditions
@@ -13266,158 +13268,158 @@ TARGET="_top"
     been published (not as a draft) by the Free Software Foundation.
     If the Document does not specify a version number of this License,
     you may choose any version ever published (not as a draft) by the
-    Free Software Foundation.</P
-><P
->How to use this License for your documents</P
-><P
->To use this License in a document you have written, include
+    Free Software Foundation.(/P
+)(P
+)How to use this License for your documents(/P
+)(P
+)To use this License in a document you have written, include
     a copy of the License in the document and put the following
-    copyright and license notices just after the title page:</P
-><A
+    copyright and license notices just after the title page:(/P
+)(A
 NAME="AEN1153"
-></A
-><BLOCKQUOTE
+)(/A
+)(BLOCKQUOTE
 CLASS="BLOCKQUOTE"
-><P
->      Copyright (c)  YEAR  YOUR NAME.
+)(P
+)      Copyright (c)  YEAR  YOUR NAME.
       Permission is granted to copy, distribute and/or modify this document
       under the terms of the GNU Free Documentation License, Version 1.1
       or any later version published by the Free Software Foundation;
       with the Invariant Sections being LIST THEIR TITLES, with the
       Front-Cover Texts being LIST, and with the Back-Cover Texts being LIST.
       A copy of the license is included in the section entitled "GNU
-      Free Documentation License".</P
-></BLOCKQUOTE
-><P
->If you have no Invariant Sections, write "with no Invariant
+      Free Documentation License".(/P
+)(/BLOCKQUOTE
+)(P
+)If you have no Invariant Sections, write "with no Invariant
     Sections" instead of saying which ones are invariant.  If you have
     no Front-Cover Texts, write "no Front-Cover Texts" instead of
     "Front-Cover Texts being LIST"; likewise for Back-Cover
-    Texts.</P
-><P
->If your document contains nontrivial examples of program
+    Texts.(/P
+)(P
+)If your document contains nontrivial examples of program
     code, we recommend releasing these examples in parallel under your
     choice of free software license, such as the GNU General Public
-    License, to permit their use in free software.</P
-></DIV
-><DIV
+    License, to permit their use in free software.(/P
+)(/DIV
+)(DIV
 CLASS="NAVFOOTER"
-><HR
+)(HR
 ALIGN="LEFT"
-WIDTH="100%"><TABLE
+WIDTH="100%")(TABLE
 SUMMARY="Footer navigation table"
 WIDTH="100%"
 BORDER="0"
 CELLPADDING="0"
 CELLSPACING="0"
-><TR
-><TD
+)(TR
+)(TD
 WIDTH="33%"
 ALIGN="left"
 VALIGN="top"
-><A
+)(A
 HREF="helperfuncs.html"
 ACCESSKEY="P"
->Prev</A
-></TD
-><TD
+)Prev(/A
+)(/TD
+)(TD
 WIDTH="34%"
 ALIGN="center"
 VALIGN="top"
-><A
+)(A
 HREF="index.html"
 ACCESSKEY="H"
->Home</A
-></TD
-><TD
+)Home(/A
+)(/TD
+)(TD
 WIDTH="33%"
 ALIGN="right"
 VALIGN="top"
->&nbsp;</TD
-></TR
-><TR
-><TD
+)&nbsp;(/TD
+)(/TR
+)(TR
+)(TD
 WIDTH="33%"
 ALIGN="left"
 VALIGN="top"
->DBD Helper Functions</TD
-><TD
+)DBD Helper Functions(/TD
+)(TD
 WIDTH="34%"
 ALIGN="center"
 VALIGN="top"
->&nbsp;</TD
-><TD
+)&nbsp;(/TD
+)(TD
 WIDTH="33%"
 ALIGN="right"
 VALIGN="top"
->&nbsp;</TD
-></TR
-></TABLE
-></DIV
-></BODY
-></HTML
->[libdbi-0.9.0/doc/driver-guide/copying-fdl.html]
+)&nbsp;(/TD
+)(/TR
+)(/TABLE
+)(/DIV
+)(/BODY
+)(/HTML
+)[libdbi-0.9.0/doc/driver-guide/copying-fdl.html]
 
 "libdbi-0.9.0/doc/include/copying-fdl.sgml":
 
 [libdbi-0.9.0/doc/include/copying-fdl.sgml]
-<appendix id="copying-FDL">
-<title>GNU Free Documentation License</title>
-<!-- - GNU Project - Free Software Foundation (FSF) -->
-<!-- LINK REV="made" HREF="mailto:webmasters@gnu.org" -->
+(appendix id="copying-FDL")
+(title)GNU Free Documentation License(/title)
+(!-- - GNU Project - Free Software Foundation (FSF) --)
+(!-- LINK REV="made" HREF="mailto:webmasters@gnu.org" --)
 
 
-  <!-- sect1>
-    <title>GNU Free Documentation License</title -->
+  (!-- sect1)
+    (title)GNU Free Documentation License(/title --)
 
-    <para>Version 1.1, March 2000</para>
+    (para)Version 1.1, March 2000(/para)
 
-    <blockquote>
-      <para>Copyright (C) 2000  Free Software Foundation, Inc.
+    (blockquote)
+      (para)Copyright (C) 2000  Free Software Foundation, Inc.
 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 Everyone is permitted to copy and distribute verbatim copies
-of this license document, but changing it is not allowed.</para>
-    </blockquote>
+of this license document, but changing it is not allowed.(/para)
+    (/blockquote)
 
-    <Para>0. PREAMBLE</Para>
+    (Para)0. PREAMBLE(/Para)
 
-    <para>The purpose of this License is to make a manual, textbook,
+    (para)The purpose of this License is to make a manual, textbook,
     or other written document "free" in the sense of freedom: to
     assure everyone the effective freedom to copy and redistribute it,
     with or without modifying it, either commercially or
     noncommercially.  Secondarily, this License preserves for the
     author and publisher a way to get credit for their work, while not
     being considered responsible for modifications made by
-    others.</para>
+    others.(/para)
 
-    <para>This License is a kind of "copyleft", which means that
+    (para)This License is a kind of "copyleft", which means that
     derivative works of the document must themselves be free in the
     same sense.  It complements the GNU General Public License, which
-    is a copyleft license designed for free software.</para>
+    is a copyleft license designed for free software.(/para)
 
-    <para>We have designed this License in order to use it for manuals
+    (para)We have designed this License in order to use it for manuals
     for free software, because free software needs free documentation:
     a free program should come with manuals providing the same
     freedoms that the software does.  But this License is not limited
     to software manuals; it can be used for any textual work,
     regardless of subject matter or whether it is published as a
     printed book.  We recommend this License principally for works
-    whose purpose is instruction or reference.</para>
+    whose purpose is instruction or reference.(/para)
 
-    <Para>1. APPLICABILITY AND DEFINITIONS</Para>
+    (Para)1. APPLICABILITY AND DEFINITIONS(/Para)
 
-    <para>This License applies to any manual or other work that
+    (para)This License applies to any manual or other work that
     contains a notice placed by the copyright holder saying it can be
     distributed under the terms of this License.  The "Document",
     below, refers to any such manual or work.  Any member of the
-    public is a licensee, and is addressed as "you".</para>
+    public is a licensee, and is addressed as "you".(/para)
 
-    <para>A "Modified Version" of the Document means any work
+    (para)A "Modified Version" of the Document means any work
     containing the Document or a portion of it, either copied
     verbatim, or with modifications and/or translated into another
-    language.</para>
+    language.(/para)
 
-    <para>A "Secondary Section" is a named appendix or a front-matter
+    (para)A "Secondary Section" is a named appendix or a front-matter
     section of the Document that deals exclusively with the
     relationship of the publishers or authors of the Document to the
     Document's overall subject (or to related matters) and contains
@@ -13427,19 +13429,19 @@ of this license document, but changing it is not allowed.</para>
     The relationship could be a matter of historical connection with
     the subject or with related matters, or of legal, commercial,
     philosophical, ethical or political position regarding
-    them.</para>
+    them.(/para)
 
-    <para>The "Invariant Sections" are certain Secondary Sections
+    (para)The "Invariant Sections" are certain Secondary Sections
     whose titles are designated, as being those of Invariant Sections,
     in the notice that says that the Document is released under this
-    License.</para>
+    License.(/para)
 
-    <para>The "Cover Texts" are certain short passages of text that
+    (para)The "Cover Texts" are certain short passages of text that
     are listed, as Front-Cover Texts or Back-Cover Texts, in the
     notice that says that the Document is released under this
-    License.</para>
+    License.(/para)
 
-    <para>A "Transparent" copy of the Document means a
+    (para)A "Transparent" copy of the Document means a
     machine-readable copy, represented in a format whose specification
     is available to the general public, whose contents can be viewed
     and edited directly and straightforwardly with generic text
@@ -13450,9 +13452,9 @@ of this license document, but changing it is not allowed.</para>
     formatters.  A copy made in an otherwise Transparent file format
     whose markup has been designed to thwart or discourage subsequent
     modification by readers is not Transparent.  A copy that is not
-    "Transparent" is called "Opaque".</para>
+    "Transparent" is called "Opaque".(/para)
 
-    <para>Examples of suitable formats for Transparent copies include
+    (para)Examples of suitable formats for Transparent copies include
     plain ASCII without markup, Texinfo input format, LaTeX input
     format, SGML or XML using a publicly available DTD, and
     standard-conforming simple HTML designed for human modification.
@@ -13460,19 +13462,19 @@ of this license document, but changing it is not allowed.</para>
     can be read and edited only by proprietary word processors, SGML
     or XML for which the DTD and/or processing tools are not generally
     available, and the machine-generated HTML produced by some word
-    processors for output purposes only.</para>
+    processors for output purposes only.(/para)
 
-    <para>The "Title Page" means, for a printed book, the title page
+    (para)The "Title Page" means, for a printed book, the title page
     itself, plus such following pages as are needed to hold, legibly,
     the material this License requires to appear in the title page.
     For works in formats which do not have any title page as such,
     "Title Page" means the text near the most prominent appearance of
     the work's title, preceding the beginning of the body of the
-    text.</para>
+    text.(/para)
 
-    <Para>2. VERBATIM COPYING</Para>
+    (Para)2. VERBATIM COPYING(/Para)
 
-    <para>You may copy and distribute the Document in any medium,
+    (para)You may copy and distribute the Document in any medium,
     either commercially or noncommercially, provided that this
     License, the copyright notices, and the license notice saying this
     License applies to the Document are reproduced in all copies, and
@@ -13481,14 +13483,14 @@ of this license document, but changing it is not allowed.</para>
     control the reading or further copying of the copies you make or
     distribute.  However, you may accept compensation in exchange for
     copies.  If you distribute a large enough number of copies you
-    must also follow the conditions in section 3.</para>
+    must also follow the conditions in section 3.(/para)
 
-    <para>You may also lend copies, under the same conditions stated
-    above, and you may publicly display copies.</para>
+    (para)You may also lend copies, under the same conditions stated
+    above, and you may publicly display copies.(/para)
 
-    <Para>3. COPYING IN QUANTITY</Para>
+    (Para)3. COPYING IN QUANTITY(/Para)
 
-    <para>If you publish printed copies of the Document numbering more
+    (para)If you publish printed copies of the Document numbering more
     than 100, and the Document's license notice requires Cover Texts,
     you must enclose the copies in covers that carry, clearly and
     legibly, all these Cover Texts: Front-Cover Texts on the front
@@ -13499,14 +13501,14 @@ of this license document, but changing it is not allowed.</para>
     other material on the covers in addition.  Copying with changes
     limited to the covers, as long as they preserve the title of the
     Document and satisfy these conditions, can be treated as verbatim
-    copying in other respects.</para>
+    copying in other respects.(/para)
 
-    <para>If the required texts for either cover are too voluminous to
+    (para)If the required texts for either cover are too voluminous to
     fit legibly, you should put the first ones listed (as many as fit
     reasonably) on the actual cover, and continue the rest onto
-    adjacent pages.</para>
+    adjacent pages.(/para)
 
-    <para>If you publish or distribute Opaque copies of the Document
+    (para)If you publish or distribute Opaque copies of the Document
     numbering more than 100, you must either include a
     machine-readable Transparent copy along with each Opaque copy, or
     state in or with each Opaque copy a publicly-accessible
@@ -13519,128 +13521,128 @@ of this license document, but changing it is not allowed.</para>
     this Transparent copy will remain thus accessible at the stated
     location until at least one year after the last time you
     distribute an Opaque copy (directly or through your agents or
-    retailers) of that edition to the public.</para>
+    retailers) of that edition to the public.(/para)
 
-    <para>It is requested, but not required, that you contact the
+    (para)It is requested, but not required, that you contact the
     authors of the Document well before redistributing any large
     number of copies, to give them a chance to provide you with an
-    updated version of the Document.</para>
+    updated version of the Document.(/para)
 
-    <Para>4. MODIFICATIONS</Para>
+    (Para)4. MODIFICATIONS(/Para)
 
-    <para>You may copy and distribute a Modified Version of the
+    (para)You may copy and distribute a Modified Version of the
     Document under the conditions of sections 2 and 3 above, provided
     that you release the Modified Version under precisely this
     License, with the Modified Version filling the role of the
     Document, thus licensing distribution and modification of the
     Modified Version to whoever possesses a copy of it.  In addition,
-    you must do these things in the Modified Version:</para>
+    you must do these things in the Modified Version:(/para)
 
-    <orderedlist numeration="upperalpha">
-      <listitem><para>Use in the Title Page
+    (orderedlist numeration="upperalpha")
+      (listitem)(para)Use in the Title Page
       (and on the covers, if any) a title distinct from that of the
       Document, and from those of previous versions (which should, if
       there were any, be listed in the History section of the
       Document).  You may use the same title as a previous version if
-      the original publisher of that version gives permission.</para>
-      </listitem>
+      the original publisher of that version gives permission.(/para)
+      (/listitem)
 
-      <listitem><para>List on the Title Page,
+      (listitem)(para)List on the Title Page,
       as authors, one or more persons or entities responsible for
       authorship of the modifications in the Modified Version,
       together with at least five of the principal authors of the
       Document (all of its principal authors, if it has less than
-      five).</para>
-      </listitem>
+      five).(/para)
+      (/listitem)
 
-      <listitem><para>State on the Title page
+      (listitem)(para)State on the Title page
       the name of the publisher of the Modified Version, as the
-      publisher.</para>
-      </listitem>
+      publisher.(/para)
+      (/listitem)
 
-      <listitem><para>Preserve all the
-      copyright notices of the Document.</para>
-      </listitem>
+      (listitem)(para)Preserve all the
+      copyright notices of the Document.(/para)
+      (/listitem)
 
-      <listitem><para>Add an appropriate
+      (listitem)(para)Add an appropriate
       copyright notice for your modifications adjacent to the other
-      copyright notices.</para>
-      </listitem>
+      copyright notices.(/para)
+      (/listitem)
 
-      <listitem><para>Include, immediately
+      (listitem)(para)Include, immediately
       after the copyright notices, a license notice giving the public
       permission to use the Modified Version under the terms of this
-      License, in the form shown in the Addendum below.</para>
-      </listitem>
+      License, in the form shown in the Addendum below.(/para)
+      (/listitem)
 
-      <listitem><para>Preserve in that license
+      (listitem)(para)Preserve in that license
       notice the full lists of Invariant Sections and required Cover
-      Texts given in the Document's license notice.</para>
-      </listitem>
+      Texts given in the Document's license notice.(/para)
+      (/listitem)
 
-      <listitem><para>Include an unaltered
-      copy of this License.</para>
-      </listitem>
+      (listitem)(para)Include an unaltered
+      copy of this License.(/para)
+      (/listitem)
 
-      <listitem><para>Preserve the section
+      (listitem)(para)Preserve the section
       entitled "History", and its title, and add to it an item stating
       at least the title, year, new authors, and publisher of the
       Modified Version as given on the Title Page.  If there is no
       section entitled "History" in the Document, create one stating
       the title, year, authors, and publisher of the Document as given
       on its Title Page, then add an item describing the Modified
-      Version as stated in the previous sentence.</para>
-      </listitem>
+      Version as stated in the previous sentence.(/para)
+      (/listitem)
 
-      <listitem><para>Preserve the network
+      (listitem)(para)Preserve the network
       location, if any, given in the Document for public access to a
       Transparent copy of the Document, and likewise the network
       locations given in the Document for previous versions it was
       based on.  These may be placed in the "History" section.  You
       may omit a network location for a work that was published at
       least four years before the Document itself, or if the original
-      publisher of the version it refers to gives permission.</para>
-      </listitem>
+      publisher of the version it refers to gives permission.(/para)
+      (/listitem)
 
-      <listitem><para>In any section entitled
+      (listitem)(para)In any section entitled
       "Acknowledgements" or "Dedications", preserve the section's
       title, and preserve in the section all the substance and tone of
       each of the contributor acknowledgements and/or dedications
-      given therein.</para>
-      </listitem>
+      given therein.(/para)
+      (/listitem)
 
-      <listitem><para>Preserve all the
+      (listitem)(para)Preserve all the
       Invariant Sections of the Document, unaltered in their text and
       in their titles.  Section numbers or the equivalent are not
-      considered part of the section titles.</para>
-      </listitem>
+      considered part of the section titles.(/para)
+      (/listitem)
 
-      <listitem><para>Delete any section
+      (listitem)(para)Delete any section
       entitled "Endorsements".  Such a section may not be included in
-      the Modified Version.</para>
-      </listitem>
+      the Modified Version.(/para)
+      (/listitem)
 
-      <listitem><para>Do not retitle any
+      (listitem)(para)Do not retitle any
       existing section as "Endorsements" or to conflict in title with
-      any Invariant Section.</para>
-      </listitem>
-    </orderedlist>
+      any Invariant Section.(/para)
+      (/listitem)
+    (/orderedlist)
     
-    <para>If the Modified Version includes new front-matter sections
+    (para)If the Modified Version includes new front-matter sections
     or appendices that qualify as Secondary Sections and contain no
     material copied from the Document, you may at your option
     designate some or all of these sections as invariant.  To do this,
     add their titles to the list of Invariant Sections in the Modified
     Version's license notice.  These titles must be distinct from any
-    other section titles.</para>
+    other section titles.(/para)
 
-    <para>You may add a section entitled "Endorsements", provided it
+    (para)You may add a section entitled "Endorsements", provided it
     contains nothing but endorsements of your Modified Version by
     various parties--for example, statements of peer review or that
     the text has been approved by an organization as the authoritative
-    definition of a standard.</para>
+    definition of a standard.(/para)
 
-    <para>You may add a passage of up to five words as a Front-Cover
+    (para)You may add a passage of up to five words as a Front-Cover
     Text, and a passage of up to 25 words as a Back-Cover Text, to the
     end of the list of Cover Texts in the Modified Version.  Only one
     passage of Front-Cover Text and one of Back-Cover Text may be
@@ -13649,22 +13651,22 @@ of this license document, but changing it is not allowed.</para>
     previously added by you or by arrangement made by the same entity
     you are acting on behalf of, you may not add another; but you may
     replace the old one, on explicit permission from the previous
-    publisher that added the old one.</para>
+    publisher that added the old one.(/para)
 
-    <para>The author(s) and publisher(s) of the Document do not by
+    (para)The author(s) and publisher(s) of the Document do not by
     this License give permission to use their names for publicity for
-    or to assert or imply endorsement of any Modified Version.</para>
+    or to assert or imply endorsement of any Modified Version.(/para)
 
-    <Para>5. COMBINING DOCUMENTS</Para>
+    (Para)5. COMBINING DOCUMENTS(/Para)
 
-    <para>You may combine the Document with other documents released
+    (para)You may combine the Document with other documents released
     under this License, under the terms defined in section 4 above for
     modified versions, provided that you include in the combination
     all of the Invariant Sections of all of the original documents,
     unmodified, and list them all as Invariant Sections of your
-    combined work in its license notice.</para>
+    combined work in its license notice.(/para)
 
-    <para>The combined work need only contain one copy of this
+    (para)The combined work need only contain one copy of this
     License, and multiple identical Invariant Sections may be replaced
     with a single copy.  If there are multiple Invariant Sections with
     the same name but different contents, make the title of each such
@@ -13672,32 +13674,32 @@ of this license document, but changing it is not allowed.</para>
     name of the original author or publisher of that section if known,
     or else a unique number.  Make the same adjustment to the section
     titles in the list of Invariant Sections in the license notice of
-    the combined work.</para>
+    the combined work.(/para)
 
-    <para>In the combination, you must combine any sections entitled
+    (para)In the combination, you must combine any sections entitled
     "History" in the various original documents, forming one section
     entitled "History"; likewise combine any sections entitled
     "Acknowledgements", and any sections entitled "Dedications".  You
-    must delete all sections entitled "Endorsements."</para>
+    must delete all sections entitled "Endorsements."(/para)
 
-    <Para>6. COLLECTIONS OF DOCUMENTS</Para>
+    (Para)6. COLLECTIONS OF DOCUMENTS(/Para)
 
-    <para>You may make a collection consisting of the Document and
+    (para)You may make a collection consisting of the Document and
     other documents released under this License, and replace the
     individual copies of this License in the various documents with a
     single copy that is included in the collection, provided that you
     follow the rules of this License for verbatim copying of each of
-    the documents in all other respects.</para>
+    the documents in all other respects.(/para)
 
-    <para>You may extract a single document from such a collection,
+    (para)You may extract a single document from such a collection,
     and distribute it individually under this License, provided you
     insert a copy of this License into the extracted document, and
     follow this License in all other respects regarding verbatim
-    copying of that document.</para>
+    copying of that document.(/para)
 
-    <Para>7. AGGREGATION WITH INDEPENDENT WORKS</Para>
+    (Para)7. AGGREGATION WITH INDEPENDENT WORKS(/Para)
     
-    <para>A compilation of the Document or its derivatives with other
+    (para)A compilation of the Document or its derivatives with other
     separate and independent documents or works, in or on a volume of
     a storage or distribution medium, does not as a whole count as a
     Modified Version of the Document, provided no compilation
@@ -13705,18 +13707,18 @@ of this license document, but changing it is not allowed.</para>
     called an "aggregate", and this License does not apply to the
     other self-contained works thus compiled with the Document, on
     account of their being thus compiled, if they are not themselves
-    derivative works of the Document.</para>
+    derivative works of the Document.(/para)
 
-    <para>If the Cover Text requirement of section 3 is applicable to
+    (para)If the Cover Text requirement of section 3 is applicable to
     these copies of the Document, then if the Document is less than
     one quarter of the entire aggregate, the Document's Cover Texts
     may be placed on covers that surround only the Document within the
     aggregate.  Otherwise they must appear on covers around the whole
-    aggregate.</para>
+    aggregate.(/para)
 
-    <Para>8. TRANSLATION</Para>
+    (Para)8. TRANSLATION(/Para)
 
-    <para>Translation is considered a kind of modification, so you may
+    (para)Translation is considered a kind of modification, so you may
     distribute translations of the Document under the terms of section
     4.  Replacing Invariant Sections with translations requires
     special permission from their copyright holders, but you may
@@ -13726,29 +13728,29 @@ of this license document, but changing it is not allowed.</para>
     include the original English version of this License.  In case of
     a disagreement between the translation and the original English
     version of this License, the original English version will
-    prevail.</para>
+    prevail.(/para)
 
-    <Para>9. TERMINATION</Para>
+    (Para)9. TERMINATION(/Para)
     
-    <para>You may not copy, modify, sublicense, or distribute the
+    (para)You may not copy, modify, sublicense, or distribute the
     Document except as expressly provided for under this License.  Any
     other attempt to copy, modify, sublicense or distribute the
     Document is void, and will automatically terminate your rights
     under this License.  However, parties who have received copies, or
     rights, from you under this License will not have their licenses
     terminated so long as such parties remain in full
-    compliance.</para>
+    compliance.(/para)
 
-    <Para>10. FUTURE REVISIONS OF THIS LICENSE</Para>
+    (Para)10. FUTURE REVISIONS OF THIS LICENSE(/Para)
 
-    <para>The Free Software Foundation may publish new, revised
+    (para)The Free Software Foundation may publish new, revised
     versions of the GNU Free Documentation License from time to time.
     Such new versions will be similar in spirit to the present
     version, but may differ in detail to address new problems or
-    concerns.  See <ulink
-    url="http://www.gnu.org/copyleft/">http://www.gnu.org/copyleft/</ulink>.</para>
+    concerns.  See (ulink
+    url="http://www.gnu.org/copyleft/")http://www.gnu.org/copyleft/(/ulink).(/para)
 
-    <para>Each version of the License is given a distinguishing
+    (para)Each version of the License is given a distinguishing
     version number.  If the Document specifies that a particular
     numbered version of this License "or any later version" applies to
     it, you have the option of following the terms and conditions
@@ -13756,15 +13758,15 @@ of this license document, but changing it is not allowed.</para>
     been published (not as a draft) by the Free Software Foundation.
     If the Document does not specify a version number of this License,
     you may choose any version ever published (not as a draft) by the
-    Free Software Foundation.</para>
+    Free Software Foundation.(/para)
 
-    <Para>How to use this License for your documents</Para>
+    (Para)How to use this License for your documents(/Para)
 
-    <para>To use this License in a document you have written, include
+    (para)To use this License in a document you have written, include
     a copy of the License in the document and put the following
-    copyright and license notices just after the title page:</para>
+    copyright and license notices just after the title page:(/para)
 
-<blockquote><para>
+(blockquote)(para)
       Copyright (c)  YEAR  YOUR NAME.
       Permission is granted to copy, distribute and/or modify this document
       under the terms of the GNU Free Documentation License, Version 1.1
@@ -13773,21 +13775,21 @@ of this license document, but changing it is not allowed.</para>
       Front-Cover Texts being LIST, and with the Back-Cover Texts being LIST.
       A copy of the license is included in the section entitled "GNU
       Free Documentation License".
-</para></blockquote>
+(/para)(/blockquote)
 
-    <para>If you have no Invariant Sections, write "with no Invariant
+    (para)If you have no Invariant Sections, write "with no Invariant
     Sections" instead of saying which ones are invariant.  If you have
     no Front-Cover Texts, write "no Front-Cover Texts" instead of
     "Front-Cover Texts being LIST"; likewise for Back-Cover
-    Texts.</para>
+    Texts.(/para)
 
-    <para>If your document contains nontrivial examples of program
+    (para)If your document contains nontrivial examples of program
     code, we recommend releasing these examples in parallel under your
     choice of free software license, such as the GNU General Public
-    License, to permit their use in free software.</para>
+    License, to permit their use in free software.(/para)
 
-</appendix>
-<!-- Keep this comment at the end of the file
+(/appendix)
+(!-- Keep this comment at the end of the file
 Local variables:
 mode: sgml
 sgml-omittag:nil
@@ -13802,132 +13804,132 @@ sgml-local-catalogs: CATALOG
 sgml-validate-command: "nsgmls -s referenz.sgml"
 ispell-skip-sgml: t
 End:
--->
+--)
 [libdbi-0.9.0/doc/include/copying-fdl.sgml]
 
 "libdbi-0.9.0/doc/programmers-guide/copying-fdl.html":
 
 [libdbi-0.9.0/doc/programmers-guide/copying-fdl.html]
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<HTML
-><HEAD
-><TITLE
->GNU Free Documentation License</TITLE
-><META
+(!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd")
+(HTML
+)(HEAD
+)(TITLE
+)GNU Free Documentation License(/TITLE
+)(META
 NAME="GENERATOR"
-CONTENT="Modular DocBook HTML Stylesheet Version 1.79"><LINK
+CONTENT="Modular DocBook HTML Stylesheet Version 1.79")(LINK
 REL="HOME"
 TITLE="Database Independent Abstraction Layer for C"
-HREF="index.html"><LINK
+HREF="index.html")(LINK
 REL="PREVIOUS"
 TITLE="Retrieving Field Data by Index"
-HREF="reference-field-idx.html"></HEAD
-><BODY
+HREF="reference-field-idx.html")(/HEAD
+)(BODY
 CLASS="APPENDIX"
 BGCOLOR="#FFFFFF"
 TEXT="#000000"
 LINK="#0000FF"
 VLINK="#840084"
 ALINK="#0000FF"
-><DIV
+)(DIV
 CLASS="NAVHEADER"
-><TABLE
+)(TABLE
 SUMMARY="Header navigation table"
 WIDTH="100%"
 BORDER="0"
 CELLPADDING="0"
 CELLSPACING="0"
-><TR
-><TH
+)(TR
+)(TH
 COLSPAN="3"
 ALIGN="center"
->Database Independent Abstraction Layer for C: libdbi Programmer's Guide</TH
-></TR
-><TR
-><TD
+)Database Independent Abstraction Layer for C: libdbi Programmer's Guide(/TH
+)(/TR
+)(TR
+)(TD
 WIDTH="10%"
 ALIGN="left"
 VALIGN="bottom"
-><A
+)(A
 HREF="reference-field-idx.html"
 ACCESSKEY="P"
->Prev</A
-></TD
-><TD
+)Prev(/A
+)(/TD
+)(TD
 WIDTH="80%"
 ALIGN="center"
 VALIGN="bottom"
-></TD
-><TD
+)(/TD
+)(TD
 WIDTH="10%"
 ALIGN="right"
 VALIGN="bottom"
->&nbsp;</TD
-></TR
-></TABLE
-><HR
+)&nbsp;(/TD
+)(/TR
+)(/TABLE
+)(HR
 ALIGN="LEFT"
-WIDTH="100%"></DIV
-><DIV
+WIDTH="100%")(/DIV
+)(DIV
 CLASS="APPENDIX"
-><H1
-><A
+)(H1
+)(A
 NAME="COPYING-FDL"
-></A
->Appendix A. GNU Free Documentation License</H1
-><P
->Version 1.1, March 2000</P
-><A
+)(/A
+)Appendix A. GNU Free Documentation License(/H1
+)(P
+)Version 1.1, March 2000(/P
+)(A
 NAME="AEN4280"
-></A
-><BLOCKQUOTE
+)(/A
+)(BLOCKQUOTE
 CLASS="BLOCKQUOTE"
-><P
->Copyright (C) 2000  Free Software Foundation, Inc.
+)(P
+)Copyright (C) 2000  Free Software Foundation, Inc.
 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 Everyone is permitted to copy and distribute verbatim copies
-of this license document, but changing it is not allowed.</P
-></BLOCKQUOTE
-><P
->0. PREAMBLE</P
-><P
->The purpose of this License is to make a manual, textbook,
+of this license document, but changing it is not allowed.(/P
+)(/BLOCKQUOTE
+)(P
+)0. PREAMBLE(/P
+)(P
+)The purpose of this License is to make a manual, textbook,
     or other written document "free" in the sense of freedom: to
     assure everyone the effective freedom to copy and redistribute it,
     with or without modifying it, either commercially or
     noncommercially.  Secondarily, this License preserves for the
     author and publisher a way to get credit for their work, while not
     being considered responsible for modifications made by
-    others.</P
-><P
->This License is a kind of "copyleft", which means that
+    others.(/P
+)(P
+)This License is a kind of "copyleft", which means that
     derivative works of the document must themselves be free in the
     same sense.  It complements the GNU General Public License, which
-    is a copyleft license designed for free software.</P
-><P
->We have designed this License in order to use it for manuals
+    is a copyleft license designed for free software.(/P
+)(P
+)We have designed this License in order to use it for manuals
     for free software, because free software needs free documentation:
     a free program should come with manuals providing the same
     freedoms that the software does.  But this License is not limited
     to software manuals; it can be used for any textual work,
     regardless of subject matter or whether it is published as a
     printed book.  We recommend this License principally for works
-    whose purpose is instruction or reference.</P
-><P
->1. APPLICABILITY AND DEFINITIONS</P
-><P
->This License applies to any manual or other work that
+    whose purpose is instruction or reference.(/P
+)(P
+)1. APPLICABILITY AND DEFINITIONS(/P
+)(P
+)This License applies to any manual or other work that
     contains a notice placed by the copyright holder saying it can be
     distributed under the terms of this License.  The "Document",
     below, refers to any such manual or work.  Any member of the
-    public is a licensee, and is addressed as "you".</P
-><P
->A "Modified Version" of the Document means any work
+    public is a licensee, and is addressed as "you".(/P
+)(P
+)A "Modified Version" of the Document means any work
     containing the Document or a portion of it, either copied
     verbatim, or with modifications and/or translated into another
-    language.</P
-><P
->A "Secondary Section" is a named appendix or a front-matter
+    language.(/P
+)(P
+)A "Secondary Section" is a named appendix or a front-matter
     section of the Document that deals exclusively with the
     relationship of the publishers or authors of the Document to the
     Document's overall subject (or to related matters) and contains
@@ -13937,19 +13939,19 @@ of this license document, but changing it is not allowed.</P
     The relationship could be a matter of historical connection with
     the subject or with related matters, or of legal, commercial,
     philosophical, ethical or political position regarding
-    them.</P
-><P
->The "Invariant Sections" are certain Secondary Sections
+    them.(/P
+)(P
+)The "Invariant Sections" are certain Secondary Sections
     whose titles are designated, as being those of Invariant Sections,
     in the notice that says that the Document is released under this
-    License.</P
-><P
->The "Cover Texts" are certain short passages of text that
+    License.(/P
+)(P
+)The "Cover Texts" are certain short passages of text that
     are listed, as Front-Cover Texts or Back-Cover Texts, in the
     notice that says that the Document is released under this
-    License.</P
-><P
->A "Transparent" copy of the Document means a
+    License.(/P
+)(P
+)A "Transparent" copy of the Document means a
     machine-readable copy, represented in a format whose specification
     is available to the general public, whose contents can be viewed
     and edited directly and straightforwardly with generic text
@@ -13960,9 +13962,9 @@ of this license document, but changing it is not allowed.</P
     formatters.  A copy made in an otherwise Transparent file format
     whose markup has been designed to thwart or discourage subsequent
     modification by readers is not Transparent.  A copy that is not
-    "Transparent" is called "Opaque".</P
-><P
->Examples of suitable formats for Transparent copies include
+    "Transparent" is called "Opaque".(/P
+)(P
+)Examples of suitable formats for Transparent copies include
     plain ASCII without markup, Texinfo input format, LaTeX input
     format, SGML or XML using a publicly available DTD, and
     standard-conforming simple HTML designed for human modification.
@@ -13970,19 +13972,19 @@ of this license document, but changing it is not allowed.</P
     can be read and edited only by proprietary word processors, SGML
     or XML for which the DTD and/or processing tools are not generally
     available, and the machine-generated HTML produced by some word
-    processors for output purposes only.</P
-><P
->The "Title Page" means, for a printed book, the title page
+    processors for output purposes only.(/P
+)(P
+)The "Title Page" means, for a printed book, the title page
     itself, plus such following pages as are needed to hold, legibly,
     the material this License requires to appear in the title page.
     For works in formats which do not have any title page as such,
     "Title Page" means the text near the most prominent appearance of
     the work's title, preceding the beginning of the body of the
-    text.</P
-><P
->2. VERBATIM COPYING</P
-><P
->You may copy and distribute the Document in any medium,
+    text.(/P
+)(P
+)2. VERBATIM COPYING(/P
+)(P
+)You may copy and distribute the Document in any medium,
     either commercially or noncommercially, provided that this
     License, the copyright notices, and the license notice saying this
     License applies to the Document are reproduced in all copies, and
@@ -13991,14 +13993,14 @@ of this license document, but changing it is not allowed.</P
     control the reading or further copying of the copies you make or
     distribute.  However, you may accept compensation in exchange for
     copies.  If you distribute a large enough number of copies you
-    must also follow the conditions in section 3.</P
-><P
->You may also lend copies, under the same conditions stated
-    above, and you may publicly display copies.</P
-><P
->3. COPYING IN QUANTITY</P
-><P
->If you publish printed copies of the Document numbering more
+    must also follow the conditions in section 3.(/P
+)(P
+)You may also lend copies, under the same conditions stated
+    above, and you may publicly display copies.(/P
+)(P
+)3. COPYING IN QUANTITY(/P
+)(P
+)If you publish printed copies of the Document numbering more
     than 100, and the Document's license notice requires Cover Texts,
     you must enclose the copies in covers that carry, clearly and
     legibly, all these Cover Texts: Front-Cover Texts on the front
@@ -14009,14 +14011,14 @@ of this license document, but changing it is not allowed.</P
     other material on the covers in addition.  Copying with changes
     limited to the covers, as long as they preserve the title of the
     Document and satisfy these conditions, can be treated as verbatim
-    copying in other respects.</P
-><P
->If the required texts for either cover are too voluminous to
+    copying in other respects.(/P
+)(P
+)If the required texts for either cover are too voluminous to
     fit legibly, you should put the first ones listed (as many as fit
     reasonably) on the actual cover, and continue the rest onto
-    adjacent pages.</P
-><P
->If you publish or distribute Opaque copies of the Document
+    adjacent pages.(/P
+)(P
+)If you publish or distribute Opaque copies of the Document
     numbering more than 100, you must either include a
     machine-readable Transparent copy along with each Opaque copy, or
     state in or with each Opaque copy a publicly-accessible
@@ -14029,145 +14031,145 @@ of this license document, but changing it is not allowed.</P
     this Transparent copy will remain thus accessible at the stated
     location until at least one year after the last time you
     distribute an Opaque copy (directly or through your agents or
-    retailers) of that edition to the public.</P
-><P
->It is requested, but not required, that you contact the
+    retailers) of that edition to the public.(/P
+)(P
+)It is requested, but not required, that you contact the
     authors of the Document well before redistributing any large
     number of copies, to give them a chance to provide you with an
-    updated version of the Document.</P
-><P
->4. MODIFICATIONS</P
-><P
->You may copy and distribute a Modified Version of the
+    updated version of the Document.(/P
+)(P
+)4. MODIFICATIONS(/P
+)(P
+)You may copy and distribute a Modified Version of the
     Document under the conditions of sections 2 and 3 above, provided
     that you release the Modified Version under precisely this
     License, with the Modified Version filling the role of the
     Document, thus licensing distribution and modification of the
     Modified Version to whoever possesses a copy of it.  In addition,
-    you must do these things in the Modified Version:</P
-><P
-></P
-><OL
+    you must do these things in the Modified Version:(/P
+)(P
+)(/P
+)(OL
 TYPE="A"
-><LI
-><P
->Use in the Title Page
+)(LI
+)(P
+)Use in the Title Page
       (and on the covers, if any) a title distinct from that of the
       Document, and from those of previous versions (which should, if
       there were any, be listed in the History section of the
       Document).  You may use the same title as a previous version if
-      the original publisher of that version gives permission.</P
-></LI
-><LI
-><P
->List on the Title Page,
+      the original publisher of that version gives permission.(/P
+)(/LI
+)(LI
+)(P
+)List on the Title Page,
       as authors, one or more persons or entities responsible for
       authorship of the modifications in the Modified Version,
       together with at least five of the principal authors of the
       Document (all of its principal authors, if it has less than
-      five).</P
-></LI
-><LI
-><P
->State on the Title page
+      five).(/P
+)(/LI
+)(LI
+)(P
+)State on the Title page
       the name of the publisher of the Modified Version, as the
-      publisher.</P
-></LI
-><LI
-><P
->Preserve all the
-      copyright notices of the Document.</P
-></LI
-><LI
-><P
->Add an appropriate
+      publisher.(/P
+)(/LI
+)(LI
+)(P
+)Preserve all the
+      copyright notices of the Document.(/P
+)(/LI
+)(LI
+)(P
+)Add an appropriate
       copyright notice for your modifications adjacent to the other
-      copyright notices.</P
-></LI
-><LI
-><P
->Include, immediately
+      copyright notices.(/P
+)(/LI
+)(LI
+)(P
+)Include, immediately
       after the copyright notices, a license notice giving the public
       permission to use the Modified Version under the terms of this
-      License, in the form shown in the Addendum below.</P
-></LI
-><LI
-><P
->Preserve in that license
+      License, in the form shown in the Addendum below.(/P
+)(/LI
+)(LI
+)(P
+)Preserve in that license
       notice the full lists of Invariant Sections and required Cover
-      Texts given in the Document's license notice.</P
-></LI
-><LI
-><P
->Include an unaltered
-      copy of this License.</P
-></LI
-><LI
-><P
->Preserve the section
+      Texts given in the Document's license notice.(/P
+)(/LI
+)(LI
+)(P
+)Include an unaltered
+      copy of this License.(/P
+)(/LI
+)(LI
+)(P
+)Preserve the section
       entitled "History", and its title, and add to it an item stating
       at least the title, year, new authors, and publisher of the
       Modified Version as given on the Title Page.  If there is no
       section entitled "History" in the Document, create one stating
       the title, year, authors, and publisher of the Document as given
       on its Title Page, then add an item describing the Modified
-      Version as stated in the previous sentence.</P
-></LI
-><LI
-><P
->Preserve the network
+      Version as stated in the previous sentence.(/P
+)(/LI
+)(LI
+)(P
+)Preserve the network
       location, if any, given in the Document for public access to a
       Transparent copy of the Document, and likewise the network
       locations given in the Document for previous versions it was
       based on.  These may be placed in the "History" section.  You
       may omit a network location for a work that was published at
       least four years before the Document itself, or if the original
-      publisher of the version it refers to gives permission.</P
-></LI
-><LI
-><P
->In any section entitled
+      publisher of the version it refers to gives permission.(/P
+)(/LI
+)(LI
+)(P
+)In any section entitled
       "Acknowledgements" or "Dedications", preserve the section's
       title, and preserve in the section all the substance and tone of
       each of the contributor acknowledgements and/or dedications
-      given therein.</P
-></LI
-><LI
-><P
->Preserve all the
+      given therein.(/P
+)(/LI
+)(LI
+)(P
+)Preserve all the
       Invariant Sections of the Document, unaltered in their text and
       in their titles.  Section numbers or the equivalent are not
-      considered part of the section titles.</P
-></LI
-><LI
-><P
->Delete any section
+      considered part of the section titles.(/P
+)(/LI
+)(LI
+)(P
+)Delete any section
       entitled "Endorsements".  Such a section may not be included in
-      the Modified Version.</P
-></LI
-><LI
-><P
->Do not retitle any
+      the Modified Version.(/P
+)(/LI
+)(LI
+)(P
+)Do not retitle any
       existing section as "Endorsements" or to conflict in title with
-      any Invariant Section.</P
-></LI
-></OL
-><P
->If the Modified Version includes new front-matter sections
+      any Invariant Section.(/P
+)(/LI
+)(/OL
+)(P
+)If the Modified Version includes new front-matter sections
     or appendices that qualify as Secondary Sections and contain no
     material copied from the Document, you may at your option
     designate some or all of these sections as invariant.  To do this,
     add their titles to the list of Invariant Sections in the Modified
     Version's license notice.  These titles must be distinct from any
-    other section titles.</P
-><P
->You may add a section entitled "Endorsements", provided it
+    other section titles.(/P
+)(P
+)You may add a section entitled "Endorsements", provided it
     contains nothing but endorsements of your Modified Version by
     various parties--for example, statements of peer review or that
     the text has been approved by an organization as the authoritative
-    definition of a standard.</P
-><P
->You may add a passage of up to five words as a Front-Cover
+    definition of a standard.(/P
+)(P
+)You may add a passage of up to five words as a Front-Cover
     Text, and a passage of up to 25 words as a Back-Cover Text, to the
     end of the list of Cover Texts in the Modified Version.  Only one
     passage of Front-Cover Text and one of Back-Cover Text may be
@@ -14176,22 +14178,22 @@ TYPE="A"
     previously added by you or by arrangement made by the same entity
     you are acting on behalf of, you may not add another; but you may
     replace the old one, on explicit permission from the previous
-    publisher that added the old one.</P
-><P
->The author(s) and publisher(s) of the Document do not by
+    publisher that added the old one.(/P
+)(P
+)The author(s) and publisher(s) of the Document do not by
     this License give permission to use their names for publicity for
-    or to assert or imply endorsement of any Modified Version.</P
-><P
->5. COMBINING DOCUMENTS</P
-><P
->You may combine the Document with other documents released
+    or to assert or imply endorsement of any Modified Version.(/P
+)(P
+)5. COMBINING DOCUMENTS(/P
+)(P
+)You may combine the Document with other documents released
     under this License, under the terms defined in section 4 above for
     modified versions, provided that you include in the combination
     all of the Invariant Sections of all of the original documents,
     unmodified, and list them all as Invariant Sections of your
-    combined work in its license notice.</P
-><P
->The combined work need only contain one copy of this
+    combined work in its license notice.(/P
+)(P
+)The combined work need only contain one copy of this
     License, and multiple identical Invariant Sections may be replaced
     with a single copy.  If there are multiple Invariant Sections with
     the same name but different contents, make the title of each such
@@ -14199,32 +14201,32 @@ TYPE="A"
     name of the original author or publisher of that section if known,
     or else a unique number.  Make the same adjustment to the section
     titles in the list of Invariant Sections in the license notice of
-    the combined work.</P
-><P
->In the combination, you must combine any sections entitled
+    the combined work.(/P
+)(P
+)In the combination, you must combine any sections entitled
     "History" in the various original documents, forming one section
     entitled "History"; likewise combine any sections entitled
     "Acknowledgements", and any sections entitled "Dedications".  You
-    must delete all sections entitled "Endorsements."</P
-><P
->6. COLLECTIONS OF DOCUMENTS</P
-><P
->You may make a collection consisting of the Document and
+    must delete all sections entitled "Endorsements."(/P
+)(P
+)6. COLLECTIONS OF DOCUMENTS(/P
+)(P
+)You may make a collection consisting of the Document and
     other documents released under this License, and replace the
     individual copies of this License in the various documents with a
     single copy that is included in the collection, provided that you
     follow the rules of this License for verbatim copying of each of
-    the documents in all other respects.</P
-><P
->You may extract a single document from such a collection,
+    the documents in all other respects.(/P
+)(P
+)You may extract a single document from such a collection,
     and distribute it individually under this License, provided you
     insert a copy of this License into the extracted document, and
     follow this License in all other respects regarding verbatim
-    copying of that document.</P
-><P
->7. AGGREGATION WITH INDEPENDENT WORKS</P
-><P
->A compilation of the Document or its derivatives with other
+    copying of that document.(/P
+)(P
+)7. AGGREGATION WITH INDEPENDENT WORKS(/P
+)(P
+)A compilation of the Document or its derivatives with other
     separate and independent documents or works, in or on a volume of
     a storage or distribution medium, does not as a whole count as a
     Modified Version of the Document, provided no compilation
@@ -14232,18 +14234,18 @@ TYPE="A"
     called an "aggregate", and this License does not apply to the
     other self-contained works thus compiled with the Document, on
     account of their being thus compiled, if they are not themselves
-    derivative works of the Document.</P
-><P
->If the Cover Text requirement of section 3 is applicable to
+    derivative works of the Document.(/P
+)(P
+)If the Cover Text requirement of section 3 is applicable to
     these copies of the Document, then if the Document is less than
     one quarter of the entire aggregate, the Document's Cover Texts
     may be placed on covers that surround only the Document within the
     aggregate.  Otherwise they must appear on covers around the whole
-    aggregate.</P
-><P
->8. TRANSLATION</P
-><P
->Translation is considered a kind of modification, so you may
+    aggregate.(/P
+)(P
+)8. TRANSLATION(/P
+)(P
+)Translation is considered a kind of modification, so you may
     distribute translations of the Document under the terms of section
     4.  Replacing Invariant Sections with translations requires
     special permission from their copyright holders, but you may
@@ -14253,32 +14255,32 @@ TYPE="A"
     include the original English version of this License.  In case of
     a disagreement between the translation and the original English
     version of this License, the original English version will
-    prevail.</P
-><P
->9. TERMINATION</P
-><P
->You may not copy, modify, sublicense, or distribute the
+    prevail.(/P
+)(P
+)9. TERMINATION(/P
+)(P
+)You may not copy, modify, sublicense, or distribute the
     Document except as expressly provided for under this License.  Any
     other attempt to copy, modify, sublicense or distribute the
     Document is void, and will automatically terminate your rights
     under this License.  However, parties who have received copies, or
     rights, from you under this License will not have their licenses
     terminated so long as such parties remain in full
-    compliance.</P
-><P
->10. FUTURE REVISIONS OF THIS LICENSE</P
-><P
->The Free Software Foundation may publish new, revised
+    compliance.(/P
+)(P
+)10. FUTURE REVISIONS OF THIS LICENSE(/P
+)(P
+)The Free Software Foundation may publish new, revised
     versions of the GNU Free Documentation License from time to time.
     Such new versions will be similar in spirit to the present
     version, but may differ in detail to address new problems or
-    concerns.  See <A
+    concerns.  See (A
 HREF="http://www.gnu.org/copyleft/"
 TARGET="_top"
->http://www.gnu.org/copyleft/</A
->.</P
-><P
->Each version of the License is given a distinguishing
+)http://www.gnu.org/copyleft/(/A
+).(/P
+)(P
+)Each version of the License is given a distinguishing
     version number.  If the Document specifies that a particular
     numbered version of this License "or any later version" applies to
     it, you have the option of following the terms and conditions
@@ -14286,97 +14288,97 @@ TARGET="_top"
     been published (not as a draft) by the Free Software Foundation.
     If the Document does not specify a version number of this License,
     you may choose any version ever published (not as a draft) by the
-    Free Software Foundation.</P
-><P
->How to use this License for your documents</P
-><P
->To use this License in a document you have written, include
+    Free Software Foundation.(/P
+)(P
+)How to use this License for your documents(/P
+)(P
+)To use this License in a document you have written, include
     a copy of the License in the document and put the following
-    copyright and license notices just after the title page:</P
-><A
+    copyright and license notices just after the title page:(/P
+)(A
 NAME="AEN4358"
-></A
-><BLOCKQUOTE
+)(/A
+)(BLOCKQUOTE
 CLASS="BLOCKQUOTE"
-><P
->      Copyright (c)  YEAR  YOUR NAME.
+)(P
+)      Copyright (c)  YEAR  YOUR NAME.
       Permission is granted to copy, distribute and/or modify this document
       under the terms of the GNU Free Documentation License, Version 1.1
       or any later version published by the Free Software Foundation;
       with the Invariant Sections being LIST THEIR TITLES, with the
       Front-Cover Texts being LIST, and with the Back-Cover Texts being LIST.
       A copy of the license is included in the section entitled "GNU
-      Free Documentation License".</P
-></BLOCKQUOTE
-><P
->If you have no Invariant Sections, write "with no Invariant
+      Free Documentation License".(/P
+)(/BLOCKQUOTE
+)(P
+)If you have no Invariant Sections, write "with no Invariant
     Sections" instead of saying which ones are invariant.  If you have
     no Front-Cover Texts, write "no Front-Cover Texts" instead of
     "Front-Cover Texts being LIST"; likewise for Back-Cover
-    Texts.</P
-><P
->If your document contains nontrivial examples of program
+    Texts.(/P
+)(P
+)If your document contains nontrivial examples of program
     code, we recommend releasing these examples in parallel under your
     choice of free software license, such as the GNU General Public
-    License, to permit their use in free software.</P
-></DIV
-><DIV
+    License, to permit their use in free software.(/P
+)(/DIV
+)(DIV
 CLASS="NAVFOOTER"
-><HR
+)(HR
 ALIGN="LEFT"
-WIDTH="100%"><TABLE
+WIDTH="100%")(TABLE
 SUMMARY="Footer navigation table"
 WIDTH="100%"
 BORDER="0"
 CELLPADDING="0"
 CELLSPACING="0"
-><TR
-><TD
+)(TR
+)(TD
 WIDTH="33%"
 ALIGN="left"
 VALIGN="top"
-><A
+)(A
 HREF="reference-field-idx.html"
 ACCESSKEY="P"
->Prev</A
-></TD
-><TD
+)Prev(/A
+)(/TD
+)(TD
 WIDTH="34%"
 ALIGN="center"
 VALIGN="top"
-><A
+)(A
 HREF="index.html"
 ACCESSKEY="H"
->Home</A
-></TD
-><TD
+)Home(/A
+)(/TD
+)(TD
 WIDTH="33%"
 ALIGN="right"
 VALIGN="top"
->&nbsp;</TD
-></TR
-><TR
-><TD
+)&nbsp;(/TD
+)(/TR
+)(TR
+)(TD
 WIDTH="33%"
 ALIGN="left"
 VALIGN="top"
->Retrieving Field Data by Index</TD
-><TD
+)Retrieving Field Data by Index(/TD
+)(TD
 WIDTH="34%"
 ALIGN="center"
 VALIGN="top"
->&nbsp;</TD
-><TD
+)&nbsp;(/TD
+)(TD
 WIDTH="33%"
 ALIGN="right"
 VALIGN="top"
->&nbsp;</TD
-></TR
-></TABLE
-></DIV
-></BODY
-></HTML
->[libdbi-0.9.0/doc/programmers-guide/copying-fdl.html]
+)&nbsp;(/TD
+)(/TR
+)(/TABLE
+)(/DIV
+)(/BODY
+)(/HTML
+)[libdbi-0.9.0/doc/programmers-guide/copying-fdl.html]
 
 
 %%% Within package libdbi-perl (version 1.631):
@@ -14386,43 +14388,43 @@ VALIGN="top"
 [libdbi-perl-1.631/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: DBI
-Upstream-Contact: Tim Bunce <Tim.Bunce@pobox.com>
+Upstream-Contact: Tim Bunce (Tim.Bunce@pobox.com)
 Source: https://metacpan.org/release/DBI
 
 Files: *
-Copyright: 1994-2012, Tim Bunce <Tim.Bunce@pobox.com>
+Copyright: 1994-2012, Tim Bunce (Tim.Bunce@pobox.com)
 License: Artistic or GPL-1+
 
 Files: Driver.xst
-Copyright: 1997-2002, Tim Bunce <Tim.Bunce@pobox.com>
- 2002, Jonathan Leffler <j.leffler@acm.org>
+Copyright: 1997-2002, Tim Bunce (Tim.Bunce@pobox.com)
+ 2002, Jonathan Leffler (j.leffler@acm.org)
 License: Artistic or GPL-1+
 
 Files: dbd_xsh.h
-Copyright: 2000-2002, Tim Bunce <Tim.Bunce@pobox.com>
- 2002, Jonathan Leffler <j.leffler@acm.org>
+Copyright: 2000-2002, Tim Bunce (Tim.Bunce@pobox.com)
+ 2002, Jonathan Leffler (j.leffler@acm.org)
 License: Artistic or GPL-1+
 
 Files: dbipport.h
-Copyright: 2004-2010, Marcus Holland-Moritz <mhx-cpan@gmx.net>
- 2001, Paul Marquess <pmqs@cpan.org> (Version 2.x)
- 1999, Kenneth Albanowski <kjahds@kjahds.com> (Version 1.x)
+Copyright: 2004-2010, Marcus Holland-Moritz (mhx-cpan@gmx.net)
+ 2001, Paul Marquess (pmqs@cpan.org) (Version 2.x)
+ 1999, Kenneth Albanowski (kjahds@kjahds.com) (Version 1.x)
 License: Artistic or GPL-1+
 
 Files: dbiprof.PL
-Copyright: 2002, Sam Tregar <sam@tregar.com>
+Copyright: 2002, Sam Tregar (sam@tregar.com)
 License: Artistic or GPL-1+
 
 Files: dbiproxy.PL
  lib/DBI/ProxyServer.pm
-Copyright: 1997, Jochen Wiedmann <jwied@cpan.org>
+Copyright: 1997, Jochen Wiedmann (jwied@cpan.org)
 License: Artistic or GPL-1+
 
 Files: lib/DBI/DBD.pm
-Copyright: 1997-2006, Tim Bunce <Tim.Bunce@pobox.com>
- 1997-2006, Jochen Wiedmann <jwied@cpan.org>
- 1997-2006, Jonathan Leffler <j.leffler@acm.org>
- 1997-2006, Steffen Goeldner <sgoeldner@cpan.org>
+Copyright: 1997-2006, Tim Bunce (Tim.Bunce@pobox.com)
+ 1997-2006, Jochen Wiedmann (jwied@cpan.org)
+ 1997-2006, Jonathan Leffler (j.leffler@acm.org)
+ 1997-2006, Steffen Goeldner (sgoeldner@cpan.org)
 License: Artistic or GPL-1+
 
 Files: lib/DBI/FAQ.pm
@@ -14430,27 +14432,27 @@ Copyright: 1994-2000, Alligator Descartes
 License: Artistic
 
 Files: lib/DBD/DBM.pm
-Copyright: 2004, Jeff Zucker <jzucker@cpan.org>
+Copyright: 2004, Jeff Zucker (jzucker@cpan.org)
  2010-2013, Jens Rehsack & H.Merijn Brand
 License: Artistic or GPL-1+
 
 Files: lib/DBI/SQL/Nano.pm
 Copyright:
- 2004, Jeff Zucker <jzucker@cpan.org>
- 2010, Jens Rehsack <rehsack@cpan.org>
+ 2004, Jeff Zucker (jzucker@cpan.org)
+ 2010, Jens Rehsack (rehsack@cpan.org)
 License: Artistic or GPL-1+
 
 Files: lib/DBI/ProfileData.pm
  lib/DBI/ProfileDumper/Apache.pm
  lib/DBI/ProfileDumper.pm
-Copyright: 2002, Sam Tregar <sam@tregar.com>
+Copyright: 2002, Sam Tregar (sam@tregar.com)
 License: Artistic or GPL-1+
 
 Files: lib/DBI/DBD/Metadata.pm
-Copyright: 1997-2003, Tim Bunce <Tim.Bunce@pobox.com>
- 1997-2003, Jochen Wiedmann <jwied@cpan.org>
- 1997-2003, Jonathan Leffler <j.leffler@acm.org>
- 1997-2003, Steffen Goeldner <sgoeldner@cpan.org>
+Copyright: 1997-2003, Tim Bunce (Tim.Bunce@pobox.com)
+ 1997-2003, Jochen Wiedmann (jwied@cpan.org)
+ 1997-2003, Jonathan Leffler (j.leffler@acm.org)
+ 1997-2003, Steffen Goeldner (sgoeldner@cpan.org)
 License: Artistic or GPL-1+
 
 Files: lib/DBI/DBD/SqlEngine.pm
@@ -14487,18 +14489,18 @@ License: Artistic or GPL-1+
 
 Files: debian/*
 Copyright:
- 1997-1999, Martin Schulze <joey@finlandia.infodrom.north.de>
- 1997-1998, Ben Gertzfield <che@debian.org>
- 1997, Christian Schwarz <schwarz@debian.org>
- 1999-2007, Christian Hammers <ch@debian.org>
- 2002, Dirk Eddelbuettel <edd@debian.org>
- 2007-2009, Damyan Ivanov <dmn@debian.org>
- 2008-2014, gregor herrmann <gregoa@debian.org>
- 2008, Niko Tyni <ntyni@debian.org>
- 2009, Ryan Niebur <ryan@debian.org>
- 2010, Ansgar Burchardt <ansgar@debian.org>
- 2010, Nicholas Bamber <nicholas@periapt.co.uk>
- 2013, Xavier Guimard <x.guimard@free.fr>
+ 1997-1999, Martin Schulze (joey@finlandia.infodrom.north.de)
+ 1997-1998, Ben Gertzfield (che@debian.org)
+ 1997, Christian Schwarz (schwarz@debian.org)
+ 1999-2007, Christian Hammers (ch@debian.org)
+ 2002, Dirk Eddelbuettel (edd@debian.org)
+ 2007-2009, Damyan Ivanov (dmn@debian.org)
+ 2008-2014, gregor herrmann (gregoa@debian.org)
+ 2008, Niko Tyni (ntyni@debian.org)
+ 2009, Ryan Niebur (ryan@debian.org)
+ 2010, Ansgar Burchardt (ansgar@debian.org)
+ 2010, Nicholas Bamber (nicholas@periapt.co.uk)
+ 2013, Xavier Guimard (x.guimard@free.fr)
 License: Artistic or GPL-1+
 
 License: Artistic
@@ -14526,15 +14528,15 @@ License: GPL-1+
 [libfile-fcntllock-perl-0.20/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: File-FcntlLock
-Upstream-Contact: Jens Thoms Toerring <jt@toerring.de>
+Upstream-Contact: Jens Thoms Toerring (jt@toerring.de)
 Source: https://metacpan.org/release/File-FcntlLock
 
 Files: *
-Copyright: 2002-2014, Jens Thoms Toerring <jt@toerring.de>
+Copyright: 2002-2014, Jens Thoms Toerring (jt@toerring.de)
 License: Artistic or GPL-1+
 
 Files: debian/*
-Copyright: 2011-2012, Julián Moreno Patiño <darkjunix@gmail.com>
+Copyright: 2011-2012, Julián Moreno Patiño (darkjunix@gmail.com)
 License: Artistic or GPL-1+
 
 License: Artistic
@@ -14561,13 +14563,13 @@ License: GPL-1+
 
 [libguestfs-1.26.3/debian/copyright]
 This package was debianized by Hilko Bengen, based on work done by
-Richard Jones <rjones@redhat.com>.
+Richard Jones (rjones@redhat.com).
 
 It was downloaded from http://libguestfs.org/download/
 
 Upstream Authors:
 
-    Richard W.M. Jones <rjones@redhat.com>
+    Richard W.M. Jones (rjones@redhat.com)
     Red Hat Inc.
 
 Copyright:
@@ -14582,8 +14584,8 @@ License:
 
 The Debian packaging is:
 
-    Copyright (C) 2009 Richard Jones <rjones@redhat.com>
-    Copyright (C) 2011 Hilko Bengen <bengen@debian.org>
+    Copyright (C) 2009 Richard Jones (rjones@redhat.com)
+    Copyright (C) 2011 Hilko Bengen (bengen@debian.org)
 
 and is licensed under the GPL version 3.
 
@@ -14631,7 +14633,7 @@ module G = Guestfs
 open Common_utils
 open Cmdline
 
-external statvfs_free_space : string -> int64 =
+external statvfs_free_space : string -) int64 =
   "virt_sparsify_statvfs_free_space"
 
 let run indisk outdisk check_tmpdir compress convert
@@ -14651,16 +14653,16 @@ let run indisk outdisk check_tmpdir compress convert
    *)
   let output_format =
     match convert with
-    | Some fmt -> fmt           (* user specified output conversion *)
-    | None ->
+    | Some fmt -) fmt           (* user specified output conversion *)
+    | None -)
       match format with
-      | Some fmt -> fmt    (* user specified input format, use that *)
-      | None ->
+      | Some fmt -) fmt    (* user specified input format, use that *)
+      | None -)
         (* Don't know, so we must autodetect. *)
         match (new G.guestfs ())#disk_format indisk  with
-        | "unknown" ->
+        | "unknown" -)
           error (f_"cannot detect input disk format; use the --format parameter")
-        | fmt -> fmt in
+        | fmt -) fmt in
 
   (* Compression is not supported by raw output (RHBZ#852194). *)
   if output_format = "raw" && compress then
@@ -14678,7 +14680,7 @@ let run indisk outdisk check_tmpdir compress convert
   let print_warning () =
     let free_space = statvfs_free_space tmpdir in
     let extra_needed = virtual_size -^ free_space in
-    if extra_needed > 0L then (
+    if extra_needed ) 0L then (
       eprintf (f_"\
 
 WARNING: There may not be enough free space on %s.
@@ -14700,14 +14702,14 @@ You can ignore this warning or change it to a hard failure using the
   in
 
   (match check_tmpdir with
-  | `Ignore -> ()
-  | `Continue -> ignore (print_warning ())
-  | `Warn ->
+  | `Ignore -) ()
+  | `Continue -) ignore (print_warning ())
+  | `Warn -)
     if print_warning () then (
       eprintf "Press RETURN to continue or ^C to quit.\n%!";
       ignore (read_line ())
     );
-  | `Fail ->
+  | `Fail -)
     if print_warning () then (
       eprintf "Exiting because --check-tmpdir=fail was set.\n%!";
       exit 2
@@ -14770,11 +14772,11 @@ You can ignore this warning or change it to a hard failure using the
 
   let is_ignored fs =
     let fs = g#canonical_device_name fs in
-    List.exists (fun fs' -> fs = g#canonical_device_name fs') ignores
+    List.exists (fun fs' -) fs = g#canonical_device_name fs') ignores
   in
 
   List.iter (
-    fun fs ->
+    fun fs -)
       if not (is_ignored fs) then (
         if List.mem fs zeroes then (
           if not quiet then
@@ -14784,7 +14786,7 @@ You can ignore this warning or change it to a hard failure using the
         ) else (
           let mounted =
             try g#mount fs "/"; true
-            with _ -> false in
+            with _ -) false in
 
           if mounted then (
             if not quiet then
@@ -14800,7 +14802,7 @@ You can ignore this warning or change it to a hard failure using the
                * the signature is moved to a different location.
                *)
               try g#pread_device fs 10 4086L = "SWAPSPACE2"
-              with _ -> false in
+              with _ -) false in
 
             if is_linux_x86_swap then (
               if not quiet then
@@ -14812,7 +14814,7 @@ You can ignore this warning or change it to a hard failure using the
                *)
               let header = g#pread_device fs 4096 0L in
               g#zero_device fs;
-              if g#pwrite_device fs header 0L <> 4096 then
+              if g#pwrite_device fs header 0L () 4096 then
                 error (f_"pwrite: short write restoring swap partition header")
             )
           )
@@ -14827,14 +14829,14 @@ You can ignore this warning or change it to a hard failure using the
   let vgs = Array.to_list vgs in
   let vgs = List.sort compare vgs in
   List.iter (
-    fun vg ->
+    fun vg -)
       if not (List.mem vg ignores) then (
         let lvname = string_random8 () in
         let lvdev = "/dev/" ^ vg ^ "/" ^ lvname in
 
         let created =
           try g#lvcreate_free lvname vg 100; true
-          with _ -> false in
+          with _ -) false in
 
         if created then (
           if not quiet then
@@ -14866,12 +14868,12 @@ You can ignore this warning or change it to a hard failure using the
       (Filename.quote output_format)
       (if compress then " -c" else "")
       (match option with
-      | None -> ""
-      | Some option -> " -o " ^ Filename.quote option)
+      | None -) ""
+      | Some option -) " -o " ^ Filename.quote option)
       (Filename.quote overlaydisk) (Filename.quote outdisk) in
   if verbose then
     printf "%s\n%!" cmd;
-  if Sys.command cmd <> 0 then
+  if Sys.command cmd () 0 then
     error (f_"external command failed: %s") cmd;
 
   (* Finished. *)
@@ -14888,13 +14890,13 @@ You can ignore this warning or change it to a hard failure using the
 
 [libhtml-template-perl-2.95/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Upstream-Contact: Sam Tregar <sam@tregar.com>
+Upstream-Contact: Sam Tregar (sam@tregar.com)
 Source: https://metacpan.org/release/HTML-Template/
 Upstream-Name: HTML-Template
 
 Files: *
-Copyright: 2000-2011, Sam Tregar <sam@tregar.com>
- 2012, Michael Peters <mpeters@plusthree.com>
+Copyright: 2000-2011, Sam Tregar (sam@tregar.com)
+ 2012, Michael Peters (mpeters@plusthree.com)
 License: Artistic or GPL-1+
 
 Files: t/testlib/IO/Capture/ErrorMessages.pm
@@ -14913,10 +14915,10 @@ License: Artistic or GPL-1+
 
 Files: debian/*
 Copyright:
- 2000-2003, Sander Smeenk <ssmeenk@debian.org>
- 2005, 2007, 2010, Florian Ernst <florian@debian.org>
- 2011, Nicholas Bamber <nicholas@periapt.co.uk>
- 2012, Fabrizio Regalli <fabreg@fabreg.it>
+ 2000-2003, Sander Smeenk (ssmeenk@debian.org)
+ 2005, 2007, 2010, Florian Ernst (florian@debian.org)
+ 2011, Nicholas Bamber (nicholas@periapt.co.uk)
+ 2012, Fabrizio Regalli (fabreg@fabreg.it)
 License: Artistic or GPL-1+
 
 License: Artistic
@@ -15163,8 +15165,8 @@ attach them to the start of each source file to most effectively convey
 the exclusion of warranty; and each file should have at least the
 "copyright" line and a pointer to where the full notice is found.
 
-    <one line to give the program's name and a brief idea of what it does.>
-    Copyright (C) 19yy  <name of author>
+    (one line to give the program's name and a brief idea of what it does.)
+    Copyright (C) 19yy  (name of author)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -15205,7 +15207,7 @@ necessary.  Here a sample; alter the names:
   program `Gnomovision' (a program to direct compilers to make passes
   at assemblers) written by James Hacker.
 
-  <signature of Ty Coon>, 1 April 1989
+  (signature of Ty Coon), 1 April 1989
   Ty Coon, President of Vice
 
 That's all there is to it!
@@ -15328,19 +15330,19 @@ The End
 [libio-socket-ip-perl-0.29/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: IO-Socket-IP
-Upstream-Contact: Paul Evans <leonerd@leonerd.org.uk>
+Upstream-Contact: Paul Evans (leonerd@leonerd.org.uk)
 Source: https://metacpan.org/release/IO-Socket-IP
 
 Files: *
-Copyright: 2010-2014, Paul Evans <leonerd@leonerd.org.uk>
+Copyright: 2010-2014, Paul Evans (leonerd@leonerd.org.uk)
 License: Artistic or GPL-1+
 
 Files: debian/*
-Copyright: 2011, Salvatore Bonaccorso <carnil@debian.org>
- 2011-2013, gregor herrmann <gregoa@debian.org>
- 2012, intrigeri <intrigeri@debian.org>
- 2013, Dominique Dumont <dod@debian.org>
- 2012-2014, Xavier Guimard <x.guimard@free.fr>
+Copyright: 2011, Salvatore Bonaccorso (carnil@debian.org)
+ 2011-2013, gregor herrmann (gregoa@debian.org)
+ 2012, intrigeri (intrigeri@debian.org)
+ 2013, Dominique Dumont (dod@debian.org)
+ 2012-2014, Xavier Guimard (x.guimard@free.fr)
 License: Artistic or GPL-1+
 
 License: Artistic
@@ -15363,7 +15365,7 @@ License: GPL-1+
 "libio-socket-ip-perl-0.29/LICENSE":
 
 [libio-socket-ip-perl-0.29/LICENSE]
-This software is copyright (c) 2014 by Paul Evans <leonerd@leonerd.org.uk>.
+This software is copyright (c) 2014 by Paul Evans (leonerd@leonerd.org.uk).
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
@@ -15377,7 +15379,7 @@ b) the "Artistic License"
 
 --- The GNU General Public License, Version 1, February 1989 ---
 
-This software is Copyright (c) 2014 by Paul Evans <leonerd@leonerd.org.uk>.
+This software is Copyright (c) 2014 by Paul Evans (leonerd@leonerd.org.uk).
 
 This is free software, licensed under:
 
@@ -15587,8 +15589,8 @@ attach them to the start of each source file to most effectively convey
 the exclusion of warranty; and each file should have at least the
 "copyright" line and a pointer to where the full notice is found.
 
-    <one line to give the program's name and a brief idea of what it does.>
-    Copyright (C) 19yy  <name of author>
+    (one line to give the program's name and a brief idea of what it does.)
+    Copyright (C) 19yy  (name of author)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -15629,7 +15631,7 @@ necessary.  Here a sample; alter the names:
   program `Gnomovision' (a program to direct compilers to make passes
   at assemblers) written by James Hacker.
 
-  <signature of Ty Coon>, 1 April 1989
+  (signature of Ty Coon), 1 April 1989
   Ty Coon, President of Vice
 
 That's all there is to it!
@@ -15637,7 +15639,7 @@ That's all there is to it!
 
 --- The Artistic License 1.0 ---
 
-This software is Copyright (c) 2014 by Paul Evans <leonerd@leonerd.org.uk>.
+This software is Copyright (c) 2014 by Paul Evans (leonerd@leonerd.org.uk).
 
 This is free software, licensed under:
 
@@ -15752,9 +15754,9 @@ The End
 [libio-socket-ssl-perl-1.992/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: IO-Socket-SSL
-Upstream-Contact: Steffen Ullrich <Steffen_Ullrich@genua.de>
- Peter Behroozi <behrooz@fas.harvard.edu>
- Marko Asplund <marko.asplund@kronodoc.fi>
+Upstream-Contact: Steffen Ullrich (Steffen_Ullrich@genua.de)
+ Peter Behroozi (behrooz@fas.harvard.edu)
+ Marko Asplund (marko.asplund@kronodoc.fi)
 Source: https://metacpan.org/release/IO-Socket-SSL
 
 Files: *
@@ -15765,16 +15767,16 @@ Copyright:
 License: Artistic or GPL-1+
 
 Files: debian/*
-Copyright: 2000-2004, Davide Puricelli (evo) <evo@debian.org>
- 2000, Christian Surchi <csurchi@debian.org>
- 2005-2007, Florian Ragwitz <rafl@debian.org>
- 2008-2009, Ansgar Burchardt <ansgar@debian.org>
- 2008-2014, gregor herrmann <gregoa@debian.org>
- 2008, Mark Hymers <mhy@debian.org>
- 2008, Rene Mayorga <rmayorga@debian.org.sv>
- 2009, Antonio Radici <antonio@dyne.org>
- 2009-2014, Salvatore Bonaccorso <carnil@debian.org>
- 2010-2011, 2014, Angel Abad <angel@debian.org>
+Copyright: 2000-2004, Davide Puricelli (evo) (evo@debian.org)
+ 2000, Christian Surchi (csurchi@debian.org)
+ 2005-2007, Florian Ragwitz (rafl@debian.org)
+ 2008-2009, Ansgar Burchardt (ansgar@debian.org)
+ 2008-2014, gregor herrmann (gregoa@debian.org)
+ 2008, Mark Hymers (mhy@debian.org)
+ 2008, Rene Mayorga (rmayorga@debian.org.sv)
+ 2009, Antonio Radici (antonio@dyne.org)
+ 2009-2014, Salvatore Bonaccorso (carnil@debian.org)
+ 2010-2011, 2014, Angel Abad (angel@debian.org)
 License: Artistic or GPL-1+
 
 License: Artistic
@@ -15805,16 +15807,16 @@ Upstream-Name: jquery.hotkeys
 Source: git://github.com/tzuryby/jquery.hotkeys.git
 
 Files: debian/*
-Copyright: (c) 2013, Thomas Goirand <zigo@debian.org>
+Copyright: (c) 2013, Thomas Goirand (zigo@debian.org)
 License: MIT-or-GPL-2
 
 Files: *
-Copyright: (c) 2008-2012, Tzury Bar Yochay <tzury.by@gmail.com>
+Copyright: (c) 2008-2012, Tzury Bar Yochay (tzury.by@gmail.com)
            (c) 2010, John Resig
-           (c) 2012, millermedeiros <miller@millermedeiros.com>
-           (c) 2012, Chuma Nnaji <cnnaji2003@gmail.com>
-           (c) 2012, Matt Darby <matt@protectedmethod.com>
-           (c) 2012, Jeff Smick <sprsquish@gmail.com>
+           (c) 2012, millermedeiros (miller@millermedeiros.com)
+           (c) 2012, Chuma Nnaji (cnnaji2003@gmail.com)
+           (c) 2012, Matt Darby (matt@protectedmethod.com)
+           (c) 2012, Jeff Smick (sprsquish@gmail.com)
 License: MIT-or-GPL-2
 
 License: MIT-or-GPL-2
@@ -15867,7 +15869,7 @@ Upstream-Name: isOnScreen
 Source: http://archive.plugins.jquery.com/project/isOnScreen
 
 Files: debian/*
-Copyright: (c) 2013, Thomas Goirand <zigo@debian.org>
+Copyright: (c) 2013, Thomas Goirand (zigo@debian.org)
 License: MIT-or-GPL
 
 Files: jquery.isonscreen.js
@@ -15930,10 +15932,10 @@ Copyright: Copyright 2003-2009, Thomas Jacob, Internet24.de
 License: Artistic or GPL-1+
 
 Files: debian/*
-Copyright: 2004, Matthias Urlichs <smurf@debian.org>
- 2004, Thomas Jacob <jacob@internet24.de>
- 2009, Ryan Niebur <ryan@debian.org>
- 2014, Florian Schlichting <fsfs@debian.org>
+Copyright: 2004, Matthias Urlichs (smurf@debian.org)
+ 2004, Thomas Jacob (jacob@internet24.de)
+ 2009, Ryan Niebur (ryan@debian.org)
+ 2014, Florian Schlichting (fsfs@debian.org)
 License: Artistic or GPL-1+
 
 License: Artistic
@@ -15983,14 +15985,14 @@ This package has been through multiple maintainers (for a list see
 /usr/share/doc/libnet-snmp-perl/changelog.Debian.gz).
 
 Current Debian specific changes are copyright (c) 2003
-Stephen Zander <gibreel@debian.org>.
-Copyright (c) 2004 Jochen Friedrich <jochen@scram.de>
+Stephen Zander (gibreel@debian.org).
+Copyright (c) 2004 Jochen Friedrich (jochen@scram.de)
 [libnet-snmp-perl-6.0.1/debian/copyright]
 
 "libnet-snmp-perl-6.0.1/LICENSE":
 
 [libnet-snmp-perl-6.0.1/LICENSE]
-This software is copyright (c) 2010 by David M. Town <dtown@cpan.org>.
+This software is copyright (c) 2010 by David M. Town (dtown@cpan.org).
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
@@ -16004,7 +16006,7 @@ b) the "Artistic License"
 
 --- The GNU General Public License, Version 1, February 1989 ---
 
-This software is Copyright (c) 2010 by David M. Town <dtown@cpan.org>.
+This software is Copyright (c) 2010 by David M. Town (dtown@cpan.org).
 
 This is free software, licensed under:
 
@@ -16213,8 +16215,8 @@ attach them to the start of each source file to most effectively convey
 the exclusion of warranty; and each file should have at least the
 "copyright" line and a pointer to where the full notice is found.
 
-    <one line to give the program's name and a brief idea of what it does.>
-    Copyright (C) 19yy  <name of author>
+    (one line to give the program's name and a brief idea of what it does.)
+    Copyright (C) 19yy  (name of author)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -16254,7 +16256,7 @@ necessary.  Here a sample; alter the names:
   program `Gnomovision' (a program to direct compilers to make passes
   at assemblers) written by James Hacker.
 
-  <signature of Ty Coon>, 1 April 1989
+  (signature of Ty Coon), 1 April 1989
   Ty Coon, President of Vice
 
 That's all there is to it!
@@ -16262,7 +16264,7 @@ That's all there is to it!
 
 --- The Artistic License 1.0 ---
 
-This software is Copyright (c) 2010 by David M. Town <dtown@cpan.org>.
+This software is Copyright (c) 2010 by David M. Town (dtown@cpan.org).
 
 This is free software, licensed under:
 
@@ -16377,40 +16379,40 @@ The End
 [libnet-ssleay-perl-1.64/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: Net-SSLeay
-Upstream-Contact: Florian Ragwitz <rafl@debian.org>
- Mike McCauley <mikem@airspayce.com>
+Upstream-Contact: Florian Ragwitz (rafl@debian.org)
+ Mike McCauley (mikem@airspayce.com)
 Source: https://metacpan.org/release/Net-SSLeay
 
 Files: *
-Copyright: 1996-2003, Sampo Kellomaki <sampo@iki.fi>
- 2005-2006, Florian Ragwitz <rafl@debian.org>
- 2005-2006, Mike McCauley <mikem@airspayce.com>
+Copyright: 1996-2003, Sampo Kellomaki (sampo@iki.fi)
+ 2005-2006, Florian Ragwitz (rafl@debian.org)
+ 2005-2006, Mike McCauley (mikem@airspayce.com)
 License: OpenSSL
 
 Files: ppport.h
-Copyright: 2004-2010, Marcus Holland-Moritz <mhx-cpan@gmx.net>
- 2001, Paul Marquess <pmqs@cpan.org> (Version 2.x)
- 1999, Kenneth Albanowski <kjahds@kjahds.com> (Version 1.x)
+Copyright: 2004-2010, Marcus Holland-Moritz (mhx-cpan@gmx.net)
+ 2001, Paul Marquess (pmqs@cpan.org) (Version 2.x)
+ 1999, Kenneth Albanowski (kjahds@kjahds.com) (Version 1.x)
 License: Artistic or GPL-1+
 
 Files: inc/Module/*
 Copyright:
- 2002-2012, Adam Kennedy <adamk@cpan.org>
- 2002-2012, Audrey Tang <autrijus@autrijus.org>
- 2002-2012, Brian Ingerson <ingy@cpan.org>
+ 2002-2012, Adam Kennedy (adamk@cpan.org)
+ 2002-2012, Audrey Tang (autrijus@autrijus.org)
+ 2002-2012, Brian Ingerson (ingy@cpan.org)
 License: Artistic or GPL-1+
 
 Files: debian/*
-Copyright: 1999-2001, Gergely Madarasz <gorgo@caesar.elte.hu>
- 2001, Remi Lefebvre <remi@debian.org>
- 2001-2004, Stephen Zander <gibreel@debian.org>
- 2002, Brendan O'Dea <bod@debian.org>
- 2005, Steve Kemp <skx@debian.org>
- 2005-2006, Florian Ragwitz <rafl@debian.org>
- 2008, Niko Tyni <ntyni@debian.org>
- 2008, Damyan Ivanov <dmn@debian.org>
- 2008-2014, gregor herrmann <gregoa@debian.org>
- 2010, Franck Joncourt <franck@debian.org>
+Copyright: 1999-2001, Gergely Madarasz (gorgo@caesar.elte.hu)
+ 2001, Remi Lefebvre (remi@debian.org)
+ 2001-2004, Stephen Zander (gibreel@debian.org)
+ 2002, Brendan O'Dea (bod@debian.org)
+ 2005, Steve Kemp (skx@debian.org)
+ 2005-2006, Florian Ragwitz (rafl@debian.org)
+ 2008, Niko Tyni (ntyni@debian.org)
+ 2008, Damyan Ivanov (dmn@debian.org)
+ 2008-2014, gregor herrmann (gregoa@debian.org)
+ 2010, Franck Joncourt (franck@debian.org)
 License: Artistic or GPL-1+
 
 License: OpenSSL
@@ -16579,18 +16581,18 @@ License: GPL-1+
 [libnet-telnet-perl-3.04/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Source: https://metacpan.org/release/Net-Telnet
-Upstream-Contact: Jay Rogers <jay@rgrs.com>
+Upstream-Contact: Jay Rogers (jay@rgrs.com)
 Upstream-Name: Net-Telnet
 
 Files: *
-Copyright: 1997, 2000, 2002, 2013, Jay Rogers <jay@rgrs.com>
+Copyright: 1997, 2000, 2002, 2013, Jay Rogers (jay@rgrs.com)
 License: 
 
 Files: debian/*
-Copyright: 1999, 2000, Michael Alan Dorman <mdorman@debian.org>
- 2003, 2007, Gunnar Wolf <gwolf@debian.org>
- 2003, Daniel Schepler <schepler@debian.org>
- 2013, Florian Schlichting <fsfs@debian.org>
+Copyright: 1999, 2000, Michael Alan Dorman (mdorman@debian.org)
+ 2003, 2007, Gunnar Wolf (gwolf@debian.org)
+ 2003, Daniel Schepler (schepler@debian.org)
+ 2013, Florian Schlichting (fsfs@debian.org)
 License: Artistic or GPL-1+
 
 License: Artistic
@@ -16616,8 +16618,8 @@ License: GPL-1+
 "libpaper-1.1.24+nmu3/debian/copyright":
 
 [libpaper-1.1.24+nmu3/debian/copyright]
-Copyright (C) 1995, 1996, Yves Arrouye <yves@debian.org>
-              2000, 2001, Adrian Bunk  <bunk@fs.tum.de>
+Copyright (C) 1995, 1996, Yves Arrouye (yves@debian.org)
+              2000, 2001, Adrian Bunk  (bunk@fs.tum.de)
 
 Contributions during 2001-2006 are from Debian maintainers:
 Stephen Zander
@@ -16639,20 +16641,20 @@ found in the file GPL of the source package, or in
 [librabbitmq-0.4.1/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: librabbitmq-c
-Upstream-Contact: Tony Garnock-Jones <tonygarnockjones@gmail.com>
+Upstream-Contact: Tony Garnock-Jones (tonygarnockjones@gmail.com)
 Source: https://github.com/alanxz/rabbitmq-c
 
 Files: debian/*
-Copyright: 2010, Monty Taylor <mordred@inaugust.com>
-           2013, Michael Fladischer <FladischerMichael@fladi.at>
+Copyright: 2010, Monty Taylor (mordred@inaugust.com)
+           2013, Michael Fladischer (FladischerMichael@fladi.at)
 License: MIT
 
 Files: cmake/CMakePushCheckState.cmake
-Copyright: 2006-2011, Alexander Neundorf <neundorf@kde.org>
+Copyright: 2006-2011, Alexander Neundorf (neundorf@kde.org)
 License: BSD-Kitware-Insight
 
 Files: cmake/InstallMacros.cmake
-Copyright: 2006-2011, Mathieu Malaterre <mathieu.malaterre@gmail.com>
+Copyright: 2006-2011, Mathieu Malaterre (mathieu.malaterre@gmail.com)
 License: BSD-Author
 
 Files: librabbitmq/win32/msinttypes/stdint.h
@@ -16661,7 +16663,7 @@ Copyright: 2006-2008, Alexander Chemeris
 License: BSD-Author
 
 Files: m4/ax_python_module.m4:
-Copyright: 2008, Andrew Collier <colliera@ukzn.ac.za>
+Copyright: 2008, Andrew Collier (colliera@ukzn.ac.za)
 License: all-permissive
  Copying and distribution of this file, with or without modification,
  are permitted in any medium without royalty provided the copyright
@@ -16787,14 +16789,14 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 "libsigsegv-2.10/debian/copyright":
 
 [libsigsegv-2.10/debian/copyright]
-This package was debianized by Will Newton <will@debian.org> on
+This package was debianized by Will Newton (will@debian.org) on
 Sat, 14 Sep 2002 01:02:45 +0100.
 
 It was downloaded from http://sourceforge.net/projects/libsigsegv
 
-Upstream Author: Bruno Haible <bruno@clisp.org>
+Upstream Author: Bruno Haible (bruno@clisp.org)
 
-Copyright: Copyright (C) 2002  Bruno Haible <bruno@clisp.org>
+Copyright: Copyright (C) 2002  Bruno Haible (bruno@clisp.org)
 
  Distributed under the terms of the GNU General Public Licence.
    See /usr/share/common-licenses/GPL
@@ -16808,18 +16810,18 @@ Copyright: Copyright (C) 2002  Bruno Haible <bruno@clisp.org>
 [libsys-hostname-long-perl-1.4/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: Sys-Hostname-Long
-Upstream-Contact: Scott Penrose <scottp@dd.com.au>
+Upstream-Contact: Scott Penrose (scottp@dd.com.au)
 Source: https://metacpan.org/release/Sys-Hostname-Long/
 
 Files: *
-Copyright: 2001, Scott Penrose <scottp@dd.com.au>
+Copyright: 2001, Scott Penrose (scottp@dd.com.au)
 License: Artistic or GPL-1+
 
 Files: debian/*
-Copyright: 2004, 2005, Chip Salzenberg <chip@debian.org>
- 2006, Krzysztof Krzyzaniak (eloy) <eloy@debian.org>
- 2008, gregor herrmann <gregoa@debian.org>
- 2011, Fabrizio Regalli <fabreg@fabreg.it>
+Copyright: 2004, 2005, Chip Salzenberg (chip@debian.org)
+ 2006, Krzysztof Krzyzaniak (eloy) (eloy@debian.org)
+ 2008, gregor herrmann (gregoa@debian.org)
+ 2011, Fabrizio Regalli (fabreg@fabreg.it)
 License: Artistic or GPL-1+
 
 License: Artistic
@@ -16847,7 +16849,7 @@ License: GPL-1+
 [libterm-readkey-perl-2.32/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Source: https://metacpan.org/release/TermReadKey
-Upstream-Contact: Jonathan Stowe <jns@gellyfish.co.uk>
+Upstream-Contact: Jonathan Stowe (jns@gellyfish.co.uk)
 Upstream-Name: TermReadKey
 
 Files: *
@@ -16856,20 +16858,20 @@ Copyright: 1994-1999, Kenneth Albanowski
 License: termreadkey or Artistic or GPL-1+
 
 Files: ppport.h
-Copyright: 2004-2010, Marcus Holland-Moritz <mhx-cpan@gmx.net>
- 2001, Paul Marquess <pmqs@cpan.org> (Version 2.x)
- 1999, Kenneth Albanowski <kjahds@kjahds.com> (Version 1.x)
+Copyright: 2004-2010, Marcus Holland-Moritz (mhx-cpan@gmx.net)
+ 2001, Paul Marquess (pmqs@cpan.org) (Version 2.x)
+ 1999, Kenneth Albanowski (kjahds@kjahds.com) (Version 1.x)
 License: Artistic or GPL-1+
 
 Files: debian/*
-Copyright: 1997, 1998, Kai Henningsen <kai@khms.westfalen.de>
- 1999, Darren Stalder <torin@daft.com>
- 2001, Raphael Hertzog <hertzog@debian.org>
- 2002, Joerg Jaspert <joerg@debian.org>
- 2002, Josselin Mouette <joss@debian.org>
- 2005, 2006, Gunnar Wolf <gwolf@debian.org>
- 2008, Damyan Ivanov <dmn@debian.org>
- 2013, Florian Schlichting <fsfs@debian.org>
+Copyright: 1997, 1998, Kai Henningsen (kai@khms.westfalen.de)
+ 1999, Darren Stalder (torin@daft.com)
+ 2001, Raphael Hertzog (hertzog@debian.org)
+ 2002, Joerg Jaspert (joerg@debian.org)
+ 2002, Josselin Mouette (joss@debian.org)
+ 2005, 2006, Gunnar Wolf (gwolf@debian.org)
+ 2008, Damyan Ivanov (dmn@debian.org)
+ 2013, Florian Schlichting (fsfs@debian.org)
 License: Artistic or GPL-1+
 
 License: termreadkey
@@ -16901,7 +16903,7 @@ License: GPL-1+
 [libunistring-0.9.3/debian/copyright]
 Format: http://svn.debian.org/wsvn/dep/web/deps/dep5.mdwn?op=file&rev=202
 Upstream-Name: libunistring
-Upstream-Contact: Bruno Haible <bruno@clisp.org>
+Upstream-Contact: Bruno Haible (bruno@clisp.org)
 Source: http://ftp.gnu.org/gnu/libunistring/
 
 Files: lib/*
@@ -16937,9 +16939,9 @@ Copyright: 1995-2009, Free Software Foundation, Inc.
 License: GPL-2+
 
 Files: build-aux/texi2html
-Copyright: 1999-2005, Patrice Dumas <dumas@centre-cired.fr>,
-           1999-2005, Derek Price <derek@ximbiot.com>,
-           1999-2005, Adrian Aichner <adrian@xemacs.org>
+Copyright: 1999-2005, Patrice Dumas (dumas@centre-cired.fr),
+           1999-2005, Derek Price (derek@ximbiot.com),
+           1999-2005, Adrian Aichner (adrian@xemacs.org)
 License: GPL-2+
 
 Files: build-aux/ltmain.sh
@@ -16976,7 +16978,7 @@ License: MIT
  tium.
 
 Files: debian/*
-Copyright: 2009, Andreas Rottmann <rotty@debian.org>
+Copyright: 2009, Andreas Rottmann (rotty@debian.org)
 License: GPL-3+
 
 License: LGPL-3+
@@ -16991,7 +16993,7 @@ License: LGPL-3+
  Lesser General Public License for more details.
  .
  You should have received a copy of the GNU Lesser General Public License
- along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ along with this program.  If not, see (http://www.gnu.org/licenses/).
  .
  On Debian systems the full text of the GNU Lesser General Public
  License version 3 can be found in the file
@@ -17009,7 +17011,7 @@ License: GPL-3+
  GNU General Public License for more details.
  .
  You should have received a copy of the GNU General Public License
- along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ along with this program.  If not, see (http://www.gnu.org/licenses/).
  .
  On Debian systems the full text of the GNU General Public License
  version 3 can be found in the file
@@ -17056,13 +17058,13 @@ License: GFDL-1.2+
 [libwebp-0.4.0/debian/copyright]
 This work was packaged for Debian by:
 
-    Jeff Breidenbach <jab@debian.org> on Mon, 28 Feb 2011 17:25:17 -0800
+    Jeff Breidenbach (jab@debian.org) on Mon, 28 Feb 2011 17:25:17 -0800
 
-It was downloaded from <http://webp.googlecode.com>
+It was downloaded from (http://webp.googlecode.com)
 
 Upstream Author:
 
-    Pascal Massimino <pascal.massimino@gmail.com>
+    Pascal Massimino (pascal.massimino@gmail.com)
 
 Copyright:
 
@@ -17100,7 +17102,7 @@ License:
     
 The Debian packaging is:
 
-    Copyright (C) 2011 Jeff Breidenbach <jab@debian.org>
+    Copyright (C) 2011 Jeff Breidenbach (jab@debian.org)
 
 and is licensed under Apache-2.0
 see `/usr/share/common-licenses/Apache-2.0'.
@@ -17150,13 +17152,13 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 Format-Specification: http://dep.debian.net/deps/dep5/
 
 Files: debian/*
-Copyright: © 2008, David Paleino <d.paleino@gmail.com>
- © 2006, Matthew Garrett <mjg59@srcf.ucam.org>
+Copyright: © 2008, David Paleino (d.paleino@gmail.com)
+ © 2006, Matthew Garrett (mjg59@srcf.ucam.org)
 License: MIT
 
 Files: *
-Copyright: © 2005-2006, Matthew Garrett <mjg59@srcf.ucam.org>
- © 2005-2006, Jonathan McDowell <noodles@earth.li>
+Copyright: © 2005-2006, Matthew Garrett (mjg59@srcf.ucam.org)
+ © 2005-2006, Jonathan McDowell (noodles@earth.li)
  © 1998, Josh Vanderhoof
 License: MIT
 
@@ -17862,24 +17864,24 @@ SUCH DAMAGE.
  *
  *   Modified to work with the IDT7721 nicstar -- AAL5 (tested) only.
  *
- * R. D. Rechenmacher <ron@fnal.gov>, Aug. 6, 1997
+ * R. D. Rechenmacher (ron@fnal.gov), Aug. 6, 1997
  *
  * Linux driver for the IDT77201 NICStAR PCI ATM controller.
  * PHY component is expected to be 155 Mbps S/UNI-Lite or IDT 77155;
  * see init_nicstar() for PHY initialization to change this. This driver
  * expects the Linux ATM stack to support scatter-gather lists 
- * (skb->atm.iovcnt != 0) for Rx skb's passed to vcc->push.
+ * (skb-)atm.iovcnt != 0) for Rx skb's passed to vcc-)push.
  *
  * Implementing minimal-copy of received data:
  *   IDT always receives data into a small buffer, then large buffers
  *     as needed. This means that data must always be copied to create
  *     the linear buffer needed by most non-ATM protocol stacks (e.g. IP)
  *     Fix is simple: make large buffers large enough to hold entire
- *     SDU, and leave <small_buffer_data> bytes empty at the start. Then
+ *     SDU, and leave (small_buffer_data) bytes empty at the start. Then
  *     copy small buffer contents to head of large buffer.
  *   Trick is to avoid fragmenting Linux, due to need for a lot of large
  *     buffers. This is done by 2 things:
- *       1) skb->destructor / skb->atm.recycle_buffer
+ *       1) skb-)destructor / skb-)atm.recycle_buffer
  *            combined, allow nicstar_free_rx_skb to be called to
  *            recycle large data buffers
  *       2) skb_clone of received buffers
@@ -17995,7 +17997,7 @@ Copyright: 2001, 2003, 2005 IBM Corp.
 License: LGPL-2.1+
 
 Files: src/withsctp/*
-Copyright: 2003 La Monte HP Yarroll <piggy@acm.org>
+Copyright: 2003 La Monte HP Yarroll (piggy@acm.org)
 License: BSD-3-clause
 
 License: GPL-2.0+
@@ -18010,7 +18012,7 @@ License: GPL-2.0+
  GNU General Public License for more details.
  .
  You should have received a copy of the GNU General Public License
- along with this program. If not, see <http://www.gnu.org/licenses/>
+ along with this program. If not, see (http://www.gnu.org/licenses/)
  .
  On Debian systems, the complete text of the GNU General Public
  License version 2 can be found in "/usr/share/common-licenses/GPL-2".
@@ -18027,7 +18029,7 @@ License: LGPL-2.1+
  Lesser General Public License for more details.
  .
  You should have received a copy of the GNU General Public License
- along with this program. If not, see <http://www.gnu.org/licenses/>.
+ along with this program. If not, see (http://www.gnu.org/licenses/).
  .
  On Debian systems, the complete text of the GNU Lesser General
  Public License can be found in "/usr/share/common-licenses/LGPL-2.1".
@@ -18077,7 +18079,7 @@ License: LGPLv2.1+
  Version 2.1 may be found in '/usr/share/common-licenses/LGPL-2.1'.
 
 Files: debian/*
-Copyright: Copyright (C) 2008-2014, Sandro Tosi <morph@debian.org>
+Copyright: Copyright (C) 2008-2014, Sandro Tosi (morph@debian.org)
 License: LGPLv2.1+
  On Debian systems, the complete text of the GNU Lesser General Public License
  Version 2.1 may be found in '/usr/share/common-licenses/LGPL-2.1'.
@@ -18091,11 +18093,11 @@ License: LGPLv2.1+
 [lsscsi-0.27/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: lsscsi
-Upstream-Contact: Doug Gilbert <dgilbert@interlog.com>
+Upstream-Contact: Doug Gilbert (dgilbert@interlog.com)
 Source: http://sg.danny.cz/scsi/lsscsi.html
 
 Files: *
-Copyright: 2003-2005 Doug Gilbert <dgilbert@interlog.com>
+Copyright: 2003-2005 Doug Gilbert (dgilbert@interlog.com)
 License: GPL-2+
  This program is free software; you can redistribute it
  and/or modify it under the terms of the GNU General Public
@@ -18119,7 +18121,7 @@ License: GPL-2+
  `/usr/share/common-licenses/GPL-2'.
 
 Files: debian/*
-Copyright: Copyright 2005 Matt Taggart <taggart@debian.org>
+Copyright: Copyright 2005 Matt Taggart (taggart@debian.org)
 License: GPL-2+
  This program is free software; you can redistribute it
  and/or modify it under the terms of the GNU General Public
@@ -18205,7 +18207,7 @@ Copyright: 1995-2013 Free Software Foundation, Inc.
 License: LGPL-2.1+
 
 Files: debian/*
-Copyright: 2011-2014 Daniel Baumann <daniel@debian.org>
+Copyright: 2011-2014 Daniel Baumann (daniel@debian.org)
 License: GPL-2+
 
 License: BSD-2-clause
@@ -18241,7 +18243,7 @@ License: GPL-2+
  GNU General Public License for more details.
  .
  You should have received a copy of the GNU General Public License
- along with this program. If not, see <http://www.gnu.org/licenses/>.
+ along with this program. If not, see (http://www.gnu.org/licenses/).
  .
  The complete text of the GNU General Public License
  can be found in /usr/share/common-licenses/GPL-2 file.
@@ -18258,7 +18260,7 @@ License: LGPL-2.1+
  GNU Lesser General Public License for more details.
  .
  You should have received a copy of the GNU Lesser General Public License
- along with this program. If not, see <http://www.gnu.org/licenses/>.
+ along with this program. If not, see (http://www.gnu.org/licenses/).
  .
  The complete text of the GNU Lesser General Public License
  can be found in /usr/share/common-licenses/LGPL-2.1 file.
@@ -18270,13 +18272,13 @@ License: LGPL-2.1+
 "lzo2-2.06/debian/copyright":
 
 [lzo2-2.06/debian/copyright]
-This package was debianized by Paolo Molaro <lupus@debian.org> on
+This package was debianized by Paolo Molaro (lupus@debian.org) on
 13 Feb 1998.  Since 09 Nov 2004 it has been maintained by Peter
-Eisentraut <petere@debian.org>.
+Eisentraut (petere@debian.org).
 
-It was downloaded from <http://www.oberhumer.com/opensource/lzo/download/>.
+It was downloaded from (http://www.oberhumer.com/opensource/lzo/download/).
 
-Upstream author: Markus F.X.J. Oberhumer <markus@oberhumer.com>
+Upstream author: Markus F.X.J. Oberhumer (markus@oberhumer.com)
 
 Copyright:
 
@@ -18298,13 +18300,13 @@ the file /usr/share/common-licenses/GPL-2.
 "lzop-1.03/debian/copyright":
 
 [lzop-1.03/debian/copyright]
-This package was debianized by Paolo Molaro <lupus@debian.org> on
+This package was debianized by Paolo Molaro (lupus@debian.org) on
 Sat, 21 Feb 1998 11:49:27 +0100.  Since Thu, 16 Sep 2004 08:49:07 +0200
-it has been maintainer by Peter Eisentraut <petere@debian.org>.
+it has been maintainer by Peter Eisentraut (petere@debian.org).
 
 It was downloaded from http://www.lzop.org/download/.
 
-Upstream author: Markus F.X.J. Oberhumer <markus@oberhumer.com>
+Upstream author: Markus F.X.J. Oberhumer (markus@oberhumer.com)
 
 Copyright:
 
@@ -18326,12 +18328,12 @@ file /usr/share/common-licenses/GPL-2.
 "m2crypto-0.21.1/debian/copyright":
 
 [m2crypto-0.21.1/debian/copyright]
-This package was debianized by Dima Barsky <dima@debian.org> on
+This package was debianized by Dima Barsky (dima@debian.org) on
 Sun, 28 Mar 2004 19:42:33 +0100.
 
-It was downloaded from <http://pypi.python.org/packages/source/M/M2Crypto/M2Crypto-0.21.1.tar.gz>
+It was downloaded from (http://pypi.python.org/packages/source/M/M2Crypto/M2Crypto-0.21.1.tar.gz)
 
-Upstream Author: Ng Pheng Siong <ngps@netmemetic.com>
+Upstream Author: Ng Pheng Siong (ngps@netmemetic.com)
 Current upstream maintainer: Heikki Toivonen (heikki@osafoundation.org)
 
 Copyright (c) 1999-2003 Ng Pheng Siong. All rights reserved.
@@ -18375,8 +18377,8 @@ License: Apache-2.0
  limitations under the License.
 
 Files: demo/tinderbox/killableprocess.py
-Copyright: ©2003-2004 by Peter Astrand <astrand@lysator.liu.se>
- © 2006 by the Mozilla Foundation <http://www.mozilla.org/>
+Copyright: ©2003-2004 by Peter Astrand (astrand@lysator.liu.se)
+ © 2006 by the Mozilla Foundation (http://www.mozilla.org/)
 License: killableprocess
  By obtaining, using, and/or copying this software and/or its
  associated documentation, you agree that you have read, understood,
@@ -18400,7 +18402,7 @@ License: killableprocess
  WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 Files: demo/tinderbox/winprocess.py
-Copyright: © 2006 the Mozilla Foundation <http://www.mozilla.org/>
+Copyright: © 2006 the Mozilla Foundation (http://www.mozilla.org/)
 License: MIT
  Permission is hereby granted, free of charge, to any person obtaining a
  copy of this software and associated documentation files (the "Software"),
@@ -18564,7 +18566,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 "makedumpfile-1.5.6/debian/copyright":
 
 [makedumpfile-1.5.6/debian/copyright]
-This package was debianized by Ben Collins <ben.collins@canonical.com> on
+This package was debianized by Ben Collins (ben.collins@canonical.com) on
 Thu, 19 Jun 2008 12:03:09 -0400
 
 It was downloaded from:
@@ -18606,7 +18608,7 @@ License version 2 can be found in `/usr/share/common-licenses/GPL-2'.
 "markupsafe-0.23/debian/copyright":
 
 [markupsafe-0.23/debian/copyright]
-This package was debianized by Piotr Ożarowski <piotr@debian.org> on
+This package was debianized by Piotr Ożarowski (piotr@debian.org) on
 Wed, 23 Jun 2010 21:26:14 +0200.
 
 It was downloaded from http://pypi.python.org/pypi/MarkupSafe
@@ -18646,7 +18648,7 @@ SOFTWARE AND DOCUMENTATION, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
 DAMAGE.
 
 
-The Debian packaging is © 2010, Piotr Ożarowski <piotr@debian.org> and
+The Debian packaging is © 2010, Piotr Ożarowski (piotr@debian.org) and
 is licensed under the same license.
 [markupsafe-0.23/debian/copyright]
 
@@ -18656,19 +18658,19 @@ is licensed under the same license.
 "mdadm-3.3/debian/copyright":
 
 [mdadm-3.3/debian/copyright]
-This package was debianized by Mario Jou/3en <joussen@debian.org> on
+This package was debianized by Mario Jou/3en (joussen@debian.org) on
 Wed, 26 Dec 2001 17:07:09 +0100.
-Martin F. Krafft <madduck@debian.org> took over on
+Martin F. Krafft (madduck@debian.org) took over on
 Tue, 16 May 2006 13:21:06 -0500
 
 The mdadm source was downloaded from
   http://www.kernel.org/pub/linux/utils/raid/mdadm/
 
-Upstream Author: Neil Brown <neilb@suse.de>
+Upstream Author: Neil Brown (neilb@suse.de)
 
-Copyright © 2001-2006 Neil Brown <neilb@suse.de>
-Packaging copyright © 2001-2005 Mario Jou/3en <joussen@debian.org>
-Packaging copyright © 2005-2008 Martin F. Krafft <madduck@debian.org>
+Copyright © 2001-2006 Neil Brown (neilb@suse.de)
+Packaging copyright © 2001-2005 Mario Jou/3en (joussen@debian.org)
+Packaging copyright © 2005-2008 Martin F. Krafft (madduck@debian.org)
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -18685,7 +18687,7 @@ Public License can be found in '/usr/share/common-licenses/GPL'.
 "mochikit-1.4.2/debian/copyright":
 
 [mochikit-1.4.2/debian/copyright]
-Author: Bob Ippolito <bob@redivi.com>
+Author: Bob Ippolito (bob@redivi.com)
 Download: http://www.mochikit.com/download.html
 
 Files: *
@@ -18960,8 +18962,8 @@ License: MIT
 
 Files: debian/*
 Copyright:
- (C) 2008 Marcelo Jorge Vieira <metal@alucinados.com>
- (C) 2008 Daniel Baumann <daniel@debian.org>
+ (C) 2008 Marcelo Jorge Vieira (metal@alucinados.com)
+ (C) 2008 Daniel Baumann (daniel@debian.org)
 License: GPL-3+
  This program is free software: you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -18974,7 +18976,7 @@ License: GPL-3+
  GNU General Public License for more details.
  .
  You should have received a copy of the GNU General Public License
- along with this program. If not, see <http://www.gnu.org/licenses/>.
+ along with this program. If not, see (http://www.gnu.org/licenses/).
  .
  On Debian systems, the complete text of the GNU General Public License
  can be found in /usr/share/common-licenses/GPL-3 file.
@@ -18994,9 +18996,9 @@ The original source can always be found at:
   http://git.debian.org/?p=collab-maint/module-assistant.git
 
 Files: *
-Copyright: © 2003-2008 Eduard Bloch <blade@debian.org>
-           © 2009 Cyril Brulebois <kibi@debian.org>
-           © 2013-2014 Andreas Beckmann <anbe@debian.org>
+Copyright: © 2003-2008 Eduard Bloch (blade@debian.org)
+           © 2009 Cyril Brulebois (kibi@debian.org)
+           © 2013-2014 Andreas Beckmann (anbe@debian.org)
 License: GPL-2+
  On Debian systems the full text of the GNU General Public License
  version 2 can be found in the /usr/share/common-licenses/GPL-2 file.
@@ -19005,7 +19007,7 @@ License: GPL-2+
 "module-assistant-0.11.7/templates/debian/copyright":
 
 [module-assistant-0.11.7/templates/debian/copyright]
-This package was debianized by Eduard Bloch <blade@debian.org> on
+This package was debianized by Eduard Bloch (blade@debian.org) on
 Sat,  5 Mar 2005 10:01:57 +0100.
 
 It was downloaded from http://rootfs.net/
@@ -19050,7 +19052,7 @@ License: Apache-2.0
  limitations under the License.
 
 Files: debian/*
-Copyright: 2011 Robert S. Edmonds <edmonds@debian.org>
+Copyright: 2011 Robert S. Edmonds (edmonds@debian.org)
 License: GPL-2+
  This package is free software; you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -19063,7 +19065,7 @@ License: GPL-2+
  GNU General Public License for more details.
  .
  You should have received a copy of the GNU General Public License
- along with this program. If not, see <http://www.gnu.org/licenses/>
+ along with this program. If not, see (http://www.gnu.org/licenses/)
  .
  On Debian systems, the complete text of the GNU General
  Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
@@ -19075,13 +19077,13 @@ License: GPL-2+
 "mtools-4.0.18/debian/copyright":
 
 [mtools-4.0.18/debian/copyright]
-This package was originally debianized by Adrian Bunk <bunk@fs.tum.de>
+This package was originally debianized by Adrian Bunk (bunk@fs.tum.de)
 It has been subsequently taken over by Luis Bustamante
-<luferbu@fluidsignal.com>
+(luferbu@fluidsignal.com)
 
 It was downloaded from http://mtools.linux.lu/mtools/
 
-Upstream Author: Alain Knaff <Alain@linux.lu>
+Upstream Author: Alain Knaff (Alain@linux.lu)
 
 Copyright:
 
@@ -19115,16 +19117,16 @@ Copyright:
 
 [nagios-images-0.8/debian/copyright]
 Format-Specification: http://wiki.debian.org/Proposals/CopyrightFormat?action=recall&rev=196
-Packaged-By: Debian Nagios Maintainer Group <pkg-nagios-devel@lists.alioth.debian.org>
+Packaged-By: Debian Nagios Maintainer Group (pkg-nagios-devel@lists.alioth.debian.org)
 Packaged-Date: Thu,  6 Oct 2005 19:12:42 +0200
 Upstream-Source: ftp://ftp.debian.org/dists/unstable/main/source/
 
 Copyright (C) 2005  Debian Nagios Maintainer Group
-Copyright Bernhard Albler <balbler@nts.at>
-Copyright Cook Garry <GWCOOK@mactec.com>
-Copyright Didier LIROULET <didier.liroulet@tiscali.fr>
-Copyright Brad Werschler <bwerschler@sjsd.net>
-Copyright Altinity <http://www.altinity.com/nagiosdownloads>
+Copyright Bernhard Albler (balbler@nts.at)
+Copyright Cook Garry (GWCOOK@mactec.com)
+Copyright Didier LIROULET (didier.liroulet@tiscali.fr)
+Copyright Brad Werschler (bwerschler@sjsd.net)
+Copyright Altinity (http://www.altinity.com/nagiosdownloads)
 
 License:
 
@@ -19189,7 +19191,7 @@ License: GPL-2+
 
 Files: include/nilfs_fs.h
 Copyright: 2005-2008 Nippon Telegraph and Telephone Corporation
-           1992-1995 Remy Card <card@masi.ibp.fr>
+           1992-1995 Remy Card (card@masi.ibp.fr)
            1991-1992 Linus Torvalds
 License: GPL-2
 Comment:
@@ -19197,25 +19199,25 @@ Comment:
  from the Linux kernel sources.
 
 Files: lib/crc32.c
-Copyright: 2010 Jiro SEKIBA <jir@unicus.jp>
+Copyright: 2010 Jiro SEKIBA (jir@unicus.jp)
            2000 Johan Billing
 License: LGPL-2.1
 
 Files: sbin/mount/realpath.c
-Copyright: 1993 Rick Sladkey <jrs@world.std.com>
+Copyright: 1993 Rick Sladkey (jrs@world.std.com)
 License: GPL-2+
  sbin/mount/realpath.c is taken from mount/realpath.c
  of the util-linux sources.
 
 Files: scripts/checkpatch.pl
 Copyright: 2001      Dave Jones
-           2005      Joel Schopp <jschopp@austin.ibm.com>
-           2007-2008 Andy Whitcroft <apw@uk.ibm.com>
-           2008-2010 Andy Whitcroft <apw@canonical.com>
+           2005      Joel Schopp (jschopp@austin.ibm.com)
+           2007-2008 Andy Whitcroft (apw@uk.ibm.com)
+           2008-2010 Andy Whitcroft (apw@canonical.com)
 License: GPL-2
 
 Files: debian/*
-Copyright: 2008-2012 Daniel Baumann <daniel.baumann@progress-technologies.net>
+Copyright: 2008-2012 Daniel Baumann (daniel.baumann@progress-technologies.net)
 License: GPL-2+
 
 License: GPL-2
@@ -19229,7 +19231,7 @@ License: GPL-2
  GNU General Public License for more details.
  .
  You should have received a copy of the GNU General Public License
- along with this program. If not, see <http://www.gnu.org/licenses/>.
+ along with this program. If not, see (http://www.gnu.org/licenses/).
  .
  The complete text of the GNU General Public License
  can be found in /usr/share/common-licenses/GPL-2 file.
@@ -19246,7 +19248,7 @@ License: GPL-2+
  GNU General Public License for more details.
  .
  You should have received a copy of the GNU General Public License
- along with this program. If not, see <http://www.gnu.org/licenses/>.
+ along with this program. If not, see (http://www.gnu.org/licenses/).
  .
  The complete text of the GNU General Public License
  can be found in /usr/share/common-licenses/GPL-2 file.
@@ -19263,7 +19265,7 @@ License: LGPL-2.1
  GNU Lesser General Public License for more details.
  .
  You should have received a copy of the GNU Lesser General Public License
- along with this program. If not, see <http://www.gnu.org/licenses/>.
+ along with this program. If not, see (http://www.gnu.org/licenses/).
  .
  The complete text of the GNU Lesser General Public License
  can be found in /usr/share/common-licenses/LGPL-2 file.
@@ -19285,13 +19287,13 @@ Copyright: 2005-2006 Jason Pellerin
 License: LGPL
 
 Files: debian/*
-Copyright: 2006-2010 Gustavo Noronha Silva <kov@debian.org>,
-           2010 Charlie Smotherman <cjsmo@cableone.net>
+Copyright: 2006-2010 Gustavo Noronha Silva (kov@debian.org),
+           2010 Charlie Smotherman (cjsmo@cableone.net)
 License: LGPL
 
 Files: patch.py
 Copyright: 2008-2010 Anatoly Techtonik
-           2010 Alex Stewart <alex@foogod.com>
+           2010 Alex Stewart (alex@foogod.com)
 License: Expat
 
 Files: doc/manpage.py
@@ -19299,7 +19301,7 @@ Files: doc/manpage.py
 Copyright: Tim Peters (tim@python.org)
            Jim Fulton
            Edward Loper
-           Engelbert Gruber <grubert@users.sourceforge.net>
+           Engelbert Gruber (grubert@users.sourceforge.net)
 License: public-domain
  The authors explicitly placed their work in the public domain.
 
@@ -19348,13 +19350,13 @@ License: Expat
 [ntdb-1.0/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: ntdb
-Upstream-Contact: Rusty Russell <rusty@samba.org>
+Upstream-Contact: Rusty Russell (rusty@samba.org)
 Source: http://tdb.samba.org/
 
 Files: debian/*
 Copyright:
-  2001-2005 Marek Habersack <grendel@debian.org> on
-  2007-2012 Jelmer Vernooij <jelmer@samba.org>
+  2001-2005 Marek Habersack (grendel@debian.org) on
+  2007-2012 Jelmer Vernooij (jelmer@samba.org)
 License: LGPL-3+
  Debian packaging is licensed under the GNU Lesser General Public License,
  version 3 or later. The text of the license is available on Debian
@@ -19382,7 +19384,7 @@ Copyright:
   Copyright (c) Jeremy Allison	               2000-2003,2007
   Copyright (c) PostgreSQL Global Development Group 1996-2007
   Copyright (c) The Regents of the University of California 1994
-  Copyright (c) Michael Adam <obnox@samba.org> 2008
+  Copyright (c) Michael Adam (obnox@samba.org) 2008
   Copyright (c) Patrick Powell                 1995
   Copyright (c) Free Software Foundation, Inc. 1991-2001
   Copyright (c) Jelmer Vernooij                2006-2009
@@ -19424,7 +19426,7 @@ License:
 
 Files: pytdb.c
 Copyright:
-  Copyright (c) Tim Potter <tpot@samba.org>    2004-2006
+  Copyright (c) Tim Potter (tpot@samba.org)    2004-2006
   Copyright (c) Jelmer Vernooij                2006-2008
   Copyright (C) Rusty Russell                  2011
 License:
@@ -19485,8 +19487,8 @@ Copyright: 2000-2013 ntfs-3g Development Team
 License: LGPL-2+
 
 Files: debian/*
-Copyright: 2006-2010 Adam Cecile <gandalf@le-vert.net>
-           2011-2014 Daniel Baumann <mail@daniel-baumann.ch>
+Copyright: 2006-2010 Adam Cecile (gandalf@le-vert.net)
+           2011-2014 Daniel Baumann (mail@daniel-baumann.ch)
 License: GPL-2+
 
 License: GPL-2+
@@ -19501,7 +19503,7 @@ License: GPL-2+
  GNU General Public License for more details.
  .
  You should have received a copy of the GNU General Public License
- along with this program. If not, see <http://www.gnu.org/licenses/>.
+ along with this program. If not, see (http://www.gnu.org/licenses/).
  .
  The complete text of the GNU General Public License
  can be found in /usr/share/common-licenses/GPL-2 file.
@@ -19518,7 +19520,7 @@ License: LGPL-2+
  GNU Lesser General Public License for more details.
  .
  You should have received a copy of the GNU Lesser General Public License
- along with this program. If not, see <http://www.gnu.org/licenses/>.
+ along with this program. If not, see (http://www.gnu.org/licenses/).
  .
  The complete text of the GNU Lesser General Public License
  can be found in /usr/share/common-licenses/LGPL-2 file.
@@ -19532,7 +19534,7 @@ License: LGPL-2+
 [openais-1.1.4/debian/copyright]
 This is the Ubuntu / Debian GNU/Linux prepackaged version of OpenAIS.
 
-Mainly packaged by Fabio M. Di Nitto <fabbione@ubuntu.com>.
+Mainly packaged by Fabio M. Di Nitto (fabbione@ubuntu.com).
 
 Upstream: http://openais.org/
 
@@ -19617,14 +19619,14 @@ LICENCE from exec/crypto.c and .h:
 "openbios-ppc-1.1+svn1229/debian/copyright":
 
 [openbios-ppc-1.1+svn1229/debian/copyright]
-This package was debianized by Aurelien Jarno <aurel32@debian.org> on
+This package was debianized by Aurelien Jarno (aurel32@debian.org) on
 Thu, 08 Jan 2009 21:29:56 +0100.
 
 It was downloaded from http://www.openbios.org
 
 Upstream Authors:
-  Stefan Reinauer <stepan@openbios.net>
-  Samuel Rydh <samuel@ibrium.se>
+  Stefan Reinauer (stepan@openbios.net)
+  Samuel Rydh (samuel@ibrium.se)
 
 Copyright:
   Copyright (C) 1982, 1986, 1989, 1991-1998 The Regents of the University of California.
@@ -19633,38 +19635,38 @@ Copyright:
   Copyright (C) 1990-1992 Carnegie Mellon University
   Copyright (C) 1991, 1992 Linus Torvalds
   Copyright (C) 1991, 1992 Lars Wirzenius
-  Copyright (C) 1994-1997 David S. Miller <davem@caip.rutgers.edu>
+  Copyright (C) 1994-1997 David S. Miller (davem@caip.rutgers.edu)
   Copyright (C) 1995-1996 Cort Dougan (cort@cs.nmt.edu)
-  Copyright (C) 1995-1996 Gary Thomas <gdt@linuxppc.org>
+  Copyright (C) 1995-1996 Gary Thomas (gdt@linuxppc.org)
   Copyright (C) 1995-1996 Paul Mackerras
   Copyright (C) 1996-1998, 2001, 2003 Robert Leslie
   Copyright (C) 1996, 1999 Pete Zaitcev
   Copyright (C) 1996 Fujitsu Laboratories Limited
   Copyright (C) 1996 The Australian National University.
-  Copyright (C) 1998 Gerd Knorr <kraxel@goldbach.in-berlin.de>
-  Copyright (C) 1998, 1999 Kousuke Takai <tak@kmc.kyoto-u.ac.jp>
-  Copyright (C) 1998-2006 Stefan Reinauer <stepan@openbios.org>
+  Copyright (C) 1998 Gerd Knorr (kraxel@goldbach.in-berlin.de)
+  Copyright (C) 1998, 1999 Kousuke Takai (tak@kmc.kyoto-u.ac.jp)
+  Copyright (C) 1998-2006 Stefan Reinauer (stepan@openbios.org)
   Copyright (C) 1998 Robert Nordier
-  Copyright (C) 1999-2000 Brad Boyer <flar@pants.nu>
-  Copyright (C) 1999-2004 David Rydh <dary@lindesign.se>
-  Copyright (C) 1999-2004 Samuel Rydh <samuel@ibrium.se>
+  Copyright (C) 1999-2000 Brad Boyer (flar@pants.nu)
+  Copyright (C) 1999-2004 David Rydh (dary@lindesign.se)
+  Copyright (C) 1999-2004 Samuel Rydh (samuel@ibrium.se)
   Copyright (C) 1999 Benjamin Herrenschmidt
-  Copyright (C) 1999 Ben Pfaff <pfaffben@debian.org>
+  Copyright (C) 1999 Ben Pfaff (pfaffben@debian.org)
   Copyright (C) 1999 Marius Vollmer
-  Copyright (C) 1999 Petr Vandrovec <VANDROVE@vc.cvut.cz>
-  Copyright (C) 2000 Klaus Halfmann <klaus.halfmann@feri.de>
+  Copyright (C) 1999 Petr Vandrovec (VANDROVE@vc.cvut.cz)
+  Copyright (C) 2000 Klaus Halfmann (klaus.halfmann@feri.de)
   Copyright (C) 2000 Silicon Graphics, Inc.
   Copyright (C) 2001, 2002 Segher Boessenkool
-  Copyright (C) 2002, 2003 Volker Poplawski <volker@poplawski.de>
+  Copyright (C) 2002, 2003 Volker Poplawski (volker@poplawski.de)
   Copyright (C) 2002 McAfee, Inc.
   Copyright (C) 2002 Networks Associates Technology, Inc.
-  Copyright (C) 2003-2006 Patrick Mauritz <oxygene@studentenbude.ath.cx>
+  Copyright (C) 2003-2006 Patrick Mauritz (oxygene@studentenbude.ath.cx)
   Copyright (C) 2003-2010 by SONE Takeshi
   Copyright (c) 2004-2005 Jocelyn Mayer
   Copyright (C) 2004 Greg Watson
-  Copyright (C) 2004 Jens Axboe <axboe@suse.de>
+  Copyright (C) 2004 Jens Axboe (axboe@suse.de)
   Copyright (C) 2004-2005 Fabrice Bellard
-  Copyright (C) 2005 Ed Schouten <ed@fxq.nl>
+  Copyright (C) 2005 Ed Schouten (ed@fxq.nl)
   Copyright (C) 2005 Rink Springer
 
 
@@ -19880,14 +19882,14 @@ License for fs/grubfs/ufs_fs.h:
 "openbios-sparc-1.1+svn1229/debian/copyright":
 
 [openbios-sparc-1.1+svn1229/debian/copyright]
-This package was debianized by Aurelien Jarno <aurel32@debian.org> on
+This package was debianized by Aurelien Jarno (aurel32@debian.org) on
 Fri, 22 Jun 2007 21:47:57 +0200.
 
 It was downloaded from http://www.openbios.org
 
 Upstream Authors:
-  Stefan Reinauer <stepan@openbios.net>
-  Samuel Rydh <samuel@ibrium.se>
+  Stefan Reinauer (stepan@openbios.net)
+  Samuel Rydh (samuel@ibrium.se)
 
 Copyright:
   Copyright (C) 1982, 1986, 1989, 1991-1998 The Regents of the University of California.
@@ -19896,38 +19898,38 @@ Copyright:
   Copyright (C) 1990-1992 Carnegie Mellon University
   Copyright (C) 1991, 1992 Linus Torvalds
   Copyright (C) 1991, 1992 Lars Wirzenius
-  Copyright (C) 1994-1997 David S. Miller <davem@caip.rutgers.edu>
+  Copyright (C) 1994-1997 David S. Miller (davem@caip.rutgers.edu)
   Copyright (C) 1995-1996 Cort Dougan (cort@cs.nmt.edu)
-  Copyright (C) 1995-1996 Gary Thomas <gdt@linuxppc.org>
+  Copyright (C) 1995-1996 Gary Thomas (gdt@linuxppc.org)
   Copyright (C) 1995-1996 Paul Mackerras
   Copyright (C) 1996-1998, 2001, 2003 Robert Leslie
   Copyright (C) 1996, 1999 Pete Zaitcev
   Copyright (C) 1996 Fujitsu Laboratories Limited
   Copyright (C) 1996 The Australian National University.
-  Copyright (C) 1998 Gerd Knorr <kraxel@goldbach.in-berlin.de>
-  Copyright (C) 1998, 1999 Kousuke Takai <tak@kmc.kyoto-u.ac.jp>
-  Copyright (C) 1998-2006 Stefan Reinauer <stepan@openbios.org>
+  Copyright (C) 1998 Gerd Knorr (kraxel@goldbach.in-berlin.de)
+  Copyright (C) 1998, 1999 Kousuke Takai (tak@kmc.kyoto-u.ac.jp)
+  Copyright (C) 1998-2006 Stefan Reinauer (stepan@openbios.org)
   Copyright (C) 1998 Robert Nordier
-  Copyright (C) 1999-2000 Brad Boyer <flar@pants.nu>
-  Copyright (C) 1999-2004 David Rydh <dary@lindesign.se>
-  Copyright (C) 1999-2004 Samuel Rydh <samuel@ibrium.se>
+  Copyright (C) 1999-2000 Brad Boyer (flar@pants.nu)
+  Copyright (C) 1999-2004 David Rydh (dary@lindesign.se)
+  Copyright (C) 1999-2004 Samuel Rydh (samuel@ibrium.se)
   Copyright (C) 1999 Benjamin Herrenschmidt
-  Copyright (C) 1999 Ben Pfaff <pfaffben@debian.org>
+  Copyright (C) 1999 Ben Pfaff (pfaffben@debian.org)
   Copyright (C) 1999 Marius Vollmer
-  Copyright (C) 1999 Petr Vandrovec <VANDROVE@vc.cvut.cz>
-  Copyright (C) 2000 Klaus Halfmann <klaus.halfmann@feri.de>
+  Copyright (C) 1999 Petr Vandrovec (VANDROVE@vc.cvut.cz)
+  Copyright (C) 2000 Klaus Halfmann (klaus.halfmann@feri.de)
   Copyright (C) 2000 Silicon Graphics, Inc.
   Copyright (C) 2001, 2002 Segher Boessenkool
-  Copyright (C) 2002, 2003 Volker Poplawski <volker@poplawski.de>
+  Copyright (C) 2002, 2003 Volker Poplawski (volker@poplawski.de)
   Copyright (C) 2002 McAfee, Inc.
   Copyright (C) 2002 Networks Associates Technology, Inc.
-  Copyright (C) 2003-2006 Patrick Mauritz <oxygene@studentenbude.ath.cx>
+  Copyright (C) 2003-2006 Patrick Mauritz (oxygene@studentenbude.ath.cx)
   Copyright (C) 2003-2010 by SONE Takeshi
   Copyright (c) 2004-2005 Jocelyn Mayer
   Copyright (C) 2004 Greg Watson
-  Copyright (C) 2004 Jens Axboe <axboe@suse.de>
+  Copyright (C) 2004 Jens Axboe (axboe@suse.de)
   Copyright (C) 2004-2005 Fabrice Bellard
-  Copyright (C) 2005 Ed Schouten <ed@fxq.nl>
+  Copyright (C) 2005 Ed Schouten (ed@fxq.nl)
   Copyright (C) 2005 Rink Springer
 
 
@@ -20143,16 +20145,16 @@ License for fs/grubfs/ufs_fs.h:
 "openhackware-0.4.1/debian/copyright":
 
 [openhackware-0.4.1/debian/copyright]
-This package was debianized by Guillem Jover <guillem@debian.org> on
+This package was debianized by Guillem Jover (guillem@debian.org) on
 Mon,  4 Apr 2005 01:57:20 +0300.
 
 It was downloaded from:
 
-    <http://perso.magic.fr/l_indien/OpenHackWare/>
+    (http://perso.magic.fr/l_indien/OpenHackWare/)
 
 Copyright Holders:
 
-    Copyright © 2004-2005 Jocelyn Mayer <l_indien@magic.fr>
+    Copyright © 2004-2005 Jocelyn Mayer (l_indien@magic.fr)
     Copyright © 2004-2005 Fabrice Bellard
 
 License:
@@ -20182,14 +20184,14 @@ Public License can be found in '/usr/share/common-licenses/GPL-2'.
 
 [openipmi-2.0.16/debian/copyright]
 This package was debianized by
-Noèl Köthe <noel@debian.org> on Tue, 12 Oct 2004 18:39:24 +0200.
+Noèl Köthe (noel@debian.org) on Tue, 12 Oct 2004 18:39:24 +0200.
 
 It was downloaded from http://openipmi.sourceforge.net/
 			https://sf.net/projects/openipmi/
 
 Copyright 2004 MontaVista Software Inc.
 
-Upstream Author: Corey Minyard <cminyard@mvista.com>
+Upstream Author: Corey Minyard (cminyard@mvista.com)
 
 License:
 
@@ -20523,8 +20525,8 @@ to attach them to the start of each source file to most effectively
 convey the exclusion of warranty; and each file should have at least
 the "copyright" line and a pointer to where the full notice is found.
 
-    <one line to give the program's name and a brief idea of what it does.>
-    Copyright (C) <year>  <name of author>
+    (one line to give the program's name and a brief idea of what it does.)
+    Copyright (C) (year)  (name of author)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -20563,7 +20565,7 @@ necessary.  Here is a sample; alter the names:
   Yoyodyne, Inc., hereby disclaims all copyright interest in the program
   `Gnomovision' (which makes passes at compilers) written by James Hacker.
 
-  <signature of Ty Coon>, 1 April 1989
+  (signature of Ty Coon), 1 April 1989
   Ty Coon, President of Vice
 
 This General Public License does not permit incorporating your program into
@@ -20579,7 +20581,7 @@ Public License instead of this License.
 "openjdk-7-7u55-2.4.7/debian/copyright":
 
 [openjdk-7-7u55-2.4.7/debian/copyright]
-This package was debianized by Matthias Klose <doko@ubuntu.com> on
+This package was debianized by Matthias Klose (doko@ubuntu.com) on
 Wed, 08 Aug 2007 15:55:39 +0200.
 
 It was downloaded from
@@ -20591,36 +20593,36 @@ It was downloaded from
 Upstream Authors:
 
 IcedTea (see AUTHORS for a current list):
-    Lillian Angel <langel@redhat.com>
-    Gary Benson <gbenson@redhat.com>
-    Tania Bento <tbento@redhat.com>
-    Deepak Bhole <dbhole@redhat.com>
-    Thomas Fitzsimmons <fitzsim@redhat.com>
-    Kyle Galloway <kgallowa@redhat.com>
-    Andrew Haley <aph@redhat.com>
-    Ioana Iivan <iivan@redhat.com>
-    Matthias Klose <doko@ubuntu.com>
-    Francis Kung <fkung@redhat.com>
-    Omair Majid <omajid@redhat.com>
-    Casey Marshall <csm@gnu.org>
-    Raif Naffah <admin@naffah-raif.name>
-    Joshua Sumali <jsumali@redhat.com>
-    Christian Thalinger <twisti@complang.tuwien.ac.at>
-    Mark Wielaard <mark@klomp.org>
+    Lillian Angel (langel@redhat.com)
+    Gary Benson (gbenson@redhat.com)
+    Tania Bento (tbento@redhat.com)
+    Deepak Bhole (dbhole@redhat.com)
+    Thomas Fitzsimmons (fitzsim@redhat.com)
+    Kyle Galloway (kgallowa@redhat.com)
+    Andrew Haley (aph@redhat.com)
+    Ioana Iivan (iivan@redhat.com)
+    Matthias Klose (doko@ubuntu.com)
+    Francis Kung (fkung@redhat.com)
+    Omair Majid (omajid@redhat.com)
+    Casey Marshall (csm@gnu.org)
+    Raif Naffah (admin@naffah-raif.name)
+    Joshua Sumali (jsumali@redhat.com)
+    Christian Thalinger (twisti@complang.tuwien.ac.at)
+    Mark Wielaard (mark@klomp.org)
 
 OpenJDK:
     Sun Microsystems, Inc.
     Oracle and/or its affiliates.
 
 Java Access Bridge:
-    Bill Haneman <bill.haneman@sun.com>
+    Bill Haneman (bill.haneman@sun.com)
     Louise Miller
-    Gergõ Érdi <cactus@cactus.rulez.org>
-    Laszlo (Laca) Peter <laszlo.peter@sun.com>
-    Jeff Cai<jeff.cai@sun.com>
-    George Kraft IV <gk4@us.ibm.com>
-    Padraig O'Briain <padraig.obriain@sun.com>
-    Darren Kenny <darren.kenny@sun.com>
+    Gergõ Érdi (cactus@cactus.rulez.org)
+    Laszlo (Laca) Peter (laszlo.peter@sun.com)
+    Jeff Cai(jeff.cai@sun.com)
+    George Kraft IV (gk4@us.ibm.com)
+    Padraig O'Briain (padraig.obriain@sun.com)
+    Darren Kenny (darren.kenny@sun.com)
 
 Packaging:
     Matthias Klose
@@ -20629,22 +20631,22 @@ Packaging:
 Copyright: 
 
 IcedTea:
-    Portions Copyright © 2007 Lillian Angel <langel@redhat.com>
-    Portions Copyright © 2007 Gary Benson <gbenson@redhat.com>
-    Portions Copyright © 2007 Tania Bento <tbento@redhat.com>
-    Portions Copyright © 2008 Deepak Bhole <dbhole@redhat.com>
-    Portions Copyright © 2007 Thomas Fitzsimmons <fitzsim@redhat.com>
-    Portions Copyright © 2007 Kyle Galloway <kgallowa@redhat.com>
-    Portions Copyright © 2007 Andrew Haley <aph@redhat.com>
-    Portions Copyright © 2008 Ioana Iivan <iivan@redhat.com>
-    Portions Copyright © 2007 Matthias Klose <doko@ubuntu.com>
-    Portions Copyright © 2007 Francis Kung <fkung@redhat.com>
-    Portions Copyright © 2008 Omair Majid <omajid@redhat.com>
-    Portions Copyright © 2007 Casey Marshall <csm@gnu.org>
-    Portions Copyright © 2007 Raif Naffah <admin@naffah-raif.name>
-    Portions Copyright © 2007 Joshua Sumali <jsumali@redhat.com>
-    Portions Copyright © 2007 Christian Thalinger <twisti@complang.tuwien.ac.at>
-    Portions Copyright © 2007 Mark Wielaard <mark@klomp.org>
+    Portions Copyright © 2007 Lillian Angel (langel@redhat.com)
+    Portions Copyright © 2007 Gary Benson (gbenson@redhat.com)
+    Portions Copyright © 2007 Tania Bento (tbento@redhat.com)
+    Portions Copyright © 2008 Deepak Bhole (dbhole@redhat.com)
+    Portions Copyright © 2007 Thomas Fitzsimmons (fitzsim@redhat.com)
+    Portions Copyright © 2007 Kyle Galloway (kgallowa@redhat.com)
+    Portions Copyright © 2007 Andrew Haley (aph@redhat.com)
+    Portions Copyright © 2008 Ioana Iivan (iivan@redhat.com)
+    Portions Copyright © 2007 Matthias Klose (doko@ubuntu.com)
+    Portions Copyright © 2007 Francis Kung (fkung@redhat.com)
+    Portions Copyright © 2008 Omair Majid (omajid@redhat.com)
+    Portions Copyright © 2007 Casey Marshall (csm@gnu.org)
+    Portions Copyright © 2007 Raif Naffah (admin@naffah-raif.name)
+    Portions Copyright © 2007 Joshua Sumali (jsumali@redhat.com)
+    Portions Copyright © 2007 Christian Thalinger (twisti@complang.tuwien.ac.at)
+    Portions Copyright © 2007 Mark Wielaard (mark@klomp.org)
     Portions Copyright © 2007, 2008 Red Hat, Inc.
     Portions Copyright © 2001-2003 Jon A. Maxwell (JAM)
     Portions Copyright © 1992, 1995-2007 Sun Microsystems, Inc.
@@ -20662,14 +20664,14 @@ OpenJDK:
     Portions Copyright © 1999-2005 The Apache Software Foundation.
 
 Java Access Bridge:
-    Portions Copyright © 2002-2007 Bill Haneman <bill.haneman@sun.com>
+    Portions Copyright © 2002-2007 Bill Haneman (bill.haneman@sun.com)
     Portions Copyright © 2002-2007 Louise Miller
-    Portions Copyright © 2002-2007 Gergõ Érdi <cactus@cactus.rulez.org>
-    Portions Copyright © 2002-2007 Laszlo (Laca) Peter <laszlo.peter@sun.com>
-    Portions Copyright © 2002-2007 Jeff Cai<jeff.cai@sun.com>
-    Portions Copyright © 2002-2007 George Kraft IV <gk4@us.ibm.com>
-    Portions Copyright © 2002-2007 Padraig O'Briain <padraig.obriain@sun.com>
-    Portions Copyright © 2002-2007 Darren Kenny <darren.kenny@sun.com>
+    Portions Copyright © 2002-2007 Gergõ Érdi (cactus@cactus.rulez.org)
+    Portions Copyright © 2002-2007 Laszlo (Laca) Peter (laszlo.peter@sun.com)
+    Portions Copyright © 2002-2007 Jeff Cai(jeff.cai@sun.com)
+    Portions Copyright © 2002-2007 George Kraft IV (gk4@us.ibm.com)
+    Portions Copyright © 2002-2007 Padraig O'Briain (padraig.obriain@sun.com)
+    Portions Copyright © 2002-2007 Darren Kenny (darren.kenny@sun.com)
 
 Packaging:
     Copyright © 2007, 2008, 2009, 2010 Canonical Ltd.
@@ -20721,7 +20723,7 @@ IcedTea/rewriter:
   GNU Affero General Public License for more details.
 
   You should have received a copy of the GNU Affero General Public License
-  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  along with this program.  If not, see (http://www.gnu.org/licenses/).
 
 OpenJDK:
   OpenJDK is licensed under the GPL v2 with exceptions,
@@ -20789,7 +20791,7 @@ OPENJDK ASSEMBLY EXCEPTION
 
 The OpenJDK source code made available by Sun at openjdk.java.net and
 openjdk.dev.java.net ("OpenJDK Code") is distributed under the terms of the
-GNU General Public License <http://www.gnu.org/copyleft/gpl.html> version 2
+GNU General Public License (http://www.gnu.org/copyleft/gpl.html) version 2
 only ("GPL2"), with the following clarification and special exception.
 
     Linking this OpenJDK Code statically or dynamically with other code
@@ -22533,7 +22535,7 @@ Version 1.1:
  * This software consists of voluntary contributions made by many
  * individuals on behalf of the Apache Software Foundation.  For more
  * information on the Apache Software Foundation, please see
- * <http://www.apache.org/>.
+ * (http://www.apache.org/).
  *
  * Portions of this software are based upon public domain software
  * originally written at the National Center for Supercomputing Applications,
@@ -22572,7 +22574,7 @@ CACAO
 
 It was downloaded from http://www.cacaojvm.org/
 
-Copyright Holder: CACAO Project <cacao@cacaojvm.org>
+Copyright Holder: CACAO Project (cacao@cacaojvm.org)
   Copyright (C) 1996-2008 Verein zur Foerderung der freien virtuellen Maschine CACAO
   Portions Copyright (C) 1996-2005, 2006, 2007 R. Grafl, A. Krall, C. Kruegel,
    C. Oates, R. Obermaisser, M. Platter, M. Probst, S. Ring,
@@ -22825,7 +22827,7 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
 02110-1301 USA.
 
-The author may be contacted at <blp@gnu.org> on the Internet, or
+The author may be contacted at (blp@gnu.org) on the Internet, or
 write to Ben Pfaff, Stanford University, Computer Science Dept., 353
 Serra Mall, Stanford CA 94305, USA.
 
@@ -22899,8 +22901,8 @@ src/mm/boehm-gc/include/private
 
 contrib/vmlog:
 
-/* Copyright (C) 2006 Edwin Steiner <edwin.steiner@gmx.net> */
-/*               2007 Peter Molnar <peter.molnar@wm.sk>     */
+/* Copyright (C) 2006 Edwin Steiner (edwin.steiner@gmx.net) */
+/*               2007 Peter Molnar (peter.molnar@wm.sk)     */
 
 /* This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -22922,7 +22924,7 @@ Some of the build files are
 JAMVM:
 
   Copyright (C) 2003, 2004, 2005, 2006, 2007, 2009, 2010
-  Robert Lougher <rob@jamvm.org.uk>.
+  Robert Lougher (rob@jamvm.org.uk).
 
   This program is free software; you can redistribute it and/or
   modify it under the terms of the GNU General Public License
@@ -22950,12 +22952,12 @@ found in the file /usr/share/common-licenses/GPL-2.
 CACAO
 ===============================================================================
 
-This package was debianized by Stephan Michels <stephan@apache.org> on
+This package was debianized by Stephan Michels (stephan@apache.org) on
 Sat, 12 Nov 2005 22:07:41 +0100.
 
 It was downloaded from http://www.cacaojvm.org/
 
-Copyright Holder: CACAO Project <cacao@cacaojvm.org>
+Copyright Holder: CACAO Project (cacao@cacaojvm.org)
   Copyright (C) 1996-2008 Verein zur Foerderung der freien virtuellen Maschine CACAO
   Portions Copyright (C) 1996-2005, 2006, 2007 R. Grafl, A. Krall, C. Kruegel,
    C. Oates, R. Obermaisser, M. Platter, M. Probst, S. Ring,
@@ -23209,7 +23211,7 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
 02110-1301 USA.
 
-The author may be contacted at <blp@gnu.org> on the Internet, or
+The author may be contacted at (blp@gnu.org) on the Internet, or
 write to Ben Pfaff, Stanford University, Computer Science Dept., 353
 Serra Mall, Stanford CA 94305, USA.
 
@@ -23283,8 +23285,8 @@ src/mm/boehm-gc/include/private
 
 contrib/vmlog:
 
-/* Copyright (C) 2006 Edwin Steiner <edwin.steiner@gmx.net> */
-/*               2007 Peter Molnar <peter.molnar@wm.sk>     */
+/* Copyright (C) 2006 Edwin Steiner (edwin.steiner@gmx.net) */
+/*               2007 Peter Molnar (peter.molnar@wm.sk)     */
 
 /* This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -23502,12 +23504,12 @@ Upstream-Name: PasteDeploy
 Source: https://pypi.python.org/pypi/PasteDeploy
 
 Files: debian/*
-Copyright: (c) 2006-2012, Piotr Ożarowski <piotr@debian.org>
-           (c) 2013, Thomas Goirand <zigo@debian.org>
+Copyright: (c) 2006-2012, Piotr Ożarowski (piotr@debian.org)
+           (c) 2013, Thomas Goirand (zigo@debian.org)
 License: Expat
 
 Files: *
-Copyright: (c) 2005-2009 Ian Bicking <ianb@colorstudy.com> and Contributors
+Copyright: (c) 2005-2009 Ian Bicking (ianb@colorstudy.com) and Contributors
 License: Expat
 
 License: Expat
@@ -23536,12 +23538,12 @@ License: Expat
 "pastescript-1.7.5/debian/copyright":
 
 [pastescript-1.7.5/debian/copyright]
-This package was debianized by Piotr Ożarowski <piotr@debian.org> on
+This package was debianized by Piotr Ożarowski (piotr@debian.org) on
 Thu,  4 May 2006 21:00:00 +0200.
 
 It was downloaded from http://pypi.python.org/pypi/PasteScript
 
-Copyright Holder: Ian Bicking <ianb@colorstudy.com>
+Copyright Holder: Ian Bicking (ianb@colorstudy.com)
 
 License: MIT License
 
@@ -23571,14 +23573,14 @@ paste/script/util/subprocess24.py file:
  Licensed under the MIT license: http://www.opensource.org/licenses/mit-license.php
  subprocess - Subprocesses with accessible I/O streams
 
- Copyright (c) 2003-2005 by Peter Astrand <astrand@lysator.liu.se>
+ Copyright (c) 2003-2005 by Peter Astrand (astrand@lysator.liu.se)
 
  Licensed to PSF under a Contributor Agreement.
  See http://www.python.org/2.4/license for licensing details.
 
 -----------------------------------------------------------
 
-The Debian packaging is © 2006-2009, Piotr Ożarowski <piotr@debian.org> and
+The Debian packaging is © 2006-2009, Piotr Ożarowski (piotr@debian.org) and
 is licensed under the MIT License as well.
 [pastescript-1.7.5/debian/copyright]
 
@@ -23596,8 +23598,8 @@ Upstream-Contact: muscle@lists.musclecard.com
 Source: https://alioth.debian.org/project/showfiles.php?group_id=1225
 
 Files: *
-Copyright: Copyright (c) 1999-2003 David Corcoran <corcoran@linuxnet.com>
-           Copyright (c) 2001-2011 Ludovic Rousseau <ludovic.rousseau@free.fr>
+Copyright: Copyright (c) 1999-2003 David Corcoran (corcoran@linuxnet.com)
+           Copyright (c) 2001-2011 Ludovic Rousseau (ludovic.rousseau@free.fr)
 License: BSD-3-clause
  All rights reserved.
  .
@@ -23651,7 +23653,7 @@ License: Expat
  SOFTWARE. 
 
 Files: src/strlcat.c src/strlcpy.c
-Copyright: Copyright (c) 1998 Todd C. Miller <Todd.Miller@courtesan.com>
+Copyright: Copyright (c) 1998 Todd C. Miller (Todd.Miller@courtesan.com)
 License: ISC
  Permission to use, copy, modify, and distribute this software for any
  purpose with or without fee is hereby granted, provided that the above
@@ -23666,7 +23668,7 @@ License: ISC
  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 Files: simclist.[ch]
-Copyright: Copyright (c) 2007,2008 Mij <mij@bitchx.it>
+Copyright: Copyright (c) 2007,2008 Mij (mij@bitchx.it)
 License: ISC
  Permission to use, copy, modify, and distribute this software for any
  purpose with or without fee is hereby granted, provided that the above
@@ -23681,7 +23683,7 @@ License: ISC
  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 Files: debian/*  src/spy/*
-Copyright: 2002-2011, Ludovic Rousseau <ludovic.rousseau@free.fr>
+Copyright: 2002-2011, Ludovic Rousseau (ludovic.rousseau@free.fr)
 License: GPL-3+
  /usr/share/common-licenses/GPL-3
 [pcsc-lite-1.8.11/debian/copyright]
@@ -23700,7 +23702,7 @@ Source: http://www.percona.com/downloads/percona-toolkit/
 
 Files: *
 Copyright: 2007-2013 Baron Schwartz
-           2011-2013 Percona Inc. <trademarks@percona.com>
+           2011-2013 Percona Inc. (trademarks@percona.com)
 License: GPL-2+
  This package is free software; you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -23713,7 +23715,7 @@ License: GPL-2+
  GNU General Public License for more details.
  .
  You should have received a copy of the GNU General Public License
- along with this program. If not, see <http://www.gnu.org/licenses/>
+ along with this program. If not, see (http://www.gnu.org/licenses/)
  .
  On Debian systems, the complete text of the GNU General
  Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
@@ -23721,7 +23723,7 @@ License: GPL-2+
 
 
 Files: bin/pt-log-player bin/pt-query-digest
-Copyright: 2008-2013 Percona Inc. <trademarks@percona.com>
+Copyright: 2008-2013 Percona Inc. (trademarks@percona.com)
 License: GPL-2+
  This package is free software; you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -23734,7 +23736,7 @@ License: GPL-2+
  GNU General Public License for more details.
  .
  You should have received a copy of the GNU General Public License
- along with this program. If not, see <http://www.gnu.org/licenses/>
+ along with this program. If not, see (http://www.gnu.org/licenses/)
  .
  On Debian systems, the complete text of the GNU General
  Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
@@ -23743,7 +23745,7 @@ License: GPL-2+
 
 Files: bin/pt-diskstats bin/pt-mysql-summary bin/pt-pmp bin/pt-summary bin/pt-variable-advisor bin/pt-collect bin/pt-trend bin/pt-stalk bin/pt-sift bin/pt-index-usage
 Copyright: 2010-2013 Baron Schwartz
-           2011-2013 Percona Inc. <trademarks@percona.com>
+           2011-2013 Percona Inc. (trademarks@percona.com)
 License: GPL-2+
  This package is free software; you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -23756,7 +23758,7 @@ License: GPL-2+
  GNU General Public License for more details.
  .
  You should have received a copy of the GNU General Public License
- along with this program. If not, see <http://www.gnu.org/licenses/>
+ along with this program. If not, see (http://www.gnu.org/licenses/)
  .
  On Debian systems, the complete text of the GNU General
  Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
@@ -23765,7 +23767,7 @@ License: GPL-2+
 
 Files: bin/pt-tcp-model
 Copyright: 2011-2013 Baron Schwartz
-           2011-2013 Percona Inc. <trademarks@percona.com>
+           2011-2013 Percona Inc. (trademarks@percona.com)
 License: GPL-2+
  This package is free software; you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -23778,7 +23780,7 @@ License: GPL-2+
  GNU General Public License for more details.
  .
  You should have received a copy of the GNU General Public License
- along with this program. If not, see <http://www.gnu.org/licenses/>
+ along with this program. If not, see (http://www.gnu.org/licenses/)
  .
  On Debian systems, the complete text of the GNU General
  Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
@@ -23787,7 +23789,7 @@ License: GPL-2+
 
 Files: bin/pt-tcp-model
 Copyright: 2009-2013 Baron Schwartz
-           2011-2013 Percona Inc. <trademarks@percona.com>
+           2011-2013 Percona Inc. (trademarks@percona.com)
 License: GPL-2+
  This package is free software; you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -23800,7 +23802,7 @@ License: GPL-2+
  GNU General Public License for more details.
  .
  You should have received a copy of the GNU General Public License
- along with this program. If not, see <http://www.gnu.org/licenses/>
+ along with this program. If not, see (http://www.gnu.org/licenses/)
  .
  On Debian systems, the complete text of the GNU General
  Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
@@ -23808,7 +23810,7 @@ License: GPL-2+
 
 
 Files: bin/pt-fk-error-logger bin/pt-config-diff bin/pt-online-schema-change
-Copyright: 2011-2013 Percona Inc. <trademarks@percona.com>
+Copyright: 2011-2013 Percona Inc. (trademarks@percona.com)
 License: GPL-2+
  This package is free software; you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -23821,7 +23823,7 @@ License: GPL-2+
  GNU General Public License for more details.
  .
  You should have received a copy of the GNU General Public License
- along with this program. If not, see <http://www.gnu.org/licenses/>
+ along with this program. If not, see (http://www.gnu.org/licenses/)
  .
  On Debian systems, the complete text of the GNU General
  Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
@@ -23829,7 +23831,7 @@ License: GPL-2+
 
 
 Files: bin/pt-query-advisor 
-Copyright: 2010-2013 Percona Inc. <trademarks@percona.com>
+Copyright: 2010-2013 Percona Inc. (trademarks@percona.com)
 License: GPL-2+
  This package is free software; you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -23842,7 +23844,7 @@ License: GPL-2+
  GNU General Public License for more details.
  .
  You should have received a copy of the GNU General Public License
- along with this program. If not, see <http://www.gnu.org/licenses/>
+ along with this program. If not, see (http://www.gnu.org/licenses/)
  .
  On Debian systems, the complete text of the GNU General
  Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
@@ -23864,7 +23866,7 @@ License: GPL-2+
  GNU General Public License for more details.
  .
  You should have received a copy of the GNU General Public License
- along with this program. If not, see <http://www.gnu.org/licenses/>
+ along with this program. If not, see (http://www.gnu.org/licenses/)
  .
  On Debian systems, the complete text of the GNU General
  Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
@@ -23886,7 +23888,7 @@ License: GPL-2+
  GNU General Public License for more details.
  .
  You should have received a copy of the GNU General Public License
- along with this program. If not, see <http://www.gnu.org/licenses/>
+ along with this program. If not, see (http://www.gnu.org/licenses/)
  .
  On Debian systems, the complete text of the GNU General
  Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
@@ -23894,7 +23896,7 @@ License: GPL-2+
 
 
 Files: bin/pt-upgrade
-Copyright: 2009-2013 Percona Inc. <trademarks@percona.com>
+Copyright: 2009-2013 Percona Inc. (trademarks@percona.com)
 License: GPL-2+
  This package is free software; you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -23907,7 +23909,7 @@ License: GPL-2+
  GNU General Public License for more details.
  .
  You should have received a copy of the GNU General Public License
- along with this program. If not, see <http://www.gnu.org/licenses/>
+ along with this program. If not, see (http://www.gnu.org/licenses/)
  .
  On Debian systems, the complete text of the GNU General
  Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
@@ -23928,7 +23930,7 @@ License: GPL-2+
  GNU General Public License for more details.
  .
  You should have received a copy of the GNU General Public License
- along with this program. If not, see <http://www.gnu.org/licenses/>
+ along with this program. If not, see (http://www.gnu.org/licenses/)
  .
  On Debian systems, the complete text of the GNU General
  Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
@@ -23936,7 +23938,7 @@ License: GPL-2+
 
 
 Files: debian/*
-Copyright: 2011-2013 Dario Minnucci <midget@debian.org>
+Copyright: 2011-2013 Dario Minnucci (midget@debian.org)
 License: GPL-2+
  This package is free software; you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -23949,7 +23951,7 @@ License: GPL-2+
  GNU General Public License for more details.
  .
  You should have received a copy of the GNU General Public License
- along with this program. If not, see <http://www.gnu.org/licenses/>
+ along with this program. If not, see (http://www.gnu.org/licenses/)
  .
  On Debian systems, the complete text of the GNU General
  Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
@@ -23964,7 +23966,7 @@ License: GPL-2+
 [percona-xtrabackup-2.1.8/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: Percona XtraBackup
-Upstream-Contact: Stewart Smith <stewart.smith@percona.com>
+Upstream-Contact: Stewart Smith (stewart.smith@percona.com)
 Source: http://www.percona.com/downloads/XtraBackup/
 Disclaimer: Modified from Autogenerated by CDBS. The notices for the embedded
  MySQL source trees comes mostly from the debian/copyright file for the debian
@@ -23985,103 +23987,103 @@ Disclaimer: Modified from Autogenerated by CDBS. The notices for the embedded
  special exceptions to the terms and conditions of the GPLv2
  as applied to these client libraries, which are identified
  and described in more detail in the FOSS License Exception at
- <http://www.mysql.com/about/legal/licensing/foss-exception.html>.
+ (http://www.mysql.com/about/legal/licensing/foss-exception.html).
  .
  The text of the Above URL is quoted below, as of Aug 17, 2011.
  .
- > FOSS License Exception
- > .
- > Updated July 1, 2010
- > .
- > What is the FOSS License Exception?  Oracle's Free and Open Source
- > Software ("FOSS") License Exception (formerly known as the FLOSS
- > License Exception) allows developers of FOSS applications to include
- > Oracle's MySQL Client Libraries (also referred to as "MySQL Drivers"
- > or "MySQL Connectors") with their FOSS applications. MySQL Client
- > Libraries are typically licensed pursuant to version 2 of the General
- > Public License ("GPL"), but this exception permits distribution of
- > certain MySQL Client Libraries with a developer's FOSS applications
- > licensed under the terms of another FOSS license listed below,
- > even though such other FOSS license may be incompatible with the GPL.
- > .
- > The following terms and conditions describe the circumstances under
- > which Oracle's FOSS License Exception applies.
- > .
- > Oracle's FOSS License Exception Terms and Conditions Definitions.
- > "Derivative Work" means a derivative work, as defined under applicable
- > copyright law, formed entirely from the Program and one or more
- > FOSS Applications.
- > .
- > "FOSS Application" means a free and open source software application
- > distributed subject to a license listed in the section below titled
- > "FOSS License List."
- > .
- > "FOSS Notice" means a notice placed by Oracle or MySQL in a copy
- > of the MySQL Client Libraries stating that such copy of the MySQL
- > Client Libraries may be distributed under Oracle's or MySQL's FOSS
- > (or FLOSS) License Exception.
- > .
- > "Independent Work" means portions of the Derivative Work that are not
- > derived from the Program and can reasonably be considered independent
- > and separate works.
- > .
- > "Program" means a copy of Oracle's MySQL Client Libraries that
- > contains a FOSS Notice.
- > . 
- > A FOSS application developer ("you" or "your") may distribute a
- > Derivative Work provided that you and the Derivative Work meet all
- > of the following conditions: You obey the GPL in all respects for
- > the Program and all portions (including modifications) of the Program
- > included in the Derivative Work (provided that this condition does not
- > apply to Independent Works); The Derivative Work does not include any
- > work licensed under the GPL other than the Program; You distribute
- > Independent Works subject to a license listed in the section below
- > titled "FOSS License List"; You distribute Independent Works in
- > object code or executable form with the complete corresponding
- > machine-readable source code on the same medium and under the same
- > FOSS license applying to the object code or executable forms; All
- > works that are aggregated with the Program or the Derivative Work
- > on a medium or volume of storage are not derivative works of the
- > Program, Derivative Work or FOSS Application, and must reasonably
- > be considered independent and separate works.  Oracle reserves all
- > rights not expressly granted in these terms and conditions. If all
- > of the above conditions are not met, then this FOSS License Exception
- > does not apply to you or your Derivative Work.
- > .
- > FOSS License List
- > . 
- > License Name    Version(s)/Copyright Date
- > Release Early    Certified Software
- > Academic Free License    2.0
- > Apache Software License  1.0/1.1/2.0
- > Apple Public Source License  2.0
- > Artistic license     From Perl 5.8.0
- > BSD license  "July 22 1999"
- > Common Development and Distribution License (CDDL)   1.0
- > Common Public License    1.0
- > Eclipse Public License   1.0
- > European Union Public License (EUPL)[1]    1.1
- > GNU Library or "Lesser" General Public License (LGPL)    2.0/2.1/3.0
- > GNU General Public License (GPL)     3.0
- > IBM Public License   1.0
- > Jabber Open Source License   1.0
- > MIT License (As listed in file MIT-License.txt)  -
- > Mozilla Public License (MPL)     1.0/1.1
- > Open Software License    2.0
- > OpenSSL license (with original SSLeay license)   "2003" ("1998")
- > PHP License  3.0/3.01
- > Python license (CNRI Python License)     -
- > Python Software Foundation License   2.1.1
- > Sleepycat License   "1999"
- > University of Illinois/NCSA Open Source License  -
- > W3C License  "2001"
- > X11 License  "2001"
- > Zlib/libpng License  -
- > Zope Public License  2.0
- > [1] When an Independent Work is licensed under a "Compatible License"
- > pursuant to the EUPL, the Compatible License rather than the EUPL is
- > the applicable license for purposes of these FOSS License Exception
- > Terms and Conditions.
+ ) FOSS License Exception
+ ) .
+ ) Updated July 1, 2010
+ ) .
+ ) What is the FOSS License Exception?  Oracle's Free and Open Source
+ ) Software ("FOSS") License Exception (formerly known as the FLOSS
+ ) License Exception) allows developers of FOSS applications to include
+ ) Oracle's MySQL Client Libraries (also referred to as "MySQL Drivers"
+ ) or "MySQL Connectors") with their FOSS applications. MySQL Client
+ ) Libraries are typically licensed pursuant to version 2 of the General
+ ) Public License ("GPL"), but this exception permits distribution of
+ ) certain MySQL Client Libraries with a developer's FOSS applications
+ ) licensed under the terms of another FOSS license listed below,
+ ) even though such other FOSS license may be incompatible with the GPL.
+ ) .
+ ) The following terms and conditions describe the circumstances under
+ ) which Oracle's FOSS License Exception applies.
+ ) .
+ ) Oracle's FOSS License Exception Terms and Conditions Definitions.
+ ) "Derivative Work" means a derivative work, as defined under applicable
+ ) copyright law, formed entirely from the Program and one or more
+ ) FOSS Applications.
+ ) .
+ ) "FOSS Application" means a free and open source software application
+ ) distributed subject to a license listed in the section below titled
+ ) "FOSS License List."
+ ) .
+ ) "FOSS Notice" means a notice placed by Oracle or MySQL in a copy
+ ) of the MySQL Client Libraries stating that such copy of the MySQL
+ ) Client Libraries may be distributed under Oracle's or MySQL's FOSS
+ ) (or FLOSS) License Exception.
+ ) .
+ ) "Independent Work" means portions of the Derivative Work that are not
+ ) derived from the Program and can reasonably be considered independent
+ ) and separate works.
+ ) .
+ ) "Program" means a copy of Oracle's MySQL Client Libraries that
+ ) contains a FOSS Notice.
+ ) . 
+ ) A FOSS application developer ("you" or "your") may distribute a
+ ) Derivative Work provided that you and the Derivative Work meet all
+ ) of the following conditions: You obey the GPL in all respects for
+ ) the Program and all portions (including modifications) of the Program
+ ) included in the Derivative Work (provided that this condition does not
+ ) apply to Independent Works); The Derivative Work does not include any
+ ) work licensed under the GPL other than the Program; You distribute
+ ) Independent Works subject to a license listed in the section below
+ ) titled "FOSS License List"; You distribute Independent Works in
+ ) object code or executable form with the complete corresponding
+ ) machine-readable source code on the same medium and under the same
+ ) FOSS license applying to the object code or executable forms; All
+ ) works that are aggregated with the Program or the Derivative Work
+ ) on a medium or volume of storage are not derivative works of the
+ ) Program, Derivative Work or FOSS Application, and must reasonably
+ ) be considered independent and separate works.  Oracle reserves all
+ ) rights not expressly granted in these terms and conditions. If all
+ ) of the above conditions are not met, then this FOSS License Exception
+ ) does not apply to you or your Derivative Work.
+ ) .
+ ) FOSS License List
+ ) . 
+ ) License Name    Version(s)/Copyright Date
+ ) Release Early    Certified Software
+ ) Academic Free License    2.0
+ ) Apache Software License  1.0/1.1/2.0
+ ) Apple Public Source License  2.0
+ ) Artistic license     From Perl 5.8.0
+ ) BSD license  "July 22 1999"
+ ) Common Development and Distribution License (CDDL)   1.0
+ ) Common Public License    1.0
+ ) Eclipse Public License   1.0
+ ) European Union Public License (EUPL)[1]    1.1
+ ) GNU Library or "Lesser" General Public License (LGPL)    2.0/2.1/3.0
+ ) GNU General Public License (GPL)     3.0
+ ) IBM Public License   1.0
+ ) Jabber Open Source License   1.0
+ ) MIT License (As listed in file MIT-License.txt)  -
+ ) Mozilla Public License (MPL)     1.0/1.1
+ ) Open Software License    2.0
+ ) OpenSSL license (with original SSLeay license)   "2003" ("1998")
+ ) PHP License  3.0/3.01
+ ) Python license (CNRI Python License)     -
+ ) Python Software Foundation License   2.1.1
+ ) Sleepycat License   "1999"
+ ) University of Illinois/NCSA Open Source License  -
+ ) W3C License  "2001"
+ ) X11 License  "2001"
+ ) Zlib/libpng License  -
+ ) Zope Public License  2.0
+ ) [1] When an Independent Work is licensed under a "Compatible License"
+ ) pursuant to the EUPL, the Compatible License rather than the EUPL is
+ ) the applicable license for purposes of these FOSS License Exception
+ ) Terms and Conditions.
  .
  The above text is subject to this copyright notice:
  © 2010, Oracle and/or its affiliats.
@@ -24100,7 +24102,7 @@ Copyright:  Copyright (c) 2003-2011 Tim Kientzle
   Copyright (c) 2003-2007 Kees Zeelenberg
   Copyright (c) 2007 Kai Wang
   Copyright (c) 2006 Rudolf Marek SYSGO s.r.o.
-  Copyright (c) 2002 Thomas Moestl <tmm@FreeBSD.org>
+  Copyright (c) 2002 Thomas Moestl (tmm@FreeBSD.org)
   Portions Copyright (c) 2010 Nokia Corporation and/or its subsidiary(-ies)
   Portions Copyright (c) 2001 The NetBSD Foundation, Inc
   Portions Copyright (c) 1996-2008 PostgreSQL Global Development Group
@@ -24238,7 +24240,7 @@ Copyright: 2008, testtools developers. See LICENSE for details
   2011, testtools developers. See LICENSE for details
 Comment: License text from the testtools LICENSE file
 License: Expat
- Copyright (c) 2008-2011 Jonathan M. Lange <jml@mumak.net> and the testtools
+ Copyright (c) 2008-2011 Jonathan M. Lange (jml@mumak.net) and the testtools
  authors.
  .
  The testtools authors are:
@@ -24295,18 +24297,18 @@ License: Expat
  SUPPORT, UPDATES, ENHANCEMENTS, OR MODIFICATIONS.
 
 Files: ./test/python/junitxml/*
-Copyright: 2005, Robert Collins <robertc@robertcollins.net>
-  2006, Robert Collins <robertc@robertcollins.net>
-  2009, Robert Collins <robertc@robertcollins.net>
+Copyright: 2005, Robert Collins (robertc@robertcollins.net)
+  2006, Robert Collins (robertc@robertcollins.net)
+  2009, Robert Collins (robertc@robertcollins.net)
 Comment: Not installed, just used by test suite. Copyright information from
  Debian python-junitxml debian/copyright.
 License: LGPL-3
  This package was originally debianized by Robert Collins
- <robertc@robertcollins.net> on Sep 20 2009.
+ (robertc@robertcollins.net) on Sep 20 2009.
  .
  It was downloaded from http://launchpad.net/pyjunitxml/.
  .
- Upstream Authors: Robert Collins <robertc@robertcollins.net>
+ Upstream Authors: Robert Collins (robertc@robertcollins.net)
  .
  Copyright 2009 Robert Collins.
  .
@@ -24354,7 +24356,7 @@ Comment: Copyright information from python-subunit debian/copyright. These
  files are not installed, just used for test suite, which is not run during
  build of the Debian package.
 Copyright:
- 2005, 2006, 2008, 2009 Robert Collins <robertc@robertcollins.net>
+ 2005, 2006, 2008, 2009 Robert Collins (robertc@robertcollins.net)
  2004 Canonical Limited
  Martin Pool
 License: Apache-2 or BSD-3-clause
@@ -24797,7 +24799,7 @@ License: GPL-2
 
 Files: */cmd-line-utils/libedit/np/strlcat.c
  */cmd-line-utils/libedit/np/strlcpy.c
-Copyright: 1998 Todd C. Miller <Todd.Miller@courtesan.com>
+Copyright: 1998 Todd C. Miller (Todd.Miller@courtesan.com)
 License: ISC
  Permission to use, copy, modify, and distribute this software for any
  purpose with or without fee is hereby granted, provided that the above
@@ -24957,12 +24959,12 @@ Copyright: 2002-2010 Oracle and/or its affiliates.
 License: GPL-2
 
 Files: */strings/ctype-tis620.c
-Copyright: 1998 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
- 1989-1991 Samphan Raruenrom <samphan@thai.com>
+Copyright: 1998 Theppitak Karoonboonyanan (thep@links.nectec.or.th)
+ 1989-1991 Samphan Raruenrom (samphan@thai.com)
  2000-2010 Oracle and/or its affiliates.
  2003 Sathit Jittanupat
- 2001 Korakot Chaovavanich <korakot@iname.com> and
- 1998-1999 Pruet Boonma <pruet@eng.cmu.ac.th>
+ 2001 Korakot Chaovavanich (korakot@iname.com) and
+ 1998-1999 Pruet Boonma (pruet@eng.cmu.ac.th)
 License: GPL-2
 
 Files: */storage/innobase/handler/ha_innodb.h
@@ -25131,7 +25133,7 @@ License: BSD (3 clause)
 [percona-xtrabackup-2.1.8/utils/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: Percona XtraBackup
-Upstream-Contact: Stewart Smith <stewart.smith@percona.com>
+Upstream-Contact: Stewart Smith (stewart.smith@percona.com)
 Source: http://www.percona.com/downloads/XtraBackup/
 Disclaimer: Modified from Autogenerated by CDBS. The notices for the embedded
  MySQL source trees comes mostly from the debian/copyright file for the debian
@@ -25152,103 +25154,103 @@ Disclaimer: Modified from Autogenerated by CDBS. The notices for the embedded
  special exceptions to the terms and conditions of the GPLv2
  as applied to these client libraries, which are identified
  and described in more detail in the FOSS License Exception at
- <http://www.mysql.com/about/legal/licensing/foss-exception.html>.
+ (http://www.mysql.com/about/legal/licensing/foss-exception.html).
  .
  The text of the Above URL is quoted below, as of Aug 17, 2011.
  .
- > FOSS License Exception
- > .
- > Updated July 1, 2010
- > .
- > What is the FOSS License Exception?  Oracle's Free and Open Source
- > Software ("FOSS") License Exception (formerly known as the FLOSS
- > License Exception) allows developers of FOSS applications to include
- > Oracle's MySQL Client Libraries (also referred to as "MySQL Drivers"
- > or "MySQL Connectors") with their FOSS applications. MySQL Client
- > Libraries are typically licensed pursuant to version 2 of the General
- > Public License ("GPL"), but this exception permits distribution of
- > certain MySQL Client Libraries with a developer's FOSS applications
- > licensed under the terms of another FOSS license listed below,
- > even though such other FOSS license may be incompatible with the GPL.
- > .
- > The following terms and conditions describe the circumstances under
- > which Oracle's FOSS License Exception applies.
- > .
- > Oracle's FOSS License Exception Terms and Conditions Definitions.
- > "Derivative Work" means a derivative work, as defined under applicable
- > copyright law, formed entirely from the Program and one or more
- > FOSS Applications.
- > .
- > "FOSS Application" means a free and open source software application
- > distributed subject to a license listed in the section below titled
- > "FOSS License List."
- > .
- > "FOSS Notice" means a notice placed by Oracle or MySQL in a copy
- > of the MySQL Client Libraries stating that such copy of the MySQL
- > Client Libraries may be distributed under Oracle's or MySQL's FOSS
- > (or FLOSS) License Exception.
- > .
- > "Independent Work" means portions of the Derivative Work that are not
- > derived from the Program and can reasonably be considered independent
- > and separate works.
- > .
- > "Program" means a copy of Oracle's MySQL Client Libraries that
- > contains a FOSS Notice.
- > . 
- > A FOSS application developer ("you" or "your") may distribute a
- > Derivative Work provided that you and the Derivative Work meet all
- > of the following conditions: You obey the GPL in all respects for
- > the Program and all portions (including modifications) of the Program
- > included in the Derivative Work (provided that this condition does not
- > apply to Independent Works); The Derivative Work does not include any
- > work licensed under the GPL other than the Program; You distribute
- > Independent Works subject to a license listed in the section below
- > titled "FOSS License List"; You distribute Independent Works in
- > object code or executable form with the complete corresponding
- > machine-readable source code on the same medium and under the same
- > FOSS license applying to the object code or executable forms; All
- > works that are aggregated with the Program or the Derivative Work
- > on a medium or volume of storage are not derivative works of the
- > Program, Derivative Work or FOSS Application, and must reasonably
- > be considered independent and separate works.  Oracle reserves all
- > rights not expressly granted in these terms and conditions. If all
- > of the above conditions are not met, then this FOSS License Exception
- > does not apply to you or your Derivative Work.
- > .
- > FOSS License List
- > . 
- > License Name    Version(s)/Copyright Date
- > Release Early    Certified Software
- > Academic Free License    2.0
- > Apache Software License  1.0/1.1/2.0
- > Apple Public Source License  2.0
- > Artistic license     From Perl 5.8.0
- > BSD license  "July 22 1999"
- > Common Development and Distribution License (CDDL)   1.0
- > Common Public License    1.0
- > Eclipse Public License   1.0
- > European Union Public License (EUPL)[1]    1.1
- > GNU Library or "Lesser" General Public License (LGPL)    2.0/2.1/3.0
- > GNU General Public License (GPL)     3.0
- > IBM Public License   1.0
- > Jabber Open Source License   1.0
- > MIT License (As listed in file MIT-License.txt)  -
- > Mozilla Public License (MPL)     1.0/1.1
- > Open Software License    2.0
- > OpenSSL license (with original SSLeay license)   "2003" ("1998")
- > PHP License  3.0/3.01
- > Python license (CNRI Python License)     -
- > Python Software Foundation License   2.1.1
- > Sleepycat License   "1999"
- > University of Illinois/NCSA Open Source License  -
- > W3C License  "2001"
- > X11 License  "2001"
- > Zlib/libpng License  -
- > Zope Public License  2.0
- > [1] When an Independent Work is licensed under a "Compatible License"
- > pursuant to the EUPL, the Compatible License rather than the EUPL is
- > the applicable license for purposes of these FOSS License Exception
- > Terms and Conditions.
+ ) FOSS License Exception
+ ) .
+ ) Updated July 1, 2010
+ ) .
+ ) What is the FOSS License Exception?  Oracle's Free and Open Source
+ ) Software ("FOSS") License Exception (formerly known as the FLOSS
+ ) License Exception) allows developers of FOSS applications to include
+ ) Oracle's MySQL Client Libraries (also referred to as "MySQL Drivers"
+ ) or "MySQL Connectors") with their FOSS applications. MySQL Client
+ ) Libraries are typically licensed pursuant to version 2 of the General
+ ) Public License ("GPL"), but this exception permits distribution of
+ ) certain MySQL Client Libraries with a developer's FOSS applications
+ ) licensed under the terms of another FOSS license listed below,
+ ) even though such other FOSS license may be incompatible with the GPL.
+ ) .
+ ) The following terms and conditions describe the circumstances under
+ ) which Oracle's FOSS License Exception applies.
+ ) .
+ ) Oracle's FOSS License Exception Terms and Conditions Definitions.
+ ) "Derivative Work" means a derivative work, as defined under applicable
+ ) copyright law, formed entirely from the Program and one or more
+ ) FOSS Applications.
+ ) .
+ ) "FOSS Application" means a free and open source software application
+ ) distributed subject to a license listed in the section below titled
+ ) "FOSS License List."
+ ) .
+ ) "FOSS Notice" means a notice placed by Oracle or MySQL in a copy
+ ) of the MySQL Client Libraries stating that such copy of the MySQL
+ ) Client Libraries may be distributed under Oracle's or MySQL's FOSS
+ ) (or FLOSS) License Exception.
+ ) .
+ ) "Independent Work" means portions of the Derivative Work that are not
+ ) derived from the Program and can reasonably be considered independent
+ ) and separate works.
+ ) .
+ ) "Program" means a copy of Oracle's MySQL Client Libraries that
+ ) contains a FOSS Notice.
+ ) . 
+ ) A FOSS application developer ("you" or "your") may distribute a
+ ) Derivative Work provided that you and the Derivative Work meet all
+ ) of the following conditions: You obey the GPL in all respects for
+ ) the Program and all portions (including modifications) of the Program
+ ) included in the Derivative Work (provided that this condition does not
+ ) apply to Independent Works); The Derivative Work does not include any
+ ) work licensed under the GPL other than the Program; You distribute
+ ) Independent Works subject to a license listed in the section below
+ ) titled "FOSS License List"; You distribute Independent Works in
+ ) object code or executable form with the complete corresponding
+ ) machine-readable source code on the same medium and under the same
+ ) FOSS license applying to the object code or executable forms; All
+ ) works that are aggregated with the Program or the Derivative Work
+ ) on a medium or volume of storage are not derivative works of the
+ ) Program, Derivative Work or FOSS Application, and must reasonably
+ ) be considered independent and separate works.  Oracle reserves all
+ ) rights not expressly granted in these terms and conditions. If all
+ ) of the above conditions are not met, then this FOSS License Exception
+ ) does not apply to you or your Derivative Work.
+ ) .
+ ) FOSS License List
+ ) . 
+ ) License Name    Version(s)/Copyright Date
+ ) Release Early    Certified Software
+ ) Academic Free License    2.0
+ ) Apache Software License  1.0/1.1/2.0
+ ) Apple Public Source License  2.0
+ ) Artistic license     From Perl 5.8.0
+ ) BSD license  "July 22 1999"
+ ) Common Development and Distribution License (CDDL)   1.0
+ ) Common Public License    1.0
+ ) Eclipse Public License   1.0
+ ) European Union Public License (EUPL)[1]    1.1
+ ) GNU Library or "Lesser" General Public License (LGPL)    2.0/2.1/3.0
+ ) GNU General Public License (GPL)     3.0
+ ) IBM Public License   1.0
+ ) Jabber Open Source License   1.0
+ ) MIT License (As listed in file MIT-License.txt)  -
+ ) Mozilla Public License (MPL)     1.0/1.1
+ ) Open Software License    2.0
+ ) OpenSSL license (with original SSLeay license)   "2003" ("1998")
+ ) PHP License  3.0/3.01
+ ) Python license (CNRI Python License)     -
+ ) Python Software Foundation License   2.1.1
+ ) Sleepycat License   "1999"
+ ) University of Illinois/NCSA Open Source License  -
+ ) W3C License  "2001"
+ ) X11 License  "2001"
+ ) Zlib/libpng License  -
+ ) Zope Public License  2.0
+ ) [1] When an Independent Work is licensed under a "Compatible License"
+ ) pursuant to the EUPL, the Compatible License rather than the EUPL is
+ ) the applicable license for purposes of these FOSS License Exception
+ ) Terms and Conditions.
  .
  The above text is subject to this copyright notice:
  © 2010, Oracle and/or its affiliats.
@@ -25267,7 +25269,7 @@ Copyright:  Copyright (c) 2003-2011 Tim Kientzle
   Copyright (c) 2003-2007 Kees Zeelenberg
   Copyright (c) 2007 Kai Wang
   Copyright (c) 2006 Rudolf Marek SYSGO s.r.o.
-  Copyright (c) 2002 Thomas Moestl <tmm@FreeBSD.org>
+  Copyright (c) 2002 Thomas Moestl (tmm@FreeBSD.org)
   Portions Copyright (c) 2010 Nokia Corporation and/or its subsidiary(-ies)
   Portions Copyright (c) 2001 The NetBSD Foundation, Inc
   Portions Copyright (c) 1996-2008 PostgreSQL Global Development Group
@@ -25405,7 +25407,7 @@ Copyright: 2008, testtools developers. See LICENSE for details
   2011, testtools developers. See LICENSE for details
 Comment: License text from the testtools LICENSE file
 License: Expat
- Copyright (c) 2008-2011 Jonathan M. Lange <jml@mumak.net> and the testtools
+ Copyright (c) 2008-2011 Jonathan M. Lange (jml@mumak.net) and the testtools
  authors.
  .
  The testtools authors are:
@@ -25462,18 +25464,18 @@ License: Expat
  SUPPORT, UPDATES, ENHANCEMENTS, OR MODIFICATIONS.
 
 Files: ./test/python/junitxml/*
-Copyright: 2005, Robert Collins <robertc@robertcollins.net>
-  2006, Robert Collins <robertc@robertcollins.net>
-  2009, Robert Collins <robertc@robertcollins.net>
+Copyright: 2005, Robert Collins (robertc@robertcollins.net)
+  2006, Robert Collins (robertc@robertcollins.net)
+  2009, Robert Collins (robertc@robertcollins.net)
 Comment: Not installed, just used by test suite. Copyright information from
  Debian python-junitxml debian/copyright.
 License: LGPL-3
  This package was originally debianized by Robert Collins
- <robertc@robertcollins.net> on Sep 20 2009.
+ (robertc@robertcollins.net) on Sep 20 2009.
  .
  It was downloaded from http://launchpad.net/pyjunitxml/.
  .
- Upstream Authors: Robert Collins <robertc@robertcollins.net>
+ Upstream Authors: Robert Collins (robertc@robertcollins.net)
  .
  Copyright 2009 Robert Collins.
  .
@@ -25521,7 +25523,7 @@ Comment: Copyright information from python-subunit debian/copyright. These
  files are not installed, just used for test suite, which is not run during
  build of the Debian package.
 Copyright:
- 2005, 2006, 2008, 2009 Robert Collins <robertc@robertcollins.net>
+ 2005, 2006, 2008, 2009 Robert Collins (robertc@robertcollins.net)
  2004 Canonical Limited
  Martin Pool
 License: Apache-2 or BSD-3-clause
@@ -25964,7 +25966,7 @@ License: GPL-2
 
 Files: */cmd-line-utils/libedit/np/strlcat.c
  */cmd-line-utils/libedit/np/strlcpy.c
-Copyright: 1998 Todd C. Miller <Todd.Miller@courtesan.com>
+Copyright: 1998 Todd C. Miller (Todd.Miller@courtesan.com)
 License: ISC
  Permission to use, copy, modify, and distribute this software for any
  purpose with or without fee is hereby granted, provided that the above
@@ -26124,12 +26126,12 @@ Copyright: 2002-2010 Oracle and/or its affiliates.
 License: GPL-2
 
 Files: */strings/ctype-tis620.c
-Copyright: 1998 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
- 1989-1991 Samphan Raruenrom <samphan@thai.com>
+Copyright: 1998 Theppitak Karoonboonyanan (thep@links.nectec.or.th)
+ 1989-1991 Samphan Raruenrom (samphan@thai.com)
  2000-2010 Oracle and/or its affiliates.
  2003 Sathit Jittanupat
- 2001 Korakot Chaovavanich <korakot@iname.com> and
- 1998-1999 Pruet Boonma <pruet@eng.cmu.ac.th>
+ 2001 Korakot Chaovavanich (korakot@iname.com) and
+ 1998-1999 Pruet Boonma (pruet@eng.cmu.ac.th)
 License: GPL-2
 
 Files: */storage/innobase/handler/ha_innodb.h
@@ -26307,7 +26309,7 @@ License: BSD (3 clause)
 [percona-xtradb-cluster-5.5-5.5.33-23.7.6/debian/copyright]
 This work was packaged for Debian by:
 
-    Ignacio Nin <ignacio.nin@percona.com> on Wed, 7 Dec 2011 16:29:08 -0500
+    Ignacio Nin (ignacio.nin@percona.com) on Wed, 7 Dec 2011 16:29:08 -0500
 
 It was downloaded from:
 
@@ -26333,14 +26335,14 @@ License:
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with this program. If not, see <http://www.gnu.org/licenses/>
+    along with this program. If not, see (http://www.gnu.org/licenses/)
 
 On Debian systems, the complete text of the GNU General
 Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
 
 The Debian packaging is:
 
-    Copyright (C) 2011 Ignacio Nin <ignacio.nin@percona.com>
+    Copyright (C) 2011 Ignacio Nin (ignacio.nin@percona.com)
 
 you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -26363,25 +26365,25 @@ Copyright:
 
 == innotop ==
 
-Author: Baron Schwartz <baron@xaprb.com>
+Author: Baron Schwartz (baron@xaprb.com)
 URL:    http://innotop.sourceforge.net
 
 License:
-> This software is dual licensed, either GPL version 2 or Artistic License.
->
-> This package is free software; you can redistribute it and/or modify
-> it under the terms of the GNU General Public License as published by
-> the Free Software Foundation; either version 2 of the License, or
-> (at your option) any later version.
->
-> This package is distributed in the hope that it will be useful,
-> but WITHOUT ANY WARRANTY; without even the implied warranty of
-> MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-> GNU General Public License for more details.
->
-> You should have received a copy of the GNU General Public License
-> along with this package; if not, write to the Free Software
-> Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
+) This software is dual licensed, either GPL version 2 or Artistic License.
+)
+) This package is free software; you can redistribute it and/or modify
+) it under the terms of the GNU General Public License as published by
+) the Free Software Foundation; either version 2 of the License, or
+) (at your option) any later version.
+)
+) This package is distributed in the hope that it will be useful,
+) but WITHOUT ANY WARRANTY; without even the implied warranty of
+) MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+) GNU General Public License for more details.
+)
+) You should have received a copy of the GNU General Public License
+) along with this package; if not, write to the Free Software
+) Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
 On Debian systems, the complete text of the GNU General Public License and the
 Artistic License can be found in `/usr/share/common-licenses/'.
@@ -26398,7 +26400,7 @@ that these licenses also apply to the following files:
 [percona-xtradb-cluster-5.5-5.5.33-23.7.6/debian/copyright.ps]
 This work was packaged for Debian by:
 
-    Aleksandr Kuzminsky <aleksandr.kuzminsky@percona.com> on Tue, 11 Jan 2011 07:17:08 -0800
+    Aleksandr Kuzminsky (aleksandr.kuzminsky@percona.com) on Tue, 11 Jan 2011 07:17:08 -0800
 
 It was downloaded from:
 
@@ -26424,14 +26426,14 @@ License:
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with this program. If not, see <http://www.gnu.org/licenses/>
+    along with this program. If not, see (http://www.gnu.org/licenses/)
 
 On Debian systems, the complete text of the GNU General
 Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
 
 The Debian packaging is:
 
-    Copyright (C) 2011 Aleksandr Kuzminsky <aleksandr.kuzminsky@percona.com>
+    Copyright (C) 2011 Aleksandr Kuzminsky (aleksandr.kuzminsky@percona.com)
 
 you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -26454,25 +26456,25 @@ Copyright:
 
 == innotop ==
 
-Author: Baron Schwartz <baron@xaprb.com>
+Author: Baron Schwartz (baron@xaprb.com)
 URL:    http://innotop.sourceforge.net
 
 License:
-> This software is dual licensed, either GPL version 2 or Artistic License.
->
-> This package is free software; you can redistribute it and/or modify
-> it under the terms of the GNU General Public License as published by
-> the Free Software Foundation; either version 2 of the License, or
-> (at your option) any later version.
->
-> This package is distributed in the hope that it will be useful,
-> but WITHOUT ANY WARRANTY; without even the implied warranty of
-> MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-> GNU General Public License for more details.
->
-> You should have received a copy of the GNU General Public License
-> along with this package; if not, write to the Free Software
-> Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
+) This software is dual licensed, either GPL version 2 or Artistic License.
+)
+) This package is free software; you can redistribute it and/or modify
+) it under the terms of the GNU General Public License as published by
+) the Free Software Foundation; either version 2 of the License, or
+) (at your option) any later version.
+)
+) This package is distributed in the hope that it will be useful,
+) but WITHOUT ANY WARRANTY; without even the implied warranty of
+) MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+) GNU General Public License for more details.
+)
+) You should have received a copy of the GNU General Public License
+) along with this package; if not, write to the Free Software
+) Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
 On Debian systems, the complete text of the GNU General Public License and the
 Artistic License can be found in `/usr/share/common-licenses/'.
@@ -26779,8 +26781,8 @@ to attach them to the start of each source file to most effectively
 convey the exclusion of warranty; and each file should have at least
 the "copyright" line and a pointer to where the full notice is found.
 
-    <one line to give the program's name and a brief idea of what it does.>
-    Copyright (C) <year>  <name of author>
+    (one line to give the program's name and a brief idea of what it does.)
+    Copyright (C) (year)  (name of author)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -26818,7 +26820,7 @@ necessary.  Here is a sample; alter the names:
   Yoyodyne, Inc., hereby disclaims all copyright interest in the program
   `Gnomovision' (which makes passes at compilers) written by James Hacker.
 
-  <signature of Ty Coon>, 1 April 1989
+  (signature of Ty Coon), 1 April 1989
   Ty Coon, President of Vice
 
 This General Public License does not permit incorporating your program into
@@ -26876,7 +26878,7 @@ Redistribution and use in source and binary forms, with or without modification,
 
     * Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
     * Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
-    * Neither the name of the <ORGANIZATION> nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+    * Neither the name of the (ORGANIZATION) nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 [percona-xtradb-cluster-5.5-5.5.33-23.7.6/COPYING.show_temp_51]
@@ -27272,7 +27274,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 [percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/build-ps/debian/copyright]
 This work was packaged for Debian by:
 
-    Ignacio Nin <ignacio.nin@percona.com> on Wed, 7 Dec 2011 16:29:08 -0500
+    Ignacio Nin (ignacio.nin@percona.com) on Wed, 7 Dec 2011 16:29:08 -0500
 
 It was downloaded from:
 
@@ -27298,14 +27300,14 @@ License:
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with this program. If not, see <http://www.gnu.org/licenses/>
+    along with this program. If not, see (http://www.gnu.org/licenses/)
 
 On Debian systems, the complete text of the GNU General
 Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
 
 The Debian packaging is:
 
-    Copyright (C) 2011 Ignacio Nin <ignacio.nin@percona.com>
+    Copyright (C) 2011 Ignacio Nin (ignacio.nin@percona.com)
 
 you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -27328,25 +27330,25 @@ Copyright:
 
 == innotop ==
 
-Author: Baron Schwartz <baron@xaprb.com>
+Author: Baron Schwartz (baron@xaprb.com)
 URL:    http://innotop.sourceforge.net
 
 License:
-> This software is dual licensed, either GPL version 2 or Artistic License.
->
-> This package is free software; you can redistribute it and/or modify
-> it under the terms of the GNU General Public License as published by
-> the Free Software Foundation; either version 2 of the License, or
-> (at your option) any later version.
->
-> This package is distributed in the hope that it will be useful,
-> but WITHOUT ANY WARRANTY; without even the implied warranty of
-> MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-> GNU General Public License for more details.
->
-> You should have received a copy of the GNU General Public License
-> along with this package; if not, write to the Free Software
-> Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
+) This software is dual licensed, either GPL version 2 or Artistic License.
+)
+) This package is free software; you can redistribute it and/or modify
+) it under the terms of the GNU General Public License as published by
+) the Free Software Foundation; either version 2 of the License, or
+) (at your option) any later version.
+)
+) This package is distributed in the hope that it will be useful,
+) but WITHOUT ANY WARRANTY; without even the implied warranty of
+) MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+) GNU General Public License for more details.
+)
+) You should have received a copy of the GNU General Public License
+) along with this package; if not, write to the Free Software
+) Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
 On Debian systems, the complete text of the GNU General Public License and the
 Artistic License can be found in `/usr/share/common-licenses/'.
@@ -27369,7 +27371,7 @@ Comments: Modified from original MySQL 5.5 debian/copyright file by
  Stewart Smith and updated for Percona Server.
  .
  Originally produced by a modified version of licensecheck2dep5
- from CDBS by Clint Byrum <clint@ubuntu.com>. Hand modified to reduce 
+ from CDBS by Clint Byrum (clint@ubuntu.com). Hand modified to reduce 
  redundancy in the output and add appropriate license text.
  .
  Also, MySQL carries the "FOSS License Exception" specified in README
@@ -27384,103 +27386,103 @@ Comments: Modified from original MySQL 5.5 debian/copyright file by
  special exceptions to the terms and conditions of the GPLv2
  as applied to these client libraries, which are identified
  and described in more detail in the FOSS License Exception at
- <http://www.mysql.com/about/legal/licensing/foss-exception.html>.
+ (http://www.mysql.com/about/legal/licensing/foss-exception.html).
  .
  The text of the Above URL is quoted below, as of Aug 17, 2011.
  .
- > FOSS License Exception
- > .
- > Updated July 1, 2010
- > .
- > What is the FOSS License Exception?  Oracle's Free and Open Source
- > Software ("FOSS") License Exception (formerly known as the FLOSS
- > License Exception) allows developers of FOSS applications to include
- > Oracle's MySQL Client Libraries (also referred to as "MySQL Drivers"
- > or "MySQL Connectors") with their FOSS applications. MySQL Client
- > Libraries are typically licensed pursuant to version 2 of the General
- > Public License ("GPL"), but this exception permits distribution of
- > certain MySQL Client Libraries with a developer's FOSS applications
- > licensed under the terms of another FOSS license listed below,
- > even though such other FOSS license may be incompatible with the GPL.
- > .
- > The following terms and conditions describe the circumstances under
- > which Oracle's FOSS License Exception applies.
- > .
- > Oracle's FOSS License Exception Terms and Conditions Definitions.
- > "Derivative Work" means a derivative work, as defined under applicable
- > copyright law, formed entirely from the Program and one or more
- > FOSS Applications.
- > .
- > "FOSS Application" means a free and open source software application
- > distributed subject to a license listed in the section below titled
- > "FOSS License List."
- > .
- > "FOSS Notice" means a notice placed by Oracle or MySQL in a copy
- > of the MySQL Client Libraries stating that such copy of the MySQL
- > Client Libraries may be distributed under Oracle's or MySQL's FOSS
- > (or FLOSS) License Exception.
- > .
- > "Independent Work" means portions of the Derivative Work that are not
- > derived from the Program and can reasonably be considered independent
- > and separate works.
- > .
- > "Program" means a copy of Oracle's MySQL Client Libraries that
- > contains a FOSS Notice.
- > . 
- > A FOSS application developer ("you" or "your") may distribute a
- > Derivative Work provided that you and the Derivative Work meet all
- > of the following conditions: You obey the GPL in all respects for
- > the Program and all portions (including modifications) of the Program
- > included in the Derivative Work (provided that this condition does not
- > apply to Independent Works); The Derivative Work does not include any
- > work licensed under the GPL other than the Program; You distribute
- > Independent Works subject to a license listed in the section below
- > titled "FOSS License List"; You distribute Independent Works in
- > object code or executable form with the complete corresponding
- > machine-readable source code on the same medium and under the same
- > FOSS license applying to the object code or executable forms; All
- > works that are aggregated with the Program or the Derivative Work
- > on a medium or volume of storage are not derivative works of the
- > Program, Derivative Work or FOSS Application, and must reasonably
- > be considered independent and separate works.  Oracle reserves all
- > rights not expressly granted in these terms and conditions. If all
- > of the above conditions are not met, then this FOSS License Exception
- > does not apply to you or your Derivative Work.
- > .
- > FOSS License List
- > . 
- > License Name    Version(s)/Copyright Date
- > Release Early    Certified Software
- > Academic Free License    2.0
- > Apache Software License  1.0/1.1/2.0
- > Apple Public Source License  2.0
- > Artistic license     From Perl 5.8.0
- > BSD license  "July 22 1999"
- > Common Development and Distribution License (CDDL)   1.0
- > Common Public License    1.0
- > Eclipse Public License   1.0
- > European Union Public License (EUPL)[1]    1.1
- > GNU Library or "Lesser" General Public License (LGPL)    2.0/2.1/3.0
- > GNU General Public License (GPL)     3.0
- > IBM Public License   1.0
- > Jabber Open Source License   1.0
- > MIT License (As listed in file MIT-License.txt)  -
- > Mozilla Public License (MPL)     1.0/1.1
- > Open Software License    2.0
- > OpenSSL license (with original SSLeay license)   "2003" ("1998")
- > PHP License  3.0/3.01
- > Python license (CNRI Python License)     -
- > Python Software Foundation License   2.1.1
- > Sleepycat License   "1999"
- > University of Illinois/NCSA Open Source License  -
- > W3C License  "2001"
- > X11 License  "2001"
- > Zlib/libpng License  -
- > Zope Public License  2.0
- > [1] When an Independent Work is licensed under a "Compatible License"
- > pursuant to the EUPL, the Compatible License rather than the EUPL is
- > the applicable license for purposes of these FOSS License Exception
- > Terms and Conditions.
+ ) FOSS License Exception
+ ) .
+ ) Updated July 1, 2010
+ ) .
+ ) What is the FOSS License Exception?  Oracle's Free and Open Source
+ ) Software ("FOSS") License Exception (formerly known as the FLOSS
+ ) License Exception) allows developers of FOSS applications to include
+ ) Oracle's MySQL Client Libraries (also referred to as "MySQL Drivers"
+ ) or "MySQL Connectors") with their FOSS applications. MySQL Client
+ ) Libraries are typically licensed pursuant to version 2 of the General
+ ) Public License ("GPL"), but this exception permits distribution of
+ ) certain MySQL Client Libraries with a developer's FOSS applications
+ ) licensed under the terms of another FOSS license listed below,
+ ) even though such other FOSS license may be incompatible with the GPL.
+ ) .
+ ) The following terms and conditions describe the circumstances under
+ ) which Oracle's FOSS License Exception applies.
+ ) .
+ ) Oracle's FOSS License Exception Terms and Conditions Definitions.
+ ) "Derivative Work" means a derivative work, as defined under applicable
+ ) copyright law, formed entirely from the Program and one or more
+ ) FOSS Applications.
+ ) .
+ ) "FOSS Application" means a free and open source software application
+ ) distributed subject to a license listed in the section below titled
+ ) "FOSS License List."
+ ) .
+ ) "FOSS Notice" means a notice placed by Oracle or MySQL in a copy
+ ) of the MySQL Client Libraries stating that such copy of the MySQL
+ ) Client Libraries may be distributed under Oracle's or MySQL's FOSS
+ ) (or FLOSS) License Exception.
+ ) .
+ ) "Independent Work" means portions of the Derivative Work that are not
+ ) derived from the Program and can reasonably be considered independent
+ ) and separate works.
+ ) .
+ ) "Program" means a copy of Oracle's MySQL Client Libraries that
+ ) contains a FOSS Notice.
+ ) . 
+ ) A FOSS application developer ("you" or "your") may distribute a
+ ) Derivative Work provided that you and the Derivative Work meet all
+ ) of the following conditions: You obey the GPL in all respects for
+ ) the Program and all portions (including modifications) of the Program
+ ) included in the Derivative Work (provided that this condition does not
+ ) apply to Independent Works); The Derivative Work does not include any
+ ) work licensed under the GPL other than the Program; You distribute
+ ) Independent Works subject to a license listed in the section below
+ ) titled "FOSS License List"; You distribute Independent Works in
+ ) object code or executable form with the complete corresponding
+ ) machine-readable source code on the same medium and under the same
+ ) FOSS license applying to the object code or executable forms; All
+ ) works that are aggregated with the Program or the Derivative Work
+ ) on a medium or volume of storage are not derivative works of the
+ ) Program, Derivative Work or FOSS Application, and must reasonably
+ ) be considered independent and separate works.  Oracle reserves all
+ ) rights not expressly granted in these terms and conditions. If all
+ ) of the above conditions are not met, then this FOSS License Exception
+ ) does not apply to you or your Derivative Work.
+ ) .
+ ) FOSS License List
+ ) . 
+ ) License Name    Version(s)/Copyright Date
+ ) Release Early    Certified Software
+ ) Academic Free License    2.0
+ ) Apache Software License  1.0/1.1/2.0
+ ) Apple Public Source License  2.0
+ ) Artistic license     From Perl 5.8.0
+ ) BSD license  "July 22 1999"
+ ) Common Development and Distribution License (CDDL)   1.0
+ ) Common Public License    1.0
+ ) Eclipse Public License   1.0
+ ) European Union Public License (EUPL)[1]    1.1
+ ) GNU Library or "Lesser" General Public License (LGPL)    2.0/2.1/3.0
+ ) GNU General Public License (GPL)     3.0
+ ) IBM Public License   1.0
+ ) Jabber Open Source License   1.0
+ ) MIT License (As listed in file MIT-License.txt)  -
+ ) Mozilla Public License (MPL)     1.0/1.1
+ ) Open Software License    2.0
+ ) OpenSSL license (with original SSLeay license)   "2003" ("1998")
+ ) PHP License  3.0/3.01
+ ) Python license (CNRI Python License)     -
+ ) Python Software Foundation License   2.1.1
+ ) Sleepycat License   "1999"
+ ) University of Illinois/NCSA Open Source License  -
+ ) W3C License  "2001"
+ ) X11 License  "2001"
+ ) Zlib/libpng License  -
+ ) Zope Public License  2.0
+ ) [1] When an Independent Work is licensed under a "Compatible License"
+ ) pursuant to the EUPL, the Compatible License rather than the EUPL is
+ ) the applicable license for purposes of these FOSS License Exception
+ ) Terms and Conditions.
  .
  The above text is subject to this copyright notice:
  (C) 2010, Oracle and/or its affiliats.
@@ -27839,7 +27841,7 @@ License: GPL-2
 
 Files: cmd-line-utils/libedit/np/strlcat.c
  cmd-line-utils/libedit/np/strlcpy.c
-Copyright: 1998 Todd C. Miller <Todd.Miller@courtesan.com>
+Copyright: 1998 Todd C. Miller (Todd.Miller@courtesan.com)
 License: ISC
  Permission to use, copy, modify, and distribute this software for any
  purpose with or without fee is hereby granted, provided that the above
@@ -27999,12 +28001,12 @@ Copyright: 2002-2010 Oracle and/or its affiliates.
 License: GPL-2
 
 Files: strings/ctype-tis620.c
-Copyright: 1998 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
- 1989-1991 Samphan Raruenrom <samphan@thai.com>
+Copyright: 1998 Theppitak Karoonboonyanan (thep@links.nectec.or.th)
+ 1989-1991 Samphan Raruenrom (samphan@thai.com)
  2000-2010 Oracle and/or its affiliates.
  2003 Sathit Jittanupat
- 2001 Korakot Chaovavanich <korakot@iname.com> and
- 1998-1999 Pruet Boonma <pruet@eng.cmu.ac.th>
+ 2001 Korakot Chaovavanich (korakot@iname.com) and
+ 1998-1999 Pruet Boonma (pruet@eng.cmu.ac.th)
 License: GPL-2
 
 Files: storage/innobase/handler/ha_innodb.h
@@ -28158,7 +28160,7 @@ Upstream-Name: Percona XtraDB Cluster 5.5
 Source: http://launchpad.net/percona-xtradb-cluster
 Comments:
  Originally produced by a modified version of licensecheck2dep5
- from CDBS by Clint Byrum <clint@ubuntu.com>. Hand modified to reduce
+ from CDBS by Clint Byrum (clint@ubuntu.com). Hand modified to reduce
  redundancy in the output and add appropriate license text.
  .
  Also, MySQL carries the "FOSS License Exception" specified in README
@@ -28173,103 +28175,103 @@ Comments:
  special exceptions to the terms and conditions of the GPLv2
  as applied to these client libraries, which are identified
  and described in more detail in the FOSS License Exception at
- <http://www.mysql.com/about/legal/licensing/foss-exception.html>.
+ (http://www.mysql.com/about/legal/licensing/foss-exception.html).
  .
  The text of the Above URL is quoted below, as of Aug 17, 2011.
  .
- > FOSS License Exception
- > .
- > Updated July 1, 2010
- > .
- > What is the FOSS License Exception?  Oracle's Free and Open Source
- > Software ("FOSS") License Exception (formerly known as the FLOSS
- > License Exception) allows developers of FOSS applications to include
- > Oracle's MySQL Client Libraries (also referred to as "MySQL Drivers"
- > or "MySQL Connectors") with their FOSS applications. MySQL Client
- > Libraries are typically licensed pursuant to version 2 of the General
- > Public License ("GPL"), but this exception permits distribution of
- > certain MySQL Client Libraries with a developer's FOSS applications
- > licensed under the terms of another FOSS license listed below,
- > even though such other FOSS license may be incompatible with the GPL.
- > .
- > The following terms and conditions describe the circumstances under
- > which Oracle's FOSS License Exception applies.
- > .
- > Oracle's FOSS License Exception Terms and Conditions Definitions.
- > "Derivative Work" means a derivative work, as defined under applicable
- > copyright law, formed entirely from the Program and one or more
- > FOSS Applications.
- > .
- > "FOSS Application" means a free and open source software application
- > distributed subject to a license listed in the section below titled
- > "FOSS License List."
- > .
- > "FOSS Notice" means a notice placed by Oracle or MySQL in a copy
- > of the MySQL Client Libraries stating that such copy of the MySQL
- > Client Libraries may be distributed under Oracle's or MySQL's FOSS
- > (or FLOSS) License Exception.
- > .
- > "Independent Work" means portions of the Derivative Work that are not
- > derived from the Program and can reasonably be considered independent
- > and separate works.
- > .
- > "Program" means a copy of Oracle's MySQL Client Libraries that
- > contains a FOSS Notice.
- > .
- > A FOSS application developer ("you" or "your") may distribute a
- > Derivative Work provided that you and the Derivative Work meet all
- > of the following conditions: You obey the GPL in all respects for
- > the Program and all portions (including modifications) of the Program
- > included in the Derivative Work (provided that this condition does not
- > apply to Independent Works); The Derivative Work does not include any
- > work licensed under the GPL other than the Program; You distribute
- > Independent Works subject to a license listed in the section below
- > titled "FOSS License List"; You distribute Independent Works in
- > object code or executable form with the complete corresponding
- > machine-readable source code on the same medium and under the same
- > FOSS license applying to the object code or executable forms; All
- > works that are aggregated with the Program or the Derivative Work
- > on a medium or volume of storage are not derivative works of the
- > Program, Derivative Work or FOSS Application, and must reasonably
- > be considered independent and separate works.  Oracle reserves all
- > rights not expressly granted in these terms and conditions. If all
- > of the above conditions are not met, then this FOSS License Exception
- > does not apply to you or your Derivative Work.
- > .
- > FOSS License List
- > .
- > License Name    Version(s)/Copyright Date
- > Release Early    Certified Software
- > Academic Free License    2.0
- > Apache Software License  1.0/1.1/2.0
- > Apple Public Source License  2.0
- > Artistic license     From Perl 5.8.0
- > BSD license  "July 22 1999"
- > Common Development and Distribution License (CDDL)   1.0
- > Common Public License    1.0
- > Eclipse Public License   1.0
- > European Union Public License (EUPL)[1]    1.1
- > GNU Library or "Lesser" General Public License (LGPL)    2.0/2.1/3.0
- > GNU General Public License (GPL)     3.0
- > IBM Public License   1.0
- > Jabber Open Source License   1.0
- > MIT License (As listed in file MIT-License.txt)  -
- > Mozilla Public License (MPL)     1.0/1.1
- > Open Software License    2.0
- > OpenSSL license (with original SSLeay license)   "2003" ("1998")
- > PHP License  3.0/3.01
- > Python license (CNRI Python License)     -
- > Python Software Foundation License   2.1.1
- > Sleepycat License   "1999"
- > University of Illinois/NCSA Open Source License  -
- > W3C License  "2001"
- > X11 License  "2001"
- > Zlib/libpng License  -
- > Zope Public License  2.0
- > [1] When an Independent Work is licensed under a "Compatible License"
- > pursuant to the EUPL, the Compatible License rather than the EUPL is
- > the applicable license for purposes of these FOSS License Exception
- > Terms and Conditions.
+ ) FOSS License Exception
+ ) .
+ ) Updated July 1, 2010
+ ) .
+ ) What is the FOSS License Exception?  Oracle's Free and Open Source
+ ) Software ("FOSS") License Exception (formerly known as the FLOSS
+ ) License Exception) allows developers of FOSS applications to include
+ ) Oracle's MySQL Client Libraries (also referred to as "MySQL Drivers"
+ ) or "MySQL Connectors") with their FOSS applications. MySQL Client
+ ) Libraries are typically licensed pursuant to version 2 of the General
+ ) Public License ("GPL"), but this exception permits distribution of
+ ) certain MySQL Client Libraries with a developer's FOSS applications
+ ) licensed under the terms of another FOSS license listed below,
+ ) even though such other FOSS license may be incompatible with the GPL.
+ ) .
+ ) The following terms and conditions describe the circumstances under
+ ) which Oracle's FOSS License Exception applies.
+ ) .
+ ) Oracle's FOSS License Exception Terms and Conditions Definitions.
+ ) "Derivative Work" means a derivative work, as defined under applicable
+ ) copyright law, formed entirely from the Program and one or more
+ ) FOSS Applications.
+ ) .
+ ) "FOSS Application" means a free and open source software application
+ ) distributed subject to a license listed in the section below titled
+ ) "FOSS License List."
+ ) .
+ ) "FOSS Notice" means a notice placed by Oracle or MySQL in a copy
+ ) of the MySQL Client Libraries stating that such copy of the MySQL
+ ) Client Libraries may be distributed under Oracle's or MySQL's FOSS
+ ) (or FLOSS) License Exception.
+ ) .
+ ) "Independent Work" means portions of the Derivative Work that are not
+ ) derived from the Program and can reasonably be considered independent
+ ) and separate works.
+ ) .
+ ) "Program" means a copy of Oracle's MySQL Client Libraries that
+ ) contains a FOSS Notice.
+ ) .
+ ) A FOSS application developer ("you" or "your") may distribute a
+ ) Derivative Work provided that you and the Derivative Work meet all
+ ) of the following conditions: You obey the GPL in all respects for
+ ) the Program and all portions (including modifications) of the Program
+ ) included in the Derivative Work (provided that this condition does not
+ ) apply to Independent Works); The Derivative Work does not include any
+ ) work licensed under the GPL other than the Program; You distribute
+ ) Independent Works subject to a license listed in the section below
+ ) titled "FOSS License List"; You distribute Independent Works in
+ ) object code or executable form with the complete corresponding
+ ) machine-readable source code on the same medium and under the same
+ ) FOSS license applying to the object code or executable forms; All
+ ) works that are aggregated with the Program or the Derivative Work
+ ) on a medium or volume of storage are not derivative works of the
+ ) Program, Derivative Work or FOSS Application, and must reasonably
+ ) be considered independent and separate works.  Oracle reserves all
+ ) rights not expressly granted in these terms and conditions. If all
+ ) of the above conditions are not met, then this FOSS License Exception
+ ) does not apply to you or your Derivative Work.
+ ) .
+ ) FOSS License List
+ ) .
+ ) License Name    Version(s)/Copyright Date
+ ) Release Early    Certified Software
+ ) Academic Free License    2.0
+ ) Apache Software License  1.0/1.1/2.0
+ ) Apple Public Source License  2.0
+ ) Artistic license     From Perl 5.8.0
+ ) BSD license  "July 22 1999"
+ ) Common Development and Distribution License (CDDL)   1.0
+ ) Common Public License    1.0
+ ) Eclipse Public License   1.0
+ ) European Union Public License (EUPL)[1]    1.1
+ ) GNU Library or "Lesser" General Public License (LGPL)    2.0/2.1/3.0
+ ) GNU General Public License (GPL)     3.0
+ ) IBM Public License   1.0
+ ) Jabber Open Source License   1.0
+ ) MIT License (As listed in file MIT-License.txt)  -
+ ) Mozilla Public License (MPL)     1.0/1.1
+ ) Open Software License    2.0
+ ) OpenSSL license (with original SSLeay license)   "2003" ("1998")
+ ) PHP License  3.0/3.01
+ ) Python license (CNRI Python License)     -
+ ) Python Software Foundation License   2.1.1
+ ) Sleepycat License   "1999"
+ ) University of Illinois/NCSA Open Source License  -
+ ) W3C License  "2001"
+ ) X11 License  "2001"
+ ) Zlib/libpng License  -
+ ) Zope Public License  2.0
+ ) [1] When an Independent Work is licensed under a "Compatible License"
+ ) pursuant to the EUPL, the Compatible License rather than the EUPL is
+ ) the applicable license for purposes of these FOSS License Exception
+ ) Terms and Conditions.
  .
  The above text is subject to this copyright notice:
  © 2010, Oracle and/or its affiliats.
@@ -28615,7 +28617,7 @@ License: GPL-2
 
 Files: cmd-line-utils/libedit/np/strlcat.c
  cmd-line-utils/libedit/np/strlcpy.c
-Copyright: 1998 Todd C. Miller <Todd.Miller@courtesan.com>
+Copyright: 1998 Todd C. Miller (Todd.Miller@courtesan.com)
 License: ISC
  Permission to use, copy, modify, and distribute this software for any
  purpose with or without fee is hereby granted, provided that the above
@@ -28776,12 +28778,12 @@ Copyright: 2002-2010 Oracle and/or its affiliates.
 License: GPL-2
 
 Files: strings/ctype-tis620.c
-Copyright: 1998 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
- 1989-1991 Samphan Raruenrom <samphan@thai.com>
+Copyright: 1998 Theppitak Karoonboonyanan (thep@links.nectec.or.th)
+ 1989-1991 Samphan Raruenrom (samphan@thai.com)
  2000-2010 Oracle and/or its affiliates.
  2003 Sathit Jittanupat
- 2001 Korakot Chaovavanich <korakot@iname.com> and
- 1998-1999 Pruet Boonma <pruet@eng.cmu.ac.th>
+ 2001 Korakot Chaovavanich (korakot@iname.com) and
+ 1998-1999 Pruet Boonma (pruet@eng.cmu.ac.th)
 License: GPL-2
 
 Files: storage/innobase/handler/ha_innodb.h
@@ -28847,7 +28849,7 @@ Copyright: 2013 Percona Inc
 License: GPL-2
 
 Files: wsrep/*
-Copyright: 2009-2013 Codership Oy <info@codership.com>
+Copyright: 2009-2013 Codership Oy (info@codership.com)
 License: GPL-2
 
 Files: regex/*
@@ -28904,7 +28906,7 @@ Copyright: nobody
 License: public-domain
 
 Files: debian/*
-Copyright: 2011, Ignacio Nin <ignacio.nin@percona.com>
+Copyright: 2011, Ignacio Nin (ignacio.nin@percona.com)
            2013, Canonical Ltd.
 License: GPL-2
 
@@ -29289,8 +29291,8 @@ to attach them to the start of each source file to most effectively
 convey the exclusion of warranty; and each file should have at least
 the "copyright" line and a pointer to where the full notice is found.
 
-    <one line to give the program's name and a brief idea of what it does.>
-    Copyright (C) <year>  <name of author>
+    (one line to give the program's name and a brief idea of what it does.)
+    Copyright (C) (year)  (name of author)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -29328,7 +29330,7 @@ necessary.  Here is a sample; alter the names:
   Yoyodyne, Inc., hereby disclaims all copyright interest in the program
   `Gnomovision' (which makes passes at compilers) written by James Hacker.
 
-  <signature of Ty Coon>, 1 April 1989
+  (signature of Ty Coon), 1 April 1989
   Ty Coon, President of Vice
 
 This General Public License does not permit incorporating your program into
@@ -29386,7 +29388,7 @@ Redistribution and use in source and binary forms, with or without modification,
 
     * Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
     * Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
-    * Neither the name of the <ORGANIZATION> nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+    * Neither the name of the (ORGANIZATION) nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 [percona-xtradb-cluster-5.5-5.5.37-25.10+dfsg/COPYING.show_temp_51]
@@ -29732,7 +29734,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 [percona-xtradb-cluster-galera-2.x-163.wheezy/debian/copyright]
 This work was packaged for Debian by:
 
-    Ignacio Nin <ignacio.nin@percona.com> on Tue, 06 Dec 2011 12:19:07 -0500
+    Ignacio Nin (ignacio.nin@percona.com) on Tue, 06 Dec 2011 12:19:07 -0500
 
 It was downloaded from:
 
@@ -29742,7 +29744,7 @@ Upstream Author(s):
 
     Codership Oy
     http://www.codership.com
-    <info@codership.com>
+    (info@codership.com)
 
 Copyright:
 
@@ -29752,7 +29754,7 @@ Copyright:
  
 The Debian packaging is:
 
-    Copyright (C) 2011 Ignacio Nin <ignacio.nin@percona.com>
+    Copyright (C) 2011 Ignacio Nin (ignacio.nin@percona.com)
     and is licensed under the GPL version 3,
     see "/usr/share/common-licenses/GPL-3".
 [percona-xtradb-cluster-galera-2.x-163.wheezy/debian/copyright]
@@ -29789,7 +29791,7 @@ DEALINGS IN THE SOFTWARE.
 
 [percona-xtradb-cluster-galera-2.x-163.wheezy/COPYING]
 Galera replication - implementation of write set replication (wsrep) interface.
-Copyright (C) 2007-2013 Codership Oy <info@codership.com>
+Copyright (C) 2007-2013 Codership Oy (info@codership.com)
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of version 2 of the GNU General Public 
@@ -29833,7 +29835,7 @@ Comments:
    http://bazaar.launchpad.net/~codership/galera/2.x/revision/167
 
 Files: *
-Copyright: 2007-2013 Codership Oy <info@codership.com>
+Copyright: 2007-2013 Codership Oy (info@codership.com)
 License: GPL-2
 
 Files: asio/*
@@ -29866,7 +29868,7 @@ License:
  DEALINGS IN THE SOFTWARE.
 
 Files: debian/*
-Copyright: 2011, Ignacio Nin <ignacio.nin@percona.com>,
+Copyright: 2011, Ignacio Nin (ignacio.nin@percona.com),
            2013, Canonical Ltd.
 License: GPL-2
 
@@ -29889,7 +29891,7 @@ License: GPL-2
 
 [percona-xtradb-cluster-galera-2.x-175/COPYING]
 Galera replication - implementation of write set replication (wsrep) interface.
-Copyright (C) 2007-2014 Codership Oy <info@codership.com>
+Copyright (C) 2007-2014 Codership Oy (info@codership.com)
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of version 2 of the GNU General Public 
@@ -29935,7 +29937,7 @@ see asio/COPYING for details
 [pexpect-3.2/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: pexpect
-Upstream-Contact: Noah Spurrier <noah@noah.org>
+Upstream-Contact: Noah Spurrier (noah@noah.org)
 Source: http://pypi.python.org/pypi/pexpect/
 
 Files: *
@@ -29960,9 +29962,9 @@ License: ISC
 "pillow-2.4.0/debian/copyright":
 
 [pillow-2.4.0/debian/copyright]
-This package was debianized by Simon Richter <sjr@debian.org> on
+This package was debianized by Simon Richter (sjr@debian.org) on
 Mon, 21 May 2001 22:20:43 +0200.
-As of 2004-01-05, it is maintained by Matthias Urlichs <smurf@debian.org>.
+As of 2004-01-05, it is maintained by Matthias Urlichs (smurf@debian.org).
 
 It was downloaded from http://www.pythonware.com/downloads/index.htm
 
@@ -30002,8 +30004,8 @@ OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 [po-debconf-1.0.16+nmu3/debian/copyright]
 po-debconf is
-  Copyright (c) 2002 Denis Barbier <barbier@linuxfr.org>
-  Copyright (c) 2002 Martin Quinson <Martin.Quinson@ens-lyon.fr>
+  Copyright (c) 2002 Denis Barbier (barbier@linuxfr.org)
+  Copyright (c) 2002 Martin Quinson (Martin.Quinson@ens-lyon.fr)
 
 This program is released under the terms and conditions of the GNU
 General Public License (GPL).  On Debian GNU/Linux systems, the complete
@@ -30079,7 +30081,7 @@ Copyright: Copyright (c) 1998 Sun Microsystems, Inc.
 License: Tcl
 
 Files: contrib/fuzzystrmatch/dmetaphone.c
-Copyright: Copyright 2000, Maurice Aubrey <maurice@hevanet.com>
+Copyright: Copyright 2000, Maurice Aubrey (maurice@hevanet.com)
            Copyright 2003, North Carolina State Highway Patrol
 License:
  This module is free software; you may redistribute it and/or
@@ -30122,7 +30124,7 @@ License:
  `/usr/share/common-licenses/Artistic'.
 
 Files: contrib/pageinspect/btreefuncs.c contrib/pgstattuple/pgstatindex.c
-Copyright: Copyright (c) 2006 Satoshi Nagayasu <nagayasus@nttdata.co.jp>
+Copyright: Copyright (c) 2006 Satoshi Nagayasu (nagayasus@nttdata.co.jp)
 License:
  Permission to use, copy, modify, and distribute this software and
  its documentation for any purpose, without fee, and without a
@@ -30335,20 +30337,20 @@ the same license terms as the rest of PostgreSQL.
 [psmisc-22.21/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: psmisc
-Upstream-Contact: Craig Small <csmall@enc.com.au>
+Upstream-Contact: Craig Small (csmall@enc.com.au)
 Source: http://psmisc.sourceforge.net/
 
 Files: *
 Copyright: 1993-2005 Werner Almesberger
-           2002-2011 Craig small <csmall@enc.com.au>
+           2002-2011 Craig small (csmall@enc.com.au)
 License: GPL-2+
 
 Files: src/lists.h
-Copyright: 2011 Werner Fink <werner@suse.de>
+Copyright: 2011 Werner Fink (werner@suse.de)
 License: GPL-2+
 
 Files: src/peekfd.c
-Copyright: 2007 Trent Waddington <trent.waddington@gmail.com>
+Copyright: 2007 Trent Waddington (trent.waddington@gmail.com)
 License: GPL-2+
 
 License: GPL-2+
@@ -30381,12 +30383,12 @@ License: GPL-2+
 "pygments-1.6+dfsg/debian/copyright":
 
 [pygments-1.6+dfsg/debian/copyright]
-This package was debianized by Piotr Ożarowski <piotr@debian.org> on
+This package was debianized by Piotr Ożarowski (piotr@debian.org) on
 Tue, 24 Oct 2006 17:54:36 +0200.
 
 It was downloaded from http://pygments.pocoo.org/download/
 
-Upstream Author: Georg Brandl <georg@python.org>
+Upstream Author: Georg Brandl (georg@python.org)
 
 Copyright: 2006-2009 by the Pygments team, see AUTHORS
 
@@ -30425,7 +30427,7 @@ File with different copyright holders:
  scripts/vim2pygments.py:
 	2006 by Armin Ronacher.
 
-The Debian packaging is © 2006-2009, Piotr Ożarowski <piotr@debian.org> and
+The Debian packaging is © 2006-2009, Piotr Ożarowski (piotr@debian.org) and
 is licensed under the same licence as Pygments.
 
 [pygments-1.6+dfsg/debian/copyright]
@@ -30461,7 +30463,7 @@ License: GPL-2+
  may be found in '/usr/share/common-licenses/GPL-2'.
 
 Files: debian/*
-Copyright: Copyright (C) 2008-2014, Sandro Tosi <morph@debian.org>
+Copyright: Copyright (C) 2008-2014, Sandro Tosi (morph@debian.org)
 License: GPL-2+
 
 Files: checkers/logging.py
@@ -30474,7 +30476,7 @@ Copyright: Copyright (c) 2003-2013 LOGILAB S.A. (Paris, FRANCE).
 License: GPL-2+
 
 Files: elisp/pylint.el
-Copyright: Copyright (c) 2009, 2010 Ian Eure <ian.eure@gmail.com>
+Copyright: Copyright (c) 2009, 2010 Ian Eure (ian.eure@gmail.com)
 License: GPL-2+
 
 Files: checkers/stdlib.py
@@ -30495,14 +30497,14 @@ Copyright: Copyright 2014 Google Inc. All Rights Reserved
 "pyopenssl-0.13.1/debian/copyright":
 
 [pyopenssl-0.13.1/debian/copyright]
-This package was debianized by Martin Sjögren <sjogren@debian.org> on
+This package was debianized by Martin Sjögren (sjogren@debian.org) on
 Mon,  7 Jan 2002 16:25:58 +0100.
 
 It was downloaded from http://launchpad.net/pyopenssl
 
 Upstream Author:
 
-    Jean-Paul Calderone <exarkun@twistedmatrix.com>
+    Jean-Paul Calderone (exarkun@twistedmatrix.com)
 
 Copyright:
 
@@ -30516,7 +30518,7 @@ License:
 A copy of the Apache License (version 2) can be found in
 /usr/share/common-licenses/Apache-2.0 on Debian systems.
 
-The Debian packaging is Copyright (C) 2008-2014, Sandro Tosi <morph@debian.org>
+The Debian packaging is Copyright (C) 2008-2014, Sandro Tosi (morph@debian.org)
 and is licensed under the same terms as upstream code.
 
 The following files have different copyright info:
@@ -30659,16 +30661,16 @@ OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 "python3.4-3.4.1/debian/copyright":
 
 [python3.4-3.4.1/debian/copyright]
-This package was put together by Klee Dienes <klee@debian.org> from 
+This package was put together by Klee Dienes (klee@debian.org) from 
 sources from ftp.python.org:/pub/python, based on the Debianization by 
-the previous maintainers Bernd S. Brentrup <bsb@uni-muenster.de> and 
-Bruce Perens. Current maintainer is Matthias Klose <doko@debian.org>. 
+the previous maintainers Bernd S. Brentrup (bsb@uni-muenster.de) and 
+Bruce Perens. Current maintainer is Matthias Klose (doko@debian.org). 
 
 It was downloaded from http://python.org/
 
 Copyright:
 
-Upstream Author: Guido van Rossum <guido@cwi.nl> and others.
+Upstream Author: Guido van Rossum (guido@cwi.nl) and others.
 
 License:
 
@@ -31107,7 +31109,7 @@ Cookie management
 
 The `Cookie' module contains the following notice:
 
-      Copyright 2000 by Timothy O'Malley <timo@alum.mit.edu>
+      Copyright 2000 by Timothy O'Malley (timo@alum.mit.edu)
 
                      All Rights Reserved
 
@@ -31362,7 +31364,7 @@ License: Redistribution and use in source and binary forms, with or without
 
 Files: Lib/sqlite3/*
 Files: Modules/_sqlite/*
-Copyright: (C) 2004-2005 Gerhard Häring <gh@ghaering.de>
+Copyright: (C) 2004-2005 Gerhard Häring (gh@ghaering.de)
 License: This software is provided 'as-is', without any express or implied
  warranty.  In no event will the authors be held liable for any damages
  arising from the use of this software.
@@ -31399,7 +31401,7 @@ License: Permission to use, copy, modify, and distribute this software and
  CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 Files: Lib/tarfile.py
-Copyright: (C) 2002 Lars Gustaebel <lars@gustaebel.de>
+Copyright: (C) 2002 Lars Gustaebel (lars@gustaebel.de)
 License: Permission  is  hereby granted,  free  of charge,  to  any person
  obtaining a  copy of  this software  and associated documentation
  files  (the  "Software"),  to   deal  in  the  Software   without
@@ -31456,7 +31458,7 @@ Copyright: Copyright (C) 1996-2011 Red Hat, Inc and others.
     Copyright (c) 2005 Axis Communications AB
     Copyright (c) 1998 Cygnus Solutions
     Copyright (c) 2004 Renesas Technology
-    Copyright (c) 2002, 2007  Bo Thorsen <bo@suse.de>
+    Copyright (c) 2002, 2007  Bo Thorsen (bo@suse.de)
     Copyright (c) 2002 Ranjit Mathew
     Copyright (c) 2002 Roger Sayle
     Copyright (c) 2000, 2007 Software AG
@@ -31638,9 +31640,9 @@ License: Permission to use, copy, modify, and distribute this software and its
   OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 Files: PC/_subprocess.c
-Copyright: Copyright (c) 2004 by Fredrik Lundh <fredrik@pythonware.com>
+Copyright: Copyright (c) 2004 by Fredrik Lundh (fredrik@pythonware.com)
 	Copyright (c) 2004 by Secret Labs AB, http://www.pythonware.com
-	Copyright (c) 2004 by Peter Astrand <astrand@lysator.liu.se>
+	Copyright (c) 2004 by Peter Astrand (astrand@lysator.liu.se)
 License:
  * Permission to use, copy, modify, and distribute this software and
  * its associated documentation for any purpose and without fee is
@@ -32093,16 +32095,16 @@ X Window System is a trademark of The Open Group
 [python-amqp-1.4.5/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: amqp
-Upstream-Contact: Ask Solem <pyamqp@celeryproject.org>
+Upstream-Contact: Ask Solem (pyamqp@celeryproject.org)
 Source: https://pypi.python.org/pypi/amqp
 
 Files: *
-Copyright: 2007-2008, Barry Pederson <bp@barryp.org>
-           2012-2013, Ask Solem <pyamqp@celeryproject.org>
+Copyright: 2007-2008, Barry Pederson (bp@barryp.org)
+           2012-2013, Ask Solem (pyamqp@celeryproject.org)
 License: LGPL-2.1+
 
 Files: debian/*
-Copyright: 2013, Michael Fladischer <FladischerMichael@fladi.at>
+Copyright: 2013, Michael Fladischer (FladischerMichael@fladi.at)
 License: LGPL-2.1+
 
 License: LGPL-2.1+
@@ -32132,16 +32134,16 @@ License: LGPL-2.1+
 [python-anyjson-0.3.3/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: anyjson
-Upstream-Contact: Rune Halvorsen <runefh@gmail.com>
+Upstream-Contact: Rune Halvorsen (runefh@gmail.com)
 Source: http://pypi.python.org/pypi/anyjson/
 
 Files: *
-Copyright: 2009, Rune Halvorsen <runefh@gmail.com>
+Copyright: 2009, Rune Halvorsen (runefh@gmail.com)
 License: BSD-anyjson
 
 Files: debian/*
-Copyright: 2011-2013, Fladischer Michael <FladischerMichael@fladi.at>
-           2009, David Watson <david@bashton.com>
+Copyright: 2011-2013, Fladischer Michael (FladischerMichael@fladi.at)
+           2009, David Watson (david@bashton.com)
 License: BSD-anyjson
 
 License: BSD-anyjson
@@ -32182,7 +32184,7 @@ Upstream-Name: python-colorama
 Source: http://pypi.python.org/pypi/colorama/
 
 Files: *
-Copyright: © 2010 Jonathan Hartley <tartley@tartley.com>
+Copyright: © 2010 Jonathan Hartley (tartley@tartley.com)
 License: BSD-3
  All rights reserved.
  .
@@ -32200,7 +32202,7 @@ License: BSD-3
  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
  ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
  WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
- DISCLAIMED. IN NO EVENT SHALL <COPYRIGHT HOLDER> BE LIABLE FOR ANY
+ DISCLAIMED. IN NO EVENT SHALL (COPYRIGHT HOLDER) BE LIABLE FOR ANY
  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
@@ -32209,7 +32211,7 @@ License: BSD-3
  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 Files: debian/*
-Copyright: © 2012 Khalid El Fathi <khalid@elfathi.fr>
+Copyright: © 2012 Khalid El Fathi (khalid@elfathi.fr)
 License: GPL-2+
  This package is free software; you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -32222,7 +32224,7 @@ License: GPL-2+
  GNU General Public License for more details.
  .
  You should have received a copy of the GNU General Public License
- along with this program. If not, see <http://www.gnu.org/licenses/>
+ along with this program. If not, see (http://www.gnu.org/licenses/)
  .
  On Debian systems, the complete text of the GNU General
  Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
@@ -32269,7 +32271,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 [python-coverage-3.7.1+dfsg.1/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: coverage
-Upstream-Contact: Ned Batchelder <ned@nedbatchelder.com>
+Upstream-Contact: Ned Batchelder (ned@nedbatchelder.com)
 Source: http://pypi.python.org/pypi/coverage
     The pristine upstream source contains obfuscated files, that are
     thereby not appropriate for use as source files. This violates DFSG §2.
@@ -32285,8 +32287,8 @@ License: BSD-2-clause
 
 Files: debian/*
 Copyright:
-    © 2008–2014 Ben Finney <ben+debian@benfinney.id.au>
-    © 2007–2008 Lars Wirzenius <liw@iki.fi>
+    © 2008–2014 Ben Finney (ben+debian@benfinney.id.au)
+    © 2007–2008 Lars Wirzenius (liw@iki.fi)
 License: BSD-2-clause
 
 License: BSD-2-clause
@@ -32322,12 +32324,12 @@ License: BSD-2-clause
 "python-dateutil-1.5+dfsg/debian/copyright":
 
 [python-dateutil-1.5+dfsg/debian/copyright]
-This package was debianized by Guido Guenther <agx@sigxcpu.org> on
+This package was debianized by Guido Guenther (agx@sigxcpu.org) on
 Wed,  6 Sep 2006 10:33:06 +0200.
 
 It was downloaded from http://labix.org/python-dateutil
 
-Upstream Author: Gustavo Niemeyer <gustavo@niemeyer.net>
+Upstream Author: Gustavo Niemeyer (gustavo@niemeyer.net)
 
 Copyright notice (as found in LICENSE in the original source).
 --------------------------------------------------------------
@@ -32598,13 +32600,13 @@ OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 "python-decorator-3.4.0/debian/copyright":
 
 [python-decorator-3.4.0/debian/copyright]
-This package was debianized by Oleksandr Moskalenko <malex@debian.org> on
+This package was debianized by Oleksandr Moskalenko (malex@debian.org) on
 Fri, 13 Apr 2007 13:10:43 -0600.
 
 It was downloaded from
 http://pypi.python.org/packages/source/d/decorator/
 
-Copyright 2005-2011 Michele Simionato <michele.simionato@gmail.com>
+Copyright 2005-2011 Michele Simionato (michele.simionato@gmail.com)
 
 License:
 
@@ -32631,7 +32633,7 @@ License:
  DAMAGE.
 
 The Debian packaging is copyright 2007-2010, Oleksandr Moskalenko
-<malex@debian.org> and is licensed under the BSD license as above.
+(malex@debian.org) and is licensed under the BSD license as above.
 [python-decorator-3.4.0/debian/copyright]
 
 
@@ -32640,20 +32642,20 @@ The Debian packaging is copyright 2007-2010, Oleksandr Moskalenko
 "python-docutils-0.11/debian/copyright":
 
 [python-docutils-0.11/debian/copyright]
-This package was debianized by Matthias Klose <doko@debian.org> on
+This package was debianized by Matthias Klose (doko@debian.org) on
 Sat, 12 Oct 2002 15:05:38 +0200. It was later maintained by Matthias
-Urlichs <smurf@noris.de> and is currently maintained by:
+Urlichs (smurf@noris.de) and is currently maintained by:
 
-- Jakub Wilk <jwilk@debian.org>,
-- martin f. krafft <madduck@debian.org>,
-- Simon McVittie <smcv@debian.org>,
-- Michael Schutte <michi@debian.org>,
-- Ben Finney <ben+debian@benfinney.id.au> and
-- the Debian Python Modules Team <python-modules-team@lists.alioth.debian.org>.
+- Jakub Wilk (jwilk@debian.org),
+- martin f. krafft (madduck@debian.org),
+- Simon McVittie (smcv@debian.org),
+- Michael Schutte (michi@debian.org),
+- Ben Finney (ben+debian@benfinney.id.au) and
+- the Debian Python Modules Team (python-modules-team@lists.alioth.debian.org).
 
 It was downloaded from http://docutils.sourceforge.net/
 
-Upstream Author: David Goodger <goodger@python.org>
+Upstream Author: David Goodger (goodger@python.org)
 
 Most of the files included in this project have been placed in the public
 domain, and therefore have no license requirements and no restrictions on
@@ -32670,11 +32672,11 @@ listed below, in the work of authorship known as "Docutils" identified
 below (the "Work") to the public domain.
 
 The primary repository for the Work is the Internet World Wide Web
-site <http://docutils.sourceforge.net/>.  The Work consists of the
+site (http://docutils.sourceforge.net/).  The Work consists of the
 files within the "docutils" module of the Docutils project Subversion
 repository (Internet host svn.code.sf.net, filesystem path
 /p/docutils), whose Internet web interface is located at
-<http://sourceforge.net/p/docutils/code/>.  Files dedicated to the
+(http://sourceforge.net/p/docutils/code/).  Files dedicated to the
 public domain may be identified by the inclusion, near the beginning
 of each file, of a declaration of the form::
 
@@ -32718,7 +32720,7 @@ The exceptions to the `Public Domain Dedication`_ above are:
 * docutils/writers/s5_html/themes/default/iepngfix.htc:
 
   IE5.5+ PNG Alpha Fix v1.0 by Angus Turnbull
-  <http://www.twinhelix.com>.
+  (http://www.twinhelix.com).
 
   This is licensed under the GNU LGPL, version 2.1 or later.
 
@@ -33114,7 +33116,7 @@ The exceptions to the `Public Domain Dedication`_ above are:
 
 * debian/rst2odt_prepstyles.sgml:
 
-  Copyright 2008–2009 Michael Schutte <michi@uiae.at>
+  Copyright 2008–2009 Michael Schutte (michi@uiae.at)
   The Debian packaging work is under the GNU General Public License,
   version 2 or, at your option, any later version.
 
@@ -33153,11 +33155,11 @@ listed below, in the work of authorship known as "Docutils" identified
 below (the "Work") to the public domain.
 
 The primary repository for the Work is the Internet World Wide Web
-site <http://docutils.sourceforge.net/>.  The Work consists of the
+site (http://docutils.sourceforge.net/).  The Work consists of the
 files within the "docutils" module of the Docutils project Subversion
 repository (Internet host docutils.svn.sourceforge.net, filesystem path
 /svnroot/docutils), whose Internet web interface is located at
-<http://docutils.svn.sourceforge.net/viewvc/docutils/>.  Files dedicated to the
+(http://docutils.svn.sourceforge.net/viewvc/docutils/).  Files dedicated to the
 public domain may be identified by the inclusion, near the beginning
 of each file, of a declaration of the form::
 
@@ -33200,7 +33202,7 @@ The exceptions to the `Public Domain Dedication`_ above are:
 * docutils/writers/s5_html/themes/default/iepngfix.htc:
 
       IE5.5+ PNG Alpha Fix v1.0 by Angus Turnbull
-      <http://www.twinhelix.com>.  Free usage permitted as long as
+      (http://www.twinhelix.com).  Free usage permitted as long as
       this notice remains intact.
 
 * docutils/utils/math/__init__.py,
@@ -33213,7 +33215,7 @@ The exceptions to the `Public Domain Dedication`_ above are:
 
   Copyright © Günter Milde.
   Released under the terms of the `2-Clause BSD license`_
-  (`local copy <licenses/BSD-2-Clause.txt>`__).
+  (`local copy (licenses/BSD-2-Clause.txt)`__).
 
 * docutils/utils/smartquotes.py
 
@@ -33222,7 +33224,7 @@ The exceptions to the `Public Domain Dedication`_ above are:
   (released under a 3-Clause BSD license included in the file)
   and smartypants.py © 2004, 2007 Chad Miller.
   Released under the terms of the `2-Clause BSD license`_
-  (`local copy <licenses/BSD-2-Clause.txt>`__).
+  (`local copy (licenses/BSD-2-Clause.txt)`__).
 
   .. _SmartyPants: http://daringfireball.net/projects/smartypants/
 
@@ -33233,7 +33235,7 @@ The exceptions to the `Public Domain Dedication`_ above are:
   These files are part of eLyXer_, released under the `GNU
   General Public License`_ version 3 or later. The author relicensed
   them for Docutils under the terms of the `2-Clause BSD license`_
-  (`local copy <licenses/BSD-2-Clause.txt>`__).
+  (`local copy (licenses/BSD-2-Clause.txt)`__).
 
   .. _eLyXer: http://www.nongnu.org/elyxer/
 
@@ -33538,9 +33540,9 @@ OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 [python-librabbitmq-1.0.1/clib/debian/copyright]
 This package was debianized by Tony Garnock-Jones
-<tonygarnockjones@gmail.com> on Tue, 14 Jul 2009 04:42:37 +0100.
+(tonygarnockjones@gmail.com) on Tue, 14 Jul 2009 04:42:37 +0100.
 
-Upstream Author: The RabbitMQ team at VMware, Inc. <info@rabbitmq.net>
+Upstream Author: The RabbitMQ team at VMware, Inc. (info@rabbitmq.net)
 
 Copyright: Portions created by VMware are Copyright (c) 2007-2012
 VMware, Inc. All Rights Reserved. Portions created by Tony
@@ -33561,12 +33563,12 @@ info@rabbitmq.com.
 [python-librabbitmq-1.0.1/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: librabbitmq
-Upstream-Contact: Ask Solem <ask@celeryproject.org>
+Upstream-Contact: Ask Solem (ask@celeryproject.org)
 Source: http://github.com/celery/librabbitmq
 
 
 Files: debian/*
-Copyright: 2013, Fladischer Michael <FladischerMichael@fladi.at>
+Copyright: 2013, Fladischer Michael (FladischerMichael@fladi.at)
 License: MPL-1.1
 
 Files: clib/codegen/amqp-rabbitmq-*.json clib/codegen/demo_extension.json
@@ -33575,7 +33577,7 @@ Copyright: 2008-2012, VM Ware Inc.
 License: Mit
 
 Files: *
-Copyright: 2012, Ask Solem <ask@celeryproject.org>
+Copyright: 2012, Ask Solem (ask@celeryproject.org)
 License: MPL-1.1
 
 License: Mit
@@ -34061,7 +34063,7 @@ License: MPL-1.1
 Format-Specification:
     http://wiki.debian.org/Proposals/CopyrightFormat?action=recall&rev=233
 Upstream-Name: lockfile
-Upstream-Maintainer: Skip Montanaro <skip@pobox.com>
+Upstream-Maintainer: Skip Montanaro (skip@pobox.com)
 Upstream-Source: http://pypi.python.org/packages/source/l/lockfile/
 
 Files: *
@@ -34069,7 +34071,7 @@ Copyright: © 2007 Skip Montanaro.
 License: Expat
 
 Files: debian/*
-Copyright: © 2009 Ben Finney <ben+debian@benfinney.id.au>
+Copyright: © 2009 Ben Finney (ben+debian@benfinney.id.au)
 License: GPL-2+
     This is free software; you may copy, modify, and/or distribute this work
     under the terms of the GNU General Public License, version 2 or later.
@@ -34077,7 +34079,7 @@ License: GPL-2+
     See the file '/usr/share/common-licenses/GPL-2' for details.
 
 Files: debian/patches/*
-Copyright: © 2009 Ben Finney <ben+debian@benfinney.id.au>
+Copyright: © 2009 Ben Finney (ben+debian@benfinney.id.au)
 License: Expat
 
 License: Expat
@@ -34106,7 +34108,7 @@ License: Expat
 "python-mox-0.5.3/debian/copyright":
 
 [python-mox-0.5.3/debian/copyright]
-This package was debianized by Iustin Pop <iusty@k1024.org> on
+This package was debianized by Iustin Pop (iusty@k1024.org) on
 Sun, 29 Jun 2008 21:01:19 +0200.
 
 It was downloaded from http://code.google.com/p/pymox/
@@ -34138,7 +34140,7 @@ found in `/usr/share/common-licenses/Apache-2.0'.
 
 The Debian packaging is:
 
-        Copyright (C) 2008, 2009 Iustin Pop <iusty@k1024.org>
+        Copyright (C) 2008, 2009 Iustin Pop (iusty@k1024.org)
 
 and is licensed under the GPL version 3,
 see `/usr/share/common-licenses/GPL-3'.
@@ -34151,8 +34153,8 @@ see `/usr/share/common-licenses/GPL-3'.
 
 [python-openid-2.2.5/debian/copyright]
 Debianization:
-© 2006-2009 Mikhail Gusarov <dottedmag@dottedmag.net>
-© 2008-2009 Sandro Tosi <morph@debian.org>
+© 2006-2009 Mikhail Gusarov (dottedmag@dottedmag.net)
+© 2008-2009 Sandro Tosi (morph@debian.org)
 Debian packaging is under Apache license 2.0.
 
 Original source code is available from
@@ -34187,12 +34189,12 @@ On Debian systems, the complete text of the Apache license 2.0 can be found in
 [python-pam-0.4.2/debian/copyright]
 This is the Debian package of a Python PAM module.
 
-This package was put together by Gregor Hoffleit <flight@debian.org>,
+This package was put together by Gregor Hoffleit (flight@debian.org),
 from sources obtained from
 
   ftp://ftp.pangalactic.org/pub/tummy/.
 
-Author: Rob Riggs <rob@pangalactic.org>
+Author: Rob Riggs (rob@pangalactic.org)
 
 
 Copyright:
@@ -34299,7 +34301,7 @@ License: public-domain
     Forwarded: https://github.com/pypa/pip/pull/971
 
 Files: debian/*
-Copyright: Copyright 2009 Jeff Licquia <licquia@debian.org>
+Copyright: Copyright 2009 Jeff Licquia (licquia@debian.org)
 License: Expat
 
 License: Expat
@@ -34329,7 +34331,7 @@ License: Expat
 "python-pysqlite2-2.6.3/debian/copyright":
 
 [python-pysqlite2-2.6.3/debian/copyright]
-This Debian package was created by Joel Rosdahl <joel@debian.org>.
+This Debian package was created by Joel Rosdahl (joel@debian.org).
 
 The upstream source was found on the following address:
 
@@ -34337,7 +34339,7 @@ The upstream source was found on the following address:
 
 Upstream authors:
 
-    Gerhard Häring <gh@ghaering.de>
+    Gerhard Häring (gh@ghaering.de)
 
 License:
 
@@ -34666,7 +34668,7 @@ License: Python-2.1.1
 "python-stdlib-extensions-2.7.7/debian/copyright":
 
 [python-stdlib-extensions-2.7.7/debian/copyright]
-This package was debianized by Matthias Klose <doko@debian.org> on
+This package was debianized by Matthias Klose (doko@debian.org) on
 Wed,  7 Jun 2006 15:02:31 +0200.
 
 It was downloaded from http://python.org/, built by extracting the
@@ -34674,7 +34676,7 @@ Tk and gdbm extensions from the upstream tarballs.
 
 Copyright:
 
-Upstream Author: Guido van Rossum <guido@cwi.nl> and others.
+Upstream Author: Guido van Rossum (guido@cwi.nl) and others.
 
 License:
 
@@ -34973,11 +34975,11 @@ Copyright: 2007, Ian Bicking and Contributors,
 License: Expat
 
 Files: debian/*
-Copyright: 2007-2009, Jeff Licquia <licquia@debian.org>,
-           2010-2011, Carl Chenet <chaica@ohmytux.com>,
-           2010       Piotr Ożarowski <piotr@debian.org>,
-           2011-2014, Stefano Rivera <stefanor@debian.org>,
-           2012       Barry Warsaw <barry@python.org>
+Copyright: 2007-2009, Jeff Licquia (licquia@debian.org),
+           2010-2011, Carl Chenet (chaica@ohmytux.com),
+           2010       Piotr Ożarowski (piotr@debian.org),
+           2011-2014, Stefano Rivera (stefanor@debian.org),
+           2012       Barry Warsaw (barry@python.org)
 License: Expat
 
 Files: virtualenv_support/pip-*
@@ -35110,11 +35112,11 @@ Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Source: http://github.com/xattr/xattr
 
 Files: *
-Copyright: © 2004-2012, Bob Ippolito <bob@redivi.com>
+Copyright: © 2004-2012, Bob Ippolito (bob@redivi.com)
 License: MIT
 
 Files: debian/*
-Copyright: © 2011, Federico Ceratto <federico.ceratto@gmail.com>
+Copyright: © 2011, Federico Ceratto (federico.ceratto@gmail.com)
 License: MIT
 
 License: MIT
@@ -35158,11 +35160,11 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 [qstat-2.11/debian/copyright]
 This is Debian GNU/Linux's prepackaged version of Steve Jankowski
-<steve@activesw.com>'s Qstat, for querying Quake servers.
-Qstat was debianized by Michael Alan Dorman <mdorman@debian.org> on
+(steve@activesw.com)'s Qstat, for querying Quake servers.
+Qstat was debianized by Michael Alan Dorman (mdorman@debian.org) on
 Fri, 30 Jan 1998 12:27:41 -0500
 
-Jordi Mallach <jordi@debian.org> took over the packaging on
+Jordi Mallach (jordi@debian.org) took over the packaging on
 Fri, 08 Jun 2001 05:37:00 +0200.
 
 Qstat was downloaded from http://www.qstat.org/ .
@@ -35179,13 +35181,13 @@ found in the /usr/share/common-licenses/Artistic file.
 "radiusclient-ng-0.5.6/debian/copyright":
 
 [radiusclient-ng-0.5.6/debian/copyright]
-This package was debianized by Jan Janak <jan@iptel.org> on
+This package was debianized by Jan Janak (jan@iptel.org) on
 Mon,  6 Jun 2005 13:49:56 +0200.
 
 It was downloaded from 
     http://developer.berlios.de/projects/radiusclient-ng
 
-Upstream Author: Maxim Sobolev <sobomax@sippysoft.com>
+Upstream Author: Maxim Sobolev (sobomax@sippysoft.com)
 
 License:
 
@@ -35228,7 +35230,7 @@ POSSIBILITY OF SUCH DAMAGE.
 ------------------------------------------------------------------------------
 
 ------------------------------------------------------------------------------
-Copyright (c) 2003 Maxim Sobolev <sobomax@FreeBSD.org>
+Copyright (c) 2003 Maxim Sobolev (sobomax@FreeBSD.org)
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
@@ -35253,7 +35255,7 @@ OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
 SUCH DAMAGE.
 
 ------------------------------------------------------------------------------
-Copyright (C) 1995,1996,1997,1998 Lars Fenneberg <lf@elemental.net>
+Copyright (C) 1995,1996,1997,1998 Lars Fenneberg (lf@elemental.net)
 
 Permission to use, copy, modify, and distribute this software for any
 purpose and without fee is hereby granted, provided that this copyright and
@@ -35342,13 +35344,13 @@ RedHat Cluster Suite version 2.
 A lot of people have been contributing to this package in several 
 different areas/bits. In non-particular order:
 
-- Fabio M. Di Nitto <fabbione@ubuntu.com>
+- Fabio M. Di Nitto (fabbione@ubuntu.com)
   Most of the Packaging for Ubuntu
-- Frederik Schüler <fs@debian.org>
+- Frederik Schüler (fs@debian.org)
   several patches and testing.
-- Bastian Blank <waldi@debian.org>
+- Bastian Blank (waldi@debian.org)
   for all his packages, init scripts, build rules.
-- Adam Conrad <adconrad@ubuntu.com>
+- Adam Conrad (adconrad@ubuntu.com)
   for some init script fixes and portability patches.
 - A really great and responsive upstream.
 
@@ -35414,26 +35416,26 @@ Copyright (C) 2004-2008 Red Hat, Inc.  All rights reserved.
 Exceptions:
 
 cman/qdisk/crc32.c:
- Copyright (C) 2000 Bryan Call <bc at fodder.org>
- Modified by Lon H. Hohberger <lhh at redhat.com>
+ Copyright (C) 2000 Bryan Call (bc at fodder.org)
+ Modified by Lon H. Hohberger (lhh at redhat.com)
  Copyright (C) 2003-2008 Red Hat, Inc.  All rights reserved.
 
 cman/qdisk/daemon_init.c:
  Copyright (C) 2000 Mission Critical Linux
  Copyright (C) 2002-2008 Red Hat, Inc.  All rights reserved.
- Author: Jeff Moyer <jmoyer at redhat.com>
+ Author: Jeff Moyer (jmoyer at redhat.com)
 
 cman/qdisk/disk.c:
  Copyright (C) 2000 Mission Critical Linux
  Copyright (C) 2002-2008 Red Hat, Inc.  All rights reserved.
- Author: Tim Burke <tburke at redhat.com>
+ Author: Tim Burke (tburke at redhat.com)
 
 cman/qdisk/scandisk.{c,h}:
- Original design by: Joel Becker <Joel.Becker at oracle.com> and
- Fabio M. Di Nitto <fdinitto at redhat.com>
+ Original design by: Joel Becker (Joel.Becker at oracle.com) and
+ Fabio M. Di Nitto (fdinitto at redhat.com)
 
 dlm/doc/example.c:
- Author: Daniel Phillips <phillips at redhat.com>
+ Author: Daniel Phillips (phillips at redhat.com)
 
 From rgmanager/AUTHORS:
 
@@ -35454,17 +35456,17 @@ Portions of this code (C) 2000-2001 Mission Critical Linux, Inc.
 rgmanager/include/clulog.h:
  Copyright (C) 2000 Mission Critical Linux
  Copyright (C) 2002-2008 Red Hat, Inc.  All rights reserved.
- Author: Jeff Moyer <moyer at missioncriticallinux.com>
+ Author: Jeff Moyer (moyer at missioncriticallinux.com)
 
 rgmanager/src/clulib/clulog.c:
  Copyright (C) 2000 Mission Critical Linux
  Copyright (C) 2002-2008 Red Hat, Inc.  All rights reserved.
- Author: Jeff Moyer <moyer at missioncriticallinux.com>
+ Author: Jeff Moyer (moyer at missioncriticallinux.com)
 
 rgmanager/src/clulib/daemon_init.c:
  Copyright (C) 2000 Mission Critical Linux
  Copyright (C) 2002-2008 Red Hat, Inc.  All rights reserved.
- Author: Jeff Moyer <moyer at missioncriticallinux.com>
+ Author: Jeff Moyer (moyer at missioncriticallinux.com)
 
 rgmanager/src/clulib/msgsimple.c:
  Copyright (C) 2000 Mission Critical Linux
@@ -35493,55 +35495,55 @@ rgmanager/src/utils/cluarp.c:
 rgmanager/src/utils/clubufflush.c:
  Copyright (C) 2000 Mission Critical Linux
  Copyright (C) 2002-2008 Red Hat, Inc.  All rights reserved.
- Author: Gregory P. Myrdal <Myrdal at MissionCriticalLinux.Com>
+ Author: Gregory P. Myrdal (Myrdal at MissionCriticalLinux.Com)
 
 rgmanager/src/utils/clufindhostname.c:
  Copyright (C) 2000 Mission Critical Linux
  Copyright (C) 2002-2008 Red Hat, Inc.  All rights reserved.
- Richard Rabbat <rabbat at missioncriticallinux.com>
+ Richard Rabbat (rabbat at missioncriticallinux.com)
 
 rgmanager/src/utils/clulog.c:
  Copyright (C) 2000 Mission Critical Linux
  Copyright (C) 2002-2008 Red Hat, Inc.  All rights reserved.
- Author: Jeff Moyer <moyer at missioncriticallinux.com>
+ Author: Jeff Moyer (moyer at missioncriticallinux.com)
 
 rgmanager/src/utils/syscall.h
- Copyright (C) 1995-1997 Olaf Kirch <okir at monad.swb.de>
+ Copyright (C) 1995-1997 Olaf Kirch (okir at monad.swb.de)
  Copyright (C) 1997-2003 Sistina Software, Inc.  All rights reserved.
  Copyright (C) 2004-2008 Red Hat, Inc.  All rights reserved.
  
 Authors as known by current RCS as of the time of writing:
 
-Abhijith Das <adas at redhat.com>
-Adam Manthei <amanthei at redhat.com>
-A. J. Lewis <alewis at redhat.com>
-Alasdair G. Kergon <agk at redhat.com>
-Andrew Price <andy at andrewprice.me.uk>
-Benjamin Marzinski <bmarzins at redhat.com>
-Bob Peterson <rpeterso at redhat.com>
-Chris Feist <cfeist at redhat.com>
-Christine Caulfield <ccaulfie at redhat.com>
-Daniel Phillips <phillips at redhat.com>
-David Teigland <teigland at redhat.com>
-Fabio M. Di Nitto <fdinitto at redhat.com>
-James Parsons <jparsons at redhat.com>
-Joel Becker <joel.becker at oracle.com>
-Jonathan Brassow <jbrassow at redhat.com>
-jparsons <jparsons at redhat.com>
-Ken Preslan <kpreslan at redhat.com>
-Lon Hohberger <lhh at redhat.com>
-Marc - A. Dahlhaus <mad at wol.de>
-Marek 'marx' Grac <mgrac at redhat.com>
-Mark Hlawatschek <hlawatschek at atix.de>
-Michael Conrad Tadpol Tilstra <mtilstra at redhat.com>
-Patrick Caulfield <pcaulfie at redhat.com>
-Robert Peterson <rpeterso at redhat.com>
-Ross Vandegrift <ross at kallisti.us>
-Ryan McCabe <rmccabe at redhat.com>
-Ryan O'Hara <rohara at redhat.com>
-Stanko Kupcevic <kupcevic at redhat.com>
-Steven Whitehouse <swhiteho at redhat.com>
-Wendy Cheng <wcheng at redhat.com>
+Abhijith Das (adas at redhat.com)
+Adam Manthei (amanthei at redhat.com)
+A. J. Lewis (alewis at redhat.com)
+Alasdair G. Kergon (agk at redhat.com)
+Andrew Price (andy at andrewprice.me.uk)
+Benjamin Marzinski (bmarzins at redhat.com)
+Bob Peterson (rpeterso at redhat.com)
+Chris Feist (cfeist at redhat.com)
+Christine Caulfield (ccaulfie at redhat.com)
+Daniel Phillips (phillips at redhat.com)
+David Teigland (teigland at redhat.com)
+Fabio M. Di Nitto (fdinitto at redhat.com)
+James Parsons (jparsons at redhat.com)
+Joel Becker (joel.becker at oracle.com)
+Jonathan Brassow (jbrassow at redhat.com)
+jparsons (jparsons at redhat.com)
+Ken Preslan (kpreslan at redhat.com)
+Lon Hohberger (lhh at redhat.com)
+Marc - A. Dahlhaus (mad at wol.de)
+Marek 'marx' Grac (mgrac at redhat.com)
+Mark Hlawatschek (hlawatschek at atix.de)
+Michael Conrad Tadpol Tilstra (mtilstra at redhat.com)
+Patrick Caulfield (pcaulfie at redhat.com)
+Robert Peterson (rpeterso at redhat.com)
+Ross Vandegrift (ross at kallisti.us)
+Ryan McCabe (rmccabe at redhat.com)
+Ryan O'Hara (rohara at redhat.com)
+Stanko Kupcevic (kupcevic at redhat.com)
+Steven Whitehouse (swhiteho at redhat.com)
+Wendy Cheng (wcheng at redhat.com)
 [redhat-cluster-3.1.8/debian/copyright]
 
 "redhat-cluster-3.1.8/doc/COPYRIGHT":
@@ -35558,23 +35560,23 @@ contrib/libaislock:
  Contributed by Stanley Wang of Intel.
 
 cman/qdisk/crc32.c:
- Copyright (C) 2000 Bryan Call <bc at fodder.org>
- Modified by Lon H. Hohberger <lhh at redhat.com>
+ Copyright (C) 2000 Bryan Call (bc at fodder.org)
+ Modified by Lon H. Hohberger (lhh at redhat.com)
  Copyright (C) 2003-2010 Red Hat, Inc.  All rights reserved.
 
 cman/qdisk/daemon_init.c:
  Copyright (C) 2000 Mission Critical Linux
  Copyright (C) 2002-2010 Red Hat, Inc.  All rights reserved.
- Author: Jeff Moyer <jmoyer at redhat.com>
+ Author: Jeff Moyer (jmoyer at redhat.com)
 
 cman/qdisk/disk.c:
  Copyright (C) 2000 Mission Critical Linux
  Copyright (C) 2002-2010 Red Hat, Inc.  All rights reserved.
- Author: Tim Burke <tburke at redhat.com>
+ Author: Tim Burke (tburke at redhat.com)
 
 cman/qdisk/scandisk.{c,h}:
- Original design by: Joel Becker <Joel.Becker at oracle.com> and
- Fabio M. Di Nitto <fdinitto at redhat.com>
+ Original design by: Joel Becker (Joel.Becker at oracle.com) and
+ Fabio M. Di Nitto (fdinitto at redhat.com)
 
 cman/daemon/fnvhash.c
  This code is in the public domain.
@@ -35583,7 +35585,7 @@ cman/daemon/fnvhash.c
  Landon Curt Noll (http://www.isthe.com/chongo/)
 
 dlm/doc/example.c:
- Author: Daniel Phillips <phillips at redhat.com>
+ Author: Daniel Phillips (phillips at redhat.com)
 
 From rgmanager/AUTHORS:
 
@@ -35604,17 +35606,17 @@ Portions of this code (C) 2000-2001 Mission Critical Linux, Inc.
 rgmanager/include/clulog.h:
  Copyright (C) 2000 Mission Critical Linux
  Copyright (C) 2002-2010 Red Hat, Inc.  All rights reserved.
- Author: Jeff Moyer <moyer at missioncriticallinux.com>
+ Author: Jeff Moyer (moyer at missioncriticallinux.com)
 
 rgmanager/src/clulib/clulog.c:
  Copyright (C) 2000 Mission Critical Linux
  Copyright (C) 2002-2010 Red Hat, Inc.  All rights reserved.
- Author: Jeff Moyer <moyer at missioncriticallinux.com>
+ Author: Jeff Moyer (moyer at missioncriticallinux.com)
 
 rgmanager/src/clulib/daemon_init.c:
  Copyright (C) 2000 Mission Critical Linux
  Copyright (C) 2002-2010 Red Hat, Inc.  All rights reserved.
- Author: Jeff Moyer <moyer at missioncriticallinux.com>
+ Author: Jeff Moyer (moyer at missioncriticallinux.com)
 
 rgmanager/src/clulib/msgsimple.c:
  Copyright (C) 2000 Mission Critical Linux
@@ -35639,55 +35641,55 @@ rgmanager/src/daemons/main.c:
 rgmanager/src/utils/clubufflush.c:
  Copyright (C) 2000 Mission Critical Linux
  Copyright (C) 2002-2010 Red Hat, Inc.  All rights reserved.
- Author: Gregory P. Myrdal <Myrdal at MissionCriticalLinux.Com>
+ Author: Gregory P. Myrdal (Myrdal at MissionCriticalLinux.Com)
 
 rgmanager/src/utils/clufindhostname.c:
  Copyright (C) 2000 Mission Critical Linux
  Copyright (C) 2002-2010 Red Hat, Inc.  All rights reserved.
- Richard Rabbat <rabbat at missioncriticallinux.com>
+ Richard Rabbat (rabbat at missioncriticallinux.com)
 
 rgmanager/src/utils/clulog.c:
  Copyright (C) 2000 Mission Critical Linux
  Copyright (C) 2002-2010 Red Hat, Inc.  All rights reserved.
- Author: Jeff Moyer <moyer at missioncriticallinux.com>
+ Author: Jeff Moyer (moyer at missioncriticallinux.com)
 
 rgmanager/src/utils/syscall.h
- Copyright (C) 1995-1997 Olaf Kirch <okir at monad.swb.de>
+ Copyright (C) 1995-1997 Olaf Kirch (okir at monad.swb.de)
  Copyright (C) 1997-2003 Sistina Software, Inc.  All rights reserved.
  Copyright (C) 2004-2010 Red Hat, Inc.  All rights reserved.
  
 Authors as known by current RCS as of the time of writing:
 
-Abhijith Das <adas at redhat.com>
-Adam Manthei <amanthei at redhat.com>
-A. J. Lewis <alewis at redhat.com>
-Alasdair G. Kergon <agk at redhat.com>
-Andrew Price <andy at andrewprice.me.uk>
-Benjamin Marzinski <bmarzins at redhat.com>
-Bob Peterson <rpeterso at redhat.com>
-Chris Feist <cfeist at redhat.com>
-Christine Caulfield <ccaulfie at redhat.com>
-Daniel Phillips <phillips at redhat.com>
-David Teigland <teigland at redhat.com>
-Fabio M. Di Nitto <fdinitto at redhat.com>
-James Parsons <jparsons at redhat.com>
-Joel Becker <joel.becker at oracle.com>
-Jonathan Brassow <jbrassow at redhat.com>
-jparsons <jparsons at redhat.com>
-Ken Preslan <kpreslan at redhat.com>
-Lon Hohberger <lhh at redhat.com>
-Marc - A. Dahlhaus <mad at wol.de>
-Marek 'marx' Grac <mgrac at redhat.com>
-Mark Hlawatschek <hlawatschek at atix.de>
-Michael Conrad Tadpol Tilstra <mtilstra at redhat.com>
-Patrick Caulfield <pcaulfie at redhat.com>
-Robert Peterson <rpeterso at redhat.com>
-Ross Vandegrift <ross at kallisti.us>
-Ryan McCabe <rmccabe at redhat.com>
-Ryan O'Hara <rohara at redhat.com>
-Stanko Kupcevic <kupcevic at redhat.com>
-Steven Whitehouse <swhiteho at redhat.com>
-Wendy Cheng <wcheng at redhat.com>
+Abhijith Das (adas at redhat.com)
+Adam Manthei (amanthei at redhat.com)
+A. J. Lewis (alewis at redhat.com)
+Alasdair G. Kergon (agk at redhat.com)
+Andrew Price (andy at andrewprice.me.uk)
+Benjamin Marzinski (bmarzins at redhat.com)
+Bob Peterson (rpeterso at redhat.com)
+Chris Feist (cfeist at redhat.com)
+Christine Caulfield (ccaulfie at redhat.com)
+Daniel Phillips (phillips at redhat.com)
+David Teigland (teigland at redhat.com)
+Fabio M. Di Nitto (fdinitto at redhat.com)
+James Parsons (jparsons at redhat.com)
+Joel Becker (joel.becker at oracle.com)
+Jonathan Brassow (jbrassow at redhat.com)
+jparsons (jparsons at redhat.com)
+Ken Preslan (kpreslan at redhat.com)
+Lon Hohberger (lhh at redhat.com)
+Marc - A. Dahlhaus (mad at wol.de)
+Marek 'marx' Grac (mgrac at redhat.com)
+Mark Hlawatschek (hlawatschek at atix.de)
+Michael Conrad Tadpol Tilstra (mtilstra at redhat.com)
+Patrick Caulfield (pcaulfie at redhat.com)
+Robert Peterson (rpeterso at redhat.com)
+Ross Vandegrift (ross at kallisti.us)
+Ryan McCabe (rmccabe at redhat.com)
+Ryan O'Hara (rohara at redhat.com)
+Stanko Kupcevic (kupcevic at redhat.com)
+Steven Whitehouse (swhiteho at redhat.com)
+Wendy Cheng (wcheng at redhat.com)
 [redhat-cluster-3.1.8/doc/COPYRIGHT]
 
 
@@ -35696,14 +35698,14 @@ Wendy Cheng <wcheng at redhat.com>
 "reiserfsprogs-3.6.24/debian/copyright":
 
 [reiserfsprogs-3.6.24/debian/copyright]
-This package has been taken over by Felix Zielcke <fzielcke@z-51.de> on
+This package has been taken over by Felix Zielcke (fzielcke@z-51.de) on
 Sun, 08 Feb 2009 14:49:50 +0100
-This package was debianized by Ed Boraas <ed@debian.org> on
+This package was debianized by Ed Boraas (ed@debian.org) on
 Sat, 30 Sep 2000 18:41:46 -0600.
 
 It was downloaded from ftp://ftp.kernel.org/pub/linux/utils/fs/reiserfs/
 
-Upstream Authors: Hans Reiser <reiser@namesys.com>, et al.
+Upstream Authors: Hans Reiser (reiser@namesys.com), et al.
 
   For a more extensive listing of authors and contributors, see
   /usr/share/doc/reiserfsprogs/README.
@@ -35727,17 +35729,17 @@ License:
 [samba-4.1.9+dfsg/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: samba
-Upstream-Contact: Samba Developers <samba-technical@lists.samba.org>
+Upstream-Contact: Samba Developers (samba-technical@lists.samba.org)
 Source: http://www.samba.org/
 
 Files: debian/*
 Copyright:
-  2005-2012 Jelmer Vernooij <jelmer@debian.org>
+  2005-2012 Jelmer Vernooij (jelmer@debian.org)
   2005-2006 Steinar H. Gunderson
-  2001-2011 Steve Langasek <vorlon@debian.org>,
-  2005-2012 Christian Perrier <bubulle@debian.org>,
-  2005-2008 Noèl Köthe <noel@debian.org>,
-  2005-2008 Peter Eisentraut <petere@debian.org>, et al.
+  2001-2011 Steve Langasek (vorlon@debian.org),
+  2005-2012 Christian Perrier (bubulle@debian.org),
+  2005-2008 Noèl Köthe (noel@debian.org),
+  2005-2008 Peter Eisentraut (petere@debian.org), et al.
 License: GPL-3
  This program is free software; you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -36066,7 +36068,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 "samba-4.1.9+dfsg/lib/testtools/LICENSE":
 
 [samba-4.1.9+dfsg/lib/testtools/LICENSE]
-Copyright (c) 2008-2011 Jonathan M. Lange <jml@mumak.net> and the testtools
+Copyright (c) 2008-2011 Jonathan M. Lange (jml@mumak.net) and the testtools
 authors.
 
 The testtools authors are:
@@ -36178,17 +36180,17 @@ DEALINGS IN THE SOFTWARE.[samba-4.1.9+dfsg/lib/zlib/contrib/dotzlib/LICENSE_1_0.
 "samba-4.1.9+dfsg/packaging/SGI/legal_notice.html":
 
 [samba-4.1.9+dfsg/packaging/SGI/legal_notice.html]
-<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
-<HTML VERSION="2.0">
-<HEAD>
-<TITLE>Silicon Graphics Freeware Legal Notice</TITLE>
-</HEAD>
+(!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN")
+(HTML VERSION="2.0")
+(HEAD)
+(TITLE)Silicon Graphics Freeware Legal Notice(/TITLE)
+(/HEAD)
 
-<BODY>
-<H1><A NAME="LEGAL">Silicon Graphics Freeware Legal Notice</A></H1>
-<HR>
+(BODY)
+(H1)(A NAME="LEGAL")Silicon Graphics Freeware Legal Notice(/A)(/H1)
+(HR)
 Copyright 1995, Silicon Graphics, Inc. -- ALL RIGHTS RESERVED
-<P>
+(P)
 You may copy, modify, use and distribute this software, (i)
 provided that you include the entirety of this reservation of
 rights notice in all such copies, and (ii) you comply with any
@@ -36196,7 +36198,7 @@ additional or different obligations and/or use restrictions
 specified by any third party owner or supplier of the software
 in other notices that may be included with the software.
 
-<P>
+(P)
 SGI DISCLAIMS ALL WARRANTIES WITH RESPECT TO THIS SOFTWARE,
 EXPRESS, IMPLIED, OR OTHERWISE, INCLUDING WITHOUT LIMITATION,
 ALL WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
@@ -36206,10 +36208,10 @@ WITHOUT LIMITATION, LOST REVENUES, LOST PROFITS, OR LOSS OF
 PROSPECTIVE ECONOMIC ADVANTAGE, RESULTING FROM THE USE OR MISUSE
 OF THIS SOFTWARE.
 
-<P>
+(P)
 U.S. GOVERNMENT RESTRICTED RIGHTS LEGEND:
 
-<P>
+(P)
 
 Use, duplication or disclosure by the Government is subject to
 restrictions as set forth in FAR 52.227.19(c)(2) or subparagraph
@@ -36220,17 +36222,17 @@ Unpublished - rights reserved under the Copyright Laws of United
 States. Contractor/manufacturer is Silicon Graphics, Inc., 2011
 N. Shoreline Blvd. Mountain View, CA 94039-7311.
 
-<H3><A NAME="SUPPORT">Product Support</A></H3>
+(H3)(A NAME="SUPPORT")Product Support(/A)(/H3)
 
-<P>
+(P)
 Freeware products are not supported by Silicon Graphics or any
 of its support providers. The software contained in this package
 is made available through the generous efforts of their authors.
 Although they are interested in your feedback, they are under no
 obligation to address bugs, enhancements, or answer questions.
 
-</BODY>
-</HTML>
+(/BODY)
+(/HTML)
 [samba-4.1.9+dfsg/packaging/SGI/legal_notice.html]
 
 "samba-4.1.9+dfsg/source4/heimdal/lib/hcrypto/libtommath/LICENSE":
@@ -36428,12 +36430,12 @@ AGREEMENT.
 "scowl-7.1/debian/copyright":
 
 [scowl-7.1/debian/copyright]
-This package was debianized by David Coe <davidc@debian.org>
+This package was debianized by David Coe (davidc@debian.org)
 on Sun, 15 Jun 2003.
 
 SCOWL (Spell Checker Oriented Word Lists) is a collection of 
 English word lists maintained by Kevin Atkinson 
-<kevina@users.sourceforge.net>
+(kevina@users.sourceforge.net)
 
 It was downloaded from:
 http://prdownloads.sourceforge.net/wordlist/scowl-5.tar.gz
@@ -36457,7 +36459,7 @@ as any of the copyrights mentioned below:
   about the suitability of this array for any purpose. It is provided
   "as is" without express or implied warranty.
 
-Alan Beale <biljir@pobox.com> also deserves special credit as he has,
+Alan Beale (biljir@pobox.com) also deserves special credit as he has,
 in addition to providing the 12Dicts package and being a major
 contributor to the ENABLE word list, given me an incredible amount of
 feedback and created a number of special lists (those found in the
@@ -36492,11 +36494,11 @@ The "UK English Wordlist With Frequency Classification" is also in the
 Public Domain:
 
   Date: Sat, 08 Jul 2000 20:27:21 +0100
-  From: Brian Kelk <Brian.Kelk@cl.cam.ac.uk>
+  From: Brian Kelk (Brian.Kelk@cl.cam.ac.uk)
 
-  > I was wondering what the copyright status of your "UK English
-  > Wordlist With Frequency Classification" word list as it seems to
-  > be lacking any copyright notice.
+  ) I was wondering what the copyright status of your "UK English
+  ) Wordlist With Frequency Classification" word list as it seems to
+  ) be lacking any copyright notice.
 
   There were many many sources in total, but any text marked
   "copyright" was avoided. Locally-written documentation was one
@@ -36506,7 +36508,7 @@ Public Domain:
 
   Date: Tue, 11 Jul 2000 19:31:34 +0100
 
-  > So are you saying your word list is also in the public domain?
+  ) So are you saying your word list is also in the public domain?
 
   That is the intention.
 
@@ -36593,7 +36595,7 @@ ENABLE supplement package (except for ABLE), the "UK Advanced Cryptics
 Dictionary" (UKACD), the list of signature words in from YAWL package,
 and the 10,196 places list from the MWords package.
 
-The ENABLE package, mainted by M\Cooper <thegrendel@theriver.com>,
+The ENABLE package, mainted by M\Cooper (thegrendel@theriver.com),
 is in the Public Domain:
 
   The ENABLE master word list, WORD.LST, is herewith formally released
@@ -36612,7 +36614,7 @@ is in the Public Domain:
   WORD.LST portion of your product. This *may* under law restrict your
   rights to restrict your users' rights, but that is only fair.
 
-UKACD, by J Ross Beresford <ross@bryson.demon.co.uk>, is under the
+UKACD, by J Ross Beresford (ross@bryson.demon.co.uk), is under the
 following copyright:
 
   Copyright (c) J Ross Beresford 1993-1999. All Rights Reserved.
@@ -36705,12 +36707,12 @@ portion of YAWL, please, as a courtesy, give credit to its author.
 "scrub-2.5.2/debian/copyright":
 
 [scrub-2.5.2/debian/copyright]
-This package was debianized by Chris Taylor <ctaylor@debian.org> on
+This package was debianized by Chris Taylor (ctaylor@debian.org) on
 Sun, 12 Jul 2009 19:10:29 -0700.
 
 It was downloaded from http://code.google.com/p/diskscrub/downloads/list
 
-Upstream Author: Jim Garlick <garlick@llnl.gov>
+Upstream Author: Jim Garlick (garlick@llnl.gov)
 
 Copyright: © 2001-2012 The Regents of the University of California
 
@@ -36756,7 +36758,7 @@ On Debian systems, the full text of the GPL version 2 can be found at
 `/usr/share/common-licenses/GPL-2' and  the full text of the GPL version 3 can
 be found at `/usr/share/common-licenses/GPL-3'
 
-The Debian packaging is © 2009-2013 Chris Taylor <ctaylor@debian.org>, and is
+The Debian packaging is © 2009-2013 Chris Taylor (ctaylor@debian.org), and is
 licensed under the GPL version 3.
 [scrub-2.5.2/debian/copyright]
 
@@ -36767,14 +36769,14 @@ licensed under the GPL version 3.
 
 [sgml-base-1.26+nmu4/debian/copyright]
 This the Debian package of sgml-base.  It was assembled by Christian
-Schwarz <schwarz@debian.org>.  It is currently maintained by Ardo van
-Rangelrooij <ardo@debian.org>.
+Schwarz (schwarz@debian.org).  It is currently maintained by Ardo van
+Rangelrooij (ardo@debian.org).
 
 Copyright:
 
-Copyright (C) 1997 Christian Schwarz <schwarz@debian.org>.
-Copyright (C) 2001-2004 Ardo van Rangelrooij <ardo@debian.org>
-Copyright (C) 2012 Helmut Grohne <helmut@subdivi.de>
+Copyright (C) 1997 Christian Schwarz (schwarz@debian.org).
+Copyright (C) 2001-2004 Ardo van Rangelrooij (ardo@debian.org)
+Copyright (C) 2012 Helmut Grohne (helmut@subdivi.de)
 
 This is free software; you may redistribute it and/or modify it under
 the terms of the GNU General Public License as published by the Free
@@ -36832,8 +36834,8 @@ Public License can be found in `/usr/share/common-licenses/GPL'.
 
 [sharutils-4.14/debian/copyright]
 This is the Debian sharutils package. It was first put together by
-Bill Mitchell <mitchell@mdd.comm.mot.com> and it is currently
-maintained by Santiago Vila <sanvila@debian.org>.
+Bill Mitchell (mitchell@mdd.comm.mot.com) and it is currently
+maintained by Santiago Vila (sanvila@debian.org).
 
 Source code was downloaded from:
 
@@ -36925,22 +36927,22 @@ POSSIBILITY OF SUCH DAMAGE.
 "slof-20131015+dfsg/debian/copyright":
 
 [slof-20131015+dfsg/debian/copyright]
-This package was debianized by Aurelien Jarno <aurel32@debian.org> on
+This package was debianized by Aurelien Jarno (aurel32@debian.org) on
 Sat, 15 Sep 2012 17:27:41 +0200.
 
 It was downloaded from https://github.com/dgibson/SLOF
 
 Upstream Authors:
-  Alexey Kardashevskiy <aik@ozlabs.ru>
-  David Gibson <david@gibson.dropbear.id.au>
-  Benjamin Herrenschmidt <benh@kernel.crashing.org>
-  Michael Ellerman <michael@ellerman.id.au>
-  Segher Boessenkool <segher@kernel.crashing.org>
-  Thomas Huth <thuth@linux.vnet.ibm.com>
+  Alexey Kardashevskiy (aik@ozlabs.ru)
+  David Gibson (david@gibson.dropbear.id.au)
+  Benjamin Herrenschmidt (benh@kernel.crashing.org)
+  Michael Ellerman (michael@ellerman.id.au)
+  Segher Boessenkool (segher@kernel.crashing.org)
+  Thomas Huth (thuth@linux.vnet.ibm.com)
 
 Copyright:
   Copyright (c) 2004, 2007, 2008, 2009, 2011, 2012 IBM Corporation
-  Copyright 2002, 2003, 2004 Segher Boessenkool <segher@kernel.crashing.org>
+  Copyright 2002, 2003, 2004 Segher Boessenkool (segher@kernel.crashing.org)
 
 License:
 
@@ -36975,14 +36977,14 @@ License:
 "smartmontools-6.2+svn3841/debian/copyright":
 
 [smartmontools-6.2+svn3841/debian/copyright]
-This package was debianized by Guido Guenther <agx@debian.org> on
+This package was debianized by Guido Guenther (agx@debian.org) on
 Tue, 14 Jan 2003 12:58:00 +0000.
 
 It was downloaded from http://smartmontools.sourceforge.net/
 
 Upstream Authors: 
 
-	Bruce Allen <smartmontools-support@lists.sourceforge.net>
+	Bruce Allen (smartmontools-support@lists.sourceforge.net)
 
 Copyright:
 	
@@ -37002,17 +37004,17 @@ file /usr/share/common-licenses/GPL-2
 
 [socat-1.7.2.4/debian/copyright]
 This work was packaged for Debian by:
-    Chris Taylor <ctaylor@debian.org> on Wed, 10 Feb 2010 14:07:57 -0800
+    Chris Taylor (ctaylor@debian.org) on Wed, 10 Feb 2010 14:07:57 -0800
 Was taken over on Sun, 21 Jul 2013 16:19:26 +0200 by:
-    Laszlo Boszormenyi (GCS) <gcs@debian.org>
+    Laszlo Boszormenyi (GCS) (gcs@debian.org)
 
 It was downloaded from:
 
-    <http://www.dest-unreach.org/socat/>
+    (http://www.dest-unreach.org/socat/)
 
 Upstream Author:
 
-   Gerhard Rieger <socat@dest-unreach.org> 
+   Gerhard Rieger (socat@dest-unreach.org) 
 
 Copyright:
 
@@ -37044,9 +37046,9 @@ License:
 
 The Debian packaging is:
 
-    Copyright (C) 2002-2009 Thomas Seyrat <tomasera@debian.org>
-    Copyright (C) 2010 Chris Taylor <ctaylor@debian.org>
-    Copyright (C) 2013- Laszlo Boszormenyi (GCS) <gcs@debian.org>
+    Copyright (C) 2002-2009 Thomas Seyrat (tomasera@debian.org)
+    Copyright (C) 2010 Chris Taylor (ctaylor@debian.org)
+    Copyright (C) 2013- Laszlo Boszormenyi (GCS) (gcs@debian.org)
 
 and is licensed under the GPL version 3,
 see "/usr/share/common-licenses/GPL-3".
@@ -37363,8 +37365,8 @@ to attach them to the start of each source file to most effectively
 convey the exclusion of warranty; and each file should have at least
 the "copyright" line and a pointer to where the full notice is found.
 
-    <one line to give the program's name and a brief idea of what it does.>
-    Copyright (C) <year>  <name of author>
+    (one line to give the program's name and a brief idea of what it does.)
+    Copyright (C) (year)  (name of author)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -37402,7 +37404,7 @@ necessary.  Here is a sample; alter the names:
   Yoyodyne, Inc., hereby disclaims all copyright interest in the program
   `Gnomovision' (which makes passes at compilers) written by James Hacker.
 
-  <signature of Ty Coon>, 1 April 1989
+  (signature of Ty Coon), 1 April 1989
   Ty Coon, President of Vice
 
 This General Public License does not permit incorporating your program into
@@ -39236,7 +39238,7 @@ License: BSD-Young
 Comment: not compiled since 4-clause BSD is incompatible with GPL
 
 Files: src/include/linux/udp.h
-Copyright: Fred N. van Kempen, <waltje@uWalt.NL.Mugnet.ORG>
+Copyright: Fred N. van Kempen, (waltje@uWalt.NL.Mugnet.ORG)
 License: GPL-2+
 
 Files: src/pluto/alg_info.h
@@ -39244,7 +39246,7 @@ Files: src/pluto/alg_info.h
  src/pluto/db_ops.h
  src/pluto/ike_alg.h
  src/pluto/kernel_alg.h
-Copyright: JuanJo Ciarlante <jjo-ipsec@mendoza.gov.ar>
+Copyright: JuanJo Ciarlante (jjo-ipsec@mendoza.gov.ar)
 License: GPL-2+
 
 Files: src/libstrongswan/plugins/test_vectors/test_vectors/aes_ccm.c
@@ -39355,7 +39357,7 @@ Files: src/pluto/alg_info.c
  src/pluto/ike_alg.c
  src/pluto/kernel_alg.c
 Copyright: 2009, Andreas Steffen - Hochschule fuer Technik Rapperswil
-  JuanJo Ciarlante <jjo-ipsec@mendoza.gov.ar>
+  JuanJo Ciarlante (jjo-ipsec@mendoza.gov.ar)
 License: GPL-2+
 
 Files: src/pluto/ca.c
@@ -39437,7 +39439,7 @@ License: GPL-2+
 
 Files: src/libfreeswan/ipsec_param.h
  src/libfreeswan/pfkey_v2_debug.c
-Copyright: 2001, Richard Guy Briggs <rgb@freeswan.org>
+Copyright: 2001, Richard Guy Briggs (rgb@freeswan.org)
 License: GPL-2+
 
 Files: src/libpts/pts/components/pts_comp_evidence.c
@@ -39484,7 +39486,7 @@ License: BSD-3-clause
 Files: src/libstrongswan/plugins/test_vectors/test_vectors/blowfish.c
 Copyright: 2009, Andreas Steffen
   2009, Martin Willi
-  JuanJo Ciarlante <jjo-ipsec@mendoza.gov.ar>
+  JuanJo Ciarlante (jjo-ipsec@mendoza.gov.ar)
 License: GPL-2+
 
 Files: src/libstrongswan/plugins/test_vectors/test_vectors/aes_cmac.c
@@ -39577,7 +39579,7 @@ Copyright: 2002-2005, Mathieu Lafon - Arkoon Network Security
 License: GPL-2+
 
 Files: src/pluto/fetch.c
-Copyright: 2002, Stephane Laroche <stephane.laroche@colubris.com>
+Copyright: 2002, Stephane Laroche (stephane.laroche@colubris.com)
   2002-2009, Andreas Steffen - Hochschule fuer Technik Rapperswil
 License: GPL-2+
 
@@ -39592,7 +39594,7 @@ Copyright: 1998-2002, D. Hugh Redelmeier
 License: GPL-2+
 
 Files: src/pluto/fetch.h
-Copyright: 2002, Stephane Laroche <stephane.laroche@colubris.com>
+Copyright: 2002, Stephane Laroche (stephane.laroche@colubris.com)
   2002-2004, Andreas Steffen, Zuercher Hochschule Winterthur
 License: GPL-2+
 
@@ -39632,7 +39634,7 @@ Copyright: 2006, Daniel Roethlisberger
 License: GPL-2+
 
 Files: src/libstrongswan/plugins/aes/aes_crypter.c
-Copyright: 2001, Dr B. R. Gladman <brg@gladman.uk.net>
+Copyright: 2001, Dr B. R. Gladman (brg@gladman.uk.net)
   2005, Jan Hutter
   2005-2006, Martin Willi
 License: GPL-2+
@@ -39655,7 +39657,7 @@ Copyright: 2001, Henry Spencer
 License: GPL-2+
 
 Files: src/include/linux/if_alg.h
-Copyright: 2010, Herbert Xu <herbert@gondor.apana.org.au>
+Copyright: 2010, Herbert Xu (herbert@gondor.apana.org.au)
 License: GPL-2+
 
 Files: src/libstrongswan/plugins/md4/md4_hasher.c
@@ -39687,7 +39689,7 @@ Copyright: 2002, Jeff Dike
 License: GPL-2+
 
 Files: src/libfreeswan/ttoprotoport.c
-Copyright: 2002, Mario Strasser <mast@gmx.net>
+Copyright: 2002, Mario Strasser (mast@gmx.net)
 License: GPL-2+
 
 Files: src/dumm/cowfs.c
@@ -39930,12 +39932,12 @@ License: BSD-Young
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 
 Files: *
-Copyright: 2008-2010 Jeff Ortel <jortel@redhat.com>
+Copyright: 2008-2010 Jeff Ortel (jortel@redhat.com)
 License: LGPL-3+
 
 Files: debian/*
-Copyright: 2010-2012 Daniel Baumann <daniel@debian.org>
-           2010-2014 Mathias Behrle <mathiasb@m9s.biz>
+Copyright: 2010-2012 Daniel Baumann (daniel@debian.org)
+           2010-2014 Mathias Behrle (mathiasb@m9s.biz)
 License: LGPL-3+
 
 License: LGPL-3+
@@ -39950,7 +39952,7 @@ License: LGPL-3+
  GNU Lesser General Public License for more details.
  .
  You should have received a copy of the GNU Lesser General Public License
- along with this program. If not, see <http://www.gnu.org/licenses/>.
+ along with this program. If not, see (http://www.gnu.org/licenses/).
  .
  The complete text of the GNU Lesser General Public License
  can be found in /usr/share/common-licenses/LGPL-3 file.
@@ -39964,7 +39966,7 @@ License: LGPL-3+
 [supermin-5.1.8/debian/copyright]
 This work was packaged for Debian by:
 
-    Richard Jones <rjones@redhat.com> on Sun, 24 May 2009 20:23:01 +0100.
+    Richard Jones (rjones@redhat.com) on Sun, 24 May 2009 20:23:01 +0100.
 
 It was downloaded from:
 
@@ -39972,7 +39974,7 @@ It was downloaded from:
 
 Upstream Authors:
 
-    Richard W.M. Jones <rjones@redhat.com>
+    Richard W.M. Jones (rjones@redhat.com)
     Red Hat Inc.
 
 Copyright:
@@ -39992,15 +39994,15 @@ License:
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with this program. If not, see <http://www.gnu.org/licenses/>
+    along with this program. If not, see (http://www.gnu.org/licenses/)
 
 On Debian systems, the complete text of the GNU General
 Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
 
 The Debian packaging is:
 
-    Copyright (C) 2009-2010 Richard W.M. Jones <rjones@redhat.com>
-    Copyright (C) 2011-2013 Hilko Bengen <bengen@debian.org>
+    Copyright (C) 2009-2010 Richard W.M. Jones (rjones@redhat.com)
+    Copyright (C) 2011-2013 Hilko Bengen (bengen@debian.org)
 
 you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -40016,11 +40018,11 @@ the Free Software Foundation; either version 2 of the License, or
 [talloc-2.1.1/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: talloc
-Upstream-Contact: Samba Developers <samba-technical@samba.org>
+Upstream-Contact: Samba Developers (samba-technical@samba.org)
 Source: http://talloc.samba.org/
 
 Files: debian/*
-Copyright: 2007-2012 Jelmer Vernooij <jelmer@samba.org>
+Copyright: 2007-2012 Jelmer Vernooij (jelmer@samba.org)
 License: LGPL-3+
  This library is free software; you can redistribute it and/or
  modify it under the terms of the GNU Lesser General Public
@@ -40041,8 +40043,8 @@ License: LGPL-3+
 
 Files: *
 Copyright:
-  2004 Andrew Tridgell <tridge@samba.org>
-  2006 Stefan Metzmacher <metze@samba.org>
+  2004 Andrew Tridgell (tridge@samba.org)
+  2006 Stefan Metzmacher (metze@samba.org)
 License: LGPL-3+
  This library is free software; you can redistribute it and/or
  modify it under the terms of the GNU Lesser General Public
@@ -40068,7 +40070,7 @@ Copyright:
   Copyright (c) Jeremy Allison	               2000-2003,2007
   Copyright (c) PostgreSQL Global Development Group 1996-2007
   Copyright (c) The Regents of the University of California 1994
-  Copyright (c) Michael Adam <obnox@samba.org> 2008
+  Copyright (c) Michael Adam (obnox@samba.org) 2008
   Copyright (c) Patrick Powell                 1995
   Copyright (c) Free Software Foundation, Inc. 1991-2001
   Copyright (c) Jelmer Vernooij                2006-2009
@@ -40133,7 +40135,7 @@ License:
 "tcl8.6-8.6.1/debian/copyright":
 
 [tcl8.6-8.6.1/debian/copyright]
-This package was originally debianized by David Engel <david@debiang.org>
+This package was originally debianized by David Engel (david@debiang.org)
 from sources obtained at http://prdownloads.sourceforge.net/tcl
 
 List of copyright holders mentioned in individual files:
@@ -40614,13 +40616,13 @@ terms specified in this license.
 [tdb-1.3.0/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: tdb
-Upstream-Contact: Rusty Russell <rusty@samba.org>
+Upstream-Contact: Rusty Russell (rusty@samba.org)
 Source: http://tdb.samba.org/
 
 Files: debian/*
 Copyright:
-  2001-2005 Marek Habersack <grendel@debian.org> on
-  2007-2012 Jelmer Vernooij <jelmer@samba.org>
+  2001-2005 Marek Habersack (grendel@debian.org) on
+  2007-2012 Jelmer Vernooij (jelmer@samba.org)
 License: LGPL-3+
  Debian packaging is licensed under the GNU Lesser General Public License,
  version 3 or later. The text of the license is available on Debian
@@ -40648,7 +40650,7 @@ Copyright:
   Copyright (c) Jeremy Allison	               2000-2003,2007
   Copyright (c) PostgreSQL Global Development Group 1996-2007
   Copyright (c) The Regents of the University of California 1994
-  Copyright (c) Michael Adam <obnox@samba.org> 2008
+  Copyright (c) Michael Adam (obnox@samba.org) 2008
   Copyright (c) Patrick Powell                 1995
   Copyright (c) Free Software Foundation, Inc. 1991-2001
   Copyright (c) Jelmer Vernooij                2006-2009
@@ -40682,7 +40684,7 @@ License:
 
 Files: pytdb.c
 Copyright:
-  Copyright (c) Tim Potter <tpot@samba.org>    2004-2006
+  Copyright (c) Tim Potter (tpot@samba.org)    2004-2006
   Copyright (c) Jelmer Vernooij                2006-2008
 License:
   The python module in this package is distributed under the terms
@@ -40730,22 +40732,22 @@ License:
 [tevent-0.9.21/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: tevent
-Upstream-Contact: Samba Developers <samba-technical@samba.org>
+Upstream-Contact: Samba Developers (samba-technical@samba.org)
 Source: http://tevent.samba.org/
-Debianized-By: Jelmer Vernooij <jelmer@samba.org>
+Debianized-By: Jelmer Vernooij (jelmer@samba.org)
 Debianized-Date: Tue, 23 Dec 2008 03:50:40 +0100
 
 Files: *
 Copyright:
-  2003-2007 Andrew Tridgell <tridge@samba.org>
-  2005 Stefan Metzmacher <metze@samba.org>
-  2005 Jelmer Vernooij <jelmer@samba.org>
+  2003-2007 Andrew Tridgell (tridge@samba.org)
+  2005 Stefan Metzmacher (metze@samba.org)
+  2005 Jelmer Vernooij (jelmer@samba.org)
 License: LGPL-3+
  On Debian systems the full text of the GNU Lesser General Public License can
  be found in the `/usr/share/common-licenses/LGPL-3' file.
 
 Files: debian/*
-Copyright: 2008, Jelmer Vernooij <jelmer@samba.org>
+Copyright: 2008, Jelmer Vernooij (jelmer@samba.org)
 License: LGPL-3+
  On Debian systems the full text of the GNU Lesser General Public License can
  be found in the `/usr/share/common-licenses/LGPL-3' file.
@@ -40860,11 +40862,11 @@ License: LGPL-3+
 "tidy-20091223cvs/debian/copyright":
 
 [tidy-20091223cvs/debian/copyright]
-This package was redebianized by Jason Thomas <jason@debian.org> on
+This package was redebianized by Jason Thomas (jason@debian.org) on
 
 It was downloaded from http://tidy.sourceforge.net/
 
-Upstream Author: Dave Raggett <dsr@w3.org>
+Upstream Author: Dave Raggett (dsr@w3.org)
 
 Copyright:
 
@@ -40875,7 +40877,7 @@ Copyright:
 
   Contributing Author(s):
 
-     Dave Raggett <dsr@w3.org>
+     Dave Raggett (dsr@w3.org)
 
   The contributing author(s) would like to thank all those who
   helped with testing, bug fixes and suggestions for improvements. 
@@ -40919,7 +40921,7 @@ Copyright:
 "tk8.6-8.6.1/debian/copyright":
 
 [tk8.6-8.6.1/debian/copyright]
-This package was debianized by David Engel <david@debiang.org>
+This package was debianized by David Engel (david@debiang.org)
 from sources obtained at http://prdownloads.sourceforge.net/tcl
 
 List of copyright holders of individual files:
@@ -41457,9 +41459,9 @@ terms specified in this license.
 "twisted-13.2.0/debian/copyright":
 
 [twisted-13.2.0/debian/copyright]
-This package was debianized by Moshe Zadka <moshez@debian.org>
+This package was debianized by Moshe Zadka (moshez@debian.org)
 on Sat, 21 Jul 2001 09:35:33 +0300,
-updated for 2.0 by Matthias Klose <doko@debian.org>
+updated for 2.0 by Matthias Klose (doko@debian.org)
 
 It was downloaded from http://www.twistedmatrix.com
 
@@ -41574,7 +41576,7 @@ Agreement.
 [unittest2-0.5.1/debian/copyright]
 This work was packaged for Debian by:
 
-    Sandro Tosi <morph@debian.org> on Sun, 09 May 2010 18:38:34 +0200
+    Sandro Tosi (morph@debian.org) on Sun, 09 May 2010 18:38:34 +0200
 
 It was downloaded from:
 
@@ -41582,7 +41584,7 @@ It was downloaded from:
 
 Upstream Author(s):
 
-    Michael Foord <michael@voidspace.org.uk>
+    Michael Foord (michael@voidspace.org.uk)
 
 Copyright:
 
@@ -41608,14 +41610,14 @@ License:
 
 The Debian packaging is:
 
-    Copyright (C) 2010 Sandro Tosi <morph@debian.org>
+    Copyright (C) 2010 Sandro Tosi (morph@debian.org)
 
 and is licensed under the same terms as of upstream code.
 
 This file has a different license and copyright notices:
 
 setup.py:
-    # Copyright (C) 2010 Michael Foord <fuzzyman@voidspace.org.uk>
+    # Copyright (C) 2010 Michael Foord (fuzzyman@voidspace.org.uk)
     # This software is licensed under the terms of the BSD license.
     # http://www.voidspace.org.uk/python/license.shtml
 [unittest2-0.5.1/debian/copyright]
@@ -41626,15 +41628,15 @@ setup.py:
 "usbutils-007/debian/copyright":
 
 [usbutils-007/debian/copyright]
-This package was debianized by Christopher L Cheney <ccheney@debian.org> on
+This package was debianized by Christopher L Cheney (ccheney@debian.org) on
 Wed, 13 Jun 2001 11:20:06 -0500.
 
 It was downloaded from http://www.linux-usb.org/
 
 Upstream Authors:
-  Thomas Sailer <sailer@ife.ee.ethz.ch>
-  Johannes Erdfelt <johannes@sventech.com>
-  Greg Kroah-Hartman <greg@kroah.com>
+  Thomas Sailer (sailer@ife.ee.ethz.ch)
+  Johannes Erdfelt (johannes@sventech.com)
+  Greg Kroah-Hartman (greg@kroah.com)
 
 Copyright:
   Copyright (C) 1999-2001, 2003 Thomas Sailer
@@ -41670,14 +41672,14 @@ License, version 2, can be found in /usr/share/common-licenses/GPL-2.
 "utidylib-0.2/debian/copyright":
 
 [utidylib-0.2/debian/copyright]
-This package was originally debianized by Chad Walstrom <chewie@debian.org>
+This package was originally debianized by Chad Walstrom (chewie@debian.org)
 on Mon, 20 Dec 2004 15:18:53 -0600
 
 It was downloaded from http://download.berlios.de/utidylib/uTidylib-0.2.zip
 
 Copyright:
 
-  Copyright (c) 2003 Cory Dodt <corydodt@twistedmatrix.com>
+  Copyright (c) 2003 Cory Dodt (corydodt@twistedmatrix.com)
 
 License:
 
@@ -41707,12 +41709,12 @@ License:
 "vbetool-1.1/debian/copyright":
 
 [vbetool-1.1/debian/copyright]
-Author: Matthew Garrett <mjg59@srcf.ucam.org>
+Author: Matthew Garrett (mjg59@srcf.ucam.org)
 Download: http://www.codon.org.uk/~mjg59/vbetool/
 
 Files: *
 Copyright:
- Matthew Garrett <mjg59@srcf.ucam.org>, heavily based on vbetest.c from the
+ Matthew Garrett (mjg59@srcf.ucam.org), heavily based on vbetest.c from the
  lrmi package and read-edid.c by John Fremlin
 License: GPL-2
  This program is free software; you can redistribute it and/or modify
@@ -41729,7 +41731,7 @@ Files:
  x86-common.c
 Copyright:
  (C) 1998 by Josh Vanderhoof
- (C) 2005 by Jonathan McDowell <noodles@earth.li>
+ (C) 2005 by Jonathan McDowell (noodles@earth.li)
 License: MIT
  Permission is hereby granted, free of charge, to any person obtaining a
  copy of this software and associated documentation files (the "Software"),
@@ -41750,7 +41752,7 @@ License: MIT
  SOFTWARE.
 
 Files: debian/*
-Copyright: (C) 2008 Bradley Smith <brad@brad-smith.co.uk>
+Copyright: (C) 2008 Bradley Smith (brad@brad-smith.co.uk)
 License: GPL-2+.
  This program is free software; you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -41777,9 +41779,9 @@ Upstream-Name: wheel
 Source: https://pypi.python.org/pypi/wheel
 
 Files: *
-Copyright: copyright (c) 2012-2014 Daniel Holth <dholth@fastmail.fm> and contributors.
+Copyright: copyright (c) 2012-2014 Daniel Holth (dholth@fastmail.fm) and contributors.
 License: Expat/MIT
- "wheel" copyright (c) 2012-2014 Daniel Holth <dholth@fastmail.fm> and
+ "wheel" copyright (c) 2012-2014 Daniel Holth (dholth@fastmail.fm) and
  contributors.
  .
  The MIT License
@@ -41815,7 +41817,7 @@ License: GPL-3
  GNU General Public License for more details.
  .
  You should have received a copy of the GNU General Public License
- along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ along with this program.  If not, see (http://www.gnu.org/licenses/).
  .
  On Debian-based systems the full text of the GPL, version 3, can be found at
  /usr/share/common-licenses/GPL-3.
@@ -41893,9 +41895,9 @@ This package was downloaded from
 http://xorg.freedesktop.org/releases/individual/lib/
 
 This package was originally Debianized by Colin Walters
-<walters@debian.org> on Sun, 13 Oct 2002 15:01:50 -0400.
+(walters@debian.org) on Sun, 13 Oct 2002 15:01:50 -0400.
 
-Later versions were Debianized by Branden Robinson <branden@debian.org>.
+Later versions were Debianized by Branden Robinson (branden@debian.org).
 
 Upstream maintainer: Keith Packard
 
@@ -41928,20 +41930,20 @@ PERFORMANCE OF THIS SOFTWARE.
 "xkeyboard-config-2.12/debian/copyright":
 
 [xkeyboard-config-2.12/debian/copyright]
-This package was debianized by Denis Barbier <barbier@debian.org> on
+This package was debianized by Denis Barbier (barbier@debian.org) on
 Tue, 10 Oct 2006 01:16:55 +0200
 
 It was downloaded from
   http://xlibs.freedesktop.org/xkbdesc/xkeyboard-config-0.9.tar.gz
 
 Upstream Maintainer: 
-  Sergey V. Udaltsov <svu@gnome.org>
+  Sergey V. Udaltsov (svu@gnome.org)
 
 This package is distributed under the following licenses:
 Copyright 1996 by Joseph Moss
 Copyright (C) 2002-2007 Free Software Foundation, Inc.
-Copyright (C) Dmitry Golubev <lastguru@mail.ru>, 2003-2004
-Copyright (C) 2004, Gregory Mokhin <mokhin@bog.msu.ru>
+Copyright (C) Dmitry Golubev (lastguru@mail.ru), 2003-2004
+Copyright (C) 2004, Gregory Mokhin (mokhin@bog.msu.ru)
 Copyright (C) 2006 Erdal Ronahî
 
 Permission to use, copy, modify, distribute, and sell this software and its
@@ -42094,7 +42096,7 @@ other dealings in this Software without prior written authorization
 from the X Consortium.
 
 
-Copyright (C) 2004, 2006 Ævar Arnfjörð Bjarmason <avarab@gmail.com>
+Copyright (C) 2004, 2006 Ævar Arnfjörð Bjarmason (avarab@gmail.com)
 
 Permission to use, copy, modify, distribute, and sell this software and its
 documentation for any purpose is hereby granted without fee, provided that
@@ -42119,7 +42121,7 @@ other dealings in this Software without prior written authorization of
 the copyright holder.
 
 
-Copyright (C) 1999, 2000 by Anton Zinoviev <anton@lml.bas.bg>
+Copyright (C) 1999, 2000 by Anton Zinoviev (anton@lml.bas.bg)
 
 This software may be used, modified, copied, distributed, and sold,
 in both source and binary form provided that the above copyright
@@ -42143,12 +42145,12 @@ This file is distributed without any expressed or implied warranty.
 
 [xml-core-0.13+nmu2/debian/copyright]
 This is the Debian package of xml-core.  It is assembled and maintained
-by Ardo van Rangelrooij <ardo@debian.org> and the Debian XML/SGML group.
+by Ardo van Rangelrooij (ardo@debian.org) and the Debian XML/SGML group.
 
 Author:
 
-  Ardo van Rangelrooij <ardo@debian.org>
-  Daniel Leidert <daniel.leidert@wgdd.de>
+  Ardo van Rangelrooij (ardo@debian.org)
+  Daniel Leidert (daniel.leidert@wgdd.de)
 
 Copyright:
 
@@ -42237,7 +42239,7 @@ sale, use or other dealings in this Software without prior written
 authorization from Software in the Public Interest, Inc.
 
 --------------------------------------------------------------------------------
-Copyright 1998-2007 Branden Robinson <branden@debian.org>.
+Copyright 1998-2007 Branden Robinson (branden@debian.org).
 Copyright 2000, 2003, 2004 Progeny Linux Systems, Inc.
 Copyright 1996 Stephen Early
 Copyright 1997 Mark Eichin
@@ -42259,7 +42261,7 @@ not, write to the Free Software Foundation, Inc., 51 Franklin St,
 Fifth Floor, Boston, MA 02110-1301, USA.
 
 --------------------------------------------------------------------------------
-© 2010-2011 Cyril Brulebois <kibi@debian.org>
+© 2010-2011 Cyril Brulebois (kibi@debian.org)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -42288,11 +42290,11 @@ THE SOFTWARE.
 
 [zerofree-1.0.3/debian/copyright]
 X-Format-Specification: http://wiki.debian.org/Proposals/CopyrightFormat
-X-Debianized-By: Thibaut Paumard <paumard@users.sourceforge.net>
+X-Debianized-By: Thibaut Paumard (paumard@users.sourceforge.net)
 X-Debianized-Date: Wed, 06 Feb 2008 10:51:16 +0100
 X-Source-Downloaded-From:
  http://intgat.tigress.co.uk/rmy/uml/zerofree-1.0.1.tgz
-X-Upstream-Author: Ron M. Yorston <rmy@tigress.co.uk>
+X-Upstream-Author: Ron M. Yorston (rmy@tigress.co.uk)
 
 Files: *
 Copyright: © 2004, Ron M. Yorston
@@ -42312,7 +42314,7 @@ X-Comment: On Debian systems, the complete text of the GNU General
  Public License can be found in `/usr/share/common-licenses/GPL-2'.
 
 Files: debian/*
-Copyright: © 2008, Thibaut Paumard <paumard@users.sourceforge.net>
+Copyright: © 2008, Thibaut Paumard (paumard@users.sourceforge.net)
 License: GPL-2+
 [zerofree-1.0.3/debian/copyright]
 
@@ -42322,15 +42324,15 @@ License: GPL-2+
 "zfs-fuse-0.7.0/debian/copyright":
 
 [zfs-fuse-0.7.0/debian/copyright]
-This package was debianized by Bryan Donlan <bdonlan@gmail.com> on
+This package was debianized by Bryan Donlan (bdonlan@gmail.com) on
 Tue, 17 Apr 2007 16:24:53 -0400. It was later modified by Filip Brcic
-<brcha@gna.org> and Sébastien Delafond <seb@debian.org>.
+(brcha@gna.org) and Sébastien Delafond (seb@debian.org).
 
 It was downloaded from http://zfs-fuse.net/
 
 Upstream Authors:
-  <rudd-o@rudd-o.com>
-  Ricardo Correia <rcorreia@wizy.org>
+  (rudd-o@rudd-o.com)
+  Ricardo Correia (rcorreia@wizy.org)
 
 Copyright:
 
@@ -42353,7 +42355,7 @@ The ZFS-FUSE software and manual pages are licenced under the CDDL, which
 is reproduced at the end of this file.
 
 The Debian packaging is Copyright (c) 2007, Bryan Donlan
-<bdonlan@gmail.com> and is dual-licensed under the GPL, see
+(bdonlan@gmail.com) and is dual-licensed under the GPL, see
 `/usr/share/common-licenses/GPL-2', and the CDDL.
 
 The text of the CDDL follows:
@@ -42770,7 +42772,7 @@ See the file OPENSOLARIS.LICENSE for more information.
 [zope.interface-4.1.1/debian/copyright]
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: zope.interface
-Upstream-Contact: Zope Foundation and Contributors <zope-dev@zope.org>
+Upstream-Contact: Zope Foundation and Contributors (zope-dev@zope.org)
 Source: http://pypi.python.org/pypi/zope.interface
 Files-Excluded: docs/_build/*
 
@@ -43612,7 +43614,7 @@ to permit their use in free software.
 
 
  Copyright (C) 2000, 2001, 2002, 2007, 2008 Free Software Foundation, Inc.
-     <http://fsf.org/>
+     (http://fsf.org/)
  Everyone is permitted to copy and distribute verbatim copies
  of this license document, but changing it is not allowed.
 
@@ -44267,8 +44269,8 @@ attach them to the start of each source file to most effectively convey
 the exclusion of warranty; and each file should have at least the
 "copyright" line and a pointer to where the full notice is found.
 
-    <one line to give the program's name and a brief idea of what it does.>
-    Copyright (C) 19yy  <name of author>
+    (one line to give the program's name and a brief idea of what it does.)
+    Copyright (C) 19yy  (name of author)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -44309,7 +44311,7 @@ necessary.  Here a sample; alter the names:
   program `Gnomovision' (a program to direct compilers to make passes
   at assemblers) written by James Hacker.
 
-  <signature of Ty Coon>, 1 April 1989
+  (signature of Ty Coon), 1 April 1989
   Ty Coon, President of Vice
 
 That's all there is to it!
@@ -44610,8 +44612,8 @@ to attach them to the start of each source file to most effectively
 convey the exclusion of warranty; and each file should have at least
 the "copyright" line and a pointer to where the full notice is found.
 
-    <one line to give the program's name and a brief idea of what it does.>
-    Copyright (C) <year>  <name of author>
+    (one line to give the program's name and a brief idea of what it does.)
+    Copyright (C) (year)  (name of author)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -44649,7 +44651,7 @@ necessary.  Here is a sample; alter the names:
   Yoyodyne, Inc., hereby disclaims all copyright interest in the program
   `Gnomovision' (which makes passes at compilers) written by James Hacker.
 
-  <signature of Ty Coon>, 1 April 1989
+  (signature of Ty Coon), 1 April 1989
   Ty Coon, President of Vice
 
 This General Public License does not permit incorporating your program into
@@ -44665,7 +44667,7 @@ Public License instead of this License.
                     GNU GENERAL PUBLIC LICENSE
                        Version 3, 29 June 2007
 
- Copyright (C) 2007 Free Software Foundation, Inc. <http://fsf.org/>
+ Copyright (C) 2007 Free Software Foundation, Inc. (http://fsf.org/)
  Everyone is permitted to copy and distribute verbatim copies
  of this license document, but changing it is not allowed.
 
@@ -45295,8 +45297,8 @@ to attach them to the start of each source file to most effectively
 state the exclusion of warranty; and each file should have at least
 the "copyright" line and a pointer to where the full notice is found.
 
-    <one line to give the program's name and a brief idea of what it does.>
-    Copyright (C) <year>  <name of author>
+    (one line to give the program's name and a brief idea of what it does.)
+    Copyright (C) (year)  (name of author)
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -45309,14 +45311,14 @@ the "copyright" line and a pointer to where the full notice is found.
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+    along with this program.  If not, see (http://www.gnu.org/licenses/).
 
 Also add information on how to contact you by electronic and paper mail.
 
   If the program does terminal interaction, make it output a short
 notice like this when it starts in an interactive mode:
 
-    <program>  Copyright (C) <year>  <name of author>
+    (program)  Copyright (C) (year)  (name of author)
     This program comes with ABSOLUTELY NO WARRANTY; for details type `show w'.
     This is free software, and you are welcome to redistribute it
     under certain conditions; type `show c' for details.
@@ -45328,14 +45330,14 @@ might be different; for a GUI interface, you would use an "about box".
   You should also get your employer (if you work as a programmer) or school,
 if any, to sign a "copyright disclaimer" for the program, if necessary.
 For more information on this, and how to apply and follow the GNU GPL, see
-<http://www.gnu.org/licenses/>.
+(http://www.gnu.org/licenses/).
 
   The GNU General Public License does not permit incorporating your program
 into proprietary programs.  If your program is a subroutine library, you
 may consider it more useful to permit linking proprietary applications with
 the library.  If this is what you want to do, use the GNU Lesser General
 Public License instead of this License.  But first, please read
-<http://www.gnu.org/philosophy/why-not-lgpl.html>.
+(http://www.gnu.org/philosophy/why-not-lgpl.html).
 [/usr/share/common-licenses/GPL-3]
 
 "/usr/share/common-licenses/LGPL-2":
@@ -45792,8 +45794,8 @@ safest to attach them to the start of each source file to most effectively
 convey the exclusion of warranty; and each file should have at least the
 "copyright" line and a pointer to where the full notice is found.
 
-    <one line to give the library's name and a brief idea of what it does.>
-    Copyright (C) <year>  <name of author>
+    (one line to give the library's name and a brief idea of what it does.)
+    Copyright (C) (year)  (name of author)
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Library General Public
@@ -45818,7 +45820,7 @@ necessary.  Here is a sample; alter the names:
   Yoyodyne, Inc., hereby disclaims all copyright interest in the
   library `Frob' (a library for tweaking knobs) written by James Random Hacker.
 
-  <signature of Ty Coon>, 1 April 1990
+  (signature of Ty Coon), 1 April 1990
   Ty Coon, President of Vice
 
 That's all there is to it!
@@ -46299,8 +46301,8 @@ safest to attach them to the start of each source file to most effectively
 convey the exclusion of warranty; and each file should have at least the
 "copyright" line and a pointer to where the full notice is found.
 
-    <one line to give the library's name and a brief idea of what it does.>
-    Copyright (C) <year>  <name of author>
+    (one line to give the library's name and a brief idea of what it does.)
+    Copyright (C) (year)  (name of author)
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -46325,7 +46327,7 @@ necessary.  Here is a sample; alter the names:
   Yoyodyne, Inc., hereby disclaims all copyright interest in the
   library `Frob' (a library for tweaking knobs) written by James Random Hacker.
 
-  <signature of Ty Coon>, 1 April 1990
+  (signature of Ty Coon), 1 April 1990
   Ty Coon, President of Vice
 
 That's all there is to it!
@@ -46337,7 +46339,7 @@ That's all there is to it!
                    GNU LESSER GENERAL PUBLIC LICENSE
                        Version 3, 29 June 2007
 
- Copyright (C) 2007 Free Software Foundation, Inc. <http://fsf.org/>
+ Copyright (C) 2007 Free Software Foundation, Inc. (http://fsf.org/)
  Everyone is permitted to copy and distribute verbatim copies
  of this license document, but changing it is not allowed.
 
@@ -46501,14 +46503,14 @@ permanent authorization for you to choose that version for the
 Library.
 [/usr/share/common-licenses/LGPL-3]
 
-
-</code></pre>
+ </code></pre>
 
 The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 <p style="font-size: small;"> <a href="/helion/"> &#171; Return to HP Helion  home </a> </p>
+
 
 
 
