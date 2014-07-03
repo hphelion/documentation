@@ -31,19 +31,12 @@ HP Helion OpenStack beta is OpenStack technology coupled with a Linux&reg; opera
 For more information, refer to the OpenStack documentation site: 
 
 * [OpenStack documentation home page](http://docs.openstack.org/)
-
 * [OpenStack Glossary](http://docs.openstack.org/glossary/content/glossary.html)
-
 * [OpenStack End User Guide](http://docs.openstack.org/user-guide/content/index.html)
-
 * [OpenStack Cloud Administrator Guide](http://docs.openstack.org/trunk/openstack-compute/admin/content/index.html)
-
 * [OpenStack Administrator Guide for Networking](http://docs.openstack.org/admin-guide-cloud/content/ch_networking.html)
-
 * [OpenStack Operations Guide](http://docs.openstack.org/trunk/openstack-ops/content/index.html)
-
 * [OpenStack API Quick Start](http://docs.openstack.org/api/quick-start/content/index.html#Compute_API_Quick_Start)
-
 * [OpenStack Command-line Clients](http://docs.openstack.org/user-guide/content/install_clients.html)
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
