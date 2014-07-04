@@ -3,8 +3,8 @@ layout: default
 title: "HP Helion Public Cloud Networking:  VPN multi-site configuration guide"
 permalink: /compute/vpn-multisite/
 product: compute
-categories: neutron
-tags: networking neutron vpn
+categories: neutron 
+tags: networking neutron vpn  
 
 ---
 # HP Helion Public Cloud Networking:  VPN multi-site configuration guide {#top}

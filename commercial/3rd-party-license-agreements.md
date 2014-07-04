@@ -79,17 +79,7 @@ at the HP Helion OpenStack portal</a>. On the site, sign up, login, then follow 
 <h3 id="apache-public-license---v-10">Apache Public License - v 1.0</h3>
 
 <p>This notice is provided with respect to the following components which may be included with the product.
-<ul><li> apache-commons-io v 2.4</li>
-<li> apache-commons-lang v 2.6</li>
-<li> apache-commons-logging v 1.1.1</li>
-<li> apache-log4j v 1.2.17</li>
-<li> cglib v 3</li>
-<li> geronimo-javax.activation v 1.1</li>
-<li> guava v 13</li>
-<li> handjs v 1.0.5</li>
-<li> jackson v 2.2.2</li>
-<li> javassist v 3.18.0</li>
-<li> jboss-logging v 3.1.3</li></ul></p>
+</p>
 
 <p>Copyright (c) 1995-1999 The Apache Group.  All rights reserved.</p>
 
@@ -148,9 +138,9 @@ project, please see <http://www.apache.org/>. </p>
 
 
 <h3 id="apache-license-version-20">Apache License Version 2.0</h3>
-
 <p>January 2004
 http://www.apache.org/licenses/</p>
+<p>Copyright © 2014 The Apache Software Foundation. All Rights Reserved.</p>
 
 <p>This notice is provided with respect to the following components which may be included with the product.</p>
 
@@ -174,12 +164,16 @@ http://www.apache.org/licenses/</p>
 <li>Apache-commons-lang3, Version 3.1</li>
 <li>Apache-commons-logging, Version 1.0.4, 1.1.1</li>
 <li>Apache-commons-net, Version 3.2</li>
+<li> apache-log4j v 1.2.17<p>Copyright © 1999-2014 Apache Software Foundation. All Rights Reserved.</p>
+</li>
 <li>Apache-mime4j, Version 0.7.2</li>
 <li>Apache-wink-common, Version 1.2.incubating</li>
 <li>Apache-wink-json-provider, Version 1.2.incubating</li>
 <li>Apache-wink, Version 1.2.incubating</li>
 <li>bea-stax-api, Version 1.0.1</li>
 <li>cglib, Version 2.2</li>
+<li> cglib v 3<p>Copyright ©2010 GitHub Inc. All rights reserved</p>
+</li>
 <li>chef, Version 10.8</li>
 <li>crowbar, Version 1.4</li>
 <li>CouchDB, Version 1.3.0</li>
@@ -188,9 +182,12 @@ http://www.apache.org/licenses/</p>
 <li>dropwizard-hibernate, Version 0.6.2</li>
 <li>ezmorph, Version 1.0.6</li>
 <li>google-guice, Version 3</li>
-<li>guava, Version 13.0</li>
+<li> guava v 13 <p> Copyright: 2011-2014, Google, Inc.
+</p></li>
 <li>guice-assistedinject, Version 3</li>
 <li>guice-servlet, Version 3</li>
+<li> handjs v 1.0.5<p>© 2006-2014 Microsoft
+</p></li>
 <li>hibernate-validator, Version 4.3.0</li>
 <li>jackson, Version 1.9.6</li>
 <li>jackson-annotations, Version 2.1.1</li>
@@ -226,6 +223,8 @@ http://www.apache.org/licenses/</p>
 <li>libhttpclient-java, Version 4.2.3</li>
 <li>libjava-xmlbuilder-java, Version 0.4</li>
 <li>log4j, Version 1.2.16</li>
+<li>log4j 1.2.17<p>Copyright © 1999-2014 Apache Software Foundation
+</p></li>
 <li>log4j-over-slf4j, Version 1.7.2</li>
 <li>metrics-annotation, Version 2.2.0</li>
 <li>metrics-core, Version 2.2.0</li>
@@ -256,33 +255,70 @@ http://www.apache.org/licenses/</p>
 <li>xerces-j2, Version 2.6.2, 2.8.0</li>
 <li>xerces-j2-xml-apis, Version 1.3.02, 1.3.03</li>
 <li>xmlbeans, Version 2.6.0</li>
-<li>jclouds 1.7.2</li>
-<li>jetty 9.0.4</li>
-<li>jgestures 0.90.1</li>
-<li>libhttpcore-java 4.0.1</li>
-<li>libsisu-guice-java 3.1.1</li>
-<li>libspring-aop-java 4.0.0</li>
-<li>libspring-beans-java 4.0.0</li>
-<li>libspring-context-java 4.0.0</li>
-<li>libspring-context-support-java 4.0.0</li>
-<li>libspring-core-java 4.0.0</li>
-<li>libspring-expression-java 4.0.0</li>
-<li>libspring-jdbc-java 4.0.0</li>
-<li>libspring-orm-java 4.0.0</li>
-<li>libspring-web-java 4.0.0</li>
-<li>log4j 1.2.17</li>
-<li>org.apache.jasper.glassfish 2.2.2</li>
-<li>org.apache.taglibs.standard.glassfish 1.2.0</li>
-<li>plexus-cipher 1.7</li>
-<li>plexus-components-pom 1.2</li>
-<li>plexus-utils 3.0.14</li>
-<li>spring-tx 4.0.0</li>
-<li>spring-webmvc 4.0.0</li>
-<li>web-animation 1</li>
+<li> jboss-logging v 3.1.3 <p> Copyright 2010 Red Hat
+</p></li>
+<li>jclouds 1.7.2 <p> Copyright © 2011-2014 The Apache Software Foundation. All Rights Reserved
+</p></li>
+<li>jetty 9.0.4<p>Copyright © 2014 The Eclipse Foundation. All Rights Reserved
+</p></li>
+<li>jgestures 0.90.1<p>© 2006-2014 Microsoft
+</p></li>
+<li>libhttpcore-java 4.0.1<p>Copyright © 2005-2014 The Apache Software Foundation. All Rights Reserved.
+</p></li>
+<li>libsisu-guice-java 3.1.1<p>Copyright: 2006-2011, Google, Inc.
+</p></li>
+<li>libspring-aop-java 4.0.0 <p>© 2014 Pivotal Software, Inc. All Rights Reserved.
+</p></li>
+<li>libspring-beans-java 4.0.0<p>© 2014 Pivotal Software, Inc. All Rights Reserved.
+</p></li>
+<li>libspring-context-java 4.0.0<p>© 2014 Pivotal Software, Inc. All Rights Reserved.
+</p></li>
+<li>libspring-context-support-java 4.0.0<p>© 2014 Pivotal Software, Inc. All Rights Reserved.
+</p></li>
+<li>libspring-core-java 4.0.0<p>© 2014 Pivotal Software, Inc. All Rights Reserved.
+</p></li>
+<li>libspring-expression-java 4.0.0<p>© 2014 Pivotal Software, Inc. All Rights Reserved.
+</p></li>
+<li>libspring-jdbc-java 4.0.0<p>© 2014 Pivotal Software, Inc. All Rights Reserved.
+</p></li>
+<li>libspring-orm-java 4.0.0<p>© 2014 Pivotal Software, Inc. All Rights Reserved.
+</p></li>
+<li>libspring-web-java 4.0.0<p>© 2014 Pivotal Software, Inc. All Rights Reserved.
+</p></li>
+
+<li>org.apache.jasper.glassfish 2.2.2<p>Copyright © 2013, Oracle. All Rights Reserved
+</p></li>
+<li>org.apache.taglibs.standard.glassfish 1.2.0<p>Copyright © 2013, Oracle. All Rights Reserved
+</p></li>
+<li>plexus-cipher 1.7<p>Copyright © 2002-2011 Codehaus. All Rights Reserved. 
+</p<></li>
+<li>plexus-components-pom 1.2<p> © 2001-2009 Codehaus
+</p></li>
+
+<li>plexus-classworlds 2.5.1<p>Copyright 2002 (C) The Codehaus. All Rights Reserved.</p></li>
+
+<li>  plexus-utils 3.0.1.4<p>Copyright © 2001-2012 Codehaus. All Rights Reserved. 
+</p></li>
+<li>spring-tx 4.0.0<p>© 2014 Pivotal Software, Inc. All Rights Reserved.
+</p></li>
+<li>spring-webmvc 4.0.0<p>© 2014 Pivotal Software, Inc. All Rights Reserved.
+</p></li>
+<li>web-animation 1<p>Copyright 2013 Google Inc. All Rights Reserved.
+</p></li>
 <li>elasticsearch 1.2.1</li>
 <li>kibana  3.1.0</li>
-<li><p>logstash 1.4.1</p>
-
+<li>logstash 1.4.1</li>
+<li> geronimo-javax.activation v 1.1<p>Copyright © 2003-2013, The Apache Software Foundation</p>
+</li>
+<li> slf4j 1.7.5 <p>Copyright (c) 2004-2013 QOS.ch  All rights reserved.
+</p></li>
+<li> jackson v 2.2.2<p>© 2003-2008 Codehaus 
+</p></li>
+</ul>
+<ul>
+<li> javassist v 3.18.0<p>Copyright (C) 1999-2014 by Shigeru Chiba.</p></li>
+</ul>
+</p>
 <p>TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION</p>
 
 <ol><li><p>Definitions.</p>
@@ -471,112 +507,13 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.</p></li>
-</ul><h3 id="creative-commons-public-license">Creative Commons Public License</h3>
 
-<p>This notice is provided with respect to the following components which may be included with the product.
-<ul><li>jquery.inserta 0.1</li>
-<li>jquery.serializeobject 0.1</li>
-<li>Creative Commons Attribution-ShareAlike 3.0</li>
-</li></p>
-
-<p>THE WORK (AS DEFINED BELOW) IS PROVIDED UNDER THE TERMS OF THIS CREATIVE COMMONS PUBLIC LICENSE ("CCPL" OR "LICENSE"). THE WORK IS PROTECTED BY COPYRIGHT AND/OR OTHER APPLICABLE LAW. ANY USE OF THE WORK OTHER THAN AS AUTHORIZED UNDER THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.</p>
-
-<p>BY EXERCISING ANY RIGHTS TO THE WORK PROVIDED HERE, YOU ACCEPT AND AGREE TO BE BOUND BY THE TERMS OF THIS LICENSE. TO THE EXTENT THIS LICENSE MAY BE CONSIDERED TO BE A CONTRACT, THE LICENSOR GRANTS YOU THE RIGHTS CONTAINED HERE IN CONSIDERATION OF YOUR ACCEPTANCE OF SUCH TERMS AND CONDITIONS.</p>
-
-<ol><li><p>Definitions
-a."Adaptation" means a work based upon the Work, or upon the Work and other pre-existing works, such as a translation, adaptation, derivative work, arrangement of music or other alterations of a literary or artistic work, or phonogram or performance and includes cinematographic adaptations or any other form in which the Work may be recast, transformed, or adapted including in any form recognizably derived from the original, except that a work that constitutes a Collection will not be considered an Adaptation for the purpose of this License. For the avoidance of doubt, where the Work is a musical work, performance or phonogram, the synchronization of the Work in timed-relation with a moving image ("synching") will be considered an Adaptation for the purpose of this License.
-b."Collection" means a collection of literary or artistic works, such as encyclopedias and anthologies, or performances, phonograms or broadcasts, or other works or subject matter other than works listed in Section 1(f) below, which, by reason of the selection and arrangement of their contents, constitute intellectual creations, in which the Work is included in its entirety in unmodified form along with one or more other contributions, each constituting separate and independent works in themselves, which together are assembled into a collective whole. A work that constitutes a Collection will not be considered an Adaptation (as defined below) for the purposes of this License.
-c."Creative Commons Compatible License" means a license that is listed at http://creativecommons.org/compatiblelicenses that has been approved by Creative Commons as being essentially equivalent to this License, including, at a minimum, because that license: (i) contains terms that have the same purpose, meaning and effect as the License Elements of this License; and, (ii) explicitly permits the relicensing of adaptations of works made available under that license under this License or a Creative Commons jurisdiction license with the same License Elements as this License.
-d."Distribute" means to make available to the public the original and copies of the Work or Adaptation, as appropriate, through sale or other transfer of ownership.
-e."License Elements" means the following high-level license attributes as selected by Licensor and indicated in the title of this License: Attribution, ShareAlike.
-f."Licensor" means the individual, individuals, entity or entities that offer(s) the Work under the terms of this License.
-g."Original Author" means, in the case of a literary or artistic work, the individual, individuals, entity or entities who created the Work or if no individual or entity can be identified, the publisher; and in addition (i) in the case of a performance the actors, singers, musicians, dancers, and other persons who act, sing, deliver, declaim, play in, interpret or otherwise perform literary or artistic works or expressions of folklore; (ii) in the case of a phonogram the producer being the person or legal entity who first fixes the sounds of a performance or other sounds; and, (iii) in the case of broadcasts, the organization that transmits the broadcast.
-h."Work" means the literary and/or artistic work offered under the terms of this License including without limitation any production in the literary, scientific and artistic domain, whatever may be the mode or form of its expression including digital form, such as a book, pamphlet and other writing; a lecture, address, sermon or other work of the same nature; a dramatic or dramatico-musical work; a choreographic work or entertainment in dumb show; a musical composition with or without words; a cinematographic work to which are assimilated works expressed by a process analogous to cinematography; a work of drawing, painting, architecture, sculpture, engraving or lithography; a photographic work to which are assimilated works expressed by a process analogous to photography; a work of applied art; an illustration, map, plan, sketch or three-dimensional work relative to geography, topography, architecture or science; a performance; a broadcast; a phonogram; a compilation of data to the extent it is protected as a copyrightable work; or a work performed by a variety or circus performer to the extent it is not otherwise considered a literary or artistic work.
-i."You" means an individual or entity exercising rights under this License who has not previously violated the terms of this License with respect to the Work, or who has received express permission from the Licensor to exercise rights under this License despite a previous violation.
-j."Publicly Perform" means to perform public recitations of the Work and to communicate to the public those public recitations, by any means or process, including by wire or wireless means or public digital performances; to make available to the public Works in such a way that members of the public may access these Works from a place and at a place individually chosen by them; to perform the Work to the public by any means or process and the communication to the public of the performances of the Work, including by public digital performance; to broadcast and rebroadcast the Work by any means including signs, sounds or images.
-k."Reproduce" means to make copies of the Work by any means including without limitation by sound or visual recordings and the right of fixation and reproducing fixations of the Work, including storage of a protected performance or phonogram in digital form or other electronic medium.</p></li>
-<li><p>Fair Dealing Rights. Nothing in this License is intended to reduce, limit, or restrict any uses free from copyright or rights arising from limitations or exceptions that are provided for in connection with the copyright protection under copyright law or other applicable laws.</p></li>
-<li><p>License Grant. Subject to the terms and conditions of this License, Licensor hereby grants You a worldwide, royalty-free, non-exclusive, perpetual (for the duration of the applicable copyright) license to exercise the rights in the Work as stated below:
-a.to Reproduce the Work, to incorporate the Work into one or more Collections, and to Reproduce the Work as incorporated in the Collections;
-b.to create and Reproduce Adaptations provided that any such Adaptation, including any translation in any medium, takes reasonable steps to clearly label, demarcate or otherwise identify that changes were made to the original Work. For example, a translation could be marked "The original work was translated from English to Spanish," or a modification could indicate "The original work has been modified.";
-c.to Distribute and Publicly Perform the Work including as incorporated in Collections; and,
-d.to Distribute and Publicly Perform Adaptations.</p></li>
-</ol><p>e.For the avoidance of doubt:
-i.Non-waivable Compulsory License Schemes. In those jurisdictions in which the right to collect royalties through any statutory or compulsory licensing scheme cannot be waived, the Licensor reserves the exclusive right to collect such royalties for any exercise by You of the rights granted under this License;
-ii.Waivable Compulsory License Schemes. In those jurisdictions in which the right to collect royalties through any statutory or compulsory licensing scheme can be waived, the Licensor waives the exclusive right to collect such royalties for any exercise by You of the rights granted under this License; and,
-iii.Voluntary License Schemes. The Licensor waives the right to collect royalties, whether individually or, in the event that the Licensor is a member of a collecting society that administers voluntary licensing schemes, via that society, from any exercise by You of the rights granted under this License.</p>
-
-<p>The above rights may be exercised in all media and formats whether now known or hereafter devised. The above rights include the right to make such modifications as are technically necessary to exercise the rights in other media and formats. Subject to Section 8(f), all rights not expressly granted by Licensor are hereby reserved.</p>
-
-<ol><li><p>Restrictions. The license granted in Section 3 above is expressly made subject to and limited by the following restrictions:
-a.You may Distribute or Publicly Perform the Work only under the terms of this License. You must include a copy of, or the Uniform Resource Identifier (URI) for, this License with every copy of the Work You Distribute or Publicly Perform. You may not offer or impose any terms on the Work that restrict the terms of this License or the ability of the recipient of the Work to exercise the rights granted to that recipient under the terms of the License. You may not sublicense the Work. You must keep intact all notices that refer to this License and to the disclaimer of warranties with every copy of the Work You Distribute or Publicly Perform. When You Distribute or Publicly Perform the Work, You may not impose any effective technological measures on the Work that restrict the ability of a recipient of the Work from You to exercise the rights granted to that recipient under the terms of the License. This Section 4(a) applies to the Work as incorporated in a Collection, but this does not require the Collection apart from the Work itself to be made subject to the terms of this License. If You create a Collection, upon notice from any Licensor You must, to the extent practicable, remove from the Collection any credit as required by Section 4(c), as requested. If You create an Adaptation, upon notice from any Licensor You must, to the extent practicable, remove from the Adaptation any credit as required by Section 4(c), as requested.
-b.You may Distribute or Publicly Perform an Adaptation only under the terms of: (i) this License; (ii) a later version of this License with the same License Elements as this License; (iii) a Creative Commons jurisdiction license (either this or a later license version) that contains the same License Elements as this License (e.g., Attribution-ShareAlike 3.0 US)); (iv) a Creative Commons Compatible License. If you license the Adaptation under one of the licenses mentioned in (iv), you must comply with the terms of that license. If you license the Adaptation under the terms of any of the licenses mentioned in (i), (ii) or (iii) (the "Applicable License"), you must comply with the terms of the Applicable License generally and the following provisions: (I) You must include a copy of, or the URI for, the Applicable License with every copy of each Adaptation You Distribute or Publicly Perform; (II) You may not offer or impose any terms on the Adaptation that restrict the terms of the Applicable License or the ability of the recipient of the Adaptation to exercise the rights granted to that recipient under the terms of the Applicable License; (III) You must keep intact all notices that refer to the Applicable License and to the disclaimer of warranties with every copy of the Work as included in the Adaptation You Distribute or Publicly Perform; (IV) when You Distribute or Publicly Perform the Adaptation, You may not impose any effective technological measures on the Adaptation that restrict the ability of a recipient of the Adaptation from You to exercise the rights granted to that recipient under the terms of the Applicable License. This Section 4(b) applies to the Adaptation as incorporated in a Collection, but this does not require the Collection apart from the Adaptation itself to be made subject to the terms of the Applicable License.
-c.If You Distribute, or Publicly Perform the Work or any Adaptations or Collections, You must, unless a request has been made pursuant to Section 4(a), keep intact all copyright notices for the Work and provide, reasonable to the medium or means You are utilizing: (i) the name of the Original Author (or pseudonym, if applicable) if supplied, and/or if the Original Author and/or Licensor designate another party or parties (e.g., a sponsor institute, publishing entity, journal) for attribution ("Attribution Parties") in Licensor's copyright notice, terms of service or by other reasonable means, the name of such party or parties; (ii) the title of the Work if supplied; (iii) to the extent reasonably practicable, the URI, if any, that Licensor specifies to be associated with the Work, unless such URI does not refer to the copyright notice or licensing information for the Work; and (iv) , consistent with Ssection 3(b), in the case of an Adaptation, a credit identifying the use of the Work in the Adaptation (e.g., "French translation of the Work by Original Author," or "Screenplay based on original Work by Original Author"). The credit required by this Section 4(c) may be implemented in any reasonable manner; provided, however, that in the case of a Adaptation or Collection, at a minimum such credit will appear, if a credit for all contributing authors of the Adaptation or Collection appears, then as part of these credits and in a manner at least as prominent as the credits for the other contributing authors. For the avoidance of doubt, You may only use the credit required by this Section for the purpose of attribution in the manner set out above and, by exercising Your rights under this License, You may not implicitly or explicitly assert or imply any connection with, sponsorship or endorsement by the Original Author, Licensor and/or Attribution Parties, as appropriate, of You or Your use of the Work, without the separate, express prior written permission of the Original Author, Licensor and/or Attribution Parties.
-d.Except as otherwise agreed in writing by the Licensor or as may be otherwise permitted by applicable law, if You Reproduce, Distribute or Publicly Perform the Work either by itself or as part of any Adaptations or Collections, You must not distort, mutilate, modify or take other derogatory action in relation to the Work which would be prejudicial to the Original Author's honor or reputation. Licensor agrees that in those jurisdictions (e.g. Japan), in which any exercise of the right granted in Section 3(b) of this License (the right to make Adaptations) would be deemed to be a distortion, mutilation, modification or other derogatory action prejudicial to the Original Author's honor and reputation, the Licensor will waive or not assert, as appropriate, this Section, to the fullest extent permitted by the applicable national law, to enable You to reasonably exercise Your right under Section 3(b) of this License (right to make Adaptations) but not otherwise.</p></li>
-<li><p>Representations, Warranties and Disclaimer</p></li>
-</ol><p>UNLESS OTHERWISE MUTUALLY AGREED TO BY THE PARTIES IN WRITING, LICENSOR OFFERS THE WORK AS-IS AND MAKES NO REPRESENTATIONS OR WARRANTIES OF ANY KIND CONCERNING THE WORK, EXPRESS, IMPLIED, STATUTORY OR OTHERWISE, INCLUDING, WITHOUT LIMITATION, WARRANTIES OF TITLE, MERCHANTIBILITY, FITNESS FOR A PARTICULAR PURPOSE, NONINFRINGEMENT, OR THE ABSENCE OF LATENT OR OTHER DEFECTS, ACCURACY, OR THE PRESENCE OF ABSENCE OF ERRORS, WHETHER OR NOT DISCOVERABLE. SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OF IMPLIED WARRANTIES, SO SUCH EXCLUSION MAY NOT APPLY TO YOU.</p>
-
-<ol><li><p>Limitation on Liability. EXCEPT TO THE EXTENT REQUIRED BY APPLICABLE LAW, IN NO EVENT WILL LICENSOR BE LIABLE TO YOU ON ANY LEGAL THEORY FOR ANY SPECIAL, INCIDENTAL, CONSEQUENTIAL, PUNITIVE OR EXEMPLARY DAMAGES ARISING OUT OF THIS LICENSE OR THE USE OF THE WORK, EVEN IF LICENSOR HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.</p></li>
-<li><p>Termination
-a.This License and the rights granted hereunder will terminate automatically upon any breach by You of the terms of this License. Individuals or entities who have received Adaptations or Collections from You under this License, however, will not have their licenses terminated provided such individuals or entities remain in full compliance with those licenses. Sections 1, 2, 5, 6, 7, and 8 will survive any termination of this License.
-b.Subject to the above terms and conditions, the license granted here is perpetual (for the duration of the applicable copyright in the Work). Notwithstanding the above, Licensor reserves the right to release the Work under different license terms or to stop distributing the Work at any time; provided, however that any such election will not serve to withdraw this License (or any other license that has been, or is required to be, granted under the terms of this License), and this License will continue in full force and effect unless terminated as stated above.</p></li>
-<li><p>Miscellaneous
-a.Each time You Distribute or Publicly Perform the Work or a Collection, the Licensor offers to the recipient a license to the Work on the same terms and conditions as the license granted to You under this License.
-b.Each time You Distribute or Publicly Perform an Adaptation, Licensor offers to the recipient a license to the original Work on the same terms and conditions as the license granted to You under this License.
-c.If any provision of this License is invalid or unenforceable under applicable law, it shall not affect the validity or enforceability of the remainder of the terms of this License, and without further action by the parties to this agreement, such provision shall be reformed to the minimum extent necessary to make such provision valid and enforceable.
-d.No term or provision of this License shall be deemed waived and no breach consented to unless such waiver or consent shall be in writing and signed by the party to be charged with such waiver or consent.
-e.This License constitutes the entire agreement between the parties with respect to the Work licensed here. There are no understandings, agreements or representations with respect to the Work not specified here. Licensor shall not be bound by any additional provisions that may appear in any communication from You. This License may not be modified without the mutual written agreement of the Licensor and You.
-f.The rights granted under, and the subject matter referenced, in this License were drafted utilizing the terminology of the Berne Convention for the Protection of Literary and Artistic Works (as amended on September 28, 1979), the Rome Convention of 1961, the WIPO Copyright Treaty of 1996, the WIPO Performances and Phonograms Treaty of 1996 and the Universal Copyright Convention (as revised on July 24, 1971). These rights and subject matter take effect in the relevant jurisdiction in which the License terms are sought to be enforced according to the corresponding provisions of the implementation of those treaty provisions in the applicable national law. If the standard suite of rights granted under applicable copyright law includes additional rights not granted under this License, such additional rights are deemed to be included in the License; this License is not intended to restrict the license of any rights under applicable law.</p></li>
-</ol><h3 id="codehaus-public-license-v-1111">Codehaus Public License v 1.1.1.1</h3>
+<h3 id="common-development-and-distribution-license-cddl-version-10">COMMON DEVELOPMENT AND DISTRIBUTION LICENSE (CDDL) Version 1.0</h3>
 
 <p>This notice is provided with respect to the following components which may be included with the product.
 <ul>
-<li>classworlds v 1.1</li>
-<li>plexus-classworlds 2.5.1</li>
-</ul>
-</p>
-
-<p>Copyright 2002 (C) The Codehaus. All Rights Reserved.</p>
-
-<p>Redistribution and use of this software and associated documentation
- ("Software"), with or without modification, are permitted provided
- that the following conditions are met:</p>
-
-<ol><li><p>Redistributions of source code must retain copyright
-statements and notices.  Redistributions must also contain a
-copy of this document.</p></li>
-<li><p>Redistributions in binary form must reproduce the
-above copyright notice, this list of conditions and the
-following disclaimer in the documentation and/or other
-materials provided with the distribution.</p></li>
-<li><p>The name "classworlds" must not be used to endorse or promote
-products derived from this Software without prior written
-permission of The Codehaus.  For written permission, please 
-contact bob@codehaus.org.</p></li>
-<li><p>Products derived from this Software may not be called "classworlds"
-nor may "classworlds" appear in their names without prior written
-permission of The Codehaus. "classworlds" is a registered
-trademark of The Codehaus.</p></li>
-<li><p>Due credit should be given to The Codehaus.
-(http://classworlds.codehaus.org/).</p>
-
-<p>THIS SOFTWARE IS PROVIDED BY THE CODEHAUS AND CONTRIBUTORS
-``AS IS'' AND ANY EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT
-NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
-FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL
-THE CODEHAUS OR ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
-INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
-(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
-HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
-STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
-ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
-OF THE POSSIBILITY OF SUCH DAMAGE.</p></li>
-</ol><h3 id="common-development-and-distribution-license-cddl-version-10">COMMON DEVELOPMENT AND DISTRIBUTION LICENSE (CDDL) Version 1.0</h3>
-
-<p>This notice is provided with respect to the following components which may be included with the product.
-<ul>
-<li>jasper-glassfish</li>
+<li>org.apache.jasper.glassfish <p>Copyright © 2013, Oracle. All Rights Reserved
+</p></li>
 </ul>
 </p>
 
@@ -697,13 +634,16 @@ C. Any new file that is contributed or otherwise made available under the terms 
 
 <p>The code released under the CDDL shall be governed by the laws of the State of California (excluding conflict-of-law provisions). Any litigation relating to this License shall be subject to the jurisdiction of the Federal Courts of the Northern District of California and the state courts of the State of California, with venue lying in Santa Clara County, California.</p></li>
 </ol><h3 id="eclipse-public-license---v-10">Eclipse Public License - v 1.0</h3>
+Copyright © 2014 The Eclipse Foundation. All Rights Reserved.
 
 <p>This notice is provided with respect to the following components which may be included with the product.</p>
 
 <ul><li>aether 0.9.0</li>
 <li>jetty 9.0.4</li>
-<li>org.apache.jasper.glassfish 2.2.2</li>
-<li>org.apache.taglibs.standard.glassfish 1.2.0</li>
+<li>org.apache.jasper.glassfish 2.2.2<p>Copyright © 2013, Oracle. All Rights Reserved
+</p></li>
+<li>org.apache.taglibs.standard.glassfish 1.2.0<p>Copyright © 2013, Oracle. All Rights Reserved
+</p></li>
 </ul><p>THE ACCOMPANYING PROGRAM IS PROVIDED UNDER THE TERMS OF THIS ECLIPSE PUBLIC 
 LICENSE ("AGREEMENT"). ANY USE, REPRODUCTION OR DISTRIBUTION OF THE PROGRAM 
 CONSTITUTES RECIPIENT'S ACCEPTANCE OF THIS AGREEMENT.</p>
@@ -906,399 +846,20 @@ Agreement will bring a legal action under this Agreement more than one year
 after the cause of action arose. Each party waives its rights to a jury trial in 
 any resulting litigation.</p>
 
-<h3 id="jquery-foundation-license">jQuery Foundation License</h3>
 
-<p>Copyright 2005, 2014 jQuery Foundation and other contributors,
-https://jquery.org/
-This notice is provided with respect to the following components which may be included with the product.
-<ul>
-<li>jQuery</li>
-</ul>
-</p>
 
-<p>This software consists of voluntary contributions made by many
-individuals. For exact contribution history, see the revision history
-available at https://github.com/jquery/jquery</p>
 
-<p>The following license applies to all parts of this software except as
-documented below:</p>
-
-<p>====</p>
-
-<p>Permission is hereby granted, free of charge, to any person obtaining
-a copy of this software and associated documentation files (the
-"Software"), to deal in the Software without restriction, including
-without limitation the rights to use, copy, modify, merge, publish,
-distribute, sublicense, and/or sell copies of the Software, and to
-permit persons to whom the Software is furnished to do so, subject to
-the following conditions:</p>
-
-<p>The above copyright notice and this permission notice shall be
-included in all copies or substantial portions of the Software.</p>
-
-<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
-LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
-OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
-WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
-
-<p>====</p>
-
-<p>All files located in the node_modules and external directories are
-externally maintained libraries used by this software which have their
-own licenses; we recommend you read them, as their terms may differ from
-the terms above.</p>
-
-<h3 id="the-mit-license">The MIT License</h3>
-
-<p>This notice is provided with respect to the following components which may be included with the product.
-<ul>
-<li>tween.js r12</li>
-<li> html5lib 0.999</li>
-</ul>
-</p>
-
-<p>Copyright (c) 2010-2012 Tween.js authors.</p>
-
-<p>Easing equations Copyright (c) 2001 Robert Penner http://robertpenner.com/easing/</p>
-
-<p>Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:</p>
-
-<p>The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.</p>
-
-<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.</p>
-
-<h3 id="dojo-foundation-public-license---v-10">Dojo Foundation Public License - v 1.0</h3>
-
-<ul><li>almond v 0.2.9</li>
-<li>r.js</li>
-</ul><p>The "New" BSD License:
-Copyright (c) 2010-2011, The Dojo Foundation
-All rights reserved.</p>
-
-<p>Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:</p>
-
-<ul><li>Redistributions of source code must retain the above copyright notice, this
-list of conditions and the following disclaimer.</li>
-<li>Redistributions in binary form must reproduce the above copyright notice,
-this list of conditions and the following disclaimer in the documentation
-and/or other materials provided with the distribution.</li>
-<li>Neither the name of the Dojo Foundation nor the names of its contributors
-may be used to endorse or promote products derived from this software
-without specific prior written permission.</li>
-</ul><p>THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE
-FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
-
-<p>MIT License
-Copyright (c) 2010-2011, The Dojo Foundation</p>
-
-<p>Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:</p>
-
-<p>The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.</p>
-
-<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.</p>
-
-<h3 id="the-dojo-foundation-license">The Dojo Foundation License</h3>
-
-<p>This notice is provided with respect to the following components which may be included with the product.
-<ul>
-<li>nodejs-requirejs 2.1.8</li>
-</ul></p>
-
-<p>Copyright (c) 2010-2011, The Dojo Foundation</p>
-
-<p>Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:</p>
-
-<p>The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.</p>
-
-<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.</p>
-
-<h3 id="the-dojo-foundation-license">The Dojo Foundation License</h3>
-
-<p>This notice is provided with respect to the following components which may be included with the product.
-<ul>
-<li>nodejs-lodash 1.3.1</li>
-</ul></p>
-
-<p>Copyright 2012-2014 The Dojo Foundation (http://dojofoundation.org/&gt;
-Based on Underscore.js 1.6.0, copyright 2009-2014 Jeremy Ashkenas,
-DocumentCloud and Investigative Reporters &amp; Editors (http://underscorejs.org/&gt;</p>
-
-<p>Permission is hereby granted, free of charge, to any person obtaining
-a copy of this software and associated documentation files (the
-"Software"), to deal in the Software without restriction, including
-without limitation the rights to use, copy, modify, merge, publish,
-distribute, sublicense, and/or sell copies of the Software, and to
-permit persons to whom the Software is furnished to do so, subject to
-the following conditions:</p>
-
-<p>The above copyright notice and this permission notice shall be
-included in all copies or substantial portions of the Software.</p>
-
-<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
-LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
-OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
-WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
-
-<h3 id="nicolas-gallagher-and-jonathan-neal">Nicolas Gallagher and Jonathan Neal</h3>
-
-<p>This notice is provided with respect to the following components which may be included with the product.
-<ul>
-<li> normalize.ss 3.0.1</li>
-</ul></p>
-
-<p>Copyright (c) Nicolas Gallagher and Jonathan Neal</p>
-
-<p>Permission is hereby granted, free of charge, to any person obtaining a copy of
-this software and associated documentation files (the "Software"), to deal in
-the Software without restriction, including without limitation the rights to
-use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
-of the Software, and to permit persons to whom the Software is furnished to do
-so, subject to the following conditions:</p>
-
-<p>The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.</p>
-
-<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.</p>
-
-<h3 id="adam-draper-license">Adam Draper License</h3>
-
-<p>This notice is provided with respect to the following components which may be included with the product.
-<ul>
-<li> numeral-js 1.5.2
-</li>
-</ul></p>
-
-<p>Copyright (c) 2012 Adam Draper</p>
-
-<p>Permission is hereby granted, free of charge, to any person
-obtaining a copy of this software and associated documentation
-files (the "Software"), to deal in the Software without
-restriction, including without limitation the rights to use,
-copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the
-Software is furnished to do so, subject to the following
-conditions:</p>
-
-<p>The above copyright notice and this permission notice shall be
-included in all copies or substantial portions of the Software.</p>
-
-<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
-OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
-HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
-WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-OTHER DEALINGS IN THE SOFTWARE.</p>
-
-<h3 id="kristopher-michael-kowal-license">Kristopher Michael Kowal License</h3>
-
-<p>This notice is provided with respect to the following components which may be included with the product.
-<ul>
-<li> q 1.0.0
-</li>
-</ul></p>
-
-<p>Copyright 2009?2014 Kristopher Michael Kowal. All rights reserved.
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to
-deal in the Software without restriction, including without limitation the
-rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-sell copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:</p>
-
-<p>The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.</p>
-
-<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-IN THE SOFTWARE.</p>
-
-<h3 id="barnesandnoblecom-license">Barnesandnoble.com License</h3>
-
-<p>Copyright (c) 2012 Barnesandnoble.com, llc, Donavon West, and Domenic Denicola
-This notice is provided with respect to the following components which may be included with the product.
-<ul>
-<li> setImmediate.js 1.0.1</li>
-</ul></p>
-
-<p>Permission is hereby granted, free of charge, to any person obtaining
-a copy of this software and associated documentation files (the
-"Software"), to deal in the Software without restriction, including
-without limitation the rights to use, copy, modify, merge, publish,
-distribute, sublicense, and/or sell copies of the Software, and to
-permit persons to whom the Software is furnished to do so, subject to
-the following conditions:</p>
-
-<p>The above copyright notice and this permission notice shall be
-included in all copies or substantial portions of the Software.</p>
-
-<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
-LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
-OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
-WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
-
-<h3 id="qosch-license">QOS.ch License</h3>
-
-<p>Copyright (c) 2004-2013 QOS.ch
-All rights reserved.
-This notice is provided with respect to the following components which may be included with the product.
-<ul>
-<li> slf4j 1.7.5</li>
-</ul></p>
-
-<p>Permission is hereby granted, free  of charge, to any person obtaining
-a  copy  of this  software  and  associated  documentation files  (the
-"Software"), to  deal in  the Software without  restriction, including
-without limitation  the rights to  use, copy, modify,  merge, publish,
-distribute,  sublicense, and/or sell  copies of  the Software,  and to
-permit persons to whom the Software  is furnished to do so, subject to
-the following conditions:</p>
-
-<p>The  above  copyright  notice  and  this permission  notice  shall  be
-included in all copies or substantial portions of the Software.</p>
-
-<p>THE  SOFTWARE IS  PROVIDED  "AS  IS", WITHOUT  WARRANTY  OF ANY  KIND,
-EXPRESS OR  IMPLIED, INCLUDING  BUT NOT LIMITED  TO THE  WARRANTIES OF
-MERCHANTABILITY,    FITNESS    FOR    A   PARTICULAR    PURPOSE    AND
-NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
-LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
-OF CONTRACT, TORT OR OTHERWISE,  ARISING FROM, OUT OF OR IN CONNECTION
-WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
-
-<h3 id="jeremy-ashkenas-documentcloud-public-license">Jeremy Ashkenas, DocumentCloud Public License</h3>
-
-<p>This notice is provided with respect to the following components which may be included with the product.
-<ul>
-<li> backbone v 1.0.0</li>
-</ul></p>
-
-<p>Permission is hereby granted, free of charge, to any person
-obtaining a copy of this software and associated documentation
-files (the "Software"), to deal in the Software without
-restriction, including without limitation the rights to use,
-copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the
-Software is furnished to do so, subject to the following
-conditions:</p>
-
-<p>The above copyright notice and this permission notice shall be
-included in all copies or substantial portions of the Software.</p>
-
-<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
-OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
-HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
-WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-OTHER DEALINGS IN THE SOFTWARE.</p>
-
-<h3 id="asm-public-license">ASM Public License</h3>
-
-<p>This notice is provided with respect to the following components which may be included with the product.
-<ul>
-<li> objectweb-asm v 3.1.0</li>
-</ul></p>
-
-<p>ASM: a very small and fast Java bytecode manipulation framework
-Copyright (c) 2000-2005 INRIA, France Telecom
-All rights reserved.</p>
-
-<p>Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions
-are met:
-1. Redistributions of source code must retain the above copyright
-    notice, this list of conditions and the following disclaimer.
-2. Redistributions in binary form must reproduce the above copyright
-    notice, this list of conditions and the following disclaimer in the
-    documentation and/or other materials provided with the distribution.
-3. Neither the name of the copyright holders nor the names of its
-    contributors may be used to endorse or promote products derived from
-    this software without specific prior written permission.</p>
-
-<p>THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
-LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
-CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
-SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
-INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
-CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
-ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF
-THE POSSIBILITY OF SUCH DAMAGE.</p>
 
 <h3 id="public-domain-license">Public Domain License</h3>
 
 <p>This notice is provided with respect to the following components which may be included with the product.
 <ul>
-<li> libbackport-util-concurrent-java v 3.1</li>
-<li>  plexus-utils 3.0.1.4</li>
+<li> libbackport-util-concurrent-java v 3.1<p>Copyright © 2004-2007 Distributed Computing Laboratory, Emory University 
+</p></li>
+<li>  plexus-utils 3.0.1.4<p>Copyright © 2001-2012 Codehaus. All Rights Reserved. 
+</p></li>
+<li>aopalliance 1 <p>Copyright © 2013, AOP Alliance. All Rights Reserved
+</p></li>
 </ul></p>
 
 <p>The person or persons who have associated work with this document (the "Dedicator" or "Certifier") hereby either (a) certifies that, to the best of his knowledge, the work of authorship identified is in the public domain of the country from which the work is published, or (b) hereby dedicates whatever copyright the dedicators holds in the work of authorship identified below (the "Work") to the public domain. A certifier, morever, dedicates any copyright interest he may have in the associated work, and for these purposes, is described as a "dedicator" below.</p>
@@ -1309,24 +870,14 @@ THE POSSIBILITY OF SUCH DAMAGE.</p>
 
 <p>Dedicator recognizes that, once placed in the public domain, the Work may be freely reproduced, distributed, transmitted, used, modified, built upon, or otherwise exploited by anyone for any purpose, commercial or non-commercial, and in any way, including by methods that have not yet been invented or conceived.</p>
 
-<h3 id="onsi-fakhouri-public-license">Onsi Fakhouri Public License</h3>
-
-<p>This notice is provided with respect to the following components which may be included with the product.
-<ul>
-<li> coccyx v 1</li>
-</ul></p>
-
-<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
-
-<p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
-
-<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
 
 <h3 id="creative-commons-compatible-license-cc-by-sa-30">Creative Commons Compatible License CC-BY-SA-3.0</h3>
 
 <p>This notice is provided with respect to the following components which may be included with the product.
 <ul>
 <li> getparameterbyname  </li>
+<li>jquery.inserta 0.1</li>
+<li>jquery.serializeobject 0.1</li>
 </ul></p>
 
 <p>THE WORK (AS DEFINED BELOW) IS PROVIDED UNDER THE TERMS OF THIS CREATIVE COMMONS PUBLIC LICENSE ("CCPL" OR "LICENSE"). THE WORK IS PROTECTED BY COPYRIGHT AND/OR OTHER APPLICABLE LAW. ANY USE OF THE WORK OTHER THAN AS AUTHORIZED UNDER THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.</p>
@@ -1418,50 +969,13 @@ d.Except as otherwise agreed in writing by the Licensor or as may be otherwise p
 <p>e.This License constitutes the entire agreement between the parties with respect to the Work licensed here. There are no understandings, agreements or representations with respect to the Work not specified here. Licensor shall not be bound by any additional provisions that may appear in any communication from You. This License may not be modified without the mutual written agreement of the Licensor and You.</p>
 
 <p>f.The rights granted under, and the subject matter referenced, in this License were drafted utilizing the terminology of the Berne Convention for the Protection of Literary and Artistic Works (as amended on September 28, 1979), the Rome Convention of 1961, the WIPO Copyright Treaty of 1996, the WIPO Performances and Phonograms Treaty of 1996 and the Universal Copyright Convention (as revised on July 24, 1971). These rights and subject matter take effect in the relevant jurisdiction in which the License terms are sought to be enforced according to the corresponding provisions of the implementation of those treaty provisions in the applicable national law. If the standard suite of rights granted under applicable copyright law includes additional rights not granted under this License, such additional rights are deemed to be included in the License; this License is not intended to restrict the license of any rights under applicable law.</p></li>
-</ol><h3 id="hamcrest-public-license">Hamcrest Public License</h3>
-
-<p>This notice is provided with respect to the following components which may be included with the product.
-<ul>
-<li> hamcrest v 1.3</li>
-</ul></p>
-
-<p>Copyright (c) (YEAR&gt;, (OWNER&gt;
- All rights reserved.</p>
-
-<p>Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:</p>
-
-<ol><li><p>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</p></li>
-<li><p>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</p></li>
-<li><p>Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.</p></li>
-</ol><p>THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
-
-<h3 id="jorik-tangelder-eight-media-public-license">Jorik Tangelder (Eight Media) Public License</h3>
-
-<p>This notice is provided with respect to the following components which may be included with the product.
-<ul>
-<li> hammerjs v 1.0.5</li>
-</ul>
-</p>
-
-<p>Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:</p>
-
-<p>The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.</p>
-
-<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.</p>
+</ol>
 
 <h3 id="mozilla-public-license-v-11">Mozilla Public License v 1.1</h3>
+<p>This notice is provided with respect to the following components which may be included with the product.
+
+<li> javassist v 3.18.0<p>Copyright (C) 1999-2014 by Shigeru Chiba.</p></li>
+</p>
 <p>1. Definitions.</p>
 <p>1.0.1. "Commercial Use" </p>
 <p>means distribution or otherwise making the Covered Code available to a third party. </p>
@@ -2636,8 +2150,7 @@ with the Classpath Exception</h3>
 <p>This notice is provided with respect to the following components which may be included with the product.
 <ul><li>
 java-1.7.0-openJDK, Version 1.7.0</li>
-<li>
- jasper-glassfish</li>
+
 </ul></p>
 
 <p>Everyone is permitted to copy and distribute verbatim copies of this license
@@ -4196,7 +3709,14 @@ This notice is provided with respect to the following components which may be in
 <li> jboss-logging, Version 3.1.0.GA</li>
 <li> jboss-transaction-1.1-api.spec, Version 1.0.0.Final</li>
 <li> nscd, Version 2.15</li>
-</ul></p>
+<li> jackson v 2.2.2<p>© 2003-2008 Codehaus 
+</p></li>
+<li> javassist v 3.18.0<p>Copyright (C) 1999-2014 by Shigeru Chiba.</p></li>
+
+
+</ul>
+
+</p>
 
 <p>Copyright (C) 1991, 1999 Free Software Foundation, Inc.
  51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
@@ -5154,13 +4674,229 @@ All rights reserved.</p>
 <li><p>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</p></li>
 </ol><p>THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
 
+<h3>MIT License</h3>
+
+<p>This notice is provided with respect to the following components which may be included with the product.
+<ul>
+<li> hammerjs v 1.0.5</li>
+<p>Copyright (C) 2011-2014 by Jorik Tangelder (Eight Media)</p></ul>
+
+<ul><li>almond v 0.2.9</li>
+<li>r.js</li>
+<p>Copyright (c) 2010-2011, The Dojo Foundation</p><p>All rights reserved.</p>
+</ul>
+
+<ul>
+<li> coccyx v 1</li>
+<p>
+Copyright (c) 2012 Onsi Fakhouri</p></ul>
+
+<ul>
+<li>tween.js r12</li>
+<p>Copyright (c) 2010-2012 Tween.js authors.</p>
+<p>Easing equations Copyright (c) 2001 Robert Penner http://robertpenner.com/easing/</p>
+</ul>
+
+
+<ul>
+<li> setImmediate.js 1.0.1</li>
+<p>Copyright (c) 2012 Barnesandnoble.com, llc, Donavon West, and Domenic Denicola</p></ul>
+
+
+<ul>
+<li> q 1.0.0
+</li><p>Copyright 2009?2014 Kristopher Michael Kowal. All rights reserved.</p>
+</ul>
+
+
+<ul>
+<li> numeral-js 1.5.2
+</li><p>Copyright (c) 2012 Adam Draper</p>
+
+</ul>
+
+<ul>
+<li> normalize.ss 3.0.1</li><p>Copyright (c) Nicolas Gallagher and Jonathan Neal</p>
+
+</ul>
+
+<ul>
+<li>nodejs-lodash 1.3.1</li><p>Copyright 2011-2014 The Dojo Foundation (http://dojofoundation.org/&gt;
+Based on Underscore.js 1.6.0, copyright 2009-2014 Jeremy Ashkenas,
+DocumentCloud and Investigative Reporters &amp; Editors (http://underscorejs.org/&gt;</p>
+</ul>
+
+<ul>
+<li> backbone v 1.0.0</li><p>Copyright (c) 2010-2014 Jeremy Ashkenas, DocumentCloud
+</p>
+
+</ul>
+
+<ul>
+<li> slf4j 1.7.5</li><p>Copyright (c) 2004-2013 QOS.ch  All rights reserved.
+</p>
+
+</ul>
+
+
+<ul>
+<li>nodejs-requirejs 2.1.8</li><p>Copyright (c) 2010-2011, The Dojo Foundation</p>
+
+</ul>
+
+
+
+
+</p>
+
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.</p>
+
+<h3 id="jquery-foundation-license">MIT License - jQuery </h3>
+
+<p>Copyright 2005, 2014 jQuery Foundation and other contributors,
+https://jquery.org/
+This notice is provided with respect to the following components which may be included with the product.
+<ul>
+<li>jQuery</li>
+</ul>
+</p>
+
+<p>This software consists of voluntary contributions made by many
+individuals. For exact contribution history, see the revision history
+available at https://github.com/jquery/jquery</p>
+
+<p>The following license applies to all parts of this software except as
+documented below:</p>
+
+<p>====</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+"Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+
+<p>====</p>
+
+<p>All files located in the node_modules and external directories are
+externally maintained libraries used by this software which have their
+own licenses; we recommend you read them, as their terms may differ from
+the terms above.</p>
+
+
+
+
 <h3 id="bsd-3-clause-license">BSD 3-Clause License</h3>
-
-<p>This notice is provided with respect to the following components which may be included with the product.</p>
-
 <p>Copyright © 2014, Hewlett-Packard Development Company, L.P.
 All rights reserved.</p>
 
+<p>This notice is provided with respect to the following components which may be included with the product.</p>
+<ul><li>almond v 0.2.9<p>The "New" BSD License: Copyright (c) 2010-2011, The Dojo Foundation
+All rights reserved.</p></li>
+<li>r.js</li>
+</ul>
+
+<ul>
+<li> hamcrest v 1.3</li><p>Copyright: 2011-2014, Google, Inc.
+ All rights reserved.</p>
+</ul></p>
+
+<ul>
+<li>nodejs-requirejs 2.1.8</li><p>Copyright (c) 2010-2011, The Dojo Foundation</p>
+
+</ul>
+
+<ul>
+<li> objectweb-asm v 3.1.0</li><p>ASM: a very small and fast Java bytecode manipulation framework
+Copyright (c) 2000-2005 INRIA, France Telecom
+All rights reserved.</p>
+</ul>
+<ul>
+<li>  plexus-utils 3.0.1.4<p>Copyright © 2001-2012 Codehaus. All Rights Reserved. 
+</p></li>
+</ul>
+</p>
+
+
+<h3 id="codehaus-public-license-v-1111">BSD License - Codehaus Public License v 1.1.1.1</h3>
+<p>Copyright 2002 (C) The Codehaus. All Rights Reserved.</p>
+
+<p>This notice is provided with respect to the following components which may be included with the product.
+<ul>
+<li>classworlds v 1.1</li>
+<li>plexus-classworlds 2.5.1</li>
+</ul>
+</p>
+
+
+<p>Redistribution and use of this software and associated documentation
+ ("Software"), with or without modification, are permitted provided
+ that the following conditions are met:</p>
+
+<ol><li>Redistributions of source code must retain copyright
+statements and notices.  Redistributions must also contain a
+copy of this document.</li>
+<li><p>Redistributions in binary form must reproduce the
+above copyright notice, this list of conditions and the
+following disclaimer in the documentation and/or other
+materials provided with the distribution.</p></li>
+<li><p>The name "classworlds" must not be used to endorse or promote
+products derived from this Software without prior written
+permission of The Codehaus.  For written permission, please 
+contact bob@codehaus.org.</p></li>
+<li><p>Products derived from this Software may not be called "classworlds"
+nor may "classworlds" appear in their names without prior written
+permission of The Codehaus. "classworlds" is a registered
+trademark of The Codehaus.</p></li>
+<li><p>Due credit should be given to The Codehaus.
+(http://classworlds.codehaus.org/).</p></li>
+</ol>
+
+<p>THIS SOFTWARE IS PROVIDED BY THE CODEHAUS AND CONTRIBUTORS
+``AS IS'' AND ANY EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT
+NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
+FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL
+THE CODEHAUS OR ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
+INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
+OF THE POSSIBILITY OF SUCH DAMAGE.</p>
+
+
+</p>
 <p>Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:</p>
 
 <ol><li><p>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</p></li>
