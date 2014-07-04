@@ -4,11 +4,9 @@
 #cleanup the tmp file in case the script got stopped before cleaning it up last time.
 mv tmp tmp.old > /dev/null 2>&1
 
-rm -rf documentation  
-git clone git@git.hpcloud.net:DevExDocs/documentation.git  
-cd documentation  
-git checkout -b "${BRANCH}" "origin/${BRANCH}"  
-git pull  
+env | grep GIT
+git checkout $GIT_BRANCH
+git pull
 
 
 echo " "
@@ -51,8 +49,8 @@ do
 done
 	echo "=================================================="
 	echo " "
-git checkout -b master origin/master 
-git pull   
+git checkout master
+git pull
 echo " "
 	echo "=================================================="
 echo "Checking for duplicate permalinks..."
@@ -85,9 +83,9 @@ do
 				echo ""
 				echo "The following files use the same permalink (${permalink2[c]}):" 
 				echo "   ${names2[c]} in the master branch"
-				echo "   ${names[i]} in the ${BRANCH} branch"
-				echo "This will cause an error when you merge ${BRANCH} branch to master."
-				echo "You should probably modify the permalink in ${BRANCH} branch."
+				echo "   ${names[i]} in the ${GIT_BRANCH} branch"
+				echo "This will cause an error when you merge ${GIT_BRANCH} branch to master."
+				echo "You should probably modify the permalink in ${GIT_BRANCH} branch."
 				
 				echo ""
 				exitcondition=1
