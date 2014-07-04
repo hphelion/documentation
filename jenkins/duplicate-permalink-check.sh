@@ -5,6 +5,10 @@
 mv tmp tmp.old > /dev/null 2>&1
 
 env | grep GIT
+echo $GIT_BRANCH
+
+exit 0
+
 git checkout $GIT_BRANCH
 git pull
 
