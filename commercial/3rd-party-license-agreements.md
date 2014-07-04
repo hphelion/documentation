@@ -512,7 +512,8 @@ limitations under the License.</p></li>
 
 <p>This notice is provided with respect to the following components which may be included with the product.
 <ul>
-<li>jasper-glassfish</li>
+<li>org.apache.jasper.glassfish <p>Copyright © 2013, Oracle. All Rights Reserved
+</p></li>
 </ul>
 </p>
 
@@ -2149,8 +2150,7 @@ with the Classpath Exception</h3>
 <p>This notice is provided with respect to the following components which may be included with the product.
 <ul><li>
 java-1.7.0-openJDK, Version 1.7.0</li>
-<li>
- jasper-glassfish</li>
+
 </ul></p>
 
 <p>Everyone is permitted to copy and distribute verbatim copies of this license
@@ -4731,7 +4731,6 @@ DocumentCloud and Investigative Reporters &amp; Editors (http://underscorejs.org
 </p>
 
 </ul>
-<h3 id="qosch-license">QOS.ch License</h3>
 
 <ul>
 <li> slf4j 1.7.5</li><p>Copyright (c) 2004-2013 QOS.ch  All rights reserved.
@@ -4864,9 +4863,9 @@ All rights reserved.</p>
  ("Software"), with or without modification, are permitted provided
  that the following conditions are met:</p>
 
-<ol><li><p>Redistributions of source code must retain copyright
+<ol><li>Redistributions of source code must retain copyright
 statements and notices.  Redistributions must also contain a
-copy of this document.</p></li>
+copy of this document.</li>
 <li><p>Redistributions in binary form must reproduce the
 above copyright notice, this list of conditions and the
 following disclaimer in the documentation and/or other
@@ -4880,7 +4879,8 @@ nor may "classworlds" appear in their names without prior written
 permission of The Codehaus. "classworlds" is a registered
 trademark of The Codehaus.</p></li>
 <li><p>Due credit should be given to The Codehaus.
-(http://classworlds.codehaus.org/).</p>
+(http://classworlds.codehaus.org/).</p></li>
+</ol>
 
 <p>THIS SOFTWARE IS PROVIDED BY THE CODEHAUS AND CONTRIBUTORS
 ``AS IS'' AND ANY EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT
@@ -4893,7 +4893,7 @@ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
 HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
 STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
 ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
-OF THE POSSIBILITY OF SUCH DAMAGE.</p></li>
+OF THE POSSIBILITY OF SUCH DAMAGE.</p>
 
 
 </p>
