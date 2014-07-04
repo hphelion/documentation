@@ -5,7 +5,7 @@
 mv tmp tmp.old > /dev/null 2>&1
 
 env | grep GIT
-echo $GIT_BRANCH
+
 
 exit 0
 
@@ -53,7 +53,10 @@ do
 done
 	echo "=================================================="
 	echo " "
-git checkout master
+	
+if [[ "$GIT_BRANCH" == "origin/master" ]]
+then
+git checkout origin/master
 git pull
 echo " "
 	echo "=================================================="
@@ -98,6 +101,8 @@ do
 	done	
 	
 done
+
+fi
 	echo "=================================================="
 	echo " "
 
