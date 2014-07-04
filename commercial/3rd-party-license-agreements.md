@@ -1313,7 +1313,7 @@ THE POSSIBILITY OF SUCH DAMAGE.</p>
 
 <p>This notice is provided with respect to the following components which may be included with the product.
 <ul>
-<li coccyx v 1</li>
+<li> coccyx v 1</li>
 </ul></p>
 
 <p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
@@ -1326,7 +1326,7 @@ THE POSSIBILITY OF SUCH DAMAGE.</p>
 
 <p>This notice is provided with respect to the following components which may be included with the product.
 <ul>
-<li getparameterbyname  </li>
+<li> getparameterbyname  </li>
 </ul></p>
 
 <p>THE WORK (AS DEFINED BELOW) IS PROVIDED UNDER THE TERMS OF THIS CREATIVE COMMONS PUBLIC LICENSE ("CCPL" OR "LICENSE"). THE WORK IS PROTECTED BY COPYRIGHT AND/OR OTHER APPLICABLE LAW. ANY USE OF THE WORK OTHER THAN AS AUTHORIZED UNDER THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.</p>
@@ -1484,7 +1484,7 @@ THE SOFTWARE.</p>
 <p>1.8.1. "Licensable" </p>
 <p>means having the right to grant, to the maximum extent possible, whether at the time of the initial grant or subsequently acquired, any and all of the rights conveyed herein. </p>
 <p>1.9. "Modifications" </p>
-<p>means any addition to or deletion from the substance or structure of either the Original Code or any previous Modifications. When Covered Code is released as a series of files, a Modification is: 
+<p>means any addition to or deletion from the substance or structure of either the Original Code or any previous Modifications. When Covered Code is released as a series of files, a Modification is: </p>
 <p>a.	Any addition to or deletion from the contents of a file containing Original Code or previous Modifications. </p>
 <p>b.	Any new file that contains any part of the Original Code or previous Modifications. </p>
 <p>1.10. "Original Code" </p>
@@ -1523,7 +1523,7 @@ THE SOFTWARE.</p>
 <p>(c) Representations.</p>
 <p>Contributor represents that, except as disclosed pursuant to Section 3.4 (a) above, Contributor believes that Contributor's Modifications are Contributor's original creation(s) and/or Contributor has sufficient rights to grant the rights conveyed by this License. </p>
 <p>3.5. Required Notices.</p>
-<p>You must duplicate the notice in Exhibit A in each file of the Source Code. If it is not possible to put such notice in a particular Source Code file due to its structure, then You must include such notice in a location (such as a relevant directory) where a user would be likely to look for such a notice. If You created one or more Modification(s) You may add your name as a Contributor to the notice described in Exhibit A. You must also duplicate this License in any documentation for the Source Code where You describe recipients' rights or ownership rights relating to Covered Code. You may choose to offer, and to charge a fee for, warranty, support, indemnity or liability obligations to one or more recipients of Covered Code. However, You may do so only on Your own behalf, and not on behalf of the Initial Developer or any Contributor. You must make it absolutely clear than any such warranty, support, indemnity or liability obligation is offered by You alone, and You hereby agree to indemnify the Initial Developer and every Contributor for any liability incurred by the Initial Developer or such Contributor as a result of warranty, support, indemnity or liability terms You offer. 
+<p>You must duplicate the notice in Exhibit A in each file of the Source Code. If it is not possible to put such notice in a particular Source Code file due to its structure, then You must include such notice in a location (such as a relevant directory) where a user would be likely to look for such a notice. If You created one or more Modification(s) You may add your name as a Contributor to the notice described in Exhibit A. You must also duplicate this License in any documentation for the Source Code where You describe recipients' rights or ownership rights relating to Covered Code. You may choose to offer, and to charge a fee for, warranty, support, indemnity or liability obligations to one or more recipients of Covered Code. However, You may do so only on Your own behalf, and not on behalf of the Initial Developer or any Contributor. You must make it absolutely clear than any such warranty, support, indemnity or liability obligation is offered by You alone, and You hereby agree to indemnify the Initial Developer and every Contributor for any liability incurred by the Initial Developer or such Contributor as a result of warranty, support, indemnity or liability terms You offer. </p>
 <p>3.6. Distribution of Executable Versions.</p>
 <p>You may distribute Covered Code in Executable form only if the requirements of Sections 3.1, 3.2, 3.3, 3.4 and 3.5 have been met for that Covered Code, and if You include a notice stating that the Source Code version of the Covered Code is available under the terms of this License, including a description of how and where You have fulfilled the obligations of Section 3.2. The notice must be conspicuously included in any notice in an Executable version, related documentation or collateral in which You describe recipients' rights relating to the Covered Code. You may distribute the Executable version of Covered Code or ownership rights under a license of Your choice, which may contain terms different from this License, provided that You are in compliance with the terms of this License and that the license for the Executable version does not attempt to limit or alter the recipient's rights in the Source Code version from the rights set forth in this License. If You distribute the Executable version under a different license You must make it absolutely clear that any terms which differ from this License are offered by You alone, not by the Initial Developer or any Contributor. You hereby agree to indemnify the Initial Developer and every Contributor for any liability incurred by the Initial Developer or such Contributor as a result of any such terms You offer. </p>
 <p>3.7. Larger Works.</p>
@@ -2964,7 +2964,7 @@ License instead of this License.</p>
 subject to the following clarification and special exception to the GPL, but
 only where Oracle has expressly included in the particular source file's header
 the words "Oracle designates this particular file as subject to the "Classpath"
-exception as provided by Oracle in the LICENSE file that accompanied this code."</p>
+exception as provided by Oracle in the LICENSE file that accompanied this code."
 
     <pre>Linking this library statically or dynamically with other modules is making
     a combined work based on this library.  Thus, the terms and conditions of
@@ -2979,9 +2979,9 @@ exception as provided by Oracle in the LICENSE file that accompanied this code."
     module is a module which is not derived from or based on this library.  If
     you modify this library, you may extend this exception to your version of
     the library, but you are not obligated to do so.  If you do not wish to do
-    so, delete this exception statement from your version.<pre>
+    so, delete this exception statement from your version.</pre>
 
-
+</p>
 
 <h3 id="gnu-general-public-license-version-3">GNU GENERAL PUBLIC LICENSE Version 3</h3>
 
@@ -2998,10 +2998,8 @@ This notice is provided with respect to the following components which may be in
  Everyone is permitted to copy and distribute verbatim copies
  of this license document, but changing it is not allowed.</p>
 
-<pre>
-  <code>                        Preamble
-</code>
-</pre>
+<p>                        Preamble</p>
+
 
 <p>The GNU General Public License is a free, copyleft license for
 software and other kinds of works.</p>
