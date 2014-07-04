@@ -27,7 +27,6 @@ Document Release Date: July 2014 <br />
 Software Release Date: July 2014
 
 * [Legal Notices](#legal-notices)
-* [Disclaimer for Experimental Software](#disclaimer-for-experimental-software)
 * [Open Source Licenses](#open-source-licenses)
 
 
@@ -51,24 +50,6 @@ commercial license.
 
 Hewlett-Packard Company Confidential &copy; Copyright 2012-2014 Hewlett-Packard Development Company, L.P.
 
-## Disclaimer for Experimental Software## {#disclaimer-for-experimental-software}
-
-### Warranty
-
-The only warranties for HP products and services are set forth in the express warranty statements 
-accompanying such products and services. Nothing herein should be construed as constituting an additional 
-warranty. HP shall not be liable for technical or editorial errors or omissions contained herein.
-The information contained herein is subject to change without notice.
-
-HP Helion OpenStack is experimental and is provided as a courtesy, free of charge, "AS-IS" by Hewlett-Packard 
-Company ("HP"). HP shall have no obligation to maintain or support this software. 
-
-HP MAKES NO EXPRESS OR IMPLIED WARRANTY OF ANY KIND REGARDING THIS SOFTWARE INCLUDING ANY 
-WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE OR NON-
-INFRINGEMENT. HP SHALL NOT BE LIABLE FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL 
-OR CONSEQUENTIAL DAMAGES, WHETHER BASED ON CONTRACT, TORT OR ANY OTHER LEGAL 
-THEORY, IN CONNECTION WITH OR ARISING OUT OF THE FURNISHING, PERFORMANCE OR USE 
-OF THIS SOFTWARE.
 
 ## Open Source Licenses## {#open-source-licenses}
 
@@ -83,7 +64,9 @@ at the HP Helion OpenStack portal</a>. On the site, sign up, login, then follow 
 
 ### Academic Free License
 
-This notice is provided with respect to the following components which may be included with the product.
+This notice is provided with respect to the following components which may be included with the product:
+
+* simplejson-3.4.0
 
 The Academic Free License, v. 2.1:
 
@@ -243,107 +226,6 @@ permission of its copyright owner.
 This notice is provided with respect to the following components which may be included with the product.
 
 * Apache Abdera, Version 1.1.3
-* Apache2, Version 2.2.22
-* Apache2-doc, Version 2.2.22
-* Apache2-mpm-event, Version 2.2.22
-* Apache2-mpm-prefork, Version 2.2.22
-* Apache2-mpm-worker, Version 2.2.22
-* Apache2-prefork-dev, Version 2.2.22
-* Apache2-utils, Version 2.2.22
-* Apache2.2-bin, Version 2.2.22
-* Apache2.2-common, Version 2.2.22
-* Apache-axiom, Version 1.2.14
-* Apache-commons-beanutils, Version 1.8.0
-* Apache-commons-cli, Version 1.2
-* Apache-commons-codec, Version 1.4, 1.6
-* Apache-commons-collections, Version 3.2.1
-* Apache-commons-io, Version 2.4
-* Apache-commons-lang, Version 2.2, 2.3, 2.5, 2.6
-* Apache-commons-lang3, Version 3.1
-* Apache-commons-logging, Version 1.0.4, 1.1.1
-* Apache-commons-net, Version 3.2
-* Apache-mime4j, Version 0.7.2
-* Apache-wink-common, Version 1.2.incubating
-* Apache-wink-json-provider, Version 1.2.incubating
-* Apache-wink, Version 1.2.incubating
-* bea-stax-api, Version 1.0.1
-* cglib, Version 2.2
-* chef, Version 10.8
-* crowbar, Version 1.4
-* CouchDB, Version 1.3.0
-* Derby, Version, 10.9.10
-* dropwizard-core, Version 0.6.1
-* dropwizard-hibernate, Version 0.6.2
-* ezmorph, Version 1.0.6
-* google-guice, Version 3
-* guava, Version 13.0
-* guice-assistedinject, Version 3
-* guice-servlet, Version 3
-* hibernate-validator, Version 4.3.0
-* jackson, Version 1.9.6
-* jackson-annotations, Version 2.1.1
-* jackson- dataformat-yaml, Version 2.1.1
-* jackson- jaxrs-json-provider, Version 2.1.1
-* jackson- module-jaxb-annotations, Version 2.1.1
-* jackson-mapper, Version 1.9.6
-* javassist, Version 3.12.0-GA 3.15.0-GA
-* javax.inject, Version 1
-* javax.servlet, Version 1.1
-* javax-transaction-jta, version 1.1
-* jetty-continuation, Version 8.1.8.v20121106
-* jetty-http, Version 8.1.8.v20121106
-* jetty-io, Version 8.1.8.v20121106
-* jetty-security, Version 8.1.8.v20121106
-* jetty-server, Version 8.1.8.v20121106
-* jetty-servlet, Version 8.1.8.v20121106
-* jetty-util, Version 8.1.8.v20121106
-* joda-time, Version 2.1
-* json-lib, Version 2.4
-* json-smart, Version 1.1.1
-* lessc, Version 1.3.3
-* libaxiom-java, Version 1.2.14
-* libapache2-mod-fcgid, Version  1:2.3.6-1.1
-* libapache2-mod-python, Version 3.3.1
-* libapache2-mod-python-doc, Version 3.3.1
-* libapache2-mod-wsgi, Version 3.3.
-* libapache2-svn, Version 1.6.17.
-* libgeronimo-activation-1.1-spec-java, Version 1.1
-* libgeronimo-stax-1.0-spec-java, Version 1.0.1
-* libgoogle-collections-java, Version snapshot-20080530
-* libgoogle-gson-java Version 2.2
-* libhttpclient-java, Version 4.2.3
-* libjava-xmlbuilder-java, Version 0.4
-* log4j, Version 1.2.16
-* log4j-over-slf4j, Version 1.7.2
-* metrics-annotation, Version 2.2.0
-* metrics-core, Version 2.2.0
-* metrics-jersey, Version 2.2.0
-* metrics-jetty, Version 2.2.0
-* metrics-logback, Version 2.2.0
-* metrics-servlet, Version 2.2.0
-* mongo-java-driver, Version 2.7.2
-* openstack-cinder, Version 2013.1.4
-* openstack-dashboard, Version 2013.1.4
-* openstack-glance, Version 2013.1.4
-* openstack-keystone, Version 2013.1.4
-* openstack-nova, Version 2013.1.4
-* openstack-quantum, Version 2013.1.4
-* openstack-swift, Version 2013.1.4
-* python-cinderclient, Version 1.0.3
-* python-glanceclient, Version 0.9.0
-* python-keystoneclient, Version 0.2.3
-* python-novaclient, Version 2.13.0, 2.12.0
-* python-quantumclient, Version 2.2.0
-* python-swiftclient, Version 1.3.0
-* swagger-api, Version 0.1.13
-* swagger- jaxrs_2.9.1, Version 1.2.1
-* tomcat, Version 7.0.26
-* woodstox-core, Version 4.1.4
-* wstx-asl 3.2.6
-* xalan, Version 2.7.0
-* xerces-j2, Version 2.6.2, 2.8.0
-* xerces-j2-xml-apis, Version 1.3.02, 1.3.03
-* xmlbeans, Version 2.6.0
 
 
 ### Apache License
