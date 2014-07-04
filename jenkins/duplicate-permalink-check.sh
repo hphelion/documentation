@@ -55,6 +55,7 @@ done
 	
 if [[ "$GIT_BRANCH" == "origin/master" ]]
 then
+preposition="or"
 git checkout origin/master
 git pull
 echo " "
@@ -105,28 +106,18 @@ fi
 	echo "=================================================="
 	echo " "
 
-#Is it found?
-
-#no: no problem
-
-#Yes: is the corresponding file name identical?
-#	  No: problem
-#	Yes: no problem
-
-
  #Cleanup
  rm tmp 
  
 #Exit appropriately
 if [  -z "$exitcondition"  ]
 then
-	echo No duplicate permalinks found in gregtest or master.
+	echo No duplicate permalinks found in master $preposition $GIT_MASTER
 
 	exit 0
  else
-    echo Duplicate permalinks found, see above.
+    echo Duplicate permalinks found, see above
 
 	exit 1
 fi
 
- 
