@@ -19,9 +19,7 @@ PageRefresh();
 
 <p style="font-size: small;"> <a href="/helion/openstack/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | NEXT &#9654; </p>
 
-# HP Helion OpenStack Site Index
-
-#### [HP Helion OpenStack Home](/helion/openstack/)
+# HP Helion OpenStack&reg; Site Index
 
 #### [Release Notes](/helion/openstack/release-notes/) 
 
@@ -33,7 +31,7 @@ PageRefresh();
 * [Services overview](/helion/openstack/services/overview/)   
 * [Glossary](/helion/openstack/glossary/)
 
-#### [Installing &amp; Configuring Your Cloud](/helion/openstack/install-beta-overview/)
+#### Installing &amp; Configuring Your Cloud
 * [Overview](/helion/openstack/install-beta-overview/) 
 * [Before you begin](/helion/openstack/install-beta/prereqs/) 
 * [Installing and configuring with a KVM hypervisor](/helion/openstack/install-beta/kvm)
@@ -48,7 +46,7 @@ PageRefresh();
 * [OpenStack Glossary](http://docs.openstack.org/glossary/content/glossary.html)
 * [OpenStack End User Guide](http://docs.openstack.org/user-guide/content/index.html)
 * [OpenStack Cloud Administrator Guide](http://docs.openstack.org/trunk/openstack-compute/admin/content/index.html)
-* [OpenStack Networking Administration Guide](http://docs.openstack.org/trunk/openstack-network/admin/content/index.html)
+* [OpenStack Administrator Guide for Networking](http://docs.openstack.org/admin-guide-cloud/content/ch_networking.html)
 * [OpenStack Operations Guide](http://docs.openstack.org/trunk/openstack-ops/content/index.html)
 
 #### [Open Source and Third-Party Software License Agreements](/helion/openstack/3rd-party-license-agreements/)
