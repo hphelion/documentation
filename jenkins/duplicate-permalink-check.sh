@@ -6,10 +6,12 @@ mv tmp tmp.old > /dev/null 2>&1
 
 env | grep GIT
 
- 
+echo  $GIT_BRANCH
 
-git checkout $GIT_BRANCH
-git pull
+  
+
+ git fetch
+ git  reset --hard "${GIT_BRANCH}"
 
 
 echo " "
@@ -22,14 +24,16 @@ names=($(find . -name "*.md"))
 # for every file name entry in the array:
 for (( c=0; c<${#names[*]}; c++ )) 
 do	
+#echo "Name = ${names[c]}"
 	# get the permalink and assign the permalink array with the coresponding index
-	permalink[c]=`grep permalink  ${names[c]} | sed 's|permalink: ||'`
+	permalink[c]=`grep permalink  ${names[c]} | sed 's|permalink: ||' | sed 's|^ ||' | sed $'s/\r//'  ` 
 	
 	# write the permalink to a temp file that we can check later
 	echo ${permalink[c]} >> tmp
-	
+#	echo "Permalink = ${permalink[c]} "
 done
-  
+#cat tmp
+cat tmp |  sort | uniq -D | uniq | sed '/^$/d'
 #Check the temp file to see if there are any duplicate permalinks?
 sort tmp | uniq -D | uniq | sed '/^$/d' |    
 
@@ -71,7 +75,7 @@ names2=($(find . -name "*.md"))
 for (( c=0; c<${#names2[*]}; c++ )) 
 do	
 	# get the permalink and assign the permalink array with the coresponding index
-	permalink2[c]=`grep permalink  ${names2[c]} | sed 's|permalink: ||'`
+	permalink2[c]=`grep permalink  ${names2[c]} | sed 's|permalink: ||' | sed 's|^ ||' | sed $'s/\r//'  ` 
 	#echo "${permalink2[c]}, ${names2[c]}"
 	
 	#check to see if each permalink is found in the master list.
@@ -120,5 +124,6 @@ then
 
 	exit 1
 fi
+
 
 
