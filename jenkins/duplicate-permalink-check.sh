@@ -14,7 +14,7 @@ git pull
 
 echo " "
 echo "=================================================="
-echo "Checking for duplicate permalinks..."
+echo "Checking for duplicate permalinks in $GIT_BRANCH..."
 
 #Find all the md files and assign to an array:
 names=($(find . -name "*.md"))  
@@ -53,14 +53,14 @@ done
 	echo "=================================================="
 	echo " "
 	
-if [[ "$GIT_BRANCH" == "origin/master" ]]
+if [[ "$GIT_BRANCH" != "origin/master" ]]
 then
 preposition="or"
 git checkout origin/master
 git pull
 echo " "
 	echo "=================================================="
-echo "Checking for duplicate permalinks..."
+echo "Checking for duplicate permalinks in $GIT_BRANCH and master"
 #Find all the md files and assign to helion array:
 names2=($(find . -name "*.md"))  
 
@@ -120,4 +120,5 @@ then
 
 	exit 1
 fi
+
 
