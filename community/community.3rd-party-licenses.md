@@ -225,7 +225,50 @@ permission of its copyright owner.
 
 This notice is provided with respect to the following components which may be included with the product.
 
-* Apache Abdera, Version 1.1.3
+* cinder
+* cliff-1.6.1
+* cryptography-0.3
+* diskimage-builder
+* django-compressor-1.3
+* django-openstack-auth-1.1.5
+* glance
+* heat
+* horizon
+* jsonrpclib-0.1.3
+* keystone
+* neutron
+* nova
+* novnc
+* os-apply-config-0.1.14
+* os-cloud-config
+* os-collect-config-0.1.15
+* os-refresh-config-0.1.2
+* oslo.config-1.3.0
+* oslo.messaging-1.3.0
+* oslo.rootwrap-1.2.0
+* oslo.vmware-0.3
+* pbr-0.8.0
+* pycadf-0.5
+* pyOpenSSL-0.14
+* python-ceilometerclient
+* python-cinderclient
+* python-glanceclient
+* python-heatclient
+* python-ironicclient
+* python-keystoneclient
+* python-neutronclient
+* python-novaclient
+* python-saharaclient-0.7.0
+* python-swiftclient
+* python-troveclient-1.0.4
+* requests-2.2.1
+* stevedore-0.15
+* swift
+* taskflow-0.2
+* tripleo-heat-templates
+* tripleo-image-elements
+* tripleo-incubator
+* warlock-1.1.0
 
 
 ### Apache License
@@ -433,20 +476,28 @@ limitations under the License.
 
 ### Beerware License
 
-
-
 This notice is provided with respect to the following components which may be included with the product.
 
-* THE BEER-WARE LICENSE (Revision 42):
+* passlib-1.6.2
+
+THE BEER-WARE LICENSE (Revision 42):
 
 <phk@login.dknet.dk> wrote this file.  As long as you retain this notice you can do whatever you want with this stuff. If we meet some day, and you think this stuff is worth it, you can buy me a beer in return.
 Poul-Henning Kamp
 
+
 ### BSD 2-Clause License
 
-
-
 This notice is provided with respect to the following components which may be included with the product.
+
+* dogpile.cache-0.5.3
+* dogpile.core-0.4.1
+* futures-2.1.6
+* networkx-1.8.1
+* novnc
+* pbr-0.8.0
+* pyasn1-0.1.7
+
 
 Copyright &copy; 2014, Hewlett-Packard Development Company, L.P.
 All rights reserved.
@@ -463,9 +514,31 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 
 ### BSD 3-Clause License
 
-
-
 This notice is provided with respect to the following components which may be included with the product.
+
+* anyjson-0.3.3
+* Babel-1.3
+* Django-1.6.2
+* django-appconf-0.6
+* django-compressor-1.3
+* Jinja2-2.7.2
+* kombu-3.0.15
+* lxml-3.3.4
+* netaddr-0.7.11
+* networkx-1.8.1
+* novnc
+* numpy-1.8.1
+* oauthlib-0.6.1
+* oslo.config-1.3.0
+* oslo.messaging-1.3.0
+* oslo.rootwrap-1.2.0
+* passlib-1.6.2
+* posix-ipc-0.9.8
+* pycadf-0.5
+* pycparser-2.10
+* python-cinderclient
+* python-keystoneclient
+* python-novaclient
 
 Copyright &copy; 2014, Hewlett-Packard Development Company, L.P.
 All rights reserved.
@@ -480,13 +553,14 @@ Redistribution and use in source and binary forms, with or without modification,
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+
 ### Creative Commons License
-
-
 
 This notice is provided with respect to the following components which may be included with the product.
 
-* Creative Commons Attribution-ShareAlike 3.0
+* novnc
+
+Creative Commons Attribution-ShareAlike 3.0
 
 **License**
 
@@ -554,11 +628,12 @@ Except for the limited purpose of indicating to the public that the Work is lice
 
 Creative Commons may be contacted at http://creativecommons.org/
 
+
 ### GNU General Public License (GPL) Version 2
 
 This notice is provided with respect to the following components which may be included with the product.
 
-* java-1.7.0-openJDK, Version 1.7.0
+* lxml-3.3.4
 
 GNU GENERAL PUBLIC LICENSE <br />
 Version 2, June 1991
@@ -903,9 +978,8 @@ Public License instead of this License.
 
 This notice is provided with respect to the following components which may be included with the product.
 
-* autoconf, Version 2.68
-* bison, Version 1:2.5.dfsg-2.1
-* python-psycopg2, Version 2.4.5
+* novnc
+* websockify-0.5.1
 
 GNU GENERAL PUBLIC LICENSE <br />
 Version 3, 29 June 2007
@@ -1583,14 +1657,9 @@ http://www.gnu.org/philosophy/why-not-lgpl.html.
 
 This notice is provided with respect to the following components which may be included with the product.
 
-* c3p0, Version 0.9.1
-* hibernate-c3p0, Version 4.1.7
-* hibernate-commons-annotations, Version 4.0.1
-* hibernate-entitymanager, Version 4.1.7
-* hibernate3, Version 4.1.8.Final
-* jboss-logging, Version 3.1.0.GA
-* jboss-transaction-1.1-api.spec, Version 1.0.0.Final
-* nscd, Version 2.15
+* amqp-1.4.5
+* amqplib-1.0.2
+* paramiko-1.13.0
 
 GNU Lesser General Public License Version 2.1 (LGPL v2.1) <br />
 Version 2.1, February 1999
@@ -1928,9 +1997,9 @@ That's all there is to it!
 
 This notice is provided with respect to the following components which may be included with the product.
 
-* libnss-ldap, Version 264
-* libpam-ldap, Version 184
-* minicom, Version 2.5-2
+* novnc
+* suds-0.4
+* websockify-0.5.1
 
 GNU LESSER GENERAL PUBLIC LICENSE <br />
 Version 3, 29 June 2007
@@ -2093,11 +2162,9 @@ Library.
 
 ### MarkupSafe License
 
-
-
 This notice is provided with respect to the following components which may be included with the product.
 
-* MarkupSafe
+* MarkupSafe-0.19
 
 Copyright &copy; 2010 by Armin Ronacher and contributors.  See AUTHORS
 for more details.
@@ -2136,11 +2203,36 @@ DAMAGE.
 
 ###MIT License
 
-
-
 This notice is provided with respect to the following components which may be included with the product.
 
-* The MIT License (MIT)
+* alembic-0.6.4
+* cffi-0.8.2
+* Django-1.6.2
+* django-compressor-1.3
+* ecdsa-0.11
+* eventlet-0.14.0
+* greenlet-0.4.2
+* horizon
+* iso8601-0.1.10
+* jsonschema-2.3.0
+* lesscpy-0.10.1
+* lockfile-0.9.1
+* Mako-0.9.1
+* ordereddict-1.1
+* passlib-1.6.2
+* Paste-1.7.5.1
+* PasteDeploy-1.5.2
+* pycrypto-2.6.1
+* pyparsing-2.0.2
+* pystache-0.5.3
+* pytz-2014.2
+* PyYAML-3.11
+* Routes-2.0
+* simplejson-3.4.0
+* six-1.6.1
+* SQLAlchemy-0.9.4
+* WebOb-1.3.1
+* xattr-0.7.5
 
 Copyright &copy; 2014 
 
@@ -2163,6 +2255,10 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 ## Mozilla Public License Version 2.0
+
+This notice is provided with respect to the following components which may be included with the product.
+
+* novnc
 
 1. Definitions
 
@@ -2345,10 +2441,11 @@ This Source Code Form is "Incompatible With Secondary Licenses", as defined by t
 
 ###Nominum License
 
-
 This notice is provided with respect to the following components which may be included with the product.
 
-* Copyright &copy; 2001-2003 Nominum, Inc.
+* dnspython-1.11.1
+
+Copyright &copy; 2001-2003 Nominum, Inc.
 
 Permission to use, copy, modify, and distribute this software and its documentation for any purpose with or without fee is hereby granted, provided that the above copyright notice and this permission notice appear in all copies.
 
@@ -2357,8 +2454,9 @@ ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CO
 
 ###SIL Open Font License
 
-
 This notice is provided with respect to the following components which may be included with the product.
+
+* novnc
 
 This Font Software is licensed under the SIL Open Font License, Version 1.1.
 This license is copied below, and is also available with a FAQ at:
@@ -2453,6 +2551,11 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
 
 ### Public domain software
 
+This notice is provided with respect to the following components which may be included with the product.
+
+* ecdsa-0.11
+* pycrypto-2.6.1
+
 Public domain software is software that is not copyrighted. If the source code is in the public domain, that is a special case of noncopylefted free software, which means that some copies or modified versions may not be free at all.
 
 In some cases, an executable program can be in the public domain but the source code is not available. This is not free software, because free software requires accessibility of source code. Meanwhile, most free software is not in the public domain; it is copyrighted, and the copyright holders have legally given permission for everyone to use it in freedom, using a free software license.
@@ -2466,11 +2569,14 @@ Under the Berne Convention, which most countries have signed, anything written d
 
 This notice is provided with respect to the following components which may be included with the product.
 
+* greenlet-0.4.2
+* lxml-3.3.4
+* xattr-0.7.5
+* pycrypto-2.6.1
 
-* Python License, Version 2 (Python-2.0)
+Python License, Version 2 (Python-2.0)
 
 PYTHON SOFTWARE FOUNDATION LICENSE VERSION 2
-
 
 1. This LICENSE AGREEMENT is between the Python Software Foundation
 ("PSF"), and the Individual or Organization ("Licensee") accessing and
@@ -2663,13 +2769,13 @@ ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT
 OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 
- 
-
 ### Repoze License
 
 This notice is provided with respect to the following components which may be included with the product.
 
-* Repoze
+* repoze.lru-0.6
+
+Repoze
 
   License
 
@@ -2713,45 +2819,44 @@ This notice is provided with respect to the following components which may be in
       SUCH DAMAGE.
 
 
-
 ### ZLIB
 
 This notice is provided with respect to the following components which may be included with the product.
 
+* novnc
 
-* zlib.h -- interface of the 'zlib' general purpose compression library
-  version 1.2.2, October 3rd, 2004
+zlib.h -- interface of the 'zlib' general purpose compression library
+version 1.2.2, October 3rd, 2004
 
-  Copyright &copy; 1995-2004 Jean-loup Gailly and Mark Adler
+Copyright &copy; 1995-2004 Jean-loup Gailly and Mark Adler
 
-  This software is provided 'as-is', without any express or implied
-  warranty.  In no event will the authors be held liable for any damages
-  arising from the use of this software.
+This software is provided 'as-is', without any express or implied
+warranty.  In no event will the authors be held liable for any damages
+arising from the use of this software.
 
-  Permission is granted to anyone to use this software for any purpose,
-  including commercial applications, and to alter it and redistribute it
-  freely, subject to the following restrictions:
+Permission is granted to anyone to use this software for any purpose,
+including commercial applications, and to alter it and redistribute it
+freely, subject to the following restrictions:
 
-  1. The origin of this software must not be misrepresented; you must not
-     claim that you wrote the original software. If you use this software
-     in a product, an acknowledgment in the product documentation would be
-     appreciated but is not required.
-  2. Altered source versions must be plainly marked as such, and must not be
-     misrepresented as being the original software.
-  3. This notice may not be removed or altered from any source distribution.
+1. The origin of this software must not be misrepresented; you must not
+   claim that you wrote the original software. If you use this software
+   in a product, an acknowledgment in the product documentation would be
+   appreciated but is not required.
+2. Altered source versions must be plainly marked as such, and must not be
+   misrepresented as being the original software.
+3. This notice may not be removed or altered from any source distribution.
 
-  Jean-loup Gailly jloup@gzip.org
-  Mark Adler madler@alumni.caltech.edu
-
+Jean-loup Gailly jloup@gzip.org
+Mark Adler madler@alumni.caltech.edu
 
 
 ### Zope
 
 This notice is provided with respect to the following components which may be included with the product.
 
+* lxml-3.3.4
 
-* Zope Public License (ZPL) Version 2.0
-
+Zope Public License (ZPL) Version 2.0
 
 This software is Copyright &copy; Zope Corporation &trade; and
 Contributors. All rights reserved.
