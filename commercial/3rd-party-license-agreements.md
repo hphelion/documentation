@@ -79,7 +79,7 @@ at the HP Helion OpenStack portal</a>. On the site, sign up, login, then follow 
 <h3 id="apache-public-license---v-10">Apache Public License - v 1.1</h3>
 
 <p>This notice is provided with respect to the following components which may be included with the product.
-<ul><li>plexus-utils 3.0.1.4<p>Copyright © 2001-2012 Codehaus. All Rights Reserved. 
+<ul><li>plexus-utils 3.0.1.4<p>Copyright &copy; 2001-2012 Codehaus. All Rights Reserved. 
 </p></li></ul></p>
 
 ====================================================================
@@ -3797,7 +3797,7 @@ with or without modifications, as long as this notice is preserved.</p>
 
 <p>AM_AUTOMAKE_VERSION(VERSION)</p>
 
-<hr /><p>Automake X.Y traces this macro to ensure aclocal.m4 has been
+<p>Automake X.Y traces this macro to ensure aclocal.m4 has been
 generated from the m4 files accompanying Automake X.Y.
 (This private macro should not be called outside this file.)
 AC_DEFUN([AM_AUTOMAKE_VERSION],
@@ -3808,7 +3808,7 @@ m4_if([$1], [1.14], [],
 [AC_FATAL([Do not call $0, use AM_INIT_AUTOMAKE([$1]).])])dnl
 ])</p>
 
-<h2 id="-am-autoconf-versionversion">_AM_AUTOCONF_VERSION(VERSION)</h2>
+<p>_AM_AUTOCONF_VERSION(VERSION)</p>
 
 <p>aclocal traces this macro to find the Autoconf version.
 This is a private macro too. Using m4_define simplifies
@@ -4104,7 +4104,6 @@ available at https://github.com/jquery/jquery</p>
 <p>The following license applies to all parts of this software except as
 documented below:</p>
 
-<p>====</p>
 
 <p>Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -4125,7 +4124,6 @@ LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
 OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
 
-<p>====</p>
 
 <p>All files located in the node_modules and external directories are
 externally maintained libraries used by this software which have their
@@ -4261,7 +4259,7 @@ DAMAGE.</p>
 
 <h2 id="mozilla-public-license-version-20">Mozilla Public License Version 2.0</h2>
 <p>This notice is provided with respect to the following components which may be included with the product.</p>
-<ul><li>novnc>
+<ul><li>novnc</li>
 </ul>
 <ol><li>Definitions</li>
 </ol><p>1.1. "Contributor"
