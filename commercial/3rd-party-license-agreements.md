@@ -45,7 +45,7 @@ commercial license.</p>
 
 <h3 id="copyright-notice">Copyright Notice</h3>
 
-<p>Hewlett-Packard Company Confidential &copy; Copyright 2012-2014 Hewlett-Packard Development Company, L.P.</p>
+<p>&copy; Copyright 2012-2014 Hewlett-Packard Development Company, L.P.</p>
 
 <h2 id="disclaimer-for-experimental-software">Disclaimer for Experimental Software</h2>
 
@@ -243,12 +243,60 @@ http://www.apache.org/licenses/</p>
 <li>openstack-nova, Version 2013.1.4</li>
 <li>openstack-quantum, Version 2013.1.4</li>
 <li>openstack-swift, Version 2013.1.4</li>
+
+<li> pbr-0.8.0</li>
+<li> pycadf-0.5</li>
+
+<li> os-apply-config-0.1.14</li>
+<li>  os-cloud-config</li>
+<li>  os-collect-config-0.1.15</li>
+<li>  os-refresh-config-0.1.2</li>
+<li>  oslo.config-1.3.0</li>
+<li>  oslo.messaging-1.3.0</li>
+<li> oslo.rootwrap-1.2.0</li>
+<li>  oslo.vmware-0.3</li>
+<li>pyOpenSSL-0.14</li>
+<li>python-ceilometerclient</li>
+
+<li> python-heatclient</li>
+<li>python-ironicclient</li>
+
+<li> python-neutronclient</li>
+
+<li>python-saharaclient-0.7.0</li>
+
+<li> python-troveclient-1.0.4</li>
+
 <li>python-cinderclient, Version 1.0.3</li>
 <li>python-glanceclient, Version 0.9.0</li>
 <li>python-keystoneclient, Version 0.2.3</li>
 <li>python-novaclient, Version 2.13.0, 2.12.0</li>
 <li>python-quantumclient, Version 2.2.0</li>
 <li>python-swiftclient, Version 1.3.0</li>
+<li> cinder</li>
+<li>cliff-1.6.1</li>
+<li>cryptography-0.3</li>
+<li> diskimage-builder</li>
+<li> django-compressor-1.3</li>
+<li>django-openstack-auth-1.1.5</li>
+<li> glance</li>
+<li> heat</li>
+<li> horizon</li>
+<li> jsonrpclib-0.1.3</li>
+<li> keystone</li>
+
+<li> neutron</li>
+<li>nova</li>
+<li> novnc</li>
+
+<li> requests-2.2.1</li>
+<li>stevedore-0.15</li>
+<li> swift</li>
+<li> taskflow-0.2</li>
+<li> tripleo-heat-templates</li>
+<li> tripleo-image-elements</li>
+<li>tripleo-incubator</li>
+<li> warlock-1.1.0</li>
 <li>swagger-api, Version 0.1.13</li>
 <li>swagger- jaxrs_2.9.1, Version 1.2.1</li>
 <li>tomcat, Version 7.0.26</li>
@@ -868,6 +916,8 @@ any resulting litigation.</p>
 </p></li>
 <li>aopalliance 1 <p>Copyright © 2013, AOP Alliance. All Rights Reserved
 </p></li>
+<li>ecdsa-0.11</li>
+<li>pycrypto-2.6.1</li>
 </ul></p>
 
 <p>The person or persons who have associated work with this document (the "Dedicator" or "Certifier") hereby either (a) certifies that, to the best of his knowledge, the work of authorship identified is in the public domain of the country from which the work is published, or (b) hereby dedicates whatever copyright the dedicators holds in the work of authorship identified below (the "Work") to the public domain. A certifier, morever, dedicates any copyright interest he may have in the associated work, and for these purposes, is described as a "dedicator" below.</p>
@@ -1830,6 +1880,8 @@ This notice is provided with respect to the following components which may be in
 <li>autoconf, Version 2.68</li>
 <li> bison, Version 1:2.5.dfsg-2.1</li>
 <li> python-psycopg2, Version 2.4.5</li>
+<li> novnc</li>
+<li> websockify-0.5.1</li>
 </ul>
 </p>
 
@@ -3039,7 +3091,9 @@ This notice is provided with respect to the following components which may be in
 </p></li>
 <li> javassist v 3.18.0<p>Copyright (C) 1999-2014 by Shigeru Chiba.</p></li>
 
-
+<li> amqp-1.4.5</li>
+<li>  amqplib-1.0.2</li>
+<li> paramiko-1.13.0</li>
 </ul>
 
 </p>
@@ -3507,7 +3561,8 @@ convey the exclusion of warranty; and each file should have at least the
 "copyright" line and a pointer to where the full notice is found.</p>
 
 <p>(one line to give the library's name and a brief idea of what it does.&gt;
-Copyright (C) (year&gt;  (name of author&gt;</p>
+Copyright &copy; &lt;year&gt; &lt;name of author&gt;
+</p>
 
 <p>This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -3545,6 +3600,9 @@ This notice is provided with respect to the following components which may be in
 <li> libnss-ldap, Version 264</li>
 <li> libpam-ldap, Version 184</li>
 <li> minicom, Version 2.5-2</li>
+<li> novnc</li>
+<li> suds-0.4</li>
+<li> websockify-0.5.1</li>
 </ul></p>
 
 <p>Copyright (C) 2007 Free Software Foundation, Inc. (http://fsf.org/&gt;
@@ -3825,7 +3883,8 @@ m4_define([_AM_AUTOCONF_VERSION], [])</p>
 <h3 id="academic-free-license">Academic Free License</h3>
 
 <p>This notice is provided with respect to the following components which may be included with the product.</p>
-
+<ul><li>simplejson-3.4.0
+</li></ul>
 <p>The Academic Free License, v. 2.1:</p>
 
 <p>This Academic Free License (the "License") applies to any original work of
@@ -3983,6 +4042,11 @@ permission of its copyright owner.</p>
 
 <p>This notice is provided with respect to the following components which may be included with the product.</p>
 
+<ul><li> passlib-1.6.2</li>
+</ul>
+
+
+
 <ul><li>THE BEER-WARE LICENSE (Revision 42):</li>
 </ul><p>(phk@login.dknet.dk&gt; wrote this file.  As long as you retain this notice you can do whatever you want with this stuff. If we meet some day, and you think this stuff is worth it, you can buy me a beer in return.
 Poul-Henning Kamp</p>
@@ -3990,7 +4054,17 @@ Poul-Henning Kamp</p>
 <h3 id="bsd-2-clause-license">BSD 2-Clause License</h3>
 
 <p>This notice is provided with respect to the following components which may be included with the product.</p>
+<ul><li>dogpile.cache-0.5.3</li>
+<li> dogpile.core-0.4.1</li>
+<li> futures-2.1.6</li>
+<li> networkx-1.8.1</li>
+<li> novnc</li>
+<li>pbr-0.8.0</li>
+<li> pyasn1-0.1.7</li>
+</ul>
 
+<p>Copyright &copy; &lt;YEAR&gt;, &lt;OWNER&gt;
+All rights reserved.</p>
 
 <p>Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:</p>
 
@@ -4000,79 +4074,80 @@ Poul-Henning Kamp</p>
 
 <h3>MIT License</h3>
 
-<p>This notice is provided with respect to the following components which may be included with the product.
+<p>This notice is provided with respect to the following components which may be included with the product.</p>
 <ul>
-<li> hammerjs v 1.0.5</li>
-<p>Copyright (C) 2011-2014 by Jorik Tangelder (Eight Media)</p></ul>
-
-<ul><li>almond v 0.2.9</li>
+<li> hammerjs v 1.0.5<p>Copyright (C) 2011-2014 by Jorik Tangelder (Eight Media)</p></li>
+<ul><li>almond v 0.2.9<p>Copyright (c) 2010-2011, The Dojo Foundation</p><p>All rights reserved.</p></li>
 <li>r.js</li>
-<p>Copyright (c) 2010-2011, The Dojo Foundation</p><p>All rights reserved.</p>
-</ul>
-
 <ul>
-<li> coccyx v 1</li>
-<p>
-Copyright (c) 2012 Onsi Fakhouri</p></ul>
+<li> coccyx v 1<p>
+Copyright (c) 2012 Onsi Fakhouri</p></li>
 
-<ul>
-<li>tween.js r12</li>
+<li>tween.js r12
 <p>Copyright (c) 2010-2012 Tween.js authors.</p>
 <p>Easing equations Copyright (c) 2001 Robert Penner http://robertpenner.com/easing/</p>
-</ul>
+</li>
 
+<li> setImmediate.js 1.0.1
+<p>Copyright (c) 2012 Barnesandnoble.com, llc, Donavon West, and Domenic Denicola</p></li>
 
-<ul>
-<li> setImmediate.js 1.0.1</li>
-<p>Copyright (c) 2012 Barnesandnoble.com, llc, Donavon West, and Domenic Denicola</p></ul>
-
-
-<ul>
 <li> q 1.0.0
-</li><p>Copyright 2009?2014 Kristopher Michael Kowal. All rights reserved.</p>
-</ul>
+<p>Copyright 2009?2014 Kristopher Michael Kowal. All rights reserved.</p>
+</li>
 
-
-<ul>
 <li> numeral-js 1.5.2
-</li><p>Copyright (c) 2012 Adam Draper</p>
-
-</ul>
-
-<ul>
-<li> normalize.ss 3.0.1</li><p>Copyright (c) Nicolas Gallagher and Jonathan Neal</p>
-
-</ul>
-
-<ul>
-<li>nodejs-lodash 1.3.1</li><p>Copyright 2011-2014 The Dojo Foundation (http://dojofoundation.org/&gt;
+<p>Copyright (c) 2012 Adam Draper</p>
+</li>
+<li> normalize.ss 3.0.1<p>Copyright (c) Nicolas Gallagher and Jonathan Neal</p>
+</li>
+<li>nodejs-lodash 1.3.1<p>Copyright 2011-2014 The Dojo Foundation (http://dojofoundation.org/&gt;
 Based on Underscore.js 1.6.0, copyright 2009-2014 Jeremy Ashkenas,
 DocumentCloud and Investigative Reporters &amp; Editors (http://underscorejs.org/&gt;</p>
-</ul>
-
-<ul>
-<li> backbone v 1.0.0</li><p>Copyright (c) 2010-2014 Jeremy Ashkenas, DocumentCloud
+</li>
+<li> backbone v 1.0.0<p>Copyright (c) 2010-2014 Jeremy Ashkenas, DocumentCloud
 </p>
-
-</ul>
-
-<ul>
-<li> slf4j 1.7.5</li><p>Copyright (c) 2004-2013 QOS.ch  All rights reserved.
+</li>
+<li> slf4j 1.7.5<p>Copyright (c) 2004-2013 QOS.ch  All rights reserved.
 </p>
+</li>
+<li>nodejs-requirejs 2.1.8<p>Copyright (c) 2010-2011, The Dojo Foundation</p>
+</li>
+<li> alembic-0.6.4</li>
+<li> cffi-0.8.2</li>
+<li> Django-1.6.2</li>
+<li> django-compressor-1.3</li>
+<li> ecdsa-0.11</li>
+<li> eventlet-0.14.0</li>
+<li> greenlet-0.4.2</li>
+<li> horizon</li>
+<li>iso8601-0.1.10</li>
+<li> jsonschema-2.3.0</li>
+<li> lesscpy-0.10.1</li>
+<li> lockfile-0.9.1</li>
+<li> Mako-0.9.1</li>
+<li> ordereddict-1.1</li>
+<li> passlib-1.6.2</li>
+<li> Paste-1.7.5.1</li>
+<li> PasteDeploy-1.5.2</li>
+<li> pycrypto-2.6.1</li>
+<li> pyparsing-2.0.2</li>
+<li> pystache-0.5.3</li>
+<li> pytz-2014.2</li>
+<li>PyYAML-3.11</li>
+<li>Routes-2.0</li>
+<li> simplejson-3.4.0</li>
+<li> six-1.6.1</li>
+<li>SQLAlchemy-0.9.4</li>
+<li>WebOb-1.3.1</li>
+<li> xattr-0.7.5</li></ul
 
+
+<li>jQuery<p><p>Copyright 2005, 2014 jQuery Foundation and other contributors,
+https://jquery.org/</p></li>
 </ul>
 
-
-<ul>
-<li>nodejs-requirejs 2.1.8</li><p>Copyright (c) 2010-2011, The Dojo Foundation</p>
-
-</ul>
-
-
-
-
-</p>
-
+<p>Copyright &copy; &lt;YEAR&gt;, &lt;OWNER&gt;
+All rights reserved.</p>
 
 <p>Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -4092,51 +4167,6 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.</p>
 
-<h3 id="jquery-foundation-license">MIT License - jQuery </h3>
-
-<p>Copyright 2005, 2014 jQuery Foundation and other contributors,
-https://jquery.org/
-This notice is provided with respect to the following components which may be included with the product.
-<ul>
-<li>jQuery</li>
-</ul>
-</p>
-
-<p>This software consists of voluntary contributions made by many
-individuals. For exact contribution history, see the revision history
-available at https://github.com/jquery/jquery</p>
-
-<p>The following license applies to all parts of this software except as
-documented below:</p>
-
-
-<p>Permission is hereby granted, free of charge, to any person obtaining
-a copy of this software and associated documentation files (the
-"Software"), to deal in the Software without restriction, including
-without limitation the rights to use, copy, modify, merge, publish,
-distribute, sublicense, and/or sell copies of the Software, and to
-permit persons to whom the Software is furnished to do so, subject to
-the following conditions:</p>
-
-<p>The above copyright notice and this permission notice shall be
-included in all copies or substantial portions of the Software.</p>
-
-<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
-LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
-OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
-WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
-
-
-<p>All files located in the node_modules and external directories are
-externally maintained libraries used by this software which have their
-own licenses; we recommend you read them, as their terms may differ from
-the terms above.</p>
-
-
-
 
 <h3 id="bsd-3-clause-license">BSD 3-Clause License</h3>
 
@@ -4145,29 +4175,53 @@ the terms above.</p>
 <ul><li>almond v 0.2.9<p>The "New" BSD License: Copyright (c) 2010-2011, The Dojo Foundation
 All rights reserved.</p></li>
 <li>r.js</li>
-</ul>
 
-<ul>
-<li> hamcrest v 1.3</li><p>Copyright: 2011-2014, Google, Inc.
+<li> hamcrest v 1.3<p>Copyright: 2011-2014, Google, Inc.
  All rights reserved.</p>
-</ul></p>
-
-<ul>
-<li>nodejs-requirejs 2.1.8</li><p>Copyright (c) 2010-2011, The Dojo Foundation</p>
-
-</ul>
-
-<ul>
-<li> objectweb-asm v 3.1.0</li><p>ASM: a very small and fast Java bytecode manipulation framework
+</li>
+<li>nodejs-requirejs 2.1.8<p>Copyright (c) 2010-2011, The Dojo Foundation</p>
+</li>
+<li> objectweb-asm v 3.1.0<p>ASM: a very small and fast Java bytecode manipulation framework
 Copyright (c) 2000-2005 INRIA, France Telecom
 All rights reserved.</p>
-</ul>
-<ul>
-<li>  plexus-utils 3.0.1.4<p>Copyright © 2001-2012 Codehaus. All Rights Reserved. 
+</li>
+<li> plexus-utils 3.0.1.4<p>Copyright © 2001-2012 Codehaus. All Rights Reserved. 
 </p></li>
+<li> anyjson-0.3.3</li>
+<li> Babel-1.3</li>
+<li> Django-1.6.2</li>
+<li> django-appconf-0.6</li>
+<li> django-compressor-1.3</li>
+<li> Jinja2-2.7.2</li>
+<li> kombu-3.0.15</li>
+<li> lxml-3.3.4</li>
+<li> netaddr-0.7.11</li>
+<li> networkx-1.8.1</li>
+<li> novnc</li>
+<li> numpy-1.8.1</li>
+<li> oauthlib-0.6.1</li>
+<li> oslo.config-1.3.0</li>
+<li> oslo.messaging-1.3.0</li>
+<li> oslo.rootwrap-1.2.0</li>
+<li> passlib-1.6.2</li>
+<li> posix-ipc-0.9.8</li>
+<li> pycadf-0.5</li>
+<li> pycparser-2.10</li>
+<li> python-cinderclient</li>
+<li> python-keystoneclient</li>
+<li> python-novaclient</li>
 </ul>
 </p>
 
+<p>Copyright &copy; &lt;YEAR&gt;, &lt;OWNER&gt;
+All rights reserved.</p>
+
+<p>Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:</p>
+
+<ol><li><p>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</p></li>
+<li><p>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</p></li>
+<li><p>Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.</p></li>
+</ol><p>THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
 
 <h3 id="codehaus-public-license-v-1111">BSD License - Codehaus Public License v 1.1.1.1</h3>
 <p>Copyright 2002 (C) The Codehaus. All Rights Reserved.</p>
@@ -4176,8 +4230,11 @@ All rights reserved.</p>
 <ul>
 <li>classworlds v 1.1</li>
 <li>plexus-classworlds 2.5.1</li>
+
 </ul>
 </p>
+<p>Copyright &copy; &lt;YEAR&gt;, &lt;OWNER&gt;
+All rights reserved.</p>
 
 
 <p>Redistribution and use of this software and associated documentation
@@ -4204,7 +4261,7 @@ trademark of The Codehaus.</p></li>
 </ol>
 
 <p>THIS SOFTWARE IS PROVIDED BY THE CODEHAUS AND CONTRIBUTORS
-``AS IS'' AND ANY EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT
+''AS IS'' AND ANY EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT
 NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
 FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL
 THE CODEHAUS OR ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
@@ -4218,18 +4275,13 @@ OF THE POSSIBILITY OF SUCH DAMAGE.</p>
 
 
 </p>
-<p>Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:</p>
 
-<ol><li><p>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</p></li>
-<li><p>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</p></li>
-<li><p>Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.</p></li>
-</ol><p>THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
 
 <h3 id="markupsafe-license">MarkupSafe License</h3>
 
 <p>This notice is provided with respect to the following components which may be included with the product.</p>
 
-<ul><li>MarkupSafe</li>
+<ul><li>MarkupSafe-0.19</li>
 </ul><p>Copyright © 2010 by Armin Ronacher and contributors.  See AUTHORS
 for more details.</p>
 
@@ -4436,7 +4488,7 @@ means an individual or a legal entity exercising rights under this License. For 
 <h3 id="nominum-license">Nominum License</h3>
 
 <p>This notice is provided with respect to the following components which may be included with the product.</p>
-
+<ul><li>dnspython-1.11.1</li></ul>
 <ul><li>Copyright © 2001-2003 Nominum, Inc.</li>
 </ul><p>Permission to use, copy, modify, and distribute this software and its documentation for any purpose with or without fee is hereby granted, provided that the above copyright notice and this permission notice appear in all copies.</p>
 
@@ -4446,6 +4498,7 @@ ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CO
 <h3 id="sil-open-font-license">SIL Open Font License</h3>
 
 <p>This notice is provided with respect to the following components which may be included with the product.</p>
+<ul><li>novnc</li></ul>
 
 <p>This Font Software is licensed under the SIL Open Font License, Version 1.1.
 This license is copied below, and is also available with a FAQ at:
@@ -4538,7 +4591,12 @@ OTHER DEALINGS IN THE FONT SOFTWARE.</p>
 <h3 id="python-2-license">Python 2 License</h3>
 
 <p>This notice is provided with respect to the following components which may be included with the product.</p>
-
+<ul><li> greenlet-0.4.2</li>
+<li> lxml-3.3.4</li>
+<li> xattr-0.7.5</li>
+<li> pycrypto-2.6.1</li>
+</ul>
+</ul>
 <ul><li>Python License, Version 2 (Python-2.0)</li>
 </ul><p>PYTHON SOFTWARE FOUNDATION LICENSE VERSION 2</p>
 
@@ -4710,9 +4768,9 @@ OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.</p>
 
 <p>This notice is provided with respect to the following components which may be included with the product.</p>
 
-<ul><li><p>Repoze</p>
+<ul><li>repoze.lru-0.6</li></ul>
 
-<p>License</p>
+<p>Repoze </p><p>License</p>
 
 <p>A copyright notice accompanies this license document that identifies
 the copyright holders.</p>
@@ -4748,14 +4806,17 @@ the date of any change.</p></li>
   TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF
   THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
   SUCH DAMAGE.</p></li>
-</ul><h3 id="zlib">ZLIB</h3>
+</ul>
+
+<h3 id="zlib">ZLIB</h3>
 
 <p>This notice is provided with respect to the following components which may be included with the product.</p>
+<ul><li>novnc</li></ul>
 
 <ul><li><p>zlib.h -- interface of the 'zlib' general purpose compression library
 version 1.2.2, October 3rd, 2004</p>
 
-<p>Copyright © 1995-2004 Jean-loup Gailly and Mark Adler</p>
+<p>Copyright &copy; 1995-2004 Jean-loup Gailly and Mark Adler</p>
 
 <p>This software is provided 'as-is', without any express or implied
 warranty.  In no event will the authors be held liable for any damages
@@ -4774,10 +4835,12 @@ misrepresented as being the original software.</li>
 <li>This notice may not be removed or altered from any source distribution.</li>
 </ol><p>Jean-loup Gailly jloup@gzip.org
 Mark Adler madler@alumni.caltech.edu</p></li>
-</ul><h3 id="zope">Zope</h3>
+</ul>
+
+<h3 id="zope">Zope</h3>
 
 <p>This notice is provided with respect to the following components which may be included with the product.</p>
-
+<ul><li>lxml-3.3.4</li></ul>
 <ul><li>Zope Public License (ZPL) Version 2.0</li>
 </ul><p>This software is Copyright © Zope Corporation ™ and
 Contributors. All rights reserved.</p>
