@@ -243,7 +243,6 @@ http://www.apache.org/licenses/</p>
 <li>openstack-nova, Version 2013.1.4</li>
 <li>openstack-quantum, Version 2013.1.4</li>
 <li>openstack-swift, Version 2013.1.4</li>
-
 <li> pbr-0.8.0</li>
 <li> pycadf-0.5</li>
 
