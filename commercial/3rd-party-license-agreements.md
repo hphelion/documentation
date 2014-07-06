@@ -320,9 +320,11 @@ http://www.apache.org/licenses/</p>
 </ul>
 <ul>
 <li> javassist v 3.18.0<p>Copyright (C) 1999-2014 by Shigeru Chiba.</p></li>
-<li>httpcomponents-core v 1.0.8</li>
-<li>jackson v 1.4.2</li>
-<li>pyvmomi v 5.5.0</li>
+<li>httpcomponents-core v 1.0.8<p>Copyright © 2005-2014 The Apache Software Foundation. All Rights Reserved
+</p></li>
+<li>jackson v 1.4.2<p>Copyright ©2009 FasterXML, LLC
+</p></li>
+<li>pyvmomi v 5.5.0<p> Copyright (c) 2005-2013 VMware, Inc. All Rights Reserved.</p></li>
 </ul>
 </p>
 <p>TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION</p>
@@ -1472,7 +1474,8 @@ with the Classpath Exception</h3>
 <p>This notice is provided with respect to the following components which may be included with the product.
 <ul><li>
 java-1.7.0-openJDK, Version 1.7.0</li>
-<li>jersey v 1.17.1</li>
+<li>jersey v 1.17.1<p>Copyright ©2010-2014 Oracle Corporation. All Rights Reserved.
+</p></li>
 
 </ul></p>
 
