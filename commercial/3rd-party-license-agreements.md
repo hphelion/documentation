@@ -4073,9 +4073,9 @@ All rights reserved.</p>
 <p>This notice is provided with respect to the following components which may be included with the product.</p>
 <ul>
 <li> hammerjs v 1.0.5<p>Copyright (C) 2011-2014 by Jorik Tangelder (Eight Media)</p></li>
-<ul><li>almond v 0.2.9<p>Copyright (c) 2010-2011, The Dojo Foundation</p><p>All rights reserved.</p></li>
+<li>almond v 0.2.9<p>Copyright (c) 2010-2011, The Dojo Foundation</p><p>All rights reserved.</p></li>
 <li>r.js</li>
-<ul>
+
 <li> coccyx v 1<p>
 Copyright (c) 2012 Onsi Fakhouri</p></li>
 
@@ -4135,7 +4135,7 @@ DocumentCloud and Investigative Reporters &amp; Editors (http://underscorejs.org
 <li> six-1.6.1</li>
 <li>SQLAlchemy-0.9.4</li>
 <li>WebOb-1.3.1</li>
-<li> xattr-0.7.5</li></ul
+<li> xattr-0.7.5</li>
 
 
 <li>jQuery<p><p>Copyright 2005, 2014 jQuery Foundation and other contributors,
