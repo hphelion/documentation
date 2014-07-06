@@ -499,7 +499,7 @@ This notice is provided with respect to the following components which may be in
 * pyasn1-0.1.7
 
 
-Copyright &copy; <YEAR>, <OWNER>
+Copyright &copy; &lt;YEAR>, &lt;OWNER>
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
@@ -540,7 +540,7 @@ This notice is provided with respect to the following components which may be in
 * python-keystoneclient
 * python-novaclient
 
-Copyright &copy; <YEAR>, <OWNER>
+Copyright &copy; &lt;YEAR>, &lt;OWNER>
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
@@ -2234,7 +2234,7 @@ This notice is provided with respect to the following components which may be in
 * WebOb-1.3.1
 * xattr-0.7.5
 
-Copyright &copy; <year> <copyright holders> 
+Copyright &copy; &lt;year> &lt;copyright holders> 
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
