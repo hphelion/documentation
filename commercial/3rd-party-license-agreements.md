@@ -320,6 +320,9 @@ http://www.apache.org/licenses/</p>
 </ul>
 <ul>
 <li> javassist v 3.18.0<p>Copyright (C) 1999-2014 by Shigeru Chiba.</p></li>
+<li>httpcomponents-core v 1.0.8</li>
+<li>jackson v 1.4.2</li>
+<li>pyvmomi v 5.5.0</li>
 </ul>
 </p>
 <p>TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION</p>
@@ -1469,6 +1472,7 @@ with the Classpath Exception</h3>
 <p>This notice is provided with respect to the following components which may be included with the product.
 <ul><li>
 java-1.7.0-openJDK, Version 1.7.0</li>
+<li>jersey v 1.17.1</li>
 
 </ul></p>
 
@@ -3984,8 +3988,6 @@ Poul-Henning Kamp</p>
 
 <p>This notice is provided with respect to the following components which may be included with the product.</p>
 
-<p>Copyright © 2014, Hewlett-Packard Development Company, L.P.
-All rights reserved.</p>
 
 <p>Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:</p>
 
@@ -4134,8 +4136,7 @@ the terms above.</p>
 
 
 <h3 id="bsd-3-clause-license">BSD 3-Clause License</h3>
-<p>Copyright © 2014, Hewlett-Packard Development Company, L.P.
-All rights reserved.</p>
+
 
 <p>This notice is provided with respect to the following components which may be included with the product.</p>
 <ul><li>almond v 0.2.9<p>The "New" BSD License: Copyright (c) 2010-2011, The Dojo Foundation
