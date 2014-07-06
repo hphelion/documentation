@@ -695,7 +695,6 @@ Copyright &copy; 2014 The Eclipse Foundation. All Rights Reserved.
 <p>This notice is provided with respect to the following components which may be included with the product.</p>
 
 <ul><li>aether 0.9.0</li>
-<li>jetty 9.0.4</li>
 <li>org.apache.jasper.glassfish 2.2.2<p>Copyright &copy; 2013, Oracle. All Rights Reserved
 </p></li>
 <li>org.apache.taglibs.standard.glassfish 1.2.0<p>Copyright &copy; 2013, Oracle. All Rights Reserved
@@ -1030,7 +1029,7 @@ d.Except as otherwise agreed in writing by the Licensor or as may be otherwise p
 <p>f.The rights granted under, and the subject matter referenced, in this License were drafted utilizing the terminology of the Berne Convention for the Protection of Literary and Artistic Works (as amended on September 28, 1979), the Rome Convention of 1961, the WIPO Copyright Treaty of 1996, the WIPO Performances and Phonograms Treaty of 1996 and the Universal Copyright Convention (as revised on July 24, 1971). These rights and subject matter take effect in the relevant jurisdiction in which the License terms are sought to be enforced according to the corresponding provisions of the implementation of those treaty provisions in the applicable national law. If the standard suite of rights granted under applicable copyright law includes additional rights not granted under this License, such additional rights are deemed to be included in the License; this License is not intended to restrict the license of any rights under applicable law.</p></li>
 </ol>
 
-<h3 id="mozilla-public-license-v-11">Mozilla Public License v 1.1</h3>
+<!--<h3 id="mozilla-public-license-v-11">Mozilla Public License v 1.1</h3>
 <p>This notice is provided with respect to the following components which may be included with the product.
 
 <li> javassist v 3.18.0<p>Copyright (C) 1999-2014 by Shigeru Chiba.</p></li>
@@ -1166,7 +1165,7 @@ under either the MPL or the [___] License."</pre>
 
 <p>Contributor(s): Bill Burke, Jason T. Greene.</p>
 
-
+-->
 
 <h3 id="gnu-general-public-license-version-2">GNU GENERAL PUBLIC LICENSE Version 2</h3>
 
@@ -3087,9 +3086,7 @@ This notice is provided with respect to the following components which may be in
 <li> jboss-logging, Version 3.1.0.GA</li>
 <li> jboss-transaction-1.1-api.spec, Version 1.0.0.Final</li>
 <li> nscd, Version 2.15</li>
-<li> jackson v 2.2.2<p>&copy; 2003-2008 Codehaus 
-</p></li>
-<li> javassist v 3.18.0<p>Copyright (C) 1999-2014 by Shigeru Chiba.</p></li>
+
 
 <li> amqp-1.4.5</li>
 <li>  amqplib-1.0.2</li>
