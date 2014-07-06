@@ -167,7 +167,7 @@ http://www.apache.org/licenses/</p>
 <li>Apache-commons-lang3, Version 3.1</li>
 <li>Apache-commons-logging, Version 1.0.4, 1.1.1</li>
 <li>Apache-commons-net, Version 3.2</li>
-<li> apache-log4j v 1.2.17<p>Copyright © 1999-2014 Apache Software Foundation. All Rights Reserved.</p>
+<li> apache-log4j v 1.2.17<p>Copyright &copy; 1999-2014 Apache Software Foundation. All Rights Reserved.</p>
 </li>
 <li>Apache-mime4j, Version 0.7.2</li>
 <li>Apache-wink-common, Version 1.2.incubating</li>
@@ -175,7 +175,7 @@ http://www.apache.org/licenses/</p>
 <li>Apache-wink, Version 1.2.incubating</li>
 <li>bea-stax-api, Version 1.0.1</li>
 <li>cglib, Version 2.2</li>
-<li> cglib v 3<p>Copyright ©2010 GitHub Inc. All rights reserved</p>
+<li> cglib v 3<p>Copyright &copy; 2010 GitHub Inc. All rights reserved</p>
 </li>
 <li>chef, Version 10.8</li>
 <li>crowbar, Version 1.4</li>
@@ -189,7 +189,7 @@ http://www.apache.org/licenses/</p>
 </p></li>
 <li>guice-assistedinject, Version 3</li>
 <li>guice-servlet, Version 3</li>
-<li> handjs v 1.0.5<p>© 2006-2014 Microsoft
+<li> handjs v 1.0.5<p>&copy; 2006-2014 Microsoft
 </p></li>
 <li>hibernate-validator, Version 4.3.0</li>
 <li>jackson, Version 1.9.6</li>
@@ -226,7 +226,7 @@ http://www.apache.org/licenses/</p>
 <li>libhttpclient-java, Version 4.2.3</li>
 <li>libjava-xmlbuilder-java, Version 0.4</li>
 <li>log4j, Version 1.2.16</li>
-<li>log4j 1.2.17<p>Copyright © 1999-2014 Apache Software Foundation
+<li>log4j 1.2.17<p>Copyright &copy; 1999-2014 Apache Software Foundation
 </p></li>
 <li>log4j-over-slf4j, Version 1.7.2</li>
 <li>metrics-annotation, Version 2.2.0</li>
@@ -308,69 +308,69 @@ http://www.apache.org/licenses/</p>
 <li>xmlbeans, Version 2.6.0</li>
 <li> jboss-logging v 3.1.3 <p> Copyright 2010 Red Hat
 </p></li>
-<li>jclouds 1.7.2 <p> Copyright © 2011-2014 The Apache Software Foundation. All Rights Reserved
+<li>jclouds 1.7.2 <p> Copyright &copy; 2011-2014 The Apache Software Foundation. All Rights Reserved
 </p></li>
-<li>jetty 9.0.4<p>Copyright © 2014 The Eclipse Foundation. All Rights Reserved
+<li>jetty 9.0.4<p>Copyright &copy; 2014 The Eclipse Foundation. All Rights Reserved
 </p></li>
-<li>jgestures 0.90.1<p>© 2006-2014 Microsoft
+<li>jgestures 0.90.1<p>&copy; 2006-2014 Microsoft
 </p></li>
-<li>libhttpcore-java 4.0.1<p>Copyright © 2005-2014 The Apache Software Foundation. All Rights Reserved.
+<li>libhttpcore-java 4.0.1<p>Copyright &copy; 2005-2014 The Apache Software Foundation. All Rights Reserved.
 </p></li>
 <li>libsisu-guice-java 3.1.1<p>Copyright: 2006-2011, Google, Inc.
 </p></li>
-<li>libspring-aop-java 4.0.0 <p>© 2014 Pivotal Software, Inc. All Rights Reserved.
+<li>libspring-aop-java 4.0.0 <p>&copy; 2014 Pivotal Software, Inc. All Rights Reserved.
 </p></li>
-<li>libspring-beans-java 4.0.0<p>© 2014 Pivotal Software, Inc. All Rights Reserved.
+<li>libspring-beans-java 4.0.0<p>&copy; 2014 Pivotal Software, Inc. All Rights Reserved.
 </p></li>
-<li>libspring-context-java 4.0.0<p>© 2014 Pivotal Software, Inc. All Rights Reserved.
+<li>libspring-context-java 4.0.0<p>&copy; 2014 Pivotal Software, Inc. All Rights Reserved.
 </p></li>
-<li>libspring-context-support-java 4.0.0<p>© 2014 Pivotal Software, Inc. All Rights Reserved.
+<li>libspring-context-support-java 4.0.0<p>&copy; 2014 Pivotal Software, Inc. All Rights Reserved.
 </p></li>
-<li>libspring-core-java 4.0.0<p>© 2014 Pivotal Software, Inc. All Rights Reserved.
+<li>libspring-core-java 4.0.0<p>&copy; 2014 Pivotal Software, Inc. All Rights Reserved.
 </p></li>
-<li>libspring-expression-java 4.0.0<p>© 2014 Pivotal Software, Inc. All Rights Reserved.
+<li>libspring-expression-java 4.0.0<p>&copy; 2014 Pivotal Software, Inc. All Rights Reserved.
 </p></li>
-<li>libspring-jdbc-java 4.0.0<p>© 2014 Pivotal Software, Inc. All Rights Reserved.
+<li>libspring-jdbc-java 4.0.0<p>&copy; 2014 Pivotal Software, Inc. All Rights Reserved.
 </p></li>
-<li>libspring-orm-java 4.0.0<p>© 2014 Pivotal Software, Inc. All Rights Reserved.
+<li>libspring-orm-java 4.0.0<p>&copy; 2014 Pivotal Software, Inc. All Rights Reserved.
 </p></li>
-<li>libspring-web-java 4.0.0<p>© 2014 Pivotal Software, Inc. All Rights Reserved.
+<li>libspring-web-java 4.0.0<p>&copy; 2014 Pivotal Software, Inc. All Rights Reserved.
 </p></li>
 
-<li>org.apache.jasper.glassfish 2.2.2<p>Copyright © 2013, Oracle. All Rights Reserved
+<li>org.apache.jasper.glassfish 2.2.2<p>Copyright &copy; 2013, Oracle. All Rights Reserved
 </p></li>
-<li>org.apache.taglibs.standard.glassfish 1.2.0<p>Copyright © 2013, Oracle. All Rights Reserved
+<li>org.apache.taglibs.standard.glassfish 1.2.0<p>Copyright &copy; 2013, Oracle. All Rights Reserved
 </p></li>
-<li>plexus-cipher 1.7<p>Copyright © 2002-2011 Codehaus. All Rights Reserved. 
+<li>plexus-cipher 1.7<p>Copyright &copy; 2002-2011 Codehaus. All Rights Reserved. 
 </p<></li>
-<li>plexus-components-pom 1.2<p> © 2001-2009 Codehaus
+<li>plexus-components-pom 1.2<p> &copy; 2001-2009 Codehaus
 </p></li>
 
 <li>plexus-classworlds 2.5.1<p>Copyright 2002 (C) The Codehaus. All Rights Reserved.</p></li>
 
-<li>  plexus-utils 3.0.1.4<p>Copyright © 2001-2012 Codehaus. All Rights Reserved. 
+<li>  plexus-utils 3.0.1.4<p>Copyright &copy; 2001-2012 Codehaus. All Rights Reserved. 
 </p></li>
-<li>spring-tx 4.0.0<p>© 2014 Pivotal Software, Inc. All Rights Reserved.
+<li>spring-tx 4.0.0<p>&copy; 2014 Pivotal Software, Inc. All Rights Reserved.
 </p></li>
-<li>spring-webmvc 4.0.0<p>© 2014 Pivotal Software, Inc. All Rights Reserved.
+<li>spring-webmvc 4.0.0<p>&copy; 2014 Pivotal Software, Inc. All Rights Reserved.
 </p></li>
 <li>web-animation 1<p>Copyright 2013 Google Inc. All Rights Reserved.
 </p></li>
 <li>elasticsearch 1.2.1</li>
 <li>kibana  3.1.0</li>
 <li>logstash 1.4.1</li>
-<li> geronimo-javax.activation v 1.1<p>Copyright © 2003-2013, The Apache Software Foundation</p>
+<li> geronimo-javax.activation v 1.1<p>Copyright &copy; 2003-2013, The Apache Software Foundation</p>
 </li>
 <li> slf4j 1.7.5 <p>Copyright (c) 2004-2013 QOS.ch  All rights reserved.
 </p></li>
-<li> jackson v 2.2.2<p>© 2003-2008 Codehaus 
+<li> jackson v 2.2.2<p>&copy; 2003-2008 Codehaus 
 </p></li>
 </ul>
 <ul>
 <li> javassist v 3.18.0<p>Copyright (C) 1999-2014 by Shigeru Chiba.</p></li>
-<li>httpcomponents-core v 1.0.8<p>Copyright © 2005-2014 The Apache Software Foundation. All Rights Reserved
+<li>httpcomponents-core v 1.0.8<p>Copyright &copy; 2005-2014 The Apache Software Foundation. All Rights Reserved
 </p></li>
-<li>jackson v 1.4.2<p>Copyright ©2009 FasterXML, LLC
+<li>jackson v 1.4.2<p>Copyright &copy;2009 FasterXML, LLC
 </p></li>
 <li>pyvmomi v 5.5.0<p> Copyright (c) 2005-2013 VMware, Inc. All Rights Reserved.</p></li>
 </ul>
@@ -568,7 +568,7 @@ limitations under the License.</p></li>
 
 <p>This notice is provided with respect to the following components which may be included with the product.
 <ul>
-<li>org.apache.jasper.glassfish <p>Copyright © 2013, Oracle. All Rights Reserved
+<li>org.apache.jasper.glassfish <p>Copyright &copy; 2013, Oracle. All Rights Reserved
 </p></li>
 </ul>
 </p>
@@ -690,15 +690,15 @@ C. Any new file that is contributed or otherwise made available under the terms 
 
 <p>The code released under the CDDL shall be governed by the laws of the State of California (excluding conflict-of-law provisions). Any litigation relating to this License shall be subject to the jurisdiction of the Federal Courts of the Northern District of California and the state courts of the State of California, with venue lying in Santa Clara County, California.</p></li>
 </ol><h3 id="eclipse-public-license---v-10">Eclipse Public License - v 1.0</h3>
-Copyright © 2014 The Eclipse Foundation. All Rights Reserved.
+Copyright &copy; 2014 The Eclipse Foundation. All Rights Reserved.
 
 <p>This notice is provided with respect to the following components which may be included with the product.</p>
 
 <ul><li>aether 0.9.0</li>
 <li>jetty 9.0.4</li>
-<li>org.apache.jasper.glassfish 2.2.2<p>Copyright © 2013, Oracle. All Rights Reserved
+<li>org.apache.jasper.glassfish 2.2.2<p>Copyright &copy; 2013, Oracle. All Rights Reserved
 </p></li>
-<li>org.apache.taglibs.standard.glassfish 1.2.0<p>Copyright © 2013, Oracle. All Rights Reserved
+<li>org.apache.taglibs.standard.glassfish 1.2.0<p>Copyright &copy; 2013, Oracle. All Rights Reserved
 </p></li>
 </ul><p>THE ACCOMPANYING PROGRAM IS PROVIDED UNDER THE TERMS OF THIS ECLIPSE PUBLIC 
 LICENSE ("AGREEMENT"). ANY USE, REPRODUCTION OR DISTRIBUTION OF THE PROGRAM 
@@ -910,11 +910,11 @@ any resulting litigation.</p>
 
 <p>This notice is provided with respect to the following components which may be included with the product.
 <ul>
-<li> libbackport-util-concurrent-java v 3.1<p>Copyright © 2004-2007 Distributed Computing Laboratory, Emory University 
+<li> libbackport-util-concurrent-java v 3.1<p>Copyright &copy; 2004-2007 Distributed Computing Laboratory, Emory University 
 </p></li>
-<li>  plexus-utils 3.0.1.4<p>Copyright © 2001-2012 Codehaus. All Rights Reserved. 
+<li>  plexus-utils 3.0.1.4<p>Copyright &copy; 2001-2012 Codehaus. All Rights Reserved. 
 </p></li>
-<li>aopalliance 1 <p>Copyright © 2013, AOP Alliance. All Rights Reserved
+<li>aopalliance 1 <p>Copyright &copy; 2013, AOP Alliance. All Rights Reserved
 </p></li>
 <li>ecdsa-0.11</li>
 <li>pycrypto-2.6.1</li>
@@ -1524,7 +1524,7 @@ with the Classpath Exception</h3>
 <p>This notice is provided with respect to the following components which may be included with the product.
 <ul><li>
 java-1.7.0-openJDK, Version 1.7.0</li>
-<li>jersey v 1.17.1<p>Copyright ©2010-2014 Oracle Corporation. All Rights Reserved.
+<li>jersey v 1.17.1<p>Copyright &copy;2010-2014 Oracle Corporation. All Rights Reserved.
 </p></li>
 
 </ul></p>
@@ -3087,7 +3087,7 @@ This notice is provided with respect to the following components which may be in
 <li> jboss-logging, Version 3.1.0.GA</li>
 <li> jboss-transaction-1.1-api.spec, Version 1.0.0.Final</li>
 <li> nscd, Version 2.15</li>
-<li> jackson v 2.2.2<p>© 2003-2008 Codehaus 
+<li> jackson v 2.2.2<p>&copy; 2003-2008 Codehaus 
 </p></li>
 <li> javassist v 3.18.0<p>Copyright (C) 1999-2014 by Shigeru Chiba.</p></li>
 
@@ -4033,7 +4033,7 @@ entity.</p>
 restricted or conditioned by this License or by law, and Licensor promises not
 to interfere with or be responsible for such uses by You.</p>
 
-<p>This license is Copyright © 2003-2004 Lawrence E. Rosen. All rights reserved.
+<p>This license is Copyright &copy; 2003-2004 Lawrence E. Rosen. All rights reserved.
 Permission is hereby granted to copy and distribute this license without
 modification. This license may not be modified without the express written
 permission of its copyright owner.</p>
@@ -4185,7 +4185,7 @@ All rights reserved.</p></li>
 Copyright (c) 2000-2005 INRIA, France Telecom
 All rights reserved.</p>
 </li>
-<li> plexus-utils 3.0.1.4<p>Copyright © 2001-2012 Codehaus. All Rights Reserved. 
+<li> plexus-utils 3.0.1.4<p>Copyright &copy; 2001-2012 Codehaus. All Rights Reserved. 
 </p></li>
 <li> anyjson-0.3.3</li>
 <li> Babel-1.3</li>
@@ -4282,7 +4282,7 @@ OF THE POSSIBILITY OF SUCH DAMAGE.</p>
 <p>This notice is provided with respect to the following components which may be included with the product.</p>
 
 <ul><li>MarkupSafe-0.19</li>
-</ul><p>Copyright © 2010 by Armin Ronacher and contributors.  See AUTHORS
+</ul><p>Copyright &copy; 2010 by Armin Ronacher and contributors.  See AUTHORS
 for more details.</p>
 
 <p>Some rights reserved.</p>
@@ -4489,7 +4489,7 @@ means an individual or a legal entity exercising rights under this License. For 
 
 <p>This notice is provided with respect to the following components which may be included with the product.</p>
 <ul><li>dnspython-1.11.1</li></ul>
-<ul><li>Copyright © 2001-2003 Nominum, Inc.</li>
+<ul><li>Copyright &copy; 2001-2003 Nominum, Inc.</li>
 </ul><p>Permission to use, copy, modify, and distribute this software and its documentation for any purpose with or without fee is hereby granted, provided that the above copyright notice and this permission notice appear in all copies.</p>
 
 <p>THE SOFTWARE IS PROVIDED ""AS IS"" AND NOMINUM DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL NOMINUM BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
@@ -4842,7 +4842,7 @@ Mark Adler madler@alumni.caltech.edu</p></li>
 <p>This notice is provided with respect to the following components which may be included with the product.</p>
 <ul><li>lxml-3.3.4</li></ul>
 <ul><li>Zope Public License (ZPL) Version 2.0</li>
-</ul><p>This software is Copyright © Zope Corporation ™ and
+</ul><p>This software is Copyright &copy; Zope Corporation ™ and
 Contributors. All rights reserved.</p>
 
 <p>This license has been certified as open source. It has also
@@ -5589,7 +5589,7 @@ CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 == h14.bdf, h14_b.bdf, h16.bdf, h16_b.bdf, h24.bdf, h24_b.bdf
 
-Copyright © 2000-2001 /efont/ The Electronic Font Open Laboratory.
+Copyright &copy; 2000-2001 /efont/ The Electronic Font Open Laboratory.
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
@@ -5619,7 +5619,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 == unifont.bdf
 
-Copyright © 1999-2002 Roman Czyborra, David Starner and others
+Copyright &copy; 1999-2002 Roman Czyborra, David Starner and others
 
 The following is taken from http://czyborra.com/
 
@@ -5796,11 +5796,11 @@ by the user.
 Any use of this source code must include, in the user documentation
 and internal comments to the code, notices to the end user as follows:
 
-Copyright © 1989 Sun Microsystems, Inc. Sun design patents pending
+Copyright &copy; 1989 Sun Microsystems, Inc. Sun design patents pending
 in the U.S. and foreign countries. OPEN LOOK is a trademark of
 AT&amp;T. Used by written permission of the owners.
 
-Copyright © Bigelow &amp; Holmes 1986, 1985. Lucida is a registered
+Copyright &copy; Bigelow &amp; Holmes 1986, 1985. Lucida is a registered
 trademark of Bigelow &amp; Holmes. Permission to use the Lucida trademark
 is hereby granted only in association with the images and fonts
 described in this file.
@@ -6153,7 +6153,7 @@ source BDF-fonts they are produced from follows.
 
 == univga16.bdf ==
 
-Copyright © 2001 by Dmitry Bolkhovityanov.  All Rights Reserved.
+Copyright &copy; 2001 by Dmitry Bolkhovityanov.  All Rights Reserved.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -6185,7 +6185,7 @@ Public domain.
 
 == efont14, efont16, efont24x12 ==
 
-Copyright © 2000-2001 /efont/ The Electronic Font Open Laboratory.
+Copyright &copy; 2000-2001 /efont/ The Electronic Font Open Laboratory.
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
@@ -6216,7 +6216,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 == unifont16 ==
 
-Copyright © 1999-2002 Roman Czyborra, David Starner and others
+Copyright &copy; 1999-2002 Roman Czyborra, David Starner and others
 
 The following is taken from http://czyborra.com/
 
@@ -6467,41 +6467,41 @@ Upstream-Contact: Milan Broz (mbroz@redhat.com)
 Source: http://code.google.com/p/cryptsetup
 
 Files: *
-Copyright: © 2004      Christophe Saout (christophe@saout.de)
-           © 2004-2008 Clemens Fruhwirth (clemens@endorphin.org)
-           © 2008-2010 Red Hat, Inc.
-           © 2008-2013 Milan Broz (gmazyland@gmail.com)
+Copyright: &copy; 2004      Christophe Saout (christophe@saout.de)
+           &copy; 2004-2008 Clemens Fruhwirth (clemens@endorphin.org)
+           &copy; 2008-2010 Red Hat, Inc.
+           &copy; 2008-2013 Milan Broz (gmazyland@gmail.com)
 License: GPL-2+
 
 Files: debian/*
-Copyright: © 2004-2005 Wesley W. Terpstra (terpstra@debian.org)
-           © 2005-2006 Michael Gebetsroither (michael.geb@gmx.at)
-           © 2006-2008 David Härdeman (david@hardeman.nu)
-           © 2005-2013 Jonas Meurer (jonas@freesources.org)
+Copyright: &copy; 2004-2005 Wesley W. Terpstra (terpstra@debian.org)
+           &copy; 2005-2006 Michael Gebetsroither (michael.geb@gmx.at)
+           &copy; 2006-2008 David Härdeman (david@hardeman.nu)
+           &copy; 2005-2013 Jonas Meurer (jonas@freesources.org)
 License: GPL-2+
 
 Files: debian/askpass.c debian/passdev.c
-Copyright: © 2008 David Härdeman (david@hardeman.nu)
+Copyright: &copy; 2008 David Härdeman (david@hardeman.nu)
 License: GPL-2+
 
 Files: debian/README.openct
-Copyright: © 2008 Daniel Baumann (baumann@swiss-it.ch)
+Copyright: &copy; 2008 Daniel Baumann (baumann@swiss-it.ch)
 License: GPL-2+
 
 Files: debian/README.opensc
-Copyright: © 2008 Benjamin Kiessling (benjaminkiessling@bttec.org)
+Copyright: &copy; 2008 Benjamin Kiessling (benjaminkiessling@bttec.org)
 License: GPL-2+
 
 Files: debian/README.remote
-Copyright: © 2009 (debian@x.ray.net)
+Copyright: &copy; 2009 (debian@x.ray.net)
 License: GPL-2+
 
 Files: debian/scripts/cryptdisks_start
-Copyright: © 2007 Jon Dowland (jon@alcopop.org)
+Copyright: &copy; 2007 Jon Dowland (jon@alcopop.org)
 License: GPL-2+
 
 Files: debian/scripts/luksformat
-Copyright: © 2005 Canonical Ltd.
+Copyright: &copy; 2005 Canonical Ltd.
 License: GPL-2+
 
 License: GPL-2+
@@ -7931,7 +7931,7 @@ License:
 On Debian GNU/Linux systems, the complete text of the GNU Lesser General
 Public License can be found in `/usr/share/common-licenses/LGPL-2'.
 
-The Debian packaging is © 2011, Patrick Matthäi (pmatthaei@debian.org)
+The Debian packaging is &copy; 2011, Patrick Matthäi (pmatthaei@debian.org)
 and is licensed under the LGPL-2.
 [geoip-database-20140610/debian/copyright]
 
@@ -9270,7 +9270,7 @@ Upstream Author: Mark S. Lord (mlord@pobox.com)
 Copyright:
 
 /* hdparm.c - Command line interface to get/set hard disk parameters */
-/*          - by Mark Lord © 1994-2008 -- freely distributable */
+/*          - by Mark Lord &copy; 1994-2008 -- freely distributable */
 
 License:
 
@@ -10338,7 +10338,7 @@ OR SOFTWARE.
 
     COPYRIGHT AND PERMISSION NOTICE
 
-    Copyright © 1991-2008 Unicode, Inc. All rights reserved. Distributed under
+    Copyright &copy; 1991-2008 Unicode, Inc. All rights reserved. Distributed under
 the Terms of Use in http://www.unicode.org/copyright.html.
 
     Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -10492,7 +10492,7 @@ http://www.unicode.org/cldr/data/(/a).(/p)
 (p)NOTICE TO USER: Carefully read the following legal agreement. BY DOWNLOADING, INSTALLING, COPYING OR OTHERWISE USING UNICODE INC.'S DATA FILES ("DATA FILES"), AND/OR SOFTWARE ("SOFTWARE"), YOU UNEQUIVOCALLY ACCEPT, AND AGREE TO BE BOUND BY, ALL OF THE TERMS AND CONDITIONS OF THIS AGREEMENT. IF YOU DO NOT AGREE, DO NOT DOWNLOAD, INSTALL, COPY, DISTRIBUTE OR USE THE DATA FILES OR SOFTWARE.(/p)
 (p)COPYRIGHT AND PERMISSION NOTICE(/p)
 
-(p)Copyright © 1991-2013 Unicode, Inc. All rights reserved. Distributed under the Terms of Use in 
+(p)Copyright &copy; 1991-2013 Unicode, Inc. All rights reserved. Distributed under the Terms of Use in 
 (a href="http://www.unicode.org/copyright.html")http://www.unicode.org/copyright.html(/a).(/p)
 
 (p)Permission is hereby granted, free of charge, to any person obtaining a copy of the Unicode data files and 
@@ -11133,7 +11133,7 @@ can be found in `/usr/share/common-licenses/GPL'.
 
   ---------------------------------------------------------------
 
-The Debian packaging is © 2008-2011, Piotr O?arowski (piotr@debian.org) and
+The Debian packaging is &copy; 2008-2011, Piotr O?arowski (piotr@debian.org) and
 is licensed under the same license as Jinja2.
 [jinja2-2.7.3/debian/copyright]
 
@@ -16543,20 +16543,20 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 Format-Specification: http://dep.debian.net/deps/dep5/
 
 Files: debian/*
-Copyright: © 2008, David Paleino (d.paleino@gmail.com)
- © 2006, Matthew Garrett (mjg59@srcf.ucam.org)
+Copyright: &copy; 2008, David Paleino (d.paleino@gmail.com)
+ &copy; 2006, Matthew Garrett (mjg59@srcf.ucam.org)
 License: MIT
 
 Files: *
-Copyright: © 2005-2006, Matthew Garrett (mjg59@srcf.ucam.org)
- © 2005-2006, Jonathan McDowell (noodles@earth.li)
- © 1998, Josh Vanderhoof
+Copyright: &copy; 2005-2006, Matthew Garrett (mjg59@srcf.ucam.org)
+ &copy; 2005-2006, Jonathan McDowell (noodles@earth.li)
+ &copy; 1998, Josh Vanderhoof
 License: MIT
 
 Files: x86emu/*
-Copyright: © 1999, Egbert Eich
- © David Mosberger-Tang
- © 1996-1999, SciTech Software, Inc.
+Copyright: &copy; 1999, Egbert Eich
+ &copy; David Mosberger-Tang
+ &copy; 1996-1999, SciTech Software, Inc.
 License: other
  Permission to use, copy, modify, distribute, and sell this software and
  its documentation for any purpose is hereby granted without fee,
@@ -16920,7 +16920,7 @@ XFree86 Project.
 This package was downloaded from
 http://xorg.freedesktop.org/releases/individual/lib/
 
-Copyright © 2001,2003 Keith Packard
+Copyright &copy; 2001,2003 Keith Packard
 
 Permission to use, copy, modify, distribute, and sell this software and its
 documentation for any purpose is hereby granted without fee, provided that
@@ -16940,7 +16940,7 @@ DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
 TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
 PERFORMANCE OF THIS SOFTWARE.
 
-Copyright © 2000 SuSE, Inc.
+Copyright &copy; 2000 SuSE, Inc.
 
 Permission to use, copy, modify, distribute, and sell this software and its
 documentation for any purpose is hereby granted without fee, provided that
@@ -17309,7 +17309,7 @@ SUCH DAMAGE.
 The files in this directory and elsewhere which refer to this LICENCE
 file are part of JFFS2, the Journalling Flash File System v2.
 
-    Copyright © 2001-2007 Red Hat, Inc. and others
+    Copyright &copy; 2001-2007 Red Hat, Inc. and others
 
 JFFS2 is free software; you can redistribute it and/or modify it under
 the terms of the GNU General Public License as published by the Free
@@ -17753,7 +17753,7 @@ THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 Files: demo/tinderbox/build_lib.py
-Copyright: © 2006-2007 Open Source Applications Foundation
+Copyright: &copy; 2006-2007 Open Source Applications Foundation
 License: Apache-2.0
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
@@ -17768,8 +17768,8 @@ License: Apache-2.0
  limitations under the License.
 
 Files: demo/tinderbox/killableprocess.py
-Copyright: ©2003-2004 by Peter Astrand (astrand@lysator.liu.se)
- © 2006 by the Mozilla Foundation (http://www.mozilla.org/)
+Copyright: &copy;2003-2004 by Peter Astrand (astrand@lysator.liu.se)
+ &copy; 2006 by the Mozilla Foundation (http://www.mozilla.org/)
 License: killableprocess
  By obtaining, using, and/or copying this software and/or its
  associated documentation, you agree that you have read, understood,
@@ -17793,7 +17793,7 @@ License: killableprocess
  WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 Files: demo/tinderbox/winprocess.py
-Copyright: © 2006 the Mozilla Foundation (http://www.mozilla.org/)
+Copyright: &copy; 2006 the Mozilla Foundation (http://www.mozilla.org/)
 License: MIT
  Permission is hereby granted, free of charge, to any person obtaining a
  copy of this software and associated documentation files (the "Software"),
@@ -17814,7 +17814,7 @@ License: MIT
  DEALINGS IN THE SOFTWARE.
 
 Some files under demo/Zope*:
-Copyright: © 2001 Zope Corporation and Contributors. All Rights Reserved.
+Copyright: &copy; 2001 Zope Corporation and Contributors. All Rights Reserved.
 License: ZPL-2.0
 Comment:
  This software is subject to the provisions of the Zope Public License,
@@ -17886,7 +17886,7 @@ License: ZPL-2.0
  accompanying credits file.
 
 Some files in demo/medusa:
-Copyright: © 1996 by Sam Rushing
+Copyright: &copy; 1996 by Sam Rushing
 License: medusa
                          All Rights Reserved
  .
@@ -18039,7 +18039,7 @@ SOFTWARE AND DOCUMENTATION, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
 DAMAGE.
 
 
-The Debian packaging is © 2010, Piotr O?arowski (piotr@debian.org) and
+The Debian packaging is &copy; 2010, Piotr O?arowski (piotr@debian.org) and
 is licensed under the same license.
 [markupsafe-0.23/debian/copyright]
 
@@ -18059,9 +18059,9 @@ The mdadm source was downloaded from
 
 Upstream Author: Neil Brown (neilb@suse.de)
 
-Copyright © 2001-2006 Neil Brown (neilb@suse.de)
-Packaging copyright © 2001-2005 Mario Jou/3en (joussen@debian.org)
-Packaging copyright © 2005-2008 Martin F. Krafft (madduck@debian.org)
+Copyright &copy; 2001-2006 Neil Brown (neilb@suse.de)
+Packaging copyright &copy; 2001-2005 Mario Jou/3en (joussen@debian.org)
+Packaging copyright &copy; 2005-2008 Martin F. Krafft (madduck@debian.org)
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -18387,9 +18387,9 @@ The original source can always be found at:
   http://git.debian.org/?p=collab-maint/module-assistant.git
 
 Files: *
-Copyright: © 2003-2008 Eduard Bloch (blade@debian.org)
-           © 2009 Cyril Brulebois (kibi@debian.org)
-           © 2013-2014 Andreas Beckmann (anbe@debian.org)
+Copyright: &copy; 2003-2008 Eduard Bloch (blade@debian.org)
+           &copy; 2009 Cyril Brulebois (kibi@debian.org)
+           &copy; 2013-2014 Andreas Beckmann (anbe@debian.org)
 License: GPL-2+
  On Debian systems the full text of the GNU General Public License
  version 2 can be found in the /usr/share/common-licenses/GPL-2 file.
@@ -19545,8 +19545,8 @@ It was downloaded from:
 
 Copyright Holders:
 
-    Copyright © 2004-2005 Jocelyn Mayer (l_indien@magic.fr)
-    Copyright © 2004-2005 Fabrice Bellard
+    Copyright &copy; 2004-2005 Jocelyn Mayer (l_indien@magic.fr)
+    Copyright &copy; 2004-2005 Fabrice Bellard
 
 License:
 
@@ -20022,50 +20022,50 @@ Packaging:
 Copyright: 
 
 IcedTea:
-    Portions Copyright © 2007 Lillian Angel (langel@redhat.com)
-    Portions Copyright © 2007 Gary Benson (gbenson@redhat.com)
-    Portions Copyright © 2007 Tania Bento (tbento@redhat.com)
-    Portions Copyright © 2008 Deepak Bhole (dbhole@redhat.com)
-    Portions Copyright © 2007 Thomas Fitzsimmons (fitzsim@redhat.com)
-    Portions Copyright © 2007 Kyle Galloway (kgallowa@redhat.com)
-    Portions Copyright © 2007 Andrew Haley (aph@redhat.com)
-    Portions Copyright © 2008 Ioana Iivan (iivan@redhat.com)
-    Portions Copyright © 2007 Matthias Klose (doko@ubuntu.com)
-    Portions Copyright © 2007 Francis Kung (fkung@redhat.com)
-    Portions Copyright © 2008 Omair Majid (omajid@redhat.com)
-    Portions Copyright © 2007 Casey Marshall (csm@gnu.org)
-    Portions Copyright © 2007 Raif Naffah (admin@naffah-raif.name)
-    Portions Copyright © 2007 Joshua Sumali (jsumali@redhat.com)
-    Portions Copyright © 2007 Christian Thalinger (twisti@complang.tuwien.ac.at)
-    Portions Copyright © 2007 Mark Wielaard (mark@klomp.org)
-    Portions Copyright © 2007, 2008 Red Hat, Inc.
-    Portions Copyright © 2001-2003 Jon A. Maxwell (JAM)
-    Portions Copyright © 1992, 1995-2007 Sun Microsystems, Inc.
-    Portions Copyright © 2007 Matthew Flaschen
-    Portions Copyright © 2000-2002 Marc De Scheemaecker
-    Portions Copyright © 1991-1998 Thomas G. Lane
-    Portions Copyright © 2007 Free Software Foundation, Inc.
+    Portions Copyright &copy; 2007 Lillian Angel (langel@redhat.com)
+    Portions Copyright &copy; 2007 Gary Benson (gbenson@redhat.com)
+    Portions Copyright &copy; 2007 Tania Bento (tbento@redhat.com)
+    Portions Copyright &copy; 2008 Deepak Bhole (dbhole@redhat.com)
+    Portions Copyright &copy; 2007 Thomas Fitzsimmons (fitzsim@redhat.com)
+    Portions Copyright &copy; 2007 Kyle Galloway (kgallowa@redhat.com)
+    Portions Copyright &copy; 2007 Andrew Haley (aph@redhat.com)
+    Portions Copyright &copy; 2008 Ioana Iivan (iivan@redhat.com)
+    Portions Copyright &copy; 2007 Matthias Klose (doko@ubuntu.com)
+    Portions Copyright &copy; 2007 Francis Kung (fkung@redhat.com)
+    Portions Copyright &copy; 2008 Omair Majid (omajid@redhat.com)
+    Portions Copyright &copy; 2007 Casey Marshall (csm@gnu.org)
+    Portions Copyright &copy; 2007 Raif Naffah (admin@naffah-raif.name)
+    Portions Copyright &copy; 2007 Joshua Sumali (jsumali@redhat.com)
+    Portions Copyright &copy; 2007 Christian Thalinger (twisti@complang.tuwien.ac.at)
+    Portions Copyright &copy; 2007 Mark Wielaard (mark@klomp.org)
+    Portions Copyright &copy; 2007, 2008 Red Hat, Inc.
+    Portions Copyright &copy; 2001-2003 Jon A. Maxwell (JAM)
+    Portions Copyright &copy; 1992, 1995-2007 Sun Microsystems, Inc.
+    Portions Copyright &copy; 2007 Matthew Flaschen
+    Portions Copyright &copy; 2000-2002 Marc De Scheemaecker
+    Portions Copyright &copy; 1991-1998 Thomas G. Lane
+    Portions Copyright &copy; 2007 Free Software Foundation, Inc.
     
 OpenJDK:
-    Copyright © 1996-2007 Sun Microsystems, Inc.
-    Copyright © 1996-2007 Oracle and/or its affiliates.
+    Copyright &copy; 1996-2007 Sun Microsystems, Inc.
+    Copyright &copy; 1996-2007 Oracle and/or its affiliates.
     For third party copyrights see below (copies from the third party readme).
-    Portions Copyright © 1993-1999 IBM Corp.
-    Portions Copyright © 1997 Eastman Kodak Company.
-    Portions Copyright © 1999-2005 The Apache Software Foundation.
+    Portions Copyright &copy; 1993-1999 IBM Corp.
+    Portions Copyright &copy; 1997 Eastman Kodak Company.
+    Portions Copyright &copy; 1999-2005 The Apache Software Foundation.
 
 Java Access Bridge:
-    Portions Copyright © 2002-2007 Bill Haneman (bill.haneman@sun.com)
-    Portions Copyright © 2002-2007 Louise Miller
-    Portions Copyright © 2002-2007 Gergõ Érdi (cactus@cactus.rulez.org)
-    Portions Copyright © 2002-2007 Laszlo (Laca) Peter (laszlo.peter@sun.com)
-    Portions Copyright © 2002-2007 Jeff Cai(jeff.cai@sun.com)
-    Portions Copyright © 2002-2007 George Kraft IV (gk4@us.ibm.com)
-    Portions Copyright © 2002-2007 Padraig O'Briain (padraig.obriain@sun.com)
-    Portions Copyright © 2002-2007 Darren Kenny (darren.kenny@sun.com)
+    Portions Copyright &copy; 2002-2007 Bill Haneman (bill.haneman@sun.com)
+    Portions Copyright &copy; 2002-2007 Louise Miller
+    Portions Copyright &copy; 2002-2007 Gergõ Érdi (cactus@cactus.rulez.org)
+    Portions Copyright &copy; 2002-2007 Laszlo (Laca) Peter (laszlo.peter@sun.com)
+    Portions Copyright &copy; 2002-2007 Jeff Cai(jeff.cai@sun.com)
+    Portions Copyright &copy; 2002-2007 George Kraft IV (gk4@us.ibm.com)
+    Portions Copyright &copy; 2002-2007 Padraig O'Briain (padraig.obriain@sun.com)
+    Portions Copyright &copy; 2002-2007 Darren Kenny (darren.kenny@sun.com)
 
 Packaging:
-    Copyright © 2007, 2008, 2009, 2010 Canonical Ltd.
+    Copyright &copy; 2007, 2008, 2009, 2010 Canonical Ltd.
 
 ------------------------------------------------------------------------------
 License:
@@ -20359,11 +20359,11 @@ in the file ChangeLog history information documenting your changes.
 
 %% This notice is provided with respect to W3C (DTD for XML Signatures), which may be included with this software: 
 W3C® SOFTWARE NOTICE AND LICENSE
-Copyright © 1994-2002 World Wide Web Consortium, (Massachusetts Institute of Technology, Institut National de Recherche en Informatique et en Automatique, Keio University). All Rights Reserved. http://www.w3.org/Consortium/Legal/
+Copyright &copy; 1994-2002 World Wide Web Consortium, (Massachusetts Institute of Technology, Institut National de Recherche en Informatique et en Automatique, Keio University). All Rights Reserved. http://www.w3.org/Consortium/Legal/
 This W3C work (including software, documents, or other related items) is being provided by the copyright holders under the following license. By obtaining, using and/or copying this work, you (the licensee) agree that you have read, understood, and will comply with the following terms and conditions:
 Permission to use, copy, modify, and distribute this software and its documentation, with or without modification,  for any purpose and without fee or royalty is hereby granted, provided that you include the following on ALL copies of the software and documentation or portions thereof, including modifications, that you make:
 1.The full text of this NOTICE in a location viewable to users of the redistributed or derivative work. 
-2.Any pre-existing intellectual property disclaimers, notices, or terms and conditions. If none exist, a short notice of the following form (hypertext is preferred, text is permitted) should be used within the body of any redistributed or derivative code: "Copyright © [$date-of-software] World Wide Web Consortium, (Massachusetts Institute of Technology, Institut National de Recherche en Informatique et en Automatique, Keio University). All Rights Reserved. http://www.w3.org/Consortium/Legal/" 
+2.Any pre-existing intellectual property disclaimers, notices, or terms and conditions. If none exist, a short notice of the following form (hypertext is preferred, text is permitted) should be used within the body of any redistributed or derivative code: "Copyright &copy; [$date-of-software] World Wide Web Consortium, (Massachusetts Institute of Technology, Institut National de Recherche en Informatique et en Automatique, Keio University). All Rights Reserved. http://www.w3.org/Consortium/Legal/" 
 3.Notice of any changes or modifications to the W3C files, including the date changes were made. (We recommend you provide URIs to the location from which the code is derived.) 
 THIS SOFTWARE AND DOCUMENTATION IS PROVIDED "AS IS," AND COPYRIGHT HOLDERS MAKE NO REPRESENTATIONS OR WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO, WARRANTIES OF MERCHANTABILITY OR FITNESS FOR ANY PARTICULAR PURPOSE OR THAT THE USE OF THE SOFTWARE OR DOCUMENTATION WILL NOT INFRINGE ANY THIRD PARTY PATENTS, COPYRIGHTS, TRADEMARKS OR OTHER RIGHTS.
 COPYRIGHT HOLDERS WILL NOT BE LIABLE FOR ANY DIRECT, INDIRECT, SPECIAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF ANY USE OF THE SOFTWARE OR DOCUMENTATION.
@@ -20373,7 +20373,7 @@ This formulation of W3C's notice and license became active on August 14 1998 so 
  
 %% This notice is provided with respect to jscheme.jar, which may be included with this software: 
 Software License Agreement
-Copyright © 1998-2002 by Peter Norvig. 
+Copyright &copy; 1998-2002 by Peter Norvig. 
 Permission is granted to anyone to use this software, in source or object code form, on any computer system, and to modify, compile, decompile, run, and redistribute it to anyone else, subject to the following restrictions: 
 1.The author makes no warranty of any kind, either expressed or implied, about the suitability of this software for any purpose.
 2.The author accepts no liability of any kind for damages or other consequences of the use of this software, even if they arise from defects in the software.
@@ -20880,7 +20880,7 @@ Copyright Status
 
 Cryptix General License
 
-Copyright Â© 1995-2003 The Cryptix Foundation Limited. All rights reserved.
+Copyright Â&copy; 1995-2003 The Cryptix Foundation Limited. All rights reserved.
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions aremet:
 
    1.Redistributions of source code must retain the copyright notice, this list of conditions and the following disclaimer.    2.Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the     documentation and/or other materials provided with the distribution. 
@@ -21352,7 +21352,7 @@ of the software and/or codes provided with this agreement (The "Software")
 constitutes your acceptance of these terms
 
        1. Unicode Copyright.
-             1. Copyright © 1991-2005 Unicode, Inc. All rights reserved.
+             1. Copyright &copy; 1991-2005 Unicode, Inc. All rights reserved.
              2. Certain documents and files on this website contain a legend
 indicating that "Modification is permitted." Any person is hereby authorized,
 without fee, to modify such documents and files to create derivative works
@@ -21456,7 +21456,7 @@ OR SOFTWARE.
 
     COPYRIGHT AND PERMISSION NOTICE
 
-    Copyright Ã?Â,Ã,Â© 1991-2004 Unicode, Inc. All rights reserved. Distributed under
+    Copyright Ã?Â,Ã,Â&copy; 1991-2004 Unicode, Inc. All rights reserved. Distributed under
 the Terms of Use in http://www.unicode.org/copyright.html.
 
     Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -21634,8 +21634,8 @@ the copyright holder.
 /* 
  * $XFree86: xc/lib/Xrandr/Xrandr.h,v 1.9 2002/09/29 23:39:44 keithp Exp $ 
  * 
- * Copyright © 2000 Compaq Computer Corporation, Inc. 
- * Copyright © 2002 Hewlett-Packard Company, Inc. 
+ * Copyright &copy; 2000 Compaq Computer Corporation, Inc. 
+ * Copyright &copy; 2002 Hewlett-Packard Company, Inc. 
  * 
  * Permission to use, copy, modify, distribute, and sell this software and its 
  * documentation for any purpose is hereby granted without fee, provided that 
@@ -21698,7 +21698,7 @@ in this Software without prior written authorization from The Open Group.
  * $RCSId: xc/lib/fontconfig/fontconfig/fontconfig.h,v 1.30 2002/09/26 00:17:27 
 keithp Exp $ 
  * 
- * Copyright © 2001 Keith Packard 
+ * Copyright &copy; 2001 Keith Packard 
  * 
  * Permission to use, copy, modify, distribute, and sell this software and its 
  * documentation for any purpose is hereby granted without fee, provided that 
@@ -21790,8 +21790,8 @@ Equipment Corporation.
  src/solaris/native/sun/awt/randr.h 
 
  * 
- * Copyright © 2000, Compaq Computer Corporation, 
- * Copyright © 2002, Hewlett Packard, Inc. 
+ * Copyright &copy; 2000, Compaq Computer Corporation, 
+ * Copyright &copy; 2002, Hewlett Packard, Inc. 
  * 
  * Permission to use, copy, modify, distribute, and sell this software and its 
  * documentation for any purpose is hereby granted without fee, provided that 
@@ -22971,7 +22971,7 @@ paste/script/util/subprocess24.py file:
 
 -----------------------------------------------------------
 
-The Debian packaging is © 2006-2009, Piotr O?arowski (piotr@debian.org) and
+The Debian packaging is &copy; 2006-2009, Piotr O?arowski (piotr@debian.org) and
 is licensed under the MIT License as well.
 [pastescript-1.7.5/debian/copyright]
 
@@ -23477,7 +23477,7 @@ Disclaimer: Modified from Autogenerated by CDBS. The notices for the embedded
  ) Terms and Conditions.
  .
  The above text is subject to this copyright notice:
- © 2010, Oracle and/or its affiliats.
+ &copy; 2010, Oracle and/or its affiliats.
 
 
 Files: ./src/libarchive/*
@@ -24644,7 +24644,7 @@ Disclaimer: Modified from Autogenerated by CDBS. The notices for the embedded
  ) Terms and Conditions.
  .
  The above text is subject to this copyright notice:
- © 2010, Oracle and/or its affiliats.
+ &copy; 2010, Oracle and/or its affiliats.
 
 
 Files: ./src/libarchive/*
@@ -27665,7 +27665,7 @@ Comments:
  ) Terms and Conditions.
  .
  The above text is subject to this copyright notice:
- © 2010, Oracle and/or its affiliats.
+ &copy; 2010, Oracle and/or its affiliats.
 
 Files: cmd-line-utils/libedit/config.h
  dbug/example1.c
@@ -29818,7 +29818,7 @@ File with different copyright holders:
  scripts/vim2pygments.py:
     2006 by Armin Ronacher.
 
-The Debian packaging is © 2006-2009, Piotr O?arowski (piotr@debian.org) and
+The Debian packaging is &copy; 2006-2009, Piotr O?arowski (piotr@debian.org) and
 is licensed under the same licence as Pygments.
 
 [pygments-1.6+dfsg/debian/copyright]
@@ -31091,14 +31091,14 @@ Copyright
 
 Python and this documentation is:
 
-Copyright © 2001-2014 Python Software Foundation. All rights reserved.
+Copyright &copy; 2001-2014 Python Software Foundation. All rights reserved.
 
-Copyright © 2000 BeOpen.com. All rights reserved.
+Copyright &copy; 2000 BeOpen.com. All rights reserved.
 
-Copyright © 1995-2000 Corporation for National Research Initiatives. All rights
+Copyright &copy; 1995-2000 Corporation for National Research Initiatives. All rights
 reserved.
 
-Copyright © 1991-1995 Stichting Mathematisch Centrum. All rights reserved.
+Copyright &copy; 1991-1995 Stichting Mathematisch Centrum. All rights reserved.
 
 -------
 
@@ -31575,7 +31575,7 @@ Upstream-Name: python-colorama
 Source: http://pypi.python.org/pypi/colorama/
 
 Files: *
-Copyright: © 2010 Jonathan Hartley (tartley@tartley.com)
+Copyright: &copy; 2010 Jonathan Hartley (tartley@tartley.com)
 License: BSD-3
  All rights reserved.
  .
@@ -31602,7 +31602,7 @@ License: BSD-3
  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 Files: debian/*
-Copyright: © 2012 Khalid El Fathi (khalid@elfathi.fr)
+Copyright: &copy; 2012 Khalid El Fathi (khalid@elfathi.fr)
 License: GPL-2+
  This package is free software; you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -31672,14 +31672,14 @@ Source: http://pypi.python.org/pypi/coverage
 
 Files: *
 Copyright:
-    © 2004?2013 Ned Batchelder
-    © 2001 Gareth Rees
+    &copy; 2004?2013 Ned Batchelder
+    &copy; 2001 Gareth Rees
 License: BSD-2-clause
 
 Files: debian/*
 Copyright:
-    © 2008?2014 Ben Finney (ben+debian@benfinney.id.au)
-    © 2007?2008 Lars Wirzenius (liw@iki.fi)
+    &copy; 2008?2014 Ben Finney (ben+debian@benfinney.id.au)
+    &copy; 2007?2008 Lars Wirzenius (liw@iki.fi)
 License: BSD-2-clause
 
 License: BSD-2-clause
@@ -32126,7 +32126,7 @@ The exceptions to the `Public Domain Dedication`_ above are:
   docutils/utils/error_reporting.py,
   docutils/test/transforms/test_smartquotes.py:
 
-  Copyright © Günter Milde
+  Copyright &copy; Günter Milde
 
   Released under the terms of the 2-Clause BSD license:
 
@@ -32155,9 +32155,9 @@ The exceptions to the `Public Domain Dedication`_ above are:
 
 * docutils/utils/smartquotes.py
 
-  Copyright © 2011 Günter Milde,
-  based on `SmartyPants`_ © 2003 John Gruber
-  and smartypants.py © 2004, 2007 Chad Miller.
+  Copyright &copy; 2011 Günter Milde,
+  based on `SmartyPants`_ &copy; 2003 John Gruber
+  and smartypants.py &copy; 2004, 2007 Chad Miller.
 
   The original code was released under the terms of the 3-Clause BSD license:
 
@@ -32195,7 +32195,7 @@ The exceptions to the `Public Domain Dedication`_ above are:
 * docutils/utils/math/math2html.py,
   docutils/writers/html4css1/math.css
 
-  Copyright © Alex Fernández
+  Copyright &copy; Alex Fernández
 
   These files are part of eLyXer_, released under the GNU General Public
   License version 3 or later. The author relicensed them for Docutils under the
@@ -32228,7 +32228,7 @@ The exceptions to the `Public Domain Dedication`_ above are:
 
 * extras/roman.py:
 
-  Copyright © 2001 Mark Pilgrim
+  Copyright &copy; 2001 Mark Pilgrim
 
   This program is part of "Dive Into Python", a free Python tutorial for
   experienced programmers.
@@ -32488,7 +32488,7 @@ The exceptions to the `Public Domain Dedication`_ above are:
    
 * tools/editors/emacs/:
 
-  Copyright © 2003-2012 Free Software Foundation, Inc.
+  Copyright &copy; 2003-2012 Free Software Foundation, Inc.
 
   This file is part of GNU Emacs.
 
@@ -32604,16 +32604,16 @@ The exceptions to the `Public Domain Dedication`_ above are:
   docutils/utils/error_reporting.py,
   docutils/test/transforms/test_smartquotes.py:
 
-  Copyright © Günter Milde.
+  Copyright &copy; Günter Milde.
   Released under the terms of the `2-Clause BSD license`_
   (`local copy (licenses/BSD-2-Clause.txt)`__).
 
 * docutils/utils/smartquotes.py
 
-  Copyright © 2011 Günter Milde,
-  based on `SmartyPants`_ © 2003 John Gruber
+  Copyright &copy; 2011 Günter Milde,
+  based on `SmartyPants`_ &copy; 2003 John Gruber
   (released under a 3-Clause BSD license included in the file)
-  and smartypants.py © 2004, 2007 Chad Miller.
+  and smartypants.py &copy; 2004, 2007 Chad Miller.
   Released under the terms of the `2-Clause BSD license`_
   (`local copy (licenses/BSD-2-Clause.txt)`__).
 
@@ -32622,7 +32622,7 @@ The exceptions to the `Public Domain Dedication`_ above are:
 * docutils/utils/math/math2html.py,
   docutils/writers/html4css1/math.css
 
-  Copyright © Alex Fernández
+  Copyright &copy; Alex Fernández
   These files are part of eLyXer_, released under the `GNU
   General Public License`_ version 3 or later. The author relicensed
   them for Docutils under the terms of the `2-Clause BSD license`_
@@ -33458,11 +33458,11 @@ Upstream-Maintainer: Skip Montanaro (skip@pobox.com)
 Upstream-Source: http://pypi.python.org/packages/source/l/lockfile/
 
 Files: *
-Copyright: © 2007 Skip Montanaro.
+Copyright: &copy; 2007 Skip Montanaro.
 License: Expat
 
 Files: debian/*
-Copyright: © 2009 Ben Finney (ben+debian@benfinney.id.au)
+Copyright: &copy; 2009 Ben Finney (ben+debian@benfinney.id.au)
 License: GPL-2+
     This is free software; you may copy, modify, and/or distribute this work
     under the terms of the GNU General Public License, version 2 or later.
@@ -33470,7 +33470,7 @@ License: GPL-2+
     See the file '/usr/share/common-licenses/GPL-2' for details.
 
 Files: debian/patches/*
-Copyright: © 2009 Ben Finney (ben+debian@benfinney.id.au)
+Copyright: &copy; 2009 Ben Finney (ben+debian@benfinney.id.au)
 License: Expat
 
 License: Expat
@@ -33544,8 +33544,8 @@ see `/usr/share/common-licenses/GPL-3'.
 
 [python-openid-2.2.5/debian/copyright]
 Debianization:
-© 2006-2009 Mikhail Gusarov (dottedmag@dottedmag.net)
-© 2008-2009 Sandro Tosi (morph@debian.org)
+&copy; 2006-2009 Mikhail Gusarov (dottedmag@dottedmag.net)
+&copy; 2008-2009 Sandro Tosi (morph@debian.org)
 Debian packaging is under Apache license 2.0.
 
 Original source code is available from
@@ -33607,7 +33607,7 @@ Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Source: http://www.pip-installer.org/
 
 Files: *
-Copyright: Copyright © 2008-2013 The pip developers:
+Copyright: Copyright &copy; 2008-2013 The pip developers:
     Alex Grönholm
     Alex Morega
     Alexandre Conrad
@@ -34503,11 +34503,11 @@ Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Source: http://github.com/xattr/xattr
 
 Files: *
-Copyright: © 2004-2012, Bob Ippolito (bob@redivi.com)
+Copyright: &copy; 2004-2012, Bob Ippolito (bob@redivi.com)
 License: MIT
 
 Files: debian/*
-Copyright: © 2011, Federico Ceratto (federico.ceratto@gmail.com)
+Copyright: &copy; 2011, Federico Ceratto (federico.ceratto@gmail.com)
 License: MIT
 
 License: MIT
@@ -36105,7 +36105,7 @@ It was downloaded from http://code.google.com/p/diskscrub/downloads/list
 
 Upstream Author: Jim Garlick (garlick@llnl.gov)
 
-Copyright: © 2001-2012 The Regents of the University of California
+Copyright: &copy; 2001-2012 The Regents of the University of California
 
 License:
 
@@ -36126,30 +36126,30 @@ License:
 All files listed below have different copyright and/or license:
 
    "src/aes.c," "src/aes.h," and "test/aestest.c"
-   Copyright: © 2001-2004  Christophe Devine
+   Copyright: &copy; 2001-2004  Christophe Devine
    License: Same as scrub.
 
    "test/pad.c" and "test/pat.c"
-   Copyright: © 2001-2002 The Regents of the University of California
+   Copyright: &copy; 2001-2002 The Regents of the University of California
    License: Same as scrub.
 
    "test/tgetsize.c" and "test/tprogess.c"
-   Copyright: © 2005 The Regents of the University of California
+   Copyright: &copy; 2005 The Regents of the University of California
    License: Same as scrub.
 
    "test/trand.c"
-   Copyright: © 2001-2005 The Regents of the University of California
+   Copyright: &copy; 2001-2005 The Regents of the University of California
    License: Same as scrub.
 
    "test/tsig.c" and "test/tsize.c"
-   Copyright: © 2005-2006 The Regents of the University of California
+   Copyright: &copy; 2005-2006 The Regents of the University of California
    License: Same as scrub.
 
 On Debian systems, the full text of the GPL version 2 can be found at
 `/usr/share/common-licenses/GPL-2' and  the full text of the GPL version 3 can
 be found at `/usr/share/common-licenses/GPL-3'
 
-The Debian packaging is © 2009-2013 Chris Taylor (ctaylor@debian.org), and is
+The Debian packaging is &copy; 2009-2013 Chris Taylor (ctaylor@debian.org), and is
 licensed under the GPL version 3.
 [scrub-2.5.2/debian/copyright]
 
@@ -41294,7 +41294,7 @@ Upstream maintainer: Keith Packard
 
 Copyright and license:
 
-Copyright © 2001,2003 Keith Packard
+Copyright &copy; 2001,2003 Keith Packard
 
 Permission to use, copy, modify, distribute, and sell this software and its
 documentation for any purpose is hereby granted without fee, provided that
@@ -41652,7 +41652,7 @@ not, write to the Free Software Foundation, Inc., 51 Franklin St,
 Fifth Floor, Boston, MA 02110-1301, USA.
 
 --------------------------------------------------------------------------------
-© 2010-2011 Cyril Brulebois (kibi@debian.org)
+&copy; 2010-2011 Cyril Brulebois (kibi@debian.org)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -41688,7 +41688,7 @@ X-Source-Downloaded-From:
 X-Upstream-Author: Ron M. Yorston (rmy@tigress.co.uk)
 
 Files: *
-Copyright: © 2004, Ron M. Yorston
+Copyright: &copy; 2004, Ron M. Yorston
 License: GPL-2+
  * This program is free software; you can redistribute it and/or  modify it
  * under the terms of the GNU General Public License  as  published  by the
@@ -41705,7 +41705,7 @@ X-Comment: On Debian systems, the complete text of the GNU General
  Public License can be found in `/usr/share/common-licenses/GPL-2'.
 
 Files: debian/*
-Copyright: © 2008, Thibaut Paumard (paumard@users.sourceforge.net)
+Copyright: &copy; 2008, Thibaut Paumard (paumard@users.sourceforge.net)
 License: GPL-2+
 [zerofree-1.0.3/debian/copyright]
 
