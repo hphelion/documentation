@@ -75,7 +75,7 @@ OF THIS SOFTWARE.</p>
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> 
 To address source code availability requirements under these open source licenses, you can obtain a ZIP containing that source code (the required subset <a href="https://helion.hpwsportal.com" target="_blank"> 
 at the HP Helion OpenStack portal</a>. On the site, sign up, login, then follow the Open Source Licenses link. The ZIP file is approximately 2 GB.</p>
-
+<!--
 <h3 id="apache-public-license---v-10">Apache Public License - v 1.1</h3>
 
 <p>This notice is provided with respect to the following components which may be included with the product.
@@ -139,7 +139,7 @@ information on the Apache Software Foundation, please see
 originally written at the National Center for Supercomputing Applications,
 University of Illinois, Urbana-Champaign.</p>
 
-
+-->
 
 <h3 id="apache-license-version-20">Apache License Version 2.0</h3>
 <p>January 2004
@@ -360,8 +360,7 @@ http://www.apache.org/licenses/</p>
 <li>logstash 1.4.1</li>
 <li> geronimo-javax.activation v 1.1<p>Copyright &copy; 2003-2013, The Apache Software Foundation</p>
 </li>
-<li> slf4j 1.7.5 <p>Copyright (c) 2004-2013 QOS.ch  All rights reserved.
-</p></li>
+
 <li> jackson v 2.2.2<p>&copy; 2003-2008 Codehaus 
 </p></li>
 </ul>
@@ -562,7 +561,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.</p></li>
-
+<!--
 <h3 id="common-development-and-distribution-license-cddl-version-10">COMMON DEVELOPMENT AND DISTRIBUTION LICENSE (CDDL) Version 1.0</h3>
 
 <p>This notice is provided with respect to the following components which may be included with the product.
@@ -687,7 +686,7 @@ C. Any new file that is contributed or otherwise made available under the terms 
 
 <p>NOTICE PURSUANT TO SECTION 9 OF THE COMMON DEVELOPMENT AND DISTRIBUTION LICENSE (CDDL)</p>
 
-<p>The code released under the CDDL shall be governed by the laws of the State of California (excluding conflict-of-law provisions). Any litigation relating to this License shall be subject to the jurisdiction of the Federal Courts of the Northern District of California and the state courts of the State of California, with venue lying in Santa Clara County, California.</p></li>
+<p>The code released under the CDDL shall be governed by the laws of the State of California (excluding conflict-of-law provisions). Any litigation relating to this License shall be subject to the jurisdiction of the Federal Courts of the Northern District of California and the state courts of the State of California, with venue lying in Santa Clara County, California.</p></li> -->
 </ol><h3 id="eclipse-public-license---v-10">Eclipse Public License - v 1.0</h3>
 Copyright &copy; 2014 The Eclipse Foundation. All Rights Reserved.
 
@@ -904,27 +903,26 @@ any resulting litigation.</p>
 
 
 
-<h3 id="public-domain-license">Public Domain License</h3>
+<h3 id="public-domain-license">Public Domain</h3>
 
 <p>This notice is provided with respect to the following components which may be included with the product.
 <ul>
 <li> libbackport-util-concurrent-java v 3.1<p>Copyright &copy; 2004-2007 Distributed Computing Laboratory, Emory University 
 </p></li>
-<li>  plexus-utils 3.0.1.4<p>Copyright &copy; 2001-2012 Codehaus. All Rights Reserved. 
-</p></li>
+
 <li>aopalliance 1 <p>Copyright &copy; 2013, AOP Alliance. All Rights Reserved
 </p></li>
 <li>ecdsa-0.11</li>
 <li>pycrypto-2.6.1</li>
 </ul></p>
 
-<p>The person or persons who have associated work with this document (the "Dedicator" or "Certifier") hereby either (a) certifies that, to the best of his knowledge, the work of authorship identified is in the public domain of the country from which the work is published, or (b) hereby dedicates whatever copyright the dedicators holds in the work of authorship identified below (the "Work") to the public domain. A certifier, morever, dedicates any copyright interest he may have in the associated work, and for these purposes, is described as a "dedicator" below.</p>
-
-<p>A certifier has taken reasonable steps to verify the copyright status of this work. Certifier recognizes that his good faith efforts may not shield him from liability if in fact the work certified is not in the public domain.</p>
-
-<p>Dedicator makes this dedication for the benefit of the public at large and to the detriment of the Dedicator's heirs and successors. Dedicator intends this dedication to be an overt act of relinquishment in perpetuity of all present and future rights under copyright law, whether vested or contingent, in the Work. Dedicator understands that such relinquishment of all rights includes the relinquishment of all rights to enforce (by lawsuit or otherwise) those copyrights in the Work.</p>
-
-<p>Dedicator recognizes that, once placed in the public domain, the Work may be freely reproduced, distributed, transmitted, used, modified, built upon, or otherwise exploited by anyone for any purpose, commercial or non-commercial, and in any way, including by methods that have not yet been invented or conceived.</p>
+<p>Public domain software is software that is not copyrighted. If the source code is in the public domain, that is a special case of noncopylefted free software, which means that some copies or modified versions may not be free at all.</p>
+<p>
+In some cases, an executable program can be in the public domain but the source code is not available. This is not free software, because free software requires accessibility of source code. Meanwhile, most free software is not in the public domain; it is copyrighted, and the copyright holders have legally given permission for everyone to use it in freedom, using a free software license.</p>
+<p>
+Sometimes people use the term "public domain" in a loose fashion to mean "free" or "available gratis." However, "public domain" is a legal term and means, precisely, "not copyrighted". For clarity, we recommend using "public domain" for that meaning only, and using other terms to convey the other meanings.</p>
+<p>
+Under the Berne Convention, which most countries have signed, anything written down is automatically copyrighted. This includes programs. Therefore, if you want a program you have written to be in the public domain, you must take some legal steps to disclaim the copyright on it; otherwise, the program is copyrighted.</p>
 
 
 <h3 id="creative-commons-compatible-license-cc-by-sa-30">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</h3>
@@ -932,7 +930,7 @@ any resulting litigation.</p>
 <p>This notice is provided with respect to the following components which may be included with the product.
 <ul>
 <li> getparameterbyname  </li>
-<li>jquery.inserta 0.1</li>
+<li>jquery.insertat 0.1</li>
 <li>jquery.serializeobject 0.1</li>
 <li>novnc</li>
 </ul></p>
@@ -4168,21 +4166,19 @@ THE SOFTWARE.</p>
 
 
 <p>This notice is provided with respect to the following components which may be included with the product.</p>
-<ul><li>almond v 0.2.9<p>The "New" BSD License: Copyright (c) 2010-2011, The Dojo Foundation
-All rights reserved.</p></li>
+<ul>
 <li>r.js</li>
 
 <li> hamcrest v 1.3<p>Copyright: 2011-2014, Google, Inc.
  All rights reserved.</p>
 </li>
-<li>nodejs-requirejs 2.1.8<p>Copyright (c) 2010-2011, The Dojo Foundation</p>
+
 </li>
 <li> objectweb-asm v 3.1.0<p>ASM: a very small and fast Java bytecode manipulation framework
 Copyright (c) 2000-2005 INRIA, France Telecom
 All rights reserved.</p>
 </li>
-<li> plexus-utils 3.0.1.4<p>Copyright &copy; 2001-2012 Codehaus. All Rights Reserved. 
-</p></li>
+
 <li> anyjson-0.3.3</li>
 <li> Babel-1.3</li>
 <li> Django-1.6.2</li>
@@ -4225,7 +4221,7 @@ All rights reserved.</p>
 <p>This notice is provided with respect to the following components which may be included with the product.
 <ul>
 <li>classworlds v 1.1</li>
-<li>plexus-classworlds 2.5.1</li>
+
 
 </ul>
 </p>
