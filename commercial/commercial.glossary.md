@@ -34,27 +34,13 @@ underlying [REST](#REST) API and JSON/XML formatting of the [request abstraction
 ###ACL###
 :    Access control list; a list of permissions attached to an object.
 
-###Admin Network###
-:    Used for administrative functions such as Crowbar node installation, TFTP booting, DHCP assignments, KVM, system logs, backups, and other monitoring. 
-
-###Admin Node###
-:    The Admin Node is a virtual machine that helps in the creation of your cloud, and the installation of all associated software components. The Admin Node 
-manages all other nodes. It assigns IP addresses to the nodes; PXE boots the nodes; configures the nodes; and provides the nodes the necessary software for their roles.
-
-<!-- JS: Not in Core and probably not in Enterprise:
-###Administration Dashboard### {#Administration-Dashboard}
-:    The HP Helion OpenStack Administration Dashboard enables administrators to manage their cloud infrastructure. Tasks include launching instances, 
-uploading images, creating resource pools, and using designer tools to create topologies. Hosted (preferably) on the Controller node. See also [Operational Dashboard](#Operational-Dashboard), which is 
-used for the initial cloud installation, setup, configuration, and creation, before starting the Administration Dashboard. 
---> 
-		 
 ###Allocation###
 :    Provisioning cloud resources.
 
 ###API### {#API}
 :     An Application Programming Interface (API) is a set of routines, protocols, and tools for building software applications. 
 An API makes it easier to develop a program by providing all the building blocks. A programmer then puts the blocks together. 
-Cloud OS provides a REST API so that programmers can write applications consistent with the operating environment.
+Cloud OS provides a [REST](#REST) API so that programmers can write applications consistent with the 	operating environment.
 
 ###API key
 :     An API-based key used for authentication purposes, such as an OpenStack Keystone token.
@@ -80,10 +66,6 @@ that their identity has been authenticated when making subsequent requests.
 
 ###Baremetal Node###
 :    Refers to the physical machines that are controlled by the Baremetal host.
-
-###Baseboard Management Controller (BMC)###
-:    The Baseboard Management Controller (BMC) is the intelligence in the Intelligent Platform Management Interface (IPMI) architecture. BMC is a specialized microcontroller 
-embedded on the motherboard of a server. The BMC manages the interface between system management software and platform hardware.
 
 ###Block storage###
 :     Information stored in raw form, with no consideration as to the type of information.
@@ -112,7 +94,7 @@ An advantage of cloud computing is that the resources can be provisioned or rele
 management effort or service provider interaction.
 
 ###Cloud Controller###
-:    A node that hosts software which controls your Infrastructure as Service (IaaS) cloud computing platform. Contains those services that are considered single services for a cloud environment, such as Keystone, Glance, Graffiti, Eve, and Focus, and define the boundaries of the cloud environment from an identity standpoint. 
+:    A node that hosts software which controls your Infrastructure as Service (IaaS) cloud computing platform. Contains those services that are considered single services for a cloud environment, such as Networking and Imaging,<!-- not in beta Graffiti, Eve, and Focus, --> and define the boundaries of the cloud environment from an identity standpoint. 
 *See also* [Compute Region Controller](#Compute-Region-Controller), [Network Controller](#Network-Controller), and [Storage Controller](#Storage-Controller). 
 
 ###Cloud OS Distribution Network (CODN)###
@@ -135,16 +117,11 @@ of instances and available resources on the compute nodes. In a single compute r
 ###Deprovisioning###
 :     Deallocating a cloud resource. See [Provisioning](#Provisioning).
 
-###Domain###
-:    A security grouping that provides context for the definition of projects, users, and roles. A domain is constructed by installing and naming a Keystone service. Keystone provides user authentication and tracks projects in a domain.
-
 ## E
 
-###EC2###
-:     Elastic compute cloud; Amazon's cloud computing platform.
-
+<!-- Not in Commercial beta
 ###Eve###
-:     A HP Helion OpenStack composite provisioning service that uses a topology design and profile to create VMs, volumes, and network segments as described in the topology. Eve uses the Graffiti service to determine the resource pool existence, traits, and user identity mapping.
+:     A HP Helion OpenStack composite provisioning service that uses a topology design and profile to create VMs, volumes, and network segments as described in the topology. Eve uses the Graffiti service to determine the resource pool existence, traits, and user identity mapping. -->
 
 ## F
 
@@ -157,9 +134,9 @@ of instances and available resources on the compute nodes. In a single compute r
 ###Floating IP address###
 :     An on-demand, allocatable public IP address on a network. You can allocate a number of floating IP addresses up to the quota limit, and then assign them to server [instances](#Instance).
 
-
+<!-- Not in Commercial beta
 ###Focus###
-:     The  HP Helion OpenStack Topology Document Repository Service, which is used to discover, register, version, and retrieve the document types needed to describe TOSCA-based infrastructure topologies while provisioning a cloud. See [TOSCA](#TOSCA). 
+:     The  HP Helion OpenStack Topology Document Repository Service, which is used to discover, register, version, and retrieve the document types needed to describe TOSCA-based infrastructure topologies while provisioning a cloud. See [TOSCA](#TOSCA). -->
 
 ###FQDN###
 :    Acronym for Fully Qualified Domain Name. 
@@ -169,9 +146,9 @@ of instances and available resources on the compute nodes. In a single compute r
 
 ###Glance###
 :     The OpenStack Image Repository Service, which is used to discover, register, and retrieve Virtual Machine (VM) images.
-
+<!-- Not in Commercial beta
 ###Graffiti###
-:     The HP Helion OpenStack Resource Pool Registry and Capability Tagging Service, providing a dictionary of the "capabilities" of all the resources in a cloud environment; a searchable directory to find cloud resources based on their capabilities; the mechanism for dynamic binding, allowing you to describe requirements rather than concrete bindings; and the base concepts of requirements and capabilities within TOSCA.
+:     The HP Helion OpenStack Resource Pool Registry and Capability Tagging Service, providing a dictionary of the "capabilities" of all the resources in a cloud environment; a searchable directory to find cloud resources based on their capabilities; the mechanism for dynamic binding, allowing you to describe requirements rather than concrete bindings; and the base concepts of requirements and capabilities within TOSCA. -->
 
 ## H
 
@@ -186,21 +163,16 @@ portability, such as cloud bursting for load balancing between clouds.
 :    1) An installable release package of a program, application, or software system.  2) A copy of a virtual server including the operating system information, system state, and application configurations.
 
 ###Instance### {#Instance}
-:    A baremetal instance that runs inside the cloud.
+:    A virtual machine that runs inside the cloud.
 
 ###Intelligent Platform Management Interface (IPMI)###
 :    A standardized computer system interface used by system administrators for out-of-band management of computer systems and monitoring of their operation. It is a way to manage a computer that may be powered off or otherwise unresponsive by using a network connection to the hardware rather than to an operating system or login shell.
 
 ###IPMI Network###
-:    The network that connects the Baremetal host to the Intelligent Platform Management Interface (IPMI) of the Moonshot chassis.
-
-###IPMI/BMC Network###
-:    A defined network that the Intelligent Platform Management Interface (IPMI) tool calls to assign an IP address to the Baseboard Management Controller (BMC). 
+:    The network that connects the Baremetal host to the Intelligent Platform Management Interface (IPMI).
 
 ## J
 
-###Job###
-:     A job is created when the user submits a desired topology to the Eve service API, and requests provisioning based on the topology. Eve creates the job, for which the Eden Service API framework then publishes status updates. Once the provisioning is finished, the job is marked as completed.
 
 ## K
 
@@ -226,17 +198,12 @@ provides transparency for the provider and the consumer of the utilized service.
 
 ## N
 
-###Network Controller### {#Network-Controller}
-:     A node that manages the networks in the cloud. Contains Neutron's server, l3 agent and DHCP services. It is a single service in a cloud and can co-exist with cloud controller services.
-
 ###Neutron### {#Neutron}
 :     The OpenStack Network Connectivity Service, which is used to create and provision virtual networks.
 
 ###Node###
 :     A computing resource in a network. In other publications, sometimes called a machine.
 
-###Nova Flat Network###
-:    The private network used for PXE booting the Moonshot cartridges, and enabling communication between the Moonshot cartridges, baremetal host, and the cloud Network Controller. Flat Networking uses Ethernet adapters configured as bridges to allow the network traffic to transit between the various baremetal nodes. This setup can be done with a single adapter on the baremetal host. This option does not require a switch that does VLAN tagging.
 
 ###Nova###
 :    An OpenStack service to provide a cloud computing fabric controller, the main part of an Infrastructure as a Service (IaaS) system. Individuals and organizations can use Nova to host and manage their own cloud computing systems.
@@ -299,8 +266,6 @@ by a business, academic, or government organization, or some combination.  It ex
 commensurate with demand.  To the consumer, these capabilities available for provisioning often appear to be unlimited and can be 
 appropriated in any quantity at any time.
 
-###Region###
-:    A set of services, preferably across multiple hosts, to offer private cloud resources of compute and networking to self-service users of your cloud. A region provides a defined set of resources, such as topology templates, infrastructure designs, and services governed by a single  HP Helion OpenStack's Keystone identity service.
 
 ###Resource pooling###
 :     Resource pooling means the provider's computing resources are pooled to server multiple consumers using a 
@@ -334,9 +299,6 @@ how they interpret the set of roles a user has and which operations or resources
 ###Server### {#Server}
 :     A compute instance that is created from a [flavor](#Flavor) combined with an [image](#Image).
 
-###Storage Controller### {#Storage-Controller}
-:    A node that enables the block storage service. Contains Cinder services that provide block storage and volume connectivity to launched instances. It is a single service in a cloud and can co-exist with Cloud Controller services. Block Storage is not supported currently.
-
 ###Swift###
 
 :     The OpenStack Object Store service, which is used in cloud environments to store and retrieve large amounts of data in virtual containers.  
@@ -351,10 +313,6 @@ how they interpret the set of roles a user has and which operations or resources
 
 ###Token### {#Token}
 :    An arbitrary bit of text that is used to access resources. Each token has a scope which describes which resources are accessible with it. 
-
-
-###Topology and Orchestration Specification for Cloud Applications (TOSCA)### {#TOSCA}
-:    A framework used to build cloud topologies. For more, see the <a href="http://docs.oasis-open.org/tosca/TOSCA/v1.0/os/TOSCA-v1.0-os.html" target="tosca">TOSCA Specification</a>.
 
 ###TripleO### {#TripleO}
 :    A program aimed at installing, upgrading and operating OpenStack clouds using OpenStack's own cloud facilities as the foundations - building on Nova, Neutron and Heat to automate fleet management at data centre scale (and scaling down to as few as 2 machines).
