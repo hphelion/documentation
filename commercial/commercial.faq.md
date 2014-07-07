@@ -16,7 +16,7 @@ Welcome! You've got questions. We have the answers.
 * [What is HP Helion OpenStack?](#whatHelion)
 * [What does HP Helion OpenStack beta enable me to do?](#distroenable)
 * [What is TripleO?](#TripleO)
-* [What is a Seed Cloud?](#whatisseed)  
+* [What is a Seed?](#whatisseed)  
 * [What is the Undercloud?](#whatisundercloud) 
 * [What is the Overcloud?](#whatisovercloud) 
 * [What is available in the beta version announced on June 30th?](#preview)
@@ -62,9 +62,9 @@ OpenStack on OpenStack, or TripleO, is OpenStack's official project for deployme
 
 A TripleO installation includes a Seed, the Undercloud and the Overcloud.
  
-####What is a Seed Cloud? #### {#whatisseed}  
+####What is a Seed? #### {#whatisseed}  
 
-A Seed Cloud is a bootable image provided as part of HP Helion OpenStack and is deployed in a VM instance. This image contains the minimum services required of OpenStack to function and to be able to provision physical hardware to deploy the Undercloud. The services are Nova, Neutron, Glance, Keystone, Ironic & Heat.
+A Seed VM is a bootable KVM VM image provided as part of HP Helion OpenStack and is deployed in a VM instance. This image contains the minimum services required of OpenStack to function and to be able to provision physical hardware to deploy the Undercloud. The services are Nova, Neutron, Glance, Keystone, Ironic & Heat.
 
 This is the first phase of the HP Helion OpenStack installation.
 
@@ -72,7 +72,7 @@ This is the first phase of the HP Helion OpenStack installation.
 
 The Undercloud server is a basic, single-node, OpenStack installation running on a single physical server used to deploy, test, manage, and update the overcloud servers. There is no HA configuration for the Undercloud. 
 
-It contains a strictly limited sub-set of OpenStack, just enough to interact with the Overcloud. The services running on Undercloud are Nova, Neutron, Glance, Keystone, Ironic, Heat & Ceilometer. This server also contains HP Helion content distribution catalog  service, which provides a mechanism to download and install content and updates for the Overcloud.
+It contains a strictly limited sub-set of OpenStack, just enough to interact with the Overcloud. The services running on Undercloud are Nova, Neutron, Glance, Keystone, Ironic, Heat, Horizon & Ceilometer. This server also contains HP Helion content distribution catalog  service, which provides a mechanism to download and install content and updates for the Overcloud.
 
 The Undercloud also hosts images for various server types which will form the functional cloud environment - the Overcloud. These images are Overcloud Controller, Overcloud Compute, Overcloud Swift & Overcloud Compute Proxy (required for cloud which supports VMWare ESX as a hypervisor).
 
@@ -121,7 +121,7 @@ Yes. It includes an integrated Linux&#174; host OS hardened and tested for this 
 
 ###Does this distribution include the OpenStack Icehouse release? #### {#icehouse}
 
-Yes, and we are one of the first vendors to release a supported, productized distribution based on Icehouse, [HP Helion OpenStack Community](#/helion/community/). 
+Yes, and we are one of the first vendors to release a supported, productized distribution based on Icehouse, [HP Helion OpenStack Community](/helion/community/). 
 
 ####Can HP Helion OpenStack run on non-HP hardware? #### {#nonhphardware}
 
@@ -155,7 +155,7 @@ You have access to:
 ####Where can I find more information? #### {#MoreInfo}
 
 * [HP Helion OpenStack Portal](http://www8.hp.com/us/en/cloud/hphelion-openstack.html)
-* [HP Helion OpenStack Documentation](https://docs.hpcloud.com/helion) 
+* [HP Helion OpenStack Documentation](https://docs.hpcloud.com/helion/openstack/) 
 <!--* [HP Helion OpenStack Support Forum](https://ask.openstack.org/en/questions/scope:all/sort:activity-desc/tags:hphelion) (Tag your questions with 'HPHelion')-->
 
 ####Where can I report issues with HP Helion OpenStack? #### {#reportissues}

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack Glossary"
+title: "HP Helion OpenStack&#174; Glossary"
 permalink: /helion/openstack/glossary/
 product: commercial
 
@@ -19,7 +19,7 @@ PageRefresh();
 
 <p style="font-size: small;"> <a href="/helion/openstack/">&#9664; PREV | <a href="/helion/openstack/">&#9650; UP</a> | NEXT &#9654; </a></p>
 
-# HP Helion OpenStack Glossary
+# HP Helion OpenStack&#174; Glossary
 
 [A](#a) | [B](#b) | [C](#c) | [D](#d) | [E](#e) | [F](#f) | [G](#g) | [H](#h) | [I](#i) | [J](#j) | [K](#k) | [L](#l) | [M](#m) | 
 [N](#n) | [O](#o) | [P](#p) | [Q](#q) | [R](#r) | [S](#s) | [T](#t) | [U](#u) | [V](#v) | [W](#w) | [X](#x) | [Y](#y) | [Z](#z)

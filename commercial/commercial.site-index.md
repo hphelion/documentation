@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack Site Index"
+title: "HP Helion OpenStack&#174; Site Index"
 permalink: /helion/openstack/siteindex/
 product: commercial
 
@@ -19,7 +19,7 @@ PageRefresh();
 
 <p style="font-size: small;"> <a href="/helion/openstack/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | NEXT &#9654; </p>
 
-# HP Helion OpenStack&reg; Site Index
+# HP Helion OpenStack&#174; Site Index
 
 #### [Release Notes](/helion/openstack/release-notes/) 
 
