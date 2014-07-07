@@ -252,6 +252,8 @@ navigation:
     url: /helion/openstack/install-beta/prereqs/
   - text: Installation for KVM Hypervisor
     url: /helion/openstack/install-beta/kvm/		
+  - text: Installation for DNS as a service 
+    url: /helion/openstack/install-beta/dnsaas/
   - text: Installation for ESX Hypervisor
     url: /helion/openstack/install-beta/esx/		
   - text: Related Topics

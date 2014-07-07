@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack: DNSaaS Beta Installation and Configuration"
+title: "HP Helion OpenStack&#174;: DNSaaS Beta Installation and Configuration"
 permalink: /helion/openstack/install-beta/dnsaas/
 product: commercial
 
@@ -19,7 +19,7 @@ PageRefresh();
 
 <p style="font-size: small;"> <a href="/helion/openstack/install-beta/prereqs/">&#9664; PREV</a> | <a href="/helion/openstack/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/services/overview/">NEXT &#9654;</a> </p>
 
-# HP Helion OpenStack: DNSaaS Beta Installation and Configuration
+# HP Helion OpenStack&#174;: DNSaaS Beta Installation and Configuration
 This page explains how to install and configure DNS as a service (DNSaaS) for HP Helion OpenStack beta. It is important to read through this page before starting your installation.  No matter which hypervisor you use, our managed DNS service, based on the Openstack Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.
 
 
