@@ -35,7 +35,7 @@ Thanks for your interest in HP Helion OpenStack beta! This release note contains
 
 **Support for VMWare ESXi hypervisor** - Makes ESX host onboarding and management easier and lets you setup the ESX proxy node during installation of the overcloud. 
 
-**HP Virtual Cloud Networking application** - Allows you to create networks, subnets and ports, as well as security groups and security group rules for your ESX cluster.
+**HP Virtual Cloud Networking (VCN) application** - Allows you to create networks, subnets and ports, as well as security groups and security group rules for your ESX cluster.
 
 ##Recommendations for HP Helion OpenStack beta## {#recommendations}
 
@@ -51,7 +51,10 @@ HP recommends the following best practices for this software version.
 **Installation**
 
 * To ensure a trouble-free installation, we recommend against restarting the system running the installer and seed VM.  If you perform a restart, you may distrupt the baremetal bridge networking configuration and disable the undercloud and overcloud, requiring that you repeat the installation process.
-* For the most reliable installation results, use a dedicated system.  The KVM host running the seed cloud is sometimes reconfigured during the installation process, which may include installing additional software packages and making changes to the network or virtualisation configuration.
+* For the most reliable installation results, use a dedicated system, referred in this documentation as the *installation system* or *KVM host*.  The KVM host running the seed cloud is sometimes reconfigured during the installation process, which may include installing additional software packages and making changes to the network or virtualisation configuration.
+
+**Note:** The KVM host is a system where Kernel-based Virtual Machine is installed.
+
 * For best performance and resilience, if you are using servers with RAID controllers you must pre-configure them to present their storage as a single logical disk.
 * As an aid for future hardware maintenance, we recommend that for your physical servers you track the physical location (slot number and rack) and associated identifiers (such as MAC addresses) for each  server.  The TripleO automation tracks only virtual MAC address and not physical server locations; recording the location information will speed future maintenance efforts on your physical devices.
 
@@ -82,7 +85,7 @@ The following are the known issues for HP Helion OpenStack beta:
 		$ sudo service nova-conductor restart
 		$ sudo service neutron-openvswitch-agent restart
 
-* In some instances, the centralized logging feature does not function after the  product installation. To fix th repeat the following steps on the overcloud controller and all compute nodes
+* In some instances, the centralized logging feature does not function after the  product installation. If this occurs, repeat the following steps on the overcloud controller and all compute nodes
 
         service rsyslog restart
         
