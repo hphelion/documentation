@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack Edition: Support Matrix"
+title: "HP Helion OpenStack&#174; Edition: Support Matrix"
 permalink: /helion/openstack/support-matrix/
 product: commercial
 
@@ -11,8 +11,7 @@ product: commercial
 <p style="font-size: small;"> <a href="/helion/openstack/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/">NEXT &#9654;</a> </p>
 
 
-
-# HP Helion OpenStack Enterprise Edition: Support Matrix
+# HP Helion OpenStack&#174; Edition: Support Matrix
 
 This document provides an overview of the supported hardware and software for the HP Helion OpenStack Enterprise Edition, including information for hardware and software setup.
 

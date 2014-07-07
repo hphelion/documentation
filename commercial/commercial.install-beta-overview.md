@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack Installation and Configuration"
+title: "HP Helion OpenStack&#174; Installation and Configuration"
 permalink: /helion/openstack/install-beta-overview/
 product: commercial
 
@@ -19,7 +19,7 @@ PageRefresh();
 
 <p style="font-size: small;"> <a href="/helion/openstack/support-matrix-beta/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/prereqs/">NEXT &#9654;</a> </p>
 
-# HP Helion OpenStack Beta Installation and Configuration
+# HP Helion OpenStack&#174; Beta Installation and Configuration
 This page provides an overview of the installation process and requirements for  HP Helion OpenStack beta &mdash; a baremetal multi-node deployment consisting of a minimum of 5 baremetal servers, to which you can add **up to 30 Compute nodes**:
 
 
