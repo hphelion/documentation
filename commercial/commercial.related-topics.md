@@ -17,7 +17,7 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> <a href="/helion/openstack/install-beta/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/glossary/"> NEXT &#9654</a> </p>
+<p style="font-size: small;"> <a href="/helion/openstack/install-beta/dnsaas/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/glossary/"> NEXT &#9654</a> </p>
 
 
 # HP Helion OpenStack&reg; Related Documentation
