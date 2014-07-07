@@ -251,11 +251,15 @@ navigation:
   - text: Installation Prerequisites
     url: /helion/openstack/install-beta/prereqs/
   - text: Installation for KVM Hypervisor
-    url: /helion/openstack/install-beta/kvm/		
-  - text: Installation for DNS as a service 
-    url: /helion/openstack/install-beta/dnsaas/
+    url: /helion/openstack/install-beta/kvm/
+  - text: Installation for HP StoreVirtual VSA Support
+    url: /helion/openstack/install-beta/vsa/		
   - text: Installation for ESX Hypervisor
-    url: /helion/openstack/install-beta/esx/		
+    url: /helion/openstack/install-beta/esx/
+  - text: OVSvApp Deployment for HP VCN on ESX hosts 
+    url: /helion/openstack/install-beta/ovsvapp/
+  - text: Installation for DNS Support 
+    url: /helion/openstack/install-beta/dnsaas/		
   - text: Related Topics
     url: /helion/openstack/related-links/	
   - text: Glossary
