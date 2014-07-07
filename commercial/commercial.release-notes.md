@@ -50,8 +50,8 @@ HP recommends the following best practices for this software version.
 
 **Installation**
 
-* To ensure a trouble-free installation, we recommend against restarting the system running the installer and seed VM.  If you perform a restart, you may distrupt the baremetal bridge networking configuration and disable the undercloud and overcloud, requiring that you repeat the installation process.
-* For the most reliable installation results, use a dedicated system, referred in this documentation as the *installation system* or *KVM host*.  The KVM host running the seed cloud is sometimes reconfigured during the installation process, which may include installing additional software packages and making changes to the network or virtualisation configuration.
+* To ensure a trouble-free installation, we recommend against restarting the system running the installer and seed VM.  If you perform a restart, you may disrupt the baremetal bridge networking configuration and disable the undercloud and overcloud, requiring that you repeat the installation process.
+* For the most reliable installation results, use a dedicated system, referred in this documentation as the *installation system* or *KVM host*.  The KVM host running the seed cloud is sometimes reconfigured during the installation process, which may include installing additional software packages and making changes to the network or visualization configuration.
 
 **Note:** The KVM host is a system where Kernel-based Virtual Machine is installed.
 
