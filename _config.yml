@@ -258,7 +258,7 @@ navigation:
     url: /helion/openstack/install-beta/esx/
   - text: OVSvApp Deployment for HP VCN on ESX hosts 
     url: /helion/openstack/install-beta/ovsvapp/
-  - text: Installation for DNS Support 
+  - text: Installation for DNSaaS Support 
     url: /helion/openstack/install-beta/dnsaas/		
   - text: Related Topics
     url: /helion/openstack/related-links/	
