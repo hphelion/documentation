@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To's with the HP Cloud OS  Object Service"
-permalink: /cloudos/services/networking/howto/
+permalink: /cloudos/services/object/howto/
 product: compute
 
 ---

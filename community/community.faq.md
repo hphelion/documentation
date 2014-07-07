@@ -20,10 +20,8 @@ Welcome! You've got questions. We have the answers.
 * [How does HP Helion OpenStack Community compare to other OpenStack distributions on the market?](#howcompare)
 * [Is there a cost associated with this distribution?](#distrocost)
 * [What is TripleO?](#TripleO)
-* [What is available on the preview version announced on May 7th?](#preview)
-* [When and where will HP Helion OpenStack Community be released?](#release)
+* [What is available in the current version](#preview)
 * [Is the release localized for non-English speaking markets?](#localized) 
-* [What is the price for HP Helion OpenStack Community?](#whatprice)
 * [Will the HP Helion OpenStack Community work with hybrid or public cloud projects?](#hybridorpubliccloud)
 * [How many nodes does it support?](#nodes) 
 * [How many virtual machines does it support?](#virtualmachines)  
@@ -59,7 +57,9 @@ It is free to download. An optional support package will be available to purchas
 
 ####What is TripleO? #### {#TripleO}
 
-OpenStack on OpenStack (or TripleO) is OpenStack's official project for deployment of OpenStack systems. It builds on the core resource-provisioning strengths of OpenStack technology, to enable cloud administrators to deploy and maintain baremetal installations of OpenStack using the same APIs that they are familiar with for deploying workloads on an OpenStack cloud. A template based deployment engine (using OpenStack Heat) allows for rigorous testing and reliable, repeatable deployments of known configurations. 
+OpenStack on OpenStack, or TripleO, is OpenStack's official project for deployment of OpenStack systems. It builds on the core resource-provisioning strengths of OpenStack technology. It enables you to administrate your cloud, and deploy and maintain virtual and baremetal installations of OpenStack using the same APIs you are familiar with for deploying workloads on an OpenStack cloud. A template based deployment engine (using OpenStack Heat) allows for rigorous testing and reliable, repeatable deployments of known configurations.
+
+A TripleO installation includes a Seed, the Undercloud and the Overcloud. 
 
 ####What is available in the current version? {#preview}
 
@@ -67,21 +67,15 @@ On May 7<sup>th</sup>, we announced a virtual preview of HP Helion OpenStack Com
 
 On June 12<sup>th</sup>, we announced a preview version of our baremetal installation, allowing the creation of OpenStack systems spanning up to 30 physical servers.
 
-####When and where will HP Helion OpenStack Community be released? #### {#release}
-
-HP Helion OpenStack Community edition will be updated frequently to keep pace with OpenStack developments. We plan to release new versions roughly every six weeks, and to track the community development cycle.
+HP Helion OpenStack Community will be updated frequently to keep pace with OpenStack developments. We plan to release new versions roughly every six weeks, and to track the community development cycle.
 
 ####Is the release localized for non-English speaking markets? #### {#localized}
 
 No. The 2014 release is English only.
 
-####What is the price for HP Helion OpenStack Community? #### {#whatprice}
-
-It is completely free to download and use.
-
 ####Will HP Helion OpenStack Community edition work with hybrid or public cloud projects? #### {#hybridorpubliccloud}
 
-No. Currently, HP Helion OpenStack Community edition is supported by HP for small-scale, private cloud deployments only.
+HP Helion OpenStack Community is API compatible with HP Helion Public Cloud, allowing workloads developed on one to be deployed on the other.  Compatibility with other Public Clouds will depend on which OpenStack features they chose to support.  It is tested and supported by HP for enterprise-grade, small-scale, private cloud deployments. Workloads are upgradeable to [HP Helion OpenStack](/helion/openstack/), with features and capabilities needed for the enterprise, government and service provider markets, to be launched later this calendar year.
 
 ####How many nodes does it support? #### {#nodes}
 
@@ -234,7 +228,7 @@ We are committed to shipping every six weeks and this is our first release based
 
 ####Will the HP Helion OpenStack Community work with hybrid or public cloud projects? #### {#hybridorpubliccloud} 
 
-No. HP Helion OpenStack Community is tested and supported by HP for enterprise-grade, small-scale, private cloud deployments.
+HP Helion OpenStack Community is API compatible with HP Helion Public Cloud, allowing workloads developed on one to be deployed on the other.  Compatibility with other Public Clouds will depend on which OpenStack features they chose to support.  It is tested and supported by HP for enterprise-grade, small-scale, private cloud deployments. Workloads are upgradeable to HP Helion OpenStack, with features and capabilities needed for the enterprise, government and service provider markets, to be launched later this calendar year.
 
 ####How many nodes does the HP Helion OpenStack Community support? #### {#Nodes}
 
@@ -477,7 +471,7 @@ Yes. These products will reference “Powered by HP Helion OpenStack.”
 It is completely free to license and download.
 
 ####Will the HP Helion OpenStack Community Edition work with hybrid or public cloud projects? #### {#hybridorpubliccloud}
-No. HP Helion OpenStack Community is tested and supported by HP for enterprise-grade, small-scale, private cloud deployments.
+HP Helion OpenStack Community is API compatible with HP Helion Public Cloud, allowing workloads developed on one to be deployed on the other.  Compatibility with other Public Clouds will depend on which OpenStack features they chose to support.  It is tested and supported by HP for enterprise-grade, small-scale, private cloud deployments. Workloads are upgradeable to HP Helion OpenStack, with features and capabilities needed for the enterprise, government and service provider markets, to be launched later this calendar year.
 
 ####Does the HP Helion OpenStack Community Edition come with any images? #### {#ComeWithImages} 
 
