@@ -51,10 +51,10 @@ A TripleO installation includes a Seed, the Undercloud and the Overcloud.
 
 ####Configuration {#Config}
 
-* One server to host the Seed Cloud VM
-* One Undercloud server
-* Four Overcloud nodes (One Controller node and three Compute nodes) 
-* Two Swift object servers
+* 1 server to host the Seed Cloud VM
+* 1 undercloud server
+* 4 overcloud nodes (One Controller node and three Compute nodes) 
+* 2 Swift object servers
 
 The maximum supported configuration is 36 servers consisting of 30 Compute servers and five configuration and management servers. 
 
@@ -302,14 +302,16 @@ After installing HP Helion OpenStack, you have the option to install HP Helion O
 
 Supported DNS servers and networks include: 
 
-* DYN
 * PowerDNS
- 
-These features enable you to support private cloud deployment use cases. 
 
 ###Baremetal installation 
 
-This baremetal installation is designed to deliver an open source OpenStack solution at modest scale. It uses OpenStack's Icehouse release and is useful if you want to test out a recent OpenStack distro. You can install HP Helion OpenStack on KVM or ESX hosts. Paid support is available.
+This baremetal installation is designed to deliver an open source OpenStack solution at modest scale. A baremetal multi-node deployment consists of a minimum of 5 baremetal servers, to which you can add **up to 30 Compute nodes**:
+
+* 1 undercloud server
+* 1 overcloud controller
+* 2 overcloud Swift nodes 
+* At least 1 overcloud Compute node 
 
 [Learn more](/helion/openstack/install-beta-overview/) about installing and configuring HP Helion OpenStack beta. 
 

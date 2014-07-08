@@ -23,18 +23,18 @@ PageRefresh();
 This page provides an overview of the installation process and requirements for  HP Helion OpenStack beta &mdash; a baremetal multi-node deployment consisting of a minimum of 5 baremetal servers, to which you can add **up to 30 Compute nodes**:
 
 
-* 1 undercloud
+* 1 undercloud server
 * 1 overcloud controller
 * 2 overcloud Swift nodes 
 * At least 1 overcloud Compute node 
 
 HP Helion OpenStack beta uses three linked installation phases to deploy a complete OpenStack cloud. <a href ="https://wiki.openstack.org/wiki/TripleO">TripleO</a> simulates the deployment of OpenStack by creating and configuring baremetal servers to successfully run a cloud deployment. 
 
-* Seed &mdash; The seed VM is started as a VM from a specific seed VM image. It contains a number of self-contained OpenStack components that are used to deploy the undercloud. The seed deploys the undercloud by using Ironic baremetal driver to deploy a specific undercloud machine image.
+* Seed: The seed VM is started as a VM from a specific seed VM image. It contains a number of self-contained OpenStack components that are used to deploy the undercloud. The seed deploys the undercloud by using Ironic baremetal driver to deploy a specific undercloud machine image.
 
-* Undercloud &mdash; In a typical HP Helion OpenStack beta deployment, the undercloud is a baremetal server. The undercloud is a complete OpenStack installation, which is then used to deploy the overcloud.
+* Undercloud: In a typical HP Helion OpenStack beta deployment, the undercloud is a baremetal server. The undercloud is a complete OpenStack installation, which is then used to deploy the overcloud.
 
-* Overcloud &mdash; The overcloud is the end-user OpenStack cloud. In a typical HP Helion OpenStack beta deployment, the overcloud comprises several baremetal servers.
+* Overcloud: The overcloud is the end-user OpenStack cloud. In a typical HP Helion OpenStack beta deployment, the overcloud comprises several baremetal servers.
 
 
 ## [Installing &amp; configuring your cloud](/helion/openstack/install-beta-overview/)

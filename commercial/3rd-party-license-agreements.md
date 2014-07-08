@@ -5226,7 +5226,7 @@ License: bsdish
    * Redistributions in binary form must reproduce the above copyright notice,
      this list of conditions and the following disclaimer in the documentation
      and/or other materials provided with the distribution.
-   * Neither the name of the the Beautiful Soup Consortium and All Night Kosher
+   * Neither the name of the Beautiful Soup Consortium and All Night Kosher
      Bakery nor the names of its contributors may be used to endorse or promote
      products derived from this software without specific prior written
      permission.
@@ -21336,7 +21336,7 @@ Project.
  Unicode Copyright
 
     For the general privacy policy governing access to this site, see the 
-Unicode Privacy Policy. For trademark usage, see the the Unicode Consortium
+Unicode Privacy Policy. For trademark usage, see the Unicode Consortium
 Trademarks and Logo Policy.
     Notice to End User: Terms of Use
     Carefully read the following legal agreement ("Agreement"). Use or copying
