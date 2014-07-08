@@ -26,7 +26,7 @@ This page provides an overview of the installation process and requirements for 
 * 1 undercloud
 * 1 overcloud controller
 * 2 overcloud Swift nodes 
-* At least 1 overcloud Compute nodes 
+* At least 1 overcloud Compute node 
 
 HP Helion OpenStack beta uses three linked installation phases to deploy a complete OpenStack cloud. <a href ="https://wiki.openstack.org/wiki/TripleO">TripleO</a> simulates the deployment of OpenStack by creating and configuring baremetal servers to successfully run a cloud deployment. 
 
@@ -37,7 +37,7 @@ HP Helion OpenStack beta uses three linked installation phases to deploy a compl
 * Overcloud &mdash; The overcloud is the end-user OpenStack cloud. In a typical HP Helion OpenStack beta deployment, the overcloud comprises several baremetal servers.
 
 
-## [Installing &amp; Configuring Your Cloud](/helion/openstack/install-beta-overview/)
+## [Installing &amp; configuring your cloud](/helion/openstack/install-beta-overview/)
 Before you start your installation, we suggest you review these pages to understand requirements, pre-installation tasks, supported deployment scenarios, and required installations:
 
 * [Support matrix](/helion/openstack/support-matrix-beta/) 
