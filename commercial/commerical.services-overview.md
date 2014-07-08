@@ -116,6 +116,7 @@ For information on how to operate your cloud we suggest you read the [OpenStack 
 
 For more information on installing the command-line interface for interacting with services, see [Install the OpenStack command-line clients](http://docs.openstack.org/user-guide/content/install_clients.html).
 
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 <!-- Not in beta
 Capability Tagging
