@@ -17,7 +17,7 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> <a href="/helion/openstack/install-beta/prereqs/">&#9664; PREV</a> | <a href="/helion/openstack/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/dnsaas/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/helion/openstack/install-beta/esx/">&#9664; PREV</a> | <a href="/helion/openstack/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/dnsaas/">NEXT &#9654;</a> </p>
 
 #Deploying and configuring OVSvApp for HP Virtual Cloud Networking (VCN) on ESX hosts
 

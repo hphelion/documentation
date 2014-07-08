@@ -5,7 +5,7 @@ permalink: /helion/openstack/faq/
 product: commercial
 
 ---
-<p style="font-size: small;"> <a href="/helion/openstack/install-beta/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/technical-overview/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/helion/openstack/install-beta-overview/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/technical-overview/">NEXT &#9654;</a> </p>
 
 #HP Helion OpenStack&#174; FAQ#
 
