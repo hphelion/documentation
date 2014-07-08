@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack: Beta Installation and Configuration"
+title: "HP Helion OpenStack&#174;: Beta Installation and Configuration"
 permalink: /helion/openstack/install-beta/ovsvapp/
 product: commercial
 
@@ -21,8 +21,7 @@ PageRefresh();
 
 #Deploying and configuring OVSvApp for HP Virtual Cloud Networking (VCN) on ESX hosts
 
-HP Virtual Cloud Networking (VCN) is an enhanced networking (Neutron) module of HP Helion
-OpenStack that delivers network virtualization to orchestrate your data center infrastructure.
+HP Virtual Cloud Networking (VCN) is an enhanced networking (Neutron) module of HP Helion OpenStack&#174; that delivers network virtualization to orchestrate your data center infrastructure.
 
 HP VCN enables you to build a robust, multi-tenant networking infrastructure by providing:
 
