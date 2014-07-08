@@ -28,11 +28,11 @@ Welcome! HP Helion OpenStack beta is OpenStack technology coupled with a Linux&#
 * [For further information](furtherinfo)
 -->
 
-## Available Services 
+## Available services 
 
 HP Helion OpenStack offers many services based on the different OpenStack projects to provide the functionality you need. Visit the [HP Helion OpenStack Services Overview page](/helion/openstack/services/overview/) for a complete list of services.
 
-## Starting to Work with HP Helion OpenStack 
+## Starting to work with HP Helion OpenStack 
 
 Use the following links and tools to get to work with HP Helion OpenStack:
 
