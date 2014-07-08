@@ -19,7 +19,6 @@ The following Identity service tasks are usually performed by someone with the *
 
 ### Manage Default Tenant/Project Association
 ### List Tenants/Projects
-
 ## Tasks performed by an Administrator ##
 
 The following Identity service tasks are usually performed by someone with the *administrator* role.
@@ -29,23 +28,13 @@ The following Identity service tasks are usually performed by someone with the *
 ### Manage Users in Domain 
 ### Manage Projects in Domain 
 ### Manage User Groups in Domain
-### Manage Role Definitions (NOT CORE)
 ### Manage role assignments
 ### Manage inherited role assignments
-### Manage Credentials (NOT CORE??)
-### Manage Services (NOT CORE)
-### Manage Endpoints (NOT CORE)
-### Manage Service Policies (NOT CORE)
-### Manage Credentials  (NOT CORE)
-### Manage Endpoint Filtering (NOT CORE)
-### Issue PKI Token (NOT CORE)
-### Issue UUID Token (NOT CORE)
-### EC2 Signature Validation (NOT CORE?)
-### S3 Signature Validation (NOT CORE)
-### Manage OAUTH (NOT CORE)
-### Manage Trust (NOT CORE?)
-### Federation (NOT CORE)
+### Manage Credentials
+### Manage Services 
 ### Reset User Password
+
+
 
 ## For more information ##
 

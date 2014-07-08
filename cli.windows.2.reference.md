@@ -625,7 +625,7 @@ new-server -n "*name*" -i "*image-ref-ID*" -f "*flavor-ref-ID*"
 ###Examples###
 EXAMPLE 1
 
-    new-server -n "TestServer" -i "2111" -f "100" -md "Namevalue1 | value1" , "NameValue2 | value2", "NameValue3 | value3" -sg "securitygroupname","securitygroupname2" -k "KeyName"
+    new-server -n "TestServer" -i "2111" -f "100" -md "Namevalue1 | value1", "NameValue2 | value2", "NameValue3 | value3" -sg "securitygroupname","securitygroupname2" -k "KeyName"
 
 Creates a new server with the name `TestServer`, along with some metadata.
 
@@ -672,7 +672,7 @@ new-subnet -nid *NetworkID* -ipv *IPVersion* -c *CIDRValue* -a *AllocationPools*
 
 EXAMPLE
 
-    # new-subnet -n testSubnet -nid bd1c30f7-71f1-455e-b91e-8d03da7f5224 -ipv 4 -c "10.0.6.0/24" -a "10.0.6.20", "10.0.6.22" , "10.0.6.26", "10.0.6.29" 
+    # new-subnet -n testSubnet -nid bd1c30f7-71f1-455e-b91e-8d03da7f5224 -ipv 4 -c "10.0.6.0/24" -a "10.0.6.20", "10.0.6.22", "10.0.6.26", "10.0.6.29" 
 
 Creates a new Subnet called testSubnet. 
 

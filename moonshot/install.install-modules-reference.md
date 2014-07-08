@@ -785,13 +785,13 @@ will be ignored. </td>
 <tr style="background-color: white; color: black;">
 <td> Grace Period </td> 
 <td> 3600 </td>
-<td>  The timeout <b> (in seconds???) </b> for accessing the image. </td>
-</tr>
+<td>  The timeout <b> (in seconds) </b> for accessing the image. </td>
+</tr><! -- confirm value is in seconds -->
 
 <tr style="background-color: white; color: black;">
 <td> Stall Timeout </td> 
 <td> 86400 </td>
-<td>  The timeout <b> (in seconds???) </b> to wait for a stalled GET request. </td>
+<td>  The timeout <b> (in seconds) </b> to wait for a stalled GET request. </td><! -- confirm value is in seconds -->
 </tr>
 
 <tr>
@@ -801,8 +801,8 @@ will be ignored. </td>
 <tr style="background-color: white; color: black;">
 <td> SQL Idle Timeout </td> 
 <td> 3600 </td>
-<td> PostgreSQL idle time check <b>(in seconds???)</b>. </td>
-</tr>
+<td> PostgreSQL idle time check <b>(in seconds)</b>. </td>
+</tr><! -- confirm value is in seconds -->
 
 <tr style="background-color: white; color: black;">
 <td> PostgreSQL Instance </td> 

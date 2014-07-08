@@ -96,7 +96,7 @@ As shown in the deployment scenario diagram, HP Cloud OS for Moonshot will have 
 
 * <b>Controller Node</b>: 3 NICs - Admin Network, Nova_Flat Network, and Public Network
 
-* <b>Baremetal Host</b>: 3 NICs - Admin Network , Nova_Flat Network, and IPMI Network
+* <b>Baremetal Host</b>: 3 NICs - Admin Network, Nova_Flat Network, and IPMI Network
 
 The NICs per node/host NIC are as follows:
 

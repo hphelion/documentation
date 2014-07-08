@@ -2150,7 +2150,7 @@ Add a load balancer.
 : Nodes to associate with the load balancer. Semicolon separated list of colon separated IP and port pairs
 
 **-v, --ips=IPS**
-: Semicolon separated list of of virtual IPs Ids to associate with the load balancer.
+: Semicolon separated list of virtual IPs Ids to associate with the load balancer.
 
 **-z, --availability-zone=AVAILABILITY_ZONE**
 : Set the availability zone.
@@ -4031,11 +4031,11 @@ Remove metadata from a server.
 Remove metadata from a server in your compute account.  You can speciry the erver name or ID.  You can specify one or more metadata keys on the command line.  Optionally, you can specify an availability zone.
 
 ###Examples
-Remove the the r2 and c3 metadata from the server:
+Remove the r2 and c3 metadata from the server:
 
     hpcloud servers:metadata:remove :my_server r2 c3
 
-Remove the the r2 and c3 metadata from the server:
+Remove the r2 and c3 metadata from the server:
 
     hpcloud servers:metadata:remove b8e90a48 r2 c3
 

@@ -361,11 +361,11 @@ Based on our supported Storage Path styles we can also create directory structur
 
 <!--<img src="media/CreateDirectories.jpg" width="580" height="119" alt="" />-->
 
-This will create a hierarchy of folders with D1 acting as the root, D2 as its immediate descendant , with D3 being the terminal node.
+This will create a hierarchy of folders with D1 acting as the root, D2 as its immediate descendant, with D3 being the terminal node.
 
 ##Folder Operations## {#FolderOperations}
 
-When you consider the sheer quantity of data that could be potentially moved into the cloud you soon realize that operations on individual files are impractical at best. To remedy this we have the ability to copy entire sets of objects from your local machine to the store, within the store , and to your local machine in one operation. Each of these commands can be tailored to affect a specific folders contents, or any descendant folders beneath the target path. To address a folder, remember to include a trailing `\` on the  end of each path to indicate that you are working with a folder and not an individual file.
+When you consider the sheer quantity of data that could be potentially moved into the cloud you soon realize that operations on individual files are impractical at best. To remedy this we have the ability to copy entire sets of objects from your local machine to the store, within the store, and to your local machine in one operation. Each of these commands can be tailored to affect a specific folders contents, or any descendant folders beneath the target path. To address a folder, remember to include a trailing `\` on the  end of each path to indicate that you are working with a folder and not an individual file.
 
 **Example: Local-to-Server Copy**
 
