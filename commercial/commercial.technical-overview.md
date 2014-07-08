@@ -302,6 +302,7 @@ After installing HP Helion OpenStack, you have the option to install HP Helion O
 
 Supported DNS servers and networks include: 
 
+* DYN
 * PowerDNS
 
 ###Baremetal installation 

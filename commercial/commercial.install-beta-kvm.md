@@ -160,7 +160,7 @@ Before you begin your installation, if necessary, configure the proxy informatio
 
         "Wed Apr 23 11:25:10 IST 2014 --- completed setup seed"
 
-2. To build the cloud, start by logging in to the seed VM. Run the the following command from /root:
+2. To build the cloud, start by logging in to the seed VM. Run the following command from /root:
 
         ssh root@192.0.2.1 
 

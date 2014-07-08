@@ -840,7 +840,7 @@ IMPLIED INCLUDING, WITHOUT LIMITATION, ANY WARRANTIES OR CONDITIONS OF TITLE,
 NON-INFRINGEMENT, MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE. Each 
 Recipient is solely responsible for determining the appropriateness of using and
  distributing the Program and assumes all risks associated with its exercise of 
-rights under this Agreement , including but not limited to the risks and costs 
+rights under this Agreement, including but not limited to the risks and costs 
 of program errors, compliance with applicable laws, damage to or loss of data, 
 programs or equipment, and unavailability or interruption of operations.</p>
 
@@ -4314,7 +4314,7 @@ DAMAGE.</p>
 means each individual or legal entity that creates, contributes to the creation of, or owns Covered Software.</p>
 
 <p>1.2. "Contributor Version"
-means the combination of the Contributions of others (if any) used by a Contributor and that particular Contributor?s Contribution.</p>
+means the combination of the Contributions of others (if any) used by a Contributor and that particular Contributor's Contribution.</p>
 
 <p>1.3. "Contribution"
 means Covered Software of a particular Contributor.</p>
