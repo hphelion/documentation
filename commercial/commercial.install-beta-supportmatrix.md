@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack Beta Support Matrix"
+title: "HP Helion OpenStack&#174; Beta Support Matrix"
 permalink: /helion/openstack/support-matrix-beta/
 product: commercial
 
@@ -18,10 +18,10 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> <a href="/helion/openstack/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/install-beta-overview/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/helion/openstack/services/overview/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/install-beta-overview/">NEXT &#9654;</a> </p>
 
 
-# HP Helion OpenStack Beta Support Matrix
+# HP Helion OpenStack&#174; Beta Support Matrix
 
 This page provides an overview of the hardware and software that is supported for HP Helion OpenStack, and includes setup and configuration information. For the performance and stability of the HP Helion OpenStack environment, it is very important to meet the requirements and conform to the minimum recommendations.
 
