@@ -40,7 +40,7 @@ Use the following links and tools to get to work with HP Helion OpenStack:
 * [FAQ](/helion/openstack/faq/)
 * [Technical overview](/helion/openstack/technical-overview/)
 * [Services overview](/helion/openstack/services/overview/)
-* [Support matrix](/helion/openstack/support-matrix/)
+* [Support matrix](/helion/openstack/support-matrix-beta/)
 * [Documentation site index](/helion/openstack/siteindex/)
 * [Glossary](/helion/openstack/glossary/)
 
