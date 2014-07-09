@@ -34,6 +34,22 @@ underlying [REST](#REST) API and JSON/XML formatting of the [request abstraction
 ###ACL###
 :    Access control list; a list of permissions attached to an object.
 
+ 
+###Admin Network###
+:    Used for administrative functions such as Crowbar node installation, TFTP booting, DHCP assignments, KVM, system logs, backups, and other monitoring. 
+
+###Admin Node###
+:    The Admin Node is a virtual machine that helps in the creation of your cloud, and the installation of all associated software components. The Admin Node 
+manages all other nodes. It assigns IP addresses to the nodes; PXE boots the nodes; configures the nodes; and provides the nodes the necessary software for their roles.
+
+<!-- JS: Not in Core and probably not in Enterprise edition:
+###Administration Dashboard### {#Administration-Dashboard}
+:    The HP Helion OpenStack Administration Dashboard enables administrators to manage their cloud infrastructure. Tasks include launching instances, 
+uploading images, creating resource pools, and using designer tools to create topologies. Hosted (preferably) on the Controller node. See also [Operational Dashboard](#Operational-Dashboard), which is 
+used for the initial cloud installation, setup, configuration, and creation, before starting the Administration Dashboard. 
+--> 
+		 
+ 
 ###Allocation###
 :    Provisioning cloud resources.
 
