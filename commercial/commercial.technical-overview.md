@@ -136,7 +136,7 @@ The Seed host is expected to use eth0 to connect to the cluster network (and hen
 
 The physical cluster network can be shared by a number of logical networks, each with its own tagged VLAN and IP subnet. We recommend using at least one such network as the external network, with floating IPs coming from its subnet range. 
 
-[Learn more](/helion/openstack/support-matrix/#physical-network-architecture) about HP Helion OpenStack physical network architecture. 
+[Learn more](/helion/openstack/support-matrix-beta/#physical-network-architecture) about HP Helion OpenStack physical network architecture. 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
