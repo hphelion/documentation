@@ -69,7 +69,7 @@ For more information on installing the CLI, see [Install the OpenStack command-l
 
 ## How To's with the HP Helion DNSaaS ## {#howto}
 
-The HP DNSaaS provides a way to display, create, modify, and delete DNS records. This service offers users the ability to manage domains and have DNS servers to serve DNS queries worldwide using geographically distributed DNS servers.
+The HP DNSaaS provides a way to display, create, modify, and delete DNS records. 
 
 The following lists of tasks can be performed by a user or administrator through the [API](http://docs.hpcloud.com/api/dns), or [CLI](http://python-designateclient.readthedocs.org/en/latest/shell.html).
 
