@@ -28,10 +28,10 @@ HP Helion OpenStack includes a number of additional services for working with yo
 
 In addition to the APIs, you can interact with the most services through a graphic user interface (dashboards) and command line interfaces (CLI).
 
-**Note:** When assigning users to a project, it is recommended that you do not add service user accounts to any project. The HP Helion OpenStack installation process creates a user account for each installed service. 
+**Note:** When assigning users to a project, it is recommended that you do not add service user accounts to any project. The HP Helion OpenStack installation process creates a service user account for each installed service. 
 
 These accounts are utilized by the services to validate end user Tokens and, as such, require elevated privileges. 
-Assigning these accounts to a project could allow project users to access services to which they should not have permission.
+Assigning these accounts to a project could allow project users to access services to which they should not have permission. 
 
 The service user accounts include, but are not limited to, the following:
 
@@ -98,7 +98,7 @@ See [Overview of the Loom Service](/helion/openstack/services/loom/overview/).
 -->
 ## Other Services ##
 
-**DNSaaS**. The HP Helion OpenStack DNSaaS (Domain Name System as a Service) provides a way to display, create, modify, and delete DNS records. This service offers users the ability to manage domains and have DNS servers to serve DNS queries worldwide using geographically distributed DNS servers.
+**DNSaaS**. The HP Helion OpenStack DNSaaS (Domain Name System as a Service) provides a way to display, create, modify, and delete DNS records to the assigned DNS server network. 
 
 See [Overview of the DNS as a Service](/helion/openstack/services/dns/overview/).
 

@@ -23,7 +23,7 @@ PageRefresh();
 
 Based on OpenStack&reg; Designate, the HP Helion OpenStack DNS as a service project (DNSaaS) provides a Domain Name System (DNS) service for use by HP Helion OpenStack users.
 
-The DNS service offers users the ability to manage their domains and have DNS servers to serve DNS queries worldwide using geographically distributed DNS servers. DNSaaS includes a set of RESTful APIs for the display, creation, modification and deletion of DNS records.
+DNSaaS includes a set of RESTful APIs for the display, creation, modification and deletion of DNS records.
 
 DNSaaS for OpenStack includes:
 
@@ -32,7 +32,7 @@ DNSaaS for OpenStack includes:
 - Multi-tenancy
 - Integration with Keystone for authentication
 - A framework in place to integrate with Nova and Quantum notifications (for auto-generated records)
-- Support for PowerDNS and Bind9 out of the box
+- Support for PowerDNS in the current beta
 
 For example, if a user wants to to access `mytestdomain.com` in their browser, DNS provides the mechanism for the browser to know that the server (for example, `1.2.3.4`).
 
@@ -69,7 +69,7 @@ For more information on installing the CLI, see [Install the OpenStack command-l
 
 ## How To's with the HP Helion DNSaaS ## {#howto}
 
-The HP DNSaaS provides a way to display, create, modify, and delete DNS records. This service offers users the ability to manage domains and have DNS servers to serve DNS queries worldwide using geographically distributed DNS servers.
+The HP DNSaaS provides a way to display, create, modify, and delete DNS records. 
 
 The following lists of tasks can be performed by a user or administrator through the [API](http://docs.hpcloud.com/api/dns), or [CLI](http://python-designateclient.readthedocs.org/en/latest/shell.html).
 
