@@ -31,7 +31,7 @@ In addition to the APIs, you can interact with the most services through a graph
 **Note:** When assigning users to a project, it is recommended that you do not add service user accounts to any project. The HP Helion OpenStack installation process creates a service user account for each installed service. 
 
 These accounts are utilized by the services to validate end user Tokens and, as such, require elevated privileges. 
-Assigning these accounts to a project could allow project users to access services to which they should not have permission.
+Assigning these accounts to a project could allow project users to access services to which they should not have permission. 
 
 The service user accounts include, but are not limited to, the following:
 
