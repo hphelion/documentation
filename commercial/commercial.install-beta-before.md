@@ -64,7 +64,7 @@ After you install the `libvirt` packages, you must reboot or restart `libvirt`:
 
 During the installation process after the seed VM is installed, the installer script looks for information about the baremetal systems. Specifically, it looks for this information in a file called `baremetal.csv`. You must create this file before you begin the installation process, and then upload to the seed VM at the appropriate installation step. 
 
-The `baremetal.csv` file must contain one entry for each of the seven baremetal systems; thus, the file must contain a minimum of six lines and maximum of 15 lines, and each line must contain the following information:
+The `baremetal.csv` file must contain one entry for each of the seven baremetal systems; thus, the file must contain a minimum of 7 lines and maximum of 15 lines, and each line must contain the following information:
 
     `<mac_address>,<ilouser>,<ilopassword>,<iloipaddress>,<#cpus>,<memory_MB>,<diskspace_GB>`
 
