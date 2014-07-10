@@ -133,13 +133,13 @@ Before you begin your installation, if necessary, configure the proxy informatio
          mkdir /root/work
          cd /root/work
 
-3.  Extract the kit to the `work` directory:
+3. Extract the kit to the `work` directory:
 
          tar zxvf /root/<baremetal kit name>.tgz
 
     This creates and populates a `tripleo/` directory within root's home directory.
 
-4. If the external device name on the host system (the one through which the host, and indirectly the seed, accesses the IPMI network) is **NOT** named `eth0`, then determine the device name:
+4. The BRIDGE_INTERFACE must be set to the name of the device connected to the private network that connects all baremetal nodes. This private network is also where these nodes PXE boot. The installation script assumes this device name is `eth0`. If your device is NOT named `eth0`, then determine its name and set the environment variable as shown below:
 
         $ export BRIDGE_INTERFACE=<devicename>
 
