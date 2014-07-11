@@ -22,12 +22,12 @@ Use the following links to get started with HP Helion Development Platform:
 * [Application Lifecycle Service documentation](/als/v1/)
 * [Release notes](/helion/devplatform/community/release-notes/)
 * [Related topics](/helion/devplatform/community/related-topics/)
-* [Open source license and software license agreements](/dev.hpcloud.com/helion/License/)
-* [End User License Agreement (EULA)](/dev.hpcloud.com/helion/EULA/)
+* [Open source license and software license agreements](/helion/License/)
+* [End User License Agreement (EULA)](/helion/EULA/)
 * [Documentation site index](/helion/devplatform/community/siteindex/)
 
 
-If you have ideas, questions, want to chat with other developers, visit our [Developer Portal](dev.hpcloud.com) where you'll find a variety of resources for working with HP Helion.
+If you have ideas, questions, want to chat with other developers, visit our [Developer Portal](https://dev.hpcloud.com/) where you'll find a variety of resources for working with HP Helion.
 
 Also, feel free to [post something over on our forums](https://connect.hpcloud.com/). We'd love to help.
 
