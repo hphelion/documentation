@@ -101,7 +101,23 @@ To ensure a successful installation, you must also satisfy these network configu
 
 * The network interface intended as the bridge interface should be configured and working before running the installer. The installer creates a network bridge on the system running the installer, attaching the bridge interface to the network bridge. The installer uses the IP address of the bridge interface for the network bridge.
  
+### Network defaults {#NetworkDefault}
 
+The installation process includes a number of default configurations. You can change many of these defaults during the installation, using the steps detailed in the appropriate sections.
+
+Note the following default settings:
+
+- The default network configuration uses a single subnet 192.0.2.0/24 for all networking. 
+- The Seed VM is assigned an IP address of 192.0.2.1, in addition to the IP address assigned by the [libvirt package](#packages). 
+- The external interface of HOST of the seed VM is added to a software bridge, brbm, on the HOST and the IP address of the external interface is transferred to the bridge. This allows external traffic on 192.0.2.0/24 to be routed to the seed VM.
+- The SEED VM is the GATEWAY for all traffic outside the baremetal network.
+- IP addresses are assigned by default as follows:
+
+	- 192.0.2.2-192.0.2.20 â€“ used by seed cloud to administer undercloud nodes
+	- 192.0.2.21-192.0.2.124 â€“ used by undercloud to administer overcloud nodes
+	- 192.0.2.129-1920.0.2.254 â€“ used as a pool of addresses for floating IPS for virtual machines in the overcloud.
+
+- The IP address range for the private IPs assigned to new virtual instances is 10.0.0.0/8. 
 
 ##Before you begin
 Before you begin the installation process, ensure you have read the following and completed any required tasks:
@@ -213,6 +229,26 @@ The HP Helion OpenStack Community baremetal installation is provided as a compre
     `$ export BRIDGE_INTERFACE=em1`  
     `$ export BRIDGE_INTERFACE=eth5`
 
+### Changing the Default Network Interface ### {#NetworkInt}
+
+By [default](#NetworkDefault), the bridge interface, the Seed VM IP address, and the gateway host are configured during the installation process. To change any or all of those configurations, complete the following steps:
+
+OPTIONAL: Modify the default bridge interface on the HOST, for example: 
+
+        $ export BRIDGE_INTERFACE=eth3
+
+OPTIONAL: Modify the IP address of the Seed VM, for example:
+
+        $export BM_NETWORK_SEED_IP=192.168.10.1
+        $export BM_NETWORK_CIDR=192.168.0.0/16
+
+OPTIONAL: Modify which host to use as the gateway, for example:   
+
+        $ export BM_NETWORK_GATEWAY=192.168.10.254
+
+**Note:** If you change the gateway host, you must also execute this command during `hp_ced_installer` as detailed in the next section.
+
+
 ### Starting the seed and building your cloud ### {#startseed}
 1. Start the seed using the following command:
 
@@ -269,8 +305,7 @@ The HP Helion OpenStack Community baremetal installation is provided as a compre
             $ export FLOATING_END=192.0.2.254
             $ export FLOATING_CIDR=192.0.2.0/24
 
-    * OPTIONAL: You can optionally configure a second network for API traffic and for the floating
-IP pool by setting OVERCLOUD_NeutronPublicInterface to a physically configured VLAN. For example:
+    * OPTIONAL: You can optionally configure a second network for API traffic and for the floating IP pool by setting OVERCLOUD_NeutronPublicInterface to a physically configured VLAN. For example:
 
             $ export OVERCLOUD_NeutronPublicInterface=vlan101
             $ export NeutronPublicInterfaceIP=192.0.8.2/21
@@ -290,10 +325,34 @@ IP pool by setting OVERCLOUD_NeutronPublicInterface to a physically configured V
 
         To set this variable:
 
-        `$ export OVERCLOUD_CINDER_LVMLOOPDEVSIZE=50000`
+        $ export OVERCLOUD_CINDER_LVMLOOPDEVSIZE=50000
 
+8. By [default](#NetworkDefault), the bridge interface, the Seed VM IP address, and the gateway host are configured during the installation process. To change any or all of those configurations, complete the following steps:
+ 
 
-7. From /root, install and configure the undercloud and overcloud by running the following command. 
+    * OPTIONAL: Change the IP address range to administer undercloud nodes by entering the starting and ending IP addresses for the range, for example:
+  
+        $ export BM_NETWORK_SEED_RANGE_START=192.168.10.2
+        $ export BM_NETWORK_SEED_RANGE_END=192.168.10.20
+
+	This IP address range must be on the same subnet as the Seeed VM, as configured in [Changing the Default Network Interface](#NetworkInt).
+
+    * OPTIONAL: Change the IP address range to administer overcloud nodes from the undercloud by entering the starting and ending IP addresses for the range, for example:
+  
+        $ export BM_NETWORK_UNDERCLOUD_RANGE_START=192.168.10.2
+        $ export BM_NETWORK_UNDERCLOUD_RANGE_END=192.168.10.20
+
+	This IP address range must be on the same subnet as the Seeed VM, as configured in [Changing the Default Network Interface](#NetworkInt).
+
+    * OPTIONAL: If you modified the gateway host, execute:
+
+        $ export BM_NETWORK_GATEWAY=192.168.10.254
+
+    * OPTIONAL: Modify the IP address range for the private network assigned by default to each virtual instance in the overcloud, for example:
+
+        $ export OVERCLOUD_FIXED_RANGE_CIDR=10.20.240.0/20
+
+9. From /root, install and configure the undercloud and overcloud by running the following command. 
 
     **Important:** You must have completed any manual configuration steps listed under [Hardware requirements](#hardware-requirements) before starting the installation.
 
