@@ -217,6 +217,7 @@ You must ensure that all uploaded images meet the following requirements:
     * not have a MAC address tied to its primary network interface; an instance booted in the HP Helion Public Cloud gets a random MAC address assigned by the HP Helion Public Cloud infrastructure.
     * be self-contained; it should not be a multi-part image, e.g., one that references a separate ramdisk/kernel.
     * be in the `qcow2` format
+    * use qemu compatibility 0.10
 * An image should:
     * support the x86_64 architecture; the HP Helion Public Cloud supports the i686 architecture, but it is not as efficient.
 
@@ -638,5 +639,3 @@ If you need further assistance, you can contact support in any of these ways:
 * [Open a support case](https://account.hpcloud.com/cases)
 * [Email support@hpcloud.com](mailto:support@hpcloud.com)
 * Call at 1-855-61CLOUD (1-855-612-5683) in the U.S. or +1-678-745-9010 internationally.
-
-
