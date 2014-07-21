@@ -89,7 +89,7 @@ To install a HP Helion OpenStack Community baremetal multi-node configuration, y
       * Ubuntu 13.10
       * Ubuntu 14.04
 
-    **Important:** This system might be reconfigured during the installation process so a dedicated system is recommended. Reconfiguration might include installing additional software packages, and changes to the network or virtualisation configuration.
+    **Important:** This system might be reconfigured during the installation process so a dedicated system is recommended. Reconfiguration might include installing additional software packages, and changes to the network or visualization configuration.
 
 ### Network configuration
 
@@ -141,6 +141,7 @@ If user root does not have a public key, you can create one using the `ssh-keyge
 If they are not already installed, the following required Debian/Ubuntu packages are added to the system on which the installer is running:
 
 * qemu
+* qemu-kvm
 * openvswitch
 * libvirt
 * python-libvirt
