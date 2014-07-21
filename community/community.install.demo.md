@@ -62,8 +62,8 @@ It is important to read through this page before starting your installation. Bef
 ## Hardware and system requirements {#virtual}
 TripleO creates several large VMs as part of this virtual deployment process, so you must use a system that meets or exceeds the following hardware requirements:
 
-* At least 48 GB of RAM
-* At least 200 GB of available disk space
+* At least 48GB of RAM
+* At least 200GB of available disk space
 * Virtualization support **enabled** in the BIOS
 * One of the following operating systems installed:
 
@@ -113,6 +113,7 @@ If you do not have a public key, you can create one as follows:
 Additionally, to enable full VM functionality, install the required `qemu-kvm` package using the following command:
     `sudo apt-get install -y qemu-kvm`
 
+**Note:** On Ubuntu 14.04, you must also install qemu-kvm before starting the seed.
 
 ## Installing HP Helion OpenStack Community ## {#install}
 
@@ -126,10 +127,19 @@ You can register and download the package from the following URL:
 
 **Note:** This install file is around 4GB and does not fit on a memory stick formatted as FAT32. If you are planning to store the installation files on removable media, use something like NTFS.
 
-To begin the installation, log in to your system as root and unpack the tar file into root's home directory:
+To begin the installation, log in to your system as root. 
 
-    $ sudo su - 
-     # tar zxvf <pathname-of-.tar.gz-file>
+	sudo su -
+
+Download the demo tarball (demo_2014nnnn_n.tar.gz)
+
+	wget http://tripz400.emea.hpqcorp.net/ce_demo/demo_2014nnnn_n.tar.gz 
+
+Create the work directory and extract the demo tarball.
+
+	mkdir work
+    cd work
+    tar zxvf /root/demo_2014nnnn_n.tar.gz
 
 This creates and populates a `tripleo/` directory within root's home directory.
 
@@ -145,7 +155,7 @@ If the seed startup is successful, a message similar to the following is display
 
     Wed Apr 23 11:25:10 UTC 2014 --- completed setup seed
 
-**Note:** The seed VM continues its self-initialization after the startup script has terminated.
+**Note:** The seed VM continues its self-initialization after the startup script has terminated. 
 
 ### Starting the undercloud, overcloud, and test guest VM ### {#startclouds}
 
@@ -182,7 +192,13 @@ You can then break out of the tail command using CTRL-C.-->
 
 ### Connecting to test guest VM ### {#connectvm}
 
-From within the seed VM, you should be able to connect to the test guest VM created.
+If the installation is successful, you will see a message similar to:
+
+	"HP - completed - Tue Apr 22 16:20:20 UTC 2014"
+
+From within the seed VM, you should be able to connect to the test guest or demo VM created.
+
+**Note** It may take a few minutes for the demo vm to become sshable after finishing installation. The install will run until the demo completes loading the demo VM.
 
 1. Set up your environment to access the overcloud, and list the running instances:
 
@@ -201,7 +217,7 @@ From within the seed VM, you should be able to connect to the test guest VM crea
 
         root@hLinux:~# ssh root@<ip of demo vm>
 
-### Connecting to Horizon console ### {#connectconsole}
+### Connecting to the Horizon console ### {#connectconsole}
 
 From the physical system you are running the install on, you should be able to connect to the overcloud Horizon console.
 
@@ -244,7 +260,16 @@ For remote system installations where you cannot open a browser on the remote sy
 ## Issues and troubleshooting {#troubleshooting}
 
 * If the `hp_ced_start_seed` script fails to start the seed, run the script again.
+
+* There are stalls loading images (1-2 mins) and building the undercloud (12 or more mins) and overcloud.
+
+* NEVER run hp_ced_start_seed.sh WITHOUT HP_VM_MODE=y or you may need to reboot as it resets your networking for baremetal.
+
+* The installer script will wait for os-collect-config to complete on the seed, but will time out after 10 minutes of waiting.
+
 * The virtual installation does not persist across system reboots. When you reboot your system, be sure to start a new VM installation.
+
+* There are no restrictions imposed on external device name on the host system in virtual mode as the external interface is not used.
 
 * For best performance, cleanup any VMs using excess space using the following commands: 
     * Delete the KVM VMs and their storage volumes using `virsh` commands.

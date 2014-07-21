@@ -19,7 +19,7 @@ PageRefresh();
 
 <p style="font-size: small;"> <a href="/helion/openstack/install-beta/esx/">&#9664; PREV</a> | <a href="/helion/openstack/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/dnsaas/">NEXT &#9654;</a> </p>
 
-#Deploying and configuring OVSvApp for HP Virtual Cloud Networking (VCN) on ESX hosts
+#Deploying and configuring OVSvApp for HP Virtual Cloud Networking (VCN) on ESX hosts 
 
 HP Virtual Cloud Networking (VCN) is an enhanced networking (Neutron) module of HP Helion OpenStack&#174; that delivers network virtualization to orchestrate your data center infrastructure.
 
@@ -29,13 +29,55 @@ HP VCN enables you to build a robust, multi-tenant networking infrastructure by 
 * Automated delivery of secure isolated networks in minutes
 
 
-HP Virtual Cloud Networking's Open vSwitch vApp (OVSvApp) must be installed for HP Helion OpenStack environment to provision VMs in your VMware vCenter environment.Once deployed, OVSvApp appliance enables networking between the tenant Virtual Machines (VMs).
+HP Virtual Cloud Networking's Open vSwitch vApp (OVSvApp) must be installed for HP Helion OpenStack environment to provision VMs in your VMware vCenter environment. Once deployed, OVSvApp appliance enables networking between the tenant Virtual Machines (VMs).
 
 The deployment process includes the following basic steps:
 
 1. Uploading the OVSvApp appliance file to one of the ESX hosts in your data center.
 2. Adding your settings to the configuration file so that the OVSvAPP deployment script can clone the file on each host being managed by the overcloud controller.
 3. Running the deployment script.
+
+##Prerequisites 
+
+Before you install the OVSvApp appliance, ensure the following:
+
+* The VMware cluster has two Virtual Distributed Switches (vDS) and they  are configured as follows: 
+
+    **vDS1**: This switch has no uplink ports configured on it and has a portgroup of type **VLAN** with `Trunking enabled`. It should contain the list of VLAN tags that are used by OverCloud Neutron service. The **Promiscuous Mode** and **Forged Transmits** options should be set to **Accept** under the **Security** Tab of the **Portgroup**.	
+
+
+      <!---***DVS1***: It should be created without any uplinks. Create a trunk portgroup with VLAN type as **VLAN Trunking** and specify the VLAN trunk range pertaining to the environment. Enable **Promiscuous Mode** and **Forged Transmits** in the portgroup security settings.-->
+
+    **Note**: The name of VLAN trunk portgroup must be associated with `trunk_interface` parameter in the `ovs_vapp.ini` . 
+    
+    **vDS2**: This switch should have an uplink port/ports connecting to the OverCloud Baremetal Network. Two portgroups should be available for this switch. One of the portgroups (management) handles the management traffic and is not configured for VLAN.The other portgroup (data) should be of type VLAN with `Trunking enabled`. It should contain the list of VLAN tags that are used by OverCloud Neutron service. The **Promiscuous Mode** and **Forged Transmits** options should be set to **Accept** under the **Security** Tab of the **Portgroup**.
+
+
+
+    <!---***DVS2***: It should be created with uplink to the management interface and/or data interface. The following two portgroups must be created in DVS2:
+  
+    * Create first portgroup with VLAN type as **None**. This is used for management traffic.
+
+    *  Create second portgroup with VLAN type as **VLAN Trunking** and specify the VLAN trunk range pertaining to the environment. This is used for data traffic. Enable **Promiscuous Mode** and **Forged Transmits** in the portgroup security settings.-->
+
+    **Note**: The name of the first portgroup must be associated with `mgmt_interface` parameter and name of the second portgroup must be associated with `data_interface` parameter in the `ovs_vapp.ini`. 
+
+<img src="media/ESXi hypervisor_networking.png"/>
+
+
+Example:
+
+    DVS1  - trunk portgroup name – vlan_trunk
+    DVS2- Portgroup1  name- mgmt
+    Portgroup2 name- data
+    
+    Changes in ovs_vapp.ini for the above values
+    [network]
+    
+     data_interface={'vmxnet3':'data'}
+     mgmt_interface={'vmxnet3':'mgmt'}
+     trunk_interface={'vmxnet3':'vlan_trunk'}
+
 
 
 The following topics in this section explain how to deploy and verify deployment of OVSvApp for VCN on ESX hosts.
@@ -53,7 +95,7 @@ You must upload the OVSvApp appliance to one of the ESX hosts that is hosting te
 
 <!---1. On the host where you have uploaded and extracted the `ce_installer.tgz` and `ovsvapp.tgz` files, locate `overcloud_esx_ovsvapp.ova`. This file is  OVSvAPP VM template file.-->
 
-1. Create a directory `/ovsvapp` in the seed VM and upload `ovsvapp.tgz`. Extract the `ovsvapp.tgz` and locate the `hp-ovsvapp` directory.In the directory, locate  `overcloud_esx_ovsvapp.ova`. This is the OVSvAPP appliance.
+1. Create a directory `/ovsvapp` in the seed VM and upload `ovsvapp.tgz`. Extract the `ovsvapp.tgz` and locate the `hp-ovsvapp` directory. In the directory, locate  `overcloud_esx_ovsvapp.ova`. This is the OVSvAPP appliance.
 
 2. Upload the `overcloud_esx_ovsvapp.ova` file to one of the ESX hosts in your data center.
 
@@ -66,21 +108,20 @@ You must upload the OVSvApp appliance to one of the ESX hosts that is hosting te
 
 5. After installing the tools, edit `/etc/rc.local` in the appliance and add the following before the `exit 0` entry: 
 
-     `sleep 100` 
-    
-     `service hpvcn-neutron-agent restart`
+        sleep 100    
+        service hpvcn-neutron-agent restart
 
 6. Power off the appliance.
   
 7. Export the python path in the seed VM
 
-    `export PYTHON_PATH= /ovsvapp/hp-ovsvapp/src/`
+        export PYTHONPATH= /ovsvapp/hp-ovsvapp/src/
 
 8. In the Seed VMs `/ovsvapp/hp-ovsvapp/src/ovsvm`  folder, locate the `ovs_vapp.ini` file and add your settings for cloning and configuring OVSvApp VMs.
    
     Run the script to deploy OVSvApp VMs on the hosts specified in `ovs_vapp.ini` file.
  
-     `$ python /ovsvapp/hp-ovsvapp/src/ovsvm/invoke_ovs_vapp.py`
+        $ python /ovsvapp/hp-ovsvapp/src/ovsvm/invoke_ovs_vapp.py
 
 <!---
 5. Install `pyvmomi` and `netaddr python` modules on the machine from where you  run the installer script, using the following command.
@@ -146,7 +187,7 @@ e. Specify RabbitMQ settings.
 
 f. Specify the level for logging errors, and a log file location. Default file location is 
 
-`/var/log/ovsvapp_log`.
+`/var/log/ovsvapp_log`
 	
 	[logger]
 		log_level=<log_level>
@@ -188,7 +229,7 @@ f. Specify the level for logging errors, and a log file location. Default file l
 
 9.Run the script to deploy OVSvApp appliance on the hosts specified in `ovs_vapp.ini` file.
 
-   `$ python /hp-ovsvapp/src/ovsvm/invoke_ovs_vapp.py`
+    $ python /hp-ovsvapp/src/ovsvm/invoke_ovs_vapp.py
 
 
 ##Verifying your deployment {#deploymentverification}
@@ -197,25 +238,25 @@ After the OVSvApp deployment script is run successfully, you can see the OVSvApp
 
 1. Login to the overcloud controller from the Seed  
 
-     `# ssh heat-admin@<ip overcloud controller> `
+        # ssh heat-admin@<ip overcloud controller>
 
 2. Switch to root.
  
 3. Enter the following command.
 
-    `#source /root/stackrc` 
+        #source /root/stackrc
 	
 4. Enter the following command.
  
-    `#neutron agent-list` 
+         #neutron agent-list 
 	
 5. For all the HP VCN L2 agents check whether agent alive status is **:-)**. If  the status is **xxx** for an agent then login to that OVSvApp appliance using credentials stack/stack, restart the hpvcn agent using the following command
 
-    `$sudo service hpvcn-neutron-agent restart`  
+        $sudo service hpvcn-neutron-agent restart 
 
 6. Re-verify the agent reporting in the overcloud controller by running the following command.
 
-    `#neutron agent-list`
+        #neutron agent-list
 
     All agents should indicate alive status that is denoted by**:-)**.
 
