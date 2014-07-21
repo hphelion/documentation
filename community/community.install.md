@@ -34,6 +34,8 @@ It is important to read through this page before starting your installation. Bef
 
    * [Downloading and unpacking installation file](#getinstall)
 
+   * [Changing the Default Network Interface](#NetworkInt)
+
    * [Starting the seed and building your cloud](#startseed)
 
 * [Verifying your installation](#verifying-your-installation)
@@ -87,7 +89,7 @@ To install a HP Helion OpenStack Community baremetal multi-node configuration, y
       * Ubuntu 13.10
       * Ubuntu 14.04
 
-    **Important:** This system might be reconfigured during the installation process so a dedicated system is recommended. Reconfiguration might include installing additional software packages, and changes to the network or virtualisation configuration.
+    **Important:** This system might be reconfigured during the installation process so a dedicated system is recommended. Reconfiguration might include installing additional software packages, and changes to the network or visualization configuration.
 
 ### Network configuration
 
@@ -109,13 +111,13 @@ Note the following default settings:
 
 - The default network configuration uses a single subnet 192.0.2.0/24 for all networking. 
 - The Seed VM is assigned an IP address of 192.0.2.1, in addition to the IP address assigned by the [libvirt package](#packages). 
-- The external interface of HOST of the seed VM is added to a software bridge, brbm, on the HOST and the IP address of the external interface is transferred to the bridge. This allows external traffic on 192.0.2.0/24 to be routed to the seed VM.
+- The external interface of HOST of the seed VM is added to a software bridge, called *brbm*, on the HOST and the IP address of the external interface is transferred to the bridge. This allows external traffic on 192.0.2.0/24 to be routed to the seed VM.
 - The SEED VM is the GATEWAY for all traffic outside the baremetal network.
 - IP addresses are assigned by default as follows:
 
-	- 192.0.2.2-192.0.2.20 â€“ used by seed cloud to administer undercloud nodes
-	- 192.0.2.21-192.0.2.124 â€“ used by undercloud to administer overcloud nodes
-	- 192.0.2.129-1920.0.2.254 â€“ used as a pool of addresses for floating IPS for virtual machines in the overcloud.
+	- 192.0.2.2-192.0.2.20 is used by seed cloud to administer undercloud nodes
+	- 192.0.2.21-192.0.2.124 is used by undercloud to administer overcloud nodes
+	- 192.0.2.129-1920.0.2.254 is used as a pool of addresses for floating IPS for virtual machines in the overcloud.
 
 - The IP address range for the private IPs assigned to new virtual instances is 10.0.0.0/8. 
 
@@ -139,6 +141,7 @@ If user root does not have a public key, you can create one using the `ssh-keyge
 If they are not already installed, the following required Debian/Ubuntu packages are added to the system on which the installer is running:
 
 * qemu
+* qemu-kvm
 * openvswitch
 * libvirt
 * python-libvirt
@@ -231,7 +234,7 @@ The HP Helion OpenStack Community baremetal installation is provided as a compre
 
 ### Changing the Default Network Interface ### {#NetworkInt}
 
-By [default](#NetworkDefault), the bridge interface, the Seed VM IP address, and the gateway host are configured during the installation process. To change any or all of those configurations, complete the following steps:
+The bridge interface, the Seed VM IP address, and the gateway host are configured during the installation process. To change any or all of those configurations, complete the following steps:
 
 OPTIONAL: Modify the default bridge interface on the HOST, for example: 
 
@@ -335,14 +338,14 @@ OPTIONAL: Modify which host to use as the gateway, for example:
         $ export BM_NETWORK_SEED_RANGE_START=192.168.10.2
         $ export BM_NETWORK_SEED_RANGE_END=192.168.10.20
 
-	This IP address range must be on the same subnet as the Seeed VM, as configured in [Changing the Default Network Interface](#NetworkInt).
+	This IP address range must be on the same subnet as the Seed VM, as configured in [Changing the Default Network Interface](#NetworkInt).
 
     * OPTIONAL: Change the IP address range to administer overcloud nodes from the undercloud by entering the starting and ending IP addresses for the range, for example:
   
         $ export BM_NETWORK_UNDERCLOUD_RANGE_START=192.168.10.2
         $ export BM_NETWORK_UNDERCLOUD_RANGE_END=192.168.10.20
 
-	This IP address range must be on the same subnet as the Seeed VM, as configured in [Changing the Default Network Interface](#NetworkInt).
+	This IP address range must be on the same subnet as the Seed VM, as configured in [Changing the Default Network Interface](#NetworkInt).
 
     * OPTIONAL: If you modified the gateway host, execute:
 

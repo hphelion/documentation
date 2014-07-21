@@ -23,21 +23,21 @@ Thanks for your interest in HP Helion OpenStack Community! This release note con
 
 ##Available product versions## {#versions}
 
-This release of the HP Helion OpenStack Community edition has different versions of the product available:
+This release of the HP Helion OpenStack Community Community edition contains a single version of the product that covers both virtual and bare metal deployment:
 
-* *A virtual deployment of HP Helion OpenStack Community*. Released in early May, 2014, this preview edition provides a "cloud-in-a-box" virtual deployment targeted towards enterprises and cloud administrators interested in evaluating, developing and deploying a private cloud based on OpenStack Cloud Software. It's a pure, free and downloadable OpenStack distribution that speeds up deployment and simplifies the management of small-scale, open cloud environments and infrastructure services. 
-* *A bare-metal deployment of HP Helion OpenStack Community*. Released in June, 2014, this edition installs in a physical environment. The baremetal installation allows you to build an OpenStack cloud spanning multiple physical nodes. During installation, this edition sets up the undercloud and overcloud on 2 separate physical nodes, it sets up 2 physical Swift nodes, and up to 30 physical compute nodes. 
+* *A virtual deployment of HP Helion OpenStack Community*. First released in early May, 2014, this provides a "cloud-in-a-box" virtual deployment targeted towards enterprises and cloud administrators interested in evaluating, developing and deploying a private cloud based on OpenStack Cloud Software. It's a pure, free and downloadable OpenStack distribution that speeds up deployment and simplifies the management of small-scale, open cloud environments and infrastructure services. 
+* *A bare-metal deployment of HP Helion OpenStack Community*. First released in June, 2014, this edition installs in a physical environment. The baremetal installation allows you to build an OpenStack cloud spanning multiple physical nodes. During installation, this edition sets up an undercloud host and deploys the overcloud on a controller host, 2 physical Swift nodes, and up to 30 physical compute nodes. 
 
 These release notes cover both versions.
 
 
 ##Features in HP Helion OpenStack Community## {#features}
 
-**Pure OpenStack technology** &mdash; One of the first OpenStack distributions based on the Icehouse release, <!--, the Community edition contains no mix of proprietary or non-OpenStack tools.  This -->this edition allows you to experience a virtual cloud-in-a-box deployment based on [OpenStack TripleO](https://wiki.openstack.org/wiki/TripleO) and evaluate the Icehouse release of OpenStack technology.
+**Pure OpenStack technology** &mdash; This edition allows you to experience a cloud deployment using [OpenStack TripleO](https://wiki.openstack.org/wiki/TripleO).
 
 **Speeds cloud service delivery** &mdash; Outstanding launch pad for your small-scale open cloud environment or proof-of-concept cloud services, with simple, fast creation of cloud environments and applications to speed business value.
 
-**Close-to-trunk release** &mdash; Allows your lab or small-scale production environment to continue to benefit from the very latest capabilities of OpenStack technology.
+**Close-to-trunk release** &mdash; Allows your lab or small-scale production environment to continue to benefit from the very latest capabilities of OpenStack technology – we closely track the community trunk release.
 
 
 ##Supported services ## {#supported-services} 
@@ -46,16 +46,16 @@ This release of the Community edition is shipped with the following supported se
 
 <table style="text-align: left; vertical-align: top;">
  <tr style="background-color: #C8C8C8; text-align: left; vertical-align: top;">
- <th>OpenStack-powered capabilities<th>OpenStack version<th>API supported<th>API version<tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
- <td>Compute (Nova)<td>ICEHOUSE<td>Full support<td>v2.0<tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
- <td>Object Storage (Swift)<td>ICEHOUSE<td>Full support<td>v1.0<tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
- <td>Block Storage (Cinder)<td>ICEHOUSE<td>Full support<td>v1.0 and v2.0<tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
- <td>Networking (Neutron)<td>ICEHOUSE<td>Full support<td>v2.0<tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
- <td>Image Service (Glance)<td>ICEHOUSE<td>Full support<td>v1.0 and v2.0<tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
- <td>Identity (Keystone)<td>ICEHOUSE<td>Full support<td>v2.0 and v3.0<tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
- <td>Dashboard (Horizon)<td>ICEHOUSE<td>Full support<td>N/A
+ <th>OpenStack-powered capabilities<th>API supported<th>API version<tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
+ <td>Compute (Nova)<td>Full support<td>v2.0<tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
+ <td>Object Storage (Swift)<td>Full support<td>v1.0<tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
+ <td>Block Storage (Cinder)<td>Full support<td>v1.0 and v2.0<tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
+ <td>Networking (Neutron)<td>Full support<td>v2.0<tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
+ <td>Image Service (Glance)<td>Full support<td>v1.0 and v2.0<tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
+ <td>Identity (Keystone)<td>Full support<td>v2.0 and v3.0<tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
+ <td>Dashboard (Horizon)<td>Full support<td>N/A
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
- <td>Orchestration (Heat)<td>ICEHOUSE<td>Full support<td>N/A
+ <td>Orchestration (Heat)<td>Full support<td>N/A
 </table>
 
 <!--
@@ -117,7 +117,7 @@ HP recommends the following best practices for this software version.
 
 **Installation**
 
-* To enable full VM functionality, be sure to install the required `qemu-kvm` package.  You can install this package with the command: 
+* To enable VM functionality, be sure to install the required `qemu-kvm` package.  You can install this package with the command: 
 
         sudo apt-get install -y qemu-kvm
 
@@ -155,6 +155,8 @@ The following are the known issues for HP Helion OpenStack Community edition:
 
 
 ##For further information## {#for-further-information}
+
+The kit comes with a README.txt which lists a number of recommendations and requirements. Please read and follow it carefully.
 
 For additional information on HP Helion OpenStack Community, OpenStack Cloud Software and TripleO:
 
