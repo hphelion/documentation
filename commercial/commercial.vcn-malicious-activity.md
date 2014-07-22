@@ -42,7 +42,7 @@ Since tracking down malicious users can be tricky, if you know the user’s NAT 
 
 	The **Instance Details** page displays.
 
-	Using this screen, you can now see all the details of the malicious instance.  You can choose to shut it down, or contact the instance owner to investigate further. 
+	Using this information, you can now see all the details of the malicious instance.  You can choose to shut it down, or contact the instance owner to investigate further. 
 
 ## Method 2
 
