@@ -48,7 +48,7 @@ It is important to read through this page before starting your installation. Bef
 
 <p>HP Helion OpenStack Community is installed using <a href ="https://wiki.openstack.org/wiki/TripleO">TripleO</a> which uses three linked installation phases to deploy a complete OpenStack cloud. In this virtual installation, TripleO simulates the deployment of OpenStack by creating and configuring a set of virtual machines (VMs) that play the roles that baremetal machines would in a real deployment.</p> <!-- , as shown in the <a href="javascript:window.open('/content/documentation/media/community.install.deployment.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack Community deployment diagram</a>.</p> -->
 
-* Seed &mdash; The seed VM is started as a VM from a specific seed VM image. It contains a number of self-contained OpenStack components that are used to deploy the undercloud. The seed deploys the undercloud by using Nova baremetal to deploy a specific undercloud machine image.
+* Seed &mdash; The seed VM is started as a VM from a specific seed VM image. It contains a number of self-contained OpenStack components that are used to deploy the undercloud. The seed deploys the undercloud by using the HP Ironic service to deploy a specific undercloud machine image.
 
 * Undercloud &mdash; In a typical HP Helion OpenStack Community deployment, the undercloud is a baremetal server, but in this preview deployment the undercloud is simulated as a VM. The undercloud is a complete OpenStack installation, which is then used to deploy the overcloud.
 
@@ -239,7 +239,7 @@ From the physical system you are running the install on, you should be able to c
 
         http://<IP of overcloud controller>
 
-4. Log in as `demo` or `admin` using the corresponding passwords obtained in step 2.
+4. Log in as `demo` or `admin` using the corresponding passwords obtained in step 2.hp_ced_start_seed.sh
 
 **Note:** If you cannot connect to the Horizon console, check your proxy settings to make sure access to the controller VM is not being unsuccessfully redirected through a proxy.
 
@@ -273,7 +273,7 @@ For remote system installations where you cannot open a browser on the remote sy
 
 * For best performance, cleanup any VMs using excess space using the following commands: 
     * Delete the KVM VMs and their storage volumes using `virsh` commands.
-    * Delete `/tmp/seed_options`.
+    * Delete `/var/lib/libvirt/images/`.
     * Uninstall any packages that you no longer require.
 
 * To avoid an `unsupported locale setting` error when issuing Neutron commands from within the seed VM, set the following environment variable:
