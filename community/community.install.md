@@ -293,7 +293,7 @@ OPTIONAL: Modify which host to use as the gateway, for example:
         $ export UNDERCLOUD_NTP_SERVER=192.0.1.128
 
 
-6. If required, set the following environmental variables, which can affect your installation.
+6. If required, set the following environmental variables, which can affect your installation. Some of these variables set public, or floating, IP addresses. The floating IP addresses cannot be in the same range as the private network addresses (by default, 10.x.x.x)
 
     * OVERCLOUD_NeutronPublicInterface and UNDERCLOUD_NeutronPublicInterface - You should set these to the value of the name of the interface that carries the neutron external traffic on your overcloud and undercloud. The default value is `eth2`. If this is correct, you do not need to set this variable.
 
