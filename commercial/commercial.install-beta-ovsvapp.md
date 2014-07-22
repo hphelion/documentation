@@ -62,12 +62,12 @@ Before you install the OVSvApp appliance, ensure the following:
 
     **Note**: The name of the first portgroup must be associated with `mgmt_interface` parameter and name of the second portgroup must be associated with `data_interface` parameter in the `ovs_vapp.ini`. 
 
-<img src="media/ESXi hypervisor_networking.png"/>
+<img src="media/ESXi_hypervisor_networking.png"/>
 
 
 Example:
 
-    DVS1  - trunk portgroup name – vlan_trunk
+    DVS1  - trunk portgroup name - vlan_trunk
     DVS2- Portgroup1  name- mgmt
     Portgroup2 name- data
     
