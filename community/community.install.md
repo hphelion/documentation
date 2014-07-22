@@ -156,7 +156,7 @@ After you install the `libvirt` packages, you must reboot or restart `libvirt`:
 
 ### Obtaining required information ### {#req-info}
 
-During the installation process, you are prompted to create a file called `baremetal.csv`. This file must contain one entry for each of the seven baremetal systems; thus, the file must contain a minimum of 7 and maximum of 15 lines, and each line must contain the following information:
+During the installation process, you will need to create a file called `baremetal.csv`. This file must contain one entry for each of the seven baremetal systems; thus, the file must contain a minimum of 7 lines, and each line must contain the following information:
 
     `<mac_address>,<ilouser>,<ilopassword>,<iloipaddress>,<#cpus>,<memory_MB>,<diskspace_GB>`
 
@@ -273,13 +273,13 @@ OPTIONAL: Modify which host to use as the gateway, for example:
      
     For example, for a 7 baremetal system your file should look similar to this:
 
-    `78:e7:d1:22:5d:58,operator,password,192.168.11.1,12,32768,2048`
-    `78:e7:d1:22:5d:10,operator,password,192.168.11.5,12,32768,2048`
-    `78:e7:d1:22:52:90,operator,password,192.168.11.3,12,32768,2048`
-    `78:e7:d1:22:5d:c0,operator,password,192.168.11.2,12,32768,2048`
-    `78:e7:d1:22:5d:a8,operator,password,192.168.11.4,12,32768,2048`
-    `78:e7:d1:22:52:9b,operator,password,192.168.11.6,12,32768,2048`
-    `78:e7:d1:22:52:9e,operator,password,192.168.11.7,12,32768,2048`  
+    `78:e7:d1:22:5d:58,administrator,password,192.168.11.1,12,32768,2048`
+    `78:e7:d1:22:5d:10,administrator,password,192.168.11.5,12,32768,2048`
+    `78:e7:d1:22:52:90,administrator,password,192.168.11.3,12,32768,2048`
+    `78:e7:d1:22:5d:c0,administrator,password,192.168.11.2,12,32768,2048`
+    `78:e7:d1:22:5d:a8,administrator,password,192.168.11.4,12,32768,2048`
+    `78:e7:d1:22:52:9b,administrator,password,192.168.11.6,12,32768,2048`
+    `78:e7:d1:22:52:9e,administrator,password,192.168.11.7,12,32768,2048`
 
     **Note:** For more information on creating this file, refer back to the [system configuration requirements](#sys-config).
 
@@ -326,7 +326,7 @@ OPTIONAL: Modify which host to use as the gateway, for example:
 
     * OVERCLOUD_CINDER_LVMLOOPDEVSIZE - This is the size of the loopback device on your partition on the overcloud control node used to hold Cinder volumes, and it is set by default to 50000 MB. You can set it to a higher value if, for example, you plan to create snapshots of large bootable volumes. The partition is a shared device, so the loopback device should not occupy the entire partition. The partition size is calculated as (approximately) diskspace_GB from the baremetal.csv file minus the root partition size of 30 GB.
 
-        To set this variable:
+        To set this variable: 
 
         $ export OVERCLOUD_CINDER_LVMLOOPDEVSIZE=50000
 
