@@ -162,7 +162,7 @@ For additional information on HP Helion OpenStack Community, OpenStack Cloud Sof
 
 * [HP Helion OpenStack Community Documentation web site](/helion/community/): Provides the topics listed below.
 * [FAQ](/helion/community/faq/): Contains some frequently asked questions about the HP Helion OpenStack Community edition release
-* [Installation and configuration](/helion/community/install-virtual/): A set of tasks that walk you through the installation and configuration process.
+* [Installation and configuration](http://docs.hpcloud.com/helion/community/install-overview/): A set of tasks that walk you through the installation and configuration process.
 * [Related Topics](/helion/community/related-links/): Links to pertinent HP Helion OpenStack Community and OpenStack documentation.
 * [OpenStack documentation home page](http://docs.openstack.org/)
 * [TripleO documentation](https://wiki.openstack.org/wiki/TripleO)

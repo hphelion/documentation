@@ -205,7 +205,7 @@ The HP Helion OpenStack Community baremetal installation is provided as a compre
 
 2. Register and then log in to download the HP Helion OpenStack Community baremetal package from this site:
 
-    [HP Helion OpenStack Community Multi-node Baremetal Installation Package](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221216%22%7D/Show)
+    [HP Helion OpenStack Community Multi-node Baremetal Installation Package](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221320%22%7D/Show)
 
 3. Create a directory named `work`:
 
@@ -548,7 +548,6 @@ REVIEWERS: NEED TO DISCUSS THIS SECTION. I HAD INTENDED TO TALK ABOUT AND LINK T
             $ sudo service nova-compute restart
             $ sudo service nova-scheduler restart
             $ sudo service nova-conductor restart
-
 
 * The installer uses IPMI commands to reset nodes and change their power status. Some systems change to a state where the "Server Power" status as reported by the iLO is stuck in the "RESET". If this occurs, you must physically disconnect the power from the server for 10 seconds. If the problem persists after that, contact HP Support as there might be a defective component in the system.
 
