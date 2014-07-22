@@ -32,7 +32,7 @@ Installer system requirements:
 * At least 200 GB of available disk space
 
 
-[Register and download the virtual installation package](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221000%22%7D/Show).
+[Register and download the HP Helion OpenStack Community edition installation package.](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221320%22%7D/Show)
 
 [Learn how to to install and configure a virtual cloud](/helion/community/install-virtual/). 
 
@@ -52,7 +52,7 @@ System requirements:
 * At least 5 and up to 30 baremetal systems
 * An additional pre-installed system to run the installer and host the seed VM
 
-[Register and download the multi-node baremetal installation package](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221216%22%7D/Show).
+[Register and download the HP Helion OpenStack Community edition installation package](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221320%22%7D/Show).
 
 [Learn how to to install and configure a baremetal cloud](/helion/community/install/). 
 
