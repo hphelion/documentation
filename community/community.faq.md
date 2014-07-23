@@ -107,11 +107,11 @@ Yes, provided the hardware meets the minimum specification. HP will be working w
 
 ####Are HP support services included with HP Helion OpenStack Community? #### {#supportservices}
 
-No. An optional paid support contract from HP is available for purchase (coming soon).
+No. An optional paid support contract from HP is available for purchase.
 
 ####What support options are available? #### {#supportoptions}
 
-HP Helion OpenStack Community will be covered by Foundation Care Operations support at additional cost and will be available in the future.  Customers interact with experts in [HP's Global Cloud Center of Excellence](http://h20427.www2.hp.com/campaign/hp-cloud-centre-of-excellence/ap/en/index.html) as single source of support and accountability.  
+HP Helion OpenStack Community will be covered by Foundation Care Operations support at additional cost.  Customers interact with experts in [HP's Global Cloud Center of Excellence](http://h20427.www2.hp.com/campaign/hp-cloud-centre-of-excellence/ap/en/index.html) as single source of support and accountability.  
  	
 * Access to HP OpenStack technical experts, tools and best practices 
 * HP Helion OpenStack Community edition software support
