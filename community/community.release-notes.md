@@ -23,12 +23,12 @@ Thanks for your interest in HP Helion OpenStack Community! This release note con
 
 ##Available product versions## {#versions}
 
-This release of the HP Helion OpenStack Community Community edition contains a single version of the product that covers both virtual and bare metal deployment:
+This release of the HP Helion OpenStack Community edition contains a single download of the product that covers both virtual and bare metal deployment:
 
 * *A virtual deployment of HP Helion OpenStack Community*. First released in early May, 2014, this provides a "cloud-in-a-box" virtual deployment targeted towards enterprises and cloud administrators interested in evaluating, developing and deploying a private cloud based on OpenStack Cloud Software. It's a pure, free and downloadable OpenStack distribution that speeds up deployment and simplifies the management of small-scale, open cloud environments and infrastructure services. 
 * *A bare-metal deployment of HP Helion OpenStack Community*. First released in June, 2014, this edition installs in a physical environment. The baremetal installation allows you to build an OpenStack cloud spanning multiple physical nodes. During installation, this edition sets up an undercloud host and deploys the overcloud on a controller host, 2 physical Swift nodes, and up to 30 physical compute nodes. 
 
-These release notes cover both versions.
+These release notes cover both deployments.
 
 
 ##Features in HP Helion OpenStack Community## {#features}

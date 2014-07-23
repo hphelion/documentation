@@ -17,6 +17,9 @@ With HP Helion OpenStack Community, you can quickly and easily spin up clouds us
 
 As long as you have a system with at least 48 GB of RAM and Ubuntu 13.10 or 14.04 installed, you can have a cloud in approximately 30 minutes!
 
+[Register and download the HP Helion OpenStack Community edition installation package.](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221320%22%7D/Show)
+
+
 ## Virtual installation  
 
 This cloud-in-a-box is designed to let you test the functionality of HP Helion OpenStack Community. It is not intended to be used in a production environment to run real workloads, and therefore no support is available. This installation is a fixed, virtual configuration of:
@@ -30,9 +33,6 @@ Installer system requirements:
 
 * At least 48 GB of RAM
 * At least 200 GB of available disk space
-
-
-[Register and download the HP Helion OpenStack Community edition installation package.](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221320%22%7D/Show)
 
 [Learn how to to install and configure a virtual cloud](/helion/community/install-virtual/). 
 
@@ -51,8 +51,6 @@ System requirements:
 
 * At least 5 and up to 30 baremetal systems
 * An additional pre-installed system to run the installer and host the seed VM
-
-[Register and download the HP Helion OpenStack Community edition installation package](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221320%22%7D/Show).
 
 [Learn how to to install and configure a baremetal cloud](/helion/community/install/). 
 
