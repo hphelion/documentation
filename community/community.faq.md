@@ -53,7 +53,7 @@ HP Helion OpenStack Community edition is one of the first distributions in the m
  
 ####Is there a cost associated with this distribution? #### {#distrocost} 
 
-It is free to download. An optional support package will be available to purchase from HP for access to HP OpenStack technical support. 
+It is free to download. An optional support package is available to purchase from HP for access to HP OpenStack technical support. 
 
 ####What is TripleO? #### {#TripleO}
 
@@ -65,7 +65,9 @@ A TripleO installation includes a Seed, the Undercloud and the Overcloud.
 
 On May 7<sup>th</sup>, we announced a virtual preview of HP Helion OpenStack Community edition that allows our customers to deploy an OpenStack cloud-in-a-box on a single physical machine. Customers are able to experience TripleO based deployment and to evaluate the Icehouse release of OpenStack.  
 
-On June 12<sup>th</sup>, we announced a preview version of our baremetal installation, allowing the creation of OpenStack systems spanning up to 30 physical servers.
+On June 12<sup>th</sup>, we announced a GA version of HP OpenStack Community edition with support for baremetal installation, allowing the creation of OpenStack systems spanning up to 30 physical servers.
+
+On July 22nd, we announced a refresh of GA version with several new features and bug fixes with the availability of Foundation Care Support Service for purchase.
 
 HP Helion OpenStack Community will be updated frequently to keep pace with OpenStack developments. We plan to release new versions roughly every six weeks, and to track the community development cycle.
 
@@ -107,11 +109,11 @@ Yes, provided the hardware meets the minimum specification. HP will be working w
 
 ####Are HP support services included with HP Helion OpenStack Community? #### {#supportservices}
 
-No. An optional paid support contract from HP is available for purchase.
+No. An optional paid support contract from HP is available for purchase, starting July 22nd.
 
 ####What support options are available? #### {#supportoptions}
 
-HP Helion OpenStack Community will be covered by Foundation Care Operations support at additional cost.  Customers interact with experts in [HP's Global Cloud Center of Excellence](http://h20427.www2.hp.com/campaign/hp-cloud-centre-of-excellence/ap/en/index.html) as single source of support and accountability.  
+HP Helion OpenStack Community will be covered by Foundation Care Support Service at an additional cost.  Customers interact with experts in [HP's Global Cloud Center of Excellence](http://h20427.www2.hp.com/campaign/hp-cloud-centre-of-excellence/ap/en/index.html) as single source of support and accountability.  
  	
 * Access to HP OpenStack technical experts, tools and best practices 
 * HP Helion OpenStack Community edition software support
