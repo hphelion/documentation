@@ -142,7 +142,7 @@ HP recommends the following best practices for this software version.
 
 ###Known issues in this release### {#known-issues}
 
-The following are the known issues for HP Helion OpenStack Community edition:
+The following are the known issues for HP Helion OpenStack Community edition: 
 
 **Operations**
 
