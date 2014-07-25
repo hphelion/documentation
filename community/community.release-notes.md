@@ -12,7 +12,7 @@ product: community
 
 <!--Thanks for installing the HP Helion OpenStack Community edition! The initial "cloud-in-a-box" virtual deployment allows you to evaluate the Community edition and Icehouse release of OpenStack.  Frequent updates will be available&mdash;approximately every 6 weeks&mdash;to remain as close to the OpenStack trunk release as possible.  The Community edition is the foundational technology for the HP Helion portfolio of products, allowing HP Helion products to quickly leverage OpenStack capabilities.-->
 
-Thanks for your interest in HP Helion OpenStack Community! This release note contains the following information about this release:
+Thanks for your interest in HP Helion OpenStack Community! These release notes contain the following information about this release:
 
 * [Available product versions](#versions)
 * [Features in HP Helion OpenStack Community edition](#features) 
