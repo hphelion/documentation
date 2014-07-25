@@ -71,7 +71,7 @@ HP recommends the following best practices for this software version.
     - sudo service nova-conductor restart
     - sudo service neutron-openvswitch-agent restart
 
-* After deleting a cloud or an entire HP Helion OpenStack Commercial installation, make sure you perform a full disk erasure on the associated storage devices to prevent exposure of sensitive data that may have been stored there. 
+* After deleting a cloud or an entire HP Helion OpenStack Commercial installation, make sure you perform a full disk erasure on the associated storage devices to prevent exposure of sensitive data that might have been stored there. 	
 
 
 ###Known issues in this release### {#known-issues}
