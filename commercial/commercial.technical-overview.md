@@ -32,8 +32,8 @@ A TripleO installation includes a Seed, the Undercloud and the Overcloud.
 
 <table style="text-align: left; vertical-align: top; width:700px;">
 <tr style="background-color: white; color: black;">
-	<td><b>Seed Cloud</b></td>
-	<td>The Seed Cloud is a bootable image provided as part of HP Helion OpenStack and is deployed in a VM instance. This image contains the minimum services required of OpenStack to function and to be able to provision physical hardware to deploy the Undercloud. The services are Nova, Neutron, Glance, Keystone, Ironic & Heat.</td>
+	<td><b>Seed VM</b></td>
+	<td>The Seed VM is a bootable image provided as part of HP Helion OpenStack and is deployed in a VM instance. This image contains the minimum services required of OpenStack to function and to be able to provision physical hardware to deploy the Undercloud. The services are Nova, Neutron, Glance, Keystone, Ironic & Heat.</td>
 </tr>
 <tr style="background-color: white; color: black;">
 	 <td><b>Undercloud</b></td>
@@ -51,7 +51,7 @@ A TripleO installation includes a Seed, the Undercloud and the Overcloud.
 
 ####Configuration {#Config}
 
-* 1 server to host the Seed Cloud VM
+* 1 server to host the Seed VM
 * 1 undercloud server
 * 4 overcloud nodes (One Controller node and three Compute nodes) 
 * 2 Swift object servers
@@ -124,11 +124,11 @@ The following information describes the physical network configuration, which mu
 
 #### Network planning
 
-The physical machines need to have their management processors (iLO) connected to a network that is reachable from the Seed host. The physical machines and the Seed host need to be connected to a fast network. 
+The physical machines need to have their management processors (iLO) connected to a network that is reachable from the Seed VM. The physical machines and the Seed VM need to be connected to a fast network. 
 
 We recommend using one physical Ethernet port on a 10GB network. Use an untagged VLAN for this network. 
 
-The Seed host is expected to use eth0 to connect to the cluster network (and hence through to the management network). If your host uses another NIC, for example eth1, then you need to set the environment variable appropriately, for example BRIDGE_INTERFACE=eth1, as seen by root.
+The Seed VM is expected to use eth0 to connect to the cluster network (and hence through to the management network). If your host uses another NIC, for example eth1, then you need to set the environment variable appropriately, for example BRIDGE_INTERFACE=eth1, as seen by root.
 
 ####Network fabric 
 * Two physical links, one for IPMI/iLO and one for the hypervisor/OS
