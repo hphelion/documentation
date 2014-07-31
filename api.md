@@ -14,7 +14,6 @@ We offer a number of HP Helion Public Cloud APIs both for HP Helion Public Cloud
 * [APIs in public beta](#pubbeta)
 * [APIs in private beta](#privbeta)
 
-
 ##HP Helion Public Cloud APIs for version 13.5 {#api135}
 
 There are a number of HP Helion Public Cloud APIs available for your programming pleasure: 
@@ -22,19 +21,18 @@ There are a number of HP Helion Public Cloud APIs available for your programming
 * [Block Storage](/api/v13/block-storage/): API for HP Helion Public Cloud block storage; enabling additional volumes to Compute instances.
 * [CDN](/api/CDN/): API for the HP Helion Public Cloud content delivery network (CDN) service; content inside HP Helion Public Cloud Object Storage can easily be cached on servers in metropolitan areas all over the world to speed client access to them by removing much of the network latency.
 * [Compute](/api/v13/compute/): API for the HP Helion Public Cloud compute service; a way to instantiate virtual servers on publicly accessible physical machines hosted in HP data centers
+* [DNS](/api/dns/): API for the HP Helion Public Cloud Domain Name Service (DNS); enables display and management of DNS records.
 * [Identity service](/api/v13/identity/): API for the HP Helion Public Cloud identity service; one-stop authentication for all HP Helion Public Cloud services.
 * [Image](/api/v13/image/): API for HP Helion Public Cloud Image; enabling managing of virtual machine images.
 * [Networking](/api/v13/networking/): API for HP Helion Public Cloud Networking; enabling virtual network, subnet, router and port abstractions to describe network resources.
 * [Object Storage](/api/object-storage/): API for HP Helion Public Cloud object storage; a way to store and retrieve objects in a highly redundant cluster of publicly accessible physical machines hosted in HP data centers. 
 * [Relational Database](/api/v13/dbaas/): API for the HP Helion Public Cloud Relational Database service; simplifies the creation and management of MySQL database instances.
 
-
 ##HP Helion Public Cloud APIs for version 12.12 {#api1212}
 
 * [Block Storage](/api/block-storage/): API for HP Helion Public Cloud Block Storage service; enabling additional volumes to Compute instances.
 * [CDN](/api/CDN/): API for the HP Helion Public Cloud Content Delivery Network (CDN) service; content inside HP Helion Public Cloud Object Storage can easily be cached on servers in metropolitan areas all over the world to speed client access to them by removing much of the network latency.
 * [Compute](/api/compute/): API for the HP Helion Public Cloud Compute service; a way to instantiate virtual servers on publicly accessible physical machines hosted in HP data centers.
-* [DNS](/api/dns/): API for the HP Helion Public Cloud Domain Name Service (DNS); enables display and management of DNS records.
 * [Identity](/api/identity/): API for the HP Helion Public Cloud Identity service v12.12; one-stop authentication for all HP Helion Public Cloud services.
 * [Object Storage](/api/object-storage/): API for HP Helion Public Cloud Object Storage service; a way to store and retrieve objects in a highly redundant cluster of publicly accessible physical machines hosted in HP data centers.
 
@@ -51,9 +49,6 @@ You can also avail yourself of one of the following APIs now in private beta; fo
 
 * [Load Balancer as a Service (LBaaS)](/api/lbaas/): API for the HP Helion Public Cloud Load Balancer service; facilitates creation and management of load balancers.
   **Note**: This service requires activation while in private beta; please [request access on our sign-up page](https://horizon.hpcloud.com/landing/pbr/hpext:lbaas).  Service use is free of charge during the private beta period.	
-
-
-
 
 ## Copyright
 
