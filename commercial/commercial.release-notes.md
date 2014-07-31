@@ -103,7 +103,7 @@ For additional information on HP Helion OpenStack beta, OpenStack Cloud Software
 * [Related Topics](/helion/openstack/related-links/): Links to pertinent HP Helion OpenStack and OpenStack documentation.
 * [OpenStack documentation home page](http://docs.openstack.org/)
 * [TripleO documentation](https://wiki.openstack.org/wiki/TripleO)
-* [HP Helion OpenStack Support Forum](https://ask.openstack.org/en/questions/scope:all/sort:activity-desc/tags:hphelion/page:1/) (Tag your questions with HPHelion)
+* [HP Support Center](http://us-support.external.hp.com/portal/site/hpsc/public): Report issues with HP Helion OpenStack.
 
 
 ###Legal Notices and Disclaimer### {#legal-notices-disclaimer}
