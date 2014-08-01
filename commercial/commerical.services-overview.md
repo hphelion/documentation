@@ -27,6 +27,10 @@ OpenStack&#174; is comprised of several integrated services. Each service works 
 
 HP Helion OpenStack includes a number of additional services for working with your cloud. This section lists the services available for you to work with your cloud.
 
+- [OpenStack Services](#OpenStack)
+- [Dashboard Services](#Dashboard)
+- [Other Services](#Other)
+
 In addition to the APIs, you can interact with the most services through a graphic user interface (dashboards) and command line interfaces (CLI).
 
 **Note:** When assigning users to a project, it is recommended that you do not add service user accounts to any project. The HP Helion OpenStack installation process creates a service user account for each installed service. 
@@ -47,11 +51,11 @@ The service user accounts include, but are not limited to, the following:
 - ceilometer
 
 
-## OpenStack Services ##
+## OpenStack Services ## {#OpenStack}
 
-The following services are foundation technologies used by the HP HP Helion OpenStack. Based on OpenStack&reg; technology, HP Helion OpenStack is comprised of a set of services and architecture that act like a data-center-level operating system (DCOS).
+The following services are foundation technologies used by the HP Helion OpenStack. Based on OpenStack technology, HP Helion OpenStack is comprised of a set of services and architecture that defines a data-center-level operating system (DCOS).
 
-**Compute**. The Compute service manages the hypervisors and virtual machines in your environment. Also known as *Nova*. 
+**Compute Operations**. The Compute service manages the hypervisors and virtual machines in your environment. Also known as *Nova*. 
 
 See [Overview of the Compute service](/helion/openstack/services/compute/overview).
 
@@ -59,7 +63,7 @@ See [Overview of the Compute service](/helion/openstack/services/compute/overvie
 
 See [Overview of the Identity Management service](/helion/openstack/services/identity/overview).
 
-**Image Operations**. The Image Operations service enables you to create and maintain virtual server images, which you can use to bootstrap virtual machines across the cloud. Also known as *Glance*.
+**Image Operations**. The Image Operations service enables you to create and maintain server images, which you can use to launch virtual machines across the cloud. Also known as *Glance*.
 
 See [Overview of the Image service](/helion/openstack/services/imaging/overview).
 
@@ -83,7 +87,7 @@ See [Overview of the Telemetry and Reporting service](/helion/openstack/services
 
 See [Overview of the Volume Operations Service](/helion/openstack/services/volume/overview).
 
-## Dashboard Services ##
+## Dashboard Services ## {#Dashboard}
 
 The following services are used by HP Helion OpenStack to create dashboards.
 
@@ -97,7 +101,7 @@ See [Overview of the Horizon Service](/helion/openstack/services/horizon/overvie
 
 See [Overview of the Loom Service](/helion/openstack/services/loom/overview/).
 -->
-## Other Services ##
+## Other Services ## {#Other}
 
 **DNSaaS**. The HP Helion OpenStack DNSaaS (Domain Name System as a Service) provides a way to display, create, modify, and delete DNS records to the assigned DNS server network. 
 
@@ -113,7 +117,7 @@ See [Overview of the Ironic Service](/helion/openstack/services/ironic/overview/
 
 ## For more information ##
 
-For information on how to operate your cloud we suggest you read the [OpenStack Operations Guide](http://docs.openstack.org/ops/). The *Architecture* section contains useful information about how an OpenStack Cloud is put together. However, the HP Helion OpenStack takes care of these details for you. The *Operations* section contains information on how to manage the system.
+For information on how to operate your cloud we suggest you read the [OpenStack Operations Guide](http://docs.openstack.org/ops/). The *Architecture* section contains useful information about how an OpenStack Cloud is put together. However, HP Helion OpenStack takes care of these details for you. The *Operations* section contains information on how to manage the system.
 
 For more information on installing the command-line interface for interacting with services, see [Install the OpenStack command-line clients](http://docs.openstack.org/user-guide/content/install_clients.html).
 
