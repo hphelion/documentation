@@ -16,7 +16,7 @@ Leveraging [OpenStack Compute](http://openstack.org/projects/compute/), HP Helio
 * **Image** - A collection of files used as a base installation, typically an operating system such as Ubuntu 10.10 or something similar.
 * **Server** - An instance created out of a **Flavor** + an **Image**
 
-A variety of flavors and images are provided by HP Helion Public Cloud compute that can be used to create a wide mix of servers.  The best way to learn more is to start using it yourself over at the [Management Console](https://console.hpcloud.com).  If you have any questions, try our [Forums](https://community.hpcloud.com) where you can learn from our own internal experts as well as other users in the HP Helion Public Cloud community.
+A variety of flavors and images are provided by HP Helion Public Cloud compute that can be used to create a wide mix of servers.  The best way to learn more is to start using it yourself over at the [HP Helion Public Cloud Console](https://horizon.hpcloud.com/).  If you have any questions, try our [Forums](https://community.hpcloud.com) where you can learn from our own internal experts as well as other users in the HP Helion Public Cloud community.
 
 HP Helion Public Cloud currently offers two versions of our cloud&mdash;v12.12 and the latest v13.5. See the [Version Overview](/version-overview) page for a description of what's new in v13.5.
 

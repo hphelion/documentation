@@ -55,7 +55,8 @@ This release was made available on 10/29/2012 and contains the following new fea
 ###Known Issues###
 
 * **Issue**: You cannot add a new security group rule to an existing security group.  
-    *WorkAround*: Use the [console](https://console.hpcloud.com) to make this change.
+    *WorkAround*: Use the 
+[HP Helion Public Cloud Console](https://horizon.hpcloud.com/) to make this change.
 
 ##Release 1.3.0.6 Features## {#v1306}
 

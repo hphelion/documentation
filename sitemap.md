@@ -16,9 +16,6 @@ Having a bit of trouble navigating our site, and so you're looking for a single 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Getting Started with HP Helion Public Cloud Console](/hpcloudconsole/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[What's new with the HP Helion Public Cloud Console](/whats_new_with_HP_Cloud_Console/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Feature Mapping: HP Classic Console to the HP Helion Public Cloud Console](/hpcloudconsolefeaturemap/)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;Classic Management Console -- 12.12<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Management Console overview](/mc/)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Management Console site map](/mc/sitemap/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Software release notes](/release-notes/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Version overview](/version-overview)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Version 12.12 to 13.5 transition overview](/migration-overview/)<br>

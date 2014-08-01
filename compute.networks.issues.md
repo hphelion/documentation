@@ -68,7 +68,7 @@ If you configure security groups via Networking, compute may not display the ful
 **Note**: Security Groups are a feature of  HP Helion Public Cloud Networking and are fully supported by the Networking API. A limited set of Security Group features are also accessible via the compute API for convenience and backwards compatibility. To directly access the API's broader functionality, HP recommends working only through the OpenStack Networking API and does not recommend mixing compute and OpenStack Networking API calls for security group configuration.
 
 
-
+<!-- Hiding this section; info not complete
 ## Understanding network screen system messages ## {#messages}
 
 This page provides details for the various system messages you might see while using the networks screen of the management console (MC).  This page covers the following topics:
@@ -103,6 +103,8 @@ Explanation of system message
 Explanation of system message
 
 repeat as needed
+
+-->
 
 ##For further information## {#ForFurtherInformation}
 
