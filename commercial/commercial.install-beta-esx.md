@@ -106,7 +106,7 @@ Before you begin, you must download the required HP Helion OpenStack installatio
 
     [HP Helion OpenStack product installation](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221247%22%7D/Show)
 
-For more details, refer to the *Downloading installation packages* section on the [HP Helion OpenStack Beta Installation: Before you begin](/helion/openstack/install-beta/prereqs/#install-pkg) page.
+For more details, refer to the *Creating the baremetal.csv file* section on the [HP Helion OpenStack Beta Installation: Before you begin](/helion/openstack/install-beta/prereqs/#install-pkg) page.
 
 ## Installing HP Helion Openstack ## {#install}
 
