@@ -277,11 +277,11 @@ Yes. The advantage of open source is clients can avoid vendor lock-in. Standards
 * [Should I reboot after installation?](#rebootafterinstallation)
 * [How do I verify that the installation has succeeded?](verifyinstallsucceed)
 
-### Setting up the seed cloud 
+### Setting up the seed VM 
 * [What is a seed?](#Whatisseed)
-* [How do I create a VM for the Seed Cloud based on the CloudOS specifications?](#createVM) 
-* [How do I load a under cloud image into the seed cloud?](#imageseedcloud) 
-* [How do I log into the seed cloud and deploy the undercloud?](#deployUC) 
+* [How do I create a VM for the seed based on the CloudOS specifications?](#createVM) 
+* [How do I load a under cloud image into the seed VM?](#imageseedcloud) 
+* [How do I log into the seed VM and deploy the undercloud?](#deployUC) 
 
 ### Setting up the undercloud and overcloud
 * [What is an undercloud?](#Whatisundercloud)
@@ -550,7 +550,7 @@ $ ssh 192.0.2.1 bash -x ~root/tripleo/tripleo-incubator/scripts/hp_ced_installer
 
 The minimum configuration is seven physical servers:
 
-* One VM for the Seed Cloud
+* One VM for the Seed 
 * One Undercloud Server
 * Three Overcloud Management Servers
 * Two Swift Object Servers
@@ -589,7 +589,7 @@ to all the baremetal nodes' port eth0. And the virtual machine Admin Node must a
 
 <b><font color="red"> Raj:We will provide a simple means of running a set of tests to act as a health check </font></b>
 
-## Setting up the seed cloud 
+## Setting up the seed VM 
 
 ####What is a seed? #### {#Whatisseed}
 
@@ -597,11 +597,11 @@ The seed machine is a single node that is effectively just an installer.  Its so
 
 This is not a full OpenStack installation, it is a cut-down installation providing only the software required in order to enable the installation of the undercloud onto physical systems in the data center.
 
-####How do I create a VM for the Seed Cloud based on the CloudOS specifications? #### {#createVM} 
+####How do I create a VM for the Seed based on the CloudOS specifications? #### {#createVM} 
 
-####How do I load a under cloud image into the seed cloud? #### {#imageseedcloud} 
+####How do I load a under cloud image into the seed VM? #### {#imageseedcloud} 
 
-####How do I log into the seed cloud and deploy the undercloud? #### {#deployUC}   
+####How do I log into the seed VM and deploy the undercloud? #### {#deployUC}   
 
 ### Setting up the undercloud and overcloud
 
