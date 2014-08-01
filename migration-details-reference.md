@@ -5,6 +5,7 @@ permalink: /migration-details-reference/
 product: public-cloud
 
 ---
+<!--PUBLISHED-->
 
 # HP Helion Public Cloud version 12.12 to 13.5: Assisted Data Transition Guide #
 

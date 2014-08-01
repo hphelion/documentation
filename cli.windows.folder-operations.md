@@ -5,6 +5,7 @@ permalink: /cli/windows/folder-operations/
 product: win-cli
 
 ---
+<!--PUBLISHED-->
 # HP Helion Public Cloud CLI Software for Windows PowerShell: Folder Operations
 
 When you consider the sheer quantity of data that could be potentially moved into the cloud you soon realize that operations on individual files are impractical at best. To remedy this we have the ability to copy entire sets of objects from your local machine to

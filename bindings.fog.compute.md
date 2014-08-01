@@ -5,6 +5,7 @@ permalink: /bindings/fog/compute/
 product: fog
 
 ---
+<!--PUBLISHED-->
 
 
 #Ruby Fog Bindings for HP Helion Public Cloud Compute Examples  

@@ -5,6 +5,7 @@ permalink: /mc/compute/servers/manage/
 product: mc-compute
 
 ---
+<!--PUBLISHED-->
 # Management console: Managing servers
 
 This page describes how to manage servers using the [servers screen](/mc/compute/networks/) of the [management console](/mc/) (MC).  This page covers the following topics:

@@ -5,6 +5,7 @@ permalink: /cli/unix/network/
 product: unix-cli
 
 ---
+<!--PUBLISHED-->
 # UNIX CLI for HP Helion Public Cloud Network Examples
 ___________________
 

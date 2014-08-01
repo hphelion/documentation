@@ -5,6 +5,7 @@ permalink: /compute/network/getting-started
 product: compute
 
 ---
+<!--PUBLISHED-->
 # Getting Started with HP Helion Public Cloud Networking #
 
 <!-- modeled after HP Helion Public Cloud version 13.5 overview; text from networking guide (compute.network-guide.md) -->

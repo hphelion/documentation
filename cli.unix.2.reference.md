@@ -5,6 +5,7 @@ permalink: /cli/unix/2/reference/
 product: unix-cli
 
 ---
+<!--PUBLISHED-->
 
 #UNIX CLI for HP Helion Public Cloud 13.5 Reference
 

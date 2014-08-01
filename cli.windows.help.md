@@ -5,6 +5,7 @@ permalink: /cli/windows/help/
 product: win-cli
 
 ---
+<!--PUBLISHED-->
 # HP Helion Public Cloud CLI Software for Windows PowerShell: Getting Help #
 
 After module registration is complete you can view a list of available cmdlets and get detailed examples of their usage with a few commands.

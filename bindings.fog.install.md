@@ -5,6 +5,7 @@ permalink: /bindings/fog/install/
 product: fog
 
 ---
+<!--PUBLISHED-->
 # Ruby Fog Bindings for HP Helion Public Cloud Installation
 
 ##Important Notice##

@@ -5,6 +5,7 @@ permalink: /mc/compute/networks/enable-network/
 product: mc-compute
 
 ---
+<!--PUBLISHED-->
 # Management console: Enabling and disabling a network
 
 This page covers how to create and delete a network using the networks screen of the management console (MC).  This page covers the following topics:

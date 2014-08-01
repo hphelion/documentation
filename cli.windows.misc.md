@@ -5,6 +5,7 @@ permalink: /cli/windows/misc/
 product: win-cli
 
 ---
+<!--PUBLISHED-->
 # HP Helion Public Cloud CLI Software for Windows PowerShell: misc-features
 
 ##Changing Response Formats

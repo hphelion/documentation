@@ -5,6 +5,7 @@ permalink: /mc/compute/servers/create-bootable/
 product: mc-compute
 
 ---
+<!--PUBLISHED-->
 # Management console: Creating a new server from a bootable volume
 
 This page describes how to create a new server from a bootable volume using the [networks screen](/mc/compute/networks/) of the [management console](/mc/) (MC).  This page covers the following topics:

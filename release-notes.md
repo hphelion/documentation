@@ -5,6 +5,7 @@ permalink: /release-notes/
 product: public-cloud
 
 ---
+<!--PUBLISHED-->
 # HP Helion Public Cloud Release Notes  #
 
 This page contains the following information on our software package:

@@ -5,6 +5,7 @@ permalink: /cdn/
 product: public-cloud 
 
 ---
+<!--PUBLISHED-->
 # HP Helion Public Cloud CDN
 
 <!-- <iframe src="http://player.vimeo.com/video/40264189?title=0&amp;byline=0&amp;portrait=0" width="580" height="420" frameborder="0"> </iframe> -->

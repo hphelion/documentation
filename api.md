@@ -5,6 +5,7 @@ permalink: /api/
 product: public-cloud
 
 ---
+<!--PUBLISHED-->
 # HP Helion Public Cloud APIs
 
 We offer a number of HP Helion Public Cloud APIs both for HP Helion Public Cloud version 13.5 and version 12.12. In addition, we have some public beta and private beta APIs that you can put to use, so please give them a try.

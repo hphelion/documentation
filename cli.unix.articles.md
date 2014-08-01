@@ -5,6 +5,7 @@ permalink: /cli/unix/articles/
 product: unix-cli
 
 ---
+<!--PUBLISHED-->
 #UNIX CLI for HP Helion Public Cloud: Articles on to use the UNIX CLI v12.12
 ___________________
 

@@ -5,6 +5,7 @@ permalink: /mc/account/projects/
 product: mc-account
 
 ---
+<!--PUBLISHED-->
 # Management Console: Managing Projects
 
 This page provides describes to use the management console (MC) to manage your projects with the manage projects screen.  This page covers the following topics:

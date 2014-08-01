@@ -5,6 +5,7 @@ permalink: /migration-overview-reference/
 product: public-cloud
 
 ---
+<!--PUBLISHED-->
 #HP Helion Public Cloud Compute Version 12.12 to HP Helion Public Cloud Compute Version 13.5: Data Transition Guide#
 
 This page provides you with information to help you transition an HP Helion Public Cloud Compute version 12.12 instance to an HP Helion Public Cloud Compute version 13.5 instance. 

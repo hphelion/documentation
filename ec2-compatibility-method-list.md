@@ -5,6 +5,7 @@ permalink: /ec2-compatibility-method-list/
 product: compute
 
 ---
+<!--PUBLISHED-->
 # HP Helion Public Cloud Compute EC2 Compatibility Method List
 
 The full set of compatible EC2 methods, by function, are as follows:

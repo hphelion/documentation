@@ -5,6 +5,7 @@ permalink: /mc/dashboard/
 product: mc
 
 ---
+<!--PUBLISHED-->
 # Management console main dashboard
 
 This page provides you with an overview of the main management console (MC) dashboard, which displays overview information for your active services (such as Compute).  This page discusses the following topics:

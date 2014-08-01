@@ -5,6 +5,7 @@ permalink: /whats_new_with_HP_Cloud_Console/
 product: public-cloud
 
 ---
+<!--PUBLISHED-->
 
 # What's New with the HP Helion Public Cloud Console #
 

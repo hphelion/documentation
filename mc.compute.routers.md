@@ -5,6 +5,7 @@ permalink: /mc/compute/routers/
 product: mc-compute
 
 ---
+<!--PUBLISHED-->
 # Horizon console: Routers screen
 
 The Horizon console compute dashboard Routers screen allows you to view and manipulate routers.  This page covers the following topics:

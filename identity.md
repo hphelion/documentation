@@ -5,6 +5,7 @@ permalink: /identity/
 product: public-cloud 
 
 ---
+<!--PUBLISHED-->
 # HP Helion Public Cloud Identity Service Overview
 
 <!--This is a comment. Comments are not displayed in the browser-->

@@ -5,6 +5,7 @@ permalink: /cli/unix/configuration/
 product: unix-cli
 
 ---
+<!--PUBLISHED-->
 # UNIX CLI for HP Helion Public Cloud: Account Configuration for v12.12
 
 ___________________

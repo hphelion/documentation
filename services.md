@@ -5,6 +5,7 @@ permalink: /services/
 product: public-cloud
 
 ---
+<!--PUBLISHED-->
 # HP Helion Public Cloud Services
 
 There are a number of HP Helion Public Cloud services available for you: 

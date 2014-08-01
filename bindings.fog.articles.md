@@ -6,6 +6,7 @@ product: fog
 categories: fog
 tags: fog authentication howto
 ---
+<!--PUBLISHED-->
 #Ruby Fog Bindings for HP Helion Public Cloud: Articles on how to use our Ruby Fog bindings#
 
 ##Important Notice##

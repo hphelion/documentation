@@ -5,6 +5,7 @@ permalink: /cli/unix/release-notes/
 product: unix-cli
 
 ---
+<!--PUBLISHED-->
 # UNIX CLI for HP Helion Public Cloud Release Notes
 
 ###Important Notice###

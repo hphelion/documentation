@@ -4,6 +4,7 @@ title: "HP Helion Public Cloud 13.5: Upload and Make Public a Partner Image"
 permalink: /upload-publish-partner-images135/
 product: image
 ---
+<!--PUBLISHED-->
 
 # HP Helion Public Cloud 13.5: How to Upload a Partner Image and Make it Public # {#publishPartnerImage}
 

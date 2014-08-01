@@ -5,6 +5,7 @@ permalink: /identity/api/
 product: identity
 
 ---
+<!--PUBLISHED-->
 # HP Helion Public Cloud Identity Service API
 
 Surf on over to our [Identity Service API Reference](/api/identity) for lots of details on the HP Helion Public Cloud identity service. 

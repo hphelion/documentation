@@ -5,6 +5,7 @@ permalink: /version-overview/
 product: public-cloud
 
 ---
+<!--PUBLISHED-->
 # HP Helion Public Cloud version 13.5 overview
 HP Helion Public Cloud is based on the open source cloud computing platform OpenStack core code base, releasing regular updates on the current tested and approved OpenStack versions.  One of the most significant changes is the addition of our new best-in-class software defined networking (SDN) for virtual private clouds. This new networking service provides enhanced network functionality and the ability to fine-tune and define your own virtual network.
 

@@ -5,6 +5,7 @@ permalink: /bindings/fog/release-notes/
 product: fog
 
 ---
+<!--PUBLISHED-->
 # Release Notes for the HP Helion Public Cloud: Ruby Fog Bindings 
 
 ##Important Notice##

@@ -5,6 +5,7 @@ permalink: /compute/network/overview/
 product: compute
 
 ---
+<!--PUBLISHED-->
 # HP Helion Public Cloud Networking Overview #
 
 Leveraging [OpenStack Networking](http://www.openstack.org/software/openstack-networking/), HP Helion Public Cloud Networking is a virtual networking service that provides network connectivity and addressing for HP Helion Public Cloud compute devices. 

@@ -5,6 +5,7 @@ permalink: /cli/windows/2/block-storage/
 product: win-2-cli
 
 ---
+<!--PUBLISHED-->
 # HP Helion Public Cloud CLI Software for Windows PowerShell: Block Storage Examples
 
 This page provides you some examples of how to use the various commands (sometimes called "cmdlets") for HP Helion Public Cloud CLI software for Windows PowerShell implementation of Compute.

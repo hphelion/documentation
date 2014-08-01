@@ -5,6 +5,7 @@ permalink: /hpcloudconsolefeaturemap/
 product: public-cloud
 
 ---
+<!--PUBLISHED-->
 
 
 #Feature Mapping: HP Classic Console to the HP Helion Public Cloud Console

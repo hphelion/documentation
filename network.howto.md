@@ -5,6 +5,7 @@ permalink: /compute/network/howto/
 product: compute
 
 ---
+<!--PUBLISHED-->
 # How To's with HP Helion Public Cloud Networking version 13.5
 
 <!-- Modeled after How To's with the Compute Service (https://docs.hpcloud.com/compute/using/) Some text from network guide. -->

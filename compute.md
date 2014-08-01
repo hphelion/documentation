@@ -5,6 +5,7 @@ permalink: /compute/
 product: public-cloud 
 
 ---
+<!--PUBLISHED-->
 # HP Helion Public Cloud Compute Overview
 
 <!-- <iframe src="http://player.vimeo.com/video/33922384?title=0&amp;byline=0&amp;portrait=0" width="580" height="420" frameborder="0"> </iframe> -->

@@ -1,10 +1,12 @@
-jpg---
+---
 layout: default
 title: "Management console: Understanding network screen system messages"
 permalink: /mc/compute/networks/sys-messages/
 product: compute
 
 ---
+<!--PUBLISHED-->
+
 # Management console: Understanding network screen system messages
 
 This page provides details for the various system messages you might see while using the networks screen of the management console (MC).  This page covers the following topics:

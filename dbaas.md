@@ -5,6 +5,7 @@ permalink: /dbaas/
 product: public-cloud 
 
 ---
+<!--PUBLISHED-->
 # HP Helion Public Cloud Relational Database Overview
 
 HP Helion Public Cloud Relational Database for MySQL simplifies the creation and management of MySQL database instances. The service automates administration tasks such as deployment, configuration, and patching so you can focus on adding more value to your applications and business.

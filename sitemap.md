@@ -5,6 +5,7 @@ permalink: /sitemap/
 product: public-cloud
 
 ---
+<!--PUBLISHED-->
 # HP Helion Public Cloud Documentation Site Map#
 
 Having a bit of trouble navigating our site, and so you're looking for a single list of what we cover?  You've come to the right place.

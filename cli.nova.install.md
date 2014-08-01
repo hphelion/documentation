@@ -5,6 +5,7 @@ permalink: /cli/nova/install/
 product: nova-cli
 
 ---
+<!--PUBLISHED-->
 # HP Helion Public Cloud v12.12 Python Novaclient CLI Installation#
 
 Before you can begin working with the Novaclient CLI software, you have to install the package.  The instructions below work for Ubuntu, CentOS and Windows installations.<!-- Take a look at the [HP Helion Public Cloud Python Novaclient CLI - Release Notes](/cli/nova/release-notes) for the latest features.-->

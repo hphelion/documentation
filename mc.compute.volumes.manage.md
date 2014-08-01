@@ -5,6 +5,7 @@ permalink: /mc/compute/volumes/manage/
 product: mc-compute
 
 ---
+<!--PUBLISHED-->
 # Management console: Managing volumes
 
 This page describes how to create and delete volumes using the [volumes screen](/mc/compute/volumes/) of the [management console](/mc/) (MC).  This page covers the following topics:

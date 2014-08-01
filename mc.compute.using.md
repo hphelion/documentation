@@ -5,6 +5,7 @@ permalink: /mc/compute/using/
 product: mc-compute
 
 ---
+<!--PUBLISHED-->
 # Using the management console: Some Compute use cases
 
 So you've fired up our [management console](https://console.hpcloud.com) (MC) and played around with it, maybe even read some of [our documentation](/mc) on it, and you're now asking yourself, "What are some of the cool things I can do with all this?"  Good question!  It's for just that reason that we've created a bunch of use cases for you to look through to help you out!

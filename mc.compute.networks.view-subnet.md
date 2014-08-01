@@ -5,6 +5,7 @@ permalink: /mc/compute/networks/view-subnet/
 product: mc-compute
 
 ---
+<!--PUBLISHED-->
 # Management console: Viewing subnet details
 
 This page covers how to view subnet details using the networks screen of the management console (MC).  This page covers the following topics:

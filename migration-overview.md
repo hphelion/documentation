@@ -5,6 +5,7 @@ permalink: /migration-overview/
 product: public-cloud
 
 ---
+<!--PUBLISHED-->
 # HP Helion Public Cloud 12.12 to 13.5 transition overview
 
 This page provides you with information to help you transition from version 12.12 to 13.5 of the HP Helion Public Cloud.  This overview covers the following topics and tasks:

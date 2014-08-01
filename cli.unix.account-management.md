@@ -5,6 +5,7 @@ permalink: /cli/unix/account-management/
 product: unix-cli
 
 ---
+<!--PUBLISHED-->
 #UNIX CLI for HP Helion Public Cloud: Advanced Account Management v12.12
 
 ___________________

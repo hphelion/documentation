@@ -5,6 +5,7 @@ permalink: /block-storage/
 product: public-cloud 
 
 ---
+<!--PUBLISHED-->
 # HP Helion Public Cloud Block Storage Overview
 
 The HP Cloud Block Storage service provides additional storage for your HP Cloud Compute instances. HP Block Storage protects your data in the event an instance fails.

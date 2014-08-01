@@ -5,6 +5,7 @@ permalink: /bindings/fog/block-storage/
 product: fog
 
 ---
+<!--PUBLISHED-->
 #Ruby Fog Bindings for HP Helion Public Cloud Block Storage Examples
 
 ##Important Notice##

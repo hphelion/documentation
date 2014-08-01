@@ -6,6 +6,7 @@ product: unix-cli
 categories: cli linux object store migration
 tags: cli linux object store migration aws rackspace google
 ---
+<!--PUBLISHED-->
 #UNIX CLI for HP Helion Public Cloud: Performing UNIX object storage migration v12.12#
 
 ___________________

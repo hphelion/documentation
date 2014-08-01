@@ -5,6 +5,7 @@ permalink: /bindings/fog/
 product: fog
 
 ---
+<!--PUBLISHED-->
 # HP Helion Public Cloud: Extensions to Ruby Fog Bindings #
 
 ##Important Notice##

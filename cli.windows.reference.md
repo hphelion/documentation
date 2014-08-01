@@ -5,6 +5,7 @@ permalink: /cli/windows/reference/
 product: win-2-cli
 
 ---
+<!--PUBLISHED-->
 <!-- Removed all html tags -->
 # HP Helion Public Cloud CLI Software for Windows PowerShell Command Line Reference #
 

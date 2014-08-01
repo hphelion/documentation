@@ -5,6 +5,7 @@ permalink: /bindings/jclouds/compute/
 product: jclouds
 
 ---
+<!--PUBLISHED-->
 # HP Helion Public Cloud: jclouds Bindings Compute Examples
 
 This page provides you with examples of how to use the jclouds bindings to perform compute tasks.  The library provides you with two different APIs that you can use: the Provider-Specific API, and the Compute Service Portable API, which allows you the freedom to use portable abstractions or cloud-specific features.

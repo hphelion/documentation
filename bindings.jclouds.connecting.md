@@ -6,6 +6,7 @@ published: false
 product: jclouds
 
 ---
+<!--PUBLISHED-->
 # Connecting to the HP Helion Public Cloud Service
 
 This page gives you details on how to connect to the HP Helion Public Cloud service.

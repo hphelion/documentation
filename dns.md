@@ -5,6 +5,7 @@ permalink: /dns/
 product: public-cloud 
 
 ---
+<!--PUBLISHED-->
 # HP Helion Public Cloud Domain Name Service (DNS) Overview
 
 The HP Helion Public Cloud Domain Name service (DNS) provides you with a managed domain name service that features anycast routing hosted by HP Helion Public Cloud.  

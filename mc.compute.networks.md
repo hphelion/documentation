@@ -5,6 +5,7 @@ permalink: /mc/compute/networks/
 product: mc-compute
 
 ---
+<!--PUBLISHED-->
 # Management console: Networks screen
 
 The management console (MC) compute dashboard networks screen allows you to view and manipulate networks.  This page covers the following topics:

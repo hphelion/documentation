@@ -5,6 +5,7 @@ permalink: /lbaas/
 product: public-cloud 
 
 ---
+<!--PUBLISHED-->
 # HP Helion Public Cloud Load Balancing as a Service (LBaaS) Overview
 
 The HP Helion Public Cloud Load Balancing as a Service (LBaaS) provides you with a managed service that lets you enable automatic traffic routing to multiple back-end servers hosted by HP.  

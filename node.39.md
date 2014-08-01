@@ -5,6 +5,7 @@ permalink: /node/39
 product: identity
 
 ---
+<!--PUBLISHED-->
 # Migrating to the new HP Helion Public Cloud Identity Service
 
 <!--This is a comment. Comments are not displayed in the browser-->

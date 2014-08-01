@@ -6,6 +6,7 @@ product: unix-cli
 categories: cli linux compute servers keypairs
 tags: cli linux compute servers keypairs
 ---
+<!--PUBLISHED-->
 #UNIX CLI for HP Helion Public Cloud: Accessing Servers with Managed Keypairs v12.12#
 
 ___________________

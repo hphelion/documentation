@@ -5,6 +5,7 @@ permalink: /cloudos/api/services/compute/getting-started
 product: compute
 
 ---
+<!--PUBLISHED-->
 # Getting Started with HP Helion Public Cloud OS Compute Service #
 
 <!-- modeled after HP Helion Public Cloud Networking Getting Started (network.getting.started.md) -->

@@ -5,6 +5,7 @@ permalink: /rdb/
 product: rdb
 
 ---
+<!--PUBLISHED-->
 # HP Helion Public Cloud Relational Database (RDB) Overview
 
 The HP Helion Public Cloud Relational Database (RDB) provides you with a simplified method for creation and management of MySQL database instances.  

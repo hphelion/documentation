@@ -5,6 +5,7 @@ permalink: /mc/compute/volumes/view-details/
 product: mc-compute
 
 ---
+<!--PUBLISHED-->
 # Management console: Viewing volume details
 
 This page describes the volume details screen of the [management console](/mc/) (MC).  This page covers the following topics:

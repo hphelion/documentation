@@ -5,6 +5,7 @@ permalink: /block-storage/api/
 product: block-storage
 
 ---
+<!--PUBLISHED-->
 # HP Helion Public Cloud Block Storage API
 
 <!--Because Block Storage is so closely associated with Compute, the HP Helion Public Cloud Block Storage API is documented inside the HP Helion Public Cloud Compute API documentation-->

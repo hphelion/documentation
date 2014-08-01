@@ -7,6 +7,7 @@ categories: neutron
 tags: networking neutron vpn
 
 ---
+<!--PUBLISHED-->
 # HP Helion Public Cloud Networking: Quick Start Guide # {#top}
 
 HP Helion Public Cloud Networking is a virtual networking service that provides network connectivity and IP addressing for HP Helion Public Cloud compute devices. It is based on OpenStack Networking open source software. 

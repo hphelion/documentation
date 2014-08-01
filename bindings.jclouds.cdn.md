@@ -5,6 +5,7 @@ permalink: /bindings/jclouds/cdn/
 product: jclouds
 
 ---
+<!--PUBLISHED-->
 # HP Helion Public Cloud: jclouds Binding CDN Examples
 
 This page provides you with examples of how to use the jclouds bindings to perform CDN tasks.  

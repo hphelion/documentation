@@ -5,6 +5,7 @@ permalink: /compute/api/
 product: compute
 
 ---
+<!--PUBLISHED-->
 # HP Helion Public Cloud Compute API#
 
 Surf on over to our [Compute API Reference](/api/compute) for lots of details on the HP compute service.  

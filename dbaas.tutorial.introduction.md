@@ -5,6 +5,7 @@ permalink: /dbaas/tutorial/introduction/
 product: dbaas
 
 ---
+<!--PUBLISHED-->
 # Using HP Helion Public Cloud Relational Database
 
 HP Helion Public Cloud Relational Database (sometimes called Database as a Service, or DBaaS) provides highly optimized MySQL databases inside of the HP Helion Public Cloud.

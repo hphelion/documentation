@@ -5,6 +5,7 @@ permalink: /mc/compute/security-groups/
 product: mc-compute
 
 ---
+<!--PUBLISHED-->
 # Management console: Security groups screen
 
 The management console (MC) compute dashboard security groups screen allows you to view and manipulate compute security groups.  This page covers the following topics:

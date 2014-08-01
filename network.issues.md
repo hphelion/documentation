@@ -5,6 +5,7 @@ permalink: /compute/known-issues/
 product: compute
 
 ---
+<!--PUBLISHED-->
 # Known Issues and Workarounds with the Networking Service
 
 <!-- Taken from the doc known as the Network Guide ("HP Helion Public Cloud Networking overview) /compute.network-guide.md -->

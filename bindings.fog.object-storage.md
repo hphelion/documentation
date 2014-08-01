@@ -5,6 +5,7 @@ permalink: /bindings/fog/object-storage/
 product: fog
 
 ---
+<!--PUBLISHED-->
 #HP Helion Public Cloud: Fog Bindings Object Storage Examples
 
 

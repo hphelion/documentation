@@ -5,6 +5,7 @@ permalink: /compute/networks/issues/
 product: compute
 
 ---
+<!--PUBLISHED-->
 # HP Helion Public Cloud Compute Networking Known Issues and Workarounds#
 
 This document lists the following issues you may experience when working with our networking services and suggests workarounds for those issues:

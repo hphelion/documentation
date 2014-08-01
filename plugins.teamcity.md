@@ -5,6 +5,7 @@ permalink: /compute/teamcity/
 product: compute
 
 ---
+<!--PUBLISHED-->
 
 HP TeamCity Plugin for HP Helion Public Cloud
 =============================

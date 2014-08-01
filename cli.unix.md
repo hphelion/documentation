@@ -5,6 +5,7 @@ permalink: /cli/unix/
 product: unix-cli
 
 ---
+<!--PUBLISHED-->
 # UNIX CLI for HP Helion Public Cloud v13.5
 
 ___________________

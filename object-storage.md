@@ -5,6 +5,7 @@ permalink: /object-storage/
 product: public-cloud 
 
 ---
+<!--PUBLISHED-->
 # HP Helion Public Cloud Object Storage Overview
 
 <!-- <iframe src="https://player.vimeo.com/video/32118778?title=0&amp;byline=0&amp;portrait=0" width="580" height="420" frameborder="0"> </iframe> -->

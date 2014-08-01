@@ -5,6 +5,7 @@ permalink: /api/v13/copyright/
 product: public-cloud
 
 ---
+<!--PUBLISHED-->
 
 # Copyright for HP Helion Public Cloud APIs (v13.5)
 

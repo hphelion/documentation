@@ -5,6 +5,7 @@ permalink: /mc/compute/networks/manage-subnet/
 product: mc-compute
 
 ---
+<!--PUBLISHED-->
 # Management console: Managing a subnet
 
 This page covers how to create and delete a subnet using the networks screen of the management console (MC).  This page covers the following topics:

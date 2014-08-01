@@ -5,6 +5,7 @@ permalink: /cli/win/folder-operations/
 product: win-cli
 
 ---
+<!--PUBLISHED-->
 # Windows CLI: Folder Copy Operations
 
 ##Folder Operations

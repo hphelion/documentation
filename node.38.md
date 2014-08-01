@@ -5,6 +5,7 @@ permalink: /node/38
 product: identity
 
 ---
+<!--PUBLISHED-->
 # Introduction to the HP Helion Public Cloud Identity Service
 
 <!--This is a comment. Comments are not displayed in the browser-->

@@ -5,6 +5,7 @@ permalink: /mc/compute/servers/view-details/
 product: mc-compute
 
 ---
+<!--PUBLISHED-->
 # Management console: Viewing server details
 
 This page describes the server details screen of the [management console](/mc/) (MC).  This page covers the following topics:

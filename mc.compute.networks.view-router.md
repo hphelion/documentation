@@ -5,6 +5,7 @@ permalink: /mc/compute/networks/view-router/
 product: mc-compute
 
 ---
+<!--PUBLISHED-->
 # Management console: Viewing router details
 
 This page covers how to view router details using the networks screen of the management console (MC).  This page covers the following topics:

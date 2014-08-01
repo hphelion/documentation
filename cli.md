@@ -5,6 +5,7 @@ permalink: /cli/
 product: public-cloud
 
 ---
+<!--PUBLISHED-->
 # HP Helion Public Cloud CLI
 
 We provide you with the following software packages that give you command-line interface (CLI) access for the following environments:

@@ -5,6 +5,7 @@ permalink: /cli/unix/lbaas/
 product: unix-cli
 
 ---
+<!--PUBLISHED-->
 # UNIX CLI for HP Helion Public Cloud Load Balancer as a Service (LBaaS) Examples
 
 ___________________

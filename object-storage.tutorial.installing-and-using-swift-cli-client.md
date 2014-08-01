@@ -6,6 +6,7 @@ product:
   - object-storage
 
 ---
+<!--PUBLISHED-->
 # Installing And Using The Swift CLI Client
 
 This article describes the steps you'll need to follow in order to download files from and upload files to your HP Helion Public Cloud object storage containers from your *nix command-line.

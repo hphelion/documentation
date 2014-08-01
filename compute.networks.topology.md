@@ -4,6 +4,7 @@ title: "HP Helion Public Cloud Horizon Console: Network Topology screen"
 permalink: /mc/compute/topology/
 product: mc-compute
 ---
+<!--PUBLISHED-->
 # HP Helion Public Cloud Horizon Console: Network Topology Screen
 
 The HP Helion Public Cloud Horizon console Network Topology screen allows you to view and manipulate the networks in your project.  This page covers the following topics:

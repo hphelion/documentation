@@ -5,6 +5,7 @@ permalink: /cdn/api/
 product: cdn
 
 ---
+<!--PUBLISHED-->
 # HP Helion Public Cloud CDN API
 
 Surf on over to our [CDN API Reference](/api/CDN) for lots of details on the HP Helion Public Cloud CDN service.  

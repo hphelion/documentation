@@ -5,6 +5,7 @@ permalink: /block-storage/volume/
 product: block-storage
 
 ---
+<!--PUBLISHED-->
 # HP Helion Public Cloud UNIX CLI Volume Management#
 
 ___________________

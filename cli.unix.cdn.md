@@ -5,6 +5,7 @@ permalink: /cli/unix/cdn/
 product: unix-cli
 
 ---
+<!--PUBLISHED-->
 # UNIX CLI for HP Helion Public Cloud CDN Examples for v12.12
 
 ___________________

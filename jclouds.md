@@ -6,6 +6,7 @@ published: false
 product: jclouds
 
 ---
+<!--PUBLISHED-->
 # Java jclouds Binding
 
 Java access to HP Helion Public Cloud Compute and HP Helion Public Cloud Objects is accomplished using the [jclouds multi-cloud library](http://code.google.com/p/jclouds).  This easy to use library abstracts common cloud functionality into a simple interface.  HP has contributed a provider for both HP Helion Public Cloud Compute and HP Helion Public Cloud Objects back to the jclouds community to make our services accessible to Java programmers.

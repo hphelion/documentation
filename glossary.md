@@ -5,6 +5,7 @@ permalink: /glossary/
 product: public-cloud
 
 ---
+<!--PUBLISHED-->
 # Glossary of HP Helion Public Cloud Terms
 
 Sometimes it's a little easy to become lost in the weeds of the cloud nomenclature; for such times, we've created this glossary to help you through.  While this glossary concentrates primarily on terms that are more specific to the HP Helion Public Cloud environment, we have tried to include a salad of general cloud computing terms to help you along.  If you need additional definitions, we suggest going on over to the [Open Stack Glossary](http://cloudglossary.com/) and checking there.

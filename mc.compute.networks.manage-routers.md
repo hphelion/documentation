@@ -5,6 +5,7 @@ permalink: /mc/compute/networks/manage-routers/
 product: mc-compute
 
 ---
+<!--PUBLISHED-->
 # Management console: Managing routers
 
 This page covers how to create and delete a router using the networks screen of the management console (MC).  This page covers the following topics:

@@ -5,6 +5,7 @@ permalink: /mc/compute/images/manage/
 product: mc-compute
 
 ---
+<!--PUBLISHED-->
 # Management Console: Managing Images
 
 This page describes how to create and delete images using the [images screen](/mc/compute/images/) of the [management console](/mc/) (MC).  This page covers the following topics:

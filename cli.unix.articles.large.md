@@ -6,6 +6,7 @@ product: unix-cli
 categories: cli linux unix
 tags: large file upload download
 ---
+<!--PUBLISHED-->
 #UNIX CLI for HP Helion Public Cloud: Performing large file uploads v12.12#
 
 ___________________

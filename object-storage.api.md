@@ -5,6 +5,7 @@ permalink: /object-storage/api/
 product: object-storage
 
 ---
+<!--PUBLISHED-->
 # HP Helion Public Cloud Object Storage  API
 
 Surf on over to our [Object Storage API Reference](/api/object-storage) for lots of details on the HP Helion Public Cloud object storage service.  

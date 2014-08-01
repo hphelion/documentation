@@ -5,6 +5,7 @@ permalink: /mc/compute/
 product: mc-compute
 
 ---
+<!--PUBLISHED-->
 # Management Console Compute Dashboard
 
 This page provides you with an overview of the management console (MC) compute dashboard, which displays your compute information and acts as your main interface to your compute functions.  This page covers the following topics:

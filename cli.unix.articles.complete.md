@@ -6,6 +6,7 @@ product: unix-cli
 categories: cli linux bash
 tags: cli linux bash
 ---
+<!--PUBLISHED-->
 #UNIX CLI for HP Helion Public Cloud: Using bash shell command completion v12.12#
 
 ___________________

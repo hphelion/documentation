@@ -5,6 +5,7 @@ permalink: /mc/
 product: mc
 
 ---
+<!--PUBLISHED-->
 # Management console overview
 
 HP Helion Public Cloud consists of a bunch of useful services--Compute, Object Storage, Block Storage, and [many others](/services/)--and the entrance to those services is through the management console (MC).  This page provides you with an overview of the console, along with pointers to other good information to get you going.

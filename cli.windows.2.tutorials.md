@@ -6,6 +6,7 @@ published: false
 product: win-2-cli
 
 ---
+<!--PUBLISHED-->
 # HP Helion Public Cloud Services Windows PowerShell Tutorials
 
 Windows Powershell has long been a widely used system administration tool, so it was a natural place to integrate with HP Helion Public Cloud Services Object Storage and Compute.  In the tutorials below, you will learn all the different ways that you can interact with the Windows PowerShell Command Line Interface (CLI).

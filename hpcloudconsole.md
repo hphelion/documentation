@@ -5,6 +5,7 @@ permalink: /hpcloudconsole/
 product: public-cloud
 
 ---
+<!--PUBLISHED-->
 
 
 # Getting Started with HP Helion Public Cloud Console

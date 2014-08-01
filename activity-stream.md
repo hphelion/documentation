@@ -5,6 +5,7 @@ permalink: /activity-stream/
 product: public-cloud
 
 ---
+<!--PUBLISHED-->
 # HP Helion Public Cloud Activity Stream
 
 Your cloud experience can have a lot of moving parts!  Keeping track of various data about the resources you're consuming, their performance, availability and a whole host of other attributes has to be a priority. This is especially true if you work in a group or a large enterprise - you need to track who has access or took what actions. There is a vast amount of data constantly being generated from your Cloud resources. 

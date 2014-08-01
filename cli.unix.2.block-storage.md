@@ -5,6 +5,7 @@ permalink: /cli/unix/2/block-storage/
 product: unix-cli
 
 ---
+<!--PUBLISHED-->
 # Unix CLI for HP Helion Public Cloud v13.5 Block Storage Examples
 
 If you are using v12.12, click [here](https://docs.hpcloud.com/cli/unix/block-storage) for documentation.

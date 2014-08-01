@@ -5,6 +5,7 @@ permalink: /api/v13/
 product: api
 
 ---
+<!--PUBLISHED-->
 # HP Helion Public Cloud APIs (v13.5)
 
 There are a number of HP Helion Public Cloud APIs available for your programming pleasure: 

@@ -5,6 +5,7 @@ permalink: /cli/windows/2/installation/
 product: win-2-cli
 
 ---
+<!--PUBLISHED-->
 # HP Helion Public Cloud CLI Software for Windows PowerShell Installation
 
 To get the HP Helion Public Cloud CLI Software for Windows PowerShell installed and running properly you must complete the following tasks:

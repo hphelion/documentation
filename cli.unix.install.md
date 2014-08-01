@@ -5,6 +5,7 @@ permalink: /cli/unix/install/
 product: unix-cli
 
 ---
+<!--PUBLISHED-->
 # UNIX CLI for HP Helion Public Cloud Installation for v12.12
 
 ___________________

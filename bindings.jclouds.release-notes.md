@@ -5,6 +5,7 @@ permalink: /bindings/jclouds/release-notes/
 product: jclouds
 
 ---
+<!--PUBLISHED-->
 # Release Notes for the HP Helion Public Cloud Ruby Fog Binding
 
 These are the release notes for the HP Helion Public Cloud Java/Cloture jclouds bindings.  The current release number for the [HP Helion Public Cloud Java/Cloture jclouds software bindings](/bindings) is version 0.0.20, released on Mar. 15th, 2013.  These release notes contain the following information:
