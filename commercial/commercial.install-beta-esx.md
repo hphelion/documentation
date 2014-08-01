@@ -106,7 +106,7 @@ Before you begin, you must download the required HP Helion OpenStack installatio
 
     [HP Helion OpenStack product installation](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221247%22%7D/Show)
 
-For more details, refer to the *Downloading installation packages* section on the [HP Helion OpenStack Beta Installation: Before you begin](/helion/openstack/install-beta/prereqs/) page.
+For more details, refer to the *Downloading installation packages* section on the [HP Helion OpenStack Beta Installation: Before you begin](/helion/openstack/install-beta/prereqs/#install-pkg) page.
 
 ## Installing HP Helion Openstack ## {#install}
 
@@ -121,7 +121,7 @@ Ensure you have met all the hardware requirements and have completed the require
 ### Configuring proxy information {#proxy}
 Before you begin your installation, if necessary, configure the proxy information for your environment using the following steps:
 
-1. Ensure you are logged into your install system as root; otherwise, log in as root:
+1. Ensure you are logged into your install system as root; otherwise, log in as root: 
 
         sudo su -
 
@@ -197,7 +197,7 @@ Before you begin your installation, if necessary, configure the proxy informatio
         78:e7:d1:22:52:9b,operator,password,192.168.11.6,12,32768,2048
         78:e7:d1:22:52:9e,operator,password,192.168.11.7,12,32768,2048
 
-    **Note:** For more information on creating this file, refer to [Obtaining required information](/helion/openstack/install-beta/prereqs/#req-info) on the *Before you begin* page.
+    **Note:** For more information on creating this file, refer to [Creating the baremetal.csv file](/helion/openstack/install-beta/prereqs/#req-info) on the *Before you begin* page.
 
 5. [Optional] If you have installed the IPMItool, use it to verify that network connectivity from the seed VM to the baremetal servers in your baremetal.csv is working.
 
