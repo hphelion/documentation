@@ -5,6 +5,7 @@ permalink: /cloudos/moonshot/
 product: moonshot
 
 ---
+<!--PUBLISHED-->
 
 # HP Cloud OS for Moonshot Documentation 
 

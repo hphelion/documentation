@@ -4,6 +4,7 @@ permalink: /als/v1/
 product: devplatform
 
 ---
+<!--PUBLISHED-->
 
 Application Lifecycle Service Documentation[](#helion-documentation "Permalink to this headline")
 ===============================================================================

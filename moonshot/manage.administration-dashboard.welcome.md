@@ -5,6 +5,7 @@ permalink: /cloudos/moonshot/manage/administration-dashboard/welcome/
 product: moonshot
 
 ---
+<!--PUBLISHED-->
 
 
 

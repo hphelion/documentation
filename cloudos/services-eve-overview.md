@@ -5,6 +5,7 @@ permalink: /cloudos/services/eve/overview/
 product: compute
 
 ---
+<!--PUBLISHED-->
 # HP Cloud OS Eve Service Overview #
 
 <!-- modeled after HP Cloud Networking Getting Started (network.getting.started.md) -->

@@ -5,6 +5,7 @@ permalink: /helion/community/release-notes/
 product: community
 
 ---
+<!--PUBLISHED-->
 # HP Helion OpenStack&reg; Community Release Notes
 
 <!--**Product Name:** HP Helion OpenStack&reg; Community

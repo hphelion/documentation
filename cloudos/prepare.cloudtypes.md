@@ -5,6 +5,7 @@ permalink: /cloudos/prepare/cloudtypes/
 product: cloudos
 
 ---
+<!--PUBLISHED-->
 
 <script>
 

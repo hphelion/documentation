@@ -5,6 +5,7 @@ permalink: /cloudos/moonshot/manage/administration-dashboard/working-with-region
 product: moonshot
 
 ---
+<!--PUBLISHED-->
 
 <script>
 

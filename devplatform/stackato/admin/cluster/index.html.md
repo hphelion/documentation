@@ -2,6 +2,7 @@
 layout: default-devplatform
 permalink: /als/v1/admin/cluster/
 ---
+<!--PUBLISHED-->
 
 Cluster Setup[](#index-0 "Permalink to this headline")
 =======================================================

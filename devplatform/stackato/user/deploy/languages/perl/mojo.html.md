@@ -2,6 +2,7 @@
 layout: default-devplatform
 permalink: /als/v1/user/deploy/languages/perl/mojo/
 ---
+<!--PUBLISHED-->
 
 Mojolicious[](#mojolicious "Permalink to this headline")
 =========================================================

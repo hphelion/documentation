@@ -5,6 +5,7 @@ permalink: /cloudos/community/services/compute/howto/
 product: community
 
 ---
+<!--PUBLISHED-->
 
 <script>
 

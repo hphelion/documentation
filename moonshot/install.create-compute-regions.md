@@ -5,6 +5,7 @@ permalink: /cloudos/moonshot/install/create-compute-regions/
 product: moonshot
 
 ---
+<!--PUBLISHED-->
 
 
 <script> 

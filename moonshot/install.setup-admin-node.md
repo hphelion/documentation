@@ -5,6 +5,7 @@ permalink: /cloudos/moonshot/install/install-setup-admin-node/
 product: moonshot
 
 ---
+<!--PUBLISHED-->
 
 
 <script> 

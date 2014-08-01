@@ -2,6 +2,7 @@
 layout: default-devplatform
 permalink: /als/v1/user/deploy/manifestyml/
 ---
+<!--PUBLISHED-->
 
 Manifest.yml Options[](#manifest-yml-options "Permalink to this headline")
 ===========================================================================

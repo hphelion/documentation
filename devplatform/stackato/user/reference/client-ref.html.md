@@ -2,6 +2,7 @@
 layout: default-devplatform
 permalink: /als/v1/user/reference/client-ref/
 ---
+<!--PUBLISHED-->
 
 Application Lifecycle Service Client Command Reference[](#helion-client-command-reference "Permalink to this headline")
 =====================================================================================================

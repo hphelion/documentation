@@ -5,6 +5,7 @@ permalink: /cloudos/moonshot/install/customize-user-settings/
 product: moonshot
 
 ---
+<!--PUBLISHED-->
 
 
 <script> 

@@ -5,6 +5,7 @@ permalink: /helion/devplatform/community/install-als/
 product: devplatform
 
 ---
+<!--PUBLISHED-->
 
 <p style="font-size: small;"> <a href="/helion/als/install/">&#9664; PREV</a> | <a href="/helion/als/install/">&#9650; UP</a> | <a href="/helion/als/install/">NEXT &#9654;</a> </p>
 

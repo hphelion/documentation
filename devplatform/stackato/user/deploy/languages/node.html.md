@@ -2,6 +2,7 @@
 layout: default-devplatform
 permalink: /als/v1/user/deploy/languages/node/
 ---
+<!--PUBLISHED-->
 
 Node.js[](#node-js "Permalink to this headline")
 =================================================

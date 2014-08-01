@@ -5,6 +5,7 @@ permalink: /cloudos/moonshot/manage/administration-dashboard/cloud-images/
 product: moonshot
 
 ---
+<!--PUBLISHED-->
 
 <script>
 

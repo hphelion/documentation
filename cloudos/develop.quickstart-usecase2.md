@@ -5,6 +5,7 @@ permalink: /cloudos/develop/quickstart-usecase2/
 product: cloudos
 
 ---
+<!--PUBLISHED-->
 
 <script>
 

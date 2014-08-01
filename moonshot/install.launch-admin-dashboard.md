@@ -5,6 +5,7 @@ permalink: /cloudos/moonshot/install/launch-admin-dashboard/
 product: moonshot
 
 ---
+<!--PUBLISHED-->
 
 
 

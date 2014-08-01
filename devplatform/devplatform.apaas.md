@@ -5,6 +5,7 @@ permalink: /helion/devplatform/apaas/
 product: devplatform
 
 ---
+<!--PUBLISHED-->
 # HP Helion Development Platform Documentation
 
 Welcome! Whitewashed ActiveState and Stackato docs intro blurb.  

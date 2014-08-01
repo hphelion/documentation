@@ -5,6 +5,7 @@ permalink: /cloudos/services/imaging/overview/
 product: compute
 
 ---
+<!--PUBLISHED-->
 # HP Cloud OS Image Service Overview #
 
 <!-- modeled after HP Cloud Networking Getting Started (network.getting.started.md) -->

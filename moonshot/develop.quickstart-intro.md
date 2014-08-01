@@ -5,6 +5,7 @@ permalink: /cloudos/moonshot/develop/quickstart-intro/
 product: moonshot
 
 ---
+<!--PUBLISHED-->
 
 <script>
 

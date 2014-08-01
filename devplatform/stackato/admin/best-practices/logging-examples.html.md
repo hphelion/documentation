@@ -2,6 +2,7 @@
 layout: default-devplatform
 permalink: /als/v1/admin/best-practices/logging-examples/
 ---
+<!--PUBLISHED-->
 
 Log Drain Examples[](#log-drain-examples "Permalink to this headline")
 =======================================================================

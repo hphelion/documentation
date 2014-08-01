@@ -2,6 +2,7 @@
 layout: default-devplatform
 permalink: /als/v1/user/deploy/languages/php/
 ---
+<!--PUBLISHED-->
 
 PHP[](#php "Permalink to this headline")
 =========================================

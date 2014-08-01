@@ -5,6 +5,7 @@ permalink: /helion/openstack/services/compute/overview/
 product: commercial
 
 ---
+<!--PUBLISHED-->
 
 <script>
 

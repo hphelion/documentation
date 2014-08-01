@@ -5,6 +5,7 @@ permalink: /cloudos/moonshot/manage/administration-dashboard/manage-updates-exte
 product: moonshot
 
 ---
+<!--PUBLISHED-->
 
 <script>
 

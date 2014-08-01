@@ -5,6 +5,7 @@ permalink: /helion/openstack/services/focus/overview/
 product: commercial
 
 ---
+<!--PUBLISHED-->
 # HP Helion OpenStack&#174; Focus Service Overview #
 
 <!-- modeled after HP Cloud Networking Getting Started (network.getting.started.md); text from docs.hpcloud.com/helion/openstack/prepare/overview/ -->

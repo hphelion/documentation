@@ -2,6 +2,7 @@
 layout: default-devplatform
 permalink: /als/v1/admin/console/
 ---
+<!--PUBLISHED-->
 
 Management Console (Admin View)[](#management-console-admin-view "Permalink to this headline")
 ===============================================================================================

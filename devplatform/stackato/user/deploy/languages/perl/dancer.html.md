@@ -2,6 +2,7 @@
 layout: default-devplatform
 permalink: /als/v1/user/deploy/languages/perl/dancer/
 ---
+<!--PUBLISHED-->
 
 Dancer[](#dancer "Permalink to this headline")
 ===============================================

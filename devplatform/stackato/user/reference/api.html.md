@@ -2,6 +2,7 @@
 layout: default-devplatform
 permalink: /als/v1/user/reference/api/
 ---
+<!--PUBLISHED-->
 
 Application Lifecycle Service Client API[](#helion-client-api "Permalink to this headline")
 =========================================================================

@@ -5,6 +5,7 @@ permalink: /cloudos/services/object/overview/
 product: compute
 
 ---
+<!--PUBLISHED-->
 # HP Cloud OS Object Storage Service Overview #
 
 <!-- modeled after HP Cloud Networking Getting Started (network.getting.started.md) -->

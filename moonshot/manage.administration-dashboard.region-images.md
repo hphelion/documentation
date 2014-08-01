@@ -5,6 +5,7 @@ permalink: /cloudos/moonshot/manage/administration-dashboard/region-images/
 product: moonshot
 
 ---
+<!--PUBLISHED-->
 
 <script>
 

@@ -5,6 +5,7 @@ permalink: /cloudos/services/identity/howto/
 product: compute
 
 ---
+<!--PUBLISHED-->
 # How To's with the HP Cloud OS Identity Service #
 
 <!-- Taken from http://wiki.hpcloud.net/display/core/Core+Edition+Use+cases#CoreEditionUsecases-OverCloud -->

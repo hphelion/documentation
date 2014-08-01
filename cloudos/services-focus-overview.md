@@ -5,6 +5,7 @@ permalink: /cloudos/services/focus/overview/
 product: compute
 
 ---
+<!--PUBLISHED-->
 # HP Cloud OS Focus Service Overview #
 
 <!-- modeled after HP Cloud Networking Getting Started (network.getting.started.md); text from docs.hpcloud.com/cloudos/prepare/overview/ -->

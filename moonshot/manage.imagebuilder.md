@@ -5,6 +5,7 @@ permalink: /cloudos/moonshot/manage/image-builder/
 product: moonshot
 
 ---
+<!--PUBLISHED-->
 
 <script>
 

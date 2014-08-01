@@ -2,6 +2,7 @@
 layout: default-devplatform
 permalink: /als/v1/user/services/filesystem/
 ---
+<!--PUBLISHED-->
 
 Persistent File System[](#persistent-file-system "Permalink to this headline")
 ===============================================================================

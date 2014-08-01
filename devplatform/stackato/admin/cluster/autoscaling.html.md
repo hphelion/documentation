@@ -2,6 +2,7 @@
 layout: default-devplatform
 permalink: /als/v1/admin/cluster/autoscaling/
 ---
+<!--PUBLISHED-->
 
 DEA Auto Scaling[](#dea-auto-scaling "Permalink to this headline")
 ===================================================================

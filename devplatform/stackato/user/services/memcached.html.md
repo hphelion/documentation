@@ -2,6 +2,7 @@
 layout: default-devplatform
 permalink: /als/v1/user/services/memcached/
 ---
+<!--PUBLISHED-->
 
 Memcached Service[](#memcached-service "Permalink to this headline")
 =====================================================================

@@ -5,6 +5,7 @@ permalink: /helion/openstack/services/compute/getting-started/
 product: commercial
 
 ---
+<!--PUBLISHED-->
 # Getting Started with HP Helion OpenStack&#174; Compute #
 
 <!-- modeled after HP Cloud Networking Getting Started (network.getting.started.md) -->

@@ -5,6 +5,7 @@ permalink: /cloudos/moonshot/prepare/order-license/
 product: moonshot
 
 ---
+<!--PUBLISHED-->
 
 
 <p style="font-size: small;"> <a href="/cloudos/moonshot/prepare/glossary/">&#9664; PREV | <a href="/cloudos/moonshot/prepare/">&#9650; UP</a> | NEXT &#9654; </p>

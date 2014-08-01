@@ -5,6 +5,7 @@ permalink: /cloudos/moonshot/prepare/glossary/
 product: moonshot
 
 ---
+<!--PUBLISHED-->
 
 <script>
 

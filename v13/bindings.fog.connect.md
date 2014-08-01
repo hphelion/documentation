@@ -5,6 +5,7 @@ permalink: /v13/bindings/fog/connect/
 product: fog
 
 ---
+<!--PUBLISHED-->
 #Ruby Fog Bindings for HP Helion Public Cloud: Connecting to the HP Helion Public Cloud
 
 This page gives you details on how to connect to the HP Helion Public Cloud and contains the following sections:

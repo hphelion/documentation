@@ -7,6 +7,7 @@ product: moonshot
 
 
 ---
+<!--PUBLISHED-->
 
 <script>
 

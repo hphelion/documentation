@@ -5,6 +5,7 @@ permalink: /cloudos/services/reporting/howto/
 product: compute
 
 ---
+<!--PUBLISHED-->
 # How To's with the HP Cloud OS Telemetry and Reporting (Ceilometer) Service #
 
 Collection

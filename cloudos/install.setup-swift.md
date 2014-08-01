@@ -5,6 +5,7 @@ permalink: /cloudos/install/setup-swift/
 product: cloudos
 
 ---
+<!--PUBLISHED-->
 
 <script> 
  

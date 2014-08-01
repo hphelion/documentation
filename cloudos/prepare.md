@@ -5,6 +5,7 @@ permalink: /cloudos/prepare/
 product: cloudos
 
 ---
+<!--PUBLISHED-->
 
 
 <p style="font-size: small;"> &#9664; PREV | <a href="/cloudos/">&#9650; UP</a> | <a href="/cloudos/prepare/releasenotes/">NEXT &#9654;</a> </p>

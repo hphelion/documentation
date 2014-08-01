@@ -5,6 +5,7 @@ permalink: /helion/openstack/services/eve/overview/
 product: commercial
 
 ---
+<!--PUBLISHED-->
 # HP Helion OpenStack&#174; Eve Service Overview #
 
 <!-- modeled after HP Cloud Networking Getting Started (network.getting.started.md) -->

@@ -5,6 +5,7 @@ permalink: /cloudos/prepare/releasenotes/
 product: cloudos
 
 ---
+<!--PUBLISHED-->
 
 <script>
 

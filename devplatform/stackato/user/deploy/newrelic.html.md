@@ -2,6 +2,7 @@
 layout: default-devplatform
 permalink: /als/v1/user/deploy/newrelic/
 ---
+<!--PUBLISHED-->
 
 New Relic Monitoring[](#new-relic-monitoring "Permalink to this headline")
 ===========================================================================

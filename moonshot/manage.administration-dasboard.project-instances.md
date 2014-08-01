@@ -5,6 +5,7 @@ permalink: /cloudos/moonshot/manage/administration-dashboard/project-instances/
 product: moonshot
 
 ---
+<!--PUBLISHED-->
 
 <script>
 

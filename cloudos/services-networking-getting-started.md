@@ -5,6 +5,7 @@ permalink: /cloudos/services/networking/getting-started/
 product: compute
 
 ---
+<!--PUBLISHED-->
 # Getting Started with HP Cloud OS Networking Service #
 
 <!-- modeled after HP Cloud Networking Getting Started (network.getting.started.md) -->

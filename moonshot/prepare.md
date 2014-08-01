@@ -4,6 +4,7 @@ title: "HP Cloud OS for Moonshot - Get Started"
 permalink: /cloudos/moonshot/prepare/
 product: moonshot
 ---
+<!--PUBLISHED-->
 
 
 

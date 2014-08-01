@@ -5,6 +5,7 @@ permalink: /cloudos/moonshot/siteindex/
 product: moonshot
 
 ---
+<!--PUBLISHED-->
 
 <script>
 

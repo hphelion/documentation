@@ -5,6 +5,7 @@ permalink: /helion/devplatform/community/release-notes/
 product: devplatform
 
 ---
+<!--PUBLISHED-->
 <p style="font-size: small;"> <a href="/helion/devplatform/community/">&#9664; PREV</a> | <a href="/helion/devplatform/community/">&#9650; UP</a> | <a href="/helion/devplatform/community/install/"> &#9654; NEXT</a></p>
 	
 # HP Helion Development Platform Community Release Notes 

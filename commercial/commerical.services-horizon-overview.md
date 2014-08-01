@@ -5,6 +5,7 @@ permalink: /helion/openstack/services/horizon/overview/
 product: commercial
 
 ---
+<!--PUBLISHED-->
 
 <script>
 

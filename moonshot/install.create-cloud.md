@@ -5,6 +5,7 @@ permalink: /cloudos/moonshot/install/create-cloud/
 product: moonshot
 
 ---
+<!--PUBLISHED-->
 
 
 <script> 

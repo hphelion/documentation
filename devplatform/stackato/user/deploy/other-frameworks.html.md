@@ -2,6 +2,7 @@
 layout: default-devplatform
 permalink: /als/v1/user/deploy/other-frameworks/
 ---
+<!--PUBLISHED-->
 
 Generic & Standalone Frameworks[](#generic-standalone-frameworks "Permalink to this headline")
 ===============================================================================================

@@ -2,6 +2,7 @@
 layout: default-devplatform
 permalink: /als/v1/admin/cluster/cloud-init/
 ---
+<!--PUBLISHED-->
 
 cloud-init[](#cloud-init "Permalink to this headline")
 =======================================================

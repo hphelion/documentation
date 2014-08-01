@@ -5,6 +5,7 @@ permalink: /cloudos/manage/administration-dashboard/welcome/
 product: cloudos
 
 ---
+<!--PUBLISHED-->
 
 
 <a name="_top"> </a>

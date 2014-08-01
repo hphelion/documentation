@@ -5,6 +5,7 @@ permalink: /cloudos/services/identity/getting-started/
 product: compute
 
 ---
+<!--PUBLISHED-->
 # Getting Started with HP Cloud OS Identity Service #
 
 <!-- modeled after HP Cloud Networking Getting Started (network.getting.started.md) -->

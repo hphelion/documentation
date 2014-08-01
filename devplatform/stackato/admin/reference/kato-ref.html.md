@@ -2,6 +2,7 @@
 layout: default-devplatform
 permalink: /als/v1/admin/reference/kato-ref/
 ---
+<!--PUBLISHED-->
 
 Kato Command Reference[](#kato-command-reference "Permalink to this headline")
 ===============================================================================

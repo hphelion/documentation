@@ -2,6 +2,7 @@
 layout: default-devplatform
 permalink: /als/v1/admin/server/router/
 ---
+<!--PUBLISHED-->
 
 Router[](#index-1 "Permalink to this headline")
 ================================================

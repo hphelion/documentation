@@ -2,6 +2,7 @@
 layout: default-devplatform
 permalink: /als/v1/user/deploy/languages/python/
 ---
+<!--PUBLISHED-->
 
 Python[](#python "Permalink to this headline")
 ===============================================

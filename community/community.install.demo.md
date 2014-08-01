@@ -5,6 +5,7 @@ permalink: /helion/community/install-virtual/
 product: community
 
 ---
+<!--PUBLISHED-->
 
 
 <p style="font-size: small;"> <a href="/helion/community/install/">&#9664; PREV</a> | <a href="/helion/community/install-overview/">&#9650; UP</a> | <a href="/helion/community/">NEXT &#9654;</a> </p>

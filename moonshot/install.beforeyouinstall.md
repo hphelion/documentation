@@ -5,6 +5,7 @@ permalink: /cloudos/moonshot/install/before-you-install/
 product: moonshot
 
 ---
+<!--PUBLISHED-->
 
 
 <script> 

@@ -2,6 +2,7 @@
 layout: default-devplatform
 permalink: /als/v1/user/deploy/languages/perl/mason/
 ---
+<!--PUBLISHED-->
 
 Mason[](#mason "Permalink to this headline")
 =============================================

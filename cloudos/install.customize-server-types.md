@@ -5,6 +5,7 @@ permalink: /cloudos/install/customize-server-types/
 product: cloudos
 
 ---
+<!--PUBLISHED-->
 
 <script>
 

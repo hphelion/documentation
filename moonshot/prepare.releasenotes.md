@@ -4,6 +4,7 @@ title: "HP Cloud OS for Moonshot for Moonshot Release Notes"
 permalink: /cloudos/moonshot/prepare/releasenotes/
 product: moonshot
 ---
+<!--PUBLISHED-->
 
 
 <script>

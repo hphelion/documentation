@@ -2,6 +2,7 @@
 layout: default-devplatform
 permalink: /als/v1/user/deploy/languages/perl/perlcgi/
 ---
+<!--PUBLISHED-->
 
 Perl CGI[](#perl-cgi "Permalink to this headline")
 ===================================================

@@ -2,6 +2,7 @@
 layout: default-devplatform
 permalink: /als/v1/admin/console/app-store/
 ---
+<!--PUBLISHED-->
 
 App Store[](#index-0 "Permalink to this headline")
 ===================================================

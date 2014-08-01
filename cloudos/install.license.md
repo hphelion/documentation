@@ -5,6 +5,7 @@ permalink: /cloudos/install/license/
 product: cloudos
 
 ---
+<!--PUBLISHED-->
 
 <script> 
 

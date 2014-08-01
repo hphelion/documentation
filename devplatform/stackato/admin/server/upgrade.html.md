@@ -2,6 +2,7 @@
 layout: default-devplatform
 permalink: /als/v1/admin/server/upgrade/
 ---
+<!--PUBLISHED-->
 
 Upgrading Application Lifecycle Service[](#upgrading-helion "Permalink to this headline")
 =======================================================================

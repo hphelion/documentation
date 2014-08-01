@@ -5,6 +5,7 @@ permalink: /cloudos/moonshot/manage/administration-dashboard/manage-moonshot-cha
 product: moonshot
 
 ---
+<!--PUBLISHED-->
 
 <script>
 

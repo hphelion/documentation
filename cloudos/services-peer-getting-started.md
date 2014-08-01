@@ -5,6 +5,7 @@ permalink: /cloudos/services/peer/getting-started/
 product: compute
 
 ---
+<!--PUBLISHED-->
 # Getting Started with HP Cloud OS Peer Service #
 
 <!-- modeled after HP Cloud Networking Getting Started (network.getting.started.md); text from docs.hpcloud.com/cloudos/prepare/overview/ -->

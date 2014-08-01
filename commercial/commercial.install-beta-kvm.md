@@ -5,6 +5,7 @@ permalink: /helion/openstack/install-beta/kvm/
 product: commercial
 
 ---
+<!--PUBLISHED-->
 
 
 <script>

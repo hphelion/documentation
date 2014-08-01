@@ -5,6 +5,7 @@ permalink: /cloudos/services/identity/overview/
 product: compute
 
 ---
+<!--PUBLISHED-->
 # HP Cloud OS Identity Service Overview #
 
 <!-- modeled after HP Cloud Networking Getting Started (network.getting.started.md) -->

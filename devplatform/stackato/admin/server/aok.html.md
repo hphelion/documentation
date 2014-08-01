@@ -2,6 +2,7 @@
 layout: default-devplatform
 permalink: /als/v1/admin/server/aok/
 ---
+<!--PUBLISHED-->
 
 AOK Authentication Server[](#aok-authentication-server "Permalink to this headline")
 =====================================================================================

@@ -5,6 +5,7 @@ permalink: /cloudos/install/hot-fixes/
 product: cloudos
 
 ---
+<!--PUBLISHED-->
 
 <script> 
 

@@ -2,6 +2,7 @@
 layout: default-devplatform
 permalink: /als/v1/user/deploy/languages/python/django/
 ---
+<!--PUBLISHED-->
 
 Deploying Django applications[](#deploying-django-applications "Permalink to this headline")
 =============================================================================================

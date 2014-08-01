@@ -2,6 +2,7 @@
 layout: default-devplatform
 permalink: /als/v1/user/deploy/languages/java/
 ---
+<!--PUBLISHED-->
 
 Java[](#java "Permalink to this headline")
 ===========================================

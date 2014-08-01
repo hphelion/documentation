@@ -5,6 +5,7 @@ permalink: /cloudos/moonshot/community/
 product: moonshot
 
 ---
+<!--PUBLISHED-->
 
 
 <p style="font-size: small;"> <a href="/cloudos/">&#9664; PREV</a> | <a href="/cloudos/">&#9650; UP</a> | NEXT &#9654; </p>

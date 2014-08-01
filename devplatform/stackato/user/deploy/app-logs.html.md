@@ -2,6 +2,7 @@
 layout: default-devplatform
 permalink: /als/v1/user/deploy/app-logs/
 ---
+<!--PUBLISHED-->
 
 Application Logs[](#application-logs "Permalink to this headline")
 ===================================================================

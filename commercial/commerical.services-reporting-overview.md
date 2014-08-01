@@ -5,6 +5,7 @@ permalink: /helion/openstack/services/reporting/overview/
 product: commercial
 
 ---
+<!--PUBLISHED-->
 
 <script>
 

@@ -2,6 +2,7 @@
 layout: default-devplatform
 permalink: /als/v1/user/deploy/languages/ruby/
 ---
+<!--PUBLISHED-->
 
 Ruby[](#ruby "Permalink to this headline")
 ===========================================

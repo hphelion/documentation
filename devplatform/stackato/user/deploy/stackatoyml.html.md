@@ -2,6 +2,7 @@
 layout: default-devplatform
 permalink: /als/v1/user/deploy/stackatoyml/
 ---
+<!--PUBLISHED-->
 
 HP stackato.yml Options[](#stackato-yml-options "Permalink to this headline")
 ===========================================================================

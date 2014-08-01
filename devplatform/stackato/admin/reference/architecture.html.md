@@ -2,6 +2,7 @@
 layout: default-devplatform
 permalink: /als/v1/admin/reference/architecture/
 ---
+<!--PUBLISHED-->
 
 Architectural Design[](#architectural-design "Permalink to this headline")
 ===========================================================================

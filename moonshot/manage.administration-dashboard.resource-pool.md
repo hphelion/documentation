@@ -5,6 +5,7 @@ permalink: /cloudos/moonshot/manage/administration-dashboard/resource-pools/
 product: moonshot
 
 ---
+<!--PUBLISHED-->
 
 <script>
 

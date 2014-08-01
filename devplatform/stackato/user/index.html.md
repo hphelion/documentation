@@ -2,6 +2,7 @@
 layout: default-devplatform
 permalink: /als/v1/user/
 ---
+<!--PUBLISHED-->
 
 Application Lifecycle Service User Guide[](#helion-user-guide "Permalink to this headline")
 =========================================================================

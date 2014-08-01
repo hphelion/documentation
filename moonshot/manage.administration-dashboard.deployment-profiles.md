@@ -5,6 +5,7 @@ permalink: /cloudos/moonshot/manage/administration-dashboard/deployment-profiles
 product: moonshot
 
 ---
+<!--PUBLISHED-->
 
 <script>
 

@@ -5,6 +5,7 @@ permalink: /cloudos/services/overview/
 product: compute
 
 ---
+<!--PUBLISHED-->
 # HP Cloud OS Services Overview #
 
 HP Cloud OS 1.0 is built upon the OpenStack technology. 

@@ -5,6 +5,7 @@ permalink: /cloudos/
 product: cloudos
 
 ---
+<!--PUBLISHED-->
 
 # HP Cloud OS Documentation 
 

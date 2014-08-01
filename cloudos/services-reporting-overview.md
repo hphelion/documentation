@@ -5,6 +5,7 @@ permalink: /cloudos/services/reporting/overview/
 product: compute
 
 ---
+<!--PUBLISHED-->
 # HP Cloud OS Telemetry and Reporting (Ceilometer) Service Overview #
 
 <!-- modeled after HP Cloud Networking Getting Started (network.getting.started.md) -->

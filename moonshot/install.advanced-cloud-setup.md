@@ -5,6 +5,7 @@ permalink: /cloudos/moonshot/install/advanced-cloud-setup/
 product: moonshot
 
 ---
+<!--PUBLISHED-->
 
 
 <script> 

@@ -5,6 +5,7 @@ permalink: /cloudos/moonshot/prepare/videos/
 product: moonshot
 
 ---
+<!--PUBLISHED-->
 
 <script>
 

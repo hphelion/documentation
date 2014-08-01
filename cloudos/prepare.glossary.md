@@ -5,6 +5,7 @@ permalink: /cloudos/prepare/glossary/
 product: cloudos
 
 ---
+<!--PUBLISHED-->
 
 <script>
 

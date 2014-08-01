@@ -5,6 +5,7 @@ permalink: /helion/openstack/install-beta-overview/
 product: commercial
 
 ---
+<!--PUBLISHED-->
 
 
 <script>

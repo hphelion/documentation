@@ -5,6 +5,7 @@ permalink: /cloudos/prepare/videos/
 product: cloudos
 
 ---
+<!--PUBLISHED-->
 
 <script>
 

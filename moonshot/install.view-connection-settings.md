@@ -5,6 +5,7 @@ permalink: /cloudos/moonshot/install/view-connection-settings/
 product: moonshot
 
 ---
+<!--PUBLISHED-->
 
 
 <script>
