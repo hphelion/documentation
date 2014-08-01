@@ -1079,14 +1079,13 @@ Add a new snapshot.
 **volume_id**
 :  ID of the volume to snapshot
 
-**force**
-:  Indicate whether to take a snapshot of a volume even if its attached to an instance. (Default=`False`)
-
 **display_name**
 :  Snapshot name. (Default=`None`)
 
 **display_description**
 :  Snapshot description. (Default=None)
+
+**Note:** The -force options is not supported. 
                                    
 ###Examples
 Create a new snapshot for volume `76677`:
