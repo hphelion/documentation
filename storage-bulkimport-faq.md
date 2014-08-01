@@ -71,7 +71,8 @@ A:	HP will inform you of status via updates along the way. You will be notified 
 ####Q:	How does Bulk Import work?{#howworks}
 
 A:	The bulk import service works with your existing HP Helion Public Cloud account. If you don’t have an account, [create one here](http://www.hpcloud.com/free-trial).
-1.	Use the Management Console to contact your HP Helion Public Cloud support technician. He or she will get the process started for you. 
+1.	Use the 
+[HP Helion Public Cloud Console](https://horizon.hpcloud.com/) to contact your HP Helion Public Cloud support technician. He or she will get the process started for you. 
 
 2.	Sign a legal consent form.
 
