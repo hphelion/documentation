@@ -78,7 +78,7 @@ These additional network components are required for an ESX installation:
 * VMware vCenter management must be a part of the private network (192.0.2.x)
 
 
-## Downloading the installation packages {getinstall}
+## Downloading the installation packages {#getinstall}
 Before you begin, you must download the required HP Helion OpenStack installation packages:
 
 <table style="text-align: left; vertical-align: top; width:650px;">
@@ -106,7 +106,7 @@ Before you begin, you must download the required HP Helion OpenStack installatio
 
     [HP Helion OpenStack product installation](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221247%22%7D/Show)
 
-For more details, refer to the [package download instructions](/helion/openstack/install-beta/prereqs/#install-pkg/) on the [HP Helion OpenStack Beta Installation: Before you begin](/helion/openstack/install-beta/prereqs/) page.
+For more details, refer to the *Downloading installation packages* section on the [HP Helion OpenStack Beta Installation: Before you begin](/helion/openstack/install-beta/prereqs/) page.
 
 ## Installing HP Helion Openstack ## {#install}
 
@@ -169,7 +169,7 @@ Before you begin your installation, if necessary, configure the proxy informatio
 
         bash -x /root/work/tripleo/tripleo-incubator/scripts/hp_ced_start_seed.sh
     
-    **Note**:The installation process takes approximately around 10 minutes to complete.
+    **Note**:The installation process takes approximately 10 minutes to complete.
 
     If the seed startup is successful, you should see a message similar to the following:
 
@@ -197,7 +197,7 @@ Before you begin your installation, if necessary, configure the proxy informatio
         78:e7:d1:22:52:9b,operator,password,192.168.11.6,12,32768,2048
         78:e7:d1:22:52:9e,operator,password,192.168.11.7,12,32768,2048
 
-    **Note:** For more information on creating this file, refer back to [Obtaining required information](/helion/openstack/install-beta/prereqs/#req-info/) on the *Before you begin* page.
+    **Note:** For more information on creating this file, refer to [Obtaining required information](/helion/openstack/install-beta/prereqs/#req-info) on the *Before you begin* page.
 
 5. [Optional] If you have installed the IPMItool, use it to verify that network connectivity from the seed VM to the baremetal servers in your baremetal.csv is working.
 
@@ -229,7 +229,7 @@ Before you begin your installation, if necessary, configure the proxy informatio
 
         $ export OVERCLOUD_COMPUTESCALE=1
 
-10. HP Virtual Cloud Networking's Open vSwitch vApp (OVSvApp)must be installed for HP HP Helion OpenStack environment to provision VMs in your vCenter environment.For each VM host, an OVSvAPP is deployed. Before you deploy the OVSvApp, you must ensure that a block of IP addresses from the Management Network is reserved for the OVSvApp VMs. The block of IPs depends on the number of ESX hosts that you have in your vCenter. You can accomplish this by shrinking the pool of the floating IPs in the Management Network. By default, the floating IP range is between 192.0.2.129 - 192.0.2.254. You can shrink the range by exporting the following variables:
+10. HP Virtual Cloud Networking's Open vSwitch vApp (OVSvApp) must be installed for HP Helion OpenStack environment to provision VMs in your vCenter environment. For each VM host, an OVSvAPP is deployed. Before you deploy the OVSvApp, you must ensure that a block of IP addresses from the Management Network is reserved for the OVSvApp VMs. The block of IPs depends on the number of ESX hosts that you have in your vCenter. You can accomplish this by shrinking the pool of the floating IPs in the Management Network. By default, the floating IP range is between 192.0.2.129 - 192.0.2.254. You can shrink the range by exporting the following variables:
 
         # export FLOATING_START=<Start IP Address>
         # export FLOATING_END=<End IP Address>
@@ -259,11 +259,11 @@ Ensure you can access the overcloud Horizon dashboard. To do this, follow the st
 
 1. From the seed, export the undercloud passwords:
 
-    `. /root/tripleo/tripleo-undercloud-passwords`
+		. /root/tripleo/tripleo-undercloud-passwords
 
 2. Export the undercloud users:
 
-    `TE_DATAFILE=/root/tripleo/testenv.json . /root/tripleo/tripleo-incubator/undercloudrc`
+		TE_DATAFILE=/root/tripleo/testenv.json . /root/tripleo/tripleo-incubator/undercloudrc
 
 3. Assign the overcloud IP address to a variable:
 
@@ -289,11 +289,11 @@ Ensure you can access the overcloud Horizon dashboard. To do this, follow the st
 
 1. From the seed, run the following command:
 
-       . /root/stackrc
+		. /root/stackrc
 
 2. Assign the undercloud IP address to a variable:
 
-       UNDERCLOUD_IP=$(nova list | grep "undercloud" | awk ' { print $12 } ' | sed s/ctlplane=// )
+		`UNDERCLOUD_IP=$(nova list | grep "undercloud" | awk ' { print $12 } ' | sed s/ctlplane=// )`
 
 3. Determine the undercloud IP from the output of step 2 using the following command. It is in the last line returned.
   
@@ -303,11 +303,11 @@ Ensure you can access the overcloud Horizon dashboard. To do this, follow the st
 
         http://<undercloud_IP>/icinga/
 
-5. Log in user 'icingaadmin' with password 'icingaadmin'.
+5. Log in as user 'icingaadmin' with password 'icingaadmin'.
 
 ## Deploying Open vSwitch vApp {#ovsvapp}
 
-HP Virtual Cloud Networking's Open vSwitch vApp (OVSvApp) must be installed for HP Helion OpenStack environment to provision VMs in your VMware vCenter environment.Once deployed, OVSvApp appliance enables networking between the tenant Virtual Machines (VMs).
+HP Virtual Cloud Networking's Open vSwitch vApp (OVSvApp) must be installed for HP Helion OpenStack environment to provision VMs in your VMware vCenter environment. Once deployed, OVSvApp appliance enables networking between the tenant Virtual Machines (VMs).
 
 <!---To complete your HP Helion OpenStack installation and deploy OVSvAPP:
 
