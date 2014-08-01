@@ -225,7 +225,7 @@ navigation:
     url: /helion/community/faq/ 		
   - text: Installation & Configuration
     url: /helion/community/install-overview/		
-  - text: Related Topics
+  - text: Related Documentation
     url: /helion/community/related-links/	
   - text: End User License Agreement
     url: /helion/community/eula/
@@ -260,7 +260,7 @@ navigation:
     url: /helion/openstack/install-beta/ovsvapp/
   - text: Installation for DNSaaS Support 
     url: /helion/openstack/install-beta/dnsaas/		
-  - text: Related Topics
+  - text: Related Documentation
     url: /helion/openstack/related-links/	
   - text: Glossary
     url: /helion/openstack/glossary/ 	
@@ -283,7 +283,7 @@ navigation:
     url: /als/v1/
   - text: Release Notes
     url: /helion/devplatform/community/release-notes/     
-  - text: Related Topics
+  - text: Related Documentation
     url: /helion/devplatform/community/related-topics/
   - text: HP Helion Documentation Home
     url: /
