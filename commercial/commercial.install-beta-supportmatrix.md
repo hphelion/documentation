@@ -590,7 +590,7 @@ This table provides an overview of the physical network configuration requiremen
 
 - The physical hypervisor/OS network is shared by a number of logical networks, and each logical network has its own VLAN and IP subnet
 
-For detailed information, see the [Reference architecture](/helion/openstack/technical-overview#ref-arch).
+For detailed information, see the [Reference architecture](/helion/openstack/technical-overview#ref-arch) section of the Technical Overview.
 
 <table style="text-align: left; vertical-align: top; width:700px;">
 
