@@ -7,7 +7,7 @@ permalink: /als/v1/user/quick-start/
 Quick Start[](#index-0 "Permalink to this headline")
 =====================================================
 
-This guide covers the basics of using an Application Lifecycle Service PaaS. To follow along,
+This guide covers the basics of using an Application Lifecycle Service (ALS) PaaS. To follow along,
 you will need:
 
 -   a user account
@@ -36,8 +36,8 @@ been set up for you on the system.
 
 The interface should be mostly self-explanatory. It exposes most of the
 functionality you have access to as an end user, but to deploy your own
-applications from source code on your local machine you will need to use
-the `helion` CLI client.
+applications from source code on your local machine you will need to install and use
+the `helion` [Application Lifestyle Service client](/als/v1/user/client/#helion-client-setup).
 
 Application Lifecycle Service Client[](#helion-client "Permalink to this headline")
 -----------------------------------------------------------------
@@ -50,11 +50,9 @@ command line.
     Linux x64)
 2.  Unzip the archive in a convenient directory.
 3.  Add the the executable to your system/shell \$PATH by:
-
-> -   moving it to a directory in your \$PATH,
-> -   creating a symlink from a directory in your \$PATH, or
-> -   creating a shell alias for the executable.
-
+	- moving it to a directory in your \$PATH,
+	-   creating a symlink from a directory in your \$PATH, or
+	-   creating a shell alias for the executable.
 4.  Confirm that the client is installed correctly by running
     `helion help`.
 
@@ -68,32 +66,28 @@ To connect the `helion` client to the PaaS, use
 the `target` command to specify the API Endpoint
 URL. This is normally the hostname prepended with "api." for example:
 
-``` {.literal-block}
-$ helion target api.example.hphelion.com
-Target:       https://api.example.hphelion.com
-Organization: <none>
-Space:        <none>
-Successfully targeted to [https://api.example.hphelion.com]
-```
+	$ helion target api.example.hphelion.com
+	Target:       https://api.example.hphelion.com
+	Organization: <none>
+	Space:        <none>
+	Successfully targeted to [https://api.example.hphelion.com]
 
 Once you have successfully targeted Application Lifecycle Service, you must authenticate
 using `helion login` with the credentials that
 have been created for you:
 
-``` {.literal-block}
-$ helion login user@example.com
-Attempting login to [https://api.example.hphelion.com]
-Password: ********
-Successfully logged into [https://api.example.hphelion.com]
-...
-```
+	$ helion login user@example.com
+	Attempting login to [https://api.example.hphelion.com]
+	Password: ********
+	Successfully logged into [https://api.example.hphelion.com]
+
 
 Setting Organization and Space[](#setting-organization-and-space "Permalink to this headline")
 -----------------------------------------------------------------------------------------------
 
 If you are logging in for the first time, your user account will not
 automatically choose an [*Organization and
-Space*](/als/v1/user/deploy/orgs-spaces/#orgs-spaces) for deployment.
+Space*](/als/v1/user/deploy/orgs-spaces/#orgs-spaces) for deployment. You will need to set these manually.
 
 To set the Organization you belong to:
 
@@ -117,7 +111,7 @@ To set the Space you want to deploy applications to:
 
 If your account is not a member of a Space, you will need an
 Organization Manager to add you as a Developer. If you are an
-Organization manager (or Admin), you can create create new Spaces in the
+Organization Manager or Admin, you can create create new Spaces in the
 [*Management Console*](/als/v1/admin/console/customize/#user-console-space) or with
 the [*helion
 create-space*](/als/v1/user/reference/client-ref/#command-create-space)
@@ -129,9 +123,7 @@ Deploying Apps[](#deploying-apps "Permalink to this headline")
 The steps for deploying applications will vary slightly depending on the
 language or framework used, but the basic command is:
 
-``` {.literal-block}
-$ helion push --as [appname]
-```
+	$ helion push --as [appname]
 
 By default, the client will take application code from your current
 working directory and push it to Application Lifecycle Service for further staging and
@@ -147,12 +139,10 @@ README.md file showing how to deploy it on Application Lifecycle Service.
 Many of these have a
 [*stackato.yml*](/als/v1/user/deploy/stackatoyml/#stackato-yml) or
 [*manifest.yml*](/als/v1/user/deploy/manifestyml/#manifest-yml) configuration
-files, so you can skip the interactive prompts by using the
-`-n` option:
+file, so you can skip the interactive prompts by using the
+`-n` option.
 
-``` {.literal-block}
-$ helion push -n [appname]
-```
+	$ helion push -n [appname]
 
 ### Test the Application[](#test-the-application "Permalink to this headline")
 
@@ -160,9 +150,7 @@ The output of `helion push` will show the URL of
 the running application. Paste this URL into a web browser to try the
 application or run:
 
-``` {.literal-block}
-$ helion open [appname]
-```
+	$ helion open [appname]
 
 Documentation on configuring applications in specific languages and
 frameworks is available in the [*Deploying
