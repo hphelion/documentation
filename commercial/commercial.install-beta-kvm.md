@@ -23,7 +23,7 @@ PageRefresh();
 
 # HP Helion OpenStack&reg;:  Beta Installation and Configuration for KVM Hypervisor
 
-HP Helion Openstack beta allows you to manage the KVM hypervisor and provision the virtual machines. 
+HP Helion Openstack beta allows you to manage the KVM hypervisor and provision virtual machines. 
 
 It is important to read through this page before starting your installation. We also recommend that you review the [hardware and network configuration requirements](/helion/openstack/install-beta-overview/##installation-requirements) and the [support matrix](/helion/openstack/support-matrix-beta/), and learn about the [installation process and complete any required tasks](/helion/openstack/install-beta/prereqs/). 
 
@@ -77,7 +77,7 @@ Before you begin, you must download the required HP Helion OpenStack installatio
 
     [HP Helion OpenStack product installation](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221247%22%7D/Show)
 
-For more details, refer to the [package download instructions](/helion/openstack/install-beta/prereqs/#install-pkg/) on the [HP Helion OpenStack Beta Installation: Before you begin](/helion/openstack/install-beta/prereqs/) page.
+For more details, refer to the [package download instructions](/helion/openstack/install-beta/prereqs/#install-pkg) on the HP Helion OpenStack Beta Installation: Before you begin page.
 	
 ## Installing HP StoreVirtual Virtual Storage Appliance (VSA) {#vsa}
 Before you install HP Helion OpenStack, HP StoreVirtual VSA, must be installed and configured on the installer system.
@@ -155,7 +155,7 @@ Before you begin your installation, if necessary, configure the proxy informatio
 
         bash -x /root/work/tripleo/tripleo-incubator/scripts/hp_ced_start_seed.sh
     
-    **Note**:The installation process takes approximately around 10 minutes to complete.
+    **Note**:The installation process takes approximately 10 minutes to complete.
 
     If the seed startup is successful, you should see a message similar to the following:
 
@@ -229,7 +229,7 @@ IP pool by setting OVERCLOUD_NeutronPublicInterface to a physically configured V
             $ export FLOATING_END=192.0.15.254
             $ export FLOATING_CIDR=192.0.8.0/21
 
-11. [Optional], you should not set OVERCLOUD_COMPUTESCALE to a higher value than three as a limit of 7 nodes is enforced. If you do not specify a value, the value is derived based on the number of lines remaining in `/root/baremetal.csv` once the undercloud, overcloud control, and overcloud swift nodes are removed.
+11. [Optional], you should not set OVERCLOUD_COMPUTESCALE to a higher value than three as a limit of 7 nodes is enforced. If you do not specify a value, the value is derived based on the number of lines remaining in `/root/baremetal.csv` once the undercloud, overcloud controller, and overcloud swift nodes are removed.
 
     To set this variable:
 
@@ -242,7 +242,7 @@ IP pool by setting OVERCLOUD_NeutronPublicInterface to a physically configured V
         export VSA_USERNAME="<user name>"
         export VSA_PASSWORD="<password>"
         export VSA_NAME="<cluster name>"
-        export VSA_ISCSI_CHAP_ENABLED="<False>"
+        export VSA_ISCSI_CHAP_ENABLED="False"
         export VSA_DEBUG="False"
 
     * **ENABLE_VSA** - Change to `True` to enable HP StoreVirtual VSA configuration. By default the value is `False`.
@@ -302,7 +302,7 @@ Ensure you can access the overcloud Horizon dashboard. To do this, follow the st
 
         http://<overcloud_IP>/
 
-7. Log in to the overcloud Horizon dashboard as user `demo` with the password you obtained from the `/root/tripleo/tripleo-overcloud-passwords` file in step 4.
+7. Log in to the overcloud Horizon dashboard as user `demo` with the password you obtained from the `/root/tripleo/tripleo-overcloud-passwords` file in the previous step.
 
 
 **Note:** If you are unable to connect to the Horizon console, check your proxy settings to ensure that access to the controller VM is successfully redirected through a proxy.
@@ -327,7 +327,7 @@ Ensure you can access the overcloud Horizon dashboard. To do this, follow the st
 
         http://<undercloud_IP>/icinga/
 
-5. Log in user 'icingaadmin' with password 'icingaadmin'.
+5. Log in as user 'icingaadmin' with password 'icingaadmin'.
 
 ## Installing DNS as a service (DNSaaS) {#configure}
 
