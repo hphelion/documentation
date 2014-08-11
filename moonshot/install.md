@@ -5,6 +5,7 @@ permalink: /cloudos/moonshot/install/
 product: moonshot
 
 ---
+
 <!--PUBLISHED-->
 
 
@@ -20,12 +21,11 @@ PageRefresh();
 
 <p style="font-size: small;"> &#9664; PREV | <a href="/cloudos/moonshot/">&#9650; UP</a> | <a href="/cloudos/moonshot/install/overview/">NEXT &#9654;</a> </p>
 
-# Install &amp; Configure Your Cloud
+# Install and Configure Your Cloud
 
-Welcome! The following topics explain how to install &amp; configure your cloud with HP Cloud OS for Moonshot. 
+Welcome! The following topics explain how to install and configure your cloud with HP Cloud OS for Moonshot. 
 
-It's important to read the topics and perform the described steps in order. While some steps are optional, 
-the sequence that you'll follow in the Operational Dashboard is significant, to ensure a proper deployment of your cloud. 
+It is important to read the topics and perform the described steps in order. While some steps are optional, the sequence that you follow in the Operational Dashboard is significant, to ensure a proper deployment of your cloud. 
 
 Install and set up the Admin node:
 
@@ -47,8 +47,7 @@ After you install and set up the Admin node, you can perform additional steps:
 * [Launch Administration Dashboard for Post-Deployment Tasks](/cloudos/moonshot/install/launch-admin-dashboard/)
 
 <!--
-Finally, if you do not intend to use the wizard-based Cloud OS for Moonshot installation process that's described in 
-the Manage Nodes and Create a Cloud topic, and instead decide to apply and configure the install modules yourself (for **advanced** users only), 
+Finally, if you do not intend to use the wizard-based Cloud OS for Moonshot installation process that's described in the Manage Nodes and Create a Cloud topic, and instead decide to apply and configure the install modules yourself (for **advanced** users only), 
 see these topics: 
 
 * [Advanced Cloud Setup](/cloudos/moonshot/install/advanced-cloud-setup/)
