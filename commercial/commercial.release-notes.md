@@ -52,9 +52,9 @@ HP recommends the following best practices for this software version.
 **Installation**
 
 * To ensure a trouble-free installation, we recommend against restarting the system running the installer and seed VM.  If you perform a restart, you may disrupt the baremetal bridge networking configuration and disable the undercloud and overcloud, requiring that you repeat the installation process.
-* For the most reliable installation results, use a dedicated system, referred in this documentation as the *installation system* or *KVM host*.  The KVM host running the seed cloud is sometimes reconfigured during the installation process, which may include installing additional software packages and making changes to the network or visualization configuration.
+* For the most reliable installation results, use a dedicated system, referred in this documentation as the *installation system* (also called the *KVM host*).  The installation system running the seed cloud is sometimes reconfigured during the installation process, which may include installing additional software packages and making changes to the network or visualization configuration.
 
-**Note:** The KVM host is a system where Kernel-based Virtual Machine is installed.
+	**Note:** The installation system is the system where Kernel-based Virtual Machine is installed.
 
 * For best performance and resilience, if you are using servers with RAID controllers you must pre-configure them to present their storage as a single logical disk.
 * As an aid for future hardware maintenance, we recommend that for your physical servers you track the physical location (slot number and rack) and associated identifiers (such as MAC addresses) for each  server.  The TripleO automation tracks only virtual MAC address and not physical server locations; recording the location information will speed future maintenance efforts on your physical devices.
@@ -82,7 +82,7 @@ The following are the known issues for HP Helion OpenStack beta:
 **Operations**
 
 * If you determine that your VM seed has not started correctly when you execute the `hp_ced_start_seed` script, run the script a second time to ensure you start the seed.
-* If after an overcloud controller reboot you determine the VMs are in an ERROR state, execute the following commands to restart the services and remove the error:
+* If for some reason the overcloud controller is rebooted, the VMs might be in an ERROR state. Execute the following commands to restart the services and remove the error(s):
   
 		$ sudo service nova-compute restart
 		$ sudo service nova-scheduler restart
