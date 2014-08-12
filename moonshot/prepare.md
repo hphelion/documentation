@@ -14,7 +14,7 @@ product: moonshot
 
 # Prepare: Get Started with HP Cloud OS for Moonshot
 
-If you are new to HP Cloud OS for Moonshot, see these topics and the video tutorials to learn about the product's functionality.
+If you're new to HP Cloud OS for Moonshot, see these topics and the video tutorials to learn about the product's functionality.
 
  
 * [Patch Notes 1.2](/cloudos/moonshot/prepare/patchnotes-two/) - summarizes the features and fixes provided by the HP Cloud OS for Moonshot 1.2 patch release. This document is an update to the 1.10 Release Notes (next document).
