@@ -128,21 +128,28 @@ You can register and download the package from the following URL:
 
 **Note:** This install file is approximately 4GB and does not fit on a memory stick formatted as FAT32. If you are planning to store the installation files on removable media, use something like NTFS.
 
-To begin the installation, log in to your system as root. 
+To begin the installation:
+
+1. Log in to your system as root. 
 
 	sudo su -
 
-Download the demo tarball (demo_2014nnnn_n.tar.gz)
+2. Register and then log in to download the HP Helion OpenStack Community virtual package from this site:
 
-	wget http://tripz400.emea.hpqcorp.net/ce_demo/demo_2014nnnn_n.tar.gz 
+	[HP Helion OpenStack Community edition Installation Package ](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221320%22%7D/Show)
 
-Create the work directory and extract the demo tarball.
+3. Create a directory named `work`:
 
-	mkdir work
-    cd work
-    tar zxvf /root/demo_2014nnnn_n.tar.gz
+	`mkdir /root/work`
+
+	`cd /root/work`
+
+4.  Extract the kit to the `work` directory:
+
+	`tar zxvf /root/<virtual kit name>.tgz`
 
 This creates and populates a `tripleo/` directory within root's home directory.
+
 
 ### Starting the seed VM ### {#startvm}
 
