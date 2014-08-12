@@ -105,11 +105,7 @@ Provisioning may fail in the following scenarios:
             nova baremetal-node-delete <ID> 
 
 4. In the Single Chassis View, click force refresh icon to restart Moonshot discovery.
-<<<<<<< HEAD
-  
-=======
- 
->>>>>>> 7cb84fb0c58f27ac0cd975fe9f5c6ffefb0acda7
+
 5. Wait for 5-10 minutes for Nova database to update. 
 	 
 ##For further information## {#for-further-information}
