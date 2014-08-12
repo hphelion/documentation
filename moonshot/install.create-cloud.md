@@ -24,6 +24,9 @@ PageRefresh();
 
 # Manage Nodes and Create a Cloud
 
+<img src="media/images_imp3.png">
+Test
+
 
 Now that the Admin Node is installed, it's time to manage the nodes, and then create a cloud. 
 <!---<hr size= "1.0">
