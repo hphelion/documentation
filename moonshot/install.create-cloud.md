@@ -32,7 +32,8 @@ You can download the patch from CODN using [Updates and Extensions](/cloudos/moo
 
 
 <table>
-<td><p><img src="media/images_imp3.png"> To proceed further with the installation process, it is mandatory to download and install 1.2 patch for HP Cloud OS for Moonshot.</p>
+<td><img src="media/images_imp3.png"></td>
+<td>To proceed further with the installation process, it is mandatory to download and install 1.2 patch for HP Cloud OS for Moonshot.</p>
 
 You can download it from CODN using <a href="/cloudos/moonshot/install/updates-and-extensions/"> Updates and Extensions</a> option. </td></table>
 
