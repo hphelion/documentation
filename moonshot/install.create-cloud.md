@@ -24,6 +24,7 @@ PageRefresh();
 
 # Manage Nodes and Create a Cloud
 
+
 Now that the Admin Node is installed, it's time to manage the nodes, and then create a cloud. 
 <!---<hr size= "1.0">
 <p><img src="media/images_imp3.png"> To proceed further with the installation process, it is mandatory to download and install patch 1.2  for HP Cloud OS for Moonshot.</p>
