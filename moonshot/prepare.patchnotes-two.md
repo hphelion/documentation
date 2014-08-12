@@ -72,7 +72,7 @@ You can now successfully create compute region. The Create Compute Region comman
 The de-provisioning of a bulk node topology is fixed and does not display "PROCESSING" for a lengthy period of time. 
 
 
-## Known issues ## {known-issues}
+## Known issues  {#known-issues}
 
 The following is a known issue:
 
