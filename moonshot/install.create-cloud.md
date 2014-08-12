@@ -22,7 +22,7 @@ PageRefresh();
 
 <p style="font-size: small;"> <a href="/cloudos/moonshot/install/complete-admin-node-installation/">&#9664; PREV</a> | <a href="/cloudos/moonshot/install/">&#9650; UP</a> | <a href="/cloudos/moonshot/install/create-compute-regions/">NEXT &#9654;</a> </p>
 
-# Manage Nodes and Create a Cloud
+# Manage Nodes and Create a Cloud #
 
 Now that the Admin Node is installed, it is time to manage the nodes, and then create a cloud. 
 <!---<hr size= "1.0">
