@@ -24,10 +24,6 @@ PageRefresh();
 
 # Manage Nodes and Create a Cloud
 
-<img src="media/images_imp3.png">
-Test
-
-
 Now that the Admin Node is installed, it's time to manage the nodes, and then create a cloud. 
 <!---<hr size= "1.0">
 <p><img src="media/images_imp3.png"> To proceed further with the installation process, it is mandatory to download and install patch 1.2  for HP Cloud OS for Moonshot.</p>
@@ -36,7 +32,7 @@ You can download the patch from CODN using [Updates and Extensions](/cloudos/moo
 
 
 <table>
-<td><p><img src="C:\Users\sapruv\WorkingFolder_Repos\New folder\images_imp3.png"/> To proceed further with the installation process, it is mandatory to download and install 1.2 patch for HP Cloud OS for Moonshot.</p>
+<td><p><img src="media/images_imp3.png"> To proceed further with the installation process, it is mandatory to download and install 1.2 patch for HP Cloud OS for Moonshot.</p>
 
 You can download it from CODN using <a href="/cloudos/moonshot/install/updates-and-extensions/"> Updates and Extensions</a> option. </td></table>
 
