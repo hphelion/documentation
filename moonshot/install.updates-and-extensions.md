@@ -33,7 +33,11 @@ presented in the Operational Dashboard context. However you can perform the step
 you will not need to take any action (at this point) on this Updates and Extensions page of the Operational Dashboard.
 </p>
 
-* [Signup for Cloud OS Distribution Network Access](#signup-for-cloud-OS-distribution-network Access)
+
+* [Signup for Cloud OS Distribution Network Access](#signup-for-cloud-os-distribution-network-access)
+* [Configure Credentials](#configure-credentials)
+* [Download and Install](#download-and-install)
+* [Import an Update](#import-an-update)
 * [Next Step](#next-step)
 
 <!--
@@ -45,7 +49,7 @@ you will not need to take any action (at this point) on this Updates and Extensi
 -->
 
 
-##Signup for Cloud OS Distribution Network Access
+##Signup for Cloud OS Distribution Network Access {#signup-for-cloud-os-distribution-network-access}
 
 You cannot access the updates from the HP Cloud OS for Moonshot Distribution Network unless you are a registered user. 
 
@@ -69,7 +73,7 @@ Perform the following steps to Sign up to the Cloud OS Distribution Network:
 	*  Click **Submit**. The credentials are authenticated and the account is created.
 5. You can now configure your credentials.
 
-##Configure Credentials
+##Configure Credentials {#configure-credentials}
 
 Once you register yourself on the HP Cloud OS Distribution Network, you are required to configure your credentials. 
 
@@ -90,7 +94,7 @@ OR<br>
 Click **Cancel** to cancel the process.
 
 
-##Download and Install
+##Download and Install {#download-and-install}
 
 **Note:** Before you apply patch 1.2, ensure no operations are being performed using the Administration Dashboard or log out of the Administration Dashboard.
 
@@ -114,7 +118,7 @@ Click **Cancel** to cancel the process.
 
 8. Click **More** drop-down list and select **Install** once the download is complete. The installation process starts and a message is displayed on completion. Wait for five minutes for the changes to be implemented to all the managed nodes (controller and compute).
 
-##Import an Update
+##Import an Update {#import-an-update}
 
 To import an update that is stored on your local system, do the following:
 
@@ -137,7 +141,7 @@ Click **Cancel** to cancel the process.
 
 Once the region is successfully created, more options are available in the Manage Clouds page. Select the desired option based on your requirements.
 <!--
-## Configure and Download Steps
+## Configure and Download Steps 
 
 1. From the Cloud tab in the Operational Dashboard, click the **Updates and Extensions** panel. If you are accessing this page for the first time, 
 there is no data to display in the table. <br> **Note:** The Operational Dashboard displays a warning message indicating that your credentials are not 
