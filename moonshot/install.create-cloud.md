@@ -5,7 +5,8 @@ permalink: /cloudos/moonshot/install/create-cloud/
 product: moonshot
 
 ---
-<!--PUBLISHED-->
+
+<!--PUBLISH--> 
 
 
 <script> 
@@ -24,6 +25,16 @@ PageRefresh();
 # Manage Nodes and Create a Cloud
 
 Now that the Admin Node is installed, it's time to manage the nodes, and then create a cloud. 
+<!---<hr size= "1.0">
+<p><img src="media/images_imp3.png"/> To proceed further with the installation process, it is mandatory to download and install patch 1.2  for HP Cloud OS for Moonshot.</p>
+
+You can download the patch from CODN using [Updates and Extensions](/cloudos/moonshot/install/updates-and-extensions/) option.-->
+
+
+<table>
+<td><p><img src="C:\Users\sapruv\WorkingFolder_Repos\New folder\images_imp3.png"/> To proceed further with the installation process, it is mandatory to download and install 1.2 patch for HP Cloud OS for Moonshot.</p>
+
+You can download it from CODN using <a href="/cloudos/moonshot/install/updates-and-extensions/"> Updates and Extensions</a> option. </td></table>
 
 <!-- Optional: This topic also explains how to setup a Swift Controller node (Ring-compute, Proxy,  and Dispersion) and the separate Swift Storage Node(s). -->
 
@@ -36,7 +47,7 @@ Now that the Admin Node is installed, it's time to manage the nodes, and then cr
 
 Before you starting managing the Cloud Controller and Baremetal Host, ensure that the boot order on all nodes (virtual machines) is configured to boot from the network first.
 
->**Note:** When creating virtual machines on a hypervisor, you have to set the first boot option to PXE boot since there is no operating system installed on  the VMs. After the OS is installed these VMs will not search for a PXE boot even if they fail to boot from hard disk.
+**Note:** When creating virtual machines on a hypervisor, you have to set the first boot option to PXE boot since there is no operating system installed on  the VMs. After the OS is installed these VMs will not search for a PXE boot even if they fail to boot from hard disk.
 
 1. Power ON the Controller and Baremetal Host.
 

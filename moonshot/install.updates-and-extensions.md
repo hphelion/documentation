@@ -5,7 +5,8 @@ permalink: /cloudos/moonshot/install/updates-and-extensions/
 product: moonshot
 
 ---
-<!--PUBLISHED-->
+
+<!--PUBLISH--> 
 
 
 <script> 
@@ -32,7 +33,7 @@ presented in the Operational Dashboard context. However you can perform the step
 you will not need to take any action (at this point) on this Updates and Extensions page of the Operational Dashboard.
 </p>
 
-* [Configure and Download Steps](#configure-and-download-steps)
+* [Signup for Cloud OS Distribution Network Access](#signup-for-cloud-OS-distribution-network Access)
 * [Next Step](#next-step)
 
 <!--
@@ -43,10 +44,103 @@ you will not need to take any action (at this point) on this Updates and Extensi
 * [CODN Service Commands](#codn-service-commands)
 -->
 
+
+##Signup for Cloud OS Distribution Network Access
+
+You cannot access the updates from the HP Cloud OS for Moonshot Distribution Network unless you are a registered user. 
+
+Perform the following steps to Sign up to the Cloud OS Distribution Network:
+
+1. On the Operational Dashboard, click **Cloud** Tab to select it. The Cloud Tab is activated and the options are displayed in the left panel.
+
+2. Click **Updates and Extensions** to open the Updates and Extensions page.
+
+3. Click **Configure** displayed at the top right side of the page to display the Configure dialog box.
+
+4. Click **Signup Now** displayed at the bottom of the page. It displays the HP Cloud OS Distribution Network Page. Perform the following:
+	*  Click **Sign In** displayed at the top of the page to open the HP Web ID dialog box.
+
+	*  Click **Sign Up** for Web ID to open create a HP Web ID dialog box.
+
+	*  Enter the required details.
+
+	*  Click the check box  against **I agree to the Terms of Use** to accept the terms and conditions.
+
+	*  Click **Submit**. The credentials are authenticated and the account is created.
+5. You can now configure your credentials.
+
+##Configure Credentials
+
+Once you register yourself on the HP Cloud OS Distribution Network, you are required to configure your credentials. 
+
+Perform the following steps to configure your credentials:
+
+1. On the **Operational Dashboard**, click **Cloud** Tab to select it. The Cloud Tab is activated and the options are displayed in the left panel.
+
+2. Click **Updates and Extensions** to open the Updates and Extensions page.
+
+3. Click **Configure** displayed at the top right corner of the page to display the Configure dialog box.
+
+4. In the **User Name** box, enter the email ID that you used while setting up your account in HP Cloud OS for Moonshot Distribution Network.
+
+5. In the **Password** box, enter the password that you used for your account in the HP Cloud OS for Moonshot Distribution Network.
+
+6. Click **OK** to save the details. The Updates and Extensions page is displayed with the list of available patches.<br>
+OR<br>
+Click **Cancel** to cancel the process.
+
+
+##Download and Install
+
+**Note:** Before you apply patch 1.2, ensure no operations are being performed using the Administration Dashboard or log out of the Administration Dashboard.
+
+Perform the following steps to download the packages:
+
+1. On the Operational Dashboard, click **Cloud** Tab to select it. The Cloud Tab is activated and the options are displayed in the left panel.
+
+2. Click **Updates and Extensions** to open the Updates and Extensions page.
+
+3. Click **Configure** displayed at the top right corner of the page to display the Configure dialog box.
+
+4. Enter your credentials.
+
+5. Click **OK** to save the details. The updates are displayed in the Updates and Extensions page.<br>
+OR<br>
+Click **Cancel** to cancel the process.
+
+6. Click **Download** against the package that you want to download on your local system.
+
+7. (Optional) To view the installation progress, click **More** drop-down list and select **View Progress**.
+
+8. Click **More** drop-down list and select **Install** once the download is complete. The installation process starts and a message is displayed on completion. Wait for five minutes for the changes to be implemented to all the managed nodes (controller and compute).
+
+##Import an Update
+
+To import an update that is stored on your local system, do the following:
+
+1. On the Operational Dashboard, click **Cloud** Tab to select it. The Cloud Tab is activated and the options are displayed in the left panel.
+
+2. Click **Updates and Extensions** to open the Updates and Extensions page.
+
+3. Click **Import** displayed on the top right corner of the page. An Import dialog box is displayed.
+
+4. Click **Choose File** to display a dialog box to browse and select the update. The file displays in the Import dialog box.
+
+5. Click **Import**. The file is imported to your local cloud and displayed in the Updates and Extensions page.<br>
+OR<br>
+Click **Cancel** to cancel the process.
+
+6. Click **Download** to download the update. Once the download is successfully completed, **Publish** button displays.
+
+7. Click **Publish** to publish the update.
+
+
+Once the region is successfully created, more options are available in the Manage Clouds page. Select the desired option based on your requirements.
+<!--
 ## Configure and Download Steps
 
 1. From the Cloud tab in the Operational Dashboard, click the **Updates and Extensions** panel. If you are accessing this page for the first time, 
-there is no data to display in the table.  **Note:** The Operational Dashboard displays a warning message indicating that your credentials are not 
+there is no data to display in the table. <br> **Note:** The Operational Dashboard displays a warning message indicating that your credentials are not 
 configured or there is no active session with the CODN. A session may timeout after 20 minutes.
 
 2. Click the **Configure** button.
@@ -56,10 +150,9 @@ configured or there is no active session with the CODN. A session may timeout af
 4. After registering or logging in, you are returned to the Updates and Extensions panel. The Operational Dashboard presents the available downloads 
 that are relevant to your HP Cloud OS for Moonshot environment.
 
-5. Click the **Download** button that is located next to an item you want to acquire.  
+5. Click the **Download** button located next to the item you want to download.  
 
-6. Before installing an install module's hot fix, such as one labeled (for example) "Keystone Token Expiration Hotfix", verify that the install module 
-you're about to update does exist for your cloud. To do this, access the HP Cloud OS for Moonshot Installation Dashboard. In Mozilla Firefox or Google 
+6. Before installing an install module's hot fix, such as one labeled (for example) "Keystone Token Expiration Hotfix", verify that the install module you're about to update does exist for your cloud. To do this, access the HP Cloud OS for Moonshot Installation Dashboard. In Mozilla Firefox or Google 
 Chrome, open https://192.168.124.10:3000. 
 
 7. In the Installation Dashboard, open the proposal for the hot fix by clicking the **Edit** button next to the listed item.   
@@ -71,9 +164,8 @@ Chrome, open https://192.168.124.10:3000.
 10. Verify the patch installation. Once the job is in its completed state, reopen the patched proposal in the Installation Dashboard.  
 Click **Edit**. For example, you should see the name of the hot fix, such as "Token-Expiration Hotfix Enabled." To apply the hot fix in your cloud, 
 set its attribute Boolean value to **true**, click **Apply** and then **Save**.
-
-New patches may be available periodically. When you use the Administration Dashboard, be sure to revisit the Updates and Extensions panel on 
-a regular basis. 
+--->
+New patches may be available periodically. When you use the Administration Dashboard, be sure to revisit the Updates and Extensions panel on a regular basis. 
 
 <!--
 ## Modify the CODN Runtime Configuration
