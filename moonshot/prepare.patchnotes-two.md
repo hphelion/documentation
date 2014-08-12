@@ -72,7 +72,7 @@ You can now successfully create compute region. The Create Compute Region comman
 The de-provisioning of a bulk node topology is fixed and does not display "PROCESSING" for a lengthy period of time. 
 
 
-## Known issue ## {known-issues}
+## Known issues ## {known-issues}
 
 The following is a known issue:
 
@@ -104,8 +104,9 @@ Provisioning may fail in the following scenarios:
     
             nova baremetal-node-delete <ID> 
 
-  4. In the Single Chassis View, click force refresh icon to restart Moonshot discovery.
-  5. Wait for 5-10 minutes for Nova database to update. 
+4. In the Single Chassis View, click force refresh icon to restart Moonshot discovery.
+ 
+5. Wait for 5-10 minutes for Nova database to update. 
 	 
 ##For further information## {#for-further-information}
 
