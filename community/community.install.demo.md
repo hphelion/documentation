@@ -138,6 +138,8 @@ To begin the installation:
 
 	[HP Helion OpenStack Community edition Installation Package ](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221320%22%7D/Show)
 
+	The download file is named Helion_Openstack_Community.tar.gz.
+
 3. Create a directory named `work`:
 
 	`mkdir /root/work`
@@ -146,7 +148,7 @@ To begin the installation:
 
 4.  Extract the kit to the `work` directory:
 
-	`tar zxvf /root/<virtual kit name>.tgz`
+	`tar zxvf /root/Helion_Openstack_Community.tar.gz`
 
 This creates and populates a `tripleo/` directory within root's home directory.
 
