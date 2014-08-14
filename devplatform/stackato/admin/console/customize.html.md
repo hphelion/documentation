@@ -12,6 +12,20 @@ administrators can add or remove runtimes, frameworks and services from
 the system, and change the look and content of the [*Management
 Console*](/als/v1/user/console/#management-console) interface.
 
+### [Table Of Contents](/als/v1/index-2/)
+
+-   [Customization](#)
+    -   [Console Settings](#console-settings)
+        -   [Product](#product)
+        -   [Look and Feel](#look-and-feel)
+        -   [Welcome Page](#welcome-page)
+        -   [Support Page](#support-page)
+        -   [Eula Content](#eula-content)
+        -   [Custom Stylesheet](#custom-stylesheet)
+        -   [Settings Variables](#settings-variables)
+        -   [Restoring values](#restoring-values)
+    -   [Renaming the Client](#renaming-the-client)
+
 Console Settings[](#console-settings "Permalink to this headline")
 -------------------------------------------------------------------
 
@@ -37,7 +51,7 @@ be used in HTML pages via the [Embedded JavaScript
 
 ### Look and Feel[](#look-and-feel "Permalink to this headline")
 
--   **FavIcon Logo URL**: The favicon to use. Recommended to be 32x32px
+-   **Favicon Logo URL**: The favicon to use. Recommended to be 32x32px
     image/png.
 -   **Header Logo URL**: The logo image to use in the header. Size can
     vary although anything bigger than 50px vertically may result in
@@ -48,21 +62,18 @@ be used in HTML pages via the [Embedded JavaScript
 
 ### Welcome Page[](#welcome-page "Permalink to this headline")
 
-The HTML/EJS to show on the Welcome page. The [*settings
-variables*](#customize-settings-vars) and `username`
+The HTML/EJS to show on the Welcome page. The [*settings-variables*](#customize-settings-vars) and `username`
 variable (current user) are available via EJS, but plain HTML will work
 for simple use cases.
 
 ### Support Page[](#support-page "Permalink to this headline")
 
-The HTML/EJS to show on the Support page. The [*settings
-variables*](#customize-settings-vars) and `support_email`{.docutils
+The HTML/EJS to show on the Support page. The [*settings-variables*](#customize-settings-vars) and `support_email`{.docutils
 .literal} variable (see Settings \> Controller) are available.
 
 ### Eula Content[](#eula-content "Permalink to this headline")
 
-The HTML/EJS to show in the EULA overlay. The [*settings
-variables*](#customize-settings-vars) are available.
+The HTML/EJS to show in the EULA overlay. The [*settings-variables*](#customize-settings-vars) are available.
 
 ### Custom Stylesheet[](#custom-stylesheet "Permalink to this headline")
 
@@ -125,17 +136,5 @@ modify the
 *\~/helion/code/console/js/views/client/templates/client.html*
 template to point to the renamed files.
 
-### [Table Of Contents](/als/v1/index-2/)
 
--   [Customization](#)
-    -   [Console Settings](#console-settings)
-        -   [Product](#product)
-        -   [Look and Feel](#look-and-feel)
-        -   [Welcome Page](#welcome-page)
-        -   [Support Page](#support-page)
-        -   [Eula Content](#eula-content)
-        -   [Custom Stylesheet](#custom-stylesheet)
-        -   [Settings Variables](#settings-variables)
-        -   [Restoring values](#restoring-values)
-    -   [Renaming the Client](#renaming-the-client)
 

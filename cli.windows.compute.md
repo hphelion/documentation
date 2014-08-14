@@ -25,7 +25,7 @@ For complete details on the commands--syntax, descriptions, and so forth--take a
 
 To execute commands in Windows PowerShell, open a Windows PowerShell window; under the Start menu, it is typically under `All Programs > Accessories > Windows PowerShell`.  Select the shell appropriate to your system, either the 64-bit or 32-bit version.  Enter the HP Helion Public Cloud CLI by entering:
 
-    PS C:\> cd HPCS:
+	PS C:\> cd HPCS:
 
 Once in the HPCS area, you can move around as if you were in a standard directory structure.  For example, entering the **ls** command:
 

@@ -21,8 +21,8 @@ Creating an App Store[](#creating-an-app-store "Permalink to this headline")
 -----------------------------------------------------------------------------
 
 The App Store interface exposes multiple "stores" which specify the
-available applications. These stores are source from definition files
-specified in the main [*Settings*](index.html#console-settings) page of
+available applications. These stores are sourced from definition files
+specified in the main [*Settings*](/als/v1/admin/console/#settings) page of
 the Management Console or set using [*kato
 config*](/als/v1/admin/reference/kato-ref/#kato-command-ref-config).
 
@@ -87,8 +87,10 @@ and `apps`.
 > **title**
 > :   Text used as a display name for the App Store in the Management
 >     Console.
+
 > **contact**
 > :   A name and email address of the store maintainer.
+
 > **icon**
 > :   An image used for the App Store icon. Specified as a full URL.
 
@@ -99,40 +101,51 @@ and `apps`.
 >
 > **name**
 > :   The name of the app as displayed in the App Store list.
+
 > **desc**
 > :   A short description of the app, displayed below the name.
+
 > **id**
 > :   A short, lowercase, unique string associated with the app. Apps
 >     are sorted alphabetically in the list based on this field.
+
 > **repo**
 > :   URL of the git repository where the app code resides.
+
 > **commit**
 > :   Branch name, tag name, or exact commit hash to use. If
 >     unspecified, the HEAD commit of `master`
 >     branch is used.
+
 > **framework**
 > :   The framework, if the app is deploed using the [*Legacy
 >     Buildpack*](/als/v1/user/deploy/buildpack/#buildpacks-legacy)
 >     (e.g. `perl`, `python`,
 >     `node`, `rails3`).
+
 > **icon**
 > :   An image used for the app icon specified either as a full URL, a
 >     file relative to the `store` key **icon-url**
 >     URL, `default`, or other variable values.
+
 > **info**
 > :   A URL pointing to documentation for the app.
+
 > **license**
 > :   Optional string indicating the software license of the app (e.g.
 >     `MIT`, `MPL`,
 >     `BSD`).
+
 > **mem**
 > :   Memory requirements of the app (integer, in MB).
+
 > **runtime**
 > :   The runtime, if the app is deployed using the [*Legacy
 >     Buildpack*](/als/v1/user/deploy/buildpack/#buildpacks-legacy)
 >     (e.g. `java`, `python32`,
 >     `ruby19`, `php`,
 >     `perl518`).
+
 > **services**
 > :   Data services required by the app.
 
