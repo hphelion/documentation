@@ -12,6 +12,34 @@ displays more options and settings for Admin users than it does for
 regular end users. Some of the features described below are only
 available in the Admin view.
 
+### [Table Of Contents](/als/v1/index-2/)
+
+-   [About the Admin Console](#about)
+    -   [Welcome](#welcome)
+        -   [System Information](#system-information)
+    -   [Cluster Nodes](#cluster-nodes)
+    -   [Organizations](#organizations)
+    -   [Users](#users)
+    -   [Applications](#applications)
+    -   [Cloud Events](#cloud-events)
+    -   [Dashboard](#dashboard)
+        -   [Router](#router)
+        -   [Primary Node Status Graphs](#primary-node-status-graphs)
+    -   [Settings](#settings)
+        -   [Console](#console)
+        -   [Quota Definitions](#quota-definitions)
+        -   [Cloud Controller](#cloud-controller)
+        -   [Applications](#console-settings-applications)
+        -   [DEA](#dea)
+        -   [Logyard](#logyard)
+        -   [Harbor](#harbor)
+        -   [Data Services](#data-services)
+        -   [File System](#file-system)
+
+About the Admin Console[](#about "Permalink to this headline")
+-------------------------------------------------
+
+
 The Application Lifecycle Service Management Console is a web interface that allows the
 administration and management of the Application Lifecycle Service Server.
 
@@ -307,27 +335,4 @@ Setup*](/als/v1/admin/cluster/harbor/#harbor-setup) for more information.
 -   **Max FS Size**: Maximum size on disk for filesystem services in MB.
 -   **Allow Over-provisioning**: Ignore the Capacity setting.
 
-### [Table Of Contents](/als/v1/index-2/)
-
--   [Management Console (Admin View)](#)
-    -   [Welcome](#welcome)
-        -   [System Information](#system-information)
-    -   [Cluster Nodes](#cluster-nodes)
-    -   [Organizations](#organizations)
-    -   [Users](#users)
-    -   [Applications](#applications)
-    -   [Cloud Events](#cloud-events)
-    -   [Dashboard](#dashboard)
-        -   [Router](#router)
-        -   [Primary Node Status Graphs](#primary-node-status-graphs)
-    -   [Settings](#settings)
-        -   [Console](#console)
-        -   [Quota Definitions](#quota-definitions)
-        -   [Cloud Controller](#cloud-controller)
-        -   [Applications](#console-settings-applications)
-        -   [DEA](#dea)
-        -   [Logyard](#logyard)
-        -   [Harbor](#harbor)
-        -   [Data Services](#data-services)
-        -   [File System](#file-system)
 

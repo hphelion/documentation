@@ -16,8 +16,8 @@ Accessing Server via the Command Line[](#accessing-server-via-the-command-line "
 
 The Application Lifecycle Service server has one user account initally:
 
-    Username: helion
-    Password: helion
+	Username: helion
+	Password: helion
 
 If the Application Lifecycle Service server is running on a publicly routable network, the
 password should be changed as soon as possible.
