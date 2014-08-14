@@ -23,8 +23,8 @@ Use the following links to get started with HP Helion Development Platform:
 * [Application Lifecycle Service documentation](/als/v1/)
 * [Release notes](/helion/devplatform/community/release-notes/)
 * [Related topics](/helion/devplatform/community/related-topics/)
-* [Open source license and software license agreements](/helion/License/)
-* [End User License Agreement (EULA)](/helion/EULA/)
+* [Open source license and software license agreements](/helion/openstack/3rd-party-license-agreements/)
+* [End User License Agreement (EULA)](/helion/openstack/eula/)
 * [Documentation site index](/helion/devplatform/community/siteindex/)
 
 
