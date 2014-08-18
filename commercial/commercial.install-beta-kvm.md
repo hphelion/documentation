@@ -213,7 +213,7 @@ Before you begin your installation, if necessary, configure the proxy informatio
      **IMPORTANT**: If the VSA IP is within the Floating IP range, the last step of the installation fails.
 
 
-9. Set OVERCLOUD_NeutronPublicInterface and UNDERCLOUD_NeutronPublicInterface to the name of the interface that carries Neutron external traffic on your overcloud and undercloud. By default, it is *eth2*. The following example sets the value of the variable to *eth0*.
+9. Set `OVERCLOUD_NeutronPublicInterface` and `UNDERCLOUD_NeutronPublicInterface` to the name of the interface that carries Neutron external traffic on your overcloud and undercloud. By default, it is `eth2`. The following example sets the value of the variable to `eth0`.
 
             $ export OVERCLOUD_NeutronPublicInterface=eth0
             $ export UNDERCLOUD_NeutronPublicInterface=eth0   
