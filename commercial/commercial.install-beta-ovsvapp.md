@@ -118,9 +118,7 @@ You must upload the OVSvApp appliance to one of the ESX hosts that is hosting VM
         export PYTHONPATH= /ovsvapp/hp-ovsvapp/src/
 
 8. In the Seed VM's folder `/ovsvapp/hp-ovsvapp/src/ovsvm`, locate the `ovs_vapp.ini` file and add your settings for cloning and configuring OVSvApp VMs.
-    
-    Run the script to deploy OVSvApp VMs on the hosts specified in `ovs_vapp.ini` file.
- 
+   
          python /ovsvapp/hp-ovsvapp/src/ovsvm/invoke_ovs_vapp.py
 
 		a. Add VMware settings.
