@@ -5,7 +5,7 @@ permalink: /helion/openstack/install-beta/vsa/
 product: commercial
 
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
 
 <script>
