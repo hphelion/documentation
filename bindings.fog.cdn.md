@@ -70,7 +70,7 @@ Where _option_ can be any of the following:
 * X-CDN-Enabled <Boolean\> - cdn status for container  
 * X-CDN-URI <String\> - cdn url for this container  
 * 'X-TTL'<~String\> - integer seconds before data expires, defaults to 86400 (1 day), in 900 (15 min.) to 1577836800 (50 years) 
-* X-Log-Retention <Boolean\>  
+* X-Log-Retention \<Boolean>  
 
 So for example, if you want to modify the X-TTL metadata information so that the value becomes 3600, the command would be:
 
