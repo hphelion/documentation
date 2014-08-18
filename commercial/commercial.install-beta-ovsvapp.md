@@ -130,8 +130,7 @@ You must upload the OVSvApp appliance to one of the ESX hosts that is hosting VM
 
     `pip install netaddr`
 
-6. In the `hp-ovsvapp\src\ovsvm` folder, locate the `ovs_vapp.ini` file, and add your settings
-for cloning and configuring OVSvApp VMs.
+6. In the `hp-ovsvapp\src\ovsvm` folder, locate the `ovs_vapp.ini` file, and add your settings for cloning and configuring OVSvApp VMs.
 
 **Note**: It is important that you carefully enter and verify the settings you add to the file because the configuration in the `ovs_vapp.ini` file is deployed to multiple OVSvApp VMs. -->
 

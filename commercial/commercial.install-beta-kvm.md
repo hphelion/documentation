@@ -80,7 +80,7 @@ Before you begin, you must download the required HP Helion OpenStack installatio
 For more details, refer to the [package download instructions](/helion/openstack/install-beta/prereqs/#install-pkg) on the HP Helion OpenStack Beta Installation: Before you begin page.
 	
 ## Installing HP StoreVirtual Virtual Storage Appliance (VSA) {#vsa}
-Before you install HP Helion OpenStack, HP StoreVirtual VSA, must be installed and configured on the installer system.
+Before you install HP Helion OpenStack, [HP StoreVirtual VSA](https://docs.hpcloud.com/helion/openstack/install-beta/vsa/) must be installed and configured.
 
 HP StoreVirtual VSA provides complete array functionality without an external array hardware, which:
 
@@ -213,12 +213,12 @@ Before you begin your installation, if necessary, configure the proxy informatio
      **IMPORTANT**: If the VSA IP is within the Floating IP range, the last step of the installation fails.
 
 
-9. You should set OVERCLOUD_NeutronPublicInterface and UNDERCLOUD_NeutronPublicInterface to the name of the interface that carries Neutron external traffic on your overcloud and undercloud. By default, it is *eth2*. The following example sets the value of the variable to *eth0*.
+9. Set OVERCLOUD_NeutronPublicInterface and UNDERCLOUD_NeutronPublicInterface to the name of the interface that carries Neutron external traffic on your overcloud and undercloud. By default, it is *eth2*. The following example sets the value of the variable to *eth0*.
 
             $ export OVERCLOUD_NeutronPublicInterface=eth0
             $ export UNDERCLOUD_NeutronPublicInterface=eth0   
 
-10. [Optional], you can configure a second network for API traffic and for the floating
+10. [Optional] You can configure a second network for API traffic and for the floating
 IP pool by setting OVERCLOUD_NeutronPublicInterface to a physically configured VLAN. For example:
 
             $ export OVERCLOUD_NeutronPublicInterface=vlan101 (ID of physically configured VLAN)
@@ -229,7 +229,7 @@ IP pool by setting OVERCLOUD_NeutronPublicInterface to a physically configured V
             $ export FLOATING_END=192.0.15.254
             $ export FLOATING_CIDR=192.0.8.0/21
 
-11. [Optional], you should not set OVERCLOUD_COMPUTESCALE to a higher value than three as a limit of 7 nodes is enforced. If you do not specify a value, the value is derived based on the number of lines remaining in `/root/baremetal.csv` once the undercloud, overcloud controller, and overcloud swift nodes are removed.
+11. [Optional] You should not set OVERCLOUD_COMPUTESCALE to a higher value than three as a limit of 7 nodes is enforced. If you do not specify a value, the value is derived based on the number of lines remaining in `/root/baremetal.csv` once the undercloud, overcloud controller, and overcloud swift nodes are removed.
 
     To set this variable:
 
