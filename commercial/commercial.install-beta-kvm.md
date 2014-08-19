@@ -247,7 +247,7 @@ IP pool by setting OVERCLOUD_NeutronPublicInterface to a physically configured V
 
     * **ENABLE_VSA** - Change to `True` to enable HP StoreVirtual VSA configuration. By default the value is `False`.
     
-    * **VSA&#95;_API&#95;URL** - Enter the IP address used to access your VSA cluster. 
+    * **VSA_URL** - Enter the IP address used to access your VSA cluster. 
     
     * **VSA_USERNAME** - Enter the cluster user name.
     
