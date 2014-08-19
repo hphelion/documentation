@@ -1,11 +1,11 @@
 ---
 layout: default
 title: "HP Helion OpenStack: Beta Installation and Configuration"
-permalink: /helion/openstack/install-beta/kvm/
+permalink: /helion/openstack/install/kvm/
 product: commercial
 
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
 
 <script>
@@ -247,7 +247,7 @@ IP pool by setting OVERCLOUD_NeutronPublicInterface to a physically configured V
 
     * **ENABLE_VSA** - Change to `True` to enable HP StoreVirtual VSA configuration. By default the value is `False`.
     
-    * **VSA&#95;_API&#95;URL** - Enter the IP address used to access your VSA cluster. 
+    * **VSA_URL** - Enter the IP address used to access your VSA cluster. 
     
     * **VSA_USERNAME** - Enter the cluster user name.
     
@@ -344,9 +344,7 @@ Learn how to [install DNS as a service](/helion/openstack/install-beta/dnsaas/).
 * [How to use the HP Helion OpenStack dashboards](/helion/openstack/dashboard/how-works/)
 * [HP Helion OpenStack services overview](/helion/openstack/services/overview/)
 
-
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-
 
 ----
 ####OpenStack trademark attribution

@@ -22,7 +22,7 @@ PageRefresh();
 
 # HP Helion OpenStack&#174; DNS as a Service (DNSaaS) Overview#
 
-Based on OpenStack&reg; Designate, the HP Helion OpenStack DNS as a service project (DNSaaS) provides a Domain Name System (DNS) service for use by HP Helion OpenStack users.
+Based on OpenStack Designate, the HP Helion OpenStack DNS as a service project (DNSaaS) provides a Domain Name System (DNS) service for use by HP Helion OpenStack users.
 
 DNSaaS includes a set of RESTful APIs for the display, creation, modification and deletion of DNS records.
 
@@ -95,3 +95,10 @@ You can perform the following operations for DNS records:
 ## For more information ##
 
 For more information on OpenStack Designate, see [OpenStack Designate wiki](https://wiki.openstack.org/wiki/Designate).
+
+
+ <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
+----
+####OpenStack trademark attribution
+The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.

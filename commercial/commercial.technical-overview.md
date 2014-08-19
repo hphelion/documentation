@@ -12,7 +12,7 @@ product: commercial
 
 Welcome! This technical overview introduces you to HP Helion OpenStack, an open and extensible enterprise-grade cloud technology. 
 
-HP Helion OpenStack is OpenStack technology coupled with a version of Linux&#174; provided by HP. It is  designed to offer a number of value-added services that complement and enhance OpenStack and set up a cloud. It supports up to 30 physical nodes in total and 40 VMs per node.
+HP Helion OpenStack is OpenStack technology coupled with a version of Linux&#174; provided by HP. It is  designed to offer a number of value-added services that complement and enhance OpenStack and set up a cloud. It supports up to 30 physical nodes and 40 VMs per node.
 
 * [Reference architecture](#ref-arch)
 	* [Deployment model](#Deploy)
@@ -234,6 +234,54 @@ The following table briefly describes the core HP Helion OpenStack services. For
 	<td><center>X</center></td>
 	<td><center>X</center></td>
 </tr>
+<tr style="background-color: white; color: black;">
+	<td><b>High Availability (HA)</b></td>
+ 	<td>The High Availability service protects system downtime and data loss failure. <p><a href="/helion/openstack/services/highavailability/overview/">Learn more</a>  about HA services.
+	</td> 
+	<td><center></center></td>
+	<td><center>X</center></td>
+	<td><center>X</center></td>
+</tr>
+<tr style="background-color: white; color: black;">
+	<td><b>Flare</b></td>
+ 	<td>The HPN Converged Control (HALO) is an application that runs on the HP VAN SDN controller (Flare) to provide a way for Neutron to configure HW Switches which are capable of VXLAN tunnel termination as VLAN <->VXLAN L2 Gateways.  The Northbound Interface that Halo exposes for this configuration is the OVSDB Protocol using the HW VTEP Schema.  The South bound interface to the Switches is Netconf.
+	</td> 
+	<td><center></center></td>
+	<td><center>X</center></td>
+	<td><center>X</center></td>
+</tr>
+<tr style="background-color: white; color: black;">
+	<td><b>Keystone LDAP</b></td>
+ 	<td>HP Helion content distribution catalog service provides a mechanism to download and install content and updates for the Overcloud.
+	</td> 
+	<td><center></center></td>
+	<td><center>X</center></td>
+	<td><center>X</center></td>
+</tr>
+<tr style="background-color: white; color: black;">
+	<td><b>Multi-tenancy</b></td>
+ 	<td>HP Helion content distribution catalog service provides a mechanism to download and install content and updates for the Overcloud.
+	</td> 
+	<td><center></center></td>
+	<td><center>X</center></td>
+	<td><center>X</center></td>
+</tr>
+<tr style="background-color: white; color: black;">
+	<td><b>Scalability and Performance</b></td>
+ 	<td>HP Helion content distribution catalog service provides a mechanism to download and install content and updates for the Overcloud.
+	</td> 
+	<td><center></center></td>
+	<td><center>X</center></td>
+	<td><center>X</center></td>
+</tr>
+<tr style="background-color: white; color: black;">
+	<td><b>DVR</b></td>
+ 	<td>HP Helion content distribution catalog service provides a mechanism to download and install content and updates for the Overcloud.
+	</td> 
+	<td><center></center></td>
+	<td><center>X</center></td>
+	<td><center>X</center></td>
+</tr>
 </table>
 
 
@@ -280,10 +328,15 @@ HP StoreVirtual VSA Software is a Virtual Storage Appliance that provides the co
 <a href="javascript:window.open('/content/documentation/media/reference-architecture-StoreVirtual-volume-type-mapping.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack beta architecture diagram for Store Virtual volume type mapping.</a> (opens in a new window)
 
 ###ESX Hypervisor with HP Virtual Cloud Networking (VCN) application support 
-
+<!--
 ESX integration in HP Helion OpenStack enables administrators to connect their cloud to an existing VMware vCenter installation. As part of this ESX Integration, VMware vCenter Compute driver is used. The VMware vCenter driver makes use of Compute proxy nodes to connect to ESX clusters in a vCenter.  A Nova scheduler sees each Compute Proxy as a large Compute node to use for scheduling new virtual machine instances.  
 
-An ESX Proxy Compute driver talks to VMware vCenter server via VI SDK to manage all the cloud operations. Due to this, there is a need for capturing the vCenter server details in the Cloud Controller and a way for configuring the 'ESX Proxy Compute Node' to manage a list of Clusters from a vCenter Server. A new service sub component "eon" handles capturing vCenter Server details into Cloud controller and provides the details of the clusters for configuring the list of clusters to be managed by an ESX Proxy Compute node.
+An ESX Proxy Compute driver talks to VMware vCenter server via VI SDK to manage all the cloud operations. Due to this, there is a need for capturing the vCenter server details in the Cloud Controller and a way for configuring the 'ESX Proxy Compute Node' to manage a list of Clusters from a vCenter Server. A new service sub component "eon" handles capturing vCenter Server details into Cloud controller and provides the details of the clusters for configuring the list of clusters to be managed by an ESX Proxy Compute node. --->
+
+
+ESX integration in Cloud OS EE enables cloud admin to bring up an Overcloud based on ESX. As part of this ESX integration, VMware vCenter Compute driver is used, which is available in Community Edition. The VMware vCenter driver uses a cluster as a compute and a ESX Compute node deployed manages multiple clusters where it models each cluster as a compute server. A nova scheduler sees each cluster as compute and uses the same for scheduling new instances. 
+
+To manage all the cloud operations, an ESX Proxy Compute driver communicates to VMware vCenter server through VI SDK. Therefore, it is required to capture the details of vCenter in the Cloud Controller and configures the ESX Proxy Compute node to manage a list of clusters from a vCenter server. EON, a new service sub component, captures details of the vCenter server in a Cloud Controller and provides the details of the clusters for configuring the list of clusters are managed by a ESX Proxy Compute node.
 
 The ESX integration uses the OVSvApp application to connect the vCenter networking to the OpenStack Neutron network controller to manage workload networks.  
 
@@ -294,8 +347,9 @@ The HP Virtual Cloud Networking (VCN) application is an enhanced networking (Neu
 HP VCN enables you to build a robust, multi-tenant networking infrastructure that delivers ready-to-use compute, storage, and networking by providing;
 
 * Scalable, secure, and hardened enterprise cloud networking
-* Automated delivery of secure isolated networks in minutes
-* Future support to an open SDN ecosystem and unified control and visibility for physical/virtual networks.  
+* Automated delivery of secure isolated networks in minutes  
+
+
 
 ###DNS as a service (DNSaaS) {#DNSaaS}
 
@@ -315,6 +369,8 @@ This baremetal installation is designed to deliver an open source OpenStack solu
 * At least 1 overcloud Compute node 
 
 [Learn more](/helion/openstack/install-beta-overview/) about installing and configuring HP Helion OpenStack beta. 
+
+The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593;</a>
 

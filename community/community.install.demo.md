@@ -247,7 +247,7 @@ From the physical system you are running the install on, you should be able to c
 
 3. Point your web browser on the physical host system to the overcloud Horizon console:
 
-        http://<IP of overcloud controller>
+        http:// 192.0.8.2
 
 4. Log in as `demo` or `admin` using the corresponding passwords obtained in step 2.hp_ced_start_seed.sh
 

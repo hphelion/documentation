@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack Services Overview"
+title: "HP Helion OpenStack&#174; Services Overview"
 permalink: /helion/openstack/services/overview/
 product: commercial
 
@@ -23,7 +23,7 @@ PageRefresh();
 
 # HP Helion OpenStack&reg; Services Overview #
 
-OpenStack&#174; is comprised of several integrated services. Each service works through an API (application programming interface) that allows the services to work together and allows users to interact with the service.
+OpenStack is comprised of several integrated services. Each service works through an API (application programming interface) that allows the services to work together and allows users to interact with the service.
 
 HP Helion OpenStack includes a number of additional services for working with your cloud. This section lists the services available for you to work with your cloud.
 
@@ -121,7 +121,9 @@ For information on how to operate your cloud we suggest you read the [OpenStack 
 
 For more information on installing the command-line interface for interacting with services, see [Install the OpenStack command-line clients](http://docs.openstack.org/user-guide/content/install_clients.html).
 
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.
+
+ <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 <!-- Not in beta
 Capability Tagging

@@ -1,11 +1,11 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174;: Beta Installation and Configuration"
-permalink: /helion/openstack/install-beta/ovsvapp/
+permalink: /helion/openstack/install/ovsvapp/
 product: commercial
 
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
 
 <script>
@@ -119,6 +119,8 @@ You must upload the OVSvApp appliance to one of the ESX hosts that is hosting VM
 
 8. In the Seed VM's folder `/ovsvapp/hp-ovsvapp/src/ovsvm`, locate the `ovs_vapp.ini` file and add your settings for cloning and configuring OVSvApp VMs.
    
+    Run the script to deploy OVSvApp VMs on the hosts specified in `ovs_vapp.ini` file.
+ 
          python /ovsvapp/hp-ovsvapp/src/ovsvm/invoke_ovs_vapp.py
 
 		a. Add VMware settings.
@@ -157,7 +159,7 @@ You must upload the OVSvApp appliance to one of the ESX hosts that is hosting VM
 		
 		d. Specify a name, the number of CPUs, and the amount of RAM  for the deployed OVSvApp appliance.
 
-			**Note**: During deployment, the ovs_vm_name setting is appended with each VM host name and IP address to appear as <ovs_vm_name>_<IP>
+			**Note**: During deployment, the ovs&#95;vm&#95;name setting is appended with each VM host name and IP address to appear as <ovs_vm_name>_<IP>
 			
 			[template]
 			ovs_vm_name=<ovs_vm_name>
@@ -181,38 +183,38 @@ You must upload the OVSvApp appliance to one of the ESX hosts that is hosting VM
 
 	**Example**
 	
-		[vmware]
-		version=5.1
-		vcenter_ip=15.21.18.1
-		vcenter_username=Administrator
-		vcenter_password=Password123
-		datacenter=Datacenter
-		clusters=testCluster
-		skip_hosts=15.21.18.3,15.21.18.6
+		#[vmware]
+		#version=5.1
+		#vcenter_ip=15.21.18.1
+		#vcenter_username=Administrator
+		#vcenter_password=Password123
+		#datacenter=Datacenter
+		#clusters=testCluster
+		#skip_hosts=15.21.18.3,15.21.18.6
 			
-		[network]
-		data_interface={'vmxnet3':'DataPort'}
-		mgmt_interface={'vmxnet3':'MgmtPort'}
-		trunk_interface={'vmxnet3':'TrunkPort'}
+		#[network]
+		#data_interface={'vmxnet3':'DataPort'}
+		#mgmt_interface={'vmxnet3':'MgmtPort'}
+		#trunk_interface={'vmxnet3':'TrunkPort'}
 			
-		[template]
-		template_name=overcloud-esx-ovsvapp
+		#[template]
+		#template_name=overcloud-esx-ovsvapp
 			
-		[vmconfig]
-		ovs_vm_name=ovsvapp
-		num_cpu=2
-		memory_mb=2048
+		#[vmconfig]
+		#ovs_vm_name=ovsvapp
+		#num_cpu=2
+		#memory_mb=2048
 			
-		[rabbitmq]
-		rabbitmq_host=10.10.11.12
-		rabbitmq_user=root
-		rabbitmq_pass=skyline
+		#[rabbitmq]
+		#rabbitmq_host=10.10.11.12
+		#rabbitmq_user=root
+		#rabbitmq_pass=skyline
 			
-		[logger]
-		log_level=DEBUG
-		log_file=/var/logs/ovsvapp_vm.log
+		#[logger]
+		#log_level=DEBUG
+		#log_file=/var/logs/ovsvapp_vm.log
 
-9. Run the script to deploy OVSvApp appliance on the hosts specified in `ovs_vapp.ini` file.
+9.Run the script to deploy OVSvApp appliance on the hosts specified in `ovs_vapp.ini` file.
 
      python /hp-ovsvapp/src/ovsvm/invoke_ovs_vapp.py
 
@@ -282,7 +284,6 @@ Enter the following commands to stop and restart the HP VCN networking service:
 To uninstall VCN on ESX hosts, access the ESX hosts from vSphere Client, and delete each OVSvApp VM.
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-
 
 ----
 ####OpenStack trademark attribution

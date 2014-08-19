@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack Community Baremetal Installation and Configuration"
+title: "HP Helion OpenStack&#174; Community Baremetal Installation and Configuration"
 permalink: /helion/community/install/
 product: community
 
@@ -10,7 +10,7 @@ product: community
 
 <p style="font-size: small;"> <a href="/helion/community/install-overview/">&#9664; PREV</a> | <a href="/helion/community/install-overview/">&#9650; UP</a> | <a href="/helion/community/install-virtual/">NEXT &#9654;</a> </p>
 
-# HP Helion OpenStack Community Baremetal Installation and Configuration
+# HP Helion OpenStack&#174; Community Baremetal Installation and Configuration
 This page explains how to install and configure HP Helion OpenStack Community baremetal multi-node deployment &mdash; ideal for a small-scale, private cloud. This installation deploys to a minimum of 5 baremetal servers, to which you can add **up to 30 compute nodes**:
 
 * 1 undercloud
@@ -564,4 +564,6 @@ REVIEWERS: NEED TO DISCUSS THIS SECTION. I HAD INTENDED TO TALK ABOUT AND LINK T
         * 192.168.185.131 is the IP address on the external interface - you should replace this with your own IP address.
         * The baremetal bridge is always called 'brbm'
 
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.
+
+ <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

@@ -24,7 +24,7 @@ PageRefresh();
 
 <!-- modeled after HP Cloud Networking Getting Started (network.getting.started.md) -->
 
-Leveraging OpenStack&reg; Heat, the HP Helion OpenStack Orchestration service provides a template-based orchestration for describing a cloud application by executing OpenStack API calls to generate running cloud applications.  
+Leveraging OpenStack Heat, the HP Helion OpenStack Orchestration service provides a template-based orchestration for describing a cloud application by executing OpenStack API calls to generate running cloud applications.  
 
 ## Working with the Orchestration Service
 
@@ -71,4 +71,8 @@ The Orchestration service allows users to work with stacks, which are a mechanis
 ## For more information ##
 
 For information on how to operate your cloud we suggest you read the [OpenStack Operations Guide](http://docs.openstack.org/ops/). The *Architecture* section contains useful information about how an OpenStack Cloud is put together. However, the HP Helion OpenStack takes care of these details for you. The *Operations* section contains information on how to manage the system.
+
+The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.
+
+ <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

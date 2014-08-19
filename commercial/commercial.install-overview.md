@@ -1,11 +1,11 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Installation and Configuration"
-permalink: /helion/openstack/install-beta-overview/
+permalink: /helion/openstack/install-overview/
 product: commercial
 
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
 
 <script>
@@ -154,6 +154,8 @@ For more information on HP Helion OpenStack Community, see:
 * [FAQ](/helion/openstack/faq/) 
 * [Release notes](/helion/openstack/release-notes/) 
 
-The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.
-
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
+----
+####OpenStack trademark attribution
+*The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*

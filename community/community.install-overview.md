@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack Community Installation and Configuration"
+title: "HP Helion OpenStack&#174; Community Installation and Configuration"
 permalink: /helion/community/install-overview/
 product: community
 
@@ -10,7 +10,7 @@ product: community
 
 <p style="font-size: small;"> <a href="/helion/community/hwsw-requirements/">&#9664; PREV</a> | <a href="/helion/community/">&#9650; UP</a> | <a href="/helion/community/install">NEXT &#9654;</a> </p>
 
-# HP Helion OpenStack Community Installation and Configuration
+# HP Helion OpenStack&#174; Community Installation and Configuration
 With HP Helion OpenStack Community, you can quickly and easily spin up clouds using two types of installation paths:
 
 * A virtual installation for testing and proof-of-concept use
@@ -62,4 +62,6 @@ For more information on HP Helion OpenStack Community, see:
 * [FAQ](/helion/community/faq/) 
 * [Release notes](/helion/community/release-notes/) 
 
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.
+
+ <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

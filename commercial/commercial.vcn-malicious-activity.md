@@ -19,7 +19,7 @@ PageRefresh();
 </script>
 # Tracking masked IP addresses when using network address translation (NAT)
 
-Network Address Translation (NAT), also known as floating IP addresses, is a way malicious users mask their originating IP address.  If a malicious user does this, he could perform a masked attack using resources in your Helion OpenStack cloud.  As a result, you might receive notification of abuse from a masked IP address that is part of your IP address range. Once you have detected such malicious activity, we have a process you can use to track the malicious user.
+Network Address Translation (NAT), also known as floating IP addresses, is a way malicious users mask their originating IP address.  If a malicious user does this, he could perform a masked attack using resources in your Helion OpenStack&#174; cloud.  As a result, you might receive notification of abuse from a masked IP address that is part of your IP address range. Once you have detected such malicious activity, we have a process you can use to track the malicious user.
 
 Since tracking down malicious users can be tricky, if you know the user’s NAT address you can identify his actual IP address using one of the following methods. These methods allow lookup of the Nova VM associated with the source of the abusive network traffic. 
 
@@ -144,3 +144,8 @@ Since tracking down malicious users can be tricky, if you know the user’s NAT 
     Producing output similar to the output in Step 6 of Method 2.
 
  	Using this information, you can now see all the details of the malicious instance.  You can choose to shut it down, or contact the instance owner to investigate further. 
+
+The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.
+
+ <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+

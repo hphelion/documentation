@@ -24,7 +24,7 @@ PageRefresh();
 
 <!-- modeled after HP Cloud Networking Getting Started (network.getting.started.md) -->
 
-Based on OpenStack&#174; Swift, HP Helion OpenStack Object Operations is a redundant, scalable, and dynamic storage service. The core storage system is designed to provide a safe, secure, network accessible way to store data. You can store an unlimited number of files and each file can be as large as 5GB. With segmented objects, you can upload and store objects of almost unlimited size.
+Based on OpenStack Swift, HP Helion OpenStack Object Operations is a redundant, scalable, and dynamic storage service. The core storage system is designed to provide a safe, secure, network accessible way to store data. You can store an unlimited number of files and each file can be as large as 5GB. With segmented objects, you can upload and store objects of almost unlimited size.
 
 Object Operations allows you to store and retrieve files and content through a simple RESTful API interface.
 
@@ -38,7 +38,7 @@ To [perform tasks using the Object Operations service](#howto), you can use the 
 
 ### Using the dashboards {#UI}
 
-You can use the [HP Helion OpenStack&#174; Dashboard](/helion/openstack/dashboard/how-works/) to work with the Object Operations service.
+You can use the [HP Helion OpenStack Dashboard](/helion/openstack/dashboard/how-works/) to work with the Object Operations service.
 
 ###Using the API to access Object Operations### {#API}
 
@@ -50,7 +50,7 @@ You can use any of several command-line interface software to access HP Object O
 
 For more information on installing the CLI, see [Install the OpenStack command-line clients](http://docs.openstack.org/user-guide/content/install_clients.html).
 
-## How To's with the HP Helion OpenStack&#174; Object Operations Service ## {#howto}
+## How To's with the HP Helion OpenStack Object Operations Service ## {#howto}
 
 <!-- Taken from http://wiki.hpcloud.net/display/core/Core+Edition+Use+cases#CoreEditionUsecases-OverCloud -->
 
@@ -71,3 +71,7 @@ The Object Operations service allows users to create a storage container, move f
 ## For more information ##
 
 For information on how to operate your cloud we suggest you read the [OpenStack Operations Guide](http://docs.openstack.org/ops/). The *Architecture* section contains useful information about how an OpenStack Cloud is put together. However, the HP Helion OpenStack takes care of these details for you. The *Operations* section contains information on how to manage the system.
+
+The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.
+
+ <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

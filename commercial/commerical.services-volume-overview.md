@@ -24,7 +24,7 @@ PageRefresh();
 
 <!-- modeled after HP Cloud Networking Getting Started (network.getting.started.md) -->
 
-Based on OpenStack&reg; Cinder (Block Storage), the HP Helion OpenStack Volume Operations service enables you to perform a number of tasks with your storage volumes, including creating a volume, creating volume snapshots, and configuring a volume. 
+Based on OpenStack Cinder (Block Storage), the HP Helion OpenStack Volume Operations service enables you to perform a number of tasks with your storage volumes, including creating a volume, creating volume snapshots, and configuring a volume. 
 
 Once created, you can easily disconnect block storage volumes from one instance and attach them to another. You can also create snapshots to easily copy a volume before making significant changes to it. Custom volumes ranging in sizes from 1 GB to 2 TB can be created using a variety of file system types.
 
@@ -110,3 +110,7 @@ Use the Volume Operations service to enable or disable services.
 ## For more information ##
 
 For information on how to operate your cloud we suggest you read the [OpenStack Operations Guide](http://docs.openstack.org/ops/). The *Architecture* section contains useful information about how an OpenStack Cloud is put together. However, the HP Helion OpenStack takes care of these details for you. The *Operations* section contains information on how to manage the system.
+
+The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.
+
+ <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

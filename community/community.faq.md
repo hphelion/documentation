@@ -130,7 +130,7 @@ HP Helion OpenStack Community will be covered by Foundation Care Support Service
 
 We are hosting the support discussion forum for the HP OpenStack Community edition at [https://ask.openstack.org](https://ask.openstack.org).  Developers in the community are very familiar with this forum and already participate in OpenStack-related discussions there. Please tag your questions with 'HPHelion' to get our attention for any questions and issues you raise.  
 
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
 
 <!--
 
@@ -644,7 +644,7 @@ pre-defined login creds: I cannot comment at this point. The admin password MAY 
 images provided, or MAY be randomly generated during install.
 Note – don’t refer to “ZIP” files. I doubt we’ll use the zip format.<.font></b>
 
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
 
 ####What are the key actions I can perform within the Dashboard? ####{#DashboardActions} 
 
@@ -891,4 +891,8 @@ Please visit http:/community.hpcloud.com or  …
 ####How can I contact HP Cloud Customer Support? #### {#contacts}
 
 -->
+
+The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.
+
+ <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

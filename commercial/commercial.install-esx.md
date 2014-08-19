@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "HP Helion OpenStack&reg;: Beta Installation and Configuration"
-permalink: /helion/openstack/install-beta/esx/
+title: "HP Helion OpenStack: Beta Installation and Configuration"
+permalink: /helion/openstack/install/esx/
 product: commercial
 
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
 
 <script>
@@ -445,3 +445,4 @@ Perform the following steps to install OVSvAPP VM :
 ----
 ####OpenStack trademark attribution
 *The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*
+

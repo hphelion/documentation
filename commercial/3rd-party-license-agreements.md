@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack Open Source and Third-Party Software License Agreements"
+title: "HP Helion OpenStack&reg; Open Source and Third-Party Software License Agreements"
 permalink: /helion/openstack/3rd-party-license-agreements/
 product: commercial
 

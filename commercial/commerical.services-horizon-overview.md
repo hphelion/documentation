@@ -22,7 +22,7 @@ PageRefresh();
 
 # HP Helion OpenStack&#174; Horizon Service Overview#
 
-Horizon is the OpenStack&#174; service that serves as the basis for the HP Helion OpenStack web interface, or the *dashboards*
+Horizon is the OpenStack service that serves as the basis for the HP Helion OpenStack web interface, or the *dashboards*
 
 The dashboard provides a web-based user interface to HP Helion OpenStack services including [Compute](/helion/openstack/services/compute/overview), [Volume Operations](/helion/openstack/services/volume/overview/), [Networking](/helion/openstack/services/networking/overview), and [Identity](/helion/openstack/services/identity/overview). 
 
@@ -31,3 +31,8 @@ Horizon ships with several dashboards, including a *Project* dashboard, an *Admi
 ## For more information ##
 
 For information on using the dashboards, see [HP Helion OpenStack Dashboard](/helion/openstack/dashboard/how-works/).
+
+The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.
+
+ <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
