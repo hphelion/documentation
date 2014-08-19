@@ -24,7 +24,7 @@ PageRefresh();
 
 <!-- modeled after HP Cloud Networking Getting Started (network.getting.started.md) -->
 
-Based on OpenStack&reg; Keystone, the HP Helion OpenStack Identity service provides one-stop authentication for all HP Cloud offerings. 
+Based on OpenStack Keystone, the HP Helion OpenStack Identity service provides one-stop authentication for all HP Cloud offerings. 
 
 The Identity service validates that incoming requests are being made by the user who claims to be making the call. 
 
@@ -146,3 +146,8 @@ Use the Identity service to reset a password for a user.
 ## For more information ##
 
 For information on how to operate your cloud we suggest you read the [OpenStack Operations Guide](http://docs.openstack.org/ops/). The *Architecture* section contains useful information about how an OpenStack Cloud is put together. However, the HP Helion OpenStack takes care of these details for you. The *Operations* section contains information on how to manage the system.
+
+The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.
+
+ <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+

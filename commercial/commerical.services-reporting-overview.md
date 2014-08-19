@@ -23,7 +23,7 @@ PageRefresh();
 
 # HP Helion OpenStack&#174; Telemetry and Reporting Service Overview#
 
-Based on OpenStack&reg; Ceilometer, the HP Helion OpenStack Telemetry and Reporting service monitors the physical devices in your environment, including physical servers running services and network devices used in the environment (switches, firewalls). 
+Based on OpenStack Ceilometer, the HP Helion OpenStack Telemetry and Reporting service monitors the physical devices in your environment, including physical servers running services and network devices used in the environment (switches, firewalls). 
 
 The Telemetry and Reporting service allows you to collect measurements using only one agent throughout your environment, pulling usage data from every component and storing the data in a single place. 
 
@@ -107,4 +107,8 @@ The Telemetry and Reporting contains threshold alarms that you can configure to 
 ## For more information ##
 
 For information on how to operate your cloud we suggest you read the [OpenStack Operations Guide](http://docs.openstack.org/ops/). The *Architecture* section contains useful information about how an OpenStack Cloud is put together. However, the HP Helion OpenStack takes care of these details for you. The *Operations* section contains information on how to manage the system.
+
+The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.
+
+ <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

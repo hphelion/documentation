@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack® Community Release Notes"
+title: "HP Helion OpenStack&#174; Community Release Notes"
 permalink: /helion/community/release-notes/
 product: community
 
@@ -180,4 +180,6 @@ Linux&reg; is the registered trademark of Linus Torvalds in the U.S. and other c
 
 The OpenStack Word Mark is either a registered trademark/service mark or trademark/service mark of the OpenStack Foundation, in the United States and other countries and is used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.
 
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.
+
+ <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

@@ -25,7 +25,7 @@ PageRefresh();
 
 <!-- modeled after HP Cloud Networking Getting Started (network.getting.started.md) -->
 
-Leveraging OpenStack&reg; Neutron, HP Helion OpenStack Networking is a virtual networking service that provides network connectivity and addressing for HP Compute devices.
+Leveraging OpenStack Neutron, HP Helion OpenStack Networking is a virtual networking service that provides network connectivity and addressing for HP Compute devices.
 
 The Networking service also provides an API to configure and manage a variety of network services.
 
@@ -86,4 +86,8 @@ Use the Networking service to add or remove a network from a DHCP agent.
 
 Use the Networking service to add or remove a network from an L3 agent.
 -->
+
+The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.
+
+ <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

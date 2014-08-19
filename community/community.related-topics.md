@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack Community Related Documentation"
+title: "HP Helion OpenStack&#174; Community Related Documentation"
 permalink: /helion/community/related-links/
 product: community
 
@@ -25,7 +25,7 @@ PageRefresh();
 # HP Helion OpenStack&reg; Community Related Documentation
 
 
-HP Helion OpenStack Community edition is based on OpenStack&reg; technology and an HP configured Linux operating system.  
+HP Helion OpenStack Community edition is based on OpenStack technology and an HP configured Linux&#174; operating system.  
 
 For more information, refer to the OpenStack documentation site: 
 
@@ -46,4 +46,6 @@ For more information, refer to the OpenStack documentation site:
 * [OpenStack API Complete Reference](http://api.openstack.org/api-ref.html)
 
 
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.
+
+ <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

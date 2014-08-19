@@ -25,9 +25,9 @@ PageRefresh();
 
 <!-- Taken from http://wiki.hpcloud.net/display/core/Core+Edition+Use+cases#CoreEditionUsecases-OverCloud -->
 
-Leveraging OpenStack&reg; Compute, the HP Helion OpenStack&#174; Community Compute provides a way to instantiate virtual servers on publicly accessible physical machines hosted in HP data centers.
+Leveraging OpenStack Compute, the HP Helion OpenStack Community Compute provides a way to instantiate virtual servers on publicly accessible physical machines hosted in HP data centers.
 
-The following lists of tasks can be performed by a user or administrator through the [HP Helion OpenStack&#174; Community Dashboard](/cloudos/community/services/dashboard/overview/), the OpenStack CLI or OpenStack API.
+The following lists of tasks can be performed by a user or administrator through the [HP Helion OpenStack Community Dashboard](/cloudos/community/services/dashboard/overview/), the OpenStack CLI or OpenStack API.
 
 For details on performing these tasks using the API or CLI, see the following OpenStack documentation:
 
@@ -48,7 +48,7 @@ When working with the Compute service, you can perform a number of tasks with yo
 
 Use the Compute service to create a new virtual machine.
 
-1. Launch the HP Helion OpenStack&#174; interface.
+1. Launch the HP Helion OpenStack interface.
 2. On the Project dashboard, click **Compute** > **Instance**.
 3. 
 
@@ -146,9 +146,13 @@ When you suspend an instance, its VM state is stored on disk, all memory is writ
 
 ## For more information ##
 
-For information on how to operate your cloud we suggest you read the [OpenStack Operations Guide](http://docs.openstack.org/ops/) The *Architecture* section contains useful information about how an OpenStack Cloud is put together. However, the HP Helion OpenStack&#174; Community edition takes care of these details for you. The *Operations* contains information on how to manage the system.
+For information on how to operate your cloud we suggest you read the [OpenStack Operations Guide](http://docs.openstack.org/ops/) The *Architecture* section contains useful information about how an OpenStack Cloud is put together. However, the HP Helion OpenStack Community edition takes care of these details for you. The *Operations* contains information on how to manage the system.
 
 <!-- hide me Also see the Help topics that are available in the Operational Dashboard and Administration Dashboard.  Website copies are available:
 
 * [HP Cloud OS Operational Dashboard Help](/cloudos/manage/operational-dashboard/)
 * [HP Cloud OS Administration Dashboard Help](/cloudos/manage/administration-dashboard/) -->
+
+The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.
+
+ <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

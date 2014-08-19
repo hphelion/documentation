@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack Community Documentation Home"
+title: "HP Helion OpenStack&#174; Community Documentation Home"
 permalink: /helion/community/
 product: community
 
@@ -8,7 +8,7 @@ product: community
 <!--PUBLISHED-->
 # HP Helion OpenStack&reg; Community Documentation Home
 
-Welcome! The HP Helion OpenStack Community edition is OpenStack&reg; technology coupled with a version of Linux&reg; provided by HP designed for administrators and developers who want to quickly stand up an OpenStack cloud. The Community edition is a pure and free-to-license distribution that speeds deployment and simplifies the management of small scale open cloud environments and infrastructure services. It supports up to 30 physical nodes and 600 virtual nodes making it ideal for small-scale and proof of concept deployments.
+Welcome! The HP Helion OpenStack Community edition is OpenStack technology coupled with a version of Linux&reg; provided by HP designed for administrators and developers who want to quickly stand up an OpenStack cloud. The Community edition is a pure and free-to-license distribution that speeds deployment and simplifies the management of small scale open cloud environments and infrastructure services. It supports up to 30 physical nodes and 600 virtual nodes making it ideal for small-scale and proof of concept deployments.
 <!-- Next 2 graphs, text from Jim Gardner email 4/24
 HP Helion OpenStack Community Edition is a pure and free-to-license distribution that speeds deployment and simplifies the management of small scale open cloud environments and infrastructure services. 
 
@@ -64,4 +64,6 @@ If you have a question, feel free to [post something over on our forums](https:/
 
 
 
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.
+
+ <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

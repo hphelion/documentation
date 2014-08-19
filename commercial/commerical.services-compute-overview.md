@@ -22,7 +22,7 @@ PageRefresh();
 
 # HP Helion OpenStack&#174; Compute Service Overview #
 
-Leveraging OpenStack&#174;, the HP Helion OpenStack Compute Service provides a way to instantiate virtual machine instances on publicly accessible physical machines hosted in your cloud environment.
+Leveraging OpenStack, the HP Helion OpenStack Compute Service provides a way to instantiate virtual machine instances on publicly accessible physical machines hosted in your cloud environment.
 
 Compute allows you to work with *flavors*, which are unique combinations of disk space, memory capacity, and CPU; *images*, which are collections of files used as a base installation, typically operating systems such as Ubuntu 10.10; and *servers*, which are virtual instances created using a flavor and an image
 
@@ -124,4 +124,8 @@ When working with the Compute service, you can perform a number of tasks with yo
 ## For more information ##
 
 For information on how to operate your cloud we suggest you read the [OpenStack Operations Guide](http://docs.openstack.org/ops/). The *Architecture* section contains useful information about how an OpenStack Cloud is put together. However, the HP Helion OpenStack takes care of these details for you. The *Operations* section contains information on how to manage the system.
+
+The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.
+
+ <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
