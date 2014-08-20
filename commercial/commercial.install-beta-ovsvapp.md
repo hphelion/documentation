@@ -123,9 +123,9 @@ You must upload the OVSvApp appliance to one of the ESX hosts that is hosting VM
 
 	a. Add VMware settings.
 
-			* For clusters, specify the name of each cluster on which to host OVSvApp, separated by commas.
+	* For clusters, specify the name of each cluster on which to host OVSvApp, separated by commas.
 
-			* For `skip_hosts`, specify the IP address of each host where you do not want to install OVSvApp, separated by commas.
+	* For `skip_hosts`, specify the IP address of each host where you do not want to install OVSvApp, separated by commas.
      
 			[vmware]
 			version=<vmware_version>
@@ -148,7 +148,7 @@ You must upload the OVSvApp appliance to one of the ESX hosts that is hosting VM
 			netmask=<netmask> 
 			gateway_ip=<gateway>
 
-		**Note**: The start IP address and the end IP address is the block of IPs that was reserved from the Management Network for OVSvApp deployment.
+	**Note**: The start IP address and the end IP address is the block of IPs that was reserved from the Management Network for OVSvApp deployment.
 
 	c. Specify the name for cloning the appliance.
 			
