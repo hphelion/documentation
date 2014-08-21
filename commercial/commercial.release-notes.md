@@ -118,6 +118,8 @@ The OpenStack Word Mark is either a registered trademark/service mark or tradema
 **HP Helion OpenStack Warranty**: Linux hLinux 3.14.6-1-amd64-hlinux #1 SMP Mon Jun 9 11:35:36 MDT 2014 x86_64
 The programs included with the hLinux system are free software; the exact license terms for each program are described in the individual files in /usr/share/doc/*/copyright. hLinux comes with ABSOLUTELY NO WARRANTY, to the extent permitted by applicable law.
 
-The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.
-
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
+----
+####OpenStack trademark attribution
+*The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack: Beta Installation and Configuration"
-permalink: /helion/openstack/install/esx/
+permalink: /helion/openstack/ga/install/esx/
 product: commercial
 
 ---
