@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack Community Virtual Installation and Configuration"
+title: "HP Helion OpenStack&#174; Community Virtual Installation and Configuration"
 permalink: /helion/community/install-virtual/
 product: community
 
@@ -247,7 +247,7 @@ From the physical system you are running the install on, you should be able to c
 
 3. Point your web browser on the physical host system to the overcloud Horizon console:
 
-        http:// 192.0.8.2
+        http://<IP of overcloud controller>
 
 4. Log in as `demo` or `admin` using the corresponding passwords obtained in step 2.hp_ced_start_seed.sh
 
@@ -290,5 +290,9 @@ For remote system installations where you cannot open a browser on the remote sy
 
         export LANG=C
 
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+ <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
+----
+####OpenStack trademark attribution
+*The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*
 

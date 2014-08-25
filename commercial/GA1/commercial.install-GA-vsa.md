@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Edition: VSA Support"
-permalink: /helion/openstack/install/vsa/
+permalink: /helion/openstack/ga/install/vsa/
 product: commercial
 
 ---
@@ -21,7 +21,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/install-beta/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/esx/">NEXT &#9654;</a> </p>
 
 
-# HP Helion OpenStack&#174; Beta Installation: HP StoreVirtual VSA Support
+# HP Helion OpenStack&#174; Installation: HP StoreVirtual VSA Support
 
 This page provides detailed information on HP StoreVirtual for realizing cloud storage. It primarily covers the following topics:
 

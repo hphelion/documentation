@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Beta Support Matrix"
-permalink: /helion/openstack/support-matrix/
+permalink: /helion/openstack/ga/support-matrix/
 product: commercial
 
 ---
