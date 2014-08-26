@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Installation and Configuration"
-permalink: /helion/openstack/ga/install/prereqs/
+permalink: **/helion/openstack/ga/install/prereqs/**
 product: commercial
 
 ---
@@ -20,7 +20,7 @@ PageRefresh();
 
 <p style="font-size: small;"> <a href="/helion/openstack/install-beta-overview/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/kvm/">NEXT &#9654;</a> </p>
 
-# HP Helion OpenStack&#174; Beta Installation: Before you begin
+# HP Helion OpenStack&#174; Installation: Before you begin
 
 Before you begin the installation process, take a few minutes to read this page because it contains information about:
 
