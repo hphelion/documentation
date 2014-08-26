@@ -65,65 +65,26 @@ Having a bit of trouble navigating our site, and so you're looking for a single 
 <!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[CDN Examples](/bindings/jclouds/cdn)<br>-->
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Block Storage Examples](/bindings/jclouds/block-storage)<br>
 [HP Helion Public Cloud CLI Documentation](/cli)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;[UNIX CLI for HP Helion Public Cloud Overview](/cli/unix)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**UNIX CLI for HP Helion Public Cloud v13.5**<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Installation](/cli/unix/2/install)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Account Configuration](/cli/unix/2/configuration)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Advanced Account Management](/cli/unix/2/account-management)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Compute Examples](/cli/unix/2/compute)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Object Storage Examples](/cli/unix/2/object-storage)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[CDN Examples](/cli/unix/2/cdn)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Block Storage Examples](/cli/unix/2/block-storage)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Volume Management](/block-storage/volume)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[DNS Examples](/cli/unix/2/dns)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[CLI Reference](/cli/unix/2/reference)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Release Notes](/cli/unix/release-notes)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**UNIX CLI for HP Helion Public Cloud v12.12**<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Installation](/cli/unix/install)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Account Configuration](/cli/unix/configuration)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Managing Multiple Accounts](/cli/unix/account-management)<br>
-<!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Account Management](/cli/unix/configuration)<br>-->
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Compute Examples](/cli/unix/compute)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Object Storage Examples](/cli/unix/object-storage)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[CDN Examples](/cli/unix/cdn)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Block Storage Examples](/cli/unix/block-storage)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Volume Management Examples](/block-storage/volume)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[DNS Examples](/cli/unix/dns)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Using the UNIX CLI for HP Helion Public Cloud](/cli/unix/articles/)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Using Bash Command Completion](/cli/unix/articles/complete)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Generating Verbose Debugging Output](/cli/unix/articles/debugging)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Accessing Servers with Managed Key Pairs](/cli/unix/articles/managedkeypairs)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Performing Object Store Migration](/cli/unix/articles/migration)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Performing Large File Uploads](/cli/unix/articles/large)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Using Automation and Performing Report Customization](/cli/unix/articles/reports)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Modifying Report Paging](/cli/unix/articles/paging)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Command Line Reference](/cli/unix/reference)<br>
-<!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Getting Help](/cli/unix/help)<br>-->
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Release Notes](/cli/unix/release-notes)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Windows Powershell CLI Overview](/cli/windows)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Installation](/cli/windows/installation)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Non-Service Specific Commands](/cli/windows/commands)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Compute Examples](/cli/windows/compute)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Object Storage Examples](/cli/windows/containers-and-folders)<br>
-<!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[CDN Examples](/cli/windows/cdn)<br>-->
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Block Storage Examples](/cli/windows/block-storage)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[CLI Reference](/cli/windows/reference)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Getting Help](/cli/windows/help)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Release Notes](/cli/windows/release-notes)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Python Novaclient CLI Overview](/cli/nova)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Installation](/cli/nova/install)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[CLI Reference](/cli/nova/reference)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Windows Powershell CLI Overview](/cli/windows/2)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Installation](/cli/windows/2/installation)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Non-Service Specific Commands](/cli/windows/2/commands)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Compute Examples](/cli/windows/2/compute)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Object Storage Examples](/cli/windows/2/containers-and-folders)<br>
+<!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[CDN Examples](/cli/windows/2/cdn)<br>-->
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Block Storage Examples](/cli/windows/2/block-storage)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[CLI Reference](/cli/windows/2/reference)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Getting Help](/cli/windows/2/help)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Release Notes](/cli/windows/2/release-notes)<br>
 [HP Helion Public Cloud APIs Overview](/api)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Compute](/api/v13/compute)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Object Storage](/object-storage/api)<br>
-<!-- &nbsp;&nbsp;&nbsp;&nbsp;[Using Object Storage with cURL](/object-storage/api/curl)<br> -->
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Object Storage API](/api/object-storage/)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Block Storage API](/api/v13/block-storage/)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[LBaaS API](/api/lbaas)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[DNS API](/api/dns)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Monitoring API](/api/v13/monitoring)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;[CDN](/api/CDN)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Identity Service](/api/v13/identity/)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Compute](/api/v13/compute)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Object Storage](/api/object-storage)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[CDN](/api/CDN)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Block Storage API](/api/v13/block-storage/)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[DNS API](/api/dns)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Relational Database API](/api/v13/dbaas)
+&nbsp;&nbsp;&nbsp;&nbsp;[LBaaS API](/api/lbaas)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Monitoring API](/api/v13/monitoring)<br>
 [Glossary of Terms](/glossary)<br>
 [Software Downloads](/downloads)<br>
 
