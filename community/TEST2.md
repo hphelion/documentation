@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Community Baremetal Installation and Configuration"
-permalink: /helion/community/install/
+permalink: /helion/community/test/too/
 product: community
 
 ---
