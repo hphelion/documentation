@@ -18,7 +18,7 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> <a href="/helion/openstack/install-beta-overview/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/kvm/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/helion/openstack/install-beta-overview/">&#9664; PREV</a> | <a href="/helion//"openstack>&#9650; UP</a> | <a href="/helion/openstack/install-beta/kvm/">NEXT &#9654;</a> </p>
 
 # HP Helion OpenStack&#174; Installation: Before you begin
 
@@ -69,7 +69,7 @@ You are responsible for providing the internal and external customer router and 
 
 If you are installing HP Helion OpenStack in a KVM deployment, you must configure your network as shown in the following diagram.
 
-<a href="javascript:window.open('/content/documentation/media/topology_esx.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack beta architecture diagram for KVM network architecture.</a>(opens in a new window) topology_esx.png
+<a href="javascript:window.open('/content/documentation/media/topology_esx.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack beta architecture diagram for KVM network architecture.</a>(opens in a new window)
 
 For ESX deployments, two specific networks must be installed and configured for the VMware vCenter environment. The network is used for communication between specific aspects of vCenterL
 - the OVSvApp communicates with the Neutron message queue 
