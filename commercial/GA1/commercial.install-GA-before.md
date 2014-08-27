@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Installation and Configuration"
-permalink: /helion/openstack/install-beta/prereqs/
+permalink: /helion/openstack/ga/install/prereqs/
 product: commercial
 
 ---
@@ -18,14 +18,15 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> <a href="/helion/openstack/install-beta-overview/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/kvm/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/helion/openstack/install-beta-overview/">&#9664; PREV</a> | <a href="/helion//"openstack>&#9650; UP</a> | <a href="/helion/openstack/install-beta/kvm/">NEXT &#9654;</a> </p>
 
-# HP Helion OpenStack&#174; Beta Installation: Before you begin
+# HP Helion OpenStack&#174; Installation: Before you begin
 
 Before you begin the installation process, take a few minutes to read this page because it contains information about:
 
 
 * [Required tasks](#required-tasks)
+   * [Preparing the network](#network_prepare)
    * [Obtaining a public key](#pub-key)
    * [Installing Debian/Ubuntu packages](#packages)
    * [Creating the baremetal.csv file](#req-info)
@@ -36,6 +37,63 @@ Before you begin the installation process, take a few minutes to read this page 
 
 ## Required tasks 
 On the installer system, ensure the following required tasks are completed before you begin the installation.
+
+### Preparing the network {#network_prepare}
+
+Before installing HP Helion OpenStack, you are responsible for configuring the network, based on the type of hypervisor you are installing, [KVM](#network_KVM) or [ESX](#network_ESX). 
+
+The network is not installed or managed by the cloud. You must install and manage the network and make sure there is a route to the Management network as described in this section.
+
+For more information about the two deployment methods, see the [Installation and Configuration](/helion/openstack/technical-overview/#install-configure) of the Technical Overview. 
+
+For more information on the physical network architecture, see the [Physical Network Architecture section](http://docs.hpcloud.com/helion/openstack/technical-overview/#physicalnetarch) of the Technical Overview.
+
+#### Preparing the network for a KVM instalation {#network_KVM}
+
+If you are installing HP Helion OpenStack in a KVM deployment, you must configure your network as shown in the following diagram.
+
+<a href="javascript:window.open('/content/documentation/media/topology_kvm.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack architecture diagram for KVM network architecture.</a>(opens in a new window)
+
+You are responsible for providing the internal and external customer router and making sure the external, IPMI, and service networks are routed to/from the management network.
+
+**Notes:**
+
+- The HP Helion OpenStack installation installs the two initial Object Storage nodes. You can install additional Object Storage nodes after the initial install. 
+- The Block Storage nodes are installed for deployments using the [StoreVirtual VSA driver](/helion/openstack/install-beta/vsa/) with the Object Storage service (Cinder). Object Storage can be configured to use drivers one or more of the following: StoreVirtual VSA, 3PAR, LVM.
+- DVR is used to route traffic between VMs and outside the cloud. Thus, every Compute Node has a connection to the external network.
+- Access to OpenStack service APIs is from the management network.
+- The network path for Platform service log messages is from the VM, to the service network installed as a second vnic, to the Customer Router, to the management network, to the Under Cloud RabbitMQ, to LogStash.
+<-- What does this mean?? -->
+
+#### Preparing the network for an ESX installation {#network_ESX}
+
+If you are installing HP Helion OpenStack in a ESX deployment, you must configure your network as shown in the following diagram.
+
+<a href="javascript:window.open('/content/documentation/media/topology_esx.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack architecture diagram for ESX network architecture.</a>(opens in a new window)
+
+For ESX deployments, two specific networks must be installed and configured for the VMware vCenter environment. The network is used for communication between specific aspects of vCenterL
+- the OVSvApp communicates with the Neutron message queue 
+
+- the Computer service communicates with the vCenter Proxy
+
+- the vCenter Proxy communicates with the message queue for the Compute and Volume Operations services. 
+
+- the EON communicates with the vCenter server.
+
+The initial installation of the cloud will install the 2 initial Object Storage nodes. All additional Object Storage nodes will be installed using customer procedures after the initial install. 
+
+You are responsible for the following before beginning the HP Helion OpenStack installation:
+
+- providing the Customer Router and making sure the external, IPMI, and ESX networks are routed to/from the management network;
+
+- providing the Customer Router and making sure the external, IPMI, and service networks are routed to and from the management network;
+
+- installing and managing the ESX network and for assigning IP addresses on it to the OVSvApp and vCenter Proxy nodes;
+
+- providing a route for traffic between the nova-compute and cinder-volume components running on the vCenter Proxy node and the RabbitMQ and mySQL on the Cloud Controller;
+
+- providing a route from the EON service on the Under Cloud and the vCenter server;
+ 
 
 ### Obtaining a public key ### {#pub-key}
 On the system on which the install is running, user root must have a public key, for example:
@@ -88,13 +146,15 @@ There are a few things you should be aware of before you begin your HP Helion Op
 
 * The seed must remain booted while the undercloud and overcloud are up.
 
-* The `stackrc` and `tripleo_passwords` files contain credentials for the undercloud and the overcloud; you should ensure that they are securely stored separately from the seed.
+* The `stackrc` and `tripleo_*_passwords` files contain credentials for the undercloud and the overcloud; you should ensure that they are securely stored separately from the seed.
  
     `/root/stackrc`
 
-    `/root/tripleo/tripleo_passwords`
+    `/root/tripleo/tripleo_*_passwords`
 
 ### Downloading installation packages {#install-pkg}
+
+**PROCESS WILL CHANGE FOR GA!!!!!**
 
 The following packages are available to download from [HP Helion OpenStack product installation](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221247%22%7D/Show) web site. Register, and then log in to download the required packages.
 
@@ -251,3 +311,7 @@ For more information on HP Helion OpenStack Community, see:
 * [Release notes](/helion/openstack/release-notes/) 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
+---
+####OpenStack trademark attribution
+*The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*

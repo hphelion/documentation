@@ -119,14 +119,12 @@ You must upload the OVSvApp appliance to one of the ESX hosts that is hosting VM
 
 8. In the Seed VM's folder `/ovsvapp/hp-ovsvapp/src/ovsvm`, locate the `ovs_vapp.ini` file and add your settings for cloning and configuring OVSvApp VMs.
    
-         python /ovsvapp/hp-ovsvapp/src/ovsvm/invoke_ovs_vapp.py
+	a. Add VMware settings.
 
-		a. Add VMware settings.
+	* For clusters, specify the name of each cluster on which to host OVSvApp, separated by commas.
 
-			* For clusters, specify the name of each cluster on which to host OVSvApp, separated by commas.
-
-			* For `skip_hosts`, specify the IP address of each host where you do not want to install OVSvApp, separated by commas.
-     
+	* For `skip_hosts`, specify the IP address of each host where you do not want to install OVSvApp, separated by commas.
+	
 			[vmware]
 			version=<vmware_version>
 			vcenter_ip=<vcenter_ip>
@@ -137,7 +135,7 @@ You must upload the OVSvApp appliance to one of the ESX hosts that is hosting VM
 			skip_hosts=<skip_host_IP,skip_host_IP>
 
 
-		b. Add network port settings. <!--Settings for `standard_port` group is optional. not for beta --->
+	b. Add network port settings. <!--Settings for `standard_port` group is optional. not for beta --->
 
 			[network]
 			data_interface={'<nic_type>':{'<port_group_name>'}
@@ -148,30 +146,30 @@ You must upload the OVSvApp appliance to one of the ESX hosts that is hosting VM
 			netmask=<netmask> 
 			gateway_ip=<gateway>
 
-		**Note**: The start IP address and the end IP address is the block of IPs that was reserved from the Management Network for OVSvApp deployment.
+	**Note**: The start IP address and the end IP address is the block of IPs that was reserved from the Management Network for OVSvApp deployment.
 
-		c. Specify the name for cloning the appliance.
+	c. Specify the name for cloning the appliance.
 			
 			[template]
 			template_name=overcloud-esx-ovsvapp
 		
-		d. Specify a name, the number of CPUs, and the amount of RAM  for the deployed OVSvApp appliance.
+	d. Specify a name, the number of CPUs, and the amount of RAM  for the deployed OVSvApp appliance.
 
-			**Note**: During deployment, the ovs_vm_name setting is appended with each VM host name and IP address to appear as <ovs_vm_name>_<IP>
+	**Note**: During deployment, the `ovs_vm_name` setting is appended with each VM host name and IP address to appear as `<ovs_vm_name>_<IP>`
 			
 			[template]
 			ovs_vm_name=<ovs_vm_name>
 			num_cpu=<number_of_CPUs>
 			memory_mb=<amount_of_memory>
 
-		e. Specify RabbitMQ settings.
+	e. Specify RabbitMQ settings.
 
 			[rabbitmq]
 			rabbitmq_host=<rabbitmq_host_IP>
 			rabbitmq_user=<rabbitmq_username>
 			rabbitmq_pass=<rabbitmq_password>
 
-		f. Specify the level for logging errors, and a log file location. Default file location is 
+	f. Specify the level for logging errors, and a log file location. Default file location is 
 
 			`/var/log/ovsvapp_log`
 	
@@ -214,7 +212,7 @@ You must upload the OVSvApp appliance to one of the ESX hosts that is hosting VM
 
 9. Run the script to deploy OVSvApp appliance on the hosts specified in `ovs_vapp.ini` file.
 
-     python /hp-ovsvapp/src/ovsvm/invoke_ovs_vapp.py
+     `python /hp-ovsvapp/src/ovsvm/invoke_ovs_vapp.py`
 
 
 ##Verifying your deployment {#deploymentverification}

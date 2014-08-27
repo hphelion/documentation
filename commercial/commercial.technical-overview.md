@@ -6,19 +6,23 @@ product: commercial
 
 ---
 <!--PUBLISHED-->
+
+
 <p style="font-size: small;"> <a href="/helion/openstack/faq/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/services/overview/">NEXT &#9654;</a> </p>
 
 # HP Helion OpenStack&#174; Technical Overview
 
-Welcome! This technical overview introduces you to HP Helion OpenStack, an open and extensible enterprise-grade cloud technology. 
+Welcome! This page introduces you to HP Helion OpenStack, an open and extensible enterprise-grade cloud technology. 
 
-HP Helion OpenStack is OpenStack technology coupled with a version of Linux&#174; provided by HP. It is  designed to offer a number of value-added services that complement and enhance OpenStack and set up a cloud. It supports up to 30 physical nodes in total and 40 VMs per node.
+HP Helion OpenStack is OpenStack technology coupled with a version of Linux&#174; provided by HP. It is  designed to offer a number of value-added services that complement and enhance OpenStack and set up a cloud. It supports up to 30 physical nodes and 40 VMs per node.
 
 * [Reference architecture](#ref-arch)
 	* [Deployment model](#Deploy)
+	* [Deployment architecture](#Deployarch)
 	* [Configuration](#Config) 
 * [Physical network architecture](#physicalnetarch)
 * [HP Helion OpenStack services](#Helion-services)
+	<!--* [High Availability](#highavailability)-->
 * [Installation and configuration](#install-configure)
 
 ##Reference architecture {#ref-arch}
@@ -34,12 +38,12 @@ A TripleO installation includes a Seed, the Undercloud and the Overcloud.
 <table style="text-align: left; vertical-align: top; width:700px;">
 <tr style="background-color: white; color: black;">
 	<td><b>Seed VM</b></td>
-	<td>The Seed VM is a bootable image provided as part of HP Helion OpenStack and is deployed in a VM instance. This image contains the minimum services required of OpenStack to function and to be able to provision physical hardware to deploy the Undercloud. The services are Nova, Neutron, Glance, Keystone, Ironic & Heat.</td>
+	<td>The Seed VM is a bootable image provided as part of HP Helion OpenStack and is deployed in a VM instance. This image contains the minimum services required of OpenStack to function and to be able to provision physical hardware to deploy the Undercloud. The services are Nova, Neutron, Glance, Keystone, Ironic, and  Heat.</td>
 </tr>
 <tr style="background-color: white; color: black;">
 	 <td><b>Undercloud</b></td>
-	 <td>The Undercloud server is a basic, single-node OpenStack installation running on a single physical server used to deploy, test, manage, and update the Overcloud servers. There is no HA configuration for the Undercloud. It contains a strictly limited sub-set of OpenStack, just enough to interact with the Overcloud. The services running on Undercloud are Nova, Neutron, Glance, Keystone, Ironic, Heat & Ceilometer. This server also contains HP Helion content distribution catalog  service, which provides a mechanism to download and install content and updates for the Overcloud.<br><br>
-	 The Undercloud also hosts images for various server types, which forms the functional cloud environment, aka Overcloud. These images are Overcloud Controller, Overcloud Compute, Overcloud Swift & Overcloud Compute Proxy (required for cloud, which supports VMWare ESX as a hypervisor).
+	 <td>The Undercloud server is a basic, single-node OpenStack installation running on a single physical server used to deploy, test, manage, and update the Overcloud servers. There is no HA configuration for the Undercloud. It contains a strictly limited sub-set of OpenStack, just enough to interact with the Overcloud. The services running on Undercloud are Nova, Neutron, Glance, Keystone, Ironic, Heat, and  Ceilometer. This server also contains HP Helion content distribution catalog  service, which provides a mechanism to download and install content and updates for the Overcloud.<br><br>
+	 The Undercloud also hosts images for various server types, which forms the functional cloud environment, aka Overcloud. These images are Overcloud Controller, Overcloud Compute, Overcloud Swift and Overcloud Compute Proxy (required for cloud, which supports VMWare ESX as a hypervisor).
 </td>
  </tr>
 <tr style="background-color: white; color: black;">
@@ -49,6 +53,13 @@ A TripleO installation includes a Seed, the Undercloud and the Overcloud.
 </table>
 
 **Note:** You cannot build or rebuild the images. Direct editing of the Heat templates is possible, but not supported. Configuration is limited to those items supported by the configuration tool and Horizon.
+
+### Deployment Architecture {#Deployarch}
+
+The following diagram depicts the deployment architecture of HP Helion OpenStack.
+
+<a href="javascript:window.open('/content/documentation/media/Helion OpenStack Deployment Architecture.vsd','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack  architecture diagram.</a> (opens in a new window)  
+
 
 ####Configuration {#Config}
 
@@ -147,6 +158,7 @@ The physical cluster network can be shared by a number of logical networks, each
 The following table briefly describes the core HP Helion OpenStack services. For a complete description of these services, see the [Services Overview](/helion/openstack/services/overview/) page.
 
 
+
 <table style="text-align: left; vertical-align: top; width:700px;">
 <tr style="background-color: #C8C8C8;">
 	<th>Service</th>
@@ -221,19 +233,30 @@ The following table briefly describes the core HP Helion OpenStack services. For
 <tr style="background-color: white; color: black;">
 	<td><b>Telemetry and Reporting (Ceilometer)</b></td>
  	<td>The Telemetry service provides access to metering data collected from the compute, network, and storage services.  This information can be stored in the default MySQL database or in an optional HP Vertica system for advanced analytics.  Information from this service can be used for both operational and user monitoring and external billing use cases.<br><br>
-	<a href="/helion/openstack/services/reporting/overview/">Learn more</a> about OpenStack Ceilometer based HP Telemetry and Reporting services.</td> 
+<a href="/helion/openstack/services/reporting/overview/">Learn more</a> OpenStack Ceilometer based HP Telemetry and Reporting services.
+	</td> 
 	<td><center></center></td>
 	<td><center>X</center></td>
 	<td><center>X</center></td>
-</tr>
+</tr><!--
 <tr style="background-color: white; color: black;">
 	<td><b>Sherpa</b></td>
- 	<td>HP Helion content distribution catalog service provides a mechanism to download and install content and updates for the Overcloud.
+ 	<td>HP Helion content distribution catalog service provides a mechanism to download and install content and updates for the Overcloud.<br><a href ="/helion/openstack/services/sherpa/overview/">Learn more </a> HP Helion Sherpa Service
+	
 	</td> 
 	<td><center></center></td>
 	<td><center>X</center></td>
 	<td><center>X</center></td>
 </tr>
+</tr>
+<tr style="background-color: white; color: black;">
+	<td><b>DVR</b></td>
+ 	<td>HP Helion content distribution catalog service provides a mechanism to download and install content and updates for the Overcloud.
+	</td> 
+	<td><center></center></td>
+	<td><center>X</center></td>
+	<td><center>X</center></td>
+</tr> --->
 </table>
 
 
@@ -267,6 +290,17 @@ The following table briefly describes the additional services in HP Helion OpenS
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
+<!--
+###High Availability {#highavailability}
+
+The HP Helion OpenStack High Availability (HA) protects the system downtime and data loss failure. HA configuration is implemented for the above listed OpenStack services and the underlying MSQL database and RabbitMQ server.
+
+For more details on HA configuration, refer to [OpenStack HA Guide](http://docs.openstack.org/high-availability-guide/content/index.html).
+
+--->
+
+
+
 ## Installation and configuration ## {#install-configure}
 
 ###KVM Hypervisor with HP StoreVirtual VSA support
@@ -283,7 +317,12 @@ HP StoreVirtual VSA Software is a Virtual Storage Appliance that provides the co
 
 ESX integration in HP Helion OpenStack enables administrators to connect their cloud to an existing VMware vCenter installation. As part of this ESX Integration, VMware vCenter Compute driver is used. The VMware vCenter driver makes use of Compute proxy nodes to connect to ESX clusters in a vCenter.  A Nova scheduler sees each Compute Proxy as a large Compute node to use for scheduling new virtual machine instances.  
 
-An ESX Proxy Compute driver talks to VMware vCenter server via VI SDK to manage all the cloud operations. Due to this, there is a need for capturing the vCenter server details in the Cloud Controller and a way for configuring the 'ESX Proxy Compute Node' to manage a list of Clusters from a vCenter Server. A new service sub component "eon" handles capturing vCenter Server details into Cloud controller and provides the details of the clusters for configuring the list of clusters to be managed by an ESX Proxy Compute node.
+An ESX Proxy Compute driver talks to VMware vCenter server via VI SDK to manage all the cloud operations. Due to this, there is a need for capturing the vCenter server details in the Cloud Controller and a way for configuring the 'ESX Proxy Compute Node' to manage a list of Clusters from a vCenter Server. A new service sub component "eon" handles capturing vCenter Server details into Cloud controller and provides the details of the clusters for configuring the list of clusters to be managed by an ESX Proxy Compute node. 
+
+<!--
+ESX integration in Cloud OS EE enables cloud admin to bring up an Overcloud based on ESX. As part of this ESX integration, VMware vCenter Compute driver is used, which is available in Community Edition. The VMware vCenter driver uses a cluster as a compute and a ESX Compute node deployed manages multiple clusters where it models each cluster as a compute server. A nova scheduler sees each cluster as compute and uses the same for scheduling new instances. 
+
+To manage all the cloud operations, an ESX Proxy Compute driver communicates to VMware vCenter server through VI SDK. Therefore, it is required to capture the details of vCenter in the Cloud Controller and configures the ESX Proxy Compute node to manage a list of clusters from a vCenter server. EON, a new service sub component, captures details of the vCenter server in a Cloud Controller and provides the details of the clusters for configuring the list of clusters are managed by a ESX Proxy Compute node. --->
 
 The ESX integration uses the OVSvApp application to connect the vCenter networking to the OpenStack Neutron network controller to manage workload networks.  
 
@@ -294,8 +333,9 @@ The HP Virtual Cloud Networking (VCN) application is an enhanced networking (Neu
 HP VCN enables you to build a robust, multi-tenant networking infrastructure that delivers ready-to-use compute, storage, and networking by providing;
 
 * Scalable, secure, and hardened enterprise cloud networking
-* Automated delivery of secure isolated networks in minutes
-* Future support to an open SDN ecosystem and unified control and visibility for physical/virtual networks.  
+* Automated delivery of secure isolated networks in minutes  
+
+
 
 ###DNS as a service (DNSaaS) {#DNSaaS}
 
@@ -316,10 +356,10 @@ This baremetal installation is designed to deliver an open source OpenStack solu
 
 [Learn more](/helion/openstack/install-beta-overview/) about installing and configuring HP Helion OpenStack beta. 
 
-The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.
-
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593;</a>
 
-
+----
+####OpenStack trademark attribution
+*The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*
 
 
