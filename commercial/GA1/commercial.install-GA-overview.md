@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Installation and Configuration"
-permalink: /helion/openstack/install-overview/
+permalink: /helion/openstack/ga/install/overview/
 product: commercial
 
 ---
@@ -20,16 +20,18 @@ PageRefresh();
 
 <p style="font-size: small;"> <a href="/helion/openstack/support-matrix-beta/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/prereqs/">NEXT &#9654;</a> </p>
 
-# HP Helion OpenStack&#174; Beta Installation and Configuration
-This page provides an overview of the installation process and requirements for  HP Helion OpenStack beta &mdash; a baremetal multi-node deployment consisting of a minimum of 5 baremetal servers, to which you can add **up to 30 Compute nodes**:
+# HP Helion OpenStack&#174; Installation and Configuration
+This page provides an overview of the installation process and requirements for  HP Helion OpenStack &mdash; a baremetal multi-node deployment consisting of a minimum of 9 baremetal servers, to which you can add **up to 100 Compute nodes**:
 
 
+* 1 seed host (installer system)
 * 1 undercloud server
-* 1 overcloud controller
-* 2 overcloud Swift nodes 
+* 3 overcloud controllers
+* 2 overcloud Swift nodes
+* At leat 1 block storage node 
 * At least 1 overcloud Compute node 
 
-HP Helion OpenStack beta uses three linked installation phases to deploy a complete OpenStack cloud. <a href ="https://wiki.openstack.org/wiki/TripleO">TripleO</a> simulates the deployment of OpenStack by creating and configuring baremetal servers to successfully run a cloud deployment. 
+HP Helion OpenStack uses three linked installation phases to deploy a complete OpenStack cloud. <a href ="https://wiki.openstack.org/wiki/TripleO">TripleO</a> simulates the deployment of OpenStack by creating and configuring baremetal servers to successfully run a cloud deployment. 
 
 * Seed: The seed VM is started as a VM from a specific seed VM image. It contains a number of self-contained OpenStack components that are used to deploy the undercloud. The seed deploys the undercloud by using Ironic baremetal driver to deploy a specific undercloud machine image.
 
@@ -44,8 +46,10 @@ Before you start your installation, we suggest you review these pages to underst
 * [Support matrix](/helion/openstack/support-matrix-beta/) 
 * [Before you begin](/helion/openstack/install-beta/prereqs/) 
 * [Installing and configuring with a KVM hypervisor](/helion/openstack/install-beta/kvm)
-* [Installing HP StoreVirtual VSA support](/helion/openstack/install-beta/vsa/)
+* [Configuring HP StoreVirtual VSA for Block Storage](/helion/openstack/install-beta/vsa/)
+* [Configuring HP 3Par for Block Storage](/helion/openstack/install-beta/vsa/) NEW DOC PER PRANOY!!
 * [Installing and configuring with an ESX hypervisor](/helion/openstack/install-beta/esx/)
+* Deploying and configuring Compute Proxy on ESX hosts  NEW DOC PER PRANOY!!
 * [Deploying and configuring OVSvApp for HP Virtual Cloud Networking (VCN) on ESX hosts](/helion/openstack/install-beta/ovsvapp/)
 * [Installing and configuring DNSaaS support](/helion/openstack/install-beta/dnsaas/)
 
@@ -95,7 +99,7 @@ For the performance and stability of the HP Helion OpenStack environment, it is 
 
 To install a HP Helion OpenStack baremetal multi-node configuration, you must have the following hardware configuration.
 
-* At least 5 and up to 30 baremetal systems with the following configuration:
+* At least 9 and up to 100 baremetal systems with the following configuration:
 
     * A minimum of 32 GB of physical memory
     * A minimum of 2 TB of disk space
@@ -120,14 +124,11 @@ To install a HP Helion OpenStack baremetal multi-node configuration, you must ha
     * A minimum of 8 GB of physical memory
     * A minimum of 100 GB of disk space
     * Virtualization enabled 
-    * One of the following operating systems installed:
-
-      * Ubuntu 13.10
-      * Ubuntu 14.04
+    * Ubuntu 14.04 installed
 
     
 * **Important** 
-    * **Installer system** &mdash; This system might be reconfigured during the installation process so a dedicated system is recommended. Reconfiguration might include installing additional software packages, and changes to the network or virtualisation configuration.
+    * **Installer system** &mdash; This system might be reconfigured during the installation process so a dedicated system is recommended. Reconfiguration might include installing additional software packages, and changes to the network or visualization configuration.
     
     * **Installer package** &mdash; The installer currently uses only the first available disk; servers with RAID controllers need to be pre-configured to present their storage as a single logical disk. RAID across multiple disks is strongly recommended for both performance and resilience.
 

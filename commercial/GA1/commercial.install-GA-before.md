@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Installation and Configuration"
-permalink: /helion/openstack/install-beta/prereqs/
+permalink: **/helion/openstack/ga/install/prereqs/**
 product: commercial
 
 ---
@@ -20,7 +20,7 @@ PageRefresh();
 
 <p style="font-size: small;"> <a href="/helion/openstack/install-beta-overview/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/kvm/">NEXT &#9654;</a> </p>
 
-# HP Helion OpenStack&#174; Beta Installation: Before you begin
+# HP Helion OpenStack&#174; Installation: Before you begin
 
 Before you begin the installation process, take a few minutes to read this page because it contains information about:
 
@@ -36,6 +36,11 @@ Before you begin the installation process, take a few minutes to read this page 
 
 ## Required tasks 
 On the installer system, ensure the following required tasks are completed before you begin the installation.
+
+## Preparing the installer system {#prepare}
+
+On the installer system, ensure the following required tasks are completed before you begin the installation.
+
 
 ### Obtaining a public key ### {#pub-key}
 On the system on which the install is running, user root must have a public key, for example:
@@ -88,13 +93,15 @@ There are a few things you should be aware of before you begin your HP Helion Op
 
 * The seed must remain booted while the undercloud and overcloud are up.
 
-* The `stackrc` and `tripleo_passwords` files contain credentials for the undercloud and the overcloud; you should ensure that they are securely stored separately from the seed.
+* The `stackrc` and `tripleo_*_passwords` files contain credentials for the undercloud and the overcloud; you should ensure that they are securely stored separately from the seed.
  
     `/root/stackrc`
 
-    `/root/tripleo/tripleo_passwords`
+    `/root/tripleo/tripleo_*_passwords`
 
 ### Downloading installation packages {#install-pkg}
+
+**PROCESS WILL CHANGE FOR GA!!!!!**
 
 The following packages are available to download from [HP Helion OpenStack product installation](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221247%22%7D/Show) web site. Register, and then log in to download the required packages.
 
@@ -251,3 +258,7 @@ For more information on HP Helion OpenStack Community, see:
 * [Release notes](/helion/openstack/release-notes/) 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
+---
+####OpenStack trademark attribution
+*The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*

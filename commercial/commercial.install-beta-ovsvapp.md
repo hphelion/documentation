@@ -124,7 +124,7 @@ You must upload the OVSvApp appliance to one of the ESX hosts that is hosting VM
 	* For clusters, specify the name of each cluster on which to host OVSvApp, separated by commas.
 
 	* For `skip_hosts`, specify the IP address of each host where you do not want to install OVSvApp, separated by commas.
-     
+	
 			[vmware]
 			version=<vmware_version>
 			vcenter_ip=<vcenter_ip>

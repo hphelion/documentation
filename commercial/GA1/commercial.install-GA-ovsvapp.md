@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174;: Beta Installation and Configuration"
-permalink: /helion/openstack/install/ovsvapp/
+permalink: /helion/openstack/ga/install/ovsvapp/
 product: commercial
 
 ---
