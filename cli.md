@@ -8,8 +8,7 @@ product: public-cloud
 <!--PUBLISHED-->
 # HP Helion Public Cloud CLI
 
-We provide you with the following software packages that give you command-line interface (CLI) access for the following environments:
+We provide you with the following software packages that give you command-line interface (CLI) access to the Public Cloud:
 
-* [Unix CLI for HP Helion Public Cloud](/cli/unix) - Provides command line interactivity for Unix and Mac users
-* [Windows Powershell CLI for HP Helion Public Cloud](/cli/windows) - Control the HP Helion Public Cloud from a Windows Powershell environment
-* [Openstack CLI tools](/cli/nova) - Work with HP Helion Public Cloud using a version of the Openstack Command Line Interface tools, including Python-NovaClient, Python-NeutronClient, Python-GlanceClient
+* [Windows Powershell CLI for HP Helion Public Cloud](/cli/windows/2) - Control the HP Helion Public Cloud from a Windows Powershell environment
+* [Openstack CLI tools](/cli/nova) - Work with HP Helion Public Cloud using the native Openstack Command Line Interface tools
