@@ -52,7 +52,7 @@ For more information on the physical network architecture, see the [Physical Net
 
 If you are installing HP Helion OpenStack in a KVM deployment, you must configure your network as shown in the following diagram.
 
-<a href="javascript:window.open('/content/documentation/media/topology_kvm.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack beta architecture diagram for KVM network architecture.</a>(opens in a new window)
+<a href="javascript:window.open('/content/documentation/media/topology_kvm.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack architecture diagram for KVM network architecture.</a>(opens in a new window)
 
 You are responsible for providing the internal and external customer router and making sure the external, IPMI, and service networks are routed to/from the management network.
 
@@ -67,9 +67,9 @@ You are responsible for providing the internal and external customer router and 
 
 #### Preparing the network for an ESX installation {#network_ESX}
 
-If you are installing HP Helion OpenStack in a KVM deployment, you must configure your network as shown in the following diagram.
+If you are installing HP Helion OpenStack in a ESX deployment, you must configure your network as shown in the following diagram.
 
-<a href="javascript:window.open('/content/documentation/media/topology_esx.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack beta architecture diagram for KVM network architecture.</a>(opens in a new window)
+<a href="javascript:window.open('/content/documentation/media/topology_esx.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack architecture diagram for ESX network architecture.</a>(opens in a new window)
 
 For ESX deployments, two specific networks must be installed and configured for the VMware vCenter environment. The network is used for communication between specific aspects of vCenterL
 - the OVSvApp communicates with the Neutron message queue 
