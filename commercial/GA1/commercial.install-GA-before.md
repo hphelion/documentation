@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Installation and Configuration"
-permalink: **/helion/openstack/ga/install/prereqs/**
+permalink: /helion/openstack/ga/install/prereqs/
 product: commercial
 
 ---
@@ -26,6 +26,7 @@ Before you begin the installation process, take a few minutes to read this page 
 
 
 * [Required tasks](#required-tasks)
+   * [Preparing the network](#network_prepare)
    * [Obtaining a public key](#pub-key)
    * [Installing Debian/Ubuntu packages](#packages)
    * [Creating the baremetal.csv file](#req-info)
@@ -37,7 +38,7 @@ Before you begin the installation process, take a few minutes to read this page 
 ## Required tasks 
 On the installer system, ensure the following required tasks are completed before you begin the installation.
 
-### Preparing the network
+### Preparing the network {#network_prepare}
 
 Before installing HP Helion OpenStack, you are responsible for configuring the network, based on the type of hypervisor you are installing, [KVM](#network_KVM) or [ESX](#network_ESX). 
 
