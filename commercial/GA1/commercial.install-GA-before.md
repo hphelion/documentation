@@ -60,7 +60,7 @@ You are responsible for providing the internal and external customer router and 
 
 - The HP Helion OpenStack installation installs the two initial Object Storage nodes. You can install additional Object Storage nodes after the initial install. 
 - The Block Storage nodes are installed for deployments using the [StoreVirtual VSA driver](/helion/openstack/install-beta/vsa/) with the Object Storage service (Cinder). Object Storage can be configured to use drivers one or more of the following: StoreVirtual VSA, 3PAR, LVM.
-- DVR is used to route traffic between VMs and outside the cloud. Thus, every Compute Node has a connection to the external network.
+- Distributed Virtual Routing(DVR) is used to route traffic between VMs and outside the cloud. Thus, every Compute Node has a connection to the external network.
 - Access to OpenStack service APIs is from the management network.
 - The network path for Platform service log messages is from the VM, to the service network installed as a second vnic, to the Customer Router, to the management network, to the Under Cloud RabbitMQ, to LogStash.
 <-- What does this mean?? -->
@@ -71,20 +71,21 @@ If you are installing HP Helion OpenStack in a ESX deployment, you must configur
 
 <a href="javascript:window.open('/content/documentation/media/topology_esx.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack architecture diagram for ESX network architecture.</a>(opens in a new window)
 
-For ESX deployments, two specific networks must be installed and configured for the VMware vCenter environment. The network is used for communication between specific aspects of vCenterL
-- the OVSvApp communicates with the Neutron message queue 
+For ESX deployments, two specific networks must be installed and configured for the VMware vCenter environment. The network is used for communication between specific aspects of vCenter:
 
-- the Computer service communicates with the vCenter Proxy
+- the OVSvApp communicates with the Neutron message queue; 
 
-- the vCenter Proxy communicates with the message queue for the Compute and Volume Operations services. 
+- the Computer service communicates with the vCenter Proxy;
+
+- the vCenter Proxy communicates with the message queue for the Compute and Volume Operations services;
 
 - the EON communicates with the vCenter server.
 
-The initial installation of the cloud will install the 2 initial Object Storage nodes. All additional Object Storage nodes will be installed using customer procedures after the initial install. 
+The initial installation of the cloud will install the two initial Object Storage nodes. All additional Object Storage nodes will be installed using customer procedures after the initial install. 
 
 You are responsible for the following before beginning the HP Helion OpenStack installation:
 
-- providing the Customer Router and making sure the external, IPMI, and ESX networks are routed to/from the management network;
+- providing the Customer Router and making sure the external, IPMI, and ESX networks are routed to and from the management network;
 
 - providing the Customer Router and making sure the external, IPMI, and service networks are routed to and from the management network;
 
@@ -92,7 +93,7 @@ You are responsible for the following before beginning the HP Helion OpenStack i
 
 - providing a route for traffic between the nova-compute and cinder-volume components running on the vCenter Proxy node and the RabbitMQ and mySQL on the Cloud Controller;
 
-- providing a route from the EON service on the Under Cloud and the vCenter server;
+- providing a route from the EON service on the Under Cloud and the vCenter server.
  
 
 ### Obtaining a public key ### {#pub-key}
