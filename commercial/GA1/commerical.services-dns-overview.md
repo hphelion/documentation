@@ -33,13 +33,13 @@ DNSaaS for OpenStack includes:
 - Multi-tenancy
 - Integration with Keystone for authentication
 - A framework in place to integrate with Nova and Quantum notifications (for auto-generated records)
-- Support for PowerDNS in the current beta
+- Support for PowerDNS in the current version
 
 For example, if a user wants to to access `mytestdomain.com` in their browser, DNS provides the mechanism for the browser to know that the server (for example, `1.2.3.4`).
 
-**Note:** Installing HP Helion OpenStack DNSaaS is optional. Before you attempt the DNSaaS installation, you must have already installed HP Helion Openstack beta and verified that it is configured correctly and operational.
+**Note:** Installing HP Helion OpenStack DNSaaS is optional. Before you attempt the DNSaaS installation, you must have already installed HP Helion Openstack and verified that it is configured correctly and operational.
 
-Learn how to [install DNS as a service](/helion/openstack/install-beta/dnsaas/).
+Learn how to [install DNS as a service](/helion/openstack/install/dnsaas/).
 
 ##Key Terms
 

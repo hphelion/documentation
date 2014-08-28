@@ -26,20 +26,21 @@ PageRefresh();
 
 #### [Getting started with HP Helion OpenStack](/helion/openstack/)
 
-* [Support matrix](/helion/openstack/support-matrix-beta/) 
+* [Support matrix](/helion/openstack/support-matrix-
+* /) 
 * [FAQs](/helion/openstack/faq/)  
 * [Technical overview](/helion/openstack/technical-overview/)
 * [Services overview](/helion/openstack/services/overview/)   
 * [Glossary](/helion/openstack/glossary/)
 
 #### Installing &amp; Configuring Your Cloud
-* [Overview](/helion/openstack/install-beta-overview/) 
-* [Before you begin](/helion/openstack/install-beta/prereqs/) 
-* [Installing and configuring with a KVM hypervisor](/helion/openstack/install-beta/kvm)
-* [Installing HP StoreVirtual VSA support](/helion/openstack/install-beta/vsa/)
-* [Installing and configuring with an ESX hypervisor](/helion/openstack/install-beta/esx/)
-* [Deploying and configuring OVSvApp for HP Virtual Cloud Networking (VCN) on ESX hosts](/helion/openstack/install-beta/ovsvapp/)
-* [Installing and configuring DNSaaS support](/helion/openstack/install-beta/dnsaas/)
+* [Overview](/helion/openstack/install-overview/) 
+* [Before you begin](/helion/openstack/install/prereqs/) 
+* [Installing and configuring with a KVM hypervisor](/helion/openstack/install/kvm)
+* [Installing HP StoreVirtual VSA support](/helion/openstack/install/vsa/)
+* [Installing and configuring with an ESX hypervisor](/helion/openstack/install/esx/)
+* [Deploying and configuring OVSvApp for HP Virtual Cloud Networking (VCN) on ESX hosts](/helion/openstack/install/ovsvapp/)
+* [Installing and configuring DNSaaS support](/helion/openstack/install/dnsaas/)
 
 #### [Related documentation](/helion/openstack/related-links)
  

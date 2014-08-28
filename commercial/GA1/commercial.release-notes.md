@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Beta Release Notes"
+title: "HP Helion OpenStack&#174; Release Notes"
 permalink: /helion/openstack/ga/release-notes/
 product: commercial
 
@@ -20,15 +20,15 @@ PageRefresh();
 
 <p style="font-size: small;"> <a href="/helion/openstack/">&#9664; PREV | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/faq/">NEXT &#9654; </a></p>
 
-# HP Helion OpenStack&reg; Beta Release Notes
+# HP Helion OpenStack&reg; Release Notes
 
-Thanks for your interest in HP Helion OpenStack beta! This release note contains the following information on our software package:
+Thanks for your interest in HP Helion OpenStack! This release note contains the following information on our software package:
 
-* [Features in HP Helion OpenStack beta](#features) 
-* [Recommendations for HP Helion OpenStack beta](#recommendations)
+* [Features in HP Helion OpenStack](#features) 
+* [Recommendations for HP Helion OpenStack](#recommendations)
 * [For further information](#for-further-information) 
 
-##Features in HP Helion OpenStack beta## {#features}
+##Features in HP Helion OpenStack## {#features}
 
 **OpenStack Icehouse service** - The full set of standard OpenStack services is available for you to use, including Nova, Swift, Cinder, Neutron, Glance, Keystone, Horizon, and Heat.
 
@@ -38,7 +38,7 @@ Thanks for your interest in HP Helion OpenStack beta! This release note contains
 
 **HP Virtual Cloud Networking (VCN) application** - Allows you to create networks, subnets and ports, as well as security groups and security group rules for your ESX cluster.
 
-##Recommendations for HP Helion OpenStack beta## {#recommendations}
+##Recommendations for HP Helion OpenStack## {#recommendations}
 
 This section describes the HP recommendations for optimizing performance, utility, and functionality with this software version. We have also provided information about some known issues for reference purposes. This section contains:
 
@@ -77,7 +77,7 @@ HP recommends the following best practices for this software version.
 
 ###Known issues in this release### {#known-issues}
 
-The following are the known issues for HP Helion OpenStack beta:
+The following are the known issues for HP Helion OpenStack:
 
 **Operations**
 
@@ -96,11 +96,11 @@ The following are the known issues for HP Helion OpenStack beta:
 
 ##For further information## {#for-further-information}
 
-For additional information on HP Helion OpenStack beta, OpenStack Cloud Software and TripleO:
+For additional information on HP Helion OpenStack, OpenStack Cloud Software and TripleO:
 
 * [HP Helion OpenStack Documentation web site](/helion/openstack/): Provides the topics listed below.
-* [FAQ](/helion/openstack/faq/): Contains some frequently asked questions about the HP Helion OpenStack beta
-* [Installation and configuration](/helion/openstack/install-beta-overview/): A set of tasks that walk you through the installation and configuration process.
+* [FAQ](/helion/openstack/faq/): Contains some frequently asked questions about the HP Helion OpenStack
+* [Installation and configuration](/helion/openstack/install-overview/): A set of tasks that walk you through the installation and configuration process.
 * [Related Topics](/helion/openstack/related-links/): Links to pertinent HP Helion OpenStack and OpenStack documentation.
 * [OpenStack documentation home page](http://docs.openstack.org/)
 * [TripleO documentation](https://wiki.openstack.org/wiki/TripleO)

@@ -20,7 +20,7 @@ PageRefresh();
 
 # HP Helion OpenStack&#174; Documentation Home
 
-Welcome! HP Helion OpenStack beta is OpenStack technology coupled with a Linux&#174; Operating System (OS). It is designed for administrators and developers who want a hardened enterprise-grade product set that speeds deployment and simplifies management of private clouds and infrastructure services for developers, enterprises and service providers.
+Welcome! HP Helion OpenStack is OpenStack technology coupled with a Linux&#174; Operating System (OS). It is designed for administrators and developers who want a hardened enterprise-grade product set that speeds deployment and simplifies management of private clouds and infrastructure services for developers, enterprises and service providers.
 
 <!--This page covers the following topics:
 * [Available Services](#services)
@@ -37,11 +37,11 @@ HP Helion OpenStack offers many services based on the different OpenStack projec
 
 Use the following links and tools to get to work with HP Helion OpenStack:
 
-* [Installation and configuration](/helion/openstack/install-beta-overview/) 
+* [Installation and configuration](/helion/openstack/install-overview/) 
 * [FAQ](/helion/openstack/faq/)
 * [Technical overview](/helion/openstack/technical-overview/)
 * [Services overview](/helion/openstack/services/overview/)
-* [Support matrix](/helion/openstack/support-matrix-beta/)
+* [Support matrix](/helion/openstack/support-matrix/)
 * [Documentation site index](/helion/openstack/siteindex/)
 * [Glossary](/helion/openstack/glossary/)
 

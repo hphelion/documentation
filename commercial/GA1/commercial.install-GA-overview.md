@@ -18,7 +18,7 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> <a href="/helion/openstack/support-matrix-beta/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/prereqs/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/helion/openstack/support-matrix/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/install/prereqs/">NEXT &#9654;</a> </p>
 
 # HP Helion OpenStack&#174; Installation and Configuration
 This page provides an overview of the installation process and requirements for  HP Helion OpenStack &mdash; a baremetal multi-node deployment consisting of a minimum of 9 baremetal servers, to which you can add **up to 100 Compute nodes**:
@@ -35,23 +35,23 @@ HP Helion OpenStack uses three linked installation phases to deploy a complete O
 
 * Seed: The seed VM is started as a VM from a specific seed VM image. It contains a number of self-contained OpenStack components that are used to deploy the undercloud. The seed deploys the undercloud by using Ironic baremetal driver to deploy a specific undercloud machine image.
 
-* Undercloud: In a typical HP Helion OpenStack beta deployment, the undercloud is a baremetal server. The undercloud is a complete OpenStack installation, which is then used to deploy the overcloud.
+* Undercloud: In a typical HP Helion OpenStack deployment, the undercloud is a baremetal server. The undercloud is a complete OpenStack installation, which is then used to deploy the overcloud.
 
-* Overcloud: The overcloud is the end-user OpenStack cloud. In a typical HP Helion OpenStack beta deployment, the overcloud comprises several baremetal servers.
+* Overcloud: The overcloud is the end-user OpenStack cloud. In a typical HP Helion OpenStack deployment, the overcloud comprises several baremetal servers.
 
 
-## [Installing &amp; configuring your cloud](/helion/openstack/install-beta-overview/)
+## [Installing &amp; configuring your cloud](/helion/openstack/install-overview/)
 Before you start your installation, we suggest you review these pages to understand requirements, pre-installation tasks, supported deployment scenarios, and required installations:
 
-* [Support matrix](/helion/openstack/support-matrix-beta/) 
-* [Before you begin](/helion/openstack/install-beta/prereqs/) 
-* [Installing and configuring with a KVM hypervisor](/helion/openstack/install-beta/kvm)
-* [Configuring HP StoreVirtual VSA for Block Storage](/helion/openstack/install-beta/vsa/)
-* [Configuring HP 3Par for Block Storage](/helion/openstack/install-beta/vsa/) NEW DOC PER PRANOY!!
-* [Installing and configuring with an ESX hypervisor](/helion/openstack/install-beta/esx/)
+* [Support matrix](/helion/openstack/support-matrix/) 
+* [Before you begin](/helion/openstack/install/prereqs/) 
+* [Installing and configuring with a KVM hypervisor](/helion/openstack/install/kvm)
+* [Configuring HP StoreVirtual VSA for Block Storage](/helion/openstack/install/vsa/)
+* [Configuring HP 3Par for Block Storage](/helion/openstack/install/vsa/) NEW DOC PER PRANOY!!
+* [Installing and configuring with an ESX hypervisor](/helion/openstack/install/esx/)
 * Deploying and configuring Compute Proxy on ESX hosts  NEW DOC PER PRANOY!!
-* [Deploying and configuring OVSvApp for HP Virtual Cloud Networking (VCN) on ESX hosts](/helion/openstack/install-beta/ovsvapp/)
-* [Installing and configuring DNSaaS support](/helion/openstack/install-beta/dnsaas/)
+* [Deploying and configuring OVSvApp for HP Virtual Cloud Networking (VCN) on ESX hosts](/helion/openstack/install/ovsvapp/)
+* [Installing and configuring DNSaaS support](/helion/openstack/install/dnsaas/)
 
 This rest of this page provides you with the following installation information:
 
@@ -71,7 +71,7 @@ With HP Helion OpenStack, you have two baremetal installation options depending 
 
     HP StoreVirtual VSA allows you to consolidate multiple storage nodes into pools of storage. The available capacity and performance is aggregated and made available to every volume in the cluster. 
 
-    [Learn how to to install and configure with a KVM hypervisor](/helion/openstack/install-beta/kvm). 
+    [Learn how to to install and configure with a KVM hypervisor](/helion/openstack/install/kvm). 
 
 * **ESX hypervisor with HP Virtual Cloud Networking (VCN) application support**
 
@@ -79,11 +79,11 @@ With HP Helion OpenStack, you have two baremetal installation options depending 
 
     HP Virtual Cloud Networking (VCN) application enables you to build a robust, multi-tenant networking infrastructure. Once deployed, the Open vSwitch vApp template enables networking between the tenant VMs provisioned on your ESX compute nodes.
 
-    [Learn how to to install and configure with an ESX hypervisor](/helion/openstack/install-beta/esx/).  
+    [Learn how to to install and configure with an ESX hypervisor](/helion/openstack/install/esx/).  
 
 After installing HP Helion OpenStack, you have the option to install HP Helion OpenStack DNS as a service (DNSaaS) support. No matter what hypervisor you use, our managed DNS service, based on the Openstack Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.
 
-[Learn how to to install and configure DNSaaS support](/helion/openstack/install-beta/dnsaas/).  
+[Learn how to to install and configure DNSaaS support](/helion/openstack/install/dnsaas/).  
 
 
 
@@ -93,7 +93,7 @@ These requirements pertain to both the KVM and ESX hypervisor baremetal installa
 * [Hardware configuration](#hardware-configuration)
 * [Network configuration](#network-configuration)
 
-For the performance and stability of the HP Helion OpenStack environment, it is very important to meet the requirements and conform to the minimum recommendations. See the [Support matrix](/helion/openstack/support-matrix-beta) for additional information.
+For the performance and stability of the HP Helion OpenStack environment, it is very important to meet the requirements and conform to the minimum recommendations. See the [Support matrix](/helion/openstack/support-matrix) for additional information.
 
 #### Hardware configuration
 
@@ -150,8 +150,8 @@ To ensure a successful installation, you must also satisfy these network configu
 ## For more information
 For more information on HP Helion OpenStack Community, see:
 
-* [Before you begin](/helion/openstack/install-beta/prereqs/) 
-* [Support matrix](/helion/openstack/support-matrix-beta/) 
+* [Before you begin](/helion/openstack/install/prereqs/) 
+* [Support matrix](/helion/openstack/support-matrix/) 
 * [FAQ](/helion/openstack/faq/) 
 * [Release notes](/helion/openstack/release-notes/) 
 

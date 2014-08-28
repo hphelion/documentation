@@ -18,7 +18,7 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> <a href="/helion/openstack/install-beta-overview/">&#9664; PREV</a> | <a href="/helion//"openstack>&#9650; UP</a> | <a href="/helion/openstack/install-beta/kvm/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/helion/openstack/install-overview/">&#9664; PREV</a> | <a href="/helion//"openstack>&#9650; UP</a> | <a href="/helion/openstack/install/kvm/">NEXT &#9654;</a> </p>
 
 # HP Helion OpenStack&#174; Installation: Before you begin
 
@@ -59,7 +59,7 @@ You are responsible for providing the internal and external customer router and 
 **Notes:**
 
 - The HP Helion OpenStack installation installs the two initial Object Storage nodes. You can install additional Object Storage nodes after the initial install. 
-- The Block Storage nodes are installed for deployments using the [StoreVirtual VSA driver](/helion/openstack/install-beta/vsa/) with the Object Storage service (Cinder). Object Storage can be configured to use drivers one or more of the following: StoreVirtual VSA, 3PAR, LVM.
+- The Block Storage nodes are installed for deployments using the [StoreVirtual VSA driver](/helion/openstack/install/vsa/) with the Object Storage service (Cinder). Object Storage can be configured to use drivers one or more of the following: StoreVirtual VSA, 3PAR, LVM.
 - DVR is used to route traffic between VMs and outside the cloud. Thus, every Compute Node has a connection to the external network.
 - Access to OpenStack service APIs is from the management network.
 - The network path for Platform service log messages is from the VM, to the service network installed as a second vnic, to the Customer Router, to the management network, to the Under Cloud RabbitMQ, to LogStash.
@@ -172,9 +172,9 @@ The following packages are available to download from [HP Helion OpenStack produ
 
 
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
-<td>HPHelionOpenStack_BetaJune30.tgz </td>
-<td> HP Helion OpenStack beta install package </td>
-<td>Beta installation scripts and images </td>
+<td>HPHelionOpenStack_June30.tgz </td>
+<td> HP Helion OpenStack install package </td>
+<td>installation scripts and images </td>
 <td> 5.3 GB </td>
 <td> Yes </td>
 </tr>
@@ -297,16 +297,16 @@ Automation scripts - pyVins.tgz</td>
 
 
 ## Next steps
-* [Installing and configuring with a KVM hypervisor](/helion/openstack/install-beta/kvm)
-* [Installing HP StoreVirtual VSA support](/helion/openstack/install-beta/vsa/)
-* [Installing and configuring with an ESX hypervisor](/helion/openstack/install-beta/esx/)
-* [Deploying and configuring OVSvApp for HP Virtual Cloud Networking (VCN) on ESX hosts](/helion/openstack/install-beta/ovsvapp/)
-* [Installing and configuring DNSaaS support](/helion/openstack/install-beta/dnsaas/)
+* [Installing and configuring with a KVM hypervisor](/helion/openstack/install/kvm)
+* [Installing HP StoreVirtual VSA support](/helion/openstack/install/vsa/)
+* [Installing and configuring with an ESX hypervisor](/helion/openstack/install/esx/)
+* [Deploying and configuring OVSvApp for HP Virtual Cloud Networking (VCN) on ESX hosts](/helion/openstack/install/ovsvapp/)
+* [Installing and configuring DNSaaS support](/helion/openstack/install/dnsaas/)
  
 ## For more information
 For more information on HP Helion OpenStack Community, see:
 
-* [Support matrix](/helion/openstack/support-matrix-beta/) 
+* [Support matrix](/helion/openstack/support-matrix/) 
 * [FAQ](/helion/openstack/faq/) 
 * [Release notes](/helion/openstack/release-notes/) 
 

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack: Beta Installation and Configuration"
+title: "HP Helion OpenStack: Installation and Configuration"
 permalink: /helion/openstack/ga/install/esx/
 product: commercial
 
@@ -18,30 +18,30 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> <a href="/helion/openstack/install-beta/vsa/">&#9664; PREV</a> | <a href="/helion/openstack/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/ovsvapp/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/helion/openstack/install/vsa/">&#9664; PREV</a> | <a href="/helion/openstack/install-overview/">&#9650; UP</a> | <a href="/helion/openstack/install/ovsvapp/">NEXT &#9654;</a> </p>
 
-# HP Helion OpenStack&reg;: Beta Installation and Configuration for ESX Hypervisor
+# HP Helion OpenStack&reg;: Installation and Configuration for ESX Hypervisor
 <!-- not required
-Welcome to the HP Helion Openstack beta. HP Helion OpenStack beta is based on  Icehouse version of OpenStack and uses TripleO program. It aims at installing, upgrading, and operating OpenStack clouds using OpenStack as the installation mechanism.  
+Welcome to the HP Helion Openstack. HP Helion OpenStack is based on  Icehouse version of OpenStack and uses TripleO program. It aims at installing, upgrading, and operating OpenStack clouds using OpenStack as the installation mechanism.  
 
 
-HP Helion OpenStack beta Edition manages ESX hosts using the VMware vCenter driver available in the community. The VMware vCenter driver makes use of clusters exposed through vcenter to manage ESX hosts. This implies, The clusters in the vCenter needs to be managed by Cloud OS. This document provides installation instructions for HP Helion OpenStack beta Edition preview on a suitably specified and prepared single-node system.
+HP Helion OpenStack Edition manages ESX hosts using the VMware vCenter driver available in the community. The VMware vCenter driver makes use of clusters exposed through vcenter to manage ESX hosts. This implies, The clusters in the vCenter needs to be managed by Cloud OS. This document provides installation instructions for HP Helion OpenStack Edition preview on a suitably specified and prepared single-node system.
 	
-The following topics explain the installation and configuration process of HP Helion OpenStack beta Edition in detail. To ensure successful installation, please read through the topics before you start.--->
+The following topics explain the installation and configuration process of HP Helion OpenStack Edition in detail. To ensure successful installation, please read through the topics before you start.--->
 
   
 
-HP Helion Openstack beta allows you to manage the VMWare vCenter and provision virtual machines. <!---ESX integration in HP Helion Openstack beta enables cloud admin to bring up an overcloud and utilize the ESX environment to create virtual machines.-->  
+HP Helion Openstack allows you to manage the VMWare vCenter and provision virtual machines. <!---ESX integration in HP Helion Openstack enables cloud admin to bring up an overcloud and utilize the ESX environment to create virtual machines.-->  
 
 It is important to read through this page before starting your installation. We also recommend that you review the following:
 
-* [hardware and network configuration requirements](/helion/openstack/install-beta-overview/##installation-requirements) 
-* [support matrix](/helion/openstack/support-matrix-beta/)
-* [installation process and prerequisites](/helion/openstack/install-beta/prereqs/)
+* [hardware and network configuration requirements](/helion/openstack/install-overview/##installation-requirements) 
+* [support matrix](/helion/openstack/support-matrix/)
+* [installation process and prerequisites](/helion/openstack/install/prereqs/)
 
-<!--**Note:** This release (Beta) provides the option, that this is an early phase demonstration of functionality and is only intended to give an impression of the installation process and of the overall structure of a deployed HP Helion OpenStack Community system. The demonstrated functionality is nearly identical to the virtualized test environments that the engineering team uses in its automated QA pipeline for basic functional testing.--->
+<!--**Note:** This release provides the option, that this is an early phase demonstration of functionality and is only intended to give an impression of the installation process and of the overall structure of a deployed HP Helion OpenStack Community system. The demonstrated functionality is nearly identical to the virtualized test environments that the engineering team uses in its automated QA pipeline for basic functional testing.--->
 
-The rest of this page explains the beta installation and configuration process for ESX. 
+The rest of this page explains the installation and configuration process for ESX. 
 
 
 
@@ -66,7 +66,7 @@ The rest of this page explains the beta installation and configuration process f
 
 The following diagram depicts a simplified deployment scenario.
 
-<a href="javascript:window.open('/content/documentation/media/commercial_esx_network_architecture.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack beta architecture diagram for ESX (opens in a new window)</a>
+<a href="javascript:window.open('/content/documentation/media/commercial_esx_network_architecture.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack architecture diagram for ESX (opens in a new window)</a>
 
 
 ##Additional network requirements {#networkreq}
@@ -87,7 +87,7 @@ Before you begin, you must download the required HP Helion OpenStack installatio
 	
 <td><b> Installation package </b></td><td><b>File name</b></td>
 <tr style="background-color: white; color: black;">
- <td>HP Helion OpenStack beta</td><td>HPHelionOpenStack_BetaJune30.tgz</td></tr>
+ <td>HP Helion OpenStack</td><td>HPHelionOpenStack_June30.tgz</td></tr>
 	
 <tr style="background-color: white; color: black;">
 <td>HP Virtual Cloud Networking </td><td>HP_OVSvApp.zip</td></tr>
@@ -106,7 +106,7 @@ Before you begin, you must download the required HP Helion OpenStack installatio
 
     [HP Helion OpenStack product installation](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221247%22%7D/Show)
 
-For more details, refer to the *Creating the baremetal.csv file* section on the [HP Helion OpenStack Beta Installation: Before you begin](/helion/openstack/install-beta/prereqs/#install-pkg) page.
+For more details, refer to the *Creating the baremetal.csv file* section on the [HP Helion OpenStack Installation: Before you begin](/helion/openstack/install/prereqs/#install-pkg) page.
 
 ## Installing HP Helion Openstack ## {#install}
 
@@ -197,7 +197,7 @@ Before you begin your installation, if necessary, configure the proxy informatio
         78:e7:d1:22:52:9b,operator,password,192.168.11.6,12,32768,2048
         78:e7:d1:22:52:9e,operator,password,192.168.11.7,12,32768,2048
 
-    **Note:** For more information on creating this file, refer to [Creating the baremetal.csv file](/helion/openstack/install-beta/prereqs/#req-info) on the *Before you begin* page.
+    **Note:** For more information on creating this file, refer to [Creating the baremetal.csv file](/helion/openstack/install/prereqs/#req-info) on the *Before you begin* page.
 
 5. [Optional] If you have installed the IPMItool, use it to verify that network connectivity from the seed VM to the baremetal servers in your baremetal.csv is working.
 
@@ -323,15 +323,15 @@ HP Virtual Cloud Networking's Open vSwitch vApp (OVSvApp) must be installed for 
 
 This block of floating IP addresses is used while deploying OVSvApp. -->
 
-Deploy OVSvApp for ESX hosts. See [Deploying and configuring OVSvApp for HP Virtual Cloud Networking (VCN) on ESX hosts](/helion/openstack/install-beta/ovsvapp/) for complete instructions. 
+Deploy OVSvApp for ESX hosts. See [Deploying and configuring OVSvApp for HP Virtual Cloud Networking (VCN) on ESX hosts](/helion/openstack/install/ovsvapp/) for complete instructions. 
 
 ## Installing DNS as a service (DNSaaS) {#configure}
 
 Our managed DNS service, based on the OpenStack Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.
 
-Installing HP Helion OpenStack DNSaaS is **optional**. Before you attempt the DNSaaS installation, you *must* have already installed HP Helion Openstack beta and verified that it is configured correctly and operational. 
+Installing HP Helion OpenStack DNSaaS is **optional**. Before you attempt the DNSaaS installation, you *must* have already installed HP Helion Openstack and verified that it is configured correctly and operational. 
 
-Learn how to [install DNS as a service](/helion/openstack/install-beta/dnsaas/).
+Learn how to [install DNS as a service](/helion/openstack/install/dnsaas/).
 
 
 

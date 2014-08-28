@@ -39,7 +39,8 @@ Each meter is collected from one or more *samples*, which are gathered from the 
 - the type of meter (cumulative, gauge, or delta)
 - the amount of data measured
 - the unit of measure
-- the resource being measured
+- the resource 
+- being measured
 - the project ID and user the resource belongs to
 
 Alarms can be configured to trigger notifications if a specific threshold value has been reached. 

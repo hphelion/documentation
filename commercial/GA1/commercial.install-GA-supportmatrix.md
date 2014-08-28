@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Beta Support Matrix"
+title: "HP Helion OpenStack&#174; Support Matrix"
 permalink: /helion/openstack/ga/support-matrix/
 product: commercial
 
@@ -19,10 +19,10 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> <a href="/helion/openstack/services/overview/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/install-beta-overview/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/helion/openstack/services/overview/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/install-overview/">NEXT &#9654;</a> </p>
 
 
-# HP Helion OpenStack&#174; Beta Support Matrix
+# HP Helion OpenStack&#174; Support Matrix
 
 This page provides an overview of the hardware and software that is supported for HP Helion OpenStack, and includes setup and configuration information. For the performance and stability of the HP Helion OpenStack environment, it is very important to meet the requirements and conform to the minimum recommendations.
 
@@ -37,8 +37,8 @@ This page provides an overview of the hardware and software that is supported fo
 
 The following diagrams depict simplified deployment scenarios:
 
-* <a href="javascript:window.open('/content/documentation/media/commercial_kvm_network_architecture.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">KVM deployment of HP Helion OpenStack beta (opens in a new window)</a>
-* <a href="javascript:window.open('/content/documentation/media/commercial_esx_network_architecture.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">ESX deployment of HP Helion OpenStack beta (opens in a new window)</a>
+* <a href="javascript:window.open('/content/documentation/media/commercial_kvm_network_architecture.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">KVM deployment of HP Helion OpenStack (opens in a new window)</a>
+* <a href="javascript:window.open('/content/documentation/media/commercial_esx_network_architecture.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">ESX deployment of HP Helion OpenStack (opens in a new window)</a>
 
 
 ## Supported hardware ## {#supportedhw}

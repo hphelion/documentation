@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack: Beta Installation and Configuration"
+title: "HP Helion OpenStack: Installation and Configuration"
 permalink: /helion/openstack/ga/install/kvm/
 product: commercial
 
@@ -19,15 +19,15 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> <a href="/helion/openstack/install-beta/prereqs/">&#9664; PREV</a> | <a href="/helion/openstack/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/vsa/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/helion/openstack/install/prereqs/">&#9664; PREV</a> | <a href="/helion/openstack/install-overview/">&#9650; UP</a> | <a href="/helion/openstack/install/vsa/">NEXT &#9654;</a> </p>
 
-# HP Helion OpenStack&reg;:  Beta Installation and Configuration for KVM Hypervisor
+# HP Helion OpenStack&reg;: Installation and Configuration for KVM Hypervisor
 
-HP Helion Openstack beta allows you to manage the KVM hypervisor and provision virtual machines. 
+HP Helion Openstack allows you to manage the KVM hypervisor and provision virtual machines. 
 
-It is important to read through this page before starting your installation. We also recommend that you review the [hardware and network configuration requirements](/helion/openstack/install-beta-overview/##installation-requirements) and the [support matrix](/helion/openstack/support-matrix-beta/), and learn about the [installation process and complete any required tasks](/helion/openstack/install-beta/prereqs/). 
+It is important to read through this page before starting your installation. We also recommend that you review the [hardware and network configuration requirements](/helion/openstack/install-overview/##installation-requirements) and the [support matrix](/helion/openstack/support-matrix/), and learn about the [installation process and complete any required tasks](/helion/openstack/install/prereqs/). 
 
-The rest of this page explains the beta installation and configuration process for KVM. 
+The rest of this page explains the installation and configuration process for KVM. 
 
 * [KVM deployment architecture](#deploy-arch)
 * [Downloading the installation packages](#getinstall)
@@ -47,7 +47,7 @@ The rest of this page explains the beta installation and configuration process f
 
 The following diagram depicts a simplified deployment scenario.
 
-<a href="javascript:window.open('/content/documentation/media/commercial_kvm_network_architecture.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">KVM deployment of HP Helion OpenStack beta (opens in a new window)</a>
+<a href="javascript:window.open('/content/documentation/media/commercial_kvm_network_architecture.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">KVM deployment of HP Helion OpenStack (opens in a new window)</a>
 
 ## Downloading the installation packages {#getinstall}
 Before you begin, you must download the required HP Helion OpenStack installation packages:
@@ -61,7 +61,7 @@ Before you begin, you must download the required HP Helion OpenStack installatio
  <td>HP StoreVirtual VSA </td><td>HPStoreVirtual_VSA_11.5.tgz</td></tr>
 	
 <tr style="background-color: white; color: black;">
-<td>HP Helion OpenStack beta </td><td>HPHelionOpenStack_BetaJune30.tgz</td></tr>
+<td>HP Helion OpenStack </td><td>HPHelionOpenStack_June30.tgz</td></tr>
 </td></tr>
 
 <tr style="background-color: white; color: black;">
@@ -77,10 +77,10 @@ Before you begin, you must download the required HP Helion OpenStack installatio
 
     [HP Helion OpenStack product installation](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221247%22%7D/Show)
 
-For more details, refer to the [package download instructions](/helion/openstack/install-beta/prereqs/#install-pkg) on the HP Helion OpenStack Beta Installation: Before you begin page.
+For more details, refer to the [package download instructions](/helion/openstack/install/prereqs/#install-pkg) on the HP Helion OpenStack Installation: Before you begin page.
 	
 ## Installing HP StoreVirtual Virtual Storage Appliance (VSA) {#vsa}
-Before you install HP Helion OpenStack, [HP StoreVirtual VSA](https://docs.hpcloud.com/helion/openstack/install-beta/vsa/) must be installed and configured.
+Before you install HP Helion OpenStack, [HP StoreVirtual VSA](https://docs.hpcloud.com/helion/openstack/install/vsa/) must be installed and configured.
 
 HP StoreVirtual VSA provides complete array functionality without an external array hardware, which:
 
@@ -95,7 +95,7 @@ Once you have completed the HP StoreVirtual VSA installation, you must have the 
 * VSA_NAME
 -->
 
-See the [HP StoreVirtual VSA support](/helion/openstack/install-beta/vsa/) page for complete installation and configuration instructions.
+See the [HP StoreVirtual VSA support](/helion/openstack/install/vsa/) page for complete installation and configuration instructions.
 
 
 ## Installing HP Helion OpenStack {#install}
@@ -184,7 +184,7 @@ Before you begin your installation, if necessary, configure the proxy informatio
         78:e7:d1:22:52:9b,operator,password,192.168.11.6,12,32768,2048
         78:e7:d1:22:52:9e,operator,password,192.168.11.7,12,32768,2048  
 
-    **Note:** For more information on creating this file, refer back to [Obtaining required information](/helion/openstack/install-beta/prereqs/#req-info/).
+    **Note:** For more information on creating this file, refer back to [Obtaining required information](/helion/openstack/install/prereqs/#req-info/).
 
 5. [Optional] If you have installed the IPMItool, use it to verify that network connectivity from the seed VM to the baremetal servers in your baremetal.csv is working.
 
@@ -333,9 +333,9 @@ Ensure you can access the overcloud Horizon dashboard. To do this, follow the st
 
 Our managed DNS service, based on the OpenStack Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.
 
-Installing HP Helion OpenStack DNSaaS is **optional**. Before you attempt the DNSaaS installation, you *must* have already installed HP Helion Openstack beta and verified that it is configured correctly and operational. 
+Installing HP Helion OpenStack DNSaaS is **optional**. Before you attempt the DNSaaS installation, you *must* have already installed HP Helion Openstack and verified that it is configured correctly and operational. 
 
-Learn how to [install DNS as a service](/helion/openstack/install-beta/dnsaas/).
+Learn how to [install DNS as a service](/helion/openstack/install/dnsaas/).
 
 
 

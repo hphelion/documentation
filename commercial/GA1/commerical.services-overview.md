@@ -18,7 +18,7 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> <a href="/helion/openstack/technical-overview/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/support-matrix-beta/"> NEXT &#9654</a> </p>
+<p style="font-size: small;"> <a href="/helion/openstack/technical-overview/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/support-matrix/"> NEXT &#9654</a> </p>
 
 
 # HP Helion OpenStack&reg; Services Overview #
@@ -129,7 +129,7 @@ For more information on installing the command-line interface for interacting wi
 *The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*
 
 
-<!-- Not in beta
+<!-- Not in
 Capability Tagging
 The Capability Tagging service provides the ability to describe requirements and capabilities using a common ontology and to tag (or, assign) requirements and capabilities to cloud resources. Also known as Graffiti or Peer
 /helion/openstack/services/peer/getting-started/

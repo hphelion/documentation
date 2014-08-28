@@ -77,7 +77,7 @@ You can perform the following tasks:
 
 For information on how to operate your cloud we suggest you read the [OpenStack Operations Guide](http://docs.openstack.org/ops/). The *Architecture* section contains useful information about how an OpenStack Cloud is put together. However, the HP Helion OpenStack takes care of these details for you. The *Operations* section contains information on how to manage the system.
 
-<!-- Not in beta; GA aether only?
+<!-- In GA aether only?
 ### Adding and removing a network to a DHCP agent ###
 
 Use the Networking service to add or remove a network from a DHCP agent.

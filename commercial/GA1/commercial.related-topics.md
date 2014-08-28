@@ -18,7 +18,7 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> <a href="/helion/openstack/install-beta/dnsaas/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/glossary/"> NEXT &#9654</a> </p>
+<p style="font-size: small;"> <a href="/helion/openstack/install/dnsaas/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/glossary/"> NEXT &#9654</a> </p>
 
 
 # HP Helion OpenStack&reg; Related Documentation
@@ -27,7 +27,7 @@ This topic provides you links to pertinent documentation.
 
 ### OpenStack Links
 
-HP Helion OpenStack beta is OpenStack technology coupled with a Linux&reg; operating system. 
+HP Helion OpenStack is OpenStack technology coupled with a Linux&reg; operating system. 
 
 For more information, refer to the OpenStack documentation site: 
 
