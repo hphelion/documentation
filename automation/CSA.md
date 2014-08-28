@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Cloud Service Automation"
-permalink: /helion/openstack/ga/dashboard/how-works/
+permalink: /helion/automation/
 product: commercial
 
 ---

@@ -50,7 +50,6 @@ Open a PowerShell window as the administrator and issue the command `set-executi
 <!--<img src="media/LicenseDialo.png" width="580" height="179" alt="" />-->
 
 Close the Powershell window and reopen as administrator for the policy changes to take effect.
-
  
 ##Run the installer package## {#RuntheInstallerPackage}
 
@@ -78,40 +77,52 @@ The installation now proceeds on your system.
 
 <img src="media/wincli_install05.png" width="580" height="475" alt="" />
 
-
 ##Choose the appropriate Windows PowerShell Executable## {#ChooseExecutable}
 
 Always use the `powershell.exe` appropriate for your OS. From the Windows command line, for 64-bit systems, use `\SysWOW64\powershell.exe`; for 32-bit systems, use `\System32\powershell.exe`.  From the Windows `Start` menu, make sure you select the appropriate PowerShell program.
 
-
 ##Supply your credentials## {#SupplyyourCredentials}
 
-The first time that you run the shell you must supply the access key, secret key, and tenant ID that was assigned to you during the registration process. You can find the values for these variables through the [HP Helion Public Cloud Console](https://horizon.hpcloud.com). Click the project menu and select *Roles and API Endpoints*.
+The first time that you run the shell you must supply your Username, Password, and Tenant Name (referred to as Project Name in the console) that you setup during the registration process. You can find your Project Name through the [HP Helion Public Cloud Console](https://horizon.hpcloud.com/control_services/projects). Click the Projects heading under the Identity menu.
 
-<img src="media/api_keys-2.jpg" width="580" height="471" alt="" />
+<img src="media/projects-2.jpg">
 
 The shell detects that this is your first time logging in and prompts you for these items. 
 
-    ===============================================================
-    Welcome to the HP Helion Public Cloud Services Powershell Environment.
-    ===============================================================
-    
-       --> Registering Providers. . .
-    
-    ------------------------------------------------------------------------------------------------------
-    We've noticed that you haven't supplied any credentials yet. To continue we need to get your Access Key,
-    Secret Key, and the Tenant Id provided to you during the sign up process. If you haven't signed up
-    for any services yet, just to go https://console.hpcloud.com for details on how to get started today!
-    ------------------------------------------------------------------------------------------------------
-    
-    Please enter your Access Key :
-    
+    ========================================================================================
+    Welcome to the HP Cloud Services Powershell Environment.
+    ========================================================================================
+
+    ==> Registering Providers...
+
+    =======================================================================================================
+    We've noticed that you haven't supplied any credentials yet. To continue we need to get your Username,
+    Password, and the Tenant Id provided to you during the sign up process. If you haven't signed up
+    for any services yet, just go to https://console.hpcloud.com for details on how to get started today!
+    =======================================================================================================
+
+    Please enter your User Name  :
+    USERNAME
+
+    Please enter your Password   :
+    ******************************
+
+    Please enter your Tenant Name :
+    PROJECT_NAME
+
+    ==> Verifying and Storing Credentials..
+    ==> Applying Command Aliases...
+    ==> Registering Views...
+
+    Ready..
+
+    PS C:\Program Files (x86)\HP\HPCS-Powershell>
+
 You only need to enter these credentials the first time you run the shell.  After the system verifies your credentials, they are stored and re-used the next time you open the shell.
 
 **Note**: If you see errors at this point, double-check that you are using the [correct powershell executable](#ChooseExecutable), as mentioned earlier. For additional errors that you may encounter, take a look at our Knowledge Base article on [Common Errors Using Windows Powershell CLI](https://community.hpcloud.com/article/common-errors-using-windows-powershell-cli).
 
 <!--<img src="media/PromptCred.jpg" width="580" height="228" alt="" />-->
-
 
 ##Navigate to the command line## {#NavigatetotheCommandLine}
 
@@ -121,8 +132,7 @@ To issue HP Helion Public Cloud CLI Windows PowerShell commands (also sometimes 
 
 ##Load the shell and module registration## {#LoadingtheShellandModuleRegistration}
 
-If you have installed the software through the installer package, registration happens automatically through a supplied Powershell Profile. If the profile was not used, you must move to 
-the install folder specified while in the setup wizard. From there you can register the module with Import-Module .\Climanifest.psd1. Note that this only last for the duration of the Powershell session and it's recommended to add this command to your Profile for best results.
+If you have installed the software through the installer package, registration happens automatically through a supplied Powershell Profile. If the profile was not used, you must move to the install folder specified while in the setup wizard. From there you can register the module with Import-Module .\Climanifest.psd1. Note that this only last for the duration of the Powershell session and it's recommended to add this command to your Profile for best results.
 
 ##Upgrade to a new version## {#Upgrading}
 
