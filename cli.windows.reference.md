@@ -63,34 +63,43 @@ Lists the config file entries for the current session.
  get-config 
 
 ###Examples###
-EXAMPLE
 
     PS HPCS:\> get-config
-     
-     ==============================================================================================
-     Current Session Settings are as follows.
-     ==============================================================================================
+    
+    ==============================================================================================
+    Current Session Settings are as follows.
+    ==============================================================================================
       
-     Configuration File located at C:\Users\morando\Documents\HP\CLI.config
-      
-      
-     Name                           Value
-     ----                           -----
-     LogReadAttemptsMax             20
-     ReleaseNotesURI                https://a248.e.akamai.net/cdn.hpcloudsvc.com/hdb0a98359ca04396dd429335015a1b4b/prodaw...
-     AccessKey                      ***********
-     AuthenticationServiceURI       https://region-a.geo-1.identity.hpcloudsvc.com:35357/v2.0/tokens
-     HttpTimeoutInterval            9200000
-     RDPClientPath                  40000
-     EnableCredentialTracking       true
-     LogReadAttemptIntervalInMil... 40000
-     delimiter                      /
-     DefaultTenantId
-     PasteGetURIResultsToClipboard  true
-     max-keys                       10000
-     SecretKey                      ***********
-      
-    PS HPCS:\>
+    Configuration File located at C:\Users\BRANDEJO\Documents\HP\CLI.config
+    
+    Name                           Value
+    ----                           -----
+    ReleaseNotesURI                https://region-a.geo-1.objects.hpcloudsvc.com/v1/AUTH_2485a207...f49e207fc/Builds/ReleaseManifest.xml
+    SSHClientPath
+    HttpTimeoutInterval            9200000
+    delimiter                      /
+    Username                       joelbrandenburg
+    Password                       ******************************
+    max-keys                       10000
+    TestServerId                   29555de5-2d84-4606-b529-ce57f27b361a
+    TestFilePath                   e:\Projects\Testing\Anothertest.txt
+    LogReadAttemptsMax             20
+    TeststorageContainerSecondary  b10
+    defSegmentNumber               16
+    MaxSegmentCopyRetries          3
+    TestFlavorId                   100
+    EnableCredentialTracking       true
+    TeststorageContainer           testcon
+    LogReadAttemptIntervalInMil... 40000
+    UseCleanLargeFileCopies        false
+    DefaultTenantId                default-tenant
+    AuthenticationServiceURI       https://region-a.geo-1.identity.hpcloudsvc.com:35357/v2.0/tokens
+    TestImageId                    5a1408cb-25f2-43a6-b1d9-931f5e47c871
+    LocalTestDirectory             e:\Projects\Testing\
+    NewReleaseFolder               e:\
+    largeFileSize                  314572800
+    PasteGetURIResultsToClipboard  true
+    TestNetworkId                  ff51ecb4-b66f-4966-bc76-ba1fe335040d
 
 Displays the settings for the session.  The above example shows all currently-configurable environment variables.
 
@@ -114,7 +123,6 @@ You can list metadata assigned to Servers, Storage Objects, and Containers.  Man
 **cn**
 : Container name.
 
-
 ###Examples###
 EXAMPLE 1
 
@@ -133,8 +141,6 @@ EXAMPLE 3
     PS yourcontainer:\> get-metadata -cn "Marketing"
 
 Lists all metadata entries for the container "Marketing".
-
-
 
 ##get-notes## {#getnotes}
 Displays the release notes for the current version. You can filter the release notes to a specific version or show all previous release notes.
@@ -191,16 +197,11 @@ get-zones
     PS HPCS:\\> get-zones
      
     Current Availability Zones include
-     
- 
+    
     Zone Id  Name                 Shell Foreground Color  Is Default
     -------  ----                 ----------------------  ----------
-    1        az-1.region-a.geo-1  Green                   True
-    2        az-2.region-a.geo-1  Red                     False
-    3        az-3.region-a.geo-1  Blue                    False
-    4        az-1.region-b.geo-1  Magenta                 False
- 
-    PS HPCS:\\>    
+    1        region-a.geo-1       Green                   False
+    2        region-b.geo-1       Green                   True  
 
 Displays all the availability zones with their color information.
 
@@ -273,10 +274,8 @@ EXAMPLE 2
 
 Applies the KVPs "Author|Tom" and "Editor|Sam" to the server with the ID=1345.
 
-
-
 ##Set-Zone## {#setzone}
-Sets the availability zone; all subsequently-issued commands will apply to the assigned availability zone.
+Sets the region; all subsequently-issued commands will apply to the assigned region.
 
 ### Syntax###
 set-zone "*zone-ID*"
@@ -286,7 +285,7 @@ EXAMPLE
 
     set-zone "1"
 
-Sets the availability zone to "az-2-region-a.geo-1".
+Sets the availability zone to "region-a.geo-1".
 
 #Compute CLI Commands# {#Compute}
 
@@ -296,29 +295,35 @@ Following is the complete list of HP Helion Public Cloud Windows Compute CLI com
 Creates a new security group rule and assigns it to an existing security group.
 
 ### Syntax###
-add-rule [ -fp "*FromPort*" -tp "*ToPort*" | -ipr "*low*/*high*" ] -ipp "*Protocol*" -gid "*GroupID*"
+add-rule [ -PortRangeMin "*FromPort*" -PortRangeMax "*ToPort*" | -RemoteIPPrefix "*CIDR*" ] -Protocol "*Protocol*" -SecurityGroupID "*GroupID*"
 
-**fp**
-: From Port: designates the low end of the port range to which this rule applies.
+**Direction**
+: Direction: designates whether the rule is ingress (incoming) or egress (outgoing). Valid values include ingress and egress.
 
-**tp**
-: To Port: designates the high end of the port range to which this rule applies.
+**PortRangeMin**
+: To Port: designates the low end of the port range to which this rule applies.
 
-**ipr**
-: `/`-separated range of IP addresses to which the rule applies (highest/lowest).
+**PortRangeMax**
+: To Port: designates the low end of the port range to which this rule applies.
 
-**ipp**
+**RemoteIPPrefix**
+: CIDR range of IP addresses to which the rule applies. Value should be in the format of 0.0.0.0/0 or 15.125.0.0/16 as examples. If you don't specify a RemoteIPPrefix or RemoteGroup then it will assume a CIDR of 0.0.0.0/0.
+
+**RemoteGroup**
+: SecurityGroupID: designates a group-to-group rule. If you don't specify a RemoteIPPrefix or RemoteGroup then it will assume a CIDR of 0.0.0.0/0.
+
+**Protocol**
 : The protocol affected by this rule. Valid values include tcp, udp, and icmp.
 
-**gid**
+**SecurityGroupID**
 : The security group ID used to apply this rule. If your current location is within one of these groups the ID is implied and therefore optional.
 
 ###Examples###
 EXAMPLE
 
-    add-rule -fp "80" -tp "84" -ipp "tcp" -ipr "15.185.118.75" -gid "2133"
+    add-rule -Direction "ingress" -PortRangeMax "80" -PortRangeMin "80" -Protocol "tcp" -SecurityGroupID "ebff6bab-d246-44e0-9110-fa8771c05ead" -RemoteIPPrefix "0.0.0.0/0"
 
-Creates a new security group rule affecting the TCP protocol from port 80 to 84, and assigns it to SecurityGroup 2133.
+Creates a new security group rule affecting the TCP protocol from port 80 to 80, and assigns it to SecurityGroup ebff6bab-d246-44e0-9110-fa8771c05ead.
 
 ##Allocate-IP## {#Allocate}
 Requests a new Floating IP and adds to your IP pool.
@@ -366,9 +371,21 @@ Shows your quota amounts for Compute assets
 get-limits
 
 ###Examples###
-EXAMPLE
 
-    get-limits
+    PS HPCS:\> get-limits
+    
+    The following Limits are in place for this account.
+    
+    Limit Category : Absolute
+    -------------------------------------------------
+    Max Server Metadata Elements : 50
+    Max Personality              : 5
+    Max Image Metadata Elements  : 50
+    Max Personality Size         : 10240
+    Max Security Group Rules     : 20
+    Max Security Groups          : 10
+    Max Total Instances          : 40
+    Max Total RAM Size           : 204800
 
 ##Get-Password## {#Get-Password}
 Displays the password for a server instance.
@@ -434,7 +451,6 @@ EXAMPLE
 
 Creates a new Floating IP address for Network 12857174-99cf-40e9-999e-fb0fa2e84898 and Port bd1c30f7-71f1-455e-b91e-8d03da7f5224 
 
-
 ##New-Image## {#New-Image}
 Creates a new server image based on an existing server.
 
@@ -448,7 +464,6 @@ EXAMPLE
 
 Creates a new server instance `testserver` based on the existing server instance `testserver`.
 
-
 ##New-Keypair## {#New-Keypair}
 Creates a new keypair. The keypair is stored by default in `C:\Users\*username*\Documents\HP\`.
 
@@ -461,7 +476,6 @@ EXAMPLE
     new-keypair "TestKey"
 
 Creates a new keypair with the name "TestKey.pem".
-
 
 ##New-Network## {#New-Network}
 Creates a new Network.
@@ -488,7 +502,6 @@ EXAMPLE
 
 Creates a new Network testNet1 with AdminStateUp set to "true".
 
-
 ##New-Port## {#New-Port}
 Creates a new Port.
 
@@ -513,7 +526,6 @@ new-port -n *Name* - asu *AdminStateUp* -nid *NetworkID* -did *PortsDeviceID*
 **did** 
 : Identifies Port Device.
 
-
 ###Examples###
 
 EXAMPLE
@@ -521,7 +533,6 @@ EXAMPLE
     # new-port "testPort1" -nid bd1c30f7-71f1-455e-b91e-8d03da7f5224 -asu -did "sdf\etc" 
 
 Creates a new Port called testNet1 on Network bd1c30f7-71f1-455e-b91e-8d03da7f5224 with its AdminStateUp set to true and a Device = sdf\etc. 
-
 
 ##New-Router## {#New-Router}
 Creates a new Router.
@@ -552,8 +563,6 @@ EXAMPLE
 
 Creates a new Router called testRouter1 on External Network bd1c30f7-71f1-455e-b91e-8d03da7f5224 with its AdminStateUp set to true.
 
-
-
 ##New-RouterInterface## {#New-RouterInterface}
 Creates a new RouterInterface.
 
@@ -581,7 +590,6 @@ new-routerinterface -rid *RouterID* -sid *SubnetID* -pid *portID*
 
 Creates a new relationship between Router (bd1c30f7-71f1-455e-b91e-8d03da7f5224), Port (c9e32588-5b69-4100-a1a6-fa49094ec0a8) and Subnet (7yuu9886-5b69-4100-a1a6-fa49094ec0a8)
 
-
 ##New-SecurityGroup## {#New-SecurityGroup}
 Creates a new security group.
 
@@ -594,7 +602,6 @@ EXAMPLE
     new-securitygroup -n "TestGroup" -d "SomeDescription"
 
 Creates a new security group with the name "TestGroup" and the description "SomeDescription".
-
 
 ##New-Server## {#New-Server}
 Creates a new server.
@@ -644,7 +651,6 @@ EXAMPLE 2
  
 Creates a new server with the name 'TestServer'. In this example, the user is prompted for the `Image`, `Flavor`, and `KeyName` values rather than entering them on the command line directly.
 
-
 ##New-Subnet## {#New-Subnet}
 Creates a new Subnet.
 
@@ -678,8 +684,6 @@ EXAMPLE
     # new-subnet -n testSubnet -nid bd1c30f7-71f1-455e-b91e-8d03da7f5224 -ipv 4 -c "10.0.6.0/24" -a "10.0.6.20", "10.0.6.22" , "10.0.6.26", "10.0.6.29" 
 
 Creates a new Subnet called testSubnet. 
-
-
 
 ##Ping-Server## {#Ping-Server}
 Sends echo request packets to the named server.
@@ -761,7 +765,6 @@ EXAMPLE
 
 Deletes the Floating IP with id of 4ee64397-1253-473c-a81d-bc23dceeef31.
 
-
 ##Remove-Keypair## {#Remove-Keypair}
 Removes a previously created keypair.
 
@@ -774,7 +777,6 @@ EXAMPLE
     remove-keypair "TestKey"
 
 Removes the keypair with the name `TestKey`.
-
 
 ##Remove-Network## {#Remove-Network}
 Removes an existing Network.
@@ -801,7 +803,6 @@ EXAMPLE
 
 Deletes the Network with the id of 12857174-99cf-40e9-999e-fb0fa2e84898 
 
-
 ##Remove-Port## {#Remove-Port}
 Removes an existing port.
 
@@ -826,7 +827,6 @@ EXAMPLE
     # remove-port -id 12857174-99cf-40e9-999e-fb0fa2e84898 
 
 Deletes the Port with the id of 12857174-99cf-40e9-999e-fb0fa2e84898 
-
 
 ##Remove-Router## {#Remove-Router}
 Removes an existing router.
@@ -853,7 +853,6 @@ EXAMPLE
 
 Removes the Router with the id of 12857174-99cf-40e9-999e-fb0fa2e84898 
 
-
 ##Remove-RouterInterface## {#Remove-RouterInteface}
 Removes an existing relationship between a Router and a Subnet.
 
@@ -876,7 +875,6 @@ remove-routerinterface -id -all
 EXAMPLE
 
     # remove-routerinterface -id 12857174-99cf-40e9-999e-fb0fa2e84898 -sid Removes the association between Router 12857174-99cf-40e9-999e-fb0fa2e84898 and Subnet bd1c30f7-71f1-455e-b91e-8d03da7f5224 
-
 
 ##Remove-Rule## {#Remove-Rule}
 Removes an existing security group rule.
@@ -920,7 +918,6 @@ EXAMPLE
 
 Deletes server 4516.
 
-
 ##Remove-Subnet## {#Remove-Subnet}
 Removes an existing subnet.
 
@@ -943,8 +940,6 @@ EXAMPLE
 
     # remove-Subnet 12857174-99cf-40e9-999e-fb0fa2e84898 </dev:code>-
 Removes the Subnet with the id of 12857174-99cf-40e9-999e-fb0fa2e84898 
-
-
 
 ##Reset-Password## {#reset-password}
 Re-syncs your Windows administrator password for the given server, after manual modification, in order to use the `connect-server` cmdlet.
@@ -999,7 +994,6 @@ EXAMPLE
      
 Removes the supplied IP address from server 4ee64397-1253-473c-a81d-bc23dceeef31 
 
-
 ##Update-FloatingIP ## {#Update-FloatingIP }
 Updates an existing Floating IP.
 
@@ -1023,7 +1017,6 @@ EXAMPLE
     # update-FLoatingIP -id 12857174-99cf-40e9-999e-fb0fa2e84898 -pid c9e32588-5b69-4100-a1a6-fa49094ec0a8 
 
 Updates the Floating IP (12857174-99cf-40e9-999e-fb0fa2e84898) to the new Port (c9e32588-5b69-4100-a1a6-fa49094ec0a8) 
-
 
 ##Update-Network## {#Update-Network}
 Updates an existing Network.
@@ -1049,7 +1042,6 @@ EXAMPLE
     # update-Network -id 12857174-99cf-40e9-999e-fb0fa2e84898 -n "NewNameTest" 
 
 Changes the Network(12857174-99cf-40e9-999e-fb0fa2e84898) name to NewNameTest. 
-
 
 ##Update-Port## {#Update-Network}
 Updates an existing port.
@@ -1100,7 +1092,6 @@ EXAMPLE
 
 Reassigns Router 12857174-99cf-40e9-999e-fb0fa2e84898 to Network c9e32588-5b69-4100-a1a6-fa49094ec0a8.
 
-
 ##Update-Server## {#Update-Server}
 Allows you to change the server name property.
 
@@ -1113,7 +1104,6 @@ EXAMPLE
     update-server -id "2133" -n "NewName"
 
 Changes the name of server 2133 to "NewName".
-
 
 ##Update-Subnet## {#Update-Subnet}
 Updates an existing Subnet.
