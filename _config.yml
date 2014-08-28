@@ -16,6 +16,8 @@ navigation:
     url: /helion/devplatform/
   - text: HP Helion Public Cloud
     url: /pc-overview/
+  - text: HP Helion Cloud Service Automation
+    url: /helion/automation/
   - text: HP Cloud OS for Moonshot
     url: /cloudos/moonshot/
   - text: HP CloudSystem

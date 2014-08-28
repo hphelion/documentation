@@ -2,7 +2,6 @@
 layout: default
 title: "HP Cloud Service Automation"
 permalink: /helion/automation/
-product: commercial
 
 ---
 <!--UNDER REVISION-->
