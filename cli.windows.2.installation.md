@@ -85,7 +85,7 @@ Always use the `powershell.exe` appropriate for your OS. From the Windows comman
 
 The first time that you run the shell you must supply your Username, Password, and Tenant Name (referred to as Project Name in the console) that you setup during the registration process. You can find your Project Name through the [HP Helion Public Cloud Console](https://horizon.hpcloud.com/control_services/projects). Click the Projects heading under the Identity menu.
 
-<img src="content/documentation/media/projects-2.png">
+<img src="media/projects-2.png">
 
 The shell detects that this is your first time logging in and prompts you for these items. 
 
