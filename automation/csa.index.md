@@ -1,14 +1,14 @@
 ---
 layout: default
 title: "HP Cloud Service Automation"
-permalink: /helion/automation/
+permalink: /automation/
 
 ---
 <!--UNDER REVISION-->
 
-# HP Helion Cloud Service Automation #
+# HP Cloud Service Automation #
 
-HP Helion Cloud Service Automation (CSA) provides open, heterogeneous, extensible enterprise-grade cloud service lifecycle management to design and orchestrate full stack services. CSA embraces existing automation assets with an enhanced orchestration engine, which provides IT with an informed, transparent delivery of secure compliant services for the hybrid cloud.
+HP Cloud Service Automation (CSA) provides open, heterogeneous, extensible enterprise-grade cloud service lifecycle management to design and orchestrate full stack services. CSA embraces existing automation assets with an enhanced orchestration engine, which provides IT with an informed, transparent delivery of secure compliant services for the hybrid cloud.
 
 ## Core Features ##
 
@@ -64,7 +64,7 @@ Consists of platform-level core capabilities such as subscriber portal, service 
 
 - [Language Support Readme](http://support.openview.hp.com/selfsolve/document/KM01061665/binary/CSA_410_LangSupport_Readme.pdf)
 
-- [Marketplace Portal help (PDF)](http://support.openview.hp.com/selfsolve/document/KM01061668/binary/CSA_410_Marketplace_Portal_Help.pdf)
+- [Marketplace Portal help](http://support.openview.hp.com/selfsolve/document/KM01061668/binary/CSA_410_Marketplace_Portal_Help.pdf)
 
 - [Open Source and Third-Party License Agreement](http://support.openview.hp.com/selfsolve/document/KM01061718/binary/CSA_410_OS-3rdPty-Licenses.pdf)
 
