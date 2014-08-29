@@ -242,70 +242,122 @@ All JSON blobs are written to the ~/tripleo/hp_passthrough directory
 	<td> </td>
 </tr>
 <tr style="background-color: white; color: black;">  
-<td>svc/allocate_end</td>
-<td>SVC_ALLOCATE_END</td>
-<td>n/a</td>
+	<td>svc/allocate_end</td>
+	<td>SVC_ALLOCATE_END</td>
+	<td>n/a</td>
+	<td> </td>
+</tr>
+<tr style="background-color: white; color: black;"> 
+	<td>svc/allocate_cidr</td>
+	<td>SVC_ALLOCATE_CIDR</td>
+	<td>n/a</td>
+	<td>  </td>
+</tr>
+<tr style="background-color: white; color: black;"> 	 
+	<td>svc/overcloud_bridge_mappings</td>
+	<td>OVERCLOUD_BRIDGE_MAPPINGS</td>
+	<td>n/a</td>
+	<td> </td>
+</tr>
+<tr style="background-color: white; color: black;"> 
+	<td>svc/overcloud_flat_networks</td>
+	<td>OVERCLOUD_FLAT_NETWORKS</td>
+	<td>n/a</td>
 <td> </td>
 </tr>
 <tr style="background-color: white; color: black;"> 
-<td>svc/allocate_cidr</td>
-<td>SVC_ALLOCATE_CIDR</td>
+<td>svc/customer_router_ip</td>
+<td>CUSTOMER_ROUTER_IP</td>
 <td>n/a</td>
 <td>  </td>
 </tr>
-<tr style="background-color: white; color: black;"> 	 
-<td>svc/overcloud_bridge_mappings</td>
-<td>OVERCLOUD_BRIDGE_MAPPINGS</td>
+<tr style="background-color: white; color: black;"> 
+<td>hypervisor/public_interface</td>
+<td>OVERCLOUD_HYPERVISOR_PUBLIC_INTERFACE<td>
 <td>n/a</td>
-<td> </td>
+<td>(optional)</td>
 </tr>
 <tr style="background-color: white; color: black;"> 
-<td>svc/overcloud_flat_networks</td>
-<td>OVERCLOUD_FLAT_NETWORKS</td>
+<td>hypervisor/physical_bridge</td>
+<td>OVERCLOUD_HYPERVISOR_PHYSICAL_BRIDGE</td>
 <td>n/a</td>
-<td> </td>
+<td>(optional)</td>
+</tr>
+<tr style="background-color: white; color: black;"> 
+<td>bridge_mappings</td>
+<td>OVERCLOUD_BRIDGE_MAPPINGS</td>
+<td>n/a</td>
+<td>(optional)</td>
+</tr>
+<tr style="background-color: white; color: black;"> 
+<td>node_min_disk</td>
+<td>NODE_MIN_DISK<td>
+<td>n/a</td>
+<td>(optional)</td>
+</tr>
+<tr style="background-color: white; color: black;"> 
+<td>vcenter/vlan_range</td>
+<td>VLAN_RANGE</td>
+<td>n/a</td>
+<td>(optional)</td> 
+<td>vcenter/provider_network</td>
+<td>PROVIDER_NETWORK</td>
+<td>(?)</td?>
+<td>n/a</td>
+<td>(What is the correct destination for this?) 
 
-svc/customer_router_ip	CUSTOMER_ROUTER_IP	n/a	 
-hypervisor/public_interface	OVERCLOUD_HYPERVISOR_PUBLIC_INTERFACE	n/a	
+<p>(required if cloud_type is ESX, optional otherwise)
 
-(optional)
-hypervisor/physical_bridge	OVERCLOUD_HYPERVISOR_PHYSICAL_BRIDGE	n/a	(optional)
-bridge_mappings	OVERCLOUD_BRIDGE_MAPPINGS	n/a	(optional)
-node_min_disk	NODE_MIN_DISK	n/a	(optional)
-vcenter/vlan_range	VLAN_RANGE 	n/a 	(optional) 
-vcenter/provider_network 	PROVIDER_NETWORK (?) 	n/a 	
-
-(What is the correct destination for this?) 
-
-(required if cloud_type is ESX, optional otherwise)
-
-e.g. 192.168.101.0/24
-vcenter/customer_router_ip	CUSTOMER_ROUTER_IP	n/a	e.g. 192.168.101.44
-ssl/ca_certs 	OVERCLOUD_SSL_CA_CERT 	n/a 	
-
+<p>e.g. 192.168.101.0/24</td>
+</tr>
+<tr style="background-color: white; color: black;"> 
+<td>vcenter/customer_router_ip</td>
+<td>CUSTOMER_ROUTER_IP</td>
+<td>n/a</td>
+<td>e.g. 192.168.101.44</td>
+</tr>
+<tr style="background-color: white; color: black;"> 
+<td>ssl/ca_certs</td>
+<td>OVERCLOUD_SSL_CA_CERT</td>
+<td>n/a</td>
+<td>
 Contains string-encoded certificate data
 
-(The ssl parameters are optional, but must all be specified if any are specified)
-ssl/cluster_backend/certificate	OVERCLOUD_CLUSTER_CERT	n/a 	
+<p>(The ssl parameters are optional, but must all be specified if any are specified)</td?
+</tr>
+<tr style="background-color: white; color: black;"> 
 
-Contains string-encoded certificate data
+<td>ssl/cluster_backend/certificate</td>
+<td>OVERCLOUD_CLUSTER_CERT</td>
+<td>n/a</td>
+<td>Contains string-encoded certificate data
 
-(The ssl parameters are optional, but must all be specified if any are specified)
-ssl/cluster_backend/key 	OVERCLOUD_CLUSTER_KEY 	n/a 	
+<p>(The ssl parameters are optional, but must all be specified if any are specified)
 
-Contains string-encoded certificate data 
+</tr>
+<tr style="background-color: white; color: black;"> 
+<td>ssl/cluster_backend/key</td>
+<td>OVERCLOUD_CLUSTER_KEY</td>
+<td>n/a</td>
+<td>Contains string-encoded certificate data 
 
-(The ssl parameters are optional, but must all be specified if any are specified)
-ssl/public_vip/key 	OVERCLOUD_SSL_KEY 	n/a 	
+<p>(The ssl parameters are optional, but must all be specified if any are specified)</td>
+</tr>
+<tr style="background-color: white; color: black;"> 
+<td>ssl/public_vip/key</td>
+<td>OVERCLOUD_SSL_KEY</td>
+<td>n/a</td>
+<td>Contains string-encoded certificate data
 
-Contains string-encoded certificate data
+<p>(The ssl parameters are optional, but must all be specified if any are specified)</td>
+</tr>
+<tr style="background-color: white; color: black;"> 
+<td>ssl/public_vip/certificate</td>
+<td>OVERCLOUD_SSL_CERT</td>
+<td>n/a</td>
+<td>Contains string-encoded certificate data 
 
-(The ssl parameters are optional, but must all be specified if any are specified)
-ssl/public_vip/certificate	OVERCLOUD_SSL_CERT 	n/a 	
-
-Contains string-encoded certificate data 
-
-(The ssl parameters are optional, but must all be specified if any are specified)
+<p>(The ssl parameters are optional, but must all be specified if any are specified)</td>
 
 </table>
  
