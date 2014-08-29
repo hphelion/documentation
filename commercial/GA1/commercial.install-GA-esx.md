@@ -99,9 +99,106 @@ Before you begin, you must download the required HP Helion OpenStack installatio
 
 For more details, refer to the *Creating the baremetal.csv file* section on the [HP Helion OpenStack Installation: Before you begin](/helion/openstack/install/prereqs/#install-pkg) page.
 
-## Installing HP Helion Openstack ## {#install}
+## Installing HP Helion Openstack on a virtual hypervisor## {#install}
 
-Ensure you have met all the hardware requirements and have completed the required tasks before you begin your installation. The following sections walk you through:
+Make sure you have met all the hardware requirements and have completed the required tasks before you begin your installation. The following sections walk you through:
+
+* [Configuring proxy information](#proxy)
+* [Unpacking installation file](#unpackinstall)
+* [Installing the seed VM and building your cloud](#startseed)
+
+**IMPORTANT:** During the installation process, **DO NOT RESTART** the system running the installer and seed VM. Restarting this system disrupts the bridge networking configuration and disables both the undercloud and overcloud. If the system is inadvertently restarted, you must initiate the installation process again.
+
+### Unpacking installation file ### {#unpackinstall}
+
+1. Ensure you are logged into your install system as root; otherwise, log in as root:
+
+		sudo su -
+
+2. Create a directory named `work`:
+
+		mkdir /root/work
+		cd /root/work
+
+3.  Extract the kit to the `work` directory:
+
+		tar zxvf /root/work/<baremetal kit name>.tgz
+
+	This creates and populates a `tripleo/` directory within `work' directory.
+
+### Configuring proxy information {#proxy}
+
+Before you begin your installation, if necessary, configure the proxy information for your environment using the following steps:
+
+1. Ensure you are logged into your install system as root; otherwise, log in as root: 
+
+        sudo su -
+
+2. Use the following commands to set the environment variables:
+
+		export NODE_CPU=8
+		export NODE_MEM=24576
+		HP_VM_MODE=y bash -x /root/work/tripleo/tripleo-incubator/scripts/hp_ced_host_manager.sh --create-seed |& tee /root/work/create-seed.log
+
+5. If the external device name on the host system (the one through which the host, and indirectly the seed, accesses the IPMI network) is **NOT** named `eth0`, then determine the device name before executing the next step:
+
+		$ export BRIDGE_INTERFACE=<devicename>
+
+	Examples:
+
+		$ export BRIDGE_INTERFACE=em1  
+		$ export BRIDGE_INTERFACE=eth5
+
+### Installing the seed VM and building your cloud ### {#startseed}
+
+1. Log in to the seed VM by running the following command from `/root`:
+
+		ssh root@192.0.2.1 
+
+    **Note**: It might take a few moments for the seed VM to become reachable. 
+
+3. When prompted for host authentication, type `yes` to allow the ssh connection to proceed.
+***QUESTION: Still required??***
+
+4. Use the following command to set the CLOUD_TYPE environment variable for ESX:
+
+		export CLOUD_TYPE=esx
+
+4. Use the folowing commands to set environment variables
+
+		export OVERCLOUD_COMPUTESCALE=1
+		export OVERCLOUD_VSA_STORAGESCALE=1
+		export OVERCLOUD_NEUTRON_DVR=True
+		export UNDERCLOUD_NTP_SERVER=16.110.135.123       This is IP of ntp.hp.net
+		export OVERCLOUD_NTP_SERVER=16.110.135.123                      # Required. This is IP of ntp.hp.net
+		export UNDERCLOUD_CODN_HTTP_PROXY=http://16.85.175.150:8080     # Optional. Configuration for CDL lab
+		export UNDERCLOUD_CODN_HTTPS_PROXY=http://16.85.175.150:8080    # Optional. Configuration for CDL lab
+
+	**Notes:**
+	
+	- The `UNDERCLOUD_NTP_SERVER` variable is the IP address of **ntp.hp.net** for the undercloud and is **REQUIRED**.
+	- The `OVERCLOUD_NTP_SERVER` vatiable is the IP address of **ntp.hp.net** for the overcloud and is **REQUIRED**.
+	- The `UNDERCLOUD_CODN_HTTP_PROXY` variable is an optional configuration for CDL lab.
+	- The `UNDERCLOUD_CODN_HTTPS_PROXY` variable is an optional configuration for CDL lab.
+
+5. Install and configure the undercloud and overcloud, run the following command from /root. 
+
+		bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh
+
+    If your installation is successful, a message similar to the following is displayed:
+ 
+        "HP - completed - Tue Apr 22 16:20:20 UTC 2014"
+
+## Next Step ##
+
+After you receive the *completed* message, you should [verify the installation](#verify) by connecting to the overcloud and undercloud dashboards.
+
+
+
+
+## Installing HP Helion Openstack on a baremetal hypervisor## {#install}
+
+Make sure you have met all the hardware requirements and have completed the required tasks before you begin your installation. The following sections walk you through:
 
 * [Configuring proxy information](#proxy)
 * [Unpacking installation file](#unpackinstall)
@@ -266,7 +363,11 @@ Before you begin your installation, if necessary, configure the proxy informatio
  
         "HP - completed - Tue Apr 22 16:20:20 UTC 2014"
 
-## Verifying your installation
+## Next Step ##
+
+After you receive the *completed* message, you should [verify the installation](#verify) by connecting to the overcloud and undercloud dashboards.
+
+## Verifying your installation {#verify}
 
 To verify that the installation is successful, connect to the HP Helion Openstack dashboard and the undercloud dashboard as follows.
 
