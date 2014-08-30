@@ -2,7 +2,7 @@
 layout: default
 title: "HP Helion OpenStack: Installation and Configuration"
 permalink: /helion/openstack/ga/install/kvm/
-product: commercial
+product: commercial.ga
 
 ---
 <!--UNDER REVISION-->
@@ -25,7 +25,7 @@ PageRefresh();
 
 HP Helion Openstack allows you to manage the KVM hypervisor and provision virtual machines. 
 
-It is important to read through this page before starting your installation. We also recommend that you review the [hardware and network configuration requirements](/helion/openstack/install-overview/##installation-requirements) and the [support matrix](/helion/openstack/support-matrix/), and learn about the [installation process and complete any required tasks](/helion/openstack/install/prereqs/). 
+It is important to read through this page before starting your installation. We also recommend that you review the [hardware and network configuration requirements](/helion/openstack/ga/install-overview/##installation-requirements) and the [support matrix](/helion/openstack/ga/support-matrix/), and learn about the [installation process and complete any required tasks](/helion/openstack/ga/install/prereqs/). 
 
 The rest of this page explains the installation and configuration process for KVM. 
 
@@ -80,7 +80,7 @@ Before you begin, you must download the required HP Helion OpenStack installatio
 For more details, refer to the [package download instructions](/helion/openstack/install/prereqs/#install-pkg) on the HP Helion OpenStack Installation: Before you begin page.
 	
 ## Installing HP StoreVirtual Virtual Storage Appliance (VSA) {#vsa}
-Before you install HP Helion OpenStack, [HP StoreVirtual VSA](https://docs.hpcloud.com/helion/openstack/install/vsa/) must be installed and configured.
+Before you install HP Helion OpenStack, [HP StoreVirtual VSA](https://docs.hpcloud.com/helion/openstack/ga/install/vsa/) must be installed and configured.
 
 HP StoreVirtual VSA provides complete array functionality without an external array hardware, which:
 
@@ -95,7 +95,7 @@ Once you have completed the HP StoreVirtual VSA installation, you must have the 
 * VSA_NAME
 -->
 
-See the [HP StoreVirtual VSA support](/helion/openstack/install/vsa/) page for complete installation and configuration instructions.
+See the [HP StoreVirtual VSA support](/helion/openstack/ga/install/vsa/) page for complete installation and configuration instructions.
 
 
 ## Installing HP Helion OpenStack {#install}
@@ -340,9 +340,9 @@ Learn how to [install DNS as a service](/helion/openstack/install/dnsaas/).
 
 
 ## Next steps
-* [Logging into the HP Helion OpenStack dashboards](/helion/openstack/dashboard/login/)
-* [How to use the HP Helion OpenStack dashboards](/helion/openstack/dashboard/how-works/)
-* [HP Helion OpenStack services overview](/helion/openstack/services/overview/)
+* [Logging into the HP Helion OpenStack dashboards](/helion/openstack/ga/dashboard/login/)
+* [How to use the HP Helion OpenStack dashboards](/helion/openstack/ga/dashboard/how-works/)
+* [HP Helion OpenStack services overview](/helion/openstack/ga/services/overview/)
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

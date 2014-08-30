@@ -2,7 +2,7 @@
 layout: default
 title: "HP Helion OpenStack&#174; FAQ"
 permalink: /helion/openstack/ga/faq/
-product: commercial
+product: commercial.ga
 
 ---
 <!--UNDER REVISION-->

@@ -2,7 +2,7 @@
 layout: default
 title: "HP Helion OpenStack&#174; Related Documentation"
 permalink: /helion/openstack/ga/related-links/
-product: commercial
+product: commercial.ga
 
 ---
 <!--UNDER REVISION-->

@@ -2,7 +2,7 @@
 layout: default
 title: "HP Helion OpenStack&#174; Services Overview"
 permalink: /helion/openstack/ga/services/overview/
-product: commercial
+product: commercial.ga
 
 ---
 <!--UNDER REVISION-->
@@ -57,63 +57,63 @@ The following services are foundation technologies used by the HP Helion OpenSta
 
 **Compute Operations**. The Compute service manages the hypervisors and virtual machines in your environment. Also known as *Nova*. 
 
-See [Overview of the Compute service](/helion/openstack/services/compute/overview).
+See [Overview of the Compute service](/helion/openstack/ga/services/compute/overview).
 
 **Identity Management**. The Identity Management service enables you to create and administer users and security groups, and control access to your cloud environment. Also known as *Keystone*.
 
-See [Overview of the Identity Management service](/helion/openstack/services/identity/overview).
+See [Overview of the Identity Management service](/helion/openstack/ga/services/identity/overview).
 
 **Image Operations**. The Image Operations service enables you to create and maintain server images, which you can use to launch virtual machines across the cloud. Also known as *Glance*.
 
-See [Overview of the Image service](/helion/openstack/services/imaging/overview).
+See [Overview of the Image service](/helion/openstack/ga/services/imaging/overview).
 
 **Networking Operations**. The Networking service enables you to create and manage virtual networks. Also known as *Neutron*.
 
-See [Overview of the Networking service](/helion/openstack/services/networking/overview).
+See [Overview of the Networking service](/helion/openstack/ga/services/networking/overview).
 
 **Object Operations**. The Object Operations service enables you to store and retrieve data. Object Storage is a distributed storage system for static data such as virtual machine images, photo storage, email storage, backups and archives. Also known as *Swift*.
 
-See [Overview of the Object Operations service](/helion/openstack/services/object/overview).
+See [Overview of the Object Operations service](/helion/openstack/ga/services/object/overview).
 
 **Orchestration**. The Orchestration service provides a template-based orchestration for describing a cloud application. A Heat template is a [YAML](http://www.yaml.org/) file that describes the infrastructure for a cloud application. Templates contain vendor-independent specifications for launching a particular service or application.  Also known as *Heat*.
 
-See [Overview of the Orchestration service](/helion/openstack/services/orchestration/overview).
+See [Overview of the Orchestration service](/helion/openstack/ga/services/orchestration/overview).
 
 **Telemetry and Reporting**. The Telemetry and Reporting service enables a single infrastructure to collect measurements within your cloud environment.  Also known as *Ceilometer*.
 
-See [Overview of the Telemetry and Reporting service](/helion/openstack/services/reporting/overview).
+See [Overview of the Telemetry and Reporting service](/helion/openstack/ga/services/reporting/overview).
 
 **Volume Operations**. The Volume Operations service enables you to attach storage volumes to the virtual instances in your cloud environment. The service provides persistent block level storage devices for use with your Compute instances. Also known as *Cinder*.
 
-See [Overview of the Volume Operations Service](/helion/openstack/services/volume/overview).
+See [Overview of the Volume Operations Service](/helion/openstack/ga/services/volume/overview).
 
 ## Dashboard Services ## {#Dashboard}
 
 The following services are used by HP Helion OpenStack to create dashboards.
 
-**Horizon** The Horizon service is the basis of the [HP Helion OpenStack dashboards](/helion/openstack/dashboard/how-works/). The dashboards are the web-based user-interface for creating and managing HP Helion OpenStack resources.
+**Horizon** The Horizon service is the basis of the [HP Helion OpenStack dashboards](/helion/openstack/ga/dashboard/how-works/). The dashboards are the web-based user-interface for creating and managing HP Helion OpenStack resources.
 
 You can use the HP Helion OpenStack dashboard to view, allocate, and manage all virtual resources within a cloud. 
 
-See [Overview of the Horizon Service](/helion/openstack/services/horizon/overview/).
+See [Overview of the Horizon Service](/helion/openstack/ga/services/horizon/overview/).
 <!-- Not in Commerical
 **Loom**. The Loom service facilitates the comprehension and manipulation of complex systems using the Unity dashboard.
 
-See [Overview of the Loom Service](/helion/openstack/services/loom/overview/).
+See [Overview of the Loom Service](/helion/openstack/ga/services/loom/overview/).
 -->
 ## Other Services ## {#Other}
 
 **DNSaaS**. The HP Helion OpenStack DNSaaS (Domain Name System as a Service) provides a way to display, create, modify, and delete DNS records to the assigned DNS server network. 
 
-See [Overview of the DNS as a Service](/helion/openstack/services/dns/overview/).
+See [Overview of the DNS as a Service](/helion/openstack/ga/services/dns/overview/).
 
 **Tripleo**. TripleO (which stands for OpenStack-on-OpenStack) is a program designed to facilitate the installation of an OpenStack cloud. The HP Helion OpenStack installation process uses TripleO.
 
-See [Overview of the TripleO Service](/helion/openstack/services/tripleo/overview/).
+See [Overview of the TripleO Service](/helion/openstack/ga/services/tripleo/overview/).
 
 **Ironic**. Ironic service during the installation for provisioning of the controller and KVM compute host in a bare metal deployment.
 
-See [Overview of the Ironic Service](/helion/openstack/services/ironic/overview/).
+See [Overview of the Ironic Service](/helion/openstack/ga/services/ironic/overview/).
 
 ## For more information ##
 
