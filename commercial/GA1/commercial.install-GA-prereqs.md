@@ -103,9 +103,9 @@ Before installing HP Helion OpenStack, you are responsible for configuring the n
 
 The network is not installed or managed by the cloud. You must install and manage the network and make sure there is a route to the Management network as described in this section.
 
-For more information about the two deployment methods, see the [Installation and Configuration](/helion/openstack/technical-overview/#install-configure) of the Technical Overview. 
+For more information about the two deployment methods, see the [Installation and Configuration](/helion/openstack/ga/technical-overview/#install-configure) of the Technical Overview. 
 
-For more information on the physical network architecture, see the [Physical Network Architecture section](http://docs.hpcloud.com/helion/openstack/technical-overview/#physicalnetarch) of the Technical Overview.
+For more information on the physical network architecture, see the [Physical Network Architecture section](/helion/openstack/ga/technical-overview/#physicalnetarch) of the Technical Overview.
 
 #### Preparing the network for a KVM instalation {#network_KVM}
 
@@ -118,7 +118,7 @@ You are responsible for providing the internal and external customer router and 
 **Notes:**
 
 - The HP Helion OpenStack installation installs the two initial Object Storage nodes. You can install additional Object Storage nodes after the initial install. 
-- The Block Storage nodes are installed for deployments using the [StoreVirtual VSA driver](/helion/openstack/install/vsa/) with the Object Storage service (Cinder). Object Storage can be configured to use drivers one or more of the following: StoreVirtual VSA, 3PAR, LVM.
+- The Block Storage nodes are installed for deployments using the [StoreVirtual VSA driver](/helion/openstack/ga/install/vsa/) with the Object Storage service (Cinder). Object Storage can be configured to use drivers one or more of the following: StoreVirtual VSA, 3PAR, LVM.
 - DVR is used to route traffic between VMs and outside the cloud. Thus, every Compute Node has a connection to the external network.
 - Access to OpenStack service APIs is from the management network.
 - The network path for Platform service log messages is from the VM, to the service network installed as a second vnic, to the Customer Router, to the management network, to the Under Cloud RabbitMQ, to LogStash.
@@ -272,18 +272,18 @@ Automation scripts - pyVins.tgz</td>
 
 
 ## Next steps
-* [Installing and configuring with a KVM hypervisor](/helion/openstack/install/kvm)
-* [Installing HP StoreVirtual VSA support](/helion/openstack/install/vsa/)
-* [Installing and configuring with an ESX hypervisor](/helion/openstack/install/esx/)
-* [Deploying and configuring OVSvApp for HP Virtual Cloud Networking (VCN) on ESX hosts](/helion/openstack/install/ovsvapp/)
-* [Installing and configuring DNSaaS support](/helion/openstack/install/dnsaas/)
+* [Installing and configuring with a KVM hypervisor](/helion/openstack/ga/install/kvm)
+* [Installing HP StoreVirtual VSA support](/helion/openstack/ga/install/vsa/)
+* [Installing and configuring with an ESX hypervisor](/helion/openstack/ga/install/esx/)
+* [Deploying and configuring OVSvApp for HP Virtual Cloud Networking (VCN) on ESX hosts](/helion/openstack/ga/install/ovsvapp/)
+* [Installing and configuring DNSaaS support](/helion/openstack/ga/install/dnsaas/)
  
 ## For more information
 For more information on HP Helion OpenStack Community, see:
 
-* [Support matrix](/helion/openstack/support-matrix/) 
-* [FAQ](/helion/openstack/faq/) 
-* [Release notes](/helion/openstack/release-notes/) 
+* [Support matrix](/helion/openstack/ga/support-matrix/) 
+* [FAQ](/helion/openstack/ga/faq/) 
+* [Release notes](/helion/openstack/ga/release-notes/) 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
