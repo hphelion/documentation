@@ -2,7 +2,7 @@
 layout: default
 title: "HP Helion OpenStack&#174; TripleO Service Overview"
 permalink: /helion/openstack/ga/services/tripleo/overview/
-product: commercial
+product: commercial.ga
 
 ---
 <!--UNDER REVISION-->
@@ -22,9 +22,9 @@ PageRefresh();
 
 # HP Helion OpenStack&reg; TripleO Service Overview#
 
-HP Helion OpenStack uses the standard TripleO deployment model. TripleO is a program aimed at installing, upgrading and operating OpenStack clouds using OpenStack's own cloud facilities as the foundations - building on the [Compute](/helion/openstack/services/compute/overview/), [Networking](/helion/openstack/services/networking/overview/) and [Orchestration](/helion/openstack/services/orchestration/overview/) services to automate fleet management at data center scale (and scaling down to as few as two machines).
+HP Helion OpenStack uses the standard TripleO deployment model. TripleO is a program aimed at installing, upgrading and operating OpenStack clouds using OpenStack's own cloud facilities as the foundations - building on the [Compute](/helion/openstack/ga/services/compute/overview/), [Networking](/helion/openstack/ga/services/networking/overview/) and [Orchestration](/helion/openstack/ga/services/orchestration/overview/) services to automate fleet management at data center scale (and scaling down to as few as two machines).
 
-The [HP Helion Openstack installation](/helion/openstack/install/) includes the standard TripleO deployment model, creating a Seed, an Undercloud and an Overcloud.
+The [HP Helion Openstack installation](/helion/openstack/ga/install/) includes the standard TripleO deployment model, creating a Seed, an Undercloud and an Overcloud.
 
 
 ##Key Terms
@@ -41,7 +41,7 @@ Key terms include:
 
 For information on TripleO, see the [TripleO wiki at OpenStack](https://wiki.openstack.org/wiki/TripleO).
 
-For more information on the HP Helion OpenStack deployment model, see [HP Helion OpenStack Technical Overview](/helion/openstack/technical-overview/).
+For more information on the HP Helion OpenStack deployment model, see [HP Helion OpenStack Technical Overview](/helion/openstack/ga/technical-overview/).
 
  <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

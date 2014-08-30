@@ -2,7 +2,7 @@
 layout: default
 title: "HP Helion OpenStack: Installation and Configuration"
 permalink: /helion/openstack/ga/install/esx/
-product: commercial
+product: commercial.ga
 
 ---
 <!--UNDER REVISION-->
@@ -27,40 +27,12 @@ HP Helion OpenStack can be installed on a VMware ESX bare-metal or virtual hyper
 HP Helion OpenStack on an ESX hypervisor allows you to manage the VMware vCenter and provision virtual machines.
 
 
-## Prerequisites ## {#pre}
-
-To ensure successful installation, please read through the topics before you start.
-
-* [hardware and network configuration requirements](/helion/openstack/install-overview/##installation-requirements) 
-* [support matrix](/helion/openstack/support-matrix/)
-* [installation process and prerequisites](/helion/openstack/install/prereqs/)
-
-###ESX deployment architecture {#deploy-arch}
-
-***QUESTION: Is this simplified diagram OK? Accurate? Useful? I linked to the new, more detailed diagram in the prereqs.***
-
-The following diagram depicts a simplified deployment scenario.
-
-<a href="javascript:window.open('/content/documentation/media/commercial_esx_network_architecture.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack architecture diagram for ESX (opens in a new window)</a>
-
-For a more detailed network diagram, see [HP Helion OpenStack&#174; Installation: Before you begin](/helion/openstack/install/prereqs/#network_prepare).
-
-###Additional network requirements {#networkreq}
-
-***QUESTION: Is this information OK? Accurate? Useful?***
-
-These additional network components are required for an ESX installation:
- 
-* VLAN trunking and native VLAN should be enabled on the private network. This is to cater to untagged PXE traffic with the tenant.<!--- Private network that caters to the PXE traffic needs to be a VLAN trunk line with a default VLAN (native) tag at the switch port side for all systems that are part of the environment.-->
- 
-* VMware vCenter management must be a part of the private network (192.0.2.x)
-
 ## Installing HP Helion OpenStack ## {#install}
 
 The installation and configuration process for ESX consists of the following general steps: 
 
 * [Downloading the installation packages](#getinstall)
-* [Installing HP Helion OpenStack](#install)
+* [Starting the installation](#install)
    * [Configuring proxy information](#proxy)
    * [Unpacking installation file](#unpackinstall)
    * [Installing the seed VM and building your cloud](#startseed)
@@ -72,7 +44,36 @@ The installation and configuration process for ESX consists of the following gen
 * [Next steps](#next-steps)
  
 
-## Downloading the installation packages {#getinstall}
+
+## Verify Prerequisites ## {#pre}
+
+To ensure successful installation, please read through the topics before you start.
+
+* Review the [support matrix](/helion/openstack/ga/support-matrix/) for information on the supported hardware and software.
+* Make sure your environment meets the [hardware and network configuration requirements](/helion/openstack/ga/install/prereqs/). 
+* [Perform required pre-installation tasks](/helion/openstack/ga/install/prereqs/)
+
+##Review the ESX deployment architecture ## {#deploy-arch}
+
+***QUESTION: Is this simplified diagram OK? Accurate? Useful? I linked to the new, more detailed diagram in the prereqs.***
+
+The following diagram depicts a simplified deployment scenario.
+
+<a href="javascript:window.open('/content/documentation/media/commercial_esx_network_architecture.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack architecture diagram for ESX (opens in a new window)</a>
+
+For a more detailed network diagram, see [HP Helion OpenStack&#174; Installation: Before you begin](/helion/openstack/ga/install/prereqs/#network_prepare).
+
+## Perform additional network requirements ## {#networkreq}
+
+***QUESTION: Is this information OK? Accurate? Useful?***
+
+These additional network components are required for an ESX installation:
+ 
+* VLAN trunking and native VLAN should be enabled on the private network. This is to cater to untagged PXE traffic with the tenant.<!--- Private network that caters to the PXE traffic needs to be a VLAN trunk line with a default VLAN (native) tag at the switch port side for all systems that are part of the environment.-->
+ 
+* VMware vCenter management must be a part of the private network (192.0.2.x)
+
+## Download the installation packages {#getinstall}
 Before you begin, you must download the required HP Helion OpenStack installation packages:
 
 ***QUESTION: New files names?***
@@ -97,9 +98,15 @@ Before you begin, you must download the required HP Helion OpenStack installatio
 
     [HP Helion OpenStack product installation](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221247%22%7D/Show)
 
-For more details, refer to the *Creating the baremetal.csv file* section on the [HP Helion OpenStack Installation: Before you begin](/helion/openstack/install/prereqs/#install-pkg) page.
+### Next Step ###
 
-## Installing HP Helion Openstack on a virtual hypervisor## {#install}
+Jump to the section regarding the type of installation we are performing:
+
+- [Installing HP Helion Openstack on a virtual hypervisor](#virtual)
+- [Installing HP Helion Openstack on a baremetal hypervisor](#baremetal)
+
+---------------------
+## Install HP Helion Openstack on a virtual hypervisor ## {#virtual}
 
 Make sure you have met all the hardware requirements and have completed the required tasks before you begin your installation. The following sections walk you through:
 
@@ -109,7 +116,7 @@ Make sure you have met all the hardware requirements and have completed the requ
 
 **IMPORTANT:** During the installation process, **DO NOT RESTART** the system running the installer and seed VM. Restarting this system disrupts the bridge networking configuration and disables both the undercloud and overcloud. If the system is inadvertently restarted, you must initiate the installation process again.
 
-### Unpacking installation file ### {#unpackinstall}
+### Unpack the installation file ### {#unpackinstall}
 
 1. Ensure you are logged into your install system as root; otherwise, log in as root:
 
@@ -122,11 +129,11 @@ Make sure you have met all the hardware requirements and have completed the requ
 
 3.  Extract the kit to the `work` directory:
 
-		tar zxvf /root/work/<baremetal kit name>.tgz
+		tar zxvf /root/work/<virtual kit name>.tgz
 
 	This creates and populates a `tripleo/` directory within `work' directory.
 
-### Configuring proxy information {#proxy}
+### Configure proxy information {#proxy}
 
 Before you begin your installation, if necessary, configure the proxy information for your environment using the following steps:
 
@@ -149,7 +156,7 @@ Before you begin your installation, if necessary, configure the proxy informatio
 		$ export BRIDGE_INTERFACE=em1  
 		$ export BRIDGE_INTERFACE=eth5
 
-### Installing the seed VM and building your cloud ### {#startseed}
+### Install the seed VM and build your cloud ### {#startseed}
 
 1. Log in to the seed VM by running the following command from `/root`:
 
@@ -189,14 +196,15 @@ Before you begin your installation, if necessary, configure the proxy informatio
  
         "HP - completed - Tue Apr 22 16:20:20 UTC 2014"
 
-## Next Step ##
+### Next Step ###
 
-After you receive the *completed* message, you should [verify the installation](#verify) by connecting to the overcloud and undercloud dashboards.
+After you receive the *completed* message, you should verify the installation by connecting to the overcloud and undercloud dashboards.
 
+Jump down to [Verifying your installation](#verify).
 
+---------------------------------------
 
-
-## Installing HP Helion Openstack on a baremetal hypervisor## {#install}
+## Install HP Helion Openstack on a baremetal hypervisor## {#install}
 
 Make sure you have met all the hardware requirements and have completed the required tasks before you begin your installation. The following sections walk you through:
 
@@ -206,7 +214,7 @@ Make sure you have met all the hardware requirements and have completed the requ
 
 **IMPORTANT:** During the installation process, **DO NOT RESTART** the system running the installer and seed VM. Restarting this system disrupts the baremetal bridge networking configuration and disables both the undercloud and overcloud. If the system is inadvertently restarted, you must initiate the installation process again.
 
-### Configuring proxy information {#proxy}
+### Configure proxy information {#proxy}
 
 ***QUESTION: This section is not in https://rndwiki2.atlanta.hp.com/confluence/display/cloudos/ee_ga_ironic_quick_start. Still required??***
 
@@ -224,7 +232,7 @@ Before you begin your installation, if necessary, configure the proxy informatio
  
 3. Log out and re-login to your baremetal server to activate the proxy configuration.
 
-### Unpacking installation file ## {#unpackinstall}
+### Unpack the installation file ## {#unpackinstall}
 
 1. Ensure you are logged into your install system as root; otherwise, log in as root:
 
@@ -252,9 +260,9 @@ Before you begin your installation, if necessary, configure the proxy informatio
 
 5. Use the following command to set the CLOUD_TYPE environment variable for ESX:
 		
-	    Export CLOUD_TYPE=esx
+	    export CLOUD_TYPE=esx
 
-### Installing the seed VM and building your cloud ### {#startseed}
+### Install the seed VM and build your cloud ### {#startseed}
 
 1. To start the seed VM installation, enter the following command:
 
@@ -289,7 +297,7 @@ Before you begin your installation, if necessary, configure the proxy informatio
 		78:e7:d1:22:5d:a8,administrator,password,192.168.11.4,12,32768,2048
 		78:e7:d1:22:52:9b,administrator,password,192.168.11.6,12,32768,2048
     
-	**Note:** For more information on creating this file, refer to [Creating the baremetal.csv file](/helion/openstack/install/prereqs/#req-info) on the *Before you begin* page.
+	**Note:** For more information on creating this file, refer to [Creating the baremetal.csv file](/helion/openstack/ga/install/prereqs/#req-info) on the *Before you begin* page.
 
 5. [Optional] If you have installed the IPMItool, use it to verify that network connectivity from the seed VM to the baremetal servers in your baremetal.csv is working.
 
@@ -359,19 +367,23 @@ Before you begin your installation, if necessary, configure the proxy informatio
 
 		bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh
 
-    If your installation is successful, a message similar to the following is displayed:
+	If your installation is successful, a message similar to the following is displayed:
  
-        "HP - completed - Tue Apr 22 16:20:20 UTC 2014"
+		"HP - completed - Tue Apr 22 16:20:20 UTC 2014"
 
-## Next Step ##
+### Next Step ###
 
-After you receive the *completed* message, you should [verify the installation](#verify) by connecting to the overcloud and undercloud dashboards.
+After you receive the *completed* message, you should verify the installation by connecting to the overcloud and undercloud dashboards.
 
-## Verifying your installation {#verify}
+Jump down to [Verifying your installation](#verify).
+
+---------------------------------------
+
+## Verify your installation {#verify}
 
 To verify that the installation is successful, connect to the HP Helion Openstack dashboard and the undercloud dashboard as follows.
 
-### Connecting to Horizon console ### {#connectconsole}
+### Connect to the Horizon console ### {#connectconsole}
 
 Ensure you can access the overcloud Horizon dashboard. To do this, follow the steps below:
 
@@ -402,8 +414,7 @@ Ensure you can access the overcloud Horizon dashboard. To do this, follow the st
 
 **Note:** If you are unable to connect to the Horizon console, check your proxy settings to ensure that access to the controller VM is successfully redirected through a proxy.
 
-
-### Connecting to the undercloud UI ### {#monitoring}
+### Connect to the undercloud Horizon console ### {#monitoring}
 
 1. From the seed, run the following command:
 
@@ -434,13 +445,13 @@ Ensure you can access the overcloud Horizon dashboard. To do this, follow the st
 
 	HP Virtual Cloud Networking's Open vSwitch vApp (OVSvApp) must be installed for HP Helion OpenStack environment to provision VMs in your VMware vCenter environment. Once deployed, OVSvApp appliance enables networking between the tenant Virtual Machines (VMs).
 
-	For installation intructions, see [Deploying and configuring OVSvApp for HP Virtual Cloud Networking (VCN) on ESX hosts](/helion/openstack/install/ovsvapp/) for complete instructions. 
+	For installation intructions, see the [Deploying and configuring OVSvApp for HP Virtual Cloud Networking (VCN) on ESX hosts](/helion/openstack/install/ovsvapp/) document for complete instructions. 
 
 - Install DNS as a service (DNSaaS) (Optional).
 
 	Our managed DNS service, based on the OpenStack Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.
 
-	For installation intructions, see  [install DNS as a service](/helion/openstack/install/dnsaas/).
+	For installation intructions, see [DNSaaS Beta Installation and Configuration](/helion/openstack/install/dnsaas/).
 
 
 

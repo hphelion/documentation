@@ -2,7 +2,7 @@
 layout: default
 title: "HP Helion OpenStack&#174; Support Matrix"
 permalink: /helion/openstack/ga/support-matrix/
-product: commercial
+product: commercial.ga
 
 ---
 <!--UNDER REVISION-->
@@ -261,7 +261,7 @@ You must have the following hardware and network configuration:
     * A simple command line tool installed, such as [IPMItool](http://sourceforge.net/projects/ipmitool/), to determine the state of cloud nodes.
 
 
-    **Important:** This system might be reconfigured during the installation process so a dedicated system is recommended. Reconfiguration might include installing additional software packages, and changes to the network or virtualisation configuration.
+    **Important:** This system might be reconfigured during the installation process so a dedicated system is recommended. Reconfiguration might include installing additional software packages, and changes to the network or visualization configuration.
 
 * You must also satisfy these network configuration requirements:
 
@@ -590,7 +590,7 @@ This table provides an overview of the physical network configuration requiremen
 
 - The physical hypervisor/OS network is shared by a number of logical networks, and each logical network has its own VLAN and IP subnet
 
-For detailed information, see the [Reference architecture](/helion/openstack/technical-overview#ref-arch) section of the Technical Overview.
+For detailed information, see the [Reference architecture](/helion/openstack/ga/technical-overview#ref-arch) section of the Technical Overview.
 
 <table style="text-align: left; vertical-align: top; width:700px;">
 

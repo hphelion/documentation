@@ -2,7 +2,7 @@
 layout: default
 title: "HP Helion OpenStack&#174; Volume Operations Service Overview"
 permalink: /helion/openstack/ga/services/volume/overview/
-product: commercial
+product: commercial.ga
 
 ---
 <!--UNDER REVISION-->
@@ -36,7 +36,7 @@ To [perform tasks using the Volume Operations service](#howto), you can use the 
 
 ### Using the dashboards {#UI}
 
-You can use the [HP Helion OpenStack Dashboard](/helion/openstack/dashboard/how-works/) to work with the Volume Operations service.
+You can use the [HP Helion OpenStack Dashboard](/helion/openstack/ga/dashboard/how-works/) to work with the Volume Operations service.
 
 ###Using the API ### {#API}
  

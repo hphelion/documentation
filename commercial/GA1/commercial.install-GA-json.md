@@ -2,7 +2,7 @@
 layout: default
 title: "HP Helion OpenStack&#174; Installation and Configuration"
 permalink: /helion/openstack/ga/install/json/
-product: commercial
+product: commercial.ga
 
 ---
 <!--UNDER REVISION-->

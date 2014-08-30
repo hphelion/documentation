@@ -2,7 +2,7 @@
 layout: default
 title: "HP Helion OpenStack&#174; Edition: VSA Support"
 permalink: /helion/openstack/ga/install/vsa/
-product: commercial
+product: commercial.ga
 
 ---
 <!--UNDER REVISION-->
@@ -136,7 +136,7 @@ Differentiated storage offerings based on performance and quality can be realize
 
 ### Prerequisites ###
 
-1. Ensure that you download the `HPStoreVirtual_VSA_11.5.tgz` package, which contains all the files that are required for installation, as shown in the table below. For details on how to download, refer to the [Before you begin](/helion/openstack/install-overview/#install-pkg) page. 
+1. Ensure that you download the `HPStoreVirtual_VSA_11.5.tgz` package, which contains all the files that are required for installation, as shown in the table below. For details on how to download, refer to the [Before you begin](/helion/openstack/ga/install-overview/#install-pkg) page. 
 
 	<table style="text-align: left; vertical-align: top; width:650px;">
 	

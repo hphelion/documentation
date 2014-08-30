@@ -2,7 +2,7 @@
 layout: default
 title: "HP Helion OpenStack&#174; Horizon Service Overview"
 permalink: /helion/openstack/ga/services/horizon/overview/
-product: commercial
+product: commercial.ga
 
 ---
 <!--UNDER REVISION-->
@@ -24,13 +24,13 @@ PageRefresh();
 
 Horizon is the OpenStack service that serves as the basis for the HP Helion OpenStack web interface, or the *dashboards*
 
-The dashboard provides a web-based user interface to HP Helion OpenStack services including [Compute](/helion/openstack/services/compute/overview), [Volume Operations](/helion/openstack/services/volume/overview/), [Networking](/helion/openstack/services/networking/overview), and [Identity](/helion/openstack/services/identity/overview). 
+The dashboard provides a web-based user interface to HP Helion OpenStack services including [Compute](/helion/openstack/ga/services/compute/overview), [Volume Operations](/helion/openstack/ga/services/volume/overview/), [Networking](/helion/openstack/ga/services/networking/overview), and [Identity](/helion/openstack/ga/services/identity/overview). 
 
 Horizon ships with several dashboards, including a *Project* dashboard, an *Admin* dashboard, and a *System* dashboard. These dashboards provide administrators and users a graphical interface to access, provision and automate cloud-based resources.
 
 ## For more information ##
 
-For information on using the dashboards, see [HP Helion OpenStack Dashboard](/helion/openstack/dashboard/how-works/).
+For information on using the dashboards, see [HP Helion OpenStack Dashboard](/helion/openstack/ga/dashboard/how-works/).
 
 
  <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

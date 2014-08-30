@@ -2,7 +2,7 @@
 layout: default
 title: "Getting Started with HP Helion OpenStack&#174; Compute Service "
 permalink: /helion/openstack/ga/services/compute/getting-started/
-product: commercial
+product: commercial.ga
 
 ---
 <!--UNDER REVISION-->
@@ -21,7 +21,7 @@ A variety of flavors and images are provided by the Compute service that can be 
 
 ### Using the dashboards {#UI}
 
-You can use the [HP Helion OpenStack Dashboard](/helion/openstack/services/dashboard/overview/) to work with the HP Compute service.
+You can use the [HP Helion OpenStack Dashboard](/helion/openstack/ga/services/dashboard/overview/) to work with the HP Compute service.
 
 ###Using the API to access Networking### {#API}
  
@@ -38,8 +38,8 @@ For information on how to operate your cloud we suggest you read the [OpenStack 
 
 <!-- hide me Also see the Help topics that are available in the Operational Dashboard and Administration Dashboard.  Website copies are available:
 
-* [HP Cloud OS Operational Dashboard Help](/helion/openstack/manage/operational-dashboard/)
-* [HP Cloud OS Administration Dashboard Help](/helion/openstack/manage/administration-dashboard/) -->
+* [HP Cloud OS Operational Dashboard Help](/helion/openstack/ga/manage/operational-dashboard/)
+* [HP Cloud OS Administration Dashboard Help](/helion/openstack/ga/manage/administration-dashboard/) -->
 
  <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

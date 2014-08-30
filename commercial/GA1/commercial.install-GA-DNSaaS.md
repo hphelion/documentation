@@ -2,7 +2,7 @@
 layout: default
 title: "HP Helion OpenStack&#174;: DNSaaS Installation and Configuration"
 permalink: /helion/openstack/ga/install/dnsaas/
-product: commercial
+product: commercial.ga
 
 ---
 <!--UNDER REVISION-->
@@ -25,7 +25,7 @@ This page explains how to install and configure DNS as a service (DNSaaS) for HP
 
 
 **IMPORTANT**: 
-Installing HP Helion OpenStack DNSaaS is **optional**. Before you attempt the DNSaaS installation, you *must* have already [installed HP Helion Openstack](/helion/openstack/install/) and verified that it is configured correctly and operational. After you have verified your HP Helion OpenStack installation, download the DNSaaS installer image from the [HP Helion OpenStack product installation](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221247%22%7D/Show) web site. 
+Installing HP Helion OpenStack DNSaaS is **optional**. Before you attempt the DNSaaS installation, you *must* have already [installed HP Helion Openstack](/helion/openstack/ga/install/) and verified that it is configured correctly and operational. After you have verified your HP Helion OpenStack installation, download the DNSaaS installer image from the [HP Helion OpenStack product installation](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221247%22%7D/Show) web site. 
 
 The rest of this page explains the installation and configuration process for DNSaaS. 
 
