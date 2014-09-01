@@ -24,21 +24,10 @@ PageRefresh();
 
 Before you begin the installation process, take a few minutes to read this page because it contains information about:
 
-
 * [Hardware configuration](#hardware)
 * [Required tasks](#required)
-	* [Preparing the network](#network_prepare)
-		* [Preparing all networks](#network)
-		* [Preparing the network for a KVM instalation](#network_KVM}
-		* [Preparing the network for an ESX installation](#network_ESX)
-	* [Preparing the installer system](#installer)
-		- [Obtaining a public key](#pub-key)
-		- [Installing Debian/Ubuntu packages](#packages)
-		- [Install and configure NTP](#ntp)
-		- [Creating the baremetal.csv file](#csv)
 * [Downloading installation packages](#install-pkg)
 * [For more information](#for-more-information)
-
 
 ## Hardware configuration ## {#hardware}
 
@@ -71,11 +60,11 @@ To install a HP Helion OpenStack baremetal multi-node configuration, you must ha
 
     
 * **Important** 
-    * **Installer system** &mdash; This system might be reconfigured during the installation process so a dedicated system is recommended. Reconfiguration might include installing additional software packages, and changes to the network or visualization configuration.
+    * **Installer system** &mdash; The installer system (also called seed VM) might be reconfigured during the installation process so a dedicated system is recommended. Reconfiguration might include installing additional software packages, and changes to the network or visualization configuration.
     
     * **Installer package** &mdash; The installer currently uses only the first available disk; servers with RAID controllers need to be pre-configured to present their storage as a single logical disk. RAID across multiple disks is strongly recommended for both performance and resilience.
 
-    * **Physical servers** &mdash; When installing HP Helion OpenStack, it is your responsibility to track the physical location (slot number and rack) and associated identifiers (such as MAC addresses) for each physical server to aid in future hardware maintenance. This is necessary because when HP Helion OpenStack is installed on physical servers, the TripleO automation only tracks MAC network addresses of servers; the physical locations of servers are not tracked. This means there is no automated way to inform a service technician which slot or rack to go to when service is needed on a particular physical server. 
+    * **Physical servers** &mdash; When installing HP Helion OpenStack, it is your responsibility to track the physical location (slot number and rack) and associated identifiers (such as MAC addresses) for each physical server to aid in future hardware maintenance. This is necessary because when HP Helion OpenStack is installed on physical servers, the TripleO automation tracks only the MAC network addresses of servers; the physical locations of servers are not tracked. This means there is no automated way to inform a service technician which slot or rack to go to when service is needed on a particular physical server. 
 
 ## Required tasks {#required}
 
@@ -84,8 +73,8 @@ On the installer system, ensure the following required tasks are completed befor
 - [Prepare your network](#network_prepare)
 - [Obtain a public key](#pub-key)
 - [Install Debian/Ubuntu packages](#packages)
+- [Install and configure NTP](#ntp)
 - [Create the baremetal.csv file](#csv)
-- [Download the installation packages](#install-pkg)
 
 ### Preparing the network {#network_prepare}
 
@@ -95,7 +84,7 @@ The network is not installed or managed by the cloud. You must install and manag
 
 #### Preparing all networks #### {#network}
 
-To ensure a successful installation, you must also satisfy these network configuration requirements:
+To ensure a successful installation, you must satisfy these network configuration requirements:
 
 * The seed VM, the baremetal systems and the IPMI controller for all systems must be on the same network
 
@@ -111,7 +100,7 @@ If you are installing HP Helion OpenStack in a KVM deployment, you must configur
 
 <a href="javascript:window.open('/content/documentation/media/topology_kvm.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack architecture diagram for KVM network architecture.</a>(opens in a new window)
 
-You are responsible for providing the internal and external customer router and making sure the external, IPMI, and service networks are routed to/from the management network.
+You are responsible for providing the internal and external customer router and making sure the external, IPMI, and service networks are routed to and from the management network.
 
 **Notes:**
 
@@ -128,14 +117,15 @@ If you are installing HP Helion OpenStack in a ESX deployment, you must configur
 
 <a href="javascript:window.open('/content/documentation/media/topology_esx.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack architecture diagram for ESX network architecture.</a>(opens in a new window)
 
-For ESX deployments, two specific networks must be installed and configured for the VMware vCenter environment. The network is used for communication between specific aspects of vCenterL
+For ESX deployments, two specific networks must be installed and configured for the VMware vCenter environment. The network is used for communication between specific aspects of vCenter:
+
 - the OVSvApp communicates with the Neutron message queue 
 
-- the Computer service communicates with the vCenter Proxy
+- the Compute service communicates with the vCenter Proxy
 
 - the vCenter Proxy communicates with the message queue for the Compute and Volume Operations services. 
 
-- the EON communicates with the vCenter server.
+- the EON service sub-component communicates with the vCenter server.
 
 The initial installation of the cloud will install the 2 initial Object Storage nodes. All additional Object Storage nodes will be installed using customer procedures after the initial install. 
 
@@ -147,7 +137,7 @@ You are responsible for the following before beginning the HP Helion OpenStack i
 
 - installing and managing the ESX network and for assigning IP addresses on it to the OVSvApp and vCenter Proxy nodes;
 
-- providing a route for traffic between the nova-compute and cinder-volume components running on the vCenter Proxy node and the RabbitMQ and mySQL on the Cloud Controller;
+- providing a route for traffic between the Compute and Volume Operations services running on the vCenter Proxy node and the RabbitMQ and mySQL on the Cloud Controller;
 
 - providing a route from the EON service on the Under Cloud and the vCenter server;
  
@@ -157,18 +147,27 @@ You are responsible for the following before beginning the HP Helion OpenStack i
 The following tasks need to be performed on the seed VM, known as the installer system.
 
 - [Obtaining a public key](#pub-key)
+- [Configuring SSH](#ssh)
 - [Installing Debian/Ubuntu packages](#packages)
+- [Install and configure NTP](#ntp)
 - [Creating the baremetal.csv file](#csv)
 
-### Obtaining a public key ### {#pub-key}
-On the system on which the install is running, user root must have a public key, for example:
+#### Configuring SSH #### {#ssh}
+
+On the installer system, the OpenSSH server must be running and the firewall
+ configuration should allow access to the SSH ports.
+
+#### Obtaining a public key #### {#pub-key}
+
+On the installer system (seed VM), the user `root` must have a public key, for example:
 
     `/root/.ssh/id_rsa`
     `/root/.ssh/id_rsa.pub`
 
-If user root does not have a public key, you can create one using the `ssh-keygen -t rsa -N ""` command.
+If user `root` does not have a public key, you can create one using the `ssh-keygen -t rsa -N ""` command.
 
-### Installing Debian/Ubuntu packages ### {#packages}
+#### Installing Debian/Ubuntu packages #### {#packages}
+
 Before starting the installation, you must first install the following required Debian/Ubuntu packages on the system running the installer:
 
 * qemu
@@ -185,22 +184,22 @@ After you install the `libvirt` packages, you must reboot or restart `libvirt`:
     $ sudo /etc/init.d/libvirt-bin restart
 
 
-### Install and configure NTP ### {#ntp}
+#### Install and configure NTP #### {#ntp}
 
 NTP is a networking protocol for clock synchronization between computer systems. 
 
-Before you start the installation, you must install NTP on the seed VM (installer system) and configure it as a NTP server. You will configure the undercloud and overcloud systems as NTP clients during the installation process.
+Before you start the installation, you must install NTP on the installer system (seed VM) and configure it as a NTP server. You will configure the undercloud and overcloud systems as NTP clients during the installation process.
 
-For information on installing NTP on the seed VM, see HP Helion [OpenStack Installation: NTP Server](/helion/openstack/ga/install/ntp/)
+For information on installing NTP on the seed VM, see HP Helion [OpenStack Installation: NTP Server](/helion/openstack/ga/install/ntp/).
 
 
-### Creating the baremetal.csv file ### {#csv}
+#### Creating the baremetal.csv file #### {#csv}
 
 **Note:** This section is for baremetal installations only.
 
-During the installation process after the seed VM is installed, the installer script looks for information about the baremetal systems. Specifically, it looks for this information in a file called `baremetal.csv`. You must create this file before you begin the installation process, and then upload to the seed VM at the appropriate installation step. 
+During the installation process after the seed VM is installed, the installer script looks for information about the baremetal systems. Specifically, it looks for this information in a file called `baremetal.csv`. Before you begin the installation process, you must create this file and upload the file to the installer system (seed VM) at the appropriate installation step. 
 
-There must be one entry in this file for each baremetal system you intend to install. The file must contain exactly five lines for the ESX installation. 
+There must be one entry in this file for each baremetal system you intend to install. The file must contain exactly five lines for the installation. 
 
 `<mac_address>,<ipmi_user>,<ipmi_password>,<ipmi_address>,<no_of_cpus>,<memory_MB>,<diskspace_GB>`
 
