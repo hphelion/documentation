@@ -18,427 +18,549 @@ PageRefresh();
 
 </script>
 
+<!--
 <p style="font-size: small;"> <a href="/helion/openstack/install/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/install-overview/">&#9650; UP</a> | <a href="/helion/openstack/install/esx/">NEXT &#9654;</a> </p>
-
+-->
 
 # HP Helion OpenStack&#174; Installation: HP StoreVirtual VSA Support
 
 This page provides detailed information on HP StoreVirtual for realizing cloud storage. It primarily covers the following topics:
 
-* [HP StoreVirtual VSA overview](#StoreVirtual-overview) 
-* [Cinder architecture](#cinder-architecture)
-   * [Cinder API](#cinder-api)
-   * [Scheduler](#scheduler)
-   * [Cinder volume and Lefthand driver](#cinder-volume)  
-   * [Differentiated storage offerings](#differentiated-storage-offerings)
-* [Installing and configuring HP StoreVirtual VSA](#installation-of-storevirtual-vsa)
-   * [Prerequisites](#prerequisites)
-   * [Installing Linux on baremetal](#install-linux-on-baremetal)
-   * [Deploying VSA](#deployment-vsa) 
-   * [Installing HP StoreVirtual Centralized Management Console (CMC) on Linux](#install-hp-storevirtual-vsa)
-   * [Creating a cluster](#create-cluster)
-   * [Enabling HP StoreVirtual configuration in overcloud](#enable-hp-storevirtual-configuration)
 
+HP Helion OpenStack can be installed on a VMware ESX bare-metal or virtual hypervisor. This document provides installation instructions for HP Helion OpenStack Edition preview on a suitably specified and prepared system.
 
-## HP StoreVirtual overview {#storevirtual-overview}
+HP Helion OpenStack on an ESX hypervisor allows you to manage the VMware vCenter and provision virtual machines.
 
-HP StoreVirtual VSA Software is a Virtual Storage Appliance that provides the complete array functionality on top of Linux KVM environment without an external array hardware. It eliminates the need for external shared storage required to implement block storage features. It uses scale-out, distributed clustering to provide a pool of storage with enterprise storage features and simple management. 
 
-Multiple StoreVirtual VSAs running on multiple servers create a clustered pool of storage with the ability to make data highly available by protecting volumes with network RAID. A logical grouping of clusters is done to form a unit and is termed as management group. Each cluster can be treated as storage node by hypervisor and is accessed using VIP (virtual IP). 
+## Installing HP Helion OpenStack ## {#install}
 
-As of now, adding more StoreVirtual VSAs to the cluster grows the storage pool. With Network RAID, blocks of data are striped and mirrored across multiple StoreVirtual VSAs, allowing volumes and applications to stay online in the event of disk, storage subsystem or server failure. iSCSI connectivity on HP StoreVirtual VSA, support the use of the storage pools by cloud instances.
-A single management group can contain up to 32 VSA nodes &#45; grouped into one or more clusters. A single cluster comprises 1 to 16 VSA nodes. Each management group can optimally manage a maximum of 1500 volumes. 
+The installation and configuration process for ESX consists of the following general steps: 
 
-Currently, HP Helion OpenStack edition uses a single management group mapped to a single Cluster. For minimal deployment, you can create a management group with one cluster and with a single VSA node on it.
-
-HP StoreVirtual VSA enables the following features in HP Helion OpenStack: 
-
-* **Storage clustering**: It allows you to consolidate multiple storage nodes into pools of storage. The available capacity and performance is aggregated and made available to every volume in the cluster. As storage needs increase, StoreVirtual can scale performance and capacity online.
-
-* **Data availability**: Network RAID stripes and mirrors multiple copies of data across a cluster of storage nodes, eliminating any single point of failure in the StoreVirtual SAN. Applications have continuous data availability in the event of a power, network, disk, controller, or entire storage node failure.
-
-* **Thin provisioning**: It allocates space only as data is actually written without requiring pre-allocation of storage. This raises the overall utilization and efficiency and thus increases the ROI.
-
-* **Simplified data protection**: Snapshots create thinly provisioned, instant point-in-time copies of data on a per-volume basis. As and administrator, you can access snapshots to recover individual files/folders from the volume, or rollback an entire volume to a prior state.
-
-
-
-##Cinder architecture {#cinder-architecture}
-
-Cinder is the block-based storage component of the HP OpenStack Helion platform for cloud computing. It provides the software to create and centrally manage a service that provisions storage in the form of block devices known as Cinder volumes. In the most common scenario, the Cinder volumes provide persistent storage to guest virtual machines (known as instances) that are managed by OpenStack Compute software. Cinder can also be used independent of other OpenStack services. Cinder is based on the distributed architecture which has inherent tenets to scale horizontally and serve concurrent volume management requests. 
-
-Cinder consists of three basic services:
-
-* **Cinder API**
-
-* **Cinder scheduler**
-
-* **Cinder volume** *along with an underlying dedicated database*
-
-<img src="media/cinder-services.png"/>
-
-
-### Cinder API {#cinder-api}
-
-Cinder API is a REST based interface to perform volume operations. As an end-user, you can accomplish volume operations without having to worry about the storage backend used to provide the actual storage. The following volume operations are supported:
-
-1. Create volume
-2. Delete volume
-3. Attach volume to host
-4. Detach volume from host
-5. Create snapshot of a given volume
-6. Create clone of a given volume
-7. Delete a snapshot
-8. Delete a clone
-9. Provision volume based on the volume type (which implicitly maps to Quality of Service(QoS)) OpenStack Cinder API manages the block storage. 
-
-
-### Scheduler {#scheduler}
-
-The Cinder Scheduler tracks various backend capabilities and chooses the backend to place a new volume on. There are various configurable plugins for the scheduler. Filter scheduler has filters and weighers which help in deciding the backend to be used for a new volume request. The selection criteria includes the filters like- volume type, available free space, QoS specs, Extra specs etc. Scheduler ensures that the volumes are uniformly spread across all available backend StoreVirtual Management Groups.
-
-### Cinder volume and LeftHand driver {#cinder-volume}
-
-Once the Scheduler determines the backend to be used, the Cinder volume performs the actual operations against the backend.
-
-The Cinder volume service hosts the LeftHand Driver to communicate with the backend, representing the StoreVirtual Management Group using the LeftHand REST API. 
-
-**Note:** The Lefthand driver is the [HP LeftHand/StoreVirtual driver](http://docs.openstack.org/trunk/config-reference/content/HP-LeftHand-StoreVirtual-driver.html). The HPLeftHandISCSIDriver is based on the Block Storage service (Cinder) plug-in architecture. Volume operations are run by communicating with the HP LeftHand/StoreVirtual system over HTTPS, or SSH connections. 
-
-Multiple Cinder volume processes can be run to achieve high availability of the Cinder components. Each backend instance maps to an instance of a StoreVirtual Management Group. Each Management Group listens at a Management API address that is configured in the Cinder backend entry in cinder.conf. A single Cinder volume can manage multiple backends.
-
-
-### Differentiated storage offerings {#differentiated-storage-offerings}
-HP Helion Openstack edition uses StoreVirtual as a backend to Cinder to realize horizontally scalable block storage. StoreVirtual is unique in the sense that storage controller runs as a virtual appliance and helps realize Software Defined Block Storage.
-
-Cinder provides the concept of volume types to represent differentiated storage offerings based on various performance outputs, quality of service and backend devices that are used to realize cloud storage. Essentially, a volume type is mapped to one or more backends of similar capabilities as illustrated in figure below:
-
-
-<a href="javascript:window.open('/content/documentation/media/reference-architecture-StoreVirtual-volume-type-mapping.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Volume type mapping (opens in a new window)</a>
-
-The cloud administrator, you create volume types to specify the storage offerings of the cloud and  configure Cinder with backends which have the ability to serve storage characteristics represented by the volume types. For example, as a cloud admin, you have the following storage capabilities:  
-
-
-**1. Low Cost, Low Performance, High Capacity Storage** (Bronze)
-
-**2. Medium Cost, Medium Performance, Medium Capacity Storage** (Silver) 
-
-**3. High Cost, High Performance, Low Capacity Storage** (Gold)
-
-Then, as the cloud administrator, you need to create three volume types &ndash; bronze, silver and gold &ndash; and configure Cinder with three different backends. Each backend needs to be mapped to bronze, silver and gold, respectively.
-
-Differentiated storage offerings based on performance and quality can be realized in HP Helion OpenStack by creating clusters of different capabilites, configuring clusters as backends and mapping theses backends to different volume types as suggested above.
-
-
-
-##Installing and configuring HP StoreVirtual VSA {#installation-of-storevirtual-vsa}
-
-
-### Prerequisites ###
-
-1. Ensure that you download the `HPStoreVirtual_VSA_11.5.tgz` package, which contains all the files that are required for installation, as shown in the table below. For details on how to download, refer to the [Before you begin](/helion/openstack/ga/install-overview/#install-pkg) page. 
-
-	<table style="text-align: left; vertical-align: top; width:650px;">
-	
-	<tr style="background-color: lightgrey; color: black;">
-	
-	 <td><b> Components </b></td><td><b>File name</b></td>
-	<tr style="background-color: white; color: black;">
-	 <td>HP StoreVirtual VSA installer</td><td>HPStoreVirtual_VSA_11.5.tgz </td></tr>
-	<tr style="background-color: white; color: black;">
-	<td>Linux</td><td>hlinux-vsa-blaster-20140619.iso</td></tr>
-	
-	
-	<tr style="background-color: white; color: black;">
-	<td>VSA automation package</td><td>pyVins.tgz</td></tr>
-	<tr style="background-color: white; color: black;">
-	 <td>CMC installer</td><td>CMC_11.5.01.0023.0_Installer_Linux.bin</td></tr></table>
-
-2. Prepare a storage server with the following RAID logical drives:
-
-   * RAID drive for operating system
-   
-   * RAID drive for storage, to be consumed by VSA
-
-    RAID drive can be created using RAID management utility. Please refer your server specification to create RAID groups. We recommend that you create RAID 5 or RAID 6 logical drive comprising 10-12 drives.
-
-
-###Installing Linux on baremetal{#install-linux-on-baremetal}
-
-Linux operating system is installed on baremetal servers identified to run HP  StoreVirtual VSA.
-
-
-**Prerequisites**
-
-The target system must fulfill the following prerequisites: 
-
-  * One primary hard drive of at least 80 GB
-	
-  * At least 8 GB of RAM 
-	
-  * The VSA server must be connected to the same network as the cloud nodes.
-
-    <a href="javascript:window.open('/content/documentation/media/commercial_kvm_network_architecture.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack architecture diagram for KVM (opens in a new window)</a>
-   
-
-  * (Optional) It can have a second network which provides external/public access. 
-  
-  * Download and extract files from the `HPStoreVirtual_VSA_11.5.tgz` package.
-
-
-**Installation**
-
-1. Mount the Linux ISO on the target server and boot the server.
-
-2. During the boot process, you are prompted to **Enter block device to use for reimaging**, enter the block device that you want to use for example:***/dev/sda***.
-
-3. Click **Enter**.
-
-4. Once the installation completes, manually reset the system. 
-
-5. Login to the system using the credentials provided in the `Readme.txt` included in the package.
-
-6.	Switch to root user.
-
-7.	From the location where the contents of `HPStoreVirtual_VSA_11.5.tgz` package are extracted, copy the  following files  to `/home/root` folder on the Linux server.
-
-  * HP&#95;StoreVirtual&#95;VSA&#95;Installer&#95;for_KVM.tgz
-   
-  * pyVins.tgz
-   
-
-###Deploying VSA {#deployment-vsa}
-<a href="javascript:window.open('/content/documentation/media/commercial_kvm_network_architecture.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack architecture diagram for KVM (opens in a new window)</a>
-
-#### Contents of HP&#95;StoreVirtual&#95;VSA&#95;Installer&#95;for_KVM.tgz ###
-  
-HP&#95;StoreVirtual&#95;VSA&#95;Installer&#95;for _KVM.tgz contains the following files:
-
-
- * **KVM-VSA-11.5.01.0023.img.gz** - This file contains the VSA image for KVM.
-
- * **HP&#95;StoreVirtual&#95;VSA&#95;for&#95;KVM_Installer-11.5.01.0023** - This is a dependent binary for VSA installation.
-
- *	**README.txt**
-
-
-#### Contents of pyVins package
-
-The pyVins package contains the following files:
-
-* **network_template.xml**: This is XML template file for virtual network creation.
-
-* **storagepool_template.xml**:This is XML template file for virtual storage pool creation.
-
-* **vsa_automation.py**: This is the script to automate the installation of VSA.
-
-* **vsa_export.sh**: This is a configuration file and should be modified based on your setup. 
-
-     Example configuration of the vsa_export.sh file is shown below:
-
-    
-	    export VSA_INSTALL_DIR=/home/kvm-admin/kvm-install/
-	    
-	    export VSA_PACKAGE_PATH=/home/kvm-admin/kvm-install/
-	    
-	    export VSA_IMAGE_PATH=$VSA_PACKAGE_PATH/KVM-VSA-11.5.01.0023.img.gz
-	    
-	    export VSA_INSTALLER=$VSA_PACKAGE_PATH/HP_StoreVirtual_VSA_for_KVM_Installer-11.5.01.0023
-	    
-	    export VSA_CONFIG_FILE=/home/kvm-admin/kvm-install/etc/vsa/vsa_config.json
-
-    where:
-
-    * **VSA&#95;INSTALL_DIR**: refers to the path of the location where the **pyVins** package is downloaded.
-
-    * **VSA&#95;PACKAGE&#95;PATH**: refers to the path of the location where HP StoreVirtual VSA package and installer binary is available. The location should contain KVM-VSA-11.5.01.0023.img.gz & HP&#95;StoreVirtual&#95;VSA&#95;for&#95;KVM&#95;Installer-11.5.01.0023 files.
-
-    * **VSA&#95;IMAGE_PATH**: refers to the package name along with VSA&#95;PACKAGE&#95;PATH.
-
-    * **VSA&#95;INSTALLER**: refers to the installer binary name along with VSA&#95;PACKAGE&#95;PATH.
-
-    * **VSA&#95;CONFIG_FILE**: refers to the location where the  vsa&#95;config.json file is available.
-
-
-* **vsa_config.json**: This is the configuration file with details for VSA installation.You need to modify this file as per the required VSA configuration 
-
-
-**Perform the following instructions to configure vsa&#95;config_json file:**
-
-1. Edit the `vsa_config.json` file available at 
-`<location of pyVins package>/etc/vsa/vsa_config.json.` <br> An example  `vsa_config.json` file is shown below. You must change the values based on the environment.</br>
-
-		{
-		    "network_name": "vsa-network",
-		    "virtual_bridge":{
-		        "name":"vsa-bridge",
-		        "static_ip_address":"192.0.2.249",
-		        "netmask":"255.255.255.0",
-		        "interface":"eth1"
-		    },
-		
-		    "vsa_config":{
-		        "hostname":"vsa-hostname",
-		        "os_image_storagepool":"vsa-storage-pool",
-		        "os_image_dir":"/home/kvm-admin/vsa-installers",
-		        "ip_address":"192.0.2.250",
-		        "subnet":"255.255.255.0",
-		        "gateway":"192.0.2.1"
-		    },
-		    "disks":[
-		        {
-		            "location":"vsa-storage-pool",
-		            "size":"15G"
-		        }
-		        ]
-		}
-
-	  
-     where:
+* [Downloading the installation packages](#getinstall)
+* [Starting the installation](#install)
+   * [Configuring proxy information](#proxy)
+   * [Unpacking installation file](#unpackinstall)
+   * [Installing the seed VM and building your cloud](#startseed)
+* [Verifying your installation](#verifying-your-installation)
+   * [Connecting to Horizon console](#connectconsole)
+   * [Connecting to to Monitoring UI](#monitoring)
+* [Deploying Open vSwitch vApp](#ovsvapp)
+* [Installing DNS as a service](#configure)
+* [Next steps](#next-steps)
  
-  - **network_name** refers to the name of the VSA network for example:*vsa-network*
+
+
+## Verify Prerequisites ## {#pre}
+
+To ensure successful installation, please read through the topics before you start.
+
+* Review the [support matrix](/helion/openstack/ga/support-matrix/) for information on the supported hardware and software.
+* Make sure your environment meets the [hardware and network configuration requirements](/helion/openstack/ga/install/prereqs/). 
+* [Perform required pre-installation tasks](/helion/openstack/ga/install/prereqs/)
+
+##Review the ESX deployment architecture ## {#deploy-arch}
+
+***QUESTION: Is this simplified diagram OK? Accurate? Useful? I linked to the new, more detailed diagram in the prereqs.***
+
+The following diagram depicts a simplified deployment scenario.
+
+<a href="javascript:window.open('/content/documentation/media/commercial_esx_network_architecture.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack architecture diagram for ESX (opens in a new window)</a>
+
+For a more detailed network diagram, see [HP Helion OpenStack&#174; Installation: Before you begin](/helion/openstack/ga/install/prereqs/#network_prepare).
+
+## Perform additional network requirements ## {#networkreq}
+
+***QUESTION: Is this information OK? Accurate? Useful?***
+
+These additional network components are required for an ESX installation:
+ 
+* VLAN trunking and native VLAN should be enabled on the private network. This is to cater to untagged PXE traffic with the tenant.<!--- Private network that caters to the PXE traffic needs to be a VLAN trunk line with a default VLAN (native) tag at the switch port side for all systems that are part of the environment.-->
+ 
+* VMware vCenter management must be a part of the private network (192.0.2.x)
+
+## Download the installation packages {#getinstall}
+Before you begin, you must download the required HP Helion OpenStack installation packages:
+
+***QUESTION: New files names?***
+<table style="text-align: left; vertical-align: top; width:650px;">
+	
+<tr style="background-color: lightgrey; color: black;">
+	
+<td><b> Installation package </b></td><td><b>File name</b></td>
+<tr style="background-color: white; color: black;">
+ <td>HP Helion OpenStack</td><td>HPHelionOpenStack_June30.tgz</td></tr>
+
+<tr style="background-color: white; color: black;">
+<td>HP Helion OpenStrack DNSaaS (Optional) </td><td>HP_dnsaas-installer_0.0.4b11.tar.gz</td></tr>
+</td></tr>
+</table>
+
+1. Log in to your install system as root:
+
+        sudo su -
+
+2. Register and then log in to download the required installation packages from this site:
+
+    [HP Helion OpenStack product installation](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221247%22%7D/Show)
+
+### Next Step ###
+
+Jump to the section regarding the type of installation we are performing:
+
+- [Installing HP Helion Openstack on a virtual hypervisor](#virtual)
+- [Installing HP Helion Openstack on a baremetal hypervisor](#baremetal)
+
+---------------------
+## Install HP Helion Openstack on a virtual hypervisor ## {#virtual}
+
+Make sure you have met all the hardware requirements and have completed the required tasks before you begin your installation. The following sections walk you through:
+
+* [Configuring proxy information](#proxy)
+* [Unpacking installation file](#unpackinstall)
+* [Installing the seed VM and building your cloud](#startseed)
+
+**IMPORTANT:** During the installation process, **DO NOT RESTART** the system running the installer and seed VM. Restarting this system disrupts the bridge networking configuration and disables both the undercloud and overcloud. If the system is inadvertently restarted, you must initiate the installation process again.
+
+### Unpack the installation file ### {#unpackinstall}
+
+1. Ensure you are logged into your install system as root; otherwise, log in as root:
+
+		sudo su -
+
+2. Create a directory named `work`:
+
+		mkdir /root/work
+		cd /root/work
+
+3.  Extract the kit to the `work` directory:
+
+		tar zxvf /root/work/<virtual kit name>.tgz
+
+	This creates and populates a `tripleo/` directory within `work' directory.
+
+### Configure proxy information {#proxy}
+
+Before you begin your installation, if necessary, configure the proxy information for your environment using the following steps:
+
+1. Ensure you are logged into your install system as root; otherwise, log in as root: 
+
+        sudo su -
+
+2. Use the following commands to set the environment variables:
+
+		export NODE_CPU=8
+		export NODE_MEM=24576
+		HP_VM_MODE=y bash -x /root/work/tripleo/tripleo-incubator/scripts/hp_ced_host_manager.sh --create-seed |& tee /root/work/create-seed.log
+
+5. If the external device name on the host system (the one through which the host, and indirectly the seed, accesses the IPMI network) is **NOT** named `eth0`, then determine the device name before executing the next step:
+
+		$ export BRIDGE_INTERFACE=<devicename>
+
+	Examples:
+
+		$ export BRIDGE_INTERFACE=em1  
+		$ export BRIDGE_INTERFACE=eth5
+
+### Install the seed VM and build your cloud ### {#startseed}
+
+1. Log in to the seed VM by running the following command from `/root`:
+
+		ssh root@192.0.2.1 
+
+    **Note**: It might take a few moments for the seed VM to become reachable. 
+
+3. When prompted for host authentication, type `yes` to allow the ssh connection to proceed.
+***QUESTION: Still required??***
+
+4. Use the following command to set the CLOUD_TYPE environment variable for ESX:
+
+		export CLOUD_TYPE=esx
+
+4. Use the folowing commands to set environment variables
+
+		export OVERCLOUD_COMPUTESCALE=1
+		export OVERCLOUD_VSA_STORAGESCALE=1
+		export OVERCLOUD_NEUTRON_DVR=True
+		export UNDERCLOUD_NTP_SERVER=16.110.135.123       This is IP of ntp.hp.net
+		export OVERCLOUD_NTP_SERVER=16.110.135.123                      # Required. This is IP of ntp.hp.net
+		export UNDERCLOUD_CODN_HTTP_PROXY=http://16.85.175.150:8080     # Optional. Configuration for CDL lab
+		export UNDERCLOUD_CODN_HTTPS_PROXY=http://16.85.175.150:8080    # Optional. Configuration for CDL lab
+
+	**Notes:**
+	
+	- The `UNDERCLOUD_NTP_SERVER` variable is the IP address of **ntp.hp.net** for the undercloud and is **REQUIRED**.
+	- The `OVERCLOUD_NTP_SERVER` vatiable is the IP address of **ntp.hp.net** for the overcloud and is **REQUIRED**.
+	- The `UNDERCLOUD_CODN_HTTP_PROXY` variable is an optional configuration for CDL lab.
+	- The `UNDERCLOUD_CODN_HTTPS_PROXY` variable is an optional configuration for CDL lab.
+
+5. Install and configure the undercloud and overcloud, run the following command from /root. 
+
+		bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh
+
+    If your installation is successful, a message similar to the following is displayed:
+ 
+        "HP - completed - Tue Apr 22 16:20:20 UTC 2014"
+
+### Next Step ###
+
+After you receive the *completed* message, you should verify the installation by connecting to the overcloud and undercloud dashboards.
+
+Jump down to [Verifying your installation](#verify).
+
+---------------------------------------
+
+## Install HP Helion Openstack on a baremetal hypervisor## {#install}
+
+Make sure you have met all the hardware requirements and have completed the required tasks before you begin your installation. The following sections walk you through:
+
+* [Configuring proxy information](#proxy)
+* [Unpacking installation file](#unpackinstall)
+* [Installing the seed VM and building your cloud](#startseed)
+
+**IMPORTANT:** During the installation process, **DO NOT RESTART** the system running the installer and seed VM. Restarting this system disrupts the baremetal bridge networking configuration and disables both the undercloud and overcloud. If the system is inadvertently restarted, you must initiate the installation process again.
+
+### Configure proxy information {#proxy}
+
+***QUESTION: This section is not in https://rndwiki2.atlanta.hp.com/confluence/display/cloudos/ee_ga_ironic_quick_start. Still required??***
+
+Before you begin your installation, if necessary, configure the proxy information for your environment using the following steps:
+
+1. Ensure you are logged into your install system as root; otherwise, log in as root: 
+
+        sudo su -
+
+2. Add the following lines to `/etc/environment`:
+
+        export http_proxy=http://<web proxy IP/
+        export https_proxy=http://web proxy IP/
+        export no_proxy=localhost,127.0.0.1,<your 10.x IP address>
+ 
+3. Log out and re-login to your baremetal server to activate the proxy configuration.
+
+### Unpack the installation file ## {#unpackinstall}
+
+1. Ensure you are logged into your install system as root; otherwise, log in as root:
+
+        sudo su -
+
+2. Create a directory named `work`:
+
+         mkdir /root/work
+         cd /root/work
+
+3.  Extract the kit to the `work` directory:
+
+         tar zxvf /root/work/<baremetal kit name>.tgz
+
+    This creates and populates a `tripleo/` directory within `work' directory.
+
+4. If the external device name on the host system (the one through which the host, and indirectly the seed, accesses the IPMI network) is **NOT** named `eth0`, then determine the device name before executing the next step:
+
+        $ export BRIDGE_INTERFACE=<devicename>
+
+    Examples:
+
+        $ export BRIDGE_INTERFACE=em1  
+        $ export BRIDGE_INTERFACE=eth5
+
+5. Use the following command to set the CLOUD_TYPE environment variable for ESX:
+		
+	    export CLOUD_TYPE=esx
+
+### Install the seed VM and build your cloud ### {#startseed}
+
+1. To start the seed VM installation, enter the following command:
+
+	bash -x /root/work/tripleo/tripleo-incubator/scripts/hp_ced_host_manager.sh --create-seed
+
+    If the seed startup is successful, you should see a message similar to the following:
+
+        "Wed Sept 09 11:25:10 IST 2014 --- completed setup seed"
+
+    **Note**:The installation process takes approximately 10 minutes to complete.
+
+2. To build the cloud, start by logging in to the seed VM. Run the following command from /root:
+
+        ssh root@192.0.2.1 
+
+    **Note**: It might take a few moments for the seed VM to become reachable. 
   
-  - **virtual_bridge** refers to the detail of the virtual bridge- 
+3. When prompted for host authentication, type `yes` to allow the ssh connection to proceed.
+***QUESTION: Still required??***
+
+4. Ensure the information in the [`baremetal.csv` configuration file](/helion/openstack/install-beta/prereqs/#req-info) file is correct and in the following format and upload THE FILE to `/root`.
+	<mac_address>,<ipmi_user>,<ipmi_password>,<ipmi_address>,<no_of_cpus>,<memory_MB>,<diskspace_GB>
+
+	***QUESTION: Must use IPMI user vs ILO user in beta?***
+
+	**Important**: There must be one entry in this file for each baremetal system you intend to install. The file must contain exactly five lines for the ESX installation. For example, your file should look similar to the following:
+
+		78:e7:d1:22:5d:10,administrator,password,192.168.11.5,12,32768,2048
+		78:e7:d1:22:5d:58,administrator,password,192.168.11.1,8,16384,2048
+		78:e7:d1:22:52:90,administrator,password,192.168.11.3,12,32768,2048
+		78:e7:d1:22:5d:c0,administrator,password,192.168.11.2,12,32768,2048
+		78:e7:d1:22:5d:a8,administrator,password,192.168.11.4,12,32768,2048
+		78:e7:d1:22:52:9b,administrator,password,192.168.11.6,12,32768,2048
+    
+	**Note:** For more information on creating this file, refer to [Creating the baremetal.csv file](/helion/openstack/ga/install/prereqs/#req-info) on the *Before you begin* page.
+
+5. [Optional] If you have installed the IPMItool, use it to verify that network connectivity from the seed VM to the baremetal servers in your baremetal.csv is working.
+
+	***QUESTION: Still optional? Not in https://rndwiki2.atlanta.hp.com/confluence/display/cloudos/ee_ga_ironic_quick_start.***
+
+6. Manually power off each baremetal system specified in /root/baremetal.csv before proceeding with the installation. 
+    
+    **IMPORTANT:** Ensure that each system is configured in the BIOS to stay powered off in the event of being shutdown rather than automatically restarting.
+
+7. Edit `configure_installer.sh` to provide your VMware vCenter connection details. 
+
+	***QUESTION: Still optional? Not in https://rndwiki2.atlanta.hp.com/confluence/display/cloudos/ee_ga_ironic_quick_start.***
+
+		/root/tripleo/tripleo-incubator/scripts/configure_installer.sh
+
+	For example:
+
+		export ENABLE_VCENTER="True"
+		export VCENTER_IP="<15.14.19.17>"
+		export VCENTER_USERNAME="<Administrator>"
+		export VCENTER_PASSWORD="<Password>"
+		export VCENTER_CLUSTERS="<Cluster1>","<Cluster2>","<Cluster3>","<Cluster 4>"
+		export ENABLE_VSA="False"
+
+8. Set `OVERCLOUD_NeutronPublicInterface` and `UNDERCLOUD_NeutronPublicInterface` to the name of the interface that carries Neutron external traffic on your overcloud and undercloud. By default, it is *eth2*. The following example sets the value of the variable to *eth0*.
+
+		$ export OVERCLOUD_NeutronPublicInterface=eth0
+		$ export UNDERCLOUD_NeutronPublicInterface=eth0 
+
+9. Set OVERCLOUD_COMPUTESCALE to 1, which is the currently supported limit. If you do not specify a value, the value is derived based on the number of lines remaining in `/root/baremetal.csv` once the undercloud, overcloud control, and overcloud swift nodes are removed.
+
+	To set this variable:
+
+		$ export OVERCLOUD_COMPUTESCALE=1
+
+10. Release floating IP addresses for networking.
+
+	***QUESTION: More info needed on how to determine the IP range. How does this help. DOes shrinking the floating IP range free up IPs for the private IPs needed for OVSvApp??***
+
+	By default, the installation creates a pool of floating IP addresses that you can assign to virtual machines. However, the HP Virtual Cloud Networking's Open vSwitch vApp (OVSvApp) required by the ESX environment requires a block of IP addresses. You create more IP addresses for OVSvApp by restricting the number of floating IP addresses created.
+
+	By default, the floating IP range is between 192.0.2.129 - 192.0.2.254. You can shrink the range by exporting the following variables:
+
+		# export FLOATING_START=<Start IP Address>
+		# export FLOATING_END=<End IP Address>
+
+    **For example**:
+
+		# export FLOATING_START=192.0.2.129
+		# export FLOATING_END=192.0.2.200
+
+	**Note:** If the above settings are changed, set the 'NeutronPublicInterfaceDefaultRoute' variable to the actual gateway for the customized IP range.
+
+11. Set OVERCLOUD_NTP_SERVER to the IP address of the NTP server accessible on the public interface for OVERCLOUD hosts. 
+
+	To set this variable:
+
+		# export OVERCLOUD_NTP_SERVER=<IP_address>
+
+12. Set UNDERCLOUD_NTP_SERVER to the IP address of the NTP server accessible on the public interface for OVERCLOUD hosts. 
+
+	To set this variable:
+
+		# export UNDERCLOUD_NTP_SERVER=<IP_address>
+
+13. Install and configure the undercloud and overcloud, run the following command from /root. 
+
+		bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh
+
+	If your installation is successful, a message similar to the following is displayed:
+ 
+		"HP - completed - Tue Apr 22 16:20:20 UTC 2014"
+
+### Next Step ###
+
+After you receive the *completed* message, you should verify the installation by connecting to the overcloud and undercloud dashboards.
+
+Jump down to [Verifying your installation](#verify).
+
+---------------------------------------
+
+## Verify your installation {#verify}
+
+To verify that the installation is successful, connect to the HP Helion Openstack dashboard and the undercloud dashboard as follows.
+
+### Connect to the Horizon console ### {#connectconsole}
+
+Ensure you can access the overcloud Horizon dashboard. To do this, follow the steps below:
+
+1. From the seed, export the undercloud passwords:
+
+		. /root/tripleo/tripleo-overcloud-passwords
+
+2. Export the undercloud users:
+
+		TE_DATAFILE=/root/tripleo/ce_env.json . /root/tripleo/tripleo-incubator/overcloudrc-user
+
+3. Assign the overcloud IP address to a variable:
+
+		DEMO_IP=$(nova list | awk '/\| demo \|/{print $13}')
+
+4. Determine the overcloud controller IP from the output of step 3 using the following command. It is in the last line returned.
   
-     -  name (name of the virtual bridge) for example: *vsa-bridge*
-     
-     -  static&#95;ip_address (the IP address of the bridge) for example: *192.0.2.249*   
+        ssh root@${DEMO_IP}
 
-	    **NOTE**: The IP address used here should be the part of the same subnet of the overcloud controller. By default, the cloud network is configured for 192.0.2.0/24 network. Use the IP from the end range to avoid conflict with  the Compute nodes.
-     
-     -  netmask (subnet mask of the bridge) for example: *255.255.255.0*
-     
-     -  interface (interface of the bridge) for example: *eth1*
+    If the optional second network was configured, the overcloud controller IP is the value set for NeutronPublicInterfaceIP.
 
-	    **NOTE**: The interface of the bridge should be the same interface connected to the private untagged network common to all controller and Compute nodes. 
+5. From your install system, open a web browser and point to:
 
-        <a href="javascript:window.open('/content/documentation/media/commercial_kvm_network_architecture.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Refere to HP Helion OpenStack architecture diagram for KVM (opens in a new window)</a>
+        http://<overcloud_IP>/
 
-  - **hostname** refers to the name of the VSA that is getting installed for example: *vsa-hostname*
-        
-  - **os&#95;image_storagepool** refers to the VSA where the image will be extracted for example:*vsa-storage-pool*
-       
-  - **os&#95;image_dir** refers to the directory in which the VSA is created for example:*/home/kvm-admin/vsa-installers*
+6. Log in to the overcloud Horizon dashboard as user `admin` with the password you obtained from the `/root/tripleo/tripleo-overcloud-passwords` file in step 4.
+
+
+**Note:** If you are unable to connect to the Horizon console, check your proxy settings to ensure that access to the controller VM is successfully redirected through a proxy.
+
+### Connect to the undercloud Horizon console ### {#monitoring}
+
+1. From the seed, run the following command:
+
+		. /root/stackrc
+
+2. Assign the undercloud IP address to a variable:
+
+		`UNDERCLOUD_IP=$(nova list | awk '/\| undercloud/{print $12}' | sed 's/ctlplane=//'); echo $UNDERCLOUD_IP`
+
+3. Determine the undercloud IP from the output of step 2 using the following command. It is in the last line returned.
   
-  - **ip&#95;address** refers to the IP address of the VSA for example: *192.0.2.251*
-  
-  - **subnet** refers to the subnet of the VSA for example: *255.255.255.0*
-        
-  - **gateway** refers to the router of the VSA for example: *192.0.2.1*
+        echo ${UNDERCLOUD_IP}
 
-	**NOTE**: The IP address used here should be part of the same subnet of the overcloud controller. By default, the cloud network is configured for 192.0.2.0/24 network. Use the IP from the end range to avoid conflict with the Compute nodes.
+4. Obtain the undercloud admin password using the following command:
 
-  - **location** refers to the name of the storage pool for example: *vsa-storage-pool*
-  
-  - **size** refers to the size of the disks for example:*15G*
+	`UNDERCLOUD_ADMIN_PASSWORD=$(grep UNDERCLOUD_ADMIN_PASSWORD /root/tripleo/tripleo-undercloud-passwords | sed 's/UNDERCLOUD_ADMIN_PASSWORD=//'); echo $UNDERCLOUD_ADMIN_PASSWORD`
 
+5. From your install system, open a web browser and point to:
 
-2.Go to the command prompt.
+        http://<undercloud_IP>/icinga/
 
-3.Change directory to `<downloaded_script_package>/pyvins/vsa_automation.py` and execute the following command:
-
-   `python vsa_automation.py`
-        
-
-Once the installation completes, VSA is deployed.  
-
-**Note**: We recommend deployment of a minimum of three VSAs.
+6. Log in as user 'admin' with the admin password.
 
 
-<img src="media/storevirtual-cluster-network-diagram1.png"/>
+## Next Steps
 
+- Deploy the Open vSwitch vApp **(REQUIRED)**. 
 
-###Installing HP StoreVirtual Centralized Management Console (CMC) on Linux {#install-hp-storevirtual-vsa}
+	HP Virtual Cloud Networking's Open vSwitch vApp (OVSvApp) must be installed for HP Helion OpenStack environment to provision VMs in your VMware vCenter environment. Once deployed, OVSvApp appliance enables networking between the tenant Virtual Machines (VMs).
 
+	For installation intructions, see the [Deploying and configuring OVSvApp for HP Virtual Cloud Networking (VCN) on ESX hosts](/helion/openstack/install/ovsvapp/) document for complete instructions. 
 
-You must install the CMC to perform the administrative tasks on HP StoreVirtual VSA storage. You can manage the entire network of VSAs from this CMC. 
+- Install DNS as a service (DNSaaS) (Optional).
 
-<!---Section - Installing HP StoreVirtual Centralized Management Console (CMC) on Linux{install-hp-storevirtual-vsa}
+	Our managed DNS service, based on the OpenStack Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.
 
-Pre-requisites, add following line:-->
+	For installation intructions, see [DNSaaS Beta Installation and Configuration](/helion/openstack/install/dnsaas/).
 
 
 
-**Prerequisites**
+<!---
+Perform the following steps to install OVSvAPP VM :
 
-* You must be running the X Windows System to install the CMC.
+1. Location <where the zip file will be available>.TBD
 
-* We recommend that you install CMC on the same KVM host that is used to run the Seed VM. This host has direct network connectivity to servers running HP StoreVirtual VSA.
+2. Unzip `ovsvapp_deployment.rar`. It contains a template file `CloudOSOVSvAppVM` and an executable file `ovsvm`. The executable file is located in ` ovsvm/sec/ovsvm`. TBD
 
-**Note**: These changes are required for 64-bit operating system only.  
+3. Import the template using vSphere client.
 
-* Execute the following commands:
+3. Verify the configuration of OVSvAPP VM from the template file and make sure you have adequate resource available on ESXi hosts.HP recommends to use the sample template without any modification.
 
-		apt-get update
-		dpkg --add-architecture i386
-		apt-cache search ia32-libs
-		apt-get install openjdk-7-jdk:i386
+4.	Upload the template file in any one of the ESXi hosts or servers.
 
-**Installation**
+5.	Copy the executable file `ovsvm` to the server which has connectivity to vCenter. The inputs for executable file are stored in `ovs_vapp.ini` file. Update the file as per your environment, for example: 
 
-Verify if the CMC installer file has executable permission otherwise execute the following command:
-
-		chmod +x CMC_11.5.01.0023.0_Installer_Linux.bin
-
-
-1. Click the CMC installer.
-
-2. Follow the steps in the installation wizard to complete the installation.
-
-3. To start the CMC:<br>
- From the directory in which the files are installed, click the **HP Store Virtual Centralized Management Console** to launch CMC.  
-</br>  
-
-###Creating a cluster{#create-cluster}
-
-We recommend creation of a RAID 10 cluster which comprises three deployed VSAs.  For deploying VSA, refer to section on [Deployment of VSA](#deployment-vsa). Use the following three step process:
-
-**Note: For detailed instructions, refer to CMC Online Help.**
-
-1. Use the **Find Systems** opion of the CMC to discover VSAs.
-
-2. Create a Management Group with three systems.
-
-3. Create a cluster
-
-Your CMC displays the cluster like the figure below:
-
-<img src="media/storevirtual-cluster-network-diagram2.png"/>
+		[vmware]
+		vcenter_ip=15.146.194.180
+		vcenter_username=Administrator
+		vcenter_password=12iso*help
+		datacenters=TestDataCenter
+		clusters=ComputeCluster1,ComputeCluster2
+		#Keep it empty if you don’t want to skip installation on particular host
+		skip_hosts=15.146.194.181, 15.146.194.182
+		[network]
+		domain=asiapacific.cpqcorp.net
+		#Carefully maintain the dictionary structure
+		nic_map={'nic1':{'vmxnet3':'dvPortGroupVM1'}, 'nic2':{'vmxnet3':'dvDataPortGroup1'}, 'nic3':{'vmxnet3':'dvMgmtPortGroup1'}}
+		
+		[template]
+		#Carefully provide the name of the template that you have just created
+		template_name=CloudOSOVSvAppVM
+		ovs_vm_name=ovsvapp
+		
+		[logger]
+		log_level=DEBUG
+		#Make sure the directory exists
+		log_file=/var/logs/ovsvapp_vm.log
 
 
+7. Execute the following command:
 
-###Enabling HP StoreVirtual configuration in the overcloud{#enable-hp-storevirtual-configuration}
+    	paython invoke_ovs_vapp.py 
 
-To enable HP Storevirtual configuration in the Overcloud, modify the `tripleo/tripleo-incubator/scripts/configure_installer.sh` file in
-the seed cloud to update the VSA cluster information. A sample of the configuration file is given below. You need to change the configuration based on your specifications:
 
-		export ENABLE_VSA="True"
-		export VSA_API_URL="https://XXX.XXX.XXX.XXX:8081/lhos"
-		export VSA_USERNAME="<user name>"
-		export VSA_PASSWORD="<password>"
-		export VSA_NAME="<cluster name>"
-		export VSA_ISCSI_CHAP_ENABLED="<False>"
-		export VSA_DEBUG="False"
+8.	Once the VMs are deployed, they need to be updated to have required OVS bridges and connections created. 
 
-where:
+	a. Login to the OVSvAPP VM with the username **root** and password **hpvapp**.
+ 
+    b. Edit `/etc/neutron/plugins/hp/hpvcn_neutron_agent.ini`:
 
-* **ENABLE_VSA**: Mark this field as *True* to enable HP StoreVirtual VSA configuration. By default the value is False.
+		 [DEFAULT]
+		vmwareapi_host_ip = <vCenter_host_ip>
+		vmwareapi_host_username = <vCenter_username>
+		vmwareapi_host_password = <vCenter_password>
+		vmwareapi_retry_count = 2
+		vmwareapi_wsdl_loc = https://<vCenter_host_ip>/sdk/vimService.wsdl
+		cluster_dvs_mapping =  DatacenterName/host/ClusterName:VdsName
+		esx_hostname= <esx host_name or ip_address>
+		
+		#OVS settings
+		security_bridge=br-sec
+		integration_bridge=br-int
+		bridge_mappings=physnet1:<bridge_interface>
+		
+		# example
+		# Inventory path of cluster : vDS name
+		# cluster_dvs_mapping = DatacenterName/host/ClusterName:Vds-Name
+		
+		[SECURITYGROUP]
+		firewall_driver=neutron.agent.linux.ovs_firewall.OVSFirewallDriver
 
-* **VSA_API_URL**: This is the URL to access your VSA cluster. Please enter your IP address in this field.
+    c.	 Execute the following command as root to create the required bridges: 
 
-* **VSA_USERNAME**: Enter the cluster user name.
+      i. For creating integration bridge (br-int):
 
-* **VSA_PASSWORD**: Enter the cluster password.
+    	ovs-vsctl add-br br-int
 
-* **VSA_NAME**: Enter the name of the cluster.
+     ii. Create the data interface bridge on **eth2**. Data interface is the Ethernet device of this VM which connects to **Data Port Group**. Usually, **eth2** is the data interface in OVSvAPP VM. Verify the data interface for your environment. 
 
-* **VSA_ISCSI_CHAP_ENABLED**: Mark this field as *True* if you want to enable CHAP authentication.
+	    ovs-vsctl add-br br-eth2
+	    ovs-vsctl add-port br-eth2 eth2
 
-* **VSA_DEBUG**: By default the value is *False*, to enable debugging, change it to *True*.
+	iii. Create the security bridge on **eth3** assuming **eth3** interface is connected to **Trunk Port Group**.
 
+	    ovs-vsctl add-br br-sec
+	    ovs-vsctl add-port br-sec eth3
+
+	iv.	Assign an IP address to the interface connecting to **Management Port Group**. This IP address must be from the management VLAN subnet of overcloud. Administrator needs to keep a separate pool of IP address from Management VLAN subnet for this purpose.
+
+**Note**
+
+* OVSvAPP VMs are created one-by-one on each ESXi host. 
+* The IP Address assignment to OVSvAPP VM is manual. The Administrator needs to keep a separate pool of IP addresses from management VLAN to be assigned to these VMs. These IP addresses must be assigned to the Ethernet interfaces connecting to **Management Port Group**.
+* Provide the DV ports in the `ovs.ini`. Make sure the dv ports are attached with the proper hosts
+
+
+--->
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 ----
 ####OpenStack trademark attribution
 *The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*
+
