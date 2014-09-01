@@ -26,7 +26,7 @@ HP Helion OpenStack Sirius Service is a REST based web service for storage devic
 
 Cloud Administrator is the primary user and uses the service to manage storage devices and configure storage service running in Overcloud.
 
-All the devices managed by Sirius are consumed by the Overcloud to realize a cloud storage offered to cloud users. The service runs in the Undercloud and closely interacts with ThunderChicken i.e. EE Installer Service to realize all its operation.
+All the devices managed by Sirius are consumed by the Overcloud to realize a cloud storage offered to cloud users. <!--The service runs in the Undercloud and closely interacts with ThunderChicken i.e. EE Installer Service to realize all its operation. -->
 
 
 ## Working with the Sirius Service ##
