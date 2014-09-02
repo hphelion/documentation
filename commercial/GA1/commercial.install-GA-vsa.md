@@ -436,6 +436,10 @@ where:
 
 * **VSA_DEBUG**: By default the value is *False*, to enable debugging, change it to *True*.
 
+## Next step
+
+Configure HP 3PAR StoreServ, see [HP Helion OpenStack Commercial: HP StoreServ (3PAR) Support](/helion/openstack/install/3par/).
+
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

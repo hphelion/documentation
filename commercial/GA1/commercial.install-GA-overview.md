@@ -26,7 +26,7 @@ This page provides an overview of the installation process and requirements for 
 
 * 1 seed host (installer system)
 * 1 undercloud server
-* 3 overcloud controllers
+* 3 overcloud controllers (named OCC1, OCC2, and OCC MGMT)
 * 2 overcloud Swift nodes
 * At leat 1 block storage node 
 * At least 1 overcloud Compute node 
@@ -160,7 +160,9 @@ There are a few things you should be aware of before you begin your HP Helion Op
 
     4. Ensure there are no Heat resources in an Error state, and then delete any stale or corrupted Heat-related stacks.
 
+## Next Step
 
+Prepare your environment for the installation, see [HP Helion OpenStack&#174; Installation: Prerequisites](/helion/openstack/ga/install/prereqs/).
 
 ## For more information
 
@@ -170,11 +172,6 @@ For more information on HP Helion OpenStack Community, see:
 * [Support matrix](/helion/openstack/ga/support-matrix/) 
 * [FAQ](/helion/openstack/ga/faq/) 
 * [Release notes](/helion/openstack/ga/release-notes/) 
-
-
-## Next Step
-
-
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
