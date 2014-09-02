@@ -20,16 +20,8 @@ PageRefresh();
 
 <p style="font-size: small;"> <a href="/helion/openstack/support-matrix/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/install/prereqs/">NEXT &#9654;</a> </p>
 
-# HP Helion OpenStack&#174; Installation and Configuration
-This page provides an overview of the installation process and requirements for  HP Helion OpenStack &mdash; a baremetal multi-node deployment consisting of a minimum of 9 baremetal servers, to which you can add **up to 100 Compute nodes**:
-
-
-* 1 seed host (installer system)
-* 1 undercloud server
-* 3 overcloud controllers
-* 2 overcloud Swift nodes
-* At leat 1 block storage node 
-* At least 1 overcloud Compute node 
+# HP Helion OpenStack&#174; Installation Overview
+This page provides an overview of the installation process
 
 HP Helion OpenStack uses three linked installation phases to deploy a complete OpenStack cloud. <a href ="https://wiki.openstack.org/wiki/TripleO">TripleO</a> simulates the deployment of OpenStack by creating and configuring baremetal servers to successfully run a cloud deployment. 
 
@@ -42,30 +34,52 @@ HP Helion OpenStack uses three linked installation phases to deploy a complete O
 This rest of this page provides you with the following installation information:
 
 * [Installation options](#installation-options)
-* [For more information](#for-more-information)
+* [About the installation process](#install-about)
+* [Installation issues and troubleshooting](#install_issues)
+* [Next Step](#next)
+* [For more information](#info)
 
-### Installation options
+### Installation options {#installation-options}
 With HP Helion OpenStack, you have two baremetal installation options depending on your system configuration.
 
 * **KVM hypervisor with HP StoreVirtual VSA support**
 
-    HP Helion OpenStack supports KVM hypervisor. With our KVM integration, you  can provision and manage an overcloud KVM cluster
+	HP Helion OpenStack supports KVM (Kernel-based Virtual Machine). With our KVM integration, you  can provision and manage an overcloud KVM cluster.
 
-    HP StoreVirtual VSA allows you to consolidate multiple storage nodes into pools of storage. The available capacity and performance is aggregated and made available to every volume in the cluster. 
+	[HP StoreVirtual VSA](http://www8.hp.com/us/en/products/data-storage/storevirtual-vsa.html) allows you to consolidate multiple storage nodes into pools of storage. The available capacity and performance is aggregated and made available to every volume in the cluster. 
 
-    [Learn how to to install and configure with a KVM hypervisor](/helion/openstack/install/kvm). 
+	[Learn how to to install and configure with a KVM hypervisor](/helion/openstack/install/kvm). 
 
 * **ESX hypervisor with HP Virtual Cloud Networking (VCN) application support**
 
     HP Helion OpenStack supports VMWare ESX hypervisor. With our ESX integration, you can provision and manage an overcloud ESX cluster.
 
-    HP Virtual Cloud Networking (VCN) application enables you to build a robust, multi-tenant networking infrastructure. Once deployed, the Open vSwitch vApp template enables networking between the tenant VMs provisioned on your ESX compute nodes.
+    HP Virtual Cloud Networking (VCN) application enables you to build a robust, multi-tenant networking infrastructure. Once deployed, the Open vSwitch vApp (OVSvApp) template enables networking between the tenant VMs provisioned on your ESX compute nodes.
 
     [Learn how to to install and configure with an ESX hypervisor](/helion/openstack/install/esx/).  
 
-After installing HP Helion OpenStack, you have the option to install HP Helion OpenStack DNS as a service (DNSaaS) support. No matter what hypervisor you use, our managed DNS service, based on the Openstack Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.
+After installing HP Helion OpenStack, you have the option to install HP Helion OpenStack DNS as a service (DNSaaS) support. Our managed DNS service, based on the Openstack Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.
 
-## About the installation process ## {#install-notes}
+## About the installation process ## {#install-about}
+
+The high-level process for installing HP Helion OpenStack involves the following:
+
+1. Review the information in the [Support Matrix](/helion/openstack/ga/support-matrix/) and [Technical Overview](/helion/openstack/technical-overview/) for information on the hardware and software requirements and details.
+
+2. Perform the necessary [Prerequisites](/helion/openstack/ga/install/prereqs)
+
+3. Install onto a KVM or ESX hypervisor:
+
+	
+	- [Install onto a KVM hypervisor](/helion/openstack/ga/install/kvm/).
+
+		Then, [configure HP StoreVirtual VSA for Block Storage](/helion/openstack/ga/install/vsa/) or [configure HP 3PAR StoreServ Storage](/helion/openstack/install/3par/). One of these two add-ons is required for the [Volume Operations](/helion/openstack/ga/services/volume/overview/) service.
+
+	- [Install onto an ESX hypervisor](/helion/openstack/ga/install/esx/).
+
+		Then, [deploy the compute proxy on the ESX hosts](/helion/openstack/ga/install/esx/proxy/) and [deploy OVSvApp for HP Virtual Cloud Networking](/helion/openstack/ga/install/ovsvapp/).
+
+4. Optionally, [install and configure DNSaaS support](/helion/openstack/ga/install/dnsaas/).
 
 There are a few things you should be aware of before you begin your HP Helion OpenStack baremetal installation.
 
@@ -79,7 +93,8 @@ There are a few things you should be aware of before you begin your HP Helion Op
 
     `/root/tripleo/tripleo_*_passwords`
 
-## Installation issues and troubleshooting 
+## Installation issues and troubleshooting {install_issues}
+
 * When installing on HP ProLiant SL390s and HP ProLiant BL490d systems, the following error has occasionally occurred:
 
     `Fatal PCI Express Device Error PCI Slot ?
@@ -99,22 +114,23 @@ There are a few things you should be aware of before you begin your HP Helion Op
 
     The system should now boot normally.
 
-* If the overcloud controller is rebooted (power issue, hardware upgrade, etc.), OpenStack compute tools such as `nova-list` report that the VMs are in an ERROR state, rendering the overcloud unusable. To restore the overcloud to an operational state, follow the steps below:
-  1. As user root on the overcloud controller you must:
+* If the overcloud controller is rebooted (due to a power issue, hardware upgrade, and so forth), OpenStack compute tools such as `nova-list` might report that the VMs are in an ERROR state, rendering the overcloud unusable. To restore the overcloud to an operational state, follow the steps below:
+ 
+  1. A user `root` on the overcloud controller must:
   
-        A. Run the os-refresh-config scripts:
+        A. Run the `os-refresh-config` scripts:
 
             # os-refresh-config
 
-        B. Restart the mysql service:
+        B. Restart the `mysql` service:
 
             # service mysql restart
 
-        C. Re-run the os-refresh-config scripts:
+        C. Re-run the `os-refresh-config` scripts:
 
             # os-refresh-config
 
-        D. Restart all neutron services:
+        D. Restart all Networking Operations (Neutron) services:
 
             # service neutron-dhcp-agent restart
             # service neutron-l3-agent restart
@@ -130,7 +146,7 @@ There are a few things you should be aware of before you begin your HP Helion Op
             $ sudo service nova-conductor restart
 
 
-* The installer uses IPMI commands to reset nodes and change their power status. Some systems change to a state where the "Server Power" status as reported by the iLO is stuck in the "RESET". If this occurs, you must physically disconnect the power from the server for 10 seconds. If the problem persists after that, contact HP Support as there might be a defective component in the system.
+* The installer uses IPMI commands to reset nodes and change their power status. Some systems change to a state where the `Server Power` status as reported by the iLO is stuck in `RESET`. If this occurs, you must physically disconnect the power from the server for 10 seconds. If the problem persists after that, contact HP Support as there might be a defective component in the system.
 
 * On the system on which the installer is run, the seed VM's networking is bridged onto the external LAN. If you remove HP Helion OpenStack, the network bridge persists. To revert the network configuration to its pre-installation state, run the following commands as user root: 
 
@@ -160,9 +176,11 @@ There are a few things you should be aware of before you begin your HP Helion Op
 
     4. Ensure there are no Heat resources in an Error state, and then delete any stale or corrupted Heat-related stacks.
 
+## Next Step ## {#next}
 
+Prepare your environment for the installation, see [HP Helion OpenStack&#174; Installation: Prerequisites](/helion/openstack/ga/install/prereqs/).
 
-## For more information
+## For more information ## {#info}
 
 For more information on HP Helion OpenStack Community, see:
 
@@ -170,11 +188,6 @@ For more information on HP Helion OpenStack Community, see:
 * [Support matrix](/helion/openstack/ga/support-matrix/) 
 * [FAQ](/helion/openstack/ga/faq/) 
 * [Release notes](/helion/openstack/ga/release-notes/) 
-
-
-## Next Step
-
-
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
