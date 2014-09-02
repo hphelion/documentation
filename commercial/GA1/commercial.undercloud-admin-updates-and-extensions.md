@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack: Beta Installation and Configuration"
-permalink: /helion/openstack/undercloud/admin/updates-and-extension
+permalink: /helion/openstack/undercloud/admin/updates-and-extension/
 product: commercial
 
 ---

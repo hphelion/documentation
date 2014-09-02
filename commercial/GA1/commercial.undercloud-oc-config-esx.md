@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack: Working with ESX Clusters"
-permalink: /helion/openstack/undercloud/oc/config/esx
+permalink: /helion/openstack/undercloud/oc/config/esx/
 product: commercial
 
 ---
