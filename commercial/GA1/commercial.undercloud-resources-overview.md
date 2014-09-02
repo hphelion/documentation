@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Installation and Configuration"
-permalink: /helion/openstack/undercloud/horizon/overview
+title: "HP Helion OpenStack&#174; Manage Resources"
+permalink: /helion/openstack/undercloud/manage/resources/overview
 product: commercial
 
 ---
@@ -20,19 +20,16 @@ PageRefresh();
 
 <p style="font-size: small;"> <a href="/helion/openstack/support-matrix-beta/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/prereqs/">NEXT &#9654;</a> </p>
 
-# HP Helion OpenStack&#174; Undercloud Horizon Overview
-Once you complete the Undercloud and Overcloud installation, you can access the Undercloud Horizon Dashboard. It is the interface which allows you to manage the Undercloud. The Horizon Dashboard displays with options in the left panel. The name of the user logged in, is displayed on the top bar along with a drop-down menu. By default, the dashboard displays the Overview page.
+# Manage Resources
+The Resources Tab is the part of Horizon Undercloud Dashboard. It allows you to define resources for your cloud. The ResourcesTab displays two main options under it- **Compute** and **Storage**. You can define the configurations for the compute as well as the storage based on your requirements using this tab. 
 
-The left panel displays the following tabs:
+## Working with the Resources Tab ##
+This option allows you to define the required configurations for your cloud. The following options are displayed under the Resources Tab:
 
-* **Admin**
 
-* **Project**
+* **Compute**
 
-* **Resources**
-
-* **Overcloud**
- 
+* **Storage**
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

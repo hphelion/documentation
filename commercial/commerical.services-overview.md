@@ -91,6 +91,9 @@ See [Overview of the Volume Operations Service](/helion/openstack/services/volum
 
 See [Overview of Sherpa Service](/helion/openstack/services/sherpa/overview).
 
+**Sirius**. HP Helion OpenStack Sirius service assists the Cloud Administrator in the configuration of storage services (like Cinder, Swift) running in the Overcloud with various storage devices.
+
+See [Overview of Sirius Service](/helion/openstack/services/sirius/overview/)
 ## Dashboard Services ## {#Dashboard}
 
 The following services are used by HP Helion OpenStack to create dashboards.
