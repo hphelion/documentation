@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Edition: Manage Storage"
-permalink: /helion/openstack/undercloud/manage/resources/storage
+permalink: /helion/openstack/undercloud/manage/resources/storage/
 product: commercial
 
 ---
