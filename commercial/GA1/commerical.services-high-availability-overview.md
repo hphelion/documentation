@@ -2,7 +2,7 @@
 layout: default
 title: "HP Helion OpenStack&#174; Orchestration High Availability Service Overview"
 permalink: /helion/openstack/ga/services/highavailability/overview/
-product: commercial
+product: commercial.ga
 
 ---
 <!--UNDER REVISION-->

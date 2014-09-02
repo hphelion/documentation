@@ -2,7 +2,7 @@
 layout: default
 title: "HP Helion OpenStack&#174; Volume Operations Service Overview"
 permalink: /helion/openstack/ga/services/volume/overview/
-product: commercial
+product: commercial.ga
 
 ---
 <!--UNDER REVISION-->
@@ -28,7 +28,7 @@ Based on OpenStack Cinder (Block Storage), the HP Helion OpenStack Volume Operat
 
 Once created, you can easily disconnect block storage volumes from one instance and attach them to another. You can also create snapshots to easily copy a volume before making significant changes to it. Custom volumes ranging in sizes from 1 GB to 2 TB can be created using a variety of file system types.
 
-**Note:** HP Helion Openstack beta edition uses StoreVirtual as a backend to Cinder to realize horizontally scalable block storage. StoreVirtual is unique in the sense that storage controller runs as a virtual compliance and helps realize Software Defined Block Storage. To use StoreVirtual you must use the KVM hypervisor. 
+**Note:** HP Helion Openstack edition uses StoreVirtual as a backend to Cinder to realize horizontally scalable block storage. StoreVirtual is unique in the sense that storage controller runs as a virtual compliance and helps realize Software Defined Block Storage. To use StoreVirtual you must use the KVM hypervisor. 
 
 ## Working with the Volume Operations Service ##
 
@@ -36,7 +36,7 @@ To [perform tasks using the Volume Operations service](#howto), you can use the 
 
 ### Using the dashboards {#UI}
 
-You can use the [HP Helion OpenStack Dashboard](/helion/openstack/dashboard/how-works/) to work with the Volume Operations service.
+You can use the [HP Helion OpenStack Dashboard](/helion/openstack/ga/dashboard/how-works/) to work with the Volume Operations service.
 
 ###Using the API ### {#API}
  

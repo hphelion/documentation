@@ -2,7 +2,7 @@
 layout: default
 title: "HP Helion OpenStack&#174; Installation and Configuration"
 permalink: /helion/openstack/ga/install/overview/
-product: commercial
+product: commercial.ga
 
 ---
 <!--UNDER REVISION-->
@@ -18,7 +18,7 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> <a href="/helion/openstack/support-matrix-beta/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/prereqs/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/helion/openstack/support-matrix/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/install/prereqs/">NEXT &#9654;</a> </p>
 
 # HP Helion OpenStack&#174; Installation and Configuration
 This page provides an overview of the installation process and requirements for  HP Helion OpenStack &mdash; a baremetal multi-node deployment consisting of a minimum of 9 baremetal servers, to which you can add **up to 100 Compute nodes**:
@@ -26,7 +26,7 @@ This page provides an overview of the installation process and requirements for 
 
 * 1 seed host (installer system)
 * 1 undercloud server
-* 3 overcloud controllers
+* 3 overcloud controllers (named OCC1, OCC2, and OCC MGMT)
 * 2 overcloud Swift nodes
 * At leat 1 block storage node 
 * At least 1 overcloud Compute node 
@@ -35,32 +35,14 @@ HP Helion OpenStack uses three linked installation phases to deploy a complete O
 
 * Seed: The seed VM is started as a VM from a specific seed VM image. It contains a number of self-contained OpenStack components that are used to deploy the undercloud. The seed deploys the undercloud by using Ironic baremetal driver to deploy a specific undercloud machine image.
 
-* Undercloud: In a typical HP Helion OpenStack beta deployment, the undercloud is a baremetal server. The undercloud is a complete OpenStack installation, which is then used to deploy the overcloud.
+* Undercloud: In a typical HP Helion OpenStack deployment, the undercloud is a baremetal server. The undercloud is a complete OpenStack installation, which is then used to deploy the overcloud.
 
-* Overcloud: The overcloud is the end-user OpenStack cloud. In a typical HP Helion OpenStack beta deployment, the overcloud comprises several baremetal servers.
-
-
-## [Installing &amp; configuring your cloud](/helion/openstack/install-beta-overview/)
-Before you start your installation, we suggest you review these pages to understand requirements, pre-installation tasks, supported deployment scenarios, and required installations:
-
-* [Support matrix](/helion/openstack/support-matrix-beta/) 
-* [Before you begin](/helion/openstack/install-beta/prereqs/) 
-* [Installing and configuring with a KVM hypervisor](/helion/openstack/install-beta/kvm)
-* [Configuring HP StoreVirtual VSA for Block Storage](/helion/openstack/install-beta/vsa/)
-* [Configuring HP 3Par for Block Storage](/helion/openstack/install-beta/vsa/) NEW DOC PER PRANOY!!
-* [Installing and configuring with an ESX hypervisor](/helion/openstack/install-beta/esx/)
-* Deploying and configuring Compute Proxy on ESX hosts  NEW DOC PER PRANOY!!
-* [Deploying and configuring OVSvApp for HP Virtual Cloud Networking (VCN) on ESX hosts](/helion/openstack/install-beta/ovsvapp/)
-* [Installing and configuring DNSaaS support](/helion/openstack/install-beta/dnsaas/)
+* Overcloud: The overcloud is the end-user OpenStack cloud. In a typical HP Helion OpenStack deployment, the overcloud comprises several baremetal servers.
 
 This rest of this page provides you with the following installation information:
 
 * [Installation options](#installation-options)
-* [Installation requirements](#installation-requirements)
-   * [Hardware configuration](#hardware-configuration)
-   * [Network configuration](#network-configuration)
 * [For more information](#for-more-information)
-
 
 ### Installation options
 With HP Helion OpenStack, you have two baremetal installation options depending on your system configuration.
@@ -71,7 +53,7 @@ With HP Helion OpenStack, you have two baremetal installation options depending 
 
     HP StoreVirtual VSA allows you to consolidate multiple storage nodes into pools of storage. The available capacity and performance is aggregated and made available to every volume in the cluster. 
 
-    [Learn how to to install and configure with a KVM hypervisor](/helion/openstack/install-beta/kvm). 
+    [Learn how to to install and configure with a KVM hypervisor](/helion/openstack/install/kvm). 
 
 * **ESX hypervisor with HP Virtual Cloud Networking (VCN) application support**
 
@@ -79,81 +61,117 @@ With HP Helion OpenStack, you have two baremetal installation options depending 
 
     HP Virtual Cloud Networking (VCN) application enables you to build a robust, multi-tenant networking infrastructure. Once deployed, the Open vSwitch vApp template enables networking between the tenant VMs provisioned on your ESX compute nodes.
 
-    [Learn how to to install and configure with an ESX hypervisor](/helion/openstack/install-beta/esx/).  
+    [Learn how to to install and configure with an ESX hypervisor](/helion/openstack/install/esx/).  
 
 After installing HP Helion OpenStack, you have the option to install HP Helion OpenStack DNS as a service (DNSaaS) support. No matter what hypervisor you use, our managed DNS service, based on the Openstack Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.
 
-[Learn how to to install and configure DNSaaS support](/helion/openstack/install-beta/dnsaas/).  
+## About the installation process ## {#install-notes}
+
+There are a few things you should be aware of before you begin your HP Helion OpenStack baremetal installation.
+
+* Loading images is slow, so be patient.
+
+* The seed must remain booted while the undercloud and overcloud are up.
+
+* The `stackrc` and `tripleo_*_passwords` files contain credentials for the undercloud and the overcloud; you should ensure that they are securely stored separately from the seed.
+ 
+    `/root/stackrc`
+
+    `/root/tripleo/tripleo_*_passwords`
+
+## Installation issues and troubleshooting 
+* When installing on HP ProLiant SL390s and HP ProLiant BL490d systems, the following error has occasionally occurred:
+
+    `Fatal PCI Express Device Error PCI Slot ?
+     B00/D00/F00`
+
+     If you get this error, reset the system that experienced the error:
+
+    1. Connect to the iLO using Internet Explorer:
+        `https://<iLO IP address>`
+    2. Navigate to Information / Diagnostics.
+    3. Reset iLO.
+    4. Log back into the iLO after 30 seconds.
+    5. Navigate to Remote Console / Remote Console.
+    6. Open the integrated remote console (.NET).
+    7. Click Power switch / Press and Hold.
+    8. Click Power switch / Momentary Press, and wait for the system to restart.
+
+    The system should now boot normally.
+
+* If the overcloud controller is rebooted (power issue, hardware upgrade, etc.), OpenStack compute tools such as `nova-list` report that the VMs are in an ERROR state, rendering the overcloud unusable. To restore the overcloud to an operational state, follow the steps below:
+  1. As user root on the overcloud controller you must:
+  
+        A. Run the os-refresh-config scripts:
+
+            # os-refresh-config
+
+        B. Restart the mysql service:
+
+            # service mysql restart
+
+        C. Re-run the os-refresh-config scripts:
+
+            # os-refresh-config
+
+        D. Restart all neutron services:
+
+            # service neutron-dhcp-agent restart
+            # service neutron-l3-agent restart
+            # service neutron-metadata-agent restart
+            # service neutron-openvswitch-agent restart
+            # service neutron-server restart
+
+  2. On each overcloud node, restart the neutron and nova services:
+  
+            $ sudo service neutron-openvswitch-agent restart
+            $ sudo service nova-compute restart
+            $ sudo service nova-scheduler restart
+            $ sudo service nova-conductor restart
 
 
+* The installer uses IPMI commands to reset nodes and change their power status. Some systems change to a state where the "Server Power" status as reported by the iLO is stuck in the "RESET". If this occurs, you must physically disconnect the power from the server for 10 seconds. If the problem persists after that, contact HP Support as there might be a defective component in the system.
 
-### Installation requirements
-These requirements pertain to both the KVM and ESX hypervisor baremetal installations. 
+* On the system on which the installer is run, the seed VM's networking is bridged onto the external LAN. If you remove HP Helion OpenStack, the network bridge persists. To revert the network configuration to its pre-installation state, run the following commands as user root: 
 
-* [Hardware configuration](#hardware-configuration)
-* [Network configuration](#network-configuration)
+        # ip addr add 192.168.185.131/16 dev eth0 scope global
+        # ip addr del 192.168.185.131/16 dev brbm
+        # ovs-vsctl del-port NIC
 
-For the performance and stability of the HP Helion OpenStack environment, it is very important to meet the requirements and conform to the minimum recommendations. See the [Support matrix](/helion/openstack/support-matrix-beta) for additional information.
+        where
+        * eth0 is the external interface
+        * 192.168.185.131 is the IP address on the external interface - you should replace this with your own IP address.
+        * The baremetal bridge is always called 'brbm'
 
-#### Hardware configuration
+* Before you install HP Helion Openstack's DNSaaS or if you want to use Heat with HP Helion OpenStack, you **must** modify the /etc/heat/heat.conf file on the overcloud controller as follows.
 
-To install a HP Helion OpenStack baremetal multi-node configuration, you must have the following hardware configuration.
+    **Important**: The installation of HP Helion OpenStack's DNSaaS fails if you do not make these modifications.
 
-* At least 9 and up to 100 baremetal systems with the following configuration:
-
-    * A minimum of 32 GB of physical memory
-    * A minimum of 2 TB of disk space
-    * A minimum of 1 x 10 GB NIC with PXE support
-
-      * For systems with multiple NICs, the NICs must not be connected to the same Layer 2 network or VLAN.
-
-    * Capable of hosting VMs
-    * The boot order configured with Network/PXE boot as the first option
-    * The BIOS configured: 
-     
-      * To the correct date and time
-      * With only one network interface enabled for PXE/network boot and any additional interfaces should have PXE/network boot disabled
-      * To stay powered off in the event of being shutdown rather than automatically restarting
-
-    * Running the latest firmware recommended by the system vendor for all system components, including the BIOS, BMC firmware, disk controller firmware, drive firmware, network adapter firmware, and so on
-
-
-
-* An installer system to run the baremetal install and host the seed VM with the following configuration:
-
-    * A minimum of 8 GB of physical memory
-    * A minimum of 100 GB of disk space
-    * Virtualization enabled 
-    * Ubuntu 14.04 installed
-
+    1. Make sure the IP address in the following settings reflects the IP address of the overcloud controller, for example:
     
-* **Important** 
-    * **Installer system** &mdash; This system might be reconfigured during the installation process so a dedicated system is recommended. Reconfiguration might include installing additional software packages, and changes to the network or visualization configuration.
-    
-    * **Installer package** &mdash; The installer currently uses only the first available disk; servers with RAID controllers need to be pre-configured to present their storage as a single logical disk. RAID across multiple disks is strongly recommended for both performance and resilience.
+            heat_metadata_server_url = http://192.0.202.2:8000
+            heat_waitcondition_server_url = http://192.0.202.2:8000/v1/waitcondition
+            heat_watch_server_url = http://192.0.202.2:8003
 
-    * **Physical servers** &mdash; When installing HP Helion OpenStack, it is your responsibility to track the physical location (slot number and rack) and associated identifiers (such as MAC addresses) for each physical server to aid in future hardware maintenance. This is necessary because when HP Helion OpenStack is installed on physical servers, the TripleO automation only tracks MAC network addresses of servers; the physical locations of servers are not tracked. This means there is no automated way to inform a service technician which slot or rack to go to when service is needed on a particular physical server. 
+        **Note**: You must have admin ssh access to the overcloud controller.
 
-#### Network configuration
+    2. Save the file.
+    3. Restart the Heat-related services &ndash; heat-api, heat-api-cfn, heat-api-cloudwatch, and heat-engine.
 
-To ensure a successful installation, you must also satisfy these network configuration requirements:
+    4. Ensure there are no Heat resources in an Error state, and then delete any stale or corrupted Heat-related stacks.
 
-* The seed VM, the baremetal systems and the IPMI controller for all systems must be on the same network
+## Next Step
 
-* Ensure network interfaces that are not used for PXE boot are disabled from BIOS to prevent PXE boot attempts from those devices.
-
-* If you have other DHCP servers on the same network as your system, you must ensure that the DHCP server does not hand out IP addresses to your physical nodes as they PXE boot.
-
-* The network interface intended as the bridge interface should be configured and working before running the installer. The installer creates a network bridge on the system running the installer, attaching the bridge interface to the network bridge. The installer uses the IP address of the bridge interface for the network bridge.
-
+Prepare your environment for the installation, see [HP Helion OpenStack&#174; Installation: Prerequisites](/helion/openstack/ga/install/prereqs/).
 
 ## For more information
+
 For more information on HP Helion OpenStack Community, see:
 
-* [Before you begin](/helion/openstack/install-beta/prereqs/) 
-* [Support matrix](/helion/openstack/support-matrix-beta/) 
-* [FAQ](/helion/openstack/faq/) 
-* [Release notes](/helion/openstack/release-notes/) 
+* [Before you begin](/helion/openstack/ga/install/prereqs/) 
+* [Support matrix](/helion/openstack/ga/support-matrix/) 
+* [FAQ](/helion/openstack/ga/faq/) 
+* [Release notes](/helion/openstack/ga/release-notes/) 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

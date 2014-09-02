@@ -2,7 +2,7 @@
 layout: default
 title: "HP Helion OpenStack&#174; Log In"
 permalink: /helion/openstack/ga/dashboard/login/
-product: commercial
+product: commercial.ga
 
 ---
 <!--UNDER REVISION-->

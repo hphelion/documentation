@@ -2,7 +2,7 @@
 layout: default
 title: "HP Helion OpenStack&#174; Site Index"
 permalink: /helion/openstack/ga/siteindex/
-product: commercial
+product: commercial.ga
 
 ---
 <!--UNDER REVISION-->
@@ -26,20 +26,21 @@ PageRefresh();
 
 #### [Getting started with HP Helion OpenStack](/helion/openstack/)
 
-* [Support matrix](/helion/openstack/support-matrix-beta/) 
-* [FAQs](/helion/openstack/faq/)  
-* [Technical overview](/helion/openstack/technical-overview/)
-* [Services overview](/helion/openstack/services/overview/)   
-* [Glossary](/helion/openstack/glossary/)
+* [Support matrix](/helion/openstack/support-matrix-
+* /) 
+* [FAQs](/helion/openstack/ga/faq/)  
+* [Technical overview](/helion/openstack/ga/technical-overview/)
+* [Services overview](/helion/openstack/ga/services/overview/)   
+* [Glossary](/helion/openstack/ga/glossary/)
 
 #### Installing &amp; Configuring Your Cloud
-* [Overview](/helion/openstack/install-beta-overview/) 
-* [Before you begin](/helion/openstack/install-beta/prereqs/) 
-* [Installing and configuring with a KVM hypervisor](/helion/openstack/install-beta/kvm)
-* [Installing HP StoreVirtual VSA support](/helion/openstack/install-beta/vsa/)
-* [Installing and configuring with an ESX hypervisor](/helion/openstack/install-beta/esx/)
-* [Deploying and configuring OVSvApp for HP Virtual Cloud Networking (VCN) on ESX hosts](/helion/openstack/install-beta/ovsvapp/)
-* [Installing and configuring DNSaaS support](/helion/openstack/install-beta/dnsaas/)
+* [Overview](/helion/openstack/ga/install-overview/) 
+* [Before you begin](/helion/openstack/ga/install/prereqs/) 
+* [Installing and configuring with a KVM hypervisor](/helion/openstack/ga/install/kvm)
+* [Installing HP StoreVirtual VSA support](/helion/openstack/ga/install/vsa/)
+* [Installing and configuring with an ESX hypervisor](/helion/ga/openstack/install/esx/)
+* [Deploying and configuring OVSvApp for HP Virtual Cloud Networking (VCN) on ESX hosts](/helion/openstack/ga/install/ovsvapp/)
+* [Installing and configuring DNSaaS support](/helion/openstack/ga/install/dnsaas/)
 
 #### [Related documentation](/helion/openstack/related-links)
  
@@ -50,9 +51,9 @@ PageRefresh();
 * [OpenStack Administrator Guide for Networking](http://docs.openstack.org/admin-guide-cloud/content/ch_networking.html)
 * [OpenStack Operations Guide](http://docs.openstack.org/trunk/openstack-ops/content/index.html)
 
-#### [Open Source and Third-Party Software License Agreements](/helion/openstack/3rd-party-license-agreements/)
+#### [Open Source and Third-Party Software License Agreements](/helion/openstack/ga/3rd-party-license-agreements/)
 
-#### [Preview Agreement](/helion/openstack/eula/)
+#### [Preview Agreement](/helion/openstack/ga/eula/)
  
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
  

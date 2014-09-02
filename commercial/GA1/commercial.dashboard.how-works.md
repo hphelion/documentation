@@ -2,7 +2,7 @@
 layout: default
 title: "How to use the HP Helion OpenStack&#174; Dashboards"
 permalink: /helion/openstack/ga/dashboard/how-works/
-product: commercial
+product: commercial.ga
 
 ---
 <!--UNDER REVISION-->
@@ -36,9 +36,9 @@ The interface, based on OpenStack Horizon, is grouped into dashboards, including
 Across the top are a menu to switch between projects and a menu where you can access user settings.
 
 <!--
-How you interact with your network environment depends upon your user type, either an [administrative user (admin)](/helion/openstack/dashboard/admin/) or a [non-administrative user (user)](/helion/openstack/dashboard/users/).
+How you interact with your network environment depends upon your user type, either an [administrative user (admin)](/helion/openstack/ga/dashboard/admin/) or a [non-administrative user (user)](/helion/openstack/ga/dashboard/users/).
 -->
-To access the dashboard, [enter the dashboard URL in a supported browser and log in](/helion/openstack/dashboard/login/). 
+To access the dashboard, [enter the dashboard URL in a supported browser and log in](/helion/openstack/ga/dashboard/login/). 
 
 ## Project dashboard ## {#DashProject}
 

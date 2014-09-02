@@ -1,8 +1,8 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174;: Beta Installation and Configuration"
+title: "HP Helion OpenStack&#174;: Installation and Configuration"
 permalink: /helion/openstack/ga/install/ovsvapp/
-product: commercial
+product: commercial.ga
 
 ---
 <!--UNDER REVISION-->
@@ -18,7 +18,7 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> <a href="/helion/openstack/install-beta/esx/">&#9664; PREV</a> | <a href="/helion/openstack/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/dnsaas/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/helion/openstack/install/esx/">&#9664; PREV</a> | <a href="/helion/openstack/install-overview/">&#9650; UP</a> | <a href="/helion/openstack/install/dnsaas/">NEXT &#9654;</a> </p>
 
 #Deploying and configuring OVSvApp for HP Virtual Cloud Networking (VCN) on ESX hosts 
 
@@ -139,7 +139,7 @@ You must upload the OVSvApp appliance to one of the ESX hosts that is hosting VM
 			skip_hosts=<skip_host_IP,skip_host_IP>
 
 
-		b. Add network port settings. <!--Settings for `standard_port` group is optional. not for beta --->
+		b. Add network port settings. <!--Settings for `standard_port` group is optional.--->
 
 			[network]
 			data_interface={'<nic_type>':{'<port_group_name>'}

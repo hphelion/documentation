@@ -2,7 +2,7 @@
 layout: default
 title: "HP Helion OpenStack&#174; FAQ"
 permalink: /helion/openstack/ga/faq/
-product: commercial
+product: commercial.ga
 
 ---
 <!--UNDER REVISION-->
@@ -16,12 +16,13 @@ Welcome! You've got questions. We have the answers.
 ##Understanding HP Helion OpenStack
 
 * [What is HP Helion OpenStack?](#whatHelion)
-* [What does HP Helion OpenStack beta enable me to do?](#distroenable)
+* [What does HP Helion OpenStack 
+*  enable me to do?](#distroenable)
 * [What is TripleO?](#TripleO)
 * [What is a Seed?](#whatisseed)  
 * [What is the Undercloud?](#whatisundercloud) 
 * [What is the Overcloud?](#whatisovercloud) 
-* [What is available in the beta version announced on June 30th?](#preview)
+* [What is available in the version announced on June 30th?](#preview)
 * [Is the release localized for non-English speaking markets?](#localized) 
 * [Does the HP Helion OpenStack work with hybrid or public cloud projects?](#hybridorpubliccloud)
 * [How many nodes and virtual machines does it support?](#nodes)  
@@ -43,7 +44,7 @@ It is a scaled out, hardened and curated commercial-grade product designed to de
 
 <!-- Removed per Gary's comments I HP Helion OpenStack is the first OpenStack distribution from HP. It is free to download and will be kept updated frequently to stay current with OpenStack developments. It is the foundational technology for all HP Helion products in the future.-->
 
-####What does HP Helion OpenStack beta enable me to do? #### {#distroenable}
+####What does HP Helion OpenStack enable me to do? #### {#distroenable}
 
 You have consistently given us feedback to release a distribution of OpenStack technology - fully tested, hardened and supported by HP. With this version, you can deploy a cloud configuration with an out-of-the-box experience for a 20 to 30 node cloud environment.  
 
@@ -86,7 +87,7 @@ The Overcloud is the functional cloud available to run guest virtual machines an
 
 Setting up the Overcloud completes the overall Helion Openstack installation process. 
 
-####What is available in the beta version announced on June 30th? #### {#preview}
+####What is available in the version announced on June 30th? #### {#preview}
 
 On June 30th, we announced a preview of HP Helion OpenStack that enables you to deploy an OpenStack TripleO-based cloud experience and evaluate the Icehouse release of OpenStack.  
 
@@ -105,11 +106,11 @@ No. The 2014 release is English only.
 
 ####Does HP Helion OpenStack work with hybrid or public cloud projects? #### {#hybridorpubliccloud}
 
-No. Currently, HP Helion OpenStack beta is supported by HP for small-scale, private cloud deployments only.
+No. Currently, HP Helion OpenStack is supported by HP for small-scale, private cloud deployments only.
 
 ####How many nodes and virtual machines does it support? #### {#nodes}
 
-HP Helion OpenStack beta will support up to 30 nodes and 40 VMs per node. 
+HP Helion OpenStack will support up to 30 nodes and 40 VMs per node. 
 
 <!--In the final release, it will support scalable deployments of thousands of compute nodes supporting tens of thousands of VMs. This has been tested and proven using the best practices developed by HP over the past three years running OpenStack public cloud services at scale.-->
   

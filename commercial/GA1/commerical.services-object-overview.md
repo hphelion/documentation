@@ -2,7 +2,7 @@
 layout: default
 title: "HP Helion OpenStack&#174; Object Operations Service Overview"
 permalink: /helion/openstack/ga/services/object/overview/
-product: commercial
+product: commercial.ga
 
 ---
 <!--UNDER REVISION-->
@@ -38,7 +38,7 @@ To [perform tasks using the Object Operations service](#howto), you can use the 
 
 ### Using the dashboards {#UI}
 
-You can use the [HP Helion OpenStack Dashboard](/helion/openstack/dashboard/how-works/) to work with the Object Operations service.
+You can use the [HP Helion OpenStack Dashboard](/helion/openstack/ga/dashboard/how-works/) to work with the Object Operations service.
 
 ###Using the API to access Object Operations### {#API}
 
@@ -54,7 +54,7 @@ For more information on installing the CLI, see [Install the OpenStack command-l
 
 <!-- Taken from http://wiki.hpcloud.net/display/core/Core+Edition+Use+cases#CoreEditionUsecases-OverCloud -->
 
-The following lists of tasks can be performed by a user or administrator through the [HP Helion OpenStack Dashboard](/helion/openstack/dashboard/how-works/), the OpenStack [CLI](http://docs.openstack.org/cli-reference/content/swiftclient_commands.html) or OpenStack [API](http://developer.openstack.org/api-ref-objectstorage-v1.html).
+The following lists of tasks can be performed by a user or administrator through the [HP Helion OpenStack Dashboard](/helion/openstack/ga/dashboard/how-works/), the OpenStack [CLI](http://docs.openstack.org/cli-reference/content/swiftclient_commands.html) or OpenStack [API](http://developer.openstack.org/api-ref-objectstorage-v1.html).
 
 Depending upon your user type, you can perform the following tasks.
 

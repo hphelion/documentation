@@ -2,7 +2,7 @@
 layout: default
 title: "HP Helion OpenStack&#174; Networking Service Overview"
 permalink: /helion/openstack/ga/services/networking/overview/
-product: commercial
+product: commercial.ga
 
 ---
 <!--UNDER REVISION-->
@@ -37,7 +37,7 @@ To [perform tasks using the Networking service](#howto), you can use the dashboa
 
 ### Using the dashboards {#UI}
 
-You can use the [HP Helion OpenStack Dashboard](/helion/openstack/dashboard/how-works/) to work with the Networking service.
+You can use the [HP Helion OpenStack Dashboard](/helion/openstack/ga/dashboard/how-works/) to work with the Networking service.
 
 ###Using the API to access Compute### {#API}
  
@@ -51,7 +51,7 @@ For more information on installing the CLI, see [Install the OpenStack command-l
 
 ## How To's with the HP Helion OpenStack Networking Service ## {#howto}
 
-The following lists of tasks can be performed by a user or administrator through the [HP Helion OpenStack Dashboard](/helion/openstack/dashboard/how-works/), the OpenStack [CLI](http://docs.openstack.org/cli-reference/content/neutronclient_commands.html) or OpenStack [API](http://developer.openstack.org/api-ref-networking-v2.html).
+The following lists of tasks can be performed by a user or administrator through the [HP Helion OpenStack Dashboard](/helion/openstack/ga/dashboard/how-works/), the OpenStack [CLI](http://docs.openstack.org/cli-reference/content/neutronclient_commands.html) or OpenStack [API](http://developer.openstack.org/api-ref-networking-v2.html).
 
 The administrator can work with all projects in a domain. A user can only work with projects associated with that user.
 
@@ -77,7 +77,7 @@ You can perform the following tasks:
 
 For information on how to operate your cloud we suggest you read the [OpenStack Operations Guide](http://docs.openstack.org/ops/). The *Architecture* section contains useful information about how an OpenStack Cloud is put together. However, the HP Helion OpenStack takes care of these details for you. The *Operations* section contains information on how to manage the system.
 
-<!-- Not in beta; GA aether only?
+<!-- In GA aether only?
 ### Adding and removing a network to a DHCP agent ###
 
 Use the Networking service to add or remove a network from a DHCP agent.

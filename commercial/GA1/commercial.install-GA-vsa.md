@@ -2,7 +2,7 @@
 layout: default
 title: "HP Helion OpenStack&#174; Edition: VSA Support"
 permalink: /helion/openstack/ga/install/vsa/
-product: commercial
+product: commercial.ga
 
 ---
 <!--UNDER REVISION-->
@@ -18,7 +18,7 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> <a href="/helion/openstack/install-beta/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/esx/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/helion/openstack/install/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/install-overview/">&#9650; UP</a> | <a href="/helion/openstack/install/esx/">NEXT &#9654;</a> </p>
 
 
 # HP Helion OpenStack&#174; Installation: HP StoreVirtual VSA Support
@@ -49,9 +49,9 @@ Multiple StoreVirtual VSAs running on multiple servers create a clustered pool o
 As of now, adding more StoreVirtual VSAs to the cluster grows the storage pool. With Network RAID, blocks of data are striped and mirrored across multiple StoreVirtual VSAs, allowing volumes and applications to stay online in the event of disk, storage subsystem or server failure. iSCSI connectivity on HP StoreVirtual VSA, support the use of the storage pools by cloud instances.
 A single management group can contain up to 32 VSA nodes &#45; grouped into one or more clusters. A single cluster comprises 1 to 16 VSA nodes. Each management group can optimally manage a maximum of 1500 volumes. 
 
-Currently, HP Helion OpenStack beta edition uses a single management group mapped to a single Cluster. For minimal deployment, you can create a management group with one cluster and with a single VSA node on it.
+Currently, HP Helion OpenStack edition uses a single management group mapped to a single Cluster. For minimal deployment, you can create a management group with one cluster and with a single VSA node on it.
 
-HP StoreVirtual VSA enables the following features in HP Helion OpenStack beta: 
+HP StoreVirtual VSA enables the following features in HP Helion OpenStack: 
 
 * **Storage clustering**: It allows you to consolidate multiple storage nodes into pools of storage. The available capacity and performance is aggregated and made available to every volume in the cluster. As storage needs increase, StoreVirtual can scale performance and capacity online.
 
@@ -109,7 +109,7 @@ Multiple Cinder volume processes can be run to achieve high availability of the 
 
 
 ### Differentiated storage offerings {#differentiated-storage-offerings}
-HP Helion Openstack beta edition uses StoreVirtual as a backend to Cinder to realize horizontally scalable block storage. StoreVirtual is unique in the sense that storage controller runs as a virtual appliance and helps realize Software Defined Block Storage.
+HP Helion Openstack edition uses StoreVirtual as a backend to Cinder to realize horizontally scalable block storage. StoreVirtual is unique in the sense that storage controller runs as a virtual appliance and helps realize Software Defined Block Storage.
 
 Cinder provides the concept of volume types to represent differentiated storage offerings based on various performance outputs, quality of service and backend devices that are used to realize cloud storage. Essentially, a volume type is mapped to one or more backends of similar capabilities as illustrated in figure below:
 
@@ -127,7 +127,7 @@ The cloud administrator, you create volume types to specify the storage offering
 
 Then, as the cloud administrator, you need to create three volume types &ndash; bronze, silver and gold &ndash; and configure Cinder with three different backends. Each backend needs to be mapped to bronze, silver and gold, respectively.
 
-Differentiated storage offerings based on performance and quality can be realized in HP Helion OpenStack beta by creating clusters of different capabilites, configuring clusters as backends and mapping theses backends to different volume types as suggested above.
+Differentiated storage offerings based on performance and quality can be realized in HP Helion OpenStack by creating clusters of different capabilites, configuring clusters as backends and mapping theses backends to different volume types as suggested above.
 
 
 
@@ -136,7 +136,7 @@ Differentiated storage offerings based on performance and quality can be realize
 
 ### Prerequisites ###
 
-1. Ensure that you download the `HPStoreVirtual_VSA_11.5.tgz` package, which contains all the files that are required for installation, as shown in the table below. For details on how to download, refer to the [Before you begin](/helion/openstack/install-beta-overview/#install-pkg) page. 
+1. Ensure that you download the `HPStoreVirtual_VSA_11.5.tgz` package, which contains all the files that are required for installation, as shown in the table below. For details on how to download, refer to the [Before you begin](/helion/openstack/ga/install-overview/#install-pkg) page. 
 
 	<table style="text-align: left; vertical-align: top; width:650px;">
 	
@@ -178,7 +178,7 @@ The target system must fulfill the following prerequisites:
 	
   * The VSA server must be connected to the same network as the cloud nodes.
 
-    <a href="javascript:window.open('/content/documentation/media/commercial_kvm_network_architecture.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack beta architecture diagram for KVM (opens in a new window)</a>
+    <a href="javascript:window.open('/content/documentation/media/commercial_kvm_network_architecture.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack architecture diagram for KVM (opens in a new window)</a>
    
 
   * (Optional) It can have a second network which provides external/public access. 
@@ -208,7 +208,7 @@ The target system must fulfill the following prerequisites:
    
 
 ###Deploying VSA {#deployment-vsa}
-<a href="javascript:window.open('/content/documentation/media/commercial_kvm_network_architecture.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack beta architecture diagram for KVM (opens in a new window)</a>
+<a href="javascript:window.open('/content/documentation/media/commercial_kvm_network_architecture.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack architecture diagram for KVM (opens in a new window)</a>
 
 #### Contents of HP&#95;StoreVirtual&#95;VSA&#95;Installer&#95;for_KVM.tgz ###
   
@@ -312,7 +312,7 @@ The pyVins package contains the following files:
 
 	    **NOTE**: The interface of the bridge should be the same interface connected to the private untagged network common to all controller and Compute nodes. 
 
-        <a href="javascript:window.open('/content/documentation/media/commercial_kvm_network_architecture.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Refere to HP Helion OpenStack beta architecture diagram for KVM (opens in a new window)</a>
+        <a href="javascript:window.open('/content/documentation/media/commercial_kvm_network_architecture.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Refere to HP Helion OpenStack architecture diagram for KVM (opens in a new window)</a>
 
   - **hostname** refers to the name of the VSA that is getting installed for example: *vsa-hostname*
         
@@ -435,6 +435,10 @@ where:
 * **VSA_ISCSI_CHAP_ENABLED**: Mark this field as *True* if you want to enable CHAP authentication.
 
 * **VSA_DEBUG**: By default the value is *False*, to enable debugging, change it to *True*.
+
+## Next step
+
+Configure HP 3PAR StoreServ, see [HP Helion OpenStack Commercial: HP StoreServ (3PAR) Support](/helion/openstack/install/3par/).
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

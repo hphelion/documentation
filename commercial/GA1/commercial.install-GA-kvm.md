@@ -1,8 +1,8 @@
 ---
 layout: default
-title: "HP Helion OpenStack: Beta Installation and Configuration"
+title: "HP Helion OpenStack: Installation and Configuration"
 permalink: /helion/openstack/ga/install/kvm/
-product: commercial
+product: commercial.ga
 
 ---
 <!--UNDER REVISION-->
@@ -19,50 +19,74 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> <a href="/helion/openstack/install-beta/prereqs/">&#9664; PREV</a> | <a href="/helion/openstack/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/vsa/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/helion/openstack/install/prereqs/">&#9664; PREV</a> | <a href="/helion/openstack/install-overview/">&#9650; UP</a> | <a href="/helion/openstack/install/vsa/">NEXT &#9654;</a> </p>
 
-# HP Helion OpenStack&reg;:  Beta Installation and Configuration for KVM Hypervisor
+# HP Helion OpenStack&reg;: Installation and Configuration for KVM Hypervisor
 
-HP Helion Openstack beta allows you to manage the KVM hypervisor and provision virtual machines. 
+HP Helion Openstack allows you to manage the KVM hypervisor and provision virtual machines. 
 
-It is important to read through this page before starting your installation. We also recommend that you review the [hardware and network configuration requirements](/helion/openstack/install-beta-overview/##installation-requirements) and the [support matrix](/helion/openstack/support-matrix-beta/), and learn about the [installation process and complete any required tasks](/helion/openstack/install-beta/prereqs/). 
+HP Helion OpenStack can be installed on a VMware ESX bare-metal or virtual hypervisor. This document provides installation instructions for HP Helion OpenStack Edition preview on a suitably specified and prepared system.
 
-The rest of this page explains the beta installation and configuration process for KVM. 
+HP Helion OpenStack on an ESX hypervisor allows you to manage the VMware vCenter and provision virtual machines.
 
-* [KVM deployment architecture](#deploy-arch)
+
+## Installing HP Helion OpenStack ## {#install}
+
+The installation and configuration process for ESX consists of the following general steps: 
+
 * [Downloading the installation packages](#getinstall)
-* [Installing HP StoreVirtual Virtual Storage Appliance](#vsa)
-* [Installing HP Helion OpenStack](#install)
+* [Starting the installation](#install)
    * [Configuring proxy information](#proxy)
    * [Unpacking installation file](#unpackinstall)
    * [Installing the seed VM and building your cloud](#startseed)
 * [Verifying your installation](#verifying-your-installation)
    * [Connecting to Horizon console](#connectconsole)
-   * [Connecting to Monitoring UI](#monitoring)
+   * [Connecting to to Monitoring UI](#monitoring)
+* [Deploying Open vSwitch vApp](#ovsvapp)
 * [Installing DNS as a service](#configure)
 * [Next steps](#next-steps)
+ 
 
 
-##KVM deployment architecture {#deploy-arch}
+## Verify Prerequisites ## {#pre}
+
+To ensure successful installation, please read through the topics before you start.
+
+* Review the [support matrix](/helion/openstack/ga/support-matrix/) for information on the supported hardware and software.
+* Make sure your environment meets the [hardware and network configuration requirements](/helion/openstack/ga/install/prereqs/). 
+* [Perform required pre-installation tasks](/helion/openstack/ga/install/prereqs/)
+
+##Review the ESX deployment architecture ## {#deploy-arch}
+
+***QUESTION: Is this simplified diagram OK? Accurate? Useful? I linked to the new, more detailed diagram in the prereqs.***
 
 The following diagram depicts a simplified deployment scenario.
 
-<a href="javascript:window.open('/content/documentation/media/commercial_kvm_network_architecture.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">KVM deployment of HP Helion OpenStack beta (opens in a new window)</a>
+<a href="javascript:window.open('/content/documentation/media/commercial_esx_network_architecture.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack architecture diagram for ESX (opens in a new window)</a>
 
-## Downloading the installation packages {#getinstall}
+For a more detailed network diagram, see [HP Helion OpenStack&#174; Installation: Before you begin](/helion/openstack/ga/install/prereqs/#network_prepare).
+
+## Perform additional network requirements ## {#networkreq}
+
+***QUESTION: Is this information OK? Accurate? Useful?***
+
+These additional network components are required for an ESX installation:
+ 
+* VLAN trunking and native VLAN should be enabled on the private network. This is to cater to untagged PXE traffic with the tenant.<!--- Private network that caters to the PXE traffic needs to be a VLAN trunk line with a default VLAN (native) tag at the switch port side for all systems that are part of the environment.-->
+ 
+* VMware vCenter management must be a part of the private network (192.0.2.x)
+
+## Download the installation packages {#getinstall}
 Before you begin, you must download the required HP Helion OpenStack installation packages:
 
+***QUESTION: New files names?***
 <table style="text-align: left; vertical-align: top; width:650px;">
 	
 <tr style="background-color: lightgrey; color: black;">
 	
 <td><b> Installation package </b></td><td><b>File name</b></td>
 <tr style="background-color: white; color: black;">
- <td>HP StoreVirtual VSA </td><td>HPStoreVirtual_VSA_11.5.tgz</td></tr>
-	
-<tr style="background-color: white; color: black;">
-<td>HP Helion OpenStack beta </td><td>HPHelionOpenStack_BetaJune30.tgz</td></tr>
-</td></tr>
+ <td>HP Helion OpenStack</td><td>HPHelionOpenStack_June30.tgz</td></tr>
 
 <tr style="background-color: white; color: black;">
 <td>HP Helion OpenStrack DNSaaS (Optional) </td><td>HP_dnsaas-installer_0.0.4b11.tar.gz</td></tr>
@@ -71,35 +95,121 @@ Before you begin, you must download the required HP Helion OpenStack installatio
 
 1. Log in to your install system as root:
 
-    `sudo su -`
+        sudo su -
 
 2. Register and then log in to download the required installation packages from this site:
 
     [HP Helion OpenStack product installation](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221247%22%7D/Show)
 
-For more details, refer to the [package download instructions](/helion/openstack/install-beta/prereqs/#install-pkg) on the HP Helion OpenStack Beta Installation: Before you begin page.
+### Next Step ###
+
+Jump to the section regarding the type of installation we are performing:
+
+- [Installing HP Helion Openstack on a virtual hypervisor](#virtual)
+- [Installing HP Helion Openstack on a baremetal hypervisor](#baremetal)
+
+---------------------
+## Install HP Helion Openstack on a virtual hypervisor ## {#virtual}
+
+Make sure you have met all the hardware requirements and have completed the required tasks before you begin your installation. The following sections walk you through:
+
+* [Configuring proxy information](#proxy)
+* [Unpacking installation file](#unpackinstall)
+* [Installing the seed VM and building your cloud](#startseed)
+
+**IMPORTANT:** During the installation process, **DO NOT RESTART** the system running the installer and seed VM. Restarting this system disrupts the bridge networking configuration and disables both the undercloud and overcloud. If the system is inadvertently restarted, you must initiate the installation process again.
+
+### Unpack the installation file ### {#unpackinstall}
+
+1. Ensure you are logged into your install system as root; otherwise, log in as root:
+
+		sudo su -
+
+2. Create a directory named `work`:
+
+		mkdir /root/work
+		cd /root/work
+
+3.  Extract the kit to the `work` directory:
+
+		tar zxvf /root/work/<virtual kit name>.tgz
+
+	This creates and populates a `tripleo/` directory within `work' directory.
+
+### Configure proxy information {#proxy}
+
+Before you begin your installation, if necessary, configure the proxy information for your environment using the following steps:
+
+1. Ensure you are logged into your install system as root; otherwise, log in as root: 
+
+        sudo su -
+
+2. Use the following commands to set the environment variables:
+
+		export NODE_CPU=8
+		export NODE_MEM=24576
+		HP_VM_MODE=y bash -x /root/work/tripleo/tripleo-incubator/scripts/hp_ced_host_manager.sh --create-seed |& tee /root/work/create-seed.log
+
+5. If the external device name on the host system (the one through which the host, and indirectly the seed, accesses the IPMI network) is **NOT** named `eth0`, then determine the device name before executing the next step:
+
+		$ export BRIDGE_INTERFACE=<devicename>
+
+	Examples:
+
+		$ export BRIDGE_INTERFACE=em1  
+		$ export BRIDGE_INTERFACE=eth5
+
+### Install the seed VM and build your cloud ### {#startseed}
+
+1. Log in to the seed VM by running the following command from `/root`:
+
+		ssh root@192.0.2.1 
+
+    **Note**: It might take a few moments for the seed VM to become reachable. 
+
+3. When prompted for host authentication, type `yes` to allow the ssh connection to proceed.
+***QUESTION: Still required??***
+
+4. Use the following command to set the CLOUD_TYPE environment variable for ESX:
+
+		export CLOUD_TYPE=esx
+
+4. Use the folowing commands to set environment variables
+
+		export OVERCLOUD_COMPUTESCALE=1
+		export OVERCLOUD_VSA_STORAGESCALE=1
+		export OVERCLOUD_NEUTRON_DVR=True
+		export UNDERCLOUD_NTP_SERVER=16.110.135.123       This is IP of ntp.hp.net
+		export OVERCLOUD_NTP_SERVER=16.110.135.123                      # Required. This is IP of ntp.hp.net
+		export UNDERCLOUD_CODN_HTTP_PROXY=http://16.85.175.150:8080     # Optional. Configuration for CDL lab
+		export UNDERCLOUD_CODN_HTTPS_PROXY=http://16.85.175.150:8080    # Optional. Configuration for CDL lab
+
+	**Notes:**
 	
-## Installing HP StoreVirtual Virtual Storage Appliance (VSA) {#vsa}
-Before you install HP Helion OpenStack, [HP StoreVirtual VSA](https://docs.hpcloud.com/helion/openstack/install-beta/vsa/) must be installed and configured.
+	- The `UNDERCLOUD_NTP_SERVER` variable is the IP address of **ntp.hp.net** for the undercloud and is **REQUIRED**.
+	- The `OVERCLOUD_NTP_SERVER` vatiable is the IP address of **ntp.hp.net** for the overcloud and is **REQUIRED**.
+	- The `UNDERCLOUD_CODN_HTTP_PROXY` variable is an optional configuration for CDL lab.
+	- The `UNDERCLOUD_CODN_HTTPS_PROXY` variable is an optional configuration for CDL lab.
 
-HP StoreVirtual VSA provides complete array functionality without an external array hardware, which:
+5. Install and configure the undercloud and overcloud, run the following command from /root. 
 
-* eliminates the need for external shared storage required to implement block storage feature
-* uses scale-out, distributed clustering to provide a pool of storage with enterprise storage features and simple management at a reduced cost
-<!--
-Once you have completed the HP StoreVirtual VSA installation, you must have the following information available to complete the HP Helion OpenStack installation:
+		bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh
 
-* VSA_API_URL
-* VSA_USERNAME
-* VSA_PASSWORD
-* VSA_NAME
--->
+    If your installation is successful, a message similar to the following is displayed:
+ 
+        "HP - completed - Tue Apr 22 16:20:20 UTC 2014"
 
-See the [HP StoreVirtual VSA support](/helion/openstack/install-beta/vsa/) page for complete installation and configuration instructions.
+### Next Step ###
 
+After you receive the *completed* message, you should verify the installation by connecting to the overcloud and undercloud dashboards.
 
-## Installing HP Helion OpenStack {#install}
-After you have installed HP StoreVirtual VSA, ensure you have met all the hardware requirements and have completed the required tasks before you begin your installation. The following sections walk you through:
+Jump down to [Verifying your installation](#verify).
+
+---------------------------------------
+
+## Install HP Helion Openstack on a baremetal hypervisor## {#install}
+
+Make sure you have met all the hardware requirements and have completed the required tasks before you begin your installation. The following sections walk you through:
 
 * [Configuring proxy information](#proxy)
 * [Unpacking installation file](#unpackinstall)
@@ -107,10 +217,13 @@ After you have installed HP StoreVirtual VSA, ensure you have met all the hardwa
 
 **IMPORTANT:** During the installation process, **DO NOT RESTART** the system running the installer and seed VM. Restarting this system disrupts the baremetal bridge networking configuration and disables both the undercloud and overcloud. If the system is inadvertently restarted, you must initiate the installation process again.
 
-### Configuring proxy information {#proxy}
+### Configure proxy information {#proxy}
+
+***QUESTION: This section is not in https://rndwiki2.atlanta.hp.com/confluence/display/cloudos/ee_ga_ironic_quick_start. Still required??***
+
 Before you begin your installation, if necessary, configure the proxy information for your environment using the following steps:
 
-1. Log in to your install system as root:
+1. Ensure you are logged into your install system as root; otherwise, log in as root: 
 
         sudo su -
 
@@ -120,10 +233,9 @@ Before you begin your installation, if necessary, configure the proxy informatio
         export https_proxy=http://web proxy IP/
         export no_proxy=localhost,127.0.0.1,<your 10.x IP address>
  
-
 3. Log out and re-login to your baremetal server to activate the proxy configuration.
 
-### Unpacking installation file ## {#unpackinstall}
+### Unpack the installation file ## {#unpackinstall}
 
 1. Ensure you are logged into your install system as root; otherwise, log in as root:
 
@@ -134,218 +246,319 @@ Before you begin your installation, if necessary, configure the proxy informatio
          mkdir /root/work
          cd /root/work
 
-3. Extract the kit to the `work` directory:
+3.  Extract the kit to the `work` directory:
 
-         tar zxvf /root/<baremetal kit name>.tgz
+         tar zxvf /root/work/<baremetal kit name>.tgz
 
-    This creates and populates a `tripleo/` directory within root's home directory.
+    This creates and populates a `tripleo/` directory within `work' directory.
 
-4. The BRIDGE_INTERFACE must be set to the name of the device connected to the private network that connects all baremetal nodes. This private network is also where these nodes PXE boot. The installation script assumes this device name is `eth0`. If your device is NOT named `eth0`, then determine its name and set the environment variable as shown below:
+4. If the external device name on the host system (the one through which the host, and indirectly the seed, accesses the IPMI network) is **NOT** named `eth0`, then determine the device name before executing the next step:
 
         $ export BRIDGE_INTERFACE=<devicename>
 
-    Two examples:
+    Examples:
 
         $ export BRIDGE_INTERFACE=em1  
         $ export BRIDGE_INTERFACE=eth5
 
+5. Use the following command to set the CLOUD_TYPE environment variable for ESX:
+		
+	    export CLOUD_TYPE=esx
 
-### Installing the seed VM and building your cloud ### {#startseed}
+### Install the seed VM and build your cloud ### {#startseed}
+
 1. To start the seed VM installation, enter the following command:
 
-        bash -x /root/work/tripleo/tripleo-incubator/scripts/hp_ced_start_seed.sh
-    
-    **Note**:The installation process takes approximately 10 minutes to complete.
+	bash -x /root/work/tripleo/tripleo-incubator/scripts/hp_ced_host_manager.sh --create-seed
 
     If the seed startup is successful, you should see a message similar to the following:
 
-        "Wed Apr 23 11:25:10 IST 2014 --- completed setup seed"
+        "Wed Sept 09 11:25:10 IST 2014 --- completed setup seed"
+
+    **Note**:The installation process takes approximately 10 minutes to complete.
 
 2. To build the cloud, start by logging in to the seed VM. Run the following command from /root:
 
         ssh root@192.0.2.1 
 
     **Note**: It might take a few moments for the seed VM to become reachable. 
-
   
 3. When prompted for host authentication, type `yes` to allow the ssh connection to proceed.
+***QUESTION: Still required??***
 
-4. Ensure the information in the `baremetal.csv` file is correct and in the following format, and then upload to /root.
+4. Ensure the information in the [`baremetal.csv` configuration file](/helion/openstack/install-beta/prereqs/#req-info) file is correct and in the following format and upload THE FILE to `/root`.
+	<mac_address>,<ipmi_user>,<ipmi_password>,<ipmi_address>,<no_of_cpus>,<memory_MB>,<diskspace_GB>
 
-        <mac_address>,<ilouser>,<ilopassword>,<iloipaddress>,<#cpus>,<memory_MB>,<diskspace_GB>
-     
-    **Important**: There must be one entry in this file for each baremetal system you intend to install. For example, for a 7 baremetal system your file should look similar to this:
+	***QUESTION: Must use IPMI user vs ILO user in beta?***
 
-        78:e7:d1:22:5d:58,operator,password,192.168.11.1,12,32768,2048
-        78:e7:d1:22:5d:10,operator,password,192.168.11.5,12,32768,2048
-        78:e7:d1:22:52:90,operator,password,192.168.11.3,12,32768,2048
-        78:e7:d1:22:5d:c0,operator,password,192.168.11.2,12,32768,2048
-        78:e7:d1:22:5d:a8,operator,password,192.168.11.4,12,32768,2048
-        78:e7:d1:22:52:9b,operator,password,192.168.11.6,12,32768,2048
-        78:e7:d1:22:52:9e,operator,password,192.168.11.7,12,32768,2048  
+	**Important**: There must be one entry in this file for each baremetal system you intend to install. The file must contain exactly five lines for the ESX installation. For example, your file should look similar to the following:
 
-    **Note:** For more information on creating this file, refer back to [Obtaining required information](/helion/openstack/install-beta/prereqs/#req-info/).
+		78:e7:d1:22:5d:10,administrator,password,192.168.11.5,12,32768,2048
+		78:e7:d1:22:5d:58,administrator,password,192.168.11.1,8,16384,2048
+		78:e7:d1:22:52:90,administrator,password,192.168.11.3,12,32768,2048
+		78:e7:d1:22:5d:c0,administrator,password,192.168.11.2,12,32768,2048
+		78:e7:d1:22:5d:a8,administrator,password,192.168.11.4,12,32768,2048
+		78:e7:d1:22:52:9b,administrator,password,192.168.11.6,12,32768,2048
+    
+	**Note:** For more information on creating this file, refer to [Creating the baremetal.csv file](/helion/openstack/ga/install/prereqs/#req-info) on the *Before you begin* page.
 
 5. [Optional] If you have installed the IPMItool, use it to verify that network connectivity from the seed VM to the baremetal servers in your baremetal.csv is working.
+
+	***QUESTION: Still optional? Not in https://rndwiki2.atlanta.hp.com/confluence/display/cloudos/ee_ga_ironic_quick_start.***
 
 6. Manually power off each baremetal system specified in /root/baremetal.csv before proceeding with the installation. 
     
     **IMPORTANT:** Ensure that each system is configured in the BIOS to stay powered off in the event of being shutdown rather than automatically restarting.
 
-7. Set the IP address of an NTP server accessible on the public interface for overcloud and undercloud hosts using the following commands, for example:
+7. Edit `configure_installer.sh` to provide your VMware vCenter connection details. 
 
-        $ export OVERCLOUD_NTP_SERVER=192.0.1.128
-        $ export UNDERCLOUD_NTP_SERVER=192.0.1.128
+	***QUESTION: Still optional? Not in https://rndwiki2.atlanta.hp.com/confluence/display/cloudos/ee_ga_ironic_quick_start.***
 
-8. The FLOATING_START, FLOATING_END, and FLOATING_CIDR variables control the range of IP addresses available for user VMs in the overcloud. You cannot have any active IP addresses within the Floating IP range. Complete the following steps to ensure the VSA IP does not land in this range.
-    
-     A. Since VSA uses 192.0.2.253, change the `FLOATING_END` to 192.0.2.200. If necessary, change the `FLOATING_START` and `FLOATING_CIDR` as well. Currently, the defaults are set as below and can be changed with the `export` command.
+		/root/tripleo/tripleo-incubator/scripts/configure_installer.sh
 
-            $ export FLOATING_START=192.0.2.45
-            $ export FLOATING_END=192.0.2.254
-            $ export FLOATING_CIDR=192.0.2.0/24
+	For example:
 
-     B. Ensure the VSA system IP address is on the same network.
+		export ENABLE_VCENTER="True"
+		export VCENTER_IP="<15.14.19.17>"
+		export VCENTER_USERNAME="<Administrator>"
+		export VCENTER_PASSWORD="<Password>"
+		export VCENTER_CLUSTERS="<Cluster1>","<Cluster2>","<Cluster3>","<Cluster 4>"
+		export ENABLE_VSA="False"
 
-     C. Ensure the Floating IP range does not include the IP addresses that have been used for systems running VSA.
+8. Set `OVERCLOUD_NeutronPublicInterface` and `UNDERCLOUD_NeutronPublicInterface` to the name of the interface that carries Neutron external traffic on your overcloud and undercloud. By default, it is *eth2*. The following example sets the value of the variable to *eth0*.
 
+		$ export OVERCLOUD_NeutronPublicInterface=eth0
+		$ export UNDERCLOUD_NeutronPublicInterface=eth0 
 
-     **IMPORTANT**: If the VSA IP is within the Floating IP range, the last step of the installation fails.
+9. Set OVERCLOUD_COMPUTESCALE to 1, which is the currently supported limit. If you do not specify a value, the value is derived based on the number of lines remaining in `/root/baremetal.csv` once the undercloud, overcloud control, and overcloud swift nodes are removed.
 
+	To set this variable:
 
-9. Set `OVERCLOUD_NeutronPublicInterface` and `UNDERCLOUD_NeutronPublicInterface` to the name of the interface that carries Neutron external traffic on your overcloud and undercloud. By default, it is `eth2`. The following example sets the value of the variable to `eth0`.
+		$ export OVERCLOUD_COMPUTESCALE=1
 
-            $ export OVERCLOUD_NeutronPublicInterface=eth0
-            $ export UNDERCLOUD_NeutronPublicInterface=eth0   
+10. Release floating IP addresses for networking.
 
-10. [Optional] You can configure a second network for API traffic and for the floating
-IP pool by setting OVERCLOUD_NeutronPublicInterface to a physically configured VLAN. For example:
+	***QUESTION: More info needed on how to determine the IP range. How does this help. DOes shrinking the floating IP range free up IPs for the private IPs needed for OVSvApp??***
 
-            $ export OVERCLOUD_NeutronPublicInterface=vlan101 (ID of physically configured VLAN)
-            $ export NeutronPublicInterfaceIP=192.0.8.2/21
-            $ export NeutronPublicInterfaceRawDevice=eth0
-            $ export NeutronPublicInterfaceDefaultRoute=192.0.8.1
-            $ export FLOATING_START=192.0.8.20
-            $ export FLOATING_END=192.0.15.254
-            $ export FLOATING_CIDR=192.0.8.0/21
+	By default, the installation creates a pool of floating IP addresses that you can assign to virtual machines. However, the HP Virtual Cloud Networking's Open vSwitch vApp (OVSvApp) required by the ESX environment requires a block of IP addresses. You create more IP addresses for OVSvApp by restricting the number of floating IP addresses created.
 
-11. [Optional] You should not set OVERCLOUD_COMPUTESCALE to a higher value than three as a limit of 7 nodes is enforced. If you do not specify a value, the value is derived based on the number of lines remaining in `/root/baremetal.csv` once the undercloud, overcloud controller, and overcloud swift nodes are removed.
+	By default, the floating IP range is between 192.0.2.129 - 192.0.2.254. You can shrink the range by exporting the following variables:
 
-    To set this variable:
+		# export FLOATING_START=<Start IP Address>
+		# export FLOATING_END=<End IP Address>
 
-    `$ export OVERCLOUD_COMPUTESCALE=3`
+    **For example**:
 
-12. To enable HP StoreVirtual, update the tripleo/tripleo-incubator/scripts/configure_installer.sh file in the seed with the VSA cluster information. You must change the configuration based on your specifications, for example:
+		# export FLOATING_START=192.0.2.129
+		# export FLOATING_END=192.0.2.200
 
-        export ENABLE_VSA="True"
-        export VSA_API_URL="https://XXX.XXX.XXX.XXX:8081/lhos"
-        export VSA_USERNAME="<user name>"
-        export VSA_PASSWORD="<password>"
-        export VSA_NAME="<cluster name>"
-        export VSA_ISCSI_CHAP_ENABLED="False"
-        export VSA_DEBUG="False"
+	**Note:** If the above settings are changed, set the 'NeutronPublicInterfaceDefaultRoute' variable to the actual gateway for the customized IP range.
 
-    * **ENABLE_VSA** - Change to `True` to enable HP StoreVirtual VSA configuration. By default the value is `False`.
-    
-    * **VSA_URL** - Enter the IP address used to access your VSA cluster. 
-    
-    * **VSA_USERNAME** - Enter the cluster user name.
-    
-    * **VSA_PASSWORD** - Enter the cluster password.
-    
-    * **VSA_NAME** - Enter the name of the cluster.
-    
-    * **VSA&#95;ISCSI&#95;CHAP_ENABLED** - Change to `True` if you want to enable CHAP authentication.
-    
-    * **VSA_DEBUG** - By default the value is `False`; to enable debugging, change it to `True`.
+11. Set OVERCLOUD_NTP_SERVER to the IP address of the NTP server accessible on the public interface for OVERCLOUD hosts. 
 
-13. To install and configure the undercloud and overcloud, run the following command from /root. 
+	To set this variable:
 
-    `bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh`
+		# export OVERCLOUD_NTP_SERVER=<IP_address>
 
-    If your installation is successful, a message similar to the following is displayed:
+12. Set UNDERCLOUD_NTP_SERVER to the IP address of the NTP server accessible on the public interface for OVERCLOUD hosts. 
 
-    `"HP - completed - Tue Apr 22 16:20:20 UTC 2014"`
+	To set this variable:
 
-**Note:** If `hp_ced_start_seed` fails to start the seed, you simply need to restart it (step 1) and then follow the rest of the steps.
+		# export UNDERCLOUD_NTP_SERVER=<IP_address>
 
+13. Install and configure the undercloud and overcloud, run the following command from /root. 
 
-## Verifying your installation
+		bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh
 
-Once your installation is complete, you should ensure you can connect to your HP Helion OpenStack baremetal cloud.
+	If your installation is successful, a message similar to the following is displayed:
+ 
+		"HP - completed - Tue Apr 22 16:20:20 UTC 2014"
 
+### Next Step ###
 
-### Connecting to Horizon console ### {#connectconsole}
+After you receive the *completed* message, you should verify the installation by connecting to the overcloud and undercloud dashboards.
+
+Jump down to [Verifying your installation](#verify).
+
+---------------------------------------
+
+## Verify your installation {#verify}
+
+To verify that the installation is successful, connect to the HP Helion Openstack dashboard and the undercloud dashboard as follows.
+
+### Connect to the Horizon console ### {#connectconsole}
+
 Ensure you can access the overcloud Horizon dashboard. To do this, follow the steps below:
 
 1. From the seed, export the undercloud passwords:
 
-    `. /root/tripleo/tripleo-undercloud-passwords`
+		. /root/tripleo/tripleo-overcloud-passwords
 
 2. Export the undercloud users:
 
-    `TE_DATAFILE=/root/tripleo/testenv.json . /root/tripleo/tripleo-incubator/undercloudrc`
+		TE_DATAFILE=/root/tripleo/ce_env.json . /root/tripleo/tripleo-incubator/overcloudrc-user
 
 3. Assign the overcloud IP address to a variable:
 
-        OVERCLOUD_IP=$(nova list | grep "overcloud-controller" | awk ' { print $12 } ' | sed s/ctlplane=// )
+		DEMO_IP=$(nova list | awk '/\| demo \|/{print $13}')
 
 4. Determine the overcloud controller IP from the output of step 3 using the following command. It is in the last line returned.
   
-        echo ${OVERCLOUD_IP}
+        ssh root@${DEMO_IP}
 
     If the optional second network was configured, the overcloud controller IP is the value set for NeutronPublicInterfaceIP.
 
-5. Open the `/root/tripleo/tripleo-overcloud-passwords` file and make note of the demo user password.
-
-6. From your install system, open a web browser and point to:
+5. From your install system, open a web browser and point to:
 
         http://<overcloud_IP>/
 
-7. Log in to the overcloud Horizon dashboard as user `demo` with the password you obtained from the `/root/tripleo/tripleo-overcloud-passwords` file in the previous step.
+6. Log in to the overcloud Horizon dashboard as user `admin` with the password you obtained from the `/root/tripleo/tripleo-overcloud-passwords` file in step 4.
 
 
 **Note:** If you are unable to connect to the Horizon console, check your proxy settings to ensure that access to the controller VM is successfully redirected through a proxy.
 
-
-
-### Connecting to Monitoring UI ### {#monitoring}
+### Connect to the undercloud Horizon console ### {#monitoring}
 
 1. From the seed, run the following command:
 
-        . /root/stackrc
+		. /root/stackrc
 
 2. Assign the undercloud IP address to a variable:
 
-        UNDERCLOUD_IP=$(nova list | grep "undercloud" | awk ' { print $12 } ' | sed s/ctlplane=// )
+		`UNDERCLOUD_IP=$(nova list | awk '/\| undercloud/{print $12}' | sed 's/ctlplane=//'); echo $UNDERCLOUD_IP`
 
 3. Determine the undercloud IP from the output of step 2 using the following command. It is in the last line returned.
   
         echo ${UNDERCLOUD_IP}
 
-4. From your install system, open a web browser and point to:
+4. Obtain the undercloud admin password using the following command:
+
+	`UNDERCLOUD_ADMIN_PASSWORD=$(grep UNDERCLOUD_ADMIN_PASSWORD /root/tripleo/tripleo-undercloud-passwords | sed 's/UNDERCLOUD_ADMIN_PASSWORD=//'); echo $UNDERCLOUD_ADMIN_PASSWORD`
+
+5. From your install system, open a web browser and point to:
 
         http://<undercloud_IP>/icinga/
 
-5. Log in as user 'icingaadmin' with password 'icingaadmin'.
-
-## Installing DNS as a service (DNSaaS) {#configure}
-
-Our managed DNS service, based on the OpenStack Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.
-
-Installing HP Helion OpenStack DNSaaS is **optional**. Before you attempt the DNSaaS installation, you *must* have already installed HP Helion Openstack beta and verified that it is configured correctly and operational. 
-
-Learn how to [install DNS as a service](/helion/openstack/install-beta/dnsaas/).
+6. Log in as user 'admin' with the admin password.
 
 
+## Next Steps
 
-## Next steps
-* [Logging into the HP Helion OpenStack dashboards](/helion/openstack/dashboard/login/)
-* [How to use the HP Helion OpenStack dashboards](/helion/openstack/dashboard/how-works/)
-* [HP Helion OpenStack services overview](/helion/openstack/services/overview/)
+- Deploy the Open vSwitch vApp **(REQUIRED)**. 
+
+	HP Virtual Cloud Networking's Open vSwitch vApp (OVSvApp) must be installed for HP Helion OpenStack environment to provision VMs in your VMware vCenter environment. Once deployed, OVSvApp appliance enables networking between the tenant Virtual Machines (VMs).
+
+	For installation intructions, see the [Deploying and configuring OVSvApp for HP Virtual Cloud Networking (VCN) on ESX hosts](/helion/openstack/install/ovsvapp/) document for complete instructions. 
+
+- Install DNS as a service (DNSaaS) (Optional).
+
+	Our managed DNS service, based on the OpenStack Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.
+
+	For installation intructions, see [DNSaaS Beta Installation and Configuration](/helion/openstack/install/dnsaas/).
+
+
+
+<!---
+Perform the following steps to install OVSvAPP VM :
+
+1. Location <where the zip file will be available>.TBD
+
+2. Unzip `ovsvapp_deployment.rar`. It contains a template file `CloudOSOVSvAppVM` and an executable file `ovsvm`. The executable file is located in ` ovsvm/sec/ovsvm`. TBD
+
+3. Import the template using vSphere client.
+
+3. Verify the configuration of OVSvAPP VM from the template file and make sure you have adequate resource available on ESXi hosts.HP recommends to use the sample template without any modification.
+
+4.	Upload the template file in any one of the ESXi hosts or servers.
+
+5.	Copy the executable file `ovsvm` to the server which has connectivity to vCenter. The inputs for executable file are stored in `ovs_vapp.ini` file. Update the file as per your environment, for example: 
+
+		[vmware]
+		vcenter_ip=15.146.194.180
+		vcenter_username=Administrator
+		vcenter_password=12iso*help
+		datacenters=TestDataCenter
+		clusters=ComputeCluster1,ComputeCluster2
+		#Keep it empty if you don’t want to skip installation on particular host
+		skip_hosts=15.146.194.181, 15.146.194.182
+		[network]
+		domain=asiapacific.cpqcorp.net
+		#Carefully maintain the dictionary structure
+		nic_map={'nic1':{'vmxnet3':'dvPortGroupVM1'}, 'nic2':{'vmxnet3':'dvDataPortGroup1'}, 'nic3':{'vmxnet3':'dvMgmtPortGroup1'}}
+		
+		[template]
+		#Carefully provide the name of the template that you have just created
+		template_name=CloudOSOVSvAppVM
+		ovs_vm_name=ovsvapp
+		
+		[logger]
+		log_level=DEBUG
+		#Make sure the directory exists
+		log_file=/var/logs/ovsvapp_vm.log
+
+
+7. Execute the following command:
+
+    	paython invoke_ovs_vapp.py 
+
+
+8.	Once the VMs are deployed, they need to be updated to have required OVS bridges and connections created. 
+
+	a. Login to the OVSvAPP VM with the username **root** and password **hpvapp**.
+ 
+    b. Edit `/etc/neutron/plugins/hp/hpvcn_neutron_agent.ini`:
+
+		 [DEFAULT]
+		vmwareapi_host_ip = <vCenter_host_ip>
+		vmwareapi_host_username = <vCenter_username>
+		vmwareapi_host_password = <vCenter_password>
+		vmwareapi_retry_count = 2
+		vmwareapi_wsdl_loc = https://<vCenter_host_ip>/sdk/vimService.wsdl
+		cluster_dvs_mapping =  DatacenterName/host/ClusterName:VdsName
+		esx_hostname= <esx host_name or ip_address>
+		
+		#OVS settings
+		security_bridge=br-sec
+		integration_bridge=br-int
+		bridge_mappings=physnet1:<bridge_interface>
+		
+		# example
+		# Inventory path of cluster : vDS name
+		# cluster_dvs_mapping = DatacenterName/host/ClusterName:Vds-Name
+		
+		[SECURITYGROUP]
+		firewall_driver=neutron.agent.linux.ovs_firewall.OVSFirewallDriver
+
+    c.	 Execute the following command as root to create the required bridges: 
+
+      i. For creating integration bridge (br-int):
+
+    	ovs-vsctl add-br br-int
+
+     ii. Create the data interface bridge on **eth2**. Data interface is the Ethernet device of this VM which connects to **Data Port Group**. Usually, **eth2** is the data interface in OVSvAPP VM. Verify the data interface for your environment. 
+
+	    ovs-vsctl add-br br-eth2
+	    ovs-vsctl add-port br-eth2 eth2
+
+	iii. Create the security bridge on **eth3** assuming **eth3** interface is connected to **Trunk Port Group**.
+
+	    ovs-vsctl add-br br-sec
+	    ovs-vsctl add-port br-sec eth3
+
+	iv.	Assign an IP address to the interface connecting to **Management Port Group**. This IP address must be from the management VLAN subnet of overcloud. Administrator needs to keep a separate pool of IP address from Management VLAN subnet for this purpose.
+
+**Note**
+
+* OVSvAPP VMs are created one-by-one on each ESXi host. 
+* The IP Address assignment to OVSvAPP VM is manual. The Administrator needs to keep a separate pool of IP addresses from management VLAN to be assigned to these VMs. These IP addresses must be assigned to the Ethernet interfaces connecting to **Management Port Group**.
+* Provide the DV ports in the `ovs.ini`. Make sure the dv ports are attached with the proper hosts
+
+
+--->
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 ----
 ####OpenStack trademark attribution
 *The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*
+

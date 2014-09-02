@@ -42,6 +42,15 @@ HP Helion provides public, private, and managed cloud solutions to get you movin
 </tr>
 
 <tr valign="top">
+<td style="border-width : 0px;"><p style=" text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><span style=" background-color: transparent; text-decoration: none;"><a href="/automation/">HP Cloud Service Automation</a></span></p>
+</td>
+<td>Provides open, heterogeneous, extensible enterprise-grade cloud service lifecycle management to design and orchestrate full stack services. CSA embraces existing automation assets with an enhanced orchestration engine, which provides IT with an informed, transparent delivery of secure compliant services for the hybrid cloud.
+</td>
+</tr>
+
+
+
+<tr valign="top">
 <td style="border-width : 0px;"><p style=" text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><span style=" background-color: transparent; text-decoration: none;"><a href="/cloudos/moonshot/">HP Cloud OS for Moonshot</a></span></p>
 </td>
 <td>Enables you to efficiently create and run cloud environments using Moonshot servers to support a wide range of complex IT demands, from cloud-based applications to social media, big data and mobility.

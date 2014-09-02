@@ -16,6 +16,8 @@ navigation:
     url: /helion/devplatform/
   - text: HP Helion Public Cloud
     url: /pc-overview/
+  - text: HP Cloud Service Automation
+    url: /automation/
   - text: HP Cloud OS for Moonshot
     url: /cloudos/moonshot/
   - text: HP CloudSystem
@@ -270,6 +272,45 @@ navigation:
     url: /helion/openstack/3rd-party-license-agreements/	
   - text: Site Index
     url: /helion/openstack/siteindex/
+  - text: HP Helion Documentation
+    url: / 
+  commercial.ga: 
+  - text: HP Helion OpenStack Doc Home
+    url: /helion/openstack/ga/
+  - text: Release Notes
+    url: /helion/openstack/ga/release-notes/ 
+  - text: FAQ
+    url: /helion/openstack/ga/faq/  
+  - text: Technical Overview
+    url: /helion/openstack/ga/technical-overview/ 
+  - text: Services Overview
+    url: /helion/openstack/ga/services/overview/
+  - text: Support Matrix
+    url: /helion/openstack/ga/support-matrix/ 		
+  - text: Installation & Configuration Overview
+    url: /helion/openstack/ga/install/overview/	
+  - text: Installation Prerequisites
+    url: /helion/openstack/ga/install/prereqs/
+  - text: Installation for KVM Hypervisor
+    url: /helion/openstack/ga/install/kvm/
+  - text: Installation for HP StoreVirtual VSA Support
+    url: /helion/openstack/ga/install/vsa/		
+  - text: Installation for ESX Hypervisor
+    url: /helion/openstack/ga/install/esx/
+  - text: OVSvApp Deployment for HP VCN on ESX hosts 
+    url: /helion/openstack/ga/install/ovsvapp/
+  - text: Installation for DNSaaS Support 
+    url: /helion/openstack/ga/install/dnsaas/		
+  - text: Related Documentation
+    url: /helion/openstack/ga/related-links/	
+  - text: Glossary
+    url: /helion/openstack/ga/glossary/ 	
+  - text: Preview Agreement
+    url: /helion/openstack/ga/eula/
+  - text: Open Source and Third-Party Software License Agreements
+    url: /helion/openstack/ga/3rd-party-license-agreements/	
+  - text: Site Index
+    url: /helion/openstack/ga/siteindex/
   - text: HP Helion Documentation
     url: / 
   devplatform: 

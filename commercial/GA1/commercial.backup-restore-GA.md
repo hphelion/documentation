@@ -2,7 +2,7 @@
 layout: default
 title: "HP Helion OpenStack&#174; Edition: VSA Support"
 permalink: /helion/openstack/ga/backup.restore/
-product: commercial
+product: commercial.ga
 
 ---
 <!--UNDER REVISION-->
@@ -18,7 +18,7 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> <a href="/helion/openstack/install-beta/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/esx/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/helion/openstack/install/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/install-overview/">&#9650; UP</a> | <a href="/helion/openstack/install/esx/">NEXT &#9654;</a> </p>
 
 
 # HP Helion OpenStack&#174; Back Up and Restore

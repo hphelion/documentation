@@ -2,7 +2,7 @@
 layout: default
 title: "HP Helion OpenStack&#174; Focus Service Overview"
 permalink: /helion/openstack/ga/services/focus/overview/
-product: commercial
+product: commercial.ga
 
 ---
 <!--UNDER REVISION-->
@@ -24,7 +24,7 @@ Focus allows you to:
 
 ###Using the Administration Dashboard### {#dashboard}
 
-You can use the [HP Helion OpenStack Dashboard](/helion/openstack/services/dashboard/overview/) to work with the Focus service.
+You can use the [HP Helion OpenStack Dashboard](/helion/openstack/ga/services/dashboard/overview/) to work with the Focus service.
 
 
 ###Using the API to access Focus### {#API}
@@ -42,8 +42,8 @@ For information on how to operate your cloud we suggest you read the [OpenStack 
 
 <!-- hide me Also see the Help topics that are available in the Operational Dashboard and Administration Dashboard.  Website copies are available:
 
-* [HP Helion OpenStack Operational Dashboard Help](/helion/openstack/manage/operational-dashboard/)
-* [HP Helion OpenStack Administration Dashboard Help](/helion/openstack/manage/administration-dashboard/) -->
+* [HP Helion OpenStack Operational Dashboard Help](/helion/openstack/ga/manage/operational-dashboard/)
+* [HP Helion OpenStack Administration Dashboard Help](/helion/openstack/ga/manage/administration-dashboard/) -->
 
 
  <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

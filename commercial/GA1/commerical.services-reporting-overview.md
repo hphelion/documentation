@@ -2,7 +2,7 @@
 layout: default
 title: "HP Helion OpenStack&#174; Telemetry and Reporting Service Overview"
 permalink: /helion/openstack/ga/services/reporting/overview/
-product: commercial
+product: commercial.ga
 
 ---
 <!--UNDER REVISION-->
@@ -39,7 +39,8 @@ Each meter is collected from one or more *samples*, which are gathered from the 
 - the type of meter (cumulative, gauge, or delta)
 - the amount of data measured
 - the unit of measure
-- the resource being measured
+- the resource 
+- being measured
 - the project ID and user the resource belongs to
 
 Alarms can be configured to trigger notifications if a specific threshold value has been reached. 
@@ -50,7 +51,7 @@ To [perform tasks using the Telemetry and Reporting service](#howto), you can us
 
 ### Using the dashboards {#UI}
 
-You can use the [HP Helion OpenStack Dashboard](/helion/openstack/dashboard/how-works/) to work with the Telemetry and Reporting service.
+You can use the [HP Helion OpenStack Dashboard](/helion/openstack/ga/dashboard/how-works/) to work with the Telemetry and Reporting service.
 
 ### Using the API ### {#API}
  
@@ -65,7 +66,7 @@ For more information on installing the CLI, see [Install the OpenStack command-l
 
 ## How To's with the HP Helion Telemetry and Reporting Service ## {#howto}
 
-The following lists of tasks can be performed by a user or administrator through the [HP Helion OpenStack Dashboard](/helion/openstack/dashboard/how-works/), the OpenStack [CLI](http://docs.openstack.org/cli-reference/content/ceilometerclient_commands.html) or OpenStack [API](http://developer.openstack.org/api-ref-telemetry-v2.html).
+The following lists of tasks can be performed by a user or administrator through the [HP Helion OpenStack Dashboard](/helion/openstack/ga/dashboard/how-works/), the OpenStack [CLI](http://docs.openstack.org/cli-reference/content/ceilometerclient_commands.html) or OpenStack [API](http://developer.openstack.org/api-ref-telemetry-v2.html).
 
 ### Working with the Telemetry and Reporting service collection actions ###
 
