@@ -1,8 +1,8 @@
 ---
 layout: default
 title: "Undercloud Dashboard: Settings Tab"
-permalink: /helion/openstack/undercloud/admin/settings
-product: commercial
+permalink: /helion/openstack/ga/undercloud/admin/settings/
+product: commercial.ga
 
 ---
 <!--PUBLISHED-->

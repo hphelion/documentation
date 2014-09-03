@@ -1,8 +1,8 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Edition: Manage Storage"
-permalink: /helion/openstack/undercloud/oc/config/storevirtual
-product: commercial
+permalink: /helion/openstack/ga/undercloud/oc/config/storevirtual/
+product: commercial.ga
 
 ---
 <!--UNDER REVISION-->
@@ -18,7 +18,7 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> <a href="/helion/openstack/install-beta/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/esx/">NEXT &#9654;</a> </p>
+<!---<p style="font-size: small;"> <a href="/helion/openstack/install-beta/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/esx/">NEXT &#9654;</a> </p>-->
 
 
 # Working StoreVirtual Backends
@@ -34,6 +34,8 @@ This option allows you to do the following:
 * [Shrink Backend](#shrink-backend) 
 
 * [Delete Backend](#delete-backend)
+
+* [Update Overcloud](#update-overcloud) 
 
 
 ### Add Backends ###{#add-backend}
@@ -116,6 +118,34 @@ Use this option to delete a backend. Do the following:
 2. Click **More** drop-down list against the Volume Backend which you want to delete and select **Delete Volume Backend**.<br> A confirmation dialog box is displayed.
 
 3. Click **Delete Volume Backend** to delete or **Cancel** to cancel the process.
+
+
+### Update overcloud ###{#update-overcloud}
+
+To update your overcloud with the changes, do the following:
+
+1. SSH to seed as root
+
+		ssh root@ <IP address> 
+
+2. View the list of files
+
+		ls
+
+3. Copy overcloud template config file to `/root/overcloud-config.json` if `/root/overcloud-config.json` is absent.
+  
+	    cp /root/tripleo/tripleo-incubator/scripts/ee-config.json /root/overcloud-config.json
+
+4. Edit and update the /root/overcloud-config.json and add the JSON snippet(obtained from [Generate Config](#generate-config). Refer to the example below.<**TO ADD THE SAMPLE FILE**> Ensure the JSON file format is intact.
+
+5. Apply the configuration
+
+        source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/overcloud-config.json
+
+6. Launch install script to update the Overcloud
+
+	    /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --skip-install-seed --skip-install-undercloud
+7. Update the section.
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

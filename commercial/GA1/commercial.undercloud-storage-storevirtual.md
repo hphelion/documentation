@@ -1,8 +1,8 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Edition: Manage Storage"
-permalink: /helion/openstack/undercloud/storage/storeserv
-product: commercial
+permalink: /helion/openstack/ga/undercloud/storage/storeserv/
+product: commercial.ga
 
 ---
 <!--UNDER REVISION-->

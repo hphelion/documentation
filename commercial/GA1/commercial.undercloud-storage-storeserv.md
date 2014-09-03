@@ -1,8 +1,8 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Edition: Manage Storage"
-permalink: /helion/openstack/undercloud/storage/storeserv
-product: commercial
+permalink: /helion/openstack/ga/undercloud/storage/storeserv/
+product: commercial.ga
 
 ---
 <!--UNDER REVISION-->
@@ -206,9 +206,7 @@ This option allows you to unregister a CPG. To unregister, do the following:
 
 5. Click **More** drop-down list against the CPG which you want to unregister and select **Uregister CPG**.<br> A confirmation dialog box is dislayed.</br>
 
-7. Click **Unregister StoreServ** to unregister or click **Cancel** to cancel the process. 
-
-8. Click **Unregister CPG** to unregister or click **Cancel** to cancel the process.
+6. Click **Unregister CPG** to unregister or click **Cancel** to cancel the process.
 
 
 ### Unregister multiple CPGs ###
@@ -225,7 +223,7 @@ Use this option to unregister multiple CPGs using a single command.
 
 5. Click the checkbox on the left of the **Name** column to select all the CPGs. 
 
-5. Click **Unregister CPGS** to unregister the CPGs.<br>A confirmation box is diplayed.</br>
+5. Click **Unregister CPGs** to unregister the CPGs.<br>A confirmation box is diplayed.</br>
 
 5. Click **Unregister CPGs** to unregister or click **Cancel** to cancel the process. 
 
@@ -233,7 +231,7 @@ Use this option to unregister multiple CPGs using a single command.
 
 Use this option to view the CPG configuration.
 
-Log into the Undercloud Horizon Dashboard.
+1. Log into the Undercloud Horizon Dashboard.
 
 2. From the left panel, click **Resources** Tab and then **Storage** to display the Overview page.
 
@@ -242,6 +240,8 @@ Log into the Undercloud Horizon Dashboard.
 4. Click the device name for which you want to view CPG configuration. <br>The Common Provisioning Groups page is displayed with a list of CPGs.<br> 
 
 5. Click **More** drop-down list against the CPG for which you want to view the configuration.<br> The configuration is displayed in a dialog box.</br>
+
+6. Click **Close** to close and return to the Common Provisioning Groups page. 
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
