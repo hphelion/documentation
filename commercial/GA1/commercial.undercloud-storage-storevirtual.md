@@ -2,7 +2,8 @@
 layout: default
 title: "HP Helion OpenStack&#174; Edition: Manage Storage"
 permalink: /helion/openstack/ga/undercloud/storage/storevirtual/
-product: commercial
+product: commercial.ga
+
 
 ---
 <!--UNDER REVISION-->
@@ -18,7 +19,8 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> <a href="/helion/openstack/install-beta/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/esx/">NEXT &#9654;</a> </p>
+<!---
+<p style="font-size: small;"> <a href="/helion/openstack/install-beta/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/esx/">NEXT &#9654;</a> </p>-->
 
 
 # Working with HP StoreVirtual 

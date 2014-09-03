@@ -1,8 +1,8 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Compute Sherpa Overview"
-permalink: /helion/openstack/services/sherpa/overview/
-product: commercial
+permalink: /helion/openstack/ga/services/sherpa/overview/
+product: commercial.ga
 
 ---
 <!--PUBLISHED-->

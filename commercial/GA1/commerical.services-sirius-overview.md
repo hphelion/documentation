@@ -1,8 +1,8 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Sirius Service Overview"
-permalink: /helion/openstack/services/sirius/overview/
-product: commercial
+permalink: /helion/openstack/ga/services/sirius/overview/
+product: commercial.ga
 
 ---
 <!--PUBLISHED-->
