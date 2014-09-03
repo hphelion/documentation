@@ -287,11 +287,8 @@ Automation scripts - pyVins.tgz</td>
 
 
 ## Next steps
-* [Installing and configuring with a KVM hypervisor](/helion/openstack/ga/install/kvm)
-* [Installing HP StoreVirtual VSA support](/helion/openstack/ga/install/vsa/)
-* [Installing and configuring with an ESX hypervisor](/helion/openstack/ga/install/esx/)
-* [Deploying and configuring OVSvApp for HP Virtual Cloud Networking (VCN) on ESX hosts](/helion/openstack/ga/install/ovsvapp/)
-* [Installing and configuring DNSaaS support](/helion/openstack/ga/install/dnsaas/)
+* [Installing and configuring on a KVM hypervisor](/helion/openstack/ga/install/kvm)
+* [Installing and configuring on an ESX hypervisor](/helion/openstack/ga/install/esx/)
  
 ## For more information
 For more information on HP Helion OpenStack Community, see:

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174;: Technical Overview"
-permalink: /helion/openstack/technical-overview/
+permalink: /helion/openstack/ga/technical-overview/
 product: commercial.ga
 
 ---

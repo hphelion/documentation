@@ -1,8 +1,8 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Installation and Configuration"
-permalink: /helion/openstack/undercloud/horizon/overview
-product: commercial
+permalink: /helion/openstack/ga/undercloud/horizon/overview/
+product: commercial.ga
 
 ---
 <!--UNDER REVISION-->

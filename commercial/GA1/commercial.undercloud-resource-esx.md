@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack: Beta Installation and Configuration"
-permalink: /helion/openstack/undercloud/resource/esx
+permalink: /helion/openstack/undercloud/resource/esx/
 product: commercial
 
 ---
