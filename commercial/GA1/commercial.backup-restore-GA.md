@@ -358,12 +358,13 @@ Follow "Updating the undercloud" link to restore the upgraded image
 
       controllerMgmtImage: is the imageid of controllerMgmt that is in your glance   )
 
-4. Run these commands on nodes.
+4. Check the status of the nodes: 
 
-	Check status of nodes: node status - Status/Power State   :   ACTIVE/Running:
-    Update these files on all controller nodes and compute nodes that are in overcloud stack. 
+		node status - Status/Power State   :   ACTIVE/Running:
+    
+5. Update these files on all controller nodes and compute nodes that are in overcloud stack. 
 
-	From the seed node run the following: 
+	a. From the seed node run the following: 
 
 		ssh heat-admin@<node> 'sudo sed -i "/diff/ s/$/ \&\& true/" /opt/stack/os-config-refresh/configure.d/51-hosts'
 
@@ -371,43 +372,48 @@ Follow "Updating the undercloud" link to restore the upgraded image
 
 		ssh heat-admin@192.0.2.43 'sudo sed -i "/diff/ s/$/ \&\& true/" /opt/stack/os-config-refresh/configure.d/51-hosts') 
 
-	From the seed node run the following: 
+	b. From the seed node run the following: 
 
 		ssh heat-admin@<node> 'sudo pkill -u rabbitmq'
 
-To Add Controller Nodes :
+6. Add Controller Nodes :
 
-1. Generate heat template:  
-2. Follow  above step " To Drop Controller Nodes - [1. Generate heat template]"  to generate new template by increasing scale count "--scale controller= .. " . 
+	a. Generate heat template:  
 
-TODO: cater for controller 0 and mgmt controller (either by trickle or prebuilt templates
+		cd ~/tripleo/tripleo-heat-templates/
+		python ./tripleo_heat_merge/merge.py --scale controller=1 --scale NovaCompute=1 --scale SwiftStorage=2 --scale BlockStorage=0 overcloud-source.yaml block-storage.yaml swift-source-ce.yaml swift-storage-server.yaml ssl-source.yaml nova-compute-config.yaml overcloud-controller-mgmt-ce.yaml overcloud-sherpa.yaml > overcloud-ce-drop-ctrlnode.yaml
 
-[2. Stack update ]
+	The example above drops the `controller1` node. 
 
-To Add Controller management node -  use original(during installation) template - /root/tripleo/tripleo-heat-templates/overcloud-ce.yaml.
+	b. Follow the above step " To Drop Controller Nodes - [1. Generate heat template]"  to generate new template by increasing scale count "--scale controller= .. " . 
 
-From the seed node run the following:
-cd ~root/tripleo/tripleo-heat-templates/
-python ./tripleo_heat_merge/merge.py --scale controller=2 --scale NovaCompute=1 --scale SwiftStorage=2 --scale BlockStorage=0 overcloud-source.yaml block-storage.yaml swift-source-ce.yaml swift-storage-server.yaml ssl-source.yaml nova-compute-config.yaml overcloud-controller-mgmt-ce.yaml overcloud-sherpa.yaml > overcloud-ce.yaml
+		TODO: cater for controller 0 and mgmt controller (either by trickle or prebuilt templates
+
+7. Add Controller management node -  use original(during installation) template - /root/tripleo/tripleo-heat-templates/overcloud-ce.yaml.
+
+	From the seed node run the following:
+
+		cd ~root/tripleo/tripleo-heat-templates/
+		python ./tripleo_heat_merge/merge.py --scale controller=2 --scale NovaCompute=1 --scale SwiftStorage=2 --scale BlockStorage=0 overcloud-source.yaml block-storage.yaml swift-source-ce.yaml swift-storage-server.yaml ssl-source.yaml nova-compute-config.yaml overcloud-controller-mgmt-ce.yaml overcloud-sherpa.yaml > overcloud-ce.yaml
  
-source ~root/tripleo/tripleo-undercloud-passwords
-TE_DATAFILE=~root/tripleo/ce_env.json
-source ~root/tripleo/tripleo-incubator/undercloudrc
+		source ~root/tripleo/tripleo-undercloud-passwords
+		TE_DATAFILE=~root/tripleo/ce_env.json
+		source ~root/tripleo/tripleo-incubator/undercloudrc
  
-heat stack-update -e /root/tripleo/overcloud-env.json -t 360 -f /root/tripleo/tripleo-heat-templates/overcloud-ce.yaml -P 'ExtraConfig= ....' -P controllerImage=<ctrlImageid> -P controllerMgmtImage=<ctrlMgmtImageid> overcloud
+		heat stack-update -e /root/tripleo/overcloud-env.json -t 360 -f /root/tripleo/tripleo-heat-templates/overcloud-ce.yaml -P 'ExtraConfig= ....' -P controllerImage=<ctrlImageid> -P controllerMgmtImage=<ctrlMgmtImageid> overcloud
  
 
- ( ExtraConfig : these are config parameters that are passed during installation steps( Example: Attached file ),
+	 ( ExtraConfig : these are config parameters that are passed during installation steps( Example: Attached file ),
 
-  controllerImage : is the imageid of controller that is in your glance,
+		controllerImage : is the imageid of controller that is in your glance,
 
-  controllerMgmtImage: is the imageid of controllerMgmt that is in your glance )
+		controllerMgmtImage: is the imageid of controllerMgmt that is in your glance )
 
-TODO: Avoid the use of heat stack-update directly: use the installer script, avoiding the need for ExtraConfig, and imageId's
+	TODO: Avoid the use of heat stack-update directly: use the installer script, avoiding the need for ExtraConfig, and imageId's
 
-[3. Run these commands on nodes ] 
+8. Run these commands on nodes:
 
-Follow above steps "To Drop Controller Nodes - [3. Run these commands on nodes ]  "
+	Follow above steps "To Drop Controller Nodes - [3. Run these commands on nodes ]  "
 
 
 ## Backup and restore the MySQL cluster on the Overcloud ##

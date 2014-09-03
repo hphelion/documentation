@@ -4,6 +4,7 @@ title: "HP Helion OpenStack: Compute Service"
 permalink: /helion/openstack/ga/undercloud/resource/esx/compute/
 product: commercial.ga
 
+
 ---
 <!--UNDER REVISION-->
 
