@@ -1,20 +1,20 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174;: Technical Overview"
-permalink: /helion/openstack/technical-overview/
+permalink: /helion/openstack/ga/technical-overview/
 product: commercial.ga
 
 ---
 <!--UNDER REVISION-->
 
-
-<p style="font-size: small;"> <a href="/helion/openstack/faq/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/services/overview/">NEXT &#9654;</a> </p>
+<!---
+<p style="font-size: small;"> <a href="/helion/openstack/faq/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/services/overview/">NEXT &#9654;</a> </p> -->
 
 # HP Helion OpenStack&#174; Technical Overview
 
 Welcome! This page introduces you to HP Helion OpenStack, an open and extensible enterprise-grade cloud technology. 
 
-HP Helion OpenStack is OpenStack technology coupled with a version of Linux&#174; provided by HP. It is  designed to offer a number of value-added services that complement and enhance OpenStack and set up a cloud. HP Cloud Openstack is enabled to manage KVM and VMWare ESX hyper-visor. KVM supports up to 30 physical nodes and 40 VMs per node and VMWare ESX supports 1 node and 1 VM.
+HP Helion OpenStack is OpenStack technology coupled with a version of Linux&#174; provided by HP. It is  designed to offer a number of value-added services that complement and enhance OpenStack and set up a cloud. HP Cloud Openstack is enabled to manage KVM and VMWare ESX hyper-visor. KVM supports up to 30 physical nodes and 40 VMs per node.
 
 
 * [Reference architecture](#ref-arch)
@@ -316,11 +316,11 @@ For more details on HA configuration, refer to [OpenStack HA Guide](http://docs.
 
 Kernel-based Virtual Machine is a virtualization infrastructure for the Linux kernel, which turns it into a hypervisor. KVM requires a processor with hardware virtualization extension.
 
-<a href="javascript:window.open('/content/documentation/media/commercial_kvm_network_architecture.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack beta architecture diagram for KVM network architecture.(opens in a new window)  </a>
+<a href="javascript:window.open('/content/documentation/media/commercial_kvm_network_architecture.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack architecture diagram for KVM network architecture.(opens in a new window)  </a>
 
 HP StoreVirtual VSA Software is a Virtual Storage Appliance that provides the complete array functionality on top of Linux KVM environment without external hardware. It eliminates the need for external shared storage required to implement Block Storage features. It uses scale-out, distributed clustering to provide a pool of storage with enterprise storage features and simple management at a reduced cost.
 
-<a href="javascript:window.open('/content/documentation/media/reference-architecture-StoreVirtual-volume-type-mapping.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack beta architecture diagram for Store Virtual volume type mapping.(opens in a new window) </a> 
+<a href="javascript:window.open('/content/documentation/media/reference-architecture-StoreVirtual-volume-type-mapping.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack architecture diagram for Store Virtual volume type mapping.(opens in a new window) </a> 
 
 ###ESX Hypervisor with HP Virtual Cloud Networking (VCN) application support 
 
@@ -363,7 +363,7 @@ This baremetal installation is designed to deliver an open source OpenStack solu
 * At least 1 overcloud Compute node 
 
 
-[Learn more]( /helion/openstack/ga/install/overview/) about installing and configuring HP Helion OpenStack beta. 
+[Learn more]( /helion/openstack/ga/install/overview/) about installing and configuring HP Helion OpenStack. 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593;</a>
 

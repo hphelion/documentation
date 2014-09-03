@@ -1,8 +1,8 @@
 ---
 layout: default
 title: "HP Helion OpenStack: Working with ESX Clusters"
-permalink: /helion/openstack/undercloud/oc/config/esx
-product: commercial
+permalink: /helion/openstack/ga/undercloud/oc/config/esx/
+product: commercial.ga
 
 ---
 <!--UNDER REVISION-->
@@ -18,8 +18,8 @@ PageRefresh();
 
 </script>
 
-
-<p style="font-size: small;"> <a href="/helion/openstack/install-beta/prereqs/">&#9664; PREV</a> | <a href="/helion/openstack/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/vsa/">NEXT &#9654;</a> </p>
+<!---
+<p style="font-size: small;"> <a href="/helion/openstack/install-beta/prereqs/">&#9664; PREV</a> | <a href="/helion/openstack/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/vsa/">NEXT &#9654;</a> </p> --->
 
 ##Working with EXS Clusters
  
@@ -42,7 +42,7 @@ Perform the following steps to activate clusters:
 
 6. Click  &rarr; to move the selected clusters in the **Selected vCenter Choices** box list. 
 
-7. (Optional)Click **Remove All** displayed  below the **Selected vCenter Choices** box to remove all the listed clusters. <br>OR<br> Select the desired cluster(s) from the **Selected vCenter Choices** box list and click &larr; to move the selected cluster (S) in the **Available vCenter Choices** box.
+7. (Optional) Click **Remove All** displayed  below the **Selected vCenter Choices** box to remove all the listed clusters. <br>OR<br> Select the desired cluster(s) from the **Selected vCenter Choices** box list and click &larr; to move the selected cluster (s) in the **Available vCenter Choices** box.
 
 5. Click **Configure**. After successful configuration of clusters a message is displayed. <br>The configured cluster(s) get listed in the in the **Activated Clusters** table.
 
