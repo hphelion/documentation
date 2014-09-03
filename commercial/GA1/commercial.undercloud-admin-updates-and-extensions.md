@@ -1,8 +1,9 @@
 ---
 layout: default
-title: "HP Helion OpenStack: Beta Installation and Configuration"
-permalink: /helion/openstack/undercloud/admin/updates-and-extension/
-product: commercial
+title: "HP Helion OpenStack: Updates and Extension"
+permalink: /helion/openstack/ga/undercloud/admin/updates-and-extension/
+product: commercial.ga.
+
 
 ---
 <!--UNDER REVISION-->
@@ -18,12 +19,12 @@ PageRefresh();
 
 </script>
 
-
-<p style="font-size: small;"> <a href="/helion/openstack/install-beta/prereqs/">&#9664; PREV</a> | <a href="/helion/openstack/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/vsa/">NEXT &#9654;</a> </p>
+<!--
+<p style="font-size: small;"> <a href="/helion/openstack/install-beta/prereqs/">&#9664; PREV</a> | <a href="/helion/openstack/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/vsa/">NEXT &#9654;</a> </p> --->
 
 #Updates and Extensions
 
-This topic explains how to obtain the patches and other relevant functionality from HP Helion Product Catalog.
+Updates and extensions provides a mechanism to download and install content and updates for the Overcloud.
 
 * [Signup for Cloud Distribution Network](#Signup-for-Cloud-Distribution-Network)
 
@@ -94,7 +95,7 @@ To import a package that is stored on your local system, do the following:
 
 3.	Click **Import** displayed at the top right corner of the page. An import dialog box is displayed.
 
-4.	Click **Browse** to select and import the .csu file.<br>The imported file is displayed in the Import dialog box.</br> Note: Only CSU file is supported.
+4.	Click **Browse** to select and import the **.csu** file.<br>The imported file is displayed in the Import dialog box.</br> Note: Only CSU file is supported.
 
 5.	Click **Import**.<br>The file is imported to your local cloud and displayed in the Updates and Extensions page.
 
@@ -131,7 +132,7 @@ Perform the following steps to download the packages:
 
 8. Click **Publish** to publish the package.
 
-
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 ----
 ####OpenStack trademark attribution

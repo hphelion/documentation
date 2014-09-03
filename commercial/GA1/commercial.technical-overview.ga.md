@@ -7,14 +7,14 @@ product: commercial.ga
 ---
 <!--UNDER REVISION-->
 
-
-<p style="font-size: small;"> <a href="/helion/openstack/faq/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/services/overview/">NEXT &#9654;</a> </p>
+<!---
+<p style="font-size: small;"> <a href="/helion/openstack/faq/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/services/overview/">NEXT &#9654;</a> </p> -->
 
 # HP Helion OpenStack&#174; Technical Overview
 
 Welcome! This page introduces you to HP Helion OpenStack, an open and extensible enterprise-grade cloud technology. 
 
-HP Helion OpenStack is OpenStack technology coupled with a version of Linux&#174; provided by HP. It is  designed to offer a number of value-added services that complement and enhance OpenStack and set up a cloud. HP Cloud Openstack is enabled to manage KVM and VMWare ESX hyper-visor. KVM supports up to 30 physical nodes and 40 VMs per node and VMWare ESX supports 1 node and 1 VM.
+HP Helion OpenStack is OpenStack technology coupled with a version of Linux&#174; provided by HP. It is  designed to offer a number of value-added services that complement and enhance OpenStack and set up a cloud. HP Cloud Openstack is enabled to manage KVM and VMWare ESX hyper-visor. KVM supports up to 30 physical nodes and 40 VMs per node.
 
 
 * [Reference architecture](#ref-arch)
@@ -39,12 +39,12 @@ A TripleO installation includes a Seed, the Undercloud and the Overcloud.
 <table style="text-align: left; vertical-align: top; width:600px;">
 <tr style="background-color: white; color: black;">
 	<td><b>Seed VM</b></td>
-	<td>The Seed VM is a bootable image provided as part of HP Helion OpenStack and is deployed in a VM instance. This image contains the minimum services required of OpenStack to function and to be able to provision physical hardware to deploy the Undercloud. The services are Nova, Neutron, Glance, Keystone, Ironic, and  Heat.</td>
+	<td>The Seed VM is a bootable image provided as part of HP Helion OpenStack and is deployed as a VM instance. This image contains the minimum services required of OpenStack to function and to be able to provision physical hardware to deploy the Undercloud. The services are Nova, Neutron, Glance, Keystone, Ironic, and  Heat.</td>
 </tr>
 <tr style="background-color: white; color: black;">
 	 <td><b>Undercloud</b></td>
-	 <td>The Undercloud server is a basic, single-node OpenStack installation running on a single physical server used to deploy, test, manage, and update the Overcloud servers. There is no HA configuration for the Undercloud. It contains a strictly limited sub-set of OpenStack, just enough to interact with the Overcloud. The services running on Undercloud are Nova, Neutron, Glance, Keystone, Ironic, Heat, and  Ceilometer. This server also contains HP Helion content distribution catalog  service, which provides a mechanism to download and install content and updates for the Overcloud.<br><br>
-	 The Undercloud also hosts images for various server types, which forms the functional cloud environment, aka Overcloud. These images are Overcloud Controller, Overcloud Compute, Overcloud Swift and Overcloud Compute Proxy (required for cloud, which supports VMWare ESX as a hypervisor).
+	 <td>The Undercloud server is a basic, single-node OpenStack installation running on a single physical server used to deploy, test, manage, and update the Overcloud servers. There is no HA configuration for the Undercloud. It contains a strictly limited sub-set of OpenStack, just enough to interact with the Overcloud. The services running on Undercloud are Nova, Neutron, Glance, Keystone, Ironic, Heat, Ceilometer, icing, EON, and Sirius. This server also contains HP Helion content distribution catalog  service, which provides a mechanism to download and install content and updates for the Overcloud.<br><br>
+	 The Undercloud also hosts images for various server types, which forms the functional cloud environment, aka Overcloud. <!--These images are Overcloud Controller, Overcloud Compute, Overcloud Swift and Overcloud Compute Proxy (required for cloud, which supports VMWare ESX as a hypervisor). -->
 </td>
  </tr>
 <tr style="background-color: white; color: black;">
@@ -316,11 +316,11 @@ For more details on HA configuration, refer to [OpenStack HA Guide](http://docs.
 
 Kernel-based Virtual Machine is a virtualization infrastructure for the Linux kernel, which turns it into a hypervisor. KVM requires a processor with hardware virtualization extension.
 
-<a href="javascript:window.open('/content/documentation/media/commercial_kvm_network_architecture.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack beta architecture diagram for KVM network architecture.(opens in a new window)  </a>
+<a href="javascript:window.open('/content/documentation/media/commercial_kvm_network_architecture.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack architecture diagram for KVM network architecture.(opens in a new window)  </a>
 
 HP StoreVirtual VSA Software is a Virtual Storage Appliance that provides the complete array functionality on top of Linux KVM environment without external hardware. It eliminates the need for external shared storage required to implement Block Storage features. It uses scale-out, distributed clustering to provide a pool of storage with enterprise storage features and simple management at a reduced cost.
 
-<a href="javascript:window.open('/content/documentation/media/reference-architecture-StoreVirtual-volume-type-mapping.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack beta architecture diagram for Store Virtual volume type mapping.(opens in a new window) </a> 
+<a href="javascript:window.open('/content/documentation/media/reference-architecture-StoreVirtual-volume-type-mapping.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack architecture diagram for Store Virtual volume type mapping.(opens in a new window) </a> 
 
 ###ESX Hypervisor with HP Virtual Cloud Networking (VCN) application support 
 
@@ -363,7 +363,7 @@ This baremetal installation is designed to deliver an open source OpenStack solu
 * At least 1 overcloud Compute node 
 
 
-[Learn more]( /helion/openstack/ga/install/overview/) about installing and configuring HP Helion OpenStack beta. 
+[Learn more]( /helion/openstack/ga/install/overview/) about installing and configuring HP Helion OpenStack. 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593;</a>
 

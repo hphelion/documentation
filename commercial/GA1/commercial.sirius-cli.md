@@ -1,8 +1,8 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Installation and Configuration"
-permalink: /helion/openstack/sirius-cli/
-product: commercial
+permalink: /helion/openstack/ga/sirius-cli/
+product: commercial.ga
 
 ---
 <!--UNDER REVISION-->
@@ -18,7 +18,8 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> <a href="/helion/openstack/support-matrix-beta/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/prereqs/">NEXT &#9654;</a> </p>
+<!---
+<p style="font-size: small;"> <a href="/helion/openstack/support-matrix-beta/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/prereqs/">NEXT &#9654;</a> </p>-->
 
 # Configuring Your Storage Using Sirius
 Once you complete the Undercloud and Overcloud installation, you can use Sirius client CLI package to configure your storage. The python-Siriusclient CLI package provides a http-client coupled command line tool for managing Sirius service. The client works with Keystone through the python-keystoneclient and thus requires OpenStack Keystone credentials to be sourced or augmented along with the command and is in line with other OpenStack clients.This service helps in configuring the storage devices such as StoreVirtual and StoreServ using Cinder as the backend.
@@ -38,7 +39,7 @@ You can use the following commands using the Sirius Client CLI package:
 ### Get block info ###
 
 
-You can list the block storage details of API version. [WHEREDO WE GIVE THIS COMMAND??????]
+You can list the block storage details of API version. [**WHERE DO WE GIVE THIS COMMAND??????**]
 
 	Sirius block-info
 

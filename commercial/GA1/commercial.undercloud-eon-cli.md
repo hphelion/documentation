@@ -1,10 +1,10 @@
-
+ 
 
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Command Line Interface- EON"
 permalink: /helion/openstack/ga/undercloud/eon/cli/
-product: commercial
+product: commercial.ga
 
 ---
 <!--UNDER REVISION-->
@@ -19,13 +19,15 @@ PageRefresh();
 
 </script>
 
-
+<!---
 <p style="font-size: small;"> <a href="/helion/openstack/services/compute/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/services/imaging/overview/"> NEXT &#9654</a> </p>
 
+-->
 
 #Command Line Interface- EON 
 
 The EON client CLI package provides a http-client coupled command line tool for managing Eon (Esx management) services.
+
 
 
 Using command line, you can do the following:
@@ -37,6 +39,7 @@ Using command line, you can do the following:
 * [Delete vCenter](#delete-vcenter)
 * [List clusters](#list-clusters)
 * [View cluster details ](#view-cluster-details)
+* [Cluster update](#cluster-update)
 * [Host details](host-details)
 * [Import clusters](#import-clusters)
 * [Unimport clusters](#unimport-clusters)
@@ -90,9 +93,15 @@ You can view of the details of the specific cluster.
 
 	eon cluster-show --vcenter-id=<VCENTER_ID> --cluster-moid=<CLUSTER_MOID>
 
+## Cluster update {#cluster-update}
+
+You can update the cluster details. 
+
+	eon cluster-update
+
 ## Host details {#host-details}
 
-You can view the details of the host. 
+You can view the list of hosts of cluster details of the host when cluster moid is specified.
 
 	 eon host-list <VCENTER_ID> --cluster-moid=<CLUSTER_MOID>
 
@@ -108,7 +117,11 @@ You can unimport the cluster(s) from the EON database under the give vCenter. to
 
 	eon import-cluster --vcenter-id=<VCENTER_ID> --cluster-moid=<CLUSTER_MOID>
 
+## Bash-completion
 
+bash-completion     Prints all of the commands and options to stdout.
+    help                Display help about this program or one of its
+                        subcommands.
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

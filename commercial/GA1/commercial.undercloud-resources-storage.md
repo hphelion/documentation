@@ -1,8 +1,8 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Edition: Manage Storage"
-permalink: /helion/openstack/undercloud/manage/resources/storage/
-product: commercial
+permalink: /helion/openstack/ga/undercloud/manage/resources/storage/
+product: commercial.ga
 
 ---
 <!--UNDER REVISION-->
@@ -18,18 +18,19 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> <a href="/helion/openstack/install-beta/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/esx/">NEXT &#9654;</a> </p>
+<!---
+<p style="font-size: small;"> <a href="/helion/openstack/install-beta/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/esx/">NEXT &#9654;</a> </p>-->
 
 
 # Working with Storage
 
-The Storage option under the Resources Tab allows you to configure storage for your cloud. This allows you to add your HP StoreVirtual Clusters and HP StoreServ to the cloud inventory. You can then use the Configure option under the Overcloud Tab to add the registered resources to the Overcloud.  
+The Storage option under the **Resources** Tab allows you to configure storage for your cloud. This allows you to add your HP StoreVirtual Clusters and HP StoreServ to the cloud inventory. You can then use the Configure option under the Overcloud Tab to add the registered resources to the Overcloud.  
 
-The Storage has two options:
+The Storage option has two sub options:
 
-* **StoreVirtual**
+* [StoreVirtual](/helion/openstack/ga/undercloud/storage/storeserv/)
 
-* **StoreServ**
+* [StoreServ](/helion/openstack/ga/undercloud/storage/storeserv/)
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
