@@ -39,12 +39,12 @@ A TripleO installation includes a Seed, the Undercloud and the Overcloud.
 <table style="text-align: left; vertical-align: top; width:600px;">
 <tr style="background-color: white; color: black;">
 	<td><b>Seed VM</b></td>
-	<td>The Seed VM is a bootable image provided as part of HP Helion OpenStack and is deployed in a VM instance. This image contains the minimum services required of OpenStack to function and to be able to provision physical hardware to deploy the Undercloud. The services are Nova, Neutron, Glance, Keystone, Ironic, and  Heat.</td>
+	<td>The Seed VM is a bootable image provided as part of HP Helion OpenStack and is deployed as a VM instance. This image contains the minimum services required of OpenStack to function and to be able to provision physical hardware to deploy the Undercloud. The services are Nova, Neutron, Glance, Keystone, Ironic, and  Heat.</td>
 </tr>
 <tr style="background-color: white; color: black;">
 	 <td><b>Undercloud</b></td>
-	 <td>The Undercloud server is a basic, single-node OpenStack installation running on a single physical server used to deploy, test, manage, and update the Overcloud servers. There is no HA configuration for the Undercloud. It contains a strictly limited sub-set of OpenStack, just enough to interact with the Overcloud. The services running on Undercloud are Nova, Neutron, Glance, Keystone, Ironic, Heat, and  Ceilometer. This server also contains HP Helion content distribution catalog  service, which provides a mechanism to download and install content and updates for the Overcloud.<br><br>
-	 The Undercloud also hosts images for various server types, which forms the functional cloud environment, aka Overcloud. These images are Overcloud Controller, Overcloud Compute, Overcloud Swift and Overcloud Compute Proxy (required for cloud, which supports VMWare ESX as a hypervisor).
+	 <td>The Undercloud server is a basic, single-node OpenStack installation running on a single physical server used to deploy, test, manage, and update the Overcloud servers. There is no HA configuration for the Undercloud. It contains a strictly limited sub-set of OpenStack, just enough to interact with the Overcloud. The services running on Undercloud are Nova, Neutron, Glance, Keystone, Ironic, Heat, Ceilometer, icing, EON, and Sirius. This server also contains HP Helion content distribution catalog  service, which provides a mechanism to download and install content and updates for the Overcloud.<br><br>
+	 The Undercloud also hosts images for various server types, which forms the functional cloud environment, aka Overcloud. <!--These images are Overcloud Controller, Overcloud Compute, Overcloud Swift and Overcloud Compute Proxy (required for cloud, which supports VMWare ESX as a hypervisor). -->
 </td>
  </tr>
 <tr style="background-color: white; color: black;">
