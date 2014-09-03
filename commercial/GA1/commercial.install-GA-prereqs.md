@@ -117,17 +117,23 @@ If you are installing HP Helion OpenStack in a ESX deployment, you must configur
 
 <a href="javascript:window.open('/content/documentation/media/topology_esx.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack architecture diagram for ESX network architecture.</a>(opens in a new window)
 
-For ESX deployments, two specific networks must be installed and configured for the VMware vCenter environment. The network is used for communication between specific aspects of vCenter:
+##### Installing networks for ESX #####
 
-- the OVSvApp communicates with the Neutron message queue 
+For ESX deployments, you must install and configure two specific networks:
 
-- the Compute service communicates with the vCenter Proxy
+1. The **ESX network**. This network must be installed and configured for the VMware vCenter environment. The network is used for communication between specific aspects of vCenter:
 
-- the vCenter Proxy communicates with the message queue for the Compute and Volume Operations services. 
+	- the OVSvApp communicates with the Networking Operations service (Neutron) message queue 
 
-- the EON service sub-component communicates with the vCenter server.
+	- the Compute service communicates with the vCenter Proxy
 
-The initial installation of the cloud will install the 2 initial Object Storage nodes. All additional Object Storage nodes will be installed using customer procedures after the initial install. 
+	- the vCenter Proxy communicates with the message queue for the Compute and Volume Operations services. 
+
+	- the EON service sub-component communicates with the vCenter server.
+
+2. The **Service network**. This network is for trusted VMs in overcloud to communicate with cloud infrastructure components in undercloud. The service network is used by all services for accessing the logging, monitoring as well as customer provided network services such as NTP and LDAP. VMs will need to add a NIC and attach a VLAN address to get access. Authentication is through the Identity Management service, where this Neutron Provider Network is defined for a single project. 
+
+##### Other customer responsibilities and requirements #####
 
 You are responsible for the following before beginning the HP Helion OpenStack installation:
 
@@ -137,10 +143,22 @@ You are responsible for the following before beginning the HP Helion OpenStack i
 
 - installing and managing the ESX network and for assigning IP addresses on it to the OVSvApp and vCenter Proxy nodes;
 
-- providing a route for traffic between the Compute and Volume Operations services running on the vCenter Proxy node and the RabbitMQ and mySQL on the Cloud Controller;
+- providing a route for traffic between the Compute and Volume Operations services running on the vCenter Proxy node and the RabbitMQ and mySQL on the Cloud Controller:
+	- The target IP addresses should be limited the ip addresses of the MySQL cluster nodes and RabbitMQ cluster nodes in the Over Cloud.
+	- The Port numbers shall be limited to 5672 (RabbitMQ) and 3306 (MySQL)
+
+- providing a route from the service subnet in the overcloud to the RabbitMQ on the undercloud controller:
+
+	- The target IP addresses should be limited the ip addresses of the RabbitMQ cluster nodes in the Under Cloud.
+	- The Port numbers shall be limited to 5672 (RabbitMQ)
 
 - providing a route from the EON service on the Under Cloud and the vCenter server;
- 
+
+
+##### Storage nodes installed during installation #####
+
+The initial installation of the cloud will install two initial Object Storage nodes. All additional Object Storage nodes will be installed using customer procedures after the initial install. 
+
 
 ### Preparing the installer system ### {#installer}
 
