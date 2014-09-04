@@ -129,7 +129,7 @@ Then, as the cloud administrator, you need to create three volume types &ndash; 
 
 Differentiated storage offerings based on performance and quality can be realized in HP Helion OpenStack by creating clusters of different capabilites, configuring clusters as backends and mapping theses backends to different volume types as suggested above.
 
-
+<!---
 
 ##Installing and configuring HP StoreVirtual VSA {#installation-of-storevirtual-vsa}
 
@@ -345,10 +345,10 @@ Once the installation completes, VSA is deployed.
 **Note**: We recommend deployment of a minimum of three VSAs.
 
 
-<img src="media/storevirtual-cluster-network-diagram1.png"/>
+<img src="media/storevirtual-cluster-network-diagram1.png"/>-->
 
 
-###Installing HP StoreVirtual Centralized Management Console (CMC) on Linux {#install-hp-storevirtual-vsa}
+##Installing HP StoreVirtual Centralized Management Console (CMC) on Linux {#install-hp-storevirtual-vsa}
 
 
 You must install the CMC to perform the administrative tasks on HP StoreVirtual VSA storage. You can manage the entire network of VSAs from this CMC. 
@@ -359,7 +359,7 @@ Pre-requisites, add following line:-->
 
 
 
-**Prerequisites**
+**Prerequisites**<**ARE THESE RELEVANT IN THE CURRENT CONTEXT----???**
 
 * You must be running the X Windows System to install the CMC.
 
@@ -367,21 +367,26 @@ Pre-requisites, add following line:-->
 
 **Note**: These changes are required for 64-bit operating system only.  
 
-* Execute the following commands:
+<!---* Execute the following commands:
 
 		apt-get update
 		dpkg --add-architecture i386
 		apt-cache search ia32-libs
-		apt-get install openjdk-7-jdk:i386
+		apt-get install openjdk-7-jdk:i386-->
 
 **Installation**
 
-Verify if the CMC installer file has executable permission otherwise execute the following command:
+1. Go to the following URL and download CMC installer.
+
+		/opt/stack/horizon-vas-plugins/cloudos_dashboard/downloads
+
+
+2. Verify if the CMC installer file has executable permission otherwise execute the following command:
 
 		chmod +x CMC_11.5.01.0023.0_Installer_Linux.bin
 
 
-1. Click the CMC installer.
+3. Click the CMC installer.
 
 2. Follow the steps in the installation wizard to complete the installation.
 
@@ -389,7 +394,7 @@ Verify if the CMC installer file has executable permission otherwise execute the
  From the directory in which the files are installed, click the **HP Store Virtual Centralized Management Console** to launch CMC.  
 </br>  
 
-###Creating a cluster{#create-cluster}
+<!---###Creating a cluster{#create-cluster}
 
 We recommend creation of a RAID 10 cluster which comprises three deployed VSAs.  For deploying VSA, refer to section on [Deployment of VSA](#deployment-vsa). Use the following three step process:
 
@@ -435,6 +440,86 @@ where:
 * **VSA_ISCSI_CHAP_ENABLED**: Mark this field as *True* if you want to enable CHAP authentication.
 
 * **VSA_DEBUG**: By default the value is *False*, to enable debugging, change it to *True*.
+-->
+
+## Creating a StoreVirtual Cluster ##
+
+**Prerequisites**
+
+* CMC is already installed 
+
+* VSA(one or more) is deployed in the same management network where CMC is installed.
+
+
+To create a cluster, do the following:
+
+1. Open CMC.
+
+    By default the CMC is configured to discover the VSA nodes in the subnet on which it is installed. You can manually add the nodes also.
+
+2. In the CMC page, click **Find Systems** from the left panel.<br> Find Systems dialogue box is displayed with an Enter IP pop-up box.
+
+3. In the Enter IP pop-up box, enter the IP of the VSA node.
+
+4. Click **OK** to proceed or click **Cancel** to cancel the process.<br>The node is discovered and displays in a table with details in the Find Systems dialogue box.
+
+5. (Optional) Click **Add** in the Find Systems dialogue box to add more nodes. 
+
+6. (Optional) Click **Edit** in the Find Systems dialogue box to modify the detials of the selected node.
+7. (Optional) Click **Remove** in the Find Systems box to delete a node.
+
+8. Click **Close** to return to the Home page.<br> The discovered nodes are displayed under **Available Systems** option in the left panel.
+
+9.  Right-click the node to display a menu and select **Add to a New Management Group**.<br> A Create Management page is displayed.
+
+10.  In the **Management Group Name** box, enter a name for the management group and click **Next** to display the Add Administrative User page.
+
+11.  Enter the required information for the Administrative user and click **Next** to display the Management Group Time page.
+
+12.  Synchronize the time based using NTP server or manually and click Next to display the Domain Name Server Configuration page.
+
+13. (Optional) Define  DNS details and click Next to display the Email Notification Setup page.
+
+    **Note**: Although the above step is optional, it is recommended.
+
+14. (Optional) Enter the SMTP details and click Next to display the Create a Cluster page with a Wizard.
+13.  Select the cluster type from the displayed options and click **Next**.
+
+14. In the **Cluster Name** box, enter the name of the cluster and click **Next**.
+
+15. In the Add VIP and Subnet Mask pop-up box, enter the virtual IP and Subnet Mask of the cluster in the respective boxes and click **Ok**.<br> The details are displayed in a table in the page.
+
+16. Click **Next** to go to the next page.
+
+17. Click the check box displayed against Skip Volume Creation and click **Next**.<br>The Management Group and Cluster is created and displays in the Home page of CMC.
+
+
+## Adding a VSA node to existing Management Group ##
+
+To add a VSA node to any existing Management Group, do the following:
+
+1.Open CMC.
+
+    By default the CMC is configured to discover the VSA nodes in the subnet on which it is installed. You can manually add the nodes also.
+
+2. In the CMC page, click **Find Systems** from the left panel.<br> Find Systems dialogue box is displayed with an Enter IP pop-up box.
+
+3. In the Enter IP pop-up box, enter the IP of the VSA node.
+
+4. Click **OK** to proceed or click **Cancel** to cancel the process.<br>The node is discovered and displays in a table with details in the Find Systems dialogue box.
+
+5. (Optional) Click **Add** in the Find Systems dialogue box to add more nodes. 
+
+6. (Optional) Click **Edit** in the Find Systems dialogue box to modify the details of the selected node.
+
+7. (Optional) Click **Remove** in the Find Systems box to delete a node.
+
+8. Click **Close** to return to the Home page.<br> The discovered nodes are displayed under **Available Systems** option in the left panel.
+
+9.  Right-click the node to display a menu and select **Add to an Existing Management Group**.<br> A page is displayed.
+
+10. Perform the steps 
+
 
 ## Next step
 

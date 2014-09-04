@@ -32,7 +32,7 @@ Perform the following steps to activate clusters:
 
 1. In the Horizon Undercloud Dashboard, click the **Resource** Tab in the left panel.<br> The tab displays an option in the left panel.
 
-2. Click **OverCloud** and then select **Configure** to open Configured Cloud page. 
+2. Click **Overcloud** and then select **Configure** to open Configured Cloud page. 
 
 3. Click **Activate Clusters** on the top right corner of the page to configure the clusters for the cloud. The page navigates to Configure ESX Computes page.
 
