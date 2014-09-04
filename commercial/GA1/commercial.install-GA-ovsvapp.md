@@ -71,16 +71,17 @@ Before you install the OVSvApp appliance, ensure the following:
 
 Example:
 
-    DVS1  - trunk portgroup name - vlan_trunk
-    DVS2- Portgroup1  name- mgmt
-    Portgroup2 name- data
-    
-    Changes in ovs_vapp.ini for the above values
-    [network]
-    
-     data_interface={'vmxnet3':'data'}
-     mgmt_interface={'vmxnet3':'mgmt'}
-     trunk_interface={'vmxnet3':'vlan_trunk'}
+	DVS1  - trunk portgroup name - vlan_trunk
+	DVS2- Portgroup1  name- mgmt
+	Portgroup2 name- data
+
+	Changes in ovs_vapp.ini for the above values
+	
+	[network]
+
+	data_interface={'vmxnet3':'data'}
+	mgmt_interface={'vmxnet3':'mgmt'}
+	trunk_interface={'vmxnet3':'vlan_trunk'}
 
 <img src="media/ESXi_hypervisor_networking.png"/>
 
