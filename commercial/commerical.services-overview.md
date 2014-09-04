@@ -23,15 +23,15 @@ PageRefresh();
 
 # HP Helion OpenStack&reg; Services Overview #
 
-OpenStack comprises of several integrated services. Each service works through an API (application programming interface) that allows services to work together and allows users to interact with the services.
+OpenStack is comprised of several integrated services. Each service works through an API (application programming interface) that allows the services to work together and allows users to interact with the service.
 
-HP Helion OpenStack includes a number of additional services to work with your cloud. This section lists the services available for you to work with your cloud.
+HP Helion OpenStack includes a number of additional services for working with your cloud. This section lists the services available for you to work with your cloud.
 
 - [OpenStack Services](#OpenStack)
 - [Dashboard Services](#Dashboard)
 - [Other Services](#Other)
 
-In addition to the APIs, you can interact with the most services through a graphic user interface (Dashboard) and command line interfaces (CLIs).
+In addition to the APIs, you can interact with the most services through a graphic user interface (dashboards) and command line interfaces (CLI).
 
 **Note:** When assigning users to a project, it is recommended that you do not add service user accounts to any project. The HP Helion OpenStack installation process creates a service user account for each installed service. 
 
@@ -48,11 +48,10 @@ The service user accounts include, but are not limited to, the following:
 - Heat
 - Keystone
 - Ceilometer
-<!--- Sirius-->
 
 ## OpenStack Services ## {#OpenStack}
 
-The following services are foundation technologies used by the HP Helion OpenStack. Based on OpenStack technology, HP Helion OpenStack comprises of a set of services and architecture that defines a data-center-level operating system (DCOS).
+The following services are foundation technologies used by the HP Helion OpenStack. Based on OpenStack technology, HP Helion OpenStack is comprised of a set of services and architecture that defines a data-center-level operating system (DCOS).
 
 **Compute Operations**. The Compute service manages the hypervisors and virtual machines in your environment. Also known as *Nova*. 
 
@@ -86,13 +85,7 @@ See [Overview of the Telemetry and Reporting service](/helion/openstack/services
 
 See [Overview of the Volume Operations Service](/helion/openstack/services/volume/overview).
 
-<!---**Sherpa**. The Sherpa service provides a link to the remote web catalog providing a repository of software that can be purchased and downloaded into the Cloud OS environment. 
 
-See [Overview of Sherpa Service](/helion/openstack/services/sherpa/overview).-->
-
-<!---**Sirius**. HP Helion OpenStack Sirius service assists the Cloud Administrator in the configuration of storage services (like Cinder, Swift) running in the Overcloud with various storage devices.-->
-
-See [Overview of Sirius Service](/helion/openstack/services/sirius/overview/)
 ## Dashboard Services ## {#Dashboard}
 
 The following services are used by HP Helion OpenStack to create dashboards.
@@ -165,4 +158,3 @@ the Topology Design Registry and Repository Service. Focus provides for persiste
 - [Overview of the Compute service](/helion/openstack/services/focus/overview)
 
 -->
-

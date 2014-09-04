@@ -24,7 +24,7 @@ PageRefresh();
 
 #Updates and Extensions
 
-This topic explains how to obtain the patches and other relevant functionality from HP Cloud OS Distribution Network (CODN).
+Updates and extensions provides a mechanism to download and install content and updates for the Overcloud.
 
 * [Signup for Cloud Distribution Network](#Signup-for-Cloud-Distribution-Network)
 

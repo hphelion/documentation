@@ -4,7 +4,6 @@ title: "HP Helion OpenStack&#174; Services Overview"
 permalink: /helion/openstack/ga/services/overview/
 product: commercial.ga
 
-
 ---
 <!--UNDER REVISION-->
 
@@ -18,8 +17,8 @@ PageRefresh();
 
 </script>
 
-<!---
-<p style="font-size: small;"> <a href="/helion/openstack/technical-overview/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/support-matrix/"> NEXT &#9654</a> </p> -->
+
+<p style="font-size: small;"> <a href="/helion/openstack/technical-overview/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/support-matrix-beta/"> NEXT &#9654</a> </p>
 
 
 # HP Helion OpenStack&reg; Services Overview #
@@ -90,11 +89,11 @@ See [Overview of the Volume Operations Service](/helion/openstack/ga/services/vo
 
 **Sherpa**. The Sherpa service provides a link to the remote web catalog providing a repository of software that can be purchased and downloaded into the Cloud OS environment. 
 
-See [Overview of Sherpa Service](/helion/openstack/services/sherpa/overview).
+See [Overview of Sherpa Service](/helion/openstack/ga/services/sherpa/overview).
 
 **Sirius**. HP Helion OpenStack Sirius service assists the Cloud Administrator in the configuration of storage services (like Cinder, Swift) running in the Overcloud with various storage devices.
 
-See [Overview of Sirius Service](/helion/openstack/services/sirius/overview/)
+See [Overview of Sirius Service](/helion/openstack/ga/services/sirius/overview/)
 ## Dashboard Services ## {#Dashboard}
 
 The following services are used by HP Helion OpenStack to create dashboards.
@@ -137,10 +136,10 @@ For more information on installing the command-line interface for interacting wi
 *The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*
 
 
-<!-- Not in
+<!-- Not in beta
 Capability Tagging
 The Capability Tagging service provides the ability to describe requirements and capabilities using a common ontology and to tag (or, assign) requirements and capabilities to cloud resources. Also known as Graffiti or Peer
-/helion/openstack/services/peer/getting-started/
+/helion/openstack/ga/services/peer/getting-started/
 
 ## Value-Add Services ##
 
@@ -150,21 +149,20 @@ The following services are
 
 Eden also provides scalability and manageability around services and a way to view and control how those services are performing
 
-- [Overview of the Eden service](/helion/openstack/services/eden/overview)
+- [Overview of the Eden service](/helion/openstack/ga/services/eden/overview)
 
 **Graffiti** The Graffiti service is a resource pool registry, which allows you to access your cloud environment. The Graffiti service allows for a hybrid cloud approach for sharing resources. For example, Graffiti enables you to use the HP Helion OpenStack environment in conjunction with your internal private cloud services. Also known as *Peer*.
 
-- [Overview of the Graffiti service](/helion/openstack/services/peer/overview)
+- [Overview of the Graffiti service](/helion/openstack/ga/services/peer/overview)
 
 **Eve**. Provisioning, templates, build around templates
 provisioning service allowing you to create templates and provision those templates for infrastructure. This allows to take advantage of the orchestration feature in HP Helion OpenStack and OpenStack. Eve can be used across multiple clouds
 The Eve service is an infrastructure topology provisioning service. Eve allows you to provision TOSCA-based infrastructure topology designs 
 
-- [Overview of the Eve service](/helion/openstack/services/eve/overview)
+- [Overview of the Eve service](/helion/openstack/ga/services/eve/overview)
 
 **Focus** Managing templates, binding documents, versioning. An internal service to manage the documents and templates. Versioning and document relationship is also a function provided by Focus.
 the Topology Design Registry and Repository Service. Focus provides for persistent store and management of TOSCA-based templates.
-- [Overview of the Compute service](/helion/openstack/services/focus/overview)
+- [Overview of the Compute service](/helion/openstack/ga/services/focus/overview)
 
 -->
-
