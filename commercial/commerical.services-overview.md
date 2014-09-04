@@ -43,13 +43,12 @@ The service user accounts include, but are not limited to, the following:
 - Swift
 - Nova
 - Neutron
-- Sherpa
 - Glance
 - Cinder
 - Heat
 - Keystone
 - Ceilometer
-- Sirius
+<!--- Sirius-->
 
 ## OpenStack Services ## {#OpenStack}
 
@@ -87,11 +86,11 @@ See [Overview of the Telemetry and Reporting service](/helion/openstack/services
 
 See [Overview of the Volume Operations Service](/helion/openstack/services/volume/overview).
 
-**Sherpa**. The Sherpa service provides a link to the remote web catalog providing a repository of software that can be purchased and downloaded into the Cloud OS environment. 
+<!---**Sherpa**. The Sherpa service provides a link to the remote web catalog providing a repository of software that can be purchased and downloaded into the Cloud OS environment. 
 
-See [Overview of Sherpa Service](/helion/openstack/services/sherpa/overview).
+See [Overview of Sherpa Service](/helion/openstack/services/sherpa/overview).-->
 
-**Sirius**. HP Helion OpenStack Sirius service assists the Cloud Administrator in the configuration of storage services (like Cinder, Swift) running in the Overcloud with various storage devices.
+<!---**Sirius**. HP Helion OpenStack Sirius service assists the Cloud Administrator in the configuration of storage services (like Cinder, Swift) running in the Overcloud with various storage devices.-->
 
 See [Overview of Sirius Service](/helion/openstack/services/sirius/overview/)
 ## Dashboard Services ## {#Dashboard}
