@@ -17,8 +17,8 @@ PageRefresh();
 
 </script>
 
-
-<p style="font-size: small;"> <a href="/helion/openstack/services/networking/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/services/orchestration/overview/"> NEXT &#9654</a> </p>
+<!--
+<p style="font-size: small;"> <a href="/helion/openstack/services/networking/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/services/orchestration/overview/"> NEXT &#9654</a> </p>-->
 
 # HP Helion OpenStack&#174; Object Operations Service Overview #
 
@@ -40,9 +40,23 @@ Swift has the capacity to scale from a few terabytes to multiple Petabytes of st
 
 A cloud storage container provides a way for you to organize your objects. The object can be any arbitrary data, including a document, image, video, backup file or any  data that is required by your application.
 
-Objects have a size limit of 5 GB. However, objects larger than 5GB can be segmented and then concatenated together so that you can upload 5GB segments and download a single concatenated object of any size. You can work with the segments and manifests directly with API requests.
+Objects have a size limit of 5 GB. However, objects larger than 5 GB can be segmented and then concatenated together so that you can upload 5 GB segments and download a single concatenated object of any size. You can work with the segments and manifests directly with API requests.
 
 HP Helion Openstack Object Operation service will have swift cluster as a part of cloud creation. It deploys scale-out swift to store end cloud user data and also to protect from no single point of failure policy. 
+
+##Scale-out Swift
+
+HP Helion will have Swift cluster as part of cloud creation. So, deploying scale-out Swift effectively means creating storage-policy:1 for object-ring:1, which will be used to store end cloud user data. Helion is committed to deploy overcloud which supports 'no single point of failure policy'. As storage-policy:1 will be exclusively used to implement object-ring:1 and needs to adhere to 'no single point of failure' policy, we do recommend to use at last two nodes to implementing storage-policy:1. Later on as demand of object storage grows, one can add more and more node to object-ring:1. Please see section Extending Swift cluster how to extend existing cluster for more detail. The section assumes that one is deploying two extra nodes to realize storage-policy:1 to start with and there is no extra proxy node is being added.
+
+
+###Scale-out architecture
+
+<**image**> 
+
+###Deployment of scale-out Swift
+
+Perform 
+
 
 <!--
 ##Purpose
@@ -67,6 +81,7 @@ Embedded Swift is deployed on cloud controller. Initially only one object ring i
 
 
 HP Helion will deploy two node CE Swift on separate nodes. To start with, Helion will have only one object ring meant for internal Cloud controller data like Glance images, Sherpa cache, Focus persistence, etc. Later, a separate object ring will be created if customer asks for scale out Swift, and will be made as default ring. All incoming object request will be stored in new scale-out ring. Please refer HP Helion scale out architecture for more details.
+
 
 
 

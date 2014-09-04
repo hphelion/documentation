@@ -40,16 +40,14 @@ Assigning these accounts to a project could allow project users to access servic
 
 The service user accounts include, but are not limited to, the following:
 
-- swift
-- nova
-- neutron
-- sherpa
-- glance
-- cinder
-- heat
-- keystone
-- ceilometer
-
+- Swift
+- Nova
+- Neutron
+- Glance
+- Cinder
+- Heat
+- Keystone
+- Ceilometer
 
 ## OpenStack Services ## {#OpenStack}
 
@@ -86,6 +84,7 @@ See [Overview of the Telemetry and Reporting service](/helion/openstack/services
 **Volume Operations**. The Volume Operations service enables you to attach storage volumes to the virtual instances in your cloud environment. The service provides persistent block level storage devices for use with your Compute instances. Also known as *Cinder*.
 
 See [Overview of the Volume Operations Service](/helion/openstack/services/volume/overview).
+
 
 ## Dashboard Services ## {#Dashboard}
 
