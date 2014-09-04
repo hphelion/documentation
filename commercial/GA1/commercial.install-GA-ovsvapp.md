@@ -133,12 +133,12 @@ You must upload the OVSvApp appliance to one of the ESXi hosts that is hosting V
 
 7. Login to the appliance and install the VMware Tools from command line terminal: # mkdir /mnt/vmware-tools:
 
-	mount /dev/cdrom/ /mnt/vmware-tools
-	cp –rf /mnt/vmware-tools/VMwareTools-*.tar.gz /tmp/
-	cd /tmp
-	tar zxpf VMwareTools-*.tar.gz
-	cd /vmware-tools-distrib
-	./vmware-tools-install.pl
+		mount /dev/cdrom/ /mnt/vmware-tools
+		cp –rf /mnt/vmware-tools/VMwareTools-*.tar.gz /tmp/
+		cd /tmp
+		tar zxpf VMwareTools-*.tar.gz
+		cd /vmware-tools-distrib
+		./vmware-tools-install.pl
 
 	Follow the instructions to continue the installation.
 
@@ -147,8 +147,11 @@ You must upload the OVSvApp appliance to one of the ESXi hosts that is hosting V
 9. Disable the VMCI: 
 
 	a. Right-click on the appliance 
+
 	b. Edit settings
+
 	c. Remove the CD/DVD drive
+
 	d. Clear the **Enable VMCI between VMs** option.
 
 10. Install the prerequisite python libraries:
