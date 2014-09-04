@@ -233,7 +233,7 @@ Make sure you have met all the hardware requirements and have completed the requ
 
 		ssh root@192.0.2.1
 
-3. Ensure the information in the [`baremetal.csv` configuration file](/helion/openstack/install-beta/prereqs/#req-info) file is correct and in the following format and upload THE FILE to `/root`.
+3. Ensure the information in the [`baremetal.csv` configuration file](/helion/openstack/ga/install/prereqs/#req-info) file is correct and in the following format and upload THE FILE to `/root`.
 		<mac_address>,<ipmi_user>,<ipmi_password>,<ipmi_address>,<no_of_cpus>,<memory_MB>,<diskspace_GB>
 
 	***QUESTION: Must use IPMI user vs ILO user in beta?***
