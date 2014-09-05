@@ -186,34 +186,48 @@ Path of CA TLS certificate(s) used to verifythe remote server's certificate. Wit
 	--timeout TIMEOUT 
 
 ###OS username
+
   --os-username OS_USERNAME
                         Defaults to env[OS_USERNAME].
  
+###OS_PASSWORD
  --os-password OS_PASSWORD
                         Defaults to env[OS_PASSWORD].
  
- --os-tenant-id OS_TENANT_ID
+###OS_TENANT_ID
+--os-tenant-id OS_TENANT_ID
                         Defaults to env[OS_TENANT_ID].
  
- --os-tenant-name OS_TENANT_NAME
+###OS_TENANT_NAME
+--os-tenant-name OS_TENANT_NAME
                         Defaults to env[OS_TENANT_NAME].
  
+###OS_AUTH_URL
  --os-auth-url OS_AUTH_URL
                         Defaults to env[OS_AUTH_URL].
  
- --os-region-name OS_REGION_NAME
+###OS_REGION_NAME
+  --os-region-name OS_REGION_NAME
                         Defaults to env[OS_REGION_NAME].
  
- --os-auth-token OS_AUTH_TOKEN
+###OS_AUTH_TOKEN
+  --os-auth-token OS_AUTH_TOKEN
                         Defaults to env[OS_AUTH_TOKEN].
-  --eon-url EON_URL     Defaults to env[EON_URL].
+
+###EON_URL  
+
+  	--eon-url EON_URL
+   Defaults to env[EON_URL].
  
+###EON_API_VERSION
  --eon-api-version EON_API_VERSION
                         Defaults to env[EON_API_VERSION] or 1
  
+###OS_SERVICE_TYPE
  --os-service-type OS_SERVICE_TYPE
                         Defaults to env[OS_SERVICE_TYPE].
  
+###OS_ENDPOINT_TYPE
  --os-endpoint-type OS_ENDPOINT_TYPE
                         Defaults to env[OS_ENDPOINT_TYPE].
 
