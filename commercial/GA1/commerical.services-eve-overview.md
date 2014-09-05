@@ -48,6 +48,7 @@ You can use any of several command-line interface software to access HP Helion O
 
 You can use any of several language bindings to access HP Helion OpenStack Eve service. See .
 
+<!--
 ## How To's with the HP Helion OpenStack Image Operations Service ## {#howto}
 
 The following lists of tasks can be performed by a user or administrator through the [HP Administration Dashboard](/helion/openstack/ga/manage/administration-dashboard/), the OpenStack [CLI]() or OpenStack [API]().
@@ -73,7 +74,7 @@ The following lists of tasks can be performed by a user or administrator through
 - Add Server to Server Group
 - Remove Server from Server Group
 - Add volume group to server group
-- Remove volume group from server group
+- Remove volume group from server group-->
 
 ## For more information ##
 
