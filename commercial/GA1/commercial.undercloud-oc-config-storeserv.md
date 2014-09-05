@@ -38,6 +38,8 @@ This option allows you to do the following:
 
 ### Add backends ###{#add-backend}
 
+**Note**: Ensure that you allocate only those CPGs which will be used by this cloud. Changing any attributes of CPG after allocating may disrupt cloud functionality if the corresponding change is not updated here.
+
 1. In the Configure Cloud page, click **StoreServs** Tab to activate it.
 
 2. Click **Add Backend** displayed at the top to open the StoreServ Volume Backend page.

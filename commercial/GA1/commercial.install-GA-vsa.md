@@ -18,7 +18,8 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> <a href="/helion/openstack/install/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/install-overview/">&#9650; UP</a> | <a href="/helion/openstack/install/esx/">NEXT &#9654;</a> </p>
+
+<!---<p style="font-size: small;"> <a href="/helion/openstack/install/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/install-overview/">&#9650; UP</a> | <a href="/helion/openstack/install/esx/">NEXT &#9654;</a> </p>-->
 
 
 # HP Helion OpenStack&#174; Installation: HP StoreVirtual VSA Support
@@ -33,11 +34,9 @@ This page provides detailed information on HP StoreVirtual for realizing cloud s
    * [Differentiated storage offerings](#differentiated-storage-offerings)
 * [Installing and configuring HP StoreVirtual VSA](#installation-of-storevirtual-vsa)
    * [Prerequisites](#prerequisites)
-   * [Installing Linux on baremetal](#install-linux-on-baremetal)
-   * [Deploying VSA](#deployment-vsa) 
-   * [Installing HP StoreVirtual Centralized Management Console (CMC) on Linux](#install-hp-storevirtual-vsa)
-   * [Creating a cluster](#create-cluster)
-   * [Enabling HP StoreVirtual configuration in overcloud](#enable-hp-storevirtual-configuration)
+   * [Installation](#install)
+* [Creating a StoreVirtual Cluster and adding it to a new Management Group](#create-cluster) 
+* [Adding a VSA node to an existing Management Group](#adding-a-node)
 
 
 ## HP StoreVirtual overview {#storevirtual-overview}
@@ -359,26 +358,26 @@ Pre-requisites, add following line:-->
 
 
 
-**Prerequisites**<**ARE THESE RELEVANT IN THE CURRENT CONTEXT----???**
+### Prerequisites {#prerequisites} 
 
 * You must be running the X Windows System to install the CMC.
 
 * We recommend that you install CMC on the same KVM host that is used to run the Seed VM. This host has direct network connectivity to servers running HP StoreVirtual VSA.
 
-**Note**: These changes are required for 64-bit operating system only.  
+**Note**: These changes are required for 64-bit operating system only.
 
-<!---* Execute the following commands:
+* Execute the following commands:
 
 		apt-get update
 		dpkg --add-architecture i386
 		apt-cache search ia32-libs
-		apt-get install openjdk-7-jdk:i386-->
+		apt-get install openjdk-7-jdk:i386
 
-**Installation**
+### Installation ###{#installation}
 
 1. Go to the following URL and download CMC installer.
 
-		/opt/stack/horizon-vas-plugins/cloudos_dashboard/downloads
+		/opt/stack/horizon-vas-plugins/cloudos_dashboard/downloads  <WRITE THE UPDATED DOCUMENT)
 
 
 2. Verify if the CMC installer file has executable permission otherwise execute the following command:
@@ -442,26 +441,26 @@ where:
 * **VSA_DEBUG**: By default the value is *False*, to enable debugging, change it to *True*.
 -->
 
-## Creating a StoreVirtual Cluster ##
+## Creating a StoreVirtual Cluster and adding it to a new Management Group ##{#create-cluster}
 
 **Prerequisites**
 
 * CMC is already installed 
 
-* VSA(one or more) is deployed in the same management network where CMC is installed.
+* VSA (one or more) is deployed in the same management network where CMC is installed.
 
 
 To create a cluster, do the following:
 
 1. Open CMC.
 
-    By default the CMC is configured to discover the VSA nodes in the subnet on which it is installed. You can manually add the nodes also.
+    By default, the CMC is configured to discover the VSA nodes in the subnet on which it is installed. You can manually add the nodes also.
 
 2. In the CMC page, click **Find Systems** from the left panel.<br> Find Systems dialogue box is displayed with an Enter IP pop-up box.
 
 3. In the Enter IP pop-up box, enter the IP of the VSA node.
 
-4. Click **OK** to proceed or click **Cancel** to cancel the process.<br>The node is discovered and displays in a table with details in the Find Systems dialogue box.
+4. Click **OK** to proceed or click **Cancel** to cancel the process.<br>The node is discovered and the details are displayed in a table in the Find Systems dialogue box.
 
 5. (Optional) Click **Add** in the Find Systems dialogue box to add more nodes. 
 
@@ -470,43 +469,44 @@ To create a cluster, do the following:
 
 8. Click **Close** to return to the Home page.<br> The discovered nodes are displayed under **Available Systems** option in the left panel.
 
-9.  Right-click the node to display a menu and select **Add to a New Management Group**.<br> A Create Management page is displayed.
+9.  To add the node to a management group, right-click the node to display a menu and select **Add to a New Management Group**.<br> Create Management page is displayed.
 
 10.  In the **Management Group Name** box, enter a name for the management group and click **Next** to display the Add Administrative User page.
 
 11.  Enter the required information for the Administrative user and click **Next** to display the Management Group Time page.
 
-12.  Synchronize the time based using NTP server or manually and click Next to display the Domain Name Server Configuration page.
+12.  Synchronize the time using NTP server or manually and click **Next** to display the Domain Name Server Configuration page.
 
-13. (Optional) Define  DNS details and click Next to display the Email Notification Setup page.
+13. (Optional) Define  DNS details and click **Next** to display the Email Notification Setup page.
 
-    **Note**: Although the above step is optional, it is recommended.
+    **Note**: Although the above step is optional, it is recommended to enter the details.
 
-14. (Optional) Enter the SMTP details and click Next to display the Create a Cluster page with a Wizard.
+14. (Optional) Enter the SMTP details and click **Next** to display a Wizard in the Create a Cluster page. 
+
 13.  Select the cluster type from the displayed options and click **Next**.
 
 14. In the **Cluster Name** box, enter the name of the cluster and click **Next**.
 
-15. In the Add VIP and Subnet Mask pop-up box, enter the virtual IP and Subnet Mask of the cluster in the respective boxes and click **Ok**.<br> The details are displayed in a table in the page.
+15. In the Add VIP and Subnet Mask pop-up box, enter the virtual IP and Subnet Mask of the cluster in the respective boxes and click **OK**.<br> The details are displayed in a table in the page.
 
 16. Click **Next** to go to the next page.
 
-17. Click the check box displayed against Skip Volume Creation and click **Next**.<br>The Management Group and Cluster is created and displays in the Home page of CMC.
+17. Click the check box displayed against **Skip Volume Creation** and click **Next**.<br>The Management Group and Cluster is created and displays in the Home page of CMC.
 
 
-## Adding a VSA node to existing Management Group ##
+## Adding a VSA node to an existing Management Group ##{#adding-a-node}
 
 To add a VSA node to any existing Management Group, do the following:
 
-1.Open CMC.
+1. Open CMC.
 
-    By default the CMC is configured to discover the VSA nodes in the subnet on which it is installed. You can manually add the nodes also.
+    By default, the CMC is configured to discover the VSA nodes in the subnet on which it is installed. You can manually add the nodes also.
 
 2. In the CMC page, click **Find Systems** from the left panel.<br> Find Systems dialogue box is displayed with an Enter IP pop-up box.
 
 3. In the Enter IP pop-up box, enter the IP of the VSA node.
 
-4. Click **OK** to proceed or click **Cancel** to cancel the process.<br>The node is discovered and displays in a table with details in the Find Systems dialogue box.
+4. Click **OK** to proceed or click **Cancel** to cancel the process.<br>The node is discovered and the details are displayed in a table in the Find Systems dialogue box.
 
 5. (Optional) Click **Add** in the Find Systems dialogue box to add more nodes. 
 
@@ -518,12 +518,14 @@ To add a VSA node to any existing Management Group, do the following:
 
 9.  Right-click the node to display a menu and select **Add to an Existing Management Group**.<br> A page is displayed.
 
-10. Perform the steps 
+10. Enter the name of the management group.
+
+11. Click **Add** to add the node to the group that you specified.<br> The node is added to the Management Group.
 
 
-## Next step
+<!---## Next step
 
-Configure HP 3PAR StoreServ, see [HP Helion OpenStack Commercial: HP StoreServ (3PAR) Support](/helion/openstack/install/3par/).
+Configure HP 3PAR StoreServ, see [HP Helion OpenStack Commercial: HP StoreServ (3PAR) Support](/helion/openstack/install/3par/).-->
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
