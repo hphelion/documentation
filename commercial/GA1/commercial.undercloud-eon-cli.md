@@ -28,6 +28,8 @@ PageRefresh();
 
 The EON client CLI package provides a http-client coupled command line tool for managing Eon (Esx management) services.
 
+The Following sections lists the sub-commands and Optional commands that can be used.
+
 **General Syntax of EON**
 
 
@@ -121,9 +123,9 @@ You can import the clusters in the EON database under the give vCenter.
 
 ###Unimport clusters {#unimport-clusters}
 
-You can unimport the cluster(s) from the EON database under the give vCenter. to unimport the clusters, enter
+You can unimport the cluster(s) from the EON database under the give vCenter. To unimport  clusters, enter
 
-	eon import-cluster --vcenter-id=<VCENTER_ID> --cluster-moid=<CLUSTER_MOID>
+	eon unimport-cluster --vcenter-id=<VCENTER_ID> --cluster-moid=<CLUSTER_MOID>
 
 
 ### Bash-completion {#bash-completion}
@@ -186,37 +188,72 @@ Path of CA TLS certificate(s) used to verifythe remote server's certificate. Wit
 	--timeout TIMEOUT 
 
 ###OS username
-  --os-username OS_USERNAME
-                        Defaults to env[OS_USERNAME].
+Username of the keystone (OpenStack). Defaults to env[OS_USERNAME].
+  
+	--os-username OS_USERNAME
+                        
  
- --os-password OS_PASSWORD
-                        Defaults to env[OS_PASSWORD].
+###OS PASSWORD
+Password of the keystone (OpenStack).  Defaults to env[OS_PASSWORD].
+	
+	 --os-password OS_PASSWORD
+                       
  
- --os-tenant-id OS_TENANT_ID
-                        Defaults to env[OS_TENANT_ID].
- 
- --os-tenant-name OS_TENANT_NAME
-                        Defaults to env[OS_TENANT_NAME].
- 
- --os-auth-url OS_AUTH_URL
-                        Defaults to env[OS_AUTH_URL].
- 
- --os-region-name OS_REGION_NAME
-                        Defaults to env[OS_REGION_NAME].
- 
- --os-auth-token OS_AUTH_TOKEN
-                        Defaults to env[OS_AUTH_TOKEN].
-  --eon-url EON_URL     Defaults to env[EON_URL].
- 
- --eon-api-version EON_API_VERSION
-                        Defaults to env[EON_API_VERSION] or 1
- 
- --os-service-type OS_SERVICE_TYPE
-                        Defaults to env[OS_SERVICE_TYPE].
- 
- --os-endpoint-type OS_ENDPOINT_TYPE
-                        Defaults to env[OS_ENDPOINT_TYPE].
+###OS TENANT ID
+Tenant identification of the OpenStack. Defaults to env[OS_TENANT_ID].
 
+	--os-tenant-id OS_TENANT_ID
+                        
+ 
+###OS TENANT NAME
+Tenant name of the OpenStack. Defaults to env[OS_TENANT_NAME].
+		
+	--os-tenant-name OS_TENANT_NAME
+
+                        
+ 
+###OS AUTH URL
+Authentication URL of OpenStack. Defaults to env[OS_AUTH_URL].
+ 
+	 --os-auth-url OS_AUTH_URL
+                        
+
+
+###OS REGION NAME
+The region name of  OpenStack. Defaults to env[OS_REGION_NAME].
+
+  	--os-region-name OS_REGION_NAME
+                        
+ 
+###OS AUTH TOKEN
+Authentication token of OpenStack. Defaults to env[OS_AUTH_TOKEN].
+
+  	--os-auth-token OS_AUTH_TOKEN
+                       
+
+###EON URL  
+ The EON URL. Defaults to env[EON_URL].
+  
+		--eon-url EON_URL
+  
+ 
+###EON API VERSION
+The API version of EON. Defaults to env[EON_API_VERSION] or 1
+
+ 	--eon-api-version EON_API_VERSION
+                        
+ 
+###OS SERVICE TYPE
+The service type of OpenStack.Defaults to env[OS_SERVICE_TYPE].
+
+ 	--os-service-type OS_SERVICE_TYPE
+                        
+ 
+###OS ENDPOINT TYPE
+The endpoint type of OpenStack. Defaults to env[OS_ENDPOINT_TYPE].
+ 	
+	--os-endpoint-type OS_ENDPOINT_TYPE
+                       
 
 
 

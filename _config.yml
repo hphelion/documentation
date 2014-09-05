@@ -295,6 +295,8 @@ navigation:
     url: /helion/openstack/ga/install/kvm/
   - text: Installation for ESX Hypervisor
     url: /helion/openstack/ga/install/esx/
+  - text: Back Up and Restore
+    url: /helion/openstack/ga/backup.restore/
   - text: Related Documentation
     url: /helion/openstack/ga/related-links/	
   - text: Glossary

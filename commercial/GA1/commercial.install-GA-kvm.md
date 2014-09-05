@@ -181,7 +181,7 @@ Before you begin your installation, if necessary, configure the proxy informatio
 3. When prompted for host authentication, type `yes` to allow the ssh connection to proceed.
 ***QUESTION: Still required??***
 
-4. Ensure the information in the [`baremetal.csv` configuration file](/helion/openstack/install-beta/prereqs/#req-info) file is correct and in the following format and upload THE FILE to `/root`.
+4. Ensure the information in the [`baremetal.csv` configuration file](/helion/openstack/qa/install/prereqs/#req-info) file is correct and in the following format and upload THE FILE to `/root`.
 	<mac_address>,<ipmi_user>,<ipmi_password>,<ipmi_address>,<no_of_cpus>,<memory_MB>,<diskspace_GB>
 
 	***QUESTION: Must use IPMI user vs ILO user in beta?***
@@ -337,13 +337,13 @@ Ensure you can access the overcloud Horizon dashboard. To do this, follow the st
 
 	HP Virtual Cloud Networking's Open vSwitch vApp (OVSvApp) must be installed for HP Helion OpenStack environment to provision VMs in your VMware vCenter environment. Once deployed, OVSvApp appliance enables networking between the tenant Virtual Machines (VMs).
 
-	For installation intructions, see the [Deploying and configuring OVSvApp for HP Virtual Cloud Networking (VCN) on ESX hosts](/helion/openstack/install/ovsvapp/) document for complete instructions. 
+	For installation intructions, see the [Deploying and configuring OVSvApp for HP Virtual Cloud Networking (VCN) on ESX hosts](/helion/openstack/ga/install/ovsvapp/) document for complete instructions. 
 
 - Install DNS as a service (DNSaaS) (Optional).
 
 	Our managed DNS service, based on the OpenStack Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.
 
-	For installation intructions, see [DNSaaS Beta Installation and Configuration](/helion/openstack/install/dnsaas/).
+	For installation intructions, see [DNSaaS Beta Installation and Configuration](/helion/openstack/ga/install/dnsaas/).
 
 <!---
 Perform the following steps to install OVSvAPP VM :

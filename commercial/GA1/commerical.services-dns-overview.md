@@ -67,7 +67,7 @@ You can the *python-designateclient* command line tool to access DNSaaS. See [In
 
 For more information on installing the CLI, see [Install the OpenStack command-line clients](http://docs.openstack.org/user-guide/content/install_clients.html).
 
-
+<!---
 ## How To's with the HP Helion DNSaaS ## {#howto}
 
 The HP DNSaaS provides a way to display, create, modify, and delete DNS records. 
@@ -90,7 +90,7 @@ You can perform the following operations for DNS records:
 
 - Creating and deleting records
 - Listing records
-- Modifying records 
+- Modifying records -->
 
 ## For more information ##
 

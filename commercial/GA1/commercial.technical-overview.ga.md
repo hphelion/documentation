@@ -20,8 +20,7 @@ HP Helion OpenStack is OpenStack technology coupled with a version of Linux&#174
 * [Reference architecture](#ref-arch)
 	* [Deployment model](#Deploy)
 	* [Deployment architecture](#Deployarch)
-	* [Configuration](#Config) 
-* [Physical network architecture](#physicalnetarch)
+	* [Network Architecture](#networkarch)
 * [HP Helion OpenStack services](#Helion-services)
 	<!--* [High Availability](#highavailability)-->
 * [Installation and configuration](#install-configure)
@@ -44,6 +43,7 @@ A TripleO installation includes a Seed, the Undercloud and the Overcloud.
 <tr style="background-color: white; color: black;">
 	 <td><b>Undercloud</b></td>
 	 <td>The Undercloud server is a basic, single-node OpenStack installation running on a single physical server used to deploy, test, manage, and update the Overcloud servers. There is no HA configuration for the Undercloud. It contains a strictly limited sub-set of OpenStack, just enough to interact with the Overcloud. The services running on Undercloud are Nova, Neutron, Glance, Keystone, Ironic, Heat, Ceilometer, icing, EON, and Sirius. This server also contains HP Helion content distribution catalog  service, which provides a mechanism to download and install content and updates for the Overcloud.<br><br>
+The undercloud also captures the log 
 	 The Undercloud also hosts images for various server types, which forms the functional cloud environment, aka Overcloud. <!--These images are Overcloud Controller, Overcloud Compute, Overcloud Swift and Overcloud Compute Proxy (required for cloud, which supports VMWare ESX as a hypervisor). -->
 </td>
  </tr>
@@ -61,7 +61,7 @@ The following diagram depicts the deployment architecture of HP Helion OpenStack
 
 <a href="javascript:window.open('/content/documentation/media/Helion OpenStack Deployment Architecture.vsd','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack  architecture diagram.</a> (opens in a new window)  
 
-
+<!---
 ####Configuration {#Config}
 
 * 1 server to host the Seed VM
@@ -69,16 +69,64 @@ The following diagram depicts the deployment architecture of HP Helion OpenStack
 * 4 overcloud nodes (One Controller node and three Compute nodes) 
 * 2 Swift object servers
 
-The maximum supported configuration is 36 servers consisting of 30 Compute servers and five configuration and management servers. 
+The maximum supported configuration is 36 servers consisting of 30 Compute servers and five configuration and management servers. --->
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593;</a>
 
-##Physical network architecture {#physicalnetarch}
+## Network Architecture {#networkarch}
 
-The following information describes the physical network configuration, which must be configured by users.
+The following information describes the network configuration, which must be configured by users.
 
-####Networks
+####Physical Networks
+<table>
+<tr style="background-color: #C8C8C8;">
+    <th>Network</th>
+    <th>Description</th>
+      </tr>
+<tr style="background-color: white; color: black;">
+    <td><b>IPMI/iLO</b></td>
+    <td>Base IPMI network used to boot and manage physical servers</td>
+ <tr style="background-color: white; color: black;">
+    <td><b>Cloud</b></td>
+    <td>Physical network which supports multiple VLANs to represent the cloud logical networks.</td>  <tr style="background-color: white; color: black;">
+    <td><b>Fiber Channel</b></td>
+    <td> A channel used for data transfer to a 3PAR array. This is not a standard ether network</td>
+    
+</tr>
+</table>
+####Virtual Networks
+The logical networks listed in the following table are implemented as VLANs on the physical network.
+<table>
 
+<tr style="background-color: #C8C8C8;">
+    <th>Network</th>
+    <th>Description</th>
+    <th>VLAN type</th>
+    <th>Server port</th>
+  </tr>
+<tr style="background-color: white; color: black;">
+    <td> <b>Management</b></td>
+    <td>Traffic for cloud along with PXE boot nodes, internal API traffic (one service to another), HA heartbeats, tenant access to services, VxLAN traffic for tenant VMs, access to block storage, object storage replication, CODN access to catalog, logging, monitoring, etc.</td>
+    <td>untagged</td>
+    <td>eth0 or<br>bond0</td>
+  </tr>
+<tr style="background-color: white; color: black;">
+    <td><b>Service</b></td>
+    <td>Trusted VMs communicate with the cloud infrastructure component.</td>
+    <td>tagged</td>
+    <td>eth0 or<br>bond0</td>
+  </tr>
+<tr style="background-color: white; color: black;">
+    <td><b>External</b></td>
+    <td>Connected to Internet or Intranet. Floating IPs come from here. </td>
+    <td>tagged</td>
+    <td>eth0 or<br>bond0</td>
+  </tr>
+
+</table>
+
+
+<!---
 <table>
 <tr style="background-color: #C8C8C8;">
     <th>Network</th>
@@ -134,12 +182,12 @@ The following information describes the physical network configuration, which mu
     <td>eth0 or<br>bond0</td>
   </tr>
 </table>
-
+--->
 #### Network planning
 
 The physical machines need to have their management processors (iLO) connected to a network that is reachable from the Seed VM. The physical machines and the Seed VM need to be connected to a fast network. 
 
-We recommend using one physical Ethernet port on a 10GB network. Use an untagged VLAN for this network. 
+We recommend using one physical Ethernet port on a 10 GB network. Use an untagged VLAN for this network. 
 
 The Seed VM is expected to use eth0 to connect to the cluster network (and hence through to the management network). If your host uses another NIC, for example eth1, then you need to set the environment variable appropriately, for example BRIDGE_INTERFACE=eth1, as seen by root.
 
@@ -219,7 +267,7 @@ The following table briefly describes the HP Helion OpenStack services. For a co
 	<td>HP Object Operations service, based on OpenStack Swift, provides you with a way to store and retrieve objects in publicly accessible physical machines. You can configure storage containers, upload and download container files, and delete container files.<br><br>
 	<a href="/helion/openstack/services/object/overview/">Learn more</a> about Object Operations.</td>
 	<td><center> </center></td>
-	<td><center>X</center></td>
+	<td><center></center></td>
 	<td><center>X</center></td>
  </tr>
 <tr style="background-color: white; color: black;">
@@ -237,7 +285,7 @@ The following table briefly describes the HP Helion OpenStack services. For a co
 <a href="/helion/openstack/services/reporting/overview/">Learn more</a> OpenStack Ceilometer based HP Telemetry and Reporting services.
 	</td> 
 	<td><center></center></td>
-	<td><center>X</center></td>
+	<td><center></center></td>
 	<td><center>X</center></td>
 </tr>
 <tr style="background-color: white; color: black;">
@@ -264,9 +312,9 @@ The following table briefly describes the HP Helion OpenStack services. For a co
 	<td><b>Sirius services</b></td>
  	<td> HP Helion OpenStack Sirius service assists the Cloud Administrator in the configuration of storage services (like Cinder, Swift) running in the Overcloud with various storage devices. <br><br> <a href =" /helion/openstack/services/sirius/overview/">Learn more</a> HP Helion OpenStack Sirius service.
 	</td> 
+	<td><center></center></td>
 	<td><center>X</center></td>
-	<td><center>X</center></td>
-	<td><center>X </center></td>
+	<td><center> </center></td>
 </tr> 
 </table>
 
