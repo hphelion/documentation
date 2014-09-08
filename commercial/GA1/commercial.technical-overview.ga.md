@@ -22,7 +22,7 @@ HP Helion OpenStack is OpenStack technology coupled with a version of Linux&#174
 	* [Deployment architecture](#Deployarch)
 	* [Network Architecture](#networkarch)
 * [HP Helion OpenStack services](#Helion-services)
-	<!--* [High Availability](#highavailability)-->
+* [High Availability](#highavailability)
 * [Installation and configuration](#install-configure)
 
 ##Reference architecture {#ref-arch}
@@ -163,7 +163,7 @@ The logical networks listed in the following table are implemented as VLANs on t
   </tr>
 <tr style="background-color: white; color: black;">
     <td><b>ESX</b></td>
-    <td> It is required in clouds which supports ESX. <br>
+    <td> 
      Connects for the traffic between OVSvApp VMs running on every ESX Host, Nova and the vCenter Proxy that exists for every vCenter, and vCenter Proxy to communicate with the message queue for Cinder and Nova. Also, connects EON to communicate with the vCenter server. </td>
     <td>tagged</td>
     <td>eth0 or<br>bond0</td>
@@ -258,10 +258,13 @@ The logical networks listed in the following table are implemented as VLANs on t
 --->
 #### Network planning
 
-
-The physical machines need to have their management processors (iLO) connected to a network that is reachable from the Seed VM. The physical machines and the Seed VM need to be connected to a fast network. 
+You must manage and prepare the network based on the type of hypervisor.
+ 
+For more details information on network planning see [Preparing your network](/helion/openstack/ga/install/prereqs/). 
 
 <!---
+
+The physical machines need to have their management processors (iLO) connected to a network that is reachable from the Seed VM. The physical machines and the Seed VM need to be connected to a fast network.
 We recommend using one physical Ethernet port on a 10 GB network. Use an untagged VLAN for this network. 
 
 The Seed VM is expected to use eth0 to connect to the cluster network (and hence through to the management network). If your host uses another NIC, for example eth1, then you need to set the environment variable appropriately, for example BRIDGE_INTERFACE=eth1, as seen by root.
@@ -272,7 +275,7 @@ The Seed VM is expected to use eth0 to connect to the cluster network (and hence
 
 The physical cluster network can be shared by a number of logical networks, each with its own tagged VLAN and IP subnet. We recommend using at least one such network as the external network, with floating IPs coming from its subnet range. --->
 
-For more details information on network planning see [Preparing your network](/helion/openstack/ga/install/prereqs/). 
+
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
@@ -447,9 +450,12 @@ HP StoreVirtual VSA Software is a Virtual Storage Appliance that provides the co
 
 ###ESX Hypervisor with HP Virtual Cloud Networking (VCN) application support 
 
-HP Helion OpenStack can be installed on a VMware ESX bare-metal or virtual hypervisor. VMWare vCenter Compute driver is used as a part of ESX integration. The VMware vCenter driver connects to ESX clusters in a vCenter through Compute proxy nodes. A Nova scheduler sees each cluster as compute and uses the same for scheduling a new instances.
+HP Helion OpenStack supports VMWare ESX hypervisor. With our ESX integration, you can provision and manage an overcloud ESXi cluster. VMWare vCenter Compute driver is used as a part of ESX integration. The VMware vCenter driver connects to ESX clusters in a vCenter through Compute proxy nodes. A Nova scheduler sees each cluster as compute and uses the same for scheduling a new instances.
 
-An ESX Proxy Compute driver communicates to VMware vCenter server through VI SDK. All the details of vCenter in the Cloud Controller  are required to be captured. EON,  a new service sub component, captures details of the vCenter server in a Cloud Controller and provides the details of the clusters for configuring the list of clusters managed by ESX Proxy Compute node
+<!---
+HP Helion OpenStack can be installed on a VMware ESX bare-metal or virtual hypervisor. VMWare vCenter Compute driver is used as a part of ESX integration. The VMware vCenter driver connects to ESX clusters in a vCenter through Compute proxy nodes. A Nova scheduler sees each cluster as compute and uses the same for scheduling a new instances. --->
+
+An ESX Proxy Compute driver communicates to VMware vCenter server through VI SDK. All the details of vCenter in the Cloud Controller  are required to be captured. EON,  a new service sub component, captures details of the vCenter server in a Cloud Controller and provides the details of the clusters for configuring the list of clusters managed by ESX Proxy Compute node. 
  
 
 The ESX integration uses the OVSvApp application to connect the vCenter networking to the OpenStack Neutron network controller to manage workload networks.  
