@@ -50,8 +50,6 @@ You can list the devices supported by Sirius API.
 	Sirius supported-devices
 
 
-
-
 ## HP StoreVirtual commands {#storevirtual-commands}
 
 ### Register VSA cluster ###
@@ -85,7 +83,13 @@ You can unregister the specified VSA cluster from the Sirius database.
 
 	sirius delete-vsa-cluster <CLUSTER_ID>
 
+### Add VSA backend
 
+You can add a VSA backend
+
+    Sirius add-vsa-backend <BACKEND ID?>
+
+ 
 ## HP StoreServ commands ##
 
 ### Register StoreServ ###
@@ -138,6 +142,24 @@ You can unregister the StoreServ from Sirius.
 
 	Sirius delete-storeserv <STORESERV_ID>
 
+
+### Add StoreServ Backend ###
+
+You can add a StoreServ backend.
+
+    Sirius add-storeserv-backend <BACKEND_ID?>
+
+###List Backends###
+
+ You can view the list of the backends registered to Sirius.
+
+    Sirius backend-list
+                        
+###Show Backend
+
+You can view the information about specific backend.
+
+    Sirius backend-show        
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
