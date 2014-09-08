@@ -33,6 +33,8 @@ You can use the following commands using the Sirius Client CLI package:
 
 * [HP StoreServ Commands](#storeserv-commands)
 
+* [Optional Commands](#optional-commands)
+
   
 ## API commands {#api-commands} ##
 
@@ -47,8 +49,19 @@ You can list the block storage details of API version. [**WHERE DO WE GIVE THIS 
 
 You can list the devices supported by Sirius API.
 
-	Sirius supported-devices
+	sirius supported-devices
 
+### Bash Completetion
+
+You can prints all the commands and options to standard output(stdout???)
+
+	sirius bash-completion
+
+##Help
+
+You can display the help of this program or one of its sub-programs
+
+	sirius help
 
 ## HP StoreVirtual commands {#storevirtual-commands}
 
@@ -87,9 +100,11 @@ You can unregister the specified VSA cluster from the Sirius database.
 
 You can add a VSA backend
 
-    Sirius add-vsa-backend <BACKEND ID?>
+    sirius add-vsa-backend <BACKEND ID?>
 
  
+
+
 ## HP StoreServ commands ##
 
 ### Register StoreServ ###
@@ -103,6 +118,21 @@ You can register the StoreServ to Sirius.
 
 *Additional arguments*: --iscsi-ip <ISCSI_IP> [required for iSCSI type devices]
 
+register-cpg        Register the 3PAR CPGs
+
+
+### List CPG
+
+You can list all the registered 3PAR CPGs
+
+	sirius cpg-list
+
+### Show CPG
+
+You can list the 3PAR CPGs
+
+    sirius cpg-show           
+
 
 ### List StoreServ  ###
 
@@ -115,7 +145,7 @@ You can list the StoreServ clusters registered with the Sirius database.
 
 You can display the details of a specific StoreServ.
 
- 	sirius storeserv-show <STORESERV_ID> 
+	sirius storeserv-show <STORESERV_ID> 
 
 
 
@@ -128,7 +158,7 @@ You can display the details of a specific StoreServ.
 
 You can update the StoreServ details in Sirius.
 
-	Sirius update-storeserv <STORESERV_ID>
+	sirius update-storeserv <STORESERV_ID>
 
 **Note:**
 
@@ -140,26 +170,154 @@ You can update the StoreServ details in Sirius.
 
 You can unregister the StoreServ from Sirius.
 
-	Sirius delete-storeserv <STORESERV_ID>
+	sirius delete-storeserv <STORESERV_ID>
+
+### Delete CPG ###
+
+You can unregister the 3PAR CPGs
+
+	sirius delete-cpg          
 
 
 ### Add StoreServ Backend ###
 
 You can add a StoreServ backend.
 
-    Sirius add-storeserv-backend <BACKEND_ID?>
+    sirius add-storeserv-backend <BACKEND_ID?>
 
 ###List Backends###
 
  You can view the list of the backends registered to Sirius.
 
-    Sirius backend-list
+    sirius backend-list
                         
 ###Show Backend
 
 You can view the information about specific backend.
 
-    Sirius backend-show        
+    sirius backend-show      
+
+  
+##Optional commands
+
+###Version
+
+Shows the version number of the program and exit.
+
+	sirius [--version]
+
+
+###debug
+ Defaults to env[SIRIUSCLIENT_DEBUG].
+
+	sirius [-d]
+
+###verbose
+Print more verbose output.
+
+	sirius [-v]
+
+###insecure 
+
+Explicitly allow siriusclient to perform "insecure" SSL (https) requests. The server's certificate will not be verified against any certificate authorities. This option should be used with caution.
+ 	
+    sirius [-k]   
+
+
+###Certificate
+
+Path of the certificate file to be used in SSL connection. This file can optionally be prepended with the private key.
+
+ 	[--cert-file CERT_FILE]
+
+###Keyfile
+
+Path of client key to use in SSL connection. This option is not necessary if your key is prepended to your cert file.
+
+           [--key-file KEY_FILE] 
+
+###ca certificate
+
+Path of CA TLS certificate(s) used to verify the remote server's certificate. Without this option sirius looks for the default system CA certificates.
+
+		[--os-cacert <ca-certificate-file>]
+
+###Timeout   
+ Number of seconds to wait for a response.
+
+	--timeout TIMEOUT 
+
+###OS username
+
+Username of the keystone (OpenStack). Defaults to env[OS_USERNAME].
+  
+	--os-username OS_USERNAME
+                        
+ 
+###OS PASSWORD
+Password of the keystone (OpenStack).  Defaults to env[OS_PASSWORD].
+	
+	 --os-password OS_PASSWORD
+                       
+ 
+###OS TENANT ID
+Tenant identification of the OpenStack. Defaults to env[OS_TENANT_ID].
+
+	--os-tenant-id OS_TENANT_ID
+                        
+ 
+###OS TENANT NAME
+Tenant name of the OpenStack. Defaults to env[OS_TENANT_NAME].
+		
+	--os-tenant-name OS_TENANT_NAME
+
+                        
+ 
+###OS AUTH URL
+Authentication URL of OpenStack. Defaults to env[OS_AUTH_URL].
+ 
+	 --os-auth-url OS_AUTH_URL
+                        
+
+
+###OS REGION NAME
+The region name of  OpenStack. Defaults to env[OS_REGION_NAME].
+
+  	--os-region-name OS_REGION_NAME
+                        
+ 
+###OS AUTH TOKEN
+Authentication token of OpenStack. Defaults to env[OS_AUTH_TOKEN].
+
+  	--os-auth-token OS_AUTH_TOKEN
+                       
+
+### Sirius URL  
+ 
+The Sirius URL. Defaults to env[SIRIUS_URL].
+  
+		--sirius-url SIRIUS_URL
+  
+ 
+###Sirius API VERSION
+The API version of Sirius. Defaults to env[SIRIUS_API_VERSION] or 1
+
+ 	  --sirius-api-version SIRIUS_API_VERSION
+                        
+ 
+###OS SERVICE TYPE
+The service type of OpenStack.Defaults to env[OS_SERVICE_TYPE].
+
+ 	--os-service-type OS_SERVICE_TYPE
+                        
+ 
+###OS ENDPOINT TYPE
+The endpoint type of OpenStack. Defaults to env[OS_ENDPOINT_TYPE].
+ 	
+	--os-endpoint-type OS_ENDPOINT_TYPE
+
+
+
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
