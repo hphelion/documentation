@@ -70,7 +70,7 @@ To install a HP Helion OpenStack baremetal multi-node configuration, you must ha
 
 On the installer system, ensure the following required tasks are completed before you begin the installation.
 
-- [Prepare your network](#network_prepare)
+- [Preparing your network](#network_prepare)
 - [Obtain a public key](#pub-key)
 - [Install Debian/Ubuntu packages](#packages)
 - [Install and configure NTP](#ntp)

@@ -70,6 +70,7 @@ You can view the list of vCenters in your cloud environment.
 
     eon vcenter-list [argument]
 
+
 ###View vCenter details {#view-vcenter-details}
 
 You can view the details of the specific vCenter. 
@@ -130,7 +131,7 @@ You can unimport the cluster(s) from the EON database under the give vCenter. To
 
 ### Bash-completion {#bash-completion}
 
-Prints all of the commands and options to stdout.
+Prints all of the commands and options to the standard output.
 
 		eon bash-completion
 

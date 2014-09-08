@@ -43,7 +43,7 @@ A TripleO installation includes a Seed, the Undercloud and the Overcloud.
 <tr style="background-color: white; color: black;">
 	 <td><b>Undercloud</b></td>
 	 <td>The Undercloud server is a basic, single-node OpenStack installation running on a single physical server used to deploy, test, manage, and update the Overcloud servers. There is no HA configuration for the Undercloud. It contains a strictly limited sub-set of OpenStack, just enough to interact with the Overcloud. The services running on Undercloud are Nova, Neutron, Glance, Keystone, Ironic, Heat, Ceilometer, icing, EON, and Sirius. This server also contains HP Helion content distribution catalog  service, which provides a mechanism to download and install content and updates for the Overcloud.<br><br>
-The undercloud also captures the log 
+The Undercloud also captures the log of all the components in a common location. <br><br>
 	 The Undercloud also hosts images for various server types, which forms the functional cloud environment, aka Overcloud. <!--These images are Overcloud Controller, Overcloud Compute, Overcloud Swift and Overcloud Compute Proxy (required for cloud, which supports VMWare ESX as a hypervisor). -->
 </td>
  </tr>
@@ -75,9 +75,9 @@ The maximum supported configuration is 36 servers consisting of 30 Compute serve
 
 ## Network Architecture {#networkarch}
 
-The following information describes the network configuration, which must be configured by users.
+The following information describes the network configuration for KVM and ESX, which must be configured by users.
 
-####Physical Networks
+####KVM Physical Networks
 <table>
 <tr style="background-color: #C8C8C8;">
     <th>Network</th>
@@ -106,7 +106,7 @@ The logical networks listed in the following table are implemented as VLANs on t
   </tr>
 <tr style="background-color: white; color: black;">
     <td> <b>Management</b></td>
-    <td>Traffic for cloud along with PXE boot nodes, internal API traffic (one service to another), HA heartbeats, tenant access to services, VxLAN traffic for tenant VMs, access to block storage, object storage replication, CODN access to catalog, logging, monitoring, etc.</td>
+    <td>It is used for cloud traffic including PXE boot nodes, internal API traffic (one service to another), HA heartbeats, tenant access to services, VxLAN traffic for tenant VMs, access to block storage, object storage replication, CODN access to catalog, logging, monitoring, etc.</td>
     <td>untagged</td>
     <td>eth0 or<br>bond0</td>
   </tr>
@@ -125,7 +125,80 @@ The logical networks listed in the following table are implemented as VLANs on t
 
 </table>
 
+####ESX Physical Network
+<table>
+<tr style="background-color: #C8C8C8;">
+    <th>Network</th>
+    <th>Description</th>
+    <th>VLAN type</th>
+    <th>Server port</th>
+  </tr>
+<tr style="background-color: white; color: black;">
+    <td><b>IPMI/iLO</b></td>
+    <td>Base IPMI network used to boot and manage physical servers</td>
+    <td>untagged</td>
+    <td>IPMI/iLO</td>
+</tr>
+</table>
 
+**Virtual Networks**
+<table>
+<tr style="background-color: #C8C8C8;">
+    <th>Network</th>
+    <th>Description</th>
+    <th>VLAN type</th>
+    <th>Server port</th>
+  </tr>
+<tr style="background-color: white; color: black;">
+    <td><b>Management</b></td>
+    <td>It is used for cloud traffic including PXE boot nodes, internal API traffic (one service to another), HA heartbeats, tenant access to services, VxLAN traffic for tenant VMs, access to block storage, object storage replication, CODN access to catalog, logging, monitoring, etc.</td>
+    <td>untagged</td>
+    <td>eth0 or<br>bond0<br>(PXE boot for overcloud servers)</td>
+  </tr>
+<tr style="background-color: white; color: black;">
+    <td><b>External</b></td>
+    <td>Connected to Internet or Intranet. Floating IPs come from here. </td>
+    <td>tagged</td>
+    <td>eth0 or<br>bond0</td>
+  </tr>
+<tr style="background-color: white; color: black;">
+    <td><b>ESX</b></td>
+    <td> It is required in clouds which supports ESX. <br>
+     Connects for the traffic between OVSvApp VMs running on every ESX Host, Nova and the vCenter Proxy that exists for every vCenter, and vCenter Proxy to communicate with the message queue for Cinder and Nova. Also, connects EON to communicate with the vCenter server. </td>
+    <td>tagged</td>
+    <td>eth0 or<br>bond0</td>
+  </tr>
+<tr style="background-color: white; color: black;">
+    <td><b>ESX Tenant</b></td>
+    <td>Tenant networks for ESX virtual machines. Neutron assigns IP addresses for virtual machines on these networks. </td>
+    <td>tagged</td>
+    <td>eth0 or<br>bond0</td>
+  </tr>
+</table>
+
+**Storage**
+<table>
+<tr style="background-color: #C8C8C8;">
+    <th>Network</th>
+    <th>Description</th>
+    <th>VLAN type</th>
+    <th>Server port</th>
+  </tr>
+<tr style="background-color: white; color: black;">
+    <td><b>Storage</b></td>
+    <td>iSCSi traffic between VMs and Storage products like StoreVirtual.</td>
+    <td>untagged</td>
+    <td>eth0 or<br>bond0</td>
+  </tr>
+
+
+<tr style="background-color: white; color: black;">
+    <td><b>Swift</b></td>
+    <td>Communication between Swift servers (includes user data).</td>
+    <td>untagged</td>
+    <td>eth0 or<br>bond0</td>
+  </tr>
+</table>
 <!---
 <table>
 <tr style="background-color: #C8C8C8;">
@@ -158,12 +231,6 @@ The logical networks listed in the following table are implemented as VLANs on t
     <td>eth0 or<br>bond0</td>
   </tr>
 <tr style="background-color: white; color: black;">
-    <td><b>Storage</b></td>
-    <td>iSCSi traffic between VMs and Storage products like StoreVirtual.</td>
-    <td>untagged</td>
-    <td>eth0 or<br>bond0</td>
-  </tr>
-<tr style="background-color: white; color: black;">
     <td><b>External</b></td>
     <td>Connected to Internet or Intranet. Floating IPs come from here. </td>
     <td>tagged</td>
@@ -180,13 +247,21 @@ The logical networks listed in the following table are implemented as VLANs on t
     <td>Communication between Swift servers (includes user data).</td>
     <td>untagged</td>
     <td>eth0 or<br>bond0</td>
+<tr style="background-color: white; color: black;">
+    <td><b>Storage</b></td>
+    <td>iSCSi traffic between VMs and Storage products like StoreVirtual.</td>
+    <td>untagged</td>
+    <td>eth0 or<br>bond0</td>
+  </tr>
   </tr>
 </table>
 --->
 #### Network planning
 
+
 The physical machines need to have their management processors (iLO) connected to a network that is reachable from the Seed VM. The physical machines and the Seed VM need to be connected to a fast network. 
 
+<!---
 We recommend using one physical Ethernet port on a 10 GB network. Use an untagged VLAN for this network. 
 
 The Seed VM is expected to use eth0 to connect to the cluster network (and hence through to the management network). If your host uses another NIC, for example eth1, then you need to set the environment variable appropriately, for example BRIDGE_INTERFACE=eth1, as seen by root.
@@ -195,9 +270,9 @@ The Seed VM is expected to use eth0 to connect to the cluster network (and hence
 * Two physical links, one for IPMI/iLO and one for the hypervisor/OS
 * Network switches capable of basic VLAN, L2 and L3 functions (there is no dependency on VxLAN-capable or OpenFlow-enabled switch, although the product supports VxLAN as the virtual/overlay network)
 
-The physical cluster network can be shared by a number of logical networks, each with its own tagged VLAN and IP subnet. We recommend using at least one such network as the external network, with floating IPs coming from its subnet range. 
+The physical cluster network can be shared by a number of logical networks, each with its own tagged VLAN and IP subnet. We recommend using at least one such network as the external network, with floating IPs coming from its subnet range. --->
 
-[Learn more](/helion/openstack/support-matrix-beta/#physical-network-architecture) about HP Helion OpenStack physical network architecture. 
+For more details information on network planning see [Preparing your network](/helion/openstack/ga/install/prereqs/). 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
@@ -409,6 +484,7 @@ This baremetal installation is designed to deliver an open source OpenStack solu
 * 2 overcloud Swift nodes
 * At least 1 block storage node 
 * At least 1 overcloud Compute node 
+
 
 
 [Learn more]( /helion/openstack/ga/install/overview/) about installing and configuring HP Helion OpenStack. 
