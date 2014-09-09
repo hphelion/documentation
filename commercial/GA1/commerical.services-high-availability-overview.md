@@ -23,7 +23,7 @@ PageRefresh();
 # HP Helion OpenStack&#174; High Availability (HA) Service Overview#
 
 
-Leveraging OpenStack, the HP Helion OpenStack High Availability Service protects the system downtime and data loss failure. It is an redundancy service model. In addition to the Openstack Services components, HP Helion Openstack also provides HA service for the nova-compute service; it avoids Single-Point-Of-Failure (SPOF) and controls data loss.  
+Leveraging OpenStack, the HP Helion OpenStack High Availability Service protects the system downtime and data loss failure. It is a redundancy service model. In addition to the Openstack Services components, HP Helion Openstack also provides HA service for the nova-compute service; it avoids Single-Point-Of-Failure (SPOF) and controls data loss.  
 
 HA can be provided in the following two models.
 
