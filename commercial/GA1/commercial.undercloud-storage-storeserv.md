@@ -34,8 +34,11 @@ The StoreServ option allows you to configure 3PAR as storage. Before you start w
 
 4. HP StoreServ/3PAR device(running operating system v 3.1.3 or later) is accessible by Cinder and Compute nodes running in Overcloud
 
-5. Common Provisioning Groups (CPGs) are created for HP StoreServ/3PAR
-HP 3PAR web services API server must be enabled and running and HTTPS is enabled.
+5. Common Provisioning Groups (CPGs) are created for HP StoreServ (also named as  3PAR)
+
+6.HP 3PAR web services API server must be enabled and running
+
+7. HTTPS is enabled
 
 
 <!---Configuration of HP StoreServ/3PAR as Cinder backend using Sirius service involves the following steps:-->
@@ -54,7 +57,7 @@ You can do the following tasks using the StoreServ option:
 
 ## Registering the 3PAR device ##{#registering-device}
 
-You can register 3PAR device to Sirius by either using the Undercloud Horizon Dashboard or Sirius REST client (Refer User manual for Sirius client <GIVE HYPERLINK>)
+You can register 3PAR device to Sirius by either using the Undercloud Horizon Dashboard or Sirius REST client (Refer [User manual for Sirius client](/helion/openstack/ga/sirius-cli/)).
 
 To register the device using Undercloud Horizon Dashboard, do the following:
 
@@ -64,7 +67,7 @@ To register the device using Undercloud Horizon Dashboard, do the following:
 
 3. Select **StoreServ** option to activate it.<br> HP StoreServ page is displayed.</br>
 
-4. Click Register StoreServ displayed on the top right corner of the page to display Register 3PAR StoreServ dialog box.
+4. Click **Register StoreServ** displayed on the top right corner of the page to display Register 3PAR StoreServ dialog box.
 
 5. In the dialog box, do the following:
 
@@ -72,7 +75,7 @@ To register the device using Undercloud Horizon Dashboard, do the following:
    
    * In the **IP Address** box, enter the IP address of 3PAR WS API Server.
    
-   * In the **Username** box, enter the user name of the 3PAR super user.
+   * In the **Username** box, enter the user name of the 3PAR Super user.
    
    * In the **Password** box, enter the password of the 3PAR super user.
    
@@ -144,7 +147,7 @@ Use this option to unregister multiple StoreServs using a single command.
 
 Once you have registered the 3PAR device, the next step is to choose the CPGs for your Cloud. CPG(Common Provisioning Group) is a fundamental unit which can be configured as Cinder backend. A single HP 3PAR may have many CPGs. You can choose and allocate them to the cloud as a per your requirement. <!---First register the CPG in Sirius and then configure the CPG as backend for Overcloud Cinder service. You can register a few CPGs and allocate them as and when required. Cinder config file is updated only during the allocation, the registeration of the CPG just updates the Sirius database.-->
 
-**Note**: Ensure that you allocate only those CPGs which will be used by this cloud. Changing any attributes of CPG after allocating may disrupt cloud functionality if corresponding change is not updated here.
+**Note**: Only registered CPG(s) can be configured as storage backend of Cinder.
 
 To register the CPGs, do the following:
 

@@ -70,6 +70,8 @@ You can the command-line interface software to access HP Identity. See the [Open
 
 For more information on installing the CLI, see [Install the OpenStack command-line clients](http://docs.openstack.org/user-guide/content/install_clients.html).
 
+
+<!---
 ## How To's with the HP Helion OpenStack Identity Service {#howto}
 
 The following lists of tasks can be performed by a user or administrator through the [HP Helion OpenStack Dashboard](/helion/openstack/ga/dashboard/how-works/), the [API](http://api.openstack.org/api-ref-identity-v2.html) or [CLI](http://docs.openstack.org/cli-reference/content/keystoneclient_commands.html).
@@ -141,7 +143,7 @@ Configure federated access for use in HP Helion OpenStack.
 
 Use the Identity service to reset a password for a user.
 
-
+--->
 
 ## For more information ##
 

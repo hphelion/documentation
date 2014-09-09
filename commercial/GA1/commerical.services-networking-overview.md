@@ -49,6 +49,7 @@ You can use any of several command-line interface software to access Networking.
 
 For more information on installing the CLI, see [Install the OpenStack command-line clients](http://docs.openstack.org/user-guide/content/install_clients.html).
 
+<!---
 ## How To's with the HP Helion OpenStack Networking Service ## {#howto}
 
 The following lists of tasks can be performed by a user or administrator through the [HP Helion OpenStack Dashboard](/helion/openstack/ga/dashboard/how-works/), the OpenStack [CLI](http://docs.openstack.org/cli-reference/content/neutronclient_commands.html) or OpenStack [API](http://developer.openstack.org/api-ref-networking-v2.html).
@@ -71,7 +72,7 @@ You can perform the following tasks:
 - **Adding and removing a network to a router** -- Attach or detach a network to your router.
 - **Adding, modifying or removing a router** -- Add, modify or remove a router from your network.
 - **Adding, modifying or removing an interface** -- Add, modify or remove an interface from your router.
-- **Adding and removing an external network to a router** -- Attach or detach a router from an external network.
+- **Adding and removing an external network to a router** -- Attach or detach a router from an external network. -->
 
 ## For more information ##
 
