@@ -47,7 +47,6 @@ The installation and configuration process for ESX consists of the following gen
 * [Next steps](#next-steps)
  
 
-
 ## Verify Prerequisites ## {#pre}
 
 To ensure successful installation, please read through the topics before you start.
@@ -58,13 +57,11 @@ To ensure successful installation, please read through the topics before you sta
 
 ##Review the ESX deployment architecture ## {#deploy-arch}
 
-***QUESTION: Is this simplified diagram OK? Accurate? Useful? I linked to the new, more detailed diagram in the prereqs.***
+The following diagram depicts the required network topology for a KVM installation.
 
-The following diagram depicts a simplified deployment scenario.
+<a href="javascript:window.open('/content/documentation/media/topology_kvm.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack architecture diagram for ESX (opens in a new window)</a>
 
-<a href="javascript:window.open('/content/documentation/media/commercial_esx_network_architecture.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack architecture diagram for ESX (opens in a new window)</a>
-
-For a more detailed network diagram, see [HP Helion OpenStack&#174; Installation: Before you begin](/helion/openstack/ga/install/prereqs/#network_prepare).
+For detailed network requirements, see [HP Helion OpenStack&#174; Installation: Before you begin](/helion/openstack/ga/install/prereqs/#network_prepare).
 
 ## Perform additional network requirements ## {#networkreq}
 
@@ -156,15 +153,12 @@ Before you begin your installation, if necessary, configure the proxy informatio
         $ export BRIDGE_INTERFACE=em1  
         $ export BRIDGE_INTERFACE=eth5
 
-5. Use the following command to set the CLOUD_TYPE environment variable for ESX:
-		
-	    export CLOUD_TYPE=esx
 
 ### Install the seed VM and build your cloud ### {#startseed}
 
 1. To start the seed VM installation, enter the following command:
 
-	bash -x /root/work/tripleo/tripleo-incubator/scripts/hp_ced_host_manager.sh --create-seed
+		bash -x /root/work/tripleo/tripleo-incubator/scripts/hp_ced_host_manager.sh --create-seed
 
     If the seed startup is successful, you should see a message similar to the following:
 
@@ -184,7 +178,7 @@ Before you begin your installation, if necessary, configure the proxy informatio
 4. Ensure the information in the [`baremetal.csv` configuration file](/helion/openstack/qa/install/prereqs/#req-info) file is correct and in the following format and upload THE FILE to `/root`.
 	<mac_address>,<ipmi_user>,<ipmi_password>,<ipmi_address>,<no_of_cpus>,<memory_MB>,<diskspace_GB>
 
-	***QUESTION: Must use IPMI user vs ILO user in beta?***
+	***QUESTION: Must use IPMI user vs ILO used in beta?***
 
 	**Important**: There must be one entry in this file for each baremetal system you intend to install. The file must contain exactly five lines for the ESX installation. For example, your file should look similar to the following:
 
@@ -205,27 +199,12 @@ Before you begin your installation, if necessary, configure the proxy informatio
     
     **IMPORTANT:** Ensure that each system is configured in the BIOS to stay powered off in the event of being shutdown rather than automatically restarting.
 
-7. Edit `configure_installer.sh` to provide your VMware vCenter connection details. 
-
-	***QUESTION: Still optional? Not in https://rndwiki2.atlanta.hp.com/confluence/display/cloudos/ee_ga_ironic_quick_start.***
-
-		/root/tripleo/tripleo-incubator/scripts/configure_installer.sh
-
-	For example:
-
-		export ENABLE_VCENTER="True"
-		export VCENTER_IP="<15.14.19.17>"
-		export VCENTER_USERNAME="<Administrator>"
-		export VCENTER_PASSWORD="<Password>"
-		export VCENTER_CLUSTERS="<Cluster1>","<Cluster2>","<Cluster3>","<Cluster 4>"
-		export ENABLE_VSA="False"
-
 8. Set `OVERCLOUD_NeutronPublicInterface` and `UNDERCLOUD_NeutronPublicInterface` to the name of the interface that carries Neutron external traffic on your overcloud and undercloud. By default, it is *eth2*. The following example sets the value of the variable to *eth0*.
 
 		$ export OVERCLOUD_NeutronPublicInterface=eth0
 		$ export UNDERCLOUD_NeutronPublicInterface=eth0 
 
-9. Set OVERCLOUD_COMPUTESCALE to 1, which is the currently supported limit. If you do not specify a value, the value is derived based on the number of lines remaining in `/root/baremetal.csv` once the undercloud, overcloud control, and overcloud swift nodes are removed.
+9. Set `OVERCLOUD_COMPUTESCALE` to 1, which is the currently supported limit. If you do not specify a value, the value is derived based on the number of lines remaining in `/root/baremetal.csv` once the undercloud, overcloud control, and overcloud swift nodes are removed.
 
 	To set this variable:
 
@@ -233,19 +212,19 @@ Before you begin your installation, if necessary, configure the proxy informatio
 
 10. Release floating IP addresses for networking.
 
-	***QUESTION: More info needed on how to determine the IP range. How does this help. DOes shrinking the floating IP range free up IPs for the private IPs needed for OVSvApp??***
+	The installation creates a pool of floating IP addresses that you can assign to virtual machines.
 
-	By default, the installation creates a pool of floating IP addresses that you can assign to virtual machines. However, the HP Virtual Cloud Networking's Open vSwitch vApp (OVSvApp) required by the ESX environment requires a block of IP addresses. You create more IP addresses for OVSvApp by restricting the number of floating IP addresses created.
+	By default, the floating IP range is between 192.0.2.129 - 192.0.2.254. You can change the floating IP range by exporting the following variables:
 
-	By default, the floating IP range is between 192.0.2.129 - 192.0.2.254. You can shrink the range by exporting the following variables:
-
-		# export FLOATING_START=<Start IP Address>
-		# export FLOATING_END=<End IP Address>
+		export FLOATING_START=<Start IP Address>
+		export FLOATING_END=<End IP Address>
+		export FLOATING_CIDR=<CIDR in 192.x.x.x/24 format>
 
     **For example**:
 
-		# export FLOATING_START=192.0.2.129
-		# export FLOATING_END=192.0.2.200
+		export FLOATING_START=192.0.2.129
+		export FLOATING_END=192.0.2.200
+		export FLOATING_CIDR=192.0.2.0/24
 
 	**Note:** If the above settings are changed, set the 'NeutronPublicInterfaceDefaultRoute' variable to the actual gateway for the customized IP range.
 
