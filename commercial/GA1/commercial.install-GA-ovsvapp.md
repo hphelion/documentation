@@ -90,19 +90,21 @@ Example:
 
 You must upload the OVSvApp appliance to one of the ESXi hosts that is hosting VMs provisioned from HP Helion OpenStack environment. You must then configure the settings in the configuration file that will be used to clone and deploy OVSvApp appliance on each host being managed by the controller.
 
-1. Create a directory `/ovsvapp` in the seed VM and upload `ovsvapp.tgz`. Extract the `ovsvapp.tgz` and locate the `hp-ovsvapp` directory. In the directory, locate  `overcloud_esx_ovsvapp.ova`. This is the OVSvAPP appliance.
+The deploy process installs the OVSvApp appliance as a virtual machine, which is referred to as *appliance VM* in this document.
+
+1. Create a directory `/ovsvapp` on any server in the Helion environment and upload `ovsvapp.tgz`. Extract the `ovsvapp.tgz` and locate the `hp-ovsvapp` directory. In the directory, locate  `overcloud_esx_ovsvapp.ova`. This is the OVSvAPP appliance.
 
 2. Use the the vSphere client to upload the `overcloud_esx_ovsvapp.ova` file to one of the ESXi hosts in your data center: 
 
 	a. 	In the vSphere Client, click **File > Deploy OVF Template**.
 
-	b. Follow the instructions in the wizard that displays.
+	b. Follow the instructions in the wizard that displays to specify the data center, cluster, and node to install onto. Refer to the VMWare vSphere documentation, as needed.
 
-	Refer to the VMWare vSphere documentation, as needed.
+	The installer creates the appliance VM on the specified node. The VM is listed in the left column of vCenter, by default named `overcoud_ovsapp`.
 
-3. Add a **CD-ROM** device In the vCenter, edit the VM settings to add . 
+3. Add a **CD-ROM** device to the appliance VM using the vCenter. 
 
-	a. In the vSphere Client, right-click the appliance.
+	a. In the vSphere Client, right-click the appliance VM.
 
 	b. Click **Edit Settings**.	
 
@@ -110,30 +112,31 @@ You must upload the OVSvApp appliance to one of the ESXi hosts that is hosting V
 
 	d. Select **DVD/CD-ROM Drive**.
 
-	b. Follow the instructions in the wizard that displays.
+	e. Follow the instructions in the wizard that displays.
 
 	Refer to the VMWare vSphere documentation, as needed.
 
 4. Enable the Virtual Machine Communication Interface (VMCI), a high-speed communication channel between a virtual machine and the ESXi host
 
-	a. In the vSphere Client, right-click the appliance.
+	a. On the **Hardware** tab, select **Enable VMCI Between VMs**. The **Hardware** tab should be open from the previous step.
 
-	b. Click **Edit Settings**.	
+	b. Click **OK**.
+
+5. Power on the appliance VM using vCenter. The default credentials to login to the appliance VM is `stack/stack`. 
+
+6. Install the VMWare tools into the appliance VM: 
 	
-	c. In the **Edit Settings** window, select the **Hardware** tab.
+	a.In the vSphere Client, right-click the appliance VM.
 
-	d. Select **Enable VMCI Between VMs**.
+	b. Select **Guest > Install/Upgrade VMware Tools**. 
 
-	e. Click **OK**.
+7. Launch the appliance VM console to install the VMware Tools from command line terminal: 
 
-5. Power on the appliance to which you have uploaded and installed VMware tools using the default credentials: `stack/stack`. For more information, refer to the following URL:
+	a. Right-click the appliance VM and select **Open Console**.
 
-    [https://www.vmware.com/support/ws5/doc/ws_newguest_tools_linux.html](https://www.vmware.com/support/ws5/doc/ws_newguest_tools_linux.html)
+	b. Enter the following commands:
 
-6. In the vCenter, right-click the appliance and select **Guest > Install/Upgrade VMware Tools** to install VMware tools.
-
-7. Login to the appliance and install the VMware Tools from command line terminal: # mkdir /mnt/vmware-tools:
-
+		mkdir /mnt/vmware-tools:
 		mount /dev/cdrom/ /mnt/vmware-tools
 		cp –rf /mnt/vmware-tools/VMwareTools-*.tar.gz /tmp/
 		cd /tmp
@@ -143,13 +146,13 @@ You must upload the OVSvApp appliance to one of the ESXi hosts that is hosting V
 
 	Follow the instructions to continue the installation.
 
-8. When the installation completes, shutdown the appliance.
+8. When the installation completes, shutdown the appliance VM.
 
 9. Disable the VMCI: 
 
-	a. Right-click on the appliance 
+	a. Right-click on the appliance VM. 
 
-	b. Edit settings
+	b.  Click **Edit Settings**.	
 
 	c. Remove the CD/DVD drive
 
@@ -179,8 +182,8 @@ You must upload the OVSvApp appliance to one of the ESXi hosts that is hosting V
 	
 		[network]
 		tenant_network_type=vlan
-		is_auto_dvs=True
-		trunk_dvs_name=vappTrunk
+		is_auto_dvs=False
+		trunk_dvs_name=
 		uplink_dvs_name=vappUplink
 		data_interface={'<nic_type>':{'<port_group_name>'}
 		mgmt_interface={'<nic_type>':{'<port_group_name>'}
@@ -212,9 +215,14 @@ You must upload the OVSvApp appliance to one of the ESXi hosts that is hosting V
 	f. Specify RabbitMQ settings.
 
 		[rabbitmq]
-		rabbitmq_host=<ip_address>
+		rabbitmq_host=<ip_address_controller0>,<ip_address_controller1>,<ip_address_controllermgmt>
 		rabbitmq_user=guest
 		rabbitmq_pass=guest
+
+	Where:
+	- controller0 is overcloud controller0
+	- controller1 is overcloud controller1
+	- controllermgmt is overcloud controller management
 
 	g. Specify the IP address of your NTP server.
 
@@ -364,14 +372,16 @@ After the OVSvApp deployment script is run successfully, you can see the OVSvApp
 
 ##Managing the HP VCN networking service {#managevcnnetworkservice}
 
-You must stop and restart the HP VCN networking service to reload the changes you made during
-your OVSvApp deployment. 
+You must stop and restart the HP VCN networking service to reload the changes you made during your OVSvApp deployment. 
 
 Enter the following commands to stop and restart the HP VCN networking service:
 
 * `sudo service hpvcn-neutron-agent stop`
 
 * `sudo service hpvcn-neutron-agent start`
+
+-          Login to the OVSvApp
+-          sudo –i os-svc-restart -n hpvcn-neutron-agent
 
 
 ##Uninstalling VCN on ESXi hosts {#uninstallvcn}
@@ -383,6 +393,17 @@ To uninstall VCN on ESXi hosts, access the ESXi hosts from vSphere Client, and d
 ----
 ####OpenStack trademark attribution
 *The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*
+
+
+
+
+
+
+
+
+
+
+
 
 
 <!--- Removed from after step 8, In the Seed VM's folder /ovsvapp/hp-ovsvapp/src/ovsvm....
