@@ -55,6 +55,7 @@ The Undercloud also captures the log of all the components in a common location.
 
 **Note:** You cannot build or rebuild the images. Direct editing of the Heat templates is possible, but not supported. Configuration is limited to those items supported by the configuration tool and Horizon.
 
+<!---
 ### Deployment Architecture {#Deployarch}
 
 The following diagram depicts the deployment architecture of HP Helion OpenStack.
@@ -75,9 +76,9 @@ The maximum supported configuration is 36 servers consisting of 30 Compute serve
 
 ## Network Architecture {#networkarch}
 
-The following information describes the network configuration for KVM and ESX, which must be configured by users.
+The following information describes the network configuration for [KVM]({#KVM-Physical-network}) and [ESX](#ESX-physical-network), which must be configured by users.
 
-####KVM Physical Networks
+####KVM Physical Networks {#KVM-physical-network}
 <table>
 <tr style="background-color: #C8C8C8;">
     <th>Network</th>
@@ -125,7 +126,7 @@ The logical networks listed in the following table are implemented as VLANs on t
 
 </table>
 
-####ESX Physical Network
+####ESX Physical Network {#ESX-physical-network}
 <table>
 <tr style="background-color: #C8C8C8;">
     <th>Network</th>
@@ -142,6 +143,7 @@ The logical networks listed in the following table are implemented as VLANs on t
 </table>
 
 **Virtual Networks**
+The logical networks listed in the following table are implemented as VLANs on the physical network.
 <table>
 <tr style="background-color: #C8C8C8;">
     <th>Network</th>
@@ -177,6 +179,8 @@ The logical networks listed in the following table are implemented as VLANs on t
 </table>
 
 **Storage**
+The following network configuration is required for storage.
+
 <table>
 <tr style="background-color: #C8C8C8;">
     <th>Network</th>
