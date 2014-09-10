@@ -32,11 +32,11 @@ specifications for these configuration files can be found in the
 repository](https://github.com/HP/helion-cli/):
 
 -   [stackato.yml
-    specification](https://github.com/HP/helion-cli/blob/master/doc/stackato.yml.txt)
+    specification](https://github.com/ActiveState/helion-cli/blob/master/doc/stackato.yml.txt)
 -   [manifest.yml
-    specification](https://github.com/HP/helion-cli/blob/master/doc/manifest.yml.txt)
+    specification](https://github.com/ActiveState/helion-cli/blob/master/doc/manifest.yml.txt)
 -   [stackato.yml to manifest.yml key
-    mappings](https://github.com/HP/helion-cli/blob/master/doc/helion-2-manifest.txt)
+    mappings](https://github.com/ActiveState/helion-cli/blob/master/doc/helion-2-manifest.txt)
 
 applications:[](#applications "Permalink to this headline")
 ------------------------------------------------------------
