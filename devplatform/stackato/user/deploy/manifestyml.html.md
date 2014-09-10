@@ -8,7 +8,7 @@ Manifest.yml Options[](#manifest-yml-options "Permalink to this headline")
 ===========================================================================
 
 Using a *manifest.yml* file is an alternative to *stackato.yml* which
-allows for specific customizations such as pushing more than one app
+allows for specific customization such as pushing more than one app
 with dependencies. It is the standard configuration file format for all
 Cloud Foundry systems, allowing for portability from those systems to
 Application Lifecycle Service without configuration changes.
