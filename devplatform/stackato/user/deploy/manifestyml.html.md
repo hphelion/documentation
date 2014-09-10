@@ -25,7 +25,7 @@ Options*](/als/v1/user/deploy/stackatoyml/#stackato-yml)) can also be declared i
 
 **Note**
 
-Options in [*stackato.yml*](/als/v1/user/deploy/stackatoyml/#stackato-yml) take
+Options  in [*stackato.yml*](/als/v1/user/deploy/stackatoyml/#stackato-yml) take
 precedence over those declared in *manifest.yml*. Detailed
 specifications for these configuration files can be found in the
 [helion-cli source
