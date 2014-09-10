@@ -29,13 +29,13 @@ The StoreVirtual option allows you to configure HP StoreVirtual VSA as storage. 
 
 1. HP Helion Cloud is deployed
 
-2. Sirius service is up and running in Undercloud
+2. Sirius service is up and running in the Undercloud
 
 3. HP Storevirtual VSA is deployed
 
 4. HP Storevirtual VSA cluster is created and Virtual IP address is set.
 
-5. HP Storevirtual VSA cluster is accessible by Cinder and Compute nodes running in Overcloud.
+5. HP Storevirtual VSA cluster is accessible by Cinder and Compute nodes running in the Overcloud.
 
 
 <!---Configuration of HP StoreServ/3PAR as Cinder backend using Sirius service involves the following steps:-->
@@ -54,7 +54,7 @@ You can do the following tasks using the StoreVirtual option:
 
 ## Registering the cluster ##{#registering-cluster}
 
-You can register a cluster by either using the Undercloud Horizon Dashboard or Sirius REST client (Refer User manual for Sirius client <GIVE HYPERLINK>)
+You can register a cluster by either using the Undercloud Horizon Dashboard or Sirius REST client. (Refer [User manual for Sirius client](/helion/openstack/ga/sirius-cli/)). When you register a cluster, it registers the cluster to the cloud inventory. The registered cluster can later be added as a backend to the Overcloud Cinder.
 
 To register the cluster using Undercloud Horizon Dashboard, do the following:
 
@@ -69,6 +69,8 @@ To register the cluster using Undercloud Horizon Dashboard, do the following:
 5. In the dialog box, do the following:
 
    * In the **Cluster Name** box, enter the VSA cluster name.
+
+		**Note**: The cluster name is case sensitive
    
    * In the **IP Address** box, enter the virtual IP address of the cluster.
    
@@ -78,16 +80,16 @@ To register the cluster using Undercloud Horizon Dashboard, do the following:
    
    * In the **Password** box, enter the password of the management group where VSA cluster is present.
    
-   * In the **Port** box, enter number of the default Port number for accessing VSA using SSH.
+   * In the **Port** box, enter the default Port number for accessing VSA using SSH.
    
    * Click **Done** to save the details. 
 
-    On successful registration, the cluster is added and is listed as the registered.
+    On successful registration, the cluster is added and is listed as the *Registered*.
 
 
 ### Edit a cluster ###{#edit-cluster}
 
-**Note**: Ensure that you edit the VSA cluster after modifying it in the management group using CMC or CLIQ tool, else the updation of VSA cluster will fail.
+**Note**: Ensure that you edit the VSA cluster only after modifying the details in the management group using CMC or CLIQ tool, else the updation of VSA cluster  fails.
 
 To edit a cluster, do the following:
 
@@ -106,7 +108,9 @@ To edit a cluster, do the following:
 
 ### Unregister a cluster ###{unregister-cluster}
 
-Use this option to unregister a cluster.
+Unregistering a cluster, removes it from the cloud inventory.
+
+To unregister a cluster, do the following:
 
 1. Log into the Undercloud Horizon Dashboard.
 
@@ -114,12 +118,12 @@ Use this option to unregister a cluster.
 
 3. Select **StoreVirtual** option to activate it.<br> HP StoreVirtual page is displayed.</br>
 
-4. Click **More** drop-down list against the cluster which you want to unregister and select **Unregister Cluster**.<br> A confirmation box is diplayed.</br>
+4. Click **More** drop-down list against the cluster which you want to unregister and select **Unregister Cluster**.<br> A confirmation box is displayed.</br>
 
 5. Click **Unregister cluster** to unregister or click **Cancel** to cancel the process. 
 
 
-### Unregister multiple clusters ###{unregister-multiple-storeserv}
+### Unregister multiple clusters ###{unregister-multiple-storevirtual}
 
 Use this option to unregister multiple clusters using a single command.
 
@@ -127,7 +131,8 @@ Use this option to unregister multiple clusters using a single command.
 
 2. From the left panel, click **Resources** Tab and then **Storage** to display the Overview page.
 
-3. Select **StoreVirtual** option to activate it.<br> HP StoreVirtual page is displayed.</br>
+3. Select **StoreVirtual** option to a
+4. ctivate it.<br> HP StoreVirtual page is displayed.</br>
 
 4. Click the checkbox on the left of the **Name** column to select all the clusters. 
 
@@ -138,7 +143,7 @@ Use this option to unregister multiple clusters using a single command.
  
 ### View configuration ###
 
-Use this option to view the cluster configuration.
+Use this option to view the cluster configuration as it displays in the cinder.config file.
 
 Log into the Undercloud Horizon Dashboard.
 

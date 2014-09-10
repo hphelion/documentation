@@ -5,7 +5,7 @@ permalink: /helion/openstack/technical-overview/
 product: commercial.ga
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 
 <p style="font-size: small;"> <a href="/helion/openstack/faq/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/services/overview/">NEXT &#9654;</a> </p>
@@ -14,16 +14,14 @@ product: commercial.ga
 
 Welcome! This page introduces you to HP Helion OpenStack, an open and extensible enterprise-grade cloud technology. 
 
-HP Helion OpenStack is OpenStack technology coupled with a version of Linux&#174; provided by HP. It is  designed to offer a number of value-added services that complement and enhance OpenStack and set up a cloud. HP Cloud Openstack is enabled to manage KVM and VMWare ESX hyper-visor. KVM supports up to 30 physical nodes and 40 VMs per node and VMWare ESX supports 1 node and 1 VM.
+HP Helion OpenStack is OpenStack technology coupled with a version of Linux&#174; provided by HP. It is  designed to offer a number of value-added services that complement and enhance OpenStack and set up a cloud. HP Cloud Openstack is enabled to manage KVM and VMWare ESX hyper-visor. It supports up to 30 physical nodes and 40 VMs per node. 
 
 
 * [Reference architecture](#ref-arch)
 	* [Deployment model](#Deploy)
-	* [Deployment architecture](#Deployarch)
 	* [Configuration](#Config) 
 * [Physical network architecture](#physicalnetarch)
 * [HP Helion OpenStack services](#Helion-services)
-	<!--* [High Availability](#highavailability)-->
 * [Installation and configuration](#install-configure)
 
 ##Reference architecture {#ref-arch}
@@ -55,11 +53,12 @@ A TripleO installation includes a Seed, the Undercloud and the Overcloud.
 
 **Note:** You cannot build or rebuild the images. Direct editing of the Heat templates is possible, but not supported. Configuration is limited to those items supported by the configuration tool and Horizon.
 
+<!---
 ### Deployment Architecture {#Deployarch}
 
 The following diagram depicts the deployment architecture of HP Helion OpenStack.
 
-<a href="javascript:window.open('/content/documentation/media/Helion OpenStack Deployment Architecture.vsd','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack  architecture diagram.</a> (opens in a new window)  
+<a href="javascript:window.open('/content/documentation/media/Helion OpenStack Deployment Architecture.vsd','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack  architecture diagram.</a> (opens in a new window)  --->
 
 
 ####Configuration {#Config}
@@ -240,6 +239,7 @@ The following table briefly describes the HP Helion OpenStack services. For a co
 	<td><center>X</center></td>
 	<td><center>X</center></td>
 </tr>
+<!---
 <tr style="background-color: white; color: black;">
 	<td><b>Sherpa</b></td>
  	<td>HP Helion content distribution catalog service provides a mechanism to download and install content and updates for the Overcloud.<br><br><a href ="/helion/openstack/services/sherpa/overview/">Learn more </a> HP Helion Sherpa Service
@@ -267,7 +267,7 @@ The following table briefly describes the HP Helion OpenStack services. For a co
 	<td><center>X</center></td>
 	<td><center>X</center></td>
 	<td><center>X </center></td>
-</tr> 
+</tr> --->
 </table>
 
 
@@ -301,14 +301,14 @@ The following table briefly describes the additional services in HP Helion OpenS
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
-
+<!---
 ###High Availability {#highavailability}
 
 The HP Helion OpenStack High Availability (HA) protects the system downtime and data loss failure. HA configuration is implemented for the above listed OpenStack services and the underlying MSQL database and RabbitMQ server.
 
 For more details on HA configuration, refer to [OpenStack HA Guide](http://docs.openstack.org/high-availability-guide/content/index.html).
 
-
+--->
 
 ## Installation and configuration ## {#install-configure}
 
@@ -352,14 +352,12 @@ Currently, supported DNS servers and networks include:
 
 ###Baremetal installation 
 
-This baremetal installation is designed to deliver an open source OpenStack solution at modest scale. A baremetal multi-node deployment consists of a minimum of 9 baremetal servers, to which you can add **up to 100 Compute nodes**:
+This baremetal installation is designed to deliver an open source OpenStack solution at modest scale. A baremetal multi-node deployment consists of a minimum of 5 baremetal servers, to which you can add **up to 30 Compute nodes**:
 
 
-* 1 seed host (installer system)
 * 1 undercloud server
-* 3 overcloud controllers
+* 1 overcloud controllers
 * 2 overcloud Swift nodes
-* At least 1 block storage node 
 * At least 1 overcloud Compute node 
 
 

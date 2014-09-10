@@ -249,7 +249,7 @@ From the physical system you are running the install on, you should be able to c
 
         http://<IP of overcloud controller>
 
-4. Log in as `demo` or `admin` using the corresponding passwords obtained in step 2.hp_ced_start_seed.sh
+4. Log in as `demo` or `admin` using the corresponding passwords obtained in step 2.
 
 **Note:** If you cannot connect to the Horizon console, check your proxy settings to make sure access to the controller VM is not being unsuccessfully redirected through a proxy.
 

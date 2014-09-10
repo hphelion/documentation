@@ -56,9 +56,11 @@ You can use the command-line interface software to access HP Compute. See the [O
 
 For more information on installing the CLI, see [Install the OpenStack command-line clients](http://docs.openstack.org/user-guide/content/install_clients.html).
 
+
+<!---
 ## How To's with the HP Helion OpenStack Compute Service ## {#howto}
 
-<!-- Taken from http://wiki.hpcloud.net/display/core/Core+Edition+Use+cases#CoreEditionUsecases-OverCloud -->
+<!-- Taken from http://wiki.hpcloud.net/display/core/Core+Edition+Use+cases#CoreEditionUsecases-OverCloud 
 
 The following lists of tasks can be performed by a user or administrator through the [HP Helion OpenStack Dashboard](/helion/openstack/ga/dashboard/how-works/), the [API](http://api.openstack.org/api-ref-compute-v2.html), or [CLI](http://docs.openstack.org/cli-reference/content/novaclient_commands.html).
 
@@ -119,7 +121,7 @@ When working with the Compute service, you can perform a number of tasks with yo
 
 - **Locking and unlocking instances** -- Lock or unlock an instance, as needed.
 - **Pausing and un-pausing instances** -- Pause and un-pause an instance. The `pause` command stores the state of the instance in RAM. A paused instance continues to run in a frozen state.
-- **Suspending and resuming virtual machines** -- Suspend and un-suspend an instance. When you suspend an instance, its instance state is stored on disk, all memory is written to disk, and the instance is stopped. Suspending an instance is similar to placing a device in hibernation; memory and vCPUs become available.
+- **Suspending and resuming virtual machines** -- Suspend and un-suspend an instance. When you suspend an instance, its instance state is stored on disk, all memory is written to disk, and the instance is stopped. Suspending an instance is similar to placing a device in hibernation; memory and vCPUs become available.--->
 
 ## For more information ##
 

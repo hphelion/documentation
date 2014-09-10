@@ -20,10 +20,9 @@ HP Helion OpenStack is OpenStack technology coupled with a version of Linux&#174
 * [Reference architecture](#ref-arch)
 	* [Deployment model](#Deploy)
 	* [Deployment architecture](#Deployarch)
-	* [Configuration](#Config) 
-* [Physical network architecture](#physicalnetarch)
+	* [Network Architecture](#networkarch)
 * [HP Helion OpenStack services](#Helion-services)
-	<!--* [High Availability](#highavailability)-->
+* [High Availability](#highavailability)
 * [Installation and configuration](#install-configure)
 
 ##Reference architecture {#ref-arch}
@@ -44,6 +43,7 @@ A TripleO installation includes a Seed, the Undercloud and the Overcloud.
 <tr style="background-color: white; color: black;">
 	 <td><b>Undercloud</b></td>
 	 <td>The Undercloud server is a basic, single-node OpenStack installation running on a single physical server used to deploy, test, manage, and update the Overcloud servers. There is no HA configuration for the Undercloud. It contains a strictly limited sub-set of OpenStack, just enough to interact with the Overcloud. The services running on Undercloud are Nova, Neutron, Glance, Keystone, Ironic, Heat, Ceilometer, icing, EON, and Sirius. This server also contains HP Helion content distribution catalog  service, which provides a mechanism to download and install content and updates for the Overcloud.<br><br>
+The Undercloud also captures the log of all the components in a common location. <br><br>
 	 The Undercloud also hosts images for various server types, which forms the functional cloud environment, aka Overcloud. <!--These images are Overcloud Controller, Overcloud Compute, Overcloud Swift and Overcloud Compute Proxy (required for cloud, which supports VMWare ESX as a hypervisor). -->
 </td>
  </tr>
@@ -55,13 +55,14 @@ A TripleO installation includes a Seed, the Undercloud and the Overcloud.
 
 **Note:** You cannot build or rebuild the images. Direct editing of the Heat templates is possible, but not supported. Configuration is limited to those items supported by the configuration tool and Horizon.
 
+<!---
 ### Deployment Architecture {#Deployarch}
 
 The following diagram depicts the deployment architecture of HP Helion OpenStack.
 
 <a href="javascript:window.open('/content/documentation/media/Helion OpenStack Deployment Architecture.vsd','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack  architecture diagram.</a> (opens in a new window)  
 
-
+<!---
 ####Configuration {#Config}
 
 * 1 server to host the Seed VM
@@ -69,16 +70,140 @@ The following diagram depicts the deployment architecture of HP Helion OpenStack
 * 4 overcloud nodes (One Controller node and three Compute nodes) 
 * 2 Swift object servers
 
-The maximum supported configuration is 36 servers consisting of 30 Compute servers and five configuration and management servers. 
+The maximum supported configuration is 36 servers consisting of 30 Compute servers and five configuration and management servers. --->
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593;</a>
 
-##Physical network architecture {#physicalnetarch}
+## Network Architecture {#networkarch}
 
-The following information describes the physical network configuration, which must be configured by users.
+The following information describes the network configuration for [KVM]({#KVM-Physical-network}) and [ESX](#ESX-physical-network), which must be configured by users.
 
-####Networks
+####KVM Physical Networks {#KVM-physical-network}
+<table>
+<tr style="background-color: #C8C8C8;">
+    <th>Network</th>
+    <th>Description</th>
+      </tr>
+<tr style="background-color: white; color: black;">
+    <td><b>IPMI/iLO</b></td>
+    <td>Base IPMI network used to boot and manage physical servers</td>
+ <tr style="background-color: white; color: black;">
+    <td><b>Cloud</b></td>
+    <td>Physical network which supports multiple VLANs to represent the cloud logical networks.</td>  <tr style="background-color: white; color: black;">
+    <td><b>Fiber Channel</b></td>
+    <td> A channel used for data transfer to a 3PAR array. This is not a standard ether network</td>
+    
+</tr>
+</table>
+####Virtual Networks
+The logical networks listed in the following table are implemented as VLANs on the physical network.
+<table>
 
+<tr style="background-color: #C8C8C8;">
+    <th>Network</th>
+    <th>Description</th>
+    <th>VLAN type</th>
+    <th>Server port</th>
+  </tr>
+<tr style="background-color: white; color: black;">
+    <td> <b>Management</b></td>
+    <td>It is used for cloud traffic including PXE boot nodes, internal API traffic (one service to another), HA heartbeats, tenant access to services, VxLAN traffic for tenant VMs, access to block storage, object storage replication, CODN access to catalog, logging, monitoring, etc.</td>
+    <td>untagged</td>
+    <td>eth0 or<br>bond0</td>
+  </tr>
+<tr style="background-color: white; color: black;">
+    <td><b>Service</b></td>
+    <td>Trusted VMs communicate with the cloud infrastructure component.</td>
+    <td>tagged</td>
+    <td>eth0 or<br>bond0</td>
+  </tr>
+<tr style="background-color: white; color: black;">
+    <td><b>External</b></td>
+    <td>Connected to Internet or Intranet. Floating IPs come from here. </td>
+    <td>tagged</td>
+    <td>eth0 or<br>bond0</td>
+  </tr>
+
+</table>
+
+####ESX Physical Network {#ESX-physical-network}
+<table>
+<tr style="background-color: #C8C8C8;">
+    <th>Network</th>
+    <th>Description</th>
+    <th>VLAN type</th>
+    <th>Server port</th>
+  </tr>
+<tr style="background-color: white; color: black;">
+    <td><b>IPMI/iLO</b></td>
+    <td>Base IPMI network used to boot and manage physical servers</td>
+    <td>untagged</td>
+    <td>IPMI/iLO</td>
+</tr>
+</table>
+
+**Virtual Networks**
+The logical networks listed in the following table are implemented as VLANs on the physical network.
+<table>
+<tr style="background-color: #C8C8C8;">
+    <th>Network</th>
+    <th>Description</th>
+    <th>VLAN type</th>
+    <th>Server port</th>
+  </tr>
+<tr style="background-color: white; color: black;">
+    <td><b>Management</b></td>
+    <td>It is used for cloud traffic including PXE boot nodes, internal API traffic (one service to another), HA heartbeats, tenant access to services, VxLAN traffic for tenant VMs, access to block storage, object storage replication, CODN access to catalog, logging, monitoring, etc.</td>
+    <td>untagged</td>
+    <td>eth0 or<br>bond0<br>(PXE boot for overcloud servers)</td>
+  </tr>
+<tr style="background-color: white; color: black;">
+    <td><b>External</b></td>
+    <td>Connected to Internet or Intranet. Floating IPs come from here. </td>
+    <td>tagged</td>
+    <td>eth0 or<br>bond0</td>
+  </tr>
+<tr style="background-color: white; color: black;">
+    <td><b>ESX</b></td>
+    <td> 
+     Connects for the traffic between OVSvApp VMs running on every ESX Host, Nova and the vCenter Proxy that exists for every vCenter, and vCenter Proxy to communicate with the message queue for Cinder and Nova. Also, connects EON to communicate with the vCenter server. </td>
+    <td>tagged</td>
+    <td>eth0 or<br>bond0</td>
+  </tr>
+<tr style="background-color: white; color: black;">
+    <td><b>ESX Tenant</b></td>
+    <td>Tenant networks for ESX virtual machines. Neutron assigns IP addresses for virtual machines on these networks. </td>
+    <td>tagged</td>
+    <td>eth0 or<br>bond0</td>
+  </tr>
+</table>
+
+**Storage**
+The following network configuration is required for storage.
+
+<table>
+<tr style="background-color: #C8C8C8;">
+    <th>Network</th>
+    <th>Description</th>
+    <th>VLAN type</th>
+    <th>Server port</th>
+  </tr>
+<tr style="background-color: white; color: black;">
+    <td><b>Storage</b></td>
+    <td>iSCSi traffic between VMs and Storage products like StoreVirtual.</td>
+    <td>untagged</td>
+    <td>eth0 or<br>bond0</td>
+  </tr>
+
+
+<tr style="background-color: white; color: black;">
+    <td><b>Swift</b></td>
+    <td>Communication between Swift servers (includes user data).</td>
+    <td>untagged</td>
+    <td>eth0 or<br>bond0</td>
+  </tr>
+</table>
+<!---
 <table>
 <tr style="background-color: #C8C8C8;">
     <th>Network</th>
@@ -110,12 +235,6 @@ The following information describes the physical network configuration, which mu
     <td>eth0 or<br>bond0</td>
   </tr>
 <tr style="background-color: white; color: black;">
-    <td><b>Storage</b></td>
-    <td>iSCSi traffic between VMs and Storage products like StoreVirtual.</td>
-    <td>untagged</td>
-    <td>eth0 or<br>bond0</td>
-  </tr>
-<tr style="background-color: white; color: black;">
     <td><b>External</b></td>
     <td>Connected to Internet or Intranet. Floating IPs come from here. </td>
     <td>tagged</td>
@@ -132,14 +251,25 @@ The following information describes the physical network configuration, which mu
     <td>Communication between Swift servers (includes user data).</td>
     <td>untagged</td>
     <td>eth0 or<br>bond0</td>
+<tr style="background-color: white; color: black;">
+    <td><b>Storage</b></td>
+    <td>iSCSi traffic between VMs and Storage products like StoreVirtual.</td>
+    <td>untagged</td>
+    <td>eth0 or<br>bond0</td>
+  </tr>
   </tr>
 </table>
-
+--->
 #### Network planning
 
-The physical machines need to have their management processors (iLO) connected to a network that is reachable from the Seed VM. The physical machines and the Seed VM need to be connected to a fast network. 
+You must manage and prepare the network based on the type of hypervisor.
+ 
+For more details information on network planning see [Preparing your network](/helion/openstack/ga/install/prereqs/). 
 
-We recommend using one physical Ethernet port on a 10GB network. Use an untagged VLAN for this network. 
+<!---
+
+The physical machines need to have their management processors (iLO) connected to a network that is reachable from the Seed VM. The physical machines and the Seed VM need to be connected to a fast network.
+We recommend using one physical Ethernet port on a 10 GB network. Use an untagged VLAN for this network. 
 
 The Seed VM is expected to use eth0 to connect to the cluster network (and hence through to the management network). If your host uses another NIC, for example eth1, then you need to set the environment variable appropriately, for example BRIDGE_INTERFACE=eth1, as seen by root.
 
@@ -147,9 +277,9 @@ The Seed VM is expected to use eth0 to connect to the cluster network (and hence
 * Two physical links, one for IPMI/iLO and one for the hypervisor/OS
 * Network switches capable of basic VLAN, L2 and L3 functions (there is no dependency on VxLAN-capable or OpenFlow-enabled switch, although the product supports VxLAN as the virtual/overlay network)
 
-The physical cluster network can be shared by a number of logical networks, each with its own tagged VLAN and IP subnet. We recommend using at least one such network as the external network, with floating IPs coming from its subnet range. 
+The physical cluster network can be shared by a number of logical networks, each with its own tagged VLAN and IP subnet. We recommend using at least one such network as the external network, with floating IPs coming from its subnet range. --->
 
-[Learn more](/helion/openstack/support-matrix-beta/#physical-network-architecture) about HP Helion OpenStack physical network architecture. 
+
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
@@ -219,7 +349,7 @@ The following table briefly describes the HP Helion OpenStack services. For a co
 	<td>HP Object Operations service, based on OpenStack Swift, provides you with a way to store and retrieve objects in publicly accessible physical machines. You can configure storage containers, upload and download container files, and delete container files.<br><br>
 	<a href="/helion/openstack/services/object/overview/">Learn more</a> about Object Operations.</td>
 	<td><center> </center></td>
-	<td><center>X</center></td>
+	<td><center></center></td>
 	<td><center>X</center></td>
  </tr>
 <tr style="background-color: white; color: black;">
@@ -237,7 +367,7 @@ The following table briefly describes the HP Helion OpenStack services. For a co
 <a href="/helion/openstack/services/reporting/overview/">Learn more</a> OpenStack Ceilometer based HP Telemetry and Reporting services.
 	</td> 
 	<td><center></center></td>
-	<td><center>X</center></td>
+	<td><center></center></td>
 	<td><center>X</center></td>
 </tr>
 <tr style="background-color: white; color: black;">
@@ -264,9 +394,9 @@ The following table briefly describes the HP Helion OpenStack services. For a co
 	<td><b>Sirius services</b></td>
  	<td> HP Helion OpenStack Sirius service assists the Cloud Administrator in the configuration of storage services (like Cinder, Swift) running in the Overcloud with various storage devices. <br><br> <a href =" /helion/openstack/services/sirius/overview/">Learn more</a> HP Helion OpenStack Sirius service.
 	</td> 
+	<td><center></center></td>
 	<td><center>X</center></td>
-	<td><center>X</center></td>
-	<td><center>X </center></td>
+	<td><center> </center></td>
 </tr> 
 </table>
 
@@ -324,9 +454,12 @@ HP StoreVirtual VSA Software is a Virtual Storage Appliance that provides the co
 
 ###ESX Hypervisor with HP Virtual Cloud Networking (VCN) application support 
 
-HP Helion OpenStack can be installed on a VMware ESX bare-metal or virtual hypervisor. VMWare vCenter Compute driver is used as a part of ESX integration. The VMware vCenter driver connects to ESX clusters in a vCenter through Compute proxy nodes. A Nova scheduler sees each cluster as compute and uses the same for scheduling a new instances.
+HP Helion OpenStack supports VMWare ESX hypervisor. With our ESX integration, you can provision and manage an overcloud ESXi cluster. VMWare vCenter Compute driver is used as a part of ESX integration. The VMware vCenter driver connects to ESX clusters in a vCenter through Compute proxy nodes. A Nova scheduler sees each cluster as compute and uses the same for scheduling a new instances.
 
-An ESX Proxy Compute driver communicates to VMware vCenter server through VI SDK. All the details of vCenter in the Cloud Controller  are required to be captured. EON,  a new service sub component, captures details of the vCenter server in a Cloud Controller and provides the details of the clusters for configuring the list of clusters managed by ESX Proxy Compute node
+<!---
+HP Helion OpenStack can be installed on a VMware ESX bare-metal or virtual hypervisor. VMWare vCenter Compute driver is used as a part of ESX integration. The VMware vCenter driver connects to ESX clusters in a vCenter through Compute proxy nodes. A Nova scheduler sees each cluster as compute and uses the same for scheduling a new instances. --->
+
+An ESX Proxy Compute driver communicates to VMware vCenter server through VI SDK. All the details of vCenter in the Cloud Controller  are required to be captured. EON,  a new service sub component, captures details of the vCenter server in a Cloud Controller and provides the details of the clusters for configuring the list of clusters managed by ESX Proxy Compute node. 
  
 
 The ESX integration uses the OVSvApp application to connect the vCenter networking to the OpenStack Neutron network controller to manage workload networks.  
@@ -361,6 +494,7 @@ This baremetal installation is designed to deliver an open source OpenStack solu
 * 2 overcloud Swift nodes
 * At least 1 block storage node 
 * At least 1 overcloud Compute node 
+
 
 
 [Learn more]( /helion/openstack/ga/install/overview/) about installing and configuring HP Helion OpenStack. 

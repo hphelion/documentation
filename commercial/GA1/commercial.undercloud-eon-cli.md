@@ -28,6 +28,12 @@ PageRefresh();
 
 The EON client CLI package provides a http-client coupled command line tool for managing Eon (Esx management) services.
 
+The Following sections lists the sub-commands and mandatory commands that can be used.
+
+* [Mandatory Commands](#Mandatory-commands)
+* [Lists of sub-commands](#lists-of-commands)
+
+
 **General Syntax of EON**
 
 
@@ -35,7 +41,172 @@ The EON client CLI package provides a http-client coupled command line tool for 
 
 	For example: eon vcenter-list --os-username=admin --os-password=admin _pass --os-tenant-name=admin  --os-auth-url=http://196.168.124.6:5000/v2.0/
 
-##Lists of sub-commends
+
+##Mandatory commands {#mandatory-commands}
+
+The user need to provide the input for the following commands. These are mandatory command, if fail to provide an input the user is prompted to enter the desired input.
+
+* [Version](#version)
+* [Debug](#debug)
+* [Verbose](#verbose)
+* [Insecure](#insecure)
+* [Certificate](#certificate)
+* [Keyfile](#keyfile)
+* [CS certificate](#cs-certificate)
+* [Timeout](#timeout)
+* [OS username](#os-username)
+* [OS password](#os-password)
+* [OS tenant ID](#os-tenant-id)
+* [OS tenant NAME](#os-tenant-name)
+* [OS authentication URL](#os-auth-url)
+* [OS region name](#os-region-name)
+* [OS authentication token](#os-auth-token)
+* [EON URL](#eon-url)
+* [EON API version](#eon-api-version)
+* [OS service type](#os-service-type)
+* [OS endpoint type](#os-endpoint-type)
+
+
+###Version {#version}
+
+Shows the version number of the program and exits.
+
+	eon [--version]
+
+
+###Debug {#debug}
+Defaults to env[EONCLIENT_DEBUG].
+	
+	eon [-d]
+
+OR
+
+	eon [--debug]
+
+###Verbose{#verbose}
+Print more verbose output.
+
+	eon  [-v]
+
+OR
+
+	eon [--verbose]
+
+###Insecure {#insecure}
+Explicitly allow eonclient to perform "insecure" SSL (https) requests. The server's certificate is not verified against any certificate authorities. This option should be used with caution.
+ 			
+	eon   [-k]   
+
+OR
+
+	eon [--insecure]        
+
+###Certificate{#certificate}
+Path of certificate file to use in SSL connection. This file can optionally be prepended with the private key.
+
+ 	eon [--cert-file CERT_FILE]
+
+###Keyfile{#keyfile}
+Path of client key to use in SSL connection. This option is not necessary if your key is prepended to your cert file.
+
+           [--key-file KEY_FILE] 
+
+###CS certificate {#cs-certificate}
+Path of CA TLS certificate(s) used to verifythe remote server's certificate. Without this option eon looks for the default system CA certificates.
+
+		[--os-cacert <ca-certificate-file>]
+
+###Timeout{#timeout}   
+ Number of seconds to wait for a response.
+
+	--timeout TIMEOUT 
+
+###OS username {#os-username}
+Username of the keystone (OpenStack). Defaults to env[OS_USERNAME].
+  
+	--os-username OS_USERNAME
+                        
+ 
+###OS password{#os-password}
+Password of the keystone (OpenStack).  Defaults to env[OS_PASSWORD].
+	
+	 --os-password OS_PASSWORD
+                       
+ 
+###OS tenant ID{#os-tenant-id}
+Tenant identification of the OpenStack. Defaults to env[OS_TENANT_ID].
+
+	--os-tenant-id OS_TENANT_ID
+                        
+ 
+###OS tenant name{#os-tenant-name}
+Tenant name of the OpenStack. Defaults to env[OS_TENANT_NAME].
+		
+	--os-tenant-name OS_TENANT_NAME
+
+                        
+ 
+###OS authentication URL{#os-auth-url}
+Authentication URL of OpenStack. Defaults to env[OS_AUTH_URL].
+ 
+	 --os-auth-url OS_AUTH_URL
+                        
+
+
+###OS region name{#os-region-name}
+The region name of  OpenStack. Defaults to env[OS_REGION_NAME].
+
+  	--os-region-name OS_REGION_NAME
+                        
+ 
+###OS authenticationtoken{#os-auth-token}
+Authentication token of OpenStack. Defaults to env[OS_AUTH_TOKEN].
+
+  	--os-auth-token OS_AUTH_TOKEN
+                       
+
+###EON URL {#eon-url} 
+ The EON URL. Defaults to env[EON_URL].
+  
+		--eon-url EON_URL
+  
+ 
+###EON API version {#eon-api-version}
+The API version of EON. Defaults to env[EON_API_VERSION] or 1
+
+ 	--eon-api-version EON_API_VERSION
+                        
+ 
+###OS service type {#os-service-type}
+The service type of OpenStack.Defaults to env[OS_SERVICE_TYPE].
+
+ 	--os-service-type OS_SERVICE_TYPE
+                        
+ 
+###OS endpoint type {#os-endpoint-type}
+The endpoint type of OpenStack. Defaults to env[OS_ENDPOINT_TYPE].
+ 	
+	--os-endpoint-type OS_ENDPOINT_TYPE
+                       
+
+
+###Example of mandatory commands
+
+		   eon [--version] [-d] [-v] [-k] [--cert-file CERT_FILE]
+           [--key-file KEY_FILE] [--os-cacert <ca-certificate-file>]
+           [--ca-file OS_CACERT] [--timeout TIMEOUT]
+           [--os-username OS_USERNAME] [--os-password OS_PASSWORD]
+           [--os-tenant-id OS_TENANT_ID] [--os-tenant-name OS_TENANT_NAME]
+           [--os-auth-url OS_AUTH_URL] [--os-region-name OS_REGION_NAME]
+           [--os-auth-token OS_AUTH_TOKEN] [--eon-url EON_URL]
+           [--eon-api-version EON_API_VERSION]
+           [--os-service-type OS_SERVICE_TYPE]
+           [--os-endpoint-type OS_ENDPOINT_TYPE]
+
+
+
+
+##Lists of sub-commends {#lists-of-commands}
 Using command line (sub-commands), you can do the following:
 
 * [Add vCenter](#add-vcenter)
@@ -67,6 +238,7 @@ You can view the list of vCenters in your cloud environment.
 
 
     eon vcenter-list [argument]
+
 
 ###View vCenter details {#view-vcenter-details}
 
@@ -121,14 +293,14 @@ You can import the clusters in the EON database under the give vCenter.
 
 ###Unimport clusters {#unimport-clusters}
 
-You can unimport the cluster(s) from the EON database under the give vCenter. to unimport the clusters, enter
+You can unimport the cluster(s) from the EON database under the give vCenter. To unimport  clusters, enter
 
-	eon import-cluster --vcenter-id=<VCENTER_ID> --cluster-moid=<CLUSTER_MOID>
+	eon unimport-cluster --vcenter-id=<VCENTER_ID> --cluster-moid=<CLUSTER_MOID>
 
 
 ### Bash-completion {#bash-completion}
 
-Prints all of the commands and options to stdout.
+Prints all of the commands and options to the standard output.
 
 		eon bash-completion
 
@@ -142,80 +314,6 @@ Display help about this program or one of its subcommands.
 <br> OR<br>
 
 		eon <subcommand>
-
-##Optional commands
-
-###Version
-
-Shows the version number of the program and exit.
-
-	eon [--version]
-
-
-###debug
-
-	eon [-d]
-###verbose
-Print more verbose output.
-
-	eon  [-v]
-
-###insecure 
-Explicitly allow eonclient to perform "insecure" SSL (https) requests. The server's certificate will not be verified against any certificate authorities. This option should be used with caution.
- 	eon   [-k]   
-
-
-###Certificate
-Path of certificate file to use in SSL connection. This file can optionally be prepended with the private key.
-
- 	[--cert-file CERT_FILE]
-
-###Keyfile
-Path of client key to use in SSL connection. This option is not necessary if your key is prepended to your cert file.
-
-           [--key-file KEY_FILE] 
-
-###cs certificate
-Path of CA TLS certificate(s) used to verifythe remote server's certificate. Without this option eon looks for the default system CA certificates.
-
-		[--os-cacert <ca-certificate-file>]
-
-###Timeout   
- Number of seconds to wait for a response.
-
-	--timeout TIMEOUT 
-
-###OS username
-  --os-username OS_USERNAME
-                        Defaults to env[OS_USERNAME].
- 
- --os-password OS_PASSWORD
-                        Defaults to env[OS_PASSWORD].
- 
- --os-tenant-id OS_TENANT_ID
-                        Defaults to env[OS_TENANT_ID].
- 
- --os-tenant-name OS_TENANT_NAME
-                        Defaults to env[OS_TENANT_NAME].
- 
- --os-auth-url OS_AUTH_URL
-                        Defaults to env[OS_AUTH_URL].
- 
- --os-region-name OS_REGION_NAME
-                        Defaults to env[OS_REGION_NAME].
- 
- --os-auth-token OS_AUTH_TOKEN
-                        Defaults to env[OS_AUTH_TOKEN].
-  --eon-url EON_URL     Defaults to env[EON_URL].
- 
- --eon-api-version EON_API_VERSION
-                        Defaults to env[EON_API_VERSION] or 1
- 
- --os-service-type OS_SERVICE_TYPE
-                        Defaults to env[OS_SERVICE_TYPE].
- 
- --os-endpoint-type OS_ENDPOINT_TYPE
-                        Defaults to env[OS_ENDPOINT_TYPE].
 
 
 

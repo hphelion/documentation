@@ -70,7 +70,7 @@ To install a HP Helion OpenStack baremetal multi-node configuration, you must ha
 
 On the installer system, ensure the following required tasks are completed before you begin the installation.
 
-- [Prepare your network](#network_prepare)
+- [Preparing your network](#network_prepare)
 - [Obtain a public key](#pub-key)
 - [Install Debian/Ubuntu packages](#packages)
 - [Install and configure NTP](#ntp)
@@ -136,6 +136,8 @@ For ESX deployments, you must install and configure two specific networks:
 ##### Other customer responsibilities and requirements #####
 
 You are responsible for the following before beginning the HP Helion OpenStack installation:
+
+- installing and configuring VMWare vSphere version 5.5;
 
 - providing the Customer Router and making sure the external, IPMI, and ESX networks are routed to/from the management network;
 

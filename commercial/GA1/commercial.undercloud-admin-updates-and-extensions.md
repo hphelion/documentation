@@ -24,7 +24,7 @@ PageRefresh();
 
 #Updates and Extensions
 
-Updates and extensions provides a mechanism to download and install content and updates for the Overcloud.
+Updates and extensions provides a mechanism to download and install the content and updates for the Overcloud.
 
 * [Signup for Cloud Distribution Network](#Signup-for-Cloud-Distribution-Network)
 
@@ -106,11 +106,11 @@ To import a package that is stored on your local system, do the following:
 
 6. Click **Install** to install the imported file. Install dialog box is displayed.
 
-7. Click **Install**.  Once the installation is successfully completed, Publish button displays. 
+7. Click **Install**.  A message is displayed after successful installation.
 
 8. (Optional) To view progress of the installation, click **More** drop-down list and select **View Progress**.
 
-9. Click **Publish**. You imported file is successfully installed.
+
 
 ## Download a package {#download-a-package}
 
@@ -121,16 +121,16 @@ Perform the following steps to download the packages:
 2.	Click **Updates and Extensions** and then select **Updates and Extensions** to open the Updates and Extensions page.
 3.	Click **More** drop-down list and select **Download** against the package that you want to download on your local system. A Confirm Download Update dialog box is displayed.
 
-4. Click **Download** to download the package. Once the download is successfully completed, Publish button displays.
+4. Click **Download** to download the package. A message is displayed when the .csu file is successfully downloaded.
 
 
 	OR
 
 	Click **Cancel** to abort and go to the previous screen.
 
-7. (Optional) To view the installation progress, click **More** drop-down list and select **View Progress**.
+7. (Optional) To view the download status, click **More** drop-down list and select **View Progress**. <br>View Progress box is displayed. It displays the log, updated name, updated version, task type, and the status of the task. 
 
-8. Click **Publish** to publish the package.
+
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

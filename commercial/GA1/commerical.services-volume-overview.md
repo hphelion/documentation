@@ -48,6 +48,7 @@ You can use any of several command-line interface software to access HP Volume O
 
 For more information on installing the CLI, see [Install the OpenStack command-line clients](http://docs.openstack.org/user-guide/content/install_clients.html).
 
+<!--
 ## How To's with the HP Helion Volume Operations Service ## {#howto}
  
 The following lists of tasks can be performed by a user or administrator through the [HP Helion OpenStack Dashboard](/helion/openstack/dashboard/how-works/), the [API](http://developer.openstack.org/api-ref-blockstorage-v2.html) or [CLI](http://docs.openstack.org/cli-reference/content/cinderclient_commands.html).
@@ -105,7 +106,7 @@ Use the Volume Operations service to create or delete volume types.
 
 #### Associate QoS with a volume type
 
-Use the Volume Operations service to enable or disable services.
+Use the Volume Operations service to enable or disable services.-->
 
 ## For more information ##
 
