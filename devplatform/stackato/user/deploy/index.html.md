@@ -437,10 +437,10 @@ the following methods:
 
         $ export STACKATO_TARGET='api.helion-xxx2.local'
 
-> This target is used until the variable is unset or the terminal is
-> closed. To unset it:
->
->     $ unset STACKATO_TARGET
+ This target is used until the variable is unset or the terminal is
+ closed. To unset it:
+
+	$ unset STACKATO_TARGET
 
 Persistent Sessions[](#persistent-sessions "Permalink to this headline")
 -------------------------------------------------------------------------
@@ -448,7 +448,9 @@ Persistent Sessions[](#persistent-sessions "Permalink to this headline")
 With multi-instance applications on Application Lifecycle Service, the Router will distribute
 requests among all instances. Without session management, the end user
 could access different application instances with each HTTP request
-instead of connecting to the same instance that started their session.
+instead of connecting to the same instance that started their session. Application Lifecycle Service's default router does no special handling of
+`JSESSIONID` or `SESSIONID`
+cookies.
 
 Cloud-enabled applications should use a shared database (e.g. Redis),
 cache (e.g. Memcached), or filesystem as a back end for session
@@ -463,36 +465,10 @@ management. Some examples of this approach are:
     [connect-memcached](https://github.com/balor/connect-memcached#connect-memcached),
     a session store that uses Memcached
 -   PHP:
-    -   [*Persistent Sessions]
-        (/als/v1/user/deploy/languages/php/#php-persistent-sessions-filesystem)
-    -   [Memcached session
-        support](http://php.net/manual/en/memcached.sessions.php)
+    -   [Persistent Sessions](/als/v1/user/deploy/languages/php/#php-persistent-sessions-filesystem)
+    -   [Memcached session support](http://php.net/manual/en/memcached.sessions.php)
 -   Python: [Django "How to use
     sessions"](https://docs.djangoproject.com/en/dev/topics/http/sessions/)
 
-Application Lifecycle Service's default router does no special handling of
-`JSESSIONID` or `SESSIONID`
-cookies.
 
-### [Table Of Contents](/als/v1/index-2/)
-
--   [General Deployment](#)
-    -   [Targeting & Authenticating](#targeting-authenticating)
-    -   [Selecting Org & Space](#selecting-org-space)
-    -   [Pushing Application Code](#pushing-application-code)
-    -   [Language Specific Deployment](#language-specific-deployment)
-    -   [Configuring Your Application For
-        Application Lifecycle Service](#configuring-your-application-for-helion)
-    -   [Application Lifecycle Service push](#helion-push)
-    -   [Allowed File Types](#allowed-file-types)
-    -   [Naming and URLs](#naming-and-urls)
-    -   [Crontab Support](#crontab-support)
-        -   [Whitespace & Newlines in Environment
-            Variables](#whitespace-newlines-in-environment-variables)
-    -   [Mapping App URLs](#mapping-app-urls)
-    -   [Best Practices](#best-practices)
-        -   [Reducing downtime during app
-            updates](#reducing-downtime-during-app-updates)
-        -   [Managing Multiple Targets](#managing-multiple-targets)
-    -   [Persistent Sessions](#persistent-sessions)
 

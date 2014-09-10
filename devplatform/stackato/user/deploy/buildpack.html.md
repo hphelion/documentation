@@ -15,7 +15,7 @@ to run applications. For a short introduction to writing buildpacks, see
 **Note**
 
 In Application Lifecycle Service 3.0 (Cloud Foundry v2 API) and later, application deployment
-is done *primarily* using buildpacks, and the syntax for specifying
+is done **primarily** using buildpacks, and the syntax for specifying
 which buildpack to use has changed. Instead of using a BUILDPACK\_URL
 environment variable, set the buildpack's Git URL in a
 `buildpack:` key at the top level of *stackato.yml*.
@@ -24,11 +24,11 @@ Deploy Using Buildpacks[](#deploy-using-buildpacks "Permalink to this headline")
 ---------------------------------------------------------------------------------
 
 Buildpacks are the recommended method for deploying applications to
-Application Lifecycle Service, replacing the built-in frameworks used in previous versions.
+Application Lifecycle Service. Buildpacks replace the built-in frameworks used in previous versions.
 
 ### Built-In Buildpacks[](#built-in-buildpacks "Permalink to this headline")
 
-For convenience a few buildpacks are bundled with Application Lifecycle Service:
+For convenience, a few buildpacks are bundled with Application Lifecycle Service:
 
 -   [Python](https://github.com/HP/helion-buildpack-python)
 -   [Java](https://github.com/cloudfoundry/java-buildpack)
@@ -152,13 +152,3 @@ And finally, add the jetty dependency in your `pom.xml`{.docutils
             </plugin>
         </plugins>
     </build>
-
-### [Table Of Contents](/als/v1/index-2/)
-
--   [Buildpacks](#)
-    -   [Deploy Using Buildpacks](#deploy-using-buildpacks)
-        -   [Built-In Buildpacks](#built-in-buildpacks)
-        -   [Legacy Buildpack](#legacy-buildpack)
-        -   [Custom Buildpacks](#custom-buildpacks)
-        -   [Pet-Clinic (Java)](#pet-clinic-java)
-

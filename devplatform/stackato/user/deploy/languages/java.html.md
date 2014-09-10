@@ -14,12 +14,12 @@ Application Lifecycle Service has several Java frameworks to choose from:
 -   [*Java EE (via TomEE or JBoss)*](#java-ee)
 -   Grails
 -   Lift
--   Buildpack - Java (/als/v1/user/deploy/buildpack/#buildpacks))
+-   [Buildpack - Java](/als/v1/user/deploy/buildpack/#buildpacks)
 
 You can push bytecode built on on your local machine with tools like
 [Apache Ant](http://ant.apache.org/) and [Apache
 Maven](http://maven.apache.org/), or build the Java bytecode on Application Lifecycle Service
-itself (using Buildpack - Java).
+itself using the [Java Buildpack](/als/v1/user/deploy/buildpack/#buildpacks)
 
 Java Web Applications[](#java-web-applications "Permalink to this headline")
 -----------------------------------------------------------------------------
@@ -268,22 +268,3 @@ This means, for example, a 128MB application will end up with 64MB for
 the heap and 64MB for overhead, a 160MB application will still have 64MB
 for the heap but 96MB for overhead, and a 512MB application will get a
 416MB heap and allow 96MB for overhead.
-
-### [Table Of Contents](/als/v1/index-2/)
-
--   [Java](#)
-    -   [Java Web Applications](#java-web-applications)
-        -   [Service Configuration](#service-configuration)
-        -   [Using JDBC](#using-jdbc)
-        -   [Example](#example)
-        -   [JPDA Debugging](#jpda-debugging)
-    -   [Spring](#spring)
-        -   [Service Configuration](#id1)
-        -   [\<CLOUD\> Namespace Version](#cloud-namespace-version)
-        -   [Example](#id2)
-    -   [JavaEE 6](#javaee-6)
-        -   [Service Configuration](#id3)
-        -   [Examples](#examples)
-    -   [HOME Directories](#home-directories)
-    -   [CATALINA\_OPTS](#catalina-opts)
-

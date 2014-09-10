@@ -9,7 +9,7 @@ Application Lifecycle Service User Guide[](#helion-user-guide "Permalink to this
 
 Application Lifecycle Service is a polyglot Platform-as-a-Service (PaaS). You can easily
 deploy applications written in a wide range of languages and web
-frameworks, using a variety of data services simply by pushing your
+frameworks using a variety of data services simply by pushing your
 source code to the system.
 
 Application Lifecycle Service handles the automatic configuration of the language runtime,
@@ -27,7 +27,7 @@ Quick Start[](#quick-start "Permalink to this headline")
 
 Application Lifecycle Service Client[](#helion-client "Permalink to this headline")
 -----------------------------------------------------------------
-
+-   [Application Lifecycle Service Client Command Reference](/als/v1/user/reference/client-ref/)
 -   [Application Lifecycle Service Client](/als/v1/user/client/)
     -   [Application Lifecycle Service Client Setup](/als/v1/user/client/#helion-client-setup)
     -   [Getting Help](/als/v1/user/client/#getting-help)
@@ -36,7 +36,7 @@ Application Lifecycle Service Client[](#helion-client "Permalink to this headlin
     -   [HTTP Proxies](/als/v1/user/client/#http-proxies)
     -   [Removing the Client](/als/v1/user/client/#removing-the-client)
 
--   [Application Lifecycle Service Client Command Reference](/als/v1/user/reference/client-ref/)
+
 
 Deploying Applications[](#deploying-applications "Permalink to this headline")
 -------------------------------------------------------------------------------
@@ -45,21 +45,20 @@ Deploying Applications[](#deploying-applications "Permalink to this headline")
 -   [Stackato.yml Options](/als/v1/user/deploy/stackatoyml/)
 -   [Manifest.yml Options](/als/v1/user/deploy/manifestyml/)
 -   [Remote Debugging](/als/v1/user/deploy/app-debug/)
-
--   [*Languages &
-    Frameworks*](/als/v1/user/deploy/#language-specific-deploy)
-
-    -   [Organizations & Spaces](/als/v1/user/deploy/orgs-spaces/)
-    -   [Buildpacks](/als/v1/user/deploy/buildpack/)
-    -   [Generic & Standalone Frameworks](/als/v1/user/deploy/other-frameworks/)
-    -   [Clojure](/als/v1/user/deploy/languages/clojure/)
-    -   [Go](/als/v1/user/deploy/languages/go/)
-    -   [Java](/als/v1/user/deploy/languages/java/)
-    -   [Node.js](/als/v1/user/deploy/languages/node/)
-    -   [Perl](/als/v1/user/deploy/languages/perl/)
-    -   [PHP](/als/v1/user/deploy/languages/php/)
-    -   [Python](/als/v1/user/deploy/languages/python/)
-    -   [Ruby](/als/v1/user/deploy/languages/ruby/)
+-   [**Frameworks & Languages**](/als/v1/user/deploy/#language-specific-deploy)
+	-   Frameworks
+	    -   [Organizations & Spaces](/als/v1/user/deploy/orgs-spaces/)
+	    -   [Buildpacks](/als/v1/user/deploy/buildpack/)
+	    -   [Generic & Standalone Frameworks](/als/v1/user/deploy/other-frameworks/)    
+    -   Languages
+	    -   [Clojure](/als/v1/user/deploy/languages/clojure/)
+	    -   [Go](/als/v1/user/deploy/languages/go/)
+	    -   [Java](/als/v1/user/deploy/languages/java/)
+	    -   [Node.js](/als/v1/user/deploy/languages/node/)
+	    -   [Perl](/als/v1/user/deploy/languages/perl/)
+	    -   [PHP](/als/v1/user/deploy/languages/php/)
+	    -   [Python](/als/v1/user/deploy/languages/python/)
+	    -   [Ruby](/als/v1/user/deploy/languages/ruby/)
 
 Services[](#services "Permalink to this headline")
 ---------------------------------------------------
@@ -67,7 +66,7 @@ Services[](#services "Permalink to this headline")
 -   [Data Services](/als/v1/user/services/data-services/)
 -   [Persistent File System](/als/v1/user/services/filesystem/)
 -   [Memcached Service](/als/v1/user/services/memcached/)
--   [Port Service] (/als/v1/user/services/port-service/)
+-   [Port Service](/als/v1/user/services/port-service/)
 -   [User-Provided Services](/als/v1/user/services/user-provided/)
 
 Logging & Monitoring[](#logging-monitoring "Permalink to this headline")
@@ -96,17 +95,4 @@ Reference[](#reference "Permalink to this headline")
 -   [Glossary](reference/glossary)
 -   [Troubleshooting](reference/troubleshoot)
 -   [Application Lifecycle Service Client API](/als/v1/user/reference/api/)
-
- 
-
-### [Table Of Contents](/als/v1/index-2/)
-
--   [Application Lifecycle Service User Guide](#)
-    -   [Quick Start](#quick-start)
-    -   [Application Lifecycle Service Client](#helion-client)
-    -   [Deploying Applications](#deploying-applications)
-    -   [Services](#services)
-    -   [Logging & Monitoring](#logging-monitoring)
-    -   [Management Console](#management-console)
-    -   [Reference](#reference)
 

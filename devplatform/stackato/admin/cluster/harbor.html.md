@@ -6,6 +6,9 @@ permalink: /als/v1/admin/cluster/harbor/
 
 Harbor: TCP/UDP Port Service[](#harbor-tcp-udp-port-service "Permalink to this headline")
 ==========================================================================================
+   [Architecture](#architecture)
+    -   [Requirements & Setup](#requirements-setup)
+    -   [Troubleshooting](#troubleshooting)
 
 The Harbor service provisions ports to user applications. The standard
 router in Application Lifecycle Service is designed for HTTP(S) traffic only, if user
@@ -40,9 +43,9 @@ An Application Lifecycle Service VM can be configured as a Harbor node in the sa
 other [*data service roles*](index.html#server-cluster-data-services).
 For example:
 
-> ``` {.literal-block}
-> $ kato node attach -e harbor CORE_IP
-> ```
+
+    $ kato node attach -e harbor CORE_IP
+
 
 The node must be routable both externally by connecting clients, and the
 internal DEA nodes must be contactable by the Harbor node. You must also
@@ -107,11 +110,3 @@ conflicting processes. To resolve an accidental conflict, change the
 port used by the conflicting application and restart. Any user
 application using the port in conflict should be restarted to force
 Harbor to re-listen on that port.
-
-### [Table Of Contents](/als/v1/index-2/)
-
--   [Harbor: TCP/UDP Port Service](#)
-    -   [Architecture](#architecture)
-    -   [Requirements & Setup](#requirements-setup)
-    -   [Troubleshooting](#troubleshooting)
-

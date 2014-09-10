@@ -169,14 +169,3 @@ When moving files onto the mounted filesystem with a `mv`{.docutils
 
 This is a misleading warning, as the files will actually be moved with
 the correct permissions and ownership.
-
-### [Table Of Contents](/als/v1/index-2/)
-
--   [Persistent File System](#)
-    -   [Creating A Persistent File
-        System](#creating-a-persistent-file-system)
-    -   [Using A Persistent File
-        System](#using-a-persistent-file-system)
-    -   [Example of Using A Persistent File
-        System](#example-of-using-a-persistent-file-system)
-

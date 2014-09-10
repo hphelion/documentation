@@ -9,7 +9,7 @@ Perl[](#perl "Permalink to this headline")
 
 Perl applications deployed to Application Lifecycle Service using the default 'perl'
 framework are run with [PSGI](http://plackperl.org/). Applications are
-started from a top-level script, which must be called app.psgi. For
+started from a top-level script which must be called `app.psgi`. For
 example, in the
 [mojo-helloworld](https://github.com/Stackato-Apps/mojo-helloworld)
 sample application:
@@ -24,8 +24,8 @@ so there is no need to create a separate app.psgi for them.
 
 The script is a pointer to the actual application,
 [app.pl](https://github.com/Stackato-Apps/mojo-helloworld/app.pl). You
-could instead rename app.pl to app.psgi, but using the approach above
-allows you to set PSGI-specific configuration in a separate file.
+could rename `app.pl` to `app.psgi` instead, but using the approach above
+allows you to set PSGI-specific configurations in a separate file.
 
 It is possible to [*serve static files with
 uWSGI*](#uwsgi-perl-static-files).
@@ -338,31 +338,4 @@ Several Perl samples are available in
 -   [PhotoBooth](https://github.com/Stackato-Apps/photobooth)
 -   [Perl Critic](https://github.com/Stackato-Apps/perlcritic.com)
 -   [Bugzilla](https://github.com/Stackato-Apps/bugzilla)
-
-### [Table Of Contents](/als/v1/index-2/)
-
--   [Perl](#)
-    -   [Deploying Applications](#deploying-applications)
-    -   [Database Services](#database-services)
-        -   [MYSQL\_URL](#mysql-url)
-        -   [VCAP\_SERVICES](#vcap-services)
-    -   [Worker Applications](#worker-applications)
-        -   [Example](#example)
-    -   [Installing module
-        dependencies](#installing-module-dependencies)
-        -   [CPAN Modules via PPM](#cpan-modules-via-ppm)
-        -   [CPAN Modules via cpanm](#cpan-modules-via-cpanm)
-            -   [stackato.yml](#stackato-yml)
-            -   [Makefile.PL](#makefile-pl)
-            -   [cpanfile](#cpanfile)
-            -   [carton.lock](#carton-lock)
-            -   [Disable Testing](#disable-testing)
-            -   [Custom CPAN Mirror](#custom-cpan-mirror)
-    -   [Serving Static Files with
-        uWSGI](#serving-static-files-with-uwsgi)
-    -   [Runtime](#runtime)
-    -   [Troubleshooting](#troubleshooting)
-        -   [General](#general)
-        -   [Other Issues](#other-issues)
-    -   [Examples](#examples)
 

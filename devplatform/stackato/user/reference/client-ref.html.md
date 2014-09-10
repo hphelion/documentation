@@ -7,11 +7,7 @@ permalink: /als/v1/user/reference/client-ref/
 Application Lifecycle Service Client Command Reference[](#helion-client-command-reference "Permalink to this headline")
 =====================================================================================================
 
-### [Table Of Contents](/als/v1/index-2/)
-
--   [Application Lifecycle Service Client Command Reference](#)
-    -   [Usage](#usage)
-        -   [Getting Started](#getting-started)
+   [Usage](#usage) -   [Getting Started](#getting-started)
         -   [Applications](#applications)
         -   [Services](#services)
         -   [Organizations](#organizations)
@@ -28,596 +24,387 @@ Usage[](#usage "Permalink to this headline")
 
 **helion** [*options*] *command* [*arguments*] [*command-options*]
 
-Try `helion help`,
+For more information., use the `helion help`,
 `helion help [command]`, and
-`helion options` for more information.
+`helion options` commands.
 
 Many of the informational commands take a `--json`
 option if you wish to generate machine-parseable output. In some cases
 the `--json` option reveals additional details.
 
-**Note**
+Note that Administrative user privileges are required for some commands.
 
-Administrative user privileges are required for some commands.
+## Getting Started[](#getting-started "Permalink to this headline")
 
-### Getting Started[](#getting-started "Permalink to this headline")
+### helion login ###
 
-> helion login *\<email\>*
-> :   Log in to the current or specified target with the named user.
->
->     + options
->
->     --credentials
->
->     The credentials to use. Each use of the option declares a single
->     element, using the form "key: value" for the argument. This is a
->     Application Lifecycle Service 3 specific option.
->
->     --group
->
->     The group to use for the login. This is an Application Lifecycle Service 2 specific
->     option.
->
->     --ignore-missing
->
->     Disable errors generated for missing organization and/or space.
->
->     --no-prompt
->
->     Disable interactive queries.
->
->     --no-trace
->
->     Complementary alias of --trace.
->
->     --non-interactive
->
->     Alias of --no-prompt.
->
->     --noprompt
->
->     Alias of --no-prompt.
->
->     --organization
->
->     The organization to use. This is an Application Lifecycle Service 3 specific option. If
->     not specified the user is asked interactively to choose an
->     organization.
->
->     --passwd
->
->     Alias of --password.
->
->     --password
->
->     The password to use. For Application Lifecycle Service 3 this is a shorthand for
->     --credentials 'password: ...'.
->
->     --space
->
->     The space (in the organization) to use. This is an Application Lifecycle Service 3
->     specific option. If not specified the user is asked interactively
->     to choose among the possible spaces in either the chosen
->     organization, or all organizations it belongs to.
->
->     --target
->
->     The once-off target to use for the current operation.
->
->     --token
->
->     The once-off authentication token to use for the current
->     operation.
->
->     --token-file
->
->     Path to an existing and readable file containing the targets and
->     authorization tokens.
->
->     --trace
->
->     Activate tracing of the issued REST requests and responses. This
->     option is a no-op now. Tracing is always active. See the 'trace'
->     command to print the saved trace to stdout.
->
->     -n
->
->     Alias of --no-prompt.
->
->     -t
->
->     Alias of --trace.
->
-> helion logout *\<target\>*
-> :   Log out of the current, specified, or all targets.
->
->     + options
->
->     --all
->
->     When present, log out of all targets we know. Cannot be used
->     together with a target.
->
->     --no-prompt
->
->     Disable interactive queries.
->
->     --no-trace
->
->     Complementary alias of --trace.
->
->     --non-interactive
->
->      
->
->     Alias of --no-prompt.
->
->     --noprompt
->
->     Alias of --no-prompt.
->
->     --token-file
->
->     Path to an existing and readable file containing the targets and
->     authorization tokens.
->
->     --trace
->
->     Activate tracing of the issued REST requests and responses. This
->     option is a no-op now. Tracing is always active. See the 'trace'
->     command to print the saved trace to stdout.
->
->     -n
->
->     Alias of --no-prompt.
->
->     -t
->
->     Alias of --trace.
->
-> helion target *\<url\>*
-> :   Set the target API endpoint for the client, or report the current
->     target.
->
->     + options
->
->     --allow-http
->
->     Required to prevent the client from rejecting http urls.
->
->     --json
->
->     Print raw json as output, not human-formatted data.
->
->     --no-prompt
->
->     Disable interactive queries.
->
->     --non-interactive
->
->      
->
->     Alias of --no-prompt.
->
->     --noprompt
->
->     Alias of --no-prompt.
->
->     --organization
->
->     The organization to set as current for this target. This is a
->     Application Lifecycle Service 3 specific option.
->
->     --space
->
->     The space to set as current for this target. This is an Application Lifecycle Service 3
->     specific option.
->
->     --verbose
->
->     More verbose operation.
->
->     -n
->
->     Alias of --no-prompt.
->
->     -o
->
->     Alias of --organization.
->
->     -s
->
->     Alias of --space.
->
->     \</div\>\</div\>
->
-### Applications[](#applications "Permalink to this headline")
+Logs in to the current or specified target with the named user.
 
-> helion apps
-> :   List the applications deployed to the target.
->
->     + options
->
->     --all
->
->     Show all applications instead of just those associated with the
->     current space.
->
->     --group
->
->     The once-off group to use for the current operation. This is a
->     Application Lifecycle Service 2 option.
->
->     --json
->
->     Print raw json as output, not human-formatted data.
->
->     --no-prompt
->
->     Disable interactive queries.
->
->     --no-trace
->
->     Complementary alias of --trace.
->
->     --non-interactive
->
->      
->
->     Alias of --no-prompt.
->
->     --noprompt
->
->     Alias of --no-prompt.
->
->     --organization
->
->     The once-off organization to use for the current operation. This
->     is an Application Lifecycle Service 3 option.
->
->     --space
->
->     The once-off space to use for the current operation, specified by
->     name. This is an Application Lifecycle Service 3 option. Cannot be used together with
->     --space-guid.
->
->     --space-guid
->
->     The once-off space to use for the current operation, specified by
->     guid. This is an Application Lifecycle Service 3 option. Cannot be used together with
->     --space.
->
->     --target
->
->     The once-off target to use for the current operation.
->
->     --token
->
->     The once-off authentication token to use for the current
->     operation.
->
->     --token-file
->
->     Path to an existing and readable file containing the targets and
->     authorization tokens.
->
->     --trace
->
->     Activate tracing of the issued REST requests and responses. This
->     option is a no-op now. Tracing is always active. See the 'trace'
->     command to print the saved trace to stdout.
->
->     -n
->
->     Alias of --no-prompt.
->
->     -o
->
->     Alias of --organization.
->
->     -t
->
->     Alias of --trace.
->
-> helion app *\<application\>*
-> :   Show the information of the specified application.
->
->     + options
->
->     --group
->
->     The once-off group to use for the current operation. This is a
->     Application Lifecycle Service 2 option.
->
->     --json
->
->     Print raw json as output, not human-formatted data.
->
->     --manifest
->
->     Path of the manifest file to use. If not specified a search is
->     done.
->
->     --no-prompt
->
->     Disable interactive queries.
->
->     --no-trace
->
->     Complementary alias of --trace.
->
->     --non-interactive
->
->      
->
->     Alias of --no-prompt.
->
->     --noprompt
->
->     Alias of --no-prompt.
->
->     --organization
->
->     The once-off organization to use for the current operation. This
->     is an Application Lifecycle Service 3 option.
->
->     --path
->
->     Path of the directory holding the application files to push.
->     Defaults to the current working directory.
->
->     --space
->
->     The once-off space to use for the current operation, specified by
->     name. This is an Application Lifecycle Service 3 option. Cannot be used together with
->     --space-guid.
->
->     --space-guid
->
->     The once-off space to use for the current operation, specified by
->     guid. This is an Application Lifecycle Service 3 option. Cannot be used together with
->     --space.
->
->     --target
->
->     The once-off target to use for the current operation.
->
->     --token
->
->     The once-off authentication token to use for the current
->     operation.
->
->     --token-file
->
->     Path to an existing and readable file containing the targets and
->     authorization tokens.
->
->     --trace
->
->     Activate tracing of the issued REST requests and responses. This
->     option is a no-op now. Tracing is always active. See the 'trace'
->     command to print the saved trace to stdout.
->
->     -n
->
->     Alias of --no-prompt.
->
->     -o
->
->     Alias of --organization.
->
->     -t
->
->     Alias of --trace.
->
-> helion list
-> :   List the applications deployed to the target.
->
->     + options
->
->     --all
->
->     Show all applications instead of just those associated with the
->     current space.
->
->     --group
->
->     The once-off group to use for the current operation. This is a
->     Application Lifecycle Service 2 option.
->
->     --json
->
->     Print raw json as output, not human-formatted data.
->
->     --no-prompt
->
->     Disable interactive queries.
->
->     --no-trace
->
->     Complementary alias of --trace.
->
->     --non-interactive
->
->      
->
->     Alias of --no-prompt.
->
->     --noprompt
->
->     Alias of --no-prompt.
->
->     --organization
->
->     The once-off organization to use for the current operation. This
->     is an Application Lifecycle Service 3 option.
->
->     --space
->
->     The once-off space to use for the current operation, specified by
->     name. This is an Application Lifecycle Service 3 option. Cannot be used together with
->     --space-guid.
->
->     --space-guid
->
->     The once-off space to use for the current operation, specified by
->     guid. This is an Application Lifecycle Service 3 option. Cannot be used together with
->     --space.
->
->     --target
->
->     The once-off target to use for the current operation.
->
->     --token
->
->     The once-off authentication token to use for the current
->     operation.
->
->     --token-file
->
->     Path to an existing and readable file containing the targets and
->     authorization tokens.
->
->     --trace
->
->     Activate tracing of the issued REST requests and responses. This
->     option is a no-op now. Tracing is always active. See the 'trace'
->     command to print the saved trace to stdout.
->
->     -n
->
->     Alias of --no-prompt.
->
->     -o
->
->     Alias of --organization.
->
->     -t
->
->     Alias of --trace.
->
->     \</div\>\</div\>
->
-> **Information**
+<table>
+    <tr>
+    <td><b>Option</b></td>
+	<td><b>Description</b></td>
+    </tr>
+	<tr>
+    <td>--credentials</td>
+	<td>The credentials to use. Each use of the option declares a single element, using the form "key: value" for the argument. This is an ALS 3-specific option</td>
+    </tr><tr>
+    <td>--group</td>
+	<td>The group to use for the login. This is an ALS 2-specific option.</td>
+    </tr><tr>
+    <td>--ignore-missing</td>
+	<td>Disable errors generated for missing organization and/or space.</td>
+    </tr>
+	<tr>
+    <td>--no-prompt, --noprompt, --n</td>
+	<td>Disable all prompts (interactive queries) that would normally be seen by the user.</td>
+    </tr><tr>
+    <td>--no-trace</td>
+	<td>Complementary alias of --trace.</td>
+    </tr><tr>
+    <td>--non-interactive</td>
+	<td>Same as no-prompt.</td>
+    </tr><tr>
+    <td>--organization, --o</td>
+	<td>The organization to use. This is an ALS 3-specific option. If not specified programmatically, the user is prompted to choose an organization.</td>
+    </tr><tr>
+    <td>--password, --passwd</td>
+	<td>The password to use. For ALS 3, this is a shorthand for <i>--credentials 'password:</i></td>
+    </tr><tr>
+    <td>--space</td>
+	<td>The space (in the organization) to use. This is an ALS 3-specific option. If not specified the user is prompted to choose among the possible spaces in the organization if specified. If the organization is not specified, the user is prompted to choose from all spaces in all organizations the user belongs to.</td>
+    </tr><tr>
+    <td>--target</td>
+	<td>The one-off target to use for the current operation only.</td>
+    </tr><tr>
+    <td>--token</td>
+	<td>The one-off authentication token to use for the current operation only.</td>
+    </tr><tr>
+    <td>--token-file</td>
+	<td>Path to an existing and readable file containing the targets and authorization tokens.</td>
+    </tr><tr>
+    <td>--trace, --t</td>
+	<td>Originally used to activate tracing of the issued REST requests and responses; tracing is always active now. See the <i>trace</i> command to print the saved trace to <i>stdout</i>.</td>
+    </tr>
+</table>
 
-> helion crashes *\<application\>*
-> :   List recent application crashes.
+
+###helion logout *\<target\>*###
+Logs out of the current, specified, or all targets.
+
+<table>
+    <tr>
+    <td><b>Option</b></td>
+	<td><b>Description</b></td>
+    </tr>
+	<tr>
+    <td>--all</td>
+	<td>log out of all targets we know. Cannot be used together with a target.</td>
+    </tr>
+	<tr>
+    <td>--no-prompt, --non-interactive, --noprompt, --n</td>
+	<td>Disable all prompts (interactive queries) that would normally be seen by the user.</td>
+    </tr><tr>
+    <td>--no-trace</td>
+	<td>Complementary alias of <i>--trace</i>.</td>
+    </tr><tr>
+    <td>--token-file</td>
+	<td>Path to an existing and readable file containing the targets and authorization tokens.</td>
+    </tr><tr>
+    <td>--trace, --t</td>
+	<td>Originally used to activate tracing of the issued REST requests and responses; tracing is always active now. See the <i>trace</i> command to print the saved trace to <i>stdout</i>.</td>
+    </tr>
+</table>
+
+### helion target *\<url\>*###
+Set the target API endpoint for the client or report the current target.
+
+<table>
+    <tr>
+    <td><b>Option</b></td>
+	<td><b>Description</b></td>
+    </tr>
+	<tr>
+    <td width=200>--allow-http</td>
+	<td>Required to prevent the client from rejecting http URLs.</td>
+    </tr>
+	<tr>
+    <td>--json</td>
+	<td>Print raw json as output, not human-formatted data.</td>
+    </tr>
+	<tr>
+    <td>--no-prompt, --non-interactive, --noprompt, -n</td>
+	<td>Disable all prompts (interactive queries) that would normally be seen by the user.</td>
+    </tr><tr>
+    <td>--no-trace</td>
+	<td>Complementary alias of <i>--trace</i>.</td>
+    </tr><tr>
+    <td>--token-file</td>
+	<td>Path to an existing and readable file containing the targets and authorization tokens.</td>
+    </tr><tr>
+    <td>--organization, -o</td>
+	<td>The organization to use. This is an ALS 3-specific option. If not specified programmatically, the user is prompted to choose an organization.</td>
+    </tr><tr>
+    <td>--space, -s</td>
+	<td>The space (in the organization) to use. This is an ALS 3-specific option. If not specified the user is prompted to choose among the possible spaces in the organization if specified. If the organization is not specified, the user is prompted to choose from all spaces in all organizations the user belongs to.</td>
+    </tr><tr>
+    <td>--trace, -t</td>
+	<td>Originally used to activate tracing of the issued REST requests and responses; tracing is always active now. See the <i>trace</i> command to print the saved trace to <i>stdout</i>.</td></tr>
+	<tr><td>--verbose</td>
+	<td>More verbose operation.</td>
+    </tr>
+</table>
+
+## Applications[](#applications "Permalink to this headline")##
+###helion apps###
+Lists the applications deployed to the target.
+<table>
+    <tr>
+    <td><b>Option</b></td>
+	<td><b>Description</b></td>
+    </tr>
+	<tr>
+    <td>--all</td>
+	<td>Show all applications instead of just those associated with the current space.</td>
+    </tr>
+	<tr>
+    <td>--group</td>
+	<td>The once-off group to use for the current operation. This is an ALS 2-specific option.</td>
+    </tr>
+	<tr>
+    <td>--json</td>
+	<td>Print raw json as output, not human-formatted data.</td>
+    </tr>
+	<tr>
+    <td>--no-prompt, --non-interactive, --noprompt, -n</td>
+	<td>Disable all prompts (interactive queries) that would normally be seen by the user.</td>
+    </tr><tr>
+    <td>--no-trace</td>
+	<td>Complementary alias of <i>--trace</i>.</td>
+    </tr><tr>
+    <td>--organization, -o</td>
+	<td>The organization to use. This is an ALS 3-specific option. If not specified programmatically, the user is prompted to choose an organization.</td>
+    </tr><tr>
+    <td>--space, -s</td>
+	<td>The one-off space to use for the current operation, specified by name. This is an ALS 3-specific option. Cannot be used together with `--space-guid`.</td>
+    </tr><tr>
+    <td>--space-guid</td>
+	<td>The one-off space to use for the current operation, specified by name. This is an ALS 3-specific option. Cannot be used together with `--space-guid`.</td>
+    </tr><tr>
+    <td>--target</td>
+	<td>The one-off target to use for the current operation only.</td>
+    </tr><tr>
+    <td>--token</td>
+	<td>The one-off authentication token to use for the current operation only.</td>
+    </tr><tr>
+    <td>--token-file</td>
+	<td>Path to an existing and readable file containing the targets and authorization tokens.</td>
+    </tr><tr>
+    <td>--trace, -t</td>
+	<td>The once-off space to use for the current operation, specified by guid. This is an ALS 3-specific option. Cannot be used together with `--space`.</td>
+	</tr><tr>
+	<td>--verbose</td>
+	<td>More verbose operation.</td>
+    </tr>
+</table>
+
+###helion app *\<application\>*###
+Shows the information of the specified application.
+
+<table>
+    <tr>
+    <td><b>Option</b></td>
+	<td><b>Description</b></td>
+    </tr>
+	<tr>
+    <td>--group</td>
+	<td>The once-off group to use for the current operation. This is an ALS 2-specific option.</td>
+    </tr>
+	<tr>
+    <td>--json</td>
+	<td>Print raw json as output, not human-formatted data.</td>
+    </tr>
+	<tr>
+    <td>--manifest</td>
+	<td>Path of the manifest file to use. If not specified, a search is performed.</td>
+    </tr>
+	<tr>
+    <td>--no-prompt, --non-interactive, --noprompt, -n</td>
+	<td>Disable all prompts (interactive queries) that would normally be seen by the user.</td>
+    </tr><tr>
+    <td>--no-trace</td>
+	<td>Complementary alias of <i>--trace</i>.</td>
+    </tr><tr>
+    <td>--organization, -o</td>
+	<td>The organization to use. This is an ALS 3-specific option. If not specified programmatically, the user is prompted to choose an organization.</td>
+    </tr><tr>
+    <td>--path</td>
+	<td>Path of the directory holding the application files to push. Defaults to the current working directory.</td>
+    </tr><tr>
+    <td>--space, -s</td>
+	<td>The one-off space to use for the current operation, specified by name. This is an ALS 3-specific option. Cannot be used together with `--space-guid`.</td>
+    </tr><tr>
+    <td>--space-guid</td>
+	<td>The one-off space to use for the current operation, specified by name. This is an ALS 3-specific option. Cannot be used together with `--space-guid`.</td>
+    </tr><tr>
+    <td>--target</td>
+	<td>The one-off target to use for the current operation only.</td>
+    </tr><tr>
+    <td>--token</td>
+	<td>The one-off authentication token to use for the current operation only.</td>
+    </tr><tr>
+    <td>--token-file</td>
+	<td>Path to an existing and readable file containing the targets and authorization tokens.</td>
+    </tr><tr>
+    <td>--trace, -t</td>
+	<td>The once-off space to use for the current operation, specified by guid. This is an ALS 3-specific option. Cannot be used together with `--space`.</td>
+	</tr><tr>
+	<td>--verbose</td>
+	<td>More verbose operation.</td>
+    </tr>
+</table>
+
+### helion list###
+List the applications deployed to the target.
+<table>
+    <tr>
+    <td><b>Option</b></td>
+	<td><b>Description</b></td>
+    </tr>
+	<tr>
+    <td>--all</td>
+	<td>Show all applications instead of just those associated with the current space.</td>
+    </tr>
+	<tr>
+    <td>--group</td>
+	<td>The once-off group to use for the current operation. This is an ALS 2-specific option.</td>
+    </tr>
+	<tr>
+    <td>--json</td>
+	<td>Print raw json as output, not human-formatted data.</td>
+    </tr>
+	<tr>
+    <td>--no-prompt, --non-interactive, --noprompt, -n</td>
+	<td>Disable all prompts (interactive queries) that would normally be seen by the user.</td>
+    </tr><tr>
+    <td>--no-trace</td>
+	<td>Complementary alias of <i>--trace</i>.</td>
+    </tr><tr>
+    <td>--organization, -o</td>
+	<td>The organization to use. This is an ALS 3-specific option. If not specified programmatically, the user is prompted to choose an organization.</td>
+    </tr><tr>
+    <td>--space, -s</td>
+	<td>The one-off space to use for the current operation, specified by name. This is an ALS 3-specific option. Cannot be used together with `--space-guid`.</td>
+    </tr><tr>
+    <td>--space-guid</td>
+	<td>The one-off space to use for the current operation, specified by name. This is an ALS 3-specific option. Cannot be used together with `--space-guid`.</td>
+    </tr><tr>
+    <td>--target</td>
+	<td>The one-off target to use for the current operation only.</td>
+    </tr><tr>
+    <td>--token</td>
+	<td>The one-off authentication token to use for the current operation only.</td>
+    </tr><tr>
+    <td>--token-file</td>
+	<td>Path to an existing and readable file containing the targets and authorization tokens.</td>
+    </tr><tr>
+    <td>--trace, -t</td>
+	<td>The once-off space to use for the current operation, specified by guid. This is an ALS 3-specific option. Cannot be used together with `--space`.</td>
+	</tr>
+</table>
+
+##Information##
+###> helion crashes *\<application\>*###
+List recent application crashes.
+<table>
+    <tr>
+    <td><b>Option</b></td>
+	<td><b>Description</b></td>
+    </tr>
+	<tr>
+    <td>--group</td>
+	<td>The once-off group to use for the current operation. This is an ALS 2-specific option.</td>
+    </tr>
+	<tr>
+    <td>--json</td>
+	<td>Print raw json as output, not human-formatted data.</td>
+    </tr>
+	<tr>
+    <td>--manifest</td>
+	<td>Path of the manifest file to use. If not specified, a search is performed.</td>
+    </tr>
+	<tr>
+    <td>--no-prompt, --non-interactive, --noprompt, -n</td>
+	<td>Disable all prompts (interactive queries) that would normally be seen by the user.</td>
+    </tr><tr>
+    <td>--no-tail</td>
+	<td>Complementary alias of <i>--tail</i>.</td>
+    </tr><td>--no-trace</td>
+	<td>Complementary alias of <i>--trace</i>.</td>
+    </tr><tr>
+    <td>--organization, -o</td>
+	<td>The organization to use. This is an ALS 3-specific option. If not specified programmatically, the user is prompted to choose an organization.</td>
+    </tr><tr>
+    <td>--path</td>
+	<td>Path of the directory holding the application files to push. Defaults to the current working directory.</td>
+    </tr><tr>
+    <td>--space, -s</td>
+	<td>The one-off space to use for the current operation, specified by name. This is an ALS 3-specific option. Cannot be used together with `--space-guid`.</td>
+    </tr><tr>
+    <td>--space-guid</td>
+	<td>The one-off space to use for the current operation, specified by name. This is an ALS 3-specific option. Cannot be used together with `--space-guid`.</td>
+    </tr><tr>
+    <td>--tail</td>
+	<td>Request target to stream the log.</td>
+    </tr><tr>
+    <td>--target</td>
+	<td>The one-off target to use for the current operation only.</td>
+    </tr><tr>
+    <td>--token</td>
+	<td>The one-off authentication token to use for the current operation only.</td>
+    </tr><tr>
+    <td>--token-file</td>
+	<td>Path to an existing and readable file containing the targets and authorization tokens.</td>
+    </tr><tr>
+    <td>--trace, -t</td>
+	<td>The once-off space to use for the current operation, specified by guid. This is an ALS 3-specific option. Cannot be used together with `--space`.</td>
+	</tr>
+</table>
+
+### helion crashlogs *\<application\>*###
+Display log information for the application. An alias of 'logs'.
+<table><tr>
+    <td><b>Option</b></td>
+	<td><b>Description</b></td>
+    </tr><tr>
+    <td>--all</td>
+	<td>Retrieve the logs from all instances. Before 2.3 only.</td>
+    </tr><tr>
+    <td>--filename</td>
+	<td>Filter the log stream by origin file (glob pattern). Target version 2.4+ only.</td>
+    </tr><tr>
+    <td>--follow</td>
+	<td>Tail -f the log stream. Target version 2.4+ only.</td>
+    </tr><td>--group</td>
+	<td>The once-off group to use for the current operation. This is an ALS 2-specific option.</td>
+    </tr>
+	<tr>
+    <td>Option</td>
+	<td>Description</td>
+    </tr><tr>
+    <td>Option</td>
+	<td>Description</td>
+    </tr><tr>
+    <td>Option</td>
+	<td>Description</td>
+    </tr>
+</table>
+<
+>     
 >
->     + options
+>     
 >
->     --group
->
->     The once-off group to use for the current operation. This is a
->     Application Lifecycle Service 2 option.
->
->     --json
->
->     Print raw json as output, not human-formatted data.
->
->     --manifest
->
->     Path of the manifest file to use. If not specified a search is
->     done.
->
->     --no-prompt
->
->     Disable interactive queries.
->
->     --no-tail
->
->     Complementary alias of --tail.
->
->     --no-trace
->
->     Complementary alias of --trace.
->
->     --non-interactive
->
->      
->
->     Alias of --no-prompt.
->
->     --noprompt
->
->     Alias of --no-prompt.
->
->     --organization
->
->     The once-off organization to use for the current operation. This
->     is an Application Lifecycle Service 3 option.
->
->     --path
->
->     Path of the directory holding the application files to push.
->     Defaults to the current working directory.
->
->     --space
->
->     The once-off space to use for the current operation, specified by
->     name. This is an Application Lifecycle Service 3 option. Cannot be used together with
->     --space-guid.
->
->     --space-guid
->
->     The once-off space to use for the current operation, specified by
->     guid. This is an Application Lifecycle Service 3 option. Cannot be used together with
->     --space.
->
->     --tail
->
->     Request target to stream the log.
->
->     --target
->
->     The once-off target to use for the current operation.
->
->     --token
->
->     The once-off authentication token to use for the current
->     operation.
->
->     --token-file
->
->     Path to an existing and readable file containing the targets and
->     authorization tokens.
->
->     --trace
->
->     Activate tracing of the issued REST requests and responses. This
->     option is a no-op now. Tracing is always active. See the 'trace'
->     command to print the saved trace to stdout.
->
->     -n
->
->     Alias of --no-prompt.
->
->     -o
->
->     Alias of --organization.
->
->     -t
->
->     Alias of --trace.
->
-> helion crashlogs *\<application\>*
-> :   Display log information for the application. An alias of 'logs'.
->
->     + options
->
->     --all
->
->     Retrieve the logs from all instances. Before 2.3 only.
->
->     --filename
->
->     Filter the log stream by origin file (glob pattern). Target
->     version 2.4+ only.
->
->     --follow
->
->     Tail -f the log stream. Target version 2.4+ only.
->
->     --group
+>     
 >
 >     The once-off group to use for the current operation. This is a
 >     Application Lifecycle Service 2 option.

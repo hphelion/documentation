@@ -6,6 +6,39 @@ permalink: /als/v1/admin/cluster/
 
 Cluster Setup[](#index-0 "Permalink to this headline")
 =======================================================
+ [Roles](#roles)
+    -   [Preparing the Core Node](#preparing-the-core-node)
+        -   [CORE\_IP](#core-ip)
+        -   [Hostname](#hostname)
+        -   [Wildcard DNS](#wildcard-dns)
+        -   [Core Node](#core-node)
+    -   [Attaching Nodes and Enabling
+        Roles](#attaching-nodes-and-enabling-roles)
+        -   [Router Nodes](#router-nodes)
+        -   [Data Services Nodes](#data-services-nodes)
+        -   [DEA Nodes](#dea-nodes)
+        -   [Verification](#verification)
+        -   [Removing Nodes](#removing-nodes)
+        -   [Role Configuration using the Management
+            Console](#role-configuration-using-the-management-console)
+    -   [Example Clusters](#example-clusters)
+        -   [Single-Node](#single-node)
+        -   [Three-Node](#three-node)
+        -   [Five-Node](#five-node)
+        -   [20-Node](#node)
+    -   [Roles Requiring Persistent or Shared
+        Storage](#roles-requiring-persistent-or-shared-storage)
+    -   [Port Configuration](#port-configuration)
+    -   [Multiple Controllers](#multiple-controllers)
+    -   [Load Balancer and Multiple
+        Routers](#load-balancer-and-multiple-routers)
+        -   [Rename the Load Balancer](#rename-the-load-balancer)
+        -   [Set up the Core Node](#set-up-the-core-node)
+        -   [Set up Supplemental Routers](#set-up-supplemental-routers)
+        -   [Configure the Application Lifecycle Service Load
+            Balancer](#configure-the-helion-load-balancer)
+        -   [Load Balancer SSL
+            Certificates](#load-balancer-ssl-certificates)
 
 This process begins with an installed [*micro
 cloud*](/als/v1/user/reference/glossary/#term-micro-cloud), which must
@@ -83,12 +116,14 @@ interface is registering the correct address, which may not be the case
 if you have set a static IP and not yet rebooted or restarted
 networking. To check the IP address, run:
 
->     $ ifconfig eth0
+
+    $ ifconfig eth0
 
 If necessary, set the [*static IP
 address*](/als/v1/admin/server/configuration/#server-config-static-ip):
 
->     $ kato op static_ip
+
+    $ kato op static_ip
 
 **Note**
 
@@ -106,9 +141,9 @@ this system.
 
 To set the hostname, run:
 
-> ``` {.literal-block}
-> $ kato node rename hostname.example.com --no-restart
-> ```
+
+    $ kato node rename hostname.example.com --no-restart
+
 
 This hostname will become the basename of the "API endpoint" address
 used by clients (e.g. "https://api.hostname.example.com").
@@ -132,9 +167,8 @@ node (or [*Load Balancer/Router*](#cluster-load-balancer)).
 
 On the Core node, execute the following command:
 
-> ``` {.literal-block}
-> $ kato node setup core api.hostname.example.com
-> ```
+
+    $ kato node setup core api.hostname.example.com
 
 This sets up the Core node with just the implicit **controller**,
 **primary**, and **router** roles.
@@ -144,10 +178,9 @@ carry on to enable those roles you ultimately intend to run on the Core
 node. For example, to set up a Core node with the **controller**,
 **primary** **router**, and **dea** roles:
 
-> ``` {.literal-block}
-> $ kato node setup core api.hostname.example.com
-> $ kato role add dea
-> ```
+    $ kato node setup core api.hostname.example.com
+    $ kato role add dea
+
 
 Then proceed to configure the other VMs by attaching them to the Core
 node and assigning their particular roles.
@@ -172,9 +205,9 @@ command, but it is generally preferable to enable roles during the
 In smaller clusters, the Router role can be run on the Core Node. To run
 its own on a separate node:
 
-> ``` {.literal-block}
-> $ kato node attach -e router CORE_IP
-> ```
+
+    $ kato node attach -e router CORE_IP
+
 
 **Note** that the public DNS entry for the Application Lifecycle Service cluster's API endpoint
 must resolve to the Router if it is separate from the Core Node. For
@@ -188,9 +221,9 @@ separate nodes (recommended for production clusters). To set up all
 available data services on a single node and attach it to the Core node,
 run the following command on the data services node:
 
-> ``` {.literal-block}
-> $ kato node attach -e data-services CORE_IP
-> ```
+
+    $ kato node attach -e data-services CORE_IP
+
 
 **Note**
 
@@ -209,9 +242,9 @@ attach*](/als/v1/admin/reference/kato-ref/#kato-command-ref-node-attach)
 command. To turn a generic Application Lifecycle Service VM into a DEA and connect it to the
 Core node:
 
-> ``` {.literal-block}
-> $ kato node attach -e dea CORE_IP
-> ```
+
+    $ kato node attach -e dea CORE_IP
+
 
 Continue this process until you have added all the desired DEA nodes.
 
@@ -220,7 +253,8 @@ Continue this process until you have added all the desired DEA nodes.
 To verify that all the cluster nodes are configured as expected, run the
 following command on the Core node:
 
->     $ kato status --all
+
+    $ kato status --all
 
 ### Removing Nodes[](#removing-nodes "Permalink to this headline")
 
@@ -229,9 +263,8 @@ remove*](/als/v1/admin/reference/kato-ref/#kato-command-ref-node-attach) to
 remove a node from the cluster. Run the following command on the core
 node.
 
-> ``` {.literal-block}
-> $ kato node remove NODE_IP
-> ```
+
+    $ kato node remove NODE_IP
 
 ### Role Configuration using the Management Console[](#role-configuration-using-the-management-console "Permalink to this headline")
 
@@ -255,10 +288,9 @@ building a cluster later.
 All that is required here is to enable all roles except for **mdns**
 (not used in a clustered or cloud-hosted environment):
 
-> ``` {.literal-block}
-> $ kato node setup core api.hostname.example.com
-> $ kato role add --all-but mdns
-> ```
+    $ kato node setup core api.hostname.example.com
+    $ kato role add --all-but mdns
+
 
 ### Three-Node[](#three-node "Permalink to this headline")
 
@@ -355,17 +387,15 @@ The Application Lifecycle Service [*micro
 cloud*](/als/v1/user/reference/glossary/#term-micro-cloud) runs with
 the following ports exposed:
 
->   ------------------------------------------------------------------------
->   Port
->   Type
->   Service
->   ---------------- ------- -----------------------------------------------
->   22               25      80
->   tcp              tcp     tcp
->   ssh              smtp    http
->   ------------------------------------------------------------------------
->
-On a production cluster, or a micro cloud running on a cloud hosting
+<table>
+<tr>
+<td>Port</td><td>Type</td><td>Service</td></tr>
+<tr><td>22</td><td>tcp</td><td>ssh</td></tr>
+<tr><td>25</td><td>tcp</td><td>smtp</td></tr>
+<tr><td>80</td><td>tcp</td><td>http</td></tr>
+</table>
+
+On a production cluster, or a micro-cloud running on a cloud hosting
 provider, only ports 22 (SSH), 80 (HTTPS) and 443 (HTTPS) need to be
 exposed externally (e.g. for the Router / Core node).
 
@@ -380,26 +410,22 @@ which ports are used by which components. **Source** nodes initiate the
 communication, **Destination** nodes need to listen on the specified
 port.
 
->   -----------------------------------------------------------------------------------------------------------------
->   Port Range
->   Type
->   Source
->   Destination
->   Required by
->   -------------- ------------------------------------------- --------------- ----------------- --------------------
->   22             4222                                        3306            5432              5454
->   tcp            tcp                                         tcp             tcp               tcp
->   all nodes      all nodes                                   dea,controller  dea,controller    all nodes
->   all nodes      controller                                  mysql nodes     postgresql nodes  controller
->   ssh/scp/sshfs  [*NATS*](/als/v1/user/reference/glossary/ MySQL           PostgreSQL        redis
->                  #term-nats)                                                                   
->   -----------------------------------------------------------------------------------------------------------------
->
+<table>
+<tr>
+<td>Port Range<td>Type</td><td>Source</td><td>Destination</td><td>Required By</td></tr>
+<tr><td>22</td><td>tcp</td><td>all nodes</td><td>all nodes</td><td>ssh/scp/sshfs</td></tr>
+<tr><td>4222</td><td>tcp</td><td>all nodes</td><td>controller</td>controller<td>Nats</td></tr>
+<tr><td>3306</td><td>tcp</td><td>dea/controller</td><td>MySQL nodes</td><td>MySQL</td></tr>
+<tr><td>5432</td><td>tcp</td><td>dea/controller</td><td>postgresql nodes</td><td>postgreSQL</td></tr>
+<tr><td>5454</td><td>tcp</td><td>all nodes</td><td>controller</td><td>redis</td></tr>
+</table>
+More about [*Nats*](/als/v1/user/reference/glossary/#term-nats) in the Glossary.
+
 Each node can be internally firewalled using
 [iptables](http://manpages.ubuntu.com/manpages/man8/iptables.8) to
 apply the above rules.
 
-Comments:
+**Comments**:
 
 -   Ports 80 and 443 need only be open to the world on router nodes.
 -   Port 4222 should be open on all nodes for
@@ -581,41 +607,3 @@ sections for Application Lifecycle Service Load Balancer instructions.
 
 For other load balancers, consult the documentation for your device or
 service on uploading/updating server certificates.
-
-### [Table Of Contents](/als/v1/index-2/)
-
--   [Cluster Setup](#)
-    -   [Roles](#roles)
-    -   [Preparing the Core Node](#preparing-the-core-node)
-        -   [CORE\_IP](#core-ip)
-        -   [Hostname](#hostname)
-        -   [Wildcard DNS](#wildcard-dns)
-        -   [Core Node](#core-node)
-    -   [Attaching Nodes and Enabling
-        Roles](#attaching-nodes-and-enabling-roles)
-        -   [Router Nodes](#router-nodes)
-        -   [Data Services Nodes](#data-services-nodes)
-        -   [DEA Nodes](#dea-nodes)
-        -   [Verification](#verification)
-        -   [Removing Nodes](#removing-nodes)
-        -   [Role Configuration using the Management
-            Console](#role-configuration-using-the-management-console)
-    -   [Example Clusters](#example-clusters)
-        -   [Single-Node](#single-node)
-        -   [Three-Node](#three-node)
-        -   [Five-Node](#five-node)
-        -   [20-Node](#node)
-    -   [Roles Requiring Persistent or Shared
-        Storage](#roles-requiring-persistent-or-shared-storage)
-    -   [Port Configuration](#port-configuration)
-    -   [Multiple Controllers](#multiple-controllers)
-    -   [Load Balancer and Multiple
-        Routers](#load-balancer-and-multiple-routers)
-        -   [Rename the Load Balancer](#rename-the-load-balancer)
-        -   [Set up the Core Node](#set-up-the-core-node)
-        -   [Set up Supplemental Routers](#set-up-supplemental-routers)
-        -   [Configure the Application Lifecycle Service Load
-            Balancer](#configure-the-helion-load-balancer)
-        -   [Load Balancer SSL
-            Certificates](#load-balancer-ssl-certificates)
-

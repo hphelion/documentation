@@ -131,14 +131,3 @@ Reference[](#reference "Permalink to this headline")
 -   [Troubleshooting](reference/troubleshoot)
 -   [Adding System Services](/als/v1/admin/reference/add-service/)
 
-### [Table Of Contents](/als/v1/index-2/)
-
--   [Application Lifecycle Service Admin Guide](#)
-    -   [Quick Start](#quick-start)
-    -   [Management Console](#management-console)
-    -   [VM Setup](#vm-setup)
-    -   [Server Configuration](#server-configuration)
-    -   [Cluster Configuration](#cluster-configuration)
-    -   [Best Practices](#best-practices)
-    -   [Reference](#reference)
-

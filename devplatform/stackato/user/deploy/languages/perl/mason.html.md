@@ -74,9 +74,3 @@ Examples[](#examples "Permalink to this headline")
 -   [Mason Hello
     World](https://github.com/Stackato-Apps/mason-helloworld): Hello
     World sample.
-
-### [Table Of Contents](/als/v1/index-2/)
-
--   [Mason](#)
-    -   [Examples](#examples)
-

@@ -24,7 +24,7 @@ cloud-config would add a new DEA node to the cluster:
       nats:
         ip: 10.2.3.4
       roles: ['dea']
-      extname: "paas.example.com"
+      extname: "paas.example.com" 
 
 -   `nats:ip` will run
     `kato attach <nats ip>` the first time the VM is
@@ -39,11 +39,7 @@ cloud-config would add a new DEA node to the cluster:
 Securing the new node[](#securing-the-new-node "Permalink to this headline")
 -----------------------------------------------------------------------------
 
-To lock down and secure this new node, you could use standard
-cloud-config directives for adding any SSH keys, randomizing passwords,
-and/or disabling password based authentication entirely. An example that
-creates a data services node, enables passwordless sudo for the admin
-group, and disables password based authentication:
+To lock down and secure this new node, you could use standard cloud-config directives for adding any SSH keys, randomizing passwords, and/or disabling password based authentication entirely. An example that creates a data services node, enables passwordless sudo for the admin group, and disables password based authentication:
 
     #cloud-config
 
@@ -87,10 +83,3 @@ cloud-init can be used for a variety of system setup tasks:
 
 For more information on cloud-init, refer to the [official CloudInit
 documentation](https://help.ubuntu.com/community/CloudInit).
-
-### [Table Of Contents](/als/v1/index-2/)
-
--   [cloud-init](#)
-    -   [Securing the new node](#securing-the-new-node)
-    -   [Custom System Configuration](#custom-system-configuration)
-

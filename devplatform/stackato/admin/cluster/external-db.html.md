@@ -6,6 +6,11 @@ permalink: /als/v1/admin/cluster/external-db/
 
 External Data Services[](#external-data-services "Permalink to this headline")
 ===============================================================================
+[General Principles](#general-principles)
+    -   [MySQL](#mysql)
+    -   [Amazon RDS for MySQL](#amazon-rds-for-mysql)
+    -   [PostgreSQL](#postgresql)
+    -   [Troubleshooting](#troubleshooting)
 
 Application Lifecycle Service comes with several data services that can be enabled on a micro
 cloud or in a Stackto cluster. However, for implementations where high
@@ -123,13 +128,3 @@ Logs from Application Lifecycle Service can be viewed with `kato log tail`{.docu
 .literal}:
 
     $ kato log tail postgresql_node
-
-### [Table Of Contents](/als/v1/index-2/)
-
--   [External Data Services](#)
-    -   [General Principles](#general-principles)
-    -   [MySQL](#mysql)
-    -   [Amazon RDS for MySQL](#amazon-rds-for-mysql)
-    -   [PostgreSQL](#postgresql)
-    -   [Troubleshooting](#troubleshooting)
-

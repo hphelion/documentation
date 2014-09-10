@@ -9,6 +9,26 @@ Best Practices[](#index-0 "Permalink to this headline")
 
 Applying Updates[](#applying-updates "Permalink to this headline")
 -------------------------------------------------------------------
+[Applying Updates](#applying-updates)
+    -   [Backup & Migration](#backup-migration)
+        -   [Limitations](#limitations)
+            -   [Custom Services](#custom-services)
+            -   [Hard-coded Database Connection
+                Info](#hard-coded-database-connection-info)
+            -   [DEAs](#deas)
+        -   [Migrating to 3.0](#migrating-to-3-0)
+        -   [Exporting the server data](#exporting-the-server-data)
+        -   [Scheduled backups](#scheduled-backups)
+        -   [Importing the server data](#importing-the-server-data)
+    -   [Upgrading (v3.0 and later)](#upgrading-v3-0-and-later)
+    -   [Server Monitoring with New
+        Relic](#server-monitoring-with-new-relic)
+    -   [System Monitoring with Nagios](#system-monitoring-with-nagios)
+    -   [Persistent Storage](#persistent-storage)
+        -   [Relocating Services, Droplets, and
+            Containers](#relocating-services-droplets-and-containers)
+        -   [Enabling Filesystem Quotas](#enabling-filesystem-quotas)
+
 
 Major version upgrades of Application Lifecycle Service can be done using [*kato node
 upgrade*](/als/v1/admin/server/upgrade/#upgrade) or a [*migration to a new VM
@@ -394,27 +414,4 @@ partition. The example above would require a block such as this:
       mount -o remount,usrjquota=aquota.user,grpjquota=aquota.group,jqfmt=vfsv0 /mnt/containers
       quotaon -v /mnt/containers
     fi
-
-### [Table Of Contents](/als/v1/index-2/)
-
--   [Best Practices](#)
-    -   [Applying Updates](#applying-updates)
-    -   [Backup & Migration](#backup-migration)
-        -   [Limitations](#limitations)
-            -   [Custom Services](#custom-services)
-            -   [Hard-coded Database Connection
-                Info](#hard-coded-database-connection-info)
-            -   [DEAs](#deas)
-        -   [Migrating to 3.0](#migrating-to-3-0)
-        -   [Exporting the server data](#exporting-the-server-data)
-        -   [Scheduled backups](#scheduled-backups)
-        -   [Importing the server data](#importing-the-server-data)
-    -   [Upgrading (v3.0 and later)](#upgrading-v3-0-and-later)
-    -   [Server Monitoring with New
-        Relic](#server-monitoring-with-new-relic)
-    -   [System Monitoring with Nagios](#system-monitoring-with-nagios)
-    -   [Persistent Storage](#persistent-storage)
-        -   [Relocating Services, Droplets, and
-            Containers](#relocating-services-droplets-and-containers)
-        -   [Enabling Filesystem Quotas](#enabling-filesystem-quotas)
 

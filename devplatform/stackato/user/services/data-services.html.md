@@ -626,38 +626,3 @@ application is stopped, restarted, or updated), you should always store
 the SQLite file on a [*Persistent File
 System*](/als/v1/user/services/filesystem/#persistent-file-system) mount point to avoid
 losing data.
-
-### [Table Of Contents](/als/v1/index-2/)
-
--   [Data Services](#)
-    -   [Intro](#intro)
-    -   [Configuring Application Lifecycle Service Data
-        Services](#configuring-helion-data-services)
-        -   [Using stackato.yml](#using-stackato-yml)
-        -   [Using helion push](#using-helion-push)
-        -   [Creating and Binding
-            Services](#creating-and-binding-services)
-    -   [Using Database Services](#using-database-services)
-        -   [DATABASE\_URL](#database-url)
-        -   [Database-Specific URLs](#database-specific-urls)
-        -   [STACKATO\_SERVICES](#helion-services)
-        -   [VCAP\_SERVICES](#vcap-services)
-    -   [Using External Databases](#using-external-databases)
-    -   [Hard-coded Database
-        Connections](#hard-coded-database-connections)
-    -   [Accessing Database Services](#accessing-database-services)
-        -   [Using dbshell](#using-dbshell)
-        -   [Using Tunnel](#using-tunnel)
-        -   [Pre-populating a database while pushing an
-            app](#pre-populating-a-database-while-pushing-an-app)
-        -   [Backing up a MySQL database](#backing-up-a-mysql-database)
-            -   [Using helion run](#using-helion-run)
-            -   [Using helion tunnel](#using-helion-tunnel)
-        -   [Importing a MySQL database](#importing-a-mysql-database)
-            -   [Using helion run](#id2)
-            -   [Using helion tunnel](#id3)
-        -   [Database Version Changes](#database-version-changes)
-            -   [Method 1](#method-1)
-            -   [Method 2](#method-2)
-    -   [SQLite](#sqlite)
-

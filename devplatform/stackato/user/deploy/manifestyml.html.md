@@ -6,6 +6,9 @@ permalink: /als/v1/user/deploy/manifestyml/
 
 Manifest.yml Options[](#manifest-yml-options "Permalink to this headline")
 ===========================================================================
+[applications](#applications)
+    -   [depends-on](#depends-on)
+    -   [helion](#helion)
 
 Using a *manifest.yml* file is an alternative to *stackato.yml* which
 allows for specific customizations such as pushing more than one app
@@ -152,11 +155,3 @@ The `env` key in *manifest.yml* must use the more
 verbose [*env attributes*](/als/v1/user/deploy/stackatoyml/#stackato-yml-env-attributes)
 syntax rather than the simpler "ENV\_VAR: value" format allowed in
 *stackato.yml*.
-
-### [Table Of Contents](/als/v1/index-2/)
-
--   [Manifest.yml Options](#)
-    -   [applications:](#applications)
-    -   [depends-on:](#depends-on)
-    -   [helion:](#helion)
-

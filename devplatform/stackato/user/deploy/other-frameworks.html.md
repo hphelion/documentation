@@ -14,7 +14,7 @@ not fit any of the other frameworks available in Application Lifecycle Service.
 -   **Standalone** is for background applications without an HTTP
     interface.
 
-These two frameworks make no assumptions about the application type, and
+These two frameworks make no assumptions about the application type and
 can be customized to run a wide variety of non-standard applications.
 
 Any language [*runtime*](/als/v1/user/deploy/stackatoyml/#stackato-yml-runtime)
@@ -80,10 +80,3 @@ running. To verify a non-web application is actually running, use
 See the
 [helion-worker](https://github.com/helion-apps/helion-worker/tree/master)
 sample for a simple working example.
-
-### [Table Of Contents](/als/v1/index-2/)
-
--   [Generic & Standalone Frameworks](#)
-    -   [Generic](#generic)
-    -   [Standalone](#standalone)
-

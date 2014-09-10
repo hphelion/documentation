@@ -6,6 +6,42 @@ permalink: /als/v1/user/deploy/stackatoyml/
 
 HP stackato.yml Options[](#stackato-yml-options "Permalink to this headline")
 ===========================================================================
+[name:](#name)
+    -   [buildpack:](#buildpack)
+    -   [framework:](#framework)
+        -   [type:](#type)
+        -   [runtime:](#runtime)
+        -   [document-root:](#document-root)
+        -   [start-file:](#start-file)
+    -   [app-dir](#app-dir)
+    -   [services:](#services)
+    -   [requirements:](#requirements)
+        -   [OS Packages](#os-packages)
+        -   [Language Modules](#language-modules)
+    -   [mem:](#mem)
+    -   [disk:](#disk)
+    -   [instances:](#instances)
+    -   [url (or urls):](#url-or-urls)
+    -   [env:](#env)
+        -   [env Attributes](#env-attributes)
+    -   [processes:](#processes)
+        -   [web:](#web)
+    -   [command:](#command)
+    -   [cron:](#cron)
+    -   [ignores:](#ignores)
+    -   [inherit:](#inherit)
+    -   [hooks:](#hooks)
+        -   [pre-push:](#pre-push)
+        -   [pre-staging:](#pre-staging)
+        -   [post-staging:](#post-staging)
+        -   [pre-running:](#pre-running)
+    -   [drain:](#drain)
+    -   [min\_version:](#min-version)
+        -   [client:](#client)
+        -   [server:](#server)
+    -   [Key Substitution](#key-substitution)
+
+
 
 Configuration options for Application Lifecycle Service applications can be stored in a
 *stackato.yml* file in the top-level application directory.
@@ -27,12 +63,9 @@ insert values from one key into another.
 for these configuration files can be found in the [helion-cli source
 repository](https://github.com/HP/helion-cli/):
 
--   [stackato.yml
-    specification](https://github.com/HP/helion-cli/blob/master/doc/stackato.yml.txt)
--   [manifest.yml
-    specification](https://github.com/HP/helion-cli/blob/master/doc/manifest.yml.txt)
--   [stackato.yml to manifest.yml key
-    mappings](https://github.com/HP/helion-cli/blob/master/doc/helion-2-manifest.txt)
+-   [stackato.yml specification](https://github.com/ActiveState/stackato-cli/blob/master/doc/stackato.yml.txt)
+-   [manifest.yml specification](https://github.com/ActiveState/stackato-cli/blob/master/doc/manifest.yml.txt)
+-   [stackato.yml to manifest.yml key mappings](https://github.com/ActiveState/stackato-cli/blob/master/doc/stackato-2-manifest.txt)
 
 The following sections describe the available keys and the values that
 can be assigned to them:
@@ -764,42 +797,3 @@ A small number of keys are predefined for your use within
 
 See the [*services*](#stackato-yml-services) section for an example of
 variable key substitution for yaml key names.
-
-### [Table Of Contents](/als/v1/index-2/)
-
--   [HP stackato.yml Options](#)
-    -   [name:](#name)
-    -   [buildpack:](#buildpack)
-    -   [framework:](#framework)
-        -   [type:](#type)
-        -   [runtime:](#runtime)
-        -   [document-root:](#document-root)
-        -   [start-file:](#start-file)
-    -   [app-dir](#app-dir)
-    -   [services:](#services)
-    -   [requirements:](#requirements)
-        -   [OS Packages](#os-packages)
-        -   [Language Modules](#language-modules)
-    -   [mem:](#mem)
-    -   [disk:](#disk)
-    -   [instances:](#instances)
-    -   [url (or urls):](#url-or-urls)
-    -   [env:](#env)
-        -   [env Attributes](#env-attributes)
-    -   [processes:](#processes)
-        -   [web:](#web)
-    -   [command:](#command)
-    -   [cron:](#cron)
-    -   [ignores:](#ignores)
-    -   [inherit:](#inherit)
-    -   [hooks:](#hooks)
-        -   [pre-push:](#pre-push)
-        -   [pre-staging:](#pre-staging)
-        -   [post-staging:](#post-staging)
-        -   [pre-running:](#pre-running)
-    -   [drain:](#drain)
-    -   [min\_version:](#min-version)
-        -   [client:](#client)
-        -   [server:](#server)
-    -   [Key Substitution](#key-substitution)
-
