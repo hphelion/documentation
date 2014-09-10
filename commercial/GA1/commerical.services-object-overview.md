@@ -1,8 +1,8 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Object Operations Service Overview"
-permalink: /helion/openstack/services/object/overview/
-product: commercial
+permalink: /helion/openstack/GA1/services/object/overview/
+product: commercial.ga
 
 ---
 <!--UNDER REVISION-->
@@ -44,94 +44,156 @@ Objects have a size limit of 5 GB. However, objects larger than 5 GB can be segm
 
 HP Helion Openstack Object Operation service will have swift cluster as a part of cloud creation. It deploys scale-out swift to store end cloud user data and also to protect from no single point of failure policy. 
 
-##Scale-out Swift
+##Scale-out Swift Architecture
 
-HP Helion will have Swift cluster as part of cloud creation. So, deploying scale-out Swift effectively means creating storage-policy:1 for object-ring:1, which will be used to store end cloud user data. Helion is committed to deploy overcloud which supports 'no single point of failure policy'. As storage-policy:1 will be exclusively used to implement object-ring:1 and needs to adhere to 'no single point of failure' policy, we do recommend to use at last two nodes to implementing storage-policy:1. Later on as demand of object storage grows, one can add more and more node to object-ring:1. Please see section Extending Swift cluster how to extend existing cluster for more detail. The section assumes that one is deploying two extra nodes to realize storage-policy:1 to start with and there is no extra proxy node is being added.
+With the concept of storage policy HP Helion allows you to deploy scale out Swift cluster. By default, two Swift nodes (termed as start-up node) are deployed during installation of HP Helion OpenStack. Swift cluster configured storage-policy:0 for internal purpose as a part of its deployment. Object ring (for example, object-ring:0) associated with storage-policy:0 is used to store data for internal services like Glance, Sherpa etc. The scale out object storage defines a new policy, storage-policy:1. Object ring (object-ring:1) associated with storage-policy:1 is used to store data for end cloud user. Once storage-policy:1 is created it becomes a default storage policy and a new container will use this ring to store objects. 
+
+Note that you can still continue to use storage-policy:0 if you continue to use old container to store data.
 
 
-###Scale-out architecture
+
+
+
+
+<!---
+HP Helion allows you to deploy scale out Swift cluster using the concept of storage policy. By default, Helion cloud deploys two node (termed as start-up node) Swift cluster as part of its deployment and configures storage-policy:0 for internal purpose. Object ring (say object-ring:0) associated with storage-policy:0 is used to store data for internal services like Glance, Sherpa etc. The scale out object storage is implemented by defining a new policy storage-policy:1. Object ring (say object-ring:1) associated with storage-policy:1 will be used to end cloud use objects.  After creation of storage-policy-1, it will be made as default storage policy and any new container will use this ring to store objects. However, any client using storage-policy:0 to can keep using old container to store the data. In a nutshell, object-ring:0 is used to store data for internal purpose and object-ring:1 is used to store object data for end cloud user. ---->
+
+
+<!--
+
+
+--->
+**<Image of scale out architecture>**
+
+
+
+###Deployment of Scale-out swift architecture
+HP Helion has a Swift cluster as part of cloud creation. Helion deploys overcloud which supports 'no single point of failure policy'.
+
+By deploying scale-out swift you can create storage-policy:1 for object-ring:1, which is used to store end cloud user data. Storage-policy:1 is used to implement object-ring:1 and needs to adhere to 'no single point of failure' policy. We recommend you to use at last two nodes to implement storage-policy:1. Also, you can extend the object storage by adding one or more nodes to object-ring:1 as per your requirement.
+
 
 <**image**> 
 
 ###Deployment of scale-out Swift
 
-Perform 
+This section describes the procedure for the deployment of scale out swift.
 
+* with one object ring
+* different object storage ring using Overcloud controller nodes
+*  different object storage ring without using cloud controller nodes
 
-<!--
-##Purpose
+####Prerequisites
 
-Swift is used for two different purpose:
+* Cloud should be successfully deployed with Seed, Undercloud, Overcloud, and two swift nodes.
 
-* Cloud Controller Service Data
-* Tenant Object Storage
+####Adding physical nodes for scale up swift
 
-Cloud Controller Service data is used for implementation of Helion OpenStack Services and High Availability (HA).
+Note: Ignore the following steps if you have already configured empty baremetal nodes during initial deployment. (**which steps need to ignored??)**
 
-Tenant Object Storage data is used to scale out object storage by end Tenants or Project Users.
-
-**Embedded Swift**
-
-Embedded Swift is deployed on cloud controller. Initially only one object ring is provided for internal Cloud controller data like Glance images, Sherpa cache, Focus persistence, etc. You are provided with an option to scale out swift services if required. In this case a separate object ring is created and will be made as a default ring. Therefore,  a new scale-out ring stores all incoming object request. 
-
-<img src ="media/hp-helion-swift-nodes.png/">
-
-
-**Different Object storage ring without using cloud controller**
-
-
-HP Helion will deploy two node CE Swift on separate nodes. To start with, Helion will have only one object ring meant for internal Cloud controller data like Glance images, Sherpa cache, Focus persistence, etc. Later, a separate object ring will be created if customer asks for scale out Swift, and will be made as default ring. All incoming object request will be stored in new scale-out ring. Please refer HP Helion scale out architecture for more details.
+Note: Get the new nodes details (ilo username, password, ram, cpu, disk and mac) (**where should one get the node details from?**)
 
 
 
+1. Login to Undercloud 
+ 
+		ssh
 
-<!--
-## Working with the Object Operations Service
+2. Add nodes with the following ironic commands:
 
-To [perform tasks using the Object Operations service](#howto), you can use the dashboard, API or CLI.
+ 		1. ironic node-create -d pxe_ipmitool -p cpus=18 -p memory_mb=78000 -p local_gb=500 -p cpu_arch=amd64 -i ipmi_address=10.10.10.10 -i ipmi_username=admin -i ipmi_password=password
+ 		2.  ironic create-port -a $MAC -n $NODE_ID
 
-### Using the dashboards {#UI}
+ 
+3. Enter `ironic node-list` to verify the successful registration of the baremetal node.
 
-You can use the [HP Helion OpenStack Dashboard](/helion/openstack/dashboard/how-works/) to work with the Object Operations service.
 
-###Using the API to access Object Operations### {#API}
+####Deploying Swift nodes for scale out
 
-You can use a low-level, raw REST API access to HP Object Operations service. See the [OpenStack Object Storage API v2.0 Reference](http://developer.openstack.org/api-ref-objectstorage-v1.html).
+Perform the following steps to deploy scale out swift nodes:
 
-###Using the CLI### {#cli}
+1. Login to seed VM
 
-You can use any of several command-line interface software to access HP Object Operations service. See the [OpenStack Command Line Interface Reference](http://docs.openstack.org/cli-reference/content/swiftclient_commands.html).
+		ssh root@192.0.2.1 
 
-For more information on installing the CLI, see [Install the OpenStack command-line clients](http://docs.openstack.org/user-guide/content/install_clients.html). -->
-<!--
+2. Enter `cp /root/tripleo/tripleo-incubator/scripts/ee-config.json /root/overcloud-config.json`
 
-## How To's with the HP Helion OpenStack Object Operations Service ## {#howto}
+3. Enter `cat /root/overcloud-config.json`
 
-<!-- Taken from http://wiki.hpcloud.net/display/core/Core+Edition+Use+cases#CoreEditionUsecases-OverCloud -->
-<!--
-The following lists of tasks can be performed by a user or administrator through the [HP Helion OpenStack Dashboard](/helion/openstack/dashboard/how-works/), the OpenStack [CLI](http://docs.openstack.org/cli-reference/content/swiftclient_commands.html) or OpenStack [API](http://developer.openstack.org/api-ref-objectstorage-v1.html).
 
-Depending upon your user type, you can perform the following tasks. 
-<!--
+		{
+		
+		 "cloud_type": "KVM",
+		
+		 "compute_scale": 1,
+		
+		 "vsa_scale": 0,
+		
+		 "vsa_ao_scale": 0,
+		
+		 "so_swift_storage_scale": 0,
+		
+		 "so_swift_proxy_scale": 0,
+		
+		 "bridge_interface": "eth0",
+		
+		 "ntp": {
+		
+		 "overcloud_server": "",
+		
+		 "undercloud_server": ""
+		
+		 }
+		
+		}
 
-### Working with containers ##
 
-The Object Operations service allows users to create a storage container, move files to and from that storage container, and delete containers that are no longer needed.
 
-- **Creating, modifying and deleting containers** -- Create, configure, and delete storage containers as needed.
-- **Uploading files to a container** -- Upload files from a local system to your storage container.
-- **Downloading files from a container** -- Download files from your container to a local system.
-- **Deleting files from a container** -- Delete any of the files in your storage container.
+4. Edit the values the following values are per your requirement:
+ * so&#095;swift_storage&#095;scale
+ * so&#095;swift&#095;proxy&#095;scale
 
-## For more information ##
+	Number of nodes should match the new nodes addition in ironic
 
-For information on how to operate your cloud we suggest you read the [OpenStack Operations Guide](http://docs.openstack.org/ops/). The *Architecture* section contains useful information about how an OpenStack Cloud is put together. However, the HP Helion OpenStack takes care of these details for you. The *Operations* section contains information on how to manage the system.
+5. Enter the following command to source the `overcloud_config.json`  for the new values
 
-The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.
--->
+		source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/overcloud-config.json
 
- <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+6. Comment out the following line to ignore ping test 
 
-----
-####OpenStack trademark attribution
+
+		vi /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh
+	
+		###
+	
+		if [ "$SKIP_INSTALL_OVERCLOUD" != "1" ] ; then
+	
+	    echo "HP - configuring overcloud - $(date)"
+	
+		#    hp_ced_validate_ip ping -s $FLOATING_START -e $FLOATING_END
+	
+7. Run the installer script to update the cloud
+
+		bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --skip-install-seed --skip-install-undercloud 2>&1 | tee update.log
+
+	On the successful Upon the successful cloud update with the new nodes
+
+8. Once the cloud is successfully updated with the new nodes login to undercloud 
+    
+		root@undercloud 
+
+9. Verify the new nodes addition
+
+		root@undercloud-undercloud-vattor43o22r:/home/heat-admin# nova list
+
+	To view the list <img>
+
+
+10. Above step confirms that update cloud is succeed and new swift node is added
+
+		ov--soswiftstorage1-SwiftScaleoutObject1-hpmv5quvuojv | ACTIVE | -          | Running     | ctlplane=192.0.2.29
+
+
+
+ 
 *The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*
