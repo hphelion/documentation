@@ -21,7 +21,7 @@ PageRefresh();
 
 <p style="font-size: small;"> <a href="/helion/openstack/install/prereqs/">&#9664; PREV</a> | <a href="/helion/openstack/install-overview/">&#9650; UP</a> | <a href="/helion/openstack/install/vsa/">NEXT &#9654;</a> </p>
 
-# HP Helion OpenStack&reg;: Installation and Configuration for KVM Hypervisor TEST
+# HP Helion OpenStack&reg;: Installation and Configuration for KVM Hypervisor
 
 HP Helion Openstack allows you to manage the KVM hypervisor and provision virtual machines. 
  
@@ -94,9 +94,7 @@ Before you begin, you must download the required HP Helion OpenStack installatio
 
         sudo su -
 
-2. Register and then log in to download the required installation packages from this site:
-
-    [HP Helion OpenStack product installation](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221247%22%7D/Show)
+2. Register and then log in to download the required installation packages from this site [HP Helion OpenStack product installation](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221247%22%7D/Show)
 
 
 ## Install HP Helion Openstack ## {#install}
@@ -117,13 +115,13 @@ Before you begin your installation, if necessary, configure the proxy informatio
 
 1. Ensure you are logged into your install system as root; otherwise, log in as root: 
 
-        sudo su -
+		sudo su -
 
 2. Add the following lines to `/etc/environment`:
 
-        export http_proxy=http://<web proxy IP/
-        export https_proxy=http://web proxy IP/
-        export no_proxy=localhost,127.0.0.1,<your 10.x IP address>
+		export http_proxy=http://<web proxy IP/
+		export https_proxy=http://web proxy IP/
+		export no_proxy=localhost,127.0.0.1,<your 10.x IP address>
  
 3. Log out and re-login to your baremetal server to activate the proxy configuration.
 
@@ -131,27 +129,27 @@ Before you begin your installation, if necessary, configure the proxy informatio
 
 1. Ensure you are logged into your install system as root; otherwise, log in as root:
 
-        sudo su -
+		sudo su -
 
 2. Create a directory named `work`:
 
-         mkdir /root/work
-         cd /root/work
+		mkdir /root/work
+		cd /root/work
 
 3.  Extract the kit to the `work` directory:
 
-         tar zxvf /root/work/<baremetal kit name>.tgz
+		tar zxvf /root/work/<baremetal kit name>.tgz
 
-    This creates and populates a `tripleo/` directory within `work' directory.
+	This creates and populates a `tripleo/` directory within `work' directory.
 
 4. If the external device name on the host system (the one through which the host, and indirectly the seed, accesses the IPMI network) is **NOT** named `eth0`, then determine the device name before executing the next step:
 
-        $ export BRIDGE_INTERFACE=<devicename>
+		export BRIDGE_INTERFACE=<devicename>
 
-    Examples:
+	Examples:
 
-        $ export BRIDGE_INTERFACE=em1  
-        $ export BRIDGE_INTERFACE=eth5
+		export BRIDGE_INTERFACE=em1  
+		export BRIDGE_INTERFACE=eth5
 
 
 ### Install the seed VM and build your cloud ### {#startseed}
@@ -160,15 +158,15 @@ Before you begin your installation, if necessary, configure the proxy informatio
 
 		bash -x /root/work/tripleo/tripleo-incubator/scripts/hp_ced_host_manager.sh --create-seed
 
-    If the seed startup is successful, you should see a message similar to the following:
+	If the seed startup is successful, you should see a message similar to the following:
 
-        "Wed Sept 09 11:25:10 IST 2014 --- completed setup seed"
+		"Wed Sept 09 11:25:10 PST 2014 --- completed setup seed"
 
-    **Note**:The installation process takes approximately 10 minutes to complete.
+	**Note**:The installation process takes approximately 10 minutes to complete.
 
 2. To build the cloud, start by logging in to the seed VM. Run the following command from /root:
 
-        ssh root@192.0.2.1 
+		ssh root@192.0.2.1 
 
     **Note**: It might take a few moments for the seed VM to become reachable. 
   
@@ -197,7 +195,7 @@ Before you begin your installation, if necessary, configure the proxy informatio
 
 6. Manually power off each baremetal system specified in /root/baremetal.csv before proceeding with the installation. 
     
-    **IMPORTANT:** Ensure that each system is configured in the BIOS to stay powered off in the event of being shutdown rather than automatically restarting.
+	**IMPORTANT:** Ensure that each system is configured in the BIOS to stay powered off in the event of being shutdown rather than automatically restarting.
 
 7. Set `OVERCLOUD_NeutronPublicInterface` and `UNDERCLOUD_NeutronPublicInterface` to the name of the interface that carries Neutron external traffic on your overcloud and undercloud. By default, it is *eth2*. The following example sets the value of the variable to *eth0*.
 
@@ -220,7 +218,7 @@ Before you begin your installation, if necessary, configure the proxy informatio
 		export FLOATING_END=<End IP Address>
 		export FLOATING_CIDR=<CIDR in 192.x.x.x/24 format>
 
-    **For example**:
+	**For example**:
 
 		export FLOATING_START=192.0.2.129
 		export FLOATING_END=192.0.2.200
@@ -273,7 +271,6 @@ example if you plan to create snapshots of large bootable volumes. The partition
 		$ export FLOATING_CIDR=192.0.8.0/21
 
 	It is assumed in the above that the seed VM has been configured with a route to the external VLAN subnet.
-
 
 16. Install and configure the undercloud and overcloud, run the following command from /root. 
 

@@ -176,7 +176,7 @@ To deploy the ESX compute proxy using the EON CLI on the undercloud node:
 		netmask= enter the compute proxy netmask
 		gateway= enter the compute proxy gateway
 
-2. Use the EON CLI to deploy proxy VM. For details refer to the [EON CLI](/openstack/services/eon/overview/).
+2. Use the [HP EON servcie CLI](/helion/openstack/ga/services/eon/overview/) to deploy proxy VM. For details refer to the [EON CLI](/helion/openstack/ga/undercloud/eon/cli/ ).
 
 		source /root/stackrc
 		eon vcenter-add –name=<VCENTER_NAME> --ip-address=<VCENTER_IP_ADDRESS> --username=<VCENTER_USERNAME> --password=<VCENTER_PASSWORD> --port=<VCENTER_PORT> --proxy-config-file=<COMPUTE PROXY CONFIG FILE>
