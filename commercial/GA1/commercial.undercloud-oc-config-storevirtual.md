@@ -29,11 +29,11 @@ This option allows you to do the following:
 
 * [Expand Backend](#expand-backend)
 
-* [Generate Config](#generate-config)
-
 * [Shrink Backend](#shrink-backend) 
 
 * [Delete Backend](#delete-backend)
+
+* [Generate Config](#generate-config)
 
 * [Update Overcloud](#update-overcloud) 
 
@@ -58,7 +58,7 @@ This option allows you to do the following:
 
 ### Expand Backend ###{#expand-backend}
 
-Expand backend is allocating new CPGs to an existing backend. You can select the required CPG(s) from the list of registered CPGs and add the same to a backend that has already been already configured.
+Expand backend option allocates new clusters to an existing backend. You can select the required clusters from the list of registered clusters and add the same to a backend that has been already configured.
 
 To expand a backend, do the following:
 
@@ -77,22 +77,9 @@ To expand a backend, do the following:
 8. Click **Update**.<br>On successful update, the number of clusters mapped to the backend is updated and displays in the Backend Mapping table in the Configure Cloud page.</br>
 
 
-### Generate Config ###{#generate-config}
-You can download the Cinder configuration relevant to HP 3PAR for your cloud once  you have created the backend.
-
-To generate configuration file, do the following:
-
-1. In the Configure Cloud page, click **StoreVirtual** Tab to activate it.<br> The page displays a list of backends.</br>
-
-2. Click **Generate Config** displayed at the top of the page to display Download StoreVirtual Config page.<br> The config file downloads automatically. 
-
-3. (Optional) Click Download StoreVirtual Config link to download the file if the file does not download automatically.<br> A dialog box is displayed.</br>
-
-4. Click **OK** to download and save the file.
-
 ### Shrink Backend ###{#shrink-backend}
 
-This option allows you to remove the CPGS from the backend which are allocated to your cloud. To reduce the backend, do the following:
+This option allows you to remove the clusters from the backend which are allocated to your cloud. To reduce the backend, do the following:
 
 1. In the Configure Cloud page, click **StoreVirtual** Tab to activate it.<br> The page displays a list of backends.</br>
 
@@ -109,7 +96,9 @@ This option allows you to remove the CPGS from the backend which are allocated t
 
 6. Click **Update**.<br>On successful update, the number of clusters mapped to the backend is updated and displays in the Backend Mapping table in the Configure Cloud page.</br>
 
-###Delete backend##
+###Delete backend## {#delete-backend}
+
+**Note**: Before you delete a backend cluster,  detach the volumes or migrate as appropriate as the volumes from this cluster backend will no longer be available once it is deleted.
 
 Use this option to delete a backend. Do the following:
 
@@ -120,15 +109,29 @@ Use this option to delete a backend. Do the following:
 3. Click **Delete Volume Backend** to delete or **Cancel** to cancel the process.
 
 
-### Update overcloud ###{#update-overcloud}
+### Generate Config ###{#generate-config}
+You can download the Cinder configuration relevant to HP StoreVirtual for your cloud once  you have created the backend.
+
+To generate configuration file, do the following:
+
+1. In the Configure Cloud page, click **StoreVirtual** Tab to activate it.<br> The page displays a list of backends.</br>
+
+2. Click **Generate Config** displayed at the top of the page to display Download StoreVirtual Config page.<br> The config file downloads automatically. 
+
+3. (Optional) Click Download StoreVirtual Config link to download the file if the file does not download automatically.<br> A dialog box is displayed.</br>
+
+4. Click **OK** to download and save the file.<br>Once you download the config file, you can proceed to update the Overcloud configuration.
+
+
+### Update Overcloud ###{#update-overcloud}
 
 To update your overcloud with the changes, do the following:
 
-1. SSH to seed as root
+1. SSH to seed as root.
 
 		ssh root@ <IP address> 
 
-2. View the list of files
+2. View the list of files.
 
 		ls
 
@@ -138,14 +141,13 @@ To update your overcloud with the changes, do the following:
 
 4. Edit and update the /root/overcloud-config.json and add the JSON snippet(obtained from [Generate Config](#generate-config). Refer to the example below.<**TO ADD THE SAMPLE FILE**> Ensure the JSON file format is intact.
 
-5. Apply the configuration
+5. Apply the configuration.
 
         source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/overcloud-config.json
 
-6. Launch install script to update the Overcloud
+6. Launch install script to update the Overcloud.
 
 	    /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --skip-install-seed --skip-install-undercloud
-7. Update the section.
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

@@ -36,9 +36,8 @@ The StoreServ option allows you to configure 3PAR as storage. Before you start w
 
 5. Common Provisioning Groups (CPGs) are created for HP StoreServ (also named as  3PAR)
 
-6.HP 3PAR web services API server must be enabled and running
+6. HP 3PAR REST service is running and  HTTPS is enabled.
 
-7. HTTPS is enabled
 
 
 <!---Configuration of HP StoreServ/3PAR as Cinder backend using Sirius service involves the following steps:-->
@@ -75,7 +74,7 @@ To register the device using Undercloud Horizon Dashboard, do the following:
    
    * In the **IP Address** box, enter the IP address of 3PAR WS API Server.
    
-   * In the **Username** box, enter the user name of the 3PAR Super user.
+   * In the **Username** box, enter the user name of the 3PAR super user.
    
    * In the **Password** box, enter the password of the 3PAR super user.
    
@@ -87,7 +86,7 @@ To register the device using Undercloud Horizon Dashboard, do the following:
    
    * In the **SAN Password** box, enter the Password of SAN controller for SSH access to the array.
    
-   * From the **Device Type** drop-down list, select the device type. 
+   * From the **Device Type** drop-down list, select the device type.For example: FC, iSCSI 
    
    * Click **Done** to save the details. 
 
@@ -112,6 +111,9 @@ To edit a StoreServ, do the following:
 
 
 ### Unregister a StoreServ ###{unregister-storeserv}
+
+**Note**: Before you unregister the storeserv, you need to unregister the CPG and remove the backend etc. Once the 3PAR is unregistered, none of the CPGs and the volume that are present from the array are accessible.
+
 
 Use this option to unregister a StoreServ.
 
@@ -179,6 +181,8 @@ To register the CPGs, do the following:
 
 ### Edit CPG ###
 
+**Note**: You cannot edit a CPG which is in *'Reserved'* state. Ensure that you enter a CPG name that already exists on the 3PAR device when you edit the CPG details.
+
 To edit a CPG, do the following:
 
 1. Log into the Undercloud Horizon Dashboard.
@@ -197,6 +201,8 @@ To edit a CPG, do the following:
 
 
 ### Unregister a CPG ###
+
+**Note**: Before you unregister a CPG, remove the backend associated with this CPG. You need to either  detach the volumes from Cinder or migrate to another backend as the volumes from this CPG will no longer be available.
 
 This option allows you to unregister a CPG. To unregister, do the following:
 
