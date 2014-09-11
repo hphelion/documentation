@@ -133,11 +133,11 @@ For ESX deployments, you must install and configure two specific networks:
 
 2. The **Service network**. This network is for trusted VMs in overcloud to communicate with cloud infrastructure components in undercloud. The service network is used by all services for accessing the logging, monitoring as well as customer provided network services such as NTP and LDAP. VMs will need to add a NIC and attach a VLAN address to get access. Authentication is through the Identity Management service, where this Neutron Provider Network is defined for a single project. 
 
-##### Other customer responsibilities and requirements #####
+##### Other customer responsibilities and requirements for ESX #####
 
 You are responsible for the following before beginning the HP Helion OpenStack installation:
 
-- installing and configuring VMWare vSphere version 5.5;
+- installing and configuring VMWare vSphere version 5.5; VMware vCenter management must be a part of the private network (192.0.2.x)
 
 - providing the Customer Router and making sure the external, IPMI, and ESX networks are routed to/from the management network;
 
@@ -156,7 +156,8 @@ You are responsible for the following before beginning the HP Helion OpenStack i
 
 - providing a route from the EON service on the Under Cloud and the vCenter server;
 
-
+- enabling VLAN trunking and native VLAN on the private network. This is to cater to untagged PXE traffic with the tenant.
+ 
 ##### Storage nodes installed during installation #####
 
 The initial installation of the cloud will install two initial Object Storage nodes. All additional Object Storage nodes will be installed using customer procedures after the initial install. 

@@ -388,7 +388,22 @@ Enter the following commands to stop and restart the HP VCN networking service:
 
 To uninstall VCN on ESXi hosts, access the ESXi hosts from vSphere Client, and delete each OVSvApp VM.
 
+
+## Next Steps
+
+- Deploy vCenter ESX Compute proxy manually **(REQUIRED)**
+
+	If you have not deployed the vCenter ESX compute proxy, see [HP Helion OpenStack&#174; Deploy vCenter ESX compute proxy](/helion/openstack/ga/install/esx/proxy/).
+
+- Install DNS as a service (DNSaaS) (Optional).
+
+	If you have not installed DNSaaS, see [DNSaaS Beta Installation and Configuration](/helion/openstack/install/dnsaas/).
+
+	DNSaaS is our managed DNS service, based on the OpenStack Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.
+
+
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
 
 ----
 ####OpenStack trademark attribution
