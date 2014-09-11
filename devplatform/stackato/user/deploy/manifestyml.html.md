@@ -8,7 +8,7 @@ Manifest.yml Options[](#manifest-yml-options "Permalink to this headline")
 ===========================================================================
 
 Using a *manifest.yml* file is an alternative to *stackato.yml* which
-allows for specific customizations such as pushing more than one app
+allows for specific customization such as pushing more than one app
 with dependencies. It is the standard configuration file format for all
 Cloud Foundry systems, allowing for portability from those systems to
 Application Lifecycle Service without configuration changes.
@@ -25,18 +25,18 @@ Options*](/als/v1/user/deploy/stackatoyml/#stackato-yml)) can also be declared i
 
 **Note**
 
-Options in [*stackato.yml*](/als/v1/user/deploy/stackatoyml/#stackato-yml) take
+Options  in [*stackato.yml*](/als/v1/user/deploy/stackatoyml/#stackato-yml) take
 precedence over those declared in *manifest.yml*. Detailed
 specifications for these configuration files can be found in the
 [helion-cli source
 repository](https://github.com/HP/helion-cli/):
 
 -   [stackato.yml
-    specification](https://github.com/HP/helion-cli/blob/master/doc/stackato.yml.txt)
+    specification](https://github.com/ActiveState/helion-cli/blob/master/doc/stackato.yml.txt)
 -   [manifest.yml
-    specification](https://github.com/HP/helion-cli/blob/master/doc/manifest.yml.txt)
+    specification](https://github.com/ActiveState/helion-cli/blob/master/doc/manifest.yml.txt)
 -   [stackato.yml to manifest.yml key
-    mappings](https://github.com/HP/helion-cli/blob/master/doc/helion-2-manifest.txt)
+    mappings](https://github.com/ActiveState/helion-cli/blob/master/doc/helion-2-manifest.txt)
 
 applications:[](#applications "Permalink to this headline")
 ------------------------------------------------------------
