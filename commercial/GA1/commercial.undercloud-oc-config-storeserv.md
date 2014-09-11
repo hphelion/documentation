@@ -77,19 +77,6 @@ To expand a backend, do the following:
 8. Click **Update**.<br>On successful update, the number of CPGs mapped to the backend is updated and displays in the Backend Mapping table in the Configure Cloud page.</br>
 
 
-### Generate config ###{#generate-config}
-You can download the Cinder configuration relevant to HP 3PAR for your cloud once  you have created the backend.
-
-To generate configuration file, do the following:
-
-1. In the Configure Cloud page, click **StoreServs** Tab to activate it.<br> The page displays a list of backends.</br>
-
-2. Click **Generate Config** displayed at the top of the page to display Download Storeserv Config page.<br> The config file downloads automatically. 
-
-3. (Optional) Click Download StoreServ Config link to download the file if the file does not download automatically.<br> A dialog box is displayed.</br>
-
-4. Click **OK** to download and save the file.
-
 ### Shrink backend ###{#shrink-backend}
 
 This option allows you to remove the CPGS from the backend which are allocated to your cloud. To reduce the backend, do the following:
@@ -111,6 +98,8 @@ This option allows you to remove the CPGS from the backend which are allocated t
 
 ###Delete backend##
 
+Before you delete the backend CPG, detach the volume or migrate to a different backend as this backend will no longer be available once it is deleted. accessible.
+
 Use this option to delete a backend. Do the following:
 
 1. In the Configure Cloud page, click **StoreServs** Tab to activate it.<br> The page displays a list of backends.</br>
@@ -120,15 +109,29 @@ Use this option to delete a backend. Do the following:
 3. Click **Delete Volume Backend** to delete or **Cancel** to cancel the process. 
 
 
-### Update Overcloud ###
+### Generate config ###{#generate-config}
+You can download the Cinder configuration relevant to HP 3PAR for your cloud once  you have created the backend.
+
+To generate configuration file, do the following:
+
+1. In the Configure Cloud page, click **StoreServs** Tab to activate it.<br> The page displays a list of backends.</br>
+
+2. Click **Generate Config** displayed at the top of the page to display Download Storeserv Config page.<br> The config file downloads automatically. 
+
+3. (Optional) Click Download StoreServ Config link to download the file if the file does not download automatically.<br> A dialog box is displayed.</br>
+
+4. Click **OK** to download and save the file. <br>Once you download the config file, you can proceed to update the Overcloud configuration.</br>
+
+
+### Update Overcloud ###{#update-overcloud}
 
 To update your overcloud with the changes, do the following:
 
-1. SSH to seed as root
+1. SSH to seed as root.
 
 		ssh root@ <IP address> 
 
-2. View the list of files
+2. View the list of files.
 
 		ls
 
@@ -138,11 +141,11 @@ To update your overcloud with the changes, do the following:
 
 4. Edit and update the /root/overcloud-config.json and add the JSON snippet(obtained from [Generate Config](#generate-config). Refer to the example below. <**TO ADD THE SAMEPLE**>Ensure the JSON file format is intact.
 
-5. Apply the configuration
+5. Apply the configuration.
 
         source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/overcloud-config.json
 
-6. Launch install script to update the Overcloud
+6. Launch install script to update the Overcloud.
 
 	    /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --skip-install-seed --skip-install-undercloud
 

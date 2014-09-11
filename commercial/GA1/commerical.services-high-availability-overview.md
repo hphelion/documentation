@@ -22,13 +22,19 @@ PageRefresh();
 
 # HP Helion OpenStack&#174; High Availability (HA) Service Overview#
 
+High Available system is the one which  minimizes as many failure conditions as possible thereby  increasing the  use of resources significantly and becomes a direct indicator of successful  business operations.Leveraging OpenStack, the HP Helion OpenStack High Availability Service protects the folowing:
 
-Leveraging OpenStack, the HP Helion OpenStack High Availability Service protects the system downtime and data loss failure. It is a redundancy service model. In addition to the Openstack Services components, HP Helion Openstack also provides HA service for the nova-compute service; it avoids Single-Point-Of-Failure (SPOF) and controls data loss.  
+* **System downtime** - occurs when a user-facing service is unavailable beyond a specified maximum amount of time.
+
+* **Data loss** - accidental deletion or destruction of data.  
+ 
+ In addition to providing High Availability to the OpenStack Service components, HP Helion Openstack also provides HA service for the nova-compute service. it avoids Single-Point-Of-Failure (SPOF) and controls data loss.  
 
 HA can be provided in the following two models.
 
-- Active-Active Model: This model utilizes distributed applications and distributed databases on multiple servers in the LAN/WAN  environment where the data is replicated to some or all of the  servers. When a server failure occurs, the data and applications are  accessible from an alternate server. 
-- Active-Passive Model: This model utilizes duplicate server hardware  configurations in which one server has the role of an active server  for data and application services, and the other is a backup server  that monitors the state of the active server. When the backup server  detects a hardware or software failure that has occurred on the active  server, it takes over the role and identity of the active server.
+- **Active-Active Model**: This model utilizes distributed applications and distributed databases on multiple servers in the LAN/WAN  environment where the data is replicated to some or all of the  servers. When a server failure occurs, the data and applications are  accessible from an alternate server. 
+
+- **Active-Passive Model**: This model utilizes duplicate server hardware  configurations in which one server has the role of an active server  for data and application services, and the other is a backup server  that monitors the state of the active server. When the backup server  detects a hardware or software failure that has occurred on the active  server, it takes over the role and identity of the active server.
 
 
 ## Working with the HA Service
