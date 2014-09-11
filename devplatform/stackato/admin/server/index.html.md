@@ -135,12 +135,3 @@ To continue configuring the Application Lifecycle Service server, see:
         -   [sudo](/als/v1/admin/server/configuration/#sudo)
         -   [Allowed
             Repositories](/als/v1/admin/server/configuration/#allowed-repositories)
-
-### [Table Of Contents](/als/v1/index-2/)
-
--   [Server Configuration](#)
-    -   [Accessing Server via the Command
-        Line](#accessing-server-via-the-command-line)
-    -   [Common Operations](#common-operations)
-    -   [Detailed Configuration](#detailed-configuration)
-

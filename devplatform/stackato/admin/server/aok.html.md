@@ -6,6 +6,14 @@ permalink: /als/v1/admin/server/aok/
 
 AOK Authentication Server[](#aok-authentication-server "Permalink to this headline")
 =====================================================================================
+[End User Login](#end-user-login)
+        -   [Web](#web)
+        -   [Client](#client)
+    -   [Strategies](#strategies)
+    -   [Configuration](#configuration)
+    -   [User Management](#user-management)
+    -   [First Admin User Setup](#first-admin-user-setup)
+    -   [Regular LDAP User Setup](#regular-ldap-user-setup)
 
 AOK is Application Lifecycle Service's authentication management service (replacing Cloud
 Foundry's UAA Server). It issues tokens via OAuth2 for client
@@ -101,9 +109,9 @@ config set*](/als/v1/admin/reference/kato-ref/#kato-command-ref-config):
             non-null attribute will be used (AOK will not validate that
             this is an email address). The default attributes are:
 
-            > -   mail
-            > -   email
-            > -   userPrincipalName
+            -   mail
+            -   email
+            -   userPrincipalName
 
         -   bind\_dn: (optional) credentials for user lookup (e.g.
             'cn=Administrator,cn=Users,dc=example,dc=com'). LDAP servers
@@ -211,16 +219,3 @@ New users logging in to the Management Console for the first time using
 LDAP authentication will not be a member of any organization (and won't
 be able to do anything). An admin will have to add each user to an
 organization after their initial login.
-
-### [Table Of Contents](/als/v1/index-2/)
-
--   [AOK Authentication Server](#)
-    -   [End User Login](#end-user-login)
-        -   [Web](#web)
-        -   [Client](#client)
-    -   [Strategies](#strategies)
-    -   [Configuration](#configuration)
-    -   [User Management](#user-management)
-    -   [First Admin User Setup](#first-admin-user-setup)
-    -   [Regular LDAP User Setup](#regular-ldap-user-setup)
-

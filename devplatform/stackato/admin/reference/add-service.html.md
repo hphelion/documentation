@@ -6,6 +6,18 @@ permalink: /als/v1/admin/reference/add-service/
 
 Adding System Services[](#adding-system-services "Permalink to this headline")
 ===============================================================================
+[Oracle Database Add-On](#oracle-database-add-on)
+        -   [Oracle Pre-requisites](#oracle-pre-requisites)
+        -   [Copying the Add-on to Application Lifecycle Service](#copying-the-add-on-to-helion)
+        -   [Install the service gems](#install-the-service-gems)
+        -   [Install to supervisord](#install-to-supervisord)
+        -   [Install to Kato](#install-to-kato)
+        -   [Loading the config](#loading-the-config)
+        -   [Add the service AUTH token](#add-the-service-auth-token)
+        -   [Enable oracledb and start](#enable-oracledb-and-start)
+        -   [Verify the service](#verify-the-service)
+        -   [Default tablespace](#default-tablespace)
+        -   [DBshell support](#dbshell-support)
 
 Application Lifecycle Service has two Service definitions:
 
@@ -29,9 +41,9 @@ Echo service sample[](#echo-service-sample "Permalink to this headline")
 
 A simple Ruby echo service is available in this repository:
 
-> <https://github.com/HP/helion-echoservice>
+<https://github.com/HP/helion-echoservice>
 
-Warning
+**Warning**
 
 The current echo service sample is an Application Lifecycle Service v2 / Cloud Foundry v1
 service. A replacement example is under development which will use the
@@ -281,21 +293,3 @@ LD\_LIBRARY\_PATH and PATH environment variables in *stackato.yml*
 
 The application should have a minimum of 128MB of memory to run sqlplus
 and dbshell.
-
-### [Table Of Contents](/als/v1/index-2/)
-
--   [Adding System Services](#)
-    -   [Echo service sample](#echo-service-sample)
-    -   [Oracle Database Add-On](#oracle-database-add-on)
-        -   [Oracle Pre-requisites](#oracle-pre-requisites)
-        -   [Copying the Add-on to Application Lifecycle Service](#copying-the-add-on-to-helion)
-        -   [Install the service gems](#install-the-service-gems)
-        -   [Install to supervisord](#install-to-supervisord)
-        -   [Install to Kato](#install-to-kato)
-        -   [Loading the config](#loading-the-config)
-        -   [Add the service AUTH token](#add-the-service-auth-token)
-        -   [Enable oracledb and start](#enable-oracledb-and-start)
-        -   [Verify the service](#verify-the-service)
-        -   [Default tablespace](#default-tablespace)
-        -   [DBshell support](#dbshell-support)
-

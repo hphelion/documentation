@@ -6,6 +6,20 @@ permalink: /als/v1/admin/server/operations/
 
 Common Server Operations[](#common-server-operations "Permalink to this headline")
 ===================================================================================
+[Server Status](#server-status)
+        -   [Starting and Stopping Roles](#starting-and-stopping-roles)
+        -   [System Shutdown](#system-shutdown)
+    -   [Setting the Time Zone](#setting-the-time-zone)
+    -   [Resetting the VM](#resetting-the-vm)
+    -   [Monitoring The Application Lifecycle Service
+        Server](#monitoring-the-helion-server)
+        -   [Management Console](#management-console)
+        -   [New Relic](#new-relic)
+        -   [Creating an Admin User](#creating-an-admin-user)
+        -   [System Monitoring with
+            Nagios](#system-monitoring-with-nagios)
+    -   [Server Backup, Import, and
+        Export](#server-backup-import-and-export)
 
 Server Status[](#server-status "Permalink to this headline")
 -------------------------------------------------------------
@@ -55,8 +69,7 @@ Setting the Time Zone[](#setting-the-time-zone "Permalink to this headline")
 -----------------------------------------------------------------------------
 
 At first boot, the time zone of the Application Lifecycle Service VM is set to UTC. To set
-this to your local time zone, use the `kato op set_timezone`{.docutils
-.literal} command. When run without arguments, the command will prompt
+this to your local time zone, use the `kato op set_timezone` command. When run without arguments, the command will prompt
 for time zone selction, but the time zone can be set non-interactively
 with the `--timezone` option. For example:
 
@@ -128,8 +141,7 @@ Grant administrative privileges using `kato config`:
 
     $ kato config push cloud_controller_ng admins superuser@example.net
 
-Subsequent new users can be added remotely with the `helion`{.docutils
-.literal} client by an admin user.
+Subsequent new users can be added remotely with the Helion client by an admin user.
 
 ### System Monitoring with Nagios[](#system-monitoring-with-nagios "Permalink to this headline")
 
@@ -152,22 +164,4 @@ for details on how to
 and
 [*import*](/als/v1/admin/best-practices/#bestpractices-migration-import)
 your data.
-
-### [Table Of Contents](/als/v1/index-2/)
-
--   [Common Server Operations](#)
-    -   [Server Status](#server-status)
-        -   [Starting and Stopping Roles](#starting-and-stopping-roles)
-        -   [System Shutdown](#system-shutdown)
-    -   [Setting the Time Zone](#setting-the-time-zone)
-    -   [Resetting the VM](#resetting-the-vm)
-    -   [Monitoring The Application Lifecycle Service
-        Server](#monitoring-the-helion-server)
-        -   [Management Console](#management-console)
-        -   [New Relic](#new-relic)
-        -   [Creating an Admin User](#creating-an-admin-user)
-        -   [System Monitoring with
-            Nagios](#system-monitoring-with-nagios)
-    -   [Server Backup, Import, and
-        Export](#server-backup-import-and-export)
 

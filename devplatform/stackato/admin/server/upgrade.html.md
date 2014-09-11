@@ -6,6 +6,16 @@ permalink: /als/v1/admin/server/upgrade/
 
 Upgrading Application Lifecycle Service[](#upgrading-helion "Permalink to this headline")
 =======================================================================
+ [Before an upgrade](#before-an-upgrade)
+        -   [Maintenance Mode](#maintenance-mode)
+        -   [Proxy settings](#proxy-settings)
+        -   [RSA keys](#rsa-keys)
+    -   [Executing the upgrade](#executing-the-upgrade)
+        -   [Upgrading an individual
+            node](#upgrading-an-individual-node)
+        -   [Upgrading a cluster](#upgrading-a-cluster)
+        -   [Node upgrade ordering](#node-upgrade-ordering)
+        -   [Node Upgrade Process](#node-upgrade-process)
 
 Application Lifecycle Service 3.0 provides the ability to upgrade a node or cluster in place
 via [*kato node
@@ -25,10 +35,7 @@ the following `kato` command:
 
     $ kato config set cloud_controller_ng maintenance_mode true
 
-This shuts down API requests but continues to serve web requests. The
-Management Console becomes "read only" with the exception of this toggle
-(to bring it back online). Remember to disable maintenance mode once the
-upgrade completes.
+This shuts down API requests but continues to serve web requests. The Management Console becomes "read only" with the exception of this toggle so that it can be brought back online. Remember to disable maintenance mode once the upgrade has been completed.
 
 ### Proxy settings[](#proxy-settings "Permalink to this headline")
 
@@ -96,21 +103,19 @@ option.
 
 Each node goes through the following process during an upgrade.
 
-1.  self-update
+1.  Self-update
 2.  Application Lifecycle Service version check
-3.  pre-upgrade validation
-4.  retire (DEA nodes only)
-5.  backup state
-6.  upgrade
-7.  post-upgrade validation
-8.  node restart
+3.  Pre-upgrade validation
+4.  Retire (DEA nodes only)
+5.  Backup state
+6.  Upgrade
+7.  Post-upgrade validation
+8.  Node restart
 
-Before any upgrade actions are performed, `kato node upgrade`{.docutils
-.literal} performs a self-update check to make sure it is running the
+Before any upgrade actions are performed, `kato node upgrade` performs a self-update check to make sure it is running the
 latest code available. After this base check, the version of Application Lifecycle Service
 running on the node is checked against the latest version available. If
-a newer version of Application Lifecycle Service is available (or if the `--force`{.docutils
-.literal} option was used) the upgrade process begins.
+a newer version of Application Lifecycle Service is available (or if the `--force` option was used) the upgrade process begins.
 
 **Note**
 
@@ -121,10 +126,9 @@ A pre-upgrade validation check is performed on the node to check that it
 is in working order before any upgrade actions are performed. If this
 validation fails then the upgrade process is stopped. These validation
 steps can be displayed to the user as errors while still continuing the
-upgrade process by using the `--ignore-inspect-failures`{.docutils
-.literal} option.
+upgrade process by using the `--ignore-inspect-failures` option.
 
-Warning
+**Warning**
 
 Use this option is only if you get failures running
 `kato node inspect` that are known to be caused by
@@ -148,17 +152,4 @@ warning above).
 When `kato node upgrade` completes successfully, the
 node is restarted running the latest version of Application Lifecycle Service.
 
-### [Table Of Contents](/als/v1/index-2/)
-
--   [Upgrading Application Lifecycle Service](#)
-    -   [Before an upgrade](#before-an-upgrade)
-        -   [Maintenance Mode](#maintenance-mode)
-        -   [Proxy settings](#proxy-settings)
-        -   [RSA keys](#rsa-keys)
-    -   [Executing the upgrade](#executing-the-upgrade)
-        -   [Upgrading an individual
-            node](#upgrading-an-individual-node)
-        -   [Upgrading a cluster](#upgrading-a-cluster)
-        -   [Node upgrade ordering](#node-upgrade-ordering)
-        -   [Node Upgrade Process](#node-upgrade-process)
-
+Remember to take the node out of maintenance mode after the upgrade.

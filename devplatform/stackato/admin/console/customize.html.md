@@ -134,7 +134,7 @@ containing executables for each platform can be found in the
 After renaming the executable, you can re-package them in .zip files and
 modify the
 *\~/helion/code/console/js/views/client/templates/client.html*
-template to point to the renamed files.
+template to point to the renamed files. 
 
 
 

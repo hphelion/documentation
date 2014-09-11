@@ -6,6 +6,36 @@ permalink: /als/v1/admin/server/configuration/
 
 Detailed Configuration[](#detailed-configuration "Permalink to this headline")
 ===============================================================================
+   [Changing the Password](#changing-the-password)
+    -   [Network Setup](#network-setup)
+        -   [Changing the Hostname](#changing-the-hostname)
+        -   [Changing IP Addresses](#changing-ip-addresses)
+        -   [Setting a Static IP](#setting-a-static-ip)
+        -   [Modifying /etc/hosts](#modifying-etc-hosts)
+        -   [DNS](#dns)
+        -   [Dynamic DNS](#dynamic-dns)
+        -   [Alternate DNS Techniques](#alternate-dns-techniques)
+            -   [xip.io](#xip-io)
+            -   [dnsmasq](#dnsmasq)
+        -   [Adding DNS Nameservers](#adding-dns-nameservers)
+        -   [TCP/UDP Port Configuration](#tcp-udp-port-configuration)
+        -   [HTTP Proxy](#http-proxy)
+        -   [Staging Cache & App HTTP
+            Proxy](#staging-cache-app-http-proxy)
+    -   [VM Filesystem Setup](#vm-filesystem-setup)
+    -   [Application Lifecycle Service Data Services vs. High Availability
+        Databases](#helion-data-services-vs-high-availability-databases)
+    -   [HTTPS & SSL](#https-ssl)
+        -   [Using your own SSL
+            certificate](#using-your-own-ssl-certificate)
+        -   [Adding Custom SSL Certs
+            (SNI)](#adding-custom-ssl-certs-sni)
+        -   [CA Certificate Chaining](#ca-certificate-chaining)
+        -   [Generating a self-signed SSL
+            certificate](#generating-a-self-signed-ssl-certificate)
+    -   [Quota Definitions](#quota-definitions)
+        -   [sudo](#sudo)
+        -   [Allowed Repositories](#allowed-repositories)
 
 General[](#general "Permalink to this headline")
 -------------------------------------------------
@@ -15,8 +45,7 @@ General[](#general "Permalink to this headline")
 After booting the VM, run `kato process ready all`
 before starting the following configuration steps. This command returns
 `READY` when all configured system processes have
-started, and is particularly important when using `kato`{.docutils
-.literal} commands in automated configuration scripts which run
+started, and is particularly important when using `kato` commands in automated configuration scripts which run
 immediately after boot (the
 [*--block*](/als/v1/admin/reference/kato-ref/#kato-command-ref-process-ready)
 option is useful in this scenario).
@@ -50,8 +79,7 @@ rename*](/als/v1/admin/reference/kato-ref/#kato-command-ref) command:
     $ kato node rename mynewname.example.com
 
 This command will change the system hostname in
-`/etc/hostname` and `/etc/hosts`{.docutils
-.literal}, as well as performing some internal configuration for
+`/etc/hostname` and `/etc/hosts`, as well as performing some internal configuration for
 Application Lifecycle Service such as generating a new server certificate for the
 [*Management
 Console*](/als/v1/user/console/#management-console).
@@ -181,8 +209,7 @@ services. To do so, run the following commands:
 
     $ sudo /etc/init.d/networking restart
 
-You will see a deprecation warning about the `restart`{.docutils
-.literal} option, which can safely be ignored in this context.
+You will see a deprecation warning about the `restart` option, which can safely be ignored in this context.
 
 **Note**
 
@@ -252,8 +279,7 @@ cluster nodes in `/etc/hosts`: the Cloud Controller
 and the RabbitMQ service in particular.
 
 Application Lifecycle Service will automatically configure `/etc/hosts`
-on the virtual machine with one entry for the `localhost`{.docutils
-.literal} loopback address and another for the [**RFC
+on the virtual machine with one entry for the `localhost` loopback address and another for the [**RFC
 1918**](http://tools.ietf.org/html/rfc1918) private IP address of
 the cluster's Primary node, for example "10.0.0.1" or "192.168.0.1". All
 communication between cluster nodes should be strictly through their
@@ -291,8 +317,7 @@ node, you will see a correspondence between the network interface
 `eth0` address and `/etc/hosts`
 as in the above example. On each of the *other nodes* in the cluster,
 for example DEA nodes, `eth0` will be configured
-with its own address on the same subnet, but `/etc/hosts`{.docutils
-.literal} will remain the same..
+with its own address on the same subnet, but `/etc/hosts` will remain the same..
 
 If modifying `/etc/hosts` becomes necessary because
 of a hostname change, you can simply edit it as in the following
@@ -304,8 +329,7 @@ example:
 
 The Application Lifecycle Service micro cloud uses [*multicast
 DNS*](/als/v1/user/reference/glossary/#term-multicast-dns). to
-broadcast its generated hostname (e.g. `helion-xxxx.local`{.docutils
-.literal}). This mechanism is intended for VMs running on a local
+broadcast its generated hostname (e.g. `helion-xxxx.local`). This mechanism is intended for VMs running on a local
 machine or subnet.
 
 For production use, the server will need:
@@ -432,16 +456,13 @@ The Application Lifecycle Service [*micro
 cloud*](/als/v1/user/reference/glossary/#term-micro-cloud) runs with
 the following ports exposed:
 
->   ------------------------------------------------------------------------
->   Port
->   Type
->   Service
->   ---------------- ------- -----------------------------------------------
->   22               25      80
->   tcp              tcp     tcp
->   ssh              smtp    http
->   ------------------------------------------------------------------------
->
+<table>
+<tr><td>Port</td><td>Type</td><td>Service</td></tr>
+<tr><td>22</td><td>tcp</td><td>ssh</td></tr>
+<tr><td>25</td><td>tcp</td><td>smtp</td></tr>
+<tr><td>80</td><td>tcp</td><td>http</td></tr>
+</table>
+
 On a production cluster, or a micro cloud running on a cloud hosting
 provider, only ports 22 (SSH), 80 (HTTPS) and 443 (HTTPS) need to be
 exposed externally (e.g. for the Router / Core node).
@@ -457,21 +478,18 @@ which ports are used by which components. **Source** nodes initiate the
 communication, **Destination** nodes need to listen on the specified
 port.
 
->   -----------------------------------------------------------------------------------------------------------------
->   Port Range
->   Type
->   Source
->   Destination
->   Required by
->   -------------- ------------------------------------------- --------------- ----------------- --------------------
->   22             4222                                        3306            5432              5454
->   tcp            tcp                                         tcp             tcp               tcp
->   all nodes      all nodes                                   dea,controller  dea,controller    all nodes
->   all nodes      controller                                  mysql nodes     postgresql nodes  controller
->   ssh/scp/sshfs  [*NATS*](/als/v1/user/reference/glossary/ MySQL           PostgreSQL        redis
->                  #term-nats)                                                                   
->   -----------------------------------------------------------------------------------------------------------------
->
+<table>
+<tr><td>Port Range</td><td>Type</td><td>Source</td><td>Destination</td><td>Required By</td></tr>
+<tr><td>22</td><td>tcp</td><td>all nodes</td><td>all nodes</td><td>ssh/scp/sshfs</td></tr>
+<tr><td>4222</td><td>tcp</td><td>all nodes</td><td>all nodes</td><td>dea,controller</td></tr>
+<tr><td>3306</td><td>tcp</td><td>dea,controller</td><td>mysql nodes</td><td>MySQL</td></tr>
+<tr><td>5432</td><td>tcp</td><td>all nodes</td><td>postgresql nodes</td><td>PostgreSQL</td></tr>
+<tr><td>5454</td><td>tcp</td><td>all nodes</td><td>controller</td><td>redis</td></tr>
+</table>
+   
+More on  [*NATS*](/als/v1/user/reference/glossary/#term-nats) communication
+    with the MBUS IP (core Cloud Controller)10 is available in the glossary.
+
 Each node can be internally firewalled using
 [iptables](http://manpages.ubuntu.com/manpages/man8/iptables.8) to
 apply the above rules.
@@ -508,10 +526,8 @@ If your network has an HTTP proxy, the helion client may attempt to
 use this when connecting to api.helion-xxxx.local and fail because the
 changes in `/etc/hosts` file are not reflected in
 the proxy. To work around this problem in Windows, enable
-`\*.local` in the `ProxyOverride`{.docutils
-.literal} registry key
-`HCU/Software/Microsoft/Windows/CurrentVersion/Internet Settings`{.docutils
-.literal}.
+`\*.local` in the `ProxyOverride` registry key
+`HCU/Software/Microsoft/Windows/CurrentVersion/Internet Settings`.
 
 In some cases, it may be a requirement that any HTTP request is first
 handled through an upstream or parent proxy (HTTP requests may not be
@@ -714,10 +730,9 @@ To do essentially the same operation manually (substituting
     $ openssl genrsa 2048 > host.key
     $ openssl req -new -x509 -nodes -sha1 -days 365 -key host.key -multivalue-rdn \
             -subj "/C=CA/emailAddress=email@mydomain.com/O=company_name/CN=*.mydomain.com/CN=mydomain.com" \
-            > host.crt
+            >host.crt
 
-For specific configurations that can be used in the `-subj`{.docutils
-.literal} option, see <http://www.openssl.org/docs/apps/req.html>.
+For specific configurations that can be used in the `-subj` option, see <http://www.openssl.org/docs/apps/req.html>.
 
 Following that, run:
 
@@ -789,41 +804,4 @@ parameter of the `cloud_controller.yml` file:
     - "deb http://security.ubuntu.com/ubuntu natty-security main universe"
 
 The file is located on the Application Lifecycle Service server at
-`~/helion/vcap/cloud_controller/config/cloud_controller.yml`{.docutils
-.literal}.
-
-### [Table Of Contents](/als/v1/index-2/)
-
--   [Detailed Configuration](#)
-    -   [General](#general)
-        -   [Changing the Password](#changing-the-password)
-    -   [Network Setup](#network-setup)
-        -   [Changing the Hostname](#changing-the-hostname)
-        -   [Changing IP Addresses](#changing-ip-addresses)
-        -   [Setting a Static IP](#setting-a-static-ip)
-        -   [Modifying /etc/hosts](#modifying-etc-hosts)
-        -   [DNS](#dns)
-        -   [Dynamic DNS](#dynamic-dns)
-        -   [Alternate DNS Techniques](#alternate-dns-techniques)
-            -   [xip.io](#xip-io)
-            -   [dnsmasq](#dnsmasq)
-        -   [Adding DNS Nameservers](#adding-dns-nameservers)
-        -   [TCP/UDP Port Configuration](#tcp-udp-port-configuration)
-        -   [HTTP Proxy](#http-proxy)
-        -   [Staging Cache & App HTTP
-            Proxy](#staging-cache-app-http-proxy)
-    -   [VM Filesystem Setup](#vm-filesystem-setup)
-    -   [Application Lifecycle Service Data Services vs. High Availability
-        Databases](#helion-data-services-vs-high-availability-databases)
-    -   [HTTPS & SSL](#https-ssl)
-        -   [Using your own SSL
-            certificate](#using-your-own-ssl-certificate)
-        -   [Adding Custom SSL Certs
-            (SNI)](#adding-custom-ssl-certs-sni)
-        -   [CA Certificate Chaining](#ca-certificate-chaining)
-        -   [Generating a self-signed SSL
-            certificate](#generating-a-self-signed-ssl-certificate)
-    -   [Quota Definitions](#quota-definitions)
-        -   [sudo](#sudo)
-        -   [Allowed Repositories](#allowed-repositories)
-
+`~/helion/vcap/cloud_controller/config/cloud_controller.yml`

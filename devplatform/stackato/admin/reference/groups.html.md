@@ -5,11 +5,20 @@ permalink: /als/v1/admin/reference/groups/
 <!--PUBLISHED-->
 
 Managing Groups, Users & Limits (DEPRECATED)[](#managing-groups-users-limits-deprecated "Permalink to this headline")
-======================================================================================================================
+===================================================================================================================
+[Managing Groups, Users & Limits (DEPRECATED)](#)
+    -   [Basic Group Management](#basic-group-management)
+    -   [Limits](#limits)
+        -   [Group-Level Limits](#group-level-limits)
+        -   [User-Level Limits](#user-level-limits)
+    -   [Managing Users and Groups](#managing-users-and-groups)
+        -   [Importing/Exporting](#importing-exporting)
 
-Warning
 
-Application Lifecycle Service Groups have been replaced by [*Organizations and
+
+##* Warning *
+
+Application Lifecycle Service Groups have been **replaced** by [*Organizations and
 Spaces*](/als/v1/user/deploy/orgs-spaces/#orgs-spaces). The following
 information applies to Application Lifecycle Service 2.10.x releases and is included to
 provide context for admins migrating to Application Lifecycle Service 3.0.
@@ -18,8 +27,7 @@ Application Lifecycle Service users can be assigned to specific groups, and each
 have a set of limits assigned to it regarding apps, services, and memory
 usage.
 
-To see commands related to groups, use `helion help`{.docutils
-.literal} or see the [*Command
+To see commands related to groups, use the `helion help` command or see the [*Command
 Reference*](/als/v1/user/reference/client-ref/#command-ref-client).
 
 You can also manage groups, users, and limits in the [*Management
@@ -191,14 +199,3 @@ Password hashes must be in bcrypt format (as exported with
 
 A `--dry-run` option is available if you would like
 to test the import/export before actually running it.
-
-### [Table Of Contents](/als/v1/index-2/)
-
--   [Managing Groups, Users & Limits (DEPRECATED)](#)
-    -   [Basic Group Management](#basic-group-management)
-    -   [Limits](#limits)
-        -   [Group-Level Limits](#group-level-limits)
-        -   [User-Level Limits](#user-level-limits)
-    -   [Managing Users and Groups](#managing-users-and-groups)
-        -   [Importing/Exporting](#importing-exporting)
-

@@ -47,8 +47,7 @@ the need for extensive reconfiguration. This buildpack has updated
 versions of all the frameworks available in previous versions of
 Application Lifecycle Service.
 
-To use the Legacy buildpack: specify the `framework:`{.docutils
-.literal} `type:` for your application (e.g. php,
+To use the Legacy buildpack: specify the `framework` type for your application (e.g. php,
 play, rails3, sinatra, java\_web, java\_ee, etc.). You can optionally
 set a specific `runtime:` as well. For example:
 
@@ -122,8 +121,7 @@ application to be executed. Here is the one from pet-clinic:
 
     web: java $JAVA_OPTS -jar target/dependency/jetty-runner.jar --port $PORT target/*.war
 
-And finally, add the jetty dependency in your `pom.xml`{.docutils
-.literal} in order to run your application:
+And finally, add the jetty dependency in your `pom.xml` in order to run your application:
 
     <build>
         ...

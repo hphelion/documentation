@@ -6,6 +6,24 @@ permalink: /als/v1/admin/server/logging/
 
 Log Streams[](#log-streams "Permalink to this headline")
 =========================================================
+   [Logyard](#logyard)
+    -   [Drains](#drains)
+        -   [System Drains](#system-drains)
+        -   [Log Format](#log-format)
+        -   [Saving Custom Log Formats](#saving-custom-log-formats)
+        -   [Custom Drains](#custom-drains)
+        -   [Application Drains](#application-drains)
+        -   [Drain Status](#drain-status)
+        -   [Keys](#keys)
+            -   [apptail](#apptail)
+            -   [event](#event)
+            -   [systail](#systail)
+        -   [Managing the systail stream](#managing-the-systail-stream)
+    -   [Configuration](#configuration)
+        -   [Drain Timeouts](#drain-timeouts)
+        -   [User Drain Limit](#user-drain-limit)
+        -   [Apptail Limits](#apptail-limits)
+    -   [Debugging Logyard](#debugging-logyard)
 
 Application and system logs in Application Lifecycle Service are aggregated into streams
 which can be viewed, tailed, filtered, and and sent via drains to other
@@ -431,26 +449,3 @@ Debugging Logyard[](#debugging-logyard "Permalink to this headline")
 Use `kato log stream debug` to monitor
 Logyard-related log activity. The command tails the logyard, apptail,
 systail, and logyard\_sieve streams.
-
-### [Table Of Contents](/als/v1/index-2/)
-
--   [Log Streams](#)
-    -   [Logyard](#logyard)
-    -   [Drains](#drains)
-        -   [System Drains](#system-drains)
-        -   [Log Format](#log-format)
-        -   [Saving Custom Log Formats](#saving-custom-log-formats)
-        -   [Custom Drains](#custom-drains)
-        -   [Application Drains](#application-drains)
-        -   [Drain Status](#drain-status)
-        -   [Keys](#keys)
-            -   [apptail](#apptail)
-            -   [event](#event)
-            -   [systail](#systail)
-        -   [Managing the systail stream](#managing-the-systail-stream)
-    -   [Configuration](#configuration)
-        -   [Drain Timeouts](#drain-timeouts)
-        -   [User Drain Limit](#user-drain-limit)
-        -   [Apptail Limits](#apptail-limits)
-    -   [Debugging Logyard](#debugging-logyard)
-
