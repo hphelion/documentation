@@ -137,6 +137,8 @@ For ESX deployments, you must install and configure two specific networks:
 
 You are responsible for the following before beginning the HP Helion OpenStack installation:
 
+- installing and configuring VMWare vSphere version 5.5;
+
 - providing the Customer Router and making sure the external, IPMI, and ESX networks are routed to/from the management network;
 
 - providing the Customer Router and making sure the external, IPMI, and service networks are routed to and from the management network;
