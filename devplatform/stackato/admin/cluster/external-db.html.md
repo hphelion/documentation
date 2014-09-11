@@ -124,7 +124,6 @@ If there are problems, check the corresponding logs on the database
 server. These are generally found in */var/log/postgresql* and
 */var/log/mysql*.
 
-Logs from Application Lifecycle Service can be viewed with `kato log tail`{.docutils
-.literal}:
+Logs from Application Lifecycle Service can be viewed with `kato log tail`:
 
     $ kato log tail postgresql_node

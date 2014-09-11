@@ -297,8 +297,7 @@ packages.
 ### OS Packages[](#os-packages "Permalink to this headline")
 
 OS packages can be added in an `ubuntu:` block
-within a `staging:` and/or `running:`{.docutils
-.literal} block. Plain strings are treated as package names:
+within a `staging:` and/or `running:` block. Plain strings are treated as package names:
 
     requirements:
       staging:
@@ -336,8 +335,7 @@ Example:
 
 For the installation of language modules, replacing the
 *requirements.txt* file. For
-[*Python*](/als/v1/user/deploy/languages/python/#python-index), `pypm:`{.docutils
-.literal} and `pip:` can be specified:
+[*Python*](/als/v1/user/deploy/languages/python/#python-index), `pypm:` and `pip:` can be specified:
 
     requirements:
       pypm:
@@ -346,8 +344,7 @@ For the installation of language modules, replacing the
       pip:
         - pycurl
 
-For [*Perl*](/als/v1/user/deploy/languages/perl/#perl-index), `ppm:`{.docutils
-.literal} or `cpan:` can be specified:
+For [*Perl*](/als/v1/user/deploy/languages/perl/#perl-index), `ppm:` or `cpan:` can be specified:
 
     requirements:
       ppm:
@@ -368,8 +365,7 @@ Syntax: \<int\> or \<int\>M - Memory in megabytes. eg. 256M
 
 Syntax: \<int\>G or \<float\>G - Memory in gigabytes. eg. 1.5G or 2G
 
-If not specified, user may be prompted during `helion push`{.docutils
-.literal}. Can also be specified on the command line (eg.
+If not specified, user may be prompted during `helion push`. Can also be specified on the command line (eg.
 `helion push --mem 256M`).
 
 Example:
@@ -387,8 +383,7 @@ Syntax: \<int\> or \<int\>M - Disk in megabytes. eg. 768M
 Syntax: \<int\>G or \<float\>G - Disk in gigabytes. eg. 1.5G or 2G
 
 If not specified, 2GB of disk space is allocated. Can also be specified
-on the command line (eg. `helion push --disk 768M`{.docutils
-.literal}).
+on the command line (eg. `helion push --disk 768M`).
 
 Example:
 
@@ -532,9 +527,7 @@ If the application exists solely to run commands via
 [*cron*](#stackato-yml-cron), a dummy command such as '*sleep 365d*'
 should be specified.
 
-The `$PROCESSES_WEB` and `$STACKATO_UWSGI`{.docutils
-.literal} variables can also be used with `processes: web:`{.docutils
-.literal}.
+The `$PROCESSES_WEB` and `$STACKATO_UWSGI` variables can also be used with `processes: web:`.
 
 `$PROCESSES_WEB` contains the command that is used
 to start the web application, if you want to override the default

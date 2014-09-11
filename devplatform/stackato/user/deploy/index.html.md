@@ -241,14 +241,12 @@ environment variables, as well as all variables that start with
 `PERL`, `PYTHON`,
 `STACKATO`, `VCAP`,
 `BUNDLE`, `LEIN`,
-`GEM`, `RACK`, `RAILS`{.docutils
-.literal}, or `RUBY` or `http`
+`GEM`, `RACK`, `RAILS`, `RUBY` or `http`
 are exported to the top of the crontab file. When applicable, the
 following database related environment variables are also added:
 `DATABASE_URL`, `MYSQL_URL`,
 `POSTGRESQL_URL`, `REDIS_URL`,
-`MONGODB_URL`, and `RABBITMQ_URL`{.docutils
-.literal}.
+`MONGODB_URL`, and `RABBITMQ_URL`.
 
 This happens after the `pre-running` hook has
 executed, so any changes made by those commands will be included in the

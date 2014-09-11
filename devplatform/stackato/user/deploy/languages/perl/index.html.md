@@ -51,8 +51,7 @@ Database Services[](#database-services "Permalink to this headline")
 
 Authentication details for your configured database services can be
 found in the `$ENV` variable, under
-`DATABASE_URL` or `VCAP_SERVICES`{.docutils
-.literal}. Here is an example of getting the correct credentials.
+`DATABASE_URL` or `VCAP_SERVICES`. Here is an example of getting the correct credentials.
 
 ### MYSQL\_URL[](#mysql-url "Permalink to this headline")
 
@@ -140,8 +139,7 @@ Modules required by your app can be specified by adding a
 
 **Note**
 
-If you want to use cpan to download the modules, change `ppm:`{.docutils
-.literal} to `cpan:`.
+If you want to use cpan to download the modules, change `ppm:` to `cpan:`.
 
 Alternatively, include a top-level *requirements.txt* file. The
 requirements.txt for a minimal Mojolicious app would be just:
@@ -262,8 +260,7 @@ It is possible to serve static files with uWSGI using
 [*stackato.yml*](/als/v1/user/deploy/stackatoyml/#stackato-yml) file to specify
 folders that will be served statically and not by the app.
 
-To make a single folder serve statically, use `--check-static`{.docutils
-.literal}:
+To make a single folder serve statically, use `--check-static`:
 
     processes:
         web: $STACKATO_UWSGI --check-static $HOME/<folder>

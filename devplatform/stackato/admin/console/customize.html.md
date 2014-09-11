@@ -68,8 +68,7 @@ for simple use cases.
 
 ### Support Page[](#support-page "Permalink to this headline")
 
-The HTML/EJS to show on the Support page. The [*settings-variables*](#customize-settings-vars) and `support_email`{.docutils
-.literal} variable (see Settings \> Controller) are available.
+The HTML/EJS to show on the Support page. The [*settings-variables*](#customize-settings-vars) and `support_email` variable (see Settings \> Controller) are available.
 
 ### Eula Content[](#eula-content "Permalink to this headline")
 

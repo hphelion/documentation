@@ -197,8 +197,7 @@ compatible with the Core node before attaching it.
 Roles can be added (or removed) on the new node after attaching using
 the [*kato role*](/als/v1/admin/reference/kato-ref/#kato-command-ref-role-add)
 command, but it is generally preferable to enable roles during the
-`kato attach` step using the `-e`{.docutils
-.literal} (enable) option as described below for each of the node types.
+`kato attach` step using the `-e` (enable) option as described below for each of the node types.
 
 ### Router Nodes[](#router-nodes "Permalink to this headline")
 
@@ -485,13 +484,11 @@ high-availability filesystem server. For example:
 
     -   Mount the shared filesystem on the mount point. [[1]](#id4)
 
-    -   Set aside the original `/home/helion/helion/data`{.docutils
-        .literal}:
+    -   Set aside the original `/home/helion/helion/data`:
 
             $ mv /home/helion/helion/data /home/helion/helion/data.old
 
-    -   Create a symlink from `/home/helion/helion/data`{.docutils
-        .literal} to the mount point:
+    -   Create a symlink from `/home/helion/helion/data` to the mount point:
 
             $ ln -s /mnt/controller /home/helion/helion/data
 
@@ -557,8 +554,7 @@ ultimately have unique hostnames. After setup, rename the Core node
 
 ### Set up Supplemental Routers[](#set-up-supplemental-routers "Permalink to this headline")
 
-As with the Core node, you will need to run `kato node rename`{.docutils
-.literal} on each router with the same API endpoint hostname. Run the
+As with the Core node, you will need to run `kato node rename`on each router with the same API endpoint hostname. Run the
 following on each Router:
 
     $ kato node rename *hostname.example.com*

@@ -86,12 +86,10 @@ service*](/als/v1/user/reference/client-ref/#command-services) command.
 
 ### Harbor Environment Variables[](#harbor-environment-variables "Permalink to this headline")
 
-If there is only one Harbor service, the `STACKATO_HARBOR`{.docutils
-.literal} environment variable can be used to get the internal port
+If there is only one Harbor service, the `STACKATO_HARBOR` environment variable can be used to get the internal port
 number.
 
-If there is more than one Harbor service, `STACKATO_HARBOR`{.docutils
-.literal} is not available. Instead, a custom
+If there is more than one Harbor service, `STACKATO_HARBOR` is not available. Instead, a custom
 `STACKATO_HARBOR_<SERVICE_NAME>` environment
 variable will be created for each harbor service (service name
 upper-cased with hyphens replaced by underscores).

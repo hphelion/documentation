@@ -164,8 +164,7 @@ Once you have written a plugin, install the file in
 */s/etc/autoscaling/autoscaling.yaml* under the
 `platform_config` key in a new section corresponding
 to the plugin name (in this case above: `skeleton`).
-Enable the plugin by adding it to the `enabled_plugins`{.docutils
-.literal} list.
+Enable the plugin by adding it to the `enabled_plugins` list.
 
 Troubleshooting[](#troubleshooting "Permalink to this headline")
 -----------------------------------------------------------------

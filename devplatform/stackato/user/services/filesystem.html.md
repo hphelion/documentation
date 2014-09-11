@@ -162,10 +162,9 @@ We need to add the following to our stackato.yml:
 
 **Note**
 
-When moving files onto the mounted filesystem with a `mv`{.docutils
-.literal} hook, you may see an error message similar to:
+When moving files onto the mounted filesystem with a `mv` hook, you may see an error message similar to:
 
     mv: failed to preserve ownership for... Permission denied
 
-This is a misleading warning, as the files will actually be moved with
+This is a misleading warning, as the files **will** actually be moved with
 the correct permissions and ownership.

@@ -83,10 +83,8 @@ megabytes. Can also be specified in gigabytes in the format
 
 `--appuris` sets the number of app URIs allowed.
 
-`--sudo` sets whether or not the `sudo`{.docutils
-.literal} command can be used. Use `true` or
-`false`. The default setting is `false`{.docutils
-.literal}.
+`--sudo` sets whether or not the `sudo` command can be used. Use `true` or
+`false`. The default setting is `false`.
 
 To view the current limits for a group:
 
@@ -119,10 +117,8 @@ megabytes. Can also be specified in gigabytes in the format
 
 `--appuris` sets the number of app URIs allowed.
 
-`--sudo` sets whether or not the `sudo`{.docutils
-.literal} command can be used. Use `true` or
-`false`. The default setting is `false`{.docutils
-.literal}.
+`--sudo` sets whether or not the `sudo` command can be used. Use `true` or
+`false`. The default setting is `false`.
 
 Use `helion limits` to see limits on the user
 level:

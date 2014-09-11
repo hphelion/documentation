@@ -192,14 +192,11 @@ node:
     0 3 * * * su - helion /bin/bash -c '/home/helion/bin/kato data export --cluster /mnt/nas/helion-backup.tgz'
 
 This runs `kato data export --cluster` every morning
-at 3AM as `root` using the `helion`{.docutils
-.literal} user's login environment (required) and saves a .tgz file to a
+at 3AM as `root` using the `helion` user's login environment (required) and saves a .tgz file to a
 mounted external filesystem.
 
-Scheduled (non-interactive) backups using the `kato export`{.docutils
-.literal} command will need to be run by `root` as
-some shell operations performed in the export require `sudo`{.docutils
-.literal} when run interactively. For clusters, passwordless [SSH key
+Scheduled (non-interactive) backups using the `kato export` command will need to be run by `root` as
+some shell operations performed in the export require `sudo` when run interactively. For clusters, passwordless [SSH key
 authentication](https://help.ubuntu.com/community/SSH/OpenSSH/Configuring#disable-password-authentication)
 between the Core node and all other nodes will also need to be set up.
 The command should be run on the node hosting the 'filesystem' role, as

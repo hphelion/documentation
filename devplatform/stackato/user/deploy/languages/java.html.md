@@ -194,8 +194,7 @@ located in *src/main/resources/META-INF/persistence.xml*.
 
 ### Service Configuration[](#id3 "Permalink to this headline")
 
-For JavaEE applications, you must create a `persistence-unit`{.docutils
-.literal} in your *persistence.xml* file with the name of your database
+For JavaEE applications, you must create a `persistence-unit` in your *persistence.xml* file with the name of your database
 service.
 
 For example in *stackato.yml*:

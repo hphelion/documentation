@@ -28,8 +28,7 @@ application:
         web: gunicorn helion.wsgi -b 0.0.0.0:$PORT
 
 This buildpack uses Python 2.7 by default. To specify Python 3.3, create
-a *runtime.txt* file setting the version (i.e. `python-3.3`{.docutils
-.literal}) and use the \$PYTHON\_VERSION environment variable in the
+a *runtime.txt* file setting the version (i.e. `python-3.3`) and use the \$PYTHON\_VERSION environment variable in the
 Procfile `web:` command. For example:
 
     web: python$PYTHON_VERSION app.py
@@ -166,8 +165,7 @@ It is possible to serve static files with uWSGI using
 [*stackato.yml*](/als/v1/user/deploy/stackatoyml/#stackato-yml) file to specify
 folders that will be served statically and not by the app.
 
-To make a single folder serve statically, use `--check-static`{.docutils
-.literal}:
+To make a single folder serve statically, use `--check-static`:
 
     processes:
         web: $STACKATO_UWSGI --check-static $HOME/<folder>
@@ -207,8 +205,7 @@ gunicorn:
       pypm: [gunicorn]
       pip: ["http://www.djangoproject.com/download/1.4-beta-1/tarball/#egg=django-1.4b1"]
 
-The custom web server must bind to IP address `0.0.0.0`{.docutils
-.literal} and port `$PORT`. The same trick can be
+The custom web server must bind to IP address `0.0.0.0` and port `$PORT`. The same trick can be
 used to serve non-WSGI applications (such as Tornado). See the
 [bottle-py3 example](https://github.com/Stackato-Apps/bottle-py3) sample
 for an example.
@@ -269,11 +266,9 @@ tornado-chat-mongo sample installs "pycurl" using
       pip:
         - pycurl
 
-If your application already contains a `requirements.txt`{.docutils
-.literal} file, that will be automatically used to install dependencies;
+If your application already contains a `requirements.txt` file, that will be automatically used to install dependencies;
 no need to specify them manually in stackato.yml. The name of this file
-can be overriden by setting the `PIP_REQUIREMENTS_FILE`{.docutils
-.literal} environment variable.
+can be overriden by setting the `PIP_REQUIREMENTS_FILE` environment variable.
 
 **Note**
 

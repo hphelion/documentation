@@ -435,8 +435,7 @@ described below:
     lines per second that can be read from an application log file. The
     `apptail` process reads (at most) the specified
     number of log lines per second, after which it will wait for one
-    second before resuming. A line similar to the `read_limit`{.docutils
-    .literal} warning above is inserted in the stream to explain the
+    second before resuming. A line similar to the `read_limit` warning above is inserted in the stream to explain the
     missing data.
 
     To change the rate\_limit to 300 lines:

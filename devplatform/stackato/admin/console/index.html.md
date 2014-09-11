@@ -104,8 +104,7 @@ of options.
 The Application Lifecycle Service Management Console will periodically send non-identifying
 pingbacks (Application Lifecycle Service version number and UUID) to HP
 servers to help us improve the web console experience. You can disable
-this by setting `theme_settings['pingback_allowed'] = false;`{.docutils
-.literal} in the *settings.js* file described in the [*Theming and
+this by setting `theme_settings['pingback_allowed'] = false;` in the *settings.js* file described in the [*Theming and
 Customization*](/als/v1/admin/console/customize/#customize) section.
 
 Welcome[](#welcome "Permalink to this headline")
@@ -272,8 +271,7 @@ system.
     must be accessible from the controller node.
 -   **Allowed Repos**: Debian package repositories allowed in
     application containers. End users can install additional packages
-    (e.g. with `apt-get` or `aptitude`{.docutils
-    .literal}) only from these repositories.
+    (e.g. with `apt-get` or `aptitude`) only from these repositories.
 
 ### Applications[](#console-settings-applications "Permalink to this headline")
 

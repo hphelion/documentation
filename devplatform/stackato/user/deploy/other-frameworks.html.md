@@ -74,8 +74,7 @@ framework.
 If the application does not serve web requests, it may appear in the
 Management Console or `helion apps` command as not
 running. To verify a non-web application is actually running, use
-`helion logs` or `helion ssh`{.docutils
-.literal}.
+`helion logs` or `helion ssh`.
 
 See the
 [helion-worker](https://github.com/helion-apps/helion-worker/tree/master)

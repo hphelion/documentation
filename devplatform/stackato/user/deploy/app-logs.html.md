@@ -38,13 +38,11 @@ logs*](/als/v1/user/reference/client-ref/#command-logs) command:
 
     $ helion logs myapp
 
-To limit the number of lines displayed, use the `--num`{.docutils
-.literal} option:
+To limit the number of lines displayed, use the `--num` option:
 
     $ helion logs myapp --num 50
 
-To view log stream as it is updated, use the `--follow`{.docutils
-.literal} option:
+To view log stream as it is updated, use the `--follow` option:
 
     $ helion logs myapp --follow
 
@@ -250,8 +248,7 @@ files yourself using `cron` and
 operations in different ways. Check for incompatibilities with
 `logrotate` before implementing log rotation scheme using it.
 
-1.  Add a cron key in *stackato.yml* to run `logrotate`{.docutils
-    .literal}. Set STACKATO\_CRON\_INSTANCES to "all" to specify that
+1.  Add a cron key in *stackato.yml* to run `logrotate`. Set STACKATO\_CRON\_INSTANCES to "all" to specify that
     the job should be run in all application instances. For example:
 
         env:

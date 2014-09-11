@@ -164,8 +164,7 @@ need to have configuration files for the 'oracledb\_gateway' and
 'oracledb\_node' processes. These supervisord config files are in the
 *helion-conf* sub-directory of the add-on.
 
-First, stop `kato` and `supervisord`{.docutils
-.literal}:
+First, stop `kato` and `supervisord`:
 
     $ kato stop
     ...

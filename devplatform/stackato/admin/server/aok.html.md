@@ -64,8 +64,7 @@ There are currently two supported strategies:
     them automatically. The LDAP server must return an email address for
     the user to allow them to log in to Application Lifecycle Service. AOK will look for the
     email address under the `mail`,
-    `email`, and `userPrincipalName`{.docutils
-    .literal} attributes.
+    `email`, and `userPrincipalName` attributes.
 
     LDAP groups are not currently supported as a visible construct in
     Application Lifecycle Service.
@@ -154,8 +153,7 @@ To add an attribute to the 'email' array:
 
     kato config push aok strategy/ldap/email "ADMailAcct"
 
-To set the entire array in one step, use the `--json`{.docutils
-.literal} option:
+To set the entire array in one step, use the `--json` option:
 
     kato config set --json aok strategy/ldap/email '["mail","ADMailAcct", "email"]'
 

@@ -45,8 +45,7 @@ Papertrail[](#papertrail "Permalink to this headline")
 
 **Note**
 
-Papertrail requires systail log lines to have `<13>l`{.docutils
-.literal} at the beginnging of each line. Make sure the drain you are
+Papertrail requires systail log lines to have `<13>l` at the beginnging of each line. Make sure the drain you are
 forwarding is formatted this way (see example in [*Saving Custom Log
 Formats*](/als/v1/admin/server/logging/#logging-drains-save-format)).
 
