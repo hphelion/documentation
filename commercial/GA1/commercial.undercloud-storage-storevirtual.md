@@ -80,16 +80,16 @@ To register the cluster using Undercloud Horizon Dashboard, do the following:
    
    * In the **Password** box, enter the password of the management group where VSA cluster is present.
    
-   * In the **Port** box, enter the default Port number for accessing VSA using SSH.
+   * In the **Port** box, enter the port number for the SSH access or select the default value shown in the UI.
    
    * Click **Done** to save the details. 
 
-    On successful registration, the cluster is added and is listed as the *Registered*.
+    On successful registration, the cluster is added and is listed as *Registered*.
 
 
 ### Edit a cluster ###{#edit-cluster}
 
-**Note**: Ensure that you edit the VSA cluster only after modifying the details in the management group using CMC or CLIQ tool, else the updation of VSA cluster  fails.
+**Note**: Ensure that you edit the VSA cluster only if there are any updates done through the CMC or the CLIQ for the selected cluster. After editing the details, the backend data should also be updated so that cinder config has the updated cluster information.
 
 To edit a cluster, do the following:
 
@@ -107,6 +107,9 @@ To edit a cluster, do the following:
 
 
 ### Unregister a cluster ###{unregister-cluster}
+
+**Note**: Before you unregister the cluster, remove the backend associated with it. Detach the volumes or migrate as appropriate as the volumes from this cluster backend will no longer be available.
+
 
 Unregistering a cluster, removes it from the cloud inventory.
 
