@@ -30,7 +30,7 @@ The EON client CLI package provides a http-client coupled command line tool for 
 
 The Following sections lists the sub-commands and mandatory commands that can be used.
 
-* [Mandatory Commands](#Mandatory-commands)
+* [Mandatory commands](#mandatory-commands)
 * [Lists of sub-commands](#lists-of-commands)
 
 

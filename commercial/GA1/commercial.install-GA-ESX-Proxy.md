@@ -176,7 +176,7 @@ To deploy the ESX compute proxy using the EON CLI on the undercloud node:
 		netmask= enter the compute proxy netmask
 		gateway= enter the compute proxy gateway
 
-2. Use the EON CLI to deploy proxy VM. For details refer to the [EON CLI](/openstack/services/eon/overview/).
+2. Use the [HP EON servcie CLI](/helion/openstack/ga/services/eon/overview/) to deploy proxy VM. For details refer to the [EON CLI](/helion/openstack/ga/undercloud/eon/cli/ ).
 
 		source /root/stackrc
 		eon vcenter-add –name=<VCENTER_NAME> --ip-address=<VCENTER_IP_ADDRESS> --username=<VCENTER_USERNAME> --password=<VCENTER_PASSWORD> --port=<VCENTER_PORT> --proxy-config-file=<COMPUTE PROXY CONFIG FILE>
@@ -226,9 +226,19 @@ Use the following steps to configure SSL between vCenter and the proxy VM, using
 
 3. **REQUIRED** Provide the FQDN host-name of the vCenter instead of teh ip-address in text box.
 
+## Next Steps
 
+- Deploy the Open vSwitch vApp **(REQUIRED)**. 
 
---->
+	If you have not deployed the HP Virtual Cloud Networking's Open vSwitch vApp (OVSvApp), see the [Deploying and configuring OVSvApp for HP Virtual Cloud Networking (VCN) on ESX hosts](/helion/openstack/install/ovsvapp/) document for complete instructions.
+
+	OVSvApp must be installed for HP Helion OpenStack environment to provision VMs in your VMware vCenter environment. Once deployed, OVSvApp appliance enables networking between the tenant Virtual Machines (VMs).
+
+- Install DNS as a service (DNSaaS) (Optional).
+
+	If you have not installed DNSaaS, see [DNSaaS Beta Installation and Configuration](/helion/openstack/install/dnsaas/).
+
+	DNSaaS is our managed DNS service, based on the OpenStack Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

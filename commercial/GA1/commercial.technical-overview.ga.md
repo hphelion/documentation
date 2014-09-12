@@ -166,7 +166,7 @@ The logical networks listed in the following table are implemented as VLANs on t
 <tr style="background-color: white; color: black;">
     <td><b>ESX</b></td>
     <td> 
-     Connects for the traffic between OVSvApp VMs running on every ESX Host, Nova and the vCenter Proxy that exists for every vCenter, and vCenter Proxy to communicate with the message queue for Cinder and Nova. Also, connects EON to communicate with the vCenter server. </td>
+     Connects to the traffic between OVSvApp VMs running on every ESX Host, Nova and the vCenter Proxy that exists for every vCenter, and vCenter Proxy to communicate with the message queue for Cinder and Nova. Also, connects EON to communicate with the vCenter server. </td>
     <td>tagged</td>
     <td>eth0 or<br>bond0</td>
   </tr>
@@ -436,7 +436,7 @@ The following table briefly describes the additional services in HP Helion OpenS
 
 The HP Helion OpenStack High Availability (HA) protects the system downtime and data loss failure. HA configuration is implemented for the above listed OpenStack services and the underlying MSQL database and RabbitMQ server.
 
-For more details on HA configuration, refer to [OpenStack HA Guide](http://docs.openstack.org/high-availability-guide/content/index.html).
+For more details on HA configuration, refer to [HP Helion Openstack&#174; High Availability](/helion/openstack/ga/high-availability/) and [OpenStack HA Guide](http://docs.openstack.org/high-availability-guide/content/index.html).
 
 
 

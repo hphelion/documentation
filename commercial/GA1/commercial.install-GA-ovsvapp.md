@@ -92,6 +92,14 @@ You must upload the OVSvApp appliance to one of the ESXi hosts that is hosting V
 
 The deploy process installs the OVSvApp appliance as a virtual machine, which is referred to as *appliance VM* in this document.
 
+**Note**
+
+* OVSvAPP VMs are created one-by-one on each ESXi host. 
+* The IP Address assignment to OVSvAPP VM is manual. The Administrator needs to keep a separate pool of IP addresses from management VLAN to be assigned to these VMs. These IP addresses must be assigned to the Ethernet interfaces connecting to **Management Port Group**.
+* Provide the DV ports in the `ovs.ini`. Make sure the dv ports are attached with the proper hosts
+
+To deploy the OVSvApp appliance:
+
 1. Create a directory `/ovsvapp` on any server in the Helion environment and upload `ovsvapp.tgz`. Extract the `ovsvapp.tgz` and locate the `hp-ovsvapp` directory. In the directory, locate  `overcloud_esx_ovsvapp.ova`. This is the OVSvAPP appliance.
 
 2. Use the the vSphere client to upload the `overcloud_esx_ovsvapp.ova` file to one of the ESXi hosts in your data center: 
@@ -388,7 +396,22 @@ Enter the following commands to stop and restart the HP VCN networking service:
 
 To uninstall VCN on ESXi hosts, access the ESXi hosts from vSphere Client, and delete each OVSvApp VM.
 
+
+## Next Steps
+
+- Deploy vCenter ESX Compute proxy manually **(REQUIRED)**
+
+	If you have not deployed the vCenter ESX compute proxy, see [HP Helion OpenStack&#174; Deploy vCenter ESX compute proxy](/helion/openstack/ga/install/esx/proxy/).
+
+- Install DNS as a service (DNSaaS) (Optional).
+
+	If you have not installed DNSaaS, see [DNSaaS Beta Installation and Configuration](/helion/openstack/install/dnsaas/).
+
+	DNSaaS is our managed DNS service, based on the OpenStack Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.
+
+
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
 
 ----
 ####OpenStack trademark attribution
