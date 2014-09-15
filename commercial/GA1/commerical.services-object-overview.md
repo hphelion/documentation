@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Object Operations Service Overview"
-permalink: /helion/openstack/gaS/services/object/overview/
+permalink: /helion/openstack/ga/services/object/overview/
 product: commercial.ga
 
 ---
@@ -46,10 +46,11 @@ HP Helion Openstack Object Operation service will have swift cluster as a part o
 
 ##Scale-out Swift Architecture
 
-With the concept of storage policy HP Helion allows you to deploy scale out Swift cluster. By default, two Swift nodes (termed as start-up node) are deployed during installation of HP Helion OpenStack. Swift cluster configured storage-policy:0 for internal purpose as a part of its deployment. Object ring (for example, object-ring:0) associated with storage-policy:0 is used to store data for internal services like Glance, Sherpa etc. The scale out object storage defines a new policy, storage-policy:1. Object ring (object-ring:1) associated with storage-policy:1 is used to store data for end cloud user. Once storage-policy:1 is created it becomes a default storage policy and a new container will use this ring to store objects. 
+HP Helion OpenStack allows you to deploy scale out Swift cluster. By default, two Swift nodes are deployed during installation of HP Helion OpenStack. Swift cluster configured storage-policy:0 for internal purpose as a part of its deployment. Object ring (for example, object-ring:0) associated with storage-policy:0 is used to store data for internal services like Glance, Sherpa etc. 
+
+The scale out object storage defines a new policy, storage-policy:1. Object ring (object-ring:1) associated with storage-policy:1 is used to store data for end cloud user. Once storage-policy:1 is created it becomes a default storage policy and a new container will use this ring to store objects. 
 
 Note that you can still continue to use storage-policy:0 if you continue to use old container to store data.
-
 
 
 
@@ -78,7 +79,7 @@ By deploying scale-out swift you can create storage-policy:1 for object-ring:1, 
 
 ###Deployment of scale-out Swift
 
-This section describes the procedure for the deployment of scale out swift.
+The following diagram depicts a simplified deployment scenario of cale out swift.
 
 * with one object ring
 * different object storage ring using Overcloud controller nodes
@@ -115,12 +116,11 @@ For example:
  -p cpus=18 -p memory_mb=78000 -p local_gb=500 -p cpu_arch=amd64 -i ipmi_address=10.10.10.10 -i ipmi_username=admin -i ipmi_password=password
 
 
-2. Create port, enter MAC address and Node ID  using the following ironic command: 
+3.Create port, enter MAC address and Node ID  using the following ironic command: 
  	
  		 ironic create-port -a $MAC -n $NODE_ID
-
  
-3. Enter `ironic node-list` to verify the successful registration of the baremetal node.
+4.Enter `ironic node-list` to verify the successful registration of the baremetal node.
 
 
 ####Deploying Swift nodes for scale out
@@ -135,7 +135,7 @@ Perform the following steps to deploy scale out swift nodes:
 
  `cp /root/tripleo/tripleo-incubator/scripts/ee-config.json /root/overcloud-config.json`
 
-3. Enter `cat /root/overcloud-config.json`
+3.Enter `cat /root/overcloud-config.json`
 
 The Overcloud configuration file will be displayed as the sample below:
 
