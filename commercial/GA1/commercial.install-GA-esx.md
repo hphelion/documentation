@@ -33,20 +33,15 @@ The installation and configuration process for ESX consists of the following gen
 
 * [Verify Prerequisites](#pre)
 * [Review the ESX deployment architecture](#deploy-arch)
-* [Perform additional network requirements](#networkreq)
 * [Downloading the installation packages](#getinstall)
 * [Starting the installation](#install)
    * [Configuring proxy information](#proxy)
    * [Unpacking installation file](#unpackinstall)
    * [Installing the seed VM and building your cloud](#startseed)
 * [Verifying your installation](#verifying-your-installation)
-   * [Connecting to Horizon console](#connectconsole)
-   * [Connecting to to Monitoring UI](#monitoring)
-* [Deploying Open vSwitch vApp](#ovsvapp)
-* [Installing DNS as a service](#configure)
-* [Next steps](#next-steps)
- 
-
+   * [Connecting to the overcloud Horizon console](#connectconsole)
+   * [Connecting to the undercloud Horizon console](#monitoring)
+* [Next steps](#next-steps) 
 
 ## Verify Prerequisites ## {#pre}
 
@@ -54,7 +49,7 @@ To ensure successful installation, please read through the topics before you sta
 
 * Review the [support matrix](/helion/openstack/ga/support-matrix/) for information on the supported hardware and software.
 * Make sure your environment meets the [hardware and network configuration requirements](/helion/openstack/ga/install/prereqs/). 
-* [Perform required pre-installation tasks](/helion/openstack/ga/install/prereqs/)
+* [Perform required pre-installation tasks](/helion/openstack/ga/install/prereqs/).
 
 ## Review the ESX deployment architecture ## {#deploy-arch}
 
@@ -62,11 +57,17 @@ The following diagram depicts the required network topology for a KVM installati
 
 <a href="javascript:window.open('/content/documentation/media/commercial_esx_network_architecture.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack architecture diagram for ESX (opens in a new window)</a>
 
-For detailed network requirements, see [HP Helion OpenStack&#174; Installation: Before you begin](/helion/openstack/ga/install/prereqs/#network_prepare).
+For detailed network requirements, see [HP Helion OpenStack&#174; Installation: Prerequisites](/helion/openstack/ga/install/prereqs/#network_prepare).
 
 
 ## Download the installation packages {#getinstall}
 Before you begin, you must download the required HP Helion OpenStack installation packages:
+
+1. Log in to your install system as root:
+
+		sudo su -
+
+2. Register and then log in to download the required installation packages from [HP Helion OpenStack product installation](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221247%22%7D/Show).
 
 ***QUESTION: New files names?***
 <table style="text-align: left; vertical-align: top; width:650px;">
@@ -75,16 +76,9 @@ Before you begin, you must download the required HP Helion OpenStack installatio
 	
 <td><b> Installation package </b></td><td><b>File name</b></td>
 <tr style="background-color: white; color: black;">
- <td>HP Helion OpenStack</td><td>HPHelionOpenStack_June30.tgz</td></tr>
+ <td>HP Helion OpenStack</td><td>HPHelionOpenStack.tgz</td></tr>
 </table>
 
-1. Log in to your install system as root:
-
-        sudo su -
-
-2. Register and then log in to download the required installation packages from this site:
-
-    [HP Helion OpenStack product installation](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221247%22%7D/Show)
 
 ## Install HP Helion Openstack ## {#install}
 
@@ -98,16 +92,16 @@ Make sure you have met all the hardware requirements and have completed the requ
 
 ### Unpack the installation file ### {#unpackinstall}
 
-1. Ensure you are logged into your install system as root; otherwise, log in as root:
+1.Log into your install system as root.
 
 		sudo su -
 
-2. Create a directory named `work`:
+2. Create a directory named `work`.
 
 		mkdir /root/work
 		cd /root/work
 
-3.  Extract the kit to the `work` directory:
+3.  Extract the installation package to the `work` directory:
 
 		tar zxvf /root/<kit name>.tgz
 
@@ -123,11 +117,11 @@ Make sure you have met all the hardware requirements and have completed the requ
 
 		"Wed Sept 23 11:25:10 IST 2014 --- completed setup seed"
 
-2 Login to the seed VM using the following command:
+2. Login to the seed VM using the following command:
 
 		ssh root@192.0.2.1
 
-3. Ensure the information in the [`baremetal.csv` configuration file](/helion/openstack/ga/install/prereqs/#req-info) file is correct and in the following format and upload THE FILE to `/root`.
+3. Make sure the information in the [`baremetal.csv` configuration file](/helion/openstack/ga/install/prereqs/#req-info) file is correct and in the following format and upload the file to `/root`.
 		<mac_address>,<ipmi_user>,<ipmi_password>,<ipmi_address>,<no_of_cpus>,<memory_MB>,<diskspace_GB>
 
 	***QUESTION: Must use IPMI user vs ILO user in beta?***
@@ -141,9 +135,9 @@ Make sure you have met all the hardware requirements and have completed the requ
 		78:e7:d1:22:5d:a8,administrator,password,192.168.11.4,12,32768,2048
 		78:e7:d1:22:52:9b,administrator,password,192.168.11.6,12,32768,2048
     
-	**Note:** For more information on creating this file, refer to [Creating the baremetal.csv file](/helion/openstack/ga/install/prereqs/#req-info) on the *Before you begin* page.
+	**Note:** For more information on creating this file, refer to [Creating the baremetal.csv file](/helion/openstack/ga/install/prereqs/#req-info) on the *Prerequisites* page.
 
-4. [Optional] If you have installed the IPMItool, use it to verify that network connectivity from the seed VM to the baremetal servers in your baremetal.csv is working.
+4. [Optional] If you have installed the IPMItool, use it to verify that network connectivity from the seed VM to the baremetal servers in your `baremetal.csv` is working.
 
 	***QUESTION: Still optional? Not in https://rndwiki2.atlanta.hp.com/confluence/display/cloudos/Cloud+type+ESX+installation.***
 
@@ -162,9 +156,9 @@ Make sure you have met all the hardware requirements and have completed the requ
 		export VCENTER_CLUSTERS="<Cluster1>","<Cluster2>","<Cluster3>","<Cluster 4>"
 		export ENABLE_VSA="False"
 
-5. Manually power off each baremetal system specified in /root/baremetal.csv before proceeding with the installation. 
+5. Manually power off each baremetal system specified in your `baremetal.csv` before proceeding with the installation. 
     
-    **IMPORTANT:** Ensure that each system is configured in the BIOS to stay powered off in the event of being shutdown rather than automatically restarting.
+    **IMPORTANT:** Make sure that each system is configured in the BIOS to stay powered off in the event of being shutdown rather than automatically restarting.
 
 9. Release floating IP addresses for networking.
 
@@ -177,15 +171,53 @@ Make sure you have met all the hardware requirements and have completed the requ
 		# export FLOATING_START=<Start IP Address>
 		# export FLOATING_END=<End IP Address>
 
-    **For example**:
-
-		# export FLOATING_START=192.0.2.129
-		# export FLOATING_END=192.0.2.200
-
 	**Note:** If the above settings are changed, set the 'NeutronPublicInterfaceDefaultRoute' variable to the actual gateway for the customized IP range.
 
-10. Use the following commands to set environment variables
+10. Set `OVERCLOUD_NTP_SERVER` to the IP address of the NTP server accessible on the public interface for overcloud hosts. 
 
+	To set this variable:
+
+		export OVERCLOUD_NTP_SERVER=<IP_address>
+
+11. Set `UNDERCLOUD_NTP_SERVER` to the IP address of the NTP server accessible on the public interface for undercloud hosts. 
+
+	To set this variable:
+
+		export UNDERCLOUD_NTP_SERVER=<IP_address>
+
+
+12. Set the IP address of the customer router in your network.
+
+	To set this variable:
+
+		export CUSTOMER_ROUTER_IP=<IP_address>
+
+	For detailed network requirements, see [HP Helion OpenStack&#174; Installation: Prerequisites](/helion/openstack/ga/install/prereqs/#network_prepare).
+
+12. Set the installation type to ESX.
+
+	To set this variable:
+
+		export OVERCLOUD_CLOUD_TYPE="ESX"
+
+12. Use the following commands to set environment variables
+
+		export PROVIDER_NETWORK="192.168.10.0/24"
+		export OVERCLOUD_VIRTUAL_INTERFACE=eth0
+		export OVERCLOUD_CONTROL_VIRTUAL_ROUTER_ID="101"
+		export VLAN_RANGE="200:300"
+
+	**Where:**
+	
+	- `PROVIDER_NETWORK` is the 
+	- `OVERCLOUD_VIRTUAL_INTERFACE` in the 
+	- `OVERCLOUD_CONTROL_VIRTUAL_ROUTER_ID` is the 
+	- `VLAN_RANGE` is the 
+
+	**For example**:
+
+		export FLOATING_START=192.0.2.129
+		export FLOATING_END=192.0.2.200
 		export OVERCLOUD_NTP_SERVER="16.110.135.123"
 		export UNDERCLOUD_NTP_SERVER="16.110.135.123"
 		export OVERCLOUD_CLOUD_TYPE="ESX"
@@ -195,17 +227,6 @@ Make sure you have met all the hardware requirements and have completed the requ
 		export OVERCLOUD_CONTROL_VIRTUAL_ROUTER_ID="101"
 		export VLAN_RANGE="200:300"
 
-	**Where:**
-	
-	- `UNDERCLOUD_NTP_SERVER` variable is the IP address of **ntp.hp.net** for the undercloud and is **REQUIRED**.
-	- `OVERCLOUD_NTP_SERVER` vatiable is the IP address of **ntp.hp.net** for the overcloud and is **REQUIRED**.
-	- `OVERCLOUD_CLOUD_TYPE` is always ESX for an ESX hypervisor installation
-	- `PROVIDER_NETWORK` is the 
-	- `CUSTOMER_ROUTER_IP` is the 
-	- `OVERCLOUD_VIRTUAL_INTERFACE` in the 
-	- `OVERCLOUD_CONTROL_VIRTUAL_ROUTER_ID` is the 
-	- `VLAN_RANGE` is the 
-
 12. Install and configure the undercloud and overcloud, run the following command from /root. 
 
 		bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh
@@ -213,16 +234,6 @@ Make sure you have met all the hardware requirements and have completed the requ
 	If your installation is successful, a message similar to the following is displayed:
  
 		"HP - completed - Tue Apr 22 16:20:20 UTC 2014"
-
-        "HP - completed - Tue Apr 22 16:20:20 UTC 2014"
-
-### Next Step ###
-
-After you receive the *completed* message, you should verify the installation by connecting to the overcloud and undercloud dashboards.
-
-Jump down to [Verifying your installation](#verify).
-
----------------------------------------
 
 ## Verify your installation {#verify}
 
@@ -232,40 +243,40 @@ To verify that the installation is successful, connect to the HP Helion Openstac
 
 Ensure you can access the overcloud Horizon dashboard. To do this, follow the steps below:
 
-1. From the seed, export the undercloud passwords:
+1. From the seed, export the undercloud passwords.
 
 		. /root/tripleo/tripleo-overcloud-passwords
 
-2. Export the undercloud users:
+2. Export the undercloud users.
 
 		TE_DATAFILE=/root/tripleo/ce_env.json . /root/tripleo/tripleo-incubator/overcloudrc-user
 
-3. Assign the overcloud IP address to a variable:
+3. Assign the overcloud IP address to a variable.
 
 		DEMO_IP=$(nova list | awk '/\| demo \|/{print $13}')
 
 4. Determine the overcloud controller IP from the output of step 3 using the following command. It is in the last line returned.
-  
-        ssh root@${DEMO_IP}
 
-    If the optional second network was configured, the overcloud controller IP is the value set for NeutronPublicInterfaceIP.
+		ssh root@${DEMO_IP}
 
-5. From your install system, open a web browser and point to:
+	If the optional second network was configured, the overcloud controller IP is the value set for `NeutronPublicInterfaceIP`.
 
-        http://<overcloud_IP>/
+5. From your install system, open a web browser and point to.
+
+		http://<overcloud_IP>/
 
 6. Log in to the overcloud Horizon dashboard as user `admin` with the password you obtained from the `/root/tripleo/tripleo-overcloud-passwords` file in step 4.
 
 
-**Note:** If you are unable to connect to the Horizon console, check your proxy settings to ensure that access to the controller VM is successfully redirected through a proxy.
+	**Note:** If you are unable to connect to the Horizon console, check your proxy settings to ensure that access to the controller VM is successfully redirected through a proxy.
 
 ### Connect to the undercloud Horizon console ### {#monitoring}
 
-1. From the seed, run the following command:
+1. From the seed, run the following command.
 
 		. /root/stackrc
 
-2. Assign the undercloud IP address to a variable:
+2. Assign the undercloud IP address to a variable.
 
 		`UNDERCLOUD_IP=$(nova list | awk '/\| undercloud/{print $12}' | sed 's/ctlplane=//'); echo $UNDERCLOUD_IP`
 
@@ -288,7 +299,7 @@ Ensure you can access the overcloud Horizon dashboard. To do this, follow the st
 
 - Deploy vCenter ESX Compute proxy manually **(REQUIRED)**
 
-	To deploy vCenter Nova-Compute proxy into a cloud deployment an set of automated step is available through the scripts. But there are few manual steps still needed to bring up Nova-Compute proxy VM.
+	To deploy vCenter Nova-Compute proxy into a cloud deployment a set of automated step is available through the scripts. But there are few manual steps still needed to bring up Nova-Compute proxy VM.
 
 	See [HP Helion OpenStack&#174; Deploy vCenter ESX compute proxy](/helion/openstack/ga/install/esx/proxy/).
 

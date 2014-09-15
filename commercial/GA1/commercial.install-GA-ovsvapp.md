@@ -20,29 +20,32 @@ PageRefresh();
 
 <p style="font-size: small;"> <a href="/helion/openstack/install/esx/">&#9664; PREV</a> | <a href="/helion/openstack/install-overview/">&#9650; UP</a> | <a href="/helion/openstack/install/dnsaas/">NEXT &#9654;</a> </p>
 
-# HP Helion OpenStack&reg;: Deploying and configuring OVSvApp on ESXi hosts 
+# HP Helion OpenStack&reg;: Deploying and configuring OVSvApp on ESX hosts 
 
 HP Virtual Cloud Networking (VCN) is an enhanced networking (Neutron) module of HP Helion OpenStack that delivers network virtualization to orchestrate your data center infrastructure.
 
-HP Virtual Cloud Networking's Open vSwitch vApp (OVSvApp) must be installed for HP Helion OpenStack environment to provision VMs in your VMware vCenter environment. Once deployed, OVSvApp appliance enables networking between the tenant Virtual Machines (VMs).
+HP Virtual Cloud Networking's Open vSwitch vApp (OVSvApp) must be installed on each hypervisor in the HP Helion OpenStack environment to provision VMs in your VMware vCenter environment. Once deployed, the OVSvApp enables networking between the tenant Virtual Machines (VMs).
 
 The deployment process includes the following basic steps:
 
-1. Uploading the OVSvApp appliance file to one of the ESXi hosts in your data center.The ESXi host is the system where ESX is installed.
+1. Uploading the OVSvApp file to one of the ESX hosts in your data center.The ESX host is the system where ESX is installed.
 2. Adding your settings to the configuration file so that the OVSvAPP deployment script can clone the file on each host being managed by the overcloud controller.
 3. Running the deployment script.
 
-The following topics in this section explain how to deploy and verify deployment of OVSvApp for VCN on ESXi hosts.
+The following topics in this section explain how to deploy and verify deployment of OVSvApp for VCN on ESX hosts.
 
 * [Prerequisites](#prereqs)
-* [Deploying the OVSvAPP appliance](#deploytemplate)
+* [Deploying the OVSvAPP](#deploytemplate)
 * [Verifying your deployment](#deploymentverification)
 * [Managing the HP VCN networking service](#managevcnnetworkservice)
-* [Uninstalling VCN on ESXi hosts](#uninstallvcn)
+* [Uninstalling VCN on ESX hosts](#uninstallvcn)
+* [Next Steps](#next)
 
 ## Prerequisites ## {#prereqs}
 
-Before you install the OVSvApp appliance, ensure the following:
+**QUESTION!! Are these prerequisites still required and accurate??**
+
+Before you install the OVSvApp, ensure the following:
 
 * The HP Helion Openstack must be installed and configured.
 
@@ -86,33 +89,37 @@ Example:
 <img src="media/ESXi_hypervisor_networking.png"/>
 
 
-##Deploying the OVSvApp appliance {#deploytemplate}
+##Deploying the OVSvApp {#deploytemplate}
 
-You must upload the OVSvApp appliance to one of the ESXi hosts that is hosting VMs provisioned from HP Helion OpenStack environment. You must then configure the settings in the configuration file that will be used to clone and deploy OVSvApp appliance on each host being managed by the controller.
+You must upload the OVSvApp to one of the ESX hosts that is hosting VMs provisioned from HP Helion OpenStack environment. You must then configure the settings in the configuration file that will be used to clone and deploy OVSvApp on each host being managed by the controller.
 
-The deploy process installs the OVSvApp appliance as a virtual machine, which is referred to as *appliance VM* in this document.
+The deploy process installs the OVSvApp as a virtual machine, which is referred to as *OVSvApp VM* in this document.
 
 **Note**
 
-* OVSvAPP VMs are created one-by-one on each ESXi host. 
-* The IP Address assignment to OVSvAPP VM is manual. The Administrator needs to keep a separate pool of IP addresses from management VLAN to be assigned to these VMs. These IP addresses must be assigned to the Ethernet interfaces connecting to **Management Port Group**.
-* Provide the DV ports in the `ovs.ini`. Make sure the dv ports are attached with the proper hosts
+* The OVSvAPP VMs must be installed on each ESX hypervisor. 
+* IP address are assigned to the OVSvApp VMs manually. The Administrator must keep a separate pool of IP addresses from the management VLAN to be assigned to the OVSvApp VMs. These IP addresses must be assigned to the Ethernet interfaces connecting to **Management Port Group**.
+* Specify distributed virtual switch (DVS) ports in the `ovs_vapp.ini`. Make sure the DVS ports are attached with the proper hosts.
 
-To deploy the OVSvApp appliance:
+### Create a VM template in vCenter
 
-1. Create a directory `/ovsvapp` on any server in the Helion environment and upload `ovsvapp.tgz`. Extract the `ovsvapp.tgz` and locate the `hp-ovsvapp` directory. In the directory, locate  `overcloud_esx_ovsvapp.ova`. This is the OVSvAPP appliance.
+The first step in deploying the OVSvApp is to create a VM template that will make it easier to deploy the OVSvApp on each server.
 
-2. Use the the vSphere client to upload the `overcloud_esx_ovsvapp.ova` file to one of the ESXi hosts in your data center: 
+To deploy the OVSvApp:
 
-	a. 	In the vSphere Client, click **File > Deploy OVF Template**.
+1. Create a directory `/ovsvapp` on any server in the Helion environment and upload `ovsvapp.tgz`. Extract the `ovsvapp.tgz` and locate the `hp-ovsvapp` directory. In the directory, locate  `overcloud_esx_ovsvapp.ova`. This is the OVSvAPP.
+
+2. Use the the vSphere client to upload the `overcloud_esx_ovsvapp.ova` file to one of the ESX hosts in your data center: 
+
+	a. In the vSphere Client, click **File > Deploy OVF Template**.
 
 	b. Follow the instructions in the wizard that displays to specify the data center, cluster, and node to install onto. Refer to the VMWare vSphere documentation, as needed.
 
-	The installer creates the appliance VM on the specified node. The VM is listed in the left column of vCenter, by default named `overcoud_ovsapp`.
+	The installer creates the OVSvApp VM on the specified node. The VM is listed in the left column of vCenter, by default named `overcoud_ovsapp`.
 
-3. Add a **CD-ROM** device to the appliance VM using the vCenter. 
+3. Add a **CD-ROM** device to the OVSvApp VM using the vCenter. 
 
-	a. In the vSphere Client, right-click the appliance VM.
+	a. In the vSphere Client, right-click the OVSvApp VM.
 
 	b. Click **Edit Settings**.	
 
@@ -124,23 +131,23 @@ To deploy the OVSvApp appliance:
 
 	Refer to the VMWare vSphere documentation, as needed.
 
-4. Enable the Virtual Machine Communication Interface (VMCI), a high-speed communication channel between a virtual machine and the ESXi host
+4. Enable the Virtual Machine Communication Interface (VMCI), a high-speed communication channel between a virtual machine and the ESX hypervisor.
 
 	a. On the **Hardware** tab, select **Enable VMCI Between VMs**. The **Hardware** tab should be open from the previous step.
 
 	b. Click **OK**.
 
-5. Power on the appliance VM using vCenter. The default credentials to login to the appliance VM is `stack/stack`. 
+5. Power on the OVSvApp VM using vCenter. The default credentials to login to the OVSvApp VM is `stack/stack`. 
 
-6. Install the VMWare tools into the appliance VM: 
+6. Install the VMWare tools into the OVSvApp VM: 
 	
-	a.In the vSphere Client, right-click the appliance VM.
+	a.In the vSphere Client, right-click the OVSvApp VM.
 
 	b. Select **Guest > Install/Upgrade VMware Tools**. 
 
-7. Launch the appliance VM console to install the VMware Tools from command line terminal: 
+7. Launch the OVSvApp VM console to install the VMware Tools from command line terminal: 
 
-	a. Right-click the appliance VM and select **Open Console**.
+	a. Right-click the OVSvApp VM and select **Open Console**.
 
 	b. Enter the following commands:
 
@@ -154,11 +161,11 @@ To deploy the OVSvApp appliance:
 
 	Follow the instructions to continue the installation.
 
-8. When the installation completes, shutdown the appliance VM.
+8. When the installation completes, shutdown the OVSvApp VM.
 
 9. Disable the VMCI: 
 
-	a. Right-click on the appliance VM. 
+	a. Right-click on the OVSvApp VM. 
 
 	b.  Click **Edit Settings**.	
 
@@ -166,12 +173,19 @@ To deploy the OVSvApp appliance:
 
 	d. Clear the **Enable VMCI between VMs** option.
 
-10. Install the prerequisite python libraries:
+### Install the prerequisite python libraries
 
-	- [pyvmomi](https://pypi.python.org/pypi/pyvmomi)
-	- [netaddr](https://pypi.python.org/pypi/netaddr)
+On the server where you extracted the `ovsvapp.tgz` file, install the prerequisite python libraries:
 
-11. In the seed VM, modify the `ovs_vapp.ini` file by adding settings for cloning and configuring OVSvApp VMs: 
+1.	Install [pyvmomi](https://pypi.python.org/pypi/pyvmomi).
+
+2.	Install [netaddr](https://pypi.python.org/pypi/netaddr).
+
+### Modify and execute the installer
+
+On the server where you extracted the `ovsvapp.tgz` file, locate the `ovs_vapp.ini` file.
+
+1. Modify the `ovs_vapp.ini` file by adding settings for cloning and configuring OVSvApp VMs: 
 
 	a. Locate the `ovs_vapp.ini` file in the `/ovsvapp/hp-ovsvapp/src/ovsvm` directory, locate the `ovs_vapp.ini` file.
 	
@@ -206,12 +220,12 @@ To deploy the OVSvApp appliance:
 	- The `trunk_interface` must be the VLAN trunk portgroup, as described in the [prerequisites](#prereqs). 
 	- The `data_interface` must be the second portgroup, as described in the [prerequisites](#prereqs).
 
-	d. Specify the name for cloning the appliance.
+	d. Specify the name for cloning the OVSvApp.
 	
 		[template]
 		template_name=overcloud-esx-ovsvapp
 
-	e. Specify a name, the number of CPUs, and the amount of RAM  for the deployed OVSvApp appliance.
+	e. Specify a name, the number of CPUs, and the amount of RAM  for the deployed OVSvApp.
 
     **Note**: During deployment, the `ovs_vm_name` setting is appended with each VM host name and IP address to appear as `<ovs_vm_name>_<IP>`
 	
@@ -242,8 +256,8 @@ To deploy the OVSvApp appliance:
 		[disaster-recovery]
 		esx_maintenance_mode=True
 
-	**Note:** If set to true in a [DRS cluster](http://www.vmware.com/products/vsphere/features/drs-dpm),if the OVSvApp crashes or enters kernel panic, the ESXi host is put in Maintenance Mode. Maintenance mode will trigger DRS to migrate the tenant VMs. 
-	If set to false, the ESXi host will be shut down along with all tenant VMs.
+	**Note:** If set to true in a [DRS cluster](http://www.vmware.com/products/vsphere/features/drs-dpm),if the OVSvApp crashes or enters kernel panic, the ESX host is put in Maintenance Mode. Maintenance mode will trigger DRS to migrate the tenant VMs. 
+	If set to false, the ESX host will be shut down along with all tenant VMs.
 
 	i. Specify the level for logging errors, and a log file location. Default file location is:`/var/log/ovsvapp_log`
 
@@ -323,62 +337,43 @@ To deploy the OVSvApp appliance:
 		#Log level. Such as DEBUG, INFO
 		log_level=DEBUG
 
-11. Invoke the installer using the following commands:
+2. Invoke the installer using the following commands:
 
 	cd /hp-ovsvapp/src/ovsvm/
 	python invoke_vapp_installer.py
 
 	The installation log file will be located at `/hp-ovsvapp/log/ovs_vapp.log`
 
-##Verifying your deployment {#deploymentverification}
+## Verifying your deployment {#deploymentverification}
 
-After the OVSvApp deployment script is run successfully, you can see the OVSvApp appliance deployed on all the specified ESXi hosts. 
+After the OVSvApp deployment script is run successfully, you can see the OVSvApp deployed on all the specified ESX hosts. 
 
 1. Login to the overcloud controller from the Seed:  
 
-         ssh heat-admin@<ip overcloud controller>
+		ssh heat-admin@<ip overcloud controller>
 
 2. Switch to root.
  
 3. Enter the following command.
 
-        source /root/stackrc
+		source /root/stackrc
 	
 4. Enter the following command.
  
-         neutron agent-list 
+		neutron agent-list 
 	
-5. For all the HP VCN L2 agents check whether agent alive status is **:-)**. If  the status is **xxx** for an agent then login to that OVSvApp appliance using credentials stack/stack, restart the hpvcn agent using the following command
+5. For all the HP VCN L2 agents check whether agent alive status is **:-)**. If  the status is **xxx** for an agent then login to that OVSvApp  using credentials stack/stack, restart the hpvcn agent using the following command:
 
-        sudo service hpvcn-neutron-agent restart 
+		sudo service hpvcn-neutron-agent restart 
 
 6. Re-verify the agent reporting in the overcloud controller by running the following command.
 
-        neutron agent-list
+		neutron agent-list
 
     All agents should indicate alive status that is denoted by**:-)**.
 
-	<!---After the OVSvApp deployment script is run successfully, you can see the OVSvApp VMs deployed on all the specified ESXi hosts. Perform the following steps to verify the deployment:
 
-1. On one of the ESXi hosts, log on to the deployed OVSvApp VM using the credentials `stack/stack`.
-
-2. Run the following command:
-
-		`sudo service hpvcn-neutron-agent status'
-
-	A message similar to the following confirms that the OVSvApp deployment is successful.
-
-	`hpvcn-neutron-agent start/running, process 4835`
-
-3. Repeat steps 1 and 2 to verify the deployment of the OVSvApp VMs on the other ESXi hosts you specified in the `ovs_vapp.ini` file. 
-
-4. (Optional) To verify that configuration on each OVSvApp VM is successful, review the following files on each VM.
-
-	*  `/etc/neutron/neutron.conf`
-	*  `/etc/neutron/plugins/hp/hpvcn_neutron_agent.ini`-->
-
-
-##Managing the HP VCN networking service {#managevcnnetworkservice}
+## Managing the HP VCN networking service {#managevcnnetworkservice}
 
 You must stop and restart the HP VCN networking service to reload the changes you made during your OVSvApp deployment. 
 
@@ -392,12 +387,12 @@ Enter the following commands to stop and restart the HP VCN networking service:
 -          sudo –i os-svc-restart -n hpvcn-neutron-agent
 
 
-##Uninstalling VCN on ESXi hosts {#uninstallvcn}
+## Uninstalling VCN on ESX hosts {#uninstallvcn}
 
-To uninstall VCN on ESXi hosts, access the ESXi hosts from vSphere Client, and delete each OVSvApp VM.
+To uninstall VCN on ESX hosts, access the ESX hosts from vSphere Client, and delete each OVSvApp VM.
 
 
-## Next Steps
+## Next Steps {#next}
 
 - Deploy vCenter ESX Compute proxy manually **(REQUIRED)**
 
