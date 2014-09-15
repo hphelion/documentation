@@ -17,8 +17,32 @@ PageRefresh();
 
 </script>
 
-#Performance and Scalability of HP Helion Openstack
+#Performance of HP Helion Openstack
 
+This section determines the performance of HP Helion OpenStack in terms of responsiveness and stability under a various workload. Scalability, reliability, and resource usage are the quality attributes of the system which are being measured for performance testing of this product. 
+
+ 
+The performance, scale and reliability of HP Helion OpenStack is tested in the following ESX environment:
+
+* 18 ESXi servers (9 Clusters)
+* 3000 VM Instances
+* 100 VLANs (no VXLAN support in ESX)
+* 1000 Floating Point IPs
+* 3000 Volume Attaches and Detaches
+* 25 Concurrent Operations
+
+
+##Resource requirements
+The following resources are required to perform the test:
+
+* Bare metal servers 
+* 3PAR storage
+* ESX compute clusters and vCenter
+* hLinux ISO - hlinux-vsa-blaster-20140619.iso
+* CE Installer Builds
+* vCenter OVA
+* OVSVAPP OVA
+* Integrated Scripts
 
 
 
