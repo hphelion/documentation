@@ -26,7 +26,7 @@ PageRefresh();
 
 #Command Line Interface- EON 
 
-The EON client CLI package provides a http-client coupled command line tool for managing Eon (Esx management) services.
+The EON client CLI package provides a http-client coupled command line tool for managing Eon (ESX management) services.
 
 The Following sections lists the sub-commands and mandatory commands that can be used.
 
