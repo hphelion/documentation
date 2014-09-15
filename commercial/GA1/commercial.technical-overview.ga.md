@@ -28,7 +28,7 @@ It is  designed to offer a number of value-added services that complement and en
 	* [Hardware requirement](#hardware-req)
 	* [Network Architecture](#networkarch)
 * [High Availability](#highavailability)
-* 
+* [Security architecture](#security-architecutre)
 * [Installation and configuration](#install-configure)
 
 ##HP Helion OpenStack Services {#Helion-services}
@@ -200,7 +200,7 @@ The following hardware requirement is required to install HP Helion OpenStack.
     * Virtualization enabled 
     * Ubuntu 14.04 installed
 
-For more information of Hardware configuration see [/helion/openstack/ga/install/prereqs/](Hardware configuration) and [/helion/openstack/ga/support-matrix/](Support Matrix)
+For more information of Hardware configuration see [Hardware configuration](/helion/openstack/ga/install/prereqs/) and [Support Matrix](/helion/openstack/ga/support-matrix/)
 
 ### Network Architecture {#networkarch}
 
@@ -249,7 +249,7 @@ The logical networks listed in the following table are implemented as VLANs on t
     <td> Fiber Channel SAN (Storage Area Network) used for data path between Compute Servers and 3PAR arrays
 </table>
 
-The Network Administrator must set up routing and firewalls for tenants to access service APIs which are only exposed on the management network. Find more information on guidelines for setting up security firewalls and routing here. **(refer to document from David Graves) need to get input**
+The Network Administrator must set up routing and firewalls for tenants to access service APIs which are only exposed on the management network. Find more information on guidelines for setting up security firewalls and routing here.  For more information on security network see [Network security](/helion/openstack/ga/install/security/).
 
 ####ESX Physical Network {#ESX-physical-network}
 <table>
@@ -308,7 +308,7 @@ The logical networks listed in the following table are implemented as VLANs on t
 
 You must manage and prepare the network based on the type of hypervisor.
  
-For more details information on network planning see [Preparing your network](/helion/openstack/ga/install/prereqs/) and for securing network see [/helion/openstack/ga/install/security/](Network security). 
+For more details information on network planning see [Preparing your network](/helion/openstack/ga/install/prereqs/).  
 
 <!---
 
@@ -374,14 +374,6 @@ HP VCN enables you to build a robust, multi-tenant networking infrastructure tha
 * Scalable, secure, and hardened enterprise cloud networking
 * Automated delivery of secure isolated networks in minutes  
 
-##Updates and extensions
-
-Updates and extensions provides a mechanism to download and install the content and updates for the Overcloud.
-
-For more information refer
-[Updates and extension](/helion/openstack/ga/undercloud/admin/updates-and-extension/)
-
-
 ###DNS as a service (DNSaaS) {#DNSaaS}
 
 After installing HP Helion OpenStack, you have the option to install HP Helion OpenStack DNS as a service (DNSaaS) support. The HP Helion OpenStack DNS (Domain Name System) service, based on the Openstack Designate project, is a managed DNS service engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.
@@ -401,6 +393,16 @@ This baremetal installation is designed to deliver an open source OpenStack solu
 * 2 overcloud Swift nodes
 * At least 1 block storage node 
 * At least 1 overcloud Compute node 
+
+
+[Learn more]( /helion/openstack/ga/install/overview/) about installing and configuring HP Helion OpenStack. 
+
+##Updates and extensions
+
+Updates and extensions provides a mechanism to download and install the content and updates for the Overcloud.
+
+For more information refer
+[Updates and extension](/helion/openstack/ga/undercloud/admin/updates-and-extension/)
 
 ##Operational management ## {#operate-manage }
 
@@ -439,7 +441,6 @@ Backup and Restore of VM instances/snapshots and Volumes/snapshots for Workloads
 
 
 
-[Learn more]( /helion/openstack/ga/install/overview/) about installing and configuring HP Helion OpenStack. 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593;</a>
 
