@@ -1,0 +1,7 @@
+---
+applications:
+- name: rabbitmq-php  
+  buildpack: https://github.com/cloudfoundry/php-buildpack.git
+  services:
+    rabbitmq:
+      type: rabbitmq3

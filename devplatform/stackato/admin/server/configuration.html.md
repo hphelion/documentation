@@ -93,8 +93,8 @@ DNS*](#server-config-dns) and disable the 'mdns' role:
 **Note**
 
 Application Lifecycle Service takes a while to configure itself at boot (longer at first
-boot). Check 'kato status' to see that core services are running before
-executing 'kato node rename ..'.
+boot). Check `kato status` to see that core services are running before
+executing `kato node rename`.
 
 In a [*cluster*](/als/v1/user/reference/glossary/#term-cluster), you
 may also need to manually [*modify the /etc/hosts
