@@ -1,0 +1,6 @@
+{
+  "name": "hello-world-node",
+  "version": "1.0.0",
+  "description" : "A 'Hello World' app demonstrating Node.js running on the Helion Development Platform.",
+  "repository" : {"type": "git", "url": "git://notyetpublished"}
+}

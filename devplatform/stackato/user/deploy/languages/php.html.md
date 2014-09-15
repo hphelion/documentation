@@ -14,9 +14,9 @@ Deployment[](#deployment "Permalink to this headline")
 -------------------------------------------------------
 
 You will need at least two files to deploy a PHP app on Application Lifecycle Service:
-index.php, and stackato.yml.
+*index.php*, and *stackato.yml*.
 
-The stackato.yml must specify the php as the framework type:
+The *stackato.yml* must specify `php` as the framework type:
 
     framework:
             type: php
@@ -174,19 +174,3 @@ session storage instead:
       post-staging:
       - echo "session.save_handler = memcached" > "$STACKATO_APP_ROOT"/apache/php/sessions.ini
       - echo "session.save_path = $MEMCACHE_URL" >> "$STACKATO_APP_ROOT"/apache/php/sessions.ini
-
-### [Table Of Contents](/als/v1/index-2/)
-
--   [PHP](#)
-    -   [Deployment](#deployment)
-    -   [Application URL](#application-url)
-    -   [Worker Applications](#worker-applications)
-        -   [Example](#example)
-    -   [Database Services](#database-services)
-        -   [DATABASE\_URL](#database-url)
-        -   [VCAP\_SERVICES](#vcap-services)
-    -   [PHP.ini](#php-ini)
-    -   [Document Root Access](#document-root-access)
-    -   [SERVER\_NAME & SERVER\_PORT](#server-name-server-port)
-    -   [Persistent Sessions (PHP)](#persistent-sessions-php)
-

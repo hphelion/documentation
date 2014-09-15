@@ -68,8 +68,7 @@ for simple use cases.
 
 ### Support Page[](#support-page "Permalink to this headline")
 
-The HTML/EJS to show on the Support page. The [*settings-variables*](#customize-settings-vars) and `support_email`{.docutils
-.literal} variable (see Settings \> Controller) are available.
+The HTML/EJS to show on the Support page. The [*settings-variables*](#customize-settings-vars) and `support_email` variable (see Settings \> Controller) are available.
 
 ### Eula Content[](#eula-content "Permalink to this headline")
 
@@ -134,7 +133,7 @@ containing executables for each platform can be found in the
 After renaming the executable, you can re-package them in .zip files and
 modify the
 *\~/helion/code/console/js/views/client/templates/client.html*
-template to point to the renamed files.
+template to point to the renamed files. 
 
 
 

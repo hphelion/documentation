@@ -35,12 +35,6 @@ completes as child process in the foreground (i.e. blocking the parent
 `helion` process) in the local application source
 directory.
 
-Special %HOST% and %PORT% variables can be used in this command, which
+Special `%HOST%` and `%PORT%` variables can be used in this command, which
 are replaced with the hostname or IP address and port number of the new
 Harbor debugging service.
-
-### [Table Of Contents](/als/v1/index-2/)
-
--   [Remote Debugging](#)
-    -   [STACKATO\_DEBUG\_COMMAND](#helion-debug-command)
-

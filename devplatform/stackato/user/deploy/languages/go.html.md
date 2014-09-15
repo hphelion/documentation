@@ -91,16 +91,3 @@ Examples[](#examples "Permalink to this headline")
     application](https://github.com/Stackato-Apps/go-hello-buildpack).
 -   [Getting Started with Go on
     Heroku](http://mmcgrana.github.com/2012/09/getting-started-with-go-on-heroku).
-
-### [Table Of Contents](/als/v1/index-2/)
-
--   [Go](#)
-    -   [Local Install](#local-install)
-    -   [Deployment](#deployment)
-        -   [Files](#files)
-            -   [app.go](#app-go)
-            -   [Procfile](#procfile)
-            -   [.godir](#godir)
-            -   [stackato.yml](#stackato-yml)
-    -   [Examples](#examples)
-

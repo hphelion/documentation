@@ -93,8 +93,7 @@ pushed to the Application Lifecycle Service server. There are two ways to do thi
 **helion create-service \<service\> \<name\> \<app\>**
 :   This combines all parameters into a single command.
     `service` is the type of service you want to
-    create (mysql, redis, postgresql, mongodb). `name`{.docutils
-    .literal} is the name you want to assign to the service.
+    create (mysql, redis, postgresql, mongodb). `name` is the name you want to assign to the service.
     `app` is the name of the application the service
     is to be bound to.
 
@@ -116,18 +115,14 @@ pushed to the Application Lifecycle Service server. There are two ways to do thi
 **create-service \<service\> \<name\>**
 
 **bind-service \<servicename\> \<app\>**
-:   These two commands do the same thing as if all three parameters were
-    passed using `create-service`, but it allows the
-    flexibility of creating and perhaps configuring the service before
-    binding it.
+These two commands do the same thing as if all three parameters were passed using `create-service`, but it allows the flexibility of creating and perhaps configuring the service before binding it.
 
-    `service` is the type of service you want to
-    create (mysql, redis, postgresql, mongodb). `name`{.docutils
-    .literal} is the name you want to assign to the service.
-    `servicename` is the name assigned during the
-    `create-service` command. `app`{.docutils
-    .literal} is the name of the application the service is to be bound
-    to.
+
+
+- `service` is the type of service you want to create (mysql, redis, postgresql, mongodb).
+- `name` is the name you want to assign to the service.
+- `servicename` is the name assigned during the `create-service` command. 
+- `app` is the name of the application the service is to be bound to.
 
         $ helion create-service mysql customerdb
         Creating Service: OK
@@ -302,8 +297,7 @@ Accessing Database Services[](#accessing-database-services "Permalink to this he
 
 You may need to connect to a database service directly for purposes of
 initial database setup, modifying fields, running queries, or doing
-backups. These operations can be done using the `dbshell`{.docutils
-.literal} (preferred) or `tunnel` commands.
+backups. These operations can be done using the `dbshell` (preferred) or `tunnel` commands.
 
 ### Using dbshell[](#using-dbshell "Permalink to this headline")
 
@@ -465,9 +459,7 @@ staging process is complete but before the app starts to run.
 To export a MySQL database, use the `helion run`
 command to remotely execute the dbexport tool:
 
-``` {.literal-block}
-$ helion run [application-name] dbexport service-name > dumpfile.sql
-```
+	$ helion run [application-name] dbexport service-name > dumpfile.sql
 
 This will run a `dbexport` of the named data service
 remotely and direct the output to a local file. If run from a directory
@@ -478,8 +470,7 @@ containing the stackato.yml file, the application name may be omitted.
 **Note**
 
 This method of database backup is available for compatibility with Cloud
-Foundry. It tends to be slower than using `helion run ...`{.docutils
-.literal}.
+Foundry. It tends to be slower than using `helion run ...`.
 
 To back up a MySQL database, use the [*tunnel*](#database-tunnel)
 command to make a connection to the server and export the data using
@@ -520,8 +511,7 @@ file created by mysqldump into an existing MySQL database service.
 
 #### Using helion run[](#id2 "Permalink to this headline")
 
-To import a MySQL database, use the `helion dbshell`{.docutils
-.literal} command:
+To import a MySQL database, use the `helion dbshell` command:
 
     $ helion dbshell [application name] [service name] < dumpfile.sql
 
@@ -536,8 +526,7 @@ service names may be omitted.
 **Note**
 
 This method of database import is available for compatibility with Cloud
-Foundry. It tends to be slower than using `helion run ...`{.docutils
-.literal}.
+Foundry. It tends to be slower than using `helion run ...`.
 
 To import data from a `mysqldump` into an existing
 MySQL database service, use the `tunnel` command:
@@ -626,38 +615,3 @@ application is stopped, restarted, or updated), you should always store
 the SQLite file on a [*Persistent File
 System*](/als/v1/user/services/filesystem/#persistent-file-system) mount point to avoid
 losing data.
-
-### [Table Of Contents](/als/v1/index-2/)
-
--   [Data Services](#)
-    -   [Intro](#intro)
-    -   [Configuring Application Lifecycle Service Data
-        Services](#configuring-helion-data-services)
-        -   [Using stackato.yml](#using-stackato-yml)
-        -   [Using helion push](#using-helion-push)
-        -   [Creating and Binding
-            Services](#creating-and-binding-services)
-    -   [Using Database Services](#using-database-services)
-        -   [DATABASE\_URL](#database-url)
-        -   [Database-Specific URLs](#database-specific-urls)
-        -   [STACKATO\_SERVICES](#helion-services)
-        -   [VCAP\_SERVICES](#vcap-services)
-    -   [Using External Databases](#using-external-databases)
-    -   [Hard-coded Database
-        Connections](#hard-coded-database-connections)
-    -   [Accessing Database Services](#accessing-database-services)
-        -   [Using dbshell](#using-dbshell)
-        -   [Using Tunnel](#using-tunnel)
-        -   [Pre-populating a database while pushing an
-            app](#pre-populating-a-database-while-pushing-an-app)
-        -   [Backing up a MySQL database](#backing-up-a-mysql-database)
-            -   [Using helion run](#using-helion-run)
-            -   [Using helion tunnel](#using-helion-tunnel)
-        -   [Importing a MySQL database](#importing-a-mysql-database)
-            -   [Using helion run](#id2)
-            -   [Using helion tunnel](#id3)
-        -   [Database Version Changes](#database-version-changes)
-            -   [Method 1](#method-1)
-            -   [Method 2](#method-2)
-    -   [SQLite](#sqlite)
-

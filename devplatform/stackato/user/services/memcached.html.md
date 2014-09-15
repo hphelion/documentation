@@ -34,19 +34,13 @@ administrator can run the following commands on the Cloud Controller:
 
 With SASL enabled, applications must parse the
 [*STACKATO\_SERVICES*](/als/v1/user/services/data-services/#database-services-helion-services)
-or
-[*VCAP\_SERVICES*](/als/v1/user/services/data-services/#database-services-vcap-services)
-environment variables to extract the "name", "user", and "password"
-strings from the memcached "credentials" list. Using SASL with Memcached
+or [*VCAP\_SERVICES*](/als/v1/user/services/data-services/#database-services-vcap-services)
+environment variables to extract the `name`, `user`, and `password`
+strings from the memcached `credentials` list. Using SASL with Memcached
 requires client libraries/modules in the application which support
 authentication via SASL.
 
-Warning
-
-Running Memcached **without** SASL enabled is insecure, and should only
-be done if all system users are trusted. Any Application Lifecycle Service user can connect
-to the provisioned service instance if the IP address and port is
-discovered.
+**Warning:** Running Memcached **without** SASL enabled is insecure and should only be done if all system users are trusted. Any Application Lifecycle Service user can connect to the provisioned service instance if the IP address and port is discovered.
 
 Django Example using Memcached[](#django-example-using-memcached "Permalink to this headline")
 -----------------------------------------------------------------------------------------------
@@ -85,11 +79,3 @@ The relevant configuration in this example:
         services:
             memcached-gtd: memcached
             ...
-
-### [Table Of Contents](/als/v1/index-2/)
-
--   [Memcached Service](#)
-    -   [Using the Service](#using-the-service)
-    -   [Django Example using
-        Memcached](#django-example-using-memcached)
-

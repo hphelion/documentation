@@ -6,6 +6,13 @@ permalink: /als/v1/admin/console/app-store/
 
 App Store[](#index-0 "Permalink to this headline")
 ===================================================
+ [App Store Definition](#app-store-definition)
+            -   [store](#store)
+            -   [apps](#apps)
+        -   [Hosting the Store Definition
+            Files](#hosting-the-store-definition-files)
+    -   [Adding the App Store to
+        Application Lifecycle Service](#adding-the-app-store-to-helion)
 
 The App Store is a collection of ready-to-run applications which can be
 deployed to Application Lifecycle Service with a couple of clicks. This interface uses the
@@ -81,73 +88,62 @@ The YAML string requires two top-level keys: `store`
 and `apps`.
 
 #### store[](#store "Permalink to this headline")
+Contains entries that define the store.
 
-> Contains entries that define the store.
->
-> **title**
-> :   Text used as a display name for the App Store in the Management
->     Console.
+**title**:Text used as a display name for the App Store in the Management Console.
 
-> **contact**
-> :   A name and email address of the store maintainer.
+**contact**: The name and email address of the store maintainer.
 
-> **icon**
-> :   An image used for the App Store icon. Specified as a full URL.
+**icon**: An image used for the App Store icon. Specified as a full URL.
 
 #### apps[](#apps "Permalink to this headline")
 
-> This is an array of items (see YAML format above), one for each app in
-> the store. Each app is defined by the following fields:
->
-> **name**
-> :   The name of the app as displayed in the App Store list.
+This is an array of items (see YAML format above), one for each app in the store. Each app is defined by the following fields:
 
-> **desc**
-> :   A short description of the app, displayed below the name.
+**name**:   The name of the app as displayed in the App Store list.
 
-> **id**
-> :   A short, lowercase, unique string associated with the app. Apps
->     are sorted alphabetically in the list based on this field.
+**desc**:   A short description of the app, displayed below the name.
 
-> **repo**
-> :   URL of the git repository where the app code resides.
+**id**: A short, lowercase, unique string associated with the app. Apps are sorted alphabetically in the list based on this field.
 
-> **commit**
-> :   Branch name, tag name, or exact commit hash to use. If
->     unspecified, the HEAD commit of `master`
->     branch is used.
+ **repo**
+:   URL of the git repository where the app code resides.
 
-> **framework**
-> :   The framework, if the app is deploed using the [*Legacy
->     Buildpack*](/als/v1/user/deploy/buildpack/#buildpacks-legacy)
->     (e.g. `perl`, `python`,
->     `node`, `rails3`).
+**commit**
+:   Branch name, tag name, or exact commit hash to use. If
+    unspecified, the HEAD commit of `master`
+    branch is used.
 
-> **icon**
-> :   An image used for the app icon specified either as a full URL, a
->     file relative to the `store` key **icon-url**
->     URL, `default`, or other variable values.
+**framework**
+:   The framework, if the app is deploed using the [*Legacy
+    Buildpack*](/als/v1/user/deploy/buildpack/#buildpacks-legacy)
+    (e.g. `perl`, `python`,
+    `node`, `rails3`).
 
-> **info**
-> :   A URL pointing to documentation for the app.
+**icon**
+:   An image used for the app icon specified either as a full URL, a
+    file relative to the `store` key **icon-url**
+    URL, `default`, or other variable values.
 
-> **license**
-> :   Optional string indicating the software license of the app (e.g.
->     `MIT`, `MPL`,
->     `BSD`).
+**info**
+:   A URL pointing to documentation for the app.
 
-> **mem**
-> :   Memory requirements of the app (integer, in MB).
+**license**
+:   Optional string indicating the software license of the app (e.g.
+     `MIT`, `MPL`,
+     `BSD`).
 
-> **runtime**
-> :   The runtime, if the app is deployed using the [*Legacy
->     Buildpack*](/als/v1/user/deploy/buildpack/#buildpacks-legacy)
->     (e.g. `java`, `python32`,
->     `ruby19`, `php`,
->     `perl518`).
+**mem**
+:   Memory requirements of the app (integer, in MB).
 
-> **services**
-> :   Data services required by the app.
+**runtime**
+:   The runtime, if the app is deployed using the [*Legacy
+    Buildpack*](/als/v1/user/deploy/buildpack/#buildpacks-legacy)
+    (e.g. `java`, `python32`,
+    `ruby19`, `php`,
+    `perl518`).
+**services**
+:   Data services required by the app.
 
 **Note**
 
@@ -178,16 +174,3 @@ config*](/als/v1/admin/reference/kato-ref/#kato-command-ref-config). For
 example:
 
     $ kato config get cloud_controller_ng app_store
-
-### [Table Of Contents](/als/v1/index-2/)
-
--   [App Store](#)
-    -   [Creating an App Store](#creating-an-app-store)
-        -   [App Store Definition](#app-store-definition)
-            -   [store](#store)
-            -   [apps](#apps)
-        -   [Hosting the Store Definition
-            Files](#hosting-the-store-definition-files)
-    -   [Adding the App Store to
-        Application Lifecycle Service](#adding-the-app-store-to-helion)
-

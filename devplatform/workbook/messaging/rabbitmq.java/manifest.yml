@@ -1,0 +1,9 @@
+---
+# The only mandatory fields are name and path for simple Java web apps.
+applications: 
+- name: rabbitmq-java
+  mem: 512M
+  path: target/rabbitmq-java-1.0
+  services:
+    rabbitmq:
+      type: rabbitmq3

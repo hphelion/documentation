@@ -86,12 +86,10 @@ service*](/als/v1/user/reference/client-ref/#command-services) command.
 
 ### Harbor Environment Variables[](#harbor-environment-variables "Permalink to this headline")
 
-If there is only one Harbor service, the `STACKATO_HARBOR`{.docutils
-.literal} environment variable can be used to get the internal port
+If there is only one Harbor service, the `STACKATO_HARBOR` environment variable can be used to get the internal port
 number.
 
-If there is more than one Harbor service, `STACKATO_HARBOR`{.docutils
-.literal} is not available. Instead, a custom
+If there is more than one Harbor service, `STACKATO_HARBOR` is not available. Instead, a custom
 `STACKATO_HARBOR_<SERVICE_NAME>` environment
 variable will be created for each harbor service (service name
 upper-cased with hyphens replaced by underscores).
@@ -168,8 +166,7 @@ The [bukkit-server](https://github.com/Stackato-Apps/bukkit-server)
 sample appliation shows how to host a
 [CraftBukkit](http://wiki.bukkit.org/Main_Page) multi-player Minecraft
 server on Application Lifecycle Service using the Harbor port service:
-
-> <https://github.com/Stackato-Apps/bukkit-server>
+ <https://github.com/Stackato-Apps/bukkit-server>
 
 HTTPS via Harbor[](#https-via-harbor "Permalink to this headline")
 -------------------------------------------------------------------
@@ -185,17 +182,9 @@ To do this, upload the SSL certificate(s) and key(s) along with your
 application, and expose your application server directly on the TCP port
 provided by Harbor.
 
-**Note** that when using this approach:
+**Note** that when using this approach, the hostname / IP address of the app will be the one provided by the Harbor node the client will connect using the Harbor-assigned port number, **not 443**.
 
-> -   the hostname / IP address of the app will be the one provided by
->     the Harbor node
-> -   the client will connect using the Harbor-assigned port number,
->     **not 443**.
-
-For example, an application running through the port service might have
-a URL such as:
-
-> <https://harbor-node.helion.com:35048/>
+For example, an application running through the port service might have a URL such as: <https://harbor-node.helion.com:35048/>
 
 You can set up aliases to this URL using DNS, but the explicit port
 specification must always be added.
@@ -252,19 +241,3 @@ set up for regular web traffic through the Routers and Load Balancer.
 
 If you have multiple instances of your app routing through a Harbor TCP
 port as above, connections will be distributed via round-robin.
-
-### [Table Of Contents](/als/v1/index-2/)
-
--   [Port Service (Harbor)](#)
-    -   [Requesting a Port](#requesting-a-port)
-        -   [Harbor Environment
-            Variables](#harbor-environment-variables)
-    -   [Setting the Port Protocols](#setting-the-port-protocols)
-    -   [Multiple Application
-        Instances](#multiple-application-instances)
-    -   [Example](#example)
-    -   [HTTPS via Harbor](#https-via-harbor)
-        -   [HTTPS Container Proxy](#https-container-proxy)
-        -   [Mutiple SSL Certificates](#mutiple-ssl-certificates)
-        -   [Caveats](#caveats)
-

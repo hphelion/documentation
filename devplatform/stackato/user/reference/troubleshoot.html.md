@@ -10,22 +10,12 @@ Troubleshooting[](#troubleshooting "Permalink to this headline")
 SSH to Failed Containers[](#ssh-to-failed-containers "Permalink to this headline")
 -----------------------------------------------------------------------------------
 
-For troubleshooting and diagnostic purposes, it is possible to use
-`helion ssh` to access a
-[*container*](/als/v1/user/reference/glossary/#term-container) that has recently failed or
-did not start correctly. Containers are kept for one hour before being
-reclaimed. See the [*Command
-Reference*](/als/v1/user/reference/client-ref/#command-ref-client) for details on the
-`helion ssh` command.
+For troubleshooting and diagnostic purposes, it is possible to use helion ssh to access a [*container*](/als/v1/user/reference/glossary/#term-container) that has recently failed or did not start correctly. Containers are kept for one hour before being reclaimed. See the [*Command Reference*](/als/v1/user/reference/client-ref/#command-ref-client) for details on the `helion ssh` command.
 
 Checking the Logs[](#checking-the-logs "Permalink to this headline")
 ---------------------------------------------------------------------
 
-Most Application Lifecycle Service users will not have administrative access to the server.
-If you need to troubleshoot an application deployment or runtime
-failure, you can use the helion client to view the stderr and stdout
-log files. For example, if an application called `myapp`{.docutils
-.literal} did not deploy correctly, run the command:
+Most Application Lifecycle Service users will not have administrative access to the server. If you need to troubleshoot an application deployment or runtime failure, you can use the helion client to view the `stderr` and `stdout` log files. For example, if an application called `myapp` did not deploy correctly, run the command:
 
     $ helion logs myapp --all
 
@@ -49,52 +39,37 @@ with ls or cat:
 
 Specific Cases[](#specific-cases "Permalink to this headline")
 ---------------------------------------------------------------
-
 **When pushing an app, the Application Lifecycle Service Client reports OK but app isn't
 running**
 
-> The final output from pushing an app should look like:
->
->     Staging Application: OK
->     Starting Application: OK
->
-> If the app is being pushed to multiple instances, the client waits
-> until at least one instance is running, and exits at that point (it
-> does not wait until all instances are active). If afterwards you run
-> `helion apps` and find the Health status at 0%,
-> it is because the app crashed after starting successfully, not because
-> the Application Lifecycle Service client reported incorrectly.
+The final output from pushing an app should look like:
+
+    Staging Application: OK
+    Starting Application: OK
+
+If the app is being pushed to multiple instances, the client waits until at least one instance is running, and exits at that point (it does not wait until all instances are active). If afterwards you run `helion apps` and find the Health status at 0%, it is because the app crashed after starting successfully, not because the Application Lifecycle Service client reported incorrectly.
 
 **DNS queries returning "connection refused"**
 
-> This error is reported when the Application Lifecycle Service server does not have an IP
-> Address. To investigate and resolve, try the following:
->
-> -   Verify the ARP tables on the hypervisor host, and on the Application Lifecycle Service
->     server through its [*tty
->     console*](/als/v1/user/reference/glossary/#term-tty-console):
->
->         $ arp -n
->
-> -   Check that the DHCP client is running:
->
->         $ pgrep dhclient
->         $ grep dhclient /var/log/syslog
->
-> -   Connect to the DHCP server and verify that it is receiving client
->     requests from the Application Lifecycle Service server.
->
-> -   If your network is statically configured, assign an IP address on
->     the Application Lifecycle Service server by editing the
->     [interfaces](http://manpages.ubuntu.com/manpages/man5/interfaces.5)
->     file:
->
->         /etc/network/interfaces
->
-### [Table Of Contents](/als/v1/index-2/)
+This error is reported when the Application Lifecycle Service server does not have an IP Address. To investigate and resolve, try the following:
 
--   [Troubleshooting](#)
-    -   [SSH to Failed Containers](#ssh-to-failed-containers)
-    -   [Checking the Logs](#checking-the-logs)
-    -   [Specific Cases](#specific-cases)
 
+
+- Verify the ARP tables on the hypervisor host, and on the Application Lifecycle Service server through its [*tty console*](/als/v1/user/reference/glossary/#term-tty-console):
+
+         $ arp -n
+
+
+
+- Check that the DHCP client is running:
+
+        $ pgrep dhclient
+        $ grep dhclient /var/log/syslog
+
+
+
+- Connect to the DHCP server and verify that it is receiving client requests from the Application Lifecycle Service server.
+
+- If your network is statically configured, assign an IP address on the Application Lifecycle Service server by editing the [interfaces](http://manpages.ubuntu.com/manpages/man5/interfaces.5) file:
+
+        /etc/network/interfaces

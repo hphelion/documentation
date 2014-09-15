@@ -1,0 +1,6 @@
+---
+# The only mandatory fields are name and path for simple Java web apps.
+applications: 
+- name: hello-world-java
+  mem: 512M
+  path: target/hello-world-java-1.0

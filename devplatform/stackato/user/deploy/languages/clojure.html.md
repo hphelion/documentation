@@ -21,7 +21,7 @@ Create a Noir project:
     ...
     $ cd myapp/
 
-Now, deploy to Application Lifecycle Service, accepting the defaults for each prompt:
+Now deploy to Application Lifecycle Service. Accept the defaults for each prompt:
 
     $ helion push myapp
     [...]
@@ -29,7 +29,7 @@ Now, deploy to Application Lifecycle Service, accepting the defaults for each pr
     [...]
     Starting Application: OK
 
-Open the application URL in your browser to see the default Noir welcome
+Open the application's URL in your browser to see the default Noir welcome
 page.
 
 Clojure Database Services Example[](#clojure-database-services-example "Permalink to this headline")
@@ -51,10 +51,3 @@ app](https://github.com/Stackato-Apps/4clojure/blob/helion/src/foreclojure/confi
           :db-user    (cred "username")
           :db-pwd     (cred "password")
           :db-dbname  (cred "db"))))
-
-### [Table Of Contents](/als/v1/index-2/)
-
--   [Clojure](#)
-    -   [Clojure Database Services
-        Example](#clojure-database-services-example)
-

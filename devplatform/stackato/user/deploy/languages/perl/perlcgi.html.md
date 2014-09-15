@@ -25,10 +25,4 @@ Example[](#example "Permalink to this headline")
 -------------------------------------------------
 
 -   [perlcgi-env](https://github.com/Stackato-Apps/perlcgi-env): A
-    simple Perl CGI script that shows environment variables.
-
-### [Table Of Contents](/als/v1/index-2/)
-
--   [Perl CGI](#)
-    -   [Example](#example)
-
+    simple Perl CGI script that displays environment variables.
