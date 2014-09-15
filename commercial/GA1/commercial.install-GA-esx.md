@@ -141,7 +141,7 @@ Make sure you have met all the hardware requirements and have completed the requ
 
 	***QUESTION: Still optional? Not in https://rndwiki2.atlanta.hp.com/confluence/display/cloudos/Cloud+type+ESX+installation.***
 
-6. Edit `configure_installer.sh` to provide your VMware vCenter connection details. 
+5. Edit `configure_installer.sh` to provide your VMware vCenter connection details. 
 
 	***QUESTION: Still optional? Not in https://rndwiki2.atlanta.hp.com/confluence/display/cloudos/Cloud+type+ESX+installation.***
 
@@ -162,7 +162,7 @@ Make sure you have met all the hardware requirements and have completed the requ
 
 9. Release floating IP addresses for networking.
 
-	***QUESTION: More info needed on how to determine the IP range. How does this help. DOes shrinking the floating IP range free up IPs for the private IPs needed for OVSvApp??***
+	***QUESTION: More info needed on how to determine the IP range??***
 
 	By default, the installation creates a pool of floating IP addresses that you can assign to virtual machines. However, the HP Virtual Cloud Networking's Open vSwitch vApp (OVSvApp) required by the ESX environment requires a block of IP addresses. You create more IP addresses for OVSvApp by restricting the number of floating IP addresses created.
 
@@ -235,7 +235,7 @@ Make sure you have met all the hardware requirements and have completed the requ
  
 		"HP - completed - Tue Apr 22 16:20:20 UTC 2014"
 
-## Verify your installation {#verify}
+## Verify your installation {#verifying-your-installation}
 
 To verify that the installation is successful, connect to the HP Helion Openstack dashboard and the undercloud dashboard as follows.
 
@@ -278,7 +278,7 @@ Ensure you can access the overcloud Horizon dashboard. To do this, follow the st
 
 2. Assign the undercloud IP address to a variable.
 
-		`UNDERCLOUD_IP=$(nova list | awk '/\| undercloud/{print $12}' | sed 's/ctlplane=//'); echo $UNDERCLOUD_IP`
+		UNDERCLOUD_IP=$(nova list | awk '/\| undercloud/{print $12}' | sed 's/ctlplane=//'); echo $UNDERCLOUD_IP
 
 3. Determine the undercloud IP from the output of step 2 using the following command. It is in the last line returned.
   
@@ -286,7 +286,7 @@ Ensure you can access the overcloud Horizon dashboard. To do this, follow the st
 
 4. Obtain the undercloud admin password using the following command:
 
-	`UNDERCLOUD_ADMIN_PASSWORD=$(grep UNDERCLOUD_ADMIN_PASSWORD /root/tripleo/tripleo-undercloud-passwords | sed 's/UNDERCLOUD_ADMIN_PASSWORD=//'); echo $UNDERCLOUD_ADMIN_PASSWORD`
+		UNDERCLOUD_ADMIN_PASSWORD=$(grep UNDERCLOUD_ADMIN_PASSWORD /root/tripleo/tripleo-undercloud-passwords | sed 's/UNDERCLOUD_ADMIN_PASSWORD=//'); echo $UNDERCLOUD_ADMIN_PASSWORD
 
 5. From your install system, open a web browser and point to:
 

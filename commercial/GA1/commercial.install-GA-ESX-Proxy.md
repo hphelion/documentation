@@ -23,7 +23,7 @@ PageRefresh();
 
 # HP Helion OpenStack&#174; Deploy vCenter ESX compute proxy
 
-The HP Helion OpenStack vCenter ESX compute proxy is a driver that enables the Compute service to communicate with a VMware vCenter server that manages one or more ESX host clusters. The HP Helion OpenStack Compute Service Nova (Compute) requires this driver to interface with VMWare ESX hypervisor API’s.
+The HP Helion OpenStack vCenter ESX compute proxy is a driver that enables the Compute service to communicate with a VMware vCenter server that manages one or more ESX hosts. The HP Helion OpenStack Compute Service Nova (Compute) requires this driver to interface with VMWare ESX hypervisor API’s.
 
 The general process for deploying the vCenter ESX compute proxy involves the following:
 
@@ -129,7 +129,7 @@ Use the following steps to instantiate and run a copy of the VM template on each
 
 Perform the following steps on the undercloud node using the [EON CLI]{deploy_cli} or [vSphere client]{deploy_ui}.
 
-### Deploy the proxy using the CLI ### {deploy_cli}
+### Deploy the proxy using the CLI ### {#deploy_cli}
 
 To deploy the ESX compute proxy using the EON CLI on the undercloud node: 
 
@@ -180,7 +180,7 @@ To deploy the ESX compute proxy using the EON CLI on the undercloud node:
 		netmask= enter the compute proxy netmask
 		gateway= enter the compute proxy gateway
 
-2. Use the [HP EON servcie CLI](/helion/openstack/ga/services/eon/overview/) to deploy proxy VM. For details refer to the [EON CLI](/helion/openstack/ga/undercloud/eon/cli/ ).
+2. Use the [HP EON servcie CLI](/helion/openstack/ga/services/eon/overview/) to deploy the ESX compute proxy. For details refer to the [EON CLI](/helion/openstack/ga/undercloud/eon/cli/ ).
 
 		source /root/stackrc
 		eon vcenter-add –name=<VCENTER_NAME> --ip-address=<VCENTER_IP_ADDRESS> --username=<VCENTER_USERNAME> --password=<VCENTER_PASSWORD> --port=<VCENTER_PORT> --proxy-config-file=<COMPUTE PROXY CONFIG FILE>
@@ -189,18 +189,19 @@ To deploy the ESX compute proxy using the EON CLI on the undercloud node:
 
 	Where:
 
-		VCENTER_NAME is the name for the vCenter Server
-		VCENTER_IP_ADDRESS is the IP address of the vCenter Server
+		VCENTER_NAME is the name for the vCenter server where the proxy will deploy 
+		VCENTER_IP_ADDRESS is the IP address of the vCenter server where the proxy will deploy
 		VCENTER_USERNAME is the the username for the vCenter administrator
 		VCENTER_PASSWORD is the the password for the vCenter administrator
-		VCENTER_PORT is the vCenter Server Port
+		VCENTER_PORT is the vCenter Server Port 
 		
 		**QUESTION!! What goes in these fields??**
 		COMPUTE PROXY CONFIG FILE
 		VCENTER_ID
-		CLUSTER_MOID
-		CLUSTER_NAME
-		VCENTER_ID
+		CLUSTER_MOID is the Managed Object ID (MOID) of the server where the proxy will deploy (assigned to each cluster by vCenter).
+		CLUSTER_NAME is the name of the server where the proxy will deploy
+		VCENTER_ID is the unique ID of the vCenter server where the proxy will deploy
+		CLUSTER_MOIDS 
 
 	A vCenter proxy VM named `hp_helion_vcenter_proxy` will be available in the specified vCenter.
 
@@ -248,7 +249,7 @@ Use the following steps to configure SSL between vCenter and the ESX computer pr
 
 - Deploy the Open vSwitch vApp **(REQUIRED)**. 
 
-	If you have not deployed the HP Virtual Cloud Networking's Open vSwitch vApp (OVSvApp), see the [Deploying and configuring OVSvApp for HP Virtual Cloud Networking (VCN) on ESX hosts](/helion/openstack/install/ovsvapp/) document for complete instructions.
+	If you have not deployed the HP Virtual Cloud Networking's Open vSwitch vApp (OVSvApp), see the [Deploying and configuring OVSvApp for HP Virtual Cloud Networking (VCN) on ESX hosts](/helion/openstack/ga/install/ovsvapp/) document for complete instructions.
 
 	OVSvApp must be installed for HP Helion OpenStack environment to provision VMs in your VMware vCenter environment. Once deployed, OVSvApp appliance enables networking between the tenant Virtual Machines (VMs).
 
