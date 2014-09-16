@@ -14,16 +14,16 @@ For best results, work with each sample in the order that they are provided, as 
 In order to download and deploy these sample applications, you must have the framework installed and configured.
 
 * HP Helion Community OpenStack&trade; deployment
-* Cluster created?
+* Cluster created
 * Logon and Password provided
  
 
 ##Workbook Samples
 1. Hello World <br>
 The Hello World sample is as simple as it gets. This sample is available in the following languages:
-	- [JAVA](/devplatform/helloworld/java/)
-	- [Node](/devplatform/helloworld/node/)
-	- [PHP](/devplatform/helloworld/php/)
+	- [JAVA](/helion/devplatform/workbook/helloworld/java/)
+	- [Node](/helion/devplatform/workbook/helloworld/node/)
+	- [PHP](/helion/devplatform/workbook/helloWorld/php/)
 
 2. [Database as a Service](/devplatform/database/) (DBaaS) <br>
 Create a database and link to it.
