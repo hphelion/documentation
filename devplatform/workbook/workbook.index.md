@@ -21,9 +21,9 @@ In order to download and deploy these sample applications, you must have the fra
 ##Workbook Samples
 1. Hello World <br>
 The Hello World sample is as simple as it gets. This sample is available in the following languages:
-	- [JAVA](/helloworld/java.helloworld/)
-	- [Node](/helloworld/node.helloworld/)
-	- [PHP](/helloworld/php.helloworld/)
+	- [JAVA](/helloworld/j.helloworld/)
+	- [Node](/helloworld/n.helloworld/)
+	- [PHP](/helloworld/p.helloworld/)
 
 2. [Database as a Service](/database/) (DBaaS) <br>
 Create a database and link to it.
