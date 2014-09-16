@@ -1,7 +1,7 @@
 ---
 layout: default-devplatform
 title: "HP Helion Development Platform Workbook Hello World Sample"
-permalink: /helion/workbook/helloWorld/java
+permalink: /helion/workbook/helloWorld/java/
 product: devplatform
 
 ---
