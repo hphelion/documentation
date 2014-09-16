@@ -17,7 +17,7 @@ The Helion Development platform adds the Platform-as-a-Service (PaaS) layer to s
 Before installing the Development Platform, you must first install [HP Helion OpenStack Community](/helion/community/install-virtual/).
 
 ###Resources for Application Developers###
-HP has created a Workbook with multiple small sample applications to walk you through understanding and exercising the Development Platform services. Each sample builds on the previous one and all source code is available for you to take apart and examine. Each sample is provided in multiple languages. There are more complex, real-world samples available at the end of the Workbook for you to download and deploy.
+HP has created a [Workbook](/helion/devplatform/workbook) with multiple small sample applications to walk you through understanding and exercising the Development Platform services. Each sample builds on the previous one and all source code is available for you to take apart and examine. Each sample is provided in multiple languages. There are more complex, real-world samples available at the end of the Workbook for you to download and deploy.
 
 * Service-Specific Documentation
 	* [Application Lifecycle Service documentation](/als/v1/)
