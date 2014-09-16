@@ -11,4 +11,4 @@ This is the **second** sample in the Workbook; if you have not already examined 
 >Code due from Sam on 9/18.
 
 
-[Exit Workbook](/helion/devplatform/) | [Previous Sample](/helion/workbook/helloWorld)| [Next Sample](/helion/workbook/messaging)
+[Exit Workbook](/helion/devplatform/) | [Previous Sample](/helion/workbook/helloWorld/)| [Next Sample](/helion/workbook/messaging/)

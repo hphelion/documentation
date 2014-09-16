@@ -8,7 +8,7 @@ product: devplatform
 #HP Helion Development Platform Workbook Messaging Sample
 Before you can begin working with the samples, ensure that you have met the technical prerequisites.
 
-This is the **third** sample in the Workbook; if you have not already examined the [HelloWorld](/helion/workbook/helloWorld) sample and the [Database sample](/helion/workbook/database), please do those two first.
+This is the **third** sample in the Workbook; if you have not already examined the [HelloWorld](/helion/workbook/helloWorld/) sample and the [Database sample](/helion/workbook/database/), please do those two first.
 
 **Technical Prerequisites**
 
@@ -28,5 +28,5 @@ This very simple sample application is available in the following languages:
 ###Node
 ###PHP
 
-[Exit Workbook](/helion/devplatform/) | [Previous Sample](/helion/workbook/helloWorld)
+[Exit Workbook](/helion/devplatform/) | [Previous Sample](/helion/workbook/helloWorld/)
 

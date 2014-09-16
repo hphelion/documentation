@@ -19,11 +19,11 @@ In order to download and deploy these sample applications, you must have the fra
  
 
 ##Workbook Samples
-1. Hello World <br>
+1. [Hello World](/helion/devplatform/workbook/helloWorld/) <br>
 As simple as it gets. Start here.
-2. Database as a Service (DBaaS) <br>
+2. [Database as a Service](/helion/devplatform/workbook/database/) (DBaaS) <br>
 Create a database and link to it.
-3. Messaging as a Service (MSGaaS) <br>
+3. [Messaging as a Service](/helion/devplatform/workbook/messaging/) (MSGaaS) <br>
 Create a message, throw it, catch it, and display it.
 
 ##Real-World Samples
