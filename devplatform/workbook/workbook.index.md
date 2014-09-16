@@ -23,11 +23,11 @@ In order to download and deploy these sample applications, you must have the fra
 The Hello World sample is as simple as it gets. This sample is available in the following languages:
 	- [JAVA](/helion/devplatform/workbook/helloworld/java/)
 	- [Node](/helion/devplatform/workbook/helloworld/node/)
-	- [PHP](/helion/devplatform/workbook/helloWorld/php/)
+	- [PHP](/helion/devplatform/workbook/helloworld/php/)
 
-2. [Database as a Service](/devplatform/database/) (DBaaS) <br>
+2. [Database as a Service](/helion/devplatform/workbook/database/) (DBaaS) <br>
 Create a database and link to it.
-3. [Messaging as a Service](/devplatform/messaging/) (MSGaaS) <br>
+3. [Messaging as a Service](/helion/devplatform/workbook/messaging/) (MSGaaS) <br>
 Create a message, throw it, catch it, and display it.
 
 ##Real-World Samples

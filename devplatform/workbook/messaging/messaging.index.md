@@ -1,7 +1,7 @@
 ---
 layout: default-devplatform
 title: "HP Helion Development Platform Workbook Database Sample"
-permalink: /helion/workbook/messaging
+permalink:/helion/devplatform/workbook/messaging/
 product: devplatform
 
 ---
