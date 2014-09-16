@@ -9,7 +9,8 @@ product: devplatform
 
 <p style="font-size: small;"> <a href="/helion/als/install/">&#9664; PREV</a> | <a href="/helion/als/install/">&#9650; UP</a> | <a href="/helion/als/install/">NEXT &#9654;</a> </p>
 
-# HP Helion Development Platform: Application Lifecycle Service (ALS) Installation and Configuration by SUSAN BLAU CAN PUSH TO THE QA SERVER!
+# HP Helion Development Platform: Application Lifecycle Service (ALS) Installation and Configuration 
+
 This document explains the process to install and configure
  Helion Development Platform Application Lifecycle Service (ALS). Application Lifecycle Service Cluster creation is enabled by using an ALS Constructor, a Virtual Machine (VM) image pre-loaded with configuration and orchestration software.
 
