@@ -6,7 +6,7 @@ product: devplatform
 
 ---
 #Database PHP Sample
-This is the **second** sample in the Workbook; if you have not already examined the [HelloWorld](/helion/devplatform/workbook/helloWorld/php/) sample, please do that one first.
+This is the **second** sample in the Workbook; if you have not already examined the [HelloWorld](/helion/devplatform/workbook/helloworld/php/) sample, please do that one first.
 # Prerequisites
 **Stackato**
 

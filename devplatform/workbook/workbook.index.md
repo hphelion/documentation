@@ -28,7 +28,7 @@ The Hello World sample is as simple as it gets: Hello World! <br>This sample is 
 	- [Node](/helion/devplatform/workbook/helloworld/node/)
 	- [PHP](/helion/devplatform/workbook/helloworld/php/)
 
-2. [Database as a Service](/helion/devplatform/workbook/database/) (DBaaS) <br>
+2. Database as a Service (DBaaS) <br>
 Create a database and link to it.<br>This sample is available in the following languages:
 
 
@@ -36,7 +36,7 @@ Create a database and link to it.<br>This sample is available in the following l
 	- [Node](/helion/devplatform/workbook/database/node/)
 	- [PHP](/helion/devplatform/workbook/database/php/)
 
-3. [Messaging as a Service](/helion/devplatform/workbook/messaging/) (MSGaaS)<br> Create a message, throw it, catch it, and display it.
+3. Messaging as a Service (MSGaaS)<br> Create a message, throw it, catch it, and display it.
 This sample is available in the following languages:
 	- [JAVA](/helion/devplatform/workbook/messaging/java/)
 	- [Node](/helion/devplatform/workbook/messaging/node/)

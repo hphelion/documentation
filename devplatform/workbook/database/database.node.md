@@ -6,7 +6,7 @@ product: devplatform
 
 ---
 #Database Node Sample
-This is the **second** sample in the Workbook; if you have not already examined the [HelloWorld](/helion/devplatform/workbook/helloWorld/node/) sample, please do that one first.
+This is the **second** sample in the Workbook; if you have not already examined the [HelloWorld](/helion/devplatform/workbook/helloworld/node/) sample, please do that one first.
 # Prerequisites
 **Stackato**
 
