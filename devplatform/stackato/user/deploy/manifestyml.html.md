@@ -6,6 +6,9 @@ permalink: /als/v1/user/deploy/manifestyml/
 
 Manifest.yml Options[](#manifest-yml-options "Permalink to this headline")
 ===========================================================================
+[applications](#applications)
+    -   [depends-on](#depends-on)
+    -   [helion](#helion)
 
 Using a *manifest.yml* file is an alternative to *stackato.yml* which
 allows for specific customization such as pushing more than one app
@@ -59,8 +62,7 @@ for each app are contained. For example:
         instances: 1
         mem: 64
 
-Here the two keys `web:` and `worker:`{.docutils
-.literal} match subdirectories (named `web` and
+Here the two keys `web:` and `worker:` match subdirectories (named `web` and
 `worker`) of the directory containing the
 *manifest.yml* file.
 
@@ -80,14 +82,11 @@ depends-on:[](#depends-on "Permalink to this headline")
 
 When deploying multiple applications from a single *manifest.yml* use
 the `depends-on:` key to set the order in which the
-apps are started and stopped. An app with the `depends-on:`{.docutils
-.literal} option will be pushed only after the listed apps have been
+apps are started and stopped. An app with the `depends-on:` option will be pushed only after the listed apps have been
 pushed and are running on the server.
 
-In the previous example, if you wanted to ensure that `web`{.docutils
-.literal} was started before `worker`, you would add
-`depends-on: worker` in the `web:`{.docutils
-.literal} section:
+In the previous example, if you wanted to ensure that `web` was started before `worker`, you would add
+`depends-on: worker` in the `web:` section:
 
     applications:
       web:
@@ -152,11 +151,3 @@ The `env` key in *manifest.yml* must use the more
 verbose [*env attributes*](/als/v1/user/deploy/stackatoyml/#stackato-yml-env-attributes)
 syntax rather than the simpler "ENV\_VAR: value" format allowed in
 *stackato.yml*.
-
-### [Table Of Contents](/als/v1/index-2/)
-
--   [Manifest.yml Options](#)
-    -   [applications:](#applications)
-    -   [depends-on:](#depends-on)
-    -   [helion:](#helion)
-

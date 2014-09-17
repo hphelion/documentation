@@ -125,8 +125,7 @@ To continue configuring the Application Lifecycle Service server, see:
     -   [HTTPS & SSL](/als/v1/admin/server/configuration/#https-ssl)
         -   [Using your own SSL
             certificate](/als/v1/admin/server/configuration/#using-your-own-ssl-certificate)
-        -   [Adding Custom SSL Certs]
-            (/als/v1/admin/server/configuration/#adding-custom-ssl-certs-sni)
+        -   [Adding Custom SSL Certs](/als/v1/admin/server/configuration/#adding-custom-ssl-certs-sni)
         -   [CA Certificate
             Chaining](/als/v1/admin/server/configuration/#ca-certificate-chaining)
         -   [Generating a self-signed SSL
@@ -135,12 +134,3 @@ To continue configuring the Application Lifecycle Service server, see:
         -   [sudo](/als/v1/admin/server/configuration/#sudo)
         -   [Allowed
             Repositories](/als/v1/admin/server/configuration/#allowed-repositories)
-
-### [Table Of Contents](/als/v1/index-2/)
-
--   [Server Configuration](#)
-    -   [Accessing Server via the Command
-        Line](#accessing-server-via-the-command-line)
-    -   [Common Operations](#common-operations)
-    -   [Detailed Configuration](#detailed-configuration)
-

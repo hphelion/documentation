@@ -17,7 +17,7 @@ to deploy Ruby on Rails applications.
 
 ### Using Ruby 2.0[](#using-ruby-2-0 "Permalink to this headline")
 
-The stackato.yml must specify the Ruby runtime version and Rails as the
+The *stackato.yml* file must specify the Ruby runtime version and Rails as the
 framework type:
 
     framework:
@@ -41,7 +41,7 @@ Default Ruby version is Ruby 1.9
         gem 'rake', '0.9.2.2'
         gem 'rails'
 
--   For Ruby 1.9 Cloud Foundry requires a tweak to the jquery-rails gem.
+-   For Ruby 1.9, Cloud Foundry requires a tweak to the jquery-rails gem.
 
     > gem 'cloudfoundry-jquery-rails'
 
@@ -67,7 +67,7 @@ If VCAP sees a Gemfile.lock in the application, it will ensure the
 needed gems are packaged, and set the BUNDLE\_PATH environment variable
 to point at them.
 
-Unsupported *Gemfile* features:
+###Unsupported *Gemfile* features###
 
 1.  git urls or branch dependencies
 2.  gem :path =\> "some/path"
@@ -145,21 +145,3 @@ References[](#references "Permalink to this headline")
 -   [Working with Ruby, Rails and Sinatra: Things to
     know](http://docs.cloudfoundry.com/frameworks/ruby/ruby-rails-sinatra):
     Cloud Foundry Documentation.
-
-### [Table Of Contents](/als/v1/index-2/)
-
--   [Ruby](#)
-    -   [Deployment](#deployment)
-        -   [Using Ruby 2.0](#using-ruby-2-0)
-        -   [Known Issues](#known-issues)
-        -   [Ruby on Rails 3.1+](#ruby-on-rails-3-1)
-        -   [Gems and Libraries](#gems-and-libraries)
-    -   [Database Services](#database-services)
-    -   [Worker Applications](#worker-applications)
-        -   [Example](#example)
-    -   [General Guidelines](#general-guidelines)
-        -   [App/Web Servers](#app-web-servers)
-        -   [Bundler](#bundler)
-        -   [Running rake commands](#running-rake-commands)
-    -   [References](#references)
-

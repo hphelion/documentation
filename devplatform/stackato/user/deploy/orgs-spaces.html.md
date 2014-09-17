@@ -82,16 +82,3 @@ Admin:
     services, full access to all usage reports and logs
 -   Space Auditor: View only access to all space information, settings,
     reports, logs
-
-### [Table Of Contents](/als/v1/index-2/)
-
--   [Organizations & Spaces](#)
-    -   [Organizations](#organizations)
-    -   [Spaces](#spaces)
-    -   [Domains](#domains)
-    -   [Routes](#routes)
-    -   [Management](#management)
-    -   [Users & Roles](#users-roles)
-        -   [Org Roles](#org-roles)
-        -   [Space Roles](#space-roles)
-

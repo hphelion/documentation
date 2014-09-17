@@ -51,9 +51,3 @@ Examples[](#examples "Permalink to this headline")
     simplest possible Mojolicious demo.
 -   [Mojo Photobooth](https://github.com/Stackato-Apps/photobooth):
     Mojolicious webapp to emulate public photobooths.
-
-### [Table Of Contents](/als/v1/index-2/)
-
--   [Mojolicious](#)
-    -   [Examples](#examples)
-

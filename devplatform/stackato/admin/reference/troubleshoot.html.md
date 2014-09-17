@@ -6,9 +6,16 @@ permalink: /als/v1/admin/reference/troubleshoot/
 
 Troubleshooting[](#troubleshooting "Permalink to this headline")
 =================================================================
+ [Server Log Files](#server-log-files)
+        -   [health\_manager.log](#health-manager-log)
+    -   [Inspecting User Apps as an
+        Admin](#inspecting-user-apps-as-an-admin)
+    -   [System Diagnosis](#system-diagnosis)
+    -   [Specific Cases](#specific-cases)
 
 Server Log Files[](#server-log-files "Permalink to this headline")
 -------------------------------------------------------------------
+
 
 If you need to troubleshoot or monitor Application Lifecycle Service logs with a third party,
 they can be found in the \~/helion/logs/\* directory on the Application Lifecycle Service
@@ -75,9 +82,7 @@ provided to the Application Lifecycle Service support team for analysis:
 
 The file is several megabytes in size and will take a few seconds to
 generate. Send it, along with a detailed description of your problem, to
-HP at:
-
-> [als-support@hp.com](mailto:als-support@hp.com)
+HP at: [als-support@hp.com](mailto:als-support@hp.com)
 
 Specific Cases[](#specific-cases "Permalink to this headline")
 ---------------------------------------------------------------
@@ -85,51 +90,40 @@ Specific Cases[](#specific-cases "Permalink to this headline")
 **When pushing an app, the Application Lifecycle Service Client reports OK but app isn't
 running**
 
-> The final output from pushing an app should look like:
->
->     Staging Application: OK
->     Starting Application: OK
->
-> If the app is being pushed to multiple instances, the client waits
-> until at least one instance is running, and exits at that point (it
-> does not wait until all instances are active). If afterwards you run
-> `helion apps` and find the Health status at 0%,
-> it is because the app crashed after starting successfully, not because
-> the Application Lifecycle Service client reported incorrectly.
+The final output from pushing an app should look like:
+
+    Staging Application: OK
+    Starting Application: OK
+
+If the app is being pushed to multiple instances, the client waits
+until at least one instance is running, and exits at that point (it
+does not wait until all instances are active). If afterwards you run
+`helion apps` and find the Health status at 0%,
+it is because the app crashed after starting successfully, not because
+the Application Lifecycle Service client reported incorrectly.
 
 **DNS queries returning "connection refused"**
 
-> This error is reported when the Application Lifecycle Service server does not have an IP
-> Address. To investigate and resolve, try the following:
->
-> -   Verify the ARP tables on the hypervisor host, and on the Application Lifecycle Service
->     server through its [*tty
->     console*](/als/v1/user/reference/glossary/#term-tty-console):
->
->         $ arp -n
->
-> -   Check that the DHCP client is running:
->
->         $ pgrep dhclient
->         $ grep dhclient /var/log/syslog
->
-> -   Connect to the DHCP server and verify that it is receiving client
->     requests from the Application Lifecycle Service server.
->
-> -   If your network is statically configured, assign an IP address on
->     the Application Lifecycle Service server by editing the
->     [interfaces](http://manpages.ubuntu.com/manpages/man5/interfaces.5)
->     file:
->
->         /etc/network/interfaces
->
-### [Table Of Contents](/als/v1/index-2/)
+This error is reported when the Application Lifecycle Service server does not have an IP
+Address. To investigate and resolve, try the following:
 
--   [Troubleshooting](#)
-    -   [Server Log Files](#server-log-files)
-        -   [health\_manager.log](#health-manager-log)
-    -   [Inspecting User Apps as an
-        Admin](#inspecting-user-apps-as-an-admin)
-    -   [System Diagnosis](#system-diagnosis)
-    -   [Specific Cases](#specific-cases)
+-   Verify the ARP tables on the hypervisor host, and on the Application Lifecycle Service
+    server through its [*tty
+    console*](/als/v1/user/reference/glossary/#term-tty-console):
 
+        $ arp -n
+
+-   Check that the DHCP client is running:
+
+        $ pgrep dhclient
+        $ grep dhclient /var/log/syslog
+
+-   Connect to the DHCP server and verify that it is receiving client
+    requests from the Application Lifecycle Service server.
+
+-   If your network is statically configured, assign an IP address on
+    the Application Lifecycle Service server by editing the
+    [interfaces](http://manpages.ubuntu.com/manpages/man5/interfaces.5)
+    file:
+
+        /etc/network/interfaces

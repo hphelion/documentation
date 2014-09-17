@@ -71,22 +71,22 @@ These additional network components are required for an ESX installation:
 ## Download the installation packages {#getinstall}
 Before you begin, you must download the required HP Helion OpenStack installation packages:
 
-***QUESTION: New files name?***
-<table style="text-align: left; vertical-align: top; width:650px;">
-	
-<tr style="background-color: lightgrey; color: black;">
-	
-<td><b> Installation package </b></td><td><b>File name</b></td>
-<tr style="background-color: white; color: black;">
- <td>HP Helion OpenStack</td><td>HPHelionOpenStack_June30.tgz</td></tr>
-</table>
-
 1. Log in to your install system as root:
 
         sudo su -
 
 2. Register and then log in to download the required installation packages from this site [HP Helion OpenStack product installation](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221247%22%7D/Show)
 
+
+***QUESTION: New file name?***
+<table style="text-align: left; vertical-align: top; width:650px;">
+	
+<tr style="background-color: lightgrey; color: black;">
+	
+<td><b> Installation package </b></td><td><b>File name</b></td>
+<tr style="background-color: white; color: black;">
+ <td>HP Helion OpenStack</td><td>HPHelionOpenStack.tgz</td></tr>
+</table>
 
 ## Install HP Helion Openstack ## {#install}
 
@@ -127,7 +127,7 @@ Before you begin your installation, if necessary, configure the proxy informatio
 		mkdir /root/work
 		cd /root/work
 
-3.  Extract the kit to the `work` directory:
+3.  Extract the installation package to the `work` directory:
 
 		tar zxvf /root/work/<baremetal kit name>.tgz
 

@@ -81,8 +81,7 @@ post-staging, pre-running) set in application *stackato.yml* or
 
 These hooks must be:
 
--   plain bash scripts with the executable bit set (`chmod +x`{.docutils
-    .literal})
+-   plain bash scripts with the executable bit set (`chmod +x`)
 -   named *pre-staging*, *post-staging*, or *pre-running*
 -   installed in */etc/helion/hooks* within the Docker image
 
@@ -102,8 +101,7 @@ For example, a pre-running admin hook might look like this:
 **Note**
 
 The `STACKATO_HOOK_ENV` environment variable is
-needed to expose the specified variables in `helion ssh`{.docutils
-.literal} sessions, the application container's crontab, and PHP
+needed to expose the specified variables in `helion ssh` sessions, the application container's crontab, and PHP
 applications using the Legacy buildpack. This requirement may change in
 subsequent releases.
 
@@ -162,8 +160,7 @@ as a central repository for your container tempates.
         0.0.0.0:49156
 
     Your registry location is a combination of the API endpoint of your
-    cluster (i.e. `kato config get cluster endpoint`{.docutils
-    .literal}) combined with the port number returned by the command
+    cluster (i.e. `kato config get cluster endpoint`) combined with the port number returned by the command
     above. For example:
 
         api.paas.example.com:49156

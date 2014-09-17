@@ -18,7 +18,7 @@ PageRefresh();
 
 </script>
 
-# HP Helion OpenStack&#174; Documentation Home kittens are cute!
+# HP Helion OpenStack&#174; Documentation Home
 
 Welcome! HP Helion OpenStack is OpenStack technology coupled with a Linux&#174; Operating System (OS). It is designed for administrators and developers who want a hardened enterprise-grade product set that speeds deployment and simplifies management of private clouds and infrastructure services for developers, enterprises and service providers.
 

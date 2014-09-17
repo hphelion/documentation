@@ -29,9 +29,3 @@ Examples[](#examples "Permalink to this headline")
 -   [Dancer Hello
     World](https://github.com/Stackato-Apps/dancer-helloworld): Hello
     World sample.
-
-### [Table Of Contents](/als/v1/index-2/)
-
--   [Dancer](#)
-    -   [Examples](#examples)
-

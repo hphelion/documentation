@@ -6,6 +6,16 @@ permalink: /als/v1/admin/cluster/autoscaling/
 
 DEA Auto Scaling[](#dea-auto-scaling "Permalink to this headline")
 ===================================================================
+   [DEA Template](#dea-template)
+    -   [DEA Scaling configuration](#dea-scaling-configuration)
+    -   [Enabling Auto-Scaling](#enabling-auto-scaling)
+    -   [Configuration and Tuning
+        (Advanced)](#configuration-and-tuning-advanced)
+    -   [Writing custom scaling plugins
+        (Advanced)](#writing-custom-scaling-plugins-advanced)
+    -   [Troubleshooting](#troubleshooting)
+    -   [Testing](#testing)
+
 
 Application Lifecycle Service can automatically add DEA nodes to a cluster to handle
 increasing numbers of user application instances. This feature, called
@@ -24,9 +34,7 @@ Before enabling auto scaling, you will need to create a DEA template
 from the standard Application Lifecycle Service VM. Typically you would do this by running
 the following commands on a fresh Application Lifecycle Service VM:
 
-> ``` {.literal-block}
-> $ kato op defer "node attach -e dea CORE_IP" --run-as-root
-> ```
+    $ kato op defer "node attach -e dea CORE_IP" --run-as-root
 
 This defers the `attach` command and enables the DEA
 role on the next boot. Shut down the VM once this is done.
@@ -42,7 +50,7 @@ DEA Scaling configuration[](#dea-scaling-configuration "Permalink to this headli
 
 The DEA auto scaling configuration file is:
 
-> /s/etc/autoscaling/autoscaling.yaml
+    /s/etc/autoscaling/autoscaling.yaml
 
 This file must be modified on each node running the Controller role.
 
@@ -101,38 +109,26 @@ customized to fit your particular requirements.
 
 The options in */s/etc/autoscaling/autoscaling.yaml* are:
 
-`scale_op_timeout`
-:   Specifies how long the scaler will wait for the plugin to complete a
-    scale up operation (Default: 300, Unit: seconds).
-`cooldown_period`
-:   After a scaling event, ignore subsequent scaling requests until this
-    period expires. Prevents duplicate scaling events. (Default: 120,
-    Unit: seconds)
-`vm_name_prefix`
-:   Gives the new Application Lifecycle Service VM instance a name with this prefix to easily
-    identify autoscaled instances.
 
-Further settings are found in the health\_manager configuration (see
-`kato config get health_manager autoscaling`):
 
-`scaleup_threshold`
-:   Number of cycles to wait before issuing a scaling request. The
-    health manager monitors the DEA pool continually. If the forward
-    buffer is not maintained during the number of cycles indicated by
-    this value, the scaling event will be sent to the cloud controller.
-    Decrease this value to make autoscaling more aggressive (Default: 3)
-`forward_buffer`
-:   The number of megabytes of free memory to maintain in the DEA pool.
-    Note that app memory usage on each DEA is also accounted for
-    (Default: 4096, Unit: MB)
-`cooldown_period`
-:   After a scaling event, ignore subsequent scaling requests until this
-    period expires (Default: 180, Unit: seconds)
-`dea_staleness`
-:   Maximum time to wait for DEAs to report their status via NATS. If a
-    DEA fails to report in during this period (e.g. it becomes
-    unresponsive) it will be removed from the pool, which may lead to a
-    new scaling event being triggered (Default: 180, Unit: seconds)
+- `scale_op_timeout`
+	- Specifies how long the scaler will wait for the plugin to complete a scale up operation (Default: 300, Unit: seconds).
+- `cooldown_period`
+	- After a scaling event, ignore subsequent scaling requests until this period expires. Prevents duplicate scaling events. (Default: 120, Unit: seconds)
+- `vm_name_prefix`
+	- Gives the new Application Lifecycle Service VM instance a name with this prefix to easily
+-     identify autoscaled instances.
+
+Further settings are found in the health\_manager configuration (see `kato config get health_manager autoscaling`)
+
+- `scaleup_threshold`
+	- Number of cycles to wait before issuing a scaling request. The health manager monitors the DEA pool continually. If the forward buffer is not maintained during the number of cycles indicated by this value, the scaling event will be sent to the cloud controller. Decrease this value to make autoscaling more aggressive. (Default: 3)
+- `forward_buffer`
+	- The number of megabytes of free memory to maintain in the DEA pool. Note that app memory usage on each DEA is also accounted for. (Default: 4096, Unit: MB)
+- `cooldown_period`
+	- After a scaling event, ignore subsequent scaling requests until this period expires (Default: 180, Unit: seconds)
+- `dea_staleness`
+	- Maximum time to wait for DEAs to report their status via NATS. If a DEA fails to report in during this period (e.g. it becomes unresponsive) it will be removed from the pool, which may lead to a new scaling event being triggered. (Default: 180, Unit: seconds)
 
 Writing custom scaling plugins (Advanced)[](#writing-custom-scaling-plugins-advanced "Permalink to this headline")
 -------------------------------------------------------------------------------------------------------------------
@@ -168,8 +164,7 @@ Once you have written a plugin, install the file in
 */s/etc/autoscaling/autoscaling.yaml* under the
 `platform_config` key in a new section corresponding
 to the plugin name (in this case above: `skeleton`).
-Enable the plugin by adding it to the `enabled_plugins`{.docutils
-.literal} list.
+Enable the plugin by adding it to the `enabled_plugins` list.
 
 Troubleshooting[](#troubleshooting "Permalink to this headline")
 -----------------------------------------------------------------
@@ -199,17 +194,3 @@ If you want to emulate a scaling trigger, you can force a scale-up
 operation by issuing the following on the cloud controller node:
 
     $ nats-pub health.scale '{"op": "up"}'
-
-### [Table Of Contents](/als/v1/index-2/)
-
--   [DEA Auto Scaling](#)
-    -   [DEA Template](#dea-template)
-    -   [DEA Scaling configuration](#dea-scaling-configuration)
-    -   [Enabling Auto-Scaling](#enabling-auto-scaling)
-    -   [Configuration and Tuning
-        (Advanced)](#configuration-and-tuning-advanced)
-    -   [Writing custom scaling plugins
-        (Advanced)](#writing-custom-scaling-plugins-advanced)
-    -   [Troubleshooting](#troubleshooting)
-    -   [Testing](#testing)
-
