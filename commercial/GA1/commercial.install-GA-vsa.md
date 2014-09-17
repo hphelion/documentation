@@ -32,10 +32,15 @@ This page provides detailed information on HP StoreVirtual for realizing cloud s
    * [Scheduler](#scheduler)
    * [Cinder volume and Lefthand driver](#cinder-volume)  
    * [Differentiated storage offerings](#differentiated-storage-offerings)
-* [Installing and configuring HP StoreVirtual VSA](#installation-of-storevirtual-vsa)
+* [Deploying VSA storage sytems](#deploy-vsa)
+   * [Prerequisites](#prerequisites-vsa)
+   * [Deployment Process](#deploy-process)
+        * [During Overcloud creation](#during-oc-creation)
+        * [Post Overcloud creation](#post-oc)
+* [Installing HP StoreVirtual Centralized Management Console (CMC) on Linux](#install-hp-storevirtual-cmc)
    * [Prerequisites](#prerequisites)
    * [Installation](#install)
-* [Creating a StoreVirtual Cluster and adding it to a new Management Group](#create-cluster) 
+* [Creating  and adding a StoreVirtual Cluster to a new Management Group](#create-cluster) 
 * [Adding a VSA node to an existing Management Group](#adding-a-node)
 
 
@@ -54,7 +59,7 @@ Multiple StoreVirtual VSAs running on multiple servers create a clustered pool o
 As of now, adding more StoreVirtual VSAs to the cluster grows the storage pool. With Network RAID, blocks of data are striped and mirrored across multiple StoreVirtual VSAs, allowing volumes and applications to stay online in the event of disk, storage subsystem or server failure. iSCSI connectivity on HP StoreVirtual VSA, support the use of the storage pools by cloud instances.
 A single management group can contain up to 32 VSA nodes &#45; grouped into one or more clusters. A single cluster comprises 1 to 16 VSA nodes. Each management group can optimally manage a maximum of 1500 volumes. 
 
-Currently, HP Helion OpenStack edition uses a single management group mapped to a single Cluster. For minimal deployment, you can create a management group with one cluster and with a single VSA node on it.
+HP Helion OpenStack supports multiple clusters. For minimal deployment, you can create a management group with one cluster and with a single VSA node on it.
 
 HP StoreVirtual VSA enables the following features in HP Helion OpenStack: 
 
@@ -87,15 +92,19 @@ Cinder consists of three basic services:
 
 Cinder API is a REST based interface to perform volume operations. As an end-user, you can accomplish volume operations without having to worry about the storage backend used to provide the actual storage. The following volume operations are supported:
 
-1. Create volume
-2. Delete volume
-3. Attach volume to host
-4. Detach volume from host
-5. Create snapshot of a given volume
-6. Create clone of a given volume
-7. Delete a snapshot
-8. Delete a clone
-9. Provision volume based on the volume type (which implicitly maps to Quality of Service(QoS)) OpenStack Cinder API manages the block storage. 
+1.  Create volumes
+2.	Delete volumes
+3.	Extend volumes
+4.	Attach volumes
+5.	Detach volumes
+6.	Create snapshots
+7.	Delete snapshots
+8.	Create volumes from snapshots
+9.	Create cloned volumes
+10.	Copy images to volumes
+11.	Copy volumes to images
+12.	Volume migration(backend assisted).
+
 
 
 ### Scheduler {#scheduler}
@@ -134,234 +143,176 @@ Then, as the cloud administrator, you need to create three volume types &ndash; 
 
 Differentiated storage offerings based on performance and quality can be realized in HP Helion OpenStack by creating clusters of different capabilites, configuring clusters as backends and mapping theses backends to different volume types as suggested above.
 
-<!---
 
-##Installing and configuring HP StoreVirtual VSA {#installation-of-storevirtual-vsa}
-
-
-### Prerequisites ###
-
-1. Ensure that you download the `HPStoreVirtual_VSA_11.5.tgz` package, which contains all the files that are required for installation, as shown in the table below. For details on how to download, refer to the [Before you begin](/helion/openstack/ga/install-overview/#install-pkg) page. 
-
-	<table style="text-align: left; vertical-align: top; width:650px;">
-	
-	<tr style="background-color: lightgrey; color: black;">
-	
-	 <td><b> Components </b></td><td><b>File name</b></td>
-	<tr style="background-color: white; color: black;">
-	 <td>HP StoreVirtual VSA installer</td><td>HPStoreVirtual_VSA_11.5.tgz </td></tr>
-	<tr style="background-color: white; color: black;">
-	<td>Linux</td><td>hlinux-vsa-blaster-20140619.iso</td></tr>
-	
-	
-	<tr style="background-color: white; color: black;">
-	<td>VSA automation package</td><td>pyVins.tgz</td></tr>
-	<tr style="background-color: white; color: black;">
-	 <td>CMC installer</td><td>CMC_11.5.01.0023.0_Installer_Linux.bin</td></tr></table>
-
-2. Prepare a storage server with the following RAID logical drives:
-
-   * RAID drive for operating system
-   
-   * RAID drive for storage, to be consumed by VSA
-
-    RAID drive can be created using RAID management utility. Please refer your server specification to create RAID groups. We recommend that you create RAID 5 or RAID 6 logical drive comprising 10-12 drives.
-
-
-###Installing Linux on baremetal{#install-linux-on-baremetal}
-
-Linux operating system is installed on baremetal servers identified to run HP  StoreVirtual VSA.
-
-
-**Prerequisites**
-
-The target system must fulfill the following prerequisites: 
-
-  * One primary hard drive of at least 80 GB
-	
-  * At least 8 GB of RAM 
-	
-  * The VSA server must be connected to the same network as the cloud nodes.
-
-    <a href="javascript:window.open('/content/documentation/media/commercial_kvm_network_architecture.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack architecture diagram for KVM (opens in a new window)</a>
-   
-
-  * (Optional) It can have a second network which provides external/public access. 
-  
-  * Download and extract files from the `HPStoreVirtual_VSA_11.5.tgz` package.
-
-
-**Installation**
-
-1. Mount the Linux ISO on the target server and boot the server.
-
-2. During the boot process, you are prompted to **Enter block device to use for reimaging**, enter the block device that you want to use for example:***/dev/sda***.
-
-3. Click **Enter**.
-
-4. Once the installation completes, manually reset the system. 
-
-5. Login to the system using the credentials provided in the `Readme.txt` included in the package.
-
-6.	Switch to root user.
-
-7.	From the location where the contents of `HPStoreVirtual_VSA_11.5.tgz` package are extracted, copy the  following files  to `/home/root` folder on the Linux server.
-
-  * HP&#95;StoreVirtual&#95;VSA&#95;Installer&#95;for_KVM.tgz
-   
-  * pyVins.tgz
-   
-
-###Deploying VSA {#deployment-vsa}
+##Deploying VSA Storage Systems {#deployment-vsa}
 <a href="javascript:window.open('/content/documentation/media/commercial_kvm_network_architecture.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack architecture diagram for KVM (opens in a new window)</a>
 
-#### Contents of HP&#95;StoreVirtual&#95;VSA&#95;Installer&#95;for_KVM.tgz ###
-  
-HP&#95;StoreVirtual&#95;VSA&#95;Installer&#95;for _KVM.tgz contains the following files:
+###Prerequisites {#prerequisite-vsa}
+Ensure the following prerequisites are fulfilled before VSA Storage systems are deployed.
 
+* Dedicated hardware identified for StoreVirtual VSA storage systems
 
- * **KVM-VSA-11.5.01.0023.img.gz** - This file contains the VSA image for KVM.
+* Seed Cloud is installed and running
 
- * **HP&#95;StoreVirtual&#95;VSA&#95;for&#95;KVM_Installer-11.5.01.0023** - This is a dependent binary for VSA installation.
+### Deployment Process {#deploy-process}
 
- *	**README.txt**
+You can deploy VSA:
 
+* [During Overcloud creation](#during-oc-creation)
 
-#### Contents of pyVins package
+* [Post Overcloud creation (Scale out VSA storage)](#post-oc)
 
-The pyVins package contains the following files:
+	
+#### Deploy VSA during Overcloud creation {#during-oc-creation}
 
-* **network_template.xml**: This is XML template file for virtual network creation.
-
-* **storagepool_template.xml**:This is XML template file for virtual storage pool creation.
-
-* **vsa_automation.py**: This is the script to automate the installation of VSA.
-
-* **vsa_export.sh**: This is a configuration file and should be modified based on your setup. 
-
-     Example configuration of the vsa_export.sh file is shown below:
-
-    
-	    export VSA_INSTALL_DIR=/home/kvm-admin/kvm-install/
-	    
-	    export VSA_PACKAGE_PATH=/home/kvm-admin/kvm-install/
-	    
-	    export VSA_IMAGE_PATH=$VSA_PACKAGE_PATH/KVM-VSA-11.5.01.0023.img.gz
-	    
-	    export VSA_INSTALLER=$VSA_PACKAGE_PATH/HP_StoreVirtual_VSA_for_KVM_Installer-11.5.01.0023
-	    
-	    export VSA_CONFIG_FILE=/home/kvm-admin/kvm-install/etc/vsa/vsa_config.json
-
-    where:
-
-    * **VSA&#95;INSTALL_DIR**: refers to the path of the location where the **pyVins** package is downloaded.
-
-    * **VSA&#95;PACKAGE&#95;PATH**: refers to the path of the location where HP StoreVirtual VSA package and installer binary is available. The location should contain KVM-VSA-11.5.01.0023.img.gz & HP&#95;StoreVirtual&#95;VSA&#95;for&#95;KVM&#95;Installer-11.5.01.0023 files.
-
-    * **VSA&#95;IMAGE_PATH**: refers to the package name along with VSA&#95;PACKAGE&#95;PATH.
-
-    * **VSA&#95;INSTALLER**: refers to the installer binary name along with VSA&#95;PACKAGE&#95;PATH.
-
-    * **VSA&#95;CONFIG_FILE**: refers to the location where the  vsa&#95;config.json file is available.
-
-
-* **vsa_config.json**: This is the configuration file with details for VSA installation.You need to modify this file as per the required VSA configuration 
-
-
-**Perform the following instructions to configure vsa&#95;config_json file:**
-
-1. Edit the `vsa_config.json` file available at 
-`<location of pyVins package>/etc/vsa/vsa_config.json.` <br> An example  `vsa_config.json` file is shown below. You must change the values based on the environment.</br>
-
-		{
-		    "network_name": "vsa-network",
-		    "virtual_bridge":{
-		        "name":"vsa-bridge",
-		        "static_ip_address":"192.0.2.249",
-		        "netmask":"255.255.255.0",
-		        "interface":"eth1"
-		    },
-		
-		    "vsa_config":{
-		        "hostname":"vsa-hostname",
-		        "os_image_storagepool":"vsa-storage-pool",
-		        "os_image_dir":"/home/kvm-admin/vsa-installers",
-		        "ip_address":"192.0.2.250",
-		        "subnet":"255.255.255.0",
-		        "gateway":"192.0.2.1"
-		    },
-		    "disks":[
-		        {
-		            "location":"vsa-storage-pool",
-		            "size":"15G"
-		        }
-		        ]
-		}
-
-	  
-     where:
+You can deploy VSA during Overcloud creation or installation. To deploy, update the Helion Config file and create the Overcloud using the following commands:
  
-  - **network_name** refers to the name of the VSA network for example:*vsa-network*
-  
-  - **virtual_bridge** refers to the detail of the virtual bridge- 
-  
-     -  name (name of the virtual bridge) for example: *vsa-bridge*
+
+1. SSH to seed as root
+
+	    ssh root@<IP Address>
+
+2. If `/root/overcloud-config.json` is not present, copy Overcloud template config file to `/root/overcloud-config.json`
+
+		cp /root/tripleo/tripleo-incubator/scripts/ee-config.json /root/overcloud-config.json
+
+3. Edit the `/root/overcloud-config.json` and update the value for **vsa_scale** or **vsa&#095;ao&#095;scale** appropriately.
+
+        vsa_scale: <no of VSA systems>
+
+	**NOTE**:  For HP StoreVirtual VSA, a management group with two storage systems and a FailOver Manager is the minimum configuration for automated fault tolerant operations. Configurations greater than two systems can be redundant, and do not require a FailOver Manager. The FailOver Manager is a specialized version of the LeftHand OS(HP StoreVirtual) software designed to operate as a manager and provide automated failover capability. It runs as a virtual appliance and must be installed on a separate system/Virtual Machine other than the VSA storage systems in the SAN.
+ 
+4. Check `/root/baremetal.csv` and ensure that the Baremetal servers identified for VSA storage system(s) are enrolled for the cloud.
+
+5. Apply the configuration
+
+        source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/overcloud-config.json
+
+6. Run the install script. During the installation, the number of VSA storage systems that you specified, are installed.
+
+         /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh
      
-     -  static&#95;ip_address (the IP address of the bridge) for example: *192.0.2.249*   
 
-	    **NOTE**: The IP address used here should be the part of the same subnet of the overcloud controller. By default, the cloud network is configured for 192.0.2.0/24 network. Use the IP from the end range to avoid conflict with  the Compute nodes.
-     
-     -  netmask (subnet mask of the bridge) for example: *255.255.255.0*
-     
-     -  interface (interface of the bridge) for example: *eth1*
-
-	    **NOTE**: The interface of the bridge should be the same interface connected to the private untagged network common to all controller and Compute nodes. 
-
-        <a href="javascript:window.open('/content/documentation/media/commercial_kvm_network_architecture.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Refere to HP Helion OpenStack architecture diagram for KVM (opens in a new window)</a>
-
-  - **hostname** refers to the name of the VSA that is getting installed for example: *vsa-hostname*
-        
-  - **os&#95;image_storagepool** refers to the VSA where the image will be extracted for example:*vsa-storage-pool*
-       
-  - **os&#95;image_dir** refers to the directory in which the VSA is created for example:*/home/kvm-admin/vsa-installers*
-  
-  - **ip&#95;address** refers to the IP address of the VSA for example: *192.0.2.251*
-  
-  - **subnet** refers to the subnet of the VSA for example: *255.255.255.0*
-        
-  - **gateway** refers to the router of the VSA for example: *192.0.2.1*
-
-	**NOTE**: The IP address used here should be part of the same subnet of the overcloud controller. By default, the cloud network is configured for 192.0.2.0/24 network. Use the IP from the end range to avoid conflict with the Compute nodes.
-
-  - **location** refers to the name of the storage pool for example: *vsa-storage-pool*
-  
-  - **size** refers to the size of the disks for example:*15G*
+<!---<img src="media/storevirtual-cluster-network-diagram1.png"/>-->
 
 
-2.Go to the command prompt.
+### Deploy VSA post Overcloud creation {#post-oc}
 
-3.Change directory to `<downloaded_script_package>/pyvins/vsa_automation.py` and execute the following command:
+You can add VSA storage systems to an existing Overcloud also. You can add VSA in any of the following scenarios:
 
-   `python vsa_automation.py`
-        
+* Baremetal Server, to be used as VSA, is already enrolled (during the initial installation or creation of cloud)
 
-Once the installation completes, VSA is deployed.  
-
-**Note**: We recommend deployment of a minimum of three VSAs.
+* Enroll the Baremetal server and scale out VSA Storage 
 
 
-<img src="media/storevirtual-cluster-network-diagram1.png"/>-->
+#### Baremetal server is already enrolled ####
+
+To deploy, update the Helion Config file and the Overcloud using the following commands:
+
+1. SSH to seed as root
+
+        ssh root@ <IP Address>
+
+2. If `/root/overcloud-config.json` is not present, copy Overcloud template config file to `/root/overcloud-config.json`
+ 
+       	cp /root/tripleo/tripleo-incubator/scripts/ee-config.json /root/overcloud-config.json
+
+3. Edit the `/root/overcloud-config.json` and update the value for vsa&#095;scale or vsa&#095;ao_scale appropriately.
+
+       	vsa_scale: <no of VSA systems>
+
+	**NOTE**: For HP StoreVirtual VSA, a management group with two storage systems and a Failover Manager is the minimum configuration for automated fault tolerant operations. Configurations greater than two systems can be redundant and do not require a Failover Manager. The Failover Manager is a specialized version of the LeftHand OS software designed to operate as a manager and provide automated failover capability. It runs as a virtual appliance and must be installed on a separate system/Virtual Machine(VM)  other than the storage systems in the SAN.
 
 
-##Installing HP StoreVirtual Centralized Management Console (CMC) on Linux {#install-hp-storevirtual-vsa}
+4. Apply the configuration
+
+		source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/overcloud-config.json
+
+5. Comment out the following line in  `/root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh` in the overcloud section
+
+			if [ "$SKIP_INSTALL_OVERCLOUD" != "1" ] ; then
+   			 echo "HP - configuring overcloud - $(date)"
+			#    hp_ced_validate_ip ping -s $FLOATING_START -e $FLOATING_END
+
+6. Run the installer script to update the overcloud. During the installation, the number of VSA storage systems that you specified, are installed.
+
+    	 bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --skip-install-seed --skip-install-undercloud 2>&1 | tee update.log
+
+
+#### Enroll the Baremetal server
+
+To deploy VSA, you need to first enroll the Baremetal server and then, update the Helion Config file and the Overcloud. Perform the following commands:
+
+
+1. SSH to Undercloud as heat-admin
+
+         ssh heat-admin@<IP Address>
+         sudo -i
+         source stackrc
+
+2. Register the new Baremetal in the Ironic database. Replace the cpus, memory&#095;mb,local&#095;gb,ipmi&#095;address, ipmi&#095;password variable values with your Baremetal settings. 
+
+		ironic node-create -d pxe_ipmitool -p cpus=<value> -p memory_mb=<value> -p local_gb=<value> -p cpu_arch=<value> -i ipmi_address=<IP Address> -i ipmi_username=<username> -i ipmi_password=<password>
+
+	Following is the example for reference:
+
+		ironic node-create -d pxe_ipmitool -p cpus=12 -p memory_mb=98304 -p local_gb=1800 -p cpu_arch=amd64 -i ipmi_address=10.12.22.70 -i ipmi_username=admin -i ipmi_password=password
+
+3. Create the ironic port for the ironic node that you created in the  previous step
+ 
+        ironic port-create --address $MAC_ADDR --node_uuid $NODE_UUID
+
+4. SSH to seed as root
+
+        ssh root@<IP Address>
+
+5. Edit `/root/baremetal.json` and add the required details of the Baremetal server (MAC address, user id/password, IP address etc.). Add a snippet, like  the following example with VSA node details, to the "nodes" list.
+ 
+		{
+		     "mac": [
+		       "00:19:0b:ec:76:4a"
+		     ],
+		     "cpu": "1",
+		     "memory": "8192",
+		     "disk": "512",
+		     "arch": "amd64",
+		     "pm_user": "root",
+		     "pm_addr": "192.168.122.1",
+		     "pm_password": "password",
+		     "pm_type": "pxe_ssh"
+		},
+
+
+6. If `/root/overcloud-config.json` is not present, copy Overcloud template config file to `/root/overcloud-config.json`
+ 
+       	cp /root/tripleo/tripleo-incubator/scripts/ee-config.json /root/overcloud-config.json
+
+3. Edit the /root/overcloud-config.json and update the value for **vsa&#095;scale** or **vsa&#095;ao_scale** appropriately. 
+
+       	vsa_scale: <no of VSA systems>
+
+	**NOTE**: For HP StoreVirtual VSA, a management group with two storage systems and a Failover Manager is the minimum configuration for automated fault tolerant operations. Configurations greater than two systems can be redundant and do not require a Failover Manager. The Failover Manager is a specialized version of the LeftHand OS software designed to operate as a manager and provide automated failover capability. It runs as a virtual appliance and must be installed on a separate system/Virtual Machine(VM)  other than the storage systems in the SAN.
+
+
+4. Apply the configuration
+
+		source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/overcloud-config.json
+
+5. Comment out the following line in  /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh in the Overcloud section
+
+			if [ "$SKIP_INSTALL_OVERCLOUD" != "1" ] ; then
+   			 echo "HP - configuring overcloud - $(date)"
+			#    hp_ced_validate_ip ping -s $FLOATING_START -e $FLOATING_END
+
+6. Run the installer script to update the Overcloud. During the installation, the number of VSA storage systems that you specified, are installed. 
+
+     	bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --skip-install-seed --skip-install-undercloud 2>&1 | tee update.log
+
+
+##Installing HP StoreVirtual Centralized Management Console (CMC) on Linux {#install-hp-storevirtual-cmc}
 
 
 You must install the CMC to perform the administrative tasks on HP StoreVirtual VSA storage. You can manage the entire network of VSAs from this CMC. 
-
-<!---Section - Installing HP StoreVirtual Centralized Management Console (CMC) on Linux{install-hp-storevirtual-vsa}
-
-Pre-requisites, add following line:-->
-
 
 
 ### Prerequisites {#prerequisites} 
@@ -381,12 +332,7 @@ Pre-requisites, add following line:-->
 
 ### Installation ###{#installation}
 
-1. Go to the following URL and download CMC installer.
-
-		/opt/stack/horizon-vas-plugins/cloudos_dashboard/downloads  <WRITE THE UPDATED DOCUMENT)
-
-
-2. Verify if the CMC installer file has executable permission otherwise execute the following command:
+1. Verify if the CMC installer file (packaged along with the installer) has the executable permission otherwise execute the following command:
 
 		chmod +x CMC_11.5.01.0023.0_Installer_Linux.bin
 
@@ -399,53 +345,7 @@ Pre-requisites, add following line:-->
  From the directory in which the files are installed, click the **HP Store Virtual Centralized Management Console** to launch CMC.  
 </br>  
 
-<!---###Creating a cluster{#create-cluster}
-
-We recommend creation of a RAID 10 cluster which comprises three deployed VSAs.  For deploying VSA, refer to section on [Deployment of VSA](#deployment-vsa). Use the following three step process:
-
-**Note: For detailed instructions, refer to CMC Online Help.**
-
-1. Use the **Find Systems** opion of the CMC to discover VSAs.
-
-2. Create a Management Group with three systems.
-
-3. Create a cluster
-
-Your CMC displays the cluster like the figure below:
-
-<img src="media/storevirtual-cluster-network-diagram2.png"/>
-
-
-
-###Enabling HP StoreVirtual configuration in the overcloud{#enable-hp-storevirtual-configuration}
-
-To enable HP Storevirtual configuration in the Overcloud, modify the `tripleo/tripleo-incubator/scripts/configure_installer.sh` file in
-the seed cloud to update the VSA cluster information. A sample of the configuration file is given below. You need to change the configuration based on your specifications:
-
-		export ENABLE_VSA="True"
-		export VSA_API_URL="https://XXX.XXX.XXX.XXX:8081/lhos"
-		export VSA_USERNAME="<user name>"
-		export VSA_PASSWORD="<password>"
-		export VSA_NAME="<cluster name>"
-		export VSA_ISCSI_CHAP_ENABLED="<False>"
-		export VSA_DEBUG="False"
-
-where:
-
-* **ENABLE_VSA**: Mark this field as *True* to enable HP StoreVirtual VSA configuration. By default the value is False.
-
-* **VSA_API_URL**: This is the URL to access your VSA cluster. Please enter your IP address in this field.
-
-* **VSA_USERNAME**: Enter the cluster user name.
-
-* **VSA_PASSWORD**: Enter the cluster password.
-
-* **VSA_NAME**: Enter the name of the cluster.
-
-* **VSA_ISCSI_CHAP_ENABLED**: Mark this field as *True* if you want to enable CHAP authentication.
-
-* **VSA_DEBUG**: By default the value is *False*, to enable debugging, change it to *True*.
--->
+<!---<img src="media/storevirtual-cluster-network-diagram2.png"/>-->
 
 ## Creating a StoreVirtual Cluster and adding it to a new Management Group ##{#create-cluster}
 
@@ -464,7 +364,7 @@ To create a cluster, do the following:
 
 2. In the CMC page, click **Find Systems** from the left panel.<br> Find Systems dialogue box is displayed with an Enter IP pop-up box.
 
-3. In the Enter IP pop-up box, enter the IP of the VSA node.
+3. In the **Enter IP** pop-up box, enter the IP of the VSA node.
 
 4. Click **OK** to proceed or click **Cancel** to cancel the process.<br>The node is discovered and the details are displayed in a table in the Find Systems dialogue box.
 
@@ -497,7 +397,9 @@ To create a cluster, do the following:
 
 16. Click **Next** to go to the next page.
 
-17. Click the check box displayed against **Skip Volume Creation** and click **Next**.<br>The Management Group and Cluster is created and displays in the Home page of CMC.
+17. (Optional) Click the check box displayed against **Skip Volume Creation**.
+
+18. Click **Next**.<br>The Management Group and Cluster is created and displays in the Home page of CMC.
 
 
 ## Adding a VSA node to an existing Management Group ##{#adding-a-node}

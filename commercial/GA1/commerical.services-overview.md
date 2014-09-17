@@ -50,7 +50,7 @@ The service user accounts include, but are not limited to, the following:
 - Keystone
 - Ceilometer
 - Sirius
-
+- Eon
 ## OpenStack Services ## {#OpenStack}
 
 The following services are foundation technologies used by the HP Helion OpenStack. Based on OpenStack technology, HP Helion OpenStack comprises of a set of services and architecture that defines a data-center-level operating system (DCOS).
@@ -87,13 +87,7 @@ See [Overview of the Telemetry and Reporting service](/helion/openstack/ga/servi
 
 See [Overview of the Volume Operations Service](/helion/openstack/ga/services/volume/overview).
 
-**Sherpa**. The Sherpa service provides a link to the remote web catalog providing a repository of software that can be purchased and downloaded into the Cloud OS environment. 
 
-See [Overview of Sherpa Service](/helion/openstack/ga/services/sherpa/overview).
-
-**Sirius**. HP Helion OpenStack Sirius service assists the Cloud Administrator in the configuration of storage services (like Cinder, Swift) running in the Overcloud with various storage devices.
-
-See [Overview of Sirius Service](/helion/openstack/ga/services/sirius/overview/)
 ## Dashboard Services ## {#Dashboard}
 
 The following services are used by HP Helion OpenStack to create dashboards.
@@ -109,6 +103,19 @@ See [Overview of the Horizon Service](/helion/openstack/ga/services/horizon/over
 See [Overview of the Loom Service](/helion/openstack/ga/services/loom/overview/).
 -->
 ## Other Services ## {#Other}
+
+**Sherpa**. The Sherpa service provides a link to the remote web catalog providing a repository of software that can be purchased and downloaded into the Cloud OS environment. 
+
+See [Overview of Sherpa Service](/helion/openstack/ga/services/sherpa/overview).
+
+**Sirius**. HP Helion OpenStack Sirius service assists the Cloud Administrator in the configuration of storage services (like Cinder, Swift) running in the Overcloud with various storage devices.
+
+See [Overview of Sirius Service](/helion/openstack/ga/services/sirius/overview/)
+
+**EON**. ESX on border (EON) service is an inventory which interacts with the VMware vCenter server and collects the information available at the datacenters and clusters. These information is used for deployment and configuration of ESX Proxy Compute node. EON service is deployed in UnderCloud controller node.
+
+See [Overview of EON Service](/helion/openstack/ga/services/eon/overview/)
+
 
 **DNSaaS**. The HP Helion OpenStack DNSaaS (Domain Name System as a Service) provides a way to display, create, modify, and delete DNS records to the assigned DNS server network. 
 
