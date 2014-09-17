@@ -112,7 +112,7 @@ The command below starts a drain target server on a node and pipes it to a local
 
 As long as that nc command runs, this will funnel logs from all drains, targeting it into the file log-output.txt
 
-Enable system logging by executing **one** of the the following kato commands:
+Enable system logging by executing **one** of the following kato commands:
 
     kato log drain add drain-name udp://server-address:port#
 	kato log drain add drain-name tcp://server-address:port#

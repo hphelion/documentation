@@ -19,18 +19,15 @@ Before installing the Development Platform, you must first install [HP Helion Op
 ###Resources for Application Developers###
 HP has created a [Workbook](/helion/devplatform/workbook) with multiple small sample applications to walk you through understanding and exercising the Development Platform services. Each sample builds on the previous one and all source code is available for you to take apart and examine. Each sample is provided in multiple languages. There are more complex, real-world samples available at the end of the Workbook for you to download and deploy.
 
-* Service-Specific Documentation
-	* [Application Lifecycle Service documentation](/als/v1/)
-* Language Pack-Specific Documentation
+* [Application Lifecycle Service documentation](/als/v1/)
+* 
 ###Resources for Sysadmins and Installers###
 * [Release notes](/helion/devplatform/community/release-notes/)
 * [HP Helion OpenStack&trade; Community Installation](https://docs.hpcloud.com/helion/community/install-virtual/)
->* [Development Platform Installation and Configuration](/helion/devplatform/community/install-dev-platform/) this installs ALS and DBaaS - why do we have separate install for ALS below?
+>[Development Platform Installation and Configuration](/helion/devplatform/community/install-dev-platform/) this installs ALS and DBaaS - why do we have separate install for ALS below?
 
 * [Application Lifecycle Service (ALS) Installation and Configuration](/helion/devplatform/community/install-als/)
->- MSGaaS?
-> 
->- [HP Helion Development Platform product FAQ](/helion/devplatform/faq-ce/)this link 404s do we intend to have an FAQ?
+* [Application Lifecycle Service (ALS) Administrators Guide](/als/v1/admin/)
 
 ###Resources for OpenStack Integration and Service Developers###
 - [Cloud Foundry documentation](http://docs.cloudfoundry.org/)
