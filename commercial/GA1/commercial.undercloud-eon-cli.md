@@ -117,7 +117,6 @@ You can view the vswitch details.
 	eon vswitch-show [argument]
 
 
-
 ##Cluster command {#cluster-command}
 
 ###Activate clusters {#activate-clusters}

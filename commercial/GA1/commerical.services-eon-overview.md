@@ -46,7 +46,7 @@ ESX  on border (EON) service is an inventory which interacts with the VMware vCe
 
 The following diagram depicts the EON architecture of HP Helion OpenStack.
 
-<img src ="media/Eon Architecture.vsd/">
+<img src ="media/eon-architecture.png/">
 
 
 
