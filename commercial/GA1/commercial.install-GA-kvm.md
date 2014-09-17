@@ -411,9 +411,11 @@ Make sure you can access the overcloud Horizon dashboard. To do this, follow the
 	For intructions, see the [Configuring HP StoreVirtual VSA for Block Storage](/helion/openstack/ga/install/vsa/) document. 
 
 - Configure an HP 3Par storage array
+- 
+	An optional HP 3Par storage array that can be used to provide high performance Cinder block storage 
 
-•	An optional HP 3Par storage array that can be used to provide high performance Cinder block storage 
-/helion/openstack/install/3par/
+	For intructions, see the [HP Helion OpenStack&#174;: HP StoreServ (3PAR) Support](/helion/openstack/install/3par/) document.
+
 
 
 

@@ -94,7 +94,7 @@ The high-level process for installing HP Helion OpenStack involves the following
 	
 	- [Install onto a KVM hypervisor](/helion/openstack/ga/install/kvm/).
 
-		Then, [configure HP StoreVirtual VSA for Block Storage](/helion/openstack/ga/install/vsa/) or [configure HP 3PAR StoreServ Storage](/helion/openstack/install/3par/). 
+		Then, [configure HP StoreVirtual VSA for Block Storage](/helion/openstack/ga/install/vsa/) or [configure HP 3PAR StoreServ Storage](/helion/openstack/ga/install/3par/). 
 
 	- [Install onto an ESX hypervisor](/helion/openstack/ga/install/esx/).
 
