@@ -20,16 +20,25 @@ In order to download and deploy these sample applications, you must have the fra
 
 ##Workbook Samples
 1. Hello World <br>
-The Hello World sample is as simple as it gets. This sample is available in the following languages:
+The Hello World sample is as simple as it gets: Hello World! <br>This sample is available in the following languages:
 	- [JAVA](/helion/devplatform/workbook/helloworld/java/)
 	- [Node](/helion/devplatform/workbook/helloworld/node/)
 	- [PHP](/helion/devplatform/workbook/helloworld/php/)
 
 2. [Database as a Service](/helion/devplatform/workbook/database/) (DBaaS) <br>
-Create a database and link to it.
-3. [Messaging as a Service](/helion/devplatform/workbook/messaging/) (MSGaaS) <br>
-Create a message, throw it, catch it, and display it.
+Create a database and link to it.<br>This sample is available in the following languages:
 
+
+	- [JAVA](/helion/devplatform/workbook/database/java/)
+	- [Node](/helion/devplatform/workbook/database/node/)
+	- [PHP](/helion/devplatform/workbook/database/php/)
+	<br>
+3. [Messaging as a Service](/helion/devplatform/workbook/messaging/) (MSGaaS)<br> Create a message, throw it, catch it, and display it.
+This sample is available in the following languages:
+	- [JAVA](/helion/devplatform/workbook/messaging/java/)
+	- [Node](/helion/devplatform/workbook/messaging/node/)
+	- [PHP](/helion/devplatform/workbook/messaging/php/)
+	
 ##Real-World Samples
 These sample applications are more complex and reflect potential real-world situations. If you are not already familiar with the services that make up the HP Helion Development Platform, complete the brief Workbook examples before you examine these advanced applications.  
 

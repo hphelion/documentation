@@ -1,23 +1,17 @@
 ---
 layout: default-devplatform
 title: "HP Helion Development Platform Workbook Hello World Sample"
-permalink: /helion/devplatform/workbook/helloworld/java/
+permalink: /helion/devplatform/workbook/database/java/
 product: devplatform
 
 ---
 ##Hello World JAVA
 This is a very simple Servlet-based Java webapp.
 
-###Pre-requisites:
-**JDK**
-
-Maven requires you to have the Java Development Kit (JDK) installed. The JDK can be installed with the following command:
+###Pre-requisite: Maven
+[Maven](http://maven.apache.org/ "Maven") must be installed. Maven requires you to have the Java Development Kit (JDK) installed. The JDK can be installed with the following command:
 
 	sudo apt-get install default-jdk
-
-**Maven**
-
-[Maven](http://maven.apache.org/ "Maven") must be installed. 
 The simplest way to install Maven is:
 
 	sudo apt-get install maven 
@@ -46,4 +40,4 @@ Notice that the app type was automatically detected as "Java Web Application".
 
 The result when visiting the application page and clicking **View App** should be "Hello World".	
 
-[Exit Workbook](/helion/devplatform/) | [Next Sample](/helion/workbook/database/java/)
+[Exit Workbook](/helion/devplatform/) | [Previous Sample](/helion/workbook/messaging/java/) 

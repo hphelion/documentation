@@ -18,5 +18,5 @@ To create a CloudFoundry&trade; app in PHP, the only mandatory files are the `in
 
 The `composer.json` file is completely optional; however, certain buildpacks may issue a warning if the file is not present.
 
-[Exit Workbook](/helion/devplatform/) | [Next Sample](/helion/workbook/database/) 
+[Exit Workbook](/helion/devplatform/) | [Next Sample](/helion/workbook/database/php/) 
 
