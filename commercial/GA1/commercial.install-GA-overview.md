@@ -197,9 +197,13 @@ There are a few things you should be aware of before you begin your HP Helion Op
 
     4. Ensure there are no Heat resources in an Error state, and then delete any stale or corrupted Heat-related stacks.
 
-## Next Step ## {#next}
+## Next Steps ## {#next}
+
+Review the [HP Helion OpenStack Support Matrix](/helion/openstack/ga/support-matrix/) and [HP Helion OpenStack&#174; Technical Overview](/helion/openstack/ga/technical-overview/).
 
 Prepare your environment for the installation, see [HP Helion OpenStack&#174; Installation: Prerequisites](/helion/openstack/ga/install/prereqs/).
+
+
 
 ## For more information ## {#info}
 

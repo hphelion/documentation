@@ -696,6 +696,14 @@ Ubuntu 13.10/14.04 with the following package versions.
 <tr style="background-color: white; color: black;">
 <td>virt-install</td> <td>0.600.1</td></tr></table>
 
+## Next Steps ## {#next}
+
+Review the [HP Helion OpenStack&#174; Technical Overview](/helion/openstack/ga/technical-overview/).
+
+Prepare your environment for the installation, see [HP Helion OpenStack&#174; Installation: Prerequisites](/helion/openstack/ga/install/prereqs/).
+
+
+
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 ----
