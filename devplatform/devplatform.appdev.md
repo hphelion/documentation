@@ -1,7 +1,7 @@
 ``---
 layout: default-devplatform
 title: "HP Helion Development Platform Documentation"
-permalink: /helion/devplatform/appdev
+permalink: /helion/devplatform/appdev/
 product: devplatform
 
 ---

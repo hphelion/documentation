@@ -1,7 +1,7 @@
 ---
 layout: default-devplatform
 title: "HP Helion Development Platform Documentation"
-permalink: /helion/devplatform/sysadmin
+permalink: /helion/devplatform/sysadmin/
 product: devplatform
 
 ---
