@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Log In"
-permalink: /helion/openstack/dashboard/login/
+permalink: /helion/openstack/community/dashboard/login/
 product: commercial
 
 ---
