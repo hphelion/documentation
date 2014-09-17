@@ -92,7 +92,7 @@ do
 			#echo  "name $c = ${names2[c]} name $i = ${names[i]}"
 			 
 			then
-			git log -n 1 ${names[i]} | grep Author
+			 
 				echo ""
 				echo "The following files use the same permalink (${permalink2[c]}):" 
 				echo "   ${names2[c]} in the master branch"
