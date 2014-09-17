@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack: Intergrating LDAP"
-permalink: /helion/openstack/ga/install/kvm/
+permalink: /helion/openstack/ga/install/ldap/
 product: commercial.ga
 
 ---

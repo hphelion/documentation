@@ -42,23 +42,44 @@ This rest of this page provides you with the following installation information:
 ### Installation options {#installation-options}
 With HP Helion OpenStack, you have two baremetal installation options depending on your system configuration.
 
-* **KVM hypervisor with HP StoreVirtual VSA support**
+* HP Helion OpenStack with a KVM hypervisor 
 
-	HP Helion OpenStack supports KVM (Kernel-based Virtual Machine). With our KVM integration, you  can provision and manage an overcloud KVM cluster.
+	HP Helion OpenStack supports KVM (Kernel-based Virtual Machine). With our KVM integration, you  can provision and manage an overcloud KVM cluster. One of these two add-ons is required for the [Volume Operations](/helion/openstack/ga/services/volume/overview/) service:
 
-	[HP StoreVirtual VSA](http://www8.hp.com/us/en/products/data-storage/storevirtual-vsa.html) allows you to consolidate multiple storage nodes into pools of storage. The available capacity and performance is aggregated and made available to every volume in the cluster. 
+	- HP StoreVirtual VSA:
+	
+		[HP StoreVirtual VSA](http://www8.hp.com/us/en/products/data-storage/storevirtual-vsa.html) allows you to consolidate multiple storage nodes into pools of storage. The available capacity and performance is aggregated and made available to every volume in the cluster. 
+
+	- HP 3PAR StoreServ
+
+		HP 3PAR StoreServ is storage array (a physical device), which is integrated with HP Cloud OS to realize block storage of the cloud environment.
 
 	[Learn how to to install and configure with a KVM hypervisor](/helion/openstack/install/kvm). 
 
-* **ESX hypervisor with HP Virtual Cloud Networking (VCN) application support**
+* HP Helion OpenStack with a ESX hypervisor 
 
-    HP Helion OpenStack supports VMWare ESX hypervisor. With our ESX integration, you can provision and manage an overcloud ESX cluster.
+	HP Helion OpenStack supports VMWare ESX hypervisor. With our ESX integration, you can provision and manage an overcloud ESX cluster.
 
-    HP Virtual Cloud Networking (VCN) application enables you to build a robust, multi-tenant networking infrastructure. Once deployed, the Open vSwitch vApp (OVSvApp) template enables networking between the tenant VMs provisioned on your ESX compute nodes.
+	- HP Virtual Cloud Networking (VCN) application support**
 
-    [Learn how to to install and configure with an ESX hypervisor](/helion/openstack/install/esx/).  
+		HP Virtual Cloud Networking (VCN) application enables you to build a robust, multi-tenant networking infrastructure. Once deployed, the Open vSwitch vApp (OVSvApp) template enables networking between the tenant VMs provisioned on your ESX compute nodes.
 
-After installing HP Helion OpenStack, you have the option to install HP Helion OpenStack DNS as a service (DNSaaS) support. Our managed DNS service, based on the Openstack Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.
+	- HP Virtual Cloud Networking's Open vSwitch vApp (OVSvApp)
+	
+		The OVSvApp must be installed on each hypervisor in the HP Helion OpenStack environment to provision VMs in your VMware vCenter environment. 
+
+	[Learn how to to install and configure with an ESX hypervisor](/helion/openstack/install/esx/).  
+
+After installing HP Helion OpenStack, you have the option to install: 
+
+- **HP Helion OpenStack DNS as a service (DNSaaS)**. Our managed DNS service, based on the Openstack Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.
+
+	 [Learn how to install and configure HP Helion OpenStack DNSaaS](/helion/openstack/ga/install/dnsaas/) 
+
+- **Lightweight Directory Access Protocol integration**
+
+	 [Learn how to integrate LDAP](/helion/openstack/ga/install/ldap/) 
+
 
 ## About the installation process ## {#install-about}
 
@@ -73,7 +94,7 @@ The high-level process for installing HP Helion OpenStack involves the following
 	
 	- [Install onto a KVM hypervisor](/helion/openstack/ga/install/kvm/).
 
-		Then, [configure HP StoreVirtual VSA for Block Storage](/helion/openstack/ga/install/vsa/) or [configure HP 3PAR StoreServ Storage](/helion/openstack/install/3par/). One of these two add-ons is required for the [Volume Operations](/helion/openstack/ga/services/volume/overview/) service.
+		Then, [configure HP StoreVirtual VSA for Block Storage](/helion/openstack/ga/install/vsa/) or [configure HP 3PAR StoreServ Storage](/helion/openstack/install/3par/). 
 
 	- [Install onto an ESX hypervisor](/helion/openstack/ga/install/esx/).
 

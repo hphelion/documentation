@@ -60,24 +60,6 @@ The following diagram depicts the required network topology for a KVM installati
 
 For detailed network requirements, see [HP Helion OpenStack&#174; Installation: Prerequisites](/helion/openstack/ga/install/prereqs/#network_prepare).
 
-
-## Installing HP StoreVirtual Virtual Storage Appliance (VSA) {#vsa}
-
-Before you install HP Helion OpenStack, [HP StoreVirtual VSA](http://www8.hp.com/us/en/products/data-storage/storevirtual-vsa.html) must be installed and configured.
-
-Once you have completed the HP StoreVirtual VSA installation, you must have the number of VSA nodes to complete the HP Helion OpenStack installation.
-
-<!--
-you must have the following information available to complete the HP Helion OpenStack installation:
-* VSA_API_URL
-* VSA_USERNAME
-* VSA_PASSWORD
-* VSA_NAME
--->
-
-See the [HP StoreVirtual VSA support](/helion/openstack/install-beta/vsa/) page for complete installation and configuration instructions.
-
-
 ## Downloading the installation packages {#getinstall}
 
 Before you begin, you must download the required HP Helion OpenStack installation packages:
@@ -416,11 +398,25 @@ Make sure you can access the overcloud Horizon dashboard. To do this, follow the
 
 ## Next Steps
 
-- Configure HP StoreVirtual VSA **(REQUIRED)**. 
+- Configure HP StoreVirtual VSA. 
 
 	HP StoreVirtual VSA Software is a Virtual Storage Appliance that provides the complete array functionality on top of Linux KVM environment without an external array hardware. It eliminates the need for external shared storage required to implement block storage features. It uses scale-out, distributed clustering to provide a pool of storage with enterprise storage features and simple management.
 
 	For intructions, see the [Configuring HP StoreVirtual VSA for Block Storage](/helion/openstack/ga/install/vsa/) document. 
+
+- Configure a Swift Scale-Out cluster
+
+	An optional Swift Scale-Out cluster instance of between two and twelve servers that is used for production cloud Object storage use (Scale-Out Swift extends the Starter Swift Cluster enabling greater capacity while maintaining any initial data present in Starter Swift).
+
+	For intructions, see the [Configuring HP StoreVirtual VSA for Block Storage](/helion/openstack/ga/install/vsa/) document. 
+
+- Configure an HP 3Par storage array
+
+•	An optional HP 3Par storage array that can be used to provide high performance Cinder block storage 
+/helion/openstack/install/3par/
+
+
+
 
 - Install DNS as a service (DNSaaS) (Optional).
 
