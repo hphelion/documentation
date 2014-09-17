@@ -4,7 +4,7 @@
 layout: default
 title: "HP Helion OpenStack&#174; EON Overview"
 permalink: /helion/openstack/ga/services/eon/overview/
-product: commercial
+product: commercial.ga
 
 ---
 <!--UNDER REVISION-->
