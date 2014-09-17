@@ -202,11 +202,11 @@ The following hardware requirement is required to install HP Helion OpenStack.
 
 For more information of Hardware configuration see [Hardware configuration](/helion/openstack/ga/install/prereqs/) and [Support Matrix](/helion/openstack/ga/support-matrix/)
 
-### Network Architecture {#networkarch}
+### Network architecture {#networkarch}
 
 The following information describes the network configuration for [KVM]({#KVM-Physical-network}) and [ESX](#ESX-physical-network), which must be configured by the network administrator.
 
-####KVM Physical Networks {#KVM-physical-network}
+####KVM physical networks {#KVM-physical-network}
 <table>
 <tr style="background-color: #C8C8C8;">
     <th>Network</th>
@@ -222,7 +222,8 @@ The following information describes the network configuration for [KVM]({#KVM-Ph
 </td>
  </tr>
 </table>
-####Virtual Networks
+
+####Virtual networks
 The logical networks listed in the following table are implemented as VLANs on the physical network.
 <table>
 
@@ -251,7 +252,7 @@ The logical networks listed in the following table are implemented as VLANs on t
 
 The Network Administrator must set up routing and firewalls for tenants to access service APIs which are only exposed on the management network. Find more information on guidelines for setting up security firewalls and routing here.  For more information on security network see [Network security](/helion/openstack/ga/install/security/).
 
-####ESX Physical Network {#ESX-physical-network}
+####ESX physical network {#ESX-physical-network}
 <table>
 <tr style="background-color: #C8C8C8;">
     <th>Network</th>
@@ -267,7 +268,7 @@ The Network Administrator must set up routing and firewalls for tenants to acces
 </tr>
 </table>
 
-**Virtual Networks**
+####Virtual networks
 The logical networks listed in the following table are implemented as VLANs on the physical network.
 <table>
 <tr style="background-color: #C8C8C8;">

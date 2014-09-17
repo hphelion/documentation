@@ -44,7 +44,7 @@ The following command line are used to perform ringos activities.
 
 List the available Swift nodes in the cloud.
 
-	ringos help list-swift-nodes
+	ringos  list-swift-nodes
 
 
 ###list-disks  {#list-disks}
