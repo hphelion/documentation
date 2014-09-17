@@ -207,10 +207,10 @@ respectively) in a folder called *cert* in the application's root
 directory. For example:
 
     app_root
-    ─── certs
-        ─── harbor.crt
-        ─── harbor.key
-    ─── ...
+    	cert
+        	harbor.crt
+        	harbor.key
+  
 
 Alternatively, use a standalone or buildpack setup which provisions its
 own intermediate web server instead.
@@ -226,11 +226,10 @@ naming scheme:
 For example:
 
     app_root
-    ─── certs
-        ─── harbor-https-custom-1.crt
-        ─── harbor-https-custom-2.key
-    ─── ...
-
+    	certs
+        	harbor-https-custom-1.crt
+        	harbor-https-custom-2.key
+    
 The proxy will look for these certs before reverting to *harbor.crt* and
 *harbor.key*.
 
