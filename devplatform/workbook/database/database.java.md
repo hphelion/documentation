@@ -8,7 +8,7 @@ product: devplatform
 #JAVA Database
 
 
-This is the **second** sample in the Workbook; if you have not already examined the [HelloWorld](/helion/devplatform/workbook/helloWorld/java/) sample, please do that one first.
+This is the **second** sample in the Workbook; if you have not already examined the [HelloWorld](/helion/devplatform/workbook/helloworld/java/) sample, please do that one first.
 
 
 ## Prerequisites

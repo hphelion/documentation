@@ -24,7 +24,7 @@ This is the **third** sample in the Workbook; if you have not already examined t
 ##Download the Application Files
 Download the files [here](https://gitlab.gozer.hpcloud.net/developer-experience/rabbitmq-php).
 
- ##Deploy the Application
+##Deploy the Application
 
 To deploy the application, make sure you are logged in successfully for your desired target environment; for example, *https://api.yourapp.com*.
 
@@ -42,4 +42,4 @@ To deploy the application, make sure you are logged in successfully for your des
 5. In the upper right-hand corner, click **View App**.
 6. You should see a page that will accept a user's message.
 
-[Exit Workbook](/helion/devplatform/) | [Previous Sample](/helion/workbook/helloworld/php/) | [Next Sample](/helion/workbook/database/php/)
+[Exit Workbook](/helion/devplatform/) | [Previous Sample](/helion/devplatform/workbook/helloworld/php/) | [Next Sample](/helion/devplatform/workbook/database/php/)

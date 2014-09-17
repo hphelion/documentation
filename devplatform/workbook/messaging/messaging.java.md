@@ -8,7 +8,7 @@ product: devplatform
 #JAVA Messaging Sample
 This is a simple Servlet-based Java webapp that uses RabbitMQ. 
 
-This is the **third** sample in the Workbook; if you have not already examined the [HelloWorld](/helion/devplatform/workbook/helloWorld/java/) sample and the [Database](/helion/devplatform/workbook/database/java/) sample, please do those two first.
+This is the **third** sample in the Workbook; if you have not already examined the [HelloWorld](/helion/devplatform/workbook/helloworld/java/) sample and the [Database](/helion/devplatform/workbook/database/java/) sample, please do those two first.
 
 
 ## Prerequisites
@@ -70,4 +70,4 @@ To deploy the application, make sure you are logged in successfully for your des
 6. You should see a page that will accept a user's message.
 
 
-[Exit Workbook](/helion/devplatform/) | [Previous Sample](/helion/workbook/helloworld/java/) | [Next Sample](/helion/workbook/database/java/)
+[Exit Workbook](/helion/devplatform/) | [Previous Sample](/helion/devplatform/workbook/helloworld/java/) | [Next Sample](/helion/devplatform/workbook/database/java/)
