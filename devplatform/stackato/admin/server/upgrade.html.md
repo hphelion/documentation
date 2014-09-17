@@ -65,7 +65,7 @@ To upgrade an individual node, log into the node and run:
 
     $ kato node upgrade
 
-This will start the ‘Node Upgrade Process' described below.
+This will start the **Node Upgrade Process** described below.
 
 ### Upgrading a cluster[](#upgrading-a-cluster "Permalink to this headline")
 

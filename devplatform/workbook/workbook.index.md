@@ -35,7 +35,7 @@ Create a database and link to it.<br>This sample is available in the following l
 	- [JAVA](/helion/devplatform/workbook/database/java/)
 	- [Node](/helion/devplatform/workbook/database/node/)
 	- [PHP](/helion/devplatform/workbook/database/php/)
-	<br>
+
 3. [Messaging as a Service](/helion/devplatform/workbook/messaging/) (MSGaaS)<br> Create a message, throw it, catch it, and display it.
 This sample is available in the following languages:
 	- [JAVA](/helion/devplatform/workbook/messaging/java/)
