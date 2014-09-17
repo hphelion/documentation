@@ -41,6 +41,12 @@ This page provides detailed information on HP StoreVirtual for realizing cloud s
 
 ## HP StoreVirtual overview {#storevirtual-overview}
 
+HP StoreVirtual VSA provides complete array functionality without an external array hardware, which:
+
+* eliminates the need for external shared storage required to implement block storage feature
+* uses scale-out, distributed clustering to provide a pool of storage with enterprise storage features and simple management at a reduced cost
+
+
 HP StoreVirtual VSA Software is a Virtual Storage Appliance that provides the complete array functionality on top of Linux KVM environment without an external array hardware. It eliminates the need for external shared storage required to implement block storage features. It uses scale-out, distributed clustering to provide a pool of storage with enterprise storage features and simple management. 
 
 Multiple StoreVirtual VSAs running on multiple servers create a clustered pool of storage with the ability to make data highly available by protecting volumes with network RAID. A logical grouping of clusters is done to form a unit and is termed as management group. Each cluster can be treated as storage node by hypervisor and is accessed using VIP (virtual IP). 
@@ -521,6 +527,20 @@ To add a VSA node to any existing Management Group, do the following:
 10. Enter the name of the management group.
 
 11. Click **Add** to add the node to the group that you specified.<br> The node is added to the Management Group.
+
+## Next Steps
+
+- Configure HP StoreVirtual VSA **(REQUIRED)**. 
+
+	HP StoreVirtual VSA Software is a Virtual Storage Appliance that provides the complete array functionality on top of Linux KVM environment without an external array hardware. It eliminates the need for external shared storage required to implement block storage features. It uses scale-out, distributed clustering to provide a pool of storage with enterprise storage features and simple management.
+
+	For intructions, see the [Configuring HP StoreVirtual VSA for Block Storage](/helion/openstack/ga/install/vsa/) document. 
+
+- Install DNS as a service (DNSaaS) (Optional).
+
+	Our managed DNS service, based on the OpenStack Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.
+
+	For installation intructions, see [DNSaaS Beta Installation and Configuration](/helion/openstack/ga/install/dnsaas/).
 
 
 <!---## Next step
