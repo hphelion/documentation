@@ -5,39 +5,63 @@ permalink: /helion/devplatform/workbook/database/java/
 product: devplatform
 
 ---
-##Hello World JAVA
-This is a very simple Servlet-based Java webapp.
+#JAVA Database
 
-###Pre-requisite: Maven
-[Maven](http://maven.apache.org/ "Maven") must be installed. Maven requires you to have the Java Development Kit (JDK) installed. The JDK can be installed with the following command:
+
+This is the **second** sample in the Workbook; if you have not already examined the [HelloWorld](/helion/devplatform/workbook/helloWorld/java/) sample, please do that one first.
+
+
+## Prerequisites
+**Stackato**
+
+1. You must have a Stackato instance available. 
+2. The  [Stackato command-line interface (CLI)](http://docs.stackato.com/user/client/index.html#client) must be installed. 
+3. You must have access to the web-based Administration console.
+
+**JDK**
+
+Maven requires you to have the Java Development Kit (JDK) installed. The JDK can be installed with the following command:
 
 	sudo apt-get install default-jdk
+
+**Maven**
+
+[Maven](http://maven.apache.org/ "Maven") must be installed. 
 The simplest way to install Maven is:
 
 	sudo apt-get install maven 
+##Download the Application Files
+Download the files 
+###About the Application Files
+ The `pom.xml` file 
+in the root directory is used by Maven to build the application.
+##Build the Application
 
-###Download the Application Files
-[Click here to access the download directory.](https://gitlab.gozer.hpcloud.net/developer-experience/sampleapps) There are several sets of files here; download only the Hello-World-Java sample files.
- 
-###Build the Application
 The specific commands listed below are intended for Unix-like machines.
 
-You will build the application with Maven.
-<br> `cd` into the root directory of the sample and execute:
+ *cd* into this app's root directory and execute:
 
 	mvn clean package
 
-This will create the *hello-world-java-1.0.war* file within the `target` directory. The `pom.xml` file in the root directory of this sample is used by Maven to build the application. 
+This will create the .war file within the `target` directory.
 
-###Run the Application
-To run the application, make sure you have the Stackato client installed and that you are logged in to your desired target environment (e.g. *http://api.stackato.local*).
 
-Then execute:
+##Deploy the Application
 
-	stackato push -n 
+To deploy the application, make sure you are logged in successfully for your desired target environment; for example, *https://api.yourapp.com*.
 
-Notice that the app type was automatically detected as "Java Web Application". 
+1. Open the  [Stackato command-line interface (CLI)](http://docs.stackato.com/user/client/index.html#client).
 
-The result when visiting the application page and clicking **View App** should be "Hello World".	
+2. *cd* into the app's root directory.
+3. Execute `stackato push -n` 
 
-[Exit Workbook](/helion/devplatform/) | [Previous Sample](/helion/workbook/messaging/java/) 
+##Run the Application
+
+1. Open the Management Console. This is the web-based administrative interface.
+2. Click **Applications**.
+3. If the file push was successful, you should see Hello World in the list of available applications. 
+4. The status of the application should be **Online**. Click the name of the application to launch it. 
+5. In the upper right-hand corner, click **View App**.
+6. You should see a page that will 
+
+[Exit Workbook](/helion/devplatform/) | [Previous Sample](/helion/devplatform/workbook/helloworld/java/) | [Next Sample](/helion/devplatform/workbook/messaging/java/)

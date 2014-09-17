@@ -35,6 +35,11 @@ Maven requires you to have the Java Development Kit (JDK) installed. The JDK can
 The simplest way to install Maven is:
 
 	sudo apt-get install maven 
+##Download the Application Files
+Download the files [here](https://gitlab.gozer.hpcloud.net/developer-experience/rabbitmq-java)
+###About the Application Files
+ The `pom.xml` file 
+in the root directory is used by Maven to build the application.
 ##Build the Application
 
 The specific commands listed below are intended for Unix-like machines.
@@ -43,8 +48,8 @@ The specific commands listed below are intended for Unix-like machines.
 
 	mvn clean package
 
-This will create the .war file within the `target` directory. The `pom.xml` file 
-in the root directory is used by Maven to build the application.
+This will create the .war file within the `target` directory.
+
 
 ##Deploy the Application
 
