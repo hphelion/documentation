@@ -1,20 +1,23 @@
 ---
 layout: default-devplatform
 permalink: /als/v1/user/quick-start/
+
 ---
 <!--PUBLISHED-->
 
-Quick Start[](#index-0 "Permalink to this headline")
+Prerequisites[](#index-0 "Permalink to this headline")
 =====================================================
 
-This guide covers the basics of using an Application Lifecycle Service (ALS) PaaS. To follow along,
+This guide covers the basics of using an Application Lifecycle Service (ALS) PaaS.
+
+To follow along,
 you will need:
 
 -   a user account
--   a copy of the `helion` CLI client
+-   a copy of the Helion CLI client
 -   a web browser
 
-If you want to run your own Application Lifecycle Service "micro cloud" system for local
+If you want to run your own Application Lifecycle Service micro-cloud system for local
 development and testing,  download a copy of the Application Lifecycle Service
 VM  and follow the
 setup instructions in the Admin Guide.
@@ -28,7 +31,7 @@ Console*](/als/v1/admin/console/customize/#management-console). You can use it t
 -   see your current usage and quota
 -   monitor and manage applications you have deployed
 -   see which runtimes, frameworks, and services are available
--   deploy applications from the App Store
+-   deploy applications from the Marketplace
 
 To use it, open the API Endpoint URL (e.g. *https://api.stacka.to*) in
 your favorite browser. Log in with the username and password that have
@@ -37,12 +40,12 @@ been set up for you on the system.
 The interface should be mostly self-explanatory. It exposes most of the
 functionality you have access to as an end user, but to deploy your own
 applications from source code on your local machine you will need to install and use
-the `helion` [Application Lifestyle Service client](/als/v1/user/client/#helion-client-setup).
+the Helion [Application Lifestyle Service client](/als/v1/user/client/#helion-client-setup).
 
 Application Lifecycle Service Client[](#helion-client "Permalink to this headline")
 -----------------------------------------------------------------
 
-The `helion` client is used for pushing
+The Helion client is used for pushing
 applications to Application Lifecycle Service and interacting with the system from the
 command line.
 
@@ -62,7 +65,7 @@ list of commands and options.
 
 ### Target and Login[](#target-and-login "Permalink to this headline")
 
-To connect the `helion` client to the PaaS, use
+To connect the helion client to the PaaS, use
 the `target` command to specify the API Endpoint
 URL. This is normally the hostname prepended with "api." for example:
 
@@ -107,9 +110,7 @@ To set the Space you want to deploy applications to:
     Organization: test-org
     Space:        dev
 
-**Note**
-
-If your account is not a member of a Space, you will need an
+**Note**:If your account is not a member of a Space, you will need an
 Organization Manager to add you as a Developer. If you are an
 Organization Manager or Admin, you can create create new Spaces in the
 [*Management Console*](/als/v1/admin/console/customize/#user-console-space) or with
@@ -153,18 +154,5 @@ application or run:
 	$ helion open [appname]
 
 Documentation on configuring applications in specific languages and
-frameworks is available in the [*Deploying
-Apps*](/als/v1/user/deploy/#deploying-apps) section.
-
-### [Table Of Contents](/als/v1/index-2/)
-
--   [Quick Start](#)
-    -   [Management Console](#management-console)
-    -   [Application Lifecycle Service Client](#helion-client)
-        -   [Target and Login](#target-and-login)
-    -   [Setting Organization and
-        Space](#setting-organization-and-space)
-    -   [Deploying Apps](#deploying-apps)
-        -   [Sample Applications](#sample-applications)
-        -   [Test the Application](#test-the-application)
+frameworks is available in the [*Deploying Apps*](/als/v1/user/deploy/#deploying-apps) section.
 

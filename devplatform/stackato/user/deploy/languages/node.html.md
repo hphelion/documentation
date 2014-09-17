@@ -21,29 +21,23 @@ before starting the server.
 
 Alternatively, you can call `npm` directly using
 [*hooks*](/als/v1/user/deploy/stackatoyml/#stackato-yml-hooks) in the *stackato.yml*
-file (e.g. see the
-[RailwayJS](https://github.com/Stackato-Apps/railwayjs/blob/master/stackato.yml)
-Application Lifecycle Service sample application).
+file. For an example, see the [RailwayJS](https://github.com/Stackato-Apps/railwayjs/blob/master/stackato.yml)
+Application Lifecycle Service sample application.
 
-For NPM packages which include callable scripts or binaries, executable
-components are automatically added to the container's \$PATH, so a
-"global install" (e.g, `npm install -g`) is not
-required.
+For NPM packages which include callable scripts or binaries, executable components are automatically added to the container's \$PATH, so a "global install" (`npm install -g`) is not required.
 
 Host and Port Environment Variables[](#host-and-port-environment-variables "Permalink to this headline")
 ---------------------------------------------------------------------------------------------------------
 
 Deploying Node applications to Application Lifecycle Service requires changing some
 application settings to use instance-specific values. These values are
-provided on Application Lifecycle Service with environment variables. For example, the
+provided to Application Lifecycle Service using environment variables. For example, the
 application is not allowed to arbitrarily choose which port it runs on.
-It must use the one assigned by Application Lifecycle Service with the `PORT`{.docutils
-.literal} variable. To access this in a node application:
+It must use the port assigned by Application Lifecycle Service with the `PORT` variable. To access this in a node application:
 
     process.env.PORT
 
-Likewise, the host IP address is exposed by `VCAP_APP_HOST`{.docutils
-.literal}:
+Likewise, the host IP address is exposed by `VCAP_APP_HOST`:
 
     process.env.VCAP_APP_HOST
 
@@ -108,7 +102,7 @@ containing a single MongoDB service might look like this:
     }
 
 To use this information in your application code, use something similar
-to this block from the
+to this block, which is from the
 [node-backbone-mongo](https://github.com/Stackato-Apps/node-backbone-mongo)
 demo application:
 
@@ -126,12 +120,3 @@ demo application:
 
 This is the typical pattern used for all databases exposed by
 VCAP\_SERVICES.
-
-### [Table Of Contents](/als/v1/index-2/)
-
--   [Node.js](#)
-    -   [NPM](#node-npm)
-    -   [Host and Port Environment
-        Variables](#host-and-port-environment-variables)
-    -   [Using Data Services](#using-data-services)
-

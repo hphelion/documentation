@@ -6,6 +6,42 @@ permalink: /als/v1/user/deploy/stackatoyml/
 
 HP stackato.yml Options[](#stackato-yml-options "Permalink to this headline")
 ===========================================================================
+[name:](#name)
+    -   [buildpack:](#buildpack)
+    -   [framework:](#framework)
+        -   [type:](#type)
+        -   [runtime:](#runtime)
+        -   [document-root:](#document-root)
+        -   [start-file:](#start-file)
+    -   [app-dir](#app-dir)
+    -   [services:](#services)
+    -   [requirements:](#requirements)
+        -   [OS Packages](#os-packages)
+        -   [Language Modules](#language-modules)
+    -   [mem:](#mem)
+    -   [disk:](#disk)
+    -   [instances:](#instances)
+    -   [url (or urls):](#url-or-urls)
+    -   [env:](#env)
+        -   [env Attributes](#env-attributes)
+    -   [processes:](#processes)
+        -   [web:](#web)
+    -   [command:](#command)
+    -   [cron:](#cron)
+    -   [ignores:](#ignores)
+    -   [inherit:](#inherit)
+    -   [hooks:](#hooks)
+        -   [pre-push:](#pre-push)
+        -   [pre-staging:](#pre-staging)
+        -   [post-staging:](#post-staging)
+        -   [pre-running:](#pre-running)
+    -   [drain:](#drain)
+    -   [min\_version:](#min-version)
+        -   [client:](#client)
+        -   [server:](#server)
+    -   [Key Substitution](#key-substitution)
+
+
 
 Configuration options for Application Lifecycle Service applications can be stored in a
 *stackato.yml* file in the top-level application directory.
@@ -27,12 +63,9 @@ insert values from one key into another.
 for these configuration files can be found in the [helion-cli source
 repository](https://github.com/HP/helion-cli/):
 
--   [stackato.yml
-    specification](https://github.com/HP/helion-cli/blob/master/doc/stackato.yml.txt)
--   [manifest.yml
-    specification](https://github.com/HP/helion-cli/blob/master/doc/manifest.yml.txt)
--   [stackato.yml to manifest.yml key
-    mappings](https://github.com/HP/helion-cli/blob/master/doc/helion-2-manifest.txt)
+-   [stackato.yml specification](https://github.com/ActiveState/stackato-cli/blob/master/doc/stackato.yml.txt)
+-   [manifest.yml specification](https://github.com/ActiveState/stackato-cli/blob/master/doc/manifest.yml.txt)
+-   [stackato.yml to manifest.yml key mappings](https://github.com/ActiveState/stackato-cli/blob/master/doc/stackato-2-manifest.txt)
 
 The following sections describe the available keys and the values that
 can be assigned to them:
@@ -264,8 +297,7 @@ packages.
 ### OS Packages[](#os-packages "Permalink to this headline")
 
 OS packages can be added in an `ubuntu:` block
-within a `staging:` and/or `running:`{.docutils
-.literal} block. Plain strings are treated as package names:
+within a `staging:` and/or `running:` block. Plain strings are treated as package names:
 
     requirements:
       staging:
@@ -303,8 +335,7 @@ Example:
 
 For the installation of language modules, replacing the
 *requirements.txt* file. For
-[*Python*](/als/v1/user/deploy/languages/python/#python-index), `pypm:`{.docutils
-.literal} and `pip:` can be specified:
+[*Python*](/als/v1/user/deploy/languages/python/#python-index), `pypm:` and `pip:` can be specified:
 
     requirements:
       pypm:
@@ -313,8 +344,7 @@ For the installation of language modules, replacing the
       pip:
         - pycurl
 
-For [*Perl*](/als/v1/user/deploy/languages/perl/#perl-index), `ppm:`{.docutils
-.literal} or `cpan:` can be specified:
+For [*Perl*](/als/v1/user/deploy/languages/perl/#perl-index), `ppm:` or `cpan:` can be specified:
 
     requirements:
       ppm:
@@ -335,8 +365,7 @@ Syntax: \<int\> or \<int\>M - Memory in megabytes. eg. 256M
 
 Syntax: \<int\>G or \<float\>G - Memory in gigabytes. eg. 1.5G or 2G
 
-If not specified, user may be prompted during `helion push`{.docutils
-.literal}. Can also be specified on the command line (eg.
+If not specified, user may be prompted during `helion push`. Can also be specified on the command line (eg.
 `helion push --mem 256M`).
 
 Example:
@@ -354,8 +383,7 @@ Syntax: \<int\> or \<int\>M - Disk in megabytes. eg. 768M
 Syntax: \<int\>G or \<float\>G - Disk in gigabytes. eg. 1.5G or 2G
 
 If not specified, 2GB of disk space is allocated. Can also be specified
-on the command line (eg. `helion push --disk 768M`{.docutils
-.literal}).
+on the command line (eg. `helion push --disk 768M`).
 
 Example:
 
@@ -499,9 +527,7 @@ If the application exists solely to run commands via
 [*cron*](#stackato-yml-cron), a dummy command such as '*sleep 365d*'
 should be specified.
 
-The `$PROCESSES_WEB` and `$STACKATO_UWSGI`{.docutils
-.literal} variables can also be used with `processes: web:`{.docutils
-.literal}.
+The `$PROCESSES_WEB` and `$STACKATO_UWSGI` variables can also be used with `processes: web:`.
 
 `$PROCESSES_WEB` contains the command that is used
 to start the web application, if you want to override the default
@@ -764,42 +790,3 @@ A small number of keys are predefined for your use within
 
 See the [*services*](#stackato-yml-services) section for an example of
 variable key substitution for yaml key names.
-
-### [Table Of Contents](/als/v1/index-2/)
-
--   [HP stackato.yml Options](#)
-    -   [name:](#name)
-    -   [buildpack:](#buildpack)
-    -   [framework:](#framework)
-        -   [type:](#type)
-        -   [runtime:](#runtime)
-        -   [document-root:](#document-root)
-        -   [start-file:](#start-file)
-    -   [app-dir](#app-dir)
-    -   [services:](#services)
-    -   [requirements:](#requirements)
-        -   [OS Packages](#os-packages)
-        -   [Language Modules](#language-modules)
-    -   [mem:](#mem)
-    -   [disk:](#disk)
-    -   [instances:](#instances)
-    -   [url (or urls):](#url-or-urls)
-    -   [env:](#env)
-        -   [env Attributes](#env-attributes)
-    -   [processes:](#processes)
-        -   [web:](#web)
-    -   [command:](#command)
-    -   [cron:](#cron)
-    -   [ignores:](#ignores)
-    -   [inherit:](#inherit)
-    -   [hooks:](#hooks)
-        -   [pre-push:](#pre-push)
-        -   [pre-staging:](#pre-staging)
-        -   [post-staging:](#post-staging)
-        -   [pre-running:](#pre-running)
-    -   [drain:](#drain)
-    -   [min\_version:](#min-version)
-        -   [client:](#client)
-        -   [server:](#server)
-    -   [Key Substitution](#key-substitution)
-

@@ -1,5 +1,3 @@
-
-
 ---
 layout: default
 title: "HP Helion OpenStack&#174; EON Overview"

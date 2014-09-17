@@ -52,11 +52,4 @@ Application Lifecycle Service.
 Examples[](#examples "Permalink to this headline")
 ---------------------------------------------------
 
--   [Rubric](https://github.com/Stackato-Apps/rubric): The winning entry
-    from our Application Lifecycle Service contest.
-
-### [Table Of Contents](/als/v1/index-2/)
-
--   [CGI::Application::PSGI](#)
-    -   [Examples](#examples)
-
+-   [Rubric](https://github.com/Stackato-Apps/rubric): The winning entry from our Application Lifecycle Service contest.

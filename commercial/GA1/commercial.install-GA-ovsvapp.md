@@ -412,25 +412,3 @@ To uninstall VCN on ESX hosts, access the ESX hosts from vSphere Client, and del
 ####OpenStack trademark attribution
 *The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*
 
-
-
-
-
-
-
-
-
-
-
-
-
-<!--- Removed from after step 8, In the Seed VM's folder /ovsvapp/hp-ovsvapp/src/ovsvm....
-5. Install `pyvmomi` and `netaddr python` modules on the machine from where you  run the installer script, using the following command.
-
-    `pip install pyvmomi`
-
-    `pip install netaddr`
-
-6. In the `hp-ovsvapp\src\ovsvm` folder, locate the `ovs_vapp.ini` file, and add your settings for cloning and configuring OVSvApp VMs.
-
-**Note**: It is important that you carefully enter and verify the settings you add to the file because the configuration in the `ovs_vapp.ini` file is deployed to multiple OVSvApp VMs. -->

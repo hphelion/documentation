@@ -229,3 +229,4 @@ YAML
     Language](http://en.wikipedia.org/wiki/YAML), used in *stackato.yml*
     and *manifest.yml* configuration files.
 
+ 

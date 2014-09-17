@@ -9,6 +9,18 @@ Known Issues[](#known-issues "Permalink to this headline")
 
 Buildpack config\_vars Deprecated[](#buildpack-config-vars-deprecated "Permalink to this headline")
 ----------------------------------------------------------------------------------------------------
+ [Buildpack config\_vars Deprecated](#buildpack-config-vars-deprecated)
+    -   [Legacy Buildpack and Environment
+        Variables](#legacy-buildpack-and-environment-variables)
+    -   [Importing Apps using RabbitMQ
+        2.4](#importing-apps-using-rabbitmq-2-4)
+    -   [Service Gateway Log Errors in Maintenance
+        Mode](#service-gateway-log-errors-in-maintenance-mode)
+    -   [Nodes with FATAL or perpetually STARTING
+        processes](#nodes-with-fatal-or-perpetually-starting-processes)
+    -   [Avoiding App Reliance on IP
+        Addresses](#avoiding-app-reliance-on-ip-addresses)
+    -   [Community Forums](#community-forums)
 
 Buildpacks used to rely on the `config_vars` feature
 of *bin/release* to set environment variables, but this has been
@@ -87,8 +99,7 @@ If not, Application Lifecycle Service provides various [*environment
 variables*](/als/v1/user/reference/environment/#environment-variables)
 so that applications do not need to hardcode them at install time. Some
 examples are `VCAP_SERVICES`,
-`STACKATO_SERVICES`, and `DATABASE_URL`{.docutils
-.literal}. We strongly encourage their use.
+`STACKATO_SERVICES`, and `DATABASE_URL`. We strongly encourage their use.
 
 A known issue is that some applications have install procedures that
 can't be configured to make use of these variables. If the server that's
@@ -119,20 +130,4 @@ Please keep up to date with the latest Known Issues, FAQs and
 announcements in our [online Application Lifecycle Service
 forums](https://community.dev.hp.com/t5/Forum/bd-p/cloud_board).
 
-### [Table Of Contents](/als/v1/index-2/)
-
--   [Known Issues](#)
-    -   [Buildpack config\_vars
-        Deprecated](#buildpack-config-vars-deprecated)
-    -   [Legacy Buildpack and Environment
-        Variables](#legacy-buildpack-and-environment-variables)
-    -   [Importing Apps using RabbitMQ
-        2.4](#importing-apps-using-rabbitmq-2-4)
-    -   [Service Gateway Log Errors in Maintenance
-        Mode](#service-gateway-log-errors-in-maintenance-mode)
-    -   [Nodes with FATAL or perpetually STARTING
-        processes](#nodes-with-fatal-or-perpetually-starting-processes)
-    -   [Avoiding App Reliance on IP
-        Addresses](#avoiding-app-reliance-on-ip-addresses)
-    -   [Community Forums](#community-forums)
 

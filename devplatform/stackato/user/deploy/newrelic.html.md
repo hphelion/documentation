@@ -6,7 +6,19 @@ permalink: /als/v1/user/deploy/newrelic/
 
 New Relic Monitoring[](#new-relic-monitoring "Permalink to this headline")
 ===========================================================================
-
+   [New Relic for Ruby](#new-relic-for-ruby)
+        -   [The Ruby Gem](#the-ruby-gem)
+        -   [Installing the Ruby agent with the Bundler
+            Gem](#installing-the-ruby-agent-with-the-bundler-gem)
+        -   [Configuration File](#configuration-file)
+    -   [New Relic for Python](#new-relic-for-python)
+        -   [Bottle Currency Example](#bottle-currency-example)
+    -   [New Relic for Java](#new-relic-for-java)
+        -   [Pet Catalog Example](#pet-catalog-example)
+    -   [New Relic for PHP](#new-relic-for-php)
+        -   [WordPress Example](#wordpress-example)
+    -   [Results](#results)
+ 
 **Note**
 
 These instructions are for use with Application Lifecycle Service. For further details,
@@ -193,20 +205,3 @@ Results[](#results "Permalink to this headline")
 Push the app to the Application Lifecycle Service server, and make a few requests to it in a
 browser. After a few minutes, check the New Relic dashboard to confirm
 the information is being logged correctly.
-
-### [Table Of Contents](/als/v1/index-2/)
-
--   [New Relic Monitoring](#)
-    -   [New Relic for Ruby](#new-relic-for-ruby)
-        -   [The Ruby Gem](#the-ruby-gem)
-        -   [Installing the Ruby agent with the Bundler
-            Gem](#installing-the-ruby-agent-with-the-bundler-gem)
-        -   [Configuration File](#configuration-file)
-    -   [New Relic for Python](#new-relic-for-python)
-        -   [Bottle Currency Example](#bottle-currency-example)
-    -   [New Relic for Java](#new-relic-for-java)
-        -   [Pet Catalog Example](#pet-catalog-example)
-    -   [New Relic for PHP](#new-relic-for-php)
-        -   [WordPress Example](#wordpress-example)
-    -   [Results](#results)
-

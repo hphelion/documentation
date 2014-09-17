@@ -105,11 +105,3 @@ examples.
 
 Frameworks or buildpacks that autoconfigure bound services will do so
 automatically, as they would for system-provided data services.
-
-### [Table Of Contents](/als/v1/index-2/)
-
--   [User-Provided Services](#)
-    -   [Creating](#creating)
-    -   [Binding](#binding)
-    -   [Using](#using)
-

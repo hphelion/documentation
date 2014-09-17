@@ -9,6 +9,26 @@ Best Practices[](#index-0 "Permalink to this headline")
 
 Applying Updates[](#applying-updates "Permalink to this headline")
 -------------------------------------------------------------------
+[Applying Updates](#applying-updates)
+    -   [Backup & Migration](#backup-migration)
+        -   [Limitations](#limitations)
+            -   [Custom Services](#custom-services)
+            -   [Hard-coded Database Connection
+                Info](#hard-coded-database-connection-info)
+            -   [DEAs](#deas)
+        -   [Migrating to 3.0](#migrating-to-3-0)
+        -   [Exporting the server data](#exporting-the-server-data)
+        -   [Scheduled backups](#scheduled-backups)
+        -   [Importing the server data](#importing-the-server-data)
+    -   [Upgrading (v3.0 and later)](#upgrading-v3-0-and-later)
+    -   [Server Monitoring with New
+        Relic](#server-monitoring-with-new-relic)
+    -   [System Monitoring with Nagios](#system-monitoring-with-nagios)
+    -   [Persistent Storage](#persistent-storage)
+        -   [Relocating Services, Droplets, and
+            Containers](#relocating-services-droplets-and-containers)
+        -   [Enabling Filesystem Quotas](#enabling-filesystem-quotas)
+
 
 Major version upgrades of Application Lifecycle Service can be done using [*kato node
 upgrade*](/als/v1/admin/server/upgrade/#upgrade) or a [*migration to a new VM
@@ -172,14 +192,11 @@ node:
     0 3 * * * su - helion /bin/bash -c '/home/helion/bin/kato data export --cluster /mnt/nas/helion-backup.tgz'
 
 This runs `kato data export --cluster` every morning
-at 3AM as `root` using the `helion`{.docutils
-.literal} user's login environment (required) and saves a .tgz file to a
+at 3AM as `root` using the `helion` user's login environment (required) and saves a .tgz file to a
 mounted external filesystem.
 
-Scheduled (non-interactive) backups using the `kato export`{.docutils
-.literal} command will need to be run by `root` as
-some shell operations performed in the export require `sudo`{.docutils
-.literal} when run interactively. For clusters, passwordless [SSH key
+Scheduled (non-interactive) backups using the `kato export` command will need to be run by `root` as
+some shell operations performed in the export require `sudo` when run interactively. For clusters, passwordless [SSH key
 authentication](https://help.ubuntu.com/community/SSH/OpenSSH/Configuring#disable-password-authentication)
 between the Core node and all other nodes will also need to be set up.
 The command should be run on the node hosting the 'filesystem' role, as
@@ -394,27 +411,4 @@ partition. The example above would require a block such as this:
       mount -o remount,usrjquota=aquota.user,grpjquota=aquota.group,jqfmt=vfsv0 /mnt/containers
       quotaon -v /mnt/containers
     fi
-
-### [Table Of Contents](/als/v1/index-2/)
-
--   [Best Practices](#)
-    -   [Applying Updates](#applying-updates)
-    -   [Backup & Migration](#backup-migration)
-        -   [Limitations](#limitations)
-            -   [Custom Services](#custom-services)
-            -   [Hard-coded Database Connection
-                Info](#hard-coded-database-connection-info)
-            -   [DEAs](#deas)
-        -   [Migrating to 3.0](#migrating-to-3-0)
-        -   [Exporting the server data](#exporting-the-server-data)
-        -   [Scheduled backups](#scheduled-backups)
-        -   [Importing the server data](#importing-the-server-data)
-    -   [Upgrading (v3.0 and later)](#upgrading-v3-0-and-later)
-    -   [Server Monitoring with New
-        Relic](#server-monitoring-with-new-relic)
-    -   [System Monitoring with Nagios](#system-monitoring-with-nagios)
-    -   [Persistent Storage](#persistent-storage)
-        -   [Relocating Services, Droplets, and
-            Containers](#relocating-services-droplets-and-containers)
-        -   [Enabling Filesystem Quotas](#enabling-filesystem-quotas)
 

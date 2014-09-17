@@ -1,5 +1,3 @@
- 
-
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Command Line Interface- EON"
@@ -26,9 +24,11 @@ PageRefresh();
 
 #Command Line Interface- EON 
 
+
 The EON client CLI package provides a http-client coupled command line tool for managing Eon (Esx management) services.
  
 You can use the following command using the EON Client CLI package in the UnderCloud:
+
 
 * [Help](#help)
 

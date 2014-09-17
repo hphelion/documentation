@@ -26,7 +26,6 @@ HP Helion OpenStack can be installed on a VMware ESX bare-metal or virtual hyper
 
 HP Helion OpenStack on an ESX hypervisor allows you to manage the VMware vCenter and provision virtual machines.
 
-
 ## Installing HP Helion OpenStack ## {#install}
 
 The installation and configuration process for ESX consists of the following general steps: 
@@ -80,7 +79,7 @@ Before you begin, you must download the required HP Helion OpenStack installatio
 </table>
 
 
-## Install HP Helion Openstack ## {#install}
+## Installing HP Helion Openstack ## {#install}
 
 Make sure you have met all the hardware requirements and have completed the required tasks before you begin your installation. The following sections walk you through:
 
@@ -122,9 +121,11 @@ Make sure you have met all the hardware requirements and have completed the requ
 		ssh root@192.0.2.1
 
 3. Make sure the information in the [`baremetal.csv` configuration file](/helion/openstack/ga/install/prereqs/#req-info) file is correct and in the following format and upload the file to `/root`.
-		<mac_address>,<ipmi_user>,<ipmi_password>,<ipmi_address>,<no_of_cpus>,<memory_MB>,<diskspace_GB>
+
 
 	***QUESTION: Must use IPMI user vs ILO user in beta?***
+
+		<mac_address>,<ipmi_user>,<ipmi_password>,<ipmi_address>,<no_of_cpus>,<memory_MB>,<diskspace_GB>
 
 	**Important**: There must be one entry in this file for each baremetal system you intend to install. The file must contain exactly five lines for the ESX installation. For example, your file should look similar to the following:
 
@@ -141,28 +142,14 @@ Make sure you have met all the hardware requirements and have completed the requ
 
 	***QUESTION: Still optional? Not in https://rndwiki2.atlanta.hp.com/confluence/display/cloudos/Cloud+type+ESX+installation.***
 
-6. Edit `configure_installer.sh` to provide your VMware vCenter connection details. 
-
-	***QUESTION: Still optional? Not in https://rndwiki2.atlanta.hp.com/confluence/display/cloudos/Cloud+type+ESX+installation.***
-
-		/root/tripleo/tripleo-incubator/scripts/configure_installer.sh
-
-	For example:
-
-		export ENABLE_VCENTER="True"
-		export VCENTER_IP="<15.14.19.17>"
-		export VCENTER_USERNAME="<Administrator>"
-		export VCENTER_PASSWORD="<Password>"
-		export VCENTER_CLUSTERS="<Cluster1>","<Cluster2>","<Cluster3>","<Cluster 4>"
-		export ENABLE_VSA="False"
 
 5. Manually power off each baremetal system specified in your `baremetal.csv` before proceeding with the installation. 
     
-    **IMPORTANT:** Make sure that each system is configured in the BIOS to stay powered off in the event of being shutdown rather than automatically restarting.
+	**IMPORTANT:** Make sure that each system is configured in the BIOS to stay powered off in the event of being shutdown rather than automatically restarting.
 
-9. Release floating IP addresses for networking.
+6. Release floating IP addresses for networking.
 
-	***QUESTION: More info needed on how to determine the IP range. How does this help. DOes shrinking the floating IP range free up IPs for the private IPs needed for OVSvApp??***
+	***QUESTION: More info needed on how to determine the IP range??***
 
 	By default, the installation creates a pool of floating IP addresses that you can assign to virtual machines. However, the HP Virtual Cloud Networking's Open vSwitch vApp (OVSvApp) required by the ESX environment requires a block of IP addresses. You create more IP addresses for OVSvApp by restricting the number of floating IP addresses created.
 
@@ -173,20 +160,20 @@ Make sure you have met all the hardware requirements and have completed the requ
 
 	**Note:** If the above settings are changed, set the 'NeutronPublicInterfaceDefaultRoute' variable to the actual gateway for the customized IP range.
 
-10. Set `OVERCLOUD_NTP_SERVER` to the IP address of the NTP server accessible on the public interface for overcloud hosts. 
+7. Set `OVERCLOUD_NTP_SERVER` to the IP address of the NTP server accessible on the public interface for overcloud hosts. 
 
 	To set this variable:
 
 		export OVERCLOUD_NTP_SERVER=<IP_address>
 
-11. Set `UNDERCLOUD_NTP_SERVER` to the IP address of the NTP server accessible on the public interface for undercloud hosts. 
+8. Set `UNDERCLOUD_NTP_SERVER` to the IP address of the NTP server accessible on the public interface for undercloud hosts. 
 
 	To set this variable:
 
 		export UNDERCLOUD_NTP_SERVER=<IP_address>
 
 
-12. Set the IP address of the customer router in your network.
+9. Set the IP address of the customer router in your network.
 
 	To set this variable:
 
@@ -194,13 +181,15 @@ Make sure you have met all the hardware requirements and have completed the requ
 
 	For detailed network requirements, see [HP Helion OpenStack&#174; Installation: Prerequisites](/helion/openstack/ga/install/prereqs/#network_prepare).
 
-12. Set the installation type to ESX.
+10. Set the installation type to ESX.
 
 	To set this variable:
 
 		export OVERCLOUD_CLOUD_TYPE="ESX"
 
-12. Use the following commands to set environment variables
+11. Use the following commands to set environment variables
+
+	To set these variables:
 
 		export PROVIDER_NETWORK="192.168.10.0/24"
 		export OVERCLOUD_VIRTUAL_INTERFACE=eth0
@@ -235,13 +224,39 @@ Make sure you have met all the hardware requirements and have completed the requ
  
 		"HP - completed - Tue Apr 22 16:20:20 UTC 2014"
 
-## Verify your installation {#verify}
+## Verify your installation {#verifying-your-installation}
 
 To verify that the installation is successful, connect to the HP Helion Openstack dashboard and the undercloud dashboard as follows.
 
-### Connect to the Horizon console ### {#connectconsole}
+### Connect to the undercloud Horizon console ### {#monitoring}
 
-Ensure you can access the overcloud Horizon dashboard. To do this, follow the steps below:
+Make sure you can access the undercloud Horizon dashboard. To do this, follow the steps below:
+
+1. From the seed, run the following command.
+
+		. /root/stackrc
+
+2. Assign the undercloud IP address to a variable.
+
+		UNDERCLOUD_IP=$(nova list | awk '/\| undercloud/{print $12}' | sed 's/ctlplane=//'); echo $UNDERCLOUD_IP
+
+3. Determine the undercloud IP from the output of step 2 using the following command. It is in the last line returned.
+  
+		echo ${UNDERCLOUD_IP}
+
+4. Obtain the undercloud admin password using the following command:
+
+		UNDERCLOUD_ADMIN_PASSWORD=$(grep UNDERCLOUD_ADMIN_PASSWORD /root/tripleo/tripleo-undercloud-passwords | sed 's/UNDERCLOUD_ADMIN_PASSWORD=//'); echo $UNDERCLOUD_ADMIN_PASSWORD
+
+5. From your install system, open a web browser and point to:
+
+		http://<undercloud_IP>/icinga/
+
+6. Log in as user 'admin' with the admin password.
+
+### Connect to the overcloud Horizon console ### {#connectconsole}
+
+Make sure you can access the overcloud Horizon dashboard. To do this, follow the steps below:
 
 1. From the seed, export the undercloud passwords.
 
@@ -255,7 +270,7 @@ Ensure you can access the overcloud Horizon dashboard. To do this, follow the st
 
 		DEMO_IP=$(nova list | awk '/\| demo \|/{print $13}')
 
-4. Determine the overcloud controller IP from the output of step 3 using the following command. It is in the last line returned.
+4. With the IP address and root password, log in as the main user, root using the following command 
 
 		ssh root@${DEMO_IP}
 
@@ -269,31 +284,6 @@ Ensure you can access the overcloud Horizon dashboard. To do this, follow the st
 
 
 	**Note:** If you are unable to connect to the Horizon console, check your proxy settings to ensure that access to the controller VM is successfully redirected through a proxy.
-
-### Connect to the undercloud Horizon console ### {#monitoring}
-
-1. From the seed, run the following command.
-
-		. /root/stackrc
-
-2. Assign the undercloud IP address to a variable.
-
-		`UNDERCLOUD_IP=$(nova list | awk '/\| undercloud/{print $12}' | sed 's/ctlplane=//'); echo $UNDERCLOUD_IP`
-
-3. Determine the undercloud IP from the output of step 2 using the following command. It is in the last line returned.
-  
-        echo ${UNDERCLOUD_IP}
-
-4. Obtain the undercloud admin password using the following command:
-
-	`UNDERCLOUD_ADMIN_PASSWORD=$(grep UNDERCLOUD_ADMIN_PASSWORD /root/tripleo/tripleo-undercloud-passwords | sed 's/UNDERCLOUD_ADMIN_PASSWORD=//'); echo $UNDERCLOUD_ADMIN_PASSWORD`
-
-5. From your install system, open a web browser and point to:
-
-        http://<undercloud_IP>/icinga/
-
-6. Log in as user 'admin' with the admin password.
-
 
 ## Next Steps
 

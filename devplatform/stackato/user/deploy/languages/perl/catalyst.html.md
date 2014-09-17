@@ -41,10 +41,3 @@ Examples[](#examples "Permalink to this headline")
 -   [Catalyst Hello
     World](https://github.com/Stackato-Apps/catalyst-welcome): A simple
     Catalyst example.
-
-### [Table Of Contents](/als/v1/index-2/)
-
--   [Catalyst](#)
-    -   [Home Directory](#home-directory)
-    -   [Examples](#examples)
-

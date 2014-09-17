@@ -6,8 +6,16 @@ permalink: /als/v1/admin/reference/architecture/
 
 Architectural Design[](#architectural-design "Permalink to this headline")
 ===========================================================================
-
- <img src="/content/devplatform/stackato/images/helion-architecture-diagram.png" />
+ [Roles](#roles)
+        -   [Base](#base)
+        -   [Primary](#primary)
+        -   [Cloud Controller](#cloud-controller)
+        -   [Router](#router)
+        -   [Droplet Execution Agents](#droplet-execution-agents)
+    -   [Service Roles](#service-roles)
+        -   [Databases:](#databases)
+        -   [Other data services:](#other-data-services)
+    -   [Role Groups](#role-groups)
 
 The Application Lifecycle Service VM is a stand-alone [*micro
 cloud*](/als/v1/user/reference/glossary/#term-micro-cloud) virtual
@@ -15,6 +23,8 @@ machine with all the components necessary for running a test environment
 in one instance. For use on a larger scale, the VM can be cloned and
 assigned specific roles: Router, Cloud Controller, Droplet Execution
 Agents (DEAs, or worker nodes), or specific database services.
+
+<img src="/content/devplatform/stackato/images/helion-architecture-diagram.png" />
 
 Roles[](#roles "Permalink to this headline")
 ---------------------------------------------
@@ -82,15 +92,10 @@ application instances.
 
 The DEA role is comprised of a number of processes:
 
-> -   dea\_ng: Master process for staging and starting application
->     instances, reporting on their state via NATS to the Health
->     Manager.
-> -   dir\_server: Handles requests for directories/files, responding
->     with an HTTP URL.
-> -   fence: Responsible for the management of application containers
->     using Docker.
-> -   apptail: Streams application logs via Logyard to various log
->     drains.
+-   dea\_ng: Master process for staging and starting application instances, reporting on their state via NATS to the Health Manager.
+-   dir\_server: Handles requests for directories/files, responding with an HTTP URL.
+-   fence: Responsible for the management of application containers using Docker.
+-   apptail: Streams application logs via Logyard to various log drains.
 
 In previous versions of Application Lifecycle Service, staging and running were handled by
 separate components (Stager and DEA respectively), but these roles have
@@ -128,18 +133,3 @@ group provides all databases plus RabbitMQ and the filesystem service:
 
 Additional groups can be defined by administrators in
 */s/etc/kato/role\_groups.yml*.
-
-### [Table Of Contents](/als/v1/index-2/)
-
--   [Architectural Design](#)
-    -   [Roles](#roles)
-        -   [Base](#base)
-        -   [Primary](#primary)
-        -   [Cloud Controller](#cloud-controller)
-        -   [Router](#router)
-        -   [Droplet Execution Agents](#droplet-execution-agents)
-    -   [Service Roles](#service-roles)
-        -   [Databases:](#databases)
-        -   [Other data services:](#other-data-services)
-    -   [Role Groups](#role-groups)
-
