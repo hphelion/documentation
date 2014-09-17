@@ -10,9 +10,9 @@ product: commercial
 
 <!-- modeled after HP Cloud Networking Getting Started (network.getting.started.md) -->
 
-As part of that investment HP Software has created an advanced provisioning technology, called Eve, which uses TOSCA standard semantics to express infrastructure templates that can be orchestrated against an OpenStack Nova API.  As part of the Eve advanced provisioning service, hybrid provisioning can be accomplished with common templates across public and private OpenStack API compliant clouds.
+As part of that investment HP Software has created an advanced provisioning technology, called Eve, which uses TOSCA standard semantics to express infrastructure templates that can be orchestrated against an OpenStack Nova API.  As part of the Eve advanced provisioning service, hybrid provisioning can be accomplished with common templates across public and private OpenStack API-compliant clouds.
 
-The Eve service is the HP Helion OpenStack infrastructure topology provisioning service. Eve allows you to:
+The Eve service is the HP Helion OpenStack&#174; infrastructure topology provisioning service. Eve allows you to:
 
 - Provision TOSCA-based infrastructure topology designs (composite, hybrid, and distributed).
 - Separate topology creation and resource pool binding, for simpler, reusable topologies.
@@ -76,16 +76,13 @@ The following lists of tasks can be performed by a user or administrator through
 
 ## For more information ##
 
-For information on how to operate your cloud we suggest you read the [OpenStack Operations Guide](http://docs.openstack.org/ops/) The *Architecture* section contains useful information about how an OpenStack Cloud is put together. However, the HP Helion OpenStack edition takes care of these details for you. The *Operations* contains information on how to manage the system.
+For information on how to operate your cloud we suggest you read the [OpenStack Operations Guide](http://docs.openstack.org/ops/) The *Architecture* section contains useful information about how an OpenStack cloud is put together. However, the HP Helion OpenStack&#174; edition takes care of these details for you. The *Operations* contains information on how to manage the system.
+####OpenStack trademark attribution
+*The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*
+
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593;</a>
 
 <!-- hide me Also see the Help topics that are available in the Operational Dashboard and Administration Dashboard.  Website copies are available:
 
 * [HP Helion OpenStack Operational Dashboard Help](/helion/openstack/manage/operational-dashboard/)
 * [HP Helion OpenStack Administration Dashboard Help](/helion/openstack/manage/administration-dashboard/) -->
-
-
- <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-
-----
-####OpenStack trademark attribution
-*The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*

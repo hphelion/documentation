@@ -118,10 +118,10 @@ One advantage of cloud computing is that the resources can be provisioned or rel
 :    A catalog-based HP Helion OpenStack service that allows off-the-shelf content (like workloads, images, and patches) to be imported into your deployed cloud. To access CODN, see the Updates & Extensions panel in the  HP Helion OpenStack user interface. You can import content from the CODN portal or from a local folder.
 
 ###Compute### {#Compute} 
-:     The HP OpenStack service that manages the hypervisors and virtual machines in your environment. Compute provides a cloud computing fabric controller, the main part of an Infrastructure as a Service (IaaS) platform. Also known as [Nova](#Nova).
+:     The HP Helion OpenStack service that manages the hypervisors and virtual machines in your environment. Compute provides a cloud computing fabric controller, the main part of an Infrastructure as a Service (IaaS) platform. Also known as [Nova](#Nova).
 
 ###Compute Node###
-:     The machine that hosts cloud virtual machine instances using any supported hypervisor with OpenStack. In the current release,  HP Helion OpenStack supports KVM (qemu-kvm) and VMware (ESXi) as hypervisors. The compute node hosts OpenStack services called Nova-compute and Neutron l2 agent. Multiple Compute Nodes can be created to expand cloud capacity.
+:     The machine that hosts cloud virtual machine instances using any supported hypervisor with OpenStack technology. In the current release,  HP Helion OpenStack supports KVM (qemu-kvm) and VMware (ESXi) as hypervisors. The compute node hosts OpenStack services called Nova-compute and Neutron l2 agent. Multiple Compute Nodes can be created to expand cloud capacity.
 
 ###Compute Region Controller### {#Compute-Region-Controller}
 :    A controller responsible for scheduling a launch of instances across compute nodes. You can have multiple compute regions in your cloud.  A compute region is a pool of compute resources that can be consumed through a service API by consumers of the cloud, such as [Networking service](#Networking). The scheduling is based on varied flavors of instances and available resources on the compute nodes. In a single compute region deployment model, this can coexist with cloud controller services.
@@ -151,7 +151,7 @@ One advantage of cloud computing is that the resources can be provisioned or rel
 
 <!-- Not in Commercial beta
 ###Eve###
-:     A HP Helion OpenStack composite provisioning service that uses a topology design and profile to create VMs, volumes, and network segments as described in the topology. Eve uses the Graffiti service to determine the resource pool existence, traits, and user identity mapping. -->
+:     An HP Helion OpenStack composite provisioning service that uses a topology design and profile to create VMs, volumes, and network segments as described in the topology. Eve uses the Graffiti service to determine the resource pool existence, traits, and user identity mapping. -->
 
 ## F
 
@@ -200,7 +200,7 @@ A flat network can eb set up with a single adapter on the Baremetal host.
 ## I
 
 ###Identity Management### {#Identity}
-:     The HP OpenStack service that performs identity management (domains, projects and users), generates access tokens, and provides service catalog functionality.
+:     The HP Helion OpenStack service that performs identity management (domains, projects and users), generates access tokens, and provides service catalog functionality.
 
 ###Image### {#Image}
 :    1) An installable release package of a program, application, or software.  
@@ -212,13 +212,13 @@ See also [Private image](#ImagePriv) and [Public image](#ImagePub).
 :    A virtual disk [image](#Image) file that the Compute service can load up to create a virtual machine.
 
 ###Image Management ###{#Image}
-:     The HP OpenStack service that discovers, registers, and retrieves virtual machine (VM) images. Also known as Glance.
+:     The HP Helion OpenStack service that discovers, registers, and retrieves virtual machine (VM) images. Also known as Glance.
 
 ###Image metadata### {#ImageMeta}
 :    Metadata information about [images](#Image). For example: metadata includes the image identifier, name, status, size, disk format, container format, owner, and custom properties. Metadata is data that describes other data.
 
 ###Installer System### {#Installer}
-:    The machine where HP OpenStack Helion installation is initiated. This is the same machine as the [KVM host](#KVMhost) and is called the [seed VM](#Seed-Cloud).  
+:    The machine where HP Helion OpenStack installation is initiated. This is the same machine as the [KVM host](#KVMhost) and is called the [seed VM](#Seed-Cloud).  
 
 ###Instance### {#Instance}
 :    A virtual machine that runs inside the cloud.
@@ -230,7 +230,7 @@ See also [Private image](#ImagePriv) and [Public image](#ImagePub).
 :    The network that connects the baremetal host to the Intelligent Platform Management Interface (IPMI).
 
 ###Ironic###
-:    The HP OpenStack project to provision [baremetal](#Baremetal) nodes by leveraging common technologies such as PXE boot and [IPMI](#IPMI) to cover a wide range of hardware, while supporting pluggable drivers to allow vendor-specific functionality to be added.
+:    The HP Helion OpenStack project to provision [baremetal](#Baremetal) nodes by leveraging common technologies such as PXE boot and [IPMI](#IPMI) to cover a wide range of hardware, while supporting pluggable drivers to allow vendor-specific functionality to be added.
 
 
 ## J
@@ -248,7 +248,7 @@ See also [Private image](#ImagePriv) and [Public image](#ImagePub).
 :    See [Identity Management](#Identity)
 
 ###KVM Hypervisor### {#KVMhyp}
-:     The virtualization layer in [Kernel-based Virtual Machine or KVM](#KVM). The KVM hypervisor is a default hypervisor supported by the HP OpenStack [Compute service](#Compute). 
+:     The virtualization layer in [Kernel-based Virtual Machine or KVM](#KVM). The KVM hypervisor is a default hypervisor supported by the HP Helion OpenStack [Compute service](#Compute). 
 
 ###KVM Host### {#KVMhost}
 :    The machine which runs the [Kernel-based Virtual Machine or KVM](#KVM).  This is the same machine as the [Installer System](#Installer).
@@ -286,12 +286,12 @@ This metering may occur at some level of abstraction that's appropriate to the t
 ## O
 
 ###Object Operations### {#Object}
-:     The HP OpenStack service to store and retrieve large amounts of data in virtual containers.  
+:     The HP Helion OpenStack service to store and retrieve large amounts of data in virtual containers.  
 
 ###On-demand self service###
 :     A service where a consumer can unilaterally provision computing capabilities, such as server time and network storage, as needed, automatically, without requiring human interaction with each service provider. 
 
-###OpenStack###
+###OpenStack technology###
 :     An open-source cloud computing operating system.
 
 <!-- JS: Not in Core, I think. 
@@ -395,7 +395,7 @@ details of your specific request layer syntax).  The request layer handles all H
 :    An arbitrary bit of text that is used to access resources. Each token has a scope that describes the resources are accessible with the token. Associated with the [Identity service](#Identity).
 
 ###TripleO### {#TripleO}
-:    A program aimed at installing, upgrading and operating OpenStack clouds using OpenStack's own cloud facilities as the foundations - building on Nova, Neutron and Heat to automate fleet management at data centre scale (and scaling down to as few as two machines).
+:    A program aimed at installing, upgrading, and operating OpenStack clouds using the OpenStack project's own cloud facilities as the foundations - building on Nova, Neutron and Heat to automate fleet management at data centre scale (and scaling down to as few as two machines).
 
 ## U
 
@@ -428,7 +428,7 @@ Virtual Cloud Networking (VCN) is an enhanced OpenStack Networking service (Neut
 :     A bootable machine, previously saved by a user.
 
 ###Volume Operations### {#Volume}
-:     The HP OpenStack service that provides volume management in cloud environments. Also known as [Cinder](#Cinder).
+:     The HP Helion OpenStack service that provides volume management in cloud environments. Also known as [Cinder](#Cinder).
 
 ###VSA cluster### {#VSAcluster}
 :    An architecture that includes multiple ESXi hosts and provides shared datastores that are connected to all hosts in the datacenter. See also [Virtual Storage Appliance](#VSA).
@@ -444,8 +444,9 @@ Virtual Cloud Networking (VCN) is an enhanced OpenStack Networking service (Neut
 
 ## Z
 
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-
 ----
 ####OpenStack trademark attribution
 *The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*
+
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+

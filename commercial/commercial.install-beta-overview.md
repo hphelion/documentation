@@ -29,7 +29,7 @@ This page provides an overview of the installation process and requirements for 
 * 2 overcloud Swift nodes 
 * At least 1 overcloud Compute node 
 
-HP Helion OpenStack beta uses three linked installation phases to deploy a complete OpenStack cloud. <a href ="https://wiki.openstack.org/wiki/TripleO">TripleO</a> simulates the deployment of OpenStack by creating and configuring baremetal servers to successfully run a cloud deployment. 
+HP Helion OpenStack beta uses three linked installation phases to deploy a complete OpenStack cloud. <a href ="https://wiki.openstack.org/wiki/TripleO">TripleO</a> simulates the deployment of OpenStack cloud by creating and configuring baremetal servers to successfully run a cloud deployment. 
 
 * Seed: The seed VM is started as a VM from a specific seed VM image. It contains a number of self-contained OpenStack components that are used to deploy the undercloud. The seed deploys the undercloud by using Ironic baremetal driver to deploy a specific undercloud machine image.
 
@@ -77,7 +77,7 @@ With HP Helion OpenStack, you have two baremetal installation options depending 
 
     [Learn how to to install and configure with an ESX hypervisor](/helion/openstack/install-beta/esx/).  
 
-After installing HP Helion OpenStack, you have the option to install HP Helion OpenStack DNS as a service (DNSaaS) support. No matter what hypervisor you use, our managed DNS service, based on the Openstack Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.
+After installing HP Helion OpenStack, you have the option to install HP Helion OpenStack DNS as a service (DNSaaS) support. No matter what hypervisor you use, our managed DNS service, based on the OpenStack Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.
 
 [Learn how to to install and configure DNSaaS support](/helion/openstack/install-beta/dnsaas/).  
 
@@ -153,10 +153,7 @@ For more information on HP Helion OpenStack Community, see:
 * [Support matrix](/helion/openstack/support-matrix-beta/) 
 * [FAQ](/helion/openstack/faq/) 
 * [Release notes](/helion/openstack/release-notes/) 
-
-
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-
-----
 ####OpenStack trademark attribution
 *The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*
+
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

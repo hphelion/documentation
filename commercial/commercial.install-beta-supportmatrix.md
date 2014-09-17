@@ -43,7 +43,7 @@ The following diagrams depict simplified deployment scenarios:
 
 ## Supported hardware ## {#supportedhw}
 
-The following hardware is supported for Helion OpenStack:
+The following hardware is supported for HP Helion OpenStack:
 <table style="text-align: left; vertical-align: top;">
 
 <tr style="background-color: #C8C8C8;">
@@ -696,12 +696,8 @@ Ubuntu 13.10/14.04 with the following package versions.
 
 <tr style="background-color: white; color: black;">
 <td>virt-install</td> <td>0.600.1</td></tr></table>
-
-The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.
-
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-
-----
 ####OpenStack trademark attribution
 *The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*
+
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
