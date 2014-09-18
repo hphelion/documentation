@@ -1,26 +1,27 @@
 ---
 layout: default-devplatform
 title: "HP Helion Development Platform Workbook Hello World Sample"
-permalink: /helion/devplatform/workbook/helloworld/php/
+permalink: /helion/devplatform/workbook/database/php/
 product: devplatform
 
 ---
-# Hello World PHP
-
+#Database PHP Sample
+This is the **second** sample in the Workbook; if you have not already examined the [HelloWorld](/helion/devplatform/workbook/helloworld/php/) sample, please do that one first.
+# Prerequisites
 **Stackato**
 
 1. You must have a Stackato instance available. 
 2. The  [Stackato command-line interface (CLI)](http://docs.stackato.com/user/client/index.html#client) must be installed. 
 3. You must have access to the web-based Administration console.
+
 ##Download the Application Files
-[Click here to access the download directory.](https://gitlab.gozer.hpcloud.net/developer-experience/sampleapps) There are several sets of files here; download only the Hello-World-PHP sample files.
+Download the files 
+###About the Application Files
 
-### About the Application Files
-To create a CloudFoundry&trade; app in PHP, the only mandatory files are the `index.php` and `manifest.yml` files. 
+##Build the Application
 
-`Manifest.yml` is a configuration file used to specify settings that would otherwise be specified by a command-line tool. For PHP, only the **name** and **buildpack** fields are required. The **buildpack** field is a URL for the `buildpack` that supports the necessary language and/or framework.
 
-The `composer.json` file is completely optional; however, certain buildpacks may issue a warning if the file is not present.
+
 ##Deploy the Application
 
 To deploy the application, make sure you are logged in successfully for your desired target environment; for example, *https://api.yourapp.com*.
@@ -37,7 +38,8 @@ To deploy the application, make sure you are logged in successfully for your des
 3. If the file push was successful, you should see Hello World in the list of available applications. 
 4. The status of the application should be **Online**. Click the name of the application to launch it. 
 5. In the upper right-hand corner, click **View App**.
-6. You should see a simple text message: Hello World!
+6. You should see a page that will 
 
-[Exit Workbook](/helion/devplatform/) | [Next Sample](/helion/devplatform/workbook/database/php/) 
+
+[Exit Workbook](/helion/devplatform/) | [Previous Sample](/helion/devplatform/workbook/helloworld/php/) | [Next Sample](/helion/devplatform/workbook/messaging/php/)
 

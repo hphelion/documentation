@@ -219,13 +219,18 @@ From within the seed VM, you should be able to connect to the test guest or demo
 
     Ensure you note the IP address of the demo VM from the output of 'nova list' command. 
 
+ 
 2. Of the two IP addresses shown for each instance, use the `192.x.x.x` IP address to ping the VM:
 
         root@hLinux:~# ping <ip of demo vm>
 
 3. Verify you can ssh into the VM:
 
-        root@hLinux:~# ssh root@<ip of demo vm>
+        root@hLinux:~# ethtool K eth0 rx off tx off
+        root@hLinux:~# ssh root@<ip of demo vm> 
+
+
+
 
 ### Connecting to the Horizon console ### {#connectconsole}
 
@@ -238,7 +243,7 @@ From the physical system you are running the install on, you should be able to c
         root@hLinux:~# source ~root/tripleo/tripleo-incubator/undercloudrc
         root@hLinux:~# nova list
 
-    Ensure you note the IP address of the 'overcloud-controller' node in the output from 'nova list' command. 
+   Ensure that all of the instances from the nova list command are showing ACTIVE status. 
 
 2. Obtain the passwords for the `demo` and `admin` users:
 
@@ -247,7 +252,7 @@ From the physical system you are running the install on, you should be able to c
 
 3. Point your web browser on the physical host system to the overcloud Horizon console:
 
-        http://<IP of overcloud controller>
+        http://192.0.8.2
 
 4. Log in as `demo` or `admin` using the corresponding passwords obtained in step 2.
 

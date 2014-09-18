@@ -37,6 +37,7 @@ It is  designed to offer a number of value-added services that complement and en
 	* [Monitoring](#monitoring)
 	* [Add, remove and replace nodes](#add-remove-replace-nodes)
 	* [Backup and Restore nodes](#backup-restore-nodes)
+* [Next Step](#next)
 
 ##HP Helion OpenStack Services- Functional Overview {#Helion-services}
 
@@ -446,6 +447,11 @@ Backup and restore scripts and procedures are provided for SeedCloud, UnderCloud
 
 Backup and Restore of VM instances/snapshots and Volumes/snapshots for Workloads in the Cloud is supported using Swift. These are to be used by end users of Projects deployed in the OpenStack Cloud.
 
+## Next Steps ## {#next}
+
+Review the [HP Helion OpenStack Support Matrix](/helion/openstack/ga/support-matrix/).
+
+Prepare your environment for the installation, see [HP Helion OpenStack&#174; Installation: Prerequisites](/helion/openstack/ga/install/prereqs/).
 
 
 

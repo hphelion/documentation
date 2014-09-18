@@ -101,7 +101,7 @@ For additional information on HP Helion OpenStack beta, OpenStack Cloud Software
 * [HP Helion OpenStack Documentation web site](/helion/openstack/): Provides the topics listed below.
 * [FAQ](/helion/openstack/faq/): Contains some frequently asked questions about the HP Helion OpenStack beta
 * [Installation and configuration](/helion/openstack/install-beta-overview/): A set of tasks that walk you through the installation and configuration process.
-* [Related Topics](/helion/openstack/related-links/): Links to pertinent HP Helion OpenStack and OpenStack documentation.
+* [Related Topics](/helion/openstack/related-links/): Links to pertinent HP Helion OpenStack and OpenStack software documentation.
 * [OpenStack documentation home page](http://docs.openstack.org/)
 * [TripleO documentation](https://wiki.openstack.org/wiki/TripleO)
 * [HP Support Center](http://us-support.external.hp.com/portal/site/hpsc/public): Report issues with HP Helion OpenStack.
@@ -118,8 +118,5 @@ The OpenStack Word Mark is either a registered trademark/service mark or tradema
 **HP Helion OpenStack Warranty**: Linux hLinux 3.14.6-1-amd64-hlinux #1 SMP Mon Jun 9 11:35:36 MDT 2014 x86_64
 The programs included with the hLinux system are free software; the exact license terms for each program are described in the individual files in /usr/share/doc/*/copyright. hLinux comes with ABSOLUTELY NO WARRANTY, to the extent permitted by applicable law.
 
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
-----
-####OpenStack trademark attribution
-*The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

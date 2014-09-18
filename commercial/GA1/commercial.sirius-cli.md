@@ -25,7 +25,13 @@ PageRefresh();
 Once you complete the Undercloud and Overcloud installation, you can use Sirius client CLI package to configure your storage. The python-Siriusclient CLI package provides a http-client coupled command line tool for managing Sirius service. The client works with Keystone through the python-keystoneclient and thus requires OpenStack Keystone credentials to be sourced or augmented along with the command and is in line with other OpenStack clients.This service helps in configuring the storage devices such as StoreVirtual and StoreServ using Cinder as the backend.
 
 
-You can use the following commands using the Sirius Client CLI package:
+To get the list of all the Sirius commands, commands You can use the Help command to get the list of commands that can used in Sirius.  
+
+
+
+You can use the following commands using the Sirius Client CLI package in the Undercloud.
+
+* [Help Command](#help)
 
 * [API Commands](#api-commands)
 
@@ -35,13 +41,29 @@ You can use the following commands using the Sirius Client CLI package:
 
 * [Optional Commands](#optional-commands)
 
-  
+
+##Help Command {#help}
+
+###Help
+
+You can display the help of this program or one of its sub-programs
+
+	sirius --help
+
+
+##Help Subcommand
+
+You get two sets of arguments- Positional arguments(mandatory) and Keyword arguments(all mandatory fields are marked within [Required])
+
+	sirius help <sub-command>
+
+
 ## API commands {#api-commands} ##
 
 ### Get block info ###
 
 
-You can list the block storage details of API version. [**WHERE DO WE GIVE THIS COMMAND??????**]
+You can list the block storage details of API version. 
 
 	Sirius block-info
 
@@ -57,11 +79,6 @@ You can prints all the commands and options to standard output(stdout???)
 
 	sirius bash-completion
 
-##Help
-
-You can display the help of this program or one of its sub-programs
-
-	sirius help
 
 ## HP StoreVirtual commands {#storevirtual-commands}
 

@@ -10,7 +10,7 @@ Persistent File System[](#persistent-file-system "Permalink to this headline")
 The file system of application containers are ephemeral. Any application
 data or files stored locally within these containers is lost when the
 instance is stopped or restarted. To solve this, Application Lifecycle Service provides a
-‘filesystem’ service that can be shared between application instances,
+**filesystem** service that can be shared between application instances,
 and even between applications deployed to the same space.
 
 A persistent file system service allows apps to do the following:

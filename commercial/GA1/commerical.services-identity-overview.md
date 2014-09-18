@@ -24,17 +24,17 @@ PageRefresh();
 
 <!-- modeled after HP Cloud Networking Getting Started (network.getting.started.md) -->
 
-Based on OpenStack Keystone, the HP Helion OpenStack Identity service provides one-stop authentication for all HP Cloud offerings. 
+Based on OpenStack Keystone, the HP Helion OpenStack Identity service provides one-stop authentication for all HP Cloud offerings. It uses Lightweight Directory Access Protocol (LDAP) as source of authority authentication. LDAP simplifies integration of Identity authentication into an organization's existing directory service and user account management processes.
 
-The Identity service validates that incoming requests are being made by the user who claims to be making the call. 
+The requests to Identity service are delegated to the LDAP service which authorizes or rejects requests based on the policies that have been defined locally. A token is generated on successful authentication.
 
-The Identity service enables you to create and configure users, specify user roles and credentials, and issue security tokens. 
+The Identity service enables you to create and configure users, specify user roles and credentials, and issue security tokens. The `/etc/keystone/keystone.conf` file maps LDAP attributes to Identity attributes.
 
-Users have a login and may be assigned tokens to access resources. Users can scope their authentication to a project (or, tenant) which then limits where and how their tokens can be used to interact with services. Users are assigned roles that can be used to control access to projects.
+<!---The Identity service validates that incoming requests are being made by the user who claims to be making the call.-->
 
-The Identity service will confirm that incoming request are being made by the user who claims to be making the call by validating a set of claims that the user is making. These claims are initially in the form of a set of credentials (username & password, or user access keys). After initial confirmation, the Identity service will issue the user a token which the user can then provide to demonstrate that their identity has been authenticated when making subsequent requests.
+You can scope the user authentication to a project (or, tenant) which then limits where and how their tokens can be used to interact with services. Users have a login and may be assigned tokens to access resources. Users are assigned roles that can be used to control access to projects and also assigns them a set of rights and privileges.
 
-Users can belong to specific role(s), which is a set of rights and privileges.
+<!---The Identity service will confirm that incoming request are being made by the user who claims to be making the call by validating a set of claims that the user is making. These claims are initially in the form of a set of credentials (username & password, or user access keys). After initial confirmation, the Identity service will issue the user a token which the user can then provide to demonstrate that their identity has been authenticated when making subsequent requests.-->
 
 ## Key Terms ##
 

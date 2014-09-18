@@ -11,41 +11,34 @@ This Workbook is designed to exercise all the services which make up the HP Heli
 For best results, work with each sample in the order that they are provided, as each one builds on the knowledge provided in the previous sample. 
 
 ##Prerequisites - Before you Begin
-In order to download and deploy these sample applications, you must have the framework installed and configured.
+In order to download and deploy these sample applications, you must have the necessary framework installed and configured.
 
-* HP Helion Community OpenStack&trade; deployment
-* Cluster created
-* Logon and Password provided
+- HP Helion Community OpenStack&trade; deployment
+- Cluster created
+- Logon and Password provided
+- You must have a Stackato instance available. 
+- The  [Stackato command-line interface (CLI)](http://docs.stackato.com/user/client/index.html#client) must be installed. 
+ 
  
 
-##Workbook Samples
+##Sample Workbook
 1. Hello World <br>
-The Hello World sample is as simple as it gets. This sample is available in the following languages:
+The Hello World sample is as simple as it gets: Hello World! <br>This sample is available in the following languages:
 	- [JAVA](/helion/devplatform/workbook/helloworld/java/)
 	- [Node](/helion/devplatform/workbook/helloworld/node/)
 	- [PHP](/helion/devplatform/workbook/helloworld/php/)
 
-2. [Database as a Service](/helion/devplatform/workbook/database/) (DBaaS) <br>
-Create a database and link to it.
-3. [Messaging as a Service](/helion/devplatform/workbook/messaging/) (MSGaaS) <br>
-Create a message, throw it, catch it, and display it.
-
-##Real-World Samples
-These sample applications are more complex and reflect potential real-world situations. If you are not already familiar with the services that make up the HP Helion Development Platform, complete the brief Workbook examples before you examine these advanced applications.  
-
-1. Twitter Feed App (Java)
-	- Download from GitHub
-	- Push to cluster
-	- Validate that it’s working
-	- Inspect source code
-	- Undeploy
-	- JAVA Language Reference
+2. Database as a Service (DBaaS) <br>
+Create a database and link to it.<br>This sample is available in the following languages:
 
 
-2. Medical Locator App (Python)
-	- 	Download from GitHub
-	- 	Push to cluster
-	- 	Validate that it’s working
-	- 	Inspect source code
-	- 	Undeploy
-	- 	Python language reference
+	- [JAVA](/helion/devplatform/workbook/database/java/)
+	- [Node](/helion/devplatform/workbook/database/node/)
+	- [PHP](/helion/devplatform/workbook/database/php/)
+
+3. Messaging as a Service (MSGaaS)<br> Create a message, throw it, catch it, and display it.
+This sample is available in the following languages:
+	- [JAVA](/helion/devplatform/workbook/messaging/java/)
+	- [Node](/helion/devplatform/workbook/messaging/node/)
+	- [PHP](/helion/devplatform/workbook/messaging/php/)
+	

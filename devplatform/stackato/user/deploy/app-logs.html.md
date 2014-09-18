@@ -260,8 +260,7 @@ operations in different ways. Check for incompatibilities with
     `helion` user does not have permission to
     update the default state file.
 
-2.  Add an *app-logrotate.conf* file to the base directory of your
-    application to specify which log files to rotate, and and which
+2.  Add an *app-logrotate.conf* file to the base directory of your    application to specify which log files to rotate and which
     `logrotate` options to use. For example:
 
         /home/helion/logs/\*.log {

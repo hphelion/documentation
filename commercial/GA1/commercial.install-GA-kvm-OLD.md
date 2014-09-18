@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack: Installation and Configuration"
-permalink: /helion/openstack/ga/install/kvm/
+permalink: /helion/openstack/ga/install/kvmold/
 product: commercial.ga
 
 ---

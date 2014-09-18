@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Edition: VSA Support"
-permalink: /helion/openstack/install/3par/
+permalink: /helion/openstack/ga/install/3par/
 product: commercial
 
 ---
@@ -21,7 +21,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/install-beta/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/esx/">NEXT &#9654;</a> </p>
 
 
-# HP Helion OpenStack&#174;Commercial: HP StoreServ (3PAR) Support
+# HP Helion OpenStack&#174;: HP StoreServ (3PAR) Support
 
 This page provides detailed information to configure HP 3PAR StoreServ in your cloud environment.HP 3PAR StoreServ is storage array (a physical device), which is integrated with HP Cloud OS to realize block storage of the cloud environment. It is integrated as per the plug-in architecture of Cinder using Openstack block storage driver of HP 3PAR StoreServ. Device can be connected to Cinder using Fiber Channel (FC) as well as iSCSI protocol.The Cinder integration drivers run as python libraries in the Cinder service and facilitate communication between Cinder and StoreServ arrays. The StoreServ driver supports both iSCSI and Fiber Channel (FC) for Storage Area Networking (SAN) connectivity.
 

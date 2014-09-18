@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to use the HP Helion OpenStack&#174; Dashboards"
+title: "How to use the HP Helion OpenStack&reg; Dashboards"
 permalink: /helion/openstack/dashboard/how-works/
 product: commercial
 
@@ -56,8 +56,10 @@ Use the Settings dashboard to change your display language and settings, your ti
  
 Click **Settings** in the user menu to display the Settings dashboard. 
 
- <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-
 ----
 ####OpenStack trademark attribution
 *The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*
+
+
+ <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+

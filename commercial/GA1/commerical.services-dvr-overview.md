@@ -27,16 +27,16 @@ Distributed Virtual Routing (DVR) allows you to define connectivity among differ
 Distributed virtual routing is achieved through a set of distributed virtual routers. Each tenant has its own distributed virtual router to define the connectivity among the VNSs under the same tenant. 
 
 
-A distributed virtual router is conceptually a single entity, but it is implemented across all the OpenFlow switches in the network. There is no single routing instance running on a single machine/hypervisor that all the VNS traffic must route through. In addition to this there is a system-wide distributed virtual router which connects different tenant routers and defines the connectivity among different tenants and to the outside world. 
+A distributed virtual router is conceptually a single entity, but it is implemented across all the OpenFlow switches in the network. There is no single routing instance running on a single machine/hypervisor that all the VNS traffic must route through. In addition to this, there is a system-wide distributed virtual router which connects different tenant routers and defines the connectivity among different tenants and to the outside world. 
 
 HP Helion OpenStack provides Distributed Virtual Routing to the cloud users. 
 
 
-You need to modify the following files to configure and enable the DVR:
+To configure and enable the DVR, modify the following files:
 
 
 
-<**WHERE WILL THESE FILES BE LOCATED?? WHAT ARE THE SET OF COMMANDS THAT WILL TAKE THE USER TO THE LOCATION AND START EDIT PROCESS???? APART FROM THIS WHAT ELSE DO WE NEED TO ADD?**>
+<**WHERE WILL THESE FILES BE LOCATED?? WHAT ARE THE SET OF COMMANDS THAT WILL TAKE THE USER TO THE LOCATION AND START EDIT PROCESS???? APART FROM THIS WHAT ELSE DO WE NEED TO ADD?????**>
 
 
 
@@ -51,6 +51,10 @@ You need to modify the following files to configure and enable the DVR:
 ***<l3_agent.ini>***
 
 Define the working mode for the agent. Allowed values are: **legacy**, **dvr**, **dvr_snat**.
+
+
+<**PLEASE GIVE ME THE EXPLANATION OF EACH OF THE ABOVE VALUES AND WHEN THEY ARE USED?????**>
+
 The same l3-agent source runs on Compute nodes, Network nodes and Service nodes with different configurations.
 
 	agent_mode = dvr
@@ -64,7 +68,7 @@ To enable distributed routing this flag is enabled. It can be either **True** or
 
 This is disabled by default.
 
-**Note**: Normal user tenants will not be aware or able to control the type of routers being created (legacy/centralized or distributed). Only Cloud Admins can set the default or deploy specific types.
+**Note**: Only Cloud Administrators can deploy or set the default router types (**Legacy**, **Centralized** or **Distributed**). User cannot control the type of routers that are created.
 
 ----
 ####OpenStack trademark attribution

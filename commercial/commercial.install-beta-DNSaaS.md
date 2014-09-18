@@ -39,9 +39,9 @@ The rest of this page explains the installation and configuration process for DN
 * [For more information](#for-more-information)
 
 ##Prerequisites
-Before you install HP Helion Openstack's DNSaaS, you must modify the /etc/heat/heat.conf file on the overcloud controller as follows.
+Before you install the HP Helion Openstack DNSaaS, you must modify the /etc/heat/heat.conf file on the overcloud controller as follows.
 
-**Important**: The installation of HP Helion OpenStack's DNSaaS fails if you do not make these modifications.
+**Important**: The installation of the HP Helion OpenStack DNSaaS fails if you do not make these modifications.
 
 1. Make sure the IP address in the following settings reflects the IP address of the overcloud controller, for example:
     
@@ -64,7 +64,7 @@ After you have modified the `/etc/heat/heat.conf` file and before you start the 
     * An SSH key installed in Nova
     * Networking in this tenant should be pre-configured
 * Obtained credentials of the user+tenant where the service is to be deployed ("Target Credentials"):
-    * This user should have the "admin" and "_member_" (or member) roles. (The "admin" role should not be required, but, for whatever reason, Helion OpenStack Heat fails to delete the users it creates without this.)
+    * This user should have the "admin" and "_member_" (or member) roles. (The "admin" role should not be required, but, for whatever reason, HP Helion OpenStack Heat fails to delete the users it creates without this.)
     * Username
     * Password
     * Tenant/project name
@@ -222,10 +222,11 @@ For the "Nameserver FQDNs" gathered during the prerequisites step, issue a `serv
 For more information, see:
 
 * [HP Helion Public Cloud DNS API Specifications](https://docs.hpcloud.com/api/dns/)
-* [Designate DNSaaS services for OpenStack](https://wiki.openstack.org/wiki/Designate)
-
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+* [Designate DNSaaS services for OpenStack cloud](https://wiki.openstack.org/wiki/Designate)
 
 ----
 ####OpenStack trademark attribution
 *The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*
+
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+

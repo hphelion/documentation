@@ -139,7 +139,7 @@ arbitrary user input, administrators are urged to use this setting only
 when absolutely necessary, and to check the code thoroughly for possible
 security implications.
 
-To see the the default AOK configuration (default settings) run the
+To see the default AOK configuration (default settings) run the
 command:
 
     $ kato config get aok
