@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-title: "HP Helion Development Platform Documentation"
+title: "HP Helion Development Platform Documentation for Application Developers"
 permalink: /helion/devplatform/appdev/
 product: devplatform
 
