@@ -41,7 +41,7 @@ pushing.
 
 ### Legacy Buildpack[](#legacy-buildpack "Permalink to this headline")
 
-The legacy buildpack is is special meta-buildpack for deploying
+The legacy buildpack is a special meta-buildpack for deploying
 applications configured for Application Lifecycle Service 2.x (Cloud Foundry v1 API) without
 the need for extensive reconfiguration. This buildpack has updated
 versions of all the frameworks available in previous versions of
