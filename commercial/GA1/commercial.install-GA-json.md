@@ -161,7 +161,7 @@ To edit the JSON file:
 </tr>
 <tr style="background-color: white; color: black;"> 
 	<td>3par/cluster/*
-	<td>Zero or more 3PAR clusters.  If the 3PAR section is present, there must be at least one cluster defined.  Values for each cluster are just copied into the passthrough:
+	<p>Zero or more 3PAR clusters.  If the 3PAR section is present, there must be at least one cluster defined.  Values for each cluster are just copied into the passthrough:
 	<br>cinder/config/<cluster>/*</td>
 	<td>n/a</td>
 </tr>
@@ -261,8 +261,8 @@ To edit the JSON file:
 	<td>VLAN_RANGE</td>
 </tr>
 <tr style="background-color: white; color: black;"> 
-	<td>vcenter/provider_network</td>
-	<p>Required if cloud_type is ESX, optional otherwise)
+	<td>vcenter/provider_network
+	<p>Required if cloud_type is ESX, optional for KVM.
 	<td>PROVIDER_NETWORK</td>
 </tr>
 <tr style="background-color: white; color: black;"> 
@@ -272,13 +272,13 @@ To edit the JSON file:
 <tr style="background-color: white; color: black;"> 
 	<td>ssl/ca_certs
 	<p>Contains string-encoded certificate data
-	<p>The ssl parameters are optional, but must all be specified if any are specified.</td?
+	<p>The ssl parameters are optional, but must all be specified if any are specified.</td>
 	<td>OVERCLOUD_SSL_CA_CERT</td>
 </tr>
 <tr style="background-color: white; color: black;"> 
 	<td>ssl/cluster_backend/certificate
-	<p>Contains string-encoded certificate data</td>
-	<p>(The ssl parameters are optional, but must all be specified if any are specified)
+	<p>Contains string-encoded certificate data.
+	<p>The ssl parameters are optional, but must all be specified if any are specified.</td>
 	<td>OVERCLOUD_CLUSTER_CERT</td>
 </tr>
 <tr style="background-color: white; color: black;"> 
@@ -294,7 +294,7 @@ To edit the JSON file:
 	<td>OVERCLOUD_SSL_KEY</td>
 </tr>
 <tr style="background-color: white; color: black;"> 
-	<td>ssl/public_vip/certificate</td>
+	<td>ssl/public_vip/certificate
 	<p>The SSL parameters are optional, but must all be specified if any are specified.
 	<p>Contains string-encoded certificate data </td>
 	<td>OVERCLOUD_SSL_CERT</td>
