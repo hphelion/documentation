@@ -27,6 +27,7 @@ Each sample in the Workbook builds on the previous one and all source code is pr
 * [Ruby](http://dev.hpcloud.com/ruby/)
  
 ###Other References
+- [ALS command-line interface (CLI) reference](helion/devplatform/stackato/user/client/index.html#client)
 - [Application Lifecycle Service (ALS) User's Guide](/als/v1/user/)
 - [Remote Debugging](/als/v1/user/deploy/app-debug/)
 - [The Management Console](/als/v1/user/console/)
