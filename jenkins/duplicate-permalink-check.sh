@@ -50,7 +50,6 @@ do
 				#Write a notification message with the name array entry with the corresponding index.
 				echo " "
 			 	echo "The file ${names[c]} contains a duplicated permalink: ${permalink[c]} "
-				git log -n 1 ${names[c]} | grep Author | sed 's/Author/Last commit by/'
 				exitcondition=1
 			 fi
 		done	
@@ -79,7 +78,7 @@ do
 	permalink2[c]=`grep permalink  ${names2[c]} | sed 's|permalink: ||' | sed 's|^ ||' | sed $'s/\r//'  ` 
 	#echo "${permalink2[c]}, ${names2[c]}"
 	
-	#check to see if each permalink is found in the master list. 
+	#check to see if each permalink is found in the master list.
 	for (( i=0; i<${#names[*]}; i++ ))
 	do
 		#does the helion permalink match the master permalink
@@ -92,14 +91,13 @@ do
 			#echo  "name $c = ${names2[c]} name $i = ${names[i]}"
 			 
 			then
-			 
 				echo ""
 				echo "The following files use the same permalink (${permalink2[c]}):" 
 				echo "   ${names2[c]} in the master branch"
 				echo "   ${names[i]} in the ${GIT_BRANCH} branch"
 				echo "This will cause an error when you merge ${GIT_BRANCH} branch to master."
 				echo "You should probably modify the permalink in ${GIT_BRANCH} branch."
-				git log -n 1 ${names[i]} | grep Author | sed 's/Author/Last commit by/'
+				
 				echo ""
 				exitcondition=1
 			fi
