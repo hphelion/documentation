@@ -20,7 +20,7 @@ PageRefresh();
 
 <p style="font-size: small;"> <a href="/helion/openstack/install-overview/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/install/kvm/">NEXT &#9654;</a> </p>
 
-# HP Helion OpenStack&#174; Installation: Before you begin
+# HP Helion OpenStack&#174; Installation: Creating the JSON configuration file
 
 The HP Helion OpenStack installer uses a JSON configuration file to enter configuration values. JSON (JavaScript Object Notation) is an open-standard format that uses human-readable text to transmit data objects consisting of attribute–value pairs.
 
@@ -160,9 +160,9 @@ To edit the JSON file:
 	<td>n/a</td>
 </tr>
 <tr style="background-color: white; color: black;"> 
-	<td>3par/<cluster>/*</td>
+	<td>3par/cluster/*
 	<td>Zero or more 3PAR clusters.  If the 3PAR section is present, there must be at least one cluster defined.  Values for each cluster are just copied into the passthrough:
-	<br>cinder/config/<cluster>/*</td> </td>
+	<br>cinder/config/<cluster>/*</td>
 	<td>n/a</td>
 </tr>
 <tr style="background-color: white; color: black;"> 
@@ -212,9 +212,8 @@ To edit the JSON file:
 	<td>n/a</td>
 </tr>
 <tr style="background-color: white; color: black;"> 
-	<td>svc/interface</td>
-	<td>NeutronSVCInterface</td>
-	<td>n/a</td>
+	<td>svc/interface
+	<p>NeutronSVCInterface</td>
 	<td>(the svc parameters are optional, but if specified, they must all be specified)</td>
 </tr>
 <tr style="background-color: white; color: black;"> 
@@ -247,14 +246,15 @@ To edit the JSON file:
 </tr>
 <tr style="background-color: white; color: black;"> 
 	<td>hypervisor/public_interface</td>
-	<td>OVERCLOUD_HYPERVISOR_PUBLIC_INTERFACE<td>
+	<td>OVERCLOUD_HYPERVISOR_PUBLIC_INTERFACE</td>
 </tr>
 <tr style="background-color: white; color: black;"> 
 	<td>hypervisor/physical_bridge</td>
 	<td>OVERCLOUD_HYPERVISOR_PHYSICAL_BRIDGE</td>
 </tr>
 <tr style="background-color: white; color: black;"> 
-<td>node_min_disk</td>
+	<td>node_min_disk</td>
+	<td>NODE_MIN_DISK</td>
 </tr>
 <tr style="background-color: white; color: black;"> 
 	<td>vcenter/vlan_range</td>
