@@ -94,7 +94,7 @@ There are various ways to serve static files for a Django application. While Opt
     included by default in Django 1.3. Read the [Django
     documentation](https://docs.djangoproject.com/en/1.3/howto/static-files/#using-django-contrib-staticfiles)
     to understand the steps involved, or take a look at [this
-    commit](https://github.com/HP/helion-samples/commit/59ec0791)
+    commit](https://github.com/ActiveState/stackato-samples/commit/59ec0791)
     in the django-gtd sample app. or:
 3.  Set `DEBUG=True` in settings.py. This is not
     recommended for production applications.

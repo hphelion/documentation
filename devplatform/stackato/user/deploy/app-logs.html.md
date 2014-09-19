@@ -133,7 +133,7 @@ To check the status of your application drains, use the
 
 **Note**
 
-If the service at the recieving end of the drain goes offline or becomes
+If the service at the receiving end of the drain goes offline or becomes
 disconnected, Application Lifecycle Service will retry the connection at increasing
 intervals.
 
@@ -200,7 +200,7 @@ Splunk supports JSON format without further configuration.
 1.  [Set up Splunk Server](http://www.splunk.com/download).
 2.  In the welcome screen, click *Add data*
 	<img src="/content/devplatform/stackato/images/splunk11.png" />
-3.  Under **Choose a Data Source**, click **From a TCP port** (or UDP).
+3.  Under *Choose a Data Source*, click “From a TCP port”. (or UDP)
 	<img src="/content/devplatform/stackato/images/splunk21.png" />
 4.  In the Add new Source screen:
 	-   Select a TCP/UDP port greater than **9999**
@@ -242,13 +242,13 @@ Rotating Application Log Files[](#rotating-application-log-files "Permalink to t
 -----------------------------------------------------------------------------------------------
 
 Application Lifecycle Service does not automatically rotate application log files in
-*/home/helion/logs/*. However, you can add log rotation for these
+*/home/stackato/logs/*. However, you can add log rotation for these
 files yourself using `cron` and
 `logrotate`. Programming languages, frameworks, and utilities handle logging
 operations in different ways. Check for incompatibilities with
 `logrotate` before implementing log rotation scheme using it.
 
-1.  Add a cron key in *stackato.yml* to run `logrotate`. Set STACKATO\_CRON\_INSTANCES to "all" to specify that
+1.  Add a cron key in *manifest.yml* to run `logrotate`. Set STACKATO\_CRON\_INSTANCES to "all" to specify that
     the job should be run in all application instances. For example:
 
         env:
@@ -260,10 +260,11 @@ operations in different ways. Check for incompatibilities with
     `helion` user does not have permission to
     update the default state file.
 
-2.  Add an *app-logrotate.conf* file to the base directory of your    application to specify which log files to rotate and which
+2.  Add an *app-logrotate.conf* file to the base directory of your
+    application to specify which log files to rotate, and and which
     `logrotate` options to use. For example:
 
-        /home/helion/logs/\*.log {
+        /home/stackato/logs/\*.log {
           daily
           compress
           copytruncate

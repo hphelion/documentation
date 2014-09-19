@@ -17,10 +17,6 @@ you will need:
 -   a copy of the Helion CLI client
 -   a web browser
 
-If you want to run your own Application Lifecycle Service micro-cloud system for local
-development and testing,  download a copy of the Application Lifecycle Service
-VM  and follow the
-setup instructions in the Admin Guide.
 
 Management Console[](#management-console "Permalink to this headline")
 -----------------------------------------------------------------------
@@ -33,7 +29,7 @@ Console*](/als/v1/admin/console/customize/#management-console). You can use it t
 -   see which runtimes, frameworks, and services are available
 -   deploy applications from the Marketplace
 
-To use it, open the API Endpoint URL (e.g. *https://api.stacka.to*) in
+To use it, open the API Endpoint URL (e.g. *https://api.10.0.0.1.xip.io*) in
 your favorite browser. Log in with the username and password that have
 been set up for you on the system.
 
@@ -52,7 +48,7 @@ command line.
 1.  Download the client for your platform (Windows, OS X, Linux x86,
     Linux x64)
 2.  Unzip the archive in a convenient directory.
-3.  Add the executable to your system/shell \$PATH by:
+3.  Add the the executable to your system/shell \$PATH by:
 	- moving it to a directory in your \$PATH,
 	-   creating a symlink from a directory in your \$PATH, or
 	-   creating a shell alias for the executable.

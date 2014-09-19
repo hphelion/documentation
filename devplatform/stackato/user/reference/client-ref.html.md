@@ -47,11 +47,7 @@ Logs in to the current or specified target with the named user.
     </tr>
 	<tr>
     <td>--credentials</td>
-	<td>The credentials to use. Each use of the option declares a single element, using the form "key: value" for the argument. This is an ALS 3-specific option</td>
-    </tr><tr>
-    <td>--group</td>
-	<td>The group to use for the login. This is an ALS 2-specific option.</td>
-    </tr><tr>
+	<td>The credentials to use. Each use of the option declares a single element, using the form "key: value" for the argument.</td>    </tr><tr>
     <td>--ignore-missing</td>
 	<td>Disable errors generated for missing organization and/or space.</td>
     </tr>
@@ -66,13 +62,13 @@ Logs in to the current or specified target with the named user.
 	<td>Same as no-prompt.</td>
     </tr><tr>
     <td>--organization, --o</td>
-	<td>The organization to use. This is an ALS 3-specific option. If not specified programmatically, the user is prompted to choose an organization.</td>
+	<td>The organization to use. If not specified programmatically, the user is prompted to choose an organization.</td>
     </tr><tr>
     <td>--password, --passwd</td>
-	<td>The password to use. For ALS 3, this is a shorthand for <i>--credentials 'password:</i></td>
+	<td>The password to use. This is a shorthand for <i>--credentials 'password:</i></td>
     </tr><tr>
     <td>--space</td>
-	<td>The space (in the organization) to use. This is an ALS 3-specific option. If not specified the user is prompted to choose among the possible spaces in the organization if specified. If the organization is not specified, the user is prompted to choose from all spaces in all organizations the user belongs to.</td>
+	<td>The space (in the organization) to use. If not specified the user is prompted to choose among the possible spaces in the organization if specified. If the organization is not specified, the user is prompted to choose from all spaces in all organizations the user belongs to.</td>
     </tr><tr>
     <td>--target</td>
 	<td>The one-off target to use for the current operation only.</td>
@@ -143,10 +139,10 @@ Set the target API endpoint for the client or report the current target.
 	<td>Path to an existing and readable file containing the targets and authorization tokens.</td>
     </tr><tr>
     <td>--organization, -o</td>
-	<td>The organization to use. This is an ALS 3-specific option. If not specified programmatically, the user is prompted to choose an organization.</td>
+	<td>The organization to use. If not specified programmatically, the user is prompted to choose an organization.</td>
     </tr><tr>
     <td>--space, -s</td>
-	<td>The space (in the organization) to use. This is an ALS 3-specific option. If not specified the user is prompted to choose among the possible spaces in the organization if specified. If the organization is not specified, the user is prompted to choose from all spaces in all organizations the user belongs to.</td>
+	<td>The space (in the organization) to use. If not specified the user is prompted to choose among the possible spaces in the organization if specified. If the organization is not specified, the user is prompted to choose from all spaces in all organizations the user belongs to.</td>
     </tr><tr>
     <td>--trace, -t</td>
 	<td>Originally used to activate tracing of the issued REST requests and responses; tracing is always active now. See the <i>trace</i> command to print the saved trace to <i>stdout</i>.</td></tr>
@@ -166,12 +162,7 @@ Lists the applications deployed to the target.
 	<tr>
     <td>--all</td>
 	<td>Show all applications instead of just those associated with the current space.</td>
-    </tr>
-	<tr>
-    <td>--group</td>
-	<td>The once-off group to use for the current operation. This is an ALS 2-specific option.</td>
-    </tr>
-	<tr>
+    </tr>	<tr>
     <td>--json</td>
 	<td>Print raw json as output, not human-formatted data.</td>
     </tr>
@@ -183,13 +174,13 @@ Lists the applications deployed to the target.
 	<td>Complementary alias of <i>--trace</i>.</td>
     </tr><tr>
     <td>--organization, -o</td>
-	<td>The organization to use. This is an ALS 3-specific option. If not specified programmatically, the user is prompted to choose an organization.</td>
+	<td>The organization to use. If not specified programmatically, the user is prompted to choose an organization.</td>
     </tr><tr>
     <td>--space, -s</td>
-	<td>The one-off space to use for the current operation, specified by name. This is an ALS 3-specific option. Cannot be used together with `--space-guid`.</td>
+	<td>The one-off space to use for the current operation, specified by name. Cannot be used together with `--space-guid`.</td>
     </tr><tr>
     <td>--space-guid</td>
-	<td>The one-off space to use for the current operation, specified by name. This is an ALS 3-specific option. Cannot be used together with `--space-guid`.</td>
+	<td>The one-off space to use for the current operation, specified by name. Cannot be used together with `--space-guid`.</td>
     </tr><tr>
     <td>--target</td>
 	<td>The one-off target to use for the current operation only.</td>
@@ -201,7 +192,7 @@ Lists the applications deployed to the target.
 	<td>Path to an existing and readable file containing the targets and authorization tokens.</td>
     </tr><tr>
     <td>--trace, -t</td>
-	<td>The once-off space to use for the current operation, specified by guid. This is an ALS 3-specific option. Cannot be used together with `--space`.</td>
+	<td>The once-off space to use for the current operation, specified by guid. Cannot be used together with `--space`.</td>
 	</tr><tr>
 	<td>--verbose</td>
 	<td>More verbose operation.</td>
@@ -215,12 +206,7 @@ Shows the information of the specified application.
     <tr>
     <td><b>Option</b></td>
 	<td><b>Description</b></td>
-    </tr>
-	<tr>
-    <td>--group</td>
-	<td>The once-off group to use for the current operation. This is an ALS 2-specific option.</td>
-    </tr>
-	<tr>
+    </tr>	<tr>
     <td>--json</td>
 	<td>Print raw json as output, not human-formatted data.</td>
     </tr>
@@ -236,16 +222,16 @@ Shows the information of the specified application.
 	<td>Complementary alias of <i>--trace</i>.</td>
     </tr><tr>
     <td>--organization, -o</td>
-	<td>The organization to use. This is an ALS 3-specific option. If not specified programmatically, the user is prompted to choose an organization.</td>
+	<td>The organization to use. If not specified programmatically, the user is prompted to choose an organization.</td>
     </tr><tr>
     <td>--path</td>
 	<td>Path of the directory holding the application files to push. Defaults to the current working directory.</td>
     </tr><tr>
     <td>--space, -s</td>
-	<td>The one-off space to use for the current operation, specified by name. This is an ALS 3-specific option. Cannot be used together with `--space-guid`.</td>
+	<td>The one-off space to use for the current operation, specified by name. Cannot be used together with `--space-guid`.</td>
     </tr><tr>
     <td>--space-guid</td>
-	<td>The one-off space to use for the current operation, specified by name. This is an ALS 3-specific option. Cannot be used together with `--space-guid`.</td>
+	<td>The one-off space to use for the current operation, specified by name. Cannot be used together with `--space-guid`.</td>
     </tr><tr>
     <td>--target</td>
 	<td>The one-off target to use for the current operation only.</td>
@@ -257,7 +243,7 @@ Shows the information of the specified application.
 	<td>Path to an existing and readable file containing the targets and authorization tokens.</td>
     </tr><tr>
     <td>--trace, -t</td>
-	<td>The once-off space to use for the current operation, specified by guid. This is an ALS 3-specific option. Cannot be used together with `--space`.</td>
+	<td>The once-off space to use for the current operation, specified by guid. Cannot be used together with `--space`.</td>
 	</tr><tr>
 	<td>--verbose</td>
 	<td>More verbose operation.</td>
@@ -274,12 +260,7 @@ List the applications deployed to the target.
 	<tr>
     <td>--all</td>
 	<td>Show all applications instead of just those associated with the current space.</td>
-    </tr>
-	<tr>
-    <td>--group</td>
-	<td>The once-off group to use for the current operation. This is an ALS 2-specific option.</td>
-    </tr>
-	<tr>
+    </tr>	<tr>
     <td>--json</td>
 	<td>Print raw json as output, not human-formatted data.</td>
     </tr>
@@ -291,13 +272,13 @@ List the applications deployed to the target.
 	<td>Complementary alias of <i>--trace</i>.</td>
     </tr><tr>
     <td>--organization, -o</td>
-	<td>The organization to use. This is an ALS 3-specific option. If not specified programmatically, the user is prompted to choose an organization.</td>
+	<td>The organization to use. If not specified programmatically, the user is prompted to choose an organization.</td>
     </tr><tr>
     <td>--space, -s</td>
-	<td>The one-off space to use for the current operation, specified by name. This is an ALS 3-specific option. Cannot be used together with `--space-guid`.</td>
+	<td>The one-off space to use for the current operation, specified by name. Cannot be used together with `--space-guid`.</td>
     </tr><tr>
     <td>--space-guid</td>
-	<td>The one-off space to use for the current operation, specified by name. This is an ALS 3-specific option. Cannot be used together with `--space-guid`.</td>
+	<td>The one-off space to use for the current operation, specified by name. Cannot be used together with `--space-guid`.</td>
     </tr><tr>
     <td>--target</td>
 	<td>The one-off target to use for the current operation only.</td>
@@ -309,7 +290,7 @@ List the applications deployed to the target.
 	<td>Path to an existing and readable file containing the targets and authorization tokens.</td>
     </tr><tr>
     <td>--trace, -t</td>
-	<td>The once-off space to use for the current operation, specified by guid. This is an ALS 3-specific option. Cannot be used together with `--space`.</td>
+	<td>The once-off space to use for the current operation, specified by guid. Cannot be used together with `--space`.</td>
 	</tr>
 </table>
 
@@ -320,12 +301,7 @@ List recent application crashes.
     <tr>
     <td><b>Option</b></td>
 	<td><b>Description</b></td>
-    </tr>
-	<tr>
-    <td>--group</td>
-	<td>The once-off group to use for the current operation. This is an ALS 2-specific option.</td>
-    </tr>
-	<tr>
+    </tr>	<tr>
     <td>--json</td>
 	<td>Print raw json as output, not human-formatted data.</td>
     </tr>
@@ -343,16 +319,16 @@ List recent application crashes.
 	<td>Complementary alias of <i>--trace</i>.</td>
     </tr><tr>
     <td>--organization, -o</td>
-	<td>The organization to use. This is an ALS 3-specific option. If not specified programmatically, the user is prompted to choose an organization.</td>
+	<td>The organization to use. If not specified programmatically, the user is prompted to choose an organization.</td>
     </tr><tr>
     <td>--path</td>
 	<td>Path of the directory holding the application files to push. Defaults to the current working directory.</td>
     </tr><tr>
     <td>--space, -s</td>
-	<td>The one-off space to use for the current operation, specified by name. This is an ALS 3-specific option. Cannot be used together with `--space-guid`.</td>
+	<td>The one-off space to use for the current operation, specified by name. Cannot be used together with `--space-guid`.</td>
     </tr><tr>
     <td>--space-guid</td>
-	<td>The one-off space to use for the current operation, specified by name. This is an ALS 3-specific option. Cannot be used together with `--space-guid`.</td>
+	<td>The one-off space to use for the current operation, specified by name. Cannot be used together with `--space-guid`.</td>
     </tr><tr>
     <td>--tail</td>
 	<td>Request target to stream the log.</td>
@@ -367,7 +343,7 @@ List recent application crashes.
 	<td>Path to an existing and readable file containing the targets and authorization tokens.</td>
     </tr><tr>
     <td>--trace, -t</td>
-	<td>The once-off space to use for the current operation, specified by guid. This is an ALS 3-specific option. Cannot be used together with `--space`.</td>
+	<td>The once-off space to use for the current operation, specified by guid. Cannot be used together with `--space`.</td>
 	</tr>
 </table>
 
@@ -377,16 +353,11 @@ Display log information for the application. An alias of 'logs'.
     <td><b>Option</b></td>
 	<td><b>Description</b></td>
     </tr><tr>
-    <td>--all</td>
-	<td>Retrieve the logs from all instances. Before 2.3 only.</td>
-    </tr><tr>
     <td>--filename</td>
-	<td>Filter the log stream by origin file (glob pattern). Target version 2.4+ only.</td>
+	<td>Filter the log stream by origin file (glob pattern).</td>
     </tr><tr>
     <td>--follow</td>
-	<td>Tail -f the log stream. Target version 2.4+ only.</td>
-    </tr><td>--group</td>
-	<td>The once-off group to use for the current operation. This is an ALS 2-specific option.</td>
+	<td>Tail -f the log stream.</td>
     </tr>
 	<tr>
     <td>Option</td>
@@ -406,13 +377,10 @@ Display log information for the application. An alias of 'logs'.
 >
 >     
 >
->     The once-off group to use for the current operation. This is a
->     Application Lifecycle Service 2 option.
 >
 >     --instance
 >
->     The id of the instance to filter the log stream for, or (before
->     2.3), to retrieve the logs of.
+>     The id of the instance to filter the log stream for.
 >
 >     --json
 >
@@ -447,47 +415,28 @@ Display log information for the application. An alias of 'logs'.
 >
 >     --num
 >
->     Show the last num entries of the log stream. Target version 2.4+
->     only.
+>     Show the last num entries of the log stream.
 >
 >     --organization
 >
->     The once-off organization to use for the current operation. This
->     is an Application Lifecycle Service 3 option.
+>     The once-off organization to use for the current operation.
 >
 >     --path
 >
 >     Path of the directory holding the application files to push.
 >     Defaults to the current working directory.
 >
->     --prefix
->
->     Put instance information before each line of a shown log file.
->     Before 2.3 only.
->
->     --prefix-logs
->
->     Alias of --prefix.
->
->     --prefixlogs
->
->     Alias of --prefix.
->
->     --source
->
->     Filter the log stream by origin stage (glob pattern). Target
->     version 2.4+ only.
 >
 >     --space
 >
 >     The once-off space to use for the current operation, specified by
->     name. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     name. Cannot be used together with
 >     --space-guid.
 >
 >     --space-guid
 >
 >     The once-off space to use for the current operation, specified by
->     guid. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     guid. Cannot be used together with
 >     --space.
 >
 >     --tail
@@ -497,11 +446,6 @@ Display log information for the application. An alias of 'logs'.
 >     --target
 >
 >     The once-off target to use for the current operation.
->
->     --text
->
->     Filter the log stream by log entry text (glob pattern). Target
->     version 2.4+ only.
 >
 >     --token
 >
@@ -536,11 +480,6 @@ Display log information for the application. An alias of 'logs'.
 >
 >     + options
 >
->     --group
->
->     The once-off group to use for the current operation. This is a
->     Application Lifecycle Service 2 option.
->
 >     --manifest
 >
 >     Path of the manifest file to use. If not specified a search is
@@ -570,8 +509,7 @@ Display log information for the application. An alias of 'logs'.
 >
 >     --organization
 >
->     The once-off organization to use for the current operation. This
->     is an Application Lifecycle Service 3 option.
+>     The once-off organization to use for the current operation.
 >
 >     --path
 >
@@ -581,13 +519,13 @@ Display log information for the application. An alias of 'logs'.
 >     --space
 >
 >     The once-off space to use for the current operation, specified by
->     name. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     name. Cannot be used together with
 >     --space-guid.
 >
 >     --space-guid
 >
 >     The once-off space to use for the current operation, specified by
->     guid. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     guid. Cannot be used together with
 >     --space.
 >
 >     --tail
@@ -630,11 +568,7 @@ Display log information for the application. An alias of 'logs'.
 > :   Show the list of drains attached to the application.
 >
 >     + options
->
->     --group
->
->     The once-off group to use for the current operation. This is a
->     Application Lifecycle Service 2 option.
+
 >
 >     --json
 >
@@ -669,8 +603,7 @@ Display log information for the application. An alias of 'logs'.
 >
 >     --organization
 >
->     The once-off organization to use for the current operation. This
->     is an Application Lifecycle Service 3 option.
+>     The once-off organization to use for the current operation.
 >
 >     --path
 >
@@ -680,13 +613,13 @@ Display log information for the application. An alias of 'logs'.
 >     --space
 >
 >     The once-off space to use for the current operation, specified by
->     name. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     name. Cannot be used together with
 >     --space-guid.
 >
 >     --space-guid
 >
 >     The once-off space to use for the current operation, specified by
->     guid. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     guid. Cannot be used together with
 >     --space.
 >
 >     --tail
@@ -729,11 +662,7 @@ Display log information for the application. An alias of 'logs'.
 > :   Show the list of drains attached to the application.
 >
 >     + options
->
->     --group
->
->     The once-off group to use for the current operation. This is a
->     Application Lifecycle Service 2 option.
+
 >
 >     --json
 >
@@ -768,8 +697,7 @@ Display log information for the application. An alias of 'logs'.
 >
 >     --organization
 >
->     The once-off organization to use for the current operation. This
->     is an Application Lifecycle Service 3 option.
+>     The once-off organization to use for the current operation.
 >
 >     --path
 >
@@ -779,13 +707,13 @@ Display log information for the application. An alias of 'logs'.
 >     --space
 >
 >     The once-off space to use for the current operation, specified by
->     name. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     name. Cannot be used together with
 >     --space-guid.
 >
 >     --space-guid
 >
 >     The once-off space to use for the current operation, specified by
->     guid. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     guid. Cannot be used together with
 >     --space.
 >
 >     --tail
@@ -828,11 +756,7 @@ Display log information for the application. An alias of 'logs'.
 > :   List the application's environment variables.
 >
 >     + options
->
->     --group
->
->     The once-off group to use for the current operation. This is a
->     Application Lifecycle Service 2 option.
+
 >
 >     --json
 >
@@ -867,8 +791,7 @@ Display log information for the application. An alias of 'logs'.
 >
 >     --organization
 >
->     The once-off organization to use for the current operation. This
->     is an Application Lifecycle Service 3 option.
+>     The once-off organization to use for the current operation.
 >
 >     --path
 >
@@ -878,13 +801,13 @@ Display log information for the application. An alias of 'logs'.
 >     --space
 >
 >     The once-off space to use for the current operation, specified by
->     name. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     name. Cannot be used together with
 >     --space-guid.
 >
 >     --space-guid
 >
 >     The once-off space to use for the current operation, specified by
->     guid. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     guid. Cannot be used together with
 >     --space.
 >
 >     --tail
@@ -926,15 +849,10 @@ Display log information for the application. An alias of 'logs'.
 > helion events *\<application\>*
 > :   Show recorded application events, for application or space.
 >     Without an application given the current or specified space is
->     used, otherwise that application. This is an Application Lifecycle Service 3 specific
->     command.
+>     used, otherwise that application.
 >
 >     + options
->
->     --group
->
->     The once-off group to use for the current operation. This is a
->     Application Lifecycle Service 2 option.
+
 >
 >     --json
 >
@@ -969,8 +887,7 @@ Display log information for the application. An alias of 'logs'.
 >
 >     --organization
 >
->     The once-off organization to use for the current operation. This
->     is an Application Lifecycle Service 3 option.
+>     The once-off organization to use for the current operation.
 >
 >     --path
 >
@@ -980,13 +897,13 @@ Display log information for the application. An alias of 'logs'.
 >     --space
 >
 >     The once-off space to use for the current operation, specified by
->     name. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     name. Cannot be used together with
 >     --space-guid.
 >
 >     --space-guid
 >
 >     The once-off space to use for the current operation, specified by
->     guid. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     guid. Cannot be used together with
 >     --space.
 >
 >     --tail
@@ -1034,11 +951,7 @@ Display log information for the application. An alias of 'logs'.
 >
 >     When present, access all instances for the file or directory.
 >     Cannot be used together with --instance.
->
->     --group
->
->     The once-off group to use for the current operation. This is a
->     Application Lifecycle Service 2 option.
+
 >
 >     --instance
 >
@@ -1074,8 +987,7 @@ Display log information for the application. An alias of 'logs'.
 >
 >     --organization
 >
->     The once-off organization to use for the current operation. This
->     is an Application Lifecycle Service 3 option.
+>     The once-off organization to use for the current operation.
 >
 >     --path
 >
@@ -1098,13 +1010,13 @@ Display log information for the application. An alias of 'logs'.
 >     --space
 >
 >     The once-off space to use for the current operation, specified by
->     name. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     name. Cannot be used together with
 >     --space-guid.
 >
 >     --space-guid
 >
 >     The once-off space to use for the current operation, specified by
->     guid. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     guid. Cannot be used together with
 >     --space.
 >
 >     --tail
@@ -1152,11 +1064,7 @@ Display log information for the application. An alias of 'logs'.
 >
 >     When present, access all instances for the file or directory.
 >     Cannot be used together with --instance.
->
->     --group
->
->     The once-off group to use for the current operation. This is a
->     Application Lifecycle Service 2 option.
+
 >
 >     --instance
 >
@@ -1192,8 +1100,7 @@ Display log information for the application. An alias of 'logs'.
 >
 >     --organization
 >
->     The once-off organization to use for the current operation. This
->     is an Application Lifecycle Service 3 option.
+>     The once-off organization to use for the current operation.
 >
 >     --path
 >
@@ -1216,13 +1123,13 @@ Display log information for the application. An alias of 'logs'.
 >     --space
 >
 >     The once-off space to use for the current operation, specified by
->     name. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     name. Cannot be used together with
 >     --space-guid.
 >
 >     --space-guid
 >
 >     The once-off space to use for the current operation, specified by
->     guid. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     guid. Cannot be used together with
 >     --space.
 >
 >     --tail
@@ -1317,11 +1224,7 @@ Display log information for the application. An alias of 'logs'.
 > :   List application instances for a deployed application.
 >
 >     + options
->
->     --group
->
->     The once-off group to use for the current operation. This is a
->     Application Lifecycle Service 2 option.
+
 >
 >     --json
 >
@@ -1356,8 +1259,7 @@ Display log information for the application. An alias of 'logs'.
 >
 >     --organization
 >
->     The once-off organization to use for the current operation. This
->     is an Application Lifecycle Service 3 option.
+>     The once-off organization to use for the current operation.
 >
 >     --path
 >
@@ -1367,13 +1269,13 @@ Display log information for the application. An alias of 'logs'.
 >     --space
 >
 >     The once-off space to use for the current operation, specified by
->     name. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     name. Cannot be used together with
 >     --space-guid.
 >
 >     --space-guid
 >
 >     The once-off space to use for the current operation, specified by
->     guid. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     guid. Cannot be used together with
 >     --space.
 >
 >     --tail
@@ -1417,28 +1319,10 @@ Display log information for the application. An alias of 'logs'.
 >
 >     + options
 >
->     --all
->
->     Retrieve the logs from all instances. Before 2.3 only.
->
->     --filename
->
->     Filter the log stream by origin file (glob pattern). Target
->     version 2.4+ only.
->
->     --follow
->
->     Tail -f the log stream. Target version 2.4+ only.
->
->     --group
->
->     The once-off group to use for the current operation. This is a
->     Application Lifecycle Service 2 option.
 >
 >     --instance
 >
->     The id of the instance to filter the log stream for, or (before
->     2.3), to retrieve the logs of.
+>     The id of the instance to filter the log stream for.
 >
 >     --json
 >
@@ -1473,23 +1357,16 @@ Display log information for the application. An alias of 'logs'.
 >
 >     --num
 >
->     Show the last num entries of the log stream. Target version 2.4+
->     only.
+>     Show the last num entries of the log stream.
 >
 >     --organization
 >
->     The once-off organization to use for the current operation. This
->     is an Application Lifecycle Service 3 option.
+>     The once-off organization to use for the current operation.
 >
 >     --path
 >
 >     Path of the directory holding the application files to push.
 >     Defaults to the current working directory.
->
->     --prefix
->
->     Put instance information before each line of a shown log file.
->     Before 2.3 only.
 >
 >     --prefix-logs
 >
@@ -1501,19 +1378,18 @@ Display log information for the application. An alias of 'logs'.
 >
 >     --source
 >
->     Filter the log stream by origin stage (glob pattern). Target
->     version 2.4+ only.
+>     Filter the log stream by origin stage (glob pattern).
 >
 >     --space
 >
 >     The once-off space to use for the current operation, specified by
->     name. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     name. Cannot be used together with
 >     --space-guid.
 >
 >     --space-guid
 >
 >     The once-off space to use for the current operation, specified by
->     guid. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     guid. Cannot be used together with
 >     --space.
 >
 >     --tail
@@ -1526,8 +1402,7 @@ Display log information for the application. An alias of 'logs'.
 >
 >     --text
 >
->     Filter the log stream by log entry text (glob pattern). Target
->     version 2.4+ only.
+>     Filter the log stream by log entry text (glob pattern).
 >
 >     --token
 >
@@ -1564,8 +1439,7 @@ Display log information for the application. An alias of 'logs'.
 >
 >     --group
 >
->     The once-off group to use for the current operation. This is a
->     Application Lifecycle Service 2 option.
+>     The once-off group to use for the current operation. 
 >
 >     --manifest
 >
@@ -1596,8 +1470,7 @@ Display log information for the application. An alias of 'logs'.
 >
 >     --organization
 >
->     The once-off organization to use for the current operation. This
->     is an Application Lifecycle Service 3 option.
+>     The once-off organization to use for the current operation.
 >
 >     --path
 >
@@ -1607,13 +1480,13 @@ Display log information for the application. An alias of 'logs'.
 >     --space
 >
 >     The once-off space to use for the current operation, specified by
->     name. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     name. Cannot be used together with
 >     --space-guid.
 >
 >     --space-guid
 >
 >     The once-off space to use for the current operation, specified by
->     guid. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     guid. Cannot be used together with
 >     --space.
 >
 >     --tail
@@ -1656,11 +1529,7 @@ Display log information for the application. An alias of 'logs'.
 > :   Display the resource usage for a deployed application.
 >
 >     + options
->
->     --group
->
->     The once-off group to use for the current operation. This is a
->     Application Lifecycle Service 2 option.
+
 >
 >     --json
 >
@@ -1695,8 +1564,7 @@ Display log information for the application. An alias of 'logs'.
 >
 >     --organization
 >
->     The once-off organization to use for the current operation. This
->     is an Application Lifecycle Service 3 option.
+>     The once-off organization to use for the current operation.
 >
 >     --path
 >
@@ -1706,13 +1574,13 @@ Display log information for the application. An alias of 'logs'.
 >     --space
 >
 >     The once-off space to use for the current operation, specified by
->     name. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     name. Cannot be used together with
 >     --space-guid.
 >
 >     --space-guid
 >
 >     The once-off space to use for the current operation, specified by
->     guid. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     guid. Cannot be used together with
 >     --space.
 >
 >     --tail
@@ -1755,11 +1623,7 @@ Display log information for the application. An alias of 'logs'.
 > :   Monitor file for changes and stream them.
 >
 >     + options
->
->     --group
->
->     The once-off group to use for the current operation. This is a
->     Application Lifecycle Service 2 option.
+
 >
 >     --instance
 >
@@ -1795,8 +1659,7 @@ Display log information for the application. An alias of 'logs'.
 >
 >     --organization
 >
->     The once-off organization to use for the current operation. This
->     is an Application Lifecycle Service 3 option.
+>     The once-off organization to use for the current operation.
 >
 >     --path
 >
@@ -1806,13 +1669,13 @@ Display log information for the application. An alias of 'logs'.
 >     --space
 >
 >     The once-off space to use for the current operation, specified by
->     name. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     name. Cannot be used together with
 >     --space-guid.
 >
 >     --space-guid
 >
 >     The once-off space to use for the current operation, specified by
->     guid. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     guid. Cannot be used together with
 >     --space.
 >
 >     --tail
@@ -1860,17 +1723,17 @@ Display log information for the application. An alias of 'logs'.
 >
 >     --buildpack
 >
->     Url of a custom buildpack. This is an Application Lifecycle Service 3 specific option.
+>     Url of a custom buildpack.
 >
 >     --command
 >
 >     The application's start command. Defaults to a framework-specific
->     value if required and not specified by stackato.yml.
+>     value if required and not specified by manifest.yml.
 >
 >     --disk
 >
 >     The application's per-instance disk allocation. Defaults to a
->     framework-specific value if not specified by stackato.yml.
+>     framework-specific value if not specified by manifest.yml.
 >
 >     --env
 >
@@ -1887,22 +1750,12 @@ Display log information for the application. An alias of 'logs'.
 >     only to the variable declarations found in the manifest. Overrides
 >     made with --env are always applied.
 >
->     --framework
->
->     Specify the framework to use. Cannot be used together with
->     --no-framework. Defaults to a heuristically chosen value if not
->     specified, and none for --no-framework. This is an Application Lifecycle Service 2
->     specific option.
->
->     --group
->
->     The once-off group to use for the current operation. This is a
->     Application Lifecycle Service 2 option.
+
 >
 >     --instances
 >
 >     The number of application instances to create. Defaults to 1, if
->     not specified by a stackato.yml.
+>     not specified by a manifest.yml.
 >
 >     --json
 >
@@ -1916,12 +1769,7 @@ Display log information for the application. An alias of 'logs'.
 >     --mem
 >
 >     The application's per-instance memory allocation. Defaults to a
->     framework-specific value if not specified by stackato.yml.
->
->     --no-framework
->
->     Create application without any framework. Cannot be used together
->     with --framework. This is an Application Lifecycle Service 2 specific option.
+>     framework-specific value if not specified by manifest.yml.
 >
 >     --no-prompt
 >
@@ -1947,8 +1795,7 @@ Display log information for the application. An alias of 'logs'.
 >
 >     --organization
 >
->     The once-off organization to use for the current operation. This
->     is an Application Lifecycle Service 3 option.
+>     The once-off organization to use for the current operation.
 >
 >     --path
 >
@@ -1959,28 +1806,22 @@ Display log information for the application. An alias of 'logs'.
 >
 >     Analogue of --env-mode, for the regular settings.
 >
->     --runtime
->
->     The name of the runtime to use. Default is framework specific, if
->     not specified by a stackato.yml. This is an Application Lifecycle Service 2 specific
->     option.
 >
 >     --space
 >
 >     The once-off space to use for the current operation, specified by
->     name. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     name. Cannot be used together with
 >     --space-guid.
 >
 >     --space-guid
 >
 >     The once-off space to use for the current operation, specified by
->     guid. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     guid. Cannot be used together with
 >     --space.
 >
 >     --stack
 >
->     The OS foundation the application will run on. This is an Application Lifecycle Service
->     3 specific option.
+>     The OS foundation the application will run on.
 >
 >     --helion-debug
 >
@@ -2021,7 +1862,7 @@ Display log information for the application. An alias of 'logs'.
 >     -d
 >
 >     Set up debugging through an application-specific harbor (port)
->     service. Target version 2.8+ only.
+>     service.
 >
 >     -n
 >
@@ -2047,11 +1888,7 @@ Display log information for the application. An alias of 'logs'.
 >     --dry-run
 >
 >     Alias of --dry.
->
->     --group
->
->     The once-off group to use for the current operation. This is a
->     Application Lifecycle Service 2 option.
+
 >
 >     --manifest
 >
@@ -2082,8 +1919,7 @@ Display log information for the application. An alias of 'logs'.
 >
 >     --organization
 >
->     The once-off organization to use for the current operation. This
->     is an Application Lifecycle Service 3 option.
+>     The once-off organization to use for the current operation.
 >
 >     --path
 >
@@ -2093,13 +1929,13 @@ Display log information for the application. An alias of 'logs'.
 >     --space
 >
 >     The once-off space to use for the current operation, specified by
->     name. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     name. Cannot be used together with
 >     --space-guid.
 >
 >     --space-guid
 >
 >     The once-off space to use for the current operation, specified by
->     guid. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     guid. Cannot be used together with
 >     --space.
 >
 >     --tail
@@ -2151,11 +1987,7 @@ Display log information for the application. An alias of 'logs'.
 >     --force
 >
 >     Force deletion.
->
->     --group
->
->     The once-off group to use for the current operation. This is a
->     Application Lifecycle Service 2 option.
+
 >
 >     --manifest
 >
@@ -2186,8 +2018,7 @@ Display log information for the application. An alias of 'logs'.
 >
 >     --organization
 >
->     The once-off organization to use for the current operation. This
->     is an Application Lifecycle Service 3 option.
+>     The once-off organization to use for the current operation.
 >
 >     --path
 >
@@ -2197,13 +2028,13 @@ Display log information for the application. An alias of 'logs'.
 >     --space
 >
 >     The once-off space to use for the current operation, specified by
->     name. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     name. Cannot be used together with
 >     --space-guid.
 >
 >     --space-guid
 >
 >     The once-off space to use for the current operation, specified by
->     guid. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     guid. Cannot be used together with
 >     --space.
 >
 >     --tail
@@ -2246,11 +2077,7 @@ Display log information for the application. An alias of 'logs'.
 > :   Attach a new named drain to the application.
 >
 >     + options
->
->     --group
->
->     The once-off group to use for the current operation. This is a
->     Application Lifecycle Service 2 option.
+
 >
 >     --json
 >
@@ -2285,8 +2112,7 @@ Display log information for the application. An alias of 'logs'.
 >
 >     --organization
 >
->     The once-off organization to use for the current operation. This
->     is an Application Lifecycle Service 3 option.
+>     The once-off organization to use for the current operation.
 >
 >     --path
 >
@@ -2296,13 +2122,13 @@ Display log information for the application. An alias of 'logs'.
 >     --space
 >
 >     The once-off space to use for the current operation, specified by
->     name. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     name. Cannot be used together with
 >     --space-guid.
 >
 >     --space-guid
 >
 >     The once-off space to use for the current operation, specified by
->     guid. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     guid. Cannot be used together with
 >     --space.
 >
 >     --tail
@@ -2345,11 +2171,7 @@ Display log information for the application. An alias of 'logs'.
 > :   Remove the named drain from the application.
 >
 >     + options
->
->     --group
->
->     The once-off group to use for the current operation. This is a
->     Application Lifecycle Service 2 option.
+
 >
 >     --manifest
 >
@@ -2380,8 +2202,7 @@ Display log information for the application. An alias of 'logs'.
 >
 >     --organization
 >
->     The once-off organization to use for the current operation. This
->     is an Application Lifecycle Service 3 option.
+>     The once-off organization to use for the current operation.
 >
 >     --path
 >
@@ -2391,13 +2212,13 @@ Display log information for the application. An alias of 'logs'.
 >     --space
 >
 >     The once-off space to use for the current operation, specified by
->     name. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     name. Cannot be used together with
 >     --space-guid.
 >
 >     --space-guid
 >
 >     The once-off space to use for the current operation, specified by
->     guid. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     guid. Cannot be used together with
 >     --space.
 >
 >     --tail
@@ -2440,11 +2261,7 @@ Display log information for the application. An alias of 'logs'.
 > :   Add the specified environment variable to the named application.
 >
 >     + options
->
->     --group
->
->     The once-off group to use for the current operation. This is a
->     Application Lifecycle Service 2 option.
+
 >
 >     --manifest
 >
@@ -2475,8 +2292,7 @@ Display log information for the application. An alias of 'logs'.
 >
 >     --organization
 >
->     The once-off organization to use for the current operation. This
->     is an Application Lifecycle Service 3 option.
+>     The once-off organization to use for the current operation.
 >
 >     --path
 >
@@ -2486,13 +2302,13 @@ Display log information for the application. An alias of 'logs'.
 >     --space
 >
 >     The once-off space to use for the current operation, specified by
->     name. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     name. Cannot be used together with
 >     --space-guid.
 >
 >     --space-guid
 >
 >     The once-off space to use for the current operation, specified by
->     guid. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     guid. Cannot be used together with
 >     --space.
 >
 >     --tail
@@ -2549,11 +2365,7 @@ Display log information for the application. An alias of 'logs'.
 >     application.
 >
 >     + options
->
->     --group
->
->     The once-off group to use for the current operation. This is a
->     Application Lifecycle Service 2 option.
+
 >
 >     --manifest
 >
@@ -2584,8 +2396,7 @@ Display log information for the application. An alias of 'logs'.
 >
 >     --organization
 >
->     The once-off organization to use for the current operation. This
->     is an Application Lifecycle Service 3 option.
+>     The once-off organization to use for the current operation.
 >
 >     --path
 >
@@ -2595,13 +2406,13 @@ Display log information for the application. An alias of 'logs'.
 >     --space
 >
 >     The once-off space to use for the current operation, specified by
->     name. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     name. Cannot be used together with
 >     --space-guid.
 >
 >     --space-guid
 >
 >     The once-off space to use for the current operation, specified by
->     guid. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     guid. Cannot be used together with
 >     --space.
 >
 >     --tail
@@ -2658,11 +2469,7 @@ Display log information for the application. An alias of 'logs'.
 >     consisting of host and domain)
 >
 >     + options
->
->     --group
->
->     The once-off group to use for the current operation. This is a
->     Application Lifecycle Service 2 option.
+
 >
 >     --manifest
 >
@@ -2693,8 +2500,7 @@ Display log information for the application. An alias of 'logs'.
 >
 >     --organization
 >
->     The once-off organization to use for the current operation. This
->     is an Application Lifecycle Service 3 option.
+>     The once-off organization to use for the current operation.
 >
 >     --path
 >
@@ -2704,13 +2510,13 @@ Display log information for the application. An alias of 'logs'.
 >     --space
 >
 >     The once-off space to use for the current operation, specified by
->     name. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     name. Cannot be used together with
 >     --space-guid.
 >
 >     --space-guid
 >
 >     The once-off space to use for the current operation, specified by
->     guid. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     guid. Cannot be used together with
 >     --space.
 >
 >     --tail
@@ -2753,15 +2559,11 @@ Display log information for the application. An alias of 'logs'.
 > :   Open the url of the specified application in the default web
 >     browser. If 'api' is specified as the app name, the Management
 >     Console is opened. With no arguments, the 'name' value from the
->     stackato.yml/manifest.yml in the current directory is used (if
+>     manifest.yml/manifest.yml in the current directory is used (if
 >     present).
 >
 >     + options
->
->     --group
->
->     The once-off group to use for the current operation. This is a
->     Application Lifecycle Service 2 option.
+
 >
 >     --manifest
 >
@@ -2788,8 +2590,7 @@ Display log information for the application. An alias of 'logs'.
 >
 >     --organization
 >
->     The once-off organization to use for the current operation. This
->     is an Application Lifecycle Service 3 option.
+>     The once-off organization to use for the current operation.
 >
 >     --path
 >
@@ -2799,13 +2600,13 @@ Display log information for the application. An alias of 'logs'.
 >     --space
 >
 >     The once-off space to use for the current operation, specified by
->     name. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     name. Cannot be used together with
 >     --space-guid.
 >
 >     --space-guid
 >
 >     The once-off space to use for the current operation, specified by
->     guid. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     guid. Cannot be used together with
 >     --space.
 >
 >     --target
@@ -2853,12 +2654,12 @@ Display log information for the application. An alias of 'logs'.
 >
 >     --buildpack
 >
->     Url of a custom buildpack. This is an Application Lifecycle Service 3 specific option.
+>     Url of a custom buildpack.
 >
 >     --command
 >
 >     The application's start command. Defaults to a framework-specific
->     value if required and not specified by stackato.yml.
+>     value if required and not specified by manifest.yml.
 >
 >     --copy-unsafe-links
 >
@@ -2870,7 +2671,7 @@ Display log information for the application. An alias of 'logs'.
 >     --disk
 >
 >     The application's per-instance disk allocation. Defaults to a
->     framework-specific value if not specified by stackato.yml.
+>     framework-specific value if not specified by manifest.yml.
 >
 >     --env
 >
@@ -2891,22 +2692,13 @@ Display log information for the application. An alias of 'logs'.
 >
 >     Push, and start the application, even when stopped.
 >
->     --framework
->
->     Specify the framework to use. Cannot be used together with
->     --no-framework. Defaults to a heuristically chosen value if not
->     specified, and none for --no-framework. This is an Application Lifecycle Service 2
->     specific option.
->
->     --group
->
->     The once-off group to use for the current operation. This is a
->     Application Lifecycle Service 2 option.
+
+
 >
 >     --instances
 >
 >     The number of application instances to create. Defaults to 1, if
->     not specified by a stackato.yml.
+>     not specified by a manifest.yml.
 >
 >     --manifest
 >
@@ -2916,12 +2708,8 @@ Display log information for the application. An alias of 'logs'.
 >     --mem
 >
 >     The application's per-instance memory allocation. Defaults to a
->     framework-specific value if not specified by stackato.yml.
+>     framework-specific value if not specified by manifest.yml.
 >
->     --no-framework
->
->     Create application without any framework. Cannot be used together
->     with --framework. This is an Application Lifecycle Service 2 specific option.
 >
 >     --no-prompt
 >
@@ -2963,8 +2751,7 @@ Display log information for the application. An alias of 'logs'.
 >
 >     --organization
 >
->     The once-off organization to use for the current operation. This
->     is an Application Lifecycle Service 3 option.
+>     The once-off organization to use for the current operation.
 >
 >     --path
 >
@@ -2975,28 +2762,22 @@ Display log information for the application. An alias of 'logs'.
 >
 >     Analogue of --env-mode, for the regular settings.
 >
->     --runtime
->
->     The name of the runtime to use. Default is framework specific, if
->     not specified by a stackato.yml. This is an Application Lifecycle Service 2 specific
->     option.
 >
 >     --space
 >
 >     The once-off space to use for the current operation, specified by
->     name. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     name. Cannot be used together with
 >     --space-guid.
 >
 >     --space-guid
 >
 >     The once-off space to use for the current operation, specified by
->     guid. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     guid. Cannot be used together with
 >     --space.
 >
 >     --stack
 >
->     The OS foundation the application will run on. This is an Application Lifecycle Service
->     3 specific option.
+>     The OS foundation the application will run on.
 >
 >     --helion-debug
 >
@@ -3050,7 +2831,7 @@ Display log information for the application. An alias of 'logs'.
 >     -d
 >
 >     Set up debugging through an application-specific harbor (port)
->     service. Target version 2.8+ only.
+>     service.
 >
 >     -n
 >
@@ -3065,15 +2846,10 @@ Display log information for the application. An alias of 'logs'.
 >     Alias of --trace.
 >
 > helion rename *\<application\>* *\<name\>*
-> :   Rename the specified application. This is an Application Lifecycle Service 3 specific
->     command.
+> :   Rename the specified application.
 >
 >     + options
->
->     --group
->
->     The once-off group to use for the current operation. This is a
->     Application Lifecycle Service 2 option.
+
 >
 >     --manifest
 >
@@ -3104,8 +2880,7 @@ Display log information for the application. An alias of 'logs'.
 >
 >     --organization
 >
->     The once-off organization to use for the current operation. This
->     is an Application Lifecycle Service 3 option.
+>     The once-off organization to use for the current operation.
 >
 >     --path
 >
@@ -3115,13 +2890,13 @@ Display log information for the application. An alias of 'logs'.
 >     --space
 >
 >     The once-off space to use for the current operation, specified by
->     name. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     name. Cannot be used together with
 >     --space-guid.
 >
 >     --space-guid
 >
 >     The once-off space to use for the current operation, specified by
->     guid. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     guid. Cannot be used together with
 >     --space.
 >
 >     --tail
@@ -3164,11 +2939,7 @@ Display log information for the application. An alias of 'logs'.
 > :   Stop and restart a deployed application.
 >
 >     + options
->
->     --group
->
->     The once-off group to use for the current operation. This is a
->     Application Lifecycle Service 2 option.
+
 >
 >     --manifest
 >
@@ -3199,8 +2970,7 @@ Display log information for the application. An alias of 'logs'.
 >
 >     --organization
 >
->     The once-off organization to use for the current operation. This
->     is an Application Lifecycle Service 3 option.
+>     The once-off organization to use for the current operation.
 >
 >     --path
 >
@@ -3210,13 +2980,13 @@ Display log information for the application. An alias of 'logs'.
 >     --space
 >
 >     The once-off space to use for the current operation, specified by
->     name. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     name. Cannot be used together with
 >     --space-guid.
 >
 >     --space-guid
 >
 >     The once-off space to use for the current operation, specified by
->     guid. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     guid. Cannot be used together with
 >     --space.
 >
 >     --tail
@@ -3294,11 +3064,7 @@ Display log information for the application. An alias of 'logs'.
 >     --dry-run
 >
 >     Alias of --dry.
->
->     --group
->
->     The once-off group to use for the current operation. This is a
->     Application Lifecycle Service 2 option.
+
 >
 >     --instance
 >
@@ -3338,8 +3104,7 @@ Display log information for the application. An alias of 'logs'.
 >
 >     --organization
 >
->     The once-off organization to use for the current operation. This
->     is an Application Lifecycle Service 3 option.
+>     The once-off organization to use for the current operation.
 >
 >     --path
 >
@@ -3349,13 +3114,13 @@ Display log information for the application. An alias of 'logs'.
 >     --space
 >
 >     The once-off space to use for the current operation, specified by
->     name. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     name. Cannot be used together with
 >     --space-guid.
 >
 >     --space-guid
 >
 >     The once-off space to use for the current operation, specified by
->     guid. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     guid. Cannot be used together with
 >     --space.
 >
 >     --tail
@@ -3407,11 +3172,7 @@ Display log information for the application. An alias of 'logs'.
 >     --disk
 >
 >     The new disk reservation to use.
->
->     --group
->
->     The once-off group to use for the current operation. This is a
->     Application Lifecycle Service 2 option.
+
 >
 >     --instances
 >
@@ -3450,8 +3211,7 @@ Display log information for the application. An alias of 'logs'.
 >
 >     --organization
 >
->     The once-off organization to use for the current operation. This
->     is an Application Lifecycle Service 3 option.
+>     The once-off organization to use for the current operation.
 >
 >     --path
 >
@@ -3461,13 +3221,13 @@ Display log information for the application. An alias of 'logs'.
 >     --space
 >
 >     The once-off space to use for the current operation, specified by
->     name. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     name. Cannot be used together with
 >     --space-guid.
 >
 >     --space-guid
 >
 >     The once-off space to use for the current operation, specified by
->     guid. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     guid. Cannot be used together with
 >     --space.
 >
 >     --tail
@@ -3539,11 +3299,7 @@ Display log information for the application. An alias of 'logs'.
 >     --application
 >
 >     Name of the application to operate on.
->
->     --group
->
->     The once-off group to use for the current operation. This is a
->     Application Lifecycle Service 2 option.
+
 >
 >     --instance
 >
@@ -3578,8 +3334,7 @@ Display log information for the application. An alias of 'logs'.
 >
 >     --organization
 >
->     The once-off organization to use for the current operation. This
->     is an Application Lifecycle Service 3 option.
+>     The once-off organization to use for the current operation.
 >
 >     --path
 >
@@ -3589,13 +3344,13 @@ Display log information for the application. An alias of 'logs'.
 >     --space
 >
 >     The once-off space to use for the current operation, specified by
->     name. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     name. Cannot be used together with
 >     --space-guid.
 >
 >     --space-guid
 >
 >     The once-off space to use for the current operation, specified by
->     guid. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     guid. Cannot be used together with
 >     --space.
 >
 >     --tail
@@ -3642,11 +3397,7 @@ Display log information for the application. An alias of 'logs'.
 > :   Add the specified environment variable to the named application.
 >
 >     + options
->
->     --group
->
->     The once-off group to use for the current operation. This is a
->     Application Lifecycle Service 2 option.
+
 >
 >     --manifest
 >
@@ -3677,8 +3428,7 @@ Display log information for the application. An alias of 'logs'.
 >
 >     --organization
 >
->     The once-off organization to use for the current operation. This
->     is an Application Lifecycle Service 3 option.
+>     The once-off organization to use for the current operation.
 >
 >     --path
 >
@@ -3688,13 +3438,13 @@ Display log information for the application. An alias of 'logs'.
 >     --space
 >
 >     The once-off space to use for the current operation, specified by
->     name. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     name. Cannot be used together with
 >     --space-guid.
 >
 >     --space-guid
 >
 >     The once-off space to use for the current operation, specified by
->     guid. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     guid. Cannot be used together with
 >     --space.
 >
 >     --tail
@@ -3774,11 +3524,7 @@ Display log information for the application. An alias of 'logs'.
 >     --dry-run
 >
 >     Alias of --dry.
->
->     --group
->
->     The once-off group to use for the current operation. This is a
->     Application Lifecycle Service 2 option.
+
 >
 >     --instance
 >
@@ -3818,8 +3564,7 @@ Display log information for the application. An alias of 'logs'.
 >
 >     --organization
 >
->     The once-off organization to use for the current operation. This
->     is an Application Lifecycle Service 3 option.
+>     The once-off organization to use for the current operation.
 >
 >     --path
 >
@@ -3829,13 +3574,13 @@ Display log information for the application. An alias of 'logs'.
 >     --space
 >
 >     The once-off space to use for the current operation, specified by
->     name. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     name. Cannot be used together with
 >     --space-guid.
 >
 >     --space-guid
 >
 >     The once-off space to use for the current operation, specified by
->     guid. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     guid. Cannot be used together with
 >     --space.
 >
 >     --tail
@@ -3882,11 +3627,7 @@ Display log information for the application. An alias of 'logs'.
 > :   Start a deployed application.
 >
 >     + options
->
->     --group
->
->     The once-off group to use for the current operation. This is a
->     Application Lifecycle Service 2 option.
+
 >
 >     --manifest
 >
@@ -3917,8 +3658,7 @@ Display log information for the application. An alias of 'logs'.
 >
 >     --organization
 >
->     The once-off organization to use for the current operation. This
->     is an Application Lifecycle Service 3 option.
+>     The once-off organization to use for the current operation.
 >
 >     --path
 >
@@ -3928,13 +3668,13 @@ Display log information for the application. An alias of 'logs'.
 >     --space
 >
 >     The once-off space to use for the current operation, specified by
->     name. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     name. Cannot be used together with
 >     --space-guid.
 >
 >     --space-guid
 >
 >     The once-off space to use for the current operation, specified by
->     guid. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     guid. Cannot be used together with
 >     --space.
 >
 >     --tail
@@ -3990,11 +3730,7 @@ Display log information for the application. An alias of 'logs'.
 > :   Stop a deployed application.
 >
 >     + options
->
->     --group
->
->     The once-off group to use for the current operation. This is a
->     Application Lifecycle Service 2 option.
+
 >
 >     --manifest
 >
@@ -4025,8 +3761,7 @@ Display log information for the application. An alias of 'logs'.
 >
 >     --organization
 >
->     The once-off organization to use for the current operation. This
->     is an Application Lifecycle Service 3 option.
+>     The once-off organization to use for the current operation.
 >
 >     --path
 >
@@ -4036,13 +3771,13 @@ Display log information for the application. An alias of 'logs'.
 >     --space
 >
 >     The once-off space to use for the current operation, specified by
->     name. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     name. Cannot be used together with
 >     --space-guid.
 >
 >     --space-guid
 >
 >     The once-off space to use for the current operation, specified by
->     guid. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     guid. Cannot be used together with
 >     --space.
 >
 >     --tail
@@ -4085,11 +3820,7 @@ Display log information for the application. An alias of 'logs'.
 > :   Unregister the application from a URL.
 >
 >     + options
->
->     --group
->
->     The once-off group to use for the current operation. This is a
->     Application Lifecycle Service 2 option.
+
 >
 >     --manifest
 >
@@ -4120,8 +3851,7 @@ Display log information for the application. An alias of 'logs'.
 >
 >     --organization
 >
->     The once-off organization to use for the current operation. This
->     is an Application Lifecycle Service 3 option.
+>     The once-off organization to use for the current operation.
 >
 >     --path
 >
@@ -4131,13 +3861,13 @@ Display log information for the application. An alias of 'logs'.
 >     --space
 >
 >     The once-off space to use for the current operation, specified by
->     name. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     name. Cannot be used together with
 >     --space-guid.
 >
 >     --space-guid
 >
 >     The once-off space to use for the current operation, specified by
->     guid. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     guid. Cannot be used together with
 >     --space.
 >
 >     --tail
@@ -4181,11 +3911,7 @@ Display log information for the application. An alias of 'logs'.
 >     application.
 >
 >     + options
->
->     --group
->
->     The once-off group to use for the current operation. This is a
->     Application Lifecycle Service 2 option.
+
 >
 >     --manifest
 >
@@ -4216,8 +3942,7 @@ Display log information for the application. An alias of 'logs'.
 >
 >     --organization
 >
->     The once-off organization to use for the current operation. This
->     is an Application Lifecycle Service 3 option.
+>     The once-off organization to use for the current operation.
 >
 >     --path
 >
@@ -4227,13 +3952,13 @@ Display log information for the application. An alias of 'logs'.
 >     --space
 >
 >     The once-off space to use for the current operation, specified by
->     name. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     name. Cannot be used together with
 >     --space-guid.
 >
 >     --space-guid
 >
 >     The once-off space to use for the current operation, specified by
->     guid. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     guid. Cannot be used together with
 >     --space.
 >
 >     --tail
@@ -4288,8 +4013,7 @@ Display log information for the application. An alias of 'logs'.
 ### Services[](#services "Permalink to this headline")
 
 > helion service-plans
-> :   List all available plans of the supported services. This is a
->     Application Lifecycle Service 3 specific command.
+> :   List all available plans of the supported services.
 >
 >     + options
 >
@@ -4343,11 +4067,7 @@ Display log information for the application. An alias of 'logs'.
 > :   List the supported and provisioned services of the target.
 >
 >     + options
->
->     --group
->
->     The once-off group to use for the current operation. This is a
->     Application Lifecycle Service 2 option.
+
 >
 >     --json
 >
@@ -4373,19 +4093,18 @@ Display log information for the application. An alias of 'logs'.
 >
 >     --organization
 >
->     The once-off organization to use for the current operation. This
->     is an Application Lifecycle Service 3 option.
+>     The once-off organization to use for the current operation.
 >
 >     --space
 >
 >     The once-off space to use for the current operation, specified by
->     name. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     name. Cannot be used together with
 >     --space-guid.
 >
 >     --space-guid
 >
 >     The once-off space to use for the current operation, specified by
->     guid. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     guid. Cannot be used together with
 >     --space.
 >
 >     --target
@@ -4424,11 +4143,7 @@ Display log information for the application. An alias of 'logs'.
 > :   Show the information about the named service.
 >
 >     + options
->
->     --group
->
->     The once-off group to use for the current operation. This is a
->     Application Lifecycle Service 2 option.
+
 >
 >     --json
 >
@@ -4454,19 +4169,18 @@ Display log information for the application. An alias of 'logs'.
 >
 >     --organization
 >
->     The once-off organization to use for the current operation. This
->     is an Application Lifecycle Service 3 option.
+>     The once-off organization to use for the current operation.
 >
 >     --space
 >
 >     The once-off space to use for the current operation, specified by
->     name. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     name. Cannot be used together with
 >     --space-guid.
 >
 >     --space-guid
 >
 >     The once-off space to use for the current operation, specified by
->     guid. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     guid. Cannot be used together with
 >     --space.
 >
 >     --target
@@ -4506,19 +4220,14 @@ Display log information for the application. An alias of 'logs'.
 > **Authentication Tokens**
 
 > helion create-service-auth-token *\<label\>* *\<provider\>*
-> :   Create a new service authentication token. This is an Application Lifecycle Service 3
->     specific command.
+> :   Create a new service authentication token.
 >
 >     + options
 >
 >     --auth-token
 >
 >     Value of the new token.
->
->     --group
->
->     The once-off group to use for the current operation. This is a
->     Application Lifecycle Service 2 option.
+
 >
 >     --no-prompt
 >
@@ -4540,19 +4249,18 @@ Display log information for the application. An alias of 'logs'.
 >
 >     --organization
 >
->     The once-off organization to use for the current operation. This
->     is an Application Lifecycle Service 3 option.
+>     The once-off organization to use for the current operation.
 >
 >     --space
 >
 >     The once-off space to use for the current operation, specified by
->     name. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     name. Cannot be used together with
 >     --space-guid.
 >
 >     --space-guid
 >
 >     The once-off space to use for the current operation, specified by
->     guid. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     guid. Cannot be used together with
 >     --space.
 >
 >     --target
@@ -4588,15 +4296,10 @@ Display log information for the application. An alias of 'logs'.
 >     Alias of --trace.
 >
 > helion delete-service-auth-token *\<label\>*
-> :   Delete the specified service authentication token. This is a
->     Application Lifecycle Service 3 specific command.
+> :   Delete the specified service authentication token.
 >
 >     + options
->
->     --group
->
->     The once-off group to use for the current operation. This is a
->     Application Lifecycle Service 2 option.
+
 >
 >     --no-prompt
 >
@@ -4618,19 +4321,18 @@ Display log information for the application. An alias of 'logs'.
 >
 >     --organization
 >
->     The once-off organization to use for the current operation. This
->     is an Application Lifecycle Service 3 option.
+>     The once-off organization to use for the current operation.
 >
 >     --space
 >
 >     The once-off space to use for the current operation, specified by
->     name. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     name. Cannot be used together with
 >     --space-guid.
 >
 >     --space-guid
 >
 >     The once-off space to use for the current operation, specified by
->     guid. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     guid. Cannot be used together with
 >     --space.
 >
 >     --target
@@ -4666,15 +4368,10 @@ Display log information for the application. An alias of 'logs'.
 >     Alias of --trace.
 >
 > helion service-auth-tokens
-> :   Show all service authentication tokens knowns to the target. This
->     is an Application Lifecycle Service 3 specific command.
+> :   Show all service authentication tokens knowns to the target.
 >
 >     + options
->
->     --group
->
->     The once-off group to use for the current operation. This is a
->     Application Lifecycle Service 2 option.
+
 >
 >     --json
 >
@@ -4700,19 +4397,18 @@ Display log information for the application. An alias of 'logs'.
 >
 >     --organization
 >
->     The once-off organization to use for the current operation. This
->     is an Application Lifecycle Service 3 option.
+>     The once-off organization to use for the current operation.
 >
 >     --space
 >
 >     The once-off space to use for the current operation, specified by
->     name. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     name. Cannot be used together with
 >     --space-guid.
 >
 >     --space-guid
 >
 >     The once-off space to use for the current operation, specified by
->     guid. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     guid. Cannot be used together with
 >     --space.
 >
 >     --target
@@ -4748,19 +4444,14 @@ Display log information for the application. An alias of 'logs'.
 >     Alias of --trace.
 >
 > helion update-service-auth-token *\<label\>*
-> :   Update the specified service authentication token. This is a
->     Application Lifecycle Service 3 specific command.
+> :   Update the specified service authentication token.
 >
 >     + options
 >
 >     --auth-token
 >
 >     New value of the specified token.
->
->     --group
->
->     The once-off group to use for the current operation. This is a
->     Application Lifecycle Service 2 option.
+
 >
 >     --no-prompt
 >
@@ -4782,19 +4473,18 @@ Display log information for the application. An alias of 'logs'.
 >
 >     --organization
 >
->     The once-off organization to use for the current operation. This
->     is an Application Lifecycle Service 3 option.
+>     The once-off organization to use for the current operation.
 >
 >     --space
 >
 >     The once-off space to use for the current operation, specified by
->     name. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     name. Cannot be used together with
 >     --space-guid.
 >
 >     --space-guid
 >
 >     The once-off space to use for the current operation, specified by
->     guid. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     guid. Cannot be used together with
 >     --space.
 >
 >     --target
@@ -4832,19 +4522,14 @@ Display log information for the application. An alias of 'logs'.
 > **Brokers**
 
 > helion add-service-broker *\<name\>*
-> :   Make the named service broker known. This is an Application Lifecycle Service 3 specific
->     command.
+> :   Make the named service broker known.
 >
 >     + options
 >
 >     --broker-token
 >
 >     Value of the broker's token.
->
->     --group
->
->     The once-off group to use for the current operation. This is a
->     Application Lifecycle Service 2 option.
+
 >
 >     --no-prompt
 >
@@ -4866,19 +4551,18 @@ Display log information for the application. An alias of 'logs'.
 >
 >     --organization
 >
->     The once-off organization to use for the current operation. This
->     is an Application Lifecycle Service 3 option.
+>     The once-off organization to use for the current operation.
 >
 >     --space
 >
 >     The once-off space to use for the current operation, specified by
->     name. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     name. Cannot be used together with
 >     --space-guid.
 >
 >     --space-guid
 >
 >     The once-off space to use for the current operation, specified by
->     guid. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     guid. Cannot be used together with
 >     --space.
 >
 >     --target
@@ -4918,15 +4602,10 @@ Display log information for the application. An alias of 'logs'.
 >     Alias of --trace.
 >
 > helion delete-service-broker *\<name\>*
-> :   Remove the named service broker from the target. This is a
->     Application Lifecycle Service 3 specific command.
+> :   Remove the named service broker from the target.
 >
 >     + options
->
->     --group
->
->     The once-off group to use for the current operation. This is a
->     Application Lifecycle Service 2 option.
+
 >
 >     --no-prompt
 >
@@ -4948,19 +4627,18 @@ Display log information for the application. An alias of 'logs'.
 >
 >     --organization
 >
->     The once-off organization to use for the current operation. This
->     is an Application Lifecycle Service 3 option.
+>     The once-off organization to use for the current operation.
 >
 >     --space
 >
 >     The once-off space to use for the current operation, specified by
->     name. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     name. Cannot be used together with
 >     --space-guid.
 >
 >     --space-guid
 >
 >     The once-off space to use for the current operation, specified by
->     guid. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     guid. Cannot be used together with
 >     --space.
 >
 >     --target
@@ -4996,15 +4674,10 @@ Display log information for the application. An alias of 'logs'.
 >     Alias of --trace.
 >
 > helion remove-service-broker *\<name\>*
-> :   Remove the named service broker from the target. This is a
->     Application Lifecycle Service 3 specific command.
+> :   Remove the named service broker from the target.
 >
 >     + options
->
->     --group
->
->     The once-off group to use for the current operation. This is a
->     Application Lifecycle Service 2 option.
+
 >
 >     --no-prompt
 >
@@ -5026,19 +4699,18 @@ Display log information for the application. An alias of 'logs'.
 >
 >     --organization
 >
->     The once-off organization to use for the current operation. This
->     is an Application Lifecycle Service 3 option.
+>     The once-off organization to use for the current operation.
 >
 >     --space
 >
 >     The once-off space to use for the current operation, specified by
->     name. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     name. Cannot be used together with
 >     --space-guid.
 >
 >     --space-guid
 >
 >     The once-off space to use for the current operation, specified by
->     guid. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     guid. Cannot be used together with
 >     --space.
 >
 >     --target
@@ -5074,15 +4746,10 @@ Display log information for the application. An alias of 'logs'.
 >     Alias of --trace.
 >
 > helion service-brokers
-> :   Show the list of known service brokers. This is an Application Lifecycle Service 3
->     specific command.
+> :   Show the list of known service brokers.
 >
 >     + options
->
->     --group
->
->     The once-off group to use for the current operation. This is a
->     Application Lifecycle Service 2 option.
+
 >
 >     --json
 >
@@ -5108,19 +4775,18 @@ Display log information for the application. An alias of 'logs'.
 >
 >     --organization
 >
->     The once-off organization to use for the current operation. This
->     is an Application Lifecycle Service 3 option.
+>     The once-off organization to use for the current operation.
 >
 >     --space
 >
 >     The once-off space to use for the current operation, specified by
->     name. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     name. Cannot be used together with
 >     --space-guid.
 >
 >     --space-guid
 >
 >     The once-off space to use for the current operation, specified by
->     guid. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     guid. Cannot be used together with
 >     --space.
 >
 >     --target
@@ -5156,19 +4822,14 @@ Display log information for the application. An alias of 'logs'.
 >     Alias of --trace.
 >
 > helion update-service-broker *\<name\>* *\<newname\>*
-> :   Update the target's knowledge of the named service broker. This is
->     an Application Lifecycle Service 3 specific command.
+> :   Update the target's knowledge of the named service broker.
 >
 >     + options
 >
 >     --broker-token
 >
 >     New value of the broker's token.
->
->     --group
->
->     The once-off group to use for the current operation. This is a
->     Application Lifecycle Service 2 option.
+
 >
 >     --no-prompt
 >
@@ -5190,19 +4851,18 @@ Display log information for the application. An alias of 'logs'.
 >
 >     --organization
 >
->     The once-off organization to use for the current operation. This
->     is an Application Lifecycle Service 3 option.
+>     The once-off organization to use for the current operation.
 >
 >     --space
 >
 >     The once-off space to use for the current operation, specified by
->     name. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     name. Cannot be used together with
 >     --space-guid.
 >
 >     --space-guid
 >
 >     The once-off space to use for the current operation, specified by
->     guid. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     guid. Cannot be used together with
 >     --space.
 >
 >     --target
@@ -5247,11 +4907,7 @@ Display log information for the application. An alias of 'logs'.
 > :   Bind the named service to the specified application.
 >
 >     + options
->
->     --group
->
->     The once-off group to use for the current operation. This is a
->     Application Lifecycle Service 2 option.
+
 >
 >     --manifest
 >
@@ -5282,8 +4938,7 @@ Display log information for the application. An alias of 'logs'.
 >
 >     --organization
 >
->     The once-off organization to use for the current operation. This
->     is an Application Lifecycle Service 3 option.
+>     The once-off organization to use for the current operation.
 >
 >     --path
 >
@@ -5293,13 +4948,13 @@ Display log information for the application. An alias of 'logs'.
 >     --space
 >
 >     The once-off space to use for the current operation, specified by
->     name. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     name. Cannot be used together with
 >     --space-guid.
 >
 >     --space-guid
 >
 >     The once-off space to use for the current operation, specified by
->     guid. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     guid. Cannot be used together with
 >     --space.
 >
 >     --tail
@@ -5356,11 +5011,7 @@ Display log information for the application. An alias of 'logs'.
 >     destination application.
 >
 >     + options
->
->     --group
->
->     The once-off group to use for the current operation. This is a
->     Application Lifecycle Service 2 option.
+
 >
 >     --no-prompt
 >
@@ -5386,19 +5037,18 @@ Display log information for the application. An alias of 'logs'.
 >
 >     --organization
 >
->     The once-off organization to use for the current operation. This
->     is an Application Lifecycle Service 3 option.
+>     The once-off organization to use for the current operation.
 >
 >     --space
 >
 >     The once-off space to use for the current operation, specified by
->     name. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     name. Cannot be used together with
 >     --space-guid.
 >
 >     --space-guid
 >
 >     The once-off space to use for the current operation, specified by
->     guid. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     guid. Cannot be used together with
 >     --space.
 >
 >     --tail
@@ -5459,14 +5109,9 @@ Display log information for the application. An alias of 'logs'.
 >     --credentials
 >
 >     The credentials to use. Each use of the option declares a single
->     element, using the form "key: value" for the argument. This is a
->     Application Lifecycle Service 3 specific option. This is restricted to user-provided
+>     element, using the form "key: value" for the argument. This is restricted to user-provided
 >     services.
->
->     --group
->
->     The once-off group to use for the current operation. This is a
->     Application Lifecycle Service 2 option.
+
 >
 >     --no-prompt
 >
@@ -5492,29 +5137,27 @@ Display log information for the application. An alias of 'logs'.
 >
 >     --organization
 >
->     The once-off organization to use for the current operation. This
->     is an Application Lifecycle Service 3 option.
+>     The once-off organization to use for the current operation.
 >
 >     --plan
 >
->     The service plan to use. This is an Application Lifecycle Service 3 specific option.
+>     The service plan to use.
 >
 >     --provider
 >
 >     The service provider. Use this to disambiguate between multiple
->     providers of the same vendor/type. This is an Application Lifecycle Service 3 specific
->     option.
+>     providers of the same vendor/type.
 >
 >     --space
 >
 >     The once-off space to use for the current operation, specified by
->     name. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     name. Cannot be used together with
 >     --space-guid.
 >
 >     --space-guid
 >
 >     The once-off space to use for the current operation, specified by
->     guid. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     guid. Cannot be used together with
 >     --space.
 >
 >     --tail
@@ -5557,8 +5200,7 @@ Display log information for the application. An alias of 'logs'.
 >     --version
 >
 >     The service version. Use this to disambiguate between multiple
->     versions of the same vendor/type. This is an Application Lifecycle Service 3 specific
->     option.
+>     versions of the same vendor/type.
 >
 >     -n
 >
@@ -5581,11 +5223,7 @@ Display log information for the application. An alias of 'logs'.
 >
 >     Delete all services. Cannot be used together with named service
 >     instances.
->
->     --group
->
->     The once-off group to use for the current operation. This is a
->     Application Lifecycle Service 2 option.
+
 >
 >     --no-prompt
 >
@@ -5607,19 +5245,18 @@ Display log information for the application. An alias of 'logs'.
 >
 >     --organization
 >
->     The once-off organization to use for the current operation. This
->     is an Application Lifecycle Service 3 option.
+>     The once-off organization to use for the current operation.
 >
 >     --space
 >
 >     The once-off space to use for the current operation, specified by
->     name. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     name. Cannot be used together with
 >     --space-guid.
 >
 >     --space-guid
 >
 >     The once-off space to use for the current operation, specified by
->     guid. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     guid. Cannot be used together with
 >     --space.
 >
 >     --target
@@ -5645,8 +5282,7 @@ Display log information for the application. An alias of 'logs'.
 >     --unbind
 >
 >     Unbind service from applications before deleting. By default bound
->     services are skipped and not deleted. This is an Application Lifecycle Service 3
->     specific option.
+>     services are skipped and not deleted.
 >
 >     -n
 >
@@ -5661,15 +5297,10 @@ Display log information for the application. An alias of 'logs'.
 >     Alias of --trace.
 >
 > helion rename-service *\<service\>* *\<name\>*
-> :   Rename the specified service instance. This is an Application Lifecycle Service 3
->     specific command.
+> :   Rename the specified service instance.
 >
 >     + options
->
->     --group
->
->     The once-off group to use for the current operation. This is a
->     Application Lifecycle Service 2 option.
+
 >
 >     --no-prompt
 >
@@ -5691,19 +5322,18 @@ Display log information for the application. An alias of 'logs'.
 >
 >     --organization
 >
->     The once-off organization to use for the current operation. This
->     is an Application Lifecycle Service 3 option.
+>     The once-off organization to use for the current operation.
 >
 >     --space
 >
 >     The once-off space to use for the current operation, specified by
->     name. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     name. Cannot be used together with
 >     --space-guid.
 >
 >     --space-guid
 >
 >     The once-off space to use for the current operation, specified by
->     guid. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     guid. Cannot be used together with
 >     --space.
 >
 >     --target
@@ -5747,11 +5377,7 @@ Display log information for the application. An alias of 'logs'.
 >     --allow-http
 >
 >     Required to prevent the client from rejecting http urls.
->
->     --group
->
->     The once-off group to use for the current operation. This is a
->     Application Lifecycle Service 2 option.
+
 >
 >     --no-prompt
 >
@@ -5777,8 +5403,7 @@ Display log information for the application. An alias of 'logs'.
 >
 >     --organization
 >
->     The once-off organization to use for the current operation. This
->     is an Application Lifecycle Service 3 option.
+>     The once-off organization to use for the current operation.
 >
 >     --port
 >
@@ -5787,13 +5412,13 @@ Display log information for the application. An alias of 'logs'.
 >     --space
 >
 >     The once-off space to use for the current operation, specified by
->     name. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     name. Cannot be used together with
 >     --space-guid.
 >
 >     --space-guid
 >
 >     The once-off space to use for the current operation, specified by
->     guid. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     guid. Cannot be used together with
 >     --space.
 >
 >     --tail
@@ -5842,11 +5467,7 @@ Display log information for the application. An alias of 'logs'.
 > :   Disconnect the named service from the specified application.
 >
 >     + options
->
->     --group
->
->     The once-off group to use for the current operation. This is a
->     Application Lifecycle Service 2 option.
+
 >
 >     --manifest
 >
@@ -5877,8 +5498,7 @@ Display log information for the application. An alias of 'logs'.
 >
 >     --organization
 >
->     The once-off organization to use for the current operation. This
->     is an Application Lifecycle Service 3 option.
+>     The once-off organization to use for the current operation.
 >
 >     --path
 >
@@ -5888,13 +5508,13 @@ Display log information for the application. An alias of 'logs'.
 >     --space
 >
 >     The once-off space to use for the current operation, specified by
->     name. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     name. Cannot be used together with
 >     --space-guid.
 >
 >     --space-guid
 >
 >     The once-off space to use for the current operation, specified by
->     guid. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     guid. Cannot be used together with
 >     --space.
 >
 >     --tail
@@ -5949,7 +5569,7 @@ Display log information for the application. An alias of 'logs'.
 ### Organizations[](#organizations "Permalink to this headline")
 
 > helion create-org *\<name\>*
-> :   Create a new organization. This is an Application Lifecycle Service 3 specific command.
+> :   Create a new organization.
 >
 >     + options
 >
@@ -6023,8 +5643,7 @@ Display log information for the application. An alias of 'logs'.
 >     Alias of --trace.
 >
 > helion delete-org *\<name\>*
-> :   Delete the named organization. This is an Application Lifecycle Service 3 specific
->     command.
+> :   Delete the named organization.
 >
 >     + options
 >
@@ -6084,7 +5703,7 @@ Display log information for the application. An alias of 'logs'.
 >
 > helion link-user-org *\<user\>* *\<org\>*
 > :   Add the specified user to the named organization, in various
->     roles. This is an Application Lifecycle Service 3 specific command.
+>     roles.
 >
 >     + options
 >
@@ -6147,8 +5766,7 @@ Display log information for the application. An alias of 'logs'.
 >     Alias of --trace.
 >
 > helion orgs
-> :   List the available organizations. This is an Application Lifecycle Service 3 specific
->     command.
+> :   List the available organizations.
 >
 >     + options
 >
@@ -6207,8 +5825,7 @@ Display log information for the application. An alias of 'logs'.
 >     Alias of --trace.
 >
 > helion org *\<name\>*
-> :   Show the named organization's information. This is an Application Lifecycle Service 3
->     specific command.
+> :   Show the named organization's information.
 >
 >     + options
 >
@@ -6267,8 +5884,7 @@ Display log information for the application. An alias of 'logs'.
 >     Alias of --trace.
 >
 > helion quota-org *\<name\>* *\<quota\>*
-> :   Set the quotas for the current or named organization. This is a
->     Application Lifecycle Service 3 specific command.
+> :   Set the quotas for the current or named organization.
 >
 >     + options
 >
@@ -6319,8 +5935,7 @@ Display log information for the application. An alias of 'logs'.
 >     Alias of --trace.
 >
 > helion rename-org *\<name\>* *\<newname\>*
-> :   Rename the named organization. This is an Application Lifecycle Service 3 specific
->     command.
+> :   Rename the named organization.
 >
 >     + options
 >
@@ -6372,8 +5987,7 @@ Display log information for the application. An alias of 'logs'.
 >
 > helion switch-org *\<name\>*
 > :   Switch the current organization to the named organization. This
->     invalidates the current space. This is an Application Lifecycle Service 3 specific
->     command.
+>     invalidates the current space.
 >
 >     + options
 >
@@ -6425,7 +6039,7 @@ Display log information for the application. An alias of 'logs'.
 >
 > helion unlink-user-org *\<user\>* *\<org\>*
 > :   Remove the specified user from the named organization, in various
->     roles. This is an Application Lifecycle Service 3 specific command.
+>     roles.
 >
 >     + options
 >
@@ -6492,7 +6106,7 @@ Display log information for the application. An alias of 'logs'.
 ### Spaces[](#spaces "Permalink to this headline")
 
 > helion create-space *\<name\>*
-> :   Create a new space. This is an Application Lifecycle Service 3 specific command.
+> :   Create a new space.
 >
 >     + options
 >
@@ -6590,7 +6204,7 @@ Display log information for the application. An alias of 'logs'.
 >     Alias of --trace.
 >
 > helion delete-space *\<name\>*
-> :   Delete the named space. This is an Application Lifecycle Service 3 specific command.
+> :   Delete the named space.
 >
 >     + options
 >
@@ -6663,8 +6277,7 @@ Display log information for the application. An alias of 'logs'.
 >     Alias of --trace.
 >
 > helion link-user-space *\<user\>* *\<space\>*
-> :   Add the specified user to the named space, in various roles. This
->     is an Application Lifecycle Service 3 specific command.
+> :   Add the specified user to the named space, in various roles.
 >
 >     + options
 >
@@ -6741,7 +6354,7 @@ Display log information for the application. An alias of 'logs'.
 >     Alias of --trace.
 >
 > helion rename-space *\<name\>* *\<newname\>*
-> :   Rename the named space. This is an Application Lifecycle Service 3 specific command.
+> :   Rename the named space.
 >
 >     + options
 >
@@ -6807,7 +6420,7 @@ Display log information for the application. An alias of 'logs'.
 >
 > helion spaces
 > :   List the available spaces in the specified organization. See
->     --organization for details This is an Application Lifecycle Service 3 specific command.
+>     --organization for details
 >
 >     + options
 >
@@ -6880,8 +6493,7 @@ Display log information for the application. An alias of 'logs'.
 >     Alias of --trace.
 >
 > helion space *\<name\>*
-> :   Show the named space's information. This is an Application Lifecycle Service 3 specific
->     command.
+> :   Show the named space's information.
 >
 >     + options
 >
@@ -6955,7 +6567,7 @@ Display log information for the application. An alias of 'logs'.
 >
 > helion switch-space *\<name\>*
 > :   Switch from the current space to the named space. This may switch
->     the organization as well. This is an Application Lifecycle Service 3 specific command.
+>     the organization as well.
 >
 >     + options
 >
@@ -7021,7 +6633,7 @@ Display log information for the application. An alias of 'logs'.
 >
 > helion unlink-user-space *\<user\>* *\<space\>*
 > :   Remove the specified user from the named space, in various roles.
->     This is an Application Lifecycle Service 3 specific command.
+>    
 >
 >     + options
 >
@@ -7102,7 +6714,7 @@ Display log information for the application. An alias of 'logs'.
 ### Routes[](#routes "Permalink to this headline")
 
 > helion delete-route *\<name\>*
-> :   Delete the named route. This is an Application Lifecycle Service 3 specific command.
+> :   Delete the named route.
 >
 >     + options
 >
@@ -7177,7 +6789,7 @@ Display log information for the application. An alias of 'logs'.
 >     Alias of --trace.
 >
 > helion routes
-> :   List all available routes. This is an Application Lifecycle Service 3 specific command.
+> :   List all available routes.
 >
 >     + options
 >
@@ -7236,8 +6848,7 @@ Display log information for the application. An alias of 'logs'.
 ### Domains[](#domains "Permalink to this headline")
 
 > helion domains
-> :   List the available domains in the specified space, or all. This is
->     an Application Lifecycle Service 3 specific command.
+> :   List the available domains in the specified space, or all.
 >
 >     + options
 >
@@ -7319,8 +6930,7 @@ Display log information for the application. An alias of 'logs'.
 >     Alias of --trace.
 >
 > helion map-domain *\<name\>*
-> :   Add the named domain to an organization or space. This is a
->     Application Lifecycle Service 3 specific command.
+> :   Add the named domain to an organization or space.
 >
 >     + options
 >
@@ -7395,8 +7005,7 @@ Display log information for the application. An alias of 'logs'.
 >     Alias of --trace.
 >
 > helion unmap-domain *\<name\>*
-> :   Remove the named domain from an organization or space. This is a
->     Application Lifecycle Service 3 specific command.
+> :   Remove the named domain from an organization or space.
 >
 >     + options
 >
@@ -7717,535 +7326,11 @@ Display log information for the application. An alias of 'logs'.
 >
 >     Alias of --trace.
 >
-> helion frameworks
-> :   List the supported frameworks of the target. This is an Application Lifecycle Service 2
->     specific command.
->
->     + options
->
->     --json
->
->     Print raw json as output, not human-formatted data.
->
->     --no-prompt
->
->     Disable interactive queries.
->
->     --no-trace
->
->     Complementary alias of --trace.
->
->     --non-interactive
->
->      
->
->     Alias of --no-prompt.
->
->     --noprompt
->
->     Alias of --no-prompt.
->
->     --target
->
->     The once-off target to use for the current operation.
->
->     --token
->
->     The once-off authentication token to use for the current
->     operation.
->
->     --token-file
->
->     Path to an existing and readable file containing the targets and
->     authorization tokens.
->
->     --trace
->
->     Activate tracing of the issued REST requests and responses. This
->     option is a no-op now. Tracing is always active. See the 'trace'
->     command to print the saved trace to stdout.
->
->     -n
->
->     Alias of --no-prompt.
->
->     -t
->
->     Alias of --trace.
->
-> helion groups add-user *\<group\>* *\<user\>*
-> :   Add the named user to the specified group. This is an Application Lifecycle Service 2
->     specific command.
->
->     + options
->
->     --no-prompt
->
->     Disable interactive queries.
->
->     --no-trace
->
->     Complementary alias of --trace.
->
->     --non-interactive
->
->      
->
->     Alias of --no-prompt.
->
->     --noprompt
->
->     Alias of --no-prompt.
->
->     --target
->
->     The once-off target to use for the current operation.
->
->     --token
->
->     The once-off authentication token to use for the current
->     operation.
->
->     --token-file
->
->     Path to an existing and readable file containing the targets and
->     authorization tokens.
->
->     --trace
->
->     Activate tracing of the issued REST requests and responses. This
->     option is a no-op now. Tracing is always active. See the 'trace'
->     command to print the saved trace to stdout.
->
->     -n
->
->     Alias of --no-prompt.
->
->     -t
->
->     Alias of --trace.
->
-> helion groups create *\<name\>*
-> :   Create a new group with the specified name. This is an Application Lifecycle Service 2
->     specific command.
->
->     + options
->
->     --no-prompt
->
->     Disable interactive queries.
->
->     --no-trace
->
->     Complementary alias of --trace.
->
->     --non-interactive
->
->      
->
->     Alias of --no-prompt.
->
->     --noprompt
->
->     Alias of --no-prompt.
->
->     --target
->
->     The once-off target to use for the current operation.
->
->     --token
->
->     The once-off authentication token to use for the current
->     operation.
->
->     --token-file
->
->     Path to an existing and readable file containing the targets and
->     authorization tokens.
->
->     --trace
->
->     Activate tracing of the issued REST requests and responses. This
->     option is a no-op now. Tracing is always active. See the 'trace'
->     command to print the saved trace to stdout.
->
->     -n
->
->     Alias of --no-prompt.
->
->     -t
->
->     Alias of --trace.
->
-> helion groups delete-user *\<group\>* *\<user\>*
-> :   Remove the named user from the specified group. This is an Application Lifecycle Service
->     2 specific command.
->
->     + options
->
->     --no-prompt
->
->     Disable interactive queries.
->
->     --no-trace
->
->     Complementary alias of --trace.
->
->     --non-interactive
->
->      
->
->     Alias of --no-prompt.
->
->     --noprompt
->
->     Alias of --no-prompt.
->
->     --target
->
->     The once-off target to use for the current operation.
->
->     --token
->
->     The once-off authentication token to use for the current
->     operation.
->
->     --token-file
->
->     Path to an existing and readable file containing the targets and
->     authorization tokens.
->
->     --trace
->
->     Activate tracing of the issued REST requests and responses. This
->     option is a no-op now. Tracing is always active. See the 'trace'
->     command to print the saved trace to stdout.
->
->     -n
->
->     Alias of --no-prompt.
->
->     -t
->
->     Alias of --trace.
->
-> helion groups delete *\<name\>*
-> :   Delete the named group. This is an Application Lifecycle Service 2 specific command.
->
->     + options
->
->     --no-prompt
->
->     Disable interactive queries.
->
->     --no-trace
->
->     Complementary alias of --trace.
->
->     --non-interactive
->
->      
->
->     Alias of --no-prompt.
->
->     --noprompt
->
->     Alias of --no-prompt.
->
->     --target
->
->     The once-off target to use for the current operation.
->
->     --token
->
->     The once-off authentication token to use for the current
->     operation.
->
->     --token-file
->
->     Path to an existing and readable file containing the targets and
->     authorization tokens.
->
->     --trace
->
->     Activate tracing of the issued REST requests and responses. This
->     option is a no-op now. Tracing is always active. See the 'trace'
->     command to print the saved trace to stdout.
->
->     -n
->
->     Alias of --no-prompt.
->
->     -t
->
->     Alias of --trace.
->
-> helion groups limits *\<group\>*
-> :   Show and/or modify the limits applying to applications in the
->     named group. This is an Application Lifecycle Service 2 specific command.
->
->     + options
->
->     --apps
->
->     Limit for the number of applications in the group.
->
->     --appuris
->
->     Limit for the number of mapped uris per application.
->
->     --drains
->
->     Limit for the number of drains in the group.
->
->     --json
->
->     Print raw json as output, not human-formatted data.
->
->     --mem
->
->     Amount of memory applications can use.
->
->     --no-prompt
->
->     Disable interactive queries.
->
->     --no-sudo
->
->     Complementary alias of --sudo.
->
->     --no-trace
->
->     Complementary alias of --trace.
->
->     --non-interactive
->
->      
->
->     Alias of --no-prompt.
->
->     --noprompt
->
->     Alias of --no-prompt.
->
->     --services
->
->     Limit for the number of services in the group.
->
->     --sudo
->
->     Applications can use sudo (or not).
->
->     --target
->
->     The once-off target to use for the current operation.
->
->     --token
->
->     The once-off authentication token to use for the current
->     operation.
->
->     --token-file
->
->     Path to an existing and readable file containing the targets and
->     authorization tokens.
->
->     --trace
->
->     Activate tracing of the issued REST requests and responses. This
->     option is a no-op now. Tracing is always active. See the 'trace'
->     command to print the saved trace to stdout.
->
->     -n
->
->     Alias of --no-prompt.
->
->     -t
->
->     Alias of --trace.
->
-> helion groups show
-> :   Show the list of groups known to the target. This is an Application Lifecycle Service 2
->     specific command.
->
->     + options
->
->     --json
->
->     Print raw json as output, not human-formatted data.
->
->     --no-prompt
->
->     Disable interactive queries.
->
->     --no-trace
->
->     Complementary alias of --trace.
->
->     --non-interactive
->
->      
->
->     Alias of --no-prompt.
->
->     --noprompt
->
->     Alias of --no-prompt.
->
->     --target
->
->     The once-off target to use for the current operation.
->
->     --token
->
->     The once-off authentication token to use for the current
->     operation.
->
->     --token-file
->
->     Path to an existing and readable file containing the targets and
->     authorization tokens.
->
->     --trace
->
->     Activate tracing of the issued REST requests and responses. This
->     option is a no-op now. Tracing is always active. See the 'trace'
->     command to print the saved trace to stdout.
->
->     -n
->
->     Alias of --no-prompt.
->
->     -t
->
->     Alias of --trace.
->
-> helion groups users *\<group\>*
-> :   Show the list of users in the named group. This is an Application Lifecycle Service 2
->     specific command.
->
->     + options
->
->     --json
->
->     Print raw json as output, not human-formatted data.
->
->     --no-prompt
->
->     Disable interactive queries.
->
->     --no-trace
->
->     Complementary alias of --trace.
->
->     --non-interactive
->
->      
->
->     Alias of --no-prompt.
->
->     --noprompt
->
->     Alias of --no-prompt.
->
->     --target
->
->     The once-off target to use for the current operation.
->
->     --token
->
->     The once-off authentication token to use for the current
->     operation.
->
->     --token-file
->
->     Path to an existing and readable file containing the targets and
->     authorization tokens.
->
->     --trace
->
->     Activate tracing of the issued REST requests and responses. This
->     option is a no-op now. Tracing is always active. See the 'trace'
->     command to print the saved trace to stdout.
->
->     -n
->
->     Alias of --no-prompt.
->
->     -t
->
->     Alias of --trace.
->
-> helion group *\<name\>*
-> :   Report the current group, or (un)set it. This is an Application Lifecycle Service 2
->     specific command.
->
->     + options
->
->     --json
->
->     Print raw json as output, not human-formatted data.
->
->     --no-prompt
->
->     Disable interactive queries.
->
->     --no-trace
->
->     Complementary alias of --trace.
->
->     --non-interactive
->
->      
->
->     Alias of --no-prompt.
->
->     --noprompt
->
->     Alias of --no-prompt.
->
->     --reset
->
->     Reset the current group to nothing. Cannot be used together with
->     name.
->
->     --target
->
->     The once-off target to use for the current operation.
->
->     --token
->
->     The once-off authentication token to use for the current
->     operation.
->
->     --token-file
->
->     Path to an existing and readable file containing the targets and
->     authorization tokens.
->
->     --trace
->
->     Activate tracing of the issued REST requests and responses. This
->     option is a no-op now. Tracing is always active. See the 'trace'
->     command to print the saved trace to stdout.
->
->     -n
->
->     Alias of --no-prompt.
->
->     -t
->
->     Alias of --trace.
->
 > helion info
 > :   Show the basic system and account information.
 >
 >     + options
->
->     --group
->
->     The once-off group to use for the current operation. This is a
->     Application Lifecycle Service 2 option.
+
 >
 >     --json
 >
@@ -8271,19 +7356,18 @@ Display log information for the application. An alias of 'logs'.
 >
 >     --organization
 >
->     The once-off organization to use for the current operation. This
->     is an Application Lifecycle Service 3 option.
+>     The once-off organization to use for the current operation.
 >
 >     --space
 >
 >     The once-off space to use for the current operation, specified by
->     name. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     name. Cannot be used together with
 >     --space-guid.
 >
 >     --space-guid
 >
 >     The once-off space to use for the current operation, specified by
->     guid. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     guid. Cannot be used together with
 >     --space.
 >
 >     --target
@@ -8318,93 +7402,9 @@ Display log information for the application. An alias of 'logs'.
 >
 >     Alias of --trace.
 >
-> helion limits *\<group\>*
-> :   Show and/or modify the limits applying to applications in the
->     named group. This is an Application Lifecycle Service 2 specific command.
->
->     + options
->
->     --apps
->
->     Limit for the number of applications in the group.
->
->     --appuris
->
->     Limit for the number of mapped uris per application.
->
->     --drains
->
->     Limit for the number of drains in the group.
->
->     --json
->
->     Print raw json as output, not human-formatted data.
->
->     --mem
->
->     Amount of memory applications can use.
->
->     --no-prompt
->
->     Disable interactive queries.
->
->     --no-sudo
->
->     Complementary alias of --sudo.
->
->     --no-trace
->
->     Complementary alias of --trace.
->
->     --non-interactive
->
->      
->
->     Alias of --no-prompt.
->
->     --noprompt
->
->     Alias of --no-prompt.
->
->     --services
->
->     Limit for the number of services in the group.
->
->     --sudo
->
->     Applications can use sudo (or not).
->
->     --target
->
->     The once-off target to use for the current operation.
->
->     --token
->
->     The once-off authentication token to use for the current
->     operation.
->
->     --token-file
->
->     Path to an existing and readable file containing the targets and
->     authorization tokens.
->
->     --trace
->
->     Activate tracing of the issued REST requests and responses. This
->     option is a no-op now. Tracing is always active. See the 'trace'
->     command to print the saved trace to stdout.
->
->     -n
->
->     Alias of --no-prompt.
->
->     -t
->
->     Alias of --trace.
 >
 > helion quota configure *\<name\>*
-> :   Reconfigure the named quota definition. This is an Application Lifecycle Service 3
->     specific command.
+> :   Reconfigure the named quota definition.
 >
 >     + options
 >
@@ -8497,8 +7497,7 @@ Display log information for the application. An alias of 'logs'.
 >     Alias of --trace.
 >
 > helion quota create *\<name\>*
-> :   Create a new quota definition. This is an Application Lifecycle Service 3 specific
->     command.
+> :   Create a new quota definition.
 >
 >     + options
 >
@@ -8591,8 +7590,7 @@ Display log information for the application. An alias of 'logs'.
 >     Alias of --trace.
 >
 > helion quota delete *\<name\>*
-> :   Delete the named quota definition. This is an Application Lifecycle Service 3 specific
->     command.
+> :   Delete the named quota definition.
 >
 >     + options
 >
@@ -8643,8 +7641,7 @@ Display log information for the application. An alias of 'logs'.
 >     Alias of --trace.
 >
 > helion quota list
-> :   List the available quota definitions. This is an Application Lifecycle Service 3
->     specific command.
+> :   List the available quota definitions.
 >
 >     + options
 >
@@ -8699,8 +7696,7 @@ Display log information for the application. An alias of 'logs'.
 >     Alias of --trace.
 >
 > helion quota rename *\<name\>* *\<newname\>*
-> :   Rename the named quota definition. This is an Application Lifecycle Service 3 specific
->     command.
+> :   Rename the named quota definition.
 >
 >     + options
 >
@@ -8752,8 +7748,7 @@ Display log information for the application. An alias of 'logs'.
 >
 > helion quota show *\<name\>*
 > :   Show the details of the named quota definition. If not specified
->     it will be asked for interactively (menu). This is an Application Lifecycle Service 3
->     specific command.
+>     it will be asked for interactively (menu).
 >
 >     + options
 >
@@ -8808,8 +7803,7 @@ Display log information for the application. An alias of 'logs'.
 >     Alias of --trace.
 >
 > helion quotas
-> :   List the available quota definitions. This is an Application Lifecycle Service 3
->     specific command.
+> :   List the available quota definitions.
 >
 >     + options
 >
@@ -8863,65 +7857,9 @@ Display log information for the application. An alias of 'logs'.
 >
 >     Alias of --trace.
 >
-> helion runtimes
-> :   List the supported runtimes of the target. This is an Application Lifecycle Service 2
->     specific command.
->
->     + options
->
->     --json
->
->     Print raw json as output, not human-formatted data.
->
->     --no-prompt
->
->     Disable interactive queries.
->
->     --no-trace
->
->     Complementary alias of --trace.
->
->     --non-interactive
->
->      
->
->     Alias of --no-prompt.
->
->     --noprompt
->
->     Alias of --no-prompt.
->
->     --target
->
->     The once-off target to use for the current operation.
->
->     --token
->
->     The once-off authentication token to use for the current
->     operation.
->
->     --token-file
->
->     Path to an existing and readable file containing the targets and
->     authorization tokens.
->
->     --trace
->
->     Activate tracing of the issued REST requests and responses. This
->     option is a no-op now. Tracing is always active. See the 'trace'
->     command to print the saved trace to stdout.
->
->     -n
->
->     Alias of --no-prompt.
->
->     -t
->
->     Alias of --trace.
 >
 > helion stacks
-> :   List the supported stacks of the target. This is an Application Lifecycle Service 3
->     specific command.
+> :   List the supported stacks of the target.
 >
 >     + options
 >
@@ -9042,9 +7980,8 @@ Display log information for the application. An alias of 'logs'.
 >     Alias of --no-prompt.
 >
 > helion usage *\<userOrGroup\>*
-> :   Show the current memory allocation and usage of the active or
->     specified user/group (Application Lifecycle Service 2), or the specified or current
->     space (Application Lifecycle Service 3).
+> :   Show the current memory allocation and usage of the  specified or current
+>     space.
 >
 >     + options
 >
@@ -9052,11 +7989,7 @@ Display log information for the application. An alias of 'logs'.
 >
 >     Query information about everything. Cannot be used together with
 >     userOrGroup.
->
->     --group
->
->     The once-off group to use for the current operation. This is a
->     Application Lifecycle Service 2 option.
+
 >
 >     --json
 >
@@ -9082,19 +8015,18 @@ Display log information for the application. An alias of 'logs'.
 >
 >     --organization
 >
->     The once-off organization to use for the current operation. This
->     is an Application Lifecycle Service 3 option.
+>     The once-off organization to use for the current operation.
 >
 >     --space
 >
 >     The once-off space to use for the current operation, specified by
->     name. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     name. Cannot be used together with
 >     --space-guid.
 >
 >     --space-guid
 >
 >     The once-off space to use for the current operation, specified by
->     guid. This is an Application Lifecycle Service 3 option. Cannot be used together with
+>     guid. Cannot be used together with
 >     --space.
 >
 >     --target
@@ -9131,8 +8063,7 @@ Display log information for the application. An alias of 'logs'.
 >
 > helion user-info *\<name\>*
 > :   Shows the information of a user in the current or specified
->     target. Defaults to the current user. Naming a specific user
->     requires an Application Lifecycle Service 3 target.
+>     target.
 >
 >     + options
 >
@@ -9294,13 +8225,8 @@ Display log information for the application. An alias of 'logs'.
 >
 >     --email
 >
->     The email of the user to create. This is an Application Lifecycle Service 3 specific
->     option.
+>     The email of the user to create.
 >
->     --group
->
->     The group to put the new user into. This is an Application Lifecycle Service 2 specific
->     option.
 >
 >     --mem
 >
@@ -9331,7 +8257,7 @@ Display log information for the application. An alias of 'logs'.
 >     --organization
 >
 >     The organization to place the new user into. Defaults to the
->     current organization. This is an Application Lifecycle Service 3 specific option.
+>     current organization.
 >
 >     --passwd
 >
@@ -9435,8 +8361,7 @@ Display log information for the application. An alias of 'logs'.
 >     Alias of --trace.
 >
 > helion login-fields
-> :   Show the names of the credential fields needed for a login. This
->     is an Application Lifecycle Service 3 specific command.
+> :   Show the names of the credential fields needed for a login.
 >
 >     + options
 >
@@ -9576,13 +8501,8 @@ Display log information for the application. An alias of 'logs'.
 >
 >     --email
 >
->     The email of the user to create. This is an Application Lifecycle Service 3 specific
->     option.
+>     The email of the user to create.
 >
->     --group
->
->     The group to put the new user into. This is an Application Lifecycle Service 2 specific
->     option.
 >
 >     --mem
 >
@@ -9613,7 +8533,7 @@ Display log information for the application. An alias of 'logs'.
 >     --organization
 >
 >     The organization to place the new user into. Defaults to the
->     current organization. This is an Application Lifecycle Service 3 specific option.
+>     current organization.
 >
 >     --passwd
 >
@@ -10212,8 +9132,7 @@ Display log information for the application. An alias of 'logs'.
 >     Alias of --width.
 >
 > helion guid *\<type\>* *\<name\>*
-> :   Map the specified name into a uuid, given the type. This is a
->     Application Lifecycle Service 3 specific command.
+> :   Map the specified name into a uuid, given the type.
 >
 >     + options
 >

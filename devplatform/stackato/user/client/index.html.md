@@ -25,7 +25,7 @@ Application Lifecycle Service Client Setup[](#helion-client-setup "Permalink to 
 1.  Download the client for your platform (Windows, OS X, Linux x86,
     Linux x64)
 2.  Unzip the archive in a convenient directory.
-3.  Add the executable to your system/shell \$PATH by:
+3.  Add the the executable to your system/shell \$PATH by:
 	-   moving it to a directory in your \$PATH,
 	-   creating a symlink from a directory in your \$PATH, or
 	-   creating a shell alias for the executable.

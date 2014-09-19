@@ -44,9 +44,9 @@ be used in HTML pages via the [Embedded JavaScript
 -   **Default Locale**: Sets the default locale of the console if the
     users current locale isn't recognized. Currently, only the 'en'
     localization is complete.
--   **External Docs URL**: The link to the location of documents that the user may view.
+-   **External Docs URL**: The link to direct users to to view docs.
     Defaults to the current documentation published to
-    docs.helion.com. Ticking 'Use local docs' will cause this URL to
+    docs.hpcloud.com. Ticking 'Use local docs' will cause this URL to
     be ignored and the docs from the VM will be served instead.
 
 ### Look and Feel[](#look-and-feel "Permalink to this headline")
@@ -128,11 +128,11 @@ Renaming the Client[](#renaming-the-client "Permalink to this headline")
 The `helion` client is distributed as a single
 file executable for Windows, OS X and Linux (x86 and x86\_64). Zip files
 containing executables for each platform can be found in the
-`~/helion/static` directory.
+`~/stackato/static` directory.
 
 After renaming the executable, you can re-package them in .zip files and
 modify the
-*\~/helion/code/console/js/views/client/templates/client.html*
+*\~/stackato/code/console/js/views/client/templates/client.html*
 template to point to the renamed files. 
 
 
