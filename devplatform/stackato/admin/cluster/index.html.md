@@ -46,7 +46,7 @@ then be cloned across several
 [*node*](/als/v1/user/reference/glossary/#term-node)s. You connect to
 each node in turn and tell it which
 [*role*](/als/v1/user/reference/glossary/#term-role)s it is to serve,
-thereby distributing the processing load for maximum performance.
+thereby distributing the processing load for maximum performance.  In Helion, the Horizon Clusters Panel takes care of this for you.
 
 Roles[](#roles "Permalink to this headline")
 ---------------------------------------------
@@ -60,7 +60,6 @@ take on one or more of the following roles:
 -   [*dea*](/als/v1/admin/reference/architecture/#architecture-dea)
 -   mdns (intended for micro clouds)
 -   [*filesystem*](/als/v1/user/services/filesystem/#persistent-file-system)
--   [*mongodb*](/als/v1/user/reference/glossary/#term-mongodb)
 -   [*mysql*](/als/v1/user/reference/glossary/#term-mysql)
 -   [*postgresql*](/als/v1/user/reference/glossary/#term-postgresql)
 -   rabbit
@@ -352,12 +351,12 @@ Roles Requiring Persistent or Shared Storage[](#roles-requiring-persistent-or-sh
 ---------------------------------------------------------------------------------------------------------------------------
 
 Though all roles can run using the VM's default filesystem, in
-production clusters some roles should always be backed by a persistent
-filesystem (block storage/EBS volumes) to provide scalable storage space
+production clusters some roles should be backed by a persistent
+filesystem (block storage volumes) to provide scalable storage space
 and easy snapshotting. Nodes with the following roles should have their
 */var/helion/services* directory on persistent storage:
 
--   Data Services: MySQL, PostgreSQL, MongoDB, Redis
+-   Data Services: MySQL, PostgreSQL, Redis
 -   Filesystem Service
 -   Memcache
 -   RabbitMQ
@@ -370,7 +369,7 @@ data is stored on disk, so backing them with a persistent filesystem is
 recommended.
 
 In clusters with multiple Cloud Controllers, the nodes **must** share a
-common */home/helion/helion/data* mount point as described
+common */home/stackato/stackato/data* mount point as described
 [*below*](#cluster-multi-controllers) in order to work together
 properly.
 
@@ -484,13 +483,13 @@ high-availability filesystem server. For example:
 
     -   Mount the shared filesystem on the mount point. [[1]](#id4)
 
-    -   Set aside the original `/home/helion/helion/data`:
+    -   Set aside the original `/home/stackato/stackato/data`:
 
-            $ mv /home/helion/helion/data /home/helion/helion/data.old
+            $ mv /home/stackato/stackato/data /home/stackato/stackato/data.old
 
-    -   Create a symlink from `/home/helion/helion/data` to the mount point:
+    -   Create a symlink from `/home/stackato/stackato/data` to the mount point:
 
-            $ ln -s /mnt/controller /home/helion/helion/data
+            $ ln -s /mnt/controller /home/stackato/stackato/data
 
 -   On the Core node, start the controller process:
 

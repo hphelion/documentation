@@ -12,14 +12,6 @@ bundles of detection and configuration scripts which set up containers
 to run applications. For a short introduction to writing buildpacks, see
 [this presentation](http://talks.codegram.com/heroku-buildpacks).
 
-**Note**
-
-In Application Lifecycle Service 3.0 (Cloud Foundry v2 API) and later, application deployment
-is done **primarily** using buildpacks, and the syntax for specifying
-which buildpack to use has changed. Instead of using a BUILDPACK\_URL
-environment variable, set the buildpack's Git URL in a
-`buildpack:` key at the top level of *stackato.yml*.
-
 Deploy Using Buildpacks[](#deploy-using-buildpacks "Permalink to this headline")
 ---------------------------------------------------------------------------------
 
@@ -41,11 +33,7 @@ pushing.
 
 ### Legacy Buildpack[](#legacy-buildpack "Permalink to this headline")
 
-The legacy buildpack is a special meta-buildpack for deploying
-applications configured for Application Lifecycle Service 2.x (Cloud Foundry v1 API) without
-the need for extensive reconfiguration. This buildpack has updated
-versions of all the frameworks available in previous versions of
-Application Lifecycle Service.
+The legacy buildpack is a special meta-buildpack for deploying applications configured for Cloud Foundry v1 without the need for extensive reconfiguration.
 
 To use the Legacy buildpack: specify the `framework` type for your application (e.g. php,
 play, rails3, sinatra, java\_web, java\_ee, etc.). You can optionally
@@ -66,12 +54,12 @@ Variables*](/als/v1/admin/reference/known-issues/#known-issues-legacy-env)).
 ### Custom Buildpacks[](#custom-buildpacks "Permalink to this headline")
 
 To specify the exact buildpack to use for deploying your application,
-set a top-level `buildpack:` key in *stackato.yml*
+set a top-level `buildpack:` key in *manifest.yml*
 to the URL of the buildpack's Git repository. For example:
 
     name: myrubyapp
     mem: 256MB
-    buildpack: https://github.com/HP/helion-buildpack-ruby.git
+    buildpack: https://github.com/ActiveState/stackato-buildpack-ruby.git
 
 **Note**
 
@@ -82,8 +70,8 @@ production deployments.
 
 The following buildpacks are known to work with Application Lifecycle Service:
 
--   [Jekyll](https://github.com/HP/heroku-buildpack-jekyll/)
--   [PyPy](https://github.com/HP/heroku-buildpack-pypy)
+-   [Jekyll](https://github.com/ActiveState/stackato-buildpack-jekyll/)
+-   [PyPy](https://github.com/ActiveState/stackato-buildpack-pypy)
 -   [Python and
     Django](https://github.com/heroku/heroku-buildpack-python) -
     [unofficial
@@ -106,8 +94,8 @@ instead.
 
 ### Pet-Clinic (Java)[](#pet-clinic-java "Permalink to this headline")
 
-First, in `stackato.yml` you will need to define the
-the buildpack url. Here is the pet-clinic stackato.yml:
+First, in `manifest.yml` you will need to define the
+the buildpack url. Here is the pet-clinic manifest.yml:
 
     name: pet-clinic
     mem: 512M

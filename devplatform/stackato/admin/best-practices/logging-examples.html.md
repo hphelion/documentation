@@ -85,9 +85,9 @@ Splunk[](#splunk "Permalink to this headline")
 1.  [Set up Splunk Server](http://www.splunk.com/download).
 2.  In the welcome screen, click *Add data*
 	<img src="/content/devplatform/stackato/images/splunk1.png" />
-3.  Under *Choose a Data Source*, click **From a TCP port** (or UDP)
-	<img src="/content/devplatform/stackato/images/splunk2.png" />
-4.  In the Add new Source screen:
+3.  Under *Choose a Data Source*, click **From a TCP port** (or UDP)<br><img src="/content/devplatform/stackato/images/splunk2.png"/>
+
+1. In the **Add New Source** screen:
 	-   Select a TCP/UDP port greater than **9999**
 	-   Give it a suitable **Source name**.
 	-   Set sourcetype to **Manual**

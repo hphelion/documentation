@@ -42,8 +42,7 @@ Deploying Applications[](#deploying-applications "Permalink to this headline")
 -------------------------------------------------------------------------------
 
 -   [General Deployment](/als/v1/user/deploy/)
--   [Stackato.yml Options](/als/v1/user/deploy/stackatoyml/)
--   [Manifest.yml Options](/als/v1/user/deploy/manifestyml/)
+-   [Manifest.yml Options](/als/v1/user/deploy/stackatoyml/)
 -   [Remote Debugging](/als/v1/user/deploy/app-debug/)
 -   [**Frameworks & Languages**](/als/v1/user/deploy/#language-specific-deploy)
 	-   Frameworks

@@ -15,7 +15,7 @@ A simple app using the Mojolicious framework needs four files:
 1.  *app.psgi*
 2.  *app.pl*
 3.  *requirements.txt*
-4.  *stackato.yml*
+4.  *manifest.yml*
 
 In the *requirements.txt* file, list any module requirements, with at
 least:
@@ -39,9 +39,9 @@ The *app.pl* file contains the core functionality:
 
     app->start;
 
-The *stackato.yml* file contains deployment instructions for Application Lifecycle Service.
+The *manifest.yml* file contains deployment instructions for Application Lifecycle Service.
 See complete details for this file in the [*Configuration With
-stackato.yml*](/als/v1/user/deploy/stackatoyml/#stackato-yml) section.
+manifest.yml*](/als/v1/user/deploy/stackatoyml/#stackato-yml) section.
 
 Examples[](#examples "Permalink to this headline")
 ---------------------------------------------------

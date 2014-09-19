@@ -14,7 +14,7 @@ during runtime (including hook processing, cron jobs and ssh commands).
 You can set your own environment variables:
 
 -   in an `env:` block in
-    [*stackato.yml*](/als/v1/user/deploy/stackatoyml/#stackato-yml-env),
+    [*manifest.yml*](/als/v1/user/deploy/stackatoyml/#stackato-yml-env),
 -   via the application's Details page in the [*Management
     Console*](/als/v1/admin/console/customize/#management-console), or
 -   using the [*helion env-add*](/als/v1/user/reference/client-ref/#command-env-add)
@@ -24,7 +24,7 @@ You can set your own environment variables:
 
 To see a complete list of environment variables in an Application Lifecycle Service
 application container, deploy the
-[node-env](https://github.com/Application Lifecycle Service-Apps/node-env) sample.
+[node-env](https://github.com/Stackato-Apps/node-env) sample.
 
 DATABASE\_URL
 :   Contains an access URL for a database service. If more than one type
@@ -45,11 +45,9 @@ POSTGRESQL\_URL: Location of and credentials for the bound **PostgreSQL** servic
 
 REDIS\_URL: Location of and credentials for the bound **Redis** service, if there is (only) one.
 
-MONGODB\_URL: Location of and credentials for the bound **MongoDB** service, if there is (only) one.
-
 RABBITMQ\_URL: Location of and credentials for the bound **RabbitMQ** service, if there is (only) one.
 
-HOME: Identifies the working directory assigned to a particular user on login. In an Application Lifecycle Service application container, this is generally set to */home/helion/app/* by default.
+HOME: Identifies the working directory assigned to a particular user on login. In an Application Lifecycle Service application container, this is generally set to */home/stackato/app/* by default.
 
 HTTP\_PROXY:   A variable recognized by many web applications to direct them to a proxy HTTP server.
 
@@ -65,7 +63,7 @@ PIP\_OPTS: Custom/alternate [*PIP*](/als/v1/user/reference/glossary/#term-pip) r
 PORT: Application Lifecycle Service alternative for VCAP\_APP\_PORT.
 
 PROCESSES\_WEB: This variable contains the default start command that would be used
-    when [*stackato.yml*](/als/v1/user/deploy/stackatoyml/#stackato-yml)
+    when [*manifest.yml*](/als/v1/user/deploy/stackatoyml/#stackato-yml)
     doesn't override it. It is provided so that users can specify a
     wrapper around the default command, e.g.
 
@@ -91,7 +89,7 @@ STACKATO\_APP\_ENV: Note
     [*stackato.yml*](/als/v1/user/deploy/stackatoyml/#stackato-yml-env).
 
 STACKATO\_APP\_NAME: Contains the application name as specified during application push
-    (or in *stackato.yml* or *manifest.yml*). Available during staging
+    (or in *manifest.yml*). Available during staging
     as well as in the application instance.
 STACKATO\_APP\_NAME\_UPCASE: Contains the same value as STACKATO\_APP\_NAME transformed to uppercase, with dashes replaced by underscores. For example if STACKATO\_APP\_NAME is "php-info", then STACKATO\_APP\_NAME\_UPCASE will be "PHP\_INFO".
 
@@ -99,13 +97,13 @@ This makes it possible to access the environment variables for [*harbor*](/als/v
 
 STACKATO\_APP\_ROOT: This is the "root" directory from the Application Lifecycle Service point of view. It contains app specific HOME directory (app/), the log file directory (logs/) and various scripts.
 
-The [*HOME*](#term-home) environment variable will actually point to the app directory, which looks mostly like the directory uploaded by the client. This is where *stackato.yml* and all the application files live.
+The [*HOME*](#term-home) environment variable will actually point to the app directory, which looks mostly like the directory uploaded by the client. This is where *manifest.yml* and all the application files live.
 
-STACKATO\_DOCUMENT\_ROOT: This contains the root directory where the user can access. The document-root must always be specified relative to \$HOME (/home/helion/app).
+STACKATO\_DOCUMENT\_ROOT: This contains the root directory where the user can access. The document-root must always be specified relative to \$HOME (/home/stackato/app).
 
 STACKATO\_FILESYSTEM: If the app uses a single `filesystem` service, then the local mount point is stored in this variable. If there is more than one `filesystem` service, `STACKATO_FILESYSTEM` is not available. Instead, a custom environment variable `STACKATO_FILESYSTEM_*` will be created based on the name of each filesystem service (with hyphens replaced by underscores).
 
-    For example, if your *stackato.yml* file configures the following
+    For example, if your *manifest.yml* file configures the following
     services:
 
         services:
@@ -116,7 +114,6 @@ STACKATO\_FILESYSTEM: If the app uses a single `filesystem` service, then the lo
     `STACKATO_FILESYSTEM_MY_DATA` and
     `STACKATO_FILESYSTEM_PLUGINS`.
 
-STACKATO\_GROUP *(DEPRECATED: Application Lifecycle Service 2.x only)*: Can be set in the local shell to specify the group for the `helion` client. When set, the `helion group` command is ignored until the variable is explicitly unset. If empty, the client sets the group to 'none'. Can be overridden with the `--group` option.
 
 STACKATO\_SERVICES: Contains connection details and credentials for services bound to the application. For filesystem services, it contains the local mount point. See [*STACKATO\_SERVICES*](/als/v1/user/services/data-services/#database-services-helion-services).
 

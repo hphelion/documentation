@@ -7,10 +7,14 @@ product: devplatform
 ---
 #Resources for OpenStack Integration, Extension, and Service Development
 
+[Developing for HP Helion CloudStack 101](https://cwiki.apache.org/confluence/display/CLOUDSTACK/Development+101_)
+
 ##HP Helion Reference
 - [Exposed Services](/als/v1/user/#services)
 
 - [HP Helion Public Cloud API](/api/)
+
+
 
 ###Language-Specific Development
 ####Java
