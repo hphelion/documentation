@@ -22,7 +22,7 @@ PageRefresh();
 
 # HP Helion OpenStack&#174; Sherpa Service Overview #
 
-HP Helion OpenStack Sherpa Service provides a link to the remote web catalog which has a repository of software that can be purchased and downloaded into the Cloud OS environment. You can make purchases using a self-service account on the public web server. Once a purchase is made, you can use the Sherpa UI and back end service to download the content from the web catalog using your self-service account. The content is then published into the various cloud repositories within Cloud OS so that the end users can deploy virtual machines and other content from within the cloud.  
+HP Helion OpenStack Sherpa Service provides a link to the remote web catalog which has a repository of software that can be purchased and downloaded into the HP Helion environment. You can make purchases using a self-service account on the public web server. Once a purchase is made, you can use the Sherpa UI and back end service to download the content from the web catalog using your self-service account. The content is then published into the various cloud repositories within HP Helion so that the end users can deploy virtual machines and other content from within the cloud.  
 
 
 Content may include patches, plugins, images, models, etc. that may be used to update or provide content to the cloud.
@@ -44,21 +44,21 @@ Key terms include:
 
 ## Working with the Sherpa Service ##
 
-To perform tasks using the Sherpa service, you can use the Horizon dashboards or CLI.
+To perform tasks using the Sherpa service, you can use the Horizon dashboards.
 
 ### Using the dashboards {#UI}
 
-You can use the [HP Helion OpenStack Dashboard](/helion/openstack/dashboard/how-works/) to work with the Sherpa service.
+You can use the [HP Helion OpenStack Dashboard](helion/openstack/ga/undercloud/admin/updates-and-extension/) to work with the Sherpa service.
 
 <!---###Using the API ### {#API}
  
 You can use a low-level, raw REST API access to the HP Compute service. See the [OpenStack Compute API v2.0 Reference](http://api.openstack.org/api-ref-compute-v2.html).-->
 
-###Using the CLI### {#cli}
+<!---###Using the CLI### {#cli}
 
 You can use the command-line interface software to access Sherpa. See the [to give the hyperlink].
 
-For more information on installing the CLI, see [Install the OpenStack command-line clients](http://docs.openstack.org/user-guide/content/install_clients.html).
+For more information on installing the CLI, see [Install the OpenStack command-line clients](http://docs.openstack.org/user-guide/content/install_clients.html).-->
 
 <!---## How To's with the HP Helion OpenStack Compute Service ## {#howto}-->
 
@@ -68,11 +68,11 @@ The following lists of tasks can be performed by a user or administrator through
 
 Depending upon your user type, Cloud Architect or Administrator, you can use the portal to update your clouds.
 
-Based on the installation and location within the cloud, the Sherpa user has different functions and content available.
+Based on the installation and location within the cloud, the Sherpa user has different functions. The content available is also based on the Sherpa user logged in.
 
-Sherpa is deployed in the undercloud to connect to the remote catalog web service.  It is configured to pull overcloud images and other support content down into the undercloud so that the images are deployed or upgraded.
+Sherpa is deployed in the Undercloud to connect to the remote catalog web service.  It is configured to pull Overcloud images and other support content down into the Undercloud so that the images are deployed or upgraded.
 
-Sherpa may be deployed in the overcloud to provide cloud content, and workloads to be deployed within the overcloud.
+Sherpa may be deployed in the Overcloud to provide cloud content, and workloads to be deployed within the Overcloud.
 
 <!---### Tasks performed by users ###
 
@@ -133,7 +133,7 @@ When working with the Compute service, you can perform a number of tasks with yo
 
 ## For more information ##
 
-For information on how to operate your cloud we suggest you read the [OpenStack Operations Guide](http://docs.openstack.org/ops/). The *Architecture* section contains useful information about how an OpenStack Cloud is put together. However, the HP Helion OpenStack takes care of these details for you. The *Operations* section contains information on how to manage the system.
+For information on how to operate your cloud we suggest you read the [OpenStack Operations Guide](http://docs.openstack.org/ops/). 
 
 The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.
 

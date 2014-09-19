@@ -26,7 +26,7 @@ HP Helion OpenStack Sirius Service is a REST based web service for storage devic
 
 Cloud Administrator is the primary user and uses the service to manage storage devices and configure storage service running in Overcloud.
 
-All the devices managed by Sirius are consumed by the Overcloud to realize a cloud storage offered to cloud users. The service runs in the Undercloud and closely interacts with ThunderChicken i.e. EE Installer Service to realize all its operation.
+All the devices managed by Sirius are consumed by the Overcloud to realize a cloud storage offered to cloud users. The service runs in the Undercloud to realize all its operation.
 
 
 ## Working with the Sirius Service ##
@@ -39,7 +39,7 @@ You can use the [HP Helion OpenStack Dashboard](/helion/openstack/dashboard/how-
 
 ###Using the CLI### {#cli}
 
-You can use the command-line interface software to access HP Sirius. See **the to give URL.**
+You can use the command-line interface to access HP Sirius service. See [Configuring Storage Using Sirius](/helion/openstack/ga/sirius-cli/)
 
 For more information on installing the CLI, see [Install the OpenStack command-line clients](http://docs.openstack.org/user-guide/content/install_clients.html).
 
