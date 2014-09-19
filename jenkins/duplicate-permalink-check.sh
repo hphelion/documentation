@@ -50,6 +50,7 @@ do
 				#Write a notification message with the name array entry with the corresponding index.
 				echo " "
 			 	echo "The file ${names[c]} contains a duplicated permalink: ${permalink[c]} "
+				git log -1 ${names[c]} | grep Author | sed 's/Author/In development branch, last committed by/'
 				exitcondition=1
 			 fi
 		done	
@@ -95,6 +96,11 @@ do
 				echo "The following files use the same permalink (${permalink2[c]}):" 
 				echo "   ${names2[c]} in the master branch"
 				echo "   ${names[i]} in the ${GIT_BRANCH} branch"
+				git log -1 ${names[i]} | grep Author | sed 's/Author/File last committed by/'
+				
+				git log -1 --branches=${GIT_BRANCH} ${names[i]} | grep Author | sed 's/Author/In development branch, file last committed by/'
+				git log -1 --branches=master ${names2[c]} | grep Author | sed 's/Author/In master branch, file last committed by/'
+				
 				echo "This will cause an error when you merge ${GIT_BRANCH} branch to master."
 				echo "You should probably modify the permalink in ${GIT_BRANCH} branch."
 				

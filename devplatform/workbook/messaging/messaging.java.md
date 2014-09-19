@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-title: "HP Helion Development Platform Workbook Hello World Sample"
+title: "HP Helion Development Platform Workbook Java Messaging Sample"
 permalink: /helion/devplatform/workbook/messaging/java/
 product: devplatform
 
@@ -70,4 +70,4 @@ To deploy the application, make sure you are logged in successfully for your des
 6. You should see a page that will accept a user's message.
 
 
-[Exit Workbook](/helion/devplatform/) | [Previous Sample](/helion/devplatform/workbook/helloworld/java/) | [Next Sample](/helion/devplatform/workbook/database/java/)
+[Exit Workbook](/helion/devplatform/) | [Previous Sample](/helion/devplatform/workbook/database/java/) 

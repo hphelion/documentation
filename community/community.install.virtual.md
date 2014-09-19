@@ -226,7 +226,7 @@ From within the seed VM, you should be able to connect to the test guest or demo
 
 3. Verify you can ssh into the VM:
 
-        root@hLinux:~# ethtool K eth0 rx off tx off
+        root@hLinux:~# ethtool -K eth0 rx off tx off
         root@hLinux:~# ssh root@<ip of demo vm> 
 
 
