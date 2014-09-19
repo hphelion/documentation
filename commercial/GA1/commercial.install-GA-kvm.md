@@ -314,10 +314,6 @@ Make sure you can access the overcloud Horizon dashboard. To do this, follow the
 
 	For intructions, see the [HP Helion OpenStack&#174;: HP StoreServ (3PAR) Support](/helion/openstack/install/3par/) document.
 
-
-
-
-
 - Install DNS as a service (DNSaaS) (Optional).
 
 	Our managed DNS service, based on the OpenStack Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.
