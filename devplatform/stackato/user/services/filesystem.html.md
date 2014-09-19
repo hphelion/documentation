@@ -9,8 +9,7 @@ Persistent File System[](#persistent-file-system "Permalink to this headline")
 
 The file system of application containers are ephemeral. Any application
 data or files stored locally within these containers is lost when the
-instance is stopped or restarted. To solve this, Application Lifecycle Service provides a
-‘filesystem’ service that can be shared between application instances,
+instance is stopped or restarted. To solve this, Application Lifecycle Service provides a filesystem type of service that can be shared between application instances,
 and even between applications deployed to the same space.
 
 A persistent file system service allows apps to do the following:
@@ -18,14 +17,12 @@ A persistent file system service allows apps to do the following:
 1.  Share files across multiple instances of an app
 2.  Store files that persist if an app is removed (providing the service
     is not deleted) or if the server is restarted.
-3.  Conserve space on filesystems allocated within the VM instance by
-    referencing the persistent filesystem instead.
+3.  Conserve space on filesystems allocated within the VM instance by referencing the persistent filesystem instead.
 
 Creating A Persistent File System[](#creating-a-persistent-file-system "Permalink to this headline")
 -----------------------------------------------------------------------------------------------------
 
-A `filesystem` service can be configured in your
-*manifest.yml* file:
+A filesystem service can be configured in your *manifest.yml* file:
 
     services:
         mydata: filesystem
@@ -61,7 +58,7 @@ If there is only one filesystem service, the
 `STACKATO_FILESYSTEM` environment variable can be
 used to get the path.
 
-If there is more than one `filesystem` service,
+If there is more than one filesystem service,
 `STACKATO_FILESYSTEM` is not available. Instead, a
 custom environment variable `STACKATO_FILESYSTEM_*`
 will be created based on the name of each filesystem service (with

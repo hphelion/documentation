@@ -33,9 +33,7 @@ pushing.
 
 ### Legacy Buildpack[](#legacy-buildpack "Permalink to this headline")
 
-The legacy buildpack is is special meta-buildpack for deploying
-applications configured for Cloud Foundry v1 without
-the need for extensive reconfiguration.
+The legacy buildpack is a special meta-buildpack for deploying applications configured for Cloud Foundry v1 without the need for extensive reconfiguration.
 
 To use the Legacy buildpack: specify the `framework` type for your application (e.g. php,
 play, rails3, sinatra, java\_web, java\_ee, etc.). You can optionally

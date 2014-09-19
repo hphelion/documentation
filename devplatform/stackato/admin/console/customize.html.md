@@ -44,7 +44,7 @@ be used in HTML pages via the [Embedded JavaScript
 -   **Default Locale**: Sets the default locale of the console if the
     users current locale isn't recognized. Currently, only the 'en'
     localization is complete.
--   **External Docs URL**: The link to direct users to to view docs.
+-   **External Docs URL**: The link that directs users to documentation.
     Defaults to the current documentation published to
     docs.hpcloud.com. Ticking 'Use local docs' will cause this URL to
     be ignored and the docs from the VM will be served instead.
