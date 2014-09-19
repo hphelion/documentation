@@ -200,7 +200,7 @@ Splunk supports JSON format without further configuration.
 1.  [Set up Splunk Server](http://www.splunk.com/download).
 2.  In the welcome screen, click *Add data*
 	<img src="/content/devplatform/stackato/images/splunk11.png" />
-3.  Under *Choose a Data Source*, click “From a TCP port”. (or UDP)
+3.  Under **Choose a Data Source**, click **From a TCP port** (or UDP).
 	<img src="/content/devplatform/stackato/images/splunk21.png" />
 4.  In the Add new Source screen:
 	-   Select a TCP/UDP port greater than **9999**
@@ -260,9 +260,7 @@ operations in different ways. Check for incompatibilities with
     `helion` user does not have permission to
     update the default state file.
 
-2.  Add an *app-logrotate.conf* file to the base directory of your
-    application to specify which log files to rotate, and and which
-    `logrotate` options to use. For example:
+2.  Add an *app-logrotate.conf* file to the base directory of your application to specify which log files to rotate, and which `logrotate` options to use. For example:
 
         /home/stackato/logs/\*.log {
           daily

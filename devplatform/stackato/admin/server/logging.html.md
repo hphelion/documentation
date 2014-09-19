@@ -26,7 +26,7 @@ Log Streams[](#log-streams "Permalink to this headline")
     -   [Debugging Logyard](#debugging-logyard)
 
 Application and system logs in Application Lifecycle Service are aggregated into streams
-which can be viewed, tailed, filtered, and and sent via drains to other
+which can be viewed, tailed, filtered, and/or sent via drains to other
 log aggregators for archiving or analysis. There are three general types
 of streams:
 
